@@ -20,7 +20,7 @@ import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.language.SConceptId;
 import org.jetbrains.mps.openapi.language.SContainmentLinkId;
-import org.jetbrains.mps.openapi.language.SProperty111;
+import org.jetbrains.mps.openapi.language.SProperty;
 import org.jetbrains.mps.openapi.language.SReferenceLinkId;
 
 /**
@@ -215,13 +215,13 @@ public interface SNode {
   /**
    * Retrieves keys of all properties. The returned collection is immutable.
    */
-  Iterable<SProperty111> getPropertyIds();
+  Iterable<SProperty> getPropertyIds();
 
-  boolean hasProperty(SProperty111 property);
+  boolean hasProperty(SProperty property);
 
-  String getProperty(SProperty111 property);
+  String getProperty(SProperty property);
 
-  void setProperty(SProperty111 property, String propertyValue);
+  void setProperty(SProperty property, String propertyValue);
 
   // user objects
 

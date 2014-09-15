@@ -8,7 +8,7 @@ import org.jetbrains.mps.openapi.language.SConceptId;
 import org.jetbrains.annotations.NotNull;
 import java.util.List;
 import jetbrains.mps.util.NameUtil;
-import org.jetbrains.mps.openapi.language.SProperty111;
+import org.jetbrains.mps.openapi.language.SProperty;
 import org.jetbrains.mps.openapi.language.SReferenceLink;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import jetbrains.mps.smodel.language.ConceptRegistry;
@@ -191,7 +191,7 @@ public class SAbstractConceptAdapter implements SAbstractConcept {
     if (!(d.hasProperty(name))) {
       return null;
     }
-    SProperty111 id = IdHelper.getPropId((jetbrains.mps.smodel.SNode) propNode);
+    SProperty id = IdHelper.getPropId((jetbrains.mps.smodel.SNode) propNode);
     return new SPropertyAdapter(id);
   }
 

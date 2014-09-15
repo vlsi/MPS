@@ -26,7 +26,7 @@ import jetbrains.mps.util.io.ModelInputStream;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.language.SConceptId;
 import org.jetbrains.mps.openapi.language.SContainmentLinkId;
-import org.jetbrains.mps.openapi.language.SProperty111;
+import org.jetbrains.mps.openapi.language.SProperty;
 import org.jetbrains.mps.openapi.language.SReferenceLinkId;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -158,7 +158,7 @@ public class NodesReader {
   protected void readProperties(ModelInputStream is, SNode node) throws IOException {
     int properties = is.readInt();
     for (; properties > 0; properties--) {
-      SProperty111 prop = SProperty111.deserialize(is.readString());
+      SProperty prop = SProperty.deserialize(is.readString());
       String value = is.readString();
       node.setProperty(prop, InternUtil.intern(value));
     }

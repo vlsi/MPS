@@ -24,7 +24,7 @@ import jetbrains.mps.smodel.adapter.SReferenceLinkAdapter;
 import org.jetbrains.mps.openapi.language.SConceptId;
 import org.jetbrains.mps.openapi.language.SContainmentLinkId;
 import org.jetbrains.mps.openapi.language.SLanguageId;
-import org.jetbrains.mps.openapi.language.SProperty111;
+import org.jetbrains.mps.openapi.language.SProperty;
 import org.jetbrains.mps.openapi.language.SReferenceLinkId;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeUtil;
@@ -138,7 +138,7 @@ public class DebugRegistryUtil implements CoreComponent {
     fillDebugRegistry();
   }
 
-  public static void getDebugInfoById(Iterable<SNode> rootNodes, Map<SConceptId, String> conceptIds, Map<SProperty111, String> propIds, Map<SReferenceLinkId, String> refIds, Map<SContainmentLinkId, String> roleIds) {
+  public static void getDebugInfoById(Iterable<SNode> rootNodes, Map<SConceptId, String> conceptIds, Map<SProperty, String> propIds, Map<SReferenceLinkId, String> refIds, Map<SContainmentLinkId, String> roleIds) {
     DebugRegistry debugRegistry = MPSModuleRepository.getInstance().getDebugRegistry();
     for (SNode root : rootNodes) {
       for (SNode n : SNodeUtil.getDescendants(root)) {
@@ -167,7 +167,7 @@ public class DebugRegistryUtil implements CoreComponent {
           roleIds.put(roleId, roleName);
         }
 
-        for (SProperty111 pid : n.getPropertyIds()) {
+        for (SProperty pid : n.getPropertyIds()) {
           SPropertyAdapter propId = new SPropertyAdapter(pid);
           SConceptId propConceptId = pid.getConcept();
           SNode propNode = propId.getPropertyNode();

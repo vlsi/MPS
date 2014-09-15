@@ -20,7 +20,7 @@ import jetbrains.mps.util.containers.BidirectionalMap;
 import org.jetbrains.mps.openapi.language.SAbstractLinkId;
 import org.jetbrains.mps.openapi.language.SConceptId;
 import org.jetbrains.mps.openapi.language.SLanguageId;
-import org.jetbrains.mps.openapi.language.SProperty111;
+import org.jetbrains.mps.openapi.language.SProperty;
 import org.jetbrains.mps.openapi.module.DebugRegistry;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 
@@ -31,7 +31,7 @@ public class DebugRegistryImpl implements DebugRegistry {
       new BidirectionalMap<org.jetbrains.mps.openapi.model.SModelReference, String>();
   private BidirectionalMap<SModuleReference, String> myModules = new BidirectionalMap<SModuleReference, String>();
 
-  private BidirectionalMap<SProperty111, Pair<SConceptId, String>> myProperties = new BidirectionalMap<SProperty111, Pair<SConceptId, String>>();
+  private BidirectionalMap<SProperty, Pair<SConceptId, String>> myProperties = new BidirectionalMap<SProperty, Pair<SConceptId, String>>();
   private BidirectionalMap<SAbstractLinkId, Pair<SConceptId, String>> myLinks = new BidirectionalMap<SAbstractLinkId, Pair<SConceptId, String>>();
   private BidirectionalMap<SConceptId, String> myConcepts = new BidirectionalMap<SConceptId, String>();
   private BidirectionalMap<SLanguageId, String> myLanguages = new BidirectionalMap<SLanguageId, String>();
@@ -47,7 +47,7 @@ public class DebugRegistryImpl implements DebugRegistry {
   }
 
   @Override
-  public synchronized String getPropertyName(SProperty111 propertyId) {
+  public synchronized String getPropertyName(SProperty propertyId) {
     Pair<SConceptId, String> pair = myProperties.get(propertyId);
     return pair == null ? null : pair.o2;
   }
@@ -79,7 +79,7 @@ public class DebugRegistryImpl implements DebugRegistry {
   }
 
   @Override
-  public synchronized void addPropertyName(SProperty111 propertyId, String name) {
+  public synchronized void addPropertyName(SProperty propertyId, String name) {
     myProperties.put(propertyId, new Pair<SConceptId, String>(propertyId.getConcept(), name));
   }
 
@@ -112,9 +112,9 @@ public class DebugRegistryImpl implements DebugRegistry {
     return ids.get(0);
   }
 
-  public synchronized SProperty111 getPropertyId(SConceptId conceptId, String name) {
+  public synchronized SProperty getPropertyId(SConceptId conceptId, String name) {
     //performance fix for "getProperty("name")"
-    List<SProperty111> ids = myProperties.getKeysByValue(new Pair<SConceptId, String>(conceptId,name));
+    List<SProperty> ids = myProperties.getKeysByValue(new Pair<SConceptId, String>(conceptId,name));
     if (ids == null || ids.isEmpty()) return null;
     return ids.get(0);
   }

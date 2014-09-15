@@ -6,7 +6,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodeId;
 import org.jetbrains.mps.openapi.language.SLanguageId;
 import jetbrains.mps.smodel.Language;
-import org.jetbrains.mps.openapi.language.SProperty111;
+import org.jetbrains.mps.openapi.language.SProperty;
 import org.jetbrains.mps.openapi.module.SModuleId;
 import jetbrains.mps.project.ModuleId;
 import org.jetbrains.mps.openapi.module.SModuleReference;
@@ -57,10 +57,10 @@ public class IdHelper {
     return new SReferenceLinkId(getConceptId(c.getContainingRoot()), id);
   }
 
-  public static SProperty111 getPropId(SNode c) {
+  public static SProperty getPropId(SNode c) {
     org.jetbrains.mps.openapi.model.SNodeId nodeId = c.getNodeId();
     assert nodeId instanceof SNodeId.Regular;
     long id = ((SNodeId.Regular) nodeId).getId();
-    return new SProperty111(getConceptId(c.getContainingRoot()), id);
+    return new SProperty(getConceptId(c.getContainingRoot()), id);
   }
 }

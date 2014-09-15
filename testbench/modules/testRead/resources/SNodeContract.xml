@@ -92,7 +92,7 @@
    <string>public abstract void org.jetbrains.mps.openapi.model.SNode.setProperty(java.lang.String,java.lang.String)</string> 
   </void> 
   <void method="add">
-   <string>public abstract void org.jetbrains.mps.openapi.model.SNode.setProperty(org.jetbrains.mps.openapi.language.SProperty111,java.lang.String)</string>
+   <string>public abstract void org.jetbrains.mps.openapi.model.SNode.setProperty(org.jetbrains.mps.openapi.language.SProperty,java.lang.String)</string>
   </void>
   <void method="add">
    <string>public abstract void org.jetbrains.mps.openapi.model.SNode.putUserObject(java.lang.Object,java.lang.Object)</string> 

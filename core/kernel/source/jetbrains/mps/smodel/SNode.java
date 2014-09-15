@@ -40,7 +40,7 @@ import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.language.SConceptId;
 import org.jetbrains.mps.openapi.language.SConceptRepository;
 import org.jetbrains.mps.openapi.language.SContainmentLinkId;
-import org.jetbrains.mps.openapi.language.SProperty111;
+import org.jetbrains.mps.openapi.language.SProperty;
 import org.jetbrains.mps.openapi.language.SReferenceLinkId;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 import org.jetbrains.mps.openapi.model.SNodeReference;
@@ -820,7 +820,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
   }
 
   @Override
-  public boolean hasProperty(SProperty111 property) {
+  public boolean hasProperty(SProperty property) {
     propertyRead(property);
     firePropertyReadAccessInEditor(property, true);
     String val = getProperty(property);
@@ -828,7 +828,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
   }
 
   @Override
-  public String getProperty(SProperty111 property) {
+  public String getProperty(SProperty property) {
     propertyRead(property);
     firePropertyReadAccessInEditor(property, false);
 
@@ -843,7 +843,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
   }
 
   @Override
-  public void setProperty(final SProperty111 property, String propertyValue) {
+  public void setProperty(final SProperty property, String propertyValue) {
     assertCanChange();
 
     propertyValue = InternUtil.intern(propertyValue);
@@ -870,12 +870,12 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
   }
 
   @Override
-  public Iterable<SProperty111> getPropertyIds() {
+  public Iterable<SProperty> getPropertyIds() {
     nodeRead();
 
     fireNodeReadAccess();
     fireNodeUnclassifiedReadAccess();
-    List<SProperty111> result = new ArrayList<SProperty111>(5);
+    List<SProperty> result = new ArrayList<SProperty>(5);
     if (workingMode() == IdMigrationMode.NAME) {
       if (myProperties == null) return result;
       for (int i = 0; i < myProperties.length; i += 2) {
@@ -884,7 +884,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
     } else {
       if (myNewProperties == null) return result;
       for (int i = 0; i < myNewProperties.length; i += 2) {
-        result.add((SProperty111) myNewProperties[i]);
+        result.add((SProperty) myNewProperties[i]);
       }
     }
     return result;
@@ -988,7 +988,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
   }
 
 
-  private int getPropertyIndex(SProperty111 id) {
+  private int getPropertyIndex(SProperty id) {
     if (workingMode() == IdMigrationMode.NAME) {
       return getPropertyIndex_byName(pid2name(id));
     } else {
@@ -1000,7 +1000,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
     referenceRead(rid2name(role));
   }
 
-  private void propertyRead(SProperty111 property) {
+  private void propertyRead(SProperty property) {
     propertyRead(pid2name(property));
   }
 
@@ -1009,7 +1009,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
     referenceChanged(rid2name(role), reference, newValue);
   }
 
-  private void propertyChanged(SProperty111 propertyName, String oldValue, String newValue) {
+  private void propertyChanged(SProperty propertyName, String oldValue, String newValue) {
     propertyChanged(pid2name(propertyName), oldValue, newValue);
   }
 
@@ -1018,7 +1018,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
     nodeAdded(lid2name(role), child);
   }
 
-  private void fireNodePropertyReadAccess(SProperty111 propertyName, String propertyValue) {
+  private void fireNodePropertyReadAccess(SProperty propertyName, String propertyValue) {
     fireNodePropertyReadAccess(pid2name(propertyName), propertyValue);
   }
 
@@ -1026,7 +1026,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
     fireNodeReferentReadAccess(rid2name(referentRole), referent);
   }
 
-  private void firePropertyReadAccessInEditor(SProperty111 propertyName, boolean propertyExistenceCheck) {
+  private void firePropertyReadAccessInEditor(SProperty propertyName, boolean propertyExistenceCheck) {
     firePropertyReadAccessInEditor(pid2name(propertyName), propertyExistenceCheck);
   }
 
@@ -1123,7 +1123,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
     if (workingMode() == IdMigrationMode.ID) {
       if (myNewProperties == null) return result;
       for (int i = 0; i < myNewProperties.length; i += 2) {
-        result.add(pid2name(((SProperty111) myNewProperties[i])));
+        result.add(pid2name(((SProperty) myNewProperties[i])));
       }
     } else {
       if (myProperties == null) return result;
@@ -1357,7 +1357,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
     return propertyValue;
   }
 
-  private String getProperty_byId(SProperty111 property) {
+  private String getProperty_byId(SProperty property) {
     String propertyValue = null;
     if (myNewProperties != null) {
       int index = getPropertyIndex(property);
@@ -1397,7 +1397,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
     return new Pair<Boolean, String>(true, oldValue);
   }
 
-  public Pair<Boolean, String> setProperty_byId(SProperty111 pname, String propertyValue) {
+  public Pair<Boolean, String> setProperty_byId(SProperty pname, String propertyValue) {
     int index = getPropertyIndex_byId(pname);
     final String oldValue = index == -1 ? null : (String) myNewProperties[index + 1];
     if (EqualUtil.equals(oldValue, propertyValue)) return new Pair<Boolean, String>(false, null);
@@ -1674,7 +1674,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
     return -1;
   }
 
-  private int getPropertyIndex_byId(SProperty111 id) {
+  private int getPropertyIndex_byId(SProperty id) {
     if (myNewProperties == null) return -1;
     for (int i = 0; i < myNewProperties.length; i += 2) {
       if (EqualUtil.equals(myNewProperties[i], id)) return i;
@@ -1875,12 +1875,12 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
     return IdUtil.getConceptFqName(cid);
   }
 
-  private SProperty111 name2pid(@NotNull String name) {
+  private SProperty name2pid(@NotNull String name) {
     DebugRegistryUtil.fillDebugInfo(myModel);
     return IdUtil.getPropId(getConceptId(), name);
   }
 
-  private String pid2name(@NotNull SProperty111 pid) {
+  private String pid2name(@NotNull SProperty pid) {
     DebugRegistryUtil.fillDebugInfo(myModel);
     return MPSModuleRepository.getInstance().getDebugRegistry().getPropertyName(pid);
   }
@@ -1917,7 +1917,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
       if (myRoleInParent == null && myRoleInParentId != null) {
         setRoleInParent(lid2name(getRoleInParentId()));
       }
-      for (SProperty111 prop : getPropertyIds()) {
+      for (SProperty prop : getPropertyIds()) {
         setProperty_byName(pid2name(prop), getProperty_byId(prop));
       }
       for (SReference ref : getReferences()) {

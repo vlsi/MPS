@@ -25,7 +25,7 @@ import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.util.io.ModelOutputStream;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.language.SContainmentLinkId;
-import org.jetbrains.mps.openapi.language.SProperty111;
+import org.jetbrains.mps.openapi.language.SProperty;
 import org.jetbrains.mps.openapi.model.SModelId;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -145,12 +145,12 @@ public class NodesWriter {
   }
 
   protected void writeProperties(SNode node, ModelOutputStream os) throws IOException {
-    final Map<SProperty111, String> properties = new HashMap<SProperty111, String>();
-    for (SProperty111 id : node.getPropertyIds()) {
+    final Map<SProperty, String> properties = new HashMap<SProperty, String>();
+    for (SProperty id : node.getPropertyIds()) {
       properties.put(id, node.getProperty(id));
     }
     os.writeInt(properties.size());
-    for (Entry<SProperty111, String> entry : properties.entrySet()) {
+    for (Entry<SProperty, String> entry : properties.entrySet()) {
       os.writeString(entry.getKey().serialize());
       os.writeString(entry.getValue());
     }

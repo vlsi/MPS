@@ -37,7 +37,7 @@ import org.jdom.Element;
 import org.jetbrains.mps.openapi.language.SConceptId;
 import org.jetbrains.mps.openapi.language.SContainmentLinkId;
 import org.jetbrains.mps.openapi.language.SLanguageId;
-import org.jetbrains.mps.openapi.language.SProperty111;
+import org.jetbrains.mps.openapi.language.SProperty;
 import org.jetbrains.mps.openapi.language.SReferenceLinkId;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -138,7 +138,7 @@ public class ModelWriter9 implements IModelWriter {
 
     //save concepts info
     Map<SConceptId, String> conceptIds = new HashMap<SConceptId, String>();
-    Map<SProperty111, String> propIds = new HashMap<SProperty111, String>();
+    Map<SProperty, String> propIds = new HashMap<SProperty, String>();
     Map<SReferenceLinkId, String> refIds = new HashMap<SReferenceLinkId, String>();
     Map<SContainmentLinkId, String> roleIds = new HashMap<SContainmentLinkId, String>();
 
@@ -153,7 +153,7 @@ public class ModelWriter9 implements IModelWriter {
     }
 
     // write properties
-    for (Entry<SProperty111, String> e : propIds.entrySet()) {
+    for (Entry<SProperty, String> e : propIds.entrySet()) {
       Element langElement = new Element(ModelPersistence9.DEBUG_INFO_PROP);
       langElement.setAttribute(ModelPersistence9.ID, e.getKey().serialize());
       langElement.setAttribute(ModelPersistence9.DEBUG_INFO_NAME, e.getValue());
@@ -264,7 +264,7 @@ public class ModelWriter9 implements IModelWriter {
     String info = Util9.genNodeInfo(PersistenceRegistry.getInstance().getModelEnvironmentInfo(), node);
     DocUtil.setNotNullAttribute(nodeElement, ModelPersistence9.NODE_INFO, info);
 
-    for (SProperty111 pid : node.getPropertyIds()) {
+    for (SProperty pid : node.getPropertyIds()) {
       Element propertyElement = new Element(ModelPersistence9.PROPERTY);
       propertyElement.setAttribute(ModelPersistence9.ROLE_ID, myHelper.getPropertyIndex(pid));
       DocUtil.setNotNullAttribute(propertyElement, ModelPersistence9.VALUE, node.getProperty(pid));
