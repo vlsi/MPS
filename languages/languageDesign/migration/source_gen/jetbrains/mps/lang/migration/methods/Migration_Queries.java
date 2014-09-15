@@ -44,8 +44,8 @@ public class Migration_Queries {
     m.addModelImport(SModelRepository.getInstance().getModelDescriptor("jetbrains.mps.smodel.adapter").getReference(), true);
     mod.addDependency(ModuleRepositoryFacade.getInstance().getModule(PersistenceFacade.getInstance().createModuleReference("2d3c70e9-aab2-4870-8d8d-6036800e4103(jetbrains.mps.kernel)")).getModuleReference(), false);
   }
-  public static SNode execute_ret(SNode ti) {
-    SNode typeNode = MigrationScript_Behavior.call_getProducedData_8585153554445933384(SNodeOperations.getAncestor(ti, "jetbrains.mps.lang.migration.structure.MigrationScript", false, false));
+  public static SNode execute_ret(SNode point) {
+    SNode typeNode = MigrationScript_Behavior.call_getProducedData_8585153554445933384(SNodeOperations.getAncestor(point, "jetbrains.mps.lang.migration.structure.MigrationScript", false, false));
     return (typeNode == null ? _quotation_createNode_9iwezb_a0b0a0f() : _quotation_createNode_9iwezb_a0b0a0f_0(typeNode));
   }
   private static SNode _quotation_createNode_9iwezb_a0b0a0f() {

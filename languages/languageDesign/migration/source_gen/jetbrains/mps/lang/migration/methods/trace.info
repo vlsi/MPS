@@ -29,8 +29,8 @@
       <node id="3932724607435508614" at="42,206,43,0" concept="5" />
       <node id="3932724607434507922" at="43,0,44,125" concept="1" />
       <node id="3932724607435531143" at="44,125,45,215" concept="1" />
-      <node id="5387853834548099817" at="47,45,48,192" concept="3" />
-      <node id="5387853834548101029" at="48,192,49,122" concept="4" />
+      <node id="5387853834548099817" at="47,48,48,195" concept="3" />
+      <node id="5387853834548101029" at="48,195,49,122" concept="4" />
       <node id="5387853834548107622" at="51,63,52,63" concept="3" />
       <node id="5387853834548107622" at="52,63,53,30" concept="3" />
       <node id="5387853834548107622" at="53,30,54,132" concept="0" />
@@ -50,7 +50,7 @@
       <node id="5387853834548063137" at="57,0,64,0" concept="6" trace="_quotation_createNode_9iwezb_a0b0a0f_0#(Ljava/lang/Object;)Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="2260648088429212842" at="23,0,47,0" concept="6" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <scope id="5387853834548107622" at="53,30,54,132" />
-      <scope id="5387853834548062864" at="47,45,49,122">
+      <scope id="5387853834548062864" at="47,48,49,122">
         <var name="typeNode" id="5387853834548099818" />
       </scope>
       <scope id="5387853834548063137" at="59,30,61,85" />
@@ -58,7 +58,7 @@
         <var name="currentVersion" id="894677141330371558" />
       </scope>
       <scope id="2260648088429212842" at="47,0,51,0">
-        <var name="ti" id="5387853834548062903" />
+        <var name="point" id="5387853834548062903" />
       </scope>
       <scope id="5387853834548107622" at="51,63,55,24">
         <var name="facade" id="5387853834548107622" />

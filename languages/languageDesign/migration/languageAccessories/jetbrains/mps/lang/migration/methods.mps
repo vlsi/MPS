@@ -232,7 +232,7 @@
                   <node concept="vg0i.1197027756228" id="5387853834548099821" role="vg0i.1068431474542.1068431790190" info="nn">
                     <node concept="vg0i.1197027756228" id="5387853834548099822" role="vg0i.1197027756228.1197027771414" info="nn">
                       <node concept="vg0i.1068498886296" id="5387853834548099823" role="vg0i.1197027756228.1197027771414" info="nn">
-                        <reference role="vg0i.1068498886296.1068581517664" target="5387853834548062903" resolveInfo="ti" />
+                        <reference role="vg0i.1068498886296.1068581517664" target="5387853834548062903" resolveInfo="point" />
                       </node>
                       <node concept="4ia1.1171407110247" id="5387853834548099824" role="vg0i.1197027756228.1197027833540" info="nn">
                         <node concept="4ia1.1144101972840" id="5387853834548099825" role="4ia1.1138411891628.1144104376918" info="ng">
@@ -274,10 +274,8 @@
               </node>
             </node>
             <node concept="vg0i.1068498886292" id="5387853834548062903" role="cakq.1199569711397.1199569906740" info="ir">
-              <property role="asn4.1169194658468.1169194664001" value="ti" />
-              <node concept="4ia1.1138055754698" id="5387853834548062902" role="vg0i.4972933694980447171.5680397130376446158" info="in">
-                <reference role="4ia1.1138055754698.1138405853777" target="oubp.3751132065236767083" resolveInfo="DependentTypeInstance" />
-              </node>
+              <property role="asn4.1169194658468.1169194664001" value="point" />
+              <node concept="4ia1.1138055754698" id="5387853834548062902" role="vg0i.4972933694980447171.5680397130376446158" info="in" />
             </node>
           </node>
         </node>
