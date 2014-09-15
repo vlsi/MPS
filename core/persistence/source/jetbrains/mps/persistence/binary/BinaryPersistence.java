@@ -38,7 +38,7 @@ import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SConceptId;
 import org.jetbrains.mps.openapi.language.SContainmentLinkId;
 import org.jetbrains.mps.openapi.language.SLanguageId;
-import org.jetbrains.mps.openapi.language.SPropertyId;
+import org.jetbrains.mps.openapi.language.SProperty111;
 import org.jetbrains.mps.openapi.language.SReferenceLinkId;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -189,7 +189,7 @@ public class BinaryPersistence {
     // write properties
     int propertiesSize = is.readInt();
     for (int i = 0; i < propertiesSize; i++) {
-      debugRegistry.addPropertyName(SPropertyId.deserialize(is.readString()), is.readString());
+      debugRegistry.addPropertyName(SProperty111.deserialize(is.readString()), is.readString());
     }
 
     // write reference roles
@@ -297,7 +297,7 @@ public class BinaryPersistence {
 
     //save concepts info
     Map<SConceptId, String> conceptIds = new HashMap<SConceptId, String>();
-    Map<SPropertyId, String> propIds = new HashMap<SPropertyId, String>();
+    Map<SProperty111, String> propIds = new HashMap<SProperty111, String>();
     Map<SReferenceLinkId, String> refIds = new HashMap<SReferenceLinkId, String>();
     Map<SContainmentLinkId, String> roleIds = new HashMap<SContainmentLinkId, String>();
 
@@ -312,7 +312,7 @@ public class BinaryPersistence {
 
     // write properties
     os.writeInt(propIds.size());
-    for (Entry<SPropertyId, String> e : propIds.entrySet()) {
+    for (Entry<SProperty111, String> e : propIds.entrySet()) {
       os.writeString(e.getKey().serialize());
       os.writeString(e.getValue());
     }

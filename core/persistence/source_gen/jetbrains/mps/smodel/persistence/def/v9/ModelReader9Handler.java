@@ -5,6 +5,8 @@ package jetbrains.mps.smodel.persistence.def.v9;
 import jetbrains.mps.util.xml.XMLSAXHandler;
 import jetbrains.mps.smodel.loading.ModelLoadResult;
 import java.util.Stack;
+
+import org.jetbrains.mps.openapi.language.SProperty111;
 import org.xml.sax.Locator;
 import jetbrains.mps.smodel.SModelHeader;
 import jetbrains.mps.smodel.DefaultSModel;
@@ -17,7 +19,6 @@ import jetbrains.mps.smodel.loading.ModelLoadingState;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import org.jetbrains.mps.openapi.language.SLanguageId;
 import org.jetbrains.mps.openapi.language.SConceptId;
-import org.jetbrains.mps.openapi.language.SPropertyId;
 import org.jetbrains.mps.openapi.language.SReferenceLinkId;
 import org.jetbrains.mps.openapi.language.SContainmentLinkId;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
@@ -329,7 +330,7 @@ public class ModelReader9Handler extends XMLSAXHandler<ModelLoadResult> {
     }
     @Override
     protected Object createObject(Attributes attrs) throws SAXException {
-      MPSModuleRepository.getInstance().getDebugRegistry().addPropertyName(SPropertyId.deserialize(attrs.getValue("id")), attrs.getValue("name"));
+      MPSModuleRepository.getInstance().getDebugRegistry().addPropertyName(SProperty111.deserialize(attrs.getValue("id")), attrs.getValue("name"));
       return null;
     }
     @Override
@@ -683,7 +684,7 @@ public class ModelReader9Handler extends XMLSAXHandler<ModelLoadResult> {
     }
     private void handleChild_7167172773708890516(Object resultObject, Object value) throws SAXException {
       Tuples._2<SNode, SContainmentLinkId> result = (Tuples._2<SNode, SContainmentLinkId>) resultObject;
-      Tuples._2<SPropertyId, String> child = (Tuples._2<SPropertyId, String>) value;
+      Tuples._2<SProperty111, String> child = (Tuples._2<SProperty111, String>) value;
       result._0().setProperty(child._0(), child._1());
     }
     private void handleChild_7167172773708890553(Object resultObject, Object value) throws SAXException {
@@ -721,8 +722,8 @@ public class ModelReader9Handler extends XMLSAXHandler<ModelLoadResult> {
     public PropertyElementHandler() {
     }
     @Override
-    protected Tuples._2<SPropertyId, String> createObject(Attributes attrs) throws SAXException {
-      return MultiTuple.<SPropertyId,String>from(fieldhelper.readPropId(attrs.getValue("role")), attrs.getValue("value"));
+    protected Tuples._2<SProperty111, String> createObject(Attributes attrs) throws SAXException {
+      return MultiTuple.<SProperty111,String>from(fieldhelper.readPropId(attrs.getValue("role")), attrs.getValue("value"));
     }
     @Override
     protected String[] requiredAttributes() {
@@ -730,7 +731,7 @@ public class ModelReader9Handler extends XMLSAXHandler<ModelLoadResult> {
     }
     @Override
     protected void handleAttribute(Object resultObject, String name, String value) throws SAXException {
-      Tuples._2<SPropertyId, String> result = (Tuples._2<SPropertyId, String>) resultObject;
+      Tuples._2<SProperty111, String> result = (Tuples._2<SProperty111, String>) resultObject;
       if ("role".equals(name)) {
         return;
       }

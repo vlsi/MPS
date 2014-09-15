@@ -18,8 +18,7 @@ package org.jetbrains.mps.openapi.module;
 import org.jetbrains.mps.openapi.language.SAbstractLinkId;
 import org.jetbrains.mps.openapi.language.SConceptId;
 import org.jetbrains.mps.openapi.language.SLanguageId;
-import org.jetbrains.mps.openapi.language.SPropertyId;
-import org.jetbrains.mps.openapi.model.SModelId;
+import org.jetbrains.mps.openapi.language.SProperty111;
 import org.jetbrains.mps.openapi.model.SModelReference;
 
 public interface DebugRegistry {
@@ -27,7 +26,7 @@ public interface DebugRegistry {
 
   String getModuleName(SModuleReference module);
 
-  String getPropertyName(SPropertyId propertyId);
+  String getPropertyName(SProperty111 propertyId);
 
   String getLinkName(SAbstractLinkId linkId);
 
@@ -39,7 +38,7 @@ public interface DebugRegistry {
 
   void addModuleName(SModuleReference module, String name);
 
-  void addPropertyName(SPropertyId propertyId, String name);
+  void addPropertyName(SProperty111 propertyId, String name);
 
   void addLinkName(SAbstractLinkId linkId, String name);
 

@@ -8,6 +8,7 @@ import org.jetbrains.mps.openapi.language.SConceptId;
 import org.jetbrains.annotations.NotNull;
 import java.util.List;
 import jetbrains.mps.util.NameUtil;
+import org.jetbrains.mps.openapi.language.SProperty111;
 import org.jetbrains.mps.openapi.language.SReferenceLink;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import jetbrains.mps.smodel.language.ConceptRegistry;
@@ -22,7 +23,6 @@ import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.language.SAbstractLink;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import org.jetbrains.mps.openapi.language.SProperty;
-import org.jetbrains.mps.openapi.language.SPropertyId;
 import org.jetbrains.mps.openapi.language.SLanguage;
 import java.util.HashSet;
 import org.apache.log4j.Level;
@@ -191,7 +191,7 @@ public class SAbstractConceptAdapter implements SAbstractConcept {
     if (!(d.hasProperty(name))) {
       return null;
     }
-    SPropertyId id = IdHelper.getPropId((jetbrains.mps.smodel.SNode) propNode);
+    SProperty111 id = IdHelper.getPropId((jetbrains.mps.smodel.SNode) propNode);
     return new SPropertyAdapter(id);
   }
 

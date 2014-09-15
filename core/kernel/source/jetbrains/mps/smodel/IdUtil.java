@@ -23,8 +23,7 @@ import org.jetbrains.mps.openapi.language.SConceptId;
 import org.jetbrains.mps.openapi.language.SConceptUtil;
 import org.jetbrains.mps.openapi.language.SContainmentLinkId;
 import org.jetbrains.mps.openapi.language.SLanguageId;
-import org.jetbrains.mps.openapi.language.SPropertyId;
-import org.jetbrains.mps.openapi.language.SReferenceLink;
+import org.jetbrains.mps.openapi.language.SProperty111;
 import org.jetbrains.mps.openapi.language.SReferenceLinkId;
 import org.jetbrains.mps.openapi.module.DebugRegistry;
 
@@ -38,7 +37,7 @@ import java.util.UUID;
 
 public abstract class IdUtil {
 
-  public static final SPropertyId UNKNOWN_PROPERTY_ID = new SPropertyId(new SConceptId(new SLanguageId(new UUID(0, 0)), 0), 0);
+  public static final SProperty111 UNKNOWN_PROPERTY_ID = new SProperty111(new SConceptId(new SLanguageId(new UUID(0, 0)), 0), 0);
   public static final SReferenceLinkId UNKNOWN_REFERENCE_ID = new SReferenceLinkId(new SConceptId(new SLanguageId(new UUID(0, 0)), 0), 0);
   public static final SContainmentLinkId UNKNOWN_LINK_ID = new SContainmentLinkId(new SConceptId(new SLanguageId(new UUID(0, 0)), 0), 0);
 
@@ -60,8 +59,8 @@ public abstract class IdUtil {
   }
 
   //finds property id given its name and an inheritor of an original concept
-  public static SPropertyId getPropId(SConceptId id, String propName) {
-    SPropertyId pid = ((DebugRegistryImpl) MPSModuleRepository.getInstance().getDebugRegistry()).getPropertyId(id, propName);
+  public static SProperty111 getPropId(SConceptId id, String propName) {
+    SProperty111 pid = ((DebugRegistryImpl) MPSModuleRepository.getInstance().getDebugRegistry()).getPropertyId(id, propName);
     if (pid != null) return pid;
 
     // this hack is needed until SConcept works by name

@@ -24,7 +24,7 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.language.SConceptId;
 import org.jetbrains.mps.openapi.language.SContainmentLinkId;
 import org.jetbrains.mps.openapi.language.SLanguageId;
-import org.jetbrains.mps.openapi.language.SPropertyId;
+import org.jetbrains.mps.openapi.language.SProperty111;
 import org.jetbrains.mps.openapi.language.SReferenceLinkId;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SReference;
@@ -83,7 +83,7 @@ public class StorageIndexHelper9 {
     return index + MODEL_SEPARATOR_CHAR + concept.getConceptId();
   }
 
-  public String getPropertyIndex(@NotNull SPropertyId prop) {
+  public String getPropertyIndex(@NotNull SProperty111 prop) {
     return getConceptIndex(prop.getConcept()) + MODEL_SEPARATOR_CHAR + prop.getPropertyId();
   }
 

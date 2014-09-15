@@ -594,7 +594,7 @@
    <int>0</int>
   </void>
   <void method="put">
-   <string>public void jetbrains.mps.smodel.SNode.setProperty(org.jetbrains.mps.openapi.language.SPropertyId,java.lang.String)</string>
+   <string>public void jetbrains.mps.smodel.SNode.setProperty(org.jetbrains.mps.openapi.language.SProperty111,java.lang.String)</string>
    <int>0</int>
   </void>
   <void method="put">

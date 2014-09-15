@@ -46,7 +46,7 @@ import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SConceptId;
 import org.jetbrains.mps.openapi.language.SContainmentLinkId;
 import org.jetbrains.mps.openapi.language.SLanguageId;
-import org.jetbrains.mps.openapi.language.SPropertyId;
+import org.jetbrains.mps.openapi.language.SProperty111;
 import org.jetbrains.mps.openapi.model.EditableSModel;
 import org.jetbrains.mps.openapi.model.SModelId;
 import org.jetbrains.mps.openapi.model.SModelReference;
@@ -604,7 +604,7 @@ public class SModel implements SModelData {
           SContainmentLinkId roleId = n.getRoleInParentId();
           myUsedLanguages.add(roleId.getConceptId().getLanguageId());
         }
-        for (SPropertyId pid : n.getPropertyIds()) {
+        for (SProperty111 pid : n.getPropertyIds()) {
           myUsedLanguages.add(pid.getConcept().getLanguageId());
         }
 

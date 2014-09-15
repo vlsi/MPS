@@ -11,6 +11,7 @@ import org.apache.log4j.Level;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.smodel.DebugRegistryUtil;
+import org.jetbrains.mps.openapi.language.SProperty111;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.DefaultSModelDescriptor;
@@ -33,7 +34,6 @@ import org.jetbrains.mps.openapi.language.SReferenceLinkId;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
-import org.jetbrains.mps.openapi.language.SPropertyId;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.smodel.LazySModel;
 import org.apache.log4j.Logger;
@@ -131,7 +131,7 @@ public class MigrateIds_Action extends BaseAction {
               Set<String> propNames = ((jetbrains.mps.smodel.SNode) node).getPropertyNames();
               SetSequence.fromSet(propNames).visitAll(new IVisitor<String>() {
                 public void visit(String pName) {
-                  SPropertyId pid = IdHelper.getPropId((jetbrains.mps.smodel.SNode) (SNode) BehaviorReflection.invokeNonVirtual((Class<SNode>) ((Class) Object.class), ((SNode) SNodeOperations.getConceptDeclaration(node)), "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration", "call_findPropertyDeclaration_1219835742593", new Object[]{pName}));
+                  SProperty111 pid = IdHelper.getPropId((jetbrains.mps.smodel.SNode) (SNode) BehaviorReflection.invokeNonVirtual((Class<SNode>) ((Class) Object.class), ((SNode) SNodeOperations.getConceptDeclaration(node)), "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration", "call_findPropertyDeclaration_1219835742593", new Object[]{pName}));
                   ((jetbrains.mps.smodel.SNode) node).setProperty_byId(pid, ((jetbrains.mps.smodel.SNode) node).getProperty(pName));
                 }
               });
