@@ -141,10 +141,6 @@
       <implementation-class>jetbrains.mps.ide.generator.TransientModelsComponent</implementation-class>
     </component>
     <component>
-      <implementation-class>jetbrains.mps.workbench.dialogs.project.properties.project.ProjectPropertiesPrefsPage
-      </implementation-class>
-    </component>
-    <component>
       <implementation-class>jetbrains.mps.ide.findusages.view.optionseditor.DefaultSearchOptionsComponent
       </implementation-class>
       <skipForDummyProject/>
@@ -212,5 +208,8 @@
       <implementation-class>jetbrains.mps.ide.make.StartupModuleMaker</implementation-class>
     </component>
   </project-components>
+  <extensions>
+    <projectConfigurable instance="jetbrains.mps.workbench.dialogs.project.properties.project.ProjectPropertiesPrefsPage" id="project.options.prefs.page" nonDefaultProject="true"/>
+  </extensions>
 
 </components>
