@@ -169,7 +169,7 @@ public class DebugRegistryUtil implements CoreComponent {
 
         for (SPropertyId pid : n.getPropertyIds()) {
           SPropertyAdapter propId = new SPropertyAdapter(pid);
-          SConceptId propConceptId = pid.getConceptId();
+          SConceptId propConceptId = pid.getConcept();
           SNode propNode = propId.getPropertyNode();
           String propName;
           if (propNode != null) {

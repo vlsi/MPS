@@ -605,7 +605,7 @@ public class SModel implements SModelData {
           myUsedLanguages.add(roleId.getConceptId().getLanguageId());
         }
         for (SPropertyId pid : n.getPropertyIds()) {
-          myUsedLanguages.add(pid.getConceptId().getLanguageId());
+          myUsedLanguages.add(pid.getConcept().getLanguageId());
         }
 
         for (SReference ref : n.getReferences()) {

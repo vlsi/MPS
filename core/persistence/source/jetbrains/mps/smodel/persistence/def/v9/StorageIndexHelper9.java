@@ -15,28 +15,18 @@
  */
 package jetbrains.mps.smodel.persistence.def.v9;
 
-import jetbrains.mps.RuntimeFlags;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.persistence.ModelEnvironmentInfo;
-import jetbrains.mps.persistence.PersistenceRegistry;
 import jetbrains.mps.smodel.StaticReference;
 import jetbrains.mps.smodel.persistence.def.v7.WriteHelper;
-import jetbrains.mps.smodel.runtime.ConceptKind;
-import jetbrains.mps.smodel.runtime.StaticScope;
 import org.apache.log4j.Level;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.language.SConceptId;
 import org.jetbrains.mps.openapi.language.SContainmentLinkId;
-import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.language.SLanguageId;
 import org.jetbrains.mps.openapi.language.SPropertyId;
 import org.jetbrains.mps.openapi.language.SReferenceLinkId;
 import org.jetbrains.mps.openapi.model.SModelReference;
-import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.model.SReference;
 
 import java.util.HashMap;
@@ -94,7 +84,7 @@ public class StorageIndexHelper9 {
   }
 
   public String getPropertyIndex(@NotNull SPropertyId prop) {
-    return getConceptIndex(prop.getConceptId()) + MODEL_SEPARATOR_CHAR + prop.getPropertyId();
+    return getConceptIndex(prop.getConcept()) + MODEL_SEPARATOR_CHAR + prop.getPropertyId();
   }
 
   public String getNodeRoleIndex(@NotNull SContainmentLinkId linkId) {

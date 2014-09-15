@@ -80,7 +80,7 @@ public class DebugRegistryImpl implements DebugRegistry {
 
   @Override
   public synchronized void addPropertyName(SPropertyId propertyId, String name) {
-    myProperties.put(propertyId, new Pair<SConceptId, String>(propertyId.getConceptId(), name));
+    myProperties.put(propertyId, new Pair<SConceptId, String>(propertyId.getConcept(), name));
   }
 
   @Override
