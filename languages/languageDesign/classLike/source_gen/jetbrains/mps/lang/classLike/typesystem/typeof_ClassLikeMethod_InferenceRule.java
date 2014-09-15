@@ -30,12 +30,18 @@ public class typeof_ClassLikeMethod_InferenceRule extends AbstractInferenceRule_
         if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(classLikeMethod, "decl", false), "param", true)).getElement(i), "type", true), "jetbrains.mps.lang.classLike.structure.DependentTypeDeclaration")) {
           error |= !(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(ListSequence.fromList(SLinkOperations.getTargets(classLikeMethod, "parameter", true)).getElement(i), "type", true), "jetbrains.mps.lang.classLike.structure.DependentTypeInstance") && SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(ListSequence.fromList(SLinkOperations.getTargets(classLikeMethod, "parameter", true)).getElement(i), "type", true), "jetbrains.mps.lang.classLike.structure.DependentTypeInstance"), "decl", false) == SLinkOperations.getTarget(ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(classLikeMethod, "decl", false), "param", true)).getElement(i), "type", true));
         } else {
-          error |= !(MatchingUtil.matchNodes(SLinkOperations.getTarget(ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(classLikeMethod, "decl", false), "param", true)).getElement(i), "type", true), SLinkOperations.getTarget(ListSequence.fromList(SLinkOperations.getTargets(classLikeMethod, "parameter", true)).getElement(i), "type", true)));
+          error |= !(MatchingUtil.matchNodes(SLinkOperations.getTarget(ListSequence.fromList(SLinkOperations.getTargets(classLikeMethod, "parameter", true)).getElement(i), "type", true), SLinkOperations.getTarget(ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(classLikeMethod, "decl", false), "param", true)).getElement(i), "type", true)));
         }
         error |= neq_w6mbdo_a0a1a0a2a1(SPropertyOperations.getString(ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(classLikeMethod, "decl", false), "param", true)).getElement(i), "name"), SPropertyOperations.getString(ListSequence.fromList(SLinkOperations.getTargets(classLikeMethod, "parameter", true)).getElement(i), "name"));
       }
     } else {
       error = true;
+    }
+
+    if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SLinkOperations.getTarget(classLikeMethod, "decl", false), "retType", true), "jetbrains.mps.lang.classLike.structure.DependentTypeDeclaration")) {
+      error |= !(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(classLikeMethod, "returnType", true), "jetbrains.mps.lang.classLike.structure.DependentTypeInstance") && SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(classLikeMethod, "returnType", true), "jetbrains.mps.lang.classLike.structure.DependentTypeInstance"), "decl", false) == SLinkOperations.getTarget(SLinkOperations.getTarget(classLikeMethod, "decl", false), "retType", true));
+    } else {
+      error |= !(MatchingUtil.matchNodes(SLinkOperations.getTarget(classLikeMethod, "returnType", true), SLinkOperations.getTarget(SLinkOperations.getTarget(classLikeMethod, "decl", false), "retType", true)));
     }
 
     if (error) {
