@@ -905,10 +905,10 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
     Map<SLanguage, Integer> oldLanguageVersions = getModuleDescriptor().getLanguageVersions();
     Map<SLanguage, Integer> newLanguageVersions = new HashMap<SLanguage, Integer>();
     for (SLanguage lang : getAllUsedLanguages()) {
-      if (oldLanguageVersions.containsKey(lang.getId())) {
-        newLanguageVersions.put(lang.getId(), oldLanguageVersions.get(lang.getId()));
+      if (oldLanguageVersions.containsKey(lang)) {
+        newLanguageVersions.put(lang, oldLanguageVersions.get(lang));
       } else {
-        newLanguageVersions.put(lang.getId(), lang.getLanguageVersion());
+        newLanguageVersions.put(lang, lang.getLanguageVersion());
       }
     }
     oldLanguageVersions.clear();

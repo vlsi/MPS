@@ -4,6 +4,11 @@ package jetbrains.mps.smodel.adapter;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodeId;
+import jetbrains.mps.smodel.ids.SConceptId;
+import jetbrains.mps.smodel.ids.SContainmentLinkId;
+import jetbrains.mps.smodel.ids.SLanguageId;
+import jetbrains.mps.smodel.ids.SPropertyId;
+import jetbrains.mps.smodel.ids.SReferenceLinkId;
 import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.language.SLanguage;
@@ -23,44 +28,44 @@ public class IdHelper {
     return ((SNodeId.Regular) node.getNodeId()).getId();
   }
 
-  public static SLanguage getLanguageId(Language l) {
+  public static SLanguageId getLanguageId(Language l) {
     return getLanguageId(l.getModuleReference().getModuleId());
   }
 
-  public static SLanguage getLanguageId(SModuleId moduleId) {
+  public static SLanguageId getLanguageId(SModuleId moduleId) {
     assert moduleId instanceof ModuleId.Regular;
-    return new SLanguage(((ModuleId.Regular) moduleId).getUUID());
+    return new SLanguageId(((ModuleId.Regular) moduleId).getUUID());
   }
 
-  public static SModuleReference getModuleReference(SLanguage id) {
+  public static SModuleReference getModuleReference(SLanguageId id) {
     return new ModuleReference(null, ModuleId.regular(id.getId()));
   }
 
-  public static SConcept getConceptId(SNode c) {
+  public static SConceptId getConceptId(SNode c) {
     org.jetbrains.mps.openapi.model.SNodeId nodeId = c.getNodeId();
     assert nodeId instanceof SNodeId.Regular;
     long id = ((SNodeId.Regular) nodeId).getId();
-    return new SConcept(getLanguageId(((Language) c.getModel().getModule())), id);
+    return new SConceptId(getLanguageId(((Language) c.getModel().getModule())), id);
   }
 
-  public static SContainmentLink getNodeRoleId(SNode c) {
+  public static SContainmentLinkId getNodeRoleId(SNode c) {
     org.jetbrains.mps.openapi.model.SNodeId nodeId = c.getNodeId();
     assert nodeId instanceof SNodeId.Regular;
     long id = ((SNodeId.Regular) nodeId).getId();
-    return new SContainmentLink(getConceptId(c.getContainingRoot()), id);
+    return new SContainmentLinkId(getConceptId(c.getContainingRoot()), id);
   }
 
-  public static SReferenceLink getRefRoleId(SNode c) {
+  public static SReferenceLinkId getRefRoleId(SNode c) {
     org.jetbrains.mps.openapi.model.SNodeId nodeId = c.getNodeId();
     assert nodeId instanceof SNodeId.Regular;
     long id = ((SNodeId.Regular) nodeId).getId();
-    return new SReferenceLink(getConceptId(c.getContainingRoot()), id);
+    return new SReferenceLinkId(getConceptId(c.getContainingRoot()), id);
   }
 
-  public static SProperty getPropId(SNode c) {
+  public static SPropertyId getPropId(SNode c) {
     org.jetbrains.mps.openapi.model.SNodeId nodeId = c.getNodeId();
     assert nodeId instanceof SNodeId.Regular;
     long id = ((SNodeId.Regular) nodeId).getId();
-    return new SProperty(getConceptId(c.getContainingRoot()), id);
+    return new SPropertyId(getConceptId(c.getContainingRoot()), id);
   }
 }

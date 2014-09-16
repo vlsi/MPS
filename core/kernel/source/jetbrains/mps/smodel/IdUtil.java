@@ -16,6 +16,12 @@
 package jetbrains.mps.smodel;
 
 import jetbrains.mps.smodel.adapter.SConceptAdapter;
+import jetbrains.mps.smodel.adapter.SLanguageAdapter;
+import jetbrains.mps.smodel.ids.SConceptId;
+import jetbrains.mps.smodel.ids.SContainmentLinkId;
+import jetbrains.mps.smodel.ids.SLanguageId;
+import jetbrains.mps.smodel.ids.SPropertyId;
+import jetbrains.mps.smodel.ids.SReferenceLinkId;
 import jetbrains.mps.util.NameUtil;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SAbstractLink;
@@ -37,14 +43,14 @@ import java.util.UUID;
 
 public abstract class IdUtil {
 
-  public static final SProperty UNKNOWN_PROPERTY_ID = new SProperty(new SConcept(new SLanguage(new UUID(0, 0)), 0), 0);
-  public static final SReferenceLink UNKNOWN_REFERENCE_ID = new SReferenceLink(new SConcept(new SLanguage(new UUID(0, 0)), 0), 0);
-  public static final SContainmentLink UNKNOWN_LINK_ID = new SContainmentLink(new SConcept(new SLanguage(new UUID(0, 0)), 0), 0);
+  public static final SPropertyId UNKNOWN_PROPERTY_ID = new SPropertyId(new SConceptId(new SLanguageId(new UUID(0, 0)), 0), 0);
+  public static final SReferenceLinkId UNKNOWN_REFERENCE_ID = new SReferenceLinkId(new SConceptId(new SLanguageId(new UUID(0, 0)), 0), 0);
+  public static final SContainmentLinkId UNKNOWN_LINK_ID = new SContainmentLinkId(new SConceptId(new SLanguageId(new UUID(0, 0)), 0), 0);
 
-  public static String getConceptFqName(SConcept id) {
+  public static String getConceptFqName(SConceptId id) {
     DebugRegistry dr = MPSModuleRepository.getInstance().getDebugRegistry();
-    String languageName = dr.getLanguageName(id.getLanguage());
-    String conceptName = dr.getConceptName(id);
+    String languageName = dr.getLanguageName(new SLanguageAdapter(id.getLanguageId()));
+    String conceptName = dr.getConceptName(new SConceptAdapter(id));
     if (languageName == null || conceptName == null) {
       return null;
     }
