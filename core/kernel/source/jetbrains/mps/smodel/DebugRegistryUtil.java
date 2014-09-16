@@ -22,7 +22,7 @@ import jetbrains.mps.smodel.adapter.SContainmentLinkAdapter;
 import jetbrains.mps.smodel.adapter.SPropertyAdapter;
 import jetbrains.mps.smodel.adapter.SReferenceLinkAdapter;
 import org.jetbrains.mps.openapi.language.SConceptId;
-import org.jetbrains.mps.openapi.language.SContainmentLink111;
+import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.language.SLanguageId;
 import org.jetbrains.mps.openapi.language.SProperty;
 import org.jetbrains.mps.openapi.language.SReferenceLinkId;
@@ -138,7 +138,7 @@ public class DebugRegistryUtil implements CoreComponent {
     fillDebugRegistry();
   }
 
-  public static void getDebugInfoById(Iterable<SNode> rootNodes, Map<SConceptId, String> conceptIds, Map<SProperty, String> propIds, Map<SReferenceLinkId, String> refIds, Map<SContainmentLink111, String> roleIds) {
+  public static void getDebugInfoById(Iterable<SNode> rootNodes, Map<SConceptId, String> conceptIds, Map<SProperty, String> propIds, Map<SReferenceLinkId, String> refIds, Map<SContainmentLink, String> roleIds) {
     DebugRegistry debugRegistry = MPSModuleRepository.getInstance().getDebugRegistry();
     for (SNode root : rootNodes) {
       for (SNode n : SNodeUtil.getDescendants(root)) {
@@ -148,7 +148,7 @@ public class DebugRegistryUtil implements CoreComponent {
         conceptIds.put(conceptId, conceptName);
 
         if (n.getParent() != null) {
-          SContainmentLink111 roleId = n.getRoleInParentId();
+          SContainmentLink roleId = n.getRoleInParentId();
           SContainmentLinkAdapter role = new SContainmentLinkAdapter(roleId);
           SConceptId linkConceptId = roleId.getConceptId();
           SNode roleNode = role.getLinkNode();

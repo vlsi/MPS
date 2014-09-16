@@ -36,7 +36,7 @@ import jetbrains.mps.util.io.ModelOutputStream;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SConceptId;
-import org.jetbrains.mps.openapi.language.SContainmentLink111;
+import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.language.SLanguageId;
 import org.jetbrains.mps.openapi.language.SProperty;
 import org.jetbrains.mps.openapi.language.SReferenceLinkId;
@@ -201,7 +201,7 @@ public class BinaryPersistence {
     // write child roles
     int childrenSize = is.readInt();
     for (int i = 0; i < childrenSize; i++) {
-      debugRegistry.addLinkName(SContainmentLink111.deserialize(is.readString()), is.readString());
+      debugRegistry.addLinkName(SContainmentLink.deserialize(is.readString()), is.readString());
     }
   }
 
@@ -216,8 +216,8 @@ public class BinaryPersistence {
     loadModelProperties(model, is);
 
     NodesReader reader = new NodesReader(modelReference, interfaceOnly);
-    List<Pair<SContainmentLink111, jetbrains.mps.smodel.SNode>> roots = reader.readNodes(is);
-    for (Pair<SContainmentLink111, jetbrains.mps.smodel.SNode> r : roots) {
+    List<Pair<SContainmentLink, jetbrains.mps.smodel.SNode>> roots = reader.readNodes(is);
+    for (Pair<SContainmentLink, jetbrains.mps.smodel.SNode> r : roots) {
       model.addRootNode(r.o2);
     }
 
@@ -299,7 +299,7 @@ public class BinaryPersistence {
     Map<SConceptId, String> conceptIds = new HashMap<SConceptId, String>();
     Map<SProperty, String> propIds = new HashMap<SProperty, String>();
     Map<SReferenceLinkId, String> refIds = new HashMap<SReferenceLinkId, String>();
-    Map<SContainmentLink111, String> roleIds = new HashMap<SContainmentLink111, String>();
+    Map<SContainmentLink, String> roleIds = new HashMap<SContainmentLink, String>();
 
     DebugRegistryUtil.getDebugInfoById(rootNodes, conceptIds, propIds, refIds, roleIds);
 
@@ -326,7 +326,7 @@ public class BinaryPersistence {
 
     // write child roles
     os.writeInt(roleIds.size());
-    for (Entry<SContainmentLink111, String> e : roleIds.entrySet()) {
+    for (Entry<SContainmentLink, String> e : roleIds.entrySet()) {
       os.writeString(e.getKey().serialize());
       os.writeString(e.getValue());
     }

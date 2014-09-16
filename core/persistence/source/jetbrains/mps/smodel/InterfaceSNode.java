@@ -18,7 +18,7 @@ package jetbrains.mps.smodel;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SConceptId;
-import org.jetbrains.mps.openapi.language.SContainmentLink111;
+import org.jetbrains.mps.openapi.language.SContainmentLink;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -26,7 +26,7 @@ import java.util.Set;
 public class InterfaceSNode extends SNode {
 
   private Set<String> skippedRoles;
-  private Set<SContainmentLink111> skippedRolesIds;
+  private Set<SContainmentLink> skippedRolesIds;
 
   public InterfaceSNode(@NotNull SConceptId concept) {
     super(concept);
@@ -54,7 +54,7 @@ public class InterfaceSNode extends SNode {
 
 
   @Override
-  public void insertChildBefore(@NotNull SContainmentLink111 role, org.jetbrains.mps.openapi.model.SNode child,
+  public void insertChildBefore(@NotNull SContainmentLink role, org.jetbrains.mps.openapi.model.SNode child,
       @Nullable org.jetbrains.mps.openapi.model.SNode anchor) {
     if (skippedRoles != null || skippedRolesIds != null) {
       enforceModelLoad();
@@ -62,12 +62,12 @@ public class InterfaceSNode extends SNode {
     super.insertChildBefore(role, child, anchor);
   }
 
-  public void skipRole(SContainmentLink111 role) {
+  public void skipRole(SContainmentLink role) {
     if (myModel != null) {
       throw new IllegalStateException();
     }
     if (skippedRolesIds == null) {
-      skippedRolesIds = new HashSet<SContainmentLink111>();
+      skippedRolesIds = new HashSet<SContainmentLink>();
     }
     skippedRolesIds.add(role);
   }

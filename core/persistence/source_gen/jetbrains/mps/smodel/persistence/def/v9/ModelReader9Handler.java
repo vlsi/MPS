@@ -6,7 +6,7 @@ import jetbrains.mps.util.xml.XMLSAXHandler;
 import jetbrains.mps.smodel.loading.ModelLoadResult;
 import java.util.Stack;
 
-import org.jetbrains.mps.openapi.language.SContainmentLink111;
+import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.language.SProperty;
 import org.xml.sax.Locator;
 import jetbrains.mps.smodel.SModelHeader;
@@ -380,7 +380,7 @@ public class ModelReader9Handler extends XMLSAXHandler<ModelLoadResult> {
     }
     @Override
     protected Object createObject(Attributes attrs) throws SAXException {
-      MPSModuleRepository.getInstance().getDebugRegistry().addLinkName(SContainmentLink111.deserialize(attrs.getValue("id")), attrs.getValue("name"));
+      MPSModuleRepository.getInstance().getDebugRegistry().addLinkName(SContainmentLink.deserialize(attrs.getValue("id")), attrs.getValue("name"));
       return null;
     }
     @Override
@@ -581,11 +581,11 @@ public class ModelReader9Handler extends XMLSAXHandler<ModelLoadResult> {
       return !(fieldstripImplementation && fieldhelper.isImplementationNode(attrs.getValue("info")));
     }
     private void handleChild_7167172773708890339(Object resultObject, Object value) throws SAXException {
-      Tuples._2<SNode, SContainmentLink111> child = (Tuples._2<SNode, SContainmentLink111>) value;
+      Tuples._2<SNode, SContainmentLink> child = (Tuples._2<SNode, SContainmentLink>) value;
       fieldmodel.addRootNode(child._0());
     }
     private void handleChild_7167172773708890362(Object resultObject, Object value) throws SAXException {
-      Tuples._3<SContainmentLink111, SConceptId, String> child = (Tuples._3<SContainmentLink111, SConceptId, String>) value;
+      Tuples._3<SContainmentLink, SConceptId, String> child = (Tuples._3<SContainmentLink, SConceptId, String>) value;
       if (fieldhelper.isImplementationWithStubNode(child._2())) {
         SConceptId stubConcept = fieldhelper.getStubConcept(child._1());
         if (stubConcept != null) {
@@ -599,7 +599,7 @@ public class ModelReader9Handler extends XMLSAXHandler<ModelLoadResult> {
     public NodeElementHandler() {
     }
     @Override
-    protected Tuples._2<SNode, SContainmentLink111> createObject(Attributes attrs) throws SAXException {
+    protected Tuples._2<SNode, SContainmentLink> createObject(Attributes attrs) throws SAXException {
       Tuples._3<ConceptKind, StaticScope, Boolean> parsed = fieldhelper.readNodeInfo(attrs.getValue("info"));
       if (parsed == null) {
         throw new SAXParseException("bad typeInfo attribute", null);
@@ -612,7 +612,7 @@ public class ModelReader9Handler extends XMLSAXHandler<ModelLoadResult> {
       jetbrains.mps.smodel.SNode result = (interfaceNode ? new InterfaceSNode(conceptId) : new jetbrains.mps.smodel.SNode(conceptId));
       result.setId(SNodeId.fromString(attrs.getValue("id")));
       // can be root 
-      return MultiTuple.<SNode,SContainmentLink111>from(((SNode) result), (attrs.getValue("role") == null ? null : fieldhelper.readNodeRole(attrs.getValue("role"))));
+      return MultiTuple.<SNode,SContainmentLink>from(((SNode) result), (attrs.getValue("role") == null ? null : fieldhelper.readNodeRole(attrs.getValue("role"))));
     }
     @Override
     protected String[] requiredAttributes() {
@@ -620,7 +620,7 @@ public class ModelReader9Handler extends XMLSAXHandler<ModelLoadResult> {
     }
     @Override
     protected void handleAttribute(Object resultObject, String name, String value) throws SAXException {
-      Tuples._2<SNode, SContainmentLink111> result = (Tuples._2<SNode, SContainmentLink111>) resultObject;
+      Tuples._2<SNode, SContainmentLink> result = (Tuples._2<SNode, SContainmentLink>) resultObject;
       if ("concept".equals(name)) {
         return;
       }
@@ -676,34 +676,34 @@ public class ModelReader9Handler extends XMLSAXHandler<ModelLoadResult> {
       return super.createChild(resultObject, tagName, attrs);
     }
     private boolean checknode_7167172773708890671(Object resultObject, Attributes attrs) {
-      Tuples._2<SNode, SContainmentLink111> result = (Tuples._2<SNode, SContainmentLink111>) resultObject;
+      Tuples._2<SNode, SContainmentLink> result = (Tuples._2<SNode, SContainmentLink>) resultObject;
       if (fieldstripImplementation && fieldhelper.isImplementationNode(attrs.getValue("info"))) {
         return false;
       }
       return !(result._0() instanceof InterfaceSNode) || fieldhelper.isInterfaceNode(attrs.getValue("info"));
     }
     private void handleChild_7167172773708890516(Object resultObject, Object value) throws SAXException {
-      Tuples._2<SNode, SContainmentLink111> result = (Tuples._2<SNode, SContainmentLink111>) resultObject;
+      Tuples._2<SNode, SContainmentLink> result = (Tuples._2<SNode, SContainmentLink>) resultObject;
       Tuples._2<SProperty, String> child = (Tuples._2<SProperty, String>) value;
       result._0().setProperty(child._0(), child._1());
     }
     private void handleChild_7167172773708890553(Object resultObject, Object value) throws SAXException {
-      Tuples._2<SNode, SContainmentLink111> result = (Tuples._2<SNode, SContainmentLink111>) resultObject;
+      Tuples._2<SNode, SContainmentLink> result = (Tuples._2<SNode, SContainmentLink>) resultObject;
       Tuples._4<SReferenceLinkId, SNodePointer, Boolean, String> child = (Tuples._4<SReferenceLinkId, SNodePointer, Boolean, String>) value;
       SNodePointer target = child._1();
       StaticReference ref = new StaticReference(child._0(), result._0(), target.getModelReference(), target.getNodeId(), child._3());
       result._0().setReference(child._0(), ref);
     }
     private void handleChild_7167172773708890646(Object resultObject, Object value) throws SAXException {
-      Tuples._2<SNode, SContainmentLink111> result = (Tuples._2<SNode, SContainmentLink111>) resultObject;
-      Tuples._2<SNode, SContainmentLink111> child = (Tuples._2<SNode, SContainmentLink111>) value;
+      Tuples._2<SNode, SContainmentLink> result = (Tuples._2<SNode, SContainmentLink>) resultObject;
+      Tuples._2<SNode, SContainmentLink> child = (Tuples._2<SNode, SContainmentLink>) value;
       if (child != null) {
         result._0().addChild(child._1(), child._0());
       }
     }
     private void handleChild_7167172773708890694(Object resultObject, Object value) throws SAXException {
-      Tuples._2<SNode, SContainmentLink111> result = (Tuples._2<SNode, SContainmentLink111>) resultObject;
-      Tuples._3<SContainmentLink111, SConceptId, String> child = (Tuples._3<SContainmentLink111, SConceptId, String>) value;
+      Tuples._2<SNode, SContainmentLink> result = (Tuples._2<SNode, SContainmentLink>) resultObject;
+      Tuples._3<SContainmentLink, SConceptId, String> child = (Tuples._3<SContainmentLink, SConceptId, String>) value;
       if (fieldstripImplementation && fieldhelper.isImplementationWithStubNode(child._2())) {
         SConceptId stubConcept = fieldhelper.getStubConcept(child._1());
         if (stubConcept != null) {
@@ -774,12 +774,12 @@ public class ModelReader9Handler extends XMLSAXHandler<ModelLoadResult> {
     public IgnoredNodeElementHandler() {
     }
     @Override
-    protected Tuples._3<SContainmentLink111, SConceptId, String> createObject(Attributes attrs) throws SAXException {
-      return MultiTuple.<SContainmentLink111,SConceptId,String>from(fieldhelper.readNodeRole(attrs.getValue("role")), fieldhelper.readConceptId(attrs.getValue("concept")), attrs.getValue("info"));
+    protected Tuples._3<SContainmentLink, SConceptId, String> createObject(Attributes attrs) throws SAXException {
+      return MultiTuple.<SContainmentLink,SConceptId,String>from(fieldhelper.readNodeRole(attrs.getValue("role")), fieldhelper.readConceptId(attrs.getValue("concept")), attrs.getValue("info"));
     }
     @Override
     protected void handleAttribute(Object resultObject, String name, String value) throws SAXException {
-      Tuples._3<SContainmentLink111, SConceptId, String> result = (Tuples._3<SContainmentLink111, SConceptId, String>) resultObject;
+      Tuples._3<SContainmentLink, SConceptId, String> result = (Tuples._3<SContainmentLink, SConceptId, String>) resultObject;
       if ("concept".equals(name)) {
         return;
       }

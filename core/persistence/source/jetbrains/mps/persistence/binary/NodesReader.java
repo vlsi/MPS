@@ -25,7 +25,7 @@ import jetbrains.mps.util.Pair;
 import jetbrains.mps.util.io.ModelInputStream;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.language.SConceptId;
-import org.jetbrains.mps.openapi.language.SContainmentLink111;
+import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.language.SProperty;
 import org.jetbrains.mps.openapi.language.SReferenceLinkId;
 import org.jetbrains.mps.openapi.model.SModelReference;
@@ -52,20 +52,20 @@ public class NodesReader {
     return hasSkippedNodes;
   }
 
-  public List<Pair<SContainmentLink111, jetbrains.mps.smodel.SNode>> readNodes(ModelInputStream is) throws IOException {
+  public List<Pair<SContainmentLink, jetbrains.mps.smodel.SNode>> readNodes(ModelInputStream is) throws IOException {
     int size = is.readInt();
-    List<Pair<SContainmentLink111, jetbrains.mps.smodel.SNode>> nodes = new ArrayList<Pair<SContainmentLink111, jetbrains.mps.smodel.SNode>>(size);
+    List<Pair<SContainmentLink, jetbrains.mps.smodel.SNode>> nodes = new ArrayList<Pair<SContainmentLink, jetbrains.mps.smodel.SNode>>(size);
     for (int i = 0; i < size; i++) {
       nodes.add(readNode(is));
     }
     return nodes;
   }
 
-  public Pair<SContainmentLink111, jetbrains.mps.smodel.SNode> readNode(ModelInputStream is) throws IOException {
+  public Pair<SContainmentLink, jetbrains.mps.smodel.SNode> readNode(ModelInputStream is) throws IOException {
     SConceptId cid = readConceptId(is);
     SNodeId nodeId = is.readNodeId();
     String linkStr = is.readString();
-    SContainmentLink111 nodeRole = linkStr == null ? null : SContainmentLink111.deserialize(linkStr);
+    SContainmentLink nodeRole = linkStr == null ? null : SContainmentLink.deserialize(linkStr);
     byte nodeInfo = is.readByte();
     if (is.readByte() != '{') {
       throw new IOException("bad stream, no '{'");
@@ -94,7 +94,7 @@ public class NodesReader {
     if (is.readByte() != '}') {
       throw new IOException("bad stream, no '}'");
     }
-    return new Pair<SContainmentLink111, jetbrains.mps.smodel.SNode>(nodeRole, node);
+    return new Pair<SContainmentLink, jetbrains.mps.smodel.SNode>(nodeRole, node);
   }
 
   private ConceptKind getConceptKind(byte nodeInfo) {
@@ -107,8 +107,8 @@ public class NodesReader {
   }
 
   protected void readChildren(ModelInputStream is, SNode node) throws IOException {
-    List<Pair<SContainmentLink111, jetbrains.mps.smodel.SNode>> children = readNodes(is);
-    for (Pair<SContainmentLink111, jetbrains.mps.smodel.SNode> child : children) {
+    List<Pair<SContainmentLink, jetbrains.mps.smodel.SNode>> children = readNodes(is);
+    for (Pair<SContainmentLink, jetbrains.mps.smodel.SNode> child : children) {
       if (!(node instanceof InterfaceSNode) || child.o2 instanceof InterfaceSNode) {
         node.addChild(child.o1, child.o2);
       } else {

@@ -14,7 +14,7 @@
    <string>public abstract java.lang.String org.jetbrains.mps.openapi.model.SNode.getRoleInParent()</string>
   </void> 
   <void method="add">
-   <string>public abstract org.jetbrains.mps.openapi.language.SContainmentLink111 org.jetbrains.mps.openapi.model.SNode.getRoleInParentId()</string>
+   <string>public abstract org.jetbrains.mps.openapi.language.SContainmentLink org.jetbrains.mps.openapi.model.SNode.getRoleInParentId()</string>
   </void>
   <void method="add">
    <string>public abstract java.lang.Iterable&lt;java.lang.Object&gt; org.jetbrains.mps.openapi.model.SNode.getUserObjectKeys()</string>
@@ -48,7 +48,7 @@
   </void>
   <void method="add">
    <string>public abstract void
-     org.jetbrains.mps.openapi.model.SNode.insertChildBefore(org.jetbrains.mps.openapi.language.SContainmentLink111,org.jetbrains.mps.openapi.model.SNode,org.jetbrains.mps.openapi.model.SNode)</string>
+     org.jetbrains.mps.openapi.model.SNode.insertChildBefore(org.jetbrains.mps.openapi.language.SContainmentLink,org.jetbrains.mps.openapi.model.SNode,org.jetbrains.mps.openapi.model.SNode)</string>
   </void>
   <void method="add">
    <string>public abstract org.jetbrains.mps.openapi.model.SNode org.jetbrains.mps.openapi.model.SNode.getFirstChild()</string>
@@ -112,7 +112,7 @@
   </void>
   <void method="add">
    <string>public abstract void
-     org.jetbrains.mps.openapi.model.SNode.addChild(org.jetbrains.mps.openapi.language.SContainmentLink111,org.jetbrains.mps.openapi.model.SNode)</string>
+     org.jetbrains.mps.openapi.model.SNode.addChild(org.jetbrains.mps.openapi.language.SContainmentLink,org.jetbrains.mps.openapi.model.SNode)</string>
   </void>
   <void method="add">
    <string>public abstract java.lang.Iterable&lt;? extends org.jetbrains.mps.openapi.model.SReference&gt; org.jetbrains.mps.openapi.model.SNode.getReferences()</string>
