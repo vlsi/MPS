@@ -26,11 +26,6 @@ import org.jetbrains.mps.openapi.model.SNode;
  */
 public interface SAbstractConcept {
   /**
-   * Uniquely identifies this concept in its concept repository.
-   */
-  SConcept getId();
-
-  /**
    * The user visible name of the concept
    */
   String getName();

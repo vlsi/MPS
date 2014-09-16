@@ -19,12 +19,6 @@ package org.jetbrains.mps.openapi.language;
  * Represents an abstract meta-definition of node connections. These can express either references or containment relationships.
  */
 public interface SAbstractLink {
-
-  /**
-   * The identifier of the link within the containing concept.
-   */
-  SAbstractLink getRoleId();
-
   @Deprecated
   String getRole();
 
