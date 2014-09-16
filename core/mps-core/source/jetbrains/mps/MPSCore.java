@@ -51,6 +51,7 @@ import jetbrains.mps.smodel.language.ConceptRegistry;
 import jetbrains.mps.smodel.language.ConceptRepository;
 import jetbrains.mps.smodel.language.ExtensionRegistry;
 import jetbrains.mps.smodel.language.LanguageRegistry;
+import jetbrains.mps.smodel.language.MetaFactoryImpl;
 import jetbrains.mps.smodel.references.ImmatureReferences;
 import jetbrains.mps.smodel.runtime.interpreted.StructureAspectInterpreted;
 import jetbrains.mps.util.QueryMethodGenerated;
@@ -88,6 +89,7 @@ public final class MPSCore extends ComponentPlugin {
     init(new PersistenceRegistry());
     init(new FacetsRegistry());
     init(new ConceptRepository());
+    init(new MetaFactoryImpl());
     init(new FindUsagesManager());
 
     // repositories
