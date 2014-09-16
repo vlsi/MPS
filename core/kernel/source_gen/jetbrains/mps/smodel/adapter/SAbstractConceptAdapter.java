@@ -22,7 +22,6 @@ import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.language.SAbstractLink;
 import jetbrains.mps.internal.collections.runtime.Sequence;
-import org.jetbrains.mps.openapi.language.SProperty;
 import org.jetbrains.mps.openapi.language.SLanguage;
 import java.util.HashSet;
 import org.apache.log4j.Level;
@@ -234,7 +233,7 @@ public class SAbstractConceptAdapter implements SAbstractConcept {
   @Override
   public SLanguage getLanguage() {
     fillBothIds();
-    return new SLanguageAdapter(myConceptId.getLanguageId());
+    return new SLanguageAdapter(myConceptId.getLanguage());
   }
 
   @Override
@@ -273,7 +272,7 @@ public class SAbstractConceptAdapter implements SAbstractConcept {
   @Override
   public SNode getConceptDeclarationNode() {
     fillBothIds();
-    SModuleReference moduleRef = IdHelper.getModuleReference(myConceptId.getLanguageId());
+    SModuleReference moduleRef = IdHelper.getModuleReference(myConceptId.getLanguage());
     SModule module = moduleRef.resolve(MPSModuleRepository.getInstance());
     if (!((module instanceof Language))) {
       return null;
@@ -295,7 +294,7 @@ public class SAbstractConceptAdapter implements SAbstractConcept {
       SNode concept = lang.getSourceModule().findConceptDeclaration(NameUtil.shortNameFromLongName(myConceptName));
       myConceptId = new SConceptId(lang.getId(), IdHelper.getNodeId((jetbrains.mps.smodel.SNode) concept));
     } else {
-      Language lang = new SLanguageAdapter(myConceptId.getLanguageId()).getSourceModule();
+      Language lang = new SLanguageAdapter(myConceptId.getLanguage()).getSourceModule();
       if (lang != null) {
         myConceptName = NameUtil.nodeFQName(LanguageAspect.STRUCTURE.get(lang).getNode(new SNodeId.Regular(myConceptId.getConceptId())));
       } else {

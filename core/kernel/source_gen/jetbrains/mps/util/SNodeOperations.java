@@ -54,7 +54,7 @@ public class SNodeOperations {
     }
     // the method used to look for concept's SNode. instead, check if there's source module (which effectively means there are 
     // chances to get SNode for the concept, if needed. 
-    SModule sourceModule = IdHelper.getModuleReference(conceptId.getLanguageId()).resolve(MPSModuleRepository.getInstance());
+    SModule sourceModule = IdHelper.getModuleReference(conceptId.getLanguage()).resolve(MPSModuleRepository.getInstance());
     return sourceModule == null;
   }
   public static boolean isAncestor(SNode ancestor, SNode node) {

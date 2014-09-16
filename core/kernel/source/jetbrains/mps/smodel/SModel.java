@@ -598,7 +598,7 @@ public class SModel implements SModelData {
     for (org.jetbrains.mps.openapi.model.SNode root : getRootNodes()) {
       for (org.jetbrains.mps.openapi.model.SNode n : SNodeUtil.getDescendants(root)) {
         SConceptId conceptId = n.getConcept().getId();
-        myUsedLanguages.add(conceptId.getLanguageId());
+        myUsedLanguages.add(conceptId.getLanguage());
 
         if (n.getParent() != null) {
           SContainmentLink roleId = n.getRoleInParentId();

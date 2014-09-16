@@ -132,7 +132,7 @@ public class DebugRegistryImpl implements DebugRegistry {
     List<SConceptId> ids = myConcepts.getKeysByValue(name);
     if (ids == null || ids.isEmpty()) return null;
     for (SConceptId id:ids){
-      if (id.getLanguageId().equals(lang)) return id;
+      if (id.getLanguage().equals(lang)) return id;
     }
     return null;
   }

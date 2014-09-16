@@ -76,7 +76,7 @@ public class StorageIndexHelper9 {
 
   public String getConceptIndex(@NotNull SConceptId concept) {
     // return fqName prefixed with "." if we can't find model or name of concept
-    String index = getUsedLanguageIndex(concept.getLanguageId());
+    String index = getUsedLanguageIndex(concept.getLanguage());
     if (index == null) {
       return MODEL_SEPARATOR_CHAR + concept.serialize();
     }

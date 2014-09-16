@@ -43,7 +43,7 @@ public abstract class IdUtil {
 
   public static String getConceptFqName(SConceptId id) {
     DebugRegistry dr = MPSModuleRepository.getInstance().getDebugRegistry();
-    String languageName = dr.getLanguageName(id.getLanguageId());
+    String languageName = dr.getLanguageName(id.getLanguage());
     String conceptName = dr.getConceptName(id);
     if (languageName == null || conceptName == null) {
       return null;
