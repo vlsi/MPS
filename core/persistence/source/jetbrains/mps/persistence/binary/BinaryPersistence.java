@@ -141,7 +141,7 @@ public class BinaryPersistence {
   private static ModelLoadResult loadModel(@Nullable SModelReference modelReference, ModelInputStream is, boolean interfaceOnly) throws IOException {
     BinaryModelHeader modelHeader = loadHeader(is);
     if (modelReference == null) {
-      modelReference = modelHeader.getReference();
+      modelReference = modelHeader.getModelReference();
     }
 
     BinarySModel model = new BinarySModel(modelHeader);
@@ -237,7 +237,7 @@ public class BinaryPersistence {
       for (ImportElement element : model.importedModels()) {
         consumer.consume(element.getModelReference().getModelName());
       }
-      new NodesReader(modelHeader.getReference(), false) {
+      new NodesReader(modelHeader.getModelReference(), false) {
         @Override
         protected String readConceptQualifiedName(ModelInputStream is) throws IOException {
           String name = super.readConceptQualifiedName(is);

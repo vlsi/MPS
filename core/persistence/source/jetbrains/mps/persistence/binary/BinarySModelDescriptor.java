@@ -53,7 +53,7 @@ public class BinarySModelDescriptor extends LazyEditableSModelBase implements Ge
   private StructureModificationLog myStructureModificationLog;
 
   public BinarySModelDescriptor(StreamDataSource source, BinaryModelHeader header) {
-    super(header.getReference(), source);
+    super(header.getModelReference(), source);
     myHeader = header;
   }
 

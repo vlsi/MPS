@@ -47,12 +47,12 @@ public class CachedModelData {
     public void save(ModelOutputStream stream) throws IOException {
         stream.writeByte(31);
         stream.writeString(file);
-        if (header instanceof SModelHeader) {
-            stream.writeByte(55);
-            ((SModelHeader) header).save(stream);
-        } else if (header instanceof BinaryModelHeader) {
+        if (header instanceof BinaryModelHeader) {
             stream.writeByte(56);
             ((BinaryModelHeader) header).save(stream);
+        } else if (header instanceof SModelHeader) {
+            stream.writeByte(55);
+            ((SModelHeader) header).save(stream);
         } else if (header instanceof JavaStubModelHeader) {
             stream.writeByte(57);
             ((JavaStubModelHeader) header).save(stream);

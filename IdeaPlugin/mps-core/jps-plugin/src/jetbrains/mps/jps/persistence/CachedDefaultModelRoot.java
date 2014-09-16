@@ -77,11 +77,11 @@ public class CachedDefaultModelRoot extends DefaultModelRoot {
       IFile file = FileSystem.getInstance().getFileByPath(mdata.getFile());
       FileDataSource source = new FileDataSource(file, this);
       Object header = mdata.getHeader();
-      if (header instanceof SModelHeader) {
+      if (header instanceof BinaryModelHeader) {
+        result.add(new BinarySModelDescriptor(source, ((BinaryModelHeader) header).createCopy()));
+      } else if (header instanceof SModelHeader) {
         SModelHeader smheader = (SModelHeader) header;
         result.add(new DefaultSModelDescriptor(source, smheader.getModelReference(), smheader));
-      } else if (header instanceof BinaryModelHeader) {
-        result.add(new BinarySModelDescriptor(source, ((BinaryModelHeader) header).createCopy()));
       } else {
         String fileName = file.getName();
         String extension = FileUtil.getExtension(fileName);
