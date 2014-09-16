@@ -18,15 +18,18 @@ package jetbrains.mps.smodel.language;
 import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.smodel.adapter.SConceptAdapter;
 import jetbrains.mps.smodel.adapter.SContainmentLinkAdapter;
+import jetbrains.mps.smodel.adapter.SLanguageAdapter;
 import jetbrains.mps.smodel.adapter.SPropertyAdapter;
 import jetbrains.mps.smodel.adapter.SReferenceLinkAdapter;
 import jetbrains.mps.smodel.ids.SConceptId;
 import jetbrains.mps.smodel.ids.SContainmentLinkId;
+import jetbrains.mps.smodel.ids.SLanguageId;
 import jetbrains.mps.smodel.ids.SPropertyId;
 import jetbrains.mps.smodel.ids.SReferenceLinkId;
 import org.jetbrains.mps.openapi.language.MetaFactory;
 import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
+import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.language.SProperty;
 import org.jetbrains.mps.openapi.language.SReferenceLink;
 
@@ -42,6 +45,11 @@ public class MetaFactoryImpl extends MetaFactory implements CoreComponent {
   @Override
   public void dispose() {
     INSTANCE = null;
+  }
+
+  @Override
+  public String serializeLanguage(SLanguage language) {
+    return ((SLanguageAdapter) language).getId().serialize();
   }
 
   @Override
@@ -62,6 +70,11 @@ public class MetaFactoryImpl extends MetaFactory implements CoreComponent {
   @Override
   public String serializeReference(SReferenceLink ref) {
     return ((SReferenceLinkId) ((SReferenceLinkAdapter) ref).getRoleId()).serialize();
+  }
+
+  @Override
+  public SLanguage deserializeLanguage(String language) {
+    return new SLanguageAdapter(SLanguageId.deserialize(language));
   }
 
   @Override

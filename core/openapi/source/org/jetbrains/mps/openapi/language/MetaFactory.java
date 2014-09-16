@@ -24,7 +24,9 @@ public abstract class MetaFactory {
 
   //---serialize---
 
-   public abstract String serializeConcept(SConcept concept);
+  public abstract String serializeLanguage(SLanguage language);
+
+  public abstract String serializeConcept(SConcept concept);
 
   public abstract String serializeProperty(SProperty property);
 
@@ -33,6 +35,8 @@ public abstract class MetaFactory {
   public abstract String serializeReference(SReferenceLink ref);
 
   //---deserialize---
+
+  public abstract SLanguage deserializeLanguage(String language);
 
   public abstract SConcept deserializeConcept(String concept);
 
