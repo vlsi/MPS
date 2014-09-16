@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2012 JetBrains s.r.o.
+ * Copyright 2003-2014 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -86,6 +86,7 @@ public abstract class PersistenceFacade {
    * Creates an SModelId from a given text identifier.
    * Allows implementations to provide their own version of SModelId.
    *
+   * @see #asString(org.jetbrains.mps.openapi.model.SModelId)
    * @param text A text that the custom implementation of SModelIdFactory could use to build its own SModelId.
    *             The text comes in the following format: "type:restInterpretedByTheConcreteTypeProvider"
    *             The actual type of the model id is followed by implementation-specific text.
@@ -94,11 +95,26 @@ public abstract class PersistenceFacade {
   public abstract SModelId createModelId(String text);
 
   /**
+   * Serialize counterpart for {@link #createModelId(String)}, persistence-ready presentation of a model identifier.
+   *
+   * @param modelId model identity
+   * @return textual representation of a model identifier ready for persistence
+   */
+  public abstract String asString(@NotNull SModelId modelId);
+
+  /**
    * Creates an SModelReference from a given text identifier.
    *
    * @throws IllegalArgumentException if the text does not contain a parsable <code>SModelReference</code>.
    */
   public abstract SModelReference createModelReference(String text);
+
+  /**
+   * Serialize counterpart for {@link #createModelReference(String)}, persistence-ready presentation of a model reference
+   * @param modelRef model reference to serialize
+   * @return textual representation of a model reference
+   */
+  public abstract String asString(@NotNull SModelReference modelRef);
 
   /**
    * Creates an SModelReference in a module with a given model id and model name.

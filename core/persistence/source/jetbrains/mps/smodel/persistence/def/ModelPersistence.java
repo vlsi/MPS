@@ -203,8 +203,8 @@ public class ModelPersistence {
         return new ModelLoadResult(reader.readModel(document, header), ModelLoadingState.FULLY_LOADED);
       }
     }
-    throw new PersistenceVersionNotFoundException("Can not find appropriate persistence version for model " + header.getUID() + "\n" +
-        " Use newer version of JetBrains MPS to load this model.");
+    String m = "Can not find appropriate persistence version for model %s\n Use newer version of JetBrains MPS to load this model.";
+    throw new PersistenceVersionNotFoundException(String.format(m, header.getModelReference()));
   }
 
   @NotNull

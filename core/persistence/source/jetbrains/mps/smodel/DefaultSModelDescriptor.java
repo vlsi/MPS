@@ -48,8 +48,8 @@ public class DefaultSModelDescriptor extends LazyEditableSModelBase implements G
   private final Object myRefactoringHistoryLock = new Object();
   private StructureModificationLog myStructureModificationLog;
 
-  public DefaultSModelDescriptor(StreamDataSource source, SModelReference modelReference, SModelHeader header) {
-    super(modelReference, source);
+  public DefaultSModelDescriptor(StreamDataSource source, SModelHeader header) {
+    super(header.getModelReference(), source);
     myHeader = header;
   }
 

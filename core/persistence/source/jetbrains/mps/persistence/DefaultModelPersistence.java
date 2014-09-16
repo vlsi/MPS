@@ -28,7 +28,6 @@ import jetbrains.mps.util.FileUtil;
 import org.apache.log4j.LogManager;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModel;
-import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.persistence.DataSource;
 import org.jetbrains.mps.openapi.persistence.ModelFactory;
 import org.jetbrains.mps.openapi.persistence.MultiStreamDataSource;
@@ -75,16 +74,10 @@ public class DefaultModelPersistence implements CoreComponent, ModelFactory {
       header = ModelPersistence.loadDescriptor(source);
     } catch (ModelReadException ignored) {
       LOG.error("Can't read model: ", ignored);
-      header = new SModelHeader();
+      throw new IOException("Can't read model: ", ignored);
     }
-
-    SModelReference modelReference;
-    assert header.getUID() != null : "wrong model: " + dataSource.getLocation();
-
-    modelReference = PersistenceFacade.getInstance().createModelReference(header.getUID());
-
-    LOG.debug("Getting model " + modelReference + " from " + dataSource.getLocation());
-    return new DefaultSModelDescriptor(source, modelReference, header);
+    LOG.debug("Getting model " + header.getModelReference() + " from " + dataSource.getLocation());
+    return new DefaultSModelDescriptor(source, header);
   }
 
   @NotNull
@@ -98,8 +91,9 @@ public class DefaultModelPersistence implements CoreComponent, ModelFactory {
     if (modelName == null) {
       throw new IOException("modelName is not provided");
     }
-    SModelReference ref = PersistenceFacade.getInstance().createModelReference(null, jetbrains.mps.smodel.SModelId.generate(), modelName);
-    return new DefaultSModelDescriptor((StreamDataSource) dataSource, ref, SModelHeader.create(ModelPersistence.LAST_VERSION));
+    final SModelHeader header = SModelHeader.create(ModelPersistence.LAST_VERSION);
+    header.setModelReference(PersistenceFacade.getInstance().createModelReference(null, jetbrains.mps.smodel.SModelId.generate(), modelName));
+    return new DefaultSModelDescriptor((StreamDataSource) dataSource, header);
   }
 
   @Override
