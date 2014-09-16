@@ -146,7 +146,7 @@ public class NodesWriter {
 
   protected void writeProperties(SNode node, ModelOutputStream os) throws IOException {
     final Map<SProperty, String> properties = new HashMap<SProperty, String>();
-    for (SProperty id : node.getPropertyIds()) {
+    for (SProperty id : node.getProperties()) {
       properties.put(id, node.getProperty(id));
     }
     os.writeInt(properties.size());

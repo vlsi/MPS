@@ -13,16 +13,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel;
+package jetbrains.mps.smodel.adapter;
 
-import org.jetbrains.mps.openapi.language.SConcept;
-import org.jetbrains.mps.openapi.language.SReferenceLink;
+import org.jetbrains.mps.openapi.language.SProperty;
 
-// This is a tmp class as we can't move SNode class to smodel module immediately. Should be removed after this is done
-public interface SReferenceSource {
-  IdMigrationMode workingMode();
-
-  String getLinkName(SReferenceLink roleId);
-
-  SReferenceLink getReferenceLinkId(SConcept conceptId, String role);
+public class SPropertyAdapterByName implements SProperty {
+  public SPropertyAdapterByName(String propertyName) {
+  }
 }

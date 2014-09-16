@@ -264,7 +264,7 @@ public class ModelWriter9 implements IModelWriter {
     String info = Util9.genNodeInfo(PersistenceRegistry.getInstance().getModelEnvironmentInfo(), node);
     DocUtil.setNotNullAttribute(nodeElement, ModelPersistence9.NODE_INFO, info);
 
-    for (SProperty pid : node.getPropertyIds()) {
+    for (SProperty pid : node.getProperties()) {
       Element propertyElement = new Element(ModelPersistence9.PROPERTY);
       propertyElement.setAttribute(ModelPersistence9.ROLE_ID, myHelper.getPropertyIndex(pid));
       DocUtil.setNotNullAttribute(propertyElement, ModelPersistence9.VALUE, node.getProperty(pid));

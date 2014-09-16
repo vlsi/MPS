@@ -604,7 +604,7 @@ public class SModel implements SModelData {
           SContainmentLink roleId = n.getContainmentLink();
           myUsedLanguages.add(roleId.getConceptId().getLanguageId());
         }
-        for (SProperty pid : n.getPropertyIds()) {
+        for (SProperty pid : n.getProperties()) {
           myUsedLanguages.add(pid.getContainingConcept().getLanguage());
         }
 

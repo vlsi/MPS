@@ -212,7 +212,7 @@ public interface SNode {
   /**
    * Retrieves keys of all properties. The returned collection is immutable.
    */
-  Iterable<SProperty> getPropertyIds();
+  Iterable<SProperty> getProperties();
 
   boolean hasProperty(SProperty property);
 

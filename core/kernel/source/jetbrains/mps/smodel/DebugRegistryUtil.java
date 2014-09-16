@@ -167,7 +167,7 @@ public class DebugRegistryUtil implements CoreComponent {
           roleIds.put(roleId, roleName);
         }
 
-        for (SProperty pid : n.getPropertyIds()) {
+        for (SProperty pid : n.getProperties()) {
           SPropertyAdapter propId = new SPropertyAdapter(pid);
           SConcept propConceptId = pid.getContainingConcept();
           SNode propNode = propId.getPropertyNode();

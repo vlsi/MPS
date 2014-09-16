@@ -150,7 +150,7 @@ public class ISNode_MigrationScript extends BaseMigrationScript {
         if (jetbrains.mps.smodel.SNodeId.fromString("~SNode.getReferences():java.lang.Iterable").equals(targetNodeId)) {
           return true;
         }
-        if (jetbrains.mps.smodel.SNodeId.fromString("~SNode.getPropertyIds():java.lang.Iterable").equals(targetNodeId)) {
+        if (jetbrains.mps.smodel.SNodeId.fromString("~SNode.getProperties():java.lang.Iterable").equals(targetNodeId)) {
           return true;
         }
         if (jetbrains.mps.smodel.SNodeId.fromString("~SNode.hasProperty(jetbrains.mps.smodel.ids.SPropertyId):boolean").equals(targetNodeId)) {
