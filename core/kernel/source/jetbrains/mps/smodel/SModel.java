@@ -609,7 +609,7 @@ public class SModel implements SModelData {
         }
 
         for (SReference ref : n.getReferences()) {
-          myUsedLanguages.add(ref.getRoleId().getConceptId().getLanguageId());
+          myUsedLanguages.add(ref.getRoleId().getConcept().getLanguageId());
         }
       }
     }

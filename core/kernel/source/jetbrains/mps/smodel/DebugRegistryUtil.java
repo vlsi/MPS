@@ -190,7 +190,7 @@ public class DebugRegistryUtil implements CoreComponent {
           SReferenceLinkId refId = ref.getRoleId();
           SReferenceLinkAdapter refRole = new SReferenceLinkAdapter(refId);
           SNode refNode = refRole.getLinkNode();
-          SConceptId refConceptId = refId.getConceptId();
+          SConceptId refConceptId = refId.getConcept();
           String refName;
           if (refNode != null) {
             SNode refConcept = refNode.getContainingRoot();

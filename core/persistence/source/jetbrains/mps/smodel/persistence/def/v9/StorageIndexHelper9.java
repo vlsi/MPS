@@ -92,7 +92,7 @@ public class StorageIndexHelper9 {
   }
 
   public String getReferenceRoleIndex(@NotNull SReferenceLinkId linkId) {
-    return getConceptIndex(linkId.getConceptId()) + MODEL_SEPARATOR_CHAR + linkId.getReferenceLinkId();
+    return getConceptIndex(linkId.getConcept()) + MODEL_SEPARATOR_CHAR + linkId.getReferenceLinkId();
   }
 
   private void addInternalObject(Map<Object, String> index, Set<Integer> usedIndices, Object toStore, int initialHash) {

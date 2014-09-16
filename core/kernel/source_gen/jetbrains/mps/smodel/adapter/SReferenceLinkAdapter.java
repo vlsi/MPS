@@ -66,7 +66,7 @@ public class SReferenceLinkAdapter extends SAbstractLinkAdapter implements SRefe
     if (!(fillBothIds())) {
       return null;
     }
-    SConceptAdapter adapter = new SConceptAdapter(getRoleId().getConceptId());
+    SConceptAdapter adapter = new SConceptAdapter(getRoleId().getConcept());
     SModel model = adapter.getConceptDeclarationNode().getModel();
     return ((SNode) model.getNode(new SNodeId.Regular(myRoleId.getReferenceLinkId())));
   }
@@ -82,7 +82,7 @@ public class SReferenceLinkAdapter extends SAbstractLinkAdapter implements SRefe
       SNode linkNode = scope.getLinkDeclarationByRole(role);
       myRoleId = new SReferenceLinkId(cid, IdHelper.getNodeId((jetbrains.mps.smodel.SNode) linkNode));
     } else {
-      SAbstractConceptAdapter adapter = new SAbstractConceptAdapter(myRoleId.getConceptId());
+      SAbstractConceptAdapter adapter = new SAbstractConceptAdapter(myRoleId.getConcept());
       conceptName = adapter.getQualifiedName();
       SNode node = adapter.getConceptDeclarationNode();
       if (node == null) {

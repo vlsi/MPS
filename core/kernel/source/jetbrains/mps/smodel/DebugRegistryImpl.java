@@ -85,7 +85,7 @@ public class DebugRegistryImpl implements DebugRegistry {
 
   @Override
   public synchronized void addLinkName(SAbstractLinkId linkId, String name) {
-    myLinks.put(linkId, new Pair<SConceptId, String>(linkId.getConceptId(), name));
+    myLinks.put(linkId, new Pair<SConceptId, String>(linkId.getConcept(), name));
   }
 
   @Override
@@ -123,7 +123,7 @@ public class DebugRegistryImpl implements DebugRegistry {
     List<SAbstractLinkId> ids = myLinks.getKeysByValue(new Pair<SConceptId, String>(conceptId, name));
     if (ids == null || ids.isEmpty()) return null;
     for (SAbstractLinkId id:ids){
-      if (id.getConceptId().equals(conceptId)) return id;
+      if (id.getConcept().equals(conceptId)) return id;
     }
     return null;
   }
