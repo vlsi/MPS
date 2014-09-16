@@ -23,7 +23,7 @@ import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
-import org.jetbrains.mps.openapi.language.SLanguageId;
+import org.jetbrains.mps.openapi.language.SLanguageId111;
 import org.jetbrains.mps.openapi.language.SProperty;
 import org.jetbrains.mps.openapi.language.SReferenceLink;
 import org.jetbrains.mps.openapi.model.SModelReference;
@@ -47,13 +47,13 @@ public class StorageIndexHelper9 {
   private Map<SModelReference, String> myModelIndex;
   private Set<Integer> myUsedImportIndices;
 
-  private Map<SLanguageId, String> myLanguageIndex;
+  private Map<SLanguageId111, String> myLanguageIndex;
   private Set<Integer> myUsedLanguageIndices;
 
   public StorageIndexHelper9(SModelReference modelRef) {
     myModelIndex = new HashMap<SModelReference, String>();
     myUsedImportIndices = new HashSet<Integer>();
-    myLanguageIndex = new HashMap<SLanguageId, String>();
+    myLanguageIndex = new HashMap<SLanguageId111, String>();
     myUsedLanguageIndices = new HashSet<Integer>();
     myModelRef = modelRef;
   }
@@ -62,7 +62,7 @@ public class StorageIndexHelper9 {
     addInternalObject(((Map) myModelIndex), myUsedImportIndices, model, model.getModelId().hashCode());
   }
 
-  public void addLanguage(SLanguageId lang){
+  public void addLanguage(SLanguageId111 lang){
     addInternalObject(((Map) myLanguageIndex), myUsedLanguageIndices, lang, lang.getId().hashCode());
   }
 
@@ -70,7 +70,7 @@ public class StorageIndexHelper9 {
     return myModelIndex.get(model);
   }
 
-  public String getUsedLanguageIndex(@NotNull SLanguageId lang) {
+  public String getUsedLanguageIndex(@NotNull SLanguageId111 lang) {
     return myLanguageIndex.get(lang);
   }
 

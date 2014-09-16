@@ -22,7 +22,7 @@ import org.jetbrains.mps.openapi.language.SAbstractLink;
 import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.language.SConceptUtil;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
-import org.jetbrains.mps.openapi.language.SLanguageId;
+import org.jetbrains.mps.openapi.language.SLanguageId111;
 import org.jetbrains.mps.openapi.language.SProperty;
 import org.jetbrains.mps.openapi.language.SReferenceLink;
 import org.jetbrains.mps.openapi.module.DebugRegistry;
@@ -37,9 +37,9 @@ import java.util.UUID;
 
 public abstract class IdUtil {
 
-  public static final SProperty UNKNOWN_PROPERTY_ID = new SProperty(new SConcept(new SLanguageId(new UUID(0, 0)), 0), 0);
-  public static final SReferenceLink UNKNOWN_REFERENCE_ID = new SReferenceLink(new SConcept(new SLanguageId(new UUID(0, 0)), 0), 0);
-  public static final SContainmentLink UNKNOWN_LINK_ID = new SContainmentLink(new SConcept(new SLanguageId(new UUID(0, 0)), 0), 0);
+  public static final SProperty UNKNOWN_PROPERTY_ID = new SProperty(new SConcept(new SLanguageId111(new UUID(0, 0)), 0), 0);
+  public static final SReferenceLink UNKNOWN_REFERENCE_ID = new SReferenceLink(new SConcept(new SLanguageId111(new UUID(0, 0)), 0), 0);
+  public static final SContainmentLink UNKNOWN_LINK_ID = new SContainmentLink(new SConcept(new SLanguageId111(new UUID(0, 0)), 0), 0);
 
   public static String getConceptFqName(SConcept id) {
     DebugRegistry dr = MPSModuleRepository.getInstance().getDebugRegistry();
@@ -53,7 +53,7 @@ public abstract class IdUtil {
 
   public static SConcept getConceptId(String fqName) {
     DebugRegistryImpl dr = ((DebugRegistryImpl) MPSModuleRepository.getInstance().getDebugRegistry());
-    SLanguageId lang = dr.getLanguageId(NameUtil.namespaceFromConceptFQName(fqName));
+    SLanguageId111 lang = dr.getLanguageId(NameUtil.namespaceFromConceptFQName(fqName));
     if (lang == null) return null;
     return dr.getConceptId(lang, NameUtil.shortNameFromLongName(fqName));
   }

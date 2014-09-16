@@ -36,7 +36,7 @@ import org.jdom.Document;
 import org.jdom.Element;
 import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
-import org.jetbrains.mps.openapi.language.SLanguageId;
+import org.jetbrains.mps.openapi.language.SLanguageId111;
 import org.jetbrains.mps.openapi.language.SProperty;
 import org.jetbrains.mps.openapi.language.SReferenceLink;
 import org.jetbrains.mps.openapi.model.SModelReference;
@@ -109,8 +109,8 @@ public class ModelWriter9 implements IModelWriter {
     DebugRegistry debugRegistry = MPSModuleRepository.getInstance().getDebugRegistry();
 
     //save used languages info
-    for (SLanguageId ve : IterableUtil.merge(sourceModel.usedLanguages(), sourceModel.implicitlyUsedLanguagesWithVersions().keySet())) {
-      SLanguageId id = ve;
+    for (SLanguageId111 ve : IterableUtil.merge(sourceModel.usedLanguages(), sourceModel.implicitlyUsedLanguagesWithVersions().keySet())) {
+      SLanguageId111 id = ve;
       Language lang = new SLanguageAdapter(id).getSourceModule();
       String name = lang != null ? lang.getModuleName() : debugRegistry.getLanguageName(id);
 
@@ -227,7 +227,7 @@ public class ModelWriter9 implements IModelWriter {
   }
 
   private void saveUsedLanguages(Element rootElement, SModel sourceModel) {
-    for (Entry<SLanguageId, Integer> language : sourceModel.usedLanguagesWithVersions().entrySet()) {
+    for (Entry<SLanguageId111, Integer> language : sourceModel.usedLanguagesWithVersions().entrySet()) {
       myHelper.addLanguage(language.getKey());
       Element languageElem = new Element(ModelPersistence9.USED_LANGUAGE);
       languageElem.setAttribute(ModelPersistence9.ID, language.getKey().serialize());
@@ -235,7 +235,7 @@ public class ModelWriter9 implements IModelWriter {
       languageElem.setAttribute(ModelPersistence9.USE_INDEX, myHelper.getUsedLanguageIndex(language.getKey()));
       rootElement.addContent(languageElem);
     }
-    for (Entry<SLanguageId, Integer> language : sourceModel.implicitlyUsedLanguagesWithVersions().entrySet()) {
+    for (Entry<SLanguageId111, Integer> language : sourceModel.implicitlyUsedLanguagesWithVersions().entrySet()) {
       myHelper.addLanguage(language.getKey());
       Element languageElem = new Element(ModelPersistence9.USED_LANGUAGE);
       languageElem.setAttribute(ModelPersistence9.ID, language.getKey().serialize());

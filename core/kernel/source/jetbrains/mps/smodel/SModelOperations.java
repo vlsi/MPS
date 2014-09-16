@@ -29,7 +29,7 @@ import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
-import org.jetbrains.mps.openapi.language.SLanguageId;
+import org.jetbrains.mps.openapi.language.SLanguageId111;
 import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
@@ -415,7 +415,7 @@ public class SModelOperations {
   public static List<Language> getLanguages(jetbrains.mps.smodel.SModel model) {
     Set<Language> languages = new LinkedHashSet<Language>();
 
-    for (SLanguageId lang : model.usedLanguages()) {
+    for (SLanguageId111 lang : model.usedLanguages()) {
       Language language = new SLanguageAdapter(lang).getSourceModule();
 
       if (language != null) {

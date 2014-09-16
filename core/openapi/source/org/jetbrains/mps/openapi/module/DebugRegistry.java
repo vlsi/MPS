@@ -17,7 +17,7 @@ package org.jetbrains.mps.openapi.module;
 
 import org.jetbrains.mps.openapi.language.SAbstractLink;
 import org.jetbrains.mps.openapi.language.SConcept;
-import org.jetbrains.mps.openapi.language.SLanguageId;
+import org.jetbrains.mps.openapi.language.SLanguageId111;
 import org.jetbrains.mps.openapi.language.SProperty;
 import org.jetbrains.mps.openapi.model.SModelReference;
 
@@ -32,7 +32,7 @@ public interface DebugRegistry {
 
   String getConceptName(SConcept conceptId);
 
-  String getLanguageName(SLanguageId languageId);
+  String getLanguageName(SLanguageId111 languageId);
 
   void addModelName(SModelReference model, String name);
 
@@ -44,5 +44,5 @@ public interface DebugRegistry {
 
   void addConceptName(SConcept conceptId, String name);
 
-  void addLanguageName(SLanguageId languageId, String name);
+  void addLanguageName(SLanguageId111 languageId, String name);
 }

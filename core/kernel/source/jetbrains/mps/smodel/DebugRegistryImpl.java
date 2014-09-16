@@ -19,7 +19,7 @@ import jetbrains.mps.util.Pair;
 import jetbrains.mps.util.containers.BidirectionalMap;
 import org.jetbrains.mps.openapi.language.SAbstractLink;
 import org.jetbrains.mps.openapi.language.SConcept;
-import org.jetbrains.mps.openapi.language.SLanguageId;
+import org.jetbrains.mps.openapi.language.SLanguageId111;
 import org.jetbrains.mps.openapi.language.SProperty;
 import org.jetbrains.mps.openapi.module.DebugRegistry;
 import org.jetbrains.mps.openapi.module.SModuleReference;
@@ -34,7 +34,7 @@ public class DebugRegistryImpl implements DebugRegistry {
   private BidirectionalMap<SProperty, Pair<SConcept, String>> myProperties = new BidirectionalMap<SProperty, Pair<SConcept, String>>();
   private BidirectionalMap<SAbstractLink, Pair<SConcept, String>> myLinks = new BidirectionalMap<SAbstractLink, Pair<SConcept, String>>();
   private BidirectionalMap<SConcept, String> myConcepts = new BidirectionalMap<SConcept, String>();
-  private BidirectionalMap<SLanguageId, String> myLanguages = new BidirectionalMap<SLanguageId, String>();
+  private BidirectionalMap<SLanguageId111, String> myLanguages = new BidirectionalMap<SLanguageId111, String>();
 
   @Override
   public synchronized String getModelName(org.jetbrains.mps.openapi.model.SModelReference modelId) {
@@ -64,7 +64,7 @@ public class DebugRegistryImpl implements DebugRegistry {
   }
 
   @Override
-  public synchronized String getLanguageName(SLanguageId languageId) {
+  public synchronized String getLanguageName(SLanguageId111 languageId) {
     return myLanguages.get(languageId);
   }
 
@@ -94,7 +94,7 @@ public class DebugRegistryImpl implements DebugRegistry {
   }
 
   @Override
-  public synchronized void addLanguageName(SLanguageId languageId, String name) {
+  public synchronized void addLanguageName(SLanguageId111 languageId, String name) {
     myLanguages.put(languageId, name);
   }
 
@@ -128,7 +128,7 @@ public class DebugRegistryImpl implements DebugRegistry {
     return null;
   }
 
-  public synchronized SConcept getConceptId(SLanguageId lang, String name) {
+  public synchronized SConcept getConceptId(SLanguageId111 lang, String name) {
     List<SConcept> ids = myConcepts.getKeysByValue(name);
     if (ids == null || ids.isEmpty()) return null;
     for (SConcept id:ids){
@@ -137,8 +137,8 @@ public class DebugRegistryImpl implements DebugRegistry {
     return null;
   }
 
-  public synchronized SLanguageId getLanguageId(String name) {
-    List<SLanguageId> ids = myLanguages.getKeysByValue(name);
+  public synchronized SLanguageId111 getLanguageId(String name) {
+    List<SLanguageId111> ids = myLanguages.getKeysByValue(name);
     if (ids == null || ids.isEmpty()) return null;
     return ids.get(0);
   }

@@ -6,6 +6,8 @@ import jetbrains.mps.util.xml.XMLSAXHandler;
 import java.util.List;
 import jetbrains.mps.smodel.persistence.lines.LineContent;
 import java.util.Stack;
+
+import org.jetbrains.mps.openapi.language.SLanguageId111;
 import org.xml.sax.Locator;
 import jetbrains.mps.smodel.persistence.def.v5.LineContentAccumulator;
 import org.xml.sax.SAXException;
@@ -14,7 +16,6 @@ import org.xml.sax.SAXParseException;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
-import org.jetbrains.mps.openapi.language.SLanguageId;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import jetbrains.mps.smodel.SNodeId;
 import jetbrains.mps.smodel.MPSModuleRepository;
@@ -184,7 +185,7 @@ public class AnnotationInfoReader9Handler extends XMLSAXHandler<List<LineContent
       return defaultHandler;
     }
     private void handleChild_8634114485976612315(Object resultObject, Object value) throws SAXException {
-      Tuples._2<SLanguageId, String> child = (Tuples._2<SLanguageId, String>) value;
+      Tuples._2<SLanguageId111, String> child = (Tuples._2<SLanguageId111, String>) value;
       fieldhelper.registerLanguage(child._1(), child._0());
     }
   }
@@ -193,8 +194,8 @@ public class AnnotationInfoReader9Handler extends XMLSAXHandler<List<LineContent
     public Used_languageElementHandler() {
     }
     @Override
-    protected Tuples._2<SLanguageId, String> createObject(Attributes attrs) throws SAXException {
-      return MultiTuple.<SLanguageId,String>from(SLanguageId.deserialize(attrs.getValue("id")), attrs.getValue("index"));
+    protected Tuples._2<SLanguageId111, String> createObject(Attributes attrs) throws SAXException {
+      return MultiTuple.<SLanguageId111,String>from(SLanguageId111.deserialize(attrs.getValue("id")), attrs.getValue("index"));
     }
     @Override
     protected String[] requiredAttributes() {
@@ -202,7 +203,7 @@ public class AnnotationInfoReader9Handler extends XMLSAXHandler<List<LineContent
     }
     @Override
     protected void handleAttribute(Object resultObject, String name, String value) throws SAXException {
-      Tuples._2<SLanguageId, String> result = (Tuples._2<SLanguageId, String>) resultObject;
+      Tuples._2<SLanguageId111, String> result = (Tuples._2<SLanguageId111, String>) resultObject;
       if ("id".equals(name)) {
         return;
       }

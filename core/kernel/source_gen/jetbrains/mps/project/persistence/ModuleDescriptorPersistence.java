@@ -7,10 +7,10 @@ import org.jdom.Element;
 import jetbrains.mps.util.xml.XmlUtil;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
+import org.jetbrains.mps.openapi.language.SLanguageId111;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
-import org.jetbrains.mps.openapi.language.SLanguageId;
 import jetbrains.mps.project.structure.modules.LanguageDescriptor;
 import jetbrains.mps.project.structure.modules.Dependency;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -67,7 +67,7 @@ public class ModuleDescriptorPersistence {
 
     Sequence.fromIterable(XmlUtil.children(XmlUtil.first(root, "languageVersions"), "language")).visitAll(new IVisitor<Element>() {
       public void visit(Element it) {
-        descriptor.getLanguageVersions().put(SLanguageId.deserialize(it.getAttributeValue("id")), Integer.parseInt(it.getAttributeValue("version")));
+        descriptor.getLanguageVersions().put(SLanguageId111.deserialize(it.getAttributeValue("id")), Integer.parseInt(it.getAttributeValue("version")));
       }
     });
 
@@ -104,7 +104,7 @@ public class ModuleDescriptorPersistence {
     }
     if (!((descriptor.getLanguageVersions().isEmpty()))) {
       Element languageVersions = new Element("languageVersions");
-      for (Map.Entry<SLanguageId, Integer> lv : descriptor.getLanguageVersions().entrySet()) {
+      for (Map.Entry<SLanguageId111, Integer> lv : descriptor.getLanguageVersions().entrySet()) {
         Element languageVersion = new Element("language");
         languageVersion.setAttribute("id", lv.getKey().serialize());
         languageVersion.setAttribute("version", String.valueOf(lv.getValue()));

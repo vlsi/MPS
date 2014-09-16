@@ -57,7 +57,7 @@ import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SLanguage;
-import org.jetbrains.mps.openapi.language.SLanguageId;
+import org.jetbrains.mps.openapi.language.SLanguageId111;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.module.FacetsFacade;
 import org.jetbrains.mps.openapi.module.SDependency;
@@ -902,8 +902,8 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
   }
 
   public void validateLanguageVersions() {
-    Map<SLanguageId, Integer> oldLanguageVersions = getModuleDescriptor().getLanguageVersions();
-    Map<SLanguageId, Integer> newLanguageVersions = new HashMap<SLanguageId, Integer>();
+    Map<SLanguageId111, Integer> oldLanguageVersions = getModuleDescriptor().getLanguageVersions();
+    Map<SLanguageId111, Integer> newLanguageVersions = new HashMap<SLanguageId111, Integer>();
     for (SLanguage lang : getAllUsedLanguages()) {
       if (oldLanguageVersions.containsKey(lang.getId())) {
         newLanguageVersions.put(lang.getId(), oldLanguageVersions.get(lang.getId()));

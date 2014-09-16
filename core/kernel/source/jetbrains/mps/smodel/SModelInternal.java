@@ -20,7 +20,7 @@ import jetbrains.mps.project.dependency.ModelDependenciesManager;
 import jetbrains.mps.smodel.SModel.ImportElement;
 import jetbrains.mps.smodel.event.SModelListener;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.mps.openapi.language.SLanguageId;
+import org.jetbrains.mps.openapi.language.SLanguageId111;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 
@@ -44,17 +44,17 @@ public interface SModelInternal extends ModelWithDisposeInfo  {
   @Deprecated
   void addLanguage(SModuleReference ref);
 
-  java.util.Collection<SLanguageId> importedLanguageIds();
+  java.util.Collection<SLanguageId111> importedLanguageIds();
 
-  Map<SLanguageId, Integer> importedLanguageIdsWithVersions();
+  Map<SLanguageId111, Integer> importedLanguageIdsWithVersions();
 
-  Map<SLanguageId, Integer> implicitLanguageIdsWithVersions();
+  Map<SLanguageId111, Integer> implicitLanguageIdsWithVersions();
 
-  void deleteLanguageId(@NotNull SLanguageId ref);
+  void deleteLanguageId(@NotNull SLanguageId111 ref);
 
   void addLanguage(Language language);
 
-  void addLanguageId(SLanguageId ref, int version);
+  void addLanguageId(SLanguageId111 ref, int version);
 
   List<SModuleReference> importedDevkits();
 

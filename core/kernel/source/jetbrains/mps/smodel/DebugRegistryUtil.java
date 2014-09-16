@@ -23,7 +23,7 @@ import jetbrains.mps.smodel.adapter.SPropertyAdapter;
 import jetbrains.mps.smodel.adapter.SReferenceLinkAdapter;
 import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
-import org.jetbrains.mps.openapi.language.SLanguageId;
+import org.jetbrains.mps.openapi.language.SLanguageId111;
 import org.jetbrains.mps.openapi.language.SProperty;
 import org.jetbrains.mps.openapi.language.SReferenceLink;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -107,7 +107,7 @@ public class DebugRegistryUtil implements CoreComponent {
 
   private static void fillDebugRegistryForLanguage(Language language) {
     DebugRegistry dr = MPSModuleRepository.getInstance().getDebugRegistry();
-    SLanguageId lid = IdHelper.getLanguageId(language.getModuleReference().getModuleId());
+    SLanguageId111 lid = IdHelper.getLanguageId(language.getModuleReference().getModuleId());
     dr.addLanguageName(lid, language.getModuleName());
 
     org.jetbrains.mps.openapi.model.SModel structureModel  = LanguageAspect.STRUCTURE.get((Language) language);

@@ -19,7 +19,7 @@ import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.project.structure.model.ModelRootDescriptor;
 import jetbrains.mps.util.io.ModelInputStream;
 import jetbrains.mps.util.io.ModelOutputStream;
-import org.jetbrains.mps.openapi.language.SLanguageId;
+import org.jetbrains.mps.openapi.language.SLanguageId111;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 
 import java.io.IOException;
@@ -49,7 +49,7 @@ public class ModuleDescriptor {
   private Collection<Dependency> myDependencies;
   private Collection<SModuleReference> myUsedLanguages;
   private Collection<SModuleReference> myUsedDevkits;
-  private final Map<SLanguageId, Integer> myLanguageVersions;
+  private final Map<SLanguageId111, Integer> myLanguageVersions;
   private Collection<String> myAdditionalJavaStubPaths;
   private Collection<String> mySourcePaths;
   private DeploymentDescriptor myDeploymentDescriptor;
@@ -63,7 +63,7 @@ public class ModuleDescriptor {
     myDependencies = new TreeSet<Dependency>(DEPENDENCY_COMPARATOR);
     myUsedLanguages = new TreeSet<SModuleReference>(MODULE_REFERENCE_COMPARATOR);
     myUsedDevkits = new TreeSet<SModuleReference>(MODULE_REFERENCE_COMPARATOR);
-    myLanguageVersions = new HashMap<SLanguageId, Integer>();
+    myLanguageVersions = new HashMap<SLanguageId111, Integer>();
     myAdditionalJavaStubPaths = new LinkedHashSet<String>();
     mySourcePaths = new LinkedHashSet<String>();
   }
@@ -116,7 +116,7 @@ public class ModuleDescriptor {
     return myUsedLanguages;
   }
 
-  public Map<SLanguageId, Integer> getLanguageVersions() {
+  public Map<SLanguageId111, Integer> getLanguageVersions() {
     return myLanguageVersions;
   }
 
@@ -204,7 +204,7 @@ public class ModuleDescriptor {
     }
 
     stream.writeInt(myLanguageVersions.size());
-    for (Entry<SLanguageId, Integer> entry : myLanguageVersions.entrySet()) {
+    for (Entry<SLanguageId111, Integer> entry : myLanguageVersions.entrySet()) {
       stream.writeString(entry.getKey().serialize());
       stream.writeInt(entry.getValue());
     }
@@ -257,7 +257,7 @@ public class ModuleDescriptor {
 
     myLanguageVersions.clear();
     for (int size = stream.readInt(); size > 0; size--) {
-      myLanguageVersions.put(SLanguageId.deserialize(stream.readString()), stream.readInt());
+      myLanguageVersions.put(SLanguageId111.deserialize(stream.readString()), stream.readInt());
     }
 
     myAdditionalJavaStubPaths.clear();

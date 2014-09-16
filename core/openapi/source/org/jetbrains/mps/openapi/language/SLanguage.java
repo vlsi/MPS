@@ -28,7 +28,7 @@ public interface SLanguage {
    */
   String getQualifiedName();
 
-  SLanguageId getId();
+  SLanguageId111 getId();
   /**
    * All concepts defined in the language
    */

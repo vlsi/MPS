@@ -6,7 +6,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodeId;
 import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
-import org.jetbrains.mps.openapi.language.SLanguageId;
+import org.jetbrains.mps.openapi.language.SLanguageId111;
 import jetbrains.mps.smodel.Language;
 import org.jetbrains.mps.openapi.language.SProperty;
 import org.jetbrains.mps.openapi.language.SReferenceLink;
@@ -23,16 +23,16 @@ public class IdHelper {
     return ((SNodeId.Regular) node.getNodeId()).getId();
   }
 
-  public static SLanguageId getLanguageId(Language l) {
+  public static SLanguageId111 getLanguageId(Language l) {
     return getLanguageId(l.getModuleReference().getModuleId());
   }
 
-  public static SLanguageId getLanguageId(SModuleId moduleId) {
+  public static SLanguageId111 getLanguageId(SModuleId moduleId) {
     assert moduleId instanceof ModuleId.Regular;
-    return new SLanguageId(((ModuleId.Regular) moduleId).getUUID());
+    return new SLanguageId111(((ModuleId.Regular) moduleId).getUUID());
   }
 
-  public static SModuleReference getModuleReference(SLanguageId id) {
+  public static SModuleReference getModuleReference(SLanguageId111 id) {
     return new ModuleReference(null, ModuleId.regular(id.getId()));
   }
 
