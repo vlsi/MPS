@@ -135,15 +135,18 @@ public class FilePerRootFormatUtil {
     return headerHandler.getResult();
   }
 
+  public static int actualPersistenceVersion(int desiredPersistenceVersion) {
+    IModelPersistence modelPersistence = ModelPersistence.getModelPersistence(Math.max(desiredPersistenceVersion, 8));
+    if (modelPersistence == null) {
+      modelPersistence = ModelPersistence.getCurrentModelPersistence();
+    }
+    return modelPersistence.getVersion();
+  }
   /**
    * returns true if the content should be reloaded from storage after save
    */
   public static boolean saveModel(SModel modelData, MultiStreamDataSource source, int persistenceVersion) throws IOException {
-    IModelPersistence modelPersistence = ModelPersistence.getModelPersistence(Math.max(persistenceVersion, 8));
-    if (modelPersistence == null) {
-      modelPersistence = ModelPersistence.getCurrentModelPersistence();
-    }
-    persistenceVersion = modelPersistence.getVersion();
+    persistenceVersion = actualPersistenceVersion(persistenceVersion);
 
     // upgrade?
     int oldVersion = persistenceVersion;
@@ -157,7 +160,7 @@ public class FilePerRootFormatUtil {
 
     // save into JDOM
     modelData.calculateImplicitImports();
-    Map<String, Document> result = modelPersistence.getModelWriter().saveModelAsMultiStream(modelData);
+    Map<String, Document> result = ModelPersistence.getModelPersistence(persistenceVersion).getModelWriter().saveModelAsMultiStream(modelData);
 
     // write to storage
     Set<String> toRemove = new HashSet<String>();

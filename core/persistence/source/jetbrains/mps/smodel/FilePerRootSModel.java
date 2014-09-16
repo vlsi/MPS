@@ -17,48 +17,37 @@ package jetbrains.mps.smodel;
 
 import jetbrains.mps.extapi.model.GeneratableSModel;
 import jetbrains.mps.extapi.model.SModelData;
-import jetbrains.mps.extapi.persistence.FileDataSource;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.persistence.FilePerRootModelPersistence;
+import jetbrains.mps.persistence.LazyLoadFacility;
 import jetbrains.mps.refactoring.StructureModificationLog;
 import jetbrains.mps.smodel.DefaultSModel.InvalidDefaultSModel;
 import jetbrains.mps.smodel.descriptor.RefactorableSModelDescriptor;
 import jetbrains.mps.smodel.loading.ModelLoadResult;
 import jetbrains.mps.smodel.loading.ModelLoadingState;
 import jetbrains.mps.smodel.nodeidmap.RegularNodeIdMap;
-import jetbrains.mps.smodel.persistence.def.FilePerRootFormatUtil;
 import jetbrains.mps.smodel.persistence.def.ModelReadException;
 import jetbrains.mps.smodel.persistence.def.RefactoringsPersistence;
 import org.apache.log4j.LogManager;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.mps.openapi.model.SModelReference;
-import org.jetbrains.mps.openapi.persistence.MultiStreamDataSource;
+import org.jetbrains.mps.openapi.persistence.DataSource;
 
 import java.io.IOException;
 import java.util.Map;
 
-/**
- * evgeny, 6/3/13
- */
 public class FilePerRootSModel extends LazyEditableSModelBase implements GeneratableSModel, RefactorableSModelDescriptor {
   private static final Logger LOG = Logger.wrap(LogManager.getLogger(FilePerRootSModel.class));
+  private final LazyLoadFacility myPersistence;
 
   private SModelHeader myHeader;
 
   private final Object myRefactoringHistoryLock = new Object();
   private StructureModificationLog myStructureModificationLog;
 
-  public FilePerRootSModel(MultiStreamDataSource source, SModelReference modelReference, SModelHeader header) {
-    super(modelReference, source);
+  public FilePerRootSModel(LazyLoadFacility persistence, SModelHeader header) {
+    super(header.getModelReference(), persistence.getSource());
+    myPersistence = persistence;
     myHeader = header;
   }
-
-  @NotNull
-  @Override
-  public MultiStreamDataSource getSource() {
-    return (MultiStreamDataSource) super.getSource();
-  }
-
 
   @Override
   public void replace(SModelData modelData) {
@@ -72,19 +61,16 @@ public class FilePerRootSModel extends LazyEditableSModelBase implements Generat
 
   @Override
   protected ModelLoadResult loadSModel(ModelLoadingState state) {
-    SModelReference dsmRef = getReference();
-
-    MultiStreamDataSource source = getSource();
+    DataSource source = getSource();
     if (!source.isReadOnly() && source.getTimestamp() == -1) {
       // no file on disk
-      DefaultSModel model = new DefaultSModel(dsmRef, new RegularNodeIdMap());
+      DefaultSModel model = new DefaultSModel(getReference(), new RegularNodeIdMap());
       return new ModelLoadResult(model, ModelLoadingState.FULLY_LOADED);
     }
 
     ModelLoadResult result;
     try {
-      // TODO use DataSource
-      result = FilePerRootFormatUtil.readModel(myHeader, source, state);
+      result = myPersistence.readModel(myHeader, state);
     } catch (ModelReadException e) {
       SuspiciousModelHandler.getHandler().handleSuspiciousModel(this, false);
       DefaultSModel newModel = new InvalidDefaultSModel(getReference(), e);
@@ -100,25 +86,24 @@ public class FilePerRootSModel extends LazyEditableSModelBase implements Generat
       }
     }
 
-    LOG.assertLog(model.getReference().equals(dsmRef),
+    LOG.assertLog(model.getReference().equals(getReference()),
         "\nError loading model from: \"" + source.getLocation() + "\"\n" +
-            "expected model UID     : \"" + dsmRef + "\"\n" +
+            "expected model UID     : \"" + getReference() + "\"\n" +
             "but was UID            : \"" + model.getReference() + "\"\n" +
             "the model will not be available.\n" +
             "Make sure that all project's roots and/or the model namespace is correct");
     return result;
   }
 
-
   public int getPersistenceVersion() {
-    return getSModelHeader().getPersistenceVersion();
+    return getModelHeader().getPersistenceVersion();
   }
 
   @Override
   @NotNull
   public StructureModificationLog getStructureModificationLog() {
     synchronized (myRefactoringHistoryLock) {
-      if (myStructureModificationLog == null && getSource() instanceof FileDataSource) {
+      if (myStructureModificationLog == null) {
         myStructureModificationLog = RefactoringsPersistence.load(getSource());
       }
       if (myStructureModificationLog == null) {
@@ -141,7 +126,9 @@ public class FilePerRootSModel extends LazyEditableSModelBase implements Generat
       // we do not save stub model to not overwrite the real model
       return false;
     }
-    return FilePerRootFormatUtil.saveModel(smodel, getSource(), smodel.getPersistenceVersion());
+    boolean upgraded = myPersistence.doesSaveUpgradePersistence(myHeader);
+    myPersistence.saveModel(myHeader, smodel);
+    return upgraded;
   }
 
   @Override
@@ -151,51 +138,44 @@ public class FilePerRootSModel extends LazyEditableSModelBase implements Generat
 
   @Override
   public boolean isGenerateIntoModelFolder() {
-    return Boolean.parseBoolean(getSModelHeader().getOptionalProperty("useModelFolderForGeneration"));
+    return Boolean.parseBoolean(getModelHeader().getOptionalProperty("useModelFolderForGeneration"));
   }
 
   @Override
   public String getModelHash() {
-    Map<String, String> genHashes = getGenerationHashes();
-    if (genHashes == null) {
-      // I/O problem, hash is not available
-      return null;
-    }
-
-    return genHashes.get(GeneratableSModel.FILE);
+    return myPersistence.getModelHash();
   }
 
   @Override
   public Map<String, String> getGenerationHashes() {
-    return FilePerRootModelPersistence.getModelHashes(getSource());
+    return myPersistence.getGenerationHashes();
   }
-
 
   @Override
   public void setDoNotGenerate(boolean value) {
     ModelAccess.assertLegalWrite();
 
-    getSModelHeader().setDoNotGenerate(value);
+    getModelHeader().setDoNotGenerate(value);
   }
 
   @Override
   public boolean isDoNotGenerate() {
-    return getSModelHeader().isDoNotGenerate();
+    return getModelHeader().isDoNotGenerate();
   }
 
   @Override
   public int getVersion() {
-    return getSModelHeader().getVersion();
+    return getModelHeader().getVersion();
   }
 
   @Override
   public void setVersion(int newVersion) {
     ModelAccess.assertLegalWrite();
 
-    getSModelHeader().setVersion(newVersion);
+    getModelHeader().setVersion(newVersion);
   }
 
-  private SModelHeader getSModelHeader() {
+  private SModelHeader getModelHeader() {
     DefaultSModel model = (DefaultSModel) getCurrentModelInternal();
     if (model == null) return myHeader;
     return model.getSModelHeader();
@@ -222,7 +202,7 @@ public class FilePerRootSModel extends LazyEditableSModelBase implements Generat
   @Override
   protected void reloadContents() {
     try {
-      myHeader = FilePerRootFormatUtil.loadDescriptor(getSource());
+      myHeader = myPersistence.readHeader();
     } catch (ModelReadException e) {
       updateTimestamp();
       SuspiciousModelHandler.getHandler().handleSuspiciousModel(this, false);

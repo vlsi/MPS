@@ -3,6 +3,7 @@ package jetbrains.mps.persistence;
 import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.extapi.model.GeneratableSModel;
 import jetbrains.mps.extapi.model.SModelBase;
+import jetbrains.mps.extapi.model.SModelData;
 import jetbrains.mps.generator.ModelDigestUtil;
 import jetbrains.mps.persistence.binary.BinaryModelHeader;
 import jetbrains.mps.persistence.binary.BinaryPersistence;
@@ -10,6 +11,9 @@ import jetbrains.mps.persistence.binary.BinarySModel;
 import jetbrains.mps.persistence.binary.BinarySModelDescriptor;
 import jetbrains.mps.persistence.binary.NodesWriter;
 import jetbrains.mps.project.MPSExtentions;
+import jetbrains.mps.smodel.SModelHeader;
+import jetbrains.mps.smodel.loading.ModelLoadResult;
+import jetbrains.mps.smodel.loading.ModelLoadingState;
 import jetbrains.mps.smodel.persistence.def.ModelReadException;
 import jetbrains.mps.util.io.ModelOutputStream;
 import org.apache.log4j.LogManager;
@@ -66,7 +70,7 @@ public class BinaryModelPersistence implements CoreComponent, ModelFactory {
       LOG.debug(e.getMessageEx());
       throw new RuntimeException(e);
     }
-    return new BinarySModelDescriptor(source, binaryModelHeader);
+    return new BinarySModelDescriptor(new PersistenceFacility(this, source), binaryModelHeader);
   }
 
   @NotNull
@@ -83,7 +87,7 @@ public class BinaryModelPersistence implements CoreComponent, ModelFactory {
     }
 
     SModelReference ref = PersistenceFacade.getInstance().createModelReference(null, jetbrains.mps.smodel.SModelId.generate(), modelName);
-    return new BinarySModelDescriptor(source, new BinaryModelHeader(ref));
+    return new BinarySModelDescriptor(new PersistenceFacility(this, source), new BinaryModelHeader(ref));
   }
 
   @Override
@@ -181,5 +185,48 @@ public class BinaryModelPersistence implements CoreComponent, ModelFactory {
     }
     result.put(GeneratableSModel.HEADER, os.getResult());
     return result;
+  }
+
+  private static class PersistenceFacility extends LazyLoadFacility {
+    /*package*/ PersistenceFacility(BinaryModelPersistence modelFactory, StreamDataSource dataSource) {
+      super(modelFactory, dataSource);
+    }
+
+    @NotNull
+    @Override
+    public StreamDataSource getSource() {
+      return (StreamDataSource) super.getSource();
+    }
+
+    @Override
+    public Map<String, String> getGenerationHashes() {
+      Map<String, String> generationHashes = ModelDigestHelper.getInstance().getGenerationHashes(getSource());
+      if (generationHashes != null) return generationHashes;
+
+      return BinaryModelPersistence.getDigestMap(getSource());
+    }
+
+    @NotNull
+    @Override
+    public SModelHeader readHeader() throws ModelReadException {
+      return BinaryPersistence.readHeader(getSource());
+    }
+
+    @NotNull
+    @Override
+    public ModelLoadResult readModel(@NotNull SModelHeader header, @NotNull ModelLoadingState state) throws ModelReadException {
+      return BinaryPersistence.readModel(header.getModelReference(), getSource(), state == ModelLoadingState.INTERFACE_LOADED);
+    }
+
+    @Override
+    public boolean doesSaveUpgradePersistence(@NotNull SModelHeader header) {
+      // binary persistence doesn't have versions yet
+      return false;
+    }
+
+    @Override
+    public void saveModel(@NotNull SModelHeader header, SModelData modelData) throws IOException {
+      BinaryPersistence.writeModel((jetbrains.mps.smodel.SModel) modelData, getSource());
+    }
   }
 }

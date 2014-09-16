@@ -153,7 +153,7 @@ public class PersistenceTest extends WorkbenchMpsTest {
                   final ModelLoadResult resultFrom = ModelAccess.instance().runReadAction(new Computable<ModelLoadResult>() {
                     public ModelLoadResult compute() {
                       try {
-                        ModelLoadResult result = ModelPersistence.readModel(SModelHeader.create(version[0]), testModel.getSource(),
+                        ModelLoadResult result = ModelPersistence.readModel(SModelHeader.create(version[0]), (StreamDataSource) testModel.getSource(),
                             ModelLoadingState.FULLY_LOADED);
                         assertTrue(result.getState() == ModelLoadingState.FULLY_LOADED);
                         return result;
@@ -175,7 +175,7 @@ public class PersistenceTest extends WorkbenchMpsTest {
                   final ModelLoadResult resultTo = ModelAccess.instance().runReadAction(new Computable<ModelLoadResult>() {
                     public ModelLoadResult compute() {
                       try {
-                        ModelLoadResult result = ModelPersistence.readModel(SModelHeader.create(version[1]), testModel.getSource(),
+                        ModelLoadResult result = ModelPersistence.readModel(SModelHeader.create(version[1]), (StreamDataSource) testModel.getSource(),
                             ModelLoadingState.FULLY_LOADED);
                         assertTrue(result.getState() == ModelLoadingState.FULLY_LOADED);
                         ModelAssert.assertDeepModelEquals(resultFrom.getModel(),
@@ -211,7 +211,7 @@ public class PersistenceTest extends WorkbenchMpsTest {
     for (final DefaultSModelDescriptor modelDescriptor : modelDescriptors) {
       assert ThreadUtils.isEventDispatchThread() : "you must be in EDT to write files";
 
-      StreamDataSource source = modelDescriptor.getSource();
+      StreamDataSource source = (StreamDataSource) modelDescriptor.getSource();
       if (source.isReadOnly()) continue;
 
       boolean wasInitialized = modelDescriptor.isLoaded();

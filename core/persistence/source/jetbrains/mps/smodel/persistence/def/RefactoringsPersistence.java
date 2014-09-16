@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.smodel.persistence.def;
 
+import jetbrains.mps.extapi.persistence.FileDataSource;
 import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.refactoring.StructureModificationLog;
 import jetbrains.mps.smodel.persistence.def.refactoring.HistoryReaderHandler;
@@ -26,7 +27,9 @@ import jetbrains.mps.vfs.IFile;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jdom.Document;
+import org.jetbrains.mps.openapi.persistence.DataSource;
 import org.jetbrains.mps.openapi.persistence.MultiStreamDataSource;
+import org.jetbrains.mps.openapi.persistence.StreamDataSource;
 import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
 import org.xml.sax.SAXParseException;
@@ -48,6 +51,15 @@ public class RefactoringsPersistence {
     String refactoringsPath = modelPath.substring(0, modelPath.length() - MPSExtentions.DOT_MODEL.length())
         + MPSExtentions.DOT_REFACTORINGS;
     return FileSystem.getInstance().getFileByPath(refactoringsPath);
+  }
+
+  public static void save(DataSource dataSource, StructureModificationLog log) {
+    if (dataSource instanceof StreamDataSource) {
+      save(((FileDataSource) dataSource).getFile(), log);
+    } else if (dataSource instanceof MultiStreamDataSource) {
+      save((MultiStreamDataSource) dataSource, log);
+    }
+    throw new UnsupportedOperationException("cannot save structure modification log for " + dataSource);
   }
 
   public static void save(IFile modelFile, StructureModificationLog log) {
@@ -74,6 +86,16 @@ public class RefactoringsPersistence {
     } catch (IOException e) {
       LOG.error("Cannot save refactorings log into " + source.getLocation(), e);
     }
+  }
+
+  public static StructureModificationLog load(DataSource dataSource) {
+    if (dataSource instanceof StreamDataSource) {
+      return load(((FileDataSource) dataSource).getFile());
+    }
+    if (dataSource instanceof MultiStreamDataSource) {
+      return load((MultiStreamDataSource) dataSource);
+    }
+    return null;
   }
 
   public static StructureModificationLog load(MultiStreamDataSource dataSource) {

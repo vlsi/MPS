@@ -17,11 +17,14 @@ package jetbrains.mps.persistence;
 
 import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.extapi.model.SModelBase;
+import jetbrains.mps.extapi.model.SModelData;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.smodel.DefaultSModel;
 import jetbrains.mps.smodel.DefaultSModelDescriptor;
 import jetbrains.mps.smodel.SModelHeader;
+import jetbrains.mps.smodel.loading.ModelLoadResult;
+import jetbrains.mps.smodel.loading.ModelLoadingState;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.smodel.persistence.def.ModelReadException;
 import jetbrains.mps.util.FileUtil;
@@ -69,15 +72,18 @@ public class DefaultModelPersistence implements CoreComponent, ModelFactory {
     }
 
     StreamDataSource source = (StreamDataSource) dataSource;
+    PersistenceFacility pf = new PersistenceFacility(this, source);
     SModelHeader header;
     try {
-      header = ModelPersistence.loadDescriptor(source);
+      header = pf.readHeader();
     } catch (ModelReadException ignored) {
       LOG.error("Can't read model: ", ignored);
       throw new IOException("Can't read model: ", ignored);
     }
+    assert header.getModelReference() != null : "wrong model: " + source.getLocation();
+
     LOG.debug("Getting model " + header.getModelReference() + " from " + dataSource.getLocation());
-    return new DefaultSModelDescriptor(source, header);
+    return new DefaultSModelDescriptor(pf, header);
   }
 
   @NotNull
@@ -93,7 +99,7 @@ public class DefaultModelPersistence implements CoreComponent, ModelFactory {
     }
     final SModelHeader header = SModelHeader.create(ModelPersistence.LAST_VERSION);
     header.setModelReference(PersistenceFacade.getInstance().createModelReference(null, jetbrains.mps.smodel.SModelId.generate(), modelName));
-    return new DefaultSModelDescriptor((StreamDataSource) dataSource, header);
+    return new DefaultSModelDescriptor(new PersistenceFacility(this, (StreamDataSource) dataSource), header);
   }
 
   @Override
@@ -191,6 +197,48 @@ public class DefaultModelPersistence implements CoreComponent, ModelFactory {
       return ModelPersistence.calculateHashes(FileUtil.read(input));
     } catch (ModelReadException e) {
       return null;
+    }
+  }
+
+  private static class PersistenceFacility extends LazyLoadFacility {
+    /*package*/ PersistenceFacility(DefaultModelPersistence modelFactory, StreamDataSource dataSource) {
+      super(modelFactory, dataSource);
+    }
+
+    @Override
+    public StreamDataSource getSource() {
+      return (StreamDataSource) super.getSource();
+    }
+
+    @Override
+    public Map<String, String> getGenerationHashes() {
+      Map<String, String> generationHashes = ModelDigestHelper.getInstance().getGenerationHashes(getSource());
+      if (generationHashes != null) return generationHashes;
+
+      return DefaultModelPersistence.getDigestMap(getSource());
+    }
+
+    @NotNull
+    @Override
+    public SModelHeader readHeader() throws ModelReadException {
+      return ModelPersistence.loadDescriptor(getSource());
+    }
+
+    @NotNull
+    @Override
+    public ModelLoadResult readModel(@NotNull SModelHeader header, ModelLoadingState state) throws ModelReadException {
+      return ModelPersistence.readModel(header, getSource(), state);
+    }
+
+    @Override
+    public boolean doesSaveUpgradePersistence(@NotNull SModelHeader header) {
+      final int pv = ModelPersistence.actualPersistenceVersion(header.getPersistenceVersion());
+      return pv != header.getPersistenceVersion();
+    }
+
+    @Override
+    public void saveModel(@NotNull SModelHeader header, SModelData modelData) throws IOException {
+      ModelPersistence.saveModel((jetbrains.mps.smodel.SModel) modelData, getSource(), header.getPersistenceVersion());
     }
   }
 }

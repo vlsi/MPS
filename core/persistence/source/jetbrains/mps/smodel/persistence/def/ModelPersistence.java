@@ -162,6 +162,7 @@ public class ModelPersistence {
     return result;
   }
 
+  @NotNull
   public static SModelHeader loadDescriptor(StreamDataSource source) throws ModelReadException {
     final SModelHeader result = new SModelHeader();
     loadDescriptor(result, source);
@@ -249,14 +250,18 @@ public class ModelPersistence {
     return saveModel(model, source, persistenceVersion);
   }
 
+  public static int actualPersistenceVersion(int desiredPersistenceVersion) {
+    // (since 3.0) we do not support saving in old persistences (before 7)
+    return desiredPersistenceVersion < 4 ? LAST_VERSION : Math.max(7, desiredPersistenceVersion);
+  }
+
   /*
    *  returns upgraded model, or null if the model doesn't require update
    */
   public static DefaultSModel saveModel(@NotNull SModel model, @NotNull StreamDataSource source, int persistenceVersion) throws IOException {
     LOG.debug("Saving model " + model.getReference() + " to " + source.getLocation());
 
-    // (since 3.0) we do not support saving in old persistences (before 7)
-    persistenceVersion = persistenceVersion < 4 ? LAST_VERSION : Math.max(7, persistenceVersion);
+    persistenceVersion = actualPersistenceVersion(persistenceVersion);
 
     if (source.isReadOnly()) {
       throw new IOException("`" + source.getLocation() + "' is read-only");
