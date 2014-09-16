@@ -4,7 +4,7 @@ package jetbrains.mps.smodel.adapter;
 
 import org.jetbrains.mps.openapi.language.SAbstractLink;
 import org.jetbrains.mps.openapi.language.SReferenceLink;
-import org.jetbrains.mps.openapi.language.SReferenceLinkId;
+import org.jetbrains.mps.openapi.language.SReferenceLink111;
 import org.jetbrains.mps.openapi.language.SScope;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.scope.Scope;
@@ -18,13 +18,13 @@ import jetbrains.mps.smodel.search.ConceptAndSuperConceptsScope;
 import org.jetbrains.annotations.NotNull;
 
 public class SReferenceLinkAdapter extends SAbstractLinkAdapter implements SReferenceLink {
-  protected SReferenceLinkId myRoleId;
+  protected SReferenceLink111 myRoleId;
 
   public SReferenceLinkAdapter(String conceptName, String role) {
     super(conceptName, role);
   }
 
-  public SReferenceLinkAdapter(SReferenceLinkId roleId) {
+  public SReferenceLinkAdapter(SReferenceLink111 roleId) {
     super(null, null);
     myRoleId = roleId;
   }
@@ -80,7 +80,7 @@ public class SReferenceLinkAdapter extends SAbstractLinkAdapter implements SRefe
       SConceptId cid = IdHelper.getConceptId((jetbrains.mps.smodel.SNode) concept);
       final ConceptAndSuperConceptsScope scope = new ConceptAndSuperConceptsScope(concept);
       SNode linkNode = scope.getLinkDeclarationByRole(role);
-      myRoleId = new SReferenceLinkId(cid, IdHelper.getNodeId((jetbrains.mps.smodel.SNode) linkNode));
+      myRoleId = new SReferenceLink111(cid, IdHelper.getNodeId((jetbrains.mps.smodel.SNode) linkNode));
     } else {
       SAbstractConceptAdapter adapter = new SAbstractConceptAdapter(myRoleId.getConcept());
       conceptName = adapter.getQualifiedName();

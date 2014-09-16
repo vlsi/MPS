@@ -5,7 +5,7 @@ package jetbrains.mps.smodel;
 import org.jetbrains.mps.openapi.language.SConceptId;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.language.SProperty;
-import org.jetbrains.mps.openapi.language.SReferenceLinkId;
+import org.jetbrains.mps.openapi.language.SReferenceLink111;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import java.util.List;
@@ -39,7 +39,8 @@ public class SNodeUtil {
   public static final SConceptId conceptId_ImplementationWithStubPart = SConceptId.deserialize("ceab5195-25ea-4f22-9b92-103b95ca8c0c/6999738288738427190");
 
   public static final String link_ConceptDeclaration_extends = "extends";
-  public static final SReferenceLinkId linkId_ConceptDeclaration_extends = SReferenceLinkId.deserialize("c72da2b9-7cce-4447-8389-f407dc1158b7/1071489090640/1071489389519");
+  public static final SReferenceLink111
+      linkId_ConceptDeclaration_extends = SReferenceLink111.deserialize("c72da2b9-7cce-4447-8389-f407dc1158b7/1071489090640/1071489389519");
   public static final String link_ConceptDeclaration_implements = "implements";
   public static final SContainmentLink
       linkId_ConceptDeclaration_implements = SContainmentLink.deserialize("c72da2b9-7cce-4447-8389-f407dc1158b7/1071489090640/1169129564478");

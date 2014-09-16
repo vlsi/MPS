@@ -8,7 +8,8 @@
    <string>public abstract void org.jetbrains.mps.openapi.model.SNode.setReferenceTarget(java.lang.String,org.jetbrains.mps.openapi.model.SNode)</string> 
   </void> 
   <void method="add">
-   <string>public abstract void org.jetbrains.mps.openapi.model.SNode.setReferenceTarget(org.jetbrains.mps.openapi.language.SReferenceLinkId,org.jetbrains.mps.openapi.model.SNode)</string>
+   <string>public abstract void
+     org.jetbrains.mps.openapi.model.SNode.setReferenceTarget(org.jetbrains.mps.openapi.language.SReferenceLink111,org.jetbrains.mps.openapi.model.SNode)</string>
   </void>
   <void method="add">
    <string>public abstract java.lang.String org.jetbrains.mps.openapi.model.SNode.getRoleInParent()</string>
@@ -133,7 +134,8 @@
    <string>public abstract void org.jetbrains.mps.openapi.model.SNode.setReference(java.lang.String,org.jetbrains.mps.openapi.model.SReference)</string>
   </void>
   <void method="add">
-   <string>public abstract void org.jetbrains.mps.openapi.model.SNode.setReference(org.jetbrains.mps.openapi.language.SReferenceLinkId,org.jetbrains.mps.openapi.model.SReference)</string>
+   <string>public abstract void
+     org.jetbrains.mps.openapi.model.SNode.setReference(org.jetbrains.mps.openapi.language.SReferenceLink111,org.jetbrains.mps.openapi.model.SReference)</string>
   </void>
  </object>
 </java> 

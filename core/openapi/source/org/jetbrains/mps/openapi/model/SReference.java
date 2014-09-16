@@ -18,7 +18,7 @@ package org.jetbrains.mps.openapi.model;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.annotations.Immutable;
 import org.jetbrains.mps.openapi.language.SReferenceLink;
-import org.jetbrains.mps.openapi.language.SReferenceLinkId;
+import org.jetbrains.mps.openapi.language.SReferenceLink111;
 
 /**
  * Represents reference between nodes. Nodes are organized in AST with references going across the tree hierarchy
@@ -28,7 +28,7 @@ import org.jetbrains.mps.openapi.language.SReferenceLinkId;
 public interface SReference {
   String getRole();
 
-  SReferenceLinkId getRoleId();
+  SReferenceLink111 getRoleId();
 
   /**
    * Gets the associated Link - an abstract meta-definition for the reference

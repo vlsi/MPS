@@ -21,7 +21,7 @@ import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.language.SConceptId;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.language.SProperty;
-import org.jetbrains.mps.openapi.language.SReferenceLinkId;
+import org.jetbrains.mps.openapi.language.SReferenceLink111;
 
 /**
  * NODE STATES
@@ -177,12 +177,12 @@ public interface SNode {
   /**
    * Sets a reference of the given role to a particular node
    */
-  void setReferenceTarget(SReferenceLinkId role, @Nullable SNode target);
+  void setReferenceTarget(SReferenceLink111 role, @Nullable SNode target);
 
   /**
    * Null means the reference has not been set or was set to null. It's impossible to the distinguish the two cases.
    */
-  SNode getReferenceTarget(SReferenceLinkId role);
+  SNode getReferenceTarget(SReferenceLink111 role);
 
   // SReferences
 
@@ -191,14 +191,14 @@ public interface SNode {
    * Since SReference can refer to nodes by name and resolve them dynamically, this method may be able to help you resolve
    * the target node even when working with invalid code.
    */
-  SReference getReference(SReferenceLinkId role);
+  SReference getReference(SReferenceLink111 role);
 
   /**
    * Sets a reference of the given role to a node that is resolved from the SReference.
    * Since SReference can refer to nodes by name and resolve them dynamically, this method may be able to resolve
    * the target node even when working with invalid code.
    */
-  void setReference(SReferenceLinkId role, SReference reference);
+  void setReference(SReferenceLink111 role, SReference reference);
 
   /**
    * Retrieves all SReferences from the node.

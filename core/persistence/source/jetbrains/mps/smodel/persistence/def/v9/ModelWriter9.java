@@ -38,7 +38,7 @@ import org.jetbrains.mps.openapi.language.SConceptId;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.language.SLanguageId;
 import org.jetbrains.mps.openapi.language.SProperty;
-import org.jetbrains.mps.openapi.language.SReferenceLinkId;
+import org.jetbrains.mps.openapi.language.SReferenceLink111;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeId;
@@ -139,7 +139,7 @@ public class ModelWriter9 implements IModelWriter {
     //save concepts info
     Map<SConceptId, String> conceptIds = new HashMap<SConceptId, String>();
     Map<SProperty, String> propIds = new HashMap<SProperty, String>();
-    Map<SReferenceLinkId, String> refIds = new HashMap<SReferenceLinkId, String>();
+    Map<SReferenceLink111, String> refIds = new HashMap<SReferenceLink111, String>();
     Map<SContainmentLink, String> roleIds = new HashMap<SContainmentLink, String>();
 
     DebugRegistryUtil.getDebugInfoById(sourceModel.getRootNodes(), conceptIds, propIds, refIds, roleIds);
@@ -161,7 +161,7 @@ public class ModelWriter9 implements IModelWriter {
     }
 
     // write reference roles
-    for (Entry<SReferenceLinkId, String> e : refIds.entrySet()) {
+    for (Entry<SReferenceLink111, String> e : refIds.entrySet()) {
       Element langElement = new Element(ModelPersistence9.DEBUG_INFO_REF_ROLE);
       langElement.setAttribute(ModelPersistence9.ID, e.getKey().serialize());
       langElement.setAttribute(ModelPersistence9.DEBUG_INFO_NAME, e.getValue());

@@ -4,6 +4,7 @@ package jetbrains.mps.smodel.persistence.def.v9;
 
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.language.SProperty;
+import org.jetbrains.mps.openapi.language.SReferenceLink111;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import java.util.Map;
 import org.jetbrains.mps.openapi.language.SLanguageId;
@@ -23,7 +24,6 @@ import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import org.apache.log4j.Level;
 import java.util.UUID;
 
-import org.jetbrains.mps.openapi.language.SReferenceLinkId;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 
@@ -170,10 +170,10 @@ public class ReadHelper9 {
     return new SContainmentLink(concept, Long.parseLong(s.substring(ix + 1)));
   }
 
-  public SReferenceLinkId readRefRole(String s) {
+  public SReferenceLink111 readRefRole(String s) {
     int ix = s.lastIndexOf(WriteHelper.MODEL_SEPARATOR_CHAR);
     SConceptId concept = readConceptId(s.substring(0, ix));
-    return new SReferenceLinkId(concept, Long.parseLong(s.substring(ix + 1)));
+    return new SReferenceLink111(concept, Long.parseLong(s.substring(ix + 1)));
   }
 
   public SProperty readPropId(String s) {

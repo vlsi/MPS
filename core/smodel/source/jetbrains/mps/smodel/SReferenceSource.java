@@ -16,13 +16,13 @@
 package jetbrains.mps.smodel;
 
 import org.jetbrains.mps.openapi.language.SConceptId;
-import org.jetbrains.mps.openapi.language.SReferenceLinkId;
+import org.jetbrains.mps.openapi.language.SReferenceLink111;
 
 // This is a tmp class as we can't move SNode class to smodel module immediately. Should be removed after this is done
 public interface SReferenceSource {
   IdMigrationMode workingMode();
 
-  String getLinkName(SReferenceLinkId roleId);
+  String getLinkName(SReferenceLink111 roleId);
 
-  SReferenceLinkId getReferenceLinkId(SConceptId conceptId, String role);
+  SReferenceLink111 getReferenceLinkId(SConceptId conceptId, String role);
 }
