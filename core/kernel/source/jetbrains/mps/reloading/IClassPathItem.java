@@ -19,6 +19,7 @@ import jetbrains.mps.stubs.javastub.classpath.ClassifierKind;
 import org.jetbrains.annotations.Nullable;
 
 import java.net.URL;
+import java.util.Enumeration;
 import java.util.List;
 
 /**
@@ -31,8 +32,14 @@ public interface IClassPathItem extends ClassBytesProvider {
   @Nullable
   ClassifierKind getClassifierKind(String name);
 
+  /**
+   * The contract is the same as in the {@link java.lang.ClassLoader#getResource(String)}
+   * @return a URL object or null if no resource was found or the invoker does not have required privileges
+   */
   @Nullable
   URL getResource(String name);
+
+  Enumeration<URL> getResources(String name);
 
   Iterable<String> getRootClasses(String namespace);
 

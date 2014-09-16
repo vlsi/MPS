@@ -33,6 +33,7 @@ import java.util.List;
 public class ChooseByNamePanel extends ChooseByNamePopup {
   private JPanel myPanel;
   private boolean myCheckboxVisible = false;
+  private List<Object> myChoosenElementsBackUp = null;
 
   ChooseByNamePanel(ChooseByNameModel model, boolean checkboxVisible, ChooseByNameItemProvider provider) {
     super(MPSCommonDataKeys.PROJECT.getData(DataManager.getInstance().getDataContext()), model, provider, null, "", false, 0);
@@ -60,6 +61,8 @@ public class ChooseByNamePanel extends ChooseByNamePopup {
 
   @Override
   public List<Object> getChosenElements() {
+    if(myChoosenElementsBackUp != null)
+      return myChoosenElementsBackUp;
     return super.getChosenElements();
   }
 
@@ -107,5 +110,12 @@ public class ChooseByNamePanel extends ChooseByNamePopup {
     finally {
       return myPanel;
     }
+  }
+
+  @Override
+  protected void doClose(boolean ok) {
+    myChoosenElementsBackUp = super.getChosenElements();
+    super.doClose(ok);
+
   }
 }

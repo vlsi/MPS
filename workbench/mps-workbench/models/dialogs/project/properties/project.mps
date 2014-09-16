@@ -1885,9 +1885,6 @@
     <node role="implementedInterface" roleId="tpee.1095933932569" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="3201642974933586125" nodeInfo="in">
       <link role="classifier" roleId="tpee.1107535924139" targetNodeId="k39q.~SearchableConfigurable" resolveInfo="SearchableConfigurable" />
     </node>
-    <node role="implementedInterface" roleId="tpee.1095933932569" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="3201642974933586126" nodeInfo="in">
-      <link role="classifier" roleId="tpee.1107535924139" targetNodeId="k39q.~NonDefaultProjectConfigurable" resolveInfo="NonDefaultProjectConfigurable" />
-    </node>
     <node role="implementedInterface" roleId="tpee.1095933932569" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="3201642974933586127" nodeInfo="in">
       <link role="classifier" roleId="tpee.1107535924139" targetNodeId="iiw6.~ProjectComponent" resolveInfo="ProjectComponent" />
     </node>
