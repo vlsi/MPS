@@ -4,7 +4,7 @@ package jetbrains.mps.smodel.adapter;
 
 import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.mps.openapi.language.SConceptId;
+import org.jetbrains.mps.openapi.language.SConceptId111;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import jetbrains.mps.smodel.language.ConceptRegistry;
 import jetbrains.mps.smodel.runtime.illegal.IllegalConceptDescriptor;
@@ -14,7 +14,7 @@ import java.util.List;
 import java.util.ArrayList;
 
 public class SConceptAdapter extends SAbstractConceptAdapter implements SConcept {
-  public SConceptAdapter(@NotNull SConceptId conceptId) {
+  public SConceptAdapter(@NotNull SConceptId111 conceptId) {
     super(conceptId);
   }
 

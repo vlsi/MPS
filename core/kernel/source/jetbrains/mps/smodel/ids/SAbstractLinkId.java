@@ -15,16 +15,16 @@
  */
 package jetbrains.mps.smodel.ids;
 
-import org.jetbrains.mps.openapi.language.SConceptId;
+import org.jetbrains.mps.openapi.language.SConceptId111;
 
 public abstract class SAbstractLinkId {
-  protected final SConceptId myConceptId;
+  protected final SConceptId111 myConceptId;
 
-  public SAbstractLinkId(SConceptId conceptId) {
+  public SAbstractLinkId(SConceptId111 conceptId) {
     myConceptId = conceptId;
   }
 
-  public SConceptId getConceptId() {
+  public SConceptId111 getConceptId() {
     return myConceptId;
   }
 }

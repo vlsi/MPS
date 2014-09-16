@@ -27,7 +27,7 @@ import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SAbstractLink;
 import org.jetbrains.mps.openapi.language.SConcept;
-import org.jetbrains.mps.openapi.language.SConceptId;
+import org.jetbrains.mps.openapi.language.SConceptId111;
 import org.jetbrains.mps.openapi.language.SConceptRepository;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.language.SEnumeration;
@@ -42,7 +42,7 @@ public class ConceptRepository extends SConceptRepository implements CoreCompone
 
   @Override
   @NotNull
-  public SConcept getInstanceConcept(@NotNull SConceptId conceptId) {
+  public SConcept getInstanceConcept(@NotNull SConceptId111 conceptId) {
     SAbstractConcept concept = getConcept(conceptId);
     if (concept instanceof SInterfaceConcept) {
       return new SInterfaceInstanceAdapter((SInterfaceConcept) concept);
@@ -55,7 +55,7 @@ public class ConceptRepository extends SConceptRepository implements CoreCompone
   }
 
   @Override
-  public SAbstractConcept getConcept(@NotNull SConceptId conceptId) {
+  public SAbstractConcept getConcept(@NotNull SConceptId111 conceptId) {
     ConceptDescriptor desc = ConceptRegistry.getInstance().getConceptDescriptor(new SAbstractConceptAdapter(conceptId).getQualifiedName());
     if (desc instanceof IllegalConceptDescriptor) return null;
 
@@ -63,7 +63,7 @@ public class ConceptRepository extends SConceptRepository implements CoreCompone
   }
 
   @Override
-  public SEnumeration getEnumeration(@NotNull SConceptId conceptId) {
+  public SEnumeration getEnumeration(@NotNull SConceptId111 conceptId) {
     // TODO
     return null;
   }
@@ -95,7 +95,7 @@ public class ConceptRepository extends SConceptRepository implements CoreCompone
     }
 
     @Override
-    public SConceptId getId() {
+    public SConceptId111 getId() {
       return target.getId();
     }
 

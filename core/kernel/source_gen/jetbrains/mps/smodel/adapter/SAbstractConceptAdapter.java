@@ -4,7 +4,7 @@ package jetbrains.mps.smodel.adapter;
 
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.util.containers.BidirectionalMap;
-import org.jetbrains.mps.openapi.language.SConceptId;
+import org.jetbrains.mps.openapi.language.SConceptId111;
 import org.jetbrains.annotations.NotNull;
 import java.util.List;
 import jetbrains.mps.util.NameUtil;
@@ -38,14 +38,14 @@ import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 
 public class SAbstractConceptAdapter implements SAbstractConcept {
-  private static final BidirectionalMap<SConceptId, String> ourNames = new BidirectionalMap<SConceptId, String>();
+  private static final BidirectionalMap<SConceptId111, String> ourNames = new BidirectionalMap<SConceptId111, String>();
 
-  protected SConceptId myConceptId;
+  protected SConceptId111 myConceptId;
   protected String myConceptName;
   @Deprecated
   public SAbstractConceptAdapter(@NotNull String conceptName) {
     myConceptName = conceptName;
-    List<SConceptId> ids;
+    List<SConceptId111> ids;
     synchronized (ourNames) {
       ids = ourNames.getKeysByValue(myConceptName);
     }
@@ -54,7 +54,7 @@ public class SAbstractConceptAdapter implements SAbstractConcept {
     }
   }
 
-  public SAbstractConceptAdapter(@NotNull SConceptId conceptId) {
+  public SAbstractConceptAdapter(@NotNull SConceptId111 conceptId) {
     myConceptId = conceptId;
     synchronized (ourNames) {
       myConceptName = ourNames.get(myConceptId);
@@ -62,7 +62,7 @@ public class SAbstractConceptAdapter implements SAbstractConcept {
   }
 
   @Override
-  public SConceptId getId() {
+  public SConceptId111 getId() {
     if (myConceptId != null) {
       return myConceptId;
     }
@@ -292,7 +292,7 @@ public class SAbstractConceptAdapter implements SAbstractConcept {
       String langName = NameUtil.namespaceFromConceptFQName(myConceptName);
       SLanguageAdapter lang = new SLanguageAdapter(langName);
       SNode concept = lang.getSourceModule().findConceptDeclaration(NameUtil.shortNameFromLongName(myConceptName));
-      myConceptId = new SConceptId(lang.getId(), IdHelper.getNodeId((jetbrains.mps.smodel.SNode) concept));
+      myConceptId = new SConceptId111(lang.getId(), IdHelper.getNodeId((jetbrains.mps.smodel.SNode) concept));
     } else {
       Language lang = new SLanguageAdapter(myConceptId.getLanguage()).getSourceModule();
       if (lang != null) {

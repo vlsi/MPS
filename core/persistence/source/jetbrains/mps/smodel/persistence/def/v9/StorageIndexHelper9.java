@@ -21,7 +21,7 @@ import org.apache.log4j.Level;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.mps.openapi.language.SConceptId;
+import org.jetbrains.mps.openapi.language.SConceptId111;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.language.SLanguageId;
 import org.jetbrains.mps.openapi.language.SProperty;
@@ -74,7 +74,7 @@ public class StorageIndexHelper9 {
     return myLanguageIndex.get(lang);
   }
 
-  public String getConceptIndex(@NotNull SConceptId concept) {
+  public String getConceptIndex(@NotNull SConceptId111 concept) {
     // return fqName prefixed with "." if we can't find model or name of concept
     String index = getUsedLanguageIndex(concept.getLanguage());
     if (index == null) {

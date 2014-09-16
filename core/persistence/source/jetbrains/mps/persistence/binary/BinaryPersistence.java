@@ -35,7 +35,7 @@ import jetbrains.mps.util.io.ModelInputStream;
 import jetbrains.mps.util.io.ModelOutputStream;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
-import org.jetbrains.mps.openapi.language.SConceptId;
+import org.jetbrains.mps.openapi.language.SConceptId111;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.language.SLanguageId;
 import org.jetbrains.mps.openapi.language.SProperty;
@@ -183,7 +183,7 @@ public class BinaryPersistence {
     // write concepts
     int conceptsSize = is.readInt();
     for (int i = 0; i < conceptsSize; i++) {
-      debugRegistry.addConceptName(SConceptId.deserialize(is.readString()), is.readString());
+      debugRegistry.addConceptName(SConceptId111.deserialize(is.readString()), is.readString());
     }
 
     // write properties
@@ -296,7 +296,7 @@ public class BinaryPersistence {
     //collect all language-level info
 
     //save concepts info
-    Map<SConceptId, String> conceptIds = new HashMap<SConceptId, String>();
+    Map<SConceptId111, String> conceptIds = new HashMap<SConceptId111, String>();
     Map<SProperty, String> propIds = new HashMap<SProperty, String>();
     Map<SReferenceLink, String> refIds = new HashMap<SReferenceLink, String>();
     Map<SContainmentLink, String> roleIds = new HashMap<SContainmentLink, String>();
@@ -305,7 +305,7 @@ public class BinaryPersistence {
 
     // write concepts
     os.writeInt(conceptIds.size());
-    for (Entry<SConceptId, String> e : conceptIds.entrySet()) {
+    for (Entry<SConceptId111, String> e : conceptIds.entrySet()) {
       os.writeString(e.getKey().serialize());
       os.writeString(e.getValue());
     }
@@ -404,8 +404,8 @@ public class BinaryPersistence {
       }
       new NodesReader(modelHeader.getModelReference(), false) {
         @Override
-        protected SConceptId readConceptId(ModelInputStream is) throws IOException {
-          SConceptId cid = super.readConceptId(is);
+        protected SConceptId111 readConceptId(ModelInputStream is) throws IOException {
+          SConceptId111 cid = super.readConceptId(is);
           String name = MPSModuleRepository.getInstance().getDebugRegistry().getConceptName(cid);
           consumer.consume(name);
           return cid;

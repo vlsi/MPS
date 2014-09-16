@@ -37,7 +37,7 @@ import org.apache.log4j.LogManager;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SConcept;
-import org.jetbrains.mps.openapi.language.SConceptId;
+import org.jetbrains.mps.openapi.language.SConceptId111;
 import org.jetbrains.mps.openapi.language.SConceptRepository;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.language.SProperty;
@@ -76,7 +76,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
 
   private volatile Object[] myUserObjects; // key,value,key,value ; copy-on-write (!)
 
-  private SConceptId myConceptId; //todo make final after 3.2
+  private SConceptId111 myConceptId; //todo make final after 3.2
   private String myConceptFqName;
 
 
@@ -107,7 +107,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
   }
 
   @Override
-  public SConceptId getConceptId() {
+  public SConceptId111 getConceptId() {
     if (myConceptId != null) {
       return myConceptId;
     }
@@ -619,7 +619,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
     SModelRepository.getInstance().markChanged(getModel());
   }
 
-  public void setConceptId(@NotNull SConceptId conceptId) {
+  public void setConceptId(@NotNull SConceptId111 conceptId) {
     //remove method after 3.2
     myConceptId = conceptId;
     //MihMuh: that's strange since we try not to mark models as changed after refactorings
@@ -794,7 +794,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
 
   //-------------new methods working by id-----------------
 
-  public SNode(@NotNull SConceptId conceptId) {
+  public SNode(@NotNull SConceptId111 conceptId) {
     myConceptId = conceptId;
     myConceptFqName = cid2name(conceptId);
     myId = SModel.generateUniqueId();
@@ -1861,16 +1861,16 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
   }
 
   @Override
-  public SReferenceLink getReferenceLinkId(SConceptId conceptId, String role) {
+  public SReferenceLink getReferenceLinkId(SConceptId111 conceptId, String role) {
     return IdUtil.getReferenceLinkId(conceptId, role);
   }
 
-  private SConceptId name2cid(@NotNull String name) {
+  private SConceptId111 name2cid(@NotNull String name) {
     DebugRegistryUtil.fillDebugInfo(myModel);
     return IdUtil.getConceptId(name);
   }
 
-  private String cid2name(@NotNull SConceptId cid) {
+  private String cid2name(@NotNull SConceptId111 cid) {
     DebugRegistryUtil.fillDebugInfo(myModel);
     return IdUtil.getConceptFqName(cid);
   }

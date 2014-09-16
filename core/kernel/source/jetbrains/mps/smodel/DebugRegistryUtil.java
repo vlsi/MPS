@@ -21,7 +21,7 @@ import jetbrains.mps.smodel.adapter.SConceptAdapter;
 import jetbrains.mps.smodel.adapter.SContainmentLinkAdapter;
 import jetbrains.mps.smodel.adapter.SPropertyAdapter;
 import jetbrains.mps.smodel.adapter.SReferenceLinkAdapter;
-import org.jetbrains.mps.openapi.language.SConceptId;
+import org.jetbrains.mps.openapi.language.SConceptId111;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.language.SLanguageId;
 import org.jetbrains.mps.openapi.language.SProperty;
@@ -138,11 +138,11 @@ public class DebugRegistryUtil implements CoreComponent {
     fillDebugRegistry();
   }
 
-  public static void getDebugInfoById(Iterable<SNode> rootNodes, Map<SConceptId, String> conceptIds, Map<SProperty, String> propIds, Map<SReferenceLink, String> refIds, Map<SContainmentLink, String> roleIds) {
+  public static void getDebugInfoById(Iterable<SNode> rootNodes, Map<SConceptId111, String> conceptIds, Map<SProperty, String> propIds, Map<SReferenceLink, String> refIds, Map<SContainmentLink, String> roleIds) {
     DebugRegistry debugRegistry = MPSModuleRepository.getInstance().getDebugRegistry();
     for (SNode root : rootNodes) {
       for (SNode n : SNodeUtil.getDescendants(root)) {
-        SConceptId conceptId = n.getConcept().getId();
+        SConceptId111 conceptId = n.getConcept().getId();
         SNode conceptNode = new SConceptAdapter(conceptId).getConceptDeclarationNode();
         String conceptName = conceptNode != null ? conceptNode.getName() : debugRegistry.getConceptName(conceptId);
         conceptIds.put(conceptId, conceptName);
@@ -150,7 +150,7 @@ public class DebugRegistryUtil implements CoreComponent {
         if (n.getParent() != null) {
           SContainmentLink roleId = n.getRoleInParentId();
           SContainmentLinkAdapter role = new SContainmentLinkAdapter(roleId);
-          SConceptId linkConceptId = roleId.getConceptId();
+          SConceptId111 linkConceptId = roleId.getConceptId();
           SNode roleNode = role.getLinkNode();
           String roleName;
           if (roleNode != null) {
@@ -169,7 +169,7 @@ public class DebugRegistryUtil implements CoreComponent {
 
         for (SProperty pid : n.getPropertyIds()) {
           SPropertyAdapter propId = new SPropertyAdapter(pid);
-          SConceptId propConceptId = pid.getConcept();
+          SConceptId111 propConceptId = pid.getConcept();
           SNode propNode = propId.getPropertyNode();
           String propName;
           if (propNode != null) {
@@ -190,7 +190,7 @@ public class DebugRegistryUtil implements CoreComponent {
           SReferenceLink refId = ref.getRoleId();
           SReferenceLinkAdapter refRole = new SReferenceLinkAdapter(refId);
           SNode refNode = refRole.getLinkNode();
-          SConceptId refConceptId = refId.getConcept();
+          SConceptId111 refConceptId = refId.getConcept();
           String refName;
           if (refNode != null) {
             SNode refConcept = refNode.getContainingRoot();

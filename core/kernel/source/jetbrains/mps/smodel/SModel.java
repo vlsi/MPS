@@ -43,7 +43,7 @@ import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
-import org.jetbrains.mps.openapi.language.SConceptId;
+import org.jetbrains.mps.openapi.language.SConceptId111;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.language.SLanguageId;
 import org.jetbrains.mps.openapi.language.SProperty;
@@ -597,7 +597,7 @@ public class SModel implements SModelData {
 
     for (org.jetbrains.mps.openapi.model.SNode root : getRootNodes()) {
       for (org.jetbrains.mps.openapi.model.SNode n : SNodeUtil.getDescendants(root)) {
-        SConceptId conceptId = n.getConcept().getId();
+        SConceptId111 conceptId = n.getConcept().getId();
         myUsedLanguages.add(conceptId.getLanguage());
 
         if (n.getParent() != null) {

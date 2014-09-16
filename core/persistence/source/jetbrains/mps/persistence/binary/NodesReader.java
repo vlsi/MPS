@@ -24,7 +24,7 @@ import jetbrains.mps.util.InternUtil;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.util.io.ModelInputStream;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.mps.openapi.language.SConceptId;
+import org.jetbrains.mps.openapi.language.SConceptId111;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.language.SProperty;
 import org.jetbrains.mps.openapi.language.SReferenceLink;
@@ -62,7 +62,7 @@ public class NodesReader {
   }
 
   public Pair<SContainmentLink, jetbrains.mps.smodel.SNode> readNode(ModelInputStream is) throws IOException {
-    SConceptId cid = readConceptId(is);
+    SConceptId111 cid = readConceptId(is);
     SNodeId nodeId = is.readNodeId();
     String linkStr = is.readString();
     SContainmentLink nodeRole = linkStr == null ? null : SContainmentLink.deserialize(linkStr);
@@ -102,8 +102,8 @@ public class NodesReader {
     return i == 1 ? ConceptKind.INTERFACE : i == 3 ? ConceptKind.IMPLEMENTATION_WITH_STUB : i == 2 ? ConceptKind.IMPLEMENTATION : ConceptKind.NORMAL;
   }
 
-  protected SConceptId readConceptId(ModelInputStream is) throws IOException {
-    return SConceptId.deserialize(is.readString());
+  protected SConceptId111 readConceptId(ModelInputStream is) throws IOException {
+    return SConceptId111.deserialize(is.readString());
   }
 
   protected void readChildren(ModelInputStream is, SNode node) throws IOException {

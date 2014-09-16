@@ -18,7 +18,7 @@ package org.jetbrains.mps.openapi.model;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SConcept;
-import org.jetbrains.mps.openapi.language.SConceptId;
+import org.jetbrains.mps.openapi.language.SConceptId111;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.language.SProperty;
 import org.jetbrains.mps.openapi.language.SReferenceLink;
@@ -73,7 +73,7 @@ public interface SNode {
    */
   SNodeReference getReference();
 
-  SConceptId getConceptId();
+  SConceptId111 getConceptId();
 
   /**
    * The concept that this node represents. Concepts can be compared using the "==" operator.

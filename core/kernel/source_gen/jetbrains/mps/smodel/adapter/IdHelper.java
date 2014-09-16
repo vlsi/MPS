@@ -4,6 +4,7 @@ package jetbrains.mps.smodel.adapter;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodeId;
+import org.jetbrains.mps.openapi.language.SConceptId111;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.language.SLanguageId;
 import jetbrains.mps.smodel.Language;
@@ -13,7 +14,6 @@ import org.jetbrains.mps.openapi.module.SModuleId;
 import jetbrains.mps.project.ModuleId;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.project.structure.modules.ModuleReference;
-import org.jetbrains.mps.openapi.language.SConceptId;
 
 public class IdHelper {
   /**
@@ -36,11 +36,11 @@ public class IdHelper {
     return new ModuleReference(null, ModuleId.regular(id.getId()));
   }
 
-  public static SConceptId getConceptId(SNode c) {
+  public static SConceptId111 getConceptId(SNode c) {
     org.jetbrains.mps.openapi.model.SNodeId nodeId = c.getNodeId();
     assert nodeId instanceof SNodeId.Regular;
     long id = ((SNodeId.Regular) nodeId).getId();
-    return new SConceptId(getLanguageId(((Language) c.getModel().getModule())), id);
+    return new SConceptId111(getLanguageId(((Language) c.getModel().getModule())), id);
   }
 
   public static SContainmentLink getNodeRoleId(SNode c) {
