@@ -15,7 +15,7 @@
  */
 package jetbrains.mps.smodel;
 
-import org.jetbrains.mps.openapi.language.SConceptId111;
+import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.language.SReferenceLink;
 
 // This is a tmp class as we can't move SNode class to smodel module immediately. Should be removed after this is done
@@ -24,5 +24,5 @@ public interface SReferenceSource {
 
   String getLinkName(SReferenceLink roleId);
 
-  SReferenceLink getReferenceLinkId(SConceptId111 conceptId, String role);
+  SReferenceLink getReferenceLinkId(SConcept conceptId, String role);
 }

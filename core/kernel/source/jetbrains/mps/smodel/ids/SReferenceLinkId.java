@@ -16,12 +16,12 @@
 package jetbrains.mps.smodel.ids;
 
 import org.jetbrains.mps.openapi.language.SAbstractLink;
-import org.jetbrains.mps.openapi.language.SConceptId111;
+import org.jetbrains.mps.openapi.language.SConcept;
 
 public final class SReferenceLinkId extends SAbstractLink {
   private final long myRefLinkId;
 
-  public SReferenceLinkId(SConceptId111 conceptId, long refLinkId) {
+  public SReferenceLinkId(SConcept conceptId, long refLinkId) {
     super(conceptId);
     myRefLinkId = refLinkId;
   }
@@ -56,7 +56,7 @@ public final class SReferenceLinkId extends SAbstractLink {
 
   public static SReferenceLinkId deserialize(String s) {
     int split = s.lastIndexOf("/");
-    SConceptId111 concept = SConceptId111.deserialize(s.substring(0, split));
+    SConcept concept = SConcept.deserialize(s.substring(0, split));
     long ref = Long.parseLong(s.substring(split + 1));
     return new SReferenceLinkId(concept, ref);
   }

@@ -34,7 +34,7 @@ import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.util.StringUtil;
 import org.jdom.Document;
 import org.jdom.Element;
-import org.jetbrains.mps.openapi.language.SConceptId111;
+import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.language.SLanguageId;
 import org.jetbrains.mps.openapi.language.SProperty;
@@ -137,7 +137,7 @@ public class ModelWriter9 implements IModelWriter {
     //collect all language-level info
 
     //save concepts info
-    Map<SConceptId111, String> conceptIds = new HashMap<SConceptId111, String>();
+    Map<SConcept, String> conceptIds = new HashMap<SConcept, String>();
     Map<SProperty, String> propIds = new HashMap<SProperty, String>();
     Map<SReferenceLink, String> refIds = new HashMap<SReferenceLink, String>();
     Map<SContainmentLink, String> roleIds = new HashMap<SContainmentLink, String>();
@@ -145,7 +145,7 @@ public class ModelWriter9 implements IModelWriter {
     DebugRegistryUtil.getDebugInfoById(sourceModel.getRootNodes(), conceptIds, propIds, refIds, roleIds);
 
     // write concepts
-    for (Entry<SConceptId111, String> e : conceptIds.entrySet()) {
+    for (Entry<SConcept, String> e : conceptIds.entrySet()) {
       Element langElement = new Element(ModelPersistence9.DEBUG_INFO_CONCEPT);
       langElement.setAttribute(ModelPersistence9.ID, e.getKey().serialize());
       langElement.setAttribute(ModelPersistence9.DEBUG_INFO_NAME, e.getValue());

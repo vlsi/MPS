@@ -17,7 +17,7 @@ package jetbrains.mps.smodel;
 
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
-import org.jetbrains.mps.openapi.language.SConceptId111;
+import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 
 import java.util.HashSet;
@@ -28,7 +28,7 @@ public class InterfaceSNode extends SNode {
   private Set<String> skippedRoles;
   private Set<SContainmentLink> skippedRolesIds;
 
-  public InterfaceSNode(@NotNull SConceptId111 concept) {
+  public InterfaceSNode(@NotNull SConcept concept) {
     super(concept);
   }
 

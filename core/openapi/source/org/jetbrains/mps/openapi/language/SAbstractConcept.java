@@ -28,7 +28,7 @@ public interface SAbstractConcept {
   /**
    * Uniquely identifies this concept in its concept repository.
    */
-  SConceptId111 getId();
+  SConcept getId();
 
   /**
    * The user visible name of the concept

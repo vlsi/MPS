@@ -18,7 +18,7 @@ package jetbrains.mps.smodel;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.util.containers.BidirectionalMap;
 import org.jetbrains.mps.openapi.language.SAbstractLink;
-import org.jetbrains.mps.openapi.language.SConceptId111;
+import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.language.SLanguageId;
 import org.jetbrains.mps.openapi.language.SProperty;
 import org.jetbrains.mps.openapi.module.DebugRegistry;
@@ -31,9 +31,9 @@ public class DebugRegistryImpl implements DebugRegistry {
       new BidirectionalMap<org.jetbrains.mps.openapi.model.SModelReference, String>();
   private BidirectionalMap<SModuleReference, String> myModules = new BidirectionalMap<SModuleReference, String>();
 
-  private BidirectionalMap<SProperty, Pair<SConceptId111, String>> myProperties = new BidirectionalMap<SProperty, Pair<SConceptId111, String>>();
-  private BidirectionalMap<SAbstractLink, Pair<SConceptId111, String>> myLinks = new BidirectionalMap<SAbstractLink, Pair<SConceptId111, String>>();
-  private BidirectionalMap<SConceptId111, String> myConcepts = new BidirectionalMap<SConceptId111, String>();
+  private BidirectionalMap<SProperty, Pair<SConcept, String>> myProperties = new BidirectionalMap<SProperty, Pair<SConcept, String>>();
+  private BidirectionalMap<SAbstractLink, Pair<SConcept, String>> myLinks = new BidirectionalMap<SAbstractLink, Pair<SConcept, String>>();
+  private BidirectionalMap<SConcept, String> myConcepts = new BidirectionalMap<SConcept, String>();
   private BidirectionalMap<SLanguageId, String> myLanguages = new BidirectionalMap<SLanguageId, String>();
 
   @Override
@@ -48,18 +48,18 @@ public class DebugRegistryImpl implements DebugRegistry {
 
   @Override
   public synchronized String getPropertyName(SProperty propertyId) {
-    Pair<SConceptId111, String> pair = myProperties.get(propertyId);
+    Pair<SConcept, String> pair = myProperties.get(propertyId);
     return pair == null ? null : pair.o2;
   }
 
   @Override
   public synchronized String getLinkName(SAbstractLink linkId) {
-    Pair<SConceptId111, String> pair = myLinks.get(linkId);
+    Pair<SConcept, String> pair = myLinks.get(linkId);
     return pair == null ? null : pair.o2;
   }
 
   @Override
-  public synchronized String getConceptName(SConceptId111 conceptId) {
+  public synchronized String getConceptName(SConcept conceptId) {
     return myConcepts.get(conceptId);
   }
 
@@ -80,16 +80,16 @@ public class DebugRegistryImpl implements DebugRegistry {
 
   @Override
   public synchronized void addPropertyName(SProperty propertyId, String name) {
-    myProperties.put(propertyId, new Pair<SConceptId111, String>(propertyId.getConcept(), name));
+    myProperties.put(propertyId, new Pair<SConcept, String>(propertyId.getConcept(), name));
   }
 
   @Override
   public synchronized void addLinkName(SAbstractLink linkId, String name) {
-    myLinks.put(linkId, new Pair<SConceptId111, String>(linkId.getConcept(), name));
+    myLinks.put(linkId, new Pair<SConcept, String>(linkId.getConcept(), name));
   }
 
   @Override
-  public synchronized void addConceptName(SConceptId111 conceptId, String name) {
+  public synchronized void addConceptName(SConcept conceptId, String name) {
     myConcepts.put(conceptId, name);
   }
 
@@ -112,15 +112,15 @@ public class DebugRegistryImpl implements DebugRegistry {
     return ids.get(0);
   }
 
-  public synchronized SProperty getPropertyId(SConceptId111 conceptId, String name) {
+  public synchronized SProperty getPropertyId(SConcept conceptId, String name) {
     //performance fix for "getProperty("name")"
-    List<SProperty> ids = myProperties.getKeysByValue(new Pair<SConceptId111, String>(conceptId,name));
+    List<SProperty> ids = myProperties.getKeysByValue(new Pair<SConcept, String>(conceptId,name));
     if (ids == null || ids.isEmpty()) return null;
     return ids.get(0);
   }
 
-  public synchronized SAbstractLink getLinkId(SConceptId111 conceptId, String name) {
-    List<SAbstractLink> ids = myLinks.getKeysByValue(new Pair<SConceptId111, String>(conceptId, name));
+  public synchronized SAbstractLink getLinkId(SConcept conceptId, String name) {
+    List<SAbstractLink> ids = myLinks.getKeysByValue(new Pair<SConcept, String>(conceptId, name));
     if (ids == null || ids.isEmpty()) return null;
     for (SAbstractLink id:ids){
       if (id.getConcept().equals(conceptId)) return id;
@@ -128,10 +128,10 @@ public class DebugRegistryImpl implements DebugRegistry {
     return null;
   }
 
-  public synchronized SConceptId111 getConceptId(SLanguageId lang, String name) {
-    List<SConceptId111> ids = myConcepts.getKeysByValue(name);
+  public synchronized SConcept getConceptId(SLanguageId lang, String name) {
+    List<SConcept> ids = myConcepts.getKeysByValue(name);
     if (ids == null || ids.isEmpty()) return null;
-    for (SConceptId111 id:ids){
+    for (SConcept id:ids){
       if (id.getLanguage().equals(lang)) return id;
     }
     return null;

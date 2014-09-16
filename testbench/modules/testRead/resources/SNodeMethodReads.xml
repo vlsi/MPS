@@ -379,7 +379,7 @@
    <int>0</int>
   </void>
   <void method="put">
-   <string>public org.jetbrains.mps.openapi.language.SConceptId111 jetbrains.mps.smodel.SNode.getConceptId()</string>
+   <string>public org.jetbrains.mps.openapi.language.SConcept jetbrains.mps.smodel.SNode.getConceptId()</string>
    <int>0</int>
   </void>
   <void method="put">

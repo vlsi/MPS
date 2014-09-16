@@ -19,7 +19,7 @@ import jetbrains.mps.smodel.adapter.SConceptAdapter;
 import jetbrains.mps.util.NameUtil;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SAbstractLink;
-import org.jetbrains.mps.openapi.language.SConceptId111;
+import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.language.SConceptUtil;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.language.SLanguageId;
@@ -37,11 +37,11 @@ import java.util.UUID;
 
 public abstract class IdUtil {
 
-  public static final SProperty UNKNOWN_PROPERTY_ID = new SProperty(new SConceptId111(new SLanguageId(new UUID(0, 0)), 0), 0);
-  public static final SReferenceLink UNKNOWN_REFERENCE_ID = new SReferenceLink(new SConceptId111(new SLanguageId(new UUID(0, 0)), 0), 0);
-  public static final SContainmentLink UNKNOWN_LINK_ID = new SContainmentLink(new SConceptId111(new SLanguageId(new UUID(0, 0)), 0), 0);
+  public static final SProperty UNKNOWN_PROPERTY_ID = new SProperty(new SConcept(new SLanguageId(new UUID(0, 0)), 0), 0);
+  public static final SReferenceLink UNKNOWN_REFERENCE_ID = new SReferenceLink(new SConcept(new SLanguageId(new UUID(0, 0)), 0), 0);
+  public static final SContainmentLink UNKNOWN_LINK_ID = new SContainmentLink(new SConcept(new SLanguageId(new UUID(0, 0)), 0), 0);
 
-  public static String getConceptFqName(SConceptId111 id) {
+  public static String getConceptFqName(SConcept id) {
     DebugRegistry dr = MPSModuleRepository.getInstance().getDebugRegistry();
     String languageName = dr.getLanguageName(id.getLanguage());
     String conceptName = dr.getConceptName(id);
@@ -51,7 +51,7 @@ public abstract class IdUtil {
     return languageName + ".structure." + conceptName;
   }
 
-  public static SConceptId111 getConceptId(String fqName) {
+  public static SConcept getConceptId(String fqName) {
     DebugRegistryImpl dr = ((DebugRegistryImpl) MPSModuleRepository.getInstance().getDebugRegistry());
     SLanguageId lang = dr.getLanguageId(NameUtil.namespaceFromConceptFQName(fqName));
     if (lang == null) return null;
@@ -59,7 +59,7 @@ public abstract class IdUtil {
   }
 
   //finds property id given its name and an inheritor of an original concept
-  public static SProperty getPropId(SConceptId111 id, String propName) {
+  public static SProperty getPropId(SConcept id, String propName) {
     SProperty pid = ((DebugRegistryImpl) MPSModuleRepository.getInstance().getDebugRegistry()).getPropertyId(id, propName);
     if (pid != null) return pid;
 
@@ -75,11 +75,11 @@ public abstract class IdUtil {
     return UNKNOWN_PROPERTY_ID;
   }
 
-  private static boolean isConceptDeclaration(SConceptId111 id) {
+  private static boolean isConceptDeclaration(SConcept id) {
     return SNodeUtil.conceptId_ConceptDeclaration.equals(id) || SNodeUtil.conceptId_InterfaceConceptDeclaration.equals(id);
   }
 
-  public static SContainmentLink getContainmentLinkId(SConceptId111 id, String refName) {
+  public static SContainmentLink getContainmentLinkId(SConcept id, String refName) {
     SAbstractLink rid = ((DebugRegistryImpl) MPSModuleRepository.getInstance().getDebugRegistry()).getLinkId(id, refName);
     if (rid instanceof SContainmentLink) return (SContainmentLink) rid;
 
@@ -90,7 +90,7 @@ public abstract class IdUtil {
     return UNKNOWN_LINK_ID;
   }
 
-  public static SReferenceLink getReferenceLinkId(SConceptId111 id, String refName) {
+  public static SReferenceLink getReferenceLinkId(SConcept id, String refName) {
     SAbstractLink rid = ((DebugRegistryImpl) MPSModuleRepository.getInstance().getDebugRegistry()).getLinkId(id, refName);
     if (rid instanceof SReferenceLink) return (SReferenceLink) rid;
 

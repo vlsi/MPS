@@ -32,11 +32,11 @@ public abstract class SConceptRepository {
   }
 
   @NotNull
-  public abstract SConcept getInstanceConcept(@NotNull SConceptId111 conceptId);
+  public abstract SConcept getInstanceConcept(@NotNull SConcept conceptId);
 
-  public abstract SAbstractConcept getConcept(@NotNull SConceptId111 conceptId);
+  public abstract SAbstractConcept getConcept(@NotNull SConcept conceptId);
 
-  public abstract SEnumeration getEnumeration(@NotNull SConceptId111 conceptId);
+  public abstract SEnumeration getEnumeration(@NotNull SConcept conceptId);
 
   public abstract SLanguage getLanguage(@NotNull SLanguageId languageId);
 

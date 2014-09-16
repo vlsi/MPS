@@ -88,7 +88,7 @@
    <string>public abstract org.jetbrains.mps.openapi.language.SConcept org.jetbrains.mps.openapi.model.SNode.getConcept()</string> 
   </void>
   <void method="add">
-   <string>public abstract org.jetbrains.mps.openapi.language.SConceptId111 org.jetbrains.mps.openapi.model.SNode.getConceptId()</string>
+   <string>public abstract org.jetbrains.mps.openapi.language.SConcept org.jetbrains.mps.openapi.model.SNode.getConceptId()</string>
   </void>
   <void method="add">
    <string>public abstract void org.jetbrains.mps.openapi.model.SNode.setProperty(java.lang.String,java.lang.String)</string> 
