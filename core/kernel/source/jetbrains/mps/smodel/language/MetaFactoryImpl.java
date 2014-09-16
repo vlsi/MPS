@@ -45,26 +45,6 @@ public class MetaFactoryImpl extends MetaFactory implements CoreComponent {
   }
 
   @Override
-  public SConcept createConcept(String concept) {
-    throw new UnsupportedOperationException();
-  }
-
-  @Override
-  public SProperty createProperty(String property) {
-    throw new UnsupportedOperationException();
-  }
-
-  @Override
-  public SContainmentLink createRole(String role) {
-    throw new UnsupportedOperationException();
-  }
-
-  @Override
-  public SReferenceLink createReference(String ref) {
-    throw new UnsupportedOperationException();
-  }
-
-  @Override
   public String serializeConcept(SConcept concept) {
     return ((SConceptAdapter) concept).getId().serialize();
   }

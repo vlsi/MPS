@@ -22,20 +22,6 @@ public abstract class MetaFactory {
     return INSTANCE;
   }
 
-  //---create by name---
-
-  @Deprecated
-  public abstract SConcept createConcept(String concept);
-
-  @Deprecated
-  public abstract SProperty createProperty(String property);
-
-  @Deprecated
-  public abstract SContainmentLink createRole(String role);
-
-  @Deprecated
-  public abstract SReferenceLink createReference(String ref);
-
   //---serialize---
 
    public abstract String serializeConcept(SConcept concept);
