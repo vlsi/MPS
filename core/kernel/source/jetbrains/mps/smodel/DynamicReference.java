@@ -28,7 +28,7 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SAbstractLink;
 import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.language.SConceptRepository;
-import org.jetbrains.mps.openapi.language.SReferenceLink111;
+import org.jetbrains.mps.openapi.language.SReferenceLink;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
@@ -74,7 +74,7 @@ public class DynamicReference extends SReferenceBase {
     this(role, sourceNode, targetModelReference == null ? null : targetModelReference.getModelName(), resolveInfo);
   }
 
-  public DynamicReference(@NotNull SReferenceLink111 role, @NotNull SNode sourceNode, @Nullable SModelReference targetModelReference, String resolveInfo) {
+  public DynamicReference(@NotNull SReferenceLink role, @NotNull SNode sourceNode, @Nullable SModelReference targetModelReference, String resolveInfo) {
     this(role, sourceNode, targetModelReference == null ? null : targetModelReference.getModelName(), resolveInfo);
   }
 
@@ -82,7 +82,7 @@ public class DynamicReference extends SReferenceBase {
     return new DynamicReference(role, sourceNode, modelName, resolveInfo);
   }
 
-  private DynamicReference(@NotNull SReferenceLink111 role, @NotNull SNode sourceNode, @Nullable String modelName, String resolveInfo) {
+  private DynamicReference(@NotNull SReferenceLink role, @NotNull SNode sourceNode, @Nullable String modelName, String resolveInfo) {
     super(role, sourceNode, null, null);
     if (modelName != null && !resolveInfo.startsWith(SModelStereotype.withoutStereotype(modelName)) && isTargetClassifier(sourceNode, role)) {
       // hack for classifiers resolving with specified targetModelReference. For now (18/04/2012) targetModelReference used only for Classifiers (in stubs and [model]node construction).
@@ -114,7 +114,7 @@ public class DynamicReference extends SReferenceBase {
     return lnkTarget.isSubConceptOf(classifierConcept);
   }
 
-  private boolean isTargetClassifier(@NotNull SNode node, @NotNull SReferenceLink111 role) {
+  private boolean isTargetClassifier(@NotNull SNode node, @NotNull SReferenceLink role) {
     SAbstractLink lnk = new SReferenceLinkAdapter(role);
     SAbstractConcept lnkTarget = lnk.getTargetConcept();
     if (lnkTarget == null) {

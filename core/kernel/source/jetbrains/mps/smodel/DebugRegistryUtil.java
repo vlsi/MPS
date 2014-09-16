@@ -25,7 +25,7 @@ import org.jetbrains.mps.openapi.language.SConceptId;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.language.SLanguageId;
 import org.jetbrains.mps.openapi.language.SProperty;
-import org.jetbrains.mps.openapi.language.SReferenceLink111;
+import org.jetbrains.mps.openapi.language.SReferenceLink;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeUtil;
 import org.jetbrains.mps.openapi.model.SReference;
@@ -138,7 +138,7 @@ public class DebugRegistryUtil implements CoreComponent {
     fillDebugRegistry();
   }
 
-  public static void getDebugInfoById(Iterable<SNode> rootNodes, Map<SConceptId, String> conceptIds, Map<SProperty, String> propIds, Map<SReferenceLink111, String> refIds, Map<SContainmentLink, String> roleIds) {
+  public static void getDebugInfoById(Iterable<SNode> rootNodes, Map<SConceptId, String> conceptIds, Map<SProperty, String> propIds, Map<SReferenceLink, String> refIds, Map<SContainmentLink, String> roleIds) {
     DebugRegistry debugRegistry = MPSModuleRepository.getInstance().getDebugRegistry();
     for (SNode root : rootNodes) {
       for (SNode n : SNodeUtil.getDescendants(root)) {
@@ -187,7 +187,7 @@ public class DebugRegistryUtil implements CoreComponent {
         }
 
         for (SReference ref : n.getReferences()) {
-          SReferenceLink111 refId = ref.getRoleId();
+          SReferenceLink refId = ref.getRoleId();
           SReferenceLinkAdapter refRole = new SReferenceLinkAdapter(refId);
           SNode refNode = refRole.getLinkNode();
           SConceptId refConceptId = refId.getConcept();

@@ -27,7 +27,7 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.language.SConceptId;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.language.SProperty;
-import org.jetbrains.mps.openapi.language.SReferenceLink111;
+import org.jetbrains.mps.openapi.language.SReferenceLink;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeId;
@@ -124,7 +124,7 @@ public class NodesReader {
       int kind = is.readInt();
       SNodeId targetNodeId = kind == 1 ? readTargetNodeId(is) : null;
       DynamicReferenceOrigin origin = kind == 3 ? new DynamicReferenceOrigin(is.readNodePointer(), is.readNodePointer()) : null;
-      SReferenceLink111 role = SReferenceLink111.deserialize(is.readString());
+      SReferenceLink role = SReferenceLink.deserialize(is.readString());
       SModelReference modelRef = is.readByte() == 18 ? is.readModelReference() : myModelReference;
       String resolveInfo = is.readString();
       if (kind == 1) {

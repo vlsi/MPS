@@ -291,7 +291,7 @@
    <int>9</int>
   </void>
   <void method="put">
-   <string>public void jetbrains.mps.smodel.SNode.setReference(org.jetbrains.mps.openapi.language.SReferenceLink111,org.jetbrains.mps.openapi.model.SReference)</string>
+   <string>public void jetbrains.mps.smodel.SNode.setReference(org.jetbrains.mps.openapi.language.SReferenceLink,org.jetbrains.mps.openapi.model.SReference)</string>
    <int>9</int>
   </void>
   <void method="put">
@@ -511,7 +511,7 @@
    <int>0</int>
   </void>
   <void method="put">
-   <string>public void jetbrains.mps.smodel.SNode.setReferenceTarget(org.jetbrains.mps.openapi.language.SReferenceLink111,org.jetbrains.mps.openapi.model.SNode)</string>
+   <string>public void jetbrains.mps.smodel.SNode.setReferenceTarget(org.jetbrains.mps.openapi.language.SReferenceLink,org.jetbrains.mps.openapi.model.SNode)</string>
    <int>0</int>
   </void>
   <void method="put">

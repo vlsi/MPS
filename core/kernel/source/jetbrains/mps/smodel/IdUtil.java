@@ -24,7 +24,7 @@ import org.jetbrains.mps.openapi.language.SConceptUtil;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.language.SLanguageId;
 import org.jetbrains.mps.openapi.language.SProperty;
-import org.jetbrains.mps.openapi.language.SReferenceLink111;
+import org.jetbrains.mps.openapi.language.SReferenceLink;
 import org.jetbrains.mps.openapi.module.DebugRegistry;
 
 import java.util.UUID;
@@ -38,7 +38,7 @@ import java.util.UUID;
 public abstract class IdUtil {
 
   public static final SProperty UNKNOWN_PROPERTY_ID = new SProperty(new SConceptId(new SLanguageId(new UUID(0, 0)), 0), 0);
-  public static final SReferenceLink111 UNKNOWN_REFERENCE_ID = new SReferenceLink111(new SConceptId(new SLanguageId(new UUID(0, 0)), 0), 0);
+  public static final SReferenceLink UNKNOWN_REFERENCE_ID = new SReferenceLink(new SConceptId(new SLanguageId(new UUID(0, 0)), 0), 0);
   public static final SContainmentLink UNKNOWN_LINK_ID = new SContainmentLink(new SConceptId(new SLanguageId(new UUID(0, 0)), 0), 0);
 
   public static String getConceptFqName(SConceptId id) {
@@ -90,13 +90,13 @@ public abstract class IdUtil {
     return UNKNOWN_LINK_ID;
   }
 
-  public static SReferenceLink111 getReferenceLinkId(SConceptId id, String refName) {
+  public static SReferenceLink getReferenceLinkId(SConceptId id, String refName) {
     SAbstractLink rid = ((DebugRegistryImpl) MPSModuleRepository.getInstance().getDebugRegistry()).getLinkId(id, refName);
-    if (rid instanceof SReferenceLink111) return (SReferenceLink111) rid;
+    if (rid instanceof SReferenceLink) return (SReferenceLink) rid;
 
     for (SAbstractConcept c : SConceptUtil.getAllSuperConcepts(new SConceptAdapter(id))) {
       rid = ((DebugRegistryImpl) MPSModuleRepository.getInstance().getDebugRegistry()).getLinkId(c.getId(), refName);
-      if (rid instanceof SReferenceLink111) return (SReferenceLink111) rid;
+      if (rid instanceof SReferenceLink) return (SReferenceLink) rid;
     }
     return UNKNOWN_REFERENCE_ID;
   }

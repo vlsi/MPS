@@ -13,7 +13,7 @@ import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.smodel.DebugRegistryUtil;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.language.SProperty;
-import org.jetbrains.mps.openapi.language.SReferenceLink111;
+import org.jetbrains.mps.openapi.language.SReferenceLink;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.DefaultSModelDescriptor;
@@ -121,7 +121,7 @@ public class MigrateIds_Action extends BaseAction {
             public void visit(SReference it) {
               SReference sref = it;
               assert sref instanceof jetbrains.mps.smodel.SReference;
-              SReferenceLink111 rid = IdHelper.getRefRoleId((jetbrains.mps.smodel.SNode) (SNode) SLinkOperations.findLinkDeclaration(((SReference) it)));
+              SReferenceLink rid = IdHelper.getRefRoleId((jetbrains.mps.smodel.SNode) (SNode) SLinkOperations.findLinkDeclaration(((SReference) it)));
               ((jetbrains.mps.smodel.SReference) sref).setRoleId_direct(rid);
             }
           });

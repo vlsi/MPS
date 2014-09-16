@@ -41,7 +41,7 @@ import org.jetbrains.mps.openapi.language.SConceptId;
 import org.jetbrains.mps.openapi.language.SConceptRepository;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.language.SProperty;
-import org.jetbrains.mps.openapi.language.SReferenceLink111;
+import org.jetbrains.mps.openapi.language.SReferenceLink;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.module.SRepository;
@@ -891,7 +891,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
   }
 
   @Override
-  public void setReferenceTarget(SReferenceLink111 role, @Nullable org.jetbrains.mps.openapi.model.SNode target) {
+  public void setReferenceTarget(SReferenceLink role, @Nullable org.jetbrains.mps.openapi.model.SNode target) {
     assertCanChange();
 
     Pair<SReference, SReference> res;
@@ -906,7 +906,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
   }
 
   @Override
-  public org.jetbrains.mps.openapi.model.SNode getReferenceTarget(SReferenceLink111 role) {
+  public org.jetbrains.mps.openapi.model.SNode getReferenceTarget(SReferenceLink role) {
     assertCanRead();
 
     referenceRead(role);
@@ -920,7 +920,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
   }
 
   @Override
-  public SReference getReference(SReferenceLink111 role) {
+  public SReference getReference(SReferenceLink role) {
     assertCanRead();
 
     referenceRead(role);
@@ -938,7 +938,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
   }
 
   @Override
-  public void setReference(SReferenceLink111 role, org.jetbrains.mps.openapi.model.SReference reference) {
+  public void setReference(SReferenceLink role, org.jetbrains.mps.openapi.model.SReference reference) {
     assertCanChange();
 
     if (reference instanceof SReference) {
@@ -996,7 +996,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
     }
   }
 
-  private void referenceRead(SReferenceLink111 role) {
+  private void referenceRead(SReferenceLink role) {
     referenceRead(rid2name(role));
   }
 
@@ -1004,7 +1004,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
     propertyRead(pid2name(property));
   }
 
-  private void referenceChanged(SReferenceLink111 role, org.jetbrains.mps.openapi.model.SReference reference,
+  private void referenceChanged(SReferenceLink role, org.jetbrains.mps.openapi.model.SReference reference,
       org.jetbrains.mps.openapi.model.SReference newValue) {
     referenceChanged(rid2name(role), reference, newValue);
   }
@@ -1022,7 +1022,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
     fireNodePropertyReadAccess(pid2name(propertyName), propertyValue);
   }
 
-  private void fireNodeReferentReadAccess(SReferenceLink111 referentRole, SNode referent) {
+  private void fireNodeReferentReadAccess(SReferenceLink referentRole, SNode referent) {
     fireNodeReferentReadAccess(rid2name(referentRole), referent);
   }
 
@@ -1446,7 +1446,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
     return new Pair<SReference, SReference>(toDelete, newValue);
   }
 
-  public Pair<SReference, SReference> setReferenceTarget_byId(SReferenceLink111 role, @Nullable org.jetbrains.mps.openapi.model.SNode target) {
+  public Pair<SReference, SReference> setReferenceTarget_byId(SReferenceLink role, @Nullable org.jetbrains.mps.openapi.model.SNode target) {
     SReference toDelete = null;
     if (myReferences != null) {
       for (SReference reference : myReferences) {
@@ -1479,7 +1479,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
     return result;
   }
 
-  private SReference getReference_byId(SReferenceLink111 role) {
+  private SReference getReference_byId(SReferenceLink role) {
     SReference result = null;
     for (SReference reference : myReferences) {
       if (reference.getRoleId().equals(role)) {
@@ -1509,7 +1509,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
     return toRemove;
   }
 
-  public SReference setReference_byId(SReferenceLink111 role, org.jetbrains.mps.openapi.model.SReference reference) {
+  public SReference setReference_byId(SReferenceLink role, org.jetbrains.mps.openapi.model.SReference reference) {
     SReference toRemove = null;
     for (SReference r : myReferences) {
       if (!r.getRoleId().equals(role)) continue;
@@ -1856,12 +1856,12 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
   }
 
   @Override
-  public String getLinkName(SReferenceLink111 roleId) {
+  public String getLinkName(SReferenceLink roleId) {
     return MPSModuleRepository.getInstance().getDebugRegistry().getLinkName(roleId);
   }
 
   @Override
-  public SReferenceLink111 getReferenceLinkId(SConceptId conceptId, String role) {
+  public SReferenceLink getReferenceLinkId(SConceptId conceptId, String role) {
     return IdUtil.getReferenceLinkId(conceptId, role);
   }
 
@@ -1885,12 +1885,12 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
     return MPSModuleRepository.getInstance().getDebugRegistry().getPropertyName(pid);
   }
 
-  private SReferenceLink111 name2rid(@NotNull String name) {
+  private SReferenceLink name2rid(@NotNull String name) {
     DebugRegistryUtil.fillDebugInfo(myModel);
     return IdUtil.getReferenceLinkId(getConceptId(), name);
   }
 
-  private String rid2name(@NotNull SReferenceLink111 rid) {
+  private String rid2name(@NotNull SReferenceLink rid) {
     DebugRegistryUtil.fillDebugInfo(myModel);
     return MPSModuleRepository.getInstance().getDebugRegistry().getLinkName(rid);
   }

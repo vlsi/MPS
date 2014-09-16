@@ -19,7 +19,7 @@ import jetbrains.mps.smodel.references.ImmatureReferences;
 import jetbrains.mps.util.InternUtil;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
-import org.jetbrains.mps.openapi.language.SReferenceLink111;
+import org.jetbrains.mps.openapi.language.SReferenceLink;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -34,7 +34,7 @@ public abstract class SReferenceBase extends SReference {
   protected volatile SNode myImmatureTargetNode;            // young
   private volatile SModelReference myTargetModelReference;  // mature
 
-  protected SReferenceBase(SReferenceLink111 role, SNode sourceNode, @Nullable SModelReference targetModelReference,
+  protected SReferenceBase(SReferenceLink role, SNode sourceNode, @Nullable SModelReference targetModelReference,
       @Nullable SNode immatureTargetNode) {
     super(role, sourceNode);
 

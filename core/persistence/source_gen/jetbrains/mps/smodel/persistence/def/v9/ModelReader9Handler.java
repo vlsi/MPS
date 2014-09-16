@@ -8,7 +8,7 @@ import java.util.Stack;
 
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.language.SProperty;
-import org.jetbrains.mps.openapi.language.SReferenceLink111;
+import org.jetbrains.mps.openapi.language.SReferenceLink;
 import org.xml.sax.Locator;
 import jetbrains.mps.smodel.SModelHeader;
 import jetbrains.mps.smodel.DefaultSModel;
@@ -355,7 +355,7 @@ public class ModelReader9Handler extends XMLSAXHandler<ModelLoadResult> {
     }
     @Override
     protected Object createObject(Attributes attrs) throws SAXException {
-      MPSModuleRepository.getInstance().getDebugRegistry().addLinkName(SReferenceLink111.deserialize(attrs.getValue("id")), attrs.getValue("name"));
+      MPSModuleRepository.getInstance().getDebugRegistry().addLinkName(SReferenceLink.deserialize(attrs.getValue("id")), attrs.getValue("name"));
       return null;
     }
     @Override
@@ -689,7 +689,7 @@ public class ModelReader9Handler extends XMLSAXHandler<ModelLoadResult> {
     }
     private void handleChild_7167172773708890553(Object resultObject, Object value) throws SAXException {
       Tuples._2<SNode, SContainmentLink> result = (Tuples._2<SNode, SContainmentLink>) resultObject;
-      Tuples._4<SReferenceLink111, SNodePointer, Boolean, String> child = (Tuples._4<SReferenceLink111, SNodePointer, Boolean, String>) value;
+      Tuples._4<SReferenceLink, SNodePointer, Boolean, String> child = (Tuples._4<SReferenceLink, SNodePointer, Boolean, String>) value;
       SNodePointer target = child._1();
       StaticReference ref = new StaticReference(child._0(), result._0(), target.getModelReference(), target.getNodeId(), child._3());
       result._0().setReference(child._0(), ref);
@@ -746,9 +746,9 @@ public class ModelReader9Handler extends XMLSAXHandler<ModelLoadResult> {
     public ReferenceElementHandler() {
     }
     @Override
-    protected Tuples._4<SReferenceLink111, SNodePointer, Boolean, String> createObject(Attributes attrs) throws SAXException {
+    protected Tuples._4<SReferenceLink, SNodePointer, Boolean, String> createObject(Attributes attrs) throws SAXException {
       Pair<Boolean, SNodePointer> linkInfo = fieldhelper.readLink(attrs.getValue("target"));
-      return MultiTuple.<SReferenceLink111,SNodePointer,Boolean,String>from(fieldhelper.readRefRole(attrs.getValue("role")), linkInfo.o2, linkInfo.o1, attrs.getValue("resolveInfo"));
+      return MultiTuple.<SReferenceLink,SNodePointer,Boolean,String>from(fieldhelper.readRefRole(attrs.getValue("role")), linkInfo.o2, linkInfo.o1, attrs.getValue("resolveInfo"));
     }
     @Override
     protected String[] requiredAttributes() {
@@ -756,7 +756,7 @@ public class ModelReader9Handler extends XMLSAXHandler<ModelLoadResult> {
     }
     @Override
     protected void handleAttribute(Object resultObject, String name, String value) throws SAXException {
-      Tuples._4<SReferenceLink111, SNodePointer, Boolean, String> result = (Tuples._4<SReferenceLink111, SNodePointer, Boolean, String>) resultObject;
+      Tuples._4<SReferenceLink, SNodePointer, Boolean, String> result = (Tuples._4<SReferenceLink, SNodePointer, Boolean, String>) resultObject;
       if ("role".equals(name)) {
         return;
       }

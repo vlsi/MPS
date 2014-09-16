@@ -25,7 +25,7 @@ import org.jetbrains.mps.openapi.language.SConceptId;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.language.SLanguageId;
 import org.jetbrains.mps.openapi.language.SProperty;
-import org.jetbrains.mps.openapi.language.SReferenceLink111;
+import org.jetbrains.mps.openapi.language.SReferenceLink;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SReference;
 
@@ -91,7 +91,7 @@ public class StorageIndexHelper9 {
     return getConceptIndex(linkId.getConceptId()) + MODEL_SEPARATOR_CHAR + linkId.getContainmentLinkId();
   }
 
-  public String getReferenceRoleIndex(@NotNull SReferenceLink111 linkId) {
+  public String getReferenceRoleIndex(@NotNull SReferenceLink linkId) {
     return getConceptIndex(linkId.getConcept()) + MODEL_SEPARATOR_CHAR + linkId.getReferenceLinkId();
   }
 
