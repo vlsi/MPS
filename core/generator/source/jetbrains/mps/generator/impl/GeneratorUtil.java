@@ -37,7 +37,7 @@ public class GeneratorUtil {
   /**
    * XXX this is merely a single location for future refactoring of the approach to get concept name
    * when we've got a concept node. I don't like present NameUtil.nodeFQName, but unaware of any better way
-   * to get concept fqn given the concept's node (not an instance of the concept, where node.getConcept().getQualifiedName is possible)
+   * to get concept fqn given the concept's node (not an instance of the concept, where node.getContainingConcept().getQualifiedName is possible)
    */
   public static String getConceptQualifiedName(SNode applicableConceptOfRule) {
     return NameUtil.nodeFQName(applicableConceptOfRule);

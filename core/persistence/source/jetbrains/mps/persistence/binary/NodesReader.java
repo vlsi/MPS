@@ -134,7 +134,7 @@ public class NodesReader {
             modelRef,
             targetNodeId,
             resolveInfo);
-        node.setReference(reference.getRoleId(), reference);
+        node.setReference(reference.getReferenceLink(), reference);
       } else if (kind == 2 || kind == 3) {
         DynamicReference reference = new DynamicReference(
             role,
@@ -144,7 +144,7 @@ public class NodesReader {
         if (origin != null) {
           reference.setOrigin(origin);
         }
-        node.setReference(reference.getRoleId(), reference);
+        node.setReference(reference.getReferenceLink(), reference);
       } else {
         throw new IOException("unknown reference type");
       }

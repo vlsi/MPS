@@ -19,6 +19,7 @@ import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.project.structure.model.ModelRootDescriptor;
 import jetbrains.mps.util.io.ModelInputStream;
 import jetbrains.mps.util.io.ModelOutputStream;
+import org.jetbrains.mps.openapi.language.MetaFactory;
 import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 
@@ -205,7 +206,7 @@ public class ModuleDescriptor {
 
     stream.writeInt(myLanguageVersions.size());
     for (Entry<SLanguage, Integer> entry : myLanguageVersions.entrySet()) {
-      stream.writeString(entry.getKey().serialize());
+      stream.writeString(MetaFactory.getInstance().serializeLanguage(entry.getKey()));
       stream.writeInt(entry.getValue());
     }
 
@@ -257,7 +258,7 @@ public class ModuleDescriptor {
 
     myLanguageVersions.clear();
     for (int size = stream.readInt(); size > 0; size--) {
-      myLanguageVersions.put(SLanguage.deserialize(stream.readString()), stream.readInt());
+      myLanguageVersions.put(MetaFactory.getInstance().deserializeLanguage(stream.readString()), stream.readInt());
     }
 
     myAdditionalJavaStubPaths.clear();

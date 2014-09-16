@@ -87,7 +87,7 @@ public class ISNode_MigrationScript extends BaseMigrationScript {
         if (jetbrains.mps.smodel.SNodeId.fromString("~SNode.getConceptId():jetbrains.mps.smodel.ids.SConceptId").equals(targetNodeId)) {
           return true;
         }
-        if (jetbrains.mps.smodel.SNodeId.fromString("~SNode.getConcept():org.jetbrains.mps.openapi.language.SConcept").equals(targetNodeId)) {
+        if (jetbrains.mps.smodel.SNodeId.fromString("~SNode.getContainingConcept():org.jetbrains.mps.openapi.language.SConcept").equals(targetNodeId)) {
           return true;
         }
         if (jetbrains.mps.smodel.SNodeId.fromString("~SNode.getPresentation():java.lang.String").equals(targetNodeId)) {
@@ -114,7 +114,7 @@ public class ISNode_MigrationScript extends BaseMigrationScript {
         if (jetbrains.mps.smodel.SNodeId.fromString("~SNode.getContainingRoot():org.jetbrains.mps.openapi.model.SNode").equals(targetNodeId)) {
           return true;
         }
-        if (jetbrains.mps.smodel.SNodeId.fromString("~SNode.getRoleInParentId():jetbrains.mps.smodel.ids.SContainmentLinkId").equals(targetNodeId)) {
+        if (jetbrains.mps.smodel.SNodeId.fromString("~SNode.getContainmentLink():jetbrains.mps.smodel.ids.SContainmentLinkId").equals(targetNodeId)) {
           return true;
         }
         if (jetbrains.mps.smodel.SNodeId.fromString("~SNode.getFirstChild():org.jetbrains.mps.openapi.model.SNode").equals(targetNodeId)) {
@@ -360,7 +360,7 @@ public class ISNode_MigrationScript extends BaseMigrationScript {
         if (jetbrains.mps.smodel.SNodeId.fromString("~SReference.getRole():java.lang.String").equals(targetNodeId)) {
           return true;
         }
-        if (jetbrains.mps.smodel.SNodeId.fromString("~SReference.getRoleId():jetbrains.mps.smodel.ids.SReferenceLinkId").equals(targetNodeId)) {
+        if (jetbrains.mps.smodel.SNodeId.fromString("~SReference.getReferenceLink():jetbrains.mps.smodel.ids.SReferenceLinkId").equals(targetNodeId)) {
           return true;
         }
         if (jetbrains.mps.smodel.SNodeId.fromString("~SReference.getLink():org.jetbrains.mps.openapi.language.SReferenceLink").equals(targetNodeId)) {

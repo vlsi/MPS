@@ -44,7 +44,7 @@ import java.util.Set;
  *   ...
  *   // code that relies on meta-model, and needs to update once meta-model changes (e.g. caches by concept FQN)
  *   SNode n;
- *   myCacheMap.put(n.getConcept().getQualifiedName(), ...);
+ *   myCacheMap.put(n.getContainingConcept().getQualifiedName(), ...);
  *   ...
  *   // much later
  *   t.detachFrom(model.getRepository());

@@ -84,7 +84,7 @@ public class StorageIndexHelper9 {
   }
 
   public String getPropertyIndex(@NotNull SProperty prop) {
-    return getConceptIndex(prop.getConcept()) + MODEL_SEPARATOR_CHAR + prop.getPropertyId();
+    return getConceptIndex(prop.getContainingConcept()) + MODEL_SEPARATOR_CHAR + prop.getPropertyId();
   }
 
   public String getNodeRoleIndex(@NotNull SContainmentLink linkId) {

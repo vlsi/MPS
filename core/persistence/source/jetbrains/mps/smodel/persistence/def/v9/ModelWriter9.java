@@ -259,7 +259,7 @@ public class ModelWriter9 implements IModelWriter {
     nodeElement.setAttribute(ModelPersistence9.CONCEPT_ID, myHelper.getConceptIndex(node.getConcept().getId()));
     nodeElement.setAttribute(ModelPersistence9.ID, node.getNodeId().toString());
     if (node.getParent() != null) {
-      DocUtil.setNotNullAttribute(nodeElement, ModelPersistence9.ROLE_ID, myHelper.getNodeRoleIndex(node.getRoleInParentId()));
+      DocUtil.setNotNullAttribute(nodeElement, ModelPersistence9.ROLE_ID, myHelper.getNodeRoleIndex(node.getContainmentLink()));
     }
     String info = Util9.genNodeInfo(PersistenceRegistry.getInstance().getModelEnvironmentInfo(), node);
     DocUtil.setNotNullAttribute(nodeElement, ModelPersistence9.NODE_INFO, info);
@@ -273,7 +273,7 @@ public class ModelWriter9 implements IModelWriter {
 
     for (SReference reference : node.getReferences()) {
       Element linkElement = new Element(ModelPersistence9.REFERENCE);
-      linkElement.setAttribute(ModelPersistence9.ROLE_ID, myHelper.getReferenceRoleIndex(reference.getRoleId()));
+      linkElement.setAttribute(ModelPersistence9.ROLE_ID, myHelper.getReferenceRoleIndex(reference.getReferenceLink()));
       linkElement.setAttribute(ModelPersistence9.TARGET_NODE_ID, myHelper.getRefTarget(reference));
       DocUtil.setNotNullAttribute(linkElement, ModelPersistence9.RESOLVE_INFO, Util9.genResolveInfo(reference));
       nodeElement.addContent(linkElement);

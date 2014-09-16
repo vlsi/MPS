@@ -34,7 +34,7 @@ public class SPropertyAdapter implements SProperty {
   }
 
   @Override
-  public SConcept getConcept() {
+  public SConcept getContainingConcept() {
     return new SConceptAdapter(myPropertyId.getConceptId());
   }
 

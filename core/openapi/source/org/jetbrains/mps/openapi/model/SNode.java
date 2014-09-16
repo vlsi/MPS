@@ -73,13 +73,10 @@ public interface SNode {
    */
   SNodeReference getReference();
 
-  SConcept getConceptId();
-
   /**
    * The concept that this node represents. Concepts can be compared using the "==" operator.
    * Does not produce node read event as the result value can't be changed.
    */
-  // deprecate? [Mihail Muhin]
   @NotNull
   SConcept getConcept();
 
@@ -141,7 +138,7 @@ public interface SNode {
   /**
    * Returns role of this node in parent node
    */
-  SContainmentLink getRoleInParentId();
+  SContainmentLink getContainmentLink();
 
   SNode getFirstChild();
 

@@ -98,7 +98,8 @@ public class MigrateIds_Action extends BaseAction {
           // concept ids 
           ListSequence.fromList(SModelOperations.getNodes(((SModel) model), null)).visitAll(new IVisitor<SNode>() {
             public void visit(SNode it) {
-              ((jetbrains.mps.smodel.SNode) it).setConceptId(IdHelper.getConceptId((jetbrains.mps.smodel.SNode) (SNode) SNodeOperations.getConceptDeclaration(it)));
+              ((jetbrains.mps.smodel.SNode) it).setConcept(
+                  IdHelper.getConceptId((jetbrains.mps.smodel.SNode) (SNode) SNodeOperations.getConceptDeclaration(it)));
             }
           });
           // node role ids 

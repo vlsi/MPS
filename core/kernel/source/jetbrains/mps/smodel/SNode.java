@@ -37,7 +37,6 @@ import org.apache.log4j.LogManager;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SConcept;
-import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.language.SConceptRepository;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.language.SProperty;
@@ -76,9 +75,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
 
   private volatile Object[] myUserObjects; // key,value,key,value ; copy-on-write (!)
 
-  private SConcept myConceptId; //todo make final after 3.2
-  private String myConceptFqName;
-
+  private SConcept myConcept; //todo make final after 3.2
 
   private final Object REPO_LOCK = new Object();
   protected volatile SModel myModel; //todo make private non-volatile
@@ -88,30 +85,10 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
   @NotNull
   @Override
   public SConcept getConcept() {
-    // Note: during indexing we invoke `node.getConcept().getQualifiedName()`
+    // Note: during indexing we invoke `node.getContainingConcept().getQualifiedName()`
     // 1) without read action 2) we must not use deployed version of the concept
-    // ?? may be we need a separate getConceptQualifiedName() method here
-    if (RuntimeFlags.isMergeDriverMode() || /* for indexing */ !ModelAccess.instance().canRead()) {
-      if (workingMode() == IdMigrationMode.NAME) {
-        return new SConceptAdapter(myConceptFqName);
-      } else {
-        return new SConceptAdapter(myConceptId);
-      }
-    }
-
-    if (myConceptId == null) {
-      return SConceptRepository.getInstance().getInstanceConcept(myConceptFqName);
-    } else {
-      return SConceptRepository.getInstance().getInstanceConcept(myConceptId);
-    }
-  }
-
-  @Override
-  public SConcept getConceptId() {
-    if (myConceptId != null) {
-      return myConceptId;
-    }
-    return name2cid(myConceptFqName);
+    //todo assertCanWrite()
+    return myConcept;
   }
 
   @Override
@@ -280,7 +257,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
       String persistentName = getProperty(SNodeUtil.property_INamedConcept_name);
       if (persistentName == null) {
         String conceptName = myConceptFqName == null ? getConceptNameFromDebugInfo() : myConceptFqName;
-        return "?" + (conceptName == null ? myConceptId.toString() : NameUtil.shortNameFromLongName(conceptName)) + "?";
+        return "?" + (conceptName == null ? myConcept.toString() : NameUtil.shortNameFromLongName(conceptName)) + "?";
       }
       return "?" + persistentName + "?";
     }
@@ -507,7 +484,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
     assertCanRead();
 
     if (myRepository == null) return null;
-    return IdUtil.getConceptFqName(myConceptId);
+    return IdUtil.getConceptFqName(myConcept);
   }
 
   public SModel getPersistentModel() {
@@ -586,7 +563,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
   //----------------------------------------------------------
 
   public SNode getConceptDeclarationNode() {
-    String name = myConceptFqName == null ? cid2name(myConceptId) : myConceptFqName;
+    String name = myConceptFqName == null ? cid2name(myConcept) : myConceptFqName;
     return (SNode) SModelUtil.findConceptDeclaration(name);
   }
 
@@ -619,9 +596,9 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
     SModelRepository.getInstance().markChanged(getModel());
   }
 
-  public void setConceptId(@NotNull SConcept conceptId) {
+  public void setConcept(@NotNull SConcept concept) {
     //remove method after 3.2
-    myConceptId = conceptId;
+    myConcept = concept;
     //MihMuh: that's strange since we try not to mark models as changed after refactorings
     SModelRepository.getInstance().markChanged(getModel());
   }
@@ -794,9 +771,9 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
 
   //-------------new methods working by id-----------------
 
-  public SNode(@NotNull SConcept conceptId) {
-    myConceptId = conceptId;
-    myConceptFqName = cid2name(conceptId);
+  public SNode(@NotNull SConcept concept) {
+    myConcept = concept;
+    myConceptFqName = cid2name(concept);
     myId = SModel.generateUniqueId();
   }
 
@@ -809,7 +786,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
   }
 
   @Override
-  public SContainmentLink getRoleInParentId() {
+  public SContainmentLink getContainmentLink() {
     nodeRead();
     if (workingMode() == IdMigrationMode.NAME) {
       SNode parent = getParent();
@@ -1450,7 +1427,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
     SReference toDelete = null;
     if (myReferences != null) {
       for (SReference reference : myReferences) {
-        if (!reference.getRoleId().equals(role)) continue;
+        if (!reference.getReferenceLink().equals(role)) continue;
         toDelete = reference;
         break;
       }
@@ -1482,7 +1459,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
   private SReference getReference_byId(SReferenceLink role) {
     SReference result = null;
     for (SReference reference : myReferences) {
-      if (reference.getRoleId().equals(role)) {
+      if (reference.getReferenceLink().equals(role)) {
         result = reference;
         break;
       }
@@ -1512,7 +1489,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
   public SReference setReference_byId(SReferenceLink role, org.jetbrains.mps.openapi.model.SReference reference) {
     SReference toRemove = null;
     for (SReference r : myReferences) {
-      if (!r.getRoleId().equals(role)) continue;
+      if (!r.getReferenceLink().equals(role)) continue;
       toRemove = r;
       break;
     }
@@ -1655,7 +1632,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
 
     if (role != null) {
       while (firstChild != null) {
-        SContainmentLink childRole = firstChild.getRoleInParentId();
+        SContainmentLink childRole = firstChild.getContainmentLink();
         if (childRole.equals(role)) break;
         firstChild = firstChild.treeNext();
       }
@@ -1800,7 +1777,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
 
         do {
           node = node.treeNext();
-        } while (node != null && !node.getRoleInParentId().equals(myRole));
+        } while (node != null && !node.getContainmentLink().equals(myRole));
         return node;
       }
 
@@ -1814,9 +1791,9 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
 
         do {
           node = node.treePrevious();
-        } while (node != fc && !node.getRoleInParentId().equals(myRole));
+        } while (node != fc && !node.getContainmentLink().equals(myRole));
 
-        return node.getRoleInParentId().equals(myRole) ? node : null;
+        return node.getContainmentLink().equals(myRole) ? node : null;
       }
 
       @Override
@@ -1912,10 +1889,10 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
   public void updateWorkingMode(IdMigrationMode mode) {
     if (mode == IdMigrationMode.NAME) {
       if (myConceptFqName == null) {
-        myConceptFqName = cid2name(myConceptId);
+        myConceptFqName = cid2name(myConcept);
       }
       if (myRoleInParent == null && myRoleInParentId != null) {
-        setRoleInParent(lid2name(getRoleInParentId()));
+        setRoleInParent(lid2name(getContainmentLink()));
       }
       for (SProperty prop : getPropertyIds()) {
         setProperty_byName(pid2name(prop), getProperty_byId(prop));
@@ -1925,8 +1902,8 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
       }
     }
     if (mode == IdMigrationMode.ID) {
-      if (myConceptId == null) {
-        myConceptId = name2cid(myConceptFqName);
+      if (myConcept == null) {
+        myConcept = name2cid(myConceptFqName);
       }
       if (myRoleInParentId == null && myRoleInParent != null) {
         setRoleInParent_byId(name2lid(getParent(), getRoleInParent_byName()));

@@ -148,7 +148,7 @@ public class DebugRegistryUtil implements CoreComponent {
         conceptIds.put(conceptId, conceptName);
 
         if (n.getParent() != null) {
-          SContainmentLink roleId = n.getRoleInParentId();
+          SContainmentLink roleId = n.getContainmentLink();
           SContainmentLinkAdapter role = new SContainmentLinkAdapter(roleId);
           SConcept linkConceptId = roleId.getConceptId();
           SNode roleNode = role.getLinkNode();
@@ -169,7 +169,7 @@ public class DebugRegistryUtil implements CoreComponent {
 
         for (SProperty pid : n.getPropertyIds()) {
           SPropertyAdapter propId = new SPropertyAdapter(pid);
-          SConcept propConceptId = pid.getConcept();
+          SConcept propConceptId = pid.getContainingConcept();
           SNode propNode = propId.getPropertyNode();
           String propName;
           if (propNode != null) {
@@ -187,7 +187,7 @@ public class DebugRegistryUtil implements CoreComponent {
         }
 
         for (SReference ref : n.getReferences()) {
-          SReferenceLink refId = ref.getRoleId();
+          SReferenceLink refId = ref.getReferenceLink();
           SReferenceLinkAdapter refRole = new SReferenceLinkAdapter(refId);
           SNode refNode = refRole.getLinkNode();
           SConcept refConceptId = refId.getConcept();

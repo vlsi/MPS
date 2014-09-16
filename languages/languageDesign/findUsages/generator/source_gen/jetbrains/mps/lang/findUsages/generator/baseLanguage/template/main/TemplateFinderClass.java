@@ -699,7 +699,7 @@ public class TemplateFinderClass implements TemplateDeclaration {
         final SNode tnode65 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration");
         try {
           environment.nodeCopied(context, tnode65, "tpl/r:00000000-0000-4000-0000-011c8959035c/1197207280625");
-          SNodeAccessUtil.setProperty(tnode65, "name", "getConcept");
+          SNodeAccessUtil.setProperty(tnode65, "name", "getContainingConcept");
           {
             final SNode tnode66 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.AnnotationInstance");
             try {

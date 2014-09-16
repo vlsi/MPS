@@ -71,7 +71,7 @@ public class NodesWriter {
   public void writeNode(SNode node, ModelOutputStream os) throws IOException {
     os.writeString(node.getConcept().getId().serialize());
     os.writeNodeId(node.getNodeId());
-    SContainmentLink roleInParentId = node.getRoleInParentId();
+    SContainmentLink roleInParentId = node.getContainmentLink();
     os.writeString(roleInParentId == null ? null :  roleInParentId.serialize());
     os.writeByte(getNodeInfo(node));
     os.writeByte('{');
@@ -133,7 +133,7 @@ public class NodesWriter {
       } else {
         throw new IOException("cannot store reference: " + reference.toString());
       }
-      os.writeString(reference.getRoleId().serialize());
+      os.writeString(reference.getReferenceLink().serialize());
       if (targetModelReference != null && targetModelReference.equals(myModelReference)) {
         os.writeByte(17);
       } else {

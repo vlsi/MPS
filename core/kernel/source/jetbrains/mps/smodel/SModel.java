@@ -601,15 +601,15 @@ public class SModel implements SModelData {
         myUsedLanguages.add(conceptId.getLanguage());
 
         if (n.getParent() != null) {
-          SContainmentLink roleId = n.getRoleInParentId();
+          SContainmentLink roleId = n.getContainmentLink();
           myUsedLanguages.add(roleId.getConceptId().getLanguageId());
         }
         for (SProperty pid : n.getPropertyIds()) {
-          myUsedLanguages.add(pid.getConcept().getLanguageId());
+          myUsedLanguages.add(pid.getContainingConcept().getLanguage());
         }
 
         for (SReference ref : n.getReferences()) {
-          myUsedLanguages.add(ref.getRoleId().getConcept().getLanguageId());
+          myUsedLanguages.add(ref.getReferenceLink().getConcept().getLanguageId());
         }
       }
     }

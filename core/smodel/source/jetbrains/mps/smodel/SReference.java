@@ -83,7 +83,7 @@ public abstract class SReference implements org.jetbrains.mps.openapi.model.SRef
   }
 
   @Override
-  public SReferenceLink getRoleId() {
+  public SReferenceLink getReferenceLink() {
     if (workingMode() == IdMigrationMode.NAME) {
       return ((SReferenceSource) mySourceNode).getReferenceLinkId(mySourceNode.getConceptId(), myRole);
     } else {

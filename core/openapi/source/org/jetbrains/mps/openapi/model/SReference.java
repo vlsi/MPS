@@ -28,7 +28,7 @@ import org.jetbrains.mps.openapi.language.SReferenceLink;
 public interface SReference {
   String getRole();
 
-  SReferenceLink getRoleId();
+  SReferenceLink getReferenceLink();
 
   /**
    * Gets the associated Link - an abstract meta-definition for the reference

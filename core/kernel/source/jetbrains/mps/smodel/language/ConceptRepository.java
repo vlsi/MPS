@@ -20,6 +20,7 @@ import jetbrains.mps.smodel.adapter.SAbstractConceptAdapter;
 import jetbrains.mps.smodel.adapter.SConceptAdapter;
 import jetbrains.mps.smodel.adapter.SInterfaceConceptAdapter;
 import jetbrains.mps.smodel.adapter.SLanguageAdapter;
+import jetbrains.mps.smodel.ids.SConceptId;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import jetbrains.mps.smodel.runtime.illegal.IllegalConceptDescriptor;
 import org.jetbrains.annotations.NotNull;
@@ -38,40 +39,6 @@ import org.jetbrains.mps.openapi.language.SReferenceLink;
 import org.jetbrains.mps.openapi.model.SNode;
 
 public class ConceptRepository extends SConceptRepository implements CoreComponent {
-
-  @Override
-  @NotNull
-  public SConcept getInstanceConcept(@NotNull SConcept conceptId) {
-    SAbstractConcept concept = getConcept(conceptId);
-    if (concept instanceof SInterfaceConcept) {
-      return new SInterfaceInstanceAdapter((SInterfaceConcept) concept);
-    }
-    if (concept == null) {
-      // TODO separate implementation for an "invalid" concept?
-      return new SConceptAdapter(conceptId);
-    }
-    return (SConcept) concept;
-  }
-
-  @Override
-  public SAbstractConcept getConcept(@NotNull SConcept conceptId) {
-    ConceptDescriptor desc = ConceptRegistry.getInstance().getConceptDescriptor(new SAbstractConceptAdapter(conceptId).getQualifiedName());
-    if (desc instanceof IllegalConceptDescriptor) return null;
-
-    return desc.isInterfaceConcept() ? new SInterfaceConceptAdapter(conceptId) : new SConceptAdapter(conceptId);
-  }
-
-  @Override
-  public SEnumeration getEnumeration(@NotNull SConcept conceptId) {
-    // TODO
-    return null;
-  }
-
-  @Override
-  public SLanguage getLanguage(@NotNull SLanguage languageId) {
-    return new SLanguageAdapter(languageId);
-  }
-
   @Override
   public void init() {
     if (INSTANCE != null) {
@@ -93,9 +60,8 @@ public class ConceptRepository extends SConceptRepository implements CoreCompone
       this.target = target;
     }
 
-    @Override
-    public SConcept getId() {
-      return target.getId();
+    public SConceptId getId() {
+      return ((SInterfaceConceptAdapter) target).getId();
     }
 
     @Override
