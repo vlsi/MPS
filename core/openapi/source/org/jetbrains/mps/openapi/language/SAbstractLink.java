@@ -23,7 +23,7 @@ public interface SAbstractLink {
   /**
    * The identifier of the link within the containing concept.
    */
-  SAbstractLinkId getRoleId();
+  SAbstractLinkId111 getRoleId();
 
   @Deprecated
   String getRole();
