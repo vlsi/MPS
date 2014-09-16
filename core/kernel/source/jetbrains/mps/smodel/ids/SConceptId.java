@@ -15,18 +15,18 @@
  */
 package jetbrains.mps.smodel.ids;
 
-import org.jetbrains.mps.openapi.language.SLanguageId111;
+import org.jetbrains.mps.openapi.language.SLanguage;
 
 public final class SConceptId {
-  private final SLanguageId111 myLanguageId;
+  private final SLanguage myLanguageId;
   private final long myConceptId;
 
-  public SConceptId(SLanguageId111 languageId, long conceptId) {
+  public SConceptId(SLanguage languageId, long conceptId) {
     myConceptId = conceptId;
     myLanguageId = languageId;
   }
 
-  public SLanguageId111 getLanguageId() {
+  public SLanguage getLanguageId() {
     return myLanguageId;
   }
 
@@ -60,7 +60,7 @@ public final class SConceptId {
 
   public static SConceptId deserialize(String s) {
     int split = s.lastIndexOf("/");
-    SLanguageId111 lang = SLanguageId111.deserialize(s.substring(0, split));
+    SLanguage lang = SLanguage.deserialize(s.substring(0, split));
     long concept = Long.parseLong(s.substring(split + 1));
     return new SConceptId(lang, concept);
   }

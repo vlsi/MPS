@@ -23,7 +23,7 @@ import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.SModelInternal;
 import org.apache.log4j.LogManager;
-import org.jetbrains.mps.openapi.language.SLanguageId111;
+import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.smodel.DynamicReference;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -82,7 +82,7 @@ public class CloneUtil {
     for (SModuleReference devKit : inputModel.importedDevkits()) {
       outputModel.addDevKit(devKit);
     }
-    for (Entry<SLanguageId111, Integer> lang : inputModel.importedLanguageIdsWithVersions().entrySet()) {
+    for (Entry<SLanguage, Integer> lang : inputModel.importedLanguageIdsWithVersions().entrySet()) {
       outputModel.addLanguageId(lang.getKey(), lang.getValue());
     }
   }

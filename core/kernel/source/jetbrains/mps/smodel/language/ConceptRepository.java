@@ -32,7 +32,7 @@ import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.language.SEnumeration;
 import org.jetbrains.mps.openapi.language.SInterfaceConcept;
 import org.jetbrains.mps.openapi.language.SLanguage;
-import org.jetbrains.mps.openapi.language.SLanguageId111;
+import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.language.SProperty;
 import org.jetbrains.mps.openapi.language.SReferenceLink;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -68,7 +68,7 @@ public class ConceptRepository extends SConceptRepository implements CoreCompone
   }
 
   @Override
-  public SLanguage getLanguage(@NotNull SLanguageId111 languageId) {
+  public SLanguage getLanguage(@NotNull SLanguage languageId) {
     return new SLanguageAdapter(languageId);
   }
 

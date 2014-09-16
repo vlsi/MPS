@@ -18,7 +18,7 @@ package jetbrains.mps.smodel;
 import jetbrains.mps.RuntimeFlags;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.smodel.SModel.ImportElement;
-import org.jetbrains.mps.openapi.language.SLanguageId111;
+import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeUtil;
@@ -62,7 +62,7 @@ public final class CopyUtil {
     for (SModuleReference mr : new ArrayList<SModuleReference>(((jetbrains.mps.smodel.SModelInternal) model).engagedOnGenerationLanguages())) {
       ((jetbrains.mps.smodel.SModelInternal) model).removeEngagedOnGenerationLanguage(mr);
     }
-    for (SLanguageId111 mr : new ArrayList<SLanguageId111>(((jetbrains.mps.smodel.SModelInternal) model).importedLanguageIds())) {
+    for (SLanguage mr : new ArrayList<SLanguage>(((jetbrains.mps.smodel.SModelInternal) model).importedLanguageIds())) {
       ((jetbrains.mps.smodel.SModelInternal) model).deleteLanguageId(mr);
     }
     ((jetbrains.mps.smodel.SModelInternal) model).calculateImplicitImports();

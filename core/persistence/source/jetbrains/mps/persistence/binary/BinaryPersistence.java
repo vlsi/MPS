@@ -37,7 +37,7 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
-import org.jetbrains.mps.openapi.language.SLanguageId111;
+import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.language.SProperty;
 import org.jetbrains.mps.openapi.language.SReferenceLink;
 import org.jetbrains.mps.openapi.model.SModelReference;
@@ -145,7 +145,7 @@ public class BinaryPersistence {
       loadDebugInfo(is);
     }
 
-    for (Pair<Pair<SLanguageId111, Integer>, Boolean> ref : loadUsedLanguagesList(is)) {
+    for (Pair<Pair<SLanguage, Integer>, Boolean> ref : loadUsedLanguagesList(is)) {
       if (!ref.o2) {
         model.addLanguage(ref.o1.o1, ref.o1.o2);
       } else {
@@ -169,7 +169,7 @@ public class BinaryPersistence {
     //languages info
     int languagesSize = is.readInt();
     for (int i = 0; i < languagesSize; i++) {
-      debugRegistry.addLanguageName(SLanguageId111.deserialize(is.readString()), is.readString());
+      debugRegistry.addLanguageName(SLanguage.deserialize(is.readString()), is.readString());
     }
 
     //  devkits??
@@ -268,12 +268,12 @@ public class BinaryPersistence {
     os.writeInt(0xbaba);
   }
 
-  private static void saveDebugInfo(Collection<SLanguageId111> languages, Collection<ImportElement> importedModels, Iterable<SNode> rootNodes, ModelOutputStream os) throws IOException {
+  private static void saveDebugInfo(Collection<SLanguage> languages, Collection<ImportElement> importedModels, Iterable<SNode> rootNodes, ModelOutputStream os) throws IOException {
     DebugRegistry debugRegistry = MPSModuleRepository.getInstance().getDebugRegistry();
 
     //save used languages info
     os.writeInt(languages.size());
-    for (SLanguageId111 languageId : languages) {
+    for (SLanguage languageId : languages) {
       Language lang = new SLanguageAdapter(languageId).getSourceModule();
       String name = lang != null ? lang.getModuleName() : debugRegistry.getLanguageName(languageId);
       os.writeString(languageId.serialize());
@@ -332,14 +332,14 @@ public class BinaryPersistence {
     }
   }
 
-  private static void saveUsedLanguagesList(Map<SLanguageId111, Integer> refs, Map<SLanguageId111, Integer> implicit, ModelOutputStream os) throws IOException {
+  private static void saveUsedLanguagesList(Map<SLanguage, Integer> refs, Map<SLanguage, Integer> implicit, ModelOutputStream os) throws IOException {
     os.writeInt(refs.size() + implicit.size());
-    for (Entry<SLanguageId111, Integer> ref : refs.entrySet()) {
+    for (Entry<SLanguage, Integer> ref : refs.entrySet()) {
       os.writeString(ref.getKey().serialize());
       os.writeInt(ref.getValue());
       os.writeBoolean(false);
     }
-    for (Entry<SLanguageId111, Integer> ref : implicit.entrySet()) {
+    for (Entry<SLanguage, Integer> ref : implicit.entrySet()) {
       os.writeString(ref.getKey().serialize());
       os.writeInt(ref.getValue());
       os.writeBoolean(true);
@@ -353,14 +353,14 @@ public class BinaryPersistence {
     }
   }
 
-  private static Collection<Pair<Pair<SLanguageId111, Integer>, Boolean>> loadUsedLanguagesList(ModelInputStream is) throws IOException {
+  private static Collection<Pair<Pair<SLanguage, Integer>, Boolean>> loadUsedLanguagesList(ModelInputStream is) throws IOException {
     int size = is.readInt();
-    List<Pair<Pair<SLanguageId111, Integer>, Boolean>> result = new ArrayList<Pair<Pair<SLanguageId111, Integer>, Boolean>>();
+    List<Pair<Pair<SLanguage, Integer>, Boolean>> result = new ArrayList<Pair<Pair<SLanguage, Integer>, Boolean>>();
     for (int i = 0; i < size; i++) {
-      SLanguageId111 id = SLanguageId111.deserialize(is.readString());
+      SLanguage id = SLanguage.deserialize(is.readString());
       int version = is.readInt();
       boolean implicit = is.readBoolean();
-      result.add(new Pair<Pair<SLanguageId111, Integer>, Boolean>(new Pair<SLanguageId111, Integer>(id, version), implicit));
+      result.add(new Pair<Pair<SLanguage, Integer>, Boolean>(new Pair<SLanguage, Integer>(id, version), implicit));
     }
     return result;
   }

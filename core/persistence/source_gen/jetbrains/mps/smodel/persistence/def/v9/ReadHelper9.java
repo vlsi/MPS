@@ -4,7 +4,7 @@ package jetbrains.mps.smodel.persistence.def.v9;
 
 import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
-import org.jetbrains.mps.openapi.language.SLanguageId111;
+import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.language.SProperty;
 import org.jetbrains.mps.openapi.language.SReferenceLink;
 import org.jetbrains.mps.openapi.model.SModelReference;
@@ -31,11 +31,11 @@ import org.apache.log4j.LogManager;
 public class ReadHelper9 {
   private SModelReference myModelRef;
   private Map<String, SModelReference> myModelByIx;
-  private Map<String, SLanguageId111> myLanguageByIx;
+  private Map<String, SLanguage> myLanguageByIx;
 
   public ReadHelper9(SModelReference modelRef) {
     myModelByIx = MapSequence.fromMap(new HashMap<String, SModelReference>());
-    myLanguageByIx = MapSequence.fromMap(new HashMap<String, SLanguageId111>());
+    myLanguageByIx = MapSequence.fromMap(new HashMap<String, SLanguage>());
     myModelRef = modelRef;
   }
 
@@ -49,15 +49,15 @@ public class ReadHelper9 {
     MapSequence.fromMap(myModelByIx).put(index, ref);
   }
 
-  public void addUsedLanguage(SModel model, String index, SLanguageId111 ref, int version) {
+  public void addUsedLanguage(SModel model, String index, SLanguage ref, int version) {
     model.addLanguage(ref, version);
     registerLanguage(index, ref);
   }
-  public void addImplicitlyUsedLanguage(SModel model, String index, SLanguageId111 ref, int version) {
+  public void addImplicitlyUsedLanguage(SModel model, String index, SLanguage ref, int version) {
     model.addImplicitlyUsedLanguage(ref, version);
     registerLanguage(index, ref);
   }
-  public void registerLanguage(String index, SLanguageId111 ref) {
+  public void registerLanguage(String index, SLanguage ref) {
     MapSequence.fromMap(myLanguageByIx).put(index, ref);
   }
 
@@ -152,14 +152,14 @@ public class ReadHelper9 {
       if (LOG.isEnabledFor(Level.ERROR)) {
         LOG.error("Broken reference to type=" + s + " in model " + myModelRef);
       }
-      return new SConcept(new SLanguageId111(new UUID(0, 0)), 0);
+      return new SConcept(new SLanguage(new UUID(0, 0)), 0);
     }
-    SLanguageId111 langId = MapSequence.fromMap(myLanguageByIx).get(s.substring(0, ix));
+    SLanguage langId = MapSequence.fromMap(myLanguageByIx).get(s.substring(0, ix));
     if (langId == null) {
       if (LOG.isEnabledFor(Level.ERROR)) {
         LOG.error("couldn't create node '" + s.substring(ix + 1) + "' : import for index [" + s.substring(0, ix) + "] not found");
       }
-      return new SConcept(new SLanguageId111(new UUID(0, 0)), 0);
+      return new SConcept(new SLanguage(new UUID(0, 0)), 0);
     } else {
       return new SConcept(langId, Long.parseLong(s.substring(ix + 1)));
     }

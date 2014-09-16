@@ -38,7 +38,7 @@ public abstract class SConceptRepository {
 
   public abstract SEnumeration getEnumeration(@NotNull SConcept conceptId);
 
-  public abstract SLanguage getLanguage(@NotNull SLanguageId111 languageId);
+  public abstract SLanguage getLanguage(@NotNull SLanguage languageId);
 
   @Deprecated // since 3.2
   @NotNull

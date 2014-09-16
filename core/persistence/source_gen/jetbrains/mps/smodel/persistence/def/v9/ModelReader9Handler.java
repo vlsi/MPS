@@ -8,7 +8,7 @@ import java.util.Stack;
 
 import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
-import org.jetbrains.mps.openapi.language.SLanguageId111;
+import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.language.SProperty;
 import org.jetbrains.mps.openapi.language.SReferenceLink;
 import org.xml.sax.Locator;
@@ -255,7 +255,7 @@ public class ModelReader9Handler extends XMLSAXHandler<ModelLoadResult> {
     }
     @Override
     protected Object createObject(Attributes attrs) throws SAXException {
-      MPSModuleRepository.getInstance().getDebugRegistry().addLanguageName(SLanguageId111.deserialize(attrs.getValue("id")), attrs.getValue("name"));
+      MPSModuleRepository.getInstance().getDebugRegistry().addLanguageName(SLanguage.deserialize(attrs.getValue("id")), attrs.getValue("name"));
       return null;
     }
     @Override
@@ -435,7 +435,7 @@ public class ModelReader9Handler extends XMLSAXHandler<ModelLoadResult> {
       return super.createChild(resultObject, tagName, attrs);
     }
     private void handleChild_7167172773708890285(Object resultObject, Object value) throws SAXException {
-      Tuples._4<SLanguageId111, String, Integer, Boolean> child = (Tuples._4<SLanguageId111, String, Integer, Boolean>) value;
+      Tuples._4<SLanguage, String, Integer, Boolean> child = (Tuples._4<SLanguage, String, Integer, Boolean>) value;
       if ((boolean) child._3()) {
         fieldhelper.addImplicitlyUsedLanguage(fieldmodel, child._1(), child._0(), (int) child._2());
       } else {
@@ -456,8 +456,8 @@ public class ModelReader9Handler extends XMLSAXHandler<ModelLoadResult> {
     public Used_languageElementHandler() {
     }
     @Override
-    protected Tuples._4<SLanguageId111, String, Integer, Boolean> createObject(Attributes attrs) throws SAXException {
-      return MultiTuple.<SLanguageId111,String,Integer,Boolean>from(SLanguageId111.deserialize(attrs.getValue("id")), attrs.getValue("index"), Integer.parseInt(attrs.getValue("version")), Boolean.parseBoolean(attrs.getValue("implicit")));
+    protected Tuples._4<SLanguage, String, Integer, Boolean> createObject(Attributes attrs) throws SAXException {
+      return MultiTuple.<SLanguage,String,Integer,Boolean>from(SLanguage.deserialize(attrs.getValue("id")), attrs.getValue("index"), Integer.parseInt(attrs.getValue("version")), Boolean.parseBoolean(attrs.getValue("implicit")));
     }
     @Override
     protected String[] requiredAttributes() {
@@ -465,7 +465,7 @@ public class ModelReader9Handler extends XMLSAXHandler<ModelLoadResult> {
     }
     @Override
     protected void handleAttribute(Object resultObject, String name, String value) throws SAXException {
-      Tuples._4<SLanguageId111, String, Integer, Boolean> result = (Tuples._4<SLanguageId111, String, Integer, Boolean>) resultObject;
+      Tuples._4<SLanguage, String, Integer, Boolean> result = (Tuples._4<SLanguage, String, Integer, Boolean>) resultObject;
       if ("id".equals(name)) {
         return;
       }

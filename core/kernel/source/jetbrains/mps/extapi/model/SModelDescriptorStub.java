@@ -29,7 +29,7 @@ import jetbrains.mps.smodel.loading.ModelLoadingState;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.mps.openapi.language.SLanguageId111;
+import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.module.SModuleReference;
@@ -197,22 +197,22 @@ public abstract class SModelDescriptorStub implements SModelInternal, SModel, Fa
   }
 
   @Override
-  public java.util.Collection<SLanguageId111> importedLanguageIds() {
+  public java.util.Collection<SLanguage> importedLanguageIds() {
     return getSModelInternal().usedLanguages();
   }
 
   @Override
-  public Map<SLanguageId111, Integer> importedLanguageIdsWithVersions() {
+  public Map<SLanguage, Integer> importedLanguageIdsWithVersions() {
     return getSModelInternal().usedLanguagesWithVersions();
   }
 
   @Override
-  public Map<SLanguageId111, Integer> implicitLanguageIdsWithVersions() {
+  public Map<SLanguage, Integer> implicitLanguageIdsWithVersions() {
     return getSModelInternal().implicitlyUsedLanguagesWithVersions();
   }
 
   @Override
-  public void deleteLanguageId(@NotNull SLanguageId111 ref) {
+  public void deleteLanguageId(@NotNull SLanguage ref) {
     getSModelInternal().deleteLanguage(ref);
   }
 
@@ -222,7 +222,7 @@ public abstract class SModelDescriptorStub implements SModelInternal, SModel, Fa
   }
 
   @Override
-  public void addLanguageId(SLanguageId111 ref, int version) {
+  public void addLanguageId(SLanguage ref, int version) {
     getSModelInternal().addLanguage(ref, version);
   }
 

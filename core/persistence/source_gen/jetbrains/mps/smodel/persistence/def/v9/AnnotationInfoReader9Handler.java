@@ -7,7 +7,7 @@ import java.util.List;
 import jetbrains.mps.smodel.persistence.lines.LineContent;
 import java.util.Stack;
 
-import org.jetbrains.mps.openapi.language.SLanguageId111;
+import org.jetbrains.mps.openapi.language.SLanguage;
 import org.xml.sax.Locator;
 import jetbrains.mps.smodel.persistence.def.v5.LineContentAccumulator;
 import org.xml.sax.SAXException;
@@ -185,7 +185,7 @@ public class AnnotationInfoReader9Handler extends XMLSAXHandler<List<LineContent
       return defaultHandler;
     }
     private void handleChild_8634114485976612315(Object resultObject, Object value) throws SAXException {
-      Tuples._2<SLanguageId111, String> child = (Tuples._2<SLanguageId111, String>) value;
+      Tuples._2<SLanguage, String> child = (Tuples._2<SLanguage, String>) value;
       fieldhelper.registerLanguage(child._1(), child._0());
     }
   }
@@ -194,8 +194,8 @@ public class AnnotationInfoReader9Handler extends XMLSAXHandler<List<LineContent
     public Used_languageElementHandler() {
     }
     @Override
-    protected Tuples._2<SLanguageId111, String> createObject(Attributes attrs) throws SAXException {
-      return MultiTuple.<SLanguageId111,String>from(SLanguageId111.deserialize(attrs.getValue("id")), attrs.getValue("index"));
+    protected Tuples._2<SLanguage, String> createObject(Attributes attrs) throws SAXException {
+      return MultiTuple.<SLanguage,String>from(SLanguage.deserialize(attrs.getValue("id")), attrs.getValue("index"));
     }
     @Override
     protected String[] requiredAttributes() {
@@ -203,7 +203,7 @@ public class AnnotationInfoReader9Handler extends XMLSAXHandler<List<LineContent
     }
     @Override
     protected void handleAttribute(Object resultObject, String name, String value) throws SAXException {
-      Tuples._2<SLanguageId111, String> result = (Tuples._2<SLanguageId111, String>) resultObject;
+      Tuples._2<SLanguage, String> result = (Tuples._2<SLanguage, String>) resultObject;
       if ("id".equals(name)) {
         return;
       }
