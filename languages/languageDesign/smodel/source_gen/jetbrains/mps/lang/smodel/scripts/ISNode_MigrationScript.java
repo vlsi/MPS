@@ -84,7 +84,7 @@ public class ISNode_MigrationScript extends BaseMigrationScript {
         if (jetbrains.mps.smodel.SNodeId.fromString("~SNode.getReference():org.jetbrains.mps.openapi.model.SNodeReference").equals(targetNodeId)) {
           return true;
         }
-        if (jetbrains.mps.smodel.SNodeId.fromString("~SNode.getConceptId():org.jetbrains.mps.openapi.language.SConceptId").equals(targetNodeId)) {
+        if (jetbrains.mps.smodel.SNodeId.fromString("~SNode.getConceptId():jetbrains.mps.smodel.ids.SConceptId").equals(targetNodeId)) {
           return true;
         }
         if (jetbrains.mps.smodel.SNodeId.fromString("~SNode.getConcept():org.jetbrains.mps.openapi.language.SConcept").equals(targetNodeId)) {
