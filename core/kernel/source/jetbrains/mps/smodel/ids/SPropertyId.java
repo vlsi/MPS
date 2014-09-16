@@ -18,15 +18,15 @@ package jetbrains.mps.smodel.ids;
 import org.jetbrains.mps.openapi.language.SConcept;
 
 public final class SPropertyId {
-  private final SConcept myConceptId;
+  private final SConceptId myConceptId;
   private final long myPropertyId;
 
-  public SPropertyId(SConcept conceptId, long propertyId) {
+  public SPropertyId(SConceptId conceptId, long propertyId) {
     myConceptId = conceptId;
     myPropertyId = propertyId;
   }
 
-  public SConcept getConceptId() {
+  public SConceptId getConceptId() {
     return myConceptId;
   }
 
@@ -60,7 +60,7 @@ public final class SPropertyId {
 
   public static SPropertyId deserialize(String s) {
     int split = s.lastIndexOf("/");
-    SConcept concept = SConcept.deserialize(s.substring(0, split));
+    SConceptId concept = SConceptId.deserialize(s.substring(0, split));
     long prop = Long.parseLong(s.substring(split + 1));
     return new SPropertyId(concept, prop);
   }
