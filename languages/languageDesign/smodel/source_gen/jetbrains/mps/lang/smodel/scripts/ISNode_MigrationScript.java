@@ -96,10 +96,10 @@ public class ISNode_MigrationScript extends BaseMigrationScript {
         if (jetbrains.mps.smodel.SNodeId.fromString("~SNode.getName():java.lang.String").equals(targetNodeId)) {
           return true;
         }
-        if (jetbrains.mps.smodel.SNodeId.fromString("~SNode.addChild(org.jetbrains.mps.openapi.language.SContainmentLinkId,org.jetbrains.mps.openapi.model.SNode):void").equals(targetNodeId)) {
+        if (jetbrains.mps.smodel.SNodeId.fromString("~SNode.addChild(jetbrains.mps.smodel.ids.SContainmentLinkId,org.jetbrains.mps.openapi.model.SNode):void").equals(targetNodeId)) {
           return true;
         }
-        if (jetbrains.mps.smodel.SNodeId.fromString("~SNode.insertChildBefore(org.jetbrains.mps.openapi.language.SContainmentLinkId,org.jetbrains.mps.openapi.model.SNode,org.jetbrains.mps.openapi.model.SNode):void").equals(targetNodeId)) {
+        if (jetbrains.mps.smodel.SNodeId.fromString("~SNode.insertChildBefore(jetbrains.mps.smodel.ids.SContainmentLinkId,org.jetbrains.mps.openapi.model.SNode,org.jetbrains.mps.openapi.model.SNode):void").equals(targetNodeId)) {
           return true;
         }
         if (jetbrains.mps.smodel.SNodeId.fromString("~SNode.removeChild(org.jetbrains.mps.openapi.model.SNode):void").equals(targetNodeId)) {
@@ -114,7 +114,7 @@ public class ISNode_MigrationScript extends BaseMigrationScript {
         if (jetbrains.mps.smodel.SNodeId.fromString("~SNode.getContainingRoot():org.jetbrains.mps.openapi.model.SNode").equals(targetNodeId)) {
           return true;
         }
-        if (jetbrains.mps.smodel.SNodeId.fromString("~SNode.getRoleInParentId():org.jetbrains.mps.openapi.language.SContainmentLinkId").equals(targetNodeId)) {
+        if (jetbrains.mps.smodel.SNodeId.fromString("~SNode.getRoleInParentId():jetbrains.mps.smodel.ids.SContainmentLinkId").equals(targetNodeId)) {
           return true;
         }
         if (jetbrains.mps.smodel.SNodeId.fromString("~SNode.getFirstChild():org.jetbrains.mps.openapi.model.SNode").equals(targetNodeId)) {
@@ -129,7 +129,7 @@ public class ISNode_MigrationScript extends BaseMigrationScript {
         if (jetbrains.mps.smodel.SNodeId.fromString("~SNode.getLastChild():org.jetbrains.mps.openapi.model.SNode").equals(targetNodeId)) {
           return true;
         }
-        if (jetbrains.mps.smodel.SNodeId.fromString("~SNode.getChildren(org.jetbrains.mps.openapi.language.SContainmentLinkId):java.lang.Iterable").equals(targetNodeId)) {
+        if (jetbrains.mps.smodel.SNodeId.fromString("~SNode.getChildren(jetbrains.mps.smodel.ids.SContainmentLinkId):java.lang.Iterable").equals(targetNodeId)) {
           return true;
         }
         if (jetbrains.mps.smodel.SNodeId.fromString("~SNode.getChildren():java.lang.Iterable").equals(targetNodeId)) {
