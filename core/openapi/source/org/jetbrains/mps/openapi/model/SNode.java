@@ -19,7 +19,7 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.language.SConceptId;
-import org.jetbrains.mps.openapi.language.SContainmentLinkId;
+import org.jetbrains.mps.openapi.language.SContainmentLink111;
 import org.jetbrains.mps.openapi.language.SProperty;
 import org.jetbrains.mps.openapi.language.SReferenceLinkId;
 
@@ -95,7 +95,7 @@ public interface SNode {
 
   // tree operation
 
-  void addChild(SContainmentLinkId role, SNode child);
+  void addChild(SContainmentLink111 role, SNode child);
 
   /**
    * Inserts the given node as a child of the current node of the specified role directly behind the anchor node.<br/>
@@ -105,7 +105,7 @@ public interface SNode {
    * @param anchor a new child node will be inserted just before this node. If anchor is not specified,
    *               a new child is inserted as a last child
    */
-  void insertChildBefore(SContainmentLinkId role, SNode child, @Nullable SNode anchor);
+  void insertChildBefore(SContainmentLink111 role, SNode child, @Nullable SNode anchor);
 
   /**
    * Removes the child of this node. See "node manipulation" section in class doc
@@ -141,7 +141,7 @@ public interface SNode {
   /**
    * Returns role of this node in parent node
    */
-  SContainmentLinkId getRoleInParentId();
+  SContainmentLink111 getRoleInParentId();
 
   SNode getFirstChild();
 
@@ -164,7 +164,7 @@ public interface SNode {
    * Does not produce read on current as current is already obtained, produces read accesses to child nodes lazily (when really accessed),
    * does not produce read accesses for skipped children
    */
-  Iterable<? extends SNode> getChildren(SContainmentLinkId role);
+  Iterable<? extends SNode> getChildren(SContainmentLink111 role);
 
   /**
    * Returns an immutable collection of all children.

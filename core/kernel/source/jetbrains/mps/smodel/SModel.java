@@ -44,7 +44,7 @@ import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SConceptId;
-import org.jetbrains.mps.openapi.language.SContainmentLinkId;
+import org.jetbrains.mps.openapi.language.SContainmentLink111;
 import org.jetbrains.mps.openapi.language.SLanguageId;
 import org.jetbrains.mps.openapi.language.SProperty;
 import org.jetbrains.mps.openapi.model.EditableSModel;
@@ -601,7 +601,7 @@ public class SModel implements SModelData {
         myUsedLanguages.add(conceptId.getLanguageId());
 
         if (n.getParent() != null) {
-          SContainmentLinkId roleId = n.getRoleInParentId();
+          SContainmentLink111 roleId = n.getRoleInParentId();
           myUsedLanguages.add(roleId.getConceptId().getLanguageId());
         }
         for (SProperty pid : n.getPropertyIds()) {

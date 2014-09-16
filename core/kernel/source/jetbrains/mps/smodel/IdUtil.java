@@ -21,7 +21,7 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SAbstractLinkId;
 import org.jetbrains.mps.openapi.language.SConceptId;
 import org.jetbrains.mps.openapi.language.SConceptUtil;
-import org.jetbrains.mps.openapi.language.SContainmentLinkId;
+import org.jetbrains.mps.openapi.language.SContainmentLink111;
 import org.jetbrains.mps.openapi.language.SLanguageId;
 import org.jetbrains.mps.openapi.language.SProperty;
 import org.jetbrains.mps.openapi.language.SReferenceLinkId;
@@ -39,7 +39,7 @@ public abstract class IdUtil {
 
   public static final SProperty UNKNOWN_PROPERTY_ID = new SProperty(new SConceptId(new SLanguageId(new UUID(0, 0)), 0), 0);
   public static final SReferenceLinkId UNKNOWN_REFERENCE_ID = new SReferenceLinkId(new SConceptId(new SLanguageId(new UUID(0, 0)), 0), 0);
-  public static final SContainmentLinkId UNKNOWN_LINK_ID = new SContainmentLinkId(new SConceptId(new SLanguageId(new UUID(0, 0)), 0), 0);
+  public static final SContainmentLink111 UNKNOWN_LINK_ID = new SContainmentLink111(new SConceptId(new SLanguageId(new UUID(0, 0)), 0), 0);
 
   public static String getConceptFqName(SConceptId id) {
     DebugRegistry dr = MPSModuleRepository.getInstance().getDebugRegistry();
@@ -79,13 +79,13 @@ public abstract class IdUtil {
     return SNodeUtil.conceptId_ConceptDeclaration.equals(id) || SNodeUtil.conceptId_InterfaceConceptDeclaration.equals(id);
   }
 
-  public static SContainmentLinkId getContainmentLinkId(SConceptId id, String refName) {
+  public static SContainmentLink111 getContainmentLinkId(SConceptId id, String refName) {
     SAbstractLinkId rid = ((DebugRegistryImpl) MPSModuleRepository.getInstance().getDebugRegistry()).getLinkId(id, refName);
-    if (rid instanceof SContainmentLinkId) return (SContainmentLinkId) rid;
+    if (rid instanceof SContainmentLink111) return (SContainmentLink111) rid;
 
     for (SAbstractConcept c : SConceptUtil.getAllSuperConcepts(new SConceptAdapter(id))) {
       rid = ((DebugRegistryImpl) MPSModuleRepository.getInstance().getDebugRegistry()).getLinkId(c.getId(), refName);
-      if (rid instanceof SContainmentLinkId) return (SContainmentLinkId) rid;
+      if (rid instanceof SContainmentLink111) return (SContainmentLink111) rid;
     }
     return UNKNOWN_LINK_ID;
   }

@@ -22,7 +22,7 @@ import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.language.SConceptId;
-import org.jetbrains.mps.openapi.language.SContainmentLinkId;
+import org.jetbrains.mps.openapi.language.SContainmentLink111;
 import org.jetbrains.mps.openapi.language.SLanguageId;
 import org.jetbrains.mps.openapi.language.SProperty;
 import org.jetbrains.mps.openapi.language.SReferenceLinkId;
@@ -87,7 +87,7 @@ public class StorageIndexHelper9 {
     return getConceptIndex(prop.getConcept()) + MODEL_SEPARATOR_CHAR + prop.getPropertyId();
   }
 
-  public String getNodeRoleIndex(@NotNull SContainmentLinkId linkId) {
+  public String getNodeRoleIndex(@NotNull SContainmentLink111 linkId) {
     return getConceptIndex(linkId.getConceptId()) + MODEL_SEPARATOR_CHAR + linkId.getContainmentLinkId();
   }
 

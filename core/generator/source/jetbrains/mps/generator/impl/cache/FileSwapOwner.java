@@ -27,7 +27,7 @@ import jetbrains.mps.util.io.ModelInputStream;
 import jetbrains.mps.util.io.ModelOutputStream;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
-import org.jetbrains.mps.openapi.language.SContainmentLinkId;
+import org.jetbrains.mps.openapi.language.SContainmentLink111;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -195,8 +195,8 @@ public abstract class FileSwapOwner implements TransientSwapOwner {
         return null;
       }
 
-      List<Pair<SContainmentLinkId, jetbrains.mps.smodel.SNode>> roots = new NodesReader(modelReference, false).readNodes(is);
-      for (Pair<SContainmentLinkId, jetbrains.mps.smodel.SNode> r : roots) {
+      List<Pair<SContainmentLink111, jetbrains.mps.smodel.SNode>> roots = new NodesReader(modelReference, false).readNodes(is);
+      for (Pair<SContainmentLink111, jetbrains.mps.smodel.SNode> r : roots) {
         model.addRootNode(r.o2);
       }
 
@@ -248,8 +248,8 @@ public abstract class FileSwapOwner implements TransientSwapOwner {
     if (version != 44) {
       return null;
     }
-    List<Pair<SContainmentLinkId, jetbrains.mps.smodel.SNode>> resultRoots = new NodesReader(resultModel.getReference(), false).readNodes(mis);
-    for (Pair<SContainmentLinkId, jetbrains.mps.smodel.SNode> root : resultRoots) {
+    List<Pair<SContainmentLink111, jetbrains.mps.smodel.SNode>> resultRoots = new NodesReader(resultModel.getReference(), false).readNodes(mis);
+    for (Pair<SContainmentLink111, jetbrains.mps.smodel.SNode> root : resultRoots) {
       resultModel.addRootNode(root.o2);
     }
 

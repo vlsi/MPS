@@ -11,6 +11,7 @@ import org.apache.log4j.Level;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.smodel.DebugRegistryUtil;
+import org.jetbrains.mps.openapi.language.SContainmentLink111;
 import org.jetbrains.mps.openapi.language.SProperty;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.project.MPSProject;
@@ -28,7 +29,6 @@ import jetbrains.mps.smodel.adapter.IdHelper;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import org.jetbrains.mps.openapi.language.SContainmentLinkId;
 import org.jetbrains.mps.openapi.model.SReference;
 import org.jetbrains.mps.openapi.language.SReferenceLinkId;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
@@ -108,7 +108,7 @@ public class MigrateIds_Action extends BaseAction {
             }
           }).visitAll(new IVisitor<SNode>() {
             public void visit(SNode it) {
-              SContainmentLinkId rid = IdHelper.getNodeRoleId((jetbrains.mps.smodel.SNode) (SNode) SNodeOperations.getContainingLinkDeclaration(it));
+              SContainmentLink111 rid = IdHelper.getNodeRoleId((jetbrains.mps.smodel.SNode) (SNode) SNodeOperations.getContainingLinkDeclaration(it));
               ((jetbrains.mps.smodel.SNode) it).setRoleInParent_byId(rid);
             }
           });

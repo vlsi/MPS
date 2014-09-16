@@ -35,7 +35,7 @@ import jetbrains.mps.util.StringUtil;
 import org.jdom.Document;
 import org.jdom.Element;
 import org.jetbrains.mps.openapi.language.SConceptId;
-import org.jetbrains.mps.openapi.language.SContainmentLinkId;
+import org.jetbrains.mps.openapi.language.SContainmentLink111;
 import org.jetbrains.mps.openapi.language.SLanguageId;
 import org.jetbrains.mps.openapi.language.SProperty;
 import org.jetbrains.mps.openapi.language.SReferenceLinkId;
@@ -140,7 +140,7 @@ public class ModelWriter9 implements IModelWriter {
     Map<SConceptId, String> conceptIds = new HashMap<SConceptId, String>();
     Map<SProperty, String> propIds = new HashMap<SProperty, String>();
     Map<SReferenceLinkId, String> refIds = new HashMap<SReferenceLinkId, String>();
-    Map<SContainmentLinkId, String> roleIds = new HashMap<SContainmentLinkId, String>();
+    Map<SContainmentLink111, String> roleIds = new HashMap<SContainmentLink111, String>();
 
     DebugRegistryUtil.getDebugInfoById(sourceModel.getRootNodes(), conceptIds, propIds, refIds, roleIds);
 
@@ -169,7 +169,7 @@ public class ModelWriter9 implements IModelWriter {
     }
 
     // write child roles
-    for (Entry<SContainmentLinkId, String> e : roleIds.entrySet()) {
+    for (Entry<SContainmentLink111, String> e : roleIds.entrySet()) {
       Element langElement = new Element(ModelPersistence9.DEBUG_INFO_CHILD_ROLE);
       langElement.setAttribute(ModelPersistence9.ID, e.getKey().serialize());
       langElement.setAttribute(ModelPersistence9.DEBUG_INFO_NAME, e.getValue());

@@ -82,7 +82,8 @@
    <int>0</int>
   </void>
   <void method="put">
-   <string>public void jetbrains.mps.smodel.SNode.insertChildBefore(org.jetbrains.mps.openapi.language.SContainmentLinkId,org.jetbrains.mps.openapi.model.SNode,org.jetbrains.mps.openapi.model.SNode)</string>
+   <string>public void
+     jetbrains.mps.smodel.SNode.insertChildBefore(org.jetbrains.mps.openapi.language.SContainmentLink111,org.jetbrains.mps.openapi.model.SNode,org.jetbrains.mps.openapi.model.SNode)</string>
    <int>0</int>
   </void>
   <void method="put">
@@ -426,7 +427,7 @@
    <int>0</int>
   </void>
   <void method="put">
-   <string>public void jetbrains.mps.smodel.SNode.addChild(org.jetbrains.mps.openapi.language.SContainmentLinkId,org.jetbrains.mps.openapi.model.SNode)</string>
+   <string>public void jetbrains.mps.smodel.SNode.addChild(org.jetbrains.mps.openapi.language.SContainmentLink111,org.jetbrains.mps.openapi.model.SNode)</string>
    <int>0</int>
   </void>
   <void method="put">
@@ -630,7 +631,7 @@
     <int>0</int>
   </void>
   <void method="put">
-    <string>public org.jetbrains.mps.openapi.language.SContainmentLinkId jetbrains.mps.smodel.SNode.getRoleInParentId()</string>
+    <string>public org.jetbrains.mps.openapi.language.SContainmentLink111 jetbrains.mps.smodel.SNode.getRoleInParentId()</string>
     <int>0</int>
   </void>
   <void method="put">

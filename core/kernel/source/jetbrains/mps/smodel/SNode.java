@@ -39,7 +39,7 @@ import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.language.SConceptId;
 import org.jetbrains.mps.openapi.language.SConceptRepository;
-import org.jetbrains.mps.openapi.language.SContainmentLinkId;
+import org.jetbrains.mps.openapi.language.SContainmentLink111;
 import org.jetbrains.mps.openapi.language.SProperty;
 import org.jetbrains.mps.openapi.language.SReferenceLinkId;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
@@ -66,7 +66,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
   }
 
   private String myRoleInParent;
-  private SContainmentLinkId myRoleInParentId;
+  private SContainmentLink111 myRoleInParentId;
   private jetbrains.mps.smodel.SReference[] myReferences = jetbrains.mps.smodel.SReference.EMPTY_ARRAY;
 
   private String[] myProperties = null;
@@ -385,7 +385,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
 
   @Override
   public List<SNode> getChildren() {
-    return getChildren((SContainmentLinkId) null);
+    return getChildren((SContainmentLink111) null);
   }
 
   @Override
@@ -800,7 +800,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
     myId = SModel.generateUniqueId();
   }
 
-  public void setRoleInParentId(SContainmentLinkId newRole) {//todo add undo
+  public void setRoleInParentId(SContainmentLink111 newRole) {//todo add undo
     if (workingMode() == IdMigrationMode.NAME) {
       setRoleInParent_byName(lid2name(newRole));
     } else {
@@ -809,7 +809,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
   }
 
   @Override
-  public SContainmentLinkId getRoleInParentId() {
+  public SContainmentLink111 getRoleInParentId() {
     nodeRead();
     if (workingMode() == IdMigrationMode.NAME) {
       SNode parent = getParent();
@@ -955,7 +955,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
     referenceChanged(role, toRemove, reference);
   }
 
-  public void insertChildBefore(@NotNull final SContainmentLinkId role, org.jetbrains.mps.openapi.model.SNode child,
+  public void insertChildBefore(@NotNull final SContainmentLink111 role, org.jetbrains.mps.openapi.model.SNode child,
       @Nullable final org.jetbrains.mps.openapi.model.SNode anchor) {
     assertCanChange();
 
@@ -973,13 +973,13 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
   }
 
   @Override
-  public void addChild(SContainmentLinkId role, org.jetbrains.mps.openapi.model.SNode child) {
+  public void addChild(SContainmentLink111 role, org.jetbrains.mps.openapi.model.SNode child) {
     insertChildBefore(role, child, null);
   }
 
   @Override
   @NotNull
-  public List<SNode> getChildren(SContainmentLinkId role) {
+  public List<SNode> getChildren(SContainmentLink111 role) {
     if (workingMode() == IdMigrationMode.NAME) {
       return getChildren_byName(lid2name(role));
     } else {
@@ -1013,7 +1013,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
     propertyChanged(pid2name(propertyName), oldValue, newValue);
   }
 
-  private void nodeAdded(SContainmentLinkId role, org.jetbrains.mps.openapi.model.SNode child) {
+  private void nodeAdded(SContainmentLink111 role, org.jetbrains.mps.openapi.model.SNode child) {
     if (myModel == null) return;
     nodeAdded(lid2name(role), child);
   }
@@ -1324,7 +1324,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
     myRoleInParent = InternUtil.intern(newRoleInParent);
   }
 
-  public void setRoleInParent_byId(SContainmentLinkId role) {
+  public void setRoleInParent_byId(SContainmentLink111 role) {
     myRoleInParentId = role;
   }
 
@@ -1339,7 +1339,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
     return myRoleInParent;
   }
 
-  private SContainmentLinkId getRoleInParentId_byId() {
+  private SContainmentLink111 getRoleInParentId_byId() {
     return myRoleInParentId;
   }
 
@@ -1581,7 +1581,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
     return schild;
   }
 
-  private SNode insertChildBefore_byId(final SContainmentLinkId role, org.jetbrains.mps.openapi.model.SNode child,
+  private SNode insertChildBefore_byId(final SContainmentLink111 role, org.jetbrains.mps.openapi.model.SNode child,
       final org.jetbrains.mps.openapi.model.SNode anchor) {
     final SNode schild = (SNode) child;
     SNode parentOfChild = schild.getParent();
@@ -1650,12 +1650,12 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
     return new ChildrenList_byName(firstChild, role);
   }
 
-  private List<SNode> getChildren_byId(SContainmentLinkId role) {
+  private List<SNode> getChildren_byId(SContainmentLink111 role) {
     SNode firstChild = firstChild();
 
     if (role != null) {
       while (firstChild != null) {
-        SContainmentLinkId childRole = firstChild.getRoleInParentId();
+        SContainmentLink111 childRole = firstChild.getRoleInParentId();
         if (childRole.equals(role)) break;
         firstChild = firstChild.treeNext();
       }
@@ -1763,9 +1763,9 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
 
   private static class ChildrenList_byId extends AbstractSequentialList<SNode> {
     @Nullable
-    private final SContainmentLinkId myRole;
+    private final SContainmentLink111 myRole;
 
-    public ChildrenList_byId(SNode first, @Nullable SContainmentLinkId role) {
+    public ChildrenList_byId(SNode first, @Nullable SContainmentLink111 role) {
       super(first);
       myRole = role;
     }
@@ -1787,9 +1787,9 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
 
     private class ChildrenIterator_byId extends AbstractSequentialIterator<SNode> {
       @Nullable
-      private SContainmentLinkId myRole;
+      private SContainmentLink111 myRole;
 
-      public ChildrenIterator_byId(@NotNull SNode first, @Nullable SContainmentLinkId role) {
+      public ChildrenIterator_byId(@NotNull SNode first, @Nullable SContainmentLink111 role) {
         super(first);
         myRole = role;
       }
@@ -1895,13 +1895,13 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
     return MPSModuleRepository.getInstance().getDebugRegistry().getLinkName(rid);
   }
 
-  private SContainmentLinkId name2lid(@NotNull SNode sNode, @NotNull String name) {
-    if ("smodelAttribute".equals(name)) return SContainmentLinkId.deserialize("ceab5195-25ea-4f22-9b92-103b95ca8c0c/1133920641626/5169995583184591170");
+  private SContainmentLink111 name2lid(@NotNull SNode sNode, @NotNull String name) {
+    if ("smodelAttribute".equals(name)) return SContainmentLink111.deserialize("ceab5195-25ea-4f22-9b92-103b95ca8c0c/1133920641626/5169995583184591170");
     DebugRegistryUtil.fillDebugInfo(myModel);
     return IdUtil.getContainmentLinkId(sNode.getConceptId(), name);
   }
 
-  private String lid2name(@Nullable SContainmentLinkId lid) {
+  private String lid2name(@Nullable SContainmentLink111 lid) {
     if (lid == null) {
       return null;
     }
