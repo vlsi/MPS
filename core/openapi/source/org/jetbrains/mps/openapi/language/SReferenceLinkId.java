@@ -15,7 +15,7 @@
  */
 package org.jetbrains.mps.openapi.language;
 
-public final class SReferenceLinkId extends SAbstractLinkId111 {
+public final class SReferenceLinkId extends SAbstractLink {
   private final long myRefLinkId;
 
   public SReferenceLinkId(SConceptId conceptId, long refLinkId) {

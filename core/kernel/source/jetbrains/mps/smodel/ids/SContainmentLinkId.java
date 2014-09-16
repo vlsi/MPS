@@ -15,10 +15,10 @@
  */
 package jetbrains.mps.smodel.ids;
 
-import org.jetbrains.mps.openapi.language.SAbstractLinkId111;
+import org.jetbrains.mps.openapi.language.SAbstractLink;
 import org.jetbrains.mps.openapi.language.SConceptId;
 
-public final class SContainmentLinkId extends SAbstractLinkId111 {
+public final class SContainmentLinkId extends SAbstractLink {
   private final long myLinkId;
 
   public SContainmentLinkId(SConceptId conceptId, long linkId) {
