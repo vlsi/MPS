@@ -31,53 +31,42 @@ import java.util.List;
 import java.util.Set;
 
 public class CompiledConceptDescriptor extends BaseConceptDescriptor {
-  private final String conceptFqName;
-  private final String superConcept;
-  private final boolean isInterfaceConcept;
-  private final List<String> parents;
-  private final Set<String> ancestors;
-  private final Set<String> propertyNames;
-  private final Set<String> referenceNames;
+  private final String myConceptFqName;
+  private final String mySuperConcept;
+  private final boolean myInterfaceConcept;
+  private final String[] myParents;
+  private final String[] myOwnPropertyNames;
+  private final String[] myOwnReferenceNames;
+  private final String[] myOwnChildNames;
+  private final boolean[] myMultiple;
+  private final String[] myUnorderedChildren;
+  private final boolean myAbstract;
+  private final boolean myFinal;
+  private final String myConceptAlias;
+  private final String myConceptShortDescription;
+  private final String myHelpUrl;
+  private final StaticScope myStaticScope;
+
+  // to be initialized
+  private Set<String> ancestors;
+  private List<String> parents;
+  private Set<String> propertyNames;
+  private Set<String> referenceNames;
   private final HashMap<String, Boolean> childMap = new HashMap<String, Boolean>();
-  private final Set<String> childNames;
-  private final Set<String> unorderedNames;
-  private final boolean isAbstract;
-  private final boolean isFinal;
-  private final String conceptAlias;
-  private final String conceptShortDescription;
-  private final String helpUrl;
-  private final StaticScope staticScope;
+  private Set<String> childNames;
+  private Set<String> unorderedNames;
 
-
-  /**
-   * @deprecated in 3.0
-   */
-  @Deprecated
-  public CompiledConceptDescriptor(String conceptFqName,
-      @Nullable String superConcept,
-      boolean isInterfaceConcept,
-      String[] parents,
-      String[] ownPropertyNames,
-      String[] ownReferenceNames,
-      String[] ownChildNames,
-      boolean[] isMultiple,
-      boolean isAbstract,
-      boolean isFinal,
-      String conceptAlias,
-      String shortDescription,
-      String helpUrl) {
-    this(conceptFqName, superConcept, isInterfaceConcept, parents, ownPropertyNames, ownReferenceNames, ownChildNames, isMultiple, new String[0], isAbstract, isFinal,
-        conceptAlias, shortDescription, helpUrl, StaticScope.GLOBAL);
-  }
+  private boolean myInitialized = false;
+  private final Object myLock = "";
 
   CompiledConceptDescriptor(String conceptFqName,
       @Nullable String superConcept,
-      boolean isInterfaceConcept,
+      boolean interfaceConcept,
       String[] parents,
       String[] ownPropertyNames,
       String[] ownReferenceNames,
       String[] ownChildNames,
-      boolean[] isMultiple,
+      boolean[] multiple,
       String[] unorderedChildren,
       boolean isAbstract,
       boolean isFinal,
@@ -85,63 +74,89 @@ public class CompiledConceptDescriptor extends BaseConceptDescriptor {
       String shortDescription,
       String helpUrl,
       StaticScope staticScope) {
-    this.conceptFqName = conceptFqName;
-    this.superConcept = superConcept;
-    this.isInterfaceConcept = isInterfaceConcept;
-    this.parents = Arrays.asList(parents);
-    this.isAbstract = isAbstract;
-    this.isFinal = isFinal;
-    this.conceptAlias = conceptAlias;
-    this.conceptShortDescription = shortDescription;
-    this.helpUrl = helpUrl;
-    this.staticScope = staticScope;
+    myConceptFqName = conceptFqName;
+    mySuperConcept = superConcept;
+    myInterfaceConcept = interfaceConcept;
 
-    // hierarchy
+    myParents = parents;
+    myOwnPropertyNames = ownPropertyNames;
+    myOwnReferenceNames = ownReferenceNames;
+    myOwnChildNames = ownChildNames;
+    myMultiple = multiple;
+    myUnorderedChildren = unorderedChildren;
+
+    myAbstract = isAbstract;
+    myFinal = isFinal;
+    myConceptAlias = conceptAlias;
+    myConceptShortDescription = shortDescription;
+    myHelpUrl = helpUrl;
+    myStaticScope = staticScope;
+
     // todo: common with StructureAspectInterpreted to new class!
-    // get parent descriptors
-    ConceptRegistry registry = ConceptRegistry.getInstance();
+  }
 
-    List<ConceptDescriptor> parentDescriptors = new ArrayList<ConceptDescriptor>(parents.length);
-    for (String parent : parents) {
-      ConceptDescriptor descriptor = registry.getConceptDescriptor(parent);
-      parentDescriptors.add(descriptor);
+  private void init() {
+    if (myInitialized)
+      return;
+    synchronized (myLock) {
+      if (myInitialized)
+        return;
+      List<ConceptDescriptor> parentDescriptors = new ArrayList<ConceptDescriptor>(myParents.length);
+      for (String parent : myParents) {
+        ConceptDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptor(parent);
+        parentDescriptors.add(descriptor);
+      }
+
+      initAncestors(parentDescriptors);
+      initPropertyNames(parentDescriptors);
+      initReferenceNames(parentDescriptors);
+      initChildNames(parentDescriptors);
+      myInitialized = true;
     }
+  }
 
-    // ancestors
-    ancestors = new HashSet<String>(this.parents);
-    ancestors.add(conceptFqName);
+  private void initAncestors(List<ConceptDescriptor> parentDescriptors) {
+    assert !myInitialized;
+    parents = Arrays.asList(myParents);
+    ancestors = new LinkedHashSet<String>();
+    Collections.addAll(ancestors, myParents);
+    ancestors.add(myConceptFqName);
     for (ConceptDescriptor parentDescriptor : parentDescriptors) {
       ancestors.addAll(parentDescriptor.getAncestorsNames());
     }
+  }
 
-    // properties
-    LinkedHashSet<String> properties = new LinkedHashSet<String>();
-    properties.addAll(Arrays.asList(ownPropertyNames));
-
+  private void initPropertyNames(List<ConceptDescriptor> parentDescriptors) {
+    assert !myInitialized;
+    Set<String> properties = new LinkedHashSet<String>();
+    Collections.addAll(properties, myOwnPropertyNames);
     for (ConceptDescriptor parentDescriptor : parentDescriptors) {
       properties.addAll(parentDescriptor.getPropertyNames());
     }
 
     propertyNames = Collections.unmodifiableSet(properties);
+  }
 
-    // references
+  private void initReferenceNames(List<ConceptDescriptor> parentDescriptors) {
+    assert !myInitialized;
     LinkedHashSet<String> references = new LinkedHashSet<String>();
-    references.addAll(Arrays.asList(ownReferenceNames));
+    references.addAll(Arrays.asList(myOwnReferenceNames));
 
     for (ConceptDescriptor parentDescriptor : parentDescriptors) {
       references.addAll(parentDescriptor.getReferenceNames());
     }
 
     referenceNames = Collections.unmodifiableSet(references);
+  }
 
-    //children
-    assert ownChildNames.length == isMultiple.length;
-    for (int i = 0; i != ownChildNames.length; ++i) {
-      childMap.put(ownChildNames[i], isMultiple[i]);
+  private void initChildNames(List<ConceptDescriptor> parentDescriptors) {
+    assert !myInitialized;
+    assert myOwnChildNames.length == myMultiple.length;
+    for (int i = 0; i != myOwnChildNames.length; ++i) {
+      childMap.put(myOwnChildNames[i], myMultiple[i]);
     }
 
-    Set<String> unorderedNamesNew = new HashSet<String>();
-    unorderedNamesNew.addAll(Arrays.asList(unorderedChildren));
+    Set<String> unorderedNamesNew = new HashSet<String>(Arrays.asList(myUnorderedChildren));
     for (ConceptDescriptor parentDescriptor : parentDescriptors) {
       unorderedNamesNew.addAll(parentDescriptor.getUnorderedChildrenNames());
       for (String child : parentDescriptor.getChildrenNames()) {
@@ -151,88 +166,93 @@ public class CompiledConceptDescriptor extends BaseConceptDescriptor {
 
     unorderedNames = Collections.unmodifiableSet(unorderedNamesNew);
     childNames = Collections.unmodifiableSet(childMap.keySet());
-
   }
 
   @Override
   public Set<String> getUnorderedChildrenNames() {
+    init();
     return unorderedNames;
   }
 
   @Override
-  public String getConceptFqName() {
-    return conceptFqName;
-  }
-
-  @Override
-  public String getSuperConcept() {
-    return superConcept;
-  }
-
-  @Override
-  public boolean isInterfaceConcept() {
-    return isInterfaceConcept;
-  }
-
-  @Override
   public Set<String> getPropertyNames() {
+    init();
     return propertyNames;
   }
 
   @Override
   public Set<String> getReferenceNames() {
+    init();
     return referenceNames;
   }
 
   @Override
   public Set<String> getChildrenNames() {
+    init();
     return childNames;
   }
 
   @Override
-  public StaticScope getStaticScope() {
-    return staticScope;
-  }
-
-  @Override
   public List<String> getParentsNames() {
+    init();
     return parents;
   }
 
   @Override
   public Set<String> getAncestorsNames() {
+    init();
     return ancestors;
   }
 
   @Override
   public boolean isMultipleChild(String name) {
+    init();
     Boolean result = childMap.get(name);
     return result == null ? false : result;
   }
 
   @Override
+  public String getConceptFqName() {
+    return myConceptFqName;
+  }
+
+  @Override
+  public String getSuperConcept() {
+    return mySuperConcept;
+  }
+
+  @Override
+  public boolean isInterfaceConcept() {
+    return myInterfaceConcept;
+  }
+
+  @Override
+  public StaticScope getStaticScope() {
+    return myStaticScope;
+  }
+
+  @Override
   public boolean isAbstract() {
-    return isAbstract;
+    return myAbstract;
   }
 
   @Override
   public boolean isFinal() {
-    return isFinal;
+    return myFinal;
   }
-
 
   @Override
   public String getConceptAlias() {
-    return conceptAlias;
+    return myConceptAlias;
   }
 
   @Override
   public String getConceptShortDescription() {
-    return conceptShortDescription;
+    return myConceptShortDescription;
   }
 
   @Override
   public String getHelpUrl() {
-    return helpUrl;
+    return myHelpUrl;
   }
 }
