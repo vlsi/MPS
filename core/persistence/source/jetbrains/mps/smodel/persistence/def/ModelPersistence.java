@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2014 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -280,7 +280,7 @@ public class ModelPersistence {
     }
 
     // save model
-    Document document = saveModel(model);
+    Document document = modelToXml(model, persistenceVersion);
     JDOMUtil.writeDocument(document, source);
 
     if (oldVersion != persistenceVersion) {
@@ -290,31 +290,35 @@ public class ModelPersistence {
     return null;
   }
 
+  /**
+   * Serialize model into xml, conformant to actual model's persistence version, if any, or current persistence version otherwise.
+   * The method doesn't update persistence version of the model (as it used to do)
+   */
   @NotNull
   public static Document saveModel(@NotNull SModel sourceModel) {
-    //model persistence level update is performed on startup;
-    // here model's persistence level is used, if a model has persistence level bigger than user-selected
-    // (consider BL or third-party models which have a level 4 while user uses level 3 in his application)
-    IModelPersistence modelPersistence = null;
-    if (sourceModel instanceof DefaultSModel) {
-      DefaultSModel defaultSModel = (DefaultSModel) sourceModel;
-      int persistenceVersion = defaultSModel.getPersistenceVersion();
-      if (persistenceVersion == -1) {
-        persistenceVersion = getCurrentPersistenceVersion();
-        defaultSModel.setPersistenceVersion(persistenceVersion);
-      }
-
-      modelPersistence = getModelPersistence(defaultSModel.getSModelHeader().getPersistenceVersion());
+    int persistenceVersion = -1;
+    if (sourceModel.getModelDescriptor() instanceof DefaultSModelDescriptor) {
+      DefaultSModelDescriptor defaultSModel = (DefaultSModelDescriptor) sourceModel.getModelDescriptor();
+      persistenceVersion = defaultSModel.getPersistenceVersion();
     }
-
-    if (modelPersistence == null) {
-      modelPersistence = getCurrentModelPersistence();
+    if (persistenceVersion == -1 || getModelPersistence(persistenceVersion) == null) {
+      persistenceVersion = getCurrentPersistenceVersion();
     }
-
-    sourceModel.calculateImplicitImports();
-    return modelPersistence.getModelWriter().saveModel(sourceModel);
+    return modelToXml(sourceModel, persistenceVersion);
   }
 
+  /**
+   * Serialize model to xml in conformance with given persistence version.
+   * @throws java.lang.IllegalArgumentException if persistenceVersion is invalid (use {@link #getCurrentPersistenceVersion()} if uncertain
+   */
+  private static Document modelToXml(@NotNull SModel model, int persistenceVersion) {
+    IModelPersistence modelPersistence = getModelPersistence(persistenceVersion);
+    if (modelPersistence == null) {
+      throw new IllegalArgumentException(String.format("Unknown persistence version %d", persistenceVersion));
+    }
+    model.calculateImplicitImports();
+    return modelPersistence.getModelWriter().saveModel(model);
+  }
   //----------------
 
   @NotNull
