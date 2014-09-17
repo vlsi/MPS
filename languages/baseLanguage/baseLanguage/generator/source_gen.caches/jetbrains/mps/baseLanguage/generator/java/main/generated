@@ -9,7 +9,7 @@
   <dep model="f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)" />
   <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="-2hubvwh7bwismm0eld02cqmdefvj5by" />
   <dep model="r:00000000-0000-4000-0000-011c895902b7(jetbrains.mps.lang.typesystem.generator.baseLanguage.template.main@generator)" hash="ap3jfyglz3p6riq1l0hcn05adforip3" />
-  <dep model="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)" hash="-59rd7q6ugr9oyjv7usp90bs613alo67" />
+  <dep model="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)" hash="-aruvfqdokcv3n7lb73i2zkh8m1tcm3r" />
   <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-7vgk3jafz630zooccect8piiihx2bnu" />
   <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" hash="fgqypvsxmg86e28lt26xyps4tf5i1v" />
   <dep model="r:00000000-0000-4000-0000-011c895902f4(jetbrains.mps.lang.generator.generationContext.generator.baseLanguage.template.main@generator)" hash="-43ufz5s8wlb1b2u3nch8m3bnosgxrth" />
@@ -56,7 +56,9 @@
   <source id="1201570124301" name="weave_Property" hash="80sz17w2wb72n12jyjl4hrztgi67qsb">
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
-  <source id="1202577940061" name="reduce_ValueParameter" hash="-cpduzdd3xdt04oe3u1vnh0jd2z4z0kd" />
+  <source id="1202577940061" name="reduce_ValueParameter" hash="-cpduzdd3xdt04oe3u1vnh0jd2z4z0kd">
+    <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
+  </source>
   <source id="1206152999436" name="reduce_AssignmentExpression_propertySet" hash="-gj9cjekxrs17hvohiqznbiikn2tcov" />
   <source id="1206154637872" name="reduce_DotExpression_propertyGet" hash="am3r34xcd4dfuaveulxse7vjqgeb3fu" />
   <source id="1224072707336" name="reduce_AsExpression" hash="-80290soaphppkbr06qsy5wfhrpj23a" />

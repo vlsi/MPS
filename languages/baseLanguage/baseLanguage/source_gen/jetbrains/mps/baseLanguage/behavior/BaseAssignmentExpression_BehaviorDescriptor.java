@@ -23,10 +23,10 @@ public abstract class BaseAssignmentExpression_BehaviorDescriptor extends Expres
     return BaseAssignmentExpression_Behavior.virtual_isReadAsignment_1215696236033(thisNode);
   }
   public void virtual_setSyntacticallyLeftSideExpression_1742226163722653680(SNode thisNode, SNode expr) {
-    IBinaryLike_Behavior.virtual_setSyntacticallyLeftSideExpression_1742226163722653680(thisNode, expr);
+    BaseAssignmentExpression_Behavior.virtual_setSyntacticallyLeftSideExpression_1742226163722653680(thisNode, expr);
   }
   public void virtual_setSyntacticallyRightSideExpression_1742226163722653694(SNode thisNode, SNode expr) {
-    IBinaryLike_Behavior.virtual_setSyntacticallyRightSideExpression_1742226163722653694(thisNode, expr);
+    BaseAssignmentExpression_Behavior.virtual_setSyntacticallyRightSideExpression_1742226163722653694(thisNode, expr);
   }
   @Override
   public String getConceptFqName() {
