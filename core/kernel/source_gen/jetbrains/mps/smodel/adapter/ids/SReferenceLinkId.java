@@ -13,25 +13,18 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel.ids;
+package jetbrains.mps.smodel.adapter.ids;
 
-import org.jetbrains.mps.openapi.language.SConcept;
+public final class SReferenceLinkId extends SAbstractLinkId {
+  private final long myRefLinkId;
 
-public final class SPropertyId {
-  private final SConceptId myConceptId;
-  private final long myPropertyId;
-
-  public SPropertyId(SConceptId conceptId, long propertyId) {
-    myConceptId = conceptId;
-    myPropertyId = propertyId;
+  public SReferenceLinkId(SConceptId conceptId, long refLinkId) {
+    super(conceptId);
+    myRefLinkId = refLinkId;
   }
 
-  public SConceptId getConceptId() {
-    return myConceptId;
-  }
-
-  public long getPropertyId() {
-    return myPropertyId;
+  public long getReferenceLinkId() {
+    return myRefLinkId;
   }
 
   @Override
@@ -39,29 +32,29 @@ public final class SPropertyId {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
 
-    SPropertyId that = (SPropertyId) o;
+    SReferenceLinkId that = (SReferenceLinkId) o;
 
-    if (myPropertyId != that.myPropertyId) return false;
-    if (myConceptId != null ? !myConceptId.equals(that.myConceptId) : that.myConceptId != null) return false;
+    if (myRefLinkId != that.myRefLinkId) return false;
+    if (!myConceptId.equals(that.myConceptId)) return false;
 
     return true;
   }
 
   @Override
   public int hashCode() {
-    int result = myConceptId != null ? myConceptId.hashCode() : 0;
-    result = (int) (31 * result + myPropertyId);
+    int result = myConceptId.hashCode();
+    result = 31 * result + (int) (myRefLinkId ^ (myRefLinkId >>> 32));
     return result;
   }
 
   public String serialize() {
-    return myConceptId.serialize() + "/" + myPropertyId;
+    return myConceptId.serialize() + "/" + myRefLinkId;
   }
 
-  public static SPropertyId deserialize(String s) {
+  public static SReferenceLinkId deserialize(String s) {
     int split = s.lastIndexOf("/");
     SConceptId concept = SConceptId.deserialize(s.substring(0, split));
-    long prop = Long.parseLong(s.substring(split + 1));
-    return new SPropertyId(concept, prop);
+    long ref = Long.parseLong(s.substring(split + 1));
+    return new SReferenceLinkId(concept, ref);
   }
 }

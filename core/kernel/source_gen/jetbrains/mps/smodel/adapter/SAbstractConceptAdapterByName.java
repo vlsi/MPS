@@ -18,7 +18,9 @@ package jetbrains.mps.smodel.adapter;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.smodel.SNodeId;
-import jetbrains.mps.smodel.ids.SConceptId;
+import jetbrains.mps.smodel.adapter.idconvert.MetaIdByDeclaration;
+import jetbrains.mps.smodel.adapter.idconvert.IdUtil;
+import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.containers.BidirectionalMap;
 import org.jetbrains.annotations.NotNull;
@@ -56,7 +58,7 @@ public class SAbstractConceptAdapterByName {
       String langName = NameUtil.namespaceFromConceptFQName(myConceptName);
       SLanguageAdapter lang = new SLanguageAdapter(langName);
       SNode concept = lang.getSourceModule().findConceptDeclaration(NameUtil.shortNameFromLongName(myConceptName));
-      myConceptId = new SConceptId(lang.getId(), IdHelper.getNodeId((jetbrains.mps.smodel.SNode) concept));
+      myConceptId = new SConceptId(lang.getId(), MetaIdByDeclaration.getNodeId((jetbrains.mps.smodel.SNode) concept));
     } else {
       Language lang = new SLanguageAdapter(myConceptId.getLanguageId()).getSourceModule();
       if (lang != null) {

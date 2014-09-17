@@ -4,11 +4,11 @@ package jetbrains.mps.smodel.adapter;
 
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.smodel.ids.SAbstractLinkId;
-import jetbrains.mps.smodel.ids.SConceptId;
-import jetbrains.mps.smodel.ids.SReferenceLinkId;
+import jetbrains.mps.smodel.adapter.idconvert.MetaIdByDeclaration;
+import jetbrains.mps.smodel.adapter.ids.SAbstractLinkId;
+import jetbrains.mps.smodel.adapter.ids.SConceptId;
+import jetbrains.mps.smodel.adapter.ids.SReferenceLinkId;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import org.jetbrains.mps.openapi.language.SAbstractLink;
 import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.language.SReferenceLink;
 import org.jetbrains.mps.openapi.language.SScope;
@@ -61,7 +61,7 @@ public class SReferenceLinkAdapter  implements SReferenceLink {
       return null;
     }
     SNode t = SLinkOperations.getTarget(link, "target", false);
-    SConceptId id = IdHelper.getConceptId((jetbrains.mps.smodel.SNode) t);
+    SConceptId id = MetaIdByDeclaration.getConceptId((jetbrains.mps.smodel.SNode) t);
     boolean isConcept = t.getConcept().getQualifiedName().equals("jetbrains.mps.lang.structure.structure.ConceptDeclaration");
     return (isConcept ? new SConceptAdapter(id) : new SInterfaceConceptAdapter(id));
   }
@@ -118,10 +118,10 @@ public class SReferenceLinkAdapter  implements SReferenceLink {
     }
     if (myRoleId == null) {
       SNode concept = SModelUtil.findConceptDeclaration(conceptName);
-      SConceptId cid = IdHelper.getConceptId((jetbrains.mps.smodel.SNode) concept);
+      SConceptId cid = MetaIdByDeclaration.getConceptId((jetbrains.mps.smodel.SNode) concept);
       final ConceptAndSuperConceptsScope scope = new ConceptAndSuperConceptsScope(concept);
       SNode linkNode = scope.getLinkDeclarationByRole(role);
-      myRoleId = new SReferenceLinkId(cid, IdHelper.getNodeId((jetbrains.mps.smodel.SNode) linkNode));
+      myRoleId = new SReferenceLinkId(cid, MetaIdByDeclaration.getNodeId((jetbrains.mps.smodel.SNode) linkNode));
     } else {
       SAbstractConceptAdapter adapter = new SAbstractConceptAdapter(myRoleId.getConceptId());
       conceptName = adapter.getQualifiedName();

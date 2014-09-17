@@ -13,10 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel.ids;
-
-import org.jetbrains.mps.openapi.language.SAbstractLink;
-import org.jetbrains.mps.openapi.language.SConcept;
+package jetbrains.mps.smodel.adapter.ids;
 
 public final class SContainmentLinkId extends SAbstractLinkId {
   private final long myLinkId;

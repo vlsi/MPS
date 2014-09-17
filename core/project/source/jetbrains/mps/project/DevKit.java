@@ -25,7 +25,7 @@ import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.MPSModuleOwner;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
-import jetbrains.mps.smodel.adapter.IdHelper;
+import jetbrains.mps.smodel.adapter.idconvert.MetaIdByDeclaration;
 import jetbrains.mps.util.ToStringComparator;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.mps.openapi.language.SLanguage;
@@ -114,7 +114,7 @@ public class DevKit extends AbstractModule {
     Set<SLanguage> result = new HashSet<SLanguage>();
     for (DevKit dk : getAllExtendedDevkits()) {
       for (SModuleReference l : dk.myDescriptor.getExportedLanguages()) {
-        SLanguage lang = IdHelper.getLanguageId(l.getModuleId());
+        SLanguage lang = MetaIdByDeclaration.getLanguageId(l.getModuleId());
         if (!result.contains(lang)) {
           result.add(lang);
         }

@@ -23,7 +23,7 @@ import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModel.ImportElement;
 import jetbrains.mps.smodel.SModelHeader;
-import jetbrains.mps.smodel.adapter.IdMigrationNameRegistry;
+import jetbrains.mps.smodel.adapter.idconvert.IdMigrationNameRegistry;
 import jetbrains.mps.smodel.adapter.SLanguageAdapter;
 import jetbrains.mps.smodel.persistence.def.DocUtil;
 import jetbrains.mps.smodel.persistence.def.FilePerRootFormatUtil;

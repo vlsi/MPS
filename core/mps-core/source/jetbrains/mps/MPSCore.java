@@ -47,6 +47,7 @@ import jetbrains.mps.smodel.SModelFileTracker;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.smodel.SNodeAccessUtilImpl;
+import jetbrains.mps.smodel.adapter.idconvert.IdMigrationNameRegistry;
 import jetbrains.mps.smodel.language.ConceptRegistry;
 import jetbrains.mps.smodel.language.ConceptRepository;
 import jetbrains.mps.smodel.language.ExtensionRegistry;
@@ -98,6 +99,7 @@ public final class MPSCore extends ComponentPlugin {
     MPSModuleRepository moduleRepository = init(new MPSModuleRepository());
     GlobalSModelEventsManager globalSModelEventsManager = init(new GlobalSModelEventsManager(modelRepository));
     ClassLoaderManager classLoaderManager = init(new ClassLoaderManager(moduleRepository));
+    init(new IdMigrationNameRegistry(classLoaderManager));
 
     init(new SModelFileTracker(SRepositoryRegistry.getInstance()));
     init(new ModuleRepositoryFacade(moduleRepository));

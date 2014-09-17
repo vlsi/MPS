@@ -4,6 +4,7 @@ package jetbrains.mps.lang.core.typesystem;
 
 import jetbrains.mps.lang.typesystem.runtime.AbstractNonTypesystemRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime;
+import jetbrains.mps.smodel.adapter.idconvert.MetaIdByDeclaration;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
@@ -15,7 +16,6 @@ import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.smodel.SModelOperations;
 import org.jetbrains.mps.openapi.language.SConceptRepository;
-import jetbrains.mps.smodel.adapter.IdHelper;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
@@ -36,7 +36,7 @@ public class check_AllUsedLanguagesAreImported_NonTypesystemRule extends Abstrac
     Set<SLanguage> importedLanguages = new HashSet<SLanguage>();
     // XXX allImported doesn't built a closure of languages extended by those imported, is it what we want here? 
     for (SModuleReference importedLanguageReference : SetSequence.fromSet(SModelOperations.getAllImportedLanguages(SNodeOperations.getModel(root)))) {
-      SLanguage language = SConceptRepository.getInstance().getLanguage(IdHelper.getLanguageId(importedLanguageReference.getModuleId()));
+      SLanguage language = SConceptRepository.getInstance().getLanguage(MetaIdByDeclaration.getLanguageId(importedLanguageReference.getModuleId()));
       importedLanguages.add(language);
     }
 

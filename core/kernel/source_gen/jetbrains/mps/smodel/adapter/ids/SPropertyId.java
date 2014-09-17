@@ -13,21 +13,23 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel.ids;
+package jetbrains.mps.smodel.adapter.ids;
 
-import org.jetbrains.mps.openapi.language.SAbstractLink;
-import org.jetbrains.mps.openapi.language.SConcept;
+public final class SPropertyId {
+  private final SConceptId myConceptId;
+  private final long myPropertyId;
 
-public final class SReferenceLinkId extends SAbstractLinkId {
-  private final long myRefLinkId;
-
-  public SReferenceLinkId(SConceptId conceptId, long refLinkId) {
-    super(conceptId);
-    myRefLinkId = refLinkId;
+  public SPropertyId(SConceptId conceptId, long propertyId) {
+    myConceptId = conceptId;
+    myPropertyId = propertyId;
   }
 
-  public long getReferenceLinkId() {
-    return myRefLinkId;
+  public SConceptId getConceptId() {
+    return myConceptId;
+  }
+
+  public long getPropertyId() {
+    return myPropertyId;
   }
 
   @Override
@@ -35,29 +37,29 @@ public final class SReferenceLinkId extends SAbstractLinkId {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
 
-    SReferenceLinkId that = (SReferenceLinkId) o;
+    SPropertyId that = (SPropertyId) o;
 
-    if (myRefLinkId != that.myRefLinkId) return false;
-    if (!myConceptId.equals(that.myConceptId)) return false;
+    if (myPropertyId != that.myPropertyId) return false;
+    if (myConceptId != null ? !myConceptId.equals(that.myConceptId) : that.myConceptId != null) return false;
 
     return true;
   }
 
   @Override
   public int hashCode() {
-    int result = myConceptId.hashCode();
-    result = 31 * result + (int) (myRefLinkId ^ (myRefLinkId >>> 32));
+    int result = myConceptId != null ? myConceptId.hashCode() : 0;
+    result = (int) (31 * result + myPropertyId);
     return result;
   }
 
   public String serialize() {
-    return myConceptId.serialize() + "/" + myRefLinkId;
+    return myConceptId.serialize() + "/" + myPropertyId;
   }
 
-  public static SReferenceLinkId deserialize(String s) {
+  public static SPropertyId deserialize(String s) {
     int split = s.lastIndexOf("/");
     SConceptId concept = SConceptId.deserialize(s.substring(0, split));
-    long ref = Long.parseLong(s.substring(split + 1));
-    return new SReferenceLinkId(concept, ref);
+    long prop = Long.parseLong(s.substring(split + 1));
+    return new SPropertyId(concept, prop);
   }
 }

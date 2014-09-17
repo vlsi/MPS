@@ -13,9 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel.ids;
-
-import org.jetbrains.mps.openapi.language.SLanguage;
+package jetbrains.mps.smodel.adapter.ids;
 
 public final class SConceptId {
   private final SLanguageId myLanguageId;

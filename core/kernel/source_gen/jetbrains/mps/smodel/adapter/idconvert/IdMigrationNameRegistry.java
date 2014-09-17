@@ -13,14 +13,19 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel.adapter;
+package jetbrains.mps.smodel.adapter.idconvert;
 
+import jetbrains.mps.classloading.ClassLoaderManager;
+import jetbrains.mps.classloading.MPSClassesListener;
 import jetbrains.mps.components.CoreComponent;
-import jetbrains.mps.smodel.IdMigrationMode;
+import jetbrains.mps.smodel.DebugRegistryImpl;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.adapter.SConceptAdapter;
+import jetbrains.mps.smodel.adapter.SContainmentLinkAdapter;
+import jetbrains.mps.smodel.adapter.SPropertyAdapter;
+import jetbrains.mps.smodel.adapter.SReferenceLinkAdapter;
 import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.language.SLanguage;
@@ -31,49 +36,36 @@ import org.jetbrains.mps.openapi.model.SNodeUtil;
 import org.jetbrains.mps.openapi.model.SReference;
 import org.jetbrains.mps.openapi.module.DebugRegistry;
 import org.jetbrains.mps.openapi.module.SModule;
-import org.jetbrains.mps.openapi.module.SRepositoryAdapter;
-import org.jetbrains.mps.openapi.module.SRepositoryContentAdapter;
 
 import java.util.Map;
+import java.util.Set;
 
 /**
  * This class serves id migration purposes. It allows to convert names to ids and back.
  * This class is NOT A DEBUG REGISTRY. While debug registry is write-once registry, this one always reflects changes to structure.
  */
 public class IdMigrationNameRegistry implements CoreComponent {
-  //was there a que
-  private boolean ourInitialized = false;
-  private SRepositoryAdapter myListener;
+  private DebugRegistryImpl myNamesInfo = new DebugRegistryImpl();
+  private MPSClassesListener myClassHandler = new MyClassesListener();
+  private ClassLoaderManager myManager;
+
+  public IdMigrationNameRegistry(ClassLoaderManager manager) {
+    myManager = manager;
+  }
 
   @Override
   public void init() {
-    myListener = new SRepositoryAdapter() {
-      @Override
-      public void moduleAdded(final SModule module) {
-        fillDebugRegistryForLanguage((Language) module);
-      }
-    };
-    MPSModuleRepository.getInstance().addRepositoryListener(myListener);
-
+    myManager.addClassesHandler(myClassHandler);
   }
 
   @Override
   public void dispose() {
-    MPSModuleRepository.getInstance().removeRepositoryListener(myListener);
-  }
-
-
-  public static void fillDebugRegistry() {
-    for (SModule module : MPSModuleRepository.getInstance().getModules()) {
-      if (module instanceof Language) {
-        fillDebugRegistryForLanguage((Language) module);
-      }
-    }
+    myManager.removeClassesHandler(myClassHandler);
   }
 
   private static void fillDebugRegistryForLanguage(Language language) {
     DebugRegistry dr = MPSModuleRepository.getInstance().getDebugRegistry();
-    SLanguage lid = IdHelper.getLanguageId(language.getModuleReference().getModuleId());
+    SLanguage lid = MetaIdByDeclaration.getLanguageId(language.getModuleReference().getModuleId());
     dr.addLanguageName(lid, language.getModuleName());
 
     org.jetbrains.mps.openapi.model.SModel structureModel  = LanguageAspect.STRUCTURE.get((Language) language);
@@ -82,26 +74,18 @@ public class IdMigrationNameRegistry implements CoreComponent {
       if (!(root instanceof jetbrains.mps.smodel.SNode)) { continue; }
       jetbrains.mps.smodel.SNode concept = (jetbrains.mps.smodel.SNode) root;
       if (isInstanceOfConceptDeclaration(concept)) {
-        dr.addConceptName(IdHelper.getConceptId(concept), getINamedConceptName(concept));
+        dr.addConceptName(MetaIdByDeclaration.getConceptId(concept), getINamedConceptName(concept));
         for (SNode linkDeclaration : getConceptLinkDeclarations(concept)) {
-          dr.addLinkName(("aggregation".equals(getLinkMetaClass((jetbrains.mps.smodel.SNode) linkDeclaration)) ? IdHelper.getNodeRoleId(((jetbrains.mps.smodel.SNode) linkDeclaration)) : IdHelper.getRefRoleId(((jetbrains.mps.smodel.SNode) linkDeclaration))), getLinkRole(
+          dr.addLinkName(("aggregation".equals(getLinkMetaClass((jetbrains.mps.smodel.SNode) linkDeclaration)) ? MetaIdByDeclaration.getNodeRoleId(
+              ((jetbrains.mps.smodel.SNode) linkDeclaration)) : MetaIdByDeclaration.getRefRoleId(((jetbrains.mps.smodel.SNode) linkDeclaration))), getLinkRole(
               (jetbrains.mps.smodel.SNode) linkDeclaration));
         }
         for (SNode propertyDeclaration : getPropertyDeclarations(concept)) {
-          dr.addPropertyName(IdHelper.getPropId(((jetbrains.mps.smodel.SNode) propertyDeclaration)), getINamedConceptName(
+          dr.addPropertyName(MetaIdByDeclaration.getPropId(((jetbrains.mps.smodel.SNode) propertyDeclaration)), getINamedConceptName(
               (jetbrains.mps.smodel.SNode) propertyDeclaration));
         }
       }
     }
-  }
-
-  //remove after 3.2
-  public static void fillDebugInfo(SModel model) {
-    if (ourInitialized) return;
-    if (model == null) return;
-    if (jetbrains.mps.smodel.SNode.workingMode(model) != IdMigrationMode.NAME && jetbrains.mps.smodel.SNode.workingMode(model) != IdMigrationMode.ID) return;
-    ourInitialized = true;
-    fillDebugRegistry();
   }
 
   public static void getDebugInfoById(Iterable<SNode> rootNodes, Map<SConcept, String> conceptIds, Map<SProperty, String> propIds, Map<SReferenceLink, String> refIds, Map<SContainmentLink, String> roleIds) {
@@ -171,6 +155,21 @@ public class IdMigrationNameRegistry implements CoreComponent {
           }
           refIds.put(refId, refName);
         }
+      }
+    }
+  }
+
+  private static class MyClassesListener implements MPSClassesListener {
+    @Override
+    public void beforeClassesUnloaded(Set<SModule> unloadedModules) {
+
+    }
+
+    @Override
+    public void afterClassesLoaded(Set<SModule> loadedModules) {
+      for (SModule module : loadedModules) {
+        if (!(module instanceof Language)) continue;
+        fillDebugRegistryForLanguage((Language) module);
       }
     }
   }

@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel.ids;
+package jetbrains.mps.smodel.adapter.ids;
 
 import org.jetbrains.annotations.NotNull;
 

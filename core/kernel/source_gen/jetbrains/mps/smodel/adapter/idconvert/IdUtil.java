@@ -13,18 +13,18 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel.adapter;
+package jetbrains.mps.smodel.adapter.idconvert;
 
 import jetbrains.mps.smodel.DebugRegistryImpl;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.smodel.adapter.SConceptAdapter;
 import jetbrains.mps.smodel.adapter.SLanguageAdapter;
-import jetbrains.mps.smodel.ids.SConceptId;
-import jetbrains.mps.smodel.ids.SContainmentLinkId;
-import jetbrains.mps.smodel.ids.SLanguageId;
-import jetbrains.mps.smodel.ids.SPropertyId;
-import jetbrains.mps.smodel.ids.SReferenceLinkId;
+import jetbrains.mps.smodel.adapter.ids.SConceptId;
+import jetbrains.mps.smodel.adapter.ids.SContainmentLinkId;
+import jetbrains.mps.smodel.adapter.ids.SLanguageId;
+import jetbrains.mps.smodel.adapter.ids.SPropertyId;
+import jetbrains.mps.smodel.adapter.ids.SReferenceLinkId;
 import jetbrains.mps.util.NameUtil;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SAbstractLink;
@@ -45,7 +45,6 @@ import java.util.UUID;
 //todo: remove after 3.2
 
 public abstract class IdUtil {
-
   public static final SPropertyId UNKNOWN_PROPERTY_ID = new SPropertyId(new SConceptId(new SLanguageId(new UUID(0, 0)), 0), 0);
   public static final SReferenceLinkId UNKNOWN_REFERENCE_ID = new SReferenceLinkId(new SConceptId(new SLanguageId(new UUID(0, 0)), 0), 0);
   public static final SContainmentLinkId UNKNOWN_LINK_ID = new SContainmentLinkId(new SConceptId(new SLanguageId(new UUID(0, 0)), 0), 0);
