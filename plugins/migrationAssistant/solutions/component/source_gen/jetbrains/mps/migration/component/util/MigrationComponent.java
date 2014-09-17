@@ -52,6 +52,8 @@ public class MigrationComponent extends AbstractProjectComponent implements Migr
       return null;
     } catch (InstantiationException e) {
       return null;
+    } catch (Throwable e) {
+      return null;
     }
   }
 

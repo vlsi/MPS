@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dependencies version="2" modelHash="8r1iyv8zsybypzajwhzfclx1yn7ol5n">
+  <dep model="9882f4ad-1955-46fe-8269-94189e5dbbf2/r:2b78cecc-7ac8-462a-9f0e-bf207b8ad57d(jetbrains.mps.lang.migration.util/jetbrains.mps.lang.migration.util.editor)" hash="avy5gin2ea16flq8ti2rssumexxk1jf" />
+  <dep model="9882f4ad-1955-46fe-8269-94189e5dbbf2/r:40f30fbb-f658-4955-b1e9-3d61f2957025(jetbrains.mps.lang.migration.util/jetbrains.mps.lang.migration.util.typesystem)" hash="bc8be6piszcfquysw73bb8no0s0u9r6" />
+  <dep model="9882f4ad-1955-46fe-8269-94189e5dbbf2/r:d1c6b1a8-aadb-4e40-a629-4e28469261a9(jetbrains.mps.lang.migration.util/jetbrains.mps.lang.migration.util.behavior)" hash="-cr4v3uwgooigh95ghrj4ecpw8e4q3l1" />
+  <dep model="9882f4ad-1955-46fe-8269-94189e5dbbf2/r:e492bdcd-6643-43a7-9109-e38bb05f5ec9(jetbrains.mps.lang.migration.util/jetbrains.mps.lang.migration.util.constraints)" hash="9esqp51dp833eyie0xw471vrymqp6y6" />
+  <dep model="9882f4ad-1955-46fe-8269-94189e5dbbf2/r:f3afda2a-1e73-443b-8e74-2e4c43867b70(jetbrains.mps.lang.migration.util/jetbrains.mps.lang.migration.util.structure)" hash="353v5ccgxvzh5hfhltlyi8gl71l2ld" />
+  <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" hash="-5guu3hjwnpnfynbad2ytblvm5de60j1" />
+  <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="-bkuyiekmoekvx4wtv4qejtruxiwtg50" />
+  <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="8cdjk2e5d2y2u9lult1ptgxxrttxv07" />
+  <common dependsOnNodes="true">
+    <dep model="9882f4ad-1955-46fe-8269-94189e5dbbf2/r:2b78cecc-7ac8-462a-9f0e-bf207b8ad57d(jetbrains.mps.lang.migration.util/jetbrains.mps.lang.migration.util.editor)" />
+    <dep model="9882f4ad-1955-46fe-8269-94189e5dbbf2/r:40f30fbb-f658-4955-b1e9-3d61f2957025(jetbrains.mps.lang.migration.util/jetbrains.mps.lang.migration.util.typesystem)" />
+    <dep model="9882f4ad-1955-46fe-8269-94189e5dbbf2/r:d1c6b1a8-aadb-4e40-a629-4e28469261a9(jetbrains.mps.lang.migration.util/jetbrains.mps.lang.migration.util.behavior)" />
+    <dep model="9882f4ad-1955-46fe-8269-94189e5dbbf2/r:e492bdcd-6643-43a7-9109-e38bb05f5ec9(jetbrains.mps.lang.migration.util/jetbrains.mps.lang.migration.util.constraints)" />
+    <dep model="9882f4ad-1955-46fe-8269-94189e5dbbf2/r:f3afda2a-1e73-443b-8e74-2e4c43867b70(jetbrains.mps.lang.migration.util/jetbrains.mps.lang.migration.util.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
+    <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
+    <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
+    <file name="Language.java" />
+  </common>
+</dependencies>
+

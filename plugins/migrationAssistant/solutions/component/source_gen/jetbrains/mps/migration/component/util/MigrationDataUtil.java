@@ -7,45 +7,48 @@ import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import jetbrains.mps.lang.migration.runtime.base.MigrationScriptReference;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.vfs.IFile;
-import java.io.OutputStreamWriter;
+import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.smodel.tempmodel.TemporaryModels;
+import jetbrains.mps.smodel.tempmodel.TempModuleOptions;
 import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.extapi.persistence.FileDataSource;
+import org.jetbrains.mps.openapi.persistence.ModelFactory;
+import jetbrains.mps.persistence.PersistenceRegistry;
+import jetbrains.mps.project.MPSExtentions;
 import java.io.IOException;
+import org.jetbrains.mps.openapi.persistence.ModelSaveException;
 import java.util.Collections;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.util.FileUtil;
+import jetbrains.mps.smodel.SModelUtil_new;
 
 public class MigrationDataUtil {
   public static void saveData(AbstractModule module, Iterable<Tuples._2<MigrationScriptReference, SNode>> data) {
     IFile file = getDataFile(module);
-    OutputStreamWriter writer = null;
+    SModel model = TemporaryModels.getInstance().create(false, TempModuleOptions.forDefaultModule());
+    for (Tuples._2<MigrationScriptReference, SNode> p : Sequence.fromIterable(data)) {
+      SNode stepData = SModelOperations.createNewRootNode(model, "jetbrains.mps.lang.migration.util.structure.StepData", null);
+      SLinkOperations.setTarget(stepData, "script", createMigrationScriptReference_hzite5_a0b0c0a(p._0().getModuleReference().toString(), p._0().getFromVersion()), true);
+      SLinkOperations.setTarget(stepData, "data", p._1(), true);
+    }
+    FileDataSource dataSource = new FileDataSource(file);
+    ModelFactory factory = PersistenceRegistry.getInstance().getModelFactory(MPSExtentions.MODEL);
     try {
-      writer = new OutputStreamWriter(file.openOutputStream());
-      for (Tuples._2<MigrationScriptReference, SNode> p : Sequence.fromIterable(data)) {
-        writer.write(p._0().serialize());
-        writer.write(":");
-        writer.write(SPropertyOperations.getString(SNodeOperations.cast(p._1(), "jetbrains.mps.lang.migration.structure.StringData"), "data"));
-        writer.write("\n");
-      }
+      factory.save(model, dataSource);
     } catch (IOException e) {
       throw new RuntimeException(e);
-    } finally {
-      if (writer != null) {
-        try {
-          writer.close();
-        } catch (IOException e) {
-        }
-      }
+    } catch (ModelSaveException e) {
+      throw new RuntimeException(e);
     }
   }
   public static Iterable<Tuples._2<MigrationScriptReference, SNode>> loadData(AbstractModule module) {
@@ -54,24 +57,18 @@ public class MigrationDataUtil {
       return Sequence.fromIterable(Collections.<Tuples._2<MigrationScriptReference, SNode>>emptyList());
     }
     List<Tuples._2<MigrationScriptReference, SNode>> result = ListSequence.fromList(new ArrayList<Tuples._2<MigrationScriptReference, SNode>>());
-    BufferedReader reader = null;
+
+    FileDataSource dataSource = new FileDataSource(file);
+    ModelFactory factory = PersistenceRegistry.getInstance().getModelFactory(MPSExtentions.MODEL);
+    SModel model;
     try {
-      reader = new BufferedReader(new InputStreamReader(file.openInputStream()));
-      for (String line; (line = reader.readLine()) != null;) {
-        int sepInd = line.indexOf(':');
-        SNode node = SConceptOperations.createNewNode("jetbrains.mps.lang.migration.structure.StringData", null);
-        SPropertyOperations.set(node, "data", line.substring(sepInd + 1));
-        ListSequence.fromList(result).addElement(MultiTuple.<MigrationScriptReference,SNode>from(MigrationScriptReference.deserialize(line.substring(0, sepInd)), node));
-      }
+      model = factory.load(dataSource, Collections.<String,String>emptyMap());
     } catch (IOException e) {
       throw new RuntimeException(e);
-    } finally {
-      if (reader != null) {
-        try {
-          reader.close();
-        } catch (IOException e) {
-        }
-      }
+    }
+
+    for (SNode root : ListSequence.fromList(SModelOperations.getRoots(model, "jetbrains.mps.lang.migration.util.structure.StepData"))) {
+      ListSequence.fromList(result).addElement(MultiTuple.<MigrationScriptReference,SNode>from(new MigrationScriptReference(PersistenceFacade.getInstance().createModuleReference(SPropertyOperations.getString(SLinkOperations.getTarget(root, "script", true), "module")), SPropertyOperations.getInteger(SLinkOperations.getTarget(root, "script", true), "fromVersion")), SLinkOperations.getTarget(root, "data", true)));
     }
     return result;
   }
@@ -94,6 +91,13 @@ public class MigrationDataUtil {
   }
   public static IFile getDataFile(AbstractModule module) {
     return FileSystem.getInstance().getFileByPath(FileUtil.getNameWithoutExtension(module.getDescriptorFile().getPath()) + ".migration");
+  }
+  private static SNode createMigrationScriptReference_hzite5_a0b0c0a(Object p0, Object p1) {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
+    SNode n1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.migration.util.structure.MigrationScriptReference", null, false);
+    n1.setProperty("module", String.valueOf(p0));
+    n1.setProperty("fromVersion", String.valueOf(p1));
+    return n1;
   }
   private static boolean eq_hzite5_a0a0a0a0a0a0c0d(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);

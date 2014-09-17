@@ -25,6 +25,7 @@
     <dependency reexport="false">2d3c70e9-aab2-4870-8d8d-6036800e4103(jetbrains.mps.kernel)</dependency>
     <dependency reexport="false">90746344-04fd-4286-97d5-b46ae6a81709(jetbrains.mps.lang.migration)</dependency>
     <dependency reexport="false">528ff3b9-5fc4-40dd-931f-c6ce3650640e(jetbrains.mps.lang.migration.runtime)</dependency>
+    <dependency reexport="false">9882f4ad-1955-46fe-8269-94189e5dbbf2(jetbrains.mps.lang.migration.util)</dependency>
   </dependencies>
   <usedLanguages>
     <usedLanguage>f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)</usedLanguage>
@@ -33,6 +34,7 @@
     <usedLanguage>fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)</usedLanguage>
     <usedLanguage>f2801650-65d5-424e-bb1b-463a8781b786(jetbrains.mps.baseLanguage.javadoc)</usedLanguage>
     <usedLanguage>63650c59-16c8-498a-99c8-005c7ee9515d(jetbrains.mps.lang.access)</usedLanguage>
+    <usedLanguage>9882f4ad-1955-46fe-8269-94189e5dbbf2(jetbrains.mps.lang.migration.util)</usedLanguage>
     <usedLanguage>28f9e497-3b42-4291-aeba-0a1039153ab1(jetbrains.mps.lang.plugin)</usedLanguage>
     <usedLanguage>ef7bf5ac-d06c-4342-b11d-e42104eb9343(jetbrains.mps.lang.plugin.standalone)</usedLanguage>
     <usedLanguage>7866978e-a0f0-4cc7-81bc-4d213d9375e1(jetbrains.mps.lang.smodel)</usedLanguage>
@@ -47,10 +49,11 @@
     <language id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" version="0" />
     <language id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" version="0" />
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" version="0" />
-    <language id="90746344-04fd-4286-97d5-b46ae6a81709" version="0" />
     <language id="28f9e497-3b42-4291-aeba-0a1039153ab1" version="0" />
+    <language id="90746344-04fd-4286-97d5-b46ae6a81709" version="0" />
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" version="0" />
     <language id="a247e09e-2435-45ba-b8d2-07e93feba96a" version="0" />
+    <language id="9882f4ad-1955-46fe-8269-94189e5dbbf2" version="0" />
     <language id="ed6d7656-532c-4bc2-81d1-af945aeb8280" version="0" />
     <language id="443f4c36-fcf5-4eb6-9500-8d06ed259e3e" version="0" />
     <language id="3a13115c-633c-4c5c-bbcc-75c4219e9555" version="0" />
