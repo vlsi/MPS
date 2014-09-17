@@ -17,6 +17,7 @@ package jetbrains.mps.smodel.persistence.def;
 
 import jetbrains.mps.persistence.FilePerRootDataSource;
 import jetbrains.mps.smodel.DefaultSModel;
+import jetbrains.mps.smodel.DefaultSModelDescriptor;
 import jetbrains.mps.smodel.LazySModel;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelHeader;
@@ -150,8 +151,8 @@ public class FilePerRootFormatUtil {
 
     // upgrade?
     int oldVersion = persistenceVersion;
-    if (modelData instanceof DefaultSModel) {
-      DefaultSModel defaultSModel = (DefaultSModel) modelData;
+    if (modelData.getModelDescriptor() instanceof DefaultSModelDescriptor) {
+      DefaultSModelDescriptor defaultSModel = (DefaultSModelDescriptor) modelData.getModelDescriptor();
       oldVersion = defaultSModel.getPersistenceVersion();
       if (oldVersion != persistenceVersion) {
         defaultSModel.setPersistenceVersion(persistenceVersion);
