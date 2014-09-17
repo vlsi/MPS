@@ -37,6 +37,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.references.UnregisteredNodes;
+import jetbrains.mps.smodel.DefaultSModelDescriptor;
 import jetbrains.mps.smodel.SModelAdapter;
 import jetbrains.mps.smodel.event.SModelEvent;
 import jetbrains.mps.smodel.event.SModelReferenceEvent;
@@ -284,9 +285,8 @@ public class MergeSession {
     }
   }
   private static int getPersistenceVersion(SModel model) {
-    jetbrains.mps.smodel.SModel m = ((SModelBase) model).getSModelInternal();
-    if (m instanceof DefaultSModel) {
-      return ((DefaultSModel) m).getPersistenceVersion();
+    if (model instanceof DefaultSModelDescriptor) {
+      return ((DefaultSModelDescriptor) model).getPersistenceVersion();
     }
     return -1;
   }

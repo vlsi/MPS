@@ -25,10 +25,8 @@ import jetbrains.mps.vcs.diff.ui.common.SimpleDiffRequest;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.FileSystem;
-import jetbrains.mps.smodel.persistence.def.ModelPersistence;
-import jetbrains.mps.extapi.model.SModelBase;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.extapi.persistence.FileDataSource;
-import java.io.IOException;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 
@@ -100,8 +98,8 @@ public class TestMergeAction_Action extends BaseAction {
                   iFile.createNewFile();
                 }
                 try {
-                  ModelPersistence.saveModel(as_81bq2k_a0a0a0c0a0a0a0a0j0a0a0a4a0a5(result, SModelBase.class).getSModelInternal(), new FileDataSource(iFile));
-                } catch (IOException e) {
+                  PersistenceFacade.getInstance().getDefaultModelFactory().save(result, new FileDataSource(iFile));
+                } catch (Exception e) {
                   if (LOG.isEnabledFor(Level.ERROR)) {
                     LOG.error("Cannot save model.", e);
                   }
@@ -119,7 +117,4 @@ public class TestMergeAction_Action extends BaseAction {
     }
   }
   protected static Logger LOG = LogManager.getLogger(TestMergeAction_Action.class);
-  private static <T> T as_81bq2k_a0a0a0c0a0a0a0a0j0a0a0a4a0a5(Object o, Class<T> type) {
-    return (type.isInstance(o) ? (T) o : null);
-  }
 }

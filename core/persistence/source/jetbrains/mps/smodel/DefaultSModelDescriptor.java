@@ -98,8 +98,20 @@ public class DefaultSModelDescriptor extends LazyEditableSModelBase implements G
     return result;
   }
 
+  /**
+   * Since we expose persistence aspects of a model from (openapi)SModel, it's reasonable to keep
+   * persistence attributes we are not yet ready to expose here in the implementation. These attributes shall not be part of
+   * SModelData (smodel.SModel), which is purely about nodes and model structure.
+   * To me, persistence shall be completely independent aspect, not exposed from SModel, however, at this moment the best we could do is
+   * to keep persistence within SModel descriptor and hope for the future changes (deprecate and remove methods like getDataSource, getProblems)
+   * @return actual persistence version number of loaded/created model, or -1 if persistence versioning is not supported
+   */
   public int getPersistenceVersion() {
-    return getModelHeader().getPersistenceVersion();
+    return myHeader.getPersistenceVersion();
+  }
+
+  public void setPersistenceVersion(int persistenceVersion) {
+    myHeader.setPersistenceVersion(persistenceVersion);
   }
 
   @Override

@@ -147,8 +147,9 @@ public class DefaultModelPersistence implements CoreComponent, ModelFactory {
     if (!(dataSource instanceof StreamDataSource)) {
       throw new UnsupportedDataSourceException(dataSource);
     }
+    int persistenceVersion = model instanceof DefaultSModelDescriptor ? ((DefaultSModelDescriptor) model).getPersistenceVersion() : ModelPersistence.LAST_VERSION;
 
-    ModelPersistence.saveModel(((SModelBase) model).getSModelInternal(), (StreamDataSource) dataSource);
+    ModelPersistence.saveModel(((SModelBase) model).getSModel(), (StreamDataSource) dataSource, persistenceVersion);
   }
 
   @Override

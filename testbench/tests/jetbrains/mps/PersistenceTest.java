@@ -85,7 +85,7 @@ public class PersistenceTest extends WorkbenchMpsTest {
                   for (int i = START_PERSISTENCE_TEST_VERSION; i <= ModelPersistence.LAST_VERSION; ++i) {
                     try { // errors about not found attributes are expected for old models
                       filter.start();
-                      ModelPersistence.saveModel(((SModelBase) model).getSModelInternal(), new FileDataSource(file), i);
+                      ModelPersistence.saveModel(((SModelBase) model).getSModel(), new FileDataSource(file), i);
                     } catch (IOException e) {
                       e.printStackTrace();
                       fail();
@@ -94,8 +94,7 @@ public class PersistenceTest extends WorkbenchMpsTest {
                     }
                     ModelLoadResult result = null;
                     try {
-                      result = ModelPersistence.readModel(SModelHeader.create(i), new FileDataSource(file),
-                          ModelLoadingState.FULLY_LOADED);
+                      result = ModelPersistence.readModel(SModelHeader.create(i), new FileDataSource(file), ModelLoadingState.FULLY_LOADED);
                     } catch (ModelReadException e) {
                       fail();
                     }
@@ -229,7 +228,7 @@ public class PersistenceTest extends WorkbenchMpsTest {
         ModelPersistence.saveModel(model, source, toVersion);
         modelDescriptor.reloadFromSource();
       } catch (ModelReadException e) {
-        // This hardly can happend, unreadable model should be already filtered out
+        // This hardly can happen, unreadable model should be already filtered out
         LOG.error(null, e);
         fail();
       } catch (IOException e) {

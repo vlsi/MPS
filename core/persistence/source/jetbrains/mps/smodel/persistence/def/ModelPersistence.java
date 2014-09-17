@@ -20,6 +20,7 @@ import jetbrains.mps.extapi.persistence.FileDataSource;
 import jetbrains.mps.generator.ModelDigestUtil;
 import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.smodel.DefaultSModel;
+import jetbrains.mps.smodel.DefaultSModelDescriptor;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelHeader;
@@ -241,21 +242,22 @@ public class ModelPersistence {
 
   //--------write--------
 
-  /*
-   *  Saves model and metadata.
-   */
-  public static DefaultSModel saveModel(@NotNull SModel model, @NotNull StreamDataSource source) throws IOException {
-    int persistenceVersion =
-        model instanceof DefaultSModel ? ((DefaultSModel) model).getPersistenceVersion() : LAST_VERSION;
-    return saveModel(model, source, persistenceVersion);
-  }
+  /**
+   * Older model persistence is updated during save if we unable to save in the version model was loaded with.
+   * This method tells actual version which will be used to serialize a model of given persistence version
+   *
+   * (since 3.0) we do not support saving in old persistence (before 7)
 
+   * @param desiredPersistenceVersion would-be version from client's perspective
+   * @return persistence version that would be actually used
+   */
   public static int actualPersistenceVersion(int desiredPersistenceVersion) {
-    // (since 3.0) we do not support saving in old persistences (before 7)
     return desiredPersistenceVersion < 4 ? LAST_VERSION : Math.max(7, desiredPersistenceVersion);
   }
 
   /*
+   * FIXME why on earth we pass SModelData here, not openapi.SModel?
+   * FIXME why does this method do silent update? Would be better to update explicitly, and fail from the method if can't save with specified version
    *  returns upgraded model, or null if the model doesn't require update
    */
   public static DefaultSModel saveModel(@NotNull SModel model, @NotNull StreamDataSource source, int persistenceVersion) throws IOException {
@@ -269,8 +271,8 @@ public class ModelPersistence {
 
     // upgrade?
     int oldVersion = persistenceVersion;
-    if (model instanceof DefaultSModel) {
-      DefaultSModel defaultSModel = (DefaultSModel) model;
+    if (model.getModelDescriptor() instanceof DefaultSModelDescriptor) {
+      DefaultSModelDescriptor defaultSModel = (DefaultSModelDescriptor) model.getModelDescriptor();
       oldVersion = defaultSModel.getPersistenceVersion();
       if (oldVersion != persistenceVersion) {
         defaultSModel.setPersistenceVersion(persistenceVersion);
