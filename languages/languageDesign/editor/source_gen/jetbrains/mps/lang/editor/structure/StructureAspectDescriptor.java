@@ -454,7 +454,7 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 219:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.StyleReference").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").references("style").create();
       case 220:
-        return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.StyleSheet").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept").children(new String[]{"styleClass"}, new boolean[]{true}).alias("Stylesheet", "").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.StyleSheet").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.baseLanguage.structure.IValidIdentifier").children(new String[]{"styleClass"}, new boolean[]{true}).alias("Stylesheet", "").create();
       case 221:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.StyleSheetClass").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.editor.structure.IStyleSheetMember", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault").children(new String[]{"extendedClass"}, new boolean[]{false}).alias("style", "").create();
       case 222:
