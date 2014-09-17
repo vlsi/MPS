@@ -34,20 +34,26 @@ public class MethodDescriptor_Behavior {
         }
       }
     }));
-    if (SLinkOperations.getTarget(thisNode, "retType", true) == null) {
-      SLinkOperations.setTarget(method, "returnType", _quotation_createNode_9j0ugw_a0a0e0a(), true);
-    } else if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(thisNode, "retType", true), "jetbrains.mps.lang.classLike.structure.DependentTypeDeclaration")) {
+    SNode returnType = MethodDescriptor_Behavior.call_getReturnType_3855110916779541832(thisNode);
+    if (SNodeOperations.isInstanceOf(returnType, "jetbrains.mps.lang.classLike.structure.DependentTypeDeclaration")) {
       SNode node = SConceptOperations.createNewNode("jetbrains.mps.lang.classLike.structure.DependentTypeInstance", null);
-      SLinkOperations.setTarget(node, "decl", SNodeOperations.cast(SLinkOperations.getTarget(thisNode, "retType", true), "jetbrains.mps.lang.classLike.structure.DependentTypeDeclaration"), false);
+      SLinkOperations.setTarget(node, "decl", SNodeOperations.cast(returnType, "jetbrains.mps.lang.classLike.structure.DependentTypeDeclaration"), false);
       SLinkOperations.setTarget(node, "point", method, false);
       SLinkOperations.setTarget(method, "returnType", node, true);
     } else {
-      SLinkOperations.setTarget(method, "returnType", SNodeOperations.copyNode(SLinkOperations.getTarget(thisNode, "retType", true)), true);
+      SLinkOperations.setTarget(method, "returnType", SNodeOperations.copyNode(returnType), true);
     }
 
     SLinkOperations.setTarget(method, "decl", thisNode, false);
 
     return method;
+  }
+  public static SNode call_getReturnType_3855110916779541832(SNode thisNode) {
+    if (SLinkOperations.getTarget(thisNode, "retType", true) == null) {
+      return _quotation_createNode_9j0ugw_a0a0a1();
+    } else {
+      return SLinkOperations.getTarget(thisNode, "retType", true);
+    }
   }
   private static SNode createParameterDeclaration_9j0ugw_a0c0a0a0a0a3a0(Object p0, Object p1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
@@ -63,7 +69,7 @@ public class MethodDescriptor_Behavior {
     n1.addChild("type", (SNode) p1);
     return n1;
   }
-  private static SNode _quotation_createNode_9j0ugw_a0a0e0a() {
+  private static SNode _quotation_createNode_9j0ugw_a0a0a1() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.VoidType", null, null, false);

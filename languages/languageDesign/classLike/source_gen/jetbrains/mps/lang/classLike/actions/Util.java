@@ -9,6 +9,7 @@ import java.util.Collections;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 
 public class Util {
   public static Iterable<SNode> getMethodDescriptors(SNode node) {
@@ -34,7 +35,11 @@ public class Util {
       return Sequence.fromIterable(Collections.<SNode>emptyList());
     }
 
-    return SNodeOperations.ofConcept(SLinkOperations.getTargets(descr, "member", true), "jetbrains.mps.lang.classLike.structure.PropertyDescriptor");
+    return Sequence.fromIterable(SNodeOperations.ofConcept(SLinkOperations.getTargets(descr, "member", true), "jetbrains.mps.lang.classLike.structure.PropertyDescriptor")).where(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return SLinkOperations.getTarget(it, "type", false) != null;
+      }
+    });
   }
   public static Iterable<SNode> getCustomDescriptors(SNode node) {
     if (!(SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.ClassConcept"))) {

@@ -37,7 +37,7 @@ public class QueriesGenerated {
       SPropertyOperations.set(_context.getNewNode(), "name", NameUtil.getGetterName(SPropertyOperations.getString(SNodeOperations.cast(SNodeOperations.getAncestor(_context.getEnclosingNode(), "jetbrains.mps.lang.classLike.structure.ClassLikeMember", true, false), "jetbrains.mps.lang.classLike.structure.PropertyDescriptor"), "name")));
     }
   }
-  public static List<SubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_ClassLikeMethod_3751132065236797750(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
+  public static List<SubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_ClassifierMember_3751132065236797750(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
     {
       SNode outputConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.classLike.structure.ClassLikeMethod");

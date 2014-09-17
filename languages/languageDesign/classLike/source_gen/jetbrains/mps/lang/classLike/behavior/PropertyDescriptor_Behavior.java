@@ -24,7 +24,7 @@ public class PropertyDescriptor_Behavior {
       SNode node = SConceptOperations.createNewNode("jetbrains.mps.lang.classLike.structure.ClassLikeBooleanProperty", null);
       SLinkOperations.setTarget(node, "type", _quotation_createNode_j9hr46_a0b0a1a0(), true);
       res = node;
-    } else if (PrimitiveDataTypeDeclaration_Behavior.call_isBoolean_1220268791641(SLinkOperations.getTarget(thisNode, "type", false))) {
+    } else if (PrimitiveDataTypeDeclaration_Behavior.call_isInteger_1220268780075(SLinkOperations.getTarget(thisNode, "type", false))) {
       SNode node = SConceptOperations.createNewNode("jetbrains.mps.lang.classLike.structure.ClassLikeIntegerProperty", null);
       SLinkOperations.setTarget(node, "type", _quotation_createNode_j9hr46_a0b0b1a0(), true);
       res = node;

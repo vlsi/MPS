@@ -12,6 +12,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.pattern.util.MatchingUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.lang.classLike.behavior.MethodDescriptor_Behavior;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.messageTargets.PropertyMessageTarget;
@@ -38,10 +39,10 @@ public class typeof_ClassLikeMethod_InferenceRule extends AbstractInferenceRule_
       error = true;
     }
 
-    if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SLinkOperations.getTarget(classLikeMethod, "decl", false), "retType", true), "jetbrains.mps.lang.classLike.structure.DependentTypeDeclaration")) {
-      error |= !(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(classLikeMethod, "returnType", true), "jetbrains.mps.lang.classLike.structure.DependentTypeInstance") && SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(classLikeMethod, "returnType", true), "jetbrains.mps.lang.classLike.structure.DependentTypeInstance"), "decl", false) == SLinkOperations.getTarget(SLinkOperations.getTarget(classLikeMethod, "decl", false), "retType", true));
+    if (SNodeOperations.isInstanceOf(MethodDescriptor_Behavior.call_getReturnType_3855110916779541832(SLinkOperations.getTarget(classLikeMethod, "decl", false)), "jetbrains.mps.lang.classLike.structure.DependentTypeDeclaration")) {
+      error |= !(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(classLikeMethod, "returnType", true), "jetbrains.mps.lang.classLike.structure.DependentTypeInstance") && SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(classLikeMethod, "returnType", true), "jetbrains.mps.lang.classLike.structure.DependentTypeInstance"), "decl", false) == MethodDescriptor_Behavior.call_getReturnType_3855110916779541832(SLinkOperations.getTarget(classLikeMethod, "decl", false)));
     } else {
-      error |= !(MatchingUtil.matchNodes(SLinkOperations.getTarget(classLikeMethod, "returnType", true), SLinkOperations.getTarget(SLinkOperations.getTarget(classLikeMethod, "decl", false), "retType", true)));
+      error |= !(MatchingUtil.matchNodes(SLinkOperations.getTarget(classLikeMethod, "returnType", true), MethodDescriptor_Behavior.call_getReturnType_3855110916779541832(SLinkOperations.getTarget(classLikeMethod, "decl", false))));
     }
 
     if (error) {
