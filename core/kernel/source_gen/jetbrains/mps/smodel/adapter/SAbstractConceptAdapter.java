@@ -4,11 +4,10 @@ package jetbrains.mps.smodel.adapter;
 
 import jetbrains.mps.smodel.ids.SConceptId;
 import jetbrains.mps.smodel.ids.SPropertyId;
+import jetbrains.mps.smodel.language.LanguageRegistry;
+import jetbrains.mps.smodel.language.LanguageRuntime;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import jetbrains.mps.util.containers.BidirectionalMap;
-import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.annotations.NotNull;
-import java.util.List;
 import jetbrains.mps.util.NameUtil;
 import org.jetbrains.mps.openapi.language.SProperty;
 import org.jetbrains.mps.openapi.language.SReferenceLink;
@@ -35,52 +34,23 @@ import jetbrains.mps.smodel.Language;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.smodel.SNodeId;
-import jetbrains.mps.smodel.IdUtil;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 
 public class SAbstractConceptAdapter implements SAbstractConcept {
-  private static final BidirectionalMap<SConceptId, String> ourNames = new BidirectionalMap<SConceptId, String>();
-
   protected SConceptId myConceptId;
-  protected String myConceptName;
-  @Deprecated
-  public SAbstractConceptAdapter(@NotNull String conceptName) {
-    myConceptName = conceptName;
-    List<SConceptId> ids;
-    synchronized (ourNames) {
-      ids = ourNames.getKeysByValue(myConceptName);
-    }
-    if (ids != null && !(ids.isEmpty())) {
-      myConceptId = ids.get(0);
-    }
-  }
 
   public SAbstractConceptAdapter(@NotNull SConceptId conceptId) {
     myConceptId = conceptId;
-    synchronized (ourNames) {
-      myConceptName = ourNames.get(myConceptId);
-    }
   }
 
   public SConceptId getId() {
-    if (myConceptId != null) {
-      return myConceptId;
-    }
-    fillBothIds();
     return myConceptId;
   }
 
   @Override
   public String getQualifiedName() {
-    if (myConceptName != null) {
-      return myConceptName;
-    }
-    fillBothIds();
-    // todo here we should obtain name from a concept node, but since we now having code which doesn't work by id and therefore obtains the name 
-    // todo frequently, we get a huge slowdown if obtaining name from a node here 
-    // todo in 3.2, it is supposed that we either remove most accesses to this method or we'll return conceptName here and clear it in all concepts when renaming concept in IDE 
-    return myConceptName;
+    return MPSModuleRepository.getInstance().getDR
   }
 
   @Override
@@ -233,31 +203,30 @@ public class SAbstractConceptAdapter implements SAbstractConcept {
 
   @Override
   public SLanguage getLanguage() {
-    fillBothIds();
     return new SLanguageAdapter(myConceptId.getLanguageId());
   }
 
   @Override
   public int hashCode() {
-    return (myConceptId != null ? myConceptId.hashCode() : myConceptName.hashCode());
+    return myConceptId.hashCode();
   }
 
   @Override
   public boolean equals(Object o) {
-    if (o == null || o.getClass() != getClass()) {
+    if (o == null || (!(o instanceof SAbstractConcept))) {
       return false;
     }
-    if (myConceptId != null) {
+    if (o instanceof SAbstractConceptAdapter) {
       return myConceptId.equals(((SAbstractConceptAdapter) o).myConceptId);
-    } else {
-      return myConceptName.equals(((SAbstractConceptAdapter) o).myConceptName);
+    } else if (o instanceof SAbstractConceptAdapterByName){
+      return myConceptId.equals(((SAbstractConceptAdapterByName) o).getConceptId());
     }
+    throw new IllegalArgumentException(o.getClass().getName());
   }
 
   private static final Set<String> reportedLanguages = new HashSet<String>();
 
   protected void illegalConceptDescriptorWarning() {
-    fillBothIds();
     String languageName = getLanguage().getQualifiedName();
     // report each language only once  
     if (reportedLanguages.contains(languageName)) {
@@ -272,7 +241,6 @@ public class SAbstractConceptAdapter implements SAbstractConcept {
   @Nullable
   @Override
   public SNode getConceptDeclarationNode() {
-    fillBothIds();
     SModuleReference moduleRef = IdHelper.getModuleReference(myConceptId.getLanguageId());
     SModule module = moduleRef.resolve(MPSModuleRepository.getInstance());
     if (!((module instanceof Language))) {
@@ -285,29 +253,9 @@ public class SAbstractConceptAdapter implements SAbstractConcept {
     return strucModel.getNode(new SNodeId.Regular(myConceptId.getConceptId()));
   }
 
-  protected void fillBothIds() {
-    if (myConceptName != null && myConceptId != null) {
-      return;
-    }
-    if (myConceptId == null) {
-      String langName = NameUtil.namespaceFromConceptFQName(myConceptName);
-      SLanguageAdapter lang = new SLanguageAdapter(langName);
-      SNode concept = lang.getSourceModule().findConceptDeclaration(NameUtil.shortNameFromLongName(myConceptName));
-      myConceptId = new SConceptId(lang.getId(), IdHelper.getNodeId((jetbrains.mps.smodel.SNode) concept));
-    } else {
-      Language lang = new SLanguageAdapter(myConceptId.getLanguageId()).getSourceModule();
-      if (lang != null) {
-        myConceptName = NameUtil.nodeFQName(LanguageAspect.STRUCTURE.get(lang).getNode(new SNodeId.Regular(myConceptId.getConceptId())));
-      } else {
-        myConceptName = IdUtil.getConceptFqName(myConceptId);
-      }
-    }
-    synchronized (ourNames) {
-      ourNames.put(myConceptId, myConceptName);
-    }
+  protected ConceptDescriptor getConceptDescriptor(){
+    return ConceptRegistry.getInstance().getConceptDescriptor(getQualifiedName());
   }
-
-
 
   protected static Logger LOG = LogManager.getLogger(SAbstractConceptAdapter.class);
 }

@@ -20,10 +20,11 @@ import jetbrains.mps.project.ModuleId;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 
+/**
+ * This allows to convert source-level (non-published code) ids to structure-level ids (published code ids)
+ * DebugRegistry must not be used inside of this class. Only straightforward conversions are allowed
+ */
 public class IdHelper {
-  /**
-   * DebugRegistry must not be used inside of this class. Only straightforward conversions are allowed
-   */
   public static long getNodeId(SNode node) {
     return ((SNodeId.Regular) node.getNodeId()).getId();
   }

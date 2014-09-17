@@ -26,7 +26,7 @@ import org.jetbrains.mps.openapi.language.SProperty;
 import org.jetbrains.mps.openapi.language.SReferenceLink;
 import org.jetbrains.mps.openapi.model.SNode;
 
-public class SConceptAdapterByName implements SConcept {
+public class SConceptAdapterByName extends SAbstractConceptAdapterByName implements SConcept {
   public SConceptAdapterByName(String conceptFQName) {
   }
 

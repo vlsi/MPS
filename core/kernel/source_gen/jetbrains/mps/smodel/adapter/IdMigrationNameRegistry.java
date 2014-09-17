@@ -13,14 +13,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel;
+package jetbrains.mps.smodel.adapter;
 
 import jetbrains.mps.components.CoreComponent;
-import jetbrains.mps.smodel.adapter.IdHelper;
-import jetbrains.mps.smodel.adapter.SConceptAdapter;
-import jetbrains.mps.smodel.adapter.SContainmentLinkAdapter;
-import jetbrains.mps.smodel.adapter.SPropertyAdapter;
-import jetbrains.mps.smodel.adapter.SReferenceLinkAdapter;
+import jetbrains.mps.smodel.IdMigrationMode;
+import jetbrains.mps.smodel.Language;
+import jetbrains.mps.smodel.LanguageAspect;
+import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.smodel.SModel;
 import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.language.SLanguage;
@@ -32,71 +32,37 @@ import org.jetbrains.mps.openapi.model.SReference;
 import org.jetbrains.mps.openapi.module.DebugRegistry;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SRepositoryAdapter;
+import org.jetbrains.mps.openapi.module.SRepositoryContentAdapter;
 
-import javax.swing.SwingUtilities;
 import java.util.Map;
 
-public class DebugRegistryUtil implements CoreComponent {
-
-  public static boolean initialized = false;
+/**
+ * This class serves id migration purposes. It allows to convert names to ids and back.
+ * This class is NOT A DEBUG REGISTRY. While debug registry is write-once registry, this one always reflects changes to structure.
+ */
+public class IdMigrationNameRegistry implements CoreComponent {
+  //was there a que
+  private boolean ourInitialized = false;
   private SRepositoryAdapter myListener;
 
-  public static String getINamedConceptName(jetbrains.mps.smodel.SNode node) {
-    if (node.workingMode() == IdMigrationMode.ID) {
-      return node.getProperty(jetbrains.mps.smodel.SNodeUtil.propertyId_INamedConcept_name);
-    } else if (node.workingMode() == IdMigrationMode.NAME) {
-      return node.getProperty(jetbrains.mps.smodel.SNodeUtil.property_INamedConcept_name);
-    }
-    throw new IllegalStateException();
+  @Override
+  public void init() {
+    myListener = new SRepositoryAdapter() {
+      @Override
+      public void moduleAdded(final SModule module) {
+        fillDebugRegistryForLanguage((Language) module);
+      }
+    };
+    MPSModuleRepository.getInstance().addRepositoryListener(myListener);
+
   }
 
-  private static boolean isInstanceOfConceptDeclaration(jetbrains.mps.smodel.SNode node) {
-    if (node.workingMode() == IdMigrationMode.ID) {
-      return jetbrains.mps.smodel.SNodeUtil.conceptId_ConceptDeclaration.equals(node.getConceptId()) || jetbrains.mps.smodel.SNodeUtil.conceptId_InterfaceConceptDeclaration.equals(node.getConceptId());
-    } else if (node.workingMode() == IdMigrationMode.NAME) {
-      return jetbrains.mps.smodel.SNodeUtil.concept_ConceptDeclaration.equals(node.getConcept().getQualifiedName()) || jetbrains.mps.smodel.SNodeUtil.concept_InterfaceConceptDeclaration.equals(node.getConcept().getQualifiedName());
-    }
-    throw new IllegalStateException();
-  }
-
-  private static Iterable<jetbrains.mps.smodel.SNode> getConceptLinkDeclarations(jetbrains.mps.smodel.SNode node) {
-    if (node.workingMode() == IdMigrationMode.ID) {
-      return node.getChildren(jetbrains.mps.smodel.SNodeUtil.linkId_AbstractConceptDeclaration_linkDeclaration);
-    } else if (node.workingMode() == IdMigrationMode.NAME) {
-      return node.getChildren(jetbrains.mps.smodel.SNodeUtil.link_AbstractConceptDeclaration_linkDeclaration);
-    }
-    throw new IllegalStateException();
-  }
-
-  private static String getLinkMetaClass(jetbrains.mps.smodel.SNode node) {
-    if (node.workingMode() == IdMigrationMode.ID) {
-      return node.getProperty(jetbrains.mps.smodel.SNodeUtil.propertyId_LinkDeclaration_metaClass);
-    } else if (node.workingMode() == IdMigrationMode.NAME) {
-      return node.getProperty(jetbrains.mps.smodel.SNodeUtil.property_LinkDeclaration_metaClass);
-    }
-    throw new IllegalStateException();
-  }
-
-  private static String getLinkRole(jetbrains.mps.smodel.SNode node) {
-    if (node.workingMode() == IdMigrationMode.ID) {
-      return node.getProperty(jetbrains.mps.smodel.SNodeUtil.propertyId_LinkDeclaration_role);
-    } else if (node.workingMode() == IdMigrationMode.NAME) {
-      return node.getProperty(jetbrains.mps.smodel.SNodeUtil.property_LinkDeclaration_role);
-    }
-    throw new IllegalStateException();
-  }
-
-  private static Iterable<jetbrains.mps.smodel.SNode> getPropertyDeclarations(jetbrains.mps.smodel.SNode node) {
-    if (node.workingMode() == IdMigrationMode.ID) {
-      return node.getChildren(jetbrains.mps.smodel.SNodeUtil.linkId_AbstractConceptDeclaration_propertyDeclaration);
-    } else if (node.workingMode() == IdMigrationMode.NAME) {
-      return node.getChildren(jetbrains.mps.smodel.SNodeUtil.link_AbstractConceptDeclaration_propertyDeclaration);
-    }
-    throw new IllegalStateException();
+  @Override
+  public void dispose() {
+    MPSModuleRepository.getInstance().removeRepositoryListener(myListener);
   }
 
 
-  //remove after 3.2
   public static void fillDebugRegistry() {
     for (SModule module : MPSModuleRepository.getInstance().getModules()) {
       if (module instanceof Language) {
@@ -131,10 +97,10 @@ public class DebugRegistryUtil implements CoreComponent {
 
   //remove after 3.2
   public static void fillDebugInfo(SModel model) {
-    if (initialized) return;
+    if (ourInitialized) return;
     if (model == null) return;
     if (jetbrains.mps.smodel.SNode.workingMode(model) != IdMigrationMode.NAME && jetbrains.mps.smodel.SNode.workingMode(model) != IdMigrationMode.ID) return;
-    initialized = true;
+    ourInitialized = true;
     fillDebugRegistry();
   }
 
@@ -207,33 +173,5 @@ public class DebugRegistryUtil implements CoreComponent {
         }
       }
     }
-  }
-
-  @Override
-  public void init() {
-    myListener = new SRepositoryAdapter() {
-      @Override
-      public void moduleAdded(final SModule module) {
-        if (initialized && module instanceof Language) {
-          SwingUtilities.invokeLater(new Runnable() {
-            @Override
-            public void run() {
-              ModelAccess.instance().runWriteAction(new Runnable() {
-                @Override
-                public void run() {
-                  fillDebugRegistryForLanguage((Language) module);
-                }
-              });
-            }
-          });
-        }
-      }
-    };
-    MPSModuleRepository.getInstance().addRepositoryListener(myListener);
-  }
-
-  @Override
-  public void dispose() {
-    MPSModuleRepository.getInstance().removeRepositoryListener(myListener);
   }
 }

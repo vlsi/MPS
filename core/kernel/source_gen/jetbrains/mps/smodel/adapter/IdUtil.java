@@ -13,8 +13,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel;
+package jetbrains.mps.smodel.adapter;
 
+import jetbrains.mps.smodel.DebugRegistryImpl;
+import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.smodel.adapter.SConceptAdapter;
 import jetbrains.mps.smodel.adapter.SLanguageAdapter;
 import jetbrains.mps.smodel.ids.SConceptId;

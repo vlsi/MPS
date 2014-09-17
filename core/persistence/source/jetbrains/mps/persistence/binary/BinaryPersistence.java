@@ -22,6 +22,7 @@ import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.DefaultSModel;
 import jetbrains.mps.smodel.LazySModel;
 import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.adapter.IdMigrationNameRegistry;
 import jetbrains.mps.smodel.adapter.SLanguageAdapter;
 import jetbrains.mps.smodel.DebugRegistryUtil;
 import jetbrains.mps.smodel.SModelHeader;
@@ -301,7 +302,7 @@ public class BinaryPersistence {
     Map<SReferenceLink, String> refIds = new HashMap<SReferenceLink, String>();
     Map<SContainmentLink, String> roleIds = new HashMap<SContainmentLink, String>();
 
-    DebugRegistryUtil.getDebugInfoById(rootNodes, conceptIds, propIds, refIds, roleIds);
+    IdMigrationNameRegistry.getDebugInfoById(rootNodes, conceptIds, propIds, refIds, roleIds);
 
     // write concepts
     os.writeInt(conceptIds.size());

@@ -23,8 +23,8 @@ import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModel.ImportElement;
 import jetbrains.mps.smodel.SModelHeader;
+import jetbrains.mps.smodel.adapter.IdMigrationNameRegistry;
 import jetbrains.mps.smodel.adapter.SLanguageAdapter;
-import jetbrains.mps.smodel.DebugRegistryUtil;
 import jetbrains.mps.smodel.persistence.def.DocUtil;
 import jetbrains.mps.smodel.persistence.def.FilePerRootFormatUtil;
 import jetbrains.mps.smodel.persistence.def.IModelWriter;
@@ -142,7 +142,7 @@ public class ModelWriter9 implements IModelWriter {
     Map<SReferenceLink, String> refIds = new HashMap<SReferenceLink, String>();
     Map<SContainmentLink, String> roleIds = new HashMap<SContainmentLink, String>();
 
-    DebugRegistryUtil.getDebugInfoById(sourceModel.getRootNodes(), conceptIds, propIds, refIds, roleIds);
+    IdMigrationNameRegistry.getDebugInfoById(sourceModel.getRootNodes(), conceptIds, propIds, refIds, roleIds);
 
     // write concepts
     for (Entry<SConcept, String> e : conceptIds.entrySet()) {
