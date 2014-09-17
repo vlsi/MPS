@@ -15,8 +15,10 @@ public class fix_SignatureMismatch_QuickFix extends QuickFix_Runtime {
     return "Copy signature from descriptor";
   }
   public void execute(SNode node) {
-    SNode nodeToReplace = SNodeOperations.cast(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SLinkOperations.getTarget(SNodeOperations.cast(node, "jetbrains.mps.lang.classLike.structure.ClassLikeMethod"), "decl", false), "virtual_create_8260330507834998478", new Object[]{}), "jetbrains.mps.lang.classLike.structure.ClassLikeMethod");
-    SLinkOperations.setTarget(nodeToReplace, "body", SLinkOperations.getTarget(SNodeOperations.cast(node, "jetbrains.mps.lang.classLike.structure.ClassLikeMethod"), "body", true), true);
+    SNode nodeToReplace = SNodeOperations.cast(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(node, "jetbrains.mps.lang.classLike.structure.ClassLikeMemberInstance"), "virtual_getDeclaration_9097849371503884215", new Object[]{}), "virtual_create_8260330507834998478", new Object[]{}), "jetbrains.mps.lang.classLike.structure.ClassLikeMemberInstance");
+    if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.classLike.structure.ClassLikeMethod") && SNodeOperations.isInstanceOf(nodeToReplace, "jetbrains.mps.lang.classLike.structure.ClassLikeMethod")) {
+      SLinkOperations.setTarget(SNodeOperations.cast(nodeToReplace, "jetbrains.mps.lang.classLike.structure.ClassLikeMethod"), "body", SLinkOperations.getTarget(SNodeOperations.cast(node, "jetbrains.mps.lang.classLike.structure.ClassLikeMethod"), "body", true), true);
+    }
     SNodeOperations.replaceWithAnother(node, nodeToReplace);
   }
 }

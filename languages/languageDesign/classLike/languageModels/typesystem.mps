@@ -49,8 +49,8 @@
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123136" name="StatementList" />
     <concept id="7a5dda62-9140-4668-ab76-d5ed1746f2b2/1174648085619" name="AbstractRule" />
     <concept id="7a5dda62-9140-4668-ab76-d5ed1746f2b2/1175147670730" name="SubtypingRule" />
-    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1080120340718" name="AndExpression" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1154032098014" name="AbstractLoopStatement" />
+    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1080120340718" name="AndExpression" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1214918800624" name="PostfixIncrementExpression" />
     <concept id="7866978e-a0f0-4cc7-81bc-4d213d9375e1/1138056022639" name="SPropertyAccess" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1081516740877" name="NotExpression" />
@@ -182,6 +182,7 @@
     <import index="tp25" ref="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" implicit="true" />
     <import index="tp2q" ref="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" implicit="true" />
     <import index="tp3r" ref="r:00000000-0000-4000-0000-011c8959034b(jetbrains.mps.lang.quotation.structure)" implicit="true" />
+    <import index="tpcn" ref="r:00000000-0000-4000-0000-011c8959028b(jetbrains.mps.lang.structure.behavior)" implicit="true" />
   </imports>
   <contents>
     <node concept="swut.1174643105530" id="3751132065236799722" info="ng">
@@ -471,18 +472,18 @@
             <node concept="vg0i.1068581242863" id="1901385213798245666" role="vg0i.1068581242864.1068581242865" info="nr">
               <property role="asn4.1169194658468.1169194664001" value="nodeToReplace" />
               <node concept="4ia1.1138055754698" id="1901385213798245661" role="vg0i.4972933694980447171.5680397130376446158" info="in">
-                <reference role="4ia1.1138055754698.1138405853777" target="oubp.3751132065236767060" resolveInfo="ClassLikeMethod" />
+                <reference role="4ia1.1138055754698.1138405853777" target="oubp.6478870542308708729" resolveInfo="ClassLikeMemberInstance" />
               </node>
               <node concept="4ia1.1140137987495" id="1901385213798264467" role="vg0i.1068431474542.1068431790190" info="nn">
-                <reference role="4ia1.1140137987495.1140138128738" target="oubp.3751132065236767060" resolveInfo="ClassLikeMethod" />
+                <reference role="4ia1.1140137987495.1140138128738" target="oubp.6478870542308708729" resolveInfo="ClassLikeMemberInstance" />
                 <node concept="vg0i.1197027756228" id="1901385213798256878" role="4ia1.1140137987495.1140138123956" info="nn">
                   <node concept="vg0i.1197027756228" id="1901385213798247083" role="vg0i.1197027756228.1197027771414" info="nn">
                     <node concept="4ia1.1140137987495" id="1901385213798246278" role="vg0i.1197027756228.1197027771414" info="nn">
-                      <reference role="4ia1.1140137987495.1140138128738" target="oubp.3751132065236767060" resolveInfo="ClassLikeMethod" />
+                      <reference role="4ia1.1140137987495.1140138128738" target="oubp.6478870542308708729" resolveInfo="ClassLikeMemberInstance" />
                       <node concept="swut.1216383337216" id="1901385213798246017" role="4ia1.1140137987495.1140138123956" info="nn" />
                     </node>
-                    <node concept="4ia1.1138056143562" id="1901385213798253513" role="vg0i.1197027756228.1197027833540" info="nn">
-                      <reference role="4ia1.1138056143562.1138056516764" target="oubp.19209059688387895" />
+                    <node concept="4ia1.1179409122411" id="3855110916780144494" role="vg0i.1197027756228.1197027833540" info="nn">
+                      <reference role="vg0i.1204053956946.1068499141037" target="9nqt.9097849371503884215" resolveInfo="getDeclaration" />
                     </node>
                   </node>
                   <node concept="4ia1.1179409122411" id="1901385213798258647" role="vg0i.1197027756228.1197027833540" info="nn">
@@ -492,24 +493,51 @@
               </node>
             </node>
           </node>
-          <node concept="vg0i.1068580123155" id="1901385213798266364" role="vg0i.1068580123136.1068581517665" info="nn">
-            <node concept="vg0i.1068498886294" id="1901385213798281251" role="vg0i.1068580123155.1068580123156" info="nn">
-              <node concept="vg0i.1197027756228" id="1901385213798284961" role="vg0i.1215693861676.1068498886297" info="nn">
-                <node concept="4ia1.1140137987495" id="1901385213798283410" role="vg0i.1197027756228.1197027771414" info="nn">
-                  <reference role="4ia1.1140137987495.1140138128738" target="oubp.3751132065236767060" resolveInfo="ClassLikeMethod" />
-                  <node concept="swut.1216383337216" id="1901385213798282025" role="4ia1.1140137987495.1140138123956" info="nn" />
-                </node>
-                <node concept="4ia1.1138056143562" id="1901385213798291889" role="vg0i.1197027756228.1197027833540" info="nn">
-                  <reference role="4ia1.1138056143562.1138056516764" target="tpee.1068580123135" />
+          <node concept="vg0i.1068580123159" id="3855110916780206786" role="vg0i.1068580123136.1068581517665" info="nn">
+            <node concept="vg0i.1068580123136" id="3855110916780206789" role="vg0i.1068580123159.1068580123161" info="sn">
+              <node concept="vg0i.1068580123155" id="3855110916780211255" role="vg0i.1068580123136.1068581517665" info="nn">
+                <node concept="vg0i.1068498886294" id="3855110916780223241" role="vg0i.1068580123155.1068580123156" info="nn">
+                  <node concept="vg0i.1197027756228" id="3855110916780226132" role="vg0i.1215693861676.1068498886297" info="nn">
+                    <node concept="4ia1.1140137987495" id="3855110916780225459" role="vg0i.1197027756228.1197027771414" info="nn">
+                      <reference role="4ia1.1140137987495.1140138128738" target="oubp.3751132065236767060" resolveInfo="ClassLikeMethod" />
+                      <node concept="swut.1216383337216" id="3855110916780247737" role="4ia1.1140137987495.1140138123956" info="nn" />
+                    </node>
+                    <node concept="4ia1.1138056143562" id="3855110916780234244" role="vg0i.1197027756228.1197027833540" info="nn">
+                      <reference role="4ia1.1138056143562.1138056516764" target="tpee.1068580123135" />
+                    </node>
+                  </node>
+                  <node concept="vg0i.1197027756228" id="3855110916780212885" role="vg0i.1215693861676.1068498886295" info="nn">
+                    <node concept="4ia1.1140137987495" id="3855110916780212130" role="vg0i.1197027756228.1197027771414" info="nn">
+                      <reference role="4ia1.1140137987495.1140138128738" target="oubp.3751132065236767060" resolveInfo="ClassLikeMethod" />
+                      <node concept="vg0i.1068498886296" id="3855110916780247310" role="4ia1.1140137987495.1140138123956" info="nn">
+                        <reference role="vg0i.1068498886296.1068581517664" target="1901385213798245666" resolveInfo="nodeToReplace" />
+                      </node>
+                    </node>
+                    <node concept="4ia1.1138056143562" id="3855110916780219482" role="vg0i.1197027756228.1197027833540" info="nn">
+                      <reference role="4ia1.1138056143562.1138056516764" target="tpee.1068580123135" />
+                    </node>
+                  </node>
                 </node>
               </node>
-              <node concept="vg0i.1197027756228" id="1901385213798267261" role="vg0i.1215693861676.1068498886295" info="nn">
-                <node concept="vg0i.1068498886296" id="1901385213798266362" role="vg0i.1197027756228.1197027771414" info="nn">
+            </node>
+            <node concept="vg0i.1080120340718" id="3855110916780209126" role="vg0i.1068580123159.1068580123160" info="nn">
+              <node concept="vg0i.1197027756228" id="3855110916780209758" role="vg0i.1081773326031.1081773367579" info="nn">
+                <node concept="vg0i.1068498886296" id="3855110916780209475" role="vg0i.1197027756228.1197027771414" info="nn">
                   <reference role="vg0i.1068498886296.1068581517664" target="1901385213798245666" resolveInfo="nodeToReplace" />
                 </node>
-                <node concept="4ia1.1138056143562" id="1901385213798273658" role="vg0i.1197027756228.1197027833540" info="nn">
-                  <reference role="4ia1.1138056143562.1138056516764" target="tpee.1068580123135" />
+                <node concept="4ia1.1139621453865" id="3855110916780210744" role="vg0i.1197027756228.1197027833540" info="nn">
+                  <node concept="4ia1.1177026924588" id="3855110916780210997" role="4ia1.1139621453865.1177027386292" info="nn">
+                    <reference role="4ia1.1177026924588.1177026940964" target="oubp.3751132065236767060" resolveInfo="ClassLikeMethod" />
+                  </node>
                 </node>
+              </node>
+              <node concept="vg0i.1197027756228" id="3855110916780207192" role="vg0i.1081773326031.1081773367580" info="nn">
+                <node concept="4ia1.1139621453865" id="3855110916780208188" role="vg0i.1197027756228.1197027833540" info="nn">
+                  <node concept="4ia1.1177026924588" id="3855110916780208281" role="4ia1.1139621453865.1177027386292" info="nn">
+                    <reference role="4ia1.1177026924588.1177026940964" target="oubp.3751132065236767060" resolveInfo="ClassLikeMethod" />
+                  </node>
+                </node>
+                <node concept="swut.1216383337216" id="3855110916780208492" role="vg0i.1197027756228.1197027771414" info="nn" />
               </node>
             </node>
           </node>
@@ -535,10 +563,41 @@
         </node>
       </node>
     </node>
-    <node concept="swut.1174643105530" id="1901385213796743308" info="ng">
+    <node concept="swut.1201607707634" id="3855110916777539764" info="ng">
       <property role="asn4.1133920641626.1193676396447" value="instances" />
-      <property role="asn4.1169194658468.1169194664001" value="typeof_ClassLikeMethod" />
-      <node concept="vg0i.1068580123136" id="1901385213796743309" role="swut.1195213580585.1195213635060" info="sn">
+      <property role="asn4.1169194658468.1169194664001" value="DependentType_supertypeOfItsValue" />
+      <node concept="vg0i.1068580123136" id="3855110916777539766" role="swut.1175147569072.1175147624276" info="sn">
+        <node concept="swut.1174658326157" id="3855110916777542669" role="vg0i.1068580123136.1068581517665" info="nn">
+          <node concept="swut.1185788614172" id="3855110916777542685" role="swut.1174660718586.1174660783413" info="ng">
+            <node concept="vg0i.1197027756228" id="3855110916777542874" role="swut.1185788614172.1185788644032" info="nn">
+              <node concept="swut.1174650418652" id="3855110916777542683" role="vg0i.1197027756228.1197027771414" info="nn">
+                <reference role="swut.1174650418652.1174650432090" target="3855110916777539768" resolveInfo="dependentTypeInstance" />
+              </node>
+              <node concept="4ia1.1179409122411" id="3855110916777544632" role="vg0i.1197027756228.1197027833540" info="nn">
+                <reference role="vg0i.1204053956946.1068499141037" target="9nqt.9097849371504546165" resolveInfo="getMyType" />
+              </node>
+            </node>
+          </node>
+          <node concept="swut.1185788614172" id="3855110916777544777" role="swut.1174660718586.1174660783414" info="ng">
+            <node concept="swut.1174650418652" id="3855110916777544775" role="swut.1185788614172.1185788644032" info="nn">
+              <reference role="swut.1174650418652.1174650432090" target="3855110916777540122" resolveInfo="type" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="swut.1174642788531" id="3855110916777539768" role="swut.1201607707634.1201607798918" info="ig">
+        <property role="asn4.1169194658468.1169194664001" value="dependentTypeInstance" />
+        <reference role="swut.1174642788531.1174642800329" target="oubp.3751132065236767083" resolveInfo="DependentTypeInstance" />
+      </node>
+      <node concept="swut.1174642788531" id="3855110916777540122" role="swut.1174648085619.1174648101952" info="ig">
+        <property role="asn4.1169194658468.1169194664001" value="type" />
+        <reference role="swut.1174642788531.1174642800329" target="tpee.1068431790189" resolveInfo="Type" />
+      </node>
+    </node>
+    <node concept="swut.1195214364922" id="3855110916779792457" info="ng">
+      <property role="asn4.1133920641626.1193676396447" value="instances" />
+      <property role="asn4.1169194658468.1169194664001" value="check_ClassLikeMethod" />
+      <node concept="vg0i.1068580123136" id="3855110916779792458" role="swut.1195213580585.1195213635060" info="sn">
         <node concept="vg0i.1068581242864" id="1901385213798168414" role="vg0i.1068580123136.1068581517665" info="nn">
           <node concept="vg0i.1068581242863" id="1901385213798168417" role="vg0i.1068581242864.1068581242865" info="nr">
             <property role="asn4.1169194658468.1169194664001" value="error" />
@@ -570,7 +629,7 @@
                                   </node>
                                   <node concept="vg0i.1197027756228" id="1901385213798172969" role="j0ph.1225711141656.1225711182005" info="nn">
                                     <node concept="swut.1174650418652" id="1901385213798172970" role="vg0i.1197027756228.1197027771414" info="nn">
-                                      <reference role="swut.1174650418652.1174650432090" target="1901385213796743823" resolveInfo="classLikeMethod" />
+                                      <reference role="swut.1174650418652.1174650432090" target="3855110916779798475" resolveInfo="classLikeMethod" />
                                     </node>
                                     <node concept="4ia1.1138056282393" id="1901385213798172971" role="vg0i.1197027756228.1197027833540" info="nn">
                                       <reference role="4ia1.1138056282393.1138056546658" target="tpee.1068580123134" />
@@ -598,7 +657,7 @@
                                       </node>
                                       <node concept="vg0i.1197027756228" id="1901385213798172981" role="j0ph.1225711141656.1225711182005" info="nn">
                                         <node concept="swut.1174650418652" id="1901385213798172982" role="vg0i.1197027756228.1197027771414" info="nn">
-                                          <reference role="swut.1174650418652.1174650432090" target="1901385213796743823" resolveInfo="classLikeMethod" />
+                                          <reference role="swut.1174650418652.1174650432090" target="3855110916779798475" resolveInfo="classLikeMethod" />
                                         </node>
                                         <node concept="4ia1.1138056282393" id="1901385213798172983" role="vg0i.1197027756228.1197027833540" info="nn">
                                           <reference role="4ia1.1138056282393.1138056546658" target="tpee.1068580123134" />
@@ -622,7 +681,7 @@
                                   <node concept="vg0i.1197027756228" id="1901385213798172989" role="j0ph.1225711141656.1225711182005" info="nn">
                                     <node concept="vg0i.1197027756228" id="1901385213798172990" role="vg0i.1197027756228.1197027771414" info="nn">
                                       <node concept="swut.1174650418652" id="1901385213798172991" role="vg0i.1197027756228.1197027771414" info="nn">
-                                        <reference role="swut.1174650418652.1174650432090" target="1901385213796743823" resolveInfo="classLikeMethod" />
+                                        <reference role="swut.1174650418652.1174650432090" target="3855110916779798475" resolveInfo="classLikeMethod" />
                                       </node>
                                       <node concept="4ia1.1138056143562" id="1901385213798172992" role="vg0i.1197027756228.1197027833540" info="nn">
                                         <reference role="4ia1.1138056143562.1138056516764" target="oubp.19209059688387895" />
@@ -660,7 +719,7 @@
                                   <node concept="vg0i.1197027756228" id="3501922262355440169" role="j0ph.1225711141656.1225711182005" info="nn">
                                     <node concept="vg0i.1197027756228" id="3501922262355440170" role="vg0i.1197027756228.1197027771414" info="nn">
                                       <node concept="swut.1174650418652" id="3501922262355440171" role="vg0i.1197027756228.1197027771414" info="nn">
-                                        <reference role="swut.1174650418652.1174650432090" target="1901385213796743823" resolveInfo="classLikeMethod" />
+                                        <reference role="swut.1174650418652.1174650432090" target="3855110916779798475" resolveInfo="classLikeMethod" />
                                       </node>
                                       <node concept="4ia1.1138056143562" id="3501922262355440172" role="vg0i.1197027756228.1197027833540" info="nn">
                                         <reference role="4ia1.1138056143562.1138056516764" target="oubp.19209059688387895" />
@@ -682,7 +741,7 @@
                                   </node>
                                   <node concept="vg0i.1197027756228" id="3501922262355440178" role="j0ph.1225711141656.1225711182005" info="nn">
                                     <node concept="swut.1174650418652" id="3501922262355440179" role="vg0i.1197027756228.1197027771414" info="nn">
-                                      <reference role="swut.1174650418652.1174650432090" target="1901385213796743823" resolveInfo="classLikeMethod" />
+                                      <reference role="swut.1174650418652.1174650432090" target="3855110916779798475" resolveInfo="classLikeMethod" />
                                     </node>
                                     <node concept="4ia1.1138056282393" id="3501922262355440180" role="vg0i.1197027756228.1197027833540" info="nn">
                                       <reference role="4ia1.1138056282393.1138056546658" target="tpee.1068580123134" />
@@ -708,7 +767,7 @@
                         <node concept="vg0i.1197027756228" id="1901385213797893535" role="j0ph.1225711141656.1225711182005" info="nn">
                           <node concept="vg0i.1197027756228" id="1901385213797893536" role="vg0i.1197027756228.1197027771414" info="nn">
                             <node concept="swut.1174650418652" id="1901385213797893537" role="vg0i.1197027756228.1197027771414" info="nn">
-                              <reference role="swut.1174650418652.1174650432090" target="1901385213796743823" resolveInfo="classLikeMethod" />
+                              <reference role="swut.1174650418652.1174650432090" target="3855110916779798475" resolveInfo="classLikeMethod" />
                             </node>
                             <node concept="4ia1.1138056143562" id="1901385213797893538" role="vg0i.1197027756228.1197027833540" info="nn">
                               <reference role="4ia1.1138056143562.1138056516764" target="oubp.19209059688387895" />
@@ -744,7 +803,7 @@
                           <node concept="vg0i.1197027756228" id="1901385213798445806" role="j0ph.1225711141656.1225711182005" info="nn">
                             <node concept="vg0i.1197027756228" id="1901385213798445807" role="vg0i.1197027756228.1197027771414" info="nn">
                               <node concept="swut.1174650418652" id="1901385213798445808" role="vg0i.1197027756228.1197027771414" info="nn">
-                                <reference role="swut.1174650418652.1174650432090" target="1901385213796743823" resolveInfo="classLikeMethod" />
+                                <reference role="swut.1174650418652.1174650432090" target="3855110916779798475" resolveInfo="classLikeMethod" />
                               </node>
                               <node concept="4ia1.1138056143562" id="1901385213798445809" role="vg0i.1197027756228.1197027833540" info="nn">
                                 <reference role="4ia1.1138056143562.1138056516764" target="oubp.19209059688387895" />
@@ -766,7 +825,7 @@
                           </node>
                           <node concept="vg0i.1197027756228" id="1901385213798445815" role="j0ph.1225711141656.1225711182005" info="nn">
                             <node concept="swut.1174650418652" id="1901385213798445816" role="vg0i.1197027756228.1197027771414" info="nn">
-                              <reference role="swut.1174650418652.1174650432090" target="1901385213796743823" resolveInfo="classLikeMethod" />
+                              <reference role="swut.1174650418652.1174650432090" target="3855110916779798475" resolveInfo="classLikeMethod" />
                             </node>
                             <node concept="4ia1.1138056282393" id="1901385213798445817" role="vg0i.1197027756228.1197027833540" info="nn">
                               <reference role="4ia1.1138056282393.1138056546658" target="tpee.1068580123134" />
@@ -792,7 +851,7 @@
                 <node concept="vg0i.1197027756228" id="1901385213796779783" role="vg0i.1081773326031.1081773367579" info="nn">
                   <node concept="vg0i.1197027756228" id="1901385213796756814" role="vg0i.1197027756228.1197027771414" info="nn">
                     <node concept="swut.1174650418652" id="1901385213796754533" role="vg0i.1197027756228.1197027771414" info="nn">
-                      <reference role="swut.1174650418652.1174650432090" target="1901385213796743823" resolveInfo="classLikeMethod" />
+                      <reference role="swut.1174650418652.1174650432090" target="3855110916779798475" resolveInfo="classLikeMethod" />
                     </node>
                     <node concept="4ia1.1138056282393" id="1901385213796763490" role="vg0i.1197027756228.1197027833540" info="nn">
                       <reference role="4ia1.1138056282393.1138056546658" target="tpee.1068580123134" />
@@ -815,7 +874,7 @@
             <node concept="vg0i.1197027756228" id="1901385213796515979" role="vg0i.1081773326031.1081773367580" info="nn">
               <node concept="vg0i.1197027756228" id="1901385213796515980" role="vg0i.1197027756228.1197027771414" info="nn">
                 <node concept="swut.1174650418652" id="1901385213796515981" role="vg0i.1197027756228.1197027771414" info="nn">
-                  <reference role="swut.1174650418652.1174650432090" target="1901385213796743823" resolveInfo="classLikeMethod" />
+                  <reference role="swut.1174650418652.1174650432090" target="3855110916779798475" resolveInfo="classLikeMethod" />
                 </node>
                 <node concept="4ia1.1138056282393" id="1901385213796515982" role="vg0i.1197027756228.1197027833540" info="nn">
                   <reference role="4ia1.1138056282393.1138056546658" target="tpee.1068580123134" />
@@ -827,7 +886,7 @@
               <node concept="vg0i.1197027756228" id="1901385213796515985" role="vg0i.1197027756228.1197027771414" info="nn">
                 <node concept="vg0i.1197027756228" id="1901385213796515986" role="vg0i.1197027756228.1197027771414" info="nn">
                   <node concept="swut.1174650418652" id="1901385213796515987" role="vg0i.1197027756228.1197027771414" info="nn">
-                    <reference role="swut.1174650418652.1174650432090" target="1901385213796743823" resolveInfo="classLikeMethod" />
+                    <reference role="swut.1174650418652.1174650432090" target="3855110916779798475" resolveInfo="classLikeMethod" />
                   </node>
                   <node concept="4ia1.1138056143562" id="1901385213796515988" role="vg0i.1197027756228.1197027833540" info="nn">
                     <reference role="4ia1.1138056143562.1138056516764" target="oubp.19209059688387895" />
@@ -873,7 +932,7 @@
                       </node>
                       <node concept="vg0i.1197027756228" id="3501922262355369814" role="vg0i.1197027756228.1197027771414" info="nn">
                         <node concept="swut.1174650418652" id="3501922262355369815" role="vg0i.1197027756228.1197027771414" info="nn">
-                          <reference role="swut.1174650418652.1174650432090" target="1901385213796743823" resolveInfo="classLikeMethod" />
+                          <reference role="swut.1174650418652.1174650432090" target="3855110916779798475" resolveInfo="classLikeMethod" />
                         </node>
                         <node concept="4ia1.1138056143562" id="3501922262355369816" role="vg0i.1197027756228.1197027833540" info="nn">
                           <reference role="4ia1.1138056143562.1138056516764" target="tpee.1068580123133" />
@@ -886,7 +945,7 @@
                           <reference role="4ia1.1140137987495.1140138128738" target="oubp.3751132065236767083" resolveInfo="DependentTypeInstance" />
                           <node concept="vg0i.1197027756228" id="3501922262355371604" role="4ia1.1140137987495.1140138123956" info="nn">
                             <node concept="swut.1174650418652" id="3501922262355371605" role="vg0i.1197027756228.1197027771414" info="nn">
-                              <reference role="swut.1174650418652.1174650432090" target="1901385213796743823" resolveInfo="classLikeMethod" />
+                              <reference role="swut.1174650418652.1174650432090" target="3855110916779798475" resolveInfo="classLikeMethod" />
                             </node>
                             <node concept="4ia1.1138056143562" id="3501922262355371606" role="vg0i.1197027756228.1197027833540" info="nn">
                               <reference role="4ia1.1138056143562.1138056516764" target="tpee.1068580123133" />
@@ -900,7 +959,7 @@
                       <node concept="vg0i.1197027756228" id="3501922262355372673" role="vg0i.1081773326031.1081773367579" info="nn">
                         <node concept="vg0i.1197027756228" id="3501922262355372674" role="vg0i.1197027756228.1197027771414" info="nn">
                           <node concept="swut.1174650418652" id="3501922262355372675" role="vg0i.1197027756228.1197027771414" info="nn">
-                            <reference role="swut.1174650418652.1174650432090" target="1901385213796743823" resolveInfo="classLikeMethod" />
+                            <reference role="swut.1174650418652.1174650432090" target="3855110916779798475" resolveInfo="classLikeMethod" />
                           </node>
                           <node concept="4ia1.1138056143562" id="3501922262355372676" role="vg0i.1197027756228.1197027833540" info="nn">
                             <reference role="4ia1.1138056143562.1138056516764" target="oubp.19209059688387895" />
@@ -927,7 +986,7 @@
                     <node concept="4ia1.1227264722563" id="3501922262355182059" role="vg0i.1081516740877.1081516765348" info="nn">
                       <node concept="vg0i.1197027756228" id="3501922262355182064" role="vg0i.1081773326031.1081773367580" info="nn">
                         <node concept="swut.1174650418652" id="3501922262355182065" role="vg0i.1197027756228.1197027771414" info="nn">
-                          <reference role="swut.1174650418652.1174650432090" target="1901385213796743823" resolveInfo="classLikeMethod" />
+                          <reference role="swut.1174650418652.1174650432090" target="3855110916779798475" resolveInfo="classLikeMethod" />
                         </node>
                         <node concept="4ia1.1138056143562" id="3501922262355223745" role="vg0i.1197027756228.1197027833540" info="nn">
                           <reference role="4ia1.1138056143562.1138056516764" target="tpee.1068580123133" />
@@ -936,7 +995,7 @@
                       <node concept="vg0i.1197027756228" id="3501922262355242818" role="vg0i.1081773326031.1081773367579" info="nn">
                         <node concept="vg0i.1197027756228" id="3501922262355182072" role="vg0i.1197027756228.1197027771414" info="nn">
                           <node concept="swut.1174650418652" id="3501922262355182073" role="vg0i.1197027756228.1197027771414" info="nn">
-                            <reference role="swut.1174650418652.1174650432090" target="1901385213796743823" resolveInfo="classLikeMethod" />
+                            <reference role="swut.1174650418652.1174650432090" target="3855110916779798475" resolveInfo="classLikeMethod" />
                           </node>
                           <node concept="4ia1.1138056143562" id="3501922262355239141" role="vg0i.1197027756228.1197027833540" info="nn">
                             <reference role="4ia1.1138056143562.1138056516764" target="oubp.19209059688387895" />
@@ -961,7 +1020,7 @@
             <node concept="vg0i.1197027756228" id="3501922262355368767" role="vg0i.1197027756228.1197027771414" info="nn">
               <node concept="vg0i.1197027756228" id="3501922262355368768" role="vg0i.1197027756228.1197027771414" info="nn">
                 <node concept="swut.1174650418652" id="3501922262355368769" role="vg0i.1197027756228.1197027771414" info="nn">
-                  <reference role="swut.1174650418652.1174650432090" target="1901385213796743823" resolveInfo="classLikeMethod" />
+                  <reference role="swut.1174650418652.1174650432090" target="3855110916779798475" resolveInfo="classLikeMethod" />
                 </node>
                 <node concept="4ia1.1138056143562" id="3501922262355368770" role="vg0i.1197027756228.1197027833540" info="nn">
                   <reference role="4ia1.1138056143562.1138056516764" target="oubp.19209059688387895" />
@@ -978,7 +1037,7 @@
           <node concept="vg0i.1068580123136" id="1901385213798187151" role="vg0i.1068580123159.1068580123161" info="sn">
             <node concept="swut.1175517767210" id="1901385213796809109" role="vg0i.1068580123136.1068581517665" info="nn">
               <node concept="swut.1174650418652" id="1901385213796809594" role="swut.1227096774658.1227096802790" info="nn">
-                <reference role="swut.1174650418652.1174650432090" target="1901385213796743823" resolveInfo="classLikeMethod" />
+                <reference role="swut.1174650418652.1174650432090" target="3855110916779798475" resolveInfo="classLikeMethod" />
               </node>
               <node concept="vg0i.1070475926800" id="6739138845600964252" role="swut.1175517767210.1175517851849" info="nn">
                 <property role="vg0i.1070475926800.1070475926801" value="Method signature is not the same as in descriptor" />
@@ -996,40 +1055,67 @@
           </node>
         </node>
       </node>
-      <node concept="swut.1174642788531" id="1901385213796743823" role="swut.1174648085619.1174648101952" info="ig">
+      <node concept="swut.1174642788531" id="3855110916779798475" role="swut.1174648085619.1174648101952" info="ig">
         <property role="asn4.1169194658468.1169194664001" value="classLikeMethod" />
         <reference role="swut.1174642788531.1174642800329" target="oubp.3751132065236767060" resolveInfo="ClassLikeMethod" />
       </node>
     </node>
-    <node concept="swut.1201607707634" id="3855110916777539764" info="ng">
+    <node concept="swut.1195214364922" id="3855110916779806178" info="ng">
       <property role="asn4.1133920641626.1193676396447" value="instances" />
-      <property role="asn4.1169194658468.1169194664001" value="DependentType_supertypeOfItsValue" />
-      <node concept="vg0i.1068580123136" id="3855110916777539766" role="swut.1175147569072.1175147624276" info="sn">
-        <node concept="swut.1174658326157" id="3855110916777542669" role="vg0i.1068580123136.1068581517665" info="nn">
-          <node concept="swut.1185788614172" id="3855110916777542685" role="swut.1174660718586.1174660783413" info="ng">
-            <node concept="vg0i.1197027756228" id="3855110916777542874" role="swut.1185788614172.1185788644032" info="nn">
-              <node concept="swut.1174650418652" id="3855110916777542683" role="vg0i.1197027756228.1197027771414" info="nn">
-                <reference role="swut.1174650418652.1174650432090" target="3855110916777539768" resolveInfo="dependentTypeInstance" />
+      <property role="asn4.1169194658468.1169194664001" value="check_ClassLikeProperty" />
+      <node concept="vg0i.1068580123136" id="3855110916779806179" role="swut.1195213580585.1195213635060" info="sn">
+        <node concept="vg0i.1068580123159" id="3855110916780272755" role="vg0i.1068580123136.1068581517665" info="nn">
+          <node concept="vg0i.1068580123136" id="3855110916780272758" role="vg0i.1068580123159.1068580123161" info="sn">
+            <node concept="swut.1175517767210" id="3855110916780273812" role="vg0i.1068580123136.1068581517665" info="nn">
+              <node concept="swut.1174650418652" id="3855110916780273854" role="swut.1227096774658.1227096802790" info="nn">
+                <reference role="swut.1174650418652.1174650432090" target="3855110916779806370" resolveInfo="classLikeProperty" />
               </node>
-              <node concept="4ia1.1179409122411" id="3855110916777544632" role="vg0i.1197027756228.1197027833540" info="nn">
-                <reference role="vg0i.1204053956946.1068499141037" target="9nqt.9097849371504546165" resolveInfo="getMyType" />
+              <node concept="vg0i.1070475926800" id="3855110916780273834" role="swut.1175517767210.1175517851849" info="nn">
+                <property role="vg0i.1070475926800.1070475926801" value="Property type is not the same as in descriptor" />
+              </node>
+              <node concept="swut.1210784285454" id="3855110916780273893" role="swut.1227096774658.1227096802791" info="ng">
+                <reference role="swut.1210784285454.1216388525179" target="759587583637484590" resolveInfo="fix_SignatureMismatch" />
+              </node>
+              <node concept="swut.1227096498176" id="3855110916780274253" role="swut.1227096774658.1227096836496" info="ng">
+                <reference role="swut.1227096498176.1227096521710" target="tpck.1169194664001" resolveInfo="name" />
               </node>
             </node>
           </node>
-          <node concept="swut.1185788614172" id="3855110916777544777" role="swut.1174660718586.1174660783414" info="ng">
-            <node concept="swut.1174650418652" id="3855110916777544775" role="swut.1185788614172.1185788644032" info="nn">
-              <reference role="swut.1174650418652.1174650432090" target="3855110916777540122" resolveInfo="type" />
+          <node concept="vg0i.1081516740877" id="3855110916780295511" role="vg0i.1068580123159.1068580123160" info="nn">
+            <node concept="4ia1.1227264722563" id="3855110916779806344" role="vg0i.1081516740877.1081516765348" info="nn">
+              <node concept="vg0i.1197027756228" id="3855110916779806345" role="vg0i.1081773326031.1081773367580" info="nn">
+                <node concept="swut.1174650418652" id="3855110916779806346" role="vg0i.1197027756228.1197027771414" info="nn">
+                  <reference role="swut.1174650418652.1174650432090" target="3855110916779806370" resolveInfo="classLikeProperty" />
+                </node>
+                <node concept="4ia1.1138056143562" id="3855110916779937765" role="vg0i.1197027756228.1197027833540" info="nn">
+                  <reference role="4ia1.1138056143562.1138056516764" target="tpee.5680397130376446158" />
+                </node>
+              </node>
+              <node concept="vg0i.1197027756228" id="3855110916779929403" role="vg0i.1081773326031.1081773367579" info="nn">
+                <node concept="vg0i.1197027756228" id="3855110916779806348" role="vg0i.1197027756228.1197027771414" info="nn">
+                  <node concept="vg0i.1197027756228" id="3855110916779806349" role="vg0i.1197027756228.1197027771414" info="nn">
+                    <node concept="swut.1174650418652" id="3855110916779806350" role="vg0i.1197027756228.1197027771414" info="nn">
+                      <reference role="swut.1174650418652.1174650432090" target="3855110916779806370" resolveInfo="classLikeProperty" />
+                    </node>
+                    <node concept="4ia1.1138056143562" id="3855110916779819533" role="vg0i.1197027756228.1197027833540" info="nn">
+                      <reference role="4ia1.1138056143562.1138056516764" target="oubp.8585153554445465961" />
+                    </node>
+                  </node>
+                  <node concept="4ia1.1138056143562" id="3855110916779925405" role="vg0i.1197027756228.1197027833540" info="nn">
+                    <reference role="4ia1.1138056143562.1138056516764" target="oubp.5155329496663029311" />
+                  </node>
+                </node>
+                <node concept="4ia1.1179409122411" id="3855110916779932979" role="vg0i.1197027756228.1197027833540" info="nn">
+                  <reference role="vg0i.1204053956946.1068499141037" target="tpcn.1213877229718" resolveInfo="toBaseLanguageType" />
+                </node>
+              </node>
             </node>
           </node>
         </node>
       </node>
-      <node concept="swut.1174642788531" id="3855110916777539768" role="swut.1201607707634.1201607798918" info="ig">
-        <property role="asn4.1169194658468.1169194664001" value="dependentTypeInstance" />
-        <reference role="swut.1174642788531.1174642800329" target="oubp.3751132065236767083" resolveInfo="DependentTypeInstance" />
-      </node>
-      <node concept="swut.1174642788531" id="3855110916777540122" role="swut.1174648085619.1174648101952" info="ig">
-        <property role="asn4.1169194658468.1169194664001" value="type" />
-        <reference role="swut.1174642788531.1174642800329" target="tpee.1068431790189" resolveInfo="Type" />
+      <node concept="swut.1174642788531" id="3855110916779806370" role="swut.1174648085619.1174648101952" info="ig">
+        <property role="asn4.1169194658468.1169194664001" value="classLikeProperty" />
+        <reference role="swut.1174642788531.1174642800329" target="oubp.6478870542308708689" resolveInfo="ClassLikeProperty" />
       </node>
     </node>
   </contents>
