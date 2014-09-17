@@ -37,6 +37,11 @@ public class SReferenceLinkAdapter extends SAbstractLinkAdapter implements SRefe
   }
 
   @Override
+  public SConcept getContainingConcept() {
+    return new SConceptAdapter(myRoleId.getConceptId());
+  }
+
+  @Override
   public boolean isReference() {
     return true;
   }
