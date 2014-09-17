@@ -15,9 +15,51 @@
  */
 package jetbrains.mps.smodel.adapter;
 
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 
 public class SContainmentLinkAdapterByName implements SContainmentLink {
-  public SContainmentLinkAdapterByName(String role) {
+  protected String conceptName;
+  protected String role;
+
+  public SContainmentLinkAdapter(String conceptName, String role) {
+    this.conceptName = conceptName;
+    this.role = role;
+  }
+
+  @Override
+  public boolean isUnordered() {
+    return false;
+  }
+
+  @Override
+  public String getRole() {
+    return null;
+  }
+
+  @Override
+  public SConcept getContainingConcept() {
+    return null;
+  }
+
+  @Override
+  public SAbstractConcept getTargetConcept() {
+    return null;
+  }
+
+  @Override
+  public boolean isReference() {
+    return false;
+  }
+
+  @Override
+  public boolean isOptional() {
+    return false;
+  }
+
+  @Override
+  public boolean isMultiple() {
+    return false;
   }
 }

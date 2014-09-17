@@ -19,6 +19,30 @@ package org.jetbrains.mps.openapi.language;
  * Containment links describe parent-child relationships.
  */
 public interface SContainmentLink extends SAbstractLink {
+  String getRoleName();
+
+  SConcept getContainingConcept();
+
+  /**
+   * The concept for the nodes that this link points to.
+   */
+  SAbstractConcept getTargetConcept();
+
+  /**
+   * True for references, false for containment relationships.
+   */
+  @Deprecated
+  boolean isReference();
+
+  /**
+   * This link may contain no elements.
+   */
+  boolean isOptional();
+
+  /**
+   * Instance nodes can contain more than one target element.
+   */
+  boolean isMultiple();
 
   /**
    * The order of elements contained by such links can be changed without affecting the language semantics.

@@ -15,9 +15,55 @@
  */
 package jetbrains.mps.smodel.adapter;
 
+import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import org.jetbrains.mps.openapi.language.SConcept;
+import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.language.SReferenceLink;
+import org.jetbrains.mps.openapi.language.SScope;
+import org.jetbrains.mps.openapi.model.SNode;
 
 public class SReferenceLinkAdapterByName implements SReferenceLink {
   public SReferenceLinkAdapterByName(String role) {
+  }
+
+  @Override
+  public SScope getScope(SNode referenceNode) {
+    return null;
+  }
+
+  @Override
+  public SScope getScope(SNode contextNode, @Nullable SContainmentLink link, int index) {
+    return null;
+  }
+
+  @Override
+  public String getRole() {
+    return null;
+  }
+
+  @Override
+  public SConcept getContainingConcept() {
+    return null;
+  }
+
+  @Override
+  public SAbstractConcept getTargetConcept() {
+    return null;
+  }
+
+  @Override
+  public boolean isReference() {
+    return false;
+  }
+
+  @Override
+  public boolean isOptional() {
+    return false;
+  }
+
+  @Override
+  public boolean isMultiple() {
+    return false;
   }
 }
