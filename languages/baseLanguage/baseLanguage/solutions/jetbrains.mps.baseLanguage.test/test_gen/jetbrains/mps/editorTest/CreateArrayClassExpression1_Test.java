@@ -23,8 +23,6 @@ public class CreateArrayClassExpression1_Test extends BaseTransformationTest {
     @Override
     public void testMethodImpl() throws Exception {
       initEditor("7992311602000233604", "7992311602000233607");
-      this.typeString("String[");
-      this.invokeAction("jetbrains.mps.ide.editor.actions.Backspace_Action");
       this.typeString(".class");
     }
   }

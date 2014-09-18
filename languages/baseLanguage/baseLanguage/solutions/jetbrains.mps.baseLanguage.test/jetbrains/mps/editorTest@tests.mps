@@ -35732,40 +35732,41 @@
     <property name="name" nameId="tpck.1169194664001" value="CreateArrayClassExpression1" />
     <property name="virtualPackage" nameId="tpck.1193676396447" value="baseLanguage" />
     <node role="code" roleId="tp5g.1229187755283" type="tpee.StatementList" typeId="tpee.1068580123136" id="7992311602000233602" nodeInfo="sn">
-      <node role="statement" roleId="tpee.1068581517665" type="tp5g.TypeKeyStatement" typeId="tp5g.1227182079811" id="7992311602000233603" nodeInfo="nn">
-        <property name="keys" nameId="tp5g.1227184461946" value="String[" />
-      </node>
-      <node role="statement" roleId="tpee.1068581517665" type="tp5g.InvokeActionStatement" typeId="tp5g.7011073693661765739" id="7992311602000234721" nodeInfo="nn">
-        <node role="actionReference" roleId="tp5g.1101347953350127927" type="tp5g.MPSActionReference" typeId="tp5g.4239542196496927193" id="7992311602000234728" nodeInfo="ng">
-          <link role="action" roleId="tp5g.4239542196496929559" targetNodeId="ekwn.8896169282214002721" resolveInfo="Backspace" />
-        </node>
-      </node>
       <node role="statement" roleId="tpee.1068581517665" type="tp5g.TypeKeyStatement" typeId="tp5g.1227182079811" id="7992311602000234984" nodeInfo="nn">
         <property name="keys" nameId="tp5g.1227184461946" value=".class" />
       </node>
     </node>
     <node role="nodeToEdit" roleId="tp5g.1229187676388" type="tpee.BlockStatement" typeId="tpee.1082485599095" id="7992311602000233604" nodeInfo="nn">
       <node role="statements" roleId="tpee.1082485599096" type="tpee.StatementList" typeId="tpee.1068580123136" id="7992311602000233605" nodeInfo="sn">
-        <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.AnonymousCellAnnotation" typeId="tp5g.1229194968594" id="7992311602000233606" nodeInfo="ng">
-          <property name="isLastPosition" nameId="tp5g.1229432188737" value="true" />
-          <property name="useLabelSelection" nameId="tp5g.1932269937152561478" value="true" />
-          <property name="selectionStart" nameId="tp5g.6268941039745498163" value="0" />
-          <property name="selectionEnd" nameId="tp5g.6268941039745498165" value="0" />
-          <property name="cellId" nameId="tp5g.1229194968595" value="Constant_u338ov_a0a" />
+        <node role="statement" roleId="tpee.1068581517665" type="tpee.LocalVariableDeclarationStatement" typeId="tpee.1068581242864" id="656510741969572554" nodeInfo="nn">
+          <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="656510741969572555" nodeInfo="nr">
+            <node role="type" roleId="tpee.5680397130376446158" type="tpee.ArrayType" typeId="tpee.1070534760951" id="656510741969572556" nodeInfo="in">
+              <node role="componentType" roleId="tpee.1070534760952" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="656510741969572557" nodeInfo="in">
+                <link role="classifier" roleId="tpee.1107535924139" targetNodeId="e2lc.~String" resolveInfo="String" />
+              </node>
+              <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.AnonymousCellAnnotation" typeId="tp5g.1229194968594" id="656510741969572576" nodeInfo="ng">
+                <property name="isLastPosition" nameId="tp5g.1229432188737" value="true" />
+                <property name="useLabelSelection" nameId="tp5g.1932269937152561478" value="true" />
+                <property name="selectionStart" nameId="tp5g.6268941039745498163" value="2" />
+                <property name="selectionEnd" nameId="tp5g.6268941039745498165" value="2" />
+                <property name="cellId" nameId="tp5g.1229194968595" value="Constant_5rfjfg_b0" />
+              </node>
+            </node>
+          </node>
         </node>
       </node>
     </node>
     <node role="result" roleId="tp5g.1229187707859" type="tpee.BlockStatement" typeId="tpee.1082485599095" id="7992311602000233607" nodeInfo="nn">
       <node role="statements" roleId="tpee.1082485599096" type="tpee.StatementList" typeId="tpee.1068580123136" id="7992311602000233608" nodeInfo="sn">
-        <node role="statement" roleId="tpee.1068581517665" type="tpee.LocalVariableDeclarationStatement" typeId="tpee.1068581242864" id="7992311602000234092" nodeInfo="nn">
-          <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="7992311602000234093" nodeInfo="nr">
-            <node role="type" roleId="tpee.5680397130376446158" type="tpee.ArrayClassExpression" typeId="tpee.1251851371723515367" id="7992311602000234112" nodeInfo="nn">
-              <node role="arrayType" roleId="tpee.1251851371723515368" type="tpee.ArrayType" typeId="tpee.1070534760951" id="7992311602000234113" nodeInfo="in">
-                <node role="componentType" roleId="tpee.1070534760952" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="7992311602000234114" nodeInfo="in">
+        <node role="statement" roleId="tpee.1068581517665" type="tpee.LocalVariableDeclarationStatement" typeId="tpee.1068581242864" id="656510741968548468" nodeInfo="nn">
+          <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="656510741968548469" nodeInfo="nr">
+            <node role="type" roleId="tpee.5680397130376446158" type="tpee.ArrayClassExpression" typeId="tpee.1251851371723515367" id="656510741968548488" nodeInfo="nn">
+              <node role="arrayType" roleId="tpee.1251851371723515368" type="tpee.ArrayType" typeId="tpee.1070534760951" id="656510741968548489" nodeInfo="in">
+                <node role="componentType" roleId="tpee.1070534760952" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="656510741968548490" nodeInfo="in">
                   <link role="classifier" roleId="tpee.1107535924139" targetNodeId="e2lc.~String" resolveInfo="String" />
                 </node>
               </node>
-              <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.AnonymousCellAnnotation" typeId="tp5g.1229194968594" id="7992311602000234166" nodeInfo="ng">
+              <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.AnonymousCellAnnotation" typeId="tp5g.1229194968594" id="656510741968548566" nodeInfo="ng">
                 <property name="isLastPosition" nameId="tp5g.1229432188737" value="true" />
                 <property name="useLabelSelection" nameId="tp5g.1932269937152561478" value="true" />
                 <property name="selectionStart" nameId="tp5g.6268941039745498163" value="5" />
