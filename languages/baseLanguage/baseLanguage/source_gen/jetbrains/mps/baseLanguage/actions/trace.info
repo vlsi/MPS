@@ -7187,13 +7187,15 @@
       <node id="8029744757020496283" at="59,54,60,93" concept="7" />
       <node id="2671731496587558724" at="61,182,62,186" concept="13" />
       <node id="8029744757020496299" at="62,186,63,81" concept="7" />
-      <node id="2671731496587458705" at="63,81,64,74" concept="7" />
+      <node id="2671731496587458705" at="63,81,64,110" concept="7" />
       <node id="8029744757020496305" at="65,13,66,18" concept="2" />
+      <node id="6693493688822979058" at="72,79,73,47" concept="14" />
       <node id="5948027493683148075" at="21,0,24,0" concept="12" trace="getApplicableConcept#()Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="8029744757020228986" at="27,0,30,0" concept="12" trace="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
       <node id="8029744757020229015" at="33,135,36,5" concept="11" />
       <node id="8029744757020496250" at="48,67,51,9" concept="9" />
       <node id="8029744757020496323" at="55,0,58,0" concept="12" trace="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+      <node id="6693493688822979058" at="72,0,75,0" concept="18" trace="as_nqjmzz_a0a0c0a0a0a01a1a5a1#(Ljava/lang/Object;Ljava/lang/Class;)null" />
       <node id="8029744757020228974" at="25,0,32,5" concept="11" />
       <node id="8029744757020496281" at="58,28,65,13" concept="11" />
       <node id="8029744757020496279" at="53,85,67,11" concept="11" />
@@ -7208,6 +7210,7 @@
       <scope id="8029744757020496251" at="49,292,50,73" />
       <scope id="8029744757020496324" at="55,45,56,83" />
       <scope id="8029744757020496282" at="59,54,60,93" />
+      <scope id="6693493688822979058" at="72,79,73,47" />
       <scope id="5948027493683148075" at="21,0,24,0" />
       <scope id="8029744757020228986" at="27,0,30,0">
         <var name="it" id="8029744757020228986" />
@@ -7218,8 +7221,12 @@
       <scope id="8029744757020496323" at="55,0,58,0">
         <var name="it" id="8029744757020496323" />
       </scope>
-      <scope id="8029744757020496298" at="61,182,64,74">
+      <scope id="8029744757020496298" at="61,182,64,110">
         <var name="reference" id="2671731496587558725" />
+      </scope>
+      <scope id="6693493688822979058" at="72,0,75,0">
+        <var name="o" id="6693493688822979058" />
+        <var name="type" id="6693493688822979058" />
       </scope>
       <scope id="8029744757020496280" at="58,28,66,18" />
       <scope id="8029744757020496278" at="53,85,67,11" />
@@ -7243,7 +7250,7 @@
       </scope>
       <unit id="8029744757020228986" at="26,146,30,5" name="jetbrains.mps.baseLanguage.actions.BL_CopyPasteHandlers_PastePostProcessor_1$1" />
       <unit id="8029744757020496323" at="54,239,58,11" name="jetbrains.mps.baseLanguage.actions.BL_CopyPasteHandlers_PastePostProcessor_1$2" />
-      <unit id="5948027493683148075" at="20,0,73,0" name="jetbrains.mps.baseLanguage.actions.BL_CopyPasteHandlers_PastePostProcessor_1" />
+      <unit id="5948027493683148075" at="20,0,76,0" name="jetbrains.mps.baseLanguage.actions.BL_CopyPasteHandlers_PastePostProcessor_1" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902bf(jetbrains.mps.baseLanguage.actions)/6163353915142220924">
