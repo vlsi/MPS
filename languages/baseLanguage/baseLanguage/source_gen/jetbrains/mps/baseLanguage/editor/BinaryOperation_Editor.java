@@ -17,7 +17,6 @@ import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.BasicCellContext;
 import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
-import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_ReplaceNode_CustomNodeConcept;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_Generic_Group;
 import java.util.List;
 import jetbrains.mps.openapi.editor.cells.SubstituteAction;
@@ -71,14 +70,48 @@ public class BinaryOperation_Editor extends DefaultNodeEditor {
     style.set(StyleAttributes.EDITABLE, true);
     editorCell.getStyle().putAll(style);
     BinaryOperation_Symbol_Actions.setCellActions(editorCell, node, editorContext);
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new BinaryOperation_Editor.ReplaceWith_BinaryOperation_cellMenu_tdrdn7_a0b0(), new BinaryOperation_Editor.BinaryOperation_generic_cellMenu_tdrdn7_b0b0()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new BinaryOperation_Editor.BinaryOperation_generic_cellMenu_tdrdn7_a0b0(), new BinaryOperation_Editor.BinaryOperation_generic_cellMenu_tdrdn7_b0b0()}));
     return editorCell;
   }
-  public static class ReplaceWith_BinaryOperation_cellMenu_tdrdn7_a0b0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
-    public ReplaceWith_BinaryOperation_cellMenu_tdrdn7_a0b0() {
+  public static class BinaryOperation_generic_cellMenu_tdrdn7_a0b0 extends AbstractCellMenuPart_Generic_Group {
+    public BinaryOperation_generic_cellMenu_tdrdn7_a0b0() {
     }
-    public String getReplacementConceptName() {
-      return "jetbrains.mps.baseLanguage.structure.BinaryOperation";
+    public List<?> createParameterObjects(SNode node, IOperationContext operationContext, EditorContext editorContext) {
+      // hack before actions are refactored 
+      List<SubstituteAction> actions = ModelActions.createChildNodeSubstituteActions(SNodeOperations.getParent(node), node, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.BinaryOperation"), new AbstractChildNodeSetter() {
+        @Override
+        protected SNode doExecute(SNode parentNode, SNode oldChild, SNode newChild, @Nullable EditorContext editorContext) {
+          SNode sourceNode = (SNode) oldChild;
+          SNode result = (SNode) newChild;
+          SNodeOperations.replaceWithAnother(sourceNode, result);
+          SLinkOperations.setTarget(result, "leftExpression", SLinkOperations.getTarget(sourceNode, "leftExpression", true), true);
+          SLinkOperations.setTarget(result, "rightExpression", SLinkOperations.getTarget(sourceNode, "rightExpression", true), true);
+          return result;
+        }
+      }, operationContext);
+      return actions;
+    }
+    protected void handleAction(Object parameterObject, SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
+      this.handleAction_impl((SubstituteAction) parameterObject, node, model, operationContext, editorContext);
+    }
+    public void handleAction_impl(SubstituteAction parameterObject, SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
+      SNode resultNode = parameterObject.substitute(editorContext, parameterObject.getMatchingText(null));
+      SelectionUtil.selectLabelCellAnSetCaret(editorContext, SNodeOperations.cast(resultNode, "jetbrains.mps.baseLanguage.structure.BinaryOperation"), "ALIAS_EDITOR_COMPONENT", -1);
+    }
+    public boolean isReferentPresentation() {
+      return false;
+    }
+    public String getMatchingText(Object parameterObject) {
+      return this.getMatchingText_internal((SubstituteAction) parameterObject);
+    }
+    public String getMatchingText_internal(SubstituteAction parameterObject) {
+      return parameterObject.getMatchingText(null);
+    }
+    public String getDescriptionText(Object parameterObject) {
+      return this.getDescriptionText_internal((SubstituteAction) parameterObject);
+    }
+    public String getDescriptionText_internal(SubstituteAction parameterObject) {
+      return parameterObject.getDescriptionText(null);
     }
   }
   public static class BinaryOperation_generic_cellMenu_tdrdn7_b0b0 extends AbstractCellMenuPart_Generic_Group {

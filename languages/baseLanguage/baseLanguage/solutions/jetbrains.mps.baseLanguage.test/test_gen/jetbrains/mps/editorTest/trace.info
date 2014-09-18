@@ -10283,6 +10283,103 @@
       <unit id="7915352553125356670" at="10,0,30,0" name="jetbrains.mps.editorTest.StaticMethod2_Test" />
     </file>
   </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/7992311601979743404">
+    <file name="BinaryExpressionSubstitutions1_Test.java">
+      <node id="7992311601979743404" at="15,70,16,107" concept="2" />
+      <node id="7992311601979743404" at="16,107,17,111" concept="2" />
+      <node id="7992311601979743404" at="24,51,25,63" concept="2" />
+      <node id="7992311601979800406" at="25,63,26,77" concept="2" />
+      <node id="7992311601979800915" at="26,77,27,27" concept="2" />
+      <node id="7992311601979801421" at="27,27,28,77" concept="2" />
+      <node id="7992311601979743404" at="12,0,14,0" concept="1" trace="BinaryExpressionSubstitutions1_Test#()V" />
+      <node id="7992311601979743404" at="21,0,23,0" concept="1" trace="TestBody#()V" />
+      <node id="7992311601979743404" at="14,0,19,0" concept="5" trace="test_BinaryExpressionSubstitutions1#()V" />
+      <node id="7992311601979743404" at="23,0,30,0" concept="5" trace="testMethodImpl#()V" />
+      <scope id="7992311601979743404" at="12,48,12,48" />
+      <scope id="7992311601979743404" at="21,23,21,23" />
+      <scope id="7992311601979743404" at="12,0,14,0" />
+      <scope id="7992311601979743404" at="15,70,17,111" />
+      <scope id="7992311601979743404" at="21,0,23,0" />
+      <scope id="7992311601979743404" at="24,51,28,77" />
+      <scope id="7992311601979743404" at="14,0,19,0" />
+      <scope id="7992311601979743404" at="23,0,30,0" />
+      <unit id="7992311601979743404" at="19,0,31,0" name="jetbrains.mps.editorTest.BinaryExpressionSubstitutions1_Test$TestBody" />
+      <unit id="7992311601979743404" at="10,0,32,0" name="jetbrains.mps.editorTest.BinaryExpressionSubstitutions1_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/7992311601979802417">
+    <file name="BinaryExpressionSubstitutions2_Test.java">
+      <node id="7992311601979802417" at="15,70,16,107" concept="2" />
+      <node id="7992311601979802417" at="16,107,17,111" concept="2" />
+      <node id="7992311601979802417" at="24,51,25,63" concept="2" />
+      <node id="7992311601979802433" at="25,63,26,77" concept="2" />
+      <node id="7992311601979802435" at="26,77,27,27" concept="2" />
+      <node id="7992311601979802436" at="27,27,28,76" concept="2" />
+      <node id="7992311601979808583" at="28,76,29,76" concept="2" />
+      <node id="7992311601979802417" at="12,0,14,0" concept="1" trace="BinaryExpressionSubstitutions2_Test#()V" />
+      <node id="7992311601979802417" at="21,0,23,0" concept="1" trace="TestBody#()V" />
+      <node id="7992311601979802417" at="14,0,19,0" concept="5" trace="test_BinaryExpressionSubstitutions2#()V" />
+      <node id="7992311601979802417" at="23,0,31,0" concept="5" trace="testMethodImpl#()V" />
+      <scope id="7992311601979802417" at="12,48,12,48" />
+      <scope id="7992311601979802417" at="21,23,21,23" />
+      <scope id="7992311601979802417" at="12,0,14,0" />
+      <scope id="7992311601979802417" at="15,70,17,111" />
+      <scope id="7992311601979802417" at="21,0,23,0" />
+      <scope id="7992311601979802417" at="14,0,19,0" />
+      <scope id="7992311601979802417" at="24,51,29,76" />
+      <scope id="7992311601979802417" at="23,0,31,0" />
+      <unit id="7992311601979802417" at="19,0,32,0" name="jetbrains.mps.editorTest.BinaryExpressionSubstitutions2_Test$TestBody" />
+      <unit id="7992311601979802417" at="10,0,33,0" name="jetbrains.mps.editorTest.BinaryExpressionSubstitutions2_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/7992311601979809295">
+    <file name="BinaryExpressionSubstitutions3_Test.java">
+      <node id="7992311601979809295" at="15,70,16,107" concept="2" />
+      <node id="7992311601979809295" at="16,107,17,111" concept="2" />
+      <node id="7992311601979809295" at="24,51,25,63" concept="2" />
+      <node id="7992311601979809311" at="25,63,26,77" concept="2" />
+      <node id="7992311601979809313" at="26,77,27,27" concept="2" />
+      <node id="7992311601979809314" at="27,27,28,77" concept="2" />
+      <node id="7992311601979809295" at="12,0,14,0" concept="1" trace="BinaryExpressionSubstitutions3_Test#()V" />
+      <node id="7992311601979809295" at="21,0,23,0" concept="1" trace="TestBody#()V" />
+      <node id="7992311601979809295" at="14,0,19,0" concept="5" trace="test_BinaryExpressionSubstitutions3#()V" />
+      <node id="7992311601979809295" at="23,0,30,0" concept="5" trace="testMethodImpl#()V" />
+      <scope id="7992311601979809295" at="12,48,12,48" />
+      <scope id="7992311601979809295" at="21,23,21,23" />
+      <scope id="7992311601979809295" at="12,0,14,0" />
+      <scope id="7992311601979809295" at="15,70,17,111" />
+      <scope id="7992311601979809295" at="21,0,23,0" />
+      <scope id="7992311601979809295" at="24,51,28,77" />
+      <scope id="7992311601979809295" at="14,0,19,0" />
+      <scope id="7992311601979809295" at="23,0,30,0" />
+      <unit id="7992311601979809295" at="19,0,31,0" name="jetbrains.mps.editorTest.BinaryExpressionSubstitutions3_Test$TestBody" />
+      <unit id="7992311601979809295" at="10,0,32,0" name="jetbrains.mps.editorTest.BinaryExpressionSubstitutions3_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/7992311601979828921">
+    <file name="BinaryExpressionSubstitutions4_Test.java">
+      <node id="7992311601979828921" at="15,70,16,107" concept="2" />
+      <node id="7992311601979828921" at="16,107,17,111" concept="2" />
+      <node id="7992311601979828921" at="24,51,25,63" concept="2" />
+      <node id="7992311601979828935" at="25,63,26,77" concept="2" />
+      <node id="7992311601979828937" at="26,77,27,27" concept="2" />
+      <node id="7992311601979828938" at="27,27,28,77" concept="2" />
+      <node id="7992311601979828921" at="12,0,14,0" concept="1" trace="BinaryExpressionSubstitutions4_Test#()V" />
+      <node id="7992311601979828921" at="21,0,23,0" concept="1" trace="TestBody#()V" />
+      <node id="7992311601979828921" at="14,0,19,0" concept="5" trace="test_BinaryExpressionSubstitutions4#()V" />
+      <node id="7992311601979828921" at="23,0,30,0" concept="5" trace="testMethodImpl#()V" />
+      <scope id="7992311601979828921" at="12,48,12,48" />
+      <scope id="7992311601979828921" at="21,23,21,23" />
+      <scope id="7992311601979828921" at="12,0,14,0" />
+      <scope id="7992311601979828921" at="15,70,17,111" />
+      <scope id="7992311601979828921" at="21,0,23,0" />
+      <scope id="7992311601979828921" at="24,51,28,77" />
+      <scope id="7992311601979828921" at="14,0,19,0" />
+      <scope id="7992311601979828921" at="23,0,30,0" />
+      <unit id="7992311601979828921" at="19,0,31,0" name="jetbrains.mps.editorTest.BinaryExpressionSubstitutions4_Test$TestBody" />
+      <unit id="7992311601979828921" at="10,0,32,0" name="jetbrains.mps.editorTest.BinaryExpressionSubstitutions4_Test" />
+    </file>
+  </root>
   <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/801169956439969290">
     <file name="MoveStatementFromCenter_Test.java">
       <node id="801169956439969290" at="15,63,16,107" concept="2" />
