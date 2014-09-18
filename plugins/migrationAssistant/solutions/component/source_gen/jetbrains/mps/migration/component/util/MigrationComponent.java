@@ -10,7 +10,9 @@ import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.lang.migration.runtime.base.MigrationDescriptor;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.project.Project;
+import jetbrains.mps.smodel.tempmodel.TempModuleOptions;
 import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.lang.migration.runtime.base.MigrationScript;
 import jetbrains.mps.project.AbstractModule;
@@ -34,11 +36,26 @@ import org.apache.log4j.LogManager;
 
 public class MigrationComponent extends AbstractProjectComponent implements MigrationManager, DataCollector {
   private Map<SModule, MigrationDescriptor> loadedDescriptors = MapSequence.fromMap(new HashMap<SModule, MigrationDescriptor>());
+  private Map<SModule, SModel> loadedDataModels = MapSequence.fromMap(new HashMap<SModule, SModel>());
   private Project mpsProject;
   private MigrationManager.MigrationState lastState;
+  private SModule dataModule;
+  private TempModuleOptions dataModuleOptions;
+
   public MigrationComponent(com.intellij.openapi.project.Project project, Project mpsProject) {
     super(project);
     this.mpsProject = mpsProject;
+  }
+
+  @Override
+  public void initComponent() {
+    dataModuleOptions = TempModuleOptions.forDefaultModule();
+    dataModule = dataModuleOptions.createModule();
+  }
+
+  @Override
+  public void disposeComponent() {
+    dataModuleOptions.disposeModule();
   }
 
   public MigrationDescriptor loadMigrationDescriptor(SModule module) {
@@ -79,7 +96,7 @@ public class MigrationComponent extends AbstractProjectComponent implements Migr
             LOG.warn("Could not load migration descriptor for language " + depModule + ".");
           }
         }
-        MigrationScript script = check_gd1mrb_a0e0a0a0a0l(md, current);
+        MigrationScript script = check_gd1mrb_a0e0a0a0a0t(md, current);
         if (script == null) {
           if (LOG.isEnabledFor(Level.WARN)) {
             LOG.warn("Could not load migration script for language " + depModule + ", version " + current + ".");
@@ -147,7 +164,7 @@ public class MigrationComponent extends AbstractProjectComponent implements Migr
     try {
       SNode data = script.execute(module, this);
       if (data != null) {
-        MigrationDataUtil.addData(module, script.getDescriptor(), data);
+        MigrationDataUtil.addData(module, dataModule, script.getDescriptor(), data);
       }
     } catch (Throwable e) {
       if (LOG.isEnabledFor(Level.ERROR)) {
@@ -221,7 +238,7 @@ public class MigrationComponent extends AbstractProjectComponent implements Migr
   }
 
   public Map<SModule, SNode> collectData(SModule myModule, final MigrationScriptReference scriptReference) {
-    MigrationScript script = check_gd1mrb_a0a0v(getMigrationDescriptor(scriptReference.getModuleReference().resolve(mpsProject.getRepository())), scriptReference, this);
+    MigrationScript script = check_gd1mrb_a0a0db(getMigrationDescriptor(scriptReference.getModuleReference().resolve(mpsProject.getRepository())), scriptReference, this);
     final Map<SModule, SNode> requiredData = MapSequence.fromMap(new HashMap<SModule, SNode>());
     SetSequence.fromSet(MigrationsUtil.getModuleDependencies(myModule)).visitAll(new IVisitor<SModule>() {
       public void visit(SModule it) {
@@ -234,13 +251,13 @@ public class MigrationComponent extends AbstractProjectComponent implements Migr
     return requiredData;
   }
   protected static Logger LOG = LogManager.getLogger(MigrationComponent.class);
-  private static MigrationScript check_gd1mrb_a0e0a0a0a0l(MigrationDescriptor checkedDotOperand, int current) {
+  private static MigrationScript check_gd1mrb_a0e0a0a0a0t(MigrationDescriptor checkedDotOperand, int current) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getScript(current);
     }
     return null;
   }
-  private static MigrationScript check_gd1mrb_a0a0v(MigrationDescriptor checkedDotOperand, MigrationScriptReference scriptReference, MigrationComponent checkedDotThisExpression) {
+  private static MigrationScript check_gd1mrb_a0a0db(MigrationDescriptor checkedDotOperand, MigrationScriptReference scriptReference, MigrationComponent checkedDotThisExpression) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getScript(scriptReference.getFromVersion());
     }
