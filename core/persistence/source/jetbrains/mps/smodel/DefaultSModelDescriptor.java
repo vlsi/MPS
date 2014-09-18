@@ -19,12 +19,12 @@ import jetbrains.mps.extapi.model.GeneratableSModel;
 import jetbrains.mps.extapi.model.SModelData;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.persistence.LazyLoadFacility;
+import jetbrains.mps.persistence.PersistenceVersionAware;
 import jetbrains.mps.refactoring.StructureModificationLog;
 import jetbrains.mps.smodel.DefaultSModel.InvalidDefaultSModel;
 import jetbrains.mps.smodel.descriptor.RefactorableSModelDescriptor;
 import jetbrains.mps.smodel.loading.ModelLoadResult;
 import jetbrains.mps.smodel.loading.ModelLoadingState;
-import jetbrains.mps.smodel.nodeidmap.RegularNodeIdMap;
 import jetbrains.mps.smodel.persistence.def.ModelReadException;
 import jetbrains.mps.smodel.persistence.def.RefactoringsPersistence;
 import org.apache.log4j.LogManager;
@@ -36,7 +36,8 @@ import java.util.Map;
 
 
 
-public class DefaultSModelDescriptor extends LazyEditableSModelBase implements GeneratableSModel, RefactorableSModelDescriptor {
+public class DefaultSModelDescriptor extends LazyEditableSModelBase implements GeneratableSModel, RefactorableSModelDescriptor, PersistenceVersionAware {
+  /*package*/ static final String MODEL_FOLDER_FOR_GENERATION = "useModelFolderForGeneration"; // FIXME package -> private once other uses gone
   private static final Logger LOG = Logger.wrap(LogManager.getLogger(DefaultSModelDescriptor.class));
   private final LazyLoadFacility myPersistence;
 
@@ -59,6 +60,8 @@ public class DefaultSModelDescriptor extends LazyEditableSModelBase implements G
       throw new IllegalArgumentException();
     }
     replaceModel((DefaultSModel) modelData, ModelLoadingState.FULLY_LOADED);
+    // DefaultSModel might come with own SModelHeader, ensure this descriptor references the right one
+    myHeader = ((DefaultSModel) modelData).getSModelHeader();
   }
 
   @Override
@@ -66,8 +69,7 @@ public class DefaultSModelDescriptor extends LazyEditableSModelBase implements G
     DataSource source = getSource();
     if (!source.isReadOnly() && source.getTimestamp() == -1) {
       // no file on disk
-      DefaultSModel model = new DefaultSModel(getReference(), new RegularNodeIdMap());
-      model.setPersistenceVersion(getPersistenceVersion());
+      DefaultSModel model = new DefaultSModel(getReference(), myHeader);
       return new ModelLoadResult(model, ModelLoadingState.FULLY_LOADED);
     }
 
@@ -106,10 +108,12 @@ public class DefaultSModelDescriptor extends LazyEditableSModelBase implements G
    * to keep persistence within SModel descriptor and hope for the future changes (deprecate and remove methods like getDataSource, getProblems)
    * @return actual persistence version number of loaded/created model, or -1 if persistence versioning is not supported
    */
+  @Override
   public int getPersistenceVersion() {
     return myHeader.getPersistenceVersion();
   }
 
+  @Override
   public void setPersistenceVersion(int persistenceVersion) {
     myHeader.setPersistenceVersion(persistenceVersion);
   }
@@ -153,7 +157,16 @@ public class DefaultSModelDescriptor extends LazyEditableSModelBase implements G
 
   @Override
   public boolean isGenerateIntoModelFolder() {
-    return Boolean.parseBoolean(getModelHeader().getOptionalProperty("useModelFolderForGeneration"));
+    return Boolean.parseBoolean(getModelHeader().getOptionalProperty(MODEL_FOLDER_FOR_GENERATION));
+  }
+
+  @Override
+  public void setGenerateIntoModelFolder(boolean value) {
+    if (value) {
+      getModelHeader().setOptionalProperty(MODEL_FOLDER_FOR_GENERATION, Boolean.toString(true));
+    } else {
+      getModelHeader().removeOptionalProperty(MODEL_FOLDER_FOR_GENERATION);
+    }
   }
 
   @Override

@@ -22,6 +22,7 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.smodel.DefaultSModel;
 import jetbrains.mps.smodel.DefaultSModelDescriptor;
+import jetbrains.mps.smodel.LazySModel;
 import jetbrains.mps.smodel.SModelHeader;
 import jetbrains.mps.smodel.loading.ModelLoadResult;
 import jetbrains.mps.smodel.loading.ModelLoadingState;
@@ -51,6 +52,17 @@ import java.util.Map;
 public class DefaultModelPersistence implements CoreComponent, ModelFactory {
   private static final Logger LOG = Logger.wrap(LogManager.getLogger(DefaultModelPersistence.class));
 
+  /**
+   * Boolean option for model loading, indicates loaded model doesn't care about implementation node.
+   * For the time being, implementation node is the one with appropriate ConceptKind (designated according to concept's implemented interfaces).
+   */
+  public static final String OPTION_STRIP_IMPLEMENTATION = "load-without-impl";
+
+  /**
+   * Boolean option for model loading, indicates loaded model cares about its interface aspects only.
+   */
+  public static final String OPTION_INTERFACE_ONLY = "load-interface-only";
+
   DefaultModelPersistence() {
   }
 
@@ -76,14 +88,25 @@ public class DefaultModelPersistence implements CoreComponent, ModelFactory {
     SModelHeader header;
     try {
       header = pf.readHeader();
+      assert header.getModelReference() != null : "wrong model: " + source.getLocation();
+
+      LOG.debug("Getting model " + header.getModelReference() + " from " + dataSource.getLocation());
+      // If there are any load options, process them and fill the model with desired model data, otherwise return a lightweight descriptor.
+      final DefaultSModelDescriptor rv = new DefaultSModelDescriptor(pf, header);
+      if (options.containsKey(OPTION_STRIP_IMPLEMENTATION) && Boolean.parseBoolean(options.get(OPTION_STRIP_IMPLEMENTATION))) {
+        // alternative to replace() method call (which is hacky) is to expose UpdateableModel field from LazyEditableSModelBase and use
+        // UpdateableModel#getModel(ModelLoadingState) instead to ensure model is loaded to desired state.
+        // However, not sure subsequent access to model won't trigger full load anyway, thus replace() which indicates supplied state is 'FULLY LOADED'
+        // might be the right (hacky, nonetheless) solution.
+        rv.replace(pf.readModel(header, ModelLoadingState.NO_IMPLEMENTATION).getModel());
+      } else if (options.containsKey(OPTION_INTERFACE_ONLY) && Boolean.parseBoolean(options.get(OPTION_INTERFACE_ONLY))) {
+        rv.replace(pf.readModel(header, ModelLoadingState.INTERFACE_LOADED).getModel());
+      }
+      return rv;
     } catch (ModelReadException ignored) {
       LOG.error("Can't read model: ", ignored);
       throw new IOException("Can't read model: ", ignored);
     }
-    assert header.getModelReference() != null : "wrong model: " + source.getLocation();
-
-    LOG.debug("Getting model " + header.getModelReference() + " from " + dataSource.getLocation());
-    return new DefaultSModelDescriptor(pf, header);
   }
 
   @NotNull

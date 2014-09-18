@@ -22,7 +22,7 @@ import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import java.io.File;
 import jetbrains.mps.vcs.util.MergeDriverBackupUtil;
 import java.io.IOException;
-import jetbrains.mps.smodel.DefaultSModelDescriptor;
+import jetbrains.mps.persistence.PersistenceVersionAware;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 
@@ -151,8 +151,8 @@ import org.apache.log4j.LogManager;
     return null;
   }
   private static int getPersistenceVersion(SModel model) {
-    if (model instanceof DefaultSModelDescriptor) {
-      return ((DefaultSModelDescriptor) model).getPersistenceVersion();
+    if (model instanceof PersistenceVersionAware) {
+      return ((PersistenceVersionAware) model).getPersistenceVersion();
     }
     return -1;
   }

@@ -18,9 +18,9 @@ package jetbrains.mps.smodel.persistence.def;
 import jetbrains.mps.extapi.model.GeneratableSModel;
 import jetbrains.mps.extapi.persistence.FileDataSource;
 import jetbrains.mps.generator.ModelDigestUtil;
+import jetbrains.mps.persistence.PersistenceVersionAware;
 import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.smodel.DefaultSModel;
-import jetbrains.mps.smodel.DefaultSModelDescriptor;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelHeader;
@@ -196,7 +196,10 @@ public class ModelPersistence {
       XMLSAXHandler<ModelLoadResult> handler = mp.getModelReaderHandler(state, header);
       if (handler != null) {
         parseAndHandleExceptions(source, handler, "model");
-        return handler.getResult();
+        final ModelLoadResult result = handler.getResult();
+        // in case persistence version could change during IModelPersistence activities, might need to update header:
+        // header.setPersistenceVersion(mp.getVersion());
+        return result;
       }
       // then try to use DOM reader
       IModelReader reader = mp.getModelReader();
@@ -271,11 +274,11 @@ public class ModelPersistence {
 
     // upgrade?
     int oldVersion = persistenceVersion;
-    if (model.getModelDescriptor() instanceof DefaultSModelDescriptor) {
-      DefaultSModelDescriptor defaultSModel = (DefaultSModelDescriptor) model.getModelDescriptor();
-      oldVersion = defaultSModel.getPersistenceVersion();
+    if (model.getModelDescriptor() instanceof PersistenceVersionAware) {
+      PersistenceVersionAware modelWithPersistenceVer = (PersistenceVersionAware) model.getModelDescriptor();
+      oldVersion = modelWithPersistenceVer.getPersistenceVersion();
       if (oldVersion != persistenceVersion) {
-        defaultSModel.setPersistenceVersion(persistenceVersion);
+        modelWithPersistenceVer.setPersistenceVersion(persistenceVersion);
       }
     }
 
@@ -297,9 +300,8 @@ public class ModelPersistence {
   @NotNull
   public static Document saveModel(@NotNull SModel sourceModel) {
     int persistenceVersion = -1;
-    if (sourceModel.getModelDescriptor() instanceof DefaultSModelDescriptor) {
-      DefaultSModelDescriptor defaultSModel = (DefaultSModelDescriptor) sourceModel.getModelDescriptor();
-      persistenceVersion = defaultSModel.getPersistenceVersion();
+    if (sourceModel instanceof DefaultSModel) {
+      persistenceVersion = ((DefaultSModel) sourceModel).getPersistenceVersion();
     }
     if (persistenceVersion == -1 || getModelPersistence(persistenceVersion) == null) {
       persistenceVersion = getCurrentPersistenceVersion();
@@ -317,7 +319,7 @@ public class ModelPersistence {
       throw new IllegalArgumentException(String.format("Unknown persistence version %d", persistenceVersion));
     }
     model.calculateImplicitImports();
-    return modelPersistence.getModelWriter().saveModel(model);
+    return modelPersistence.getModelWriter(model instanceof DefaultSModel ? ((DefaultSModel) model).getSModelHeader() : null).saveModel(model);
   }
   //----------------
 

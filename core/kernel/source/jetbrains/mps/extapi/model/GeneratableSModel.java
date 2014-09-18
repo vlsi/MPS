@@ -37,6 +37,12 @@ public interface GeneratableSModel extends SModel {
 
   boolean isGenerateIntoModelFolder();
 
+  /**
+   * PROVISIONAL API. Likely to cease once there's better mechanism to override output directory than #isGenerateIntoModelFolder
+   * Update the value of generateIntoModelFolder attribute
+   */
+  void setGenerateIntoModelFolder(boolean value);
+
   String getModelHash();
 
   /**

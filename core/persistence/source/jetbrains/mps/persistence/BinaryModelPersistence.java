@@ -110,7 +110,7 @@ public class BinaryModelPersistence implements CoreComponent, ModelFactory {
     if (!(dataSource instanceof StreamDataSource)) {
       throw new UnsupportedDataSourceException(dataSource);
     }
-    BinaryPersistence.writeModel(((SModelBase) model).getSModelInternal(), (StreamDataSource) dataSource);
+    BinaryPersistence.writeModel(((SModelBase) model).getSModel(), (StreamDataSource) dataSource);
   }
 
   @Override

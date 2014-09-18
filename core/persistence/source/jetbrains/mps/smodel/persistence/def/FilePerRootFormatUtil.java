@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2013 JetBrains s.r.o.
+ * Copyright 2003-2014 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,8 +16,8 @@
 package jetbrains.mps.smodel.persistence.def;
 
 import jetbrains.mps.persistence.FilePerRootDataSource;
+import jetbrains.mps.persistence.PersistenceVersionAware;
 import jetbrains.mps.smodel.DefaultSModel;
-import jetbrains.mps.smodel.DefaultSModelDescriptor;
 import jetbrains.mps.smodel.LazySModel;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelHeader;
@@ -150,18 +150,20 @@ public class FilePerRootFormatUtil {
     persistenceVersion = actualPersistenceVersion(persistenceVersion);
 
     // upgrade?
+    SModelHeader modelHeader = null;
     int oldVersion = persistenceVersion;
-    if (modelData.getModelDescriptor() instanceof DefaultSModelDescriptor) {
-      DefaultSModelDescriptor defaultSModel = (DefaultSModelDescriptor) modelData.getModelDescriptor();
-      oldVersion = defaultSModel.getPersistenceVersion();
+    if (modelData instanceof DefaultSModel) {
+      DefaultSModel dsm = (DefaultSModel) modelData;
+      modelHeader = dsm.getSModelHeader();
+      oldVersion = dsm.getPersistenceVersion();
       if (oldVersion != persistenceVersion) {
-        defaultSModel.setPersistenceVersion(persistenceVersion);
+        dsm.setPersistenceVersion(persistenceVersion);
       }
     }
 
     // save into JDOM
     modelData.calculateImplicitImports();
-    Map<String, Document> result = ModelPersistence.getModelPersistence(persistenceVersion).getModelWriter().saveModelAsMultiStream(modelData);
+    Map<String, Document> result = ModelPersistence.getModelPersistence(persistenceVersion).getModelWriter(modelHeader).saveModelAsMultiStream(modelData);
 
     // write to storage
     Set<String> toRemove = new HashSet<String>();

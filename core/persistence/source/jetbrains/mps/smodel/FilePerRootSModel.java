@@ -19,12 +19,12 @@ import jetbrains.mps.extapi.model.GeneratableSModel;
 import jetbrains.mps.extapi.model.SModelData;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.persistence.LazyLoadFacility;
+import jetbrains.mps.persistence.PersistenceVersionAware;
 import jetbrains.mps.refactoring.StructureModificationLog;
 import jetbrains.mps.smodel.DefaultSModel.InvalidDefaultSModel;
 import jetbrains.mps.smodel.descriptor.RefactorableSModelDescriptor;
 import jetbrains.mps.smodel.loading.ModelLoadResult;
 import jetbrains.mps.smodel.loading.ModelLoadingState;
-import jetbrains.mps.smodel.nodeidmap.RegularNodeIdMap;
 import jetbrains.mps.smodel.persistence.def.ModelReadException;
 import jetbrains.mps.smodel.persistence.def.RefactoringsPersistence;
 import org.apache.log4j.LogManager;
@@ -34,7 +34,7 @@ import org.jetbrains.mps.openapi.persistence.DataSource;
 import java.io.IOException;
 import java.util.Map;
 
-public class FilePerRootSModel extends LazyEditableSModelBase implements GeneratableSModel, RefactorableSModelDescriptor {
+public class FilePerRootSModel extends LazyEditableSModelBase implements GeneratableSModel, RefactorableSModelDescriptor, PersistenceVersionAware {
   private static final Logger LOG = Logger.wrap(LogManager.getLogger(FilePerRootSModel.class));
   private final LazyLoadFacility myPersistence;
 
@@ -64,7 +64,7 @@ public class FilePerRootSModel extends LazyEditableSModelBase implements Generat
     DataSource source = getSource();
     if (!source.isReadOnly() && source.getTimestamp() == -1) {
       // no file on disk
-      DefaultSModel model = new DefaultSModel(getReference(), new RegularNodeIdMap());
+      DefaultSModel model = new DefaultSModel(getReference(), myHeader);
       return new ModelLoadResult(model, ModelLoadingState.FULLY_LOADED);
     }
 
@@ -95,8 +95,14 @@ public class FilePerRootSModel extends LazyEditableSModelBase implements Generat
     return result;
   }
 
+  @Override
   public int getPersistenceVersion() {
     return getModelHeader().getPersistenceVersion();
+  }
+
+  @Override
+  public void setPersistenceVersion(int version) {
+    getModelHeader().setPersistenceVersion(version);
   }
 
   @Override
@@ -138,7 +144,16 @@ public class FilePerRootSModel extends LazyEditableSModelBase implements Generat
 
   @Override
   public boolean isGenerateIntoModelFolder() {
-    return Boolean.parseBoolean(getModelHeader().getOptionalProperty("useModelFolderForGeneration"));
+    return Boolean.parseBoolean(getModelHeader().getOptionalProperty(DefaultSModelDescriptor.MODEL_FOLDER_FOR_GENERATION));
+  }
+
+  @Override
+  public void setGenerateIntoModelFolder(boolean value) {
+    if (value) {
+      getModelHeader().setOptionalProperty(DefaultSModelDescriptor.MODEL_FOLDER_FOR_GENERATION, Boolean.toString(true));
+    } else {
+      getModelHeader().removeOptionalProperty(DefaultSModelDescriptor.MODEL_FOLDER_FOR_GENERATION);
+    }
   }
 
   @Override

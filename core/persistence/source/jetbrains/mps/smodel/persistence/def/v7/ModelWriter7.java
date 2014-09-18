@@ -33,7 +33,12 @@ import org.jetbrains.mps.openapi.module.SModuleReference;
 import java.util.Map;
 
 public class ModelWriter7 implements IModelWriter {
+  private final SModelHeader myModelHeader;
   protected WriteHelper myHelper;
+
+  public ModelWriter7(SModelHeader modelHeader) {
+    myModelHeader = modelHeader;
+  }
 
   protected int getModelPersistenceVersion() {
     return 7;
@@ -58,19 +63,18 @@ public class ModelWriter7 implements IModelWriter {
     if (version >= 0) {
       rootElement.setAttribute(SModelHeader.VERSION, Integer.toString(version));
     }
-    if (sourceModel instanceof DefaultSModel) {
-      SModelHeader header = ((DefaultSModel) sourceModel).getSModelHeader();
-      if (header.isDoNotGenerate()) {
-        rootElement.setAttribute(SModelHeader.DO_NOT_GENERATE, "true");
+    if (myModelHeader != null) {
+      if (myModelHeader.isDoNotGenerate()) {
+        rootElement.setAttribute(SModelHeader.DO_NOT_GENERATE, Boolean.TRUE.toString());
       }
 
-      for (Map.Entry<String, String> en : header.getOptionalProperties().entrySet()) {
+      for (Map.Entry<String, String> en : myModelHeader.getOptionalProperties().entrySet()) {
         rootElement.setAttribute(en.getKey(), StringUtil.escapeXml(en.getValue()));
       }
     }
 
     Element persistenceElement = new Element(ModelPersistence.PERSISTENCE);
-    persistenceElement.setAttribute(ModelPersistence.PERSISTENCE_VERSION, getModelPersistenceVersion() + "");
+    persistenceElement.setAttribute(ModelPersistence.PERSISTENCE_VERSION, Integer.toString(getModelPersistenceVersion()));
     rootElement.addContent(persistenceElement);
 
     // languages
@@ -99,18 +103,18 @@ public class ModelWriter7 implements IModelWriter {
       SModelReference modelRef = importElement.getModelReference();
       myHelper.addModelReference(modelRef);
       Element elem = new Element(ModelPersistence.IMPORT_ELEMENT);
-      elem.setAttribute(ModelPersistence.MODEL_IMPORT_INDEX, "" + myHelper.getImportIndex(modelRef));
+      elem.setAttribute(ModelPersistence.MODEL_IMPORT_INDEX, myHelper.getImportIndex(modelRef));
       elem.setAttribute(ModelPersistence.MODEL_UID, modelRef.toString());
-      elem.setAttribute(ModelPersistence.VERSION, "" + importElement.getUsedVersion());
+      elem.setAttribute(ModelPersistence.VERSION, Integer.toString(importElement.getUsedVersion()));
       rootElement.addContent(elem);
     }
     for (ImportElement importElement : sourceModel.getAdditionalModelVersions()) {
       SModelReference modelRef = importElement.getModelReference();
       myHelper.addModelReference(modelRef);
       Element elem = new Element(ModelPersistence.IMPORT_ELEMENT);
-      elem.setAttribute(ModelPersistence.MODEL_IMPORT_INDEX, "" + myHelper.getImportIndex(modelRef));
+      elem.setAttribute(ModelPersistence.MODEL_IMPORT_INDEX, myHelper.getImportIndex(modelRef));
       elem.setAttribute(ModelPersistence.MODEL_UID, modelRef.toString());
-      elem.setAttribute(ModelPersistence.VERSION, "" + importElement.getUsedVersion());
+      elem.setAttribute(ModelPersistence.VERSION, Integer.toString(importElement.getUsedVersion()));
       elem.setAttribute(ModelPersistence.IMPLICIT, "yes");
       rootElement.addContent(elem);
     }

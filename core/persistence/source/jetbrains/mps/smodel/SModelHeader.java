@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2014 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -29,7 +29,9 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * Essential meta information about persisted model (id, persistance version, etc).
+ * Essential meta information about persisted model (id, persistence version, associated properties, etc).
+ * Its intention is to keep data that might be helpful/essential prior to model loading.
+ *
  * Generally, use of header for a model persistence is optional, it comes handy
  * for partial model loading and is in use by most persistence implementations supplied by MPS.
  */
@@ -135,12 +137,6 @@ public class SModelHeader {
     SModelHeader header = new SModelHeader();
     header.setPersistenceVersion(persistenceVersion);
     return header;
-  }
-
-  public void updateDefaults(SModelHeader header) {
-    myVersion = header.getVersion();
-    doNotGenerate = header.isDoNotGenerate();
-    myOptionalProperties.putAll(header.getOptionalProperties());
   }
 
   // FIXME move save and load into respective class (binary persistance)

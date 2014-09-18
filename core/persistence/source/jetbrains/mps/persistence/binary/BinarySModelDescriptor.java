@@ -135,6 +135,11 @@ public class BinarySModelDescriptor extends LazyEditableSModelBase implements Ge
   }
 
   @Override
+  public void setGenerateIntoModelFolder(boolean value) {
+    // no-op
+  }
+
+  @Override
   public String getModelHash() {
     return myPersistence.getModelHash();
   }
