@@ -224,6 +224,15 @@ public class DefaultModelPersistence implements CoreComponent, ModelFactory {
     }
   }
 
+  /**
+   * hack, @see BinaryModelPersistence#createFromHeader for details
+   */
+  public static DefaultSModelDescriptor createFromHeader(@NotNull SModelHeader header, @NotNull StreamDataSource dataSource) {
+    final ModelFactory modelFactory = PersistenceFacade.getInstance().getModelFactory(MPSExtentions.MODEL);
+    assert modelFactory instanceof  DefaultModelPersistence;
+    return new DefaultSModelDescriptor(new PersistenceFacility((DefaultModelPersistence) modelFactory, dataSource), header.createCopy());
+  }
+
   private static class PersistenceFacility extends LazyLoadFacility {
     /*package*/ PersistenceFacility(DefaultModelPersistence modelFactory, StreamDataSource dataSource) {
       super(modelFactory, dataSource);

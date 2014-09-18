@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2012 JetBrains s.r.o.
+ * Copyright 2003-2014 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,8 +22,8 @@ import jetbrains.mps.idea.core.module.CachedModuleData;
 import jetbrains.mps.idea.core.module.CachedRepositoryData;
 import jetbrains.mps.persistence.DefaultModelRoot;
 import jetbrains.mps.persistence.binary.BinaryModelHeader;
-import jetbrains.mps.persistence.binary.BinarySModelDescriptor;
-import jetbrains.mps.smodel.DefaultSModelDescriptor;
+import jetbrains.mps.persistence.BinaryModelPersistence;
+import jetbrains.mps.persistence.DefaultModelPersistence;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.SModelHeader;
 import jetbrains.mps.util.FileUtil;
@@ -78,10 +78,10 @@ public class CachedDefaultModelRoot extends DefaultModelRoot {
       FileDataSource source = new FileDataSource(file, this);
       Object header = mdata.getHeader();
       if (header instanceof BinaryModelHeader) {
-        result.add(new BinarySModelDescriptor(source, ((BinaryModelHeader) header).createCopy()));
+        result.add(BinaryModelPersistence.createFromHeader(((BinaryModelHeader) header), source));
       } else if (header instanceof SModelHeader) {
         SModelHeader smheader = (SModelHeader) header;
-        result.add(new DefaultSModelDescriptor(source, smheader.getModelReference(), smheader));
+        result.add(DefaultModelPersistence.createFromHeader(smheader, source));
       } else {
         String fileName = file.getName();
         String extension = FileUtil.getExtension(fileName);

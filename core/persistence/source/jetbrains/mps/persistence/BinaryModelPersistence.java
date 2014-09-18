@@ -187,6 +187,21 @@ public class BinaryModelPersistence implements CoreComponent, ModelFactory {
     return result;
   }
 
+  /**
+   * This is provisional workaround to deal with performance tuning in jps/plugin (see CachedRepositoryData, CachedModelData)
+   * where header is serialized to get passed to another process, where model is instantiated without need to read model file.
+   *
+   * If there's real benefit in this optimization (commit comment suggests it's 0.5 second in process startup time, which doesn't look too much, imo)
+   * this serialization shall be addressed with an object supplied by descriptor itself, rather than by external means, so that full control over
+   * serialize/restore is inside implementation, and all the internal stuff (like model header) doesn't get exposed.
+   * FIXME revisit, reconsider approach
+   */
+  public static BinarySModelDescriptor createFromHeader(@NotNull BinaryModelHeader header, @NotNull StreamDataSource dataSource) {
+    final ModelFactory modelFactory = PersistenceFacade.getInstance().getModelFactory(MPSExtentions.MODEL_BINARY);
+    assert modelFactory instanceof BinaryModelPersistence;
+    return new BinarySModelDescriptor(new PersistenceFacility((BinaryModelPersistence) modelFactory, dataSource), header.createCopy());
+  }
+
   private static class PersistenceFacility extends LazyLoadFacility {
     /*package*/ PersistenceFacility(BinaryModelPersistence modelFactory, StreamDataSource dataSource) {
       super(modelFactory, dataSource);
