@@ -10380,6 +10380,184 @@
       <unit id="7992311601979828921" at="10,0,32,0" name="jetbrains.mps.editorTest.BinaryExpressionSubstitutions4_Test" />
     </file>
   </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/7992311602000218980">
+    <file name="CreateClassifierClassExpression1_Test.java">
+      <node id="7992311602000218980" at="15,72,16,107" concept="2" />
+      <node id="7992311602000218980" at="16,107,17,113" concept="2" />
+      <node id="7992311602000218980" at="24,51,25,63" concept="2" />
+      <node id="7992311602000218982" at="25,63,26,38" concept="2" />
+      <node id="7992311602000218980" at="12,0,14,0" concept="1" trace="CreateClassifierClassExpression1_Test#()V" />
+      <node id="7992311602000218980" at="21,0,23,0" concept="1" trace="TestBody#()V" />
+      <node id="7992311602000218980" at="14,0,19,0" concept="5" trace="test_CreateClassifierClassExpression1#()V" />
+      <node id="7992311602000218980" at="23,0,28,0" concept="5" trace="testMethodImpl#()V" />
+      <scope id="7992311602000218980" at="12,50,12,50" />
+      <scope id="7992311602000218980" at="21,23,21,23" />
+      <scope id="7992311602000218980" at="12,0,14,0" />
+      <scope id="7992311602000218980" at="15,72,17,113" />
+      <scope id="7992311602000218980" at="21,0,23,0" />
+      <scope id="7992311602000218980" at="24,51,26,38" />
+      <scope id="7992311602000218980" at="14,0,19,0" />
+      <scope id="7992311602000218980" at="23,0,28,0" />
+      <unit id="7992311602000218980" at="19,0,29,0" name="jetbrains.mps.editorTest.CreateClassifierClassExpression1_Test$TestBody" />
+      <unit id="7992311602000218980" at="10,0,30,0" name="jetbrains.mps.editorTest.CreateClassifierClassExpression1_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/7992311602000233601">
+    <file name="CreateArrayClassExpression1_Test.java">
+      <node id="7992311602000233601" at="15,67,16,107" concept="2" />
+      <node id="7992311602000233601" at="16,107,17,108" concept="2" />
+      <node id="7992311602000233601" at="24,51,25,63" concept="2" />
+      <node id="7992311602000233603" at="25,63,26,33" concept="2" />
+      <node id="7992311602000234721" at="26,33,27,77" concept="2" />
+      <node id="7992311602000234984" at="27,77,28,32" concept="2" />
+      <node id="7992311602000233601" at="12,0,14,0" concept="1" trace="CreateArrayClassExpression1_Test#()V" />
+      <node id="7992311602000233601" at="21,0,23,0" concept="1" trace="TestBody#()V" />
+      <node id="7992311602000233601" at="14,0,19,0" concept="5" trace="test_CreateArrayClassExpression1#()V" />
+      <node id="7992311602000233601" at="23,0,30,0" concept="5" trace="testMethodImpl#()V" />
+      <scope id="7992311602000233601" at="12,45,12,45" />
+      <scope id="7992311602000233601" at="21,23,21,23" />
+      <scope id="7992311602000233601" at="12,0,14,0" />
+      <scope id="7992311602000233601" at="15,67,17,108" />
+      <scope id="7992311602000233601" at="21,0,23,0" />
+      <scope id="7992311602000233601" at="24,51,28,32" />
+      <scope id="7992311602000233601" at="14,0,19,0" />
+      <scope id="7992311602000233601" at="23,0,30,0" />
+      <unit id="7992311602000233601" at="19,0,31,0" name="jetbrains.mps.editorTest.CreateArrayClassExpression1_Test$TestBody" />
+      <unit id="7992311602000233601" at="10,0,32,0" name="jetbrains.mps.editorTest.CreateArrayClassExpression1_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/7992311602000235059">
+    <file name="CreateClassifierClassExpression2_Test.java">
+      <node id="7992311602000235059" at="15,72,16,107" concept="2" />
+      <node id="7992311602000235059" at="16,107,17,113" concept="2" />
+      <node id="7992311602000235059" at="24,51,25,63" concept="2" />
+      <node id="7992311602000235061" at="25,63,26,38" concept="2" />
+      <node id="7992311602000235059" at="12,0,14,0" concept="1" trace="CreateClassifierClassExpression2_Test#()V" />
+      <node id="7992311602000235059" at="21,0,23,0" concept="1" trace="TestBody#()V" />
+      <node id="7992311602000235059" at="14,0,19,0" concept="5" trace="test_CreateClassifierClassExpression2#()V" />
+      <node id="7992311602000235059" at="23,0,28,0" concept="5" trace="testMethodImpl#()V" />
+      <scope id="7992311602000235059" at="12,50,12,50" />
+      <scope id="7992311602000235059" at="21,23,21,23" />
+      <scope id="7992311602000235059" at="12,0,14,0" />
+      <scope id="7992311602000235059" at="15,72,17,113" />
+      <scope id="7992311602000235059" at="21,0,23,0" />
+      <scope id="7992311602000235059" at="24,51,26,38" />
+      <scope id="7992311602000235059" at="14,0,19,0" />
+      <scope id="7992311602000235059" at="23,0,28,0" />
+      <unit id="7992311602000235059" at="19,0,29,0" name="jetbrains.mps.editorTest.CreateClassifierClassExpression2_Test$TestBody" />
+      <unit id="7992311602000235059" at="10,0,30,0" name="jetbrains.mps.editorTest.CreateClassifierClassExpression2_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/7992311602000235925">
+    <file name="CreateArrayClassExpression2_Test.java">
+      <node id="7992311602000235925" at="15,67,16,107" concept="2" />
+      <node id="7992311602000235925" at="16,107,17,108" concept="2" />
+      <node id="7992311602000235925" at="24,51,25,63" concept="2" />
+      <node id="7992311602000235927" at="25,63,26,40" concept="2" />
+      <node id="7992311602000235925" at="12,0,14,0" concept="1" trace="CreateArrayClassExpression2_Test#()V" />
+      <node id="7992311602000235925" at="21,0,23,0" concept="1" trace="TestBody#()V" />
+      <node id="7992311602000235925" at="14,0,19,0" concept="5" trace="test_CreateArrayClassExpression2#()V" />
+      <node id="7992311602000235925" at="23,0,28,0" concept="5" trace="testMethodImpl#()V" />
+      <scope id="7992311602000235925" at="12,45,12,45" />
+      <scope id="7992311602000235925" at="21,23,21,23" />
+      <scope id="7992311602000235925" at="12,0,14,0" />
+      <scope id="7992311602000235925" at="15,67,17,108" />
+      <scope id="7992311602000235925" at="21,0,23,0" />
+      <scope id="7992311602000235925" at="24,51,26,40" />
+      <scope id="7992311602000235925" at="14,0,19,0" />
+      <scope id="7992311602000235925" at="23,0,28,0" />
+      <unit id="7992311602000235925" at="19,0,29,0" name="jetbrains.mps.editorTest.CreateArrayClassExpression2_Test$TestBody" />
+      <unit id="7992311602000235925" at="10,0,30,0" name="jetbrains.mps.editorTest.CreateArrayClassExpression2_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/7992311602000236802">
+    <file name="DeleteClassifierClassExpression_Test.java">
+      <node id="7992311602000236802" at="15,71,16,107" concept="2" />
+      <node id="7992311602000236802" at="16,107,17,112" concept="2" />
+      <node id="7992311602000236802" at="24,51,25,63" concept="2" />
+      <node id="7992311602000237798" at="25,63,26,77" concept="2" />
+      <node id="7992311602000236802" at="12,0,14,0" concept="1" trace="DeleteClassifierClassExpression_Test#()V" />
+      <node id="7992311602000236802" at="21,0,23,0" concept="1" trace="TestBody#()V" />
+      <node id="7992311602000236802" at="14,0,19,0" concept="5" trace="test_DeleteClassifierClassExpression#()V" />
+      <node id="7992311602000236802" at="23,0,28,0" concept="5" trace="testMethodImpl#()V" />
+      <scope id="7992311602000236802" at="12,49,12,49" />
+      <scope id="7992311602000236802" at="21,23,21,23" />
+      <scope id="7992311602000236802" at="12,0,14,0" />
+      <scope id="7992311602000236802" at="15,71,17,112" />
+      <scope id="7992311602000236802" at="21,0,23,0" />
+      <scope id="7992311602000236802" at="24,51,26,77" />
+      <scope id="7992311602000236802" at="14,0,19,0" />
+      <scope id="7992311602000236802" at="23,0,28,0" />
+      <unit id="7992311602000236802" at="19,0,29,0" name="jetbrains.mps.editorTest.DeleteClassifierClassExpression_Test$TestBody" />
+      <unit id="7992311602000236802" at="10,0,30,0" name="jetbrains.mps.editorTest.DeleteClassifierClassExpression_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/7992311602000237809">
+    <file name="AlterClassifierClassExpression_Test.java">
+      <node id="7992311602000237809" at="15,70,16,107" concept="2" />
+      <node id="7992311602000237809" at="16,107,17,111" concept="2" />
+      <node id="7992311602000237809" at="24,51,25,63" concept="2" />
+      <node id="7992311602000238627" at="25,63,26,27" concept="2" />
+      <node id="7992311602000237809" at="12,0,14,0" concept="1" trace="AlterClassifierClassExpression_Test#()V" />
+      <node id="7992311602000237809" at="21,0,23,0" concept="1" trace="TestBody#()V" />
+      <node id="7992311602000237809" at="14,0,19,0" concept="5" trace="test_AlterClassifierClassExpression#()V" />
+      <node id="7992311602000237809" at="23,0,28,0" concept="5" trace="testMethodImpl#()V" />
+      <scope id="7992311602000237809" at="12,48,12,48" />
+      <scope id="7992311602000237809" at="21,23,21,23" />
+      <scope id="7992311602000237809" at="12,0,14,0" />
+      <scope id="7992311602000237809" at="15,70,17,111" />
+      <scope id="7992311602000237809" at="21,0,23,0" />
+      <scope id="7992311602000237809" at="24,51,26,27" />
+      <scope id="7992311602000237809" at="14,0,19,0" />
+      <scope id="7992311602000237809" at="23,0,28,0" />
+      <unit id="7992311602000237809" at="19,0,29,0" name="jetbrains.mps.editorTest.AlterClassifierClassExpression_Test$TestBody" />
+      <unit id="7992311602000237809" at="10,0,30,0" name="jetbrains.mps.editorTest.AlterClassifierClassExpression_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/7992311602000243311">
+    <file name="DeleteArrayClassExpression_Test.java">
+      <node id="7992311602000243311" at="15,66,16,107" concept="2" />
+      <node id="7992311602000243311" at="16,107,17,107" concept="2" />
+      <node id="7992311602000243311" at="24,51,25,63" concept="2" />
+      <node id="7992311602000243313" at="25,63,26,77" concept="2" />
+      <node id="7992311602000243311" at="12,0,14,0" concept="1" trace="DeleteArrayClassExpression_Test#()V" />
+      <node id="7992311602000243311" at="21,0,23,0" concept="1" trace="TestBody#()V" />
+      <node id="7992311602000243311" at="14,0,19,0" concept="5" trace="test_DeleteArrayClassExpression#()V" />
+      <node id="7992311602000243311" at="23,0,28,0" concept="5" trace="testMethodImpl#()V" />
+      <scope id="7992311602000243311" at="12,44,12,44" />
+      <scope id="7992311602000243311" at="21,23,21,23" />
+      <scope id="7992311602000243311" at="12,0,14,0" />
+      <scope id="7992311602000243311" at="15,66,17,107" />
+      <scope id="7992311602000243311" at="21,0,23,0" />
+      <scope id="7992311602000243311" at="24,51,26,77" />
+      <scope id="7992311602000243311" at="14,0,19,0" />
+      <scope id="7992311602000243311" at="23,0,28,0" />
+      <unit id="7992311602000243311" at="19,0,29,0" name="jetbrains.mps.editorTest.DeleteArrayClassExpression_Test$TestBody" />
+      <unit id="7992311602000243311" at="10,0,30,0" name="jetbrains.mps.editorTest.DeleteArrayClassExpression_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/7992311602000271873">
+    <file name="AlterArrayClassExpression_Test.java">
+      <node id="7992311602000271873" at="15,65,16,107" concept="2" />
+      <node id="7992311602000271873" at="16,107,17,106" concept="2" />
+      <node id="7992311602000271873" at="24,51,25,63" concept="2" />
+      <node id="7992311602000273138" at="25,63,26,77" concept="2" />
+      <node id="7992311602000271873" at="12,0,14,0" concept="1" trace="AlterArrayClassExpression_Test#()V" />
+      <node id="7992311602000271873" at="21,0,23,0" concept="1" trace="TestBody#()V" />
+      <node id="7992311602000271873" at="14,0,19,0" concept="5" trace="test_AlterArrayClassExpression#()V" />
+      <node id="7992311602000271873" at="23,0,28,0" concept="5" trace="testMethodImpl#()V" />
+      <scope id="7992311602000271873" at="12,43,12,43" />
+      <scope id="7992311602000271873" at="21,23,21,23" />
+      <scope id="7992311602000271873" at="12,0,14,0" />
+      <scope id="7992311602000271873" at="15,65,17,106" />
+      <scope id="7992311602000271873" at="21,0,23,0" />
+      <scope id="7992311602000271873" at="24,51,26,77" />
+      <scope id="7992311602000271873" at="14,0,19,0" />
+      <scope id="7992311602000271873" at="23,0,28,0" />
+      <unit id="7992311602000271873" at="19,0,29,0" name="jetbrains.mps.editorTest.AlterArrayClassExpression_Test$TestBody" />
+      <unit id="7992311602000271873" at="10,0,30,0" name="jetbrains.mps.editorTest.AlterArrayClassExpression_Test" />
+    </file>
+  </root>
   <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/801169956439969290">
     <file name="MoveStatementFromCenter_Test.java">
       <node id="801169956439969290" at="15,63,16,107" concept="2" />
