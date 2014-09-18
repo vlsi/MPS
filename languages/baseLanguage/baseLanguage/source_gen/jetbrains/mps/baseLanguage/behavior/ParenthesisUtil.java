@@ -330,7 +330,6 @@ public class ParenthesisUtil {
   private static void rebalanceIBinaryLikeAfterParenthing(SNode node, SNode rightTurn, SNode leftTurn, SNode parens, SNode rightAccumulator, SNode leftAccumulator) {
     SNode leftSide = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), node, "virtual_getSyntacticallyLeftSideExpression_1742226163722653708", new Object[]{});
     SNode rightSide = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), node, "virtual_getSyntacticallyRightSideExpression_1742226163722653714", new Object[]{});
-    System.out.println("AAAAAAAA");
     assert leftSide != null || rightSide != null;
     SNode head = (rightSide != null ? rightSide : leftSide);
     SNodeOperations.replaceWithAnother(node, head);

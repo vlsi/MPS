@@ -9058,7 +9058,6 @@
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Component" typeId="tpc2.1078939183254" id="2886182022232400114" nodeInfo="ng">
         <property name="attractsFocus" nameId="tpc2.1130859485024" value="0" />
         <link role="actionMap" roleId="tpc2.1139959269582" targetNodeId="1140722264121" resolveInfo="BinaryOperation_Symbol_Actions" />
-        <link role="keyMap" roleId="tpc2.1081339532145" targetNodeId="1158938292640" resolveInfo="CastExpression_KeyMap" />
         <link role="parentStyleClass" roleId="tpc2.1381004262292426837" targetNodeId="1215010940130" resolveInfo="Operator" />
         <link role="editorComponent" roleId="tpc2.1078939183255" targetNodeId="tpco.2900100530630621651" resolveInfo="alias" />
         <node role="menuDescriptor" roleId="tpc2.1164826688380" type="tpc2.CellMenuDescriptor" typeId="tpc2.1164824717996" id="2886182022232400115" nodeInfo="ng">
