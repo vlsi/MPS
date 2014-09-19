@@ -783,7 +783,7 @@
       <unit at="6,0,8,0" name="jetbrains.mps.baseLanguage.behavior.Tokens_BehaviorDescriptor" />
     </file>
     <file name="LocalMethodCall_BehaviorDescriptor.java">
-      <unit at="8,0,22,0" name="jetbrains.mps.baseLanguage.behavior.LocalMethodCall_BehaviorDescriptor" />
+      <unit at="8,0,25,0" name="jetbrains.mps.baseLanguage.behavior.LocalMethodCall_BehaviorDescriptor" />
     </file>
     <file name="ThisExpression_BehaviorDescriptor.java">
       <unit at="6,0,14,0" name="jetbrains.mps.baseLanguage.behavior.ThisExpression_BehaviorDescriptor" />
@@ -13590,24 +13590,63 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)/5452927990858825167">
     <file name="LocalMethodCall_Behavior.java">
-      <node id="5452927990858874692" at="11,102,12,16" concept="13" />
-      <node id="1262430001741647059" at="14,112,15,16" concept="13" />
-      <node id="5452927990858825167" at="9,0,11,0" concept="17" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <node id="5452927990858825167" at="11,0,14,0" concept="17" trace="virtual_useScopesForMethodDeclarationFixer_66132694723287898#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-      <node id="5452927990858825167" at="14,0,17,0" concept="17" trace="virtual_substituteInAmbigousPosition_1262430001741498020#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Z" />
-      <scope id="5452927990858825169" at="9,43,9,43" />
-      <scope id="5452927990858856700" at="11,102,12,16" />
-      <scope id="1262430001741647058" at="14,112,15,16" />
-      <scope id="5452927990858825167" at="9,0,11,0">
+      <node id="5452927990858874692" at="17,102,18,16" concept="13" />
+      <node id="1262430001741647059" at="20,112,21,16" concept="13" />
+      <node id="2384155571611501554" at="23,133,24,134" concept="12" />
+      <node id="2384155571611453811" at="26,39,27,95" concept="13" />
+      <node id="2384155571606446382" at="30,39,31,96" concept="13" />
+      <node id="2384155571611451170" at="33,8,34,0" concept="15" />
+      <node id="2384155571611453812" at="36,71,37,46" concept="13" />
+      <node id="2384155571606446383" at="39,72,40,46" concept="13" />
+      <node id="5452927990858825167" at="15,0,17,0" concept="17" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="5452927990858825167" at="17,0,20,0" concept="17" trace="virtual_useScopesForMethodDeclarationFixer_66132694723287898#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+      <node id="5452927990858825167" at="20,0,23,0" concept="17" trace="virtual_substituteInAmbigousPosition_1262430001741498020#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Z" />
+      <node id="2384155571611453809" at="26,0,29,0" concept="11" trace="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+      <node id="2384155571606446380" at="30,0,33,0" concept="11" trace="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+      <node id="2384155571611453812" at="36,0,39,0" concept="17" trace="eq_vn6vr7_a0a0a0a0a0a1a3#(Ljava/lang/Object;Ljava/lang/Object;)Z" />
+      <node id="2384155571606446383" at="39,0,42,0" concept="17" trace="eq_vn6vr7_a0a0a0a0a0a0b0d#(Ljava/lang/Object;Ljava/lang/Object;)Z" />
+      <node id="2384155571611593901" at="24,134,33,8" concept="13" />
+      <node id="5452927990858825167" at="23,0,36,0" concept="17" trace="virtual_getAvailableMethodDeclarations_5776618742611315379#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;)Ljava/lang/Iterable;" />
+      <scope id="5452927990858825169" at="15,43,15,43" />
+      <scope id="5452927990858856700" at="17,102,18,16" />
+      <scope id="1262430001741647058" at="20,112,21,16" />
+      <scope id="2384155571611453810" at="26,39,27,95" />
+      <scope id="2384155571606446381" at="30,39,31,96" />
+      <scope id="2384155571611453812" at="36,71,37,46" />
+      <scope id="2384155571606446383" at="39,72,40,46" />
+      <scope id="5452927990858825167" at="15,0,17,0">
         <var name="thisNode" id="5452927990858825167" />
       </scope>
-      <scope id="5452927990858825167" at="11,0,14,0">
+      <scope id="5452927990858825167" at="17,0,20,0">
         <var name="thisNode" id="5452927990858825167" />
       </scope>
-      <scope id="5452927990858825167" at="14,0,17,0">
+      <scope id="5452927990858825167" at="20,0,23,0">
         <var name="thisConcept" id="5452927990858825167" />
       </scope>
-      <unit id="5452927990858825167" at="8,0,18,0" name="jetbrains.mps.baseLanguage.behavior.LocalMethodCall_Behavior" />
+      <scope id="2384155571611453809" at="26,0,29,0">
+        <var name="it" id="2384155571611453809" />
+      </scope>
+      <scope id="2384155571606446380" at="30,0,33,0">
+        <var name="it" id="2384155571606446380" />
+      </scope>
+      <scope id="2384155571611453812" at="36,0,39,0">
+        <var name="a" id="2384155571611453812" />
+        <var name="b" id="2384155571611453812" />
+      </scope>
+      <scope id="2384155571606446383" at="39,0,42,0">
+        <var name="a" id="2384155571606446383" />
+        <var name="b" id="2384155571606446383" />
+      </scope>
+      <scope id="2384155571606421158" at="23,133,34,0">
+        <var name="wrappingClassifier" id="2384155571611501555" />
+      </scope>
+      <scope id="5452927990858825167" at="23,0,36,0">
+        <var name="methodName" id="2384155571606421159" />
+        <var name="thisNode" id="5452927990858825167" />
+      </scope>
+      <unit id="2384155571611453809" at="25,103,29,5" name="jetbrains.mps.baseLanguage.behavior.LocalMethodCall_Behavior$1" />
+      <unit id="2384155571606446380" at="29,239,33,5" name="jetbrains.mps.baseLanguage.behavior.LocalMethodCall_Behavior$2" />
+      <unit id="5452927990858825167" at="14,0,43,0" name="jetbrains.mps.baseLanguage.behavior.LocalMethodCall_Behavior" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)/5862977038373290892">
