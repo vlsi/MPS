@@ -19,11 +19,14 @@
      To pass IDEA locations to the script run it with the following Java system properties:
 
         ant -Dhome.idea_ce=/opt/IDEA12 -Dhome.idea_ce.plugins=/opt/plugins/IDEA12 <task>
+
+
+     To run tests locally, it's sufficient to set home.idea_ce and home.jdk:
+        ant -Dhome.idea_ce=/IDEA13/ -Dhome.jdk=/Library/Java/Home/ -f IdeaPlugin/build.xml clean zip runTests
   -->
 
 
-  <dirname property="base_dir" file="${ant.file.IDEA-plugin-compile}/.."/>
-
+  <property name="base_dir" value="${basedir}/.."/>
   <property name="build.home" value="${base_dir}/IdeaPlugin/build"/>
   <property name="plugins.sandbox.dir" value="${build.home}/plugins-sandbox"/>
 

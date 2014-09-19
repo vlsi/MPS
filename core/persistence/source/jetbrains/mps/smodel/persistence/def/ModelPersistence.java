@@ -404,7 +404,7 @@ public class ModelPersistence {
     } catch (BreakParseSAXException e) {
       /* used to break SAX parsing flow */
     } catch (ParserConfigurationException e) {
-      LOG.error(null, e);
+      LOG.error(e.toString(), e);
       throw new ModelReadException("Couldn't read " + what + ": " + e.getMessage(), e);
     } catch (SAXException e) {
       throw new ModelReadException("Couldn't read " + what + ": " + e.getMessage(), e);

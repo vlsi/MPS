@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2014 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,6 +21,7 @@ import jetbrains.mps.refactoring.StructureModificationLog;
 import jetbrains.mps.smodel.persistence.def.refactoring.HistoryReaderHandler;
 import jetbrains.mps.smodel.persistence.def.refactoring.HistoryWriter;
 import jetbrains.mps.util.FileUtil;
+import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.util.JDOMUtil;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
@@ -101,6 +102,9 @@ public class RefactoringsPersistence {
   public static StructureModificationLog load(MultiStreamDataSource dataSource) {
     InputStream in = null;
     try {
+      if (!IterableUtil.asSet(dataSource.getAvailableStreams()).contains(MPSExtentions.DOT_REFACTORINGS)) {
+        return null;
+      }
       HistoryReaderHandler handler = new HistoryReaderHandler();
       in = dataSource.openInputStream(MPSExtentions.DOT_REFACTORINGS);
       InputSource source = new InputSource(new InputStreamReader(in, FileUtil.DEFAULT_CHARSET));
@@ -109,11 +113,11 @@ public class RefactoringsPersistence {
     } catch (SAXParseException e) {
       LOG.warn(dataSource.getLocation() + "/" + MPSExtentions.DOT_REFACTORINGS + " line " + e.getLineNumber());
     } catch (IOException e) {
-      LOG.error(null, e);
+      LOG.error(e.toString(), e);
     } catch (SAXException e) {
-      LOG.error(null, e);
+      LOG.error(e.toString(), e);
     } catch (ParserConfigurationException e) {
-      LOG.error(null, e);
+      LOG.error(e.toString(), e);
     } finally {
       FileUtil.closeFileSafe(in);
     }
@@ -133,11 +137,11 @@ public class RefactoringsPersistence {
     } catch (SAXParseException e) {
       LOG.warn(refactoringsFile.getPath() + " line " + e.getLineNumber());
     } catch (IOException e) {
-      LOG.error(null, e);
+      LOG.error(e.toString(), e);
     } catch (SAXException e) {
-      LOG.error(null, e);
+      LOG.error(e.toString(), e);
     } catch (ParserConfigurationException e) {
-      LOG.error(null, e);
+      LOG.error(e.toString(), e);
     } finally {
       FileUtil.closeFileSafe(in);
     }
