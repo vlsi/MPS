@@ -119,6 +119,7 @@
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.UnsupportedOperationException" />
+    <classNode dependClassName="jetbrains.mps.smodel.DefaultSModel" />
     <classNode dependClassName="jetbrains.mps.smodel.SModel" />
     <classNode dependClassName="jetbrains.mps.smodel.loading.ModelLoadingState" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModelReference" />

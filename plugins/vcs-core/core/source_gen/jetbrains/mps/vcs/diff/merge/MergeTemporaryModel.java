@@ -10,11 +10,11 @@ import org.jetbrains.mps.openapi.persistence.NullDataSource;
 import jetbrains.mps.smodel.loading.ModelLoadingState;
 import java.io.IOException;
 import org.jetbrains.mps.openapi.persistence.ModelSaveException;
+import jetbrains.mps.smodel.DefaultSModel;
 
 public class MergeTemporaryModel extends EditableSModelBase implements PersistenceVersionAware {
   protected volatile SModel mySModel;
   private boolean myReadOnly;
-  private int myPersistenceVersion;
   public MergeTemporaryModel(SModelReference modelRef, boolean readonly) {
     super(modelRef, new NullDataSource());
     myReadOnly = readonly;
@@ -67,9 +67,14 @@ public class MergeTemporaryModel extends EditableSModelBase implements Persisten
   }
 
   public void setPersistenceVersion(int version) {
-    myPersistenceVersion = version;
+    if (mySModel instanceof DefaultSModel) {
+      ((DefaultSModel) mySModel).getSModelHeader().setPersistenceVersion(version);
+    }
   }
   public int getPersistenceVersion() {
-    return myPersistenceVersion;
+    if (mySModel instanceof DefaultSModel) {
+      return ((DefaultSModel) mySModel).getSModelHeader().getPersistenceVersion();
+    }
+    return -1;
   }
 }
