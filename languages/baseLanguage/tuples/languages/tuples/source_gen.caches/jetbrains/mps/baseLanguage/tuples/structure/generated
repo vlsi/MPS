@@ -1,3 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="36wa9tzccnzmcldgedpfkm8sz3x5by4" />
+<dependencies version="2" modelHash="36wa9tzccnzmcldgedpfkm8sz3x5by4">
+  <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
+  <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="-2hubvwh7bwismm0eld02cqmdefvj5by" />
+  <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" hash="d25k1i6iphwmq70p8ukgedswm4k3mjl" />
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-7vgk3jafz630zooccect8piiihx2bnu" />
+  <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" hash="-2sqpydigz7vryaerubh22j78l4l08jz" />
+  <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="d987foka3qddszg3k3yjss0jaslj9i" />
+  <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="8cdjk2e5d2y2u9lult1ptgxxrttxv07" />
+  <common hash="-bhb8yny8b6iabkk3fzfa9ughd523b3w" dependsOnNodes="true">
+    <dep root="1238852151516" />
+    <dep root="1238853782547" />
+    <dep root="1238857743184" />
+    <dep root="1239360506533" />
+    <dep root="1239462176079" />
+    <dep root="1239531918181" />
+    <dep root="1239559992092" />
+    <dep root="1239560581441" />
+    <dep root="1239576519914" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
+    <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
+    <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
+    <file name="StructureAspectDescriptor.java" />
+  </common>
+  <source id="1238852151516" name="IndexedTupleType" hash="-88s59o1m7q39taw3mnd4ikcqs62jqax" />
+  <source id="1238853782547" name="IndexedTupleLiteral" hash="-bz0ctpz7c29gcw13dioe97eu8z1piwp" />
+  <source id="1238857743184" name="IndexedTupleMemberAccessExpression" hash="-94j3s3yy6iotw3opu8w2x7847rcqea5" />
+  <source id="1239360506533" name="NamedTupleDeclaration" hash="-e3lbgj6btpiwvodg909jnw8tut6sxyr" />
+  <source id="1239462176079" name="NamedTupleComponentDeclaration" hash="-1cswzeqacjwq42813kj4kfykfwj035g" />
+  <source id="1239531918181" name="NamedTupleType" hash="-cs2scst2dss2aviw1ygaun3nkey9xu5" />
+  <source id="1239559992092" name="NamedTupleLiteral" hash="-ds3jzm9hecxf6t6sydvo94efb9hbvje" />
+  <source id="1239560581441" name="NamedTupleComponentReference" hash="-17rfk8pvau56ju59lao898gaw7pygxc" />
+  <source id="1239576519914" name="NamedTupleComponentAccessOperation" hash="-eab895plyfinmybszd21wo3kuzjrrzf" />
+</dependencies>
 
