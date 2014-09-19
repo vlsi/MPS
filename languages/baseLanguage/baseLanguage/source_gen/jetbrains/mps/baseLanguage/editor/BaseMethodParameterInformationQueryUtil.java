@@ -4,12 +4,12 @@ package jetbrains.mps.baseLanguage.editor;
 
 import java.util.List;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import java.util.ArrayList;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.editor.runtime.style.StyledTextPrinter;
 
@@ -17,11 +17,16 @@ public class BaseMethodParameterInformationQueryUtil {
   public BaseMethodParameterInformationQueryUtil() {
   }
   public static List<SNode> getMethodsToShow(SNode methodCall) {
-    SNode method = SLinkOperations.getTarget(methodCall, "baseMethodDeclaration", false);
     List<SNode> methodsToShow = new ArrayList<SNode>();
-    final Iterable<SNode> members = BehaviorReflection.invokeVirtual((Class<Iterable<SNode>>) ((Class) Object.class), methodCall, "virtual_getAvailableMethodDeclarations_5776618742611315379", new Object[]{SPropertyOperations.getString(method, "name")});
+    SNode method = SLinkOperations.getTarget(methodCall, "baseMethodDeclaration", false);
+    SNode targetContainer = SNodeOperations.cast(SNodeOperations.getParent(method), "jetbrains.mps.baseLanguage.structure.IMemberContainer");
+    Iterable<SNode> members = BehaviorReflection.invokeVirtual((Class<Iterable<SNode>>) ((Class) Object.class), methodCall, "virtual_getAvailableMethodDeclarations_5776618742611315379", new Object[]{SPropertyOperations.getString(method, "name")});
+    if (Sequence.fromIterable(members).isEmpty()) {
+      members = BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), targetContainer, "virtual_getMembers_1213877531970", new Object[]{});
+    }
+
     for (SNode member : Sequence.fromIterable(members)) {
-      if (SNodeOperations.isInstanceOf(member, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration")) {
+      if (SNodeOperations.isInstanceOf(member, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration") && eq_bha4h6_a0a0a6a1(SPropertyOperations.getString(SNodeOperations.cast(member, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"), "name"), SPropertyOperations.getString(method, "name"))) {
         ListSequence.fromList(methodsToShow).addElement(SNodeOperations.cast(member, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"));
       }
     }
@@ -74,5 +79,8 @@ public class BaseMethodParameterInformationQueryUtil {
       styledText.setBold(false);
     }
     styledText.append(")");
+  }
+  private static boolean eq_bha4h6_a0a0a6a1(Object a, Object b) {
+    return (a != null ? a.equals(b) : a == b);
   }
 }
