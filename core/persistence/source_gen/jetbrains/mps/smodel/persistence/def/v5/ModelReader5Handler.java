@@ -144,9 +144,7 @@ public class ModelReader5Handler extends XMLSAXHandler<ModelLoadResult> {
       fieldversionsInfo = new SModelVersionsInfo();
       fieldreferenceDescriptors = new ArrayList<IReferencePersister>();
       fieldvisibleModelElements = new SAXVisibleModelElements();
-      fieldmodel = new DefaultSModel(PersistenceFacade.getInstance().createModelReference(attrs.getValue("modelUID")));
-      fieldmodel.setPersistenceVersion(5);
-      fieldmodel.getSModelHeader().updateDefaults(fieldheader);
+      fieldmodel = new DefaultSModel(PersistenceFacade.getInstance().createModelReference(attrs.getValue("modelUID")), fieldheader);
       return new ModelLoadResult(fieldmodel, ModelLoadingState.FULLY_LOADED);
     }
     @Override

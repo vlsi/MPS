@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.persistence.binary;
 
+import jetbrains.mps.smodel.SModelHeader;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.util.io.ModelInputStream;
 import jetbrains.mps.util.io.ModelOutputStream;
@@ -24,40 +25,17 @@ import java.io.IOException;
 /**
  * evgeny, 11/21/12
  */
-public class BinaryModelHeader {
-  private final SModelReference reference;
-  private int version = -1;
-  private boolean doNotGenerate = false;
+public class BinaryModelHeader extends SModelHeader {
 
   public BinaryModelHeader(SModelReference ref) {
-    this.reference = ref;
-  }
-
-  public SModelReference getReference() {
-    return reference;
-  }
-
-  public int getVersion() {
-    return version;
-  }
-
-  public void setVersion(int version) {
-    this.version = version;
-  }
-
-  public boolean isDoNotGenerate() {
-    return doNotGenerate;
-  }
-
-  public void setDoNotGenerate(boolean doNotGenerate) {
-    this.doNotGenerate = doNotGenerate;
+    setModelReference(ref);
   }
 
   public void save(ModelOutputStream stream) throws IOException {
     stream.writeByte(79);
-    stream.writeModelReference(reference);
-    stream.writeInt(version);
-    stream.writeBoolean(doNotGenerate);
+    stream.writeModelReference(getModelReference());
+    stream.writeInt(getVersion());
+    stream.writeBoolean(isDoNotGenerate());
   }
 
   public static BinaryModelHeader load(ModelInputStream stream) throws IOException {
@@ -70,9 +48,9 @@ public class BinaryModelHeader {
   }
 
   public BinaryModelHeader createCopy() {
-    BinaryModelHeader copy = new BinaryModelHeader(reference);
-    copy.version = version;
-    copy.doNotGenerate = doNotGenerate;
+    BinaryModelHeader copy = new BinaryModelHeader(getModelReference());
+    copy.setVersion(getVersion());
+    copy.setDoNotGenerate(isDoNotGenerate());
     return copy;
   }
 }

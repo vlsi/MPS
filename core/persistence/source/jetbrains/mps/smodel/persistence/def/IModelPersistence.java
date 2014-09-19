@@ -20,6 +20,7 @@ import jetbrains.mps.smodel.loading.ModelLoadResult;
 import jetbrains.mps.smodel.loading.ModelLoadingState;
 import jetbrains.mps.smodel.persistence.lines.LineContent;
 import jetbrains.mps.util.xml.XMLSAXHandler;
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.util.Consumer;
 
 import java.util.List;
@@ -28,7 +29,17 @@ public interface IModelPersistence {
 
   int getVersion();
 
+  /**
+   * @deprecated equivalent to {@link #getModelWriter(jetbrains.mps.smodel.SModelHeader) getModelWriter(null)}
+   * @return handler to serialize model date into XML DOM
+   */
   IModelWriter getModelWriter();
+
+  /**
+   * @param header optional parameter if there's auxiliary data to persist along with model
+   * @return handler to serialize model date into XML DOM
+   */
+  IModelWriter getModelWriter(@Nullable SModelHeader header);
 
   IModelReader getModelReader();
 

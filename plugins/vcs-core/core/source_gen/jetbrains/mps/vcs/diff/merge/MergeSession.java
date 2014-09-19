@@ -18,7 +18,6 @@ import java.util.HashSet;
 import jetbrains.mps.vcs.diff.changes.NodeCopier;
 import jetbrains.mps.smodel.CopyUtil;
 import jetbrains.mps.extapi.model.SModelBase;
-import jetbrains.mps.smodel.DefaultSModel;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.vcs.diff.changes.MetadataChange;
@@ -37,6 +36,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.references.UnregisteredNodes;
+import jetbrains.mps.persistence.PersistenceVersionAware;
 import jetbrains.mps.smodel.SModelAdapter;
 import jetbrains.mps.smodel.event.SModelEvent;
 import jetbrains.mps.smodel.event.SModelReferenceEvent;
@@ -66,11 +66,10 @@ public class MergeSession {
   public static MergeSession createMergeSession(SModel base, SModel mine, SModel repository) {
     // TODO generalize merge for any SModel 
     jetbrains.mps.smodel.SModel resModel = CopyUtil.copyModel(((SModelBase) base).getSModel());
-    if (resModel instanceof DefaultSModel) {
-      int pv = Math.max(getPersistenceVersion(base), Math.max(getPersistenceVersion(mine), getPersistenceVersion(repository)));
-      ((DefaultSModel) resModel).setPersistenceVersion(pv);
-    }
-    return new MergeSession(base, mine, repository, new MergeTemporaryModel(resModel, false));
+    MergeTemporaryModel mergeModel = new MergeTemporaryModel(resModel, false);
+    int pv = Math.max(getPersistenceVersion(base), Math.max(getPersistenceVersion(mine), getPersistenceVersion(repository)));
+    mergeModel.setPersistenceVersion(pv);
+    return new MergeSession(base, mine, repository, mergeModel);
   }
 
   public MergeSession(final SModel base, final SModel mine, final SModel repository, final SModel result) {
@@ -284,9 +283,8 @@ public class MergeSession {
     }
   }
   private static int getPersistenceVersion(SModel model) {
-    jetbrains.mps.smodel.SModel m = ((SModelBase) model).getSModelInternal();
-    if (m instanceof DefaultSModel) {
-      return ((DefaultSModel) m).getPersistenceVersion();
+    if (model instanceof PersistenceVersionAware) {
+      return ((PersistenceVersionAware) model).getPersistenceVersion();
     }
     return -1;
   }

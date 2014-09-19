@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2013 JetBrains s.r.o.
+ * Copyright 2003-2014 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,6 +16,7 @@
 package jetbrains.mps.smodel.persistence.def;
 
 import jetbrains.mps.persistence.FilePerRootDataSource;
+import jetbrains.mps.persistence.PersistenceVersionAware;
 import jetbrains.mps.smodel.DefaultSModel;
 import jetbrains.mps.smodel.LazySModel;
 import jetbrains.mps.smodel.SModel;
@@ -135,29 +136,34 @@ public class FilePerRootFormatUtil {
     return headerHandler.getResult();
   }
 
+  public static int actualPersistenceVersion(int desiredPersistenceVersion) {
+    IModelPersistence modelPersistence = ModelPersistence.getModelPersistence(Math.max(desiredPersistenceVersion, 8));
+    if (modelPersistence == null) {
+      modelPersistence = ModelPersistence.getCurrentModelPersistence();
+    }
+    return modelPersistence.getVersion();
+  }
   /**
    * returns true if the content should be reloaded from storage after save
    */
   public static boolean saveModel(SModel modelData, MultiStreamDataSource source, int persistenceVersion) throws IOException {
-    IModelPersistence modelPersistence = ModelPersistence.getModelPersistence(Math.max(persistenceVersion, 8));
-    if (modelPersistence == null) {
-      modelPersistence = ModelPersistence.getCurrentModelPersistence();
-    }
-    persistenceVersion = modelPersistence.getVersion();
+    persistenceVersion = actualPersistenceVersion(persistenceVersion);
 
     // upgrade?
+    SModelHeader modelHeader = null;
     int oldVersion = persistenceVersion;
     if (modelData instanceof DefaultSModel) {
-      DefaultSModel defaultSModel = (DefaultSModel) modelData;
-      oldVersion = defaultSModel.getPersistenceVersion();
+      DefaultSModel dsm = (DefaultSModel) modelData;
+      modelHeader = dsm.getSModelHeader();
+      oldVersion = dsm.getPersistenceVersion();
       if (oldVersion != persistenceVersion) {
-        defaultSModel.setPersistenceVersion(persistenceVersion);
+        dsm.setPersistenceVersion(persistenceVersion);
       }
     }
 
     // save into JDOM
     modelData.calculateImplicitImports();
-    Map<String, Document> result = modelPersistence.getModelWriter().saveModelAsMultiStream(modelData);
+    Map<String, Document> result = ModelPersistence.getModelPersistence(persistenceVersion).getModelWriter(modelHeader).saveModelAsMultiStream(modelData);
 
     // write to storage
     Set<String> toRemove = new HashSet<String>();
