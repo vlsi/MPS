@@ -144,7 +144,6 @@ public class ParenthesisUtil {
    */
   private static SNode createUnmatchedParenthesis(@NotNull SNode myExpression, boolean completingByRightParen) {
 
-    System.out.println("CCCc");
     if (!(completingByRightParen) && AttributeOperations.getAttribute(myExpression, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.baseLanguage.structure.IncompleteLeftParen")) != null) {
       IIncompleteParen_Behavior.call_increaseCount_1071364028373835874(AttributeOperations.getAttribute(myExpression, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.baseLanguage.structure.IncompleteLeftParen")));
       return myExpression;
@@ -175,9 +174,7 @@ public class ParenthesisUtil {
     // Find a matching parenthesis among candidates, going from the back of the list 
     while (index >= 0) {
       candidateExpression = ListSequence.fromList(candidateParenthedNodes).getElement(index);
-      System.out.println("AAAAAAA");
-      if (eq_a65dpo_a0c0r0p(candidateExpression, myExpression)) {
-        System.out.println("BBBBBBb");
+      if (eq_a65dpo_a0b0q0p(candidateExpression, myExpression)) {
         // they are both the same node 
         SNode parens = SNodeFactoryOperations.replaceWithNewChild(candidateExpression, "jetbrains.mps.baseLanguage.structure.ParenthesizedExpression");
         SLinkOperations.setTarget(parens, "expression", candidateExpression, true);
@@ -232,6 +229,8 @@ public class ParenthesisUtil {
     // Find the turning points, if exist, otherwise just wrap in parens 
     SNode leftTurn = ParenthesisUtil.findLeftTurn(leftExpression, firstCommonAncestor);
     SNode rightTurn = ParenthesisUtil.findRightTurn(rightExpression, firstCommonAncestor);
+    System.out.println("BBBBBBB " + leftExpression + ":" + rightExpression + ":" + leftTurn + ":" + rightTurn);
+
     if (leftTurn != null || rightTurn != null) {
       SNode parens = ParenthesisUtil.rebalance(leftTurn, SNodeOperations.cast(firstCommonAncestor, "jetbrains.mps.baseLanguage.structure.IBinaryLike"), rightTurn);
       clearIncompleteParens(candidateExpression, completingByRightParen, parens);
@@ -320,8 +319,8 @@ public class ParenthesisUtil {
       rebalanceIBinaryLikeAfterParenthing(SNodeOperations.cast(firstCommonAncestor, "jetbrains.mps.baseLanguage.structure.BinaryOperation"), rightTurn, leftTurn, parens, rightAccumulator, leftAccumulator);
     } else if (SNodeOperations.isInstanceOf(firstCommonAncestor, "jetbrains.mps.baseLanguage.structure.TernaryOperatorExpression")) {
       rebalanceTernaryOpAfterParenthing(SNodeOperations.cast(firstCommonAncestor, "jetbrains.mps.baseLanguage.structure.TernaryOperatorExpression"), rightTurn, leftTurn, parens, rightAccumulator, leftAccumulator);
-    } else if (SNodeOperations.isInstanceOf(firstCommonAncestor, "jetbrains.mps.baseLanguage.structure.CastExpression")) {
-      rebalanceIBinaryLikeAfterParenthing(SNodeOperations.cast(firstCommonAncestor, "jetbrains.mps.baseLanguage.structure.CastExpression"), rightTurn, leftTurn, parens, rightAccumulator, leftAccumulator);
+    } else if (SNodeOperations.isInstanceOf(firstCommonAncestor, "jetbrains.mps.baseLanguage.structure.CastExpression") || SNodeOperations.isInstanceOf(firstCommonAncestor, "jetbrains.mps.baseLanguage.structure.BaseAssignmentExpression")) {
+      rebalanceIBinaryLikeAfterParenthing(SNodeOperations.cast(firstCommonAncestor, "jetbrains.mps.baseLanguage.structure.IBinaryLike"), rightTurn, leftTurn, parens, rightAccumulator, leftAccumulator);
     }
 
     SLinkOperations.setTarget(parens, "expression", firstCommonAncestor, true);
@@ -637,7 +636,7 @@ public class ParenthesisUtil {
   private static boolean eq_a65dpo_a0a0a8a5a7_0(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
-  private static boolean eq_a65dpo_a0c0r0p(Object a, Object b) {
+  private static boolean eq_a65dpo_a0b0q0p(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
   private static boolean eq_a65dpo_a0a0a0e0r(Object a, Object b) {
