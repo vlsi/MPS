@@ -8,6 +8,7 @@ import jetbrains.mps.persistence.MPSPersistence;
 import jetbrains.mps.RuntimeFlags;
 import jetbrains.mps.persistence.PersistenceRegistry;
 import jetbrains.mps.persistence.LightModelEnvironmentInfoImpl;
+import jetbrains.mps.smodel.ModelAccess;
 import java.io.IOException;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.FileSystem;
@@ -24,7 +25,7 @@ import org.jetbrains.mps.openapi.persistence.ModelSaveException;
 public class ConvertToBinaryWorker {
   public ConvertToBinaryWorker() {
   }
-  public void convert(Map<String, String> map, Boolean stripImplementation) {
+  public void convert(final Map<String, String> map, final Boolean stripImplementation) {
     final MPSCore mpsCore = new MPSCore();
     mpsCore.init();
     final MPSPersistence mpsPersistence = new MPSPersistence();
@@ -33,11 +34,17 @@ public class ConvertToBinaryWorker {
     PersistenceRegistry.getInstance().setModelEnvironmentInfo(new LightModelEnvironmentInfoImpl());
     RuntimeFlags.setPlayRefactoringsMode(false);
     try {
-      for (Map.Entry<String, String> entry : map.entrySet()) {
-        convertModelToBinary(entry.getKey(), entry.getValue(), stripImplementation);
-      }
-    } catch (IOException ex) {
-      throw new RuntimeException(ex);
+      ModelAccess.instance().runWriteAction(new Runnable() {
+        public void run() {
+          try {
+            for (Map.Entry<String, String> entry : map.entrySet()) {
+              convertModelToBinary(entry.getKey(), entry.getValue(), stripImplementation);
+            }
+          } catch (IOException ex) {
+            throw new RuntimeException(ex);
+          }
+        }
+      });
     } finally {
       PersistenceRegistry.getInstance().setModelEnvironmentInfo(null);
       mpsPersistence.dispose();
