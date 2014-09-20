@@ -8,7 +8,7 @@ import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder;
 import jetbrains.mps.smodel.runtime.StaticScope;
 import java.util.Collection;
 import java.util.Arrays;
-import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptPrivateFieldReferenceOperation = new ConceptDescriptorBuilder("jetbrains.mps.debugger.java.privateMembers.structure.PrivateFieldReferenceOperation").super_("jetbrains.mps.baseLanguage.structure.FieldReferenceOperation").parents("jetbrains.mps.baseLanguage.structure.FieldReferenceOperation").staticScope(StaticScope.NONE).create();
@@ -22,7 +22,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   }
 
   @Override
-  @NotNull
+  @Nullable
   public ConceptDescriptor getDescriptor(String conceptFqName) {
     switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0h, conceptFqName)) {
       case 0:
@@ -34,7 +34,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
       case 3:
         return myConceptPrivateStaticMethodCall;
       default:
-        throw new IllegalStateException("Wrong fqName of the concept " + conceptFqName);
+        return null;
     }
   }
   private static String[] stringSwitchCases_1htk8d_a0a0h = new String[]{"jetbrains.mps.debugger.java.privateMembers.structure.PrivateFieldReferenceOperation", "jetbrains.mps.debugger.java.privateMembers.structure.PrivateInstanceMethodCallOperation", "jetbrains.mps.debugger.java.privateMembers.structure.PrivateStaticFieldReference", "jetbrains.mps.debugger.java.privateMembers.structure.PrivateStaticMethodCall"};

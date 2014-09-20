@@ -8,7 +8,7 @@ import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder;
 import jetbrains.mps.smodel.runtime.StaticScope;
 import java.util.Collection;
 import java.util.Arrays;
-import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptCheckedDotExpression = new ConceptDescriptorBuilder("jetbrains.mps.baseLanguage.checkedDots.structure.CheckedDotExpression").super_("jetbrains.mps.baseLanguage.structure.DotExpression").parents("jetbrains.mps.baseLanguage.structure.DotExpression").staticScope(StaticScope.NONE).create();
@@ -19,13 +19,13 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   }
 
   @Override
-  @NotNull
+  @Nullable
   public ConceptDescriptor getDescriptor(String conceptFqName) {
     switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0e, conceptFqName)) {
       case 0:
         return myConceptCheckedDotExpression;
       default:
-        throw new IllegalStateException("Wrong fqName of the concept " + conceptFqName);
+        return null;
     }
   }
   private static String[] stringSwitchCases_1htk8d_a0a0e = new String[]{"jetbrains.mps.baseLanguage.checkedDots.structure.CheckedDotExpression"};

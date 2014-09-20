@@ -8,7 +8,7 @@ import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder;
 import jetbrains.mps.smodel.runtime.StaticScope;
 import java.util.Collection;
 import java.util.Arrays;
-import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptCustomRoot = new ConceptDescriptorBuilder("jetbrains.mps.transformation.test.outputLang.structure.CustomRoot").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").children(new String[]{"statement"}, new boolean[]{false}).alias("custom root", "root for tests").create();
@@ -25,7 +25,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   }
 
   @Override
-  @NotNull
+  @Nullable
   public ConceptDescriptor getDescriptor(String conceptFqName) {
     switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0k, conceptFqName)) {
       case 0:
@@ -43,7 +43,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
       case 6:
         return myConceptTwoVarStatement;
       default:
-        throw new IllegalStateException("Wrong fqName of the concept " + conceptFqName);
+        return null;
     }
   }
   private static String[] stringSwitchCases_1htk8d_a0a0k = new String[]{"jetbrains.mps.transformation.test.outputLang.structure.CustomRoot", "jetbrains.mps.transformation.test.outputLang.structure.CustomStatement", "jetbrains.mps.transformation.test.outputLang.structure.CustomStatementRef", "jetbrains.mps.transformation.test.outputLang.structure.OutputNode", "jetbrains.mps.transformation.test.outputLang.structure.OutputNode_forDontApplyReductionTwice_test", "jetbrains.mps.transformation.test.outputLang.structure.OutputRoot", "jetbrains.mps.transformation.test.outputLang.structure.TwoVarStatement"};
