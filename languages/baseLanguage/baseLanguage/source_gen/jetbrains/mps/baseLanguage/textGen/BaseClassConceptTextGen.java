@@ -33,7 +33,7 @@ public abstract class BaseClassConceptTextGen {
         boolean needsLineAfter = BehaviorReflection.invokeVirtual(Boolean.TYPE, SNodeOperations.cast(member, "jetbrains.mps.baseLanguage.structure.ClassifierMember"), "virtual_needsEmptyLineAfter_641490355014298838", new Object[]{});
         BaseLanguageTextGen.newLine(needsLineBefore && !(isWrappedElementBefore), textGen);
         textGen.appendNode(member);
-        BaseLanguageTextGen.newLine(needsLineAfter && !(lastMember == member), textGen);
+        BaseLanguageTextGen.newLine(needsLineAfter && !((lastMember == member)), textGen);
         isWrappedElementBefore = needsLineAfter;
       } else {
         textGen.appendNode(member);

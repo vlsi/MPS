@@ -6,9 +6,6 @@ import jetbrains.mps.project.Project;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 import java.io.File;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.classloading.ClassLoaderManager;
-import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.cleanup.CleanupManager;
 import java.util.Set;
@@ -19,6 +16,7 @@ import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.library.ModulesMiner;
 import org.jetbrains.mps.openapi.module.SModule;
+import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.project.AbstractModule;
 import java.util.List;
 import java.util.Collections;
@@ -112,7 +110,7 @@ public class FileMPSProject extends Project {
       return;
     }
     assert !(isDisposed());
-    getModelAccess().runWriteAction(new Runnable() {
+    ModelAccess.instance().runWriteAction(new Runnable() {
       @Override
       public void run() {
         readModules(myDescriptor);

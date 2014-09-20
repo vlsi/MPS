@@ -101,7 +101,7 @@ public class typeof_BinaryOperationMathContext_InferenceRule extends AbstractInf
 
                   }
                 });
-                if (!(SNodeOperations.isInstanceOf(opType, "jetbrains.mps.baseLanguage.math.structure.BigComplexType") || SNodeOperations.isInstanceOf(opType, "jetbrains.mps.baseLanguage.math.structure.BigDecimalType") || (SNodeOperations.isInstanceOf(opType, "jetbrains.mps.baseLanguage.math.structure.MatrixOrVectorType") && (SNodeOperations.isInstanceOf(MathUtil.getUnboxedElementType(opType), "jetbrains.mps.baseLanguage.math.structure.BigComplexType") || SNodeOperations.isInstanceOf(MathUtil.getUnboxedElementType(opType), "jetbrains.mps.baseLanguage.math.structure.BigDecimalType"))))) {
+                if (!((SNodeOperations.isInstanceOf(opType, "jetbrains.mps.baseLanguage.math.structure.BigComplexType") || SNodeOperations.isInstanceOf(opType, "jetbrains.mps.baseLanguage.math.structure.BigDecimalType") || (SNodeOperations.isInstanceOf(opType, "jetbrains.mps.baseLanguage.math.structure.MatrixOrVectorType") && (SNodeOperations.isInstanceOf(MathUtil.getUnboxedElementType(opType), "jetbrains.mps.baseLanguage.math.structure.BigComplexType") || SNodeOperations.isInstanceOf(MathUtil.getUnboxedElementType(opType), "jetbrains.mps.baseLanguage.math.structure.BigDecimalType")))))) {
                   {
                     MessageTarget errorTarget = new NodeMessageTarget();
                     IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(oper, S, "r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)", "8613885519962202373", null, errorTarget);

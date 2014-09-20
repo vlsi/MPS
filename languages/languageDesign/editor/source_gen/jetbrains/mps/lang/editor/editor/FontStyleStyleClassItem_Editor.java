@@ -156,7 +156,7 @@ public class FontStyleStyleClassItem_Editor extends DefaultNodeEditor {
     }
   }
   private static boolean neq_n0gj60_a0a0g(Object a, Object b) {
-    return !((a != null ? a.equals(b) : a == b));
+    return !(((a != null ? a.equals(b) : a == b)));
   }
   private static boolean eq_n0gj60_a0a0j(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);

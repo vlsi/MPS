@@ -4,13 +4,12 @@ package jetbrains.mps.baseLanguage.editor;
 
 import java.util.List;
 import org.jetbrains.mps.openapi.model.SNode;
+import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.baseLanguage.behavior.IClassifierType_Behavior;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
-import java.util.ArrayList;
-import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.editor.runtime.style.StyledTextPrinter;
 
@@ -18,17 +17,16 @@ public class BaseMethodParameterInformationQueryUtil {
   public BaseMethodParameterInformationQueryUtil() {
   }
   public static List<SNode> getMethodsToShow(SNode methodCall) {
-    SNode method = SLinkOperations.getTarget(methodCall, "baseMethodDeclaration", false);
-    SNode classifier = SNodeOperations.cast(SNodeOperations.getParent(method), "jetbrains.mps.baseLanguage.structure.IMemberContainer");
-    Iterable<SNode> members;
-    if (SNodeOperations.isInstanceOf(classifier, "jetbrains.mps.baseLanguage.structure.Classifier")) {
-      members = IClassifierType_Behavior.call_getVisibleMembers_6145907390641297279(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(classifier, "jetbrains.mps.baseLanguage.structure.Classifier"), "virtual_getThisType_7405920559687254782", new Object[]{}), methodCall);
-    } else {
-      members = BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), classifier, "virtual_getMembers_1213877531970", new Object[]{});
-    }
     List<SNode> methodsToShow = new ArrayList<SNode>();
+    SNode method = SLinkOperations.getTarget(methodCall, "baseMethodDeclaration", false);
+    SNode targetContainer = SNodeOperations.cast(SNodeOperations.getParent(method), "jetbrains.mps.baseLanguage.structure.IMemberContainer");
+    Iterable<SNode> members = BehaviorReflection.invokeVirtual((Class<Iterable<SNode>>) ((Class) Object.class), methodCall, "virtual_getAvailableMethodDeclarations_5776618742611315379", new Object[]{SPropertyOperations.getString(method, "name")});
+    if (Sequence.fromIterable(members).isEmpty()) {
+      members = BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), targetContainer, "virtual_getMembers_1213877531970", new Object[]{});
+    }
+
     for (SNode member : Sequence.fromIterable(members)) {
-      if (SNodeOperations.isInstanceOf(member, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration") && eq_bha4h6_a0a0a5a1(SPropertyOperations.getString(SNodeOperations.cast(member, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"), "name"), SPropertyOperations.getString(method, "name"))) {
+      if (SNodeOperations.isInstanceOf(member, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration") && eq_bha4h6_a0a0a6a1(SPropertyOperations.getString(SNodeOperations.cast(member, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"), "name"), SPropertyOperations.getString(method, "name"))) {
         ListSequence.fromList(methodsToShow).addElement(SNodeOperations.cast(member, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"));
       }
     }
@@ -82,7 +80,7 @@ public class BaseMethodParameterInformationQueryUtil {
     }
     styledText.append(")");
   }
-  private static boolean eq_bha4h6_a0a0a5a1(Object a, Object b) {
+  private static boolean eq_bha4h6_a0a0a6a1(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
 }

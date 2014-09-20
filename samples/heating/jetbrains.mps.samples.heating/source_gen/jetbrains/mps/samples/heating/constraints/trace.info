@@ -149,7 +149,7 @@
       <node id="935069066463246522" at="59,47,60,98" concept="5" />
       <node id="935069066463200868" at="63,50,64,259" concept="5" />
       <node id="935069066463107114" at="70,7,71,22" concept="5" />
-      <node id="935069066463247796" at="73,90,74,49" concept="5" />
+      <node id="935069066463247796" at="73,90,74,51" concept="5" />
       <node id="935069066463107114" at="76,0,77,0" concept="6" trace="breakingNode_y2k5og_a0a2a0a0a1a0b0a1a1" />
       <node id="935069066463107114" at="29,0,32,0" concept="1" trace="DailyPlanReference_Constraints#()V" />
       <node id="935069066463245362" at="59,0,62,0" concept="3" trace="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
@@ -173,7 +173,7 @@
       <scope id="935069066463107114" at="53,63,54,58" />
       <scope id="935069066463245363" at="59,47,60,98" />
       <scope id="935069066463194521" at="63,50,64,259" />
-      <scope id="935069066463247796" at="73,90,74,49" />
+      <scope id="935069066463247796" at="73,90,74,51" />
       <scope id="935069066463107114" at="29,0,32,0" />
       <scope id="935069066463245362" at="59,0,62,0">
         <var name="it" id="935069066463245362" />

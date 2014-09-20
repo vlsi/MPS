@@ -36,7 +36,7 @@ public class BinarySModel extends LazySModel {
   private boolean fullLoadUpdateMode;
 
   public BinarySModel(@NotNull BinaryModelHeader header) {
-    super(header.getReference());
+    super(header.getModelReference());
     this.header = header;
   }
 

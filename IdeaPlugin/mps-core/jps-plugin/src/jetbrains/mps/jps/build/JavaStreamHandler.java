@@ -144,7 +144,7 @@ class JavaStreamHandler implements StreamHandler {
                 writer = new OutputStreamWriter(new BufferedOutputStream(file.openOutputStream()), FileUtil.DEFAULT_CHARSET);
                 writer.write(myContent);
             } catch (IOException e) {
-                LOG.error(null, e);
+                LOG.error(e.toString(), e);
             } finally {
                 if (writer != null) {
                     try {
@@ -197,7 +197,7 @@ class JavaStreamHandler implements StreamHandler {
                 stream = file.openOutputStream();
                 stream.write(myContent);
             } catch (IOException e) {
-                LOG.error(null, e);
+                LOG.error(e.toString(), e);
             } finally {
                 if (stream != null) {
                     try {
@@ -249,7 +249,7 @@ class JavaStreamHandler implements StreamHandler {
             try {
                 JDOMUtil.writeDocument(new Document(myElement), file);
             } catch (IOException e) {
-                LOG.error(null, e);
+                LOG.error(e.toString(), e);
             }
             return true;
         }

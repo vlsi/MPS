@@ -1,3 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-dkvprb3yo5brhudsss7qjdi0odal5vf" />
+<dependencies version="2" modelHash="-dkvprb3yo5brhudsss7qjdi0odal5vf">
+  <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#org.apache.log4j(MPS.Core/org.apache.log4j@java_stub)" />
+  <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" hash="-2sqpydigz7vryaerubh22j78l4l08jz" />
+  <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="d987foka3qddszg3k3yjss0jaslj9i" />
+  <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="8cdjk2e5d2y2u9lult1ptgxxrttxv07" />
+  <common hash="-4krlw1vf0iypqvd048kkflci44oqnwt" dependsOnNodes="true">
+    <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
+  </common>
+  <source id="2891782949125146377" name="Requestor" hash="7crc13wc4m90w463drpi8o6xii9efgx">
+    <file name="Requestor.java" />
+  </source>
+  <source id="2891782949125170507" name="ClassPrepareRequestor" hash="3ipyv7n5bmdd97nhykqflu8xq66cyyp">
+    <file name="ClassPrepareRequestor.java" />
+  </source>
+  <source id="2891782949125205202" name="LocatableEventRequestor" hash="hp6pyrnb6jtpqjt70j00htqxh3ihaw">
+    <file name="LocatableEventRequestor.java" />
+  </source>
+  <source id="6460341978864598530" name="IRequestManager" hash="-b7xgy3fm14frda9s7556z4ogq1qvvhh">
+    <file name="IRequestManager.java" />
+  </source>
+  <source id="6460341978864599228" name="StepRequestor" hash="-anuu2lks60eeqf3pni0jpm411nck1sc">
+    <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#org.apache.log4j(MPS.Core/org.apache.log4j@java_stub)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
+    <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
+    <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
+    <file name="StepRequestor.java" />
+  </source>
+</dependencies>
 

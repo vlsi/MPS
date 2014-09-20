@@ -257,7 +257,7 @@
       <node id="4352118152439825434" at="68,73,69,52" concept="8" />
       <node id="4352118152439825447" at="69,52,70,36" concept="8" />
       <node id="4352118152439825453" at="71,25,72,18" concept="9" />
-      <node id="4352118152439825466" at="74,84,75,94" concept="9" />
+      <node id="4352118152439825466" at="74,87,75,94" concept="9" />
       <node id="4352118152439825475" at="76,5,77,22" concept="9" />
       <node id="4352118152439825481" at="79,49,80,47" concept="9" />
       <node id="654837219998672193" at="84,31,85,13" concept="9" />
@@ -279,7 +279,7 @@
       <node id="4507431872999469442" at="132,53,133,21" concept="9" />
       <node id="4507431872999470293" at="136,46,137,83" concept="9" />
       <node id="4383074033125738366" at="139,69,140,46" concept="9" />
-      <node id="4352118152439825460" at="142,63,143,46" concept="9" />
+      <node id="4352118152439825460" at="142,64,143,46" concept="9" />
       <node id="4352118152439825370" at="48,0,50,0" concept="7" trace="isPausedOnBreakpoint#()Z" />
       <node id="4507431872999542212" at="42,0,45,0" concept="7" trace="visit#(Ljetbrains/mps/debugger/java/api/state/proxy/JavaThread;)V" />
       <node id="4352118152439825397" at="58,56,61,5" concept="6" />
@@ -293,7 +293,7 @@
       <node id="4507431872999481611" at="113,65,116,5" concept="6" />
       <node id="4507431872999468582" at="123,64,126,9" concept="6" />
       <node id="4383074033125738362" at="139,0,142,0" concept="7" trace="getExecutionState#()Ljetbrains/mps/debug/api/AbstractDebugSession/ExecutionState;" />
-      <node id="4352118152439825460" at="142,0,145,0" concept="12" trace="eq_vkri5_a0a0d0j#(Ljava/lang/Object;Ljava/lang/Object;)Z" />
+      <node id="4352118152439825460" at="142,0,145,0" concept="12" trace="eq_vkri5_a0a0a3a9#(Ljava/lang/Object;Ljava/lang/Object;)Z" />
       <node id="4507431872999465981" at="106,0,110,0" concept="7" trace="getCurrentThread#()Ljetbrains/mps/debugger/java/api/state/proxy/JavaThread;" />
       <node id="4507431872999470289" at="135,0,139,0" concept="7" trace="getThread#()Ljetbrains/mps/debugger/java/api/state/proxy/JavaThread;" />
       <node id="4352118152439825486" at="26,0,31,0" concept="2" trace="JavaUiStateImpl#(Ljetbrains/mps/debugger/java/runtime/state/DebugSession;)V" />
@@ -315,7 +315,7 @@
       <scope id="4352118152439825401" at="59,34,60,18" />
       <scope id="4352118152439825413" at="63,29,64,52" />
       <scope id="4352118152439825452" at="71,25,72,18" />
-      <scope id="4352118152439825465" at="74,84,75,94" />
+      <scope id="4352118152439825465" at="74,87,75,94" />
       <scope id="4352118152439825480" at="79,49,80,47" />
       <scope id="654837219998671701" at="84,31,85,13" />
       <scope id="4750532960509859189" at="92,31,93,18" />
@@ -326,7 +326,7 @@
       <scope id="4507431872999469441" at="132,53,133,21" />
       <scope id="4507431872999470292" at="136,46,137,83" />
       <scope id="4383074033125738365" at="139,69,140,46" />
-      <scope id="4352118152439825460" at="142,63,143,46" />
+      <scope id="4352118152439825460" at="142,64,143,46" />
       <scope id="4352118152439825370" at="48,0,50,0" />
       <scope id="4352118152439825489" at="26,57,29,23" />
       <scope id="4507431872999542212" at="42,0,45,0">

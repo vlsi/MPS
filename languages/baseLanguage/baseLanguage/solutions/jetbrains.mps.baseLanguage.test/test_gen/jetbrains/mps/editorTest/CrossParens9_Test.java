@@ -8,13 +8,13 @@ import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
 
 @MPSLaunch
-public class AbstractNotAccepted_Test extends BaseTransformationTest {
-  public AbstractNotAccepted_Test() {
+public class CrossParens9_Test extends BaseTransformationTest {
+  public CrossParens9_Test() {
   }
   @Test
-  public void test_AbstractNotAccepted() throws Throwable {
+  public void test_CrossParens9() throws Throwable {
     this.initTest("${mps_home}", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)");
-    this.runTest("jetbrains.mps.editorTest.AbstractNotAccepted_Test$TestBody", "testMethod", false);
+    this.runTest("jetbrains.mps.editorTest.CrossParens9_Test$TestBody", "testMethod", false);
   }
   @MPSLaunch
   public static class TestBody extends BaseEditorTestBody {
@@ -22,8 +22,8 @@ public class AbstractNotAccepted_Test extends BaseTransformationTest {
     }
     @Override
     public void testMethodImpl() throws Exception {
-      initEditor("3543341247930374694", "3543341247930375582");
-      this.typeString("abstract");
+      initEditor("7437995586875957880", "7437995586875957899");
+      this.typeString("(");
     }
   }
 }

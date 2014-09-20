@@ -85,7 +85,7 @@ public class PersistenceTest extends WorkbenchMpsTest {
                   for (int i = START_PERSISTENCE_TEST_VERSION; i <= ModelPersistence.LAST_VERSION; ++i) {
                     try { // errors about not found attributes are expected for old models
                       filter.start();
-                      ModelPersistence.saveModel(((SModelBase) model).getSModelInternal(), new FileDataSource(file), i);
+                      ModelPersistence.saveModel(((SModelBase) model).getSModel(), new FileDataSource(file), i);
                     } catch (IOException e) {
                       e.printStackTrace();
                       fail();
@@ -94,8 +94,7 @@ public class PersistenceTest extends WorkbenchMpsTest {
                     }
                     ModelLoadResult result = null;
                     try {
-                      result = ModelPersistence.readModel(SModelHeader.create(i), new FileDataSource(file),
-                          ModelLoadingState.FULLY_LOADED);
+                      result = ModelPersistence.readModel(SModelHeader.create(i), new FileDataSource(file), ModelLoadingState.FULLY_LOADED);
                     } catch (ModelReadException e) {
                       fail();
                     }
@@ -153,7 +152,7 @@ public class PersistenceTest extends WorkbenchMpsTest {
                   final ModelLoadResult resultFrom = ModelAccess.instance().runReadAction(new Computable<ModelLoadResult>() {
                     public ModelLoadResult compute() {
                       try {
-                        ModelLoadResult result = ModelPersistence.readModel(SModelHeader.create(version[0]), testModel.getSource(),
+                        ModelLoadResult result = ModelPersistence.readModel(SModelHeader.create(version[0]), (StreamDataSource) testModel.getSource(),
                             ModelLoadingState.FULLY_LOADED);
                         assertTrue(result.getState() == ModelLoadingState.FULLY_LOADED);
                         return result;
@@ -175,7 +174,7 @@ public class PersistenceTest extends WorkbenchMpsTest {
                   final ModelLoadResult resultTo = ModelAccess.instance().runReadAction(new Computable<ModelLoadResult>() {
                     public ModelLoadResult compute() {
                       try {
-                        ModelLoadResult result = ModelPersistence.readModel(SModelHeader.create(version[1]), testModel.getSource(),
+                        ModelLoadResult result = ModelPersistence.readModel(SModelHeader.create(version[1]), (StreamDataSource) testModel.getSource(),
                             ModelLoadingState.FULLY_LOADED);
                         assertTrue(result.getState() == ModelLoadingState.FULLY_LOADED);
                         ModelAssert.assertDeepModelEquals(resultFrom.getModel(),
@@ -211,7 +210,7 @@ public class PersistenceTest extends WorkbenchMpsTest {
     for (final DefaultSModelDescriptor modelDescriptor : modelDescriptors) {
       assert ThreadUtils.isEventDispatchThread() : "you must be in EDT to write files";
 
-      StreamDataSource source = modelDescriptor.getSource();
+      StreamDataSource source = (StreamDataSource) modelDescriptor.getSource();
       if (source.isReadOnly()) continue;
 
       boolean wasInitialized = modelDescriptor.isLoaded();
@@ -229,7 +228,7 @@ public class PersistenceTest extends WorkbenchMpsTest {
         ModelPersistence.saveModel(model, source, toVersion);
         modelDescriptor.reloadFromSource();
       } catch (ModelReadException e) {
-        // This hardly can happend, unreadable model should be already filtered out
+        // This hardly can happen, unreadable model should be already filtered out
         LOG.error(null, e);
         fail();
       } catch (IOException e) {

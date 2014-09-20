@@ -794,13 +794,16 @@
     <property name="name" nameId="tpck.1169194664001" value="NotExpression" />
     <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
     <property name="virtualPackage" nameId="tpck.1193676396447" value="expressions" />
-    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="!(expr)" />
+    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="!" />
     <link role="extends" roleId="tpce.1071489389519" targetNodeId="1068431790191" resolveInfo="Expression" />
     <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="1081516765348" nodeInfo="ig">
       <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
       <property name="role" nameId="tpce.1071599776563" value="expression" />
       <property name="sourceCardinality" nameId="tpce.1071599893252" value="1" />
       <link role="target" roleId="tpce.1071599976176" targetNodeId="1068431790191" resolveInfo="Expression" />
+    </node>
+    <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="4536253685758335383" nodeInfo="ig">
+      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="1742226163722651198" resolveInfo="IBinaryLike" />
     </node>
   </root>
   <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1081855346303" nodeInfo="ig">
@@ -3817,6 +3820,9 @@
         <link role="concept" roleId="tpce.6054523464627965081" targetNodeId="1068431790191" resolveInfo="Expression" />
       </node>
     </node>
+    <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="1071364028384861227" nodeInfo="ig">
+      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="1071364028384826861" resolveInfo="IIncompleteParen" />
+    </node>
   </root>
   <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="2329139813954029793" nodeInfo="ig">
     <property name="name" nameId="tpck.1169194664001" value="IncompleteRightParen" />
@@ -3831,9 +3837,19 @@
         <link role="concept" roleId="tpce.6054523464627965081" targetNodeId="1068431790191" resolveInfo="Expression" />
       </node>
     </node>
+    <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="1071364028384870121" nodeInfo="ig">
+      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="1071364028384826861" resolveInfo="IIncompleteParen" />
+    </node>
   </root>
   <root type="tpce.InterfaceConceptDeclaration" typeId="tpce.1169125989551" id="1742226163722651198" nodeInfo="ig">
     <property name="name" nameId="tpck.1169194664001" value="IBinaryLike" />
+  </root>
+  <root type="tpce.InterfaceConceptDeclaration" typeId="tpce.1169125989551" id="1071364028384826861" nodeInfo="ig">
+    <property name="name" nameId="tpck.1169194664001" value="IIncompleteParen" />
+    <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="1071364028384826862" nodeInfo="ig">
+      <property name="name" nameId="tpck.1169194664001" value="count" />
+      <link role="dataType" roleId="tpce.1082985295845" targetNodeId="tpck.1082983657062" resolveInfo="integer" />
+    </node>
   </root>
 </model>
 

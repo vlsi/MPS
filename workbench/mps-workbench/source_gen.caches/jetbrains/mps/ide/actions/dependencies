@@ -592,8 +592,8 @@
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="javax.swing.KeyStroke" />
+    <classNode dependClassName="jetbrains.mps.plugins.actions.ComplexShortcut" />
     <classNode extendsClassName="jetbrains.mps.plugins.actions.BaseKeymapChanges" />
-    <classNode extendsClassName="jetbrains.mps.plugins.actions.ComplexShortcut" />
   </dependency>
   <dependency className="jetbrains.mps.ide.actions.DeleteFavoritesList_Action" file="DeleteFavoritesList_Action.java">
     <classNode dependClassName="com.intellij.ide.projectView.ProjectView" />
@@ -1984,8 +1984,8 @@
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="javax.swing.KeyStroke" />
+    <classNode dependClassName="jetbrains.mps.plugins.actions.ComplexShortcut" />
     <classNode extendsClassName="jetbrains.mps.plugins.actions.BaseKeymapChanges" />
-    <classNode extendsClassName="jetbrains.mps.plugins.actions.ComplexShortcut" />
   </dependency>
   <dependency className="jetbrains.mps.ide.actions.Mac_KeymapChanges" file="Mac_KeymapChanges.java">
     <classNode dependClassName="com.intellij.openapi.actionSystem.KeyboardShortcut" />
@@ -1996,8 +1996,8 @@
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="javax.swing.KeyStroke" />
+    <classNode dependClassName="jetbrains.mps.plugins.actions.ComplexShortcut" />
     <classNode extendsClassName="jetbrains.mps.plugins.actions.BaseKeymapChanges" />
-    <classNode extendsClassName="jetbrains.mps.plugins.actions.ComplexShortcut" />
   </dependency>
   <dependency className="jetbrains.mps.ide.actions.MappingDialog" file="MappingDialog.java">
     <classNode dependClassName="com.intellij.openapi.project.Project" />
@@ -3728,6 +3728,7 @@
     <classNode dependClassName="jetbrains.mps.ide.findusages.view.FindUtils" />
     <classNode dependClassName="jetbrains.mps.ide.findusages.view.UsagesView" />
     <classNode dependClassName="jetbrains.mps.ide.findusages.view.treeholder.tree.TextOptions" />
+    <classNode dependClassName="jetbrains.mps.ide.findusages.view.treeholder.treeview.INodeRepresentator" />
     <classNode dependClassName="jetbrains.mps.ide.findusages.view.treeholder.treeview.ViewOptions" />
     <classNode dependClassName="jetbrains.mps.ide.icons.IdeIcons" />
     <classNode dependClassName="jetbrains.mps.ide.project.ProjectHelper" />
@@ -3739,7 +3740,6 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeAccessUtil" />
     <classNode extendsClassName="javax.swing.JPanel" />
-    <classNode extendsClassName="jetbrains.mps.ide.findusages.view.treeholder.treeview.INodeRepresentator" />
   </dependency>
   <dependency className="jetbrains.mps.ide.actions.TodoViewer_Tool" file="TodoViewer_Tool.java">
     <classNode dependClassName="com.intellij.icons.AllIcons" />

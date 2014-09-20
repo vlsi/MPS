@@ -25,7 +25,7 @@ public class typeof_DefaultClassCreator_InferenceRule extends AbstractInferenceR
   public typeof_DefaultClassCreator_InferenceRule() {
   }
   public void applyRule(final SNode defaultClassCreator, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    if (!(ListSequence.fromList(SLinkOperations.getTargets(defaultClassCreator, "typeParameter", true)).isEmpty() || ListSequence.fromList(SLinkOperations.getTargets(defaultClassCreator, "typeParameter", true)).count() == ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(defaultClassCreator, "classifier", false), "typeVariableDeclaration", true)).count())) {
+    if (!((ListSequence.fromList(SLinkOperations.getTargets(defaultClassCreator, "typeParameter", true)).isEmpty() || ListSequence.fromList(SLinkOperations.getTargets(defaultClassCreator, "typeParameter", true)).count() == ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(defaultClassCreator, "classifier", false), "typeVariableDeclaration", true)).count()))) {
       {
         MessageTarget errorTarget = new NodeMessageTarget();
         IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(defaultClassCreator, "wrong number of type parameters", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "7179268497749415882", null, errorTarget);

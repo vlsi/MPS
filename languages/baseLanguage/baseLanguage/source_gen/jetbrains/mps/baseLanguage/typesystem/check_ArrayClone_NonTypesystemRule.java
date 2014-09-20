@@ -27,7 +27,7 @@ public class check_ArrayClone_NonTypesystemRule extends AbstractNonTypesystemRul
   public void applyRule(final SNode instanceMethodCallOperation, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     // FIXME: almost duplicate code with JavaToMpsConverter 
     SReference methodRef = SNodeOperations.getReference(instanceMethodCallOperation, SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation", "instanceMethodDeclaration"));
-    if (!(methodRef instanceof DynamicReference && "clone".equals((((DynamicReference) methodRef).getResolveInfo())))) {
+    if (!((methodRef instanceof DynamicReference && "clone".equals((((DynamicReference) methodRef).getResolveInfo()))))) {
       return;
     }
 

@@ -357,57 +357,63 @@ class GenerationSession {
 
       final SModel intactInputModelClone = cloneInputModel ? cloneTransientModel(currentInputModel) : null;
       final TemplateGenerator tg = prepareToApplyRules(currentInputModel, currentOutputModel, ruleManager);
-      final Pair<Boolean, SModel> applied = applyRules(tg, progress, isPrimary);
-      boolean somethingHasBeenGenerated = applied.o1;
-      SModel realOutputModel = applied.o2;
-      if (!somethingHasBeenGenerated) {
-        // nothing has been generated
-        myDependenciesBuilder.dropModel();
-        myNewTrace.dropStep(currentInputModel.getReference(), currentOutputModel.getReference());
-        recycleWasteModel(currentOutputModel, true);
-        if (!isPrimary) {
-          // we may need myMinorStep in postProcess, when we store TransientModelWithMetainfo
-          // applyRules did that for primary step regardless of hasChanges state, hence we decrement minorStep
-          // only on secondary no-change runs to forget about no-op applyRules.
-          // I consider this changes safer than to remove isPrimary check in applyRules (it's appealing
-          // to save TMWM only when there are changes) as it seems there's assumption about TMWM presence (if used) for each step.
-          myMinorStep--;
+      boolean somethingHasBeenGenerated = false, applySucceed = false;
+      try {
+        somethingHasBeenGenerated = applyRules(tg, progress, isPrimary);
+        applySucceed = true;
+        if (!somethingHasBeenGenerated) {
+          myNewTrace.dropStep(currentInputModel.getReference(), currentOutputModel.getReference());
+        } else {
+          // next iteration ...
+          mySessionContext.clearTransientObjects();
+          isPrimary = false;
         }
-        if (myLogger.needsInfo()) {
-          myLogger.info(String.format("unchanged, empty model '%s' removed", SModelStereotype.getStereotype(currentOutputModel)));
+      } finally {
+        // if apply fails with exception, I'd like to keep both current input and output.
+        final boolean generationFailed = !applySucceed;
+        final boolean inplaceChange = tg.getOutputModel() == currentOutputModel;
+        if (generationFailed) {
+          publishTransientModel(currentInputModel.getReference());
+          if (!inplaceChange) {
+            publishTransientModel(currentOutputModel.getReference());
+          }
         }
         if (cloneInputModel) {
-          recycleWasteModel(intactInputModelClone, true);
+          // vault in transient module has two model instances with same reference, shall leave only one.
+          // either forcefully drop intactInputModelClone, or change reference of currentInputModel to be another one
+          if (inplaceChange && (somethingHasBeenGenerated || generationFailed)) {
+            // somethingHasBeenGenerated guards against last step without changes
+            publishTransientModel(intactInputModelClone.getReference());
+            // pretend inplace model outcome is from currentOutputModel
+            changeModelReference(currentInputModel, currentOutputModel.getReference());
+            // currentInputModel (with a model reference of current output) stays as input
+          } else {
+            dropTransientModel(intactInputModelClone);
+          }
         }
+      }
+      if (!somethingHasBeenGenerated) {
+        dropTransientModel(currentOutputModel);
         currentOutputModel = currentInputModel;
         break;
-      }
-
-      // next iteration ...
-      mySessionContext.clearTransientObjects();
-      isPrimary = false;
-      SModelOperations.validateLanguagesAndImports(realOutputModel, false, false);
-      myDependenciesBuilder.updateModel(realOutputModel);
-      if (realOutputModel == currentOutputModel) { // 'honest' transformation, not in-place
-        recycleWasteModel(currentInputModel, cloneInputModel); // we can (or even shall, if it's a clone) forget about former input model here
-        currentInputModel = currentOutputModel;
-        FastNodeFinderManager.dispose(currentInputModel); // why?!
       } else {
-        assert currentInputModel == realOutputModel;
-        myDependenciesBuilder.dropModel();
-        if (cloneInputModel) {
-          // there would be at least one more micro-step, we expose present outcome from inplace model as the one from currentOutputModel
-          changeModelReference(currentInputModel, currentOutputModel.getReference());
-          // currentInputModel (with a model reference of current output) stays as input
-          recycleWasteModel(intactInputModelClone, false);
+        SModel realOutputModel = tg.getOutputModel();
+        if (realOutputModel == currentOutputModel) { // 'honest' transformation, not in-place
+          recycleWasteModel(currentInputModel);
+          currentInputModel = currentOutputModel;
+          FastNodeFinderManager.dispose(currentInputModel); // why?!
+        } else {
+          assert currentInputModel == realOutputModel;
+          myDependenciesBuilder.dropModel();
+          // currentInputModel stays as input.
+          // in fact, can reuse output model here, but it's task to solve together with tracer (and how it would live with startTracing(same models)
+          dropTransientModel(currentOutputModel);
         }
-        // in fact, can reuse output model here, but it's task to solve together with tracer (and how it would live with startTracing(same models)
-        recycleWasteModel(currentOutputModel, true);
       }
 
       if (++secondaryMappingRepeatCount > 10) {
         // TODO I'm not quite sure present log+GenericException is better than SpecificExceptionWithData and handling outside
-        logTenMinorStepsCountReached(realOutputModel);
+        logTenMinorStepsCountReached(tg.getOutputModel());
         throw new GenerationFailureException("failed to generate output after 10 repeated mappings");
       }
 
@@ -449,16 +455,37 @@ class GenerationSession {
             : new TemplateGenerator(mySessionContext, args);
   }
 
-  private Pair<Boolean, SModel> applyRules(TemplateGenerator tg, ProgressMonitor progress, final boolean isPrimary)
+  private boolean applyRules(TemplateGenerator tg, ProgressMonitor progress, final boolean isPrimary)
       throws GenerationFailureException, GenerationCanceledException {
+
+    final SModel originalOutputModel = tg.getOutputModel();
     ttrace.push(String.format("Step %d.%d", myMajorStep+1, myMinorStep), true);
-    boolean hasChanges = tg.apply(progress, isPrimary);
+    final boolean hasChanges = tg.apply(progress, isPrimary);
     ttrace.pop();
-    SModel outputModel = tg.getOutputModel();
+
     if (isPrimary || hasChanges) {
       myIntermediateCache.store(myMajorStep, myMinorStep, tg, myDependenciesBuilder);
     }
-    return new Pair<Boolean, SModel>(hasChanges, outputModel);
+    if (hasChanges) {
+      SModel realOutputModel = tg.getOutputModel();
+      SModelOperations.validateLanguagesAndImports(realOutputModel, false, false);
+      myDependenciesBuilder.updateModel(realOutputModel);
+    } else {
+      // nothing has been generated
+      myDependenciesBuilder.dropModel();
+      if (!isPrimary) {
+        // we may need myMinorStep in postProcess, when we store TransientModelWithMetainfo
+        // applyRules did that for primary step regardless of hasChanges state, hence we decrement minorStep
+        // only on secondary no-change runs to forget about no-op applyRules.
+        // I consider this changes safer than to remove isPrimary check in applyRules (it's appealing
+        // to save TMWM only when there are changes) as it seems there's assumption about TMWM presence (if used) for each step.
+        myMinorStep--;
+      }
+      if (myLogger.needsInfo()) {
+        myLogger.info(String.format("unchanged, empty model '%s' removed", SModelStereotype.getStereotype(originalOutputModel)));
+      }
+    }
+    return hasChanges;
   }
 
   private SModel preProcessModel(RuleManager ruleManager, SModel currentInputModel) throws GenerationFailureException {
@@ -505,7 +532,7 @@ class GenerationSession {
     }
     if (needToCloneInputModel) {
       myIntermediateCache.store(myMajorStep, myMinorStep, templateGenerator, myDependenciesBuilder);
-      recycleWasteModel(toRecycle, false);
+      recycleWasteModel(toRecycle);
     }
     myLogger.info("pre-processing finished");
     return currentInputModel;
@@ -550,7 +577,7 @@ class GenerationSession {
     myDependenciesBuilder.scriptApplied(currentModel);
     if (needToCloneModel) {
       myIntermediateCache.store(myMajorStep, myMinorStep, templateGenerator, myDependenciesBuilder);
-      recycleWasteModel(toRecycle, false);
+      recycleWasteModel(toRecycle);
     }
     myLogger.info("post-processing finished");
     return currentModel;
@@ -587,17 +614,22 @@ class GenerationSession {
   }
 
   /**
-   * Dispose model and associated resources. If force is <code>true</code>, the model
-   * is discarded even if transient models are persisted (useful for output models without changes)
+   * Dispose model and associated resources.
+   * The model is recycled unless we keep transients or there's a warning/error pointing to the model.
    */
-  private void recycleWasteModel(@NotNull SModel model, boolean force) {
+  private void recycleWasteModel(@NotNull SModel model) {
     assert (model.getModule() instanceof TransientModelsModule);
-    FastNodeFinderManager.dispose(model);
-    if (force) {
-      mySessionContext.getModule().removeModel(model);
-    } else {
-      myTransientModelsToRecycle.add(model);
-    }
+    myTransientModelsToRecycle.add(model);
+  }
+  // records the reference to model we'd like to see in transients, useful to forcefully
+  // expose models on failures
+  private void publishTransientModel(@NotNull SModelReference modelReference) {
+    mySessionContext.getModule().addModelToKeep(modelReference, true);
+  }
+  // forget particular transient model instance (doesn't affect list of published models)
+  // useful for models without changes
+  private void dropTransientModel(@NotNull SModel model) {
+    mySessionContext.getModule().removeModel(model);
   }
 
   private boolean checkGenerationPlan(GenerationPlan generationPlan) {

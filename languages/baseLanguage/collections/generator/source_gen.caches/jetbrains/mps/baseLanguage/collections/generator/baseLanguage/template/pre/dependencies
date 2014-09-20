@@ -7,6 +7,10 @@
     <classNode dependClassName="java.util.Map" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.util.Helper" />
     <classNode dependClassName="jetbrains.mps.generator.impl.GenerationFailureException" />
+    <classNode dependClassName="jetbrains.mps.generator.impl.query.InlineSwitchCaseCondition" />
+    <classNode dependClassName="jetbrains.mps.generator.impl.query.MapConfigurationCondition" />
+    <classNode dependClassName="jetbrains.mps.generator.impl.query.ReductionRuleCondition" />
+    <classNode dependClassName="jetbrains.mps.generator.impl.query.SourceNodeQuery" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.Generated" />
     <classNode dependClassName="jetbrains.mps.generator.template.BaseMappingRuleContext" />
     <classNode dependClassName="jetbrains.mps.generator.template.InlineSwitchCaseContext" />
@@ -20,11 +24,7 @@
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
-    <classNode extendsClassName="jetbrains.mps.generator.impl.query.InlineSwitchCaseCondition" />
-    <classNode extendsClassName="jetbrains.mps.generator.impl.query.MapConfigurationCondition" />
     <classNode extendsClassName="jetbrains.mps.generator.impl.query.QueryProviderBase" />
-    <classNode extendsClassName="jetbrains.mps.generator.impl.query.ReductionRuleCondition" />
-    <classNode extendsClassName="jetbrains.mps.generator.impl.query.SourceNodeQuery" />
   </dependency>
 </dependenciesRoot>
 

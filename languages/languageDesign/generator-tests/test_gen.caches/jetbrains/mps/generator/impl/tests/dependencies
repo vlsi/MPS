@@ -21,6 +21,7 @@
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.lang.test.matcher.NodeDifference" />
     <classNode dependClassName="jetbrains.mps.lang.test.matcher.NodesMatcher" />
+    <classNode dependClassName="jetbrains.mps.lang.test.runtime.BaseTestBody" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelReference" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelRepository" />
     <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
@@ -29,7 +30,6 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.junit.Assert" />
     <classNode dependClassName="org.junit.Test" />
-    <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTestBody" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
 </dependenciesRoot>

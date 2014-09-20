@@ -15,6 +15,7 @@
     <classNode dependClassName="java.util.Map" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime.Tuples" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime._1" />
     <classNode dependClassName="jetbrains.mps.build.plugin.CopyGeneratedScripts_Facet.Target_collectScriptDirectories.Parameters" />
     <classNode dependClassName="jetbrains.mps.build.plugin.Utils" />
     <classNode dependClassName="jetbrains.mps.build.util.GenerationUtil" />
@@ -28,7 +29,9 @@
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations" />
     <classNode dependClassName="jetbrains.mps.make.facet.IFacet" />
     <classNode dependClassName="jetbrains.mps.make.facet.ITarget" />
+    <classNode dependClassName="jetbrains.mps.make.facet.ITargetEx2" />
     <classNode dependClassName="jetbrains.mps.make.resources.IPropertiesAccessor" />
+    <classNode dependClassName="jetbrains.mps.make.resources.IPropertiesPersistence" />
     <classNode dependClassName="jetbrains.mps.make.resources.IResource" />
     <classNode dependClassName="jetbrains.mps.make.script.IConfig" />
     <classNode dependClassName="jetbrains.mps.make.script.IFeedback" />
@@ -48,10 +51,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModelReference" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.util.ProgressMonitor" />
-    <classNode extendsClassName="jetbrains.mps.baseLanguage.tuples.runtime._1" />
-    <classNode extendsClassName="jetbrains.mps.make.facet.ITargetEx2" />
     <classNode extendsClassName="jetbrains.mps.make.facet.Stub" />
-    <classNode extendsClassName="jetbrains.mps.make.resources.IPropertiesPersistence" />
   </dependency>
   <dependency className="jetbrains.mps.build.plugin.FacetAspectDescriptor" file="FacetAspectDescriptor.java">
     <classNode dependClassName="java.lang.Override" />

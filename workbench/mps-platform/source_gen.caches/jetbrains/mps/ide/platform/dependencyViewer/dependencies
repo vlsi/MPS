@@ -4,8 +4,10 @@
     <classNode dependClassName="com.intellij.icons.AllIcons" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.ActionManager" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.ActionPlaces" />
+    <classNode dependClassName="com.intellij.openapi.actionSystem.AnAction" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.DefaultActionGroup" />
+    <classNode dependClassName="com.intellij.openapi.actionSystem.ToggleAction" />
     <classNode dependClassName="com.intellij.openapi.progress.ProgressIndicator" />
     <classNode dependClassName="com.intellij.openapi.progress.ProgressManager" />
     <classNode dependClassName="com.intellij.openapi.progress.Task" />
@@ -36,8 +38,6 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
     <classNode dependClassName="org.jetbrains.mps.openapi.util.ProgressMonitor" />
-    <classNode extendsClassName="com.intellij.openapi.actionSystem.AnAction" />
-    <classNode extendsClassName="com.intellij.openapi.actionSystem.ToggleAction" />
     <classNode extendsClassName="javax.swing.JPanel" />
   </dependency>
   <dependency className="jetbrains.mps.ide.platform.dependencyViewer.DependencyTree" file="DependencyTree.java">
@@ -45,6 +45,7 @@
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="javax.swing.event.TreeSelectionEvent" />
+    <classNode dependClassName="javax.swing.event.TreeSelectionListener" />
     <classNode dependClassName="javax.swing.tree.TreePath" />
     <classNode dependClassName="jetbrains.mps.ide.platform.dependencyViewer.DependenciesPanel" />
     <classNode dependClassName="jetbrains.mps.ide.platform.dependencyViewer.DependencyViewerScope" />
@@ -61,7 +62,6 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
-    <classNode extendsClassName="javax.swing.event.TreeSelectionListener" />
     <classNode extendsClassName="jetbrains.mps.ide.ui.tree.MPSTree" />
   </dependency>
   <dependency className="jetbrains.mps.ide.platform.dependencyViewer.DependencyViewerScope" file="DependencyViewerScope.java">
@@ -115,6 +115,7 @@
     <classNode dependClassName="jetbrains.mps.ide.findusages.CantSaveSomethingException" />
     <classNode dependClassName="jetbrains.mps.ide.findusages.model.CategoryKind" />
     <classNode dependClassName="jetbrains.mps.ide.findusages.view.treeholder.tree.TextOptions" />
+    <classNode dependClassName="jetbrains.mps.ide.findusages.view.treeholder.treeview.INodeRepresentator" />
     <classNode dependClassName="jetbrains.mps.ide.findusages.view.treeholder.treeview.UsagesTree" />
     <classNode dependClassName="jetbrains.mps.ide.findusages.view.treeholder.treeview.ViewOptions" />
     <classNode dependClassName="jetbrains.mps.ide.icons.IdeIcons" />
@@ -124,7 +125,6 @@
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.ide.findusages.view.UsagesView" />
-    <classNode extendsClassName="jetbrains.mps.ide.findusages.view.treeholder.treeview.INodeRepresentator" />
   </dependency>
   <dependency className="jetbrains.mps.ide.platform.dependencyViewer.TargetsView" file="TargetsView.java">
     <classNode dependClassName="com.intellij.openapi.project.Project" />
@@ -138,6 +138,7 @@
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="javax.swing.Icon" />
     <classNode dependClassName="javax.swing.event.TreeSelectionEvent" />
+    <classNode dependClassName="javax.swing.event.TreeSelectionListener" />
     <classNode dependClassName="javax.swing.tree.TreePath" />
     <classNode dependClassName="jetbrains.mps.ide.findusages.CantLoadSomethingException" />
     <classNode dependClassName="jetbrains.mps.ide.findusages.CantSaveSomethingException" />
@@ -148,6 +149,7 @@
     <classNode dependClassName="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.ModelNodeData" />
     <classNode dependClassName="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.ModuleNodeData" />
     <classNode dependClassName="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" />
+    <classNode dependClassName="jetbrains.mps.ide.findusages.view.treeholder.treeview.INodeRepresentator" />
     <classNode dependClassName="jetbrains.mps.ide.findusages.view.treeholder.treeview.UsagesTree" />
     <classNode dependClassName="jetbrains.mps.ide.findusages.view.treeholder.treeview.ViewOptions" />
     <classNode dependClassName="jetbrains.mps.ide.icons.IdeIcons" />
@@ -160,9 +162,7 @@
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
-    <classNode extendsClassName="javax.swing.event.TreeSelectionListener" />
     <classNode extendsClassName="jetbrains.mps.ide.findusages.view.UsagesView" />
-    <classNode extendsClassName="jetbrains.mps.ide.findusages.view.treeholder.treeview.INodeRepresentator" />
   </dependency>
 </dependenciesRoot>
 

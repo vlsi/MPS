@@ -43,7 +43,7 @@ public class forbid_Insert {
       }
     }
     private static boolean neq_pledwy_a0b0a0a2a3b(Object a, Object b) {
-      return !((a != null ? a.equals(b) : a == b));
+      return !(((a != null ? a.equals(b) : a == b)));
     }
   }
   public static class forbid_Insert_INSERT extends AbstractCellAction {
@@ -75,7 +75,7 @@ public class forbid_Insert {
       }
     }
     private static boolean neq_pledwy_a0b0a0a2a3c(Object a, Object b) {
-      return !((a != null ? a.equals(b) : a == b));
+      return !(((a != null ? a.equals(b) : a == b)));
     }
   }
 }

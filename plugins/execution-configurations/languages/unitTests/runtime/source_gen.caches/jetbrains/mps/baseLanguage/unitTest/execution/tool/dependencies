@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
   <dependency className="jetbrains.mps.baseLanguage.unitTest.execution.tool.BaseTestOccurenceNavigator" file="BaseTestOccurenceNavigator.java">
+    <classNode dependClassName="com.intellij.pom.Navigatable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="javax.swing.event.TreeSelectionEvent" />
@@ -8,7 +9,6 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.execution.tool.TestTree" />
     <classNode dependClassName="jetbrains.mps.ide.ui.tree.MPSTreeNode" />
     <classNode extendsClassName="com.intellij.ide.OccurenceNavigator" />
-    <classNode extendsClassName="com.intellij.pom.Navigatable" />
     <classNode extendsClassName="javax.swing.event.TreeSelectionListener" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.unitTest.execution.tool.BaseTestTreeNode" file="BaseTestTreeNode.java">
@@ -186,6 +186,8 @@
     <classNode dependClassName="javax.swing.JComponent" />
     <classNode dependClassName="javax.swing.SwingUtilities" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.execution.client.TestRunState" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.execution.tool.CompositeMessage" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.execution.tool.IMessage" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ILeftCombinator" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
@@ -195,8 +197,6 @@
     <classNode dependClassName="org.apache.log4j.Logger" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="jetbrains.mps.baseLanguage.unitTest.execution.client.TestView" />
-    <classNode extendsClassName="jetbrains.mps.baseLanguage.unitTest.execution.tool.CompositeMessage" />
-    <classNode extendsClassName="jetbrains.mps.baseLanguage.unitTest.execution.tool.IMessage" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.unitTest.execution.tool.TestState" file="TestState.java">
     <classNode dependClassName="com.intellij.icons.AllIcons" />
@@ -340,6 +340,7 @@
     <classNode dependClassName="com.intellij.openapi.actionSystem.ActionManager" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.ActionPlaces" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.ActionToolbar" />
+    <classNode dependClassName="com.intellij.openapi.actionSystem.DataProvider" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.DefaultActionGroup" />
     <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="com.intellij.openapi.ui.Splitter" />
@@ -392,7 +393,6 @@
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode extendsClassName="com.intellij.openapi.Disposable" />
-    <classNode extendsClassName="com.intellij.openapi.actionSystem.DataProvider" />
     <classNode extendsClassName="javax.swing.JPanel" />
   </dependency>
 </dependenciesRoot>

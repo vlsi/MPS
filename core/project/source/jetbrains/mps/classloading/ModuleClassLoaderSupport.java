@@ -20,10 +20,14 @@ import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager.Deptype;
 import jetbrains.mps.project.facets.JavaModuleFacet;
 import jetbrains.mps.project.facets.JavaModuleOperations;
 import jetbrains.mps.reloading.IClassPathItem;
+import jetbrains.mps.util.iterable.IterableEnumeration;
 import org.jetbrains.mps.openapi.module.SModule;
 
 import java.net.URL;
 import java.util.Collection;
+import java.util.Enumeration;
+import java.util.HashSet;
+import java.util.Set;
 
 public class ModuleClassLoaderSupport {
   private final SModule module;
@@ -72,6 +76,10 @@ public class ModuleClassLoaderSupport {
 
   public URL findResource(String name) {
     return classPathItem.getResource(name);
+  }
+
+  public Enumeration<URL> findResources(String name) {
+    return classPathItem.getResources(name);
   }
 
   public Collection<SModule> getCompileDependencies() {

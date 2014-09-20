@@ -61,12 +61,15 @@ public class BL_CopyPasteHandlers_PastePostProcessor_1 implements PastePostProce
             } else if (SNodeOperations.getReference(pastedNode, SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.ThisExpression", "classConcept")) != null) {
               SReference reference = SNodeOperations.getReference(pastedNode, SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.ThisExpression", "classConcept"));
               SLinkOperations.setTarget(pastedNode, "classConcept", null, false);
-              ((jetbrains.mps.smodel.SReference) reference).setRole(null);
+              (as_nqjmzz_a0a0c0a0a0a01a1a5a1(reference, jetbrains.mps.smodel.SReference.class)).setRole(null);
             }
             break;
           }
         }
       }
     }
+  }
+  private static <T> T as_nqjmzz_a0a0c0a0a0a01a1a5a1(Object o, Class<T> type) {
+    return (type.isInstance(o) ? (T) o : null);
   }
 }

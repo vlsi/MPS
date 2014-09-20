@@ -6,8 +6,8 @@ import jetbrains.mps.lang.core.behavior.IResolveInfo_BehaviorDescriptor;
 import jetbrains.mps.lang.traceable.behavior.TraceableConcept_BehaviorDescriptor;
 import jetbrains.mps.lang.core.behavior.InterfacePart_BehaviorDescriptor;
 import org.jetbrains.mps.openapi.language.SConcept;
-import javax.swing.Icon;
 import org.jetbrains.mps.openapi.model.SNode;
+import javax.swing.Icon;
 import java.util.List;
 import jetbrains.mps.project.Project;
 import org.jetbrains.annotations.Nullable;
@@ -18,6 +18,9 @@ public class FieldDeclaration_BehaviorDescriptor extends VariableDeclaration_Beh
   }
   public boolean virtual_canBeInterfaceMember_2949815620938109095(SConcept thisConcept) {
     return ClassifierMember_Behavior.virtual_canBeInterfaceMember_2949815620938109095(thisConcept);
+  }
+  public SNode virtual_createReference_1213877517482(SNode thisNode) {
+    return FieldDeclaration_Behavior.virtual_createReference_1213877517482(thisNode);
   }
   public Icon virtual_getAdditionalIcon_5017341185733863694(SNode thisNode) {
     return FieldDeclaration_Behavior.virtual_getAdditionalIcon_5017341185733863694(thisNode);

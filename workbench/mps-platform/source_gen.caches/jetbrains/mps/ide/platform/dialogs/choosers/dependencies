@@ -53,11 +53,15 @@
     <classNode dependClassName="com.intellij.psi.PsiElement" />
     <classNode dependClassName="com.intellij.psi.PsiFile" />
     <classNode dependClassName="com.intellij.ui.IdeBorderFactory" />
+    <classNode dependClassName="com.intellij.ui.JBTreeWithHintProvider" />
     <classNode dependClassName="com.intellij.ui.ScrollPaneFactory" />
     <classNode dependClassName="com.intellij.ui.SideBorder" />
     <classNode dependClassName="com.intellij.ui.SpeedSearchComparator" />
+    <classNode dependClassName="com.intellij.ui.TreeSpeedSearch" />
     <classNode dependClassName="com.intellij.ui.popup.AbstractPopup" />
     <classNode dependClassName="com.intellij.ui.popup.PopupUpdateProcessor" />
+    <classNode dependClassName="com.intellij.ui.speedSearch.ElementFilter" />
+    <classNode dependClassName="com.intellij.ui.treeStructure.AlwaysExpandedTree" />
     <classNode dependClassName="com.intellij.ui.treeStructure.Tree" />
     <classNode dependClassName="com.intellij.ui.treeStructure.filtered.FilteringTreeBuilder" />
     <classNode dependClassName="com.intellij.ui.treeStructure.filtered.FilteringTreeStructure" />
@@ -113,10 +117,6 @@
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode extendsClassName="com.intellij.openapi.Disposable" />
-    <classNode extendsClassName="com.intellij.ui.JBTreeWithHintProvider" />
-    <classNode extendsClassName="com.intellij.ui.TreeSpeedSearch" />
-    <classNode extendsClassName="com.intellij.ui.speedSearch.ElementFilter" />
-    <classNode extendsClassName="com.intellij.ui.treeStructure.AlwaysExpandedTree" />
   </dependency>
   <dependency className="jetbrains.mps.ide.platform.dialogs.choosers.NodeChooserDialog" file="NodeChooserDialog.java">
     <classNode dependClassName="com.intellij.ide.util.gotoByName.ChooseByNameModel" />
@@ -147,6 +147,7 @@
   </dependency>
   <dependency className="jetbrains.mps.ide.platform.dialogs.choosers.NodeTreeModel" file="NodeTreeModel.java">
     <classNode dependClassName="com.intellij.ide.DataManager" />
+    <classNode dependClassName="com.intellij.ide.structureView.StructureViewTreeElement" />
     <classNode dependClassName="com.intellij.ide.util.treeView.smartTree.Filter" />
     <classNode dependClassName="com.intellij.ide.util.treeView.smartTree.Grouper" />
     <classNode dependClassName="com.intellij.ide.util.treeView.smartTree.Sorter" />
@@ -166,14 +167,13 @@
     <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
     <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
     <classNode dependClassName="jetbrains.mps.util.Computable" />
+    <classNode dependClassName="jetbrains.mps.workbench.choose.nodes.NodePresentation" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
-    <classNode extendsClassName="com.intellij.ide.structureView.StructureViewTreeElement" />
     <classNode extendsClassName="com.intellij.ide.util.treeView.smartTree.TreeModel" />
-    <classNode extendsClassName="jetbrains.mps.workbench.choose.nodes.NodePresentation" />
   </dependency>
   <dependency className="jetbrains.mps.ide.platform.dialogs.choosers.TreeStructureActionsOwner" file="TreeStructureActionsOwner.java">
     <classNode dependClassName="com.intellij.ide.structureView.StructureViewModel" />

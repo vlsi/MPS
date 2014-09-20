@@ -9,6 +9,7 @@ import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.editor.runtime.cells.AbstractCellAction;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.baseLanguage.behavior.ParenthesisUtil;
@@ -29,18 +30,26 @@ public class DeleteParenthesisRight_Action {
       this.execute_internal(editorContext, this.myNode);
     }
     public void execute_internal(EditorContext editorContext, SNode node) {
-      boolean hasRightUnmatchedParen = (AttributeOperations.getAttribute(node, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.baseLanguage.structure.IncompleteRightParen")) != null);
+      int unmatchedLeftParens = ((AttributeOperations.getAttribute(node, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.baseLanguage.structure.IncompleteLeftParen")) != null) ? SPropertyOperations.getInteger(AttributeOperations.getAttribute(node, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.baseLanguage.structure.IncompleteLeftParen")), "count") : 0);
+      int unmatchedRightParens = ((AttributeOperations.getAttribute(node, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.baseLanguage.structure.IncompleteRightParen")) != null) ? SPropertyOperations.getInteger(AttributeOperations.getAttribute(node, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.baseLanguage.structure.IncompleteRightParen")), "count") : 0);
 
       SNode replacing = SLinkOperations.getTarget(node, "expression", true);
-      SNode leftMost = EditorParenthesisUtil.findRightmostOrLeftmostLeafExpression(replacing, false);
+      SNode leftMostNode = EditorParenthesisUtil.findRightmostOrLeftmostLeafExpression(replacing, false);
       SNodeOperations.replaceWithAnother(node, replacing);
 
       SNode rightMostNode = EditorParenthesisUtil.findRightmostOrLeftmostLeafExpression(replacing, true);
       ParenthesisUtil.checkWholeExpressionPriorities(replacing);
 
-      ParenthesisUtil.createUnmatchedLeftParenthesis(leftMost);
-      if (hasRightUnmatchedParen) {
-        ParenthesisUtil.createUnmatchedRightParenthesis(rightMostNode);
+      ParenthesisUtil.createUnmatchedLeftParenthesis(leftMostNode);
+      if (unmatchedLeftParens > 0) {
+        for (int i = 0; i < unmatchedLeftParens; i++) {
+          ParenthesisUtil.createUnmatchedLeftParenthesis(leftMostNode);
+        }
+      }
+      if (unmatchedRightParens > 0) {
+        for (int i = 0; i < unmatchedRightParens; i++) {
+          ParenthesisUtil.createUnmatchedRightParenthesis(rightMostNode);
+        }
       }
       SelectionUtil.selectLabelCellAnSetCaret(editorContext, rightMostNode, SelectionManager.LAST_CELL, -1);
     }
@@ -54,18 +63,26 @@ public class DeleteParenthesisRight_Action {
       this.execute_internal(editorContext, this.myNode);
     }
     public void execute_internal(EditorContext editorContext, SNode node) {
-      boolean hasRightUnmatchedParen = (AttributeOperations.getAttribute(node, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.baseLanguage.structure.IncompleteRightParen")) != null);
+      int unmatchedLeftParens = ((AttributeOperations.getAttribute(node, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.baseLanguage.structure.IncompleteLeftParen")) != null) ? SPropertyOperations.getInteger(AttributeOperations.getAttribute(node, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.baseLanguage.structure.IncompleteLeftParen")), "count") : 0);
+      int unmatchedRightParens = ((AttributeOperations.getAttribute(node, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.baseLanguage.structure.IncompleteRightParen")) != null) ? SPropertyOperations.getInteger(AttributeOperations.getAttribute(node, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.baseLanguage.structure.IncompleteRightParen")), "count") : 0);
 
       SNode replacing = SLinkOperations.getTarget(node, "expression", true);
-      SNode leftMost = EditorParenthesisUtil.findRightmostOrLeftmostLeafExpression(replacing, false);
+      SNode leftMostNode = EditorParenthesisUtil.findRightmostOrLeftmostLeafExpression(replacing, false);
       SNodeOperations.replaceWithAnother(node, replacing);
 
       SNode rightMostNode = EditorParenthesisUtil.findRightmostOrLeftmostLeafExpression(replacing, true);
       ParenthesisUtil.checkWholeExpressionPriorities(replacing);
 
-      ParenthesisUtil.createUnmatchedLeftParenthesis(leftMost);
-      if (hasRightUnmatchedParen) {
-        ParenthesisUtil.createUnmatchedRightParenthesis(rightMostNode);
+      ParenthesisUtil.createUnmatchedLeftParenthesis(leftMostNode);
+      if (unmatchedLeftParens > 0) {
+        for (int i = 0; i < unmatchedLeftParens; i++) {
+          ParenthesisUtil.createUnmatchedLeftParenthesis(leftMostNode);
+        }
+      }
+      if (unmatchedRightParens > 0) {
+        for (int i = 0; i < unmatchedRightParens; i++) {
+          ParenthesisUtil.createUnmatchedRightParenthesis(rightMostNode);
+        }
       }
       SelectionUtil.selectLabelCellAnSetCaret(editorContext, rightMostNode, SelectionManager.LAST_CELL, -1);
     }

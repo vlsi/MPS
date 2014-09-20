@@ -21,7 +21,7 @@ public class check_ClassShouldHaveConstructor_NonTypesystemRule extends Abstract
   public check_ClassShouldHaveConstructor_NonTypesystemRule() {
   }
   public void applyRule(final SNode classConcept, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    if (!(SNodeOperations.isInstanceOf(classConcept, "jetbrains.mps.baseLanguage.structure.IAnonymousClass") || SNodeOperations.isInstanceOf(classConcept, "jetbrains.mps.baseLanguage.structure.EnumClass"))) {
+    if (!((SNodeOperations.isInstanceOf(classConcept, "jetbrains.mps.baseLanguage.structure.IAnonymousClass") || SNodeOperations.isInstanceOf(classConcept, "jetbrains.mps.baseLanguage.structure.EnumClass")))) {
       if (!(Sequence.fromIterable(ClassConcept_Behavior.call_constructors_5292274854859503373(classConcept)).isNotEmpty() || DefaultConstructorUtils.containsDefaultConstructor(classConcept))) {
         MessageTarget errorTarget = new NodeMessageTarget();
         errorTarget = new PropertyMessageTarget("name");

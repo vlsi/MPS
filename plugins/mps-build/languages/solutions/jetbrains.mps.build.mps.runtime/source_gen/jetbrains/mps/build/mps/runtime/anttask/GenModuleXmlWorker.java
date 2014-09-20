@@ -38,6 +38,7 @@ public class GenModuleXmlWorker extends MpsWorker {
   }
   @Override
   protected void showStatistic() {
+
   }
   @Override
   public void work() {

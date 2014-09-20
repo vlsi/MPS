@@ -241,9 +241,9 @@
       <node id="6375969063409914769" at="148,67,149,46" concept="12" />
       <node id="6375969063410064203" at="152,36,153,49" concept="12" />
       <node id="6375969063410064203" at="154,5,155,16" concept="12" />
-      <node id="5786223774279741887" at="157,63,158,49" concept="12" />
-      <node id="8026497634980966929" at="160,63,161,49" concept="12" />
-      <node id="8026497634980966936" at="163,63,164,49" concept="12" />
+      <node id="5786223774279741887" at="157,63,158,51" concept="12" />
+      <node id="8026497634980966929" at="160,63,161,51" concept="12" />
+      <node id="8026497634980966936" at="163,63,164,51" concept="12" />
       <node id="1558573332373427125" at="167,36,168,58" concept="12" />
       <node id="1558573332373427125" at="169,5,170,16" concept="12" />
       <node id="3395217057974222563" at="172,62,173,46" concept="12" />
@@ -317,9 +317,9 @@
       <scope id="6375969063410054259" at="143,36,144,58" />
       <scope id="6375969063409914769" at="148,67,149,46" />
       <scope id="6375969063410064203" at="152,36,153,49" />
-      <scope id="5786223774279741887" at="157,63,158,49" />
-      <scope id="8026497634980966929" at="160,63,161,49" />
-      <scope id="8026497634980966936" at="163,63,164,49" />
+      <scope id="5786223774279741887" at="157,63,158,51" />
+      <scope id="8026497634980966929" at="160,63,161,51" />
+      <scope id="8026497634980966936" at="163,63,164,51" />
       <scope id="1558573332373427125" at="167,36,168,58" />
       <scope id="3395217057974222563" at="172,62,173,46" />
       <scope id="1558573332373427122" at="176,36,177,49" />
@@ -697,37 +697,37 @@
   </root>
   <root nodeRef="r:9b4a89e1-ec38-42c4-b1bd-96ab47ffcb3f(jetbrains.mps.vcs.diff.changes)/5505786199853653616">
     <file name="DoNotGenerateOptionChange.java">
-      <node id="5505786199853656967" at="12,66,13,21" concept="16" />
-      <node id="2404019329992942225" at="16,76,17,64" concept="11" />
-      <node id="2404019329992942242" at="18,21,19,51" concept="5" />
-      <node id="5505786199853657007" at="24,48,25,80" concept="12" />
-      <node id="5505786199853657002" at="29,31,30,29" concept="12" />
-      <node id="5505786199853657005" at="33,28,34,43" concept="12" />
-      <node id="5505786199853656962" at="12,0,15,0" concept="2" trace="DoNotGenerateOptionChange#(Ljetbrains/mps/vcs/diff/ChangeSet;)V" />
-      <node id="2404019329992942233" at="17,64,20,5" concept="9" />
-      <node id="5505786199853656997" at="32,0,36,0" concept="10" trace="toString#()Ljava/lang/String;" />
-      <node id="5505786199853656983" at="22,0,27,0" concept="10" trace="createOppositeChange#()Ljetbrains/mps/vcs/diff/changes/ModelChange;" />
-      <node id="5505786199853656990" at="27,0,32,0" concept="10" trace="getType#()Ljetbrains/mps/vcs/diff/changes/ChangeType;" />
-      <node id="5505786199853656973" at="15,0,22,0" concept="10" trace="apply#(Lorg/jetbrains/mps/openapi/model/SModel;Ljetbrains/mps/vcs/diff/changes/NodeCopier;)V" />
-      <scope id="5505786199853656966" at="12,66,13,21" />
-      <scope id="2404019329992942234" at="18,21,19,51" />
-      <scope id="5505786199853656987" at="24,48,25,80" />
-      <scope id="5505786199853656994" at="29,31,30,29" />
-      <scope id="5505786199853657001" at="33,28,34,43" />
-      <scope id="5505786199853656962" at="12,0,15,0">
+      <node id="5505786199853656967" at="11,66,12,21" concept="16" />
+      <node id="988991174663573126" at="16,45,17,57" concept="11" />
+      <node id="988991174663574163" at="17,57,18,51" concept="5" />
+      <node id="5505786199853657007" at="23,48,24,80" concept="12" />
+      <node id="5505786199853657002" at="28,31,29,29" concept="12" />
+      <node id="5505786199853657005" at="32,28,33,43" concept="12" />
+      <node id="5505786199853656962" at="11,0,14,0" concept="2" trace="DoNotGenerateOptionChange#(Ljetbrains/mps/vcs/diff/ChangeSet;)V" />
+      <node id="988991174663571290" at="15,76,19,5" concept="9" />
+      <node id="5505786199853656997" at="31,0,35,0" concept="10" trace="toString#()Ljava/lang/String;" />
+      <node id="5505786199853656983" at="21,0,26,0" concept="10" trace="createOppositeChange#()Ljetbrains/mps/vcs/diff/changes/ModelChange;" />
+      <node id="5505786199853656990" at="26,0,31,0" concept="10" trace="getType#()Ljetbrains/mps/vcs/diff/changes/ChangeType;" />
+      <node id="5505786199853656973" at="14,0,21,0" concept="10" trace="apply#(Lorg/jetbrains/mps/openapi/model/SModel;Ljetbrains/mps/vcs/diff/changes/NodeCopier;)V" />
+      <scope id="5505786199853656966" at="11,66,12,21" />
+      <scope id="5505786199853656987" at="23,48,24,80" />
+      <scope id="5505786199853656994" at="28,31,29,29" />
+      <scope id="5505786199853657001" at="32,28,33,43" />
+      <scope id="988991174663571293" at="16,45,18,51">
+        <var name="gm" id="988991174663573127" />
+      </scope>
+      <scope id="5505786199853656962" at="11,0,14,0">
         <var name="changeSet" id="5505786199853656968" />
       </scope>
-      <scope id="5505786199853656982" at="16,76,20,5">
-        <var name="mh" id="2404019329992942226" />
-      </scope>
-      <scope id="5505786199853656997" at="32,0,36,0" />
-      <scope id="5505786199853656983" at="22,0,27,0" />
-      <scope id="5505786199853656990" at="27,0,32,0" />
-      <scope id="5505786199853656973" at="15,0,22,0">
+      <scope id="5505786199853656982" at="15,76,19,5" />
+      <scope id="5505786199853656997" at="31,0,35,0" />
+      <scope id="5505786199853656983" at="21,0,26,0" />
+      <scope id="5505786199853656990" at="26,0,31,0" />
+      <scope id="5505786199853656973" at="14,0,21,0">
         <var name="model" id="5505786199853656976" />
         <var name="nodeCopier" id="5505786199853656979" />
       </scope>
-      <unit id="5505786199853653616" at="11,0,37,0" name="jetbrains.mps.vcs.diff.changes.DoNotGenerateOptionChange" />
+      <unit id="5505786199853653616" at="10,0,36,0" name="jetbrains.mps.vcs.diff.changes.DoNotGenerateOptionChange" />
     </file>
   </root>
   <root nodeRef="r:9b4a89e1-ec38-42c4-b1bd-96ab47ffcb3f(jetbrains.mps.vcs.diff.changes)/5694687812507036176">

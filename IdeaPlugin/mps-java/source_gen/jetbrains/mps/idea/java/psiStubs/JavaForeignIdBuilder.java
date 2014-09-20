@@ -8,7 +8,6 @@ import jetbrains.mps.smodel.SNodeId;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.annotations.NotNull;
-import com.intellij.psi.impl.light.LightElement;
 import com.intellij.psi.PsiFile;
 import com.intellij.psi.PsiJavaFile;
 import org.jetbrains.mps.openapi.module.SModule;
@@ -47,9 +46,6 @@ public class JavaForeignIdBuilder {
 
   @Nullable
   public static SNodeId.Foreign computeNodeId(@NotNull PsiElement element) {
-
-    assert !((element instanceof LightElement)) : "Light psi element " + ((LightElement) element).getName() + " in " + element.getContainingFile();
-
     PsiElement parent = element.getParent();
     String prefix;
     if (parent instanceof PsiFile) {

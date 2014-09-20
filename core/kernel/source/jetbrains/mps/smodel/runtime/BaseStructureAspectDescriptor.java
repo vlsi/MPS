@@ -15,11 +15,11 @@
  */
 package jetbrains.mps.smodel.runtime;
 
-import java.util.Set;
+import java.util.Collection;
 
 /**
  * @author Alex Pyshkin on 8/26/14.
  */
-public interface BaseStructureAspectDescriptor extends StructureAspectDescriptor {
-  Set<ConceptDescriptor> getDescriptors();
+public abstract class BaseStructureAspectDescriptor implements StructureAspectDescriptor {
+  public abstract Collection<ConceptDescriptor> getDescriptors();
 }

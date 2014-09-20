@@ -139,8 +139,10 @@
     <classNode dependClassName="jetbrains.mps.smodel.AbstractNodesReadListener" />
     <classNode dependClassName="jetbrains.mps.smodel.MPSModuleRepository" />
     <classNode dependClassName="jetbrains.mps.smodel.NodeReadEventsCaster" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModelAdapter" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelInternal" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelRepository" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModelRepositoryAdapter" />
     <classNode dependClassName="jetbrains.mps.smodel.event.SModelChildEvent" />
     <classNode dependClassName="jetbrains.mps.smodel.event.SModelPropertyEvent" />
     <classNode dependClassName="jetbrains.mps.smodel.event.SModelReferenceEvent" />
@@ -150,13 +152,12 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeUtil" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SRepository" />
-    <classNode extendsClassName="jetbrains.mps.smodel.SModelAdapter" />
-    <classNode extendsClassName="jetbrains.mps.smodel.SModelRepositoryAdapter" />
   </dependency>
   <dependency className="jetbrains.mps.checkers.RefScopeChecker" file="RefScopeChecker.java">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.checkers.LanguageErrorsComponent" />
+    <classNode dependClassName="jetbrains.mps.errors.QuickFixProvider" />
     <classNode dependClassName="jetbrains.mps.errors.QuickFix_Runtime" />
     <classNode dependClassName="jetbrains.mps.errors.messageTargets.ReferenceMessageTarget" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
@@ -176,7 +177,6 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SRepository" />
     <classNode extendsClassName="jetbrains.mps.checkers.AbstractConstraintsChecker" />
-    <classNode extendsClassName="jetbrains.mps.errors.QuickFixProvider" />
   </dependency>
   <dependency className="jetbrains.mps.checkers.TargetConceptChecker" file="TargetConceptChecker.java">
     <classNode dependClassName="java.lang.Override" />

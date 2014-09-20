@@ -64,12 +64,13 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
     <classNode dependClassName="org.xml.sax.Attributes" />
     <classNode dependClassName="org.xml.sax.SAXException" />
-    <classNode extendsClassName="org.xml.sax.helpers.DefaultHandler" />
+    <classNode dependClassName="org.xml.sax.helpers.DefaultHandler" />
   </dependency>
   <dependency className="jetbrains.mps.vcs.core.mergedriver.JavaDependenciesMerger" file="JavaDependenciesMerger.java">
     <classNode dependClassName="java.io.ByteArrayOutputStream" />
     <classNode dependClassName="java.io.IOException" />
     <classNode dependClassName="java.io.OutputStream" />
+    <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Integer" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
@@ -86,7 +87,6 @@
     <classNode dependClassName="org.jdom.Document" />
     <classNode dependClassName="org.jdom.JDOMException" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
-    <classNode extendsClassName="java.lang.Exception" />
     <classNode extendsClassName="jetbrains.mps.vcs.core.mergedriver.AbstractContentMerger" />
   </dependency>
   <dependency className="jetbrains.mps.vcs.core.mergedriver.MergeDriverMain" file="MergeDriverMain.java">
@@ -129,17 +129,15 @@
     <classNode dependClassName="jetbrains.mps.RuntimeFlags" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime.Tuples" />
-    <classNode dependClassName="jetbrains.mps.extapi.model.SModelBase" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
     <classNode dependClassName="jetbrains.mps.persistence.LightModelEnvironmentInfoImpl" />
     <classNode dependClassName="jetbrains.mps.persistence.PersistenceRegistry" />
     <classNode dependClassName="jetbrains.mps.persistence.PersistenceUtil" />
+    <classNode dependClassName="jetbrains.mps.persistence.PersistenceVersionAware" />
     <classNode dependClassName="jetbrains.mps.project.MPSExtentions" />
-    <classNode dependClassName="jetbrains.mps.smodel.DefaultSModel" />
     <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
-    <classNode dependClassName="jetbrains.mps.smodel.SModel" />
     <classNode dependClassName="jetbrains.mps.util.FileUtil" />
     <classNode dependClassName="jetbrains.mps.vcs.core.mergedriver.FileContent" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.changes.ModelChange" />

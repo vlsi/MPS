@@ -44,7 +44,7 @@ import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
 
-public class StructureAspectInterpreted implements BaseStructureAspectDescriptor, CoreComponent {
+public class StructureAspectInterpreted extends BaseStructureAspectDescriptor implements CoreComponent {
   private Map<String, ConceptDescriptor> myDescriptors = new ConcurrentHashMap<String, ConceptDescriptor>();
 
   //StructureAspectInterpreted is a singleton, so we can omit remove() here though the field is not static

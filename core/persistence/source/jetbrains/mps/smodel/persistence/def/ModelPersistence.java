@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2014 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,6 +18,7 @@ package jetbrains.mps.smodel.persistence.def;
 import jetbrains.mps.extapi.model.GeneratableSModel;
 import jetbrains.mps.extapi.persistence.FileDataSource;
 import jetbrains.mps.generator.ModelDigestUtil;
+import jetbrains.mps.persistence.PersistenceVersionAware;
 import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.smodel.DefaultSModel;
 import jetbrains.mps.smodel.ModelAccess;
@@ -162,6 +163,7 @@ public class ModelPersistence {
     return result;
   }
 
+  @NotNull
   public static SModelHeader loadDescriptor(StreamDataSource source) throws ModelReadException {
     final SModelHeader result = new SModelHeader();
     loadDescriptor(result, source);
@@ -194,7 +196,10 @@ public class ModelPersistence {
       XMLSAXHandler<ModelLoadResult> handler = mp.getModelReaderHandler(state, header);
       if (handler != null) {
         parseAndHandleExceptions(source, handler, "model");
-        return handler.getResult();
+        final ModelLoadResult result = handler.getResult();
+        // in case persistence version could change during IModelPersistence activities, might need to update header:
+        // header.setPersistenceVersion(mp.getVersion());
+        return result;
       }
       // then try to use DOM reader
       IModelReader reader = mp.getModelReader();
@@ -203,8 +208,8 @@ public class ModelPersistence {
         return new ModelLoadResult(reader.readModel(document, header), ModelLoadingState.FULLY_LOADED);
       }
     }
-    throw new PersistenceVersionNotFoundException("Can not find appropriate persistence version for model " + header.getUID() + "\n" +
-        " Use newer version of JetBrains MPS to load this model.");
+    String m = "Can not find appropriate persistence version for model %s\n Use newer version of JetBrains MPS to load this model.";
+    throw new PersistenceVersionNotFoundException(String.format(m, header.getModelReference()));
   }
 
   @NotNull
@@ -240,23 +245,28 @@ public class ModelPersistence {
 
   //--------write--------
 
-  /*
-   *  Saves model and metadata.
+  /**
+   * Older model persistence is updated during save if we unable to save in the version model was loaded with.
+   * This method tells actual version which will be used to serialize a model of given persistence version
+   *
+   * (since 3.0) we do not support saving in old persistence (before 7)
+
+   * @param desiredPersistenceVersion would-be version from client's perspective
+   * @return persistence version that would be actually used
    */
-  public static DefaultSModel saveModel(@NotNull SModel model, @NotNull StreamDataSource source) throws IOException {
-    int persistenceVersion =
-        model instanceof DefaultSModel ? ((DefaultSModel) model).getPersistenceVersion() : LAST_VERSION;
-    return saveModel(model, source, persistenceVersion);
+  public static int actualPersistenceVersion(int desiredPersistenceVersion) {
+    return desiredPersistenceVersion < 4 ? LAST_VERSION : Math.max(7, desiredPersistenceVersion);
   }
 
   /*
+   * FIXME why on earth we pass SModelData here, not openapi.SModel?
+   * FIXME why does this method do silent update? Would be better to update explicitly, and fail from the method if can't save with specified version
    *  returns upgraded model, or null if the model doesn't require update
    */
   public static DefaultSModel saveModel(@NotNull SModel model, @NotNull StreamDataSource source, int persistenceVersion) throws IOException {
     LOG.debug("Saving model " + model.getReference() + " to " + source.getLocation());
 
-    // (since 3.0) we do not support saving in old persistences (before 7)
-    persistenceVersion = persistenceVersion < 4 ? LAST_VERSION : Math.max(7, persistenceVersion);
+    persistenceVersion = actualPersistenceVersion(persistenceVersion);
 
     if (source.isReadOnly()) {
       throw new IOException("`" + source.getLocation() + "' is read-only");
@@ -264,16 +274,16 @@ public class ModelPersistence {
 
     // upgrade?
     int oldVersion = persistenceVersion;
-    if (model instanceof DefaultSModel) {
-      DefaultSModel defaultSModel = (DefaultSModel) model;
-      oldVersion = defaultSModel.getPersistenceVersion();
+    if (model.getModelDescriptor() instanceof PersistenceVersionAware) {
+      PersistenceVersionAware modelWithPersistenceVer = (PersistenceVersionAware) model.getModelDescriptor();
+      oldVersion = modelWithPersistenceVer.getPersistenceVersion();
       if (oldVersion != persistenceVersion) {
-        defaultSModel.setPersistenceVersion(persistenceVersion);
+        modelWithPersistenceVer.setPersistenceVersion(persistenceVersion);
       }
     }
 
     // save model
-    Document document = saveModel(model);
+    Document document = modelToXml(model, persistenceVersion);
     JDOMUtil.writeDocument(document, source);
 
     if (oldVersion != persistenceVersion) {
@@ -283,31 +293,34 @@ public class ModelPersistence {
     return null;
   }
 
+  /**
+   * Serialize model into xml, conformant to actual model's persistence version, if any, or current persistence version otherwise.
+   * The method doesn't update persistence version of the model (as it used to do)
+   */
   @NotNull
   public static Document saveModel(@NotNull SModel sourceModel) {
-    //model persistence level update is performed on startup;
-    // here model's persistence level is used, if a model has persistence level bigger than user-selected
-    // (consider BL or third-party models which have a level 4 while user uses level 3 in his application)
-    IModelPersistence modelPersistence = null;
+    int persistenceVersion = -1;
     if (sourceModel instanceof DefaultSModel) {
-      DefaultSModel defaultSModel = (DefaultSModel) sourceModel;
-      int persistenceVersion = defaultSModel.getPersistenceVersion();
-      if (persistenceVersion == -1) {
-        persistenceVersion = getCurrentPersistenceVersion();
-        defaultSModel.setPersistenceVersion(persistenceVersion);
-      }
-
-      modelPersistence = getModelPersistence(defaultSModel.getSModelHeader().getPersistenceVersion());
+      persistenceVersion = ((DefaultSModel) sourceModel).getPersistenceVersion();
     }
-
-    if (modelPersistence == null) {
-      modelPersistence = getCurrentModelPersistence();
+    if (persistenceVersion == -1 || getModelPersistence(persistenceVersion) == null) {
+      persistenceVersion = getCurrentPersistenceVersion();
     }
-
-    sourceModel.calculateImplicitImports();
-    return modelPersistence.getModelWriter().saveModel(sourceModel);
+    return modelToXml(sourceModel, persistenceVersion);
   }
 
+  /**
+   * Serialize model to xml in conformance with given persistence version.
+   * @throws java.lang.IllegalArgumentException if persistenceVersion is invalid (use {@link #getCurrentPersistenceVersion()} if uncertain
+   */
+  private static Document modelToXml(@NotNull SModel model, int persistenceVersion) {
+    IModelPersistence modelPersistence = getModelPersistence(persistenceVersion);
+    if (modelPersistence == null) {
+      throw new IllegalArgumentException(String.format("Unknown persistence version %d", persistenceVersion));
+    }
+    model.calculateImplicitImports();
+    return modelPersistence.getModelWriter(model instanceof DefaultSModel ? ((DefaultSModel) model).getSModelHeader() : null).saveModel(model);
+  }
   //----------------
 
   @NotNull
@@ -391,7 +404,7 @@ public class ModelPersistence {
     } catch (BreakParseSAXException e) {
       /* used to break SAX parsing flow */
     } catch (ParserConfigurationException e) {
-      LOG.error(null, e);
+      LOG.error(e.toString(), e);
       throw new ModelReadException("Couldn't read " + what + ": " + e.getMessage(), e);
     } catch (SAXException e) {
       throw new ModelReadException("Couldn't read " + what + ": " + e.getMessage(), e);

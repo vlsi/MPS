@@ -1,3 +1,84 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="dkd5y647heykwadg4r6bl4fsnux7zgl" />
+<dependencies version="2" modelHash="dkd5y647heykwadg4r6bl4fsnux7zgl">
+  <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" hash="-2sqpydigz7vryaerubh22j78l4l08jz" />
+  <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" hash="-88dq2j910t3rwbhdmvczf6foy7a2l1t" />
+  <dep model="r:00000000-0000-4000-0000-011c89590369(jetbrains.mps.lang.plugin.generator.baseLanguage.template.main@generator)" hash="avfa9d1gi6elwdyk4j2v3gai0koenk9" />
+  <dep model="r:00000000-0000-4000-0000-011c89590389(jetbrains.mps.lang.test.generator.baseLanguage.template.main@generator)" hash="327b05wvz8jqq4unqtz0kabu3a54bsw" />
+  <dep model="r:00000000-0000-4000-0000-011c895903a2(jetbrains.mps.lang.test.runtime)" hash="9r9w1ututgvrbcdjfywdjhucjtzekdz" />
+  <dep model="r:9832fb5f-2578-4b58-8014-a5de79da988e(jetbrains.mps.ide.editor.actions)" hash="-b0kg0hkenvc906vfkoovtmp87ze1xvv" />
+  <dep model="r:aaff0f7f-e57d-4430-aea6-ff86ed5c75ae(jetbrains.mps.lang.editor.editorTest.intentions)" hash="rr6uxid2k19lz7npzquenrfhzntqd4" />
+  <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="d987foka3qddszg3k3yjss0jaslj9i" />
+  <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="8cdjk2e5d2y2u9lult1ptgxxrttxv07" />
+  <common hash="-94rovtl5po3evg7qmctrh910nb5vfyw" dependsOnNodes="true">
+    <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
+  </common>
+  <source id="3447504547919025660" name="AddPropertyAttribute" hash="-aodyx96ses2h0e9q4fs79ocv8bp5n6p" dependsOnNodes="true">
+    <dep root="3447504547919025668" />
+    <dep root="3447504547919025677" />
+    <dep root="3447504547919025692" />
+    <dep root="3447504547919057576" />
+    <dep root="3447504547919057591" />
+    <dep root="5781006588534334968" />
+    <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590369(jetbrains.mps.lang.plugin.generator.baseLanguage.template.main@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590389(jetbrains.mps.lang.test.generator.baseLanguage.template.main@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c895903a2(jetbrains.mps.lang.test.runtime)" />
+    <dep model="r:aaff0f7f-e57d-4430-aea6-ff86ed5c75ae(jetbrains.mps.lang.editor.editorTest.intentions)" />
+    <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
+    <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
+    <file name="AddPropertyAttribute_Test.java" />
+  </source>
+  <source id="3447504547919025668" name="RemovePropertyAttribute" hash="-3luwsbg0ouw4btb689mvqhm7izux3e3" dependsOnNodes="true">
+    <dep root="3447504547919025660" />
+    <dep root="3447504547919025677" />
+    <dep root="3447504547919025692" />
+    <dep root="3447504547919057576" />
+    <dep root="3447504547919057591" />
+    <dep root="5781006588534334968" />
+    <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
+    <dep model="r:9832fb5f-2578-4b58-8014-a5de79da988e(jetbrains.mps.ide.editor.actions)" />
+    <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
+    <file name="RemovePropertyAttribute_Test.java" />
+  </source>
+  <source id="3447504547919025677" name="RemovingLeftTransformForAttributedProperty" hash="-42fhw4qu9gqoxe4drmq9zwje1lp10gn" dependsOnNodes="true">
+    <dep root="3447504547919025660" />
+    <dep root="3447504547919025668" />
+    <dep root="3447504547919025692" />
+    <dep root="3447504547919057576" />
+    <dep root="3447504547919057591" />
+    <dep root="5781006588534334968" />
+    <dep model="r:9832fb5f-2578-4b58-8014-a5de79da988e(jetbrains.mps.ide.editor.actions)" />
+    <file name="RemovingLeftTransformForAttributedProperty_Test.java" />
+  </source>
+  <source id="3447504547919025692" name="LeftTransformForAttributedProperty" hash="cvea974grpgj1ryimt9nekn0e7wmf6e" dependsOnNodes="true">
+    <dep root="3447504547919025660" />
+    <dep root="3447504547919025668" />
+    <dep root="3447504547919025677" />
+    <dep root="3447504547919057576" />
+    <dep root="3447504547919057591" />
+    <dep root="5781006588534334968" />
+    <file name="LeftTransformForAttributedProperty_Test.java" />
+  </source>
+  <source id="5781006588534334968" hash="9xblhifcbh3i22jclfpwqldp8g6hnfq" />
+  <source id="3447504547919057576" name="RemovingRightTransformForAttributedProperty" hash="ay1u7bjwc6273zdjvy7cuuq3e7ljmhv" dependsOnNodes="true">
+    <dep root="3447504547919025660" />
+    <dep root="3447504547919025668" />
+    <dep root="3447504547919025677" />
+    <dep root="3447504547919025692" />
+    <dep root="3447504547919057591" />
+    <dep root="5781006588534334968" />
+    <dep model="r:9832fb5f-2578-4b58-8014-a5de79da988e(jetbrains.mps.ide.editor.actions)" />
+    <file name="RemovingRightTransformForAttributedProperty_Test.java" />
+  </source>
+  <source id="3447504547919057591" name="RightTransformForAttributedProperty" hash="-87w3x76xlfbira5gqetd2gge024u1ii" dependsOnNodes="true">
+    <dep root="3447504547919025660" />
+    <dep root="3447504547919025668" />
+    <dep root="3447504547919025677" />
+    <dep root="3447504547919025692" />
+    <dep root="3447504547919057576" />
+    <dep root="5781006588534334968" />
+    <file name="RightTransformForAttributedProperty_Test.java" />
+  </source>
+</dependencies>
 

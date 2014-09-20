@@ -15,6 +15,26 @@
  */
 package jetbrains.mps.reloading;
 
+import jetbrains.mps.util.iterable.IterableEnumeration;
+
+import java.net.URL;
+import java.util.ArrayList;
+import java.util.Enumeration;
+import java.util.List;
+
 public abstract class RealClassPathItem extends AbstractClassPathItem {
   public abstract String getPath();
+
+  // relies on the fact that {@link #getResource(String)} returns unique resource for each name
+  @Override
+  public Enumeration<URL> getResources(String name) {
+    checkValidity();
+
+    List<URL> result = new ArrayList<URL>();
+    URL resource = getResource(name);
+    if (resource != null) {
+      result.add(resource);
+    }
+    return new IterableEnumeration<URL>(result);
+  }
 }

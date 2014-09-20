@@ -17,8 +17,8 @@
     <classNode dependClassName="java.lang.StringBuilder" />
     <classNode dependClassName="javax.swing.JComponent" />
     <classNode dependClassName="javax.swing.JList" />
+    <classNode dependClassName="javax.swing.TransferHandler" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModelReference" />
-    <classNode extendsClassName="javax.swing.TransferHandler" />
   </dependency>
 </dependenciesRoot>
 

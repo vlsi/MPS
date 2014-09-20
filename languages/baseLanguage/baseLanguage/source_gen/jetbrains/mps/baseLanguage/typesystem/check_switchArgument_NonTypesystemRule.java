@@ -26,7 +26,7 @@ public class check_switchArgument_NonTypesystemRule extends AbstractNonTypesyste
     }
     SNode argType = TypeChecker.getInstance().getTypeOf(arg);
     if (SNodeOperations.isInstanceOf(argType, "jetbrains.mps.baseLanguage.structure.PrimitiveType")) {
-      if (!(SNodeOperations.isInstanceOf(argType, "jetbrains.mps.baseLanguage.structure.IntegerType") || SNodeOperations.isInstanceOf(argType, "jetbrains.mps.baseLanguage.structure.CharType") || SNodeOperations.isInstanceOf(argType, "jetbrains.mps.baseLanguage.structure.ByteType") || SNodeOperations.isInstanceOf(argType, "jetbrains.mps.baseLanguage.structure.ShortType"))) {
+      if (!((SNodeOperations.isInstanceOf(argType, "jetbrains.mps.baseLanguage.structure.IntegerType") || SNodeOperations.isInstanceOf(argType, "jetbrains.mps.baseLanguage.structure.CharType") || SNodeOperations.isInstanceOf(argType, "jetbrains.mps.baseLanguage.structure.ByteType") || SNodeOperations.isInstanceOf(argType, "jetbrains.mps.baseLanguage.structure.ShortType")))) {
         {
           MessageTarget errorTarget = new NodeMessageTarget();
           IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(arg, "Primitive argument of switch should be byte, short, char or int", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "9035995549588681125", null, errorTarget);

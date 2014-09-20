@@ -35,7 +35,7 @@ import java.lang.reflect.Field;
 import com.intellij.idea.IdeaTestApplication;
 import jetbrains.mps.vcs.diff.ui.common.DiffModelTree;
 import jetbrains.mps.vfs.IFile;
-import jetbrains.mps.extapi.model.SModelBase;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
@@ -131,8 +131,8 @@ public class TestMergeDialog {
               iFile.createNewFile();
             }
             try {
-              ModelPersistence.saveModel(as_jrs6o7_a0a0a0c0a0a0a0f0a0a0a8a7(result, SModelBase.class).getSModelInternal(), new FileDataSource(iFile));
-            } catch (IOException ex) {
+              PersistenceFacade.getInstance().getDefaultModelFactory().save(result, new FileDataSource(iFile));
+            } catch (Exception ex) {
               if (LOG.isEnabledFor(Level.ERROR)) {
                 LOG.error("Cannot save model.", ex);
               }
@@ -147,7 +147,4 @@ public class TestMergeDialog {
     });
   }
   protected static Logger LOG = LogManager.getLogger(TestMergeDialog.class);
-  private static <T> T as_jrs6o7_a0a0a0c0a0a0a0f0a0a0a8a7(Object o, Class<T> type) {
-    return (type.isInstance(o) ? (T) o : null);
-  }
 }

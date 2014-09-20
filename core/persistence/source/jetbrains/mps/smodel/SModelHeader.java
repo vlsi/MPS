@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2014 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,11 +13,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SModelReference;
+package jetbrains.mps.smodel;
 
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
+import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.util.io.ModelInputStream;
 import jetbrains.mps.util.io.ModelOutputStream;
+import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 
 import java.io.IOException;
@@ -26,14 +29,25 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * evgeny, 5/3/11
+ * Essential meta information about persisted model (id, persistence version, associated properties, etc).
+ * Its intention is to keep data that might be helpful/essential prior to model loading.
+ *
+ * Generally, use of header for a model persistence is optional, it comes handy
+ * for partial model loading and is in use by most persistence implementations supplied by MPS.
  */
 public class SModelHeader {
 
   public static final String VERSION = "version";
   public static final String DO_NOT_GENERATE = "doNotGenerate";
 
-  private String myUID = null;
+  /*
+   * Model is identified with SModelId, optional module id and has a name, these are elements we'd like to keep in header
+   * for quick consideration. Although SModelReference has all these, and it seems straightforward to use it here,
+   * it's not quite 'right' due to semantics attached - resolution of a model within a repository. However,
+   * exposing 3 getters/setters (modelId, modelName, moduleId) is cumbersome, and SModel#getReference is @NotNull regardless of model
+   * loaded/attached state, hence for the time being we decided to live with SModelReference here.
+   */
+  private SModelReference myModelRef = null;
   private int myPersistenceVersion = -1;
   private int myVersion = -1;
   private boolean doNotGenerate = false;
@@ -63,16 +77,38 @@ public class SModelHeader {
     this.doNotGenerate = doNotGenerate;
   }
 
+  /**
+   * @deprecated use {@link #setModelReference(org.jetbrains.mps.openapi.model.SModelReference)} instead
+   */
+  @Deprecated
+  @ToRemove(version = 3.2)
   public void setUID(String UID) {
-    myUID = UID;
+    setModelReference(UID == null ? null : PersistenceFacade.getInstance().createModelReference(UID));
   }
 
+  /**
+   * @deprecated use {@link #getModelReference()} instead
+   */
+  @Deprecated
+  @ToRemove(version = 3.2)
   public String getUID() {
-    return myUID;
+    SModelReference mr = getModelReference();
+    return mr == null ? null : mr.toString();
   }
 
+  /**
+   * DESIGN NOTE: SModelReference is not a persisted attribute of a model. Conceptually, reference emerges once we have
+   * an object to point to. The moment we got SModelHeader there's nothing to point to yet, although one could construct
+   * SModelReference with
+   * @return <code>null</code> if model header is not initialized with a model reference
+   */
+  @Nullable
   public SModelReference getModelReference() {
-    return myUID != null ? PersistenceFacade.getInstance().createModelReference(myUID) : null;
+    return myModelRef;
+  }
+
+  public void setModelReference(@Nullable SModelReference modelRef) {
+    myModelRef = modelRef;
   }
 
   public Map<String, String> getOptionalProperties() {
@@ -103,15 +139,10 @@ public class SModelHeader {
     return header;
   }
 
-  public void updateDefaults(SModelHeader header) {
-    myVersion = header.getVersion();
-    doNotGenerate = header.isDoNotGenerate();
-    myOptionalProperties.putAll(header.getOptionalProperties());
-  }
-
+  // FIXME move save and load into respective class (binary persistance)
   public void save(ModelOutputStream stream) throws IOException {
     stream.writeByte(77);
-    stream.writeString(myUID);
+    stream.writeString(myModelRef == null ? null : PersistenceFacade.getInstance().asString(myModelRef));
     stream.writeInt(myPersistenceVersion);
     stream.writeInt(myVersion);
     stream.writeBoolean(doNotGenerate);
@@ -125,7 +156,8 @@ public class SModelHeader {
   public static SModelHeader load(ModelInputStream stream) throws IOException {
     if (stream.readByte() != 77) throw new IOException("bad stream: no model header start marker");
     SModelHeader result = new SModelHeader();
-    result.setUID(stream.readString());
+    final String s = stream.readString();
+    result.setModelReference(s == null ? null : PersistenceFacade.getInstance().createModelReference(s));
     result.setPersistenceVersion(stream.readInt());
     result.setVersion(stream.readInt());
     result.setDoNotGenerate(stream.readBoolean());
@@ -137,7 +169,7 @@ public class SModelHeader {
 
   public SModelHeader createCopy() {
     SModelHeader copy = new SModelHeader();
-    copy.myUID = myUID;
+    copy.myModelRef = myModelRef;
     copy.myPersistenceVersion = myPersistenceVersion;
     copy.myVersion = myVersion;
     copy.doNotGenerate = doNotGenerate;

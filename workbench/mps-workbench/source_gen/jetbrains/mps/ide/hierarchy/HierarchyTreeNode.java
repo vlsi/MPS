@@ -77,7 +77,7 @@ public class HierarchyTreeNode extends MPSTreeNode {
     ModelAccess.instance().runWriteInEDT(new Runnable() {
       @Override
       public void run() {
-        if (!(SNodeUtil.isAccessible(myNode, MPSModuleRepository.getInstance())) || !(myNode.getModel() != null) || myNode.getModel() == null) {
+        if (!(SNodeUtil.isAccessible(myNode, MPSModuleRepository.getInstance())) || !((myNode.getModel() != null)) || myNode.getModel() == null) {
           return;
         }
         AbstractHierarchyView hierarchyView = myHierarchyTree.getHierarchyView();

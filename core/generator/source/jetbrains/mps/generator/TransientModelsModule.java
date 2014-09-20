@@ -25,6 +25,7 @@ import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager;
 import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager.Deptype;
+import jetbrains.mps.smodel.FastNodeFinderManager;
 import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SModelStereotype;
@@ -139,6 +140,11 @@ public class TransientModelsModule extends AbstractModule implements TransientSM
   }
 
   public void removeModel(SModel md) {
+    // FNF is poor in tracking transients models (unpublished models do not show up in a repository)
+    // This code might need reconsideration once we have a distinct repository for transient modules (we'll either
+    // get capability to track models, or FNFM will attach finders to a specific repo and dispose all of them at once
+    // when transient repo is thrown away).
+    FastNodeFinderManager.dispose(md);
     myModelVault.remove(md);
     if (myPublished.remove(md)) {
       unregisterModel((SModelBase) md);

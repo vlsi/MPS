@@ -46,8 +46,8 @@ import jetbrains.mps.smodel.SModelHeader;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.extapi.persistence.FileDataSource;
 import org.jetbrains.mps.openapi.model.SModelReference;
-import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.util.FileUtil;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.persistence.def.ModelReadException;
 import org.apache.log4j.Level;
@@ -255,16 +255,13 @@ public abstract class MpsWorker {
     //  if model is not loaded, read it 
     try {
       SModelHeader dr = ModelPersistence.loadDescriptor(new FileDataSource(ifile));
-      SModelReference modelReference;
-      if (dr.getUID() != null) {
-        modelReference = PersistenceFacade.getInstance().createModelReference(dr.getUID());
-      } else {
+      SModelReference modelReference = dr.getModelReference();
+      if (modelReference == null) {
         String modelName = FileUtil.getNameWithoutExtension(ifile.getName());
         modelReference = PersistenceFacade.getInstance().createModelReference(modelName);
       }
       info("Read model " + modelReference);
-      SModelHeader d = ModelPersistence.loadDescriptor(new FileDataSource(ifile));
-      SModel existingDescr = SModelRepository.getInstance().getModelDescriptor(d.getModelReference());
+      SModel existingDescr = SModelRepository.getInstance().getModelDescriptor(modelReference);
       if (existingDescr == null) {
         error("Module for " + ifile.getPath() + " was not found. Use \"library\" tag to load required modules.");
       } else {

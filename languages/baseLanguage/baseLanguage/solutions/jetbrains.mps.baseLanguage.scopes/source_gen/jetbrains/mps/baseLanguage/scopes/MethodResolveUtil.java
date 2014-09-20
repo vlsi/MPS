@@ -19,8 +19,7 @@ import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.typesystem.inference.util.StructuralNodeMap;
 import java.util.Set;
 import jetbrains.mps.typesystem.inference.SubtypingManager;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.internal.collections.runtime.IVisitor;
+import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
 import jetbrains.mps.newTypesystem.SubtypingUtil;
 import org.jetbrains.annotations.NotNull;
@@ -159,7 +158,7 @@ public class MethodResolveUtil {
     }
     return new Pair<SNode, Boolean>(ListSequence.fromList(candidates).first(), good);
   }
-  private static List<SNode> selectByParameterTypeNode(@Nullable SNode typeOfArg, int indexOfArg, List<SNode> candidates, final Map<SNode, SNode> typeByTypeVar, boolean mostSpecific, boolean isWeak) {
+  private static List<SNode> selectByParameterTypeNode(@Nullable SNode typeOfArg, int indexOfArg, List<SNode> candidates, Map<SNode, SNode> typeByTypeVar, boolean mostSpecific, boolean isWeak) {
     List<SNode> result = new ArrayList<SNode>();
     StructuralNodeMap<Set<SNode>> typesOfParamToMethods = new StructuralNodeMap<Set<SNode>>();
     SubtypingManager subtypingManager = TypeChecker.getInstance().getSubtypingManager();
@@ -176,20 +175,13 @@ public class MethodResolveUtil {
           continue;
         }
       }
-      List<SNode> methodTypeVariableDecls = SLinkOperations.getTargets(candidate, "typeVariableDeclaration", true);
-      for (SNode tvd : ListSequence.fromList(methodTypeVariableDecls)) {
-        typeByTypeVar.put(tvd, SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.WildCardType", null));
-      }
+      Set<SNode> methodTypeVariableDecls = SetSequence.fromSetWithValues(new HashSet<SNode>(), SLinkOperations.getTargets(candidate, "typeVariableDeclaration", true));
       SNode typeOfParam = (varArg ? SLinkOperations.getTarget(SNodeOperations.cast(type, "jetbrains.mps.baseLanguage.structure.VariableArityType"), "componentType", true) : SLinkOperations.getTarget(ListSequence.fromList(params).getElement(indexOfArg), "type", true));
       if ((typeOfParam == null)) {
         continue;
       }
       typeOfParam = GenericTypesUtil.getTypeWithResolvedTypeVars(typeOfParam, typeByTypeVar);
-      ListSequence.fromList(methodTypeVariableDecls).visitAll(new IVisitor<SNode>() {
-        public void visit(SNode tvd) {
-          typeByTypeVar.remove(tvd);
-        }
-      });
+      typeOfParam = GenericTypesUtil.methodParamTypeWoutTypeVars(typeOfParam, methodTypeVariableDecls);
       if (subtypingManager.isSubtype(typeOfArg, typeOfParam, isWeak)) {
         Set<SNode> methods = typesOfParamToMethods.get(typeOfParam);
         if (methods == null) {

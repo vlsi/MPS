@@ -2485,7 +2485,7 @@
   <root nodeRef="r:00000000-0000-4000-0000-011c895902fa(jetbrains.mps.lang.smodel.behavior)/2788452359612002126">
     <file name="AttributeAccess_Behavior.java">
       <node id="2788452359612002222" at="20,72,21,16" concept="7" />
-      <node id="6960953357954063541" at="23,91,24,406" concept="7" />
+      <node id="6960953357954063541" at="23,91,24,408" concept="7" />
       <node id="6960953357954063551" at="26,83,27,16" concept="7" />
       <node id="6960953357954063585" at="29,84,30,203" concept="7" />
       <node id="8106064145944353378" at="32,90,33,281" concept="6" />
@@ -2512,7 +2512,7 @@
       <node id="8106064145944353424" at="45,0,52,0" concept="8" trace="_quotation_createNode_q663c8_a0b0e#()Lorg/jetbrains/mps/openapi/model/SNode;" />
       <scope id="2788452359612002128" at="18,43,18,43" />
       <scope id="2788452359612002134" at="20,72,21,16" />
-      <scope id="6960953357954063539" at="23,91,24,406" />
+      <scope id="6960953357954063539" at="23,91,24,408" />
       <scope id="6960953357954063549" at="26,83,27,16" />
       <scope id="6960953357954063545" at="29,84,30,203" />
       <scope id="1262430001741647770" at="36,100,37,16" />

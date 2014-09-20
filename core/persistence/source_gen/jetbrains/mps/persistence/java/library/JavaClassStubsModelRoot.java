@@ -190,6 +190,6 @@ public class JavaClassStubsModelRoot extends FileBasedModelRoot {
     return (a != null ? a.equals(b) : a == b);
   }
   private static boolean neq_jzcn2m_a0a5a1a9(Object a, Object b) {
-    return !((a != null ? a.equals(b) : a == b));
+    return !(((a != null ? a.equals(b) : a == b)));
   }
 }

@@ -6,6 +6,7 @@
     <classNode dependClassName="java.util.Collections" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.javadoc.intentions.BlockDocTagHelper" />
     <classNode dependClassName="jetbrains.mps.intentions.IntentionDescriptor" />
+    <classNode dependClassName="jetbrains.mps.intentions.IntentionExecutable" />
     <classNode dependClassName="jetbrains.mps.intentions.IntentionType" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
@@ -14,7 +15,6 @@
     <classNode dependClassName="jetbrains.mps.smodel.action.SNodeFactoryOperations" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
-    <classNode extendsClassName="jetbrains.mps.intentions.IntentionExecutable" />
     <classNode extendsClassName="jetbrains.mps.intentions.IntentionFactory" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.javadoc.intentions.AddClassifierDocComment_Intention" file="AddClassifierDocComment_Intention.java">
@@ -24,6 +24,7 @@
     <classNode dependClassName="java.util.Collections" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.javadoc.intentions.DocCommentHelper" />
     <classNode dependClassName="jetbrains.mps.intentions.IntentionDescriptor" />
+    <classNode dependClassName="jetbrains.mps.intentions.IntentionExecutable" />
     <classNode dependClassName="jetbrains.mps.intentions.IntentionType" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations" />
@@ -38,7 +39,6 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeAccessUtil" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
-    <classNode extendsClassName="jetbrains.mps.intentions.IntentionExecutable" />
     <classNode extendsClassName="jetbrains.mps.intentions.IntentionFactory" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.javadoc.intentions.AddDeprecatedBlockDocTag_Intention" file="AddDeprecatedBlockDocTag_Intention.java">
@@ -48,6 +48,7 @@
     <classNode dependClassName="java.util.Collection" />
     <classNode dependClassName="java.util.Collections" />
     <classNode dependClassName="jetbrains.mps.intentions.IntentionDescriptor" />
+    <classNode dependClassName="jetbrains.mps.intentions.IntentionExecutable" />
     <classNode dependClassName="jetbrains.mps.intentions.IntentionType" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
@@ -57,7 +58,6 @@
     <classNode dependClassName="jetbrains.mps.smodel.behaviour.BehaviorReflection" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
-    <classNode extendsClassName="jetbrains.mps.intentions.IntentionExecutable" />
     <classNode extendsClassName="jetbrains.mps.intentions.IntentionFactory" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.javadoc.intentions.AddFieldDocComment_Intention" file="AddFieldDocComment_Intention.java">
@@ -66,6 +66,7 @@
     <classNode dependClassName="java.util.Collections" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.javadoc.intentions.DocCommentHelper" />
     <classNode dependClassName="jetbrains.mps.intentions.IntentionDescriptor" />
+    <classNode dependClassName="jetbrains.mps.intentions.IntentionExecutable" />
     <classNode dependClassName="jetbrains.mps.intentions.IntentionType" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations" />
@@ -76,7 +77,6 @@
     <classNode dependClassName="jetbrains.mps.smodel.action.SNodeFactoryOperations" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
-    <classNode extendsClassName="jetbrains.mps.intentions.IntentionExecutable" />
     <classNode extendsClassName="jetbrains.mps.intentions.IntentionFactory" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.javadoc.intentions.AddMethodDocComment_Intention" file="AddMethodDocComment_Intention.java">
@@ -86,6 +86,7 @@
     <classNode dependClassName="java.util.Collections" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.javadoc.intentions.DocCommentHelper" />
     <classNode dependClassName="jetbrains.mps.intentions.IntentionDescriptor" />
+    <classNode dependClassName="jetbrains.mps.intentions.IntentionExecutable" />
     <classNode dependClassName="jetbrains.mps.intentions.IntentionType" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations" />
@@ -100,7 +101,6 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeAccessUtil" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
-    <classNode extendsClassName="jetbrains.mps.intentions.IntentionExecutable" />
     <classNode extendsClassName="jetbrains.mps.intentions.IntentionFactory" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.javadoc.intentions.AddParameterBlockDocTag_Intention" file="AddParameterBlockDocTag_Intention.java">
@@ -109,13 +109,13 @@
     <classNode dependClassName="java.util.Collections" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.javadoc.intentions.BlockDocTagHelper" />
     <classNode dependClassName="jetbrains.mps.intentions.IntentionDescriptor" />
+    <classNode dependClassName="jetbrains.mps.intentions.IntentionExecutable" />
     <classNode dependClassName="jetbrains.mps.intentions.IntentionType" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
     <classNode dependClassName="jetbrains.mps.smodel.action.SNodeFactoryOperations" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
-    <classNode extendsClassName="jetbrains.mps.intentions.IntentionExecutable" />
     <classNode extendsClassName="jetbrains.mps.intentions.IntentionFactory" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.javadoc.intentions.AddReturnBlockTag_Intention" file="AddReturnBlockTag_Intention.java">
@@ -124,6 +124,7 @@
     <classNode dependClassName="java.util.Collections" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.javadoc.intentions.BlockDocTagHelper" />
     <classNode dependClassName="jetbrains.mps.intentions.IntentionDescriptor" />
+    <classNode dependClassName="jetbrains.mps.intentions.IntentionExecutable" />
     <classNode dependClassName="jetbrains.mps.intentions.IntentionType" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
@@ -132,7 +133,6 @@
     <classNode dependClassName="jetbrains.mps.smodel.action.SNodeFactoryOperations" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
-    <classNode extendsClassName="jetbrains.mps.intentions.IntentionExecutable" />
     <classNode extendsClassName="jetbrains.mps.intentions.IntentionFactory" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.javadoc.intentions.AddSeeBlockTag_Intention" file="AddSeeBlockTag_Intention.java">
@@ -141,13 +141,13 @@
     <classNode dependClassName="java.util.Collections" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.javadoc.intentions.BlockDocTagHelper" />
     <classNode dependClassName="jetbrains.mps.intentions.IntentionDescriptor" />
+    <classNode dependClassName="jetbrains.mps.intentions.IntentionExecutable" />
     <classNode dependClassName="jetbrains.mps.intentions.IntentionType" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
     <classNode dependClassName="jetbrains.mps.smodel.action.SNodeFactoryOperations" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
-    <classNode extendsClassName="jetbrains.mps.intentions.IntentionExecutable" />
     <classNode extendsClassName="jetbrains.mps.intentions.IntentionFactory" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.javadoc.intentions.AddSinceBlockDocTag_Intention" file="AddSinceBlockDocTag_Intention.java">
@@ -156,6 +156,7 @@
     <classNode dependClassName="java.util.Collections" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.javadoc.intentions.BlockDocTagHelper" />
     <classNode dependClassName="jetbrains.mps.intentions.IntentionDescriptor" />
+    <classNode dependClassName="jetbrains.mps.intentions.IntentionExecutable" />
     <classNode dependClassName="jetbrains.mps.intentions.IntentionType" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
@@ -164,7 +165,6 @@
     <classNode dependClassName="jetbrains.mps.smodel.action.SNodeFactoryOperations" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
-    <classNode extendsClassName="jetbrains.mps.intentions.IntentionExecutable" />
     <classNode extendsClassName="jetbrains.mps.intentions.IntentionFactory" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.javadoc.intentions.AddStaticFieldDocComment_Intention" file="AddStaticFieldDocComment_Intention.java">
@@ -173,6 +173,7 @@
     <classNode dependClassName="java.util.Collections" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.javadoc.intentions.DocCommentHelper" />
     <classNode dependClassName="jetbrains.mps.intentions.IntentionDescriptor" />
+    <classNode dependClassName="jetbrains.mps.intentions.IntentionExecutable" />
     <classNode dependClassName="jetbrains.mps.intentions.IntentionType" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations" />
@@ -183,7 +184,6 @@
     <classNode dependClassName="jetbrains.mps.smodel.action.SNodeFactoryOperations" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
-    <classNode extendsClassName="jetbrains.mps.intentions.IntentionExecutable" />
     <classNode extendsClassName="jetbrains.mps.intentions.IntentionFactory" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.javadoc.intentions.AddThrowBlockDocTag_Intention" file="AddThrowBlockDocTag_Intention.java">
@@ -192,13 +192,13 @@
     <classNode dependClassName="java.util.Collections" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.javadoc.intentions.BlockDocTagHelper" />
     <classNode dependClassName="jetbrains.mps.intentions.IntentionDescriptor" />
+    <classNode dependClassName="jetbrains.mps.intentions.IntentionExecutable" />
     <classNode dependClassName="jetbrains.mps.intentions.IntentionType" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
     <classNode dependClassName="jetbrains.mps.smodel.action.SNodeFactoryOperations" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
-    <classNode extendsClassName="jetbrains.mps.intentions.IntentionExecutable" />
     <classNode extendsClassName="jetbrains.mps.intentions.IntentionFactory" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.javadoc.intentions.AddVersionBlockTagDoc_Intention" file="AddVersionBlockTagDoc_Intention.java">
@@ -207,6 +207,7 @@
     <classNode dependClassName="java.util.Collections" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.javadoc.intentions.BlockDocTagHelper" />
     <classNode dependClassName="jetbrains.mps.intentions.IntentionDescriptor" />
+    <classNode dependClassName="jetbrains.mps.intentions.IntentionExecutable" />
     <classNode dependClassName="jetbrains.mps.intentions.IntentionType" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
@@ -215,7 +216,6 @@
     <classNode dependClassName="jetbrains.mps.smodel.action.SNodeFactoryOperations" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
-    <classNode extendsClassName="jetbrains.mps.intentions.IntentionExecutable" />
     <classNode extendsClassName="jetbrains.mps.intentions.IntentionFactory" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.javadoc.intentions.BlockDocTagHelper" file="BlockDocTagHelper.java">
@@ -242,6 +242,7 @@
     <classNode dependClassName="java.util.Collections" />
     <classNode dependClassName="java.util.Locale" />
     <classNode dependClassName="jetbrains.mps.intentions.IntentionDescriptor" />
+    <classNode dependClassName="jetbrains.mps.intentions.IntentionExecutable" />
     <classNode dependClassName="jetbrains.mps.intentions.IntentionType" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
@@ -251,7 +252,6 @@
     <classNode dependClassName="jetbrains.mps.smodel.action.SNodeFactoryOperations" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
-    <classNode extendsClassName="jetbrains.mps.intentions.IntentionExecutable" />
     <classNode extendsClassName="jetbrains.mps.intentions.IntentionFactory" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.javadoc.intentions.IntentionsDescriptor" file="IntentionsDescriptor.java">

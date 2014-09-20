@@ -16,16 +16,15 @@
 package jetbrains.mps.persistence.binary;
 
 import jetbrains.mps.extapi.model.GeneratableSModel;
-import jetbrains.mps.extapi.persistence.FileDataSource;
-import jetbrains.mps.generator.ModelDigestUtil;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.persistence.BinaryModelPersistence;
-import jetbrains.mps.persistence.ModelDigestHelper;
+import jetbrains.mps.persistence.LazyLoadFacility;
 import jetbrains.mps.refactoring.StructureModificationLog;
+import jetbrains.mps.persistence.binary.BinarySModel.InvalidBinarySModel;
 import jetbrains.mps.smodel.InvalidSModel;
 import jetbrains.mps.smodel.LazyEditableSModelBase;
 import jetbrains.mps.smodel.LazySModel;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.SModelHeader;
 import jetbrains.mps.smodel.SuspiciousModelHandler;
 import jetbrains.mps.smodel.descriptor.RefactorableSModelDescriptor;
 import jetbrains.mps.smodel.loading.ModelLoadResult;
@@ -34,38 +33,33 @@ import jetbrains.mps.smodel.persistence.def.ModelReadException;
 import jetbrains.mps.smodel.persistence.def.RefactoringsPersistence;
 import org.apache.log4j.LogManager;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.mps.openapi.persistence.StreamDataSource;
+import org.jetbrains.mps.openapi.persistence.DataSource;
 
 import java.io.IOException;
 import java.util.Map;
 
-import static jetbrains.mps.persistence.binary.BinarySModel.InvalidBinarySModel;
 
 /**
  * evgeny, 11/21/12
  */
 public class BinarySModelDescriptor extends LazyEditableSModelBase implements GeneratableSModel, RefactorableSModelDescriptor {
   private static final Logger LOG = Logger.wrap(LogManager.getLogger(BinarySModelDescriptor.class));
+  private final LazyLoadFacility myPersistence;
 
   private BinaryModelHeader myHeader;
 
   private final Object myRefactoringHistoryLock = new Object();
   private StructureModificationLog myStructureModificationLog;
 
-  public BinarySModelDescriptor(StreamDataSource source, BinaryModelHeader header) {
-    super(header.getReference(), source);
+  public BinarySModelDescriptor(@NotNull LazyLoadFacility persistence, @NotNull BinaryModelHeader header) {
+    super(header.getModelReference(), persistence.getSource());
+    myPersistence = persistence;
     myHeader = header;
-  }
-
-  @NotNull
-  @Override
-  public StreamDataSource getSource() {
-    return (StreamDataSource) super.getSource();
   }
 
   @Override
   protected ModelLoadResult loadSModel(ModelLoadingState state) {
-    StreamDataSource source = getSource();
+    DataSource source = getSource();
     if (!source.isReadOnly() && source.getTimestamp() == -1) {
       // no file on disk
       BinarySModel model = new BinarySModel(myHeader);
@@ -74,7 +68,7 @@ public class BinarySModelDescriptor extends LazyEditableSModelBase implements Ge
 
     ModelLoadResult result;
     try {
-      result = BinaryPersistence.readModel(getReference(), getSource(), state == ModelLoadingState.INTERFACE_LOADED);
+      result = myPersistence.readModel(myHeader, state);
     } catch (ModelReadException e) {
       SuspiciousModelHandler.getHandler().handleSuspiciousModel(this, false);
       BinarySModel newModel = new InvalidBinarySModel(getReference(), e);
@@ -103,8 +97,8 @@ public class BinarySModelDescriptor extends LazyEditableSModelBase implements Ge
   @NotNull
   public StructureModificationLog getStructureModificationLog() {
     synchronized (myRefactoringHistoryLock) {
-      if (myStructureModificationLog == null && getSource() instanceof FileDataSource) {
-        myStructureModificationLog = RefactoringsPersistence.load(((FileDataSource) getSource()).getFile());
+      if (myStructureModificationLog == null) {
+        myStructureModificationLog = RefactoringsPersistence.load(getSource());
       }
       if (myStructureModificationLog == null) {
         myStructureModificationLog = new StructureModificationLog();
@@ -116,8 +110,7 @@ public class BinarySModelDescriptor extends LazyEditableSModelBase implements Ge
   @Override
   public void saveStructureModificationLog(@NotNull StructureModificationLog log) {
     myStructureModificationLog = log;
-    if (!(getSource() instanceof FileDataSource)) throw new UnsupportedOperationException("cannot save structure modification log");
-    RefactoringsPersistence.save(((FileDataSource) getSource()).getFile(), log);
+    RefactoringsPersistence.save(getSource(), log);
   }
 
   @Override
@@ -127,7 +120,7 @@ public class BinarySModelDescriptor extends LazyEditableSModelBase implements Ge
       // we do not save stub model to not overwrite the real model
       return false;
     }
-    BinaryPersistence.writeModel(smodel, getSource());
+    myPersistence.saveModel(myHeader, smodel);
     return false;
   }
 
@@ -142,37 +135,36 @@ public class BinarySModelDescriptor extends LazyEditableSModelBase implements Ge
   }
 
   @Override
-  public String getModelHash() {
-    String modelHash = ModelDigestHelper.getInstance().getModelHash(getSource());
-    if (modelHash != null) return modelHash;
+  public void setGenerateIntoModelFolder(boolean value) {
+    // no-op
+  }
 
-    return ModelDigestUtil.hash(getSource(), false);
+  @Override
+  public String getModelHash() {
+    return myPersistence.getModelHash();
   }
 
   @Override
   public Map<String, String> getGenerationHashes() {
-    Map<String, String> generationHashes = ModelDigestHelper.getInstance().getGenerationHashes(getSource());
-    if (generationHashes != null) return generationHashes;
-
-    return BinaryModelPersistence.getDigestMap(getSource());
+    return myPersistence.getGenerationHashes();
   }
 
   @Override
   public void setDoNotGenerate(boolean value) {
     ModelAccess.assertLegalWrite();
 
-    getHeader().setDoNotGenerate(value);
+    getModelHeader().setDoNotGenerate(value);
     setChanged(true);
   }
 
   @Override
   public boolean isDoNotGenerate() {
-    return getHeader().isDoNotGenerate();
+    return getModelHeader().isDoNotGenerate();
   }
 
   @Override
   public int getVersion() {
-    return getHeader().getVersion();
+    return getModelHeader().getVersion();
   }
 
   @Override
@@ -183,8 +175,7 @@ public class BinarySModelDescriptor extends LazyEditableSModelBase implements Ge
     setChanged(true);
   }
 
-
-  private BinaryModelHeader getHeader() {
+  private SModelHeader getModelHeader() {
     BinarySModel model = (BinarySModel) getCurrentModelInternal();
     if (model == null) return myHeader;
     return model.getHeader();
@@ -211,7 +202,7 @@ public class BinarySModelDescriptor extends LazyEditableSModelBase implements Ge
   @Override
   protected void reloadContents() {
     try {
-      myHeader = BinaryPersistence.readHeader(getSource());
+      myHeader = (BinaryModelHeader) myPersistence.readHeader(); // FIXME remove cast once there's no BinarySModel
     } catch (ModelReadException e) {
       updateTimestamp();
       SuspiciousModelHandler.getHandler().handleSuspiciousModel(this, false);
@@ -221,7 +212,7 @@ public class BinarySModelDescriptor extends LazyEditableSModelBase implements Ge
     super.reloadContents();
   }
 
-  public BinaryModelHeader getHeaderCopy() {
+  public SModelHeader getHeaderCopy() {
     return myHeader.createCopy();
   }
 }

@@ -109,6 +109,6 @@ public class OverrideConceptMethodsDialog extends GroupedNodesChooser {
     }).toGenericArray(SNodePointer.class);
   }
   private static boolean neq_6zqknj_a0d0c0a0a0a0d0l(Object a, Object b) {
-    return !((a != null ? a.equals(b) : a == b));
+    return !(((a != null ? a.equals(b) : a == b)));
   }
 }

@@ -47,7 +47,7 @@ public class NodeBuilderNode_Behavior {
     for (SNode v : ListSequence.fromList(SLinkOperations.getTargets(thisNode, "values", true))) {
       if (SNodeOperations.isInstanceOf(v, "jetbrains.mps.lang.quotation.structure.NodeBuilderInitProperty")) {
         SNode pe = SLinkOperations.getTarget(SNodeOperations.cast(v, "jetbrains.mps.lang.quotation.structure.NodeBuilderInitProperty"), "expression", true);
-        if (!(SNodeOperations.isInstanceOf(pe, "jetbrains.mps.baseLanguage.structure.IntegerConstant") || SNodeOperations.isInstanceOf(pe, "jetbrains.mps.baseLanguage.structure.StringLiteral") || SNodeOperations.isInstanceOf(pe, "jetbrains.mps.baseLanguage.structure.BooleanConstant"))) {
+        if (!((SNodeOperations.isInstanceOf(pe, "jetbrains.mps.baseLanguage.structure.IntegerConstant") || SNodeOperations.isInstanceOf(pe, "jetbrains.mps.baseLanguage.structure.StringLiteral") || SNodeOperations.isInstanceOf(pe, "jetbrains.mps.baseLanguage.structure.BooleanConstant")))) {
           ListSequence.fromList(list).addElement(pe);
         }
       } else if (SNodeOperations.isInstanceOf(v, "jetbrains.mps.lang.quotation.structure.NodeBuilderInitLink")) {

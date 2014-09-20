@@ -19,7 +19,7 @@ public class MPS10313<T> {
       return false;
     }
     for (int i = 0; i < ListSequence.fromList(values).count(); i++) {
-      if (!(ListSequence.fromList(ListSequence.fromList(values).getElement(i)).containsSequence(ListSequence.fromList(ListSequence.fromList(myValues).getElement(i))) && ListSequence.fromList(ListSequence.fromList(myValues).getElement(i)).containsSequence(ListSequence.fromList(ListSequence.fromList(values).getElement(i))))) {
+      if (!((ListSequence.fromList(ListSequence.fromList(values).getElement(i)).containsSequence(ListSequence.fromList(ListSequence.fromList(myValues).getElement(i))) && ListSequence.fromList(ListSequence.fromList(myValues).getElement(i)).containsSequence(ListSequence.fromList(ListSequence.fromList(values).getElement(i)))))) {
         return false;
       }
     }

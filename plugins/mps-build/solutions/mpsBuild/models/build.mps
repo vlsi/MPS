@@ -13614,6 +13614,19 @@
                       </node>
                     </node>
                   </node>
+                  <node role="children" roleId="3ior.7389400916848037006" type="3ior.BuildLayout_File" typeId="3ior.9126048691955220717" id="8307162719981134050" nodeInfo="ng">
+                    <node role="path" roleId="3ior.9126048691955220762" type="3ior.BuildSourceProjectRelativePath" typeId="3ior.5481553824944787378" id="8307162719981134052" nodeInfo="ng">
+                      <node role="compositePart" roleId="3ior.7321017245477039051" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="8307162719981134063" nodeInfo="nn">
+                        <property name="head" nameId="3ior.8618885170173601779" value="build" />
+                        <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="8307162719981134067" nodeInfo="nn">
+                          <property name="head" nameId="3ior.8618885170173601779" value="resources" />
+                          <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="8307162719981152455" nodeInfo="nn">
+                            <property name="head" nameId="3ior.8618885170173601779" value="idea_appLauncher" />
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
                 </node>
                 <node role="children" roleId="3ior.7389400916848037006" type="3ior.BuildLayout_File" typeId="3ior.9126048691955220717" id="3730845620956883023" nodeInfo="ng">
                   <node role="parameters" roleId="3ior.9126048691955220774" type="3ior.BuildLayout_CopyGlobMapper" typeId="3ior.3970102152660702410" id="3730845620956883024" nodeInfo="ng">
@@ -13851,6 +13864,19 @@
                       <property name="head" nameId="3ior.8618885170173601779" value="resources" />
                       <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="2688703077001193400" nodeInfo="nn">
                         <property name="head" nameId="3ior.8618885170173601779" value="mps" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node role="children" roleId="3ior.7389400916848037006" type="3ior.BuildLayout_File" typeId="3ior.9126048691955220717" id="8307162719981124450" nodeInfo="ng">
+                <node role="path" roleId="3ior.9126048691955220762" type="3ior.BuildSourceProjectRelativePath" typeId="3ior.5481553824944787378" id="8307162719981124452" nodeInfo="ng">
+                  <node role="compositePart" roleId="3ior.7321017245477039051" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="8307162719981124463" nodeInfo="nn">
+                    <property name="head" nameId="3ior.8618885170173601779" value="build" />
+                    <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="8307162719981124467" nodeInfo="nn">
+                      <property name="head" nameId="3ior.8618885170173601779" value="resources" />
+                      <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="8307162719981152457" nodeInfo="nn">
+                        <property name="head" nameId="3ior.8618885170173601779" value="idea_appLauncher" />
                       </node>
                     </node>
                   </node>
@@ -22608,6 +22634,9 @@
     <node role="vmOptions64" roleId="s7om.2693344784283221851" type="s7om.SimpleVmOptions" typeId="s7om.3885435385580582732" id="2693344784284678846" nodeInfo="ng">
       <property name="options" nameId="s7om.3885435385580582733" value="-client -Xss1024k -ea -Xmx2048m -XX:MaxPermSize=350m -XX:NewSize=256m -XX:+HeapDumpOnOutOfMemoryError -Xverify:none -Dfile.encoding=UTF-8 -Dapple.awt.graphics.UseQuartz=true -Didea.paths.selector=MPS32" />
     </node>
+    <node role="vmOptions64" roleId="s7om.2693344784283221851" type="s7om.SimpleVmOptions" typeId="s7om.3885435385580582732" id="4003168466685569175" nodeInfo="ng">
+      <property name="options" nameId="s7om.3885435385580582733" value="-Dide.mac.message.dialogs.as.sheets=false" />
+    </node>
     <node role="vmOptions64" roleId="s7om.2693344784283221851" type="s7om.SimpleVmOptions" typeId="s7om.3885435385580582732" id="2693344784284678847" nodeInfo="ng">
       <property name="commented" nameId="s7om.5842819808956906658" value="true" />
       <property name="options" nameId="s7om.3885435385580582733" value="-Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=5005" />
@@ -22641,6 +22670,9 @@
     </node>
     <node role="vmOptions" roleId="s7om.3885435385580627556" type="s7om.SimpleVmOptions" typeId="s7om.3885435385580582732" id="716066598061903723" nodeInfo="ng">
       <property name="options" nameId="s7om.3885435385580582733" value="-client -Xss1024k -ea -Xmx950m -XX:MaxPermSize=256m -XX:NewSize=256m -XX:+HeapDumpOnOutOfMemoryError -Xverify:none -Dfile.encoding=UTF-8 -Dapple.awt.graphics.UseQuartz=true -Didea.paths.selector=MPS32" />
+    </node>
+    <node role="vmOptions" roleId="s7om.3885435385580627556" type="s7om.SimpleVmOptions" typeId="s7om.3885435385580582732" id="4003168466685582409" nodeInfo="ng">
+      <property name="options" nameId="s7om.3885435385580582733" value="-Dide.mac.message.dialogs.as.sheets=false" />
     </node>
     <node role="vmOptions" roleId="s7om.3885435385580627556" type="s7om.SimpleVmOptions" typeId="s7om.3885435385580582732" id="716066598061903724" nodeInfo="ng">
       <property name="commented" nameId="s7om.5842819808956906658" value="true" />

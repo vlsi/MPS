@@ -8550,7 +8550,7 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)/1237723040301">
     <file name="typeof_AbstractContainerCreator_InferenceRule.java">
-      <node id="1240320852912" at="26,173,27,58" concept="9" />
+      <node id="1240320852912" at="26,175,27,58" concept="9" />
       <node id="1240320852912" at="27,58,28,298" concept="9" />
       <node id="1237723049565" at="31,7,32,24" concept="9" />
       <node id="1237723049565" at="32,24,33,134" concept="9" />
@@ -8640,7 +8640,7 @@
       <scope id="1240918480298" at="103,31,104,80" />
       <scope id="1562299158921037903" at="111,30,112,135" />
       <scope id="1237723040301" at="23,0,25,0" />
-      <scope id="1240320852912" at="26,173,28,298">
+      <scope id="1240320852912" at="26,175,28,298">
         <var name="_reporter_2309309498" id="1240320852912" />
         <var name="errorTarget" id="1240320852912" />
       </scope>

@@ -112,7 +112,7 @@ __switch__:
           };
         }
       }.invoke()))) {
-        if (!(i == (int) f._0() && j == (int) f._1())) {
+        if (!((i == (int) f._0() && j == (int) f._1()))) {
           ListSequence.fromList(myDifferentIndices).addElement(MultiTuple.<Tuples._2<Integer, Integer>,Tuples._2<Integer, Integer>>from(MultiTuple.<Integer,Integer>from(i, (int) f._0()), MultiTuple.<Integer,Integer>from(j, (int) f._1())));
         }
         i = (int) f._0() + 1;

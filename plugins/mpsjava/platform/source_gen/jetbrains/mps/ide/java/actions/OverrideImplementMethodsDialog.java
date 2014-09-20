@@ -123,6 +123,6 @@ public class OverrideImplementMethodsDialog extends GroupedNodesChooser {
     }).toGenericArray(SNodePointer.class);
   }
   private static boolean neq_sivw9t_a0d0c0a0a0a0d0n(Object a, Object b) {
-    return !((a != null ? a.equals(b) : a == b));
+    return !(((a != null ? a.equals(b) : a == b)));
   }
 }

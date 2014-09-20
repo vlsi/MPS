@@ -305,7 +305,7 @@ public class DefaultEditorBuilder {
     if (!(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(property, "dataType", false), "jetbrains.mps.lang.structure.structure.PrimitiveDataTypeDeclaration"))) {
       return false;
     }
-    if (!(eq_xgdobq_a0a1a42(SPropertyOperations.getString(SNodeOperations.cast(SLinkOperations.getTarget(property, "dataType", false), "jetbrains.mps.lang.structure.structure.PrimitiveDataTypeDeclaration"), "name"), "string"))) {
+    if (!((eq_xgdobq_a0a0b0y(SPropertyOperations.getString(SNodeOperations.cast(SLinkOperations.getTarget(property, "dataType", false), "jetbrains.mps.lang.structure.structure.PrimitiveDataTypeDeclaration"), "name"), "string")))) {
       return false;
     }
     return true;
@@ -314,7 +314,7 @@ public class DefaultEditorBuilder {
     if (!(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(property, "dataType", false), "jetbrains.mps.lang.structure.structure.PrimitiveDataTypeDeclaration"))) {
       return false;
     }
-    if (!(eq_xgdobq_a0a1a52(SPropertyOperations.getString(SNodeOperations.cast(SLinkOperations.getTarget(property, "dataType", false), "jetbrains.mps.lang.structure.structure.PrimitiveDataTypeDeclaration"), "name"), "boolean"))) {
+    if (!((eq_xgdobq_a0a0b0z(SPropertyOperations.getString(SNodeOperations.cast(SLinkOperations.getTarget(property, "dataType", false), "jetbrains.mps.lang.structure.structure.PrimitiveDataTypeDeclaration"), "name"), "boolean")))) {
       return false;
     }
     return true;
@@ -370,10 +370,10 @@ public class DefaultEditorBuilder {
 
     return count == 1;
   }
-  private static boolean eq_xgdobq_a0a1a42(Object a, Object b) {
+  private static boolean eq_xgdobq_a0a0b0y(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
-  private static boolean eq_xgdobq_a0a1a52(Object a, Object b) {
+  private static boolean eq_xgdobq_a0a0b0z(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
 }

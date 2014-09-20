@@ -6,9 +6,9 @@
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="jetbrains.mps.MPSLaunch" />
     <classNode dependClassName="jetbrains.mps.ide.java.tests.utility.Utils" />
+    <classNode dependClassName="jetbrains.mps.lang.test.runtime.BaseTestBody" />
     <classNode dependClassName="jetbrains.mps.tool.builder.util.PathManager" />
     <classNode dependClassName="org.junit.Test" />
-    <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTestBody" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
 </dependenciesRoot>

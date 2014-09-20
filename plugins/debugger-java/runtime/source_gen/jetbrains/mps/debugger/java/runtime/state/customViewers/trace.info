@@ -75,7 +75,7 @@
       <node id="4707708573771340834" at="174,49,175,137" concept="3" />
       <node id="4707708573771340126" at="183,44,184,83" concept="3" />
       <node id="3432969378036015275" at="188,0,189,0" concept="13" trace="LOG" />
-      <node id="8351223626654698207" at="189,63,190,49" concept="10" />
+      <node id="8351223626654698207" at="189,63,190,51" concept="10" />
       <node id="4707708573771428198" at="167,0,169,0" concept="1" trace="MyProjectManagerAdapter#()V" />
       <node id="4707708573771428834" at="179,0,181,0" concept="1" trace="MyDebugSessionAdapter#()V" />
       <node id="3432969378036017139" at="49,0,52,0" concept="1" trace="CustomViewersManagerImpl#(Lcom/intellij/openapi/project/ProjectManager;)V" />
@@ -136,7 +136,7 @@
       <scope id="4707708573771293902" at="170,48,171,104" />
       <scope id="4707708573771293930" at="174,49,175,137" />
       <scope id="4707708573771373519" at="183,44,184,83" />
-      <scope id="8351223626654698207" at="189,63,190,49" />
+      <scope id="8351223626654698207" at="189,63,190,51" />
       <scope id="6108369403999471640" at="82,39,84,103" />
       <scope id="3714688570619974879" at="111,38,113,81" />
       <scope id="3714688570620011781" at="133,36,135,79" />

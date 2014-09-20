@@ -5,6 +5,7 @@
     <classNode dependClassName="java.util.Collection" />
     <classNode dependClassName="java.util.Collections" />
     <classNode dependClassName="jetbrains.mps.intentions.IntentionDescriptor" />
+    <classNode dependClassName="jetbrains.mps.intentions.IntentionExecutable" />
     <classNode dependClassName="jetbrains.mps.intentions.IntentionType" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor" />
@@ -13,7 +14,6 @@
     <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
-    <classNode extendsClassName="jetbrains.mps.intentions.IntentionExecutable" />
     <classNode extendsClassName="jetbrains.mps.intentions.IntentionFactory" />
   </dependency>
   <dependency className="jetbrains.mps.lang.editor.editorTest.intentions.AddTestReferenceAnnotation_Intention" file="AddTestReferenceAnnotation_Intention.java">
@@ -21,6 +21,7 @@
     <classNode dependClassName="java.util.Collection" />
     <classNode dependClassName="java.util.Collections" />
     <classNode dependClassName="jetbrains.mps.intentions.IntentionDescriptor" />
+    <classNode dependClassName="jetbrains.mps.intentions.IntentionExecutable" />
     <classNode dependClassName="jetbrains.mps.intentions.IntentionType" />
     <classNode dependClassName="jetbrains.mps.lang.generator.helper.EditingUtil" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor" />
@@ -34,7 +35,6 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SConceptRepository" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
-    <classNode extendsClassName="jetbrains.mps.intentions.IntentionExecutable" />
     <classNode extendsClassName="jetbrains.mps.intentions.IntentionFactory" />
   </dependency>
   <dependency className="jetbrains.mps.lang.editor.editorTest.intentions.IntentionsDescriptor" file="IntentionsDescriptor.java">

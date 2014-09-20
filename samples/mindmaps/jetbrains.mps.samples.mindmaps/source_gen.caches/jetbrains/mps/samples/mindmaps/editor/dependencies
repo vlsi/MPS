@@ -24,6 +24,7 @@
     <classNode dependClassName="jetbrains.mps.lang.editor.diagram.runtime.jetpad.views.ResizableContentView" />
     <classNode dependClassName="jetbrains.mps.lang.editor.figures.library.NamedBoxFigure" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.cells.jetpad.BlockCell" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.cells.jetpad.DiagramCell" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.cells.jetpad.JetpadUtils" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.cells.jetpad.PropertyMapperCell" />
@@ -35,26 +36,26 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
-    <classNode extendsClassName="jetbrains.mps.nodeEditor.cells.jetpad.BlockCell" />
   </dependency>
   <dependency className="jetbrains.mps.samples.mindmaps.editor.DefaultDiagramElementActionMap_0" file="DefaultDiagramElementActionMap_0.java">
+    <classNode dependClassName="jetbrains.mps.editor.runtime.cells.AbstractCellAction" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.CellActionType" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
-    <classNode extendsClassName="jetbrains.mps.editor.runtime.cells.AbstractCellAction" />
   </dependency>
   <dependency className="jetbrains.mps.samples.mindmaps.editor.DeleteRelationship" file="DeleteRelationship.java">
+    <classNode dependClassName="jetbrains.mps.editor.runtime.cells.AbstractCellAction" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.CellActionType" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
-    <classNode extendsClassName="jetbrains.mps.editor.runtime.cells.AbstractCellAction" />
   </dependency>
   <dependency className="jetbrains.mps.samples.mindmaps.editor.DeleteThought" file="DeleteThought.java">
     <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="jetbrains.mps.editor.runtime.cells.AbstractCellAction" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IVisitor" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
@@ -64,7 +65,6 @@
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.CellActionType" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
-    <classNode extendsClassName="jetbrains.mps.editor.runtime.cells.AbstractCellAction" />
   </dependency>
   <dependency className="jetbrains.mps.samples.mindmaps.editor.EditorAspectDescriptorImpl" file="EditorAspectDescriptorImpl.java">
     <classNode dependClassName="java.lang.String" />
@@ -112,6 +112,7 @@
     <classNode dependClassName="jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider" />
     <classNode dependClassName="jetbrains.mps.lang.editor.diagram.runtime.jetpad.palette.impl.DiagramTraitButton" />
     <classNode dependClassName="jetbrains.mps.lang.editor.diagram.runtime.jetpad.palette.impl.PaletteElementsCreationActionGroup" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.diagram.runtime.jetpad.palette.ui.DiagramPalette" />
     <classNode dependClassName="jetbrains.mps.lang.editor.diagram.runtime.jetpad.views.DiagramDecoratorView" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
@@ -126,14 +127,13 @@
     <classNode dependClassName="jetbrains.mps.nodeEditor.cells.EditorCell_Constant" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.cells.jetpad.BlockCell" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.cells.jetpad.ConnectorCell" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.cells.jetpad.DiagramCell" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.style.Style" />
     <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
-    <classNode extendsClassName="jetbrains.mps.lang.editor.diagram.runtime.jetpad.palette.ui.DiagramPalette" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
-    <classNode extendsClassName="jetbrains.mps.nodeEditor.cells.jetpad.DiagramCell" />
   </dependency>
   <dependency className="jetbrains.mps.samples.mindmaps.editor.Relationship_diagram_Editor" file="Relationship_diagram_Editor.java">
     <classNode dependClassName="java.lang.Boolean" />
@@ -157,6 +157,7 @@
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
     <classNode dependClassName="jetbrains.mps.lang.editor.diagram.runtime.jetpad.views.ConnectorDecoratorView" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.cells.jetpad.ConnectorCell" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.cells.jetpad.DiagramCell" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.cells.jetpad.JetpadUtils" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
@@ -164,7 +165,6 @@
     <classNode dependClassName="jetbrains.mps.samples.mindmaps.editor.DeleteRelationship" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
-    <classNode extendsClassName="jetbrains.mps.nodeEditor.cells.jetpad.ConnectorCell" />
   </dependency>
   <dependency className="jetbrains.mps.samples.mindmaps.editor.Specializes_diagram_Editor" file="Specializes_diagram_Editor.java">
     <classNode dependClassName="java.lang.Boolean" />
@@ -188,6 +188,7 @@
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
     <classNode dependClassName="jetbrains.mps.lang.editor.diagram.runtime.jetpad.views.ConnectorDecoratorView" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.cells.jetpad.ConnectorCell" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.cells.jetpad.DiagramCell" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.cells.jetpad.JetpadUtils" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
@@ -195,7 +196,6 @@
     <classNode dependClassName="jetbrains.mps.samples.mindmaps.editor.DeleteRelationship" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
-    <classNode extendsClassName="jetbrains.mps.nodeEditor.cells.jetpad.ConnectorCell" />
   </dependency>
   <dependency className="jetbrains.mps.samples.mindmaps.editor.Thought_diagram_Editor" file="Thought_diagram_Editor.java">
     <classNode dependClassName="java.lang.Boolean" />
@@ -221,6 +221,7 @@
     <classNode dependClassName="jetbrains.mps.lang.editor.diagram.runtime.jetpad.views.ResizableContentView" />
     <classNode dependClassName="jetbrains.mps.lang.editor.figures.library.NamedBoxFigure" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.cells.jetpad.BlockCell" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.cells.jetpad.DiagramCell" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.cells.jetpad.JetpadUtils" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.cells.jetpad.PropertyMapperCell" />
@@ -232,7 +233,6 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
-    <classNode extendsClassName="jetbrains.mps.nodeEditor.cells.jetpad.BlockCell" />
   </dependency>
 </dependenciesRoot>
 

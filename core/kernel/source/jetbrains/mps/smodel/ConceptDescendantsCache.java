@@ -11,11 +11,11 @@ import jetbrains.mps.smodel.runtime.StructureAspectDescriptor;
 import jetbrains.mps.util.NameUtil;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
-import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SConceptRepository;
 import org.jetbrains.mps.openapi.model.SNode;
 
+import java.util.Collection;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.HashSet;
@@ -61,7 +61,7 @@ public class ConceptDescendantsCache implements CoreComponent {
       }
     }
 
-    private void loadConcept(@NotNull ConceptDescriptor concept) {
+    private void loadConcept(ConceptDescriptor concept) {
       for (String parent : concept.getParentsNames()) {
         Set<String> descendants = new LinkedHashSet<String>(getDirectDescendants(parent));
         descendants.add(concept.getConceptFqName());
@@ -69,7 +69,7 @@ public class ConceptDescendantsCache implements CoreComponent {
       }
     }
 
-    private void unloadConcept(@NotNull ConceptDescriptor concept) {
+    private void unloadConcept(ConceptDescriptor concept) {
       for (String parent : concept.getParentsNames()) {
         Set<String> descendants = new LinkedHashSet<String>(getDirectDescendants(parent));
         descendants.remove(concept.getConceptFqName());
@@ -134,21 +134,20 @@ public class ConceptDescendantsCache implements CoreComponent {
   }
 
   private Set<ConceptDescriptor> getConcepts(LanguageRuntime languageRuntime) {
+    StructureAspectDescriptor structureDescriptor = languageRuntime.getAspect(StructureAspectDescriptor.class);
+
+    if (structureDescriptor instanceof BaseStructureAspectDescriptor) {
+      return new HashSet<ConceptDescriptor>(((BaseStructureAspectDescriptor) structureDescriptor).getDescriptors());
+    }
+    else {
+      return doGetConceptsUsingStructureLanguage(languageRuntime, structureDescriptor);
+    }
+  }
+
+  private Set<ConceptDescriptor> doGetConceptsUsingStructureLanguage(LanguageRuntime languageRuntime, StructureAspectDescriptor structureDescriptor) {
     Language language = (Language) myModuleRepository.getModuleByFqName(languageRuntime.getNamespace());
     org.jetbrains.mps.openapi.model.SModel structureModel = language.getStructureModelDescriptor();
     if (structureModel == null) return Collections.emptySet();
-
-    StructureAspectDescriptor structureDescriptor = languageRuntime.getAspect(StructureAspectDescriptor.class);
-
-    if (structureDescriptor instanceof BaseStructureAspectDescriptor)
-      return ((BaseStructureAspectDescriptor) structureDescriptor).getDescriptors();
-    else
-      return doGetConceptsUsingStructureLanguage(language, structureModel, structureDescriptor);
-  }
-
-  private Set<ConceptDescriptor> doGetConceptsUsingStructureLanguage(Language language,
-      org.jetbrains.mps.openapi.model.SModel structureModel,
-      StructureAspectDescriptor structureDescriptor) {
     Set<ConceptDescriptor> result = new LinkedHashSet<ConceptDescriptor>();
     SAbstractConcept abstractConceptDeclaration = SConceptRepository.getInstance().getConcept(SNodeUtil.concept_AbstractConceptDeclaration);
     if (abstractConceptDeclaration == null) {

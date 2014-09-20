@@ -26,11 +26,11 @@
     <classNode dependClassName="org.apache.tools.ant.Project" />
     <classNode dependClassName="org.apache.tools.ant.types.FileSet" />
     <classNode dependClassName="org.apache.tools.ant.types.FilterSetCollection" />
+    <classNode dependClassName="org.apache.tools.ant.util.FileUtils" />
     <classNode dependClassName="org.apache.tools.ant.util.FirstMatchMapper" />
     <classNode dependClassName="org.apache.tools.ant.util.GlobPatternMapper" />
     <classNode dependClassName="org.apache.tools.ant.util.IdentityMapper" />
     <classNode extendsClassName="org.apache.tools.ant.taskdefs.Copy" />
-    <classNode extendsClassName="org.apache.tools.ant.util.FileUtils" />
   </dependency>
 </dependenciesRoot>
 
