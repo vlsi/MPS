@@ -194,7 +194,7 @@
       <unit id="3715237098669909852" at="35,42,39,9" name="jetbrains.mps.traceInfo.test.TraceInfoTest$2" />
       <unit id="3715237098669909871" at="48,42,52,9" name="jetbrains.mps.traceInfo.test.TraceInfoTest$3" />
       <unit id="3715237098669909906" at="61,42,65,9" name="jetbrains.mps.traceInfo.test.TraceInfoTest$4" />
-      <unit id="2112637535491845083" at="102,373,106,9" name="jetbrains.mps.traceInfo.test.TraceInfoTest$7" />
+      <unit id="2112637535491845083" at="102,238,106,9" name="jetbrains.mps.traceInfo.test.TraceInfoTest$7" />
       <unit id="2112637535491845075" at="106,21,110,9" name="jetbrains.mps.traceInfo.test.TraceInfoTest$7" />
       <unit id="2112637535491845075" at="110,22,114,9" name="jetbrains.mps.traceInfo.test.TraceInfoTest$7" />
       <unit id="2112637535491845078" at="114,25,118,9" name="jetbrains.mps.traceInfo.test.TraceInfoTest$7" />

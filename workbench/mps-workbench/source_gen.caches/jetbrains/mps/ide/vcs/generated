@@ -8,12 +8,11 @@
   </common>
   <source id="5015601397718077769" name="SourceRevision" hash="e6h68tld1nrd70m02perryl580qks6p">
     <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
+    <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="SourceRevision.java" />
   </source>
   <source id="5015601397718560603" name="ExtendedDefaultVcsRootPolicy" hash="-a7h11r2our6vnejaswhi79n3gmjkdqq">
-    <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
-    <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
     <file name="ExtendedDefaultVcsRootPolicy.java" />
   </source>
 </dependencies>

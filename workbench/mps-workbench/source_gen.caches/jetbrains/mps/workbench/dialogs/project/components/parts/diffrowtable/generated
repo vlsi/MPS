@@ -15,8 +15,6 @@
     <file name="DiffRowTable.java" />
   </source>
   <source id="1560298786499496072" name="BasicDiffRowTableUI" hash="-19nvwzceghj5zb5mf6aicbz25g99ilg">
-    <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
-    <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="BasicDiffRowTableUI.java" />
   </source>
 </dependencies>

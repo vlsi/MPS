@@ -22,7 +22,6 @@
     <file name="TableAddAction.java" />
   </source>
   <source id="1560298786499493338" name="ListRemoveAction" hash="azrp5emn4pzsj4a8jamtfk2yok0vtxm">
-    <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
     <file name="ListRemoveAction.java" />
   </source>
   <source id="1560298786499494244" name="BaseValidatedAction" hash="-54mpxvdfhr0zcuf8dtyx611yxymuzzs">
