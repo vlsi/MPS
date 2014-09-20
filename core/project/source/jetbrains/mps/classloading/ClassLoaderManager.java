@@ -23,7 +23,6 @@ import jetbrains.mps.project.SModuleOperations;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.InternUtil;
-import jetbrains.mps.util.annotation.ToRemove;
 import org.apache.log4j.LogManager;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -32,7 +31,6 @@ import org.jetbrains.mps.openapi.module.FacetsFacade.FacetFactory;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleFacet;
 import org.jetbrains.mps.openapi.module.SRepository;
-import org.jetbrains.mps.openapi.module.SRepositoryListener;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
 
 import java.util.Collections;
@@ -40,15 +38,10 @@ import java.util.HashSet;
 import java.util.Set;
 
 /**
- * Current workflow: before any actions with module leading to the classes invalidation one should do two things:
- * 1) unload modules and remember successfully unloaded modules ({@link #unloadModules})
- * 2) change module(s)
- * 3) load all unloaded modules back ({@link #loadModules})
- * Main point: modules && modules repository knows nothing about class loading
-
- * Probably it's better to encapsulate the loading/unloading mechanism in this class, so that users of class only need
- * to fire some reload (or another) event. (or call some reloadModules method only on the "dirty" modules)
- * TODO: move to workbench
+ * Current workflow:
+ * One should call {@link #reloadModules(Iterable)} method (or similar) to reload "dirty" module
+ * In order to get class from a module one should call {@link #getClass} method.
+ * [Note: the module's classes should be manageable by MPS. {@link #canLoad} must return true]
  */
 public class ClassLoaderManager implements CoreComponent {
   private static final Logger LOG = Logger.wrap(LogManager.getLogger(ClassLoaderManager.class));
