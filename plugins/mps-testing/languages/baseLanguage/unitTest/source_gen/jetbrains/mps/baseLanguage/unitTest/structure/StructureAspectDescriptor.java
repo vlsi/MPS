@@ -8,7 +8,7 @@ import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder;
 import jetbrains.mps.smodel.runtime.StaticScope;
 import java.util.Collection;
 import java.util.Arrays;
-import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptAfterTest = new ConceptDescriptorBuilder("jetbrains.mps.baseLanguage.unitTest.structure.AfterTest").super_("jetbrains.mps.baseLanguage.unitTest.structure.PrepareMethod").parents("jetbrains.mps.baseLanguage.unitTest.structure.PrepareMethod").alias("afterTest", "").staticScope(StaticScope.NONE).create();
@@ -38,7 +38,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   }
 
   @Override
-  @NotNull
+  @Nullable
   public ConceptDescriptor getDescriptor(String conceptFqName) {
     switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0x, conceptFqName)) {
       case 0:
@@ -82,7 +82,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
       case 19:
         return myConceptTestMethodList;
       default:
-        throw new IllegalStateException("Wrong fqName of the concept " + conceptFqName);
+        return null;
     }
   }
   private static String[] stringSwitchCases_1htk8d_a0a0x = new String[]{"jetbrains.mps.baseLanguage.unitTest.structure.AfterTest", "jetbrains.mps.baseLanguage.unitTest.structure.AssertEquals", "jetbrains.mps.baseLanguage.unitTest.structure.AssertFalse", "jetbrains.mps.baseLanguage.unitTest.structure.AssertInNotNull", "jetbrains.mps.baseLanguage.unitTest.structure.AssertIsNull", "jetbrains.mps.baseLanguage.unitTest.structure.AssertSame", "jetbrains.mps.baseLanguage.unitTest.structure.AssertThrows", "jetbrains.mps.baseLanguage.unitTest.structure.AssertTrue", "jetbrains.mps.baseLanguage.unitTest.structure.BTestCase", "jetbrains.mps.baseLanguage.unitTest.structure.BeforeTest", "jetbrains.mps.baseLanguage.unitTest.structure.BinaryAssert", "jetbrains.mps.baseLanguage.unitTest.structure.Fail", "jetbrains.mps.baseLanguage.unitTest.structure.ITestCase", "jetbrains.mps.baseLanguage.unitTest.structure.ITestMethod", "jetbrains.mps.baseLanguage.unitTest.structure.ITestable", "jetbrains.mps.baseLanguage.unitTest.structure.Message", "jetbrains.mps.baseLanguage.unitTest.structure.MessageHolder", "jetbrains.mps.baseLanguage.unitTest.structure.PrepareMethod", "jetbrains.mps.baseLanguage.unitTest.structure.TestMethod", "jetbrains.mps.baseLanguage.unitTest.structure.TestMethodList"};

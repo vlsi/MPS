@@ -8,7 +8,7 @@ import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder;
 import jetbrains.mps.smodel.runtime.StaticScope;
 import java.util.Collection;
 import java.util.Arrays;
-import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptExtensionDeclaration = new ConceptDescriptorBuilder("jetbrains.mps.lang.extension.structure.ExtensionDeclaration").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept").references("extensionPoint").children(new String[]{"objectGetter", "activator", "deactivator", "fieldDeclaration"}, new boolean[]{false, false, false, true}).create();
@@ -27,7 +27,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   }
 
   @Override
-  @NotNull
+  @Nullable
   public ConceptDescriptor getDescriptor(String conceptFqName) {
     switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0m, conceptFqName)) {
       case 0:
@@ -49,7 +49,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
       case 8:
         return myConceptGetExtensionObjectsOperation;
       default:
-        throw new IllegalStateException("Wrong fqName of the concept " + conceptFqName);
+        return null;
     }
   }
   private static String[] stringSwitchCases_1htk8d_a0a0m = new String[]{"jetbrains.mps.lang.extension.structure.ExtensionDeclaration", "jetbrains.mps.lang.extension.structure.ExtensionFieldDeclaration", "jetbrains.mps.lang.extension.structure.ExtensionFieldReference", "jetbrains.mps.lang.extension.structure.ExtensionFunction", "jetbrains.mps.lang.extension.structure.ExtensionObjectGetter", "jetbrains.mps.lang.extension.structure.ExtensionPointDeclaration", "jetbrains.mps.lang.extension.structure.ExtensionPointExpression", "jetbrains.mps.lang.extension.structure.ExtensionPointType", "jetbrains.mps.lang.extension.structure.GetExtensionObjectsOperation"};

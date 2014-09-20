@@ -8,7 +8,7 @@ import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder;
 import jetbrains.mps.smodel.runtime.StaticScope;
 import java.util.Collection;
 import java.util.Arrays;
-import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptCanCreateFunction = new ConceptDescriptorBuilder("jetbrains.mps.lang.stubs.structure.CanCreateFunction").super_("jetbrains.mps.baseLanguage.structure.ConceptFunction").parents("jetbrains.mps.baseLanguage.structure.ConceptFunction").alias("canCreate", "").staticScope(StaticScope.NONE).create();
@@ -30,7 +30,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   }
 
   @Override
-  @NotNull
+  @Nullable
   public ConceptDescriptor getDescriptor(String conceptFqName) {
     switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0p, conceptFqName)) {
       case 0:
@@ -58,7 +58,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
       case 11:
         return myConceptSModelRoot_ConceptFunctionParameter;
       default:
-        throw new IllegalStateException("Wrong fqName of the concept " + conceptFqName);
+        return null;
     }
   }
   private static String[] stringSwitchCases_1htk8d_a0a0p = new String[]{"jetbrains.mps.lang.stubs.structure.CanCreateFunction", "jetbrains.mps.lang.stubs.structure.CreateBlock", "jetbrains.mps.lang.stubs.structure.CreateFunction", "jetbrains.mps.lang.stubs.structure.DescriptorsFunction", "jetbrains.mps.lang.stubs.structure.IModule_ConceptFunctionParameter", "jetbrains.mps.lang.stubs.structure.LanguageRef", "jetbrains.mps.lang.stubs.structure.ModelCreationSettings", "jetbrains.mps.lang.stubs.structure.ModelManagerDeclaration", "jetbrains.mps.lang.stubs.structure.ModelRoot_ConceptFunctionParameter", "jetbrains.mps.lang.stubs.structure.Model_ConceptFunctionParameter", "jetbrains.mps.lang.stubs.structure.SModelFqName_ConceptFunctionParameter", "jetbrains.mps.lang.stubs.structure.SModelRoot_ConceptFunctionParameter"};

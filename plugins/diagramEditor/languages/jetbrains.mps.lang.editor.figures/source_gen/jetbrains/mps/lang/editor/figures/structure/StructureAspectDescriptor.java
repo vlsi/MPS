@@ -7,7 +7,7 @@ import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder;
 import java.util.Collection;
 import java.util.Arrays;
-import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptExternalViewFigure = new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.figures.structure.ExternalViewFigure").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept", "jetbrains.mps.lang.core.structure.ScopeProvider").references("classifier").children(new String[]{"fields"}, new boolean[]{true}).create();
@@ -26,7 +26,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   }
 
   @Override
-  @NotNull
+  @Nullable
   public ConceptDescriptor getDescriptor(String conceptFqName) {
     switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0m, conceptFqName)) {
       case 0:
@@ -48,7 +48,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
       case 8:
         return myConceptFigureParameterAttributeViewProperty;
       default:
-        throw new IllegalStateException("Wrong fqName of the concept " + conceptFqName);
+        return null;
     }
   }
   private static String[] stringSwitchCases_1htk8d_a0a0m = new String[]{"jetbrains.mps.lang.editor.figures.structure.ExternalViewFigure", "jetbrains.mps.lang.editor.figures.structure.ExternalViewFigureParameter", "jetbrains.mps.lang.editor.figures.structure.Figure", "jetbrains.mps.lang.editor.figures.structure.FigureAttribute", "jetbrains.mps.lang.editor.figures.structure.FigureParameter", "jetbrains.mps.lang.editor.figures.structure.FigureParameterAttribute", "jetbrains.mps.lang.editor.figures.structure.FigureParameterAttributeField", "jetbrains.mps.lang.editor.figures.structure.FigureParameterAttributeMethod", "jetbrains.mps.lang.editor.figures.structure.FigureParameterAttributeViewProperty"};

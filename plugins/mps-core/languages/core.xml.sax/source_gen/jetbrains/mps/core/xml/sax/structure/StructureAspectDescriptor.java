@@ -8,7 +8,7 @@ import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder;
 import jetbrains.mps.smodel.runtime.StaticScope;
 import java.util.Collection;
 import java.util.Arrays;
-import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptXMLSAXAttributeHandler = new ConceptDescriptorBuilder("jetbrains.mps.core.xml.sax.structure.XMLSAXAttributeHandler").super_("jetbrains.mps.core.xml.sax.structure.XMLSAXHandlerFunction").parents("jetbrains.mps.core.xml.sax.structure.XMLSAXHandlerFunction").alias("attribute handler", "").staticScope(StaticScope.NONE).create();
@@ -41,7 +41,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   }
 
   @Override
-  @NotNull
+  @Nullable
   public ConceptDescriptor getDescriptor(String conceptFqName) {
     switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0ab, conceptFqName)) {
       case 0:
@@ -91,7 +91,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
       case 22:
         return myConceptXMLSAXTextRule;
       default:
-        throw new IllegalStateException("Wrong fqName of the concept " + conceptFqName);
+        return null;
     }
   }
   private static String[] stringSwitchCases_1htk8d_a0a0ab = new String[]{"jetbrains.mps.core.xml.sax.structure.XMLSAXAttributeHandler", "jetbrains.mps.core.xml.sax.structure.XMLSAXAttributeHandler_value", "jetbrains.mps.core.xml.sax.structure.XMLSAXAttributeReference", "jetbrains.mps.core.xml.sax.structure.XMLSAXAttributeRule", "jetbrains.mps.core.xml.sax.structure.XMLSAXBreakStatement", "jetbrains.mps.core.xml.sax.structure.XMLSAXChildHandler", "jetbrains.mps.core.xml.sax.structure.XMLSAXChildHandler_childObject", "jetbrains.mps.core.xml.sax.structure.XMLSAXChildRule", "jetbrains.mps.core.xml.sax.structure.XMLSAXChildRuleCondition", "jetbrains.mps.core.xml.sax.structure.XMLSAXFieldDeclaration", "jetbrains.mps.core.xml.sax.structure.XMLSAXFieldReference", "jetbrains.mps.core.xml.sax.structure.XMLSAXHandlerFunction", "jetbrains.mps.core.xml.sax.structure.XMLSAXHandler_resultObject", "jetbrains.mps.core.xml.sax.structure.XMLSAXLocatorExpression", "jetbrains.mps.core.xml.sax.structure.XMLSAXNodeCreator", "jetbrains.mps.core.xml.sax.structure.XMLSAXNodeRule", "jetbrains.mps.core.xml.sax.structure.XMLSAXNodeRuleParam", "jetbrains.mps.core.xml.sax.structure.XMLSAXNodeRuleParamRef", "jetbrains.mps.core.xml.sax.structure.XMLSAXNodeValidator", "jetbrains.mps.core.xml.sax.structure.XMLSAXParser", "jetbrains.mps.core.xml.sax.structure.XMLSAXTextHandler", "jetbrains.mps.core.xml.sax.structure.XMLSAXTextHandler_value", "jetbrains.mps.core.xml.sax.structure.XMLSAXTextRule"};

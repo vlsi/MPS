@@ -8,7 +8,7 @@ import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder;
 import jetbrains.mps.smodel.runtime.StaticScope;
 import java.util.Collection;
 import java.util.Arrays;
-import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptAbstractClassifierSpecification = new ConceptDescriptorBuilder("jetbrains.mps.lang.script.structure.AbstractClassifierSpecification").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").abstract_().create();
@@ -35,7 +35,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   }
 
   @Override
-  @NotNull
+  @Nullable
   public ConceptDescriptor getDescriptor(String conceptFqName) {
     switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0u, conceptFqName)) {
       case 0:
@@ -73,7 +73,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
       case 16:
         return myConceptWhitespaceMigrationScriptPart;
       default:
-        throw new IllegalStateException("Wrong fqName of the concept " + conceptFqName);
+        return null;
     }
   }
   private static String[] stringSwitchCases_1htk8d_a0a0u = new String[]{"jetbrains.mps.lang.script.structure.AbstractClassifierSpecification", "jetbrains.mps.lang.script.structure.AbstractMethodSpecification", "jetbrains.mps.lang.script.structure.CommentMigrationScriptPart", "jetbrains.mps.lang.script.structure.DirectClassifierSpecification", "jetbrains.mps.lang.script.structure.DirectMethodSpecification", "jetbrains.mps.lang.script.structure.ExtractInterfaceMigration", "jetbrains.mps.lang.script.structure.FQNameClassifierSpecification", "jetbrains.mps.lang.script.structure.FQNameMethodSpecification", "jetbrains.mps.lang.script.structure.FactoryMigrationScriptPart", "jetbrains.mps.lang.script.structure.MigrationScript", "jetbrains.mps.lang.script.structure.MigrationScriptPart", "jetbrains.mps.lang.script.structure.MigrationScriptPart_Instance", "jetbrains.mps.lang.script.structure.MigrationScriptPart_Instance_Predicate", "jetbrains.mps.lang.script.structure.MigrationScriptPart_Instance_Updater", "jetbrains.mps.lang.script.structure.MigrationScriptPart_node", "jetbrains.mps.lang.script.structure.PullUpMethod", "jetbrains.mps.lang.script.structure.WhitespaceMigrationScriptPart"};

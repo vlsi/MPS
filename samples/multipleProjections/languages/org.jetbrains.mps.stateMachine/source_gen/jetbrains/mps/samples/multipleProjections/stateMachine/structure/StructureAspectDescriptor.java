@@ -7,7 +7,7 @@ import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder;
 import java.util.Collection;
 import java.util.Arrays;
-import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptAbstractStateMachineElement = new ConceptDescriptorBuilder("jetbrains.mps.samples.multipleProjections.stateMachine.structure.AbstractStateMachineElement").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").abstract_().create();
@@ -24,7 +24,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   }
 
   @Override
-  @NotNull
+  @Nullable
   public ConceptDescriptor getDescriptor(String conceptFqName) {
     switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0k, conceptFqName)) {
       case 0:
@@ -42,7 +42,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
       case 6:
         return myConceptTransition;
       default:
-        throw new IllegalStateException("Wrong fqName of the concept " + conceptFqName);
+        return null;
     }
   }
   private static String[] stringSwitchCases_1htk8d_a0a0k = new String[]{"jetbrains.mps.samples.multipleProjections.stateMachine.structure.AbstractStateMachineElement", "jetbrains.mps.samples.multipleProjections.stateMachine.structure.Event", "jetbrains.mps.samples.multipleProjections.stateMachine.structure.EventReference", "jetbrains.mps.samples.multipleProjections.stateMachine.structure.State", "jetbrains.mps.samples.multipleProjections.stateMachine.structure.StateMachine", "jetbrains.mps.samples.multipleProjections.stateMachine.structure.StateReference", "jetbrains.mps.samples.multipleProjections.stateMachine.structure.Transition"};

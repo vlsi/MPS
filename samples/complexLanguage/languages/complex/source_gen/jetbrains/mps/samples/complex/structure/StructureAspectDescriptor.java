@@ -8,7 +8,7 @@ import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder;
 import jetbrains.mps.smodel.runtime.StaticScope;
 import java.util.Collection;
 import java.util.Arrays;
-import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptAbsExpression = new ConceptDescriptorBuilder("jetbrains.mps.samples.complex.structure.AbsExpression").super_("jetbrains.mps.samples.complex.structure.SingleComplexExpression").parents("jetbrains.mps.samples.complex.structure.SingleComplexExpression").alias("abs", "").staticScope(StaticScope.NONE).create();
@@ -27,7 +27,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   }
 
   @Override
-  @NotNull
+  @Nullable
   public ConceptDescriptor getDescriptor(String conceptFqName) {
     switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0m, conceptFqName)) {
       case 0:
@@ -49,7 +49,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
       case 8:
         return myConceptSingleComplexExpression;
       default:
-        throw new IllegalStateException("Wrong fqName of the concept " + conceptFqName);
+        return null;
     }
   }
   private static String[] stringSwitchCases_1htk8d_a0a0m = new String[]{"jetbrains.mps.samples.complex.structure.AbsExpression", "jetbrains.mps.samples.complex.structure.ArgExpression", "jetbrains.mps.samples.complex.structure.ComplexType", "jetbrains.mps.samples.complex.structure.ConjugateComplexExpression", "jetbrains.mps.samples.complex.structure.DegreeComplexExpression", "jetbrains.mps.samples.complex.structure.ImExpression", "jetbrains.mps.samples.complex.structure.ImaginaryUnit", "jetbrains.mps.samples.complex.structure.ReExpression", "jetbrains.mps.samples.complex.structure.SingleComplexExpression"};

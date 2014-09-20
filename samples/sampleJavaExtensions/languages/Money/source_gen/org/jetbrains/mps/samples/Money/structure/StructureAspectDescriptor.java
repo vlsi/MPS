@@ -8,7 +8,7 @@ import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder;
 import jetbrains.mps.smodel.runtime.StaticScope;
 import java.util.Collection;
 import java.util.Arrays;
-import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptConvertTo = new ConceptDescriptorBuilder("org.jetbrains.mps.samples.Money.structure.ConvertTo").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.baseLanguage.structure.IOperation").properties("targetCurrency").alias("convert to", "").staticScope(StaticScope.NONE).create();
@@ -28,7 +28,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   }
 
   @Override
-  @NotNull
+  @Nullable
   public ConceptDescriptor getDescriptor(String conceptFqName) {
     switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0n, conceptFqName)) {
       case 0:
@@ -52,7 +52,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
       case 9:
         return myConceptStockSymbol;
       default:
-        throw new IllegalStateException("Wrong fqName of the concept " + conceptFqName);
+        return null;
     }
   }
   private static String[] stringSwitchCases_1htk8d_a0a0n = new String[]{"org.jetbrains.mps.samples.Money.structure.ConvertTo", "org.jetbrains.mps.samples.Money.structure.CurrencyDefTable", "org.jetbrains.mps.samples.Money.structure.CurrencyUnit", "org.jetbrains.mps.samples.Money.structure.CurrentStockPrice", "org.jetbrains.mps.samples.Money.structure.GetAmount", "org.jetbrains.mps.samples.Money.structure.GetCurrency", "org.jetbrains.mps.samples.Money.structure.MoneyLiteral", "org.jetbrains.mps.samples.Money.structure.MoneyType", "org.jetbrains.mps.samples.Money.structure.MovingAverage", "org.jetbrains.mps.samples.Money.structure.StockSymbol"};

@@ -7,7 +7,7 @@ import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder;
 import java.util.Collection;
 import java.util.Arrays;
-import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptAbstractPrintExpression = new ConceptDescriptorBuilder("jetbrains.mps.console.blCommand.structure.AbstractPrintExpression").super_("jetbrains.mps.baseLanguage.structure.Expression").parents("jetbrains.mps.baseLanguage.structure.Expression").children(new String[]{"object"}, new boolean[]{false}).abstract_().create();
@@ -47,7 +47,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   }
 
   @Override
-  @NotNull
+  @Nullable
   public ConceptDescriptor getDescriptor(String conceptFqName) {
     switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0hb, conceptFqName)) {
       case 0:
@@ -111,7 +111,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
       case 29:
         return myConceptUsagesExpression;
       default:
-        throw new IllegalStateException("Wrong fqName of the concept " + conceptFqName);
+        return null;
     }
   }
   private static String[] stringSwitchCases_1htk8d_a0a0hb = new String[]{"jetbrains.mps.console.blCommand.structure.AbstractPrintExpression", "jetbrains.mps.console.blCommand.structure.BLCommand", "jetbrains.mps.console.blCommand.structure.BLExpression", "jetbrains.mps.console.blCommand.structure.ConsoleExpression", "jetbrains.mps.console.blCommand.structure.ConsoleOperation", "jetbrains.mps.console.blCommand.structure.CustomScope", "jetbrains.mps.console.blCommand.structure.ExceptionHolder", "jetbrains.mps.console.blCommand.structure.GlobalScope", "jetbrains.mps.console.blCommand.structure.InstancesExpression", "jetbrains.mps.console.blCommand.structure.ModelScope", "jetbrains.mps.console.blCommand.structure.ModelsExpression", "jetbrains.mps.console.blCommand.structure.ModulesExpression", "jetbrains.mps.console.blCommand.structure.ModulesScope", "jetbrains.mps.console.blCommand.structure.NodesExpression", "jetbrains.mps.console.blCommand.structure.PrintExpression", "jetbrains.mps.console.blCommand.structure.PrintNodeExpression", "jetbrains.mps.console.blCommand.structure.PrintNodeReferenceExpression", "jetbrains.mps.console.blCommand.structure.PrintSequenceExpression", "jetbrains.mps.console.blCommand.structure.PrintTextExpression", "jetbrains.mps.console.blCommand.structure.ProjectExpression", "jetbrains.mps.console.blCommand.structure.ProjectScope", "jetbrains.mps.console.blCommand.structure.QueryExpression", "jetbrains.mps.console.blCommand.structure.QueryParameter", "jetbrains.mps.console.blCommand.structure.QueryParameterIncludeReadOnly", "jetbrains.mps.console.blCommand.structure.QueryParameterList", "jetbrains.mps.console.blCommand.structure.QueryParameterScope", "jetbrains.mps.console.blCommand.structure.ReferencesExpression", "jetbrains.mps.console.blCommand.structure.ScopeParameter", "jetbrains.mps.console.blCommand.structure.ShowExpression", "jetbrains.mps.console.blCommand.structure.UsagesExpression"};

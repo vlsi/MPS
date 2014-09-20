@@ -8,7 +8,7 @@ import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder;
 import jetbrains.mps.smodel.runtime.StaticScope;
 import java.util.Collection;
 import java.util.Arrays;
-import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptArgumentClause = new ConceptDescriptorBuilder("jetbrains.mps.baseLanguage.constructors.structure.ArgumentClause").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").abstract_().create();
@@ -28,7 +28,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   }
 
   @Override
-  @NotNull
+  @Nullable
   public ConceptDescriptor getDescriptor(String conceptFqName) {
     switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0n, conceptFqName)) {
       case 0:
@@ -52,7 +52,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
       case 9:
         return myConceptListParameterReference;
       default:
-        throw new IllegalStateException("Wrong fqName of the concept " + conceptFqName);
+        return null;
     }
   }
   private static String[] stringSwitchCases_1htk8d_a0a0n = new String[]{"jetbrains.mps.baseLanguage.constructors.structure.ArgumentClause", "jetbrains.mps.baseLanguage.constructors.structure.CustomArgumentClause", "jetbrains.mps.baseLanguage.constructors.structure.CustomConstructor", "jetbrains.mps.baseLanguage.constructors.structure.CustomConstructorContainer", "jetbrains.mps.baseLanguage.constructors.structure.CustomConstructorParameter", "jetbrains.mps.baseLanguage.constructors.structure.CustomConstructorParameterReference", "jetbrains.mps.baseLanguage.constructors.structure.CustomConstructorUsage", "jetbrains.mps.baseLanguage.constructors.structure.ListArgumentsClause", "jetbrains.mps.baseLanguage.constructors.structure.ListCustomParameter", "jetbrains.mps.baseLanguage.constructors.structure.ListParameterReference"};

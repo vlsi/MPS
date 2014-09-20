@@ -7,7 +7,7 @@ import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder;
 import java.util.Collection;
 import java.util.Arrays;
-import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptAbsractMake = new ConceptDescriptorBuilder("jetbrains.mps.console.ideCommands.structure.AbsractMake").super_("jetbrains.mps.console.blCommand.structure.QueryExpression").parents("jetbrains.mps.console.blCommand.structure.QueryExpression").children(new String[]{"argument"}, new boolean[]{false}).abstract_().create();
@@ -43,7 +43,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   }
 
   @Override
-  @NotNull
+  @Nullable
   public ConceptDescriptor getDescriptor(String conceptFqName) {
     switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0db, conceptFqName)) {
       case 0:
@@ -99,7 +99,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
       case 25:
         return myConceptWithDependencies;
       default:
-        throw new IllegalStateException("Wrong fqName of the concept " + conceptFqName);
+        return null;
     }
   }
   private static String[] stringSwitchCases_1htk8d_a0a0db = new String[]{"jetbrains.mps.console.ideCommands.structure.AbsractMake", "jetbrains.mps.console.ideCommands.structure.ActionCallDeclaredParameter", "jetbrains.mps.console.ideCommands.structure.ActionCallGlobalParameter", "jetbrains.mps.console.ideCommands.structure.ActionCallParameter", "jetbrains.mps.console.ideCommands.structure.CallActionExpression", "jetbrains.mps.console.ideCommands.structure.Clean", "jetbrains.mps.console.ideCommands.structure.ClickableGenerator", "jetbrains.mps.console.ideCommands.structure.GlobalStatisticTarget", "jetbrains.mps.console.ideCommands.structure.INodeSetReference", "jetbrains.mps.console.ideCommands.structure.IStatisticsTarget", "jetbrains.mps.console.ideCommands.structure.Make", "jetbrains.mps.console.ideCommands.structure.ModelProperties", "jetbrains.mps.console.ideCommands.structure.ModelReference", "jetbrains.mps.console.ideCommands.structure.ModelStatisticsTarget", "jetbrains.mps.console.ideCommands.structure.ModuleProperties", "jetbrains.mps.console.ideCommands.structure.NodeReference", "jetbrains.mps.console.ideCommands.structure.OfAspectOperation", "jetbrains.mps.console.ideCommands.structure.ProjectStatisticsTarget", "jetbrains.mps.console.ideCommands.structure.RebuildProjectCommand", "jetbrains.mps.console.ideCommands.structure.RemoveGenSources", "jetbrains.mps.console.ideCommands.structure.ShowBrokenReferences", "jetbrains.mps.console.ideCommands.structure.ShowGenPlan", "jetbrains.mps.console.ideCommands.structure.StatCommand", "jetbrains.mps.console.ideCommands.structure.SubtreeStatisticsTarget", "jetbrains.mps.console.ideCommands.structure.UnloadModelsCommand", "jetbrains.mps.console.ideCommands.structure.WithDependencies"};

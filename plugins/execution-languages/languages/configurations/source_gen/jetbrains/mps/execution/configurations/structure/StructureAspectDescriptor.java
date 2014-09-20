@@ -8,7 +8,7 @@ import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder;
 import jetbrains.mps.smodel.runtime.StaticScope;
 import java.util.Collection;
 import java.util.Arrays;
-import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptAbstractRunConfigurationExecutor = new ConceptDescriptorBuilder("jetbrains.mps.execution.configurations.structure.AbstractRunConfigurationExecutor").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept", "jetbrains.mps.execution.common.structure.IGeneratedToClass", "jetbrains.mps.execution.settings.structure.PersistentConfigurationAssistent").properties("configurationName", "canRun").references("runConfiguration").children(new String[]{"execute", "beforeTask"}, new boolean[]{false, true}).abstract_().alias("abstract executor", "").create();
@@ -50,7 +50,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   }
 
   @Override
-  @NotNull
+  @Nullable
   public ConceptDescriptor getDescriptor(String conceptFqName) {
     switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0jb, conceptFqName)) {
       case 0:
@@ -118,7 +118,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
       case 31:
         return myConceptStartProcessHandlerStatement;
       default:
-        throw new IllegalStateException("Wrong fqName of the concept " + conceptFqName);
+        return null;
     }
   }
   private static String[] stringSwitchCases_1htk8d_a0a0jb = new String[]{"jetbrains.mps.execution.configurations.structure.AbstractRunConfigurationExecutor", "jetbrains.mps.execution.configurations.structure.BeforeTask", "jetbrains.mps.execution.configurations.structure.BeforeTaskCall", "jetbrains.mps.execution.configurations.structure.BeforeTaskParameter", "jetbrains.mps.execution.configurations.structure.BeforeTaskParameterReference", "jetbrains.mps.execution.configurations.structure.ConfigurationFromExecutorReference", "jetbrains.mps.execution.configurations.structure.ConsoleCreator", "jetbrains.mps.execution.configurations.structure.ConsoleType", "jetbrains.mps.execution.configurations.structure.Create_ConceptFunction", "jetbrains.mps.execution.configurations.structure.DebuggerSettings_Parameter", "jetbrains.mps.execution.configurations.structure.EnvironmentExpression", "jetbrains.mps.execution.configurations.structure.ExecuteBeforeTask_ConceptFunction", "jetbrains.mps.execution.configurations.structure.ExecuteConfiguration_Function", "jetbrains.mps.execution.configurations.structure.Executor_Parameter", "jetbrains.mps.execution.configurations.structure.GetProjectOperation", "jetbrains.mps.execution.configurations.structure.ModelSource", "jetbrains.mps.execution.configurations.structure.ModuleSource", "jetbrains.mps.execution.configurations.structure.NodeListSource", "jetbrains.mps.execution.configurations.structure.NodeSource", "jetbrains.mps.execution.configurations.structure.ProjectSource", "jetbrains.mps.execution.configurations.structure.Project_Parameter", "jetbrains.mps.execution.configurations.structure.RunConfiguration", "jetbrains.mps.execution.configurations.structure.RunConfigurationCreator", "jetbrains.mps.execution.configurations.structure.RunConfigurationExecutor", "jetbrains.mps.execution.configurations.structure.RunConfigurationKind", "jetbrains.mps.execution.configurations.structure.RunConfigurationProducer", "jetbrains.mps.execution.configurations.structure.RunConfigurationProducerPart", "jetbrains.mps.execution.configurations.structure.RunConfigurationSource", "jetbrains.mps.execution.configurations.structure.SModelSource", "jetbrains.mps.execution.configurations.structure.SModuleSource", "jetbrains.mps.execution.configurations.structure.Source_ConceptFunctionParameter", "jetbrains.mps.execution.configurations.structure.StartProcessHandlerStatement"};

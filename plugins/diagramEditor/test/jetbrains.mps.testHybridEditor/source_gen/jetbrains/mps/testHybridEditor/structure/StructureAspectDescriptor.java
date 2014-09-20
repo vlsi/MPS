@@ -7,7 +7,7 @@ import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder;
 import java.util.Collection;
 import java.util.Arrays;
-import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptBlock = new ConceptDescriptorBuilder("jetbrains.mps.testHybridEditor.structure.Block").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept").properties("x", "y", "myBooleanProperty").children(new String[]{"inputPorts", "outputPorts"}, new boolean[]{true, true}).alias("block", "").create();
@@ -28,7 +28,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   }
 
   @Override
-  @NotNull
+  @Nullable
   public ConceptDescriptor getDescriptor(String conceptFqName) {
     switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0o, conceptFqName)) {
       case 0:
@@ -54,7 +54,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
       case 10:
         return myConceptOutputPort;
       default:
-        throw new IllegalStateException("Wrong fqName of the concept " + conceptFqName);
+        return null;
     }
   }
   private static String[] stringSwitchCases_1htk8d_a0a0o = new String[]{"jetbrains.mps.testHybridEditor.structure.Block", "jetbrains.mps.testHybridEditor.structure.BlockExt", "jetbrains.mps.testHybridEditor.structure.BlockInstance", "jetbrains.mps.testHybridEditor.structure.Connector", "jetbrains.mps.testHybridEditor.structure.ConnectorEndInstance", "jetbrains.mps.testHybridEditor.structure.ConnectorInstance", "jetbrains.mps.testHybridEditor.structure.Diagram", "jetbrains.mps.testHybridEditor.structure.InputPort", "jetbrains.mps.testHybridEditor.structure.MetaBlock", "jetbrains.mps.testHybridEditor.structure.MetaPort", "jetbrains.mps.testHybridEditor.structure.OutputPort"};

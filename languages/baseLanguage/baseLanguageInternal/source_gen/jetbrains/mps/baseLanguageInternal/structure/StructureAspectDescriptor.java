@@ -8,7 +8,7 @@ import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder;
 import jetbrains.mps.smodel.runtime.StaticScope;
 import java.util.Collection;
 import java.util.Arrays;
-import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptConstantValue = new ConceptDescriptorBuilder("jetbrains.mps.baseLanguageInternal.structure.ConstantValue").super_("jetbrains.mps.baseLanguage.structure.Expression").parents("jetbrains.mps.baseLanguage.structure.Expression").properties("className").references("constant").alias("constant value", "").staticScope(StaticScope.NONE).create();
@@ -43,7 +43,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   }
 
   @Override
-  @NotNull
+  @Nullable
   public ConceptDescriptor getDescriptor(String conceptFqName) {
     switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0cb, conceptFqName)) {
       case 0:
@@ -97,7 +97,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
       case 24:
         return myConceptWeakClassReference;
       default:
-        throw new IllegalStateException("Wrong fqName of the concept " + conceptFqName);
+        return null;
     }
   }
   private static String[] stringSwitchCases_1htk8d_a0a0cb = new String[]{"jetbrains.mps.baseLanguageInternal.structure.ConstantValue", "jetbrains.mps.baseLanguageInternal.structure.ExtractStatementListExpression", "jetbrains.mps.baseLanguageInternal.structure.ExtractStatementListInnerExpression", "jetbrains.mps.baseLanguageInternal.structure.ExtractStaticInnerClassConcept", "jetbrains.mps.baseLanguageInternal.structure.ExtractStaticInnerClassCreator", "jetbrains.mps.baseLanguageInternal.structure.ExtractStaticInnerClassExpression", "jetbrains.mps.baseLanguageInternal.structure.ExtractStaticMethodExpression", "jetbrains.mps.baseLanguageInternal.structure.ExtractStaticMethod_CallExpression", "jetbrains.mps.baseLanguageInternal.structure.ExtractToConstantExpression", "jetbrains.mps.baseLanguageInternal.structure.ExtractToConstantRefExpression", "jetbrains.mps.baseLanguageInternal.structure.InternalAnonymousClass", "jetbrains.mps.baseLanguageInternal.structure.InternalAnonymousClassCreator", "jetbrains.mps.baseLanguageInternal.structure.InternalClassCreator", "jetbrains.mps.baseLanguageInternal.structure.InternalClassExpression", "jetbrains.mps.baseLanguageInternal.structure.InternalClassifierType", "jetbrains.mps.baseLanguageInternal.structure.InternalNewExpression", "jetbrains.mps.baseLanguageInternal.structure.InternalPartialFieldReference", "jetbrains.mps.baseLanguageInternal.structure.InternalPartialInstanceMethodCall", "jetbrains.mps.baseLanguageInternal.structure.InternalStaticFieldReference", "jetbrains.mps.baseLanguageInternal.structure.InternalStaticMethodCall", "jetbrains.mps.baseLanguageInternal.structure.InternalSuperMethodCallOperation", "jetbrains.mps.baseLanguageInternal.structure.InternalThisExpression", "jetbrains.mps.baseLanguageInternal.structure.InternalVariableReference", "jetbrains.mps.baseLanguageInternal.structure.TypeHintExpression", "jetbrains.mps.baseLanguageInternal.structure.WeakClassReference"};

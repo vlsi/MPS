@@ -8,7 +8,7 @@ import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder;
 import jetbrains.mps.smodel.runtime.StaticScope;
 import java.util.Collection;
 import java.util.Arrays;
-import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptFalseFlow = new ConceptDescriptorBuilder("org.jetbrains.mps.samples.IfAndUnless.structure.FalseFlow").super_("org.jetbrains.mps.samples.IfAndUnless.structure.Flow").parents("org.jetbrains.mps.samples.IfAndUnless.structure.Flow").create();
@@ -23,7 +23,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   }
 
   @Override
-  @NotNull
+  @Nullable
   public ConceptDescriptor getDescriptor(String conceptFqName) {
     switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0i, conceptFqName)) {
       case 0:
@@ -37,7 +37,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
       case 4:
         return myConceptUnlessStatement;
       default:
-        throw new IllegalStateException("Wrong fqName of the concept " + conceptFqName);
+        return null;
     }
   }
   private static String[] stringSwitchCases_1htk8d_a0a0i = new String[]{"org.jetbrains.mps.samples.IfAndUnless.structure.FalseFlow", "org.jetbrains.mps.samples.IfAndUnless.structure.Flow", "org.jetbrains.mps.samples.IfAndUnless.structure.MyIfStatement", "org.jetbrains.mps.samples.IfAndUnless.structure.TrueFlow", "org.jetbrains.mps.samples.IfAndUnless.structure.UnlessStatement"};

@@ -7,7 +7,7 @@ import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder;
 import java.util.Collection;
 import java.util.Arrays;
-import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptChild = new ConceptDescriptorBuilder("jetbrains.mps.lang.smodelTests.structure.Child").super_("jetbrains.mps.lang.smodelTests.structure.NamedConcept").parents("jetbrains.mps.lang.smodelTests.structure.NamedConcept").children(new String[]{"grandChild_0_1", "grandChild_1", "grandChild_0_n", "grandChild_1_n"}, new boolean[]{false, false, true, true}).create();
@@ -24,7 +24,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   }
 
   @Override
-  @NotNull
+  @Nullable
   public ConceptDescriptor getDescriptor(String conceptFqName) {
     switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0k, conceptFqName)) {
       case 0:
@@ -42,7 +42,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
       case 6:
         return myConceptRoot;
       default:
-        throw new IllegalStateException("Wrong fqName of the concept " + conceptFqName);
+        return null;
     }
   }
   private static String[] stringSwitchCases_1htk8d_a0a0k = new String[]{"jetbrains.mps.lang.smodelTests.structure.Child", "jetbrains.mps.lang.smodelTests.structure.ChildSubConcept", "jetbrains.mps.lang.smodelTests.structure.GrandChild", "jetbrains.mps.lang.smodelTests.structure.NamedConcept", "jetbrains.mps.lang.smodelTests.structure.ReferenceContainer", "jetbrains.mps.lang.smodelTests.structure.ReferenceContainerSubConcept", "jetbrains.mps.lang.smodelTests.structure.Root"};

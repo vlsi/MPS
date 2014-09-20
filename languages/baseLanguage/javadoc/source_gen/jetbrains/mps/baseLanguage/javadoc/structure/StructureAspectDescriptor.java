@@ -7,7 +7,7 @@ import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder;
 import java.util.Collection;
 import java.util.Arrays;
-import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptAuthorBlockDocTag = new ConceptDescriptorBuilder("jetbrains.mps.baseLanguage.javadoc.structure.AuthorBlockDocTag").super_("jetbrains.mps.baseLanguage.javadoc.structure.BaseBlockDocTag").parents("jetbrains.mps.baseLanguage.javadoc.structure.BaseBlockDocTag").properties("text").create();
@@ -50,7 +50,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   }
 
   @Override
-  @NotNull
+  @Nullable
   public ConceptDescriptor getDescriptor(String conceptFqName) {
     switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0kb, conceptFqName)) {
       case 0:
@@ -120,7 +120,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
       case 32:
         return myConceptVersionBlockDocTag;
       default:
-        throw new IllegalStateException("Wrong fqName of the concept " + conceptFqName);
+        return null;
     }
   }
   private static String[] stringSwitchCases_1htk8d_a0a0kb = new String[]{"jetbrains.mps.baseLanguage.javadoc.structure.AuthorBlockDocTag", "jetbrains.mps.baseLanguage.javadoc.structure.BaseBlockDocTag", "jetbrains.mps.baseLanguage.javadoc.structure.BaseDocComment", "jetbrains.mps.baseLanguage.javadoc.structure.BaseDocReference", "jetbrains.mps.baseLanguage.javadoc.structure.BaseInlineDocTag", "jetbrains.mps.baseLanguage.javadoc.structure.BaseParameterReference", "jetbrains.mps.baseLanguage.javadoc.structure.BaseVariableDocReference", "jetbrains.mps.baseLanguage.javadoc.structure.ClassifierDocComment", "jetbrains.mps.baseLanguage.javadoc.structure.ClassifierDocReference", "jetbrains.mps.baseLanguage.javadoc.structure.CodeInlineDocTag", "jetbrains.mps.baseLanguage.javadoc.structure.CodeSnippet", "jetbrains.mps.baseLanguage.javadoc.structure.CommentLine", "jetbrains.mps.baseLanguage.javadoc.structure.CommentLinePart", "jetbrains.mps.baseLanguage.javadoc.structure.DeprecatedBlockDocTag", "jetbrains.mps.baseLanguage.javadoc.structure.DocMethodParameterReference", "jetbrains.mps.baseLanguage.javadoc.structure.DocTypeParameterReference", "jetbrains.mps.baseLanguage.javadoc.structure.FieldDocComment", "jetbrains.mps.baseLanguage.javadoc.structure.FieldDocReference", "jetbrains.mps.baseLanguage.javadoc.structure.HTMLElement", "jetbrains.mps.baseLanguage.javadoc.structure.InheritDocInlineDocTag", "jetbrains.mps.baseLanguage.javadoc.structure.InlineTagCommentLinePart", "jetbrains.mps.baseLanguage.javadoc.structure.LinkInlineDocTag", "jetbrains.mps.baseLanguage.javadoc.structure.MethodDocComment", "jetbrains.mps.baseLanguage.javadoc.structure.MethodDocReference", "jetbrains.mps.baseLanguage.javadoc.structure.ParameterBlockDocTag", "jetbrains.mps.baseLanguage.javadoc.structure.ReturnBlockDocTag", "jetbrains.mps.baseLanguage.javadoc.structure.SeeBlockDocTag", "jetbrains.mps.baseLanguage.javadoc.structure.SinceBlockDocTag", "jetbrains.mps.baseLanguage.javadoc.structure.StaticFieldDocReference", "jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart", "jetbrains.mps.baseLanguage.javadoc.structure.ThrowsBlockDocTag", "jetbrains.mps.baseLanguage.javadoc.structure.ValueInlineDocTag", "jetbrains.mps.baseLanguage.javadoc.structure.VersionBlockDocTag"};

@@ -7,7 +7,7 @@ import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder;
 import java.util.Collection;
 import java.util.Arrays;
-import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptAccountType = new ConceptDescriptorBuilder("jetbrains.mps.samples.agreementLanguage.structure.AccountType").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept").create();
@@ -34,7 +34,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   }
 
   @Override
-  @NotNull
+  @Nullable
   public ConceptDescriptor getDescriptor(String conceptFqName) {
     switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0u, conceptFqName)) {
       case 0:
@@ -72,7 +72,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
       case 16:
         return myConceptValueReference;
       default:
-        throw new IllegalStateException("Wrong fqName of the concept " + conceptFqName);
+        return null;
     }
   }
   private static String[] stringSwitchCases_1htk8d_a0a0u = new String[]{"jetbrains.mps.samples.agreementLanguage.structure.AccountType", "jetbrains.mps.samples.agreementLanguage.structure.AgreementDeclarations", "jetbrains.mps.samples.agreementLanguage.structure.Date", "jetbrains.mps.samples.agreementLanguage.structure.Date_Future", "jetbrains.mps.samples.agreementLanguage.structure.Date_Past", "jetbrains.mps.samples.agreementLanguage.structure.Event", "jetbrains.mps.samples.agreementLanguage.structure.EventType", "jetbrains.mps.samples.agreementLanguage.structure.EventVariable", "jetbrains.mps.samples.agreementLanguage.structure.EventVariableReference", "jetbrains.mps.samples.agreementLanguage.structure.Plan", "jetbrains.mps.samples.agreementLanguage.structure.PostingRule", "jetbrains.mps.samples.agreementLanguage.structure.PostingRuleTemporalProperty", "jetbrains.mps.samples.agreementLanguage.structure.Quantity", "jetbrains.mps.samples.agreementLanguage.structure.QuantityTemporalProperty", "jetbrains.mps.samples.agreementLanguage.structure.TemporalProperty", "jetbrains.mps.samples.agreementLanguage.structure.Value", "jetbrains.mps.samples.agreementLanguage.structure.ValueReference"};

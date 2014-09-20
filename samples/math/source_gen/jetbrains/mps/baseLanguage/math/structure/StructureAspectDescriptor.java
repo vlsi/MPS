@@ -8,7 +8,7 @@ import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder;
 import jetbrains.mps.smodel.runtime.StaticScope;
 import java.util.Collection;
 import java.util.Arrays;
-import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptAbsExpression = new ConceptDescriptorBuilder("jetbrains.mps.baseLanguage.math.structure.AbsExpression").super_("jetbrains.mps.baseLanguage.structure.Expression").parents("jetbrains.mps.baseLanguage.structure.Expression").children(new String[]{"expr"}, new boolean[]{false}).alias("abs", "Absolute value of a number").staticScope(StaticScope.NONE).create();
@@ -77,7 +77,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   }
 
   @Override
-  @NotNull
+  @Nullable
   public ConceptDescriptor getDescriptor(String conceptFqName) {
     switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0kc, conceptFqName)) {
       case 0:
@@ -199,7 +199,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
       case 58:
         return myConceptVectorType;
       default:
-        throw new IllegalStateException("Wrong fqName of the concept " + conceptFqName);
+        return null;
     }
   }
   private static String[] stringSwitchCases_1htk8d_a0a0kc = new String[]{"jetbrains.mps.baseLanguage.math.structure.AbsExpression", "jetbrains.mps.baseLanguage.math.structure.AbstractIndex", "jetbrains.mps.baseLanguage.math.structure.ArithmSymbol", "jetbrains.mps.baseLanguage.math.structure.BigComplexType", "jetbrains.mps.baseLanguage.math.structure.BigDecimalType", "jetbrains.mps.baseLanguage.math.structure.BigIntegerType", "jetbrains.mps.baseLanguage.math.structure.BigMaxExpression", "jetbrains.mps.baseLanguage.math.structure.BigMinExpression", "jetbrains.mps.baseLanguage.math.structure.BigProdExpression", "jetbrains.mps.baseLanguage.math.structure.BigSumExpression", "jetbrains.mps.baseLanguage.math.structure.ComplexLiteral", "jetbrains.mps.baseLanguage.math.structure.ComplexType", "jetbrains.mps.baseLanguage.math.structure.ConjugateOperation", "jetbrains.mps.baseLanguage.math.structure.CosineExpression", "jetbrains.mps.baseLanguage.math.structure.DecimalBinaryOperation", "jetbrains.mps.baseLanguage.math.structure.DecimalDivExpression", "jetbrains.mps.baseLanguage.math.structure.DecimalMinusExpression", "jetbrains.mps.baseLanguage.math.structure.DecimalMulExpression", "jetbrains.mps.baseLanguage.math.structure.DecimalPlusExpression", "jetbrains.mps.baseLanguage.math.structure.Determinant", "jetbrains.mps.baseLanguage.math.structure.DivExpressionFraction", "jetbrains.mps.baseLanguage.math.structure.ExponentExpression", "jetbrains.mps.baseLanguage.math.structure.ExponentialOperation", "jetbrains.mps.baseLanguage.math.structure.ExtrSymbol", "jetbrains.mps.baseLanguage.math.structure.InIntervalExpression", "jetbrains.mps.baseLanguage.math.structure.IntervalContainsExpression", "jetbrains.mps.baseLanguage.math.structure.IntervalLiteral", "jetbrains.mps.baseLanguage.math.structure.IntervalType", "jetbrains.mps.baseLanguage.math.structure.LinearSolveOperation", "jetbrains.mps.baseLanguage.math.structure.LiteralI", "jetbrains.mps.baseLanguage.math.structure.LogExpression", "jetbrains.mps.baseLanguage.math.structure.MathContext", "jetbrains.mps.baseLanguage.math.structure.MathFuncExpression", "jetbrains.mps.baseLanguage.math.structure.MathPrimitiveType", "jetbrains.mps.baseLanguage.math.structure.MathSymbol", "jetbrains.mps.baseLanguage.math.structure.MathSymbolFromToIndex", "jetbrains.mps.baseLanguage.math.structure.MathSymbolIndex", "jetbrains.mps.baseLanguage.math.structure.MathSymbolIndexReference", "jetbrains.mps.baseLanguage.math.structure.MathTypeCast", "jetbrains.mps.baseLanguage.math.structure.MatrixConstructor", "jetbrains.mps.baseLanguage.math.structure.MatrixElementAccessExpression", "jetbrains.mps.baseLanguage.math.structure.MatrixExponentialOperation", "jetbrains.mps.baseLanguage.math.structure.MatrixIndexWildcard", "jetbrains.mps.baseLanguage.math.structure.MatrixInitializer", "jetbrains.mps.baseLanguage.math.structure.MatrixInitializerIndex", "jetbrains.mps.baseLanguage.math.structure.MatrixInitializerIndexReference", "jetbrains.mps.baseLanguage.math.structure.MatrixInverseOperation", "jetbrains.mps.baseLanguage.math.structure.MatrixNorm", "jetbrains.mps.baseLanguage.math.structure.MatrixOrVectorInitializer", "jetbrains.mps.baseLanguage.math.structure.MatrixOrVectorType", "jetbrains.mps.baseLanguage.math.structure.MatrixType", "jetbrains.mps.baseLanguage.math.structure.MatrixUnit", "jetbrains.mps.baseLanguage.math.structure.MatrixZero", "jetbrains.mps.baseLanguage.math.structure.PowExpression", "jetbrains.mps.baseLanguage.math.structure.SineExpression", "jetbrains.mps.baseLanguage.math.structure.TangentExpression", "jetbrains.mps.baseLanguage.math.structure.TransposeOperation", "jetbrains.mps.baseLanguage.math.structure.VectorInitializer", "jetbrains.mps.baseLanguage.math.structure.VectorType"};

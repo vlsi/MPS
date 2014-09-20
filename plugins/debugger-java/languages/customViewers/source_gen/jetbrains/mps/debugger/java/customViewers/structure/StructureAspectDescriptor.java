@@ -8,7 +8,7 @@ import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder;
 import jetbrains.mps.smodel.runtime.StaticScope;
 import java.util.Collection;
 import java.util.Arrays;
-import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptCanWrapHighLevelValue_ConceptFunction = new ConceptDescriptorBuilder("jetbrains.mps.debugger.java.customViewers.structure.CanWrapHighLevelValue_ConceptFunction").super_("jetbrains.mps.baseLanguage.structure.ConceptFunction").parents("jetbrains.mps.baseLanguage.structure.ConceptFunction").staticScope(StaticScope.NONE).create();
@@ -30,7 +30,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   }
 
   @Override
-  @NotNull
+  @Nullable
   public ConceptDescriptor getDescriptor(String conceptFqName) {
     switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0p, conceptFqName)) {
       case 0:
@@ -58,7 +58,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
       case 11:
         return myConceptWatchablesListCreator;
       default:
-        throw new IllegalStateException("Wrong fqName of the concept " + conceptFqName);
+        return null;
     }
   }
   private static String[] stringSwitchCases_1htk8d_a0a0p = new String[]{"jetbrains.mps.debugger.java.customViewers.structure.CanWrapHighLevelValue_ConceptFunction", "jetbrains.mps.debugger.java.customViewers.structure.CustomWatchable", "jetbrains.mps.debugger.java.customViewers.structure.CustomWatchablesContainer", "jetbrains.mps.debugger.java.customViewers.structure.GetHighLevelValuePresentation_ConceptFunction", "jetbrains.mps.debugger.java.customViewers.structure.GetHighLevelWatchablesBlock_ConceptFunction", "jetbrains.mps.debugger.java.customViewers.structure.HighLevelCustomViewer", "jetbrains.mps.debugger.java.customViewers.structure.HighLevelValue_ConceptFunctionParameter", "jetbrains.mps.debugger.java.customViewers.structure.HighLevelWatchableCreator", "jetbrains.mps.debugger.java.customViewers.structure.ToProcessMethod", "jetbrains.mps.debugger.java.customViewers.structure.WatchableListType", "jetbrains.mps.debugger.java.customViewers.structure.WatchableType", "jetbrains.mps.debugger.java.customViewers.structure.WatchablesListCreator"};

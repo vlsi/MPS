@@ -8,7 +8,7 @@ import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder;
 import jetbrains.mps.smodel.runtime.StaticScope;
 import java.util.Collection;
 import java.util.Arrays;
-import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptConceptConstraints = new ConceptDescriptorBuilder("jetbrains.mps.lang.constraints.structure.ConceptConstraints").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept", "jetbrains.mps.lang.structure.structure.IConceptAspect").references("concept", "defaultConcreteConcept").children(new String[]{"property", "referent", "defaultScope", "canBeChild", "canBeRoot", "canBeParent", "canBeAncestor", "alternativeIcon"}, new boolean[]{true, true, false, false, false, false, false, false}).alias("Concept Constraints", "").create();
@@ -60,7 +60,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   }
 
   @Override
-  @NotNull
+  @Nullable
   public ConceptDescriptor getDescriptor(String conceptFqName) {
     switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0tb, conceptFqName)) {
       case 0:
@@ -148,7 +148,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
       case 41:
         return myConceptNodeScopeFactory;
       default:
-        throw new IllegalStateException("Wrong fqName of the concept " + conceptFqName);
+        return null;
     }
   }
   private static String[] stringSwitchCases_1htk8d_a0a0tb = new String[]{"jetbrains.mps.lang.constraints.structure.ConceptConstraints", "jetbrains.mps.lang.constraints.structure.ConceptParameter_ReferentSearchScope_enclosingNode", "jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_checkedNode", "jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_childConcept", "jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_childNode", "jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_containingLink", "jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_contextNode", "jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_contextRole", "jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_exists", "jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_inEditor", "jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_link", "jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_linkTarget", "jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_newReferentNode", "jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_oldReferentNode", "jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_parameterNode", "jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_parentNode", "jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_position", "jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_referenceNode", "jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_smartReference", "jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_visible", "jetbrains.mps.lang.constraints.structure.ConstraintFunction_CanBeAChild", "jetbrains.mps.lang.constraints.structure.ConstraintFunction_CanBeAParent", "jetbrains.mps.lang.constraints.structure.ConstraintFunction_CanBeARoot", "jetbrains.mps.lang.constraints.structure.ConstraintFunction_CanBeAnAncestor", "jetbrains.mps.lang.constraints.structure.ConstraintFunction_GetAlternativeIcon", "jetbrains.mps.lang.constraints.structure.ConstraintFunction_PropertyGetter", "jetbrains.mps.lang.constraints.structure.ConstraintFunction_PropertySetter", "jetbrains.mps.lang.constraints.structure.ConstraintFunction_PropertyValidator", "jetbrains.mps.lang.constraints.structure.ConstraintFunction_RefSetHandlerKeepsReference", "jetbrains.mps.lang.constraints.structure.ConstraintFunction_ReferentSearchScope_AbstractBase", "jetbrains.mps.lang.constraints.structure.ConstraintFunction_ReferentSearchScope_Factory", "jetbrains.mps.lang.constraints.structure.ConstraintFunction_ReferentSearchScope_Presentation", "jetbrains.mps.lang.constraints.structure.ConstraintFunction_ReferentSearchScope_Scope", "jetbrains.mps.lang.constraints.structure.ConstraintFunction_ReferentSearchScope_Validator", "jetbrains.mps.lang.constraints.structure.ConstraintFunction_ReferentSetHandler", "jetbrains.mps.lang.constraints.structure.ConstraintsFunctionParameter_node", "jetbrains.mps.lang.constraints.structure.ConstraintsFunctionParameter_propertyValue", "jetbrains.mps.lang.constraints.structure.InheritedNodeScopeFactory", "jetbrains.mps.lang.constraints.structure.NodeDefaultSearchScope", "jetbrains.mps.lang.constraints.structure.NodePropertyConstraint", "jetbrains.mps.lang.constraints.structure.NodeReferentConstraint", "jetbrains.mps.lang.constraints.structure.NodeScopeFactory"};

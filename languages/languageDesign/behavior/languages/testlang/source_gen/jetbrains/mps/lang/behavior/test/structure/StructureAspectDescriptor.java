@@ -7,7 +7,7 @@ import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder;
 import java.util.Collection;
 import java.util.Arrays;
-import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptA = new ConceptDescriptorBuilder("jetbrains.mps.lang.behavior.test.structure.A").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").create();
@@ -21,7 +21,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   }
 
   @Override
-  @NotNull
+  @Nullable
   public ConceptDescriptor getDescriptor(String conceptFqName) {
     switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0h, conceptFqName)) {
       case 0:
@@ -33,7 +33,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
       case 3:
         return myConceptI;
       default:
-        throw new IllegalStateException("Wrong fqName of the concept " + conceptFqName);
+        return null;
     }
   }
   private static String[] stringSwitchCases_1htk8d_a0a0h = new String[]{"jetbrains.mps.lang.behavior.test.structure.A", "jetbrains.mps.lang.behavior.test.structure.B", "jetbrains.mps.lang.behavior.test.structure.C", "jetbrains.mps.lang.behavior.test.structure.I"};

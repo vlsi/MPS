@@ -8,7 +8,7 @@ import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder;
 import jetbrains.mps.smodel.runtime.StaticScope;
 import java.util.Collection;
 import java.util.Arrays;
-import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptAbstractStateMachineElement = new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.tableTests.structure.AbstractStateMachineElement").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").abstract_().create();
@@ -35,7 +35,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   }
 
   @Override
-  @NotNull
+  @Nullable
   public ConceptDescriptor getDescriptor(String conceptFqName) {
     switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0u, conceptFqName)) {
       case 0:
@@ -73,7 +73,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
       case 16:
         return myConceptYElement;
       default:
-        throw new IllegalStateException("Wrong fqName of the concept " + conceptFqName);
+        return null;
     }
   }
   private static String[] stringSwitchCases_1htk8d_a0a0u = new String[]{"jetbrains.mps.lang.editor.tableTests.structure.AbstractStateMachineElement", "jetbrains.mps.lang.editor.tableTests.structure.ContentElement", "jetbrains.mps.lang.editor.tableTests.structure.DataCell", "jetbrains.mps.lang.editor.tableTests.structure.Event", "jetbrains.mps.lang.editor.tableTests.structure.EventReference", "jetbrains.mps.lang.editor.tableTests.structure.HierarchycalTable", "jetbrains.mps.lang.editor.tableTests.structure.LightWeightDecisionTable", "jetbrains.mps.lang.editor.tableTests.structure.Matrix", "jetbrains.mps.lang.editor.tableTests.structure.Row", "jetbrains.mps.lang.editor.tableTests.structure.State", "jetbrains.mps.lang.editor.tableTests.structure.StateMachine", "jetbrains.mps.lang.editor.tableTests.structure.StateReference", "jetbrains.mps.lang.editor.tableTests.structure.Table", "jetbrains.mps.lang.editor.tableTests.structure.Transition", "jetbrains.mps.lang.editor.tableTests.structure.UltimateContainer", "jetbrains.mps.lang.editor.tableTests.structure.XElement", "jetbrains.mps.lang.editor.tableTests.structure.YElement"};

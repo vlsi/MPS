@@ -8,7 +8,7 @@ import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder;
 import jetbrains.mps.smodel.runtime.StaticScope;
 import java.util.Collection;
 import java.util.Arrays;
-import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptAsBuilderStatement = new ConceptDescriptorBuilder("jetbrains.mps.baseLanguage.builders.structure.AsBuilderStatement").super_("jetbrains.mps.baseLanguage.structure.Statement").parents("jetbrains.mps.baseLanguage.structure.Statement", "jetbrains.mps.baseLanguage.structure.IContainsStatementList", "jetbrains.mps.baseLanguage.builders.structure.BuilderContainer").children(new String[]{"expression"}, new boolean[]{false}).alias("as builder", "").staticScope(StaticScope.NONE).create();
@@ -43,7 +43,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   }
 
   @Override
-  @NotNull
+  @Nullable
   public ConceptDescriptor getDescriptor(String conceptFqName) {
     switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0cb, conceptFqName)) {
       case 0:
@@ -97,7 +97,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
       case 24:
         return myConceptSimpleBuilders;
       default:
-        throw new IllegalStateException("Wrong fqName of the concept " + conceptFqName);
+        return null;
     }
   }
   private static String[] stringSwitchCases_1htk8d_a0a0cb = new String[]{"jetbrains.mps.baseLanguage.builders.structure.AsBuilderStatement", "jetbrains.mps.baseLanguage.builders.structure.AsTypeBuilder", "jetbrains.mps.baseLanguage.builders.structure.BaseSimpleBuilderDeclaration", "jetbrains.mps.baseLanguage.builders.structure.BeanBuilder", "jetbrains.mps.baseLanguage.builders.structure.BeanPropertyBuilder", "jetbrains.mps.baseLanguage.builders.structure.Builder", "jetbrains.mps.baseLanguage.builders.structure.BuilderContainer", "jetbrains.mps.baseLanguage.builders.structure.BuilderCreator", "jetbrains.mps.baseLanguage.builders.structure.BuilderStatement", "jetbrains.mps.baseLanguage.builders.structure.ResultExpression", "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilder", "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderChild", "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderChildExpression", "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderDeclaration", "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderExpression", "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderExtensionDeclaration", "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderParameter", "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderParameterReference", "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderParentExpression", "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderProperty", "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderPropertyBuilder", "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderPropertyExpression", "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderPropertyParent", "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderPropertyValue", "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilders"};

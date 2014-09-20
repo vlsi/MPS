@@ -8,7 +8,7 @@ import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder;
 import jetbrains.mps.smodel.runtime.StaticScope;
 import java.util.Collection;
 import java.util.Arrays;
-import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptBaseIntentionDeclaration = new ConceptDescriptorBuilder("jetbrains.mps.lang.intentions.structure.BaseIntentionDeclaration").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept", "jetbrains.mps.lang.checkedName.structure.ICheckedNamePolicy", "jetbrains.mps.lang.structure.structure.IConceptAspect").properties("isErrorIntention", "isAvailableInChildNodes").references("forConcept").children(new String[]{"descriptionFunction", "childFilterFunction", "isApplicableFunction", "executeFunction"}, new boolean[]{false, false, false, false}).create();
@@ -33,7 +33,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   }
 
   @Override
-  @NotNull
+  @Nullable
   public ConceptDescriptor getDescriptor(String conceptFqName) {
     switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0s, conceptFqName)) {
       case 0:
@@ -67,7 +67,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
       case 14:
         return myConceptSurroundWithIntentionDeclaration;
       default:
-        throw new IllegalStateException("Wrong fqName of the concept " + conceptFqName);
+        return null;
     }
   }
   private static String[] stringSwitchCases_1htk8d_a0a0s = new String[]{"jetbrains.mps.lang.intentions.structure.BaseIntentionDeclaration", "jetbrains.mps.lang.intentions.structure.ChildFilterBlock", "jetbrains.mps.lang.intentions.structure.ChildFilterFunction", "jetbrains.mps.lang.intentions.structure.ConceptFunctionParameter_childNode", "jetbrains.mps.lang.intentions.structure.ConceptFunctionParameter_node", "jetbrains.mps.lang.intentions.structure.DescriptionBlock", "jetbrains.mps.lang.intentions.structure.ExecuteBlock", "jetbrains.mps.lang.intentions.structure.IntentionDeclaration", "jetbrains.mps.lang.intentions.structure.IntentionParameter", "jetbrains.mps.lang.intentions.structure.IsApplicableBlock", "jetbrains.mps.lang.intentions.structure.ParameterizedDescriptionBlock", "jetbrains.mps.lang.intentions.structure.ParameterizedExecuteBlock", "jetbrains.mps.lang.intentions.structure.ParameterizedIntentionDeclaration", "jetbrains.mps.lang.intentions.structure.QueryBlock", "jetbrains.mps.lang.intentions.structure.SurroundWithIntentionDeclaration"};

@@ -8,7 +8,7 @@ import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder;
 import jetbrains.mps.smodel.runtime.StaticScope;
 import java.util.Collection;
 import java.util.Arrays;
-import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptBuildModuleTestsPlugin = new ConceptDescriptorBuilder("jetbrains.mps.build.mps.tests.structure.BuildModuleTestsPlugin").super_("jetbrains.mps.build.structure.BuildPlugin").parents("jetbrains.mps.build.structure.BuildPlugin", "jetbrains.mps.build.structure.BuildExternalDependency").alias("module-testing", "adds ability to execute module tests to the project").create();
@@ -23,7 +23,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   }
 
   @Override
-  @NotNull
+  @Nullable
   public ConceptDescriptor getDescriptor(String conceptFqName) {
     switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0i, conceptFqName)) {
       case 0:
@@ -37,7 +37,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
       case 4:
         return myConceptBuildMpsLayout_TestModules_Content;
       default:
-        throw new IllegalStateException("Wrong fqName of the concept " + conceptFqName);
+        return null;
     }
   }
   private static String[] stringSwitchCases_1htk8d_a0a0i = new String[]{"jetbrains.mps.build.mps.tests.structure.BuildModuleTestsPlugin", "jetbrains.mps.build.mps.tests.structure.BuildMpsLayout_TestModule", "jetbrains.mps.build.mps.tests.structure.BuildMpsLayout_TestModuleGroup", "jetbrains.mps.build.mps.tests.structure.BuildMpsLayout_TestModules", "jetbrains.mps.build.mps.tests.structure.BuildMpsLayout_TestModules_Content"};

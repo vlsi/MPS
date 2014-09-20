@@ -7,7 +7,7 @@ import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder;
 import java.util.Collection;
 import java.util.Arrays;
-import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptDevKit = new ConceptDescriptorBuilder("jetbrains.mps.lang.project.structure.DevKit").super_("jetbrains.mps.lang.project.structure.Module").parents("jetbrains.mps.lang.project.structure.Module").properties("plugin", "devkitPath").children(new String[]{"exportedLanguages", "exportedSolutions", "extendedDevkits"}, new boolean[]{true, true, true}).create();
@@ -36,7 +36,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   }
 
   @Override
-  @NotNull
+  @Nullable
   public ConceptDescriptor getDescriptor(String conceptFqName) {
     switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0w, conceptFqName)) {
       case 0:
@@ -78,7 +78,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
       case 18:
         return myConceptStubSolution;
       default:
-        throw new IllegalStateException("Wrong fqName of the concept " + conceptFqName);
+        return null;
     }
   }
   private static String[] stringSwitchCases_1htk8d_a0a0w = new String[]{"jetbrains.mps.lang.project.structure.DevKit", "jetbrains.mps.lang.project.structure.Generator", "jetbrains.mps.lang.project.structure.Language", "jetbrains.mps.lang.project.structure.MappingConfigExternalRef", "jetbrains.mps.lang.project.structure.MappingConfigNormalRef", "jetbrains.mps.lang.project.structure.MappingConfigRefAllGlobal", "jetbrains.mps.lang.project.structure.MappingConfigRefAllLocal", "jetbrains.mps.lang.project.structure.MappingConfigRefBase", "jetbrains.mps.lang.project.structure.MappingConfigRefSet", "jetbrains.mps.lang.project.structure.MappingPriorityRule", "jetbrains.mps.lang.project.structure.ModelReference", "jetbrains.mps.lang.project.structure.ModelRoot", "jetbrains.mps.lang.project.structure.Module", "jetbrains.mps.lang.project.structure.ModuleDependency", "jetbrains.mps.lang.project.structure.ModuleReference", "jetbrains.mps.lang.project.structure.Solution", "jetbrains.mps.lang.project.structure.SourcePath", "jetbrains.mps.lang.project.structure.StubEntry", "jetbrains.mps.lang.project.structure.StubSolution"};

@@ -7,7 +7,7 @@ import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder;
 import java.util.Collection;
 import java.util.Arrays;
-import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptClassPathItem = new ConceptDescriptorBuilder("jetbrains.mps.build.startup.structure.ClassPathItem").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").properties("path").create();
@@ -23,7 +23,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   }
 
   @Override
-  @NotNull
+  @Nullable
   public ConceptDescriptor getDescriptor(String conceptFqName) {
     switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0j, conceptFqName)) {
       case 0:
@@ -39,7 +39,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
       case 5:
         return myConceptVmOptions;
       default:
-        throw new IllegalStateException("Wrong fqName of the concept " + conceptFqName);
+        return null;
     }
   }
   private static String[] stringSwitchCases_1htk8d_a0a0j = new String[]{"jetbrains.mps.build.startup.structure.ClassPathItem", "jetbrains.mps.build.startup.structure.MpsStartupScript", "jetbrains.mps.build.startup.structure.SimpleVmOptions", "jetbrains.mps.build.startup.structure.TextFile", "jetbrains.mps.build.startup.structure.TextLine", "jetbrains.mps.build.startup.structure.VmOptions"};

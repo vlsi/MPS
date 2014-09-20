@@ -8,7 +8,7 @@ import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder;
 import jetbrains.mps.smodel.runtime.StaticScope;
 import java.util.Collection;
 import java.util.Arrays;
-import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptIndexedTupleLiteral = new ConceptDescriptorBuilder("jetbrains.mps.baseLanguage.tuples.structure.IndexedTupleLiteral").super_("jetbrains.mps.baseLanguage.structure.Expression").parents("jetbrains.mps.baseLanguage.structure.Expression").children(new String[]{"component"}, new boolean[]{true}).alias("[", "indexed tuple").staticScope(StaticScope.NONE).create();
@@ -27,7 +27,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   }
 
   @Override
-  @NotNull
+  @Nullable
   public ConceptDescriptor getDescriptor(String conceptFqName) {
     switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0m, conceptFqName)) {
       case 0:
@@ -49,7 +49,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
       case 8:
         return myConceptNamedTupleType;
       default:
-        throw new IllegalStateException("Wrong fqName of the concept " + conceptFqName);
+        return null;
     }
   }
   private static String[] stringSwitchCases_1htk8d_a0a0m = new String[]{"jetbrains.mps.baseLanguage.tuples.structure.IndexedTupleLiteral", "jetbrains.mps.baseLanguage.tuples.structure.IndexedTupleMemberAccessExpression", "jetbrains.mps.baseLanguage.tuples.structure.IndexedTupleType", "jetbrains.mps.baseLanguage.tuples.structure.NamedTupleComponentAccessOperation", "jetbrains.mps.baseLanguage.tuples.structure.NamedTupleComponentDeclaration", "jetbrains.mps.baseLanguage.tuples.structure.NamedTupleComponentReference", "jetbrains.mps.baseLanguage.tuples.structure.NamedTupleDeclaration", "jetbrains.mps.baseLanguage.tuples.structure.NamedTupleLiteral", "jetbrains.mps.baseLanguage.tuples.structure.NamedTupleType"};

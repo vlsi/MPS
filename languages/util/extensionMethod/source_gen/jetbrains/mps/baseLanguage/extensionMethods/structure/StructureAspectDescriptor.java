@@ -8,7 +8,7 @@ import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder;
 import jetbrains.mps.smodel.runtime.StaticScope;
 import java.util.Collection;
 import java.util.Arrays;
-import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptBaseExtensionMethodContainer = new ConceptDescriptorBuilder("jetbrains.mps.baseLanguage.extensionMethods.structure.BaseExtensionMethodContainer").super_("jetbrains.mps.baseLanguage.structure.GenericDeclaration").parents("jetbrains.mps.baseLanguage.structure.GenericDeclaration", "jetbrains.mps.baseLanguage.structure.IVisible", "jetbrains.mps.baseLanguage.structure.IMemberContainer").children(new String[]{"methods", "staticFields"}, new boolean[]{true, true}).abstract_().create();
@@ -27,7 +27,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   }
 
   @Override
-  @NotNull
+  @Nullable
   public ConceptDescriptor getDescriptor(String conceptFqName) {
     switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0m, conceptFqName)) {
       case 0:
@@ -49,7 +49,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
       case 8:
         return myConceptTypeExtension;
       default:
-        throw new IllegalStateException("Wrong fqName of the concept " + conceptFqName);
+        return null;
     }
   }
   private static String[] stringSwitchCases_1htk8d_a0a0m = new String[]{"jetbrains.mps.baseLanguage.extensionMethods.structure.BaseExtensionMethodContainer", "jetbrains.mps.baseLanguage.extensionMethods.structure.ExtensionMethodCall", "jetbrains.mps.baseLanguage.extensionMethods.structure.ExtensionMethodDeclaration", "jetbrains.mps.baseLanguage.extensionMethods.structure.ExtensionStaticFieldDeclaration", "jetbrains.mps.baseLanguage.extensionMethods.structure.ExtensionStaticFieldReference", "jetbrains.mps.baseLanguage.extensionMethods.structure.LocalExtendedMethodCall", "jetbrains.mps.baseLanguage.extensionMethods.structure.SimpleExtensionMethodsContainer", "jetbrains.mps.baseLanguage.extensionMethods.structure.ThisExtensionExpression", "jetbrains.mps.baseLanguage.extensionMethods.structure.TypeExtension"};

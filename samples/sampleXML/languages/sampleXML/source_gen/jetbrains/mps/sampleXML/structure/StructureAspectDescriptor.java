@@ -7,7 +7,7 @@ import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder;
 import java.util.Collection;
 import java.util.Arrays;
-import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptAttribute = new ConceptDescriptorBuilder("jetbrains.mps.sampleXML.structure.Attribute").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault").properties("value").alias("", "attribute").create();
@@ -22,7 +22,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   }
 
   @Override
-  @NotNull
+  @Nullable
   public ConceptDescriptor getDescriptor(String conceptFqName) {
     switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0i, conceptFqName)) {
       case 0:
@@ -36,7 +36,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
       case 4:
         return myConceptText;
       default:
-        throw new IllegalStateException("Wrong fqName of the concept " + conceptFqName);
+        return null;
     }
   }
   private static String[] stringSwitchCases_1htk8d_a0a0i = new String[]{"jetbrains.mps.sampleXML.structure.Attribute", "jetbrains.mps.sampleXML.structure.Document", "jetbrains.mps.sampleXML.structure.Element", "jetbrains.mps.sampleXML.structure.ElementPart", "jetbrains.mps.sampleXML.structure.Text"};

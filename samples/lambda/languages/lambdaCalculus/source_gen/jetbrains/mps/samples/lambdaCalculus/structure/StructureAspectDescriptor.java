@@ -7,7 +7,7 @@ import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder;
 import java.util.Collection;
 import java.util.Arrays;
-import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptAbstractionVarRef = new ConceptDescriptorBuilder("jetbrains.mps.samples.lambdaCalculus.structure.AbstractionVarRef").super_("jetbrains.mps.samples.lambdaCalculus.structure.VariableReference").parents("jetbrains.mps.samples.lambdaCalculus.structure.VariableReference").references("variable").create();
@@ -45,7 +45,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   }
 
   @Override
-  @NotNull
+  @Nullable
   public ConceptDescriptor getDescriptor(String conceptFqName) {
     switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0fb, conceptFqName)) {
       case 0:
@@ -105,7 +105,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
       case 27:
         return myConceptVariableReference;
       default:
-        throw new IllegalStateException("Wrong fqName of the concept " + conceptFqName);
+        return null;
     }
   }
   private static String[] stringSwitchCases_1htk8d_a0a0fb = new String[]{"jetbrains.mps.samples.lambdaCalculus.structure.AbstractionVarRef", "jetbrains.mps.samples.lambdaCalculus.structure.AbstractionVariable", "jetbrains.mps.samples.lambdaCalculus.structure.AddOperation", "jetbrains.mps.samples.lambdaCalculus.structure.BinaryNumericOperation", "jetbrains.mps.samples.lambdaCalculus.structure.BinaryOperation", "jetbrains.mps.samples.lambdaCalculus.structure.BinaryStringOperation", "jetbrains.mps.samples.lambdaCalculus.structure.ConcatenateOperation", "jetbrains.mps.samples.lambdaCalculus.structure.DivideOperation", "jetbrains.mps.samples.lambdaCalculus.structure.FunctionType", "jetbrains.mps.samples.lambdaCalculus.structure.LambdaAbstraction", "jetbrains.mps.samples.lambdaCalculus.structure.LambdaApplication", "jetbrains.mps.samples.lambdaCalculus.structure.LambdaExpression", "jetbrains.mps.samples.lambdaCalculus.structure.LambdaType", "jetbrains.mps.samples.lambdaCalculus.structure.LetExpression", "jetbrains.mps.samples.lambdaCalculus.structure.LetRef", "jetbrains.mps.samples.lambdaCalculus.structure.LetVariable", "jetbrains.mps.samples.lambdaCalculus.structure.MultipleExpression", "jetbrains.mps.samples.lambdaCalculus.structure.MultiplyOperation", "jetbrains.mps.samples.lambdaCalculus.structure.NumberType", "jetbrains.mps.samples.lambdaCalculus.structure.NumericConstant", "jetbrains.mps.samples.lambdaCalculus.structure.ParenthesisExpression", "jetbrains.mps.samples.lambdaCalculus.structure.Program", "jetbrains.mps.samples.lambdaCalculus.structure.StringConstant", "jetbrains.mps.samples.lambdaCalculus.structure.StringType", "jetbrains.mps.samples.lambdaCalculus.structure.SubtractOperation", "jetbrains.mps.samples.lambdaCalculus.structure.Variable", "jetbrains.mps.samples.lambdaCalculus.structure.VariableOwner", "jetbrains.mps.samples.lambdaCalculus.structure.VariableReference"};

@@ -8,7 +8,7 @@ import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder;
 import jetbrains.mps.smodel.runtime.StaticScope;
 import java.util.Collection;
 import java.util.Arrays;
-import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptIconResource = new ConceptDescriptorBuilder("jetbrains.mps.lang.resources.structure.IconResource").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.resources.structure.Resource").children(new String[]{"iconExpression"}, new boolean[]{false}).create();
@@ -24,7 +24,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   }
 
   @Override
-  @NotNull
+  @Nullable
   public ConceptDescriptor getDescriptor(String conceptFqName) {
     switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0j, conceptFqName)) {
       case 0:
@@ -40,7 +40,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
       case 5:
         return myConceptResource;
       default:
-        throw new IllegalStateException("Wrong fqName of the concept " + conceptFqName);
+        return null;
     }
   }
   private static String[] stringSwitchCases_1htk8d_a0a0j = new String[]{"jetbrains.mps.lang.resources.structure.IconResource", "jetbrains.mps.lang.resources.structure.IconResourceBundle", "jetbrains.mps.lang.resources.structure.IconResourceDeclaration", "jetbrains.mps.lang.resources.structure.IconResourceExpression", "jetbrains.mps.lang.resources.structure.IconResourceReference", "jetbrains.mps.lang.resources.structure.Resource"};
