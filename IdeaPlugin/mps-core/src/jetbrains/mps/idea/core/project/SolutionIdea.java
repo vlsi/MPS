@@ -76,7 +76,7 @@ public class SolutionIdea extends Solution {
     super(descriptor, null);
     myModule = module;
     // TODO: simply set solution descriptor local variable?
-    setSolutionDescriptor(descriptor, false);
+    setSolutionDescriptor(descriptor);
     myConnection = myModule.getProject().getMessageBus().connect();
     myConnection.subscribe(ProjectTopics.PROJECT_ROOTS, new MyModuleRootListener());
     myConnection.subscribe(FacetManager.FACETS_TOPIC, new MyFacetManagerAdapter());
@@ -95,11 +95,11 @@ public class SolutionIdea extends Solution {
   }
 
   @Override
-  public void setSolutionDescriptor(SolutionDescriptor newDescriptor, boolean reloadClasses) {
+  public void setSolutionDescriptor(SolutionDescriptor newDescriptor) {
 
     newDescriptor.setNamespace(myModule.getName());
 //    addLibs(newDescriptor);
-    super.setSolutionDescriptor(newDescriptor, reloadClasses);
+    super.setSolutionDescriptor(newDescriptor);
 
     try {
       ApplicationManager.getApplication().getComponent(JdkStubSolutionManager.class).claimSdk(myModule);
@@ -304,7 +304,7 @@ public class SolutionIdea extends Solution {
     ModelAccess.instance().runWriteInEDT(new Runnable() {
       @Override
       public void run() {
-        setModuleDescriptor(getModuleDescriptor(), false);
+        setModuleDescriptor(getModuleDescriptor());
       }
     });
   }
@@ -393,7 +393,7 @@ public class SolutionIdea extends Solution {
         // this is to prevent a delayed write to be executed after the module has already been disposed
         // TODO: find a better solution
         if (myModule.isDisposed()) return;
-        setModuleDescriptor(getModuleDescriptor(), false);
+        setModuleDescriptor(getModuleDescriptor());
       }
     });
   }
