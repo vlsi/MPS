@@ -23,7 +23,9 @@
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068581242864" name="LocalVariableDeclarationStatement" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1204053956946" name="IMethodCall" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1070534644030" name="BooleanType" />
+    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/7812454656619025412" name="LocalMethodCall" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1107535904670" name="ClassifierType" />
+    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1224848483129" name="IBLDeprecatable" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068581242878" name="ReturnStatement" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123140" name="ConstructorDeclaration" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1070534370425" name="IntegerType" />
@@ -70,6 +72,8 @@
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068580320020" name="IntegerConstant" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1146644623116" name="PrivateVisibility" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1188208481402" name="HasAnnotation" />
+    <property id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123132/1181808852946" name="isFinal" />
+    <property id="f3061a53-9226-4cc5-a443-f952ceaf5816/1224848483129/1224848525476" name="isDeprecated" />
     <property id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068431474542/1176718929932" name="isFinal" />
     <property id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123165/1178608670077" name="isAbstract" />
     <property id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068390468198/1075300953594" name="abstractClass" />
@@ -706,6 +710,26 @@
               <property role="vg0i.1068580123137.1068580123138" value="true" />
             </node>
           </node>
+        </node>
+      </node>
+      <node concept="vg0i.1068580123165" id="2083405790277247595" role="vg0i.1107461130800.5375687026011219971" info="igu">
+        <property role="vg0i.1068580123165.1178608670077" value="false" />
+        <property role="asn4.1169194658468.1169194664001" value="toString" />
+        <property role="vg0i.1068580123132.1181808852946" value="false" />
+        <property role="vg0i.1224848483129.1224848525476" value="false" />
+        <node concept="vg0i.1146644602865" id="2083405790277247596" role="vg0i.1178549954367.1178549979242" info="nn" />
+        <node concept="vg0i.1107535904670" id="2083405790277247598" role="vg0i.1068580123132.1068580123133" info="in">
+          <reference role="vg0i.1107535904670.1107535924139" target="e2lb.~String" resolveInfo="String" />
+        </node>
+        <node concept="vg0i.1068580123136" id="2083405790277247599" role="vg0i.1068580123132.1068580123135" info="sn">
+          <node concept="vg0i.1068580123155" id="2083405790277264605" role="vg0i.1068580123136.1068581517665" info="nn">
+            <node concept="vg0i.7812454656619025412" id="2083405790277264603" role="vg0i.1068580123155.1068580123156" info="nn">
+              <reference role="vg0i.1204053956946.1068499141037" target="7153805464405088268" resolveInfo="getCaption" />
+            </node>
+          </node>
+        </node>
+        <node concept="vg0i.1188207840427" id="2083405790277260706" role="vg0i.1188208481402.1188208488637" info="nn">
+          <reference role="vg0i.1188207840427.1188208074048" target="e2lb.~Override" resolveInfo="Override" />
         </node>
       </node>
       <node concept="vg0i.1146644602865" id="7153805464405087854" role="vg0i.1178549954367.1178549979242" info="nn" />

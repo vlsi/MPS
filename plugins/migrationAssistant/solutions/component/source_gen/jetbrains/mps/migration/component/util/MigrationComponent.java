@@ -195,7 +195,7 @@ public class MigrationComponent extends AbstractProjectComponent implements Migr
         if (scriptToExecute != null) {
           lastState.value = new MigrationManager.MigrationState.Step() {
             public String getDescription() {
-              return scriptToExecute.getScript().toString();
+              return scriptToExecute.toString();
             }
             public boolean execute() {
               final Wrappers._boolean res = new Wrappers._boolean();
