@@ -114,7 +114,7 @@ public class LibraryInitializer implements CoreComponent {
     }
     myLibraries.removeAll(toUnload);
 
-    ModelAccess.instance().runBatchWriteAction(new Runnable() {
+    ModelAccess.instance().runWriteAction(new Runnable() {
       @Override
       public void run() {
         // unload

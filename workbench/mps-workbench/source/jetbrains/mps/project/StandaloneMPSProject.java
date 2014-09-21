@@ -166,7 +166,7 @@ public class StandaloneMPSProject extends MPSProject implements FileSystemListen
     if (myProject.isDefault()) return;
 
     assert !isDisposed();
-    getModelAccess().runBatchWriteAction(new Runnable() {
+    getModelAccess().runWriteAction(new Runnable() {
       @Override
       public void run() {
         myProjectDescriptor = projectDescriptor;
@@ -265,7 +265,7 @@ public class StandaloneMPSProject extends MPSProject implements FileSystemListen
   }
 
   public void update() {
-    getModelAccess().runBatchWriteAction(new Runnable() {
+    getModelAccess().runWriteAction(new Runnable() {
       @Override
       public void run() {
         readModules();

@@ -16,21 +16,18 @@
 package jetbrains.mps.classloading;
 
 import jetbrains.mps.progress.EmptyProgressMonitor;
+import jetbrains.mps.smodel.SRepositoryBatchEventsDispatcher;
+import jetbrains.mps.smodel.SRepositoryBatchListener;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.mps.openapi.module.BatchWriteActionListener;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.module.SRepository;
-import org.jetbrains.mps.openapi.module.SRepositoryAdapter;
-import org.jetbrains.mps.openapi.module.SRepositoryBatchAdapter;
-import org.jetbrains.mps.openapi.module.SRepositoryBatchListener;
 import org.jetbrains.mps.openapi.module.event.SModuleAddedEvent;
 import org.jetbrains.mps.openapi.module.event.SModuleEventVisitor;
 import org.jetbrains.mps.openapi.module.event.SModuleRemovedEvent;
 import org.jetbrains.mps.openapi.module.event.SModuleRemovingEvent;
 import org.jetbrains.mps.openapi.module.event.SRepositoryEvent;
 
-import java.util.Collections;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -38,29 +35,25 @@ import java.util.Set;
 /**
  * @author Alex Pyshkin  3/7/14.
  */
-class CLManagerRepositoryListener extends SRepositoryBatchAdapter {
+class CLManagerRepositoryListener implements SRepositoryBatchListener {
   private ClassLoaderManager myClassLoaderManager;
   private final SRepository myRepository;
-  private volatile boolean myBatchIsOn;
+  private final SRepositoryBatchEventsDispatcher myDispatcher;
 
   public CLManagerRepositoryListener(@NotNull SRepository repository) {
-    super(repository);
     myRepository = repository;
+    myDispatcher = new SRepositoryBatchEventsDispatcher(repository);
   }
 
   public void init(ClassLoaderManager classLoaderManager) {
     myClassLoaderManager = classLoaderManager;
-    super.init();
+    myDispatcher.init();
+    myDispatcher.addRepositoryBatchEventsListener(this);
   }
 
-  @Override
-  public void moduleAdded(@NotNull SModule module) {
-    loadModules(Collections.singleton(module));
-  }
-
-  @Override
-  public void beforeModuleRemoved(@NotNull SModule module) {
-    unloadModules(Collections.singleton(module));
+  public void dispose() {
+    myDispatcher.removeRepositoryBatchEventsListener(this);
+    myDispatcher.dispose();
   }
 
   private void loadModules(Set<SModule> modules) {
@@ -73,68 +66,14 @@ class CLManagerRepositoryListener extends SRepositoryBatchAdapter {
     myClassLoaderManager.unloadModules(modules, new EmptyProgressMonitor());
   }
 
-  // batch part
   @Override
-  public void batchEventsHappened(List<SRepositoryEvent> events) {
+  public void eventsHappened(List<SRepositoryEvent> events) {
     MyModuleEventVisitor visitor = new MyModuleEventVisitor();
     for (SRepositoryEvent event : events)
       event.accept(visitor);
 
     unloadModules(visitor.getModulesToUnload());
     loadModules(visitor.getModulesToLoad());
-  }
-
-  @Override
-  public void batchStarted() {
-    if (myBatchIsOn)
-      throw new IllegalStateException("Batch write action is already started?");
-    myBatchIsOn = true;
-
-    myRepository.removeRepositoryListener(this);
-  }
-
-  @Override
-  public void batchFinished() {
-    if (!myBatchIsOn)
-      throw new IllegalStateException("Batch write action has not been started?");
-    myBatchIsOn = false;
-
-    myRepository.addRepositoryListener(this);
-  }
-
-  @Override
-  public void moduleRemoved(@NotNull SModuleReference module) {
-   // NOP
-  }
-
-  @Override
-  public void commandStarted(SRepository repository) {
-    // NOP
-  }
-
-  @Override
-  public void commandFinished(SRepository repository) {
-    // NOP
-  }
-
-  @Override
-  public void updateStarted(SRepository repository) {
-    // NOP
-  }
-
-  @Override
-  public void updateFinished(SRepository repository) {
-    // NOP
-  }
-
-  @Override
-  public void repositoryCommandStarted(SRepository repository) {
-    // NOP
-  }
-
-  @Override
-  public void repositoryCommandFinished(SRepository repository) {
-    // NOP
   }
 
   private class MyModuleEventVisitor implements SModuleEventVisitor {
