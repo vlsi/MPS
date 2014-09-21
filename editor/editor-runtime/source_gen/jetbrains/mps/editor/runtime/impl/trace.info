@@ -118,7 +118,7 @@
       <node id="1182113674817469870" at="106,106,109,5" concept="6" />
       <node id="1182113674817469882" at="112,0,115,0" concept="7" trace="unregisterLanguageKeyMaps#(Ljetbrains/mps/smodel/Language;)V" />
       <node id="1182113674817469635" at="115,0,118,0" concept="12" trace="getInstance#()Ljetbrains/mps/editor/runtime/impl/LanguagesKeymapManager;" />
-      <node id="1182113674817469586" at="122,53,125,7" concept="6" />
+      <node id="1182113674817469586" at="122,62,125,7" concept="6" />
       <node id="1182113674817469607" at="39,0,43,0" concept="7" trace="beforeClassesUnloaded#(Ljava/util/Set;)V" />
       <node id="1182113674817469644" at="48,0,52,0" concept="2" trace="LanguagesKeymapManager#(Ljetbrains/mps/ide/MPSCoreComponents;)V" />
       <node id="1182113674817469685" at="58,0,63,0" concept="7" trace="initComponent#()V" />
@@ -157,7 +157,7 @@
         <var name="language" id="1182113674817469885" />
       </scope>
       <scope id="1182113674817469635" at="115,0,118,0" />
-      <scope id="1182113674817469585" at="122,53,125,7" />
+      <scope id="1182113674817469585" at="122,62,125,7" />
       <scope id="1182113674817469607" at="39,0,43,0">
         <var name="modules" id="4056393811838853006" />
       </scope>

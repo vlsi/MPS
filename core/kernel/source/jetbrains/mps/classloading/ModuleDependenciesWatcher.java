@@ -26,9 +26,6 @@ import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 
-/**
- * Created by Alex Pyshkin on 6/4/14.
- */
 public class ModuleDependenciesWatcher implements MPSClassesListener {
   private final Map<SModule, Set<SModule>> myBackRefs = new HashMap<SModule, Set<SModule>>();
 

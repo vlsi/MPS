@@ -14,7 +14,7 @@
     <classNode dependClassName="org.xml.sax.Locator" />
     <classNode dependClassName="org.xml.sax.SAXException" />
     <classNode dependClassName="org.xml.sax.SAXParseException" />
-    <classNode extendsClassName="org.xml.sax.helpers.DefaultHandler" />
+    <classNode extendsClassName="jetbrains.mps.util.xml.XMLSAXHandler" />
   </dependency>
   <dependency className="jetbrains.mps.make.java.ModelDependencies" file="ModelDependencies.java">
     <classNode dependClassName="java.lang.Iterable" />
