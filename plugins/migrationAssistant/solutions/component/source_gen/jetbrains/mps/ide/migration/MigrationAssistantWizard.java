@@ -6,6 +6,7 @@ import com.intellij.ide.wizard.AbstractWizardEx;
 import com.intellij.openapi.project.Project;
 import java.util.Arrays;
 import jetbrains.mps.ide.migration.wizard.InitialStep;
+import jetbrains.mps.ide.migration.wizard.MigrationsErrorStep;
 import jetbrains.mps.ide.migration.wizard.MigrationsProgressStep;
 import jetbrains.mps.ide.migration.wizard.MigrationsFinishedStep;
 import jetbrains.mps.ide.migration.wizard.MigrationStep;
@@ -14,7 +15,7 @@ import javax.swing.SwingUtilities;
 
 public class MigrationAssistantWizard extends AbstractWizardEx {
   public MigrationAssistantWizard(Project project, MigrationManager manager, boolean[] success) {
-    super("Migration Assistant Wizard", project, Arrays.asList(new InitialStep(project), new MigrationsProgressStep(project, manager, success), new MigrationsFinishedStep(project)));
+    super("Migration Assistant Wizard", project, Arrays.asList(new InitialStep(project), new MigrationsProgressStep(project, manager, success), new MigrationsFinishedStep(project), new MigrationsErrorStep(project)));
   }
   @Override
   protected void updateStep() {
