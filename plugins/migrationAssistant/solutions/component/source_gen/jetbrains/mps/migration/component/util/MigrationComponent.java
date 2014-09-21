@@ -10,9 +10,9 @@ import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.lang.migration.runtime.base.MigrationDescriptor;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
-import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.tempmodel.TempModuleOptions;
+import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.lang.migration.runtime.base.MigrationScript;
 import jetbrains.mps.project.AbstractModule;
@@ -25,7 +25,6 @@ import jetbrains.mps.ide.migration.ScriptApplied;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.lang.migration.runtime.base.MigrationScriptReference;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
-import jetbrains.mps.smodel.ModelAccess;
 import org.jetbrains.mps.openapi.language.SLanguageId;
 import jetbrains.mps.smodel.adapter.IdHelper;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -36,9 +35,7 @@ import org.apache.log4j.LogManager;
 
 public class MigrationComponent extends AbstractProjectComponent implements MigrationManager, DataCollector {
   private Map<SModule, MigrationDescriptor> loadedDescriptors = MapSequence.fromMap(new HashMap<SModule, MigrationDescriptor>());
-  private Map<SModule, SModel> loadedDataModels = MapSequence.fromMap(new HashMap<SModule, SModel>());
   private Project mpsProject;
-  private MigrationManager.MigrationState lastState;
   private SModule dataModule;
   private TempModuleOptions dataModuleOptions;
 
@@ -50,12 +47,20 @@ public class MigrationComponent extends AbstractProjectComponent implements Migr
   @Override
   public void initComponent() {
     dataModuleOptions = TempModuleOptions.forDefaultModule();
-    dataModule = dataModuleOptions.createModule();
+    ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+      public void run() {
+        dataModule = dataModuleOptions.createModule();
+      }
+    });
   }
 
   @Override
   public void disposeComponent() {
-    dataModuleOptions.disposeModule();
+    ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+      public void run() {
+        dataModuleOptions.disposeModule();
+      }
+    });
   }
 
   public MigrationDescriptor loadMigrationDescriptor(SModule module) {
@@ -96,7 +101,7 @@ public class MigrationComponent extends AbstractProjectComponent implements Migr
             LOG.warn("Could not load migration descriptor for language " + depModule + ".");
           }
         }
-        MigrationScript script = check_gd1mrb_a0e0a0a0a0t(md, current);
+        MigrationScript script = check_gd1mrb_a0e0a0a0a0r(md, current);
         if (script == null) {
           if (LOG.isEnabledFor(Level.WARN)) {
             LOG.warn("Could not load migration script for language " + depModule + ", version " + current + ".");
@@ -177,6 +182,7 @@ public class MigrationComponent extends AbstractProjectComponent implements Migr
     return true;
   }
   public MigrationManager.MigrationState nextStep() {
+    final Wrappers._T<MigrationManager.MigrationState> lastState = new Wrappers._T<MigrationManager.MigrationState>();
     ModelAccess.instance().runWriteAction(new Runnable() {
       public void run() {
         final Iterable<ScriptApplied> allStepScripts = Sequence.fromIterable(fetchScripts()).toListSequence();
@@ -187,7 +193,7 @@ public class MigrationComponent extends AbstractProjectComponent implements Migr
         });
         final ScriptApplied scriptToExecute = Sequence.fromIterable(availableScripts).first();
         if (scriptToExecute != null) {
-          lastState = new MigrationManager.MigrationState.Step() {
+          lastState.value = new MigrationManager.MigrationState.Step() {
             public String getDescription() {
               return scriptToExecute.getScript().toString();
             }
@@ -204,7 +210,7 @@ public class MigrationComponent extends AbstractProjectComponent implements Migr
         } else {
           if (Sequence.fromIterable(allStepScripts).isEmpty()) {
             if (isMigrationRequired()) {
-              lastState = new MigrationManager.MigrationState.Error() {
+              lastState.value = new MigrationManager.MigrationState.Error() {
                 public String getErrorMessage() {
                   return "Some of scripts are missing";
                 }
@@ -213,10 +219,10 @@ public class MigrationComponent extends AbstractProjectComponent implements Migr
                 }
               };
             } else {
-              lastState = new MigrationManager.MigrationState.Finished() {};
+              lastState.value = new MigrationManager.MigrationState.Finished() {};
             }
           } else {
-            lastState = new MigrationManager.MigrationState.Conflict() {
+            lastState.value = new MigrationManager.MigrationState.Conflict() {
               public Iterable<ScriptApplied> getConflictingScripts() {
                 return allStepScripts;
               }
@@ -234,11 +240,11 @@ public class MigrationComponent extends AbstractProjectComponent implements Migr
         }
       }
     });
-    return lastState;
+    return lastState.value;
   }
 
   public Map<SModule, SNode> collectData(SModule myModule, final MigrationScriptReference scriptReference) {
-    MigrationScript script = check_gd1mrb_a0a0db(getMigrationDescriptor(scriptReference.getModuleReference().resolve(mpsProject.getRepository())), scriptReference, this);
+    MigrationScript script = check_gd1mrb_a0a0bb(getMigrationDescriptor(scriptReference.getModuleReference().resolve(mpsProject.getRepository())), scriptReference, this);
     final Map<SModule, SNode> requiredData = MapSequence.fromMap(new HashMap<SModule, SNode>());
     SetSequence.fromSet(MigrationsUtil.getModuleDependencies(myModule)).visitAll(new IVisitor<SModule>() {
       public void visit(SModule it) {
@@ -251,13 +257,13 @@ public class MigrationComponent extends AbstractProjectComponent implements Migr
     return requiredData;
   }
   protected static Logger LOG = LogManager.getLogger(MigrationComponent.class);
-  private static MigrationScript check_gd1mrb_a0e0a0a0a0t(MigrationDescriptor checkedDotOperand, int current) {
+  private static MigrationScript check_gd1mrb_a0e0a0a0a0r(MigrationDescriptor checkedDotOperand, int current) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getScript(current);
     }
     return null;
   }
-  private static MigrationScript check_gd1mrb_a0a0db(MigrationDescriptor checkedDotOperand, MigrationScriptReference scriptReference, MigrationComponent checkedDotThisExpression) {
+  private static MigrationScript check_gd1mrb_a0a0bb(MigrationDescriptor checkedDotOperand, MigrationScriptReference scriptReference, MigrationComponent checkedDotThisExpression) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getScript(scriptReference.getFromVersion());
     }
