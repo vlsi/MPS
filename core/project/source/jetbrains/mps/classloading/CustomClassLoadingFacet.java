@@ -19,7 +19,7 @@ import org.jetbrains.mps.openapi.module.SModuleFacet;
 
 /**
  * Represents so called non-reloadable facet
- * Classes of the module which has such facet are NOT managed by MPS (for example, by IDEA's PluginClassLoaders)
+ * Classes of the module which has such facet are NOT managed by MPS itself (for example, by IDEA's PluginClassLoaders)
  */
 public interface CustomClassLoadingFacet extends SModuleFacet {
   public boolean isValid();

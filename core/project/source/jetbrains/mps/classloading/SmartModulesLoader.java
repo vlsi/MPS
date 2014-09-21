@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.classloading;
 
-import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager;
 import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager.Deptype;
 import org.jetbrains.mps.openapi.module.SModule;
@@ -45,13 +44,11 @@ public class SmartModulesLoader {
   }
 
   private void reloadModulesWithDeps(Set<SModule> modules) {
-    Set<SModule> backDependencies = collectBackDependencies(modules);
-    Set<SModule> unloadedModules = myClassLoaderManager.unloadModules(backDependencies, new EmptyProgressMonitor());
-    Set<SModule> modulesToLoad = new HashSet<SModule>(unloadedModules);
-    modulesToLoad.addAll(modules);
-    myClassLoaderManager.loadModules(modulesToLoad, new EmptyProgressMonitor());
+    Set<SModule> modulesAndDeps = collectBackDependencies(modules);
+    myClassLoaderManager.reloadModules(modulesAndDeps);
   }
 
+  // modules are included in the result
   private Set<SModule> collectBackDependencies(Set<SModule> modules) {
     Set<SModule> result = new HashSet<SModule>();
     Iterable<SModule> allModules = myRepository.getModules();

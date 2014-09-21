@@ -23,6 +23,7 @@ import org.jetbrains.mps.openapi.module.SModule;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Set;
 
 /**
  * @author Alex Pyshkin on 6/4/14.
@@ -93,9 +94,7 @@ public class ModuleClassLoadersHolder {
 
   private boolean javaIsCompiledInMps(SModule module) {
     JavaModuleFacet moduleFacet = module.getFacet(JavaModuleFacet.class);
-    if (moduleFacet == null)
-      return true;
-    return moduleFacet.isCompileInMps();
+    return moduleFacet == null || moduleFacet.isCompileInMps();
   }
 
   private class ClassLoaderNotFoundException extends Exception {}

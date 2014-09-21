@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.classloading;
 
-import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
 import jetbrains.mps.library.LibraryInitializer;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.util.NameUtil;

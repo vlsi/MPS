@@ -64,13 +64,7 @@ class CLManagerRepositoryListener extends SRepositoryBatchAdapter {
   }
 
   private void loadModules(Set<SModule> modules) {
-    Set<SModule> filteredModules = new HashSet<SModule>();
-    for (SModule module : modules) {
-      if (myClassLoaderManager.canLoad(module)) {
-        filteredModules.add(module);
-      }
-    }
-    new SmartModulesLoader(myClassLoaderManager, myRepository).loadModules(filteredModules);
+    new SmartModulesLoader(myClassLoaderManager, myRepository).loadModules(modules);
   }
 
   private void unloadModules(Set<SModule> modules) {

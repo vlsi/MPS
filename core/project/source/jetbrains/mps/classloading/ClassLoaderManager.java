@@ -111,10 +111,9 @@ public class ClassLoaderManager implements CoreComponent {
    * Main api
    * should get true before calling {@link #getClass} method
    * returns "true" whenever the module's classes can be managed within the MPS class loading system
-   * TODO: should be just MPS_FACET
    */
   public boolean canLoad(@NotNull SModule module) {
-    return SModuleOperations.isReloadable(module) && ModuleClassLoaderSupport.canCreate(module);
+    return SModuleOperations.isReloadable(module);
   }
 
   private void assertCanLoad(@NotNull SModule module) {
@@ -189,24 +188,29 @@ public class ClassLoaderManager implements CoreComponent {
     return classLoader;
   }
 
+  private boolean canCreate(SModule module) {
+    return ModuleClassLoaderSupport.canCreate(module);
+  }
+
   /**
-   * Creates ModuleClassLoaders for all the {@code modules}.
-   * The {@code modules} need to be all manageable within the MPS class loading system
-   * (means {@link #canLoad} would return true for each of them)
+   * Creates ModuleClassLoaders for all the {@code modules}, which are manageable by CLManager.
+   * That means {@link #canCreate} and {@link #canLoad} return true.
    */
   @NotNull
-  Set<SModule> loadModules(Iterable<? extends SModule> modules, @NotNull ProgressMonitor monitor) {
+  private Set<SModule> loadModules(Iterable<? extends SModule> modules, @NotNull ProgressMonitor monitor) {
     ModelAccess.assertLegalWrite();
     Set<SModule> modulesToLoad = new HashSet<SModule>();
     for (SModule module : modules) {
-      assert !(module.getRepository() == null) : "Cannot get class from disposed module";
-      if (!canLoad(module)) throw new IllegalArgumentException("Contract is broken: canLoad method returned false");
-      if (getClassLoader(module) != null) {
-        LOG.error("Classes of the " + module + " are already being managed by " + getClassLoader(module) + " class loader", new Throwable());
+      if (canLoad(module) && canCreate(module)) {
+        if (module.getRepository() == null) {
+          throw new IllegalArgumentException("Cannot get class from disposed module " + module);
+        }
+        if (getClassLoader(module) != null) {
+          LOG.error("Classes of the " + module + " are already being managed by " + getClassLoader(module) + " class loader", new Throwable());
+          continue;
+        }
+        modulesToLoad.add(module);
       }
-//      if (ModuleClassLoaderSupport.canCreate(module)) {
-      modulesToLoad.add(module);
-//      }
     }
 
     if (modulesToLoad.isEmpty()) return modulesToLoad;
@@ -215,7 +219,7 @@ public class ClassLoaderManager implements CoreComponent {
       LOG.debug("Loading module " + module);
       createClassLoader(module);
     }
-    monitor.start("Load classes...", 1);
+    monitor.start("Loading classes...", 1);
     try {
       myBroadCaster.onLoad(modulesToLoad);
       monitor.advance(1);
@@ -227,16 +231,17 @@ public class ClassLoaderManager implements CoreComponent {
   }
 
   /**
-   * Removes ModuleClassLoaders for all the {@code modules}.
-   * The {@code modules} need NOT to be all manageable within the MPS class loading system.
-   * That means we can unload everything we want.
+   * Removes ModuleClassLoaders for all the {@code modules}, which are manageable by CLManager
+   * That means {@link #canCreate} and {@link #canLoad} return true.
    */
   @NotNull
   Set<SModule> unloadModules(Iterable<? extends SModule> modules, @NotNull ProgressMonitor monitor) {
     ModelAccess.assertLegalWrite();
     Set<SModule> modulesToUnload = new HashSet<SModule>();
     for (SModule module : modules) {
-      modulesToUnload.add(module);
+      if (canLoad(module) && canCreate(module)) {
+        modulesToUnload.add(module);
+      }
     }
 
     monitor.start("Unloading classes...", 2);
@@ -277,16 +282,14 @@ public class ClassLoaderManager implements CoreComponent {
   /**
    * Main API of this class. Use it to invalidate modules (i.e., reload their class loaders)
    * Returns modules which were reloaded successfully
-   * There are also useful {@link #reloadModules(Iterable)} and {@link #reloadModule}.
+   * There are also useful {@link #reloadModules(Iterable)} and {@link #reloadModule(org.jetbrains.mps.openapi.module.SModule)}.
    */
   public Set<SModule> reloadModules(Iterable<? extends SModule> modules, @NotNull ProgressMonitor monitor) {
     try {
       monitor.start("Reloading modules' class loaders...", 2);
-      Set<SModule> unloadedModules = unloadModules(modules, monitor.subTask(1));
-      Set<SModule> modulesToReload = new HashSet<SModule>();
-      for (SModule module : unloadedModules) {
-        if (canLoad(module))
-          modulesToReload.add(module);
+      Set<SModule> modulesToReload = unloadModules(modules, monitor.subTask(1));
+      for (SModule module : modules) {
+        modulesToReload.add(module);
       }
       return loadModules(modulesToReload, monitor.subTask(1));
     } finally {
@@ -301,8 +304,6 @@ public class ClassLoaderManager implements CoreComponent {
   public Set<SModule> reloadModule(SModule module) {
     return reloadModules(Collections.singleton(module), new EmptyProgressMonitor());
   }
-
-  //---------------deprecated part------------------
 
   /**
    * Usually reloading only the "dirty" modules is enough.

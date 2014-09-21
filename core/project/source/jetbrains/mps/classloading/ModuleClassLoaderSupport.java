@@ -49,6 +49,7 @@ public class ModuleClassLoaderSupport {
 
   // "true" means that only MPS manages classes of this module (not IDEA plugin)
   // ext point possible here
+  // TODO: must be just MPS_FACET
   static boolean canCreate(SModule module) {
     JavaModuleFacet facet = module.getFacet(JavaModuleFacet.class);
     return facet != null && facet.isCompileInMps() && module.getFacet(CustomClassLoadingFacet.class) == null;
