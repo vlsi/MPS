@@ -7,6 +7,7 @@ import jetbrains.mps.generator.template.PropertyMacroContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.migration.behavior.MigrationScript_Behavior;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
@@ -36,7 +37,11 @@ public class QueriesGenerated {
     return SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "dataDependency", false), "name");
   }
   public static Object propertyMacro_GetPropertyValue_4850335266370449649(final PropertyMacroContext _context) {
-    return SPropertyOperations.getString(MigrationScript_Behavior.call_getDescription_8585153554445641526(_context.getNode()), "value");
+    if ((MigrationScript_Behavior.call_getDescription_8585153554445641526(_context.getNode()) != null)) {
+      return SPropertyOperations.getString(MigrationScript_Behavior.call_getDescription_8585153554445641526(_context.getNode()), "value");
+    } else {
+      return BehaviorReflection.invokeVirtual(String.class, _context.getNode(), "virtual_getFqName_1213877404258", new Object[]{});
+    }
   }
   public static Object propertyMacro_GetPropertyValue_7153805464403652403(final PropertyMacroContext _context) {
     return SPropertyOperations.getString(ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.getNode("90746344-04fd-4286-97d5-b46ae6a81709/r:52a3d974-bd4f-4651-ba6e-a2de5e336d95(jetbrains.mps.lang.migration/jetbrains.mps.lang.migration.methods)", "5155329496662709030"), "param", true)).first(), "name");
@@ -78,9 +83,6 @@ public class QueriesGenerated {
   }
   public static Object referenceMacro_GetReferent_7153805464398888188(final ReferenceMacroContext _context) {
     return MigrationScript_Behavior.call_getProducedData_8585153554445933384(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "dataDependency", false), "script", false));
-  }
-  public static boolean ifMacro_Condition_7153805464405149961(final IfMacroContext _context) {
-    return (MigrationScript_Behavior.call_getDescription_8585153554445641526(_context.getNode()) != null);
   }
   public static boolean ifMacro_Condition_7153805464404355802(final IfMacroContext _context) {
     return MigrationScript_Behavior.call_getProducedData_8585153554445933384(_context.getNode()) == null;
