@@ -117,7 +117,7 @@ public class XmlModelPersistence implements ModelFactory, SModelPersistence {
     if (!((dataSource instanceof StreamDataSource))) {
       throw new UnsupportedDataSourceException(dataSource);
     }
-    writeModel(((SModelBase) model).getSModelInternal(), (StreamDataSource) dataSource);
+    writeModel(((SModelBase) model).getSModel(), (StreamDataSource) dataSource);
   }
   @Override
   public boolean needsUpgrade(DataSource dataSource) throws IOException {
