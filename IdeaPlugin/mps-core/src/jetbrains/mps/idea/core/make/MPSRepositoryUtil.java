@@ -81,13 +81,15 @@ public class MPSRepositoryUtil {
       String modelPath = ((FileDataSource) model.getSource()).getFile().getPath();
 
       Object header = null;
-
+      CachedModelData.Kind cacheKind = CachedModelData.Kind.Unknown;
       if (model instanceof DefaultSModelDescriptor) {
+        cacheKind = CachedModelData.Kind.Regular;
         header = ((DefaultSModelDescriptor) model).getHeaderCopy();
       } else if (model instanceof BinarySModelDescriptor) {
+        cacheKind = CachedModelData.Kind.Binary;
         header = ((BinarySModelDescriptor) model).getHeaderCopy();
       }
-      result.add(new CachedModelData(modelPath, header));
+      result.add(new CachedModelData(modelPath, header, cacheKind));
     }
     return result;
   }
@@ -101,7 +103,7 @@ public class MPSRepositoryUtil {
       }
       JavaClassStubModelDescriptor stubModel = (JavaClassStubModelDescriptor) model;
       FolderSetDataSource source = stubModel.getSource();
-      result.add(new CachedModelData(null, new JavaStubModelHeader(stubModel.getReference(), source.getPaths())));
+      result.add(new CachedModelData(null, new JavaStubModelHeader(stubModel.getReference(), source.getPaths()), CachedModelData.Kind.JavaStub));
     }
     return result;
   }

@@ -20,7 +20,6 @@ import jetbrains.mps.extapi.model.GeneratableSModel;
 import jetbrains.mps.extapi.model.SModelBase;
 import jetbrains.mps.extapi.model.SModelData;
 import jetbrains.mps.generator.ModelDigestUtil;
-import jetbrains.mps.persistence.binary.BinaryModelHeader;
 import jetbrains.mps.persistence.binary.BinaryPersistence;
 import jetbrains.mps.persistence.binary.BinarySModelDescriptor;
 import jetbrains.mps.persistence.binary.NodesWriter;
@@ -34,7 +33,6 @@ import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModel;
-import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeId;
 import org.jetbrains.mps.openapi.persistence.DataSource;
@@ -77,7 +75,7 @@ public class BinaryModelPersistence implements CoreComponent, ModelFactory {
     }
 
     StreamDataSource source = (StreamDataSource) dataSource;
-    BinaryModelHeader binaryModelHeader;
+    SModelHeader binaryModelHeader;
     try {
       binaryModelHeader = BinaryPersistence.readHeader(source);
     } catch (ModelReadException e) {
@@ -100,8 +98,9 @@ public class BinaryModelPersistence implements CoreComponent, ModelFactory {
       throw new IOException("modelName is not provided");
     }
 
-    SModelReference ref = PersistenceFacade.getInstance().createModelReference(null, jetbrains.mps.smodel.SModelId.generate(), modelName);
-    return new BinarySModelDescriptor(new PersistenceFacility(this, source), new BinaryModelHeader(ref));
+    final SModelHeader header = new SModelHeader();
+    header.setModelReference(PersistenceFacade.getInstance().createModelReference(null, jetbrains.mps.smodel.SModelId.generate(), modelName));
+    return new BinarySModelDescriptor(new PersistenceFacility(this, source), header);
   }
 
   @Override
@@ -210,7 +209,7 @@ public class BinaryModelPersistence implements CoreComponent, ModelFactory {
    * serialize/restore is inside implementation, and all the internal stuff (like model header) doesn't get exposed.
    * FIXME revisit, reconsider approach
    */
-  public static BinarySModelDescriptor createFromHeader(@NotNull BinaryModelHeader header, @NotNull StreamDataSource dataSource) {
+  public static BinarySModelDescriptor createFromHeader(@NotNull SModelHeader header, @NotNull StreamDataSource dataSource) {
     final ModelFactory modelFactory = PersistenceFacade.getInstance().getModelFactory(MPSExtentions.MODEL_BINARY);
     assert modelFactory instanceof BinaryModelPersistence;
     return new BinarySModelDescriptor(new PersistenceFacility((BinaryModelPersistence) modelFactory, dataSource), header.createCopy());

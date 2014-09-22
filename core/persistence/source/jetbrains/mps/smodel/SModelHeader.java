@@ -53,6 +53,9 @@ public class SModelHeader {
   private boolean doNotGenerate = false;
   private Map<String, String> myOptionalProperties = new HashMap<String, String>();
 
+  public SModelHeader() {
+  }
+
   public int getPersistenceVersion() {
     return myPersistenceVersion;
   }
@@ -139,7 +142,7 @@ public class SModelHeader {
     return header;
   }
 
-  // FIXME move save and load into respective class (binary persistance)
+  // FIXME move save and load into respective class (binary persistence)
   public void save(ModelOutputStream stream) throws IOException {
     stream.writeByte(77);
     stream.writeString(myModelRef == null ? null : PersistenceFacade.getInstance().asString(myModelRef));

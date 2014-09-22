@@ -20,6 +20,7 @@ import jetbrains.mps.persistence.PersistenceRegistry;
 import jetbrains.mps.smodel.DefaultSModel;
 import jetbrains.mps.smodel.LazySModel;
 import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.SModelHeader;
 import jetbrains.mps.smodel.loading.ModelLoadResult;
 import jetbrains.mps.smodel.loading.ModelLoadingState;
 import jetbrains.mps.smodel.persistence.def.ModelReadException;
@@ -52,7 +53,7 @@ import static jetbrains.mps.smodel.SModel.ImportElement;
  */
 public class BinaryPersistence {
 
-  public static BinaryModelHeader readHeader(@NotNull StreamDataSource source) throws ModelReadException {
+  public static SModelHeader readHeader(@NotNull StreamDataSource source) throws ModelReadException {
     ModelInputStream mis = null;
     try {
       mis = new ModelInputStream(source.openInputStream());
@@ -106,7 +107,7 @@ public class BinaryPersistence {
   private static final int STREAM_ID = 0x00300;
 
   @NotNull
-  private static BinaryModelHeader loadHeader(ModelInputStream is) throws IOException {
+  private static SModelHeader loadHeader(ModelInputStream is) throws IOException {
     if (is.readInt() != HEADER) {
       throw new IOException("bad stream, no header");
     }
@@ -117,7 +118,8 @@ public class BinaryPersistence {
     }
 
     SModelReference modelRef = is.readModelReference();
-    BinaryModelHeader result = new BinaryModelHeader(modelRef);
+    SModelHeader result = new SModelHeader();
+    result.setModelReference(modelRef);
     result.setVersion(is.readInt());
     result.setDoNotGenerate(is.readBoolean());
     if (is.readInt() != 0xabab) {
@@ -141,7 +143,7 @@ public class BinaryPersistence {
 
   @NotNull
   private static ModelLoadResult loadModel(@Nullable SModelReference modelReference, ModelInputStream is, boolean interfaceOnly) throws IOException {
-    BinaryModelHeader modelHeader = loadHeader(is);
+    SModelHeader modelHeader = loadHeader(is);
     if (modelReference == null) {
       modelReference = modelHeader.getModelReference();
     }
@@ -233,7 +235,7 @@ public class BinaryPersistence {
     ModelInputStream mis = null;
     try {
       mis = new ModelInputStream(new ByteArrayInputStream(content));
-      BinaryModelHeader modelHeader = loadHeader(mis);
+      SModelHeader modelHeader = loadHeader(mis);
       SModel model = new DefaultSModel(modelHeader.getModelReference(), modelHeader);
       loadModelProperties(model, mis);
       for (ImportElement element : model.importedModels()) {
