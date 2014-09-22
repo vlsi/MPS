@@ -21,6 +21,14 @@
       <implementation-class>com.intellij.openapi.components.impl.ServiceManagerImpl</implementation-class>
       <loadForDefaultProject/>
     </component>
+    <component>
+      <interface-class>com.intellij.execution.ExecutionManager</interface-class>
+      <implementation-class>com.intellij.execution.impl.ExecutionManagerImpl</implementation-class>
+    </component>
+    <component>
+      <interface-class>com.intellij.execution.ExecutionTargetManager</interface-class>
+      <implementation-class>com.intellij.execution.ExecutionTargetManagerImpl</implementation-class>
+    </component>
   </project-components>
 
   <xi:include href="/componentSets/Platform.xml" xpointer="xpointer(/components/*)"/>

@@ -23,11 +23,11 @@
       <root url="jar://$PROJECT_DIR$/lib/xpp3-1.1.4-min.jar!/" />
       <root url="jar://$PROJECT_DIR$/lib/jsr166e.jar!/" />
       <root url="jar://$PROJECT_DIR$/lib/gson-2.2.4.jar!/" />
-      <root url="jar://$PROJECT_DIR$/lib/netty-all-5.0.0.Alpha2.jar!/" />
       <root url="jar://$PROJECT_DIR$/lib/commons-logging-1.1.3.jar!/" />
       <root url="jar://$PROJECT_DIR$/lib/httpclient-4.3.2.jar!/" />
       <root url="jar://$PROJECT_DIR$/lib/httpcore-4.3.1.jar!/" />
       <root url="jar://$PROJECT_DIR$/lib/proxy-vole_20120920.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/netty-all-4.1.0.Beta3.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>
@@ -66,7 +66,6 @@
       <root url="jar://$PROJECT_DIR$/lib/src/platform.src.zip!/projectModel-api" />
       <root url="jar://$PROJECT_DIR$/lib/src/platform.src.zip!/instrumentation-util" />
       <root url="jar://$PROJECT_DIR$/lib/src/platform.src.zip!/spellchecker" />
-      <root url="jar://$PROJECT_DIR$/lib/src/platform.src.zip!/dvcs" />
       <root url="jar://$PROJECT_DIR$/lib/src/platform.src.zip!/jps-model-api" />
       <root url="jar://$PROJECT_DIR$/lib/src/platform.src.zip!/util-rt" />
       <root url="jar://$PROJECT_DIR$/lib/src/platform.src.zip!/testFramework" />
@@ -97,7 +96,6 @@
       <root url="jar://$PROJECT_DIR$/lib/src/cglib-src-2.2.2.jar!/src/test" />
       <root url="jar://$PROJECT_DIR$/lib/src/cglib-src-2.2.2.jar!/src/proxy" />
       <root url="jar://$PROJECT_DIR$/lib/src/jgoodies-forms-src.zip!/" />
-      <root url="jar://$PROJECT_DIR$/lib/src/jhsrc.jar!/src" />
       <root url="jar://$PROJECT_DIR$/lib/src/jna-src.zip!/contrib/platform/src" />
       <root url="jar://$PROJECT_DIR$/lib/src/jna-src.zip!/src" />
       <root url="jar://$PROJECT_DIR$/lib/src/microba-src.zip!/src/main/java" />
@@ -106,7 +104,6 @@
       <root url="jar://$PROJECT_DIR$/lib/src/xpp3-1.1.4-min-src.jar!/" />
       <root url="jar://$PROJECT_DIR$/lib/src/jsr166e_src.jar!/" />
       <root url="jar://$PROJECT_DIR$/lib/src/gson-2.2.4-sources.jar!/" />
-      <root url="jar://$PROJECT_DIR$/lib/src/netty-all-5.0.0.Alpha2-sources.jar!/" />
       <root url="jar://$PROJECT_DIR$/lib/src/httpcomponents-client-4.3.2-src.zip!/httpcomponents-client-4.3.2/httpmime/src/main/java" />
       <root url="jar://$PROJECT_DIR$/lib/src/httpcomponents-client-4.3.2-src.zip!/httpcomponents-client-4.3.2/httpmime/src/main/java-deprecated" />
       <root url="jar://$PROJECT_DIR$/lib/src/httpcomponents-client-4.3.2-src.zip!/httpcomponents-client-4.3.2/httpmime/src/test/java" />
@@ -135,6 +132,8 @@
       <root url="jar://$PROJECT_DIR$/lib/src/httpcomponents-core-4.3.1-src.zip!/httpcomponents-core-4.3.1/httpcore-nio/src/main/java-deprecated" />
       <root url="jar://$PROJECT_DIR$/lib/src/httpcomponents-core-4.3.1-src.zip!/httpcomponents-core-4.3.1/httpcore-nio/src/test/java" />
       <root url="jar://$PROJECT_DIR$/lib/src/httpcomponents-core-4.3.1-src.zip!/httpcomponents-core-4.3.1/httpcore-nio/src/examples" />
+      <root url="jar://$PROJECT_DIR$/lib/src/jhsrc.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/src/netty-all-4.1.0.Beta3-sources.jar!/" />
     </SOURCES>
   </library>
 </component>

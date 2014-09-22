@@ -19,7 +19,7 @@ import com.intellij.ide.actions.ShowFilePathAction;
 import com.intellij.openapi.actionSystem.IdeActions;
 import com.intellij.openapi.fileEditor.impl.EditorEmptyTextPainter;
 import com.intellij.openapi.fileEditor.impl.EditorsSplitters;
-import com.intellij.openapi.util.Pair;
+import com.intellij.openapi.util.Couple;
 import com.intellij.openapi.wm.ToolWindowId;
 import com.intellij.ui.Gray;
 import com.intellij.ui.JBColor;
@@ -49,11 +49,11 @@ public class MPSEditorEmptyTextPainter extends EditorEmptyTextPainter {
 
     advertiseActions(splitters, painter);
 
-    painter.draw(g, new PairFunction<Integer, Integer, Pair<Integer, Integer>>() {
+    painter.draw(g, new PairFunction<Integer, Integer, Couple<Integer>>() {
       @Override
-      public Pair<Integer, Integer> fun(Integer width, Integer height) {
+      public Couple<Integer> fun(Integer width, Integer height) {
         Dimension s = splitters.getSize();
-        return Pair.create((s.width - width) / 2, (s.height - height) / 2);
+        return  new Couple<Integer>((s.width - width) / 2, (s.height - height) / 2);
       }
     });
   }

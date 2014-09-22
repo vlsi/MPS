@@ -58,9 +58,9 @@
     <classNode dependClassName="jetbrains.mps.reloading.AbstractClassPathItem" />
     <classNode dependClassName="jetbrains.mps.util.ReadUtil" />
     <classNode dependClassName="jetbrains.mps.vfs.IFile" />
-    <classNode dependClassName="org.jetbrains.asm4.ClassReader" />
-    <classNode dependClassName="org.jetbrains.asm4.Opcodes" />
-    <classNode dependClassName="org.jetbrains.asm4.tree.InnerClassNode" />
+    <classNode dependClassName="org.jetbrains.org.objectweb.asm.ClassReader" />
+    <classNode dependClassName="org.jetbrains.org.objectweb.asm.Opcodes" />
+    <classNode dependClassName="org.jetbrains.org.objectweb.asm.tree.InnerClassNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.javastub.ClassifierUpdater" file="ClassifierUpdater.java">
