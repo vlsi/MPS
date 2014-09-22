@@ -85,6 +85,6 @@ public class CachedModelData {
         } else if (headerKind != 0x70) {
             throw new IOException("unknown model header");
         }
-        return new CachedModelData(file, header);
+        return new CachedModelData(file, header, cacheKind);
     }
 }

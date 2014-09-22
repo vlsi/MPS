@@ -21,9 +21,9 @@ import jetbrains.mps.extapi.model.SModelBase;
 import jetbrains.mps.extapi.model.SModelData;
 import jetbrains.mps.generator.ModelDigestUtil;
 import jetbrains.mps.persistence.binary.BinaryPersistence;
-import jetbrains.mps.persistence.binary.BinarySModelDescriptor;
 import jetbrains.mps.persistence.binary.NodesWriter;
 import jetbrains.mps.project.MPSExtentions;
+import jetbrains.mps.smodel.DefaultSModelDescriptor;
 import jetbrains.mps.smodel.SModelHeader;
 import jetbrains.mps.smodel.loading.ModelLoadResult;
 import jetbrains.mps.smodel.loading.ModelLoadingState;
@@ -82,7 +82,7 @@ public class BinaryModelPersistence implements CoreComponent, ModelFactory {
       LOG.debug(e.getMessageEx());
       throw new RuntimeException(e);
     }
-    return new BinarySModelDescriptor(new PersistenceFacility(this, source), binaryModelHeader);
+    return new DefaultSModelDescriptor(new PersistenceFacility(this, source), binaryModelHeader);
   }
 
   @NotNull
@@ -100,7 +100,7 @@ public class BinaryModelPersistence implements CoreComponent, ModelFactory {
 
     final SModelHeader header = new SModelHeader();
     header.setModelReference(PersistenceFacade.getInstance().createModelReference(null, jetbrains.mps.smodel.SModelId.generate(), modelName));
-    return new BinarySModelDescriptor(new PersistenceFacility(this, source), header);
+    return new DefaultSModelDescriptor(new PersistenceFacility(this, source), header);
   }
 
   @Override
@@ -209,10 +209,10 @@ public class BinaryModelPersistence implements CoreComponent, ModelFactory {
    * serialize/restore is inside implementation, and all the internal stuff (like model header) doesn't get exposed.
    * FIXME revisit, reconsider approach
    */
-  public static BinarySModelDescriptor createFromHeader(@NotNull SModelHeader header, @NotNull StreamDataSource dataSource) {
+  public static SModel createFromHeader(@NotNull SModelHeader header, @NotNull StreamDataSource dataSource) {
     final ModelFactory modelFactory = PersistenceFacade.getInstance().getModelFactory(MPSExtentions.MODEL_BINARY);
     assert modelFactory instanceof BinaryModelPersistence;
-    return new BinarySModelDescriptor(new PersistenceFacility((BinaryModelPersistence) modelFactory, dataSource), header.createCopy());
+    return new DefaultSModelDescriptor(new PersistenceFacility((BinaryModelPersistence) modelFactory, dataSource), header.createCopy());
   }
 
   private static class PersistenceFacility extends LazyLoadFacility {
