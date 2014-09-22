@@ -18,6 +18,8 @@ package jetbrains.mps.smodel.runtime;
 import java.util.Collection;
 
 /**
+ * Base implementation generated code shall use to facilitate future changes in {@link jetbrains.mps.smodel.runtime.StructureAspectDescriptor}.
+ *
  * @author Alex Pyshkin on 8/26/14.
  */
 public abstract class BaseStructureAspectDescriptor implements StructureAspectDescriptor {
