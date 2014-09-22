@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2013 JetBrains s.r.o.
+ * Copyright 2003-2014 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,7 +21,7 @@ import jetbrains.mps.extapi.model.SModelBase;
 import jetbrains.mps.extapi.model.SModelData;
 import jetbrains.mps.extapi.persistence.FileBasedModelRoot;
 import jetbrains.mps.extapi.persistence.FolderDataSource;
-import jetbrains.mps.smodel.FilePerRootSModel;
+import jetbrains.mps.smodel.DefaultSModelDescriptor;
 import jetbrains.mps.smodel.SModelHeader;
 import jetbrains.mps.smodel.loading.ModelLoadResult;
 import jetbrains.mps.smodel.loading.ModelLoadingState;
@@ -96,7 +96,7 @@ public class FilePerRootModelPersistence implements CoreComponent, ModelFactory,
     assert header.getModelReference() != null : "wrong model: " + source.getLocation();
 
     LOG.debug("Getting model " + header.getModelReference() + " from " + source.getLocation());
-    return new FilePerRootSModel(pf, header);
+    return new DefaultSModelDescriptor(pf, header);
   }
 
   @NotNull
@@ -114,7 +114,7 @@ public class FilePerRootModelPersistence implements CoreComponent, ModelFactory,
     SModelReference ref = PersistenceFacade.getInstance().createModelReference(null, jetbrains.mps.smodel.SModelId.generate(), modelName);
     final SModelHeader header = SModelHeader.create(ModelPersistence.LAST_VERSION);
     header.setModelReference(ref);
-    return new FilePerRootSModel(new PersistenceFacility(this, (MultiStreamDataSource) dataSource), header);
+    return new DefaultSModelDescriptor(new PersistenceFacility(this, (MultiStreamDataSource) dataSource), header);
   }
 
   @Override
