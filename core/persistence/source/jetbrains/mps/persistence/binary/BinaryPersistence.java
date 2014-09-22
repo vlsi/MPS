@@ -17,6 +17,8 @@ package jetbrains.mps.persistence.binary;
 
 import jetbrains.mps.extapi.model.GeneratableSModel;
 import jetbrains.mps.persistence.PersistenceRegistry;
+import jetbrains.mps.smodel.DefaultSModel;
+import jetbrains.mps.smodel.LazySModel;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.loading.ModelLoadResult;
 import jetbrains.mps.smodel.loading.ModelLoadingState;
@@ -75,11 +77,11 @@ public class BinaryPersistence {
   }
 
   @NotNull
-  public static BinarySModel readModel(@NotNull final InputStream content) throws ModelReadException {
+  public static SModel readModel(@NotNull final InputStream content) throws ModelReadException {
     ModelInputStream mis = null;
     try {
       mis = new ModelInputStream(content);
-      return (BinarySModel) loadModel(null, mis, false).getModel();
+      return loadModel(null, mis, false).getModel();
     } catch (IOException e) {
       throw new ModelReadException("Couldn't read model: " + e.getMessage(), e);
     } finally {
@@ -124,7 +126,7 @@ public class BinaryPersistence {
     return result;
   }
 
-  private static void loadModelProperties(BinarySModel model, ModelInputStream is) throws IOException {
+  private static void loadModelProperties(SModel model, ModelInputStream is) throws IOException {
     for (SModuleReference ref : loadModuleRefList(is)) model.addLanguage(ref);
     for (SModuleReference ref : loadModuleRefList(is)) model.addEngagedOnGenerationLanguage(ref);
     for (SModuleReference ref : loadModuleRefList(is)) model.addDevKit(ref);
@@ -144,7 +146,7 @@ public class BinaryPersistence {
       modelReference = modelHeader.getModelReference();
     }
 
-    BinarySModel model = new BinarySModel(modelHeader);
+    LazySModel model = new DefaultSModel(modelReference, modelHeader);
     loadModelProperties(model, is);
 
     NodesReader reader = new NodesReader(modelReference, interfaceOnly);
@@ -177,18 +179,18 @@ public class BinaryPersistence {
     os.writeInt(HEADER);
     os.writeInt(STREAM_ID);
     os.writeModelReference(model.getReference());
-    os.writeInt((model).getVersion());
+    os.writeInt(model.getVersion());
     org.jetbrains.mps.openapi.model.SModel md = model.getModelDescriptor();
     os.writeBoolean((md instanceof GeneratableSModel) && ((GeneratableSModel) md).isDoNotGenerate());
     os.writeInt(0xabab);
 
-    saveModuleRefList((model).importedLanguages(), os);
-    saveModuleRefList((model).engagedOnGenerationLanguages(), os);
-    saveModuleRefList((model).importedDevkits(), os);
+    saveModuleRefList(model.importedLanguages(), os);
+    saveModuleRefList(model.engagedOnGenerationLanguages(), os);
+    saveModuleRefList(model.importedDevkits(), os);
 
     // imports
-    saveImports((model).importedModels(), os);
-    saveImports((model).getAdditionalModelVersions(), os);
+    saveImports(model.importedModels(), os);
+    saveImports(model.getAdditionalModelVersions(), os);
 
     os.writeInt(0xbaba);
   }
@@ -232,7 +234,7 @@ public class BinaryPersistence {
     try {
       mis = new ModelInputStream(new ByteArrayInputStream(content));
       BinaryModelHeader modelHeader = loadHeader(mis);
-      BinarySModel model = new BinarySModel(modelHeader);
+      SModel model = new DefaultSModel(modelHeader.getModelReference(), modelHeader);
       loadModelProperties(model, mis);
       for (ImportElement element : model.importedModels()) {
         consumer.consume(element.getModelReference().getModelName());

@@ -19,7 +19,8 @@ import jetbrains.mps.extapi.model.GeneratableSModel;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.persistence.LazyLoadFacility;
 import jetbrains.mps.refactoring.StructureModificationLog;
-import jetbrains.mps.persistence.binary.BinarySModel.InvalidBinarySModel;
+import jetbrains.mps.smodel.DefaultSModel;
+import jetbrains.mps.smodel.DefaultSModel.InvalidDefaultSModel;
 import jetbrains.mps.smodel.InvalidSModel;
 import jetbrains.mps.smodel.LazyEditableSModelBase;
 import jetbrains.mps.smodel.LazySModel;
@@ -46,12 +47,12 @@ public class BinarySModelDescriptor extends LazyEditableSModelBase implements Ge
   private static final Logger LOG = Logger.wrap(LogManager.getLogger(BinarySModelDescriptor.class));
   private final LazyLoadFacility myPersistence;
 
-  private BinaryModelHeader myHeader;
+  private SModelHeader myHeader;
 
   private final Object myRefactoringHistoryLock = new Object();
   private StructureModificationLog myStructureModificationLog;
 
-  public BinarySModelDescriptor(@NotNull LazyLoadFacility persistence, @NotNull BinaryModelHeader header) {
+  public BinarySModelDescriptor(@NotNull LazyLoadFacility persistence, @NotNull SModelHeader header) {
     super(header.getModelReference(), persistence.getSource());
     myPersistence = persistence;
     myHeader = header;
@@ -62,7 +63,7 @@ public class BinarySModelDescriptor extends LazyEditableSModelBase implements Ge
     DataSource source = getSource();
     if (!source.isReadOnly() && source.getTimestamp() == -1) {
       // no file on disk
-      BinarySModel model = new BinarySModel(myHeader);
+      DefaultSModel model = new DefaultSModel(getReference(), myHeader);
       return new ModelLoadResult(model, ModelLoadingState.FULLY_LOADED);
     }
 
@@ -71,7 +72,7 @@ public class BinarySModelDescriptor extends LazyEditableSModelBase implements Ge
       result = myPersistence.readModel(myHeader, state);
     } catch (ModelReadException e) {
       SuspiciousModelHandler.getHandler().handleSuspiciousModel(this, false);
-      BinarySModel newModel = new InvalidBinarySModel(getReference(), e);
+      LazySModel newModel = new InvalidDefaultSModel(getReference(), e);
       return new ModelLoadResult(newModel, ModelLoadingState.NOT_LOADED);
     }
 
@@ -115,7 +116,7 @@ public class BinarySModelDescriptor extends LazyEditableSModelBase implements Ge
 
   @Override
   protected boolean saveModel() throws IOException {
-    BinarySModel smodel = (BinarySModel) getSModelInternal();
+    LazySModel smodel = getSModelInternal();
     if (smodel instanceof InvalidSModel) {
       // we do not save stub model to not overwrite the real model
       return false;
@@ -176,9 +177,7 @@ public class BinarySModelDescriptor extends LazyEditableSModelBase implements Ge
   }
 
   private SModelHeader getModelHeader() {
-    BinarySModel model = (BinarySModel) getCurrentModelInternal();
-    if (model == null) return myHeader;
-    return model.getHeader();
+    return myHeader;
   }
 
   @Override
@@ -202,7 +201,7 @@ public class BinarySModelDescriptor extends LazyEditableSModelBase implements Ge
   @Override
   protected void reloadContents() {
     try {
-      myHeader = (BinaryModelHeader) myPersistence.readHeader(); // FIXME remove cast once there's no BinarySModel
+      myHeader = myPersistence.readHeader();
     } catch (ModelReadException e) {
       updateTimestamp();
       SuspiciousModelHandler.getHandler().handleSuspiciousModel(this, false);

@@ -140,7 +140,7 @@ public class DefaultSModelDescriptor extends LazyEditableSModelBase implements G
 
   @Override
   protected boolean saveModel() throws IOException {
-    DefaultSModel smodel = (DefaultSModel) getSModelInternal();
+    LazySModel smodel = getSModelInternal();
     if (smodel instanceof InvalidSModel) {
       // we do not save stub model to not overwrite the real model
       return false;
@@ -206,9 +206,7 @@ public class DefaultSModelDescriptor extends LazyEditableSModelBase implements G
   }
 
   private SModelHeader getModelHeader() {
-    DefaultSModel model = (DefaultSModel) getCurrentModelInternal();
-    if (model == null) return myHeader;
-    return model.getSModelHeader();
+    return myHeader;
   }
 
   @Override

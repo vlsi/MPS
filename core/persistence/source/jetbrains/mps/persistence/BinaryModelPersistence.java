@@ -1,3 +1,18 @@
+/*
+ * Copyright 2003-2014 JetBrains s.r.o.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
 package jetbrains.mps.persistence;
 
 import jetbrains.mps.components.CoreComponent;
@@ -7,7 +22,6 @@ import jetbrains.mps.extapi.model.SModelData;
 import jetbrains.mps.generator.ModelDigestUtil;
 import jetbrains.mps.persistence.binary.BinaryModelHeader;
 import jetbrains.mps.persistence.binary.BinaryPersistence;
-import jetbrains.mps.persistence.binary.BinarySModel;
 import jetbrains.mps.persistence.binary.BinarySModelDescriptor;
 import jetbrains.mps.persistence.binary.NodesWriter;
 import jetbrains.mps.project.MPSExtentions;
@@ -130,7 +144,7 @@ public class BinaryModelPersistence implements CoreComponent, ModelFactory {
 
   public static Map<String, String> getDigestMap(@NotNull StreamDataSource source) {
     try {
-      BinarySModel model = BinaryPersistence.readModel(source.openInputStream());
+      jetbrains.mps.smodel.SModel model = BinaryPersistence.readModel(source.openInputStream());
       Map<String, String> result = getDigestMap(model);
       result.put(GeneratableSModel.FILE, ModelDigestUtil.hashBytes(source.openInputStream()));
       return result;
@@ -144,7 +158,7 @@ public class BinaryModelPersistence implements CoreComponent, ModelFactory {
 
   public static Map<String, String> getDigestMap(byte[] input) {
     try {
-      BinarySModel model = BinaryPersistence.readModel(new ByteArrayInputStream(input));
+      jetbrains.mps.smodel.SModel model = BinaryPersistence.readModel(new ByteArrayInputStream(input));
       Map<String, String> result = getDigestMap(model);
       result.put(GeneratableSModel.FILE, ModelDigestUtil.hashBytes(input));
       return result;
@@ -155,7 +169,7 @@ public class BinaryModelPersistence implements CoreComponent, ModelFactory {
     return null;
   }
 
-  private static Map<String, String> getDigestMap(BinarySModel model) {
+  private static Map<String, String> getDigestMap(jetbrains.mps.smodel.SModel model) {
     Map<String, String> result = new LinkedHashMap<String, String>();
 
     for (SNode node : model.getRootNodes()) {
