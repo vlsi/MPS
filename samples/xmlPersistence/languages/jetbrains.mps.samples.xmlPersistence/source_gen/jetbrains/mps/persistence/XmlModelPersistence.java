@@ -43,13 +43,19 @@ import java.io.BufferedOutputStream;
 import java.io.OutputStreamWriter;
 
 /**
- * evgeny, 3/22/13
+ * A sample custom persistence implementation.
+ * Read http://confluence.jetbrains.com/display/MPSD31/Custom+Persistence+Cookbook for details on custom persistence.
  */
 public class XmlModelPersistence implements ModelFactory, SModelPersistence {
   private static final String XML_EXTENSION = "xml";
   private static final Logger LOG = LogManager.getLogger(XmlModelPersistence.class);
+
   public XmlModelPersistence() {
   }
+
+  /**
+   * Loads a model from the given dataSource. The options carry additional information related to the required model.
+   */
   @NotNull
   @Override
   public SModel load(@NotNull DataSource dataSource, @NotNull Map<String, String> options) throws IOException {
@@ -80,6 +86,11 @@ public class XmlModelPersistence implements ModelFactory, SModelPersistence {
     }
     return new CustomPersistenceSModel(ref, (StreamDataSource) dataSource, this);
   }
+
+
+  /**
+   * Creates a fresh model.
+   */
   @NotNull
   @Override
   public SModel create(DataSource dataSource, @NotNull Map<String, String> options) throws IOException {
