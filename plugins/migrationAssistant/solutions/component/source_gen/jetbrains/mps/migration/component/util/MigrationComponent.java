@@ -212,10 +212,7 @@ public class MigrationComponent extends AbstractProjectComponent implements Migr
             if (isMigrationRequired()) {
               lastState.value = new MigrationManager.MigrationState.Error() {
                 public String getErrorMessage() {
-                  return "Some of scripts are missing";
-                }
-                public Throwable cause() {
-                  return null;
+                  return "Some migration scripts are missing";
                 }
               };
             } else {

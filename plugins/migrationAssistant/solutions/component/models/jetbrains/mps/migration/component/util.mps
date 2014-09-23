@@ -2070,23 +2070,8 @@
                                         <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="6116238312762648138" nodeInfo="sn">
                                           <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="6116238312762650439" nodeInfo="nn">
                                             <node role="expression" roleId="tpee.1068580123156" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="6116238312762650438" nodeInfo="nn">
-                                              <property name="value" nameId="tpee.1070475926801" value="Some of scripts are missing" />
+                                              <property name="value" nameId="tpee.1070475926801" value="Some migration scripts are missing" />
                                             </node>
-                                          </node>
-                                        </node>
-                                      </node>
-                                      <node role="member" roleId="tpee.5375687026011219971" type="tpee.InstanceMethodDeclaration" typeId="tpee.1068580123165" id="6116238312762648141" nodeInfo="igu">
-                                        <property name="isAbstract" nameId="tpee.1178608670077" value="false" />
-                                        <property name="name" nameId="tpck.1169194664001" value="cause" />
-                                        <property name="isFinal" nameId="tpee.1181808852946" value="false" />
-                                        <property name="isDeprecated" nameId="tpee.1224848525476" value="false" />
-                                        <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="6116238312762648142" nodeInfo="nn" />
-                                        <node role="returnType" roleId="tpee.1068580123133" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="6116238312762648144" nodeInfo="in">
-                                          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="e2lb.~Throwable" resolveInfo="Throwable" />
-                                        </node>
-                                        <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="6116238312762648146" nodeInfo="sn">
-                                          <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="6116238312762648148" nodeInfo="nn">
-                                            <node role="expression" roleId="tpee.1068580123156" type="tpee.NullLiteral" typeId="tpee.1070534058343" id="6116238312762648147" nodeInfo="nn" />
                                           </node>
                                         </node>
                                       </node>

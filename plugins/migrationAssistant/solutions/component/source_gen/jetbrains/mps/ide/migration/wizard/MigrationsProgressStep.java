@@ -60,7 +60,7 @@ public class MigrationsProgressStep extends MigrationStep {
       if (result instanceof MigrationManager.MigrationState.Step) {
         final String step = ((MigrationManager.MigrationState.Step) result).getDescription();
         final DefaultListModel model = (DefaultListModel) myList.getModel();
-        SwingUtilities.invokeLater(new Runnable() {
+        ThreadUtils.runInUIThreadAndWait(new Runnable() {
           @Override
           public void run() {
             model.addElement(step);
@@ -76,7 +76,7 @@ public class MigrationsProgressStep extends MigrationStep {
         });
       } else
       if (result instanceof MigrationManager.MigrationState.Conflict) {
-        resolveConflict();
+        mySuccess[0] = false;
       } else
       if (result instanceof MigrationManager.MigrationState.Error) {
         mySuccess[0] = false;
@@ -89,21 +89,6 @@ public class MigrationsProgressStep extends MigrationStep {
     } while (mySuccess[0]);
     PersistenceRegistry.getInstance().enableFastFindUsages();
     myFinished = true;
-  }
-  private void resolveConflict() {
-    // final Iterable<ScriptApplied> conflicts = myManager.getConflictingScripts(); 
-    // final ScriptApplied[] toApply = {null}; 
-    // SwingUtilities.invokeAndWait(new Runnable() { 
-    // @Override 
-    // public void run() { 
-    // ResolveConflictDialog d = new ResolveConflictDialog(conflicts); 
-    // d.setModal(true); 
-    // d.show(); 
-    // toApply[0] = d.getResult(); 
-    // d.getDisposable().dispose(); 
-    // } 
-    // }); 
-    // myManager.forceExecution(toApply[0]); 
   }
   @Override
   public Object getNextStepId() {

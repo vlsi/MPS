@@ -19,7 +19,6 @@ public interface MigrationManager {
     }
     public static interface Error extends MigrationManager.MigrationState {
       public String getErrorMessage();
-      public Throwable cause();
     }
   }
 }
