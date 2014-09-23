@@ -384,7 +384,7 @@
     <property name="vendorLogo" nameId="tp4k.4167053799973858143" value="/MPS_16.png" />
     <property name="name" nameId="tpck.1169194664001" value="MPS Languages DevKit" />
     <property name="ideaVersion" nameId="tp4k.5023285075122009373" value="135.1" />
-    <property name="version" nameId="tp4k.5023285075122009369" value="3.1.3" />
+    <property name="version" nameId="tp4k.5023285075122009369" value="3.1.4" />
   </root>
   <root type="tp4k.ActionGroupDeclaration" typeId="tp4k.1203087890642" id="5883033498657755836" nodeInfo="ng">
     <property name="name" nameId="tpck.1169194664001" value="ProjectNewActionsEx" />
