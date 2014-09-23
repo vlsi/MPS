@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2012 JetBrains s.r.o.
+ * Copyright 2003-2014 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -58,8 +58,7 @@ public abstract class ModelUtil {
   public static VirtualFile getFileByModel(@Nullable SModel model) {
     if (model == null || jetbrains.mps.util.SNodeOperations.isModelDisposed(model)) return null;
 
-    SModel desc = model;
-    Collection<VirtualFile> files = getVFilesByModelDescriptor(desc);
+    Collection<VirtualFile> files = getVFilesByModelDescriptor(model);
     if (files.size() == 0) return null;
 
     assert files.size() == 1 : "do not call this on models with multiple files in source";

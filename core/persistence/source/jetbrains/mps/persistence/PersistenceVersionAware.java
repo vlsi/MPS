@@ -15,7 +15,9 @@
  */
 package jetbrains.mps.persistence;
 
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.persistence.ModelFactory;
 
 /**
  * PROVISIONAL API
@@ -27,7 +29,7 @@ import org.jetbrains.mps.openapi.model.SModel;
  * implementations that do recognize versions, and is useless for others.
  *
  * Primary purpose of this interface is to break tight coupling of general MPS code with DefaultSModelDescriptor and DefaultSModel which
- * used to keep persistence version, and to get rid of <code>instanceof SDefaultModelDescriptor</code> (limite to particular model implementation).
+ * used to keep persistence version, and to get rid of <code>instanceof SDefaultModelDescriptor</code> (limits to particular model implementation).
  *
  * Generally, two models implementing this interface not necessarily share same persistence, thus <code>instanceof PersistenceVersionAware</code>
  * is not sufficient to tell persistence version values could be directly compared.
@@ -44,7 +46,15 @@ public interface PersistenceVersionAware extends SModel {
 
   /**
    * Version of persistence this model was loaded with, or desired persistence version for model save.
-   * @return persistence version number, or <code>-1</code> when undefined/
+   * @return persistence version number, or <code>-1</code> when undefined
    */
   int getPersistenceVersion();
+
+  /**
+   * Actual {@link org.jetbrains.mps.openapi.persistence.ModelFactory} which is currently responsible for model load/save,
+   * or <code>null</code> if model knowns nothing about persistence at the moment.
+   * @return model load/save facility or <code>null</code> if undefined
+   */
+  @Nullable
+  ModelFactory getModelFactory();
 }

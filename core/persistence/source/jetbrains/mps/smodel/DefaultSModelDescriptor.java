@@ -29,15 +29,16 @@ import jetbrains.mps.smodel.persistence.def.ModelReadException;
 import jetbrains.mps.smodel.persistence.def.RefactoringsPersistence;
 import org.apache.log4j.LogManager;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.persistence.DataSource;
+import org.jetbrains.mps.openapi.persistence.ModelFactory;
 
 import java.io.IOException;
 import java.util.Map;
 
 
-
 public class DefaultSModelDescriptor extends LazyEditableSModelBase implements GeneratableSModel, RefactorableSModelDescriptor, PersistenceVersionAware {
-  /*package*/ static final String MODEL_FOLDER_FOR_GENERATION = "useModelFolderForGeneration"; // FIXME package -> private once other uses gone
+  private static final String MODEL_FOLDER_FOR_GENERATION = "useModelFolderForGeneration";
   private static final Logger LOG = Logger.wrap(LogManager.getLogger(DefaultSModelDescriptor.class));
   private final LazyLoadFacility myPersistence;
 
@@ -46,7 +47,7 @@ public class DefaultSModelDescriptor extends LazyEditableSModelBase implements G
   private final Object myRefactoringHistoryLock = new Object();
   private StructureModificationLog myStructureModificationLog;
 
-  public DefaultSModelDescriptor(LazyLoadFacility persistence, SModelHeader header) {
+  public DefaultSModelDescriptor(@NotNull LazyLoadFacility persistence, @NotNull SModelHeader header) {
     super(header.getModelReference(), persistence.getSource());
     myPersistence = persistence;
     myHeader = header;
@@ -78,7 +79,7 @@ public class DefaultSModelDescriptor extends LazyEditableSModelBase implements G
       result = myPersistence.readModel(myHeader, state);
     } catch (ModelReadException e) {
       SuspiciousModelHandler.getHandler().handleSuspiciousModel(this, false);
-      DefaultSModel newModel = new InvalidDefaultSModel(getReference(), e);
+      LazySModel newModel = new InvalidDefaultSModel(getReference(), e);
       return new ModelLoadResult(newModel, ModelLoadingState.NOT_LOADED);
     }
 
@@ -118,6 +119,12 @@ public class DefaultSModelDescriptor extends LazyEditableSModelBase implements G
     myHeader.setPersistenceVersion(persistenceVersion);
   }
 
+  @Nullable
+  @Override
+  public ModelFactory getModelFactory() {
+    return myPersistence.getModelFactory();
+  }
+
   @Override
   @NotNull
   public StructureModificationLog getStructureModificationLog() {
@@ -140,7 +147,7 @@ public class DefaultSModelDescriptor extends LazyEditableSModelBase implements G
 
   @Override
   protected boolean saveModel() throws IOException {
-    DefaultSModel smodel = (DefaultSModel) getSModelInternal();
+    LazySModel smodel = getSModelInternal();
     if (smodel instanceof InvalidSModel) {
       // we do not save stub model to not overwrite the real model
       return false;
@@ -206,9 +213,7 @@ public class DefaultSModelDescriptor extends LazyEditableSModelBase implements G
   }
 
   private SModelHeader getModelHeader() {
-    DefaultSModel model = (DefaultSModel) getCurrentModelInternal();
-    if (model == null) return myHeader;
-    return model.getSModelHeader();
+    return myHeader;
   }
 
   @Override

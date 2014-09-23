@@ -155,9 +155,9 @@ public class FilePerRootFormatUtil {
     if (modelData instanceof DefaultSModel) {
       DefaultSModel dsm = (DefaultSModel) modelData;
       modelHeader = dsm.getSModelHeader();
-      oldVersion = dsm.getPersistenceVersion();
+      oldVersion = modelHeader.getPersistenceVersion();
       if (oldVersion != persistenceVersion) {
-        dsm.setPersistenceVersion(persistenceVersion);
+        modelHeader.setPersistenceVersion(persistenceVersion);
       }
     }
 

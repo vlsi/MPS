@@ -10,11 +10,14 @@ import org.jetbrains.mps.openapi.persistence.NullDataSource;
 import jetbrains.mps.smodel.loading.ModelLoadingState;
 import java.io.IOException;
 import org.jetbrains.mps.openapi.persistence.ModelSaveException;
+import jetbrains.mps.smodel.DefaultSModel;
+import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.persistence.ModelFactory;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 
 public class MergeTemporaryModel extends EditableSModelBase implements PersistenceVersionAware {
   protected volatile SModel mySModel;
   private boolean myReadOnly;
-  private int myPersistenceVersion;
   public MergeTemporaryModel(SModelReference modelRef, boolean readonly) {
     super(modelRef, new NullDataSource());
     myReadOnly = readonly;
@@ -67,9 +70,19 @@ public class MergeTemporaryModel extends EditableSModelBase implements Persisten
   }
 
   public void setPersistenceVersion(int version) {
-    myPersistenceVersion = version;
+    if (mySModel instanceof DefaultSModel) {
+      ((DefaultSModel) mySModel).getSModelHeader().setPersistenceVersion(version);
+    }
   }
   public int getPersistenceVersion() {
-    return myPersistenceVersion;
+    if (mySModel instanceof DefaultSModel) {
+      return ((DefaultSModel) mySModel).getSModelHeader().getPersistenceVersion();
+    }
+    return -1;
+  }
+  @Nullable
+  public ModelFactory getModelFactory() {
+    // in fact, shall derive persitence from models being merged, however, so far we've got merge for default/xml persistence only, thus it's ok to hardcode specific factory 
+    return PersistenceFacade.getInstance().getDefaultModelFactory();
   }
 }

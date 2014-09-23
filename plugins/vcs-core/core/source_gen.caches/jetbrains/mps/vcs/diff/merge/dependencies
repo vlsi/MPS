@@ -119,11 +119,15 @@
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.UnsupportedOperationException" />
+    <classNode dependClassName="jetbrains.mps.smodel.DefaultSModel" />
     <classNode dependClassName="jetbrains.mps.smodel.SModel" />
     <classNode dependClassName="jetbrains.mps.smodel.loading.ModelLoadingState" />
+    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModelReference" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.persistence.ModelFactory" />
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.ModelSaveException" />
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.NullDataSource" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
     <classNode extendsClassName="jetbrains.mps.extapi.model.EditableSModelBase" />
     <classNode extendsClassName="jetbrains.mps.persistence.PersistenceVersionAware" />
   </dependency>

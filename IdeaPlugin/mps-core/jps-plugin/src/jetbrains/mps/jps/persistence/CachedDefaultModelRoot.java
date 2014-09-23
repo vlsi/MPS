@@ -21,7 +21,6 @@ import jetbrains.mps.idea.core.module.CachedModelData;
 import jetbrains.mps.idea.core.module.CachedModuleData;
 import jetbrains.mps.idea.core.module.CachedRepositoryData;
 import jetbrains.mps.persistence.DefaultModelRoot;
-import jetbrains.mps.persistence.binary.BinaryModelHeader;
 import jetbrains.mps.persistence.BinaryModelPersistence;
 import jetbrains.mps.persistence.DefaultModelPersistence;
 import jetbrains.mps.smodel.Generator;
@@ -77,11 +76,10 @@ public class CachedDefaultModelRoot extends DefaultModelRoot {
       IFile file = FileSystem.getInstance().getFileByPath(mdata.getFile());
       FileDataSource source = new FileDataSource(file, this);
       Object header = mdata.getHeader();
-      if (header instanceof BinaryModelHeader) {
-        result.add(BinaryModelPersistence.createFromHeader(((BinaryModelHeader) header), source));
-      } else if (header instanceof SModelHeader) {
-        SModelHeader smheader = (SModelHeader) header;
-        result.add(DefaultModelPersistence.createFromHeader(smheader, source));
+      if (mdata.getCacheKind() == CachedModelData.Kind.Binary) {
+        result.add(BinaryModelPersistence.createFromHeader(((SModelHeader) header), source));
+      } else if (mdata.getCacheKind() == CachedModelData.Kind.Regular) {
+        result.add(DefaultModelPersistence.createFromHeader((SModelHeader) header, source));
       } else {
         String fileName = file.getName();
         String extension = FileUtil.getExtension(fileName);

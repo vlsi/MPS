@@ -274,11 +274,12 @@ public class ModelPersistence {
 
     // upgrade?
     int oldVersion = persistenceVersion;
-    if (model.getModelDescriptor() instanceof PersistenceVersionAware) {
-      PersistenceVersionAware modelWithPersistenceVer = (PersistenceVersionAware) model.getModelDescriptor();
-      oldVersion = modelWithPersistenceVer.getPersistenceVersion();
+    if (model instanceof DefaultSModel) {
+      DefaultSModel dsm = (DefaultSModel) model;
+      SModelHeader modelHeader = dsm.getSModelHeader();
+      oldVersion = modelHeader.getPersistenceVersion();
       if (oldVersion != persistenceVersion) {
-        modelWithPersistenceVer.setPersistenceVersion(persistenceVersion);
+        modelHeader.setPersistenceVersion(persistenceVersion);
       }
     }
 
