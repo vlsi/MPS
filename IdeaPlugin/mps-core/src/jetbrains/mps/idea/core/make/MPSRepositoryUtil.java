@@ -21,16 +21,18 @@ import jetbrains.mps.extapi.persistence.FolderSetDataSource;
 import jetbrains.mps.idea.core.module.*;
 import jetbrains.mps.library.ModulesMiner.ModuleHandle;
 import jetbrains.mps.persistence.DefaultModelRoot;
-import jetbrains.mps.persistence.binary.BinarySModelDescriptor;
+import jetbrains.mps.persistence.PersistenceVersionAware;
 import jetbrains.mps.persistence.java.library.JavaClassStubModelDescriptor;
 import jetbrains.mps.persistence.java.library.JavaClassStubsModelRoot;
-import org.jetbrains.mps.openapi.module.SModuleReference;
+import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.smodel.DefaultSModelDescriptor;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.module.SModule;
+import org.jetbrains.mps.openapi.module.SModuleReference;
+import org.jetbrains.mps.openapi.persistence.ModelFactory;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
 
 import java.util.*;
@@ -81,13 +83,20 @@ public class MPSRepositoryUtil {
       String modelPath = ((FileDataSource) model.getSource()).getFile().getPath();
 
       Object header = null;
-
+      CachedModelData.Kind cacheKind = CachedModelData.Kind.Unknown;
+      if (model instanceof PersistenceVersionAware) {
+        ModelFactory mf = ((PersistenceVersionAware) model).getModelFactory();
+        String persistenceIdentifier = mf == null ? null : mf.getFileExtension();
+        if (MPSExtentions.MODEL.equals(persistenceIdentifier)) {
+          cacheKind = CachedModelData.Kind.Regular;
+        } else if (MPSExtentions.MODEL_BINARY.equals(persistenceIdentifier)) {
+          cacheKind = CachedModelData.Kind.Binary;
+        }
+      }
       if (model instanceof DefaultSModelDescriptor) {
         header = ((DefaultSModelDescriptor) model).getHeaderCopy();
-      } else if (model instanceof BinarySModelDescriptor) {
-        header = ((BinarySModelDescriptor) model).getHeaderCopy();
       }
-      result.add(new CachedModelData(modelPath, header));
+      result.add(new CachedModelData(modelPath, header, cacheKind));
     }
     return result;
   }
@@ -101,7 +110,7 @@ public class MPSRepositoryUtil {
       }
       JavaClassStubModelDescriptor stubModel = (JavaClassStubModelDescriptor) model;
       FolderSetDataSource source = stubModel.getSource();
-      result.add(new CachedModelData(null, new JavaStubModelHeader(stubModel.getReference(), source.getPaths())));
+      result.add(new CachedModelData(null, new JavaStubModelHeader(stubModel.getReference(), source.getPaths()), CachedModelData.Kind.JavaStub));
     }
     return result;
   }

@@ -16,7 +16,8 @@ import java.util.HashSet;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.smodel.language.ConceptRegistry;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import org.jetbrains.mps.util.DepthFirstConceptIterator;
 import java.util.List;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -24,7 +25,6 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.util.NameUtil;
@@ -71,16 +71,18 @@ public class FindUnusedAndDeprecatedConcepts_Action extends BaseAction {
       final Set<String> usedConcepts = SetSequence.fromSet(new HashSet<String>());
       InternalActionsUtils.executeActionOnAllNodesInModal("find used concepts", ((Project) MapSequence.fromMap(_params).get("ideaProject")), new _FunctionTypes._void_P1_E0<SNode>() {
         public void invoke(SNode node) {
-          SetSequence.fromSet(usedConcepts).addSequence(SetSequence.fromSet(ConceptRegistry.getInstance().getConceptDescriptor(node.getConcept().getQualifiedName()).getAncestorsNames()));
+          for (SAbstractConcept c : new DepthFirstConceptIterator(node.getConcept())) {
+            SetSequence.fromSet(usedConcepts).addElement(c.getQualifiedName());
+          }
         }
       });
 
       List<SNodeReference> concepts = ListSequence.fromList(InternalActionsUtils.getAllConcepts()).where(new IWhereFilter<SNodeReference>() {
         public boolean accept(final SNodeReference it) {
           final Wrappers._boolean isOk = new Wrappers._boolean(false);
-          ((MPSProject) MapSequence.fromMap(_params).get("project")).getRepository().getModelAccess().runReadAction(new Runnable() {
+          ((MPSProject) MapSequence.fromMap(_params).get("project")).getModelAccess().runReadAction(new Runnable() {
             public void run() {
-              SNode concept = SNodeOperations.cast(((SNodePointer) it).resolve(MPSModuleRepository.getInstance()), "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration");
+              SNode concept = SNodeOperations.cast(it.resolve(MPSModuleRepository.getInstance()), "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration");
               isOk.value = (concept != null) && (BehaviorReflection.invokeVirtual(Boolean.TYPE, concept, "virtual_isDeprecated_1224609060727", new Object[]{}) || !(SetSequence.fromSet(usedConcepts).contains(NameUtil.nodeFQName(concept))));
             }
           });

@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2014 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -147,7 +147,7 @@ public class TestModule extends AbstractModule {
 
     @Override
     public jetbrains.mps.smodel.SModel createModel() {
-      Document document = ModelPersistence.saveModel(((SModelBase) myToCopy).getSModelInternal());
+      Document document = ModelPersistence.saveModel(((SModelBase) myToCopy).getSModel());
       Element rootElement = document.getRootElement();
       rootElement.setAttribute(ModelPersistence.MODEL_UID, getReference().toString());
       String modelContent = JDOMUtil.asString(document);

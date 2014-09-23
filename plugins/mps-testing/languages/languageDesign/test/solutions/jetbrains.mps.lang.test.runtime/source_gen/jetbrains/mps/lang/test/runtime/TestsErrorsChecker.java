@@ -17,6 +17,8 @@ import jetbrains.mps.checkers.INodeChecker;
 import jetbrains.mps.typesystemEngine.checker.TypesystemChecker;
 import jetbrains.mps.checkers.LanguageChecker;
 import org.jetbrains.annotations.Nullable;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 
 public class TestsErrorsChecker {
   private SNode myRoot;
@@ -29,12 +31,12 @@ public class TestsErrorsChecker {
 
   public Iterable<IErrorReporter> getAllErrors() {
     ModelAccess.assertLegalRead();
-    return getModelErrors();
+    return getRootErrors();
   }
 
   public Iterable<IErrorReporter> getErrors(@NotNull SNode node) {
     ModelAccess.assertLegalRead();
-    Iterable<IErrorReporter> result = getModelErrors();
+    Iterable<IErrorReporter> result = getRootErrors();
     return filterReportersByNode(result, node);
   }
 
@@ -58,26 +60,29 @@ public class TestsErrorsChecker {
     return checker.getErrors(myRoot, null);
   }
 
-  private Iterable<IErrorReporter> filterReportersByNode(final Iterable<IErrorReporter> errors, @NotNull final SNode node) {
+  private Iterable<IErrorReporter> filterReportersByNode(final Iterable<IErrorReporter> errors, @NotNull final SNode aNode) {
     return Sequence.fromIterable(errors).where(new IWhereFilter<IErrorReporter>() {
       public boolean accept(IErrorReporter it) {
         assert it.getSNode() != null;
-        return it.getSNode().equals(node);
+        return it.getSNode().getNodeId().equals(aNode.getNodeId());
       }
     });
   }
 
-  private Iterable<IErrorReporter> getModelErrors() {
+  private Iterable<IErrorReporter> getRootErrors() {
     Set<IErrorReporter> cachedErrors = modelErrorsHolder.get(myRoot);
     if (cachedErrors != null) {
       return SetSequence.fromSet(cachedErrors).toListSequence();
     }
 
-    Set<IErrorReporter> result = collectModelErrors();
+    Set<IErrorReporter> result = collectRootErrors();
     return result;
   }
 
-  private Set<IErrorReporter> collectModelErrors() {
+  private Set<IErrorReporter> collectRootErrors() {
+    if (LOG.isDebugEnabled()) {
+      LOG.debug("Collecting errors in the root " + myRoot);
+    }
     Set<IErrorReporter> result = SetSequence.fromSet(new HashSet<IErrorReporter>());
     SetSequence.fromSet(result).addSequence(Sequence.fromIterable(getTypeSystemErrors()));
     SetSequence.fromSet(result).addSequence(Sequence.fromIterable(getConstraintsErrors()));
@@ -98,7 +103,7 @@ public class TestsErrorsChecker {
     }
 
     private boolean sameRoot(SNode root) {
-      return root.getNodeId().equals(myRoot.getNodeId());
+      return root == myRoot;
     }
 
     public void set(SNode root, Set<T> errors) {
@@ -108,4 +113,5 @@ public class TestsErrorsChecker {
     }
   }
 
+  protected static Logger LOG = LogManager.getLogger(TestsErrorsChecker.class);
 }

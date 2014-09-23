@@ -24,6 +24,7 @@ import jetbrains.mps.smodel.persistence.def.IModelReader;
 import jetbrains.mps.smodel.persistence.def.IModelWriter;
 import jetbrains.mps.smodel.persistence.lines.LineContent;
 import jetbrains.mps.util.xml.XMLSAXHandler;
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.util.Consumer;
 
 import java.util.List;
@@ -58,6 +59,11 @@ public class ModelPersistence4 implements IModelPersistence {
   @Override
   public IModelWriter getModelWriter() {
     return new ModelWriter4();
+  }
+
+  @Override
+  public IModelWriter getModelWriter(@Nullable SModelHeader header) {
+    return getModelWriter();
   }
 
   @Override

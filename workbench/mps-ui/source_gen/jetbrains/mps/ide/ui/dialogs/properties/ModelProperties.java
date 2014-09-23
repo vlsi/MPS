@@ -12,8 +12,6 @@ import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.extapi.model.GeneratableSModel;
 import jetbrains.mps.smodel.IOperationContext;
 import org.jetbrains.mps.openapi.model.EditableSModel;
-import jetbrains.mps.extapi.model.SModelBase;
-import jetbrains.mps.smodel.DefaultSModel;
 import org.jetbrains.mps.openapi.persistence.NullDataSource;
 import jetbrains.mps.kernel.model.MissingDependenciesFixer;
 import jetbrains.mps.generator.ModelGenerationStatusManager;
@@ -32,7 +30,6 @@ import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.smodel.MPSModuleRepository;
 
 public class ModelProperties {
-  private static String USE_MODEL_FOLDER_FOR_GENERATION = "useModelFolderForGeneration";
   private List<SModelReference> myImportedModels = new ArrayList<SModelReference>();
   private List<SModuleReference> myUsedLanguages = new ArrayList<SModuleReference>();
   private List<SModuleReference> myUsedDevKits = new ArrayList<SModuleReference>();
@@ -106,19 +103,12 @@ public class ModelProperties {
       if (dmd.isDoNotGenerate() != myDoNotGenerate) {
         dmd.setDoNotGenerate(myDoNotGenerate);
       }
-    }
-    if (myModelDescriptor instanceof SModelBase) {
-      jetbrains.mps.smodel.SModel dm = ((SModelBase) myModelDescriptor).getSModelInternal();
-      if (dm instanceof DefaultSModel) {
-        if (myGenerateIntoModelFolder) {
-          ((DefaultSModel) dm).getSModelHeader().setOptionalProperty(USE_MODEL_FOLDER_FOR_GENERATION, Boolean.TRUE.toString());
-        } else {
-          ((DefaultSModel) dm).getSModelHeader().removeOptionalProperty(USE_MODEL_FOLDER_FOR_GENERATION);
-        }
+      if (dmd.isGenerateIntoModelFolder() != myGenerateIntoModelFolder) {
+        dmd.setGenerateIntoModelFolder(myGenerateIntoModelFolder);
       }
     }
 
-    if (myModelDescriptor.getSource() instanceof NullDataSource) {
+    if (!(myModelDescriptor.getSource() instanceof NullDataSource)) {
       ((EditableSModel) myModelDescriptor).save();
     }
 

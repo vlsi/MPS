@@ -252,74 +252,74 @@
   </root>
   <root nodeRef="r:74729267-a5fb-4229-a117-335c34e68536(jetbrains.mps.workbench.dialogs.project.properties.project)/3201642974933586123">
     <file name="ProjectPropertiesPrefsPage.java">
-      <node id="3201642974933586128" at="17,0,18,0" concept="2" trace="myProject" />
-      <node id="3201642974933586131" at="18,0,19,0" concept="2" trace="myComponent" />
-      <node id="3201642974933586139" at="19,54,20,24" concept="1" />
-      <node id="3201642974933586149" at="24,34,25,30" concept="7" />
-      <node id="3201642974933586158" at="27,25,28,33" concept="7" />
-      <node id="3201642974933586164" at="31,32,32,31" concept="7" />
-      <node id="3201642974933586170" at="35,39,36,60" concept="1" />
-      <node id="3201642974933586180" at="36,60,37,23" concept="7" />
-      <node id="3201642974933586188" at="40,31,41,36" concept="7" />
-      <node id="3201642974933586198" at="44,53,45,24" concept="1" />
-      <node id="3201642974933586209" at="48,23,49,24" concept="1" />
-      <node id="3201642974933586219" at="52,36,53,23" concept="1" />
-      <node id="3201642974933586237" at="63,36,64,31" concept="7" />
-      <node id="3201642974933586252" at="73,25,74,40" concept="7" />
-      <node id="3201642974933586260" at="77,47,78,16" concept="7" />
-      <node id="3201642974933586134" at="19,0,22,0" concept="0" trace="ProjectPropertiesPrefsPage#(Lcom/intellij/openapi/project/Project;)V" />
-      <node id="3201642974933586154" at="27,0,30,0" concept="5" trace="getIcon#()Ljavax/swing/Icon;" />
-      <node id="3201642974933586225" at="55,0,58,0" concept="5" trace="projectOpened#()V" />
-      <node id="3201642974933586229" at="58,0,61,0" concept="5" trace="projectClosed#()V" />
-      <node id="3201642974933586240" at="66,0,69,0" concept="5" trace="initComponent#()V" />
-      <node id="3201642974933586244" at="69,0,72,0" concept="5" trace="disposeComponent#()V" />
-      <node id="3201642974933586160" at="30,0,34,0" concept="5" trace="getHelpTopic#()Ljava/lang/String;" />
-      <node id="3201642974933586184" at="39,0,43,0" concept="5" trace="isModified#()Z" />
-      <node id="3201642974933586194" at="43,0,47,0" concept="5" trace="apply#()V" />
-      <node id="3201642974933586205" at="47,0,51,0" concept="5" trace="reset#()V" />
-      <node id="3201642974933586215" at="51,0,55,0" concept="5" trace="disposeUIResources#()V" />
-      <node id="3201642974933586248" at="72,0,76,0" concept="5" trace="getId#()Ljava/lang/String;" />
-      <node id="3201642974933586254" at="76,0,80,0" concept="5" trace="enableSearch#(Ljava/lang/String;)Ljava/lang/Runnable;" />
-      <node id="3201642974933586145" at="22,0,27,0" concept="5" trace="getDisplayName#()Ljava/lang/String;" />
-      <node id="3201642974933586166" at="34,0,39,0" concept="5" trace="createComponent#()Ljavax/swing/JComponent;" />
-      <node id="3201642974933586233" at="61,0,66,0" concept="5" trace="getComponentName#()Ljava/lang/String;" />
-      <scope id="3201642974933586228" at="56,31,56,31" />
-      <scope id="3201642974933586232" at="59,31,59,31" />
-      <scope id="3201642974933586243" at="67,31,67,31" />
-      <scope id="3201642974933586247" at="70,34,70,34" />
-      <scope id="3201642974933586138" at="19,54,20,24" />
-      <scope id="3201642974933586148" at="24,34,25,30" />
-      <scope id="3201642974933586157" at="27,25,28,33" />
-      <scope id="3201642974933586163" at="31,32,32,31" />
-      <scope id="3201642974933586187" at="40,31,41,36" />
-      <scope id="3201642974933586197" at="44,53,45,24" />
-      <scope id="3201642974933586208" at="48,23,49,24" />
-      <scope id="3201642974933586218" at="52,36,53,23" />
-      <scope id="3201642974933586236" at="63,36,64,31" />
-      <scope id="3201642974933586251" at="73,25,74,40" />
-      <scope id="3201642974933586259" at="77,47,78,16" />
-      <scope id="3201642974933586169" at="35,39,37,23" />
-      <scope id="3201642974933586134" at="19,0,22,0">
+      <node id="3201642974933586128" at="16,0,17,0" concept="2" trace="myProject" />
+      <node id="3201642974933586131" at="17,0,18,0" concept="2" trace="myComponent" />
+      <node id="3201642974933586139" at="18,54,19,24" concept="1" />
+      <node id="3201642974933586149" at="23,34,24,30" concept="7" />
+      <node id="3201642974933586158" at="26,25,27,33" concept="7" />
+      <node id="3201642974933586164" at="30,32,31,31" concept="7" />
+      <node id="3201642974933586170" at="34,39,35,60" concept="1" />
+      <node id="3201642974933586180" at="35,60,36,23" concept="7" />
+      <node id="3201642974933586188" at="39,31,40,36" concept="7" />
+      <node id="3201642974933586198" at="43,53,44,24" concept="1" />
+      <node id="3201642974933586209" at="47,23,48,24" concept="1" />
+      <node id="3201642974933586219" at="51,36,52,23" concept="1" />
+      <node id="3201642974933586237" at="62,36,63,31" concept="7" />
+      <node id="3201642974933586252" at="72,25,73,40" concept="7" />
+      <node id="3201642974933586260" at="76,47,77,16" concept="7" />
+      <node id="3201642974933586134" at="18,0,21,0" concept="0" trace="ProjectPropertiesPrefsPage#(Lcom/intellij/openapi/project/Project;)V" />
+      <node id="3201642974933586154" at="26,0,29,0" concept="5" trace="getIcon#()Ljavax/swing/Icon;" />
+      <node id="3201642974933586225" at="54,0,57,0" concept="5" trace="projectOpened#()V" />
+      <node id="3201642974933586229" at="57,0,60,0" concept="5" trace="projectClosed#()V" />
+      <node id="3201642974933586240" at="65,0,68,0" concept="5" trace="initComponent#()V" />
+      <node id="3201642974933586244" at="68,0,71,0" concept="5" trace="disposeComponent#()V" />
+      <node id="3201642974933586160" at="29,0,33,0" concept="5" trace="getHelpTopic#()Ljava/lang/String;" />
+      <node id="3201642974933586184" at="38,0,42,0" concept="5" trace="isModified#()Z" />
+      <node id="3201642974933586194" at="42,0,46,0" concept="5" trace="apply#()V" />
+      <node id="3201642974933586205" at="46,0,50,0" concept="5" trace="reset#()V" />
+      <node id="3201642974933586215" at="50,0,54,0" concept="5" trace="disposeUIResources#()V" />
+      <node id="3201642974933586248" at="71,0,75,0" concept="5" trace="getId#()Ljava/lang/String;" />
+      <node id="3201642974933586254" at="75,0,79,0" concept="5" trace="enableSearch#(Ljava/lang/String;)Ljava/lang/Runnable;" />
+      <node id="3201642974933586145" at="21,0,26,0" concept="5" trace="getDisplayName#()Ljava/lang/String;" />
+      <node id="3201642974933586166" at="33,0,38,0" concept="5" trace="createComponent#()Ljavax/swing/JComponent;" />
+      <node id="3201642974933586233" at="60,0,65,0" concept="5" trace="getComponentName#()Ljava/lang/String;" />
+      <scope id="3201642974933586228" at="55,31,55,31" />
+      <scope id="3201642974933586232" at="58,31,58,31" />
+      <scope id="3201642974933586243" at="66,31,66,31" />
+      <scope id="3201642974933586247" at="69,34,69,34" />
+      <scope id="3201642974933586138" at="18,54,19,24" />
+      <scope id="3201642974933586148" at="23,34,24,30" />
+      <scope id="3201642974933586157" at="26,25,27,33" />
+      <scope id="3201642974933586163" at="30,32,31,31" />
+      <scope id="3201642974933586187" at="39,31,40,36" />
+      <scope id="3201642974933586197" at="43,53,44,24" />
+      <scope id="3201642974933586208" at="47,23,48,24" />
+      <scope id="3201642974933586218" at="51,36,52,23" />
+      <scope id="3201642974933586236" at="62,36,63,31" />
+      <scope id="3201642974933586251" at="72,25,73,40" />
+      <scope id="3201642974933586259" at="76,47,77,16" />
+      <scope id="3201642974933586169" at="34,39,36,23" />
+      <scope id="3201642974933586134" at="18,0,21,0">
         <var name="project" id="3201642974933586136" />
       </scope>
-      <scope id="3201642974933586154" at="27,0,30,0" />
-      <scope id="3201642974933586225" at="55,0,58,0" />
-      <scope id="3201642974933586229" at="58,0,61,0" />
-      <scope id="3201642974933586240" at="66,0,69,0" />
-      <scope id="3201642974933586244" at="69,0,72,0" />
-      <scope id="3201642974933586160" at="30,0,34,0" />
-      <scope id="3201642974933586184" at="39,0,43,0" />
-      <scope id="3201642974933586194" at="43,0,47,0" />
-      <scope id="3201642974933586205" at="47,0,51,0" />
-      <scope id="3201642974933586215" at="51,0,55,0" />
-      <scope id="3201642974933586248" at="72,0,76,0" />
-      <scope id="3201642974933586254" at="76,0,80,0">
+      <scope id="3201642974933586154" at="26,0,29,0" />
+      <scope id="3201642974933586225" at="54,0,57,0" />
+      <scope id="3201642974933586229" at="57,0,60,0" />
+      <scope id="3201642974933586240" at="65,0,68,0" />
+      <scope id="3201642974933586244" at="68,0,71,0" />
+      <scope id="3201642974933586160" at="29,0,33,0" />
+      <scope id="3201642974933586184" at="38,0,42,0" />
+      <scope id="3201642974933586194" at="42,0,46,0" />
+      <scope id="3201642974933586205" at="46,0,50,0" />
+      <scope id="3201642974933586215" at="50,0,54,0" />
+      <scope id="3201642974933586248" at="71,0,75,0" />
+      <scope id="3201642974933586254" at="75,0,79,0">
         <var name="option" id="3201642974933586257" />
       </scope>
-      <scope id="3201642974933586145" at="22,0,27,0" />
-      <scope id="3201642974933586166" at="34,0,39,0" />
-      <scope id="3201642974933586233" at="61,0,66,0" />
-      <unit id="3201642974933586123" at="16,0,81,0" name="jetbrains.mps.workbench.dialogs.project.properties.project.ProjectPropertiesPrefsPage" />
+      <scope id="3201642974933586145" at="21,0,26,0" />
+      <scope id="3201642974933586166" at="33,0,38,0" />
+      <scope id="3201642974933586233" at="60,0,65,0" />
+      <unit id="3201642974933586123" at="15,0,80,0" name="jetbrains.mps.workbench.dialogs.project.properties.project.ProjectPropertiesPrefsPage" />
     </file>
   </root>
   <root nodeRef="r:74729267-a5fb-4229-a117-335c34e68536(jetbrains.mps.workbench.dialogs.project.properties.project)/3201642974933587319">

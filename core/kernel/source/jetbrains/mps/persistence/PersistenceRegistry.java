@@ -126,11 +126,24 @@ public class PersistenceRegistry extends org.jetbrains.mps.openapi.persistence.P
   }
 
   @Override
+  public String asString(@NotNull SModelId modelId) {
+    // FIXME In fact, shall delegate to proper SModelIdFactory. toString here is just the first step in transition - once all code out there
+    // stops using SModelId.toString() for persistence and switch to PersistenceFacade.asString, this implementation shall change and delegate to factory.
+    return modelId.toString();
+  }
+
+  @Override
   public SModelReference createModelReference(String text) {
     if (text == null) {
       throw new IllegalArgumentException();
     }
     return jetbrains.mps.smodel.SModelReference.parseReference(text);
+  }
+
+  @Override
+  public String asString(@NotNull SModelReference modelRef) {
+    // FIXME once there's no direct uses of SModelReference#toString in persistence code, this might change to produce another format
+    return modelRef.toString();
   }
 
   @Override

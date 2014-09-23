@@ -42,6 +42,7 @@ public interface ModelFactory {
    */
   @NotNull
   SModel load(@NotNull DataSource dataSource, @NotNull Map<String, String> options) throws IOException;
+  // FIXME odd to have #save with ModelSaveException, and no ModelLoadException for #load. There's ModelReadException, which is not openapi yet.
 
   /**
    * Creates a new empty model.

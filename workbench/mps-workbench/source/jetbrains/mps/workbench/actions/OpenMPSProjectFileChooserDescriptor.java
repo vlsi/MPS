@@ -60,11 +60,11 @@ public class OpenMPSProjectFileChooserDescriptor extends FileChooserDescriptor{
      return isMpsProjectFile(file) || super.isFileVisible(file, showHiddenFiles) && file.isDirectory();
   }
 
-  private static boolean isMpsProjectFile(VirtualFile file) {
+  public static boolean isMpsProjectFile(VirtualFile file) {
     return file.isValid() && !file.isDirectory() && file.getName().toLowerCase().endsWith(MPSExtentions.DOT_MPS_PROJECT);
   }
 
-  private static boolean isMpsProjectDirectory(final VirtualFile file) {
+  public static boolean isMpsProjectDirectory(final VirtualFile file) {
     /**
      * <code>file.getParent() == null<code/> checks that root directory of any drive is never an MPS project
      * */

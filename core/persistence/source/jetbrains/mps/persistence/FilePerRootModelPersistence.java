@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2013 JetBrains s.r.o.
+ * Copyright 2003-2014 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,9 +18,10 @@ package jetbrains.mps.persistence;
 import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.extapi.model.GeneratableSModel;
 import jetbrains.mps.extapi.model.SModelBase;
+import jetbrains.mps.extapi.model.SModelData;
 import jetbrains.mps.extapi.persistence.FileBasedModelRoot;
 import jetbrains.mps.extapi.persistence.FolderDataSource;
-import jetbrains.mps.smodel.FilePerRootSModel;
+import jetbrains.mps.smodel.DefaultSModelDescriptor;
 import jetbrains.mps.smodel.SModelHeader;
 import jetbrains.mps.smodel.loading.ModelLoadResult;
 import jetbrains.mps.smodel.loading.ModelLoadingState;
@@ -28,7 +29,6 @@ import jetbrains.mps.smodel.persistence.def.FilePerRootFormatUtil;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.smodel.persistence.def.ModelReadException;
 import jetbrains.mps.util.FileUtil;
-import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import org.apache.log4j.LogManager;
@@ -45,7 +45,6 @@ import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import org.jetbrains.mps.openapi.persistence.UnsupportedDataSourceException;
 import org.xml.sax.InputSource;
 
-import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -85,21 +84,19 @@ public class FilePerRootModelPersistence implements CoreComponent, ModelFactory,
     }
 
     MultiStreamDataSource source = (MultiStreamDataSource) dataSource;
+    PersistenceFacility pf = new PersistenceFacility(this, source);
     SModelHeader header;
     try {
-      header = FilePerRootFormatUtil.loadDescriptor(source);
+      header = pf.readHeader();
     } catch (ModelReadException ignored) {
       LOG.error("Can't read model: ", ignored);
-      header = new SModelHeader();
+      throw new IOException("Can't read model: ", ignored);
     }
 
-    SModelReference modelReference;
-    assert header.getUID() != null : "wrong model: " + source.getLocation();
+    assert header.getModelReference() != null : "wrong model: " + source.getLocation();
 
-    modelReference = PersistenceFacade.getInstance().createModelReference(header.getUID());
-
-    LOG.debug("Getting model " + modelReference + " from " + source.getLocation());
-    return new FilePerRootSModel(source, modelReference, header);
+    LOG.debug("Getting model " + header.getModelReference() + " from " + source.getLocation());
+    return new DefaultSModelDescriptor(pf, header);
   }
 
   @NotNull
@@ -115,7 +112,9 @@ public class FilePerRootModelPersistence implements CoreComponent, ModelFactory,
     }
 
     SModelReference ref = PersistenceFacade.getInstance().createModelReference(null, jetbrains.mps.smodel.SModelId.generate(), modelName);
-    return new FilePerRootSModel((MultiStreamDataSource) dataSource, ref, SModelHeader.create(ModelPersistence.LAST_VERSION));
+    final SModelHeader header = SModelHeader.create(ModelPersistence.LAST_VERSION);
+    header.setModelReference(ref);
+    return new DefaultSModelDescriptor(new PersistenceFacility(this, (MultiStreamDataSource) dataSource), header);
   }
 
   @Override
@@ -264,5 +263,55 @@ public class FilePerRootModelPersistence implements CoreComponent, ModelFactory,
     }
     result.put(GeneratableSModel.FILE, fileHash.toString(Character.MAX_RADIX));
     return result;
+  }
+
+  private static class PersistenceFacility extends LazyLoadFacility {
+    public PersistenceFacility(@NotNull FilePerRootModelPersistence modelFactory, @NotNull MultiStreamDataSource dataSource) {
+      super(modelFactory, dataSource);
+    }
+
+    @NotNull
+    @Override
+    public MultiStreamDataSource getSource() {
+      return (MultiStreamDataSource) super.getSource();
+    }
+
+    @Override
+    public String getModelHash() {
+      Map<String, String> genHashes = getGenerationHashes();
+      if (genHashes == null) {
+        // I/O problem, hash is not available
+        return null;
+      }
+
+      return genHashes.get(GeneratableSModel.FILE);
+    }
+
+    @Override
+    public Map<String, String> getGenerationHashes() {
+      return FilePerRootModelPersistence.getModelHashes(getSource());
+    }
+
+    @NotNull
+    @Override
+    public SModelHeader readHeader() throws ModelReadException {
+      return FilePerRootFormatUtil.loadDescriptor(getSource());
+    }
+
+    @NotNull
+    @Override
+    public ModelLoadResult readModel(@NotNull SModelHeader header, @NotNull ModelLoadingState state) throws ModelReadException {
+      return FilePerRootFormatUtil.readModel(header, getSource(), state);
+    }
+
+    @Override
+    public boolean doesSaveUpgradePersistence(@NotNull SModelHeader header) {
+      return FilePerRootFormatUtil.actualPersistenceVersion(header.getPersistenceVersion()) != header.getPersistenceVersion();
+    }
+
+    @Override
+    public void saveModel(@NotNull SModelHeader header, SModelData modelData) throws IOException {
+      FilePerRootFormatUtil.saveModel((jetbrains.mps.smodel.SModel) modelData, getSource(), header.getPersistenceVersion());
+    }
   }
 }
