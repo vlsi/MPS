@@ -35,6 +35,8 @@ import jetbrains.mps.smodel.UndoHelper;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.SNodeOperations;
 import jetbrains.mps.util.annotation.ToRemove;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.EditableSModel;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -52,7 +54,7 @@ import java.util.Set;
 /**
  * Evgeny Gryaznov, 1/25/11
  */
-public class GenerationFacade {
+public final class GenerationFacade {
 
   public static List<SNode/*MappingConfiguration*/> getOwnMappings(Generator generator) {
     List<SModel> list = generator.getOwnTemplateModels();
@@ -112,6 +114,63 @@ public class GenerationFacade {
     return SNodeOperations.isGeneratable(sm);
   }
 
+
+  private final Project myProject;
+  private final GenerationOptions myGenerationOptions;
+  private IGenerationHandler myGenerationHandler;
+  private TransientModelsProvider myTransientModelsProvider;
+  private IMessageHandler myMessageHandler = IMessageHandler.NULL_HANDLER;
+  private IOperationContext myInvocationContext;
+
+  private GenerationFacade(@NotNull Project project, @NotNull GenerationOptions generationOptions) {
+    myProject = project;
+    myGenerationOptions = generationOptions;
+  }
+
+  /**
+   * Optional handler to get notified about generation process
+   * FIXME public, new/better generation handler API (e.g. see fixme in IGenerationHandler), null handler
+   * @param generationHandler
+   * @return <code>this</code> for convenience
+   */
+  private GenerationFacade generationHandler(IGenerationHandler generationHandler) {
+    myGenerationHandler = generationHandler;
+    return this;
+  }
+
+  /**
+   * Register facility responsible for transient model handling
+   * FIXME public, decide whether is optional/required
+   * @param transientModelsProvider
+   * @return <code>this</code> for convenience
+   */
+  private GenerationFacade transients(TransientModelsProvider transientModelsProvider) {
+    myTransientModelsProvider = transientModelsProvider;
+    return this;
+  }
+
+  /**
+   * Optional destination of all messages reported by generator, if none specified (or <code>null</code>), messages get discarded.
+   * FIXME public
+   * @param messages destination of generator messages, or <code>null</code>
+   * @return <code>this</code> for convenience
+   */
+  private GenerationFacade messages(@Nullable IMessageHandler messages) {
+    myMessageHandler = messages == null ? IMessageHandler.NULL_HANDLER : messages;
+    return this;
+  }
+
+  /**
+   * DO NOT USE, IOperationContext is deprecated and will be dropped
+   * GenerationController uses IOC to access project and to pass IOC to IGenerationHandler. Once IGenerationHandler is gone, IOC would cease as well.
+   */
+  @Deprecated
+  @ToRemove(version = 3.2)
+  private GenerationFacade invocationContext(IOperationContext ctx) {
+    myInvocationContext = ctx;
+    return this;
+  }
+
   public static boolean generateModels(final Project p,
       final List<? extends SModel> inputModels,
       final IOperationContext invocationContext,
@@ -120,13 +179,27 @@ public class GenerationFacade {
       final IMessageHandler messages,
       final GenerationOptions options,
       final TransientModelsProvider tmProvider) {
+
+    final GenerationFacade generationFacade = new GenerationFacade(p, options);
+    generationFacade.generationHandler(generationHandler).messages(messages).transients(tmProvider);
+    generationFacade.invocationContext(invocationContext);
+    return  generationFacade.process(monitor, inputModels);
+  }
+
+  /**
+   * FIXME public, but shall decide about assigned tasks (list of models is too simple, perhaps a dedicated Task instead?) and the way result is reported -
+   * some container for GenerationResult shall replace boolean
+   * @param monitor report progress
+   * @param inputModels models to generate
+   * @return <code>true</code> to indicate generation success (what does constitute a success is, alas, undefined)
+   */
+  private boolean process(@NotNull final ProgressMonitor monitor, @NotNull final List<? extends SModel> inputModels) {
     final boolean[] result = new boolean[1];
-    final TransientModelsProvider transientModelsComponent = tmProvider;
 
     // Calls requireWrite at some point
-    transientModelsComponent.startGeneration(options.getNumberOfModelsToKeep());
+    myTransientModelsProvider.startGeneration(myGenerationOptions.getNumberOfModelsToKeep());
 
-    final GeneratorLoggerAdapter logger = new GeneratorLoggerAdapter(messages, options.isShowInfo(), options.isShowWarnings());
+    final GeneratorLoggerAdapter logger = new GeneratorLoggerAdapter(myMessageHandler, myGenerationOptions.isShowInfo(), myGenerationOptions.isShowWarnings());
 
     ModelAccess.instance().requireWrite(new Runnable() {
       @Override
@@ -136,13 +209,13 @@ public class GenerationFacade {
             ((EditableSModel) d).reloadFromSource();
             logger.info("Model " + d + " reloaded from disk.");
           }
-          transientModelsComponent.createModule(d.getModule());
+          myTransientModelsProvider.createModule(d.getModule());
         }
       }
     });
 
 
-    final GenerationController gc = new GenerationController(inputModels, transientModelsComponent, options, generationHandler, logger, invocationContext);
+    final GenerationController gc = new GenerationController(inputModels, myTransientModelsProvider, myGenerationOptions, myGenerationHandler, logger, myInvocationContext);
     ModelAccess.instance().requireRead(new Runnable() {
       @Override
       public void run() {
@@ -165,12 +238,13 @@ public class GenerationFacade {
       @Override
       public void run() {
         //fireAfterGeneration(inputModels, options, invocationContext);
-        transientModelsComponent.publishAll();
+        myTransientModelsProvider.publishAll();
         CleanupManager.getInstance().cleanup();
       }
     });
 
-    generationHandler.generationCompleted();
+    myGenerationHandler.generationCompleted();
     return result[0];
   }
+
 }
