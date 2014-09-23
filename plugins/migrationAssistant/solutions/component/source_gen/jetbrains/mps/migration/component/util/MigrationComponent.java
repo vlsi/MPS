@@ -12,6 +12,7 @@ import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.tempmodel.TempModuleOptions;
+import javax.swing.SwingUtilities;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.lang.migration.runtime.base.MigrationScript;
@@ -46,19 +47,27 @@ public class MigrationComponent extends AbstractProjectComponent implements Migr
 
   @Override
   public void initComponent() {
-    dataModuleOptions = TempModuleOptions.forDefaultModule();
-    ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+    SwingUtilities.invokeLater(new Runnable() {
       public void run() {
-        dataModule = dataModuleOptions.createModule();
+        dataModuleOptions = TempModuleOptions.forDefaultModule();
+        ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+          public void run() {
+            dataModule = dataModuleOptions.createModule();
+          }
+        });
       }
     });
   }
 
   @Override
   public void disposeComponent() {
-    ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+    SwingUtilities.invokeLater(new Runnable() {
       public void run() {
-        dataModuleOptions.disposeModule();
+        ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+          public void run() {
+            dataModuleOptions.disposeModule();
+          }
+        });
       }
     });
   }
