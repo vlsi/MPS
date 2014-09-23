@@ -17,8 +17,11 @@ package jetbrains.mps.generator;
 
 import jetbrains.mps.cleanup.CleanupManager;
 import jetbrains.mps.generator.generationTypes.IGenerationHandler;
+import jetbrains.mps.generator.impl.DefaultStreamManager;
+import jetbrains.mps.generator.impl.GenControllerContext;
 import jetbrains.mps.generator.impl.GenerationController;
 import jetbrains.mps.generator.impl.GeneratorLoggerAdapter;
+import jetbrains.mps.generator.impl.ModelStreamManager;
 import jetbrains.mps.generator.impl.dependencies.GenerationDependencies;
 import jetbrains.mps.generator.impl.dependencies.GenerationDependenciesCache;
 import jetbrains.mps.messages.IMessageHandler;
@@ -121,6 +124,7 @@ public final class GenerationFacade {
   private TransientModelsProvider myTransientModelsProvider;
   private IMessageHandler myMessageHandler = IMessageHandler.NULL_HANDLER;
   private IOperationContext myInvocationContext;
+  private ModelStreamManager.Provider myStreamProvider;
 
   private GenerationFacade(@NotNull Project project, @NotNull GenerationOptions generationOptions) {
     myProject = project;
@@ -171,6 +175,17 @@ public final class GenerationFacade {
     return this;
   }
 
+  /**
+   * Configure access to auxiliary data associated with model
+   * FIXME public
+   * @param streamProvider facility to keep model-associated data
+   * @return <code>this</code> for convenience
+   */
+  private GenerationFacade modelStreams(ModelStreamManager.Provider streamProvider) {
+    myStreamProvider = streamProvider;
+    return this;
+  }
+
   public static boolean generateModels(final Project p,
       final List<? extends SModel> inputModels,
       final IOperationContext invocationContext,
@@ -183,6 +198,7 @@ public final class GenerationFacade {
     final GenerationFacade generationFacade = new GenerationFacade(p, options);
     generationFacade.generationHandler(generationHandler).messages(messages).transients(tmProvider);
     generationFacade.invocationContext(invocationContext);
+    generationFacade.modelStreams(new DefaultStreamManager.Provider());
     return  generationFacade.process(monitor, inputModels);
   }
 
@@ -214,8 +230,8 @@ public final class GenerationFacade {
       }
     });
 
-
-    final GenerationController gc = new GenerationController(inputModels, myTransientModelsProvider, myGenerationOptions, myGenerationHandler, logger, myInvocationContext);
+    GenControllerContext ctx = new GenControllerContext(myProject, myGenerationOptions, myTransientModelsProvider, myStreamProvider);
+    final GenerationController gc = new GenerationController(inputModels, ctx, myGenerationHandler, logger, myInvocationContext);
     ModelAccess.instance().requireRead(new Runnable() {
       @Override
       public void run() {

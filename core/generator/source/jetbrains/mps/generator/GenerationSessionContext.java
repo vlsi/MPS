@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.generator;
 
+import jetbrains.mps.generator.impl.GenControllerContext;
 import jetbrains.mps.generator.impl.GenerationSessionLogger;
 import jetbrains.mps.generator.impl.RoleValidation;
 import jetbrains.mps.generator.impl.cache.QueryProviderCache;
@@ -52,16 +53,15 @@ public class GenerationSessionContext extends StandaloneMPSContext implements Ge
 
   private final SModel myOriginalInputModel;
 
-  private final Project myProject;
+  private final GenControllerContext myEnvironment;
   private final TransientModelsModule myTransientModule;
   private final GenerationPlan myGenerationPlan;
-  private final GenerationOptions myGenerationOptions;
   private final GenerationSessionLogger myLogger;
   private final RoleValidation myValidation;
   private final QueryProviderCache myQueryProviders;
   /*
    * GenerationSessionContext is not the perfect place for this tracer, as it's not really session object,
-   * but there's no more global context available right now.
+   * however it's per-model object, and generation session is per-model as well (thus, can't put it into e.g. GenControllerContext)
    */
   private final IPerformanceTracer myPerfTrace;
 
@@ -86,22 +86,19 @@ public class GenerationSessionContext extends StandaloneMPSContext implements Ge
   private final SNodeReference myFakeNameTopContextNode = new SNodePointer((SModelReference) null, null);
   private final Map<SNode, String> topToSuffix = new ConcurrentHashMap<SNode, String>();
 
-  public GenerationSessionContext(Project project,
-                                  GenerationOptions generationOptions,
+  public GenerationSessionContext(GenControllerContext environment, TransientModelsModule transientModule,
                                   GenerationSessionLogger logger,
-                                  TransientModelsModule transientModule,
                                   SModel inputModel,
                                   IPerformanceTracer performanceTracer) {
 
-    myProject = project;
-    myGenerationOptions = generationOptions;
+    myEnvironment = environment;
     myTransientModule = transientModule;
     myOriginalInputModel = inputModel;
     myPerfTrace = performanceTracer;
     myLogger = logger;
     myQueryProviders = new QueryProviderCache(logger); // for now, once per input model, however can span complete make phase
     myGenerationPlan = null;
-    myValidation = new RoleValidation(generationOptions.isShowBadChildWarning());
+    myValidation = new RoleValidation(environment.getOptions().isShowBadChildWarning());
     myNamedConcept = SConceptRepository.getInstance().getConcept(SNodeUtil.concept_INamedConcept);
     mySessionObjects = new ConcurrentHashMap<Object, Object>();
     myTransientObjects = new ConcurrentHashMap<Object, Object>();
@@ -111,8 +108,7 @@ public class GenerationSessionContext extends StandaloneMPSContext implements Ge
 
   // copy cons
   public GenerationSessionContext(@NotNull GenerationSessionContext prevContext, @NotNull GenerationPlan generationPlan) {
-    myProject = prevContext.myProject;
-    myGenerationOptions = prevContext.myGenerationOptions;
+    myEnvironment = prevContext.myEnvironment;
     myTransientModule = prevContext.myTransientModule;
     myOriginalInputModel = prevContext.myOriginalInputModel;
     myPerfTrace = prevContext.myPerfTrace;
@@ -132,8 +128,7 @@ public class GenerationSessionContext extends StandaloneMPSContext implements Ge
    * copy cons for each major step. Nothing but an odd way to clear step and transient objects
    */
   public GenerationSessionContext(@NotNull GenerationSessionContext prevContext) {
-    myProject = prevContext.myProject;
-    myGenerationOptions = prevContext.myGenerationOptions;
+    myEnvironment = prevContext.myEnvironment;
     myTransientModule = prevContext.myTransientModule;
     myOriginalInputModel = prevContext.myOriginalInputModel;
     myPerfTrace = prevContext.myPerfTrace;
@@ -165,7 +160,7 @@ public class GenerationSessionContext extends StandaloneMPSContext implements Ge
 
   @Override
   public Project getProject() {
-    return myProject;
+    return myEnvironment.getProject();
   }
 
   @NotNull
@@ -175,7 +170,7 @@ public class GenerationSessionContext extends StandaloneMPSContext implements Ge
   }
 
   public String toString() {
-    return String.format("%s: generating %s in project %s", getClass().getSimpleName(), myOriginalInputModel.getModelName(), myProject.getName());
+    return String.format("%s: generating %s in project %s", getClass().getSimpleName(), myOriginalInputModel.getModelName(), getProject().getName());
   }
 
   public void putTransientObject(Object key, Object o) {
@@ -348,15 +343,15 @@ public class GenerationSessionContext extends StandaloneMPSContext implements Ge
   }
 
   public Object getGenerationParameter(String name) {
-    if (myGenerationOptions.getParametersProvider() != null) {
-      final Map<String, Object> parameters = myGenerationOptions.getParametersProvider().getParameters(myOriginalInputModel);
+    if (getGenerationOptions().getParametersProvider() != null) {
+      final Map<String, Object> parameters = getGenerationOptions().getParametersProvider().getParameters(myOriginalInputModel);
       return parameters == null ? null : parameters.get(name);
     }
     return null;
   }
 
   public GenerationOptions getGenerationOptions() {
-    return myGenerationOptions;
+    return myEnvironment.getOptions();
   }
 
   public IGeneratorLogger getLogger() {

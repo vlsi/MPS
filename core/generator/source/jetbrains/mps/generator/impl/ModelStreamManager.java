@@ -59,6 +59,7 @@ public interface ModelStreamManager {
 
   /**
    * Knows where data associated with the model is kept.
+   * Likely there would be CoreComponent to access Provider implementation without need to pass it all way down to a client. TBD, though.
    * FIXME lifecycle? whether we get new or same stream manager each time. What about listeners added to MultiStreamDataSource returned from the manager?
    */
   interface Provider {
