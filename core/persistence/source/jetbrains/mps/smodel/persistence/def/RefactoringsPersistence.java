@@ -30,7 +30,6 @@ import org.apache.log4j.Logger;
 import org.jdom.Document;
 import org.jetbrains.mps.openapi.persistence.DataSource;
 import org.jetbrains.mps.openapi.persistence.MultiStreamDataSource;
-import org.jetbrains.mps.openapi.persistence.StreamDataSource;
 import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
 import org.xml.sax.SAXParseException;
@@ -55,7 +54,7 @@ public class RefactoringsPersistence {
   }
 
   public static void save(DataSource dataSource, StructureModificationLog log) {
-    if (dataSource instanceof StreamDataSource) {
+    if (dataSource instanceof FileDataSource) {
       save(((FileDataSource) dataSource).getFile(), log);
     } else if (dataSource instanceof MultiStreamDataSource) {
       save((MultiStreamDataSource) dataSource, log);
@@ -90,7 +89,7 @@ public class RefactoringsPersistence {
   }
 
   public static StructureModificationLog load(DataSource dataSource) {
-    if (dataSource instanceof StreamDataSource) {
+    if (dataSource instanceof FileDataSource) {
       return load(((FileDataSource) dataSource).getFile());
     }
     if (dataSource instanceof MultiStreamDataSource) {
