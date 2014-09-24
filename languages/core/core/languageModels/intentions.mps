@@ -359,7 +359,7 @@
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="1214179732619749211" nodeInfo="nn">
           <node role="expression" roleId="tpee.1068580123156" type="tpee.TernaryOperatorExpression" typeId="tpee.1163668896201" id="1214179732619749220" nodeInfo="nn">
             <node role="ifFalse" roleId="tpee.1163668934364" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="1214179732619749228" nodeInfo="nn">
-              <property name="value" nameId="tpee.1070475926801" value="Don't supress errors" />
+              <property name="value" nameId="tpee.1070475926801" value="Don't suppress errors" />
             </node>
             <node role="condition" roleId="tpee.1163668914799" type="tpee.EqualsExpression" typeId="tpee.1068580123152" id="1214179732619749224" nodeInfo="nn">
               <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.NullLiteral" typeId="tpee.1070534058343" id="1214179732619749227" nodeInfo="nn" />
