@@ -39,6 +39,7 @@ import jetbrains.mps.messages.IMessage;
 import jetbrains.mps.internal.make.runtime.java.FileProcessor;
 import jetbrains.mps.generator.impl.textgen.TextFacility;
 import jetbrains.mps.vfs.IFile;
+import jetbrains.mps.generator.impl.DefaultStreamManager;
 import jetbrains.mps.internal.make.runtime.util.FilesDelta;
 import jetbrains.mps.internal.make.runtime.util.StaleFilesCollector;
 import jetbrains.mps.internal.make.runtime.java.FileDeltaCollector;
@@ -48,6 +49,7 @@ import jetbrains.mps.generator.impl.dependencies.GenerationDependenciesCache;
 import jetbrains.mps.textgen.trace.TraceInfoCache;
 import jetbrains.mps.generator.ModelExports;
 import java.util.Iterator;
+import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.smodel.resources.TResource;
 import jetbrains.mps.generator.TransientModelsModule;
 import jetbrains.mps.cleanup.CleanupManager;
@@ -184,8 +186,8 @@ public class TextGen_Facet extends IFacet.Stub {
 
                     ModelAccess.instance().runReadAction(new Runnable() {
                       public void run() {
-                        final IFile javaOutputDir = Target_make.vars(pa.global()).pathToFile().invoke(TextGenUtil.getOutputDir(inputResource.model()).getPath());
-                        final IFile cacheOutputDir = Target_make.vars(pa.global()).pathToFile().invoke(TextGenUtil.getCachesDir(inputResource.model()).getPath());
+                        final IFile javaOutputDir = Target_make.vars(pa.global()).pathToFile().invoke(DefaultStreamManager.Provider.getOutputDir(inputResource.model()).getPath());
+                        final IFile cacheOutputDir = Target_make.vars(pa.global()).pathToFile().invoke(DefaultStreamManager.Provider.getCachesDir(inputResource.model()).getPath());
                         FilesDelta d1 = new FilesDelta(javaOutputDir);
                         FilesDelta d2 = new FilesDelta(cacheOutputDir);
                         StaleFilesCollector staleFileCollector = new StaleFilesCollector(javaOutputDir);
@@ -228,7 +230,7 @@ public class TextGen_Facet extends IFacet.Stub {
                   }
 
                   // flush stream handlers 
-                  if (!(TextGenUtil.runWriteTransaction(new Runnable() {
+                  if (!(FileSystem.getInstance().runWriteTransaction(new Runnable() {
                     public void run() {
                       for (FileProcessor fp : ListSequence.fromList(fileProcessors)) {
                         fp.flushChanges();
@@ -247,7 +249,7 @@ public class TextGen_Facet extends IFacet.Stub {
                   }
 
                   // clean up 
-                  if (!(TextGenUtil.runWriteTransaction(new Runnable() {
+                  if (!(FileSystem.getInstance().runWriteTransaction(new Runnable() {
                     public void run() {
                       ModelAccess.instance().requireWrite(new Runnable() {
                         public void run() {

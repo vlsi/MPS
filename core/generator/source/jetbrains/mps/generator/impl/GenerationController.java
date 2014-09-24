@@ -20,7 +20,6 @@ import jetbrains.mps.generator.GenerationOptions;
 import jetbrains.mps.generator.GenerationStatus;
 import jetbrains.mps.generator.GenerationTrace;
 import jetbrains.mps.generator.TransientModelsModule;
-import jetbrains.mps.generator.TransientModelsProvider;
 import jetbrains.mps.generator.generationTypes.IGenerationHandler;
 import jetbrains.mps.generator.impl.IGenerationTaskPool.ITaskPoolProvider;
 import jetbrains.mps.generator.impl.IGenerationTaskPool.SimpleGenerationTaskPool;
@@ -32,6 +31,7 @@ import jetbrains.mps.util.Pair;
 import jetbrains.mps.util.performance.IPerformanceTracer;
 import jetbrains.mps.util.performance.IPerformanceTracer.NullPerformanceTracer;
 import jetbrains.mps.util.performance.PerformanceTracer;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
@@ -42,8 +42,8 @@ import java.util.List;
 
 public class GenerationController implements ITaskPoolProvider {
 
-  private final TransientModelsProvider myTransientModelsProvider;
   private List<? extends SModel> myInputModels;
+  private final GenControllerContext myContext;
   private final IOperationContext myOperationContext;
   protected final IGenerationHandler myGenerationHandler;
   protected GeneratorLoggerAdapter myLogger;
@@ -52,14 +52,14 @@ public class GenerationController implements ITaskPoolProvider {
 
   protected List<Pair<SModule, List<SModel>>> myModuleSequence = new ArrayList<Pair<SModule, List<SModel>>>();
 
-  public GenerationController(List<? extends SModel> _inputModels, TransientModelsProvider transientModelsProvider, GenerationOptions options,
+  public GenerationController(List<? extends SModel> inputModels, @NotNull GenControllerContext context,
                 IGenerationHandler generationHandler, GeneratorLoggerAdapter generatorLogger, IOperationContext operationContext) {
-    myTransientModelsProvider = transientModelsProvider;
-    myInputModels = _inputModels;
+    myInputModels = inputModels;
+    myContext = context;
     myOperationContext = operationContext;
     myGenerationHandler = generationHandler;
     myLogger = generatorLogger;
-    myOptions = options;
+    myOptions = context.getOptions();
   }
 
   private void initMaps() {
@@ -168,8 +168,8 @@ public class GenerationController implements ITaskPoolProvider {
 
     final GenerationTrace genTrace = myOptions.isSaveTransientModels() ? new GenTraceImpl() : new GenerationTrace.NoOp();
 
-    final TransientModelsModule transientModule = myTransientModelsProvider.getModule(module);
-    final GenerationSession generationSession = new GenerationSession(inputModel, myOperationContext.getProject(), this, myLogger, transientModule, ttrace, myOptions, genTrace);
+    final TransientModelsModule transientModule = myContext.getTransientModelProvider().getModule(module);
+    final GenerationSession generationSession = new GenerationSession(inputModel, myContext, this, myLogger, transientModule, ttrace, genTrace);
 
     monitor.start(inputModel.getModelName(), 10);
     try {

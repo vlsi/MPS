@@ -15,6 +15,8 @@
  */
 package org.jetbrains.mps.openapi.persistence;
 
+import org.jetbrains.annotations.NotNull;
+
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
@@ -25,10 +27,25 @@ import java.io.OutputStream;
  */
 public interface MultiStreamDataSource extends DataSource {
 
+  @NotNull
   Iterable<String> getAvailableStreams();
 
+  /**
+   * Access named stream for reading. Caller is responsible to close the stream once done.
+   * @param name name of the stream to read
+   * @return stream to read from, never <code>null</code>
+   * @throws IOException if failed to open given named stream
+   */
+  @NotNull
   InputStream openInputStream(String name) throws IOException;
 
+  /**
+   * Access named stream for writing. Caller is responsible to close the stream once done.
+   * @param name name of the stream to write
+   * @return stream to write to, never <code>null</code>
+   * @throws IOException
+   */
+  @NotNull
   OutputStream openOutputStream(String name) throws IOException;
 
   boolean delete(String name);
