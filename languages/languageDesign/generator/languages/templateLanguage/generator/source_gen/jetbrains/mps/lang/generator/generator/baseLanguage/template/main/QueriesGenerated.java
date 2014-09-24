@@ -29,6 +29,7 @@ import jetbrains.mps.smodel.SNodeId;
 import jetbrains.mps.lang.pattern.behavior.PatternVarsUtil;
 import jetbrains.mps.lang.generator.behavior.VarMacro_Behavior;
 import java.util.List;
+import jetbrains.mps.generator.impl.CrossModelUtil;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
 import jetbrains.mps.baseLanguage.behavior.ClassConcept_Behavior;
 import jetbrains.mps.generator.template.IfMacroContext;
@@ -868,10 +869,10 @@ public class QueriesGenerated {
     return VarMacro_Behavior.call_getName_2721957369897649366(SLinkOperations.getTarget(_context.getNode(), "varmacro", false));
   }
   public static Object propertyMacro_GetPropertyValue_9109410030988164098(final PropertyMacroContext _context) {
-    return "marshal_" + _context.getNode().getNodeId().toString();
+    return CrossModelUtil.getMarshalFunctionName(SNodeOperations.getParent(_context.getNode()));
   }
   public static Object propertyMacro_GetPropertyValue_9109410030988186352(final PropertyMacroContext _context) {
-    return "unmarshal_" + _context.getNode().getNodeId().toString();
+    return CrossModelUtil.getUnmarshalFunctionName(SNodeOperations.getParent(_context.getNode()));
   }
   public static Object referenceMacro_GetReferent_1071051212912102696(final ReferenceMacroContext _context) {
     return TemplateFunctionMethodName.baseMappingRule_Condition(SLinkOperations.getTarget(SNodeOperations.cast(_context.getNode(), "jetbrains.mps.lang.generator.structure.PatternReduction_MappingRule"), "conditionFunction", true));

@@ -21,6 +21,7 @@ import jetbrains.mps.generator.generationTypes.StreamHandler;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import org.jdom.Document;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.model.EditableSModel;
 import org.jetbrains.mps.openapi.model.SModel;
 
 /**
@@ -48,9 +49,9 @@ public class ModelExports {
       if (exportsFacility == null) {
         return;
       }
+      // FIXME shall use StreamHandler
       final SModel exports = exportsFacility.getExports();
-      Document d = ModelPersistence.saveModel(((SModelBase) exports).getSModel());
-      handler.saveStream("exports", d.getRootElement());
+      ((EditableSModel) exports).save();
     }
   }
 }

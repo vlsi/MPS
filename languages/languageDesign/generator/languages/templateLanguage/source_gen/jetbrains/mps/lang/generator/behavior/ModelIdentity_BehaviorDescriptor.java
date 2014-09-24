@@ -4,7 +4,8 @@ package jetbrains.mps.lang.generator.behavior;
 
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.generator.TransientModelsModule;
 
 public interface ModelIdentity_BehaviorDescriptor {
-  public SModel virtual_create_9032177546944490023(SNode thisNode);
+  public SModel virtual_create_9032177546944490023(SNode thisNode, TransientModelsModule module);
 }

@@ -12,6 +12,9 @@ public class TrivialNodeId_BehaviorDescriptor extends BaseConcept_BehaviorDescri
   public SNode virtual_instantiate_9032177546941558391(SNode thisNode, SModel model) {
     return TrivialNodeId_Behavior.virtual_instantiate_9032177546941558391(thisNode, model);
   }
+  public boolean virtual_match_1662555581307437492(SNode thisNode, SNode n) {
+    return TrivialNodeId_Behavior.virtual_match_1662555581307437492(thisNode, n);
+  }
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.generator.structure.TrivialNodeId";

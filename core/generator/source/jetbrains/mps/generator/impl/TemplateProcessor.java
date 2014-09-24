@@ -238,7 +238,7 @@ public final class TemplateProcessor implements ITemplateProcessor {
         GenerationCanceledException {
       final List<SNode> value = nextMacro(templateContext);
       final GenerationSessionContext ctx = myTemplateProcessor.getGenerator().getGeneratorSessionContext();
-      new ExportsVault(ctx).record(templateContext, macro.getReferenceTarget("label"), value);
+      ctx.getExports().record(templateContext, macro.getReferenceTarget("label"), value);
       return value;
     }
   }

@@ -4,12 +4,18 @@ package jetbrains.mps.lang.generator.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.generator.TransientModelsModule;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import org.jetbrains.mps.openapi.model.SModelReference;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
+import jetbrains.mps.smodel.SModelId;
 
 public class TrivialModelId_Behavior {
   public static void init(SNode thisNode) {
   }
-  public static SModel virtual_create_9032177546944490023(SNode thisNode) {
-    // FIXME 
-    return null;
+  public static SModel virtual_create_9032177546944490023(SNode thisNode, TransientModelsModule module) {
+    String modelName = SPropertyOperations.getString(thisNode, "modelName") + "@proxy";
+    SModelReference mr = PersistenceFacade.getInstance().createModelReference(null, SModelId.generate(), modelName);
+    return module.createTransientModel(mr);
   }
 }

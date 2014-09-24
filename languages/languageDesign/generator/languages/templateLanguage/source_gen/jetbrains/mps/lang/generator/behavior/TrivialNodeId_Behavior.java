@@ -18,4 +18,7 @@ public class TrivialNodeId_Behavior {
     // want to be minimalistic, yet not adding new API (#createNode(SConcept) is way too tempting) 
     return SModelUtil_new.instantiateConceptDeclaration(SPropertyOperations.getString(thisNode, "conceptId"), model, identity, false);
   }
+  public static boolean virtual_match_1662555581307437492(SNode thisNode, SNode n) {
+    return n.getConcept().getQualifiedName().equals(SPropertyOperations.getString(thisNode, "conceptId")) && n.getNodeId().toString().equals(SPropertyOperations.getString(thisNode, "nodeId"));
+  }
 }

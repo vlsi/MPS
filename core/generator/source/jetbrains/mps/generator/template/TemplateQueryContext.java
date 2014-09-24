@@ -15,22 +15,21 @@
  */
 package jetbrains.mps.generator.template;
 
-import jetbrains.mps.generator.crossmodel.ExportLabelContext;
 import jetbrains.mps.generator.impl.DefaultTemplateContext;
 import jetbrains.mps.generator.impl.ExportsVault;
-import jetbrains.mps.generator.impl.ExportsVault.ExportEntry;
 import jetbrains.mps.generator.impl.GeneratorUtil;
 import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.project.Project;
+import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.textgen.trace.TracingUtil;
 import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
-import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.smodel.*;
 import org.jetbrains.mps.openapi.module.SModule;
 
 import java.util.Collection;
@@ -231,15 +230,15 @@ public class TemplateQueryContext {
 
 
   public SNode getOutputNodeProxy(SNode inputNode, String exportLabelName) {
-    final ExportsVault exportsVault = new ExportsVault(myGenerator.getGeneratorSessionContext());
-    final Collection<ExportEntry> exports = exportsVault.find(exportLabelName, inputNode);
-    if (exports.isEmpty()) {
+    final ExportsVault exportsVault = myGenerator.getGeneratorSessionContext().getExports();
+    final Collection<SNode> exportProxies = exportsVault.find(exportLabelName, inputNode);
+    if (exportProxies.isEmpty()) {
       return null;
     }
-    if (exports.size() > 1) {
-      showErrorMessage(inputNode, String.format("There are %d known exports with label %s for input node %s", exports.size(), exportLabelName, inputNode));
+    if (exportProxies.size() > 1) {
+      showErrorMessage(inputNode, String.format("There are %d known exports with label %s for input node %s", exportProxies.size(), exportLabelName, inputNode));
     }
-    return exportsVault.instantiateOutputProxy(exports.iterator().next(), inputNode);
+    return exportProxies.iterator().next();
   }
 
   public void showInformationMessage(SNode node, String message) {

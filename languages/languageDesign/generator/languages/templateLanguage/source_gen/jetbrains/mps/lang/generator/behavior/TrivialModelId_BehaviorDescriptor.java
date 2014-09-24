@@ -5,12 +5,13 @@ package jetbrains.mps.lang.generator.behavior;
 import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.generator.TransientModelsModule;
 
 public class TrivialModelId_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements ModelIdentity_BehaviorDescriptor {
   public TrivialModelId_BehaviorDescriptor() {
   }
-  public SModel virtual_create_9032177546944490023(SNode thisNode) {
-    return TrivialModelId_Behavior.virtual_create_9032177546944490023(thisNode);
+  public SModel virtual_create_9032177546944490023(SNode thisNode, TransientModelsModule module) {
+    return TrivialModelId_Behavior.virtual_create_9032177546944490023(thisNode, module);
   }
   @Override
   public String getConceptFqName() {

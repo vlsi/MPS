@@ -11,6 +11,11 @@ import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import org.jetbrains.mps.openapi.language.SConceptRepository;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.generator.TransientModelsModule;
+import java.util.List;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public final class CrossModelUtil {
   public SNode newEntry(ExportLabelContext labelContext, SNode exportLabel, SModel exports, SModel outputModel) {
@@ -22,10 +27,32 @@ public final class CrossModelUtil {
     SLinkOperations.setTarget(rv, "label", exportLabel, false);
     return rv;
   }
-  public SModel newProxyModel(SNode exportEntry) {
-    return BehaviorReflection.invokeVirtual((Class<SModel>) ((Class) Object.class), SLinkOperations.getTarget(exportEntry, "outputModel", true), "virtual_create_9032177546944490023", new Object[]{});
+  public SModel newProxyModel(TransientModelsModule module, SNode exportEntry) {
+    return BehaviorReflection.invokeVirtual((Class<SModel>) ((Class) Object.class), SLinkOperations.getTarget(exportEntry, "outputModel", true), "virtual_create_9032177546944490023", new Object[]{module});
   }
   public SNode newProxyNode(SNode exportEntry, SModel proxyModel) {
+    // we record actual concept of output node, and use it instead of ExportLabel.outputKind, which 
+    // will be still there for label validation/code completion purposes 
     return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SLinkOperations.getTarget(exportEntry, "outputNode", true), "virtual_instantiate_9032177546941558391", new Object[]{proxyModel});
   }
+  public List<SNode> find(SModel exports, final String exportLabelName, final SNode inputNode) {
+    return ListSequence.fromList(SModelOperations.getNodes(exports, "jetbrains.mps.lang.generator.structure.ExportEntry")).where(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return exportLabelName.equals(SPropertyOperations.getString(SLinkOperations.getTarget(it, "label", false), "name")) && BehaviorReflection.invokeVirtual(Boolean.TYPE, SLinkOperations.getTarget(it, "inputNode", true), "virtual_match_1662555581307437492", new Object[]{inputNode});
+      }
+    }).toListSequence();
+  }
+  public static String getMarshalFunctionName(SNode exportLabel) {
+    return "marshal_" + SLinkOperations.getTarget(exportLabel, "marshal", true).getNodeId().toString();
+  }
+  public static String getUnmarshalFunctionName(SNode exportLabel) {
+    return "unmarshal_" + SLinkOperations.getTarget(exportLabel, "unmarshal", true).getNodeId().toString();
+  }
+  public static String getUnmarshalFunctionNameFromEntry(SNode exportEntry) {
+    return getUnmarshalFunctionName(SLinkOperations.getTarget(exportEntry, "label", false));
+  }
+  public static SNode dataKept(SNode exportEntry) {
+    return SLinkOperations.getTarget(exportEntry, "dataKeeper", true);
+  }
+
 }

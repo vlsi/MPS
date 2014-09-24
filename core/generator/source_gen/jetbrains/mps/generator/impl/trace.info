@@ -1054,37 +1054,79 @@
   </root>
   <root nodeRef="r:ab837574-aa54-4b18-9762-b783ef089263(jetbrains.mps.generator.impl)/9032177546941623004">
     <file name="CrossModelUtil.java">
-      <node id="6255346656298756732" at="16,113,17,115" concept="9" />
-      <node id="6255346656298756738" at="17,115,18,373" concept="3" />
-      <node id="6255346656298756748" at="18,373,19,382" concept="3" />
-      <node id="6255346656298756758" at="19,382,20,384" concept="3" />
-      <node id="6255346656298756768" at="20,384,21,80" concept="3" />
-      <node id="6255346656298756774" at="21,80,22,63" concept="3" />
-      <node id="6255346656298756780" at="22,63,23,14" concept="10" />
-      <node id="9032177546944486740" at="25,50,26,199" concept="10" />
-      <node id="9032177546944484153" at="28,67,29,212" concept="10" />
-      <node id="9032177546944483748" at="25,0,28,0" concept="8" trace="newProxyModel#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SModel;" />
-      <node id="9032177546944483919" at="28,0,31,0" concept="8" trace="newProxyNode#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SModel;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <node id="6255346656298749917" at="16,0,25,0" concept="8" trace="newEntry#(Ljetbrains/mps/generator/crossmodel/ExportLabelContext;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SModel;Lorg/jetbrains/mps/openapi/model/SModel;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <scope id="9032177546944483751" at="25,50,26,199" />
-      <scope id="9032177546944483922" at="28,67,29,212" />
-      <scope id="9032177546944483748" at="25,0,28,0">
-        <var name="exportEntry" id="9032177546944483868" />
+      <node id="6255346656298756732" at="21,113,22,115" concept="9" />
+      <node id="6255346656298756738" at="22,115,23,373" concept="3" />
+      <node id="6255346656298756748" at="23,373,24,382" concept="3" />
+      <node id="6255346656298756758" at="24,382,25,384" concept="3" />
+      <node id="6255346656298756768" at="25,384,26,80" concept="3" />
+      <node id="6255346656298756774" at="26,80,27,63" concept="3" />
+      <node id="6255346656298756780" at="27,63,28,14" concept="10" />
+      <node id="9023795155764661852" at="30,80,31,205" concept="10" />
+      <node id="5152295715551700385" at="33,67,34,100" concept="11" />
+      <node id="5152295715551700620" at="34,100,35,73" concept="11" />
+      <node id="9032177546944484153" at="35,73,36,212" concept="10" />
+      <node id="1662555581307390030" at="40,39,41,286" concept="10" />
+      <node id="5141058586331759538" at="45,66,46,103" concept="10" />
+      <node id="5141058586331782244" at="48,68,49,107" concept="10" />
+      <node id="5141058586331793039" at="51,77,52,92" concept="10" />
+      <node id="5152295715551707703" at="54,51,55,70" concept="10" />
+      <node id="9023795155764661850" at="30,0,33,0" concept="8" trace="newProxyModel#(Ljetbrains/mps/generator/TransientModelsModule;Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SModel;" />
+      <node id="1662555581307389418" at="40,0,43,0" concept="8" trace="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+      <node id="5141058586331758670" at="45,0,48,0" concept="14" trace="getMarshalFunctionName#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
+      <node id="5141058586331758932" at="48,0,51,0" concept="14" trace="getUnmarshalFunctionName#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
+      <node id="5141058586331759194" at="51,0,54,0" concept="14" trace="getUnmarshalFunctionNameFromEntry#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
+      <node id="5152295715551703548" at="54,0,57,0" concept="14" trace="dataKept#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <node id="9032177546944483919" at="33,0,38,0" concept="8" trace="newProxyNode#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SModel;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <node id="1662555581307374287" at="38,96,43,24" concept="10" />
+      <node id="1662555581307363596" at="38,0,45,0" concept="8" trace="find#(Lorg/jetbrains/mps/openapi/model/SModel;Ljava/lang/String;Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/util/List;" />
+      <node id="6255346656298749917" at="21,0,30,0" concept="8" trace="newEntry#(Ljetbrains/mps/generator/crossmodel/ExportLabelContext;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SModel;Lorg/jetbrains/mps/openapi/model/SModel;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <scope id="9023795155764661851" at="30,80,31,205" />
+      <scope id="1662555581307389419" at="40,39,41,286" />
+      <scope id="5141058586331755145" at="45,66,46,103" />
+      <scope id="5141058586331749333" at="48,68,49,107" />
+      <scope id="5141058586331759195" at="51,77,52,92" />
+      <scope id="5152295715551699906" at="54,51,55,70" />
+      <scope id="9023795155764661850" at="30,0,33,0">
+        <var name="exportEntry" id="9023795155764661860" />
+        <var name="module" id="9023795155764665138" />
       </scope>
-      <scope id="9032177546944483919" at="28,0,31,0">
+      <scope id="9032177546944483922" at="33,67,36,212" />
+      <scope id="1662555581307389418" at="40,0,43,0">
+        <var name="it" id="1662555581307389418" />
+      </scope>
+      <scope id="5141058586331758670" at="45,0,48,0">
+        <var name="exportLabel" id="5141058586331755569" />
+      </scope>
+      <scope id="5141058586331758932" at="48,0,51,0">
+        <var name="exportLabel" id="5141058586331754838" />
+      </scope>
+      <scope id="5141058586331759194" at="51,0,54,0">
+        <var name="exportEntry" id="5141058586331759196" />
+      </scope>
+      <scope id="5152295715551703548" at="54,0,57,0">
+        <var name="exportEntry" id="5152295715551704935" />
+      </scope>
+      <scope id="9032177546944483919" at="33,0,38,0">
         <var name="exportEntry" id="9032177546944484043" />
         <var name="proxyModel" id="9032177546944484091" />
       </scope>
-      <scope id="6255346656298749921" at="16,113,23,14">
+      <scope id="1662555581307363600" at="38,96,43,24" />
+      <scope id="6255346656298749921" at="21,113,28,14">
         <var name="rv" id="6255346656298756733" />
       </scope>
-      <scope id="6255346656298749917" at="16,0,25,0">
+      <scope id="1662555581307363596" at="38,0,45,0">
+        <var name="exportLabelName" id="1662555581307371503" />
+        <var name="exports" id="1662555581307374211" />
+        <var name="inputNode" id="1662555581307371547" />
+      </scope>
+      <scope id="6255346656298749917" at="21,0,30,0">
         <var name="exportLabel" id="6255346656298755844" />
         <var name="exports" id="6255346656298755895" />
         <var name="labelContext" id="6255346656298755458" />
         <var name="outputModel" id="6255346656298755949" />
       </scope>
-      <unit id="9032177546941623004" at="15,0,32,0" name="jetbrains.mps.generator.impl.CrossModelUtil" />
+      <unit id="1662555581307389418" at="39,133,43,5" name="jetbrains.mps.generator.impl.CrossModelUtil$1" />
+      <unit id="9032177546941623004" at="20,0,59,0" name="jetbrains.mps.generator.impl.CrossModelUtil" />
     </file>
   </root>
 </debug-info>
