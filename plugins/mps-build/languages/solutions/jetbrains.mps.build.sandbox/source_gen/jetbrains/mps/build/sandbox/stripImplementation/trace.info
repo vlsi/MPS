@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <root nodeRef="r:02e26212-728e-46cb-bbf3-c544990b3781(jetbrains.mps.build.sandbox.stripImplementation)/3389822811992714254">
-    <unitInfo nodeId="3389822811992714254" fileName="buildPlugin.xml" startLine="1" startPosition="0" endLine="392" endPosition="10" unitName="jetbrains.mps.build.sandbox.stripImplementation.buildPlugin" />
+    <unitInfo nodeId="3389822811992714254" fileName="buildPlugin.xml" startLine="1" startPosition="0" endLine="394" endPosition="10" unitName="jetbrains.mps.build.sandbox.stripImplementation.buildPlugin" />
   </root>
 </debugInfo>
 
