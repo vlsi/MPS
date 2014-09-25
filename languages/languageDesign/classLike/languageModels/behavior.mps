@@ -8,8 +8,8 @@
     <lang id="3a13115c-633c-4c5c-bbcc-75c4219e9555" name="jetbrains.mps.lang.quotation" />
     <lang id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd" name="jetbrains.mps.lang.actions" />
     <lang id="b401a680-8325-4110-8fd3-84331ff25bef" name="jetbrains.mps.lang.generator" />
-    <lang id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" />
     <lang id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" />
+    <lang id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" />
     <lang id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" />
     <lang id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" />
     <lang id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core" />
@@ -27,92 +27,94 @@
     <concept id="7866978e-a0f0-4cc7-81bc-4d213d9375e1/1172420572800" name="SConceptType" />
     <concept id="7866978e-a0f0-4cc7-81bc-4d213d9375e1/1139621453865" name="Node_IsInstanceOfOperation" />
     <concept id="7866978e-a0f0-4cc7-81bc-4d213d9375e1/1138056143562" name="SLinkAccess" />
-    <concept id="7866978e-a0f0-4cc7-81bc-4d213d9375e1/1143234257716" name="Node_GetModelOperation" />
-    <concept id="83888646-71ce-4f1c-9c53-c54016f6ad4f/1165525191778" name="GetFirstOperation" />
     <concept id="3a13115c-633c-4c5c-bbcc-75c4219e9555/5455284157993911097" name="NodeBuilderInitPart" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1144226303539" name="ForeachStatement" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068581242863" name="LocalVariableDeclaration" />
+    <concept id="7866978e-a0f0-4cc7-81bc-4d213d9375e1/1172323065820" name="Node_GetConceptOperation" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068581242864" name="LocalVariableDeclarationStatement" />
-    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1204053956946" name="IMethodCall" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1070534760951" name="ArrayType" />
-    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1164879751025" name="TryCatchStatement" />
     <concept id="7866978e-a0f0-4cc7-81bc-4d213d9375e1/1171407110247" name="Node_GetAncestorOperation" />
-    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1070534644030" name="BooleanType" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1107535904670" name="ClassifierType" />
     <concept id="7866978e-a0f0-4cc7-81bc-4d213d9375e1/1179409122411" name="Node_ConceptMethodCall" />
-    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1163668896201" name="TernaryOperatorExpression" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/4836112446988635817" name="UndefinedType" />
+    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1163668896201" name="TernaryOperatorExpression" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068581242878" name="ReturnStatement" />
-    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1070534370425" name="IntegerType" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068581242875" name="PlusExpression" />
-    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123152" name="EqualsExpression" />
     <concept id="7866978e-a0f0-4cc7-81bc-4d213d9375e1/1138411891628" name="SNodeOperation" />
-    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1197027756228" name="DotExpression" />
+    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123152" name="EqualsExpression" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1081773326031" name="BinaryOperation" />
-    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068581517677" name="VoidType" />
+    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1197027756228" name="DotExpression" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1202948039474" name="InstanceMethodCallOperation" />
     <concept id="83888646-71ce-4f1c-9c53-c54016f6ad4f/1204796164442" name="InternalSequenceOperation" />
     <concept id="af65afd8-f0dd-4942-87d9-63a55f2a9db1/1225194240794" name="ConceptBehavior" />
-    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1145552977093" name="GenericNewExpression" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123137" name="BooleanConstant" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123136" name="StatementList" />
-    <concept id="83888646-71ce-4f1c-9c53-c54016f6ad4f/1203518072036" name="SmartClosureParameterDeclaration" />
-    <concept id="7866978e-a0f0-4cc7-81bc-4d213d9375e1/4693937538533521280" name="OfConceptOperation" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123132" name="BaseMethodDeclaration" />
-    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1154032098014" name="AbstractLoopStatement" />
-    <concept id="ceab5195-25ea-4f22-9b92-103b95ca8c0c/3364660638048049750" name="PropertyAttribute" />
-    <concept id="7866978e-a0f0-4cc7-81bc-4d213d9375e1/1138056022639" name="SPropertyAccess" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1206060495898" name="ElsifClause" />
-    <concept id="7866978e-a0f0-4cc7-81bc-4d213d9375e1/1180636770613" name="SNodeCreator" />
     <concept id="7866978e-a0f0-4cc7-81bc-4d213d9375e1/1138055754698" name="SNodeType" />
-    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1070534058343" name="NullLiteral" />
     <concept id="af65afd8-f0dd-4942-87d9-63a55f2a9db1/1225194472830" name="ConceptMethodDeclaration" />
-    <concept id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd/7776141288922801652" name="NF_Concept_NewInstance" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1146644602865" name="PublicVisibility" />
-    <concept id="7866978e-a0f0-4cc7-81bc-4d213d9375e1/1172424058054" name="ConceptRefExpression" />
+    <concept id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd/7776141288922801652" name="NF_Concept_NewInstance" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068431474542" name="VariableDeclaration" />
+    <concept id="7866978e-a0f0-4cc7-81bc-4d213d9375e1/1172424058054" name="ConceptRefExpression" />
     <concept id="af65afd8-f0dd-4942-87d9-63a55f2a9db1/1225194413805" name="ConceptConstructorDeclaration" />
-    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1225271177708" name="StringType" />
-    <concept id="7866978e-a0f0-4cc7-81bc-4d213d9375e1/1172008320231" name="Node_IsNotNullOperation" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1178549954367" name="IVisible" />
+    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1137021947720" name="ConceptFunction" />
+    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1164903280175" name="CatchClause" />
+    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/4972933694980447171" name="BaseVariableDeclaration" />
+    <concept id="7866978e-a0f0-4cc7-81bc-4d213d9375e1/1144146199828" name="Node_CopyOperation" />
+    <concept id="7866978e-a0f0-4cc7-81bc-4d213d9375e1/1177026924588" name="RefConcept_Reference" />
+    <concept id="3a13115c-633c-4c5c-bbcc-75c4219e9555/1196350785110" name="AbstractAntiquotation" />
+    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1164991038168" name="ThrowStatement" />
+    <concept id="3a13115c-633c-4c5c-bbcc-75c4219e9555/1196350785113" name="Quotation" />
+    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1144230876926" name="AbstractForStatement" />
+    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1079359253375" name="ParenthesizedExpression" />
+    <concept id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd/5979988948250981289" name="SNodeCreatorAndInitializer" />
+    <concept id="3a13115c-633c-4c5c-bbcc-75c4219e9555/5455284157993911077" name="NodeBuilderInitProperty" />
+    <concept id="7866978e-a0f0-4cc7-81bc-4d213d9375e1/1143234257716" name="Node_GetModelOperation" />
+    <concept id="83888646-71ce-4f1c-9c53-c54016f6ad4f/1165525191778" name="GetFirstOperation" />
+    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1204053956946" name="IMethodCall" />
+    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1164879751025" name="TryCatchStatement" />
+    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1070534644030" name="BooleanType" />
+    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1070534370425" name="IntegerType" />
+    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068581517677" name="VoidType" />
+    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1145552977093" name="GenericNewExpression" />
+    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1154032098014" name="AbstractLoopStatement" />
+    <concept id="7866978e-a0f0-4cc7-81bc-4d213d9375e1/4693937538533521280" name="OfConceptOperation" />
+    <concept id="83888646-71ce-4f1c-9c53-c54016f6ad4f/1203518072036" name="SmartClosureParameterDeclaration" />
+    <concept id="7866978e-a0f0-4cc7-81bc-4d213d9375e1/1138056022639" name="SPropertyAccess" />
+    <concept id="ceab5195-25ea-4f22-9b92-103b95ca8c0c/3364660638048049750" name="PropertyAttribute" />
+    <concept id="7866978e-a0f0-4cc7-81bc-4d213d9375e1/1180636770613" name="SNodeCreator" />
+    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1070534058343" name="NullLiteral" />
+    <concept id="7866978e-a0f0-4cc7-81bc-4d213d9375e1/1172008320231" name="Node_IsNotNullOperation" />
+    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1225271177708" name="StringType" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1081236700937" name="StaticMethodCall" />
     <concept id="af65afd8-f0dd-4942-87d9-63a55f2a9db1/1225194628440" name="SuperNodeExpression" />
     <concept id="7866978e-a0f0-4cc7-81bc-4d213d9375e1/1144101972840" name="OperationParm_Concept" />
     <concept id="83888646-71ce-4f1c-9c53-c54016f6ad4f/1160612413312" name="AddElementOperation" />
-    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1137021947720" name="ConceptFunction" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1070534934090" name="CastExpression" />
-    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1212685548494" name="ClassCreator" />
-    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068498886294" name="AssignmentExpression" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123155" name="ExpressionStatement" />
-    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123157" name="Statement" />
-    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1215693861676" name="BaseAssignmentExpression" />
+    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068498886294" name="AssignmentExpression" />
+    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1212685548494" name="ClassCreator" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068498886296" name="VariableReference" />
+    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1215693861676" name="BaseAssignmentExpression" />
+    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123157" name="Statement" />
     <concept id="83888646-71ce-4f1c-9c53-c54016f6ad4f/1176501494711" name="IsNotEmptyOperation" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123159" name="IfStatement" />
     <concept id="af65afd8-f0dd-4942-87d9-63a55f2a9db1/6496299201655527393" name="LocalBehaviorMethodCall" />
-    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1164903280175" name="CatchClause" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068498886292" name="ParameterDeclaration" />
-    <concept id="7866978e-a0f0-4cc7-81bc-4d213d9375e1/1144146199828" name="Node_CopyOperation" />
     <concept id="fd392034-7849-419d-9071-12563d152375/1199569711397" name="ClosureLiteral" />
-    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/4972933694980447171" name="BaseVariableDeclaration" />
-    <concept id="7866978e-a0f0-4cc7-81bc-4d213d9375e1/1177026924588" name="RefConcept_Reference" />
-    <concept id="3a13115c-633c-4c5c-bbcc-75c4219e9555/1196350785110" name="AbstractAntiquotation" />
-    <concept id="83888646-71ce-4f1c-9c53-c54016f6ad4f/1160666733551" name="AddAllElementsOperation" />
     <concept id="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468" name="INamedConcept" />
-    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1164991038168" name="ThrowStatement" />
-    <concept id="3a13115c-633c-4c5c-bbcc-75c4219e9555/1196350785113" name="Quotation" />
-    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1079359253375" name="ParenthesizedExpression" />
-    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1144230876926" name="AbstractForStatement" />
+    <concept id="83888646-71ce-4f1c-9c53-c54016f6ad4f/1160666733551" name="AddAllElementsOperation" />
     <concept id="3a13115c-633c-4c5c-bbcc-75c4219e9555/8182547171709752110" name="NodeBuilderExpression" />
     <concept id="7866978e-a0f0-4cc7-81bc-4d213d9375e1/1138056282393" name="SLinkListAccess" />
-    <concept id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd/5979988948250981289" name="SNodeCreatorAndInitializer" />
+    <concept id="7866978e-a0f0-4cc7-81bc-4d213d9375e1/1172326502327" name="Concept_IsExactlyOperation" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1070475926800" name="StringLiteral" />
-    <concept id="3a13115c-633c-4c5c-bbcc-75c4219e9555/5455284157994012186" name="NodeBuilderInitLink" />
     <concept id="af65afd8-f0dd-4942-87d9-63a55f2a9db1/1225194691553" name="ThisNodeExpression" />
-    <concept id="3a13115c-633c-4c5c-bbcc-75c4219e9555/5455284157993911077" name="NodeBuilderInitProperty" />
+    <concept id="3a13115c-633c-4c5c-bbcc-75c4219e9555/5455284157994012186" name="NodeBuilderInitLink" />
     <concept id="83888646-71ce-4f1c-9c53-c54016f6ad4f/1202128969694" name="SelectOperation" />
-    <concept id="3a13115c-633c-4c5c-bbcc-75c4219e9555/1196866233735" name="PropertyAntiquotation" />
     <concept id="7866978e-a0f0-4cc7-81bc-4d213d9375e1/1140137987495" name="SNodeTypeCastExpression" />
+    <concept id="3a13115c-633c-4c5c-bbcc-75c4219e9555/1196866233735" name="PropertyAntiquotation" />
     <concept id="3a13115c-633c-4c5c-bbcc-75c4219e9555/5455284157993863840" name="NodeBuilderNode" />
     <concept id="3a13115c-633c-4c5c-bbcc-75c4219e9555/5455284157993863837" name="NodeBuilder" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068580320020" name="IntegerConstant" />
@@ -189,6 +191,7 @@
     <childRole id="fd392034-7849-419d-9071-12563d152375/1199569711397/1199569916463" name="body" />
     <childRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1070534934090/1070534934092" name="expression" />
     <childRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123159/1068580123161" name="ifTrue" />
+    <childRole id="7866978e-a0f0-4cc7-81bc-4d213d9375e1/1172326502327/1206733650006" name="conceptArgument" />
     <childRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1070534934090/1070534934091" name="type" />
     <childRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123159/1068580123160" name="condition" />
     <childRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1154032098014/1154032183016" name="body" />
@@ -214,8 +217,8 @@
     <use id="3a13115c-633c-4c5c-bbcc-75c4219e9555" version="0" index="le35" />
     <use id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd" version="0" index="abtv" />
     <use id="b401a680-8325-4110-8fd3-84331ff25bef" version="-1" index="7gwc" />
-    <use id="fd392034-7849-419d-9071-12563d152375" version="0" implicit="true" index="cakq" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" version="0" implicit="true" index="vg0i" />
+    <use id="fd392034-7849-419d-9071-12563d152375" version="0" implicit="true" index="cakq" />
     <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" version="0" implicit="true" index="4ia1" />
     <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" version="0" implicit="true" index="j0ph" />
     <use id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" version="0" implicit="true" index="asn4" />
@@ -1840,14 +1843,45 @@
                   </node>
                 </node>
               </node>
+              <node concept="vg0i.1068581242864" id="1901572971596239148" role="vg0i.1068580123136.1068581517665" info="nn">
+                <node concept="vg0i.1068581242863" id="1901572971596239149" role="vg0i.1068581242864.1068581242865" info="nr">
+                  <property role="asn4.1169194658468.1169194664001" value="myType" />
+                  <node concept="4ia1.1138055754698" id="1901572971596239141" role="vg0i.4972933694980447171.5680397130376446158" info="in">
+                    <reference role="4ia1.1138055754698.1138405853777" target="tpee.1068431790189" resolveInfo="Type" />
+                  </node>
+                  <node concept="vg0i.1197027756228" id="1901572971596239150" role="vg0i.1068431474542.1068431790190" info="nn">
+                    <node concept="vg0i.1068498886296" id="1901572971596239151" role="vg0i.1197027756228.1197027771414" info="nn">
+                      <reference role="vg0i.1068498886296.1068581517664" target="4084841995422374962" resolveInfo="dti" />
+                    </node>
+                    <node concept="4ia1.1179409122411" id="1901572971596239152" role="vg0i.1197027756228.1197027833540" info="nn">
+                      <reference role="vg0i.1204053956946.1068499141037" target="9097849371504546165" resolveInfo="getMyType" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node concept="vg0i.1068580123159" id="1901572971596241206" role="vg0i.1068580123136.1068581517665" info="nn">
+                <node concept="vg0i.1068580123136" id="1901572971596241209" role="vg0i.1068580123159.1068580123161" info="sn">
+                  <node concept="vg0i.1068581242878" id="1901572971596245322" role="vg0i.1068580123136.1068581517665" info="nn">
+                    <node concept="vg0i.1070534058343" id="1901572971596245515" role="vg0i.1068581242878.1068581517676" info="nn" />
+                  </node>
+                </node>
+                <node concept="vg0i.1197027756228" id="1901572971596244314" role="vg0i.1068580123159.1068580123160" info="nn">
+                  <node concept="vg0i.1197027756228" id="1901572971596242045" role="vg0i.1197027756228.1197027771414" info="nn">
+                    <node concept="vg0i.1068498886296" id="1901572971596241825" role="vg0i.1197027756228.1197027771414" info="nn">
+                      <reference role="vg0i.1068498886296.1068581517664" target="1901572971596239149" resolveInfo="myType" />
+                    </node>
+                    <node concept="4ia1.1172323065820" id="1901572971596243361" role="vg0i.1197027756228.1197027833540" info="nn" />
+                  </node>
+                  <node concept="4ia1.1172326502327" id="1901572971596245075" role="vg0i.1197027756228.1197027833540" info="nn">
+                    <node concept="4ia1.1177026924588" id="1901572971596245180" role="4ia1.1172326502327.1206733650006" info="nn">
+                      <reference role="4ia1.1177026924588.1177026940964" target="tpee.1068581517677" resolveInfo="VoidType" />
+                    </node>
+                  </node>
+                </node>
+              </node>
               <node concept="vg0i.1068581242878" id="4084841995422327265" role="vg0i.1068580123136.1068581517665" info="nn">
-                <node concept="vg0i.1197027756228" id="4084841995422367908" role="vg0i.1068581242878.1068581517676" info="nn">
-                  <node concept="vg0i.1068498886296" id="4084841995422374967" role="vg0i.1197027756228.1197027771414" info="nn">
-                    <reference role="vg0i.1068498886296.1068581517664" target="4084841995422374962" resolveInfo="dti" />
-                  </node>
-                  <node concept="4ia1.1179409122411" id="9097849371504626163" role="vg0i.1197027756228.1197027833540" info="nn">
-                    <reference role="vg0i.1204053956946.1068499141037" target="9097849371504546165" resolveInfo="getMyType" />
-                  </node>
+                <node concept="vg0i.1068498886296" id="1901572971596239153" role="vg0i.1068581242878.1068581517676" info="nn">
+                  <reference role="vg0i.1068498886296.1068581517664" target="1901572971596239149" resolveInfo="myType" />
                 </node>
               </node>
             </node>
