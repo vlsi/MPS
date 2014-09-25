@@ -4,7 +4,7 @@
       <root url="jar://$PLUGINS_PATH$/mps-core/lib/mps-core.jar!/modules/MPS.Core/MPS.Core.msd" />
     </MPS_MODULE_XML>
     <CLASSES>
-      <root url="jar://$APPLICATION_HOME_DIR$/lib/ecj-4.3.2.jar!/" />
+      <root url="jar://$APPLICATION_HOME_DIR$/lib/ecj-4.4.jar!/" />
       <root url="jar://$APPLICATION_HOME_DIR$/lib/trove4j.jar!/" />
       <root url="jar://$APPLICATION_HOME_DIR$/lib/xstream-1.4.3.jar!/" />
       <root url="jar://$APPLICATION_HOME_DIR$/lib/log4j.jar!/" />
