@@ -26,7 +26,6 @@ import java.util.Set;
 
 /**
  * Reloads module class loader and the class loaders of its dependencies
- * Created by Alex Pyshkin on 9/9/14.
  */
 public class SmartModulesLoader {
   private final ClassLoaderManager myClassLoaderManager;
@@ -45,10 +44,11 @@ public class SmartModulesLoader {
 
   private void reloadModulesWithDeps(Set<SModule> modules) {
     Set<SModule> modulesAndDeps = collectBackDependencies(modules);
-    myClassLoaderManager.reloadModules(modulesAndDeps);
+    if (modulesAndDeps.size() > 0)
+      myClassLoaderManager.reloadModules(modulesAndDeps);
   }
 
-  // modules are included in the result
+  // loadable modules are included in the result (from {@code modules} too)
   private Set<SModule> collectBackDependencies(Set<SModule> modules) {
     Set<SModule> result = new HashSet<SModule>();
     Iterable<SModule> allModules = myRepository.getModules();
