@@ -38,7 +38,6 @@ import java.io.StringWriter;
 import java.io.PrintWriter;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.module.SearchScope;
-import jetbrains.mps.ide.findusages.model.scopes.ProjectScope;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 import jetbrains.mps.ide.findusages.view.UsagesViewTool;
@@ -194,7 +193,7 @@ public class CommandUtil {
   public static ConsoleScope createConsoleScope(@Nullable final SearchScope searchScope, final boolean includeReadOnly, final ConsoleContext context) {
     return new ConsoleScope() {
 
-      private SearchScope mySearchScope = (searchScope == null ? new ProjectScope(context.getProject()) : searchScope);
+      private SearchScope mySearchScope = (searchScope == null ? context.getDefaultSearchscope() : searchScope);
 
       public SearchScope getSearchScope() {
         return mySearchScope;

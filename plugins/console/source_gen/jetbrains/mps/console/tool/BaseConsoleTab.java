@@ -55,6 +55,8 @@ import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import com.intellij.util.Base64Converter;
 import jetbrains.mps.persistence.PersistenceUtil;
 import jetbrains.mps.project.Project;
+import org.jetbrains.mps.openapi.module.SearchScope;
+import jetbrains.mps.ide.findusages.model.scopes.ProjectScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.jetbrains.mps.openapi.model.SReference;
 import jetbrains.mps.internal.collections.runtime.Sequence;
@@ -277,6 +279,9 @@ public abstract class BaseConsoleTab extends JPanel implements Disposable {
     return new ConsoleContext() {
       public Project getProject() {
         return ProjectHelper.toMPSProject(myTool.getProject());
+      }
+      public SearchScope getDefaultSearchscope() {
+        return new ProjectScope(getProject());
       }
       public BaseConsoleTab getConsoleTab() {
         return BaseConsoleTab.this;
