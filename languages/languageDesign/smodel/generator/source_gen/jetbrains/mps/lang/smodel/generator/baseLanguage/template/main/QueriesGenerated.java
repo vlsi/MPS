@@ -266,7 +266,12 @@ public class QueriesGenerated {
     return NameUtil.nodeFQName(SLinkOperations.getTarget(_context.getNode(), "conceptDeclaration", false));
   }
   public static Object propertyMacro_GetPropertyValue_2644386474300332552(final PropertyMacroContext _context) {
-    return IdHelper.getConceptId((jetbrains.mps.smodel.SNode) SLinkOperations.getTarget(_context.getNode(), "conceptDeclaration", false)).serialize();
+    if (SLinkOperations.getTarget(_context.getNode(), "conceptDeclaration", false) instanceof jetbrains.mps.smodel.SNode) {
+      return IdHelper.getConceptId((jetbrains.mps.smodel.SNode) SLinkOperations.getTarget(_context.getNode(), "conceptDeclaration", false)).serialize();
+    } else {
+      _context.showErrorMessage(_context.getNode(), "Concept must be not null");
+      return null;
+    }
   }
   public static Object propertyMacro_GetPropertyValue_1219355399537(final PropertyMacroContext _context) {
     SModelReference targetModelRef = SNodeOperations.getModel(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), _context.getNode(), "virtual_getTargetNode_3575813534625153815", new Object[]{})).getReference();
