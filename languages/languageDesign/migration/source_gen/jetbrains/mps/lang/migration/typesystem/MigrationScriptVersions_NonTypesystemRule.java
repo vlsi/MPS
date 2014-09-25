@@ -7,16 +7,16 @@ import jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.Language;
 import java.util.List;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
-import jetbrains.mps.smodel.Language;
 import jetbrains.mps.errors.BaseQuickFixProvider;
 import jetbrains.mps.smodel.SModelUtil_new;
 
@@ -24,6 +24,9 @@ public class MigrationScriptVersions_NonTypesystemRule extends AbstractNonTypesy
   public MigrationScriptVersions_NonTypesystemRule() {
   }
   public void applyRule(final SNode ms, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
+    if (!(SNodeOperations.getModel(ms).getModule() instanceof Language)) {
+      return;
+    }
     List<SNode> scripts = SModelOperations.getRoots(SNodeOperations.getModel(ms), "jetbrains.mps.lang.migration.structure.MigrationScript");
     int scNum = ListSequence.fromList(scripts).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {

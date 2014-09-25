@@ -17,14 +17,24 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 1:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.migration.structure.DataDependencyReference").super_("jetbrains.mps.baseLanguage.structure.Expression").parents("jetbrains.mps.baseLanguage.structure.Expression", "jetbrains.mps.baseLanguage.structure.IVariableReference").references("dataDependency").create();
       case 2:
-        return new ConceptDescriptorBuilder("jetbrains.mps.lang.migration.structure.MigrationScript").super_("jetbrains.mps.baseLanguage.structure.ClassConcept").parents("jetbrains.mps.baseLanguage.structure.ClassConcept").properties("fromVersion").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.migration.structure.ForEachMatchingExpression").super_("jetbrains.mps.baseLanguage.structure.Expression").parents("jetbrains.mps.baseLanguage.structure.Expression").children(new String[]{"pattern"}, new boolean[]{false}).alias("for each matching node", "").create();
       case 3:
-        return new ConceptDescriptorBuilder("jetbrains.mps.lang.migration.structure.ProducedDataDeclaration").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.baseLanguage.structure.ClassifierMember").references("dataType").alias("produces data", "").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.migration.structure.LinkPatternVariableReference").super_("jetbrains.mps.baseLanguage.structure.Expression").parents("jetbrains.mps.baseLanguage.structure.Expression").references("declaration").create();
       case 4:
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.migration.structure.ListPatternVariableReference").super_("jetbrains.mps.baseLanguage.structure.Expression").parents("jetbrains.mps.baseLanguage.structure.Expression").references("declaration").create();
+      case 5:
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.migration.structure.MigrateOperation").super_("jetbrains.mps.baseLanguage.collections.structure.InternalSequenceOperation").parents("jetbrains.mps.baseLanguage.collections.structure.InternalSequenceOperation", "jetbrains.mps.lang.core.structure.ScopeProvider").children(new String[]{"body"}, new boolean[]{false}).alias("migrate", "").create();
+      case 6:
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.migration.structure.MigrationScript").super_("jetbrains.mps.baseLanguage.structure.ClassConcept").parents("jetbrains.mps.baseLanguage.structure.ClassConcept").properties("fromVersion").create();
+      case 7:
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.migration.structure.ProducedDataDeclaration").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.baseLanguage.structure.ClassifierMember").references("dataType").alias("produces data", "").create();
+      case 8:
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.migration.structure.PropertyPatternVariableReference").super_("jetbrains.mps.baseLanguage.structure.Expression").parents("jetbrains.mps.baseLanguage.structure.Expression").references("declaration").create();
+      case 9:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.migration.structure.RequiredDataDeclaration").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.baseLanguage.structure.ClassifierMember", "jetbrains.mps.lang.core.structure.BaseConcept").children(new String[]{"dependencies"}, new boolean[]{true}).alias("requires data", "").create();
       default:
         return StructureAspectInterpreted.getInstance().getDescriptor(conceptFqName);
     }
   }
-  private static String[] stringSwitchCases_1htk8d_a0a0b = new String[]{"jetbrains.mps.lang.migration.structure.DataDependency", "jetbrains.mps.lang.migration.structure.DataDependencyReference", "jetbrains.mps.lang.migration.structure.MigrationScript", "jetbrains.mps.lang.migration.structure.ProducedDataDeclaration", "jetbrains.mps.lang.migration.structure.RequiredDataDeclaration"};
+  private static String[] stringSwitchCases_1htk8d_a0a0b = new String[]{"jetbrains.mps.lang.migration.structure.DataDependency", "jetbrains.mps.lang.migration.structure.DataDependencyReference", "jetbrains.mps.lang.migration.structure.ForEachMatchingExpression", "jetbrains.mps.lang.migration.structure.LinkPatternVariableReference", "jetbrains.mps.lang.migration.structure.ListPatternVariableReference", "jetbrains.mps.lang.migration.structure.MigrateOperation", "jetbrains.mps.lang.migration.structure.MigrationScript", "jetbrains.mps.lang.migration.structure.ProducedDataDeclaration", "jetbrains.mps.lang.migration.structure.PropertyPatternVariableReference", "jetbrains.mps.lang.migration.structure.RequiredDataDeclaration"};
 }

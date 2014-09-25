@@ -14,5 +14,6 @@ public class FixLanguageVersion_QuickFix extends QuickFix_Runtime {
   }
   public void execute(SNode node) {
     ((Language) FixLanguageVersion_QuickFix.this.getField("l")[0]).getModuleDescriptor().setVersion(((Integer) FixLanguageVersion_QuickFix.this.getField("wanted")[0]));
+    ((Language) FixLanguageVersion_QuickFix.this.getField("l")[0]).setChanged();
   }
 }

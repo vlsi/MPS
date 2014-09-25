@@ -15,4 +15,8 @@ public abstract class MigrationScriptBase implements MigrationScript {
   public boolean isApplicable(SModule module) {
     return true;
   }
+  @Override
+  public String toString() {
+    return getCaption();
+  }
 }

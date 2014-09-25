@@ -17,10 +17,12 @@
     <usedLanguage>774bf8a0-62e5-41e1-af63-f4812e60e48b(jetbrains.mps.baseLanguage.checkedDots)</usedLanguage>
     <usedLanguage>fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)</usedLanguage>
     <usedLanguage>83888646-71ce-4f1c-9c53-c54016f6ad4f(jetbrains.mps.baseLanguage.collections)</usedLanguage>
+    <usedLanguage>7866978e-a0f0-4cc7-81bc-4d213d9375e1(jetbrains.mps.lang.smodel)</usedLanguage>
   </usedLanguages>
   <languageVersions>
     <language id="ed6d7656-532c-4bc2-81d1-af945aeb8280" version="0" />
     <language id="774bf8a0-62e5-41e1-af63-f4812e60e48b" version="0" />
+    <language id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" version="0" />
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" version="0" />
     <language id="9ded098b-ad6a-4657-bfd9-48636cfe8bc3" version="0" />
     <language id="fd392034-7849-419d-9071-12563d152375" version="0" />
