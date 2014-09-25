@@ -4,8 +4,8 @@
     <output url="file://$MODULE_DIR$/../languages/languageDesign/migration/solutions/runtime/classes" />
     <output-test url="file://$MODULE_DIR$/../languages/languageDesign/migration/solutions/runtime/classes" />
     <exclude-output />
-    <content url="file://$MODULE_DIR$/../languages/languageDesign/migration/solutions/runtime">
-      <sourceFolder url="file://$MODULE_DIR$/../languages/languageDesign/migration/solutions/runtime/source_gen" isTestSource="false" />
+    <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/source_gen" isTestSource="false" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
