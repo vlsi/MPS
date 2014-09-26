@@ -1833,22 +1833,21 @@
       <node id="2278396422093812354" at="15,59,16,107" concept="2" />
       <node id="2278396422093812354" at="16,107,17,100" concept="2" />
       <node id="2278396422093812354" at="24,51,25,63" concept="2" />
-      <node id="2278396422093861327" at="25,63,26,30" concept="2" />
-      <node id="2278396422093861830" at="26,30,27,77" concept="2" />
+      <node id="2278396422093861830" at="25,63,26,77" concept="2" />
       <node id="2278396422093812354" at="12,0,14,0" concept="1" trace="StringLiteralDelete_Test#()V" />
       <node id="2278396422093812354" at="21,0,23,0" concept="1" trace="TestBody#()V" />
       <node id="2278396422093812354" at="14,0,19,0" concept="5" trace="test_StringLiteralDelete#()V" />
-      <node id="2278396422093812354" at="23,0,29,0" concept="5" trace="testMethodImpl#()V" />
+      <node id="2278396422093812354" at="23,0,28,0" concept="5" trace="testMethodImpl#()V" />
       <scope id="2278396422093812354" at="12,37,12,37" />
       <scope id="2278396422093812354" at="21,23,21,23" />
       <scope id="2278396422093812354" at="12,0,14,0" />
       <scope id="2278396422093812354" at="15,59,17,100" />
       <scope id="2278396422093812354" at="21,0,23,0" />
-      <scope id="2278396422093812354" at="24,51,27,77" />
+      <scope id="2278396422093812354" at="24,51,26,77" />
       <scope id="2278396422093812354" at="14,0,19,0" />
-      <scope id="2278396422093812354" at="23,0,29,0" />
-      <unit id="2278396422093812354" at="19,0,30,0" name="jetbrains.mps.editorTest.StringLiteralDelete_Test$TestBody" />
-      <unit id="2278396422093812354" at="10,0,31,0" name="jetbrains.mps.editorTest.StringLiteralDelete_Test" />
+      <scope id="2278396422093812354" at="23,0,28,0" />
+      <unit id="2278396422093812354" at="19,0,29,0" name="jetbrains.mps.editorTest.StringLiteralDelete_Test$TestBody" />
+      <unit id="2278396422093812354" at="10,0,30,0" name="jetbrains.mps.editorTest.StringLiteralDelete_Test" />
     </file>
   </root>
   <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/2322823743453985855">

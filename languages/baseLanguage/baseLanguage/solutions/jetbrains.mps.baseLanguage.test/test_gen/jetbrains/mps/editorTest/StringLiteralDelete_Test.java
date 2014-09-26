@@ -22,8 +22,7 @@ public class StringLiteralDelete_Test extends BaseTransformationTest {
     }
     @Override
     public void testMethodImpl() throws Exception {
-      initEditor("2278396422093826134", "2278396422093861840");
-      this.typeString("sout");
+      initEditor("1304417895077262510", "2278396422093861840");
       this.invokeAction("jetbrains.mps.ide.editor.actions.Backspace_Action");
     }
   }
