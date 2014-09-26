@@ -17,7 +17,7 @@
 package jetbrains.mps.idea.java.convert;
 
 import com.intellij.openapi.module.Module;
-import com.intellij.openapi.module.impl.scopes.ModuleWithDependentsScope;
+import com.intellij.openapi.module.impl.scopes.ModuleScopeProviderImpl;
 import com.intellij.openapi.util.Condition;
 import com.intellij.util.containers.FilteringIterator;
 import jetbrains.mps.idea.core.usages.IdeaSearchScope;
@@ -35,7 +35,7 @@ public class SearchScopeWithoutModels extends IdeaSearchScope {
   private Set<SModel> myExcludeSet;
 
   public SearchScopeWithoutModels(Module module, Set<SModel> exclude) {
-    super(new ModuleWithDependentsScope(module, false));
+    super(new ModuleScopeProviderImpl(module).getModuleWithDependentsScope());
     myExcludeSet = exclude;
   }
 

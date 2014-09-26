@@ -257,7 +257,7 @@
         <fileset dir="${ideaPath}/plugins/junit/lib">
           <include name="junit-rt.jar"/>
         </fileset>
-        <fileset dir="${ideaPath}/plugins/devkit/lib/jps">
+        <fileset dir="${ideaPath}/plugins/devkit/lib">
           <include name="devkit-jps-plugin.jar"/>
         </fileset>
         <fileset dir="${ideaPath}/lib/ant/lib" includes="*.jar"/>
