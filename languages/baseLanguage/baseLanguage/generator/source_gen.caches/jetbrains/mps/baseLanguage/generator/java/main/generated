@@ -62,7 +62,9 @@
   <source id="1206152999436" name="reduce_AssignmentExpression_propertySet" hash="-gj9cjekxrs17hvohiqznbiikn2tcov">
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
-  <source id="1206154637872" name="reduce_DotExpression_propertyGet" hash="am3r34xcd4dfuaveulxse7vjqgeb3fu" />
+  <source id="1206154637872" name="reduce_DotExpression_propertyGet" hash="am3r34xcd4dfuaveulxse7vjqgeb3fu">
+    <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
+  </source>
   <source id="1224072707336" name="reduce_AsExpression" hash="-80290soaphppkbr06qsy5wfhrpj23a" />
   <source id="5862977038373365416" name="reduceGetProperty" hash="51uu5rhgdyba9ntl0kz1xkz3jj1hi43" />
   <source id="5862977038373397976" name="reduce_AssignmentExpression_localPropertySet" hash="48tjalr4bgxbuap8ggeugclidp090n6" />
