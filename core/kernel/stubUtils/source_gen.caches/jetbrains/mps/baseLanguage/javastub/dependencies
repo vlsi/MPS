@@ -58,10 +58,10 @@
     <classNode dependClassName="jetbrains.mps.reloading.AbstractClassPathItem" />
     <classNode dependClassName="jetbrains.mps.util.ReadUtil" />
     <classNode dependClassName="jetbrains.mps.vfs.IFile" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.org.objectweb.asm.ClassReader" />
     <classNode dependClassName="org.jetbrains.org.objectweb.asm.Opcodes" />
     <classNode dependClassName="org.jetbrains.org.objectweb.asm.tree.InnerClassNode" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.javastub.ClassifierUpdater" file="ClassifierUpdater.java">
     <classNode dependClassName="java.lang.Boolean" />
