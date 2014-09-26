@@ -130,6 +130,7 @@ public class GenerationSessionContext extends StandaloneMPSContext implements Ge
     myNamedConcept = prevContext.myNamedConcept;
     myQueryProviders = prevContext.myQueryProviders;
     myGenerationPlan = generationPlan;
+    myExportsVault = prevContext.myExportsVault;
     // the moment this copy cons is used, nothing happened, reuse
     myStepObjects = prevContext.myStepObjects;
     myTransientObjects = prevContext.myTransientObjects;
@@ -150,6 +151,7 @@ public class GenerationSessionContext extends StandaloneMPSContext implements Ge
     myNamedConcept = prevContext.myNamedConcept;
     myGenerationPlan = prevContext.myGenerationPlan;
     myQueryProviders = prevContext.myQueryProviders;
+    myExportsVault = prevContext.myExportsVault;
     // this copy cons indicate new major step, hence new empty maps
     myTransientObjects = new ConcurrentHashMap<Object, Object>();
     myStepObjects = new ConcurrentHashMap<Object, Object>();
@@ -227,6 +229,18 @@ public class GenerationSessionContext extends StandaloneMPSContext implements Ge
           myDataSource = streamDataSource;
           myStreamName = name;
         }
+
+        @Override
+        public boolean isReadOnly() {
+          return false;
+        }
+
+        @NotNull
+        @Override
+        public String getLocation() {
+          return myStreamName;
+        }
+
         @Override
         public InputStream openInputStream() throws IOException {
           return myDataSource.openInputStream(myStreamName);
