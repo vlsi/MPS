@@ -21,8 +21,10 @@ import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.components.PersistentStateComponent;
 import com.intellij.openapi.components.State;
 import com.intellij.openapi.components.Storage;
+import com.intellij.openapi.editor.EditorFactory;
 import com.intellij.openapi.editor.colors.EditorColors;
 import com.intellij.openapi.editor.colors.EditorColorsManager;
+import com.intellij.openapi.editor.colors.EditorColorsScheme;
 import jetbrains.mps.nodeEditor.EditorSettings.MyState;
 import jetbrains.mps.nodeEditor.cells.FontRegistry;
 import jetbrains.mps.nodeEditor.cells.TextLine;
@@ -268,6 +270,17 @@ public class EditorSettings implements PersistentStateComponent<MyState> {
   public void loadState(MyState state) {
     myState = state;
     updateCachedValue();
+    updateGlobalScheme();
+  }
+
+  void updateGlobalScheme() {
+    if (myColorsManager != null) {
+      EditorColorsScheme globalScheme = myColorsManager.getGlobalScheme();
+      globalScheme.setEditorFontSize(getFontSize());
+      globalScheme.setEditorFontName(getFontFamily());
+      globalScheme.setLineSpacing(((float) getLineSpacing()));
+      EditorFactory.getInstance().refreshAllEditors();
+    }
   }
 
   void updateCachedValue() {

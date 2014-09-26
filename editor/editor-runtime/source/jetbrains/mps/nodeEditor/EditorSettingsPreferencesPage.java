@@ -307,7 +307,7 @@ class EditorSettingsPreferencesPage {
         applyState();
 
         mySettings.updateCachedValue();
-
+        mySettings.updateGlobalScheme();
         mySettings.fireEditorSettingsChanged();
       }
     });
