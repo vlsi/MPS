@@ -16,6 +16,8 @@ public class TrivialModelId_Behavior {
   public static SModel virtual_create_9032177546944490023(SNode thisNode, TransientModelsModule module) {
     String modelName = SPropertyOperations.getString(thisNode, "modelName") + "@proxy";
     SModelReference mr = PersistenceFacade.getInstance().createModelReference(null, SModelId.generate(), modelName);
-    return module.createTransientModel(mr);
+    SModel rv = module.createTransientModel(mr);
+    module.addModelToKeep(mr, true);
+    return rv;
   }
 }

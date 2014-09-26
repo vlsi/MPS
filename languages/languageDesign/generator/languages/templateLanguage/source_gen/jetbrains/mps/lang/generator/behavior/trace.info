@@ -2505,22 +2505,25 @@
     <file name="TrivialModelId_Behavior.java">
       <node id="9023795155764903911" at="16,105,17,87" concept="9" />
       <node id="9023795155764879383" at="17,87,18,116" concept="9" />
-      <node id="9023795155764880479" at="18,116,19,43" concept="10" />
+      <node id="6351731644542449829" at="18,116,19,48" concept="9" />
+      <node id="6351731644542481077" at="19,48,20,36" concept="4" />
+      <node id="9023795155764880479" at="20,36,21,14" concept="10" />
       <node id="6255346656297357649" at="14,0,16,0" concept="13" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <node id="6255346656297357649" at="16,0,21,0" concept="13" trace="virtual_create_9032177546944490023#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/generator/TransientModelsModule;)Lorg/jetbrains/mps/openapi/model/SModel;" />
+      <node id="6255346656297357649" at="16,0,23,0" concept="13" trace="virtual_create_9032177546944490023#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/generator/TransientModelsModule;)Lorg/jetbrains/mps/openapi/model/SModel;" />
       <scope id="6255346656297357805" at="14,43,14,43" />
       <scope id="6255346656297357649" at="14,0,16,0">
         <var name="thisNode" id="6255346656297357649" />
       </scope>
-      <scope id="9023795155764873901" at="16,105,19,43">
+      <scope id="9023795155764873901" at="16,105,21,14">
         <var name="modelName" id="9023795155764903914" />
         <var name="mr" id="9023795155764879384" />
+        <var name="rv" id="6351731644542449830" />
       </scope>
-      <scope id="6255346656297357649" at="16,0,21,0">
+      <scope id="6255346656297357649" at="16,0,23,0">
         <var name="module" id="9023795155764873902" />
         <var name="thisNode" id="6255346656297357649" />
       </scope>
-      <unit id="6255346656297357649" at="13,0,22,0" name="jetbrains.mps.lang.generator.behavior.TrivialModelId_Behavior" />
+      <unit id="6255346656297357649" at="13,0,24,0" name="jetbrains.mps.lang.generator.behavior.TrivialModelId_Behavior" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902e1(jetbrains.mps.lang.generator.behavior)/650531548511609558">
