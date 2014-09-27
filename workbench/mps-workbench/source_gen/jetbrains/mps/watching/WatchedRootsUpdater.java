@@ -18,7 +18,7 @@ import jetbrains.mps.classloading.MPSClassesListenerAdapter;
 import java.util.Set;
 import org.jetbrains.mps.openapi.module.SModule;
 import com.intellij.openapi.project.Project;
-import jetbrains.mps.library.ProjectLibraryManager;
+import jetbrains.mps.project.ProjectLibraryManager;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Collection;

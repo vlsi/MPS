@@ -83,7 +83,7 @@ public class StandaloneMPSProject extends MPSProject implements FileSystemListen
 
   private WatchRequestor myWatchRequestor;
 
-  public StandaloneMPSProject(final Project project) {
+  public StandaloneMPSProject(final Project project, ProjectLibraryManager projectLibraryManager) {
     super(project);
   }
 

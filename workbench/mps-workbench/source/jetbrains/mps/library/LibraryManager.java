@@ -45,13 +45,8 @@ public class LibraryManager extends BaseLibraryManager implements ApplicationCom
     return ApplicationManager.getApplication().getComponent(LibraryManager.class);
   }
 
-  /**
-   *
-   * @param coreComponents
-   * @param bootstrapLibContributor for right initialization order
-   */
   public LibraryManager(MPSCoreComponents coreComponents, BootstrapLibContributor bootstrapLibContributor) {
-    super(coreComponents.getModuleRepository());
+    super(coreComponents);
   }
 
   private Map<String, Library> myCustomBuiltInLibraries = new HashMap<String, Library>();

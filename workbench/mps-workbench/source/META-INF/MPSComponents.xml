@@ -133,6 +133,9 @@
       <implementation-class>jetbrains.mps.project.MPSProjectMigrationComponentImpl</implementation-class>
     </component>
     <component>
+      <implementation-class>jetbrains.mps.project.ProjectLibraryManager</implementation-class>
+    </component>
+    <component>
       <interface-class>jetbrains.mps.project.MPSProject</interface-class>
       <implementation-class>jetbrains.mps.project.StandaloneMPSProject</implementation-class>
     </component>
@@ -168,9 +171,6 @@
     <component>
       <implementation-class>jetbrains.mps.ide.hierarchy.BaseLanguageHierarchyViewTool</implementation-class>
       <skipForDummyProject/>
-    </component>
-    <component>
-      <implementation-class>jetbrains.mps.library.ProjectLibraryManager</implementation-class>
     </component>
     <component>
       <implementation-class>jetbrains.mps.ide.bookmark.BookmarkManager</implementation-class>
