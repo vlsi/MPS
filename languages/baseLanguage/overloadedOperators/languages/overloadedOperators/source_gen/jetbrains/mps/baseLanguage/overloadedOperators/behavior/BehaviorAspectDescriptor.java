@@ -11,25 +11,27 @@ public class BehaviorAspectDescriptor implements jetbrains.mps.smodel.runtime.Be
   }
   public BehaviorDescriptor getDescriptor(String fqName) {
     switch (Arrays.binarySearch(stringSwitchCases_846f5o_a0a0b, fqName)) {
-      case 5:
-        return new OverloadedBinaryOperator_BehaviorDescriptor();
       case 6:
-        return new OverloadedOperatorContainer_BehaviorDescriptor();
-      case 4:
-        return new LeftOperand_BehaviorDescriptor();
+        return new OverloadedBinaryOperator_BehaviorDescriptor();
       case 7:
+        return new OverloadedOperatorContainer_BehaviorDescriptor();
+      case 5:
+        return new LeftOperand_BehaviorDescriptor();
+      case 8:
         return new RightOperand_BehaviorDescriptor();
       case 0:
         return new BinaryOperationReference_BehaviorDescriptor();
-      case 1:
-        return new CustomOperator_BehaviorDescriptor();
-      case 3:
-        return new CustomOperatorUsage_BehaviorDescriptor();
       case 2:
+        return new CustomOperator_BehaviorDescriptor();
+      case 4:
+        return new CustomOperatorUsage_BehaviorDescriptor();
+      case 3:
         return new CustomOperatorDeclaration_BehaviorDescriptor();
+      case 1:
+        return new ContainerImport_BehaviorDescriptor();
       default:
         return BehaviorAspectInterpreted.getInstance().getDescriptor(fqName);
     }
   }
-  private static String[] stringSwitchCases_846f5o_a0a0b = new String[]{"jetbrains.mps.baseLanguage.overloadedOperators.structure.BinaryOperationReference", "jetbrains.mps.baseLanguage.overloadedOperators.structure.CustomOperator", "jetbrains.mps.baseLanguage.overloadedOperators.structure.CustomOperatorDeclaration", "jetbrains.mps.baseLanguage.overloadedOperators.structure.CustomOperatorUsage", "jetbrains.mps.baseLanguage.overloadedOperators.structure.LeftOperand", "jetbrains.mps.baseLanguage.overloadedOperators.structure.OverloadedBinaryOperator", "jetbrains.mps.baseLanguage.overloadedOperators.structure.OverloadedOperatorContainer", "jetbrains.mps.baseLanguage.overloadedOperators.structure.RightOperand"};
+  private static String[] stringSwitchCases_846f5o_a0a0b = new String[]{"jetbrains.mps.baseLanguage.overloadedOperators.structure.BinaryOperationReference", "jetbrains.mps.baseLanguage.overloadedOperators.structure.ContainerImport", "jetbrains.mps.baseLanguage.overloadedOperators.structure.CustomOperator", "jetbrains.mps.baseLanguage.overloadedOperators.structure.CustomOperatorDeclaration", "jetbrains.mps.baseLanguage.overloadedOperators.structure.CustomOperatorUsage", "jetbrains.mps.baseLanguage.overloadedOperators.structure.LeftOperand", "jetbrains.mps.baseLanguage.overloadedOperators.structure.OverloadedBinaryOperator", "jetbrains.mps.baseLanguage.overloadedOperators.structure.OverloadedOperatorContainer", "jetbrains.mps.baseLanguage.overloadedOperators.structure.RightOperand"};
 }

@@ -27,6 +27,7 @@ import jetbrains.mps.generator.IGenerationSettings;
 import jetbrains.mps.generator.IGenerationTracer;
 import jetbrains.mps.generator.IModifiableGenerationSettings;
 import jetbrains.mps.generator.NullGenerationTracer;
+import jetbrains.mps.generator.TransientModelsProvider;
 import jetbrains.mps.generator.generationTypes.IGenerationHandler;
 import jetbrains.mps.generator.generationTypes.java.JavaGenerationHandler;
 import jetbrains.mps.generator.impl.DefaultIncrementalStrategy;
@@ -187,14 +188,15 @@ public class GeneratorUIFacade {
           options.incremental(new DefaultNonIncrementalStrategy());
         }
 
-        final TransientModelsComponent tmc = ideaProject.getComponent(TransientModelsComponent.class);
+        final TransientModelsProvider tmc = ideaProject.getComponent(TransientModelsProvider.class);
         // XXX note, this code used to run with both idea and mps write locks. I'm pretty sure idea write lock was an overkill,
         // as only generationHandler might need a write access; but MPS write access (effectively exclusive read) might come handy here.
         // However, since this class is deprecated, I see no value in struggling with threading and read/write locks here. Besides,
         // UI thread is blocked, and user unlikely to change any model anyway.
         // Note, wrapping with read action might be bad idea, as no write action from within would run then.
         result[0] =
-            GenerationFacade.generateModels(project, inputModels, invocationContext, generationHandler, new ProgressMonitorAdapter(indicator), messages, options.create(),
+            GenerationFacade.generateModels(project, inputModels, invocationContext, generationHandler, new ProgressMonitorAdapter(indicator), messages,
+                options.create(),
                 tmc);
       }
     });

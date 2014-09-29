@@ -675,9 +675,9 @@
       <node id="4415110399252640079" at="423,52,424,35" concept="5" />
       <node id="4515621863031846348" at="428,36,429,49" concept="5" />
       <node id="4515621863031846348" at="430,5,431,0" concept="14" />
-      <node id="6094606685639560769" at="433,67,434,47" concept="12" />
-      <node id="684980562203610071" at="436,74,437,46" concept="12" />
-      <node id="2874091320103889201" at="439,74,440,46" concept="12" />
+      <node id="684980562203610071" at="433,74,434,46" concept="12" />
+      <node id="2874091320103889201" at="436,74,437,46" concept="12" />
+      <node id="6094606685639560769" at="439,67,440,47" concept="12" />
       <node id="5550698181361791596" at="147,14,149,9" concept="1" />
       <node id="4515621863031787885" at="297,0,299,0" concept="3" trace="MyResultModelListener#()V" />
       <node id="4415110399252659698" at="380,12,382,7" concept="1" />
@@ -725,9 +725,9 @@
       <node id="4415110399252656895" at="388,0,391,0" concept="10" trace="select#(Ljetbrains/mps/vcs/diff/changes/NodeGroupChange;)Ljetbrains/mps/vcs/diff/changes/ModelChange;" />
       <node id="4515621863031846394" at="415,0,418,0" concept="10" trace="accept#(Ljetbrains/mps/vcs/diff/changes/ModelChange;)Z" />
       <node id="4515621863031846348" at="427,101,430,5" concept="9" />
-      <node id="6094606685639560769" at="433,0,436,0" concept="15" trace="as_bow6nj_a0a0a71#(Ljava/lang/Object;Ljava/lang/Class;)null" />
-      <node id="684980562203610071" at="436,0,439,0" concept="15" trace="eq_bow6nj_a0a0a0a0a0a0b0d84#(Ljava/lang/Object;Ljava/lang/Object;)Z" />
-      <node id="2874091320103889201" at="439,0,442,0" concept="15" trace="eq_bow6nj_a0a0a0a0a0a0b0l84#(Ljava/lang/Object;Ljava/lang/Object;)Z" />
+      <node id="684980562203610071" at="433,0,436,0" concept="15" trace="eq_bow6nj_a0a0a0a0a0a0b0d84#(Ljava/lang/Object;Ljava/lang/Object;)Z" />
+      <node id="2874091320103889201" at="436,0,439,0" concept="15" trace="eq_bow6nj_a0a0a0a0a0a0b0l84#(Ljava/lang/Object;Ljava/lang/Object;)Z" />
+      <node id="6094606685639560769" at="439,0,442,0" concept="15" trace="as_bow6nj_a0a0a71#(Ljava/lang/Object;Ljava/lang/Class;)null" />
       <node id="6966417881648619118" at="68,95,72,5" concept="9" />
       <node id="4124845871897265681" at="175,0,179,0" concept="10" trace="applyChanges#(Ljava/lang/Iterable;)V" />
       <node id="4124845871897265696" at="179,0,183,0" concept="10" trace="excludeChanges#(Ljava/lang/Iterable;)V" />
@@ -847,9 +847,9 @@
       <scope id="4415110399252656896" at="388,55,389,34" />
       <scope id="4515621863031846395" at="415,47,416,149" />
       <scope id="4515621863031846348" at="428,36,429,49" />
-      <scope id="6094606685639560769" at="433,67,434,47" />
-      <scope id="684980562203610071" at="436,74,437,46" />
-      <scope id="2874091320103889201" at="439,74,440,46" />
+      <scope id="684980562203610071" at="433,74,434,46" />
+      <scope id="2874091320103889201" at="436,74,437,46" />
+      <scope id="6094606685639560769" at="439,67,440,47" />
       <scope id="6966417881648619123" at="69,44,71,59">
         <var name="pv" id="6966417881648619124" />
       </scope>
@@ -947,17 +947,17 @@
       <scope id="4515621863031846394" at="415,0,418,0">
         <var name="ch" id="4515621863031846394" />
       </scope>
-      <scope id="6094606685639560769" at="433,0,436,0">
-        <var name="o" id="6094606685639560769" />
-        <var name="type" id="6094606685639560769" />
-      </scope>
-      <scope id="684980562203610071" at="436,0,439,0">
+      <scope id="684980562203610071" at="433,0,436,0">
         <var name="a" id="684980562203610071" />
         <var name="b" id="684980562203610071" />
       </scope>
-      <scope id="2874091320103889201" at="439,0,442,0">
+      <scope id="2874091320103889201" at="436,0,439,0">
         <var name="a" id="2874091320103889201" />
         <var name="b" id="2874091320103889201" />
+      </scope>
+      <scope id="6094606685639560769" at="439,0,442,0">
+        <var name="o" id="6094606685639560769" />
+        <var name="type" id="6094606685639560769" />
       </scope>
       <scope id="5505786199853847062" at="97,14,101,99" />
       <scope id="4515621863031788016" at="118,27,122,99" />

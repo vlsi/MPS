@@ -61,7 +61,9 @@ public class GenPlanTest {
    * A <= B
    * B  < C
    *
-   * Expected: {A,B} {C}
+   * Expected:
+   *    generators combined:    {A,B} {C}
+   *    standalone generators:  {A} {B} {C}
    */
   @Test
   public void testWeakEdgeReplacedSimple() {
@@ -76,13 +78,16 @@ public class GenPlanTest {
     //
     final List<GenerationPhase> phases = mySolver.solve();
     assertFalse(myConflicts.hasConflicts());
-    assertEquals(2, phases.size());
+    assertEquals(3, phases.size());
     List<Group> groupsPhase1 = phases.get(0).getGroups();
     List<Group> groupsPhase2 = phases.get(1).getGroups();
-    assertEquals(2, groupsPhase1.size());
+    List<Group> groupsPhase3 = phases.get(2).getGroups();
+    assertEquals(1, groupsPhase1.size());
     assertEquals(1, groupsPhase2.size());
-    assertEquals(asSet(tmcA, tmcB), new HashSet<Group>(groupsPhase1));
-    assertEquals(new Group(tmcC), groupsPhase2.get(0));
+    assertEquals(1, groupsPhase3.size());
+    assertEquals(new Group(tmcA), groupsPhase1.get(0));
+    assertEquals(new Group(tmcB), groupsPhase2.get(0));
+    assertEquals(new Group(tmcC), groupsPhase3.get(0));
   }
 
   /**
@@ -92,7 +97,9 @@ public class GenPlanTest {
    * X  < A
    * Y <= A
    *
-   * Expected: {X}, {A,B,Y} {C,D}
+   * Expected:
+   *    generators combined:    {X} {A,B,Y} {C,D}
+   *    standalone generators:  {X,Y} {A} {B} {C,D}
    */
   @Test
   public void testWeakEdgeReplacedComplex() {
@@ -112,18 +119,21 @@ public class GenPlanTest {
     //
     final List<GenerationPhase> phases = mySolver.solve();
     assertFalse(myConflicts.hasConflicts());
-    assertEquals(3, phases.size());
+    assertEquals(4, phases.size());
     List<Group> groupsPhase1 = phases.get(0).getGroups();
     List<Group> groupsPhase2 = phases.get(1).getGroups();
     List<Group> groupsPhase3 = phases.get(2).getGroups();
-    assertEquals(1, groupsPhase1.size());
-    assertEquals(3, groupsPhase2.size());
-    assertEquals(2, groupsPhase3.size());
-    assertEquals(new Group(tmcX), groupsPhase1.get(0));
+    List<Group> groupsPhase4 = phases.get(3).getGroups();
+    assertEquals(2, groupsPhase1.size());
+    assertEquals(1, groupsPhase2.size());
+    assertEquals(1, groupsPhase3.size());
+    assertEquals(2, groupsPhase4.size());
+    assertEquals(asSet(tmcX, tmcY), new HashSet<Group>(groupsPhase1));
     //
-    assertEquals(asSet(tmcA, tmcB, tmcY), new HashSet<Group>(groupsPhase2));
+    assertEquals(new Group(tmcA), groupsPhase2.get(0));
+    assertEquals(new Group(tmcB), groupsPhase3.get(0));
     //
-    assertEquals(asSet(tmcC, tmcD), new HashSet<Group>(groupsPhase3));
+    assertEquals(asSet(tmcC, tmcD), new HashSet<Group>(groupsPhase4));
   }
 
   /**
@@ -170,7 +180,9 @@ public class GenPlanTest {
    * A <= B
    * B == C
    *
-   * Expected: {ABC} or {A} {BC} (two steps), but not {A,BC} (single steps with two unrelated groups)
+   * Expected:
+   *    generators combined:    {ABC} or {A} {BC} (two steps), but not {A,BC} (single steps with two unrelated groups)
+   *    standalone generators:  {A} {BC}
    */
   @Test
   public void testWeakWithCoherent_1() {
@@ -184,23 +196,13 @@ public class GenPlanTest {
     //
     final List<GenerationPhase> phases = mySolver.solve();
     assertFalse(myConflicts.hasConflicts());
-    assertEquals(1, phases.size());
-    final List<Group> groups = phases.get(0).getGroups();
-    /*
-    This is how it shall work to support steps grouped by generator. Present implementation is ok while
-    we try to stick as much as possible into a single step, {A, BC} is fine. However, once generator-grouped
-    steps come into play, there are chances {A, BC} get executed as {BC} {A}, violating A <= B constraint.
-
-    assertEquals(groups.toString(), 1, groups.size());
-    Group g = groups.get(0);
-    assertEquals(allConfigs.size(), g.getElements().size());
-    assertTrue(g.getElements().containsAll(allConfigs));
-     */
-    assertEquals(2, groups.size());
-    HashSet<Group> expected = new HashSet<Group>();
-    expected.add(new Group(tmcA));
-    expected.add(new Group(tmcB).union(new Group(tmcC)));
-    assertEquals(expected, new HashSet<Group>(groups));
+    assertEquals(2, phases.size());
+    final List<Group> groups1 = phases.get(0).getGroups();
+    final List<Group> groups2 = phases.get(1).getGroups();
+    assertEquals(1, groups1.size());
+    assertEquals(1, groups2.size());
+    assertEquals(new Group(tmcA), groups1.get(0));
+    assertEquals(asSingleGroup(tmcB, tmcC), groups2.get(0));
 
   }
 
@@ -284,7 +286,9 @@ public class GenPlanTest {
    * B <= C
    * C <= D
    *
-   * Expected: {A, B} {C, D}
+   * Expected:
+   *    generators combined:    {A, B} {C, D}
+   *    standalone generators:  {A, B} {C} {D}
    */
   @Test
   public void testTopPriorityComesFirst() {
@@ -298,13 +302,16 @@ public class GenPlanTest {
     addWeak(tmcC, tmcD);
     final List<GenerationPhase> phases = mySolver.solve();
     assertFalse(myConflicts.hasConflicts());
-    assertEquals(2, phases.size());
+    assertEquals(3, phases.size());
     final List<Group> groupsPhase1 = phases.get(0).getGroups();
     final List<Group> groupsPhase2 = phases.get(1).getGroups();
+    final List<Group> groupsPhase3 = phases.get(2).getGroups();
     assertEquals(2, groupsPhase1.size());
-    assertEquals(2, groupsPhase2.size());
+    assertEquals(1, groupsPhase2.size());
+    assertEquals(1, groupsPhase3.size());
     assertEquals(asSet(tmcA, tmcB), new HashSet<Group>(groupsPhase1));
-    assertEquals(asSet(tmcC, tmcD), new HashSet<Group>(groupsPhase2));
+    assertEquals(new Group(tmcC), groupsPhase2.get(0));
+    assertEquals(new Group(tmcD), groupsPhase3.get(0));
   }
 
   /**
@@ -507,6 +514,32 @@ public class GenPlanTest {
     assertEquals(1, groupsPhase2.size());
     assertEquals(asSingleGroup(tmcA, tmcB), groupsPhase1.get(0));
     assertEquals(new Group(tmcC), groupsPhase2.get(0));
+  }
+
+
+  /**
+   * A <= B
+   * B <= C
+   * C <= A
+   *
+   * Expected: {ABC}
+   */
+  @Test
+  public void testWeakCycle() {
+    TemplateMappingConfiguration tmcA = new MockMapConfig("A", false);
+    TemplateMappingConfiguration tmcB = new MockMapConfig("B", false);
+    TemplateMappingConfiguration tmcC = new MockMapConfig("C", false);
+    final List<TemplateMappingConfiguration> allConfigs = Arrays.asList(tmcA, tmcB, tmcC);
+    mySolver.prepare(allConfigs);
+    addWeak(tmcA, tmcB);
+    addWeak(tmcB, tmcC);
+    addWeak(tmcC, tmcA);
+    final List<GenerationPhase> phases = mySolver.solve();
+    assertFalse(myConflicts.hasConflicts());
+    assertEquals(1, phases.size());
+    final List<Group> groupsPhase1 = phases.get(0).getGroups();
+    assertEquals(1, groupsPhase1.size());
+    assertEquals(asSingleGroup(tmcA, tmcB, tmcC), groupsPhase1.get(0));
   }
 
 

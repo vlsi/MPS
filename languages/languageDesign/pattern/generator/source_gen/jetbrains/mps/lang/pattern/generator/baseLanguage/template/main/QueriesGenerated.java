@@ -158,7 +158,6 @@ public class QueriesGenerated {
     return _context.getOutputNodeByInputNodeAndMappingLabel(SNodeOperations.getParent(_context.getNode()), "nodeToMatch");
   }
   public static Object referenceMacro_GetReferent_7207007552736296724(final ReferenceMacroContext _context) {
-    SLinkOperations.getTarget(SNodeOperations.cast(_context.getNode(), "jetbrains.mps.lang.pattern.structure.OrPatternVariableReference"), "declaration", false);
     return _context.getOutputNodeByInputNodeAndMappingLabel(SLinkOperations.getTarget(SNodeOperations.cast(_context.getNode(), "jetbrains.mps.lang.pattern.structure.OrPatternVariableReference"), "declaration", false), "patternVarField");
   }
   public static Object referenceMacro_GetReferent_2144206851851948492(final ReferenceMacroContext _context) {

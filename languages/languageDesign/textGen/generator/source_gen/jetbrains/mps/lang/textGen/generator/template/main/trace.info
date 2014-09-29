@@ -288,8 +288,8 @@
       <node id="2626571763597779786" at="230,94,231,96" concept="4" />
       <node id="2626571763597779807" at="233,94,234,163" concept="4" />
       <node id="2626571763597779723" at="263,108,264,71" concept="4" />
-      <node id="2626571763597779744" at="344,55,345,43" concept="4" />
-      <node id="2626571763597779744" at="344,0,347,0" concept="5" trace="isNotEmptyString#(Ljava/lang/String;)Z" />
+      <node id="2626571763597779744" at="338,55,339,43" concept="4" />
+      <node id="2626571763597779744" at="338,0,341,0" concept="5" trace="isNotEmptyString#(Ljava/lang/String;)Z" />
       <scope id="2626571763597779778" at="105,112,106,74" />
       <scope id="2626571763597779796" at="108,112,109,74" />
       <scope id="2626571763597779737" at="224,94,225,163" />
@@ -297,8 +297,8 @@
       <scope id="2626571763597779785" at="230,94,231,96" />
       <scope id="2626571763597779806" at="233,94,234,163" />
       <scope id="2626571763597779722" at="263,108,264,71" />
-      <scope id="2626571763597779744" at="344,55,345,43" />
-      <scope id="2626571763597779744" at="344,0,347,0">
+      <scope id="2626571763597779744" at="338,55,339,43" />
+      <scope id="2626571763597779744" at="338,0,341,0">
         <var name="str" id="2626571763597779744" />
       </scope>
     </file>
@@ -306,20 +306,20 @@
   <root nodeRef="r:1e88207e-a8e3-4e7e-8d9b-916f60cbdc61(jetbrains.mps.lang.textGen.generator.template.main@generator)/1237469297113">
     <file name="QueriesGenerated.java">
       <node id="881552451426154571" at="236,93,237,208" concept="4" />
-      <node id="881552451426164471" at="338,63,339,63" concept="3" />
-      <node id="881552451426164471" at="339,63,340,30" concept="3" />
-      <node id="881552451426164471" at="340,30,341,134" concept="0" />
-      <node id="881552451426164471" at="340,30,341,134" concept="0" />
-      <node id="881552451426164471" at="340,30,341,134" concept="1" />
-      <node id="881552451426164471" at="341,134,342,24" concept="4" />
-      <node id="881552451426164471" at="338,0,344,0" concept="5" trace="_quotation_createNode_x583g4_b0a0a56#()Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <node id="881552451426164471" at="341,63,342,63" concept="3" />
+      <node id="881552451426164471" at="342,63,343,30" concept="3" />
+      <node id="881552451426164471" at="343,30,344,134" concept="0" />
+      <node id="881552451426164471" at="343,30,344,134" concept="0" />
+      <node id="881552451426164471" at="343,30,344,134" concept="1" />
+      <node id="881552451426164471" at="344,134,345,24" concept="4" />
+      <node id="881552451426164471" at="341,0,347,0" concept="5" trace="_quotation_createNode_x583g4_b0a0a56#()Lorg/jetbrains/mps/openapi/model/SNode;" />
       <scope id="881552451426154565" at="236,93,237,208" />
-      <scope id="881552451426164471" at="340,30,341,134" />
-      <scope id="881552451426164471" at="338,63,342,24">
+      <scope id="881552451426164471" at="343,30,344,134" />
+      <scope id="881552451426164471" at="341,63,345,24">
         <var name="facade" id="881552451426164471" />
         <var name="quotedNode_1" id="881552451426164471" />
       </scope>
-      <scope id="881552451426164471" at="338,0,344,0" />
+      <scope id="881552451426164471" at="341,0,347,0" />
     </file>
   </root>
   <root nodeRef="r:1e88207e-a8e3-4e7e-8d9b-916f60cbdc61(jetbrains.mps.lang.textGen.generator.template.main@generator)/1237469446142">

@@ -13,5 +13,14 @@
     <usedLanguage>f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)</usedLanguage>
     <usedLanguage>a1896bc3-4f5b-4a31-b78b-b65514f8d0e5(jetbrains.mps.samples.xmlLiterals)</usedLanguage>
   </usedLanguages>
+  <languageVersions>
+    <language id="ed6d7656-532c-4bc2-81d1-af945aeb8280" version="0" />
+    <language id="479c7a8c-02f9-43b5-9139-d910cb22f298" version="0" />
+    <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" version="0" />
+    <language id="a1896bc3-4f5b-4a31-b78b-b65514f8d0e5" version="0" />
+    <language id="9ded098b-ad6a-4657-bfd9-48636cfe8bc3" version="0" />
+    <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" version="0" />
+    <language id="fd392034-7849-419d-9071-12563d152375" version="0" />
+  </languageVersions>
 </solution>
 

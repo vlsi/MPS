@@ -20,12 +20,11 @@ public class GetHighLevelWatchablesBlock_ConceptFunction_Behavior {
     return result;
   }
   public static SNode virtual_getExpectedReturnType_1213877374441(SNode thisNode) {
-    return _quotation_createNode_jjngr0_a0a1();
+    return createWatchableListType_jjngr0_a0a1();
   }
-  private static SNode _quotation_createNode_jjngr0_a0a1() {
+  private static SNode createWatchableListType_jjngr0_a0a1() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
-    SNode quotedNode_1 = null;
-    quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.debugger.java.customViewers.structure.WatchableListType", null, null, false);
-    return quotedNode_1;
+    SNode n1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.debugger.java.customViewers.structure.WatchableListType", null, false);
+    return n1;
   }
 }

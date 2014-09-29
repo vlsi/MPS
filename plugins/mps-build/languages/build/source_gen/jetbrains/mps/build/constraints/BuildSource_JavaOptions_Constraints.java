@@ -60,8 +60,8 @@ public class BuildSource_JavaOptions_Constraints extends BaseConstraintsDescript
       }
     }) || parentNode.getConcept().getQualifiedName().startsWith("jetbrains.mps.lang.generator");
   }
-  private static SNodePointer canBeChildBreakingPoint = new SNodePointer("r:5076fdb3-19c3-4563-aa26-7ace7591e78d(jetbrains.mps.build.constraints)", "927724900262213629");
   private static boolean isEmptyString(String str) {
     return str == null || str.length() == 0;
   }
+  private static SNodePointer canBeChildBreakingPoint = new SNodePointer("r:5076fdb3-19c3-4563-aa26-7ace7591e78d(jetbrains.mps.build.constraints)", "927724900262213629");
 }

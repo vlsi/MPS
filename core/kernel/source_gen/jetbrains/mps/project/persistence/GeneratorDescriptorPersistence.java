@@ -179,6 +179,8 @@ public class GeneratorDescriptorPersistence {
     }
   }
   public static MappingConfig_AbstractRef loadGeneratorMappingConfigRef(final Element parentElement, final String genUID, boolean childOfGen) {
+    // FIXME there seems to be little reason (if any) to change MCref structure during read. Consider removing childOfGen 
+    // attribute altogether 
     if (Sequence.fromIterable(XmlUtil.children(parentElement, "all-mappings")).isNotEmpty()) {
       return new MappingConfig_RefAllGlobal();
     } else if (Sequence.fromIterable(XmlUtil.children(parentElement, "all-local-mappings")).isNotEmpty()) {
@@ -189,56 +191,42 @@ public class GeneratorDescriptorPersistence {
 
       return new _FunctionTypes._return_P0_E0<MappingConfig_ExternalRef>() {
         public MappingConfig_ExternalRef invoke() {
-          final MappingConfig_ExternalRef result_wk2vdq_a0a3a0a0e = new MappingConfig_ExternalRef();
-          final SModuleReference result_wk2vdq_a0a0a3a0a0e = PersistenceFacade.getInstance().createModuleReference(genUID);
-          result_wk2vdq_a0a3a0a0e.setGenerator(result_wk2vdq_a0a0a3a0a0e);
-          final MappingConfig_AbstractRef result_wk2vdq_a1a0a3a0a0e = local;
-          result_wk2vdq_a0a3a0a0e.setMappingConfig(result_wk2vdq_a1a0a3a0a0e);
-          return result_wk2vdq_a0a3a0a0e;
+          final MappingConfig_ExternalRef result_wk2vdq_a0a3a0c0e = new MappingConfig_ExternalRef();
+          final SModuleReference result_wk2vdq_a0a0a3a0c0e = PersistenceFacade.getInstance().createModuleReference(genUID);
+          result_wk2vdq_a0a3a0c0e.setGenerator(result_wk2vdq_a0a0a3a0c0e);
+          final MappingConfig_AbstractRef result_wk2vdq_a1a0a3a0c0e = local;
+          result_wk2vdq_a0a3a0c0e.setMappingConfig(result_wk2vdq_a1a0a3a0c0e);
+          return result_wk2vdq_a0a3a0c0e;
         }
       }.invoke();
     } else if (XmlUtil.first(parentElement, "mapping-set") != null) {
-      final MappingConfig_RefSet mappingSet = new MappingConfig_RefSet();
+      MappingConfig_RefSet mappingSet = new MappingConfig_RefSet();
       for (Element mappingSetElement : Sequence.fromIterable(XmlUtil.children(XmlUtil.first(parentElement, "mapping-set"), "mapping-set-element"))) {
-        mappingSet.getMappingConfigs().add(loadGeneratorMappingConfigRef(mappingSetElement, genUID, true));
+        mappingSet.getMappingConfigs().add(loadGeneratorMappingConfigRef(mappingSetElement, genUID, childOfGen));
       }
-
-      if (childOfGen) {
-        return mappingSet;
-      }
-
-      return new _FunctionTypes._return_P0_E0<MappingConfig_ExternalRef>() {
-        public MappingConfig_ExternalRef invoke() {
-          final MappingConfig_ExternalRef result_wk2vdq_a0a5a1a0e = new MappingConfig_ExternalRef();
-          final SModuleReference result_wk2vdq_a0a0a5a1a0e = PersistenceFacade.getInstance().createModuleReference(genUID);
-          result_wk2vdq_a0a5a1a0e.setGenerator(result_wk2vdq_a0a0a5a1a0e);
-          final MappingConfig_AbstractRef result_wk2vdq_a1a0a5a1a0e = mappingSet;
-          result_wk2vdq_a0a5a1a0e.setMappingConfig(result_wk2vdq_a1a0a5a1a0e);
-          return result_wk2vdq_a0a5a1a0e;
-        }
-      }.invoke();
+      return mappingSet;
     } else if (XmlUtil.first(parentElement, "generator") != null) {
       // external reference 
       final Element generator = XmlUtil.first(parentElement, "generator");
       return new _FunctionTypes._return_P0_E0<MappingConfig_ExternalRef>() {
         public MappingConfig_ExternalRef invoke() {
-          final MappingConfig_ExternalRef result_wk2vdq_a0a2a2a0e = new MappingConfig_ExternalRef();
-          final SModuleReference result_wk2vdq_a0a0a2a2a0e = PersistenceFacade.getInstance().createModuleReference(generator.getAttributeValue("generatorUID"));
-          result_wk2vdq_a0a2a2a0e.setGenerator(result_wk2vdq_a0a0a2a2a0e);
-          final MappingConfig_AbstractRef result_wk2vdq_a1a0a2a2a0e = loadGeneratorMappingConfigRef(XmlUtil.first(parentElement, "external-mapping"), generator.getAttributeValue("generatorUID"), true);
-          result_wk2vdq_a0a2a2a0e.setMappingConfig(result_wk2vdq_a1a0a2a2a0e);
-          return result_wk2vdq_a0a2a2a0e;
+          final MappingConfig_ExternalRef result_wk2vdq_a0a2a2c0e = new MappingConfig_ExternalRef();
+          final SModuleReference result_wk2vdq_a0a0a2a2c0e = PersistenceFacade.getInstance().createModuleReference(generator.getAttributeValue("generatorUID"));
+          result_wk2vdq_a0a2a2c0e.setGenerator(result_wk2vdq_a0a0a2a2c0e);
+          final MappingConfig_AbstractRef result_wk2vdq_a1a0a2a2c0e = loadGeneratorMappingConfigRef(XmlUtil.first(parentElement, "external-mapping"), generator.getAttributeValue("generatorUID"), true);
+          result_wk2vdq_a0a2a2c0e.setMappingConfig(result_wk2vdq_a1a0a2a2c0e);
+          return result_wk2vdq_a0a2a2c0e;
         }
       }.invoke();
     } else if (XmlUtil.first(parentElement, "mapping-node") != null) {
       // simple reference 
       Element mappingNode = XmlUtil.first(parentElement, "mapping-node");
       final MappingConfig_SimpleRef mapping_SimpleRef = new MappingConfig_SimpleRef();
-      MappingConfig_SimpleRef result_wk2vdq_a3a3a0e = mapping_SimpleRef;
-      final String result_wk2vdq_a0a3a3a0e = mappingNode.getAttributeValue("modelUID");
-      result_wk2vdq_a3a3a0e.setModelUID(result_wk2vdq_a0a3a3a0e);
-      final String result_wk2vdq_a1a3a3a0e = mappingNode.getAttributeValue("nodeID");
-      result_wk2vdq_a3a3a0e.setNodeID(result_wk2vdq_a1a3a3a0e);
+      MappingConfig_SimpleRef result_wk2vdq_a3a3c0e = mapping_SimpleRef;
+      final String result_wk2vdq_a0a3a3c0e = mappingNode.getAttributeValue("modelUID");
+      result_wk2vdq_a3a3c0e.setModelUID(result_wk2vdq_a0a3a3c0e);
+      final String result_wk2vdq_a1a3a3c0e = mappingNode.getAttributeValue("nodeID");
+      result_wk2vdq_a3a3c0e.setNodeID(result_wk2vdq_a1a3a3c0e);
 
       if (childOfGen) {
         return mapping_SimpleRef;
@@ -246,12 +234,12 @@ public class GeneratorDescriptorPersistence {
 
       return new _FunctionTypes._return_P0_E0<MappingConfig_ExternalRef>() {
         public MappingConfig_ExternalRef invoke() {
-          final MappingConfig_ExternalRef result_wk2vdq_a0a7a3a0e = new MappingConfig_ExternalRef();
-          final SModuleReference result_wk2vdq_a0a0a7a3a0e = PersistenceFacade.getInstance().createModuleReference(genUID);
-          result_wk2vdq_a0a7a3a0e.setGenerator(result_wk2vdq_a0a0a7a3a0e);
-          final MappingConfig_AbstractRef result_wk2vdq_a1a0a7a3a0e = mapping_SimpleRef;
-          result_wk2vdq_a0a7a3a0e.setMappingConfig(result_wk2vdq_a1a0a7a3a0e);
-          return result_wk2vdq_a0a7a3a0e;
+          final MappingConfig_ExternalRef result_wk2vdq_a0a7a3c0e = new MappingConfig_ExternalRef();
+          final SModuleReference result_wk2vdq_a0a0a7a3c0e = PersistenceFacade.getInstance().createModuleReference(genUID);
+          result_wk2vdq_a0a7a3c0e.setGenerator(result_wk2vdq_a0a0a7a3c0e);
+          final MappingConfig_AbstractRef result_wk2vdq_a1a0a7a3c0e = mapping_SimpleRef;
+          result_wk2vdq_a0a7a3c0e.setMappingConfig(result_wk2vdq_a1a0a7a3c0e);
+          return result_wk2vdq_a0a7a3c0e;
         }
       }.invoke();
     }

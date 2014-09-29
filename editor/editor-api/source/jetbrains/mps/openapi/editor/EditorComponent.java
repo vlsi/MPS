@@ -52,6 +52,8 @@ public interface EditorComponent {
 
   EditorCell findCellWithId(SNode node, @NotNull String id);
 
+  EditorCell findNodeCellWithRole(SNode node, String role);
+
   void scrollToNode(SNode node);
 
   void scrollToCell(@NotNull EditorCell cell);

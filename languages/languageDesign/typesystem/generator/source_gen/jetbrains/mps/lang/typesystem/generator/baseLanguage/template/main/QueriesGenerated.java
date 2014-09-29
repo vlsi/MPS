@@ -2112,6 +2112,9 @@ parametersLoop:
     quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, facade.createModelReference("r:00000000-0000-4000-0000-011c895902b5(jetbrains.mps.lang.typesystem.dependencies)"), facade.createNodeId("1196177069451")));
     return quotedNode_1;
   }
+  private static boolean isEmptyString(String str) {
+    return str == null || str.length() == 0;
+  }
   private static SNode _quotation_createNode_x583g4_a0d0nb() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
@@ -2374,8 +2377,5 @@ parametersLoop:
     quotedNode_2.setReference("classifier", SReference.create("classifier", quotedNode_2, facade.createModelReference("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.typesystem.inference(MPS.Core/jetbrains.mps.typesystem.inference@java_stub)"), facade.createNodeId("~TypeCheckingContext")));
     quotedNode_1.addChild("type", quotedNode_2);
     return quotedNode_1;
-  }
-  private static boolean isEmptyString(String str) {
-    return str == null || str.length() == 0;
   }
 }

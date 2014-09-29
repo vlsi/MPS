@@ -103,7 +103,7 @@ public class ConstructorDeclaration_Editor extends DefaultNodeEditor {
   }
   private EditorCell createConstant_1x071y_f0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");
-    editorCell.setCellId("Constant_1x071y_f0");
+    editorCell.setCellId("leftParen");
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.apply_LeftParenAfterName(style, editorCell);
     editorCell.getStyle().putAll(style);

@@ -17,6 +17,9 @@
     <file name="Operator_BehaviorDescriptor.java">
       <unit at="7,0,15,0" name="jetbrains.mps.baseLanguage.overloadedOperators.behavior.Operator_BehaviorDescriptor" />
     </file>
+    <file name="ContainerImport_BehaviorDescriptor.java">
+      <unit at="8,0,19,0" name="jetbrains.mps.baseLanguage.overloadedOperators.behavior.ContainerImport_BehaviorDescriptor" />
+    </file>
     <file name="OverloadedOperatorContainer_BehaviorDescriptor.java">
       <unit at="10,0,21,0" name="jetbrains.mps.baseLanguage.overloadedOperators.behavior.OverloadedOperatorContainer_BehaviorDescriptor" />
     </file>
@@ -27,7 +30,7 @@
       <unit at="6,0,14,0" name="jetbrains.mps.baseLanguage.overloadedOperators.behavior.CustomOperator_BehaviorDescriptor" />
     </file>
     <file name="BehaviorAspectDescriptor.java">
-      <unit at="9,0,36,0" name="jetbrains.mps.baseLanguage.overloadedOperators.behavior.BehaviorAspectDescriptor" />
+      <unit at="9,0,38,0" name="jetbrains.mps.baseLanguage.overloadedOperators.behavior.BehaviorAspectDescriptor" />
     </file>
     <file name="CustomOperatorUsage_BehaviorDescriptor.java">
       <unit at="7,0,15,0" name="jetbrains.mps.baseLanguage.overloadedOperators.behavior.CustomOperatorUsage_BehaviorDescriptor" />
@@ -107,6 +110,22 @@
         <var name="thisNode" id="6677452554239147646" />
       </scope>
       <unit id="6677452554239147646" at="15,0,37,0" name="jetbrains.mps.baseLanguage.overloadedOperators.behavior.OverloadedBinaryOperator_Behavior" />
+    </file>
+  </root>
+  <root nodeRef="r:9e7859f6-b0f4-49cf-8c48-60da2fce4fb2(jetbrains.mps.baseLanguage.overloadedOperators.behavior)/7363434029342255602">
+    <file name="ContainerImport_Behavior.java">
+      <node id="7363434029342256051" at="12,78,13,213" concept="5" />
+      <node id="7363434029342255602" at="10,0,12,0" concept="6" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="7363434029342255602" at="12,0,15,0" concept="6" trace="virtual_getPresentation_1213877396640#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
+      <scope id="7363434029342255755" at="10,43,10,43" />
+      <scope id="7363434029342255971" at="12,78,13,213" />
+      <scope id="7363434029342255602" at="10,0,12,0">
+        <var name="thisNode" id="7363434029342255602" />
+      </scope>
+      <scope id="7363434029342255602" at="12,0,15,0">
+        <var name="thisNode" id="7363434029342255602" />
+      </scope>
+      <unit id="7363434029342255602" at="9,0,16,0" name="jetbrains.mps.baseLanguage.overloadedOperators.behavior.ContainerImport_Behavior" />
     </file>
   </root>
 </debug-info>

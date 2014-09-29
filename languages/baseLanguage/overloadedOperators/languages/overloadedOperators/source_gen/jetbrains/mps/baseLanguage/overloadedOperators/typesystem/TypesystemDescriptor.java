@@ -6,13 +6,9 @@ import jetbrains.mps.lang.typesystem.runtime.BaseHelginsDescriptor;
 import jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.OverloadedOperationsTypesProvider;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.baseLanguage.overloadedOperators.util.BinaryOperationUtil;
-import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.typesystem.inference.SubtypingManager;
 import jetbrains.mps.errors.IRuleConflictWarningProducer;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
@@ -44,20 +40,10 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
       this.myRuleNodeId = "6136676636350205596";
     }
     public SNode getOperationType(SNode operation, SNode leftOperandType, SNode rightOperandType) {
-      Iterable<SNode> operators = ListSequence.fromList(SModelOperations.getRootsIncludingImported(SNodeOperations.getModel(operation), "jetbrains.mps.baseLanguage.overloadedOperators.structure.OverloadedOperatorContainer")).translate(new ITranslator2<SNode, SNode>() {
-        public Iterable<SNode> translate(SNode it) {
-          return SLinkOperations.getTargets(it, "operators", true);
-        }
-      });
-      return SLinkOperations.getTarget(BinaryOperationUtil.getNearestOverloaded(operation, leftOperandType, rightOperandType, Sequence.fromIterable(operators).toListSequence()), "returnType", true);
+      return SLinkOperations.getTarget(new BinaryOperationUtil(SNodeOperations.getModel(operation)).getNearestOverloaded(operation, leftOperandType, rightOperandType), "returnType", true);
     }
     public boolean isApplicable(SubtypingManager subtypingManager, SNode operation, SNode leftOperandType, SNode rightOperandType) {
-      Iterable<SNode> operators = ListSequence.fromList(SModelOperations.getRootsIncludingImported(SNodeOperations.getModel(operation), "jetbrains.mps.baseLanguage.overloadedOperators.structure.OverloadedOperatorContainer")).translate(new ITranslator2<SNode, SNode>() {
-        public Iterable<SNode> translate(SNode it) {
-          return SLinkOperations.getTargets(it, "operators", true);
-        }
-      });
-      return BinaryOperationUtil.hasOverloadedOperators(operation, leftOperandType, rightOperandType, Sequence.fromIterable(operators).toListSequence());
+      return new BinaryOperationUtil(SNodeOperations.getModel(operation)).hasOverloadedOperators(operation, leftOperandType, rightOperandType);
     }
     @Override
     public void reportConflict(IRuleConflictWarningProducer producer) {

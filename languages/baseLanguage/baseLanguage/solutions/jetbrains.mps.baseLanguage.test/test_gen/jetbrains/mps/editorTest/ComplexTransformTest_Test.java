@@ -43,6 +43,7 @@ public class ComplexTransformTest_Test extends BaseTransformationTest {
       this.invokeAction("jetbrains.mps.ide.editor.actions.MoveLeft_Action");
       this.invokeAction("jetbrains.mps.ide.editor.actions.MoveLeft_Action");
       this.invokeAction("jetbrains.mps.ide.editor.actions.MoveLeft_Action");
+      this.invokeAction("jetbrains.mps.ide.editor.actions.MoveLeft_Action");
       this.typeString("!");
       this.invokeAction("jetbrains.mps.ide.editor.actions.MoveLeft_Action");
     }

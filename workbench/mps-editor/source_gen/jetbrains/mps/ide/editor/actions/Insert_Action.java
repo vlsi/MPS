@@ -14,6 +14,8 @@ import org.jetbrains.annotations.NotNull;
 import org.apache.log4j.Level;
 import jetbrains.mps.ide.editor.MPSEditorDataKeys;
 import jetbrains.mps.editor.runtime.style.StyleAttributesUtil;
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 
@@ -62,14 +64,22 @@ public class Insert_Action extends BaseAction {
   }
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      EditorCell editorCell = EditorActionUtils.getEditorCellToInsert(((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")));
+      final EditorCell editorCell = EditorActionUtils.getEditorCellToInsert(((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")));
       if (((jetbrains.mps.nodeEditor.cells.EditorCell) editorCell).isFirstCaretPosition()) {
         if (!(((jetbrains.mps.nodeEditor.cells.EditorCell) editorCell).isLastCaretPosition()) || !(StyleAttributesUtil.isLastPositionAllowed(editorCell.getStyle()))) {
           EditorActionUtils.callInsertBeforeAction(editorCell);
           return;
         }
       }
-      EditorActionUtils.callInsertAction(editorCell);
+
+      ModelAccess.instance().runWriteInEDT(new Runnable() {
+        public void run() {
+          if (editorCell instanceof EditorCell_Property && ((EditorCell_Property) editorCell).commit()) {
+            return;
+          }
+          EditorActionUtils.callInsertAction(editorCell);
+        }
+      });
     } catch (Throwable t) {
       if (LOG.isEnabledFor(Level.ERROR)) {
         LOG.error("User's action execute method failed. Action:" + "Insert", t);

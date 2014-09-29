@@ -58,14 +58,14 @@ public class MpsStartupScript_Behavior {
   public static String call_getVmOptionsExtension_5842819808956911479(SNode thisNode) {
     return "vmoptions";
   }
+  public static String trim_p7akvg_a0a0b(String str) {
+    return (str == null ? null : str.trim());
+  }
   private static SNode _quotation_createNode_p7akvg_a0a0a0a0d(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.startup.structure.TextLine", null, null, false);
     SNodeAccessUtil.setProperty(quotedNode_2, "text", (String) parameter_1);
     return quotedNode_2;
-  }
-  public static String trim_p7akvg_a0a0b(String str) {
-    return (str == null ? null : str.trim());
   }
 }

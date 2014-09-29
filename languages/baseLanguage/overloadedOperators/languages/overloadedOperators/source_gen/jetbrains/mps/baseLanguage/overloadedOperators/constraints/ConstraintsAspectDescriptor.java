@@ -13,14 +13,16 @@ public class ConstraintsAspectDescriptor implements jetbrains.mps.smodel.runtime
     switch (Arrays.binarySearch(stringSwitchCases_2qnle6_a0a0b, fqName)) {
       case 0:
         return new BinaryOperationReference_Constraints();
-      case 1:
-        return new CustomOperator_Constraints();
       case 2:
+        return new CustomOperator_Constraints();
+      case 3:
         return new CustomOperatorUsage_Constraints();
+      case 1:
+        return new ContainerImport_Constraints();
       default:
         // todo: illegal in some cases? 
         return new BaseConstraintsDescriptor(fqName);
     }
   }
-  private static String[] stringSwitchCases_2qnle6_a0a0b = new String[]{"jetbrains.mps.baseLanguage.overloadedOperators.structure.BinaryOperationReference", "jetbrains.mps.baseLanguage.overloadedOperators.structure.CustomOperator", "jetbrains.mps.baseLanguage.overloadedOperators.structure.CustomOperatorUsage"};
+  private static String[] stringSwitchCases_2qnle6_a0a0b = new String[]{"jetbrains.mps.baseLanguage.overloadedOperators.structure.BinaryOperationReference", "jetbrains.mps.baseLanguage.overloadedOperators.structure.ContainerImport", "jetbrains.mps.baseLanguage.overloadedOperators.structure.CustomOperator", "jetbrains.mps.baseLanguage.overloadedOperators.structure.CustomOperatorUsage"};
 }

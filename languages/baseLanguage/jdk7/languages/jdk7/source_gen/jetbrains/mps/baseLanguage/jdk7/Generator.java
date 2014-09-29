@@ -19,13 +19,11 @@ public class Generator extends TemplateModuleBase {
   private Language sourceLanguage;
   private final Collection<TemplateMappingPriorityRule> priorities;
   private final Collection<TemplateModel> models;
-  private final Collection<String> referencedGenerators;
   private Collection<String> usedLanguages;
   public Generator(Language sourceLanguage) {
     this.sourceLanguage = sourceLanguage;
     priorities = TemplateUtil.asCollection(TemplateUtil.createBeforeOrTogetherRule(TemplateUtil.createRefExternal("2ec34c1e-7442-4656-9a59-44fa731a9286(jetbrains.mps.baseLanguage.jdk7#616711547384942258)", TemplateUtil.createRefLocal()), TemplateUtil.createRefExternal("46ef3033-ce72-4166-b19e-6ceed23b6844(jetbrains.mps.baseLanguageInternal#1238251529692)", TemplateUtil.createRefLocal())));
     models = TemplateUtil.<TemplateModel>asCollection(getTemplateModel("jetbrains.mps.baseLanguage.jdk7.generator.template.main.TemplateModelImpl"));
-    referencedGenerators = TemplateUtil.<String>asCollection("jetbrains.mps.baseLanguageInternal/jetbrains.mps.baseLanguageInternal#1238251529692");
     usedLanguages = TemplateUtil.<String>asCollection("jetbrains.mps.baseLanguage", "jetbrains.mps.baseLanguageInternal");
   }
   @Override
@@ -54,7 +52,7 @@ public class Generator extends TemplateModuleBase {
   }
   @Override
   public Collection<String> getReferencedModules() {
-    return referencedGenerators;
+    return null;
   }
   private TemplateModel getTemplateModel(String modelName) {
     Class<TemplateModel> clazz = ClassLoaderManager.getInstance().getClass(ModuleRepositoryFacade.getInstance().getModule(getReference()), modelName);

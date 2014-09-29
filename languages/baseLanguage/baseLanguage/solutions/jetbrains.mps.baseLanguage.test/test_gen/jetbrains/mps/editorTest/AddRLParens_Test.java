@@ -23,23 +23,14 @@ public class AddRLParens_Test extends BaseTransformationTest {
     @Override
     public void testMethodImpl() throws Exception {
       initEditor("341917192554901263", "341917192554904599");
-      this.invokeAction("jetbrains.mps.ide.editor.actions.MoveRight_Action");
-      this.invokeAction("jetbrains.mps.ide.editor.actions.MoveRight_Action");
-      this.invokeAction("jetbrains.mps.ide.editor.actions.MoveRight_Action");
-      this.invokeAction("jetbrains.mps.ide.editor.actions.MoveRight_Action");
-      this.invokeAction("jetbrains.mps.ide.editor.actions.MoveRight_Action");
-      this.invokeAction("jetbrains.mps.ide.editor.actions.MoveRight_Action");
-      this.invokeAction("jetbrains.mps.ide.editor.actions.MoveRight_Action");
-      this.invokeAction("jetbrains.mps.ide.editor.actions.MoveRight_Action");
-      this.invokeAction("jetbrains.mps.ide.editor.actions.MoveRight_Action");
       this.typeString(")");
       this.invokeAction("jetbrains.mps.ide.editor.actions.MoveLeft_Action");
       this.invokeAction("jetbrains.mps.ide.editor.actions.MoveLeft_Action");
       this.invokeAction("jetbrains.mps.ide.editor.actions.MoveLeft_Action");
       this.invokeAction("jetbrains.mps.ide.editor.actions.MoveLeft_Action");
       this.invokeAction("jetbrains.mps.ide.editor.actions.MoveLeft_Action");
+      this.invokeAction("jetbrains.mps.ide.editor.actions.MoveLeft_Action");
       this.typeString("(");
-      this.invokeAction("jetbrains.mps.ide.editor.actions.MoveRight_Action");
     }
   }
 }

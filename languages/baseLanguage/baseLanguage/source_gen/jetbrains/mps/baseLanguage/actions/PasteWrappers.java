@@ -13,6 +13,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 
 public class PasteWrappers {
@@ -227,6 +229,7 @@ public class PasteWrappers {
             SNodeOperations.replaceWithNewChild(it, "jetbrains.mps.baseLanguage.structure.ThisExpression");
           }
         });
+        AttributeOperations.setAttribute(method, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.baseLanguage.javadoc.structure.MethodDocComment"), AttributeOperations.getAttribute(_context.getSourceNode(), new IAttributeDescriptor.NodeAttribute("jetbrains.mps.baseLanguage.javadoc.structure.MethodDocComment")));
         return SNodeOperations.cast(method, "jetbrains.mps.baseLanguage.structure.ClassifierMember");
       }
     });
@@ -254,6 +257,7 @@ public class PasteWrappers {
             SNodeOperations.replaceWithNewChild(it, "jetbrains.mps.baseLanguage.structure.ThisExpression");
           }
         });
+        AttributeOperations.setAttribute(method, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.baseLanguage.javadoc.structure.MethodDocComment"), AttributeOperations.getAttribute(_context.getSourceNode(), new IAttributeDescriptor.NodeAttribute("jetbrains.mps.baseLanguage.javadoc.structure.MethodDocComment")));
         return SNodeOperations.cast(method, "jetbrains.mps.baseLanguage.structure.ClassifierMember");
       }
     });
@@ -286,6 +290,7 @@ public class PasteWrappers {
             SNodeOperations.replaceWithNewChild(it, "jetbrains.mps.lang.behavior.structure.ThisNodeExpression");
           }
         });
+        AttributeOperations.setAttribute(method, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.baseLanguage.javadoc.structure.MethodDocComment"), AttributeOperations.getAttribute(_context.getSourceNode(), new IAttributeDescriptor.NodeAttribute("jetbrains.mps.baseLanguage.javadoc.structure.MethodDocComment")));
         return method;
       }
     });
@@ -318,6 +323,7 @@ public class PasteWrappers {
             SNodeOperations.replaceWithNewChild(it, "jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression");
           }
         });
+        AttributeOperations.setAttribute(method, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.baseLanguage.javadoc.structure.MethodDocComment"), AttributeOperations.getAttribute(_context.getSourceNode(), new IAttributeDescriptor.NodeAttribute("jetbrains.mps.baseLanguage.javadoc.structure.MethodDocComment")));
         return method;
       }
     });

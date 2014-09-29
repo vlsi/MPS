@@ -7,7 +7,7 @@
   </models>
   <accessoryModels />
   <generators>
-    <generator name="" generatorUID="jetbrains.mps.console.scripts#1734392475490224704" uuid="b372f31d-dc58-46b6-ad0b-2e1b2e187b9d" needs-opctx="false">
+    <generator name="" generatorUID="jetbrains.mps.console.scripts#1734392475490224704" uuid="b372f31d-dc58-46b6-ad0b-2e1b2e187b9d">
       <models>
         <modelRoot contentPath="${module}" type="default">
           <sourceRoot location="generator/template" />
@@ -19,6 +19,7 @@
       </external-templates>
       <dependencies>
         <dependency reexport="false">1a8554c4-eb84-43ba-8c34-6f0d90c6e75a(jetbrains.mps.console.blCommand)</dependency>
+        <dependency reexport="false" scope="design">2bdcefec-ba49-4b32-ab50-ebc7a41d5090(jetbrains.mps.lang.smodel#1139186730696)</dependency>
       </dependencies>
       <usedLanguages>
         <usedLanguage>ed6d7656-532c-4bc2-81d1-af945aeb8280(jetbrains.mps.baseLanguage.blTypes)</usedLanguage>

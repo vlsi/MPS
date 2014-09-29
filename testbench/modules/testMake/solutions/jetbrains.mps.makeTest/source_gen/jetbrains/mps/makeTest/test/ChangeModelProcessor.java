@@ -22,7 +22,7 @@ import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.generator.GenerationOptions;
-import jetbrains.mps.ide.generator.TransientModelsComponent;
+import jetbrains.mps.generator.TransientModelsProvider;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.smodel.SModelFileTracker;
@@ -99,7 +99,7 @@ public class ChangeModelProcessor {
       public void clear() {
       }
     };
-    GenerationFacade.generateModels(this.myProject.getComponent(MPSProject.class), models, new ModuleContext(model.getModule(), ProjectHelper.toMPSProject(this.myProject)), generationHandler, new EmptyProgressMonitor(), handler, GenerationOptions.getDefaults().create(), this.myProject.getComponent(TransientModelsComponent.class));
+    GenerationFacade.generateModels(this.myProject.getComponent(MPSProject.class), models, new ModuleContext(model.getModule(), ProjectHelper.toMPSProject(this.myProject)), generationHandler, new EmptyProgressMonitor(), handler, GenerationOptions.getDefaults().create(), this.myProject.getComponent(TransientModelsProvider.class));
     return results;
   }
   public SModel getModelDescriptorByName(String name) {

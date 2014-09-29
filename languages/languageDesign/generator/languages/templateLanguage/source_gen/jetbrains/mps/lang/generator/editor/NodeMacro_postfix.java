@@ -136,7 +136,6 @@ public class NodeMacro_postfix implements ConceptEditorComponent {
       editorCell.setCellId("NM_property_name");
       Style style = new StyleImpl();
       Styles_StyleSheet.apply_mappingLabelReference(style, editorCell);
-      style.set(StyleAttributes.PADDING_LEFT, new Padding(1, Measure.SPACES));
       editorCell.getStyle().putAll(style);
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       SNode attributeConcept = provider.getRoleAttribute();

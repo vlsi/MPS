@@ -29,7 +29,6 @@ import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.util.containers.ConcurrentHashSet;
 import jetbrains.mps.util.performance.IPerformanceTracer;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SConceptRepository;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -56,7 +55,6 @@ public class GenerationSessionContext extends StandaloneMPSContext implements Ge
   private final Project myProject;
   private final TransientModelsModule myTransientModule;
   private final GenerationPlan myGenerationPlan;
-  private final Map<String, Object> myParameters;
   private final GenerationOptions myGenerationOptions;
   private final GenerationSessionLogger myLogger;
   private final RoleValidation myValidation;
@@ -103,7 +101,6 @@ public class GenerationSessionContext extends StandaloneMPSContext implements Ge
     myLogger = logger;
     myQueryProviders = new QueryProviderCache(logger); // for now, once per input model, however can span complete make phase
     myGenerationPlan = null;
-    myParameters = null;
     myValidation = new RoleValidation(generationOptions.isShowBadChildWarning());
     myNamedConcept = SConceptRepository.getInstance().getConcept(SNodeUtil.concept_INamedConcept);
     mySessionObjects = new ConcurrentHashMap<Object, Object>();
@@ -113,7 +110,7 @@ public class GenerationSessionContext extends StandaloneMPSContext implements Ge
   }
 
   // copy cons
-  public GenerationSessionContext(@NotNull GenerationSessionContext prevContext, @NotNull GenerationPlan generationPlan, @Nullable Map<String, Object> parameters) {
+  public GenerationSessionContext(@NotNull GenerationSessionContext prevContext, @NotNull GenerationPlan generationPlan) {
     myProject = prevContext.myProject;
     myGenerationOptions = prevContext.myGenerationOptions;
     myTransientModule = prevContext.myTransientModule;
@@ -126,7 +123,6 @@ public class GenerationSessionContext extends StandaloneMPSContext implements Ge
     myNamedConcept = prevContext.myNamedConcept;
     myQueryProviders = prevContext.myQueryProviders;
     myGenerationPlan = generationPlan;
-    myParameters = parameters;
     // the moment this copy cons is used, nothing happened, reuse
     myStepObjects = prevContext.myStepObjects;
     myTransientObjects = prevContext.myTransientObjects;
@@ -147,7 +143,6 @@ public class GenerationSessionContext extends StandaloneMPSContext implements Ge
     myValidation = prevContext.myValidation;
     myNamedConcept = prevContext.myNamedConcept;
     myGenerationPlan = prevContext.myGenerationPlan;
-    myParameters = prevContext.myParameters;
     myQueryProviders = prevContext.myQueryProviders;
     // this copy cons indicate new major step, hence new empty maps
     myTransientObjects = new ConcurrentHashMap<Object, Object>();
@@ -353,7 +348,11 @@ public class GenerationSessionContext extends StandaloneMPSContext implements Ge
   }
 
   public Object getGenerationParameter(String name) {
-    return myParameters == null ? null : myParameters.get(name);
+    if (myGenerationOptions.getParametersProvider() != null) {
+      final Map<String, Object> parameters = myGenerationOptions.getParametersProvider().getParameters(myOriginalInputModel);
+      return parameters == null ? null : parameters.get(name);
+    }
+    return null;
   }
 
   public GenerationOptions getGenerationOptions() {

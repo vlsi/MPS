@@ -8,8 +8,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
-import jetbrains.mps.baseLanguage.textGen.LastStatementUtil;
+import jetbrains.mps.baseLanguage.behavior.ExpressionStatement_Behavior;
 import jetbrains.mps.generator.template.PropertyMacroContext;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
@@ -54,17 +53,7 @@ public class QueriesGenerated {
     return !(SNodeOperations.isInstanceOf(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.baseLanguage.structure.AssignmentExpression"));
   }
   public static boolean baseMappingRule_Condition_1566704013439143567(final BaseMappingRuleContext _context) {
-    if (!(SNodeOperations.getConceptDeclaration(SNodeOperations.getParent(_context.getNode())) == SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.StatementList"))) {
-      return false;
-    }
-    SNode methodLike = SNodeOperations.getAncestor(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.baseLanguage.structure.IMethodLike", false, false);
-    if (!(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), methodLike, "virtual_getLastStatement_1239354409446", new Object[]{}) == _context.getNode())) {
-      return false;
-    }
-    if (!(LastStatementUtil.canMakeReturnStatement(_context.getNode()))) {
-      return false;
-    }
-    return true;
+    return ExpressionStatement_Behavior.call_canServeAsReturn_1239355137616(_context.getNode());
   }
   public static boolean baseMappingRule_Condition_4747365393927488517(final BaseMappingRuleContext _context) {
     _context.showErrorMessage(_context.getNode(), "Incomplete member declaration in the code, ignoring");

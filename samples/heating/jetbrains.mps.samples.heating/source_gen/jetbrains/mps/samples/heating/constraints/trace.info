@@ -149,12 +149,12 @@
       <node id="935069066463246522" at="59,47,60,98" concept="5" />
       <node id="935069066463200868" at="63,50,64,259" concept="5" />
       <node id="935069066463107114" at="70,7,71,22" concept="5" />
-      <node id="935069066463107114" at="73,0,74,0" concept="6" trace="breakingNode_y2k5og_a0a2a0a0a1a0b0a1a1" />
-      <node id="935069066463247796" at="74,90,75,49" concept="5" />
+      <node id="935069066463247796" at="73,90,74,49" concept="5" />
+      <node id="935069066463107114" at="76,0,77,0" concept="6" trace="breakingNode_y2k5og_a0a2a0a0a1a0b0a1a1" />
       <node id="935069066463107114" at="29,0,32,0" concept="1" trace="DailyPlanReference_Constraints#()V" />
       <node id="935069066463245362" at="59,0,62,0" concept="3" trace="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
       <node id="935069066463194515" at="63,0,66,0" concept="3" trace="getName#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
-      <node id="935069066463247796" at="74,0,77,0" concept="7" trace="neq_y2k5og_a0a0a0a0a0a0a0a0a3a0a0a1a0b0a1a1#(Ljava/lang/Object;Ljava/lang/Object;)Z" />
+      <node id="935069066463247796" at="73,0,76,0" concept="7" trace="neq_y2k5og_a0a0a0a0a0a0a0a0a3a0a0a1a0b0a1a1#(Ljava/lang/Object;Ljava/lang/Object;)Z" />
       <node id="935069066463107114" at="36,0,40,0" concept="3" trace="hasOwnScopeProvider#()Z" />
       <node id="935069066463107114" at="44,0,48,0" concept="3" trace="hasPresentation#()Z" />
       <node id="935069066463107114" at="48,0,52,0" concept="3" trace="getPresentation#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/runtime/ReferencePresentationContext;)Ljava/lang/String;" />
@@ -173,7 +173,7 @@
       <scope id="935069066463107114" at="53,63,54,58" />
       <scope id="935069066463245363" at="59,47,60,98" />
       <scope id="935069066463194521" at="63,50,64,259" />
-      <scope id="935069066463247796" at="74,90,75,49" />
+      <scope id="935069066463247796" at="73,90,74,49" />
       <scope id="935069066463107114" at="29,0,32,0" />
       <scope id="935069066463245362" at="59,0,62,0">
         <var name="it" id="935069066463245362" />
@@ -181,7 +181,7 @@
       <scope id="935069066463194515" at="63,0,66,0">
         <var name="child" id="935069066463194519" />
       </scope>
-      <scope id="935069066463247796" at="74,0,77,0">
+      <scope id="935069066463247796" at="73,0,76,0">
         <var name="a" id="935069066463247796" />
         <var name="b" id="935069066463247796" />
       </scope>

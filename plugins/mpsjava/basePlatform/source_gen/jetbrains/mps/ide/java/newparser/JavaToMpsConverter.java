@@ -54,7 +54,6 @@ import jetbrains.mps.internal.collections.runtime.DequeSequence;
 import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.smodel.SModelInternal;
-import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
 import jetbrains.mps.persistence.FilePerRootDataSource;
 import org.jetbrains.mps.openapi.persistence.ModelFactory;
@@ -66,7 +65,6 @@ import org.jetbrains.mps.openapi.model.EditableSModel;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.extapi.persistence.FileBasedModelRoot;
 import jetbrains.mps.util.FileUtil;
-import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 
 public class JavaToMpsConverter {
   private static final Logger LOG = LogManager.getLogger(JavaToMpsConverter.class);
@@ -627,6 +625,18 @@ public class JavaToMpsConverter {
       return null;
     }
 
+    // now we can try to search 
+    SNode gateway = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.IYetUnresolved", null);
+
+    String enumConstName = ((DynamicReference) ref).getResolveInfo();
+
+    for (SNode enclosingEnum : ListSequence.fromList(SNodeOperations.getAncestors(varRef, "jetbrains.mps.baseLanguage.structure.EnumClass", false))) {
+      SNode enumConstRef = makeEnumConstRef(enclosingEnum, enumConstName);
+      if (enumConstRef != null) {
+        return enumConstRef;
+      }
+    }
+
     SNode root = SNodeOperations.getContainingRoot(varRef);
     if (!(SNodeOperations.isInstanceOf(root, "jetbrains.mps.baseLanguage.structure.Classifier"))) {
       return null;
@@ -636,10 +646,6 @@ public class JavaToMpsConverter {
       return null;
     }
 
-    // now we can try to search 
-    SNode gateway = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.IYetUnresolved", null);
-
-    final String enumConstName = ((DynamicReference) ref).getResolveInfo();
     for (SNode singleNameImport : Sequence.fromIterable(BehaviorReflection.invokeNonVirtual((Class<Iterable<SNode>>) ((Class) Object.class), javaImports, "jetbrains.mps.baseLanguage.structure.JavaImports", "call_staticSingleName_5230012391903395274", new Object[]{}))) {
       if (!(enumConstName.equals(BehaviorReflection.invokeNonVirtual(String.class, singleNameImport, "jetbrains.mps.baseLanguage.structure.Tokens", "call_lastToken_1296023605440030462", new Object[]{})))) {
         continue;
@@ -656,24 +662,10 @@ public class JavaToMpsConverter {
       if (!(SNodeOperations.isInstanceOf(enumClassCandidate, "jetbrains.mps.baseLanguage.structure.EnumClass"))) {
         return null;
       }
-
-      // Q: maybe not findFirst, but rather fail if there are more than one... 
-      SNode enumConst = ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(enumClassCandidate, "jetbrains.mps.baseLanguage.structure.EnumClass"), "enumConstant", true)).findFirst(new IWhereFilter<SNode>() {
-        public boolean accept(SNode it) {
-          return enumConstName.equals(SPropertyOperations.getString(it, "name"));
-        }
-      });
-
-      if ((enumConst == null)) {
+      SNode result = makeEnumConstRef(SNodeOperations.cast(enumClassCandidate, "jetbrains.mps.baseLanguage.structure.EnumClass"), enumConstName);
+      if (result != null) {
         return null;
       }
-
-      // success 
-      SNode result = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.EnumConstantReference", null);
-      SLinkOperations.setTarget(result, "enumClass", SNodeOperations.cast(enumClassCandidate, "jetbrains.mps.baseLanguage.structure.EnumClass"), false);
-      SLinkOperations.setTarget(result, "enumConstantDeclaration", enumConst, false);
-
-      return result;
     }
 
     for (SNode onDemandImport : Sequence.fromIterable(BehaviorReflection.invokeNonVirtual((Class<Iterable<SNode>>) ((Class) Object.class), javaImports, "jetbrains.mps.baseLanguage.structure.JavaImports", "call_staticOnDemand_5230012391903366883", new Object[]{}))) {
@@ -684,24 +676,29 @@ public class JavaToMpsConverter {
       if (!(SNodeOperations.isInstanceOf(claz, "jetbrains.mps.baseLanguage.structure.EnumClass"))) {
         continue;
       }
-
-      SNode enumConst = ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(claz, "jetbrains.mps.baseLanguage.structure.EnumClass"), "enumConstant", true)).findFirst(new IWhereFilter<SNode>() {
-        public boolean accept(SNode it) {
-          return enumConstName.equals(SPropertyOperations.getString(it, "name"));
-        }
-      });
-      if ((enumConst == null)) {
-        continue;
+      SNode result = makeEnumConstRef(SNodeOperations.cast(claz, "jetbrains.mps.baseLanguage.structure.EnumClass"), enumConstName);
+      if (result != null) {
+        return null;
       }
-
-      SNode result = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.EnumConstantReference", null);
-      SLinkOperations.setTarget(result, "enumClass", SNodeOperations.cast(claz, "jetbrains.mps.baseLanguage.structure.EnumClass"), false);
-      SLinkOperations.setTarget(result, "enumConstantDeclaration", enumConst, false);
-
-      return result;
+    }
+    return null;
+  }
+  private SNode makeEnumConstRef(SNode enumClass, final String constName) {
+    // Q: maybe not findFirst, but rather fail if there are more than one... 
+    SNode enumConst = ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(enumClass, "jetbrains.mps.baseLanguage.structure.EnumClass"), "enumConstant", true)).findFirst(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return constName.equals(SPropertyOperations.getString(it, "name"));
+      }
+    });
+    if ((enumConst == null)) {
+      return null;
     }
 
-    return null;
+    SNode result = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.EnumConstantReference", null);
+    SLinkOperations.setTarget(result, "enumClass", SNodeOperations.cast(enumClass, "jetbrains.mps.baseLanguage.structure.EnumClass"), false);
+    SLinkOperations.setTarget(result, "enumConstantDeclaration", enumConst, false);
+
+    return result;
   }
 
   private SNode transformUnqualifedEnumUnderSwitch(SNode switchCase, TypeChecker typeChecker) {
@@ -972,7 +969,7 @@ public class JavaToMpsConverter {
       SNode source = ref.getSourceNode();
       SModelReference targetModel = target.getModel().getReference();
 
-      SReference staticRef = StaticReference.create(ref.getRole(), source, targetModel, target.getNodeId());
+      SReference staticRef = StaticReference.create(ref.getRole(), source, targetModel, target.getNodeId(), ((DynamicReference) ref).getResolveInfo());
 
       List<SReference> nodeRefs = MapSequence.fromMap(result).get(source.getReference());
       if (nodeRefs == null) {
@@ -1029,8 +1026,7 @@ public class JavaToMpsConverter {
     try {
 
       if (myCreateInplace) {
-        Tuples._2<ModelRoot, String> where = getRootContainingDir(pkgDir);
-        ModelRoot modelRoot = where._0();
+        ModelRoot modelRoot = getRootContainingDir(pkgDir);
         if (modelRoot == null) {
           LOG.error("Cannot convert to MPS in-place: java sources not under proper model root");
           return null;
@@ -1041,6 +1037,7 @@ public class JavaToMpsConverter {
         MapSequence.fromMap(options).put(ModelFactory.OPTION_MODULEREF, myModule.getModuleReference().toString());
         modelDescr = PersistenceRegistry.getInstance().getFolderModelFactory(FilePerRootModelPersistence.FACTORY_ID).create(ds, options);
         ((SModelBase) modelDescr).setModelRoot(modelRoot);
+        ((SModelBase) modelDescr).setModule(myModule);
 
       } else {
         ModelRoot modelRoot = getFirstRootToCreateModel(pkgFqName);
@@ -1080,7 +1077,7 @@ public class JavaToMpsConverter {
     }
     return null;
   }
-  private Tuples._2<ModelRoot, String> getRootContainingDir(IFile dir) {
+  private ModelRoot getRootContainingDir(IFile dir) {
     // returns modelRoot and sourceRoot within 
     for (ModelRoot modelRoot : Sequence.fromIterable(myModule.getModelRoots())) {
       // or maybe more general: file based model root? 
@@ -1089,7 +1086,7 @@ public class JavaToMpsConverter {
       }
       for (String sourceRoot : ((DefaultModelRoot) modelRoot).getFiles(FileBasedModelRoot.SOURCE_ROOTS)) {
         if (FileUtil.isSubPath(sourceRoot, dir.getPath())) {
-          return MultiTuple.<ModelRoot,String>from(modelRoot, sourceRoot);
+          return modelRoot;
         }
       }
     }

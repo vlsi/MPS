@@ -128,10 +128,10 @@
       <node id="1659807394254261086" at="54,13,55,229" concept="5" />
       <node id="1659807394254261086" at="55,229,56,64" concept="6" />
       <node id="1659807394254261086" at="61,7,62,22" concept="6" />
-      <node id="1659807394254261086" at="64,0,65,0" concept="8" trace="breakingNode_q5t0js_a0a2a0a0a1a0b0a1a1" />
-      <node id="1659807394254232961" at="65,52,66,44" concept="6" />
+      <node id="1659807394254232961" at="64,52,65,44" concept="6" />
+      <node id="1659807394254261086" at="67,0,68,0" concept="8" trace="breakingNode_q5t0js_a0a2a0a0a1a0b0a1a1" />
       <node id="1659807394254261086" at="25,0,28,0" concept="1" trace="BuildSource_JavaModuleOptions_Constraints#()V" />
-      <node id="1659807394254232961" at="65,0,68,0" concept="9" trace="isEmptyString#(Ljava/lang/String;)Z" />
+      <node id="1659807394254232961" at="64,0,67,0" concept="9" trace="isEmptyString#(Ljava/lang/String;)Z" />
       <node id="1659807394254261086" at="32,0,36,0" concept="4" trace="hasOwnScopeProvider#()Z" />
       <node id="1659807394254261086" at="40,0,44,0" concept="4" trace="hasPresentation#()Z" />
       <node id="1659807394254261086" at="44,0,48,0" concept="4" trace="getPresentation#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/runtime/ReferencePresentationContext;)Ljava/lang/String;" />
@@ -147,12 +147,12 @@
       <scope id="1659807394254261086" at="41,44,42,24" />
       <scope id="1659807394254175445" at="45,128,46,210" />
       <scope id="1659807394254261086" at="49,63,50,58" />
-      <scope id="1659807394254232961" at="65,52,66,44" />
+      <scope id="1659807394254232961" at="64,52,65,44" />
       <scope id="1659807394254261086" at="54,13,56,64">
         <var name="scope" id="1659807394254261086" />
       </scope>
       <scope id="1659807394254261086" at="25,0,28,0" />
-      <scope id="1659807394254232961" at="65,0,68,0">
+      <scope id="1659807394254232961" at="64,0,67,0">
         <var name="str" id="1659807394254232961" />
       </scope>
       <scope id="1659807394254261086" at="32,0,36,0" />
@@ -1593,12 +1593,12 @@
       <node id="927724900262335950" at="50,44,51,160" concept="6" />
       <node id="927724900262213628" at="53,7,54,22" concept="6" />
       <node id="7670275304420317582" at="58,39,59,97" concept="6" />
-      <node id="927724900262213628" at="63,0,64,0" concept="8" trace="canBeChildBreakingPoint" />
-      <node id="927724900262335974" at="64,52,65,44" concept="6" />
+      <node id="927724900262335974" at="63,52,64,44" concept="6" />
+      <node id="927724900262213628" at="66,0,67,0" concept="8" trace="canBeChildBreakingPoint" />
       <node id="927724900262213628" at="23,0,26,0" concept="1" trace="BuildSource_JavaOptions_Constraints#()V" />
       <node id="927724900262213628" at="33,0,36,5" concept="3" />
       <node id="7670275304420317580" at="58,0,61,0" concept="4" trace="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-      <node id="927724900262335974" at="64,0,67,0" concept="9" trace="isEmptyString#(Ljava/lang/String;)Z" />
+      <node id="927724900262335974" at="63,0,66,0" concept="9" trace="isEmptyString#(Ljava/lang/String;)Z" />
       <node id="927724900262213628" at="26,0,30,0" concept="4" trace="hasOwnCanBeChildMethod#()Z" />
       <node id="927724900262213628" at="44,0,48,0" concept="4" trace="hasOwnValidator#()Z" />
       <node id="927724900262213628" at="48,0,53,0" concept="4" trace="validateValue#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;)Z" />
@@ -1613,7 +1613,7 @@
       <scope id="927724900262213628" at="45,40,46,20" />
       <scope id="927724900262335949" at="50,44,51,160" />
       <scope id="7670275304420317581" at="58,39,59,97" />
-      <scope id="927724900262335974" at="64,52,65,44" />
+      <scope id="927724900262335974" at="63,52,64,44" />
       <scope id="927724900262213628" at="49,70,51,160">
         <var name="propertyName" id="927724900262213628" />
       </scope>
@@ -1621,7 +1621,7 @@
       <scope id="7670275304420317580" at="58,0,61,0">
         <var name="it" id="7670275304420317580" />
       </scope>
-      <scope id="927724900262335974" at="64,0,67,0">
+      <scope id="927724900262335974" at="63,0,66,0">
         <var name="str" id="927724900262335974" />
       </scope>
       <scope id="927724900262213628" at="26,0,30,0" />

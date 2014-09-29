@@ -20,8 +20,10 @@ import jetbrains.mps.smodel.impl.StructureAspectChangeTracker.ModuleListener;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
+import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.module.SRepository;
+import org.jetbrains.mps.openapi.module.SRepositoryContentAdapter;
 
 import java.util.ArrayList;
 import java.util.Set;
@@ -38,7 +40,8 @@ import java.util.concurrent.ConcurrentHashMap;
  */
 public class FastNodeFinderManager {
   private static final ConcurrentHashMap<SModelReference, FastNodeFinder> ourFinders = new ConcurrentHashMap<SModelReference, FastNodeFinder>();
-  private static final ConcurrentHashMap<SRepository, StructureAspectChangeTracker> ourRepoTrackers = new ConcurrentHashMap<SRepository, StructureAspectChangeTracker>();
+  private static final ConcurrentHashMap<SRepository, StructureAspectChangeTracker> ourStructureChangeTrackers = new ConcurrentHashMap<SRepository, StructureAspectChangeTracker>();
+  private static final ConcurrentHashMap<SRepository, ModelLifecycleTracker> ourLifecycleTrackers = new ConcurrentHashMap<SRepository, ModelLifecycleTracker>();
   private static final ModuleListener ourStructureAspectListener = new ModuleListener() {
     @Override
     public void structureAspectChanged(Set<SModuleReference> changedModules) {
@@ -83,14 +86,63 @@ public class FastNodeFinderManager {
    * but there's no way to tell this kind of environment.
    */
   private static void track(SRepository repo) {
-    if (repo == null || ourRepoTrackers.containsKey(repo)) {
+    if (repo == null) {
       return;
     }
-    StructureAspectChangeTracker tracker = new StructureAspectChangeTracker(null, ourStructureAspectListener);
-    ourRepoTrackers.putIfAbsent(repo, tracker);
-    if (tracker == ourRepoTrackers.get(repo)) {
-      // if another thread got luck, we don't need to attach tracker to the repo
-      tracker.attachTo(repo);
+    if (!ourStructureChangeTrackers.containsKey(repo)) {
+      StructureAspectChangeTracker tracker1 = new StructureAspectChangeTracker(null, ourStructureAspectListener);
+      ourStructureChangeTrackers.putIfAbsent(repo, tracker1);
+      if (tracker1 == ourStructureChangeTrackers.get(repo)) {
+        // if another thread got luck, we don't need to attach tracker1 to the repo
+        tracker1.attachTo(repo);
+      }
+    }
+    if (!ourLifecycleTrackers.containsKey(repo)) {
+      ModelLifecycleTracker tracker2 = new ModelLifecycleTracker();
+      ourLifecycleTrackers.putIfAbsent(repo, tracker2);
+      if (tracker2 == ourLifecycleTrackers.get(repo)) {
+        tracker2.subscribeTo(repo);
+      }
+    }
+  }
+
+  private static class ModelLifecycleTracker extends SRepositoryContentAdapter {
+    @Override
+    protected void startListening(SModel model) {
+      super.startListening(model);
+      model.addModelListener(this);
+    }
+
+    @Override
+    protected void stopListening(SModel model) {
+      model.removeModelListener(this);
+      super.stopListening(model);
+    }
+
+    @Override
+    public void beforeModelRemoved(SModule module, SModel model) {
+      super.beforeModelRemoved(module, model);
+      FastNodeFinderManager.dispose(model);
+    }
+
+    @Override
+    public void modelReplaced(SModel model) {
+      FastNodeFinderManager.dispose(model);
+    }
+
+    @Override
+    public void modelRenamed(SModule module, SModel model, SModelReference oldRef) {
+      FastNodeFinderManager.dispose(model);
+    }
+
+    @Override
+    public void modelLoaded(SModel model, boolean partially) {
+      FastNodeFinderManager.dispose(model);
+    }
+
+    @Override
+    public void modelUnloaded(SModel model) {
+      FastNodeFinderManager.dispose(model);
     }
   }
 }

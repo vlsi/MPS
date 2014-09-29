@@ -15,22 +15,22 @@
  */
 package jetbrains.mps.refactoring.framework.paramchooser.mps.internal;
 
-import com.intellij.openapi.project.Project;
 import com.intellij.ui.ScrollPaneFactory;
 import jetbrains.mps.ide.ThreadUtils;
-import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.ide.projectPane.logicalview.ProjectTree;
 import jetbrains.mps.ide.projectPane.logicalview.ProjectTreeFindHelper;
-import jetbrains.mps.ide.ui.tree.module.ProjectModulesPoolTreeNode;
 import jetbrains.mps.ide.ui.tree.MPSTreeNodeEx;
+import jetbrains.mps.ide.ui.tree.module.ProjectModulesPoolTreeNode;
 import jetbrains.mps.ide.ui.tree.smodel.SNodeTreeNode;
+import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.project.Project;
 import jetbrains.mps.refactoring.framework.InvalidInputValueException;
 import jetbrains.mps.refactoring.framework.RefactoringContext;
 import jetbrains.mps.refactoring.framework.paramchooser.IChooser;
 import jetbrains.mps.refactoring.framework.paramchooser.mps.IChooserSettings;
 import jetbrains.mps.smodel.ModelAccess;
-import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.util.Computable;
+import org.jetbrains.mps.openapi.model.SNode;
 
 import javax.swing.JComponent;
 import javax.swing.JScrollPane;
@@ -47,7 +47,7 @@ public class MPSNodeChooser implements IChooser {
 
     @Override
     protected Project getProject() {
-      return ProjectHelper.toIdeaProject(myContext.getSelectedProject());
+      return myContext.getSelectedProject();
     }
 
     protected ProjectModulesPoolTreeNode getModulesPoolNode() {
@@ -74,7 +74,7 @@ public class MPSNodeChooser implements IChooser {
   }
 
   private void initUI(jetbrains.mps.project.Project project) {
-    myTree = new ProjectTree(ProjectHelper.toIdeaProject(project));
+    myTree = new ProjectTree((MPSProject) project);
     myScrollPane = ScrollPaneFactory.createScrollPane(myTree);
     ThreadUtils.runInUIThreadNoWait(new Runnable() {
       @Override

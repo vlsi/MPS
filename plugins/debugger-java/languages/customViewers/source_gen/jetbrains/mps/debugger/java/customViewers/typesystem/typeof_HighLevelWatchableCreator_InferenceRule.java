@@ -18,7 +18,7 @@ public class typeof_HighLevelWatchableCreator_InferenceRule extends AbstractInfe
     {
       SNode _nodeToCheck_1029348928467 = highLevelWatchableCreator;
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:3883084c-f018-4330-aab0-6829350c4b17(jetbrains.mps.debugger.java.customViewers.typesystem)", "43370322128303929", 0, null);
-      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:3883084c-f018-4330-aab0-6829350c4b17(jetbrains.mps.debugger.java.customViewers.typesystem)", "43370322128293457", true), (SNode) _quotation_createNode_qzkqie_a0a0b(), _info_12389875345);
+      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:3883084c-f018-4330-aab0-6829350c4b17(jetbrains.mps.debugger.java.customViewers.typesystem)", "43370322128293457", true), (SNode) createWatchableType_qzkqie_a0a0b(), _info_12389875345);
     }
   }
   public String getApplicableConceptFQName() {
@@ -33,10 +33,9 @@ public class typeof_HighLevelWatchableCreator_InferenceRule extends AbstractInfe
   public boolean overrides() {
     return false;
   }
-  private static SNode _quotation_createNode_qzkqie_a0a0b() {
+  private static SNode createWatchableType_qzkqie_a0a0b() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
-    SNode quotedNode_1 = null;
-    quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.debugger.java.customViewers.structure.WatchableType", null, null, false);
-    return quotedNode_1;
+    SNode n1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.debugger.java.customViewers.structure.WatchableType", null, false);
+    return n1;
   }
 }

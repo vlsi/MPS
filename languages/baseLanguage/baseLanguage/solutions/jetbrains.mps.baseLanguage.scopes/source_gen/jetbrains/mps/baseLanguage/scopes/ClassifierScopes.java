@@ -18,7 +18,7 @@ import jetbrains.mps.baseLanguage.util.DefaultConstructorUtils;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.Set;
 import java.util.HashSet;
-import jetbrains.mps.baseLanguage.behavior.Classifier_Behavior;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import java.util.List;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
@@ -135,7 +135,7 @@ public class ClassifierScopes {
         }
 
         SNode classifier = SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.Classifier");
-        if (!(Classifier_Behavior.call_isStatic_521412098689998668(classifier))) {
+        if (!(BehaviorReflection.invokeVirtual(Boolean.TYPE, classifier, "virtual_isStatic_7405920559687241224", new Object[]{}))) {
           return true;
         }
 

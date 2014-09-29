@@ -4,17 +4,19 @@ package jetbrains.mps.baseLanguage.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.annotations.NotNull;
-import java.util.List;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
-import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
-import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import java.util.ArrayList;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.baseLanguage.editor.EditorParenthesisUtil;
+import jetbrains.mps.smodel.action.SNodeFactoryOperations;
+import java.util.List;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import java.util.ArrayList;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import org.jetbrains.mps.openapi.language.SConceptRepository;
 import jetbrains.mps.util.NameUtil;
 
@@ -23,205 +25,363 @@ public class ParenthesisUtil {
   }
 
   public static SNode createUnmatchedLeftParenthesis(@NotNull SNode leftExpression) {
-    return createUnmatchedParenthesis(leftExpression, false);
+    return createUnmatchedParenthesisAndCheckParentParens(leftExpression, false);
   }
 
   public static SNode createUnmatchedRightParenthesis(@NotNull SNode rightExpression) {
-    return createUnmatchedParenthesis(rightExpression, true);
+    return createUnmatchedParenthesisAndCheckParentParens(rightExpression, true);
   }
 
-  private static SNode createUnmatchedParenthesis(@NotNull SNode myExpression, final boolean completingByRightParen) {
-    List<SNode> myParentPath = parentPath(myExpression);
-    SNode topExp = ListSequence.fromList(myParentPath).last();
-    List<SNode> otherParentedNodes = ListSequence.fromList(SNodeOperations.getDescendants(topExp, "jetbrains.mps.baseLanguage.structure.Expression", true, new String[]{})).where(new IWhereFilter<SNode>() {
-      public boolean accept(SNode it) {
-        return (completingByRightParen && (AttributeOperations.getAttribute(it, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.baseLanguage.structure.IncompleteLeftParen")) != null)) || (!(completingByRightParen) && (AttributeOperations.getAttribute(it, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.baseLanguage.structure.IncompleteRightParen")) != null));
-      }
-    }).toListSequence();
 
-    if (!(completingByRightParen)) {
-      otherParentedNodes = ListSequence.fromList(otherParentedNodes).reversedList();
+  /**
+   * First search up the ancestors for ParenthesisedExpressions.
+   * If found one, break it into two incomplete parentheses and match with one of them.
+   * The continue trying to match the other incomplete parenthesis.
+   * If no more ancestor ParenthesisedExpression is found, continue with the standard matching
+   */
+  private static SNode createUnmatchedParenthesisAndCheckParentParens(@NotNull final SNode myExpression, final boolean completingByRightParen) {
+
+    SNode expressionToProcess = myExpression;
+    SNode expressionToSetFocusOn = null;
+
+    SNode current = findWrappingParens(expressionToProcess);
+    while (current != null) {
+      SNode leftParenOnParens = AttributeOperations.getAttribute(current, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.baseLanguage.structure.IncompleteLeftParen"));
+      SNode rightParenOnParens = AttributeOperations.getAttribute(current, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.baseLanguage.structure.IncompleteRightParen"));
+      boolean propagateNewParensInsteadOfExpr = false;
+
+      SNode replacing = SLinkOperations.getTarget(SNodeOperations.cast(current, "jetbrains.mps.baseLanguage.structure.ParenthesizedExpression"), "expression", true);
+      SNode rightMostNode = EditorParenthesisUtil.findRightmostOrLeftmostLeafExpression(replacing, true);
+      SNode leftMostNode = EditorParenthesisUtil.findRightmostOrLeftmostLeafExpression(replacing, false);
+
+      if ((completingByRightParen && eq_a65dpo_a0a0a8a5a7_0(expressionToProcess, rightMostNode)) || (!(completingByRightParen) && eq_a65dpo_a0a0a8a5a7(expressionToProcess, leftMostNode))) {
+        propagateNewParensInsteadOfExpr = true;
+      }
+
+      SNodeOperations.replaceWithAnother(current, replacing);
+      SNode localExpToSetFocusOn;
+      if (completingByRightParen) {
+        setOrIncreaseParen(leftMostNode, false);
+        localExpToSetFocusOn = ParenthesisUtil.createUnmatchedParenthesis(expressionToProcess, true);
+        expressionToProcess = (propagateNewParensInsteadOfExpr ? localExpToSetFocusOn : rightMostNode);
+      } else {
+        setOrIncreaseParen(rightMostNode, true);
+        localExpToSetFocusOn = ParenthesisUtil.createUnmatchedParenthesis(expressionToProcess, false);
+        expressionToProcess = (propagateNewParensInsteadOfExpr ? localExpToSetFocusOn : leftMostNode);
+      }
+
+      // Remember the first parenthing result for the editor to set focus to 
+      if (expressionToSetFocusOn == null) {
+        expressionToSetFocusOn = localExpToSetFocusOn;
+      }
+
+      // Put back the parens that were on the wrapping parentheses and belong to the mating expr 
+      if (completingByRightParen && leftParenOnParens != null) {
+        setOrMergeParen(localExpToSetFocusOn, false, leftParenOnParens);
+      }
+      if (!(completingByRightParen) && rightParenOnParens != null) {
+        setOrMergeParen(localExpToSetFocusOn, true, rightParenOnParens);
+      }
+
+      // Put back the parens that were on the wrapping parentheses and belong to the new expressionToProcess 
+      if (completingByRightParen && rightParenOnParens != null) {
+        setOrMergeParen(expressionToProcess, true, rightParenOnParens);
+      }
+      if (!(completingByRightParen) && leftParenOnParens != null) {
+        setOrMergeParen(expressionToProcess, false, leftParenOnParens);
+      }
+
+      current = findWrappingParens(expressionToProcess);
     }
 
-    int index = ListSequence.fromList(otherParentedNodes).count() - 1;
-    SNode otherExpression = null;
-    final Wrappers._T<List<SNode>> otherParentPath = new Wrappers._T<List<SNode>>(null);
-    SNode firstCommon = null;
+    SNode created = createUnmatchedParenthesis(expressionToProcess, completingByRightParen);
+    checkWholeExpressionPriorities(myExpression);
+    return (expressionToSetFocusOn != null ? expressionToSetFocusOn : created);
+  }
 
+  private static SNode findWrappingParens(SNode original) {
+    SNode current = original;
+    while (SNodeOperations.isInstanceOf(SNodeOperations.getParent(current), "jetbrains.mps.baseLanguage.structure.Expression")) {
+      current = SNodeOperations.cast(SNodeOperations.getParent(current), "jetbrains.mps.baseLanguage.structure.Expression");
+      if (SNodeOperations.isInstanceOf(current, "jetbrains.mps.baseLanguage.structure.ParenthesizedExpression")) {
+        return current;
+      }
+    }
+    return null;
+  }
+
+  private static void setOrIncreaseParen(SNode node, boolean right) {
+    SNode paren = (right ? AttributeOperations.getAttribute(node, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.baseLanguage.structure.IncompleteRightParen")) : AttributeOperations.getAttribute(node, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.baseLanguage.structure.IncompleteLeftParen")));
+    if (paren != null) {
+      IIncompleteParen_Behavior.call_increaseCount_1071364028373835874(paren);
+    } else {
+      if (right) {
+        SNodeFactoryOperations.setNewAttribute(node, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.baseLanguage.structure.IncompleteRightParen"), "jetbrains.mps.baseLanguage.structure.IncompleteRightParen");
+      } else {
+        SNodeFactoryOperations.setNewAttribute(node, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.baseLanguage.structure.IncompleteLeftParen"), "jetbrains.mps.baseLanguage.structure.IncompleteLeftParen");
+      }
+    }
+  }
+
+  private static void setOrMergeParen(SNode myNode, boolean right, SNode parens) {
+    SNode nodesParens = (right ? AttributeOperations.getAttribute(myNode, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.baseLanguage.structure.IncompleteRightParen")) : AttributeOperations.getAttribute(myNode, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.baseLanguage.structure.IncompleteLeftParen")));
+    if (nodesParens == null) {
+      if (right) {
+        nodesParens = SNodeFactoryOperations.setNewAttribute(myNode, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.baseLanguage.structure.IncompleteRightParen"), "jetbrains.mps.baseLanguage.structure.IncompleteRightParen");
+      } else {
+        nodesParens = SNodeFactoryOperations.setNewAttribute(myNode, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.baseLanguage.structure.IncompleteLeftParen"), "jetbrains.mps.baseLanguage.structure.IncompleteLeftParen");
+      }
+    }
+    while (!(IIncompleteParen_Behavior.call_isSingleParen_1071364028373849897(parens))) {
+      IIncompleteParen_Behavior.call_decreaseCount_1071364028373841783(parens);
+      IIncompleteParen_Behavior.call_increaseCount_1071364028373835874(nodesParens);
+    }
+  }
+
+  /**
+   * First search existing unmatched parens, whether they can be paired with the new one.
+   * If found, pair them, if not, create an unmatched paren annotation.
+   */
+  private static SNode createUnmatchedParenthesis(@NotNull SNode myExpression, boolean completingByRightParen) {
+
+    System.out.println("CCCc");
+    if (!(completingByRightParen) && AttributeOperations.getAttribute(myExpression, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.baseLanguage.structure.IncompleteLeftParen")) != null) {
+      IIncompleteParen_Behavior.call_increaseCount_1071364028373835874(AttributeOperations.getAttribute(myExpression, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.baseLanguage.structure.IncompleteLeftParen")));
+      return myExpression;
+    }
+    if (completingByRightParen && AttributeOperations.getAttribute(myExpression, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.baseLanguage.structure.IncompleteRightParen")) != null) {
+      IIncompleteParen_Behavior.call_increaseCount_1071364028373835874(AttributeOperations.getAttribute(myExpression, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.baseLanguage.structure.IncompleteRightParen")));
+      return myExpression;
+    }
+
+    List<SNode> myParentPath = parentPath(myExpression, completingByRightParen);
+    SNode topExp = ListSequence.fromList(myParentPath).findLast(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.IBinaryLike");
+      }
+    });
+    if (topExp == null) {
+      // No IBinaryLike ancestor of myExpression exists 
+      topExp = myExpression;
+    }
+
+    List<SNode> candidateParenthedNodes = descendInto(topExp, completingByRightParen);
+
+    int index = ListSequence.fromList(candidateParenthedNodes).count() - 1;
+    SNode candidateExpression = null;
+    final Wrappers._T<List<SNode>> candidateParentPath = new Wrappers._T<List<SNode>>(null);
+    // The bottom-most common ancestor 
+    SNode firstCommonAncestor = null;
+    // Find a matching parenthesis among candidates, going from the back of the list 
     while (index >= 0) {
-      otherExpression = ListSequence.fromList(otherParentedNodes).getElement(index);
-      otherParentPath.value = parentPath(otherExpression);
+      candidateExpression = ListSequence.fromList(candidateParenthedNodes).getElement(index);
+      System.out.println("AAAAAAA");
+      if (eq_a65dpo_a0c0r0p(candidateExpression, myExpression)) {
+        System.out.println("BBBBBBb");
+        // they are both the same node 
+        SNode parens = SNodeFactoryOperations.replaceWithNewChild(candidateExpression, "jetbrains.mps.baseLanguage.structure.ParenthesizedExpression");
+        SLinkOperations.setTarget(parens, "expression", candidateExpression, true);
+        ParenthesisUtil.clearIncompleteParens(candidateExpression, completingByRightParen, parens);
+        return parens;
+      }
 
-      if (eq_a65dpo_a0d0l0g(ListSequence.fromList(otherParentPath.value).last(), topExp)) {
-        if (eq_a65dpo_a0a0d0l0g(otherExpression, myExpression)) {
-          // they are both the same node 
-          ParenthesisUtil.clearIncompleteParens(otherExpression, completingByRightParen);
-          SNode parens = SNodeFactoryOperations.replaceWithNewChild(otherExpression, "jetbrains.mps.baseLanguage.structure.ParenthesizedExpression");
-          SLinkOperations.setTarget(parens, "expression", otherExpression, true);
-          return parens;
-        }
-
-        firstCommon = ListSequence.fromList(myParentPath).findFirst(new IWhereFilter<SNode>() {
+      // Find the bottom-most common ancestor 
+      candidateParentPath.value = parentPath(candidateExpression, !(completingByRightParen));
+      if (ListSequence.fromList(myParentPath).contains(ListSequence.fromList(candidateParentPath.value).last()) || ListSequence.fromList(candidateParentPath.value).contains(ListSequence.fromList(myParentPath).last())) {
+        firstCommonAncestor = ListSequence.fromList(myParentPath).findFirst(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {
-            return ListSequence.fromList(otherParentPath.value).contains(it);
+            return ListSequence.fromList(candidateParentPath.value).contains(it);
           }
         });
-        assert firstCommon != null;
-
-        if ((eq_a65dpo_a0a0a5a3a11a6_0(firstCommon, otherExpression) || eq_a65dpo_a0a0a5a3a11a6(firstCommon, myExpression)) && SNodeOperations.isInstanceOf(firstCommon, "jetbrains.mps.baseLanguage.structure.DotExpression")) {
-          // one of the parenthesised nodes is the common ancestor 
-          ParenthesisUtil.clearIncompleteParens(otherExpression, completingByRightParen);
-          SNode parens = SNodeFactoryOperations.replaceWithNewChild(firstCommon, "jetbrains.mps.baseLanguage.structure.ParenthesizedExpression");
-          SLinkOperations.setTarget(parens, "expression", firstCommon, true);
-          return parens;
+        assert firstCommonAncestor != null;
+        if (!(SNodeOperations.isInstanceOf(firstCommonAncestor, "jetbrains.mps.baseLanguage.structure.IBinaryLike"))) {
+          continue;
         }
 
-        SNode otherPredecesor = ListSequence.fromList(otherParentPath.value).getElement(ListSequence.fromList(otherParentPath.value).indexOf(firstCommon) - 1);
-        SNode myPredecesor = ListSequence.fromList(myParentPath).getElement(ListSequence.fromList(myParentPath).indexOf(firstCommon) - 1);
-        if (SNodeOperations.isInstanceOf(firstCommon, "jetbrains.mps.baseLanguage.structure.BinaryOperation")) {
-          // Does left parented node come from the left and right parented node from the right? 
-          if ((completingByRightParen && eq_a65dpo_a0a0a0b0j0d0l0g(SLinkOperations.getTarget(SNodeOperations.cast(firstCommon, "jetbrains.mps.baseLanguage.structure.BinaryOperation"), "leftExpression", true), otherPredecesor) && eq_a65dpo_a0a0a1a9a3a11a6(SLinkOperations.getTarget(SNodeOperations.cast(firstCommon, "jetbrains.mps.baseLanguage.structure.BinaryOperation"), "rightExpression", true), myPredecesor)) || !(completingByRightParen) && eq_a65dpo_a0a0a1a9a3a11a6_0(SLinkOperations.getTarget(SNodeOperations.cast(firstCommon, "jetbrains.mps.baseLanguage.structure.BinaryOperation"), "leftExpression", true), myPredecesor) && eq_a65dpo_a0a0b0j0d0l0g(SLinkOperations.getTarget(SNodeOperations.cast(firstCommon, "jetbrains.mps.baseLanguage.structure.BinaryOperation"), "rightExpression", true), otherPredecesor)) {
-            break;
-          }
-        } else if (SNodeOperations.isInstanceOf(firstCommon, "jetbrains.mps.baseLanguage.structure.TernaryOperatorExpression")) {
-          // In case of a ternary operator expression being the first common predecessor 
-          if ((completingByRightParen && eq_a65dpo_a0a0a0b0a9a3a11a6(SLinkOperations.getTarget(SNodeOperations.cast(firstCommon, "jetbrains.mps.baseLanguage.structure.TernaryOperatorExpression"), "condition", true), otherPredecesor) && eq_a65dpo_a0a0a1a0j0d0l0g_0(SLinkOperations.getTarget(SNodeOperations.cast(firstCommon, "jetbrains.mps.baseLanguage.structure.TernaryOperatorExpression"), "ifFalse", true), myPredecesor)) || !(completingByRightParen) && eq_a65dpo_a0a0a1a0j0d0l0g(SLinkOperations.getTarget(SNodeOperations.cast(firstCommon, "jetbrains.mps.baseLanguage.structure.TernaryOperatorExpression"), "condition", true), myPredecesor) && eq_a65dpo_a0a0b0a9a3a11a6(SLinkOperations.getTarget(SNodeOperations.cast(firstCommon, "jetbrains.mps.baseLanguage.structure.TernaryOperatorExpression"), "ifFalse", true), otherPredecesor)) {
-            break;
-          }
+        SNode leftSideExpression = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(firstCommonAncestor, "jetbrains.mps.baseLanguage.structure.IBinaryLike"), "virtual_getSyntacticallyLeftSideExpression_1742226163722653708", new Object[]{});
+        SNode rightSideExpression = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(firstCommonAncestor, "jetbrains.mps.baseLanguage.structure.IBinaryLike"), "virtual_getSyntacticallyRightSideExpression_1742226163722653714", new Object[]{});
+        List<SNode> candidateAncestors = SNodeOperations.getAncestors(candidateExpression, null, true);
+        List<SNode> myAncestors = SNodeOperations.getAncestors(myExpression, null, true);
+
+        // Validate the bottom-most ancestor, whether the two parentheses can be paired legally 
+        if (completingByRightParen && (ListSequence.fromList(candidateAncestors).contains(leftSideExpression) || leftSideExpression == null) && (ListSequence.fromList(myAncestors).contains(rightSideExpression) || rightSideExpression == null)) {
+          break;
         }
+        if (!(completingByRightParen) && (ListSequence.fromList(myAncestors).contains(leftSideExpression) || leftSideExpression == null) && (ListSequence.fromList(candidateAncestors).contains(rightSideExpression) || rightSideExpression == null)) {
+          break;
+        }
+        // Break out if found a valid match 
       }
+      // Continue to try another candidate parenthesis 
       index--;
     }
     if (index == -1) {
-      // no common ancestor or swapped left-right -> can't parenthesise 
+      // no common ancestor with any of the candidate parens or swapped left-right -> can't parenthesise 
       if (completingByRightParen) {
-        AttributeOperations.setAttribute(myExpression, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.baseLanguage.structure.IncompleteRightParen"), SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.IncompleteRightParen", null));
+        setOrIncreaseParen(myExpression, true);
       } else {
-        AttributeOperations.setAttribute(myExpression, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.baseLanguage.structure.IncompleteLeftParen"), SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.IncompleteLeftParen", null));
+        setOrIncreaseParen(myExpression, false);
       }
       return myExpression;
     }
 
-    clearIncompleteParens(otherExpression, completingByRightParen);
 
-    SNode leftExpression = (completingByRightParen ? otherExpression : myExpression);
-    SNode rightExpression = (completingByRightParen ? myExpression : otherExpression);
-
-    if (SNodeOperations.isInstanceOf(firstCommon, "jetbrains.mps.baseLanguage.structure.BinaryOperation")) {
-      SNode leftTurn = findLeftTurn(leftExpression, firstCommon);
-      SNode rightTurn = findRightTurn(rightExpression, firstCommon);
-      if (eq_a65dpo_a0c0t0g(leftTurn, rightTurn)) {
-        assert eq_a65dpo_a0a0c0t0g(leftTurn, firstCommon);
-        SNode parens = SNodeFactoryOperations.replaceWithNewChild(leftTurn, "jetbrains.mps.baseLanguage.structure.ParenthesizedExpression");
-        SLinkOperations.setTarget(parens, "expression", leftTurn, true);
-        return parens;
-      }
-
-      return ParenthesisUtil.rebalance(leftTurn, firstCommon, rightTurn);
+    // Let's call them left and right parens from now, instead of 'my' and 'candidate' 
+    SNode leftExpression = (completingByRightParen ? candidateExpression : myExpression);
+    SNode rightExpression = (completingByRightParen ? myExpression : candidateExpression);
+    // Find the turning points, if exist, otherwise just wrap in parens 
+    SNode leftTurn = ParenthesisUtil.findLeftTurn(leftExpression, firstCommonAncestor);
+    SNode rightTurn = ParenthesisUtil.findRightTurn(rightExpression, firstCommonAncestor);
+    if (leftTurn != null || rightTurn != null) {
+      SNode parens = ParenthesisUtil.rebalance(leftTurn, SNodeOperations.cast(firstCommonAncestor, "jetbrains.mps.baseLanguage.structure.IBinaryLike"), rightTurn);
+      clearIncompleteParens(candidateExpression, completingByRightParen, parens);
+      return parens;
     } else {
-      assert SNodeOperations.isInstanceOf(firstCommon, "jetbrains.mps.baseLanguage.structure.TernaryOperatorExpression");
-      SNode ternaryExpr = SNodeOperations.cast(firstCommon, "jetbrains.mps.baseLanguage.structure.TernaryOperatorExpression");
-      SNode leftTurn = findLeftTurn(leftExpression, ternaryExpr);
-      SNode rightTurn = findRightTurn(rightExpression, ternaryExpr);
-
-      // Wrap the whole ternary operator expression in parens 
-      if (eq_a65dpo_a0g0a91a6(leftTurn, rightTurn)) {
-        SNode parens = SNodeFactoryOperations.replaceWithNewChild(ternaryExpr, "jetbrains.mps.baseLanguage.structure.ParenthesizedExpression");
-        SLinkOperations.setTarget(parens, "expression", ternaryExpr, true);
-        return parens;
-      }
-
-      return ParenthesisUtil.rebalance(leftTurn, firstCommon, rightTurn);
+      SNode parens = SNodeFactoryOperations.replaceWithNewChild(firstCommonAncestor, "jetbrains.mps.baseLanguage.structure.ParenthesizedExpression");
+      SLinkOperations.setTarget(parens, "expression", firstCommonAncestor, true);
+      clearIncompleteParens(candidateExpression, completingByRightParen, parens);
+      return parens;
     }
   }
 
-  private static SNode rebalance(SNode leftTurn, SNode firstCommon, SNode rightTurn) {
-    SNode leftAccumulator;
-    SNode rightAccumulator;
-    if (neq_a65dpo_a0c0i(leftTurn, firstCommon)) {
-      leftAccumulator = SLinkOperations.getTarget(SNodeOperations.cast(leftTurn, "jetbrains.mps.baseLanguage.structure.BinaryOperation"), "rightExpression", true);
-      SNodeOperations.detachNode(leftAccumulator);
-      SNode current = SNodeOperations.cast(SNodeOperations.getParent(leftTurn), "jetbrains.mps.baseLanguage.structure.Expression");
-      SNode previous = leftTurn;
-      while (neq_a65dpo_a0e0c0i(current, firstCommon)) {
-        if (SNodeOperations.isInstanceOf(current, "jetbrains.mps.baseLanguage.structure.BinaryOperation") && eq_a65dpo_a0a0a4a2a8(SLinkOperations.getTarget(SNodeOperations.cast(current, "jetbrains.mps.baseLanguage.structure.BinaryOperation"), "leftExpression", true), previous)) {
-          SNodeOperations.replaceWithAnother(current, previous);
-          SLinkOperations.setTarget(SNodeOperations.cast(current, "jetbrains.mps.baseLanguage.structure.BinaryOperation"), "leftExpression", leftAccumulator, true);
-          leftAccumulator = current;
+  /**
+   * Returns an orderred list of nodes with incomplete left/right paren
+   * The nodes are orderred by their occurence on the expression in left-to-right order
+   * The current node is added at the front of the list,
+   * so that it is always the most distant node among the returned candidates
+   */
+  private static List<SNode> descendInto(SNode expr, final boolean completingByRightParen) {
+    List<SNode> path = ListSequence.fromListAndArray(new ArrayList<SNode>(), null, expr);
+    List<SNode> result = ListSequence.fromList(new ArrayList<SNode>());
+
+    SNode current = expr;
+    while (ListSequence.fromList(path).isNotEmpty()) {
+      if (SNodeOperations.isInstanceOf(current, "jetbrains.mps.baseLanguage.structure.IBinaryLike")) {
+        if (eq_a65dpo_a0a0a0e0r(ListSequence.fromList(path).last(), current)) {
+          SNode left = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(current, "jetbrains.mps.baseLanguage.structure.IBinaryLike"), "virtual_getSyntacticallyLeftSideExpression_1742226163722653708", new Object[]{});
+          if (left != null) {
+            ListSequence.fromList(path).addElement(left);
+            current = left;
+          } else {
+            current = ListSequence.fromList(path).removeLastElement();
+          }
         } else {
-          previous = current;
+          ListSequence.fromList(result).addElement(current);
+          SNode right = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(current, "jetbrains.mps.baseLanguage.structure.IBinaryLike"), "virtual_getSyntacticallyRightSideExpression_1742226163722653714", new Object[]{});
+          if (right != null) {
+            ListSequence.fromList(path).addElement(right);
+            current = right;
+          } else {
+            current = ListSequence.fromList(path).removeLastElement();
+          }
         }
-        current = SNodeOperations.cast(SNodeOperations.getParent(previous), "jetbrains.mps.baseLanguage.structure.Expression");
+      } else {
+        ListSequence.fromList(result).addElement(current);
+        if (eq_a65dpo_a0b0a0a4a71(ListSequence.fromList(path).last(), current)) {
+          ListSequence.fromList(path).removeLastElement();
+        }
+        current = ListSequence.fromList(path).removeLastElement();
       }
-    } else {
-      leftAccumulator = (SNodeOperations.isInstanceOf(firstCommon, "jetbrains.mps.baseLanguage.structure.BinaryOperation") ? SLinkOperations.getTarget(SNodeOperations.cast(firstCommon, "jetbrains.mps.baseLanguage.structure.BinaryOperation"), "leftExpression", true) : SLinkOperations.getTarget(SNodeOperations.cast(firstCommon, "jetbrains.mps.baseLanguage.structure.TernaryOperatorExpression"), "condition", true));
-      SNodeOperations.detachNode(leftAccumulator);
+    }
+    if (!(completingByRightParen)) {
+      result = ListSequence.fromList(result).reversedList();
     }
 
-    if (neq_a65dpo_a0e0i(rightTurn, firstCommon)) {
-      rightAccumulator = SLinkOperations.getTarget(SNodeOperations.cast(rightTurn, "jetbrains.mps.baseLanguage.structure.BinaryOperation"), "leftExpression", true);
-      SNodeOperations.detachNode(rightAccumulator);
-      SNode current = SNodeOperations.cast(SNodeOperations.getParent(rightTurn), "jetbrains.mps.baseLanguage.structure.Expression");
-      SNode previous = rightTurn;
-      while (neq_a65dpo_a0a4a4a8(current, firstCommon) && !(SNodeOperations.isInstanceOf(current, "jetbrains.mps.baseLanguage.structure.TernaryOperatorExpression"))) {
-        if (SNodeOperations.isInstanceOf(current, "jetbrains.mps.baseLanguage.structure.BinaryOperation") && eq_a65dpo_a0a0a4a4a8(SLinkOperations.getTarget(SNodeOperations.cast(current, "jetbrains.mps.baseLanguage.structure.BinaryOperation"), "rightExpression", true), previous)) {
-          SNodeOperations.replaceWithAnother(current, previous);
-          SLinkOperations.setTarget(SNodeOperations.cast(current, "jetbrains.mps.baseLanguage.structure.BinaryOperation"), "rightExpression", rightAccumulator, true);
-          rightAccumulator = current;
-        } else {
-          previous = current;
-        }
-        current = SNodeOperations.cast(SNodeOperations.getParent(previous), "jetbrains.mps.baseLanguage.structure.Expression");
+    result = ListSequence.fromList(result).where(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return completingByRightParen && (AttributeOperations.getAttribute(it, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.baseLanguage.structure.IncompleteLeftParen")) != null) || !(completingByRightParen) && (AttributeOperations.getAttribute(it, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.baseLanguage.structure.IncompleteRightParen")) != null);
       }
+    }).toListSequence();
 
-    } else {
-      rightAccumulator = (SNodeOperations.isInstanceOf(firstCommon, "jetbrains.mps.baseLanguage.structure.BinaryOperation") ? SLinkOperations.getTarget(SNodeOperations.cast(firstCommon, "jetbrains.mps.baseLanguage.structure.BinaryOperation"), "rightExpression", true) : SLinkOperations.getTarget(SNodeOperations.cast(firstCommon, "jetbrains.mps.baseLanguage.structure.TernaryOperatorExpression"), "ifFalse", true));
-      SNodeOperations.detachNode(rightAccumulator);
-    }
+    return result;
+  }
+
+  /**
+   * Create a ParenthesisedExpression and hook it properly into the model
+   * 
+   * @param leftTurn The expression that should be put outside and to the left from the new parens
+   * @param rightTurn The expression that should be put outside and to the right from the new parens
+   * @param firstCommonAncestor The common ancestor expression of both parentheses
+   */
+  private static SNode rebalance(SNode leftTurn, SNode firstCommonAncestor, SNode rightTurn) {
+
+    // Accumulate expressions between the leftTurn and firstCommon to include inside the parens. 
+    // These would be the nodes into which we come from the left child. 
+    SNode leftAccumulator = buildAccumulator(firstCommonAncestor, leftTurn, true);
+    // Accumulate expressions between the rightTurn and firstCommon to include inside the parens. 
+    // These would be the nodes into which we come from the right child. 
+    SNode rightAccumulator = buildAccumulator(firstCommonAncestor, rightTurn, false);
+
+    assert leftAccumulator != null;
+    assert rightAccumulator != null;
 
     SNode parens = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ParenthesizedExpression", null);
-    if (SNodeOperations.isInstanceOf(firstCommon, "jetbrains.mps.baseLanguage.structure.BinaryOperation")) {
-      if ((SLinkOperations.getTarget(SNodeOperations.cast(firstCommon, "jetbrains.mps.baseLanguage.structure.BinaryOperation"), "rightExpression", true) != null)) {
-        SNodeOperations.replaceWithAnother(firstCommon, SLinkOperations.getTarget(SNodeOperations.cast(firstCommon, "jetbrains.mps.baseLanguage.structure.BinaryOperation"), "rightExpression", true));
-        if ((SLinkOperations.getTarget(SNodeOperations.cast(firstCommon, "jetbrains.mps.baseLanguage.structure.BinaryOperation"), "leftExpression", true) != null)) {
-          SLinkOperations.setTarget(SNodeOperations.cast(rightTurn, "jetbrains.mps.baseLanguage.structure.BinaryOperation"), "leftExpression", SLinkOperations.getTarget(SNodeOperations.cast(firstCommon, "jetbrains.mps.baseLanguage.structure.BinaryOperation"), "leftExpression", true), true);
-          SLinkOperations.setTarget(SNodeOperations.cast(leftTurn, "jetbrains.mps.baseLanguage.structure.BinaryOperation"), "rightExpression", parens, true);
-        } else {
-          SLinkOperations.setTarget(SNodeOperations.cast(rightTurn, "jetbrains.mps.baseLanguage.structure.BinaryOperation"), "leftExpression", parens, true);
-        }
-      } else {
-        SNodeOperations.replaceWithAnother(firstCommon, SLinkOperations.getTarget(SNodeOperations.cast(firstCommon, "jetbrains.mps.baseLanguage.structure.BinaryOperation"), "leftExpression", true));
-        SLinkOperations.setTarget(SNodeOperations.cast(leftTurn, "jetbrains.mps.baseLanguage.structure.BinaryOperation"), "rightExpression", parens, true);
-      }
-
-      SLinkOperations.setTarget(SNodeOperations.cast(firstCommon, "jetbrains.mps.baseLanguage.structure.BinaryOperation"), "rightExpression", rightAccumulator, true);
-      SLinkOperations.setTarget(SNodeOperations.cast(firstCommon, "jetbrains.mps.baseLanguage.structure.BinaryOperation"), "leftExpression", leftAccumulator, true);
-    } else {
-      assert SNodeOperations.isInstanceOf(firstCommon, "jetbrains.mps.baseLanguage.structure.TernaryOperatorExpression");
-
-      SNode bottomMostTernary = ParenthesisUtil.findBottomMostTernary(SNodeOperations.cast(firstCommon, "jetbrains.mps.baseLanguage.structure.TernaryOperatorExpression"));
-
-      if ((SLinkOperations.getTarget(SNodeOperations.cast(firstCommon, "jetbrains.mps.baseLanguage.structure.TernaryOperatorExpression"), "ifFalse", true) != null)) {
-        bottomMostTernary = (bottomMostTernary == null ? SNodeOperations.cast(firstCommon, "jetbrains.mps.baseLanguage.structure.TernaryOperatorExpression") : bottomMostTernary);
-        SNodeOperations.replaceWithAnother(firstCommon, SLinkOperations.getTarget(bottomMostTernary, "ifFalse", true));
-        if ((SLinkOperations.getTarget(SNodeOperations.cast(firstCommon, "jetbrains.mps.baseLanguage.structure.TernaryOperatorExpression"), "condition", true) != null)) {
-          SLinkOperations.setTarget(SNodeOperations.cast(rightTurn, "jetbrains.mps.baseLanguage.structure.BinaryOperation"), "leftExpression", SLinkOperations.getTarget(SNodeOperations.cast(firstCommon, "jetbrains.mps.baseLanguage.structure.TernaryOperatorExpression"), "condition", true), true);
-          SLinkOperations.setTarget(SNodeOperations.cast(leftTurn, "jetbrains.mps.baseLanguage.structure.BinaryOperation"), "rightExpression", parens, true);
-        } else {
-          SLinkOperations.setTarget(SNodeOperations.cast(rightTurn, "jetbrains.mps.baseLanguage.structure.BinaryOperation"), "leftExpression", parens, true);
-        }
-      } else {
-        SNodeOperations.replaceWithAnother(firstCommon, SLinkOperations.getTarget(SNodeOperations.cast(firstCommon, "jetbrains.mps.baseLanguage.structure.TernaryOperatorExpression"), "condition", true));
-        SLinkOperations.setTarget(SNodeOperations.cast(leftTurn, "jetbrains.mps.baseLanguage.structure.BinaryOperation"), "rightExpression", parens, true);
-      }
-
-      SLinkOperations.setTarget(bottomMostTernary, "ifFalse", rightAccumulator, true);
-      SLinkOperations.setTarget(SNodeOperations.cast(firstCommon, "jetbrains.mps.baseLanguage.structure.TernaryOperatorExpression"), "condition", leftAccumulator, true);
+    if (SNodeOperations.isInstanceOf(firstCommonAncestor, "jetbrains.mps.baseLanguage.structure.BinaryOperation")) {
+      rebalanceIBinaryLikeAfterParenthing(SNodeOperations.cast(firstCommonAncestor, "jetbrains.mps.baseLanguage.structure.BinaryOperation"), rightTurn, leftTurn, parens, rightAccumulator, leftAccumulator);
+    } else if (SNodeOperations.isInstanceOf(firstCommonAncestor, "jetbrains.mps.baseLanguage.structure.TernaryOperatorExpression")) {
+      rebalanceTernaryOpAfterParenthing(SNodeOperations.cast(firstCommonAncestor, "jetbrains.mps.baseLanguage.structure.TernaryOperatorExpression"), rightTurn, leftTurn, parens, rightAccumulator, leftAccumulator);
+    } else if (SNodeOperations.isInstanceOf(firstCommonAncestor, "jetbrains.mps.baseLanguage.structure.CastExpression")) {
+      rebalanceIBinaryLikeAfterParenthing(SNodeOperations.cast(firstCommonAncestor, "jetbrains.mps.baseLanguage.structure.CastExpression"), rightTurn, leftTurn, parens, rightAccumulator, leftAccumulator);
     }
-    SLinkOperations.setTarget(parens, "expression", firstCommon, true);
+
+    SLinkOperations.setTarget(parens, "expression", firstCommonAncestor, true);
     return parens;
   }
 
+  private static void rebalanceIBinaryLikeAfterParenthing(SNode node, SNode rightTurn, SNode leftTurn, SNode parens, SNode rightAccumulator, SNode leftAccumulator) {
+    SNode leftSide = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), node, "virtual_getSyntacticallyLeftSideExpression_1742226163722653708", new Object[]{});
+    SNode rightSide = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), node, "virtual_getSyntacticallyRightSideExpression_1742226163722653714", new Object[]{});
+    assert leftSide != null || rightSide != null;
+    SNode head = (rightSide != null ? rightSide : leftSide);
+    SNodeOperations.replaceWithAnother(node, head);
+    SLinkOperations.setTarget(parens, "expression", node, true);
+
+    if (leftAccumulator != null) {
+      BehaviorReflection.invokeVirtual(Void.class, node, "virtual_setSyntacticallyLeftSideExpression_1742226163722653680", new Object[]{leftAccumulator});
+    }
+    if (rightAccumulator != null) {
+      BehaviorReflection.invokeVirtual(Void.class, node, "virtual_setSyntacticallyRightSideExpression_1742226163722653694", new Object[]{rightAccumulator});
+    }
+    SNode subtree;
+    if (leftSide != null) {
+      subtree = leftSide;
+      BehaviorReflection.invokeVirtual(Void.class, leftTurn, "virtual_setSyntacticallyRightSideExpression_1742226163722653694", new Object[]{parens});
+    } else {
+      subtree = parens;
+    }
+    if (rightSide != null) {
+      BehaviorReflection.invokeVirtual(Void.class, rightTurn, "virtual_setSyntacticallyLeftSideExpression_1742226163722653680", new Object[]{subtree});
+    }
+  }
+
+  private static void rebalanceTernaryOpAfterParenthing(SNode node, SNode rightTurn, SNode leftTurn, SNode parens, SNode rightAccumulator, SNode leftAccumulator) {
+    SNode bottomMostTernary = findBottomMostTernary(node);
+    if (rightTurn != null) {
+      SNodeOperations.replaceWithAnother(node, SLinkOperations.getTarget(bottomMostTernary, "ifFalse", true));
+      if (leftTurn != null) {
+        BehaviorReflection.invokeVirtual(Void.class, rightTurn, "virtual_setSyntacticallyLeftSideExpression_1742226163722653680", new Object[]{SLinkOperations.getTarget(node, "condition", true)});
+        BehaviorReflection.invokeVirtual(Void.class, leftTurn, "virtual_setSyntacticallyRightSideExpression_1742226163722653694", new Object[]{parens});
+      } else {
+        BehaviorReflection.invokeVirtual(Void.class, rightTurn, "virtual_setSyntacticallyLeftSideExpression_1742226163722653680", new Object[]{parens});
+      }
+    } else {
+      if (leftTurn != null) {
+        SNodeOperations.replaceWithAnother(node, SLinkOperations.getTarget(node, "condition", true));
+        BehaviorReflection.invokeVirtual(Void.class, leftTurn, "virtual_setSyntacticallyRightSideExpression_1742226163722653694", new Object[]{parens});
+      } else {
+        SNodeOperations.replaceWithAnother(node, parens);
+      }
+    }
+    SLinkOperations.setTarget(bottomMostTernary, "ifFalse", rightAccumulator, true);
+    SLinkOperations.setTarget(node, "condition", leftAccumulator, true);
+  }
+
+  /**
+   * Ternary expressions can be nested in one anothers ifFalse child. Find the right-most one.
+   * 
+   * @param bottomMostTernary The so-far most-bottom ternary operator expression
+   * @return The found right-most ternary operator expression.
+   */
   private static SNode findBottomMostTernary(SNode bottomMostTernary) {
     while (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(bottomMostTernary, "ifFalse", true), "jetbrains.mps.baseLanguage.structure.TernaryOperatorExpression")) {
       bottomMostTernary = SNodeOperations.cast(SLinkOperations.getTarget(bottomMostTernary, "ifFalse", true), "jetbrains.mps.baseLanguage.structure.TernaryOperatorExpression");
@@ -229,18 +389,84 @@ public class ParenthesisUtil {
     return bottomMostTernary;
   }
 
-  private static void clearIncompleteParens(SNode otherExpression, boolean completingByRightParen) {
-    if (completingByRightParen) {
-      AttributeOperations.setAttribute(otherExpression, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.baseLanguage.structure.IncompleteLeftParen"), null);
+  /**
+   * Accumulate the nodes that need to be added into the parentheses
+   */
+  private static SNode buildAccumulator(SNode firstCommonAncestor, SNode turn, boolean left) {
+    SNode accumulator;
+    if (turn != null && neq_a65dpo_a0a1a72(turn, firstCommonAncestor)) {
+      // Accumulate nodes on the path up from the left/right paren 
+      accumulator = (left ? BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), turn, "virtual_getSyntacticallyRightSideExpression_1742226163722653714", new Object[]{}) : BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), turn, "virtual_getSyntacticallyLeftSideExpression_1742226163722653708", new Object[]{}));
+      SNodeOperations.detachNode(accumulator);
+      SNode current = SNodeOperations.cast(SNodeOperations.getParent(turn), "jetbrains.mps.baseLanguage.structure.IBinaryLike");
+      SNode previous = turn;
+      while (neq_a65dpo_a0f0b0bb(current, firstCommonAncestor)) {
+        SNode sideExpression = (left ? BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), current, "virtual_getSyntacticallyLeftSideExpression_1742226163722653708", new Object[]{}) : BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), current, "virtual_getSyntacticallyRightSideExpression_1742226163722653714", new Object[]{}));
+        if (sideExpression != null && eq_a65dpo_a0a1a5a1a72(sideExpression, previous)) {
+          SNodeOperations.replaceWithAnother(current, previous);
+          if (left) {
+            BehaviorReflection.invokeVirtual(Void.class, current, "virtual_setSyntacticallyLeftSideExpression_1742226163722653680", new Object[]{accumulator});
+          } else {
+            BehaviorReflection.invokeVirtual(Void.class, current, "virtual_setSyntacticallyRightSideExpression_1742226163722653694", new Object[]{accumulator});
+          }
+          accumulator = SNodeOperations.cast(current, "jetbrains.mps.baseLanguage.structure.Expression");
+        } else {
+          previous = current;
+        }
+        current = SNodeOperations.cast(SNodeOperations.getParent(previous), "jetbrains.mps.baseLanguage.structure.IBinaryLike");
+      }
     } else {
+      // Nothing to accumulate 
+      SNode firstCommonAncestorChild = (left ? BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), firstCommonAncestor, "virtual_getSyntacticallyLeftSideExpression_1742226163722653708", new Object[]{}) : BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), firstCommonAncestor, "virtual_getSyntacticallyRightSideExpression_1742226163722653714", new Object[]{}));
+      if (firstCommonAncestorChild != null) {
+        accumulator = firstCommonAncestorChild;
+        SNodeOperations.detachNode(accumulator);
+      } else {
+        accumulator = SNodeOperations.cast(firstCommonAncestor, "jetbrains.mps.baseLanguage.structure.Expression");
+      }
+    }
+    return accumulator;
+  }
+
+  /**
+   * Remove the found matching paren annotation from its node
+   */
+  private static void clearIncompleteParens(SNode otherExpression, boolean completingByRightParen, SNode parens) {
+    int count = 0;
+    if (completingByRightParen) {
+      count = SPropertyOperations.getInteger(AttributeOperations.getAttribute(otherExpression, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.baseLanguage.structure.IncompleteLeftParen")), "count");
+      AttributeOperations.setAttribute(otherExpression, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.baseLanguage.structure.IncompleteLeftParen"), null);
+      AttributeOperations.setAttribute(parens, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.baseLanguage.structure.IncompleteLeftParen"), null);
+    } else {
+      count = SPropertyOperations.getInteger(AttributeOperations.getAttribute(otherExpression, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.baseLanguage.structure.IncompleteRightParen")), "count");
       AttributeOperations.setAttribute(otherExpression, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.baseLanguage.structure.IncompleteRightParen"), null);
+      AttributeOperations.setAttribute(parens, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.baseLanguage.structure.IncompleteRightParen"), null);
+    }
+
+    // One paren has been matched, so we should decrease the count 
+    count -= 1;
+    if (count < 1) {
+      return;
+    }
+    for (int i = 0; i < count; i++) {
+      setOrIncreaseParen(parens, !(completingByRightParen));
     }
   }
 
+  /**
+   * Climb up the ancestor expressions and return the first binary operation, in which we come from the right sub-tree.
+   * 
+   * @param stopNode Never climb beyond this node
+   */
   private static SNode findLeftTurn(SNode leaf, SNode stopNode) {
     return findTurn(leaf, stopNode, true);
   }
 
+  /**
+   * Climb up the ancestor expressions and return the first binary operation, in which we come from the left sub-tree.
+   * 
+   * @param stopNode Never climb beyond this node
+   */
   private static SNode findRightTurn(SNode leaf, SNode stopNode) {
     return findTurn(leaf, stopNode, false);
   }
@@ -248,60 +474,93 @@ public class ParenthesisUtil {
   private static SNode findTurn(SNode leaf, SNode stopNode, boolean leftTurn) {
     SNode currentNode = SNodeOperations.getParent(leaf);
     SNode previous = leaf;
-    while (neq_a65dpo_a0c0s(previous, stopNode)) {
-      if (SNodeOperations.isInstanceOf(currentNode, "jetbrains.mps.baseLanguage.structure.BinaryOperation")) {
-        if (leftTurn && eq_a65dpo_a0a0a0a2a81(SLinkOperations.getTarget(SNodeOperations.cast(currentNode, "jetbrains.mps.baseLanguage.structure.BinaryOperation"), "rightExpression", true), previous)) {
-          return SNodeOperations.cast(currentNode, "jetbrains.mps.baseLanguage.structure.BinaryOperation");
-        }
-        if (!(leftTurn) && eq_a65dpo_a0a1a0a2a81(SLinkOperations.getTarget(SNodeOperations.cast(currentNode, "jetbrains.mps.baseLanguage.structure.BinaryOperation"), "leftExpression", true), previous)) {
-          return SNodeOperations.cast(currentNode, "jetbrains.mps.baseLanguage.structure.BinaryOperation");
-        }
+    while (neq_a65dpo_a0a2a53(previous, stopNode) && SNodeOperations.isInstanceOf(currentNode, "jetbrains.mps.baseLanguage.structure.IBinaryLike")) {
+      SNode leftSideExpression = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(currentNode, "jetbrains.mps.baseLanguage.structure.IBinaryLike"), "virtual_getSyntacticallyLeftSideExpression_1742226163722653708", new Object[]{});
+      SNode rightSideExpression = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(currentNode, "jetbrains.mps.baseLanguage.structure.IBinaryLike"), "virtual_getSyntacticallyRightSideExpression_1742226163722653714", new Object[]{});
+      if (leftTurn && eq_a65dpo_a0a2a2a53(rightSideExpression, previous)) {
+        return SNodeOperations.cast(currentNode, "jetbrains.mps.baseLanguage.structure.IBinaryLike");
       }
+      if (!(leftTurn) && eq_a65dpo_a0a3a2a53(leftSideExpression, previous)) {
+        return SNodeOperations.cast(currentNode, "jetbrains.mps.baseLanguage.structure.IBinaryLike");
+      }
+
       previous = currentNode;
       currentNode = SNodeOperations.getParent(currentNode);
     }
-    return stopNode;
+    return null;
   }
 
-  private static List<SNode> parentPath(SNode leaf) {
-    SNode currentNode = SNodeOperations.getParent(leaf);
+
+  /**
+   * Find all the ancestor expressions of leaf that could be wrapped in parens.
+   * Stops when the parent current expression could no longer be parenthesised.
+   */
+  private static List<SNode> parentPath(SNode leaf, boolean rightParen) {
     List<SNode> path = new ArrayList<SNode>();
     ListSequence.fromList(path).addElement(leaf);
-    while ((SNodeOperations.isInstanceOf(currentNode, "jetbrains.mps.baseLanguage.structure.Expression"))) {
+    List<SNode> leafAncestors = SNodeOperations.getAncestors(leaf, null, true);
+
+    for (SNode currentNode = SNodeOperations.getParent(leaf); SNodeOperations.isInstanceOf(currentNode, "jetbrains.mps.baseLanguage.structure.IBinaryLike") && BehaviorReflection.invokeVirtual(Boolean.TYPE, SNodeOperations.cast(currentNode, "jetbrains.mps.baseLanguage.structure.IBinaryLike"), "virtual_canPropagateUnmatchedParenUp_1742226163722653670", new Object[]{leaf, rightParen}); currentNode = SNodeOperations.getParent(currentNode)) {
       ListSequence.fromList(path).addElement(SNodeOperations.cast(currentNode, "jetbrains.mps.baseLanguage.structure.Expression"));
-
-      // need to break out to avoid the possibility of having two ternary operator expressions in the path 
-      // binary operation cannot be a parent of ternary operator expression 
-      if (SNodeOperations.isInstanceOf(currentNode, "jetbrains.mps.baseLanguage.structure.TernaryOperatorExpression")) {
-        // <node> 
-      }
-
-      currentNode = SNodeOperations.getParent(currentNode);
-      if (!(SNodeOperations.isInstanceOf(currentNode, "jetbrains.mps.baseLanguage.structure.BinaryOperation") || SNodeOperations.isInstanceOf(currentNode, "jetbrains.mps.baseLanguage.structure.TernaryOperatorExpression"))) {
-        break;
-      }
     }
     return path;
   }
 
-  public static void checkOperationWRTPriority(SNode binOp) {
-    checkOperationChildWRTPriority(binOp, false);
-    checkOperationChildWRTPriority(binOp, true);
-    checkOpeartionParentWRTPriority(binOp);
+  public static void checkWholeExpressionPriorities(SNode expr) {
+    SNode current = expr;
+    // find the top-most expression 
+    while (SNodeOperations.isInstanceOf(SNodeOperations.getParent(current), "jetbrains.mps.baseLanguage.structure.Expression")) {
+      current = SNodeOperations.cast(SNodeOperations.getParent(current), "jetbrains.mps.baseLanguage.structure.Expression");
+    }
+
+    List<SNode> candidates = ListSequence.fromList(new ArrayList<SNode>());
+    ListSequence.fromList(candidates).addSequence(ListSequence.fromList(SNodeOperations.getDescendants(current, "jetbrains.mps.baseLanguage.structure.BinaryOperation", true, new String[]{})));
+    checkCandidateExpressionsPriorities(candidates);
   }
-  private static void checkOperationChildWRTPriority(SNode node, boolean isRight) {
+
+  public static void checkOperationWRTPriority(SNode binOp) {
+    List<SNode> candidates = ListSequence.fromListAndArray(new ArrayList<SNode>(), binOp);
+    checkCandidateExpressionsPriorities(candidates);
+  }
+
+  private static void checkCandidateExpressionsPriorities(List<SNode> candidates) {
+    while (ListSequence.fromList(candidates).isNotEmpty()) {
+      SNode candidate = ListSequence.fromList(candidates).first();
+      if (checkOperationChildWRTPriority(candidate, false, candidates) && checkOperationChildWRTPriority(candidate, true, candidates) && checkOperationParentWRTPriority(candidate, candidates)) {
+        ListSequence.fromList(candidates).removeElementAt(0);
+      }
+    }
+  }
+
+  private static boolean checkOperationChildWRTPriority(SNode node, boolean isRight, List<SNode> candidates) {
     SNode sideExpr = (isRight ? SLinkOperations.getTarget(node, "rightExpression", true) : SLinkOperations.getTarget(node, "leftExpression", true));
     if (SNodeOperations.isInstanceOf(sideExpr, "jetbrains.mps.baseLanguage.structure.BinaryOperation")) {
       SNode sideChild = SNodeOperations.cast(sideExpr, "jetbrains.mps.baseLanguage.structure.BinaryOperation");
       if (isBadPriority(sideChild, node, isRight)) {
         ParenthesisUtil.rotateTree(sideChild, node, isRight);
-        checkOperationWRTPriority(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.BinaryOperation"));
+        ListSequence.fromList(candidates).addElement(SNodeOperations.cast(sideExpr, "jetbrains.mps.baseLanguage.structure.BinaryOperation"));
+        return false;
       }
+    } else if (SNodeOperations.isInstanceOf(sideExpr, "jetbrains.mps.baseLanguage.structure.TernaryOperatorExpression")) {
+      SNodeOperations.replaceWithAnother(node, sideExpr);
+      if (isRight) {
+        SLinkOperations.setTarget(node, "rightExpression", SLinkOperations.getTarget(SNodeOperations.cast(sideExpr, "jetbrains.mps.baseLanguage.structure.TernaryOperatorExpression"), "condition", true), true);
+        SLinkOperations.setTarget(SNodeOperations.cast(sideExpr, "jetbrains.mps.baseLanguage.structure.TernaryOperatorExpression"), "condition", node, true);
+      } else {
+        SLinkOperations.setTarget(node, "leftExpression", SLinkOperations.getTarget(SNodeOperations.cast(sideExpr, "jetbrains.mps.baseLanguage.structure.TernaryOperatorExpression"), "ifFalse", true), true);
+        SLinkOperations.setTarget(SNodeOperations.cast(sideExpr, "jetbrains.mps.baseLanguage.structure.TernaryOperatorExpression"), "ifFalse", node, true);
+      }
+      if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(sideExpr), "jetbrains.mps.baseLanguage.structure.BinaryOperation")) {
+        ListSequence.fromList(candidates).addElement(SNodeOperations.cast(SNodeOperations.getParent(sideExpr), "jetbrains.mps.baseLanguage.structure.BinaryOperation"));
+      }
+      return false;
     }
+    return true;
   }
-  private static void checkOpeartionParentWRTPriority(SNode node) {
+
+  private static boolean checkOperationParentWRTPriority(SNode node, List<SNode> candidates) {
     if (SNodeOperations.getParent(node) == null) {
-      return;
+      return true;
     }
     if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.BinaryOperation")) {
       SNode parent = SNodeOperations.cast(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.BinaryOperation");
@@ -313,16 +572,38 @@ public class ParenthesisUtil {
       }
       if (ParenthesisUtil.isBadPriority(node, parent, isRight)) {
         ParenthesisUtil.rotateTree(node, parent, isRight);
-        checkOpeartionParentWRTPriority(node);
+        ListSequence.fromList(candidates).addElement(parent);
+        return false;
       }
-    }
-    if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.AbstractUnaryNumberOperation")) {
-      SNode parent = SNodeOperations.cast(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.AbstractUnaryNumberOperation");
-      SLinkOperations.setTarget(parent, "expression", SLinkOperations.getTarget(node, "leftExpression", true), true);
-      SNodeOperations.replaceWithAnother(parent, node);
-      SLinkOperations.setTarget(node, "leftExpression", parent, true);
+      return true;
+    } else {
+      if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.AbstractUnaryNumberOperation")) {
+        SNode parent = SNodeOperations.cast(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.AbstractUnaryNumberOperation");
+        SLinkOperations.setTarget(parent, "expression", SLinkOperations.getTarget(node, "leftExpression", true), true);
+        SNodeOperations.replaceWithAnother(parent, node);
+        SLinkOperations.setTarget(node, "leftExpression", parent, true);
+      } else if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.CastExpression")) {
+        SNode castExpr = SNodeOperations.cast(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.CastExpression");
+        SNodeOperations.replaceWithAnother(castExpr, node);
+        SLinkOperations.setTarget(castExpr, "expression", SLinkOperations.getTarget(node, "leftExpression", true), true);
+        SLinkOperations.setTarget(node, "leftExpression", castExpr, true);
+      } else if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.NotExpression")) {
+        SNode notExpr = SNodeOperations.cast(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.NotExpression");
+        SNodeOperations.replaceWithAnother(notExpr, node);
+        SLinkOperations.setTarget(notExpr, "expression", SLinkOperations.getTarget(node, "leftExpression", true), true);
+        SLinkOperations.setTarget(node, "leftExpression", notExpr, true);
+      } else if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.DotExpression") && SNodeOperations.hasRole(node, "jetbrains.mps.baseLanguage.structure.DotExpression", "operand")) {
+        SNode dotExpr = SNodeOperations.cast(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.DotExpression");
+        SNodeOperations.replaceWithAnother(dotExpr, node);
+        SLinkOperations.setTarget(dotExpr, "operand", SLinkOperations.getTarget(node, "rightExpression", true), true);
+        SLinkOperations.setTarget(node, "rightExpression", dotExpr, true);
+      } else {
+        return true;
+      }
+      return false;
     }
   }
+
   public static SNode getBinOp(SNode expr, boolean toRight) {
     SNode parent = SNodeOperations.getParent(expr);
     if (!(SNodeOperations.isInstanceOf(parent, "jetbrains.mps.baseLanguage.structure.BinaryOperation"))) {
@@ -350,76 +631,37 @@ public class ParenthesisUtil {
   public static boolean isBadPriority(SNode child, SNode parent, boolean isRight) {
     return BehaviorReflection.invokeVirtualStatic(Integer.TYPE, SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(child))), "virtual_getPriority_1262430001741497858", new Object[]{}) < BehaviorReflection.invokeVirtualStatic(Integer.TYPE, SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(parent))), "virtual_getPriority_1262430001741497858", new Object[]{}) || (isRight && ((int) BehaviorReflection.invokeVirtualStatic(Integer.TYPE, SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(child))), "virtual_getPriority_1262430001741497858", new Object[]{})) == ((int) BehaviorReflection.invokeVirtualStatic(Integer.TYPE, SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(parent))), "virtual_getPriority_1262430001741497858", new Object[]{})));
   }
-  private static boolean eq_a65dpo_a0a0d0l0g(Object a, Object b) {
+  private static boolean eq_a65dpo_a0a0a8a5a7(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
-  private static boolean eq_a65dpo_a0a0a5a3a11a6(Object a, Object b) {
+  private static boolean eq_a65dpo_a0a0a8a5a7_0(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
-  private static boolean eq_a65dpo_a0a0a5a3a11a6_0(Object a, Object b) {
+  private static boolean eq_a65dpo_a0c0r0p(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
-  private static boolean eq_a65dpo_a0a0a1a9a3a11a6(Object a, Object b) {
+  private static boolean eq_a65dpo_a0a0a0e0r(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
-  private static boolean eq_a65dpo_a0a0a0b0j0d0l0g(Object a, Object b) {
+  private static boolean eq_a65dpo_a0b0a0a4a71(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
-  private static boolean eq_a65dpo_a0a0b0j0d0l0g(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
-  }
-  private static boolean eq_a65dpo_a0a0a1a9a3a11a6_0(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
-  }
-  private static boolean eq_a65dpo_a0a0a1a0j0d0l0g(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
-  }
-  private static boolean eq_a65dpo_a0a0b0a9a3a11a6(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
-  }
-  private static boolean eq_a65dpo_a0a0a1a0j0d0l0g_0(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
-  }
-  private static boolean eq_a65dpo_a0a0a0b0a9a3a11a6(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
-  }
-  private static boolean eq_a65dpo_a0d0l0g(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
-  }
-  private static boolean eq_a65dpo_a0a0c0t0g(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
-  }
-  private static boolean eq_a65dpo_a0c0t0g(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
-  }
-  private static boolean eq_a65dpo_a0g0a91a6(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
-  }
-  private static boolean eq_a65dpo_a0a0a4a2a8(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
-  }
-  private static boolean neq_a65dpo_a0e0c0i(Object a, Object b) {
+  private static boolean neq_a65dpo_a0a1a72(Object a, Object b) {
     return !((a != null ? a.equals(b) : a == b));
   }
-  private static boolean neq_a65dpo_a0c0i(Object a, Object b) {
-    return !((a != null ? a.equals(b) : a == b));
-  }
-  private static boolean eq_a65dpo_a0a0a4a4a8(Object a, Object b) {
+  private static boolean eq_a65dpo_a0a1a5a1a72(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
-  private static boolean neq_a65dpo_a0a4a4a8(Object a, Object b) {
+  private static boolean neq_a65dpo_a0f0b0bb(Object a, Object b) {
     return !((a != null ? a.equals(b) : a == b));
   }
-  private static boolean neq_a65dpo_a0e0i(Object a, Object b) {
+  private static boolean neq_a65dpo_a0a2a53(Object a, Object b) {
     return !((a != null ? a.equals(b) : a == b));
   }
-  private static boolean eq_a65dpo_a0a0a0a2a81(Object a, Object b) {
+  private static boolean eq_a65dpo_a0a2a2a53(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
-  private static boolean eq_a65dpo_a0a1a0a2a81(Object a, Object b) {
+  private static boolean eq_a65dpo_a0a3a2a53(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
-  }
-  private static boolean neq_a65dpo_a0c0s(Object a, Object b) {
-    return !((a != null ? a.equals(b) : a == b));
   }
 }

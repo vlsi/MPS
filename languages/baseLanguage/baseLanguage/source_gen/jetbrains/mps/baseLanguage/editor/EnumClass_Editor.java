@@ -86,7 +86,7 @@ public class EnumClass_Editor extends DefaultNodeEditor {
     editorCell.setCellId("property_name");
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, true);
-    style.set(StyleAttributes.RT_ANCHOR_TAG, "default_RTransform");
+    style.set(StyleAttributes.RT_ANCHOR_TAG, "ext_4_RTransform");
     editorCell.getStyle().putAll(style);
     if (renderingCondition_y68cfu_a3a(node, editorContext)) {
       editorCell.getStyle().set(StyleAttributes.FOCUS_POLICY, FocusPolicy.ATTRACTS_FOCUS);

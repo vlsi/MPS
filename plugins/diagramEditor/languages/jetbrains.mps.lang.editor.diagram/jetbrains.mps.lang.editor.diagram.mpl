@@ -95,7 +95,7 @@
             </external-mapping>
           </lesser-priority-mapping>
         </mapping-priority-rule>
-        <mapping-priority-rule kind="before_or_together">
+        <mapping-priority-rule kind="strictly_together">
           <greater-priority-mapping>
             <generator generatorUID="2473a9c0-7105-42a7-9a33-05a05e76222d(jetbrains.mps.lang.editor.diagram#1094405431463447766)" />
             <external-mapping>

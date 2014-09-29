@@ -54,4 +54,10 @@ public class DotExpression_Behavior {
   public static boolean virtual_lvalue_1262430001741497939(SAbstractConcept thisConcept) {
     return true;
   }
+  public static SNode virtual_getSyntacticallyLeftSideExpression_1742226163722653708(SNode thisNode) {
+    return SLinkOperations.getTarget(thisNode, "operand", true);
+  }
+  public static void virtual_setSyntacticallyLeftSideExpression_1742226163722653680(SNode thisNode, SNode expr) {
+    SLinkOperations.setTarget(thisNode, "operand", expr, true);
+  }
 }

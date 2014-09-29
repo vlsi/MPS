@@ -20,6 +20,7 @@ import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_ApplySi
 import jetbrains.mps.nodeEditor.CellSide;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
+import jetbrains.mps.editor.runtime.style.FocusPolicy;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
@@ -94,7 +95,7 @@ public class FieldDeclaration_Editor extends DefaultNodeEditor {
   }
   public static class ApplySideTransforms_null_cellMenu_2sbeba_a0d0 extends AbstractCellMenuPart_ApplySideTransforms {
     public ApplySideTransforms_null_cellMenu_2sbeba_a0d0() {
-      super(CellSide.RIGHT);
+      super(CellSide.RIGHT, "");
     }
   }
   private EditorCell createConstant_2sbeba_e0(EditorContext editorContext, SNode node) {
@@ -114,7 +115,7 @@ public class FieldDeclaration_Editor extends DefaultNodeEditor {
   }
   public static class ApplySideTransforms_null_cellMenu_2sbeba_a0e0 extends AbstractCellMenuPart_ApplySideTransforms {
     public ApplySideTransforms_null_cellMenu_2sbeba_a0e0() {
-      super(CellSide.RIGHT);
+      super(CellSide.RIGHT, "");
     }
   }
   private EditorCell createConstant_2sbeba_f0(EditorContext editorContext, SNode node) {
@@ -134,7 +135,7 @@ public class FieldDeclaration_Editor extends DefaultNodeEditor {
   }
   public static class ApplySideTransforms_null_cellMenu_2sbeba_a0f0 extends AbstractCellMenuPart_ApplySideTransforms {
     public ApplySideTransforms_null_cellMenu_2sbeba_a0f0() {
-      super(CellSide.RIGHT);
+      super(CellSide.RIGHT, "");
     }
   }
   private EditorCell createRefNode_2sbeba_g0(EditorContext editorContext, SNode node) {
@@ -146,6 +147,9 @@ public class FieldDeclaration_Editor extends DefaultNodeEditor {
     if (editorCell.getRole() == null) {
       editorCell.setRole("type");
     }
+    if (renderingCondition_2sbeba_a6a(node, editorContext)) {
+      editorCell.getStyle().set(StyleAttributes.FOCUS_POLICY, FocusPolicy.ATTRACTS_FOCUS);
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -155,6 +159,9 @@ public class FieldDeclaration_Editor extends DefaultNodeEditor {
       return manager.createNodeRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
     } else
     return editorCell;
+  }
+  private static boolean renderingCondition_2sbeba_a6a(SNode node, EditorContext editorContext) {
+    return SLinkOperations.getTarget(node, "type", true) == null;
   }
   private EditorCell createComponent_2sbeba_h0(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.baseLanguage.editor.VariableDeclaration_NameCellComponent");

@@ -79,6 +79,7 @@ public abstract class TreeUpdateVisitor implements TreeNodeVisitor {
         });
         if (disposed) return;
 
+        // XXX why do we care to wait for end of dumb mode? Why don't we care it might start once again right after?
         Project project = ProjectHelper.toIdeaProject(node.getOperationContext().getProject());
         if (project != null) {
           DumbService.getInstance(project).waitForSmartMode();

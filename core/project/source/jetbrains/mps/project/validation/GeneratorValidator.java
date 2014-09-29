@@ -60,12 +60,16 @@ public class GeneratorValidator extends BaseModuleValidator<Generator> {
     Set<String> usedLanguages = new HashSet<String>();
     ModelDependencyScanner depScan = new ModelDependencyScanner();
     depScan.crossModelReferences(true).usedLanguages(false);
+    // dependencies check is meaningless if we didn't collect cross-generator references.
+    // XXX not sure decision to ignore utility models is right, though.
+    boolean anyGeneratorModelNotLoaded = false;
     for (SModel model : myModule.getModels()) {
       // Note: the following method invocation traverses the whole model.
       // For performance reasons, we perform these checks only for loaded models.
       // FIXME this brings incorrect results for explicit Check Module actions (where one would expect thorough check)
       // shall consider different execution models for the validator (in addition to description object instead of String)
       if (!model.isLoaded()) {
+        anyGeneratorModelNotLoaded |= SModelStereotype.isGeneratorModel(model);
         continue;
       }
       if (SModelStereotype.isGeneratorModel(model)) {
@@ -75,6 +79,14 @@ public class GeneratorValidator extends BaseModuleValidator<Generator> {
     }
     warnings.addAll(warnMissingTargetLangRuntime(usedLanguages));
 
+    if (!anyGeneratorModelNotLoaded) {
+      warnings.addAll(warnStrictGeneratorDependencies(depScan));
+    }
+    return warnings;
+  }
+
+  private Collection<String> warnStrictGeneratorDependencies(ModelDependencyScanner dependencies) {
+    ArrayList<String> warnings = new ArrayList<String>(5);
     HashSet<SModule> seen = new HashSet<SModule>();
     for (SDependency dep : myModule.getDeclaredDependencies()) {
       if (seen.contains(dep.getTarget()) || (dep.getScope() != SDependencyScope.EXTENDS && dep.getScope() != SDependencyScope.DEFAULT)) {
@@ -89,16 +101,17 @@ public class GeneratorValidator extends BaseModuleValidator<Generator> {
         for (SModel m : (otherGenLanguage == null ? Collections.<SModel>emptySet() : otherGenLanguage.getModels())) {
           otherGeneratorModels.add(m.getReference());
         }
-        if (CollectionUtil.intersects(depScan.getCrossModelReferences(), otherGeneratorModels)) {
+        seen.add(dep.getTarget());
+        if (CollectionUtil.intersects(dependencies.getCrossModelReferences(), otherGeneratorModels)) {
           continue;
         }
         // models of the dep.target are not referenced, likely superfluous dependency.
         warnings.add(String.format("Superfluous dependency to generator %s, no generator template nor its source language's node is in use", dep.getTarget().getModuleName()));
-        seen.add(dep.getTarget());
       }
     }
     return warnings;
   }
+
 
   private Collection<String> warnMissingTargetLangRuntime(Set<String> usedLanguages) {
     Language sourceLanguage = myModule.getSourceLanguage();

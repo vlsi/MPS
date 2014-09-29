@@ -20,16 +20,18 @@ import jetbrains.mps.generator.runtime.TemplateModule;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collection;
-import java.util.HashMap;
+import java.util.Comparator;
 import java.util.HashSet;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map.Entry;
 import java.util.Set;
 
 /**
  * Describes set of mapping configurations to apply at consecutive steps. The phase may constitute one or more generation steps.
- * Configurations within single phase have no strict dependency between each other (other than 'strictly together').
+ * Configurations within single phase have no strict dependency between each other (other than 'strictly together' within individual groups).
  * @author Artem Tikhomirov
  */
 class GenerationPhase {
@@ -50,13 +52,15 @@ class GenerationPhase {
 
 
   List<Group> groupByGenerator() {
-    // FIXME unpredicted order if there is more than one group with 1+ generators and some of these generators has sole group -
-    // depending on groupWithFewModules iteration order, sole group might get merged into one or another composite group.
-    // Need some ordering mechanism (e.g based on number of MC withing a group? or sort(MC).toString()?)
-    HashMap<TemplateModule, Group> groupByModule = new HashMap<TemplateModule, Group>();
-    HashMap<Group, Set<TemplateModule>> groupsWithFewModules = new HashMap<Group, Set<TemplateModule>>();
+    // ordering is important as there might be more than 1 group with the same generator, and in addition there might be group
+    // with this generator as the only one. Ordering ensures this single group is always attached to the same groupWithFewModules
+    // and that these groups with few generators are in the same order each time generation plan is queried.
+    LinkedHashMap<TemplateModule, Group> groupByModule = new LinkedHashMap<TemplateModule, Group>();
+    LinkedHashMap<Group, Set<TemplateModule>> groupsWithFewModules = new LinkedHashMap<Group, Set<TemplateModule>>();
     ArrayList<Group> step = new ArrayList<Group>();
-    for (Group g : myPhaseElements) {
+    Group[] phaseElements = myPhaseElements.toArray(new Group[myPhaseElements.size()]);
+    Arrays.sort(phaseElements, new GroupComparator());
+    for (Group g : phaseElements) {
       final Set<TemplateModule> involvedGenerators = getInvolvedGenerators(g);
       if (involvedGenerators.size() == 1) {
         final TemplateModule generator = involvedGenerators.iterator().next();
@@ -96,5 +100,34 @@ class GenerationPhase {
       rv.add(tmc.getModel().getModule());
     }
     return rv;
+  }
+
+  private static class GroupComparator implements Comparator<Group> {
+    @Override
+    public int compare(Group g1, Group g2) {
+      HashSet<TemplateMappingConfiguration> g1Unique = new HashSet<TemplateMappingConfiguration>(g1.getElements());
+      g1Unique.removeAll(g2.getElements());
+      HashSet<TemplateMappingConfiguration> g2Unique = new HashSet<TemplateMappingConfiguration>(g2.getElements());
+      g2Unique.removeAll(g1.getElements());
+      if (g1Unique.size() != g2Unique.size()) {
+        return g1Unique.size() - g2Unique.size();
+      }
+      if (g1Unique.isEmpty()) {
+        assert g2Unique.isEmpty();
+        return 0;
+      }
+      TemplateMappingConfiguration[] e1 = g1Unique.toArray(new TemplateMappingConfiguration[g1Unique.size()]);
+      TemplateMappingConfiguration[] e2 = g2Unique.toArray(new TemplateMappingConfiguration[g2Unique.size()]);
+      final MapCfgComparator comparator = new MapCfgComparator();
+      Arrays.sort(e1, comparator);
+      Arrays.sort(e2, comparator);
+      for (int i = 0; i < e1.length; i++) {
+        int r = comparator.compare(e1[i], e2[i]);
+        if (r != 0) {
+          return r;
+        }
+      }
+      return 0;
+    }
   }
 }

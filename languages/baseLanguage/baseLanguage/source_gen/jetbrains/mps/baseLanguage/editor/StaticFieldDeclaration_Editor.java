@@ -20,6 +20,7 @@ import jetbrains.mps.nodeEditor.CellSide;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
+import jetbrains.mps.editor.runtime.style.FocusPolicy;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
@@ -94,7 +95,7 @@ public class StaticFieldDeclaration_Editor extends DefaultNodeEditor {
   }
   public static class ApplySideTransforms_null_cellMenu_t6d1qn_a0d0 extends AbstractCellMenuPart_ApplySideTransforms {
     public ApplySideTransforms_null_cellMenu_t6d1qn_a0d0() {
-      super(CellSide.RIGHT);
+      super(CellSide.RIGHT, "");
     }
   }
   private EditorCell createConstant_t6d1qn_e0(EditorContext editorContext, SNode node) {
@@ -114,7 +115,7 @@ public class StaticFieldDeclaration_Editor extends DefaultNodeEditor {
   }
   public static class ApplySideTransforms_null_cellMenu_t6d1qn_a0e0 extends AbstractCellMenuPart_ApplySideTransforms {
     public ApplySideTransforms_null_cellMenu_t6d1qn_a0e0() {
-      super(CellSide.RIGHT);
+      super(CellSide.RIGHT, "");
     }
   }
   private EditorCell createConstant_t6d1qn_f0(EditorContext editorContext, SNode node) {
@@ -134,7 +135,7 @@ public class StaticFieldDeclaration_Editor extends DefaultNodeEditor {
   }
   public static class ApplySideTransforms_null_cellMenu_t6d1qn_a0f0 extends AbstractCellMenuPart_ApplySideTransforms {
     public ApplySideTransforms_null_cellMenu_t6d1qn_a0f0() {
-      super(CellSide.RIGHT);
+      super(CellSide.RIGHT, "");
     }
   }
   private EditorCell createConstant_t6d1qn_g0(EditorContext editorContext, SNode node) {
@@ -154,7 +155,7 @@ public class StaticFieldDeclaration_Editor extends DefaultNodeEditor {
   }
   public static class ApplySideTransforms_null_cellMenu_t6d1qn_a0g0 extends AbstractCellMenuPart_ApplySideTransforms {
     public ApplySideTransforms_null_cellMenu_t6d1qn_a0g0() {
-      super(CellSide.RIGHT);
+      super(CellSide.RIGHT, "");
     }
   }
   private EditorCell createRefNode_t6d1qn_h0(EditorContext editorContext, SNode node) {
@@ -166,6 +167,9 @@ public class StaticFieldDeclaration_Editor extends DefaultNodeEditor {
     if (editorCell.getRole() == null) {
       editorCell.setRole("type");
     }
+    if (renderingCondition_t6d1qn_a7a(node, editorContext)) {
+      editorCell.getStyle().set(StyleAttributes.FOCUS_POLICY, FocusPolicy.ATTRACTS_FOCUS);
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -175,6 +179,9 @@ public class StaticFieldDeclaration_Editor extends DefaultNodeEditor {
       return manager.createNodeRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
     } else
     return editorCell;
+  }
+  private static boolean renderingCondition_t6d1qn_a7a(SNode node, EditorContext editorContext) {
+    return SLinkOperations.getTarget(node, "type", true) == null;
   }
   private EditorCell createComponent_t6d1qn_i0(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.baseLanguage.editor.VariableDeclaration_NameCellComponent");

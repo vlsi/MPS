@@ -439,13 +439,13 @@ public class MergeSession {
     }
 
   }
-  private static <T> T as_bow6nj_a0a0a71(Object o, Class<T> type) {
-    return (type.isInstance(o) ? (T) o : null);
-  }
   private static boolean eq_bow6nj_a0a0a0a0a0a0b0d84(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
   private static boolean eq_bow6nj_a0a0a0a0a0a0b0l84(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
+  }
+  private static <T> T as_bow6nj_a0a0a71(Object o, Class<T> type) {
+    return (type.isInstance(o) ? (T) o : null);
   }
 }

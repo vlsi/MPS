@@ -3285,6 +3285,10 @@
       <property name="name" nameId="tpck.1169194664001" value="side" />
       <link role="dataType" roleId="tpce.1082985295845" targetNodeId="tpdg.1215604970641" resolveInfo="Side" />
     </node>
+    <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="870577895075788418" nodeInfo="ig">
+      <property name="name" nameId="tpck.1169194664001" value="tag" />
+      <link role="dataType" roleId="tpce.1082985295845" targetNodeId="1140813780565" resolveInfo="RightTransformAnchorTag" />
+    </node>
   </root>
   <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="3525058663444303551" nodeInfo="ig">
     <property name="name" nameId="tpck.1169194664001" value="QueryFunction_Style" />

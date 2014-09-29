@@ -11,9 +11,11 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.structure.behavior.LinkDeclaration_Behavior;
 import jetbrains.mps.generator.template.PropertyMacroContext;
+import jetbrains.mps.textgen.trace.TracingUtil;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.quotation.generator.baseLanguage.template.util.QuotationUtil;
+import jetbrains.mps.generator.GenerationSessionContext;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import java.util.List;
@@ -21,24 +23,21 @@ import java.util.Map;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.generator.template.IfMacroContext;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
+import jetbrains.mps.generator.template.TemplateQueryContext;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import org.jetbrains.mps.openapi.model.SReference;
-import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.textgen.trace.TracingUtil;
-import org.jetbrains.mps.openapi.model.SNodeReference;
-import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.lang.quotation.behavior.NodeBuilderNode_Behavior;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
-import jetbrains.mps.generator.template.TemplateQueryContext;
 import java.util.HashMap;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
@@ -49,6 +48,7 @@ import jetbrains.mps.generator.runtime.TemplateModule;
 import jetbrains.mps.lang.pattern.IMatchingPattern;
 import jetbrains.mps.lang.pattern.runtime.PatternUtil;
 import jetbrains.mps.util.IterableUtil;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
 
 @Generated
@@ -70,7 +70,11 @@ public class QueriesGenerated {
     return SNodeOperations.isInstanceOf(parent, "jetbrains.mps.lang.quotation.structure.NodeBuilderList") || SNodeOperations.isInstanceOf(parent, "jetbrains.mps.lang.quotation.structure.NodeBuilderInitLink") && SPropertyOperations.hasValue(SLinkOperations.getTarget(SNodeOperations.cast(parent, "jetbrains.mps.lang.quotation.structure.NodeBuilderInitLink"), "link", false), "metaClass", "aggregation", "reference") && LinkDeclaration_Behavior.call_isSingular_1213877254557(SLinkOperations.getTarget(SNodeOperations.cast(parent, "jetbrains.mps.lang.quotation.structure.NodeBuilderInitLink"), "link", false));
   }
   public static Object propertyMacro_GetPropertyValue_3180306201267234161(final PropertyMacroContext _context) {
-    return _context.getNode().getConcept().getQualifiedName();
+    SNode originalNode = TracingUtil.getInputNode(_context.getNode(), _context.getOriginalInputModel().getRepository());
+    if (originalNode == null) {
+      originalNode = _context.getNode();
+    }
+    return originalNode.getConcept().getQualifiedName();
   }
   public static Object propertyMacro_GetPropertyValue_6497389703574369338(final PropertyMacroContext _context) {
     return _context.getNode().getProperty("propertyName");
@@ -108,19 +112,25 @@ public class QueriesGenerated {
   }
   public static Object propertyMacro_GetPropertyValue_1025590056396672173(final PropertyMacroContext _context) {
     //  the 'node' expression may have been already mapped and unique name created for it 
-    String uniqName = (String) _context.getTransientObject("parameterFromExpressions_" + _context.getNode().getNodeId().toString());
-    uniqName = (uniqName != null ? uniqName : "parameter_" + QuotationUtil.genQuotationNodeId(_context, _context.getNode()));
-    _context.putTransientObject("parameterFromExpressions_" + _context.getNode().getNodeId().toString(), uniqName);
+    String key = "parameterFromExpressions_" + _context.getNode().getNodeId().toString();
+    String uniqName = (String) _context.getTransientObject(key);
+    uniqName = (uniqName != null ? uniqName : "parameter_" + QuotationUtil.genQuotationNodeId(_context, ((SNode) _context.getVariable("transientQuotation"))));
+    _context.putTransientObject(key, uniqName);
     return uniqName;
   }
   public static Object propertyMacro_GetPropertyValue_1025590056396681226(final PropertyMacroContext _context) {
-    return "quotedNode_" + QuotationUtil.genQuotationNodeId(_context, _context.getNode());
+    return "quotedNode_" + QuotationUtil.genQuotationNodeId(_context, ((SNode) _context.getVariable("transientQuotation")));
   }
   public static Object propertyMacro_GetPropertyValue_6497389703574369427(final PropertyMacroContext _context) {
     return _context.getNode().getProperty("role");
   }
   public static Object propertyMacro_GetPropertyValue_1025590056397541505(final PropertyMacroContext _context) {
-    return _context.createUniqueName(_context.getTemplateValue(), SNodeOperations.getContainingRoot(_context.getNode()));
+    // <node> 
+    // This is an ugly temporary solution to ensure method names do not change due to use 
+    // of original input node for quotation generation. I just can't afford regenerating 80+ 
+    // models right now, as these changes are unrelated to the task at hand.  
+    // FIXME shall use original code (above) and regenerate once dust settles. 
+    return ((GenerationSessionContext) _context.getGenerator().getGeneratorSessionContext()).createUniqueName(_context.getTemplateValue(), SNodeOperations.getContainingRoot(((SNode) _context.getVariable("transientQuotation"))), ((SNode) _context.getVariable("transientQuotation")));
   }
   public static Object propertyMacro_GetPropertyValue_429601079676709309(final PropertyMacroContext _context) {
     return "p" + MapSequence.fromMap(((Tuples._2<List<SNode>, Map<SNode, Integer>>) _context.getVariable("var:listAndIndex"))._1()).get(_context.getNode());
@@ -183,7 +193,7 @@ public class QueriesGenerated {
     return _context.getOutputNodeByInputNodeAndMappingLabel(SLinkOperations.getTarget(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.lang.quotation.structure.Quotation", false, false), "nodeId", true), "parametersFromExpressions");
   }
   public static Object referenceMacro_GetReferent_1201868926381(final ReferenceMacroContext _context) {
-    return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "nodeVariable");
+    return _context.getOutputNodeByInputNodeAndMappingLabel(((SNode) _context.getVariable("var:quotedNode")), "nodeVariable");
   }
   public static Object referenceMacro_GetReferent_6497389703574369327(final ReferenceMacroContext _context) {
     return _context.getOutputNodeByInputNodeAndMappingLabel(((SNode) _context.getVariable("var:quotedNode")), "nodeVariable");
@@ -209,12 +219,7 @@ public class QueriesGenerated {
     return _context.getOutputNodeByInputNodeAndMappingLabel(((SNode) _context.getVariable("var:quotedNode")), "nodeVariable");
   }
   public static Object referenceMacro_GetReferent_6497389703574369520(final ReferenceMacroContext _context) {
-    SNode quotation = SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.lang.quotation.structure.Quotation", false, false);
-    SNode antiquotation = SNodeOperations.cast(_context.getNode(), "jetbrains.mps.lang.quotation.structure.ReferenceAntiquotation");
-    if (antiquotation == null) {
-      return null;
-    }
-    return _context.getOutputNodeByInputNodeAndMappingLabel(SLinkOperations.getTarget(antiquotation, "expression", true), "parametersFromExpressions");
+    return _context.getOutputNodeByInputNodeAndMappingLabel(SLinkOperations.getTarget(_context.getNode(), "expression", true), "parametersFromExpressions");
   }
   public static Object referenceMacro_GetReferent_1196351887115(final ReferenceMacroContext _context) {
     return _context.getOutputNodeByInputNodeAndMappingLabel(SNodeOperations.getParent(_context.getNode()), "nodeVariable");
@@ -226,14 +231,7 @@ public class QueriesGenerated {
     return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "nodeVariable");
   }
   public static Object referenceMacro_GetReferent_1196351887203(final ReferenceMacroContext _context) {
-    SNode quotation = SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.lang.quotation.structure.Quotation", false, false);
-    SNode antiquotation = null;
-    for (SNode child : SNodeOperations.getChildren(_context.getNode())) {
-      if (SNodeOperations.isInstanceOf(child, "jetbrains.mps.lang.quotation.structure.Antiquotation")) {
-        antiquotation = SNodeOperations.cast(child, "jetbrains.mps.lang.quotation.structure.Antiquotation");
-        break;
-      }
-    }
+    SNode antiquotation = Sequence.fromIterable(SNodeOperations.ofConcept(SNodeOperations.getChildren(_context.getNode()), "jetbrains.mps.lang.quotation.structure.Antiquotation")).first();
     if (antiquotation == null) {
       return null;
     }
@@ -249,7 +247,6 @@ public class QueriesGenerated {
     return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "nodeVariable");
   }
   public static Object referenceMacro_GetReferent_1196351887411(final ReferenceMacroContext _context) {
-    SNode quotation = SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.lang.quotation.structure.Quotation", false, false);
     SNode antiquotation = null;
     for (SNode child : SNodeOperations.getChildren(_context.getNode())) {
       if (SNodeOperations.isInstanceOf(child, "jetbrains.mps.lang.quotation.structure.ListAntiquotation")) {
@@ -361,6 +358,16 @@ public class QueriesGenerated {
   public static boolean ifMacro_Condition_429601079676782080(final IfMacroContext _context) {
     return (SLinkOperations.getTarget(((Tuples._2<SNode, Integer>) _context.getVariable("var:root"))._0(), "modelToCreate", true) != null);
   }
+  public static SNode sourceNodeQuery_8438065045294025901(final SourceSubstituteMacroNodeContext _context) {
+    // Here comes major trick with quotations. They are expected to see input model 
+    // the same way user did. First attempt to accomplish this was to use 'top-priority' mappings, 
+    // however, the attempt failed as the number of top-pri mappings grow and they appear in the generation plan 
+    // in unpredictable order (potentially running before quotations and altering e.g. targets of quotation-hosted  
+    // references. Thus (to avoid adding 'top-top-priority), we decided to explicitly work against original model here. 
+    SNode originalQuotation = (SNode) TracingUtil.getInputNode(_context.getNode(), _context.getOriginalInputModel().getRepository());
+    // There are generators that produce Quotations, we shall use this quotation then, if no original one is available. 
+    return _context.getNode();
+  }
   public static SNode sourceNodeQuery_767161977424634934(final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "quotedNode", true);
   }
@@ -378,6 +385,9 @@ public class QueriesGenerated {
   }
   public static SNode sourceNodeQuery_7838325468139287103(final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "expression", true);
+  }
+  public static Object templateArgumentQuery_8438065045297103508(final TemplateQueryContext _context) {
+    return _context.getNode();
   }
   public static Iterable<SNode> sourceNodesQuery_1196351886802(final SourceSubstituteMacroNodesContext _context) {
     final List<SNode> result = new ArrayList<SNode>();
@@ -409,23 +419,45 @@ public class QueriesGenerated {
   }
   public static Iterable<SNode> sourceNodesQuery_1196351886876(final SourceSubstituteMacroNodesContext _context) {
     final List<SNode> result = new ArrayList<SNode>();
-    for (SReference ref : Sequence.fromIterable(_context.getNode().getReferences())) {
+    SNode originalNode = TracingUtil.getInputNode(_context.getNode(), _context.getOriginalInputModel().getRepository());
+    if (originalNode == null) {
+      originalNode = _context.getNode();
+    }
+    SNode originalAncestor = SNodeOperations.getAncestor(originalNode, "jetbrains.mps.lang.quotation.structure.Quotation", false, false);
+    for (SReference ref : Sequence.fromIterable(originalNode.getReferences())) {
       if ((AttributeOperations.getAttribute(_context.getNode(), new IAttributeDescriptor.LinkAttribute("jetbrains.mps.lang.quotation.structure.ReferenceAntiquotation", ref.getRole())) != null)) {
         continue;
       }
       SNode targetNode = ((SNode) ref.getTargetNode());
-      if (SNodeOperations.getAncestor(targetNode, "jetbrains.mps.lang.quotation.structure.Quotation", false, false) == SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.lang.quotation.structure.Quotation", false, false)) {
+      SNode targetAncestor = SNodeOperations.getAncestor(targetNode, "jetbrains.mps.lang.quotation.structure.Quotation", false, false);
+      boolean innerQuotationRef;
+      if (targetAncestor != null) {
+        innerQuotationRef = targetAncestor == originalAncestor;
+      } else {
+        // target node is not under any quotation, two possible cases: 
+        if (originalAncestor == null) {
+          // 1) source node is not under quotation, the case for regular nodes wrapped into quotation 
+          // (e.g. pattern test lang wraps a regular nodeToMatch into quotation) 
+          // I can't come up with a solution, here's a hack: assume if roots match, then 
+          // this is reference to quotaion internals 
+          innerQuotationRef = SNodeOperations.getContainingRoot(targetNode) == SNodeOperations.getContainingRoot(originalNode);
+        } else {
+          // 2) source node is under quotation, target node is external to the quotation then  
+          innerQuotationRef = false;
+        }
+      }
+      if (innerQuotationRef) {
+        continue;
+      }
+
+      // 
+      // thus we compare ancestor of current(transient) node - assuming reference targets get updated and point to the same model. 
+      if (targetAncestor != null && targetAncestor == originalAncestor) {
         continue;
       }
       SNode referenceNode = SModelOperations.createNewNode(_context.getOutputModel(), null, "jetbrains.mps.lang.core.structure.BaseConcept");
+      referenceNode.setProperty("targetModel", ((SModelReference) ref.getTargetSModelReference()).update().toString());
       referenceNode.setProperty("role", ref.getRole());
-      if (targetNode != null && TracingUtil.getInput(targetNode) != null) {
-        SNodeReference originalInput = TracingUtil.getInput(targetNode);
-        referenceNode.setProperty("targetModel", originalInput.getModelReference().toString());
-        targetNode = originalInput.resolve(MPSModuleRepository.getInstance());
-      } else {
-        referenceNode.setProperty("targetModel", ((SModelReference) ref.getTargetSModelReference()).update().toString());
-      }
       if (targetNode != null) {
         referenceNode.setProperty("targetNodeId", targetNode.getNodeId().toString());
       }
@@ -434,15 +466,7 @@ public class QueriesGenerated {
     return result;
   }
   public static Iterable<SNode> sourceNodesQuery_1196351886984(final SourceSubstituteMacroNodesContext _context) {
-    return ListSequence.fromList(AttributeOperations.getAttributeList(_context.getNode(), new IAttributeDescriptor.AllAttributes())).where(new IWhereFilter<SNode>() {
-      public boolean accept(SNode it) {
-        return SNodeOperations.isInstanceOf(it, "jetbrains.mps.lang.quotation.structure.ReferenceAntiquotation");
-      }
-    }).select(new ISelector<SNode, SNode>() {
-      public SNode select(SNode it) {
-        return SNodeOperations.cast(it, "jetbrains.mps.lang.quotation.structure.ReferenceAntiquotation");
-      }
-    }).sort(new ISelector<SNode, String>() {
+    return Sequence.fromIterable(SNodeOperations.ofConcept(AttributeOperations.getAttributeList(_context.getNode(), new IAttributeDescriptor.AllAttributes()), "jetbrains.mps.lang.quotation.structure.ReferenceAntiquotation")).sort(new ISelector<SNode, String>() {
       public String select(SNode it) {
         return SPropertyOperations.getString(it, "linkRole");
       }
@@ -457,19 +481,16 @@ public class QueriesGenerated {
     }
     return result;
   }
-  public static Iterable<SNode> sourceNodesQuery_1025590056396691724(final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable<SNode> sourceNodesQuery_8438065045296712361(final SourceSubstituteMacroNodesContext _context) {
     List<SNode> result = new ArrayList<SNode>();
-    if (SLinkOperations.getTarget(_context.getNode(), "modelToCreate", true) != null) {
-      ListSequence.fromList(result).addElement(SLinkOperations.getTarget(_context.getNode(), "modelToCreate", true));
+    if (SLinkOperations.getTarget(((SNode) _context.getVariable("transientQuotation")), "modelToCreate", true) != null) {
+      ListSequence.fromList(result).addElement(SLinkOperations.getTarget(((SNode) _context.getVariable("transientQuotation")), "modelToCreate", true));
     }
-    if (SLinkOperations.getTarget(_context.getNode(), "nodeId", true) != null) {
-      ListSequence.fromList(result).addElement(SLinkOperations.getTarget(_context.getNode(), "nodeId", true));
+    if (SLinkOperations.getTarget(((SNode) _context.getVariable("transientQuotation")), "nodeId", true) != null) {
+      ListSequence.fromList(result).addElement(SLinkOperations.getTarget(((SNode) _context.getVariable("transientQuotation")), "nodeId", true));
     }
-    for (SNode child : SNodeOperations.getDescendants(_context.getNode(), null, false, new String[]{})) {
-      if (SNodeOperations.isInstanceOf(child, "jetbrains.mps.lang.quotation.structure.AbstractAntiquotation")) {
-        SNode antiqExpression = SLinkOperations.getTarget(SNodeOperations.cast(child, "jetbrains.mps.lang.quotation.structure.AbstractAntiquotation"), "expression", true);
-        ListSequence.fromList(result).addElement(antiqExpression);
-      }
+    for (SNode child : SNodeOperations.getDescendants(((SNode) _context.getVariable("transientQuotation")), "jetbrains.mps.lang.quotation.structure.AbstractAntiquotation", false, new String[]{})) {
+      ListSequence.fromList(result).addElement(SLinkOperations.getTarget(child, "expression", true));
     }
     return result;
   }
@@ -481,10 +502,8 @@ public class QueriesGenerated {
     if (SLinkOperations.getTarget(_context.getNode(), "nodeId", true) != null) {
       ListSequence.fromList(result).addElement(SLinkOperations.getTarget(_context.getNode(), "nodeId", true));
     }
-    for (SNode child : SNodeOperations.getDescendants(_context.getNode(), null, false, new String[]{})) {
-      if (SNodeOperations.isInstanceOf(child, "jetbrains.mps.lang.quotation.structure.AbstractAntiquotation")) {
-        ListSequence.fromList(result).addElement(SLinkOperations.getTarget(SNodeOperations.cast(child, "jetbrains.mps.lang.quotation.structure.AbstractAntiquotation"), "expression", true));
-      }
+    for (SNode child : SNodeOperations.getDescendants(_context.getNode(), "jetbrains.mps.lang.quotation.structure.AbstractAntiquotation", false, new String[]{})) {
+      ListSequence.fromList(result).addElement(SLinkOperations.getTarget(child, "expression", true));
     }
     return result;
   }

@@ -15,11 +15,10 @@
  */
 package jetbrains.mps.ide.ui.tree.module;
 
-import com.intellij.openapi.project.Project;
 import jetbrains.mps.generator.TransientModelsModule;
 import jetbrains.mps.ide.icons.IdeIcons;
-import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.project.ModuleContext;
+import jetbrains.mps.project.Project;
 
 public class TransientModelsTreeNode extends ProjectModuleTreeNode {
   private TransientModelsModule myTransientModule;
@@ -27,7 +26,7 @@ public class TransientModelsTreeNode extends ProjectModuleTreeNode {
   public TransientModelsTreeNode(final Project project, final TransientModelsModule module) {
     //sometimes (when opening another project after first project) module repository does not contain transient module
     //temp fix
-    super(new ModuleContext(module, ProjectHelper.toMPSProject(project)));
+    super(new ModuleContext(module, project));
     myTransientModule = module;
     populate();
     setNodeIdentifier(myTransientModule.getModuleReference().toString());

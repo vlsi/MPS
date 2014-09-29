@@ -1385,6 +1385,15 @@ public class QueriesGenerated {
     quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, facade.createModelReference("f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.nodeEditor(MPS.Editor/jetbrains.mps.nodeEditor@java_stub)"), facade.createNodeId("~EditorComponent")));
     return quotedNode_1;
   }
+  private static boolean isNotEmptyString(String str) {
+    return str != null && str.length() > 0;
+  }
+  private static boolean eq_x583g4_a0a0kh(Object a, Object b) {
+    return (a != null ? a.equals(b) : a == b);
+  }
+  private static boolean eq_x583g4_a0a0rh(Object a, Object b) {
+    return (a != null ? a.equals(b) : a == b);
+  }
   private static SNode _quotation_createNode_x583g4_a0a0hk() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
@@ -1473,14 +1482,5 @@ public class QueriesGenerated {
     quotedNode_2.addChild("valueType", quotedNode_4);
     quotedNode_1.addChild("type", quotedNode_2);
     return quotedNode_1;
-  }
-  private static boolean isNotEmptyString(String str) {
-    return str != null && str.length() > 0;
-  }
-  private static boolean eq_x583g4_a0a0kh(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
-  }
-  private static boolean eq_x583g4_a0a0rh(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
   }
 }

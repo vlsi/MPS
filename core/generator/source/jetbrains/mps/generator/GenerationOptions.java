@@ -17,6 +17,7 @@ package jetbrains.mps.generator;
 
 import jetbrains.mps.generator.impl.DefaultNonIncrementalStrategy;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModel;
 
 import java.util.HashMap;
@@ -98,6 +99,7 @@ public class GenerationOptions {
     return myRebuildAll;
   }
 
+  @NotNull
   public IncrementalGenerationStrategy getIncrementalStrategy() {
     return myIncrementalStrategy;
   }
@@ -137,6 +139,7 @@ public class GenerationOptions {
     return myNumberOfModelsToKeep;
   }
 
+  @Nullable
   public GenerationParametersProvider getParametersProvider() {
     return myParametersProvider;
   }
@@ -216,7 +219,7 @@ public class GenerationOptions {
       return this;
     }
 
-    public OptionsBuilder parameters(GenerationParametersProvider parametersProvider) {
+    public OptionsBuilder parameters(@Nullable GenerationParametersProvider parametersProvider) {
       myParametersProvider = parametersProvider;
       return this;
     }

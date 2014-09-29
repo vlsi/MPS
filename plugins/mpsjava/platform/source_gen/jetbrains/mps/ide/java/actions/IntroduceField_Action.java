@@ -99,7 +99,19 @@ public class IntroduceField_Action extends BaseAction {
       final Wrappers._boolean mustBeStatic = new Wrappers._boolean();
       ((EditorContext) MapSequence.fromMap(_params).get("editorContext")).getRepository().getModelAccess().runReadAction(new Runnable() {
         public void run() {
-          mustBeStatic.value = (SNodeOperations.getAncestor(((SNode) MapSequence.fromMap(_params).get("node")), "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration", false, false) != null) || (SNodeOperations.getAncestor(((SNode) MapSequence.fromMap(_params).get("node")), "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration", false, false) != null) || (SNodeOperations.getAncestor(((SNode) MapSequence.fromMap(_params).get("node")), "jetbrains.mps.baseLanguage.structure.StaticInitializer", false, false) != null);
+          SNode current = SNodeOperations.getParent(((SNode) MapSequence.fromMap(_params).get("node")));
+          while (current != null) {
+            if (SNodeOperations.isInstanceOf(current, "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration") || SNodeOperations.isInstanceOf(current, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration") || SNodeOperations.isInstanceOf(current, "jetbrains.mps.baseLanguage.structure.StaticInitializer")) {
+              mustBeStatic.value = true;
+              break;
+            }
+            if (SNodeOperations.isInstanceOf(current, "jetbrains.mps.baseLanguage.structure.FieldDeclaration") || SNodeOperations.isInstanceOf(current, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration") || SNodeOperations.isInstanceOf(current, "jetbrains.mps.baseLanguage.structure.InstanceInitializer")) {
+              mustBeStatic.value = false;
+              break;
+            }
+            current = SNodeOperations.getParent(current);
+          }
+          mustBeStatic.value = false;
         }
       });
 

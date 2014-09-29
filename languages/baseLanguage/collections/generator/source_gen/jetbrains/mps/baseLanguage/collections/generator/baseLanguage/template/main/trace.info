@@ -132,18 +132,18 @@
       <node id="1207154422439" at="87,174,88,19" concept="9" />
       <node id="1207154443842" at="90,177,91,19" concept="9" />
       <node id="1207154452572" at="92,5,93,16" concept="9" />
-      <node id="1208699550911" at="95,104,96,380" concept="9" />
+      <node id="1208699550911" at="95,104,96,381" concept="9" />
       <node id="399060687648557114" at="765,107,766,76" concept="9" />
       <node id="399060687648559260" at="1649,102,1650,30" concept="9" />
       <node id="2818205804948863263" at="1652,103,1653,67" concept="9" />
       <node id="6376155941834213055" at="3475,7,3476,57" concept="8" />
       <node id="6376155941834213055" at="3477,140,3478,23" concept="9" />
-      <node id="6376155941834213055" at="3480,9,3481,81" concept="8" />
+      <node id="6376155941834213055" at="3480,9,3481,82" concept="8" />
       <node id="6376155941834213055" at="3482,125,3483,25" concept="9" />
       <node id="6376155941834213055" at="3486,7,3487,18" concept="9" />
       <node id="6376155941834213055" at="3489,40,3490,19" concept="9" />
       <node id="6376155941834213055" at="3494,51,3495,18" concept="9" />
-      <node id="6376155941834213055" at="3472,0,3474,0" concept="2" trace="Pattern_x583g4_a1a0a0a0i#()V" />
+      <node id="6376155941834213055" at="3472,0,3474,0" concept="2" trace="Pattern_x583g4_a1a0a0a0a8#()V" />
       <node id="6376155941834213055" at="3492,0,3494,0" concept="7" trace="fillFieldValuesFrom#(Ljetbrains/mps/lang/pattern/GeneratedMatchingPattern;)V" />
       <node id="6376155941834213055" at="3497,0,3499,0" concept="7" trace="performActions#(Ljava/lang/Object;)V" />
       <node id="1207154366782" at="80,104,83,5" concept="6" />
@@ -151,7 +151,7 @@
       <node id="1207154410638" at="86,5,89,5" concept="6" />
       <node id="1207154425114" at="89,5,92,5" concept="6" />
       <node id="6376155941834213055" at="3476,57,3479,9" concept="6" />
-      <node id="6376155941834213055" at="3481,81,3484,11" concept="6" />
+      <node id="6376155941834213055" at="3481,82,3484,11" concept="6" />
       <node id="6376155941834213055" at="3489,0,3492,0" concept="7" trace="hasAntiquotations#()Z" />
       <node id="6376155941834213055" at="3494,0,3497,0" concept="7" trace="getFieldValue#(Ljava/lang/String;)Ljava/lang/Object;" />
       <node id="6376155941834213055" at="3479,9,3485,9" concept="0" />
@@ -160,14 +160,14 @@
       <node id="6376155941834213055" at="3476,57,3485,9" concept="0" />
       <node id="6376155941834213055" at="3474,45,3486,7" concept="0" />
       <node id="6376155941834213055" at="3474,0,3489,0" concept="7" trace="match#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-      <scope id="6376155941834213055" at="3472,39,3472,39" />
+      <scope id="6376155941834213055" at="3472,40,3472,40" />
       <scope id="6376155941834213055" at="3492,71,3492,71" />
       <scope id="6376155941834213055" at="3497,42,3497,42" />
       <scope id="1207154366783" at="81,178,82,19" />
       <scope id="1207154380690" at="84,175,85,19" />
       <scope id="1207154410639" at="87,174,88,19" />
       <scope id="1207154425115" at="90,177,91,19" />
-      <scope id="1208699492549" at="95,104,96,380" />
+      <scope id="1208699492549" at="95,104,96,381" />
       <scope id="399060687648555286" at="765,107,766,76" />
       <scope id="399060687648558935" at="1649,102,1650,30" />
       <scope id="2818205804948863152" at="1652,103,1653,67" />
@@ -199,7 +199,7 @@
       <scope id="6376155941834213055" at="3474,0,3489,0">
         <var name="nodeToMatch" id="6376155941834213055" />
       </scope>
-      <unit id="6376155941834213055" at="3471,0,3500,0" name="jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main.QueriesGenerated$Pattern_x583g4_a1a0a0a0i" />
+      <unit id="6376155941834213055" at="3471,0,3500,0" name="jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main.QueriesGenerated$Pattern_x583g4_a1a0a0a0a8" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c8959032f(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main@generator)/1204989320848">
@@ -514,19 +514,19 @@
       <node id="1208440989713" at="1038,5,1039,30" concept="9" />
       <node id="1208699582499" at="3504,7,3505,57" concept="8" />
       <node id="1208699582499" at="3506,140,3507,23" concept="9" />
-      <node id="1208699582499" at="3509,9,3510,80" concept="8" />
+      <node id="1208699582499" at="3509,9,3510,82" concept="8" />
       <node id="1208699582499" at="3511,125,3512,25" concept="9" />
       <node id="1208699582499" at="3515,7,3516,18" concept="9" />
       <node id="1208699582499" at="3518,40,3519,19" concept="9" />
       <node id="1208699582499" at="3523,51,3524,18" concept="9" />
-      <node id="1208699582499" at="3501,0,3503,0" concept="2" trace="Pattern_x583g4_a1a0a0a52#()V" />
+      <node id="1208699582499" at="3501,0,3503,0" concept="2" trace="Pattern_x583g4_a1a0a0a0z#()V" />
       <node id="1208699582499" at="3521,0,3523,0" concept="7" trace="fillFieldValuesFrom#(Ljetbrains/mps/lang/pattern/GeneratedMatchingPattern;)V" />
       <node id="1208699582499" at="3526,0,3528,0" concept="7" trace="performActions#(Ljava/lang/Object;)V" />
       <node id="1208440989726" at="167,104,170,5" concept="6" />
       <node id="1208440989737" at="170,5,173,5" concept="6" />
       <node id="1208888265999" at="1035,102,1038,5" concept="6" />
       <node id="1208699582499" at="3505,57,3508,9" concept="6" />
-      <node id="1208699582499" at="3510,80,3513,11" concept="6" />
+      <node id="1208699582499" at="3510,82,3513,11" concept="6" />
       <node id="1208699582499" at="3518,0,3521,0" concept="7" trace="hasAntiquotations#()Z" />
       <node id="1208699582499" at="3523,0,3526,0" concept="7" trace="getFieldValue#(Ljava/lang/String;)Ljava/lang/Object;" />
       <node id="1208699582499" at="3508,9,3514,9" concept="0" />
@@ -573,27 +573,27 @@
       <scope id="1208699582499" at="3503,0,3518,0">
         <var name="nodeToMatch" id="1208699582499" />
       </scope>
-      <unit id="1208699582499" at="3500,0,3529,0" name="jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main.QueriesGenerated$Pattern_x583g4_a1a0a0a52" />
+      <unit id="1208699582499" at="3500,0,3529,0" name="jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main.QueriesGenerated$Pattern_x583g4_a1a0a0a0z" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c8959032f(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main@generator)/1208694348757">
     <file name="QueriesGenerated.java">
-      <node id="1208699591718" at="185,104,186,174" concept="9" />
+      <node id="1208699591718" at="185,104,186,175" concept="9" />
       <node id="1240243069759" at="188,104,189,235" concept="9" />
       <node id="1208694348850" at="191,104,192,229" concept="9" />
       <node id="1240243091490" at="194,104,195,234" concept="9" />
       <node id="1208699591722" at="3533,7,3534,57" concept="8" />
       <node id="1208699591722" at="3535,140,3536,23" concept="9" />
-      <node id="1208699591722" at="3538,9,3539,81" concept="8" />
+      <node id="1208699591722" at="3538,9,3539,82" concept="8" />
       <node id="1208699591722" at="3540,125,3541,25" concept="9" />
       <node id="1208699591722" at="3544,7,3545,18" concept="9" />
       <node id="1208699591722" at="3547,40,3548,19" concept="9" />
       <node id="1208699591722" at="3552,51,3553,18" concept="9" />
-      <node id="1208699591722" at="3530,0,3532,0" concept="2" trace="Pattern_x583g4_a1a0a0a82#()V" />
+      <node id="1208699591722" at="3530,0,3532,0" concept="2" trace="Pattern_x583g4_a1a0a0a0cb#()V" />
       <node id="1208699591722" at="3550,0,3552,0" concept="7" trace="fillFieldValuesFrom#(Ljetbrains/mps/lang/pattern/GeneratedMatchingPattern;)V" />
       <node id="1208699591722" at="3555,0,3557,0" concept="7" trace="performActions#(Ljava/lang/Object;)V" />
       <node id="1208699591722" at="3534,57,3537,9" concept="6" />
-      <node id="1208699591722" at="3539,81,3542,11" concept="6" />
+      <node id="1208699591722" at="3539,82,3542,11" concept="6" />
       <node id="1208699591722" at="3547,0,3550,0" concept="7" trace="hasAntiquotations#()Z" />
       <node id="1208699591722" at="3552,0,3555,0" concept="7" trace="getFieldValue#(Ljava/lang/String;)Ljava/lang/Object;" />
       <node id="1208699591722" at="3537,9,3543,9" concept="0" />
@@ -602,10 +602,10 @@
       <node id="1208699591722" at="3534,57,3543,9" concept="0" />
       <node id="1208699591722" at="3532,45,3544,7" concept="0" />
       <node id="1208699591722" at="3532,0,3547,0" concept="7" trace="match#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-      <scope id="1208699591722" at="3530,39,3530,39" />
+      <scope id="1208699591722" at="3530,40,3530,40" />
       <scope id="1208699591722" at="3550,71,3550,71" />
       <scope id="1208699591722" at="3555,42,3555,42" />
-      <scope id="1208699591176" at="185,104,186,174" />
+      <scope id="1208699591176" at="185,104,186,175" />
       <scope id="1240243069758" at="188,104,189,235" />
       <scope id="1208694348849" at="191,104,192,229" />
       <scope id="1240243091489" at="194,104,195,234" />
@@ -636,30 +636,30 @@
       <scope id="1208699591722" at="3532,0,3547,0">
         <var name="nodeToMatch" id="1208699591722" />
       </scope>
-      <unit id="1208699591722" at="3529,0,3558,0" name="jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main.QueriesGenerated$Pattern_x583g4_a1a0a0a82" />
+      <unit id="1208699591722" at="3529,0,3558,0" name="jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main.QueriesGenerated$Pattern_x583g4_a1a0a0a0cb" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c8959032f(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main@generator)/1226933058942">
     <file name="QueriesGenerated.java">
       <node id="1226933058987" at="198,181,199,19" concept="9" />
       <node id="1226933059006" at="200,5,201,229" concept="9" />
-      <node id="1226933059024" at="203,104,204,174" concept="9" />
+      <node id="1226933059024" at="203,104,204,175" concept="9" />
       <node id="1240256627343" at="206,104,207,235" concept="9" />
       <node id="1226933059045" at="209,104,210,229" concept="9" />
       <node id="1226933059064" at="212,104,213,234" concept="9" />
       <node id="1226933059028" at="3562,7,3563,57" concept="8" />
       <node id="1226933059028" at="3564,140,3565,23" concept="9" />
-      <node id="1226933059028" at="3567,9,3568,81" concept="8" />
+      <node id="1226933059028" at="3567,9,3568,82" concept="8" />
       <node id="1226933059028" at="3569,125,3570,25" concept="9" />
       <node id="1226933059028" at="3573,7,3574,18" concept="9" />
       <node id="1226933059028" at="3576,40,3577,19" concept="9" />
       <node id="1226933059028" at="3581,51,3582,18" concept="9" />
-      <node id="1226933059028" at="3559,0,3561,0" concept="2" trace="Pattern_x583g4_a1a0a0a33#()V" />
+      <node id="1226933059028" at="3559,0,3561,0" concept="2" trace="Pattern_x583g4_a1a0a0a0hb#()V" />
       <node id="1226933059028" at="3579,0,3581,0" concept="7" trace="fillFieldValuesFrom#(Ljetbrains/mps/lang/pattern/GeneratedMatchingPattern;)V" />
       <node id="1226933059028" at="3584,0,3586,0" concept="7" trace="performActions#(Ljava/lang/Object;)V" />
       <node id="1226933058985" at="197,104,200,5" concept="6" />
       <node id="1226933059028" at="3563,57,3566,9" concept="6" />
-      <node id="1226933059028" at="3568,81,3571,11" concept="6" />
+      <node id="1226933059028" at="3568,82,3571,11" concept="6" />
       <node id="1226933059028" at="3576,0,3579,0" concept="7" trace="hasAntiquotations#()Z" />
       <node id="1226933059028" at="3581,0,3584,0" concept="7" trace="getFieldValue#(Ljava/lang/String;)Ljava/lang/Object;" />
       <node id="1226933059028" at="3566,9,3572,9" concept="0" />
@@ -668,11 +668,11 @@
       <node id="1226933059028" at="3563,57,3572,9" concept="0" />
       <node id="1226933059028" at="3561,45,3573,7" concept="0" />
       <node id="1226933059028" at="3561,0,3576,0" concept="7" trace="match#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-      <scope id="1226933059028" at="3559,39,3559,39" />
+      <scope id="1226933059028" at="3559,40,3559,40" />
       <scope id="1226933059028" at="3579,71,3579,71" />
       <scope id="1226933059028" at="3584,42,3584,42" />
       <scope id="1226933058986" at="198,181,199,19" />
-      <scope id="1226933059023" at="203,104,204,174" />
+      <scope id="1226933059023" at="203,104,204,175" />
       <scope id="1240256627342" at="206,104,207,235" />
       <scope id="1226933059044" at="209,104,210,229" />
       <scope id="1226933059063" at="212,104,213,234" />
@@ -704,7 +704,7 @@
       <scope id="1226933059028" at="3561,0,3576,0">
         <var name="nodeToMatch" id="1226933059028" />
       </scope>
-      <unit id="1226933059028" at="3558,0,3587,0" name="jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main.QueriesGenerated$Pattern_x583g4_a1a0a0a33" />
+      <unit id="1226933059028" at="3558,0,3587,0" name="jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main.QueriesGenerated$Pattern_x583g4_a1a0a0a0hb" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c8959032f(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main@generator)/1227368544468">
@@ -769,20 +769,20 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c8959032f(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main@generator)/1237491314739">
     <file name="QueriesGenerated.java">
-      <node id="1237491352918" at="247,104,248,187" concept="9" />
+      <node id="1237491352918" at="247,104,248,188" concept="9" />
       <node id="1237491387621" at="250,104,251,247" concept="9" />
       <node id="1237491352922" at="3591,7,3592,57" concept="8" />
       <node id="1237491352922" at="3593,140,3594,23" concept="9" />
-      <node id="1237491352922" at="3596,9,3597,81" concept="8" />
+      <node id="1237491352922" at="3596,9,3597,82" concept="8" />
       <node id="1237491352922" at="3598,125,3599,25" concept="9" />
       <node id="1237491352922" at="3602,7,3603,18" concept="9" />
       <node id="1237491352922" at="3605,40,3606,19" concept="9" />
       <node id="1237491352922" at="3610,51,3611,18" concept="9" />
-      <node id="1237491352922" at="3588,0,3590,0" concept="2" trace="Pattern_x583g4_a1a0a0a54#()V" />
+      <node id="1237491352922" at="3588,0,3590,0" concept="2" trace="Pattern_x583g4_a1a0a0a0tb#()V" />
       <node id="1237491352922" at="3608,0,3610,0" concept="7" trace="fillFieldValuesFrom#(Ljetbrains/mps/lang/pattern/GeneratedMatchingPattern;)V" />
       <node id="1237491352922" at="3613,0,3615,0" concept="7" trace="performActions#(Ljava/lang/Object;)V" />
       <node id="1237491352922" at="3592,57,3595,9" concept="6" />
-      <node id="1237491352922" at="3597,81,3600,11" concept="6" />
+      <node id="1237491352922" at="3597,82,3600,11" concept="6" />
       <node id="1237491352922" at="3605,0,3608,0" concept="7" trace="hasAntiquotations#()Z" />
       <node id="1237491352922" at="3610,0,3613,0" concept="7" trace="getFieldValue#(Ljava/lang/String;)Ljava/lang/Object;" />
       <node id="1237491352922" at="3595,9,3601,9" concept="0" />
@@ -791,10 +791,10 @@
       <node id="1237491352922" at="3592,57,3601,9" concept="0" />
       <node id="1237491352922" at="3590,45,3602,7" concept="0" />
       <node id="1237491352922" at="3590,0,3605,0" concept="7" trace="match#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-      <scope id="1237491352922" at="3588,39,3588,39" />
+      <scope id="1237491352922" at="3588,40,3588,40" />
       <scope id="1237491352922" at="3608,71,3608,71" />
       <scope id="1237491352922" at="3613,42,3613,42" />
-      <scope id="1237491339953" at="247,104,248,187" />
+      <scope id="1237491339953" at="247,104,248,188" />
       <scope id="1237491379929" at="250,104,251,247" />
       <scope id="1237491352922" at="3593,140,3594,23" />
       <scope id="1237491352922" at="3598,125,3599,25" />
@@ -823,26 +823,26 @@
       <scope id="1237491352922" at="3590,0,3605,0">
         <var name="nodeToMatch" id="1237491352922" />
       </scope>
-      <unit id="1237491352922" at="3587,0,3616,0" name="jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main.QueriesGenerated$Pattern_x583g4_a1a0a0a54" />
+      <unit id="1237491352922" at="3587,0,3616,0" name="jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main.QueriesGenerated$Pattern_x583g4_a1a0a0a0tb" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c8959032f(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main@generator)/1240243169539">
     <file name="QueriesGenerated.java">
-      <node id="1240243169550" at="253,104,254,174" concept="9" />
+      <node id="1240243169550" at="253,104,254,175" concept="9" />
       <node id="1240243169571" at="256,104,257,235" concept="9" />
       <node id="1240243169609" at="259,104,260,234" concept="9" />
       <node id="1240243169554" at="3620,7,3621,57" concept="8" />
       <node id="1240243169554" at="3622,140,3623,23" concept="9" />
-      <node id="1240243169554" at="3625,9,3626,81" concept="8" />
+      <node id="1240243169554" at="3625,9,3626,82" concept="8" />
       <node id="1240243169554" at="3627,125,3628,25" concept="9" />
       <node id="1240243169554" at="3631,7,3632,18" concept="9" />
       <node id="1240243169554" at="3634,40,3635,19" concept="9" />
       <node id="1240243169554" at="3639,51,3640,18" concept="9" />
-      <node id="1240243169554" at="3617,0,3619,0" concept="2" trace="Pattern_x583g4_a1a0a0a74#()V" />
+      <node id="1240243169554" at="3617,0,3619,0" concept="2" trace="Pattern_x583g4_a1a0a0a0vb#()V" />
       <node id="1240243169554" at="3637,0,3639,0" concept="7" trace="fillFieldValuesFrom#(Ljetbrains/mps/lang/pattern/GeneratedMatchingPattern;)V" />
       <node id="1240243169554" at="3642,0,3644,0" concept="7" trace="performActions#(Ljava/lang/Object;)V" />
       <node id="1240243169554" at="3621,57,3624,9" concept="6" />
-      <node id="1240243169554" at="3626,81,3629,11" concept="6" />
+      <node id="1240243169554" at="3626,82,3629,11" concept="6" />
       <node id="1240243169554" at="3634,0,3637,0" concept="7" trace="hasAntiquotations#()Z" />
       <node id="1240243169554" at="3639,0,3642,0" concept="7" trace="getFieldValue#(Ljava/lang/String;)Ljava/lang/Object;" />
       <node id="1240243169554" at="3624,9,3630,9" concept="0" />
@@ -851,10 +851,10 @@
       <node id="1240243169554" at="3621,57,3630,9" concept="0" />
       <node id="1240243169554" at="3619,45,3631,7" concept="0" />
       <node id="1240243169554" at="3619,0,3634,0" concept="7" trace="match#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-      <scope id="1240243169554" at="3617,39,3617,39" />
+      <scope id="1240243169554" at="3617,40,3617,40" />
       <scope id="1240243169554" at="3637,71,3637,71" />
       <scope id="1240243169554" at="3642,42,3642,42" />
-      <scope id="1240243169549" at="253,104,254,174" />
+      <scope id="1240243169549" at="253,104,254,175" />
       <scope id="1240243169570" at="256,104,257,235" />
       <scope id="1240243169608" at="259,104,260,234" />
       <scope id="1240243169554" at="3622,140,3623,23" />
@@ -884,29 +884,29 @@
       <scope id="1240243169554" at="3619,0,3634,0">
         <var name="nodeToMatch" id="1240243169554" />
       </scope>
-      <unit id="1240243169554" at="3616,0,3645,0" name="jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main.QueriesGenerated$Pattern_x583g4_a1a0a0a74" />
+      <unit id="1240243169554" at="3616,0,3645,0" name="jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main.QueriesGenerated$Pattern_x583g4_a1a0a0a0vb" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c8959032f(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main@generator)/1240253424845">
     <file name="QueriesGenerated.java">
       <node id="1240253424858" at="263,179,264,19" concept="9" />
       <node id="1240253424867" at="265,5,266,235" concept="9" />
-      <node id="1240253424885" at="268,104,269,174" concept="9" />
+      <node id="1240253424885" at="268,104,269,175" concept="9" />
       <node id="1240253424906" at="271,104,272,235" concept="9" />
       <node id="1240253424925" at="274,104,275,234" concept="9" />
       <node id="1240253424889" at="3649,7,3650,57" concept="8" />
       <node id="1240253424889" at="3651,140,3652,23" concept="9" />
-      <node id="1240253424889" at="3654,9,3655,81" concept="8" />
+      <node id="1240253424889" at="3654,9,3655,82" concept="8" />
       <node id="1240253424889" at="3656,125,3657,25" concept="9" />
       <node id="1240253424889" at="3660,7,3661,18" concept="9" />
       <node id="1240253424889" at="3663,40,3664,19" concept="9" />
       <node id="1240253424889" at="3668,51,3669,18" concept="9" />
-      <node id="1240253424889" at="3646,0,3648,0" concept="2" trace="Pattern_x583g4_a1a0a0a15#()V" />
+      <node id="1240253424889" at="3646,0,3648,0" concept="2" trace="Pattern_x583g4_a1a0a0a0zb#()V" />
       <node id="1240253424889" at="3666,0,3668,0" concept="7" trace="fillFieldValuesFrom#(Ljetbrains/mps/lang/pattern/GeneratedMatchingPattern;)V" />
       <node id="1240253424889" at="3671,0,3673,0" concept="7" trace="performActions#(Ljava/lang/Object;)V" />
       <node id="1240253424856" at="262,104,265,5" concept="6" />
       <node id="1240253424889" at="3650,57,3653,9" concept="6" />
-      <node id="1240253424889" at="3655,81,3658,11" concept="6" />
+      <node id="1240253424889" at="3655,82,3658,11" concept="6" />
       <node id="1240253424889" at="3663,0,3666,0" concept="7" trace="hasAntiquotations#()Z" />
       <node id="1240253424889" at="3668,0,3671,0" concept="7" trace="getFieldValue#(Ljava/lang/String;)Ljava/lang/Object;" />
       <node id="1240253424889" at="3653,9,3659,9" concept="0" />
@@ -915,11 +915,11 @@
       <node id="1240253424889" at="3650,57,3659,9" concept="0" />
       <node id="1240253424889" at="3648,45,3660,7" concept="0" />
       <node id="1240253424889" at="3648,0,3663,0" concept="7" trace="match#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-      <scope id="1240253424889" at="3646,39,3646,39" />
+      <scope id="1240253424889" at="3646,40,3646,40" />
       <scope id="1240253424889" at="3666,71,3666,71" />
       <scope id="1240253424889" at="3671,42,3671,42" />
       <scope id="1240253424857" at="263,179,264,19" />
-      <scope id="1240253424884" at="268,104,269,174" />
+      <scope id="1240253424884" at="268,104,269,175" />
       <scope id="1240253424905" at="271,104,272,235" />
       <scope id="1240253424924" at="274,104,275,234" />
       <scope id="1240253424889" at="3651,140,3652,23" />
@@ -950,7 +950,7 @@
       <scope id="1240253424889" at="3648,0,3663,0">
         <var name="nodeToMatch" id="1240253424889" />
       </scope>
-      <unit id="1240253424889" at="3645,0,3674,0" name="jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main.QueriesGenerated$Pattern_x583g4_a1a0a0a15" />
+      <unit id="1240253424889" at="3645,0,3674,0" name="jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main.QueriesGenerated$Pattern_x583g4_a1a0a0a0zb" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c8959032f(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main@generator)/169948565229768333">
@@ -963,18 +963,18 @@
       <node id="169948565229768438" at="535,109,536,234" concept="9" />
       <node id="169948565229768402" at="3765,7,3766,58" concept="8" />
       <node id="169948565229768402" at="3767,141,3768,23" concept="9" />
-      <node id="169948565229768402" at="3770,9,3771,81" concept="8" />
+      <node id="169948565229768402" at="3770,9,3771,83" concept="8" />
       <node id="169948565229768402" at="3772,126,3773,25" concept="9" />
       <node id="169948565229768402" at="3776,7,3777,18" concept="9" />
       <node id="169948565229768402" at="3779,40,3780,19" concept="9" />
       <node id="169948565229768402" at="3784,51,3785,18" concept="9" />
-      <node id="169948565229768402" at="3762,0,3764,0" concept="2" trace="Pattern_x583g4_a1a0a0a331#()V" />
+      <node id="169948565229768402" at="3762,0,3764,0" concept="2" trace="Pattern_x583g4_a1a0a0a0df#()V" />
       <node id="169948565229768402" at="3782,0,3784,0" concept="7" trace="fillFieldValuesFrom#(Ljetbrains/mps/lang/pattern/GeneratedMatchingPattern;)V" />
       <node id="169948565229768402" at="3787,0,3789,0" concept="7" trace="performActions#(Ljava/lang/Object;)V" />
       <node id="169948565229768359" at="520,109,523,5" concept="6" />
       <node id="169948565229768370" at="523,5,526,5" concept="6" />
       <node id="169948565229768402" at="3766,58,3769,9" concept="6" />
-      <node id="169948565229768402" at="3771,81,3774,11" concept="6" />
+      <node id="169948565229768402" at="3771,83,3774,11" concept="6" />
       <node id="169948565229768402" at="3779,0,3782,0" concept="7" trace="hasAntiquotations#()Z" />
       <node id="169948565229768402" at="3784,0,3787,0" concept="7" trace="getFieldValue#(Ljava/lang/String;)Ljava/lang/Object;" />
       <node id="169948565229768402" at="3769,9,3775,9" concept="0" />
@@ -1019,28 +1019,28 @@
       <scope id="169948565229768402" at="3764,0,3779,0">
         <var name="nodeToMatch" id="169948565229768402" />
       </scope>
-      <unit id="169948565229768402" at="3761,0,3790,0" name="jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main.QueriesGenerated$Pattern_x583g4_a1a0a0a331" />
+      <unit id="169948565229768402" at="3761,0,3790,0" name="jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main.QueriesGenerated$Pattern_x583g4_a1a0a0a0df" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c8959032f(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main@generator)/1848858642723003330">
     <file name="QueriesGenerated.java">
       <node id="1848858642723003358" at="293,180,294,19" concept="9" />
       <node id="3444116434174553588" at="295,5,296,899" concept="9" />
-      <node id="1848858642723003395" at="298,110,299,174" concept="9" />
+      <node id="1848858642723003395" at="298,110,299,175" concept="9" />
       <node id="6034304739317612535" at="301,110,302,234" concept="9" />
       <node id="1848858642723003399" at="3707,7,3708,57" concept="8" />
       <node id="1848858642723003399" at="3709,140,3710,23" concept="9" />
-      <node id="1848858642723003399" at="3712,9,3713,81" concept="8" />
+      <node id="1848858642723003399" at="3712,9,3713,82" concept="8" />
       <node id="1848858642723003399" at="3714,125,3715,25" concept="9" />
       <node id="1848858642723003399" at="3718,7,3719,18" concept="9" />
       <node id="1848858642723003399" at="3721,40,3722,19" concept="9" />
       <node id="1848858642723003399" at="3726,51,3727,18" concept="9" />
-      <node id="1848858642723003399" at="3704,0,3706,0" concept="2" trace="Pattern_x583g4_a1a0a0a95#()V" />
+      <node id="1848858642723003399" at="3704,0,3706,0" concept="2" trace="Pattern_x583g4_a1a0a0a0hc#()V" />
       <node id="1848858642723003399" at="3724,0,3726,0" concept="7" trace="fillFieldValuesFrom#(Ljetbrains/mps/lang/pattern/GeneratedMatchingPattern;)V" />
       <node id="1848858642723003399" at="3729,0,3731,0" concept="7" trace="performActions#(Ljava/lang/Object;)V" />
       <node id="1848858642723003356" at="292,110,295,5" concept="6" />
       <node id="1848858642723003399" at="3708,57,3711,9" concept="6" />
-      <node id="1848858642723003399" at="3713,81,3716,11" concept="6" />
+      <node id="1848858642723003399" at="3713,82,3716,11" concept="6" />
       <node id="1848858642723003399" at="3721,0,3724,0" concept="7" trace="hasAntiquotations#()Z" />
       <node id="1848858642723003399" at="3726,0,3729,0" concept="7" trace="getFieldValue#(Ljava/lang/String;)Ljava/lang/Object;" />
       <node id="1848858642723003399" at="3711,9,3717,9" concept="0" />
@@ -1049,11 +1049,11 @@
       <node id="1848858642723003399" at="3708,57,3717,9" concept="0" />
       <node id="1848858642723003399" at="3706,45,3718,7" concept="0" />
       <node id="1848858642723003399" at="3706,0,3721,0" concept="7" trace="match#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-      <scope id="1848858642723003399" at="3704,39,3704,39" />
+      <scope id="1848858642723003399" at="3704,40,3704,40" />
       <scope id="1848858642723003399" at="3724,71,3724,71" />
       <scope id="1848858642723003399" at="3729,42,3729,42" />
       <scope id="1848858642723003357" at="293,180,294,19" />
-      <scope id="1848858642723003394" at="298,110,299,174" />
+      <scope id="1848858642723003394" at="298,110,299,175" />
       <scope id="6034304739317612534" at="301,110,302,234" />
       <scope id="1848858642723003399" at="3709,140,3710,23" />
       <scope id="1848858642723003399" at="3714,125,3715,25" />
@@ -1083,7 +1083,7 @@
       <scope id="1848858642723003399" at="3706,0,3721,0">
         <var name="nodeToMatch" id="1848858642723003399" />
       </scope>
-      <unit id="1848858642723003399" at="3703,0,3732,0" name="jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main.QueriesGenerated$Pattern_x583g4_a1a0a0a95" />
+      <unit id="1848858642723003399" at="3703,0,3732,0" name="jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main.QueriesGenerated$Pattern_x583g4_a1a0a0a0hc" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c8959032f(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main@generator)/1848858642723005414">
@@ -1200,22 +1200,22 @@
     <file name="QueriesGenerated.java">
       <node id="3358009230509159508" at="338,342,339,19" concept="9" />
       <node id="3444116434174553629" at="340,5,341,454" concept="9" />
-      <node id="3358009230509159535" at="343,110,344,174" concept="9" />
+      <node id="3358009230509159535" at="343,110,344,175" concept="9" />
       <node id="3444116434174553648" at="346,110,347,454" concept="9" />
       <node id="3358009230509159575" at="349,110,350,234" concept="9" />
       <node id="3358009230509159539" at="3736,7,3737,57" concept="8" />
       <node id="3358009230509159539" at="3738,140,3739,23" concept="9" />
-      <node id="3358009230509159539" at="3741,9,3742,81" concept="8" />
+      <node id="3358009230509159539" at="3741,9,3742,82" concept="8" />
       <node id="3358009230509159539" at="3743,125,3744,25" concept="9" />
       <node id="3358009230509159539" at="3747,7,3748,18" concept="9" />
       <node id="3358009230509159539" at="3750,40,3751,19" concept="9" />
       <node id="3358009230509159539" at="3755,51,3756,18" concept="9" />
-      <node id="3358009230509159539" at="3733,0,3735,0" concept="2" trace="Pattern_x583g4_a1a0a0a37#()V" />
+      <node id="3358009230509159539" at="3733,0,3735,0" concept="2" trace="Pattern_x583g4_a1a0a0a0vc#()V" />
       <node id="3358009230509159539" at="3753,0,3755,0" concept="7" trace="fillFieldValuesFrom#(Ljetbrains/mps/lang/pattern/GeneratedMatchingPattern;)V" />
       <node id="3358009230509159539" at="3758,0,3760,0" concept="7" trace="performActions#(Ljava/lang/Object;)V" />
       <node id="3358009230509159506" at="337,110,340,5" concept="6" />
       <node id="3358009230509159539" at="3737,57,3740,9" concept="6" />
-      <node id="3358009230509159539" at="3742,81,3745,11" concept="6" />
+      <node id="3358009230509159539" at="3742,82,3745,11" concept="6" />
       <node id="3358009230509159539" at="3750,0,3753,0" concept="7" trace="hasAntiquotations#()Z" />
       <node id="3358009230509159539" at="3755,0,3758,0" concept="7" trace="getFieldValue#(Ljava/lang/String;)Ljava/lang/Object;" />
       <node id="3358009230509159539" at="3740,9,3746,9" concept="0" />
@@ -1224,11 +1224,11 @@
       <node id="3358009230509159539" at="3737,57,3746,9" concept="0" />
       <node id="3358009230509159539" at="3735,45,3747,7" concept="0" />
       <node id="3358009230509159539" at="3735,0,3750,0" concept="7" trace="match#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-      <scope id="3358009230509159539" at="3733,39,3733,39" />
+      <scope id="3358009230509159539" at="3733,40,3733,40" />
       <scope id="3358009230509159539" at="3753,71,3753,71" />
       <scope id="3358009230509159539" at="3758,42,3758,42" />
       <scope id="3358009230509159507" at="338,342,339,19" />
-      <scope id="3358009230509159534" at="343,110,344,174" />
+      <scope id="3358009230509159534" at="343,110,344,175" />
       <scope id="3358009230509159555" at="346,110,347,454" />
       <scope id="3358009230509159574" at="349,110,350,234" />
       <scope id="3358009230509159539" at="3738,140,3739,23" />
@@ -1259,7 +1259,7 @@
       <scope id="3358009230509159539" at="3735,0,3750,0">
         <var name="nodeToMatch" id="3358009230509159539" />
       </scope>
-      <unit id="3358009230509159539" at="3732,0,3761,0" name="jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main.QueriesGenerated$Pattern_x583g4_a1a0a0a37" />
+      <unit id="3358009230509159539" at="3732,0,3761,0" name="jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main.QueriesGenerated$Pattern_x583g4_a1a0a0a0vc" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c8959032f(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main@generator)/3358009230509159937">
@@ -1800,22 +1800,22 @@
     <file name="QueriesGenerated.java">
       <node id="5478544378670483558" at="278,176,279,19" concept="9" />
       <node id="5478544378670483577" at="280,5,281,231" concept="9" />
-      <node id="5478544378670483595" at="283,110,284,174" concept="9" />
+      <node id="5478544378670483595" at="283,110,284,175" concept="9" />
       <node id="5478544378670483616" at="286,110,287,231" concept="9" />
       <node id="5478544378670483635" at="289,110,290,234" concept="9" />
       <node id="5478544378670483599" at="3678,7,3679,57" concept="8" />
       <node id="5478544378670483599" at="3680,140,3681,23" concept="9" />
-      <node id="5478544378670483599" at="3683,9,3684,81" concept="8" />
+      <node id="5478544378670483599" at="3683,9,3684,82" concept="8" />
       <node id="5478544378670483599" at="3685,125,3686,25" concept="9" />
       <node id="5478544378670483599" at="3689,7,3690,18" concept="9" />
       <node id="5478544378670483599" at="3692,40,3693,19" concept="9" />
       <node id="5478544378670483599" at="3697,51,3698,18" concept="9" />
-      <node id="5478544378670483599" at="3675,0,3677,0" concept="2" trace="Pattern_x583g4_a1a0a0a55#()V" />
+      <node id="5478544378670483599" at="3675,0,3677,0" concept="2" trace="Pattern_x583g4_a1a0a0a0dc#()V" />
       <node id="5478544378670483599" at="3695,0,3697,0" concept="7" trace="fillFieldValuesFrom#(Ljetbrains/mps/lang/pattern/GeneratedMatchingPattern;)V" />
       <node id="5478544378670483599" at="3700,0,3702,0" concept="7" trace="performActions#(Ljava/lang/Object;)V" />
       <node id="5478544378670483556" at="277,110,280,5" concept="6" />
       <node id="5478544378670483599" at="3679,57,3682,9" concept="6" />
-      <node id="5478544378670483599" at="3684,81,3687,11" concept="6" />
+      <node id="5478544378670483599" at="3684,82,3687,11" concept="6" />
       <node id="5478544378670483599" at="3692,0,3695,0" concept="7" trace="hasAntiquotations#()Z" />
       <node id="5478544378670483599" at="3697,0,3700,0" concept="7" trace="getFieldValue#(Ljava/lang/String;)Ljava/lang/Object;" />
       <node id="5478544378670483599" at="3682,9,3688,9" concept="0" />
@@ -1824,11 +1824,11 @@
       <node id="5478544378670483599" at="3679,57,3688,9" concept="0" />
       <node id="5478544378670483599" at="3677,45,3689,7" concept="0" />
       <node id="5478544378670483599" at="3677,0,3692,0" concept="7" trace="match#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-      <scope id="5478544378670483599" at="3675,39,3675,39" />
+      <scope id="5478544378670483599" at="3675,40,3675,40" />
       <scope id="5478544378670483599" at="3695,71,3695,71" />
       <scope id="5478544378670483599" at="3700,42,3700,42" />
       <scope id="5478544378670483557" at="278,176,279,19" />
-      <scope id="5478544378670483594" at="283,110,284,174" />
+      <scope id="5478544378670483594" at="283,110,284,175" />
       <scope id="5478544378670483615" at="286,110,287,231" />
       <scope id="5478544378670483634" at="289,110,290,234" />
       <scope id="5478544378670483599" at="3680,140,3681,23" />
@@ -1859,7 +1859,7 @@
       <scope id="5478544378670483599" at="3677,0,3692,0">
         <var name="nodeToMatch" id="5478544378670483599" />
       </scope>
-      <unit id="5478544378670483599" at="3674,0,3703,0" name="jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main.QueriesGenerated$Pattern_x583g4_a1a0a0a55" />
+      <unit id="5478544378670483599" at="3674,0,3703,0" name="jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main.QueriesGenerated$Pattern_x583g4_a1a0a0a0dc" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c8959032f(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main@generator)/6481445890966574679">

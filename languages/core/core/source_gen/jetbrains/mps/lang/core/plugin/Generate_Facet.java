@@ -223,14 +223,8 @@ public class Generate_Facet extends IFacet.Stub {
               vars(pa.global()).parametersProvider(new DefaultGenerationParametersProvider());
               vars(pa.global()).generationOptions().parameters(vars(pa.global()).parametersProvider());
 
-              Object tmc = null;
-              try {
-                Class<?> tmcCls = Class.forName("jetbrains.mps.ide.generator.TransientModelsComponent");
-                tmc = Generate_Facet.Target_checkParameters.vars(pa.global()).project().getComponent(tmcCls);
-              } catch (ClassNotFoundException ignore) {
-              }
-
-              vars(pa.global()).transientModelsProvider((tmc != null ? (TransientModelsProvider) tmc : new TransientModelsProvider(Generate_Facet.Target_checkParameters.vars(pa.global()).project(), null)));
+              TransientModelsProvider tmc = Generate_Facet.Target_checkParameters.vars(pa.global()).project().getComponent(TransientModelsProvider.class);
+              vars(pa.global()).transientModelsProvider((tmc != null ? tmc : new TransientModelsProvider(Generate_Facet.Target_checkParameters.vars(pa.global()).project(), null)));
 
               vars(pa.global()).transientModelsProvider().removeAllTransient();
               return new IResult.SUCCESS(_output_fi61u2_a0b);

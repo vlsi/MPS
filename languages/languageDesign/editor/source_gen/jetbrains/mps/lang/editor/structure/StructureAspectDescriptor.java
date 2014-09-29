@@ -112,7 +112,7 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 48:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.CellMenuPart_Abstract_editedNode").super_("jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter").parents("jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault").alias("node", "").staticScope(StaticScope.NONE).create();
       case 49:
-        return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.CellMenuPart_ApplySideTransforms").super_("jetbrains.mps.lang.editor.structure.CellMenuPart_Abstract").parents("jetbrains.mps.lang.editor.structure.CellMenuPart_Abstract").properties("side").alias("apply side transforms", "").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.CellMenuPart_ApplySideTransforms").super_("jetbrains.mps.lang.editor.structure.CellMenuPart_Abstract").parents("jetbrains.mps.lang.editor.structure.CellMenuPart_Abstract").properties("side", "tag").alias("apply side transforms", "").create();
       case 50:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.structure.CellMenuPart_CellMenuComponent").super_("jetbrains.mps.lang.editor.structure.CellMenuPart_Abstract").parents("jetbrains.mps.lang.editor.structure.CellMenuPart_Abstract").references("cellMenuComponent").alias("menu component", "").create();
       case 51:

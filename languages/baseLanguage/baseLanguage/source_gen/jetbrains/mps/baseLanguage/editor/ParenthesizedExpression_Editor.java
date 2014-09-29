@@ -32,7 +32,7 @@ public class ParenthesizedExpression_Editor extends DefaultNodeEditor {
   }
   private EditorCell createConstant_hf4h8_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");
-    editorCell.setCellId("Constant_hf4h8_a0");
+    editorCell.setCellId("openParen");
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.apply_LeftParen(style, editorCell);
     style.set(StyleAttributes.EDITABLE, false);

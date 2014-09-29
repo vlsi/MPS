@@ -4,7 +4,6 @@
   <language namespace="af65afd8-f0dd-4942-87d9-63a55f2a9db1(jetbrains.mps.lang.behavior)" />
   <language namespace="f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)" />
   <language namespace="7866978e-a0f0-4cc7-81bc-4d213d9375e1(jetbrains.mps.lang.smodel)" />
-  <language namespace="fa8aeae9-4df9-4e13-bfb1-9b04c67ddb77(jetbrains.mps.debugger.java.customViewers)" />
   <devkit namespace="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   <import index="kisg" modelUID="r:c8cdf89f-8d25-442c-ae58-6e44844b68d7(jetbrains.mps.debugger.java.customViewers.structure)" version="1" />
   <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="5" />
@@ -122,10 +121,23 @@
         </node>
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="4246614868163975411" nodeInfo="nn">
           <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="4246614868163975439" nodeInfo="nn">
-            <node role="operand" roleId="tpee.1197027771414" type="tp3r.Quotation" typeId="tp3r.1196350785113" id="4246614868163975412" nodeInfo="nn">
-              <node role="quotedNode" roleId="tp3r.1196350785114" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="4246614868163975415" nodeInfo="in">
-                <link role="classifier" roleId="tpee.1107535924139" targetNodeId="k7g3.~List" resolveInfo="List" />
-                <node role="parameter" roleId="tpee.1109201940907" type="kisg.WatchableType" typeId="kisg.5117350825036256333" id="4246614868163975418" nodeInfo="in" />
+            <node role="operand" roleId="tpee.1197027771414" type="tp3r.NodeBuilder" typeId="tp3r.5455284157993863837" id="9116681015574603593" nodeInfo="nn">
+              <node role="quotedNode" roleId="tp3r.5455284157993863838" type="tp3r.NodeBuilderNode" typeId="tp3r.5455284157993863840" id="9116681015574603587" nodeInfo="nn">
+                <link role="concept" roleId="tp3r.5455284157993910961" targetNodeId="tpee.1107535904670" resolveInfo="ClassifierType" />
+                <node role="values" roleId="tp3r.5455284157993911099" type="tp3r.NodeBuilderInitLink" typeId="tp3r.5455284157994012186" id="9116681015574603588" nodeInfo="ng">
+                  <link role="link" roleId="tp3r.5455284157994012188" targetNodeId="tpee.1107535924139" />
+                  <node role="expression" roleId="tp3r.5455284157993911094" type="tp3r.NodeBuilderRef" typeId="tp3r.8182547171709614739" id="9116681015574603589" nodeInfo="nn">
+                    <link role="target" roleId="tp3r.8182547171709614741" targetNodeId="k7g3.~List" resolveInfo="List" />
+                  </node>
+                </node>
+                <node role="values" roleId="tp3r.5455284157993911099" type="tp3r.NodeBuilderInitLink" typeId="tp3r.5455284157994012186" id="9116681015574603591" nodeInfo="ng">
+                  <link role="link" roleId="tp3r.5455284157994012188" targetNodeId="tpee.1109201940907" />
+                  <node role="expression" roleId="tp3r.5455284157993911094" type="tp3r.NodeBuilderList" typeId="tp3r.8182547171709738802" id="9116681015574603592" nodeInfo="nn">
+                    <node role="nodes" roleId="tp3r.8182547171709738803" type="tp3r.NodeBuilderNode" typeId="tp3r.5455284157993863840" id="9116681015574603590" nodeInfo="nn">
+                      <link role="concept" roleId="tp3r.5455284157993910961" targetNodeId="kisg.5117350825036256333" resolveInfo="WatchableType" />
+                    </node>
+                  </node>
+                </node>
               </node>
             </node>
             <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_ConceptMethodCall" typeId="tp25.1179409122411" id="4246614868163975444" nodeInfo="nn">
@@ -217,8 +229,10 @@
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="658365993682020046" nodeInfo="nn" />
       <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="658365993682020047" nodeInfo="sn">
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="658365993682020048" nodeInfo="nn">
-          <node role="expression" roleId="tpee.1068581517676" type="tp3r.Quotation" typeId="tp3r.1196350785113" id="658365993682020044" nodeInfo="nn">
-            <node role="quotedNode" roleId="tp3r.1196350785114" type="kisg.WatchableListType" typeId="kisg.1842653058274900915" id="1842653058274955270" nodeInfo="in" />
+          <node role="expression" roleId="tpee.1068581517676" type="tp3r.NodeBuilder" typeId="tp3r.5455284157993863837" id="9116681015574605198" nodeInfo="nn">
+            <node role="quotedNode" roleId="tp3r.5455284157993863838" type="tp3r.NodeBuilderNode" typeId="tp3r.5455284157993863840" id="9116681015574605197" nodeInfo="nn">
+              <link role="concept" roleId="tp3r.5455284157993910961" targetNodeId="kisg.1842653058274900915" resolveInfo="WatchableListType" />
+            </node>
           </node>
         </node>
       </node>

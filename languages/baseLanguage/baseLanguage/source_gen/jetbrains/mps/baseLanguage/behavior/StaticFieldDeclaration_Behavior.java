@@ -8,8 +8,9 @@ import javax.swing.Icon;
 import java.util.ArrayList;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.baseLanguage.plugin.IconResourceBundle_Behavior;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.baseLanguage.util.CodeStyleSettings;
@@ -36,6 +37,11 @@ public class StaticFieldDeclaration_Behavior {
   }
   public static boolean virtual_isInitializable_1213877517488(SNode thisNode) {
     return true;
+  }
+  public static SNode virtual_createReference_1213877517482(SNode thisNode) {
+    SNode ref = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.VariableReference", null);
+    SLinkOperations.setTarget(ref, "variableDeclaration", thisNode, false);
+    return ref;
   }
   public static List<SNode> virtual_getChildrenToDisplayIntention_4025276038182319200(SNode thisNode) {
     List<SNode> result = BehaviorReflection.invokeSuper((Class<List<SNode>>) ((Class) Object.class), thisNode, "jetbrains.mps.baseLanguage.structure.VariableDeclaration", "virtual_getChildrenToDisplayIntention_4025276038182319200", new Object[]{});
@@ -77,7 +83,7 @@ public class StaticFieldDeclaration_Behavior {
     context.hideMembers(new FieldSignature(SPropertyOperations.getString(thisNode, "name")));
   }
   public static SNode virtual_getQualifiedReference_4598334504606213641(SNode thisNode) {
-    return _quotation_createNode_ge0l0h_a0a01(SNodeOperations.cast(SNodeOperations.getParent(thisNode), "jetbrains.mps.baseLanguage.structure.Classifier"), thisNode);
+    return _quotation_createNode_ge0l0h_a0a11(SNodeOperations.cast(SNodeOperations.getParent(thisNode), "jetbrains.mps.baseLanguage.structure.Classifier"), thisNode);
   }
   public static void virtual_markDeprecated_7983358747957651026(SNode thisNode) {
     BehaviorReflection.invokeSuper(Void.class, thisNode, "jetbrains.mps.baseLanguage.structure.IBLDeprecatable", "virtual_markDeprecated_7983358747957651026", new Object[]{});
@@ -92,7 +98,7 @@ public class StaticFieldDeclaration_Behavior {
     AttributeOperations.setAttribute(thisNode, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.baseLanguage.javadoc.structure.FieldDocComment"), null);
     AnnotationUtil.detachAnnotation(thisNode, SNodeOperations.getNode("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)", "~Deprecated"));
   }
-  private static SNode _quotation_createNode_ge0l0h_a0a01(Object parameter_1, Object parameter_2) {
+  private static SNode _quotation_createNode_ge0l0h_a0a11(Object parameter_1, Object parameter_2) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_3 = null;
     quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StaticFieldReference", null, null, false);

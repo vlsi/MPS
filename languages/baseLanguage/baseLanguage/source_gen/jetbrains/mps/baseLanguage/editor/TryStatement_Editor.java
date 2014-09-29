@@ -96,9 +96,10 @@ public class TryStatement_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.apply_RightBrace(style, editorCell);
     style.set(StyleAttributes.MATCHING_LABEL, "try");
-    style.set(StyleAttributes.EDITABLE, true);
+    style.set(StyleAttributes.EDITABLE, false);
     style.set(StyleAttributes.RT_ANCHOR_TAG, "default_RTransform");
     editorCell.getStyle().putAll(style);
+    TryStatement_DeleteBodyEndingBrace.setCellActions(editorCell, node, editorContext);
     editorCell.setDefaultText("");
     return editorCell;
   }

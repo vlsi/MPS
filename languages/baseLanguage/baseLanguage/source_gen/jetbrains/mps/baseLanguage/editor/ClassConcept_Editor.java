@@ -94,7 +94,6 @@ public class ClassConcept_Editor extends DefaultNodeEditor {
   private EditorCell createComponent_uj0cpq_c0(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.baseLanguage.editor._Component_Visibility");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.RT_ANCHOR_TAG, "ext_5_RTransform");
     style.set(StyleAttributes.EDITABLE, false);
     editorCell.getStyle().putAll(style);
     return editorCell;
@@ -104,7 +103,6 @@ public class ClassConcept_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Constant_uj0cpq_d0");
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.apply_KeyWord(style, editorCell);
-    style.set(StyleAttributes.RT_ANCHOR_TAG, "ext_5_RTransform");
     editorCell.getStyle().putAll(style);
     Classifier_StaticKeyWord.setCellActions(editorCell, node, editorContext);
     editorCell.setDefaultText("");
@@ -118,7 +116,6 @@ public class ClassConcept_Editor extends DefaultNodeEditor {
     editorCell.setCellId("abstractKeyword");
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.apply_KeyWord(style, editorCell);
-    style.set(StyleAttributes.RT_ANCHOR_TAG, "ext_5_RTransform");
     editorCell.getStyle().putAll(style);
     _ClassConcept_Abstract_Actions.setCellActions(editorCell, node, editorContext);
     editorCell.setDefaultText("");
@@ -132,7 +129,6 @@ public class ClassConcept_Editor extends DefaultNodeEditor {
     editorCell.setCellId("finalKeyword");
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.apply_KeyWord(style, editorCell);
-    style.set(StyleAttributes.RT_ANCHOR_TAG, "ext_5_RTransform");
     editorCell.getStyle().putAll(style);
     _ClassConcept_Final_Actions.setCellActions(editorCell, node, editorContext);
     editorCell.setDefaultText("");
@@ -161,7 +157,7 @@ public class ClassConcept_Editor extends DefaultNodeEditor {
     editorCell.setCellId("property_name");
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, true);
-    style.set(StyleAttributes.RT_ANCHOR_TAG, "default_RTransform");
+    style.set(StyleAttributes.RT_ANCHOR_TAG, "ext_4_RTransform");
     editorCell.getStyle().putAll(style);
     if (renderingCondition_uj0cpq_a7a(node, editorContext)) {
       editorCell.getStyle().set(StyleAttributes.FOCUS_POLICY, FocusPolicy.ATTRACTS_FOCUS);

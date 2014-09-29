@@ -1558,7 +1558,7 @@ public class QueriesGenerated {
   public static Iterable<SNode> sourceNodesQuery_6520682027040940372(final SourceSubstituteMacroNodesContext _context) {
     return (Iterable<SNode>) ((MacroHelper) _context.getVariable("var:macroHelper")).getMacrosToImport();
   }
-  public static Iterable<SNode> sourceNodesQuery_6647099934206970618(final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable<SNode> sourceNodesQuery_8433645492464631848(final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(_context.getNode(), "plugins", true);
   }
   public static Iterable<SNode> sourceNodesQuery_1117643560963346309(final SourceSubstituteMacroNodesContext _context) {
@@ -1876,17 +1876,17 @@ public class QueriesGenerated {
     }
     return MultiTuple.<String,String,Object>from(fsetExt, prefix, null);
   }
+  private static boolean isNotEmptyString(String str) {
+    return str != null && str.length() > 0;
+  }
+  private static boolean isEmptyString(String str) {
+    return str == null || str.length() == 0;
+  }
   private static SNode createGeneratorInternal_ProjectDependency_x583g4_a0a0a0a1a993(Object p0, Object p1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode n1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.GeneratorInternal_ProjectDependency", null, false);
     n1.setProperty("path", String.valueOf(p0));
     n1.setReferenceTarget("project", (SNode) p1);
     return n1;
-  }
-  private static boolean isNotEmptyString(String str) {
-    return str != null && str.length() > 0;
-  }
-  private static boolean isEmptyString(String str) {
-    return str == null || str.length() == 0;
   }
 }

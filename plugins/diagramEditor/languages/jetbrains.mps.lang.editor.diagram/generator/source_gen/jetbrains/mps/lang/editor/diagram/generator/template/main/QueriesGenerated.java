@@ -678,6 +678,9 @@ public class QueriesGenerated {
     public void performActions(Object o) {
     }
   }
+  private static boolean eq_x583g4_a0a0a0a0a0a0a0lc(Object a, Object b) {
+    return (a != null ? a.equals(b) : a == b);
+  }
   private static SNode _quotation_createNode_x583g4_a0a0a0a0a0a0a0lc() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
@@ -761,7 +764,4 @@ public class QueriesGenerated {
     return quotedNode_3;
   }
   private static SNodePointer SNODE_POINTER_x583g4_a0a0a0a0b0b0a0a0a0a0a0mf = new SNodePointer("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)", "~Iterable");
-  private static boolean eq_x583g4_a0a0a0a0a0a0a0lc(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
-  }
 }

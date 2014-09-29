@@ -15,7 +15,7 @@ public class WatchableListIsAListOrWatchables_SubtypingRule extends SubtypingRul
   public WatchableListIsAListOrWatchables_SubtypingRule() {
   }
   public SNode getSubOrSuperType(SNode watchableListType, TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    return _quotation_createNode_izre6f_a0a1();
+    return createClassifierType_izre6f_a0a1();
   }
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.debugger.java.customViewers.structure.WatchableListType";
@@ -29,14 +29,14 @@ public class WatchableListIsAListOrWatchables_SubtypingRule extends SubtypingRul
   public boolean isWeak() {
     return false;
   }
-  private static SNode _quotation_createNode_izre6f_a0a1() {
+  private static SNode createClassifierType_izre6f_a0a1() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
-    SNode quotedNode_1 = null;
-    SNode quotedNode_2 = null;
-    quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, false);
-    quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, facade.createModelReference("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)"), facade.createNodeId("~List")));
-    quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.debugger.java.customViewers.structure.WatchableType", null, null, false);
-    quotedNode_1.addChild("parameter", quotedNode_2);
-    return quotedNode_1;
+    SNode n1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, false);
+    {
+      n1.setReference("classifier", SReference.create("classifier", n1, facade.createModelReference("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)"), facade.createNodeId("~List")));
+      SNode n2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.debugger.java.customViewers.structure.WatchableType", null, false);
+      n1.addChild("parameter", n2);
+    }
+    return n1;
   }
 }

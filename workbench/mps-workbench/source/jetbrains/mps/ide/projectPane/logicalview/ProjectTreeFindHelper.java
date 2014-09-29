@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2014 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,21 +15,20 @@
  */
 package jetbrains.mps.ide.projectPane.logicalview;
 
-import com.intellij.openapi.project.Project;
-import jetbrains.mps.ide.ui.tree.module.NamespaceTextNode;
-import jetbrains.mps.ide.ui.tree.module.SModelsSubtree.StubsTreeNode;
-import jetbrains.mps.ide.ui.tree.module.SModelsSubtree.TestsTreeNode;
+import jetbrains.mps.ide.ui.tree.MPSTreeNode;
+import jetbrains.mps.ide.ui.tree.MPSTreeNodeEx;
 import jetbrains.mps.ide.ui.tree.module.AccessoriesModelTreeNode;
+import jetbrains.mps.ide.ui.tree.module.NamespaceTextNode;
 import jetbrains.mps.ide.ui.tree.module.ProjectLanguageTreeNode;
 import jetbrains.mps.ide.ui.tree.module.ProjectLanguageTreeNode.AllModelsTreeNode;
 import jetbrains.mps.ide.ui.tree.module.ProjectModuleTreeNode;
 import jetbrains.mps.ide.ui.tree.module.ProjectModulesPoolTreeNode;
-import jetbrains.mps.ide.ui.tree.MPSTreeNode;
-import jetbrains.mps.ide.ui.tree.MPSTreeNodeEx;
+import jetbrains.mps.ide.ui.tree.module.SModelsSubtree.StubsTreeNode;
+import jetbrains.mps.ide.ui.tree.module.SModelsSubtree.TestsTreeNode;
 import jetbrains.mps.ide.ui.tree.smodel.PackageNode;
 import jetbrains.mps.ide.ui.tree.smodel.SModelTreeNode;
 import jetbrains.mps.ide.ui.tree.smodel.SNodeTreeNode;
-import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.Language;
@@ -73,9 +72,7 @@ public abstract class ProjectTreeFindHelper {
   }
 
   public SModelTreeNode findMostSuitableModelTreeNode(@NotNull SModel model) {
-    MPSProject project = getProject().getComponent(MPSProject.class);
-
-    SModule module = getModuleForModel(project, model);
+    SModule module = getModuleForModel(getProject(), model);
     if (module == null) return findModelTreeNodeAnywhere(model, getTree().getRootNode());
 
     ProjectModuleTreeNode moduleTreeNode = findMostSuitableModuleTreeNode(module);
@@ -311,7 +308,7 @@ public abstract class ProjectTreeFindHelper {
 
   //-----------find module by model------------
 
-  private static SModule getModuleForModel(MPSProject project, SModel model) {
+  private static SModule getModuleForModel(Project project, SModel model) {
     //language's and solution's own models (+generator models in language)
     SModule owner = model.getModule();
     if (owner == null) return null;

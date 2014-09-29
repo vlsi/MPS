@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.nodeEditor;
 
+import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.cells.CellInfo;
 import jetbrains.mps.nodeEditor.cells.DefaultCellInfo;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
@@ -99,7 +100,7 @@ class Memento {
 
   private void collectErrors(EditorComponent editor) {
     for (EditorCell cell : editor.getCellTracker().getErrorCells()) {
-      if (cell instanceof EditorCell_Label) {
+      if (cell instanceof EditorCell_Label && cell.getStyle().get(StyleAttributes.EDITABLE)) {
         EditorCell_Label label = (EditorCell_Label) cell;
           myErrorTexts.put(label.getCellInfo(), label.getText());
       }
@@ -107,12 +108,20 @@ class Memento {
   }
 
   void restore(EditorComponent editor) {
+    boolean editorRebuildRequired = editor.setEnabledHints(myEnabledHints);
+    editorRebuildRequired = editor.setUseCustomHints(myUseCustomHints) || editorRebuildRequired;
+
     if (myEditedNodeReference != null && editor.getEditorContext() != null) {
       SNode newEditedNode = myEditedNodeReference.resolve(editor.getEditorContext().getRepository());
       if (newEditedNode != null) {
         editor.editNode(newEditedNode);
         editor.flushEvents();
+        editorRebuildRequired = false;
       }
+    }
+    if (editorRebuildRequired) {
+      editor.rebuildEditorContent();
+      editor.flushEvents();
     }
 
     editor.clearFoldedCells();
@@ -143,9 +152,6 @@ class Memento {
     if (myViewPosition != null) {
       editor.getViewport().setViewPosition(myViewPosition);
     }
-
-    editor.setEnabledHints(myEnabledHints);
-    editor.setUseCustomHints(myUseCustomHints);
   }
 
   private boolean restoreErrors(EditorComponent editor) {

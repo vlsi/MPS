@@ -4,15 +4,13 @@ package jetbrains.mps.lang.quotation.generator.baseLanguage.template.util;
 
 import jetbrains.mps.generator.template.TemplateQueryContext;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.util.concurrent.ConcurrentMap;
 import java.util.concurrent.ConcurrentHashMap;
 
 public class QuotationUtil {
   public QuotationUtil() {
   }
-  public static String genQuotationNodeId(TemplateQueryContext genContext, SNode node) {
-    SNode quotation = SNodeOperations.getAncestor(node, "jetbrains.mps.lang.quotation.structure.Quotation", false, false);
+  public static String genQuotationNodeId(TemplateQueryContext genContext, SNode quotation) {
     Integer id = (Integer) genContext.getTransientObject(quotation);
     if (id == null) {
       id = 1;

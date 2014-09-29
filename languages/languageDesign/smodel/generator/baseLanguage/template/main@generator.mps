@@ -7861,18 +7861,18 @@
     <node role="reductionMappingRule" roleId="tpf8.1167328349397" type="tpf8.Reduction_MappingRule" typeId="tpf8.1167327847730" id="1240337006662" nodeInfo="ng">
       <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="tp25.1240930118027" resolveInfo="SEnumOperationInvocation" />
       <node role="ruleConsequence" roleId="tpf8.1169672767469" type="tpf8.InlineTemplate_RuleConsequence" typeId="tpf8.1177093525992" id="1240337006663" nodeInfo="ng">
-        <node role="templateNode" roleId="tpf8.1177093586806" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="1240337006664" nodeInfo="nn">
-          <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="i8bi.1101499704720825413" resolveInfo="SEnumOperations" />
-          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="i8bi.1101499704720825456" resolveInfo="getEnumMembers" />
-          <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.NullLiteral" typeId="tpee.1070534058343" id="1240337006665" nodeInfo="nn">
-            <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.IncludeMacro" typeId="tpf8.1194565793557" id="1241008390643" nodeInfo="nn">
+        <node role="templateNode" roleId="tpf8.1177093586806" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="3505562578123550441" nodeInfo="nn">
+          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="t6w.~SEnumOperations%dgetEnumMembers(org%djetbrains%dmps%dopenapi%dmodel%dSNode)%cjava%dutil%dList" resolveInfo="getEnumMembers" />
+          <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="t6w.~SEnumOperations" resolveInfo="SEnumOperations" />
+          <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.NullLiteral" typeId="tpee.1070534058343" id="3505562578123550442" nodeInfo="nn">
+            <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.IncludeMacro" typeId="tpf8.1194565793557" id="3505562578123550443" nodeInfo="nn">
               <link role="includeTemplate" roleId="tpf8.1194566366375" targetNodeId="1241008307357" resolveInfo="reduce_EnumRef" />
-              <node role="sourceNodeQuery" roleId="tpf8.1194565823413" type="tpf8.SourceSubstituteMacro_SourceNodeQuery" typeId="tpf8.1168024337012" id="1241008417425" nodeInfo="nn">
-                <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="1241008417426" nodeInfo="sn">
-                  <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="1241008419631" nodeInfo="nn">
-                    <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1241008419648" nodeInfo="nn">
-                      <node role="operand" roleId="tpee.1197027771414" type="tpf8.TemplateFunctionParameter_sourceNode" typeId="tpf8.1167169188348" id="1241008419632" nodeInfo="nn" />
-                      <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkAccess" typeId="tp25.1138056143562" id="1241008425480" nodeInfo="nn">
+              <node role="sourceNodeQuery" roleId="tpf8.1194565823413" type="tpf8.SourceSubstituteMacro_SourceNodeQuery" typeId="tpf8.1168024337012" id="3505562578123550444" nodeInfo="nn">
+                <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="3505562578123550445" nodeInfo="sn">
+                  <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="3505562578123550446" nodeInfo="nn">
+                    <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="3505562578123550447" nodeInfo="nn">
+                      <node role="operand" roleId="tpee.1197027771414" type="tpf8.TemplateFunctionParameter_sourceNode" typeId="tpf8.1167169188348" id="3505562578123550448" nodeInfo="nn" />
+                      <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkAccess" typeId="tp25.1138056143562" id="3505562578123550449" nodeInfo="nn">
                         <link role="link" roleId="tp25.1138056516764" targetNodeId="tp25.1240930118028" />
                       </node>
                     </node>
@@ -7907,8 +7907,8 @@
       <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="tp25.1240930118027" resolveInfo="SEnumOperationInvocation" />
       <node role="ruleConsequence" roleId="tpf8.1169672767469" type="tpf8.InlineTemplate_RuleConsequence" typeId="tpf8.1177093525992" id="1240336967543" nodeInfo="ng">
         <node role="templateNode" roleId="tpf8.1177093586806" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="1240336978078" nodeInfo="nn">
-          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="i8bi.1101499704720825467" resolveInfo="getEnumMember" />
-          <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="i8bi.1101499704720825413" resolveInfo="SEnumOperations" />
+          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="t6w.~SEnumOperations%dgetEnumMember(org%djetbrains%dmps%dopenapi%dmodel%dSNode,java%dlang%dString)%corg%djetbrains%dmps%dopenapi%dmodel%dSNode" resolveInfo="getEnumMember" />
+          <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="t6w.~SEnumOperations" resolveInfo="SEnumOperations" />
           <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.NullLiteral" typeId="tpee.1070534058343" id="1240336985678" nodeInfo="nn">
             <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.IncludeMacro" typeId="tpf8.1194565793557" id="1241008433356" nodeInfo="nn">
               <link role="includeTemplate" roleId="tpf8.1194566366375" targetNodeId="1241008307357" resolveInfo="reduce_EnumRef" />
@@ -7983,8 +7983,8 @@
       <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="tp25.1240930118027" resolveInfo="SEnumOperationInvocation" />
       <node role="ruleConsequence" roleId="tpf8.1169672767469" type="tpf8.InlineTemplate_RuleConsequence" typeId="tpf8.1177093525992" id="1240337068322" nodeInfo="ng">
         <node role="templateNode" roleId="tpf8.1177093586806" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="1240337083536" nodeInfo="nn">
-          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="i8bi.1101499704720825539" resolveInfo="enumMemberForValue" />
-          <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="i8bi.1101499704720825413" resolveInfo="SEnumOperations" />
+          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="t6w.~SEnumOperations%denumMemberForValue(org%djetbrains%dmps%dopenapi%dmodel%dSNode,java%dlang%dString)%corg%djetbrains%dmps%dopenapi%dmodel%dSNode" resolveInfo="enumMemberForValue" />
+          <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="t6w.~SEnumOperations" resolveInfo="SEnumOperations" />
           <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.NullLiteral" typeId="tpee.1070534058343" id="1240337083537" nodeInfo="nn">
             <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.IncludeMacro" typeId="tpf8.1194565793557" id="1241008453161" nodeInfo="nn">
               <link role="includeTemplate" roleId="tpf8.1194566366375" targetNodeId="1241008307357" resolveInfo="reduce_EnumRef" />
@@ -8053,8 +8053,8 @@
       <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="tp25.1240930118027" resolveInfo="SEnumOperationInvocation" />
       <node role="ruleConsequence" roleId="tpf8.1169672767469" type="tpf8.InlineTemplate_RuleConsequence" typeId="tpf8.1177093525992" id="1240337070992" nodeInfo="ng">
         <node role="templateNode" roleId="tpf8.1177093586806" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="1240337087720" nodeInfo="nn">
-          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="i8bi.1101499704720825505" resolveInfo="enumMemberForName" />
-          <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="i8bi.1101499704720825413" resolveInfo="SEnumOperations" />
+          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="t6w.~SEnumOperations%denumMemberForName(org%djetbrains%dmps%dopenapi%dmodel%dSNode,java%dlang%dString)%corg%djetbrains%dmps%dopenapi%dmodel%dSNode" resolveInfo="enumMemberForName" />
+          <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="t6w.~SEnumOperations" resolveInfo="SEnumOperations" />
           <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.NullLiteral" typeId="tpee.1070534058343" id="1240337087721" nodeInfo="nn">
             <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.IncludeMacro" typeId="tpf8.1194565793557" id="1241008475402" nodeInfo="nn">
               <link role="includeTemplate" roleId="tpf8.1194566366375" targetNodeId="1241008307357" resolveInfo="reduce_EnumRef" />

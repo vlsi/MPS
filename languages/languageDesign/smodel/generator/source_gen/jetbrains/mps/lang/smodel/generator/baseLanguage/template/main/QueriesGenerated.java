@@ -1165,7 +1165,7 @@ public class QueriesGenerated {
   public static SNode sourceNodeQuery_1221171979135(final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), "operation", true), "jetbrains.mps.lang.smodel.structure.SearchScope_ContainsOperation"), "nodeToCheck", true);
   }
-  public static SNode sourceNodeQuery_1241008417425(final SourceSubstituteMacroNodeContext _context) {
+  public static SNode sourceNodeQuery_3505562578123550444(final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "enumDeclaration", false);
   }
   public static SNode sourceNodeQuery_1241008435170(final SourceSubstituteMacroNodeContext _context) {

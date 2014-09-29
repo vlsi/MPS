@@ -196,17 +196,17 @@ public class QueriesGenerated {
       }
     }
   }
+  private static boolean isNotEmptyString(String str) {
+    return str != null && str.length() > 0;
+  }
+  private static boolean eq_x583g4_a0a0a0a54(Object a, Object b) {
+    return (a != null ? a.equals(b) : a == b);
+  }
   private static SNode _quotation_createNode_x583g4_a0a0a0a0tb() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, false);
     quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, facade.createModelReference("r:ac4cce94-c169-4971-be8f-807482637028(jetbrains.mps.debugger.java.api.state.proxy)"), facade.createNodeId("3432969378036017270")));
     return quotedNode_1;
-  }
-  private static boolean isNotEmptyString(String str) {
-    return str != null && str.length() > 0;
-  }
-  private static boolean eq_x583g4_a0a0a0a54(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
   }
 }

@@ -130,7 +130,7 @@
       <node id="3796137614137404079" at="11,41,12,91" concept="2" />
       <node id="1643569692138211513" at="12,91,13,99" concept="2" />
       <node id="8942139995508443383" at="15,44,16,107" concept="2" />
-      <node id="4452696118160649121" at="16,107,17,54" concept="2" />
+      <node id="4452696118160649121" at="16,107,17,53" concept="2" />
       <node id="1767845709140460451" at="19,49,20,79" concept="2" />
       <node id="1767845709140460465" at="20,79,21,80" concept="2" />
       <node id="3632055896798290271" at="23,50,24,100" concept="2" />
@@ -147,32 +147,32 @@
       <node id="8942139995508724135" at="38,80,39,80" concept="2" />
       <node id="8942139995508724144" at="39,80,40,78" concept="2" />
       <node id="8942139995508724153" at="40,78,41,78" concept="2" />
-      <node id="8942139995509275205" at="41,78,42,80" concept="2" />
-      <node id="1767845709140460419" at="42,80,43,89" concept="2" />
-      <node id="1767845709140460433" at="43,89,44,81" concept="2" />
-      <node id="3796137614137404062" at="48,0,49,0" concept="8" trace="REPLREGEXP_a1a0a" />
-      <node id="3796137614137404062" at="49,0,50,0" concept="8" trace="REPLREGEXP_a2a0a" />
-      <node id="3796137614137404062" at="50,0,51,0" concept="8" trace="REPLREGEXP_a0a1a" />
-      <node id="3796137614137404062" at="51,0,52,0" concept="8" trace="REPLREGEXP_a1a1a" />
-      <node id="3796137614137404062" at="52,0,53,0" concept="8" trace="REPLREGEXP_a0a2a" />
-      <node id="3796137614137404062" at="53,0,54,0" concept="8" trace="REPLREGEXP_a1a2a" />
-      <node id="3796137614137404062" at="54,0,55,0" concept="8" trace="REPLREGEXP_a0a3a" />
-      <node id="3796137614137404062" at="55,0,56,0" concept="8" trace="REPLREGEXP_a1a3a" />
-      <node id="3796137614137404062" at="56,0,57,0" concept="8" trace="REPLREGEXP_a0a4a" />
-      <node id="3796137614137404062" at="57,0,58,0" concept="8" trace="REPLREGEXP_a1a4a" />
-      <node id="3796137614137404062" at="58,0,59,0" concept="8" trace="REPLREGEXP_a0a5a" />
-      <node id="3796137614137404062" at="59,0,60,0" concept="8" trace="REPLREGEXP_a1a5a" />
-      <node id="3796137614137404062" at="60,0,61,0" concept="8" trace="REPLREGEXP_a2a5a" />
-      <node id="3796137614137404062" at="61,0,62,0" concept="8" trace="REPLREGEXP_a3a5a" />
-      <node id="3796137614137404062" at="62,0,63,0" concept="8" trace="REPLREGEXP_a4a5a" />
-      <node id="3796137614137404062" at="63,0,64,0" concept="8" trace="REPLREGEXP_a5a5a" />
-      <node id="3796137614137404062" at="64,0,65,0" concept="8" trace="REPLREGEXP_a6a5a" />
-      <node id="3796137614137404062" at="65,0,66,0" concept="8" trace="REPLREGEXP_a7a5a" />
-      <node id="3796137614137404062" at="66,0,67,0" concept="8" trace="REPLREGEXP_a8a5a" />
-      <node id="3796137614137404062" at="67,0,68,0" concept="8" trace="REPLREGEXP_a9a5a" />
-      <node id="3796137614137404062" at="68,0,69,0" concept="8" trace="REPLREGEXP_a01a5a" />
-      <node id="3796137614137404062" at="69,0,70,0" concept="8" trace="REPLREGEXP_a11a5a" />
-      <node id="3796137614137404062" at="70,0,71,0" concept="8" trace="REPLREGEXP_a21a5a" />
+      <node id="8942139995509275205" at="41,78,42,79" concept="2" />
+      <node id="1767845709140460419" at="42,79,43,88" concept="2" />
+      <node id="1767845709140460433" at="43,88,44,80" concept="2" />
+      <node id="3796137614137404062" at="48,0,49,0" concept="8" trace="REPLREGEXP_b0b0a" />
+      <node id="3796137614137404062" at="49,0,50,0" concept="8" trace="REPLREGEXP_b0c0a" />
+      <node id="3796137614137404062" at="50,0,51,0" concept="8" trace="REPLREGEXP_b0a0b" />
+      <node id="3796137614137404062" at="51,0,52,0" concept="8" trace="REPLREGEXP_a1a1" />
+      <node id="3796137614137404062" at="52,0,53,0" concept="8" trace="REPLREGEXP_b0a0c" />
+      <node id="3796137614137404062" at="53,0,54,0" concept="8" trace="REPLREGEXP_b0b0c" />
+      <node id="3796137614137404062" at="54,0,55,0" concept="8" trace="REPLREGEXP_b0a0d" />
+      <node id="3796137614137404062" at="55,0,56,0" concept="8" trace="REPLREGEXP_b0b0d" />
+      <node id="3796137614137404062" at="56,0,57,0" concept="8" trace="REPLREGEXP_b0a0e" />
+      <node id="3796137614137404062" at="57,0,58,0" concept="8" trace="REPLREGEXP_b0b0e" />
+      <node id="3796137614137404062" at="58,0,59,0" concept="8" trace="REPLREGEXP_b0a0f" />
+      <node id="3796137614137404062" at="59,0,60,0" concept="8" trace="REPLREGEXP_b0b0f" />
+      <node id="3796137614137404062" at="60,0,61,0" concept="8" trace="REPLREGEXP_b0c0f" />
+      <node id="3796137614137404062" at="61,0,62,0" concept="8" trace="REPLREGEXP_b0d0f" />
+      <node id="3796137614137404062" at="62,0,63,0" concept="8" trace="REPLREGEXP_b0e0f" />
+      <node id="3796137614137404062" at="63,0,64,0" concept="8" trace="REPLREGEXP_b0f0f" />
+      <node id="3796137614137404062" at="64,0,65,0" concept="8" trace="REPLREGEXP_b0g0f" />
+      <node id="3796137614137404062" at="65,0,66,0" concept="8" trace="REPLREGEXP_b0h0f" />
+      <node id="3796137614137404062" at="66,0,67,0" concept="8" trace="REPLREGEXP_b0i0f" />
+      <node id="3796137614137404062" at="67,0,68,0" concept="8" trace="REPLREGEXP_b0j0f" />
+      <node id="3796137614137404062" at="68,0,69,0" concept="8" trace="REPLREGEXP_b0k0f" />
+      <node id="3796137614137404062" at="69,0,70,0" concept="8" trace="REPLREGEXP_b0l0f" />
+      <node id="3796137614137404062" at="70,0,71,0" concept="8" trace="REPLREGEXP_b0m0f" />
       <node id="3796137614137404064" at="46,0,48,0" concept="1" trace="PerlReplace_Test#()V" />
       <node id="8942139995508443379" at="15,0,19,0" concept="5" trace="test_swap#()V" />
       <node id="1767845709140460447" at="19,0,23,0" concept="5" trace="test_oneLetter#()V" />
@@ -181,7 +181,7 @@
       <node id="3796137614137404069" at="10,0,15,0" concept="5" trace="test_simple#()V" />
       <node id="8942139995508580996" at="31,0,46,0" concept="5" trace="test_checkLiterals#()V" />
       <scope id="3796137614137404067" at="46,29,46,29" />
-      <scope id="8942139995508443382" at="15,44,17,54" />
+      <scope id="8942139995508443382" at="15,44,17,53" />
       <scope id="1767845709140460450" at="19,49,21,80" />
       <scope id="3632055896798290270" at="23,50,25,94" />
       <scope id="3632055896798292837" at="27,49,29,129" />
@@ -194,15 +194,34 @@
       <scope id="3632055896798290267" at="23,0,27,0" />
       <scope id="3632055896798292834" at="27,0,31,0" />
       <scope id="3796137614137404069" at="10,0,15,0" />
-      <scope id="8942139995508580999" at="31,53,44,81" />
+      <scope id="8942139995508580999" at="31,53,44,80" />
       <scope id="8942139995508580996" at="31,0,46,0" />
       <unit id="3796137614137404062" at="9,0,72,0" name="tests.PerlReplace_Test" />
     </file>
   </root>
   <root nodeRef="r:710bb5ca-133c-4e34-80eb-4be42af51339(tests)/6129327962763155569">
+    <file name="_Replacer_55w9mm_a0a0a0.java">
+      <node id="6129327962763155602" at="9,42,10,40" concept="7" />
+      <node id="6129327962763155583" at="12,0,13,0" concept="3" trace="_enclosingClass" />
+      <node id="6129327962763155583" at="13,0,14,0" concept="3" trace="_closureContext" />
+      <node id="6129327962763155583" at="14,86,15,42" concept="2" />
+      <node id="6129327962763155583" at="15,42,16,51" concept="2" />
+      <node id="6129327962763155583" at="9,0,12,0" concept="5" trace="replace#(Ljava/util/regex/Matcher;)Ljava/lang/String;" />
+      <node id="6129327962763155583" at="14,0,18,0" concept="1" trace="_Replacer_55w9mm_a0a0a0#(Ltests/Replace_Test;Ljava/lang/Object;)V" />
+      <scope id="6129327962763155584" at="9,42,10,40" />
+      <scope id="6129327962763155583" at="14,86,16,51" />
+      <scope id="6129327962763155583" at="9,0,12,0">
+        <var name="matcher" id="6129327962763155583" />
+      </scope>
+      <scope id="6129327962763155583" at="14,0,18,0">
+        <var name="closureContext" id="6129327962763155583" />
+        <var name="enclosingClass" id="6129327962763155583" />
+      </scope>
+      <unit id="6129327962763155583" at="8,0,19,0" name="tests._Replacer_55w9mm_a0a0a0" />
+    </file>
     <file name="Replace_Test.java">
-      <node id="6129327962763155612" at="11,48,12,136" concept="6" />
-      <node id="6129327962763155619" at="12,136,13,52" concept="2" />
+      <node id="6129327962763155612" at="11,48,12,135" concept="6" />
+      <node id="6129327962763155619" at="12,135,13,52" concept="2" />
       <node id="6129327962763155586" at="17,0,18,0" concept="8" trace="REGEXP_55w9mm_b0a0a0" />
       <node id="6129327962763155571" at="15,0,17,0" concept="1" trace="Replace_Test#()V" />
       <node id="6129327962763155576" at="11,0,15,0" concept="5" trace="test_replace1#()V" />
@@ -213,25 +232,6 @@
       <scope id="6129327962763155571" at="15,0,17,0" />
       <scope id="6129327962763155576" at="11,0,15,0" />
       <unit id="6129327962763155569" at="10,0,19,0" name="tests.Replace_Test" />
-    </file>
-    <file name="_Replacer_55w9mm_a0a0a0a.java">
-      <node id="6129327962763155602" at="9,42,10,40" concept="7" />
-      <node id="6129327962763155583" at="12,0,13,0" concept="3" trace="_enclosingClass" />
-      <node id="6129327962763155583" at="13,0,14,0" concept="3" trace="_closureContext" />
-      <node id="6129327962763155583" at="14,87,15,42" concept="2" />
-      <node id="6129327962763155583" at="15,42,16,51" concept="2" />
-      <node id="6129327962763155583" at="9,0,12,0" concept="5" trace="replace#(Ljava/util/regex/Matcher;)Ljava/lang/String;" />
-      <node id="6129327962763155583" at="14,0,18,0" concept="1" trace="_Replacer_55w9mm_a0a0a0a#(Ltests/Replace_Test;Ljava/lang/Object;)V" />
-      <scope id="6129327962763155584" at="9,42,10,40" />
-      <scope id="6129327962763155583" at="14,87,16,51" />
-      <scope id="6129327962763155583" at="9,0,12,0">
-        <var name="matcher" id="6129327962763155583" />
-      </scope>
-      <scope id="6129327962763155583" at="14,0,18,0">
-        <var name="closureContext" id="6129327962763155583" />
-        <var name="enclosingClass" id="6129327962763155583" />
-      </scope>
-      <unit id="6129327962763155583" at="8,0,19,0" name="tests._Replacer_55w9mm_a0a0a0a" />
     </file>
   </root>
   <root nodeRef="r:710bb5ca-133c-4e34-80eb-4be42af51339(tests)/6129327962764348634">
@@ -254,10 +254,10 @@
       <node id="7048923897762913399" at="38,5,39,32" concept="2" />
       <node id="2588298302278368465" at="41,49,42,24" concept="2" />
       <node id="2588298302278368484" at="42,24,43,29" concept="2" />
-      <node id="902359922144295133" at="45,52,46,34" concept="6" />
-      <node id="902359922144295146" at="47,90,48,67" concept="2" />
-      <node id="902359922144295163" at="48,67,49,63" concept="2" />
-      <node id="902359922144295169" at="49,63,50,66" concept="2" />
+      <node id="902359922144295133" at="45,52,46,33" concept="6" />
+      <node id="902359922144295146" at="47,89,48,66" concept="2" />
+      <node id="902359922144295163" at="48,66,49,62" concept="2" />
+      <node id="902359922144295169" at="49,62,50,65" concept="2" />
       <node id="2588298302278368435" at="55,38,56,33" concept="6" />
       <node id="2588298302278368435" at="56,33,57,34" concept="6" />
       <node id="2588298302278368450" at="58,83,59,64" concept="2" />
@@ -278,7 +278,7 @@
       <node id="6129327962764576436" at="17,0,21,0" concept="5" trace="test_match#()V" />
       <node id="4276824325038067892" at="41,0,45,0" concept="5" trace="test_matchInIf#()V" />
       <node id="7048923897762884735" at="32,61,37,7" concept="4" />
-      <node id="902359922144295134" at="46,34,51,5" concept="4" />
+      <node id="902359922144295134" at="46,33,51,5" concept="4" />
       <node id="6129327962764679735" at="21,0,28,0" concept="5" trace="test_split#()V" />
       <node id="2588298302278368442" at="57,34,64,5" concept="4" />
       <node id="902359922144295130" at="45,0,53,0" concept="5" trace="test_innerRegexps#()V" />
@@ -294,7 +294,7 @@
       <scope id="4276824325038067895" at="41,49,43,29" />
       <scope id="6129327962764348636" at="53,0,55,0" />
       <scope id="7048923897762884739" at="33,30,36,24" />
-      <scope id="902359922144295136" at="47,90,50,66" />
+      <scope id="902359922144295136" at="47,89,50,65" />
       <scope id="6129327962764348641" at="13,0,17,0" />
       <scope id="6129327962764576436" at="17,0,21,0" />
       <scope id="4276824325038067892" at="41,0,45,0" />
@@ -302,7 +302,7 @@
         <var name="list" id="6129327962764679770" />
       </scope>
       <scope id="902359922144295133" at="45,52,51,5">
-        <var name="_matcher_vwem4m_a0a5a" id="902359922144295133" />
+        <var name="_matcher_vwem4m_a0a5" id="902359922144295133" />
       </scope>
       <scope id="6129327962764679735" at="21,0,28,0" />
       <scope id="7048923897762884735" at="30,5,37,7">
@@ -311,8 +311,8 @@
       </scope>
       <scope id="902359922144295130" at="45,0,53,0" />
       <scope id="2588298302278368435" at="55,38,64,5">
-        <var name="_matcher_vwem4m_a0a0" id="2588298302278368435" />
-        <var name="_matcher_vwem4m_a0a0a" id="2588298302278368435" />
+        <var name="_matcher_vwem4m_a0a0h" id="2588298302278368435" />
+        <var name="_matcher_vwem4m_a0a7" id="2588298302278368435" />
       </scope>
       <scope id="7048923897762884734" at="28,54,39,32">
         <var name="executed" id="7048923897762907462" />

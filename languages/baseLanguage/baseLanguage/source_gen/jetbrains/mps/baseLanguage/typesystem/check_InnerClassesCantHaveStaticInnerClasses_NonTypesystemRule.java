@@ -7,8 +7,9 @@ import jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
-import jetbrains.mps.baseLanguage.behavior.Classifier_Behavior;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.baseLanguage.behavior.Classifier_Behavior;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
@@ -18,9 +19,9 @@ public class check_InnerClassesCantHaveStaticInnerClasses_NonTypesystemRule exte
   public check_InnerClassesCantHaveStaticInnerClasses_NonTypesystemRule() {
   }
   public void applyRule(final SNode classConcept, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    if (Classifier_Behavior.call_isStatic_521412098689998668(classConcept) && SNodeOperations.isInstanceOf(SNodeOperations.getParent(classConcept), "jetbrains.mps.baseLanguage.structure.Classifier")) {
+    if (BehaviorReflection.invokeVirtual(Boolean.TYPE, classConcept, "virtual_isStatic_7405920559687241224", new Object[]{}) && SNodeOperations.isInstanceOf(SNodeOperations.getParent(classConcept), "jetbrains.mps.baseLanguage.structure.Classifier")) {
       SNode classifier = SNodeOperations.cast(SNodeOperations.getParent(classConcept), "jetbrains.mps.baseLanguage.structure.Classifier");
-      if (Classifier_Behavior.call_isInner_521412098689998677(classifier) && !(Classifier_Behavior.call_isStatic_521412098689998668(classifier))) {
+      if (Classifier_Behavior.call_isInner_521412098689998677(classifier) && !(BehaviorReflection.invokeVirtual(Boolean.TYPE, classifier, "virtual_isStatic_7405920559687241224", new Object[]{}))) {
         {
           MessageTarget errorTarget = new NodeMessageTarget();
           IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(classConcept, "Inner classes can't have static declarations", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "6935810692634700346", null, errorTarget);

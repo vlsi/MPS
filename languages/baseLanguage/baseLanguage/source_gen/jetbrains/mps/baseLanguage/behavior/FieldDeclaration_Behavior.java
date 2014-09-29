@@ -8,6 +8,7 @@ import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import javax.swing.Icon;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import java.util.List;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -39,6 +40,11 @@ public class FieldDeclaration_Behavior {
   }
   public static Icon virtual_getAdditionalIcon_5017341185733863694(SNode thisNode) {
     return IVisible_Behavior.call_getVisibilityIcon_5017341185733869581(thisNode);
+  }
+  public static SNode virtual_createReference_1213877517482(SNode thisNode) {
+    SNode ref = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.VariableReference", null);
+    SLinkOperations.setTarget(ref, "variableDeclaration", thisNode, false);
+    return ref;
   }
   public static List<SNode> virtual_getChildrenToDisplayIntention_4025276038182319200(SNode thisNode) {
     List<SNode> result = BehaviorReflection.invokeSuper((Class<List<SNode>>) ((Class) Object.class), thisNode, "jetbrains.mps.baseLanguage.structure.VariableDeclaration", "virtual_getChildrenToDisplayIntention_4025276038182319200", new Object[]{});

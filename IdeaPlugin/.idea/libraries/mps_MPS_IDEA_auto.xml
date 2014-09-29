@@ -1,0 +1,17 @@
+<component name="libraryTable">
+  <library name="mps.MPS.IDEA_auto" type="mps.solution.library">
+    <MPS_MODULE_XML>
+      <root url="jar://$PLUGINS_PATH$/mps-core/lib/mps-platform.jar!/modules/MPS.IDEA/MPS.IDEA.msd" />
+    </MPS_MODULE_XML>
+    <CLASSES>
+      <root url="jar://$APPLICATION_HOME_DIR$/lib/extensions.jar!/" />
+      <root url="jar://$PLUGINS_PATH$/mps-core/lib/mps-platform.jar!/" />
+      <root url="jar://$APPLICATION_HOME_DIR$/lib/picocontainer.jar!/" />
+      <root url="jar://$APPLICATION_HOME_DIR$/lib/sanselan-0.98-snapshot.jar!/" />
+      <root url="jar://$APPLICATION_HOME_DIR$/lib/util.jar!/" />
+      <root url="jar://$APPLICATION_HOME_DIR$/lib/forms_rt.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

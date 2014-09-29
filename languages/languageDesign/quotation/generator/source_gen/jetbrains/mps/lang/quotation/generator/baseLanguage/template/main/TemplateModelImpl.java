@@ -15,6 +15,7 @@ import jetbrains.mps.generator.runtime.TemplateDeclaration;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.model.SNodeId;
 import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNode;
 
 @Generated
 public class TemplateModelImpl implements TemplateModel {
@@ -55,11 +56,11 @@ public class TemplateModelImpl implements TemplateModel {
         return new TemplateQuotedNode__to__statementList();
       }
       if (idValue == 1025590056396628814L) {
-        if (arguments.length != 0) {
+        if (arguments.length != 1) {
           // TODO report `wrong arguments count` 
           return null;
         }
-        return new TemplateQuotation__to__staticMethodCall();
+        return new TemplateQuotation__to__staticMethodCall((SNode) arguments[0]);
       }
       if (idValue == 1006429225401295242L) {
         if (arguments.length != 0) {
