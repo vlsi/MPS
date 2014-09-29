@@ -147,6 +147,7 @@
     <classNode dependClassName="jetbrains.mps.vcs.diff.ui.ModelDifferenceDialog" />
     <classNode dependClassName="jetbrains.mps.vcs.platform.util.MergeBackupUtil" />
     <classNode dependClassName="jetbrains.mps.vcs.util.MergeDriverBackupUtil" />
+    <classNode dependClassName="jetbrains.mps.vcs.util.ModelVersion" />
     <classNode dependClassName="jetbrains.mps.vfs.IFile" />
     <classNode dependClassName="org.apache.log4j.Level" />
     <classNode dependClassName="org.apache.log4j.LogManager" />
@@ -158,7 +159,6 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SRepository" />
-    <classNode extendsClassName="jetbrains.mps.vcs.util.ModelVersion" />
     <classNode extendsClassName="org.jetbrains.mps.openapi.module.SRepositoryContentAdapter" />
   </dependency>
   <dependency className="jetbrains.mps.vcs.platform.integration.OptimizeImportsCheckinHandler" file="OptimizeImportsCheckinHandler.java">
@@ -166,6 +166,7 @@
     <classNode dependClassName="com.intellij.openapi.vcs.CheckinProjectPanel" />
     <classNode dependClassName="com.intellij.openapi.vcs.VcsConfiguration" />
     <classNode dependClassName="com.intellij.openapi.vcs.changes.CommitContext" />
+    <classNode dependClassName="com.intellij.openapi.vcs.checkin.CheckinHandlerFactory" />
     <classNode dependClassName="com.intellij.openapi.vcs.ui.RefreshableOnComponent" />
     <classNode dependClassName="java.awt.GridLayout" />
     <classNode dependClassName="java.io.File" />
@@ -191,7 +192,6 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.EditableSModel" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
     <classNode extendsClassName="com.intellij.openapi.vcs.checkin.CheckinHandler" />
-    <classNode extendsClassName="com.intellij.openapi.vcs.checkin.CheckinHandlerFactory" />
   </dependency>
   <dependency className="jetbrains.mps.vcs.platform.integration.PluginVCSManager" file="PluginVCSManager.java">
     <classNode dependClassName="java.lang.Override" />

@@ -23,6 +23,7 @@
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
     <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
     <classNode dependClassName="jetbrains.mps.util.CounterMap" />
+    <classNode dependClassName="jetbrains.mps.util.CounterMapHandler" />
     <classNode dependClassName="jetbrains.mps.vcs.changesmanager.tree.FeatureForestMapListener" />
     <classNode dependClassName="jetbrains.mps.vcs.changesmanager.tree.features.Feature" />
     <classNode dependClassName="org.apache.log4j.Level" />
@@ -30,7 +31,6 @@
     <classNode dependClassName="org.apache.log4j.Logger" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
-    <classNode extendsClassName="jetbrains.mps.util.CounterMapHandler" />
   </dependency>
   <dependency className="jetbrains.mps.vcs.changesmanager.tree.FeatureForestMapListener" file="FeatureForestMapListener.java">
     <classNode dependClassName="jetbrains.mps.vcs.changesmanager.tree.features.Feature" />
@@ -52,6 +52,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
     <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
     <classNode dependClassName="jetbrains.mps.util.IterableUtil" />
+    <classNode dependClassName="jetbrains.mps.vcs.changesmanager.CurrentDifferenceAdapter" />
     <classNode dependClassName="jetbrains.mps.vcs.changesmanager.CurrentDifferenceRegistry" />
     <classNode dependClassName="jetbrains.mps.vcs.changesmanager.tree.FeatureForestMap" />
     <classNode dependClassName="jetbrains.mps.vcs.changesmanager.tree.features.DeletedChildFeature" />
@@ -69,7 +70,6 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeId" />
     <classNode extendsClassName="com.intellij.openapi.components.AbstractProjectComponent" />
-    <classNode extendsClassName="jetbrains.mps.vcs.changesmanager.CurrentDifferenceAdapter" />
   </dependency>
   <dependency className="jetbrains.mps.vcs.changesmanager.tree.HierarchyFeatureExtractor" file="HierarchyFeatureExtractor.java">
     <classNode dependClassName="java.lang.Override" />
@@ -115,6 +115,7 @@
   <dependency className="jetbrains.mps.vcs.changesmanager.tree.TreeHighlighter" file="TreeHighlighter.java">
     <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="com.intellij.openapi.vcs.FileStatus" />
+    <classNode dependClassName="com.intellij.openapi.vcs.FileStatusListener" />
     <classNode dependClassName="com.intellij.openapi.vcs.FileStatusManager" />
     <classNode dependClassName="com.intellij.openapi.vfs.VirtualFile" />
     <classNode dependClassName="com.intellij.util.containers.MultiMap" />
@@ -130,6 +131,7 @@
     <classNode dependClassName="jetbrains.mps.extapi.persistence.FileDataSource" />
     <classNode dependClassName="jetbrains.mps.ide.ui.tree.MPSTree" />
     <classNode dependClassName="jetbrains.mps.ide.ui.tree.MPSTreeNode" />
+    <classNode dependClassName="jetbrains.mps.ide.ui.tree.MPSTreeNodeListener" />
     <classNode dependClassName="jetbrains.mps.ide.ui.tree.TreeMessage" />
     <classNode dependClassName="jetbrains.mps.ide.vfs.VirtualFileUtils" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.CollectionSequence" />
@@ -143,12 +145,14 @@
     <classNode dependClassName="jetbrains.mps.persistence.FilePerRootDataSource" />
     <classNode dependClassName="jetbrains.mps.smodel.GlobalSModelEventsManager" />
     <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModelAdapter" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelFileTracker" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelRepository" />
     <classNode dependClassName="jetbrains.mps.vcs.changesmanager.BaseVersionUtil" />
     <classNode dependClassName="jetbrains.mps.vcs.changesmanager.CurrentDifferenceRegistry" />
     <classNode dependClassName="jetbrains.mps.vcs.changesmanager.SimpleCommandQueue" />
     <classNode dependClassName="jetbrains.mps.vcs.changesmanager.tree.FeatureForestMap" />
+    <classNode dependClassName="jetbrains.mps.vcs.changesmanager.tree.FeatureForestMapListener" />
     <classNode dependClassName="jetbrains.mps.vcs.changesmanager.tree.FeatureForestMapSupport" />
     <classNode dependClassName="jetbrains.mps.vcs.changesmanager.tree.TreeHighlighterFactory" />
     <classNode dependClassName="jetbrains.mps.vcs.changesmanager.tree.TreeNodeFeatureExtractor" />
@@ -167,11 +171,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModelReference" />
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.DataSource" />
-    <classNode extendsClassName="com.intellij.openapi.vcs.FileStatusListener" />
-    <classNode extendsClassName="jetbrains.mps.ide.ui.tree.MPSTreeNodeListener" />
     <classNode extendsClassName="jetbrains.mps.ide.ui.tree.TreeMessageOwner" />
-    <classNode extendsClassName="jetbrains.mps.smodel.SModelAdapter" />
-    <classNode extendsClassName="jetbrains.mps.vcs.changesmanager.tree.FeatureForestMapListener" />
   </dependency>
   <dependency className="jetbrains.mps.vcs.changesmanager.tree.TreeHighlighterFactory" file="TreeHighlighterFactory.java">
     <classNode dependClassName="com.intellij.openapi.project.Project" />

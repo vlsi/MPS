@@ -350,7 +350,7 @@
       <node id="3342666646761697794" at="67,48,68,89" concept="2" />
       <node id="3342666646761697801" at="68,89,69,174" concept="9" />
       <node id="3342666646761697913" at="72,40,73,17" concept="14" />
-      <node id="3342666646761697766" at="76,63,77,49" concept="9" />
+      <node id="3342666646761697766" at="76,63,77,51" concept="9" />
       <node id="3342666646761697822" at="21,0,23,0" concept="1" trace="JavaDependenciesMerger#()V" />
       <node id="3342666646761697736" at="56,12,58,7" concept="0" />
       <node id="3342666646761697670" at="45,0,48,0" concept="13" trace="loadDependencies#(Ljetbrains/mps/vcs/core/mergedriver/FileContent;)Ljetbrains/mps/make/java/ModelDependencies;" />
@@ -371,7 +371,7 @@
       <scope id="3342666646761697737" at="56,14,57,70" />
       <scope id="3342666646761697751" at="62,67,63,133" />
       <scope id="3342666646761697912" at="72,40,73,17" />
-      <scope id="3342666646761697766" at="76,63,77,49" />
+      <scope id="3342666646761697766" at="76,63,77,51" />
       <scope id="3342666646761697822" at="21,0,23,0" />
       <scope id="3342666646761697876" at="34,0,36,18">
         <var name="e" id="3342666646761697877" />

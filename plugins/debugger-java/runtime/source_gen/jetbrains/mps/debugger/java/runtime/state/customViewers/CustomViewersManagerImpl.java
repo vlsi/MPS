@@ -187,6 +187,6 @@ public class CustomViewersManagerImpl extends CustomViewersManager {
   }
   protected static Logger LOG = LogManager.getLogger(CustomViewersManagerImpl.class);
   private static boolean neq_2btpdq_a0e0n(Object a, Object b) {
-    return !((a != null ? a.equals(b) : a == b));
+    return !(((a != null ? a.equals(b) : a == b)));
   }
 }

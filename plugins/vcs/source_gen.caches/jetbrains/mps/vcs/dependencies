@@ -8,6 +8,7 @@
     <classNode dependClassName="com.intellij.openapi.vcs.AbstractVcs" />
     <classNode dependClassName="com.intellij.openapi.vcs.AbstractVcsHelper" />
     <classNode dependClassName="com.intellij.openapi.vcs.FileStatus" />
+    <classNode dependClassName="com.intellij.openapi.vcs.FileStatusListener" />
     <classNode dependClassName="com.intellij.openapi.vcs.FileStatusManager" />
     <classNode dependClassName="com.intellij.openapi.vcs.ProjectLevelVcsManager" />
     <classNode dependClassName="com.intellij.openapi.vcs.VcsException" />
@@ -18,9 +19,11 @@
     <classNode dependClassName="com.intellij.openapi.vcs.changes.ChangeList" />
     <classNode dependClassName="com.intellij.openapi.vcs.changes.ChangeListAdapter" />
     <classNode dependClassName="com.intellij.openapi.vcs.changes.ChangeListManager" />
+    <classNode dependClassName="com.intellij.openapi.vcs.changes.ChangeListManagerGate" />
     <classNode dependClassName="com.intellij.openapi.vcs.changes.ChangeListManagerImpl" />
     <classNode dependClassName="com.intellij.openapi.vcs.changes.ChangeProvider" />
     <classNode dependClassName="com.intellij.openapi.vcs.changes.ContentRevision" />
+    <classNode dependClassName="com.intellij.openapi.vcs.changes.EmptyChangelistBuilder" />
     <classNode dependClassName="com.intellij.openapi.vcs.changes.LocalChangeList" />
     <classNode dependClassName="com.intellij.openapi.vcs.changes.VcsDirtyScopeImpl" />
     <classNode dependClassName="com.intellij.openapi.vfs.VirtualFile" />
@@ -41,9 +44,6 @@
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode extendsClassName="com.intellij.openapi.components.ProjectComponent" />
-    <classNode extendsClassName="com.intellij.openapi.vcs.FileStatusListener" />
-    <classNode extendsClassName="com.intellij.openapi.vcs.changes.ChangeListManagerGate" />
-    <classNode extendsClassName="com.intellij.openapi.vcs.changes.EmptyChangelistBuilder" />
   </dependency>
   <dependency className="jetbrains.mps.vcs.MPSVcsProjectConfiguration" file="MPSVcsProjectConfiguration.java">
     <classNode dependClassName="com.intellij.ProjectTopics" />

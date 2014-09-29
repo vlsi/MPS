@@ -446,7 +446,7 @@ public class JavaToMpsConverter {
           for (SNode fieldRefOp : ListSequence.fromList(SNodeOperations.getDescendants(node, "jetbrains.mps.baseLanguage.structure.FieldReferenceOperation", false, new String[]{}))) {
 
             SReference fieldRef = SNodeOperations.getReference(fieldRefOp, SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.FieldReferenceOperation", "fieldDeclaration"));
-            if (!(fieldRef instanceof DynamicReference && "length".equals((((DynamicReference) fieldRef).getResolveInfo())))) {
+            if (!((fieldRef instanceof DynamicReference && "length".equals((((DynamicReference) fieldRef).getResolveInfo()))))) {
               continue;
             }
 
@@ -472,7 +472,7 @@ public class JavaToMpsConverter {
           for (SNode imco : ListSequence.fromList(SNodeOperations.getDescendants(node, "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation", false, new String[]{}))) {
 
             SReference fieldRef = SNodeOperations.getReference(imco, SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation", "instanceMethodDeclaration"));
-            if (!(fieldRef instanceof DynamicReference && "clone".equals((((DynamicReference) fieldRef).getResolveInfo())))) {
+            if (!((fieldRef instanceof DynamicReference && "clone".equals((((DynamicReference) fieldRef).getResolveInfo()))))) {
               continue;
             }
 

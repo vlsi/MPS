@@ -647,16 +647,16 @@ public class ParenthesisUtil {
     return (a != null ? a.equals(b) : a == b);
   }
   private static boolean neq_a65dpo_a0a1a72(Object a, Object b) {
-    return !((a != null ? a.equals(b) : a == b));
+    return !(((a != null ? a.equals(b) : a == b)));
   }
   private static boolean eq_a65dpo_a0a1a5a1a72(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
   private static boolean neq_a65dpo_a0f0b0bb(Object a, Object b) {
-    return !((a != null ? a.equals(b) : a == b));
+    return !(((a != null ? a.equals(b) : a == b)));
   }
   private static boolean neq_a65dpo_a0a2a53(Object a, Object b) {
-    return !((a != null ? a.equals(b) : a == b));
+    return !(((a != null ? a.equals(b) : a == b)));
   }
   private static boolean eq_a65dpo_a0a2a2a53(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);

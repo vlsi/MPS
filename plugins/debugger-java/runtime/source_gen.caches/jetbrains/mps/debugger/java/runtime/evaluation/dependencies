@@ -13,6 +13,7 @@
     <classNode dependClassName="jetbrains.mps.debug.api.AbstractDebugSession" />
     <classNode dependClassName="jetbrains.mps.debug.api.DebugSessionManagerComponent" />
     <classNode dependClassName="jetbrains.mps.debugger.java.api.state.JavaUiState" />
+    <classNode dependClassName="jetbrains.mps.debugger.java.runtime.evaluation.IWatchListener" />
     <classNode dependClassName="jetbrains.mps.debugger.java.runtime.evaluation.container.EvaluationModule" />
     <classNode dependClassName="jetbrains.mps.debugger.java.runtime.evaluation.container.IEvaluationContainer" />
     <classNode dependClassName="jetbrains.mps.debugger.java.runtime.evaluation.container.Properties" />
@@ -32,7 +33,6 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModuleReference" />
     <classNode extendsClassName="jetbrains.mps.debug.api.evaluation.IEvaluationProvider" />
-    <classNode extendsClassName="jetbrains.mps.debugger.java.runtime.evaluation.IWatchListener" />
   </dependency>
   <dependency className="jetbrains.mps.debugger.java.runtime.evaluation.EvaluationUtilsImpl" file="EvaluationUtilsImpl.java">
     <classNode dependClassName="com.intellij.openapi.application.ApplicationManager" />

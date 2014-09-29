@@ -293,7 +293,7 @@ public class Classifier_Behavior {
     while (SNodeOperations.getParent(child) != thisNode && child != null) {
       child = SNodeOperations.getParent(child);
     }
-    final boolean isStaticContext = !(child == null) && ((SNodeOperations.isInstanceOf(child, "jetbrains.mps.baseLanguage.structure.ClassifierMember") && BehaviorReflection.invokeVirtual(Boolean.TYPE, SNodeOperations.cast(child, "jetbrains.mps.baseLanguage.structure.ClassifierMember"), "virtual_isStatic_8986964027630462944", new Object[]{})) || (SNodeOperations.isInstanceOf(child, "jetbrains.mps.baseLanguage.structure.Classifier") && BehaviorReflection.invokeVirtual(Boolean.TYPE, SNodeOperations.cast(child, "jetbrains.mps.baseLanguage.structure.Classifier"), "virtual_isStatic_7405920559687241224", new Object[]{})) || SNodeOperations.isInstanceOf(child, "jetbrains.mps.baseLanguage.structure.StaticInitializer"));
+    final boolean isStaticContext = !((child == null)) && ((SNodeOperations.isInstanceOf(child, "jetbrains.mps.baseLanguage.structure.ClassifierMember") && BehaviorReflection.invokeVirtual(Boolean.TYPE, SNodeOperations.cast(child, "jetbrains.mps.baseLanguage.structure.ClassifierMember"), "virtual_isStatic_8986964027630462944", new Object[]{})) || (SNodeOperations.isInstanceOf(child, "jetbrains.mps.baseLanguage.structure.Classifier") && BehaviorReflection.invokeVirtual(Boolean.TYPE, SNodeOperations.cast(child, "jetbrains.mps.baseLanguage.structure.Classifier"), "virtual_isStatic_7405920559687241224", new Object[]{})) || SNodeOperations.isInstanceOf(child, "jetbrains.mps.baseLanguage.structure.StaticInitializer"));
 
     // todo: remove this logic from Classifier 
     if (SConceptOperations.isExactly(kind, "jetbrains.mps.baseLanguage.structure.VariableDeclaration")) {

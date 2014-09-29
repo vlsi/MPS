@@ -45,7 +45,7 @@ public class BuildLayout_Folder_Behavior {
     return true;
   }
   public static boolean virtual_isValidPart_9184644532456897464(SNode thisNode, String propertyValue, String role) {
-    return !(propertyValue.contains("$") || propertyValue.contains("\\"));
+    return !((propertyValue.contains("$") || propertyValue.contains("\\")));
   }
   public static boolean virtual_exports_6547494638219603457(SNode thisNode, Object object) {
     if (object instanceof SNode) {

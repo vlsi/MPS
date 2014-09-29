@@ -22,6 +22,7 @@
     <classNode dependClassName="jetbrains.mps.make.dependencies.MakeSequence" />
     <classNode dependClassName="jetbrains.mps.make.script.IResult" />
     <classNode dependClassName="jetbrains.mps.make.script.IScriptController" />
+    <classNode dependClassName="jetbrains.mps.make.service.CoreMakeTask" />
     <classNode dependClassName="jetbrains.mps.messages.IMessageHandler" />
     <classNode dependClassName="jetbrains.mps.messages.Message" />
     <classNode dependClassName="jetbrains.mps.messages.MessageKind" />
@@ -31,7 +32,6 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.util.ProgressMonitor" />
     <classNode extendsClassName="com.intellij.openapi.progress.Backgroundable" />
     <classNode extendsClassName="java.util.concurrent.Future" />
-    <classNode extendsClassName="jetbrains.mps.make.service.CoreMakeTask" />
   </dependency>
   <dependency className="jetbrains.mps.ide.make.TextPreviewFile" file="TextPreviewFile.java">
     <classNode dependClassName="com.intellij.openapi.fileTypes.FileType" />
@@ -41,6 +41,7 @@
     <classNode dependClassName="com.intellij.openapi.util.io.FileAttributes" />
     <classNode dependClassName="com.intellij.openapi.vfs.VirtualFile" />
     <classNode dependClassName="com.intellij.openapi.vfs.VirtualFileSystem" />
+    <classNode dependClassName="com.intellij.openapi.vfs.newvfs.NewVirtualFileSystem" />
     <classNode dependClassName="com.intellij.util.ArrayUtil" />
     <classNode dependClassName="java.io.IOException" />
     <classNode dependClassName="java.io.InputStream" />
@@ -53,7 +54,6 @@
     <classNode dependClassName="org.jetbrains.annotations.NonNls" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
-    <classNode extendsClassName="com.intellij.openapi.vfs.newvfs.NewVirtualFileSystem" />
     <classNode extendsClassName="com.intellij.openapi.vfs.newvfs.impl.StubVirtualFile" />
   </dependency>
   <dependency className="jetbrains.mps.ide.make.TextPreviewUtil" file="TextPreviewUtil.java">
@@ -178,6 +178,7 @@
     <classNode dependClassName="jetbrains.mps.make.script.IScript" />
     <classNode dependClassName="jetbrains.mps.make.script.IScriptController" />
     <classNode dependClassName="jetbrains.mps.make.script.ScriptBuilder" />
+    <classNode dependClassName="jetbrains.mps.make.script.Stub" />
     <classNode dependClassName="jetbrains.mps.messages.IMessageHandler" />
     <classNode dependClassName="jetbrains.mps.messages.Message" />
     <classNode dependClassName="jetbrains.mps.messages.MessageKind" />
@@ -190,7 +191,6 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.util.ProgressMonitor" />
     <classNode extendsClassName="com.intellij.openapi.components.ApplicationComponent" />
     <classNode extendsClassName="jetbrains.mps.make.IMakeService" />
-    <classNode extendsClassName="jetbrains.mps.make.script.Stub" />
     <classNode extendsClassName="jetbrains.mps.make.service.AbstractMakeService" />
   </dependency>
 </dependenciesRoot>

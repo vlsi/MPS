@@ -67,7 +67,7 @@ public class TemplateSwitch_Constraints extends BaseConstraintsDescriptor {
                   }
                   // contributor's parameter types shall be same or narrow (sic!) than that of modified switch 
                   // so that contributed rules can't expect too much from actual arguments 
-                  return !(TypeChecker.getInstance().getSubtypingManager().isSubtype(SLinkOperations.getTarget(p2, "type", true), SLinkOperations.getTarget(p1, "type", true)) && TypeChecker.getInstance().getSubtypingManager().isSubtype(SLinkOperations.getTarget(p1, "type", true), SLinkOperations.getTarget(p2, "type", true)));
+                  return !((TypeChecker.getInstance().getSubtypingManager().isSubtype(SLinkOperations.getTarget(p2, "type", true), SLinkOperations.getTarget(p1, "type", true)) && TypeChecker.getInstance().getSubtypingManager().isSubtype(SLinkOperations.getTarget(p1, "type", true), SLinkOperations.getTarget(p2, "type", true))));
                 }
                 return false;
               }

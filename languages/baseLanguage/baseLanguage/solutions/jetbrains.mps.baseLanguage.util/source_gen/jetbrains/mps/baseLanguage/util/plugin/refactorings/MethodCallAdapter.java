@@ -13,7 +13,7 @@ public class MethodCallAdapter {
   @NotNull
   private SNode myMethodCall;
   public MethodCallAdapter(@NotNull SNode methodCall) {
-    if (!(SNodeOperations.isInstanceOf(methodCall, "jetbrains.mps.baseLanguage.structure.IMethodCall") || SNodeOperations.isInstanceOf(methodCall, "jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierMethodCallOperation"))) {
+    if (!((SNodeOperations.isInstanceOf(methodCall, "jetbrains.mps.baseLanguage.structure.IMethodCall") || SNodeOperations.isInstanceOf(methodCall, "jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierMethodCallOperation")))) {
       throw new IllegalArgumentException();
     }
     this.myMethodCall = methodCall;

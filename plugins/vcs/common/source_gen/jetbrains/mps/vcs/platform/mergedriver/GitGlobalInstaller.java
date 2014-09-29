@@ -152,6 +152,6 @@ import org.apache.log4j.LogManager;
   }
   protected static Logger LOG = LogManager.getLogger(GitGlobalInstaller.class);
   private static boolean neq_btx4zt_a0a0a0g0t0d(Object a, Object b) {
-    return !((a != null ? a.equals(b) : a == b));
+    return !(((a != null ? a.equals(b) : a == b)));
   }
 }

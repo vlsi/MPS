@@ -65,7 +65,7 @@ public class FileSetUtil {
   public static boolean hasExplicitFilesets(SNode container) {
     return ListSequence.fromList(SLinkOperations.getTargets(container, "children", true)).any(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return !(SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.structure.BuildLayout_FileSet") && BehaviorReflection.invokeVirtual(Boolean.TYPE, SNodeOperations.cast(it, "jetbrains.mps.build.structure.BuildLayout_FileSet"), "virtual_isImplicit_1330375798085107777", new Object[]{})) && !(SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.structure.BuildLayout_Filemode")) && (!(SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.structure.BuildLayout_Folder")) || hasExplicitFilesets(SNodeOperations.cast(it, "jetbrains.mps.build.structure.BuildLayout_Container")));
+        return !((SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.structure.BuildLayout_FileSet") && BehaviorReflection.invokeVirtual(Boolean.TYPE, SNodeOperations.cast(it, "jetbrains.mps.build.structure.BuildLayout_FileSet"), "virtual_isImplicit_1330375798085107777", new Object[]{}))) && !(SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.structure.BuildLayout_Filemode")) && (!(SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.structure.BuildLayout_Folder")) || hasExplicitFilesets(SNodeOperations.cast(it, "jetbrains.mps.build.structure.BuildLayout_Container")));
       }
     });
   }

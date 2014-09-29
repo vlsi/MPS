@@ -122,7 +122,7 @@ public abstract class TwoOptionsStep<M> extends AbstractStep {
   }
   private ComboBoxModel updateComboBoxModel() {
     M[] newVariants = this.getVariants();
-    if (!(this.mySelectComboBox == null) && Arrays.deepEquals(newVariants, this.myVariantsArray)) {
+    if (!((this.mySelectComboBox == null)) && Arrays.deepEquals(newVariants, this.myVariantsArray)) {
       return this.mySelectComboBox.getModel();
     }
     this.myVariantsArray = newVariants;

@@ -261,7 +261,7 @@ public class ModelReader8Handler extends XMLSAXHandler<ModelLoadResult> {
       return super.createChild(resultObject, tagName, attrs);
     }
     private boolean checkroot_1768088633166530069(Object resultObject, Attributes attrs) {
-      return !(fieldstripImplementation && fieldhelper.isImplementationNode(attrs.getValue("nodeInfo")));
+      return !((fieldstripImplementation && fieldhelper.isImplementationNode(attrs.getValue("nodeInfo"))));
     }
     private void handleChild_286176397450364079(Object resultObject, Object value) throws SAXException {
       SModuleReference child = (SModuleReference) value;

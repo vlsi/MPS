@@ -19,7 +19,7 @@
   </root>
   <root nodeRef="r:af5f8eb9-49c0-4279-87d3-3c80b1a56988(jetbrains.mps.samples.Kaja.typesystem)/1645404595816833416">
     <file name="RepetitionCheck_NonTypesystemRule.java">
-      <node id="1645404595817039298" at="22,451,23,13" concept="8" />
+      <node id="1645404595817039298" at="22,453,23,13" concept="8" />
       <node id="1645404595817114210" at="26,400,27,15" concept="8" />
       <node id="1645404595817116829" at="29,7,30,60" concept="7" />
       <node id="1645404595817116829" at="30,60,31,289" concept="7" />
@@ -41,7 +41,7 @@
       <node id="1645404595817040751" at="24,5,37,5" concept="5" />
       <node id="1645404595816833416" at="21,0,39,0" concept="6" trace="applyRule#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
       <scope id="1645404595816833416" at="19,46,19,46" />
-      <scope id="1645404595816956327" at="22,451,23,13" />
+      <scope id="1645404595816956327" at="22,453,23,13" />
       <scope id="1645404595817065949" at="26,400,27,15" />
       <scope id="1645404595816833416" at="39,46,40,66" />
       <scope id="1645404595816833416" at="48,30,49,17" />

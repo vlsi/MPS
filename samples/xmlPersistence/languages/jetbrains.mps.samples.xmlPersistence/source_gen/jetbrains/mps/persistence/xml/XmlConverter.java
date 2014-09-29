@@ -85,7 +85,7 @@ public class XmlConverter {
     } else if (c instanceof Text) {
       String text = ((Text) c).getText();
       int index = 0;
-      boolean nlSeen = !(prev == null || prev instanceof Element);
+      boolean nlSeen = !((prev == null || prev instanceof Element));
       for (; index < text.length(); index++) {
         char ch = text.charAt(index);
         if (ch == '\n') {

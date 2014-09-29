@@ -20,7 +20,7 @@ public class ListMigrationUtil {
       return false;
     }
     SNode type = TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.DotExpression"), "operand", true));
-    if (!(SNodeOperations.isInstanceOf(type, "jetbrains.mps.baseLanguage.collections.structure.ListType") || SNodeOperations.isInstanceOf(type, "jetbrains.mps.lang.smodel.structure.SNodeListType"))) {
+    if (!((SNodeOperations.isInstanceOf(type, "jetbrains.mps.baseLanguage.collections.structure.ListType") || SNodeOperations.isInstanceOf(type, "jetbrains.mps.lang.smodel.structure.SNodeListType")))) {
       return false;
     }
     return ListMigrationUtil.isApplicableMethod(node, name, params);
@@ -50,7 +50,7 @@ public class ListMigrationUtil {
       return false;
     }
     SNode type = TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.DotExpression"), "operand", true));
-    if (!(SNodeOperations.isInstanceOf(type, "jetbrains.mps.baseLanguage.collections.structure.ListType") || SNodeOperations.isInstanceOf(type, "jetbrains.mps.lang.smodel.structure.SNodeListType") || SNodeOperations.isInstanceOf(type, "jetbrains.mps.baseLanguage.collections.structure.SetType"))) {
+    if (!((SNodeOperations.isInstanceOf(type, "jetbrains.mps.baseLanguage.collections.structure.ListType") || SNodeOperations.isInstanceOf(type, "jetbrains.mps.lang.smodel.structure.SNodeListType") || SNodeOperations.isInstanceOf(type, "jetbrains.mps.baseLanguage.collections.structure.SetType")))) {
       return false;
     }
     return ListMigrationUtil.isApplicableMethod(node, name, params);
@@ -70,7 +70,7 @@ public class ListMigrationUtil {
     if (neq_gtz9m1_a0b0g(SPropertyOperations.getString(declaration, "name"), name)) {
       return false;
     }
-    if (!(eq_gtz9m1_a0a2a6(SModelOperations.getModelName(SNodeOperations.getModel(declaration)), "java.util"))) {
+    if (!((eq_gtz9m1_a0a0c0g(SModelOperations.getModelName(SNodeOperations.getModel(declaration)), "java.util")))) {
       return false;
     }
     if (ListSequence.fromList(SLinkOperations.getTargets(node, "actualArgument", true)).count() != ListSequence.fromList(params).count()) {
@@ -126,9 +126,9 @@ public class ListMigrationUtil {
     return false;
   }
   private static boolean neq_gtz9m1_a0b0g(Object a, Object b) {
-    return !((a != null ? a.equals(b) : a == b));
+    return !(((a != null ? a.equals(b) : a == b)));
   }
-  private static boolean eq_gtz9m1_a0a2a6(Object a, Object b) {
+  private static boolean eq_gtz9m1_a0a0c0g(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
 }

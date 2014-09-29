@@ -134,7 +134,7 @@ public class AnnotationUtil {
     return quotedNode_1;
   }
   private static boolean neq_3nvpiw_a0a0a0a0a0a0a(Object a, Object b) {
-    return !((a != null ? a.equals(b) : a == b));
+    return !(((a != null ? a.equals(b) : a == b)));
   }
   private static boolean eq_3nvpiw_a0a0a0a0a0a0a1(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);

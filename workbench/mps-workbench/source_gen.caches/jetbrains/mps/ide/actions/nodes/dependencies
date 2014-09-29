@@ -12,6 +12,7 @@
     <classNode dependClassName="javax.swing.AbstractAction" />
     <classNode dependClassName="javax.swing.Action" />
     <classNode dependClassName="javax.swing.JLabel" />
+    <classNode dependClassName="javax.swing.JPopupMenu" />
     <classNode dependClassName="javax.swing.SwingConstants" />
     <classNode dependClassName="javax.swing.border.EmptyBorder" />
     <classNode dependClassName="jetbrains.mps.ide.icons.IconManager" />
@@ -36,7 +37,6 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeUtil" />
-    <classNode extendsClassName="javax.swing.JPopupMenu" />
   </dependency>
 </dependenciesRoot>
 

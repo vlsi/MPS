@@ -1,3 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="7nnu8nce4w3xaci9xlki3os5450jj37" />
+<dependencies version="2" modelHash="7nnu8nce4w3xaci9xlki3os5450jj37">
+  <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
+  <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.runtime.impl(MPS.Core/jetbrains.mps.smodel.runtime.impl@java_stub)" />
+  <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="-2hubvwh7bwismm0eld02cqmdefvj5by" />
+  <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" hash="-6irb241uclypyqbck1xyhuimii12zbl" />
+  <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" hash="-2sqpydigz7vryaerubh22j78l4l08jz" />
+  <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="d987foka3qddszg3k3yjss0jaslj9i" />
+  <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="8cdjk2e5d2y2u9lult1ptgxxrttxv07" />
+  <common hash="-9anyhlabz0gcyk66e0whrk2anf1asfj" dependsOnNodes="true">
+    <dep root="2278461409091562761" />
+    <dep root="511002117671747962" />
+    <dep root="511002117671748019" />
+    <dep root="5540569706413451931" />
+    <dep root="5540569706414436817" />
+    <dep root="5540569706414436850" />
+    <dep root="5540569706414436906" />
+    <dep root="822550549814787038" />
+    <dep root="8794120090374233314" />
+    <dep root="8794120090374233605" />
+    <dep root="8794120090374242986" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
+    <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.runtime.impl(MPS.Core/jetbrains.mps.smodel.runtime.impl@java_stub)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
+    <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
+    <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
+    <file name="StructureAspectDescriptor.java" />
+  </common>
+  <source id="511002117671747962" name="Diagram1" hash="-59mrzu5ohpvlexbzc6zylc4v89syt9p" />
+  <source id="511002117671748019" name="RectangleNode" hash="-5ooks2u6egux3g54jx0txzzcgjqmcpf" />
+  <source id="8794120090374233314" name="Diagram2" hash="1e8th48y032u7pwy5r48lwf4j09d39b" />
+  <source id="8794120090374233605" name="Node" hash="-b69wleizya2u6uwymomqbnoeessf8py" />
+  <source id="8794120090374242986" name="NodeWithSize" hash="1fv8mobdp5pq61njvu25ojx2pax6915" />
+  <source id="5540569706413451931" name="OutputToInputPortConnector" hash="-6v2mz75zpluhjc6ohjbwsq0zn6jrr9q" />
+  <source id="5540569706414436817" name="NodeWithPorts" hash="7sdiyq7gh2k06p4hrwb838tx922y3xv" />
+  <source id="5540569706414436850" name="InputPort" hash="-a7dzf9kueqqbvgq5y92xvvozi6w3qtx" />
+  <source id="5540569706414436906" name="OutputPort" hash="1ojvy7ep8vjx3joiw1eclw2cyb9eo7k" />
+  <source id="822550549814787038" name="NodeWithName" hash="jm9dnzpgt37vk39lb0p0sh13md21h" />
+  <source id="2278461409091562761" name="NodeWithPortQueries" hash="-2hh4j37en93rj8dno4n2zxfemohbcy5" />
+</dependencies>
 

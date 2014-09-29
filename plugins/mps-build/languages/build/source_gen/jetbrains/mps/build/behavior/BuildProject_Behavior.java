@@ -186,7 +186,7 @@ public class BuildProject_Behavior {
         // we can only see what was strictly before us 
         rootScope = ScopeUtil.where(rootScope, new _FunctionTypes._return_P1_E0<Boolean, SNode>() {
           public Boolean invoke(SNode visibleNode) {
-            return !(ListSequence.fromList(SNodeOperations.getNextSiblings(definedMacro.value, false)).contains(visibleNode)) && !(eq_save77_a0a0a0a0a1a0b0c0f0l(definedMacro.value, visibleNode));
+            return !(ListSequence.fromList(SNodeOperations.getNextSiblings(definedMacro.value, false)).contains(visibleNode)) && !((eq_save77_a0a0a0a0a0b0a1a2a5a11(definedMacro.value, visibleNode)));
           }
         });
       }
@@ -226,9 +226,9 @@ public class BuildProject_Behavior {
     return str == null || str.length() == 0;
   }
   private static boolean neq_save77_a0e0l(Object a, Object b) {
-    return !((a != null ? a.equals(b) : a == b));
+    return !(((a != null ? a.equals(b) : a == b)));
   }
-  private static boolean eq_save77_a0a0a0a0a1a0b0c0f0l(Object a, Object b) {
+  private static boolean eq_save77_a0a0a0a0a0b0a1a2a5a11(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
 }
