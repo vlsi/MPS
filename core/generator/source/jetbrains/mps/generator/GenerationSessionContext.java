@@ -15,16 +15,13 @@
  */
 package jetbrains.mps.generator;
 
-import jetbrains.mps.extapi.persistence.DataSourceBase;
 import jetbrains.mps.generator.impl.ExportsVault;
 import jetbrains.mps.generator.impl.GenControllerContext;
 import jetbrains.mps.generator.impl.GenerationSessionLogger;
-import jetbrains.mps.generator.impl.ModelStreamManager;
 import jetbrains.mps.generator.impl.RoleValidation;
 import jetbrains.mps.generator.impl.cache.QueryProviderCache;
 import jetbrains.mps.generator.impl.plan.GenerationPlan;
 import jetbrains.mps.generator.impl.query.GeneratorQueryProvider;
-import jetbrains.mps.persistence.PersistenceRegistry;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.project.StandaloneMPSContext;
 import jetbrains.mps.smodel.SNodePointer;
@@ -40,14 +37,7 @@ import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
-import org.jetbrains.mps.openapi.persistence.ModelFactory;
-import org.jetbrains.mps.openapi.persistence.MultiStreamDataSource;
-import org.jetbrains.mps.openapi.persistence.StreamDataSource;
 
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.OutputStream;
-import java.util.Collections;
 import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
@@ -60,7 +50,7 @@ import java.util.concurrent.ConcurrentMap;
  */
 public class GenerationSessionContext extends StandaloneMPSContext implements GeneratorQueryProvider.Source {
 
-  private static final Object COPIED_ROOTS = new Object();
+  private final Object COPIED_ROOTS = new Object();
 
   private final SModel myOriginalInputModel;
 
@@ -91,6 +81,8 @@ public class GenerationSessionContext extends StandaloneMPSContext implements Ge
    */
   private final Map<Object, Object> mySessionObjects;
 
+  private final ExportsVault myExportsVault;
+
   // these objects survive through all steps of generation
   private final ConcurrentMap<SNodeReference, Set<String>> myUsedNames;
   private final SAbstractConcept myNamedConcept;
@@ -111,6 +103,7 @@ public class GenerationSessionContext extends StandaloneMPSContext implements Ge
     myGenerationPlan = null;
     myValidation = new RoleValidation(environment.getOptions().isShowBadChildWarning());
     myNamedConcept = SConceptRepository.getInstance().getConcept(SNodeUtil.concept_INamedConcept);
+    myExportsVault = new ExportsVault(this, environment.getStreamProvider());
     mySessionObjects = new ConcurrentHashMap<Object, Object>();
     myTransientObjects = new ConcurrentHashMap<Object, Object>();
     myStepObjects = new ConcurrentHashMap<Object, Object>();
@@ -213,60 +206,7 @@ public class GenerationSessionContext extends StandaloneMPSContext implements Ge
     return result == NULL_OBJECT ? null : result;
   }
 
-  private ExportsVault myExportsVault;
-  // FIXME at least threading, copy field value in copy cons
   public ExportsVault getExports() {
-    if (myExportsVault == null) {
-      final ModelStreamManager streamManager = myEnvironment.getStreamProvider().getStreamManager(getOriginalInputModel());
-      /**
-       * Adapts MultiStreamDataSource to StreamDataSource (picks one stream).
-       */
-      class SingleStreamSource extends DataSourceBase implements StreamDataSource {
-        private final MultiStreamDataSource myDataSource;
-        private final String myStreamName;
-
-        public SingleStreamSource(@NotNull MultiStreamDataSource streamDataSource, @NotNull String name) {
-          myDataSource = streamDataSource;
-          myStreamName = name;
-        }
-
-        @Override
-        public boolean isReadOnly() {
-          return false;
-        }
-
-        @NotNull
-        @Override
-        public String getLocation() {
-          return myStreamName;
-        }
-
-        @Override
-        public InputStream openInputStream() throws IOException {
-          return myDataSource.openInputStream(myStreamName);
-        }
-
-        @Override
-        public OutputStream openOutputStream() throws IOException {
-          return myDataSource.openOutputStream(myStreamName);
-        }
-      };
-      final ModelFactory modelFactory = PersistenceRegistry.getInstance().getDefaultModelFactory();
-      SModel exportsModel;
-      final SingleStreamSource source = new SingleStreamSource(streamManager.getOutputLocation(), "exports");
-      try {
-          if (IterableUtil.asSet(streamManager.getOutputLocation().getAvailableStreams()).contains("exports")) {
-            exportsModel = modelFactory.load(source, Collections.<String,String>emptyMap());
-          } else {
-            exportsModel = modelFactory.create(source,
-                Collections.singletonMap(ModelFactory.OPTION_MODELNAME, getOriginalInputModel().getModelName()));
-          }
-      } catch (IOException ex) {
-        // FIXME need better handling. Rather create model outside?
-        throw new IllegalStateException("Could not create model to keep cross-model exports", ex);
-      }
-      myExportsVault = new ExportsVault(this, exportsModel);
-    }
     return myExportsVault;
   }
 

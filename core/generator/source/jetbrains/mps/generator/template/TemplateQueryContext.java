@@ -231,7 +231,7 @@ public class TemplateQueryContext {
 
   public SNode getOutputNodeProxy(SNode inputNode, String exportLabelName) {
     final ExportsVault exportsVault = myGenerator.getGeneratorSessionContext().getExports();
-    final Collection<SNode> exportProxies = exportsVault.find(exportLabelName, inputNode);
+    final Collection<SNode> exportProxies = exportsVault.find(exportLabelName, getInputModel(), inputNode);
     if (exportProxies.isEmpty()) {
       return null;
     }
