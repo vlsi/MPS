@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model modelUID="r:33dab35c-9da1-4f75-8cf9-47e2c5f4039d(jetbrains.mps.generator.crossmodel.sandbox.entrymodel2)">
+  <persistence version="8" />
+  <language namespace="4d14758c-3ecb-486d-b8c8-ea5beb8ae408(jetbrains.mps.generator.test.crossmodel.entity)" />
+  <import index="hcj1" modelUID="r:05c2f926-57b0-4b6d-930c-1aabb187694d(jetbrains.mps.generator.crossmodel.sandbox.entrymodel1)" version="-1" />
+  <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
+  <import index="qz7j" modelUID="r:9b56ed90-436a-4093-aab2-2dfe5d09ce42(jetbrains.mps.generator.test.crossmodel.entity.structure)" version="-1" implicit="yes" />
+  <root type="qz7j.NodeA" typeId="qz7j.4355167635271935075" id="4355167635272070340" nodeInfo="ng">
+    <property name="name" nameId="tpck.1169194664001" value="Second" />
+    <node role="entries" roleId="qz7j.4355167635271953276" type="qz7j.Entry" typeId="qz7j.4355167635271935478" id="4355167635272070341" nodeInfo="ng">
+      <property name="name" nameId="tpck.1169194664001" value="EntryThree" />
+      <property name="kind" nameId="qz7j.4355167635271953278" value="2" />
+      <link role="use3" roleId="qz7j.4355167635271952397" targetNodeId="4355167635272070341" resolveInfo="EntryThree" />
+      <link role="owner" roleId="qz7j.3003826652066045294" targetNodeId="4355167635272070340" resolveInfo="Second" />
+      <link role="use1" roleId="qz7j.4355167635271952392" targetNodeId="hcj1.4355167635272070329" resolveInfo="EntryOne" />
+      <link role="use2" roleId="qz7j.4355167635271952394" targetNodeId="hcj1.4355167635272070331" resolveInfo="EntryTwo" />
+    </node>
+  </root>
+</model>
+
