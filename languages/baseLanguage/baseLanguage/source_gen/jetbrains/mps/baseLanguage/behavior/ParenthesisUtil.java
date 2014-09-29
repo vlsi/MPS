@@ -229,7 +229,6 @@ public class ParenthesisUtil {
     // Find the turning points, if exist, otherwise just wrap in parens 
     SNode leftTurn = ParenthesisUtil.findLeftTurn(leftExpression, firstCommonAncestor);
     SNode rightTurn = ParenthesisUtil.findRightTurn(rightExpression, firstCommonAncestor);
-    System.out.println("BBBBBBB " + leftExpression + ":" + rightExpression + ":" + leftTurn + ":" + rightTurn);
 
     if (leftTurn != null || rightTurn != null) {
       SNode parens = ParenthesisUtil.rebalance(leftTurn, SNodeOperations.cast(firstCommonAncestor, "jetbrains.mps.baseLanguage.structure.IBinaryLike"), rightTurn);

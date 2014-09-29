@@ -371,7 +371,7 @@ class GenerationSession {
       } finally {
         // if apply fails with exception, I'd like to keep both current input and output.
         final boolean generationFailed = !applySucceed;
-        final boolean inplaceChange = tg.getOutputModel() == currentOutputModel;
+        final boolean inplaceChange = tg.getOutputModel() != currentOutputModel;
         if (generationFailed) {
           publishTransientModel(currentInputModel.getReference());
           if (!inplaceChange) {
