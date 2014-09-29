@@ -9,7 +9,9 @@ import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.Map;
-import java.util.HashMap;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import java.util.Collections;
+import jetbrains.mps.baseLanguage.scopes.MethodResolveUtil;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
@@ -27,7 +29,11 @@ public class ConstructorInvocationStatement_Behavior {
     return _quotation_createNode_teq92u_a3a0(typeVarRefs, concept);
   }
   public static Map<SNode, SNode> virtual_getTypesByTypeVars_851115533308208851(SNode thisNode) {
-    return new HashMap<SNode, SNode>();
+    SNode instanceType = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getInstanceType_8008512149545154471", new Object[]{});
+    if ((SLinkOperations.getTarget(instanceType, "classifier", false) == null)) {
+      return Collections.emptyMap();
+    }
+    return MethodResolveUtil.getTypesByTypeVars(SLinkOperations.getTarget(instanceType, "classifier", false), SLinkOperations.getTargets(instanceType, "parameter", true));
   }
   private static SNode _quotation_createNode_teq92u_a0a0a2a0(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();

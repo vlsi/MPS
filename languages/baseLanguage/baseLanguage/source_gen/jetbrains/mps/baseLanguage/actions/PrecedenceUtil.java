@@ -84,7 +84,12 @@ public class PrecedenceUtil {
   }
 
   public static boolean needsParensAroundCastExpression(SNode castExpression) {
-    return !((SLinkOperations.getTarget(castExpression, "expression", true) == null) || BehaviorReflection.invokeVirtual(Boolean.TYPE, SLinkOperations.getTarget(castExpression, "expression", true), "virtual_isCompileTimeConstant_1238860258777", new Object[]{}) || SNodeOperations.isInstanceOf(SLinkOperations.getTarget(castExpression, "expression", true), "jetbrains.mps.baseLanguage.structure.GenericNewExpression") || (!(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(castExpression, "expression", true), "jetbrains.mps.baseLanguage.structure.TernaryOperatorExpression")) && !(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(castExpression, "expression", true), "jetbrains.mps.baseLanguage.structure.BinaryOperation"))) || PrecedenceUtil.isHigherPriority(SLinkOperations.getTarget(castExpression, "expression", true), castExpression));
+    return !(((SLinkOperations.getTarget(castExpression, "expression", true) == null) || BehaviorReflection.invokeVirtual(Boolean.TYPE, SLinkOperations.getTarget(castExpression, "expression", true), "virtual_isCompileTimeConstant_1238860258777", new Object[]{}) || SNodeOperations.isInstanceOf(SLinkOperations.getTarget(castExpression, "expression", true), "jetbrains.mps.baseLanguage.structure.GenericNewExpression") || (!(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(castExpression, "expression", true), "jetbrains.mps.baseLanguage.structure.TernaryOperatorExpression")) && !(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(castExpression, "expression", true), "jetbrains.mps.baseLanguage.structure.BinaryOperation"))) || PrecedenceUtil.isHigherPriority(SLinkOperations.getTarget(castExpression, "expression", true), castExpression)));
+
+  }
+
+  public static boolean needsParensAroundNotExpression(SNode notExpression) {
+    return !(((SLinkOperations.getTarget(notExpression, "expression", true) == null) || BehaviorReflection.invokeVirtual(Boolean.TYPE, SLinkOperations.getTarget(notExpression, "expression", true), "virtual_isCompileTimeConstant_1238860258777", new Object[]{}) || (!(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(notExpression, "expression", true), "jetbrains.mps.baseLanguage.structure.TernaryOperatorExpression")) && !(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(notExpression, "expression", true), "jetbrains.mps.baseLanguage.structure.BinaryOperation"))) || PrecedenceUtil.isHigherPriority(SLinkOperations.getTarget(notExpression, "expression", true), notExpression)));
 
   }
 

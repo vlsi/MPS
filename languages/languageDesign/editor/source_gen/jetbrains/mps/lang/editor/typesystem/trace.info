@@ -2217,7 +2217,7 @@
       <node id="8307535009119131279" at="50,5,51,130" concept="8" />
       <node id="8307535009119131279" at="51,130,52,45" concept="9" />
       <node id="8307535009119131279" at="55,30,56,17" concept="9" />
-      <node id="3160281275655059152" at="58,73,59,49" concept="9" />
+      <node id="3160281275655059152" at="58,73,59,51" concept="9" />
       <node id="8307535009119131279" at="24,0,26,0" concept="2" trace="check_StyleAttributeDeclaration_NonTypesystemRule#()V" />
       <node id="3160281275655039769" at="34,0,37,0" concept="7" trace="translate#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/Iterable;" />
       <node id="3160281275655055053" at="38,0,41,0" concept="7" trace="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
@@ -2235,7 +2235,7 @@
       <scope id="3160281275655055054" at="38,39,39,158" />
       <scope id="8307535009119131279" at="46,46,47,75" />
       <scope id="8307535009119131279" at="55,30,56,17" />
-      <scope id="3160281275655059152" at="58,73,59,49" />
+      <scope id="3160281275655059152" at="58,73,59,51" />
       <scope id="8307535009119131279" at="24,0,26,0" />
       <scope id="8307535009119141639" at="28,86,30,274">
         <var name="_reporter_2309309498" id="8307535009119141639" />

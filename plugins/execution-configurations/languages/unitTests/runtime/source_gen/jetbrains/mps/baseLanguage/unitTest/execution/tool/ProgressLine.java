@@ -56,7 +56,7 @@ public class ProgressLine extends JPanel implements TestView {
   private void updateProgressBar(int defected, int total, int completed) {
     if (defected > 0) {
       myProgressBar.setColor(ColorProgressBar.RED);
-    } else if (myState.isTerminated() && !(total == completed)) {
+    } else if (myState.isTerminated() && !((total == completed))) {
       myProgressBar.setColor(ColorProgressBar.YELLOW);
     }
     if (total != 0) {

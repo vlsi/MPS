@@ -23,7 +23,7 @@ import com.intellij.openapi.project.Project;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.Nullable;
 
-public abstract class BasePrefsPage extends ConfigurableEP<Configurable> implements Configurable, NonDefaultProjectConfigurable {
+public abstract class BasePrefsPage extends ConfigurableEP<Configurable> implements Configurable {
   private Project myProject;
   private BaseProjectPrefsComponent myPrefsComponent;
 

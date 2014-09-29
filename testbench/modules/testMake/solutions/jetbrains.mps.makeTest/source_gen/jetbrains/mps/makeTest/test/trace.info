@@ -15,27 +15,25 @@
   <root nodeRef="r:7aeccf7b-2a92-4693-88a5-f2859521757a(jetbrains.mps.makeTest.test)/1957199320903967681">
     <file name="ChangeModel.java">
       <node id="1957199320903967682" at="11,0,12,0" concept="3" trace="myModel" />
-      <node id="1957199320903967690" at="14,36,15,59" concept="2" />
-      <node id="8788437410276520176" at="15,59,16,87" concept="2" />
-      <node id="8788437410276521488" at="16,87,17,76" concept="2" />
-      <node id="1578360511943351820" at="19,38,20,39" concept="7" />
-      <node id="1578360511943376462" at="20,39,21,29" concept="2" />
+      <node id="988991174664027542" at="14,36,15,67" concept="2" />
+      <node id="1578360511943351820" at="17,38,18,39" concept="7" />
+      <node id="1578360511943376462" at="18,39,19,29" concept="2" />
       <node id="7137969394171673935" at="12,0,14,0" concept="1" trace="ChangeModel#()V" />
-      <node id="1957199320903967699" at="19,0,23,0" concept="6" trace="rollback#(Lorg/jetbrains/mps/openapi/model/SModel;)V" />
-      <node id="1957199320903967686" at="14,0,19,0" concept="6" trace="change#(Lorg/jetbrains/mps/openapi/model/SModel;)V" />
+      <node id="1957199320903967686" at="14,0,17,0" concept="6" trace="change#(Lorg/jetbrains/mps/openapi/model/SModel;)V" />
+      <node id="1957199320903967699" at="17,0,21,0" concept="6" trace="rollback#(Lorg/jetbrains/mps/openapi/model/SModel;)V" />
       <scope id="7137969394171673938" at="12,24,12,24" />
+      <scope id="1957199320903967689" at="14,36,15,67" />
       <scope id="7137969394171673935" at="12,0,14,0" />
-      <scope id="1957199320903967701" at="19,38,21,29">
+      <scope id="1957199320903967701" at="17,38,19,29">
         <var name="md" id="1578360511943351821" />
       </scope>
-      <scope id="1957199320903967689" at="14,36,17,76" />
-      <scope id="1957199320903967699" at="19,0,23,0">
-        <var name="model" id="1957199320903967712" />
-      </scope>
-      <scope id="1957199320903967686" at="14,0,19,0">
+      <scope id="1957199320903967686" at="14,0,17,0">
         <var name="model" id="1957199320903967697" />
       </scope>
-      <unit id="1957199320903967681" at="10,0,24,0" name="jetbrains.mps.makeTest.test.ChangeModel" />
+      <scope id="1957199320903967699" at="17,0,21,0">
+        <var name="model" id="1957199320903967712" />
+      </scope>
+      <unit id="1957199320903967681" at="10,0,22,0" name="jetbrains.mps.makeTest.test.ChangeModel" />
     </file>
   </root>
   <root nodeRef="r:7aeccf7b-2a92-4693-88a5-f2859521757a(jetbrains.mps.makeTest.test)/1957199320903967715">

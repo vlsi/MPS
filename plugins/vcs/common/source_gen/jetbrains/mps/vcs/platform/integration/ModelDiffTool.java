@@ -107,7 +107,7 @@ public class ModelDiffTool implements DiffTool {
       FileType contentType = content.getContentType();
       String ext = MPSExtentions.MODEL;
       // we use same model loader for perroot (to load root or header) and file persistence 
-      if (contentType != null && !(contentType.equals(MPSFileTypeFactory.MPS_ROOT_FILE_TYPE) || contentType.equals(MPSFileTypeFactory.MPS_HEADER_FILE_TYPE))) {
+      if (contentType != null && !((contentType.equals(MPSFileTypeFactory.MPS_ROOT_FILE_TYPE) || contentType.equals(MPSFileTypeFactory.MPS_HEADER_FILE_TYPE)))) {
         contentType.getDefaultExtension();
       }
       return PersistenceUtil.loadModel(new String(bytes, FileUtil.DEFAULT_CHARSET), ext);

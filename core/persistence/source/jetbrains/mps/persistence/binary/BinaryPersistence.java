@@ -17,7 +17,10 @@ package jetbrains.mps.persistence.binary;
 
 import jetbrains.mps.extapi.model.GeneratableSModel;
 import jetbrains.mps.persistence.PersistenceRegistry;
+import jetbrains.mps.smodel.DefaultSModel;
+import jetbrains.mps.smodel.LazySModel;
 import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.SModelHeader;
 import jetbrains.mps.smodel.loading.ModelLoadResult;
 import jetbrains.mps.smodel.loading.ModelLoadingState;
 import jetbrains.mps.smodel.persistence.def.ModelReadException;
@@ -50,7 +53,7 @@ import static jetbrains.mps.smodel.SModel.ImportElement;
  */
 public class BinaryPersistence {
 
-  public static BinaryModelHeader readHeader(@NotNull StreamDataSource source) throws ModelReadException {
+  public static SModelHeader readHeader(@NotNull StreamDataSource source) throws ModelReadException {
     ModelInputStream mis = null;
     try {
       mis = new ModelInputStream(source.openInputStream());
@@ -75,11 +78,11 @@ public class BinaryPersistence {
   }
 
   @NotNull
-  public static BinarySModel readModel(@NotNull final InputStream content) throws ModelReadException {
+  public static SModel readModel(@NotNull final InputStream content) throws ModelReadException {
     ModelInputStream mis = null;
     try {
       mis = new ModelInputStream(content);
-      return (BinarySModel) loadModel(null, mis, false).getModel();
+      return loadModel(null, mis, false).getModel();
     } catch (IOException e) {
       throw new ModelReadException("Couldn't read model: " + e.getMessage(), e);
     } finally {
@@ -104,7 +107,7 @@ public class BinaryPersistence {
   private static final int STREAM_ID = 0x00300;
 
   @NotNull
-  private static BinaryModelHeader loadHeader(ModelInputStream is) throws IOException {
+  private static SModelHeader loadHeader(ModelInputStream is) throws IOException {
     if (is.readInt() != HEADER) {
       throw new IOException("bad stream, no header");
     }
@@ -115,7 +118,8 @@ public class BinaryPersistence {
     }
 
     SModelReference modelRef = is.readModelReference();
-    BinaryModelHeader result = new BinaryModelHeader(modelRef);
+    SModelHeader result = new SModelHeader();
+    result.setModelReference(modelRef);
     result.setVersion(is.readInt());
     result.setDoNotGenerate(is.readBoolean());
     if (is.readInt() != 0xabab) {
@@ -124,7 +128,7 @@ public class BinaryPersistence {
     return result;
   }
 
-  private static void loadModelProperties(BinarySModel model, ModelInputStream is) throws IOException {
+  private static void loadModelProperties(SModel model, ModelInputStream is) throws IOException {
     for (SModuleReference ref : loadModuleRefList(is)) model.addLanguage(ref);
     for (SModuleReference ref : loadModuleRefList(is)) model.addEngagedOnGenerationLanguage(ref);
     for (SModuleReference ref : loadModuleRefList(is)) model.addDevKit(ref);
@@ -139,12 +143,12 @@ public class BinaryPersistence {
 
   @NotNull
   private static ModelLoadResult loadModel(@Nullable SModelReference modelReference, ModelInputStream is, boolean interfaceOnly) throws IOException {
-    BinaryModelHeader modelHeader = loadHeader(is);
+    SModelHeader modelHeader = loadHeader(is);
     if (modelReference == null) {
-      modelReference = modelHeader.getReference();
+      modelReference = modelHeader.getModelReference();
     }
 
-    BinarySModel model = new BinarySModel(modelHeader);
+    LazySModel model = new DefaultSModel(modelReference, modelHeader);
     loadModelProperties(model, is);
 
     NodesReader reader = new NodesReader(modelReference, interfaceOnly);
@@ -177,18 +181,18 @@ public class BinaryPersistence {
     os.writeInt(HEADER);
     os.writeInt(STREAM_ID);
     os.writeModelReference(model.getReference());
-    os.writeInt((model).getVersion());
+    os.writeInt(model.getVersion());
     org.jetbrains.mps.openapi.model.SModel md = model.getModelDescriptor();
     os.writeBoolean((md instanceof GeneratableSModel) && ((GeneratableSModel) md).isDoNotGenerate());
     os.writeInt(0xabab);
 
-    saveModuleRefList((model).importedLanguages(), os);
-    saveModuleRefList((model).engagedOnGenerationLanguages(), os);
-    saveModuleRefList((model).importedDevkits(), os);
+    saveModuleRefList(model.importedLanguages(), os);
+    saveModuleRefList(model.engagedOnGenerationLanguages(), os);
+    saveModuleRefList(model.importedDevkits(), os);
 
     // imports
-    saveImports((model).importedModels(), os);
-    saveImports((model).getAdditionalModelVersions(), os);
+    saveImports(model.importedModels(), os);
+    saveImports(model.getAdditionalModelVersions(), os);
 
     os.writeInt(0xbaba);
   }
@@ -231,13 +235,13 @@ public class BinaryPersistence {
     ModelInputStream mis = null;
     try {
       mis = new ModelInputStream(new ByteArrayInputStream(content));
-      BinaryModelHeader modelHeader = loadHeader(mis);
-      BinarySModel model = new BinarySModel(modelHeader);
+      SModelHeader modelHeader = loadHeader(mis);
+      SModel model = new DefaultSModel(modelHeader.getModelReference(), modelHeader);
       loadModelProperties(model, mis);
       for (ImportElement element : model.importedModels()) {
         consumer.consume(element.getModelReference().getModelName());
       }
-      new NodesReader(modelHeader.getReference(), false) {
+      new NodesReader(modelHeader.getModelReference(), false) {
         @Override
         protected String readConceptQualifiedName(ModelInputStream is) throws IOException {
           String name = super.readConceptQualifiedName(is);

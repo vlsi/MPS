@@ -31,6 +31,8 @@
     <classNode dependClassName="jetbrains.mps.lang.editor.figures.behavior.FigureParameterAttributeMethod_Behavior" />
     <classNode dependClassName="jetbrains.mps.lang.editor.figures.behavior.FigureParameterAttributeViewProperty_Behavior" />
     <classNode dependClassName="jetbrains.mps.lang.editor.generator.baseLanguage.template.util.QueriesUtil" />
+    <classNode dependClassName="jetbrains.mps.lang.pattern.GeneratedMatchingPattern" />
+    <classNode dependClassName="jetbrains.mps.lang.pattern.IMatchingPattern" />
     <classNode dependClassName="jetbrains.mps.lang.pattern.runtime.PatternUtil" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
@@ -48,8 +50,6 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeAccessUtil" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
-    <classNode extendsClassName="jetbrains.mps.lang.pattern.GeneratedMatchingPattern" />
-    <classNode extendsClassName="jetbrains.mps.lang.pattern.IMatchingPattern" />
   </dependency>
 </dependenciesRoot>
 

@@ -118,10 +118,11 @@ public class ConceptRegistry implements CoreComponent, LanguageRegistryListener 
       try {
         LanguageRuntime languageRuntime = myLanguageRegistry.getLanguage(NameUtil.namespaceFromConceptFQName(fqName));
         if (languageRuntime != null) {
-          descriptor = languageRuntime.getAspect(StructureAspectDescriptor.class).getDescriptor(fqName);
+          StructureAspectDescriptor structureAspectDescriptor = languageRuntime.getAspect(StructureAspectDescriptor.class);
+          descriptor = structureAspectDescriptor.getDescriptor(fqName);
         }
       } catch (Throwable e) {
-        LOG.warn("Exception while structure descriptor creating: " + fqName, e);
+        LOG.error("Exception while structure descriptor creating for the concept " + fqName, e);
       }
 
       if (descriptor == null) {

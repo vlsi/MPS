@@ -258,7 +258,7 @@ public class QueriesGenerated {
             if (BehaviorReflection.invokeVirtual(Boolean.TYPE, linkAccess, "virtual_isSingularCardinality_4024382256428848847", new Object[]{})) {
               // some ops are only applicable to 'link to concept' 
               if (BehaviorReflection.invokeVirtualStatic(Boolean.TYPE, SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(parameterOp)), "virtual_applicableToConcept_1262430001741498358", new Object[]{}) && !(BehaviorReflection.invokeVirtualStatic(Boolean.TYPE, SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(parameterOp)), "virtual_applicableToNode_1262430001741498076", new Object[]{}))) {
-                return !(BehaviorReflection.invokeVirtualStatic(Boolean.TYPE, SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(parameterOp)), "virtual_applicableToLink_1262430001741498352", new Object[]{}) && appTypesInfo.myLinkToConcept);
+                return !((BehaviorReflection.invokeVirtualStatic(Boolean.TYPE, SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(parameterOp)), "virtual_applicableToLink_1262430001741498352", new Object[]{}) && appTypesInfo.myLinkToConcept));
               }
               return !(BehaviorReflection.invokeVirtualStatic(Boolean.TYPE, SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(parameterOp)), "virtual_applicableToLink_1262430001741498352", new Object[]{}));
             }

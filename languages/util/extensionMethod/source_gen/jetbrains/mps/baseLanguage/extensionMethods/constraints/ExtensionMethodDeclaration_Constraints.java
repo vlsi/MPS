@@ -30,7 +30,7 @@ public class ExtensionMethodDeclaration_Constraints extends BaseConstraintsDescr
     return result;
   }
   public static boolean static_canBeAParent(SNode node, SNode childNode, SNode childConcept, SNode link, final IOperationContext operationContext) {
-    if (!(SConceptOperations.isSubConceptOf(childConcept, "jetbrains.mps.baseLanguage.structure.PublicVisibility") || SConceptOperations.isSubConceptOf(childConcept, "jetbrains.mps.baseLanguage.structure.PrivateVisibility")) && link == SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.extensionMethods.structure.ExtensionMethodDeclaration", "visibility")) {
+    if (!((SConceptOperations.isSubConceptOf(childConcept, "jetbrains.mps.baseLanguage.structure.PublicVisibility") || SConceptOperations.isSubConceptOf(childConcept, "jetbrains.mps.baseLanguage.structure.PrivateVisibility"))) && link == SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.extensionMethods.structure.ExtensionMethodDeclaration", "visibility")) {
       return false;
     }
     return true;

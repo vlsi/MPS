@@ -97,7 +97,7 @@ public class PersistenceUtil {
       return null;
     }
     try {
-      SModel model = null;
+      SModel model;
       if(factory instanceof FolderModelFactory) {
         model = factory.load(new FolderDataSource(file.getParent(), null), Collections.<String, String>singletonMap(ModelFactory.OPTION_CONTENT_ONLY,
           Boolean.TRUE.toString()));
@@ -127,6 +127,28 @@ public class PersistenceUtil {
       e.printStackTrace();
     }
     return null;
+  }
+
+  /**
+   * Serialize model with a persistence identified by extension and provide access to serialized content through InputStream.
+   * @return empty stream in case serialization failed. Caller is responsible to close the stream.
+   */
+  public static InputStream modelContentAsStream(final SModel model, String extension) {
+    ModelFactory factory = PersistenceRegistry.getInstance().getModelFactory(extension);
+    if (factory != null) {
+      try {
+        InMemoryStreamDataSource source = new InMemoryStreamDataSource();
+        factory.save(model, source);
+        return source.getContentAsStream();
+      } catch (ModelSaveException ex) {
+        ex.printStackTrace();
+        // fall-through
+      } catch (IOException ex) {
+        ex.printStackTrace();
+        // fall-through
+      }
+    }
+    return new ByteArrayInputStream(new byte[0]);
   }
 
   public static SModel loadPerRootModel(final Map<String, Object> content) {
@@ -249,6 +271,10 @@ public class PersistenceUtil {
     @Override
     public boolean isReadOnly() {
       return false;
+    }
+
+    public InputStream getContentAsStream() {
+      return new ByteArrayInputStream(myStream.toByteArray());
     }
 
     public String getContent(String charsetName) {

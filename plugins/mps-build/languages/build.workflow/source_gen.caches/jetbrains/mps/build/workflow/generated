@@ -6,7 +6,7 @@
   <dep model="r:6da6c71a-0aac-4fb2-b0ad-1b3a207cc189(jetbrains.mps.build.workflow.behavior)" hash="6p8xqwe5a6ktfvygentyifrwzuwcxfu" />
   <dep model="r:8c3c79a2-2377-4680-a62f-78d39fdded56(jetbrains.mps.build.workflow.constraints)" hash="7fb0w6giz6hk7xznswvjubjuf4r4uko" />
   <dep model="r:aa7cee44-7e41-4ff3-b944-4eb707b62ad6(jetbrains.mps.build.workflow.typesystem)" hash="-92yftbxc5no2m3srnd3amfg4rm6s5ln" />
-  <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="-6r79zerd5g4mkqvktwfk7i2ydwbhtup" />
+  <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="d987foka3qddszg3k3yjss0jaslj9i" />
   <dep model="r:ed179f4d-7cf2-479d-8348-50c1fc63b96a(jetbrains.mps.build.workflow.structure)" hash="-9i0utctu4gh98t6104p2puj8upul9i2" />
   <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="8cdjk2e5d2y2u9lult1ptgxxrttxv07" />
   <common dependsOnNodes="true">

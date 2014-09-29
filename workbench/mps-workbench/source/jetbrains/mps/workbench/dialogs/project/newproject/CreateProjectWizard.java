@@ -28,6 +28,7 @@ import com.intellij.openapi.ui.popup.ListItemDescriptor;
 import com.intellij.openapi.util.Condition;
 import com.intellij.openapi.util.SystemInfo;
 import com.intellij.openapi.util.text.StringUtil;
+import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.ui.CollectionListModel;
 import com.intellij.ui.DocumentAdapter;
 import com.intellij.ui.HideableDecorator;
@@ -42,8 +43,10 @@ import com.intellij.uiDesigner.core.GridConstraints;
 import com.intellij.uiDesigner.core.GridLayoutManager;
 import com.intellij.util.containers.SortedList;
 import com.intellij.util.ui.JBInsets;
+import jetbrains.mps.ide.vfs.VirtualFileUtils;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.workbench.WorkbenchPathManager;
+import jetbrains.mps.workbench.actions.OpenMPSProjectFileChooserDescriptor;
 import jetbrains.mps.workbench.dialogs.project.newproject.ProjectFactory.ProjectNotCreatedException;
 import org.jetbrains.annotations.Nullable;
 
@@ -274,7 +277,26 @@ public class CreateProjectWizard extends DialogWrapper {
     myProjectPath.addPropertyChangeListener("path", new PropertyChangeListener() {
       @Override
       public void propertyChange(PropertyChangeEvent evt) {
-        fireProjectPathChanged((String)evt.getNewValue());
+        fireProjectPathChanged((String) evt.getNewValue());
+        final VirtualFile virtualFile = VirtualFileUtils.getVirtualFile((String) evt.getNewValue());
+        //check if there is project in folder (both directory and file based)
+        boolean isProjectPath = virtualFile != null ? OpenMPSProjectFileChooserDescriptor.isMpsProjectDirectory(virtualFile) : false;
+        if(virtualFile != null && !isProjectPath) {
+          for (VirtualFile child : virtualFile.getChildren()) {
+            if (OpenMPSProjectFileChooserDescriptor.isMpsProjectFile(child)) {
+              isProjectPath = true;
+              break;
+            }
+          }
+        }
+        if(isProjectPath){
+          //show error and disable apply
+          setErrorText("Project under this path already exists!");
+          getOKAction().setEnabled(false);
+        } else {
+          setErrorText(null);
+          getOKAction().setEnabled(true);
+        }
       }
     });
     myProjectName.addCaretListener(new CaretListener() {

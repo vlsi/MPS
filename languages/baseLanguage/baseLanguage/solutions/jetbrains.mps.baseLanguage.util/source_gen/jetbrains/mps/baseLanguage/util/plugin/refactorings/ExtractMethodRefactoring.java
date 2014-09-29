@@ -94,7 +94,7 @@ public abstract class ExtractMethodRefactoring {
     Map<SNode, List<SNode>> mapping = MapSequence.fromMap(new HashMap<SNode, List<SNode>>());
     for (SNode reference : ListSequence.fromList(SNodeOperations.getDescendants(method, "jetbrains.mps.baseLanguage.structure.VariableReference", false, new String[]{}))) {
       SNode declaration = SLinkOperations.getTarget(reference, "variableDeclaration", false);
-      if (!(SNodeOperations.isInstanceOf(declaration, "jetbrains.mps.baseLanguage.structure.ParameterDeclaration") || SNodeOperations.isInstanceOf(declaration, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration"))) {
+      if (!((SNodeOperations.isInstanceOf(declaration, "jetbrains.mps.baseLanguage.structure.ParameterDeclaration") || SNodeOperations.isInstanceOf(declaration, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration")))) {
         continue;
       }
 

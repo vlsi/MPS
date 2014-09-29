@@ -154,10 +154,8 @@ public class ModelReader8Handler extends XMLSAXHandler<ModelLoadResult> {
     }
     @Override
     protected ModelLoadResult createObject(Attributes attrs) throws SAXException {
-      fieldmodel = new DefaultSModel(PersistenceFacade.getInstance().createModelReference(attrs.getValue("modelUID")));
+      fieldmodel = new DefaultSModel(PersistenceFacade.getInstance().createModelReference(attrs.getValue("modelUID")), fieldheader);
       fieldhasSkippedNodes = false;
-      fieldmodel.setPersistenceVersion(8);
-      fieldmodel.getSModelHeader().updateDefaults(fieldheader);
       fieldhelper = new ReadHelper(fieldmodel.getReference());
       fieldlinkMap = new ModelLinkMap(fieldmodel);
       return new ModelLoadResult(fieldmodel, ModelLoadingState.NOT_LOADED);
@@ -189,11 +187,11 @@ public class ModelReader8Handler extends XMLSAXHandler<ModelLoadResult> {
         } catch (NumberFormatException e) {
           version = -1;
         }
-        fieldmodel.getSModelHeader().setVersion(version);
+        fieldheader.setVersion(version);
         return;
       }
       if ("doNotGenerate".equals(name)) {
-        fieldmodel.getSModelHeader().setDoNotGenerate(Boolean.parseBoolean(value));
+        fieldheader.setDoNotGenerate(Boolean.parseBoolean(value));
         return;
       }
       super.handleAttribute(resultObject, name, value);
@@ -261,7 +259,7 @@ public class ModelReader8Handler extends XMLSAXHandler<ModelLoadResult> {
       return super.createChild(resultObject, tagName, attrs);
     }
     private boolean checkroot_1768088633166530069(Object resultObject, Attributes attrs) {
-      return !(fieldstripImplementation && fieldhelper.isImplementationNode(attrs.getValue("nodeInfo")));
+      return !((fieldstripImplementation && fieldhelper.isImplementationNode(attrs.getValue("nodeInfo"))));
     }
     private void handleChild_286176397450364079(Object resultObject, Object value) throws SAXException {
       SModuleReference child = (SModuleReference) value;

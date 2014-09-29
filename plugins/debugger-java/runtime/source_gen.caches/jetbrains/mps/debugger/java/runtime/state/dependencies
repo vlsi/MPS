@@ -8,6 +8,7 @@
     <classNode dependClassName="jetbrains.mps.debug.api.DebugSessionManagerComponent" />
     <classNode dependClassName="jetbrains.mps.debug.api.breakpoints.IBreakpoint" />
     <classNode dependClassName="jetbrains.mps.debugger.java.runtime.breakpoints.JavaBreakpoint" />
+    <classNode dependClassName="jetbrains.mps.debugger.java.runtime.engine.DebugProcessAdapter" />
     <classNode dependClassName="jetbrains.mps.debugger.java.runtime.engine.RequestManager" />
     <classNode dependClassName="jetbrains.mps.debugger.java.runtime.engine.VMEventsProcessorManagerComponent" />
     <classNode dependClassName="jetbrains.mps.debugger.java.runtime.engine.events.Context" />
@@ -17,7 +18,6 @@
     <classNode dependClassName="jetbrains.mps.debugger.java.runtime.state.RunningJavaUiState" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="jetbrains.mps.debug.api.AbstractDebugSession" />
-    <classNode extendsClassName="jetbrains.mps.debugger.java.runtime.engine.DebugProcessAdapter" />
   </dependency>
   <dependency className="jetbrains.mps.debugger.java.runtime.state.JavaUiStateImpl" file="JavaUiStateImpl.java">
     <classNode dependClassName="com.sun.jdi.ThreadReference" />

@@ -7,6 +7,7 @@
     <classNode dependClassName="java.util.Collections" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.Generated" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.GenerationException" />
+    <classNode dependClassName="jetbrains.mps.generator.runtime.ReductionRuleBase" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.TemplateContext" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.TemplateCreateRootRule" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.TemplateDropRootRule" />
@@ -28,7 +29,6 @@
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
-    <classNode extendsClassName="jetbrains.mps.generator.runtime.ReductionRuleBase" />
     <classNode extendsClassName="jetbrains.mps.generator.runtime.TemplateMappingConfiguration" />
   </dependency>
   <dependency className="jetbrains.mps.lang.quotation.generator.baseLanguage.template.main.Mappingpreprocess" file="Mappingpreprocess.java">
@@ -39,6 +39,7 @@
     <classNode dependClassName="java.util.Collections" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.Generated" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.GenerationException" />
+    <classNode dependClassName="jetbrains.mps.generator.runtime.ReductionRuleBase" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.ReferenceResolver" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.TemplateContext" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.TemplateCreateRootRule" />
@@ -48,6 +49,7 @@
     <classNode dependClassName="jetbrains.mps.generator.runtime.TemplateModel" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.TemplateReductionRule" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.TemplateRootMappingRule" />
+    <classNode dependClassName="jetbrains.mps.generator.runtime.TemplateRuleWithCondition" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.TemplateUtil" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.TemplateWeavingRule" />
     <classNode dependClassName="jetbrains.mps.generator.template.ITemplateGenerator" />
@@ -62,9 +64,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
-    <classNode extendsClassName="jetbrains.mps.generator.runtime.ReductionRuleBase" />
     <classNode extendsClassName="jetbrains.mps.generator.runtime.TemplateMappingConfiguration" />
-    <classNode extendsClassName="jetbrains.mps.generator.runtime.TemplateRuleWithCondition" />
   </dependency>
   <dependency className="jetbrains.mps.lang.quotation.generator.baseLanguage.template.main.QueriesGenerated" file="QueriesGenerated.java">
     <classNode dependClassName="java.lang.Integer" />
@@ -98,6 +98,8 @@
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
     <classNode dependClassName="jetbrains.mps.kernel.model.SModelUtil" />
+    <classNode dependClassName="jetbrains.mps.lang.pattern.GeneratedMatchingPattern" />
+    <classNode dependClassName="jetbrains.mps.lang.pattern.IMatchingPattern" />
     <classNode dependClassName="jetbrains.mps.lang.pattern.runtime.PatternUtil" />
     <classNode dependClassName="jetbrains.mps.lang.quotation.behavior.NodeBuilderNode_Behavior" />
     <classNode dependClassName="jetbrains.mps.lang.quotation.generator.baseLanguage.template.main.TemplateModelImpl" />
@@ -118,8 +120,6 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SReference" />
-    <classNode extendsClassName="jetbrains.mps.lang.pattern.GeneratedMatchingPattern" />
-    <classNode extendsClassName="jetbrains.mps.lang.pattern.IMatchingPattern" />
   </dependency>
   <dependency className="jetbrains.mps.lang.quotation.generator.baseLanguage.template.main.TemplateModelImpl" file="TemplateModelImpl.java">
     <classNode dependClassName="java.lang.Object" />

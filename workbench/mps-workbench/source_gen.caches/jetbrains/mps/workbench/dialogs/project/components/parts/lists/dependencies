@@ -3,6 +3,7 @@
   <dependency className="jetbrains.mps.workbench.dialogs.project.components.parts.lists.ListsFactory" file="ListsFactory.java">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.Comparator" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.ide.ui.dialogs.properties.StateUtil" />
     <classNode dependClassName="jetbrains.mps.project.structure.model.ModelRootDescriptor" />
@@ -18,7 +19,6 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModelReference" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModuleReference" />
-    <classNode extendsClassName="java.util.Comparator" />
   </dependency>
   <dependency className="jetbrains.mps.workbench.dialogs.project.components.parts.lists.SortedList" file="SortedList.java">
     <classNode dependClassName="java.lang.Object" />

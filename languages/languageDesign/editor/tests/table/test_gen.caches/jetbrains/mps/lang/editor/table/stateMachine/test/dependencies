@@ -8,8 +8,8 @@
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="jetbrains.mps.MPSLaunch" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
+    <classNode dependClassName="jetbrains.mps.lang.test.runtime.BaseEditorTestBody" />
     <classNode dependClassName="org.junit.Test" />
-    <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseEditorTestBody" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
   <dependency className="jetbrains.mps.lang.editor.table.stateMachine.test.CreateEvent_Test" file="CreateEvent_Test.java">
@@ -17,8 +17,8 @@
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="jetbrains.mps.MPSLaunch" />
+    <classNode dependClassName="jetbrains.mps.lang.test.runtime.BaseEditorTestBody" />
     <classNode dependClassName="org.junit.Test" />
-    <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseEditorTestBody" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
   <dependency className="jetbrains.mps.lang.editor.table.stateMachine.test.CreateState_Test" file="CreateState_Test.java">
@@ -26,8 +26,8 @@
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="jetbrains.mps.MPSLaunch" />
+    <classNode dependClassName="jetbrains.mps.lang.test.runtime.BaseEditorTestBody" />
     <classNode dependClassName="org.junit.Test" />
-    <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseEditorTestBody" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
   <dependency className="jetbrains.mps.lang.editor.table.stateMachine.test.CreateTransition_Test" file="CreateTransition_Test.java">
@@ -35,8 +35,8 @@
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="jetbrains.mps.MPSLaunch" />
+    <classNode dependClassName="jetbrains.mps.lang.test.runtime.BaseEditorTestBody" />
     <classNode dependClassName="org.junit.Test" />
-    <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseEditorTestBody" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
   <dependency className="jetbrains.mps.lang.editor.table.stateMachine.test.Create_Test" file="Create_Test.java">
@@ -44,8 +44,8 @@
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="jetbrains.mps.MPSLaunch" />
+    <classNode dependClassName="jetbrains.mps.lang.test.runtime.BaseEditorTestBody" />
     <classNode dependClassName="org.junit.Test" />
-    <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseEditorTestBody" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
   <dependency className="jetbrains.mps.lang.editor.table.stateMachine.test.MoveTransitionToAnotherColumn_Test" file="MoveTransitionToAnotherColumn_Test.java">
@@ -56,8 +56,8 @@
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="jetbrains.mps.MPSLaunch" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
+    <classNode dependClassName="jetbrains.mps.lang.test.runtime.BaseEditorTestBody" />
     <classNode dependClassName="org.junit.Test" />
-    <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseEditorTestBody" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
   <dependency className="jetbrains.mps.lang.editor.table.stateMachine.test.MoveTransitionToAnotherRow_Test" file="MoveTransitionToAnotherRow_Test.java">
@@ -68,8 +68,8 @@
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="jetbrains.mps.MPSLaunch" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
+    <classNode dependClassName="jetbrains.mps.lang.test.runtime.BaseEditorTestBody" />
     <classNode dependClassName="org.junit.Test" />
-    <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseEditorTestBody" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
   <dependency className="jetbrains.mps.lang.editor.table.stateMachine.test.RemoveEvent_Test" file="RemoveEvent_Test.java">
@@ -77,8 +77,8 @@
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="jetbrains.mps.MPSLaunch" />
+    <classNode dependClassName="jetbrains.mps.lang.test.runtime.BaseEditorTestBody" />
     <classNode dependClassName="org.junit.Test" />
-    <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseEditorTestBody" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
   <dependency className="jetbrains.mps.lang.editor.table.stateMachine.test.RemoveState_Test" file="RemoveState_Test.java">
@@ -86,8 +86,8 @@
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="jetbrains.mps.MPSLaunch" />
+    <classNode dependClassName="jetbrains.mps.lang.test.runtime.BaseEditorTestBody" />
     <classNode dependClassName="org.junit.Test" />
-    <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseEditorTestBody" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
   <dependency className="jetbrains.mps.lang.editor.table.stateMachine.test.RemoveTransition_Test" file="RemoveTransition_Test.java">
@@ -95,8 +95,8 @@
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="jetbrains.mps.MPSLaunch" />
+    <classNode dependClassName="jetbrains.mps.lang.test.runtime.BaseEditorTestBody" />
     <classNode dependClassName="org.junit.Test" />
-    <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseEditorTestBody" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
   <dependency className="jetbrains.mps.lang.editor.table.stateMachine.test.TabNavigationToEmptyCell_Test" file="TabNavigationToEmptyCell_Test.java">
@@ -107,8 +107,8 @@
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="jetbrains.mps.MPSLaunch" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
+    <classNode dependClassName="jetbrains.mps.lang.test.runtime.BaseEditorTestBody" />
     <classNode dependClassName="org.junit.Test" />
-    <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseEditorTestBody" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
 </dependenciesRoot>

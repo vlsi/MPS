@@ -39,7 +39,7 @@ public class check_ForeachWithErasure_NonTypesystemRule extends AbstractNonTypes
       } else {
         SNode variableType = SLinkOperations.getTarget(SLinkOperations.getTarget(foreachStatement, "variable", true), "type", true);
         // not an iterable or an erasure 
-        if (!(MatchingUtil.matchNodes(variableType, _quotation_createNode_aftnu9_a0a2a0c0c0b()))) {
+        if (!((MatchingUtil.matchNodes(variableType, _quotation_createNode_aftnu9_a0a0c0a2a2a1())))) {
           {
             MessageTarget errorTarget = new NodeMessageTarget();
             IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError((variableType != null ? variableType : SLinkOperations.getTarget(foreachStatement, "variable", true)), "java.lang.Object expected", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "4312449433287189198", null, errorTarget);
@@ -106,7 +106,7 @@ public class check_ForeachWithErasure_NonTypesystemRule extends AbstractNonTypes
     public void performActions(Object o) {
     }
   }
-  private static SNode _quotation_createNode_aftnu9_a0a2a0c0c0b() {
+  private static SNode _quotation_createNode_aftnu9_a0a0c0a2a2a1() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, false);

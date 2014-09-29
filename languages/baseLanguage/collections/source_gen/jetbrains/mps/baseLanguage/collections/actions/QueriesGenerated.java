@@ -444,7 +444,7 @@ public class QueriesGenerated {
   public static boolean nodeSubstituteActionsBuilder_Precondition_Statement_1224446775945(final IOperationContext operationContext, final NodeSubstitutePreconditionContext _context) {
     SNode cl = SNodeOperations.getAncestor(_context.getParentNode(), "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral", true, false);
     SNode parent = SNodeOperations.getParent(cl);
-    return (cl == null) || !(SNodeOperations.isInstanceOf(parent, "jetbrains.mps.baseLanguage.collections.structure.VisitAllOperation") || SNodeOperations.isInstanceOf(parent, "jetbrains.mps.baseLanguage.collections.structure.TranslateOperation"));
+    return (cl == null) || !((SNodeOperations.isInstanceOf(parent, "jetbrains.mps.baseLanguage.collections.structure.VisitAllOperation") || SNodeOperations.isInstanceOf(parent, "jetbrains.mps.baseLanguage.collections.structure.TranslateOperation")));
   }
   public static List<SubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_Statement_1224451907809(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
@@ -453,7 +453,7 @@ public class QueriesGenerated {
   public static boolean nodeSubstituteActionsBuilder_Precondition_Statement_1224451929757(final IOperationContext operationContext, final NodeSubstitutePreconditionContext _context) {
     SNode cl = SNodeOperations.getAncestor(_context.getParentNode(), "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral", true, false);
     SNode parent = SNodeOperations.getParent(cl);
-    return (cl == null) || !(SNodeOperations.isInstanceOf(parent, "jetbrains.mps.baseLanguage.collections.structure.VisitAllOperation") || SNodeOperations.isInstanceOf(parent, "jetbrains.mps.baseLanguage.collections.structure.TranslateOperation") || SNodeOperations.isInstanceOf(parent, "jetbrains.mps.baseLanguage.collections.structure.SequenceCreator"));
+    return (cl == null) || !((SNodeOperations.isInstanceOf(parent, "jetbrains.mps.baseLanguage.collections.structure.VisitAllOperation") || SNodeOperations.isInstanceOf(parent, "jetbrains.mps.baseLanguage.collections.structure.TranslateOperation") || SNodeOperations.isInstanceOf(parent, "jetbrains.mps.baseLanguage.collections.structure.SequenceCreator")));
   }
   public static List<SubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_Expression_1237785975244(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());

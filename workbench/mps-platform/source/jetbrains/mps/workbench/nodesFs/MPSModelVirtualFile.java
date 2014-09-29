@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2013 JetBrains s.r.o.
+ * Copyright 2003-2014 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,14 +18,14 @@ package jetbrains.mps.workbench.nodesFs;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.vfs.VirtualFileSystem;
 import com.intellij.openapi.vfs.ex.dummy.DummyFileIdGenerator;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
-import jetbrains.mps.smodel.DefaultSModelDescriptor;
+import jetbrains.mps.extapi.persistence.FileDataSource;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.JavaNameUtil;
 import jetbrains.mps.workbench.ModelUtil;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -161,7 +161,7 @@ public class MPSModelVirtualFile extends VirtualFile {
   }
 
   private VirtualFile getSourceVirtualFile(SModel model) {
-    if (!(model instanceof DefaultSModelDescriptor)) return null;
+    if (!(model.getSource() instanceof FileDataSource)) return null;
     final VirtualFile fileByModel = ModelUtil.getFileByModel(model);
     if (fileByModel == null) return null;
     return fileByModel;

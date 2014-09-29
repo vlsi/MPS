@@ -31,6 +31,7 @@
     <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="javax.swing.AbstractListModel" />
     <classNode dependClassName="javax.swing.JComponent" />
     <classNode dependClassName="javax.swing.JPanel" />
     <classNode dependClassName="javax.swing.ListSelectionModel" />
@@ -47,7 +48,6 @@
     <classNode dependClassName="org.apache.log4j.LogManager" />
     <classNode dependClassName="org.apache.log4j.Logger" />
     <classNode extendsClassName="com.intellij.ui.components.JBPanel" />
-    <classNode extendsClassName="javax.swing.AbstractListModel" />
     <classNode extendsClassName="org.jetbrains.mps.openapi.ui.Modifiable" />
   </dependency>
   <dependency className="jetbrains.mps.workbench.dialogs.project.properties.project.ProjectPropertiesDialog" file="ProjectPropertiesDialog.java">
@@ -73,7 +73,6 @@
     <classNode dependClassName="org.jetbrains.annotations.Nls" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="com.intellij.openapi.components.ProjectComponent" />
-    <classNode extendsClassName="com.intellij.openapi.options.NonDefaultProjectConfigurable" />
     <classNode extendsClassName="com.intellij.openapi.options.SearchableConfigurable" />
   </dependency>
 </dependenciesRoot>

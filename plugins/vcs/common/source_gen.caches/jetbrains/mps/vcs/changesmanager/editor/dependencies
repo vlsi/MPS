@@ -141,6 +141,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.MPSModuleRepository" />
     <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
     <classNode dependClassName="jetbrains.mps.vcs.changesmanager.CurrentDifference" />
+    <classNode dependClassName="jetbrains.mps.vcs.changesmanager.CurrentDifferenceAdapter" />
     <classNode dependClassName="jetbrains.mps.vcs.changesmanager.CurrentDifferenceRegistry" />
     <classNode dependClassName="jetbrains.mps.vcs.changesmanager.editor.ChangeStripsPainter" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.ChangeSet" />
@@ -155,7 +156,6 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeUtil" />
     <classNode extendsClassName="jetbrains.mps.openapi.editor.message.EditorMessageOwner" />
-    <classNode extendsClassName="jetbrains.mps.vcs.changesmanager.CurrentDifferenceAdapter" />
   </dependency>
   <dependency className="jetbrains.mps.vcs.changesmanager.editor.EditorHighlighterFactory" file="EditorHighlighterFactory.java">
     <classNode dependClassName="com.intellij.openapi.project.Project" />
@@ -167,10 +167,10 @@
     <classNode dependClassName="jetbrains.mps.nodeEditor.EditorComponent" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.InspectorTool" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.NodeEditorComponent" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.highlighter.EditorComponentCreateListener" />
     <classNode dependClassName="jetbrains.mps.vcs.changesmanager.editor.EditorHighlighter" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="com.intellij.openapi.components.AbstractProjectComponent" />
-    <classNode extendsClassName="jetbrains.mps.nodeEditor.highlighter.EditorComponentCreateListener" />
   </dependency>
   <dependency className="jetbrains.mps.vcs.changesmanager.editor.PopupPanel" file="PopupPanel.java">
     <classNode dependClassName="com.intellij.openapi.actionSystem.ActionGroup" />
@@ -180,7 +180,9 @@
     <classNode dependClassName="com.intellij.ui.ColoredSideBorder" />
     <classNode dependClassName="java.awt.BorderLayout" />
     <classNode dependClassName="java.awt.Color" />
+    <classNode dependClassName="java.awt.event.FocusAdapter" />
     <classNode dependClassName="java.awt.event.FocusEvent" />
+    <classNode dependClassName="java.awt.event.MouseAdapter" />
     <classNode dependClassName="java.awt.event.MouseEvent" />
     <classNode dependClassName="java.lang.Math" />
     <classNode dependClassName="java.lang.Override" />
@@ -191,8 +193,6 @@
     <classNode dependClassName="jetbrains.mps.vcs.changesmanager.editor.ChangeStripsPainter" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.changes.ChangeType" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.ui.common.ChangeGroup" />
-    <classNode extendsClassName="java.awt.event.FocusAdapter" />
-    <classNode extendsClassName="java.awt.event.MouseAdapter" />
     <classNode extendsClassName="javax.swing.JPanel" />
   </dependency>
   <dependency className="jetbrains.mps.vcs.changesmanager.editor.StripsChangeGroupLayout" file="StripsChangeGroupLayout.java">

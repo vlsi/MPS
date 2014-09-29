@@ -1,3 +1,85 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="6zqz6zbqqx043c4fe8dj3qspbxtz0mv" />
+<dependencies version="2" modelHash="6zqz6zbqqx043c4fe8dj3qspbxtz0mv">
+  <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
+  <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="-2hubvwh7bwismm0eld02cqmdefvj5by" />
+  <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" hash="bgk62bl1057yntcn5ez68ql1cwlbv7v" />
+  <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" hash="-2sqpydigz7vryaerubh22j78l4l08jz" />
+  <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="d987foka3qddszg3k3yjss0jaslj9i" />
+  <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="8cdjk2e5d2y2u9lult1ptgxxrttxv07" />
+  <common hash="2xbz1mplz81hgcv5r5hvkouiocnsvyy" dependsOnNodes="true">
+    <dep root="2068944020170241612" />
+    <dep root="2217234381367049075" />
+    <dep root="2217234381367188006" />
+    <dep root="2217234381367188008" />
+    <dep root="2217234381367190443" />
+    <dep root="2217234381367530195" />
+    <dep root="2217234381367530212" />
+    <dep root="2546654756694997551" />
+    <dep root="2565027568480805887" />
+    <dep root="4730661099054379103" />
+    <dep root="5349172909345501395" />
+    <dep root="5349172909345530173" />
+    <dep root="5349172909345530174" />
+    <dep root="5349172909345532724" />
+    <dep root="5562345046718956738" />
+    <dep root="5858074156537397872" />
+    <dep root="5858074156537516430" />
+    <dep root="6501140109493894267" />
+    <dep root="6612597108003615641" />
+    <dep root="6832197706140518103" />
+    <dep root="6832197706140518104" />
+    <dep root="6832197706140518107" />
+    <dep root="6832197706140896242" />
+    <dep root="6962838954693748792" />
+    <dep root="6962838954693748795" />
+    <dep root="8465538089690324384" />
+    <dep root="8465538089690324397" />
+    <dep root="8465538089690331492" />
+    <dep root="8465538089690331500" />
+    <dep root="8465538089690881930" />
+    <dep root="8970989240999019142" />
+    <dep root="8970989240999019143" />
+    <dep root="8970989240999019145" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
+    <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
+    <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
+    <file name="StructureAspectDescriptor.java" />
+  </common>
+  <source id="5349172909345501395" name="BaseDocComment" hash="-138m5dqdbhurdi9989z4fmonniy7jc3" />
+  <source id="5349172909345530173" name="BaseBlockDocTag" hash="-5dwoqnav94zzyruu4ogq6pc8cg94g10" />
+  <source id="5349172909345530174" name="AuthorBlockDocTag" hash="-avglp3gdgk1poh2d0eau4u16i8tsc5x" />
+  <source id="5349172909345532724" name="MethodDocComment" hash="6w6ai4y7rofhq18ibv7uov7qedfc3wt" />
+  <source id="8465538089690324384" name="VersionBlockDocTag" hash="aybwwdx5g3n6jhgqkinu1ln0q29xqc2" />
+  <source id="8465538089690324397" name="SinceBlockDocTag" hash="-dtkzgs1ea71t5lpxvtjv6wu99vptx1y" />
+  <source id="8465538089690331492" name="DeprecatedBlockDocTag" hash="-e85g8bza544i3w6bl8hz2h8hz0cxy47" />
+  <source id="8465538089690331500" name="CommentLine" hash="7bblwdvjuoet4f809thnzeqmt0ojjob" />
+  <source id="8465538089690881930" name="ParameterBlockDocTag" hash="8jkzgj6w1pnhk7pj6nq6ny73qlwkw5y" />
+  <source id="5858074156537397872" name="ThrowsBlockDocTag" hash="-bikri7q3y3kfmzuv95f7xwtj2mafrt3" />
+  <source id="5858074156537516430" name="ReturnBlockDocTag" hash="b733w7655kxnkzlggj2taiszbzigjh7" />
+  <source id="6832197706140518103" name="BaseParameterReference" hash="54blqzbuzym1ffmlq4t40o74fbhb8d3" />
+  <source id="6832197706140518104" name="DocMethodParameterReference" hash="638iyjyzyl5pnzw08zf56qlelh69dux" />
+  <source id="6832197706140518107" name="DocTypeParameterReference" hash="-dk1em5vue1739zg4wtae3ikl3neooon" />
+  <source id="6832197706140896242" name="FieldDocComment" hash="42pigw41ikqn40a5od7ebqbe7uy3dg5" />
+  <source id="2068944020170241612" name="ClassifierDocComment" hash="42j3yym7by0wiwfis7fv2t17bh1x5do" />
+  <source id="8970989240999019142" name="CommentLinePart" hash="-6vkss3k0ojmp7s4a56xnhck5mlh9j2d" />
+  <source id="8970989240999019143" name="TextCommentLinePart" hash="9nz20zmzl6smyisuyq9gal7oodk5qd5" />
+  <source id="8970989240999019145" name="InlineTagCommentLinePart" hash="clue20m63b0rl5kth7afk75y4ngyw9" />
+  <source id="6962838954693748792" name="BaseInlineDocTag" hash="-4rp9l5tjocuft2mb8t9yq4cuzk4o6qq" />
+  <source id="6962838954693748795" name="ValueInlineDocTag" hash="-arnv32ooufs4gr2atvx02dqmas8jnn" />
+  <source id="2217234381367049075" name="CodeInlineDocTag" hash="-164r6dvyp1ggf7v14g5fa2y3y40v5dw" />
+  <source id="2217234381367188006" name="BaseDocReference" hash="-7kf1mm8cccre3ng3v6smqx6yhq79ylg" />
+  <source id="2217234381367188008" name="FieldDocReference" hash="-584bh9a727qxawfu2bxtz8qkau4qxw8" />
+  <source id="2217234381367190443" name="SeeBlockDocTag" hash="9u4fojdpgn9watlo0mx6cgxxx75nekp" />
+  <source id="2217234381367530195" name="MethodDocReference" hash="-yvid4evy0a23wvu9w8e90sexfcrg2z" />
+  <source id="2217234381367530212" name="ClassifierDocReference" hash="-1o3eb1b1m4xofm1yzpactooydclc8y4" />
+  <source id="2546654756694997551" name="LinkInlineDocTag" hash="-88g48ngs1zkgr5ltzyrtj9epl1lptbj" />
+  <source id="2565027568480805887" name="CodeSnippet" hash="-egbfkwu19018bzvcmi53wwbqzewdiv3" />
+  <source id="4730661099054379103" name="InheritDocInlineDocTag" hash="-ehlzma0n3lm2cc8ld7b692pfs2r6zqx" />
+  <source id="5562345046718956738" name="BaseVariableDocReference" hash="-emh3ahqsakdimtewjs9dam7i00ciu4i" />
+  <source id="6501140109493894267" name="StaticFieldDocReference" hash="6i4ffj7kqt7e3qaqzvvn30obuo72761" />
+  <source id="6612597108003615641" name="HTMLElement" hash="8xxaycentduprrub6mff9cts69mc8e0" />
+</dependencies>
 

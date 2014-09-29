@@ -63,6 +63,7 @@
     <classNode dependClassName="java.util.Map" />
     <classNode dependClassName="java.util.Set" />
     <classNode dependClassName="jetbrains.mps.cache.AbstractCache" />
+    <classNode dependClassName="jetbrains.mps.cache.DataSet" />
     <classNode dependClassName="jetbrains.mps.kernel.model.SModelUtil" />
     <classNode dependClassName="jetbrains.mps.smodel.SNodeUtil" />
     <classNode dependClassName="jetbrains.mps.smodel.event.SModelChildEvent" />
@@ -71,7 +72,6 @@
     <classNode dependClassName="jetbrains.mps.util.FlattenIterable" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
-    <classNode extendsClassName="jetbrains.mps.cache.DataSet" />
   </dependency>
   <dependency className="jetbrains.mps.smodel.search.EmptySearchScope" file="EmptySearchScope.java">
     <classNode dependClassName="java.lang.Override" />
@@ -98,6 +98,8 @@
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
+    <classNode dependClassName="jetbrains.mps.scope.Scope" />
+    <classNode dependClassName="jetbrains.mps.smodel.search.Adapter" />
     <classNode dependClassName="jetbrains.mps.smodel.search.ConceptAndSuperConceptsScope" />
     <classNode dependClassName="jetbrains.mps.smodel.search.IReferenceInfoResolver" />
     <classNode dependClassName="jetbrains.mps.util.SNodeOperations" />
@@ -106,8 +108,6 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SReference" />
     <classNode dependClassName="org.jetbrains.mps.util.Condition" />
-    <classNode extendsClassName="jetbrains.mps.scope.Scope" />
-    <classNode extendsClassName="jetbrains.mps.smodel.search.Adapter" />
   </dependency>
   <dependency className="jetbrains.mps.smodel.search.IsInstanceCondition" file="IsInstanceCondition.java">
     <classNode dependClassName="java.lang.Override" />
@@ -164,6 +164,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.NodeReadAccessCasterInEditor" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.SNodeUtil" />
+    <classNode dependClassName="jetbrains.mps.smodel.search.AbstractSearchScope" />
     <classNode dependClassName="jetbrains.mps.smodel.search.ConceptAndSuperConceptsScope" />
     <classNode dependClassName="jetbrains.mps.smodel.search.ISearchScope" />
     <classNode dependClassName="jetbrains.mps.smodel.search.ModelAndImportedModelsScope" />
@@ -173,7 +174,6 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.util.Condition" />
-    <classNode extendsClassName="jetbrains.mps.smodel.search.AbstractSearchScope" />
   </dependency>
   <dependency className="jetbrains.mps.smodel.search.SearchScopeWithNode" file="SearchScopeWithNode.java">
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />

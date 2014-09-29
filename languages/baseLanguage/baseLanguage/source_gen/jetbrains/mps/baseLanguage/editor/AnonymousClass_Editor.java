@@ -652,7 +652,7 @@ public class AnonymousClass_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private static boolean renderingCondition_msf9u8_a7c1a(SNode node, EditorContext editorContext) {
-    return !(Sequence.fromIterable(ClassConcept_Behavior.call_fields_5292274854859383272(node)).isNotEmpty() && Sequence.fromIterable(Classifier_Behavior.call_methods_5292274854859311639(node)).isNotEmpty() && SLinkOperations.getTarget(node, "instanceInitializer", true) != null);
+    return !((Sequence.fromIterable(ClassConcept_Behavior.call_fields_5292274854859383272(node)).isNotEmpty() && Sequence.fromIterable(Classifier_Behavior.call_methods_5292274854859311639(node)).isNotEmpty() && SLinkOperations.getTarget(node, "instanceInitializer", true) != null));
   }
   private EditorCell createConstant_msf9u8_a7c1a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");

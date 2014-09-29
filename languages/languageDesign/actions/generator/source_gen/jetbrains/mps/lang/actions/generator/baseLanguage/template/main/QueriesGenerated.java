@@ -54,7 +54,7 @@ public class QueriesGenerated {
     return SNodeOperations.isInstanceOf(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.baseLanguage.structure.AssignmentExpression") && SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.baseLanguage.structure.AssignmentExpression"), "lValue", true) == _context.getNode();
   }
   public static boolean baseMappingRule_Condition_1235754864859(final BaseMappingRuleContext _context) {
-    return !(SNodeOperations.isInstanceOf(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.baseLanguage.structure.AssignmentExpression") && SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.baseLanguage.structure.AssignmentExpression"), "lValue", true) == _context.getNode());
+    return !((SNodeOperations.isInstanceOf(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.baseLanguage.structure.AssignmentExpression") && SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.baseLanguage.structure.AssignmentExpression"), "lValue", true) == _context.getNode()));
   }
   public static boolean baseMappingRule_Condition_6839387317842789829(final BaseMappingRuleContext _context) {
     return SConceptOperations.isExactly(SNodeOperations.getConceptDeclaration(SLinkOperations.getTarget(_context.getNode(), "creator", true)), "jetbrains.mps.lang.actions.structure.SNodeCreatorAndInitializer");

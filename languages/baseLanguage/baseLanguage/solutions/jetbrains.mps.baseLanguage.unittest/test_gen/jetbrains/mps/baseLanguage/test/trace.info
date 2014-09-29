@@ -74,6 +74,48 @@
       <unit id="1100850602766269370" at="13,0,64,0" name="jetbrains.mps.baseLanguage.test.ArrayCreatorTest_Test" />
     </file>
   </root>
+  <root nodeRef="r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)/1187415722601183376">
+    <file name="InitializerRequiredForFieldsInInterface_Test.java">
+      <node id="1187415722601183376" at="16,73,17,121" concept="2" />
+      <node id="1187415722601183376" at="17,121,18,154" concept="2" />
+      <node id="1187415722601183376" at="21,73,22,121" concept="2" />
+      <node id="1187415722601183376" at="22,121,23,154" concept="2" />
+      <node id="1187415722601183376" at="26,77,27,121" concept="2" />
+      <node id="1187415722601183376" at="27,121,28,158" concept="2" />
+      <node id="1187415722601183376" at="32,75,33,146" concept="4" />
+      <node id="1187415722601183376" at="33,146,34,159" concept="2" />
+      <node id="1187415722601183376" at="36,75,37,146" concept="4" />
+      <node id="1187415722601183376" at="37,146,38,159" concept="2" />
+      <node id="1187415722601183376" at="40,79,41,146" concept="4" />
+      <node id="1187415722601183376" at="41,146,42,159" concept="2" />
+      <node id="1187415722601183376" at="32,0,36,0" concept="3" trace="test_NodeErrorCheck1187415722613141596#()V" />
+      <node id="1187415722601183376" at="36,0,40,0" concept="3" trace="test_NodeErrorCheck1187415722613794413#()V" />
+      <node id="1187415722601183376" at="40,0,44,0" concept="3" trace="test_ErrorMessagesCheck1187415722601361320#()V" />
+      <node id="1187415722601183376" at="15,0,20,0" concept="3" trace="test_NodeErrorCheck1187415722613141596#()V" />
+      <node id="1187415722601183376" at="20,0,25,0" concept="3" trace="test_NodeErrorCheck1187415722613794413#()V" />
+      <node id="1187415722601183376" at="25,0,30,0" concept="3" trace="test_ErrorMessagesCheck1187415722601361320#()V" />
+      <scope id="1187415722601183376" at="16,73,18,154" />
+      <scope id="1187415722601183376" at="21,73,23,154" />
+      <scope id="1187415722601183376" at="26,77,28,158" />
+      <scope id="1187415722601183376" at="32,75,34,159">
+        <var name="operation" id="1187415722601183376" />
+      </scope>
+      <scope id="1187415722601183376" at="36,75,38,159">
+        <var name="operation" id="1187415722601183376" />
+      </scope>
+      <scope id="1187415722601183376" at="40,79,42,159">
+        <var name="operation" id="1187415722601183376" />
+      </scope>
+      <scope id="1187415722601183376" at="32,0,36,0" />
+      <scope id="1187415722601183376" at="36,0,40,0" />
+      <scope id="1187415722601183376" at="40,0,44,0" />
+      <scope id="1187415722601183376" at="15,0,20,0" />
+      <scope id="1187415722601183376" at="20,0,25,0" />
+      <scope id="1187415722601183376" at="25,0,30,0" />
+      <unit id="1187415722601183376" at="30,0,45,0" name="jetbrains.mps.baseLanguage.test.InitializerRequiredForFieldsInInterface_Test$TestBody" />
+      <unit id="1187415722601183376" at="13,0,46,0" name="jetbrains.mps.baseLanguage.test.InitializerRequiredForFieldsInInterface_Test" />
+    </file>
+  </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)/1217271585456">
     <file name="OnlyStatementsCanUnreachable_Test.java">
       <node id="1217271585456" at="16,88,17,121" concept="2" />
@@ -883,10 +925,10 @@
       <node id="1326302914272888821" at="28,63,29,46" concept="5" />
       <node id="1326302914272888829" at="31,63,32,46" concept="5" />
       <node id="1326302914272888837" at="34,63,35,46" concept="5" />
-      <node id="1326302914272888857" at="37,64,38,49" concept="5" />
-      <node id="1326302914272888865" at="40,64,41,49" concept="5" />
-      <node id="1326302914272888877" at="43,64,44,49" concept="5" />
-      <node id="1326302914272888885" at="46,64,47,49" concept="5" />
+      <node id="1326302914272888857" at="37,64,38,51" concept="5" />
+      <node id="1326302914272888865" at="40,64,41,51" concept="5" />
+      <node id="1326302914272888877" at="43,64,44,51" concept="5" />
+      <node id="1326302914272888885" at="46,64,47,51" concept="5" />
       <node id="1326302914272879452" at="23,0,25,0" concept="1" trace="TestSafeEquals_Test#()V" />
       <node id="1326302914272888810" at="25,0,28,0" concept="7" trace="eq_g71ru1_a0a1a0#(Ljava/lang/Object;Ljava/lang/Object;)Z" />
       <node id="1326302914272888821" at="28,0,31,0" concept="7" trace="eq_g71ru1_a0a2a0#(Ljava/lang/Object;Ljava/lang/Object;)Z" />
@@ -903,10 +945,10 @@
       <scope id="1326302914272888821" at="28,63,29,46" />
       <scope id="1326302914272888829" at="31,63,32,46" />
       <scope id="1326302914272888837" at="34,63,35,46" />
-      <scope id="1326302914272888857" at="37,64,38,49" />
-      <scope id="1326302914272888865" at="40,64,41,49" />
-      <scope id="1326302914272888877" at="43,64,44,49" />
-      <scope id="1326302914272888885" at="46,64,47,49" />
+      <scope id="1326302914272888857" at="37,64,38,51" />
+      <scope id="1326302914272888865" at="40,64,41,51" />
+      <scope id="1326302914272888877" at="43,64,44,51" />
+      <scope id="1326302914272888885" at="46,64,47,51" />
       <scope id="1326302914272879452" at="23,0,25,0" />
       <scope id="1326302914272888810" at="25,0,28,0">
         <var name="a" id="1326302914272888810" />

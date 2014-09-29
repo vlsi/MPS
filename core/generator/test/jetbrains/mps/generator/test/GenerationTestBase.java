@@ -19,7 +19,6 @@ import com.intellij.openapi.application.PathManager;
 import jetbrains.mps.RuntimeFlags;
 import jetbrains.mps.TestMode;
 import jetbrains.mps.extapi.model.GeneratableSModel;
-import jetbrains.mps.extapi.model.SModelBase;
 import jetbrains.mps.generator.GenerationCacheContainer.FileBasedGenerationCacheContainer;
 import jetbrains.mps.generator.GenerationFacade;
 import jetbrains.mps.generator.GenerationOptions;
@@ -30,7 +29,9 @@ import jetbrains.mps.generator.impl.DefaultNonIncrementalStrategy;
 import jetbrains.mps.generator.impl.dependencies.GenerationDependencies;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.persistence.DefaultModelPersistence;
+import jetbrains.mps.persistence.PersistenceUtil;
 import jetbrains.mps.progress.EmptyProgressMonitor;
+import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.BaseMPSModuleOwner;
@@ -38,27 +39,23 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.MPSModuleOwner;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.testbench.PerformanceMessenger;
 import jetbrains.mps.testbench.junit.runners.MpsTestsSupport;
 import jetbrains.mps.tool.environment.ActiveEnvironment;
 import jetbrains.mps.tool.environment.Environment;
 import jetbrains.mps.util.DifflibFacade;
 import jetbrains.mps.util.FileUtil;
-import jetbrains.mps.util.JDOMUtil;
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
-import org.jdom.Document;
 import org.jetbrains.mps.openapi.model.EditableSModel;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.junit.Assert;
 import org.junit.BeforeClass;
 
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -327,14 +324,16 @@ public class GenerationTestBase {
   }
 
   private static Map<String, String> getHashes(SModel model) {
-    Document m = ModelPersistence.saveModel(((SModelBase) model).getSModelInternal());
-    ByteArrayOutputStream os = new ByteArrayOutputStream();
+    Map<String, String> rv = null;
     try {
-      JDOMUtil.writeDocument(m, os);
+      InputStream modelContents = PersistenceUtil.modelContentAsStream(model, MPSExtentions.MODEL);
+      final InputStreamReader reader = new InputStreamReader(modelContents, FileUtil.DEFAULT_CHARSET);
+      rv = DefaultModelPersistence.getDigestMap(reader);
+      reader.close();
     } catch (IOException e) {
       Assert.fail(e.getMessage());
     }
-    return DefaultModelPersistence.getDigestMap(new InputStreamReader(new ByteArrayInputStream(os.toByteArray()), FileUtil.DEFAULT_CHARSET));
+    return rv;
   }
 
   private static Map<String, String> getEmptyDigest() {

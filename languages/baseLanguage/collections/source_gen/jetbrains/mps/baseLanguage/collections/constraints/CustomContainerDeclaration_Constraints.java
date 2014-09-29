@@ -27,7 +27,7 @@ public class CustomContainerDeclaration_Constraints extends BaseConstraintsDescr
         String propertyName = "name";
         for (int i = 0; i < (SPropertyOperations.getString(propertyValue)).length(); i++) {
           char c = (SPropertyOperations.getString(propertyValue)).charAt(i);
-          if (!((i == 0 && Character.isJavaIdentifierStart(c)) || (i > 0 && Character.isJavaIdentifierPart(c)))) {
+          if (!(((i == 0 && Character.isJavaIdentifierStart(c)) || (i > 0 && Character.isJavaIdentifierPart(c))))) {
             return false;
           }
         }

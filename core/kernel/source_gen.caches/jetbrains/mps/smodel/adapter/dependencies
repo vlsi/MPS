@@ -163,10 +163,10 @@
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SContainmentLink" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.language.SScope" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.smodel.adapter.SAbstractLinkAdapter" />
     <classNode extendsClassName="org.jetbrains.mps.openapi.language.SReferenceLink" />
-    <classNode extendsClassName="org.jetbrains.mps.openapi.language.SScope" />
   </dependency>
 </dependenciesRoot>
 

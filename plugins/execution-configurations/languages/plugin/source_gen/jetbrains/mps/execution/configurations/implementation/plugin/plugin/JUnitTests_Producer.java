@@ -179,7 +179,7 @@ public class JUnitTests_Producer {
         return false;
       }
       for (Object obj : (List) source) {
-        if (!(obj instanceof SNode && SNodeOperations.isInstanceOf(((SNode) obj), "jetbrains.mps.baseLanguage.unitTest.structure.ITestCase"))) {
+        if (!((obj instanceof SNode && SNodeOperations.isInstanceOf(((SNode) obj), "jetbrains.mps.baseLanguage.unitTest.structure.ITestCase")))) {
           return false;
         }
       }
@@ -217,7 +217,7 @@ public class JUnitTests_Producer {
         return false;
       }
       for (Object obj : (List) source) {
-        if (!(obj instanceof SNode && SNodeOperations.isInstanceOf(((SNode) obj), "jetbrains.mps.baseLanguage.unitTest.structure.ITestMethod"))) {
+        if (!((obj instanceof SNode && SNodeOperations.isInstanceOf(((SNode) obj), "jetbrains.mps.baseLanguage.unitTest.structure.ITestMethod")))) {
           return false;
         }
       }

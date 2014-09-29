@@ -1020,6 +1020,7 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.typesystem.check_PropertyReferenceSetterVisibility_NonTypesystemRule" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.typesystem.check_RecursiveClassifierSubtyping_NonTypesystemRule" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.typesystem.check_SetAccessor_NonTypesystemRule" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.typesystem.check_StaticFieldDeclarationMustHaveInitializerInInterface_NonTypesystemRule" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.typesystem.check_StaticFieldDuplication_NonTypesystemRule" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.typesystem.check_StaticFinalFieldNotAssigned_NonTypesystemRule" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.typesystem.check_StaticFinalFieldWasAssigned_NonTypesystemRule" />
@@ -3325,6 +3326,20 @@
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IVisitor" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.SetSequence" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
+    <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
+    <classNode dependClassName="jetbrains.mps.typesystem.inference.TypeCheckingContext" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.AbstractNonTypesystemRule_Runtime" />
+    <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime" />
+  </dependency>
+  <dependency className="jetbrains.mps.baseLanguage.typesystem.check_StaticFieldDeclarationMustHaveInitializerInInterface_NonTypesystemRule" file="check_StaticFieldDeclarationMustHaveInitializerInInterface_NonTypesystemRule.java">
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.errors.IErrorReporter" />
+    <classNode dependClassName="jetbrains.mps.errors.messageTargets.MessageTarget" />
+    <classNode dependClassName="jetbrains.mps.errors.messageTargets.NodeMessageTarget" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus" />

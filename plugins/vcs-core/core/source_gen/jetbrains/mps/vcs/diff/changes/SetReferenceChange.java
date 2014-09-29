@@ -155,13 +155,13 @@ public class SetReferenceChange extends NodeChange {
     return null;
   }
   private static boolean neq_mgdhcs_a0h0n(Object a, Object b) {
-    return !((a != null ? a.equals(b) : a == b));
+    return !(((a != null ? a.equals(b) : a == b)));
   }
   private static boolean neq_mgdhcs_a0i0n(Object a, Object b) {
-    return !((a != null ? a.equals(b) : a == b));
+    return !(((a != null ? a.equals(b) : a == b)));
   }
   private static boolean neq_mgdhcs_a0j0n(Object a, Object b) {
-    return !((a != null ? a.equals(b) : a == b));
+    return !(((a != null ? a.equals(b) : a == b)));
   }
   private static SModelReference check_mgdhcs_a0d0o(SReference checkedDotOperand) {
     if (null != checkedDotOperand) {

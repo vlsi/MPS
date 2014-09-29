@@ -61,7 +61,7 @@ public class QueriesGenerated {
           boolean isNode = SConceptOperations.isExactly(concept, "jetbrains.mps.lang.smodel.structure.SNodeType");
           boolean isNList = SConceptOperations.isExactly(concept, "jetbrains.mps.lang.smodel.structure.SNodeListType");
           boolean isModel = SConceptOperations.isExactly(concept, "jetbrains.mps.lang.smodel.structure.SModelType");
-          return !(isNode || isNList || isModel);
+          return !((isNode || isNList || isModel));
         }
       };
       if (SConceptOperations.isSuperConceptOf(applicableConcept, NameUtil.nodeFQName(outputConcept)) && cond.met(outputConcept)) {

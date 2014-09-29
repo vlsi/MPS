@@ -7,9 +7,10 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.editor.runtime.cells.AbstractCellAction;
-import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.action.SNodeFactoryOperations;
+import jetbrains.mps.editor.runtime.selection.SelectionUtil;
+import jetbrains.mps.openapi.editor.selection.SelectionManager;
 
 public class ClassifierClassExpression_DeleteClass {
   public static void setCellActions(EditorCell editorCell, SNode node, EditorContext context) {
@@ -25,9 +26,10 @@ public class ClassifierClassExpression_DeleteClass {
       this.execute_internal(editorContext, this.myNode);
     }
     public void execute_internal(EditorContext editorContext, SNode node) {
-      SNode ref = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.StaticFieldReference", null);
-      SLinkOperations.setTarget(ref, "classifier", SLinkOperations.getTarget(node, "classifier", false), false);
-      SNodeOperations.replaceWithAnother(node, ref);
+      SNode classifier = SLinkOperations.getTarget(node, "classifier", false);
+      SNode ref = SNodeFactoryOperations.replaceWithNewChild(node, "jetbrains.mps.baseLanguage.structure.AbstractClassifierReference");
+      SLinkOperations.setTarget(ref, "classifier", classifier, false);
+      SelectionUtil.selectLabelCellAnSetCaret(editorContext, ref, SelectionManager.LAST_CELL, -1);
     }
   }
   public static class ClassifierClassExpression_DeleteClass_BACKSPACE extends AbstractCellAction {
@@ -39,9 +41,10 @@ public class ClassifierClassExpression_DeleteClass {
       this.execute_internal(editorContext, this.myNode);
     }
     public void execute_internal(EditorContext editorContext, SNode node) {
-      SNode ref = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.StaticFieldReference", null);
-      SLinkOperations.setTarget(ref, "classifier", SLinkOperations.getTarget(node, "classifier", false), false);
-      SNodeOperations.replaceWithAnother(node, ref);
+      SNode classifier = SLinkOperations.getTarget(node, "classifier", false);
+      SNode ref = SNodeFactoryOperations.replaceWithNewChild(node, "jetbrains.mps.baseLanguage.structure.AbstractClassifierReference");
+      SLinkOperations.setTarget(ref, "classifier", classifier, false);
+      SelectionUtil.selectLabelCellAnSetCaret(editorContext, ref, SelectionManager.LAST_CELL, -1);
     }
   }
 }

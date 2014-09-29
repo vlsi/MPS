@@ -31,7 +31,7 @@ public class QueriesGenerated extends QueryProviderBase {
   public static boolean baseMappingRule_Condition_5233164016162060882(final BaseMappingRuleContext _context) {
     SNode lt = TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(_context.getNode(), "leftExpression", true));
     SNode rt = TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(_context.getNode(), "rightExpression", true));
-    return (SNodeOperations.isInstanceOf(lt, "jetbrains.mps.baseLanguage.structure.PrimitiveType") || SNodeOperations.isInstanceOf(rt, "jetbrains.mps.baseLanguage.structure.PrimitiveType")) && !(SNodeOperations.isInstanceOf(lt, "jetbrains.mps.baseLanguage.structure.NullType") || SNodeOperations.isInstanceOf(rt, "jetbrains.mps.baseLanguage.structure.NullType"));
+    return (SNodeOperations.isInstanceOf(lt, "jetbrains.mps.baseLanguage.structure.PrimitiveType") || SNodeOperations.isInstanceOf(rt, "jetbrains.mps.baseLanguage.structure.PrimitiveType")) && !((SNodeOperations.isInstanceOf(lt, "jetbrains.mps.baseLanguage.structure.NullType") || SNodeOperations.isInstanceOf(rt, "jetbrains.mps.baseLanguage.structure.NullType")));
   }
   public static boolean baseMappingRule_Condition_5233164016162060952(final BaseMappingRuleContext _context) {
     return Helper.isCollectionElementAccess(SLinkOperations.getTarget(_context.getNode(), "leftExpression", true));
@@ -39,7 +39,7 @@ public class QueriesGenerated extends QueryProviderBase {
   public static boolean baseMappingRule_Condition_5233164016162061001(final BaseMappingRuleContext _context) {
     SNode lt = TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(_context.getNode(), "leftExpression", true));
     SNode rt = TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(_context.getNode(), "rightExpression", true));
-    return (SNodeOperations.isInstanceOf(lt, "jetbrains.mps.baseLanguage.structure.PrimitiveType") || SNodeOperations.isInstanceOf(rt, "jetbrains.mps.baseLanguage.structure.PrimitiveType")) && !(SNodeOperations.isInstanceOf(lt, "jetbrains.mps.baseLanguage.structure.NullType") || SNodeOperations.isInstanceOf(rt, "jetbrains.mps.baseLanguage.structure.NullType"));
+    return (SNodeOperations.isInstanceOf(lt, "jetbrains.mps.baseLanguage.structure.PrimitiveType") || SNodeOperations.isInstanceOf(rt, "jetbrains.mps.baseLanguage.structure.PrimitiveType")) && !((SNodeOperations.isInstanceOf(lt, "jetbrains.mps.baseLanguage.structure.NullType") || SNodeOperations.isInstanceOf(rt, "jetbrains.mps.baseLanguage.structure.NullType")));
   }
   public static boolean baseMappingRule_Condition_5233164016162061071(final BaseMappingRuleContext _context) {
     return Helper.isCollectionElementAccess(SLinkOperations.getTarget(_context.getNode(), "rightExpression", true));

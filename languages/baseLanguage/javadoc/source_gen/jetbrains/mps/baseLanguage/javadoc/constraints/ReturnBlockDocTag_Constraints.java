@@ -31,7 +31,7 @@ public class ReturnBlockDocTag_Constraints extends BaseConstraintsDescriptor {
   }
   public static boolean static_canBeAChild(SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext) {
     SNode returnType = SLinkOperations.getTarget(SNodeOperations.getAncestor(parentNode, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration", false, false), "returnType", true);
-    return !((returnType != null) && SNodeOperations.isInstanceOf(returnType, "jetbrains.mps.baseLanguage.structure.VoidType"));
+    return !(((returnType != null) && SNodeOperations.isInstanceOf(returnType, "jetbrains.mps.baseLanguage.structure.VoidType")));
   }
   private static SNodePointer canBeChildBreakingPoint = new SNodePointer("r:28bcf003-0004-46b6-9fe7-2093e7fb1368(jetbrains.mps.baseLanguage.javadoc.constraints)", "8970989240998521777");
 }

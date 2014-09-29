@@ -34,7 +34,7 @@ public class IfEqualsNullAll extends DataFlowConstructor {
         }
       }
     }
-    if (!(ListSequence.fromList(SLinkOperations.getTargets(ifTrue, "statement", true)).count() == 1 && SNodeOperations.isInstanceOf(ListSequence.fromList(SLinkOperations.getTargets(ifTrue, "statement", true)).first(), "jetbrains.mps.baseLanguage.structure.ReturnStatement"))) {
+    if (!((ListSequence.fromList(SLinkOperations.getTargets(ifTrue, "statement", true)).count() == 1 && SNodeOperations.isInstanceOf(ListSequence.fromList(SLinkOperations.getTargets(ifTrue, "statement", true)).first(), "jetbrains.mps.baseLanguage.structure.ReturnStatement")))) {
       for (SNode var : vars) {
         {
           Object object = SLinkOperations.getTarget(node, "ifTrue", true);

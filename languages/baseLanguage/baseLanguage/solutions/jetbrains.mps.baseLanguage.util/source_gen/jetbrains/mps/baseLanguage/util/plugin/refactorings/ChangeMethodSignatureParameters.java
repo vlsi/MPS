@@ -31,6 +31,6 @@ public class ChangeMethodSignatureParameters {
     return SNodeOperations.getConceptDeclaration(SLinkOperations.getTarget(SNodeOperations.cast(this.myMethod, "jetbrains.mps.baseLanguage.structure.IVisible"), "visibility", true)) != SNodeOperations.getConceptDeclaration(SLinkOperations.getTarget(SNodeOperations.cast(this.myOldMethod, "jetbrains.mps.baseLanguage.structure.IVisible"), "visibility", true));
   }
   public boolean isReturnValueChanged() {
-    return !(MatchingUtil.matchNodes(SLinkOperations.getTarget(this.myMethod, "returnType", true), SLinkOperations.getTarget(this.myOldMethod, "returnType", true)));
+    return !((MatchingUtil.matchNodes(SLinkOperations.getTarget(this.myMethod, "returnType", true), SLinkOperations.getTarget(this.myOldMethod, "returnType", true))));
   }
 }

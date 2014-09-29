@@ -41,7 +41,7 @@ public class typeof_ClassConcept_NonTypesystemRule extends AbstractNonTypesystem
     for (SNode m : Classifier_Behavior.call_methods_5292274854859311639(cls)) {
       typeCheckingContext.addDependencyForCurrent(m);
     }
-    if (!(SPropertyOperations.getBoolean(cls, "abstractClass") || (SNodeOperations.isInstanceOf(cls, "jetbrains.mps.baseLanguage.structure.EnumClass") && ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(cls, "jetbrains.mps.baseLanguage.structure.EnumClass"), "enumConstant", true)).isNotEmpty())) && ListSequence.fromList(BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), cls, "virtual_getMethodsToImplement_5418393554803775106", new Object[]{})).isNotEmpty()) {
+    if (!((SPropertyOperations.getBoolean(cls, "abstractClass") || (SNodeOperations.isInstanceOf(cls, "jetbrains.mps.baseLanguage.structure.EnumClass") && ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(cls, "jetbrains.mps.baseLanguage.structure.EnumClass"), "enumConstant", true)).isNotEmpty()))) && ListSequence.fromList(BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), cls, "virtual_getMethodsToImplement_5418393554803775106", new Object[]{})).isNotEmpty()) {
       if (SNodeOperations.isInstanceOf(cls, "jetbrains.mps.baseLanguage.structure.EnumClass")) {
         {
           MessageTarget errorTarget = new NodeMessageTarget();

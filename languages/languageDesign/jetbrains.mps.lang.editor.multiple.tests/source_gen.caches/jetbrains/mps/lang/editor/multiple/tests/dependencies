@@ -5,8 +5,8 @@
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="jetbrains.mps.MPSLaunch" />
+    <classNode dependClassName="jetbrains.mps.lang.test.runtime.BaseEditorTestBody" />
     <classNode dependClassName="org.junit.Test" />
-    <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseEditorTestBody" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
   <dependency className="jetbrains.mps.lang.editor.multiple.tests.ConditionalPresentation_addQuery_RefNodeList_rich_Test" file="ConditionalPresentation_addQuery_RefNodeList_rich_Test.java">
@@ -14,8 +14,8 @@
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="jetbrains.mps.MPSLaunch" />
+    <classNode dependClassName="jetbrains.mps.lang.test.runtime.BaseEditorTestBody" />
     <classNode dependClassName="org.junit.Test" />
-    <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseEditorTestBody" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
   <dependency className="jetbrains.mps.lang.editor.multiple.tests.ConditionalPresentation_addQuery_RefNodeList_switch_Test" file="ConditionalPresentation_addQuery_RefNodeList_switch_Test.java">
@@ -23,8 +23,8 @@
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="jetbrains.mps.MPSLaunch" />
+    <classNode dependClassName="jetbrains.mps.lang.test.runtime.BaseEditorTestBody" />
     <classNode dependClassName="org.junit.Test" />
-    <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseEditorTestBody" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
   <dependency className="jetbrains.mps.lang.editor.multiple.tests.ConditionalPresentation_addQuery_RefNode_default_Test" file="ConditionalPresentation_addQuery_RefNode_default_Test.java">
@@ -32,8 +32,8 @@
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="jetbrains.mps.MPSLaunch" />
+    <classNode dependClassName="jetbrains.mps.lang.test.runtime.BaseEditorTestBody" />
     <classNode dependClassName="org.junit.Test" />
-    <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseEditorTestBody" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
   <dependency className="jetbrains.mps.lang.editor.multiple.tests.ConditionalPresentation_addQuery_RefNode_rich_Test" file="ConditionalPresentation_addQuery_RefNode_rich_Test.java">
@@ -41,8 +41,8 @@
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="jetbrains.mps.MPSLaunch" />
+    <classNode dependClassName="jetbrains.mps.lang.test.runtime.BaseEditorTestBody" />
     <classNode dependClassName="org.junit.Test" />
-    <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseEditorTestBody" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
   <dependency className="jetbrains.mps.lang.editor.multiple.tests.ConditionalPresentation_addQuery_RefNode_switch_Test" file="ConditionalPresentation_addQuery_RefNode_switch_Test.java">
@@ -50,8 +50,8 @@
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="jetbrains.mps.MPSLaunch" />
+    <classNode dependClassName="jetbrains.mps.lang.test.runtime.BaseEditorTestBody" />
     <classNode dependClassName="org.junit.Test" />
-    <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseEditorTestBody" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
   <dependency className="jetbrains.mps.lang.editor.multiple.tests.ConditionalPresentation_addQuery_default_Test" file="ConditionalPresentation_addQuery_default_Test.java">
@@ -59,8 +59,8 @@
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="jetbrains.mps.MPSLaunch" />
+    <classNode dependClassName="jetbrains.mps.lang.test.runtime.BaseEditorTestBody" />
     <classNode dependClassName="org.junit.Test" />
-    <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseEditorTestBody" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
   <dependency className="jetbrains.mps.lang.editor.multiple.tests.ConditionalPresentation_addQuery_rich_Test" file="ConditionalPresentation_addQuery_rich_Test.java">
@@ -68,8 +68,8 @@
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="jetbrains.mps.MPSLaunch" />
+    <classNode dependClassName="jetbrains.mps.lang.test.runtime.BaseEditorTestBody" />
     <classNode dependClassName="org.junit.Test" />
-    <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseEditorTestBody" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
   <dependency className="jetbrains.mps.lang.editor.multiple.tests.ConditionalPresentation_addQuery_switch_Test" file="ConditionalPresentation_addQuery_switch_Test.java">
@@ -77,8 +77,8 @@
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="jetbrains.mps.MPSLaunch" />
+    <classNode dependClassName="jetbrains.mps.lang.test.runtime.BaseEditorTestBody" />
     <classNode dependClassName="org.junit.Test" />
-    <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseEditorTestBody" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
   <dependency className="jetbrains.mps.lang.editor.multiple.tests.ConditionalPresentation_removeQuery_RefNodeList_compact_Test" file="ConditionalPresentation_removeQuery_RefNodeList_compact_Test.java">
@@ -86,8 +86,8 @@
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="jetbrains.mps.MPSLaunch" />
+    <classNode dependClassName="jetbrains.mps.lang.test.runtime.BaseEditorTestBody" />
     <classNode dependClassName="org.junit.Test" />
-    <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseEditorTestBody" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
   <dependency className="jetbrains.mps.lang.editor.multiple.tests.ConditionalPresentation_removeQuery_RefNodeList_switch_Test" file="ConditionalPresentation_removeQuery_RefNodeList_switch_Test.java">
@@ -95,8 +95,8 @@
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="jetbrains.mps.MPSLaunch" />
+    <classNode dependClassName="jetbrains.mps.lang.test.runtime.BaseEditorTestBody" />
     <classNode dependClassName="org.junit.Test" />
-    <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseEditorTestBody" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
   <dependency className="jetbrains.mps.lang.editor.multiple.tests.ConditionalPresentation_removeQuery_RefNode_compact_Test" file="ConditionalPresentation_removeQuery_RefNode_compact_Test.java">
@@ -104,8 +104,8 @@
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="jetbrains.mps.MPSLaunch" />
+    <classNode dependClassName="jetbrains.mps.lang.test.runtime.BaseEditorTestBody" />
     <classNode dependClassName="org.junit.Test" />
-    <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseEditorTestBody" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
   <dependency className="jetbrains.mps.lang.editor.multiple.tests.ConditionalPresentation_removeQuery_RefNode_switch_Test" file="ConditionalPresentation_removeQuery_RefNode_switch_Test.java">
@@ -113,8 +113,8 @@
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="jetbrains.mps.MPSLaunch" />
+    <classNode dependClassName="jetbrains.mps.lang.test.runtime.BaseEditorTestBody" />
     <classNode dependClassName="org.junit.Test" />
-    <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseEditorTestBody" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
   <dependency className="jetbrains.mps.lang.editor.multiple.tests.ConditionalPresentation_removeQuery_compact_Test" file="ConditionalPresentation_removeQuery_compact_Test.java">
@@ -122,8 +122,8 @@
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="jetbrains.mps.MPSLaunch" />
+    <classNode dependClassName="jetbrains.mps.lang.test.runtime.BaseEditorTestBody" />
     <classNode dependClassName="org.junit.Test" />
-    <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseEditorTestBody" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
   <dependency className="jetbrains.mps.lang.editor.multiple.tests.ConditionalPresentation_removeQuery_switch_Test" file="ConditionalPresentation_removeQuery_switch_Test.java">
@@ -131,8 +131,8 @@
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="jetbrains.mps.MPSLaunch" />
+    <classNode dependClassName="jetbrains.mps.lang.test.runtime.BaseEditorTestBody" />
     <classNode dependClassName="org.junit.Test" />
-    <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseEditorTestBody" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
   <dependency className="jetbrains.mps.lang.editor.multiple.tests.DefaultEditor_Test" file="DefaultEditor_Test.java">
@@ -140,8 +140,8 @@
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="jetbrains.mps.MPSLaunch" />
+    <classNode dependClassName="jetbrains.mps.lang.test.runtime.BaseEditorTestBody" />
     <classNode dependClassName="org.junit.Test" />
-    <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseEditorTestBody" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
   <dependency className="jetbrains.mps.lang.editor.multiple.tests.EditorSpecifiedBy_add_context_hints_RefNodeList_Test" file="EditorSpecifiedBy_add_context_hints_RefNodeList_Test.java">
@@ -149,8 +149,8 @@
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="jetbrains.mps.MPSLaunch" />
+    <classNode dependClassName="jetbrains.mps.lang.test.runtime.BaseEditorTestBody" />
     <classNode dependClassName="org.junit.Test" />
-    <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseEditorTestBody" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
   <dependency className="jetbrains.mps.lang.editor.multiple.tests.EditorSpecifiedBy_add_context_hints_RefNode_Test" file="EditorSpecifiedBy_add_context_hints_RefNode_Test.java">
@@ -158,8 +158,8 @@
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="jetbrains.mps.MPSLaunch" />
+    <classNode dependClassName="jetbrains.mps.lang.test.runtime.BaseEditorTestBody" />
     <classNode dependClassName="org.junit.Test" />
-    <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseEditorTestBody" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
   <dependency className="jetbrains.mps.lang.editor.multiple.tests.EditorSpecifiedBy_add_context_hints_Test" file="EditorSpecifiedBy_add_context_hints_Test.java">
@@ -167,8 +167,8 @@
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="jetbrains.mps.MPSLaunch" />
+    <classNode dependClassName="jetbrains.mps.lang.test.runtime.BaseEditorTestBody" />
     <classNode dependClassName="org.junit.Test" />
-    <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseEditorTestBody" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
   <dependency className="jetbrains.mps.lang.editor.multiple.tests.EditorSpecifiedBy_add_remove_context_hints_RefNodeList_Test" file="EditorSpecifiedBy_add_remove_context_hints_RefNodeList_Test.java">
@@ -176,8 +176,8 @@
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="jetbrains.mps.MPSLaunch" />
+    <classNode dependClassName="jetbrains.mps.lang.test.runtime.BaseEditorTestBody" />
     <classNode dependClassName="org.junit.Test" />
-    <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseEditorTestBody" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
   <dependency className="jetbrains.mps.lang.editor.multiple.tests.EditorSpecifiedBy_add_remove_context_hints_RefNode_Test" file="EditorSpecifiedBy_add_remove_context_hints_RefNode_Test.java">
@@ -185,8 +185,8 @@
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="jetbrains.mps.MPSLaunch" />
+    <classNode dependClassName="jetbrains.mps.lang.test.runtime.BaseEditorTestBody" />
     <classNode dependClassName="org.junit.Test" />
-    <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseEditorTestBody" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
   <dependency className="jetbrains.mps.lang.editor.multiple.tests.EditorSpecifiedBy_add_remove_context_hints_Test" file="EditorSpecifiedBy_add_remove_context_hints_Test.java">
@@ -194,8 +194,8 @@
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="jetbrains.mps.MPSLaunch" />
+    <classNode dependClassName="jetbrains.mps.lang.test.runtime.BaseEditorTestBody" />
     <classNode dependClassName="org.junit.Test" />
-    <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseEditorTestBody" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
   <dependency className="jetbrains.mps.lang.editor.multiple.tests.MostSpecificEditor_Test" file="MostSpecificEditor_Test.java">
@@ -203,8 +203,8 @@
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="jetbrains.mps.MPSLaunch" />
+    <classNode dependClassName="jetbrains.mps.lang.test.runtime.BaseEditorTestBody" />
     <classNode dependClassName="org.junit.Test" />
-    <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseEditorTestBody" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
   <dependency className="jetbrains.mps.lang.editor.multiple.tests.UnsupportedPresentation_Test" file="UnsupportedPresentation_Test.java">
@@ -212,8 +212,8 @@
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="jetbrains.mps.MPSLaunch" />
+    <classNode dependClassName="jetbrains.mps.lang.test.runtime.BaseEditorTestBody" />
     <classNode dependClassName="org.junit.Test" />
-    <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseEditorTestBody" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
 </dependenciesRoot>

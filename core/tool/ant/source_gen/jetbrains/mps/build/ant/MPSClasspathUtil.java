@@ -143,7 +143,7 @@ public class MPSClasspathUtil {
    */
   @NotNull
   private static String extractRoot(@NotNull URL resourceURL, String resourcePath) {
-    if (!(resourcePath.startsWith("/") || resourcePath.startsWith("\\"))) {
+    if (!((resourcePath.startsWith("/") || resourcePath.startsWith("\\")))) {
       throw new BuildException("cannot detect jar location: precondition failed for" + resourcePath);
     }
     String protocol = resourceURL.getProtocol();
