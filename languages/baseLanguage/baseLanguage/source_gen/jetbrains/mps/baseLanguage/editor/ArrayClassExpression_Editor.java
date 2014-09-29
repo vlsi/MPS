@@ -67,7 +67,7 @@ public class ArrayClassExpression_Editor extends DefaultNodeEditor {
     if (true) {
       editorCell.getStyle().set(StyleAttributes.FOCUS_POLICY, FocusPolicy.ATTRACTS_FOCUS);
     }
-    ClassifierClassExpression_DeleteClass.setCellActions(editorCell, node, editorContext);
+    ArrayClassExpression_DeleteClass.setCellActions(editorCell, node, editorContext);
     editorCell.setDefaultText("");
     return editorCell;
   }

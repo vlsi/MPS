@@ -45,23 +45,31 @@ import jetbrains.mps.typesystem.inference.ITypeContextOwner;
 import jetbrains.mps.typesystem.inference.TypeContextManager;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.InternUtil;
+import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.util.annotation.ToRemove;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import org.jetbrains.mps.openapi.language.SConcept;
+import org.jetbrains.mps.openapi.language.SInterfaceConcept;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.model.SNodeUtil;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleReference;
+import org.jetbrains.mps.util.DepthFirstConceptIterator;
 
+import java.util.ArrayDeque;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
+import java.util.Deque;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.Iterator;
 import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Map;
@@ -341,8 +349,11 @@ public class IntentionsManager implements ApplicationComponent, PersistentStateC
       langNames.add(l.getModuleName());
     }
 
-    for (String conceptId : ConceptRegistry.getInstance().getConceptDescriptor(node.getConcept().getQualifiedName()).getAncestorsNames()) {
-      Map<String, Set<IntentionFactory>> concept2FactoriesMap = isAncestor ? myConcept2IntentionFactoriesAvailableInChildNodes : myConcept2IntentionFactories;
+
+    Map<String, Set<IntentionFactory>> concept2FactoriesMap = isAncestor ? myConcept2IntentionFactoriesAvailableInChildNodes : myConcept2IntentionFactories;
+    // there's no special meaning in using depth-first iterator, it's just the only one available at the moment
+    for (SAbstractConcept concept : new DepthFirstConceptIterator(node.getConcept())) {
+      final String conceptId = concept.getQualifiedName();
       if (concept2FactoriesMap.containsKey(conceptId)) {
         for (IntentionFactory intentionFactory : concept2FactoriesMap.get(conceptId)) {
           if (!langNames.contains(intentionFactory.getLanguageFqName())) continue;

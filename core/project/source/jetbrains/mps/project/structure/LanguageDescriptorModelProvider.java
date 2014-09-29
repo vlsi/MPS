@@ -278,6 +278,11 @@ public class LanguageDescriptorModelProvider implements CoreComponent {
     }
 
     @Override
+    public void setGenerateIntoModelFolder(boolean value) {
+      throw new UnsupportedOperationException();
+    }
+
+    @Override
     public String getModelHash() {
       String hash = myHash;
       if (hash == null) {

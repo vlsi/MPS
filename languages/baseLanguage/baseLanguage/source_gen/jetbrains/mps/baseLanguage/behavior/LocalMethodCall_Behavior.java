@@ -4,6 +4,12 @@ package jetbrains.mps.baseLanguage.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.baseLanguage.scopes.Members;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 
 public class LocalMethodCall_Behavior {
   public static void init(SNode thisNode) {
@@ -13,5 +19,24 @@ public class LocalMethodCall_Behavior {
   }
   public static boolean virtual_substituteInAmbigousPosition_1262430001741498020(SAbstractConcept thisConcept) {
     return true;
+  }
+  public static Iterable<SNode> virtual_getAvailableMethodDeclarations_5776618742611315379(SNode thisNode, final String methodName) {
+    SNode wrappingClassifier = SNodeOperations.getAncestor(thisNode, "jetbrains.mps.baseLanguage.structure.Classifier", false, false);
+    return Sequence.fromIterable(Members.visibleStaticMethods(wrappingClassifier, thisNode)).where(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return eq_vn6vr7_a0a0a0a0a0a1a3(SPropertyOperations.getString(it, "name"), methodName);
+      }
+    }).union(Sequence.fromIterable(Members.visibleInstanceMethods(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), wrappingClassifier, "virtual_getThisType_7405920559687254782", new Object[]{}), thisNode)).where(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return eq_vn6vr7_a0a0a0a0a0a0b0d(SPropertyOperations.getString(it, "name"), methodName);
+      }
+    }));
+
+  }
+  private static boolean eq_vn6vr7_a0a0a0a0a0a1a3(Object a, Object b) {
+    return (a != null ? a.equals(b) : a == b);
+  }
+  private static boolean eq_vn6vr7_a0a0a0a0a0a0b0d(Object a, Object b) {
+    return (a != null ? a.equals(b) : a == b);
   }
 }

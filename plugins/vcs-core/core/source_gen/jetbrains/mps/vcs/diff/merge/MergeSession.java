@@ -39,6 +39,7 @@ import java.util.Comparator;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.references.UnregisteredNodes;
+import jetbrains.mps.persistence.PersistenceVersionAware;
 import jetbrains.mps.smodel.SModelAdapter;
 import jetbrains.mps.smodel.event.SModelEvent;
 import jetbrains.mps.smodel.event.SModelReferenceEvent;
@@ -68,17 +69,15 @@ public class MergeSession {
   public static MergeSession createMergeSession(SModel base, SModel mine, SModel repository) {
     // TODO generalize merge for any SModel 
     jetbrains.mps.smodel.SModel resModel = CopyUtil.copyModel(((SModelBase) base).getSModel());
-    if (resModel instanceof DefaultSModel) {
-      int pv = Math.max(getPersistenceVersion(base), Math.max(getPersistenceVersion(mine), getPersistenceVersion(repository)));
-      if (pv > 8) {
-        for (SNode root : resModel.getRootNodes()) {
-          for (SNode node : SNodeUtil.getDescendants(root)) {
-            ((jetbrains.mps.smodel.SNode) node).updateWorkingMode(IdMigrationMode.ID);
-          }
+    int pv = Math.max(getPersistenceVersion(base), Math.max(getPersistenceVersion(mine), getPersistenceVersion(repository)));
+    if (pv > 8) {
+      for (SNode root : resModel.getRootNodes()) {
+        for (SNode node : SNodeUtil.getDescendants(root)) {
+          ((jetbrains.mps.smodel.SNode) node).updateWorkingMode(IdMigrationMode.ID);
         }
       }
-      ((DefaultSModel) resModel).setPersistenceVersion(pv);
     }
+    ((DefaultSModel) resModel).setPersistenceVersion(pv);
     return new MergeSession(base, mine, repository, new MergeTemporaryModel(resModel, false));
   }
 
@@ -293,9 +292,8 @@ public class MergeSession {
     }
   }
   private static int getPersistenceVersion(SModel model) {
-    jetbrains.mps.smodel.SModel m = ((SModelBase) model).getSModelInternal();
-    if (m instanceof DefaultSModel) {
-      return ((DefaultSModel) m).getPersistenceVersion();
+    if (model instanceof PersistenceVersionAware) {
+      return ((PersistenceVersionAware) model).getPersistenceVersion();
     }
     return -1;
   }

@@ -95,9 +95,7 @@
     <dep model="r:00000000-0000-4000-0000-011c895902b7(jetbrains.mps.lang.typesystem.generator.baseLanguage.template.main@generator)" />
     <file name="ApplicableTypesInfo.java" />
   </source>
-  <source id="1224446760828" name="remove_SkipStatement_and_StopStatement" hash="e67wfjztaj8ze6fy72ilxth5lxcqo16">
-    <dep model="r:00000000-0000-4000-0000-011c895902b7(jetbrains.mps.lang.typesystem.generator.baseLanguage.template.main@generator)" />
-  </source>
+  <source id="1224446760828" name="remove_SkipStatement_and_StopStatement" hash="e67wfjztaj8ze6fy72ilxth5lxcqo16" />
   <source id="1225109987794" name="closure_operations" hash="uksym8xeq8gowbq0scnzdtahiuiwek" />
   <source id="1225119767337" name="set_ascending_order" hash="-4gxjrktfo48nmxsukwlx3t16a7ib4ox" />
   <source id="1225711417528" name="list_element_access_rtransform" hash="-5ijm4oocy8tn3xq76p6q69x74w5vp62">

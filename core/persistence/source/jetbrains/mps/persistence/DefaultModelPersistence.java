@@ -17,18 +17,21 @@ package jetbrains.mps.persistence;
 
 import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.extapi.model.SModelBase;
+import jetbrains.mps.extapi.model.SModelData;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.smodel.DefaultSModel;
 import jetbrains.mps.smodel.DefaultSModelDescriptor;
+import jetbrains.mps.smodel.LazySModel;
 import jetbrains.mps.smodel.SModelHeader;
+import jetbrains.mps.smodel.loading.ModelLoadResult;
+import jetbrains.mps.smodel.loading.ModelLoadingState;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.smodel.persistence.def.ModelReadException;
 import jetbrains.mps.util.FileUtil;
 import org.apache.log4j.LogManager;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModel;
-import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.persistence.DataSource;
 import org.jetbrains.mps.openapi.persistence.ModelFactory;
 import org.jetbrains.mps.openapi.persistence.MultiStreamDataSource;
@@ -51,6 +54,17 @@ import java.util.Map;
 public class DefaultModelPersistence implements CoreComponent, ModelFactory {
   private static final Logger LOG = Logger.wrap(LogManager.getLogger(DefaultModelPersistence.class));
 
+  /**
+   * Boolean option for model loading, indicates loaded model doesn't care about implementation node.
+   * For the time being, implementation node is the one with appropriate ConceptKind (designated according to concept's implemented interfaces).
+   */
+  public static final String OPTION_STRIP_IMPLEMENTATION = "load-without-impl";
+
+  /**
+   * Boolean option for model loading, indicates loaded model cares about its interface aspects only.
+   */
+  public static final String OPTION_INTERFACE_ONLY = "load-interface-only";
+
   DefaultModelPersistence() {
   }
 
@@ -72,22 +86,29 @@ public class DefaultModelPersistence implements CoreComponent, ModelFactory {
     }
 
     StreamDataSource source = (StreamDataSource) dataSource;
+    PersistenceFacility pf = new PersistenceFacility(this, source);
     SModelHeader header;
     try {
-      header = ModelPersistence.loadDescriptor(source);
+      header = pf.readHeader();
+      assert header.getModelReference() != null : "wrong model: " + source.getLocation();
+
+      LOG.debug("Getting model " + header.getModelReference() + " from " + dataSource.getLocation());
+      // If there are any load options, process them and fill the model with desired model data, otherwise return a lightweight descriptor.
+      final DefaultSModelDescriptor rv = new DefaultSModelDescriptor(pf, header);
+      if (options.containsKey(OPTION_STRIP_IMPLEMENTATION) && Boolean.parseBoolean(options.get(OPTION_STRIP_IMPLEMENTATION))) {
+        // alternative to replace() method call (which is hacky) is to expose UpdateableModel field from LazyEditableSModelBase and use
+        // UpdateableModel#getModel(ModelLoadingState) instead to ensure model is loaded to desired state.
+        // However, not sure subsequent access to model won't trigger full load anyway, thus replace() which indicates supplied state is 'FULLY LOADED'
+        // might be the right (hacky, nonetheless) solution.
+        rv.replace(pf.readModel(header, ModelLoadingState.NO_IMPLEMENTATION).getModel());
+      } else if (options.containsKey(OPTION_INTERFACE_ONLY) && Boolean.parseBoolean(options.get(OPTION_INTERFACE_ONLY))) {
+        rv.replace(pf.readModel(header, ModelLoadingState.INTERFACE_LOADED).getModel());
+      }
+      return rv;
     } catch (ModelReadException ignored) {
-      LOG.warning("Can't read model: " + ignored.getMessage());
-      //todo after merging model and its descriptor, an IllegalModelDescriptor should be used here and errors shown from calling code
-      throw new IOException("Incorrect model data");
+      LOG.error("Can't read model: ", ignored);
+      throw new IOException("Can't read model: ", ignored);
     }
-
-    SModelReference modelReference;
-    assert header.getUID() != null : "wrong model: " + dataSource.getLocation();
-
-    modelReference = PersistenceFacade.getInstance().createModelReference(header.getUID());
-
-    LOG.debug("Getting model " + modelReference + " from " + dataSource.getLocation());
-    return new DefaultSModelDescriptor(source, modelReference, header);
   }
 
   @NotNull
@@ -105,11 +126,10 @@ public class DefaultModelPersistence implements CoreComponent, ModelFactory {
     if (modulRef == null) {
       throw new IOException("moduleRef is not provided");
     }
-    SModelReference ref = PersistenceFacade.getInstance().createModelReference(PersistenceFacade.getInstance().createModuleReference(modulRef),
-        jetbrains.mps.smodel.SModelId.generate(), modelName);
-    SModelHeader header = new SModelHeader();
-    header.setPersistenceVersion(ModelPersistence.LAST_VERSION);
-    return new DefaultSModelDescriptor((StreamDataSource) dataSource, ref, header);
+
+    final SModelHeader header = SModelHeader.create(ModelPersistence.LAST_VERSION);
+    header.setModelReference(PersistenceFacade.getInstance().createModelReference(null, jetbrains.mps.smodel.SModelId.generate(), modelName));
+    return new DefaultSModelDescriptor(new PersistenceFacility(this, (StreamDataSource) dataSource), header);
   }
 
   @Override
@@ -157,8 +177,9 @@ public class DefaultModelPersistence implements CoreComponent, ModelFactory {
     if (!(dataSource instanceof StreamDataSource)) {
       throw new UnsupportedDataSourceException(dataSource);
     }
+    int persistenceVersion = model instanceof DefaultSModelDescriptor ? ((DefaultSModelDescriptor) model).getPersistenceVersion() : ModelPersistence.LAST_VERSION;
 
-    ModelPersistence.saveModel(((SModelBase) model).getSModelInternal(), (StreamDataSource) dataSource);
+    ModelPersistence.saveModel(((SModelBase) model).getSModel(), (StreamDataSource) dataSource, persistenceVersion);
   }
 
   @Override
@@ -207,6 +228,57 @@ public class DefaultModelPersistence implements CoreComponent, ModelFactory {
       return ModelPersistence.calculateHashes(FileUtil.read(input));
     } catch (ModelReadException e) {
       return null;
+    }
+  }
+
+  /**
+   * hack, @see BinaryModelPersistence#createFromHeader for details
+   */
+  public static SModel createFromHeader(@NotNull SModelHeader header, @NotNull StreamDataSource dataSource) {
+    final ModelFactory modelFactory = PersistenceFacade.getInstance().getModelFactory(MPSExtentions.MODEL);
+    assert modelFactory instanceof  DefaultModelPersistence;
+    return new DefaultSModelDescriptor(new PersistenceFacility((DefaultModelPersistence) modelFactory, dataSource), header.createCopy());
+  }
+
+  private static class PersistenceFacility extends LazyLoadFacility {
+    /*package*/ PersistenceFacility(DefaultModelPersistence modelFactory, StreamDataSource dataSource) {
+      super(modelFactory, dataSource);
+    }
+
+    @Override
+    public StreamDataSource getSource() {
+      return (StreamDataSource) super.getSource();
+    }
+
+    @Override
+    public Map<String, String> getGenerationHashes() {
+      Map<String, String> generationHashes = ModelDigestHelper.getInstance().getGenerationHashes(getSource());
+      if (generationHashes != null) return generationHashes;
+
+      return DefaultModelPersistence.getDigestMap(getSource());
+    }
+
+    @NotNull
+    @Override
+    public SModelHeader readHeader() throws ModelReadException {
+      return ModelPersistence.loadDescriptor(getSource());
+    }
+
+    @NotNull
+    @Override
+    public ModelLoadResult readModel(@NotNull SModelHeader header, ModelLoadingState state) throws ModelReadException {
+      return ModelPersistence.readModel(header, getSource(), state);
+    }
+
+    @Override
+    public boolean doesSaveUpgradePersistence(@NotNull SModelHeader header) {
+      final int pv = ModelPersistence.actualPersistenceVersion(header.getPersistenceVersion());
+      return pv != header.getPersistenceVersion();
+    }
+
+    @Override
+    public void saveModel(@NotNull SModelHeader header, SModelData modelData) throws IOException {
+      ModelPersistence.saveModel((jetbrains.mps.smodel.SModel) modelData, getSource(), header.getPersistenceVersion());
     }
   }
 }

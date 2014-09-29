@@ -26,4 +26,10 @@ public class BaseAssignmentExpression_Behavior {
   public static SNode virtual_getSyntacticallyRightSideExpression_1742226163722653714(SNode thisNode) {
     return SLinkOperations.getTarget(thisNode, "rValue", true);
   }
+  public static void virtual_setSyntacticallyLeftSideExpression_1742226163722653680(SNode thisNode, SNode expr) {
+    SLinkOperations.setTarget(thisNode, "lValue", expr, true);
+  }
+  public static void virtual_setSyntacticallyRightSideExpression_1742226163722653694(SNode thisNode, SNode expr) {
+    SLinkOperations.setTarget(thisNode, "rValue", expr, true);
+  }
 }

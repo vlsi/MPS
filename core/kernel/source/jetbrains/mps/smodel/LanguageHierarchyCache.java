@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2014 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,20 +16,17 @@
 package jetbrains.mps.smodel;
 
 import jetbrains.mps.components.CoreComponent;
-import jetbrains.mps.kernel.model.SModelUtil;
-import jetbrains.mps.smodel.event.SModelCommandListener;
-import jetbrains.mps.smodel.event.SModelEvent;
+import jetbrains.mps.smodel.impl.StructureAspectChangeTracker;
+import jetbrains.mps.smodel.impl.StructureAspectChangeTracker.ModuleListener;
 import jetbrains.mps.smodel.search.IsInstanceCondition;
-import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.ConditionalIterable;
 import jetbrains.mps.util.InternAwareStringSet;
-import jetbrains.mps.util.InternUtil;
 import jetbrains.mps.util.NameUtil;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.module.SRepositoryContentAdapter;
 
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.HashSet;
@@ -37,28 +34,27 @@ import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
-import java.util.concurrent.ConcurrentHashMap;
-import java.util.concurrent.ConcurrentMap;
 
 // todo: DO NOT USE if not sure, use ConceptDescendantsCache
 // todo: should be built based on nodes, useful for ConceptHierarchyTree?
 public class LanguageHierarchyCache implements CoreComponent {
   private static LanguageHierarchyCache INSTANCE;
-  private SRepositoryContentAdapter myRepositoryListener = new SRepositoryContentAdapter() {
+  private final SRepositoryContentAdapter myRepositoryListener = new SRepositoryContentAdapter() {
     @Override
     public void repositoryChanged() {
       invalidateCache();
     }
   };
+  private final StructureAspectChangeTracker myStructureModelChange = new StructureAspectChangeTracker(null, new ModuleListener() {
+    @Override
+    public void structureAspectChanged(Set<SModuleReference> changedModules) {
+      invalidateCache();
+    }
+  });
 
   public static LanguageHierarchyCache getInstance() {
     return INSTANCE;
   }
-
-  private ConcurrentMap<String, InternAwareStringSet> myAncestorsNamesMap = new ConcurrentHashMap<String, InternAwareStringSet>();
-
-  private final Object myParentsNamesLock = new Object();
-  private Map<String, List<String>> myParentsNamesMap = new HashMap<String, List<String>>();
 
   private final Object myDescendantsLock = new Object();
   private Map<String, InternAwareStringSet> myDirectDescendantsCache = new HashMap<String, InternAwareStringSet>();
@@ -67,7 +63,7 @@ public class LanguageHierarchyCache implements CoreComponent {
   private final Object myLanguageLock = new Object();
   private Map<Language, LanguageConceptsCache> myLanguageSpecificCaches = new HashMap<Language, LanguageConceptsCache>();
 
-  private MPSModuleRepository myModuleRepository;
+  private final MPSModuleRepository myModuleRepository;
 
   public LanguageHierarchyCache(MPSModuleRepository moduleRepository) {
     myModuleRepository = moduleRepository;
@@ -80,23 +76,14 @@ public class LanguageHierarchyCache implements CoreComponent {
     }
 
     INSTANCE = this;
-    myRepositoryListener.subscribeTo(MPSModuleRepository.getInstance());
-
-    GlobalSModelEventsManager.getInstance().addGlobalCommandListener(new SModelCommandListener() {
-      @Override
-      public void eventsHappenedInCommand(List<SModelEvent> events) {
-        for (SModelEvent e : events) {
-          if (!LanguageAspect.STRUCTURE.is(e.getModelDescriptor())) continue;
-          invalidateCache();
-        }
-      }
-    });
+    myRepositoryListener.subscribeTo(myModuleRepository);
+    myStructureModelChange.attachTo(myModuleRepository);
   }
 
   @Override
   public void dispose() {
-    // TODO unregister listeners?
-    myRepositoryListener.unsubscribeFrom(MPSModuleRepository.getInstance());
+    myStructureModelChange.detachFrom(myModuleRepository);
+    myRepositoryListener.unsubscribeFrom(myModuleRepository);
     INSTANCE = null;
   }
 
@@ -105,10 +92,6 @@ public class LanguageHierarchyCache implements CoreComponent {
       myDirectDescendantsCache = new HashMap<String, InternAwareStringSet>();
       myDescendantsCachesAreValid = false;
     }
-    synchronized (myParentsNamesLock) {
-      myParentsNamesMap = new HashMap<String, List<String>>();
-    }
-    myAncestorsNamesMap.clear();
     synchronized (myLanguageLock) {
       myLanguageSpecificCaches = new HashMap<Language, LanguageConceptsCache>();
     }
@@ -118,121 +101,12 @@ public class LanguageHierarchyCache implements CoreComponent {
     return jetbrains.mps.smodel.language.ConceptRegistry.getInstance().getConceptDescriptor(conceptFqName).getParentsNames();
   }
 
-  public List<String> _getParentsNames(final String conceptFqName) {
-    synchronized (myParentsNamesLock) {
-      List<String> result = myParentsNamesMap.get(conceptFqName);
-      if (result == null) {
-        result = NodeReadAccessCasterInEditor.runReadTransparentAction(new Computable<List<String>>() {
-          @Override
-          public List<String> compute() {
-            SNode declaration = SModelUtil.findConceptDeclaration(conceptFqName);
-            if (declaration == null) {
-              return Collections.emptyList();
-            }
-            List<String> result = new ArrayList<String>();
-            Set<String> parentsSet = new HashSet<String>();
-            if (SNodeUtil.isInstanceOfConceptDeclaration(declaration)) {
-              SNode superConcept = SNodeUtil.getConceptDeclaration_Extends(declaration);
-              if (superConcept != null) {
-                String name = NameUtil.nodeFQName(superConcept);
-                if (parentsSet.add(name)) {
-                  result.add(name);
-                }
-              } else if (!SNodeUtil.concept_BaseConcept.equals(NameUtil.nodeFQName(declaration))) {
-                if (parentsSet.add(SNodeUtil.concept_BaseConcept)) {
-                  result.add(SNodeUtil.concept_BaseConcept);
-                }
-              }
-              for (SNode interfaceConcept : SNodeUtil.getConceptDeclaration_Implements(declaration)) {
-                String name = NameUtil.nodeFQName(interfaceConcept);
-                if (parentsSet.add(name)) {
-                  result.add(name);
-                }
-              }
-            } else if (SNodeUtil.isInstanceOfInterfaceConceptDeclaration(declaration)) {
-              for (SNode interfaceConcept : SNodeUtil.getInterfaceConceptDeclaration_Extends(declaration)) {
-                String name = NameUtil.nodeFQName(interfaceConcept);
-                if (parentsSet.add(name)) {
-                  result.add(name);
-                }
-              }
-            }
-            return result;
-          }
-        });
-        myParentsNamesMap.put(InternUtil.intern(conceptFqName), Collections.unmodifiableList(result));
-      }
-      return result;
-    }
-  }
-
-  public boolean _isAssignable(String fromConceptFqName, String toConceptFqName) {
-    return getAncestorsNames_internal(fromConceptFqName).contains(toConceptFqName);
-  }
-
   public static boolean isAssignable(String fromConceptFqName, String toConceptFqName) {
     return jetbrains.mps.smodel.language.ConceptRegistry.getInstance().getConceptDescriptor(fromConceptFqName).isAssignableTo(toConceptFqName);
   }
 
-  public Set<String> _getAncestorsNames(final String conceptFqName) {
-    return Collections.unmodifiableSet(getAncestorsNames_internal(conceptFqName));
-  }
-
   public static Set<String> getAncestorsNames(final String conceptFqName) {
     return jetbrains.mps.smodel.language.ConceptRegistry.getInstance().getConceptDescriptor(conceptFqName).getAncestorsNames();
-  }
-
-  private Set<String> getAncestorsNames_internal(final String conceptFqName) {
-    InternAwareStringSet result = myAncestorsNamesMap.get(conceptFqName);
-    if (result != null) return result;
-
-    InternAwareStringSet set = NodeReadAccessCasterInEditor.runReadTransparentAction(new Computable<InternAwareStringSet>() {
-      @Override
-      public InternAwareStringSet compute() {
-        InternAwareStringSet res = new InternAwareStringSet();
-        collectAncestorNames(conceptFqName, res);
-        return res;
-      }
-    });
-    result = myAncestorsNamesMap.putIfAbsent(InternUtil.intern(conceptFqName), set);
-    return result != null ? result : set;
-  }
-
-  private void collectAncestorNames(String conceptFqName, Set<String> result) {
-    if (result.contains(conceptFqName)) return;
-
-    result.add(conceptFqName);
-
-    SNode declaration = SModelUtil.findConceptDeclaration(conceptFqName);
-    if (declaration == null) {
-      return;
-    }
-
-    if (SNodeUtil.isInstanceOfConceptDeclaration(declaration)) {
-      SNode extendedConcept = SNodeUtil.getConceptDeclaration_Extends(declaration);
-      if (extendedConcept != null) {
-        Language declaringLanguage = SModelUtil.getDeclaringLanguage(extendedConcept);
-        if (declaringLanguage != null) {
-          collectAncestorNames(NameUtil.nodeFQName(extendedConcept), result);
-        }
-      } else if (!SNodeUtil.concept_BaseConcept.equals(NameUtil.nodeFQName(declaration))) {
-        collectAncestorNames(SNodeUtil.concept_BaseConcept, result);
-      }
-
-      for (SNode interfaceConcept : SNodeUtil.getConceptDeclaration_Implements(declaration)) {
-        if (interfaceConcept == null) continue;
-        Language declaringLanguage = SModelUtil.getDeclaringLanguage(interfaceConcept);
-        if (declaringLanguage == null) continue;
-        collectAncestorNames(NameUtil.nodeFQName(interfaceConcept), result);
-      }
-    } else if (SNodeUtil.isInstanceOfInterfaceConceptDeclaration(declaration)) {
-      for (SNode interfaceConcept : SNodeUtil.getInterfaceConceptDeclaration_Extends(declaration)) {
-        if (interfaceConcept == null) continue;
-        Language declaringLanguage = SModelUtil.getDeclaringLanguage(interfaceConcept);
-        if (declaringLanguage == null) continue;
-        collectAncestorNames(NameUtil.nodeFQName(interfaceConcept), result);
-      }
-    }
   }
 
   public Set<String> getDescendantsOfConcept(String conceptFQName) {
@@ -307,6 +181,7 @@ public class LanguageHierarchyCache implements CoreComponent {
     return result;
   }
 
+  // FIXME there's only one use of the method (ChildSubstituteActionsHelper), which is likely to be refactored in 3.2, and we can drop LanguageCache then
   public Set<String> getDefaultSubstitutableDescendantsOf(String concept, Language l) {
     Set<String> result;
     synchronized (myLanguageLock) {
@@ -334,7 +209,7 @@ public class LanguageHierarchyCache implements CoreComponent {
 
         String fqName = NameUtil.nodeFQName(cd);
 
-        for (String ancestor : getAncestorsNames_internal(fqName)) {
+        for (String ancestor : getAncestorsNames(fqName)) {
           Set<String> addTo = mySubconcepts.get(ancestor);
           if (addTo == null) {
             addTo = new HashSet<String>();

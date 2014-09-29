@@ -9,7 +9,7 @@
   <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.behaviour(MPS.Core/jetbrains.mps.smodel.behaviour@java_stub)" />
   <dep model="f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)" />
   <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="-2hubvwh7bwismm0eld02cqmdefvj5by" />
-  <dep model="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)" hash="-30rlguy57pzeingcldkrjy7mw751lni" />
+  <dep model="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)" hash="-5irhoc4nzx03xzcxrcl9wa524ugqpfe" />
   <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-7vgk3jafz630zooccect8piiihx2bnu" />
   <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" hash="-2sqpydigz7vryaerubh22j78l4l08jz" />
   <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" hash="fgqypvsxmg86e28lt26xyps4tf5i1v" />
@@ -59,7 +59,9 @@
   <source id="1225277059676" name="reduce_IsNotEmptyExpression" hash="be6fhqipoe4rrhsdd2dqt6514c42wvw">
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
-  <source id="1225277059687" name="reduce_NPEEqualsExpression" hash="-af7ffrl1255l17kln5pf0tt60uvmli" />
+  <source id="1225277059687" name="reduce_NPEEqualsExpression" hash="-af7ffrl1255l17kln5pf0tt60uvmli">
+    <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
+  </source>
   <source id="1225277059706" name="reduce_NPENotEqualsExpression" hash="-441j1skmsb19l7o2f5v415d5j873c0t" />
   <source id="1225277059742" name="reduce_StringType" hash="26iwcaav6qybc46x57dpbw88orwl1ju" />
   <source id="1225277059745" name="reduce_SubstringExpression" hash="aygxlnph2hd96g9g0ol8z8nx972qfky" />

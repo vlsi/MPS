@@ -17,9 +17,11 @@ package jetbrains.mps.reloading;
 
 import jetbrains.mps.stubs.javastub.classpath.ClassifierKind;
 import jetbrains.mps.util.FlattenIterable;
+import jetbrains.mps.util.iterable.IterableEnumeration;
 
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.Enumeration;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
@@ -81,9 +83,26 @@ public class CompositeClassPathItem extends AbstractClassPathItem {
   public URL getResource(String name) {
     checkValidity();
     for (IClassPathItem item : myChildren) {
-      if (item.getResource(name) != null) return item.getResource(name);
+      URL resource = item.getResource(name);
+      if (resource != null) {
+        return resource;
+      }
     }
     return null;
+  }
+
+  @Override
+  public Enumeration<URL> getResources(String name) {
+    checkValidity();
+
+    List<URL> result = new ArrayList<URL>();
+    for (IClassPathItem item : myChildren) {
+      Enumeration<URL> resources = item.getResources(name);
+      while (resources.hasMoreElements()) {
+        result.add(resources.nextElement());
+      }
+    }
+    return new IterableEnumeration<URL>(result);
   }
 
   @Override

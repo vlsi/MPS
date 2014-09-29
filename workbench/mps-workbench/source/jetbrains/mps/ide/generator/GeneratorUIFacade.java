@@ -63,6 +63,7 @@ import java.util.Set;
  * Evgeny Gryaznov, Aug 24, 2010
  */
 @Deprecated
+@ToRemove(version = 3.2)
 public class GeneratorUIFacade {
 
   private GeneratorUIFacade() {

@@ -597,7 +597,7 @@
             <node role="content" roleId="iuxj.1622293396948928802" type="iuxj.XmlElement" typeId="iuxj.6666499814681415858" id="8979762117546981910" nodeInfo="ng">
               <property name="tagName" nameId="iuxj.6666499814681415862" value="string" />
               <node role="content" roleId="iuxj.1622293396948928802" type="iuxj.XmlText" typeId="iuxj.1622293396948952339" id="8979762117546981911" nodeInfo="nn">
-                <property name="value" nameId="iuxj.1622293396948953704" value="1.6+" />
+                <property name="value" nameId="iuxj.1622293396948953704" value="1.6*" />
               </node>
             </node>
             <node role="content" roleId="iuxj.1622293396948928802" type="iuxj.XmlElement" typeId="iuxj.6666499814681415858" id="8979762117546981902" nodeInfo="ng">

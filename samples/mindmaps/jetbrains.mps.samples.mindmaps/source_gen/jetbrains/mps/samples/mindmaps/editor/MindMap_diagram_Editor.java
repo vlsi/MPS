@@ -241,9 +241,9 @@ public class MindMap_diagram_Editor extends DefaultNodeEditor {
     }
   }
   private static boolean neq_e8klwn_a0a0a0a0d1a2a0a1a0i(Object a, Object b) {
-    return !((a != null ? a.equals(b) : a == b));
+    return !(((a != null ? a.equals(b) : a == b)));
   }
   private static boolean neq_e8klwn_a0a0a0a0d0a0a0d8(Object a, Object b) {
-    return !((a != null ? a.equals(b) : a == b));
+    return !(((a != null ? a.equals(b) : a == b)));
   }
 }

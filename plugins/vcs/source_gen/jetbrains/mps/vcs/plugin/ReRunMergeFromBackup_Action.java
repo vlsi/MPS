@@ -22,10 +22,10 @@ import com.intellij.openapi.actionSystem.CommonDataKeys;
 import java.io.File;
 import jetbrains.mps.vcs.platform.util.MergeBackupUtil;
 import jetbrains.mps.vcs.util.MergeVersion;
+import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import org.xml.sax.InputSource;
 import java.io.StringReader;
-import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.extapi.model.SModelBase;
 import com.intellij.openapi.diff.MergeRequest;
 import com.intellij.openapi.diff.DiffRequestFactory;
@@ -101,8 +101,8 @@ public class ReRunMergeFromBackup_Action extends BaseAction {
           String base = modelsAsText[MergeVersion.BASE.ordinal()];
           String repository = modelsAsText[MergeVersion.REPOSITORY.ordinal()];
 
-          String uid = ModelPersistence.loadDescriptor(new InputSource(new StringReader(mine))).getUID();
-          if (uid == null || !(PersistenceFacade.getInstance().createModelReference(uid).equals(((SModel) MapSequence.fromMap(_params).get("model")).getReference()))) {
+          SModelReference uid = ModelPersistence.loadDescriptor(new InputSource(new StringReader(mine))).getModelReference();
+          if (uid == null || !(uid.equals(((SModel) MapSequence.fromMap(_params).get("model")).getReference()))) {
             continue;
           }
 

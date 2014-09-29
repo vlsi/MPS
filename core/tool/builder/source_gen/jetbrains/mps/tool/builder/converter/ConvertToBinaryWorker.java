@@ -8,12 +8,19 @@ import jetbrains.mps.persistence.MPSPersistence;
 import jetbrains.mps.RuntimeFlags;
 import jetbrains.mps.persistence.PersistenceRegistry;
 import jetbrains.mps.persistence.LightModelEnvironmentInfoImpl;
+import jetbrains.mps.smodel.ModelAccess;
 import java.io.IOException;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.FileSystem;
-import jetbrains.mps.smodel.DefaultSModel;
-import jetbrains.mps.smodel.persistence.def.ModelPersistence;
+import org.jetbrains.mps.openapi.persistence.ModelFactory;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
+import jetbrains.mps.util.FileUtil;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.extapi.persistence.FileDataSource;
+import java.util.Collections;
+import jetbrains.mps.persistence.DefaultModelPersistence;
+import jetbrains.mps.project.MPSExtentions;
+import org.jetbrains.mps.openapi.persistence.ModelSaveException;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.persistence.binary.BinaryPersistence;
@@ -22,7 +29,7 @@ import jetbrains.mps.smodel.persistence.def.ModelReadException;
 public class ConvertToBinaryWorker {
   public ConvertToBinaryWorker() {
   }
-  public void convert(Map<String, String> map, Boolean stripImplementation) {
+  public void convert(final Map<String, String> map, final Boolean stripImplementation) {
     final MPSCore mpsCore = new MPSCore();
     mpsCore.init();
     final MPSPersistence mpsPersistence = new MPSPersistence();
@@ -31,11 +38,17 @@ public class ConvertToBinaryWorker {
     PersistenceRegistry.getInstance().setModelEnvironmentInfo(new LightModelEnvironmentInfoImpl());
     RuntimeFlags.setPlayRefactoringsMode(false);
     try {
-      for (Map.Entry<String, String> entry : map.entrySet()) {
-        convertModelToBinary(entry.getKey(), entry.getValue(), stripImplementation);
-      }
-    } catch (IOException ex) {
-      throw new RuntimeException(ex);
+      ModelAccess.instance().runWriteAction(new Runnable() {
+        public void run() {
+          try {
+            for (Map.Entry<String, String> entry : map.entrySet()) {
+              convertModelToBinary(entry.getKey(), entry.getValue(), stripImplementation);
+            }
+          } catch (IOException ex) {
+            throw new RuntimeException(ex);
+          }
+        }
+      });
     } finally {
       PersistenceRegistry.getInstance().setModelEnvironmentInfo(null);
       mpsPersistence.dispose();
@@ -45,26 +58,16 @@ public class ConvertToBinaryWorker {
 
   private void convertModelToBinary(String sourceFile, final String destFile, boolean stripImplementation) throws IOException {
     IFile source = FileSystem.getInstance().getFileByPath(sourceFile);
+    ModelFactory modelFactory = PersistenceFacade.getInstance().getModelFactory(FileUtil.getExtension(source.getName()));
+    if (modelFactory == null) {
+      // assuming user knows what he's doing and supplied us with a model file, try default factory. 
+      modelFactory = PersistenceFacade.getInstance().getDefaultModelFactory();
+    }
     try {
-      final DefaultSModel model = (stripImplementation ? ModelPersistence.readModelWithoutImplementation(new FileDataSource(source)) : ModelPersistence.readModel(new FileDataSource(source), false));
-      if (model.getSModelHeader().getPersistenceVersion() < ModelPersistence.LAST_VERSION) {
-        throw new IOException("cannot convert " + sourceFile + ": model persistence is too old, please upgrade");
-      }
-      final Wrappers._T<IOException> e = new Wrappers._T<IOException>(null);
-      ModelAccess.instance().runReadAction(new Runnable() {
-        public void run() {
-          try {
-            BinaryPersistence.writeModel(model, new FileDataSource(FileSystem.getInstance().getFileByPath(destFile)));
-          } catch (IOException e1) {
-            e.value = e1;
-          }
-        }
-      });
-      if (e.value != null) {
-        throw e.value;
-      }
-    } catch (ModelReadException e) {
-      throw new IOException("Couldn't parse " + sourceFile + ": " + e.getMessageEx(), e);
+      SModel model = modelFactory.load(new FileDataSource(source), Collections.singletonMap(DefaultModelPersistence.OPTION_STRIP_IMPLEMENTATION, Boolean.toString(stripImplementation)));
+      PersistenceFacade.getInstance().getModelFactory(MPSExtentions.MODEL_BINARY).save(model, new FileDataSource(FileSystem.getInstance().getFileByPath(destFile)));
+    } catch (ModelSaveException e) {
+      throw new IOException(String.format("Failed to write model in binary format to file %s", destFile), e);
     }
   }
 }

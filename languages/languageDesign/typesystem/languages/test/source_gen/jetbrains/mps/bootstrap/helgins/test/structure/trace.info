@@ -2,7 +2,7 @@
 <debug-info>
   <root>
     <file name="StructureAspectDescriptor.java">
-      <unit at="11,0,26,0" name="jetbrains.mps.bootstrap.helgins.test.structure.StructureAspectDescriptor" />
+      <unit at="13,0,36,0" name="jetbrains.mps.bootstrap.helgins.test.structure.StructureAspectDescriptor" />
     </file>
   </root>
 </debug-info>

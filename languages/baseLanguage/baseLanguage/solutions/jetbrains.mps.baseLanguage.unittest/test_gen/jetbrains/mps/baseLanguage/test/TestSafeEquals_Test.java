@@ -35,15 +35,15 @@ public class TestSafeEquals_Test extends TestCase {
     return (a != null ? a.equals(b) : a == b);
   }
   private static boolean neq_g71ru1_a0a1a1(Object a, Object b) {
-    return !((a != null ? a.equals(b) : a == b));
+    return !(((a != null ? a.equals(b) : a == b)));
   }
   private static boolean neq_g71ru1_a0a2a1(Object a, Object b) {
-    return !((a != null ? a.equals(b) : a == b));
+    return !(((a != null ? a.equals(b) : a == b)));
   }
   private static boolean neq_g71ru1_a0a3a1(Object a, Object b) {
-    return !((a != null ? a.equals(b) : a == b));
+    return !(((a != null ? a.equals(b) : a == b)));
   }
   private static boolean neq_g71ru1_a0a4a1(Object a, Object b) {
-    return !((a != null ? a.equals(b) : a == b));
+    return !(((a != null ? a.equals(b) : a == b)));
   }
 }

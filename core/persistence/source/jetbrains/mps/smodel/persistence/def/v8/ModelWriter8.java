@@ -17,6 +17,7 @@ package jetbrains.mps.smodel.persistence.def.v8;
 
 import jetbrains.mps.persistence.FilePerRootDataSource;
 import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.SModelHeader;
 import jetbrains.mps.smodel.persistence.def.DocUtil;
 import jetbrains.mps.smodel.persistence.def.FilePerRootFormatUtil;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
@@ -39,6 +40,10 @@ import java.util.Map;
  * evgeny, 4/29/13
  */
 public class ModelWriter8 extends ModelWriter7 {
+
+  public ModelWriter8(SModelHeader modelHeader) {
+    super(modelHeader);
+  }
 
   @Override
   protected int getModelPersistenceVersion() {
