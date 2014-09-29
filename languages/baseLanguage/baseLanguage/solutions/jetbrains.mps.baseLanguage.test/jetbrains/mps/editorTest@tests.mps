@@ -29014,7 +29014,7 @@
   </root>
   <root type="tp5g.EditorTestCase" typeId="tp5g.1229187653856" id="8347245235044888101" nodeInfo="ng">
     <property name="virtualPackage" nameId="tpck.1193676396447" value="methodModifiers" />
-    <property name="name" nameId="tpck.1169194664001" value="AbstractNative" />
+    <property name="name" nameId="tpck.1169194664001" value="AddNative3" />
     <node role="nodeToEdit" roleId="tp5g.1229187676388" type="tpee.ClassConcept" typeId="tpee.1068390468198" id="8347245235044888102" nodeInfo="ig">
       <property name="nonStatic" nameId="tpee.521412098689998745" value="true" />
       <property name="name" nameId="tpck.1169194664001" value="Foo" />
