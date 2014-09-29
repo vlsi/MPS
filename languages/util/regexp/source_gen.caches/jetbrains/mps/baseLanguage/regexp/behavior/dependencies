@@ -728,7 +728,10 @@
   <dependency className="jetbrains.mps.baseLanguage.regexp.behavior.SymbolClassRegexpAndPart_Behavior" file="SymbolClassRegexpAndPart_Behavior.java">
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.regexp.behavior.SymbolClassRegexpAndPart_BehaviorDescriptor" file="SymbolClassRegexpAndPart_BehaviorDescriptor.java" />
+  <dependency className="jetbrains.mps.baseLanguage.regexp.behavior.SymbolClassRegexpAndPart_BehaviorDescriptor" file="SymbolClassRegexpAndPart_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+  </dependency>
   <dependency className="jetbrains.mps.baseLanguage.regexp.behavior.SymbolClassRegexp_Behavior" file="SymbolClassRegexp_Behavior.java">
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
