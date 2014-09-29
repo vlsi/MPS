@@ -181,7 +181,6 @@ public class ModelReader9Handler extends XMLSAXHandler<ModelLoadResult> {
       SModelReference ref = PersistenceFacade.getInstance().createModelReference(attrs.getValue("ref"));
       fieldmodel = new DefaultSModel(ref);
       fieldmodel.setPersistenceVersion(9);
-      fieldmodel.getSModelHeader().updateDefaults(fieldheader);
       fieldhelper = new ReadHelper9(fieldmodel.getReference());
       ModelLoadResult result = new ModelLoadResult(fieldmodel, ModelLoadingState.NOT_LOADED);
       result.setState((fieldinterfaceOnly ? ModelLoadingState.INTERFACE_LOADED : ModelLoadingState.NO_IMPLEMENTATION));

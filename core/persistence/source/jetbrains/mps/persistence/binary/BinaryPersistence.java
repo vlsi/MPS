@@ -140,7 +140,7 @@ public class BinaryPersistence {
     return result;
   }
 
-  private static void loadModelProperties(BinarySModel model, ModelInputStream is) throws IOException {
+  private static void loadModelProperties(SModel model, ModelInputStream is) throws IOException {
     if (is.readInt() == 0x5a5a) {
       loadDebugInfo(is);
     }

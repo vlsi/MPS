@@ -21,7 +21,6 @@ import jetbrains.mps.extapi.model.SModelBase;
 import jetbrains.mps.extapi.model.SNodeBase;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.persistence.binary.BinarySModel;
 import jetbrains.mps.project.structure.ProjectStructureModule.ProjectStructureSModel;
 import jetbrains.mps.smodel.adapter.SConceptAdapter;
 import jetbrains.mps.smodel.references.UnregisteredNodes;
@@ -1849,7 +1848,6 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
 
   public static IdMigrationMode workingMode(SModel model) {
     if (model == null) return IdMigrationMode.UNKNOWN;
-    if (model instanceof BinarySModel) return IdMigrationMode.ID;
     if (model.getClass().getName().equals("jetbrains.mps.smodel.tempmodel.TempModel$1")) return IdMigrationMode.NAME;
     if (model.getClass().getName().equals("jetbrains.mps.generator.TransientSModel")) return IdMigrationMode.NAME;
     if (model instanceof ProjectStructureSModel) return IdMigrationMode.NAME;
