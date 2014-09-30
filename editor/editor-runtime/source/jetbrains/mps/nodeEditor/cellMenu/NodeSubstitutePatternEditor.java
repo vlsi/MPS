@@ -16,7 +16,6 @@
 package jetbrains.mps.nodeEditor.cellMenu;
 
 import com.intellij.util.ui.UIUtil;
-import jetbrains.mps.MPSCore;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.cells.TextLine;
 import jetbrains.mps.openapi.editor.style.StyleRegistry;
