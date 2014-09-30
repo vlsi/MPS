@@ -3063,6 +3063,15 @@
     <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="2278396422093878128" nodeInfo="ng">
       <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="ryl9.2278396422093812354" resolveInfo="StringLiteralDelete" />
     </node>
+    <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="5681344316174528749" nodeInfo="ng">
+      <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="ryl9.5681344316174454187" resolveInfo="soutLiveTemplate" />
+    </node>
+    <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="5681344316174530047" nodeInfo="ng">
+      <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="ryl9.5681344316174494666" resolveInfo="serrLiveTemplate" />
+    </node>
+    <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="5681344316174530697" nodeInfo="ng">
+      <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="ryl9.5681344316174495391" resolveInfo="psvmLiveTemplate" />
+    </node>
   </root>
   <root type="pop3.ModuleSuite" typeId="pop3.4504141816188599477" id="7917427600705105663" nodeInfo="ng">
     <node role="moduleRef" roleId="pop3.1280144168199507080" type="pop3.SolutionRef" typeId="pop3.1280144168199506908" id="7917427600705106075" nodeInfo="ig">
