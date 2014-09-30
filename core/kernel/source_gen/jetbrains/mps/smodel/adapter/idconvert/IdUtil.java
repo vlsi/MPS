@@ -15,7 +15,7 @@
  */
 package jetbrains.mps.smodel.adapter.idconvert;
 
-import jetbrains.mps.smodel.DebugRegistryImpl;
+import jetbrains.mps.smodel.DebugRegistry;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.smodel.adapter.SConceptAdapter;
@@ -34,7 +34,6 @@ import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.language.SProperty;
 import org.jetbrains.mps.openapi.language.SReferenceLink;
-import org.jetbrains.mps.openapi.module.DebugRegistry;
 
 import java.util.UUID;
 
@@ -50,7 +49,7 @@ public abstract class IdUtil {
   public static final SContainmentLinkId UNKNOWN_LINK_ID = new SContainmentLinkId(new SConceptId(new SLanguageId(new UUID(0, 0)), 0), 0);
 
   public static String getConceptFqName(SConceptId id) {
-    DebugRegistry dr = MPSModuleRepository.getInstance().getDebugRegistry();
+    org.jetbrains.mps.openapi.module.DebugRegistry dr = MPSModuleRepository.getInstance().getDebugRegistry();
     String languageName = dr.getLanguageName(new SLanguageAdapter(id.getLanguageId()));
     String conceptName = dr.getConceptName(new SConceptAdapter(id));
     if (languageName == null || conceptName == null) {
@@ -60,7 +59,7 @@ public abstract class IdUtil {
   }
 
   public static SConcept getConceptId(String fqName) {
-    DebugRegistryImpl dr = ((DebugRegistryImpl) MPSModuleRepository.getInstance().getDebugRegistry());
+    DebugRegistry dr = ((DebugRegistry) MPSModuleRepository.getInstance().getDebugRegistry());
     SLanguage lang = dr.getLanguageId(NameUtil.namespaceFromConceptFQName(fqName));
     if (lang == null) return null;
     return dr.getConceptId(lang, NameUtil.shortNameFromLongName(fqName));
@@ -68,7 +67,7 @@ public abstract class IdUtil {
 
   //finds property id given its name and an inheritor of an original concept
   public static SProperty getPropId(SConcept id, String propName) {
-    SProperty pid = ((DebugRegistryImpl) MPSModuleRepository.getInstance().getDebugRegistry()).getPropertyId(id, propName);
+    SProperty pid = ((DebugRegistry) MPSModuleRepository.getInstance().getDebugRegistry()).getPropertyId(id, propName);
     if (pid != null) return pid;
 
     // this hack is needed until SConcept works by name
@@ -77,7 +76,7 @@ public abstract class IdUtil {
     }
 
     for (SAbstractConcept c : SConceptUtil.getAllSuperConcepts(new SConceptAdapter(id))) {
-      pid = ((DebugRegistryImpl) MPSModuleRepository.getInstance().getDebugRegistry()).getPropertyId(c.getId(), propName);
+      pid = ((DebugRegistry) MPSModuleRepository.getInstance().getDebugRegistry()).getPropertyId(c.getId(), propName);
       if (pid != null) return pid;
     }
     return UNKNOWN_PROPERTY_ID;
@@ -88,22 +87,22 @@ public abstract class IdUtil {
   }
 
   public static SContainmentLink getContainmentLinkId(SConcept id, String refName) {
-    SAbstractLink rid = ((DebugRegistryImpl) MPSModuleRepository.getInstance().getDebugRegistry()).getLinkId(id, refName);
+    SAbstractLink rid = ((DebugRegistry) MPSModuleRepository.getInstance().getDebugRegistry()).getLinkId(id, refName);
     if (rid instanceof SContainmentLink) return (SContainmentLink) rid;
 
     for (SAbstractConcept c : SConceptUtil.getAllSuperConcepts(new SConceptAdapter(id))) {
-      rid = ((DebugRegistryImpl) MPSModuleRepository.getInstance().getDebugRegistry()).getLinkId(c.getId(), refName);
+      rid = ((DebugRegistry) MPSModuleRepository.getInstance().getDebugRegistry()).getLinkId(c.getId(), refName);
       if (rid instanceof SContainmentLink) return (SContainmentLink) rid;
     }
     return UNKNOWN_LINK_ID;
   }
 
   public static SReferenceLink getReferenceLinkId(SConcept id, String refName) {
-    SAbstractLink rid = ((DebugRegistryImpl) MPSModuleRepository.getInstance().getDebugRegistry()).getLinkId(id, refName);
+    SAbstractLink rid = ((DebugRegistry) MPSModuleRepository.getInstance().getDebugRegistry()).getLinkId(id, refName);
     if (rid instanceof SReferenceLink) return (SReferenceLink) rid;
 
     for (SAbstractConcept c : SConceptUtil.getAllSuperConcepts(new SConceptAdapter(id))) {
-      rid = ((DebugRegistryImpl) MPSModuleRepository.getInstance().getDebugRegistry()).getLinkId(c.getId(), refName);
+      rid = ((DebugRegistry) MPSModuleRepository.getInstance().getDebugRegistry()).getLinkId(c.getId(), refName);
       if (rid instanceof SReferenceLink) return (SReferenceLink) rid;
     }
     return UNKNOWN_REFERENCE_ID;
