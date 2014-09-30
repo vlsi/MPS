@@ -23,6 +23,9 @@ import org.xml.sax.SAXParseException;
 
 import java.io.IOException;
 
+/**
+ * Indicates failure to read model. Is not specific to 'default' persistence.
+ */
 public class ModelReadException extends Exception {
   @Nullable
   private SModelReference myModelReference;

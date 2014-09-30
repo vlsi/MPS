@@ -229,7 +229,6 @@ public class ParenthesisUtil {
     // Find the turning points, if exist, otherwise just wrap in parens 
     SNode leftTurn = ParenthesisUtil.findLeftTurn(leftExpression, firstCommonAncestor);
     SNode rightTurn = ParenthesisUtil.findRightTurn(rightExpression, firstCommonAncestor);
-    System.out.println("BBBBBBB " + leftExpression + ":" + rightExpression + ":" + leftTurn + ":" + rightTurn);
 
     if (leftTurn != null || rightTurn != null) {
       SNode parens = ParenthesisUtil.rebalance(leftTurn, SNodeOperations.cast(firstCommonAncestor, "jetbrains.mps.baseLanguage.structure.IBinaryLike"), rightTurn);
@@ -310,9 +309,6 @@ public class ParenthesisUtil {
     // Accumulate expressions between the rightTurn and firstCommon to include inside the parens. 
     // These would be the nodes into which we come from the right child. 
     SNode rightAccumulator = buildAccumulator(firstCommonAncestor, rightTurn, false);
-
-    assert leftAccumulator != null;
-    assert rightAccumulator != null;
 
     SNode parens = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ParenthesizedExpression", null);
     if (SNodeOperations.isInstanceOf(firstCommonAncestor, "jetbrains.mps.baseLanguage.structure.BinaryOperation")) {
@@ -421,7 +417,7 @@ public class ParenthesisUtil {
         accumulator = firstCommonAncestorChild;
         SNodeOperations.detachNode(accumulator);
       } else {
-        accumulator = SNodeOperations.cast(firstCommonAncestor, "jetbrains.mps.baseLanguage.structure.Expression");
+        accumulator = null;
       }
     }
     return accumulator;

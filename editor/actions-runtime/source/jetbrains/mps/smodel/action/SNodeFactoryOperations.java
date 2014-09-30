@@ -30,8 +30,6 @@ import org.apache.log4j.LogManager;
  */
 public class SNodeFactoryOperations {
 
-  private static final Logger LOG = Logger.wrap(LogManager.getLogger(SNodeFactoryOperations.class));
-
   public static SNode createNewNode(String conceptFqName, SNode prototypeNode) {
     if (conceptFqName == null) return null;
     return NodeFactoryManager.createNode(conceptFqName, prototypeNode, null, null);

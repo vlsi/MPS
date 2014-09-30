@@ -138,9 +138,7 @@ public class ModelReader6Handler extends XMLSAXHandler<ModelLoadResult> {
     }
     @Override
     protected ModelLoadResult createObject(Attributes attrs) throws SAXException {
-      fieldmodel = new DefaultSModel(PersistenceFacade.getInstance().createModelReference(attrs.getValue("modelUID")));
-      fieldmodel.setPersistenceVersion(6);
-      fieldmodel.getSModelHeader().updateDefaults(fieldheader);
+      fieldmodel = new DefaultSModel(PersistenceFacade.getInstance().createModelReference(attrs.getValue("modelUID")), fieldheader);
       fieldhelper = new VersionUtil(fieldmodel.getReference());
       return new ModelLoadResult(fieldmodel, ModelLoadingState.NOT_LOADED);
     }

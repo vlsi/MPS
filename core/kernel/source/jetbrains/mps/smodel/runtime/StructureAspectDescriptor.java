@@ -15,8 +15,14 @@
  */
 package jetbrains.mps.smodel.runtime;
 
-// XXX perhaps, would be handy to have a list of all concepts defined in this aspect -
-// otherwise it's unclear where from shall I take fqName I pass in here
+/**
+ * Interface to access generated meta-information about structure aspect.
+ * IMPORTANT: generated code shall not implement this interface directly, rather extend
+ * {@link jetbrains.mps.smodel.runtime.BaseStructureAspectDescriptor}.
+ *
+ * FIXME BaseStructureAspectDescriptor#getDescriptors() shall move here once 3.2 (which uses BSAD in generated descriptors) is out.
+ * @see jetbrains.mps.smodel.runtime.BaseStructureAspectDescriptor
+ */
 public interface StructureAspectDescriptor extends LanguageAspectDescriptor {
   ConceptDescriptor getDescriptor(String fqName);
 }

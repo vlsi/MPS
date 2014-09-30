@@ -62,9 +62,7 @@ public class ModelReader4 implements IModelReader {
     Element rootElement = document.getRootElement();
 
     SModelReference modelReference = PersistenceFacade.getInstance().createModelReference(rootElement.getAttributeValue(ModelPersistence.MODEL_UID));
-    DefaultSModel model = new DefaultSModel(modelReference);
-    model.setPersistenceVersion(getVersion());
-    model.getSModelHeader().updateDefaults(header);
+    DefaultSModel model = new DefaultSModel(modelReference, header);
 
     // languages
     List languages = rootElement.getChildren(ModelPersistence.LANGUAGE);

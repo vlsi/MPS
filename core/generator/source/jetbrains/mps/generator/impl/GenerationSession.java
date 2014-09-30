@@ -103,18 +103,17 @@ class GenerationSession {
   private final GenerationOptions myGenerationOptions;
   private final List<SModel> myTransientModelsToRecycle = new ArrayList<SModel>();
 
-  GenerationSession(@NotNull SModel inputModel, @NotNull Project project, ITaskPoolProvider taskPoolProvider,
-      GeneratorLoggerAdapter logger, TransientModelsModule transientModelsModule,
-      IPerformanceTracer tracer, GenerationOptions generationOptions, GenerationTrace genTrace) {
+  GenerationSession(@NotNull SModel inputModel, @NotNull GenControllerContext environment, ITaskPoolProvider taskPoolProvider,
+      GeneratorLoggerAdapter logger, TransientModelsModule transientModule, IPerformanceTracer performanceTracer, GenerationTrace genTrace) {
     myTaskPoolProvider = taskPoolProvider;
     myOriginalInputModel = inputModel;
     myNewTrace = genTrace;
     myLogRecorder = new RecordingFactory(new BasicFactory());
     myLogger = new GenerationSessionLogger(logger, myLogRecorder);
-    ttrace = tracer;
-    myGenerationOptions = generationOptions;
-    myProject = project;
-    mySessionContext = new GenerationSessionContext(project, generationOptions, myLogger, transientModelsModule, myOriginalInputModel, tracer);
+    ttrace = performanceTracer;
+    myGenerationOptions = environment.getOptions();
+    myProject = environment.getProject();
+    mySessionContext = new GenerationSessionContext(environment, transientModule, myLogger, myOriginalInputModel, performanceTracer);
   }
 
   GenerationStatus generateModel(ProgressMonitor monitor) throws GenerationCanceledException {
@@ -371,7 +370,7 @@ class GenerationSession {
       } finally {
         // if apply fails with exception, I'd like to keep both current input and output.
         final boolean generationFailed = !applySucceed;
-        final boolean inplaceChange = tg.getOutputModel() == currentOutputModel;
+        final boolean inplaceChange = tg.getOutputModel() != currentOutputModel;
         if (generationFailed) {
           publishTransientModel(currentInputModel.getReference());
           if (!inplaceChange) {
