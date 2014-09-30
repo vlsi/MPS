@@ -22,7 +22,7 @@ public class AddParensToCastInDot_Test extends BaseTransformationTest {
     }
     @Override
     public void testMethodImpl() throws Exception {
-      initEditor("7375190718711844354", "7375190718711865453");
+      initEditor("7375190718711844354", "5681344316157424404");
       this.typeString(")");
     }
   }
