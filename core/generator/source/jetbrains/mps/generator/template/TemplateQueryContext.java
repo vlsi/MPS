@@ -16,6 +16,7 @@
 package jetbrains.mps.generator.template;
 
 import jetbrains.mps.generator.impl.DefaultTemplateContext;
+import jetbrains.mps.generator.impl.ExportsSessionContext;
 import jetbrains.mps.generator.impl.ExportsVault;
 import jetbrains.mps.generator.impl.GeneratorUtil;
 import jetbrains.mps.generator.runtime.TemplateContext;
@@ -230,8 +231,8 @@ public class TemplateQueryContext {
 
 
   public SNode getOutputNodeProxy(SNode inputNode, String exportLabelName) {
-    final ExportsVault exportsVault = myGenerator.getGeneratorSessionContext().getExports();
-    final Collection<SNode> exportProxies = exportsVault.find(exportLabelName, getInputModel(), inputNode);
+    final ExportsSessionContext exports = myGenerator.getGeneratorSessionContext().getExports();
+    final Collection<SNode> exportProxies = exports.find(exportLabelName, getInputModel(), inputNode);
     if (exportProxies.isEmpty()) {
       return null;
     }
