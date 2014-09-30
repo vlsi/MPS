@@ -21,8 +21,6 @@ import jetbrains.mps.openapi.editor.cells.EditorCell;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
 
-import java.util.Iterator;
-
 /**
  * User: shatalin
  * Date: 09/09/14
@@ -47,43 +45,49 @@ class ChildRemovedSelectionHandler extends ModelEventsSelectionHandler {
   }
 
   private void doSetSelection(EditorComponent editorComponent) {
-    Iterator<? extends SNode> siblingsIterator = myParent.getChildren(myChildRole).iterator();
-    if (!siblingsIterator.hasNext()) {
-      selectNullCell(editorComponent);
-      return;
-    }
     SNode nodeToSelect = null;
+    boolean isNext = false;
     int index = 0;
     for (SNode nextChild : myParent.getChildren()) {
-      if (index >= myChildIndex) {
-        break;
-      }
       if (myChildRole.equals(nextChild.getRoleInParent())) {
         nodeToSelect = nextChild;
+        if (index >= myChildIndex) {
+          isNext = true;
+          break;
+        }
       }
       index++;
-    }
-
-    boolean isLastPosition = true;
-    if (nodeToSelect == null) {
-      isLastPosition = false;
-      nodeToSelect = siblingsIterator.next();
     }
 
     if (nodeToSelect != null) {
       EditorCell cell = editorComponent.findNodeCell(nodeToSelect);
       if (cell != null) {
-        EditorCell selectableLeaf = isLastPosition ? CellFinderUtil.findLastSelectableLeaf(cell, true) : CellFinderUtil.findFirstSelectableLeaf(cell, true);
+        EditorCell selectableLeaf = isNext ? CellFinderUtil.findFirstSelectableLeaf(cell, true) : CellFinderUtil.findLastSelectableLeaf(cell, true);
         if (selectableLeaf != null) {
           editorComponent.changeSelection(selectableLeaf);
-          if (isLastPosition) {
-            selectableLeaf.end();
-          } else {
+          if (isNext) {
             selectableLeaf.home();
+          } else {
+            selectableLeaf.end();
           }
 
           return;
         }
+      }
+    }
+
+    EditorCell nullCell = editorComponent.findNodeCellWithRole(myParent, myChildRole);
+    if (nullCell != null) {
+      editorComponent.changeSelectionWRTFocusPolicy(nullCell);
+      return;
+    }
+
+    EditorCell cell = editorComponent.findNodeCell(myParent);
+    if (cell != null) {
+      EditorCell lastLeaf = CellFinderUtil.findLastSelectableLeaf(cell, true);
+      if (lastLeaf != null) {
+        editorComponent.changeSelection(lastLeaf);
+        lastLeaf.end();
       }
     }
   }

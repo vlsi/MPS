@@ -30,13 +30,6 @@
     <node role="result" roleId="tp5g.1229187707859" type="dekf.NodeContainer" typeId="dekf.8422442021223268684" id="8422442021223410181" nodeInfo="ng">
       <node role="node" roleId="dekf.8422442021223269806" type="tpee.BooleanConstant" typeId="tpee.1068580123137" id="8422442021223410189" nodeInfo="nn">
         <property name="value" nameId="tpee.1068580123138" value="true" />
-        <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.AnonymousCellAnnotation" typeId="tp5g.1229194968594" id="8422442021223410200" nodeInfo="ng">
-          <property name="caretPosition" nameId="tp5g.1229194968596" value="0" />
-          <property name="useLabelSelection" nameId="tp5g.1932269937152561478" value="true" />
-          <property name="selectionStart" nameId="tp5g.6268941039745498163" value="0" />
-          <property name="selectionEnd" nameId="tp5g.6268941039745498165" value="0" />
-          <property name="cellId" nameId="tp5g.1229194968595" value="property_value" />
-        </node>
       </node>
     </node>
   </root>

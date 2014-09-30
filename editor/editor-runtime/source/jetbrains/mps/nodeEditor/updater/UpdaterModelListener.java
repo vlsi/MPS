@@ -46,8 +46,8 @@ class UpdaterModelListener extends EventsCollector {
 
     myUpdater.update(events);
     myEditorComponent.relayout();
-    if (eventsAnalyzer.getSelectionData() != null) {
-      eventsAnalyzer.getSelectionData().setEditorSelection(myEditorComponent, lastSelectedNode);
+    if (myUpdater.getEditorContext().isInsideCommand() && eventsAnalyzer.getSelectionHandler() != null) {
+      eventsAnalyzer.getSelectionHandler().setEditorSelection(myEditorComponent, lastSelectedNode);
     }
   }
 }

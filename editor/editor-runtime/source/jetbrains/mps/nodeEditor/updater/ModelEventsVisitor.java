@@ -60,8 +60,9 @@ class ModelEventsVisitor implements SModelEventVisitor {
     }
   }
 
-  ModelEventsSelectionHandler getSelectionData() {
-    return myLastAdded != null && myEditorComponent.getEditorContext().isInsideCommand() ? myLastAdded : myLastRemoved;
+  ModelEventsSelectionHandler getSelectionHandler() {
+    // TODO: use latest delta here
+    return myLastAdded != null ? myLastAdded : myLastRemoved;
   }
 
   boolean isPropertyModification() {
