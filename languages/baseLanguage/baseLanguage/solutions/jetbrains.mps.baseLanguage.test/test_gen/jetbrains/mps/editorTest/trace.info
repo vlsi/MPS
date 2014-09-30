@@ -9506,6 +9506,28 @@
       <unit id="7311202892961766807" at="10,0,34,0" name="jetbrains.mps.editorTest.PasteExpressionToFullyText_Test" />
     </file>
   </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/7375190718711844353">
+    <file name="AddParensToCastInDot_Test.java">
+      <node id="7375190718711844353" at="15,60,16,107" concept="2" />
+      <node id="7375190718711844353" at="16,107,17,101" concept="2" />
+      <node id="7375190718711844353" at="24,51,25,63" concept="2" />
+      <node id="7375190718711867144" at="25,63,26,27" concept="2" />
+      <node id="7375190718711844353" at="12,0,14,0" concept="1" trace="AddParensToCastInDot_Test#()V" />
+      <node id="7375190718711844353" at="21,0,23,0" concept="1" trace="TestBody#()V" />
+      <node id="7375190718711844353" at="14,0,19,0" concept="5" trace="test_AddParensToCastInDot#()V" />
+      <node id="7375190718711844353" at="23,0,28,0" concept="5" trace="testMethodImpl#()V" />
+      <scope id="7375190718711844353" at="12,38,12,38" />
+      <scope id="7375190718711844353" at="21,23,21,23" />
+      <scope id="7375190718711844353" at="12,0,14,0" />
+      <scope id="7375190718711844353" at="15,60,17,101" />
+      <scope id="7375190718711844353" at="21,0,23,0" />
+      <scope id="7375190718711844353" at="24,51,26,27" />
+      <scope id="7375190718711844353" at="14,0,19,0" />
+      <scope id="7375190718711844353" at="23,0,28,0" />
+      <unit id="7375190718711844353" at="19,0,29,0" name="jetbrains.mps.editorTest.AddParensToCastInDot_Test$TestBody" />
+      <unit id="7375190718711844353" at="10,0,30,0" name="jetbrains.mps.editorTest.AddParensToCastInDot_Test" />
+    </file>
+  </root>
   <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/738178674097913525">
     <file name="LT_PlusExpressionRArgument_with_Assignment_Test.java">
       <node id="738178674097913525" at="15,82,16,107" concept="2" />
