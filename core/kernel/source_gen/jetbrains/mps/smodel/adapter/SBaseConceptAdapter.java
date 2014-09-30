@@ -15,9 +15,175 @@
  */
 package jetbrains.mps.smodel.adapter;
 
+import jetbrains.mps.smodel.DebugRegistry;
+import jetbrains.mps.smodel.Language;
+import jetbrains.mps.smodel.LanguageAspect;
+import jetbrains.mps.smodel.SNodeId;
+import jetbrains.mps.smodel.adapter.ids.SConceptId;
+import jetbrains.mps.smodel.adapter.ids.SContainmentLinkId;
+import jetbrains.mps.smodel.adapter.ids.SLanguageId;
+import jetbrains.mps.smodel.adapter.ids.SPropertyId;
+import jetbrains.mps.smodel.adapter.ids.SReferenceLinkId;
+import jetbrains.mps.smodel.language.ConceptRegistry;
+import jetbrains.mps.smodel.runtime.ConceptDescriptor;
+import jetbrains.mps.smodel.runtime.illegal.IllegalConceptDescriptor;
+import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.util.Pair;
+import org.apache.log4j.Level;
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import org.jetbrains.mps.openapi.language.SAbstractLink;
 import org.jetbrains.mps.openapi.language.SConcept;
+import org.jetbrains.mps.openapi.language.SContainmentLink;
+import org.jetbrains.mps.openapi.language.SLanguage;
+import org.jetbrains.mps.openapi.language.SProperty;
+import org.jetbrains.mps.openapi.language.SReferenceLink;
+import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.model.SNode;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashSet;
+import java.util.Set;
 
 public abstract class SBaseConceptAdapter implements SAbstractConcept {
+  protected String myFqName;
+
+  protected SBaseConceptAdapter(String fqName) {
+    myFqName = fqName;
+  }
+
   public abstract boolean isSameConcept(SBaseConceptAdapter c);
+
+  public abstract ConceptDescriptor getConceptDescriptor();
+
+  @Override
+  public String getQualifiedName() {
+    return getConceptDescriptor().getConceptFqName();
+  }
+
+  @Override
+  public String getName() {
+    return NameUtil.shortNameFromLongName(getQualifiedName());
+  }
+
+  @Override
+  public Iterable<SReferenceLink> getReferences() {
+    ConceptDescriptor d = getConceptDescriptor();
+    if (d instanceof IllegalConceptDescriptor) return Collections.emptyList();
+
+    Set<Pair<SReferenceLinkId, String>> refDescrs = new HashSet<Pair<SReferenceLinkId, String>>();
+    for (SReferenceLinkId rid : d.getReferenceIds()) {
+      refDescrs.add(new Pair<SReferenceLinkId, String>(rid, d.getRefName(rid)));
+    }
+
+    for (SConceptId ii : d.getParentIds()) {
+      ConceptDescriptor id = getConceptDescriptor(ii);
+      for (SReferenceLinkId rid : id.getReferenceIds()) {
+        refDescrs.add(new Pair<SReferenceLinkId, String>(rid, id.getRefName(rid)));
+      }
+    }
+
+    ArrayList<SReferenceLink> result = new ArrayList<SReferenceLink>();
+    for (Pair<SReferenceLinkId, String> e : refDescrs) {
+      result.add(new SReferenceLinkAdapter(e.o1, e.o2));
+    }
+    return result;
+  }
+
+  @Override
+  public Iterable<SContainmentLink> getChildren() {
+    ConceptDescriptor d = getConceptDescriptor();
+    if (d instanceof IllegalConceptDescriptor) return Collections.emptyList();
+
+    Set<Pair<SContainmentLinkId, String>> linkDescrs = new HashSet<Pair<SContainmentLinkId, String>>();
+    for (SReferenceLinkId rid : d.getChildRoleIds()) {
+      linkDescrs.add(new Pair<SReferenceLinkId, String>(rid, d.getChildRoleName(rid)));
+    }
+
+    for (SConceptId ii : d.getParentIds()) {
+      ConceptDescriptor id = getConceptDescriptor(ii);
+      for (SReferenceLinkId rid : id.getChildRoleIds()) {
+        linkDescrs.add(new Pair<SContainmentLinkId, String>(rid, id.getChildRoleName(rid)));
+      }
+    }
+
+    ArrayList<SContainmentLink> result = new ArrayList<SContainmentLink>();
+    for (Pair<SContainmentLinkId, String> e : linkDescrs) {
+      result.add(new SContainmentLinkAdapter(e.o1, e.o2));
+    }
+    return result;
+  }
+
+  @Override
+  @Deprecated
+  public SAbstractLink getLink(String role) {
+    throw new UnsupportedOperationException();
+  }
+
+  @Override
+  public Iterable<SAbstractLink> getLinks() {
+    throw new UnsupportedOperationException();
+  }
+
+  @Override
+  @Deprecated
+  public SProperty getProperty(String name) {
+    throw new UnsupportedOperationException();
+  }
+
+  @Override
+  public Iterable<SProperty> getProperties() {
+    ConceptDescriptor d = getConceptDescriptor();
+    if (d instanceof IllegalConceptDescriptor) return Collections.emptyList();
+
+    Set<Pair<SPropertyId, String>> propDescrs = new HashSet<Pair<SPropertyId, String>>();
+    for (SPropertyId rid : d.getPropertyIds()) {
+      propDescrs.add(new Pair<SPropertyId, String>(rid, d.getPropertyName(rid)));
+    }
+
+    for (SConceptId ii : d.getParentIds()) {
+      ConceptDescriptor id = SAbstractConceptAdapter.getConceptDescriptor(ii);
+      for (SPropertyId rid : id.getPropertyIds()) {
+        propDescrs.add(new Pair<SPropertyId, String>(rid, id.getPropertyName(rid)));
+      }
+    }
+
+    ArrayList<SProperty> result = new ArrayList<SProperty>();
+    for (Pair<SPropertyId, String> e : propDescrs) {
+      result.add(new SPropertyAdapter(e.o1, e.o2));
+    }
+    return result;
+  }
+
+  @Override
+  public boolean isSubConceptOf(SAbstractConcept concept) {
+    // todo: hack, need for working node attributes on nodes of not generated concepts
+    // todo: remove
+    if ("jetbrains.mps.lang.core.structure.BaseConcept".equals(concept.getQualifiedName())) return true;
+
+    ConceptDescriptor d = getConceptDescriptor();
+    if (d instanceof IllegalConceptDescriptor) return false;
+
+    return d.isAssignableTo(concept.getQualifiedName());
+  }
+
+  @Override
+  public SLanguage getLanguage() {
+    return new SLanguageAdapter(myConceptId.getLanguageId(), NameUtil.namespaceFromConceptFQName(myFqName));
+  }
+
+  @Nullable
+  @Override
+  public SNode getConceptDeclarationNode() {
+    Language lang = new SLanguageAdapter(myConceptId.getLanguageId(), NameUtil.namespaceFromConceptFQName(myFqName)).getSourceModule();
+    if (lang == null) return null;
+
+    SModel strucModel = LanguageAspect.STRUCTURE.get(lang);
+    if (strucModel == null) return null;
+
+    return strucModel.getNode(new SNodeId.Regular(myConceptId.getConceptId()));
+  }
+
+
 }

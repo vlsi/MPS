@@ -15,72 +15,95 @@
  */
 package jetbrains.mps.smodel.adapter;
 
+import jetbrains.mps.smodel.DebugRegistry;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.smodel.SNodeId;
+import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.smodel.adapter.idconvert.MetaIdByDeclaration;
-import jetbrains.mps.smodel.adapter.idconvert.IdUtil;
 import jetbrains.mps.smodel.adapter.ids.SConceptId;
+import jetbrains.mps.smodel.adapter.ids.SContainmentLinkId;
+import jetbrains.mps.smodel.adapter.ids.SLanguageId;
+import jetbrains.mps.smodel.adapter.ids.SPropertyId;
+import jetbrains.mps.smodel.adapter.ids.SReferenceLinkId;
+import jetbrains.mps.smodel.language.ConceptRegistry;
+import jetbrains.mps.smodel.runtime.ConceptDescriptor;
+import jetbrains.mps.smodel.runtime.illegal.IllegalConceptDescriptor;
 import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.util.containers.BidirectionalMap;
+import jetbrains.mps.util.Pair;
+import org.apache.log4j.Level;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import org.jetbrains.mps.openapi.language.SConcept;
+import org.jetbrains.mps.openapi.language.SAbstractLink;
+import org.jetbrains.mps.openapi.language.SContainmentLink;
+import org.jetbrains.mps.openapi.language.SLanguage;
+import org.jetbrains.mps.openapi.language.SProperty;
+import org.jetbrains.mps.openapi.language.SReferenceLink;
+import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 
-import java.util.List;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashSet;
+import java.util.Set;
 
 public class SAbstractConceptAdapterByName extends SBaseConceptAdapter {
-  private static final BidirectionalMap<SConceptId, String> ourNames = new BidirectionalMap<SConceptId, String>();
-
-  protected String myConceptName;
+  protected static Logger LOG = LogManager.getLogger(SAbstractConceptAdapterByName.class);
 
   @Deprecated
-  public SAbstractConceptAdapter(@NotNull String conceptName) {
-    myConceptName = conceptName;
-    List<SConceptId> ids;
-    synchronized (ourNames) {
-      ids = ourNames.getKeysByValue(myConceptName);
-    }
-    if (ids != null && !(ids.isEmpty())) {
-      myConceptId = ids.get(0);
-    }
+  public SAbstractConceptAdapterByName(@NotNull String fqName) {
+    super(fqName);
   }
 
   public boolean isSameConcept(SBaseConceptAdapter c2) {
-    if (c2 instanceof SAbstractConceptAdapterByName) {
-      return myFqName.equals(((SAbstractConceptAdapterByName) c2).getQualifiedName());
-    } else if (c2 instanceof SAbstractConceptAdapter) {
-      return myConceptId.equals(((SAbstractConceptAdapter) c2).myConceptId);
-    } else {
-      throw new IllegalArgumentException(c2.getClass().getSimpleName());
-    }
+    return myFqName.equals(c2.getQualifiedName());
   }
 
-  public SConceptId getConceptId() {
-    return myConceptId;
+  @Override
+  public ConceptDescriptor getConceptDescriptor() {
+    return getConceptDescriptor(myFqName§);
   }
 
-  protected void fillBothIds() {
-    if (myConceptName != null && myConceptId != null) {
-      return;
+  @Override
+  public SLanguage getLanguage() {
+    return new SLanguageAdapterByName(NameUtil.namespaceFromConceptFQName(myFqName));
+  }
+
+  @Nullable
+  @Override
+  public SNode getConceptDeclarationNode() {
+    Language lang = ((Language) getLanguage().getSourceModule());
+    if (lang == null) return null;
+
+    SModel strucModel = LanguageAspect.STRUCTURE.get(lang);
+    if (strucModel == null) return null;
+
+    for (SNode root:strucModel.getRootNodes()){
+      if(root.getName().equals(NameUtil.shortNameFromLongName(myFqName))) return root;
     }
-    if (myConceptId == null) {
-      String langName = NameUtil.namespaceFromConceptFQName(myConceptName);
-      SLanguageAdapter lang = new SLanguageAdapter(langName);
-      SNode concept = lang.getSourceModule().findConceptDeclaration(NameUtil.shortNameFromLongName(myConceptName));
-      myConceptId = new SConceptId(lang.getId(), MetaIdByDeclaration.getNodeId((jetbrains.mps.smodel.SNode) concept));
-    } else {
-      Language lang = new SLanguageAdapter(myConceptId.getLanguageId()).getSourceModule();
-      if (lang != null) {
-        myConceptName = NameUtil.nodeFQName(LanguageAspect.STRUCTURE.get(lang).getNode(new SNodeId.Regular(myConceptId.getConceptId())));
-      } else {
-        myConceptName = IdUtil.getConceptFqName(myConceptId);
+    return null;
+  }
+
+  //------- getConceptDescriptor stuff ------
+
+  private static final Set<String> reportedLanguages = new HashSet<String>();
+
+  protected static ConceptDescriptor getConceptDescriptor(String fqName) {
+    ConceptDescriptor res = ConceptRegistry.getInstance().getConceptDescriptor(fqName);
+    if (res instanceof IllegalConceptDescriptor) {
+      String languageId = NameUtil.namespaceFromConceptFQName(fqName);
+      // report each language only once
+      if (reportedLanguages.contains(languageId)) return res;
+
+      reportedLanguages.add(languageId);
+      if (LOG.isEnabledFor(Level.WARN)) {
+        LOG.warn("No concept found for id " + fqName + ". Please check the language " +
+            languageId + " is built and compiled.");
       }
     }
-    synchronized (ourNames) {
-      ourNames.put(myConceptId, myConceptName);
-    }
+    return res;
   }
-
 }

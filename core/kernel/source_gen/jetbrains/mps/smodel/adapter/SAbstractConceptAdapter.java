@@ -53,136 +53,23 @@ public class SAbstractConceptAdapter extends SBaseConceptAdapter {
   protected static Logger LOG = LogManager.getLogger(SAbstractConceptAdapter.class);
 
   protected SConceptId myConceptId;
-  protected String myFqName;
 
   public SAbstractConceptAdapter(@NotNull SConceptId conceptId, @NotNull String fqname) {
+    super(fqname);
     myConceptId = conceptId;
-    myFqName = fqname;
+  }
+
+  public boolean isSameConcept(SBaseConceptAdapter c2) {
+    return (c2 instanceof SAbstractConceptAdapter) ? myConceptId.equals(((SAbstractConceptAdapter) c2).myConceptId) : myFqName.equals(c2.myFqName);
+  }
+
+  @Override
+  public ConceptDescriptor getConceptDescriptor() {
+    return getConceptDescriptor(myConceptId);
   }
 
   public SConceptId getId() {
     return myConceptId;
-  }
-
-  @Override
-  public String getQualifiedName() {
-    return getConceptDescriptor(myConceptId).getConceptFqName();
-  }
-
-  @Override
-  public String getName() {
-    return NameUtil.shortNameFromLongName(getQualifiedName());
-  }
-
-  public boolean isSameConcept(SBaseConceptAdapter c2) {
-    if (c2 instanceof SAbstractConceptAdapterByName) {
-      return myFqName.equals(((SAbstractConceptAdapterByName) c2).getQualifiedName());
-    } else if (c2 instanceof SAbstractConceptAdapter) {
-      return myConceptId.equals(((SAbstractConceptAdapter) c2).myConceptId);
-    } else {
-      throw new IllegalArgumentException(c2.getClass().getSimpleName());
-    }
-  }
-
-  @Override
-  public Iterable<SReferenceLink> getReferences() {
-    ConceptDescriptor d = getConceptDescriptor(myConceptId);
-    if (d instanceof IllegalConceptDescriptor) return Collections.emptyList();
-
-    Set<Pair<SReferenceLinkId, String>> refDescrs = new HashSet<Pair<SReferenceLinkId, String>>();
-    for (SReferenceLinkId rid : d.getReferenceIds()) {
-      refDescrs.add(new Pair<SReferenceLinkId, String>(rid, d.getRefName(rid)));
-    }
-
-    for (SConceptId ii : d.getParentIds()) {
-      ConceptDescriptor id = getConceptDescriptor(ii);
-      for (SReferenceLinkId rid : id.getReferenceIds()) {
-        refDescrs.add(new Pair<SReferenceLinkId, String>(rid, id.getRefName(rid)));
-      }
-    }
-
-    ArrayList<SReferenceLink> result = new ArrayList<SReferenceLink>();
-    for (Pair<SReferenceLinkId, String> e : refDescrs) {
-      result.add(new SReferenceLinkAdapter(e.o1, e.o2));
-    }
-    return result;
-  }
-
-  @Override
-  public Iterable<SContainmentLink> getChildren() {
-    ConceptDescriptor d = getConceptDescriptor(myConceptId);
-    if (d instanceof IllegalConceptDescriptor) return Collections.emptyList();
-
-    Set<Pair<SContainmentLinkId, String>> linkDescrs = new HashSet<Pair<SContainmentLinkId, String>>();
-    for (SReferenceLinkId rid : d.getChildRoleIds()) {
-      linkDescrs.add(new Pair<SReferenceLinkId, String>(rid, d.getChildRoleName(rid)));
-    }
-
-    for (SConceptId ii : d.getParentIds()) {
-      ConceptDescriptor id = getConceptDescriptor(ii);
-      for (SReferenceLinkId rid : id.getChildRoleIds()) {
-        linkDescrs.add(new Pair<SContainmentLinkId, String>(rid, id.getChildRoleName(rid)));
-      }
-    }
-
-    ArrayList<SContainmentLink> result = new ArrayList<SContainmentLink>();
-    for (Pair<SContainmentLinkId, String> e : linkDescrs) {
-      result.add(new SContainmentLinkAdapter(e.o1, e.o2));
-    }
-    return result;
-  }
-
-  @Override
-  @Deprecated
-  public SAbstractLink getLink(String role) {
-    throw new UnsupportedOperationException();
-  }
-
-  @Override
-  public Iterable<SAbstractLink> getLinks() {
-    throw new UnsupportedOperationException();
-  }
-
-  @Override
-  @Deprecated
-  public SProperty getProperty(String name) {
-    throw new UnsupportedOperationException();
-  }
-
-  @Override
-  public Iterable<SProperty> getProperties() {
-    ConceptDescriptor d = getConceptDescriptor(myConceptId);
-    if (d instanceof IllegalConceptDescriptor) return Collections.emptyList();
-
-    Set<Pair<SPropertyId, String>> propDescrs = new HashSet<Pair<SPropertyId, String>>();
-    for (SPropertyId rid : d.getPropertyIds()) {
-      propDescrs.add(new Pair<SPropertyId, String>(rid, d.getPropertyName(rid)));
-    }
-
-    for (SConceptId ii : d.getParentIds()) {
-      ConceptDescriptor id = getConceptDescriptor(ii);
-      for (SPropertyId rid : id.getPropertyIds()) {
-        propDescrs.add(new Pair<SPropertyId, String>(rid, id.getPropertyName(rid)));
-      }
-    }
-
-    ArrayList<SProperty> result = new ArrayList<SProperty>();
-    for (Pair<SPropertyId, String> e : propDescrs) {
-      result.add(new SPropertyAdapter(e.o1, e.o2));
-    }
-    return result;
-  }
-
-  @Override
-  public boolean isSubConceptOf(SAbstractConcept concept) {
-    // todo: hack, need for working node attributes on nodes of not generated concepts  
-    // todo: remove  
-    if ("jetbrains.mps.lang.core.structure.BaseConcept".equals(concept.getQualifiedName())) return true;
-
-    ConceptDescriptor d = getConceptDescriptor(myConceptId);
-    if (d instanceof IllegalConceptDescriptor) return false;
-
-    return d.isAssignableTo(concept.getQualifiedName());
   }
 
   @Override
@@ -193,15 +80,14 @@ public class SAbstractConceptAdapter extends SBaseConceptAdapter {
   @Nullable
   @Override
   public SNode getConceptDeclarationNode() {
-    Language lang = new SLanguageAdapter(myConceptId.getLanguageId(), NameUtil.namespaceFromConceptFQName(myFqName)).getSourceModule();
-    if (lang==null) return null;
+    Language lang = ((Language) getLanguage().getSourceModule());
+    if (lang == null) return null;
 
     SModel strucModel = LanguageAspect.STRUCTURE.get(lang);
     if (strucModel == null) return null;
 
     return strucModel.getNode(new SNodeId.Regular(myConceptId.getConceptId()));
   }
-
   //------- getConceptDescriptor stuff ------
 
   private static final Set<SLanguageId> reportedLanguages = new HashSet<SLanguageId>();
@@ -215,7 +101,8 @@ public class SAbstractConceptAdapter extends SBaseConceptAdapter {
 
       reportedLanguages.add(languageId);
       if (LOG.isEnabledFor(Level.WARN)) {
-        LOG.warn("No concept found for id " + DebugRegistry.getInstance().getConceptName(id) + ". Please check the language " + DebugRegistry.getInstance().getLanguageName(languageId) + " is built and compiled.");
+        LOG.warn("No concept found for id " + DebugRegistry.getInstance().getConceptName(id) + ". Please check the language " +
+            DebugRegistry.getInstance().getLanguageName(languageId) + " is built and compiled.");
       }
     }
     return res;
