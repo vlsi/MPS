@@ -15,6 +15,10 @@
  */
 package jetbrains.mps.smodel.adapter;
 
+import jetbrains.mps.smodel.adapter.ids.SConceptId;
+import jetbrains.mps.smodel.runtime.ConceptDescriptor;
+import jetbrains.mps.smodel.runtime.illegal.IllegalConceptDescriptor;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SAbstractLink;
@@ -26,74 +30,38 @@ import org.jetbrains.mps.openapi.language.SProperty;
 import org.jetbrains.mps.openapi.language.SReferenceLink;
 import org.jetbrains.mps.openapi.model.SNode;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
 public class SConceptAdapterByName extends SAbstractConceptAdapterByName implements SConcept {
-  public SConceptAdapterByName(String conceptFQName) {
+  public SConceptAdapterByName(@NotNull String fqName) {
+    super(fqName);
   }
 
-  @Nullable
   @Override
   public SConcept getSuperConcept() {
-    return null;
+    ConceptDescriptor d = getConceptDescriptor();
+    if (d instanceof IllegalConceptDescriptor) return null;
+
+    SConceptId superConcept = d.getSuperConceptId();
+    if (superConcept == null) return null;
+
+    return new SConceptAdapter(superConcept, d.getSuperConcept());
   }
 
   @Override
   public Iterable<SInterfaceConcept> getSuperInterfaces() {
-    return null;
-  }
+    ConceptDescriptor d = getConceptDescriptor();
+    if (d instanceof IllegalConceptDescriptor) return Collections.emptyList();
 
-  @Override
-  public String getName() {
-    return null;
-  }
-
-  @Override
-  public SLanguage getLanguage() {
-    return null;
-  }
-
-  @Override
-  public Iterable<SReferenceLink> getReferences() {
-    return null;
-  }
-
-  @Override
-  public Iterable<SContainmentLink> getChildren() {
-    return null;
-  }
-
-  @Override
-  public Iterable<SProperty> getProperties() {
-    return null;
-  }
-
-  @Override
-  public boolean isSubConceptOf(SAbstractConcept concept) {
-    return false;
-  }
-
-  @Nullable
-  @Override
-  public SNode getConceptDeclarationNode() {
-    return null;
-  }
-
-  @Override
-  public String getQualifiedName() {
-    return null;
-  }
-
-  @Override
-  public Iterable<SAbstractLink> getLinks() {
-    return null;
-  }
-
-  @Override
-  public SProperty getProperty(String name) {
-    return null;
-  }
-
-  @Override
-  public SAbstractLink getLink(String role) {
-    return null;
+    List<SInterfaceConcept> res = new ArrayList<SInterfaceConcept>();
+    for (String name : d.getParentsNames()) {
+      if (name.equals(d.getSuperConcept())) {
+        continue;
+      }
+      res.add(new SInterfaceConceptAdapter(name));
+    }
+    return res;
   }
 }
