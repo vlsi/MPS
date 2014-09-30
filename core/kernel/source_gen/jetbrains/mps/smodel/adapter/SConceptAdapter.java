@@ -19,8 +19,6 @@ public class SConceptAdapter extends SAbstractConceptAdapter implements SConcept
   @Override
   public SConcept getSuperConcept() {
     ConceptDescriptor d = getConceptDescriptor();
-    if (d instanceof IllegalConceptDescriptor) return null;
-
     SConceptId superConcept = d.getSuperConceptId();
     if (superConcept == null) return null;
 
@@ -30,8 +28,6 @@ public class SConceptAdapter extends SAbstractConceptAdapter implements SConcept
   @Override
   public Iterable<SInterfaceConcept> getSuperInterfaces() {
     ConceptDescriptor d = getConceptDescriptor();
-    if (d instanceof IllegalConceptDescriptor) return Collections.emptyList();
-
     List<SInterfaceConcept> res = new ArrayList<SInterfaceConcept>();
     for (String name : d.getParentsNames()) {
       if (name.equals(d.getSuperConcept())) {

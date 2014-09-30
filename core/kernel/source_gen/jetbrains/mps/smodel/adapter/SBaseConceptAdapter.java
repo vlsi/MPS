@@ -70,7 +70,6 @@ public abstract class SBaseConceptAdapter implements SAbstractConcept {
   @Override
   public Iterable<SReferenceLink> getReferences() {
     ConceptDescriptor d = getConceptDescriptor();
-    if (d instanceof IllegalConceptDescriptor) return Collections.emptyList();
 
     Set<Pair<SReferenceLinkId, String>> refDescrs = new HashSet<Pair<SReferenceLinkId, String>>();
     for (SReferenceLinkId rid : d.getReferenceIds()) {
@@ -94,7 +93,6 @@ public abstract class SBaseConceptAdapter implements SAbstractConcept {
   @Override
   public Iterable<SContainmentLink> getChildren() {
     ConceptDescriptor d = getConceptDescriptor();
-    if (d instanceof IllegalConceptDescriptor) return Collections.emptyList();
 
     Set<Pair<SContainmentLinkId, String>> linkDescrs = new HashSet<Pair<SContainmentLinkId, String>>();
     for (SReferenceLinkId rid : d.getChildRoleIds()) {
@@ -135,7 +133,6 @@ public abstract class SBaseConceptAdapter implements SAbstractConcept {
   @Override
   public Iterable<SProperty> getProperties() {
     ConceptDescriptor d = getConceptDescriptor();
-    if (d instanceof IllegalConceptDescriptor) return Collections.emptyList();
 
     Set<Pair<SPropertyId, String>> propDescrs = new HashSet<Pair<SPropertyId, String>>();
     for (SPropertyId rid : d.getPropertyIds()) {
@@ -163,7 +160,6 @@ public abstract class SBaseConceptAdapter implements SAbstractConcept {
     if ("jetbrains.mps.lang.core.structure.BaseConcept".equals(concept.getQualifiedName())) return true;
 
     ConceptDescriptor d = getConceptDescriptor();
-    if (d instanceof IllegalConceptDescriptor) return false;
 
     return d.isAssignableTo(concept.getQualifiedName());
   }
