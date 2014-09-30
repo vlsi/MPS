@@ -151,18 +151,14 @@ public class ExportsVault {
   // FIXME input at EXPOSE is from transient model K, while input at query time is from (transient) model L. How do we match them?
   // Perhaps, there should be match function in addition to marshal/unmarshal
   public Collection<SNode> find(@NotNull String exportLabelName, @NotNull SModel processedModel, @NotNull SNode inputNode) {
-    // inputNode either comes from the model we generate from, and is transient, or some external model.
+    // inputNode either comes from the model we generate from, and is transient, or some external model (either regular or proxy, for multi-step exports).
     // Use original input model in former case, and expect outer mode to be regular model (so that stream manager knows where to find exports model)
     // For hanging nodes, we could either say 'no', or resort to myContext.getOriginalInputModel, but for the time being, I don't see value in the latter.
     if (inputNode.getModel() == null) {
       return Collections.emptyList();
     }
-    SModel exportsModel;
-    if (inputNode.getModel() == processedModel) {
-      exportsModel = getExportsModel(myContext.getOriginalInputModel(), false);
-    } else {
-      exportsModel = getExportsModel(inputNode.getModel(), false);
-    }
+    final SModel originModel = originModel(inputNode, processedModel);
+    SModel exportsModel = getExportsModel(originModel, false);
     if (exportsModel == null) {
       return Collections.emptyList();
     }
@@ -172,6 +168,7 @@ public class ExportsVault {
     for (SNode exportEntry : entries) {
       final SModel proxyModel = cmu.newProxyModel(myContext.getModule(), exportEntry);
       final SNode proxyNode = cmu.newProxyNode(exportEntry, proxyModel);
+      identifyAsProxy(proxyNode, originModel);
       proxyModel.addRootNode(proxyNode);
       populateOutputProxy(exportEntry, inputNode, proxyNode);
       rv.add(proxyNode);
@@ -179,11 +176,42 @@ public class ExportsVault {
     return rv;
   }
 
+  /**
+   * Fill instantiated proxy with values saved
+   */
   private void populateOutputProxy(SNode/*node<ExportEntry*/ exportEntry, SNode input, SNode outputProxy) {
     final SNode/*node<ExportLabel>*/ exportLabel = exportEntry.getReferenceTarget("label");
     String functionName = CrossModelUtil.getUnmarshalFunctionNameFromEntry(exportEntry);
     ExportLabelContext ctx = new ExportLabelContextImpl(input, outputProxy, CrossModelUtil.dataKept(exportEntry));
     invokeExportFunction(exportLabel.getModel(), functionName, ctx);
+  }
+
+  private static final String PROXY_KEY = "#proxy";
+  private static final String PROXY_ORIGIN_MODEL_KEY = "#model";
+
+  /**
+   * Fill proxy with implementation-specific data that helps to identify and use it.
+   */
+  private void identifyAsProxy(@NotNull SNode outputProxy, @NotNull SModel originModel) {
+    outputProxy.putUserObject(PROXY_KEY, Boolean.TRUE);
+    outputProxy.putUserObject(PROXY_ORIGIN_MODEL_KEY, originModel);
+  }
+
+  /**
+   * Discover model origin to find exports for.
+   */
+  private SModel originModel(@NotNull SNode inputNode, @NotNull SModel processedModel) {
+    if (inputNode.getModel() == processedModel) {
+      return myContext.getOriginalInputModel();
+    }
+    if (isProxyNode(inputNode)) {
+      return (SModel) inputNode.getUserObject(PROXY_ORIGIN_MODEL_KEY);
+    }
+    return inputNode.getModel();
+  }
+
+  private static boolean isProxyNode(@NotNull SNode inputNode) {
+    return Boolean.TRUE.equals(inputNode.getUserObject(PROXY_KEY));
   }
 
   private static class ExportLabelContextImpl implements ExportLabelContext {
