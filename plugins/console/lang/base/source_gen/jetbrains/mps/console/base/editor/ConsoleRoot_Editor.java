@@ -69,7 +69,7 @@ public class ConsoleRoot_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private EditorCell createConstant_drvoix_d0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Use Ctrl+M and Ctrl+L to add imports and languages.");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Use Ctrl+M, Ctrl+R and Ctrl+L to add imports and languages.");
     editorCell.setCellId("Constant_drvoix_d0");
     Style style = new StyleImpl();
     style.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
