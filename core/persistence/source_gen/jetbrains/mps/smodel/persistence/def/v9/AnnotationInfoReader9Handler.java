@@ -327,7 +327,7 @@ public class AnnotationInfoReader9Handler extends XMLSAXHandler<List<LineContent
     }
     @Override
     protected String createObject(Attributes attrs) throws SAXException {
-      MPSModuleRepository.getInstance().getDebugRegistry().getLinkName(fieldhelper.readRefRole(attrs.getValue("role")));
+      MPSModuleRepository.getInstance().getDebugRegistry().getRefName(fieldhelper.readRefRole(attrs.getValue("role")));
       return attrs.getValue("role");
     }
     @Override

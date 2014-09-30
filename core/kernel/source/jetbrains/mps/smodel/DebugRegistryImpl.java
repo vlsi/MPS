@@ -19,12 +19,12 @@ import jetbrains.mps.util.Pair;
 import jetbrains.mps.util.containers.BidirectionalMap;
 import org.jetbrains.mps.openapi.language.SAbstractLink;
 import org.jetbrains.mps.openapi.language.SConcept;
+import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.language.SProperty;
+import org.jetbrains.mps.openapi.language.SReferenceLink;
 import org.jetbrains.mps.openapi.module.DebugRegistry;
 import org.jetbrains.mps.openapi.module.SModuleReference;
-
-import java.util.List;
 
 public class DebugRegistryImpl implements DebugRegistry {
   private BidirectionalMap<org.jetbrains.mps.openapi.model.SModelReference, String> myModels =
@@ -32,7 +32,8 @@ public class DebugRegistryImpl implements DebugRegistry {
   private BidirectionalMap<SModuleReference, String> myModules = new BidirectionalMap<SModuleReference, String>();
 
   private BidirectionalMap<SProperty, Pair<SConcept, String>> myProperties = new BidirectionalMap<SProperty, Pair<SConcept, String>>();
-  private BidirectionalMap<SAbstractLink, Pair<SConcept, String>> myLinks = new BidirectionalMap<SAbstractLink, Pair<SConcept, String>>();
+  private BidirectionalMap<SReferenceLink, Pair<SConcept, String>> myLinks = new BidirectionalMap<SReferenceLink, Pair<SConcept, String>>();
+  private BidirectionalMap<SContainmentLink, Pair<SConcept, String>> myChildRoles = new BidirectionalMap<SContainmentLink, Pair<SConcept, String>>();
   private BidirectionalMap<SConcept, String> myConcepts = new BidirectionalMap<SConcept, String>();
   private BidirectionalMap<SLanguage, String> myLanguages = new BidirectionalMap<SLanguage, String>();
 
@@ -53,8 +54,14 @@ public class DebugRegistryImpl implements DebugRegistry {
   }
 
   @Override
-  public synchronized String getLinkName(SAbstractLink linkId) {
+  public synchronized String getRefName(SReferenceLink linkId) {
     Pair<SConcept, String> pair = myLinks.get(linkId);
+    return pair == null ? null : pair.o2;
+  }
+
+  @Override
+  public synchronized String getChildName(SContainmentLink linkId) {
+    Pair<SConcept, String> pair = myChildRoles.get(linkId);
     return pair == null ? null : pair.o2;
   }
 
@@ -84,8 +91,13 @@ public class DebugRegistryImpl implements DebugRegistry {
   }
 
   @Override
-  public synchronized void addLinkName(SAbstractLink linkId, String name) {
-    myLinks.put(linkId, new Pair<SConcept, String>(linkId.getConcept(), name));
+  public synchronized void addRefName(SReferenceLink linkId, String name) {
+    myLinks.put(linkId, new Pair<SConcept, String>(linkId.getContainingConcept(), name));
+  }
+
+  @Override
+  public synchronized void addChildName(SContainmentLink linkId, String name) {
+    myChildRoles.put(linkId, new Pair<SConcept, String>(linkId.getContainingConcept(), name));
   }
 
   @Override
@@ -96,50 +108,5 @@ public class DebugRegistryImpl implements DebugRegistry {
   @Override
   public synchronized void addLanguageName(SLanguage languageId, String name) {
     myLanguages.put(languageId, name);
-  }
-
-//-----------stuff to remove when we move to ids completely------------
-
-  public synchronized org.jetbrains.mps.openapi.model.SModelReference getModelRef(String name) {
-    List<org.jetbrains.mps.openapi.model.SModelReference> ids = myModels.getKeysByValue(name);
-    if (ids == null || ids.isEmpty()) return null;
-    return ids.get(0);
-  }
-
-  public synchronized SModuleReference getModuleRef(String name) {
-    List<SModuleReference> ids = myModules.getKeysByValue(name);
-    if (ids == null || ids.isEmpty()) return null;
-    return ids.get(0);
-  }
-
-  public synchronized SProperty getPropertyId(SConcept conceptId, String name) {
-    //performance fix for "getProperty("name")"
-    List<SProperty> ids = myProperties.getKeysByValue(new Pair<SConcept, String>(conceptId,name));
-    if (ids == null || ids.isEmpty()) return null;
-    return ids.get(0);
-  }
-
-  public synchronized SAbstractLink getLinkId(SConcept conceptId, String name) {
-    List<SAbstractLink> ids = myLinks.getKeysByValue(new Pair<SConcept, String>(conceptId, name));
-    if (ids == null || ids.isEmpty()) return null;
-    for (SAbstractLink id:ids){
-      if (id.getConcept().equals(conceptId)) return id;
-    }
-    return null;
-  }
-
-  public synchronized SConcept getConceptId(SLanguage lang, String name) {
-    List<SConcept> ids = myConcepts.getKeysByValue(name);
-    if (ids == null || ids.isEmpty()) return null;
-    for (SConcept id:ids){
-      if (id.getLanguage().equals(lang)) return id;
-    }
-    return null;
-  }
-
-  public synchronized SLanguage getLanguageId(String name) {
-    List<SLanguage> ids = myLanguages.getKeysByValue(name);
-    if (ids == null || ids.isEmpty()) return null;
-    return ids.get(0);
   }
 }

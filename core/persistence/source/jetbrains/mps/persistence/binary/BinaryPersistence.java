@@ -196,13 +196,13 @@ public class BinaryPersistence {
     // write reference roles
     int referencesSize = is.readInt();
     for (int i = 0; i < referencesSize; i++) {
-      debugRegistry.addLinkName(SReferenceLink.deserialize(is.readString()), is.readString());
+      debugRegistry.addRefName(SReferenceLink.deserialize(is.readString()), is.readString());
     }
 
     // write child roles
     int childrenSize = is.readInt();
     for (int i = 0; i < childrenSize; i++) {
-      debugRegistry.addLinkName(SContainmentLink.deserialize(is.readString()), is.readString());
+      debugRegistry.addRefName(SContainmentLink.deserialize(is.readString()), is.readString());
     }
   }
 
