@@ -15,12 +15,17 @@
  */
 package jetbrains.mps.smodel.adapter.ids;
 
-public final class SContainmentLinkId extends SAbstractLinkId {
+public final class SContainmentLinkId  {
+  protected final SConceptId myConceptId;
   private final long myLinkId;
 
   public SContainmentLinkId(SConceptId conceptId, long linkId) {
-    super(conceptId);
+    myConceptId = conceptId;
     myLinkId = linkId;
+  }
+
+  public SConceptId getConceptId() {
+    return myConceptId;
   }
 
   public long getContainmentLinkId() {
