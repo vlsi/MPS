@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model modelUID="r:89cb2d49-9a78-4c88-aa57-b8299e61a9fc(jetbrains.mps.generator.crossmodel.sandbox.beanmodel2)">
+  <persistence version="8" />
+  <import index="qz7j" modelUID="r:9b56ed90-436a-4093-aab2-2dfe5d09ce42(jetbrains.mps.generator.test.crossmodel.entity.structure)" version="-1" implicit="yes" />
+  <import index="tpf8" modelUID="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" version="2" implicit="yes" />
+  <import index="xdt3" modelUID="r:5ae04573-5f86-4c8f-8775-3bf4c8be7f2f(jetbrains.mps.generator.test.crossmodel.property.generator.template.main@generator)" version="-1" implicit="yes" />
+  <root type="tpf8.ExportEntry" typeId="tpf8.9032177546941420365" id="3529862479475760324" nodeInfo="ng">
+    <link role="label" roleId="tpf8.9032177546941634307" targetNodeId="xdt3.5925726056274334828" resolveInfo="BeanToClass" />
+    <node role="outputModel" roleId="tpf8.9032177546942803148" type="tpf8.TrivialModelId" typeId="tpf8.9032177546942789835" id="3529862479475760325" nodeInfo="ng">
+      <property name="modelName" nameId="tpf8.9032177546942789839" value="jetbrains.mps.generator.crossmodel.sandbox.beanmodel2" />
+    </node>
+    <node role="inputNode" roleId="tpf8.9032177546941575207" type="tpf8.TrivialNodeId" typeId="tpf8.9032177546941580387" id="3529862479475760326" nodeInfo="ng">
+      <property name="conceptId" nameId="tpf8.9032177546941580390" value="jetbrains.mps.generator.test.crossmodel.property.structure.Bean" />
+      <property name="nodeId" nameId="tpf8.9032177546941580392" value="5176577547833280844" />
+    </node>
+    <node role="outputNode" roleId="tpf8.9032177546941575209" type="tpf8.TrivialNodeId" typeId="tpf8.9032177546941580387" id="3529862479475760327" nodeInfo="ng">
+      <property name="conceptId" nameId="tpf8.9032177546941580390" value="jetbrains.mps.baseLanguage.structure.ClassConcept" />
+      <property name="nodeId" nameId="tpf8.9032177546941580392" value="3529862479475760305" />
+    </node>
+    <node role="dataKeeper" roleId="tpf8.9032177546941575212" type="qz7j.TrivialKeeper" typeId="qz7j.8915420221429834077" id="3529862479475760323" nodeInfo="ng">
+      <property name="string1" nameId="qz7j.8915420221429834078" value="Bean2Impl" />
+    </node>
+  </root>
+</model>
+
