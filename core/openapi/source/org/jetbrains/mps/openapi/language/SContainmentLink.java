@@ -15,6 +15,9 @@
  */
 package org.jetbrains.mps.openapi.language;
 
+import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.model.SNode;
+
 /**
  * Containment links describe parent-child relationships.
  */
@@ -49,4 +52,7 @@ public interface SContainmentLink extends SAbstractLink {
    * The value is undefined for singular links.
    */
   boolean isUnordered();
+
+  @Nullable
+  SNode getLinkDeclarationNode();
 }

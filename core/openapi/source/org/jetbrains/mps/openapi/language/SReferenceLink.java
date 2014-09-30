@@ -48,6 +48,9 @@ public interface SReferenceLink extends SAbstractLink {
    */
   boolean isMultiple();
 
+  @Nullable
+  SNode getRefDeclarationNode();
+
   /**
    * Builds and returns a scope for this reference in the given context.
    *

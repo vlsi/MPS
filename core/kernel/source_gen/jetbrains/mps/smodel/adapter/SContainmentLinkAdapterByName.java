@@ -17,9 +17,8 @@ package jetbrains.mps.smodel.adapter;
 
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SConcept;
-import org.jetbrains.mps.openapi.language.SContainmentLink;
 
-public class SContainmentLinkAdapterByName implements SContainmentLink {
+public class SContainmentLinkAdapterByName extends SBaseContainmentLinkAdapter {
   protected String conceptName;
   protected String role;
 
