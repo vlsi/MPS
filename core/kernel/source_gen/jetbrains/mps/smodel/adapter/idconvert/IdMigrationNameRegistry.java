@@ -18,6 +18,7 @@ package jetbrains.mps.smodel.adapter.idconvert;
 import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.classloading.MPSClassesListener;
 import jetbrains.mps.components.CoreComponent;
+import jetbrains.mps.datatransfer.CopyPasteManager;
 import jetbrains.mps.smodel.DebugRegistryImpl;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.LanguageAspect;
@@ -45,22 +46,34 @@ import java.util.Set;
  * This class is NOT A DEBUG REGISTRY. While debug registry is write-once registry, this one always reflects changes to structure.
  */
 public class IdMigrationNameRegistry implements CoreComponent {
+  private static IdMigrationNameRegistry INSTANCE;
+
+  @Override
+  public void init() {
+    if (INSTANCE != null) {
+      throw new IllegalStateException("double initialization");
+    }
+
+    INSTANCE = this;
+
+    myManager.addClassesHandler(myClassHandler);
+  }
+
+  @Override
+  public void dispose() {
+    INSTANCE = null;
+
+    myManager.removeClassesHandler(myClassHandler);
+  }
+
+  //------------
+
   private DebugRegistryImpl myNamesInfo = new DebugRegistryImpl();
   private MPSClassesListener myClassHandler = new MyClassesListener();
   private ClassLoaderManager myManager;
 
   public IdMigrationNameRegistry(ClassLoaderManager manager) {
     myManager = manager;
-  }
-
-  @Override
-  public void init() {
-    myManager.addClassesHandler(myClassHandler);
-  }
-
-  @Override
-  public void dispose() {
-    myManager.removeClassesHandler(myClassHandler);
   }
 
   private static void fillDebugRegistryForLanguage(Language language) {
