@@ -49,7 +49,7 @@ import jetbrains.mps.smodel.SNodeId;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 
-public class SAbstractConceptAdapter implements SAbstractConcept {
+public class SAbstractConceptAdapter extends SBaseConceptAdapter {
   protected static Logger LOG = LogManager.getLogger(SAbstractConceptAdapter.class);
 
   protected SConceptId myConceptId;
@@ -66,7 +66,7 @@ public class SAbstractConceptAdapter implements SAbstractConcept {
 
   @Override
   public String getQualifiedName() {
-    return getConceptDescriptor().getConceptFqName();
+    return getConceptDescriptor(myConceptId).getConceptFqName();
   }
 
   @Override
@@ -74,7 +74,7 @@ public class SAbstractConceptAdapter implements SAbstractConcept {
     return NameUtil.shortNameFromLongName(getQualifiedName());
   }
 
-  public boolean isSameConcept(SConcept c2) {
+  public boolean isSameConcept(SBaseConceptAdapter c2) {
     if (c2 instanceof SAbstractConceptAdapterByName) {
       return myFqName.equals(((SAbstractConceptAdapterByName) c2).getQualifiedName());
     } else if (c2 instanceof SAbstractConceptAdapter) {

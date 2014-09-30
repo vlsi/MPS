@@ -24,15 +24,16 @@ import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.containers.BidirectionalMap;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.model.SNode;
 
 import java.util.List;
 
-public class SAbstractConceptAdapterByName {
+public class SAbstractConceptAdapterByName extends SBaseConceptAdapter {
   private static final BidirectionalMap<SConceptId, String> ourNames = new BidirectionalMap<SConceptId, String>();
 
   protected String myConceptName;
-  private SConceptId myConceptId;
 
   @Deprecated
   public SAbstractConceptAdapter(@NotNull String conceptName) {
@@ -43,6 +44,16 @@ public class SAbstractConceptAdapterByName {
     }
     if (ids != null && !(ids.isEmpty())) {
       myConceptId = ids.get(0);
+    }
+  }
+
+  public boolean isSameConcept(SBaseConceptAdapter c2) {
+    if (c2 instanceof SAbstractConceptAdapterByName) {
+      return myFqName.equals(((SAbstractConceptAdapterByName) c2).getQualifiedName());
+    } else if (c2 instanceof SAbstractConceptAdapter) {
+      return myConceptId.equals(((SAbstractConceptAdapter) c2).myConceptId);
+    } else {
+      throw new IllegalArgumentException(c2.getClass().getSimpleName());
     }
   }
 
