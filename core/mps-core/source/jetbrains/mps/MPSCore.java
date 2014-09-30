@@ -101,7 +101,6 @@ public final class MPSCore extends ComponentPlugin {
     GlobalSModelEventsManager globalSModelEventsManager = init(new GlobalSModelEventsManager(modelRepository));
     ClassLoaderManager classLoaderManager = init(new ClassLoaderManager(moduleRepository));
     init(new DebugRegistry());
-    init(new IdMigrationNameRegistry(classLoaderManager));
 
     init(new SModelFileTracker(SRepositoryRegistry.getInstance()));
     init(new ModuleRepositoryFacade(moduleRepository));

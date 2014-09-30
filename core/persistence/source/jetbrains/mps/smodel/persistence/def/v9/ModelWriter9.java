@@ -142,7 +142,7 @@ public class ModelWriter9 implements IModelWriter {
     Map<SReferenceLink, String> refIds = new HashMap<SReferenceLink, String>();
     Map<SContainmentLink, String> roleIds = new HashMap<SContainmentLink, String>();
 
-    IdMigrationNameRegistry.getDebugInfoById(sourceModel.getRootNodes(), conceptIds, propIds, refIds, roleIds);
+    IdInfoCollector.getDebugInfoById(sourceModel.getRootNodes(), conceptIds, propIds, refIds, roleIds);
 
     // write concepts
     for (Entry<SConcept, String> e : conceptIds.entrySet()) {
