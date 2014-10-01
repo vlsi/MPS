@@ -15,34 +15,25 @@
  */
 package jetbrains.mps.smodel.adapter;
 
-import jetbrains.mps.smodel.DebugRegistry;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.LanguageAspect;
-import jetbrains.mps.smodel.SNodeId;
 import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import jetbrains.mps.smodel.adapter.ids.SContainmentLinkId;
-import jetbrains.mps.smodel.adapter.ids.SLanguageId;
 import jetbrains.mps.smodel.adapter.ids.SPropertyId;
 import jetbrains.mps.smodel.adapter.ids.SReferenceLinkId;
-import jetbrains.mps.smodel.language.ConceptRegistry;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
-import jetbrains.mps.smodel.runtime.illegal.IllegalConceptDescriptor;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.Pair;
-import org.apache.log4j.Level;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SAbstractLink;
-import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
-import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.language.SProperty;
 import org.jetbrains.mps.openapi.language.SReferenceLink;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -56,6 +47,8 @@ public abstract class SBaseConceptAdapter implements SAbstractConcept {
   public abstract boolean isSameConcept(SBaseConceptAdapter c);
 
   public abstract ConceptDescriptor getConceptDescriptor();
+
+  protected abstract SNode findInModel(SModel strucModel);
 
   @Override
   public String getQualifiedName() {
@@ -140,7 +133,7 @@ public abstract class SBaseConceptAdapter implements SAbstractConcept {
     }
 
     for (SConceptId ii : d.getParentIds()) {
-      ConceptDescriptor id = SAbstractConceptAdapter.getConceptDescriptor(ii);
+      ConceptDescriptor id = ConceptRegistryUtil.getConceptDescriptor(ii);
       for (SPropertyId rid : id.getPropertyIds()) {
         propDescrs.add(new Pair<SPropertyId, String>(rid, id.getPropertyName(rid)));
       }
@@ -164,22 +157,15 @@ public abstract class SBaseConceptAdapter implements SAbstractConcept {
     return d.isAssignableTo(concept.getQualifiedName());
   }
 
-  @Override
-  public SLanguage getLanguage() {
-    return new SLanguageAdapter(myConceptId.getLanguageId(), NameUtil.namespaceFromConceptFQName(myFqName));
-  }
-
   @Nullable
   @Override
   public SNode getConceptDeclarationNode() {
-    Language lang = new SLanguageAdapter(myConceptId.getLanguageId(), NameUtil.namespaceFromConceptFQName(myFqName)).getSourceModule();
+    Language lang = ((Language) getLanguage().getSourceModule());
     if (lang == null) return null;
 
     SModel strucModel = LanguageAspect.STRUCTURE.get(lang);
     if (strucModel == null) return null;
 
-    return strucModel.getNode(new SNodeId.Regular(myConceptId.getConceptId()));
+    return findInModel(strucModel);
   }
-
-
 }

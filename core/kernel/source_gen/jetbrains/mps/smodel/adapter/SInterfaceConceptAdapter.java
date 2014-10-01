@@ -19,6 +19,10 @@ public class SInterfaceConceptAdapter extends SAbstractConceptAdapter implements
     super(conceptId, fqname);
   }
 
+  public boolean isSameConcept(SBaseConceptAdapter c2) {
+    return (c2 instanceof SAbstractConceptAdapter) ? myConceptId.equals(((SAbstractConceptAdapter) c2).myConceptId) : myFqName.equals(c2.myFqName);
+  }
+
   @Override
   public Iterable<SInterfaceConcept> getSuperInterfaces() {
     ConceptDescriptor d = getConceptDescriptor();

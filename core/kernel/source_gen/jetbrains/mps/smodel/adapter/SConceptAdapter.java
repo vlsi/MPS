@@ -2,13 +2,11 @@ package jetbrains.mps.smodel.adapter;
 
 import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
-import jetbrains.mps.smodel.runtime.illegal.IllegalConceptDescriptor;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.language.SInterfaceConcept;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 public class SConceptAdapter extends SAbstractConceptAdapter implements SConcept {
@@ -31,7 +29,7 @@ public class SConceptAdapter extends SAbstractConceptAdapter implements SConcept
     List<SInterfaceConcept> res = new ArrayList<SInterfaceConcept>();
     for (SConceptId id : d.getParentsIds()) {
       if (id.equals(d.getSuperConceptId())) continue;
-      res.add(new SInterfaceConceptAdapter(id, SConceptAdapter.getConceptDescriptor(id).getConceptFqName()));
+      res.add(new SInterfaceConceptAdapter(id, ConceptRegistryUtil.getConceptDescriptor(id).getConceptFqName()));
     }
     return res;
   }

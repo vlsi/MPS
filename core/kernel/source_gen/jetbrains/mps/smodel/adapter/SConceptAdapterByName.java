@@ -17,21 +17,11 @@ package jetbrains.mps.smodel.adapter;
 
 import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
-import jetbrains.mps.smodel.runtime.illegal.IllegalConceptDescriptor;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
-import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import org.jetbrains.mps.openapi.language.SAbstractLink;
 import org.jetbrains.mps.openapi.language.SConcept;
-import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.language.SInterfaceConcept;
-import org.jetbrains.mps.openapi.language.SLanguage;
-import org.jetbrains.mps.openapi.language.SProperty;
-import org.jetbrains.mps.openapi.language.SReferenceLink;
-import org.jetbrains.mps.openapi.model.SNode;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 public class SConceptAdapterByName extends SAbstractConceptAdapterByName implements SConcept {
@@ -54,7 +44,7 @@ public class SConceptAdapterByName extends SAbstractConceptAdapterByName impleme
     List<SInterfaceConcept> res = new ArrayList<SInterfaceConcept>();
     for (SConceptId id : d.getParentsIds()) {
       if (id.equals(d.getSuperConceptId())) continue;
-      res.add(new SInterfaceConceptAdapter(id, SConceptAdapter.getConceptDescriptor(id).getConceptFqName()));
+      res.add(new SInterfaceConceptAdapter(id, ConceptRegistryUtil.getConceptDescriptor(id).getConceptFqName()));
     }
     return res;
   }

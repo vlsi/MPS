@@ -23,13 +23,13 @@ public class SContainmentLinkAdapter extends SBaseContainmentLinkAdapter {
   }
 
   protected LinkDescriptor getLinkDescriptor() {
-    return SAbstractConceptAdapter.getConceptDescriptor(myRoleId.getConceptId()).getLinkDescriptor(myRoleId.getContainmentLinkId());
+    return ConceptRegistryUtil.getConceptDescriptor(myRoleId.getConceptId()).getLinkDescriptor(myRoleId.getContainmentLinkId());
   }
 
   @Override
   public org.jetbrains.mps.openapi.language.SAbstractConcept getContainingConcept() {
     SConceptId id = myRoleId.getConceptId();
-    ConceptDescriptor concept = SAbstractConceptAdapter.getConceptDescriptor(id);
+    ConceptDescriptor concept = ConceptRegistryUtil.getConceptDescriptor(id);
     return concept.isInterfaceConcept() ? new SInterfaceConceptAdapter(id, concept.getConceptFqName()) : new SConceptAdapter(id, concept.getConceptFqName());
   }
 }

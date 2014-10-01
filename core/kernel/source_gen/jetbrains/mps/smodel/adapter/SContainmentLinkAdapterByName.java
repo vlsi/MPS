@@ -28,12 +28,12 @@ public class SContainmentLinkAdapterByName extends SBaseContainmentLinkAdapter {
   }
 
   protected LinkDescriptor getLinkDescriptor() {
-    return SAbstractConceptAdapterByName.getConceptDescriptor(myConceptName).getLinkDescriptor(myName);
+    return ConceptRegistryUtil.getConceptDescriptor(myConceptName).getLinkDescriptor(myName);
   }
 
   @Override
   public org.jetbrains.mps.openapi.language.SAbstractConcept getContainingConcept() {
-    ConceptDescriptor concept = SAbstractConceptAdapterByName.getConceptDescriptor(myConceptName);
+    ConceptDescriptor concept = ConceptRegistryUtil.getConceptDescriptor(myConceptName);
     return concept.isInterfaceConcept() ? new SInterfaceConceptAdapterByName(myConceptName) : new SConceptAdapterByName(myConceptName);
   }
 }
