@@ -23,7 +23,7 @@ import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager;
 import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager.Deptype;
 import jetbrains.mps.project.dependency.modules.LanguageDependenciesManager;
 import jetbrains.mps.smodel.SModel.ImportElement;
-import jetbrains.mps.smodel.adapter.idconvert.MetaIdByDeclaration;
+import jetbrains.mps.smodel.adapter.ids.MetaIdByDeclaration;
 import jetbrains.mps.smodel.adapter.SLanguageAdapter;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
