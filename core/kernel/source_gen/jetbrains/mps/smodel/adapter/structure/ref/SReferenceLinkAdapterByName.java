@@ -15,54 +15,35 @@
  */
 package jetbrains.mps.smodel.adapter.structure.ref;
 
-import org.jetbrains.annotations.Nullable;
-import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import org.jetbrains.mps.openapi.language.SContainmentLink;
-import org.jetbrains.mps.openapi.language.SReferenceLink;
-import org.jetbrains.mps.openapi.language.SScope;
+import jetbrains.mps.smodel.adapter.structure.concept.ConceptRegistryUtil;
+import jetbrains.mps.smodel.adapter.structure.concept.SConceptAdapterById;
+import jetbrains.mps.smodel.adapter.structure.concept.SInterfaceConceptAdapterById;
+import jetbrains.mps.smodel.runtime.ConceptDescriptor;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
 
-public class SReferenceLinkAdapterByName implements SReferenceLink {
-  public SReferenceLinkAdapterByName(String role) {
+public class SReferenceLinkAdapterByName extends SReferenceLinkAdapter {
+  public SReferenceLinkAdapterByName(@NotNull String conceptName, @NotNull String role) {
+    super(conceptName, role);
+  }
+
+  public boolean isSameReference(SReferenceLinkAdapter l2) {
+    return (myConceptName + "#" + myName).equals(l2.myConceptName + "#" + l2.myName);
+  }
+
+  protected RefDescriptor getReferenceDescriptor() {
+    return ConceptRegistryUtil.getConceptDescriptor(myConceptName).getRefDescriptor(myName);
   }
 
   @Override
-  public SScope getScope(SNode referenceNode) {
-    return null;
+  public org.jetbrains.mps.openapi.language.SAbstractConcept getContainingConcept() {
+    ConceptDescriptor concept = ConceptRegistryUtil.getConceptDescriptor(myConceptName);
+    return concept.isInterfaceConcept() ? new SInterfaceConceptAdapterById(concept.getId(), myConceptName) :
+        new SConceptAdapterById(concept.getId(), myConceptName);
   }
 
   @Override
-  public SScope getScope(SNode contextNode, @Nullable SContainmentLink link, int index) {
-    return null;
-  }
-
-  @Override
-  public String getRole() {
-    return null;
-  }
-
-  @Override
-  public SAbstractConcept getContainingConcept() {
-    return null;
-  }
-
-  @Override
-  public SAbstractConcept getTargetConcept() {
-    return null;
-  }
-
-  @Override
-  public boolean isReference() {
-    return false;
-  }
-
-  @Override
-  public boolean isOptional() {
-    return false;
-  }
-
-  @Override
-  public boolean isMultiple() {
-    return false;
+  protected SNode findInConcept(SNode cnode) {
+    throw new UnsupportedOperationException();
   }
 }

@@ -13,35 +13,34 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel.adapter.structure.link;
+package jetbrains.mps.smodel.adapter.structure.ref;
 
 import jetbrains.mps.scope.Scope;
 import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import jetbrains.mps.smodel.adapter.structure.concept.ConceptRegistryUtil;
 import jetbrains.mps.smodel.adapter.structure.concept.SConceptAdapterById;
 import jetbrains.mps.smodel.adapter.structure.concept.SInterfaceConceptAdapterById;
-import jetbrains.mps.smodel.adapter.structure.ref.SReferenceLinkAdapter;
-import jetbrains.mps.smodel.adapter.structure.ref.SReferenceLinkAdapterById;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
+import org.jetbrains.mps.openapi.language.SReferenceLink;
 import org.jetbrains.mps.openapi.language.SScope;
 import org.jetbrains.mps.openapi.model.SNode;
 
-public abstract class SContainmentLinkAdapter implements SContainmentLink {
+public abstract class SReferenceLinkAdapter implements SReferenceLink {
   protected String myName;
   protected String myConceptName;
 
-  protected SContainmentLinkAdapter(@NotNull String conceptName, @NotNull String name) {
+  protected SReferenceLinkAdapter(@NotNull String conceptName, @NotNull String name) {
     myConceptName = conceptName;
     myName = name;
   }
 
-  public abstract boolean isSameLink(SContainmentLinkAdapter c);
+  public abstract boolean isSameReference(SReferenceLinkAdapter r);
 
-  protected abstract LinkDescriptor getLinkDescriptor();
+  protected abstract RefDescriptor getReferenceDescriptor();
 
   @Override
   public abstract SAbstractConcept getContainingConcept();
@@ -65,7 +64,7 @@ public abstract class SContainmentLinkAdapter implements SContainmentLink {
 
   @Override
   public SAbstractConcept getTargetConcept() {
-    SConceptId id = getLinkDescriptor().getTargetConcept();
+    SConceptId id = getRefDescriptor().getTargetConcept();
     ConceptDescriptor concept = ConceptRegistryUtil.getConceptDescriptor(id);
     return concept.isInterfaceConcept() ? new SInterfaceConceptAdapterById(id, concept.getConceptFqName()) :
         new SConceptAdapterById(id, concept.getConceptFqName());
@@ -73,22 +72,65 @@ public abstract class SContainmentLinkAdapter implements SContainmentLink {
 
   @Override
   public boolean isReference() {
-    return false;
+    return true;
   }
 
   @Override
   public boolean isMultiple() {
-    return getLinkDescriptor().isMultiple();
-  }
-
-  public boolean isUnordered() {
-    return getLinkDescriptor().isUnordered();
+    return false;
   }
 
   @Override
-  public SNode getLinkDeclarationNode() {
+  public SNode getRefDeclarationNode() {
     SNode cnode = getContainingConcept().getConceptDeclarationNode();
     if (cnode == null) return null;
     return findInConcept(cnode);
   }
+
+  public SScope getScope(SNode referenceNode) {
+    // TODO scope = ModelConstraints.getReferenceDescriptor(conceptName, role).getScope()
+    Scope scope = null;
+    if (scope != null) {
+      return new SScopeAdapter(scope, referenceNode);
+    }
+    return null;
+  }
+
+  public SScope getScope(SNode contextNode, @Nullable SContainmentLink link, int index) {
+    // TODO scope = ModelConstraints.getReferenceDescriptor(conceptName, role, contextNode, link.role(), index).getScope()
+    Scope scope = null;
+    if (scope != null) {
+      return new SScopeAdapter(scope, contextNode);
+    }
+    return null;
+  }
+
+  private static class SScopeAdapter implements SScope {
+    private final SNode myContextNode;
+    private final Scope myScope;
+
+    private SScopeAdapter(@NotNull Scope scope, @NotNull SNode contextNode) {
+      myScope = scope;
+      myContextNode = contextNode;
+    }
+
+    public Iterable<SNode> getAvailableElements(@Nullable String prefix) {
+      return myScope.getAvailableElements(prefix);
+    }
+
+    public boolean contains(SNode node) {
+      return myScope.contains(node);
+    }
+
+    @Nullable
+    public SNode resolve(@NotNull String string) {
+      return myScope.resolve(myContextNode, string);
+    }
+
+    @Nullable
+    public String getReferenceText(@NotNull SNode node) {
+      return myScope.getReferenceText(myContextNode, node);
+    }
+  }
+
 }
