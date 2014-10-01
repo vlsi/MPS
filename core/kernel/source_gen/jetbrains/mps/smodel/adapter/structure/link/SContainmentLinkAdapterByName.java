@@ -15,11 +15,18 @@
  */
 package jetbrains.mps.smodel.adapter.structure.link;
 
+import jetbrains.mps.smodel.SNodeId;
+import jetbrains.mps.smodel.adapter.ids.SConceptId;
+import jetbrains.mps.smodel.adapter.ids.SContainmentLinkId;
 import jetbrains.mps.smodel.adapter.structure.concept.ConceptRegistryUtil;
+import jetbrains.mps.smodel.adapter.structure.concept.SConceptAdapterById;
 import jetbrains.mps.smodel.adapter.structure.concept.SConceptAdapterByName;
+import jetbrains.mps.smodel.adapter.structure.concept.SInterfaceConceptAdapterById;
 import jetbrains.mps.smodel.adapter.structure.concept.SInterfaceConceptAdapterByName;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.model.SNode;
 
 public class SContainmentLinkAdapterByName extends SContainmentLinkAdapter {
   public SContainmentLinkAdapterByName(@NotNull String conceptName, @NotNull String name) {
@@ -37,6 +44,11 @@ public class SContainmentLinkAdapterByName extends SContainmentLinkAdapter {
   @Override
   public org.jetbrains.mps.openapi.language.SAbstractConcept getContainingConcept() {
     ConceptDescriptor concept = ConceptRegistryUtil.getConceptDescriptor(myConceptName);
-    return concept.isInterfaceConcept() ? new SInterfaceConceptAdapterByName(myConceptName) : new SConceptAdapterByName(myConceptName);
+    return concept.isInterfaceConcept() ? new SInterfaceConceptAdapterById(concept.getId(),myConceptName) : new SConceptAdapterById(concept.getId(),myConceptName);
+  }
+
+  @Override
+  protected SNode findInConcept(SNode cnode) {
+    throw new UnsupportedOperationException();
   }
 }
