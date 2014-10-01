@@ -2904,10 +2904,10 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   // TODO: merge with rebuldEditorContent() method?
   public void rebuildAfterReloadModel() {
     releaseTypeCheckingContext();
-    acquireTypeCheckingContext();
     if (myNodePointer != null) {
       myNode = myNodePointer.resolve(getRepository());
     }
+    acquireTypeCheckingContext();
     rebuildEditorContent();
   }
 
