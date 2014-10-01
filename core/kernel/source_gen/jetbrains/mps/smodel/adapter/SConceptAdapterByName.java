@@ -52,11 +52,9 @@ public class SConceptAdapterByName extends SAbstractConceptAdapterByName impleme
   public Iterable<SInterfaceConcept> getSuperInterfaces() {
     ConceptDescriptor d = getConceptDescriptor();
     List<SInterfaceConcept> res = new ArrayList<SInterfaceConcept>();
-    for (String name : d.getParentsNames()) {
-      if (name.equals(d.getSuperConcept())) {
-        continue;
-      }
-      res.add(new SInterfaceConceptAdapter(name));
+    for (SConceptId id : d.getParentsIds()) {
+      if (id.equals(d.getSuperConceptId())) continue;
+      res.add(new SInterfaceConceptAdapter(id, SConceptAdapter.getConceptDescriptor(id).getConceptFqName()));
     }
     return res;
   }
