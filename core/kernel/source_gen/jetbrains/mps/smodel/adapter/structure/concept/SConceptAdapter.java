@@ -43,7 +43,7 @@ public abstract class SConceptAdapter extends SAbstractConceptAdapter {
     List<SInterfaceConcept> res = new ArrayList<SInterfaceConcept>();
     for (SConceptId id : d.getParentsIds()) {
       if (id.equals(d.getSuperConceptId())) continue;
-      res.add(new SInterfaceConceptAdapterByName(id, ConceptRegistryUtil.getConceptDescriptor(id).getConceptFqName()));
+      res.add(new SInterfaceConceptAdapterById(id, ConceptRegistryUtil.getConceptDescriptor(id).getConceptFqName()));
     }
     return res;
   }

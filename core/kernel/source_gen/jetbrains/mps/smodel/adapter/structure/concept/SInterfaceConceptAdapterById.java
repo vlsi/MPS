@@ -30,11 +30,12 @@ public class SInterfaceConceptAdapterById extends SInterfaceConceptAdapter imple
   protected SConceptId myConceptId;
 
   public SInterfaceConceptAdapterById(@NotNull SConceptId conceptId, @NotNull String fqname) {
-    super(conceptId, fqname);
+    super(fqname);
   }
 
   public boolean isSameConcept(SAbstractConceptAdapter c2) {
-    return (c2 instanceof SAbstractConceptAdapterById) ? myConceptId.equals(((SAbstractConceptAdapterById) c2).myConceptId) : myFqName.equals(c2.myFqName);
+    if (!(c2 instanceof SInterfaceConceptAdapter)) return false;
+    return (c2 instanceof SInterfaceConceptAdapterById) ? myConceptId.equals(((SInterfaceConceptAdapterById) c2).myConceptId) : myFqName.equals(c2.myFqName);
   }
 
   @Override
