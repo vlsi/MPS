@@ -21,18 +21,18 @@ import jetbrains.mps.smodel.SNodeId;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.smodel.search.ConceptAndSuperConceptsScope;
 
-public class SPropertyAdapter implements SProperty {
+public class SPropertyAdapterById implements SProperty {
   private SPropertyId myPropertyId;
 
   private String conceptName;
   private String propertyName;
 
-  public SPropertyAdapter(String conceptName, String name) {
+  public SPropertyAdapterById(String conceptName, String name) {
     this.conceptName = conceptName;
     this.propertyName = name;
   }
 
-  public SPropertyAdapter(SPropertyId propertyId) {
+  public SPropertyAdapterById(SPropertyId propertyId) {
     this.myPropertyId = propertyId;
   }
 

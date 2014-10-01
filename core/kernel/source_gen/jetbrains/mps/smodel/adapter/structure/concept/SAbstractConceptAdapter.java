@@ -21,9 +21,9 @@ import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import jetbrains.mps.smodel.adapter.ids.SContainmentLinkId;
 import jetbrains.mps.smodel.adapter.ids.SPropertyId;
 import jetbrains.mps.smodel.adapter.ids.SReferenceLinkId;
-import jetbrains.mps.smodel.adapter.structure.link.SContainmentLinkAdapter;
-import jetbrains.mps.smodel.adapter.structure.property.SPropertyAdapter;
-import jetbrains.mps.smodel.adapter.structure.ref.SReferenceLinkAdapter;
+import jetbrains.mps.smodel.adapter.structure.link.SContainmentLinkAdapterById;
+import jetbrains.mps.smodel.adapter.structure.property.SPropertyAdapterById;
+import jetbrains.mps.smodel.adapter.structure.ref.SReferenceLinkAdapterById;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.Pair;
@@ -81,7 +81,7 @@ public abstract class SAbstractConceptAdapter implements SAbstractConcept {
 
     ArrayList<SReferenceLink> result = new ArrayList<SReferenceLink>();
     for (Pair<SReferenceLinkId, String> e : refDescrs) {
-      result.add(new SReferenceLinkAdapter(e.o1, e.o2));
+      result.add(new SReferenceLinkAdapterById(e.o1, e.o2));
     }
     return result;
   }
@@ -104,7 +104,7 @@ public abstract class SAbstractConceptAdapter implements SAbstractConcept {
 
     ArrayList<SContainmentLink> result = new ArrayList<SContainmentLink>();
     for (Pair<SContainmentLinkId, String> e : linkDescrs) {
-      result.add(new SContainmentLinkAdapter(e.o1, e.o2));
+      result.add(new SContainmentLinkAdapterById(e.o1, e.o2));
     }
     return result;
   }
@@ -144,7 +144,7 @@ public abstract class SAbstractConceptAdapter implements SAbstractConcept {
 
     ArrayList<SProperty> result = new ArrayList<SProperty>();
     for (Pair<SPropertyId, String> e : propDescrs) {
-      result.add(new SPropertyAdapter(e.o1, e.o2));
+      result.add(new SPropertyAdapterById(e.o1, e.o2));
     }
     return result;
   }

@@ -18,7 +18,7 @@ package jetbrains.mps.smodel;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.scope.ErrorScope;
 import jetbrains.mps.scope.Scope;
-import jetbrains.mps.smodel.adapter.structure.ref.SReferenceLinkAdapter;
+import jetbrains.mps.smodel.adapter.structure.ref.SReferenceLinkAdapterById;
 import jetbrains.mps.smodel.constraints.ModelConstraints;
 import org.apache.log4j.LogManager;
 import org.jetbrains.annotations.NotNull;
@@ -115,7 +115,7 @@ public class DynamicReference extends SReferenceBase {
   }
 
   private boolean isTargetClassifier(@NotNull SNode node, @NotNull SReferenceLink role) {
-    SAbstractLink lnk = new SReferenceLinkAdapter(role);
+    SAbstractLink lnk = new SReferenceLinkAdapterById(role);
     SAbstractConcept lnkTarget = lnk.getTargetConcept();
     if (lnkTarget == null) {
       return false;

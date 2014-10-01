@@ -18,9 +18,9 @@ package jetbrains.mps.smodel.persistence.def.v9;
 import jetbrains.mps.smodel.DebugRegistry;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.adapter.structure.concept.SConceptAdapterById;
-import jetbrains.mps.smodel.adapter.structure.link.SContainmentLinkAdapter;
-import jetbrains.mps.smodel.adapter.structure.property.SPropertyAdapter;
-import jetbrains.mps.smodel.adapter.structure.ref.SReferenceLinkAdapter;
+import jetbrains.mps.smodel.adapter.structure.link.SContainmentLinkAdapterById;
+import jetbrains.mps.smodel.adapter.structure.property.SPropertyAdapterById;
+import jetbrains.mps.smodel.adapter.structure.ref.SReferenceLinkAdapterById;
 import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.language.SProperty;
@@ -45,7 +45,7 @@ public class IdInfoCollector {
 
         if (n.getParent() != null) {
           SContainmentLink roleId = n.getContainmentLink();
-          SContainmentLinkAdapter role = new SContainmentLinkAdapter(roleId);
+          SContainmentLinkAdapterById role = new SContainmentLinkAdapterById(roleId);
           SConcept linkConceptId = roleId.getConceptId();
           SNode roleNode = role.getLinkNode();
           String roleName;
@@ -64,7 +64,7 @@ public class IdInfoCollector {
         }
 
         for (SProperty pid : n.getProperties()) {
-          SPropertyAdapter propId = new SPropertyAdapter(pid);
+          SPropertyAdapterById propId = new SPropertyAdapterById(pid);
           SConcept propConceptId = pid.getContainingConcept();
           SNode propNode = propId.getPropertyNode();
           String propName;
@@ -84,7 +84,7 @@ public class IdInfoCollector {
 
         for (SReference ref : n.getReferences()) {
           SReferenceLink refId = ref.getReferenceLink();
-          SReferenceLinkAdapter refRole = new SReferenceLinkAdapter(refId);
+          SReferenceLinkAdapterById refRole = new SReferenceLinkAdapterById(refId);
           SNode refNode = refRole.getLinkNode();
           SConcept refConceptId = refId.getConcept();
           String refName;

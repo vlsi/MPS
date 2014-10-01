@@ -23,14 +23,14 @@ import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.smodel.search.ConceptAndSuperConceptsScope;
 import org.jetbrains.annotations.NotNull;
 
-public class SReferenceLinkAdapter  implements SReferenceLink {
+public class SReferenceLinkAdapterById implements SReferenceLink {
   protected SReferenceLinkId myRoleId;
 
-  public SReferenceLinkAdapter(String conceptName, String role) {
+  public SReferenceLinkAdapterById(String conceptName, String role) {
     super(conceptName, role);
   }
 
-  public SReferenceLinkAdapter(SReferenceLinkId roleId) {
+  public SReferenceLinkAdapterById(SReferenceLinkId roleId) {
     super(null, null);
     myRoleId = roleId;
   }
@@ -91,7 +91,7 @@ public class SReferenceLinkAdapter  implements SReferenceLink {
     // TODO scope = ModelConstraints.getReferenceDescriptor(conceptName, role).getScope()
     Scope scope = null;
     if (scope != null) {
-      return new SReferenceLinkAdapter.SScopeAdapter(scope, referenceNode);
+      return new SReferenceLinkAdapterById.SScopeAdapter(scope, referenceNode);
     }
     return null;
   }
@@ -99,7 +99,7 @@ public class SReferenceLinkAdapter  implements SReferenceLink {
     // TODO scope = ModelConstraints.getReferenceDescriptor(conceptName, role, contextNode, link.role(), index).getScope()
     Scope scope = null;
     if (scope != null) {
-      return new SReferenceLinkAdapter.SScopeAdapter(scope, contextNode);
+      return new SReferenceLinkAdapterById.SScopeAdapter(scope, contextNode);
     }
     return null;
   }
@@ -143,7 +143,7 @@ public class SReferenceLinkAdapter  implements SReferenceLink {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    SReferenceLinkAdapter that = (SReferenceLinkAdapter) o;
+    SReferenceLinkAdapterById that = (SReferenceLinkAdapterById) o;
     if (myRoleId != null) {
       return myRoleId.equals(that.myRoleId);
     } else {

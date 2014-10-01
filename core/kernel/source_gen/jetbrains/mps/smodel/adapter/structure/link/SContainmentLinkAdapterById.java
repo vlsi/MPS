@@ -8,16 +8,16 @@ import jetbrains.mps.smodel.adapter.structure.concept.SInterfaceConceptAdapterBy
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import org.jetbrains.annotations.NotNull;
 
-public class SContainmentLinkAdapter extends SBaseContainmentLinkAdapter {
+public class SContainmentLinkAdapterById extends SBaseContainmentLinkAdapter {
   protected SContainmentLinkId myRoleId;
 
-  public SContainmentLinkAdapter(@NotNull SContainmentLinkId roleId, @NotNull String conceptName, @NotNull String name) {
+  public SContainmentLinkAdapterById(@NotNull SContainmentLinkId roleId, @NotNull String conceptName, @NotNull String name) {
     super(conceptName, name);
     myRoleId = roleId;
   }
 
   public boolean isSameLink(SBaseContainmentLinkAdapter l2) {
-    return (l2 instanceof SContainmentLinkAdapter) ? myRoleId.equals(((SContainmentLinkAdapter) l2).myRoleId) :
+    return (l2 instanceof SContainmentLinkAdapterById) ? myRoleId.equals(((SContainmentLinkAdapterById) l2).myRoleId) :
         (myConceptName + "#" + myName).equals(l2.myConceptName + "#" + l2.myName);
   }
 

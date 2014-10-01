@@ -17,10 +17,10 @@ package jetbrains.mps.smodel.language;
 
 import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.smodel.adapter.structure.concept.SConceptAdapterById;
-import jetbrains.mps.smodel.adapter.structure.link.SContainmentLinkAdapter;
+import jetbrains.mps.smodel.adapter.structure.link.SContainmentLinkAdapterById;
 import jetbrains.mps.smodel.adapter.structure.language.SLanguageAdapter;
-import jetbrains.mps.smodel.adapter.structure.property.SPropertyAdapter;
-import jetbrains.mps.smodel.adapter.structure.ref.SReferenceLinkAdapter;
+import jetbrains.mps.smodel.adapter.structure.property.SPropertyAdapterById;
+import jetbrains.mps.smodel.adapter.structure.ref.SReferenceLinkAdapterById;
 import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import jetbrains.mps.smodel.adapter.ids.SContainmentLinkId;
 import jetbrains.mps.smodel.adapter.ids.SLanguageId;
@@ -59,17 +59,17 @@ public class MetaFactoryImpl extends MetaFactory implements CoreComponent {
 
   @Override
   public String serializeProperty(SProperty property) {
-    return ((SPropertyAdapter) property).getId().serialize();
+    return ((SPropertyAdapterById) property).getId().serialize();
   }
 
   @Override
   public String serializeRole(SContainmentLink role) {
-    return ((SContainmentLinkId) ((SContainmentLinkAdapter) role).getRoleId()).serialize();
+    return ((SContainmentLinkId) ((SContainmentLinkAdapterById) role).getRoleId()).serialize();
   }
 
   @Override
   public String serializeReference(SReferenceLink ref) {
-    return ((SReferenceLinkId) ((SReferenceLinkAdapter) ref).getRoleId()).serialize();
+    return ((SReferenceLinkId) ((SReferenceLinkAdapterById) ref).getRoleId()).serialize();
   }
 
   @Override
@@ -84,16 +84,16 @@ public class MetaFactoryImpl extends MetaFactory implements CoreComponent {
 
   @Override
   public SProperty deserializeProperty(String property) {
-    return new SPropertyAdapter(SPropertyId.deserialize(property));
+    return new SPropertyAdapterById(SPropertyId.deserialize(property));
   }
 
   @Override
   public SContainmentLink deserializeRole(String role) {
-    return new SContainmentLinkAdapter(SContainmentLinkId.deserialize(role));
+    return new SContainmentLinkAdapterById(SContainmentLinkId.deserialize(role));
   }
 
   @Override
   public SReferenceLink deserializeReference(String ref) {
-    return new SReferenceLinkAdapter(SReferenceLinkId.deserialize(ref));
+    return new SReferenceLinkAdapterById(SReferenceLinkId.deserialize(ref));
   }
 }
