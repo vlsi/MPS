@@ -18,7 +18,7 @@ package jetbrains.mps.smodel;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.scope.ErrorScope;
 import jetbrains.mps.scope.Scope;
-import jetbrains.mps.smodel.adapter.SReferenceLinkAdapter;
+import jetbrains.mps.smodel.adapter.structure.ref.SReferenceLinkAdapter;
 import jetbrains.mps.smodel.constraints.ModelConstraints;
 import org.apache.log4j.LogManager;
 import org.jetbrains.annotations.NotNull;

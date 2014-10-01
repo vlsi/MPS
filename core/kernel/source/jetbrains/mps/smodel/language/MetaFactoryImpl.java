@@ -16,11 +16,11 @@
 package jetbrains.mps.smodel.language;
 
 import jetbrains.mps.components.CoreComponent;
-import jetbrains.mps.smodel.adapter.SConceptAdapterById;
-import jetbrains.mps.smodel.adapter.SContainmentLinkAdapter;
-import jetbrains.mps.smodel.adapter.SLanguageAdapter;
-import jetbrains.mps.smodel.adapter.SPropertyAdapter;
-import jetbrains.mps.smodel.adapter.SReferenceLinkAdapter;
+import jetbrains.mps.smodel.adapter.structure.concept.SConceptAdapterById;
+import jetbrains.mps.smodel.adapter.structure.link.SContainmentLinkAdapter;
+import jetbrains.mps.smodel.adapter.structure.language.SLanguageAdapter;
+import jetbrains.mps.smodel.adapter.structure.property.SPropertyAdapter;
+import jetbrains.mps.smodel.adapter.structure.ref.SReferenceLinkAdapter;
 import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import jetbrains.mps.smodel.adapter.ids.SContainmentLinkId;
 import jetbrains.mps.smodel.adapter.ids.SLanguageId;

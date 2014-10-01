@@ -17,10 +17,10 @@ package jetbrains.mps.smodel.persistence.def.v9;
 
 import jetbrains.mps.smodel.DebugRegistry;
 import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.smodel.adapter.SConceptAdapterById;
-import jetbrains.mps.smodel.adapter.SContainmentLinkAdapter;
-import jetbrains.mps.smodel.adapter.SPropertyAdapter;
-import jetbrains.mps.smodel.adapter.SReferenceLinkAdapter;
+import jetbrains.mps.smodel.adapter.structure.concept.SConceptAdapterById;
+import jetbrains.mps.smodel.adapter.structure.link.SContainmentLinkAdapter;
+import jetbrains.mps.smodel.adapter.structure.property.SPropertyAdapter;
+import jetbrains.mps.smodel.adapter.structure.ref.SReferenceLinkAdapter;
 import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.language.SProperty;
