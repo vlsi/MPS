@@ -17,24 +17,40 @@ package jetbrains.mps.smodel.adapter;
 
 import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
+import jetbrains.mps.util.NameUtil;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.language.SInterfaceConcept;
+import org.jetbrains.mps.openapi.language.SLanguage;
+import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.model.SNode;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class SInterfaceConceptAdapterByName extends SAbstractConceptAdapterByName implements SInterfaceConcept {
-  public SInterfaceConceptAdapterByName(@NotNull SConceptId conceptId, @NotNull String fqname) {
-    super(conceptId, fqname);
+public class SInterfaceConceptAdapterByName extends SBaseInterfaceConceptAdapter  implements SInterfaceConcept {
+  public SInterfaceConceptAdapterByName(@NotNull String fqname) {
+    super( fqname);
+  }
+
+  public boolean isSameConcept(SBaseAbstractConceptAdapter c2) {
+    return myFqName.equals(c2.getQualifiedName());
   }
 
   @Override
-  public Iterable<SInterfaceConcept> getSuperInterfaces() {
-    ConceptDescriptor d = getConceptDescriptor();
-    List<SInterfaceConcept> res = new ArrayList<SInterfaceConcept>();
-    for (String name : d.getParentsNames()) {
-      res.add(new SInterfaceConceptAdapterByName(name));
+  public ConceptDescriptor getConceptDescriptor() {
+    return ConceptRegistryUtil.getConceptDescriptor(myFqName);
+  }
+
+  @Override
+  public SLanguage getLanguage() {
+    return new SLanguageAdapterByName(NameUtil.namespaceFromConceptFQName(myFqName));
+  }
+
+  @Override
+  protected SNode findInModel(SModel strucModel) {
+    for (SNode root : strucModel.getRootNodes()) {
+      if (root.getName().equals(NameUtil.shortNameFromLongName(myFqName))) return root;
     }
-    return res;
+    return null;
   }
 }

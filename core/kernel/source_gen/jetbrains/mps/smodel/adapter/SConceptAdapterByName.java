@@ -17,35 +17,41 @@ package jetbrains.mps.smodel.adapter;
 
 import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
+import jetbrains.mps.util.NameUtil;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.language.SInterfaceConcept;
+import org.jetbrains.mps.openapi.language.SLanguage;
+import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.model.SNode;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class SConceptAdapterByName extends SAbstractConceptAdapterByName implements SConcept {
+public class SConceptAdapterByName extends SBaseConceptAdapter implements SConcept {
   public SConceptAdapterByName(@NotNull String fqName) {
     super(fqName);
   }
 
-  @Override
-  public SConcept getSuperConcept() {
-    ConceptDescriptor d = getConceptDescriptor();
-    SConceptId superConcept = d.getSuperConceptId();
-    if (superConcept == null) return null;
-
-    return new SConceptAdapterById(superConcept, d.getSuperConcept());
+  public boolean isSameConcept(SBaseAbstractConceptAdapter c2) {
+    return myFqName.equals(c2.getQualifiedName());
   }
 
   @Override
-  public Iterable<SInterfaceConcept> getSuperInterfaces() {
-    ConceptDescriptor d = getConceptDescriptor();
-    List<SInterfaceConcept> res = new ArrayList<SInterfaceConcept>();
-    for (SConceptId id : d.getParentsIds()) {
-      if (id.equals(d.getSuperConceptId())) continue;
-      res.add(new SInterfaceConceptAdapterByName(id, ConceptRegistryUtil.getConceptDescriptor(id).getConceptFqName()));
+  public ConceptDescriptor getConceptDescriptor() {
+    return ConceptRegistryUtil.getConceptDescriptor(myFqName);
+  }
+
+  @Override
+  public SLanguage getLanguage() {
+    return new SLanguageAdapterByName(NameUtil.namespaceFromConceptFQName(myFqName));
+  }
+
+  @Override
+  protected SNode findInModel(SModel strucModel) {
+    for (SNode root : strucModel.getRootNodes()) {
+      if (root.getName().equals(NameUtil.shortNameFromLongName(myFqName))) return root;
     }
-    return res;
+    return null;
   }
 }

@@ -15,46 +15,43 @@
  */
 package jetbrains.mps.smodel.adapter;
 
-import jetbrains.mps.smodel.Language;
-import jetbrains.mps.smodel.LanguageAspect;
+import jetbrains.mps.smodel.SNodeId.Regular;
+import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import jetbrains.mps.util.NameUtil;
-import org.apache.log4j.LogManager;
-import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.language.SInterfaceConcept;
 import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 
-public class SAbstractConceptAdapterByName extends SBaseConceptAdapter {
+public class SInterfaceConceptAdapterById extends SBaseInterfaceConceptAdapter  implements SInterfaceConcept {
+  protected SConceptId myConceptId;
 
-  @Deprecated
-  public SAbstractConceptAdapterByName(@NotNull String fqName) {
-    super(fqName);
+  public SInterfaceConceptAdapterById(@NotNull SConceptId conceptId, @NotNull String fqname) {
+    super(conceptId, fqname);
   }
 
-  public boolean isSameConcept(SBaseConceptAdapter c2) {
-    return myFqName.equals(c2.getQualifiedName());
+  public boolean isSameConcept(SBaseAbstractConceptAdapter c2) {
+    return (c2 instanceof SAbstractConceptAdapterById) ? myConceptId.equals(((SAbstractConceptAdapterById) c2).myConceptId) : myFqName.equals(c2.myFqName);
   }
 
   @Override
   public ConceptDescriptor getConceptDescriptor() {
-    return ConceptRegistryUtil.getConceptDescriptor(myFqName);
+    return ConceptRegistryUtil.getConceptDescriptor(myConceptId);
   }
 
-  //------- getConceptDescriptor stuff ------
+  public SConceptId getId() {
+    return myConceptId;
+  }
 
   @Override
   public SLanguage getLanguage() {
-    return new SLanguageAdapterByName(NameUtil.namespaceFromConceptFQName(myFqName));
+    return new SLanguageAdapter(myConceptId.getLanguageId(), NameUtil.namespaceFromConceptFQName(myFqName));
   }
 
   @Override
   protected SNode findInModel(SModel strucModel) {
-    for (SNode root : strucModel.getRootNodes()) {
-      if (root.getName().equals(NameUtil.shortNameFromLongName(myFqName))) return root;
-    }
-    return null;
+    return strucModel.getNode(new Regular(myConceptId.getConceptId()));
   }
 }
