@@ -87,9 +87,9 @@ public class SLanguageAdapter implements SLanguage {
       public boolean accept(SNode it) {
         return SNodeOperations.isInstanceOf(it, "jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration");
       }
-    }).select(new ISelector<SNode, SInterfaceConceptAdapter>() {
-      public SInterfaceConceptAdapter select(SNode it) {
-        return new SInterfaceConceptAdapter(MetaIdByDeclaration.getConceptId((jetbrains.mps.smodel.SNode) it));
+    }).select(new ISelector<SNode, SInterfaceConceptAdapterByName>() {
+      public SInterfaceConceptAdapterByName select(SNode it) {
+        return new SInterfaceConceptAdapterByName(MetaIdByDeclaration.getConceptId((jetbrains.mps.smodel.SNode) it));
       }
     }));
     return c;

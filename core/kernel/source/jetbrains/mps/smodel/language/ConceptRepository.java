@@ -16,8 +16,8 @@
 package jetbrains.mps.smodel.language;
 
 import jetbrains.mps.components.CoreComponent;
-import jetbrains.mps.smodel.adapter.SConceptAdapter;
-import jetbrains.mps.smodel.adapter.SInterfaceConceptAdapter;
+import jetbrains.mps.smodel.adapter.SConceptAdapterById;
+import jetbrains.mps.smodel.adapter.SInterfaceConceptAdapterByName;
 import jetbrains.mps.smodel.adapter.SLanguageAdapter;
 import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
@@ -59,7 +59,7 @@ public class ConceptRepository extends SConceptRepository implements CoreCompone
     }
 
     public SConceptId getId() {
-      return ((SInterfaceConceptAdapter) target).getId();
+      return ((SInterfaceConceptAdapterByName) target).getId();
     }
 
     @Override
@@ -141,7 +141,7 @@ public class ConceptRepository extends SConceptRepository implements CoreCompone
     }
     if (concept == null) {
       // TODO separate implementation for an "invalid" concept?
-      return new SConceptAdapter(id);
+      return new SConceptAdapterById(id);
     }
     return (SConcept) concept;
   }
@@ -152,7 +152,7 @@ public class ConceptRepository extends SConceptRepository implements CoreCompone
     ConceptDescriptor desc = ConceptRegistry.getInstance().getConceptDescriptor(id);
     if (desc instanceof IllegalConceptDescriptor) return null;
 
-    return desc.isInterfaceConcept() ? new SInterfaceConceptAdapter(id) : new SConceptAdapter(id);
+    return desc.isInterfaceConcept() ? new SInterfaceConceptAdapterByName(id) : new SConceptAdapterById(id);
   }
 
   @Deprecated

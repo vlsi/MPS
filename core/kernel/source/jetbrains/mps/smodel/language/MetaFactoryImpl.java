@@ -16,7 +16,7 @@
 package jetbrains.mps.smodel.language;
 
 import jetbrains.mps.components.CoreComponent;
-import jetbrains.mps.smodel.adapter.SConceptAdapter;
+import jetbrains.mps.smodel.adapter.SConceptAdapterById;
 import jetbrains.mps.smodel.adapter.SContainmentLinkAdapter;
 import jetbrains.mps.smodel.adapter.SLanguageAdapter;
 import jetbrains.mps.smodel.adapter.SPropertyAdapter;
@@ -54,7 +54,7 @@ public class MetaFactoryImpl extends MetaFactory implements CoreComponent {
 
   @Override
   public String serializeConcept(SConcept concept) {
-    return ((SConceptAdapter) concept).getId().serialize();
+    return ((SConceptAdapterById) concept).getId().serialize();
   }
 
   @Override
@@ -79,7 +79,7 @@ public class MetaFactoryImpl extends MetaFactory implements CoreComponent {
 
   @Override
   public SConcept deserializeConcept(String concept) {
-    return new SConceptAdapter(SConceptId.deserialize(concept));
+    return new SConceptAdapterById(SConceptId.deserialize(concept));
   }
 
   @Override

@@ -9,8 +9,8 @@ import org.jetbrains.mps.openapi.language.SInterfaceConcept;
 import java.util.ArrayList;
 import java.util.List;
 
-public class SConceptAdapter extends SAbstractConceptAdapter implements SConcept {
-  public SConceptAdapter(@NotNull SConceptId conceptId, @NotNull String fqname) {
+public class SConceptAdapterById extends SAbstractConceptAdapterById implements SConcept {
+  public SConceptAdapterById(@NotNull SConceptId conceptId, @NotNull String fqname) {
     super(conceptId, fqname);
   }
 
@@ -20,7 +20,7 @@ public class SConceptAdapter extends SAbstractConceptAdapter implements SConcept
     SConceptId superConcept = d.getSuperConceptId();
     if (superConcept == null) return null;
 
-    return new SConceptAdapter(superConcept, d.getSuperConcept());
+    return new SConceptAdapterById(superConcept, d.getSuperConcept());
   }
 
   @Override
@@ -29,7 +29,7 @@ public class SConceptAdapter extends SAbstractConceptAdapter implements SConcept
     List<SInterfaceConcept> res = new ArrayList<SInterfaceConcept>();
     for (SConceptId id : d.getParentsIds()) {
       if (id.equals(d.getSuperConceptId())) continue;
-      res.add(new SInterfaceConceptAdapter(id, ConceptRegistryUtil.getConceptDescriptor(id).getConceptFqName()));
+      res.add(new SInterfaceConceptAdapterByName(id, ConceptRegistryUtil.getConceptDescriptor(id).getConceptFqName()));
     }
     return res;
   }

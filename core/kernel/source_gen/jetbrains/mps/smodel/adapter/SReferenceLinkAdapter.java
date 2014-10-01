@@ -62,7 +62,7 @@ public class SReferenceLinkAdapter  implements SReferenceLink {
     SNode t = SLinkOperations.getTarget(link, "target", false);
     SConceptId id = MetaIdByDeclaration.getConceptId((jetbrains.mps.smodel.SNode) t);
     boolean isConcept = t.getConcept().getQualifiedName().equals("jetbrains.mps.lang.structure.structure.ConceptDeclaration");
-    return (isConcept ? new SConceptAdapter(id) : new SInterfaceConceptAdapter(id));
+    return (isConcept ? new SConceptAdapterById(id) : new SInterfaceConceptAdapterByName(id));
   }
 
   public SAbstractLinkId getRoleId() {
@@ -72,7 +72,7 @@ public class SReferenceLinkAdapter  implements SReferenceLink {
 
   @Override
   public SAbstractConcept getContainingConcept() {
-    return new SConceptAdapter(myRoleId.getConceptId());
+    return new SConceptAdapterById(myRoleId.getConceptId());
   }
 
   @Override
@@ -106,7 +106,7 @@ public class SReferenceLinkAdapter  implements SReferenceLink {
     if (!(fillBothIds())) {
       return null;
     }
-    SConceptAdapter adapter = new SConceptAdapter(getRoleId().getConceptId());
+    SConceptAdapterById adapter = new SConceptAdapterById(getRoleId().getConceptId());
     SModel model = adapter.getConceptDeclarationNode().getModel();
     return ((SNode) model.getNode(new SNodeId.Regular(myRoleId.getReferenceLinkId())));
   }
@@ -122,7 +122,7 @@ public class SReferenceLinkAdapter  implements SReferenceLink {
       SNode linkNode = scope.getLinkDeclarationByRole(role);
       myRoleId = new SReferenceLinkId(cid, MetaIdByDeclaration.getNodeId((jetbrains.mps.smodel.SNode) linkNode));
     } else {
-      SAbstractConceptAdapter adapter = new SAbstractConceptAdapter(myRoleId.getConceptId());
+      SAbstractConceptAdapterById adapter = new SAbstractConceptAdapterById(myRoleId.getConceptId());
       conceptName = adapter.getQualifiedName();
       SNode node = adapter.getConceptDeclarationNode();
       if (node == null) {

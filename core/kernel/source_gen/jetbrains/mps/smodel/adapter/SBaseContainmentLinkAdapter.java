@@ -58,7 +58,7 @@ public abstract class SBaseContainmentLinkAdapter implements SContainmentLink {
   public SAbstractConcept getTargetConcept() {
     SConceptId id = getLinkDescriptor().getTargetConcept();
     ConceptDescriptor concept = ConceptRegistryUtil.getConceptDescriptor(id);
-    return concept.isInterfaceConcept() ? new SInterfaceConceptAdapter(id, concept.getConceptFqName()) : new SConceptAdapter(id, concept.getConceptFqName());
+    return concept.isInterfaceConcept() ? new SInterfaceConceptAdapterByName(id, concept.getConceptFqName()) : new SConceptAdapterById(id, concept.getConceptFqName());
   }
 
   @Override
@@ -78,7 +78,7 @@ public abstract class SBaseContainmentLinkAdapter implements SContainmentLink {
   @Override
   public SNode getLinkDeclarationNode() {
     SConceptId cid = getRoleId().getConceptId();
-    SConceptAdapter adapter = new SConceptAdapter(cid, ConceptRegistryUtil.getConceptDescriptor(cid).getConceptFqName());
+    SConceptAdapterById adapter = new SConceptAdapterById(cid, ConceptRegistryUtil.getConceptDescriptor(cid).getConceptFqName());
     SNode cnode = adapter.getConceptDeclarationNode();
     if (cnode == null) return null;
     SModel model = cnode.getModel();

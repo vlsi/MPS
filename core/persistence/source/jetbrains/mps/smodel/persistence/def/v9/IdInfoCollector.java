@@ -17,7 +17,7 @@ package jetbrains.mps.smodel.persistence.def.v9;
 
 import jetbrains.mps.smodel.DebugRegistry;
 import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.smodel.adapter.SConceptAdapter;
+import jetbrains.mps.smodel.adapter.SConceptAdapterById;
 import jetbrains.mps.smodel.adapter.SContainmentLinkAdapter;
 import jetbrains.mps.smodel.adapter.SPropertyAdapter;
 import jetbrains.mps.smodel.adapter.SReferenceLinkAdapter;
@@ -39,7 +39,7 @@ public class IdInfoCollector {
     for (SNode root : rootNodes) {
       for (SNode n : SNodeUtil.getDescendants(root)) {
         SConcept conceptId = n.getConcept().getId();
-        SNode conceptNode = new SConceptAdapter(conceptId).getConceptDeclarationNode();
+        SNode conceptNode = new SConceptAdapterById(conceptId).getConceptDeclarationNode();
         String conceptName = conceptNode != null ? conceptNode.getName() : debugRegistry.getConceptName(conceptId);
         conceptIds.put(conceptId, conceptName);
 

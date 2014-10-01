@@ -37,7 +37,7 @@ public class SPropertyAdapter implements SProperty {
 
   @Override
   public SConcept getContainingConcept() {
-    return new SConceptAdapter(myPropertyId.getConceptId());
+    return new SConceptAdapterById(myPropertyId.getConceptId());
   }
 
   public SPropertyId getId() {
@@ -83,7 +83,7 @@ public class SPropertyAdapter implements SProperty {
     if (!(fillBothIds())) {
       return null;
     }
-    SConceptAdapter adapter = new SConceptAdapter(myPropertyId.getConceptId());
+    SConceptAdapterById adapter = new SConceptAdapterById(myPropertyId.getConceptId());
     SModel model = adapter.getConceptDeclarationNode().getModel();
     return ((SNode) model.getNode(new SNodeId.Regular(myPropertyId.getPropertyId())));
   }
@@ -98,7 +98,7 @@ public class SPropertyAdapter implements SProperty {
       SNode propNode = scope.getPropertyDeclarationByName(propertyName);
       myPropertyId = new SPropertyId(cid, MetaIdByDeclaration.getNodeId((jetbrains.mps.smodel.SNode) propNode));
     } else {
-      SAbstractConceptAdapter adapter = new SAbstractConceptAdapter(myPropertyId.getConceptId());
+      SAbstractConceptAdapterById adapter = new SAbstractConceptAdapterById(myPropertyId.getConceptId());
       conceptName = adapter.getQualifiedName();
       SNode node = adapter.getConceptDeclarationNode();
       if (node == null) {

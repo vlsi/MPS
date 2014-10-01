@@ -9,16 +9,16 @@ import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 
-public class SAbstractConceptAdapter extends SBaseConceptAdapter {
+public class SAbstractConceptAdapterById extends SBaseConceptAdapter {
   protected SConceptId myConceptId;
 
-  public SAbstractConceptAdapter(@NotNull SConceptId conceptId, @NotNull String fqname) {
+  public SAbstractConceptAdapterById(@NotNull SConceptId conceptId, @NotNull String fqname) {
     super(fqname);
     myConceptId = conceptId;
   }
 
   public boolean isSameConcept(SBaseConceptAdapter c2) {
-    return (c2 instanceof SAbstractConceptAdapter) ? myConceptId.equals(((SAbstractConceptAdapter) c2).myConceptId) : myFqName.equals(c2.myFqName);
+    return (c2 instanceof SAbstractConceptAdapterById) ? myConceptId.equals(((SAbstractConceptAdapterById) c2).myConceptId) : myFqName.equals(c2.myFqName);
   }
 
   @Override
