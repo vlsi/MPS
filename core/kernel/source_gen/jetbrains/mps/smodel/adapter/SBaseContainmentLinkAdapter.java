@@ -15,14 +15,74 @@
  */
 package jetbrains.mps.smodel.adapter;
 
+import jetbrains.mps.smodel.SNodeId;
+import jetbrains.mps.smodel.adapter.ids.SConceptId;
+import jetbrains.mps.smodel.runtime.ConceptDescriptor;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
+import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.model.SNode;
 
 public abstract class SBaseContainmentLinkAdapter implements SContainmentLink {
   protected String myName;
+  protected String myConceptName;
 
-  protected SBaseContainmentLinkAdapter(String name) {
+  protected SBaseContainmentLinkAdapter(String conceptName, String name) {
+    myConceptName = conceptName;
     myName = name;
   }
 
   public abstract boolean isSameLink(SBaseContainmentLinkAdapter c);
+
+  protected abstract LinkDescriptor getLinkDescriptor();
+
+  @Override
+  public abstract SConcept getContainingConcept();
+
+    @Override
+  public String getRole() {
+    return getRoleName();
+  }
+
+  @Override
+  public boolean isOptional() {
+    return getLinkDescriptor().isOptional();
+  }
+
+  @Override
+  public String getRoleName() {
+    return getLinkDescriptor().getName();
+  }
+
+  @Override
+  public SAbstractConcept getTargetConcept() {
+    SConceptId id = getLinkDescriptor().getTargetConcept();
+    ConceptDescriptor concept = SAbstractConceptAdapter.getConceptDescriptor(id);
+    return concept.isInterfaceConcept() ? new SInterfaceConceptAdapter(id, concept.getConceptFqName()) : new SConceptAdapter(id, concept.getConceptFqName());
+  }
+
+  @Override
+  public boolean isReference() {
+    return false;
+  }
+
+  @Override
+  public boolean isMultiple() {
+    return getLinkDescriptor().isMultiple();
+  }
+
+  public boolean isUnordered() {
+    return getLinkDescriptor().isUnordered();
+  }
+
+  @Override
+  public SNode getLinkDeclarationNode() {
+    SConceptId cid = getRoleId().getConceptId();
+    SConceptAdapter adapter = new SConceptAdapter(cid, SAbstractConceptAdapter.getConceptDescriptor(cid).getConceptFqName());
+    SNode cnode = adapter.getConceptDeclarationNode();
+    if (cnode == null) return null;
+    SModel model = cnode.getModel();
+    return model.getNode(new SNodeId.Regular(myRoleId.getContainmentLinkId()));
+  }
 }

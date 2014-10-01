@@ -15,50 +15,28 @@
  */
 package jetbrains.mps.smodel.adapter;
 
-import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import jetbrains.mps.smodel.adapter.ids.SConceptId;
+import jetbrains.mps.smodel.adapter.ids.SContainmentLinkId;
+import jetbrains.mps.smodel.runtime.ConceptDescriptor;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.language.SConcept;
 
 public class SContainmentLinkAdapterByName extends SBaseContainmentLinkAdapter {
-  protected String conceptName;
-  protected String role;
-
-  public SContainmentLinkAdapter(String conceptName, String role) {
-    this.conceptName = conceptName;
-    this.role = role;
+  public SContainmentLinkAdapterByName(@NotNull String conceptName, @NotNull String name) {
+    super(conceptName, name);
   }
 
-  @Override
-  public boolean isUnordered() {
-    return false;
+  public boolean isSameLink(SBaseContainmentLinkAdapter l2) {
+    return (myConceptName + "#" + myName).equals(l2.myConceptName + "#" + l2.myName);
   }
 
-  @Override
-  public String getRole() {
-    return null;
+  protected LinkDescriptor getLinkDescriptor() {
+    return SAbstractConceptAdapterByName.getConceptDescriptor(myConceptName).getLinkDescriptor(myName);
   }
 
   @Override
   public SConcept getContainingConcept() {
-    return null;
-  }
-
-  @Override
-  public SAbstractConcept getTargetConcept() {
-    return null;
-  }
-
-  @Override
-  public boolean isReference() {
-    return false;
-  }
-
-  @Override
-  public boolean isOptional() {
-    return false;
-  }
-
-  @Override
-  public boolean isMultiple() {
-    return false;
+    ConceptDescriptor concept = SAbstractConceptAdapterByName.getConceptDescriptor(myConceptName);
+    return concept.isInterfaceConcept() ? new SInterfaceConceptAdapterByName(myConceptName) : new SConceptAdapterByName(myConceptName);
   }
 }
