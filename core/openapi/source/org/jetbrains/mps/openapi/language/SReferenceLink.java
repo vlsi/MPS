@@ -46,6 +46,7 @@ public interface SReferenceLink extends SAbstractLink {
   /**
    * Instance nodes can contain more than one target element.
    */
+  @Deprecated //always false
   boolean isMultiple();
 
   @Nullable
