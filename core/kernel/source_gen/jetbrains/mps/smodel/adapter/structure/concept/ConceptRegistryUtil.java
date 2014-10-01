@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel.adapter;
+package jetbrains.mps.smodel.adapter.structure.concept;
 
 import jetbrains.mps.smodel.DebugRegistry;
 import jetbrains.mps.smodel.adapter.ids.SConceptId;
@@ -34,7 +34,7 @@ public class ConceptRegistryUtil {
   private static final Set<String> reportedLanguages2 = new HashSet<String>();
   protected static Logger LOG = LogManager.getLogger(ConceptRegistryUtil.class);
 
-  protected static ConceptDescriptor getConceptDescriptor(SConceptId id) {
+  public static ConceptDescriptor getConceptDescriptor(SConceptId id) {
     ConceptDescriptor res = ConceptRegistry.getInstance().getConceptDescriptor(id);
     if (res instanceof IllegalConceptDescriptor) {
       SLanguageId languageId = id.getLanguageId();
@@ -50,7 +50,7 @@ public class ConceptRegistryUtil {
     return res;
   }
 
-  protected static ConceptDescriptor getConceptDescriptor(String fqName) {
+  public static ConceptDescriptor getConceptDescriptor(String fqName) {
     ConceptDescriptor res = ConceptRegistry.getInstance().getConceptDescriptor(fqName);
     if (res instanceof IllegalConceptDescriptor) {
       String languageId = NameUtil.namespaceFromConceptFQName(fqName);

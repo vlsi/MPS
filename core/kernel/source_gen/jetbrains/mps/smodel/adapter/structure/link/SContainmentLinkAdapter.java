@@ -1,6 +1,6 @@
 package jetbrains.mps.smodel.adapter.structure.link;
 
-import jetbrains.mps.smodel.adapter.ConceptRegistryUtil;
+import jetbrains.mps.smodel.adapter.structure.concept.ConceptRegistryUtil;
 import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import jetbrains.mps.smodel.adapter.ids.SContainmentLinkId;
 import jetbrains.mps.smodel.adapter.structure.concept.SConceptAdapterById;

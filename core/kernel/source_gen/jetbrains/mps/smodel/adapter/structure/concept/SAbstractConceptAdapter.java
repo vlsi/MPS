@@ -17,7 +17,6 @@ package jetbrains.mps.smodel.adapter.structure.concept;
 
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.LanguageAspect;
-import jetbrains.mps.smodel.adapter.ConceptRegistryUtil;
 import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import jetbrains.mps.smodel.adapter.ids.SContainmentLinkId;
 import jetbrains.mps.smodel.adapter.ids.SPropertyId;

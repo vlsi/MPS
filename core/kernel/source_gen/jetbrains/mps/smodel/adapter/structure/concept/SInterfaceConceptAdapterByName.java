@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.smodel.adapter.structure.concept;
 
-import jetbrains.mps.smodel.adapter.ConceptRegistryUtil;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import jetbrains.mps.util.NameUtil;
 import org.jetbrains.annotations.NotNull;

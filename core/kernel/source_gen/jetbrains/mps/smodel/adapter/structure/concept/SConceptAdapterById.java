@@ -1,7 +1,6 @@
 package jetbrains.mps.smodel.adapter.structure.concept;
 
 import jetbrains.mps.smodel.SNodeId.Regular;
-import jetbrains.mps.smodel.adapter.ConceptRegistryUtil;
 import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import jetbrains.mps.smodel.adapter.structure.language.SLanguageAdapter;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;

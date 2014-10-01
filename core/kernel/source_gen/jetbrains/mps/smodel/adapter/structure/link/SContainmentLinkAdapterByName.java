@@ -15,7 +15,7 @@
  */
 package jetbrains.mps.smodel.adapter.structure.link;
 
-import jetbrains.mps.smodel.adapter.ConceptRegistryUtil;
+import jetbrains.mps.smodel.adapter.structure.concept.ConceptRegistryUtil;
 import jetbrains.mps.smodel.adapter.structure.concept.SConceptAdapterByName;
 import jetbrains.mps.smodel.adapter.structure.concept.SInterfaceConceptAdapterByName;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
