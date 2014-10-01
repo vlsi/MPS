@@ -17,7 +17,6 @@ package jetbrains.mps.smodel.adapter;
 
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.language.SReferenceLink;
 import org.jetbrains.mps.openapi.language.SScope;
@@ -43,7 +42,7 @@ public class SReferenceLinkAdapterByName implements SReferenceLink {
   }
 
   @Override
-  public SConcept getContainingConcept() {
+  public SAbstractConcept getContainingConcept() {
     return null;
   }
 

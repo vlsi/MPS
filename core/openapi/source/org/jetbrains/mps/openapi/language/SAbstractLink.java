@@ -23,7 +23,7 @@ public interface SAbstractLink {
   @Deprecated
   String getRole();
 
-  SConcept getContainingConcept();
+  SAbstractConcept getContainingConcept();
 
   /**
    * The concept for the nodes that this link points to.

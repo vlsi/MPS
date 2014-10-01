@@ -9,7 +9,6 @@ import jetbrains.mps.smodel.adapter.ids.SAbstractLinkId;
 import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import jetbrains.mps.smodel.adapter.ids.SReferenceLinkId;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.language.SReferenceLink;
 import org.jetbrains.mps.openapi.language.SScope;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -72,7 +71,7 @@ public class SReferenceLinkAdapter  implements SReferenceLink {
   }
 
   @Override
-  public SConcept getContainingConcept() {
+  public SAbstractConcept getContainingConcept() {
     return new SConceptAdapter(myRoleId.getConceptId());
   }
 

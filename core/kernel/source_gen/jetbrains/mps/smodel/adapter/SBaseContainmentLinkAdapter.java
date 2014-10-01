@@ -19,7 +19,6 @@ import jetbrains.mps.smodel.SNodeId;
 import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -38,7 +37,7 @@ public abstract class SBaseContainmentLinkAdapter implements SContainmentLink {
   protected abstract LinkDescriptor getLinkDescriptor();
 
   @Override
-  public abstract SConcept getContainingConcept();
+  public abstract SAbstractConcept getContainingConcept();
 
     @Override
   public String getRole() {

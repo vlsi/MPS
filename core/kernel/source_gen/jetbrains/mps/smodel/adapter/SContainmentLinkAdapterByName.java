@@ -15,11 +15,8 @@
  */
 package jetbrains.mps.smodel.adapter;
 
-import jetbrains.mps.smodel.adapter.ids.SConceptId;
-import jetbrains.mps.smodel.adapter.ids.SContainmentLinkId;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.mps.openapi.language.SConcept;
 
 public class SContainmentLinkAdapterByName extends SBaseContainmentLinkAdapter {
   public SContainmentLinkAdapterByName(@NotNull String conceptName, @NotNull String name) {
@@ -35,7 +32,7 @@ public class SContainmentLinkAdapterByName extends SBaseContainmentLinkAdapter {
   }
 
   @Override
-  public SConcept getContainingConcept() {
+  public org.jetbrains.mps.openapi.language.SAbstractConcept getContainingConcept() {
     ConceptDescriptor concept = SAbstractConceptAdapterByName.getConceptDescriptor(myConceptName);
     return concept.isInterfaceConcept() ? new SInterfaceConceptAdapterByName(myConceptName) : new SConceptAdapterByName(myConceptName);
   }

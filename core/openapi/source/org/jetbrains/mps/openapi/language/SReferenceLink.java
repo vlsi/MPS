@@ -25,7 +25,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 public interface SReferenceLink extends SAbstractLink {
   String getRoleName();
 
-  SConcept getContainingConcept();
+  SAbstractConcept getContainingConcept();
 
   /**
    * The concept for the nodes that this link points to.

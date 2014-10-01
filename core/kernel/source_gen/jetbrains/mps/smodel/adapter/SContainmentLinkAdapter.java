@@ -4,7 +4,6 @@ import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import jetbrains.mps.smodel.adapter.ids.SContainmentLinkId;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.mps.openapi.language.SConcept;
 
 public class SContainmentLinkAdapter extends SBaseContainmentLinkAdapter {
   protected SContainmentLinkId myRoleId;
@@ -28,7 +27,7 @@ public class SContainmentLinkAdapter extends SBaseContainmentLinkAdapter {
   }
 
   @Override
-  public SConcept getContainingConcept() {
+  public org.jetbrains.mps.openapi.language.SAbstractConcept getContainingConcept() {
     SConceptId id = myRoleId.getConceptId();
     ConceptDescriptor concept = SAbstractConceptAdapter.getConceptDescriptor(id);
     return concept.isInterfaceConcept() ? new SInterfaceConceptAdapter(id, concept.getConceptFqName()) : new SConceptAdapter(id, concept.getConceptFqName());
