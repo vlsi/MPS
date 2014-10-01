@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.smodel.adapter.structure.concept;
 
+import jetbrains.mps.compiler.IClassesData;
 import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import org.jetbrains.mps.openapi.language.SConcept;
@@ -23,7 +24,7 @@ import org.jetbrains.mps.openapi.language.SInterfaceConcept;
 import java.util.ArrayList;
 import java.util.List;
 
-public abstract class SConceptAdapter extends SAbstractConceptAdapter {
+public abstract class SConceptAdapter extends SAbstractConceptAdapter implements SConcept {
   protected SConceptAdapter(String fqName) {
     super(fqName);
   }

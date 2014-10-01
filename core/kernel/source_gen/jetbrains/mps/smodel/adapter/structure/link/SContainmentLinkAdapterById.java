@@ -1,14 +1,18 @@
 package jetbrains.mps.smodel.adapter.structure.link;
 
+import jetbrains.mps.smodel.SNodeId;
 import jetbrains.mps.smodel.adapter.structure.concept.ConceptRegistryUtil;
 import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import jetbrains.mps.smodel.adapter.ids.SContainmentLinkId;
 import jetbrains.mps.smodel.adapter.structure.concept.SConceptAdapterById;
+import jetbrains.mps.smodel.adapter.structure.concept.SInterfaceConceptAdapterById;
 import jetbrains.mps.smodel.adapter.structure.concept.SInterfaceConceptAdapterByName;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.model.SNode;
 
-public class SContainmentLinkAdapterById extends SBaseContainmentLinkAdapter {
+public class SContainmentLinkAdapterById extends SContainmentLinkAdapter {
   protected SContainmentLinkId myRoleId;
 
   public SContainmentLinkAdapterById(@NotNull SContainmentLinkId roleId, @NotNull String conceptName, @NotNull String name) {
@@ -16,7 +20,7 @@ public class SContainmentLinkAdapterById extends SBaseContainmentLinkAdapter {
     myRoleId = roleId;
   }
 
-  public boolean isSameLink(SBaseContainmentLinkAdapter l2) {
+  public boolean isSameLink(SContainmentLinkAdapter l2) {
     return (l2 instanceof SContainmentLinkAdapterById) ? myRoleId.equals(((SContainmentLinkAdapterById) l2).myRoleId) :
         (myConceptName + "#" + myName).equals(l2.myConceptName + "#" + l2.myName);
   }
@@ -33,6 +37,12 @@ public class SContainmentLinkAdapterById extends SBaseContainmentLinkAdapter {
   public org.jetbrains.mps.openapi.language.SAbstractConcept getContainingConcept() {
     SConceptId id = myRoleId.getConceptId();
     ConceptDescriptor concept = ConceptRegistryUtil.getConceptDescriptor(id);
-    return concept.isInterfaceConcept() ? new SInterfaceConceptAdapterByName(id, concept.getConceptFqName()) : new SConceptAdapterById(id, concept.getConceptFqName());
+    return concept.isInterfaceConcept() ? new SInterfaceConceptAdapterById(id, concept.getConceptFqName()) : new SConceptAdapterById(id, concept.getConceptFqName());
+  }
+
+  @Override
+  protected SNode findInConcept(SNode cnode) {
+    SModel model = cnode.getModel();
+    return model.getNode(new SNodeId.Regular(myRoleId.getContainmentLinkId()));
   }
 }

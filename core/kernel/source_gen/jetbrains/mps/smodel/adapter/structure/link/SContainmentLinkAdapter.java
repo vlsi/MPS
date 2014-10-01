@@ -15,34 +15,35 @@
  */
 package jetbrains.mps.smodel.adapter.structure.link;
 
-import jetbrains.mps.smodel.SNodeId;
-import jetbrains.mps.smodel.adapter.structure.concept.ConceptRegistryUtil;
 import jetbrains.mps.smodel.adapter.ids.SConceptId;
+import jetbrains.mps.smodel.adapter.structure.concept.ConceptRegistryUtil;
 import jetbrains.mps.smodel.adapter.structure.concept.SConceptAdapterById;
+import jetbrains.mps.smodel.adapter.structure.concept.SInterfaceConceptAdapterById;
 import jetbrains.mps.smodel.adapter.structure.concept.SInterfaceConceptAdapterByName;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
-import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 
-public abstract class SBaseContainmentLinkAdapter implements SContainmentLink {
+public abstract class SContainmentLinkAdapter implements SContainmentLink {
   protected String myName;
   protected String myConceptName;
 
-  protected SBaseContainmentLinkAdapter(String conceptName, String name) {
+  protected SContainmentLinkAdapter(String conceptName, String name) {
     myConceptName = conceptName;
     myName = name;
   }
 
-  public abstract boolean isSameLink(SBaseContainmentLinkAdapter c);
+  public abstract boolean isSameLink(SContainmentLinkAdapter c);
 
   protected abstract LinkDescriptor getLinkDescriptor();
 
   @Override
   public abstract SAbstractConcept getContainingConcept();
 
-    @Override
+  protected abstract SNode findInConcept(SNode cnode);
+
+  @Override
   public String getRole() {
     return getRoleName();
   }
@@ -61,7 +62,8 @@ public abstract class SBaseContainmentLinkAdapter implements SContainmentLink {
   public SAbstractConcept getTargetConcept() {
     SConceptId id = getLinkDescriptor().getTargetConcept();
     ConceptDescriptor concept = ConceptRegistryUtil.getConceptDescriptor(id);
-    return concept.isInterfaceConcept() ? new SInterfaceConceptAdapterByName(id, concept.getConceptFqName()) : new SConceptAdapterById(id, concept.getConceptFqName());
+    return concept.isInterfaceConcept() ? new SInterfaceConceptAdapterById(id, concept.getConceptFqName()) :
+        new SConceptAdapterById(id, concept.getConceptFqName());
   }
 
   @Override
@@ -80,11 +82,8 @@ public abstract class SBaseContainmentLinkAdapter implements SContainmentLink {
 
   @Override
   public SNode getLinkDeclarationNode() {
-    SConceptId cid = getRoleId().getConceptId();
-    SConceptAdapterById adapter = new SConceptAdapterById(cid, ConceptRegistryUtil.getConceptDescriptor(cid).getConceptFqName());
-    SNode cnode = adapter.getConceptDeclarationNode();
+    SNode cnode = getContainingConcept().getConceptDeclarationNode();
     if (cnode == null) return null;
-    SModel model = cnode.getModel();
-    return model.getNode(new SNodeId.Regular(myRoleId.getContainmentLinkId()));
+    return findInConcept(cnode);
   }
 }

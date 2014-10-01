@@ -64,7 +64,7 @@ public class SReferenceLinkAdapterById implements SReferenceLink {
     SNode t = SLinkOperations.getTarget(link, "target", false);
     SConceptId id = MetaIdByDeclaration.getConceptId((jetbrains.mps.smodel.SNode) t);
     boolean isConcept = t.getConcept().getQualifiedName().equals("jetbrains.mps.lang.structure.structure.ConceptDeclaration");
-    return (isConcept ? new SConceptAdapterById(id) : new SInterfaceConceptAdapterByName(id));
+    return (isConcept ? new SConceptAdapterById(id) : new SInterfaceConceptAdapterById(id));
   }
 
   public SAbstractLinkId getRoleId() {

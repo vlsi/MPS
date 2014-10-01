@@ -21,12 +21,12 @@ import jetbrains.mps.smodel.adapter.structure.concept.SInterfaceConceptAdapterBy
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import org.jetbrains.annotations.NotNull;
 
-public class SContainmentLinkAdapterByName extends SBaseContainmentLinkAdapter {
+public class SContainmentLinkAdapterByName extends SContainmentLinkAdapter {
   public SContainmentLinkAdapterByName(@NotNull String conceptName, @NotNull String name) {
     super(conceptName, name);
   }
 
-  public boolean isSameLink(SBaseContainmentLinkAdapter l2) {
+  public boolean isSameLink(SContainmentLinkAdapter l2) {
     return (myConceptName + "#" + myName).equals(l2.myConceptName + "#" + l2.myName);
   }
 

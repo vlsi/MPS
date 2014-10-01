@@ -15,13 +15,14 @@
  */
 package jetbrains.mps.smodel.adapter.structure.concept;
 
+import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import org.jetbrains.mps.openapi.language.SInterfaceConcept;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public abstract class SInterfaceConceptAdapter extends SAbstractConceptAdapter {
+public abstract class SInterfaceConceptAdapter extends SAbstractConceptAdapter implements SInterfaceConcept {
   protected SInterfaceConceptAdapter(String fqName) {
     super(fqName);
   }
@@ -30,8 +31,8 @@ public abstract class SInterfaceConceptAdapter extends SAbstractConceptAdapter {
   public Iterable<SInterfaceConcept> getSuperInterfaces() {
     ConceptDescriptor d = getConceptDescriptor();
     List<SInterfaceConcept> res = new ArrayList<SInterfaceConcept>();
-    for (String name : d.getParentsNames()) {
-      res.add(new SInterfaceConceptAdapterByName(name));
+    for (SConceptId id : d.getParentsIds()) {
+      res.add(new SInterfaceConceptAdapterById(id, d.getParentName(id)));
     }
     return res;
   }
