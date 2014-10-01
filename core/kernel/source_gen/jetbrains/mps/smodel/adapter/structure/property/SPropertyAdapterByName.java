@@ -15,9 +15,42 @@
  */
 package jetbrains.mps.smodel.adapter.structure.property;
 
+import jetbrains.mps.smodel.SNodeId;
+import jetbrains.mps.smodel.adapter.ids.SConceptId;
+import jetbrains.mps.smodel.adapter.ids.SPropertyId;
+import jetbrains.mps.smodel.adapter.structure.concept.ConceptRegistryUtil;
+import jetbrains.mps.smodel.adapter.structure.concept.SConceptAdapterById;
+import jetbrains.mps.smodel.adapter.structure.concept.SInterfaceConceptAdapterById;
+import jetbrains.mps.smodel.runtime.ConceptDescriptor;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SProperty;
+import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.model.SNode;
 
-public class SPropertyAdapterByName implements SProperty {
-  public SPropertyAdapterByName(String propertyName) {
+public class SPropertyAdapterByName extends SPropertyAdapter {
+  public SPropertyAdapterByName( @NotNull String conceptName, @NotNull String propName) {
+    super(conceptName, propName);
+  }
+
+  @Override
+  public boolean isSameProperty(SPropertyAdapter p) {
+    return (myConceptName + "#" + myPropertyName).equals(p.myConceptName + "#" + p.myPropertyName);
+  }
+
+  @Override
+  protected PropDescriptor getPropertyDescriptor() {
+    return ConceptRegistryUtil.getConceptDescriptor(myConceptName).getPropDescriptor(myPropertyName);
+  }
+
+  @Override
+  public SAbstractConcept getContainingConcept() {
+    ConceptDescriptor concept = ConceptRegistryUtil.getConceptDescriptor(myConceptName);
+    return concept.isInterfaceConcept() ? new SInterfaceConceptAdapterById(concept.getId(),myConceptName) : new SConceptAdapterById(concept.getId(),myConceptName);
+  }
+
+  @Override
+  protected SNode findInConcept(SNode cnode) {
+    throw new UnsupportedOperationException();
   }
 }

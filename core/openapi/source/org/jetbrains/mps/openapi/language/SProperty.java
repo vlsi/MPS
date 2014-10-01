@@ -20,9 +20,9 @@ package org.jetbrains.mps.openapi.language;
  */
 public interface SProperty {
   @Deprecated //renamed to getContainingConcept, remove after 3.2
-  SConcept getConcept();
+  SAbstractConcept getConcept();
 
-  SConcept getContainingConcept();
+  SAbstractConcept getContainingConcept();
 
   String getName();
 
