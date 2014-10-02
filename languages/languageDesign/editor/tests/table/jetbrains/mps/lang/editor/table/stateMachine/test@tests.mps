@@ -1094,6 +1094,13 @@
       </node>
       <node role="transitions" roleId="2qyu.763922957008726948" type="2qyu.Transition" typeId="2qyu.763922957008729149" id="5877647854348554914" nodeInfo="ng">
         <property name="condition" nameId="2qyu.763922957008729153" value="true" />
+        <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.AnonymousCellAnnotation" typeId="tp5g.1229194968594" id="5877647854348554922" nodeInfo="ng">
+          <property name="caretPosition" nameId="tp5g.1229194968596" value="0" />
+          <property name="useLabelSelection" nameId="tp5g.1932269937152561478" value="true" />
+          <property name="selectionStart" nameId="tp5g.6268941039745498163" value="0" />
+          <property name="selectionEnd" nameId="tp5g.6268941039745498165" value="0" />
+          <property name="cellId" nameId="tp5g.1229194968595" value="Constant_jj4qz_a0a0" />
+        </node>
         <node role="fromState" roleId="2qyu.763922957008729150" type="2qyu.StateReference" typeId="2qyu.763922957008729156" id="5877647854348554915" nodeInfo="ng">
           <link role="state" roleId="2qyu.763922957008729157" targetNodeId="5877647854348554908" resolveInfo="s_1" />
         </node>
@@ -1102,13 +1109,6 @@
         </node>
         <node role="trigger" roleId="2qyu.763922957008729151" type="2qyu.EventReference" typeId="2qyu.763922957008729158" id="5877647854348554917" nodeInfo="ng">
           <link role="event" roleId="2qyu.763922957008729159" targetNodeId="5877647854348554905" resolveInfo="e_1" />
-        </node>
-        <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.AnonymousCellAnnotation" typeId="tp5g.1229194968594" id="5877647854348554922" nodeInfo="ng">
-          <property name="caretPosition" nameId="tp5g.1229194968596" value="0" />
-          <property name="useLabelSelection" nameId="tp5g.1932269937152561478" value="true" />
-          <property name="selectionStart" nameId="tp5g.6268941039745498163" value="0" />
-          <property name="selectionEnd" nameId="tp5g.6268941039745498165" value="0" />
-          <property name="cellId" nameId="tp5g.1229194968595" value="Constant_jj4qz_a0a0" />
         </node>
       </node>
       <node role="transitions" roleId="2qyu.763922957008726948" type="2qyu.Transition" typeId="2qyu.763922957008729149" id="5877647854348554918" nodeInfo="ng">
@@ -1154,13 +1154,6 @@
         </node>
         <node role="trigger" roleId="2qyu.763922957008729151" type="2qyu.EventReference" typeId="2qyu.763922957008729158" id="5877647854348554939" nodeInfo="ng">
           <link role="event" roleId="2qyu.763922957008729159" targetNodeId="5877647854348554930" resolveInfo="e_0" />
-          <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.AnonymousCellAnnotation" typeId="tp5g.1229194968594" id="5877647854348554949" nodeInfo="ng">
-            <property name="isLastPosition" nameId="tp5g.1229432188737" value="true" />
-            <property name="useLabelSelection" nameId="tp5g.1932269937152561478" value="true" />
-            <property name="selectionStart" nameId="tp5g.6268941039745498163" value="3" />
-            <property name="selectionEnd" nameId="tp5g.6268941039745498165" value="3" />
-            <property name="cellId" nameId="tp5g.1229194968595" value="property_name" />
-          </node>
         </node>
       </node>
       <node role="transitions" roleId="2qyu.763922957008726948" type="2qyu.Transition" typeId="2qyu.763922957008729149" id="5877647854348554945" nodeInfo="ng">
@@ -1173,6 +1166,13 @@
         </node>
         <node role="trigger" roleId="2qyu.763922957008729151" type="2qyu.EventReference" typeId="2qyu.763922957008729158" id="5877647854348554948" nodeInfo="ng">
           <link role="event" roleId="2qyu.763922957008729159" targetNodeId="5877647854348554932" resolveInfo="e_2" />
+        </node>
+        <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.AnonymousCellAnnotation" typeId="tp5g.1229194968594" id="1289877718944623698" nodeInfo="ng">
+          <property name="caretPosition" nameId="tp5g.1229194968596" value="0" />
+          <property name="useLabelSelection" nameId="tp5g.1932269937152561478" value="true" />
+          <property name="selectionStart" nameId="tp5g.6268941039745498163" value="0" />
+          <property name="selectionEnd" nameId="tp5g.6268941039745498165" value="0" />
+          <property name="cellId" nameId="tp5g.1229194968595" value="Constant_jj4qz_a0a0" />
         </node>
       </node>
     </node>

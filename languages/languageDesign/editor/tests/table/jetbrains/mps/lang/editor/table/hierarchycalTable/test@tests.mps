@@ -236,16 +236,16 @@
       <node role="rows" roleId="2qyu.2882388703616155298" type="2qyu.Row" typeId="2qyu.2882388703616155302" id="2361546520930481296" nodeInfo="ng">
         <node role="cells" roleId="2qyu.2882388703616155303" type="2qyu.DataCell" typeId="2qyu.2882388703616155300" id="2361546520930481297" nodeInfo="ng">
           <property name="value" nameId="2qyu.2882388703616155301" value="$4 0$" />
-          <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.AnonymousCellAnnotation" typeId="tp5g.1229194968594" id="1010717384721789217" nodeInfo="ng">
-            <property name="isLastPosition" nameId="tp5g.1229432188737" value="true" />
-            <property name="useLabelSelection" nameId="tp5g.1932269937152561478" value="true" />
-            <property name="selectionStart" nameId="tp5g.6268941039745498163" value="5" />
-            <property name="selectionEnd" nameId="tp5g.6268941039745498165" value="5" />
-            <property name="cellId" nameId="tp5g.1229194968595" value="property_value" />
-          </node>
         </node>
         <node role="cells" roleId="2qyu.2882388703616155303" type="2qyu.DataCell" typeId="2qyu.2882388703616155300" id="2361546520930481299" nodeInfo="ng">
           <property name="value" nameId="2qyu.2882388703616155301" value="$4 2$" />
+          <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.AnonymousCellAnnotation" typeId="tp5g.1229194968594" id="1289877718944617567" nodeInfo="ng">
+            <property name="caretPosition" nameId="tp5g.1229194968596" value="0" />
+            <property name="useLabelSelection" nameId="tp5g.1932269937152561478" value="true" />
+            <property name="selectionStart" nameId="tp5g.6268941039745498163" value="0" />
+            <property name="selectionEnd" nameId="tp5g.6268941039745498165" value="0" />
+            <property name="cellId" nameId="tp5g.1229194968595" value="property_value" />
+          </node>
         </node>
       </node>
       <node role="headers" roleId="2qyu.8506335436194701780" type="2qyu.DataCell" typeId="2qyu.2882388703616155300" id="2361546520930481300" nodeInfo="ng">
@@ -2259,16 +2259,16 @@
       <node role="rows" roleId="2qyu.2882388703616155298" type="2qyu.Row" typeId="2qyu.2882388703616155302" id="9025751233592076992" nodeInfo="ng">
         <node role="cells" roleId="2qyu.2882388703616155303" type="2qyu.DataCell" typeId="2qyu.2882388703616155300" id="9025751233592076993" nodeInfo="ng">
           <property name="value" nameId="2qyu.2882388703616155301" value="$4 0$" />
-          <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.AnonymousCellAnnotation" typeId="tp5g.1229194968594" id="9025751233592076999" nodeInfo="ng">
-            <property name="isLastPosition" nameId="tp5g.1229432188737" value="true" />
-            <property name="useLabelSelection" nameId="tp5g.1932269937152561478" value="true" />
-            <property name="selectionStart" nameId="tp5g.6268941039745498163" value="5" />
-            <property name="selectionEnd" nameId="tp5g.6268941039745498165" value="5" />
-            <property name="cellId" nameId="tp5g.1229194968595" value="property_value" />
-          </node>
         </node>
         <node role="cells" roleId="2qyu.2882388703616155303" type="2qyu.DataCell" typeId="2qyu.2882388703616155300" id="9025751233592076995" nodeInfo="ng">
           <property name="value" nameId="2qyu.2882388703616155301" value="$4 2$" />
+          <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.AnonymousCellAnnotation" typeId="tp5g.1229194968594" id="1289877718944611465" nodeInfo="ng">
+            <property name="caretPosition" nameId="tp5g.1229194968596" value="0" />
+            <property name="useLabelSelection" nameId="tp5g.1932269937152561478" value="true" />
+            <property name="selectionStart" nameId="tp5g.6268941039745498163" value="0" />
+            <property name="selectionEnd" nameId="tp5g.6268941039745498165" value="0" />
+            <property name="cellId" nameId="tp5g.1229194968595" value="property_value" />
+          </node>
         </node>
       </node>
       <node role="headers" roleId="2qyu.8506335436194701780" type="2qyu.DataCell" typeId="2qyu.2882388703616155300" id="9025751233592076996" nodeInfo="ng">
