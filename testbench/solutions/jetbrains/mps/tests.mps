@@ -34,7 +34,6 @@
   <import index="f6tg" modelUID="r:3deabf90-227b-4dd7-a1b3-e4735e4a0270(jetbrains.mps.lang.smodel.test)" version="-1" />
   <import index="kyp0" modelUID="r:e318478c-edb7-4caf-bafe-2e5906944dde(jetbrains.mps.baseLanguage.math.tests)" version="-1" />
   <import index="982r" modelUID="r:710bb5ca-133c-4e34-80eb-4be42af51339(tests)" version="-1" />
-  <import index="vz87" modelUID="r:7aeccf7b-2a92-4693-88a5-f2859521757a(jetbrains.mps.makeTest.test)" version="-1" />
   <import index="mbhy" modelUID="r:e9dec192-5733-4300-8d93-4c61effb6e45(jetbrains.mps.baseLanguage.unitTest.sandbox)" version="-1" />
   <import index="mql5" modelUID="r:aca77a3d-d50b-42af-89a7-f304bf06ae8f(jetbrains.mps.traceInfo.testWeaving.test@tests)" version="-1" />
   <import index="7fn4" modelUID="r:e2bad6d6-3029-4bc3-b44d-49863f32d863(jetbrains.mps.execution.impl.configurations.tests.commands@tests)" version="-1" />
@@ -721,18 +720,6 @@
     </node>
     <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="1209025552055518733" nodeInfo="ng">
       <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="ijii.4483021482224672488" resolveInfo="ExtendedNamedTuples_Test" />
-    </node>
-  </root>
-  <root type="pop3.ModuleSuite" typeId="pop3.4504141816188599477" id="8962644517494457561" nodeInfo="ng">
-    <node role="moduleRef" roleId="pop3.1280144168199507080" type="pop3.SolutionRef" typeId="pop3.1280144168199506908" id="8962644517494457562" nodeInfo="ig">
-      <property name="moduleID" nameId="pop3.1280144168199506910" value="8e87e036-7d3f-4e47-809f-c244e2a938e8" />
-      <property name="moduleFQName" nameId="pop3.1280144168199506909" value="jetbrains.mps.makeTest" />
-    </node>
-    <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="8962644517494457563" nodeInfo="ng">
-      <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="vz87.1957199320903967715" resolveInfo="CheckDependencies_Test" />
-    </node>
-    <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="8962644517494457564" nodeInfo="ng">
-      <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="vz87.1957199320903968411" resolveInfo="NotMake_Test" />
     </node>
   </root>
   <root type="pop3.ModuleSuite" typeId="pop3.4504141816188599477" id="3034322180552461514" nodeInfo="ng">
