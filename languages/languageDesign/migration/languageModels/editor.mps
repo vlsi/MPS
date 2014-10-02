@@ -211,5 +211,22 @@
       </node>
     </node>
   </root>
+  <root type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="7527743013695058365" nodeInfo="ng">
+    <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="53vh.7527743013695058339" resolveInfo="NodePatternVariableReference" />
+    <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_RefCell" typeId="tpc2.1088013125922" id="7527743013695058366" nodeInfo="ng">
+      <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="53vh.7527743013695058340" />
+      <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.FontStyleStyleClassItem" typeId="tpc2.1186403751766" id="7527743013695058367" nodeInfo="nn">
+        <property name="style" nameId="tpc2.1186403771423" value="BOLD_ITALIC" />
+      </node>
+      <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.ForegroundColorStyleClassItem" typeId="tpc2.1186404549998" id="7527743013695058368" nodeInfo="nn">
+        <property name="color" nameId="tpc2.1186403713874" value="DARK_BLUE" />
+      </node>
+      <node role="editorComponent" roleId="tpc2.1088186146602" type="tpc2.InlineEditorComponent" typeId="tpc2.1088185857835" id="7527743013695058369" nodeInfo="ng">
+        <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Property" typeId="tpc2.1073389658414" id="7527743013695058370" nodeInfo="ng">
+          <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="tpck.1169194664001" resolveInfo="name" />
+        </node>
+      </node>
+    </node>
+  </root>
 </model>
 
