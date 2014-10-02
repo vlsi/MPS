@@ -21,7 +21,6 @@ import org.jetbrains.mps.openapi.language.SContainmentLinkId;
 import org.jetbrains.mps.openapi.language.SPropertyId;
 import org.jetbrains.mps.openapi.language.SReferenceLinkId;
 
-import java.beans.PropertyDescriptor;
 import java.util.List;
 import java.util.Set;
 
@@ -84,7 +83,7 @@ public interface ConceptDescriptor {
 
   Set<SPropertyId> getReferenceIds();
 
-  PropertyDescriptor getRefDescriptor(SReferenceLinkId id);
+  ReferenceDescriptor getRefDescriptor(SReferenceLinkId id);
 
   @Deprecated
   Set<String> getReferenceNames();
@@ -96,7 +95,7 @@ public interface ConceptDescriptor {
 
   Set<SPropertyId> getLinkIds();
 
-  PropertyDescriptor getLinkDescriptor(SContainmentLinkId id);
+  LinkDescriptor getLinkDescriptor(SContainmentLinkId id);
 
   @Deprecated
   Set<String> getChildrenNames();
