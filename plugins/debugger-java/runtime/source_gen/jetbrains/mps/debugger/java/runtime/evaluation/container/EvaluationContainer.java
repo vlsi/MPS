@@ -24,7 +24,6 @@ import jetbrains.mps.smodel.tempmodel.TempModuleOptions;
 import jetbrains.mps.project.ModuleContext;
 import com.intellij.openapi.application.ApplicationManager;
 import jetbrains.mps.debugger.java.api.evaluation.EvaluationException;
-import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
@@ -60,7 +59,7 @@ public class EvaluationContainer implements IEvaluationContainer {
     myDebugSession = session;
     myContainerModule = containerModule;
     myUiState = myDebugSession.getUiState();
-    final ModelAccess modelAccess = project.getRepository().getModelAccess();
+    final ModelAccess modelAccess = project.getModelAccess();
     modelAccess.runWriteAction(new Runnable() {
       public void run() {
         SModule containerModule = myContainerModule.resolve(myDebuggerRepository);
@@ -84,7 +83,8 @@ public class EvaluationContainer implements IEvaluationContainer {
 
   @Override
   public Class generateClass() throws EvaluationException {
-    return GeneratorUtil.generateAndLoadEvaluatorClass(myProject, SModelRepository.getInstance().getModelDescriptor(myContainerModel), Properties.EVALUATOR_NAME, getContext(), Properties.IS_DEVELOPER_MODE, new TransformingGenerationHandler(false, true, myGenerationListeners), ClassLoaderManager.getInstance().getClassLoader(ModuleRepositoryFacade.getInstance().getModule(PersistenceFacade.getInstance().createModuleReference("cf8c9de5-1b4a-4dc8-8e6d-847159af31dd(jetbrains.mps.debugger.java.api)"))));
+    SModel containerModel = myContainerModel.resolve(MPSModuleRepository.getInstance());
+    return GeneratorUtil.generateAndLoadEvaluatorClass(myProject, containerModel, Properties.EVALUATOR_NAME, getContext(), Properties.IS_DEVELOPER_MODE, ClassLoaderManager.getInstance().getClassLoader(ModuleRepositoryFacade.getInstance().getModule(PersistenceFacade.getInstance().createModuleReference("cf8c9de5-1b4a-4dc8-8e6d-847159af31dd(jetbrains.mps.debugger.java.api)"))));
   }
   @Override
   public void addGenerationListener(_FunctionTypes._void_P1_E0<? super SNode> listener) {
@@ -133,7 +133,6 @@ public class EvaluationContainer implements IEvaluationContainer {
   }
 
   protected void setUpNode(List<SNodeReference> nodesToImport) {
-    // wanted to use resolve method here, but it was not implemented:( 
     SModel containerModel = myContainerModel.resolve(MPSModuleRepository.getInstance());
 
     SNode evaluatorNode = createEvaluatorNode();

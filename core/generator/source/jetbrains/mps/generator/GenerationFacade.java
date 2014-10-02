@@ -68,7 +68,13 @@ public final class GenerationFacade {
     return mappings;
   }
 
+  @Deprecated
+  @ToRemove(version = 3.2)
   public static Collection<SModel> getModifiedModels(Collection<? extends SModel> models, IOperationContext context) {
+    return getModifiedModels(models);
+  }
+
+  public static Collection<SModel> getModifiedModels(Collection<? extends SModel> models) {
     Set<SModel> result = new LinkedHashSet<SModel>();
     ModelGenerationStatusManager statusManager = ModelGenerationStatusManager.getInstance();
     for (SModel sm : models) {
