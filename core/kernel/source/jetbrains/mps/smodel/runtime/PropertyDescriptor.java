@@ -16,4 +16,5 @@
 package jetbrains.mps.smodel.runtime;
 
 public interface PropertyDescriptor {
+  String getName();
 }

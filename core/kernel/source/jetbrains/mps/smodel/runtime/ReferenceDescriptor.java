@@ -15,5 +15,12 @@
  */
 package jetbrains.mps.smodel.runtime;
 
+import org.jetbrains.mps.openapi.language.SConceptId;
+
 public interface ReferenceDescriptor {
+  String getName();
+
+  SConceptId getTargetConcept();
+
+  boolean isOptional();
 }

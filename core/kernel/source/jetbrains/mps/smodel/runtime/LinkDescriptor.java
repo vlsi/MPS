@@ -15,5 +15,16 @@
  */
 package jetbrains.mps.smodel.runtime;
 
+import org.jetbrains.mps.openapi.language.SConceptId;
+
 public interface LinkDescriptor {
+  String getName();
+
+  SConceptId getTargetConcept();
+
+  boolean isOptional();
+
+  boolean isMultiple();
+
+  boolean isUnordered();
 }
