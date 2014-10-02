@@ -22,6 +22,9 @@ public class MigrateOperation_Behavior {
       if (kind == SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.pattern.structure.LinkPatternVariableDeclaration")) {
         return new NamedElementsScope(SNodeOperations.getDescendants(SNodeOperations.as(IOperation_Behavior.call_getOperand_1213877410070(thisNode), "jetbrains.mps.lang.migration.structure.ForEachMatchingExpression"), "jetbrains.mps.lang.pattern.structure.LinkPatternVariableDeclaration", false, new String[]{}));
       }
+      if (kind == SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.migration.structure.NodePatternVariableReference")) {
+        return new NamedElementsScope(SNodeOperations.getDescendants(SNodeOperations.as(IOperation_Behavior.call_getOperand_1213877410070(thisNode), "jetbrains.mps.lang.migration.structure.ForEachMatchingExpression"), "jetbrains.mps.lang.pattern.structure.PatternVariableDeclaration", false, new String[]{}));
+      }
       if (kind == SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.pattern.structure.ListPattern")) {
         return new NamedElementsScope(SNodeOperations.getDescendants(SNodeOperations.as(IOperation_Behavior.call_getOperand_1213877410070(thisNode), "jetbrains.mps.lang.migration.structure.ForEachMatchingExpression"), "jetbrains.mps.lang.pattern.structure.ListPattern", false, new String[]{}));
       }
