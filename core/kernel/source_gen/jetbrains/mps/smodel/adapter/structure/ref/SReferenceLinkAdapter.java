@@ -54,12 +54,12 @@ public abstract class SReferenceLinkAdapter implements SReferenceLink {
 
   @Override
   public boolean isOptional() {
-    return getLinkDescriptor().isOptional();
+    return getRefDescriptor().isOptional();
   }
 
   @Override
   public String getRoleName() {
-    return getLinkDescriptor().getName();
+    return getRefDescriptor().getName();
   }
 
   @Override
