@@ -185,15 +185,11 @@ public class LanguageRegistry implements CoreComponent, MPSClassesListener {
     for (SModule module : loadedModules) {
       if (module instanceof Language) {
         String namespace = module.getModuleName();
-        if (!myLanguages.containsKey(namespace)) {
-          LanguageRuntime runtime = createRuntime((Language) module);
-          if (runtime != null) {
-            myLanguages.put(namespace, runtime);
-            loadedRuntimes.add(runtime);
-          }
-        } else {
-          // todo: move this check to ClassLoaderManager
-          throw new IllegalStateException();
+        assert (!myLanguages.containsKey(namespace));
+        LanguageRuntime runtime = createRuntime((Language) module);
+        if (runtime != null) {
+          myLanguages.put(namespace, runtime);
+          loadedRuntimes.add(runtime);
         }
       }
     }

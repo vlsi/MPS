@@ -39,7 +39,6 @@ import java.util.concurrent.ConcurrentHashMap;
 public class ModuleClassLoader extends ClassLoader {
   private static final Logger LOG = LogManager.getLogger(ModuleClassLoader.class);
   private static final ClassLoader BOOTSTRAP_CLASSLOADER = Object.class.getClassLoader();
-
   private final ClassLoaderManager myManager;
 
   private final ModuleClassLoaderSupport mySupport;
@@ -234,8 +233,10 @@ public class ModuleClassLoader extends ClassLoader {
     }
     Set<ClassLoader> classLoaders = new HashSet<ClassLoader>();
     for (SModule dep : mySupport.getCompileDependencies()) {
-      ClassLoader classLoader = myManager.getClassLoader(dep);
-      if (classLoader != null) {
+//      if (dep == mySupport.getModule()) continue;
+      if (myManager.canLoad(dep)) {
+        ClassLoader classLoader = myManager.getClassLoader(dep);
+        if (classLoader == null) throw new IllegalStateException("The dependency " + dep + " of module " + mySupport.getModule() + " is not loaded");
         classLoaders.add(classLoader);
       }
     }

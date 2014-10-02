@@ -121,7 +121,11 @@ public class SModuleOperations {
     return facet != null && !facet.isCompileInMps();
   }
 
-  public static boolean isReloadable(SModule module) {
+  /**
+   * A module which can be associated with some class loader.
+   * Currently it can be either MPS ModuleClassLoader or IdeaPlugin PluginClassLoader.
+   */
+  public static boolean isLoadable(SModule module) {
     if (module instanceof Language)
       return true;
     if (module instanceof Generator)
