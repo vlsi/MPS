@@ -49,7 +49,7 @@
       <unit at="13,0,48,0" name="jetbrains.mps.lang.plugin.behavior.ActionDataParameterDeclaration_BehaviorDescriptor" />
     </file>
     <file name="OrderConstraints_BehaviorDescriptor.java">
-      <unit at="7,0,11,0" name="jetbrains.mps.lang.plugin.behavior.OrderConstraints_BehaviorDescriptor" />
+      <unit at="6,0,8,0" name="jetbrains.mps.lang.plugin.behavior.OrderConstraints_BehaviorDescriptor" />
     </file>
     <file name="IsApplicableTabBlock_BehaviorDescriptor.java">
       <unit at="10,0,27,0" name="jetbrains.mps.lang.plugin.behavior.IsApplicableTabBlock_BehaviorDescriptor" />
@@ -145,7 +145,7 @@
       <unit at="8,0,22,0" name="jetbrains.mps.lang.plugin.behavior.OrderReference_BehaviorDescriptor" />
     </file>
     <file name="ActionParameter_BehaviorDescriptor.java">
-      <unit at="8,0,12,0" name="jetbrains.mps.lang.plugin.behavior.ActionParameter_BehaviorDescriptor" />
+      <unit at="7,0,9,0" name="jetbrains.mps.lang.plugin.behavior.ActionParameter_BehaviorDescriptor" />
     </file>
     <file name="DoUpdateBlock_BehaviorDescriptor.java">
       <unit at="7,0,18,0" name="jetbrains.mps.lang.plugin.behavior.DoUpdateBlock_BehaviorDescriptor" />
@@ -343,7 +343,7 @@
       <unit at="7,0,15,0" name="jetbrains.mps.lang.plugin.behavior.EditableModel_BehaviorDescriptor" />
     </file>
     <file name="PluginDependency_BehaviorDescriptor.java">
-      <unit at="8,0,17,0" name="jetbrains.mps.lang.plugin.behavior.PluginDependency_BehaviorDescriptor" />
+      <unit at="7,0,15,0" name="jetbrains.mps.lang.plugin.behavior.PluginDependency_BehaviorDescriptor" />
     </file>
     <file name="PreferencePage_BehaviorDescriptor.java">
       <unit at="14,0,37,0" name="jetbrains.mps.lang.plugin.behavior.PreferencePage_BehaviorDescriptor" />

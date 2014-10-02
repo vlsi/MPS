@@ -14,7 +14,7 @@
       <unit at="9,0,29,0" name="jetbrains.mps.baseLanguage.unitTest.behavior.TestMethod_BehaviorDescriptor" />
     </file>
     <file name="ITestCase_BehaviorDescriptor.java">
-      <unit at="9,0,15,0" name="jetbrains.mps.baseLanguage.unitTest.behavior.ITestCase_BehaviorDescriptor" />
+      <unit at="7,0,9,0" name="jetbrains.mps.baseLanguage.unitTest.behavior.ITestCase_BehaviorDescriptor" />
     </file>
     <file name="AssertIsNull_BehaviorDescriptor.java">
       <unit at="7,0,15,0" name="jetbrains.mps.baseLanguage.unitTest.behavior.AssertIsNull_BehaviorDescriptor" />
@@ -35,7 +35,7 @@
       <unit at="7,0,15,0" name="jetbrains.mps.baseLanguage.unitTest.behavior.AssertTrue_BehaviorDescriptor" />
     </file>
     <file name="ITestable_BehaviorDescriptor.java">
-      <unit at="7,0,10,0" name="jetbrains.mps.baseLanguage.unitTest.behavior.ITestable_BehaviorDescriptor" />
+      <unit at="6,0,8,0" name="jetbrains.mps.baseLanguage.unitTest.behavior.ITestable_BehaviorDescriptor" />
     </file>
     <file name="AssertEquals_BehaviorDescriptor.java">
       <unit at="6,0,14,0" name="jetbrains.mps.baseLanguage.unitTest.behavior.AssertEquals_BehaviorDescriptor" />
@@ -50,7 +50,7 @@
       <unit at="7,0,15,0" name="jetbrains.mps.baseLanguage.unitTest.behavior.AssertInNotNull_BehaviorDescriptor" />
     </file>
     <file name="ITestMethod_BehaviorDescriptor.java">
-      <unit at="7,0,11,0" name="jetbrains.mps.baseLanguage.unitTest.behavior.ITestMethod_BehaviorDescriptor" />
+      <unit at="6,0,8,0" name="jetbrains.mps.baseLanguage.unitTest.behavior.ITestMethod_BehaviorDescriptor" />
     </file>
     <file name="AssertFalse_BehaviorDescriptor.java">
       <unit at="7,0,15,0" name="jetbrains.mps.baseLanguage.unitTest.behavior.AssertFalse_BehaviorDescriptor" />

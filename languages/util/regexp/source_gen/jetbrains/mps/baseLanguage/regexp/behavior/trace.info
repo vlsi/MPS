@@ -131,7 +131,7 @@
       <unit at="6,0,14,0" name="jetbrains.mps.baseLanguage.regexp.behavior.LazyPlusRegexp_BehaviorDescriptor" />
     </file>
     <file name="SymbolClassRegexpAndPart_BehaviorDescriptor.java">
-      <unit at="7,0,10,0" name="jetbrains.mps.baseLanguage.regexp.behavior.SymbolClassRegexpAndPart_BehaviorDescriptor" />
+      <unit at="6,0,8,0" name="jetbrains.mps.baseLanguage.regexp.behavior.SymbolClassRegexpAndPart_BehaviorDescriptor" />
     </file>
     <file name="IntersectionSymbolClassPart_BehaviorDescriptor.java">
       <unit at="7,0,18,0" name="jetbrains.mps.baseLanguage.regexp.behavior.IntersectionSymbolClassPart_BehaviorDescriptor" />

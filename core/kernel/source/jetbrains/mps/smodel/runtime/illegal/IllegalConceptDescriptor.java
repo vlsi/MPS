@@ -15,19 +15,35 @@
  */
 package jetbrains.mps.smodel.runtime.illegal;
 
+import jetbrains.mps.smodel.SConceptIdImpl;
+import jetbrains.mps.smodel.SLanguageIdImpl;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import jetbrains.mps.smodel.runtime.ConceptKind;
+import jetbrains.mps.smodel.runtime.LinkDescriptor;
+import jetbrains.mps.smodel.runtime.PropertyDescriptor;
+import jetbrains.mps.smodel.runtime.ReferenceDescriptor;
 import jetbrains.mps.smodel.runtime.StaticScope;
+import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.language.SConceptId;
+import org.jetbrains.mps.openapi.language.SContainmentLinkId;
+import org.jetbrains.mps.openapi.language.SPropertyId;
+import org.jetbrains.mps.openapi.language.SReferenceLinkId;
 
 import java.util.Collections;
 import java.util.List;
 import java.util.Set;
+import java.util.UUID;
 
 public class IllegalConceptDescriptor implements ConceptDescriptor {
   private final String fqName;
 
   public IllegalConceptDescriptor(String fqName) {
     this.fqName = fqName;
+  }
+
+  @Override
+  public SConceptId getId() {
+    return new SConceptIdImpl(new SLanguageIdImpl(new UUID(0, 0)), 0);
   }
 
   @Override
@@ -56,6 +72,16 @@ public class IllegalConceptDescriptor implements ConceptDescriptor {
   }
 
   @Override
+  public Set<SPropertyId> getReferenceIds() {
+    return Collections.emptySet();
+  }
+
+  @Override
+  public ReferenceDescriptor getRefDescriptor(SReferenceLinkId id) {
+    return null;
+  }
+
+  @Override
   public Set<String> getReferenceNames() {
     return Collections.emptySet();
   }
@@ -63,6 +89,16 @@ public class IllegalConceptDescriptor implements ConceptDescriptor {
   @Override
   public boolean hasReference(String name) {
     return false;
+  }
+
+  @Override
+  public Set<SPropertyId> getLinkIds() {
+    return Collections.emptySet();
+  }
+
+  @Override
+  public LinkDescriptor getLinkDescriptor(SContainmentLinkId id) {
+    return null;
   }
 
   @Override
@@ -111,6 +147,16 @@ public class IllegalConceptDescriptor implements ConceptDescriptor {
   }
 
   @Override
+  public Set<SPropertyId> getPropertyIds() {
+    return Collections.emptySet();
+  }
+
+  @Override
+  public PropertyDescriptor getPropertyDescriptor(SPropertyId id) {
+    return null;
+  }
+
+  @Override
   public ConceptKind getConceptKind() {
     return ConceptKind.NORMAL;
   }
@@ -139,5 +185,16 @@ public class IllegalConceptDescriptor implements ConceptDescriptor {
   @Override
   public String getHelpUrl() {
     return "";
+  }
+
+  @Nullable
+  @Override
+  public SConceptId getSuperConceptId() {
+    return new SConceptIdImpl(new SLanguageIdImpl(new UUID(0, 0)), 0);
+  }
+
+  @Override
+  public List<SConceptId> getParentsIds() {
+    return Collections.emptyList();
   }
 }

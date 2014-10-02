@@ -23,5 +23,4 @@ public abstract class AbstractContainerCreator_BehaviorDescriptor extends Abstra
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.collections.structure.AbstractContainerCreator";
   }
-  public abstract SNode virtual_createType_1237722437229(SNode thisNode);
 }

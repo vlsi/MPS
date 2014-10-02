@@ -16,11 +16,11 @@
 package jetbrains.mps.nodeEditor.cellMenu;
 
 import com.intellij.util.ui.UIUtil;
-import jetbrains.mps.MPSCore;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.cells.TextLine;
 import jetbrains.mps.openapi.editor.style.StyleRegistry;
 
+import javax.swing.JPanel;
 import javax.swing.JWindow;
 import java.awt.Color;
 import java.awt.Dimension;
@@ -168,13 +168,15 @@ public class NodeSubstitutePatternEditor {
     }
   }
 
-  private class EditorWindow extends JWindow {
+  private static class EditorWindow extends JWindow {
     private TextLine myTextLine;
     private Dimension myMinimalSize;
+    private JPanel myPanel = new EditorPanel();
 
     public EditorWindow(Window owner) {
       super(owner);
       myTextLine = new TextLine("");
+      add(myPanel);
     }
 
     public void setMinimalSize(Dimension size) {
@@ -187,23 +189,6 @@ public class NodeSubstitutePatternEditor {
       int w = Math.max(myMinimalSize.width, getWidth());
       w = Math.max(w, myTextLine.getWidth());
       setSize(w, h);
-    }
-
-    @Override
-    public void paint(Graphics g) {
-      // COLORS: move colors to properties
-      Rectangle bounds = g.getClipBounds();
-      g.setColor(StyleRegistry.getInstance().getSimpleColor(Color.YELLOW));
-      g.fillRect(bounds.x, bounds.y, bounds.width, bounds.height);
-      g.setColor(StyleRegistry.getInstance().getSimpleColor(Color.GRAY));
-      g.drawRect(bounds.x, bounds.y, bounds.width - 1, bounds.height - 1);
-
-      EditorComponent.turnOnAliasingIfPossible((Graphics2D) g);
-
-      TextLine textLine = myTextLine;
-      textLine.setSelected(false);
-      textLine.setShowCaret(true);
-      textLine.paint(g, 0, 0);
     }
 
     public boolean processKeyTyped(KeyEvent keyEvent) {
@@ -287,6 +272,23 @@ public class NodeSubstitutePatternEditor {
 
     protected void changeText(String text) {
       myTextLine.setText(text);
+    }
+    private class EditorPanel extends JPanel {
+      @Override
+      protected void paintComponent(Graphics g) {
+        // COLORS: move colors to properties
+        Rectangle bounds = g.getClipBounds();
+        g.setColor(StyleRegistry.getInstance().getSimpleColor(Color.YELLOW));
+        g.fillRect(bounds.x, bounds.y, bounds.width, bounds.height);
+        g.setColor(StyleRegistry.getInstance().getSimpleColor(Color.GRAY));
+        g.drawRect(bounds.x, bounds.y, bounds.width - 1, bounds.height - 1);
+        EditorComponent.turnOnAliasingIfPossible((Graphics2D) g);
+
+        TextLine textLine = myTextLine;
+        textLine.setSelected(false);
+        textLine.setShowCaret(true);
+        textLine.paint(g, 0, 0);
+      }
     }
   } // private class EditorWindow
 }
