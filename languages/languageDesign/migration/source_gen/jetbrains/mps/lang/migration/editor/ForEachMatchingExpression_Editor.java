@@ -7,11 +7,14 @@ import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
+import jetbrains.mps.openapi.editor.style.Style;
+import jetbrains.mps.editor.runtime.style.StyleImpl;
+import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 
 public class ForEachMatchingExpression_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
@@ -22,15 +25,25 @@ public class ForEachMatchingExpression_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Collection_exwpfa_a");
     editorCell.setBig(true);
     editorCell.addEditorCell(this.createComponent_exwpfa_a0(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_exwpfa_b0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_exwpfa_c0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_exwpfa_b0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_exwpfa_c0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_exwpfa_d0(editorContext, node));
     return editorCell;
   }
   private EditorCell createComponent_exwpfa_a0(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.core.editor.alias");
     return editorCell;
   }
-  private EditorCell createRefNode_exwpfa_b0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_exwpfa_b0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");
+    editorCell.setCellId("Constant_exwpfa_b0");
+    Style style = new StyleImpl();
+    BaseLanguageStyle_StyleSheet.apply_LeftParenAfterName(style, editorCell);
+    editorCell.getStyle().putAll(style);
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+  private EditorCell createRefNode_exwpfa_c0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("pattern");
     provider.setNoTargetText("<no pattern>");
@@ -49,9 +62,12 @@ public class ForEachMatchingExpression_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-  private EditorCell createConstant_exwpfa_c0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, " ");
-    editorCell.setCellId("Constant_exwpfa_c0");
+  private EditorCell createConstant_exwpfa_d0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
+    editorCell.setCellId("Constant_exwpfa_d0");
+    Style style = new StyleImpl();
+    BaseLanguageStyle_StyleSheet.apply_RightParen(style, editorCell);
+    editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
   }
