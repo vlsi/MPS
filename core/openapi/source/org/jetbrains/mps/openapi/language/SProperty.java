@@ -26,8 +26,6 @@ public interface SProperty {
 
   String getName();
 
-  SDataType getType();
-
   /**
    * Will be used to check validity of potential values.
    */

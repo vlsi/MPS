@@ -78,22 +78,6 @@ public abstract class SLanguageAdapter implements SLanguage {
     return c;
   }
 
-  public Iterable<SEnumeration> getEnumerations() {
-    // TODO rewrite using LanguageRuntime 
-    Iterable<SNode> roots = (Iterable<SNode>) LanguageAspect.STRUCTURE.get(getSourceModule()).getRootNodes();
-    List<SEnumeration> c = ListSequence.fromList(new ArrayList<SEnumeration>());
-    ListSequence.fromList(c).addSequence(Sequence.fromIterable(roots).where(new IWhereFilter<SNode>() {
-      public boolean accept(SNode it) {
-        return SNodeOperations.isInstanceOf(it, "jetbrains.mps.lang.structure.structure.EnumerationDataTypeDeclaration");
-      }
-    }).select(new ISelector<SNode, SEnumeration>() {
-      public SEnumeration select(SNode it) {
-        return SConceptRepository.getInstance().getEnumeration(NameUtil.nodeFQName(it));
-      }
-    }));
-    return c;
-  }
-
   @Override
   public Iterable<SModuleReference> getLanguageRuntimes() {
     Set<SModuleReference> runtimes = new HashSet<SModuleReference>();

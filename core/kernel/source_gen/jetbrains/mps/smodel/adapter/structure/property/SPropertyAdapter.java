@@ -48,11 +48,6 @@ public abstract class SPropertyAdapter implements SProperty {
   }
 
   @Override
-  public SDataType getType() {
-    return getPropertyDescriptor().getType();
-  }
-
-  @Override
   public boolean isValid(String string) {
     // TODO implement
     return true;

@@ -33,8 +33,6 @@ public interface SLanguage {
    */
   Iterable<SAbstractConcept> getConcepts();
 
-  Iterable<SEnumeration> getEnumerations();
-
   /**
    * All the runtime dependencies that a language needs after generation to run the generated code.
    * These will be resolved from the user repository.
