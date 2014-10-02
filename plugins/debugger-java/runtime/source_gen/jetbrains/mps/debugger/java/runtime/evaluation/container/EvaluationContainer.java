@@ -10,12 +10,9 @@ import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.debugger.java.runtime.state.DebugSession;
 import jetbrains.mps.debugger.java.api.state.JavaUiState;
+import org.jetbrains.annotations.NotNull;
 import java.util.List;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
-import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import java.util.ArrayList;
-import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.module.ModelAccess;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -27,7 +24,10 @@ import jetbrains.mps.debugger.java.api.evaluation.EvaluationException;
 import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.debugger.java.api.evaluation.Evaluator;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.ArrayList;
 import jetbrains.mps.smodel.CopyUtil;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
@@ -51,8 +51,6 @@ public class EvaluationContainer implements IEvaluationContainer {
 
   protected final DebugSession myDebugSession;
   protected volatile JavaUiState myUiState;
-
-  private final List<_FunctionTypes._void_P1_E0<? super SNode>> myGenerationListeners = ListSequence.fromList(new ArrayList<_FunctionTypes._void_P1_E0<? super SNode>>());
 
   public EvaluationContainer(Project project, DebugSession session, @NotNull SModuleReference containerModule, final List<SNodeReference> nodesToImport, final _FunctionTypes._void_P1_E0<? super IEvaluationContainer> onNodeSetUp) {
     myProject = project;
@@ -88,7 +86,6 @@ public class EvaluationContainer implements IEvaluationContainer {
   }
   @Override
   public void addGenerationListener(_FunctionTypes._void_P1_E0<? super SNode> listener) {
-    ListSequence.fromList(myGenerationListeners).addElement(listener);
   }
   @Override
   public Evaluator createEvaluatorInstance(Class clazz) throws EvaluationException {
@@ -158,10 +155,10 @@ public class EvaluationContainer implements IEvaluationContainer {
     }
     @Override
     public SNode createVariableReference(SNode variable) {
-      return createInternalVariableReference_jbng3m_a0a1cb(variable.getName());
+      return createInternalVariableReference_jbng3m_a0a1ab(variable.getName());
     }
   }
-  private static SNode createInternalVariableReference_jbng3m_a0a1cb(Object p0) {
+  private static SNode createInternalVariableReference_jbng3m_a0a1ab(Object p0) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode n1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguageInternal.structure.InternalVariableReference", null, false);
     {
