@@ -328,6 +328,7 @@ public class ModulesWatcher {
       }
 
       private void dfs0(V v) {
+        assert myGraph.containsVertex(v);
         myVisited.add(v);
         myVisitor.visit(v);
         for (V vOut : myGraph.getOuts(v)) {
