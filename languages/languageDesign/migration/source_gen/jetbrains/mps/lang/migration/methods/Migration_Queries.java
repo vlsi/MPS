@@ -36,6 +36,8 @@ public class Migration_Queries {
 
     m.addLanguage(ModuleRepositoryFacade.getInstance().getModule(PersistenceFacade.getInstance().createModuleReference("28f9e497-3b42-4291-aeba-0a1039153ab1(jetbrains.mps.lang.plugin)"), Language.class));
     mod.addUsedLanguage(ModuleRepositoryFacade.getInstance().getModule(PersistenceFacade.getInstance().createModuleReference("28f9e497-3b42-4291-aeba-0a1039153ab1(jetbrains.mps.lang.plugin)"), Language.class).getModuleReference());
+    m.addLanguage(ModuleRepositoryFacade.getInstance().getModule(PersistenceFacade.getInstance().createModuleReference("d4615e3b-d671-4ba9-af01-2b78369b0ba7(jetbrains.mps.lang.pattern)"), Language.class));
+    mod.addUsedLanguage(ModuleRepositoryFacade.getInstance().getModule(PersistenceFacade.getInstance().createModuleReference("d4615e3b-d671-4ba9-af01-2b78369b0ba7(jetbrains.mps.lang.pattern)"), Language.class).getModuleReference());
 
     m.addModelImport(SModelRepository.getInstance().getModelDescriptor("org.jetbrains.mps.openapi.language@java_stub").getReference(), true);
     m.addModelImport(SModelRepository.getInstance().getModelDescriptor("org.jetbrains.mps.openapi.module@java_stub").getReference(), true);

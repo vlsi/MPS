@@ -7,8 +7,8 @@
     <lang id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd" name="jetbrains.mps.lang.actions" />
     <lang id="13744753-c81f-424a-9c1b-cf8943bf4e86" name="jetbrains.mps.lang.sharedConcepts" />
     <lang id="90746344-04fd-4286-97d5-b46ae6a81709" name="jetbrains.mps.lang.migration" />
-    <lang id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" />
     <lang id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" />
+    <lang id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" />
     <lang id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" />
     <lang id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core" />
     <model ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.module(MPS.OpenAPI/org.jetbrains.mps.openapi.module@java_stub)" name="org.jetbrains.mps.openapi.module@java_stub" />
@@ -149,8 +149,8 @@
     <use id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd" version="-1" index="abtv" />
     <use id="13744753-c81f-424a-9c1b-cf8943bf4e86" version="-1" index="1v6e" />
     <use id="90746344-04fd-4286-97d5-b46ae6a81709" version="0" index="uf1d" />
-    <use id="fd392034-7849-419d-9071-12563d152375" version="0" implicit="true" index="cakq" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" version="0" implicit="true" index="vg0i" />
+    <use id="fd392034-7849-419d-9071-12563d152375" version="0" implicit="true" index="cakq" />
     <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" version="0" implicit="true" index="4ia1" />
     <use id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" version="0" implicit="true" index="asn4" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
@@ -470,6 +470,37 @@
             </node>
           </node>
           <node concept="vg0i.1068580123157" id="8352104482584095894" role="vg0i.1068580123136.1068581517665" info="nn" />
+          <node concept="vg0i.1068580123155" id="7527743013695011046" role="vg0i.1068580123136.1068581517665" info="nn">
+            <node concept="vg0i.1197027756228" id="7527743013695011047" role="vg0i.1068580123155.1068580123156" info="nn">
+              <node concept="vg0i.1068498886296" id="7527743013695011048" role="vg0i.1197027756228.1197027771414" info="nn">
+                <reference role="vg0i.1068498886296.1068581517664" target="8352104482584074075" resolveInfo="m" />
+              </node>
+              <node concept="vg0i.1202948039474" id="7527743013695011049" role="vg0i.1197027756228.1197027833540" info="nn">
+                <reference role="vg0i.1204053956946.1068499141037" target="cu2c.~SModelInternal%daddLanguage(jetbrains%dmps%dsmodel%dLanguage)%cvoid" resolveInfo="addLanguage" />
+                <node concept="4ia1.4040588429969069898" id="7527743013695011050" role="vg0i.1204053956946.1068499141038" info="nn">
+                  <property role="4ia1.4040588429969021681.4040588429969021683" value="28f9e497-3b42-4291-aeba-0a1039153ab1" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="vg0i.1068580123155" id="7527743013695011051" role="vg0i.1068580123136.1068581517665" info="nn">
+            <node concept="vg0i.1197027756228" id="7527743013695011052" role="vg0i.1068580123155.1068580123156" info="nn">
+              <node concept="vg0i.1068498886296" id="7527743013695011053" role="vg0i.1197027756228.1197027771414" info="nn">
+                <reference role="vg0i.1068498886296.1068581517664" target="8352104482584100021" resolveInfo="mod" />
+              </node>
+              <node concept="vg0i.1202948039474" id="7527743013695011054" role="vg0i.1197027756228.1197027833540" info="nn">
+                <reference role="vg0i.1204053956946.1068499141037" target="vsqj.~AbstractModule%daddUsedLanguage(org%djetbrains%dmps%dopenapi%dmodule%dSModuleReference)%cvoid" resolveInfo="addUsedLanguage" />
+                <node concept="vg0i.1197027756228" id="7527743013695011055" role="vg0i.1204053956946.1068499141038" info="nn">
+                  <node concept="4ia1.4040588429969069898" id="7527743013695011056" role="vg0i.1197027756228.1197027771414" info="nn">
+                    <property role="4ia1.4040588429969021681.4040588429969021683" value="28f9e497-3b42-4291-aeba-0a1039153ab1" />
+                  </node>
+                  <node concept="vg0i.1202948039474" id="7527743013695011057" role="vg0i.1197027756228.1197027833540" info="nn">
+                    <reference role="vg0i.1204053956946.1068499141037" target="vsqj.~AbstractModule%dgetModuleReference()%corg%djetbrains%dmps%dopenapi%dmodule%dSModuleReference" resolveInfo="getModuleReference" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
           <node concept="vg0i.1068580123155" id="3932724607434496109" role="vg0i.1068580123136.1068581517665" info="nn">
             <node concept="vg0i.1197027756228" id="3932724607434505071" role="vg0i.1068580123155.1068580123156" info="nn">
               <node concept="vg0i.1068498886296" id="8352104482584074082" role="vg0i.1197027756228.1197027771414" info="nn">
@@ -478,7 +509,7 @@
               <node concept="vg0i.1202948039474" id="3932724607434507462" role="vg0i.1197027756228.1197027833540" info="nn">
                 <reference role="vg0i.1204053956946.1068499141037" target="cu2c.~SModelInternal%daddLanguage(jetbrains%dmps%dsmodel%dLanguage)%cvoid" resolveInfo="addLanguage" />
                 <node concept="4ia1.4040588429969069898" id="3932724607434507542" role="vg0i.1204053956946.1068499141038" info="nn">
-                  <property role="4ia1.4040588429969021681.4040588429969021683" value="28f9e497-3b42-4291-aeba-0a1039153ab1" />
+                  <property role="4ia1.4040588429969021681.4040588429969021683" value="d4615e3b-d671-4ba9-af01-2b78369b0ba7" />
                 </node>
               </node>
             </node>
@@ -492,7 +523,7 @@
                 <reference role="vg0i.1204053956946.1068499141037" target="vsqj.~AbstractModule%daddUsedLanguage(org%djetbrains%dmps%dopenapi%dmodule%dSModuleReference)%cvoid" resolveInfo="addUsedLanguage" />
                 <node concept="vg0i.1197027756228" id="3932724607435500887" role="vg0i.1204053956946.1068499141038" info="nn">
                   <node concept="4ia1.4040588429969069898" id="3932724607435500888" role="vg0i.1197027756228.1197027771414" info="nn">
-                    <property role="4ia1.4040588429969021681.4040588429969021683" value="28f9e497-3b42-4291-aeba-0a1039153ab1" />
+                    <property role="4ia1.4040588429969021681.4040588429969021683" value="d4615e3b-d671-4ba9-af01-2b78369b0ba7" />
                   </node>
                   <node concept="vg0i.1202948039474" id="3932724607435500889" role="vg0i.1197027756228.1197027833540" info="nn">
                     <reference role="vg0i.1204053956946.1068499141037" target="vsqj.~AbstractModule%dgetModuleReference()%corg%djetbrains%dmps%dopenapi%dmodule%dSModuleReference" resolveInfo="getModuleReference" />
