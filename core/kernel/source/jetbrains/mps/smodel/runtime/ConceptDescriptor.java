@@ -16,38 +16,22 @@
 package jetbrains.mps.smodel.runtime;
 
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.language.SConceptId;
+import org.jetbrains.mps.openapi.language.SContainmentLinkId;
+import org.jetbrains.mps.openapi.language.SPropertyId;
+import org.jetbrains.mps.openapi.language.SReferenceLinkId;
 
+import java.beans.PropertyDescriptor;
 import java.util.List;
 import java.util.Set;
 
 public interface ConceptDescriptor {
+
+  //------------ concept props
+
+  SConceptId getId();
+
   String getConceptFqName();
-
-  @Nullable
-  String getSuperConcept();
-
-  boolean isInterfaceConcept();
-
-  Set<String> getPropertyNames();
-
-  boolean hasProperty(String name);
-
-  Set<String> getReferenceNames();
-
-  boolean hasReference(String name);
-
-  Set<String> getChildrenNames();
-
-  Set<String> getUnorderedChildrenNames();
-
-  boolean hasChild(String name);
-
-  StaticScope getStaticScope();
-
-  //true if true, false if false or !hasChild(name);
-  boolean isMultipleChild(String name);
-
-  boolean isUnorderedChild(String name);
 
   boolean isAbstract();
 
@@ -55,29 +39,82 @@ public interface ConceptDescriptor {
 
   String getConceptAlias();
 
+  ConceptKind getConceptKind();
+
+  boolean isInterfaceConcept();
+
   String getConceptShortDescription();
 
   String getHelpUrl();
 
-  // LanguageHierarchyCache replace
-  List<String> getParentsNames();
+  //------------ hierarchy
 
+  @Nullable
+  SConceptId getSuperConceptId();
+
+  List<SConceptId> getParentsIds();
+
+  @Deprecated
+  @Nullable
+  String getSuperConcept();
+
+  @Deprecated //suppose it should be done in SConcept [Mihail M]
   boolean isAssignableTo(String toConceptFqName);
 
+  @Deprecated
+    // LanguageHierarchyCache replace
+  List<String> getParentsNames();
+
+  @Deprecated //suppose it should be done in SConcept [Mihail M]
   Set<String> getAncestorsNames();
 
-  ConceptKind getConceptKind();
+  //------------ props
 
-//  Set<String> getDescendantsOfConcept(String conceptFQName);
-//  Set<String> getAllDescendantsOfConcept(String conceptFqName);
-//  Set<String> getDefaultSubstitutableDescendantsOf(String concept, Language language);
+  Set<SPropertyId> getPropertyIds();
 
-  // ConceptAndSuperConceptCache replace
-//  SNode[] getConcepts();
-//  SNode getPropertyDeclarationByName(String name);
-//  List<SNode> getPropertyDeclarations();
-//  SNode getLinkDeclarationByRole(String role);
-//  SNode getMostSpecificLinkDeclarationByRole(final String role);
-//  List<SNode> getLinkDeclarationsExcludingOverridden();
-//  SNode getConceptPropertyByName(final String name);
+  PropertyDescriptor getPropertyDescriptor(SPropertyId id);
+
+  @Deprecated
+  Set<String> getPropertyNames();
+
+  @Deprecated
+  boolean hasProperty(String name);
+
+  //------------ refs
+
+  Set<SPropertyId> getReferenceIds();
+
+  PropertyDescriptor getRefDescriptor(SReferenceLinkId id);
+
+  @Deprecated
+  Set<String> getReferenceNames();
+
+  @Deprecated
+  boolean hasReference(String name);
+
+  //------------ children
+
+  Set<SPropertyId> getLinkIds();
+
+  PropertyDescriptor getLinkDescriptor(SContainmentLinkId id);
+
+  @Deprecated
+  Set<String> getChildrenNames();
+
+  @Deprecated
+  boolean hasChild(String name);
+
+  @Deprecated //obtain from descriptor
+  Set<String> getUnorderedChildrenNames();
+
+  @Deprecated //obtain from descriptor
+    //true if true, false if false or !hasChild(name);
+  boolean isMultipleChild(String name);
+
+  @Deprecated //obtain from descriptor
+  boolean isUnorderedChild(String name);
+
+  //------------
+
+  StaticScope getStaticScope();
 }
