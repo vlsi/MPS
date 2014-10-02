@@ -87,7 +87,7 @@ public class SRepositoryBatchEventsDispatcher implements WriteActionListener {
       try {
         listener.eventsHappened(events);
       } catch (Throwable t) {
-        LOG.error(t);
+        LOG.error("Exception during batch events dispatching", t);
       }
     }
   }

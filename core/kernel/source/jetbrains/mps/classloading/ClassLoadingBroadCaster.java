@@ -41,7 +41,7 @@ public class ClassLoadingBroadCaster {
       try {
         listener.beforeClassesUnloaded(toUnload);
       } catch (Throwable t) {
-        LOG.error(t);
+        LOG.error("Exception on unloading event", t);
       }
     }
   }
@@ -51,9 +51,8 @@ public class ClassLoadingBroadCaster {
       try {
         listener.afterClassesLoaded(modulesToLoad);
       } catch (Throwable t) {
-        LOG.error(t);
+        LOG.error("Exception on loading event", t);
       }
     }
   }
-
 }
