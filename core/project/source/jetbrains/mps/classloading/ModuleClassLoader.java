@@ -29,6 +29,7 @@ import org.jetbrains.mps.openapi.module.SModule;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Enumeration;
 import java.util.HashSet;
 import java.util.List;
@@ -183,12 +184,14 @@ public class ModuleClassLoader extends ClassLoader {
   @Override
   protected URL findResource(String name) {
 //    checkNotDisposed();
-    for (ClassLoader dep : getDependencyClassLoaders()) {
+
+    List<ClassLoader> classLoadersToCheck = new ArrayList<ClassLoader>();
+    classLoadersToCheck.add(this);
+    classLoadersToCheck.addAll(getDependencyClassLoaders());
+    for (ClassLoader dep : classLoadersToCheck) {
       if (dep instanceof ModuleClassLoader) {
         URL res = ((ModuleClassLoader) dep).mySupport.findResource(name);
-        if (res != null) {
-          return res;
-        }
+        if (res != null) return res;
       }
     }
 
@@ -198,12 +201,14 @@ public class ModuleClassLoader extends ClassLoader {
   @Override
   protected Enumeration<URL> findResources(String name) throws IOException {
 //    checkNotDisposed();
+    List<ClassLoader> classLoadersToCheck = new ArrayList<ClassLoader>();
+    classLoadersToCheck.add(this);
+    classLoadersToCheck.addAll(getDependencyClassLoaders());
     List<URL> result = new ArrayList<URL>();
-    for (ClassLoader dep : getDependencyClassLoaders()) {
+    for (ClassLoader dep : classLoadersToCheck) {
       if (dep instanceof ModuleClassLoader) {
         Enumeration<URL> resources = ((ModuleClassLoader) dep).mySupport.findResources(name);
-        while (resources.hasMoreElements())
-          result.add(resources.nextElement());
+        while (resources.hasMoreElements()) result.add(resources.nextElement());
       }
     }
 
@@ -233,7 +238,7 @@ public class ModuleClassLoader extends ClassLoader {
     }
     Set<ClassLoader> classLoaders = new HashSet<ClassLoader>();
     for (SModule dep : mySupport.getCompileDependencies()) {
-//      if (dep == mySupport.getModule()) continue;
+      if (dep == mySupport.getModule()) continue;
       if (myManager.canLoad(dep)) {
         ClassLoader classLoader = myManager.getClassLoader(dep);
         if (classLoader == null) throw new IllegalStateException("The dependency " + dep + " of module " + mySupport.getModule() + " is not loaded");

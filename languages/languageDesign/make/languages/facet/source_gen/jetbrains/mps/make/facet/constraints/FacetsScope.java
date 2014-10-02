@@ -32,7 +32,7 @@ public class FacetsScope extends SimpleScope {
 
     Set<SModule> contextModules = SetSequence.fromSet(new HashSet<SModule>());
     for (SModule module : CollectionSequence.fromCollection(new GlobalModuleDependenciesManager(contextModule).getModules(GlobalModuleDependenciesManager.Deptype.VISIBLE))) {
-      if (SModuleOperations.isReloadable(module)) {
+      if (SModuleOperations.isLoadable(module)) {
         SetSequence.fromSet(contextModules).addElement(module);
       }
     }
