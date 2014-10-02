@@ -263,6 +263,7 @@
       <modulePath path="$PROJECT_DIR$/plugins/vcs-core/core/jetbrains.mps.ide.vcs.core.msd" folder="platform.vcs" />
       <modulePath path="$PROJECT_DIR$/plugins/vcs/common/jetbrains.mps.ide.vcs.platform.msd" folder="platform.vcs" />
       <modulePath path="$PROJECT_DIR$/plugins/vcs/jetbrains.mps.ide.vcs.msd" folder="platform.vcs" />
+      <modulePath path="$PROJECT_DIR$/plugins/vcs/languages/mergehints/jetbrains.mps.vcs.mergehints.mpl" folder="platform.vcs" />
       <modulePath path="$PROJECT_DIR$/plugins/vcs/languages/modelmetadata/jetbrains.mps.ide.vcs.modelmetadata.mpl" folder="platform.vcs" />
       <modulePath path="$PROJECT_DIR$/samples/agreement/agreementLanguage/jetbrains.mps.samples.agreementLanguage.mpl" folder="samples" />
       <modulePath path="$PROJECT_DIR$/samples/agreement/framework/jetbrains.mps.samples.agreement.framework.msd" folder="samples" />
