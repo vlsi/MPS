@@ -226,6 +226,7 @@ public class SModuleOperations {
    */
   public static void reloadFromDisk(AbstractModule module) {
     ModelAccess.assertLegalWrite();
+    if (module.getRepository() == null) throw new IllegalArgumentException("Module " + module + " is disposed");
 
     try {
       ModuleDescriptor descriptor = module.loadDescriptor();

@@ -30,6 +30,8 @@ import jetbrains.mps.make.MPSCompilationResult;
 import jetbrains.mps.make.ModuleMaker;
 import jetbrains.mps.messages.MessageKind;
 import jetbrains.mps.progress.EmptyProgressMonitor;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import jetbrains.mps.progress.ProgressMonitorAdapter;
 import jetbrains.mps.project.MPSProject;
@@ -40,6 +42,7 @@ import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.IterableUtil;
 
 public class StartupModuleMaker extends AbstractProjectComponent {
+  private static final Logger LOG = LogManager.getLogger(StartupModuleMaker.class);
   private final ReloadManagerComponent myReloadManager;
 
   @SuppressWarnings({"UnusedDeclaration"})
@@ -69,6 +72,7 @@ public class StartupModuleMaker extends AbstractProjectComponent {
     final ProgressIndicator indicator = ProgressManager.getInstance().getProgressIndicator();
     final ProgressMonitor monitor = indicator != null ? new ProgressMonitorAdapter(indicator) : new EmptyProgressMonitor();
 
+    LOG.info("Making modules on startup");
     monitor.start("Making modules", 10);
     try {
       //todo eliminate read access as it can potentially lead to a deadlock
@@ -91,6 +95,7 @@ public class StartupModuleMaker extends AbstractProjectComponent {
     } finally {
       monitor.done();
     }
+    LOG.info("Compilation on startup is finished");
   }
 
   private void reloadClasses(final MPSCompilationResult mpsCompilationResult, final ProgressIndicator indicator, boolean asPreStartup) {

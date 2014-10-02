@@ -37,6 +37,7 @@ public class ClassLoadingBroadCaster {
   }
 
   public void onUnload(Set<SModule> toUnload) {
+    if (toUnload.size() == 0) return;
     for (MPSClassesListener listener : myClassesHandlers) {
       try {
         listener.beforeClassesUnloaded(toUnload);
@@ -46,10 +47,11 @@ public class ClassLoadingBroadCaster {
     }
   }
 
-  public void onLoad(Set<SModule> modulesToLoad) {
+  public void onLoad(Set<SModule> toLoad) {
+    if (toLoad.size() == 0) return;
     for (MPSClassesListener listener : myClassesHandlers) {
       try {
-        listener.afterClassesLoaded(modulesToLoad);
+        listener.afterClassesLoaded(toLoad);
       } catch (Throwable t) {
         LOG.error("Exception on loading event", t);
       }

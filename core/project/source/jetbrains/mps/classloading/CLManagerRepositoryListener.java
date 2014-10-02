@@ -15,71 +15,99 @@
  */
 package jetbrains.mps.classloading;
 
-import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.smodel.SRepositoryBatchEventsDispatcher;
 import jetbrains.mps.smodel.SRepositoryBatchListener;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SRepository;
+import org.jetbrains.mps.openapi.module.SRepositoryAdapter;
 import org.jetbrains.mps.openapi.module.event.SModuleAddedEvent;
 import org.jetbrains.mps.openapi.module.event.SModuleEventVisitor;
 import org.jetbrains.mps.openapi.module.event.SModuleRemovedEvent;
 import org.jetbrains.mps.openapi.module.event.SModuleRemovingEvent;
 import org.jetbrains.mps.openapi.module.event.SRepositoryEvent;
 
-import java.util.HashSet;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
-import java.util.Set;
 
-class CLManagerRepositoryListener implements SRepositoryBatchListener {
-  private ClassLoaderManager myClassLoaderManager;
+class CLManagerRepositoryListener extends SRepositoryAdapter implements SRepositoryBatchListener {
+  @NotNull
   private final SRepository myRepository;
+  private ClassLoaderManager myManager;
+  private final ModulesWatcher myModulesWatcher;
   private final SRepositoryBatchEventsDispatcher myDispatcher;
+  // order for modules loading in order to reproduce any error
+  private static final Comparator<SModule> MODULE_COMPARATOR = new Comparator<SModule>() {
+    @Override
+    public int compare(SModule m1, SModule m2) {
+      return m1.getModuleName().compareTo(m2.getModuleName());
+    }
+  };
 
-  public CLManagerRepositoryListener(@NotNull SRepository repository) {
+  public CLManagerRepositoryListener(@NotNull SRepository repository, ModulesWatcher modulesWatcher) {
     myRepository = repository;
+    myModulesWatcher = modulesWatcher;
     myDispatcher = new SRepositoryBatchEventsDispatcher(repository);
   }
 
   public void init(ClassLoaderManager classLoaderManager) {
-    myClassLoaderManager = classLoaderManager;
+    myManager = classLoaderManager;
     myDispatcher.init();
+    myRepository.addRepositoryListener(this);
     myDispatcher.addRepositoryBatchEventsListener(this);
   }
 
   public void dispose() {
     myDispatcher.removeRepositoryBatchEventsListener(this);
+    myRepository.removeRepositoryListener(this);
     myDispatcher.dispose();
   }
 
-  private void loadModules(Set<SModule> modules) {
-    new SmartModulesLoader(myClassLoaderManager, myRepository).loadModules(modules);
+  @Override
+  public void moduleAdded(@NotNull SModule module) {
+    if (myManager.canLoad(module)) {
+      // instant notification here, we want to watch modules right after they added to the repository
+      myModulesWatcher.onModulesAdded(Collections.singleton(module));
+    }
   }
 
-  private void unloadModules(Set<SModule> modules) {
-    if (modules.isEmpty())
-      return;
-    myClassLoaderManager.unloadModules(modules, new EmptyProgressMonitor());
+  private void loadModules(List<SModule> modules) {
+    Collections.sort(modules, MODULE_COMPARATOR);
+    myManager.loadModules(modules);
+  }
+
+  private void unloadModules(List<SModule> modules) {
+    Collections.sort(modules, MODULE_COMPARATOR);
+    myManager.unloadModules(modules);
+
+    // delayed notification here, we want to watch modules dependencies until we actually unload them
+    myModulesWatcher.onModulesRemoved(modules);
   }
 
   @Override
   public void eventsHappened(List<SRepositoryEvent> events) {
+    if (events.size() == 0) return;
     MyModuleEventVisitor visitor = new MyModuleEventVisitor();
-    for (SRepositoryEvent event : events)
+    for (SRepositoryEvent event : events) {
       event.accept(visitor);
+    }
 
-    unloadModules(visitor.getModulesToUnload());
-    loadModules(visitor.getModulesToLoad());
+    List<SModule> modulesToUnload = visitor.getModulesToUnload();
+    List<SModule> modulesToLoad = visitor.getModulesToLoad();
+    if (modulesToUnload.size() > 0) unloadModules(modulesToUnload);
+    if (modulesToLoad.size() > 0) loadModules(modulesToLoad);
   }
 
   private class MyModuleEventVisitor implements SModuleEventVisitor {
-    private final Set<SModule> myModulesToLoad = new HashSet<SModule>();
-    private final Set<SModule> myModulesToUnload = new HashSet<SModule>();
+    private final List<SModule> myModulesToLoad = new ArrayList<SModule>();
+    private final List<SModule> myModulesToUnload = new ArrayList<SModule>();
 
     @Override
     public void visit(SModuleAddedEvent event) {
       SModule module = event.getModule();
-      myModulesToLoad.add(module);
+      if (myManager.canLoad(module)) myModulesToLoad.add(module);
     }
 
     @Override
@@ -90,15 +118,17 @@ class CLManagerRepositoryListener implements SRepositoryBatchListener {
     @Override
     public void visit(SModuleRemovingEvent event) {
       SModule module = event.getModule();
-      myModulesToLoad.remove(module);
-      myModulesToUnload.add(module);
+      if (myManager.canLoad(module)) {
+        myModulesToLoad.remove(module);
+        myModulesToUnload.add(module);
+      }
     }
 
-    public Set<SModule> getModulesToUnload() {
+    public List<SModule> getModulesToUnload() {
       return myModulesToUnload;
     }
 
-    public Set<SModule> getModulesToLoad() {
+    public List<SModule> getModulesToLoad() {
       return myModulesToLoad;
     }
   }

@@ -32,6 +32,7 @@ import java.util.Collection;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.LinkedHashMap;
 import java.util.LinkedHashSet;
 import java.util.Map;
 import java.util.Set;
@@ -42,10 +43,13 @@ import java.util.Set;
  */
 public class ModulesWatcher {
   private static final Logger LOG = LogManager.getLogger(ModulesWatcher.class);
+
+  private static final Object LOCK = new Object();
   private final Map<SModule, ClassLoadingStatus> myStatusMap = new HashMap<SModule, ClassLoadingStatus>();
   private final SRepository myRepository;
   private final Condition<SModule> myLoadableCondition;
 
+  private boolean myChanged = false;
   private final Graph<SModule> myDepGraph; // A -> B iff A depends on B
   private final Graph<SModule> myBackDepGraph; // myDepGraph transposed
 
@@ -56,52 +60,42 @@ public class ModulesWatcher {
     myBackDepGraph = new Graph<SModule>();
   }
 
-  private void checkModule(@NotNull SModule module) {
-    if (!myLoadableCondition.met(module)) {
-      LOG.error("Non-loadable module was added to ModulesWatcher", new Throwable());
-    }
-  }
-
   public ClassLoadingStatus getStatus(SModule module) {
-    checkModule(module);
+    if (!myLoadableCondition.met(module)) LOG.error("Non-loadable module was passed to ModulesWatcher", new Throwable());
+    if (myChanged) recountStatus();
+    if (!getModules().contains(module)) throw new IllegalArgumentException("The module " + module + " does not belong to the repository");
     if (!myStatusMap.containsKey(module)) throw new IllegalArgumentException("No status for module " + module);
     return myStatusMap.get(module);
   }
 
-  public void onModulesUnloaded(Iterable<? extends SModule> removedModules) {
-    for (SModule module : removedModules) {
-      checkModule(module);
-      myDepGraph.removeVertex(module);
-      myBackDepGraph.removeVertex(module);
+  public void onModulesAdded(@NotNull Collection<? extends SModule> modules) {
+    synchronized (LOCK) {
+      for (SModule module : modules) {
+        if (!myLoadableCondition.met(module)) {
+          LOG.error("Non-loadable module was passed to ModulesWatcher", new Throwable());
+          continue;
+        }
+        myDepGraph.addVertex(module);
+        myBackDepGraph.addVertex(module);
+      }
+      myChanged = true;
     }
-
-    refresh();
   }
 
-  public void onModulesLoaded(Iterable<? extends SModule> addedModules) {
-    for (SModule module : addedModules) {
-      checkModule(module);
-      myDepGraph.addVertex(module);
-      myBackDepGraph.addVertex(module);
+  public void onModulesRemoved(@NotNull Collection<? extends SModule> modules) {
+    synchronized (LOCK) {
+      for (SModule module : modules) {
+        if (!myLoadableCondition.met(module)) {
+          LOG.error("Non-loadable module was passed to ModulesWatcher", new Throwable());
+          continue;
+        }
+        myDepGraph.removeVertex(module);
+        myBackDepGraph.removeVertex(module);
+      }
+      myChanged = true;
     }
-
-    refresh();
   }
 
-  /**
-   * called if some dependencies changed
-   * when we are able to listen for dependencies change we will be able to remove it
-   */
-  public void refresh() {
-    recountStatus();
-  }
-
-  /**
-   * FIXME
-   * currently it does not match up with {@link SModule#getDeclaredDependencies()}
-   * but when there is an API provided it will be possible to rewrite this method
-   * @return module dependencies which can be invalid (i.e. there are no corresponding modules in the repository)
-   */
   private Collection<SModuleReference> getModuleDescriptorDeps(SModule module) {
     Collection<Dependency> dependencies = ((AbstractModule) module).getModuleDescriptor().getDependencies();
     Collection<SModuleReference> result = new HashSet<SModuleReference>();
@@ -112,16 +106,32 @@ public class ModulesWatcher {
     return result;
   }
 
-  private void recountStatus() {
-    constructEdges();
-    resetStatus();
-    Collection<SModule> invalidModules = findInvalidModules();
-
-    for (SModule module : getBackDependencies(invalidModules)) {
-      myStatusMap.put(module, ClassLoadingStatus.INVALID);
+  public void invalidate() {
+    synchronized (LOCK) {
+      myChanged = true;
     }
+  }
+  /**
+   * FIXME
+   * currently it does not match up with {@link SModule#getDeclaredDependencies()}
+   * but when there is an API provided it will be possible to rewrite this method
+   */
+  private void recountStatus() {
+    assert myChanged;
+    LOG.debug("Recount status map for modules");
+    synchronized (LOCK) {
+      myChanged = false;
+      constructEdges();
+      resetStatus();
+      Collection<SModule> invalidModules = findInvalidModules();
+      LOG.debug(invalidModules.size() + " modules marked invalid for class loading out of " + getModules().size() + " modules totally");
 
-    checkStatusMapCorrectness();
+      for (SModule module : getBackDependencies(invalidModules)) {
+        myStatusMap.put(module, ClassLoadingStatus.INVALID);
+      }
+
+      checkStatusMapCorrectness();
+    }
   }
 
   private void constructEdges() {
@@ -131,6 +141,10 @@ public class ModulesWatcher {
 
     Collection<SModule> modules = getModules();
     for (SModule module : modules) {
+      if (module.getRepository() == null) {
+        LOG.error("Disposed module in ModulesWatcher", new IllegalStateException());
+        continue;
+      }
       for (SModule depModule : GlobalModuleDependenciesManager.directlyUsedModules(module, true, true)) {
         if (modules.contains(depModule)) {
           myDepGraph.addEdge(module, depModule);
@@ -184,7 +198,8 @@ public class ModulesWatcher {
     }
   }
 
-  private Collection<SModule> getModules() {
+  public Collection<SModule> getModules() {
+    if (myChanged) recountStatus();
     assert myDepGraph.getVerticesCount() == myBackDepGraph.getVerticesCount();
     return myDepGraph.getVertices();
   }
@@ -193,32 +208,38 @@ public class ModulesWatcher {
    * @return all dependencies of this module (closed set under dependency-relation)
    */
   public Collection<SModule> getDependencies(Collection<SModule> modules) {
-    final Collection<SModule> result = new ArrayList<SModule>();
-    myDepGraph.dfs(modules, new VertexVisitor<SModule>() {
-      @Override
-      public void visit(SModule module) {
-        result.add(module);
-      }
-    });
-    return result;
+    synchronized (LOCK) {
+      if (myChanged) recountStatus();
+      final Collection<SModule> result = new ArrayList<SModule>();
+      myDepGraph.dfs(modules, new VertexVisitor<SModule>() {
+        @Override
+        public void visit(SModule module) {
+          result.add(module);
+        }
+      });
+      return result;
+    }
   }
 
   /**
    * @return all back dependencies of this module (closed set under back-dependency-relation)
    */
   public Collection<SModule> getBackDependencies(Collection<SModule> modules) {
-    final Collection<SModule> result = new ArrayList<SModule>();
-    myBackDepGraph.dfs(modules, new VertexVisitor<SModule>() {
-      @Override
-      public void visit(SModule module) {
-        result.add(module);
-      }
-    });
-    return result;
+    synchronized (LOCK) {
+      if (myChanged) recountStatus();
+      final Collection<SModule> result = new ArrayList<SModule>();
+      myBackDepGraph.dfs(modules, new VertexVisitor<SModule>() {
+        @Override
+        public void visit(SModule module) {
+          result.add(module);
+        }
+      });
+      return result;
+    }
   }
 
-  public static class Graph<V> {
-    private final Map<V, Set<V>> myOuts = new HashMap<V, Set<V>>();
+  static class Graph<V> {
+    private final Map<V, Set<V>> myOuts = new LinkedHashMap<V, Set<V>>();
     private int myEdgesCount;
 
     public int getEdgesCount() {
@@ -268,14 +289,6 @@ public class ModulesWatcher {
 
     public Collection<V> getOuts(V v) {
       return myOuts.get(v);
-    }
-
-    public Collection<V> getNeighbours(Iterable<V> vs) {
-      Set<V> result = new HashSet<V>();
-      for (V v : vs) {
-        result.addAll(getOuts(v));
-      }
-      return result;
     }
 
     public void dfs(Collection<V> starts, VertexVisitor<V> visitor) {
