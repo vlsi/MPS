@@ -24,6 +24,7 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.language.SConceptId;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -91,6 +92,11 @@ public class ConceptDescriptorBuilder {
     return this;
   }
 
+  public ConceptDescriptorBuilder properties(PropertyDescriptor... d) {
+    ownProperties.addAll(Arrays.asList(d));
+    return this;
+  }
+
   public ConceptDescriptorBuilder property(PropertyDescriptor d) {
     ownProperties.add(d);
     return this;
@@ -98,6 +104,11 @@ public class ConceptDescriptorBuilder {
 
   public ConceptDescriptorBuilder references(String... names) {
     this.ownReferenceNames = names;
+    return this;
+  }
+
+  public ConceptDescriptorBuilder references(ReferenceDescriptor... d) {
+    ownReferences.addAll(Arrays.asList(d));
     return this;
   }
 
@@ -112,7 +123,12 @@ public class ConceptDescriptorBuilder {
     return this;
   }
 
-  public ConceptDescriptorBuilder children(LinkDescriptor d) {
+  public ConceptDescriptorBuilder children(LinkDescriptor... d) {
+    ownLinks.addAll(Arrays.asList(d));
+    return this;
+  }
+
+  public ConceptDescriptorBuilder child(LinkDescriptor d) {
     ownLinks.add(d);
     return this;
   }
