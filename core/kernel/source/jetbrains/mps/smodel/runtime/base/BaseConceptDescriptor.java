@@ -18,16 +18,7 @@ package jetbrains.mps.smodel.runtime.base;
 import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import jetbrains.mps.smodel.runtime.ConceptKind;
-import jetbrains.mps.smodel.runtime.LinkDescriptor;
-import jetbrains.mps.smodel.runtime.PropertyDescriptor;
-import jetbrains.mps.smodel.runtime.ReferenceDescriptor;
-import org.jetbrains.annotations.Nullable;
-import org.jetbrains.mps.openapi.language.SConceptId;
-import org.jetbrains.mps.openapi.language.SContainmentLinkId;
-import org.jetbrains.mps.openapi.language.SPropertyId;
-import org.jetbrains.mps.openapi.language.SReferenceLinkId;
 
-import java.util.List;
 import java.util.Set;
 
 public abstract class BaseConceptDescriptor implements ConceptDescriptor {
@@ -63,51 +54,5 @@ public abstract class BaseConceptDescriptor implements ConceptDescriptor {
   @Override
   public boolean isUnorderedChild(String name) {
     return getUnorderedChildrenNames().contains(name);
-  }
-
-  @Override
-  public SConceptId getId() {
-    return null;
-  }
-
-  @Nullable
-  @Override
-  public SConceptId getSuperConceptId() {
-    return null;
-  }
-
-  @Override
-  public List<SConceptId> getParentsIds() {
-    return null;
-  }
-
-  @Override
-  public Set<SPropertyId> getPropertyIds() {
-    return null;
-  }
-
-  @Override
-  public PropertyDescriptor getPropertyDescriptor(SPropertyId id) {
-    return null;
-  }
-
-  @Override
-  public ReferenceDescriptor getRefDescriptor(SReferenceLinkId id) {
-    return null;
-  }
-
-  @Override
-  public Set<SContainmentLinkId> getLinkIds() {
-    return null;
-  }
-
-  @Override
-  public Set<SReferenceLinkId> getReferenceIds() {
-    return null;
-  }
-
-  @Override
-  public LinkDescriptor getLinkDescriptor(SContainmentLinkId id) {
-    return null;
   }
 }
