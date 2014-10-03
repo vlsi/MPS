@@ -13,20 +13,18 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel;
+package jetbrains.mps.smodel.adapter.ids;
 
-import org.jetbrains.mps.openapi.language.SConceptId;
-
-public final class SConceptIdImpl implements SConceptId {
-  private final SLanguageIdImpl myLanguageId;
+public final class SConceptId implements org.jetbrains.mps.openapi.language.SConceptId {
+  private final SLanguageId myLanguageId;
   private final int myConceptId;
 
-  public SConceptIdImpl(SLanguageIdImpl languageId, int conceptId) {
+  public SConceptId(SLanguageId languageId, int conceptId) {
     myConceptId = conceptId;
     myLanguageId = languageId;
   }
 
-  public SLanguageIdImpl getLanguageId() {
+  public SLanguageId getLanguageId() {
     return myLanguageId;
   }
 
@@ -39,7 +37,7 @@ public final class SConceptIdImpl implements SConceptId {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
 
-    SConceptIdImpl that = (SConceptIdImpl) o;
+    SConceptId that = (SConceptId) o;
 
     if (myConceptId != that.myConceptId) return false;
     if (myLanguageId != null ? !myLanguageId.equals(that.myLanguageId) : that.myLanguageId != null) return false;

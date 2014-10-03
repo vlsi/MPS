@@ -13,16 +13,15 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel;
+package jetbrains.mps.smodel.adapter.ids;
 
 import org.jetbrains.mps.openapi.language.SConceptId;
-import org.jetbrains.mps.openapi.language.SPropertyId;
 
-public final class SPropertyIdImpl implements SPropertyId{
+public final class SPropertyId implements org.jetbrains.mps.openapi.language.SPropertyId {
   private final SConceptId myConceptId;
   private final int myPropertyId;
 
-  public SPropertyIdImpl(SConceptId conceptId, int propertyId) {
+  public SPropertyId(SConceptId conceptId, int propertyId) {
     myConceptId = conceptId;
     myPropertyId = propertyId;
   }
@@ -42,7 +41,7 @@ public final class SPropertyIdImpl implements SPropertyId{
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
 
-    SPropertyIdImpl that = (SPropertyIdImpl) o;
+    SPropertyId that = (SPropertyId) o;
 
     if (myPropertyId != that.myPropertyId) return false;
     if (myConceptId != null ? !myConceptId.equals(that.myConceptId) : that.myConceptId != null) return false;

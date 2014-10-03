@@ -13,20 +13,20 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel;
+package jetbrains.mps.smodel.adapter.ids;
 
-import org.jetbrains.mps.openapi.language.SAbstractLinkId;
 import org.jetbrains.mps.openapi.language.SConceptId;
 
-public abstract class SAbstractLinkIdImpl implements SAbstractLinkId {
-  protected final SConceptId myConceptId;
+public class SReferenceLinkId extends SAbstractLinkIdImpl implements org.jetbrains.mps.openapi.language.SReferenceLinkId {
+  private final int myRefLinkId;
 
-  public SAbstractLinkIdImpl(SConceptId conceptId) {
-    myConceptId = conceptId;
+  public SReferenceLinkId(SConceptId conceptId, int refLinkId) {
+    super(conceptId);
+    myRefLinkId = refLinkId;
   }
 
   @Override
-  public SConceptId getConceptId() {
-    return myConceptId;
+  public int getReferenceLinkId() {
+    return myRefLinkId;
   }
 }

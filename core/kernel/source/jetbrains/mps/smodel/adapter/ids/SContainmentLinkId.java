@@ -13,22 +13,37 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel;
+package jetbrains.mps.smodel.adapter.ids;
 
 import org.jetbrains.mps.openapi.language.SConceptId;
-import org.jetbrains.mps.openapi.language.SContainmentLinkId;
-import org.jetbrains.mps.openapi.language.SReferenceLinkId;
 
-public class SReferenceLinkIdImpl extends SAbstractLinkIdImpl implements SReferenceLinkId {
-  private final int myRefLinkId;
+public final class SContainmentLinkId extends SAbstractLinkIdImpl implements org.jetbrains.mps.openapi.language.SContainmentLinkId {
+  private final int myLinkId;
 
-  public SReferenceLinkIdImpl(SConceptId conceptId, int refLinkId) {
+  public SContainmentLinkId(SConceptId conceptId, int linkId) {
     super(conceptId);
-    myRefLinkId = refLinkId;
+    myLinkId = linkId;
   }
 
   @Override
-  public int getReferenceLinkId() {
-    return myRefLinkId;
+  public int getContainmentLinkId() {
+    return myLinkId;
+  }
+
+  @Override
+  public boolean equals(Object o) {
+    if (this == o) return true;
+    if (o == null || getClass() != o.getClass()) return false;
+
+    SContainmentLinkId that = (SContainmentLinkId) o;
+
+    if (myLinkId != that.myLinkId) return false;
+
+    return true;
+  }
+
+  @Override
+  public int hashCode() {
+    return myLinkId;
   }
 }

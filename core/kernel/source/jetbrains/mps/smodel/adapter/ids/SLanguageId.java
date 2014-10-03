@@ -13,22 +13,19 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel;
+package jetbrains.mps.smodel.adapter.ids;
 
-import org.jetbrains.mps.openapi.language.SConceptId;
-import org.jetbrains.mps.openapi.language.SContainmentLinkId;
+import java.util.UUID;
 
-public final class SContainmentLinkIdImpl extends SAbstractLinkIdImpl implements SContainmentLinkId {
-  private final int myLinkId;
+public final class SLanguageId implements org.jetbrains.mps.openapi.language.SLanguageId {
+  private final UUID myId;
 
-  public SContainmentLinkIdImpl(SConceptId conceptId, int linkId) {
-    super(conceptId);
-    myLinkId = linkId;
+  public SLanguageId(UUID id) {
+    myId = id;
   }
 
-  @Override
-  public int getContainmentLinkId() {
-    return myLinkId;
+  public UUID getId() {
+    return myId;
   }
 
   @Override
@@ -36,15 +33,15 @@ public final class SContainmentLinkIdImpl extends SAbstractLinkIdImpl implements
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
 
-    SContainmentLinkIdImpl that = (SContainmentLinkIdImpl) o;
+    SLanguageId that = (SLanguageId) o;
 
-    if (myLinkId != that.myLinkId) return false;
+    if (myId != null ? !myId.equals(that.myId) : that.myId != null) return false;
 
     return true;
   }
 
   @Override
   public int hashCode() {
-    return myLinkId;
+    return myId != null ? myId.hashCode() : 0;
   }
 }
