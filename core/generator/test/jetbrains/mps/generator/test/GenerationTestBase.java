@@ -50,6 +50,7 @@ import org.apache.log4j.Logger;
 import org.jetbrains.mps.openapi.model.EditableSModel;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.module.SModule;
+import org.junit.AfterClass;
 import org.junit.Assert;
 import org.junit.BeforeClass;
 
@@ -86,6 +87,14 @@ public class GenerationTestBase {
     RuntimeFlags.setTestMode(TestMode.USUAL);
   }
 
+  @AfterClass
+  public static void clean() throws Exception {
+    if (CREATED_ENV != null) {
+      CREATED_ENV.dispose();
+      CREATED_ENV = null;
+    }
+  }
+
   protected void doMeasureParallelGeneration(final Project p, final SModel descr, int threads) throws IOException {
 
     // Stage 1. Regenerate
@@ -98,7 +107,7 @@ public class GenerationTestBase {
         Collections.singletonList(descr), ModuleContext.create(descr, p),
         generationHandler,
         new EmptyProgressMonitor(), generationHandler.getMessageHandler(), options,
-        p.getComponent(TransientModelsProvider.class));
+        new TransientModelsProvider(p, null));
 
     assertNoDiff(generationHandler.getExistingContent(), generationHandler.getGeneratedContent());
 
@@ -113,7 +122,7 @@ public class GenerationTestBase {
         Collections.singletonList(descr), ModuleContext.create(descr, p),
         generationHandler,
         new EmptyProgressMonitor(), generationHandler.getMessageHandler(), options,
-        p.getComponent(TransientModelsProvider.class));
+        new TransientModelsProvider(p, null));
     long singleThread = System.nanoTime() - start;
 
     // Stage 3. Regenerate in parallel
@@ -127,7 +136,7 @@ public class GenerationTestBase {
         Collections.singletonList(descr), ModuleContext.create(descr, p),
         generationHandler,
         new EmptyProgressMonitor(), generationHandler.getMessageHandler(), options,
-        p.getComponent(TransientModelsProvider.class));
+        new TransientModelsProvider(p, null));
     long severalThreads = System.nanoTime() - start;
 
     assertNoDiff(generationHandler.getExistingContent(), generationHandler.getGeneratedContent());
@@ -187,7 +196,7 @@ public class GenerationTestBase {
           Collections.singletonList(descr), ModuleContext.create(descr, p),
           generationHandler,
           new EmptyProgressMonitor(), generationHandler.getMessageHandler(), options,
-          p.getComponent(TransientModelsProvider.class));
+          new TransientModelsProvider(p, null));
 
       Map<String, String> generated = replaceInContent(generationHandler.getGeneratedContent(),
           new String[]{randomName, originalModel.getModule().getModuleName()},
@@ -234,7 +243,7 @@ public class GenerationTestBase {
             Collections.singletonList(descr), ModuleContext.create(descr, p),
             generationHandler,
             new EmptyProgressMonitor(), generationHandler.getMessageHandler(), options,
-            p.getComponent(TransientModelsProvider.class));
+            new TransientModelsProvider(p, null));
         time.add(System.nanoTime() - start);
 
         incrementalGenerationResults = generationHandler.getGeneratedContent();
@@ -252,7 +261,7 @@ public class GenerationTestBase {
           Collections.singletonList(descr), ModuleContext.create(descr, p),
           generationHandler,
           new EmptyProgressMonitor(), generationHandler.getMessageHandler(), options,
-          p.getComponent(TransientModelsProvider.class));
+          new TransientModelsProvider(p, null));
       time.add(System.nanoTime() - start);
 
       assertNoDiff(incrementalGenerationResults, generationHandler.getGeneratedContent());
@@ -311,9 +320,7 @@ public class GenerationTestBase {
   }
 
   protected static void cleanup(final Project p) {
-    if (CREATED_ENV != null) {
-      CREATED_ENV.dispose();
-    }
+    CREATED_ENV.disposeProject(p.getProjectFile());
   }
 
   protected static void assertNoDiff(Map<String, String> expected, Map<String, String> actual) {

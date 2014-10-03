@@ -199,7 +199,7 @@ public final class GenerationFacade {
       final ProgressMonitor monitor,
       final IMessageHandler messages,
       final GenerationOptions options,
-      final TransientModelsProvider tmProvider) {
+      @NotNull final TransientModelsProvider tmProvider) {
 
     final GenerationFacade generationFacade = new GenerationFacade(p, options);
     generationFacade.generationHandler(generationHandler).messages(messages).transients(tmProvider);

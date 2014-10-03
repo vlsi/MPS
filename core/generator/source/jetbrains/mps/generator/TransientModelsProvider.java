@@ -110,10 +110,12 @@ public class TransientModelsProvider {
     myKeptModels++; // I know it's stupid and misguiding, but these two methods (canKeepOneMore and decreaseKeptModels) shall become history anyway
   }
 
-  public TransientSwapOwner getTransientSwapOwner() {
+  @Nullable
+  private TransientSwapOwner getTransientSwapOwner() {
     return myTransientSwapOwner;
   }
 
+  @Nullable
   public TransientSwapSpace getTransientSwapSpace() {
     if (mySessionId == null) {
       return null;
