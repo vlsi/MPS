@@ -20,9 +20,9 @@ import org.jetbrains.mps.openapi.language.SConceptId;
 public final class SContainmentLinkId extends SAbstractLinkIdImpl implements org.jetbrains.mps.openapi.language.SContainmentLinkId {
   private final int myLinkId;
 
-  public SContainmentLinkId(SConceptId conceptId, int linkId) {
+  public SContainmentLinkId(SConceptId conceptId, long linkId) {
     super(conceptId);
-    myLinkId = linkId;
+    myLinkId = (int) linkId;
   }
 
   @Override

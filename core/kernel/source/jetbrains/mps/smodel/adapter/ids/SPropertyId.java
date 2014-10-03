@@ -21,9 +21,9 @@ public final class SPropertyId implements org.jetbrains.mps.openapi.language.SPr
   private final SConceptId myConceptId;
   private final int myPropertyId;
 
-  public SPropertyId(SConceptId conceptId, int propertyId) {
+  public SPropertyId(SConceptId conceptId, long propertyId) {
     myConceptId = conceptId;
-    myPropertyId = propertyId;
+    myPropertyId = (int) propertyId;
   }
 
   @Override

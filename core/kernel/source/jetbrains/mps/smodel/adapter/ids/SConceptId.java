@@ -19,8 +19,8 @@ public final class SConceptId implements org.jetbrains.mps.openapi.language.SCon
   private final SLanguageId myLanguageId;
   private final int myConceptId;
 
-  public SConceptId(SLanguageId languageId, int conceptId) {
-    myConceptId = conceptId;
+  public SConceptId(SLanguageId languageId, long conceptId) {
+    myConceptId = (int) conceptId;
     myLanguageId = languageId;
   }
 

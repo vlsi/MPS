@@ -20,9 +20,9 @@ import org.jetbrains.mps.openapi.language.SConceptId;
 public class SReferenceLinkId extends SAbstractLinkIdImpl implements org.jetbrains.mps.openapi.language.SReferenceLinkId {
   private final int myRefLinkId;
 
-  public SReferenceLinkId(SConceptId conceptId, int refLinkId) {
+  public SReferenceLinkId(SConceptId conceptId, long refLinkId) {
     super(conceptId);
-    myRefLinkId = refLinkId;
+    myRefLinkId = (int) refLinkId;
   }
 
   @Override
