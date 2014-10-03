@@ -38,58 +38,50 @@ class ChildRemovedSelectionHandler extends ModelEventsSelectionHandler {
 
   @Override
   void setEditorSelection(EditorComponent editorComponent, SNode lastSelectedNode) {
-    if ((lastSelectedNode == null || lastSelectedNode.getModel() == null)) {
-      doSetSelection(editorComponent);
+    if (lastSelectedNode != null && lastSelectedNode.getModel() != null) {
+      super.setEditorSelection(editorComponent, lastSelectedNode);
+      return;
     }
-    super.setEditorSelection(editorComponent, lastSelectedNode);
+    doSetSelection(editorComponent);
   }
 
   private void doSetSelection(EditorComponent editorComponent) {
-    SNode nodeToSelect = null;
-    boolean isNext = false;
+    SNode siblingToSelect = null;
+    boolean isNextSibling = false;
     int index = 0;
     for (SNode nextChild : myParent.getChildren()) {
       if (myChildRole.equals(nextChild.getRoleInParent())) {
-        nodeToSelect = nextChild;
+        siblingToSelect = nextChild;
         if (index >= myChildIndex) {
-          isNext = true;
+          isNextSibling = true;
           break;
         }
       }
       index++;
     }
 
-    if (nodeToSelect != null) {
-      EditorCell cell = editorComponent.findNodeCell(nodeToSelect);
-      if (cell != null) {
-        EditorCell selectableLeaf = isNext ? CellFinderUtil.findFirstSelectableLeaf(cell, true) : CellFinderUtil.findLastSelectableLeaf(cell, true);
-        if (selectableLeaf != null) {
-          editorComponent.changeSelection(selectableLeaf);
-          if (isNext) {
-            selectableLeaf.home();
-          } else {
-            selectableLeaf.end();
-          }
-
-          return;
-        }
-      }
-    }
-
-    EditorCell nullCell = editorComponent.findNodeCellWithRole(myParent, myChildRole);
-    if (nullCell != null) {
-      editorComponent.changeSelectionWRTFocusPolicy(nullCell);
+    if (siblingToSelect != null && selectNode(siblingToSelect, isNextSibling, editorComponent)) {
       return;
     }
+    selectNullCell(editorComponent);
+  }
 
-    EditorCell cell = editorComponent.findNodeCell(myParent);
-    if (cell != null) {
-      EditorCell lastLeaf = CellFinderUtil.findLastSelectableLeaf(cell, true);
-      if (lastLeaf != null) {
-        editorComponent.changeSelection(lastLeaf);
-        lastLeaf.end();
-      }
+  private boolean selectNode(SNode node, boolean startPosition, EditorComponent editorComponent) {
+    EditorCell cell = editorComponent.findNodeCell(node);
+    if (cell == null) {
+      return false;
     }
+    EditorCell selectableLeaf = startPosition ? CellFinderUtil.findFirstSelectableLeaf(cell, true) : CellFinderUtil.findLastSelectableLeaf(cell, true);
+    if (selectableLeaf == null) {
+      return false;
+    }
+    editorComponent.changeSelection(selectableLeaf);
+    if (startPosition) {
+      selectableLeaf.home();
+    } else {
+      selectableLeaf.end();
+    }
+    return true;
   }
 
   private void selectNullCell(EditorComponent editorComponent) {

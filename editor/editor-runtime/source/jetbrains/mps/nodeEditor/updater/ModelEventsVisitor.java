@@ -31,12 +31,9 @@ import jetbrains.mps.smodel.event.SModelRenamedEvent;
 import jetbrains.mps.smodel.event.SModelReplacedEvent;
 import jetbrains.mps.smodel.event.SModelRootEvent;
 import jetbrains.mps.util.Pair;
-import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 
 /**
  * User: shatalin
@@ -48,10 +45,7 @@ class ModelEventsVisitor implements SModelEventVisitor {
   private Pair<SNodeReference, String> myModifiedProperty = null;
   private Boolean myIsPropertyAddedRemoved;
 
-  private Set<SNode> myAllAddedChildren = new HashSet<SNode>();
-  private ModelEventsSelectionHandler myLastRemoved;
-  private ModelEventsSelectionHandler myLastAdded;
-  private ModelEventsSelectionHandler myLastChildAdded;
+  private ModelEventsSelectionHandler mySelectionHandler;
 
   ModelEventsVisitor(List<SModelEvent> events, EditorComponent editorComponent) {
     myEditorComponent = editorComponent;
@@ -61,8 +55,7 @@ class ModelEventsVisitor implements SModelEventVisitor {
   }
 
   ModelEventsSelectionHandler getSelectionHandler() {
-    // TODO: use latest delta here
-    return myLastAdded != null ? myLastAdded : myLastRemoved;
+    return mySelectionHandler;
   }
 
   boolean isPropertyModification() {
@@ -89,16 +82,9 @@ class ModelEventsVisitor implements SModelEventVisitor {
       return;
     }
     if (event.isAdded()) {
-      for (SNode node = event.getChild(); node != null; node = node.getParent()) {
-        if (myAllAddedChildren.contains(node)) {
-          myLastAdded = myLastChildAdded;
-          return;
-        }
-      }
-      myAllAddedChildren.add(event.getChild());
-      myLastAdded = myLastChildAdded = new ChildAddedSelectionHandler(event.getChild());
+      mySelectionHandler = new ChildAddedSelectionHandler(event.getChild());
     } else {
-      myLastRemoved = new ChildRemovedSelectionHandler(event.getParent(), event.getChildRole(), event.getChildIndex());
+      mySelectionHandler = new ChildRemovedSelectionHandler(event.getParent(), event.getChildRole(), event.getChildIndex());
     }
   }
 
@@ -109,9 +95,9 @@ class ModelEventsVisitor implements SModelEventVisitor {
       return;
     }
     if (event.isAdded()) {
-      myLastAdded = new ReferenceAddedSelectionHandler(event.getReference());
+      mySelectionHandler = new ReferenceAddedSelectionHandler(event.getReference());
     } else {
-      myLastRemoved = new ReferenceRemovedSelectionHandler(event.getReference());
+      mySelectionHandler = new ReferenceRemovedSelectionHandler(event.getReference());
     }
   }
 

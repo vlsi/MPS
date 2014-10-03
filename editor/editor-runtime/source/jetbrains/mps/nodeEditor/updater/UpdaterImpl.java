@@ -190,8 +190,9 @@ public class UpdaterImpl implements Updater {
   }
 
   /**
-   * Used by UpdaterModelListener. Indicates if editor update should in the response to the
-   * specified property change, or it's sufficient to trigger EditorCells synchronization.
+   * Used by UpdaterModelListener. Indicates if editor update should be executed as a
+   * response for the specified property change, or it's sufficient to trigger EditorCells
+   * synchronization.
    * <p/>
    * editor update should be triggered if:
    * - specified property was accessed "dirtyly" while building this editor

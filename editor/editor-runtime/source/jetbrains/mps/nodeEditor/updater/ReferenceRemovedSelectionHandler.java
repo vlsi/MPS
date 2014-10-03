@@ -33,17 +33,18 @@ class ReferenceRemovedSelectionHandler extends ModelEventsSelectionHandler {
 
   @Override
   void setEditorSelection(EditorComponent editorComponent, SNode lastSelectedNode) {
+    EditorCell cell = getCellToSelect(editorComponent);
+    if (cell != null) {
+      editorComponent.changeSelectionWRTFocusPolicy(cell);
+    } else {
+      super.setEditorSelection(editorComponent, lastSelectedNode);
+    }
+  }
+
+  private EditorCell getCellToSelect(EditorComponent editorComponent) {
     SNode sourceNode = myReference.getSourceNode();
     String role = myReference.getRole();
     EditorCell nullCell = editorComponent.findNodeCellWithRole(sourceNode, role);
-    if (nullCell == null) {
-      EditorCell cell = editorComponent.findNodeCell(sourceNode);
-      if (cell != null) {
-        editorComponent.changeSelectionWRTFocusPolicy(cell);
-      }
-    } else {
-      editorComponent.changeSelectionWRTFocusPolicy(nullCell);
-    }
-    super.setEditorSelection(editorComponent, lastSelectedNode);
+    return nullCell != null ? nullCell : editorComponent.findNodeCell(sourceNode);
   }
 }

@@ -16,6 +16,7 @@
 package jetbrains.mps.nodeEditor.updater;
 
 import jetbrains.mps.nodeEditor.EditorComponent;
+import jetbrains.mps.openapi.editor.cells.EditorCell;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SReference;
@@ -33,6 +34,20 @@ public class ReferenceAddedSelectionHandler extends ModelEventsSelectionHandler 
 
   @Override
   void setEditorSelection(EditorComponent editorComponent, SNode lastSelectedNode) {
-    editorComponent.selectRefCell(myReference);
+    EditorCell cell = getCellToSelect(editorComponent);
+    if (cell != null) {
+      editorComponent.changeSelectionWRTFocusPolicy(cell);
+    } else {
+      super.setEditorSelection(editorComponent, lastSelectedNode);
+    }
+  }
+
+  private EditorCell getCellToSelect(EditorComponent editorComponent) {
+    SNode sourceNode = myReference.getSourceNode();
+    String role = myReference.getRole();
+    if (sourceNode == null || role == null) {
+      return null;
+    }
+    return editorComponent.findNodeCellWithRole(sourceNode, role);
   }
 }

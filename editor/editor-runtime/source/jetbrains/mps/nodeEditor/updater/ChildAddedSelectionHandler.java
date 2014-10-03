@@ -34,16 +34,20 @@ class ChildAddedSelectionHandler extends ModelEventsSelectionHandler {
 
   @Override
   void setEditorSelection(EditorComponent editorComponent, SNode lastSelectedNode) {
+    EditorCell cell = getCellToSelect(editorComponent);
+    if (cell != null) {
+      editorComponent.changeSelectionWRTFocusPolicy(cell);
+    } else {
+      super.setEditorSelection(editorComponent, lastSelectedNode);
+    }
+  }
+
+  private EditorCell getCellToSelect(EditorComponent editorComponent) {
     EditorCell cell = editorComponent.findNodeCell(myAddedChild);
     if (cell == null) {
-      return;
+      return null;
     }
-
     EditorCell errorCell = CellFinderUtil.findFirstError(cell, true);
-    if (errorCell != null) {
-      editorComponent.changeSelectionWRTFocusPolicy(errorCell);
-    } else {
-      editorComponent.changeSelectionWRTFocusPolicy(cell);
-    }
+    return errorCell != null ? errorCell : cell;
   }
 }

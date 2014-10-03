@@ -1674,6 +1674,10 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     });
   }
 
+  /**
+   * @deprecated since MPS 3.2 looks like not used
+   */
+  @Deprecated
   public void selectRefCell(SReference reference) {
     SNode sourceNode = reference.getSourceNode();
     String role = reference.getRole();
