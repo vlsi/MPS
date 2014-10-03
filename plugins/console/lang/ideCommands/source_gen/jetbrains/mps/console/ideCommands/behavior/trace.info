@@ -31,7 +31,7 @@
       <unit at="7,0,15,0" name="jetbrains.mps.console.ideCommands.behavior.WithDependencies_BehaviorDescriptor" />
     </file>
     <file name="INodeSetReference_BehaviorDescriptor.java">
-      <unit at="6,0,8,0" name="jetbrains.mps.console.ideCommands.behavior.INodeSetReference_BehaviorDescriptor" />
+      <unit at="8,0,11,0" name="jetbrains.mps.console.ideCommands.behavior.INodeSetReference_BehaviorDescriptor" />
     </file>
     <file name="UnloadModelsCommand_BehaviorDescriptor.java">
       <unit at="11,0,22,0" name="jetbrains.mps.console.ideCommands.behavior.UnloadModelsCommand_BehaviorDescriptor" />
@@ -49,7 +49,7 @@
       <unit at="10,0,24,0" name="jetbrains.mps.console.ideCommands.behavior.SubtreeStatisticsTarget_BehaviorDescriptor" />
     </file>
     <file name="IStatisticsTarget_BehaviorDescriptor.java">
-      <unit at="6,0,8,0" name="jetbrains.mps.console.ideCommands.behavior.IStatisticsTarget_BehaviorDescriptor" />
+      <unit at="9,0,12,0" name="jetbrains.mps.console.ideCommands.behavior.IStatisticsTarget_BehaviorDescriptor" />
     </file>
     <file name="ProjectStatisticsTarget_BehaviorDescriptor.java">
       <unit at="10,0,24,0" name="jetbrains.mps.console.ideCommands.behavior.ProjectStatisticsTarget_BehaviorDescriptor" />
@@ -58,7 +58,7 @@
       <unit at="9,0,20,0" name="jetbrains.mps.console.ideCommands.behavior.ModelProperties_BehaviorDescriptor" />
     </file>
     <file name="ActionCallParameter_BehaviorDescriptor.java">
-      <unit at="7,0,15,0" name="jetbrains.mps.console.ideCommands.behavior.ActionCallParameter_BehaviorDescriptor" />
+      <unit at="8,0,17,0" name="jetbrains.mps.console.ideCommands.behavior.ActionCallParameter_BehaviorDescriptor" />
     </file>
     <file name="ModuleProperties_BehaviorDescriptor.java">
       <unit at="9,0,20,0" name="jetbrains.mps.console.ideCommands.behavior.ModuleProperties_BehaviorDescriptor" />

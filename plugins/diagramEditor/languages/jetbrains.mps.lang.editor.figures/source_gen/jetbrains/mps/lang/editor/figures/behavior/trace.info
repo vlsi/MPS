@@ -7,7 +7,7 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
   <root>
     <file name="FigureParameter_BehaviorDescriptor.java">
-      <unit at="6,0,8,0" name="jetbrains.mps.lang.editor.figures.behavior.FigureParameter_BehaviorDescriptor" />
+      <unit at="7,0,10,0" name="jetbrains.mps.lang.editor.figures.behavior.FigureParameter_BehaviorDescriptor" />
     </file>
     <file name="ExternalViewFigure_BehaviorDescriptor.java">
       <unit at="13,0,30,0" name="jetbrains.mps.lang.editor.figures.behavior.ExternalViewFigure_BehaviorDescriptor" />
@@ -34,7 +34,7 @@
       <unit at="10,0,24,0" name="jetbrains.mps.lang.editor.figures.behavior.ExternalViewFigureParameter_BehaviorDescriptor" />
     </file>
     <file name="FigureParameterAttribute_BehaviorDescriptor.java">
-      <unit at="7,0,15,0" name="jetbrains.mps.lang.editor.figures.behavior.FigureParameterAttribute_BehaviorDescriptor" />
+      <unit at="8,0,17,0" name="jetbrains.mps.lang.editor.figures.behavior.FigureParameterAttribute_BehaviorDescriptor" />
     </file>
   </root>
   <root nodeRef="r:3f785a51-2661-4a52-ae3d-a60205a4f73f(jetbrains.mps.lang.editor.figures.behavior)/2084788800270490179">

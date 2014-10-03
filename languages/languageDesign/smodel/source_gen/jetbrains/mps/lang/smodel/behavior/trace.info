@@ -327,7 +327,7 @@
       <unit at="6,0,8,0" name="jetbrains.mps.lang.smodel.behavior.SEnumOperation_BehaviorDescriptor" />
     </file>
     <file name="ILinkAccess_BehaviorDescriptor.java">
-      <unit at="6,0,8,0" name="jetbrains.mps.lang.smodel.behavior.ILinkAccess_BehaviorDescriptor" />
+      <unit at="7,0,12,0" name="jetbrains.mps.lang.smodel.behavior.ILinkAccess_BehaviorDescriptor" />
     </file>
     <file name="ModelReferenceExpression_BehaviorDescriptor.java">
       <unit at="7,0,15,0" name="jetbrains.mps.lang.smodel.behavior.ModelReferenceExpression_BehaviorDescriptor" />
@@ -423,7 +423,7 @@
       <unit at="7,0,18,0" name="jetbrains.mps.lang.smodel.behavior.Model_RootsIncludingImportedOperation_BehaviorDescriptor" />
     </file>
     <file name="ILinkAccessQualifierContainer_BehaviorDescriptor.java">
-      <unit at="6,0,8,0" name="jetbrains.mps.lang.smodel.behavior.ILinkAccessQualifierContainer_BehaviorDescriptor" />
+      <unit at="7,0,10,0" name="jetbrains.mps.lang.smodel.behavior.ILinkAccessQualifierContainer_BehaviorDescriptor" />
     </file>
     <file name="SModelType_BehaviorDescriptor.java">
       <unit at="8,0,19,0" name="jetbrains.mps.lang.smodel.behavior.SModelType_BehaviorDescriptor" />

@@ -10,7 +10,7 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
   <root>
     <file name="BaseClassifierType_BehaviorDescriptor.java">
-      <unit at="7,0,15,0" name="jetbrains.mps.baseLanguage.classifiers.behavior.BaseClassifierType_BehaviorDescriptor" />
+      <unit at="9,0,18,0" name="jetbrains.mps.baseLanguage.classifiers.behavior.BaseClassifierType_BehaviorDescriptor" />
     </file>
     <file name="DefaultClassifierMethodDeclaration_BehaviorDescriptor.java">
       <unit at="12,0,44,0" name="jetbrains.mps.baseLanguage.classifiers.behavior.DefaultClassifierMethodDeclaration_BehaviorDescriptor" />
@@ -40,7 +40,7 @@
       <unit at="7,0,15,0" name="jetbrains.mps.baseLanguage.classifiers.behavior.SuperClassifierExpresson_BehaviorDescriptor" />
     </file>
     <file name="IClassifierPart_BehaviorDescriptor.java">
-      <unit at="6,0,8,0" name="jetbrains.mps.baseLanguage.classifiers.behavior.IClassifierPart_BehaviorDescriptor" />
+      <unit at="7,0,10,0" name="jetbrains.mps.baseLanguage.classifiers.behavior.IClassifierPart_BehaviorDescriptor" />
     </file>
     <file name="IMemberOperation_BehaviorDescriptor.java">
       <unit at="7,0,9,0" name="jetbrains.mps.baseLanguage.classifiers.behavior.IMemberOperation_BehaviorDescriptor" />

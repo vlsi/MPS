@@ -52,7 +52,7 @@
       <unit at="8,0,19,0" name="jetbrains.mps.lang.generator.behavior.CreateRootRule_BehaviorDescriptor" />
     </file>
     <file name="IGeneratorParameter_BehaviorDescriptor.java">
-      <unit at="7,0,9,0" name="jetbrains.mps.lang.generator.behavior.IGeneratorParameter_BehaviorDescriptor" />
+      <unit at="8,0,11,0" name="jetbrains.mps.lang.generator.behavior.IGeneratorParameter_BehaviorDescriptor" />
     </file>
     <file name="TemplateParameterDeclaration_BehaviorDescriptor.java">
       <unit at="10,0,21,0" name="jetbrains.mps.lang.generator.behavior.TemplateParameterDeclaration_BehaviorDescriptor" />
@@ -223,7 +223,7 @@
       <unit at="15,0,47,0" name="jetbrains.mps.lang.generator.behavior.MappingConfiguration_BehaviorDescriptor" />
     </file>
     <file name="TemplateArgumentPatternRef_BehaviorDescriptor.java">
-      <unit at="7,0,15,0" name="jetbrains.mps.lang.generator.behavior.TemplateArgumentPatternRef_BehaviorDescriptor" />
+      <unit at="8,0,17,0" name="jetbrains.mps.lang.generator.behavior.TemplateArgumentPatternRef_BehaviorDescriptor" />
     </file>
     <file name="TemplateSwitchMacro_BehaviorDescriptor.java">
       <unit at="8,0,22,0" name="jetbrains.mps.lang.generator.behavior.TemplateSwitchMacro_BehaviorDescriptor" />

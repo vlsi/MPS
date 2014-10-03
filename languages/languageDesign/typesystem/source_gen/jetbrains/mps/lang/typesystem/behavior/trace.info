@@ -220,7 +220,7 @@
       <unit at="7,0,15,0" name="jetbrains.mps.lang.typesystem.behavior.InequationReference_BehaviorDescriptor" />
     </file>
     <file name="IRuleWithTwoNodes_BehaviorDescriptor.java">
-      <unit at="6,0,8,0" name="jetbrains.mps.lang.typesystem.behavior.IRuleWithTwoNodes_BehaviorDescriptor" />
+      <unit at="7,0,10,0" name="jetbrains.mps.lang.typesystem.behavior.IRuleWithTwoNodes_BehaviorDescriptor" />
     </file>
     <file name="ConceptFunctionParameter_node_BehaviorDescriptor.java">
       <unit at="9,0,20,0" name="jetbrains.mps.lang.typesystem.behavior.ConceptFunctionParameter_node_BehaviorDescriptor" />
@@ -349,7 +349,7 @@
       <unit at="10,0,21,0" name="jetbrains.mps.lang.typesystem.behavior.RuntimeListVariable_BehaviorDescriptor" />
     </file>
     <file name="MessageStatement_BehaviorDescriptor.java">
-      <unit at="6,0,8,0" name="jetbrains.mps.lang.typesystem.behavior.MessageStatement_BehaviorDescriptor" />
+      <unit at="7,0,11,0" name="jetbrains.mps.lang.typesystem.behavior.MessageStatement_BehaviorDescriptor" />
     </file>
     <file name="ReportErrorStatement_BehaviorDescriptor.java">
       <unit at="8,0,22,0" name="jetbrains.mps.lang.typesystem.behavior.ReportErrorStatement_BehaviorDescriptor" />
@@ -394,7 +394,7 @@
       <unit at="7,0,15,0" name="jetbrains.mps.lang.typesystem.behavior.AbstractEquationStatement_BehaviorDescriptor" />
     </file>
     <file name="ApplicableNodeCondition_BehaviorDescriptor.java">
-      <unit at="11,0,22,0" name="jetbrains.mps.lang.typesystem.behavior.ApplicableNodeCondition_BehaviorDescriptor" />
+      <unit at="11,0,23,0" name="jetbrains.mps.lang.typesystem.behavior.ApplicableNodeCondition_BehaviorDescriptor" />
     </file>
     <file name="ConceptFunctionParameter_BlockingComputationNode_BehaviorDescriptor.java">
       <unit at="9,0,20,0" name="jetbrains.mps.lang.typesystem.behavior.ConceptFunctionParameter_BlockingComputationNode_BehaviorDescriptor" />
