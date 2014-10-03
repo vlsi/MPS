@@ -72,7 +72,7 @@ public class IllegalConceptDescriptor implements ConceptDescriptor {
   }
 
   @Override
-  public Set<SPropertyId> getReferenceIds() {
+  public Set<SReferenceLinkId> getReferenceIds() {
     return Collections.emptySet();
   }
 
@@ -92,7 +92,7 @@ public class IllegalConceptDescriptor implements ConceptDescriptor {
   }
 
   @Override
-  public Set<SPropertyId> getLinkIds() {
+  public Set<SContainmentLinkId> getLinkIds() {
     return Collections.emptySet();
   }
 
