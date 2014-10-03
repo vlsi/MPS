@@ -15,12 +15,11 @@
  */
 package jetbrains.mps.smodel;
 
-import jetbrains.mps.smodel.adapter.ids.SAbstractLinkIdImpl;
-import jetbrains.mps.smodel.adapter.ids.SConceptId;
-import jetbrains.mps.smodel.adapter.ids.SLanguageId;
-import jetbrains.mps.smodel.adapter.ids.SPropertyId;
 import jetbrains.mps.util.containers.BidirectionalMap;
 import org.jetbrains.mps.openapi.language.SAbstractLinkId;
+import org.jetbrains.mps.openapi.language.SConceptId;
+import org.jetbrains.mps.openapi.language.SLanguageId;
+import org.jetbrains.mps.openapi.language.SPropertyId;
 import org.jetbrains.mps.openapi.model.SModelId;
 import org.jetbrains.mps.openapi.module.DebugRegistry;
 import org.jetbrains.mps.openapi.module.SModuleId;
@@ -32,10 +31,10 @@ public class DebugRegistryImpl implements DebugRegistry {
 
   private BidirectionalMap<SModelId, String> myModels = new BidirectionalMap<SModelId, String>();
   private BidirectionalMap<SModuleId, String> myModules = new BidirectionalMap<SModuleId, String>();
-  private BidirectionalMap<org.jetbrains.mps.openapi.language.SPropertyId, String> myProperties = new BidirectionalMap<org.jetbrains.mps.openapi.language.SPropertyId, String>();
+  private BidirectionalMap<SPropertyId, String> myProperties = new BidirectionalMap<SPropertyId, String>();
   private BidirectionalMap<SAbstractLinkId, String> myLinks = new BidirectionalMap<SAbstractLinkId, String>();
-  private BidirectionalMap<org.jetbrains.mps.openapi.language.SConceptId, String> myConcepts = new BidirectionalMap<org.jetbrains.mps.openapi.language.SConceptId, String>();
-  private BidirectionalMap<org.jetbrains.mps.openapi.language.SLanguageId, String> myLanguages = new BidirectionalMap<org.jetbrains.mps.openapi.language.SLanguageId, String>();
+  private BidirectionalMap<SConceptId, String> myConcepts = new BidirectionalMap<SConceptId, String>();
+  private BidirectionalMap<SLanguageId, String> myLanguages = new BidirectionalMap<SLanguageId, String>();
 
   public DebugRegistryImpl(MPSModuleRepository mpsModuleRepository) {
     myMpsModuleRepository = mpsModuleRepository;
@@ -52,7 +51,7 @@ public class DebugRegistryImpl implements DebugRegistry {
   }
 
   @Override
-  public String getPropertyName(org.jetbrains.mps.openapi.language.SPropertyId propertyId) {
+  public String getPropertyName(SPropertyId propertyId) {
     return myProperties.get(propertyId);
   }
 
@@ -62,12 +61,12 @@ public class DebugRegistryImpl implements DebugRegistry {
   }
 
   @Override
-  public String getConceptName(org.jetbrains.mps.openapi.language.SConceptId conceptId) {
+  public String getConceptName(SConceptId conceptId) {
     return myConcepts.get(conceptId);
   }
 
   @Override
-  public String getLanguageName(org.jetbrains.mps.openapi.language.SLanguageId languageId) {
+  public String getLanguageName(SLanguageId languageId) {
     return myLanguages.get(languageId);
   }
 
@@ -82,7 +81,7 @@ public class DebugRegistryImpl implements DebugRegistry {
   }
 
   @Override
-  public void addPropertyName(org.jetbrains.mps.openapi.language.SPropertyId propertyId, String name) {
+  public void addPropertyName(SPropertyId propertyId, String name) {
     myProperties.put(propertyId, name);
   }
 
@@ -92,12 +91,12 @@ public class DebugRegistryImpl implements DebugRegistry {
   }
 
   @Override
-  public void addConceptName(org.jetbrains.mps.openapi.language.SConceptId conceptId, String name) {
+  public void addConceptName(SConceptId conceptId, String name) {
     myConcepts.put(conceptId, name);
   }
 
   @Override
-  public void addLanguageName(org.jetbrains.mps.openapi.language.SLanguageId languageId, String name) {
+  public void addLanguageName(SLanguageId languageId, String name) {
     myLanguages.put(languageId, name);
   }
 
@@ -115,16 +114,16 @@ public class DebugRegistryImpl implements DebugRegistry {
     return ids.get(0);
   }
 
-  public SPropertyId getPropertyId(org.jetbrains.mps.openapi.language.SConceptId conceptId, String name) {
-    List<org.jetbrains.mps.openapi.language.SPropertyId> ids = myProperties.getKeysByValue(name);
+  public SPropertyIdImpl getPropertyId(SConceptId conceptId, String name) {
+    List<SPropertyId> ids = myProperties.getKeysByValue(name);
     if (ids == null || ids.isEmpty()) return null;
-    for (org.jetbrains.mps.openapi.language.SPropertyId id:ids){
-      if (id.getConceptId().equals(conceptId)) return (SPropertyId) id;
+    for (SPropertyId id:ids){
+      if (id.getConceptId().equals(conceptId)) return (SPropertyIdImpl) id;
     }
     return null;
   }
 
-  public SAbstractLinkIdImpl getLinkId(org.jetbrains.mps.openapi.language.SConceptId conceptId, String name) {
+  public SAbstractLinkIdImpl getLinkId(SConceptId conceptId, String name) {
     List<SAbstractLinkId> ids = myLinks.getKeysByValue(name);
     if (ids == null || ids.isEmpty()) return null;
     for (SAbstractLinkId id:ids){
@@ -133,15 +132,15 @@ public class DebugRegistryImpl implements DebugRegistry {
     return null;
   }
 
-  public SConceptId getConceptId(String name) {
-    List<org.jetbrains.mps.openapi.language.SConceptId> ids = myConcepts.getKeysByValue(name);
+  public SConceptIdImpl getConceptId(String name) {
+    List<SConceptId> ids = myConcepts.getKeysByValue(name);
     if (ids == null || ids.isEmpty()) return null;
-    return (SConceptId) ids.get(0);
+    return (SConceptIdImpl) ids.get(0);
   }
 
-  public SLanguageId getLanguageId(String name) {
-    List<org.jetbrains.mps.openapi.language.SLanguageId> ids = myLanguages.getKeysByValue(name);
+  public SLanguageIdImpl getLanguageId(String name) {
+    List<SLanguageId> ids = myLanguages.getKeysByValue(name);
     if (ids == null || ids.isEmpty()) return null;
-    return (SLanguageId) ids.get(0);
+    return (SLanguageIdImpl) ids.get(0);
   }
 }

@@ -16,11 +16,8 @@
 package jetbrains.mps.smodel.runtime;
 
 import org.jetbrains.mps.openapi.language.SConceptId;
-import org.jetbrains.mps.openapi.language.SContainmentLinkId;
 
 public interface LinkDescriptor {
-  SContainmentLinkId getId();
-
   String getName();
 
   SConceptId getTargetConcept();
