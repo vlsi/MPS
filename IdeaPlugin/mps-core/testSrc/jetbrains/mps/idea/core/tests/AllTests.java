@@ -23,7 +23,8 @@ import jetbrains.mps.TestMode;
 import jetbrains.mps.RuntimeFlags;
 
 @RunWith(Suite.class)
-@Suite.SuiteClasses({ProjectViewTests.class, FacetTests.class, EditorTests.class})
+@Suite.SuiteClasses({/*ProjectViewTests.class,*/ FacetTests.class, EditorTests.class})
+//Disable ProjectViewTests until IDEA platform will be fixed. See IDEA-130738 for more details
 public class AllTests {
   @BeforeClass
   public static void setTestMode() {
