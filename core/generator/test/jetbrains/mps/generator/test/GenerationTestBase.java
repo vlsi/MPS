@@ -22,12 +22,17 @@ import jetbrains.mps.extapi.model.GeneratableSModel;
 import jetbrains.mps.generator.GenerationCacheContainer.FileBasedGenerationCacheContainer;
 import jetbrains.mps.generator.GenerationFacade;
 import jetbrains.mps.generator.GenerationOptions;
+import jetbrains.mps.generator.GenerationStatus;
 import jetbrains.mps.generator.ModelDigestUtil;
 import jetbrains.mps.generator.TransientModelsProvider;
+import jetbrains.mps.generator.generationTypes.GenerationHandlerBase;
 import jetbrains.mps.generator.impl.DefaultIncrementalStrategy;
 import jetbrains.mps.generator.impl.DefaultNonIncrementalStrategy;
 import jetbrains.mps.generator.impl.dependencies.GenerationDependencies;
 import jetbrains.mps.ide.ThreadUtils;
+import jetbrains.mps.messages.IMessage;
+import jetbrains.mps.messages.IMessageHandler;
+import jetbrains.mps.messages.MessageKind;
 import jetbrains.mps.persistence.DefaultModelPersistence;
 import jetbrains.mps.persistence.PersistenceUtil;
 import jetbrains.mps.progress.EmptyProgressMonitor;
@@ -50,6 +55,7 @@ import org.apache.log4j.Logger;
 import org.jetbrains.mps.openapi.model.EditableSModel;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.module.SModule;
+import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import org.junit.AfterClass;
 import org.junit.Assert;
 import org.junit.BeforeClass;
@@ -93,35 +99,47 @@ public class GenerationTestBase {
       CREATED_ENV.dispose();
       CREATED_ENV = null;
     }
+    // uncomment to get teamcity-info.xml file with 'parallelGeneration' key and percent value, indicating time spent in parallel generation
+    // against single-threaded generation
+//    PerformanceMessenger.getInstance().generateReport();
   }
 
   protected void doMeasureParallelGeneration(final Project p, final SModel descr, int threads) throws IOException {
 
-    // Stage 1. Regenerate
+    // Stage 1. Regenerate. Warm-up
 
     GenerationOptions options = GenerationOptions.getDefaults()
         .generateInParallel(false, 1)
         .rebuildAll(true).strictMode(true).reporting(false, true, false, 2).incremental(new DefaultNonIncrementalStrategy()).create();
-    IncrementalTestGenerationHandler generationHandler = new IncrementalTestGenerationHandler(p);
+    class NoOpHandler extends GenerationHandlerBase {
+      @Override
+      public boolean handleOutput(SModule module, SModel inputModel, GenerationStatus status, IOperationContext invocationContext,
+          ProgressMonitor progressMonitor) {
+        return true;
+      }
+
+      @Override
+      public int estimateCompilationMillis() {
+        return 0;
+      }
+    };
     GenerationFacade.generateModels(p,
         Collections.singletonList(descr), ModuleContext.create(descr, p),
-        generationHandler,
-        new EmptyProgressMonitor(), generationHandler.getMessageHandler(), options,
+        new NoOpHandler(),
+        new EmptyProgressMonitor(), new TestMessageHandler(), options,
         new TransientModelsProvider(p, null));
 
-    assertNoDiff(generationHandler.getExistingContent(), generationHandler.getGeneratedContent());
 
     // Stage 2. Regenerate. Measure time.
 
     options = GenerationOptions.getDefaults()
         .generateInParallel(false, 1)
         .rebuildAll(true).strictMode(true).reporting(false, true, false, 2).incremental(new DefaultNonIncrementalStrategy()).create();
-    generationHandler = new IncrementalTestGenerationHandler(p);
     long start = System.nanoTime();
     GenerationFacade.generateModels(p,
         Collections.singletonList(descr), ModuleContext.create(descr, p),
-        generationHandler,
-        new EmptyProgressMonitor(), generationHandler.getMessageHandler(), options,
+        new NoOpHandler(),
+        new EmptyProgressMonitor(), new TestMessageHandler(), options,
         new TransientModelsProvider(p, null));
     long singleThread = System.nanoTime() - start;
 
@@ -130,16 +148,13 @@ public class GenerationTestBase {
     options = GenerationOptions.getDefaults()
         .generateInParallel(true, threads)
         .rebuildAll(true).strictMode(true).reporting(false, true, false, 2).incremental(new DefaultNonIncrementalStrategy()).create();
-    generationHandler = new IncrementalTestGenerationHandler(p);
     start = System.nanoTime();
     GenerationFacade.generateModels(p,
         Collections.singletonList(descr), ModuleContext.create(descr, p),
-        generationHandler,
-        new EmptyProgressMonitor(), generationHandler.getMessageHandler(), options,
+        new NoOpHandler(),
+        new EmptyProgressMonitor(), new TestMessageHandler(), options,
         new TransientModelsProvider(p, null));
     long severalThreads = System.nanoTime() - start;
-
-    assertNoDiff(generationHandler.getExistingContent(), generationHandler.getGeneratedContent());
 
     PerformanceMessenger.getInstance().reportPercent("parallelGeneration", severalThreads / 1000000, singleThread / 1000000);
 
@@ -195,7 +210,7 @@ public class GenerationTestBase {
       GenerationFacade.generateModels(p,
           Collections.singletonList(descr), ModuleContext.create(descr, p),
           generationHandler,
-          new EmptyProgressMonitor(), generationHandler.getMessageHandler(), options,
+          new EmptyProgressMonitor(), new TestMessageHandler(), options,
           new TransientModelsProvider(p, null));
 
       Map<String, String> generated = replaceInContent(generationHandler.getGeneratedContent(),
@@ -242,7 +257,7 @@ public class GenerationTestBase {
         GenerationFacade.generateModels(p,
             Collections.singletonList(descr), ModuleContext.create(descr, p),
             generationHandler,
-            new EmptyProgressMonitor(), generationHandler.getMessageHandler(), options,
+            new EmptyProgressMonitor(), new TestMessageHandler(), options,
             new TransientModelsProvider(p, null));
         time.add(System.nanoTime() - start);
 
@@ -260,7 +275,7 @@ public class GenerationTestBase {
       GenerationFacade.generateModels(p,
           Collections.singletonList(descr), ModuleContext.create(descr, p),
           generationHandler,
-          new EmptyProgressMonitor(), generationHandler.getMessageHandler(), options,
+          new EmptyProgressMonitor(), new TestMessageHandler(), options,
           new TransientModelsProvider(p, null));
       time.add(System.nanoTime() - start);
 
@@ -453,5 +468,26 @@ public class GenerationTestBase {
 
   protected interface ModelChangeRunnable {
     void run(SModel model);
+  }
+
+  private static class TestMessageHandler implements IMessageHandler {
+
+    @Override
+    public void handle(IMessage msg) {
+      switch (msg.getKind()) {
+        case ERROR:
+        case WARNING:
+          Assert.fail((msg.getKind() == MessageKind.ERROR ? "error: " : "warning: ") + msg.getText() + msg.getException());
+          break;
+
+        case INFORMATION:
+          //System.out.println(msg.getText());
+          break;
+      }
+    }
+
+    @Override
+    public void clear() {
+    }
   }
 }
