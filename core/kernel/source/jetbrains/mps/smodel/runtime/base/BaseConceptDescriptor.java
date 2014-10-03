@@ -92,17 +92,17 @@ public abstract class BaseConceptDescriptor implements ConceptDescriptor {
   }
 
   @Override
-  public Set<SPropertyId> getReferenceIds() {
-    return null;
-  }
-
-  @Override
   public ReferenceDescriptor getRefDescriptor(SReferenceLinkId id) {
     return null;
   }
 
   @Override
-  public Set<SPropertyId> getLinkIds() {
+  public Set<SContainmentLinkId> getLinkIds() {
+    return null;
+  }
+
+  @Override
+  public Set<SReferenceLinkId> getReferenceIds() {
     return null;
   }
 
