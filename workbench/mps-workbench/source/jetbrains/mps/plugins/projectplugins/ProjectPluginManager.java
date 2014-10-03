@@ -233,7 +233,7 @@ public class ProjectPluginManager extends BasePluginManager<BaseProjectPlugin> i
   //--------------ADDITIONAL----------------
 
   private void recreateTabbedEditors() {
-    ModelAccess.instance().runReadAction(new Runnable() {
+    ModelAccess.instance().runReadInEDT(new Runnable() {
       @Override
       public void run() {
         editors:
