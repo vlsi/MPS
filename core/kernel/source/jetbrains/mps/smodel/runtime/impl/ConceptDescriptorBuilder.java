@@ -56,6 +56,11 @@ public class ConceptDescriptorBuilder {
   private List<ReferenceDescriptor> ownReferences = new ArrayList<ReferenceDescriptor>();
   private List<LinkDescriptor> ownLinks = new ArrayList<LinkDescriptor>();
 
+  //remove after migration
+  public ConceptDescriptorBuilder(String conceptFqName) {
+    this.conceptFqName = conceptFqName;
+  }
+
   public ConceptDescriptorBuilder(String conceptFqName, SConceptId id) {
     this.conceptFqName = conceptFqName;
     this.id = id;
