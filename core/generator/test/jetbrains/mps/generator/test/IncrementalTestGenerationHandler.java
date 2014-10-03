@@ -32,6 +32,7 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.textgen.trace.TraceInfoCache;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.JDOMUtil;
+import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.util.performance.IPerformanceTracer.NullPerformanceTracer;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
@@ -54,6 +55,7 @@ import java.util.Map;
  * <p/>
  * Evgeny Gryaznov, Oct 4, 2010
  */
+@ToRemove(version = 3.2)
 public class IncrementalTestGenerationHandler extends GenerationHandlerBase {
 
   private final Map<String, String> generatedContent = new HashMap<String, String>();
