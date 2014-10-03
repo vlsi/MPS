@@ -17,9 +17,13 @@ package jetbrains.mps.smodel.runtime.impl;
 
 import jetbrains.mps.smodel.language.ConceptRegistry;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
+import jetbrains.mps.smodel.runtime.LinkDescriptor;
+import jetbrains.mps.smodel.runtime.PropertyDescriptor;
+import jetbrains.mps.smodel.runtime.ReferenceDescriptor;
 import jetbrains.mps.smodel.runtime.StaticScope;
 import jetbrains.mps.smodel.runtime.base.BaseConceptDescriptor;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.language.SConceptId;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -31,12 +35,19 @@ import java.util.List;
 import java.util.Set;
 
 public class CompiledConceptDescriptor extends BaseConceptDescriptor {
+  private SConceptId myId;
   private final String myConceptFqName;
+  @Nullable
+  private SConceptId mySuperConceptId;
   private final String mySuperConcept;
   private final boolean myInterfaceConcept;
+  private SConceptId[] myParentIds;
   private final String[] myParents;
+  private PropertyDescriptor[] myOwnProperties;
   private final String[] myOwnPropertyNames;
+  private ReferenceDescriptor[] myOwnReferences;
   private final String[] myOwnReferenceNames;
+  private LinkDescriptor[] myOwnLinks;
   private final String[] myOwnChildNames;
   private final boolean[] myMultiple;
   private final String[] myUnorderedChildren;
@@ -59,12 +70,18 @@ public class CompiledConceptDescriptor extends BaseConceptDescriptor {
   private boolean myInitialized = false;
   private final Object myLock = "";
 
-  CompiledConceptDescriptor(String conceptFqName,
+  CompiledConceptDescriptor(SConceptId id,
+      String conceptFqName,
+      @Nullable SConceptId superConceptId,
       @Nullable String superConcept,
       boolean interfaceConcept,
+      SConceptId[] parentIds,
       String[] parents,
+      PropertyDescriptor[] ownProperties,
       String[] ownPropertyNames,
+      ReferenceDescriptor[] ownReferences,
       String[] ownReferenceNames,
+      LinkDescriptor[] ownLinks,
       String[] ownChildNames,
       boolean[] multiple,
       String[] unorderedChildren,
@@ -74,13 +91,19 @@ public class CompiledConceptDescriptor extends BaseConceptDescriptor {
       String shortDescription,
       String helpUrl,
       StaticScope staticScope) {
+    myId = id;
     myConceptFqName = conceptFqName;
+    mySuperConceptId = superConceptId;
     mySuperConcept = superConcept;
     myInterfaceConcept = interfaceConcept;
+    myParentIds = parentIds;
 
     myParents = parents;
+    myOwnProperties = ownProperties;
     myOwnPropertyNames = ownPropertyNames;
+    myOwnReferences = ownReferences;
     myOwnReferenceNames = ownReferenceNames;
+    myOwnLinks = ownLinks;
     myOwnChildNames = ownChildNames;
     myMultiple = multiple;
     myUnorderedChildren = unorderedChildren;
