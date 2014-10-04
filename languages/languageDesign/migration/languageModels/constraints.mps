@@ -35,15 +35,6 @@
       </node>
     </node>
   </root>
-  <root type="tp1t.ConceptConstraints" typeId="tp1t.1213093968558" id="3220955710218511821" nodeInfo="ng">
-    <link role="concept" roleId="tp1t.1213093996982" targetNodeId="53vh.3220955710218511771" resolveInfo="ListPatternVariableReference" />
-    <node role="referent" roleId="tp1t.1213100494875" type="tp1t.NodeReferentConstraint" typeId="tp1t.1148687176410" id="3220955710218511822" nodeInfo="ng">
-      <link role="applicableLink" roleId="tp1t.1148687202698" targetNodeId="53vh.3220955710218511772" />
-      <node role="searchScopeFactory" roleId="tp1t.1148687345559" type="tp1t.InheritedNodeScopeFactory" typeId="tp1t.8401916545537438642" id="3220955710218511823" nodeInfo="ng">
-        <link role="kind" roleId="tp1t.8401916545537438643" targetNodeId="tp3t.1136727061274" resolveInfo="ListPattern" />
-      </node>
-    </node>
-  </root>
   <root type="tp1t.ConceptConstraints" typeId="tp1t.1213093968558" id="5872110852616312537" nodeInfo="ng">
     <link role="concept" roleId="tp1t.1213093996982" targetNodeId="53vh.3220955710217809656" resolveInfo="MigrateOperation" />
     <node role="canBeChild" roleId="tp1t.1213106463729" type="tp1t.ConstraintFunction_CanBeAChild" typeId="tp1t.1202989531578" id="5872110852616312538" nodeInfo="nn">

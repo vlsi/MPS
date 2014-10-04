@@ -23,16 +23,14 @@ public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
       case 3:
         return Collections.<ConceptEditor>singletonList(new LinkPatternVariableReference_Editor());
       case 4:
-        return Collections.<ConceptEditor>singletonList(new ListPatternVariableReference_Editor());
-      case 5:
         return Collections.<ConceptEditor>singletonList(new MigrationScript_Editor());
-      case 6:
+      case 5:
         return Collections.<ConceptEditor>singletonList(new NodePatternVariableReference_Editor());
-      case 7:
+      case 6:
         return Collections.<ConceptEditor>singletonList(new ProducedDataDeclaration_Editor());
-      case 8:
+      case 7:
         return Collections.<ConceptEditor>singletonList(new PropertyPatternVariableReference_Editor());
-      case 9:
+      case 8:
         return Collections.<ConceptEditor>singletonList(new RequiredDataDeclaration_Editor());
       default:
     }
@@ -43,5 +41,5 @@ public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
   }
 
 
-  private static String[] stringSwitchCases_xbvbvu_a0a0b = new String[]{"jetbrains.mps.lang.migration.structure.DataDependency", "jetbrains.mps.lang.migration.structure.DataDependencyReference", "jetbrains.mps.lang.migration.structure.ForEachMatchingExpression", "jetbrains.mps.lang.migration.structure.LinkPatternVariableReference", "jetbrains.mps.lang.migration.structure.ListPatternVariableReference", "jetbrains.mps.lang.migration.structure.MigrationScript", "jetbrains.mps.lang.migration.structure.NodePatternVariableReference", "jetbrains.mps.lang.migration.structure.ProducedDataDeclaration", "jetbrains.mps.lang.migration.structure.PropertyPatternVariableReference", "jetbrains.mps.lang.migration.structure.RequiredDataDeclaration"};
+  private static String[] stringSwitchCases_xbvbvu_a0a0b = new String[]{"jetbrains.mps.lang.migration.structure.DataDependency", "jetbrains.mps.lang.migration.structure.DataDependencyReference", "jetbrains.mps.lang.migration.structure.ForEachMatchingExpression", "jetbrains.mps.lang.migration.structure.LinkPatternVariableReference", "jetbrains.mps.lang.migration.structure.MigrationScript", "jetbrains.mps.lang.migration.structure.NodePatternVariableReference", "jetbrains.mps.lang.migration.structure.ProducedDataDeclaration", "jetbrains.mps.lang.migration.structure.PropertyPatternVariableReference", "jetbrains.mps.lang.migration.structure.RequiredDataDeclaration"};
 }

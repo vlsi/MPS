@@ -58,6 +58,7 @@
     <refRole id="7866978e-a0f0-4cc7-81bc-4d213d9375e1/1138056022639/1138056395725" name="property" />
     <refRole id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd/1158700725281/1158700943156" name="applicableConcept" />
     <childRole id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd/1158700725281/1158701448518" name="setupFunction" />
+    <childRole id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd/1177327666243/1177336018902" name="descriptionText" />
     <childRole id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd/1177327666243/1177336013307" name="matchingText" />
     <childRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123155/1068580123156" name="expression" />
     <childRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1137021947720/1137022507850" name="body" />
@@ -246,6 +247,20 @@
                     </node>
                     <node concept="4ia1.1138056022639" id="7527743013694982913" role="vg0i.1197027756228.1197027833540" info="nn">
                       <reference role="4ia1.1138056022639.1138056395725" target="tpce.5092175715804935370" resolveInfo="conceptAlias" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node concept="abtv.1177335944525" id="2289500851009846043" role="abtv.1177327666243.1177336018902" info="nn">
+              <node concept="vg0i.1068580123136" id="2289500851009846044" role="vg0i.1137021947720.1137022507850" info="sn">
+                <node concept="vg0i.1068580123155" id="2289500851009846904" role="vg0i.1068580123136.1068581517665" info="nn">
+                  <node concept="vg0i.1197027756228" id="2289500851009848672" role="vg0i.1068580123155.1068580123156" info="nn">
+                    <node concept="4ia1.1172424058054" id="2289500851009846903" role="vg0i.1197027756228.1197027771414" info="nn">
+                      <reference role="4ia1.1172424058054.1172424100906" target="53vh.1901572971595836243" resolveInfo="ForEachMatchingExpression" />
+                    </node>
+                    <node concept="4ia1.1138056022639" id="2289500851009864490" role="vg0i.1197027756228.1197027833540" info="nn">
+                      <reference role="4ia1.1138056022639.1138056395725" target="tpce.4628067390765907488" resolveInfo="conceptShortDescription" />
                     </node>
                   </node>
                 </node>

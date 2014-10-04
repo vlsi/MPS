@@ -41,6 +41,9 @@ public class QueriesGenerated {
             SLinkOperations.setTarget(result, "operation", SNodeFactoryOperations.createNewNode(NameUtil.nodeFQName(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.migration.structure.MigrateOperation")), null), true);
             return result;
           }
+          public String getDescriptionText(String pattern) {
+            return SPropertyOperations.getString(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.migration.structure.ForEachMatchingExpression"), "conceptShortDescription");
+          }
           public String getMatchingText(String pattern) {
             return SPropertyOperations.getString(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.migration.structure.ForEachMatchingExpression"), "conceptAlias");
           }

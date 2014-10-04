@@ -12,9 +12,8 @@ import org.jetbrains.annotations.Nullable;
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptDataDependency = new ConceptDescriptorBuilder("jetbrains.mps.lang.migration.structure.DataDependency").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.baseLanguage.structure.IValidIdentifier", "jetbrains.mps.baseLanguage.structure.IVariableDeclaration", "jetbrains.mps.lang.core.structure.IResolveInfo", "jetbrains.mps.baseLanguage.structure.ClassifierMember", "jetbrains.mps.lang.core.structure.BaseConcept").references("script").create();
   /*package*/ final ConceptDescriptor myConceptDataDependencyReference = new ConceptDescriptorBuilder("jetbrains.mps.lang.migration.structure.DataDependencyReference").super_("jetbrains.mps.baseLanguage.structure.Expression").parents("jetbrains.mps.baseLanguage.structure.Expression", "jetbrains.mps.baseLanguage.structure.IVariableReference").references("dataDependency").create();
-  /*package*/ final ConceptDescriptor myConceptForEachMatchingExpression = new ConceptDescriptorBuilder("jetbrains.mps.lang.migration.structure.ForEachMatchingExpression").super_("jetbrains.mps.baseLanguage.structure.Expression").parents("jetbrains.mps.baseLanguage.structure.Expression", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault").children(new String[]{"pattern"}, new boolean[]{false}).alias("matching", "").create();
+  /*package*/ final ConceptDescriptor myConceptForEachMatchingExpression = new ConceptDescriptorBuilder("jetbrains.mps.lang.migration.structure.ForEachMatchingExpression").super_("jetbrains.mps.baseLanguage.structure.Expression").parents("jetbrains.mps.baseLanguage.structure.Expression", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault").children(new String[]{"pattern"}, new boolean[]{false}).alias("matching", "migrate nodes that match pattern").create();
   /*package*/ final ConceptDescriptor myConceptLinkPatternVariableReference = new ConceptDescriptorBuilder("jetbrains.mps.lang.migration.structure.LinkPatternVariableReference").super_("jetbrains.mps.baseLanguage.structure.Expression").parents("jetbrains.mps.baseLanguage.structure.Expression").references("declaration").create();
-  /*package*/ final ConceptDescriptor myConceptListPatternVariableReference = new ConceptDescriptorBuilder("jetbrains.mps.lang.migration.structure.ListPatternVariableReference").super_("jetbrains.mps.baseLanguage.structure.Expression").parents("jetbrains.mps.baseLanguage.structure.Expression").references("declaration").create();
   /*package*/ final ConceptDescriptor myConceptMigrateOperation = new ConceptDescriptorBuilder("jetbrains.mps.lang.migration.structure.MigrateOperation").super_("jetbrains.mps.baseLanguage.collections.structure.InternalSequenceOperation").parents("jetbrains.mps.baseLanguage.collections.structure.InternalSequenceOperation", "jetbrains.mps.lang.core.structure.ScopeProvider").children(new String[]{"body"}, new boolean[]{false}).alias("migrate", "").create();
   /*package*/ final ConceptDescriptor myConceptMigrationScript = new ConceptDescriptorBuilder("jetbrains.mps.lang.migration.structure.MigrationScript").super_("jetbrains.mps.baseLanguage.structure.ClassConcept").parents("jetbrains.mps.baseLanguage.structure.ClassConcept").properties("fromVersion").create();
   /*package*/ final ConceptDescriptor myConceptNodePatternVariableReference = new ConceptDescriptorBuilder("jetbrains.mps.lang.migration.structure.NodePatternVariableReference").super_("jetbrains.mps.baseLanguage.structure.Expression").parents("jetbrains.mps.baseLanguage.structure.Expression").references("declaration").create();
@@ -24,13 +23,13 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
   @Override
   public Collection<ConceptDescriptor> getDescriptors() {
-    return Arrays.asList(myConceptDataDependency, myConceptDataDependencyReference, myConceptForEachMatchingExpression, myConceptLinkPatternVariableReference, myConceptListPatternVariableReference, myConceptMigrateOperation, myConceptMigrationScript, myConceptNodePatternVariableReference, myConceptProducedDataDeclaration, myConceptPropertyPatternVariableReference, myConceptRequiredDataDeclaration);
+    return Arrays.asList(myConceptDataDependency, myConceptDataDependencyReference, myConceptForEachMatchingExpression, myConceptLinkPatternVariableReference, myConceptMigrateOperation, myConceptMigrationScript, myConceptNodePatternVariableReference, myConceptProducedDataDeclaration, myConceptPropertyPatternVariableReference, myConceptRequiredDataDeclaration);
   }
 
   @Override
   @Nullable
   public ConceptDescriptor getDescriptor(String conceptFqName) {
-    switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0o, conceptFqName)) {
+    switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0n, conceptFqName)) {
       case 0:
         return myConceptDataDependency;
       case 1:
@@ -40,22 +39,20 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
       case 3:
         return myConceptLinkPatternVariableReference;
       case 4:
-        return myConceptListPatternVariableReference;
-      case 5:
         return myConceptMigrateOperation;
-      case 6:
+      case 5:
         return myConceptMigrationScript;
-      case 7:
+      case 6:
         return myConceptNodePatternVariableReference;
-      case 8:
+      case 7:
         return myConceptProducedDataDeclaration;
-      case 9:
+      case 8:
         return myConceptPropertyPatternVariableReference;
-      case 10:
+      case 9:
         return myConceptRequiredDataDeclaration;
       default:
         return null;
     }
   }
-  private static String[] stringSwitchCases_1htk8d_a0a0o = new String[]{"jetbrains.mps.lang.migration.structure.DataDependency", "jetbrains.mps.lang.migration.structure.DataDependencyReference", "jetbrains.mps.lang.migration.structure.ForEachMatchingExpression", "jetbrains.mps.lang.migration.structure.LinkPatternVariableReference", "jetbrains.mps.lang.migration.structure.ListPatternVariableReference", "jetbrains.mps.lang.migration.structure.MigrateOperation", "jetbrains.mps.lang.migration.structure.MigrationScript", "jetbrains.mps.lang.migration.structure.NodePatternVariableReference", "jetbrains.mps.lang.migration.structure.ProducedDataDeclaration", "jetbrains.mps.lang.migration.structure.PropertyPatternVariableReference", "jetbrains.mps.lang.migration.structure.RequiredDataDeclaration"};
+  private static String[] stringSwitchCases_1htk8d_a0a0n = new String[]{"jetbrains.mps.lang.migration.structure.DataDependency", "jetbrains.mps.lang.migration.structure.DataDependencyReference", "jetbrains.mps.lang.migration.structure.ForEachMatchingExpression", "jetbrains.mps.lang.migration.structure.LinkPatternVariableReference", "jetbrains.mps.lang.migration.structure.MigrateOperation", "jetbrains.mps.lang.migration.structure.MigrationScript", "jetbrains.mps.lang.migration.structure.NodePatternVariableReference", "jetbrains.mps.lang.migration.structure.ProducedDataDeclaration", "jetbrains.mps.lang.migration.structure.PropertyPatternVariableReference", "jetbrains.mps.lang.migration.structure.RequiredDataDeclaration"};
 }
