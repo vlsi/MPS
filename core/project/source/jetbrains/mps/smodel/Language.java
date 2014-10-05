@@ -32,6 +32,7 @@ import jetbrains.mps.project.persistence.LanguageDescriptorPersistence;
 import jetbrains.mps.project.structure.modules.GeneratorDescriptor;
 import jetbrains.mps.project.structure.modules.LanguageDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
+import jetbrains.mps.smodel.adapter.IdHelper;
 import jetbrains.mps.smodel.descriptor.RefactorableSModelDescriptor;
 import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.util.IterableUtil;
@@ -236,6 +237,14 @@ public class Language extends AbstractModule implements MPSModuleOwner {
 
   public int getLanguageVersion() {
     return getModuleDescriptor().getVersion();
+  }
+
+  public void setLanguageVersion(int version) {
+    getModuleDescriptor().setVersion(version);
+    if (getModuleDescriptor().getLanguageVersions().containsKey(IdHelper.getLanguageId(getModuleId()))) {
+      getModuleDescriptor().getLanguageVersions().put(IdHelper.getLanguageId(getModuleId()), version);
+    }
+    setChanged();
   }
 
   public Collection<Generator> getGenerators() {

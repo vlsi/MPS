@@ -17,6 +17,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.smodel.adapter.IdHelper;
 import org.jetbrains.annotations.NotNull;
 import org.apache.log4j.Level;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
@@ -61,6 +62,12 @@ public class CorrectLanguageVersion_Action extends BaseAction {
         return SPropertyOperations.getInteger(it, "fromVersion");
       }
     }, false).first(), "fromVersion");
+
+    if (lang.getModuleDescriptor().getLanguageVersions().containsKey(IdHelper.getLanguageId(lang.getModuleId()))) {
+      if (lang.getModuleDescriptor().getLanguageVersions().get(IdHelper.getLanguageId(lang.getModuleId())) != lang.getLanguageVersion()) {
+        return true;
+      }
+    }
     return lang.getLanguageVersion() != maxFrom + 1;
   }
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
@@ -101,8 +108,7 @@ public class CorrectLanguageVersion_Action extends BaseAction {
             return SPropertyOperations.getInteger(it, "fromVersion");
           }
         }, false).first(), "fromVersion");
-        lang.getModuleDescriptor().setVersion(maxFrom + 1);
-        lang.setChanged();
+        lang.setLanguageVersion(maxFrom + 1);
       } else {
         final int v = lang.getLanguageVersion();
         SwingUtilities.invokeLater(new Runnable() {
@@ -126,8 +132,7 @@ public class CorrectLanguageVersion_Action extends BaseAction {
 
             ModelAccess.instance().runWriteActionInCommand(new Runnable() {
               public void run() {
-                lang.getModuleDescriptor().setVersion(Integer.parseInt(result));
-                lang.setChanged();
+                lang.setLanguageVersion(Integer.parseInt(result));
               }
             });
           }
