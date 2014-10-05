@@ -37,7 +37,7 @@ public class SNodeUtil {
   public static final SConceptId conceptId_ImplementationPart = SConceptId.deserialize("ceab5195-25ea-4f22-9b92-103b95ca8c0c/1319728274783077719");
   public static final String concept_ImplementationWithStubPart = "jetbrains.mps.lang.core.structure.ImplementationWithStubPart";
   public static final SConceptId conceptId_ImplementationWithStubPart = SConceptId.deserialize("ceab5195-25ea-4f22-9b92-103b95ca8c0c/6999738288738427190");
-  public static final String concept_AbstractMigrationScript = "jetbrains.mps.lang.migration.structure.AbstractMigrationScript";
+  public static final String concept_AbstractMigrationScript = "jetbrains.mps.lang.migration.structure.MigrationScript";
 
   public static final String link_ConceptDeclaration_extends = "extends";
   public static final SReferenceLinkId linkId_ConceptDeclaration_extends = SReferenceLinkId.deserialize("c72da2b9-7cce-4447-8389-f407dc1158b7/1071489090640/1071489389519");

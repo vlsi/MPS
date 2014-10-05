@@ -7,8 +7,8 @@ import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.smodel.adapter.SLanguageAdapter;
 import jetbrains.mps.smodel.adapter.IdHelper;
+import jetbrains.mps.smodel.adapter.SLanguageAdapter;
 import jetbrains.mps.smodel.SModelInternal;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.project.AbstractModule;
@@ -26,6 +26,9 @@ public class Migration_Queries {
       int currentVersion = ((Language) module).getLanguageVersion();
       SPropertyOperations.set(c, "fromVersion", "" + (currentVersion));
       ((Language) module).getModuleDescriptor().setVersion(currentVersion + 1);
+      if (((Language) module).getModuleDescriptor().getLanguageVersions().containsKey(IdHelper.getLanguageId(module.getModuleId()))) {
+        ((Language) module).getModuleDescriptor().getLanguageVersions().put(IdHelper.getLanguageId(module.getModuleId()), currentVersion + 1);
+      }
       ((Language) module).setChanged();
     }
 

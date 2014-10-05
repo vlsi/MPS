@@ -1209,7 +1209,7 @@
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="3980659913727216373" nodeInfo="nn" />
       <node role="type" roleId="tpee.5680397130376446158" type="tpee.StringType" typeId="tpee.1225271177708" id="3980659913727216374" nodeInfo="in" />
       <node role="initializer" roleId="tpee.1068431790190" type="tp25.ConceptFqNameRefExpression" typeId="tp25.8339862546319741524" id="3980659913727216375" nodeInfo="nn">
-        <link role="conceptDeclaration" roleId="tp25.8339862546319741525" targetNodeId="53vh.1309355481571392446" resolveInfo="AbstractMigrationScript" />
+        <link role="conceptDeclaration" roleId="tp25.8339862546319741525" targetNodeId="53vh.8352104482584315555" resolveInfo="MigrationScript" />
       </node>
     </node>
     <node role="member" roleId="tpee.5375687026011219971" type="tpee.PlaceholderMember" typeId="tpee.1465982738277781862" id="7897202388613788596" nodeInfo="ngu" />
@@ -1484,8 +1484,8 @@
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="3980659913727220022" nodeInfo="nn" />
       <node role="type" roleId="tpee.5680397130376446158" type="tpee.StringType" typeId="tpee.1225271177708" id="3980659913727220023" nodeInfo="in" />
       <node role="initializer" roleId="tpee.1068431790190" type="tp25.PropertyNameRefExpression" typeId="tp25.5253134957341870583" id="3980659913727220024" nodeInfo="nn">
-        <link role="conceptDeclaration" roleId="tp25.5253134957341870584" targetNodeId="53vh.1309355481571392446" resolveInfo="AbstractMigrationScript" />
-        <link role="propertyDeclaration" roleId="tp25.5253134957341870585" targetNodeId="53vh.4436301628118948497" resolveInfo="fromVersion" />
+        <link role="conceptDeclaration" roleId="tp25.5253134957341870584" targetNodeId="53vh.8352104482584315555" resolveInfo="MigrationScript" />
+        <link role="propertyDeclaration" roleId="tp25.5253134957341870585" targetNodeId="53vh.5820409521797704727" resolveInfo="fromVersion" />
       </node>
     </node>
     <node role="member" roleId="tpee.5375687026011219971" type="tpee.StaticFieldDeclaration" typeId="tpee.1070462154015" id="6435559796485940120" nodeInfo="igu">
