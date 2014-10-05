@@ -8,13 +8,13 @@ import com.intellij.openapi.components.StoragePathMacros;
 import com.intellij.openapi.components.AbstractProjectComponent;
 import com.intellij.openapi.components.PersistentStateComponent;
 import com.intellij.openapi.project.Project;
-import com.intellij.openapi.startup.StartupManager;
-import com.intellij.openapi.application.ApplicationManager;
-import com.intellij.openapi.vfs.VirtualFileManager;
-import com.intellij.openapi.project.ex.ProjectManagerEx;
 import com.intellij.util.Consumer;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.MPSModuleRepository;
+import com.intellij.openapi.application.ApplicationManager;
+import com.intellij.openapi.project.ex.ProjectManagerEx;
+import com.intellij.openapi.startup.StartupManager;
+import com.intellij.openapi.vfs.VirtualFileManager;
 import org.jetbrains.annotations.Nullable;
 
 @State(name = "StartupMigrationExecutor", storages = {@Storage(file = StoragePathMacros.WORKSPACE_FILE)
@@ -25,6 +25,34 @@ public class StartupMigrationExecutor extends AbstractProjectComponent implement
   protected StartupMigrationExecutor(Project project, MigrationManager migrationManager) {
     super(project);
     myMigrationManager = migrationManager;
+  }
+  public void executeWizard() {
+    myState.reloadFinished = false;
+    final boolean[] success = new boolean[1];
+    MigrationAssistantWizard wizard = new MigrationAssistantWizard(myProject, myMigrationManager, success);
+    // final reload is needed to cleanup memory (unload models) and do possible switches (e.g. to a new persistence) 
+    wizard.showAndGetOk().doWhenDone(new Consumer<Boolean>() {
+      @Override
+      public void consume(Boolean finished) {
+        if (!(finished)) {
+          return;
+        }
+        if (!(success[0])) {
+          return;
+        }
+        ModelAccess.instance().runWriteAction(new Runnable() {
+          public void run() {
+            MPSModuleRepository.getInstance().saveAll();
+          }
+        });
+        ApplicationManager.getApplication().runWriteAction(new Runnable() {
+          @Override
+          public void run() {
+            ProjectManagerEx.getInstance().reloadProject(myProject);
+          }
+        });
+      }
+    });
   }
   @Override
   public void projectOpened() {
@@ -43,32 +71,7 @@ public class StartupMigrationExecutor extends AbstractProjectComponent implement
             }
           });
         } else {
-          myState.reloadFinished = false;
-          final boolean[] success = new boolean[1];
-          MigrationAssistantWizard wizard = new MigrationAssistantWizard(myProject, myMigrationManager, success);
-          // final reload is needed to cleanup memory (unload models) and do possible switches (e.g. to a new persistence) 
-          wizard.showAndGetOk().doWhenDone(new Consumer<Boolean>() {
-            @Override
-            public void consume(Boolean finished) {
-              if (!(finished)) {
-                return;
-              }
-              if (!(success[0])) {
-                return;
-              }
-              ModelAccess.instance().runWriteAction(new Runnable() {
-                public void run() {
-                  MPSModuleRepository.getInstance().saveAll();
-                }
-              });
-              ApplicationManager.getApplication().runWriteAction(new Runnable() {
-                @Override
-                public void run() {
-                  ProjectManagerEx.getInstance().reloadProject(myProject);
-                }
-              });
-            }
-          });
+          executeWizard();
         }
       }
     });
