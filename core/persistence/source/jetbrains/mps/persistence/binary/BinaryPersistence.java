@@ -20,7 +20,6 @@ import jetbrains.mps.persistence.IdSerializer;
 import jetbrains.mps.persistence.PersistenceRegistry;
 import jetbrains.mps.smodel.DebugRegistry;
 import jetbrains.mps.smodel.DefaultSModel;
-import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.LazySModel;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.SModel;
@@ -206,7 +205,7 @@ public class BinaryPersistence {
     // write child roles
     int childrenSize = is.readInt();
     for (int i = 0; i < childrenSize; i++) {
-      DebugRegistry.getInstance().addRefName(SContainmentLinkId.deserialize(is.readString()), is.readString());
+      DebugRegistry.getInstance().addLinkName(SContainmentLinkId.deserialize(is.readString()), is.readString());
     }
   }
 
@@ -359,10 +358,11 @@ public class BinaryPersistence {
     int size = is.readInt();
     List<Pair<Pair<SLanguage, Integer>, Boolean>> result = new ArrayList<Pair<Pair<SLanguage, Integer>, Boolean>>();
     for (int i = 0; i < size; i++) {
-      SLanguage id = SLanguage.deserialize(is.readString());
+      SLanguageId id = SLanguageId.deserialize(is.readString());
+      SLanguage l = new SLanguageAdapterById(id, DebugRegistry.getInstance().getLanguageName(id));
       int version = is.readInt();
       boolean implicit = is.readBoolean();
-      result.add(new Pair<Pair<SLanguage, Integer>, Boolean>(new Pair<SLanguage, Integer>(id, version), implicit));
+      result.add(new Pair<Pair<SLanguage, Integer>, Boolean>(new Pair<SLanguage, Integer>(l, version), implicit));
     }
     return result;
   }
@@ -406,9 +406,9 @@ public class BinaryPersistence {
       }
       new NodesReader(modelHeader.getModelReference(), false) {
         @Override
-        protected SConcept readConceptId(ModelInputStream is) throws IOException {
-          SConcept cid = super.readConceptId(is);
-          String name = MPSModuleRepository.getInstance().getDebugRegistry().getConceptName(cid);
+        protected SConceptId readConceptId(ModelInputStream is) throws IOException {
+          SConceptId cid = super.readConceptId(is);
+          String name = DebugRegistry.getInstance().getConceptName(cid);
           consumer.consume(name);
           return cid;
         }
