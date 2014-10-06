@@ -29,7 +29,6 @@ import org.jetbrains.mps.openapi.language.SAbstractLink;
 import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.language.SConceptRepository;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
-import org.jetbrains.mps.openapi.language.SEnumeration;
 import org.jetbrains.mps.openapi.language.SInterfaceConcept;
 import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.language.SProperty;
@@ -153,13 +152,6 @@ public class ConceptRepository extends SConceptRepository implements CoreCompone
     if (desc instanceof IllegalConceptDescriptor) return null;
 
     return desc.isInterfaceConcept() ? new SInterfaceConceptAdapterByName(id) : new SConceptAdapterById(id);
-  }
-
-  @Deprecated
-  @Override
-  public SEnumeration getEnumeration(@NotNull String qualifiedName) {
-    // TODO
-    return null;
   }
 
   @Deprecated
