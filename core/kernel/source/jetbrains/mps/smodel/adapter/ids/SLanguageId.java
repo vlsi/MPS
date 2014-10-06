@@ -13,25 +13,19 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel;
+package jetbrains.mps.smodel.adapter.ids;
 
-import org.jetbrains.mps.openapi.language.SConceptId;
+import java.util.UUID;
 
-public final class SConceptIdImpl implements SConceptId {
-  private final SLanguageIdImpl myLanguageId;
-  private final int myConceptId;
+public final class SLanguageId implements org.jetbrains.mps.openapi.language.SLanguageId {
+  private final UUID myId;
 
-  public SConceptIdImpl(SLanguageIdImpl languageId, int conceptId) {
-    myConceptId = conceptId;
-    myLanguageId = languageId;
+  public SLanguageId(UUID id) {
+    myId = id;
   }
 
-  public SLanguageIdImpl getLanguageId() {
-    return myLanguageId;
-  }
-
-  public int getConceptId() {
-    return myConceptId;
+  public UUID getId() {
+    return myId;
   }
 
   @Override
@@ -39,18 +33,15 @@ public final class SConceptIdImpl implements SConceptId {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
 
-    SConceptIdImpl that = (SConceptIdImpl) o;
+    SLanguageId that = (SLanguageId) o;
 
-    if (myConceptId != that.myConceptId) return false;
-    if (myLanguageId != null ? !myLanguageId.equals(that.myLanguageId) : that.myLanguageId != null) return false;
+    if (myId != null ? !myId.equals(that.myId) : that.myId != null) return false;
 
     return true;
   }
 
   @Override
   public int hashCode() {
-    int result = myLanguageId != null ? myLanguageId.hashCode() : 0;
-    result = 31 * result + myConceptId;
-    return result;
+    return myId != null ? myId.hashCode() : 0;
   }
 }

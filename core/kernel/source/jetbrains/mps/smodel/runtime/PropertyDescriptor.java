@@ -15,6 +15,10 @@
  */
 package jetbrains.mps.smodel.runtime;
 
+import org.jetbrains.mps.openapi.language.SPropertyId;
+
 public interface PropertyDescriptor {
+  SPropertyId getId();
+
   String getName();
 }

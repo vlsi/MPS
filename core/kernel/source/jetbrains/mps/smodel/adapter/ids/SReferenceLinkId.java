@@ -13,21 +13,20 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel.runtime;
+package jetbrains.mps.smodel.adapter.ids;
 
 import org.jetbrains.mps.openapi.language.SConceptId;
-import org.jetbrains.mps.openapi.language.SContainmentLinkId;
 
-public interface LinkDescriptor {
-  SContainmentLinkId getId();
+public class SReferenceLinkId extends SAbstractLinkIdImpl implements org.jetbrains.mps.openapi.language.SReferenceLinkId {
+  private final int myRefLinkId;
 
-  String getName();
+  public SReferenceLinkId(SConceptId conceptId, long refLinkId) {
+    super(conceptId);
+    myRefLinkId = (int) refLinkId;
+  }
 
-  SConceptId getTargetConcept();
-
-  boolean isOptional();
-
-  boolean isMultiple();
-
-  boolean isUnordered();
+  @Override
+  public int getReferenceLinkId() {
+    return myRefLinkId;
+  }
 }

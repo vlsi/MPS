@@ -81,7 +81,7 @@ public interface ConceptDescriptor {
 
   //------------ refs
 
-  Set<SPropertyId> getReferenceIds();
+  Set<SReferenceLinkId> getReferenceIds();
 
   ReferenceDescriptor getRefDescriptor(SReferenceLinkId id);
 
@@ -93,7 +93,7 @@ public interface ConceptDescriptor {
 
   //------------ children
 
-  Set<SPropertyId> getLinkIds();
+  Set<SContainmentLinkId> getLinkIds();
 
   LinkDescriptor getLinkDescriptor(SContainmentLinkId id);
 
