@@ -4,11 +4,12 @@ package jetbrains.mps.baseLanguage.classifiers.structure;
 
 import jetbrains.mps.smodel.runtime.BaseStructureAspectDescriptor;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
-import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder;
 import jetbrains.mps.smodel.runtime.StaticScope;
-import java.util.Collection;
-import java.util.Arrays;
+import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder;
 import org.jetbrains.annotations.Nullable;
+
+import java.util.Arrays;
+import java.util.Collection;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptBaseClassifierType = new ConceptDescriptorBuilder("jetbrains.mps.baseLanguage.classifiers.structure.BaseClassifierType").super_("jetbrains.mps.baseLanguage.structure.Type").parents("jetbrains.mps.baseLanguage.structure.Type").abstract_().staticScope(StaticScope.NONE).create();

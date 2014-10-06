@@ -3101,7 +3101,7 @@
                                     </node>
                                   </node>
                                   <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="3002767456620556763" nodeInfo="nn">
-                                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="qgg.~ConceptDescriptorBuilder%dparents(java%dlang%dString%d%d%d)%cjetbrains%dmps%dsmodel%druntime%dimpl%dConceptDescriptorBuilder" resolveInfo="parents" />
+                                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="qgg.~ConceptDescriptorBuilder%dparentIds(org%djetbrains%dmps%dopenapi%dlanguage%dSConceptId%d%d%d)%cjetbrains%dmps%dsmodel%druntime%dimpl%dConceptDescriptorBuilder" resolveInfo="parentIds" />
                                     <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.VarMacro" typeId="tpf8.5015072279636464462" id="3002767456620556764" nodeInfo="ng">
                                       <property name="name" nameId="tpck.1169194664001" value="parents" />
                                       <node role="value" roleId="tpf8.5015072279636624596" type="tpf8.VarMacro_ValueQuery" typeId="tpf8.5015072279636592410" id="3002767456620556765" nodeInfo="nn">
@@ -3256,7 +3256,7 @@
                                   </node>
                                 </node>
                                 <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="3002767456620917150" nodeInfo="nn">
-                                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="qgg.~ConceptDescriptorBuilder%dproperties(java%dlang%dString%d%d%d)%cjetbrains%dmps%dsmodel%druntime%dimpl%dConceptDescriptorBuilder" resolveInfo="properties" />
+                                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="qgg.~ConceptDescriptorBuilder%dpropertyDescriptors(jetbrains%dmps%dsmodel%druntime%dPropertyDescriptor%d%d%d)%cjetbrains%dmps%dsmodel%druntime%dimpl%dConceptDescriptorBuilder" resolveInfo="propertyDescriptors" />
                                   <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.IfMacro" typeId="tpf8.1118773211870" id="3002767456620917151" nodeInfo="nn">
                                     <node role="conditionFunction" roleId="tpf8.1167945861827" type="tpf8.IfMacro_Condition" typeId="tpf8.1167945743726" id="3002767456620917152" nodeInfo="nn">
                                       <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="3002767456620917153" nodeInfo="sn">
@@ -3295,7 +3295,7 @@
                               </node>
                             </node>
                             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="3002767456620999872" nodeInfo="nn">
-                              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="qgg.~ConceptDescriptorBuilder%dreferences(java%dlang%dString%d%d%d)%cjetbrains%dmps%dsmodel%druntime%dimpl%dConceptDescriptorBuilder" resolveInfo="references" />
+                              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="qgg.~ConceptDescriptorBuilder%dreferenceDescriptors(jetbrains%dmps%dsmodel%druntime%dReferenceDescriptor%d%d%d)%cjetbrains%dmps%dsmodel%druntime%dimpl%dConceptDescriptorBuilder" resolveInfo="referenceDescriptors" />
                               <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.IfMacro" typeId="tpf8.1118773211870" id="3002767456620999873" nodeInfo="nn">
                                 <node role="conditionFunction" roleId="tpf8.1167945861827" type="tpf8.IfMacro_Condition" typeId="tpf8.1167945743726" id="3002767456620999874" nodeInfo="nn">
                                   <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="3002767456620999875" nodeInfo="sn">
@@ -3389,7 +3389,7 @@
                           </node>
                         </node>
                         <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="3002767456621123856" nodeInfo="nn">
-                          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="qgg.~ConceptDescriptorBuilder%dchildren(jetbrains%dmps%dsmodel%druntime%dLinkDescriptor%d%d%d)%cjetbrains%dmps%dsmodel%druntime%dimpl%dConceptDescriptorBuilder" resolveInfo="children" />
+                          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="qgg.~ConceptDescriptorBuilder%dchildDescriptors(jetbrains%dmps%dsmodel%druntime%dLinkDescriptor%d%d%d)%cjetbrains%dmps%dsmodel%druntime%dimpl%dConceptDescriptorBuilder" resolveInfo="childDescriptors" />
                           <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.IfMacro" typeId="tpf8.1118773211870" id="3002767456621123857" nodeInfo="nn">
                             <node role="conditionFunction" roleId="tpf8.1167945861827" type="tpf8.IfMacro_Condition" typeId="tpf8.1167945743726" id="3002767456621123858" nodeInfo="nn">
                               <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="3002767456621123859" nodeInfo="sn">

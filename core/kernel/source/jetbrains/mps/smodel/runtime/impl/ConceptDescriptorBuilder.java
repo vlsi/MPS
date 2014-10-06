@@ -82,7 +82,7 @@ public class ConceptDescriptorBuilder {
     return this;
   }
 
-  public ConceptDescriptorBuilder parents(SConceptId... parents) {
+  public ConceptDescriptorBuilder parentIds(SConceptId... parents) {
     this.parentIds = parents;
     return this;
   }
@@ -92,7 +92,7 @@ public class ConceptDescriptorBuilder {
     return this;
   }
 
-  public ConceptDescriptorBuilder properties(PropertyDescriptor... d) {
+  public ConceptDescriptorBuilder propertyDescriptors(PropertyDescriptor... d) {
     ownProperties.addAll(Arrays.asList(d));
     return this;
   }
@@ -107,12 +107,12 @@ public class ConceptDescriptorBuilder {
     return this;
   }
 
-  public ConceptDescriptorBuilder references(ReferenceDescriptor... d) {
+  public ConceptDescriptorBuilder referenceDescriptors(ReferenceDescriptor... d) {
     ownReferences.addAll(Arrays.asList(d));
     return this;
   }
 
-  public ConceptDescriptorBuilder reference(ReferenceDescriptor d) {
+  public ConceptDescriptorBuilder referenceDescriptor(ReferenceDescriptor d) {
     ownReferences.add(d);
     return this;
   }
@@ -123,12 +123,12 @@ public class ConceptDescriptorBuilder {
     return this;
   }
 
-  public ConceptDescriptorBuilder children(LinkDescriptor... d) {
+  public ConceptDescriptorBuilder childDescriptors(LinkDescriptor... d) {
     ownLinks.addAll(Arrays.asList(d));
     return this;
   }
 
-  public ConceptDescriptorBuilder child(LinkDescriptor d) {
+  public ConceptDescriptorBuilder childDescriptor(LinkDescriptor d) {
     ownLinks.add(d);
     return this;
   }
