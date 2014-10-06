@@ -16,16 +16,17 @@
 package jetbrains.mps.smodel.language;
 
 import jetbrains.mps.components.CoreComponent;
-import jetbrains.mps.smodel.adapter.structure.concept.SConceptAdapterById;
-import jetbrains.mps.smodel.adapter.structure.link.SContainmentLinkAdapterById;
-import jetbrains.mps.smodel.adapter.structure.language.SLanguageAdapter;
-import jetbrains.mps.smodel.adapter.structure.property.SPropertyAdapterById;
-import jetbrains.mps.smodel.adapter.structure.ref.SReferenceLinkAdapterById;
 import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import jetbrains.mps.smodel.adapter.ids.SContainmentLinkId;
 import jetbrains.mps.smodel.adapter.ids.SLanguageId;
 import jetbrains.mps.smodel.adapter.ids.SPropertyId;
 import jetbrains.mps.smodel.adapter.ids.SReferenceLinkId;
+import jetbrains.mps.smodel.adapter.structure.concept.SConceptAdapterById;
+import jetbrains.mps.smodel.adapter.structure.language.SLanguageAdapterById;
+import jetbrains.mps.smodel.adapter.structure.language.SLanguageAdapterByName;
+import jetbrains.mps.smodel.adapter.structure.link.SContainmentLinkAdapterById;
+import jetbrains.mps.smodel.adapter.structure.property.SPropertyAdapterById;
+import jetbrains.mps.smodel.adapter.structure.ref.SReferenceLinkAdapterById;
 import org.jetbrains.mps.openapi.language.MetaFactory;
 import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
@@ -49,7 +50,7 @@ public class MetaFactoryImpl extends MetaFactory implements CoreComponent {
 
   @Override
   public String serializeLanguage(SLanguage language) {
-    return ((SLanguageAdapter) language).getId().serialize();
+    return ((SLanguageAdapterById) language).getId().serialize();
   }
 
   @Override
@@ -74,7 +75,7 @@ public class MetaFactoryImpl extends MetaFactory implements CoreComponent {
 
   @Override
   public SLanguage deserializeLanguage(String language) {
-    return new SLanguageAdapter(SLanguageId.deserialize(language));
+    return new SLanguageAdapterByName(SLanguageId.deserialize(language));
   }
 
   @Override

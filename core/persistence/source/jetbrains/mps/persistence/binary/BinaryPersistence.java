@@ -23,7 +23,8 @@ import jetbrains.mps.smodel.DefaultSModel;
 import jetbrains.mps.smodel.LazySModel;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.adapter.idconvert.IdMigrationNameRegistry;
-import jetbrains.mps.smodel.adapter.structure.language.SLanguageAdapter;
+import jetbrains.mps.smodel.adapter.structure.language.SLanguageAdapterById;
+import jetbrains.mps.smodel.adapter.structure.language.SLanguageAdapterByName;
 import jetbrains.mps.smodel.DebugRegistryUtil;
 import jetbrains.mps.smodel.SModelHeader;
 import jetbrains.mps.smodel.loading.ModelLoadResult;
@@ -276,7 +277,7 @@ public class BinaryPersistence {
     //save used languages info
     os.writeInt(languages.size());
     for (SLanguage languageId : languages) {
-      Language lang = new SLanguageAdapter(languageId).getSourceModule();
+      Language lang = new SLanguageAdapterById(languageId).getSourceModule();
       String name = lang != null ? lang.getModuleName() : debugRegistry.getLanguageName(languageId);
       os.writeString(languageId.serialize());
       os.writeString(name);

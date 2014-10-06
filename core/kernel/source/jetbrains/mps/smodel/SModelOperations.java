@@ -24,7 +24,8 @@ import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager.Deptype;
 import jetbrains.mps.project.dependency.modules.LanguageDependenciesManager;
 import jetbrains.mps.smodel.SModel.ImportElement;
 import jetbrains.mps.smodel.adapter.ids.MetaIdByDeclaration;
-import jetbrains.mps.smodel.adapter.structure.language.SLanguageAdapter;
+import jetbrains.mps.smodel.adapter.structure.language.SLanguageAdapterById;
+import jetbrains.mps.smodel.adapter.structure.language.SLanguageAdapterByName;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
@@ -415,7 +416,7 @@ public class SModelOperations {
     Set<Language> languages = new LinkedHashSet<Language>();
 
     for (SLanguage lang : model.usedLanguages()) {
-      Language language = new SLanguageAdapter(lang).getSourceModule();
+      Language language = new SLanguageAdapterById(lang).getSourceModule();
 
       if (language != null) {
         languages.add(language);

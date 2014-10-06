@@ -18,7 +18,7 @@ package jetbrains.mps.smodel.language;
 import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.smodel.adapter.structure.concept.SConceptAdapterById;
 import jetbrains.mps.smodel.adapter.structure.concept.SInterfaceConceptAdapterByName;
-import jetbrains.mps.smodel.adapter.structure.language.SLanguageAdapter;
+import jetbrains.mps.smodel.adapter.structure.language.SLanguageAdapterByName;
 import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import jetbrains.mps.smodel.runtime.illegal.IllegalConceptDescriptor;
@@ -157,6 +157,6 @@ public class ConceptRepository extends SConceptRepository implements CoreCompone
   @Deprecated
   @Override
   public SLanguage getLanguage(@NotNull String qualifiedName) {
-    return new SLanguageAdapter(qualifiedName);
+    return new SLanguageAdapterByName(qualifiedName);
   }
 }

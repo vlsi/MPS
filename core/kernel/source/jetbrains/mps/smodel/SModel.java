@@ -25,7 +25,8 @@ import jetbrains.mps.project.dependency.ModelDependenciesManager;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.project.structure.modules.RefUpdateUtil;
 import jetbrains.mps.smodel.adapter.ids.MetaIdByDeclaration;
-import jetbrains.mps.smodel.adapter.structure.language.SLanguageAdapter;
+import jetbrains.mps.smodel.adapter.structure.language.SLanguageAdapterById;
+import jetbrains.mps.smodel.adapter.structure.language.SLanguageAdapterByName;
 import jetbrains.mps.smodel.descriptor.RefactorableSModelDescriptor;
 import jetbrains.mps.smodel.event.SModelChildEvent;
 import jetbrains.mps.smodel.event.SModelDevKitEvent;
@@ -627,7 +628,7 @@ public class SModel implements SModelData {
     }
 
     for (SLanguage lang : myUsedLanguages) {
-      int version = new SLanguageAdapter(lang).getSourceModule().getLanguageVersion();
+      int version = new SLanguageAdapterById(lang).getSourceModule().getLanguageVersion();
       myNewImplicitLanguagesIds.put(lang, version);
     }
 

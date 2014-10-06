@@ -24,7 +24,8 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModel.ImportElement;
 import jetbrains.mps.smodel.SModelHeader;
 import jetbrains.mps.smodel.adapter.idconvert.IdMigrationNameRegistry;
-import jetbrains.mps.smodel.adapter.structure.language.SLanguageAdapter;
+import jetbrains.mps.smodel.adapter.structure.language.SLanguageAdapterById;
+import jetbrains.mps.smodel.adapter.structure.language.SLanguageAdapterByName;
 import jetbrains.mps.smodel.persistence.def.DocUtil;
 import jetbrains.mps.smodel.persistence.def.FilePerRootFormatUtil;
 import jetbrains.mps.smodel.persistence.def.IModelWriter;
@@ -111,7 +112,7 @@ public class ModelWriter9 implements IModelWriter {
     //save used languages info
     for (SLanguage ve : IterableUtil.merge(sourceModel.usedLanguages(), sourceModel.implicitlyUsedLanguagesWithVersions().keySet())) {
       SLanguage id = ve;
-      Language lang = new SLanguageAdapter(id).getSourceModule();
+      Language lang = new SLanguageAdapterById(id).getSourceModule();
       String name = lang != null ? lang.getModuleName() : debugRegistry.getLanguageName(id);
 
       Element langElement = new Element(ModelPersistence9.DEBUG_INFO_LANG);
