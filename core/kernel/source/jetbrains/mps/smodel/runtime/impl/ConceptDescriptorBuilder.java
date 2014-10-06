@@ -15,6 +15,12 @@
  */
 package jetbrains.mps.smodel.runtime.impl;
 
+import jetbrains.mps.smodel.adapter.ids.SContainmentLinkId;
+import jetbrains.mps.smodel.adapter.ids.SPropertyId;
+import jetbrains.mps.smodel.adapter.ids.SReferenceLinkId;
+import jetbrains.mps.smodel.runtime.BaseLinkDescriptor;
+import jetbrains.mps.smodel.runtime.BasePropertyDescriptor;
+import jetbrains.mps.smodel.runtime.BaseReferenceDescriptor;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import jetbrains.mps.smodel.runtime.LinkDescriptor;
 import jetbrains.mps.smodel.runtime.PropertyDescriptor;
@@ -24,7 +30,6 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.language.SConceptId;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -92,13 +97,10 @@ public class ConceptDescriptorBuilder {
     return this;
   }
 
-  public ConceptDescriptorBuilder propertyDescriptors(PropertyDescriptor... d) {
-    ownProperties.addAll(Arrays.asList(d));
-    return this;
-  }
-
-  public ConceptDescriptorBuilder property(PropertyDescriptor d) {
-    ownProperties.add(d);
+  public ConceptDescriptorBuilder propertyDescriptors(Prop... d) {
+    for (Prop p : d) {
+      ownProperties.add(new BasePropertyDescriptor(new SPropertyId(id, p.myId), p.myName));
+    }
     return this;
   }
 
@@ -107,13 +109,10 @@ public class ConceptDescriptorBuilder {
     return this;
   }
 
-  public ConceptDescriptorBuilder referenceDescriptors(ReferenceDescriptor... d) {
-    ownReferences.addAll(Arrays.asList(d));
-    return this;
-  }
-
-  public ConceptDescriptorBuilder referenceDescriptor(ReferenceDescriptor d) {
-    ownReferences.add(d);
+  public ConceptDescriptorBuilder referenceDescriptors(Ref... d) {
+    for (Ref r : d) {
+      ownReferences.add(new BaseReferenceDescriptor(new SReferenceLinkId(id, r.myId), r.myName, r.myTargetConcept, r.myIsOptional));
+    }
     return this;
   }
 
@@ -123,13 +122,10 @@ public class ConceptDescriptorBuilder {
     return this;
   }
 
-  public ConceptDescriptorBuilder childDescriptors(LinkDescriptor... d) {
-    ownLinks.addAll(Arrays.asList(d));
-    return this;
-  }
-
-  public ConceptDescriptorBuilder childDescriptor(LinkDescriptor d) {
-    ownLinks.add(d);
+  public ConceptDescriptorBuilder childDescriptors(Link... d) {
+    for (Link l : d) {
+      ownLinks.add(new BaseLinkDescriptor(new SContainmentLinkId(id, l.myId), l.myName, l.myTargetConcept, l.myIsOptional, l.myIsMultiple, l.myIsUnordered));
+    }
     return this;
   }
 
@@ -190,5 +186,47 @@ public class ConceptDescriptorBuilder {
         conceptAlias == null ? "" : conceptAlias, shortDescription == null ? "" : shortDescription,
         helpUrl == null ? "" : helpUrl,
         staticScope == null ? StaticScope.GLOBAL : staticScope);
+  }
+
+  public static class Link {
+    final long myId;
+    final String myName;
+    final SConceptId myTargetConcept;
+    final boolean myIsOptional;
+    final boolean myIsMultiple;
+    final boolean myIsUnordered;
+
+    public Link(long id, String name, SConceptId targetConcept, boolean isOptional, boolean isMultiple, boolean isUnordered) {
+      myId = id;
+      myName = name;
+      myTargetConcept = targetConcept;
+      myIsOptional = isOptional;
+      myIsMultiple = isMultiple;
+      myIsUnordered = isUnordered;
+    }
+  }
+
+  public static class Prop {
+    final long myId;
+    final String myName;
+
+    public Prop(long id, String name) {
+      myId = id;
+      myName = name;
+    }
+  }
+
+  public static class Ref {
+    final long myId;
+    final String myName;
+    final SConceptId myTargetConcept;
+    final boolean myIsOptional;
+
+    public Ref(long id, String name, SConceptId targetConcept, boolean isOptional) {
+      myId = id;
+      myName = name;
+      myTargetConcept = targetConcept;
+      myIsOptional = isOptional;
+    }
   }
 }
