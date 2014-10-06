@@ -77,7 +77,7 @@ public class DebugRegistry implements CoreComponent {
     return pair == null ? null : pair.o2;
   }
 
-  public synchronized String getChildName(SContainmentLinkId linkId) {
+  public synchronized String getLinkName(SContainmentLinkId linkId) {
     Pair<SConceptId, String> pair = myChildRoles.get(linkId);
     return pair == null ? null : pair.o2;
   }
@@ -106,7 +106,7 @@ public class DebugRegistry implements CoreComponent {
     myLinks.put(linkId, new Pair<SConceptId, String>(linkId.getConceptId(), name));
   }
 
-  public synchronized void addChildName(SContainmentLinkId linkId, String name) {
+  public synchronized void addLinkName(SContainmentLinkId linkId, String name) {
     myChildRoles.put(linkId, new Pair<SConceptId, String>(linkId.getConceptId(), name));
   }
 
