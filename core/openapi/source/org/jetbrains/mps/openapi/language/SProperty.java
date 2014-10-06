@@ -15,6 +15,9 @@
  */
 package org.jetbrains.mps.openapi.language;
 
+import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.model.SNode;
+
 /**
  * Represents a concept property
  */
@@ -30,4 +33,7 @@ public interface SProperty {
    * Will be used to check validity of potential values.
    */
   boolean isValid(String value);
+
+  @Nullable
+  SNode getPropertyNode();
 }
