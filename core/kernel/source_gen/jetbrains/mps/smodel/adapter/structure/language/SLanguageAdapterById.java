@@ -21,7 +21,7 @@ import org.jetbrains.annotations.NotNull;
 public class SLanguageAdapterById {
   private SLanguageId myLanguage;
 
-  public SLanguageAdapter(@NotNull SLanguageId language) {
+  public SLanguageAdapterById(@NotNull SLanguageId language) {
     this.myLanguage = language;
   }
 
