@@ -20,12 +20,12 @@ import jetbrains.mps.classloading.MPSClassesListener;
 import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.Language;
-import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.adapter.ids.MetaIdByDeclaration;
+import jetbrains.mps.smodel.adapter.ids.SLanguageId;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.Nullable;
-import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.module.SModule;
 
 import java.util.Collection;
@@ -52,6 +52,7 @@ public class LanguageRegistry implements CoreComponent, MPSClassesListener {
   }
 
   private Map<String, LanguageRuntime> myLanguages = new HashMap<String, LanguageRuntime>();
+  private Map<SLanguageId, LanguageRuntime> myLanguagesById = new HashMap<SLanguageId, LanguageRuntime>();
 
   private final List<LanguageRegistryListener> myLanguageListeners = new CopyOnWriteArrayList<LanguageRegistryListener>();
 
@@ -77,6 +78,7 @@ public class LanguageRegistry implements CoreComponent, MPSClassesListener {
       public void run() {
         notifyUnload(myLanguages.values());
         myLanguages.clear();
+        myLanguagesById.clear();
       }
     });
     myClassLoaderManager.removeClassesHandler(this);
@@ -133,8 +135,8 @@ public class LanguageRegistry implements CoreComponent, MPSClassesListener {
   }
 
   @Nullable
-  public LanguageRuntime getLanguage(SLanguage id) {
-    return getLanguage(MPSModuleRepository.getInstance().getDebugRegistry().getLanguageName(id));
+  public LanguageRuntime getLanguage(SLanguageId id) {
+    return myLanguagesById.get(id.getId());
   }
 
   @Nullable
@@ -182,6 +184,7 @@ public class LanguageRegistry implements CoreComponent, MPSClassesListener {
 
     for (LanguageRuntime languageRuntime : languagesToUnload) {
       myLanguages.remove(languageRuntime.getNamespace());
+      myLanguagesById.remove(languageRuntime.getId());
     }
     reinitialize();
   }
@@ -196,6 +199,7 @@ public class LanguageRegistry implements CoreComponent, MPSClassesListener {
           LanguageRuntime runtime = createRuntime((Language) module);
           if (runtime != null) {
             myLanguages.put(namespace, runtime);
+            myLanguagesById.put(MetaIdByDeclaration.getLanguageId(((Language) module)),runtime);
             loadedRuntimes.add(runtime);
           }
         } else {
