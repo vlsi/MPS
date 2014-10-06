@@ -15,9 +15,6 @@
  */
 package jetbrains.mps.smodel.runtime.impl;
 
-import jetbrains.mps.smodel.adapter.ids.SContainmentLinkId;
-import jetbrains.mps.smodel.adapter.ids.SPropertyId;
-import jetbrains.mps.smodel.adapter.ids.SReferenceLinkId;
 import jetbrains.mps.smodel.runtime.BaseLinkDescriptor;
 import jetbrains.mps.smodel.runtime.BasePropertyDescriptor;
 import jetbrains.mps.smodel.runtime.BaseReferenceDescriptor;
@@ -28,6 +25,9 @@ import jetbrains.mps.smodel.runtime.ReferenceDescriptor;
 import jetbrains.mps.smodel.runtime.StaticScope;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.language.SConceptId;
+import org.jetbrains.mps.openapi.language.SContainmentLinkId;
+import org.jetbrains.mps.openapi.language.SPropertyId;
+import org.jetbrains.mps.openapi.language.SReferenceLinkId;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -15,7 +15,11 @@
  */
 package jetbrains.mps.smodel.adapter.ids;
 
+import org.jetbrains.mps.openapi.language.SConceptId;
 import org.jetbrains.mps.openapi.language.SContainmentLinkId;
+import org.jetbrains.mps.openapi.language.SLanguageId;
+import org.jetbrains.mps.openapi.language.SPropertyId;
+import org.jetbrains.mps.openapi.language.SReferenceLinkId;
 
 import java.util.UUID;
 
@@ -33,6 +37,6 @@ public abstract class MetaIdFactory {
   }
 
   public static  SContainmentLinkId linkId(UUID lang, long concept, long link){
-    return new jetbrains.mps.smodel.adapter.ids.SContainmentLinkId(conceptId(lang, concept),link);
+    return new SContainmentLinkId(conceptId(lang, concept),link);
   }
 }
