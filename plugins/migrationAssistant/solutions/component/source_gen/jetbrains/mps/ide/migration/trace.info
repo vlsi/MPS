@@ -14,25 +14,25 @@
     <file name="MigrationManager.java">
       <node id="6781485246382121734" at="7,0,8,0" concept="5" trace="isMigrationRequired#()Z" />
       <node id="6781485246382121738" at="8,0,9,0" concept="5" trace="nextStep#()Ljetbrains/mps/ide/migration/MigrationManager/MigrationState;" />
-      <node id="6781485246382121695" at="11,0,12,0" concept="5" trace="getDescription#()Ljava/lang/String;" />
-      <node id="6781485246382121699" at="12,0,13,0" concept="5" trace="execute#()Z" />
-      <node id="6781485246382121707" at="15,0,16,0" concept="5" trace="getConflictingScripts#()Ljava/lang/Iterable;" />
-      <node id="6781485246382121712" at="16,0,17,0" concept="5" trace="forceExecution#(Ljetbrains/mps/ide/migration/ScriptApplied;)Z" />
-      <node id="6781485246382121726" at="21,0,22,0" concept="5" trace="getErrorMessage#()Ljava/lang/String;" />
+      <node id="6781485246382121695" at="12,0,13,0" concept="5" trace="getDescription#()Ljava/lang/String;" />
+      <node id="6781485246382121699" at="13,0,14,0" concept="5" trace="execute#()Z" />
+      <node id="6781485246382121707" at="16,0,17,0" concept="5" trace="getConflictingScripts#()Ljava/lang/Iterable;" />
+      <node id="6781485246382121712" at="17,0,18,0" concept="5" trace="forceExecution#(Ljetbrains/mps/ide/migration/ScriptApplied;)Z" />
+      <node id="6781485246382121726" at="22,0,23,0" concept="5" trace="getErrorMessage#()Ljava/lang/String;" />
       <scope id="6781485246382121734" at="7,0,8,0" />
       <scope id="6781485246382121738" at="8,0,9,0" />
-      <scope id="6781485246382121695" at="11,0,12,0" />
-      <scope id="6781485246382121699" at="12,0,13,0" />
-      <scope id="6781485246382121707" at="15,0,16,0" />
-      <scope id="6781485246382121712" at="16,0,17,0">
+      <scope id="6781485246382121695" at="12,0,13,0" />
+      <scope id="6781485246382121699" at="13,0,14,0" />
+      <scope id="6781485246382121707" at="16,0,17,0" />
+      <scope id="6781485246382121712" at="17,0,18,0">
         <var name="next" id="6781485246382121714" />
       </scope>
-      <scope id="6781485246382121726" at="21,0,22,0" />
-      <unit id="6781485246382121718" at="18,0,20,0" name="jetbrains.mps.ide.migration.MigrationManager.MigrationState$Finished" />
-      <unit id="6781485246382121722" at="20,0,23,0" name="jetbrains.mps.ide.migration.MigrationManager.MigrationState$Error" />
-      <unit id="6781485246382121691" at="10,0,14,0" name="jetbrains.mps.ide.migration.MigrationManager.MigrationState$Step" />
-      <unit id="6781485246382121703" at="14,0,18,0" name="jetbrains.mps.ide.migration.MigrationManager.MigrationState$Conflict" />
-      <unit id="6781485246382121688" at="9,0,24,0" name="jetbrains.mps.ide.migration.MigrationManager$MigrationState" />
+      <scope id="6781485246382121726" at="22,0,23,0" />
+      <unit id="6781485246382121688" at="9,0,11,0" name="jetbrains.mps.ide.migration.MigrationManager$MigrationState" />
+      <unit id="6781485246382121718" at="19,0,21,0" name="jetbrains.mps.ide.migration.MigrationManager$Finished" />
+      <unit id="6781485246382121722" at="21,0,24,0" name="jetbrains.mps.ide.migration.MigrationManager$Error" />
+      <unit id="6781485246382121691" at="11,0,15,0" name="jetbrains.mps.ide.migration.MigrationManager$Step" />
+      <unit id="6781485246382121703" at="15,0,19,0" name="jetbrains.mps.ide.migration.MigrationManager$Conflict" />
       <unit id="6781485246382121685" at="6,0,25,0" name="jetbrains.mps.ide.migration.MigrationManager" />
     </file>
   </root>

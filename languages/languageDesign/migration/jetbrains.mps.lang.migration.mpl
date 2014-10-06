@@ -32,7 +32,6 @@
         <dependency reexport="false">fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)</dependency>
         <dependency reexport="false" scope="design">857d0a79-6f44-4f46-84ed-9c5b42632011(jetbrains.mps.baseLanguage.closures#1199623535494)</dependency>
         <dependency reexport="false" scope="design">5f9babc9-8d5d-4825-8e61-17b241ee6272(jetbrains.mps.baseLanguage.collections#1151699677197)</dependency>
-        <dependency reexport="false">7726760c-95f5-4242-b36a-e069417e9d94(jetbrains.mps.console.blCommand.runtime)</dependency>
         <dependency reexport="false">2d3c70e9-aab2-4870-8d8d-6036800e4103(jetbrains.mps.kernel)</dependency>
         <dependency reexport="false">c7d5b9dd-a05f-4be2-bc73-f2e16994cc67(jetbrains.mps.lang.classLike)</dependency>
         <dependency reexport="false">3ac18869-0828-4401-abad-822a47bf83f1(jetbrains.mps.lang.descriptor#9020561928507175817)</dependency>
@@ -65,8 +64,8 @@
         <language id="df345b11-b8c7-4213-ac66-48d2a9b75d88" version="0" />
         <language id="ed6d7656-532c-4bc2-81d1-af945aeb8280" version="0" />
         <language id="443f4c36-fcf5-4eb6-9500-8d06ed259e3e" version="0" />
-        <language id="fe9d76d7-5809-45c9-ae28-a40915b4d6ff" version="0" />
         <language id="3a13115c-633c-4c5c-bbcc-75c4219e9555" version="0" />
+        <language id="fe9d76d7-5809-45c9-ae28-a40915b4d6ff" version="0" />
         <language id="9ded098b-ad6a-4657-bfd9-48636cfe8bc3" version="0" />
         <language id="fd392034-7849-419d-9071-12563d152375" version="0" />
         <language id="f2801650-65d5-424e-bb1b-463a8781b786" version="0" />
@@ -191,8 +190,6 @@
     <dependency reexport="false">3a13115c-633c-4c5c-bbcc-75c4219e9555(jetbrains.mps.lang.quotation)</dependency>
     <dependency reexport="false">d7eb0a2a-bd50-4576-beae-e4a89db35f20(jetbrains.mps.lang.scopes.runtime)</dependency>
     <dependency reexport="false">c72da2b9-7cce-4447-8389-f407dc1158b7(jetbrains.mps.lang.structure)</dependency>
-    <dependency reexport="false">fd5162e1-98b8-43e1-a33f-62e46fc97404(jetbrains.mps.migration.actions)</dependency>
-    <dependency reexport="false">a5b1c28d-abeb-49a6-a58c-559039616d64(jetbrains.mps.migration.component)</dependency>
     <dependency reexport="false">9a4afe51-f114-4595-b5df-048ce3c596be(jetbrains.mps.runtime)</dependency>
   </dependencies>
   <usedLanguages>
@@ -211,13 +208,13 @@
   <languageVersions>
     <language id="c72da2b9-7cce-4447-8389-f407dc1158b7" version="0" />
     <language id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" version="0" />
-    <language id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd" version="0" />
-    <language id="af65afd8-f0dd-4942-87d9-63a55f2a9db1" version="0" />
     <language id="d7a92d38-f7db-40d0-8431-763b0c3c9f20" version="0" />
-    <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" version="0" />
+    <language id="af65afd8-f0dd-4942-87d9-63a55f2a9db1" version="0" />
+    <language id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd" version="0" />
     <language id="3ecd7c84-cde3-45de-886c-135ecc69b742" version="0" />
-    <language id="b401a680-8325-4110-8fd3-84331ff25bef" version="0" />
+    <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" version="0" />
     <language id="a247e09e-2435-45ba-b8d2-07e93feba96a" version="0" />
+    <language id="b401a680-8325-4110-8fd3-84331ff25bef" version="0" />
     <language id="b83431fe-5c8f-40bc-8a36-65e25f4dd253" version="0" />
     <language id="df345b11-b8c7-4213-ac66-48d2a9b75d88" version="0" />
     <language id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" version="0" />
@@ -233,9 +230,9 @@
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" version="0" />
     <language id="d8f591ec-4d86-4af2-9f92-a9e93c803ffa" version="0" />
     <language id="d7706f63-9be2-479c-a3da-ae92af1e64d5" version="0" />
-    <language id="28f9e497-3b42-4291-aeba-0a1039153ab1" version="0" />
-    <language id="90746344-04fd-4286-97d5-b46ae6a81709" version="0" />
     <language id="7a5dda62-9140-4668-ab76-d5ed1746f2b2" version="0" />
+    <language id="90746344-04fd-4286-97d5-b46ae6a81709" version="0" />
+    <language id="28f9e497-3b42-4291-aeba-0a1039153ab1" version="0" />
     <language id="7fa12e9c-b949-4976-b4fa-19accbc320b4" version="0" />
     <language id="ed6d7656-532c-4bc2-81d1-af945aeb8280" version="0" />
     <language id="64d34fcd-ad02-4e73-aff8-a581124c2e30" version="0" />

@@ -70,6 +70,6 @@ public class check_ClassLikeMethod_NonTypesystemRule extends AbstractNonTypesyst
     return false;
   }
   private static boolean neq_p6nv7a_a0a1a0a2a1(Object a, Object b) {
-    return !((a != null ? a.equals(b) : a == b));
+    return !(((a != null ? a.equals(b) : a == b)));
   }
 }

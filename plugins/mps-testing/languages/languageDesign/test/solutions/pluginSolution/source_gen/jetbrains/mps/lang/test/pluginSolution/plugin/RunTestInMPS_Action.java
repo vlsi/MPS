@@ -64,9 +64,6 @@ public class RunTestInMPS_Action extends BaseAction {
     }
     {
       SModel modelDescriptor = event.getData(MPSCommonDataKeys.CONTEXT_MODEL);
-      if (modelDescriptor == null) {
-        return false;
-      }
       MapSequence.fromMap(_params).put("model", modelDescriptor);
     }
     if (MapSequence.fromMap(_params).get("model") == null) {
