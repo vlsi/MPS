@@ -16,17 +16,21 @@
 package jetbrains.mps.persistence.binary;
 
 import jetbrains.mps.extapi.model.GeneratableSModel;
+import jetbrains.mps.persistence.IdSerializer;
 import jetbrains.mps.persistence.PersistenceRegistry;
-import jetbrains.mps.smodel.Language;
-import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.smodel.DebugRegistry;
 import jetbrains.mps.smodel.DefaultSModel;
+import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.LazySModel;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.adapter.idconvert.IdMigrationNameRegistry;
-import jetbrains.mps.smodel.adapter.structure.language.SLanguageAdapterById;
-import jetbrains.mps.smodel.adapter.structure.language.SLanguageAdapterByName;
-import jetbrains.mps.smodel.DebugRegistryUtil;
 import jetbrains.mps.smodel.SModelHeader;
+import jetbrains.mps.smodel.adapter.ids.SConceptId;
+import jetbrains.mps.smodel.adapter.ids.SContainmentLinkId;
+import jetbrains.mps.smodel.adapter.ids.SLanguageId;
+import jetbrains.mps.smodel.adapter.ids.SPropertyId;
+import jetbrains.mps.smodel.adapter.ids.SReferenceLinkId;
+import jetbrains.mps.smodel.adapter.structure.language.SLanguageAdapterById;
 import jetbrains.mps.smodel.loading.ModelLoadResult;
 import jetbrains.mps.smodel.loading.ModelLoadingState;
 import jetbrains.mps.smodel.persistence.def.ModelReadException;
@@ -46,7 +50,6 @@ import org.jetbrains.mps.openapi.language.SReferenceLink;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeId;
-import org.jetbrains.mps.openapi.module.DebugRegistry;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.persistence.StreamDataSource;
 import org.jetbrains.mps.openapi.util.Consumer;
@@ -167,12 +170,11 @@ public class BinaryPersistence {
   }
 
   private static void loadDebugInfo(ModelInputStream is) throws IOException {
-    DebugRegistry debugRegistry = MPSModuleRepository.getInstance().getDebugRegistry();
 
     //languages info
     int languagesSize = is.readInt();
     for (int i = 0; i < languagesSize; i++) {
-      debugRegistry.addLanguageName(SLanguage.deserialize(is.readString()), is.readString());
+      DebugRegistry.getInstance().addLanguageName(SLanguageId.deserialize(is.readString()), is.readString());
     }
 
     //  devkits??
@@ -180,31 +182,31 @@ public class BinaryPersistence {
     //models info
     int modelsSize = is.readInt();
     for (int i = 0; i < modelsSize; i++) {
-      debugRegistry.addModelName(is.readModelReference(), is.readString());
+      DebugRegistry.getInstance().addModelName(is.readModelReference(), is.readString());
     }
 
     // write concepts
     int conceptsSize = is.readInt();
     for (int i = 0; i < conceptsSize; i++) {
-      debugRegistry.addConceptName(SConcept.deserialize(is.readString()), is.readString());
+      DebugRegistry.getInstance().addConceptName(SConceptId.deserialize(is.readString()), is.readString());
     }
 
     // write properties
     int propertiesSize = is.readInt();
     for (int i = 0; i < propertiesSize; i++) {
-      debugRegistry.addPropertyName(SProperty.deserialize(is.readString()), is.readString());
+      DebugRegistry.getInstance().addPropertyName(SPropertyId.deserialize(is.readString()), is.readString());
     }
 
     // write reference roles
     int referencesSize = is.readInt();
     for (int i = 0; i < referencesSize; i++) {
-      debugRegistry.addRefName(SReferenceLink.deserialize(is.readString()), is.readString());
+      DebugRegistry.getInstance().addRefName(SReferenceLinkId.deserialize(is.readString()), is.readString());
     }
 
     // write child roles
     int childrenSize = is.readInt();
     for (int i = 0; i < childrenSize; i++) {
-      debugRegistry.addRefName(SContainmentLink.deserialize(is.readString()), is.readString());
+      DebugRegistry.getInstance().addRefName(SContainmentLinkId.deserialize(is.readString()), is.readString());
     }
   }
 
@@ -272,15 +274,12 @@ public class BinaryPersistence {
   }
 
   private static void saveDebugInfo(Collection<SLanguage> languages, Collection<ImportElement> importedModels, Iterable<SNode> rootNodes, ModelOutputStream os) throws IOException {
-    DebugRegistry debugRegistry = MPSModuleRepository.getInstance().getDebugRegistry();
 
     //save used languages info
     os.writeInt(languages.size());
-    for (SLanguage languageId : languages) {
-      Language lang = new SLanguageAdapterById(languageId).getSourceModule();
-      String name = lang != null ? lang.getModuleName() : debugRegistry.getLanguageName(languageId);
-      os.writeString(languageId.serialize());
-      os.writeString(name);
+    for (SLanguage language : languages) {
+      os.writeString(IdSerializer.serialize(language));
+      os.writeString(language.getQualifiedName());
     }
 
     //  devkits??
@@ -290,7 +289,7 @@ public class BinaryPersistence {
     for (ImportElement ie : importedModels) {
       SModelReference ref = ie.getModelReference();
       org.jetbrains.mps.openapi.model.SModel model = ref.resolve(MPSModuleRepository.getInstance());
-      String name = model != null ? model.getModelName() : debugRegistry.getModelName(ref);
+      String name = model != null ? model.getModelName() : DebugRegistry.getInstance().getModelName(ref);
 
       os.writeModelReference(ref);
       os.writeString(name);
@@ -309,42 +308,42 @@ public class BinaryPersistence {
     // write concepts
     os.writeInt(conceptIds.size());
     for (Entry<SConcept, String> e : conceptIds.entrySet()) {
-      os.writeString(e.getKey().serialize());
+      os.writeString(IdSerializer.serialize(e.getKey()));
       os.writeString(e.getValue());
     }
 
     // write properties
     os.writeInt(propIds.size());
     for (Entry<SProperty, String> e : propIds.entrySet()) {
-      os.writeString(e.getKey().serialize());
+      os.writeString(IdSerializer.serialize(e.getKey()));
       os.writeString(e.getValue());
     }
 
     // write reference roles
     os.writeInt(refIds.size());
     for (Entry<SReferenceLink, String> e : refIds.entrySet()) {
-      os.writeString(e.getKey().serialize());
+      os.writeString(IdSerializer.serialize(e.getKey()));
       os.writeString(e.getValue());
     }
 
     // write child roles
     os.writeInt(roleIds.size());
     for (Entry<SContainmentLink, String> e : roleIds.entrySet()) {
-      os.writeString(e.getKey().serialize());
+      os.writeString(IdSerializer.serialize(e.getKey()));
       os.writeString(e.getValue());
     }
   }
 
   private static void saveUsedLanguagesList(Map<SLanguage, Integer> refs, Map<SLanguage, Integer> implicit, ModelOutputStream os) throws IOException {
     os.writeInt(refs.size() + implicit.size());
-    for (Entry<SLanguage, Integer> ref : refs.entrySet()) {
-      os.writeString(ref.getKey().serialize());
-      os.writeInt(ref.getValue());
+    for (Entry<SLanguage, Integer> e : refs.entrySet()) {
+      os.writeString(IdSerializer.serialize(e.getKey()));
+      os.writeInt(e.getValue());
       os.writeBoolean(false);
     }
-    for (Entry<SLanguage, Integer> ref : implicit.entrySet()) {
-      os.writeString(ref.getKey().serialize());
-      os.writeInt(ref.getValue());
+    for (Entry<SLanguage, Integer> e : implicit.entrySet()) {
+      os.writeString(IdSerializer.serialize(e.getKey()));
+      os.writeInt(e.getValue());
       os.writeBoolean(true);
     }
   }
