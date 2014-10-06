@@ -15,33 +15,24 @@
  */
 package jetbrains.mps.smodel.adapter.structure.language;
 
-import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.smodel.Language;
-import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.smodel.adapter.ids.SLanguageId;
+import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.smodel.language.LanguageRegistry;
 import jetbrains.mps.smodel.language.LanguageRuntime;
 import org.jetbrains.annotations.NotNull;
 
-public class SLanguageAdapterById extends SLanguageAdapter{
-  private SLanguageId myLanguage;
-
-  public SLanguageAdapterById(@NotNull SLanguageId language, @NotNull String fqName) {
-    super(fqName);
-    this.myLanguage = language;
-  }
-
-  public SLanguageId getId() {
-    return myLanguage;
+public class SLanguageAdapterByName extends SLanguageAdapter {
+  public SLanguageAdapterByName(@NotNull String language) {
+    super(language);
   }
 
   @Override
   public LanguageRuntime getLanguageRuntime() {
-    return LanguageRegistry.getInstance().getLanguage(myLanguage);
+    return LanguageRegistry.getInstance().getLanguage(myLanguageFqName);
   }
 
   @Override
   public Language getSourceModule() {
-    return ((Language) MPSModuleRepository.getInstance().getModule(ModuleId.regular(myLanguage.getId())));
+    return ModuleRepositoryFacade.getInstance().getModule(myLanguageFqName, Language.class);
   }
 }

@@ -1,46 +1,39 @@
 package jetbrains.mps.smodel.adapter.structure.language;
 
-import jetbrains.mps.smodel.adapter.ids.MetaIdByDeclaration;
-import jetbrains.mps.smodel.adapter.ids.SLanguageId;
-import jetbrains.mps.smodel.adapter.structure.concept.SInterfaceConceptAdapterByName;
-import org.jetbrains.mps.openapi.language.SLanguage;
-import org.jetbrains.annotations.NotNull;
-import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import jetbrains.mps.smodel.language.LanguageRuntime;
-import jetbrains.mps.smodel.language.LanguageRegistry;
-import java.util.Collections;
-
-import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.smodel.LanguageAspect;
-import java.util.List;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import java.util.ArrayList;
-import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.internal.collections.runtime.ISelector;
-import org.jetbrains.mps.openapi.language.SConcept;
-import org.jetbrains.mps.openapi.language.SConceptRepository;
-import jetbrains.mps.util.NameUtil;
-import org.jetbrains.mps.openapi.language.SEnumeration;
-import org.jetbrains.mps.openapi.module.SModuleReference;
-import java.util.Set;
-import java.util.HashSet;
-import jetbrains.mps.smodel.Language;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.project.dependency.modules.LanguageDependenciesManager;
+import jetbrains.mps.smodel.Language;
+import jetbrains.mps.smodel.LanguageAspect;
+import jetbrains.mps.smodel.SNodeUtil;
+import jetbrains.mps.smodel.adapter.ids.MetaIdByDeclaration;
+import jetbrains.mps.smodel.adapter.structure.concept.SConceptAdapterById;
+import jetbrains.mps.smodel.adapter.structure.concept.SInterfaceConceptAdapterById;
+import jetbrains.mps.smodel.language.LanguageRuntime;
+import jetbrains.mps.util.NameUtil;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import org.jetbrains.mps.openapi.language.SLanguage;
+import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.module.SDependency;
 import org.jetbrains.mps.openapi.module.SDependencyScope;
-import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.smodel.ModuleRepositoryFacade;
-import org.jetbrains.mps.openapi.module.SModule;
+import org.jetbrains.mps.openapi.module.SModuleReference;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashSet;
+import java.util.Set;
 
 public abstract class SLanguageAdapter implements SLanguage {
-  private String myLanguageFqName;
+  protected String myLanguageFqName;
 
   public SLanguageAdapter(@NotNull String language) {
     this.myLanguageFqName = language;
   }
+
+  public abstract LanguageRuntime getLanguageRuntime();
+
+  @Override
+  public abstract Language getSourceModule();
 
   @Override
   public String getQualifiedName() {
@@ -49,33 +42,21 @@ public abstract class SLanguageAdapter implements SLanguage {
 
   @Override
   public Iterable<SAbstractConcept> getConcepts() {
-    LanguageRuntime runtime = LanguageRegistry.getInstance().getLanguage(new SLanguageAdapter(myLanguage));
+    LanguageRuntime runtime = getLanguageRuntime();
     if (runtime == null) {
       return Collections.<SAbstractConcept>emptySet();
     }
 
-    // TODO rewrite using LanguageRuntime 
-    Iterable<SNode> roots = (Iterable<SNode>) LanguageAspect.STRUCTURE.get(getSourceModule()).getRootNodes();
-    List<SAbstractConcept> c = ListSequence.fromList(new ArrayList<SAbstractConcept>());
-    ListSequence.fromList(c).addSequence(Sequence.fromIterable(roots).where(new IWhereFilter<SNode>() {
-      public boolean accept(SNode it) {
-        return SNodeOperations.isInstanceOf(it, "jetbrains.mps.lang.structure.structure.ConceptDeclaration");
+    // TODO rewrite using LanguageRuntime
+    ArrayList<SAbstractConcept> result = new ArrayList<SAbstractConcept>();
+    for (SNode root : LanguageAspect.STRUCTURE.get(getSourceModule()).getRootNodes()) {
+      if (root.getConcept().getQualifiedName().equals(SNodeUtil.concept_ConceptDeclaration)) {
+        result.add(new SConceptAdapterById(MetaIdByDeclaration.getConceptId(((jetbrains.mps.smodel.SNode) root)), NameUtil.nodeFQName(root)));
+      } else if (root.getConcept().getQualifiedName().equals(SNodeUtil.concept_InterfaceConceptDeclaration)) {
+        result.add(new SInterfaceConceptAdapterById(MetaIdByDeclaration.getConceptId(((jetbrains.mps.smodel.SNode) root)), NameUtil.nodeFQName(root)));
       }
-    }).select(new ISelector<SNode, SConcept>() {
-      public SConcept select(SNode it) {
-        return ((SConcept) SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(it)));
-      }
-    }));
-    ListSequence.fromList(c).addSequence(Sequence.fromIterable(roots).where(new IWhereFilter<SNode>() {
-      public boolean accept(SNode it) {
-        return SNodeOperations.isInstanceOf(it, "jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration");
-      }
-    }).select(new ISelector<SNode, SInterfaceConceptAdapterByName>() {
-      public SInterfaceConceptAdapterByName select(SNode it) {
-        return new SInterfaceConceptAdapterByName(MetaIdByDeclaration.getConceptId((jetbrains.mps.smodel.SNode) it));
-      }
-    }));
-    return c;
+    }
+    return result;
   }
 
   @Override
@@ -87,7 +68,8 @@ public abstract class SLanguageAdapter implements SLanguage {
       runtimes.addAll(language.getRuntimeModulesReferences());
       for (SDependency dep : language.getDeclaredDependencies()) {
         if (dep.getScope() == SDependencyScope.GENERATES_INTO) {
-          Language generatesIntoLang = as_c5k5j6_a0a0a0a1a3a61(dep.getTarget(), Language.class);
+          Object o = dep.getTarget();
+          Language generatesIntoLang = (Language.class.isInstance(o) ? (Language) o : null);
           runtimes.addAll(generatesIntoLang.getRuntimeModulesReferences());
         }
       }
@@ -95,51 +77,7 @@ public abstract class SLanguageAdapter implements SLanguage {
     return runtimes;
   }
 
-  @Override
-  public Language getSourceModule() {
-    fillBothIds();
-    return (Language) MetaIdByDeclaration.getModuleReference(myLanguage).resolve(MPSModuleRepository.getInstance());
-
-  }
-  private void fillBothIds() {
-    if (myLanguageFqName != null && myLanguage != null) {
-      return;
-    }
-    if (myLanguage == null) {
-      myLanguage = MetaIdByDeclaration.getLanguageId(ModuleRepositoryFacade.getInstance().getModule(myLanguageFqName, Language.class));
-      assert myLanguage != null;
-    } else {
-      SModule module = ModuleRepositoryFacade.getInstance().getModule(MetaIdByDeclaration.getModuleReference(myLanguage));
-      if (module != null) {
-        myLanguageFqName = module.getModuleName();
-      } else {
-        myLanguageFqName = MPSModuleRepository.getInstance().getDebugRegistry().getLanguageName(new SLanguageAdapter(myLanguage));
-      }
-    }
-  }
-  @Override
-  public int hashCode() {
-    if (myLanguage == null) {
-      return myLanguageFqName.hashCode();
-    } else {
-      return myLanguage.hashCode();
-    }
-  }
-  @Override
-  public boolean equals(Object object) {
-    if (!((object instanceof SLanguageAdapter))) {
-      return false;
-    }
-    if (myLanguage == null) {
-      return myLanguageFqName.equals(((SLanguageAdapter) object).myLanguageFqName);
-    } else {
-      return myLanguage.equals(((SLanguageAdapter) object).myLanguage);
-    }
-  }
   public int getLanguageVersion() {
     return getSourceModule().getLanguageVersion();
-  }
-  private static <T> T as_c5k5j6_a0a0a0a1a3a61(Object o, Class<T> type) {
-    return (type.isInstance(o) ? (T) o : null);
   }
 }
