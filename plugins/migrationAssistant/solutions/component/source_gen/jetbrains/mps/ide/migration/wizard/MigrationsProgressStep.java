@@ -57,8 +57,8 @@ public class MigrationsProgressStep extends MigrationStep {
     mySuccess[0] = true;
     do {
       final MigrationManager.MigrationState result = myManager.nextStep();
-      if (result instanceof MigrationManager.MigrationState.Step) {
-        final String step = ((MigrationManager.MigrationState.Step) result).getDescription();
+      if (result instanceof MigrationManager.Step) {
+        final String step = ((MigrationManager.Step) result).getDescription();
         final DefaultListModel model = (DefaultListModel) myList.getModel();
         ThreadUtils.runInUIThreadAndWait(new Runnable() {
           @Override
@@ -71,17 +71,17 @@ public class MigrationsProgressStep extends MigrationStep {
         ThreadUtils.runInUIThreadAndWait(new Runnable() {
           @Override
           public void run() {
-            mySuccess[0] = ((MigrationManager.MigrationState.Step) result).execute();
+            mySuccess[0] = ((MigrationManager.Step) result).execute();
           }
         });
       } else
-      if (result instanceof MigrationManager.MigrationState.Conflict) {
+      if (result instanceof MigrationManager.Conflict) {
         mySuccess[0] = false;
       } else
-      if (result instanceof MigrationManager.MigrationState.Error) {
+      if (result instanceof MigrationManager.Error) {
         mySuccess[0] = false;
       } else
-      if (result instanceof MigrationManager.MigrationState.Finished) {
+      if (result instanceof MigrationManager.Finished) {
         break;
       } else {
         assert false;

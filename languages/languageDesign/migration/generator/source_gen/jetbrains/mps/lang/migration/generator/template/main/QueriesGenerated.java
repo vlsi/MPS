@@ -107,14 +107,20 @@ public class QueriesGenerated {
   public static boolean ifMacro_Condition_7153805464405065594(final IfMacroContext _context) {
     return (MigrationScript_Behavior.call_getMethod_7153805464403784143(_context.getNode(), SNodeOperations.getNode("90746344-04fd-4286-97d5-b46ae6a81709/r:52a3d974-bd4f-4651-ba6e-a2de5e336d95(jetbrains.mps.lang.migration/jetbrains.mps.lang.migration.methods)", "5155329496662709038")) != null);
   }
-  public static boolean ifMacro_Condition_7153805464405182117(final IfMacroContext _context) {
+  public static boolean ifMacro_Condition_2521103492728916462(final IfMacroContext _context) {
     return Sequence.fromIterable(MigrationScript_Behavior.call_getRequiredData_8585153554445862713(_context.getNode())).isNotEmpty();
+  }
+  public static boolean ifMacro_Condition_7153805464405182117(final IfMacroContext _context) {
+    return Sequence.fromIterable(MigrationScript_Behavior.call_getExecuteAfter_2521103492728978905(_context.getNode())).isNotEmpty();
   }
   public static SNode sourceNodeQuery_5387853834547110633(final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "script", false);
   }
   public static SNode sourceNodeQuery_3290421837437864010(final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(MigrationScript_Behavior.call_getMethod_7153805464403784143(_context.getNode(), SNodeOperations.getNode("90746344-04fd-4286-97d5-b46ae6a81709/r:52a3d974-bd4f-4651-ba6e-a2de5e336d95(jetbrains.mps.lang.migration/jetbrains.mps.lang.migration.methods)", "5155329496662709038")), "body", true);
+  }
+  public static SNode sourceNodeQuery_2521103492728916455(final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), "script", false);
   }
   public static SNode sourceNodeQuery_5387853834547176745(final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "script", false);
@@ -131,8 +137,11 @@ public class QueriesGenerated {
   public static Iterable<SNode> sourceNodesQuery_7153805464404436280(final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(SLinkOperations.getTarget(MigrationScript_Behavior.call_getMethod_7153805464403784143(_context.getNode(), SNodeOperations.getNode("90746344-04fd-4286-97d5-b46ae6a81709/r:52a3d974-bd4f-4651-ba6e-a2de5e336d95(jetbrains.mps.lang.migration/jetbrains.mps.lang.migration.methods)", "5155329496662709030")), "body", true), "statement", true);
   }
-  public static Iterable<SNode> sourceNodesQuery_5387853834547147401(final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable<SNode> sourceNodesQuery_2521103492728916448(final SourceSubstituteMacroNodesContext _context) {
     return MigrationScript_Behavior.call_getRequiredData_8585153554445862713(_context.getNode());
+  }
+  public static Iterable<SNode> sourceNodesQuery_5387853834547147401(final SourceSubstituteMacroNodesContext _context) {
+    return MigrationScript_Behavior.call_getExecuteAfter_2521103492728978905(_context.getNode());
   }
   public static Iterable<SNode> sourceNodesQuery_5712848521226160537(final SourceSubstituteMacroNodesContext _context) {
     return SModelOperations.getRoots(_context.getInputModel(), "jetbrains.mps.lang.migration.structure.MigrationScript");

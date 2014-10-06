@@ -10,8 +10,8 @@ import jetbrains.mps.baseLanguage.behavior.ClassifierMember_Behavior;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.baseLanguage.scopes.MembersPopulatingContext;
 
-public class RequiredDataDeclaration_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements ClassifierMember_BehaviorDescriptor, IDontSubstituteByDefault_BehaviorDescriptor {
-  public RequiredDataDeclaration_BehaviorDescriptor() {
+public class ExecuteAfterDeclaration_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements ClassifierMember_BehaviorDescriptor, IDontSubstituteByDefault_BehaviorDescriptor {
+  public ExecuteAfterDeclaration_BehaviorDescriptor() {
   }
   public boolean virtual_canBeInterfaceMember_2949815620938109095(SConcept thisConcept) {
     return ClassifierMember_Behavior.virtual_canBeInterfaceMember_2949815620938109095(thisConcept);
@@ -35,10 +35,10 @@ public class RequiredDataDeclaration_BehaviorDescriptor extends BaseConcept_Beha
     return ClassifierMember_Behavior.virtual_needsEmptyLineBefore_641490355014296733(thisNode);
   }
   public void virtual_populateMember_7405920559687254644(SNode thisNode, MembersPopulatingContext context, SNode classifier) {
-    RequiredDataDeclaration_Behavior.virtual_populateMember_7405920559687254644(thisNode, context, classifier);
+    ClassifierMember_Behavior.virtual_populateMember_7405920559687254644(thisNode, context, classifier);
   }
   @Override
   public String getConceptFqName() {
-    return "jetbrains.mps.lang.migration.structure.RequiredDataDeclaration";
+    return "jetbrains.mps.lang.migration.structure.ExecuteAfterDeclaration";
   }
 }

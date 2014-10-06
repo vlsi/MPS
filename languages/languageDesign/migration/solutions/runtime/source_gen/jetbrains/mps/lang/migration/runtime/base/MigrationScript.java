@@ -9,6 +9,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 public interface MigrationScript {
   public String getCaption();
   public MigrationScriptReference getDescriptor();
+  public Iterable<MigrationScriptReference> executeAfter();
   public Iterable<MigrationScriptReference> requiresData();
   public boolean isApplicable(SModule module);
   @Nullable

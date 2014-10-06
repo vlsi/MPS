@@ -12,6 +12,9 @@ public abstract class MigrationScriptBase implements MigrationScript {
   public Iterable<MigrationScriptReference> requiresData() {
     return new EmptyIterable<MigrationScriptReference>();
   }
+  public Iterable<MigrationScriptReference> executeAfter() {
+    return new EmptyIterable<MigrationScriptReference>();
+  }
   public boolean isApplicable(SModule module) {
     return true;
   }

@@ -24,6 +24,9 @@ public class MigrationScript_Behavior {
       }
     });
   }
+  public static Iterable<SNode> call_getExecuteAfter_2521103492728978905(SNode thisNode) {
+    return SLinkOperations.getTargets(Sequence.fromIterable(SNodeOperations.ofConcept(SLinkOperations.getTargets(thisNode, "member", true), "jetbrains.mps.lang.migration.structure.ExecuteAfterDeclaration")).first(), "dependencies", true);
+  }
   public static Iterable<SNode> call_getRequiredData_8585153554445862713(SNode thisNode) {
     return SLinkOperations.getTargets(Sequence.fromIterable(SNodeOperations.ofConcept(SLinkOperations.getTargets(thisNode, "member", true), "jetbrains.mps.lang.migration.structure.RequiredDataDeclaration")).first(), "dependencies", true);
   }

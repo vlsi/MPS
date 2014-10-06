@@ -145,12 +145,18 @@ public class MigrationComponent extends AbstractProjectComponent implements Migr
       return true;
     }
     Iterable<MigrationScriptReference> requiresData = p.getScript().requiresData();
-    boolean available = Sequence.fromIterable(requiresData).all(new IWhereFilter<MigrationScriptReference>() {
+    boolean dataDeps = Sequence.fromIterable(requiresData).all(new IWhereFilter<MigrationScriptReference>() {
       public boolean accept(MigrationScriptReference it) {
         return MigrationsUtil.isAppliedForAllMyDeps(it, p.getModule());
       }
     });
-    if (available) {
+    Iterable<MigrationScriptReference> executeAfter = p.getScript().executeAfter();
+    boolean orderDeps = Sequence.fromIterable(executeAfter).all(new IWhereFilter<MigrationScriptReference>() {
+      public boolean accept(MigrationScriptReference it) {
+        return MigrationsUtil.isApplied(it, (AbstractModule) p.getModule());
+      }
+    });
+    if (dataDeps) {
       return true;
     }
     return false;
@@ -202,7 +208,7 @@ public class MigrationComponent extends AbstractProjectComponent implements Migr
         });
         final ScriptApplied scriptToExecute = Sequence.fromIterable(availableScripts).first();
         if (scriptToExecute != null) {
-          lastState.value = new MigrationManager.MigrationState.Step() {
+          lastState.value = new MigrationManager.Step() {
             public String getDescription() {
               return scriptToExecute.toString();
             }
@@ -219,16 +225,16 @@ public class MigrationComponent extends AbstractProjectComponent implements Migr
         } else {
           if (Sequence.fromIterable(allStepScripts).isEmpty()) {
             if (isMigrationRequired()) {
-              lastState.value = new MigrationManager.MigrationState.Error() {
+              lastState.value = new MigrationManager.Error() {
                 public String getErrorMessage() {
                   return "Some migration scripts are missing";
                 }
               };
             } else {
-              lastState.value = new MigrationManager.MigrationState.Finished() {};
+              lastState.value = new MigrationManager.Finished() {};
             }
           } else {
-            lastState.value = new MigrationManager.MigrationState.Conflict() {
+            lastState.value = new MigrationManager.Conflict() {
               public Iterable<ScriptApplied> getConflictingScripts() {
                 return allStepScripts;
               }

@@ -51,15 +51,15 @@ public class Migration_Queries {
   }
   public static SNode execute_ret(SNode point) {
     SNode typeNode = MigrationScript_Behavior.call_getProducedData_8585153554445933384(SNodeOperations.getAncestor(point, "jetbrains.mps.lang.migration.structure.MigrationScript", false, false));
-    return (typeNode == null ? _quotation_createNode_9iwezb_a0b0a0f() : _quotation_createNode_9iwezb_a0b0a0f_0(typeNode));
+    return (typeNode == null ? _quotation_createNode_9iwezb_a0b0a0g() : _quotation_createNode_9iwezb_a0b0a0g_0(typeNode));
   }
-  private static SNode _quotation_createNode_9iwezb_a0b0a0f() {
+  private static SNode _quotation_createNode_9iwezb_a0b0a0g() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.VoidType", null, null, false);
     return quotedNode_1;
   }
-  private static SNode _quotation_createNode_9iwezb_a0b0a0f_0(Object parameter_1) {
+  private static SNode _quotation_createNode_9iwezb_a0b0a0g_0(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeType", null, null, false);
