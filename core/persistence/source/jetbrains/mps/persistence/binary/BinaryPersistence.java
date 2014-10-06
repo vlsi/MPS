@@ -41,11 +41,8 @@ import jetbrains.mps.util.io.ModelInputStream;
 import jetbrains.mps.util.io.ModelOutputStream;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
-import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.language.SLanguage;
-import org.jetbrains.mps.openapi.language.SProperty;
-import org.jetbrains.mps.openapi.language.SReferenceLink;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeId;
@@ -297,38 +294,38 @@ public class BinaryPersistence {
     //collect all language-level info
 
     //save concepts info
-    Map<SConcept, String> conceptIds = new HashMap<SConcept, String>();
-    Map<SProperty, String> propIds = new HashMap<SProperty, String>();
-    Map<SReferenceLink, String> refIds = new HashMap<SReferenceLink, String>();
-    Map<SContainmentLink, String> roleIds = new HashMap<SContainmentLink, String>();
+    Map<SConceptId, String> conceptIds = new HashMap<SConceptId, String>();
+    Map<SPropertyId, String> propIds = new HashMap<SPropertyId, String>();
+    Map<SReferenceLinkId, String> refIds = new HashMap<SReferenceLinkId, String>();
+    Map<SContainmentLinkId, String> roleIds = new HashMap<SContainmentLinkId, String>();
 
     IdInfoCollector.getDebugInfoById(rootNodes, conceptIds, propIds, refIds, roleIds);
 
     // write concepts
     os.writeInt(conceptIds.size());
-    for (Entry<SConcept, String> e : conceptIds.entrySet()) {
-      os.writeString(IdHelper.getConceptId(e.getKey()).serialize());
+    for (Entry<SConceptId, String> e : conceptIds.entrySet()) {
+      os.writeString(e.getKey().serialize());
       os.writeString(e.getValue());
     }
 
     // write properties
     os.writeInt(propIds.size());
-    for (Entry<SProperty, String> e : propIds.entrySet()) {
-      os.writeString(IdHelper.getPropertyId(e.getKey()).serialize());
+    for (Entry<SPropertyId, String> e : propIds.entrySet()) {
+      os.writeString(e.getKey().serialize());
       os.writeString(e.getValue());
     }
 
     // write reference roles
     os.writeInt(refIds.size());
-    for (Entry<SReferenceLink, String> e : refIds.entrySet()) {
-      os.writeString(IdHelper.getRefId(e.getKey()).serialize());
+    for (Entry<SReferenceLinkId, String> e : refIds.entrySet()) {
+      os.writeString(e.getKey().serialize());
       os.writeString(e.getValue());
     }
 
     // write child roles
     os.writeInt(roleIds.size());
-    for (Entry<SContainmentLink, String> e : roleIds.entrySet()) {
-      os.writeString(IdHelper.getLinkId(e.getKey()).serialize());
+    for (Entry<SContainmentLinkId, String> e : roleIds.entrySet()) {
+      os.writeString(e.getKey().serialize());
       os.writeString(e.getValue());
     }
   }
