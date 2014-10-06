@@ -81,6 +81,21 @@ public class IllegalConceptDescriptor implements ConceptDescriptor {
   }
 
   @Override
+  public PropertyDescriptor getPropertyDescriptor(String name) {
+    return null;
+  }
+
+  @Override
+  public ReferenceDescriptor getRefDescriptor(String name) {
+    return null;
+  }
+
+  @Override
+  public LinkDescriptor getLinkDescriptor(String name) {
+    return null;
+  }
+
+  @Override
   public Set<String> getReferenceNames() {
     return Collections.emptySet();
   }

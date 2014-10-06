@@ -75,6 +75,9 @@ public interface ConceptDescriptor {
   PropertyDescriptor getPropertyDescriptor(SPropertyId id);
 
   @Deprecated
+  PropertyDescriptor getPropertyDescriptor(String name);
+
+  @Deprecated
   Set<String> getPropertyNames();
 
   @Deprecated
@@ -87,6 +90,9 @@ public interface ConceptDescriptor {
   ReferenceDescriptor getRefDescriptor(SReferenceLinkId id);
 
   @Deprecated
+  ReferenceDescriptor getRefDescriptor(String name);
+
+  @Deprecated
   Set<String> getReferenceNames();
 
   @Deprecated
@@ -97,6 +103,9 @@ public interface ConceptDescriptor {
   Set<SContainmentLinkId> getLinkIds();
 
   LinkDescriptor getLinkDescriptor(SContainmentLinkId id);
+
+  @Deprecated
+  LinkDescriptor getLinkDescriptor(String name);
 
   @Deprecated
   Set<String> getChildrenNames();

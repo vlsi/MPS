@@ -403,7 +403,17 @@ public class StructureAspectInterpreted implements StructureAspectDescriptor, Co
     }
 
     @Override
+    public PropertyDescriptor getPropertyDescriptor(String name) {
+      return null;
+    }
+
+    @Override
     public ReferenceDescriptor getRefDescriptor(SReferenceLinkId id) {
+      return null;
+    }
+
+    @Override
+    public ReferenceDescriptor getRefDescriptor(String name) {
       return null;
     }
 
@@ -422,5 +432,9 @@ public class StructureAspectInterpreted implements StructureAspectDescriptor, Co
       return null;
     }
 
+    @Override
+    public LinkDescriptor getLinkDescriptor(String name) {
+      return null;
+    }
   }
 }

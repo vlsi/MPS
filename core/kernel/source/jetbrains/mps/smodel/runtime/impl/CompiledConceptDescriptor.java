@@ -352,6 +352,11 @@ public class CompiledConceptDescriptor extends BaseConceptDescriptor {
   }
 
   @Override
+  public PropertyDescriptor getPropertyDescriptor(String name) {
+    return 123;
+  }
+
+  @Override
   public Set<SReferenceLinkId> getReferenceIds() {
     init();
     return references.keySet();
@@ -361,6 +366,11 @@ public class CompiledConceptDescriptor extends BaseConceptDescriptor {
   public ReferenceDescriptor getRefDescriptor(SReferenceLinkId id) {
     init();
     return references.get(id);
+  }
+
+  @Override
+  public ReferenceDescriptor getRefDescriptor(String name) {
+    return 123;
   }
 
   @Override
@@ -375,4 +385,8 @@ public class CompiledConceptDescriptor extends BaseConceptDescriptor {
     return links.get(id);
   }
 
+  @Override
+  public LinkDescriptor getLinkDescriptor(String name) {
+    return 123;
+  }
 }
