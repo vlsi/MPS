@@ -26,7 +26,6 @@ import jetbrains.mps.smodel.adapter.structure.property.SPropertyAdapterById;
 import jetbrains.mps.smodel.adapter.structure.ref.SReferenceLinkAdapterById;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.util.Pair;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SAbstractLink;
@@ -37,8 +36,6 @@ import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 
 import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.Set;
 
 public abstract class SAbstractConceptAdapter implements SAbstractConcept {
   protected String myFqName;
@@ -67,22 +64,18 @@ public abstract class SAbstractConceptAdapter implements SAbstractConcept {
   public Iterable<SReferenceLink> getReferences() {
     ConceptDescriptor d = getConceptDescriptor();
 
-    Set<Pair<SReferenceLinkId, String>> refDescrs = new HashSet<Pair<SReferenceLinkId, String>>();
+    ArrayList<SReferenceLink> result = new ArrayList<SReferenceLink>();
     for (SReferenceLinkId rid : d.getReferenceIds()) {
-      refDescrs.add(new Pair<SReferenceLinkId, String>(rid, d.getRefDescriptor(rid).getName()));
+      result.add(new SReferenceLinkAdapterById(rid, d.getConceptFqName(),d.getRefDescriptor(rid).getName()));
     }
 
     for (SConceptId ii : d.getParentsIds()) {
       ConceptDescriptor id = ConceptRegistryUtil.getConceptDescriptor(ii);
       for (SReferenceLinkId rid : id.getReferenceIds()) {
-        refDescrs.add(new Pair<SReferenceLinkId, String>(rid, id.getRefDescriptor(rid).getName()));
+        result.add(new SReferenceLinkAdapterById(rid, id.getConceptFqName(),id.getRefDescriptor(rid).getName()));
       }
     }
 
-    ArrayList<SReferenceLink> result = new ArrayList<SReferenceLink>();
-    for (Pair<SReferenceLinkId, String> e : refDescrs) {
-      result.add(new SReferenceLinkAdapterById(e.o1, e.o2));
-    }
     return result;
   }
 
@@ -90,21 +83,16 @@ public abstract class SAbstractConceptAdapter implements SAbstractConcept {
   public Iterable<SContainmentLink> getChildren() {
     ConceptDescriptor d = getConceptDescriptor();
 
-    Set<Pair<SContainmentLinkId, String>> linkDescrs = new HashSet<Pair<SContainmentLinkId, String>>();
+    ArrayList<SContainmentLink> result = new ArrayList<SContainmentLink>();
     for (SContainmentLinkId rid : d.getLinkIds()) {
-      linkDescrs.add(new Pair<SContainmentLinkId, String>(rid, d.getLinkDescriptor(rid).getName()));
+      result.add(new SContainmentLinkAdapterById(rid, d.getConceptFqName(),d.getLinkDescriptor(rid).getName()));
     }
 
     for (SConceptId ii : d.getParentsIds()) {
       ConceptDescriptor id = ConceptRegistryUtil.getConceptDescriptor(ii);
       for (SContainmentLinkId rid : id.getLinkIds()) {
-        linkDescrs.add(new Pair<SContainmentLinkId, String>(rid, id.getLinkDescriptor(rid).getName()));
+        result.add(new SContainmentLinkAdapterById(rid, id.getConceptFqName(),id.getLinkDescriptor(rid).getName()));
       }
-    }
-
-    ArrayList<SContainmentLink> result = new ArrayList<SContainmentLink>();
-    for (Pair<SContainmentLinkId, String> e : linkDescrs) {
-      result.add(new SContainmentLinkAdapterById(e.o1, e.o2));
     }
     return result;
   }
@@ -130,21 +118,16 @@ public abstract class SAbstractConceptAdapter implements SAbstractConcept {
   public Iterable<SProperty> getProperties() {
     ConceptDescriptor d = getConceptDescriptor();
 
-    Set<Pair<SPropertyId, String>> propDescrs = new HashSet<Pair<SPropertyId, String>>();
+    ArrayList<SProperty> result = new ArrayList<SProperty>();
     for (SPropertyId rid : d.getPropertyIds()) {
-      propDescrs.add(new Pair<SPropertyId, String>(rid, d.getPropertyDescriptor(rid).getName()));
+      result.add(new SPropertyAdapterById(rid,d.getConceptFqName(), d.getPropertyDescriptor(rid).getName()));
     }
 
     for (SConceptId ii : d.getParentsIds()) {
       ConceptDescriptor id = ConceptRegistryUtil.getConceptDescriptor(ii);
       for (SPropertyId rid : id.getPropertyIds()) {
-        propDescrs.add(new Pair<SPropertyId, String>(rid, id.getPropertyDescriptor(rid).getName()));
+        result.add(new SPropertyAdapterById(rid,id.getConceptFqName(), id.getPropertyDescriptor(rid).getName()));
       }
-    }
-
-    ArrayList<SProperty> result = new ArrayList<SProperty>();
-    for (Pair<SPropertyId, String> e : propDescrs) {
-      result.add(new SPropertyAdapterById(e.o1, e.o2));
     }
     return result;
   }
