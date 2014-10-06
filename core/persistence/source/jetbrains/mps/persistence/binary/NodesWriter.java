@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.persistence.binary;
 
+import jetbrains.mps.persistence.IdSerializer;
 import jetbrains.mps.persistence.ModelEnvironmentInfo;
 import jetbrains.mps.smodel.DynamicReference;
 import jetbrains.mps.smodel.DynamicReference.DynamicReferenceOrigin;
@@ -69,10 +70,10 @@ public class NodesWriter {
   }
 
   public void writeNode(SNode node, ModelOutputStream os) throws IOException {
-    os.writeString(node.getConcept().getId().serialize());
+    os.writeString(IdSerializer.serialize(node.getConcept()));
     os.writeNodeId(node.getNodeId());
     SContainmentLink roleInParentId = node.getContainmentLink();
-    os.writeString(roleInParentId == null ? null :  roleInParentId.serialize());
+    os.writeString(roleInParentId == null ? null :  IdSerializer.serialize(roleInParentId));
     os.writeByte(getNodeInfo(node));
     os.writeByte('{');
 
@@ -133,7 +134,7 @@ public class NodesWriter {
       } else {
         throw new IOException("cannot store reference: " + reference.toString());
       }
-      os.writeString(reference.getReferenceLink().serialize());
+      os.writeString(IdSerializer.serialize(reference.getReferenceLink()));
       if (targetModelReference != null && targetModelReference.equals(myModelReference)) {
         os.writeByte(17);
       } else {
@@ -151,7 +152,7 @@ public class NodesWriter {
     }
     os.writeInt(properties.size());
     for (Entry<SProperty, String> entry : properties.entrySet()) {
-      os.writeString(entry.getKey().serialize());
+      os.writeString(IdSerializer.serialize(entry.getKey()));
       os.writeString(entry.getValue());
     }
   }
