@@ -24,6 +24,10 @@ import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModel.ImportElement;
 import jetbrains.mps.smodel.SModelHeader;
+import jetbrains.mps.smodel.adapter.ids.SConceptId;
+import jetbrains.mps.smodel.adapter.ids.SContainmentLinkId;
+import jetbrains.mps.smodel.adapter.ids.SPropertyId;
+import jetbrains.mps.smodel.adapter.ids.SReferenceLinkId;
 import jetbrains.mps.smodel.persistence.def.DocUtil;
 import jetbrains.mps.smodel.persistence.def.FilePerRootFormatUtil;
 import jetbrains.mps.smodel.persistence.def.IModelWriter;
@@ -33,11 +37,8 @@ import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.util.StringUtil;
 import org.jdom.Document;
 import org.jdom.Element;
-import org.jetbrains.mps.openapi.language.SConcept;
-import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.language.SProperty;
-import org.jetbrains.mps.openapi.language.SReferenceLink;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeId;
@@ -131,41 +132,41 @@ public class ModelWriter9 implements IModelWriter {
     //collect all language-level info
 
     //save concepts info
-    Map<SConcept, String> conceptIds = new HashMap<SConcept, String>();
-    Map<SProperty, String> propIds = new HashMap<SProperty, String>();
-    Map<SReferenceLink, String> refIds = new HashMap<SReferenceLink, String>();
-    Map<SContainmentLink, String> roleIds = new HashMap<SContainmentLink, String>();
+    Map<SConceptId, String> conceptIds = new HashMap<SConceptId, String>();
+    Map<SPropertyId, String> propIds = new HashMap<SPropertyId, String>();
+    Map<SReferenceLinkId, String> refIds = new HashMap<SReferenceLinkId, String>();
+    Map<SContainmentLinkId, String> roleIds = new HashMap<SContainmentLinkId, String>();
 
     IdInfoCollector.getDebugInfoById(sourceModel.getRootNodes(), conceptIds, propIds, refIds, roleIds);
 
     // write concepts
-    for (Entry<SConcept, String> e : conceptIds.entrySet()) {
+    for (Entry<SConceptId, String> e : conceptIds.entrySet()) {
       Element langElement = new Element(ModelPersistence9.DEBUG_INFO_CONCEPT);
-      langElement.setAttribute(ModelPersistence9.ID, IdHelper.getConceptId(e.getKey()).serialize());
+      langElement.setAttribute(ModelPersistence9.ID, e.getKey().serialize());
       langElement.setAttribute(ModelPersistence9.DEBUG_INFO_NAME, e.getValue());
       debugInfoElement.addContent(langElement);
     }
 
     // write properties
-    for (Entry<SProperty, String> e : propIds.entrySet()) {
+    for (Entry<SPropertyId, String> e : propIds.entrySet()) {
       Element langElement = new Element(ModelPersistence9.DEBUG_INFO_PROP);
-      langElement.setAttribute(ModelPersistence9.ID, IdHelper.getPropertyId(e.getKey()).serialize());
+      langElement.setAttribute(ModelPersistence9.ID, e.getKey().serialize());
       langElement.setAttribute(ModelPersistence9.DEBUG_INFO_NAME, e.getValue());
       debugInfoElement.addContent(langElement);
     }
 
     // write reference roles
-    for (Entry<SReferenceLink, String> e : refIds.entrySet()) {
+    for (Entry<SReferenceLinkId, String> e : refIds.entrySet()) {
       Element langElement = new Element(ModelPersistence9.DEBUG_INFO_REF_ROLE);
-      langElement.setAttribute(ModelPersistence9.ID, IdHelper.getRefId(e.getKey()).serialize());
+      langElement.setAttribute(ModelPersistence9.ID, e.getKey().serialize());
       langElement.setAttribute(ModelPersistence9.DEBUG_INFO_NAME, e.getValue());
       debugInfoElement.addContent(langElement);
     }
 
     // write child roles
-    for (Entry<SContainmentLink, String> e : roleIds.entrySet()) {
+    for (Entry<SContainmentLinkId, String> e : roleIds.entrySet()) {
       Element langElement = new Element(ModelPersistence9.DEBUG_INFO_CHILD_ROLE);
-      langElement.setAttribute(ModelPersistence9.ID, IdHelper.getLinkId(e.getKey()).serialize());
+      langElement.setAttribute(ModelPersistence9.ID, e.getKey().serialize());
       langElement.setAttribute(ModelPersistence9.DEBUG_INFO_NAME, e.getValue());
       debugInfoElement.addContent(langElement);
     }
