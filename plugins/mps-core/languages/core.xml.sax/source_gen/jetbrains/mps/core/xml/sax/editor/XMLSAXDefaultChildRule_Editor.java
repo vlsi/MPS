@@ -20,7 +20,6 @@ public class XMLSAXDefaultChildRule_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_9smsj5_a(editorContext, node);
   }
-
   private EditorCell createCollection_9smsj5_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_9smsj5_a");
@@ -29,7 +28,6 @@ public class XMLSAXDefaultChildRule_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createRefNode_9smsj5_b0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_9smsj5_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "child with any tag");
     editorCell.setCellId("Constant_9smsj5_a0");
@@ -39,7 +37,6 @@ public class XMLSAXDefaultChildRule_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNode_9smsj5_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("handler");

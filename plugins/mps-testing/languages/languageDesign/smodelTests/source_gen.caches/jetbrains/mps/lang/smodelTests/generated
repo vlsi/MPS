@@ -1,3 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="5s25bmgdwovydos713xn1ixuqg3s7wy" />
+<dependencies version="2" modelHash="5s25bmgdwovydos713xn1ixuqg3s7wy">
+  <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" hash="-2sqpydigz7vryaerubh22j78l4l08jz" />
+  <dep model="r:43b4d418-d4ca-4d97-ab07-31e4f3ddb3e5(jetbrains.mps.lang.smodelTests.structure)" hash="80hc1op9z6mcg6szjmlcsfr7l7uznrm" />
+  <dep model="r:5d778b6b-ea1d-4251-a9ca-a7ce236ef323(jetbrains.mps.lang.smodelTests.editor)" hash="-7uoje17uehd6n2ndu4yijwc8bk0tprs" />
+  <dep model="r:ac876e9f-bc45-4a96-ab5c-97ae696a2dba(jetbrains.mps.lang.smodelTests.behavior)" hash="4mkdwv2mibsthdn3igpmu7wx8xyywo9" />
+  <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="d987foka3qddszg3k3yjss0jaslj9i" />
+  <dep model="r:c3114115-c401-467f-8766-388ee2aa9908(jetbrains.mps.lang.smodelTests.constraints)" hash="-dmqy62l4z3yffcz3kamrhuvka4ju155" />
+  <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="8cdjk2e5d2y2u9lult1ptgxxrttxv07" />
+  <common dependsOnNodes="true">
+    <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
+    <dep model="r:43b4d418-d4ca-4d97-ab07-31e4f3ddb3e5(jetbrains.mps.lang.smodelTests.structure)" />
+    <dep model="r:5d778b6b-ea1d-4251-a9ca-a7ce236ef323(jetbrains.mps.lang.smodelTests.editor)" />
+    <dep model="r:ac876e9f-bc45-4a96-ab5c-97ae696a2dba(jetbrains.mps.lang.smodelTests.behavior)" />
+    <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
+    <dep model="r:c3114115-c401-467f-8766-388ee2aa9908(jetbrains.mps.lang.smodelTests.constraints)" />
+    <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
+    <file name="Language.java" />
+  </common>
+</dependencies>
 

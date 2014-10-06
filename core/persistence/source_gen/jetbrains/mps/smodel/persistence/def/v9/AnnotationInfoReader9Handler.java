@@ -36,19 +36,15 @@ public class AnnotationInfoReader9Handler extends XMLSAXHandler<List<LineContent
   private List<LineContent> myResult;
   private LineContentAccumulator fieldaccumulator;
   private ReadHelper9 fieldhelper;
-
   public AnnotationInfoReader9Handler() {
   }
-
   public List<LineContent> getResult() {
     return myResult;
   }
-
   @Override
   public void setDocumentLocator(Locator locator) {
     myLocator = locator;
   }
-
   @Override
   public void characters(char[] array, int start, int len) throws SAXException {
     globalHandleText(myValues.firstElement(), new String(array, start, len));
@@ -57,7 +53,6 @@ public class AnnotationInfoReader9Handler extends XMLSAXHandler<List<LineContent
       current.handleText(myValues.peek(), new String(array, start, len));
     }
   }
-
   @Override
   public void endElement(String uri, String localName, String qName) throws SAXException {
     AnnotationInfoReader9Handler.ElementHandler current = myHandlersStack.pop();
@@ -72,7 +67,6 @@ public class AnnotationInfoReader9Handler extends XMLSAXHandler<List<LineContent
       }
     }
   }
-
   @Override
   public void startElement(String uri, String localName, String qName, Attributes attributes) throws SAXException {
     AnnotationInfoReader9Handler.ElementHandler current = (myHandlersStack.empty() ? (AnnotationInfoReader9Handler.ElementHandler) null : myHandlersStack.peek());
@@ -104,52 +98,40 @@ public class AnnotationInfoReader9Handler extends XMLSAXHandler<List<LineContent
     myHandlersStack.push(current);
     myValues.push(result);
   }
-
   public void globalHandleText(Object resultObject, String value) {
     List<LineContent> result = (List<LineContent>) resultObject;
     fieldaccumulator.processText(value, myLocator);
   }
-
   private static interface ChildHandler {
     public void apply(Object resultObject, Object value) throws SAXException;
   }
-
   private class ElementHandler {
     private ElementHandler() {
     }
-
     protected Object createObject(Attributes attrs) throws SAXException {
       return null;
     }
-
     protected void handleAttribute(Object resultObject, String name, String value) throws SAXException {
     }
-
     protected AnnotationInfoReader9Handler.ElementHandler createChild(Object resultObject, String tagName, Attributes attrs) throws SAXException {
       throw new SAXParseException("unknown tag: " + tagName, null);
     }
-
     protected void handleText(Object resultObject, String value) throws SAXException {
       if (value.trim().length() == 0) {
         return;
       }
       throw new SAXParseException("text is not accepted: '" + value + "'", null);
     }
-
     protected String[] requiredAttributes() {
       return AnnotationInfoReader9Handler.EMPTY_ARRAY;
     }
-
     protected void validate(Object resultObject) throws SAXException {
     }
   }
-
   public class ModelElementHandler extends AnnotationInfoReader9Handler.ElementHandler {
     private String[] requiredAttributes = new String[]{"ref"};
-
     public ModelElementHandler() {
     }
-
     @Override
     protected List<LineContent> createObject(Attributes attrs) throws SAXException {
       fieldaccumulator = new LineContentAccumulator();
@@ -157,12 +139,10 @@ public class AnnotationInfoReader9Handler extends XMLSAXHandler<List<LineContent
       fieldhelper = new ReadHelper9(ref);
       return fieldaccumulator.getLineToContentMap();
     }
-
     @Override
     protected String[] requiredAttributes() {
       return requiredAttributes;
     }
-
     @Override
     protected void handleAttribute(Object resultObject, String name, String value) throws SAXException {
       List<LineContent> result = (List<LineContent>) resultObject;
@@ -171,7 +151,6 @@ public class AnnotationInfoReader9Handler extends XMLSAXHandler<List<LineContent
       }
       super.handleAttribute(resultObject, name, value);
     }
-
     @Override
     protected AnnotationInfoReader9Handler.ElementHandler createChild(Object resultObject, String tagName, Attributes attrs) throws SAXException {
       if ("contents".equals(tagName)) {
@@ -186,13 +165,10 @@ public class AnnotationInfoReader9Handler extends XMLSAXHandler<List<LineContent
       return defaultHandler;
     }
   }
-
   public class LanguagesElementHandler extends AnnotationInfoReader9Handler.ElementHandler {
     private String[] requiredAttributes = new String[]{};
-
     public LanguagesElementHandler() {
     }
-
     @Override
     protected AnnotationInfoReader9Handler.ElementHandler createChild(Object resultObject, String tagName, Attributes attrs) throws SAXException {
       if ("use".equals(tagName)) {
@@ -207,29 +183,23 @@ public class AnnotationInfoReader9Handler extends XMLSAXHandler<List<LineContent
       myChildHandlersStack.push(null);
       return defaultHandler;
     }
-
     private void handleChild_8634114485976612315(Object resultObject, Object value) throws SAXException {
       Tuples._2<SLanguageId, String> child = (Tuples._2<SLanguageId, String>) value;
       fieldhelper.registerLanguage(child._1(), child._0());
     }
   }
-
   public class Used_languageElementHandler extends AnnotationInfoReader9Handler.ElementHandler {
     private String[] requiredAttributes = new String[]{"id", "index"};
-
     public Used_languageElementHandler() {
     }
-
     @Override
     protected Tuples._2<SLanguageId, String> createObject(Attributes attrs) throws SAXException {
       return MultiTuple.<SLanguageId,String>from(SLanguageId.deserialize(attrs.getValue("id")), attrs.getValue("index"));
     }
-
     @Override
     protected String[] requiredAttributes() {
       return requiredAttributes;
     }
-
     @Override
     protected void handleAttribute(Object resultObject, String name, String value) throws SAXException {
       Tuples._2<SLanguageId, String> result = (Tuples._2<SLanguageId, String>) resultObject;
@@ -242,13 +212,10 @@ public class AnnotationInfoReader9Handler extends XMLSAXHandler<List<LineContent
       super.handleAttribute(resultObject, name, value);
     }
   }
-
   public class ContentsElementHandler extends AnnotationInfoReader9Handler.ElementHandler {
     private String[] requiredAttributes = new String[]{};
-
     public ContentsElementHandler() {
     }
-
     @Override
     protected AnnotationInfoReader9Handler.ElementHandler createChild(Object resultObject, String tagName, Attributes attrs) throws SAXException {
       if ("node".equals(tagName)) {
@@ -262,24 +229,19 @@ public class AnnotationInfoReader9Handler extends XMLSAXHandler<List<LineContent
       }
       return super.createChild(resultObject, tagName, attrs);
     }
-
     private void handleChild_7167172773708891016(Object resultObject, Object value) throws SAXException {
       Void child = (Void) value;
       fieldaccumulator.popNode(myLocator);
     }
   }
-
   public class NodeElementHandler extends AnnotationInfoReader9Handler.ElementHandler {
     private String[] requiredAttributes = new String[]{"id"};
-
     public NodeElementHandler() {
     }
-
     @Override
     protected String[] requiredAttributes() {
       return requiredAttributes;
     }
-
     @Override
     protected void handleAttribute(Object resultObject, String name, String value) throws SAXException {
       Void result = (Void) resultObject;
@@ -289,7 +251,6 @@ public class AnnotationInfoReader9Handler extends XMLSAXHandler<List<LineContent
       }
       super.handleAttribute(resultObject, name, value);
     }
-
     @Override
     protected AnnotationInfoReader9Handler.ElementHandler createChild(Object resultObject, String tagName, Attributes attrs) throws SAXException {
       if ("property".equals(tagName)) {
@@ -321,43 +282,35 @@ public class AnnotationInfoReader9Handler extends XMLSAXHandler<List<LineContent
       }
       return super.createChild(resultObject, tagName, attrs);
     }
-
     private void handleChild_7167172773708891038(Object resultObject, Object value) throws SAXException {
       String child = (String) value;
       if (child != null) {
         fieldaccumulator.saveProperty(child, myLocator);
       }
     }
-
     private void handleChild_7167172773708891052(Object resultObject, Object value) throws SAXException {
       String child = (String) value;
       if (child != null) {
         fieldaccumulator.saveReference(child, myLocator);
       }
     }
-
     private void handleChild_7167172773708891066(Object resultObject, Object value) throws SAXException {
       Void child = (Void) value;
       fieldaccumulator.popNode(myLocator);
     }
   }
-
   public class PropertyElementHandler extends AnnotationInfoReader9Handler.ElementHandler {
     private String[] requiredAttributes = new String[]{"role"};
-
     public PropertyElementHandler() {
     }
-
     @Override
     protected String createObject(Attributes attrs) throws SAXException {
       return MPSModuleRepository.getInstance().getDebugRegistry().getPropertyName(fieldhelper.readPropId(attrs.getValue("role")));
     }
-
     @Override
     protected String[] requiredAttributes() {
       return requiredAttributes;
     }
-
     @Override
     protected void handleAttribute(Object resultObject, String name, String value) throws SAXException {
       String result = (String) resultObject;
@@ -367,24 +320,19 @@ public class AnnotationInfoReader9Handler extends XMLSAXHandler<List<LineContent
       super.handleAttribute(resultObject, name, value);
     }
   }
-
   public class ReferenceElementHandler extends AnnotationInfoReader9Handler.ElementHandler {
     private String[] requiredAttributes = new String[]{"role"};
-
     public ReferenceElementHandler() {
     }
-
     @Override
     protected String createObject(Attributes attrs) throws SAXException {
       MPSModuleRepository.getInstance().getDebugRegistry().getLinkName(fieldhelper.readRefRole(attrs.getValue("role")));
       return attrs.getValue("role");
     }
-
     @Override
     protected String[] requiredAttributes() {
       return requiredAttributes;
     }
-
     @Override
     protected void handleAttribute(Object resultObject, String name, String value) throws SAXException {
       String result = (String) resultObject;
@@ -394,13 +342,11 @@ public class AnnotationInfoReader9Handler extends XMLSAXHandler<List<LineContent
       super.handleAttribute(resultObject, name, value);
     }
   }
-
   public class DefaultElementHandler extends AnnotationInfoReader9Handler.ElementHandler {
     @Override
     protected AnnotationInfoReader9Handler.ElementHandler createChild(Object resultObject, String tagName, Attributes attrs) throws SAXException {
       return this;
     }
-
     @Override
     protected void handleText(Object resultObject, String value) throws SAXException {
     }

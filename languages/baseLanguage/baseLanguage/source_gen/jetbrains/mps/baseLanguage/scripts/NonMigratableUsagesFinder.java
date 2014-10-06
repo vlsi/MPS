@@ -113,7 +113,7 @@ public class NonMigratableUsagesFinder {
     if (SNodeOperations.getConceptDeclaration(expectedType) == SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.SequenceType")) {
       return true;
     }
-    if (SNodeOperations.getConceptDeclaration(expectedType) == SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType") && SLinkOperations.getTarget(SNodeOperations.cast(expectedType, "jetbrains.mps.baseLanguage.structure.ClassifierType"), "classifier", false) == SNodeOperations.getNode("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)", "~Iterable")) {
+    if (SNodeOperations.getConceptDeclaration(expectedType) == SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType") && SLinkOperations.getTarget(SNodeOperations.cast(expectedType, "jetbrains.mps.baseLanguage.structure.ClassifierType"), "classifier", false) == SNodeOperations.getNode("6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)", "~Iterable")) {
       return true;
     }
 
@@ -128,7 +128,7 @@ public class NonMigratableUsagesFinder {
       if (SNodeOperations.isInstanceOf(operation, "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation")) {
         SNode method = SLinkOperations.getTarget(SNodeOperations.cast(operation, "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation"), "baseMethodDeclaration", false);
 
-        if (method == Sequence.fromIterable(Classifier_Behavior.call_methods_5292274854859311639(SNodeOperations.getNode("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)", "~List"))).findFirst(new IWhereFilter<SNode>() {
+        if (method == Sequence.fromIterable(Classifier_Behavior.call_methods_5292274854859311639(SNodeOperations.getNode("6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)", "~List"))).findFirst(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {
             return SPropertyOperations.getString(it, "name").equals("add") && ListSequence.fromList(SLinkOperations.getTargets(it, "parameter", true)).count() == 1;
           }

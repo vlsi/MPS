@@ -48,7 +48,7 @@ public class AnonymousClass_Behavior {
     if (SNodeOperations.isInstanceOf(classifier, "jetbrains.mps.baseLanguage.structure.ClassConcept")) {
       return ClassConcept_Behavior.call_constructors_5292274854859503373(SNodeOperations.cast(classifier, "jetbrains.mps.baseLanguage.structure.ClassConcept"));
     } else {
-      return ClassConcept_Behavior.call_constructors_5292274854859503373(SNodeOperations.getNode("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)", "~Object"));
+      return ClassConcept_Behavior.call_constructors_5292274854859503373(SNodeOperations.getNode("6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)", "~Object"));
     }
   }
   public static int call_getIndexInContainingClass_4164197659856373643(SNode thisNode) {
@@ -100,8 +100,8 @@ public class AnonymousClass_Behavior {
     if (SNodeOperations.isInstanceOf(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), superClass, "virtual_getClassifier_7405920559687237513", new Object[]{}), "jetbrains.mps.baseLanguage.structure.ClassConcept")) {
       IClassifierType_Behavior.call_populateMembers_7405920559687241253(superClass, context, classifierType);
     } else if (SNodeOperations.isInstanceOf(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), superClass, "virtual_getClassifier_7405920559687237513", new Object[]{}), "jetbrains.mps.baseLanguage.structure.Interface")) {
-      if ((SNodeOperations.getNode("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)", "~Object") != null)) {
-        IClassifierType_Behavior.call_populateMembers_7405920559687241253(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SNodeOperations.getNode("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)", "~Object"), "virtual_getThisType_7405920559687254782", new Object[]{}), context, classifierType);
+      if ((SNodeOperations.getNode("6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)", "~Object") != null)) {
+        IClassifierType_Behavior.call_populateMembers_7405920559687241253(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SNodeOperations.getNode("6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)", "~Object"), "virtual_getThisType_7405920559687254782", new Object[]{}), context, classifierType);
       }
       IClassifierType_Behavior.call_populateMembers_7405920559687241253(superClass, context, classifierType);
     } else {

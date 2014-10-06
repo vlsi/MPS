@@ -29,7 +29,7 @@ public class EnumClass_Behavior {
   }
   public static List<SNode> virtual_getExtendedClassifierTypes_2201875424516179426(SNode thisNode) {
     List<SNode> extended = BehaviorReflection.invokeSuper((Class<List<SNode>>) ((Class) Object.class), thisNode, "jetbrains.mps.baseLanguage.structure.ClassConcept", "virtual_getExtendedClassifierTypes_2201875424516179426", new Object[]{});
-    SNode enumType = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SNodeOperations.getNode("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)", "~Enum"), "virtual_getThisType_3305065273710880775", new Object[]{});
+    SNode enumType = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SNodeOperations.getNode("6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)", "~Enum"), "virtual_getThisType_3305065273710880775", new Object[]{});
     if (!(ListSequence.fromList(extended).contains(enumType))) {
       // todo: WTF??? 
       ListSequence.fromList(extended).addElement(enumType);
@@ -49,7 +49,7 @@ public class EnumClass_Behavior {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, false);
-    quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, facade.createModelReference("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), facade.createNodeId("~Enum")));
+    quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, facade.createModelReference("6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), facade.createNodeId("~Enum")));
     return quotedNode_1;
   }
 }

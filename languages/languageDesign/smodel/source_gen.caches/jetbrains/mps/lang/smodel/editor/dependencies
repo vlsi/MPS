@@ -184,6 +184,7 @@
     <classNode dependClassName="jetbrains.mps.lang.project.editor.ProjectStructure_StyleSheet" />
     <classNode dependClassName="jetbrains.mps.lang.sharedConcepts.editor.SharedStyles_StyleSheet" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.EditorManager" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.InlineCellProvider" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.cells.EditorCell_Collection" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.cells.EditorCell_Constant" />
@@ -193,7 +194,6 @@
     <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
-    <classNode extendsClassName="jetbrains.mps.nodeEditor.InlineCellProvider" />
   </dependency>
   <dependency className="jetbrains.mps.lang.smodel.editor.ConceptRefExpression_Editor" file="ConceptRefExpression_Editor.java">
     <classNode dependClassName="java.lang.Class" />
@@ -692,6 +692,7 @@
     <classNode dependClassName="jetbrains.mps.lang.project.editor.ProjectStructure_StyleSheet" />
     <classNode dependClassName="jetbrains.mps.lang.sharedConcepts.editor.SharedStyles_StyleSheet" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.EditorManager" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.InlineCellProvider" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.MPSColors" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.cells.EditorCell_Collection" />
@@ -703,7 +704,6 @@
     <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
-    <classNode extendsClassName="jetbrains.mps.nodeEditor.InlineCellProvider" />
   </dependency>
   <dependency className="jetbrains.mps.lang.smodel.editor.LinkList_AddNewChildOperation_Editor" file="LinkList_AddNewChildOperation_Editor.java">
     <classNode dependClassName="java.lang.Class" />
@@ -1763,6 +1763,7 @@
     <classNode dependClassName="jetbrains.mps.lang.project.editor.ProjectStructure_StyleSheet" />
     <classNode dependClassName="jetbrains.mps.lang.sharedConcepts.editor.SharedStyles_StyleSheet" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.EditorManager" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.InlineCellProvider" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.MPSColors" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.cells.EditorCell_Collection" />
@@ -1774,7 +1775,6 @@
     <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
-    <classNode extendsClassName="jetbrains.mps.nodeEditor.InlineCellProvider" />
   </dependency>
   <dependency className="jetbrains.mps.lang.smodel.editor.PropertyNameRefExpression_Editor" file="PropertyNameRefExpression_Editor.java">
     <classNode dependClassName="java.lang.Class" />

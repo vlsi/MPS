@@ -48,11 +48,11 @@
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.SetSequence" />
     <classNode dependClassName="jetbrains.mps.internal.make.runtime.util.DirUtil" />
+    <classNode dependClassName="jetbrains.mps.make.delta.IDeltaVisitor" />
     <classNode dependClassName="jetbrains.mps.vfs.IFile" />
     <classNode dependClassName="org.apache.log4j.LogManager" />
     <classNode dependClassName="org.apache.log4j.Logger" />
     <classNode extendsClassName="jetbrains.mps.make.delta.IDelta" />
-    <classNode extendsClassName="jetbrains.mps.make.delta.IDeltaVisitor" />
   </dependency>
   <dependency className="jetbrains.mps.internal.make.runtime.util.FqName" file="FqName.java">
     <classNode dependClassName="java.lang.Object" />

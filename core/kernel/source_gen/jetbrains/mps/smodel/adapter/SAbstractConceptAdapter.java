@@ -43,7 +43,6 @@ public class SAbstractConceptAdapter implements SAbstractConcept {
 
   protected SConceptId myConceptId;
   protected String myConceptName;
-
   @Deprecated
   public SAbstractConceptAdapter(@NotNull String conceptName) {
     myConceptName = conceptName;
@@ -56,16 +55,12 @@ public class SAbstractConceptAdapter implements SAbstractConcept {
     }
   }
 
-
-
   public SAbstractConceptAdapter(@NotNull SConceptId conceptId) {
     myConceptId = conceptId;
     synchronized (ourNames) {
       myConceptName = ourNames.get(myConceptId);
     }
   }
-
-
 
   @Override
   public SConceptId getId() {
@@ -75,8 +70,6 @@ public class SAbstractConceptAdapter implements SAbstractConcept {
     fillBothIds();
     return myConceptId;
   }
-
-
 
   @Override
   public String getQualifiedName() {
@@ -90,14 +83,10 @@ public class SAbstractConceptAdapter implements SAbstractConcept {
     return myConceptName;
   }
 
-
-
   @Override
   public String getName() {
     return NameUtil.shortNameFromLongName(getQualifiedName());
   }
-
-
 
   @Override
   public Iterable<SReferenceLink> getReferences() {
@@ -119,8 +108,6 @@ public class SAbstractConceptAdapter implements SAbstractConcept {
     });
   }
 
-
-
   @Override
   public Iterable<SContainmentLink> getChildren() {
     ConceptDescriptor d = ConceptRegistry.getInstance().getConceptDescriptor(getQualifiedName());
@@ -139,8 +126,6 @@ public class SAbstractConceptAdapter implements SAbstractConcept {
       }
     });
   }
-
-
 
   @Override
   @Deprecated
@@ -162,8 +147,6 @@ public class SAbstractConceptAdapter implements SAbstractConcept {
     }
     return null;
   }
-
-
 
   @Override
   public Iterable<SAbstractLink> getLinks() {
@@ -195,8 +178,6 @@ public class SAbstractConceptAdapter implements SAbstractConcept {
     return seq;
   }
 
-
-
   @Override
   @Deprecated
   public SProperty getProperty(String name) {
@@ -213,8 +194,6 @@ public class SAbstractConceptAdapter implements SAbstractConcept {
     SPropertyId id = IdHelper.getPropId((jetbrains.mps.smodel.SNode) propNode);
     return new SPropertyAdapter(id);
   }
-
-
 
   @Override
   public Iterable<SProperty> getProperties() {
@@ -237,8 +216,6 @@ public class SAbstractConceptAdapter implements SAbstractConcept {
     });
   }
 
-
-
   @Override
   public boolean isSubConceptOf(SAbstractConcept concept) {
     // todo: hack, need for working node attributes on nodes of not generated concepts  
@@ -254,22 +231,16 @@ public class SAbstractConceptAdapter implements SAbstractConcept {
     return d.isAssignableTo(concept.getQualifiedName());
   }
 
-
-
   @Override
   public SLanguage getLanguage() {
     fillBothIds();
     return new SLanguageAdapter(myConceptId.getLanguageId());
   }
 
-
-
   @Override
   public int hashCode() {
     return (myConceptId != null ? myConceptId.hashCode() : myConceptName.hashCode());
   }
-
-
 
   @Override
   public boolean equals(Object o) {
@@ -283,9 +254,7 @@ public class SAbstractConceptAdapter implements SAbstractConcept {
     }
   }
 
-
   private static final Set<String> reportedLanguages = new HashSet<String>();
-
 
   protected void illegalConceptDescriptorWarning() {
     fillBothIds();
@@ -299,8 +268,6 @@ public class SAbstractConceptAdapter implements SAbstractConcept {
       LOG.warn("No concept found for id " + myConceptId.serialize() + ". Please check the language " + languageName + " is built and compiled.");
     }
   }
-
-
 
   @Nullable
   @Override
@@ -317,8 +284,6 @@ public class SAbstractConceptAdapter implements SAbstractConcept {
     }
     return strucModel.getNode(new SNodeId.Regular(myConceptId.getConceptId()));
   }
-
-
 
   protected void fillBothIds() {
     if (myConceptName != null && myConceptId != null) {
@@ -341,7 +306,6 @@ public class SAbstractConceptAdapter implements SAbstractConcept {
       ourNames.put(myConceptId, myConceptName);
     }
   }
-
 
 
 

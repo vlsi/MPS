@@ -25,7 +25,7 @@ public class ClassConcept_Constraints extends BaseConstraintsDescriptor {
     super("jetbrains.mps.baseLanguage.structure.ClassConcept");
   }
   public String getAlternativeIcon(SNode node) {
-    if (BehaviorReflection.invokeVirtual(Boolean.TYPE, node, "virtual_isDescendant_7165541881557222913", new Object[]{SNodeOperations.getNode("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)", "~Throwable")})) {
+    if (BehaviorReflection.invokeVirtual(Boolean.TYPE, node, "virtual_isDescendant_7165541881557222913", new Object[]{SNodeOperations.getNode("6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)", "~Throwable")})) {
       if (SPropertyOperations.getBoolean(node, "abstractClass")) {
         return "${language_descriptor}/icons/abstractException.png";
       }

@@ -19,8 +19,6 @@ public class SInterfaceConceptAdapter extends SAbstractConceptAdapter implements
     super(conceptId);
   }
 
-
-
   public SInterfaceConceptAdapter(@NotNull String conceptName) {
     super(conceptName);
   }
@@ -37,7 +35,6 @@ public class SInterfaceConceptAdapter extends SAbstractConceptAdapter implements
     }
     return super.getLink(role);
   }
-
   @Override
   public Iterable<SInterfaceConcept> getSuperInterfaces() {
     ConceptDescriptor d = ConceptRegistry.getInstance().getConceptDescriptor(getQualifiedName());
@@ -51,6 +48,5 @@ public class SInterfaceConceptAdapter extends SAbstractConceptAdapter implements
     }
     return res;
   }
-
 
 }

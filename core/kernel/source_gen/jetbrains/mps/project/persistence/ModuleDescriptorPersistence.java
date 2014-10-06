@@ -50,7 +50,6 @@ public class ModuleDescriptorPersistence {
   private static final String HEADER_PATTERN = ".*<(language|dev-kit|solution)[^>]+(namespace|name)=\\\"([^\"]+)\\\"[^>]+uuid=\\\"([^\"]+)\\\".*";
   private ModuleDescriptorPersistence() {
   }
-
   public static void loadDependencies(final ModuleDescriptor descriptor, Element root) {
     descriptor.getDependencies().addAll(loadDependenciesList(XmlUtil.first(root, "dependencies")));
 

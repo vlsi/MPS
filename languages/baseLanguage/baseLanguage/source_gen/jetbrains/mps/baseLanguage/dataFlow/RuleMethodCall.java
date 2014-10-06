@@ -28,7 +28,7 @@ public class RuleMethodCall extends DataFlowConstructor {
     }
     if (SLinkOperations.getTargets(SLinkOperations.getTarget(m, "baseMethodDeclaration", false), "annotation", true) != null) {
       for (SNode annotation : SLinkOperations.getTargets(SLinkOperations.getTarget(m, "baseMethodDeclaration", false), "annotation", true)) {
-        if (SLinkOperations.getTarget(annotation, "annotation", false) == SNodeOperations.getNode("f:java_stub#3f233e7f-b8a6-46d2-a57f-795d56775243#org.jetbrains.annotations(Annotations/org.jetbrains.annotations@java_stub)", "~Nullable")) {
+        if (SLinkOperations.getTarget(annotation, "annotation", false) == SNodeOperations.getNode("3f233e7f-b8a6-46d2-a57f-795d56775243/f:java_stub#3f233e7f-b8a6-46d2-a57f-795d56775243#org.jetbrains.annotations(Annotations/org.jetbrains.annotations@java_stub)", "~Nullable")) {
           {
             Object object = node;
             if (((Program) o).contains(object)) {
@@ -41,7 +41,7 @@ public class RuleMethodCall extends DataFlowConstructor {
             }
           }
         }
-        if (SLinkOperations.getTarget(annotation, "annotation", false) == SNodeOperations.getNode("f:java_stub#3f233e7f-b8a6-46d2-a57f-795d56775243#org.jetbrains.annotations(Annotations/org.jetbrains.annotations@java_stub)", "~NotNull")) {
+        if (SLinkOperations.getTarget(annotation, "annotation", false) == SNodeOperations.getNode("3f233e7f-b8a6-46d2-a57f-795d56775243/f:java_stub#3f233e7f-b8a6-46d2-a57f-795d56775243#org.jetbrains.annotations(Annotations/org.jetbrains.annotations@java_stub)", "~NotNull")) {
           {
             Object object = node;
             if (((Program) o).contains(object)) {

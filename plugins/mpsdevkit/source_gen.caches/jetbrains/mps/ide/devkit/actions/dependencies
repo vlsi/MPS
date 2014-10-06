@@ -153,7 +153,7 @@
     <classNode dependClassName="jetbrains.mps.util.NameUtil" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
-    <classNode extendsClassName="org.jetbrains.mps.util.Condition" />
+    <classNode dependClassName="org.jetbrains.mps.util.Condition" />
   </dependency>
   <dependency className="jetbrains.mps.ide.devkit.actions.ConceptEditorOpenHelper" file="ConceptEditorOpenHelper.java">
     <classNode dependClassName="java.lang.Class" />

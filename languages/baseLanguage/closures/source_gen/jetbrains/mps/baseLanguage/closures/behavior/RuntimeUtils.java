@@ -24,10 +24,10 @@ public class RuntimeUtils {
   public RuntimeUtils() {
   }
   public static SModel getRuntimeModel() {
-    return SNodeOperations.getModel(SNodeOperations.getNode("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/jetbrains.mps.baseLanguage.closures.runtime@java_stub)", "~_UnrestrictedClosures"));
+    return SNodeOperations.getModel(SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/jetbrains.mps.baseLanguage.closures.runtime@java_stub)", "~_UnrestrictedClosures"));
   }
   public static SModel getStaticRuntimeModel() {
-    return SNodeOperations.getModel(SNodeOperations.getNode("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/jetbrains.mps.baseLanguage.closures.runtime@java_stub)", "~_FunctionTypes"));
+    return SNodeOperations.getModel(SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/jetbrains.mps.baseLanguage.closures.runtime@java_stub)", "~_FunctionTypes"));
   }
   public static Map<String, SNode> getRuntimeClassifiersMap() {
     synchronized (RuntimeUtils.class) {

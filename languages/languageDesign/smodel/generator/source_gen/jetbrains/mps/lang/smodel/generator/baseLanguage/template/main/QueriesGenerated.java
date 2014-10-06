@@ -265,11 +265,9 @@ public class QueriesGenerated {
   public static Object propertyMacro_GetPropertyValue_8339862546319748549(final PropertyMacroContext _context) {
     return NameUtil.nodeFQName(SLinkOperations.getTarget(_context.getNode(), "conceptDeclaration", false));
   }
-
   public static Object propertyMacro_GetPropertyValue_2644386474300332552(final PropertyMacroContext _context) {
     return IdHelper.getConceptId((jetbrains.mps.smodel.SNode) SLinkOperations.getTarget(_context.getNode(), "conceptDeclaration", false)).serialize();
   }
-
   public static Object propertyMacro_GetPropertyValue_1219355399537(final PropertyMacroContext _context) {
     SModelReference targetModelRef = SNodeOperations.getModel(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), _context.getNode(), "virtual_getTargetNode_3575813534625153815", new Object[]{})).getReference();
     SModelReference sourceModelRef = SNodeOperations.getModel(_context.getNode()).getReference();
@@ -301,23 +299,18 @@ public class QueriesGenerated {
   public static Object propertyMacro_GetPropertyValue_5253134957341701124(final PropertyMacroContext _context) {
     return SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "linkDeclaration", false), "role");
   }
-
   public static Object propertyMacro_GetPropertyValue_2644386474301603013(final PropertyMacroContext _context) {
     return IdHelper.getNodeRoleId((jetbrains.mps.smodel.SNode) SLinkOperations.getTarget(_context.getNode(), "linkDeclaration", false)).serialize();
   }
-
   public static Object propertyMacro_GetPropertyValue_2644386474301626956(final PropertyMacroContext _context) {
     return IdHelper.getRefRoleId((jetbrains.mps.smodel.SNode) SLinkOperations.getTarget(_context.getNode(), "linkDeclaration", false)).serialize();
   }
-
   public static Object propertyMacro_GetPropertyValue_5253134957341870752(final PropertyMacroContext _context) {
     return SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "propertyDeclaration", false), "name");
   }
-
   public static Object propertyMacro_GetPropertyValue_2644386474302437701(final PropertyMacroContext _context) {
     return IdHelper.getPropId((jetbrains.mps.smodel.SNode) SLinkOperations.getTarget(_context.getNode(), "propertyDeclaration", false)).serialize();
   }
-
   public static Object propertyMacro_GetPropertyValue_3778812090364386842(final PropertyMacroContext _context) {
     return SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "member", false), "internalValue");
   }
@@ -740,7 +733,6 @@ public class QueriesGenerated {
   public static Object referenceMacro_GetReferent_2832018561208930317(final ReferenceMacroContext _context) {
     return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "concept", true), "concept", false);
   }
-
   public static boolean ifMacro_Condition_2644386474301602049(final IfMacroContext _context) {
     return SPropertyOperations.hasValue(SLinkOperations.getTarget(_context.getNode(), "linkDeclaration", false), "metaClass", "aggregation", "reference");
   }
@@ -1223,7 +1215,7 @@ public class QueriesGenerated {
       // todo: remove getClassExpression here 
       return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), returnType, "virtual_getClassExpression_1213877337357", new Object[]{});
     } else {
-      return _quotation_createNode_x583g4_a0a0c0wm(returnType);
+      return _quotation_createNode_x583g4_a0a0c0bn(returnType);
     }
   }
   public static SNode sourceNodeQuery_3425232330195014656(final SourceSubstituteMacroNodeContext _context) {
@@ -1397,7 +1389,10 @@ public class QueriesGenerated {
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StringType", null, null, false);
     return quotedNode_1;
   }
-  private static SNode _quotation_createNode_x583g4_a0a0c0wm(Object parameter_1) {
+  private static boolean isEmptyString(String str) {
+    return str == null || str.length() == 0;
+  }
+  private static SNode _quotation_createNode_x583g4_a0a0c0bn(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
     SNode quotedNode_3 = null;
@@ -1425,8 +1420,5 @@ public class QueriesGenerated {
     }
     quotedNode_2.addChild("type", quotedNode_4);
     return quotedNode_2;
-  }
-  private static boolean isEmptyString(String str) {
-    return str == null || str.length() == 0;
   }
 }

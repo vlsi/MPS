@@ -17,7 +17,6 @@ import jetbrains.mps.smodel.SReference;
 public class typeof_LinkIdRefExpression_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
   public typeof_LinkIdRefExpression_InferenceRule() {
   }
-
   public void applyRule(final SNode linkIdRefExpression, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     if (SPropertyOperations.hasValue(SLinkOperations.getTarget(linkIdRefExpression, "linkDeclaration", false), "metaClass", "aggregation", "reference")) {
       {
@@ -33,22 +32,18 @@ public class typeof_LinkIdRefExpression_InferenceRule extends AbstractInferenceR
       }
     }
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.lang.smodel.structure.LinkIdRefExpression";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean overrides() {
     return false;
   }
-
   private static SNode _quotation_createNode_yncvv3_a0a0a0b() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
@@ -56,7 +51,6 @@ public class typeof_LinkIdRefExpression_InferenceRule extends AbstractInferenceR
     quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, facade.createModelReference("8865b7a8-5271-43d3-884c-6fd1d9cfdd34/f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.language(MPS.OpenAPI/org.jetbrains.mps.openapi.language@java_stub)"), facade.createNodeId("~SContainmentLinkId")));
     return quotedNode_1;
   }
-
   private static SNode _quotation_createNode_yncvv3_a0a0a0a1() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;

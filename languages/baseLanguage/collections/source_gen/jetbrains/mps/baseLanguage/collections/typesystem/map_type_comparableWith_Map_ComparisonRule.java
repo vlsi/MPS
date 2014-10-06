@@ -99,5 +99,5 @@ public class map_type_comparableWith_Map_ComparisonRule extends ComparisonRule_R
     public void performActions(Object o) {
     }
   }
-  private static SNodePointer SNODE_POINTER_yoc8ci_a0a0a0a0b0b0a0a0a0a0a0f = new SNodePointer("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)", "~Map");
+  private static SNodePointer SNODE_POINTER_yoc8ci_a0a0a0a0b0b0a0a0a0a0a0f = new SNodePointer("6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)", "~Map");
 }

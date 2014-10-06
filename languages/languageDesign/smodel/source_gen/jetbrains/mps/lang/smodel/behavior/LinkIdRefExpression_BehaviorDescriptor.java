@@ -7,7 +7,6 @@ import jetbrains.mps.baseLanguage.behavior.Expression_BehaviorDescriptor;
 public class LinkIdRefExpression_BehaviorDescriptor extends Expression_BehaviorDescriptor {
   public LinkIdRefExpression_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.smodel.structure.LinkIdRefExpression";

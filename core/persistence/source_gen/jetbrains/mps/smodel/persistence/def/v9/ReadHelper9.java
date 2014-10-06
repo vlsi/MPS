@@ -31,14 +31,11 @@ public class ReadHelper9 {
   private Map<String, SModelReference> myModelByIx;
   private Map<String, SLanguageId> myLanguageByIx;
 
-
   public ReadHelper9(SModelReference modelRef) {
     myModelByIx = MapSequence.fromMap(new HashMap<String, SModelReference>());
     myLanguageByIx = MapSequence.fromMap(new HashMap<String, SLanguageId>());
     myModelRef = modelRef;
   }
-
-
 
   public void addImportToModel(SModel model, String index, SModelReference ref, boolean implicit) {
     SModel.ImportElement elem = new SModel.ImportElement(ref);
@@ -50,29 +47,21 @@ public class ReadHelper9 {
     MapSequence.fromMap(myModelByIx).put(index, ref);
   }
 
-
-
   public void addUsedLanguage(SModel model, String index, SLanguageId ref, int version) {
     model.addLanguage(ref, version);
     registerLanguage(index, ref);
   }
-
   public void addImplicitlyUsedLanguage(SModel model, String index, SLanguageId ref, int version) {
     model.addImplicitlyUsedLanguage(ref, version);
     registerLanguage(index, ref);
   }
-
   public void registerLanguage(String index, SLanguageId ref) {
     MapSequence.fromMap(myLanguageByIx).put(index, ref);
   }
 
-
-
   public SModelReference getSModelReference(@NotNull String ix) {
     return ((ix == null || ix.length() == 0) ? myModelRef : MapSequence.fromMap(myModelByIx).get(ix));
   }
-
-
 
   @NotNull
   public Pair<Boolean, SNodePointer> readLink(String src) {
@@ -91,32 +80,22 @@ public class ReadHelper9 {
     return result;
   }
 
-
-
   public boolean isInterfaceNode(String nodeInfo) {
     return nodeInfo.startsWith("i");
   }
-
-
 
   public boolean isImplementationNode(String nodeInfo) {
     return nodeInfo != null && (nodeInfo.startsWith("l") || nodeInfo.startsWith("s"));
   }
 
-
-
   public boolean isImplementationWithStubNode(String nodeInfo) {
     return nodeInfo != null && nodeInfo.startsWith("s");
   }
-
-
 
   public SConceptId getStubConcept(SConceptId type) {
     // todo 
     return null;
   }
-
-
 
   public Tuples._3<ConceptKind, StaticScope, Boolean> readNodeInfo(String s) {
     ConceptKind kind;
@@ -164,8 +143,6 @@ public class ReadHelper9 {
     return MultiTuple.<ConceptKind,StaticScope,Boolean>from(kind, scope, unordered);
   }
 
-
-
   public SConceptId readConceptId(String s) {
     int ix = s.indexOf(WriteHelper.MODEL_SEPARATOR_CHAR);
     if (ix <= 0) {
@@ -186,15 +163,11 @@ public class ReadHelper9 {
     }
   }
 
-
-
   public SContainmentLinkId readNodeRole(String s) {
     int ix = s.lastIndexOf(WriteHelper.MODEL_SEPARATOR_CHAR);
     SConceptId concept = readConceptId(s.substring(0, ix));
     return new SContainmentLinkId(concept, Long.parseLong(s.substring(ix + 1)));
   }
-
-
 
   public SReferenceLinkId readRefRole(String s) {
     int ix = s.lastIndexOf(WriteHelper.MODEL_SEPARATOR_CHAR);
@@ -202,13 +175,10 @@ public class ReadHelper9 {
     return new SReferenceLinkId(concept, Long.parseLong(s.substring(ix + 1)));
   }
 
-
-
   public SPropertyId readPropId(String s) {
     int ix = s.lastIndexOf(WriteHelper.MODEL_SEPARATOR_CHAR);
     SConceptId concept = readConceptId(s.substring(0, ix));
     return new SPropertyId(concept, Long.parseLong(s.substring(ix + 1)));
   }
-
   protected static Logger LOG = LogManager.getLogger(ReadHelper9.class);
 }

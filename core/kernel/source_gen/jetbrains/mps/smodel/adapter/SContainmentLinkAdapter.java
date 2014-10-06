@@ -17,19 +17,14 @@ import jetbrains.mps.smodel.search.ConceptAndSuperConceptsScope;
 public class SContainmentLinkAdapter extends SAbstractLinkAdapter implements SContainmentLink {
   protected SContainmentLinkId myRoleId;
 
-
   public SContainmentLinkAdapter(String conceptName, String role) {
     super(conceptName, role);
   }
-
-
 
   public SContainmentLinkAdapter(SContainmentLinkId roleId) {
     super(null, null);
     myRoleId = roleId;
   }
-
-
 
   @Override
   public SAbstractLinkId getRoleId() {
@@ -37,14 +32,10 @@ public class SContainmentLinkAdapter extends SAbstractLinkAdapter implements SCo
     return myRoleId;
   }
 
-
-
   @Override
   public boolean isReference() {
     return false;
   }
-
-
 
   @Override
   public boolean isMultiple() {
@@ -53,15 +44,11 @@ public class SContainmentLinkAdapter extends SAbstractLinkAdapter implements SCo
     return d.isMultipleChild(role);
   }
 
-
-
   public boolean isUnordered() {
     fillBothIds();
     ConceptDescriptor d = ConceptRegistry.getInstance().getConceptDescriptor(conceptName);
     return d.isUnorderedChild(role);
   }
-
-
 
   @Override
   public SNode getLinkNode() {
@@ -72,8 +59,6 @@ public class SContainmentLinkAdapter extends SAbstractLinkAdapter implements SCo
     SModel model = adapter.getConceptDeclarationNode().getModel();
     return ((SNode) model.getNode(new SNodeId.Regular(myRoleId.getContainmentLinkId())));
   }
-
-
 
   public boolean fillBothIds() {
     if (myRoleId != null && role != null) {
@@ -97,8 +82,6 @@ public class SContainmentLinkAdapter extends SAbstractLinkAdapter implements SCo
     return true;
   }
 
-
-
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -116,8 +99,6 @@ public class SContainmentLinkAdapter extends SAbstractLinkAdapter implements SCo
       return my.equals(theirs);
     }
   }
-
-
 
   @Override
   public int hashCode() {

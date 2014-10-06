@@ -33,6 +33,7 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.javastub.asm.ASMParameterizedType" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.javastub.asm.ASMType" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.javastub.asm.ASMTypeVariable" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.javastub.asm.SignatureVisitorAdapter" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.javastub.asm.TypeUtil" />
     <classNode dependClassName="jetbrains.mps.stubs.javastub.classpath.ClassifierKind" />
     <classNode dependClassName="org.jetbrains.asm4.ClassReader" />
@@ -44,7 +45,6 @@
     <classNode dependClassName="org.jetbrains.asm4.tree.FieldNode" />
     <classNode dependClassName="org.jetbrains.asm4.tree.InnerClassNode" />
     <classNode dependClassName="org.jetbrains.asm4.tree.MethodNode" />
-    <classNode extendsClassName="jetbrains.mps.baseLanguage.javastub.asm.SignatureVisitorAdapter" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.javastub.asm.ASMClassType" file="ASMClassType.java">
     <classNode dependClassName="java.lang.Override" />
@@ -162,10 +162,10 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.javastub.asm.ASMType" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.javastub.asm.ASMTypeVariable" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.javastub.asm.ASMUnboundedType" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.javastub.asm.SignatureVisitorAdapter" />
     <classNode dependClassName="org.jetbrains.asm4.Type" />
     <classNode dependClassName="org.jetbrains.asm4.signature.SignatureReader" />
     <classNode dependClassName="org.jetbrains.asm4.signature.SignatureVisitor" />
-    <classNode extendsClassName="jetbrains.mps.baseLanguage.javastub.asm.SignatureVisitorAdapter" />
   </dependency>
 </dependenciesRoot>
 

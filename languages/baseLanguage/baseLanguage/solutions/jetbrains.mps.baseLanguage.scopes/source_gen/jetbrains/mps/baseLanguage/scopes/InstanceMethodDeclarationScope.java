@@ -59,7 +59,7 @@ public class InstanceMethodDeclarationScope extends BaseMethodsScope {
       // todo: is it right? 
       return (Sequence.fromIterable(nonAbstractMethods).count() == 1 ? nonAbstractMethods : Sequence.fromIterable(nonAbstractMethods).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
-          return SNodeOperations.getParent(it) != SNodeOperations.getNode("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)", "~Object");
+          return SNodeOperations.getParent(it) != SNodeOperations.getNode("6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)", "~Object");
         }
       }));
     } else {

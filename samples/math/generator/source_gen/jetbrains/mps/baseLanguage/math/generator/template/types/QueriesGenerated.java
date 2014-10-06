@@ -1588,8 +1588,8 @@ public class QueriesGenerated {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StaticFieldReference", null, null, false);
-    quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, facade.createModelReference("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.math(JDK/java.math@java_stub)"), facade.createNodeId("~BigDecimal")));
-    quotedNode_1.setReference("variableDeclaration", SReference.create("variableDeclaration", quotedNode_1, facade.createModelReference("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.math(JDK/java.math@java_stub)"), facade.createNodeId("~BigDecimal.ZERO")));
+    quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, facade.createModelReference("6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.math(JDK/java.math@java_stub)"), facade.createNodeId("~BigDecimal")));
+    quotedNode_1.setReference("variableDeclaration", SReference.create("variableDeclaration", quotedNode_1, facade.createModelReference("6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.math(JDK/java.math@java_stub)"), facade.createNodeId("~BigDecimal.ZERO")));
     return quotedNode_1;
   }
   private static SNode _quotation_createNode_x583g4_a0a0a0yh() {

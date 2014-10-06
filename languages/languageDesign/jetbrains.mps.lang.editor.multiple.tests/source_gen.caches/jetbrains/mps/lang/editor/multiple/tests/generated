@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependencies version="2" modelHash="-brwkouwfqk082k3aew3snh282w1nwbt">
   <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" hash="-2sqpydigz7vryaerubh22j78l4l08jz" />
-  <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" hash="-88dq2j910t3rwbhdmvczf6foy7a2l1t" />
+  <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" hash="-2y8uo4tu49qnw2vhfchrtxn4mid0vus" />
   <dep model="r:00000000-0000-4000-0000-011c89590369(jetbrains.mps.lang.plugin.generator.baseLanguage.template.main@generator)" hash="avfa9d1gi6elwdyk4j2v3gai0koenk9" />
   <dep model="r:00000000-0000-4000-0000-011c89590389(jetbrains.mps.lang.test.generator.baseLanguage.template.main@generator)" hash="327b05wvz8jqq4unqtz0kabu3a54bsw" />
   <dep model="r:9832fb5f-2578-4b58-8014-a5de79da988e(jetbrains.mps.ide.editor.actions)" hash="-b0kg0hkenvc906vfkoovtmp87ze1xvv" />
@@ -37,10 +37,8 @@
     <dep root="7636045212393364917" />
     <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" />
-    <dep model="r:00000000-0000-4000-0000-011c89590369(jetbrains.mps.lang.plugin.generator.baseLanguage.template.main@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c89590389(jetbrains.mps.lang.test.generator.baseLanguage.template.main@generator)" />
     <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
-    <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="EditorSpecifiedBy_add_context_hints_Test.java" />
   </source>
   <source id="5950344441601613251" hash="c8534edxbtef61i0rsvwo2e9mdu5vr7" />
@@ -69,11 +67,8 @@
     <dep root="7636045212390410965" />
     <dep root="7636045212390416608" />
     <dep root="7636045212393364917" />
-    <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
-    <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" />
-    <dep model="r:00000000-0000-4000-0000-011c89590369(jetbrains.mps.lang.plugin.generator.baseLanguage.template.main@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590389(jetbrains.mps.lang.test.generator.baseLanguage.template.main@generator)" />
     <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
-    <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="DefaultEditor_Test.java" />
   </source>
   <source id="5950344441601676487" name="EditorSpecifiedBy_add_remove_context_hints" hash="1ya8jy7tpvrk4gf2zzhig38xmnkvbdf" dependsOnNodes="true">
@@ -101,6 +96,9 @@
     <dep root="7636045212390410965" />
     <dep root="7636045212390416608" />
     <dep root="7636045212393364917" />
+    <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590369(jetbrains.mps.lang.plugin.generator.baseLanguage.template.main@generator)" />
+    <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="EditorSpecifiedBy_add_remove_context_hints_Test.java" />
   </source>
   <source id="7636045212390392321" name="ConditionalPresentation_addQuery_default" hash="2izdgcaxz8q4tbvv5v9xj0pp733h8x9" dependsOnNodes="true">
@@ -128,6 +126,7 @@
     <dep root="7636045212390410965" />
     <dep root="7636045212390416608" />
     <dep root="7636045212393364917" />
+    <dep model="r:00000000-0000-4000-0000-011c89590369(jetbrains.mps.lang.plugin.generator.baseLanguage.template.main@generator)" />
     <file name="ConditionalPresentation_addQuery_default_Test.java" />
   </source>
   <source id="7636045212390401481" name="ConditionalPresentation_addQuery_rich" hash="-a2n0xmnialalej0ujfc55yljb41fcgv" dependsOnNodes="true">
@@ -183,6 +182,7 @@
     <dep root="7636045212390401481" />
     <dep root="7636045212390416608" />
     <dep root="7636045212393364917" />
+    <dep model="r:00000000-0000-4000-0000-011c89590389(jetbrains.mps.lang.test.generator.baseLanguage.template.main@generator)" />
     <file name="ConditionalPresentation_removeQuery_compact_Test.java" />
   </source>
   <source id="7636045212390416608" name="ConditionalPresentation_addQuery_switch" hash="-759a9xdkdths24qlko16g3tfgxb213t" dependsOnNodes="true">
@@ -210,6 +210,7 @@
     <dep root="7636045212390401481" />
     <dep root="7636045212390410965" />
     <dep root="7636045212393364917" />
+    <dep model="r:00000000-0000-4000-0000-011c89590389(jetbrains.mps.lang.test.generator.baseLanguage.template.main@generator)" />
     <dep model="r:9832fb5f-2578-4b58-8014-a5de79da988e(jetbrains.mps.ide.editor.actions)" />
     <file name="ConditionalPresentation_addQuery_switch_Test.java" />
   </source>
@@ -238,6 +239,7 @@
     <dep root="7636045212390401481" />
     <dep root="7636045212390410965" />
     <dep root="7636045212390416608" />
+    <dep model="r:00000000-0000-4000-0000-011c89590389(jetbrains.mps.lang.test.generator.baseLanguage.template.main@generator)" />
     <dep model="r:9832fb5f-2578-4b58-8014-a5de79da988e(jetbrains.mps.ide.editor.actions)" />
     <file name="ConditionalPresentation_removeQuery_switch_Test.java" />
   </source>

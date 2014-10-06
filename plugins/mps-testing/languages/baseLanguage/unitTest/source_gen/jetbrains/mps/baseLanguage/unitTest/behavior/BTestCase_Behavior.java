@@ -26,7 +26,7 @@ public class BTestCase_Behavior {
       public boolean accept(SNode method) {
         return (ListSequence.fromList(SLinkOperations.getTargets(method, "annotation", true)).findFirst(new IWhereFilter<SNode>() {
           public boolean accept(SNode annotation) {
-            return SLinkOperations.getTarget(annotation, "annotation", false).equals(SNodeOperations.getNode("f:java_stub#83f155ff-422c-4b5a-a2f2-b459302dd215#org.junit(jetbrains.mps.baseLanguage.unitTest.libs/org.junit@java_stub)", "~Ignore"));
+            return SLinkOperations.getTarget(annotation, "annotation", false).equals(SNodeOperations.getNode("83f155ff-422c-4b5a-a2f2-b459302dd215/f:java_stub#83f155ff-422c-4b5a-a2f2-b459302dd215#org.junit(jetbrains.mps.baseLanguage.unitTest.libs/org.junit@java_stub)", "~Ignore"));
           }
         }) == null);
       }
@@ -38,13 +38,13 @@ public class BTestCase_Behavior {
   }
   public static boolean virtual_isMpsStartRequired_3310779261129403089(SNode thisNode) {
     for (SNode annotationInstance : ListSequence.fromList(SLinkOperations.getTargets(thisNode, "annotation", true))) {
-      if (SLinkOperations.getTarget(annotationInstance, "annotation", false).equals(SNodeOperations.getNode("f:java_stub#920eaa0e-ecca-46bc-bee7-4e5c59213dd6#jetbrains.mps(Testbench/jetbrains.mps@java_stub)", "~MPSLaunch"))) {
+      if (SLinkOperations.getTarget(annotationInstance, "annotation", false).equals(SNodeOperations.getNode("920eaa0e-ecca-46bc-bee7-4e5c59213dd6/f:java_stub#920eaa0e-ecca-46bc-bee7-4e5c59213dd6#jetbrains.mps(Testbench/jetbrains.mps@java_stub)", "~MPSLaunch"))) {
         return true;
       }
     }
     for (SNode method : SLinkOperations.getTargets(SLinkOperations.getTarget(thisNode, "testMethodList", true), "testMethod", true)) {
       for (SNode annotationInstance : SLinkOperations.getTargets(method, "annotation", true)) {
-        if (SLinkOperations.getTarget(annotationInstance, "annotation", false).equals(SNodeOperations.getNode("f:java_stub#920eaa0e-ecca-46bc-bee7-4e5c59213dd6#jetbrains.mps(Testbench/jetbrains.mps@java_stub)", "~MPSLaunch"))) {
+        if (SLinkOperations.getTarget(annotationInstance, "annotation", false).equals(SNodeOperations.getNode("920eaa0e-ecca-46bc-bee7-4e5c59213dd6/f:java_stub#920eaa0e-ecca-46bc-bee7-4e5c59213dd6#jetbrains.mps(Testbench/jetbrains.mps@java_stub)", "~MPSLaunch"))) {
           return true;
         }
       }

@@ -483,31 +483,28 @@
   </root>
   <root nodeRef="r:39747a8f-4d04-48b7-83c5-4b4f5e43330c(jetbrains.mps.ide.java.sourceStubs)/5056426112720866148">
     <file name="Util.java">
-      <node id="6789800444984027077" at="11,91,12,92" concept="10" />
-      <node id="6789800444984037162" at="12,92,13,83" concept="10" />
-      <node id="6789800444984023443" at="14,36,15,18" concept="9" />
-      <node id="6789800444984029493" at="16,5,17,0" concept="11" />
-      <node id="8036260399915702427" at="17,0,18,36" concept="8" />
-      <node id="5056426112720901902" at="18,36,19,60" concept="8" />
-      <node id="8036260399918319836" at="19,60,20,0" concept="11" />
-      <node id="8036260399918318895" at="20,0,21,68" concept="8" />
-      <node id="8036260399918356538" at="21,68,22,120" concept="8" />
-      <node id="8036260399918322127" at="22,120,23,0" concept="11" />
-      <node id="8036260399911800721" at="23,0,24,69" concept="9" />
-      <node id="8036260399911800685" at="13,83,16,5" concept="6" />
-      <node id="5056426112720875382" at="11,0,26,0" concept="13" trace="makeModelReference#(Ljava/lang/String;Lorg/jetbrains/mps/openapi/module/SModule;)Lorg/jetbrains/mps/openapi/model/SModelReference;" />
-      <scope id="8036260399911800691" at="14,36,15,18" />
-      <scope id="5056426112720875385" at="11,91,24,69">
-        <var name="fqName" id="8036260399918318898" />
+      <node id="6789800444984027077" at="10,91,11,92" concept="10" />
+      <node id="6789800444984037162" at="11,92,12,83" concept="10" />
+      <node id="6789800444984023443" at="13,36,14,18" concept="9" />
+      <node id="6789800444984029493" at="15,5,16,0" concept="11" />
+      <node id="8036260399915702427" at="16,0,17,36" concept="8" />
+      <node id="5056426112720901902" at="17,36,18,60" concept="8" />
+      <node id="8036260399918319836" at="18,60,19,0" concept="11" />
+      <node id="8036260399918356538" at="19,0,20,99" concept="8" />
+      <node id="8036260399911800721" at="20,99,21,125" concept="9" />
+      <node id="8036260399911800685" at="12,83,15,5" concept="6" />
+      <node id="5056426112720875382" at="10,0,23,0" concept="13" trace="makeModelReference#(Ljava/lang/String;Lorg/jetbrains/mps/openapi/module/SModule;)Lorg/jetbrains/mps/openapi/model/SModelReference;" />
+      <scope id="8036260399911800691" at="13,36,14,18" />
+      <scope id="5056426112720875385" at="10,91,21,125">
         <var name="modelId" id="8036260399918356541" />
         <var name="mpsModuleId" id="5056426112720901905" />
         <var name="stereotype" id="8036260399915702430" />
       </scope>
-      <scope id="5056426112720875382" at="11,0,26,0">
+      <scope id="5056426112720875382" at="10,0,23,0">
         <var name="mpsModule" id="5056426112720877000" />
         <var name="packageName" id="5056426112720876492" />
       </scope>
-      <unit id="5056426112720866148" at="10,0,27,0" name="jetbrains.mps.ide.java.sourceStubs.Util" />
+      <unit id="5056426112720866148" at="9,0,24,0" name="jetbrains.mps.ide.java.sourceStubs.Util" />
     </file>
   </root>
   <root nodeRef="r:39747a8f-4d04-48b7-83c5-4b4f5e43330c(jetbrains.mps.ide.java.sourceStubs)/5592980646743658996">

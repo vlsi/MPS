@@ -7,7 +7,6 @@ import jetbrains.mps.baseLanguage.behavior.Expression_BehaviorDescriptor;
 public class ConceptIdRefExpression_BehaviorDescriptor extends Expression_BehaviorDescriptor {
   public ConceptIdRefExpression_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.smodel.structure.ConceptIdRefExpression";

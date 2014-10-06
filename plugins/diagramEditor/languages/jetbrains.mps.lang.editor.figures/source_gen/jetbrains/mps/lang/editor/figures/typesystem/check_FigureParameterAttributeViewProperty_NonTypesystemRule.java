@@ -18,7 +18,7 @@ public class check_FigureParameterAttributeViewProperty_NonTypesystemRule extend
   public check_FigureParameterAttributeViewProperty_NonTypesystemRule() {
   }
   public void applyRule(final SNode viewPropSpecificationAttribute, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    if (!(Utils.isSupportedParameterType(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), viewPropSpecificationAttribute, "virtual_getParameterType_342110547581236128", new Object[]{}), SNodeOperations.getNode("f:java_stub#67b3c41d-58b3-4756-b971-30bf8a9d63e6#jetbrains.jetpad.projectional.view(jetbrains.jetpad/jetbrains.jetpad.projectional.view@java_stub)", "~ViewPropertySpec")))) {
+    if (!(Utils.isSupportedParameterType(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), viewPropSpecificationAttribute, "virtual_getParameterType_342110547581236128", new Object[]{}), SNodeOperations.getNode("67b3c41d-58b3-4756-b971-30bf8a9d63e6/f:java_stub#67b3c41d-58b3-4756-b971-30bf8a9d63e6#jetbrains.jetpad.projectional.view(jetbrains.jetpad/jetbrains.jetpad.projectional.view@java_stub)", "~ViewPropertySpec")))) {
       {
         MessageTarget errorTarget = new NodeMessageTarget();
         IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(viewPropSpecificationAttribute, "Unsupported attributed static field type, jetbrains.jetpad.projectional.view.ViewPropertySpec expected.", "r:e599f0dc-4c53-470d-be67-94ae885c5aab(jetbrains.mps.lang.editor.figures.typesystem)", "9176911587996551958", null, errorTarget);

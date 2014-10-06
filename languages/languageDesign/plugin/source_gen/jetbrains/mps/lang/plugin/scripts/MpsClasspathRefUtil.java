@@ -71,7 +71,6 @@ import jetbrains.mps.project.AbstractModule;
     }
     return null;
   }
-
   private static String check_xpwqv8_a0a1a5a1(SModelReference checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModelName();

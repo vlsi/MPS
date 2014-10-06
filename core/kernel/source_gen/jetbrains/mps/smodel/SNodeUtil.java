@@ -65,7 +65,6 @@ public class SNodeUtil {
   public static final SPropertyId propertyId_BaseConcept_shortDescription = SPropertyId.deserialize("ceab5195-25ea-4f22-9b92-103b95ca8c0c/1133920641626/1156234966388");
   public static final String link_BaseConcept_smodelAttribute = "smodelAttribute";
   public static final SContainmentLinkId linkId_BaseConcept_smodelAttribute = SContainmentLinkId.deserialize("ceab5195-25ea-4f22-9b92-103b95ca8c0c/1133920641626/5169995583184591170");
-
   public SNodeUtil() {
   }
   public static String getPresentation(SNode node) {

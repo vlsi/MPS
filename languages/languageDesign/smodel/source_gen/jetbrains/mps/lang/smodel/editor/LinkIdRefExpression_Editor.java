@@ -29,7 +29,6 @@ public class LinkIdRefExpression_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_1ktdi3_a(editorContext, node);
   }
-
   private EditorCell createCollection_1ktdi3_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_1ktdi3_a");
@@ -42,7 +41,6 @@ public class LinkIdRefExpression_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_1ktdi3_f0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_1ktdi3_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "link id");
     editorCell.setCellId("Constant_1ktdi3_a0");
@@ -53,7 +51,6 @@ public class LinkIdRefExpression_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_1ktdi3_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "/");
     editorCell.setCellId("Constant_1ktdi3_b0");
@@ -63,7 +60,6 @@ public class LinkIdRefExpression_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefCell_1ktdi3_c0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
     provider.setRole("conceptDeclaration");
@@ -88,20 +84,16 @@ public class LinkIdRefExpression_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   public static class _Inline_1ktdi3_a2a extends InlineCellProvider {
     public _Inline_1ktdi3_a2a() {
       super();
     }
-
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
     }
-
     public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
       return this.createProperty_1ktdi3_a0c0(editorContext, node);
     }
-
     private EditorCell createProperty_1ktdi3_a0c0(EditorContext editorContext, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
       provider.setRole("name");
@@ -125,7 +117,6 @@ public class LinkIdRefExpression_Editor extends DefaultNodeEditor {
       return editorCell;
     }
   }
-
   private EditorCell createConstant_1ktdi3_d0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
     editorCell.setCellId("Constant_1ktdi3_d0");
@@ -136,7 +127,6 @@ public class LinkIdRefExpression_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefCell_1ktdi3_e0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
     provider.setRole("linkDeclaration");
@@ -161,20 +151,16 @@ public class LinkIdRefExpression_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   public static class _Inline_1ktdi3_a4a extends InlineCellProvider {
     public _Inline_1ktdi3_a4a() {
       super();
     }
-
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
     }
-
     public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
       return this.createProperty_1ktdi3_a0e0(editorContext, node);
     }
-
     private EditorCell createProperty_1ktdi3_a0e0(EditorContext editorContext, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
       provider.setRole("role");
@@ -198,7 +184,6 @@ public class LinkIdRefExpression_Editor extends DefaultNodeEditor {
       return editorCell;
     }
   }
-
   private EditorCell createConstant_1ktdi3_f0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "/");
     editorCell.setCellId("Constant_1ktdi3_f0");

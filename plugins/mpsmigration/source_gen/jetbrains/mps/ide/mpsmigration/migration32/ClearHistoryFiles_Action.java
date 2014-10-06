@@ -29,18 +29,15 @@ import org.apache.log4j.LogManager;
 
 public class ClearHistoryFiles_Action extends BaseAction {
   private static final Icon ICON = null;
-
   public ClearHistoryFiles_Action() {
     super("Clear History Files", "", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(false);
   }
-
   @Override
   public boolean isDumbAware() {
     return true;
   }
-
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       this.enable(event.getPresentation());
@@ -51,7 +48,6 @@ public class ClearHistoryFiles_Action extends BaseAction {
       this.disable(event.getPresentation());
     }
   }
-
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
       return false;
@@ -62,7 +58,6 @@ public class ClearHistoryFiles_Action extends BaseAction {
     }
     return true;
   }
-
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       Iterable<SModule> modulesWithGenerators = ((MPSProject) MapSequence.fromMap(_params).get("project")).getModulesWithGenerators();
@@ -101,13 +96,10 @@ public class ClearHistoryFiles_Action extends BaseAction {
       }
     }
   }
-
   protected static Logger LOG = LogManager.getLogger(ClearHistoryFiles_Action.class);
-
   private static <T> T as_wouwxe_a0a0a0a0a0a0a0a0b0a0f(Object o, Class<T> type) {
     return (type.isInstance(o) ? (T) o : null);
   }
-
   private static <T> T as_wouwxe_a0a0a0a0a0a0a0a0b0a0f_0(Object o, Class<T> type) {
     return (type.isInstance(o) ? (T) o : null);
   }

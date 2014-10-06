@@ -1059,11 +1059,11 @@
       <node id="1654804677203434363" at="41,62,42,63" concept="7" />
       <node id="1654804677203434363" at="42,63,43,30" concept="7" />
       <node id="1654804677203434363" at="43,30,44,138" concept="3" />
-      <node id="1654804677203434363" at="44,138,45,239" concept="3" />
-      <node id="1654804677203434363" at="45,239,46,24" concept="8" />
+      <node id="1654804677203434363" at="44,138,45,276" concept="3" />
+      <node id="1654804677203434363" at="45,276,46,24" concept="8" />
       <node id="1654804677203434347" at="15,0,17,0" concept="2" trace="comparable_IndexedTupleType_Object_ComparisonRule#()V" />
-      <node id="1654804677203434363" at="43,30,45,239" concept="0" />
-      <node id="1654804677203434363" at="43,30,45,239" concept="0" />
+      <node id="1654804677203434363" at="43,30,45,276" concept="0" />
+      <node id="1654804677203434363" at="43,30,45,276" concept="0" />
       <node id="1654804677203434347" at="17,0,20,0" concept="6" trace="areComparable#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/lang/typesystem/runtime/IsApplicable2Status;)Z" />
       <node id="1654804677203434347" at="20,0,23,0" concept="6" trace="isWeak#()Z" />
       <node id="1654804677203434347" at="35,0,38,0" concept="6" trace="getApplicableConceptFQName1#()Ljava/lang/String;" />
@@ -1085,7 +1085,7 @@
       <scope id="1654804677203434347" at="30,5,32,45">
         <var name="b" id="1654804677203434347" />
       </scope>
-      <scope id="1654804677203434363" at="43,30,45,239" />
+      <scope id="1654804677203434363" at="43,30,45,276" />
       <scope id="1654804677203434347" at="17,0,20,0">
         <var name="node1" id="1654804677203434347" />
         <var name="node2" id="1654804677203434347" />
@@ -1123,11 +1123,11 @@
       <node id="1654804677203434378" at="41,62,42,63" concept="7" />
       <node id="1654804677203434378" at="42,63,43,30" concept="7" />
       <node id="1654804677203434378" at="43,30,44,138" concept="3" />
-      <node id="1654804677203434378" at="44,138,45,239" concept="3" />
-      <node id="1654804677203434378" at="45,239,46,24" concept="8" />
+      <node id="1654804677203434378" at="44,138,45,276" concept="3" />
+      <node id="1654804677203434378" at="45,276,46,24" concept="8" />
       <node id="1654804677203434372" at="15,0,17,0" concept="2" trace="comparable_NamedTupleType_Object_ComparisonRule#()V" />
-      <node id="1654804677203434378" at="43,30,45,239" concept="0" />
-      <node id="1654804677203434378" at="43,30,45,239" concept="0" />
+      <node id="1654804677203434378" at="43,30,45,276" concept="0" />
+      <node id="1654804677203434378" at="43,30,45,276" concept="0" />
       <node id="1654804677203434372" at="17,0,20,0" concept="6" trace="areComparable#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/lang/typesystem/runtime/IsApplicable2Status;)Z" />
       <node id="1654804677203434372" at="20,0,23,0" concept="6" trace="isWeak#()Z" />
       <node id="1654804677203434372" at="35,0,38,0" concept="6" trace="getApplicableConceptFQName1#()Ljava/lang/String;" />
@@ -1149,7 +1149,7 @@
       <scope id="1654804677203434372" at="30,5,32,45">
         <var name="b" id="1654804677203434372" />
       </scope>
-      <scope id="1654804677203434378" at="43,30,45,239" />
+      <scope id="1654804677203434378" at="43,30,45,276" />
       <scope id="1654804677203434372" at="17,0,20,0">
         <var name="node1" id="1654804677203434372" />
         <var name="node2" id="1654804677203434372" />

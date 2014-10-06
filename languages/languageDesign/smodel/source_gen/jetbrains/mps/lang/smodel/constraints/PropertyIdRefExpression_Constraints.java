@@ -21,7 +21,6 @@ public class PropertyIdRefExpression_Constraints extends BaseConstraintsDescript
   public PropertyIdRefExpression_Constraints() {
     super("jetbrains.mps.lang.smodel.structure.PropertyIdRefExpression");
   }
-
   @Override
   protected Map<String, ReferenceConstraintsDescriptor> getNotDefaultReferences() {
     Map<String, ReferenceConstraintsDescriptor> references = new HashMap();
@@ -30,7 +29,6 @@ public class PropertyIdRefExpression_Constraints extends BaseConstraintsDescript
       public boolean hasOwnScopeProvider() {
         return true;
       }
-
       @Nullable
       @Override
       public ReferenceScopeProvider getScopeProvider() {
@@ -39,7 +37,6 @@ public class PropertyIdRefExpression_Constraints extends BaseConstraintsDescript
           public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
             return AbstractConceptDeclaration_Behavior.call_getPropertyDeclarations_1213877394546(SLinkOperations.getTarget(_context.getReferenceNode(), "conceptDeclaration", false));
           }
-
           @Override
           public SNodeReference getSearchScopeValidatorNode() {
             return breakingNode_c7am5l_a0a1a0a0a1a0b0a1a1;
@@ -49,6 +46,5 @@ public class PropertyIdRefExpression_Constraints extends BaseConstraintsDescript
     });
     return references;
   }
-
   private static SNodePointer breakingNode_c7am5l_a0a1a0a0a1a0b0a1a1 = new SNodePointer("r:00000000-0000-4000-0000-011c895902fb(jetbrains.mps.lang.smodel.constraints)", "2644386474302392178");
 }

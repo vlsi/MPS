@@ -22,26 +22,20 @@ public class SPropertyAdapter implements SProperty {
   private String conceptName;
   private String propertyName;
 
-
   public SPropertyAdapter(String conceptName, String name) {
     this.conceptName = conceptName;
     this.propertyName = name;
   }
 
-
-
   public SPropertyAdapter(SPropertyId propertyId) {
     this.myPropertyId = propertyId;
   }
-
-
 
   @Override
   public SPropertyId getId() {
     fillBothIds();
     return myPropertyId;
   }
-
   @Override
   public String getName() {
     fillBothIds();
@@ -50,8 +44,6 @@ public class SPropertyAdapter implements SProperty {
     // todo in 3.2, it is supposed that we either remove most accesses to this method or we'll return conceptName here and clear it in all propertyIds when renaming prop in IDE 
     return propertyName;
   }
-
-
 
   @Override
   public SDataType getType() {
@@ -72,15 +64,11 @@ public class SPropertyAdapter implements SProperty {
     return new SDataTypeAdapter();
   }
 
-
-
   @Override
   public boolean isValid(String string) {
     // TODO implement 
     return true;
   }
-
-
 
   public final SNode getPropertyNode() {
     if (!(fillBothIds())) {
@@ -90,7 +78,6 @@ public class SPropertyAdapter implements SProperty {
     SModel model = adapter.getConceptDeclarationNode().getModel();
     return ((SNode) model.getNode(new SNodeId.Regular(myPropertyId.getPropertyId())));
   }
-
   public boolean fillBothIds() {
     if (myPropertyId != null && propertyName != null) {
       return true;

@@ -18,13 +18,9 @@ public class SConceptAdapter extends SAbstractConceptAdapter implements SConcept
     super(conceptId);
   }
 
-
-
   public SConceptAdapter(@NotNull String concept) {
     super(concept);
   }
-
-
 
   @Override
   public SConcept getSuperConcept() {
@@ -40,8 +36,6 @@ public class SConceptAdapter extends SAbstractConceptAdapter implements SConcept
     }
     return new SConceptAdapter(superConcept);
   }
-
-
 
   @Override
   public Iterable<SInterfaceConcept> getSuperInterfaces() {

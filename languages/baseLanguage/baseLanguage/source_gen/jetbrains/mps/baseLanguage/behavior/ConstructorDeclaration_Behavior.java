@@ -84,14 +84,14 @@ public class ConstructorDeclaration_Behavior {
     SNode classConcept = SNodeOperations.getAncestor(thisNode, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false);
     SNode classifierType = SLinkOperations.getTarget(classConcept, "superclass", true);
     if (classifierType == null) {
-      return Sequence.fromIterable(ClassConcept_Behavior.call_constructors_5292274854859503373(SNodeOperations.getNode("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)", "~Object"))).first();
+      return Sequence.fromIterable(ClassConcept_Behavior.call_constructors_5292274854859503373(SNodeOperations.getNode("6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)", "~Object"))).first();
     }
     SNode classifier = SLinkOperations.getTarget(classifierType, "classifier", false);
     if (!(SNodeOperations.isInstanceOf(classifier, "jetbrains.mps.baseLanguage.structure.ClassConcept"))) {
       return null;
     }
     SNode superclass = SNodeOperations.cast(classifier, "jetbrains.mps.baseLanguage.structure.ClassConcept");
-    if (superclass != SNodeOperations.getNode("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)", "~Enum")) {
+    if (superclass != SNodeOperations.getNode("6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)", "~Enum")) {
       Iterable<SNode> constructors = Sequence.fromIterable(ClassConcept_Behavior.call_constructors_5292274854859503373(superclass)).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
           return !(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(it, "visibility", true), "jetbrains.mps.baseLanguage.structure.PrivateVisibility"));

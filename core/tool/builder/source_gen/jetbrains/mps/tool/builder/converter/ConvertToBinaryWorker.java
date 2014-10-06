@@ -21,10 +21,6 @@ import java.util.Collections;
 import jetbrains.mps.persistence.DefaultModelPersistence;
 import jetbrains.mps.project.MPSExtentions;
 import org.jetbrains.mps.openapi.persistence.ModelSaveException;
-import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.persistence.binary.BinaryPersistence;
-import jetbrains.mps.smodel.persistence.def.ModelReadException;
 
 public class ConvertToBinaryWorker {
   public ConvertToBinaryWorker() {
@@ -55,8 +51,7 @@ public class ConvertToBinaryWorker {
       mpsCore.dispose();
     }
   }
-
-  private void convertModelToBinary(String sourceFile, final String destFile, boolean stripImplementation) throws IOException {
+  private void convertModelToBinary(String sourceFile, String destFile, boolean stripImplementation) throws IOException {
     IFile source = FileSystem.getInstance().getFileByPath(sourceFile);
     ModelFactory modelFactory = PersistenceFacade.getInstance().getModelFactory(FileUtil.getExtension(source.getName()));
     if (modelFactory == null) {

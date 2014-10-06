@@ -20,19 +20,14 @@ import org.jetbrains.annotations.NotNull;
 public class SReferenceLinkAdapter extends SAbstractLinkAdapter implements SReferenceLink {
   protected SReferenceLinkId myRoleId;
 
-
   public SReferenceLinkAdapter(String conceptName, String role) {
     super(conceptName, role);
   }
-
-
 
   public SReferenceLinkAdapter(SReferenceLinkId roleId) {
     super(null, null);
     myRoleId = roleId;
   }
-
-
 
   @Override
   public SAbstractLinkId getRoleId() {
@@ -40,21 +35,15 @@ public class SReferenceLinkAdapter extends SAbstractLinkAdapter implements SRefe
     return myRoleId;
   }
 
-
-
   @Override
   public boolean isReference() {
     return true;
   }
 
-
-
   @Override
   public boolean isMultiple() {
     return false;
   }
-
-
 
   public SScope getScope(SNode referenceNode) {
     // TODO scope = ModelConstraints.getReferenceDescriptor(conceptName, role).getScope() 
@@ -64,7 +53,6 @@ public class SReferenceLinkAdapter extends SAbstractLinkAdapter implements SRefe
     }
     return null;
   }
-
   public SScope getScope(SNode contextNode, @Nullable SContainmentLink link, int index) {
     // TODO scope = ModelConstraints.getReferenceDescriptor(conceptName, role, contextNode, link.role(), index).getScope() 
     Scope scope = null;
@@ -74,8 +62,6 @@ public class SReferenceLinkAdapter extends SAbstractLinkAdapter implements SRefe
     return null;
   }
 
-
-
   public SNode getLinkNode() {
     if (!(fillBothIds())) {
       return null;
@@ -84,8 +70,6 @@ public class SReferenceLinkAdapter extends SAbstractLinkAdapter implements SRefe
     SModel model = adapter.getConceptDeclarationNode().getModel();
     return ((SNode) model.getNode(new SNodeId.Regular(myRoleId.getReferenceLinkId())));
   }
-
-
 
   public boolean fillBothIds() {
     if (myRoleId != null && role != null) {
@@ -109,8 +93,6 @@ public class SReferenceLinkAdapter extends SAbstractLinkAdapter implements SRefe
     return true;
   }
 
-
-
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -129,8 +111,6 @@ public class SReferenceLinkAdapter extends SAbstractLinkAdapter implements SRefe
     }
   }
 
-
-
   @Override
   public int hashCode() {
     if (myRoleId != null) {
@@ -140,33 +120,25 @@ public class SReferenceLinkAdapter extends SAbstractLinkAdapter implements SRefe
     }
   }
 
-
-
   private static class SScopeAdapter implements SScope {
     private final SNode myContextNode;
     private final Scope myScope;
-
 
     private SScopeAdapter(@NotNull Scope scope, @NotNull SNode contextNode) {
       myScope = scope;
       myContextNode = contextNode;
     }
 
-
-
     public Iterable<SNode> getAvailableElements(@Nullable String prefix) {
       return myScope.getAvailableElements(prefix);
     }
-
     public boolean contains(SNode node) {
       return myScope.contains(node);
     }
-
     @Nullable
     public SNode resolve(@NotNull String string) {
       return myScope.resolve(myContextNode, string);
     }
-
     @Nullable
     public String getReferenceText(@NotNull SNode node) {
       return myScope.getReferenceText(myContextNode, node);

@@ -9,7 +9,6 @@ import jetbrains.mps.smodel.runtime.interpreted.BehaviorAspectInterpreted;
 public class BehaviorAspectDescriptor implements jetbrains.mps.smodel.runtime.BehaviorAspectDescriptor {
   public BehaviorAspectDescriptor() {
   }
-
   public BehaviorDescriptor getDescriptor(String fqName) {
     switch (Arrays.binarySearch(stringSwitchCases_846f5o_a0a0b, fqName)) {
       case 0:
@@ -66,6 +65,5 @@ public class BehaviorAspectDescriptor implements jetbrains.mps.smodel.runtime.Be
         return BehaviorAspectInterpreted.getInstance().getDescriptor(fqName);
     }
   }
-
   private static String[] stringSwitchCases_846f5o_a0a0b = new String[]{"jetbrains.mps.core.xml.sax.structure.XMLSAXAttributeHandler", "jetbrains.mps.core.xml.sax.structure.XMLSAXAttributeHandler_value", "jetbrains.mps.core.xml.sax.structure.XMLSAXAttributeReference", "jetbrains.mps.core.xml.sax.structure.XMLSAXAttributeRule", "jetbrains.mps.core.xml.sax.structure.XMLSAXBreakStatement", "jetbrains.mps.core.xml.sax.structure.XMLSAXChildHandler", "jetbrains.mps.core.xml.sax.structure.XMLSAXChildHandler_childObject", "jetbrains.mps.core.xml.sax.structure.XMLSAXChildRule", "jetbrains.mps.core.xml.sax.structure.XMLSAXChildRuleCondition", "jetbrains.mps.core.xml.sax.structure.XMLSAXDefaultChildHandler", "jetbrains.mps.core.xml.sax.structure.XMLSAXDefaultChildHandler_tagName", "jetbrains.mps.core.xml.sax.structure.XMLSAXDefaultChildRule", "jetbrains.mps.core.xml.sax.structure.XMLSAXFieldDeclaration", "jetbrains.mps.core.xml.sax.structure.XMLSAXFieldReference", "jetbrains.mps.core.xml.sax.structure.XMLSAXHandler_resultObject", "jetbrains.mps.core.xml.sax.structure.XMLSAXLocatorExpression", "jetbrains.mps.core.xml.sax.structure.XMLSAXNodeCreator", "jetbrains.mps.core.xml.sax.structure.XMLSAXNodeRule", "jetbrains.mps.core.xml.sax.structure.XMLSAXNodeRuleParam", "jetbrains.mps.core.xml.sax.structure.XMLSAXNodeRuleParamRef", "jetbrains.mps.core.xml.sax.structure.XMLSAXNodeValidator", "jetbrains.mps.core.xml.sax.structure.XMLSAXParser", "jetbrains.mps.core.xml.sax.structure.XMLSAXTextHandler", "jetbrains.mps.core.xml.sax.structure.XMLSAXTextHandler_value", "jetbrains.mps.core.xml.sax.structure.XMLSAXTextRule"};
 }

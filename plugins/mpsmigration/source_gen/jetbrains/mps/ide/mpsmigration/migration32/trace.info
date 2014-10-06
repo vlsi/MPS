@@ -22,431 +22,431 @@
   <root nodeRef="0c495a8c-90c6-4330-9351-2acbf72e5bb8/r:4550e75a-fac1-4312-b276-24f9bae04a9a(jetbrains.mps.ide.mpsmigration/jetbrains.mps.ide.mpsmigration.migration32)/7390751706570077087">
     <file name="MigrateIds_Action.java">
       <node id="7390751706570077087" at="43,0,44,0" concept="10" trace="ICON" />
-      <node id="7390751706570077087" at="45,30,46,92" concept="12" />
-      <node id="7390751706570077087" at="46,92,47,35" concept="3" />
-      <node id="7390751706570077087" at="47,35,48,41" concept="3" />
-      <node id="7390751706570077087" at="52,32,53,16" concept="7" />
-      <node id="7390751706570077087" at="57,9,58,43" concept="1" />
-      <node id="7390751706570077087" at="57,9,58,43" concept="3" />
-      <node id="7390751706570077087" at="60,42,61,85" concept="3" />
-      <node id="7390751706570077087" at="62,7,63,44" concept="3" />
-      <node id="7390751706570077087" at="68,53,69,19" concept="7" />
-      <node id="7390751706570077087" at="70,5,71,94" concept="3" />
-      <node id="7390751706570077087" at="72,62,73,19" concept="7" />
-      <node id="7390751706570077087" at="74,5,75,16" concept="7" />
-      <node id="7390751706570163628" at="79,9,80,44" concept="3" />
-      <node id="7390751706570181582" at="80,44,81,120" concept="6" />
-      <node id="7390751706570197545" at="83,55,84,32" concept="7" />
-      <node id="1101607213767129888" at="87,59,88,172" concept="7" />
-      <node id="1413293128330208771" at="91,59,92,36" concept="7" />
-      <node id="770502481210891361" at="96,64,97,70" concept="6" />
-      <node id="770502481210891374" at="99,54,100,81" concept="3" />
-      <node id="770502481210891219" at="102,13,103,25" concept="8" />
-      <node id="770502481210891228" at="105,41,106,164" concept="3" />
-      <node id="770502481210891241" at="108,13,109,27" concept="8" />
-      <node id="770502481210896079" at="111,45,112,59" concept="7" />
-      <node id="9173496362250999964" at="115,41,116,149" concept="6" />
-      <node id="770502481210891250" at="116,149,117,74" concept="3" />
-      <node id="770502481210891263" at="119,13,120,26" concept="8" />
-      <node id="5177267286013143510" at="122,61,123,75" concept="7" />
-      <node id="770502481210891272" at="126,46,127,35" concept="6" />
-      <node id="770502481210891279" at="127,35,128,69" concept="0" />
-      <node id="9173496362251051130" at="128,69,129,152" concept="6" />
-      <node id="770502481210891283" at="129,152,130,77" concept="3" />
-      <node id="770502481210891296" at="132,13,133,26" concept="8" />
-      <node id="770502481210891305" at="135,49,136,93" concept="6" />
-      <node id="9173496362251077628" at="138,49,139,359" concept="6" />
-      <node id="770502481210891321" at="139,359,140,132" concept="3" />
-      <node id="1557257207682842967" at="144,13,145,0" concept="9" />
-      <node id="3661358194998148362" at="150,220,151,19" concept="7" />
-      <node id="404829981773975829" at="152,11,153,60" concept="6" />
-      <node id="404829981773975837" at="154,52,155,66" concept="3" />
-      <node id="404829981773975848" at="156,11,157,23" concept="3" />
-      <node id="7390751706570077087" at="161,42,162,84" concept="3" />
-      <node id="7390751706570077087" at="167,0,168,0" concept="10" trace="LOG" />
-      <node id="1101607213767191869" at="169,80,170,47" concept="7" />
-      <node id="7390751706570077087" at="59,27,62,7" concept="1" />
-      <node id="7390751706570077087" at="59,27,62,7" concept="4" />
-      <node id="7390751706570077087" at="67,95,70,5" concept="4" />
-      <node id="7390751706570077087" at="71,94,74,5" concept="4" />
-      <node id="7390751706570196738" at="83,0,86,0" concept="5" trace="translate#(Lorg/jetbrains/mps/openapi/module/SModule;)Ljava/lang/Iterable;" />
-      <node id="1101607213767104515" at="87,0,90,0" concept="5" trace="accept#(Ljetbrains/mps/smodel/DefaultSModelDescriptor;)Z" />
-      <node id="1413293128330142890" at="91,0,94,0" concept="5" trace="accept#(Ljetbrains/mps/smodel/DefaultSModelDescriptor;)Z" />
-      <node id="770502481210891372" at="99,0,102,0" concept="5" trace="visit#(Lorg/jetbrains/mps/openapi/module/SModuleReference;)V" />
-      <node id="770502481210891226" at="105,0,108,0" concept="5" trace="visit#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <node id="770502481210895726" at="111,0,114,0" concept="5" trace="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-      <node id="5177267286013140306" at="122,0,125,0" concept="5" trace="translate#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/Iterable;" />
-      <node id="3661358194998107949" at="149,58,152,11" concept="4" />
-      <node id="404829981773975835" at="153,60,156,11" concept="4" />
-      <node id="7390751706570077087" at="160,27,163,7" concept="1" />
-      <node id="7390751706570077087" at="160,27,163,7" concept="4" />
-      <node id="1101607213767191869" at="169,0,172,0" concept="11" trace="as_fu9gb8_a0a0a0a0a0a0a0a2a0a5#(Ljava/lang/Object;Ljava/lang/Class;)null" />
-      <node id="7390751706570077087" at="51,0,55,0" concept="5" trace="isDumbAware#()Z" />
-      <node id="7390751706570077087" at="70,5,74,5" concept="1" />
-      <node id="770502481210891248" at="115,0,119,0" concept="5" trace="visit#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <node id="770502481210891319" at="138,0,142,0" concept="5" trace="visit#(Ljava/lang/String;)V" />
-      <node id="7390751706570077087" at="45,0,50,0" concept="2" trace="MigrateIds_Action#()V" />
-      <node id="770502481210891368" at="97,70,102,13" concept="3" />
-      <node id="770502481210891221" at="103,25,108,13" concept="3" />
-      <node id="770502481210891270" at="126,0,132,0" concept="5" trace="visit#(Lorg/jetbrains/mps/openapi/model/SReference;)V" />
-      <node id="770502481210891315" at="136,93,142,17" concept="3" />
-      <node id="7390751706570077087" at="56,89,64,5" concept="13" />
-      <node id="770502481210891303" at="135,0,144,0" concept="5" trace="visit#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <node id="7390751706570077087" at="56,0,66,0" concept="5" trace="doUpdate#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
-      <node id="7390751706570077087" at="67,0,77,0" concept="5" trace="collectActionData#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)Z" />
-      <node id="770502481210891243" at="109,27,119,13" concept="3" />
-      <node id="404829981773975653" at="149,0,159,0" concept="5" trace="visit#(Ljetbrains/mps/smodel/DefaultSModelDescriptor;)V" />
-      <node id="770502481210891298" at="133,26,144,13" concept="3" />
-      <node id="770502481210891265" at="120,26,132,13" concept="3" />
-      <node id="404829981773975645" at="147,9,159,9" concept="3" />
-      <node id="7390751706570171382" at="81,120,94,9" concept="6" />
-      <node id="770502481210891359" at="96,0,147,0" concept="5" trace="visit#(Ljetbrains/mps/smodel/DefaultSModelDescriptor;)V" />
-      <node id="770502481210891351" at="94,9,147,9" concept="3" />
-      <node id="7390751706570077087" at="78,96,164,5" concept="13" />
-      <node id="7390751706570077087" at="78,0,166,0" concept="5" trace="doExecute#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
-      <scope id="7390751706570077087" at="52,32,53,16" />
-      <scope id="7390751706570077087" at="57,9,58,43" />
-      <scope id="7390751706570077087" at="60,42,61,85" />
-      <scope id="7390751706570077087" at="68,53,69,19" />
-      <scope id="7390751706570077087" at="72,62,73,19" />
-      <scope id="7390751706570196739" at="83,55,84,32" />
-      <scope id="1101607213767104516" at="87,59,88,172" />
-      <scope id="1413293128330142891" at="91,59,92,36" />
-      <scope id="770502481210891373" at="99,54,100,81" />
-      <scope id="770502481210891227" at="105,41,106,164" />
-      <scope id="770502481210895727" at="111,45,112,59" />
-      <scope id="5177267286013140307" at="122,61,123,75" />
-      <scope id="3661358194998107952" at="150,220,151,19" />
-      <scope id="404829981773975836" at="154,52,155,66" />
-      <scope id="7390751706570077087" at="161,42,162,84" />
-      <scope id="1101607213767191869" at="169,80,170,47" />
-      <scope id="770502481210891249" at="115,41,117,74">
+      <node id="7390751706570077087" at="44,30,45,92" concept="12" />
+      <node id="7390751706570077087" at="45,92,46,35" concept="3" />
+      <node id="7390751706570077087" at="46,35,47,41" concept="3" />
+      <node id="7390751706570077087" at="50,32,51,16" concept="7" />
+      <node id="7390751706570077087" at="54,9,55,43" concept="1" />
+      <node id="7390751706570077087" at="54,9,55,43" concept="3" />
+      <node id="7390751706570077087" at="57,42,58,85" concept="3" />
+      <node id="7390751706570077087" at="59,7,60,44" concept="3" />
+      <node id="7390751706570077087" at="64,53,65,19" concept="7" />
+      <node id="7390751706570077087" at="66,5,67,94" concept="3" />
+      <node id="7390751706570077087" at="68,62,69,19" concept="7" />
+      <node id="7390751706570077087" at="70,5,71,16" concept="7" />
+      <node id="7390751706570163628" at="74,9,75,44" concept="3" />
+      <node id="7390751706570181582" at="75,44,76,120" concept="6" />
+      <node id="7390751706570197545" at="78,55,79,32" concept="7" />
+      <node id="1101607213767129888" at="82,59,83,172" concept="7" />
+      <node id="1413293128330208771" at="86,59,87,36" concept="7" />
+      <node id="770502481210891361" at="91,64,92,70" concept="6" />
+      <node id="770502481210891374" at="94,54,95,81" concept="3" />
+      <node id="770502481210891219" at="97,13,98,25" concept="8" />
+      <node id="770502481210891228" at="100,41,101,164" concept="3" />
+      <node id="770502481210891241" at="103,13,104,27" concept="8" />
+      <node id="770502481210896079" at="106,45,107,59" concept="7" />
+      <node id="9173496362250999964" at="110,41,111,149" concept="6" />
+      <node id="770502481210891250" at="111,149,112,74" concept="3" />
+      <node id="770502481210891263" at="114,13,115,26" concept="8" />
+      <node id="5177267286013143510" at="117,61,118,75" concept="7" />
+      <node id="770502481210891272" at="121,46,122,35" concept="6" />
+      <node id="770502481210891279" at="122,35,123,69" concept="0" />
+      <node id="9173496362251051130" at="123,69,124,152" concept="6" />
+      <node id="770502481210891283" at="124,152,125,77" concept="3" />
+      <node id="770502481210891296" at="127,13,128,26" concept="8" />
+      <node id="770502481210891305" at="130,49,131,93" concept="6" />
+      <node id="9173496362251077628" at="133,49,134,359" concept="6" />
+      <node id="770502481210891321" at="134,359,135,132" concept="3" />
+      <node id="1557257207682842967" at="139,13,140,0" concept="9" />
+      <node id="3661358194998148362" at="145,220,146,19" concept="7" />
+      <node id="404829981773975829" at="147,11,148,60" concept="6" />
+      <node id="404829981773975837" at="149,52,150,66" concept="3" />
+      <node id="404829981773975848" at="151,11,152,23" concept="3" />
+      <node id="7390751706570077087" at="156,42,157,84" concept="3" />
+      <node id="7390751706570077087" at="161,0,162,0" concept="10" trace="LOG" />
+      <node id="1101607213767191869" at="162,80,163,47" concept="7" />
+      <node id="7390751706570077087" at="56,27,59,7" concept="1" />
+      <node id="7390751706570077087" at="56,27,59,7" concept="4" />
+      <node id="7390751706570077087" at="63,95,66,5" concept="4" />
+      <node id="7390751706570077087" at="67,94,70,5" concept="4" />
+      <node id="7390751706570196738" at="78,0,81,0" concept="5" trace="translate#(Lorg/jetbrains/mps/openapi/module/SModule;)Ljava/lang/Iterable;" />
+      <node id="1101607213767104515" at="82,0,85,0" concept="5" trace="accept#(Ljetbrains/mps/smodel/DefaultSModelDescriptor;)Z" />
+      <node id="1413293128330142890" at="86,0,89,0" concept="5" trace="accept#(Ljetbrains/mps/smodel/DefaultSModelDescriptor;)Z" />
+      <node id="770502481210891372" at="94,0,97,0" concept="5" trace="visit#(Lorg/jetbrains/mps/openapi/module/SModuleReference;)V" />
+      <node id="770502481210891226" at="100,0,103,0" concept="5" trace="visit#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="770502481210895726" at="106,0,109,0" concept="5" trace="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+      <node id="5177267286013140306" at="117,0,120,0" concept="5" trace="translate#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/Iterable;" />
+      <node id="3661358194998107949" at="144,58,147,11" concept="4" />
+      <node id="404829981773975835" at="148,60,151,11" concept="4" />
+      <node id="7390751706570077087" at="155,27,158,7" concept="1" />
+      <node id="7390751706570077087" at="155,27,158,7" concept="4" />
+      <node id="1101607213767191869" at="162,0,165,0" concept="11" trace="as_fu9gb8_a0a0a0a0a0a0a0a2a0a5#(Ljava/lang/Object;Ljava/lang/Class;)null" />
+      <node id="7390751706570077087" at="49,0,53,0" concept="5" trace="isDumbAware#()Z" />
+      <node id="7390751706570077087" at="66,5,70,5" concept="1" />
+      <node id="770502481210891248" at="110,0,114,0" concept="5" trace="visit#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="770502481210891319" at="133,0,137,0" concept="5" trace="visit#(Ljava/lang/String;)V" />
+      <node id="7390751706570077087" at="44,0,49,0" concept="2" trace="MigrateIds_Action#()V" />
+      <node id="770502481210891368" at="92,70,97,13" concept="3" />
+      <node id="770502481210891221" at="98,25,103,13" concept="3" />
+      <node id="770502481210891270" at="121,0,127,0" concept="5" trace="visit#(Lorg/jetbrains/mps/openapi/model/SReference;)V" />
+      <node id="770502481210891315" at="131,93,137,17" concept="3" />
+      <node id="7390751706570077087" at="53,89,61,5" concept="13" />
+      <node id="770502481210891303" at="130,0,139,0" concept="5" trace="visit#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="7390751706570077087" at="53,0,63,0" concept="5" trace="doUpdate#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
+      <node id="7390751706570077087" at="63,0,73,0" concept="5" trace="collectActionData#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)Z" />
+      <node id="770502481210891243" at="104,27,114,13" concept="3" />
+      <node id="404829981773975653" at="144,0,154,0" concept="5" trace="visit#(Ljetbrains/mps/smodel/DefaultSModelDescriptor;)V" />
+      <node id="770502481210891298" at="128,26,139,13" concept="3" />
+      <node id="770502481210891265" at="115,26,127,13" concept="3" />
+      <node id="404829981773975645" at="142,9,154,9" concept="3" />
+      <node id="7390751706570171382" at="76,120,89,9" concept="6" />
+      <node id="770502481210891359" at="91,0,142,0" concept="5" trace="visit#(Ljetbrains/mps/smodel/DefaultSModelDescriptor;)V" />
+      <node id="770502481210891351" at="89,9,142,9" concept="3" />
+      <node id="7390751706570077087" at="73,96,159,5" concept="13" />
+      <node id="7390751706570077087" at="73,0,161,0" concept="5" trace="doExecute#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
+      <scope id="7390751706570077087" at="50,32,51,16" />
+      <scope id="7390751706570077087" at="54,9,55,43" />
+      <scope id="7390751706570077087" at="57,42,58,85" />
+      <scope id="7390751706570077087" at="64,53,65,19" />
+      <scope id="7390751706570077087" at="68,62,69,19" />
+      <scope id="7390751706570196739" at="78,55,79,32" />
+      <scope id="1101607213767104516" at="82,59,83,172" />
+      <scope id="1413293128330142891" at="86,59,87,36" />
+      <scope id="770502481210891373" at="94,54,95,81" />
+      <scope id="770502481210891227" at="100,41,101,164" />
+      <scope id="770502481210895727" at="106,45,107,59" />
+      <scope id="5177267286013140307" at="117,61,118,75" />
+      <scope id="3661358194998107952" at="145,220,146,19" />
+      <scope id="404829981773975836" at="149,52,150,66" />
+      <scope id="7390751706570077087" at="156,42,157,84" />
+      <scope id="1101607213767191869" at="162,80,163,47" />
+      <scope id="770502481210891249" at="110,41,112,74">
         <var name="rid" id="9173496362250999965" />
       </scope>
-      <scope id="770502481210891320" at="138,49,140,132">
+      <scope id="770502481210891320" at="133,49,135,132">
         <var name="pid" id="9173496362251077629" />
       </scope>
-      <scope id="7390751706570077087" at="45,30,48,41" />
-      <scope id="7390751706570077087" at="59,27,62,7" />
-      <scope id="7390751706570196738" at="83,0,86,0">
+      <scope id="7390751706570077087" at="44,30,47,41" />
+      <scope id="7390751706570077087" at="56,27,59,7" />
+      <scope id="7390751706570196738" at="78,0,81,0">
         <var name="it" id="7390751706570196738" />
       </scope>
-      <scope id="1101607213767104515" at="87,0,90,0">
+      <scope id="1101607213767104515" at="82,0,85,0">
         <var name="it" id="1101607213767104515" />
       </scope>
-      <scope id="1413293128330142890" at="91,0,94,0">
+      <scope id="1413293128330142890" at="86,0,89,0">
         <var name="it" id="1413293128330142890" />
       </scope>
-      <scope id="770502481210891372" at="99,0,102,0">
+      <scope id="770502481210891372" at="94,0,97,0">
         <var name="lang" id="770502481210891372" />
       </scope>
-      <scope id="770502481210891226" at="105,0,108,0">
+      <scope id="770502481210891226" at="100,0,103,0">
         <var name="it" id="770502481210891226" />
       </scope>
-      <scope id="770502481210895726" at="111,0,114,0">
+      <scope id="770502481210895726" at="106,0,109,0">
         <var name="it" id="770502481210895726" />
       </scope>
-      <scope id="5177267286013140306" at="122,0,125,0">
+      <scope id="5177267286013140306" at="117,0,120,0">
         <var name="it" id="5177267286013140306" />
       </scope>
-      <scope id="7390751706570077087" at="160,0,163,7">
+      <scope id="7390751706570077087" at="155,0,158,7">
         <var name="t" id="7390751706570077087" />
       </scope>
-      <scope id="7390751706570077087" at="160,27,163,7" />
-      <scope id="1101607213767191869" at="169,0,172,0">
+      <scope id="7390751706570077087" at="155,27,158,7" />
+      <scope id="1101607213767191869" at="162,0,165,0">
         <var name="o" id="1101607213767191869" />
         <var name="type" id="1101607213767191869" />
       </scope>
-      <scope id="7390751706570077087" at="51,0,55,0" />
-      <scope id="7390751706570077087" at="59,0,63,44">
+      <scope id="7390751706570077087" at="49,0,53,0" />
+      <scope id="7390751706570077087" at="56,0,60,44">
         <var name="t" id="7390751706570077087" />
       </scope>
-      <scope id="7390751706570077087" at="59,27,63,44" />
-      <scope id="7390751706570077087" at="70,5,74,5" />
-      <scope id="770502481210891248" at="115,0,119,0">
+      <scope id="7390751706570077087" at="56,27,60,44" />
+      <scope id="7390751706570077087" at="66,5,70,5" />
+      <scope id="770502481210891248" at="110,0,114,0">
         <var name="it" id="770502481210891248" />
       </scope>
-      <scope id="770502481210891271" at="126,46,130,77">
+      <scope id="770502481210891271" at="121,46,125,77">
         <var name="rid" id="9173496362251051131" />
         <var name="sref" id="770502481210891273" />
       </scope>
-      <scope id="770502481210891319" at="138,0,142,0">
+      <scope id="770502481210891319" at="133,0,137,0">
         <var name="pName" id="770502481210891319" />
       </scope>
-      <scope id="7390751706570077087" at="45,0,50,0" />
-      <scope id="770502481210891270" at="126,0,132,0">
+      <scope id="7390751706570077087" at="44,0,49,0" />
+      <scope id="770502481210891270" at="121,0,127,0">
         <var name="it" id="770502481210891270" />
       </scope>
-      <scope id="770502481210891304" at="135,49,142,17">
+      <scope id="770502481210891304" at="130,49,137,17">
         <var name="propNames" id="770502481210891306" />
       </scope>
-      <scope id="7390751706570077087" at="56,89,64,5" />
-      <scope id="7390751706570077087" at="67,95,75,16" />
-      <scope id="404829981773975654" at="149,58,157,23">
+      <scope id="7390751706570077087" at="53,89,61,5" />
+      <scope id="7390751706570077087" at="63,95,71,16" />
+      <scope id="404829981773975654" at="144,58,152,23">
         <var name="innerModel" id="404829981773975830" />
       </scope>
-      <scope id="770502481210891303" at="135,0,144,0">
+      <scope id="770502481210891303" at="130,0,139,0">
         <var name="node" id="770502481210891303" />
       </scope>
-      <scope id="7390751706570077087" at="56,0,66,0">
+      <scope id="7390751706570077087" at="53,0,63,0">
         <var name="_params" id="7390751706570077087" />
         <var name="event" id="7390751706570077087" />
       </scope>
-      <scope id="7390751706570077087" at="67,0,77,0">
+      <scope id="7390751706570077087" at="63,0,73,0">
         <var name="_params" id="7390751706570077087" />
         <var name="event" id="7390751706570077087" />
       </scope>
-      <scope id="404829981773975653" at="149,0,159,0">
+      <scope id="404829981773975653" at="144,0,154,0">
         <var name="model" id="404829981773975653" />
       </scope>
-      <scope id="770502481210891360" at="96,64,145,0">
+      <scope id="770502481210891360" at="91,64,140,0">
         <var name="impLangs" id="770502481210891362" />
       </scope>
-      <scope id="770502481210891359" at="96,0,147,0">
+      <scope id="770502481210891359" at="91,0,142,0">
         <var name="model" id="770502481210891359" />
       </scope>
-      <scope id="7390751706570077087" at="79,9,159,9">
+      <scope id="7390751706570077087" at="74,9,154,9">
         <var name="models" id="7390751706570171385" />
         <var name="modules" id="7390751706570181583" />
       </scope>
-      <scope id="7390751706570077087" at="78,96,164,5" />
-      <scope id="7390751706570077087" at="78,0,166,0">
+      <scope id="7390751706570077087" at="73,96,159,5" />
+      <scope id="7390751706570077087" at="73,0,161,0">
         <var name="_params" id="7390751706570077087" />
         <var name="event" id="7390751706570077087" />
       </scope>
-      <unit id="7390751706570196738" at="82,94,86,7" name="jetbrains.mps.ide.mpsmigration.migration32.MigrateIds_Action$1" />
-      <unit id="1101607213767104515" at="86,57,90,7" name="jetbrains.mps.ide.mpsmigration.migration32.MigrateIds_Action$2" />
-      <unit id="1413293128330142890" at="90,19,94,7" name="jetbrains.mps.ide.mpsmigration.migration32.MigrateIds_Action$3" />
-      <unit id="770502481210891372" at="98,55,102,11" name="jetbrains.mps.ide.mpsmigration.migration32.MigrateIds_Action$5" />
-      <unit id="770502481210891226" at="104,96,108,11" name="jetbrains.mps.ide.mpsmigration.migration32.MigrateIds_Action$5" />
-      <unit id="770502481210895726" at="110,93,114,11" name="jetbrains.mps.ide.mpsmigration.migration32.MigrateIds_Action$5" />
-      <unit id="5177267286013140306" at="121,97,125,11" name="jetbrains.mps.ide.mpsmigration.migration32.MigrateIds_Action$5" />
-      <unit id="770502481210891248" at="114,26,119,11" name="jetbrains.mps.ide.mpsmigration.migration32.MigrateIds_Action$5" />
-      <unit id="770502481210891319" at="137,58,142,15" name="jetbrains.mps.ide.mpsmigration.migration32.MigrateIds_Action$6" />
-      <unit id="770502481210891270" at="125,26,132,11" name="jetbrains.mps.ide.mpsmigration.migration32.MigrateIds_Action$5" />
-      <unit id="770502481210891303" at="134,96,144,11" name="jetbrains.mps.ide.mpsmigration.migration32.MigrateIds_Action$5" />
-      <unit id="404829981773975653" at="148,49,159,7" name="jetbrains.mps.ide.mpsmigration.migration32.MigrateIds_Action$5" />
-      <unit id="770502481210891359" at="95,49,147,7" name="jetbrains.mps.ide.mpsmigration.migration32.MigrateIds_Action$4" />
-      <unit id="7390751706570077087" at="42,0,173,0" name="jetbrains.mps.ide.mpsmigration.migration32.MigrateIds_Action" />
+      <unit id="7390751706570196738" at="77,94,81,7" name="jetbrains.mps.ide.mpsmigration.migration32.MigrateIds_Action$1" />
+      <unit id="1101607213767104515" at="81,57,85,7" name="jetbrains.mps.ide.mpsmigration.migration32.MigrateIds_Action$2" />
+      <unit id="1413293128330142890" at="85,19,89,7" name="jetbrains.mps.ide.mpsmigration.migration32.MigrateIds_Action$3" />
+      <unit id="770502481210891372" at="93,55,97,11" name="jetbrains.mps.ide.mpsmigration.migration32.MigrateIds_Action$5" />
+      <unit id="770502481210891226" at="99,96,103,11" name="jetbrains.mps.ide.mpsmigration.migration32.MigrateIds_Action$5" />
+      <unit id="770502481210895726" at="105,93,109,11" name="jetbrains.mps.ide.mpsmigration.migration32.MigrateIds_Action$5" />
+      <unit id="5177267286013140306" at="116,97,120,11" name="jetbrains.mps.ide.mpsmigration.migration32.MigrateIds_Action$5" />
+      <unit id="770502481210891248" at="109,26,114,11" name="jetbrains.mps.ide.mpsmigration.migration32.MigrateIds_Action$5" />
+      <unit id="770502481210891319" at="132,58,137,15" name="jetbrains.mps.ide.mpsmigration.migration32.MigrateIds_Action$6" />
+      <unit id="770502481210891270" at="120,26,127,11" name="jetbrains.mps.ide.mpsmigration.migration32.MigrateIds_Action$5" />
+      <unit id="770502481210891303" at="129,96,139,11" name="jetbrains.mps.ide.mpsmigration.migration32.MigrateIds_Action$5" />
+      <unit id="404829981773975653" at="143,49,154,7" name="jetbrains.mps.ide.mpsmigration.migration32.MigrateIds_Action$5" />
+      <unit id="770502481210891359" at="90,49,142,7" name="jetbrains.mps.ide.mpsmigration.migration32.MigrateIds_Action$4" />
+      <unit id="7390751706570077087" at="42,0,166,0" name="jetbrains.mps.ide.mpsmigration.migration32.MigrateIds_Action" />
     </file>
   </root>
   <root nodeRef="0c495a8c-90c6-4330-9351-2acbf72e5bb8/r:4550e75a-fac1-4312-b276-24f9bae04a9a(jetbrains.mps.ide.mpsmigration/jetbrains.mps.ide.mpsmigration.migration32)/7942543306377086225">
     <file name="MigrateSModelReference_Action.java">
       <node id="7942543306377086225" at="21,0,22,0" concept="10" trace="ICON" />
-      <node id="7942543306377086225" at="23,42,24,96" concept="12" />
-      <node id="7942543306377086225" at="24,96,25,35" concept="3" />
-      <node id="7942543306377086225" at="25,35,26,41" concept="3" />
-      <node id="7942543306377086225" at="30,32,31,16" concept="7" />
-      <node id="7942543306377086225" at="35,9,36,43" concept="1" />
-      <node id="7942543306377086225" at="35,9,36,43" concept="3" />
-      <node id="7942543306377086225" at="38,42,39,97" concept="3" />
-      <node id="7942543306377086225" at="40,7,41,44" concept="3" />
-      <node id="7942543306377086225" at="46,53,47,19" concept="7" />
-      <node id="7942543306377086225" at="48,5,49,100" concept="3" />
+      <node id="7942543306377086225" at="22,42,23,96" concept="12" />
+      <node id="7942543306377086225" at="23,96,24,35" concept="3" />
+      <node id="7942543306377086225" at="24,35,25,41" concept="3" />
+      <node id="7942543306377086225" at="28,32,29,16" concept="7" />
+      <node id="7942543306377086225" at="32,9,33,43" concept="1" />
+      <node id="7942543306377086225" at="32,9,33,43" concept="3" />
+      <node id="7942543306377086225" at="35,42,36,97" concept="3" />
+      <node id="7942543306377086225" at="37,7,38,44" concept="3" />
+      <node id="7942543306377086225" at="42,53,43,19" concept="7" />
+      <node id="7942543306377086225" at="44,5,45,100" concept="3" />
+      <node id="7942543306377086225" at="46,62,47,19" concept="7" />
+      <node id="7942543306377086225" at="48,5,49,94" concept="3" />
       <node id="7942543306377086225" at="50,62,51,19" concept="7" />
-      <node id="7942543306377086225" at="52,5,53,94" concept="3" />
-      <node id="7942543306377086225" at="54,62,55,19" concept="7" />
-      <node id="7942543306377086225" at="56,5,57,91" concept="3" />
-      <node id="7942543306377086225" at="58,66,59,19" concept="7" />
-      <node id="7942543306377086225" at="60,5,61,16" concept="7" />
-      <node id="7942543306377406846" at="65,9,66,152" concept="3" />
-      <node id="7942543306377408152" at="66,152,67,53" concept="3" />
-      <node id="7942543306377408328" at="67,53,68,152" concept="3" />
-      <node id="7942543306377407468" at="68,152,69,54" concept="3" />
-      <node id="7942543306377086225" at="71,42,72,96" concept="3" />
-      <node id="7942543306377086225" at="77,0,78,0" concept="10" trace="LOG" />
-      <node id="7942543306377086225" at="37,27,40,7" concept="1" />
-      <node id="7942543306377086225" at="37,27,40,7" concept="4" />
-      <node id="7942543306377086225" at="45,95,48,5" concept="4" />
-      <node id="7942543306377086225" at="49,100,52,5" concept="4" />
-      <node id="7942543306377086225" at="53,94,56,5" concept="4" />
-      <node id="7942543306377086225" at="57,91,60,5" concept="4" />
-      <node id="7942543306377086225" at="70,27,73,7" concept="1" />
-      <node id="7942543306377086225" at="70,27,73,7" concept="4" />
-      <node id="7942543306377086225" at="29,0,33,0" concept="5" trace="isDumbAware#()Z" />
+      <node id="7942543306377086225" at="52,5,53,91" concept="3" />
+      <node id="7942543306377086225" at="54,66,55,19" concept="7" />
+      <node id="7942543306377086225" at="56,5,57,16" concept="7" />
+      <node id="7942543306377406846" at="60,9,61,152" concept="3" />
+      <node id="7942543306377408152" at="61,152,62,53" concept="3" />
+      <node id="7942543306377408328" at="62,53,63,152" concept="3" />
+      <node id="7942543306377407468" at="63,152,64,54" concept="3" />
+      <node id="7942543306377086225" at="66,42,67,96" concept="3" />
+      <node id="7942543306377086225" at="71,0,72,0" concept="10" trace="LOG" />
+      <node id="7942543306377086225" at="34,27,37,7" concept="1" />
+      <node id="7942543306377086225" at="34,27,37,7" concept="4" />
+      <node id="7942543306377086225" at="41,95,44,5" concept="4" />
+      <node id="7942543306377086225" at="45,100,48,5" concept="4" />
+      <node id="7942543306377086225" at="49,94,52,5" concept="4" />
+      <node id="7942543306377086225" at="53,91,56,5" concept="4" />
+      <node id="7942543306377086225" at="65,27,68,7" concept="1" />
+      <node id="7942543306377086225" at="65,27,68,7" concept="4" />
+      <node id="7942543306377086225" at="27,0,31,0" concept="5" trace="isDumbAware#()Z" />
+      <node id="7942543306377086225" at="44,5,48,5" concept="1" />
       <node id="7942543306377086225" at="48,5,52,5" concept="1" />
       <node id="7942543306377086225" at="52,5,56,5" concept="1" />
-      <node id="7942543306377086225" at="56,5,60,5" concept="1" />
-      <node id="7942543306377086225" at="23,0,28,0" concept="2" trace="MigrateSModelReference_Action#()V" />
-      <node id="7942543306377086225" at="34,89,42,5" concept="13" />
-      <node id="7942543306377086225" at="34,0,44,0" concept="5" trace="doUpdate#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
-      <node id="7942543306377086225" at="64,96,74,5" concept="13" />
-      <node id="7942543306377086225" at="64,0,76,0" concept="5" trace="doExecute#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
-      <node id="7942543306377086225" at="45,0,63,0" concept="5" trace="collectActionData#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)Z" />
-      <scope id="7942543306377086225" at="30,32,31,16" />
-      <scope id="7942543306377086225" at="35,9,36,43" />
-      <scope id="7942543306377086225" at="38,42,39,97" />
-      <scope id="7942543306377086225" at="46,53,47,19" />
+      <node id="7942543306377086225" at="22,0,27,0" concept="2" trace="MigrateSModelReference_Action#()V" />
+      <node id="7942543306377086225" at="31,89,39,5" concept="13" />
+      <node id="7942543306377086225" at="31,0,41,0" concept="5" trace="doUpdate#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
+      <node id="7942543306377086225" at="59,96,69,5" concept="13" />
+      <node id="7942543306377086225" at="59,0,71,0" concept="5" trace="doExecute#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
+      <node id="7942543306377086225" at="41,0,59,0" concept="5" trace="collectActionData#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)Z" />
+      <scope id="7942543306377086225" at="28,32,29,16" />
+      <scope id="7942543306377086225" at="32,9,33,43" />
+      <scope id="7942543306377086225" at="35,42,36,97" />
+      <scope id="7942543306377086225" at="42,53,43,19" />
+      <scope id="7942543306377086225" at="46,62,47,19" />
       <scope id="7942543306377086225" at="50,62,51,19" />
-      <scope id="7942543306377086225" at="54,62,55,19" />
-      <scope id="7942543306377086225" at="58,66,59,19" />
-      <scope id="7942543306377086225" at="71,42,72,96" />
-      <scope id="7942543306377086225" at="23,42,26,41" />
-      <scope id="7942543306377086225" at="37,27,40,7" />
-      <scope id="7942543306377086225" at="70,0,73,7">
+      <scope id="7942543306377086225" at="54,66,55,19" />
+      <scope id="7942543306377086225" at="66,42,67,96" />
+      <scope id="7942543306377086225" at="22,42,25,41" />
+      <scope id="7942543306377086225" at="34,27,37,7" />
+      <scope id="7942543306377086225" at="65,0,68,7">
         <var name="t" id="7942543306377086225" />
       </scope>
-      <scope id="7942543306377086225" at="70,27,73,7" />
-      <scope id="7942543306377086225" at="29,0,33,0" />
-      <scope id="7942543306377086225" at="37,0,41,44">
+      <scope id="7942543306377086225" at="65,27,68,7" />
+      <scope id="7942543306377086225" at="27,0,31,0" />
+      <scope id="7942543306377086225" at="34,0,38,44">
         <var name="t" id="7942543306377086225" />
       </scope>
-      <scope id="7942543306377086225" at="37,27,41,44" />
+      <scope id="7942543306377086225" at="34,27,38,44" />
+      <scope id="7942543306377086225" at="44,5,48,5" />
       <scope id="7942543306377086225" at="48,5,52,5" />
       <scope id="7942543306377086225" at="52,5,56,5" />
-      <scope id="7942543306377086225" at="56,5,60,5" />
-      <scope id="7942543306377086225" at="65,9,69,54" />
-      <scope id="7942543306377086225" at="23,0,28,0" />
-      <scope id="7942543306377086225" at="34,89,42,5" />
-      <scope id="7942543306377086225" at="34,0,44,0">
+      <scope id="7942543306377086225" at="60,9,64,54" />
+      <scope id="7942543306377086225" at="22,0,27,0" />
+      <scope id="7942543306377086225" at="31,89,39,5" />
+      <scope id="7942543306377086225" at="31,0,41,0">
         <var name="_params" id="7942543306377086225" />
         <var name="event" id="7942543306377086225" />
       </scope>
-      <scope id="7942543306377086225" at="64,96,74,5" />
-      <scope id="7942543306377086225" at="64,0,76,0">
+      <scope id="7942543306377086225" at="59,96,69,5" />
+      <scope id="7942543306377086225" at="59,0,71,0">
         <var name="_params" id="7942543306377086225" />
         <var name="event" id="7942543306377086225" />
       </scope>
-      <scope id="7942543306377086225" at="45,95,61,16" />
-      <scope id="7942543306377086225" at="45,0,63,0">
+      <scope id="7942543306377086225" at="41,95,57,16" />
+      <scope id="7942543306377086225" at="41,0,59,0">
         <var name="_params" id="7942543306377086225" />
         <var name="event" id="7942543306377086225" />
       </scope>
-      <unit id="7942543306377086225" at="20,0,79,0" name="jetbrains.mps.ide.mpsmigration.migration32.MigrateSModelReference_Action" />
+      <unit id="7942543306377086225" at="20,0,73,0" name="jetbrains.mps.ide.mpsmigration.migration32.MigrateSModelReference_Action" />
     </file>
   </root>
   <root nodeRef="0c495a8c-90c6-4330-9351-2acbf72e5bb8/r:4550e75a-fac1-4312-b276-24f9bae04a9a(jetbrains.mps.ide.mpsmigration/jetbrains.mps.ide.mpsmigration.migration32)/8638477894668945707">
     <file name="ClearHistoryFiles_Action.java">
       <node id="8638477894668945707" at="31,0,32,0" concept="10" trace="ICON" />
-      <node id="8638477894668945707" at="33,37,34,43" concept="12" />
-      <node id="8638477894668945707" at="34,43,35,35" concept="3" />
-      <node id="8638477894668945707" at="35,35,36,41" concept="3" />
-      <node id="8638477894668945707" at="40,32,41,16" concept="7" />
-      <node id="8638477894668945707" at="45,9,46,43" concept="1" />
-      <node id="8638477894668945707" at="45,9,46,43" concept="3" />
-      <node id="8638477894668945707" at="48,42,49,92" concept="3" />
-      <node id="8638477894668945707" at="50,7,51,44" concept="3" />
-      <node id="8638477894668945707" at="56,53,57,19" concept="7" />
-      <node id="8638477894668945707" at="58,5,59,94" concept="3" />
-      <node id="8638477894668945707" at="60,62,61,19" concept="7" />
-      <node id="8638477894668945707" at="62,5,63,16" concept="7" />
-      <node id="8638477894669146742" at="67,9,68,134" concept="6" />
-      <node id="8638477894669096981" at="70,55,71,32" concept="7" />
-      <node id="8638477894669194509" at="74,45,75,32" concept="7" />
-      <node id="8638477894669470482" at="79,45,80,98" concept="6" />
-      <node id="8638477894669470490" at="80,98,81,51" concept="6" />
-      <node id="8638477894669470496" at="81,51,82,170" concept="7" />
-      <node id="8638477894669470518" at="83,59,84,126" concept="7" />
-      <node id="8638477894669470530" at="85,18,86,24" concept="7" />
-      <node id="8638477894669490244" at="90,41,91,43" concept="7" />
-      <node id="8638477894669539177" at="94,37,95,22" concept="3" />
-      <node id="8638477894668945707" at="99,42,100,91" concept="3" />
-      <node id="8638477894668945707" at="105,0,106,0" concept="10" trace="LOG" />
-      <node id="8638477894669470486" at="107,81,108,47" concept="7" />
-      <node id="8638477894669470520" at="111,83,112,47" concept="7" />
-      <node id="8638477894669470528" at="85,16,87,11" concept="1" />
-      <node id="8638477894668945707" at="47,27,50,7" concept="1" />
-      <node id="8638477894668945707" at="47,27,50,7" concept="4" />
-      <node id="8638477894668945707" at="55,95,58,5" concept="4" />
-      <node id="8638477894668945707" at="59,94,62,5" concept="4" />
-      <node id="8638477894669095645" at="70,0,73,0" concept="5" trace="translate#(Lorg/jetbrains/mps/openapi/module/SModule;)Ljava/lang/Iterable;" />
-      <node id="8638477894669194507" at="74,0,77,0" concept="5" trace="select#(Lorg/jetbrains/mps/openapi/model/SModel;)Lorg/jetbrains/mps/openapi/persistence/DataSource;" />
-      <node id="8638477894669489746" at="90,0,93,0" concept="5" trace="accept#(Ljetbrains/mps/vfs/IFile;)Z" />
-      <node id="8638477894669538748" at="94,0,97,0" concept="5" trace="visit#(Ljetbrains/mps/vfs/IFile;)V" />
-      <node id="8638477894668945707" at="98,27,101,7" concept="1" />
-      <node id="8638477894668945707" at="98,27,101,7" concept="4" />
-      <node id="8638477894669470486" at="107,0,110,0" concept="11" trace="as_wouwxe_a0a0a0a0a0a0a0a0b0a0f#(Ljava/lang/Object;Ljava/lang/Class;)null" />
-      <node id="8638477894669470520" at="111,0,114,0" concept="11" trace="as_wouwxe_a0a0a0a0a0a0a0a0b0a0f_0#(Ljava/lang/Object;Ljava/lang/Class;)null" />
-      <node id="8638477894668945707" at="39,0,43,0" concept="5" trace="isDumbAware#()Z" />
-      <node id="8638477894668945707" at="58,5,62,5" concept="1" />
-      <node id="8638477894668945707" at="33,0,38,0" concept="2" trace="ClearHistoryFiles_Action#()V" />
-      <node id="8638477894668945707" at="44,89,52,5" concept="13" />
-      <node id="8638477894669470480" at="78,44,87,11" concept="4" />
-      <node id="8638477894668945707" at="44,0,54,0" concept="5" trace="doUpdate#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
-      <node id="8638477894668945707" at="55,0,65,0" concept="5" trace="collectActionData#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)Z" />
-      <node id="8638477894669470478" at="78,0,89,0" concept="5" trace="select#(Lorg/jetbrains/mps/openapi/persistence/DataSource;)Ljetbrains/mps/vfs/IFile;" />
-      <node id="8638477894669038790" at="68,134,97,9" concept="3" />
-      <node id="8638477894668945707" at="66,96,102,5" concept="13" />
-      <node id="8638477894668945707" at="66,0,104,0" concept="5" trace="doExecute#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
-      <scope id="8638477894668945707" at="40,32,41,16" />
-      <scope id="8638477894668945707" at="45,9,46,43" />
-      <scope id="8638477894668945707" at="48,42,49,92" />
-      <scope id="8638477894668945707" at="56,53,57,19" />
-      <scope id="8638477894668945707" at="60,62,61,19" />
-      <scope id="8638477894669095646" at="70,55,71,32" />
-      <scope id="8638477894669194508" at="74,45,75,32" />
-      <scope id="8638477894669470517" at="83,59,84,126" />
-      <scope id="8638477894669470529" at="85,18,86,24" />
-      <scope id="8638477894669489747" at="90,41,91,43" />
-      <scope id="8638477894669538749" at="94,37,95,22" />
-      <scope id="8638477894668945707" at="99,42,100,91" />
-      <scope id="8638477894669470486" at="107,81,108,47" />
-      <scope id="8638477894669470520" at="111,83,112,47" />
-      <scope id="8638477894668945707" at="33,37,36,41" />
-      <scope id="8638477894668945707" at="47,27,50,7" />
-      <scope id="8638477894669095645" at="70,0,73,0">
+      <node id="8638477894668945707" at="32,37,33,43" concept="12" />
+      <node id="8638477894668945707" at="33,43,34,35" concept="3" />
+      <node id="8638477894668945707" at="34,35,35,41" concept="3" />
+      <node id="8638477894668945707" at="38,32,39,16" concept="7" />
+      <node id="8638477894668945707" at="42,9,43,43" concept="1" />
+      <node id="8638477894668945707" at="42,9,43,43" concept="3" />
+      <node id="8638477894668945707" at="45,42,46,92" concept="3" />
+      <node id="8638477894668945707" at="47,7,48,44" concept="3" />
+      <node id="8638477894668945707" at="52,53,53,19" concept="7" />
+      <node id="8638477894668945707" at="54,5,55,94" concept="3" />
+      <node id="8638477894668945707" at="56,62,57,19" concept="7" />
+      <node id="8638477894668945707" at="58,5,59,16" concept="7" />
+      <node id="8638477894669146742" at="62,9,63,134" concept="6" />
+      <node id="8638477894669096981" at="65,55,66,32" concept="7" />
+      <node id="8638477894669194509" at="69,45,70,32" concept="7" />
+      <node id="8638477894669470482" at="74,45,75,98" concept="6" />
+      <node id="8638477894669470490" at="75,98,76,51" concept="6" />
+      <node id="8638477894669470496" at="76,51,77,170" concept="7" />
+      <node id="8638477894669470518" at="78,59,79,126" concept="7" />
+      <node id="8638477894669470530" at="80,18,81,24" concept="7" />
+      <node id="8638477894669490244" at="85,41,86,43" concept="7" />
+      <node id="8638477894669539177" at="89,37,90,22" concept="3" />
+      <node id="8638477894668945707" at="94,42,95,91" concept="3" />
+      <node id="8638477894668945707" at="99,0,100,0" concept="10" trace="LOG" />
+      <node id="8638477894669470486" at="100,81,101,47" concept="7" />
+      <node id="8638477894669470520" at="103,83,104,47" concept="7" />
+      <node id="8638477894669470528" at="80,16,82,11" concept="1" />
+      <node id="8638477894668945707" at="44,27,47,7" concept="1" />
+      <node id="8638477894668945707" at="44,27,47,7" concept="4" />
+      <node id="8638477894668945707" at="51,95,54,5" concept="4" />
+      <node id="8638477894668945707" at="55,94,58,5" concept="4" />
+      <node id="8638477894669095645" at="65,0,68,0" concept="5" trace="translate#(Lorg/jetbrains/mps/openapi/module/SModule;)Ljava/lang/Iterable;" />
+      <node id="8638477894669194507" at="69,0,72,0" concept="5" trace="select#(Lorg/jetbrains/mps/openapi/model/SModel;)Lorg/jetbrains/mps/openapi/persistence/DataSource;" />
+      <node id="8638477894669489746" at="85,0,88,0" concept="5" trace="accept#(Ljetbrains/mps/vfs/IFile;)Z" />
+      <node id="8638477894669538748" at="89,0,92,0" concept="5" trace="visit#(Ljetbrains/mps/vfs/IFile;)V" />
+      <node id="8638477894668945707" at="93,27,96,7" concept="1" />
+      <node id="8638477894668945707" at="93,27,96,7" concept="4" />
+      <node id="8638477894669470486" at="100,0,103,0" concept="11" trace="as_wouwxe_a0a0a0a0a0a0a0a0b0a0f#(Ljava/lang/Object;Ljava/lang/Class;)null" />
+      <node id="8638477894669470520" at="103,0,106,0" concept="11" trace="as_wouwxe_a0a0a0a0a0a0a0a0b0a0f_0#(Ljava/lang/Object;Ljava/lang/Class;)null" />
+      <node id="8638477894668945707" at="37,0,41,0" concept="5" trace="isDumbAware#()Z" />
+      <node id="8638477894668945707" at="54,5,58,5" concept="1" />
+      <node id="8638477894668945707" at="32,0,37,0" concept="2" trace="ClearHistoryFiles_Action#()V" />
+      <node id="8638477894668945707" at="41,89,49,5" concept="13" />
+      <node id="8638477894669470480" at="73,44,82,11" concept="4" />
+      <node id="8638477894668945707" at="41,0,51,0" concept="5" trace="doUpdate#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
+      <node id="8638477894668945707" at="51,0,61,0" concept="5" trace="collectActionData#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)Z" />
+      <node id="8638477894669470478" at="73,0,84,0" concept="5" trace="select#(Lorg/jetbrains/mps/openapi/persistence/DataSource;)Ljetbrains/mps/vfs/IFile;" />
+      <node id="8638477894669038790" at="63,134,92,9" concept="3" />
+      <node id="8638477894668945707" at="61,96,97,5" concept="13" />
+      <node id="8638477894668945707" at="61,0,99,0" concept="5" trace="doExecute#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
+      <scope id="8638477894668945707" at="38,32,39,16" />
+      <scope id="8638477894668945707" at="42,9,43,43" />
+      <scope id="8638477894668945707" at="45,42,46,92" />
+      <scope id="8638477894668945707" at="52,53,53,19" />
+      <scope id="8638477894668945707" at="56,62,57,19" />
+      <scope id="8638477894669095646" at="65,55,66,32" />
+      <scope id="8638477894669194508" at="69,45,70,32" />
+      <scope id="8638477894669470517" at="78,59,79,126" />
+      <scope id="8638477894669470529" at="80,18,81,24" />
+      <scope id="8638477894669489747" at="85,41,86,43" />
+      <scope id="8638477894669538749" at="89,37,90,22" />
+      <scope id="8638477894668945707" at="94,42,95,91" />
+      <scope id="8638477894669470486" at="100,81,101,47" />
+      <scope id="8638477894669470520" at="103,83,104,47" />
+      <scope id="8638477894668945707" at="32,37,35,41" />
+      <scope id="8638477894668945707" at="44,27,47,7" />
+      <scope id="8638477894669095645" at="65,0,68,0">
         <var name="it" id="8638477894669095645" />
       </scope>
-      <scope id="8638477894669194507" at="74,0,77,0">
+      <scope id="8638477894669194507" at="69,0,72,0">
         <var name="it" id="8638477894669194507" />
       </scope>
-      <scope id="8638477894669470481" at="79,45,82,170">
+      <scope id="8638477894669470481" at="74,45,77,170">
         <var name="modelFile" id="8638477894669470483" />
         <var name="modelPath" id="8638477894669470491" />
       </scope>
-      <scope id="8638477894669489746" at="90,0,93,0">
+      <scope id="8638477894669489746" at="85,0,88,0">
         <var name="it" id="8638477894669489746" />
       </scope>
-      <scope id="8638477894669538748" at="94,0,97,0">
+      <scope id="8638477894669538748" at="89,0,92,0">
         <var name="it" id="8638477894669538748" />
       </scope>
-      <scope id="8638477894668945707" at="98,0,101,7">
+      <scope id="8638477894668945707" at="93,0,96,7">
         <var name="t" id="8638477894668945707" />
       </scope>
-      <scope id="8638477894668945707" at="98,27,101,7" />
-      <scope id="8638477894669470486" at="107,0,110,0">
+      <scope id="8638477894668945707" at="93,27,96,7" />
+      <scope id="8638477894669470486" at="100,0,103,0">
         <var name="o" id="8638477894669470486" />
         <var name="type" id="8638477894669470486" />
       </scope>
-      <scope id="8638477894669470520" at="111,0,114,0">
+      <scope id="8638477894669470520" at="103,0,106,0">
         <var name="o" id="8638477894669470520" />
         <var name="type" id="8638477894669470520" />
       </scope>
-      <scope id="8638477894668945707" at="39,0,43,0" />
-      <scope id="8638477894668945707" at="47,0,51,44">
+      <scope id="8638477894668945707" at="37,0,41,0" />
+      <scope id="8638477894668945707" at="44,0,48,44">
         <var name="t" id="8638477894668945707" />
       </scope>
-      <scope id="8638477894668945707" at="47,27,51,44" />
-      <scope id="8638477894668945707" at="58,5,62,5" />
-      <scope id="8638477894668945707" at="33,0,38,0" />
-      <scope id="8638477894668945707" at="44,89,52,5" />
-      <scope id="8638477894668945707" at="55,95,63,16" />
-      <scope id="8638477894669470479" at="78,44,87,11" />
-      <scope id="8638477894668945707" at="44,0,54,0">
+      <scope id="8638477894668945707" at="44,27,48,44" />
+      <scope id="8638477894668945707" at="54,5,58,5" />
+      <scope id="8638477894668945707" at="32,0,37,0" />
+      <scope id="8638477894668945707" at="41,89,49,5" />
+      <scope id="8638477894668945707" at="51,95,59,16" />
+      <scope id="8638477894669470479" at="73,44,82,11" />
+      <scope id="8638477894668945707" at="41,0,51,0">
         <var name="_params" id="8638477894668945707" />
         <var name="event" id="8638477894668945707" />
       </scope>
-      <scope id="8638477894668945707" at="55,0,65,0">
+      <scope id="8638477894668945707" at="51,0,61,0">
         <var name="_params" id="8638477894668945707" />
         <var name="event" id="8638477894668945707" />
       </scope>
-      <scope id="8638477894669470478" at="78,0,89,0">
+      <scope id="8638477894669470478" at="73,0,84,0">
         <var name="it" id="8638477894669470478" />
       </scope>
-      <scope id="8638477894668945707" at="67,9,97,9">
+      <scope id="8638477894668945707" at="62,9,92,9">
         <var name="modulesWithGenerators" id="8638477894669146743" />
       </scope>
-      <scope id="8638477894668945707" at="66,96,102,5" />
-      <scope id="8638477894668945707" at="66,0,104,0">
+      <scope id="8638477894668945707" at="61,96,97,5" />
+      <scope id="8638477894668945707" at="61,0,99,0">
         <var name="_params" id="8638477894668945707" />
         <var name="event" id="8638477894668945707" />
       </scope>
-      <unit id="8638477894669095645" at="69,65,73,7" name="jetbrains.mps.ide.mpsmigration.migration32.ClearHistoryFiles_Action$1" />
-      <unit id="8638477894669194507" at="73,20,77,7" name="jetbrains.mps.ide.mpsmigration.migration32.ClearHistoryFiles_Action$2" />
-      <unit id="8638477894669489746" at="89,19,93,7" name="jetbrains.mps.ide.mpsmigration.migration32.ClearHistoryFiles_Action$4" />
-      <unit id="8638477894669538748" at="93,22,97,7" name="jetbrains.mps.ide.mpsmigration.migration32.ClearHistoryFiles_Action$5" />
-      <unit id="8638477894669470478" at="77,20,89,7" name="jetbrains.mps.ide.mpsmigration.migration32.ClearHistoryFiles_Action$3" />
-      <unit id="8638477894668945707" at="30,0,115,0" name="jetbrains.mps.ide.mpsmigration.migration32.ClearHistoryFiles_Action" />
+      <unit id="8638477894669095645" at="64,65,68,7" name="jetbrains.mps.ide.mpsmigration.migration32.ClearHistoryFiles_Action$1" />
+      <unit id="8638477894669194507" at="68,20,72,7" name="jetbrains.mps.ide.mpsmigration.migration32.ClearHistoryFiles_Action$2" />
+      <unit id="8638477894669489746" at="84,19,88,7" name="jetbrains.mps.ide.mpsmigration.migration32.ClearHistoryFiles_Action$4" />
+      <unit id="8638477894669538748" at="88,22,92,7" name="jetbrains.mps.ide.mpsmigration.migration32.ClearHistoryFiles_Action$5" />
+      <unit id="8638477894669470478" at="72,20,84,7" name="jetbrains.mps.ide.mpsmigration.migration32.ClearHistoryFiles_Action$3" />
+      <unit id="8638477894668945707" at="30,0,107,0" name="jetbrains.mps.ide.mpsmigration.migration32.ClearHistoryFiles_Action" />
     </file>
   </root>
 </debug-info>

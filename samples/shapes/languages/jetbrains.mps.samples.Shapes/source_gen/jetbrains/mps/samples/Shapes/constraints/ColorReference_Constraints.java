@@ -43,7 +43,7 @@ public class ColorReference_Constraints extends BaseConstraintsDescriptor {
           }
           @Override
           public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
-            return new ListScope(Classifier_Behavior.call_staticFields_5292274854859223538(SNodeOperations.getNode("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.awt(JDK/java.awt@java_stub)", "~Color"))) {
+            return new ListScope(Classifier_Behavior.call_staticFields_5292274854859223538(SNodeOperations.getNode("6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.awt(JDK/java.awt@java_stub)", "~Color"))) {
               public String getName(SNode child) {
                 return SPropertyOperations.getString(SNodeOperations.cast(child, "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration"), "name");
               }

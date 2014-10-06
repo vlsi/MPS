@@ -42,7 +42,6 @@ public class SReferenceCreator implements SReferenceHandler {
     Set<SModelReference> possibleModels = StubModelsResolver.getInstance().resolveModel(module, new SModelFqName(pack, JAVA_STUB_STEREOTYPE).toString(), null);
 
     if (SetSequence.fromSet(possibleModels).isEmpty()) {
-      //reference is broken
       return jetbrains.mps.smodel.SReference.create(role, source, null, targetNodeId, resolveInfo);
     }
 

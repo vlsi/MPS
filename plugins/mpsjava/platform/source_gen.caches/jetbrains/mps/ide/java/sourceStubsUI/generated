@@ -13,6 +13,7 @@
     <file name="JavaSourceStubModelRootSettingsEditor.java" />
   </source>
   <source id="1483465595852166869" name="JavaSourceStubModelRootSettingsProvider" hash="-3l3nnr1wrs8zt05o59obrdf4ibvabjz">
+    <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="JavaSourceStubModelRootSettingsProvider.java" />
   </source>
 </dependencies>

@@ -9,11 +9,9 @@ import org.jetbrains.mps.openapi.language.SConcept;
 public class XMLSAXDefaultChildHandler_BehaviorDescriptor extends XMLSAXHandlerFunction_BehaviorDescriptor {
   public XMLSAXDefaultChildHandler_BehaviorDescriptor() {
   }
-
   public List<SNode> virtual_getApplicableConceptFunctionParameter_3044950653914717136(SConcept thisConcept) {
     return XMLSAXDefaultChildHandler_Behavior.virtual_getApplicableConceptFunctionParameter_3044950653914717136(thisConcept);
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.core.xml.sax.structure.XMLSAXDefaultChildHandler";

@@ -41,6 +41,7 @@
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.SetSequence" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.AdditionalPainter" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.EditorComponent" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.highlighter.EditorComponentCreateListener" />
     <classNode dependClassName="jetbrains.mps.project.ProjectOperationContext" />
     <classNode dependClassName="jetbrains.mps.smodel.MPSModuleRepository" />
     <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
@@ -49,9 +50,8 @@
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SRepository" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.module.SRepositoryAdapter" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SRepositoryListener" />
-    <classNode extendsClassName="jetbrains.mps.nodeEditor.highlighter.EditorComponentCreateListener" />
-    <classNode extendsClassName="org.jetbrains.mps.openapi.module.SRepositoryAdapter" />
   </dependency>
   <dependency className="jetbrains.mps.debugger.core.DebuggerCellPainter" file="DebuggerCellPainter.java">
     <classNode dependClassName="java.awt.Color" />

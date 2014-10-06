@@ -26,11 +26,11 @@
       <node id="1447276147532973449" at="32,60,33,63" concept="6" />
       <node id="1447276147532973449" at="33,63,34,30" concept="6" />
       <node id="1447276147532973449" at="34,30,35,138" concept="2" />
-      <node id="1447276147532973449" at="35,138,36,239" concept="2" />
-      <node id="1447276147532973449" at="36,239,37,24" concept="7" />
+      <node id="1447276147532973449" at="35,138,36,276" concept="2" />
+      <node id="1447276147532973449" at="36,276,37,24" concept="7" />
       <node id="1447276147532973444" at="15,0,17,0" concept="1" trace="PersistentConfigurationIsObject_SubtypingRule#()V" />
-      <node id="1447276147532973449" at="34,30,36,239" concept="0" />
-      <node id="1447276147532973449" at="34,30,36,239" concept="0" />
+      <node id="1447276147532973449" at="34,30,36,276" concept="0" />
+      <node id="1447276147532973449" at="34,30,36,276" concept="0" />
       <node id="1447276147532973444" at="17,0,20,0" concept="5" trace="getSubOrSuperType#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="1447276147532973444" at="20,0,23,0" concept="5" trace="getApplicableConceptFQName#()Ljava/lang/String;" />
       <node id="1447276147532973444" at="29,0,32,0" concept="5" trace="isWeak#()Z" />
@@ -45,7 +45,7 @@
       <scope id="1447276147532973444" at="24,5,26,45">
         <var name="b" id="1447276147532973444" />
       </scope>
-      <scope id="1447276147532973449" at="34,30,36,239" />
+      <scope id="1447276147532973449" at="34,30,36,276" />
       <scope id="1447276147532973444" at="17,0,20,0">
         <var name="configurationType" id="1447276147532973444" />
         <var name="status" id="1447276147532973444" />
@@ -80,8 +80,8 @@
       <node id="2722628536112115615" at="43,61,44,63" concept="6" />
       <node id="2722628536112115615" at="44,63,45,30" concept="6" />
       <node id="2722628536112115615" at="45,30,46,138" concept="2" />
-      <node id="2722628536112115615" at="46,138,47,249" concept="2" />
-      <node id="2722628536112115615" at="47,249,48,24" concept="7" />
+      <node id="2722628536112115615" at="46,138,47,286" concept="2" />
+      <node id="2722628536112115615" at="47,286,48,24" concept="7" />
       <node id="2158326176673575463" at="50,61,51,63" concept="6" />
       <node id="2158326176673575463" at="51,63,52,30" concept="6" />
       <node id="2158326176673575463" at="52,30,53,30" concept="6" />
@@ -90,12 +90,12 @@
       <node id="2158326176673575463" at="55,135,56,135" concept="2" />
       <node id="2158326176673575463" at="56,135,57,52" concept="2" />
       <node id="2158326176673575463" at="57,52,58,138" concept="2" />
-      <node id="2158326176673575463" at="58,138,59,240" concept="2" />
-      <node id="2158326176673575463" at="59,240,60,52" concept="2" />
+      <node id="2158326176673575463" at="58,138,59,277" concept="2" />
+      <node id="2158326176673575463" at="59,277,60,52" concept="2" />
       <node id="2158326176673575463" at="60,52,61,24" concept="7" />
       <node id="2722628536112115603" at="17,0,19,0" concept="1" trace="typeof_GridBagConstraints_InferenceRule#()V" />
-      <node id="2722628536112115615" at="45,30,47,249" concept="0" />
-      <node id="2722628536112115615" at="45,30,47,249" concept="0" />
+      <node id="2722628536112115615" at="45,30,47,286" concept="0" />
+      <node id="2722628536112115615" at="45,30,47,286" concept="0" />
       <node id="2158326176673575463" at="55,135,57,52" concept="0" />
       <node id="2158326176673575463" at="55,135,57,52" concept="0" />
       <node id="2722628536112115603" at="31,0,34,0" concept="5" trace="getApplicableConceptFQName#()Ljava/lang/String;" />
@@ -118,7 +118,7 @@
       <scope id="2722628536112115603" at="35,5,37,45">
         <var name="b" id="2722628536112115603" />
       </scope>
-      <scope id="2722628536112115615" at="45,30,47,249" />
+      <scope id="2722628536112115615" at="45,30,47,286" />
       <scope id="2158326176673575463" at="55,135,57,52" />
       <scope id="2722628536112115610" at="20,5,23,286">
         <var name="_info_12389875345" id="2722628536112115610" />
@@ -474,14 +474,14 @@
       <node id="6981317760235477768" at="53,30,54,30" concept="6" />
       <node id="6981317760235477768" at="54,30,55,135" concept="2" />
       <node id="6981317760235477768" at="55,135,56,138" concept="2" />
-      <node id="6981317760235477768" at="56,138,57,242" concept="2" />
-      <node id="6981317760235477768" at="57,242,58,52" concept="2" />
+      <node id="6981317760235477768" at="56,138,57,279" concept="2" />
+      <node id="6981317760235477768" at="57,279,58,52" concept="2" />
       <node id="6981317760235477768" at="58,52,59,138" concept="2" />
-      <node id="6981317760235477768" at="59,138,60,237" concept="2" />
-      <node id="6981317760235477768" at="60,237,61,52" concept="2" />
+      <node id="6981317760235477768" at="59,138,60,274" concept="2" />
+      <node id="6981317760235477768" at="60,274,61,52" concept="2" />
       <node id="6981317760235477768" at="61,52,62,138" concept="2" />
-      <node id="6981317760235477768" at="62,138,63,239" concept="2" />
-      <node id="6981317760235477768" at="63,239,64,52" concept="2" />
+      <node id="6981317760235477768" at="62,138,63,276" concept="2" />
+      <node id="6981317760235477768" at="63,276,64,52" concept="2" />
       <node id="6981317760235477768" at="64,52,65,39" concept="2" />
       <node id="6981317760235477768" at="66,31,67,77" concept="2" />
       <node id="6981317760235477768" at="68,5,69,165" concept="2" />

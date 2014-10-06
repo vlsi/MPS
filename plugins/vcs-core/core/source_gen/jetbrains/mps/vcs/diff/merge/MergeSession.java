@@ -69,15 +69,17 @@ public class MergeSession {
   public static MergeSession createMergeSession(SModel base, SModel mine, SModel repository) {
     // TODO generalize merge for any SModel 
     jetbrains.mps.smodel.SModel resModel = CopyUtil.copyModel(((SModelBase) base).getSModel());
-    int pv = Math.max(getPersistenceVersion(base), Math.max(getPersistenceVersion(mine), getPersistenceVersion(repository)));
-    if (pv > 8) {
-      for (SNode root : resModel.getRootNodes()) {
-        for (SNode node : SNodeUtil.getDescendants(root)) {
-          ((jetbrains.mps.smodel.SNode) node).updateWorkingMode(IdMigrationMode.ID);
+    if (resModel instanceof DefaultSModel) {
+      int pv = Math.max(getPersistenceVersion(base), Math.max(getPersistenceVersion(mine), getPersistenceVersion(repository)));
+      if (pv > 8) {
+        for (SNode root : resModel.getRootNodes()) {
+          for (SNode node : SNodeUtil.getDescendants(root)) {
+            ((jetbrains.mps.smodel.SNode) node).updateWorkingMode(IdMigrationMode.ID);
+          }
         }
       }
+      ((DefaultSModel) resModel).setPersistenceVersion(pv);
     }
-    ((DefaultSModel) resModel).setPersistenceVersion(pv);
     return new MergeSession(base, mine, repository, new MergeTemporaryModel(resModel, false));
   }
 

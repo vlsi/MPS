@@ -27,6 +27,9 @@ import java.util.Set;
 import java.util.HashSet;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
+import jetbrains.mps.project.dependency.modules.LanguageDependenciesManager;
+import org.jetbrains.mps.openapi.module.SDependency;
+import org.jetbrains.mps.openapi.module.SDependencyScope;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import org.jetbrains.mps.openapi.module.SModule;
@@ -36,26 +39,19 @@ public class SLanguageAdapter implements SLanguage {
 
   private SLanguageId myLanguage;
 
-
   public SLanguageAdapter(@NotNull SLanguageId language) {
     this.myLanguage = language;
   }
 
-
-
   public SLanguageAdapter(@NotNull String language) {
     this.myLanguageFqName = language;
   }
-
-
 
   @Override
   public SLanguageId getId() {
     fillBothIds();
     return myLanguage;
   }
-
-
 
   @Override
   public String getQualifiedName() {
@@ -65,8 +61,6 @@ public class SLanguageAdapter implements SLanguage {
     // todo in 3.2, it is supposed that we either remove most accesses to this method or we'll return conceptName here and clear it in all languageIds when renaming language in IDE 
     return myLanguageFqName;
   }
-
-
 
   @Override
   public Iterable<SAbstractConcept> getConcepts() {
@@ -100,8 +94,6 @@ public class SLanguageAdapter implements SLanguage {
     return c;
   }
 
-
-
   public Iterable<SEnumeration> getEnumerations() {
     // TODO rewrite using LanguageRuntime 
     Iterable<SNode> roots = (Iterable<SNode>) LanguageAspect.STRUCTURE.get(getSourceModule()).getRootNodes();
@@ -116,23 +108,24 @@ public class SLanguageAdapter implements SLanguage {
       }
     }));
     return c;
-
   }
-
-
 
   @Override
   public Iterable<SModuleReference> getLanguageRuntimes() {
     Set<SModuleReference> runtimes = new HashSet<SModuleReference>();
     Language sourceModule = getSourceModule();
     assert sourceModule != null;
-    for (Language language : SetSequence.fromSet(sourceModule.getAllExtendedLanguages())) {
+    for (Language language : SetSequence.fromSet(LanguageDependenciesManager.getAllExtendedLanguages(sourceModule))) {
       runtimes.addAll(language.getRuntimeModulesReferences());
+      for (SDependency dep : language.getDeclaredDependencies()) {
+        if (dep.getScope() == SDependencyScope.GENERATES_INTO) {
+          Language generatesIntoLang = as_c5k5j6_a0a0a0a1a3a61(dep.getTarget(), Language.class);
+          runtimes.addAll(generatesIntoLang.getRuntimeModulesReferences());
+        }
+      }
     }
     return runtimes;
   }
-
-
 
   @Override
   public Language getSourceModule() {
@@ -140,7 +133,6 @@ public class SLanguageAdapter implements SLanguage {
     return (Language) IdHelper.getModuleReference(myLanguage).resolve(MPSModuleRepository.getInstance());
 
   }
-
   private void fillBothIds() {
     if (myLanguageFqName != null && myLanguage != null) {
       return;
@@ -157,7 +149,6 @@ public class SLanguageAdapter implements SLanguage {
       }
     }
   }
-
   @Override
   public int hashCode() {
     if (myLanguage == null) {
@@ -166,7 +157,6 @@ public class SLanguageAdapter implements SLanguage {
       return myLanguage.hashCode();
     }
   }
-
   @Override
   public boolean equals(Object object) {
     if (!((object instanceof SLanguageAdapter))) {
@@ -178,8 +168,10 @@ public class SLanguageAdapter implements SLanguage {
       return myLanguage.equals(((SLanguageAdapter) object).myLanguage);
     }
   }
-
   public int getLanguageVersion() {
     return getSourceModule().getLanguageVersion();
+  }
+  private static <T> T as_c5k5j6_a0a0a0a1a3a61(Object o, Class<T> type) {
+    return (type.isInstance(o) ? (T) o : null);
   }
 }

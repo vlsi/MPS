@@ -53,7 +53,7 @@ public class NamedTupleDeclaration_Behavior {
     if ((SLinkOperations.getTarget(thisNode, "extended", true) != null)) {
       ListSequence.fromList(result).addElement(SLinkOperations.getTarget(thisNode, "extended", true));
     } else {
-      ListSequence.fromList(result).addElement(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SNodeOperations.getNode("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)", "~Object"), "virtual_getThisType_3305065273710880775", new Object[]{}));
+      ListSequence.fromList(result).addElement(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SNodeOperations.getNode("6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)", "~Object"), "virtual_getThisType_3305065273710880775", new Object[]{}));
     }
     ListSequence.fromList(result).addSequence(ListSequence.fromList(SLinkOperations.getTargets(thisNode, "implements", true)));
     return result;

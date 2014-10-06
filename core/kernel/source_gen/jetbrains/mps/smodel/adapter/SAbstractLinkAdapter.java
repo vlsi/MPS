@@ -13,13 +13,10 @@ public abstract class SAbstractLinkAdapter implements SAbstractLink {
   protected String conceptName;
   protected String role;
 
-
   public SAbstractLinkAdapter(String conceptName, String role) {
     this.conceptName = conceptName;
     this.role = role;
   }
-
-
 
   @Override
   public String getRole() {
@@ -30,8 +27,6 @@ public abstract class SAbstractLinkAdapter implements SAbstractLink {
     return role;
   }
 
-
-
   @Override
   public boolean isOptional() {
     // TODO reimplement using ConceptDescriptor 
@@ -41,8 +36,6 @@ public abstract class SAbstractLinkAdapter implements SAbstractLink {
     }
     return SPropertyOperations.hasValue(link, "sourceCardinality", "0..1", "0..1") || SPropertyOperations.hasValue(link, "sourceCardinality", "0..n", "0..1");
   }
-
-
 
   @Override
   public SAbstractConcept getTargetConcept() {
@@ -57,11 +50,7 @@ public abstract class SAbstractLinkAdapter implements SAbstractLink {
     return (isConcept ? new SConceptAdapter(id) : new SInterfaceConceptAdapter(id));
   }
 
-
-
   public abstract SNode getLinkNode();
-
-
 
   protected abstract boolean fillBothIds();
 }
