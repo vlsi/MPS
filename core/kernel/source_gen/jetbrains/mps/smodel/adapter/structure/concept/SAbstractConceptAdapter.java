@@ -69,13 +69,13 @@ public abstract class SAbstractConceptAdapter implements SAbstractConcept {
 
     Set<Pair<SReferenceLinkId, String>> refDescrs = new HashSet<Pair<SReferenceLinkId, String>>();
     for (SReferenceLinkId rid : d.getReferenceIds()) {
-      refDescrs.add(new Pair<SReferenceLinkId, String>(rid, d.getRefName(rid)));
+      refDescrs.add(new Pair<SReferenceLinkId, String>(rid, d.getRefDescriptor(rid).getName()));
     }
 
-    for (SConceptId ii : d.getParentIds()) {
-      ConceptDescriptor id = getConceptDescriptor(ii);
+    for (SConceptId ii : d.getParentsIds()) {
+      ConceptDescriptor id = ConceptRegistryUtil.getConceptDescriptor(ii);
       for (SReferenceLinkId rid : id.getReferenceIds()) {
-        refDescrs.add(new Pair<SReferenceLinkId, String>(rid, id.getRefName(rid)));
+        refDescrs.add(new Pair<SReferenceLinkId, String>(rid, id.getRefDescriptor(rid).getName()));
       }
     }
 
@@ -91,14 +91,14 @@ public abstract class SAbstractConceptAdapter implements SAbstractConcept {
     ConceptDescriptor d = getConceptDescriptor();
 
     Set<Pair<SContainmentLinkId, String>> linkDescrs = new HashSet<Pair<SContainmentLinkId, String>>();
-    for (SReferenceLinkId rid : d.getChildRoleIds()) {
-      linkDescrs.add(new Pair<SReferenceLinkId, String>(rid, d.getChildRoleName(rid)));
+    for (SContainmentLinkId rid : d.getLinkIds()) {
+      linkDescrs.add(new Pair<SContainmentLinkId, String>(rid, d.getLinkDescriptor(rid).getName()));
     }
 
-    for (SConceptId ii : d.getParentIds()) {
-      ConceptDescriptor id = getConceptDescriptor(ii);
-      for (SReferenceLinkId rid : id.getChildRoleIds()) {
-        linkDescrs.add(new Pair<SContainmentLinkId, String>(rid, id.getChildRoleName(rid)));
+    for (SConceptId ii : d.getParentsIds()) {
+      ConceptDescriptor id = ConceptRegistryUtil.getConceptDescriptor(ii);
+      for (SContainmentLinkId rid : id.getLinkIds()) {
+        linkDescrs.add(new Pair<SContainmentLinkId, String>(rid, id.getLinkDescriptor(rid).getName()));
       }
     }
 
@@ -132,13 +132,13 @@ public abstract class SAbstractConceptAdapter implements SAbstractConcept {
 
     Set<Pair<SPropertyId, String>> propDescrs = new HashSet<Pair<SPropertyId, String>>();
     for (SPropertyId rid : d.getPropertyIds()) {
-      propDescrs.add(new Pair<SPropertyId, String>(rid, d.getPropertyName(rid)));
+      propDescrs.add(new Pair<SPropertyId, String>(rid, d.getPropertyDescriptor(rid).getName()));
     }
 
-    for (SConceptId ii : d.getParentIds()) {
+    for (SConceptId ii : d.getParentsIds()) {
       ConceptDescriptor id = ConceptRegistryUtil.getConceptDescriptor(ii);
       for (SPropertyId rid : id.getPropertyIds()) {
-        propDescrs.add(new Pair<SPropertyId, String>(rid, id.getPropertyName(rid)));
+        propDescrs.add(new Pair<SPropertyId, String>(rid, id.getPropertyDescriptor(rid).getName()));
       }
     }
 

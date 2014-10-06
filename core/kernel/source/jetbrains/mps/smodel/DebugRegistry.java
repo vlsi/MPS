@@ -15,10 +15,7 @@
  */
 package jetbrains.mps.smodel;
 
-import jetbrains.mps.classloading.ClassLoaderManager;
-import jetbrains.mps.classloading.MPSClassesListener;
 import jetbrains.mps.components.CoreComponent;
-import jetbrains.mps.smodel.adapter.idconvert.IdMigrationNameRegistry;
 import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import jetbrains.mps.smodel.adapter.ids.SContainmentLinkId;
 import jetbrains.mps.smodel.adapter.ids.SLanguageId;
