@@ -11,7 +11,7 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="module" module-name="kernel" />
+    <orderEntry type="module" module-name="kernel" scope="TEST" />
     <orderEntry type="module" module-name="analyzers" />
     <orderEntry type="module" module-name="Closures-runtime" />
     <orderEntry type="module" module-name="collections-runtime" />
@@ -21,7 +21,6 @@
     <orderEntry type="module" module-name="MPSSupport" />
     <orderEntry type="module" module-name="typesystemEngine" />
     <orderEntry type="module" module-name="Tuples-runtime" />
-    <orderEntry type="module" module-name="vcs" />
     <orderEntry type="module" module-name="miscTests" />
     <orderEntry type="module" module-name="typesystemUi" />
     <orderEntry type="module" module-name="mps-workbench" />
@@ -38,14 +37,16 @@
     <orderEntry type="module" module-name="debugger-api-runtime" scope="RUNTIME" />
     <orderEntry type="module" module-name="debugger-java-runtime" scope="RUNTIME" />
     <orderEntry type="module" module-name="execution-impl" scope="RUNTIME" />
+    <orderEntry type="module" module-name="dataflow-rt" scope="RUNTIME" />
     <orderEntry type="module" module-name="resources" />
     <orderEntry type="module" module-name="resources_en" />
-    <orderEntry type="module" module-name="persistence" scope="TEST" />
     <orderEntry type="module" module-name="mps-ant" exported="" />
     <orderEntry type="module" module-name="ant-mps" />
     <orderEntry type="module" module-name="make-facets" />
     <orderEntry type="module" module-name="environment" />
     <orderEntry type="module" module-name="editorlang-runtime" scope="TEST" />
+    <orderEntry type="module" module-name="persistence" scope="TEST" />
+    <orderEntry type="module" module-name="vcs" scope="TEST" />
     <orderEntry type="module" module-name="kernel-resources" />
     <orderEntry type="library" name="PicoContainer" level="project" />
     <orderEntry type="library" name="Log4j" level="project" />
