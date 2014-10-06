@@ -33,7 +33,7 @@ public class SPropertyAdapterById extends SPropertyAdapter {
 
   @Override
   protected PropertyDescriptor getPropertyDescriptor() {
-    return ConceptRegistryUtil.getConceptDescriptor(myPropertyId.getConceptId()).getPropertyDescriptor(myPropertyId.getPropertyId());
+    return ConceptRegistryUtil.getConceptDescriptor(myPropertyId.getConceptId()).getPropertyDescriptor(myPropertyId);
   }
 
   @Override

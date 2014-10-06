@@ -1,28 +1,14 @@
 package jetbrains.mps.smodel.adapter.structure.ref;
 
-import jetbrains.mps.kernel.model.SModelUtil;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.scope.Scope;
 import jetbrains.mps.smodel.SNodeId;
-import jetbrains.mps.smodel.adapter.ids.MetaIdByDeclaration;
-import jetbrains.mps.smodel.adapter.ids.SAbstractLinkId;
 import jetbrains.mps.smodel.adapter.ids.SConceptId;
-import jetbrains.mps.smodel.adapter.ids.SContainmentLinkId;
 import jetbrains.mps.smodel.adapter.ids.SReferenceLinkId;
 import jetbrains.mps.smodel.adapter.structure.concept.ConceptRegistryUtil;
 import jetbrains.mps.smodel.adapter.structure.concept.SConceptAdapterById;
 import jetbrains.mps.smodel.adapter.structure.concept.SInterfaceConceptAdapterById;
-import jetbrains.mps.smodel.adapter.structure.link.SContainmentLinkAdapter;
-import jetbrains.mps.smodel.adapter.structure.link.SContainmentLinkAdapterById;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import jetbrains.mps.smodel.runtime.ReferenceDescriptor;
-import jetbrains.mps.smodel.search.ConceptAndSuperConceptsScope;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
-import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import org.jetbrains.mps.openapi.language.SContainmentLink;
-import org.jetbrains.mps.openapi.language.SScope;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 
@@ -44,7 +30,7 @@ public class SReferenceLinkAdapterById extends SReferenceLinkAdapter {
   }
 
   protected ReferenceDescriptor getReferenceDescriptor() {
-    return ConceptRegistryUtil.getConceptDescriptor(myRoleId.getConceptId()).getRefDescriptor(myRoleId.getReferenceLinkId());
+    return ConceptRegistryUtil.getConceptDescriptor(myRoleId.getConceptId()).getRefDescriptor(myRoleId);
   }
 
   @Override
