@@ -29,7 +29,7 @@ import jetbrains.mps.smodel.adapter.structure.link.SContainmentLinkAdapterById;
 import jetbrains.mps.smodel.adapter.structure.property.SPropertyAdapterById;
 import jetbrains.mps.smodel.adapter.structure.ref.SReferenceLinkAdapterById;
 import jetbrains.mps.util.annotation.ToRemove;
-import org.jetbrains.mps.openapi.language.SConcept;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.language.SProperty;
@@ -46,7 +46,7 @@ public class IdHelper {
     }
   }
 
-  public static SConceptId getConceptId(SConcept c) {
+  public static SConceptId getConceptId(SAbstractConcept c) {
     if (c instanceof SConceptAdapterById) {
       return ((SConceptAdapterById) c).getId();
     } else {

@@ -15,13 +15,13 @@
  */
 package jetbrains.mps.smodel.persistence.def.v9;
 
+import jetbrains.mps.persistence.IdHelper;
 import jetbrains.mps.smodel.DebugRegistry;
-import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.smodel.adapter.ids.SConceptId;
+import jetbrains.mps.smodel.adapter.ids.SContainmentLinkId;
+import jetbrains.mps.smodel.adapter.ids.SPropertyId;
+import jetbrains.mps.smodel.adapter.ids.SReferenceLinkId;
 import jetbrains.mps.smodel.adapter.structure.concept.SConceptAdapterById;
-import jetbrains.mps.smodel.adapter.structure.link.SContainmentLinkAdapterById;
-import jetbrains.mps.smodel.adapter.structure.property.SPropertyAdapterById;
-import jetbrains.mps.smodel.adapter.structure.ref.SReferenceLinkAdapterById;
-import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.language.SProperty;
 import org.jetbrains.mps.openapi.language.SReferenceLink;
@@ -32,21 +32,21 @@ import org.jetbrains.mps.openapi.model.SReference;
 import java.util.Map;
 
 public class IdInfoCollector {
-  public static void getDebugInfoById(Iterable<SNode> rootNodes, Map<SConcept, String> conceptIds, Map<SProperty, String> propIds,
-      Map<SReferenceLink, String> refIds, Map<SContainmentLink, String> roleIds) {
+  public static void getDebugInfoById(Iterable<SNode> rootNodes, Map<SConceptId, String> conceptIds, Map<SPropertyId, String> propIds,
+      Map<SReferenceLinkId, String> refIds, Map<SContainmentLinkId, String> roleIds) {
     DebugRegistry debugRegistry = DebugRegistry.getInstance();
     for (SNode root : rootNodes) {
       for (SNode n : SNodeUtil.getDescendants(root)) {
-        SConcept conceptId = n.getConcept().getId();
-        SNode conceptNode = new SConceptAdapterById(conceptId).getDeclarationNode();
-        String conceptName = conceptNode != null ? conceptNode.getName() : debugRegistry.getConceptName(conceptId);
-        conceptIds.put(conceptId, conceptName);
+        SConceptId conceptId = IdHelper.getConceptId(n.getConcept());
+        SConceptAdapterById concept = new SConceptAdapterById(conceptId, debugRegistry.getConceptName(conceptId));
+        SNode conceptNode = concept.getDeclarationNode();
+        conceptIds.put(conceptId, concept.getQualifiedName());
 
+        SContainmentLink role = n.getContainmentLink();
+        SContainmentLinkId roleId = IdHelper.getLinkId(role);
         if (n.getParent() != null) {
-          SContainmentLink roleId = n.getContainmentLink();
-          SContainmentLinkAdapterById role = new SContainmentLinkAdapterById(roleId);
-          SConcept linkConceptId = roleId.getConceptId();
-          SNode roleNode = role.getLinkNode();
+          SConceptId linkConceptId = roleId.getConceptId();
+          SNode roleNode = role.getDeclarationNode();
           String roleName;
           if (roleNode != null) {
             SNode linkConcept = roleNode.getContainingRoot();
@@ -57,15 +57,15 @@ public class IdInfoCollector {
             roleName = roleNode.getProperty("role");
           } else {
             conceptIds.put(linkConceptId, debugRegistry.getConceptName(linkConceptId));
-            roleName = debugRegistry.getRefName(roleId);
+            roleName = debugRegistry.getLinkName(roleId);
           }
           roleIds.put(roleId, roleName);
         }
 
-        for (SProperty pid : n.getProperties()) {
-          SPropertyAdapterById propId = new SPropertyAdapterById(pid);
-          SConcept propConceptId = pid.getContainingConcept();
-          SNode propNode = propId.getDeclarationNode();
+        for (SProperty prop : n.getProperties()) {
+          SPropertyId propId = IdHelper.getPropertyId(prop);
+          SConceptId propConceptId = IdHelper.getConceptId(prop.getContainingConcept());
+          SNode propNode = prop.getDeclarationNode();
           String propName;
           if (propNode != null) {
             SNode propConcept = propNode.getContainingRoot();
@@ -76,16 +76,16 @@ public class IdInfoCollector {
             propName = propNode.getName();
           } else {
             conceptIds.put(propConceptId, debugRegistry.getConceptName(propConceptId));
-            propName = debugRegistry.getPropertyName(pid);
+            propName = debugRegistry.getPropertyName(propId);
           }
-          propIds.put(pid, propName);
+          propIds.put(propId, propName);
         }
 
         for (SReference ref : n.getReferences()) {
-          SReferenceLink refId = ref.getReferenceLink();
-          SReferenceLinkAdapterById refRole = new SReferenceLinkAdapterById(refId);
-          SNode refNode = refRole.getLinkNode();
-          SConcept refConceptId = refId.getConcept();
+          SReferenceLinkId refId = IdHelper.getRefId(ref.getReferenceLink());
+          SReferenceLink refRole = ref.getReferenceLink();
+          SNode refNode = refRole.getDeclarationNode();
+          SConceptId refConceptId = refId.getConceptId();
           String refName;
           if (refNode != null) {
             SNode refConcept = refNode.getContainingRoot();
