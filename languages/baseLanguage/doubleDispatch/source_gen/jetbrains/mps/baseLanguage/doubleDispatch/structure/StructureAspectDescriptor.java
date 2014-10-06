@@ -5,12 +5,15 @@ package jetbrains.mps.baseLanguage.doubleDispatch.structure;
 import jetbrains.mps.smodel.runtime.BaseStructureAspectDescriptor;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder;
+import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
+import java.util.UUID;
 import java.util.Collection;
 import java.util.Arrays;
 import org.jetbrains.annotations.Nullable;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
-  /*package*/ final ConceptDescriptor myConceptDispatchModifier = new ConceptDescriptorBuilder("jetbrains.mps.baseLanguage.doubleDispatch.structure.DispatchModifier").super_("jetbrains.mps.baseLanguage.structure.Modifier").parents("jetbrains.mps.baseLanguage.structure.Modifier").alias("dispatch", "").create();
+
+  /*package*/ final ConceptDescriptor myConceptDispatchModifier = new ConceptDescriptorBuilder("jetbrains.mps.baseLanguage.doubleDispatch.structure.DispatchModifier", MetaIdFactory.conceptId(UUID.fromString("7db4447f-913e-4b81-bd75-c9a473319ac6"), 2403002034744698617L)).super_("jetbrains.mps.baseLanguage.structure.Modifier").super_(MetaIdFactory.conceptId(UUID.fromString("7db4447f-913e-4b81-bd75-c9a473319ac6"), 2403002034744051110L)).parents("jetbrains.mps.baseLanguage.structure.Modifier").parentIds(MetaIdFactory.conceptId(UUID.fromString("7db4447f-913e-4b81-bd75-c9a473319ac6"), 2403002034744051110L)).alias("dispatch", "").create();
 
   @Override
   public Collection<ConceptDescriptor> getDescriptors() {
@@ -20,12 +23,12 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   @Override
   @Nullable
   public ConceptDescriptor getDescriptor(String conceptFqName) {
-    switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0e, conceptFqName)) {
+    switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0f, conceptFqName)) {
       case 0:
         return myConceptDispatchModifier;
       default:
         return null;
     }
   }
-  private static String[] stringSwitchCases_1htk8d_a0a0e = new String[]{"jetbrains.mps.baseLanguage.doubleDispatch.structure.DispatchModifier"};
+  private static String[] stringSwitchCases_1htk8d_a0a0f = new String[]{"jetbrains.mps.baseLanguage.doubleDispatch.structure.DispatchModifier"};
 }

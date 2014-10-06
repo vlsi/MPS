@@ -5,12 +5,15 @@ package jetbrains.mps.transformation.test.errorReporting.structure;
 import jetbrains.mps.smodel.runtime.BaseStructureAspectDescriptor;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder;
+import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
+import java.util.UUID;
 import java.util.Collection;
 import java.util.Arrays;
 import org.jetbrains.annotations.Nullable;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
-  /*package*/ final ConceptDescriptor myConceptErrorReportingRoot = new ConceptDescriptorBuilder("jetbrains.mps.transformation.test.errorReporting.structure.ErrorReportingRoot").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept").properties("intval").create();
+
+  /*package*/ final ConceptDescriptor myConceptErrorReportingRoot = new ConceptDescriptorBuilder("jetbrains.mps.transformation.test.errorReporting.structure.ErrorReportingRoot", MetaIdFactory.conceptId(UUID.fromString("99a58581-8518-40c8-81f1-e364306f5ffc"), 7287346816896104019L)).super_("jetbrains.mps.lang.core.structure.BaseConcept").super_(MetaIdFactory.conceptId(UUID.fromString("99a58581-8518-40c8-81f1-e364306f5ffc"), 1133920641626L)).parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept").parentIds(MetaIdFactory.conceptId(UUID.fromString("99a58581-8518-40c8-81f1-e364306f5ffc"), 1133920641626L), MetaIdFactory.conceptId(UUID.fromString("99a58581-8518-40c8-81f1-e364306f5ffc"), 1169194658468L)).propertyDescriptors(new ConceptDescriptorBuilder.Prop(7287346816896111112L, "intval")).properties("intval").create();
 
   @Override
   public Collection<ConceptDescriptor> getDescriptors() {
@@ -20,12 +23,12 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   @Override
   @Nullable
   public ConceptDescriptor getDescriptor(String conceptFqName) {
-    switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0e, conceptFqName)) {
+    switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0f, conceptFqName)) {
       case 0:
         return myConceptErrorReportingRoot;
       default:
         return null;
     }
   }
-  private static String[] stringSwitchCases_1htk8d_a0a0e = new String[]{"jetbrains.mps.transformation.test.errorReporting.structure.ErrorReportingRoot"};
+  private static String[] stringSwitchCases_1htk8d_a0a0f = new String[]{"jetbrains.mps.transformation.test.errorReporting.structure.ErrorReportingRoot"};
 }

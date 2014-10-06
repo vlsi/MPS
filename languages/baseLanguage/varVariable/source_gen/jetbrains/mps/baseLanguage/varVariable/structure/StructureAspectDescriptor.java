@@ -5,12 +5,15 @@ package jetbrains.mps.baseLanguage.varVariable.structure;
 import jetbrains.mps.smodel.runtime.BaseStructureAspectDescriptor;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder;
+import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
+import java.util.UUID;
 import java.util.Collection;
 import java.util.Arrays;
 import org.jetbrains.annotations.Nullable;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
-  /*package*/ final ConceptDescriptor myConceptVarVariableDeclaration = new ConceptDescriptorBuilder("jetbrains.mps.baseLanguage.varVariable.structure.VarVariableDeclaration").super_("jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration").parents("jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration", "jetbrains.mps.lang.core.structure.INamedConcept").alias("var", "var definition").create();
+
+  /*package*/ final ConceptDescriptor myConceptVarVariableDeclaration = new ConceptDescriptorBuilder("jetbrains.mps.baseLanguage.varVariable.structure.VarVariableDeclaration", MetaIdFactory.conceptId(UUID.fromString("515552c7-fcc0-4ab4-9789-2f3c49344e85"), 1236693300889L)).super_("jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration").super_(MetaIdFactory.conceptId(UUID.fromString("515552c7-fcc0-4ab4-9789-2f3c49344e85"), 1068581242863L)).parents("jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration", "jetbrains.mps.lang.core.structure.INamedConcept").parentIds(MetaIdFactory.conceptId(UUID.fromString("515552c7-fcc0-4ab4-9789-2f3c49344e85"), 1068581242863L), MetaIdFactory.conceptId(UUID.fromString("515552c7-fcc0-4ab4-9789-2f3c49344e85"), 1169194658468L)).alias("var", "var definition").create();
 
   @Override
   public Collection<ConceptDescriptor> getDescriptors() {
@@ -20,12 +23,12 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   @Override
   @Nullable
   public ConceptDescriptor getDescriptor(String conceptFqName) {
-    switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0e, conceptFqName)) {
+    switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0f, conceptFqName)) {
       case 0:
         return myConceptVarVariableDeclaration;
       default:
         return null;
     }
   }
-  private static String[] stringSwitchCases_1htk8d_a0a0e = new String[]{"jetbrains.mps.baseLanguage.varVariable.structure.VarVariableDeclaration"};
+  private static String[] stringSwitchCases_1htk8d_a0a0f = new String[]{"jetbrains.mps.baseLanguage.varVariable.structure.VarVariableDeclaration"};
 }

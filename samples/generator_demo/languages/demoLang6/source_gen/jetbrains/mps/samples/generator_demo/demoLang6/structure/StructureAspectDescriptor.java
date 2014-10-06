@@ -5,13 +5,16 @@ package jetbrains.mps.samples.generator_demo.demoLang6.structure;
 import jetbrains.mps.smodel.runtime.BaseStructureAspectDescriptor;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder;
+import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
+import java.util.UUID;
 import java.util.Collection;
 import java.util.Arrays;
 import org.jetbrains.annotations.Nullable;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
-  /*package*/ final ConceptDescriptor myConceptButton = new ConceptDescriptorBuilder("jetbrains.mps.samples.generator_demo.demoLang6.structure.Button").super_("jetbrains.mps.sampleXML.structure.ElementPart").parents("jetbrains.mps.sampleXML.structure.ElementPart").properties("text").alias("button", "").create();
-  /*package*/ final ConceptDescriptor myConceptLabel = new ConceptDescriptorBuilder("jetbrains.mps.samples.generator_demo.demoLang6.structure.Label").super_("jetbrains.mps.sampleXML.structure.ElementPart").parents("jetbrains.mps.sampleXML.structure.ElementPart").properties("text").alias("label", "").create();
+
+  /*package*/ final ConceptDescriptor myConceptButton = new ConceptDescriptorBuilder("jetbrains.mps.samples.generator_demo.demoLang6.structure.Button", MetaIdFactory.conceptId(UUID.fromString("82fb751d-f7fb-4b58-a16e-303356f8e0af"), 3978102045101855363L)).super_("jetbrains.mps.sampleXML.structure.ElementPart").super_(MetaIdFactory.conceptId(UUID.fromString("82fb751d-f7fb-4b58-a16e-303356f8e0af"), 1225239603390L)).parents("jetbrains.mps.sampleXML.structure.ElementPart").parentIds(MetaIdFactory.conceptId(UUID.fromString("82fb751d-f7fb-4b58-a16e-303356f8e0af"), 1225239603390L)).propertyDescriptors(new ConceptDescriptorBuilder.Prop(3978102045101855475L, "text")).properties("text").alias("button", "").create();
+  /*package*/ final ConceptDescriptor myConceptLabel = new ConceptDescriptorBuilder("jetbrains.mps.samples.generator_demo.demoLang6.structure.Label", MetaIdFactory.conceptId(UUID.fromString("82fb751d-f7fb-4b58-a16e-303356f8e0af"), 3978102045101856876L)).super_("jetbrains.mps.sampleXML.structure.ElementPart").super_(MetaIdFactory.conceptId(UUID.fromString("82fb751d-f7fb-4b58-a16e-303356f8e0af"), 1225239603390L)).parents("jetbrains.mps.sampleXML.structure.ElementPart").parentIds(MetaIdFactory.conceptId(UUID.fromString("82fb751d-f7fb-4b58-a16e-303356f8e0af"), 1225239603390L)).propertyDescriptors(new ConceptDescriptorBuilder.Prop(3978102045101856886L, "text")).properties("text").alias("label", "").create();
 
   @Override
   public Collection<ConceptDescriptor> getDescriptors() {
@@ -21,7 +24,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   @Override
   @Nullable
   public ConceptDescriptor getDescriptor(String conceptFqName) {
-    switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0f, conceptFqName)) {
+    switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0g, conceptFqName)) {
       case 0:
         return myConceptButton;
       case 1:
@@ -30,5 +33,5 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
         return null;
     }
   }
-  private static String[] stringSwitchCases_1htk8d_a0a0f = new String[]{"jetbrains.mps.samples.generator_demo.demoLang6.structure.Button", "jetbrains.mps.samples.generator_demo.demoLang6.structure.Label"};
+  private static String[] stringSwitchCases_1htk8d_a0a0g = new String[]{"jetbrains.mps.samples.generator_demo.demoLang6.structure.Button", "jetbrains.mps.samples.generator_demo.demoLang6.structure.Label"};
 }

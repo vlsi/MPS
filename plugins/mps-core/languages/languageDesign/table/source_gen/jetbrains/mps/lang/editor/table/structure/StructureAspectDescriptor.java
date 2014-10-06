@@ -5,15 +5,18 @@ package jetbrains.mps.lang.editor.table.structure;
 import jetbrains.mps.smodel.runtime.BaseStructureAspectDescriptor;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder;
+import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
+import java.util.UUID;
 import jetbrains.mps.smodel.runtime.StaticScope;
 import java.util.Collection;
 import java.util.Arrays;
 import org.jetbrains.annotations.Nullable;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
-  /*package*/ final ConceptDescriptor myConceptCellModel_HierarchycalTable = new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.table.structure.CellModel_HierarchycalTable").super_("jetbrains.mps.lang.editor.structure.EditorCellModel").parents("jetbrains.mps.lang.editor.structure.EditorCellModel").properties("myProp").references("headerRowLinkDeclaration", "rowsLinkDeclaration", "cellsInRowLinkDeclaration").alias("hierarchycal table", "").create();
-  /*package*/ final ConceptDescriptor myConceptCellModel_Table = new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.table.structure.CellModel_Table").super_("jetbrains.mps.lang.editor.structure.EditorCellModel").parents("jetbrains.mps.lang.editor.structure.EditorCellModel").children(new String[]{"tableModel"}, new boolean[]{false}).alias("table", "").create();
-  /*package*/ final ConceptDescriptor myConceptQueryFunction_TableModel = new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.table.structure.QueryFunction_TableModel").super_("jetbrains.mps.baseLanguage.structure.ConceptFunction").parents("jetbrains.mps.baseLanguage.structure.ConceptFunction").alias("getTableModel", "").staticScope(StaticScope.NONE).create();
+
+  /*package*/ final ConceptDescriptor myConceptCellModel_HierarchycalTable = new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.table.structure.CellModel_HierarchycalTable", MetaIdFactory.conceptId(UUID.fromString("0272d3b4-4cc8-481e-9e2f-07793fbfcb41"), 2253133157536766818L)).super_("jetbrains.mps.lang.editor.structure.EditorCellModel").super_(MetaIdFactory.conceptId(UUID.fromString("0272d3b4-4cc8-481e-9e2f-07793fbfcb41"), 1073389214265L)).parents("jetbrains.mps.lang.editor.structure.EditorCellModel").parentIds(MetaIdFactory.conceptId(UUID.fromString("0272d3b4-4cc8-481e-9e2f-07793fbfcb41"), 1073389214265L)).propertyDescriptors(new ConceptDescriptorBuilder.Prop(2253133157537011702L, "myProp")).properties("myProp").referenceDescriptors(new ConceptDescriptorBuilder.Ref(6216065619544939793L, "headerRowLinkDeclaration", MetaIdFactory.conceptId(UUID.fromString("0272d3b4-4cc8-481e-9e2f-07793fbfcb41"), 1071489288298L), true), new ConceptDescriptorBuilder.Ref(6216065619544939794L, "rowsLinkDeclaration", MetaIdFactory.conceptId(UUID.fromString("0272d3b4-4cc8-481e-9e2f-07793fbfcb41"), 1071489288298L), false), new ConceptDescriptorBuilder.Ref(6216065619544939795L, "cellsInRowLinkDeclaration", MetaIdFactory.conceptId(UUID.fromString("0272d3b4-4cc8-481e-9e2f-07793fbfcb41"), 1071489288298L), false)).references("headerRowLinkDeclaration", "rowsLinkDeclaration", "cellsInRowLinkDeclaration").alias("hierarchycal table", "").create();
+  /*package*/ final ConceptDescriptor myConceptCellModel_Table = new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.table.structure.CellModel_Table", MetaIdFactory.conceptId(UUID.fromString("0272d3b4-4cc8-481e-9e2f-07793fbfcb41"), 4677325677876400523L)).super_("jetbrains.mps.lang.editor.structure.EditorCellModel").super_(MetaIdFactory.conceptId(UUID.fromString("0272d3b4-4cc8-481e-9e2f-07793fbfcb41"), 1073389214265L)).parents("jetbrains.mps.lang.editor.structure.EditorCellModel").parentIds(MetaIdFactory.conceptId(UUID.fromString("0272d3b4-4cc8-481e-9e2f-07793fbfcb41"), 1073389214265L)).childDescriptors(new ConceptDescriptorBuilder.Link(4490468428501048483L, "tableModel", MetaIdFactory.conceptId(UUID.fromString("0272d3b4-4cc8-481e-9e2f-07793fbfcb41"), 4490468428501056077L), false, false, false)).children(new String[]{"tableModel"}, new boolean[]{false}).alias("table", "").create();
+  /*package*/ final ConceptDescriptor myConceptQueryFunction_TableModel = new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.table.structure.QueryFunction_TableModel", MetaIdFactory.conceptId(UUID.fromString("0272d3b4-4cc8-481e-9e2f-07793fbfcb41"), 4490468428501056077L)).super_("jetbrains.mps.baseLanguage.structure.ConceptFunction").super_(MetaIdFactory.conceptId(UUID.fromString("0272d3b4-4cc8-481e-9e2f-07793fbfcb41"), 1137021947720L)).parents("jetbrains.mps.baseLanguage.structure.ConceptFunction").parentIds(MetaIdFactory.conceptId(UUID.fromString("0272d3b4-4cc8-481e-9e2f-07793fbfcb41"), 1137021947720L)).alias("getTableModel", "").staticScope(StaticScope.NONE).create();
 
   @Override
   public Collection<ConceptDescriptor> getDescriptors() {
@@ -23,7 +26,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   @Override
   @Nullable
   public ConceptDescriptor getDescriptor(String conceptFqName) {
-    switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0g, conceptFqName)) {
+    switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0h, conceptFqName)) {
       case 0:
         return myConceptCellModel_HierarchycalTable;
       case 1:
@@ -34,5 +37,5 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
         return null;
     }
   }
-  private static String[] stringSwitchCases_1htk8d_a0a0g = new String[]{"jetbrains.mps.lang.editor.table.structure.CellModel_HierarchycalTable", "jetbrains.mps.lang.editor.table.structure.CellModel_Table", "jetbrains.mps.lang.editor.table.structure.QueryFunction_TableModel"};
+  private static String[] stringSwitchCases_1htk8d_a0a0h = new String[]{"jetbrains.mps.lang.editor.table.structure.CellModel_HierarchycalTable", "jetbrains.mps.lang.editor.table.structure.CellModel_Table", "jetbrains.mps.lang.editor.table.structure.QueryFunction_TableModel"};
 }

@@ -5,13 +5,16 @@ package jetbrains.mps.lang.editor.styleTests.structure;
 import jetbrains.mps.smodel.runtime.BaseStructureAspectDescriptor;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder;
+import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
+import java.util.UUID;
 import java.util.Collection;
 import java.util.Arrays;
 import org.jetbrains.annotations.Nullable;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
-  /*package*/ final ConceptDescriptor myConceptNodeContainer = new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.styleTests.structure.NodeContainer").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").children(new String[]{"node"}, new boolean[]{false}).create();
-  /*package*/ final ConceptDescriptor myConceptTestConceptWithStyleAttributes = new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.styleTests.structure.TestConceptWithStyleAttributes").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").create();
+
+  /*package*/ final ConceptDescriptor myConceptNodeContainer = new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.styleTests.structure.NodeContainer", MetaIdFactory.conceptId(UUID.fromString("a936c42c-cb2c-4d64-a1dc-12986579a998"), 8422442021223268684L)).super_("jetbrains.mps.lang.core.structure.BaseConcept").super_(MetaIdFactory.conceptId(UUID.fromString("a936c42c-cb2c-4d64-a1dc-12986579a998"), 1133920641626L)).parents("jetbrains.mps.lang.core.structure.BaseConcept").parentIds(MetaIdFactory.conceptId(UUID.fromString("a936c42c-cb2c-4d64-a1dc-12986579a998"), 1133920641626L)).childDescriptors(new ConceptDescriptorBuilder.Link(8422442021223269806L, "node", MetaIdFactory.conceptId(UUID.fromString("a936c42c-cb2c-4d64-a1dc-12986579a998"), 1133920641626L), false, false, false)).children(new String[]{"node"}, new boolean[]{false}).create();
+  /*package*/ final ConceptDescriptor myConceptTestConceptWithStyleAttributes = new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.styleTests.structure.TestConceptWithStyleAttributes", MetaIdFactory.conceptId(UUID.fromString("a936c42c-cb2c-4d64-a1dc-12986579a998"), 6609104295326650728L)).super_("jetbrains.mps.lang.core.structure.BaseConcept").super_(MetaIdFactory.conceptId(UUID.fromString("a936c42c-cb2c-4d64-a1dc-12986579a998"), 1133920641626L)).parents("jetbrains.mps.lang.core.structure.BaseConcept").parentIds(MetaIdFactory.conceptId(UUID.fromString("a936c42c-cb2c-4d64-a1dc-12986579a998"), 1133920641626L)).create();
 
   @Override
   public Collection<ConceptDescriptor> getDescriptors() {
@@ -21,7 +24,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   @Override
   @Nullable
   public ConceptDescriptor getDescriptor(String conceptFqName) {
-    switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0f, conceptFqName)) {
+    switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0g, conceptFqName)) {
       case 0:
         return myConceptNodeContainer;
       case 1:
@@ -30,5 +33,5 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
         return null;
     }
   }
-  private static String[] stringSwitchCases_1htk8d_a0a0f = new String[]{"jetbrains.mps.lang.editor.styleTests.structure.NodeContainer", "jetbrains.mps.lang.editor.styleTests.structure.TestConceptWithStyleAttributes"};
+  private static String[] stringSwitchCases_1htk8d_a0a0g = new String[]{"jetbrains.mps.lang.editor.styleTests.structure.NodeContainer", "jetbrains.mps.lang.editor.styleTests.structure.TestConceptWithStyleAttributes"};
 }

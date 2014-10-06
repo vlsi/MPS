@@ -5,12 +5,15 @@ package jetbrains.mps.samples.generator_demo.demoLang7.structure;
 import jetbrains.mps.smodel.runtime.BaseStructureAspectDescriptor;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder;
+import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
+import java.util.UUID;
 import java.util.Collection;
 import java.util.Arrays;
 import org.jetbrains.annotations.Nullable;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
-  /*package*/ final ConceptDescriptor myConceptXMLDocument = new ConceptDescriptorBuilder("jetbrains.mps.samples.generator_demo.demoLang7.structure.XMLDocument").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").children(new String[]{"element"}, new boolean[]{true}).create();
+
+  /*package*/ final ConceptDescriptor myConceptXMLDocument = new ConceptDescriptorBuilder("jetbrains.mps.samples.generator_demo.demoLang7.structure.XMLDocument", MetaIdFactory.conceptId(UUID.fromString("b1ccc903-f5a9-42d1-add9-80ac0e69d662"), 3618324829955890003L)).super_("jetbrains.mps.lang.core.structure.BaseConcept").super_(MetaIdFactory.conceptId(UUID.fromString("b1ccc903-f5a9-42d1-add9-80ac0e69d662"), 1133920641626L)).parents("jetbrains.mps.lang.core.structure.BaseConcept").parentIds(MetaIdFactory.conceptId(UUID.fromString("b1ccc903-f5a9-42d1-add9-80ac0e69d662"), 1133920641626L)).childDescriptors(new ConceptDescriptorBuilder.Link(3618324829955893152L, "element", MetaIdFactory.conceptId(UUID.fromString("b1ccc903-f5a9-42d1-add9-80ac0e69d662"), 1225239603385L), true, true, false)).children(new String[]{"element"}, new boolean[]{true}).create();
 
   @Override
   public Collection<ConceptDescriptor> getDescriptors() {
@@ -20,12 +23,12 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   @Override
   @Nullable
   public ConceptDescriptor getDescriptor(String conceptFqName) {
-    switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0e, conceptFqName)) {
+    switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0f, conceptFqName)) {
       case 0:
         return myConceptXMLDocument;
       default:
         return null;
     }
   }
-  private static String[] stringSwitchCases_1htk8d_a0a0e = new String[]{"jetbrains.mps.samples.generator_demo.demoLang7.structure.XMLDocument"};
+  private static String[] stringSwitchCases_1htk8d_a0a0f = new String[]{"jetbrains.mps.samples.generator_demo.demoLang7.structure.XMLDocument"};
 }

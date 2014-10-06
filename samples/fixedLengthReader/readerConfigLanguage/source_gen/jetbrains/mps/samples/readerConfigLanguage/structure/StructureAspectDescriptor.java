@@ -5,14 +5,17 @@ package jetbrains.mps.samples.readerConfigLanguage.structure;
 import jetbrains.mps.smodel.runtime.BaseStructureAspectDescriptor;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder;
+import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
+import java.util.UUID;
 import java.util.Collection;
 import java.util.Arrays;
 import org.jetbrains.annotations.Nullable;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
-  /*package*/ final ConceptDescriptor myConceptField = new ConceptDescriptorBuilder("jetbrains.mps.samples.readerConfigLanguage.structure.Field").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept").properties("start", "end").create();
-  /*package*/ final ConceptDescriptor myConceptMapping = new ConceptDescriptorBuilder("jetbrains.mps.samples.readerConfigLanguage.structure.Mapping").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept").properties("code", "targetClass").children(new String[]{"field"}, new boolean[]{true}).create();
-  /*package*/ final ConceptDescriptor myConceptReaderConfiguration = new ConceptDescriptorBuilder("jetbrains.mps.samples.readerConfigLanguage.structure.ReaderConfiguration").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept").children(new String[]{"mapping"}, new boolean[]{true}).create();
+
+  /*package*/ final ConceptDescriptor myConceptField = new ConceptDescriptorBuilder("jetbrains.mps.samples.readerConfigLanguage.structure.Field", MetaIdFactory.conceptId(UUID.fromString("089e26c5-bfc3-4a60-9953-f68169a4608a"), 1116534962441L)).super_("jetbrains.mps.lang.core.structure.BaseConcept").super_(MetaIdFactory.conceptId(UUID.fromString("089e26c5-bfc3-4a60-9953-f68169a4608a"), 1133920641626L)).parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept").parentIds(MetaIdFactory.conceptId(UUID.fromString("089e26c5-bfc3-4a60-9953-f68169a4608a"), 1133920641626L), MetaIdFactory.conceptId(UUID.fromString("089e26c5-bfc3-4a60-9953-f68169a4608a"), 1169194658468L)).propertyDescriptors(new ConceptDescriptorBuilder.Prop(1116535027491L, "start"), new ConceptDescriptorBuilder.Prop(1116535032695L, "end")).properties("start", "end").create();
+  /*package*/ final ConceptDescriptor myConceptMapping = new ConceptDescriptorBuilder("jetbrains.mps.samples.readerConfigLanguage.structure.Mapping", MetaIdFactory.conceptId(UUID.fromString("089e26c5-bfc3-4a60-9953-f68169a4608a"), 1116534914096L)).super_("jetbrains.mps.lang.core.structure.BaseConcept").super_(MetaIdFactory.conceptId(UUID.fromString("089e26c5-bfc3-4a60-9953-f68169a4608a"), 1133920641626L)).parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept").parentIds(MetaIdFactory.conceptId(UUID.fromString("089e26c5-bfc3-4a60-9953-f68169a4608a"), 1133920641626L), MetaIdFactory.conceptId(UUID.fromString("089e26c5-bfc3-4a60-9953-f68169a4608a"), 1169194658468L)).propertyDescriptors(new ConceptDescriptorBuilder.Prop(1116534988614L, "code"), new ConceptDescriptorBuilder.Prop(1116534997224L, "targetClass")).properties("code", "targetClass").childDescriptors(new ConceptDescriptorBuilder.Link(1116535614925L, "field", MetaIdFactory.conceptId(UUID.fromString("089e26c5-bfc3-4a60-9953-f68169a4608a"), 1116534962441L), true, true, false)).children(new String[]{"field"}, new boolean[]{true}).create();
+  /*package*/ final ConceptDescriptor myConceptReaderConfiguration = new ConceptDescriptorBuilder("jetbrains.mps.samples.readerConfigLanguage.structure.ReaderConfiguration", MetaIdFactory.conceptId(UUID.fromString("089e26c5-bfc3-4a60-9953-f68169a4608a"), 1116534870455L)).super_("jetbrains.mps.lang.core.structure.BaseConcept").super_(MetaIdFactory.conceptId(UUID.fromString("089e26c5-bfc3-4a60-9953-f68169a4608a"), 1133920641626L)).parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept").parentIds(MetaIdFactory.conceptId(UUID.fromString("089e26c5-bfc3-4a60-9953-f68169a4608a"), 1133920641626L), MetaIdFactory.conceptId(UUID.fromString("089e26c5-bfc3-4a60-9953-f68169a4608a"), 1169194658468L)).childDescriptors(new ConceptDescriptorBuilder.Link(1116535202619L, "mapping", MetaIdFactory.conceptId(UUID.fromString("089e26c5-bfc3-4a60-9953-f68169a4608a"), 1116534914096L), true, true, false)).children(new String[]{"mapping"}, new boolean[]{true}).create();
 
   @Override
   public Collection<ConceptDescriptor> getDescriptors() {
@@ -22,7 +25,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   @Override
   @Nullable
   public ConceptDescriptor getDescriptor(String conceptFqName) {
-    switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0g, conceptFqName)) {
+    switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0h, conceptFqName)) {
       case 0:
         return myConceptField;
       case 1:
@@ -33,5 +36,5 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
         return null;
     }
   }
-  private static String[] stringSwitchCases_1htk8d_a0a0g = new String[]{"jetbrains.mps.samples.readerConfigLanguage.structure.Field", "jetbrains.mps.samples.readerConfigLanguage.structure.Mapping", "jetbrains.mps.samples.readerConfigLanguage.structure.ReaderConfiguration"};
+  private static String[] stringSwitchCases_1htk8d_a0a0h = new String[]{"jetbrains.mps.samples.readerConfigLanguage.structure.Field", "jetbrains.mps.samples.readerConfigLanguage.structure.Mapping", "jetbrains.mps.samples.readerConfigLanguage.structure.ReaderConfiguration"};
 }

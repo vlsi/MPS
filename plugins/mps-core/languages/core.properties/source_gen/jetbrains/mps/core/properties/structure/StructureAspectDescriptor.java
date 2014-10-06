@@ -5,16 +5,19 @@ package jetbrains.mps.core.properties.structure;
 import jetbrains.mps.smodel.runtime.BaseStructureAspectDescriptor;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder;
+import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
+import java.util.UUID;
 import jetbrains.mps.smodel.runtime.StaticScope;
 import java.util.Collection;
 import java.util.Arrays;
 import org.jetbrains.annotations.Nullable;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
-  /*package*/ final ConceptDescriptor myConceptPropertiesComment = new ConceptDescriptorBuilder("jetbrains.mps.core.properties.structure.PropertiesComment").super_("jetbrains.mps.core.properties.structure.PropertiesLine").parents("jetbrains.mps.core.properties.structure.PropertiesLine").properties("text").alias("#", "").staticScope(StaticScope.NONE).create();
-  /*package*/ final ConceptDescriptor myConceptPropertiesDeclaration = new ConceptDescriptorBuilder("jetbrains.mps.core.properties.structure.PropertiesDeclaration").super_("jetbrains.mps.core.properties.structure.PropertiesLine").parents("jetbrains.mps.core.properties.structure.PropertiesLine", "jetbrains.mps.lang.core.structure.INamedConcept").properties("value").alias("property", "").create();
-  /*package*/ final ConceptDescriptor myConceptPropertiesFile = new ConceptDescriptorBuilder("jetbrains.mps.core.properties.structure.PropertiesFile").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept", "jetbrains.mps.lang.traceable.structure.UnitConcept").children(new String[]{"lines"}, new boolean[]{true}).alias("properties file", "").create();
-  /*package*/ final ConceptDescriptor myConceptPropertiesLine = new ConceptDescriptorBuilder("jetbrains.mps.core.properties.structure.PropertiesLine").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").alias("<empty line>", "").create();
+
+  /*package*/ final ConceptDescriptor myConceptPropertiesComment = new ConceptDescriptorBuilder("jetbrains.mps.core.properties.structure.PropertiesComment", MetaIdFactory.conceptId(UUID.fromString("58f98fef-90ad-4b72-a390-fad66ec7005a"), 3961775458390522585L)).super_("jetbrains.mps.core.properties.structure.PropertiesLine").super_(MetaIdFactory.conceptId(UUID.fromString("58f98fef-90ad-4b72-a390-fad66ec7005a"), 3961775458390522562L)).parents("jetbrains.mps.core.properties.structure.PropertiesLine").parentIds(MetaIdFactory.conceptId(UUID.fromString("58f98fef-90ad-4b72-a390-fad66ec7005a"), 3961775458390522562L)).propertyDescriptors(new ConceptDescriptorBuilder.Prop(3961775458390522586L, "text")).properties("text").alias("#", "").staticScope(StaticScope.NONE).create();
+  /*package*/ final ConceptDescriptor myConceptPropertiesDeclaration = new ConceptDescriptorBuilder("jetbrains.mps.core.properties.structure.PropertiesDeclaration", MetaIdFactory.conceptId(UUID.fromString("58f98fef-90ad-4b72-a390-fad66ec7005a"), 3961775458390522561L)).super_("jetbrains.mps.core.properties.structure.PropertiesLine").super_(MetaIdFactory.conceptId(UUID.fromString("58f98fef-90ad-4b72-a390-fad66ec7005a"), 3961775458390522562L)).parents("jetbrains.mps.core.properties.structure.PropertiesLine", "jetbrains.mps.lang.core.structure.INamedConcept").parentIds(MetaIdFactory.conceptId(UUID.fromString("58f98fef-90ad-4b72-a390-fad66ec7005a"), 3961775458390522562L), MetaIdFactory.conceptId(UUID.fromString("58f98fef-90ad-4b72-a390-fad66ec7005a"), 1169194658468L)).propertyDescriptors(new ConceptDescriptorBuilder.Prop(3961775458390522596L, "value")).properties("value").alias("property", "").create();
+  /*package*/ final ConceptDescriptor myConceptPropertiesFile = new ConceptDescriptorBuilder("jetbrains.mps.core.properties.structure.PropertiesFile", MetaIdFactory.conceptId(UUID.fromString("58f98fef-90ad-4b72-a390-fad66ec7005a"), 3961775458390517588L)).super_("jetbrains.mps.lang.core.structure.BaseConcept").super_(MetaIdFactory.conceptId(UUID.fromString("58f98fef-90ad-4b72-a390-fad66ec7005a"), 1133920641626L)).parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept", "jetbrains.mps.lang.traceable.structure.UnitConcept").parentIds(MetaIdFactory.conceptId(UUID.fromString("58f98fef-90ad-4b72-a390-fad66ec7005a"), 1133920641626L), MetaIdFactory.conceptId(UUID.fromString("58f98fef-90ad-4b72-a390-fad66ec7005a"), 1169194658468L), MetaIdFactory.conceptId(UUID.fromString("58f98fef-90ad-4b72-a390-fad66ec7005a"), 5067982036267369892L)).childDescriptors(new ConceptDescriptorBuilder.Link(3961775458390522563L, "lines", MetaIdFactory.conceptId(UUID.fromString("58f98fef-90ad-4b72-a390-fad66ec7005a"), 3961775458390522562L), true, true, false)).children(new String[]{"lines"}, new boolean[]{true}).alias("properties file", "").create();
+  /*package*/ final ConceptDescriptor myConceptPropertiesLine = new ConceptDescriptorBuilder("jetbrains.mps.core.properties.structure.PropertiesLine", MetaIdFactory.conceptId(UUID.fromString("58f98fef-90ad-4b72-a390-fad66ec7005a"), 3961775458390522562L)).super_("jetbrains.mps.lang.core.structure.BaseConcept").super_(MetaIdFactory.conceptId(UUID.fromString("58f98fef-90ad-4b72-a390-fad66ec7005a"), 1133920641626L)).parents("jetbrains.mps.lang.core.structure.BaseConcept").parentIds(MetaIdFactory.conceptId(UUID.fromString("58f98fef-90ad-4b72-a390-fad66ec7005a"), 1133920641626L)).alias("<empty line>", "").create();
 
   @Override
   public Collection<ConceptDescriptor> getDescriptors() {
@@ -24,7 +27,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   @Override
   @Nullable
   public ConceptDescriptor getDescriptor(String conceptFqName) {
-    switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0h, conceptFqName)) {
+    switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0i, conceptFqName)) {
       case 0:
         return myConceptPropertiesComment;
       case 1:
@@ -37,5 +40,5 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
         return null;
     }
   }
-  private static String[] stringSwitchCases_1htk8d_a0a0h = new String[]{"jetbrains.mps.core.properties.structure.PropertiesComment", "jetbrains.mps.core.properties.structure.PropertiesDeclaration", "jetbrains.mps.core.properties.structure.PropertiesFile", "jetbrains.mps.core.properties.structure.PropertiesLine"};
+  private static String[] stringSwitchCases_1htk8d_a0a0i = new String[]{"jetbrains.mps.core.properties.structure.PropertiesComment", "jetbrains.mps.core.properties.structure.PropertiesDeclaration", "jetbrains.mps.core.properties.structure.PropertiesFile", "jetbrains.mps.core.properties.structure.PropertiesLine"};
 }

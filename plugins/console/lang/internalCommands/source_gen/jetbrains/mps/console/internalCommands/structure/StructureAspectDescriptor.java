@@ -5,15 +5,18 @@ package jetbrains.mps.console.internalCommands.structure;
 import jetbrains.mps.smodel.runtime.BaseStructureAspectDescriptor;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder;
+import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
+import java.util.UUID;
 import java.util.Collection;
 import java.util.Arrays;
 import org.jetbrains.annotations.Nullable;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
-  /*package*/ final ConceptDescriptor myConceptConsoleModelExpression = new ConceptDescriptorBuilder("jetbrains.mps.console.internalCommands.structure.ConsoleModelExpression").super_("jetbrains.mps.console.blCommand.structure.QueryExpression").parents("jetbrains.mps.console.blCommand.structure.QueryExpression", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault").alias("#consoleModel", "").create();
-  /*package*/ final ConceptDescriptor myConceptInternalMode = new ConceptDescriptorBuilder("jetbrains.mps.console.internalCommands.structure.InternalMode").super_("jetbrains.mps.baseLanguage.structure.Expression").parents("jetbrains.mps.baseLanguage.structure.Expression", "jetbrains.mps.console.blCommand.structure.ConsoleExpression").alias("#internalMode", "").create();
-  /*package*/ final ConceptDescriptor myConceptReloadClassesCommand = new ConceptDescriptorBuilder("jetbrains.mps.console.internalCommands.structure.ReloadClassesCommand").super_("jetbrains.mps.console.base.structure.InterpretedCommand").parents("jetbrains.mps.console.base.structure.InterpretedCommand").alias("#reloadClasses", "").create();
-  /*package*/ final ConceptDescriptor myConceptShowRepositoryCommand = new ConceptDescriptorBuilder("jetbrains.mps.console.internalCommands.structure.ShowRepositoryCommand").super_("jetbrains.mps.console.base.structure.InterpretedCommand").parents("jetbrains.mps.console.base.structure.InterpretedCommand", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault").abstract_().alias("#show repository", "").create();
+
+  /*package*/ final ConceptDescriptor myConceptConsoleModelExpression = new ConceptDescriptorBuilder("jetbrains.mps.console.internalCommands.structure.ConsoleModelExpression", MetaIdFactory.conceptId(UUID.fromString("995a7394-7f76-4b8b-a929-c53448708106"), 5582028874770305469L)).super_("jetbrains.mps.console.blCommand.structure.QueryExpression").super_(MetaIdFactory.conceptId(UUID.fromString("995a7394-7f76-4b8b-a929-c53448708106"), 4307205004131544317L)).parents("jetbrains.mps.console.blCommand.structure.QueryExpression", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault").parentIds(MetaIdFactory.conceptId(UUID.fromString("995a7394-7f76-4b8b-a929-c53448708106"), 4307205004131544317L), MetaIdFactory.conceptId(UUID.fromString("995a7394-7f76-4b8b-a929-c53448708106"), 1835621062190663819L)).alias("#consoleModel", "").create();
+  /*package*/ final ConceptDescriptor myConceptInternalMode = new ConceptDescriptorBuilder("jetbrains.mps.console.internalCommands.structure.InternalMode", MetaIdFactory.conceptId(UUID.fromString("995a7394-7f76-4b8b-a929-c53448708106"), 8829647120617316889L)).super_("jetbrains.mps.baseLanguage.structure.Expression").super_(MetaIdFactory.conceptId(UUID.fromString("995a7394-7f76-4b8b-a929-c53448708106"), 1068431790191L)).parents("jetbrains.mps.baseLanguage.structure.Expression", "jetbrains.mps.console.blCommand.structure.ConsoleExpression").parentIds(MetaIdFactory.conceptId(UUID.fromString("995a7394-7f76-4b8b-a929-c53448708106"), 1068431790191L), MetaIdFactory.conceptId(UUID.fromString("995a7394-7f76-4b8b-a929-c53448708106"), 7006261637496548496L)).alias("#internalMode", "").create();
+  /*package*/ final ConceptDescriptor myConceptReloadClassesCommand = new ConceptDescriptorBuilder("jetbrains.mps.console.internalCommands.structure.ReloadClassesCommand", MetaIdFactory.conceptId(UUID.fromString("995a7394-7f76-4b8b-a929-c53448708106"), 8483375838963817777L)).super_("jetbrains.mps.console.base.structure.InterpretedCommand").super_(MetaIdFactory.conceptId(UUID.fromString("995a7394-7f76-4b8b-a929-c53448708106"), 1769790395579407461L)).parents("jetbrains.mps.console.base.structure.InterpretedCommand").parentIds(MetaIdFactory.conceptId(UUID.fromString("995a7394-7f76-4b8b-a929-c53448708106"), 1769790395579407461L)).alias("#reloadClasses", "").create();
+  /*package*/ final ConceptDescriptor myConceptShowRepositoryCommand = new ConceptDescriptorBuilder("jetbrains.mps.console.internalCommands.structure.ShowRepositoryCommand", MetaIdFactory.conceptId(UUID.fromString("995a7394-7f76-4b8b-a929-c53448708106"), 8483375838963818252L)).super_("jetbrains.mps.console.base.structure.InterpretedCommand").super_(MetaIdFactory.conceptId(UUID.fromString("995a7394-7f76-4b8b-a929-c53448708106"), 1769790395579407461L)).parents("jetbrains.mps.console.base.structure.InterpretedCommand", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault").parentIds(MetaIdFactory.conceptId(UUID.fromString("995a7394-7f76-4b8b-a929-c53448708106"), 1769790395579407461L), MetaIdFactory.conceptId(UUID.fromString("995a7394-7f76-4b8b-a929-c53448708106"), 1835621062190663819L)).abstract_().alias("#show repository", "").create();
 
   @Override
   public Collection<ConceptDescriptor> getDescriptors() {
@@ -23,7 +26,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   @Override
   @Nullable
   public ConceptDescriptor getDescriptor(String conceptFqName) {
-    switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0h, conceptFqName)) {
+    switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0i, conceptFqName)) {
       case 0:
         return myConceptConsoleModelExpression;
       case 1:
@@ -36,5 +39,5 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
         return null;
     }
   }
-  private static String[] stringSwitchCases_1htk8d_a0a0h = new String[]{"jetbrains.mps.console.internalCommands.structure.ConsoleModelExpression", "jetbrains.mps.console.internalCommands.structure.InternalMode", "jetbrains.mps.console.internalCommands.structure.ReloadClassesCommand", "jetbrains.mps.console.internalCommands.structure.ShowRepositoryCommand"};
+  private static String[] stringSwitchCases_1htk8d_a0a0i = new String[]{"jetbrains.mps.console.internalCommands.structure.ConsoleModelExpression", "jetbrains.mps.console.internalCommands.structure.InternalMode", "jetbrains.mps.console.internalCommands.structure.ReloadClassesCommand", "jetbrains.mps.console.internalCommands.structure.ShowRepositoryCommand"};
 }
