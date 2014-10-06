@@ -53,8 +53,8 @@ public abstract class SPropertyAdapter implements SProperty {
     return true;
   }
 
-  public final SNode getPropertyNode() {
-    SNode cnode = getContainingConcept().getConceptDeclarationNode();
+  public final SNode getDeclarationNode() {
+    SNode cnode = getContainingConcept().getDeclarationNode();
     if (cnode == null) return null;
     return findInConcept(cnode);
   }

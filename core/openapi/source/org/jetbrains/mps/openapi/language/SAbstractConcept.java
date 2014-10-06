@@ -50,7 +50,7 @@ public interface SAbstractConcept {
   boolean isSubConceptOf(SAbstractConcept concept);
 
   @Nullable
-  SNode getConceptDeclarationNode();
+  SNode getDeclarationNode();
 
   //----------deprecated------------
 

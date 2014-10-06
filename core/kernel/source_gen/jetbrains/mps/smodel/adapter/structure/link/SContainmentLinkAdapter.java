@@ -82,8 +82,8 @@ public abstract class SContainmentLinkAdapter implements SContainmentLink {
   }
 
   @Override
-  public SNode getLinkDeclarationNode() {
-    SNode cnode = getContainingConcept().getConceptDeclarationNode();
+  public SNode getDeclarationNode() {
+    SNode cnode = getContainingConcept().getDeclarationNode();
     if (cnode == null) return null;
     return findInConcept(cnode);
   }

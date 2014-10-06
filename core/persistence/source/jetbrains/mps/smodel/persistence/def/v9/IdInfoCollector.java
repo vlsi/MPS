@@ -39,7 +39,7 @@ public class IdInfoCollector {
     for (SNode root : rootNodes) {
       for (SNode n : SNodeUtil.getDescendants(root)) {
         SConcept conceptId = n.getConcept().getId();
-        SNode conceptNode = new SConceptAdapterById(conceptId).getConceptDeclarationNode();
+        SNode conceptNode = new SConceptAdapterById(conceptId).getDeclarationNode();
         String conceptName = conceptNode != null ? conceptNode.getName() : debugRegistry.getConceptName(conceptId);
         conceptIds.put(conceptId, conceptName);
 
@@ -66,7 +66,7 @@ public class IdInfoCollector {
         for (SProperty pid : n.getProperties()) {
           SPropertyAdapterById propId = new SPropertyAdapterById(pid);
           SConcept propConceptId = pid.getContainingConcept();
-          SNode propNode = propId.getPropertyNode();
+          SNode propNode = propId.getDeclarationNode();
           String propName;
           if (propNode != null) {
             SNode propConcept = propNode.getContainingRoot();

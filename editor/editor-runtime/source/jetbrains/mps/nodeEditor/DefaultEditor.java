@@ -132,7 +132,7 @@ public class DefaultEditor extends DefaultNodeEditor {
     String qualifiedName = node.getConcept().getQualifiedName();
     myConceptDescriptor = ConceptRegistry.getInstance().getConceptDescriptor(qualifiedName);
 
-    //todo: remove getConceptDeclarationNode() check when editor doesn't need concept node
+    //todo: remove getDeclarationNode() check when editor doesn't need concept node
     if (myConceptDescriptor instanceof IllegalConceptDescriptor ||
         !(mySNode instanceof jetbrains.mps.smodel.SNode) || ((jetbrains.mps.smodel.SNode) mySNode).getConceptDeclarationNode() == null) {
       myNullConcept = true;

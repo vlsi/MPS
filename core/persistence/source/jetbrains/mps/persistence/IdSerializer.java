@@ -45,7 +45,7 @@ public class IdSerializer {
     if (c instanceof SConceptAdapterById) {
       return ((SConceptAdapterById) c).getId().serialize();
     } else {
-      return MetaIdByDeclaration.getConceptId(((SNode) c.getConceptDeclarationNode())).serialize();
+      return MetaIdByDeclaration.getConceptId(((SNode) c.getDeclarationNode())).serialize();
     }
   }
 
@@ -53,7 +53,7 @@ public class IdSerializer {
     if (p instanceof SPropertyAdapterById) {
       return ((SPropertyAdapterById) p).getId().serialize();
     } else {
-      return MetaIdByDeclaration.getPropId(((SNode) p.getPropertyNode())).serialize();
+      return MetaIdByDeclaration.getPropId(((SNode) p.getDeclarationNode())).serialize();
     }
   }
 
@@ -61,7 +61,7 @@ public class IdSerializer {
     if (r instanceof SReferenceLinkAdapterById) {
       return ((SReferenceLinkAdapterById) r).getRoleId().serialize();
     } else {
-      return MetaIdByDeclaration.getRefRoleId(((SNode) r.getRefDeclarationNode())).serialize();
+      return MetaIdByDeclaration.getRefRoleId(((SNode) r.getDeclarationNode())).serialize();
     }
   }
 
@@ -69,7 +69,7 @@ public class IdSerializer {
     if (l instanceof SContainmentLinkAdapterById) {
       return ((SContainmentLinkAdapterById) l).getRoleId().serialize();
     } else {
-      return MetaIdByDeclaration.getConceptId(((SNode) l.getLinkDeclarationNode())).serialize();
+      return MetaIdByDeclaration.getConceptId(((SNode) l.getDeclarationNode())).serialize();
     }
   }
   }

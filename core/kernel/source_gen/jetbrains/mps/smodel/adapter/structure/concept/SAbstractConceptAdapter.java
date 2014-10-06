@@ -145,7 +145,7 @@ public abstract class SAbstractConceptAdapter implements SAbstractConcept {
 
   @Nullable
   @Override
-  public SNode getConceptDeclarationNode() {
+  public SNode getDeclarationNode() {
     Language lang = ((Language) getLanguage().getSourceModule());
     if (lang == null) return null;
 

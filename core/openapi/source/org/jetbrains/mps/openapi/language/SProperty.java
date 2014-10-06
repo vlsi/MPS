@@ -35,5 +35,5 @@ public interface SProperty {
   boolean isValid(String value);
 
   @Nullable
-  SNode getPropertyNode();
+  SNode getDeclarationNode();
 }

@@ -82,8 +82,8 @@ public abstract class SReferenceLinkAdapter implements SReferenceLink {
   }
 
   @Override
-  public SNode getRefDeclarationNode() {
-    SNode cnode = getContainingConcept().getConceptDeclarationNode();
+  public SNode getDeclarationNode() {
+    SNode cnode = getContainingConcept().getDeclarationNode();
     if (cnode == null) return null;
     return findInConcept(cnode);
   }

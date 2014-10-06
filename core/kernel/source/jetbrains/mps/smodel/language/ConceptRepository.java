@@ -113,8 +113,8 @@ public class ConceptRepository extends SConceptRepository implements CoreCompone
 
     @Nullable
     @Override
-    public SNode getConceptDeclarationNode() {
-      return target.getConceptDeclarationNode();
+    public SNode getDeclarationNode() {
+      return target.getDeclarationNode();
     }
 
     @Override
