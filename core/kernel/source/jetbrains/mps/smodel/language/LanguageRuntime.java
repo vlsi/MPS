@@ -20,6 +20,7 @@ import jetbrains.mps.make.facet.IFacetManifest;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
+import jetbrains.mps.smodel.adapter.ids.SLanguageId;
 import jetbrains.mps.smodel.runtime.BehaviorAspectDescriptor;
 import jetbrains.mps.smodel.runtime.ConstraintsAspectDescriptor;
 import jetbrains.mps.smodel.runtime.FindUsageAspectDescriptor;
@@ -69,6 +70,10 @@ public abstract class LanguageRuntime {
   private final List<LanguageRuntime> myExtendedLanguages = new ArrayList<LanguageRuntime>();
 
   public abstract String getNamespace();
+
+  public SLanguageId getId(){
+    return null;
+  }
 
   /**
    * @deprecated use {@link #getAspect(Class) getAspect(IHelginsDescriptor.class)} instead
