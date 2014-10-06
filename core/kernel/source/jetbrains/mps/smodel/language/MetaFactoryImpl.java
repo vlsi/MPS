@@ -75,7 +75,7 @@ public class MetaFactoryImpl extends MetaFactory implements CoreComponent {
 
   @Override
   public SLanguage deserializeLanguage(String language) {
-    return new SLanguageAdapterByName(SLanguageId.deserialize(language));
+    return new SLanguageAdapterById(SLanguageId.deserialize(language));
   }
 
   @Override
