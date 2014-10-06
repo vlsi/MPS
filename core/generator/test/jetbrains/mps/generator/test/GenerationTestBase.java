@@ -167,7 +167,7 @@ public class GenerationTestBase {
     String randomName = "testxw" + Math.abs(UUID.randomUUID().getLeastSignificantBits()) + "." + originalModel.getModule().getModuleName();
     String randomId = UUID.randomUUID().toString();
     final TestModule tm = new TestModule(randomName, randomId, originalModel.getModule());
-    ModelAccess.instance().runWriteAction(new Runnable() {
+    p.getModelAccess().runWriteAction(new Runnable() {
       @Override
       public void run() {
         MPSModuleRepository.getInstance().registerModule(tm, myOwner);
@@ -176,7 +176,7 @@ public class GenerationTestBase {
 
     final SModel[] descr1 = new SModel[]{null};
     try {
-      ModelAccess.instance().runReadAction(new Runnable() {
+      p.getModelAccess().runWriteAction(new Runnable() {
         @Override
         public void run() {
           descr1[0] = tm.createModel(originalModel);
@@ -193,7 +193,7 @@ public class GenerationTestBase {
 
       final MyIncrementalGenerationStrategy incrementalStrategy = new MyIncrementalGenerationStrategy(descr,
           new FileBasedGenerationCacheContainer(generatorCaches));
-      ModelAccess.instance().runReadAction(new Runnable() {
+      p.getModelAccess().runReadAction(new Runnable() {
         @Override
         public void run() {
           incrementalStrategy.buildHash();
@@ -237,7 +237,7 @@ public class GenerationTestBase {
           }
         });
 
-        ModelAccess.instance().runReadAction(new Runnable() {
+        p.getModelAccess().runReadAction(new Runnable() {
           @Override
           public void run() {
             incrementalStrategy.buildHash();
@@ -293,7 +293,7 @@ public class GenerationTestBase {
         System.out.println();
       }
     } finally {
-      ModelAccess.instance().runWriteAction(new Runnable() {
+      p.getModelAccess().runWriteAction(new Runnable() {
         @Override
         public void run() {
           MPSModuleRepository.getInstance().unregisterModule(tm, myOwner);
