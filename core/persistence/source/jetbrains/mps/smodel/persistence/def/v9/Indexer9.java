@@ -15,12 +15,12 @@
  */
 package jetbrains.mps.smodel.persistence.def.v9;
 
-import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.smodel.DebugRegistry;
+import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.smodel.persistence.def.v7.WriteHelper;
 import jetbrains.mps.util.JDOMUtil;
 import jetbrains.mps.util.Pair;
-import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import org.jetbrains.mps.openapi.util.Consumer;
 
@@ -85,7 +85,7 @@ public class Indexer9 {
       offset = start + 1;
       if (end > offset) {
         String cid = JDOMUtil.unescapeText(new String(myData, offset, end - offset));
-        String name = MPSModuleRepository.getInstance().getDebugRegistry().getConceptName(SConcept.deserialize(cid));
+        String name = DebugRegistry.getInstance().getConceptName(SConceptId.deserialize(cid));
         myConsumer.consume(name);
       }
     } else if (contains(offset, MODEL_UID_PREFIX) && prevWordIs(ModelPersistence.MODEL)) {
