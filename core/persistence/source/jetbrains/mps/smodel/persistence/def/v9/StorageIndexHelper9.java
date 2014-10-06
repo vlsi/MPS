@@ -17,16 +17,15 @@ package jetbrains.mps.smodel.persistence.def.v9;
 
 import jetbrains.mps.smodel.StaticReference;
 import jetbrains.mps.smodel.adapter.ids.SConceptId;
+import jetbrains.mps.smodel.adapter.ids.SContainmentLinkId;
 import jetbrains.mps.smodel.adapter.ids.SLanguageId;
+import jetbrains.mps.smodel.adapter.ids.SPropertyId;
+import jetbrains.mps.smodel.adapter.ids.SReferenceLinkId;
 import jetbrains.mps.smodel.persistence.def.v7.WriteHelper;
 import org.apache.log4j.Level;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.mps.openapi.language.SContainmentLink;
-import org.jetbrains.mps.openapi.language.SLanguage;
-import org.jetbrains.mps.openapi.language.SProperty;
-import org.jetbrains.mps.openapi.language.SReferenceLink;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SReference;
 
@@ -63,7 +62,7 @@ public class StorageIndexHelper9 {
     addInternalObject(((Map) myModelIndex), myUsedImportIndices, model, model.getModelId().hashCode());
   }
 
-  public void addLanguage(SLanguage lang){
+  public void addLanguage(SLanguageId lang){
     addInternalObject(((Map) myLanguageIndex), myUsedLanguageIndices, lang, lang.getId().hashCode());
   }
 
@@ -84,16 +83,16 @@ public class StorageIndexHelper9 {
     return index + MODEL_SEPARATOR_CHAR + concept.getConceptId();
   }
 
-  public String getPropertyIndex(@NotNull SProperty prop) {
-    return getConceptIndex(prop.getContainingConcept()) + MODEL_SEPARATOR_CHAR + prop.getPropertyId();
+  public String getPropertyIndex(@NotNull SPropertyId prop) {
+    return getConceptIndex(prop.getConceptId()) + MODEL_SEPARATOR_CHAR + prop.getPropertyId();
   }
 
-  public String getNodeRoleIndex(@NotNull SContainmentLink linkId) {
+  public String getLinkIndex(@NotNull SContainmentLinkId linkId) {
     return getConceptIndex(linkId.getConceptId()) + MODEL_SEPARATOR_CHAR + linkId.getContainmentLinkId();
   }
 
-  public String getReferenceRoleIndex(@NotNull SReferenceLink linkId) {
-    return getConceptIndex(linkId.getConcept()) + MODEL_SEPARATOR_CHAR + linkId.getReferenceLinkId();
+  public String getReferenceRoleIndex(@NotNull SReferenceLinkId linkId) {
+    return getConceptIndex(linkId.getConceptId()) + MODEL_SEPARATOR_CHAR + linkId.getReferenceLinkId();
   }
 
   private void addInternalObject(Map<Object, String> index, Set<Integer> usedIndices, Object toStore, int initialHash) {
