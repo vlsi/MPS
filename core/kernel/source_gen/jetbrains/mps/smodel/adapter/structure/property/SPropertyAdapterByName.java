@@ -22,6 +22,7 @@ import jetbrains.mps.smodel.adapter.structure.concept.ConceptRegistryUtil;
 import jetbrains.mps.smodel.adapter.structure.concept.SConceptAdapterById;
 import jetbrains.mps.smodel.adapter.structure.concept.SInterfaceConceptAdapterById;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
+import jetbrains.mps.smodel.runtime.PropertyDescriptor;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SProperty;
@@ -39,8 +40,8 @@ public class SPropertyAdapterByName extends SPropertyAdapter {
   }
 
   @Override
-  protected PropDescriptor getPropertyDescriptor() {
-    return ConceptRegistryUtil.getConceptDescriptor(myConceptName).getPropDescriptor(myPropertyName);
+  protected PropertyDescriptor getPropertyDescriptor() {
+    return ConceptRegistryUtil.getConceptDescriptor(myConceptName).getPropertyDescriptor(myPropertyName);
   }
 
   @Override

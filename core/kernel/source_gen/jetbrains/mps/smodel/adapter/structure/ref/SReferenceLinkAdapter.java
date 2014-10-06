@@ -21,6 +21,7 @@ import jetbrains.mps.smodel.adapter.structure.concept.ConceptRegistryUtil;
 import jetbrains.mps.smodel.adapter.structure.concept.SConceptAdapterById;
 import jetbrains.mps.smodel.adapter.structure.concept.SInterfaceConceptAdapterById;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
+import jetbrains.mps.smodel.runtime.ReferenceDescriptor;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
@@ -40,7 +41,7 @@ public abstract class SReferenceLinkAdapter implements SReferenceLink {
 
   public abstract boolean isSameReference(SReferenceLinkAdapter r);
 
-  protected abstract RefDescriptor getReferenceDescriptor();
+  protected abstract ReferenceDescriptor getReferenceDescriptor();
 
   @Override
   public abstract SAbstractConcept getContainingConcept();
@@ -54,17 +55,17 @@ public abstract class SReferenceLinkAdapter implements SReferenceLink {
 
   @Override
   public boolean isOptional() {
-    return getRefDescriptor().isOptional();
+    return getReferenceDescriptor().isOptional();
   }
 
   @Override
   public String getRoleName() {
-    return getRefDescriptor().getName();
+    return getReferenceDescriptor().getName();
   }
 
   @Override
   public SAbstractConcept getTargetConcept() {
-    SConceptId id = getRefDescriptor().getTargetConcept();
+    SConceptId id = getReferenceDescriptor().getTargetConcept();
     ConceptDescriptor concept = ConceptRegistryUtil.getConceptDescriptor(id);
     return concept.isInterfaceConcept() ? new SInterfaceConceptAdapterById(id, concept.getConceptFqName()) :
         new SConceptAdapterById(id, concept.getConceptFqName());

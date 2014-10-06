@@ -15,8 +15,8 @@
  */
 package jetbrains.mps.smodel.adapter.structure.property;
 
+import jetbrains.mps.smodel.runtime.PropertyDescriptor;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import org.jetbrains.mps.openapi.language.SDataType;
 import org.jetbrains.mps.openapi.language.SProperty;
 import org.jetbrains.mps.openapi.model.SNode;
 
@@ -40,7 +40,7 @@ public abstract class SPropertyAdapter implements SProperty {
 
   public abstract SAbstractConcept getContainingConcept();
 
-  protected abstract PropDescriptor getPropertyDescriptor();
+  protected abstract PropertyDescriptor getPropertyDescriptor();
 
   @Override
   public String getName() {

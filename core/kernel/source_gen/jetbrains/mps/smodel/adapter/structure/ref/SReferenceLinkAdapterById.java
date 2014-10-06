@@ -16,6 +16,7 @@ import jetbrains.mps.smodel.adapter.structure.concept.SInterfaceConceptAdapterBy
 import jetbrains.mps.smodel.adapter.structure.link.SContainmentLinkAdapter;
 import jetbrains.mps.smodel.adapter.structure.link.SContainmentLinkAdapterById;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
+import jetbrains.mps.smodel.runtime.ReferenceDescriptor;
 import jetbrains.mps.smodel.search.ConceptAndSuperConceptsScope;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -42,7 +43,7 @@ public class SReferenceLinkAdapterById extends SReferenceLinkAdapter {
     return myRoleId;
   }
 
-  protected RefDescriptor getReferenceDescriptor() {
+  protected ReferenceDescriptor getReferenceDescriptor() {
     return ConceptRegistryUtil.getConceptDescriptor(myRoleId.getConceptId()).getRefDescriptor(myRoleId.getReferenceLinkId());
   }
 

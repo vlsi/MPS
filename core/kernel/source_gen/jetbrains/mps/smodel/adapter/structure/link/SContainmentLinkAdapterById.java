@@ -1,13 +1,13 @@
 package jetbrains.mps.smodel.adapter.structure.link;
 
 import jetbrains.mps.smodel.SNodeId;
-import jetbrains.mps.smodel.adapter.structure.concept.ConceptRegistryUtil;
 import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import jetbrains.mps.smodel.adapter.ids.SContainmentLinkId;
+import jetbrains.mps.smodel.adapter.structure.concept.ConceptRegistryUtil;
 import jetbrains.mps.smodel.adapter.structure.concept.SConceptAdapterById;
 import jetbrains.mps.smodel.adapter.structure.concept.SInterfaceConceptAdapterById;
-import jetbrains.mps.smodel.adapter.structure.concept.SInterfaceConceptAdapterByName;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
+import jetbrains.mps.smodel.runtime.LinkDescriptor;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
