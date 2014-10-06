@@ -24,7 +24,6 @@ import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModel.ImportElement;
 import jetbrains.mps.smodel.SModelHeader;
-import jetbrains.mps.smodel.adapter.idconvert.IdMigrationNameRegistry;
 import jetbrains.mps.smodel.persistence.def.DocUtil;
 import jetbrains.mps.smodel.persistence.def.FilePerRootFormatUtil;
 import jetbrains.mps.smodel.persistence.def.IModelWriter;
@@ -43,7 +42,6 @@ import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeId;
 import org.jetbrains.mps.openapi.model.SReference;
-import org.jetbrains.mps.openapi.module.DebugRegistry;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 
 import java.util.HashMap;
@@ -224,20 +222,20 @@ public class ModelWriter9 implements IModelWriter {
 
   private void saveUsedLanguages(Element rootElement, SModel sourceModel) {
     for (Entry<SLanguage, Integer> language : sourceModel.usedLanguagesWithVersions().entrySet()) {
-      myHelper.addLanguage(language.getKey());
+      myHelper.addLanguage(IdHelper.getLanguageId(language.getKey()));
       Element languageElem = new Element(ModelPersistence9.USED_LANGUAGE);
       languageElem.setAttribute(ModelPersistence9.ID, IdHelper.getLanguageId(language.getKey()).serialize());
       languageElem.setAttribute(ModelPersistence9.VERSION, Integer.toString(language.getValue()));
-      languageElem.setAttribute(ModelPersistence9.USE_INDEX, myHelper.getUsedLanguageIndex(language.getKey()));
+      languageElem.setAttribute(ModelPersistence9.USE_INDEX, myHelper.getUsedLanguageIndex(IdHelper.getLanguageId(language.getKey())));
       rootElement.addContent(languageElem);
     }
     for (Entry<SLanguage, Integer> language : sourceModel.implicitlyUsedLanguagesWithVersions().entrySet()) {
-      myHelper.addLanguage(language.getKey());
+      myHelper.addLanguage(IdHelper.getLanguageId(language.getKey()));
       Element languageElem = new Element(ModelPersistence9.USED_LANGUAGE);
       languageElem.setAttribute(ModelPersistence9.ID, IdHelper.getLanguageId(language.getKey()).serialize());
       languageElem.setAttribute(ModelPersistence9.VERSION, Integer.toString(language.getValue()));
       languageElem.setAttribute(ModelPersistence9.IMPLICIT, "true");
-      languageElem.setAttribute(ModelPersistence9.USE_INDEX, myHelper.getUsedLanguageIndex(language.getKey()));
+      languageElem.setAttribute(ModelPersistence9.USE_INDEX, myHelper.getUsedLanguageIndex(IdHelper.getLanguageId(language.getKey())));
       rootElement.addContent(languageElem);
     }
   }
@@ -252,24 +250,24 @@ public class ModelWriter9 implements IModelWriter {
   }
 
   protected void saveNode(Element nodeElement, SNode node, boolean saveChildren) {
-    nodeElement.setAttribute(ModelPersistence9.CONCEPT_ID, myHelper.getConceptIndex(node.getConcept().getId()));
+    nodeElement.setAttribute(ModelPersistence9.CONCEPT_ID, myHelper.getConceptIndex(IdHelper.getConceptId(node.getConcept())));
     nodeElement.setAttribute(ModelPersistence9.ID, node.getNodeId().toString());
     if (node.getParent() != null) {
-      DocUtil.setNotNullAttribute(nodeElement, ModelPersistence9.ROLE_ID, myHelper.getNodeRoleIndex(node.getContainmentLink()));
+      DocUtil.setNotNullAttribute(nodeElement, ModelPersistence9.ROLE_ID, myHelper.getLinkIndex(IdHelper.getLinkId(node.getContainmentLink())));
     }
     String info = Util9.genNodeInfo(PersistenceRegistry.getInstance().getModelEnvironmentInfo(), node);
     DocUtil.setNotNullAttribute(nodeElement, ModelPersistence9.NODE_INFO, info);
 
     for (SProperty pid : node.getProperties()) {
       Element propertyElement = new Element(ModelPersistence9.PROPERTY);
-      propertyElement.setAttribute(ModelPersistence9.ROLE_ID, myHelper.getPropertyIndex(pid));
+      propertyElement.setAttribute(ModelPersistence9.ROLE_ID, myHelper.getPropertyIndex(IdHelper.getPropertyId(pid)));
       DocUtil.setNotNullAttribute(propertyElement, ModelPersistence9.VALUE, node.getProperty(pid));
       nodeElement.addContent(propertyElement);
     }
 
     for (SReference reference : node.getReferences()) {
       Element linkElement = new Element(ModelPersistence9.REFERENCE);
-      linkElement.setAttribute(ModelPersistence9.ROLE_ID, myHelper.getReferenceRoleIndex(reference.getReferenceLink()));
+      linkElement.setAttribute(ModelPersistence9.ROLE_ID, myHelper.getReferenceRoleIndex(IdHelper.getRefId(reference.getReferenceLink())));
       linkElement.setAttribute(ModelPersistence9.TARGET_NODE_ID, myHelper.getRefTarget(reference));
       DocUtil.setNotNullAttribute(linkElement, ModelPersistence9.RESOLVE_INFO, Util9.genResolveInfo(reference));
       nodeElement.addContent(linkElement);
