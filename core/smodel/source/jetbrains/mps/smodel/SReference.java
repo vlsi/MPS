@@ -16,13 +16,13 @@
 package jetbrains.mps.smodel;
 
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.smodel.adapter.structure.ref.SReferenceLinkAdapterByName;
 import jetbrains.mps.util.InternUtil;
 import jetbrains.mps.util.WeakSet;
 import org.apache.log4j.LogManager;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.annotations.Immutable;
-import org.jetbrains.mps.openapi.language.SReferenceLink;
 import org.jetbrains.mps.openapi.language.SReferenceLink;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
@@ -34,11 +34,10 @@ import java.util.Set;
 
 public abstract class SReference implements org.jetbrains.mps.openapi.model.SReference {
   public static final SReference[] EMPTY_ARRAY = new SReference[0];
-
-  private String myRole;
-  private SReferenceLink myRoleId;
+  private static final Set<SReference> ourErrorReportedRefs = new WeakSet<SReference>();
+  private static boolean ourLoggingOff = false;
   protected final SNode mySourceNode; // made protected only for assert in DynamicReference
-
+  private SReferenceLink myRoleId;
   private volatile String myResolveInfo;
 
   /**
@@ -46,141 +45,14 @@ public abstract class SReference implements org.jetbrains.mps.openapi.model.SRef
    */
   @Deprecated
   protected SReference(String role, SNode sourceNode) {
-    myRole = role;
-    if (((SReferenceSource) sourceNode).workingMode() == IdMigrationMode.ID){
-      myRoleId = ((SReferenceSource) sourceNode).getReferenceLinkId(sourceNode.getConceptId(), myRole);
-    }
+    myRoleId = new SReferenceLinkAdapterByName(sourceNode.getConcept().getQualifiedName(), role);
     mySourceNode = sourceNode;
   }
 
   protected SReference(SReferenceLink role, SNode sourceNode) {
     myRoleId = role;
-    if (((SReferenceSource) sourceNode).workingMode() == IdMigrationMode.NAME) {
-      myRole = ((SReferenceSource) sourceNode).getLinkName(myRoleId);
-    }
     mySourceNode = sourceNode;
   }
-
-  @Override
-  public String getRole() {
-    if (workingMode() == IdMigrationMode.ID) {
-      return ((SReferenceSource) mySourceNode).getLinkName(myRoleId);
-    } else {
-      return myRole;
-    }
-  }
-
-  // remove after 3.2
-  //only for SNode.updateReferenceWorkingMode()
-  public String getRole_byName() {
-    return myRole;
-  }
-
-  // remove after 3.2
-  //only for SNode.updateReferenceWorkingMode()
-  public SReferenceLink getRoleId_byId() {
-    return myRoleId;
-  }
-
-  @Override
-  public SReferenceLink getReferenceLink() {
-    if (workingMode() == IdMigrationMode.NAME) {
-      return ((SReferenceSource) mySourceNode).getReferenceLinkId(mySourceNode.getConceptId(), myRole);
-    } else {
-      return myRoleId;
-    }
-  }
-
-  @Override
-  public SNode getSourceNode() {
-    return mySourceNode;
-  }
-
-  @Override
-  public final SNode getTargetNode() {
-    return getTargetNode_internal();
-  }
-
-  @Override
-  public SReferenceLink getLink() {
-    return (SReferenceLink) getSourceNode().getConcept().getLink(getRole());
-  }
-
-  @Override
-  public SNodeReference getTargetNodeReference() {
-    return new SNodePointer(getTargetSModelReference(), getTargetNodeId());
-  }
-
-  @Override
-  @Nullable
-  public abstract SModelReference getTargetSModelReference();
-
-  @Override
-  @Nullable
-  public SNodeId getTargetNodeId() {
-    SNode targetNode = getTargetNode();
-    return targetNode == null ? null : targetNode.getNodeId();
-  }
-
-  public void makeDirect() {
-
-  }
-
-  public boolean makeIndirect() {
-    return false;
-  }
-
-  public String getResolveInfo() {
-    return myResolveInfo;
-  }
-
-  public void setResolveInfo(String info) {
-    myResolveInfo = InternUtil.intern(info);
-  }
-
-  public void setRole(String newRole) {
-    if (workingMode() == IdMigrationMode.ID) {
-      myRoleId = ((SReferenceSource) mySourceNode).getReferenceLinkId(mySourceNode.getConceptId(), newRole);
-    } else {
-      if (newRole == null) {
-        myRole = null;
-        return;
-      }
-      myRole = InternUtil.intern(newRole);
-    }
-  }
-
-  public void setRoleId(SReferenceLink newRole) {
-    if (workingMode() == IdMigrationMode.NAME) {
-      myRole = ((SReferenceSource) mySourceNode).getLinkName(newRole);
-    } else {
-      myRoleId = newRole;
-    }
-  }
-
-  public void setRoleId_direct(SReferenceLink newRole) {
-    myRoleId = newRole;
-  }
-
-  //-------------------------
-
-  @Deprecated
-  /**
-   * Use method in SReferenceBase class, as when you change ref, you know what ref it is
-   * @Deprecated in 3.0
-   */
-  public abstract void setTargetSModelReference(@NotNull SModelReference targetModelReference);
-
-  protected abstract SNode getTargetNode_internal();
-
-  @Deprecated
-  /**
-   * Not supposed to be used from outside. Replace with getTargetModelReference comparison
-   * @Deprecated in 3.0
-   */
-  public abstract boolean isExternal();
-
-  //-------- factory methods -----------
 
   public static SReference create(SReferenceLink id, SNode sourceNode, SNode targetNode) {
     if (sourceNode.getModel() != null && targetNode.getModel() != null) {
@@ -216,11 +88,6 @@ public abstract class SReference implements org.jetbrains.mps.openapi.model.SRef
     return ref;
   }
 
-  //-------- error logging -----------
-
-  private static boolean ourLoggingOff = false;
-  private static final Set<SReference> ourErrorReportedRefs = new WeakSet<SReference>();
-
   public static void disableLogging() {
     ourLoggingOff = true;
   }
@@ -237,6 +104,89 @@ public abstract class SReference implements org.jetbrains.mps.openapi.model.SRef
       enableLogging();
     }
   }
+
+  @Override
+  public String getRole() {
+    return myRoleId.getRoleName();
+  }
+
+  public void setRole(String newRole) {
+    myRoleId =  new SReferenceLinkAdapterByName(mySourceNode.getConcept().getQualifiedName(), newRole);
+  }
+
+  @Override
+  public SReferenceLink getReferenceLink() {
+    return myRoleId;
+  }
+
+  @Override
+  public SNode getSourceNode() {
+    return mySourceNode;
+  }
+
+  //-------------------------
+
+  @Override
+  public final SNode getTargetNode() {
+    return getTargetNode_internal();
+  }
+
+  @Override
+  public SReferenceLink getLink() {
+    return (SReferenceLink) getSourceNode().getConcept().getLink(getRole());
+  }
+
+  @Override
+  public SNodeReference getTargetNodeReference() {
+    return new SNodePointer(getTargetSModelReference(), getTargetNodeId());
+  }
+
+  //-------- factory methods -----------
+
+  @Override
+  @Nullable
+  public abstract SModelReference getTargetSModelReference();
+
+  @Deprecated
+  /**
+   * Use method in SReferenceBase class, as when you change ref, you know what ref it is
+   * @Deprecated in 3.0
+   */
+  public abstract void setTargetSModelReference(@NotNull SModelReference targetModelReference);
+
+  @Override
+  @Nullable
+  public SNodeId getTargetNodeId() {
+    SNode targetNode = getTargetNode();
+    return targetNode == null ? null : targetNode.getNodeId();
+  }
+
+  public void makeDirect() {
+
+  }
+
+  public boolean makeIndirect() {
+    return false;
+  }
+
+  public String getResolveInfo() {
+    return myResolveInfo;
+  }
+
+  //-------- error logging -----------
+
+  public void setResolveInfo(String info) {
+    myResolveInfo = InternUtil.intern(info);
+  }
+
+  protected abstract SNode getTargetNode_internal();
+
+  @Deprecated
+  /**
+   * Not supposed to be used from outside. Replace with getTargetModelReference comparison
+   * @Deprecated in 3.0
+   */
+  public abstract boolean isExternal();
 
   protected final void error(String message, ProblemDescription... problems) {
     if (ourLoggingOff) return;
@@ -259,11 +209,6 @@ public abstract class SReference implements org.jetbrains.mps.openapi.model.SRef
         }
       }
     }
-  }
-
-  protected IdMigrationMode workingMode() {
-    if (!(mySourceNode instanceof SReferenceSource)) return IdMigrationMode.UNKNOWN;
-    return ((SReferenceSource) mySourceNode).workingMode();
   }
 
   @Immutable
