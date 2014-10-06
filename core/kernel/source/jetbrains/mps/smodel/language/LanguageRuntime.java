@@ -71,9 +71,7 @@ public abstract class LanguageRuntime {
 
   public abstract String getNamespace();
 
-  public SLanguageId getId(){
-    return null;
-  }
+  public abstract SLanguageId getId();
 
   /**
    * @deprecated use {@link #getAspect(Class) getAspect(IHelginsDescriptor.class)} instead
