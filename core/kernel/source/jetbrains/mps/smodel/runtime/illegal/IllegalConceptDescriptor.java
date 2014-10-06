@@ -15,6 +15,11 @@
  */
 package jetbrains.mps.smodel.runtime.illegal;
 
+import jetbrains.mps.smodel.adapter.ids.SConceptId;
+import jetbrains.mps.smodel.adapter.ids.SContainmentLinkId;
+import jetbrains.mps.smodel.adapter.ids.SLanguageId;
+import jetbrains.mps.smodel.adapter.ids.SPropertyId;
+import jetbrains.mps.smodel.adapter.ids.SReferenceLinkId;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import jetbrains.mps.smodel.runtime.ConceptKind;
 import jetbrains.mps.smodel.runtime.LinkDescriptor;
@@ -22,11 +27,6 @@ import jetbrains.mps.smodel.runtime.PropertyDescriptor;
 import jetbrains.mps.smodel.runtime.ReferenceDescriptor;
 import jetbrains.mps.smodel.runtime.StaticScope;
 import org.jetbrains.annotations.Nullable;
-import org.jetbrains.mps.openapi.language.SConceptId;
-import org.jetbrains.mps.openapi.language.SContainmentLinkId;
-import org.jetbrains.mps.openapi.language.SLanguageId;
-import org.jetbrains.mps.openapi.language.SPropertyId;
-import org.jetbrains.mps.openapi.language.SReferenceLinkId;
 
 import java.util.Collections;
 import java.util.List;
@@ -41,7 +41,7 @@ public class IllegalConceptDescriptor implements ConceptDescriptor {
   }
 
   @Override
-  public org.jetbrains.mps.openapi.language.SConceptId getId() {
+  public SConceptId getId() {
     return new SConceptId(new SLanguageId(new UUID(0, 0)), 0);
   }
 
@@ -188,12 +188,12 @@ public class IllegalConceptDescriptor implements ConceptDescriptor {
 
   @Nullable
   @Override
-  public org.jetbrains.mps.openapi.language.SConceptId getSuperConceptId() {
+  public SConceptId getSuperConceptId() {
     return new SConceptId(new SLanguageId(new UUID(0, 0)), 0);
   }
 
   @Override
-  public List<org.jetbrains.mps.openapi.language.SConceptId> getParentsIds() {
+  public List<SConceptId> getParentsIds() {
     return Collections.emptyList();
   }
 }
