@@ -16,12 +16,13 @@
 package jetbrains.mps.smodel.persistence.def.v9;
 
 import jetbrains.mps.smodel.StaticReference;
+import jetbrains.mps.smodel.adapter.ids.SConceptId;
+import jetbrains.mps.smodel.adapter.ids.SLanguageId;
 import jetbrains.mps.smodel.persistence.def.v7.WriteHelper;
 import org.apache.log4j.Level;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.language.SProperty;
@@ -47,13 +48,13 @@ public class StorageIndexHelper9 {
   private Map<SModelReference, String> myModelIndex;
   private Set<Integer> myUsedImportIndices;
 
-  private Map<SLanguage, String> myLanguageIndex;
+  private Map<SLanguageId, String> myLanguageIndex;
   private Set<Integer> myUsedLanguageIndices;
 
   public StorageIndexHelper9(SModelReference modelRef) {
     myModelIndex = new HashMap<SModelReference, String>();
     myUsedImportIndices = new HashSet<Integer>();
-    myLanguageIndex = new HashMap<SLanguage, String>();
+    myLanguageIndex = new HashMap<SLanguageId, String>();
     myUsedLanguageIndices = new HashSet<Integer>();
     myModelRef = modelRef;
   }
@@ -70,13 +71,13 @@ public class StorageIndexHelper9 {
     return myModelIndex.get(model);
   }
 
-  public String getUsedLanguageIndex(@NotNull SLanguage lang) {
+  public String getUsedLanguageIndex(@NotNull SLanguageId lang) {
     return myLanguageIndex.get(lang);
   }
 
-  public String getConceptIndex(@NotNull SConcept concept) {
+  public String getConceptIndex(@NotNull SConceptId concept) {
     // return fqName prefixed with "." if we can't find model or name of concept
-    String index = getUsedLanguageIndex(concept.getLanguage());
+    String index = getUsedLanguageIndex(concept.getLanguageId());
     if (index == null) {
       return MODEL_SEPARATOR_CHAR + concept.serialize();
     }

@@ -16,7 +16,7 @@
 package jetbrains.mps.persistence.binary;
 
 import jetbrains.mps.extapi.model.GeneratableSModel;
-import jetbrains.mps.persistence.IdSerializer;
+import jetbrains.mps.persistence.IdHelper;
 import jetbrains.mps.persistence.PersistenceRegistry;
 import jetbrains.mps.smodel.DebugRegistry;
 import jetbrains.mps.smodel.DefaultSModel;
@@ -277,7 +277,7 @@ public class BinaryPersistence {
     //save used languages info
     os.writeInt(languages.size());
     for (SLanguage language : languages) {
-      os.writeString(IdSerializer.serialize(language));
+      os.writeString(IdHelper.getLanguageId(language).serialize());
       os.writeString(language.getQualifiedName());
     }
 
@@ -307,28 +307,28 @@ public class BinaryPersistence {
     // write concepts
     os.writeInt(conceptIds.size());
     for (Entry<SConcept, String> e : conceptIds.entrySet()) {
-      os.writeString(IdSerializer.serialize(e.getKey()));
+      os.writeString(IdHelper.getConceptId(e.getKey()).serialize());
       os.writeString(e.getValue());
     }
 
     // write properties
     os.writeInt(propIds.size());
     for (Entry<SProperty, String> e : propIds.entrySet()) {
-      os.writeString(IdSerializer.serialize(e.getKey()));
+      os.writeString(IdHelper.getPropertyId(e.getKey()).serialize());
       os.writeString(e.getValue());
     }
 
     // write reference roles
     os.writeInt(refIds.size());
     for (Entry<SReferenceLink, String> e : refIds.entrySet()) {
-      os.writeString(IdSerializer.serialize(e.getKey()));
+      os.writeString(IdHelper.getRefId(e.getKey()).serialize());
       os.writeString(e.getValue());
     }
 
     // write child roles
     os.writeInt(roleIds.size());
     for (Entry<SContainmentLink, String> e : roleIds.entrySet()) {
-      os.writeString(IdSerializer.serialize(e.getKey()));
+      os.writeString(IdHelper.getLinkId(e.getKey()).serialize());
       os.writeString(e.getValue());
     }
   }
@@ -336,12 +336,12 @@ public class BinaryPersistence {
   private static void saveUsedLanguagesList(Map<SLanguage, Integer> refs, Map<SLanguage, Integer> implicit, ModelOutputStream os) throws IOException {
     os.writeInt(refs.size() + implicit.size());
     for (Entry<SLanguage, Integer> e : refs.entrySet()) {
-      os.writeString(IdSerializer.serialize(e.getKey()));
+      os.writeString(IdHelper.getLanguageId(e.getKey()).serialize());
       os.writeInt(e.getValue());
       os.writeBoolean(false);
     }
     for (Entry<SLanguage, Integer> e : implicit.entrySet()) {
-      os.writeString(IdSerializer.serialize(e.getKey()));
+      os.writeString(IdHelper.getLanguageId(e.getKey()).serialize());
       os.writeInt(e.getValue());
       os.writeBoolean(true);
     }

@@ -32,10 +32,9 @@ import org.jetbrains.mps.openapi.model.SReference;
 import java.util.Map;
 
 public class IdInfoCollector {
-
   public static void getDebugInfoById(Iterable<SNode> rootNodes, Map<SConcept, String> conceptIds, Map<SProperty, String> propIds,
       Map<SReferenceLink, String> refIds, Map<SContainmentLink, String> roleIds) {
-    DebugRegistry debugRegistry = MPSModuleRepository.getInstance().getDebugRegistry();
+    DebugRegistry debugRegistry = DebugRegistry.getInstance();
     for (SNode root : rootNodes) {
       for (SNode n : SNodeUtil.getDescendants(root)) {
         SConcept conceptId = n.getConcept().getId();

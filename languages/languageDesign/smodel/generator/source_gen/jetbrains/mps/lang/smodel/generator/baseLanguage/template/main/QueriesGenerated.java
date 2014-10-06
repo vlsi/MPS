@@ -300,7 +300,7 @@ public class QueriesGenerated {
     return SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "linkDeclaration", false), "role");
   }
   public static Object propertyMacro_GetPropertyValue_2644386474301603013(final PropertyMacroContext _context) {
-    return MetaIdByDeclaration.getNodeRoleId((jetbrains.mps.smodel.SNode) SLinkOperations.getTarget(_context.getNode(), "linkDeclaration", false)).serialize();
+    return MetaIdByDeclaration.getLinkId((jetbrains.mps.smodel.SNode) SLinkOperations.getTarget(_context.getNode(), "linkDeclaration", false)).serialize();
   }
   public static Object propertyMacro_GetPropertyValue_2644386474301626956(final PropertyMacroContext _context) {
     return MetaIdByDeclaration.getRefRoleId((jetbrains.mps.smodel.SNode) SLinkOperations.getTarget(_context.getNode(), "linkDeclaration", false)).serialize();

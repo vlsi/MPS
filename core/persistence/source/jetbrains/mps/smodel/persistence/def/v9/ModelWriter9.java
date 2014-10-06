@@ -16,16 +16,15 @@
 package jetbrains.mps.smodel.persistence.def.v9;
 
 import jetbrains.mps.persistence.FilePerRootDataSource;
+import jetbrains.mps.persistence.IdHelper;
 import jetbrains.mps.persistence.PersistenceRegistry;
+import jetbrains.mps.smodel.DebugRegistry;
 import jetbrains.mps.smodel.DefaultSModel;
-import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModel.ImportElement;
 import jetbrains.mps.smodel.SModelHeader;
 import jetbrains.mps.smodel.adapter.idconvert.IdMigrationNameRegistry;
-import jetbrains.mps.smodel.adapter.structure.language.SLanguageAdapterById;
-import jetbrains.mps.smodel.adapter.structure.language.SLanguageAdapterByName;
 import jetbrains.mps.smodel.persistence.def.DocUtil;
 import jetbrains.mps.smodel.persistence.def.FilePerRootFormatUtil;
 import jetbrains.mps.smodel.persistence.def.IModelWriter;
@@ -107,17 +106,13 @@ public class ModelWriter9 implements IModelWriter {
   }
 
   private void saveDebugInfo(Element debugInfoElement, SModel sourceModel) {
-    DebugRegistry debugRegistry = MPSModuleRepository.getInstance().getDebugRegistry();
+    DebugRegistry debugRegistry = DebugRegistry.getInstance();
 
     //save used languages info
-    for (SLanguage ve : IterableUtil.merge(sourceModel.usedLanguages(), sourceModel.implicitlyUsedLanguagesWithVersions().keySet())) {
-      SLanguage id = ve;
-      Language lang = new SLanguageAdapterById(id).getSourceModule();
-      String name = lang != null ? lang.getModuleName() : debugRegistry.getLanguageName(id);
-
+    for (SLanguage id : IterableUtil.merge(sourceModel.usedLanguages(), sourceModel.implicitlyUsedLanguagesWithVersions().keySet())) {
       Element langElement = new Element(ModelPersistence9.DEBUG_INFO_LANG);
-      langElement.setAttribute(ModelPersistence9.ID, id.serialize());
-      langElement.setAttribute(ModelPersistence9.DEBUG_INFO_NAME, name);
+      langElement.setAttribute(ModelPersistence9.ID, IdHelper.getLanguageId(id).serialize());
+      langElement.setAttribute(ModelPersistence9.DEBUG_INFO_NAME, id.getQualifiedName());
       debugInfoElement.addContent(langElement);
     }
 
@@ -148,7 +143,7 @@ public class ModelWriter9 implements IModelWriter {
     // write concepts
     for (Entry<SConcept, String> e : conceptIds.entrySet()) {
       Element langElement = new Element(ModelPersistence9.DEBUG_INFO_CONCEPT);
-      langElement.setAttribute(ModelPersistence9.ID, e.getKey().serialize());
+      langElement.setAttribute(ModelPersistence9.ID, IdHelper.getConceptId(e.getKey()).serialize());
       langElement.setAttribute(ModelPersistence9.DEBUG_INFO_NAME, e.getValue());
       debugInfoElement.addContent(langElement);
     }
@@ -156,7 +151,7 @@ public class ModelWriter9 implements IModelWriter {
     // write properties
     for (Entry<SProperty, String> e : propIds.entrySet()) {
       Element langElement = new Element(ModelPersistence9.DEBUG_INFO_PROP);
-      langElement.setAttribute(ModelPersistence9.ID, e.getKey().serialize());
+      langElement.setAttribute(ModelPersistence9.ID, IdHelper.getPropertyId(e.getKey()).serialize());
       langElement.setAttribute(ModelPersistence9.DEBUG_INFO_NAME, e.getValue());
       debugInfoElement.addContent(langElement);
     }
@@ -164,7 +159,7 @@ public class ModelWriter9 implements IModelWriter {
     // write reference roles
     for (Entry<SReferenceLink, String> e : refIds.entrySet()) {
       Element langElement = new Element(ModelPersistence9.DEBUG_INFO_REF_ROLE);
-      langElement.setAttribute(ModelPersistence9.ID, e.getKey().serialize());
+      langElement.setAttribute(ModelPersistence9.ID, IdHelper.getRefId(e.getKey()).serialize());
       langElement.setAttribute(ModelPersistence9.DEBUG_INFO_NAME, e.getValue());
       debugInfoElement.addContent(langElement);
     }
@@ -172,7 +167,7 @@ public class ModelWriter9 implements IModelWriter {
     // write child roles
     for (Entry<SContainmentLink, String> e : roleIds.entrySet()) {
       Element langElement = new Element(ModelPersistence9.DEBUG_INFO_CHILD_ROLE);
-      langElement.setAttribute(ModelPersistence9.ID, e.getKey().serialize());
+      langElement.setAttribute(ModelPersistence9.ID, IdHelper.getLinkId(e.getKey()).serialize());
       langElement.setAttribute(ModelPersistence9.DEBUG_INFO_NAME, e.getValue());
       debugInfoElement.addContent(langElement);
     }
@@ -231,7 +226,7 @@ public class ModelWriter9 implements IModelWriter {
     for (Entry<SLanguage, Integer> language : sourceModel.usedLanguagesWithVersions().entrySet()) {
       myHelper.addLanguage(language.getKey());
       Element languageElem = new Element(ModelPersistence9.USED_LANGUAGE);
-      languageElem.setAttribute(ModelPersistence9.ID, language.getKey().serialize());
+      languageElem.setAttribute(ModelPersistence9.ID, IdHelper.getLanguageId(language.getKey()).serialize());
       languageElem.setAttribute(ModelPersistence9.VERSION, Integer.toString(language.getValue()));
       languageElem.setAttribute(ModelPersistence9.USE_INDEX, myHelper.getUsedLanguageIndex(language.getKey()));
       rootElement.addContent(languageElem);
@@ -239,7 +234,7 @@ public class ModelWriter9 implements IModelWriter {
     for (Entry<SLanguage, Integer> language : sourceModel.implicitlyUsedLanguagesWithVersions().entrySet()) {
       myHelper.addLanguage(language.getKey());
       Element languageElem = new Element(ModelPersistence9.USED_LANGUAGE);
-      languageElem.setAttribute(ModelPersistence9.ID, language.getKey().serialize());
+      languageElem.setAttribute(ModelPersistence9.ID, IdHelper.getLanguageId(language.getKey()).serialize());
       languageElem.setAttribute(ModelPersistence9.VERSION, Integer.toString(language.getValue()));
       languageElem.setAttribute(ModelPersistence9.IMPLICIT, "true");
       languageElem.setAttribute(ModelPersistence9.USE_INDEX, myHelper.getUsedLanguageIndex(language.getKey()));

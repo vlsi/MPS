@@ -18,6 +18,11 @@ package jetbrains.mps.persistence;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.adapter.ids.MetaIdByDeclaration;
+import jetbrains.mps.smodel.adapter.ids.SConceptId;
+import jetbrains.mps.smodel.adapter.ids.SContainmentLinkId;
+import jetbrains.mps.smodel.adapter.ids.SLanguageId;
+import jetbrains.mps.smodel.adapter.ids.SPropertyId;
+import jetbrains.mps.smodel.adapter.ids.SReferenceLinkId;
 import jetbrains.mps.smodel.adapter.structure.concept.SConceptAdapterById;
 import jetbrains.mps.smodel.adapter.structure.language.SLanguageAdapterById;
 import jetbrains.mps.smodel.adapter.structure.link.SContainmentLinkAdapterById;
@@ -32,44 +37,44 @@ import org.jetbrains.mps.openapi.language.SReferenceLink;
 
 @Deprecated
 @ToRemove(version = 3.2)
-public class IdSerializer {
-  public static String serialize(SLanguage l) {
+public class IdHelper {
+  public static SLanguageId getLanguageId(SLanguage l) {
     if (l instanceof SLanguageAdapterById) {
-      return ((SLanguageAdapterById) l).getId().serialize();
+      return ((SLanguageAdapterById) l).getId();
     } else {
-      return MetaIdByDeclaration.getLanguageId(((Language) l.getSourceModule())).serialize();
+      return MetaIdByDeclaration.getLanguageId(((Language) l.getSourceModule()));
     }
   }
 
-  public static String serialize(SConcept c) {
+  public static SConceptId getConceptId(SConcept c) {
     if (c instanceof SConceptAdapterById) {
-      return ((SConceptAdapterById) c).getId().serialize();
+      return ((SConceptAdapterById) c).getId();
     } else {
-      return MetaIdByDeclaration.getConceptId(((SNode) c.getDeclarationNode())).serialize();
+      return MetaIdByDeclaration.getConceptId(((SNode) c.getDeclarationNode()));
     }
   }
 
-  public static String serialize(SProperty p) {
+  public static SPropertyId getPropertyId(SProperty p) {
     if (p instanceof SPropertyAdapterById) {
-      return ((SPropertyAdapterById) p).getId().serialize();
+      return ((SPropertyAdapterById) p).getId();
     } else {
-      return MetaIdByDeclaration.getPropId(((SNode) p.getDeclarationNode())).serialize();
+      return MetaIdByDeclaration.getPropId(((SNode) p.getDeclarationNode()));
     }
   }
 
-  public static String serialize(SReferenceLink r) {
+  public static SReferenceLinkId getRefId(SReferenceLink r) {
     if (r instanceof SReferenceLinkAdapterById) {
-      return ((SReferenceLinkAdapterById) r).getRoleId().serialize();
+      return ((SReferenceLinkAdapterById) r).getRoleId();
     } else {
-      return MetaIdByDeclaration.getRefRoleId(((SNode) r.getDeclarationNode())).serialize();
+      return MetaIdByDeclaration.getRefRoleId(((SNode) r.getDeclarationNode()));
     }
   }
 
-  public static String serialize(SContainmentLink l) {
+  public static SContainmentLinkId getLinkId(SContainmentLink l) {
     if (l instanceof SContainmentLinkAdapterById) {
-      return ((SContainmentLinkAdapterById) l).getRoleId().serialize();
+      return ((SContainmentLinkAdapterById) l).getRoleId();
     } else {
-      return MetaIdByDeclaration.getConceptId(((SNode) l.getDeclarationNode())).serialize();
+      return MetaIdByDeclaration.getLinkId(((SNode) l.getDeclarationNode()));
     }
   }
-  }
+}

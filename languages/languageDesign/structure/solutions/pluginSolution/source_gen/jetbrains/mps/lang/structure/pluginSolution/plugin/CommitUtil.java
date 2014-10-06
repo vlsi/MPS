@@ -25,7 +25,7 @@ public class CommitUtil {
     }
     if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.structure.structure.LinkDeclaration")) {
       if (SPropertyOperations.hasValue(SNodeOperations.cast(node, "jetbrains.mps.lang.structure.structure.LinkDeclaration"), "metaClass", "aggregation", "reference")) {
-        MPSModuleRepository.getInstance().getDebugRegistry().addRefName(MetaIdByDeclaration.getNodeRoleId((jetbrains.mps.smodel.SNode) node), newValue);
+        MPSModuleRepository.getInstance().getDebugRegistry().addRefName(MetaIdByDeclaration.getLinkId((jetbrains.mps.smodel.SNode) node), newValue);
       } else {
         MPSModuleRepository.getInstance().getDebugRegistry().addRefName(MetaIdByDeclaration.getRefRoleId((jetbrains.mps.smodel.SNode) node), newValue);
       }
