@@ -5,15 +5,18 @@ package jetbrains.mps.console.scripts.structure;
 import jetbrains.mps.smodel.runtime.BaseStructureAspectDescriptor;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder;
+import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
+import java.util.UUID;
 import java.util.Collection;
 import java.util.Arrays;
 import org.jetbrains.annotations.Nullable;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
-  /*package*/ final ConceptDescriptor myConceptAbstractConsoleScript = new ConceptDescriptorBuilder("jetbrains.mps.console.scripts.structure.AbstractConsoleScript").interface_().parents("jetbrains.mps.lang.core.structure.INamedConcept").create();
-  /*package*/ final ConceptDescriptor myConceptConsoleScript = new ConceptDescriptorBuilder("jetbrains.mps.console.scripts.structure.ConsoleScript").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.console.scripts.structure.AbstractConsoleScript").children(new String[]{"command"}, new boolean[]{true}).create();
-  /*package*/ final ConceptDescriptor myConceptExecute = new ConceptDescriptorBuilder("jetbrains.mps.console.scripts.structure.Execute").super_("jetbrains.mps.console.base.structure.GeneratedCommand").parents("jetbrains.mps.console.base.structure.GeneratedCommand").references("script").alias("#exec", "execute a script").create();
-  /*package*/ final ConceptDescriptor myConceptRefactorOperation = new ConceptDescriptorBuilder("jetbrains.mps.console.scripts.structure.RefactorOperation").super_("jetbrains.mps.baseLanguage.collections.structure.InternalSequenceOperation").parents("jetbrains.mps.baseLanguage.collections.structure.InternalSequenceOperation", "jetbrains.mps.console.blCommand.structure.ConsoleOperation").children(new String[]{"refactoring"}, new boolean[]{false}).alias("refactor", "perform changes on selected nodes").create();
+
+  /*package*/ final ConceptDescriptor myConceptAbstractConsoleScript = new ConceptDescriptorBuilder("jetbrains.mps.console.scripts.structure.AbstractConsoleScript", MetaIdFactory.conceptId(UUID.fromString("f26691d2-0def-4c06-aec6-2cb90c4af0a4"), 1734392475491235545L)).interface_().parents("jetbrains.mps.lang.core.structure.INamedConcept").parentIds(MetaIdFactory.conceptId(UUID.fromString("f26691d2-0def-4c06-aec6-2cb90c4af0a4"), 1169194658468L)).create();
+  /*package*/ final ConceptDescriptor myConceptConsoleScript = new ConceptDescriptorBuilder("jetbrains.mps.console.scripts.structure.ConsoleScript", MetaIdFactory.conceptId(UUID.fromString("f26691d2-0def-4c06-aec6-2cb90c4af0a4"), 1734392475491235550L)).super_("jetbrains.mps.lang.core.structure.BaseConcept").super_(MetaIdFactory.conceptId(UUID.fromString("f26691d2-0def-4c06-aec6-2cb90c4af0a4"), 1133920641626L)).parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.console.scripts.structure.AbstractConsoleScript").parentIds(MetaIdFactory.conceptId(UUID.fromString("f26691d2-0def-4c06-aec6-2cb90c4af0a4"), 1133920641626L), MetaIdFactory.conceptId(UUID.fromString("f26691d2-0def-4c06-aec6-2cb90c4af0a4"), 1734392475491235545L)).childDescriptors(new ConceptDescriptorBuilder.Link(1734392475491235551L, "command", MetaIdFactory.conceptId(UUID.fromString("f26691d2-0def-4c06-aec6-2cb90c4af0a4"), 6854397602732214175L), true, true, false)).children(new String[]{"command"}, new boolean[]{true}).create();
+  /*package*/ final ConceptDescriptor myConceptExecute = new ConceptDescriptorBuilder("jetbrains.mps.console.scripts.structure.Execute", MetaIdFactory.conceptId(UUID.fromString("f26691d2-0def-4c06-aec6-2cb90c4af0a4"), 1734392475491228778L)).super_("jetbrains.mps.console.base.structure.GeneratedCommand").super_(MetaIdFactory.conceptId(UUID.fromString("f26691d2-0def-4c06-aec6-2cb90c4af0a4"), 1769790395579407473L)).parents("jetbrains.mps.console.base.structure.GeneratedCommand").parentIds(MetaIdFactory.conceptId(UUID.fromString("f26691d2-0def-4c06-aec6-2cb90c4af0a4"), 1769790395579407473L)).referenceDescriptors(new ConceptDescriptorBuilder.Ref(1734392475491228779L, "script", MetaIdFactory.conceptId(UUID.fromString("f26691d2-0def-4c06-aec6-2cb90c4af0a4"), 1734392475491235545L), false)).references("script").alias("#exec", "execute a script").create();
+  /*package*/ final ConceptDescriptor myConceptRefactorOperation = new ConceptDescriptorBuilder("jetbrains.mps.console.scripts.structure.RefactorOperation", MetaIdFactory.conceptId(UUID.fromString("f26691d2-0def-4c06-aec6-2cb90c4af0a4"), 2377091791517030718L)).super_("jetbrains.mps.baseLanguage.collections.structure.InternalSequenceOperation").super_(MetaIdFactory.conceptId(UUID.fromString("f26691d2-0def-4c06-aec6-2cb90c4af0a4"), 1204796164442L)).parents("jetbrains.mps.baseLanguage.collections.structure.InternalSequenceOperation", "jetbrains.mps.console.blCommand.structure.ConsoleOperation").parentIds(MetaIdFactory.conceptId(UUID.fromString("f26691d2-0def-4c06-aec6-2cb90c4af0a4"), 1204796164442L), MetaIdFactory.conceptId(UUID.fromString("f26691d2-0def-4c06-aec6-2cb90c4af0a4"), 5932042262275648515L)).childDescriptors(new ConceptDescriptorBuilder.Link(2377091791517030782L, "refactoring", MetaIdFactory.conceptId(UUID.fromString("f26691d2-0def-4c06-aec6-2cb90c4af0a4"), 1068431790191L), false, false, false)).children(new String[]{"refactoring"}, new boolean[]{false}).alias("refactor", "perform changes on selected nodes").create();
 
   @Override
   public Collection<ConceptDescriptor> getDescriptors() {
@@ -23,7 +26,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   @Override
   @Nullable
   public ConceptDescriptor getDescriptor(String conceptFqName) {
-    switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0h, conceptFqName)) {
+    switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0i, conceptFqName)) {
       case 0:
         return myConceptAbstractConsoleScript;
       case 1:
@@ -36,5 +39,5 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
         return null;
     }
   }
-  private static String[] stringSwitchCases_1htk8d_a0a0h = new String[]{"jetbrains.mps.console.scripts.structure.AbstractConsoleScript", "jetbrains.mps.console.scripts.structure.ConsoleScript", "jetbrains.mps.console.scripts.structure.Execute", "jetbrains.mps.console.scripts.structure.RefactorOperation"};
+  private static String[] stringSwitchCases_1htk8d_a0a0i = new String[]{"jetbrains.mps.console.scripts.structure.AbstractConsoleScript", "jetbrains.mps.console.scripts.structure.ConsoleScript", "jetbrains.mps.console.scripts.structure.Execute", "jetbrains.mps.console.scripts.structure.RefactorOperation"};
 }

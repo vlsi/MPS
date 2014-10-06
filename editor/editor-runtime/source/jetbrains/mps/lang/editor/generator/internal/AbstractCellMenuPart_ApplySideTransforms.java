@@ -38,15 +38,6 @@ public class AbstractCellMenuPart_ApplySideTransforms implements SubstituteInfoP
   private final CellSide myCellSide;
   private final String myTag;
 
-  /**
-   * @deprecated since MPS 3.1 remove in MPS 3.2
-   */
-  @Deprecated
-  public AbstractCellMenuPart_ApplySideTransforms(CellSide cellSide) {
-    myCellSide = cellSide;
-    myTag = null;
-  }
-
   public AbstractCellMenuPart_ApplySideTransforms(CellSide cellSide, String tag) {
     myCellSide = cellSide;
     myTag = tag;

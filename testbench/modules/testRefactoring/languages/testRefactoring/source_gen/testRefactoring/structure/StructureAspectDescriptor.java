@@ -5,13 +5,16 @@ package testRefactoring.structure;
 import jetbrains.mps.smodel.runtime.BaseStructureAspectDescriptor;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder;
+import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
+import java.util.UUID;
 import java.util.Collection;
 import java.util.Arrays;
 import org.jetbrains.annotations.Nullable;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
-  /*package*/ final ConceptDescriptor myConceptMyVeryGoodConcept1 = new ConceptDescriptorBuilder("testRefactoring.structure.MyVeryGoodConcept1").super_("testRefactoringTargetLang.structure.AbstractGoodConcept").parents("testRefactoringTargetLang.structure.AbstractGoodConcept", "jetbrains.mps.lang.core.structure.INamedConcept").references("brother").create();
-  /*package*/ final ConceptDescriptor myConceptYetAnotherGoodConcept = new ConceptDescriptorBuilder("testRefactoring.structure.YetAnotherGoodConcept").super_("testRefactoringTargetLang.structure.AnsotherGoodConcept").parents("testRefactoringTargetLang.structure.AnsotherGoodConcept").properties("niceProperty").create();
+
+  /*package*/ final ConceptDescriptor myConceptMyVeryGoodConcept1 = new ConceptDescriptorBuilder("testRefactoring.structure.MyVeryGoodConcept1", MetaIdFactory.conceptId(UUID.fromString("343e2a8b-449f-45b3-9da8-1463945cb208"), 1198157505315L)).super_("testRefactoringTargetLang.structure.AbstractGoodConcept").super_(MetaIdFactory.conceptId(UUID.fromString("343e2a8b-449f-45b3-9da8-1463945cb208"), 1199636171010L)).parents("testRefactoringTargetLang.structure.AbstractGoodConcept", "jetbrains.mps.lang.core.structure.INamedConcept").parentIds(MetaIdFactory.conceptId(UUID.fromString("343e2a8b-449f-45b3-9da8-1463945cb208"), 1199636171010L), MetaIdFactory.conceptId(UUID.fromString("343e2a8b-449f-45b3-9da8-1463945cb208"), 1169194658468L)).referenceDescriptors(new ConceptDescriptorBuilder.Ref(1198591068787L, "brother", MetaIdFactory.conceptId(UUID.fromString("343e2a8b-449f-45b3-9da8-1463945cb208"), 1198157505315L), false)).references("brother").create();
+  /*package*/ final ConceptDescriptor myConceptYetAnotherGoodConcept = new ConceptDescriptorBuilder("testRefactoring.structure.YetAnotherGoodConcept", MetaIdFactory.conceptId(UUID.fromString("343e2a8b-449f-45b3-9da8-1463945cb208"), 1198176302417L)).super_("testRefactoringTargetLang.structure.AnsotherGoodConcept").super_(MetaIdFactory.conceptId(UUID.fromString("343e2a8b-449f-45b3-9da8-1463945cb208"), 1198682124373L)).parents("testRefactoringTargetLang.structure.AnsotherGoodConcept").parentIds(MetaIdFactory.conceptId(UUID.fromString("343e2a8b-449f-45b3-9da8-1463945cb208"), 1198682124373L)).propertyDescriptors(new ConceptDescriptorBuilder.Prop(1200588769474L, "niceProperty")).properties("niceProperty").create();
 
   @Override
   public Collection<ConceptDescriptor> getDescriptors() {
@@ -21,7 +24,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   @Override
   @Nullable
   public ConceptDescriptor getDescriptor(String conceptFqName) {
-    switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0f, conceptFqName)) {
+    switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0g, conceptFqName)) {
       case 0:
         return myConceptMyVeryGoodConcept1;
       case 1:
@@ -30,5 +33,5 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
         return null;
     }
   }
-  private static String[] stringSwitchCases_1htk8d_a0a0f = new String[]{"testRefactoring.structure.MyVeryGoodConcept1", "testRefactoring.structure.YetAnotherGoodConcept"};
+  private static String[] stringSwitchCases_1htk8d_a0a0g = new String[]{"testRefactoring.structure.MyVeryGoodConcept1", "testRefactoring.structure.YetAnotherGoodConcept"};
 }

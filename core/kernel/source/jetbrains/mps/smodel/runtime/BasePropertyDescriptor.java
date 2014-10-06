@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2014 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,15 +13,26 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.nodeEditor.style;
+package jetbrains.mps.smodel.runtime;
 
-/**
- * Use jetbrains.mps.editor.runtime.style.CellAlign instead.
- * This class will be removed after MPS 3.0
- */
-@Deprecated
-public enum CellAlign {
-  LEFT,
-  RIGHT,
-  CENTER
+import org.jetbrains.mps.openapi.language.SPropertyId;
+
+public class BasePropertyDescriptor implements PropertyDescriptor {
+  private final SPropertyId myId;
+  private final String myName;
+
+  public BasePropertyDescriptor(SPropertyId id, String name) {
+    myId = id;
+    myName = name;
+  }
+
+  @Override
+  public SPropertyId getId() {
+    return myId;
+  }
+
+  @Override
+  public String getName() {
+    return myName;
+  }
 }

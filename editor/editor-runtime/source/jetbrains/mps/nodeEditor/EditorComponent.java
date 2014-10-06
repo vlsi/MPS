@@ -97,6 +97,7 @@ import jetbrains.mps.nodeEditor.leftHighlighter.LeftEditorHighlighter;
 import jetbrains.mps.nodeEditor.selection.SelectionInternal;
 import jetbrains.mps.nodeEditor.selection.SelectionManagerImpl;
 import jetbrains.mps.nodeEditor.sidetransform.EditorCell_STHint;
+import jetbrains.mps.nodeEditor.updater.UpdaterImpl;
 import jetbrains.mps.openapi.editor.ActionHandler;
 import jetbrains.mps.openapi.editor.cells.CellAction;
 import jetbrains.mps.openapi.editor.cells.CellTraversalUtil;
@@ -111,20 +112,12 @@ import jetbrains.mps.openapi.editor.selection.SelectionListener;
 import jetbrains.mps.openapi.editor.selection.SelectionManager;
 import jetbrains.mps.openapi.editor.selection.SingularSelection;
 import jetbrains.mps.openapi.editor.style.StyleRegistry;
-import jetbrains.mps.project.ProjectOperationContext;
+import jetbrains.mps.openapi.editor.update.UpdaterListener;
 import jetbrains.mps.reloading.ReloadAdapter;
 import jetbrains.mps.reloading.ReloadListener;
-import jetbrains.mps.smodel.EventsCollector;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.SModelRepository;
-import jetbrains.mps.smodel.SModelRepositoryAdapter;
-import jetbrains.mps.smodel.event.EventUtil;
-import jetbrains.mps.smodel.event.SModelChildEvent;
 import jetbrains.mps.smodel.event.SModelEvent;
-import jetbrains.mps.smodel.event.SModelEventVisitorAdapter;
-import jetbrains.mps.smodel.event.SModelPropertyEvent;
-import jetbrains.mps.smodel.event.SModelReferenceEvent;
 import jetbrains.mps.typesystem.inference.DefaultTypecheckingContextOwner;
 import jetbrains.mps.typesystem.inference.ITypeContextOwner;
 import jetbrains.mps.typesystem.inference.ITypechecking.Computation;
@@ -135,11 +128,7 @@ import jetbrains.mps.typesystem.inference.util.ConcurrentSubtypingCache;
 import jetbrains.mps.typesystem.inference.util.SubtypingCache;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.ComputeRunnable;
-import jetbrains.mps.util.IterableUtil;
-import jetbrains.mps.util.NodesParetoFrontier;
 import jetbrains.mps.util.Pair;
-import jetbrains.mps.util.WeakSet;
-import jetbrains.mps.util.annotation.UseCarefully;
 import jetbrains.mps.workbench.ActionPlace;
 import jetbrains.mps.workbench.action.ActionUtils;
 import jetbrains.mps.workbench.action.BaseAction;
@@ -150,7 +139,6 @@ import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModel;
-import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.model.SNodeUtil;
@@ -204,9 +192,7 @@ import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
 import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
-import java.lang.ref.WeakReference;
 import java.lang.reflect.Field;
-import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
@@ -219,7 +205,6 @@ import java.util.Map;
 import java.util.Set;
 import java.util.Stack;
 import java.util.TreeSet;
-import java.util.WeakHashMap;
 
 public abstract class EditorComponent extends JComponent implements Scrollable, DataProvider, ITypeContextOwner, TooltipComponent,
     jetbrains.mps.openapi.editor.EditorComponent {
@@ -245,22 +230,6 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
       }
     }
   }
-
-  private WeakHashMap<jetbrains.mps.openapi.editor.cells.EditorCell, Set<SNode>> myCellsToNodesToDependOnMap =
-      new WeakHashMap<jetbrains.mps.openapi.editor.cells.EditorCell, Set<SNode>>();
-
-  private WeakHashMap<SNode, WeakReference<jetbrains.mps.openapi.editor.cells.EditorCell>> myNodesToBigCellsMap =
-      new WeakHashMap<SNode, WeakReference<jetbrains.mps.openapi.editor.cells.EditorCell>>();
-
-  private WeakHashMap<jetbrains.mps.openapi.editor.cells.EditorCell, Set<SNodeReference>> myCellsToRefTargetsToDependOnMap =
-      new WeakHashMap<jetbrains.mps.openapi.editor.cells.EditorCell, Set<SNodeReference>>();
-  private HashMap<Pair<SNodeReference, String>, WeakSet<EditorCell>> myNodePropertiesAccessedCleanlyToDependentCellsMap =
-      new HashMap<Pair<SNodeReference, String>, WeakSet<EditorCell>>();
-  private HashMap<Pair<SNodeReference, String>, WeakSet<jetbrains.mps.openapi.editor.cells.EditorCell>> myNodePropertiesAccessedDirtilyToDependentCellsMap =
-      new HashMap<Pair<SNodeReference, String>, WeakSet<jetbrains.mps.openapi.editor.cells.EditorCell>>();
-  private HashMap<Pair<SNodeReference, String>, WeakSet<jetbrains.mps.openapi.editor.cells.EditorCell>>
-      myNodePropertiesWhichExistenceWasCheckedToDependentCellsMap =
-      new HashMap<Pair<SNodeReference, String>, WeakSet<jetbrains.mps.openapi.editor.cells.EditorCell>>();
 
   private Set<EditorCell> myFoldedCells = new HashSet<EditorCell>();
   private Set<EditorCell> myBracesEnabledCells = new HashSet<EditorCell>();
@@ -325,6 +294,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   private int myShiftY = 10;
 
   private SelectionManagerImpl mySelectionManager = new SelectionManagerImpl(this);
+  private UpdaterImpl myUpdater;
 
   private Stack<KeyboardHandler> myKbdHandlersStack;
   private MouseListener myMouseEventHandler;
@@ -332,11 +302,6 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
 
   private NodeSubstituteChooser myNodeSubstituteChooser;
   private NodeInformationDialog myNodeInformationDialog;
-  private HashMap<Object, Object> myUserDataMap = new HashMap<Object, Object>();
-
-  private MyEventsCollector myEventsCollector = new MyEventsCollector();
-  private MySimpleModelListener mySimpleModelListener = new MySimpleModelListener();
-  private Set<SModel> mySModelsWithListener = new HashSet<SModel>();
 
   private List<RebuildListener> myRebuildListeners = new ArrayList<RebuildListener>();
   private List<EditorDisposeListener> myDisposeListeners = new ArrayList<EditorDisposeListener>();
@@ -353,8 +318,8 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
 
   @Nullable
   protected SNodeReference myNodePointer;
+  @NotNull
   private EditorContext myEditorContext;
-  private List<CellSynchronizationWithModelListener> myCellSynchronizationListeners = new ArrayList<CellSynchronizationWithModelListener>();
   private CellInfo myRecentlySelectedCellInfo = null;
   private final EditorMessageOwner myOwner = new EditorMessageOwner() {
   };
@@ -373,8 +338,6 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   private boolean myPopupMenuEnabled = true;
   private boolean myIsInFiguresHierarchy = false;
 
-  private Set<SModel> myLastDeps = new HashSet<SModel>();
-
   private KeymapHandler<KeyEvent> myKeymapHandler = new AWTKeymapHandler();
   private ActionHandler myActionHandler = new ActionHandlerImpl(this);
 
@@ -388,6 +351,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   public EditorComponent(@NotNull SRepository repository, boolean showErrorsGutter, boolean rightToLeft) {
     setLayout(new EditorComponentLayoutManager(this));
     myRepository = repository;
+    myUpdater = createUpdater();
     setEditorContext(null, repository);
 
     //TODO: fix problem with NPE
@@ -726,8 +690,10 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
         updateStatusBarMessage();
       }
     });
+  }
 
-    SModelRepository.getInstance().addModelRepositoryListener(mySimpleModelListener);
+  protected UpdaterImpl createUpdater() {
+    return new UpdaterImpl(this);
   }
 
   protected void attachListeners() {
@@ -1022,11 +988,6 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     return false;
   }
 
-  @Deprecated
-  public void editNode(final SNode node, final IOperationContext operationContext) {
-    editNode(node);
-  }
-
   public void editNode(final SNode node) {
     if (isDisposed()) return;
     clearModelDisposedTrace();
@@ -1208,11 +1169,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
 
   @Override
   public IOperationContext getOperationContext() {
-    EditorContext editorContext = getEditorContext();
-    if (editorContext != null) return editorContext.getOperationContext();
-
-    jetbrains.mps.project.Project p = ProjectHelper.getProject(myRepository);
-    return p == null ? null : new ProjectOperationContext(p);
+    return getEditorContext().getOperationContext();
   }
 
   private EditorCell_WithComponent findCellForComponent(Component component, jetbrains.mps.openapi.editor.cells.EditorCell root) {
@@ -1263,6 +1220,10 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     popupMenu.show(EditorComponent.this, x, y);
   }
 
+  /**
+   * @deprecated since MPS 3.2 looks like not used
+   */
+  @Deprecated
   public void executeIntention(final Intention intention, final SNode node, final jetbrains.mps.openapi.editor.EditorContext context) {
     context.executeCommand(new Runnable() {
       @Override
@@ -1312,6 +1273,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     return myContainer;
   }
 
+  @NotNull
   @Override
   public EditorContext getEditorContext() {
     return myEditorContext;
@@ -1321,6 +1283,10 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     return myRepository;
   }
 
+  /**
+   * @deprecated since MPS 3.2. Looks like not used.
+   */
+  @Deprecated
   public EditorCell createRootCell() {
     return createRootCell(null);
   }
@@ -1379,8 +1345,12 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     myBracesEnabledCells.clear();
   }
 
+  /**
+   * @deprecated Since MPS 3.2 use getUpdater().flushModelEvents()
+   */
+  @Deprecated
   public void flushEvents() {
-    myEventsCollector.flush();
+    getUpdater().flushModelEvents();
   }
 
   @Override
@@ -1396,19 +1366,13 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     releaseTypeCheckingContext();
     myHighlightManager.dispose();
 
-    removeOurListeners();
-    SModelRepository.getInstance().removeModelRepositoryListener(mySimpleModelListener);
-
     detachListeners();
     KeyboardFocusManager.getCurrentKeyboardFocusManager().removePropertyChangeListener("focusOwner", myFocusListener);
 
-    clearCaches();
+    myUpdater.dispose();
 
-    myEventsCollector.dispose();
     myLeftHighlighter.dispose();
     myMessagesGutter.dispose();
-
-    myEditorContext = null;
 
     if (myNodeSubstituteChooser != null) {
       myNodeSubstituteChooser.dispose();
@@ -1486,6 +1450,10 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     myModelDisposedStackTrace = null;
   }
 
+  public void setModelDisposedTrace(StackTraceElement[] trace) {
+    myModelDisposedStackTrace = trace;
+  }
+
   /*
     Can be used to check if editor is in valid state or not.
     Editor can be in invalid state then corresponding model
@@ -1501,34 +1469,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     but can be called outside of read action.
    */
   private boolean isInvalidLightweight() {
-    return getEditorContext() == null || getEditedNode() == null;
-  }
-
-  private void addOurListeners(@NotNull SModel sm) {
-    myEventsCollector.add(sm);
-    mySModelsWithListener.add(sm);
-  }
-
-  private void removeOurListeners(@NotNull SModel sm) {
-    myEventsCollector.remove(sm);
-    mySModelsWithListener.remove(sm);
-  }
-
-  private void removeOurListeners() {
-    for (SModel sm : mySModelsWithListener.toArray(new SModel[mySModelsWithListener.size()])) {
-      removeOurListeners(sm);
-    }
-    myLastDeps = new HashSet<SModel>();
-  }
-
-  private void clearCaches() {
-    myCellsToNodesToDependOnMap.clear();
-    removeOurListeners();
-    myCellsToRefTargetsToDependOnMap.clear();
-    myNodesToBigCellsMap.clear();
-    myNodePropertiesAccessedCleanlyToDependentCellsMap.clear();
-    myNodePropertiesAccessedDirtilyToDependentCellsMap.clear();
-    myNodePropertiesWhichExistenceWasCheckedToDependentCellsMap.clear();
+    return isDisposed() || getEditedNode() == null;
   }
 
   private void setRootCell(EditorCell rootCell) {
@@ -1544,73 +1485,9 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
       ((EditorCell_Basic) myRootCell).onAdd();
     }
 
-    Set<SModel> oldDeps = myLastDeps;
-
-    myLastDeps = getModels(myCellsToNodesToDependOnMap.get(myRootCell));
-    myLastDeps.addAll(getModelsAndPurgeOrphaned(myCellsToRefTargetsToDependOnMap.get(myRootCell)));
-
-    for (SModel newDep : myLastDeps) {
-      if (!oldDeps.contains(newDep)) {
-        addOurListeners(newDep);
-      }
-    }
-    for (SModel oldDep : oldDeps) {
-      if (!myLastDeps.contains(oldDep)) {
-        removeOurListeners(oldDep);
-      }
-    }
-    // Sometimes EditorComponent doesn't react on ModelReplaced notifications.
-    // Adding this assertion to ensure the reason is not in incorrectly removed listener (dependencies collection logic)
-    if (myNode != null && SNodeUtil.isAccessible(myNode, myRepository) && !mySModelsWithListener.contains(myNode.getModel())) {
-      String message = "Listener was not added to a containing model of current node. Editor: " + EditorComponent.this;
-      message += "\n modelId: " + myNode.getModel().getModelId().toString();
-      message += "\n" + "models with listeners:";
-      for (SModel model : mySModelsWithListener) {
-        message += "\n\t" + model.getModelId().toString();
-      }
-      assert false : message;
-    }
-
     revalidate();
     repaint();
     getEditorContext().popTracerTask();
-  }
-
-  private Set<SModel> getModelsAndPurgeOrphaned(Set<SNodeReference> nodePointers) {
-    if (nodePointers == null) {
-      return Collections.emptySet();
-    }
-    Set<SModel> modelDescriptors = new HashSet<SModel>();
-    Set<SNodeReference> nodeProxiesToDelete = new HashSet<SNodeReference>();
-    for (SNodeReference nodeProxy : nodePointers) {
-      SModel model = nodeProxy.getModelReference() == null ? null : SModelRepository.getInstance().getModelDescriptor(nodeProxy.getModelReference());
-      if (model == null) {
-        nodeProxiesToDelete.add(nodeProxy);
-      } else {
-        modelDescriptors.add(model);
-      }
-    }
-    nodePointers.removeAll(nodeProxiesToDelete);
-    return modelDescriptors;
-  }
-
-  private Set<SModel> getModels(@Nullable Set<SNode> nodes) {
-    if (nodes == null) {
-      return new HashSet<SModel>();
-    }
-    Set<SModel> result = new HashSet<SModel>();
-    for (SNode node : nodes) {
-      SModel model = node.getModel();
-      if (model == null) continue;
-
-      // Getting modelDescriptor via SModelRepository because sometimes
-      // node.getModel().getModelDescriptor() == null while reloading models from disk.
-      SModel modelDescriptor = SModelRepository.getInstance().getModelDescriptor(model.getReference());
-      if (modelDescriptor != null) {
-        result.add(modelDescriptor);
-      }
-    }
-    return result;
   }
 
   @Override
@@ -1735,16 +1612,12 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   }
 
   public void relayout() {
-    if (getEditorContext() != null) {
-      getEditorContext().pushTracerTask("Relayouting", true);
-    }
+    getEditorContext().pushTracerTask("Relayouting", true);
     doRelayout();
     revalidate();
     repaint();
     getVerticalScrollBar().repaint();
-    if (getEditorContext() != null) {
-      getEditorContext().popTracerTask();
-    }
+    getEditorContext().popTracerTask();
   }
 
   public void revalidateAndRepaint() {
@@ -1801,6 +1674,10 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     });
   }
 
+  /**
+   * @deprecated since MPS 3.2 looks like not used
+   */
+  @Deprecated
   public void selectRefCell(SReference reference) {
     SNode sourceNode = reference.getSourceNode();
     String role = reference.getRole();
@@ -1826,13 +1703,11 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   @Override
   @Nullable
   public EditorCell findNodeCell(final SNode node, boolean findUnderFolded) {
-    WeakReference<jetbrains.mps.openapi.editor.cells.EditorCell> weakReference = myNodesToBigCellsMap.get(node);
-    if (weakReference == null) return null;
-    EditorCell result = (EditorCell) weakReference.get();
-    if (result != null && (result.getRootParent() != getRootCell() || (!findUnderFolded && CellTraversalUtil.getFoldedParent(result) != null))) {
+    jetbrains.mps.openapi.editor.cells.EditorCell bigCell = myUpdater.getBigCell(node);
+    if (bigCell != null && (bigCell.getRootParent() != getRootCell() || (!findUnderFolded && CellTraversalUtil.getFoldedParent(bigCell) != null))) {
       return null;
     }
-    return result;
+    return (EditorCell) bigCell;
   }
 
   public EditorCell findNodeCellWithRole(SNode node, String role) {
@@ -1905,8 +1780,6 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   public void rebuildEditorContent() {
     LOG.assertLog(ModelAccess.instance().isInEDT() || SwingUtilities.isEventDispatchThread(), "You should do this in EDT");
 
-    clearCaches();
-    clearUserData();
     rebuildEditorContent(null);
 
     relayout();
@@ -1915,7 +1788,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   public void rebuildEditorContent(final List<SModelEvent> events) {
     LOG.assertLog(ModelAccess.instance().isInEDT() || SwingUtilities.isEventDispatchThread(), "You should do this in EDT");
     //i.e. we are disposed. it's too late to rebuild
-    if (getEditorContext() == null) {
+    if (isDisposed()) {
       return;
     }
     getEditorContext().pushTracerTask("Rebuilding Editor Content", true);
@@ -1936,10 +1809,6 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   private void doRebuildEditorContent(final List<SModelEvent> events) {
     if (getComponents().length > 0) {
       removeAll();
-    }
-
-    if (events != null) {
-      revertErrorCells(events);
     }
 
     getEditorContext().pushTracerTask("Running swap editor cell action", true);
@@ -1989,18 +1858,20 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     myRebuildListeners.remove(listener);
   }
 
+  /**
+   * @deprecated since MPS 3.2 use getUpdater().addListener()
+   */
+  @Deprecated
   public void addSynchronizationListener(CellSynchronizationWithModelListener listener) {
-    myCellSynchronizationListeners.add(listener);
+    getUpdater().addListener(listener);
   }
 
+  /**
+   * @deprecated since MPS 3.2 use getUpdater().removeListener()
+   */
+  @Deprecated
   public void removeSynchronizationListener(CellSynchronizationWithModelListener listener) {
-    myCellSynchronizationListeners.remove(listener);
-  }
-
-  private void fireCellSynchronized(jetbrains.mps.openapi.editor.cells.EditorCell cell) {
-    for (CellSynchronizationWithModelListener listener : myCellSynchronizationListeners) {
-      listener.cellSynchronizedWithModel(cell);
-    }
+    getUpdater().removeListener(listener);
   }
 
   public jetbrains.mps.openapi.editor.cells.EditorCell findCellWeak(int x, int y) {
@@ -2202,22 +2073,6 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   public final void changeSelection(@NotNull jetbrains.mps.openapi.editor.cells.EditorCell newSelectedCell) {
     mySelectionManager.setSelection(newSelectedCell);
     showCellInViewPort(newSelectedCell);
-    repaint();
-  }
-
-  /**
-   * @deprecated seems not used anymore. Remove this method after MPS 3.0
-   */
-  @UseCarefully
-  @Deprecated
-  public void setSelectionDontClearStack(EditorCell newSelectedCell, boolean resetLastCaretX) {
-    if (getSelectedCell() != newSelectedCell) {
-      mySelectionManager.pushSelection(mySelectionManager.createSelection(newSelectedCell));
-    }
-
-    if (newSelectedCell != null) {
-      showCellInViewPort(newSelectedCell);
-    }
     repaint();
   }
 
@@ -2449,6 +2304,12 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     return mySelectionManager;
   }
 
+  @NotNull
+  @Override
+  public UpdaterImpl getUpdater() {
+    return myUpdater;
+  }
+
   public KeyboardHandler peekKeyboardHandler() {
     return myKbdHandlersStack.peek();
   }
@@ -2476,36 +2337,6 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     return myMouseEventHandler != null;
   }
 
-  /**
-   * @deprecated since MPS 3.1 remove this method in MPS 3.2
-   */
-  @Deprecated
-  public Object getUserData(Object key) {
-    return myUserDataMap.get(key);
-  }
-
-  /**
-   * @deprecated since MPS 3.1 remove this method in MPS 3.2
-   */
-  @Deprecated
-  public void putUserData(Object key, Object data) {
-    myUserDataMap.put(key, data);
-  }
-
-  /**
-   * @deprecated since MPS 3.1 remove this method in MPS 3.2
-   */
-  @Deprecated
-  public void clearUserData() {
-    myUserDataMap.clear();
-  }
-
-  @Deprecated
-  public TypeCheckingContext getTypeCheckingContext() {
-    TypeCheckingContext context = TypeContextManager.getInstance().lookupTypecheckingContext(getNodeForTypechecking(myNode), this);
-    return context != null ? context : TypeContextManager.getInstance().acquireTypecheckingContext(getNodeForTypechecking(myNode), this);
-  }
-
   public ITypeContextOwner getTypecheckingContextOwner() {
     return this;
   }
@@ -2514,7 +2345,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     getModelAccess().runReadAction(new Runnable() {
       @Override
       public void run() {
-        TypeContextManager.getInstance().acquireTypecheckingContext(getNodeForTypechecking(myNode), EditorComponent.this);
+        TypeContextManager.getInstance().acquireTypecheckingContext(getNodeForTypechecking(), EditorComponent.this);
       }
     });
   }
@@ -2535,8 +2366,8 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     return myNode != node;
   }
 
-  protected SNode getNodeForTypechecking(SNode editedNode) {
-    return editedNode;
+  public SNode getNodeForTypechecking() {
+    return getEditedNode();
   }
 
   public void sendKeyEvent(KeyEvent keyEvent) {
@@ -2559,13 +2390,11 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
             if (sNode == null) {
               return;
             }
-            TypeCheckingContext typeCheckingContext = getTypeCheckingContext();
-            typeCheckingContext.clear();
+            releaseTypeCheckingContext();
+            acquireTypeCheckingContext();
             Highlighter highlighter = getOperationContext().getComponent(Highlighter.class);
             if (highlighter != null) {
               highlighter.resetCheckedState(EditorComponent.this);
-            } else {
-              typeCheckingContext.checkRoot();
             }
             rebuildEditorContent();
           }
@@ -2575,7 +2404,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   }
 
   public void processKeyPressed(final KeyEvent keyEvent) {
-    if (keyEvent.isConsumed()) return;
+    if (keyEvent.isConsumed() || isDisposed()) return;
 
     // hardcoded "update" action
     if (keyEvent.getKeyCode() == KeyEvent.VK_F5 && noKeysDown(keyEvent)) {
@@ -2591,13 +2420,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
       return;
     }
 
-    // all other processing should be performed inside command
-    EditorContext editorContext = getEditorContext();
-    if (editorContext == null) {
-      return; //i.e. editor is disposed
-    }
-
-    if (isKeyboardHandlerProcessingEnabled(keyEvent) && peekKeyboardHandler().processKeyPressed(editorContext, keyEvent)) {
+    if (isKeyboardHandlerProcessingEnabled(keyEvent) && peekKeyboardHandler().processKeyPressed(getEditorContext(), keyEvent)) {
       keyEvent.consume();
     }
     revalidateAndRepaint();
@@ -2812,74 +2635,70 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     }
   }
 
+  /**
+   * @deprecated since MPS 3.2 use Updater/UpdateSession interfaces available via getUpdater() method
+   */
+  @Deprecated
   public void addCellDependentOnNodeProperty(EditorCell cell, Pair<SNodeReference, String> pair) {
-    WeakSet<EditorCell> dependentCells = myNodePropertiesAccessedCleanlyToDependentCellsMap.get(pair);
-    if (dependentCells == null) {
-      dependentCells = new WeakSet<EditorCell>();
-      myNodePropertiesAccessedCleanlyToDependentCellsMap.put(pair, dependentCells);
-    }
-    dependentCells.add(cell);
+    myUpdater.getCurrentUpdateSession().registerCleanDependency(cell, pair);
   }
 
+  /**
+   * @deprecated since MPS 3.2 use Updater/UpdateSession interfaces available via getUpdater() method
+   */
+  @Deprecated
   public void addCellDependentOnNodePropertyWhichWasAccessedDirtily(jetbrains.mps.openapi.editor.cells.EditorCell cell, Pair<SNodeReference, String> pair) {
-    WeakSet<jetbrains.mps.openapi.editor.cells.EditorCell> dependentCells = myNodePropertiesAccessedDirtilyToDependentCellsMap.get(pair);
-    if (dependentCells == null) {
-      dependentCells = new WeakSet<jetbrains.mps.openapi.editor.cells.EditorCell>();
-      myNodePropertiesAccessedDirtilyToDependentCellsMap.put(pair, dependentCells);
-    }
+    myUpdater.getCurrentUpdateSession().registerDirtyDependency(cell, pair);
   }
 
+  /**
+   * @deprecated since MPS 3.2 use Updater/UpdateSession interfaces available via getUpdater() method
+   */
+  @Deprecated
   public void addCellDependentOnNodePropertyWhichExistenceWasChecked(jetbrains.mps.openapi.editor.cells.EditorCell cell, Pair<SNodeReference, String> pair) {
-    WeakSet<jetbrains.mps.openapi.editor.cells.EditorCell> dependentCells = myNodePropertiesWhichExistenceWasCheckedToDependentCellsMap.get(pair);
-    if (dependentCells == null) {
-      dependentCells = new WeakSet<jetbrains.mps.openapi.editor.cells.EditorCell>();
-      myNodePropertiesWhichExistenceWasCheckedToDependentCellsMap.put(pair, dependentCells);
-    }
-    dependentCells.add(cell);
+    myUpdater.getCurrentUpdateSession().registerExistenceDependency(cell, pair);
   }
 
+  /**
+   * @deprecated since MPS 3.2 use Updater/UpdateSession interfaces available via getUpdater() method
+   */
+  @Deprecated
   public void putCellAndNodesToDependOn(jetbrains.mps.openapi.editor.cells.EditorCell cell, Set<SNode> nodes, Set<SNodeReference> refTargets) {
-    assert !nodes.contains(null);
-    myCellsToNodesToDependOnMap.put(cell, nodes);
-    myCellsToRefTargetsToDependOnMap.put(cell, refTargets);
+    myUpdater.getCurrentUpdateSession().registerDependencies(cell, nodes, refTargets);
   }
 
   public Set<SNode> getNodesCellDependOn(jetbrains.mps.openapi.editor.cells.EditorCell cell) {
-    Set<SNode> nodes = myCellsToNodesToDependOnMap.get(cell);
-    if (nodes == null) return null;
-    return Collections.unmodifiableSet(nodes);
+    return myUpdater.getRelatedNodes(cell);
   }
 
   public Set<SNodeReference> getCopyOfRefTargetsCellDependsOn(jetbrains.mps.openapi.editor.cells.EditorCell cell) {
-    Set<SNodeReference> nodeProxies = myCellsToRefTargetsToDependOnMap.get(cell);
-    if (nodeProxies == null) return null;
-    return Collections.unmodifiableSet(nodeProxies);
+    return myUpdater.getRelatedRefTargets(cell);
   }
 
+  /**
+   * @deprecated since MPS 3.2 use Updater/UpdateSession interfaces available via getUpdater() method
+   */
+  @Deprecated
   public boolean doesCellDependOnNode(jetbrains.mps.openapi.editor.cells.EditorCell cell, SNode node, @NotNull SNodeReference nodePointer) {
-    if (cell == null && node != null) return true;
-
-    Set<SNode> sNodes = myCellsToNodesToDependOnMap.get(cell);
-    Set<SNodeReference> nodeProxies = myCellsToRefTargetsToDependOnMap.get(cell);
-
-    if (sNodes != null && sNodes.contains(node)) return true;
-    return nodeProxies != null && nodeProxies.contains(nodePointer);
+    return myUpdater.isRelated(cell, new Pair<SNode, SNodeReference>(node, nodePointer));
   }
 
+  /**
+   * If update logic is changed then this method will not be necessary anymore.
+   *
+   * @deprecated since MPS 3.2 use Updater/UpdateSession interfaces available via getUpdater() method
+   */
+  @Deprecated
   public void clearNodesCellDependsOn(jetbrains.mps.openapi.editor.cells.EditorCell cell, EditorManager editorManager) {
-    if (editorManager == EditorManager.getInstanceFromContext(getEditorContext())) {
-      myCellsToNodesToDependOnMap.remove(cell);
-      myCellsToRefTargetsToDependOnMap.remove(cell);
-      if (myRootCell == cell) {
-        removeOurListeners();
-      }
-    }
+    myUpdater.clearDependencies(cell);
   }
 
+  /**
+   * @deprecated since MPS 3.2 use Updater/UpdateSession interfaces available via getUpdater() method
+   */
+  @Deprecated
   void registerAsBigCell(jetbrains.mps.openapi.editor.cells.EditorCell cell, EditorManager manager) {
-    if (manager == EditorManager.getInstanceFromContext(getEditorContext())) {
-      myNodesToBigCellsMap.put(cell.getSNode(), new WeakReference<jetbrains.mps.openapi.editor.cells.EditorCell>(cell));
-    }
+    myUpdater.getCurrentUpdateSession().registerAsBigCell(cell);
   }
 
   @Nullable
@@ -2894,7 +2713,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     return ((EditorCell_Basic) cell).isInTree() && cell.getEditorComponent() == this;
   }
 
-  public jetbrains.mps.openapi.editor.cells.EditorCell changeSelectionWRTFocusPolicy(@NotNull EditorCell cell) {
+  public jetbrains.mps.openapi.editor.cells.EditorCell changeSelectionWRTFocusPolicy(@NotNull jetbrains.mps.openapi.editor.cells.EditorCell cell) {
     jetbrains.mps.openapi.editor.cells.EditorCell focusPolicyCell = FocusPolicyUtil.findCellToSelectDueToFocusPolicy(cell);
     jetbrains.mps.openapi.editor.cells.EditorCell toSelect;
     if (focusPolicyCell == null || (focusPolicyCell == cell && !FocusPolicyUtil.hasFocusPolicy(focusPolicyCell))) {
@@ -2923,8 +2742,12 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     return toSelect;
   }
 
+  /**
+   * Looks like the only reasons to make this method public is FakeEditorComponent class implementation.
+   * TODO: Check it and reduce visibility of this method.
+   */
   public final void setEditorContext(@Nullable SModel model, @NotNull SRepository repository) {
-    setEditorContext(createEditorContext(model, repository));
+    myEditorContext = createEditorContext(model, repository);
   }
 
   /**
@@ -2934,24 +2757,15 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
    * @param model
    * @param repository
    */
+  @NotNull
   protected EditorContext createEditorContext(@Nullable SModel model, @NotNull SRepository repository) {
     return new EditorContext(this, model, repository);
-  }
-
-  /**
-   * @deprecated since MPS 3.1 use setEditorContext(EditorComponent editorComponent, @Nullable SModel model, @NotNull SRepository repository)
-   */
-  @Deprecated
-  protected void setEditorContext(EditorContext editorContext) {
-    assert editorContext == null || myRepository == editorContext.getRepository();
-    myEditorContext = editorContext;
   }
 
   private void runSwapCellsActions(Runnable action) {
     try {
       myCellSwapInProgress = true;
       EditorContext ec = getEditorContext();
-      assert ec != null;
 
       jetbrains.mps.openapi.editor.cells.EditorCell sc = getSelectedCell();
       if (sc != null) {
@@ -3043,281 +2857,6 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     return null;
   }
 
-  private void handleEvents(List<SModelEvent> events) {
-    boolean rootTrace = !getEditorContext().isTracing() && TRACE_ENABLED;
-    if (rootTrace) {
-      getEditorContext().startTracing("========= Handling events =========");
-    } else {
-      getEditorContext().pushTracerTask("Hanlding events", true);
-    }
-    try {
-      SNode lastSelectedNode = getSelectedNode();
-
-      if (!EventUtil.isDramaticalChange(events)) {
-        if (EventUtil.isPropertyChange(events)) {
-          String propertyName = ((SModelPropertyEvent) events.get(0)).getPropertyName();
-          SNodeReference nodeProxy = new jetbrains.mps.smodel.SNodePointer(((SModelPropertyEvent) events.get(0)).getNode());
-          Pair<SNodeReference, String> pair = new Pair<SNodeReference, String>(nodeProxy, propertyName);
-          Set<EditorCell> editorCell_properties = myNodePropertiesAccessedCleanlyToDependentCellsMap.get(pair);
-          Set<jetbrains.mps.openapi.editor.cells.EditorCell> editorCells = myNodePropertiesAccessedDirtilyToDependentCellsMap.get(pair);
-          Set<jetbrains.mps.openapi.editor.cells.EditorCell> editorCellsDependentOnExistence = myNodePropertiesWhichExistenceWasCheckedToDependentCellsMap.get(
-              pair);
-          if (editorCellsDependentOnExistence != null) {
-            if (EventUtil.isPropertyAddedOrRemoved(events.get(0))) {
-              rebuildEditorContent(events);
-            } else {
-              for (jetbrains.mps.openapi.editor.cells.EditorCell cell : editorCellsDependentOnExistence) {
-                APICellAdapter.synchronizeViewWithModel(cell);
-                fireCellSynchronized(cell);
-              }
-              if (editorCell_properties != null) {
-                for (EditorCell cell : editorCell_properties) {
-                  cell.synchronizeViewWithModel();
-                  fireCellSynchronized(cell);
-                }
-              }
-            }
-            relayout();
-            return;
-          }
-          if (editorCells != null) {
-            rebuildEditorContent(events);
-            relayout();
-            updateSelection(events, lastSelectedNode);
-          } else if (editorCell_properties != null) {
-            for (EditorCell cell : editorCell_properties) {
-              cell.synchronizeViewWithModel();
-              fireCellSynchronized(cell);
-            }
-            revertErrorCells(events);
-          }
-        } else {
-          rebuildEditorContent(events);
-        }
-      } else {// "dramatical" change
-        rebuildEditorContent(events);
-
-        if (!hasFocus() && !myIntentionsSupport.isLightBulbVisible()) {
-          return;
-        }
-
-        revertErrorCells(events);
-        relayout();
-        updateSelection(events, lastSelectedNode);
-      }
-
-      if (!myInsideOfCommand) {
-        relayout();
-      }
-    } finally {
-      if (rootTrace) {
-        System.out.println(getEditorContext().stopTracing());
-      } else {
-        getEditorContext().popTracerTask();
-      }
-    }
-  }
-
-  private void updateSelection(List<SModelEvent> events, SNode lastSelectedNode) {
-    SModelEvent lastAdd = null;
-    SModelEvent lastRemove = null;
-
-    List<SNode> childAddedEventNodes = new ArrayList<SNode>();
-
-    for (SModelEvent e : events) {
-      if (e instanceof SModelChildEvent) {
-        SModelChildEvent ce = (SModelChildEvent) e;
-        if (jetbrains.mps.util.SNodeOperations.isAncestor(getEditedNode(), ce.getParent())) {
-          if (ce.isAdded()) {
-            lastAdd = ce;
-            childAddedEventNodes.add(ce.getChild());
-          }
-          if (ce.isRemoved()) {
-            lastRemove = ce;
-          }
-        }
-      }
-
-      if (e instanceof SModelReferenceEvent) {
-        SModelReferenceEvent re = (SModelReferenceEvent) e;
-        if (re.isAdded()) lastAdd = re;
-        if (re.isRemoved()) lastRemove = re;
-      }
-    }
-
-    if (lastAdd != null && isForcedFocusChangeEnabled()) {
-      if (lastAdd instanceof SModelChildEvent) {
-        List<NodesParetoFrontier.NodeBox> frontier = NodesParetoFrontier.findParetoFrontier(childAddedEventNodes);
-        SNode addedChild = frontier.get(frontier.size() - 1).getNode();
-        EditorCell cell = findNodeCell(addedChild);
-        if (cell != null) {
-          // similar to: IntellijentInputUtil.applyRigthTransform() logic
-          EditorCell errorCell = CellFinderUtil.findFirstError(cell, true);
-          if (errorCell != null) {
-            changeSelectionWRTFocusPolicy(errorCell);
-          } else {
-            changeSelectionWRTFocusPolicy(cell);
-          }
-        }
-        return;
-      } else {
-        //noinspection ConstantConditions
-        if (lastAdd instanceof SModelReferenceEvent) {
-          SModelReferenceEvent re = (SModelReferenceEvent) lastAdd;
-          selectRefCell(re.getReference());
-          return;
-        } else {
-          //
-        }
-      }
-    }
-
-    if (lastRemove != null) {
-      if (lastRemove instanceof SModelChildEvent && (lastSelectedNode == null || lastSelectedNode.getModel() == null)) {
-        SModelChildEvent ce = (SModelChildEvent) lastRemove;
-        int childIndex = ce.getChildIndex();
-        String role = ce.getChildRole();
-        SNode parent = ce.getParent();
-
-        List<? extends SNode> siblings = IterableUtil.asList(parent.getChildren(role));
-        if (siblings.isEmpty()) {
-          EditorCell nullCell = findNodeCellWithRole(parent, role);
-          if (nullCell == null) {
-            EditorCell cell = findNodeCell(parent);
-            if (cell != null) {
-              EditorCell lastLeaf = cell.getLastLeaf(CellConditions.SELECTABLE);
-              if (lastLeaf == null) {
-                return;
-              }
-              changeSelection(lastLeaf);
-              lastLeaf.end();
-              return;
-            }
-          } else {
-            changeSelectionWRTFocusPolicy(nullCell);
-          }
-        } else {
-          SNode target = null;
-          int index = 0;
-          for (SNode child : parent.getChildren()) {
-            if (index >= childIndex) {
-              break;
-            }
-            if (role.equals(child.getRoleInParent())) {
-              target = child;
-            }
-            index++;
-          }
-
-          if (target != null) {
-            EditorCell cell = findNodeCell(target);
-            if (cell != null) {
-              EditorCell lastLeaf = cell.getLastLeaf(CellConditions.SELECTABLE);
-              if (lastLeaf == null) {
-                return;
-              }
-              changeSelection(lastLeaf);
-              lastLeaf.end();
-              return;
-            }
-          } else {
-            EditorCell cell = findNodeCell(siblings.get(0));
-            if (cell != null) {
-              EditorCell lastLeaf = cell.getFirstLeaf(CellConditions.SELECTABLE);
-              if (lastLeaf == null) {
-                return;
-              }
-              changeSelection(lastLeaf);
-              lastLeaf.home();
-              return;
-            }
-          }
-        }
-      }
-
-      //noinspection ConstantConditions
-      if (lastRemove instanceof SModelReferenceEvent && isForcedFocusChangeEnabled()) {
-        SModelReferenceEvent re = (SModelReferenceEvent) lastRemove;
-        SReference ref = re.getReference();
-        SNode sourceNode = ref.getSourceNode();
-        String role = ref.getRole();
-        EditorCell nullCell = findNodeCellWithRole(sourceNode, role);
-        if (nullCell == null) {
-          EditorCell cell = findNodeCell(sourceNode);
-          if (cell != null) {
-            changeSelectionWRTFocusPolicy(cell);
-          }
-        } else {
-          changeSelectionWRTFocusPolicy(nullCell);
-        }
-      }
-    }
-
-    if (getSelectedNode() == null) {
-      EditorCell lastSelectedNodeCell = findNodeCell(lastSelectedNode);
-      if (lastSelectedNodeCell != null) {
-        jetbrains.mps.openapi.editor.cells.EditorCell child = CellFinderUtil.findFirstSelectableLeaf(lastSelectedNodeCell);
-        if (child != null) {
-          changeSelection(child);
-        }
-      }
-    }
-  }
-
-  private void revertErrorCells(List<SModelEvent> events) {
-    final boolean[] wereReverted = new boolean[1];
-    for (SModelEvent e : events) {
-      e.accept(new SModelEventVisitorAdapter() {
-        @Override
-        public void visitPropertyEvent(SModelPropertyEvent event) {
-          EditorCell cell = findNodeCell(event.getNode());
-          if (cell != null && isErrorWithinBigCell(cell)) {
-            synchronizeWithModelWithinBigCell(cell);
-            wereReverted[0] = true;
-          }
-        }
-
-        @Override
-        public void visitReferenceEvent(SModelReferenceEvent event) {
-          EditorCell cell = findNodeCell(event.getReference().getSourceNode());
-          if (cell != null && isErrorWithinBigCell(cell)) {
-            synchronizeWithModelWithinBigCell(cell);
-            wereReverted[0] = true;
-          }
-        }
-
-        private boolean isErrorWithinBigCell(jetbrains.mps.openapi.editor.cells.EditorCell cell) {
-          if (cell.isErrorState()) return true;
-
-          if (cell instanceof jetbrains.mps.openapi.editor.cells.EditorCell_Collection) {
-            jetbrains.mps.openapi.editor.cells.EditorCell_Collection collection = (jetbrains.mps.openapi.editor.cells.EditorCell_Collection) cell;
-
-            for (jetbrains.mps.openapi.editor.cells.EditorCell child : collection) {
-              if (child.isBig()) continue;
-              if (isErrorWithinBigCell(child)) return true;
-            }
-          }
-
-          return false;
-        }
-      });
-    }
-  }
-
-  private void synchronizeWithModelWithinBigCell(jetbrains.mps.openapi.editor.cells.EditorCell cell) {
-    if (cell instanceof jetbrains.mps.openapi.editor.cells.EditorCell_Collection) {
-      jetbrains.mps.openapi.editor.cells.EditorCell_Collection collection = (jetbrains.mps.openapi.editor.cells.EditorCell_Collection) cell;
-      for (jetbrains.mps.openapi.editor.cells.EditorCell child : collection) {
-        if (child.getSNode() == cell.getSNode()) {
-          synchronizeWithModelWithinBigCell(child);
-        }
-      }
-    } else {
-      APICellAdapter.synchronizeViewWithModel(cell);
-    }
-  }
-
-
   private void commitAll() {
     getModelAccess().executeCommandInEDT(new Runnable() {
       @Override
@@ -3366,6 +2905,16 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     return myBracesHighlighter;
   }
 
+  // TODO: merge with rebuldEditorContent() method?
+  public void rebuildAfterReloadModel() {
+    releaseTypeCheckingContext();
+    if (myNodePointer != null) {
+      myNode = myNodePointer.resolve(getRepository());
+    }
+    acquireTypeCheckingContext();
+    rebuildEditorContent();
+  }
+
   private static class MyBaseAction extends BaseAction implements DumbAware {
     private final KeyMapAction myAction;
     private final EditorContext myEditorContext;
@@ -3391,58 +2940,15 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     }
   }
 
-  private class MySimpleModelListener extends SModelRepositoryAdapter {
-    @Override
-    public void modelsReplaced(Set<SModel> replacedModels) {
-      assert SwingUtilities.isEventDispatchThread() : "Model reloaded notification expected in EventDispatchThread";
-
-      boolean requiresRebuild = false;
-      SModelReference currentModelReference = getCurrentModelReference();
-      for (SModel model : replacedModels) {
-        requiresRebuild = requiresRebuild || mySModelsWithListener.contains(model);
-
-        if (myNode != null && model.getReference().equals(currentModelReference)) {
-          assertModelNotDisposed();
-          SNode newNode = model.getNode(myNode.getNodeId());
-          if (newNode != myNode) {
-            myNode = newNode;
-            requiresRebuild = true;
-          }
-        }
-      }
-
-      if (requiresRebuild) {
-        releaseTypeCheckingContext();
-        acquireTypeCheckingContext();
-        rebuildEditorContent();
-      }
-    }
-
-    @Override
-    public void beforeModelRemoved(SModel model) {
-      if (!mySModelsWithListener.contains(model)) return;
-      if (model.getReference().equals(getCurrentModelReference())) {
-        myModelDisposedStackTrace = Thread.currentThread().getStackTrace();
-      }
-    }
-
-    private SModelReference getCurrentModelReference() {
-      return getEditorContext() != null && getEditorContext().getModel() != null ? getEditorContext().getModel().getReference() : null;
-    }
-  }
-
-  private class MyEventsCollector extends EventsCollector {
-    @Override
-    protected void eventsHappened(List<SModelEvent> events) {
-      handleEvents(events);
-    }
-  }
-
   public static interface RebuildListener {
     public void editorRebuilt(EditorComponent editor);
   }
 
-  public static interface CellSynchronizationWithModelListener {
+  /**
+   * @deprecated since MPS 3.2 use UpdaterListener instead
+   */
+  @Deprecated
+  public static interface CellSynchronizationWithModelListener extends UpdaterListener {
     public void cellSynchronizedWithModel(jetbrains.mps.openapi.editor.cells.EditorCell cell);
   }
 

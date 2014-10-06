@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2014 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,15 +13,17 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.nodeEditor;
+package jetbrains.mps.smodel.runtime;
 
+import org.jetbrains.mps.openapi.language.SConceptId;
+import org.jetbrains.mps.openapi.language.SReferenceLinkId;
 
-import jetbrains.mps.editor.runtime.cells.KeyMapImpl;
+public interface ReferenceDescriptor {
+  SReferenceLinkId getId();
+  
+  String getName();
 
-/**
- * was replaced with KeyMapImpl
- * remove this class after MPS 3.0
- */
-@Deprecated
-public class EditorCellKeyMap extends KeyMapImpl {
+  SConceptId getTargetConcept();
+
+  boolean isOptional();
 }

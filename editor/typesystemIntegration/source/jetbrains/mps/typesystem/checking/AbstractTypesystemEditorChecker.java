@@ -93,10 +93,10 @@ public abstract class AbstractTypesystemEditorChecker extends EditorCheckerAdapt
 
   @Override
   public void clear(SNode node, EditorComponent editorComponent) {
-    if (node == null) return;
-    TypeCheckingContext context = editorComponent.getTypeCheckingContext();
-    if (context == null) return;
-    context.clear();
+    if (editorComponent.getNodeForTypechecking() == null) return;
+
+    TypeContextManager.getInstance().acquireTypecheckingContext(editorComponent.getNodeForTypechecking(), editorComponent);
+    TypeContextManager.getInstance().releaseTypecheckingContext(editorComponent);
   }
 
   protected void collectMessagesForNodesWithErrors(TypeCheckingContext context, final EditorContext editorContext, Set<EditorMessage> messages,

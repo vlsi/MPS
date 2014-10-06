@@ -155,22 +155,6 @@ public abstract class EditorCell_Label extends EditorCell_Basic implements jetbr
     getStyle().set(StyleAttributes.NULL_SELECTED_TEXT_BACKGROUND_COLOR, color);
   }
 
-  /**
-   * @deprecated Use StyleAttributesUtil.isFirstPositionAllowed() instead. Should be removed after MPS 3.0
-   */
-  @Deprecated
-  public boolean isFirstPositionAllowed() {
-    return StyleAttributesUtil.isFirstPositionAllowed(getStyle());
-  }
-
-  /**
-   * @deprecated Use StyleAttributesUtil.isLastPositionAllowed() instead. Should be removed after MPS 3.0
-   */
-  @Deprecated
-  public boolean isLastPositionAllowed() {
-    return StyleAttributesUtil.isLastPositionAllowed(getStyle());
-  }
-
   public int getCaretPosition() {
     return myTextLine.getCaretPosition();
   }
@@ -193,20 +177,20 @@ public abstract class EditorCell_Label extends EditorCell_Basic implements jetbr
   }
 
   public boolean isCaretPositionAllowed(int position) {
-    if (!isFirstPositionAllowed() && position == 0) return false;
-    if (!isLastPositionAllowed() && position == myTextLine.getText().length()) return false;
+    if (!StyleAttributesUtil.isFirstPositionAllowed(getStyle()) && position == 0) return false;
+    if (!StyleAttributesUtil.isLastPositionAllowed(getStyle()) && position == myTextLine.getText().length()) return false;
     return position >= 0 && position <= myTextLine.getText().length();
   }
 
   @Override
   public void home() {
     int textLength = getText().length();
-    if (isFirstPositionAllowed()) {
-      if (textLength > 0 || isLastPositionAllowed()) {
+    if (StyleAttributesUtil.isFirstPositionAllowed(getStyle())) {
+      if (textLength > 0 || StyleAttributesUtil.isLastPositionAllowed(getStyle())) {
         setCaretPosition(0);
       }
     } else {
-      if (textLength > 0 && (textLength > 1 || isLastPositionAllowed())) {
+      if (textLength > 0 && (textLength > 1 || StyleAttributesUtil.isLastPositionAllowed(getStyle()))) {
         setCaretPosition(1);
       }
     }
@@ -215,12 +199,12 @@ public abstract class EditorCell_Label extends EditorCell_Basic implements jetbr
   @Override
   public void end() {
     int textLength = getText().length();
-    if (isLastPositionAllowed()) {
-      if (textLength > 0 || isFirstPositionAllowed()) {
+    if (StyleAttributesUtil.isLastPositionAllowed(getStyle())) {
+      if (textLength > 0 || StyleAttributesUtil.isFirstPositionAllowed(getStyle())) {
         setCaretPosition(getText().length());
       }
     } else {
-      if (textLength > 0 && (textLength > 1 || isFirstPositionAllowed())) {
+      if (textLength > 0 && (textLength > 1 || StyleAttributesUtil.isFirstPositionAllowed(getStyle()))) {
         setCaretPosition(getText().length() - 1);
       }
     }
@@ -231,11 +215,11 @@ public abstract class EditorCell_Label extends EditorCell_Basic implements jetbr
     if (!super.isSelectable()) return false;
 
     if (getText() == null || getText().length() == 0) {
-      return isFirstPositionAllowed() && isLastPositionAllowed();
+      return StyleAttributesUtil.isFirstPositionAllowed(getStyle()) && StyleAttributesUtil.isLastPositionAllowed(getStyle());
     }
 
     if (getText().length() == 1) {
-      return isFirstPositionAllowed() || isLastPositionAllowed();
+      return StyleAttributesUtil.isFirstPositionAllowed(getStyle()) || StyleAttributesUtil.isLastPositionAllowed(getStyle());
     }
 
     return true;
@@ -243,7 +227,7 @@ public abstract class EditorCell_Label extends EditorCell_Basic implements jetbr
 
   @Override
   public boolean isFirstCaretPosition() {
-    if (!isFirstPositionAllowed()) {
+    if (!StyleAttributesUtil.isFirstPositionAllowed(getStyle())) {
       return getCaretPosition() == 1;
     } else {
       return getCaretPosition() == 0;
@@ -252,7 +236,7 @@ public abstract class EditorCell_Label extends EditorCell_Basic implements jetbr
 
   @Override
   public boolean isLastCaretPosition() {
-    if (!isLastPositionAllowed()) {
+    if (!StyleAttributesUtil.isLastPositionAllowed(getStyle())) {
       return getCaretPosition() == getText().length() - 1;
     } else {
       return getCaretPosition() == getText().length();
@@ -421,10 +405,10 @@ public abstract class EditorCell_Label extends EditorCell_Basic implements jetbr
   }
 
   private void makePositionValid() {
-    if (myTextLine.getCaretPosition() == 0 && !isFirstPositionAllowed() && isCaretPositionAllowed(1)) {
+    if (myTextLine.getCaretPosition() == 0 && !StyleAttributesUtil.isFirstPositionAllowed(getStyle()) && isCaretPositionAllowed(1)) {
       setCaretPosition(1);
     }
-    if (myTextLine.getCaretPosition() == getText().length() && !isLastPositionAllowed() && isCaretPositionAllowed(getText().length() - 1)) {
+    if (myTextLine.getCaretPosition() == getText().length() && !StyleAttributesUtil.isLastPositionAllowed(getStyle()) && isCaretPositionAllowed(getText().length() - 1)) {
       setCaretPosition(getText().length() - 1);
     }
     getEditor().getBracesHighlighter().updateBracesSelection(this);
@@ -934,7 +918,7 @@ public abstract class EditorCell_Label extends EditorCell_Basic implements jetbr
 
     @Override
     public boolean canExecute(EditorContext context) {
-      return !isFirstCaretPosition() && (isFirstPositionAllowed() || getPrevLocalHome(true) != 0);
+      return !isFirstCaretPosition() && (StyleAttributesUtil.isFirstPositionAllowed(getStyle()) || getPrevLocalHome(true) != 0);
     }
 
     @Override
@@ -953,7 +937,7 @@ public abstract class EditorCell_Label extends EditorCell_Basic implements jetbr
 
     @Override
     public boolean canExecute(EditorContext context) {
-      return !isLastCaretPosition() && (isLastPositionAllowed() || getNextLocalEnd(true) != getText().length());
+      return !isLastCaretPosition() && (StyleAttributesUtil.isLastPositionAllowed(getStyle()) || getNextLocalEnd(true) != getText().length());
     }
 
     @Override

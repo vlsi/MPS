@@ -28,7 +28,6 @@ import javax.swing.JComponent;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.smodel.event.SModelEvent;
-import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import org.jetbrains.annotations.NonNls;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
@@ -140,12 +139,11 @@ public class DiffEditor implements EditorMessageOwner {
     @Override
     public EditorCell createRootCell(List<SModelEvent> events) {
       if (getEditedNode() == null || getEditedNode().getModel() == null) {
-        EditorContext editorContext = getEditorContext();
-        return new EditorCell_Constant(editorContext, getEditedNode(), "");
+        return new EditorCell_Constant(getEditorContext(), getEditedNode(), "");
       }
       pushCellContext();
       try {
-        return getEditorContext().createRootCell(getEditedNode(), events);
+        return (EditorCell) getUpdater().updateRootCell(getEditedNode(), events);
       } finally {
         popCellContext();
       }

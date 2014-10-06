@@ -310,9 +310,6 @@ public class ParenthesisUtil {
     // These would be the nodes into which we come from the right child. 
     SNode rightAccumulator = buildAccumulator(firstCommonAncestor, rightTurn, false);
 
-    assert leftAccumulator != null;
-    assert rightAccumulator != null;
-
     SNode parens = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ParenthesizedExpression", null);
     if (SNodeOperations.isInstanceOf(firstCommonAncestor, "jetbrains.mps.baseLanguage.structure.BinaryOperation")) {
       rebalanceIBinaryLikeAfterParenthing(SNodeOperations.cast(firstCommonAncestor, "jetbrains.mps.baseLanguage.structure.BinaryOperation"), rightTurn, leftTurn, parens, rightAccumulator, leftAccumulator);
@@ -420,7 +417,7 @@ public class ParenthesisUtil {
         accumulator = firstCommonAncestorChild;
         SNodeOperations.detachNode(accumulator);
       } else {
-        accumulator = SNodeOperations.cast(firstCommonAncestor, "jetbrains.mps.baseLanguage.structure.Expression");
+        accumulator = null;
       }
     }
     return accumulator;

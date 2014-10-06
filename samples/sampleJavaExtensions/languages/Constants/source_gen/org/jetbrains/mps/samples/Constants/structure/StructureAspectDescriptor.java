@@ -5,15 +5,18 @@ package org.jetbrains.mps.samples.Constants.structure;
 import jetbrains.mps.smodel.runtime.BaseStructureAspectDescriptor;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder;
+import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
+import java.util.UUID;
 import jetbrains.mps.smodel.runtime.StaticScope;
 import java.util.Collection;
 import java.util.Arrays;
 import org.jetbrains.annotations.Nullable;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
-  /*package*/ final ConceptDescriptor myConceptConstant = new ConceptDescriptorBuilder("org.jetbrains.mps.samples.Constants.structure.Constant").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept").children(new String[]{"initializer"}, new boolean[]{false}).create();
-  /*package*/ final ConceptDescriptor myConceptConstantReference = new ConceptDescriptorBuilder("org.jetbrains.mps.samples.Constants.structure.ConstantReference").super_("jetbrains.mps.baseLanguage.structure.Expression").parents("jetbrains.mps.baseLanguage.structure.Expression").references("original").staticScope(StaticScope.NONE).create();
-  /*package*/ final ConceptDescriptor myConceptConstants = new ConceptDescriptorBuilder("org.jetbrains.mps.samples.Constants.structure.Constants").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept", "jetbrains.mps.lang.core.structure.ScopeProvider").children(new String[]{"constants"}, new boolean[]{true}).create();
+
+  /*package*/ final ConceptDescriptor myConceptConstant = new ConceptDescriptorBuilder("org.jetbrains.mps.samples.Constants.structure.Constant", MetaIdFactory.conceptId(UUID.fromString("0d40d465-dded-40d0-8d4c-2c6d177f60d7"), 1494751830318912537L)).super_("jetbrains.mps.lang.core.structure.BaseConcept").super_(MetaIdFactory.conceptId(UUID.fromString("0d40d465-dded-40d0-8d4c-2c6d177f60d7"), 1133920641626L)).parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept").parentIds(MetaIdFactory.conceptId(UUID.fromString("0d40d465-dded-40d0-8d4c-2c6d177f60d7"), 1133920641626L), MetaIdFactory.conceptId(UUID.fromString("0d40d465-dded-40d0-8d4c-2c6d177f60d7"), 1169194658468L)).childDescriptors(new ConceptDescriptorBuilder.Link(2001769927721010657L, "initializer", MetaIdFactory.conceptId(UUID.fromString("0d40d465-dded-40d0-8d4c-2c6d177f60d7"), 1068431790191L), false, false, false)).children(new String[]{"initializer"}, new boolean[]{false}).create();
+  /*package*/ final ConceptDescriptor myConceptConstantReference = new ConceptDescriptorBuilder("org.jetbrains.mps.samples.Constants.structure.ConstantReference", MetaIdFactory.conceptId(UUID.fromString("0d40d465-dded-40d0-8d4c-2c6d177f60d7"), 3990190717072393829L)).super_("jetbrains.mps.baseLanguage.structure.Expression").super_(MetaIdFactory.conceptId(UUID.fromString("0d40d465-dded-40d0-8d4c-2c6d177f60d7"), 1068431790191L)).parents("jetbrains.mps.baseLanguage.structure.Expression").parentIds(MetaIdFactory.conceptId(UUID.fromString("0d40d465-dded-40d0-8d4c-2c6d177f60d7"), 1068431790191L)).referenceDescriptors(new ConceptDescriptorBuilder.Ref(3990190717072393830L, "original", MetaIdFactory.conceptId(UUID.fromString("0d40d465-dded-40d0-8d4c-2c6d177f60d7"), 1494751830318912537L), false)).references("original").staticScope(StaticScope.NONE).create();
+  /*package*/ final ConceptDescriptor myConceptConstants = new ConceptDescriptorBuilder("org.jetbrains.mps.samples.Constants.structure.Constants", MetaIdFactory.conceptId(UUID.fromString("0d40d465-dded-40d0-8d4c-2c6d177f60d7"), 1494751830318912535L)).super_("jetbrains.mps.lang.core.structure.BaseConcept").super_(MetaIdFactory.conceptId(UUID.fromString("0d40d465-dded-40d0-8d4c-2c6d177f60d7"), 1133920641626L)).parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept", "jetbrains.mps.lang.core.structure.ScopeProvider").parentIds(MetaIdFactory.conceptId(UUID.fromString("0d40d465-dded-40d0-8d4c-2c6d177f60d7"), 1133920641626L), MetaIdFactory.conceptId(UUID.fromString("0d40d465-dded-40d0-8d4c-2c6d177f60d7"), 1169194658468L), MetaIdFactory.conceptId(UUID.fromString("0d40d465-dded-40d0-8d4c-2c6d177f60d7"), 3734116213129792499L)).childDescriptors(new ConceptDescriptorBuilder.Link(1494751830318912552L, "constants", MetaIdFactory.conceptId(UUID.fromString("0d40d465-dded-40d0-8d4c-2c6d177f60d7"), 1494751830318912537L), true, true, false)).children(new String[]{"constants"}, new boolean[]{true}).create();
 
   @Override
   public Collection<ConceptDescriptor> getDescriptors() {
@@ -23,7 +26,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   @Override
   @Nullable
   public ConceptDescriptor getDescriptor(String conceptFqName) {
-    switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0g, conceptFqName)) {
+    switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0h, conceptFqName)) {
       case 0:
         return myConceptConstant;
       case 1:
@@ -34,5 +37,5 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
         return null;
     }
   }
-  private static String[] stringSwitchCases_1htk8d_a0a0g = new String[]{"org.jetbrains.mps.samples.Constants.structure.Constant", "org.jetbrains.mps.samples.Constants.structure.ConstantReference", "org.jetbrains.mps.samples.Constants.structure.Constants"};
+  private static String[] stringSwitchCases_1htk8d_a0a0h = new String[]{"org.jetbrains.mps.samples.Constants.structure.Constant", "org.jetbrains.mps.samples.Constants.structure.ConstantReference", "org.jetbrains.mps.samples.Constants.structure.Constants"};
 }

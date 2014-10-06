@@ -66,7 +66,7 @@ public class NodeWithPorts_Editor extends DefaultNodeEditor {
         }
       };
       addEditorCell(myPropertyCell_t9c2f5_a0a);
-      myPropertyCell_t9c2f5_a0a.getEditor().addCellDependentOnNodeProperty(myPropertyCell_t9c2f5_a0a, new Pair<SNodeReference, String>(new SNodePointer(node), "x"));
+      myPropertyCell_t9c2f5_a0a.getEditorComponent().getUpdater().getCurrentUpdateSession().registerCleanDependency(myPropertyCell_t9c2f5_a0a, new Pair<SNodeReference, String>(new SNodePointer(node), "x"));
       myPropertyCell_t9c2f5_a1a = new PropertyMapperCell<Integer>(editorContext, node) {
         protected Integer getModelPropertyValueImpl() {
           return SPropertyOperations.getInteger(node, "y");
@@ -76,7 +76,7 @@ public class NodeWithPorts_Editor extends DefaultNodeEditor {
         }
       };
       addEditorCell(myPropertyCell_t9c2f5_a1a);
-      myPropertyCell_t9c2f5_a1a.getEditor().addCellDependentOnNodeProperty(myPropertyCell_t9c2f5_a1a, new Pair<SNodeReference, String>(new SNodePointer(node), "y"));
+      myPropertyCell_t9c2f5_a1a.getEditorComponent().getUpdater().getCurrentUpdateSession().registerCleanDependency(myPropertyCell_t9c2f5_a1a, new Pair<SNodeReference, String>(new SNodePointer(node), "y"));
       myPropertyCell_t9c2f5_a2a = new PropertyMapperCell<Integer>(editorContext, node) {
         protected Integer getModelPropertyValueImpl() {
           return SPropertyOperations.getInteger(node, "width");
@@ -86,7 +86,7 @@ public class NodeWithPorts_Editor extends DefaultNodeEditor {
         }
       };
       addEditorCell(myPropertyCell_t9c2f5_a2a);
-      myPropertyCell_t9c2f5_a2a.getEditor().addCellDependentOnNodeProperty(myPropertyCell_t9c2f5_a2a, new Pair<SNodeReference, String>(new SNodePointer(node), "width"));
+      myPropertyCell_t9c2f5_a2a.getEditorComponent().getUpdater().getCurrentUpdateSession().registerCleanDependency(myPropertyCell_t9c2f5_a2a, new Pair<SNodeReference, String>(new SNodePointer(node), "width"));
       myPropertyCell_t9c2f5_a3a = new PropertyMapperCell<Integer>(editorContext, node) {
         protected Integer getModelPropertyValueImpl() {
           return SPropertyOperations.getInteger(node, "height");
@@ -96,7 +96,7 @@ public class NodeWithPorts_Editor extends DefaultNodeEditor {
         }
       };
       addEditorCell(myPropertyCell_t9c2f5_a3a);
-      myPropertyCell_t9c2f5_a3a.getEditor().addCellDependentOnNodeProperty(myPropertyCell_t9c2f5_a3a, new Pair<SNodeReference, String>(new SNodePointer(node), "height"));
+      myPropertyCell_t9c2f5_a3a.getEditorComponent().getUpdater().getCurrentUpdateSession().registerCleanDependency(myPropertyCell_t9c2f5_a3a, new Pair<SNodeReference, String>(new SNodePointer(node), "height"));
       myPropertyCell_t9c2f5_a4a = new PropertyMapperCell<Integer>(editorContext, node) {
         protected Integer getModelPropertyValueImpl() {
           return SPropertyOperations.getInteger(node, "lineWidth");
@@ -106,7 +106,7 @@ public class NodeWithPorts_Editor extends DefaultNodeEditor {
         }
       };
       addEditorCell(myPropertyCell_t9c2f5_a4a);
-      myPropertyCell_t9c2f5_a4a.getEditor().addCellDependentOnNodeProperty(myPropertyCell_t9c2f5_a4a, new Pair<SNodeReference, String>(new SNodePointer(node), "lineWidth"));
+      myPropertyCell_t9c2f5_a4a.getEditorComponent().getUpdater().getCurrentUpdateSession().registerCleanDependency(myPropertyCell_t9c2f5_a4a, new Pair<SNodeReference, String>(new SNodePointer(node), "lineWidth"));
       synchronize();
     }
     public void synchronize() {

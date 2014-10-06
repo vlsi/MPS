@@ -60,7 +60,7 @@ public abstract class BlockCell extends AbstractJetpadCell {
   }
   protected void syncPortNodes(Iterable<? extends SNode> ports, ListIterator<SNode> portsIterator, Set<SNode> existingPorts) {
     for (SNode nextPort : Sequence.fromIterable(ports)) {
-      EditorCell portCell = getContext().createNodeCell(nextPort);
+      EditorCell portCell = getContext().getEditorComponent().getUpdater().getCurrentUpdateSession().updateChildNodeCell(nextPort);
       if (!(portCell instanceof PortCell)) {
         continue;
       }

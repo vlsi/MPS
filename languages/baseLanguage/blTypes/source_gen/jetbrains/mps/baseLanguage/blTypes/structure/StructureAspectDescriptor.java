@@ -5,13 +5,16 @@ package jetbrains.mps.baseLanguage.blTypes.structure;
 import jetbrains.mps.smodel.runtime.BaseStructureAspectDescriptor;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder;
+import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
+import java.util.UUID;
 import java.util.Collection;
 import java.util.Arrays;
 import org.jetbrains.annotations.Nullable;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
-  /*package*/ final ConceptDescriptor myConceptPrimitiveTypeDescriptor = new ConceptDescriptorBuilder("jetbrains.mps.baseLanguage.blTypes.structure.PrimitiveTypeDescriptor").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept").children(new String[]{"extends"}, new boolean[]{true}).create();
-  /*package*/ final ConceptDescriptor myConceptPrimitiveTypeRef = new ConceptDescriptorBuilder("jetbrains.mps.baseLanguage.blTypes.structure.PrimitiveTypeRef").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.InterfacePart").references("descriptor").create();
+
+  /*package*/ final ConceptDescriptor myConceptPrimitiveTypeDescriptor = new ConceptDescriptorBuilder("jetbrains.mps.baseLanguage.blTypes.structure.PrimitiveTypeDescriptor", MetaIdFactory.conceptId(UUID.fromString("ed6d7656-532c-4bc2-81d1-af945aeb8280"), 1159268590033L)).super_("jetbrains.mps.lang.core.structure.BaseConcept").super_(MetaIdFactory.conceptId(UUID.fromString("ed6d7656-532c-4bc2-81d1-af945aeb8280"), 1133920641626L)).parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept").parentIds(MetaIdFactory.conceptId(UUID.fromString("ed6d7656-532c-4bc2-81d1-af945aeb8280"), 1133920641626L), MetaIdFactory.conceptId(UUID.fromString("ed6d7656-532c-4bc2-81d1-af945aeb8280"), 1169194658468L)).childDescriptors(new ConceptDescriptorBuilder.Link(1159268590032L, "extends", MetaIdFactory.conceptId(UUID.fromString("ed6d7656-532c-4bc2-81d1-af945aeb8280"), 1159268661480L), true, true, false)).children(new String[]{"extends"}, new boolean[]{true}).create();
+  /*package*/ final ConceptDescriptor myConceptPrimitiveTypeRef = new ConceptDescriptorBuilder("jetbrains.mps.baseLanguage.blTypes.structure.PrimitiveTypeRef", MetaIdFactory.conceptId(UUID.fromString("ed6d7656-532c-4bc2-81d1-af945aeb8280"), 1159268661480L)).super_("jetbrains.mps.lang.core.structure.BaseConcept").super_(MetaIdFactory.conceptId(UUID.fromString("ed6d7656-532c-4bc2-81d1-af945aeb8280"), 1133920641626L)).parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.InterfacePart").parentIds(MetaIdFactory.conceptId(UUID.fromString("ed6d7656-532c-4bc2-81d1-af945aeb8280"), 1133920641626L), MetaIdFactory.conceptId(UUID.fromString("ed6d7656-532c-4bc2-81d1-af945aeb8280"), 1319728274784973096L)).referenceDescriptors(new ConceptDescriptorBuilder.Ref(1159268661479L, "descriptor", MetaIdFactory.conceptId(UUID.fromString("ed6d7656-532c-4bc2-81d1-af945aeb8280"), 1159268590033L), false)).references("descriptor").create();
 
   @Override
   public Collection<ConceptDescriptor> getDescriptors() {
@@ -21,7 +24,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   @Override
   @Nullable
   public ConceptDescriptor getDescriptor(String conceptFqName) {
-    switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0f, conceptFqName)) {
+    switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0g, conceptFqName)) {
       case 0:
         return myConceptPrimitiveTypeDescriptor;
       case 1:
@@ -30,5 +33,5 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
         return null;
     }
   }
-  private static String[] stringSwitchCases_1htk8d_a0a0f = new String[]{"jetbrains.mps.baseLanguage.blTypes.structure.PrimitiveTypeDescriptor", "jetbrains.mps.baseLanguage.blTypes.structure.PrimitiveTypeRef"};
+  private static String[] stringSwitchCases_1htk8d_a0a0g = new String[]{"jetbrains.mps.baseLanguage.blTypes.structure.PrimitiveTypeDescriptor", "jetbrains.mps.baseLanguage.blTypes.structure.PrimitiveTypeRef"};
 }

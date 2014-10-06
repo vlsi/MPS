@@ -22,12 +22,6 @@ import org.jetbrains.mps.openapi.model.SNode;
 public abstract class AbstractChildNodeSetter implements IChildNodeSetter {
 
   @Override
-  @Deprecated
-  public final SNode execute(SNode parentNode, SNode oldChild, SNode newChild) {
-    return execute(parentNode, oldChild, newChild, null);
-  }
-
-  @Override
   public final SNode execute(SNode parentNode, SNode oldChild, SNode newChild, @Nullable EditorContext editorContext) {
     return doExecute(parentNode, oldChild, newChild, editorContext);
   }

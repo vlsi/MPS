@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2014 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,17 +13,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.nodeEditor.style;
+package jetbrains.mps.openapi.editor.update;
+
+import jetbrains.mps.openapi.editor.cells.EditorCell;
 
 /**
- * Use jetbrains.mps.editor.runtime.style.ScriptKind instead.
- * This class will be removed after MPS 3.0
- *
- * Sergey.Sinchuk, Oct 29, 2009
+ * User: shatalin
+ * Date: 12/09/14
  */
-@Deprecated
-public enum ScriptKind {
-  NORMAL,
-  SUPERSCRIPT,
-  SUBSCRIPT
+public class UpdaterListenerAdapter implements UpdaterListener {
+  @Override
+  public void cellSynchronizedWithModel(EditorCell cell) {
+  }
 }

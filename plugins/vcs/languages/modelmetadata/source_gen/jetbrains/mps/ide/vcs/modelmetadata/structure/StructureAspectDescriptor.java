@@ -5,12 +5,15 @@ package jetbrains.mps.ide.vcs.modelmetadata.structure;
 import jetbrains.mps.smodel.runtime.BaseStructureAspectDescriptor;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder;
+import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
+import java.util.UUID;
 import java.util.Collection;
 import java.util.Arrays;
 import org.jetbrains.annotations.Nullable;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
-  /*package*/ final ConceptDescriptor myConceptModel = new ConceptDescriptorBuilder("jetbrains.mps.ide.vcs.modelmetadata.structure.Model").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept").properties("longname", "uuid", "version", "donotgenerate").children(new String[]{"language", "languageEngagedOnGeneration", "devkit", "import"}, new boolean[]{true, true, true, true}).create();
+
+  /*package*/ final ConceptDescriptor myConceptModel = new ConceptDescriptorBuilder("jetbrains.mps.ide.vcs.modelmetadata.structure.Model", MetaIdFactory.conceptId(UUID.fromString("6df0089f-3288-4998-9d57-e698e7c8e145"), 8374934269827354989L)).super_("jetbrains.mps.lang.core.structure.BaseConcept").super_(MetaIdFactory.conceptId(UUID.fromString("6df0089f-3288-4998-9d57-e698e7c8e145"), 1133920641626L)).parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept").parentIds(MetaIdFactory.conceptId(UUID.fromString("6df0089f-3288-4998-9d57-e698e7c8e145"), 1133920641626L), MetaIdFactory.conceptId(UUID.fromString("6df0089f-3288-4998-9d57-e698e7c8e145"), 1169194658468L)).propertyDescriptors(new ConceptDescriptorBuilder.Prop(8374934269827355110L, "longname"), new ConceptDescriptorBuilder.Prop(8374934269827355112L, "uuid"), new ConceptDescriptorBuilder.Prop(8374934269827355115L, "version"), new ConceptDescriptorBuilder.Prop(8374934269827355124L, "donotgenerate")).properties("longname", "uuid", "version", "donotgenerate").childDescriptors(new ConceptDescriptorBuilder.Link(4685150495576720950L, "language", MetaIdFactory.conceptId(UUID.fromString("6df0089f-3288-4998-9d57-e698e7c8e145"), 1855399583446016268L), true, true, false), new ConceptDescriptorBuilder.Link(4685150495576720952L, "languageEngagedOnGeneration", MetaIdFactory.conceptId(UUID.fromString("6df0089f-3288-4998-9d57-e698e7c8e145"), 1855399583446016268L), true, true, false), new ConceptDescriptorBuilder.Link(4685150495576720955L, "devkit", MetaIdFactory.conceptId(UUID.fromString("6df0089f-3288-4998-9d57-e698e7c8e145"), 1855399583446016268L), true, true, false), new ConceptDescriptorBuilder.Link(4685150495576720959L, "import", MetaIdFactory.conceptId(UUID.fromString("6df0089f-3288-4998-9d57-e698e7c8e145"), 6370754048397540903L), true, true, false)).children(new String[]{"language", "languageEngagedOnGeneration", "devkit", "import"}, new boolean[]{true, true, true, true}).create();
 
   @Override
   public Collection<ConceptDescriptor> getDescriptors() {
@@ -20,12 +23,12 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   @Override
   @Nullable
   public ConceptDescriptor getDescriptor(String conceptFqName) {
-    switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0e, conceptFqName)) {
+    switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0f, conceptFqName)) {
       case 0:
         return myConceptModel;
       default:
         return null;
     }
   }
-  private static String[] stringSwitchCases_1htk8d_a0a0e = new String[]{"jetbrains.mps.ide.vcs.modelmetadata.structure.Model"};
+  private static String[] stringSwitchCases_1htk8d_a0a0f = new String[]{"jetbrains.mps.ide.vcs.modelmetadata.structure.Model"};
 }

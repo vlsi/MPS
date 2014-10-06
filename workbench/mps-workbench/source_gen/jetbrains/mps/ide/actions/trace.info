@@ -2240,10 +2240,9 @@
       <node id="1216125431295" at="58,7,59,66" concept="6" />
       <node id="1216125431295" at="61,61,62,19" concept="13" />
       <node id="1216125431295" at="63,5,64,16" concept="13" />
-      <node id="1216125738195" at="67,9,68,133" concept="12" />
-      <node id="1216125695601" at="68,133,69,110" concept="6" />
-      <node id="1216125431295" at="71,42,72,93" concept="6" />
-      <node id="1216125431295" at="76,0,77,0" concept="16" trace="LOG" />
+      <node id="3002053061862579364" at="67,9,68,159" concept="6" />
+      <node id="1216125431295" at="70,42,71,93" concept="6" />
+      <node id="1216125431295" at="75,0,76,0" concept="16" trace="LOG" />
       <node id="1216125431295" at="30,0,33,0" concept="11" trace="isApplicable#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)Z" />
       <node id="1216125431295" at="39,27,42,7" concept="1" />
       <node id="1216125431295" at="39,27,42,7" concept="10" />
@@ -2251,16 +2250,16 @@
       <node id="1216125431295" at="50,84,53,5" concept="10" />
       <node id="1216125431295" at="55,90,58,7" concept="10" />
       <node id="1216125431295" at="60,5,63,5" concept="10" />
-      <node id="1216125431295" at="70,27,73,7" concept="1" />
-      <node id="1216125431295" at="70,27,73,7" concept="10" />
+      <node id="1216125431295" at="69,27,72,7" concept="1" />
+      <node id="1216125431295" at="69,27,72,7" concept="10" />
       <node id="1216125431295" at="26,0,30,0" concept="11" trace="isDumbAware#()Z" />
       <node id="1216125431295" at="34,9,38,7" concept="1" />
       <node id="1216125431295" at="49,5,53,5" concept="1" />
       <node id="1216125431295" at="21,0,26,0" concept="4" trace="ShowNodeInInspector_Action#()V" />
       <node id="1216125431295" at="53,5,60,5" concept="1" />
-      <node id="1216125431295" at="66,96,74,5" concept="20" />
+      <node id="1216125431295" at="66,96,73,5" concept="20" />
+      <node id="1216125431295" at="66,0,75,0" concept="11" trace="doExecute#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
       <node id="1216125431295" at="53,5,63,5" concept="1" />
-      <node id="1216125431295" at="66,0,76,0" concept="11" trace="doExecute#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
       <node id="1216125431295" at="33,89,44,5" concept="20" />
       <node id="1216125431295" at="33,0,46,0" concept="11" trace="doUpdate#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
       <node id="1216125431295" at="46,0,66,0" concept="11" trace="collectActionData#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)Z" />
@@ -2271,12 +2270,10 @@
       <scope id="1216125431295" at="51,59,52,19" />
       <scope id="1216125431295" at="56,67,57,31" />
       <scope id="1216125431295" at="61,61,62,19" />
-      <scope id="1216125431295" at="71,42,72,93" />
+      <scope id="1216125431295" at="67,9,68,159" />
+      <scope id="1216125431295" at="70,42,71,93" />
       <scope id="1216125431295" at="35,7,37,63">
         <var name="enabled" id="1216125431295" />
-      </scope>
-      <scope id="1216125431295" at="67,9,69,110">
-        <var name="inspector" id="1216125738196" />
       </scope>
       <scope id="1216125431295" at="21,39,24,41" />
       <scope id="1216125431295" at="30,0,33,0">
@@ -2284,10 +2281,10 @@
         <var name="event" id="1216125431295" />
       </scope>
       <scope id="1216125431295" at="39,27,42,7" />
-      <scope id="1216125431295" at="70,0,73,7">
+      <scope id="1216125431295" at="69,0,72,7">
         <var name="t" id="1216125431295" />
       </scope>
-      <scope id="1216125431295" at="70,27,73,7" />
+      <scope id="1216125431295" at="69,27,72,7" />
       <scope id="1216125431295" at="26,0,30,0" />
       <scope id="1216125431295" at="34,9,38,7" />
       <scope id="1216125431295" at="39,0,43,44">
@@ -2299,12 +2296,12 @@
       <scope id="1216125431295" at="54,5,59,66">
         <var name="editorComponent" id="1216125431295" />
       </scope>
-      <scope id="1216125431295" at="66,96,74,5" />
-      <scope id="1216125431295" at="53,5,63,5" />
-      <scope id="1216125431295" at="66,0,76,0">
+      <scope id="1216125431295" at="66,96,73,5" />
+      <scope id="1216125431295" at="66,0,75,0">
         <var name="_params" id="1216125431295" />
         <var name="event" id="1216125431295" />
       </scope>
+      <scope id="1216125431295" at="53,5,63,5" />
       <scope id="1216125431295" at="33,89,44,5" />
       <scope id="1216125431295" at="33,0,46,0">
         <var name="_params" id="1216125431295" />
@@ -2315,7 +2312,7 @@
         <var name="_params" id="1216125431295" />
         <var name="event" id="1216125431295" />
       </scope>
-      <unit id="1216125431295" at="19,0,78,0" name="jetbrains.mps.ide.actions.ShowNodeInInspector_Action" />
+      <unit id="1216125431295" at="19,0,77,0" name="jetbrains.mps.ide.actions.ShowNodeInInspector_Action" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895904a4(jetbrains.mps.ide.actions)/1216126715578">
@@ -15569,9 +15566,9 @@
       <node id="8394433674396748164" at="31,39,32,27" concept="13" />
       <node id="8394433674396727875" at="15,0,17,0" concept="4" trace="StyledTextPrinterImpl#()V" />
       <node id="8394433674396748159" at="31,0,34,0" concept="11" trace="getDocument#()Ljavax/swing/text/StyledDocument;" />
-      <node id="8394433674396747675" at="17,0,22,0" concept="11" trace="setBold#(Z)Ljetbrains/mps/editor/runtime/StyledTextPrinter;" />
+      <node id="8394433674396747675" at="17,0,22,0" concept="11" trace="setBold#(Z)Ljetbrains/mps/editor/runtime/style/StyledTextPrinter;" />
       <node id="8394433674396747729" at="23,48,28,5" concept="20" />
-      <node id="8394433674396747697" at="22,0,31,0" concept="11" trace="append#(Ljava/lang/String;)Ljetbrains/mps/editor/runtime/StyledTextPrinter;" />
+      <node id="8394433674396747697" at="22,0,31,0" concept="11" trace="append#(Ljava/lang/String;)Ljetbrains/mps/editor/runtime/style/StyledTextPrinter;" />
       <scope id="8394433674396727878" at="15,34,15,34" />
       <scope id="8394433674396747730" at="24,9,25,91" />
       <scope id="8394433674396747732" at="26,0,27,45">

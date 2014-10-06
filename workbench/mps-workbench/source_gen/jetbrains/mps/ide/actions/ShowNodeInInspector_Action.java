@@ -65,8 +65,7 @@ public class ShowNodeInInspector_Action extends BaseAction {
   }
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      InspectorEditorComponent inspector = (InspectorEditorComponent) ((EditorComponent) MapSequence.fromMap(_params).get("editor"));
-      inspector.editNode(((SNode) MapSequence.fromMap(_params).get("node")), inspector.getOperationContext());
+      ((InspectorEditorComponent) ((EditorComponent) MapSequence.fromMap(_params).get("editor"))).editNode(((SNode) MapSequence.fromMap(_params).get("node")));
     } catch (Throwable t) {
       if (LOG.isEnabledFor(Level.ERROR)) {
         LOG.error("User's action execute method failed. Action:" + "ShowNodeInInspector", t);

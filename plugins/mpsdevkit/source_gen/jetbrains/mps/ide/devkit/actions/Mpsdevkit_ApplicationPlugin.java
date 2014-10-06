@@ -58,7 +58,6 @@ public class Mpsdevkit_ApplicationPlugin extends BaseApplicationPlugin {
     addAction(new ShowGenerationTraceback_Action());
     addAction(new ShowNodeInExplorer_Action());
     addAction(new ShowStructure_Action());
-    addAction(new ShowTypeSystemTraceIncremental_Action());
     addAction(new ShowTypeSystemTrace_Action());
     // groups 
     addGroup(new AccessoriesGroupActions_ActionGroup());

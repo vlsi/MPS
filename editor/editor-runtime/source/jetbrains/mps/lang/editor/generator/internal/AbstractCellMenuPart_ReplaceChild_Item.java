@@ -19,14 +19,16 @@ import jetbrains.mps.editor.runtime.impl.CellUtil;
 import jetbrains.mps.lang.editor.cellProviders.AggregationCellContext;
 import jetbrains.mps.nodeEditor.cellMenu.BasicCellContext;
 import jetbrains.mps.nodeEditor.cellMenu.CellContext;
-import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPart;
 import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.SubstituteAction;
-import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.smodel.action.DefaultChildNodeSetter;
+import jetbrains.mps.smodel.action.DefaultChildNodeSubstituteAction;
+import jetbrains.mps.smodel.action.IChildNodeSetter;
+import jetbrains.mps.smodel.action.NodeFactoryManager;
 import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.smodel.*;
-import jetbrains.mps.smodel.action.*;
+import org.jetbrains.mps.openapi.model.SNode;
 
 import java.util.Collections;
 import java.util.List;
@@ -35,7 +37,7 @@ import java.util.List;
  * Igor Alshannikov
  * Date: Nov 29, 2006
  */
-public abstract class AbstractCellMenuPart_ReplaceChild_Item implements SubstituteInfoPart, SubstituteInfoPartExt {
+public abstract class AbstractCellMenuPart_ReplaceChild_Item implements SubstituteInfoPartExt {
   @Override
   public List<SubstituteAction> createActions(CellContext cellContext, final EditorContext editorContext) {
     final SNode parentNode = (SNode) cellContext.get(BasicCellContext.EDITED_NODE);
@@ -62,7 +64,7 @@ public abstract class AbstractCellMenuPart_ReplaceChild_Item implements Substitu
             SNode parameterNode = (SNode) parameterConcept;
             if (isCustomCreateChildNode()) {
               SNode newChild = AbstractCellMenuPart_ReplaceChild_Item.this.customCreateChildNode(parentNode, currentChild, defaultConceptOfChild,
-                  parentNode.getModel(),  context, editorContext);
+                  parentNode.getModel(), context, editorContext);
               if (newChild != null) {
                 NodeFactoryManager.setupNode(parameterNode, newChild, currentChild, parentNode, model);
               }
@@ -73,16 +75,11 @@ public abstract class AbstractCellMenuPart_ReplaceChild_Item implements Substitu
         });
   }
 
-  @Override
-  public List<INodeSubstituteAction> createActions(CellContext cellContext, jetbrains.mps.nodeEditor.EditorContext editorContext) {
-    return (List) createActions(cellContext, (EditorContext) editorContext);
-  }
-
   protected boolean isCustomCreateChildNode() {
     return false;
   }
 
-  protected abstract  SNode customCreateChildNode(SNode node, SNode currentChild, SNode defaultConceptOfChild, SModel model,
+  protected abstract SNode customCreateChildNode(SNode node, SNode currentChild, SNode defaultConceptOfChild, SModel model,
       IOperationContext operationContext, EditorContext editorContext);
 
   protected abstract String getMatchingText();

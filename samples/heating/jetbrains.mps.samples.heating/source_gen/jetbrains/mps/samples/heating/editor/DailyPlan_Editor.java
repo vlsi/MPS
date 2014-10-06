@@ -184,7 +184,7 @@ public class DailyPlan_Editor extends DefaultNodeEditor {
     }
     public SNode createNodeToInsert(EditorContext editorContext) {
       SNode listOwner = super.getOwner();
-      return this.nodeFactory(listOwner, editorContext);
+      return nodeFactory(listOwner, editorContext);
     }
     public SNode nodeFactory(SNode node, EditorContext editorContext) {
       SNode item = SNodeFactoryOperations.createNewNode("jetbrains.mps.samples.heating.structure.Slot", null);

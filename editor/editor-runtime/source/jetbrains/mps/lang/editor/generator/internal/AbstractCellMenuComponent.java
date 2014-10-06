@@ -15,14 +15,13 @@
  */
 package jetbrains.mps.lang.editor.generator.internal;
 
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 import jetbrains.mps.nodeEditor.cellMenu.CellContext;
-import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPart;
 import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.SubstituteAction;
-import jetbrains.mps.smodel.action.INodeSubstituteAction;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.LinkedList;
 import java.util.List;
@@ -34,52 +33,17 @@ import java.util.List;
 public abstract class AbstractCellMenuComponent {
   private static final Logger LOG = LogManager.getLogger(AbstractCellMenuComponent.class);
 
-  /**
-   * @deprecated starting from MPS 3.0 was replaced with <code>myExtParts</code> all usages should
-   *             be removed in the next release
-   */
-  @Deprecated
-  private SubstituteInfoPart[] myParts;
   private SubstituteInfoPartExt[] myExtParts;
 
-  /**
-   * @deprecated starting from MPS 3.0 another constructor should be used:
-   *             <code>AbstractCellMenuComponent(jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt parts)</code>
-   */
-  @Deprecated
-  public AbstractCellMenuComponent(SubstituteInfoPart[] menuParts) {
-    myParts = menuParts;
-  }
-
-  public AbstractCellMenuComponent(SubstituteInfoPartExt[] menuParts) {
+  public AbstractCellMenuComponent(@NotNull SubstituteInfoPartExt[] menuParts) {
     myExtParts = menuParts;
-  }
-
-  /**
-   * This method should be removed after MPS 3.0
-   *
-   * @deprecated starting from MPS 3.0 createSubstituteActions() should be used:
-   */
-  @Deprecated
-  public List<INodeSubstituteAction> createActions(CellContext cellContext, EditorContext editorContext) {
-    return (List) createSubstituteActions(cellContext, editorContext);
   }
 
   public List<SubstituteAction> createSubstituteActions(CellContext cellContext, EditorContext editorContext) {
     List<SubstituteAction> actions = new LinkedList<SubstituteAction>();
-    if (myExtParts != null) {
-      for (SubstituteInfoPartExt menuPart : myExtParts) {
-        try {
-          actions.addAll(menuPart.createActions(cellContext, editorContext));
-        } catch (Exception e) {
-          LOG.error(null, e);
-        }
-      }
-      return actions;
-    }
-    for (SubstituteInfoPart menuPart : myParts) {
+    for (SubstituteInfoPartExt menuPart : myExtParts) {
       try {
-        actions.addAll(menuPart.createActions(cellContext, (jetbrains.mps.nodeEditor.EditorContext) editorContext));
+        actions.addAll(menuPart.createActions(cellContext, editorContext));
       } catch (Exception e) {
         LOG.error(null, e);
       }

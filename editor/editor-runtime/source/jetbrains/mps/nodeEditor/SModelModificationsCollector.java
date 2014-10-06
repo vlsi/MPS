@@ -43,7 +43,8 @@ import java.util.Queue;
 public class SModelModificationsCollector extends SModelEventVisitorAdapter {
   private Collection<Pair<SNode, SNodeReference>> myModifications = null;
 
-  SModelModificationsCollector(List<SModelEvent> events) {
+  // TODO: move to jetbrains.mps.nodeEditor.updater package, make package-local
+  public SModelModificationsCollector(List<SModelEvent> events) {
     if (events == null) {
       return;
     }

@@ -17,7 +17,6 @@ package jetbrains.mps.lang.editor.generator.internal;
 
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellContext;
 import jetbrains.mps.nodeEditor.cellMenu.CellContext;
-import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPart;
 import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.openapi.editor.EditorContext;
@@ -26,7 +25,6 @@ import jetbrains.mps.openapi.editor.cells.SubstituteAction;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.PropertySupport;
 import jetbrains.mps.smodel.action.AbstractNodeSubstituteAction;
-import jetbrains.mps.smodel.action.INodeSubstituteAction;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.PatternUtil;
 import org.apache.log4j.LogManager;
@@ -43,7 +41,7 @@ import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public abstract class AbstractCellMenuPart_PropertyPostfixHints implements SubstituteInfoPart, SubstituteInfoPartExt {
+public abstract class AbstractCellMenuPart_PropertyPostfixHints implements SubstituteInfoPartExt {
   private static final Logger LOG = LogManager.getLogger(AbstractCellMenuPart_PropertyPostfixHints.class);
 
   @Override
@@ -75,11 +73,6 @@ public abstract class AbstractCellMenuPart_PropertyPostfixHints implements Subst
           propertySupport, property.getName()));
     }
     return actions;
-  }
-
-  @Override
-  public List<INodeSubstituteAction> createActions(CellContext cellContext, jetbrains.mps.nodeEditor.EditorContext editorContext) {
-    return (List) createActions(cellContext, (EditorContext) editorContext);
   }
 
   public abstract List<String> getPostfixes(SNode node, IOperationContext operationContext, EditorContext editorContext);

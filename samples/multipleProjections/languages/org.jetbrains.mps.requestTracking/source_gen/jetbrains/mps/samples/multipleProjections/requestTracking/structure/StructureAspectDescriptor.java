@@ -5,13 +5,16 @@ package jetbrains.mps.samples.multipleProjections.requestTracking.structure;
 import jetbrains.mps.smodel.runtime.BaseStructureAspectDescriptor;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder;
+import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
+import java.util.UUID;
 import java.util.Collection;
 import java.util.Arrays;
 import org.jetbrains.annotations.Nullable;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
-  /*package*/ final ConceptDescriptor myConceptWorkflow = new ConceptDescriptorBuilder("jetbrains.mps.samples.multipleProjections.requestTracking.structure.Workflow").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept").properties("presentation").children(new String[]{"stateMachine"}, new boolean[]{false}).create();
-  /*package*/ final ConceptDescriptor myConceptWorkflowContainer = new ConceptDescriptorBuilder("jetbrains.mps.samples.multipleProjections.requestTracking.structure.WorkflowContainer").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept").children(new String[]{"workflows"}, new boolean[]{true}).create();
+
+  /*package*/ final ConceptDescriptor myConceptWorkflow = new ConceptDescriptorBuilder("jetbrains.mps.samples.multipleProjections.requestTracking.structure.Workflow", MetaIdFactory.conceptId(UUID.fromString("8d18a45b-ac7e-4d84-a539-75f1d720b09b"), 3675491646420739318L)).super_("jetbrains.mps.lang.core.structure.BaseConcept").super_(MetaIdFactory.conceptId(UUID.fromString("8d18a45b-ac7e-4d84-a539-75f1d720b09b"), 1133920641626L)).parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept").parentIds(MetaIdFactory.conceptId(UUID.fromString("8d18a45b-ac7e-4d84-a539-75f1d720b09b"), 1133920641626L), MetaIdFactory.conceptId(UUID.fromString("8d18a45b-ac7e-4d84-a539-75f1d720b09b"), 1169194658468L)).propertyDescriptors(new ConceptDescriptorBuilder.Prop(3675491646420872268L, "presentation")).properties("presentation").childDescriptors(new ConceptDescriptorBuilder.Link(3675491646420739343L, "stateMachine", MetaIdFactory.conceptId(UUID.fromString("8d18a45b-ac7e-4d84-a539-75f1d720b09b"), 763922957008726945L), false, false, false)).children(new String[]{"stateMachine"}, new boolean[]{false}).create();
+  /*package*/ final ConceptDescriptor myConceptWorkflowContainer = new ConceptDescriptorBuilder("jetbrains.mps.samples.multipleProjections.requestTracking.structure.WorkflowContainer", MetaIdFactory.conceptId(UUID.fromString("8d18a45b-ac7e-4d84-a539-75f1d720b09b"), 3675491646420733795L)).super_("jetbrains.mps.lang.core.structure.BaseConcept").super_(MetaIdFactory.conceptId(UUID.fromString("8d18a45b-ac7e-4d84-a539-75f1d720b09b"), 1133920641626L)).parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept").parentIds(MetaIdFactory.conceptId(UUID.fromString("8d18a45b-ac7e-4d84-a539-75f1d720b09b"), 1133920641626L), MetaIdFactory.conceptId(UUID.fromString("8d18a45b-ac7e-4d84-a539-75f1d720b09b"), 1169194658468L)).childDescriptors(new ConceptDescriptorBuilder.Link(3675491646420738766L, "workflows", MetaIdFactory.conceptId(UUID.fromString("8d18a45b-ac7e-4d84-a539-75f1d720b09b"), 3675491646420739318L), true, true, false)).children(new String[]{"workflows"}, new boolean[]{true}).create();
 
   @Override
   public Collection<ConceptDescriptor> getDescriptors() {
@@ -21,7 +24,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   @Override
   @Nullable
   public ConceptDescriptor getDescriptor(String conceptFqName) {
-    switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0f, conceptFqName)) {
+    switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0g, conceptFqName)) {
       case 0:
         return myConceptWorkflow;
       case 1:
@@ -30,5 +33,5 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
         return null;
     }
   }
-  private static String[] stringSwitchCases_1htk8d_a0a0f = new String[]{"jetbrains.mps.samples.multipleProjections.requestTracking.structure.Workflow", "jetbrains.mps.samples.multipleProjections.requestTracking.structure.WorkflowContainer"};
+  private static String[] stringSwitchCases_1htk8d_a0a0g = new String[]{"jetbrains.mps.samples.multipleProjections.requestTracking.structure.Workflow", "jetbrains.mps.samples.multipleProjections.requestTracking.structure.WorkflowContainer"};
 }

@@ -36,13 +36,12 @@ public class EditorResolver implements IResolver {
   private class FakeEditorComponent extends EditorComponent {
     public FakeEditorComponent(SNode node, SRepository repository) {
       super(repository);
-      setEditorContext(SNodeOperations.getModel(node), repository);
       editNode(node);
     }
 
     @Override
     protected EditorCell createRootCell(List<SModelEvent> events) {
-      return getEditorContext().createRootCell(getEditedNode(), events);
+      return (EditorCell) getUpdater().updateRootCell(getEditedNode(), events);
     }
 
     @Override

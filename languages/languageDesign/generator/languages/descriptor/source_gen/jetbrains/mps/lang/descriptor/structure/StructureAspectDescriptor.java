@@ -5,12 +5,15 @@ package jetbrains.mps.lang.descriptor.structure;
 import jetbrains.mps.smodel.runtime.BaseStructureAspectDescriptor;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder;
+import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
+import java.util.UUID;
 import java.util.Collection;
 import java.util.Arrays;
 import org.jetbrains.annotations.Nullable;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
-  /*package*/ final ConceptDescriptor myConceptLanguageDescriptor = new ConceptDescriptorBuilder("jetbrains.mps.lang.descriptor.structure.LanguageDescriptor").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept").children(new String[]{"language"}, new boolean[]{false}).create();
+
+  /*package*/ final ConceptDescriptor myConceptLanguageDescriptor = new ConceptDescriptorBuilder("jetbrains.mps.lang.descriptor.structure.LanguageDescriptor", MetaIdFactory.conceptId(UUID.fromString("f4ad079d-bc71-4ffb-9600-9328705cf998"), 9020561928507175845L)).super_("jetbrains.mps.lang.core.structure.BaseConcept").super_(MetaIdFactory.conceptId(UUID.fromString("f4ad079d-bc71-4ffb-9600-9328705cf998"), 1133920641626L)).parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept").parentIds(MetaIdFactory.conceptId(UUID.fromString("f4ad079d-bc71-4ffb-9600-9328705cf998"), 1133920641626L), MetaIdFactory.conceptId(UUID.fromString("f4ad079d-bc71-4ffb-9600-9328705cf998"), 1169194658468L)).childDescriptors(new ConceptDescriptorBuilder.Link(1698302279987270971L, "language", MetaIdFactory.conceptId(UUID.fromString("f4ad079d-bc71-4ffb-9600-9328705cf998"), 6370754048397540895L), false, false, false)).children(new String[]{"language"}, new boolean[]{false}).create();
 
   @Override
   public Collection<ConceptDescriptor> getDescriptors() {
@@ -20,12 +23,12 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   @Override
   @Nullable
   public ConceptDescriptor getDescriptor(String conceptFqName) {
-    switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0e, conceptFqName)) {
+    switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0f, conceptFqName)) {
       case 0:
         return myConceptLanguageDescriptor;
       default:
         return null;
     }
   }
-  private static String[] stringSwitchCases_1htk8d_a0a0e = new String[]{"jetbrains.mps.lang.descriptor.structure.LanguageDescriptor"};
+  private static String[] stringSwitchCases_1htk8d_a0a0f = new String[]{"jetbrains.mps.lang.descriptor.structure.LanguageDescriptor"};
 }

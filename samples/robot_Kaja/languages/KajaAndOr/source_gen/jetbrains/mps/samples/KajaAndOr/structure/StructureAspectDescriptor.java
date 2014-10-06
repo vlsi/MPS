@@ -5,14 +5,17 @@ package jetbrains.mps.samples.KajaAndOr.structure;
 import jetbrains.mps.smodel.runtime.BaseStructureAspectDescriptor;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder;
+import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
+import java.util.UUID;
 import java.util.Collection;
 import java.util.Arrays;
 import org.jetbrains.annotations.Nullable;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
-  /*package*/ final ConceptDescriptor myConceptAnd = new ConceptDescriptorBuilder("jetbrains.mps.samples.KajaAndOr.structure.And").super_("jetbrains.mps.samples.KajaAndOr.structure.LogicalOperator").parents("jetbrains.mps.samples.KajaAndOr.structure.LogicalOperator").alias("and", "").create();
-  /*package*/ final ConceptDescriptor myConceptLogicalOperator = new ConceptDescriptorBuilder("jetbrains.mps.samples.KajaAndOr.structure.LogicalOperator").super_("jetbrains.mps.samples.Kaja.structure.LogicalExpression").parents("jetbrains.mps.samples.Kaja.structure.LogicalExpression", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault").children(new String[]{"left", "right"}, new boolean[]{false, false}).abstract_().create();
-  /*package*/ final ConceptDescriptor myConceptOr = new ConceptDescriptorBuilder("jetbrains.mps.samples.KajaAndOr.structure.Or").super_("jetbrains.mps.samples.KajaAndOr.structure.LogicalOperator").parents("jetbrains.mps.samples.KajaAndOr.structure.LogicalOperator").alias("or", "").create();
+
+  /*package*/ final ConceptDescriptor myConceptAnd = new ConceptDescriptorBuilder("jetbrains.mps.samples.KajaAndOr.structure.And", MetaIdFactory.conceptId(UUID.fromString("44306fd2-ef94-4b56-9806-d9ab509536db"), 1904811872814253578L)).super_("jetbrains.mps.samples.KajaAndOr.structure.LogicalOperator").super_(MetaIdFactory.conceptId(UUID.fromString("44306fd2-ef94-4b56-9806-d9ab509536db"), 1904811872814253785L)).parents("jetbrains.mps.samples.KajaAndOr.structure.LogicalOperator").parentIds(MetaIdFactory.conceptId(UUID.fromString("44306fd2-ef94-4b56-9806-d9ab509536db"), 1904811872814253785L)).alias("and", "").create();
+  /*package*/ final ConceptDescriptor myConceptLogicalOperator = new ConceptDescriptorBuilder("jetbrains.mps.samples.KajaAndOr.structure.LogicalOperator", MetaIdFactory.conceptId(UUID.fromString("44306fd2-ef94-4b56-9806-d9ab509536db"), 1904811872814253785L)).super_("jetbrains.mps.samples.Kaja.structure.LogicalExpression").super_(MetaIdFactory.conceptId(UUID.fromString("44306fd2-ef94-4b56-9806-d9ab509536db"), 3308300503039647681L)).parents("jetbrains.mps.samples.Kaja.structure.LogicalExpression", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault").parentIds(MetaIdFactory.conceptId(UUID.fromString("44306fd2-ef94-4b56-9806-d9ab509536db"), 3308300503039647681L), MetaIdFactory.conceptId(UUID.fromString("44306fd2-ef94-4b56-9806-d9ab509536db"), 1835621062190663819L)).childDescriptors(new ConceptDescriptorBuilder.Link(1904811872814253580L, "left", MetaIdFactory.conceptId(UUID.fromString("44306fd2-ef94-4b56-9806-d9ab509536db"), 3308300503039647681L), false, false, false), new ConceptDescriptorBuilder.Link(1904811872814253581L, "right", MetaIdFactory.conceptId(UUID.fromString("44306fd2-ef94-4b56-9806-d9ab509536db"), 3308300503039647681L), false, false, false)).children(new String[]{"left", "right"}, new boolean[]{false, false}).abstract_().create();
+  /*package*/ final ConceptDescriptor myConceptOr = new ConceptDescriptorBuilder("jetbrains.mps.samples.KajaAndOr.structure.Or", MetaIdFactory.conceptId(UUID.fromString("44306fd2-ef94-4b56-9806-d9ab509536db"), 1904811872814253755L)).super_("jetbrains.mps.samples.KajaAndOr.structure.LogicalOperator").super_(MetaIdFactory.conceptId(UUID.fromString("44306fd2-ef94-4b56-9806-d9ab509536db"), 1904811872814253785L)).parents("jetbrains.mps.samples.KajaAndOr.structure.LogicalOperator").parentIds(MetaIdFactory.conceptId(UUID.fromString("44306fd2-ef94-4b56-9806-d9ab509536db"), 1904811872814253785L)).alias("or", "").create();
 
   @Override
   public Collection<ConceptDescriptor> getDescriptors() {
@@ -22,7 +25,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   @Override
   @Nullable
   public ConceptDescriptor getDescriptor(String conceptFqName) {
-    switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0g, conceptFqName)) {
+    switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0h, conceptFqName)) {
       case 0:
         return myConceptAnd;
       case 1:
@@ -33,5 +36,5 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
         return null;
     }
   }
-  private static String[] stringSwitchCases_1htk8d_a0a0g = new String[]{"jetbrains.mps.samples.KajaAndOr.structure.And", "jetbrains.mps.samples.KajaAndOr.structure.LogicalOperator", "jetbrains.mps.samples.KajaAndOr.structure.Or"};
+  private static String[] stringSwitchCases_1htk8d_a0a0h = new String[]{"jetbrains.mps.samples.KajaAndOr.structure.And", "jetbrains.mps.samples.KajaAndOr.structure.LogicalOperator", "jetbrains.mps.samples.KajaAndOr.structure.Or"};
 }

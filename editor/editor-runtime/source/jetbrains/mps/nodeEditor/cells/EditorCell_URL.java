@@ -55,7 +55,8 @@ public class EditorCell_URL extends EditorCell_Property {
     EditorCell_URL result = new EditorCell_URL(editorContext, accessor, node);
     if (listener != null) {
       for (Pair<SNodeReference, String> pair : listener.popCleanlyReadAccessedProperties()) {
-        result.getEditor().addCellDependentOnNodeProperty(result, pair);
+        // TODO: specify property name directly - we know it from PropertyAccessor
+        result.getEditorComponent().getUpdater().getCurrentUpdateSession().registerCleanDependency(result, pair);
       }
     }
     return result;

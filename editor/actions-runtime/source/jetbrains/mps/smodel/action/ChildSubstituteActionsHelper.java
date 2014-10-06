@@ -114,7 +114,7 @@ public class ChildSubstituteActionsHelper {
     List<SubstituteAction> resultActions = new ArrayList<SubstituteAction>();
     List<SNode> allBuilders = ChildSubstituteActionsUtil.getActionsBuilders(parentNode, currentChild, childConcept, childSetter, context);
     if (!ChildSubstituteActionsUtil.containsRemoveDefaults(allBuilders)) {
-      resultActions.addAll(createPrimaryChildSubstituteActions(parentNode, currentChild, childConcept, childSetter, context));
+      resultActions.addAll(createPrimaryChildSubstituteActions(parentNode, currentChild, childConcept, childSetter));
     }
 
     for (SNode builder : allBuilders) {
@@ -152,7 +152,7 @@ public class ChildSubstituteActionsHelper {
   }
 
   private static List<SubstituteAction> createPrimaryChildSubstituteActions(SNode parentNode, SNode currentChild, SNode childConcept,
-      IChildNodeSetter childSetter, IOperationContext context) {
+      IChildNodeSetter childSetter) {
     assert childConcept != null;
 
     String childConceptFqName = NameUtil.nodeFQName(childConcept);
@@ -165,14 +165,14 @@ public class ChildSubstituteActionsHelper {
     for (String fqName : concepts) {
       SNode applicableConcept = SModelUtil.findConceptDeclaration(fqName);
       assert applicableConcept != null : "No concept " + fqName;
-      actions.addAll(createDefaultSubstituteActions(applicableConcept, parentNode, currentChild, childSetter, context));
+      actions.addAll(createDefaultSubstituteActions(applicableConcept, parentNode, currentChild, childSetter));
     }
 
     return actions;
   }
 
   /**
-   * @deprecated since MPS 3.1 use:
+   * @deprecated since MPS 3.2 use:
    * createDefaultSubstituteActions(@NotNull SNode applicableConcept, SNode parentNode, SNode currentChild, IChildNodeSetter setter)
    *
    * Should be removed when all user code is migrated to new method

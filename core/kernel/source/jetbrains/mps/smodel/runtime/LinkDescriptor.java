@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2014 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,12 +13,21 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.nodeEditor;
+package jetbrains.mps.smodel.runtime;
 
-/**
- * @deprecated remove after MPS 3.0
- */
-@Deprecated
-public enum FocusPolicy {
-  NONE, ATTRACTS_FOCUS, ATTRACTS_RECURSIVELY, FIRST_EDITABLE_CELL
+import org.jetbrains.mps.openapi.language.SConceptId;
+import org.jetbrains.mps.openapi.language.SContainmentLinkId;
+
+public interface LinkDescriptor {
+  SContainmentLinkId getId();
+
+  String getName();
+
+  SConceptId getTargetConcept();
+
+  boolean isOptional();
+
+  boolean isMultiple();
+
+  boolean isUnordered();
 }

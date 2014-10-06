@@ -5,13 +5,16 @@ package jetbrains.mps.traceInfo.tracemacro.testlang.structure;
 import jetbrains.mps.smodel.runtime.BaseStructureAspectDescriptor;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder;
+import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
+import java.util.UUID;
 import jetbrains.mps.smodel.runtime.StaticScope;
 import java.util.Collection;
 import java.util.Arrays;
 import org.jetbrains.annotations.Nullable;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
-  /*package*/ final ConceptDescriptor myConceptGeneratedForeach = new ConceptDescriptorBuilder("jetbrains.mps.traceInfo.tracemacro.testlang.structure.GeneratedForeach").super_("jetbrains.mps.baseLanguage.collections.structure.ForEachStatement").parents("jetbrains.mps.baseLanguage.collections.structure.ForEachStatement").staticScope(StaticScope.NONE).create();
+
+  /*package*/ final ConceptDescriptor myConceptGeneratedForeach = new ConceptDescriptorBuilder("jetbrains.mps.traceInfo.tracemacro.testlang.structure.GeneratedForeach", MetaIdFactory.conceptId(UUID.fromString("140c4818-bfbc-4850-bf7c-e3d80739a03c"), 7980748436587788162L)).super_("jetbrains.mps.baseLanguage.collections.structure.ForEachStatement").super_(MetaIdFactory.conceptId(UUID.fromString("140c4818-bfbc-4850-bf7c-e3d80739a03c"), 1153943597977L)).parents("jetbrains.mps.baseLanguage.collections.structure.ForEachStatement").parentIds(MetaIdFactory.conceptId(UUID.fromString("140c4818-bfbc-4850-bf7c-e3d80739a03c"), 1153943597977L)).staticScope(StaticScope.NONE).create();
 
   @Override
   public Collection<ConceptDescriptor> getDescriptors() {
@@ -21,12 +24,12 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   @Override
   @Nullable
   public ConceptDescriptor getDescriptor(String conceptFqName) {
-    switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0e, conceptFqName)) {
+    switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0f, conceptFqName)) {
       case 0:
         return myConceptGeneratedForeach;
       default:
         return null;
     }
   }
-  private static String[] stringSwitchCases_1htk8d_a0a0e = new String[]{"jetbrains.mps.traceInfo.tracemacro.testlang.structure.GeneratedForeach"};
+  private static String[] stringSwitchCases_1htk8d_a0a0f = new String[]{"jetbrains.mps.traceInfo.tracemacro.testlang.structure.GeneratedForeach"};
 }

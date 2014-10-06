@@ -76,7 +76,7 @@ class AutoValidator {
                   mySuppressSelectionChanges = true;
                   try {
                     APICellAdapter.validate(cell, true, false);
-                    editorComponentInternal.flushEvents();
+                    editorComponentInternal.getUpdater().flushModelEvents();
                     editorComponent.getEditorContext().setMemento(memento);
                   } finally {
                     mySuppressSelectionChanges = false;

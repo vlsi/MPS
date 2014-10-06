@@ -3653,7 +3653,7 @@
     <classNode dependClassName="javax.swing.text.SimpleAttributeSet" />
     <classNode dependClassName="javax.swing.text.StyleConstants" />
     <classNode dependClassName="javax.swing.text.StyledDocument" />
-    <classNode extendsClassName="jetbrains.mps.editor.runtime.StyledTextPrinter" />
+    <classNode extendsClassName="jetbrains.mps.editor.runtime.style.StyledTextPrinter" />
   </dependency>
   <dependency className="jetbrains.mps.ide.actions.SubmitToTracker_Action" file="SubmitToTracker_Action.java">
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />

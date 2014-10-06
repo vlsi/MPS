@@ -1951,7 +1951,7 @@
       <node id="5142486769432525876" at="66,5,67,62" concept="8" />
       <node id="5142486769432525883" at="69,98,70,32" concept="7" />
       <node id="5142486769432525886" at="72,30,73,63" concept="8" />
-      <node id="5142486769432525883" at="75,16,76,45" concept="2" />
+      <node id="5142486769432525883" at="75,17,76,45" concept="2" />
       <node id="5142486769432525883" at="76,45,77,29" concept="2" />
       <node id="5142486769432525883" at="77,29,78,22" concept="8" />
       <node id="5142486769432525890" at="80,89,81,95" concept="7" />
@@ -2003,7 +2003,7 @@
       <node id="5142486769432525883" at="72,0,75,0" concept="6" trace="invoke#()Ljava/lang/String;" />
       <node id="5142486769432525895" at="129,0,132,0" concept="10" trace="_QueryFunction_JComponent_6g738i_a2b0#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Ljavax/swing/JComponent;" />
       <node id="5142486769432525834" at="50,33,55,5" concept="5" />
-      <node id="5142486769432525883" at="70,32,75,16" concept="2" />
+      <node id="5142486769432525883" at="70,32,75,17" concept="2" />
       <node id="5142486769432525834" at="124,0,129,0" concept="6" trace="createJComponent_6g738i_c1a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
       <node id="5142486769432525890" at="80,0,86,0" concept="6" trace="createConstant_6g738i_a0a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
       <node id="5142486769432525892" at="97,0,103,0" concept="6" trace="createConstant_6g738i_a1a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
@@ -2111,7 +2111,7 @@
         <var name="editorContext" id="5142486769432525893" />
         <var name="node" id="5142486769432525893" />
       </scope>
-      <unit id="5142486769432525883" at="71,75,75,5" name="jetbrains.mps.lang.editor.diagram.editor.IconSelectorComponent$1" />
+      <unit id="5142486769432525883" at="71,125,75,5" name="jetbrains.mps.lang.editor.diagram.editor.IconSelectorComponent$1" />
       <unit id="5142486769432525834" at="33,0,133,0" name="jetbrains.mps.lang.editor.diagram.editor.IconSelectorComponent" />
     </file>
   </root>

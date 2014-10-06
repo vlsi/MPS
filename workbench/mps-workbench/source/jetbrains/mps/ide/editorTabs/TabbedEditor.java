@@ -289,18 +289,12 @@ public class TabbedEditor extends BaseNodeEditor {
     }
   }
 
-  /**
-   * Implementation should be moved to saveState()
-   *
-   * @deprecated since MPS 3.1
-   */
-  @Deprecated
   @Override
-  public EditorState saveState(boolean full) {
+  public EditorState saveState() {
     TabbedEditorState state = new TabbedEditorState();
     state.myCurrentNode = getCurrentlyEditedNode();
 
-    BaseEditorState superState = (BaseEditorState) super.saveState(full);
+    BaseEditorState superState = (BaseEditorState) super.saveState();
     state.refCopyFrom(superState);
     return state;
   }

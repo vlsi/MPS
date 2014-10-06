@@ -100,7 +100,7 @@
       <node id="9186828658635975749" at="119,5,124,5" concept="6" />
       <node id="1189585833182" at="90,18,96,5" concept="7" />
       <node id="9186828658636904079" at="142,94,149,5" concept="8" />
-      <node id="9186828658636980497" at="150,242,157,7" concept="8" />
+      <node id="9186828658636980497" at="150,317,157,7" concept="8" />
       <node id="9186828658636954732" at="149,5,158,5" concept="6" />
       <node id="1189585733348" at="88,0,99,0" concept="14" trace="keyMapActionClassName#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
       <node id="1233319014842" at="99,0,115,0" concept="14" trace="getUnicName#(Ljava/lang/String;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/generator/template/TemplateQueryContext;)Ljava/lang/String;" />
@@ -159,7 +159,7 @@
       <scope id="1189585833182" at="90,18,96,5">
         <var name="curItem" id="1189585833183" />
       </scope>
-      <scope id="9186828658636954735" at="150,242,157,7" />
+      <scope id="9186828658636954735" at="150,317,157,7" />
       <scope id="1189585733351" at="88,64,97,88">
         <var name="index" id="1189585806716" />
         <var name="keyMapDeclaration" id="1189585802293" />

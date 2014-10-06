@@ -5992,7 +5992,7 @@
       <node id="1210687015722" at="254,86,255,22" concept="8" />
       <node id="1210687257453" at="257,102,258,32" concept="7" />
       <node id="1210687257456" at="260,30,261,59" concept="8" />
-      <node id="1210687257453" at="263,16,264,49" concept="2" />
+      <node id="1210687257453" at="263,17,264,49" concept="2" />
       <node id="1210687257453" at="264,49,265,29" concept="2" />
       <node id="1210687257453" at="265,29,266,22" concept="8" />
       <node id="1210687257460" at="268,93,269,82" concept="7" />
@@ -6149,7 +6149,7 @@
       <node id="1210687015722" at="447,0,450,0" concept="10" trace="renderingCondition_fl5ndt_a2a#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Z" />
       <node id="1210687015722" at="126,0,130,0" concept="6" trace="createIndentCell_fl5ndt_a1a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
       <node id="1210687015722" at="231,33,236,5" concept="5" />
-      <node id="1210687257453" at="258,32,263,16" concept="2" />
+      <node id="1210687257453" at="258,32,263,17" concept="2" />
       <node id="1210687015722" at="296,0,301,0" concept="6" trace="createJComponent_fl5ndt_d1b1a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
       <node id="1217941362301" at="76,0,82,0" concept="6" trace="createConstant_fl5ndt_a0a0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
       <node id="1210687069528" at="94,59,100,22" concept="5" />
@@ -6561,7 +6561,7 @@
         <var name="editorContext" id="1210687069528" />
         <var name="node" id="1210687069528" />
       </scope>
-      <unit id="1210687257453" at="259,75,263,5" name="jetbrains.mps.lang.plugin.editor.PreferencePage_Editor$1" />
+      <unit id="1210687257453" at="259,125,263,5" name="jetbrains.mps.lang.plugin.editor.PreferencePage_Editor$1" />
       <unit id="1210687015722" at="39,0,451,0" name="jetbrains.mps.lang.plugin.editor.PreferencePage_Editor" />
     </file>
   </root>

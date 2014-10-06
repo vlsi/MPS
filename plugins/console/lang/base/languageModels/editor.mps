@@ -220,7 +220,7 @@
         </node>
       </node>
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="2388219800763587730" nodeInfo="nn">
-        <property name="text" nameId="tpc2.1073389577007" value="Use Ctrl+M and Ctrl+L to add imports and languages." />
+        <property name="text" nameId="tpc2.1073389577007" value="Use Ctrl+M, Ctrl+R and Ctrl+L to add imports and languages." />
         <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.FontStyleStyleClassItem" typeId="tpc2.1186403751766" id="2388219800763606508" nodeInfo="nn" />
       </node>
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_RefNode" typeId="tpc2.1073389882823" id="1583916890557947366" nodeInfo="ng">
@@ -241,7 +241,7 @@
     <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="eynw.1377757278865717087" resolveInfo="OutputConsoleRoot" />
     <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_RefNode" typeId="tpc2.1073389882823" id="1377757278865723133" nodeInfo="ng">
       <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="eynw.1583916890557930415" />
-      <link role="parentStyleClass" roleId="tpc2.1381004262292426837" targetNodeId="7409036893176441979" resolveInfo="readOnly" />
+      <link role="parentStyleClass" roleId="tpc2.1381004262292426837" targetNodeId="7409036893176441979" resolveInfo="ReadOnly" />
     </node>
   </root>
   <root type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="5637103006919121966" nodeInfo="ng">

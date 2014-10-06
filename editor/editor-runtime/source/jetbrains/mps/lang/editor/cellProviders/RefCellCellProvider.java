@@ -28,6 +28,7 @@ import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.smodel.presentation.ReferenceConceptUtil;
+import jetbrains.mps.util.Computable;
 import org.jetbrains.mps.openapi.model.SNode;
 
 import java.util.Iterator;
@@ -40,8 +41,8 @@ public class RefCellCellProvider extends AbstractReferentCellProvider {
   }
 
   @Override
-  protected EditorCell createRefCell(EditorContext context, final SNode effectiveNode, SNode node) {
-    AbstractCellProvider inlineComponent = myAuxiliaryCellProvider;
+  protected EditorCell createRefCell(final EditorContext context, final SNode effectiveNode, SNode node) {
+    final AbstractCellProvider inlineComponent = myAuxiliaryCellProvider;
     myAuxiliaryCellProvider.setSNode(effectiveNode);
     if (inlineComponent instanceof InlineCellProvider) {
       InlineCellProvider inlineComponentProvider = (InlineCellProvider) inlineComponent;
@@ -51,7 +52,12 @@ public class RefCellCellProvider extends AbstractReferentCellProvider {
     if (myIsAggregation) {
       editorCell = inlineComponent.createEditorCell(context);
     } else {
-      editorCell = ((jetbrains.mps.nodeEditor.EditorContext) context).createReferentCell(inlineComponent, getSNode(), effectiveNode, myGenuineRole);
+      editorCell = context.getEditorComponent().getUpdater().getCurrentUpdateSession().updateReferencedNodeCell(new Computable<EditorCell>() {
+        @Override
+        public EditorCell compute() {
+          return inlineComponent.createEditorCell(context);
+        }
+      }, effectiveNode, myGenuineRole);
       CellUtil.setupIDeprecatableStyles(effectiveNode, editorCell);
     }
     setSemanticNodeToCells(editorCell, node);

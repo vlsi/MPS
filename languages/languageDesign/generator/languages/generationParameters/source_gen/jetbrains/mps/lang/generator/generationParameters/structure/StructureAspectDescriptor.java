@@ -5,15 +5,18 @@ package jetbrains.mps.lang.generator.generationParameters.structure;
 import jetbrains.mps.smodel.runtime.BaseStructureAspectDescriptor;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder;
+import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
+import java.util.UUID;
 import jetbrains.mps.smodel.runtime.StaticScope;
 import java.util.Collection;
 import java.util.Arrays;
 import org.jetbrains.annotations.Nullable;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
-  /*package*/ final ConceptDescriptor myConceptDefaultGenerationParameterId = new ConceptDescriptorBuilder("jetbrains.mps.lang.generator.generationParameters.structure.DefaultGenerationParameterId").super_("jetbrains.mps.baseLanguage.structure.Expression").parents("jetbrains.mps.baseLanguage.structure.Expression").references("container", "parameter").alias("genParameter<..>", "").staticScope(StaticScope.NONE).create();
-  /*package*/ final ConceptDescriptor myConceptDefaultGeneratorParameter = new ConceptDescriptorBuilder("jetbrains.mps.lang.generator.generationParameters.structure.DefaultGeneratorParameter").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.generator.structure.IGeneratorParameter", "jetbrains.mps.lang.core.structure.INamedConcept").alias("", "generation parameter").create();
-  /*package*/ final ConceptDescriptor myConceptDefaultGeneratorParameterContainer = new ConceptDescriptorBuilder("jetbrains.mps.lang.generator.generationParameters.structure.DefaultGeneratorParameterContainer").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept").children(new String[]{"parameters"}, new boolean[]{true}).alias("generator parameters", "").create();
+
+  /*package*/ final ConceptDescriptor myConceptDefaultGenerationParameterId = new ConceptDescriptorBuilder("jetbrains.mps.lang.generator.generationParameters.structure.DefaultGenerationParameterId", MetaIdFactory.conceptId(UUID.fromString("289fcc83-6543-41e8-a5ca-768235715ce4"), 3064182000795631740L)).super_("jetbrains.mps.baseLanguage.structure.Expression").super_(MetaIdFactory.conceptId(UUID.fromString("289fcc83-6543-41e8-a5ca-768235715ce4"), 1068431790191L)).parents("jetbrains.mps.baseLanguage.structure.Expression").parentIds(MetaIdFactory.conceptId(UUID.fromString("289fcc83-6543-41e8-a5ca-768235715ce4"), 1068431790191L)).referenceDescriptors(new ConceptDescriptorBuilder.Ref(3064182000795631810L, "container", MetaIdFactory.conceptId(UUID.fromString("289fcc83-6543-41e8-a5ca-768235715ce4"), 8484425748929510072L), false), new ConceptDescriptorBuilder.Ref(3064182000795631811L, "parameter", MetaIdFactory.conceptId(UUID.fromString("289fcc83-6543-41e8-a5ca-768235715ce4"), 8484425748929510068L), false)).references("container", "parameter").alias("genParameter<..>", "").staticScope(StaticScope.NONE).create();
+  /*package*/ final ConceptDescriptor myConceptDefaultGeneratorParameter = new ConceptDescriptorBuilder("jetbrains.mps.lang.generator.generationParameters.structure.DefaultGeneratorParameter", MetaIdFactory.conceptId(UUID.fromString("289fcc83-6543-41e8-a5ca-768235715ce4"), 8484425748929510068L)).super_("jetbrains.mps.lang.core.structure.BaseConcept").super_(MetaIdFactory.conceptId(UUID.fromString("289fcc83-6543-41e8-a5ca-768235715ce4"), 1133920641626L)).parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.generator.structure.IGeneratorParameter", "jetbrains.mps.lang.core.structure.INamedConcept").parentIds(MetaIdFactory.conceptId(UUID.fromString("289fcc83-6543-41e8-a5ca-768235715ce4"), 1133920641626L), MetaIdFactory.conceptId(UUID.fromString("289fcc83-6543-41e8-a5ca-768235715ce4"), 650531548511609556L), MetaIdFactory.conceptId(UUID.fromString("289fcc83-6543-41e8-a5ca-768235715ce4"), 1169194658468L)).alias("", "generation parameter").create();
+  /*package*/ final ConceptDescriptor myConceptDefaultGeneratorParameterContainer = new ConceptDescriptorBuilder("jetbrains.mps.lang.generator.generationParameters.structure.DefaultGeneratorParameterContainer", MetaIdFactory.conceptId(UUID.fromString("289fcc83-6543-41e8-a5ca-768235715ce4"), 8484425748929510072L)).super_("jetbrains.mps.lang.core.structure.BaseConcept").super_(MetaIdFactory.conceptId(UUID.fromString("289fcc83-6543-41e8-a5ca-768235715ce4"), 1133920641626L)).parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept").parentIds(MetaIdFactory.conceptId(UUID.fromString("289fcc83-6543-41e8-a5ca-768235715ce4"), 1133920641626L), MetaIdFactory.conceptId(UUID.fromString("289fcc83-6543-41e8-a5ca-768235715ce4"), 1169194658468L)).childDescriptors(new ConceptDescriptorBuilder.Link(8484425748929510073L, "parameters", MetaIdFactory.conceptId(UUID.fromString("289fcc83-6543-41e8-a5ca-768235715ce4"), 8484425748929510068L), true, true, false)).children(new String[]{"parameters"}, new boolean[]{true}).alias("generator parameters", "").create();
 
   @Override
   public Collection<ConceptDescriptor> getDescriptors() {
@@ -23,7 +26,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   @Override
   @Nullable
   public ConceptDescriptor getDescriptor(String conceptFqName) {
-    switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0g, conceptFqName)) {
+    switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0h, conceptFqName)) {
       case 0:
         return myConceptDefaultGenerationParameterId;
       case 1:
@@ -34,5 +37,5 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
         return null;
     }
   }
-  private static String[] stringSwitchCases_1htk8d_a0a0g = new String[]{"jetbrains.mps.lang.generator.generationParameters.structure.DefaultGenerationParameterId", "jetbrains.mps.lang.generator.generationParameters.structure.DefaultGeneratorParameter", "jetbrains.mps.lang.generator.generationParameters.structure.DefaultGeneratorParameterContainer"};
+  private static String[] stringSwitchCases_1htk8d_a0a0h = new String[]{"jetbrains.mps.lang.generator.generationParameters.structure.DefaultGenerationParameterId", "jetbrains.mps.lang.generator.generationParameters.structure.DefaultGeneratorParameter", "jetbrains.mps.lang.generator.generationParameters.structure.DefaultGeneratorParameterContainer"};
 }
