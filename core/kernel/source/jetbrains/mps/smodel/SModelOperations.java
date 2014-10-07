@@ -24,8 +24,6 @@ import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager.Deptype;
 import jetbrains.mps.project.dependency.modules.LanguageDependenciesManager;
 import jetbrains.mps.smodel.SModel.ImportElement;
 import jetbrains.mps.smodel.adapter.ids.MetaIdByDeclaration;
-import jetbrains.mps.smodel.adapter.structure.language.SLanguageAdapterById;
-import jetbrains.mps.smodel.adapter.structure.language.SLanguageAdapterByName;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
@@ -106,7 +104,7 @@ public class SModelOperations {
         }
 
         usedLanguages.add(ref);
-        ((jetbrains.mps.smodel.SModelInternal) model).addLanguageId(MetaIdByDeclaration.getLanguageId(ref.getModuleId()), version);
+        ((jetbrains.mps.smodel.SModelInternal) model).addLanguageId(MetaIdByDeclaration.ref2Id(ref), version);
       }
     }
     for (SModelReference targetModelReference : modelScanner.getCrossModelReferences()) {
@@ -368,7 +366,7 @@ public class SModelOperations {
           }
 
           usedLanguages.add(ref);
-          model.addLanguage(MetaIdByDeclaration.getLanguageId(ref.getModuleId()), version);
+          model.addLanguage(MetaIdByDeclaration.ref2Id(ref), version);
         }
 
         for (SReference reference : node.getReferences()) {
@@ -416,7 +414,7 @@ public class SModelOperations {
     Set<Language> languages = new LinkedHashSet<Language>();
 
     for (SLanguage lang : model.usedLanguages()) {
-      Language language = new SLanguageAdapterById(lang).getSourceModule();
+      Language language = ((Language) lang.getSourceModule());
 
       if (language != null) {
         languages.add(language);
