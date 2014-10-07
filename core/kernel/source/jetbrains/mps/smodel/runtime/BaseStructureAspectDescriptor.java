@@ -15,9 +15,11 @@
  */
 package jetbrains.mps.smodel.runtime;
 
+import gnu.trove.THashMap;
 import jetbrains.mps.smodel.adapter.ids.SConceptId;
 
 import java.util.Collection;
+import java.util.Map;
 
 /**
  * Base implementation generated code shall use to facilitate future changes in {@link jetbrains.mps.smodel.runtime.StructureAspectDescriptor}.
@@ -25,15 +27,27 @@ import java.util.Collection;
  * @author Alex Pyshkin on 8/26/14.
  */
 public abstract class BaseStructureAspectDescriptor implements StructureAspectDescriptor {
+  private Map<SConceptId, ConceptDescriptor> myDescriptors;
+
   public abstract Collection<ConceptDescriptor> getDescriptors();
 
   @Override
   public Collection<SConceptId> getConceptIds() {
-    return null;
+    ensureInitialized();
+    return myDescriptors.keySet();
   }
 
   @Override
   public ConceptDescriptor getDescriptor(SConceptId id) {
-    return null;
+    ensureInitialized();
+    return myDescriptors.get(id);
+  }
+
+  protected synchronized void ensureInitialized(){
+    if (myDescriptors!=null) return;
+    myDescriptors = new THashMap<SConceptId, ConceptDescriptor>();
+    for (ConceptDescriptor d:getDescriptors()){
+      myDescriptors.put(((SConceptId) d.getId()),d);
+    }
   }
 }
