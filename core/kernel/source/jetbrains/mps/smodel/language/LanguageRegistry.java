@@ -136,7 +136,7 @@ public class LanguageRegistry implements CoreComponent, MPSClassesListener {
 
   @Nullable
   public LanguageRuntime getLanguage(SLanguageId id) {
-    return myLanguagesById.get(id.getId());
+    return myLanguagesById.get(id);
   }
 
   @Nullable
