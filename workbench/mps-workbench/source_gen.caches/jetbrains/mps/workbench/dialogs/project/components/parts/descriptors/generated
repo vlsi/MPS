@@ -1,35 +1,3 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="45yieau09z5dx7cqsgrsrybzifxzykt">
-  <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" hash="-2sqpydigz7vryaerubh22j78l4l08jz" />
-  <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="d987foka3qddszg3k3yjss0jaslj9i" />
-  <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="8cdjk2e5d2y2u9lult1ptgxxrttxv07" />
-  <common hash="e862asv4tbnnq8k3opd9a0ev2v5y51i" dependsOnNodes="true">
-    <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
-  </common>
-  <source id="1560298786499489453" name="EditableStringDescriptor" hash="-5svhq7ikh8k5b1ul0ehollxkjhrnjfy">
-    <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
-    <file name="EditableStringDescriptor.java" />
-  </source>
-  <source id="1560298786499491464" name="StringPathDescriptor" hash="-byqhkg3y2qyaervkcw01rhffdzrnq9q">
-    <file name="StringPathDescriptor.java" />
-  </source>
-  <source id="1560298786499491489" name="BooleanDescriptor" hash="-ao4h2bjwf3tcpfhgf78mc2yj47ofuo3">
-    <file name="BooleanDescriptor.java" />
-  </source>
-  <source id="1560298786499493471" name="ModuleDescriptor" hash="dxywezy4th3flh4s4hflnofv8e2be2c">
-    <file name="ModuleDescriptor.java" />
-  </source>
-  <source id="1560298786499494704" name="ManagerDescriptor" hash="o52yr6m67wg8gto9nnioxrrvcuyt2k">
-    <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
-    <file name="ManagerDescriptor.java" />
-  </source>
-  <source id="1560298786499495292" name="DepDescriptor" hash="bfn6niz80j618vozsdho97wpzhup3fq">
-    <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
-    <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
-    <file name="DepDescriptor.java" />
-  </source>
-  <source id="1560298786499497407" name="ModelDescriptor" hash="aqpb13uz17seo4w58ws7dn0t64sbqm2">
-    <file name="ModelDescriptor.java" />
-  </source>
-</dependencies>
+<dependencies version="2" modelHash="45yieau09z5dx7cqsgrsrybzifxzykt" />
 
