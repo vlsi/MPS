@@ -10,13 +10,13 @@ import jetbrains.mps.lang.migration.behavior.MigrationScript_Behavior;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.lang.migration.util.MigrationsCheckUtil;
+import org.apache.log4j.Level;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import java.util.List;
 import java.util.ArrayList;
 import org.jetbrains.mps.openapi.module.SModule;
-import jetbrains.mps.lang.migration.generator.util.MigartionsCheckUtil;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
-import org.apache.log4j.Level;
 import org.jetbrains.mps.openapi.language.SConceptRepository;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
@@ -55,6 +55,11 @@ public class QueriesGenerated {
     return SPropertyOperations.getString(_context.getNode(), "name");
   }
   public static Object propertyMacro_GetPropertyValue_4436301628119009646(final PropertyMacroContext _context) {
+    if (MigrationsCheckUtil.hasCycles(SNodeOperations.cast(_context.getOriginalCopiedInputNode(_context.getNode()), "jetbrains.mps.lang.migration.structure.MigrationScript"))) {
+      if (LOG.isEnabledFor(Level.ERROR)) {
+        LOG.error("Cyclic migration script dependency detected");
+      }
+    }
     return MigrationScript_Behavior.call_getClassName_6547769411406912356(_context.getNode());
   }
   public static Object propertyMacro_GetPropertyValue_5712848521226167741(final PropertyMacroContext _context) {
@@ -66,7 +71,7 @@ public class QueriesGenerated {
   public static Object propertyMacro_GetPropertyValue_6547769411407089660(final PropertyMacroContext _context) {
     List<String> errors = ListSequence.fromList(new ArrayList<String>());
     SModule module = _context.getOriginalInputModel().getModule();
-    MigartionsCheckUtil.checkLanguageVersionMatchesMigrations(module, errors);
+    MigrationsCheckUtil.checkLanguageVersionMatchesMigrations(module, errors);
     ListSequence.fromList(errors).visitAll(new IVisitor<String>() {
       public void visit(String it) {
         if (LOG.isEnabledFor(Level.ERROR)) {

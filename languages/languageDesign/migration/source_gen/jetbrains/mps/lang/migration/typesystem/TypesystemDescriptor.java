@@ -37,6 +37,10 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
       this.myInferenceRules.add(inferenceRule);
     }
     {
+      NonTypesystemRule_Runtime nonTypesystemRule = new MigrationScriptCycles_NonTypesystemRule();
+      this.myNonTypesystemRules.add(nonTypesystemRule);
+    }
+    {
       NonTypesystemRule_Runtime nonTypesystemRule = new MigrationScriptVersions_NonTypesystemRule();
       this.myNonTypesystemRules.add(nonTypesystemRule);
     }
