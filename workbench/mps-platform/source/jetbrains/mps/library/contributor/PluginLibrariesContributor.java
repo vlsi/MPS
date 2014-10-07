@@ -67,7 +67,13 @@ public class PluginLibrariesContributor implements LibraryContributor, Applicati
 
   @Override
   public void disposeComponent() {
-
+    LibraryInitializer.getInstance().removeContributor(this);
+    ModelAccess.instance().runWriteAction(new Runnable() {
+      @Override
+      public void run() {
+        LibraryInitializer.getInstance().update(false);
+      }
+    });
   }
 
   @Override
