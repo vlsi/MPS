@@ -129,7 +129,7 @@ public abstract class LanguageRuntime {
     if (compiled instanceof StructureAspectDescriptor) {
       return (StructureAspectDescriptor) compiled;
     } else {
-      return StructureAspectInterpreted.getInstance();
+      return new StructureAspectInterpreted(getLanguage());
     }
   }
 
