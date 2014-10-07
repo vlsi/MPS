@@ -181,7 +181,7 @@ public class PluginStateWidget implements StatusBarWidget, StatusBarWidget.IconP
     return MPSPlugin.getInstance().isIDEAPresent();
   }
   private boolean canOperate() {
-    return MPSPlugin.getInstance().getProjectHandler(myProject) != null;
+    return MPSPlugin.getInstance().getProjectHandler(myProject.getBasePath()) != null;
   }
   private static   enum State {
     DISCONNECTED(MPSIcons.IdeaIntegration.Disconnected, "Not connected to IDEA. Click to reconnect.", PluginStateWidget.INITIAL_DELAY),

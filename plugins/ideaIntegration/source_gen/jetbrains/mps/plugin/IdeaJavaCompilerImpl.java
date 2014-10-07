@@ -78,6 +78,6 @@ public class IdeaJavaCompilerImpl implements ProjectComponent, IdeaJavaCompiler 
     if (RuntimeFlags.isTestMode()) {
       return null;
     }
-    return MPSPlugin.getInstance().getProjectHandler(myProject);
+    return MPSPlugin.getInstance().getProjectHandler(myProject.getBasePath());
   }
 }
