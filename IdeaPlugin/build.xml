@@ -253,6 +253,7 @@
       <classpath>
         <fileset dir="${ideaPath}/lib">
           <include name="**/*.jar"/>
+          <exclude name="rt/jps-plugin-system.jar"/>
         </fileset>
         <fileset dir="${ideaPath}/plugins/junit/lib">
           <include name="junit-rt.jar"/>
