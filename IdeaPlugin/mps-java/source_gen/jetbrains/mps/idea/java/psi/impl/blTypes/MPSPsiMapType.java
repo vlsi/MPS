@@ -12,12 +12,10 @@ public class MPSPsiMapType extends MPSPsiCollectionType {
   public MPSPsiMapType(SNodeId id, String concept, String containingRole) {
     super(id, concept, containingRole);
   }
-
   @Override
   protected String getClassName() {
     return "java.util.Map";
   }
-
   @Override
   protected MPSPsiNode[] getChildTypeNodes() {
     MPSPsiNode[] types = new MPSPsiNode[2];

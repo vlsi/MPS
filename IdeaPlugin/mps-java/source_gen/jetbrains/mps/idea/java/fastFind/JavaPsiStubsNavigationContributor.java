@@ -22,7 +22,6 @@ import org.jetbrains.annotations.NotNull;
 public class JavaPsiStubsNavigationContributor implements NavigationParticipant, ApplicationComponent {
   public JavaPsiStubsNavigationContributor() {
   }
-
   public void findTargets(NavigationParticipant.TargetKind kind, Collection<SModel> collection, Consumer<NavigationParticipant.NavigationTarget> consumer, Consumer<SModel> processedConsumer) {
     for (SModel model : collection) {
       if (!(model instanceof PsiJavaStubModelDescriptor)) {
@@ -42,7 +41,6 @@ public class JavaPsiStubsNavigationContributor implements NavigationParticipant,
             public String getPresentation() {
               return name;
             }
-
             public SConcept getConcept() {
               if (psiClaz.isAnnotationType()) {
                 return (SConcept) SConceptRepository.getInstance().getConcept(BootstrapLanguages.concept_baseLanguage_Annotation);
@@ -54,7 +52,6 @@ public class JavaPsiStubsNavigationContributor implements NavigationParticipant,
                 return (SConcept) SConceptRepository.getInstance().getConcept(BootstrapLanguages.concept_baseLanguage_ClassConcept);
               }
             }
-
             public SNodeReference getNodeReference() {
               return JavaForeignIdBuilder.computeNodePtr(psiClaz).toSNodeReference();
             }
@@ -65,15 +62,12 @@ public class JavaPsiStubsNavigationContributor implements NavigationParticipant,
       processedConsumer.consume(model);
     }
   }
-
   public void initComponent() {
     PersistenceFacade.getInstance().addNavigationParticipant(this);
   }
-
   public void disposeComponent() {
     PersistenceFacade.getInstance().removeNavigationParticipant(this);
   }
-
   @NonNls
   @NotNull
   public String getComponentName() {
