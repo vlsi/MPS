@@ -163,7 +163,7 @@ public class FilePerRootModelPersistence implements CoreComponent, ModelFactory,
       throw new UnsupportedDataSourceException(dataSource);
     }
 
-    FilePerRootFormatUtil.saveModel(((SModelBase) model).getSModelInternal(), (MultiStreamDataSource) dataSource,
+    FilePerRootFormatUtil.saveModel(((SModelBase) model).getSModel(), (MultiStreamDataSource) dataSource,
         ModelPersistence.LAST_VERSION);
   }
 
