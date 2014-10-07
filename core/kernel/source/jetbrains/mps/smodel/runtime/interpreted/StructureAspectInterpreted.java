@@ -43,6 +43,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.module.SRepositoryContentAdapter;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.HashSet;
@@ -127,6 +128,16 @@ public class StructureAspectInterpreted implements StructureAspectDescriptor, Co
 
   private void invalidateDescriptors() {
     descriptors.clear();
+  }
+
+  @Override
+  public Collection<jetbrains.mps.smodel.adapter.ids.SConceptId> getConceptIds() {
+    return null;
+  }
+
+  @Override
+  public ConceptDescriptor getDescriptor(jetbrains.mps.smodel.adapter.ids.SConceptId id) {
+    return null;
   }
 
   private class InterpretedConceptDescriptor extends BaseConceptDescriptor {

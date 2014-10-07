@@ -15,6 +15,8 @@
  */
 package jetbrains.mps.smodel.runtime;
 
+import jetbrains.mps.smodel.adapter.ids.SConceptId;
+
 import java.util.Collection;
 
 /**
@@ -24,4 +26,14 @@ import java.util.Collection;
  */
 public abstract class BaseStructureAspectDescriptor implements StructureAspectDescriptor {
   public abstract Collection<ConceptDescriptor> getDescriptors();
+
+  @Override
+  public Collection<SConceptId> getConceptIds() {
+    return null;
+  }
+
+  @Override
+  public ConceptDescriptor getDescriptor(SConceptId id) {
+    return null;
+  }
 }
