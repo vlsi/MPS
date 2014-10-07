@@ -114,7 +114,7 @@ public class DevKit extends AbstractModule {
     Set<SLanguage> result = new HashSet<SLanguage>();
     for (DevKit dk : getAllExtendedDevkits()) {
       for (SModuleReference l : dk.myDescriptor.getExportedLanguages()) {
-        SLanguage lang = MetaIdByDeclaration.getLanguageId(l.getModuleId());
+        SLanguage lang = MetaIdByDeclaration.ref2Id(l);
         if (!result.contains(lang)) {
           result.add(lang);
         }

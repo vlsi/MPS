@@ -21,7 +21,6 @@ import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.smodel.SModelAdapter;
 import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.smodel.adapter.ids.MetaIdByDeclaration;
-import jetbrains.mps.smodel.adapter.ids.SLanguageId;
 import jetbrains.mps.smodel.adapter.structure.language.SLanguageAdapterById;
 import jetbrains.mps.smodel.event.SModelDevKitEvent;
 import jetbrains.mps.smodel.event.SModelLanguageEvent;
@@ -62,7 +61,7 @@ import java.util.List;
  *   process(mdm.getAllImportedModels());
  *   mdm.dispose();
  * </pre>
- *
+ * <p/>
  * FIXME perhaps, worth moving to subpackage of j.m.smodel, as it's pure model functionality, unrelated to project
  */
 public class ModelDependenciesManager {
@@ -96,8 +95,8 @@ public class ModelDependenciesManager {
 
   public Collection<SModuleReference> getAllImportedLanguages() {
     List<SModuleReference> result = new ArrayList<SModuleReference>();
-    for (SLanguageId id : getAllImportedLanguagesIds()) {
-      result.add(new SLanguageAdapterById(id).getSourceModule().getModuleReference());
+    for (SLanguage lang : getAllImportedLanguagesIds()) {
+      result.add(lang.getSourceModule().getModuleReference());
     }
     return result;
   }
@@ -159,12 +158,13 @@ public class ModelDependenciesManager {
    */
   protected void handle(DevKit devkit, Collection<SLanguage> retval) {
     for (Language dkLang : devkit.getAllExportedLanguages()) {
-      handle(MetaIdByDeclaration.getLanguageId(dkLang.getModuleReference().getModuleId()), retval);
+      handle(new SLanguageAdapterById(MetaIdByDeclaration.getLanguageId(dkLang), dkLang.getModuleName()), retval);
     }
   }
 
   /**
    * Attach a listener to the model to track dependencies added through SModelInternal
+   *
    * @return <code>this</code> for convenience
    */
   public ModelDependenciesManager trackModelChanges() {
@@ -176,6 +176,7 @@ public class ModelDependenciesManager {
 
   /**
    * Attach a listener to given repository to reflect changes in model's dependencies
+   *
    * @return <code>this</code> for convenience
    */
   public ModelDependenciesManager trackRepositoryChanges(SRepository repository) {
@@ -258,7 +259,7 @@ public class ModelDependenciesManager {
     }
 
     private void invalidateIfWatching(SModuleReference moduleRef) {
-      SLanguage languageId = MetaIdByDeclaration.getLanguageId(moduleRef.getModuleId());
+      SLanguage languageId = MetaIdByDeclaration.ref2Id(moduleRef);
       if (languageId != null && myDepManager.isDependency(languageId)) {
         myDepManager.invalidate();
       }

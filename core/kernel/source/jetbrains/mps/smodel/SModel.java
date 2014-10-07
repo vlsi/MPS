@@ -20,12 +20,10 @@ import jetbrains.mps.extapi.model.SModelBase;
 import jetbrains.mps.extapi.model.SModelData;
 import jetbrains.mps.persistence.ModelEnvironmentInfo;
 import jetbrains.mps.persistence.PersistenceRegistry;
-import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.project.dependency.ModelDependenciesManager;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.project.structure.modules.RefUpdateUtil;
 import jetbrains.mps.smodel.adapter.ids.MetaIdByDeclaration;
-import jetbrains.mps.smodel.adapter.ids.SLanguageId;
 import jetbrains.mps.smodel.adapter.structure.language.SLanguageAdapterById;
 import jetbrains.mps.smodel.descriptor.RefactorableSModelDescriptor;
 import jetbrains.mps.smodel.event.SModelChildEvent;
@@ -703,7 +701,7 @@ public class SModel implements SModelData {
       markChanged();
     }
 
-    deleteLanguage(ref2Id(ref));
+    deleteLanguage(MetaIdByDeclaration.ref2Id(ref));
   }
 
   public void deleteLanguage(@NotNull SLanguage id) {
@@ -734,7 +732,7 @@ public class SModel implements SModelData {
       markChanged();
     }
 
-    addLanguage(ref2Id(ref), -1);
+    addLanguage(MetaIdByDeclaration.ref2Id(ref), -1);
   }
 
   public void addLanguage(Language language) {
@@ -1157,7 +1155,4 @@ public class SModel implements SModelData {
     }
   }
 
-  private SLanguageAdapterById ref2Id(SModuleReference ref) {
-    return new SLanguageAdapterById(new SLanguageId(((ModuleId.Regular) ref.getModuleId()).getUUID()), ref.getModuleName());
-  }
 }

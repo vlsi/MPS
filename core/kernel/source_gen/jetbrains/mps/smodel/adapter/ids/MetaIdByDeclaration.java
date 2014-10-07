@@ -6,7 +6,10 @@ import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodeId;
+import jetbrains.mps.smodel.adapter.structure.language.SLanguageAdapterById;
+import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.module.SModuleId;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 
 /**
  * This allows to convert source-level (non-published code) entities to structure-level ids (published code ids)
@@ -45,5 +48,9 @@ public class MetaIdByDeclaration {
     assert nodeId instanceof SNodeId.Regular;
     long id = ((SNodeId.Regular) nodeId).getId();
     return new SPropertyId(getConceptId(c.getContainingRoot()), id);
+  }
+
+  public static SLanguage ref2Id(SModuleReference ref) {
+    return new SLanguageAdapterById(new SLanguageId(((ModuleId.Regular) ref.getModuleId()).getUUID()), ref.getModuleName());
   }
 }
