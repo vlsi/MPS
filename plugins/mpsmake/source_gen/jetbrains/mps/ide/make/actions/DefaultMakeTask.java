@@ -12,43 +12,43 @@ import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.progress.ProgressIndicator;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import jetbrains.mps.progress.ProgressMonitorAdapter;
+import jetbrains.mps.make.MPSCompilationResult;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.util.Computable;
 import jetbrains.mps.ide.messages.MessagesViewTool;
 import jetbrains.mps.make.ModuleMaker;
 import jetbrains.mps.messages.MessageKind;
-import jetbrains.mps.make.MPSCompilationResult;
 import jetbrains.mps.classloading.ClassLoaderManager;
 
 public class DefaultMakeTask extends Task.Modal {
   private boolean needClean;
   private Set<SModule> modules = SetSequence.fromSet(new LinkedHashSet<SModule>());
+
   public DefaultMakeTask(Project project, String title, Set<SModule> modules, boolean needClean) {
     super(project, title, true);
     this.needClean = needClean;
     SetSequence.fromSet(this.modules).addSequence(SetSequence.fromSet(modules));
   }
+
   @Override
   public void run(@NotNull ProgressIndicator indicator) {
-    final boolean[] reloadingNeeded = new boolean[1];
     final ProgressMonitor monitor = new ProgressMonitorAdapter(indicator);
-
     monitor.start("", (needClean ? 10 : 9));
     try {
-      ModelAccess.instance().runReadAction(new Runnable() {
-        public void run() {
+      final MPSCompilationResult mpsCompilationResult = ModelAccess.instance().runReadAction(new Computable<MPSCompilationResult>() {
+        public MPSCompilationResult compute() {
           MessagesViewTool mvt = getProject().getComponent(MessagesViewTool.class);
           ModuleMaker maker = new ModuleMaker(mvt.newHandler(), MessageKind.ERROR);
           if (needClean) {
             maker.clean(modules, monitor.subTask(1));
           }
-          MPSCompilationResult compilationResult = maker.make(modules, monitor.subTask(7));
-          reloadingNeeded[0] = compilationResult.isReloadingNeeded();
+          return maker.make(modules, monitor.subTask(7));
         }
       });
-      if (reloadingNeeded[0]) {
+      if (mpsCompilationResult.isReloadingNeeded()) {
         ModelAccess.instance().runWriteAction(new Runnable() {
           public void run() {
-            ClassLoaderManager.getInstance().reloadAll(monitor.subTask(2));
+            ClassLoaderManager.getInstance().reloadModules(mpsCompilationResult.getChangedModules(), monitor.subTask(2));
           }
         });
       }

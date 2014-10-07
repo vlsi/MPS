@@ -29,14 +29,15 @@ import com.intellij.openapi.vfs.VfsUtil;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.util.indexing.FileBasedIndexImpl;
 import com.intellij.util.indexing.IndexableFileSet;
+import jetbrains.mps.classloading.MPSClassesListener;
+import jetbrains.mps.classloading.MPSClassesListenerAdapter;
 import jetbrains.mps.ide.make.StartupModuleMaker;
 import jetbrains.mps.classloading.ClassLoaderManager;
-import jetbrains.mps.reloading.ReloadAdapter;
-import jetbrains.mps.reloading.ReloadListener;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.Computable;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
+import org.jetbrains.mps.openapi.module.SModule;
 
 import java.util.Collections;
 import java.util.Set;
@@ -48,9 +49,9 @@ public class MPSFileBasedIndexProjectHandler extends AbstractProjectComponent im
   private ProjectManager myProjectManager;
   private final FileBasedIndexImpl myIndex;
   private Set<VirtualFile> myRootFiles = null;
-  private ReloadListener myReloadHandler = new ReloadAdapter() {
+  private MPSClassesListener myClassesListener = new MPSClassesListenerAdapter() {
     @Override
-    public void unload() {
+    public void beforeClassesUnloaded(Set<SModule> modules) {
       myRootFiles = null;
     }
   };
@@ -85,14 +86,14 @@ public class MPSFileBasedIndexProjectHandler extends AbstractProjectComponent im
 
   @Override
   public void initComponent() {
-    ClassLoaderManager.getInstance().addReloadHandler(myReloadHandler);
+    ClassLoaderManager.getInstance().addClassesHandler(myClassesListener);
     myProjectManager.addProjectManagerListener(myProject, myProjectListener);
   }
 
   @Override
   public void disposeComponent() {
     myProjectManager.addProjectManagerListener(myProject, myProjectListener);
-    ClassLoaderManager.getInstance().removeReloadHandler(myReloadHandler);
+    ClassLoaderManager.getInstance().removeClassesHandler(myClassesListener);
   }
 
   @Override

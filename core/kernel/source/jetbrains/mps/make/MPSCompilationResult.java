@@ -64,7 +64,7 @@ public class MPSCompilationResult implements Serializable {
   }
 
   public boolean isCompiledAnything() {
-    return myChangedModules.isEmpty();
+    return !myChangedModules.isEmpty();
   }
 
   public boolean isOk() {
@@ -72,7 +72,6 @@ public class MPSCompilationResult implements Serializable {
   }
 
   public boolean isReloadingNeeded() {
-    // todo: !
     return isOk() && isCompiledAnything();
   }
 

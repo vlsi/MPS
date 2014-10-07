@@ -5,6 +5,7 @@ package jetbrains.mps.lang.editor.multiple.testLanguage;
 import jetbrains.mps.smodel.language.LanguageRuntime;
 import java.util.Collection;
 import jetbrains.mps.generator.runtime.TemplateModule;
+import jetbrains.mps.generator.runtime.TemplateUtil;
 import jetbrains.mps.smodel.runtime.LanguageAspectDescriptor;
 import jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor;
 import jetbrains.mps.lang.editor.multiple.testLanguage.editor.EditorAspectDescriptorImpl;
@@ -24,7 +25,7 @@ public class Language extends LanguageRuntime {
   }
   @Override
   public Collection<TemplateModule> getGenerators() {
-    return null;
+    return TemplateUtil.<TemplateModule>asCollection(TemplateUtil.createInterpretedGenerator(this, "1f867555-f29a-4703-a612-a41a9de4c68e(jetbrains.mps.lang.editor.multiple.testLanguage#6655351613569881723)"));
   }
   @Override
   protected <T extends LanguageAspectDescriptor> T createAspectDescriptor(Class<T> descriptorClass) {

@@ -27,11 +27,14 @@ import jetbrains.mps.project.DevKit;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.ModelsAutoImportsManager;
 import jetbrains.mps.project.dependency.modules.LanguageDependenciesManager;
+import jetbrains.mps.project.facets.JavaModuleFacet;
+import jetbrains.mps.project.facets.JavaModuleOperations;
 import jetbrains.mps.project.facets.TestsFacet;
 import jetbrains.mps.project.persistence.LanguageDescriptorPersistence;
 import jetbrains.mps.project.structure.modules.GeneratorDescriptor;
 import jetbrains.mps.project.structure.modules.LanguageDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
+import jetbrains.mps.reloading.IClassPathItem;
 import jetbrains.mps.smodel.descriptor.RefactorableSModelDescriptor;
 import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.util.IterableUtil;
@@ -115,7 +118,8 @@ public class Language extends AbstractModule implements MPSModuleOwner {
       }
     }
 
-    dependencies.add(new SDependencyImpl(BootstrapLanguages.coreLanguage(), SDependencyScope.DEFAULT, true));
+    if (BootstrapLanguages.coreLanguage() != null)
+      dependencies.add(new SDependencyImpl(BootstrapLanguages.coreLanguage(), SDependencyScope.DEFAULT, true));
 
     return dependencies;
   }
@@ -195,11 +199,11 @@ public class Language extends AbstractModule implements MPSModuleOwner {
   }
 
   @Override
-  public void setModuleDescriptor(ModuleDescriptor moduleDescriptor, boolean reloadClasses) {
-    setLanguageDescriptor((LanguageDescriptor) moduleDescriptor, reloadClasses);
+  public void setModuleDescriptor(ModuleDescriptor moduleDescriptor) {
+    setLanguageDescriptor((LanguageDescriptor) moduleDescriptor);
   }
 
-  public void setLanguageDescriptor(final LanguageDescriptor newDescriptor, boolean reloadClasses) {
+  public void setLanguageDescriptor(final LanguageDescriptor newDescriptor) {
     assertCanChange();
 
     myLanguageDescriptor = newDescriptor;
@@ -211,11 +215,6 @@ public class Language extends AbstractModule implements MPSModuleOwner {
     setChanged();
     reloadAfterDescriptorChange();
     fireChanged();
-
-    // move outside set_ block and just call ClassLoaderManager.getInstance().reloadAll(new EmptyProgressMonitor());
-    if (reloadClasses) {
-      ClassLoaderManager.getInstance().reloadAll(new EmptyProgressMonitor());
-    }
 
     MPSModuleRepository.getInstance().invalidateCaches();
 
@@ -237,7 +236,7 @@ public class Language extends AbstractModule implements MPSModuleOwner {
   public void rename(String newNamespace) {
     LanguageDescriptor languageDescriptor = getModuleDescriptor();
     languageDescriptor.setNamespace(newNamespace);
-    setLanguageDescriptor(languageDescriptor, false);
+    setLanguageDescriptor(languageDescriptor);
   }
 
   public List<SNode> getConceptDeclarations() {
@@ -312,7 +311,8 @@ public class Language extends AbstractModule implements MPSModuleOwner {
         i.remove();
       }
     }
-    setLanguageDescriptor(myLanguageDescriptor, true);
+    setLanguageDescriptor(myLanguageDescriptor);
+    ClassLoaderManager.getInstance().reloadModule(this);
   }
 
   public String toString() {
@@ -380,7 +380,10 @@ public class Language extends AbstractModule implements MPSModuleOwner {
 
     @Override
     protected Class<?> findClass(String name) throws ClassNotFoundException {
-      byte[] bytes = ModuleClassLoaderSupport.create(Language.this).findClassBytes(name);
+      JavaModuleFacet facet = Language.this.getFacet(JavaModuleFacet.class);
+      assert facet != null;
+      IClassPathItem classPathItem = JavaModuleOperations.createClassPathItem(facet.getClassPath(), ModuleClassLoaderSupport.class.getName());
+      byte[] bytes = classPathItem.getClass(name);
       if (bytes == null) return null;
       definePackageIfNecessary(name);
       return defineClass(name, bytes, 0, bytes.length, ProtectionDomainUtil.loadedClassDomain());

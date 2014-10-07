@@ -30,7 +30,7 @@ import java.io.File;
 import static org.junit.Assert.assertTrue;
 
 /**
- * Created by Alex Pyshkin on 2/20/14.
+ * @author Alex Pyshkin on 2/20/14.
  */
 public class ClassLoadingDescriptorChangedTest extends WorkbenchMpsTest {
   private static final String TEST_PROJECT = null;

@@ -18,12 +18,10 @@ package jetbrains.mps.project;
 import jetbrains.mps.extapi.module.SRepositoryBase;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import org.jetbrains.mps.openapi.module.DebugRegistry;
-import jetbrains.mps.smodel.ModelCommandProjectExecutor;
 import org.jetbrains.mps.openapi.module.ModelAccess;
 import org.jetbrains.mps.openapi.module.RepositoryAccess;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleId;
-import org.jetbrains.mps.openapi.module.SRepository;
 
 import java.util.Collections;
 
@@ -32,17 +30,17 @@ import java.util.Collections;
  */
 public class ProjectRepository extends SRepositoryBase {
 
-  private final Project project;
+  private final Project myProject;
   private final ProjectModelAccess myProjectModelAccess;
 
   public ProjectRepository(Project project) {
-    this.project = project;
-    myProjectModelAccess = new ProjectModelAccess();
+    this.myProject = project;
+    myProjectModelAccess = new ProjectModelAccess(project);
     init();
   }
 
   public Project getProject() {
-    return project;
+    return myProject;
   }
 
   @Override
@@ -62,7 +60,7 @@ public class ProjectRepository extends SRepositoryBase {
 
   @Override
   public RepositoryAccess getRepositoryAccess() {
-    throw new UnsupportedOperationException();
+    return null;
   }
 
   @Override
@@ -75,65 +73,4 @@ public class ProjectRepository extends SRepositoryBase {
     MPSModuleRepository.getInstance().saveAll();
   }
 
-  private class ProjectModelAccess implements ModelAccess {
-    @Override
-    public boolean canRead() {
-      return jetbrains.mps.smodel.ModelAccess.instance().canRead();
-    }
-
-    @Override
-    public void checkReadAccess() {
-      jetbrains.mps.smodel.ModelAccess.instance().checkReadAccess();
-    }
-
-    @Override
-    public boolean canWrite() {
-      return jetbrains.mps.smodel.ModelAccess.instance().canWrite();
-    }
-
-    @Override
-    public void checkWriteAccess() {
-      jetbrains.mps.smodel.ModelAccess.instance().checkWriteAccess();
-    }
-
-    @Override
-    public void runReadAction(Runnable r) {
-      jetbrains.mps.smodel.ModelAccess.instance().runReadAction(r);
-    }
-
-    @Override
-    public void runReadInEDT(Runnable r) {
-      jetbrains.mps.smodel.ModelAccess.instance().runReadInEDT(r);
-    }
-
-    @Override
-    public void runWriteAction(Runnable r) {
-      jetbrains.mps.smodel.ModelAccess.instance().runWriteAction(r);
-    }
-
-    @Override
-    public void runWriteInEDT(Runnable r) {
-      jetbrains.mps.smodel.ModelAccess.instance().runWriteInEDT(r);
-    }
-
-    @Override
-    public void executeCommand(Runnable r) {
-      jetbrains.mps.smodel.ModelAccess.instance().executeCommand(r, project);
-    }
-
-    @Override
-    public void executeCommandInEDT(Runnable r) {
-      jetbrains.mps.smodel.ModelAccess.instance().runCommandInEDT(r, project);
-    }
-
-    @Override
-    public void executeUndoTransparentCommand(Runnable r) {
-      jetbrains.mps.smodel.ModelAccess.instance().runUndoTransparentCommand(r, project);
-    }
-
-    @Override
-    public boolean isCommandAction() {
-      return jetbrains.mps.smodel.ModelAccess.instance().isInsideCommand();
-    }
-  }
 }

@@ -50,7 +50,7 @@ public class QueryMethodGenerated implements CoreComponent {
   private ConcurrentMap<Class<?>, Boolean> myNeedOpContext = new ConcurrentHashMap<Class<?>, Boolean>();
 
   private final ClassLoaderManager myClassLoaderManager;
-  private final MPSClassesListener myReloadHandler = new MPSClassesListenerAdapter() {
+  private final MPSClassesListener myClassesListener = new MPSClassesListenerAdapter() {
     @Override
     public void beforeClassesUnloaded(Set<SModule> unloadedModules) {
       clearCaches();
@@ -64,12 +64,12 @@ public class QueryMethodGenerated implements CoreComponent {
   @Override
   public void init() {
     ourInstance = this;
-    myClassLoaderManager.addClassesHandler(myReloadHandler);
+    myClassLoaderManager.addClassesHandler(myClassesListener);
   }
 
   @Override
   public void dispose() {
-    myClassLoaderManager.removeClassesHandler(myReloadHandler);
+    myClassLoaderManager.removeClassesHandler(myClassesListener);
     ourInstance.clearCaches();
     ourInstance = null;
   }

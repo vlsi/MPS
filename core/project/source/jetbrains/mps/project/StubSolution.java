@@ -35,7 +35,7 @@ public class StubSolution extends Solution {
   protected static Solution register(SolutionDescriptor descriptor, MPSModuleOwner moduleOwner, Solution solution) {
     Solution registered = MPSModuleRepository.getInstance().registerModule(solution, moduleOwner);
     if (registered == solution) {
-      solution.setSolutionDescriptor(descriptor, false);
+      solution.setSolutionDescriptor(descriptor);
     }
 
     return registered;

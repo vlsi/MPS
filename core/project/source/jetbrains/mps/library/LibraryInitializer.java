@@ -19,7 +19,6 @@ import jetbrains.mps.cleanup.CleanupManager;
 import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.library.contributor.LibraryContributor;
 import jetbrains.mps.library.contributor.LibraryContributor.LibDescriptor;
-import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.PathManager;
@@ -92,11 +91,11 @@ public class LibraryInitializer implements CoreComponent {
     return LibraryInitializer.class.getClassLoader();
   }
 
-  public void update(boolean refreshFiles) {
+  public void update(final boolean refreshFiles) {
     ModelAccess.assertLegalWrite();
 
-    Set<SLibrary> toUnload = new HashSet<SLibrary>(myLibraries);
-    Set<SLibrary> toLoad = new HashSet<SLibrary>();
+    final Set<SLibrary> toUnload = new HashSet<SLibrary>(myLibraries);
+    final Set<SLibrary> toLoad = new HashSet<SLibrary>();
     myParentLoaders.clear();
     for (LibraryContributor lc : myContributors) {
       for (LibDescriptor s : lc.getLibraries()) {
@@ -114,20 +113,22 @@ public class LibraryInitializer implements CoreComponent {
     }
     myLibraries.removeAll(toUnload);
 
-    // unload
-    for (SLibrary unloadLib : toUnload) {
-      unloadLib.dispose();
-    }
+    ModelAccess.instance().runWriteAction(new Runnable() {
+      @Override
+      public void run() {
+        // unload
+        for (SLibrary unloadLib : toUnload) {
+          unloadLib.dispose();
+        }
 
-    //load new
-    for (SLibrary loadLib : toLoad) {
-      loadLib.attach(refreshFiles);
-    }
-
-    if (toUnload.isEmpty() && toLoad.isEmpty()) return;
+        //load new
+        for (SLibrary loadLib : toLoad) {
+          loadLib.attach(refreshFiles);
+        }
+      }
+    });
 
     CleanupManager.getInstance().cleanup();
-    ClassLoaderManager.getInstance().reloadAll(new EmptyProgressMonitor());
   }
 
   //----------bootstrap modules

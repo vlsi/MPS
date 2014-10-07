@@ -80,7 +80,6 @@
   <dependency className="jetbrains.mps.console.base.behavior.GeneratedCommand_Behavior" file="GeneratedCommand_Behavior.java">
     <classNode dependClassName="com.intellij.openapi.application.ApplicationManager" />
     <classNode dependClassName="java.lang.Class" />
-    <classNode dependClassName="java.lang.ClassLoader" />
     <classNode dependClassName="java.lang.ClassNotFoundException" />
     <classNode dependClassName="java.lang.IllegalAccessException" />
     <classNode dependClassName="java.lang.Object" />
@@ -99,6 +98,7 @@
     <classNode dependClassName="org.apache.log4j.Logger" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
   </dependency>
   <dependency className="jetbrains.mps.console.base.behavior.GeneratedCommand_BehaviorDescriptor" file="GeneratedCommand_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />

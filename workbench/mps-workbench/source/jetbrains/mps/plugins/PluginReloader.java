@@ -46,7 +46,7 @@ import java.util.Set;
 public class PluginReloader implements ApplicationComponent {
   private static final Logger LOG = Logger.getLogger(PluginReloader.class);
 
-  private MPSClassesListener myReloadListener = new MyReloadAdapter();
+  private MPSClassesListener myClassesListener = new MyReloadAdapter();
   private ProjectManagerListener myProjectListener = new MyProjectManagerAdapter();
 
   private final List<PluginReloadingListener> myListeners = new ArrayList<PluginReloadingListener>();
@@ -157,14 +157,14 @@ public class PluginReloader implements ApplicationComponent {
 
   @Override
   public void initComponent() {
-    myClassLoaderManager.addClassesHandler(myReloadListener);
+    myClassLoaderManager.addClassesHandler(myClassesListener);
     myProjectManager.addProjectManagerListener(myProjectListener);
   }
 
   @Override
   public void disposeComponent() {
     myProjectManager.removeProjectManagerListener(myProjectListener);
-    myClassLoaderManager.removeClassesHandler(myReloadListener);
+    myClassLoaderManager.removeClassesHandler(myClassesListener);
 
     myClassLoaderManager = null;
     myProjectManager = null;

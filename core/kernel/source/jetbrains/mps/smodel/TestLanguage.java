@@ -29,7 +29,7 @@ public class TestLanguage extends Language {
 
     Language registered = MPSModuleRepository.getInstance().registerModule(language, moduleOwner);
     if (registered == language) {
-      language.setLanguageDescriptor(descriptor, false);
+      language.setLanguageDescriptor(descriptor);
     }
 
     return registered;

@@ -20,6 +20,7 @@ import com.intellij.openapi.components.ApplicationComponent;
 import com.intellij.openapi.components.State;
 import com.intellij.openapi.components.Storage;
 import jetbrains.mps.InternalFlag;
+import jetbrains.mps.RuntimeFlags;
 import jetbrains.mps.ide.MPSCoreComponents;
 import jetbrains.mps.library.contributor.BootstrapLibContributor;
 import jetbrains.mps.workbench.WorkbenchPathManager;
@@ -45,13 +46,8 @@ public class LibraryManager extends BaseLibraryManager implements ApplicationCom
     return ApplicationManager.getApplication().getComponent(LibraryManager.class);
   }
 
-  /**
-   *
-   * @param coreComponents
-   * @param bootstrapLibContributor for right initialization order
-   */
   public LibraryManager(MPSCoreComponents coreComponents, BootstrapLibContributor bootstrapLibContributor) {
-    super(coreComponents.getModuleRepository());
+    super(coreComponents);
   }
 
   private Map<String, Library> myCustomBuiltInLibraries = new HashMap<String, Library>();
@@ -77,7 +73,7 @@ public class LibraryManager extends BaseLibraryManager implements ApplicationCom
 
   private Set<Library> createLibs() {
     Set<Library> result = new HashSet<Library>();
-    if (InternalFlag.isInternalMode()) {
+    if (InternalFlag.isInternalMode() || RuntimeFlags.isTestMode()) {
       result.add(new Library("mps.workbench") {
         @Override
         @NotNull

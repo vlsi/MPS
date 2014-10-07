@@ -65,6 +65,7 @@ import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleFacet;
 import org.jetbrains.mps.openapi.module.SModuleId;
 import org.jetbrains.mps.openapi.module.SModuleReference;
+import org.jetbrains.mps.openapi.module.SRepository;
 import org.jetbrains.mps.openapi.module.SearchScope;
 import org.jetbrains.mps.openapi.persistence.Memento;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
@@ -230,7 +231,7 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
   }
 
   //todo should be replaced with events
-  public void setModuleDescriptor(ModuleDescriptor moduleDescriptor, boolean reloadClasses) {
+  public void setModuleDescriptor(ModuleDescriptor moduleDescriptor) {
     throw new UnsupportedOperationException();
   }
 
@@ -544,7 +545,6 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
           }
         }));
 
-    // TODO: why java module facet by default?
     types.add(JavaModuleFacet.FACET_TYPE);
   }
 
@@ -639,10 +639,13 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
     return myScope;
   }
 
-  public void attach() {
+  @Override
+  public void attach(@NotNull SRepository repository) {
+    super.attach(repository);
     if (myDescriptorFile != null) {
       FileSystem.getInstance().addListener(this);
     }
+    this.reloadAfterDescriptorChange();
   }
 
   @Override
@@ -785,7 +788,6 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
     // call super.dependenciesChanged() at the end
 
     // todo: as we haven't dependencies listeners...
-    // todo: maybe add ClassLoaderManager.getInstance().unloadClasses(this module) here
 
     myScope.invalidateCaches();
   }

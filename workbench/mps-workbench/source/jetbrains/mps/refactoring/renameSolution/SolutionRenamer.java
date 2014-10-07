@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.refactoring.renameSolution;
 
+import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.project.ReferenceUpdater;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.structure.modules.SolutionDescriptor;
@@ -31,7 +32,8 @@ public class SolutionRenamer {
   public void rename() {
     SolutionDescriptor solutionDescriptor = mySolution.getModuleDescriptor();
     solutionDescriptor.setNamespace(myNewName);
-    mySolution.setSolutionDescriptor(solutionDescriptor, true);
+    mySolution.setSolutionDescriptor(solutionDescriptor);
+    ClassLoaderManager.getInstance().reloadModule(mySolution);
     mySolution.save();
 
     ReferenceUpdater.getInstance().updateModuleReferences();

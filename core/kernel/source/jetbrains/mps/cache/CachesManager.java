@@ -15,15 +15,17 @@
  */
 package jetbrains.mps.cache;
 
+import jetbrains.mps.classloading.MPSClassesListener;
+import jetbrains.mps.classloading.MPSClassesListenerAdapter;
 import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.smodel.SModelRepositoryListener.SModelRepositoryListenerPriority;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 import jetbrains.mps.classloading.ClassLoaderManager;
-import jetbrains.mps.reloading.ReloadAdapter;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModelReference;import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.event.*;
+import org.jetbrains.mps.openapi.module.SModule;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -54,9 +56,9 @@ public class CachesManager implements CoreComponent {
     }
   };
 
-  private ReloadAdapter myCLMListener = new ReloadAdapter() {
+  private MPSClassesListener myClassesListener = new MPSClassesListenerAdapter() {
     @Override
-    public void unload() {
+    public void beforeClassesUnloaded(Set<SModule> modules) {
       removeAllCaches();
     }
   };
@@ -80,12 +82,12 @@ public class CachesManager implements CoreComponent {
 
     INSTANCE = this;
     mySModelRepository.addModelRepositoryListener(myModelRepoListener);
-    myClassLoaderManager.addReloadHandler(myCLMListener);
+    myClassLoaderManager.addClassesHandler(myClassesListener);
   }
 
   @Override
   public void dispose() {
-    myClassLoaderManager.removeReloadHandler(myCLMListener);
+    myClassLoaderManager.removeClassesHandler(myClassesListener);
     mySModelRepository.removeModelRepositoryListener(myModelRepoListener);
     INSTANCE = null;
   }

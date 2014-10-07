@@ -15,7 +15,7 @@ import jetbrains.mps.tool.common.util.CanonicalPath;
 import jetbrains.mps.tool.builder.util.SetLibraryContributor;
 import java.util.Set;
 import jetbrains.mps.library.contributor.LibraryContributor;
-import java.util.HashSet;
+import java.util.LinkedHashSet;
 
 public class EnvironmentUtils {
   private EnvironmentUtils() {
@@ -76,17 +76,17 @@ public class EnvironmentUtils {
   }
 
   public static SetLibraryContributor createLibContributor(boolean loadBootstrapLibs, Map<String, File> libs) {
-    Set<LibraryContributor.LibDescriptor> libraryPaths = new HashSet<LibraryContributor.LibDescriptor>();
+    Set<LibraryContributor.LibDescriptor> libraryPaths = new LinkedHashSet<LibraryContributor.LibDescriptor>();
     if (loadBootstrapLibs) {
       for (String bpath : PathManager.getBootstrapPaths()) {
         libraryPaths.add(new LibraryContributor.LibDescriptor(bpath, null));
       }
       libraryPaths.add(new LibraryContributor.LibDescriptor(PathManager.getLanguagesPath(), null));
     }
-    libraryPaths.addAll(PathManager.getExtensionsPaths());
     for (String libName : libs.keySet()) {
       libraryPaths.add(new LibraryContributor.LibDescriptor(libs.get(libName).getAbsolutePath(), null));
     }
+    libraryPaths.addAll(PathManager.getExtensionsPaths());
     return new SetLibraryContributor(libraryPaths);
   }
   private static boolean isEmptyString(String str) {

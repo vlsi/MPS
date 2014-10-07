@@ -236,8 +236,7 @@ public class ImportHelper {
             }
           }
           if (reload) {
-            ClassLoaderManager.getInstance().unloadClasses(Arrays.asList(myContextModule), new EmptyProgressMonitor());
-            ClassLoaderManager.getInstance().loadAllPossibleClasses(new EmptyProgressMonitor());
+            ClassLoaderManager.getInstance().reloadModule(myContextModule);
           }
         }
       });

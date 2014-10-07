@@ -51,11 +51,11 @@ public class DevKit extends AbstractModule {
   }
 
   @Override
-  public void setModuleDescriptor(ModuleDescriptor moduleDescriptor, boolean reloadClasses) {
-    setDevKitDescriptor((DevkitDescriptor) moduleDescriptor, reloadClasses);
+  public void setModuleDescriptor(ModuleDescriptor moduleDescriptor) {
+    setDevKitDescriptor((DevkitDescriptor) moduleDescriptor);
   }
 
-  public void setDevKitDescriptor(DevkitDescriptor descriptor, boolean reloadClasses) {
+  public void setDevKitDescriptor(DevkitDescriptor descriptor) {
     assertCanChange();
 
     myDescriptor = descriptor;
@@ -68,10 +68,6 @@ public class DevKit extends AbstractModule {
     setChanged();
     reloadAfterDescriptorChange();
     fireChanged();
-
-    if (reloadClasses) {
-      ClassLoaderManager.getInstance().reloadAll(new EmptyProgressMonitor());
-    }
 
     dependenciesChanged();
   }

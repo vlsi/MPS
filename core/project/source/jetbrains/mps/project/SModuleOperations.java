@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.project;
 
+import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.extapi.persistence.FileBasedModelRoot;
 import jetbrains.mps.extapi.persistence.FolderModelRootBase;
 import jetbrains.mps.kernel.model.MissingDependenciesFixer;
@@ -24,6 +25,9 @@ import jetbrains.mps.project.facets.JavaModuleFacet;
 import jetbrains.mps.project.facets.TestsFacet;
 import jetbrains.mps.project.persistence.ModuleReadException;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
+import jetbrains.mps.project.structure.modules.SolutionKind;
+import jetbrains.mps.smodel.Generator;
+import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.vfs.IFile;
@@ -117,6 +121,24 @@ public class SModuleOperations {
     return facet != null && !facet.isCompileInMps();
   }
 
+  /**
+   * A module which can be associated with some class loader.
+   * Currently it can be either MPS ModuleClassLoader or IdeaPlugin PluginClassLoader.
+   */
+  public static boolean isLoadable(SModule module) {
+    if (module instanceof Language)
+      return true;
+    if (module instanceof Generator)
+      return true;
+
+    if (module instanceof Solution) {
+      Solution solution = (Solution) module;
+      if (solution.getKind() != SolutionKind.NONE)
+        return true;
+    }
+    return false;
+  }
+
   public static Set<String> getAllSourcePaths(SModule module) {
     // todo: get rid from source paths?
     Set<String> paths = new HashSet<String>();
@@ -200,14 +222,16 @@ public class SModuleOperations {
   }
 
   /**
-   * Unload classes of module. If you want load classes back call ClassLoaderManager#loadAllPossibleClasses
+   * Reads module from file and reloads its class loader
    */
   public static void reloadFromDisk(AbstractModule module) {
     ModelAccess.assertLegalWrite();
+    if (module.getRepository() == null) throw new IllegalArgumentException("Module " + module + " is disposed");
 
     try {
       ModuleDescriptor descriptor = module.loadDescriptor();
-      module.setModuleDescriptor(descriptor, false);
+      module.setModuleDescriptor(descriptor);
+      ClassLoaderManager.getInstance().reloadModule(module);
     } catch (ModuleReadException e) {
       AbstractModule.handleReadProblem(module, e, false);
     }

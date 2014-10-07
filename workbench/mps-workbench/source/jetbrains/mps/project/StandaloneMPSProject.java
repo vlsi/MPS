@@ -53,6 +53,7 @@ import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
@@ -82,7 +83,7 @@ public class StandaloneMPSProject extends MPSProject implements FileSystemListen
 
   private WatchRequestor myWatchRequestor;
 
-  public StandaloneMPSProject(final Project project) {
+  public StandaloneMPSProject(final Project project, ProjectLibraryManager projectLibraryManager) {
     super(project);
   }
 
@@ -165,7 +166,7 @@ public class StandaloneMPSProject extends MPSProject implements FileSystemListen
     if (myProject.isDefault()) return;
 
     assert !isDisposed();
-    ModelAccess.instance().runWriteAction(new Runnable() {
+    getModelAccess().runWriteAction(new Runnable() {
       @Override
       public void run() {
         myProjectDescriptor = projectDescriptor;
@@ -238,7 +239,6 @@ public class StandaloneMPSProject extends MPSProject implements FileSystemListen
     for (SModuleReference ref : existingModules) {
       super.removeModule(ref);
     }
-    ClassLoaderManager.getInstance().loadAllPossibleClasses(new EmptyProgressMonitor());
   }
 
   private void error(String text) {
@@ -265,10 +265,12 @@ public class StandaloneMPSProject extends MPSProject implements FileSystemListen
   }
 
   public void update() {
-    ModuleRepositoryFacade.getInstance().unregisterModules(this);
-
-    readModules();
-    ClassLoaderManager.getInstance().reloadAll(new EmptyProgressMonitor());
+    getModelAccess().runWriteAction(new Runnable() {
+      @Override
+      public void run() {
+        readModules();
+      }
+    });
   }
 
   @Nullable
@@ -292,16 +294,11 @@ public class StandaloneMPSProject extends MPSProject implements FileSystemListen
   public void dispose() {
     FileSystem.getInstance().removeListener(this);
     super.dispose();
-    ModelAccess.instance().runWriteAction(new Runnable() {
+    getModelAccess().runWriteAction(new Runnable() {
       @Override
       public void run() {
         ModuleRepositoryFacade.getInstance().unregisterModules(StandaloneMPSProject.this);
-
         CleanupManager.getInstance().cleanup();
-
-        if (ProjectManager.getInstance().getOpenProjects().length > 0) {
-          ClassLoaderManager.getInstance().reloadAll(new EmptyProgressMonitor());
-        }
       }
     });
 

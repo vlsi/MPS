@@ -121,7 +121,7 @@ public class ModuleMaker {
     }
   }
 
-  // TODO: get rid of push and pop tracer calls -- they need only for performance checks
+  // TODO: get rid of push and pop tracer calls -- they are needed only for performance checks
   public MPSCompilationResult make(final Collection<? extends SModule> modules, @NotNull final ProgressMonitor monitor) {
     monitor.start("Compiling", 12);
     myTracer.push("making " + modules.size() + " modules", false);
@@ -146,7 +146,6 @@ public class ModuleMaker {
 
       int errorCount = 0;
       int warnCount = 0;
-      boolean compiled = false;
       List<IMessage> messages = new ArrayList<IMessage>();
       Set<SModule> changedModules = new HashSet<SModule>();
 
@@ -169,7 +168,6 @@ public class ModuleMaker {
           myTracer.pop();
           errorCount += result.getErrors();
           warnCount += result.getWarnings();
-          compiled = compiled || result.isCompiledAnything();
           changedModules.addAll(result.getChangedModules());
           messages.addAll(result.getMessages());
           for (IMessage msg : result.getMessages()) {

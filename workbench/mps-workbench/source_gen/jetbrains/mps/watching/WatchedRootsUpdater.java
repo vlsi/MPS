@@ -5,7 +5,7 @@ package jetbrains.mps.watching;
 import com.intellij.openapi.components.ApplicationComponent;
 import jetbrains.mps.library.LibraryManager;
 import jetbrains.mps.classloading.ClassLoaderManager;
-import jetbrains.mps.reloading.ReloadAdapter;
+import jetbrains.mps.classloading.MPSClassesListener;
 import java.util.Map;
 import jetbrains.mps.library.Library;
 import com.intellij.openapi.vfs.LocalFileSystem;
@@ -14,9 +14,11 @@ import com.intellij.openapi.project.ProjectManager;
 import com.intellij.openapi.project.ProjectManagerAdapter;
 import jetbrains.mps.ide.MPSCoreComponents;
 import org.jetbrains.annotations.NotNull;
-import com.intellij.openapi.project.Project;
-import jetbrains.mps.library.ProjectLibraryManager;
+import jetbrains.mps.classloading.MPSClassesListenerAdapter;
 import java.util.Set;
+import org.jetbrains.mps.openapi.module.SModule;
+import com.intellij.openapi.project.Project;
+import jetbrains.mps.project.ProjectLibraryManager;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Collection;
@@ -29,7 +31,7 @@ import java.util.ArrayList;
 public class WatchedRootsUpdater implements ApplicationComponent {
   private final LibraryManager myLibraryManager;
   private final ClassLoaderManager myClassLoaderManager;
-  private ReloadAdapter myReloadHandler;
+  private MPSClassesListener myClassesListener;
   private final Map<Library, LocalFileSystem.WatchRequest> myLibrariesRequests = new HashMap<Library, LocalFileSystem.WatchRequest>();
   private final Map<Library, LocalFileSystem.WatchRequest> myProjectLibrariesRequests = new HashMap<Library, LocalFileSystem.WatchRequest>();
   private final LocalFileSystem myLocalFileSystem;
@@ -50,14 +52,14 @@ public class WatchedRootsUpdater implements ApplicationComponent {
   }
   @Override
   public void initComponent() {
-    myReloadHandler = new ReloadAdapter() {
+    myClassesListener = new MPSClassesListenerAdapter() {
       @Override
-      public void onAfterReload() {
+      public void afterClassesLoaded(Set<SModule> modules) {
         processLibrariesChange();
       }
     };
     processLibrariesChange();
-    myClassLoaderManager.addReloadHandler(myReloadHandler);
+    myClassLoaderManager.addClassesHandler(myClassesListener);
     myProjectManagerListener = new ProjectManagerAdapter() {
       @Override
       public void projectOpened(Project project) {
@@ -123,7 +125,7 @@ public class WatchedRootsUpdater implements ApplicationComponent {
   }
   @Override
   public void disposeComponent() {
-    myClassLoaderManager.removeReloadHandler(myReloadHandler);
+    myClassLoaderManager.removeClassesHandler(myClassesListener);
     myProjectManager.removeProjectManagerListener(myProjectManagerListener);
   }
 }

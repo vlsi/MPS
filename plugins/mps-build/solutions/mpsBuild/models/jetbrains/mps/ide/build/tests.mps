@@ -485,6 +485,11 @@
         <property name="name" nameId="tpck.1169194664001" value="jetbrains.mps.lang.editor.multiple.testLanguage" />
         <property name="uuid" nameId="kdzh.322010710375892619" value="7a80051c-66e9-4bfc-9698-b12adfed3d9f" />
         <property name="doNotCompile" nameId="kdzh.1500819558096356884" value="false" />
+        <node role="generator" roleId="kdzh.9200313594498201639" type="kdzh.BuildMps_Generator" typeId="kdzh.5507251971038816436" id="6004181636852234893" nodeInfo="ng">
+          <property name="name" nameId="tpck.1169194664001" value="jetbrains.mps.lang.editor.multiple.testLanguage#6655351613569881723" />
+          <property name="uuid" nameId="kdzh.322010710375892619" value="1f867555-f29a-4703-a612-a41a9de4c68e" />
+          <property name="doNotCompile" nameId="kdzh.1500819558096356884" value="false" />
+        </node>
         <node role="path" roleId="kdzh.322010710375956261" type="3ior.BuildSourceProjectRelativePath" typeId="3ior.5481553824944787378" id="5328150611113966930" nodeInfo="ng">
           <node role="compositePart" roleId="3ior.7321017245477039051" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="5328150611113976858" nodeInfo="nn">
             <property name="head" nameId="3ior.8618885170173601779" value="languages" />
@@ -1957,7 +1962,7 @@
         </node>
         <node role="dependencies" roleId="kdzh.5253498789149547704" type="kdzh.BuildMps_ExtractedModuleDependency" typeId="kdzh.7259033139236285166" id="2303280755031522891" nodeInfo="nn">
           <node role="dependency" roleId="kdzh.7259033139236285167" type="kdzh.BuildMps_ModuleDependencyOnModule" typeId="kdzh.5253498789149585690" id="2303280755031522892" nodeInfo="ng">
-            <property name="reexport" nameId="kdzh.5253498789149547713" value="false" />
+            <property name="reexport" nameId="kdzh.5253498789149547713" value="true" />
             <link role="module" roleId="kdzh.5253498789149547705" targetNodeId="ffeo.5003005296035838116" resolveInfo="jetbrains.mps.lang.editor.figures.library" />
           </node>
         </node>

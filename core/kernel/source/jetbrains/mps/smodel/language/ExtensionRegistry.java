@@ -25,6 +25,7 @@ import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.structure.ExtensionDescriptor;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SRepositoryAdapter;
@@ -47,7 +48,7 @@ public class ExtensionRegistry extends BaseExtensionRegistry implements CoreComp
   private ClassLoaderManager myClm;
   @Nullable
   private MPSModuleRepository myRepo;
-  private final MPSClassesListener myHandler = new MPSClassesListenerAdapter() {
+  private final MPSClassesListener myClassesListener = new MPSClassesListenerAdapter() {
     @Override
     public void beforeClassesUnloaded(Set<SModule> unloadedModules) {
       unloadExtensionDescriptors(unloadedModules);
@@ -77,7 +78,7 @@ public class ExtensionRegistry extends BaseExtensionRegistry implements CoreComp
       myRepo.addRepositoryListener(myListener);
     }
     if (myClm != null) {
-      myClm.addClassesHandler(myHandler);
+      myClm.addClassesHandler(myClassesListener);
     }
     INSTANCE = this;
   }
@@ -86,7 +87,7 @@ public class ExtensionRegistry extends BaseExtensionRegistry implements CoreComp
   public void dispose() {
     INSTANCE = null;
     if (myClm != null) {
-      myClm.removeClassesHandler(myHandler);
+      myClm.removeClassesHandler(myClassesListener);
     }
     if (myRepo != null) {
       myRepo.removeRepositoryListener(myListener);
@@ -192,12 +193,12 @@ public class ExtensionRegistry extends BaseExtensionRegistry implements CoreComp
 
   private class MyModuleRepositoryAdapter extends SRepositoryAdapter {
     @Override
-    public void moduleAdded(SModule module) {
+    public void moduleAdded(@NotNull SModule module) {
       // awaiting next classes reload?
     }
 
     @Override
-    public void beforeModuleRemoved(SModule module) {
+    public void beforeModuleRemoved(@NotNull SModule module) {
       String namespace = myModuleToNamespace.get(module);
       if (namespace == null) return;
 

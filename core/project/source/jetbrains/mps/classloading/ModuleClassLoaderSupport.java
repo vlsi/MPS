@@ -15,81 +15,71 @@
  */
 package jetbrains.mps.classloading;
 
-import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager;
-import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager.Deptype;
 import jetbrains.mps.project.facets.JavaModuleFacet;
 import jetbrains.mps.project.facets.JavaModuleOperations;
 import jetbrains.mps.reloading.IClassPathItem;
-import jetbrains.mps.util.iterable.IterableEnumeration;
 import org.jetbrains.mps.openapi.module.SModule;
 
 import java.net.URL;
 import java.util.Collection;
+import java.util.Collections;
 import java.util.Enumeration;
-import java.util.HashSet;
-import java.util.Set;
 
 public class ModuleClassLoaderSupport {
-  private final SModule module;
-  private final IClassPathItem classPathItem;
-  private final Set<SModule> compileDependencies;
+  private final SModule myModule;
+  private final IClassPathItem myClassPathItem;
+  private final Collection<SModule> myCompileDependencies;
 
-  private ModuleClassLoaderSupport(SModule module) {
-    // ModuleClassLoaders should be created all canCreate()-able modules!
+  private ModuleClassLoaderSupport(SModule module, ModulesWatcher watcher) {
     assert canCreate(module);
-
-    this.module = module;
-
+    myModule = module;
     JavaModuleFacet facet = module.getFacet(JavaModuleFacet.class);
-    classPathItem = JavaModuleOperations.createClassPathItem(facet.getClassPath(), ModuleClassLoaderSupport.class.getName());
-
-    compileDependencies = collectCompileDependencies(module);
+    //noinspection ConstantConditions
+    myClassPathItem = JavaModuleOperations.createClassPathItem(facet.getClassPath(), ModuleClassLoaderSupport.class.getName());
+    myCompileDependencies = watcher.getDependencies(Collections.singleton(module));
   }
 
-  private static Set<SModule> collectCompileDependencies(SModule module) {
-    Set<SModule> compileDependencies = new HashSet<SModule>();
-    for (SModule dependency : new GlobalModuleDependenciesManager(module).getModules(Deptype.COMPILE)) {
-      compileDependencies.add(dependency);
-    }
-    return compileDependencies;
-  }
-
-  // ext point possible here
-  public static boolean canCreate(SModule module) {
-    // todo: + check is module compiled?
+  /**
+   * @return true if MPS manages classes of this module (not IDEA plugin) and
+   * it is possible to create ModuleClassLoader for this module.
+   *
+   * TODO: must be just MPS_FACET
+   * ext point possible here
+   */
+  static boolean canCreate(SModule module) {
     JavaModuleFacet facet = module.getFacet(JavaModuleFacet.class);
     return facet != null && facet.isCompileInMps() && module.getFacet(CustomClassLoadingFacet.class) == null;
   }
 
-  public static ModuleClassLoaderSupport create(SModule module) {
-    return new ModuleClassLoaderSupport(module);
+  public static ModuleClassLoaderSupport create(SModule module, ModulesWatcher watcher) {
+    return new ModuleClassLoaderSupport(module, watcher);
   }
 
   public SModule getModule() {
-    return module;
+    return myModule;
   }
 
   public IClassPathItem getClassPathItem() {
-    return classPathItem;
+    return myClassPathItem;
   }
 
   public boolean canFindClass(String name) {
-    return classPathItem.hasClass(name);
+    return myClassPathItem.hasClass(name);
   }
 
   public byte[] findClassBytes(String name) {
-    return classPathItem.getClass(name);
+    return myClassPathItem.getClass(name);
   }
 
   public URL findResource(String name) {
-    return classPathItem.getResource(name);
+    return myClassPathItem.getResource(name);
   }
 
   public Enumeration<URL> findResources(String name) {
-    return classPathItem.getResources(name);
+    return myClassPathItem.getResources(name);
   }
 
   public Collection<SModule> getCompileDependencies() {
-    return compileDependencies;
+    return myCompileDependencies;
   }
 }

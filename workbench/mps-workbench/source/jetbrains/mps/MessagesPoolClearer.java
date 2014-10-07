@@ -17,17 +17,20 @@ package jetbrains.mps;
 
 import com.intellij.diagnostic.MessagePool;
 import com.intellij.openapi.components.ApplicationComponent;
+import jetbrains.mps.classloading.MPSClassesListener;
+import jetbrains.mps.classloading.MPSClassesListenerAdapter;
 import jetbrains.mps.ide.MPSCoreComponents;
 import jetbrains.mps.classloading.ClassLoaderManager;
-import jetbrains.mps.reloading.ReloadAdapter;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.module.SModule;
 
 import javax.swing.SwingUtilities;
+import java.util.Set;
 
 //this is to get rid of memleak in case exception class is loaded by a language classloader
 public class MessagesPoolClearer implements ApplicationComponent {
   private ClassLoaderManager myManager;
-  private ReloadAdapter myHandler;
+  private MPSClassesListener myClassesListener;
 
   public MessagesPoolClearer(MPSCoreComponents coreComponents) {
     myManager = coreComponents.getClassLoaderManager();
@@ -41,9 +44,9 @@ public class MessagesPoolClearer implements ApplicationComponent {
 
   @Override
   public void initComponent() {
-    myHandler = new ReloadAdapter() {
+    myClassesListener = new MPSClassesListenerAdapter() {
       @Override
-      public void unload() {
+      public void beforeClassesUnloaded(Set<SModule> modules) {
         SwingUtilities.invokeLater(new Runnable() {
           @Override
           public void run() {
@@ -52,11 +55,11 @@ public class MessagesPoolClearer implements ApplicationComponent {
         });
       }
     };
-    myManager.addReloadHandler(myHandler);
+    myManager.addClassesHandler(myClassesListener);
   }
 
   @Override
   public void disposeComponent() {
-    myManager.removeReloadHandler(myHandler);
+    myManager.removeClassesHandler(myClassesListener);
   }
 }

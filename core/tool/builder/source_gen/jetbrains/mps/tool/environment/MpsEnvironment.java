@@ -5,9 +5,6 @@ package jetbrains.mps.tool.environment;
 import jetbrains.mps.project.PathMacrosProvider;
 import jetbrains.mps.library.contributor.LibraryContributor;
 import jetbrains.mps.tool.builder.util.MpsPlatform;
-import org.apache.log4j.BasicConfigurator;
-import org.apache.log4j.Logger;
-import org.apache.log4j.Level;
 import jetbrains.mps.RuntimeFlags;
 import jetbrains.mps.TestMode;
 import jetbrains.mps.generator.GenerationSettingsProvider;
@@ -26,6 +23,7 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import java.io.File;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.tool.builder.FileMPSProject;
+import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 
 public class MpsEnvironment implements Environment {
@@ -39,8 +37,6 @@ public class MpsEnvironment implements Environment {
       LOG.info("Creating MPS environment");
     }
     ActiveEnvironment.activateEnvironment(this);
-    BasicConfigurator.configure();
-    Logger.getRootLogger().setLevel(Level.INFO);
     myPlatformLoader = new MpsPlatform();
     myPlatformLoader.init();
     RuntimeFlags.setTestMode(TestMode.USUAL);

@@ -31,6 +31,7 @@ import com.intellij.openapi.vfs.VirtualFileEvent;
 import com.intellij.openapi.vfs.VirtualFileManager;
 import com.intellij.util.messages.MessageBus;
 import jetbrains.mps.ide.project.ProjectHelper;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SRepository;
 import org.jetbrains.mps.openapi.module.SRepositoryContentAdapter;
@@ -134,7 +135,7 @@ public class DirectoryIndexExcludeUpdater extends AbstractProjectComponent {
 
   private class MyModuleRepositoryListener extends SRepositoryContentAdapter {
     @Override
-    public void moduleAdded(SModule module) {
+    public void moduleAdded(@NotNull SModule module) {
       notifyRootsChanged(true);
     }
 

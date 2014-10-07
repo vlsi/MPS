@@ -252,7 +252,7 @@ public class JdkStubSolutionManager extends AbstractJavaStubSolutionManager impl
 
     if (changed) {
       ((Solution) mpsPlatform).setUpdateBootstrapSolutions(false);
-      ((Solution) mpsPlatform).setModuleDescriptor(mpsPlatfromDesc, false); // reload classes == false?
+      ((Solution) mpsPlatform).setModuleDescriptor(mpsPlatfromDesc);
     }
 
     myIdeaSdkSolution = StubSolutionIdea.newInstanceForRoots(sdk, jdk, roots, this);

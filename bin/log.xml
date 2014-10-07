@@ -38,6 +38,7 @@
         </layout>
         <filter class="org.apache.log4j.varia.LevelRangeFilter">
             <param name="LevelMax" value="INFO"/>
+            <param name="LevelMin" value="INFO"/>
         </filter>
     </appender>
 
@@ -102,6 +103,11 @@
     <category name="jetbrains.mps" additivity="true">
       <priority value="INFO"/>
       <appender-ref ref="CONSOLE-INFO"/>
+    </category>
+
+    <category name="jetbrains.mps.classloading" additivity="true">
+      <priority value="DEBUG"/>
+      <appender-ref ref="CONSOLE-DEBUG"/>
     </category>
 
     <root>

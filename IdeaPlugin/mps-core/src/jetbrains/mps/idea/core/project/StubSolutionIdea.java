@@ -64,7 +64,7 @@ public abstract class StubSolutionIdea extends StubSolution {
           SolutionDescriptor moduleDescriptor = getModuleDescriptor();
           moduleDescriptor.getModelRootDescriptors().clear();
           addModelRoots(moduleDescriptor, getRootProvider().getFiles(OrderRootType.CLASSES));
-          setModuleDescriptor(moduleDescriptor, false);
+          setModuleDescriptor(moduleDescriptor);
         }
       });
     }

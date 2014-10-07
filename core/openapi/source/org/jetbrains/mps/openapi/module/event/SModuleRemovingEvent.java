@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2014 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,28 +13,20 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.reloading;
+package org.jetbrains.mps.openapi.module.event;
 
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.module.SModule;
+import org.jetbrains.mps.openapi.module.SRepository;
 
-import java.util.Set;
+public class SModuleRemovingEvent extends SRepositoryModuleEvent {
 
-public class ReloadAdapter implements ReloadListener {
-  @Override
-  public void unload() {
+  public SModuleRemovingEvent(@NotNull SModule module) {
+    super(module);
   }
 
   @Override
-  public void onAfterReload() {
-  }
-
-  @Override
-  public void beforeClassesUnloaded(Set<SModule> unloadedModules) {
-    unload();
-  }
-
-  @Override
-  public void afterClassesLoaded(Set<SModule> loadedModules) {
-    onAfterReload();
+  public void accept(SModuleEventVisitor visitor) {
+    visitor.visit(this);
   }
 }

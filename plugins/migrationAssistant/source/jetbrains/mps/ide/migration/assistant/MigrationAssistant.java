@@ -28,7 +28,7 @@ import com.intellij.openapi.util.AsyncResult.Handler;
 import com.intellij.openapi.vfs.VirtualFileManager;
 import com.intellij.openapi.wm.impl.welcomeScreen.WelcomeFrame;
 import jetbrains.mps.ide.project.ProjectHelper;
-import jetbrains.mps.library.ProjectLibraryManager;
+import jetbrains.mps.project.ProjectLibraryManager;
 import jetbrains.mps.project.MPSProjectMigrationComponent;
 import jetbrains.mps.project.MPSProjectMigrationComponentImpl;
 import jetbrains.mps.smodel.ModelAccess;

@@ -15,7 +15,7 @@ import com.intellij.openapi.progress.ProgressManager;
 import com.intellij.openapi.progress.Task;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.progress.ProgressIndicator;
-import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.progress.ProgressMonitorAdapter;
 import org.apache.log4j.Logger;
@@ -57,7 +57,9 @@ public class ReloadAll_Action extends BaseAction {
       ProgressManager.getInstance().run(new Task.Modal(((Project) MapSequence.fromMap(_params).get("project")), "Reloading Classes", false) {
         @Override
         public void run(@NotNull final ProgressIndicator indicator) {
-          ModelAccess.instance().runWriteAction(new Runnable() {
+          jetbrains.mps.project.Project mpsProject = ProjectHelper.toMPSProject(((Project) MapSequence.fromMap(_params).get("project")));
+          assert mpsProject != null;
+          mpsProject.getModelAccess().runWriteAction(new Runnable() {
             public void run() {
               ClassLoaderManager.getInstance().reloadAll(new ProgressMonitorAdapter(indicator));
             }

@@ -47,6 +47,7 @@ import com.intellij.uiDesigner.core.GridLayoutManager;
 import com.intellij.util.ui.AbstractTableCellEditor;
 import com.intellij.util.ui.ItemRemovable;
 import com.intellij.util.ui.JBInsets;
+import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.extapi.module.ModuleFacetBase;
 import jetbrains.mps.icons.MPSIcons.General;
 import jetbrains.mps.ide.findusages.CantLoadSomethingException;
@@ -208,7 +209,8 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
   @Override
   protected void save() {
     // todo: !!!
-    myModule.setModuleDescriptor(myModuleDescriptor, true);
+    myModule.setModuleDescriptor(myModuleDescriptor);
+    ClassLoaderManager.getInstance().reloadModule(myModule);
     myModule.save();
     //In case of Generator saving lead to reload of containing Language
     //As result Language unload old Generator module and creates new - so we need to update object

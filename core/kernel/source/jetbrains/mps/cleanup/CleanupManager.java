@@ -15,18 +15,21 @@
  */
 package jetbrains.mps.cleanup;
 
+import jetbrains.mps.classloading.MPSClassesListener;
+import jetbrains.mps.classloading.MPSClassesListenerAdapter;
 import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.classloading.ClassLoaderManager;
-import jetbrains.mps.reloading.ReloadAdapter;
 import jetbrains.mps.smodel.ModelAccess;
+import org.jetbrains.mps.openapi.module.SModule;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
 
 public class CleanupManager implements CoreComponent{
   private static CleanupManager INSTANCE;
   private ClassLoaderManager myManager;
-  private ReloadAdapter myHandler;
+  private MPSClassesListener myClassesListener;
 
   public static CleanupManager getInstance() {
     return INSTANCE;
@@ -37,20 +40,20 @@ public class CleanupManager implements CoreComponent{
     if (INSTANCE != null) {
       throw new IllegalStateException("double initialization");
     }
-    myHandler = new ReloadAdapter() {
+    myClassesListener = new MPSClassesListenerAdapter() {
       @Override
-      public void unload() {
+      public void beforeClassesUnloaded(Set<SModule> modules) {
         cleanup();
       }
     };
-    myManager.addReloadHandler(myHandler);
+    myManager.addClassesHandler(myClassesListener);
     INSTANCE = this;
   }
 
   @Override
   public void dispose() {
     INSTANCE = null;
-    myManager.removeReloadHandler(myHandler);
+    myManager.removeClassesHandler(myClassesListener);
   }
 
   private final Object myLock = new Object();

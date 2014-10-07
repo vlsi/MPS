@@ -68,6 +68,9 @@ public class ReloadSession {
     myReloaded = true;
 
     monitor.start("Reloading ...", 2);
+    if (LOG.isInfoEnabled()) {
+      LOG.info("Reload started");
+    }
     fireReloadStarted();
     try {
       ModelAccess.instance().runWriteAction(new Runnable() {
@@ -80,7 +83,7 @@ public class ReloadSession {
       });
     } finally {
       if (LOG.isInfoEnabled()) {
-        LOG.info("Reload finished.");
+        LOG.info("Reload finished");
       }
       monitor.done();
       fireReloadFinished();

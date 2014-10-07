@@ -28,8 +28,6 @@ import org.jetbrains.mps.openapi.module.SModuleId;
 import java.util.List;
 
 public class DebugRegistryImpl implements DebugRegistry {
-  private final MPSModuleRepository myMpsModuleRepository;
-
   private BidirectionalMap<SModelId, String> myModels = new BidirectionalMap<SModelId, String>();
   private BidirectionalMap<SModuleId, String> myModules = new BidirectionalMap<SModuleId, String>();
   private BidirectionalMap<org.jetbrains.mps.openapi.language.SPropertyId, String> myProperties = new BidirectionalMap<org.jetbrains.mps.openapi.language.SPropertyId, String>();
@@ -37,8 +35,7 @@ public class DebugRegistryImpl implements DebugRegistry {
   private BidirectionalMap<org.jetbrains.mps.openapi.language.SConceptId, String> myConcepts = new BidirectionalMap<org.jetbrains.mps.openapi.language.SConceptId, String>();
   private BidirectionalMap<org.jetbrains.mps.openapi.language.SLanguageId, String> myLanguages = new BidirectionalMap<org.jetbrains.mps.openapi.language.SLanguageId, String>();
 
-  public DebugRegistryImpl(MPSModuleRepository mpsModuleRepository) {
-    myMpsModuleRepository = mpsModuleRepository;
+  public DebugRegistryImpl() {
   }
 
   @Override

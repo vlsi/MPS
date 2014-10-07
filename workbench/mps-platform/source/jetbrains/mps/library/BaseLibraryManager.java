@@ -19,10 +19,10 @@ import com.intellij.openapi.components.BaseComponent;
 import com.intellij.openapi.components.PersistentStateComponent;
 import com.intellij.openapi.options.Configurable;
 import com.intellij.openapi.options.ConfigurationException;
+import jetbrains.mps.ide.MPSCoreComponents;
 import jetbrains.mps.ide.library.LibraryManagerPreferences;
 import jetbrains.mps.library.BaseLibraryManager.MyState;
 import jetbrains.mps.library.contributor.LibraryContributor;
-import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.MacrosFactory;
 import org.jetbrains.annotations.NonNls;
@@ -38,10 +38,8 @@ import java.util.Map.Entry;
 import java.util.Set;
 
 public abstract class BaseLibraryManager implements BaseComponent, Configurable, PersistentStateComponent<MyState>, LibraryContributor {
-  protected final MPSModuleRepository myRepository;
 
-  public BaseLibraryManager(MPSModuleRepository repo) {
-    myRepository = repo;
+  public BaseLibraryManager(MPSCoreComponents components) {
   }
 
   @Override

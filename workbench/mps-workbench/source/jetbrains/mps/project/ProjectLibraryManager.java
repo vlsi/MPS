@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.library;
+package jetbrains.mps.project;
 
 import com.intellij.openapi.application.Application;
 import com.intellij.openapi.application.ApplicationManager;
@@ -27,8 +27,9 @@ import com.intellij.openapi.project.DumbService;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.ide.MPSCoreComponents;
 import jetbrains.mps.ide.ThreadUtils;
-import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.project.MPSProjectMigrationComponent;
+import jetbrains.mps.library.BaseLibraryManager;
+import jetbrains.mps.library.LibraryInitializer;
+import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.MacrosFactory;
 import jetbrains.mps.util.PathManager;
 import jetbrains.mps.vfs.FileSystem;
@@ -47,8 +48,8 @@ import java.io.File;
 public class ProjectLibraryManager extends BaseLibraryManager implements ProjectComponent {
   private Project myProject;
 
-  public ProjectLibraryManager(Project project, MPSProject mpsProject, DumbService dumbService, MPSCoreComponents coreComponents, MPSProjectMigrationComponent migrationState) {
-    super(coreComponents.getModuleRepository());
+  public ProjectLibraryManager(Project project, DumbService dumbService, MPSCoreComponents coreComponents, MPSProjectMigrationComponent migrationState) {
+    super(coreComponents);
     myProject = project;
   }
 
@@ -73,13 +74,12 @@ public class ProjectLibraryManager extends BaseLibraryManager implements Project
     if (myProject.isDefault() || application.isUnitTestMode() && application.isDisposeInProgress()) {
       return;
     }
-// Temporary HACK for MPS 3.1: LibraryInitializer.getInstance().update() moved to MPSProject.disposeComponent()
-//    ModelAccess.instance().runWriteAction(new Runnable() {
-//      @Override
-//      public void run() {
-//        LibraryInitializer.getInstance().update();
-//      }
-//    });
+    ModelAccess.instance().runWriteAction(new Runnable() {
+      @Override
+      public void run() {
+        LibraryInitializer.getInstance().update();
+      }
+    });
   }
 
   @Override

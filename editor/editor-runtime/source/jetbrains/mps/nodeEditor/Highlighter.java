@@ -17,7 +17,6 @@ package jetbrains.mps.nodeEditor;
 
 import com.intellij.openapi.application.ApplicationAdapter;
 import com.intellij.openapi.application.ApplicationManager;
-import com.intellij.openapi.command.CommandAdapter;
 import com.intellij.openapi.command.CommandEvent;
 import com.intellij.openapi.command.CommandProcessor;
 import com.intellij.openapi.components.ProjectComponent;
@@ -29,6 +28,8 @@ import com.intellij.openapi.project.ProjectManager;
 import com.intellij.util.messages.MessageBusConnection;
 import jetbrains.mps.RuntimeFlags;
 import jetbrains.mps.classloading.ClassLoaderManager;
+import jetbrains.mps.classloading.MPSClassesListener;
+import jetbrains.mps.classloading.MPSClassesListenerAdapter;
 import jetbrains.mps.openapi.editor.Editor;
 import jetbrains.mps.ide.MPSCoreComponents;
 import jetbrains.mps.make.IMakeService;
@@ -38,13 +39,11 @@ import jetbrains.mps.nodeEditor.highlighter.EditorsHelper;
 import jetbrains.mps.nodeEditor.inspector.InspectorEditorComponent;
 import jetbrains.mps.openapi.editor.message.EditorMessageOwner;
 import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.reloading.ReloadAdapter;
-import jetbrains.mps.reloading.ReloadListener;
+import org.jetbrains.mps.openapi.module.CommandListener;
 import jetbrains.mps.smodel.GlobalSModelEventsManager;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.ModelAccessAdapter;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SModelRepositoryAdapter;
 import jetbrains.mps.smodel.SModelRepositoryListener;
@@ -62,6 +61,7 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeUtil;
+import org.jetbrains.mps.openapi.module.SModule;
 
 import javax.swing.SwingUtilities;
 import java.lang.reflect.InvocationTargetException;
@@ -87,7 +87,7 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
   public static final int DEFAULT_DELAY_MULTIPLIER = 1;
   private final MyCancellable myCancellable = new MyCancellable();
   private final ApplicationAdapter myApplicationListener = new MyApplicationAdapter(myCancellable);
-  private final CommandAdapter myCommandListener = new MyCommandAdapter(myCancellable);
+  private final com.intellij.openapi.command.CommandAdapter myCommandListener = new MyCommandAdapter(myCancellable);
 
   private volatile boolean myStopThread = false;
   private FileEditorManager myFileEditorManager;
@@ -108,9 +108,9 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
 
   private List<EditorComponent> myAdditionalEditorComponents = new ArrayList<EditorComponent>();
 
-  private ReloadListener myReloadListener = new ReloadAdapter() {
+  private MPSClassesListener myClassesListener = new MPSClassesListenerAdapter() {
     @Override
-    public void unload() {
+    public void beforeClassesUnloaded(Set<SModule> modules) {
       addPendingAction(new Runnable() {
         @Override
         public void run() {
@@ -172,7 +172,7 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
       LOG.error("trying to initialize a Highlighter being already initialized", new Throwable());
       return;
     }
-    myClassLoaderManager.addReloadHandler(myReloadListener);
+    myClassLoaderManager.addClassesHandler(myClassesListener);
     myGlobalSModelEventsManager.addGlobalCommandListener(myModelCommandListener);
     SModelRepository.getInstance().addModelRepositoryListener(myModelReloadListener);
 
@@ -211,7 +211,7 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
     ApplicationManager.getApplication().removeApplicationListener(myApplicationListener);
     SModelRepository.getInstance().removeModelRepositoryListener(myModelReloadListener);
     myGlobalSModelEventsManager.removeGlobalCommandListener(myModelCommandListener);
-    myClassLoaderManager.removeReloadHandler(myReloadListener);
+    myClassLoaderManager.removeClassesHandler(myClassesListener);
     myMessageBusConnection.disconnect();
     myInspectorTool = null;
   }
@@ -667,7 +667,7 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
     }
   }
 
-  private static class MyCommandAdapter extends CommandAdapter {
+  private static class MyCommandAdapter extends com.intellij.openapi.command.CommandAdapter {
     private final MyCancellable myCancellable;
 
     MyCommandAdapter(MyCancellable cancellable) {
@@ -765,7 +765,7 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
   /**
    * Thread safe.
    */
-  private static class CommandWatcher extends ModelAccessAdapter {
+  private static class CommandWatcher implements CommandListener {
     private AtomicLong myLastCommandStarted = new AtomicLong(System.currentTimeMillis());
     private AtomicLong myLastCommandFinished = new AtomicLong(System.currentTimeMillis());
     private AtomicLong myGracePeriod = new AtomicLong(DEFAULT_GRACE_PERIOD);

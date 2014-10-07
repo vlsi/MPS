@@ -13,7 +13,6 @@ import com.intellij.openapi.actionSystem.CommonDataKeys;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.OptimizeImportsHelper;
-import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.progress.EmptyProgressMonitor;
@@ -68,7 +67,6 @@ public class OptimizeProjectImports_Action extends BaseAction {
       ((MPSProject) MapSequence.fromMap(_params).get("project")).getRepository().getModelAccess().executeCommand(new Runnable() {
         public void run() {
           report.value = new OptimizeImportsHelper().optimizeProjectImports(((MPSProject) MapSequence.fromMap(_params).get("project")));
-          SModelRepository.getInstance().saveAll();
           MPSModuleRepository.getInstance().saveAll();
           ClassLoaderManager.getInstance().reloadAll(new EmptyProgressMonitor());
         }

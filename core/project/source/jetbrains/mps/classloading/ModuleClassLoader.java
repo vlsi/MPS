@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.classloading;
 
-import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
 import jetbrains.mps.library.LibraryInitializer;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.util.NameUtil;
@@ -30,6 +29,7 @@ import org.jetbrains.mps.openapi.module.SModule;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Enumeration;
 import java.util.HashSet;
 import java.util.List;
@@ -40,7 +40,6 @@ import java.util.concurrent.ConcurrentHashMap;
 public class ModuleClassLoader extends ClassLoader {
   private static final Logger LOG = LogManager.getLogger(ModuleClassLoader.class);
   private static final ClassLoader BOOTSTRAP_CLASSLOADER = Object.class.getClassLoader();
-
   private final ClassLoaderManager myManager;
 
   private final ModuleClassLoaderSupport mySupport;
@@ -51,7 +50,6 @@ public class ModuleClassLoader extends ClassLoader {
   private final Map<String, Class> myClasses = new ConcurrentHashMap<String, Class>();
   private final Set<String> myLoadedClasses = new ConcurrentHashSet<String>();
 
-  // this is for debug purposes (heap dumps)
   @SuppressWarnings({"UnusedDeclaration", "FieldCanBeLocal"})
   private boolean myDisposed;
 
@@ -139,7 +137,7 @@ public class ModuleClassLoader extends ClassLoader {
       if (getPackage(pack) == null) {
         definePackage(pack, null, null, null, null, null, null, null);
       }
-      myManager.classLoaded(name, mySupport.getModule().getModuleReference());
+      myManager.getClassLoadingChecker().classLoaded(name, mySupport.getModule().getModuleReference());
       return defineClass(name, bytes, 0, bytes.length, ProtectionDomainUtil.loadedClassDomain());
     }
 
@@ -186,12 +184,14 @@ public class ModuleClassLoader extends ClassLoader {
   @Override
   protected URL findResource(String name) {
 //    checkNotDisposed();
-    for (ClassLoader dep : getDependencyClassLoaders()) {
+
+    List<ClassLoader> classLoadersToCheck = new ArrayList<ClassLoader>();
+    classLoadersToCheck.add(this);
+    classLoadersToCheck.addAll(getDependencyClassLoaders());
+    for (ClassLoader dep : classLoadersToCheck) {
       if (dep instanceof ModuleClassLoader) {
         URL res = ((ModuleClassLoader) dep).mySupport.findResource(name);
-        if (res != null) {
-          return res;
-        }
+        if (res != null) return res;
       }
     }
 
@@ -201,12 +201,14 @@ public class ModuleClassLoader extends ClassLoader {
   @Override
   protected Enumeration<URL> findResources(String name) throws IOException {
 //    checkNotDisposed();
+    List<ClassLoader> classLoadersToCheck = new ArrayList<ClassLoader>();
+    classLoadersToCheck.add(this);
+    classLoadersToCheck.addAll(getDependencyClassLoaders());
     List<URL> result = new ArrayList<URL>();
-    for (ClassLoader dep : getDependencyClassLoaders()) {
+    for (ClassLoader dep : classLoadersToCheck) {
       if (dep instanceof ModuleClassLoader) {
         Enumeration<URL> resources = ((ModuleClassLoader) dep).mySupport.findResources(name);
-        while (resources.hasMoreElements())
-          result.add(resources.nextElement());
+        while (resources.hasMoreElements()) result.add(resources.nextElement());
       }
     }
 
@@ -236,8 +238,10 @@ public class ModuleClassLoader extends ClassLoader {
     }
     Set<ClassLoader> classLoaders = new HashSet<ClassLoader>();
     for (SModule dep : mySupport.getCompileDependencies()) {
-      ClassLoader classLoader = myManager.getClassLoader(dep);
-      if (classLoader != null) {
+      if (dep == mySupport.getModule()) continue;
+      if (myManager.canLoad(dep)) {
+        ClassLoader classLoader = myManager.getClassLoader(dep);
+        if (classLoader == null) throw new IllegalStateException("The dependency " + dep + " of module " + mySupport.getModule() + " is not loaded");
         classLoaders.add(classLoader);
       }
     }

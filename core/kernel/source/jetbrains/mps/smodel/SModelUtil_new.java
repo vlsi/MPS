@@ -15,6 +15,8 @@
  */
 package jetbrains.mps.smodel;
 
+import jetbrains.mps.classloading.MPSClassesListener;
+import jetbrains.mps.classloading.MPSClassesListenerAdapter;
 import jetbrains.mps.smodel.SModelRepositoryListener.SModelRepositoryListenerPriority;
 import jetbrains.mps.smodel.tempmodel.TemporaryModels;
 import org.apache.log4j.LogManager;
@@ -27,7 +29,6 @@ import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.classloading.ClassLoaderManager;
-import jetbrains.mps.reloading.ReloadAdapter;
 import jetbrains.mps.smodel.constraints.ModelConstraints;
 import jetbrains.mps.smodel.event.SModelListener.SModelListenerPriority;
 import jetbrains.mps.smodel.event.SModelPropertyEvent;
@@ -37,6 +38,7 @@ import jetbrains.mps.smodel.search.SModelSearchUtil;
 import jetbrains.mps.util.NameUtil;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.module.SModule;
 
 import java.util.List;
 import java.util.Set;
@@ -45,9 +47,9 @@ public class SModelUtil_new implements CoreComponent {
   private static final Logger LOG = Logger.wrap(LogManager.getLogger(SModelUtil_new.class));
   private ClassLoaderManager myClManager;
   private GlobalSModelEventsManager myMeManager;
-  private ReloadAdapter myReloadHandler = new ReloadAdapter() {
+  private MPSClassesListener myClassesListener = new MPSClassesListenerAdapter() {
     @Override
-    public void unload() {
+    public void beforeClassesUnloaded(Set<SModule> modules) {
       SModelUtil.clearCaches();
     }
   };
@@ -107,14 +109,14 @@ public class SModelUtil_new implements CoreComponent {
   @Override
   public void init() {
     SModelRepository.getInstance().addModelRepositoryListener(myRepositoryListener);
-    myClManager.addReloadHandler(myReloadHandler);
+    myClManager.addClassesHandler(myClassesListener);
     myMeManager.addGlobalModelListener(myModelListener);
   }
 
   @Override
   public void dispose() {
     myMeManager.removeGlobalModelListener(myModelListener);
-    myClManager.removeReloadHandler(myReloadHandler);
+    myClManager.removeClassesHandler(myClassesListener);
     SModelRepository.getInstance().removeModelRepositoryListener(myRepositoryListener);
   }
 

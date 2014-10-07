@@ -280,12 +280,12 @@ public class UpdaterImpl implements Updater {
 
       for (SModel nextModelToListen : modelsToListen) {
         if (!myListeningModels.contains(nextModelToListen)) {
-          myModelListener.add(nextModelToListen);
+          myModelListener.startListeningToModel(nextModelToListen);
         }
       }
       for (SModel nextListeningModel : myListeningModels) {
         if (!modelsToListen.contains(nextListeningModel)) {
-          myModelListener.remove(nextListeningModel);
+          myModelListener.stopListeningToModel(nextListeningModel);
         }
       }
 

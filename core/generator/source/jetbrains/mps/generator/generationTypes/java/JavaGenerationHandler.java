@@ -25,6 +25,7 @@ import jetbrains.mps.generator.generationTypes.GenerationHandlerBase;
 import jetbrains.mps.generator.impl.cache.CacheGenLayout;
 import jetbrains.mps.generator.impl.dependencies.GenerationDependenciesCache;
 import jetbrains.mps.generator.impl.textgen.TextFacility;
+import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
 import jetbrains.mps.textgen.trace.TraceInfoCache;
 import jetbrains.mps.make.MPSCompilationResult;
 import jetbrains.mps.make.ModuleMaker;
@@ -136,19 +137,19 @@ public class JavaGenerationHandler extends GenerationHandlerBase {
 
       if (generationOK) {
         long compilationStart = System.currentTimeMillis();
-        boolean needToReload = false;
+        List<SModule> modulesToReload = new LinkedList<SModule>();
 
         for (Pair<SModule, List<SModel>> moduleListPair : input) {
           SModule module = moduleListPair.o1;
           if (ClassLoaderManager.getInstance().canLoad(module)) {
-            needToReload = true;
+            modulesToReload.add(module);
           }
           boolean compilationResult = compileModuleInMPS(module, monitor.subTask(4));
           monitor.advance(0);
           compiledSuccessfully = compiledSuccessfully && compilationResult;
         }
-        if (compiledSuccessfully && needToReload) {
-          reloadClasses(monitor.subTask(2));
+        if (compiledSuccessfully) {
+          reloadClasses(modulesToReload, monitor.subTask(2));
           monitor.advance(0);
         }
 
@@ -201,7 +202,7 @@ public class JavaGenerationHandler extends GenerationHandlerBase {
     return compiledSuccessfully;
   }
 
-  protected void reloadClasses(ProgressMonitor monitor) {
+  protected void reloadClasses(List<SModule> modulesToReload, ProgressMonitor monitor) {
     if (RuntimeFlags.isTestMode()) {
       return;
     }
@@ -209,17 +210,17 @@ public class JavaGenerationHandler extends GenerationHandlerBase {
     long start = System.currentTimeMillis();
 
     info("");
-    String info = "reloading MPS classes...";
+    String info = "Reloading MPS classes...";
     info(info);
 
     monitor.start(info, 1);
     try {
-      ClassLoaderManager.getInstance().reloadAll(new EmptyProgressMonitor());
+      ClassLoaderManager.getInstance().reloadModules(modulesToReload);
     } finally {
       monitor.done();
     }
 
-    info("Reloaded in " + (System.currentTimeMillis() - start) + " ms");
+    info("Reloaded modules in " + (System.currentTimeMillis() - start) + " ms");
   }
 
   @Override

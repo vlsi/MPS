@@ -16,6 +16,7 @@
 package jetbrains.mps.smodel.impl;
 
 import jetbrains.mps.smodel.Language;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.EditableSModel;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelChangeListener;
@@ -106,12 +107,12 @@ public final class StructureAspectChangeTracker extends SRepositoryAdapter imple
   }
 
   @Override
-  public void moduleAdded(SModule module) {
+  public void moduleAdded(@NotNull SModule module) {
     startListening(module);
   }
 
   @Override
-  public void beforeModuleRemoved(SModule module) {
+  public void beforeModuleRemoved(@NotNull SModule module) {
     stopListening(module);
   }
 

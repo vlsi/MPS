@@ -8,7 +8,10 @@ import org.apache.log4j.LogManager;
 import jetbrains.mps.classloading.ClassLoaderManager;
 import java.util.Map;
 import java.util.HashMap;
-import jetbrains.mps.reloading.ReloadAdapter;
+import jetbrains.mps.classloading.MPSClassesListener;
+import jetbrains.mps.classloading.MPSClassesListenerAdapter;
+import java.util.Set;
+import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.lang.dataFlow.framework.Program;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -24,9 +27,9 @@ public class DataFlowManager implements CoreComponent {
   private ClassLoaderManager myClassLoaderManager;
   private Map<String, DataFlowBuilder> myBuilders = new HashMap<String, DataFlowBuilder>();
   private boolean myLoaded = false;
-  private ReloadAdapter myReloadHandler = new ReloadAdapter() {
+  private MPSClassesListener myClassesListener = new MPSClassesListenerAdapter() {
     @Override
-    public void unload() {
+    public void beforeClassesUnloaded(Set<SModule> modules) {
       DataFlowManager.this.clear();
     }
   };
@@ -39,11 +42,11 @@ public class DataFlowManager implements CoreComponent {
       throw new IllegalStateException("double initialization");
     }
     INSTANCE = this;
-    this.myClassLoaderManager.addReloadHandler(this.myReloadHandler);
+    this.myClassLoaderManager.addClassesHandler(this.myClassesListener);
   }
   @Override
   public void dispose() {
-    this.myClassLoaderManager.removeReloadHandler(this.myReloadHandler);
+    this.myClassLoaderManager.removeClassesHandler(this.myClassesListener);
     INSTANCE = null;
   }
   public void register(String conceptFqName, DataFlowBuilder builder) {

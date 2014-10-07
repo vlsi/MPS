@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2014 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,17 +13,24 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+package org.jetbrains.mps.openapi.module.event;
 
-package jetbrains.mps.smodel;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.module.SRepository;
 
-public class ModelAccessAdapter implements ModelAccessListener {
-  @Override
-  public void commandStarted() {
+/**
+ * Events in the {@link org.jetbrains.mps.openapi.module.SRepositoryListener}
+ */
+public abstract class SRepositoryEvent {
+  private SRepository myRepository;
 
+  public SRepositoryEvent(@NotNull SRepository repository) {
+    myRepository = repository;
   }
 
-  @Override
-  public void commandFinished() {
+  public abstract void accept(SModuleEventVisitor visitor);
 
+  public SRepository getRepository() {
+    return myRepository;
   }
 }

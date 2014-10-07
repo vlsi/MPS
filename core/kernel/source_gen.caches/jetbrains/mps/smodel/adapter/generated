@@ -45,13 +45,13 @@
   </source>
   <source id="2075824672078462511" name="SAbstractLinkAdapter" hash="-9i3v1pm2ibt63qxrj6xe3j0wt4djpgr">
     <dep model="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" />
     <file name="SAbstractLinkAdapter.java" />
   </source>
   <source id="2601097456319836723" name="SInterfaceConceptAdapter" hash="5m4w2xqdwhyvd1vo1dr11bi3w4h9lea">
     <dep root="5691494193750495380" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
-    <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" />
     <file name="SInterfaceConceptAdapter.java" />
   </source>
   <source id="2601097456319846203" name="SPropertyAdapter" hash="74v1r877xg7966m2mccs7924uhttlp9">
