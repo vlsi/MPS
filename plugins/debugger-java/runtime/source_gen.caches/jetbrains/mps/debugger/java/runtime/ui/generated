@@ -8,7 +8,7 @@
     <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
     <file name="IconContainer.java" />
   </common>
-  <source id="3187167456722827906" name="Icons" hash="belhrquusmj3d4avpwh9pjzbe96tmrm" dependsOnCreated="true">
+  <source id="3187167456722827906" name="Icons" hash="belhrquusmj3d4avpwh9pjzbe96tmrm">
     <dep model="r:4aa0c7da-6277-43fd-90b0-e616e98e56e0(jetbrains.mps.lang.resources.generator.template.main@generator)" />
     <file name="Icons.java" />
   </source>
