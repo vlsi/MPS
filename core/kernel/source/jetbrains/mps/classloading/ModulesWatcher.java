@@ -127,8 +127,13 @@ public class ModulesWatcher {
     assert myChanged;
     LOG.debug("Recount status map for modules");
     myChanged = false;
-    constructEdges();
-    resetStatus();
+    myRepository.getModelAccess().runReadAction(new Runnable() {
+      @Override
+      public void run() {
+        constructEdges();
+        resetStatus();
+      }
+    });
     Collection<SModule> invalidModules = findInvalidModules();
     LOG.debug(invalidModules.size() + " modules marked invalid for class loading out of " + getModules().size() + " modules totally");
 
@@ -144,7 +149,7 @@ public class ModulesWatcher {
     int wasEdges = myDepGraph.clearEdges();
     myBackDepGraph.clearEdges();
 
-    Collection<SModule> modules = getModules();
+    final Collection<SModule> modules = getModules();
     for (SModule module : modules) {
       if (checkNotDisposed(module)) continue;
       for (SModule depModule : GlobalModuleDependenciesManager.directlyUsedModules(module, true, true)) {
@@ -157,12 +162,11 @@ public class ModulesWatcher {
     LOG.debug("Difference in the edge count after validation " + (myDepGraph.getEdgesCount() - wasEdges));
   }
 
-  // FIXME we have no read action some times
   private boolean checkNotDisposed(SModule module) {
-//    if (module.getRepository() == null) {
-//      LOG.error("Disposed module in ModulesWatcher", new IllegalStateException());
-//      return true;
-//    }
+    if (module.getRepository() == null) {
+      LOG.error("Disposed module in ModulesWatcher", new IllegalStateException());
+      return true;
+    }
     return false;
   }
 
@@ -210,13 +214,13 @@ public class ModulesWatcher {
   }
 
   public Collection<SModule> getModules() {
-    if (myChanged) {
-      synchronized (LOCK) {
+    synchronized (LOCK) {
+      if (myChanged) {
         recountStatus();
       }
+      assert myDepGraph.getVerticesCount() == myBackDepGraph.getVerticesCount();
+      return myDepGraph.getVertices();
     }
-    assert myDepGraph.getVerticesCount() == myBackDepGraph.getVerticesCount();
-    return myDepGraph.getVertices();
   }
 
   /**
