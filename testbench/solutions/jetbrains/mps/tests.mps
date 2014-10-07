@@ -382,7 +382,22 @@
       <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="tzu1.7023440913657702620" resolveInfo="GoToReference" />
     </node>
     <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="7803854675610566522" nodeInfo="ng">
-      <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="4o0x.6609104295326585615" resolveInfo="StyleAttributeTest" />
+      <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="4o0x.6609104295326585615" resolveInfo="StyleAttributeInheritanceTest" />
+    </node>
+    <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="1190968896992982951" nodeInfo="ng">
+      <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="4o0x.23293207022857579" resolveInfo="StyleAttributeNonInheritanceTest" />
+    </node>
+    <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="1190968896992983004" nodeInfo="ng">
+      <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="4o0x.23293207022980697" resolveInfo="StyleAttributePriorityTest" />
+    </node>
+    <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="1190968896992983059" nodeInfo="ng">
+      <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="4o0x.23293207023146489" resolveInfo="StyleAttributeSetHiddenThenUnhideTest" />
+    </node>
+    <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="1190968896992983233" nodeInfo="ng">
+      <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="4o0x.23293207023100634" resolveInfo="StyleAttributeUnapplyTest" />
+    </node>
+    <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="1190968896992983116" nodeInfo="ng">
+      <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="4o0x.23293207023291586" resolveInfo="StyleAttributeThreeLayerTest" />
     </node>
     <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="8783066269473347624" nodeInfo="ng">
       <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="h8fw.3447504547919025660" resolveInfo="AddPropertyAttribute" />
