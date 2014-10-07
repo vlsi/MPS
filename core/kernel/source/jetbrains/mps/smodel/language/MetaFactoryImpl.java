@@ -23,7 +23,6 @@ import jetbrains.mps.smodel.adapter.ids.SPropertyId;
 import jetbrains.mps.smodel.adapter.ids.SReferenceLinkId;
 import jetbrains.mps.smodel.adapter.structure.concept.SConceptAdapterById;
 import jetbrains.mps.smodel.adapter.structure.language.SLanguageAdapterById;
-import jetbrains.mps.smodel.adapter.structure.language.SLanguageAdapterByName;
 import jetbrains.mps.smodel.adapter.structure.link.SContainmentLinkAdapterById;
 import jetbrains.mps.smodel.adapter.structure.property.SPropertyAdapterById;
 import jetbrains.mps.smodel.adapter.structure.ref.SReferenceLinkAdapterById;
@@ -50,51 +49,56 @@ public class MetaFactoryImpl extends MetaFactory implements CoreComponent {
 
   @Override
   public String serializeLanguage(SLanguage language) {
-    return ((SLanguageAdapterById) language).getId().serialize();
+    return language.getQualifiedName() + "#" + ((SLanguageAdapterById) language).getId().serialize();
   }
 
   @Override
   public String serializeConcept(SConcept concept) {
-    return ((SConceptAdapterById) concept).getId().serialize();
+    return concept.getQualifiedName() + "#" + ((SConceptAdapterById) concept).getId().serialize();
   }
 
   @Override
   public String serializeProperty(SProperty property) {
-    return ((SPropertyAdapterById) property).getId().serialize();
+    return property.getContainingConcept().getName() + "#" + property.getName() + "#" + ((SPropertyAdapterById) property).getId().serialize();
   }
 
   @Override
   public String serializeRole(SContainmentLink role) {
-    return ((SContainmentLinkId) ((SContainmentLinkAdapterById) role).getRoleId()).serialize();
+    return role.getContainingConcept().getName() + "#" + role.getRoleName() + "#" + ((SContainmentLinkAdapterById) role).getRoleId().serialize();
   }
 
   @Override
   public String serializeReference(SReferenceLink ref) {
-    return ((SReferenceLinkId) ((SReferenceLinkAdapterById) ref).getRoleId()).serialize();
+    return ref.getContainingConcept().getName() + "#" + ref.getRoleName() + "#" + ((SReferenceLinkAdapterById) ref).getRoleId().serialize();
   }
 
   @Override
   public SLanguage deserializeLanguage(String language) {
-    return new SLanguageAdapterById(SLanguageId.deserialize(language));
+    String[] parts = language.split("#");
+    return new SLanguageAdapterById(SLanguageId.deserialize(parts[1]), parts[0]);
   }
 
   @Override
   public SConcept deserializeConcept(String concept) {
-    return new SConceptAdapterById(SConceptId.deserialize(concept));
+    String[] parts = concept.split("#");
+    return new SConceptAdapterById(SConceptId.deserialize(parts[1]), parts[0]);
   }
 
   @Override
   public SProperty deserializeProperty(String property) {
-    return new SPropertyAdapterById(SPropertyId.deserialize(property));
+    String[] parts = property.split("#");
+    return new SPropertyAdapterById(SPropertyId.deserialize(parts[2]), parts[0], parts[1]);
   }
 
   @Override
   public SContainmentLink deserializeRole(String role) {
-    return new SContainmentLinkAdapterById(SContainmentLinkId.deserialize(role));
+    String[] parts = role.split("#");
+    return new SContainmentLinkAdapterById(SContainmentLinkId.deserialize(parts[2]), parts[0], parts[1]);
   }
 
   @Override
   public SReferenceLink deserializeReference(String ref) {
-    return new SReferenceLinkAdapterById(SReferenceLinkId.deserialize(ref));
+    String[] parts = ref.split("#");
+    return new SReferenceLinkAdapterById(SReferenceLinkId.deserialize(parts[2]), parts[0], parts[1]);
   }
 }
