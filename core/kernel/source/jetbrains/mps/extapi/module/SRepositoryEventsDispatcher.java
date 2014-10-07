@@ -30,7 +30,6 @@ import java.util.concurrent.CopyOnWriteArrayList;
 
 /**
  * This class dispatches repository events to SRepositoryListener clients
- * Created by Alex Pyshkin on 9/2/14.
  */
 public class SRepositoryEventsDispatcher {
   private static final Logger LOG = LogManager.getLogger(SRepositoryEventsDispatcher.class);
@@ -64,7 +63,7 @@ public class SRepositoryEventsDispatcher {
       try {
         listener.moduleAdded(module);
       } catch (Throwable t) {
-        LOG.error(t);
+        LOG.error("Error on module adding " + module.getModuleName(), t);
       }
     }
   }
@@ -75,7 +74,7 @@ public class SRepositoryEventsDispatcher {
       try {
         listener.beforeModuleRemoved(module);
       } catch (Throwable t) {
-        LOG.error(t);
+        LOG.error("Error on before module removing " + module.getModuleName(), t);
       }
     }
   }
@@ -86,7 +85,7 @@ public class SRepositoryEventsDispatcher {
       try {
         listener.moduleRemoved(module);
       } catch (Throwable t) {
-        LOG.error(t);
+        LOG.error("Error on module removing " + module.getModuleName(), t);
       }
     }
   }
@@ -97,7 +96,7 @@ public class SRepositoryEventsDispatcher {
       try {
         listener.commandStarted(myRepository);
       } catch (Throwable t) {
-        LOG.error(t);
+        LOG.error("Error on command starting ", t);
       }
     }
   }
@@ -108,7 +107,7 @@ public class SRepositoryEventsDispatcher {
       try {
         listener.commandFinished(myRepository);
       } catch (Throwable t) {
-        LOG.error(t);
+        LOG.error("Error on command finished ", t);
       }
     }
   }
