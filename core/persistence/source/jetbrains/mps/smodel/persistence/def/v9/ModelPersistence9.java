@@ -22,12 +22,9 @@ import jetbrains.mps.smodel.persistence.def.IHashProvider;
 import jetbrains.mps.smodel.persistence.def.IModelPersistence;
 import jetbrains.mps.smodel.persistence.def.IModelReader;
 import jetbrains.mps.smodel.persistence.def.IModelWriter;
-import jetbrains.mps.smodel.persistence.def.v7.WriteHelper;
 import jetbrains.mps.smodel.persistence.lines.LineContent;
-import jetbrains.mps.util.JDOMUtil;
 import jetbrains.mps.util.xml.XMLSAXHandler;
 import org.jetbrains.annotations.Nullable;
-import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import org.jetbrains.mps.openapi.util.Consumer;
 
 import java.util.List;
@@ -97,7 +94,7 @@ public class ModelPersistence9 implements IModelPersistence {
 
   @Override
   public XMLSAXHandler<ModelLoadResult> getModelReaderHandler(ModelLoadingState state, SModelHeader header) {
-    return new ModelReader9Handler(state == ModelLoadingState.INTERFACE_LOADED, state == ModelLoadingState.NO_IMPLEMENTATION, header);
+    return new ModelReader9Handler();
   }
 
   @Override
