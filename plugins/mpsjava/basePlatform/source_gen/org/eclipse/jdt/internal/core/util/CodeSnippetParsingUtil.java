@@ -15,7 +15,6 @@ import org.eclipse.jdt.internal.compiler.env.ICompilationUnit;
 import org.eclipse.jdt.internal.compiler.batch.CompilationUnit;
 import org.eclipse.jdt.internal.compiler.ast.CompilationUnitDeclaration;
 import org.eclipse.jdt.internal.compiler.ast.TypeDeclaration;
-import org.eclipse.jdt.internal.compiler.ast.Expression;
 import org.eclipse.jdt.internal.compiler.ast.ConstructorDeclaration;
 
 /**
@@ -115,29 +114,6 @@ public class CodeSnippetParsingUtil {
       this.recordedParsingInformation.updateRecordedParsingInformation(compilationResult);
     }
     return compilationUnitDeclaration;
-  }
-
-  public Expression parseExpression(char[] source, Map settings, boolean recordParsingInformation) {
-    return parseExpression(source, 0, source.length, settings, recordParsingInformation);
-  }
-
-  public Expression parseExpression(char[] source, int offset, int length, Map settings, boolean recordParsingInformation) {
-    if (source == null) {
-      throw new IllegalArgumentException();
-    }
-    CompilerOptions compilerOptions = new CompilerOptions(settings);
-    // in this case we don't want to ignore method bodies since we are parsing only an expression 
-    final ProblemReporter problemReporter = new ProblemReporter(DefaultErrorHandlingPolicies.proceedWithAllProblems(), compilerOptions, new DefaultProblemFactory(Locale.getDefault()));
-    CommentRecorderParser parser = new CommentRecorderParser(problemReporter, false);
-    ICompilationUnit sourceUnit = new CompilationUnit(source, "", compilerOptions.defaultEncoding);
-    // $NON-NLS-1$ 
-    CompilationResult compilationResult = new CompilationResult(sourceUnit, 0, 0, compilerOptions.maxProblemsPerUnit);
-    CompilationUnitDeclaration unit = new CompilationUnitDeclaration(problemReporter, compilationResult, source.length);
-    Expression result = parser.parseExpression(source, offset, length, unit);
-    if (recordParsingInformation) {
-      this.recordedParsingInformation = getRecordedParsingInformation(compilationResult, unit.comments);
-    }
-    return result;
   }
 
   public ConstructorDeclaration parseStatements(char[] source, Map settings, boolean recordParsingInformation, boolean enabledStatementRecovery) {

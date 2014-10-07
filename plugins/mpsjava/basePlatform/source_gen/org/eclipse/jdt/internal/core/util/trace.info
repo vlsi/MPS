@@ -278,173 +278,139 @@
     <unitInfo nodeId="1218034168005183012" fileName="RecordedParsingInformation.java" startLine="8" startPosition="0" endLine="43" endPosition="0" unitName="org.eclipse.jdt.internal.core.util.RecordedParsingInformation" />
   </root>
   <root nodeRef="r:40e27d97-dea1-422b-91e0-3b9f3271a7f1(org.eclipse.jdt.internal.core.util)/1218034168005183146">
-    <nodeInfo nodeId="1218034168005183149" fileName="CodeSnippetParsingUtil.java" startLine="36" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="recordedParsingInformation" />
-    <nodeInfo nodeId="1218034168005183153" fileName="CodeSnippetParsingUtil.java" startLine="37" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="ignoreMethodBodies" />
-    <nodeInfo nodeId="1218034168005183162" fileName="CodeSnippetParsingUtil.java" startLine="39" startPosition="61" endLine="40" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1218034168005213216" fileName="CodeSnippetParsingUtil.java" startLine="43" startPosition="35" endLine="44" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ThisConstructorInvocation" />
-    <nodeInfo nodeId="1218034168005183184" fileName="CodeSnippetParsingUtil.java" startLine="47" startPosition="131" endLine="48" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1218034168005183190" fileName="CodeSnippetParsingUtil.java" startLine="48" startPosition="55" endLine="49" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1218034168005183201" fileName="CodeSnippetParsingUtil.java" startLine="50" startPosition="29" endLine="51" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1218034168005183215" fileName="CodeSnippetParsingUtil.java" startLine="52" startPosition="62" endLine="53" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1218034168005183221" fileName="CodeSnippetParsingUtil.java" startLine="54" startPosition="14" endLine="55" endPosition="125" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1218034168005183236" fileName="CodeSnippetParsingUtil.java" startLine="57" startPosition="5" endLine="58" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1218034168005183253" fileName="CodeSnippetParsingUtil.java" startLine="61" startPosition="110" endLine="62" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1218034168005183288" fileName="CodeSnippetParsingUtil.java" startLine="66" startPosition="25" endLine="67" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
-    <nodeInfo nodeId="1218034168005183290" fileName="CodeSnippetParsingUtil.java" startLine="68" startPosition="5" endLine="69" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1218034168005183294" fileName="CodeSnippetParsingUtil.java" startLine="69" startPosition="68" endLine="70" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1218034168005183303" fileName="CodeSnippetParsingUtil.java" startLine="70" startPosition="65" endLine="71" endPosition="184" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1218034168005183313" fileName="CodeSnippetParsingUtil.java" startLine="71" startPosition="184" endLine="72" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1218034168005183318" fileName="CodeSnippetParsingUtil.java" startLine="72" startPosition="85" endLine="73" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1218034168005183322" fileName="CodeSnippetParsingUtil.java" startLine="73" startPosition="41" endLine="74" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1218034168005183327" fileName="CodeSnippetParsingUtil.java" startLine="74" startPosition="59" endLine="75" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1218034168005183955" fileName="CodeSnippetParsingUtil.java" startLine="75" startPosition="99" endLine="76" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="1218034168005183336" fileName="CodeSnippetParsingUtil.java" startLine="76" startPosition="19" endLine="77" endPosition="118" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1218034168005183346" fileName="CodeSnippetParsingUtil.java" startLine="77" startPosition="118" endLine="78" endPosition="148" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1218034168005183355" fileName="CodeSnippetParsingUtil.java" startLine="78" startPosition="148" endLine="79" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1218034168005183368" fileName="CodeSnippetParsingUtil.java" startLine="80" startPosition="35" endLine="81" endPosition="126" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1218034168005183378" fileName="CodeSnippetParsingUtil.java" startLine="82" startPosition="5" endLine="83" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1218034168005183399" fileName="CodeSnippetParsingUtil.java" startLine="87" startPosition="25" endLine="88" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
-    <nodeInfo nodeId="1218034168005183401" fileName="CodeSnippetParsingUtil.java" startLine="89" startPosition="5" endLine="90" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1218034168005183405" fileName="CodeSnippetParsingUtil.java" startLine="90" startPosition="68" endLine="91" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1218034168005183414" fileName="CodeSnippetParsingUtil.java" startLine="91" startPosition="65" endLine="92" endPosition="209" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1218034168005183426" fileName="CodeSnippetParsingUtil.java" startLine="92" startPosition="209" endLine="93" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1218034168005183957" fileName="CodeSnippetParsingUtil.java" startLine="93" startPosition="99" endLine="94" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="1218034168005183435" fileName="CodeSnippetParsingUtil.java" startLine="94" startPosition="19" endLine="95" endPosition="124" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1218034168005183445" fileName="CodeSnippetParsingUtil.java" startLine="95" startPosition="124" endLine="96" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1218034168005183455" fileName="CodeSnippetParsingUtil.java" startLine="97" startPosition="35" endLine="98" endPosition="126" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1218034168005183471" fileName="CodeSnippetParsingUtil.java" startLine="100" startPosition="56" endLine="101" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1218034168005183959" fileName="CodeSnippetParsingUtil.java" startLine="101" startPosition="67" endLine="102" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="1218034168005183477" fileName="CodeSnippetParsingUtil.java" startLine="102" startPosition="80" endLine="103" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1218034168005183961" fileName="CodeSnippetParsingUtil.java" startLine="104" startPosition="5" endLine="105" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="1218034168005183963" fileName="CodeSnippetParsingUtil.java" startLine="105" startPosition="69" endLine="106" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="1218034168005183479" fileName="CodeSnippetParsingUtil.java" startLine="106" startPosition="36" endLine="107" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1218034168005183485" fileName="CodeSnippetParsingUtil.java" startLine="107" startPosition="48" endLine="108" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1218034168005183517" fileName="CodeSnippetParsingUtil.java" startLine="110" startPosition="46" endLine="111" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1218034168005183529" fileName="CodeSnippetParsingUtil.java" startLine="114" startPosition="35" endLine="115" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1218034168005183536" fileName="CodeSnippetParsingUtil.java" startLine="116" startPosition="5" endLine="117" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1218034168005183549" fileName="CodeSnippetParsingUtil.java" startLine="120" startPosition="100" endLine="121" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1218034168005183580" fileName="CodeSnippetParsingUtil.java" startLine="125" startPosition="25" endLine="126" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
-    <nodeInfo nodeId="1218034168005183582" fileName="CodeSnippetParsingUtil.java" startLine="127" startPosition="5" endLine="128" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1218034168005183965" fileName="CodeSnippetParsingUtil.java" startLine="128" startPosition="68" endLine="129" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="1218034168005183587" fileName="CodeSnippetParsingUtil.java" startLine="129" startPosition="98" endLine="130" endPosition="184" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1218034168005183597" fileName="CodeSnippetParsingUtil.java" startLine="130" startPosition="184" endLine="131" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1218034168005183603" fileName="CodeSnippetParsingUtil.java" startLine="131" startPosition="85" endLine="132" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1218034168005183967" fileName="CodeSnippetParsingUtil.java" startLine="132" startPosition="99" endLine="133" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="1218034168005183612" fileName="CodeSnippetParsingUtil.java" startLine="133" startPosition="19" endLine="134" endPosition="118" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1218034168005183622" fileName="CodeSnippetParsingUtil.java" startLine="134" startPosition="118" endLine="135" endPosition="120" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1218034168005183631" fileName="CodeSnippetParsingUtil.java" startLine="135" startPosition="120" endLine="136" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1218034168005183643" fileName="CodeSnippetParsingUtil.java" startLine="137" startPosition="35" endLine="138" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1218034168005183653" fileName="CodeSnippetParsingUtil.java" startLine="139" startPosition="5" endLine="140" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1218034168005183668" fileName="CodeSnippetParsingUtil.java" startLine="143" startPosition="146" endLine="144" endPosition="115" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1218034168005183702" fileName="CodeSnippetParsingUtil.java" startLine="148" startPosition="25" endLine="149" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
-    <nodeInfo nodeId="1218034168005183704" fileName="CodeSnippetParsingUtil.java" startLine="150" startPosition="5" endLine="151" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1218034168005183969" fileName="CodeSnippetParsingUtil.java" startLine="151" startPosition="68" endLine="152" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="1218034168005183709" fileName="CodeSnippetParsingUtil.java" startLine="152" startPosition="95" endLine="153" endPosition="184" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1218034168005183719" fileName="CodeSnippetParsingUtil.java" startLine="153" startPosition="184" endLine="154" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1218034168005183724" fileName="CodeSnippetParsingUtil.java" startLine="154" startPosition="85" endLine="155" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1218034168005183728" fileName="CodeSnippetParsingUtil.java" startLine="155" startPosition="41" endLine="156" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1218034168005183733" fileName="CodeSnippetParsingUtil.java" startLine="156" startPosition="59" endLine="157" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1218034168005183971" fileName="CodeSnippetParsingUtil.java" startLine="157" startPosition="99" endLine="158" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="1218034168005183742" fileName="CodeSnippetParsingUtil.java" startLine="158" startPosition="19" endLine="159" endPosition="124" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1218034168005183752" fileName="CodeSnippetParsingUtil.java" startLine="159" startPosition="124" endLine="160" endPosition="135" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1218034168005183759" fileName="CodeSnippetParsingUtil.java" startLine="160" startPosition="135" endLine="161" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1218034168005183763" fileName="CodeSnippetParsingUtil.java" startLine="161" startPosition="98" endLine="162" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1218034168005183770" fileName="CodeSnippetParsingUtil.java" startLine="162" startPosition="42" endLine="163" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1218034168005183780" fileName="CodeSnippetParsingUtil.java" startLine="163" startPosition="70" endLine="164" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1218034168005183786" fileName="CodeSnippetParsingUtil.java" startLine="164" startPosition="46" endLine="165" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1218034168005183796" fileName="CodeSnippetParsingUtil.java" startLine="165" startPosition="57" endLine="166" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1218034168005183801" fileName="CodeSnippetParsingUtil.java" startLine="166" startPosition="48" endLine="167" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1218034168005183809" fileName="CodeSnippetParsingUtil.java" startLine="167" startPosition="52" endLine="168" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1218034168005183819" fileName="CodeSnippetParsingUtil.java" startLine="169" startPosition="35" endLine="170" endPosition="126" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1218034168005183829" fileName="CodeSnippetParsingUtil.java" startLine="171" startPosition="5" endLine="172" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1218034168005183219" fileName="CodeSnippetParsingUtil.java" startLine="54" startPosition="12" endLine="56" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1218034168005183157" fileName="CodeSnippetParsingUtil.java" startLine="39" startPosition="0" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="CodeSnippetParsingUtil#(Z)V" />
-    <nodeInfo nodeId="1218034168005183169" fileName="CodeSnippetParsingUtil.java" startLine="43" startPosition="0" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="CodeSnippetParsingUtil#()V" />
-    <nodeInfo nodeId="1218034168005183244" fileName="CodeSnippetParsingUtil.java" startLine="61" startPosition="0" endLine="64" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="parseClassBodyDeclarations#([CLjava/util/Map;Z)[Lorg/eclipse/jdt/internal/compiler/ast/ASTNode;" />
-    <nodeInfo nodeId="1218034168005183281" fileName="CodeSnippetParsingUtil.java" startLine="65" startPosition="168" endLine="68" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1218034168005183364" fileName="CodeSnippetParsingUtil.java" startLine="79" startPosition="109" endLine="82" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1218034168005183392" fileName="CodeSnippetParsingUtil.java" startLine="86" startPosition="121" endLine="89" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1218034168005183451" fileName="CodeSnippetParsingUtil.java" startLine="96" startPosition="108" endLine="99" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1218034168005183497" fileName="CodeSnippetParsingUtil.java" startLine="109" startPosition="24" endLine="112" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" />
-    <nodeInfo nodeId="1218034168005183525" fileName="CodeSnippetParsingUtil.java" startLine="113" startPosition="5" endLine="116" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1218034168005183540" fileName="CodeSnippetParsingUtil.java" startLine="120" startPosition="0" endLine="123" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="parseExpression#([CLjava/util/Map;Z)Lorg/eclipse/jdt/internal/compiler/ast/Expression;" />
-    <nodeInfo nodeId="1218034168005183573" fileName="CodeSnippetParsingUtil.java" startLine="124" startPosition="124" endLine="127" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1218034168005183639" fileName="CodeSnippetParsingUtil.java" startLine="136" startPosition="77" endLine="139" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1218034168005183657" fileName="CodeSnippetParsingUtil.java" startLine="143" startPosition="0" endLine="146" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="parseStatements#([CLjava/util/Map;ZZ)Lorg/eclipse/jdt/internal/compiler/ast/ConstructorDeclaration;" />
-    <nodeInfo nodeId="1218034168005183695" fileName="CodeSnippetParsingUtil.java" startLine="147" startPosition="170" endLine="150" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1218034168005183815" fileName="CodeSnippetParsingUtil.java" startLine="168" startPosition="75" endLine="171" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1218034168005183207" fileName="CodeSnippetParsingUtil.java" startLine="51" startPosition="88" endLine="56" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1218034168005183465" fileName="CodeSnippetParsingUtil.java" startLine="99" startPosition="5" endLine="104" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1218034168005183491" fileName="CodeSnippetParsingUtil.java" startLine="108" startPosition="63" endLine="113" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1218034168005183194" fileName="CodeSnippetParsingUtil.java" startLine="49" startPosition="41" endLine="57" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1218034168005183175" fileName="CodeSnippetParsingUtil.java" startLine="47" startPosition="0" endLine="60" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getRecordedParsingInformation#(Lorg/eclipse/jdt/internal/compiler/CompilationResult;[[I)Lorg/eclipse/jdt/internal/core/util/RecordedParsingInformation;" />
-    <nodeInfo nodeId="1218034168005183560" fileName="CodeSnippetParsingUtil.java" startLine="124" startPosition="0" endLine="142" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="parseExpression#([CIILjava/util/Map;Z)Lorg/eclipse/jdt/internal/compiler/ast/Expression;" />
-    <nodeInfo nodeId="1218034168005183266" fileName="CodeSnippetParsingUtil.java" startLine="65" startPosition="0" endLine="85" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="parseClassBodyDeclarations#([CIILjava/util/Map;ZZ)[Lorg/eclipse/jdt/internal/compiler/ast/ASTNode;" />
-    <nodeInfo nodeId="1218034168005183680" fileName="CodeSnippetParsingUtil.java" startLine="147" startPosition="0" endLine="174" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="parseStatements#([CIILjava/util/Map;ZZ)Lorg/eclipse/jdt/internal/compiler/ast/ConstructorDeclaration;" />
-    <nodeInfo nodeId="1218034168005183383" fileName="CodeSnippetParsingUtil.java" startLine="86" startPosition="0" endLine="119" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="parseCompilationUnit#([CLjava/util/Map;Z)Lorg/eclipse/jdt/internal/compiler/ast/CompilationUnitDeclaration;" />
-    <scopeInfo nodeId="1218034168005183161" fileName="CodeSnippetParsingUtil.java" startLine="39" startPosition="61" endLine="40" endPosition="49" />
-    <scopeInfo nodeId="1218034168005183171" fileName="CodeSnippetParsingUtil.java" startLine="43" startPosition="35" endLine="44" endPosition="16" />
-    <scopeInfo nodeId="1218034168005183214" fileName="CodeSnippetParsingUtil.java" startLine="52" startPosition="62" endLine="53" endPosition="45" />
-    <scopeInfo nodeId="1218034168005183220" fileName="CodeSnippetParsingUtil.java" startLine="54" startPosition="14" endLine="55" endPosition="125" />
-    <scopeInfo nodeId="1218034168005183252" fileName="CodeSnippetParsingUtil.java" startLine="61" startPosition="110" endLine="62" endPosition="107" />
-    <scopeInfo nodeId="1218034168005183286" fileName="CodeSnippetParsingUtil.java" startLine="66" startPosition="25" endLine="67" endPosition="43" />
-    <scopeInfo nodeId="1218034168005183367" fileName="CodeSnippetParsingUtil.java" startLine="80" startPosition="35" endLine="81" endPosition="126" />
-    <scopeInfo nodeId="1218034168005183397" fileName="CodeSnippetParsingUtil.java" startLine="87" startPosition="25" endLine="88" endPosition="43" />
-    <scopeInfo nodeId="1218034168005183454" fileName="CodeSnippetParsingUtil.java" startLine="97" startPosition="35" endLine="98" endPosition="126" />
-    <scopeInfo nodeId="1218034168005183516" fileName="CodeSnippetParsingUtil.java" startLine="110" startPosition="46" endLine="111" endPosition="66" />
-    <scopeInfo nodeId="1218034168005183528" fileName="CodeSnippetParsingUtil.java" startLine="114" startPosition="35" endLine="115" endPosition="90" />
-    <scopeInfo nodeId="1218034168005183548" fileName="CodeSnippetParsingUtil.java" startLine="120" startPosition="100" endLine="121" endPosition="89" />
-    <scopeInfo nodeId="1218034168005183578" fileName="CodeSnippetParsingUtil.java" startLine="125" startPosition="25" endLine="126" endPosition="43" />
-    <scopeInfo nodeId="1218034168005183642" fileName="CodeSnippetParsingUtil.java" startLine="137" startPosition="35" endLine="138" endPosition="104" />
-    <scopeInfo nodeId="1218034168005183667" fileName="CodeSnippetParsingUtil.java" startLine="143" startPosition="146" endLine="144" endPosition="115" />
-    <scopeInfo nodeId="1218034168005183700" fileName="CodeSnippetParsingUtil.java" startLine="148" startPosition="25" endLine="149" endPosition="43" />
-    <scopeInfo nodeId="1218034168005183818" fileName="CodeSnippetParsingUtil.java" startLine="169" startPosition="35" endLine="170" endPosition="126" />
-    <scopeInfo nodeId="1218034168005183157" fileName="CodeSnippetParsingUtil.java" startLine="39" startPosition="0" endLine="42" endPosition="0">
+    <nodeInfo nodeId="1218034168005183149" fileName="CodeSnippetParsingUtil.java" startLine="35" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="recordedParsingInformation" />
+    <nodeInfo nodeId="1218034168005183153" fileName="CodeSnippetParsingUtil.java" startLine="36" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="ignoreMethodBodies" />
+    <nodeInfo nodeId="1218034168005183162" fileName="CodeSnippetParsingUtil.java" startLine="38" startPosition="61" endLine="39" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1218034168005213216" fileName="CodeSnippetParsingUtil.java" startLine="42" startPosition="35" endLine="43" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ThisConstructorInvocation" />
+    <nodeInfo nodeId="1218034168005183184" fileName="CodeSnippetParsingUtil.java" startLine="46" startPosition="131" endLine="47" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1218034168005183190" fileName="CodeSnippetParsingUtil.java" startLine="47" startPosition="55" endLine="48" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1218034168005183201" fileName="CodeSnippetParsingUtil.java" startLine="49" startPosition="29" endLine="50" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1218034168005183215" fileName="CodeSnippetParsingUtil.java" startLine="51" startPosition="62" endLine="52" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1218034168005183221" fileName="CodeSnippetParsingUtil.java" startLine="53" startPosition="14" endLine="54" endPosition="125" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1218034168005183236" fileName="CodeSnippetParsingUtil.java" startLine="56" startPosition="5" endLine="57" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1218034168005183253" fileName="CodeSnippetParsingUtil.java" startLine="60" startPosition="110" endLine="61" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1218034168005183288" fileName="CodeSnippetParsingUtil.java" startLine="65" startPosition="25" endLine="66" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
+    <nodeInfo nodeId="1218034168005183290" fileName="CodeSnippetParsingUtil.java" startLine="67" startPosition="5" endLine="68" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1218034168005183294" fileName="CodeSnippetParsingUtil.java" startLine="68" startPosition="68" endLine="69" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1218034168005183303" fileName="CodeSnippetParsingUtil.java" startLine="69" startPosition="65" endLine="70" endPosition="184" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1218034168005183313" fileName="CodeSnippetParsingUtil.java" startLine="70" startPosition="184" endLine="71" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1218034168005183318" fileName="CodeSnippetParsingUtil.java" startLine="71" startPosition="85" endLine="72" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1218034168005183322" fileName="CodeSnippetParsingUtil.java" startLine="72" startPosition="41" endLine="73" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1218034168005183327" fileName="CodeSnippetParsingUtil.java" startLine="73" startPosition="59" endLine="74" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1218034168005183955" fileName="CodeSnippetParsingUtil.java" startLine="74" startPosition="99" endLine="75" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="1218034168005183336" fileName="CodeSnippetParsingUtil.java" startLine="75" startPosition="19" endLine="76" endPosition="118" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1218034168005183346" fileName="CodeSnippetParsingUtil.java" startLine="76" startPosition="118" endLine="77" endPosition="148" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1218034168005183355" fileName="CodeSnippetParsingUtil.java" startLine="77" startPosition="148" endLine="78" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1218034168005183368" fileName="CodeSnippetParsingUtil.java" startLine="79" startPosition="35" endLine="80" endPosition="126" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1218034168005183378" fileName="CodeSnippetParsingUtil.java" startLine="81" startPosition="5" endLine="82" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1218034168005183399" fileName="CodeSnippetParsingUtil.java" startLine="86" startPosition="25" endLine="87" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
+    <nodeInfo nodeId="1218034168005183401" fileName="CodeSnippetParsingUtil.java" startLine="88" startPosition="5" endLine="89" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1218034168005183405" fileName="CodeSnippetParsingUtil.java" startLine="89" startPosition="68" endLine="90" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1218034168005183414" fileName="CodeSnippetParsingUtil.java" startLine="90" startPosition="65" endLine="91" endPosition="209" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1218034168005183426" fileName="CodeSnippetParsingUtil.java" startLine="91" startPosition="209" endLine="92" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1218034168005183957" fileName="CodeSnippetParsingUtil.java" startLine="92" startPosition="99" endLine="93" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="1218034168005183435" fileName="CodeSnippetParsingUtil.java" startLine="93" startPosition="19" endLine="94" endPosition="124" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1218034168005183445" fileName="CodeSnippetParsingUtil.java" startLine="94" startPosition="124" endLine="95" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1218034168005183455" fileName="CodeSnippetParsingUtil.java" startLine="96" startPosition="35" endLine="97" endPosition="126" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1218034168005183471" fileName="CodeSnippetParsingUtil.java" startLine="99" startPosition="56" endLine="100" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1218034168005183959" fileName="CodeSnippetParsingUtil.java" startLine="100" startPosition="67" endLine="101" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="1218034168005183477" fileName="CodeSnippetParsingUtil.java" startLine="101" startPosition="80" endLine="102" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1218034168005183961" fileName="CodeSnippetParsingUtil.java" startLine="103" startPosition="5" endLine="104" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="1218034168005183963" fileName="CodeSnippetParsingUtil.java" startLine="104" startPosition="69" endLine="105" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="1218034168005183479" fileName="CodeSnippetParsingUtil.java" startLine="105" startPosition="36" endLine="106" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1218034168005183485" fileName="CodeSnippetParsingUtil.java" startLine="106" startPosition="48" endLine="107" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1218034168005183517" fileName="CodeSnippetParsingUtil.java" startLine="109" startPosition="46" endLine="110" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1218034168005183529" fileName="CodeSnippetParsingUtil.java" startLine="113" startPosition="35" endLine="114" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1218034168005183536" fileName="CodeSnippetParsingUtil.java" startLine="115" startPosition="5" endLine="116" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1218034168005183668" fileName="CodeSnippetParsingUtil.java" startLine="119" startPosition="146" endLine="120" endPosition="115" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1218034168005183702" fileName="CodeSnippetParsingUtil.java" startLine="124" startPosition="25" endLine="125" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
+    <nodeInfo nodeId="1218034168005183704" fileName="CodeSnippetParsingUtil.java" startLine="126" startPosition="5" endLine="127" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1218034168005183969" fileName="CodeSnippetParsingUtil.java" startLine="127" startPosition="68" endLine="128" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="1218034168005183709" fileName="CodeSnippetParsingUtil.java" startLine="128" startPosition="95" endLine="129" endPosition="184" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1218034168005183719" fileName="CodeSnippetParsingUtil.java" startLine="129" startPosition="184" endLine="130" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1218034168005183724" fileName="CodeSnippetParsingUtil.java" startLine="130" startPosition="85" endLine="131" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1218034168005183728" fileName="CodeSnippetParsingUtil.java" startLine="131" startPosition="41" endLine="132" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1218034168005183733" fileName="CodeSnippetParsingUtil.java" startLine="132" startPosition="59" endLine="133" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1218034168005183971" fileName="CodeSnippetParsingUtil.java" startLine="133" startPosition="99" endLine="134" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="1218034168005183742" fileName="CodeSnippetParsingUtil.java" startLine="134" startPosition="19" endLine="135" endPosition="124" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1218034168005183752" fileName="CodeSnippetParsingUtil.java" startLine="135" startPosition="124" endLine="136" endPosition="135" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1218034168005183759" fileName="CodeSnippetParsingUtil.java" startLine="136" startPosition="135" endLine="137" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1218034168005183763" fileName="CodeSnippetParsingUtil.java" startLine="137" startPosition="98" endLine="138" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1218034168005183770" fileName="CodeSnippetParsingUtil.java" startLine="138" startPosition="42" endLine="139" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1218034168005183780" fileName="CodeSnippetParsingUtil.java" startLine="139" startPosition="70" endLine="140" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1218034168005183786" fileName="CodeSnippetParsingUtil.java" startLine="140" startPosition="46" endLine="141" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1218034168005183796" fileName="CodeSnippetParsingUtil.java" startLine="141" startPosition="57" endLine="142" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1218034168005183801" fileName="CodeSnippetParsingUtil.java" startLine="142" startPosition="48" endLine="143" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1218034168005183809" fileName="CodeSnippetParsingUtil.java" startLine="143" startPosition="52" endLine="144" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1218034168005183819" fileName="CodeSnippetParsingUtil.java" startLine="145" startPosition="35" endLine="146" endPosition="126" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1218034168005183829" fileName="CodeSnippetParsingUtil.java" startLine="147" startPosition="5" endLine="148" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1218034168005183219" fileName="CodeSnippetParsingUtil.java" startLine="53" startPosition="12" endLine="55" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1218034168005183157" fileName="CodeSnippetParsingUtil.java" startLine="38" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="CodeSnippetParsingUtil#(Z)V" />
+    <nodeInfo nodeId="1218034168005183169" fileName="CodeSnippetParsingUtil.java" startLine="42" startPosition="0" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="CodeSnippetParsingUtil#()V" />
+    <nodeInfo nodeId="1218034168005183244" fileName="CodeSnippetParsingUtil.java" startLine="60" startPosition="0" endLine="63" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="parseClassBodyDeclarations#([CLjava/util/Map;Z)[Lorg/eclipse/jdt/internal/compiler/ast/ASTNode;" />
+    <nodeInfo nodeId="1218034168005183281" fileName="CodeSnippetParsingUtil.java" startLine="64" startPosition="168" endLine="67" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1218034168005183364" fileName="CodeSnippetParsingUtil.java" startLine="78" startPosition="109" endLine="81" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1218034168005183392" fileName="CodeSnippetParsingUtil.java" startLine="85" startPosition="121" endLine="88" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1218034168005183451" fileName="CodeSnippetParsingUtil.java" startLine="95" startPosition="108" endLine="98" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1218034168005183497" fileName="CodeSnippetParsingUtil.java" startLine="108" startPosition="24" endLine="111" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" />
+    <nodeInfo nodeId="1218034168005183525" fileName="CodeSnippetParsingUtil.java" startLine="112" startPosition="5" endLine="115" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1218034168005183657" fileName="CodeSnippetParsingUtil.java" startLine="119" startPosition="0" endLine="122" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="parseStatements#([CLjava/util/Map;ZZ)Lorg/eclipse/jdt/internal/compiler/ast/ConstructorDeclaration;" />
+    <nodeInfo nodeId="1218034168005183695" fileName="CodeSnippetParsingUtil.java" startLine="123" startPosition="170" endLine="126" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1218034168005183815" fileName="CodeSnippetParsingUtil.java" startLine="144" startPosition="75" endLine="147" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1218034168005183207" fileName="CodeSnippetParsingUtil.java" startLine="50" startPosition="88" endLine="55" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1218034168005183465" fileName="CodeSnippetParsingUtil.java" startLine="98" startPosition="5" endLine="103" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1218034168005183491" fileName="CodeSnippetParsingUtil.java" startLine="107" startPosition="63" endLine="112" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1218034168005183194" fileName="CodeSnippetParsingUtil.java" startLine="48" startPosition="41" endLine="56" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1218034168005183175" fileName="CodeSnippetParsingUtil.java" startLine="46" startPosition="0" endLine="59" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getRecordedParsingInformation#(Lorg/eclipse/jdt/internal/compiler/CompilationResult;[[I)Lorg/eclipse/jdt/internal/core/util/RecordedParsingInformation;" />
+    <nodeInfo nodeId="1218034168005183266" fileName="CodeSnippetParsingUtil.java" startLine="64" startPosition="0" endLine="84" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="parseClassBodyDeclarations#([CIILjava/util/Map;ZZ)[Lorg/eclipse/jdt/internal/compiler/ast/ASTNode;" />
+    <nodeInfo nodeId="1218034168005183680" fileName="CodeSnippetParsingUtil.java" startLine="123" startPosition="0" endLine="150" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="parseStatements#([CIILjava/util/Map;ZZ)Lorg/eclipse/jdt/internal/compiler/ast/ConstructorDeclaration;" />
+    <nodeInfo nodeId="1218034168005183383" fileName="CodeSnippetParsingUtil.java" startLine="85" startPosition="0" endLine="118" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="parseCompilationUnit#([CLjava/util/Map;Z)Lorg/eclipse/jdt/internal/compiler/ast/CompilationUnitDeclaration;" />
+    <scopeInfo nodeId="1218034168005183161" fileName="CodeSnippetParsingUtil.java" startLine="38" startPosition="61" endLine="39" endPosition="49" />
+    <scopeInfo nodeId="1218034168005183171" fileName="CodeSnippetParsingUtil.java" startLine="42" startPosition="35" endLine="43" endPosition="16" />
+    <scopeInfo nodeId="1218034168005183214" fileName="CodeSnippetParsingUtil.java" startLine="51" startPosition="62" endLine="52" endPosition="45" />
+    <scopeInfo nodeId="1218034168005183220" fileName="CodeSnippetParsingUtil.java" startLine="53" startPosition="14" endLine="54" endPosition="125" />
+    <scopeInfo nodeId="1218034168005183252" fileName="CodeSnippetParsingUtil.java" startLine="60" startPosition="110" endLine="61" endPosition="107" />
+    <scopeInfo nodeId="1218034168005183286" fileName="CodeSnippetParsingUtil.java" startLine="65" startPosition="25" endLine="66" endPosition="43" />
+    <scopeInfo nodeId="1218034168005183367" fileName="CodeSnippetParsingUtil.java" startLine="79" startPosition="35" endLine="80" endPosition="126" />
+    <scopeInfo nodeId="1218034168005183397" fileName="CodeSnippetParsingUtil.java" startLine="86" startPosition="25" endLine="87" endPosition="43" />
+    <scopeInfo nodeId="1218034168005183454" fileName="CodeSnippetParsingUtil.java" startLine="96" startPosition="35" endLine="97" endPosition="126" />
+    <scopeInfo nodeId="1218034168005183516" fileName="CodeSnippetParsingUtil.java" startLine="109" startPosition="46" endLine="110" endPosition="66" />
+    <scopeInfo nodeId="1218034168005183528" fileName="CodeSnippetParsingUtil.java" startLine="113" startPosition="35" endLine="114" endPosition="90" />
+    <scopeInfo nodeId="1218034168005183667" fileName="CodeSnippetParsingUtil.java" startLine="119" startPosition="146" endLine="120" endPosition="115" />
+    <scopeInfo nodeId="1218034168005183700" fileName="CodeSnippetParsingUtil.java" startLine="124" startPosition="25" endLine="125" endPosition="43" />
+    <scopeInfo nodeId="1218034168005183818" fileName="CodeSnippetParsingUtil.java" startLine="145" startPosition="35" endLine="146" endPosition="126" />
+    <scopeInfo nodeId="1218034168005183157" fileName="CodeSnippetParsingUtil.java" startLine="38" startPosition="0" endLine="41" endPosition="0">
       <varInfo nodeId="1218034168005183159" varName="ignoreMethodBodies" />
     </scopeInfo>
-    <scopeInfo nodeId="1218034168005183169" fileName="CodeSnippetParsingUtil.java" startLine="43" startPosition="0" endLine="46" endPosition="0" />
-    <scopeInfo nodeId="1218034168005183244" fileName="CodeSnippetParsingUtil.java" startLine="61" startPosition="0" endLine="64" endPosition="0">
+    <scopeInfo nodeId="1218034168005183169" fileName="CodeSnippetParsingUtil.java" startLine="42" startPosition="0" endLine="45" endPosition="0" />
+    <scopeInfo nodeId="1218034168005183244" fileName="CodeSnippetParsingUtil.java" startLine="60" startPosition="0" endLine="63" endPosition="0">
       <varInfo nodeId="1218034168005183250" varName="recordParsingInformation" />
       <varInfo nodeId="1218034168005183248" varName="settings" />
       <varInfo nodeId="1218034168005183245" varName="source" />
     </scopeInfo>
-    <scopeInfo nodeId="1218034168005183470" fileName="CodeSnippetParsingUtil.java" startLine="100" startPosition="56" endLine="103" endPosition="40" />
-    <scopeInfo nodeId="1218034168005183496" fileName="CodeSnippetParsingUtil.java" startLine="109" startPosition="24" endLine="112" endPosition="7" />
-    <scopeInfo nodeId="1218034168005183497" fileName="CodeSnippetParsingUtil.java" startLine="109" startPosition="24" endLine="112" endPosition="7">
+    <scopeInfo nodeId="1218034168005183470" fileName="CodeSnippetParsingUtil.java" startLine="99" startPosition="56" endLine="102" endPosition="40" />
+    <scopeInfo nodeId="1218034168005183496" fileName="CodeSnippetParsingUtil.java" startLine="108" startPosition="24" endLine="111" endPosition="7" />
+    <scopeInfo nodeId="1218034168005183497" fileName="CodeSnippetParsingUtil.java" startLine="108" startPosition="24" endLine="111" endPosition="7">
       <varInfo nodeId="1218034168005183498" varName="i" />
     </scopeInfo>
-    <scopeInfo nodeId="1218034168005183540" fileName="CodeSnippetParsingUtil.java" startLine="120" startPosition="0" endLine="123" endPosition="0">
-      <varInfo nodeId="1218034168005183546" varName="recordParsingInformation" />
-      <varInfo nodeId="1218034168005183544" varName="settings" />
-      <varInfo nodeId="1218034168005183541" varName="source" />
-    </scopeInfo>
-    <scopeInfo nodeId="1218034168005183657" fileName="CodeSnippetParsingUtil.java" startLine="143" startPosition="0" endLine="146" endPosition="0">
+    <scopeInfo nodeId="1218034168005183657" fileName="CodeSnippetParsingUtil.java" startLine="119" startPosition="0" endLine="122" endPosition="0">
       <varInfo nodeId="1218034168005183665" varName="enabledStatementRecovery" />
       <varInfo nodeId="1218034168005183663" varName="recordParsingInformation" />
       <varInfo nodeId="1218034168005183661" varName="settings" />
       <varInfo nodeId="1218034168005183658" varName="source" />
     </scopeInfo>
-    <scopeInfo nodeId="1218034168005183199" fileName="CodeSnippetParsingUtil.java" startLine="50" startPosition="29" endLine="56" endPosition="7">
+    <scopeInfo nodeId="1218034168005183199" fileName="CodeSnippetParsingUtil.java" startLine="49" startPosition="29" endLine="55" endPosition="7">
       <varInfo nodeId="1218034168005183200" varName="compilationResultProblems" />
     </scopeInfo>
-    <scopeInfo nodeId="1218034168005183182" fileName="CodeSnippetParsingUtil.java" startLine="47" startPosition="131" endLine="58" endPosition="117">
+    <scopeInfo nodeId="1218034168005183182" fileName="CodeSnippetParsingUtil.java" startLine="46" startPosition="131" endLine="57" endPosition="117">
       <varInfo nodeId="1218034168005183189" varName="problems" />
       <varInfo nodeId="1218034168005183183" varName="problemsCount" />
     </scopeInfo>
-    <scopeInfo nodeId="1218034168005183175" fileName="CodeSnippetParsingUtil.java" startLine="47" startPosition="0" endLine="60" endPosition="0">
+    <scopeInfo nodeId="1218034168005183175" fileName="CodeSnippetParsingUtil.java" startLine="46" startPosition="0" endLine="59" endPosition="0">
       <varInfo nodeId="1218034168005183178" varName="commentPositions" />
       <varInfo nodeId="1218034168005183176" varName="compilationResult" />
     </scopeInfo>
-    <scopeInfo nodeId="1218034168005183572" fileName="CodeSnippetParsingUtil.java" startLine="124" startPosition="124" endLine="140" endPosition="18">
-      <varInfo nodeId="1218034168005183611" varName="compilationResult" />
-      <varInfo nodeId="1218034168005183581" varName="compilerOptions" />
-      <varInfo nodeId="1218034168005183596" varName="parser" />
-      <varInfo nodeId="1218034168005183586" varName="problemReporter" />
-      <varInfo nodeId="1218034168005183630" varName="result" />
-      <varInfo nodeId="1218034168005183602" varName="sourceUnit" />
-      <varInfo nodeId="1218034168005183621" varName="unit" />
-    </scopeInfo>
-    <scopeInfo nodeId="1218034168005183280" fileName="CodeSnippetParsingUtil.java" startLine="65" startPosition="168" endLine="83" endPosition="18">
+    <scopeInfo nodeId="1218034168005183280" fileName="CodeSnippetParsingUtil.java" startLine="64" startPosition="168" endLine="82" endPosition="18">
       <varInfo nodeId="1218034168005183335" varName="compilationResult" />
       <varInfo nodeId="1218034168005183345" varName="compilationUnitDeclaration" />
       <varInfo nodeId="1218034168005183289" varName="compilerOptions" />
@@ -453,14 +419,7 @@
       <varInfo nodeId="1218034168005183354" varName="result" />
       <varInfo nodeId="1218034168005183326" varName="sourceUnit" />
     </scopeInfo>
-    <scopeInfo nodeId="1218034168005183560" fileName="CodeSnippetParsingUtil.java" startLine="124" startPosition="0" endLine="142" endPosition="0">
-      <varInfo nodeId="1218034168005183566" varName="length" />
-      <varInfo nodeId="1218034168005183564" varName="offset" />
-      <varInfo nodeId="1218034168005183570" varName="recordParsingInformation" />
-      <varInfo nodeId="1218034168005183568" varName="settings" />
-      <varInfo nodeId="1218034168005183561" varName="source" />
-    </scopeInfo>
-    <scopeInfo nodeId="1218034168005183266" fileName="CodeSnippetParsingUtil.java" startLine="65" startPosition="0" endLine="85" endPosition="0">
+    <scopeInfo nodeId="1218034168005183266" fileName="CodeSnippetParsingUtil.java" startLine="64" startPosition="0" endLine="84" endPosition="0">
       <varInfo nodeId="1218034168005183278" varName="enabledStatementRecovery" />
       <varInfo nodeId="1218034168005183272" varName="length" />
       <varInfo nodeId="1218034168005183270" varName="offset" />
@@ -468,7 +427,7 @@
       <varInfo nodeId="1218034168005183274" varName="settings" />
       <varInfo nodeId="1218034168005183267" varName="source" />
     </scopeInfo>
-    <scopeInfo nodeId="1218034168005183694" fileName="CodeSnippetParsingUtil.java" startLine="147" startPosition="170" endLine="172" endPosition="34">
+    <scopeInfo nodeId="1218034168005183694" fileName="CodeSnippetParsingUtil.java" startLine="123" startPosition="170" endLine="148" endPosition="34">
       <varInfo nodeId="1218034168005183741" varName="compilationResult" />
       <varInfo nodeId="1218034168005183751" varName="compilationUnitDeclaration" />
       <varInfo nodeId="1218034168005183703" varName="compilerOptions" />
@@ -477,7 +436,7 @@
       <varInfo nodeId="1218034168005183708" varName="problemReporter" />
       <varInfo nodeId="1218034168005183732" varName="sourceUnit" />
     </scopeInfo>
-    <scopeInfo nodeId="1218034168005183680" fileName="CodeSnippetParsingUtil.java" startLine="147" startPosition="0" endLine="174" endPosition="0">
+    <scopeInfo nodeId="1218034168005183680" fileName="CodeSnippetParsingUtil.java" startLine="123" startPosition="0" endLine="150" endPosition="0">
       <varInfo nodeId="1218034168005183692" varName="enabledStatementRecovery" />
       <varInfo nodeId="1218034168005183686" varName="length" />
       <varInfo nodeId="1218034168005183684" varName="offset" />
@@ -485,7 +444,7 @@
       <varInfo nodeId="1218034168005183688" varName="settings" />
       <varInfo nodeId="1218034168005183681" varName="source" />
     </scopeInfo>
-    <scopeInfo nodeId="1218034168005183391" fileName="CodeSnippetParsingUtil.java" startLine="86" startPosition="121" endLine="117" endPosition="38">
+    <scopeInfo nodeId="1218034168005183391" fileName="CodeSnippetParsingUtil.java" startLine="85" startPosition="121" endLine="116" endPosition="38">
       <varInfo nodeId="1218034168005183434" varName="compilationResult" />
       <varInfo nodeId="1218034168005183444" varName="compilationUnitDeclaration" />
       <varInfo nodeId="1218034168005183400" varName="compilerOptions" />
@@ -493,12 +452,12 @@
       <varInfo nodeId="1218034168005183425" varName="sourceUnit" />
       <varInfo nodeId="1218034168005183484" varName="types" />
     </scopeInfo>
-    <scopeInfo nodeId="1218034168005183383" fileName="CodeSnippetParsingUtil.java" startLine="86" startPosition="0" endLine="119" endPosition="0">
+    <scopeInfo nodeId="1218034168005183383" fileName="CodeSnippetParsingUtil.java" startLine="85" startPosition="0" endLine="118" endPosition="0">
       <varInfo nodeId="1218034168005183389" varName="recordParsingInformation" />
       <varInfo nodeId="1218034168005183387" varName="settings" />
       <varInfo nodeId="1218034168005183384" varName="source" />
     </scopeInfo>
-    <unitInfo nodeId="1218034168005183146" fileName="CodeSnippetParsingUtil.java" startLine="21" startPosition="0" endLine="175" endPosition="0" unitName="org.eclipse.jdt.internal.core.util.CodeSnippetParsingUtil" />
+    <unitInfo nodeId="1218034168005183146" fileName="CodeSnippetParsingUtil.java" startLine="20" startPosition="0" endLine="151" endPosition="0" unitName="org.eclipse.jdt.internal.core.util.CodeSnippetParsingUtil" />
   </root>
 </debugInfo>
 

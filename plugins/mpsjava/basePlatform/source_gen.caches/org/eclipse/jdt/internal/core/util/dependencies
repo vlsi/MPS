@@ -11,7 +11,6 @@
     <classNode dependClassName="org.eclipse.jdt.internal.compiler.ast.ASTNode" />
     <classNode dependClassName="org.eclipse.jdt.internal.compiler.ast.CompilationUnitDeclaration" />
     <classNode dependClassName="org.eclipse.jdt.internal.compiler.ast.ConstructorDeclaration" />
-    <classNode dependClassName="org.eclipse.jdt.internal.compiler.ast.Expression" />
     <classNode dependClassName="org.eclipse.jdt.internal.compiler.ast.TypeDeclaration" />
     <classNode dependClassName="org.eclipse.jdt.internal.compiler.batch.CompilationUnit" />
     <classNode dependClassName="org.eclipse.jdt.internal.compiler.env.ICompilationUnit" />
