@@ -19,6 +19,7 @@ import jetbrains.mps.classloading.ModulesWatcher.Graph.VertexVisitor;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager;
 import jetbrains.mps.project.structure.modules.Dependency;
+import jetbrains.mps.smodel.ModelAccess;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
@@ -62,19 +63,26 @@ public class ModulesWatcher {
 
   public ClassLoadingStatus getStatus(SModule module) {
     if (!myLoadableCondition.met(module)) LOG.error("Non-loadable module was passed to ModulesWatcher", new Throwable());
-    if (myChanged) recountStatus();
-    if (!getModules().contains(module)) throw new IllegalArgumentException("The module " + module + " does not belong to the repository");
-    if (!myStatusMap.containsKey(module)) throw new IllegalArgumentException("No status for module " + module);
-    return myStatusMap.get(module);
+    synchronized (LOCK) {
+      if (myChanged) recountStatus();
+      if (!getModules().contains(module)) throw new IllegalArgumentException("The module " + module + " does not belong to the repository");
+      if (!myStatusMap.containsKey(module)) throw new IllegalArgumentException("No status for module " + module);
+      return myStatusMap.get(module);
+    }
+  }
+
+  private boolean checkLoadableCondition(SModule module) {
+    if (!myLoadableCondition.met(module)) {
+      LOG.error("Non-loadable module was passed to ModulesWatcher", new Throwable());
+      return true;
+    }
+    return false;
   }
 
   public void onModulesAdded(@NotNull Collection<? extends SModule> modules) {
     synchronized (LOCK) {
       for (SModule module : modules) {
-        if (!myLoadableCondition.met(module)) {
-          LOG.error("Non-loadable module was passed to ModulesWatcher", new Throwable());
-          continue;
-        }
+        if (checkLoadableCondition(module)) continue;
         myDepGraph.addVertex(module);
         myBackDepGraph.addVertex(module);
       }
@@ -85,10 +93,7 @@ public class ModulesWatcher {
   public void onModulesRemoved(@NotNull Collection<? extends SModule> modules) {
     synchronized (LOCK) {
       for (SModule module : modules) {
-        if (!myLoadableCondition.met(module)) {
-          LOG.error("Non-loadable module was passed to ModulesWatcher", new Throwable());
-          continue;
-        }
+        if (checkLoadableCondition(module)) continue;
         myDepGraph.removeVertex(module);
         myBackDepGraph.removeVertex(module);
       }
@@ -100,7 +105,6 @@ public class ModulesWatcher {
     Collection<Dependency> dependencies = ((AbstractModule) module).getModuleDescriptor().getDependencies();
     Collection<SModuleReference> result = new HashSet<SModuleReference>();
     for (Dependency dep : dependencies) {
-      // here we need to know whether it is a loadable module, but we cannot do it with ModuleReference only
       result.add(dep.getModuleRef());
     }
     return result;
@@ -111,27 +115,28 @@ public class ModulesWatcher {
       myChanged = true;
     }
   }
+
   /**
-   * FIXME
-   * currently it does not match up with {@link SModule#getDeclaredDependencies()}
-   * but when there is an API provided it will be possible to rewrite this method
+   * Note: it is the naive way to handle module events, however it works just fine for now
+   * (we don't recount status to often because of laziness in this class)
+   *
+   * @see #myChanged
+   * @see #invalidate()
    */
   private void recountStatus() {
     assert myChanged;
     LOG.debug("Recount status map for modules");
-    synchronized (LOCK) {
-      myChanged = false;
-      constructEdges();
-      resetStatus();
-      Collection<SModule> invalidModules = findInvalidModules();
-      LOG.debug(invalidModules.size() + " modules marked invalid for class loading out of " + getModules().size() + " modules totally");
+    myChanged = false;
+    constructEdges();
+    resetStatus();
+    Collection<SModule> invalidModules = findInvalidModules();
+    LOG.debug(invalidModules.size() + " modules marked invalid for class loading out of " + getModules().size() + " modules totally");
 
-      for (SModule module : getBackDependencies(invalidModules)) {
-        myStatusMap.put(module, ClassLoadingStatus.INVALID);
-      }
-
-      checkStatusMapCorrectness();
+    for (SModule module : getBackDependencies(invalidModules)) {
+      myStatusMap.put(module, ClassLoadingStatus.INVALID);
     }
+
+    checkStatusMapCorrectness();
   }
 
   private void constructEdges() {
@@ -141,10 +146,7 @@ public class ModulesWatcher {
 
     Collection<SModule> modules = getModules();
     for (SModule module : modules) {
-      if (module.getRepository() == null) {
-        LOG.error("Disposed module in ModulesWatcher", new IllegalStateException());
-        continue;
-      }
+      if (checkNotDisposed(module)) continue;
       for (SModule depModule : GlobalModuleDependenciesManager.directlyUsedModules(module, true, true)) {
         if (modules.contains(depModule)) {
           myDepGraph.addEdge(module, depModule);
@@ -153,6 +155,15 @@ public class ModulesWatcher {
       }
     }
     LOG.debug("Difference in the edge count after validation " + (myDepGraph.getEdgesCount() - wasEdges));
+  }
+
+  // FIXME we have no read action some times
+  private boolean checkNotDisposed(SModule module) {
+//    if (module.getRepository() == null) {
+//      LOG.error("Disposed module in ModulesWatcher", new IllegalStateException());
+//      return true;
+//    }
+    return false;
   }
 
   private void resetStatus() {
@@ -199,7 +210,11 @@ public class ModulesWatcher {
   }
 
   public Collection<SModule> getModules() {
-    if (myChanged) recountStatus();
+    if (myChanged) {
+      synchronized (LOCK) {
+        recountStatus();
+      }
+    }
     assert myDepGraph.getVerticesCount() == myBackDepGraph.getVerticesCount();
     return myDepGraph.getVertices();
   }

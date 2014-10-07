@@ -82,7 +82,7 @@ class CLManagerRepositoryListener extends SRepositoryAdapter implements SReposit
     Collections.sort(modules, MODULE_COMPARATOR);
     myManager.unloadModules(modules);
 
-    // delayed notification here, we want to watch modules dependencies until we actually unload them
+    // delayed notification here, we want to watch modules dependencies until we actually unload them (then we don't need them)
     myModulesWatcher.onModulesRemoved(modules);
   }
 
