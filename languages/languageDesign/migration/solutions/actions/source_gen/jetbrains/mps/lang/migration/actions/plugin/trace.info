@@ -13,28 +13,28 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" />
   <concept fqn="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
   <concept fqn="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-  <root nodeRef="fd5162e1-98b8-43e1-a33f-62e46fc97404/r:adde35cf-3cf9-4b55-82d6-5122b6082b2f(jetbrains.mps.migration.actions/jetbrains.mps.migration.actions.plugin)/4436301628118322512">
+  <root nodeRef="fd5162e1-98b8-43e1-a33f-62e46fc97404/r:adde35cf-3cf9-4b55-82d6-5122b6082b2f(jetbrains.mps.migration.actions/jetbrains.mps.lang.migration.actions.plugin)/4436301628118322512">
     <file name="MigrationGroup_ActionGroup.java">
       <node id="4436301628118322512" at="10,0,11,0" concept="10" trace="LOG" />
       <node id="4436301628118322512" at="11,0,12,0" concept="10" trace="ID" />
       <node id="4436301628118322512" at="12,39,13,32" concept="11" />
       <node id="4436301628118322512" at="13,32,14,30" concept="2" />
       <node id="4436301628118322512" at="14,30,15,25" concept="2" />
-      <node id="4436301628118340695" at="16,9,17,120" concept="2" />
+      <node id="4436301628118340695" at="16,9,17,125" concept="2" />
       <node id="4436301628118322512" at="18,27,19,39" concept="2" />
       <node id="4436301628118322512" at="15,25,20,5" concept="12" />
       <node id="4436301628118322512" at="12,0,22,0" concept="1" trace="MigrationGroup_ActionGroup#()V" />
-      <scope id="4436301628118322512" at="16,9,17,120" />
+      <scope id="4436301628118322512" at="16,9,17,125" />
       <scope id="4436301628118322512" at="18,0,19,39">
         <var name="t" id="4436301628118322512" />
       </scope>
       <scope id="4436301628118322512" at="18,27,19,39" />
       <scope id="4436301628118322512" at="12,39,20,5" />
       <scope id="4436301628118322512" at="12,0,22,0" />
-      <unit id="4436301628118322512" at="9,0,23,0" name="jetbrains.mps.migration.actions.plugin.MigrationGroup_ActionGroup" />
+      <unit id="4436301628118322512" at="9,0,23,0" name="jetbrains.mps.lang.migration.actions.plugin.MigrationGroup_ActionGroup" />
     </file>
   </root>
-  <root nodeRef="fd5162e1-98b8-43e1-a33f-62e46fc97404/r:adde35cf-3cf9-4b55-82d6-5122b6082b2f(jetbrains.mps.migration.actions/jetbrains.mps.migration.actions.plugin)/6845384137766004712">
+  <root nodeRef="fd5162e1-98b8-43e1-a33f-62e46fc97404/r:adde35cf-3cf9-4b55-82d6-5122b6082b2f(jetbrains.mps.migration.actions/jetbrains.mps.lang.migration.actions.plugin)/6845384137766004712">
     <file name="CorrectLanguageVersion_Action.java">
       <node id="6845384137766004712" at="34,0,35,0" concept="10" trace="ICON" />
       <node id="6845384137766004712" at="35,42,36,48" concept="11" />
@@ -211,15 +211,15 @@
         <var name="_params" id="6845384137766004712" />
         <var name="event" id="6845384137766004712" />
       </scope>
-      <unit id="834555255520141654" at="60,92,64,5" name="jetbrains.mps.migration.actions.plugin.CorrectLanguageVersion_Action$1" />
-      <unit id="6435164937170791901" at="106,93,110,9" name="jetbrains.mps.migration.actions.plugin.CorrectLanguageVersion_Action$2" />
-      <unit id="6435164937171803802" at="133,63,137,13" name="jetbrains.mps.migration.actions.plugin.CorrectLanguageVersion_Action$4" />
-      <unit id="6435164937171772610" at="116,43,127,13" name="jetbrains.mps.migration.actions.plugin.CorrectLanguageVersion_Action$4" />
-      <unit id="6435164937171414383" at="114,39,139,9" name="jetbrains.mps.migration.actions.plugin.CorrectLanguageVersion_Action$3" />
-      <unit id="6845384137766004712" at="33,0,149,0" name="jetbrains.mps.migration.actions.plugin.CorrectLanguageVersion_Action" />
+      <unit id="834555255520141654" at="60,92,64,5" name="jetbrains.mps.lang.migration.actions.plugin.CorrectLanguageVersion_Action$1" />
+      <unit id="6435164937170791901" at="106,93,110,9" name="jetbrains.mps.lang.migration.actions.plugin.CorrectLanguageVersion_Action$2" />
+      <unit id="6435164937171803802" at="133,63,137,13" name="jetbrains.mps.lang.migration.actions.plugin.CorrectLanguageVersion_Action$4" />
+      <unit id="6435164937171772610" at="116,43,127,13" name="jetbrains.mps.lang.migration.actions.plugin.CorrectLanguageVersion_Action$4" />
+      <unit id="6435164937171414383" at="114,39,139,9" name="jetbrains.mps.lang.migration.actions.plugin.CorrectLanguageVersion_Action$3" />
+      <unit id="6845384137766004712" at="33,0,149,0" name="jetbrains.mps.lang.migration.actions.plugin.CorrectLanguageVersion_Action" />
     </file>
   </root>
-  <root nodeRef="fd5162e1-98b8-43e1-a33f-62e46fc97404/r:adde35cf-3cf9-4b55-82d6-5122b6082b2f(jetbrains.mps.migration.actions/jetbrains.mps.migration.actions.plugin)/7630817440603946693">
+  <root nodeRef="fd5162e1-98b8-43e1-a33f-62e46fc97404/r:adde35cf-3cf9-4b55-82d6-5122b6082b2f(jetbrains.mps.migration.actions/jetbrains.mps.lang.migration.actions.plugin)/7630817440603946693">
     <file name="Actions_ApplicationPlugin.java">
       <node id="7630817440603946693" at="10,0,11,0" concept="3" trace="myId" />
       <node id="7630817440603946693" at="13,27,14,16" concept="7" />
@@ -240,7 +240,7 @@
       <scope id="7630817440603946693" at="22,0,25,0" />
       <scope id="7630817440603946693" at="16,30,20,47" />
       <scope id="7630817440603946693" at="16,0,22,0" />
-      <unit id="7630817440603946693" at="9,0,26,0" name="jetbrains.mps.migration.actions.plugin.Actions_ApplicationPlugin" />
+      <unit id="7630817440603946693" at="9,0,26,0" name="jetbrains.mps.lang.migration.actions.plugin.Actions_ApplicationPlugin" />
     </file>
   </root>
 </debug-info>
