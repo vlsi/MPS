@@ -86,6 +86,7 @@ public class EnvironmentUtils {
     for (String libName : libs.keySet()) {
       libraryPaths.add(new LibraryContributor.LibDescriptor(libs.get(libName).getAbsolutePath(), null));
     }
+    // TODO remove that (all plugins load -- no need) 
     libraryPaths.addAll(PathManager.getExtensionsPaths());
     return new SetLibraryContributor(libraryPaths);
   }

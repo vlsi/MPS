@@ -233,7 +233,7 @@ public class IdeaEnvironment implements Environment {
         }
       }
     });
-    if (project[0] == null) {
+    if (exc[0] != null) {
       // this actually happens 
       throw new RuntimeException("ProjectManager could not load project from " + projectFile.getAbsolutePath(), exc[0]);
     }

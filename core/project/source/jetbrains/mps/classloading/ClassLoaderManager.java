@@ -276,7 +276,7 @@ public class ClassLoaderManager implements CoreComponent {
   @NotNull
   private Collection<SModule> doUnloadModules(Iterable<? extends SModule> modules, @NotNull ProgressMonitor monitor) {
     synchronized (CLASS_LOADING_LOCK) {
-      Set<SModule> modulesToUnload = filterModules(modules, myMPSLoadableCondition);
+      Set<SModule> modulesToUnload = filterModules(modules, myLoadableCondition);
       if (modulesToUnload.size() == 0) return modulesToUnload;
 
       monitor.start("Unloading module classes...", 1);
