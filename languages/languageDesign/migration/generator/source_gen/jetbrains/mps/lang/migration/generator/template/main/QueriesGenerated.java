@@ -57,7 +57,7 @@ public class QueriesGenerated {
   public static Object propertyMacro_GetPropertyValue_4436301628119009646(final PropertyMacroContext _context) {
     if (MigrationsCheckUtil.hasCycles(SNodeOperations.cast(_context.getOriginalCopiedInputNode(_context.getNode()), "jetbrains.mps.lang.migration.structure.MigrationScript"))) {
       if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("Cyclic migration script dependency detected");
+        LOG.error("Cyclic migration script dependency detected. It will cause problem during migration.");
       }
     }
     return MigrationScript_Behavior.call_getClassName_6547769411406912356(_context.getNode());

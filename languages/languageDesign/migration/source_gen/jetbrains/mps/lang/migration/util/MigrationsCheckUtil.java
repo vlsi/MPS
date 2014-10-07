@@ -12,13 +12,14 @@ import jetbrains.mps.lang.migration.behavior.MigrationScript_Behavior;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.smodel.Language;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.LanguageAspect;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.SNodeUtil;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import java.util.Arrays;
 
 public class MigrationsCheckUtil {
@@ -28,35 +29,39 @@ public class MigrationsCheckUtil {
     while (ListSequence.fromList(step).isNotEmpty()) {
       step = ListSequence.fromList(step).translate(new ITranslator2<SNode, SNode>() {
         public Iterable<SNode> translate(SNode it) {
-          return Sequence.fromIterable(MigrationScript_Behavior.call_getRequiredData_8585153554445862713(it)).where(new IWhereFilter<SNode>() {
-            public boolean accept(SNode it) {
-              return (SLinkOperations.getTarget(it, "script", false) != null);
-            }
-          }).select(new ISelector<SNode, SNode>() {
-            public SNode select(SNode it) {
-              return SLinkOperations.getTarget(it, "script", false);
-            }
-          });
+          return allScriptdependencies(it);
         }
-      }).concat(ListSequence.fromList(step).translate(new ITranslator2<SNode, SNode>() {
-        public Iterable<SNode> translate(SNode it) {
-          return Sequence.fromIterable(MigrationScript_Behavior.call_getExecuteAfter_2521103492728978905(it)).where(new IWhereFilter<SNode>() {
-            public boolean accept(SNode it) {
-              return (SLinkOperations.getTarget(it, "script", false) != null);
-            }
-          }).select(new ISelector<SNode, SNode>() {
-            public SNode select(SNode it) {
-              return SLinkOperations.getTarget(it, "script", false);
-            }
-          });
-        }
-      })).distinct().toListSequence();
+      }).distinct().toListSequence();
       if (ListSequence.fromList(all).intersect(ListSequence.fromList(step)).isNotEmpty()) {
         return true;
       }
       ListSequence.fromList(all).addSequence(ListSequence.fromList(step));
     }
     return false;
+  }
+  private static Iterable<SNode> allScriptdependencies(final SNode script) {
+    Iterable<SNode> result = Sequence.fromIterable(MigrationScript_Behavior.call_getRequiredData_8585153554445862713(script)).where(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return (SLinkOperations.getTarget(it, "script", false) != null);
+      }
+    }).select(new ISelector<SNode, SNode>() {
+      public SNode select(SNode it) {
+        return SLinkOperations.getTarget(it, "script", false);
+      }
+    }).concat(Sequence.fromIterable(MigrationScript_Behavior.call_getExecuteAfter_2521103492728978905(script)).where(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return (SLinkOperations.getTarget(it, "script", false) != null);
+      }
+    }).select(new ISelector<SNode, SNode>() {
+      public SNode select(SNode it) {
+        return SLinkOperations.getTarget(it, "script", false);
+      }
+    }));
+    return result = Sequence.fromIterable(result).concat(ListSequence.fromList(SModelOperations.getRoots(SNodeOperations.getModel(script), "jetbrains.mps.lang.migration.structure.MigrationScript")).where(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return SPropertyOperations.getInteger(it, "fromVersion") < SPropertyOperations.getInteger(script, "fromVersion");
+      }
+    }));
   }
   public static void checkLanguageVersionMatchesMigrations(SModule module, List<String> errors) {
     if (!(module instanceof Language)) {

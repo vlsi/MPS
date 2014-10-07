@@ -603,7 +603,7 @@
               <node role="statement" roleId="tpee.1068581517665" type="tpib.LogStatement" typeId="tpib.1167227138527" id="730486742185058293" nodeInfo="nn">
                 <property name="severity" nameId="tpib.1167245565795" value="error" />
                 <node role="logExpression" roleId="tpib.1167227463056" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="730486742185058295" nodeInfo="nn">
-                  <property name="value" nameId="tpee.1070475926801" value="Cyclic migration script dependency detected" />
+                  <property name="value" nameId="tpee.1070475926801" value="Cyclic migration script dependency detected. It will cause problem during migration." />
                 </node>
               </node>
             </node>
