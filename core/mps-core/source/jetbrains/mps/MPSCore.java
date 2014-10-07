@@ -54,7 +54,6 @@ import jetbrains.mps.smodel.language.ExtensionRegistry;
 import jetbrains.mps.smodel.language.LanguageRegistry;
 import jetbrains.mps.smodel.language.MetaFactoryImpl;
 import jetbrains.mps.smodel.references.ImmatureReferences;
-import jetbrains.mps.smodel.runtime.interpreted.StructureAspectInterpreted;
 import jetbrains.mps.util.QueryMethodGenerated;
 import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.validation.ValidationSettings;
@@ -116,7 +115,6 @@ public final class MPSCore extends ComponentPlugin {
     init(new ExtensionRegistry(classLoaderManager, moduleRepository));
     init(new LanguageHierarchyCache(moduleRepository));
     init(new ConceptDescendantsCache(moduleRepository, languageRegistry));
-    init(new StructureAspectInterpreted());
     init(new SModelUtil_new(classLoaderManager, globalSModelEventsManager));
     init(new CachesManager(classLoaderManager, modelRepository));
     init(new LanguageDescriptorModelProvider(moduleRepository));
