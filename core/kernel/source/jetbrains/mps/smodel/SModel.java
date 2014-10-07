@@ -25,8 +25,8 @@ import jetbrains.mps.project.dependency.ModelDependenciesManager;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.project.structure.modules.RefUpdateUtil;
 import jetbrains.mps.smodel.adapter.ids.MetaIdByDeclaration;
+import jetbrains.mps.smodel.adapter.ids.SLanguageId;
 import jetbrains.mps.smodel.adapter.structure.language.SLanguageAdapterById;
-import jetbrains.mps.smodel.adapter.structure.language.SLanguageAdapterByName;
 import jetbrains.mps.smodel.descriptor.RefactorableSModelDescriptor;
 import jetbrains.mps.smodel.event.SModelChildEvent;
 import jetbrains.mps.smodel.event.SModelDevKitEvent;
@@ -75,26 +75,24 @@ import java.util.concurrent.atomic.AtomicLong;
 
 public class SModel implements SModelData {
   private static final Logger LOG = LogManager.getLogger(SModel.class);
+  private static AtomicLong ourCounter = new AtomicLong();
 
+  static {
+    resetIdCounter();
+  }
+
+  protected SModelBase myModelDescriptor;
   private Set<SNode> myRoots = new LinkedHashSet<SNode>();
   private SModelReference myReference;
-
   private boolean myDisposed;
-
   private List<SModuleReference> myLanguages = new ArrayList<SModuleReference>();
   private List<SModuleReference> myLanguagesEngagedOnGeneration = new ArrayList<SModuleReference>();
-
   private Map<SLanguage, Integer> myLanguagesIds = new LinkedHashMap<SLanguage, Integer>();
   private Map<SLanguage, Integer> myImplicitLanguagesIds = new LinkedHashMap<SLanguage, Integer>();
-
   private List<SModuleReference> myDevKits = new ArrayList<SModuleReference>();
   private List<ImportElement> myImports = new ArrayList<ImportElement>();
   private List<ImportElement> myImplicitImports = new ArrayList<ImportElement>();
-
   private INodeIdToNodeMap myIdToNodeMap = createNodeIdMap();
-
-  protected SModelBase myModelDescriptor;
-
   private StackTraceElement[] myDisposedStacktrace = null;
   private ModelDependenciesManager myModelDependenciesManager;
 
@@ -105,6 +103,58 @@ public class SModel implements SModelData {
   public SModel(@NotNull SModelReference modelReference, INodeIdToNodeMap map) {
     myReference = modelReference;
     myIdToNodeMap = map;
+  }
+
+  static void resetIdCounter() {
+    ourCounter.set(Math.abs(new SecureRandom().nextLong()));
+  }
+
+  public static SNodeId generateUniqueId() {
+    long id = Math.abs(ourCounter.incrementAndGet());
+    return new jetbrains.mps.smodel.SNodeId.Regular(id);
+  }
+
+  @NotNull
+  public static Set<SModelReference> collectUsedModels(@NotNull SModel model, @NotNull Set<SModelReference> result) {
+    ModelEnvironmentInfo env = PersistenceRegistry.getInstance().getModelEnvironmentInfo();
+    for (org.jetbrains.mps.openapi.model.SNode node : model.myIdToNodeMap.values()) {
+      SNodeReference ptrConcept = env.getConceptId(node);
+      if (ptrConcept == null) {
+        LOG.warn("concept not found for node " + SNodeUtil.getDebugText(node));
+      } else {
+        result.add(ptrConcept.getModelReference());
+      }
+      for (String propname : node.getPropertyNames()) {
+        SNodeReference ptrDecl = env.getPropertyId(node, propname);
+        if (ptrDecl == null) {
+          LOG.warn("undeclared property: '" + propname + "' in node " + SNodeUtil.getDebugText(node));
+        } else {
+          result.add(ptrDecl.getModelReference());
+        }
+      }
+      for (SReference ref : node.getReferences()) {
+        if (ref.getTargetSModelReference() != null) {
+          result.add(ref.getTargetSModelReference());
+        }
+        SNodeReference ptrDecl = env.getReferenceRoleId(ref);
+        if (ptrDecl == null) {
+          LOG.warn("undeclared link role: '" + ref.getRole() + "' in node " + SNodeUtil.getDebugText(node));
+        } else {
+          result.add(ptrDecl.getModelReference());
+        }
+      }
+      for (org.jetbrains.mps.openapi.model.SNode child : node.getChildren()) {
+        SNodeReference ptrDecl = env.getNodeRoleId(child);
+        if (ptrDecl == null) {
+          LOG.warn(
+              "undeclared child role: '" + child.getRoleInParent() + "' in node " + SNodeUtil.getDebugText(
+                  node));
+        } else {
+          result.add(ptrDecl.getModelReference());
+        }
+      }
+    }
+    return result;
   }
 
   public SModelId getModelId() {
@@ -155,6 +205,8 @@ public class SModel implements SModelData {
   public boolean isRoot(@Nullable org.jetbrains.mps.openapi.model.SNode node) {
     return myRoots.contains(node);
   }
+
+  //--------------IMPLEMENTATION-------------------
 
   @Override
   public void addRootNode(final org.jetbrains.mps.openapi.model.SNode node) {
@@ -236,8 +288,6 @@ public class SModel implements SModelData {
     return myReference.toString();
   }
 
-  //--------------IMPLEMENTATION-------------------
-
   //todo get rid of, try to cast, show an error if not casted
   public boolean isDisposed() {
     return myDisposed;
@@ -276,11 +326,15 @@ public class SModel implements SModelData {
     }
   }
 
+//---------listeners--------
+
   protected void performUndoableAction(Computable<SNodeUndoableAction> action) {
     if (!canFireEvent()) return;
     if (!UndoHelper.getInstance().needRegisterUndo()) return;
     UndoHelper.getInstance().addUndoableAction(action.compute());
   }
+
+  //todo code in the following methods should be written w/o duplication
 
   public boolean canFireEvent() {
     return myModelDescriptor != null && jetbrains.mps.util.SNodeOperations.isRegistered(myModelDescriptor) && !isUpdateMode();
@@ -309,14 +363,10 @@ public class SModel implements SModelData {
     LOG.error(new IllegalModelAccessError("accessing disposed model"));
   }
 
-//---------listeners--------
-
   private List<SModelListener> getModelListeners() {
     if (myModelDescriptor == null) return Collections.emptyList();
     return ((SModelBase) myModelDescriptor).getModelListeners();
   }
-
-  //todo code in the following methods should be written w/o duplication
 
   private void fireDevKitAddedEvent(@NotNull SModuleReference ref) {
     if (!canFireEvent()) return;
@@ -438,6 +488,8 @@ public class SModel implements SModelData {
     }
   }
 
+  //---------fast node finder--------
+
   void fireChildAddedEvent(@NotNull SNode parent, @NotNull String role, @NotNull SNode child, SNode anchor) {
     if (!canFireEvent()) return;
     int childIndex = anchor == null ? 0 : parent.getChildren().indexOf(anchor) + 1;
@@ -450,6 +502,8 @@ public class SModel implements SModelData {
       }
     }
   }
+
+  //---------node id--------
 
   void fireChildRemovedEvent(@NotNull SNode parent, @NotNull String role, @NotNull SNode child, SNode anchor) {
     if (!canFireEvent()) return;
@@ -501,34 +555,15 @@ public class SModel implements SModelData {
     }
   }
 
-  //---------fast node finder--------
-
   public FastNodeFinder createFastNodeFinder() {
     return new DefaultFastNodeFinder(getModelDescriptor());
   }
 
-  //---------node id--------
-
-  private static AtomicLong ourCounter = new AtomicLong();
-
-  static {
-    resetIdCounter();
-  }
+  //---------node registration--------
 
   protected final INodeIdToNodeMap createNodeIdMap() {
     return new UniversalOptimizedNodeIdMap();
   }
-
-  static void resetIdCounter() {
-    ourCounter.set(Math.abs(new SecureRandom().nextLong()));
-  }
-
-  public static SNodeId generateUniqueId() {
-    long id = Math.abs(ourCounter.incrementAndGet());
-    return new jetbrains.mps.smodel.SNodeId.Regular(id);
-  }
-
-  //---------node registration--------
 
   void registerNode(@NotNull SNode node) {
     checkNotDisposed();
@@ -562,6 +597,8 @@ public class SModel implements SModelData {
     myIdToNodeMap.put(id, node);
   }
 
+  //---------imports manipulation--------
+
   void unregisterNode(@NotNull SNode node) {
     checkNotDisposed();
 
@@ -570,8 +607,6 @@ public class SModel implements SModelData {
     if (myDisposed || id == null) return;
     myIdToNodeMap.remove(id);
   }
-
-  //---------imports manipulation--------
 
   public ModelDependenciesManager getModelDepsManager() {
     if (myModelDependenciesManager == null) {
@@ -585,32 +620,32 @@ public class SModel implements SModelData {
     return myModelDependenciesManager;
   }
 
+  //language
+
   private void invalidateModelDepsManager() {
     if (myModelDependenciesManager != null) {
       myModelDependenciesManager.invalidate();
     }
   }
 
-  //language
-
   public void validateImplicitlyUsedLanguages() {
     Set<SLanguage> myUsedLanguages = new HashSet<SLanguage>();
 
     for (org.jetbrains.mps.openapi.model.SNode root : getRootNodes()) {
       for (org.jetbrains.mps.openapi.model.SNode n : SNodeUtil.getDescendants(root)) {
-        SConcept conceptId = n.getConcept().getId();
+        SConcept conceptId = n.getConcept();
         myUsedLanguages.add(conceptId.getLanguage());
 
         if (n.getParent() != null) {
           SContainmentLink roleId = n.getContainmentLink();
-          myUsedLanguages.add(roleId.getConceptId().getLanguageId());
+          myUsedLanguages.add(roleId.getContainingConcept().getLanguage());
         }
         for (SProperty pid : n.getProperties()) {
           myUsedLanguages.add(pid.getContainingConcept().getLanguage());
         }
 
         for (SReference ref : n.getReferences()) {
-          myUsedLanguages.add(ref.getReferenceLink().getConcept().getLanguageId());
+          myUsedLanguages.add(ref.getReferenceLink().getContainingConcept().getLanguage());
         }
       }
     }
@@ -628,7 +663,7 @@ public class SModel implements SModelData {
     }
 
     for (SLanguage lang : myUsedLanguages) {
-      int version = new SLanguageAdapterById(lang).getSourceModule().getLanguageVersion();
+      int version = ((Language) lang.getSourceModule()).getLanguageVersion();
       myNewImplicitLanguagesIds.put(lang, version);
     }
 
@@ -668,7 +703,7 @@ public class SModel implements SModelData {
       markChanged();
     }
 
-    deleteLanguage(MetaIdByDeclaration.getLanguageId(ref.getModuleId()));
+    deleteLanguage(ref2Id(ref));
   }
 
   public void deleteLanguage(@NotNull SLanguage id) {
@@ -699,12 +734,14 @@ public class SModel implements SModelData {
       markChanged();
     }
 
-    addLanguage(MetaIdByDeclaration.getLanguageId(ref.getModuleId()), -1);
+    addLanguage(ref2Id(ref), -1);
   }
 
   public void addLanguage(Language language) {
-    addLanguage(MetaIdByDeclaration.getLanguageId(language), language.getLanguageVersion());
+    addLanguage(new SLanguageAdapterById(MetaIdByDeclaration.getLanguageId(language), language.getModuleName()), language.getLanguageVersion());
   }
+
+  //devkit
 
   public void addLanguage(SLanguage id, int version) {
     if (myModelDescriptor != null) {
@@ -731,8 +768,6 @@ public class SModel implements SModelData {
     addLanguage(convertLanguageRef(id));
   }
 
-  //devkit
-
   public List<SModuleReference> importedDevkits() {
     return Collections.unmodifiableList(myDevKits);
   }
@@ -747,6 +782,8 @@ public class SModel implements SModelData {
     }
   }
 
+  //model
+
   public void deleteDevKit(@NotNull SModuleReference ref) {
     assertLegalChange();
 
@@ -756,8 +793,6 @@ public class SModel implements SModelData {
       markChanged();
     }
   }
-
-  //model
 
   public List<ImportElement> importedModels() {
     return Collections.unmodifiableList(myImports);
@@ -800,49 +835,6 @@ public class SModel implements SModelData {
       fireImportRemovedEvent(modelReference);
       markChanged();
     }
-  }
-
-  @NotNull
-  public static Set<SModelReference> collectUsedModels(@NotNull SModel model, @NotNull Set<SModelReference> result) {
-    ModelEnvironmentInfo env = PersistenceRegistry.getInstance().getModelEnvironmentInfo();
-    for (org.jetbrains.mps.openapi.model.SNode node : model.myIdToNodeMap.values()) {
-      SNodeReference ptrConcept = env.getConceptId(node);
-      if (ptrConcept == null) {
-        LOG.warn("concept not found for node " + SNodeUtil.getDebugText(node));
-      } else {
-        result.add(ptrConcept.getModelReference());
-      }
-      for (String propname : node.getPropertyNames()) {
-        SNodeReference ptrDecl = env.getPropertyId(node, propname);
-        if (ptrDecl == null) {
-          LOG.warn("undeclared property: '" + propname + "' in node " + SNodeUtil.getDebugText(node));
-        } else {
-          result.add(ptrDecl.getModelReference());
-        }
-      }
-      for (SReference ref : node.getReferences()) {
-        if (ref.getTargetSModelReference() != null) {
-          result.add(ref.getTargetSModelReference());
-        }
-        SNodeReference ptrDecl = env.getReferenceRoleId(ref);
-        if (ptrDecl == null) {
-          LOG.warn("undeclared link role: '" + ref.getRole() + "' in node " + SNodeUtil.getDebugText(node));
-        } else {
-          result.add(ptrDecl.getModelReference());
-        }
-      }
-      for (org.jetbrains.mps.openapi.model.SNode child : node.getChildren()) {
-        SNodeReference ptrDecl = env.getNodeRoleId(child);
-        if (ptrDecl == null) {
-          LOG.warn(
-              "undeclared child role: '" + child.getRoleInParent() + "' in node " + SNodeUtil.getDebugText(
-                  node));
-        } else {
-          result.add(ptrDecl.getModelReference());
-        }
-      }
-    }
-    return result;
   }
 
   // create new implicit import list based on used models, explicit import and old implicit import list
@@ -891,9 +883,7 @@ public class SModel implements SModelData {
   }
 
   private ModuleReference convertLanguageRef(SLanguage ref) {
-    SModule module = MPSModuleRepository.getInstance().getModule(MetaIdByDeclaration.getModuleReference(ref));
-    String name = module != null ? module.getModuleName() : MPSModuleRepository.getInstance().getDebugRegistry().getLanguageName(ref);
-    return new ModuleReference(name, ModuleId.regular(ref.getId()));
+    return ((ModuleReference) ref.getSourceModule().getModuleReference());
   }
 
   public void removeEngagedOnGenerationLanguage(SModuleReference ref) {
@@ -947,6 +937,148 @@ public class SModel implements SModelData {
       ModelChange.assertLegalChange(this);
     }
   }
+
+  public int getVersion() {
+    return -1;
+  }
+
+  //---------refactorings--------
+
+  public void setVersion(int version) {
+
+  }
+
+  public void updateImportedModelUsedVersion(org.jetbrains.mps.openapi.model.SModelReference sModelReference, int currentVersion) {
+    assertLegalChange();
+
+    ImportElement importElement = SModelOperations.getImportElement(this, sModelReference);
+    if (importElement == null) {
+      importElement = SModelOperations.getAdditionalModelElement(this, sModelReference);
+    }
+
+    if (importElement != null) {
+      importElement.myUsedVersion = currentVersion;
+    } else {
+      addAdditionalModelVersion((sModelReference), currentVersion);
+    }
+  }
+
+  public boolean updateSModelReferences() {
+    assertLegalChange();
+    enforceFullLoad();
+
+    boolean changed = false;
+    for (org.jetbrains.mps.openapi.model.SNode n : myIdToNodeMap.values()) {
+      // TODO SNode cast
+      if (!(n instanceof SNode)) continue;
+      SNode node = (SNode) n;
+      for (SReference reference : node.getReferences()) {
+        SModelReference oldReference = reference.getTargetSModelReference();
+        if (oldReference == null) continue;
+        jetbrains.mps.smodel.SModelReference oldSRef = (jetbrains.mps.smodel.SModelReference) oldReference;
+        jetbrains.mps.smodel.SModelReference newRef = oldSRef.update();
+        if (newRef.differs(oldSRef)) {
+          changed = true;
+          ((jetbrains.mps.smodel.SReference) reference).setTargetSModelReference(newRef);
+        }
+      }
+    }
+
+    for (ImportElement e : myImports) {
+      jetbrains.mps.smodel.SModelReference oldSRef = (jetbrains.mps.smodel.SModelReference) e.myModelReference;
+      jetbrains.mps.smodel.SModelReference newRef = oldSRef.update();
+      if (newRef.differs(oldSRef)) {
+        changed = true;
+        e.myModelReference = newRef;
+      }
+    }
+
+    for (ImportElement e : myImplicitImports) {
+      jetbrains.mps.smodel.SModelReference oldSRef = (jetbrains.mps.smodel.SModelReference) e.myModelReference;
+      jetbrains.mps.smodel.SModelReference newRef = oldSRef.update();
+      if (newRef.differs(oldSRef)) {
+        changed = true;
+        e.myModelReference = newRef;
+      }
+    }
+
+    return changed;
+  }
+
+  public boolean updateModuleReferences() {
+    assertLegalChange();
+
+
+    boolean changed = false;
+
+    if (updateRefs(myDevKits)) {
+      changed = true;
+    }
+
+    if (updateRefs(myLanguages)) {
+      changed = true;
+    }
+
+    if (updateRefs(myLanguagesEngagedOnGeneration)) {
+      changed = true;
+    }
+
+    return changed;
+  }
+
+  public void changeModelReference(SModelReference newModelReference) {
+    enforceFullLoad();
+    SModelReference oldReference = myReference;
+    myReference = newModelReference;
+    for (org.jetbrains.mps.openapi.model.SNode n : myIdToNodeMap.values()) {
+      // TODO SNode cast
+      if (!(n instanceof SNode)) continue;
+      SNode node = (SNode) n;
+      for (SReference reference : node.getReferences()) {
+        if (oldReference.equals(reference.getTargetSModelReference())) {
+          ((jetbrains.mps.smodel.SReference) reference).setTargetSModelReference(newModelReference);
+        }
+      }
+    }
+  }
+
+  public boolean updateRefs(List<SModuleReference> refs) {
+    boolean changed = false;
+    for (int i = 0; i < refs.size(); i++) {
+      SModuleReference ref = refs.get(i);
+      SModule module = ModuleRepositoryFacade.getInstance().getModule(ref);
+      if (module != null) {
+        SModuleReference newRef = module.getModuleReference();
+        refs.set(i, newRef);
+        changed = changed || RefUpdateUtil.differs(ref, newRef);
+      }
+    }
+    return changed;
+  }
+
+  public SModel createEmptyCopy() {
+    return new jetbrains.mps.smodel.SModel(getReference());
+  }
+
+  public void copyPropertiesTo(SModel to) {
+    for (ImportElement ie : getAdditionalModelVersions()) {
+      to.addAdditionalModelVersion(ie.copy());
+    }
+    for (ImportElement ie : importedModels()) {
+      to.addModelImport(ie.copy());
+    }
+    for (SModuleReference mr : importedDevkits()) {
+      to.addDevKit(mr);
+    }
+    for (Entry<SLanguage, Integer> mr : usedLanguagesWithVersions().entrySet()) {
+      to.addLanguage(mr.getKey(), mr.getValue());
+    }
+    for (SModuleReference mr : engagedOnGenerationLanguages()) {
+      to.addEngagedOnGenerationLanguage(mr);
+    }
+    to.setVersion(getVersion());
+  }
+
   public static class ImportElement {
     private SModelReference myModelReference;
     private int myReferenceID;  // persistence related index
@@ -1025,145 +1157,7 @@ public class SModel implements SModelData {
     }
   }
 
-  //---------refactorings--------
-
-  public int getVersion() {
-    return -1;
-  }
-
-  public void setVersion(int version) {
-
-  }
-
-  public void updateImportedModelUsedVersion(org.jetbrains.mps.openapi.model.SModelReference sModelReference, int currentVersion) {
-    assertLegalChange();
-
-    ImportElement importElement = SModelOperations.getImportElement(this, sModelReference);
-    if (importElement == null) {
-      importElement = SModelOperations.getAdditionalModelElement(this, sModelReference);
-    }
-
-    if (importElement != null) {
-      importElement.myUsedVersion = currentVersion;
-    } else {
-      addAdditionalModelVersion((sModelReference), currentVersion);
-    }
-  }
-
-  public boolean updateSModelReferences() {
-    assertLegalChange();
-    enforceFullLoad();
-
-    boolean changed = false;
-    for (org.jetbrains.mps.openapi.model.SNode n : myIdToNodeMap.values()) {
-      // TODO SNode cast
-      if (!(n instanceof SNode)) continue;
-      SNode node = (SNode) n;
-      for (SReference reference : node.getReferences()) {
-        SModelReference oldReference = reference.getTargetSModelReference();
-        if (oldReference == null) continue;
-        jetbrains.mps.smodel.SModelReference oldSRef = (jetbrains.mps.smodel.SModelReference) oldReference;
-        jetbrains.mps.smodel.SModelReference newRef = oldSRef.update();
-        if (newRef.differs(oldSRef)) {
-          changed = true;
-          ((jetbrains.mps.smodel.SReference) reference).setTargetSModelReference(newRef);
-        }
-      }
-    }
-
-    for (ImportElement e : myImports) {
-      jetbrains.mps.smodel.SModelReference oldSRef = (jetbrains.mps.smodel.SModelReference) e.myModelReference;
-      jetbrains.mps.smodel.SModelReference newRef = oldSRef.update();
-      if (newRef.differs(oldSRef)) {
-        changed = true;
-        e.myModelReference = newRef;
-      }
-    }
-
-    for (ImportElement e : myImplicitImports) {
-      jetbrains.mps.smodel.SModelReference oldSRef = (jetbrains.mps.smodel.SModelReference) e.myModelReference;
-      jetbrains.mps.smodel.SModelReference newRef = oldSRef.update();
-      if (newRef.differs(oldSRef)) {
-        changed = true;
-        e.myModelReference = newRef;
-      }
-    }
-
-    return changed;
-  }
-
-  public boolean updateModuleReferences() {
-    assertLegalChange();
-
-
-
-    boolean changed = false;
-
-    if (updateRefs(myDevKits)) {
-      changed = true;
-    }
-
-    if (updateRefs(myLanguages)) {
-      changed = true;
-    }
-
-    if (updateRefs(myLanguagesEngagedOnGeneration)) {
-      changed = true;
-    }
-
-    return changed;
-  }
-
-  public void changeModelReference(SModelReference newModelReference) {
-    enforceFullLoad();
-    SModelReference oldReference = myReference;
-    myReference = newModelReference;
-    for (org.jetbrains.mps.openapi.model.SNode n : myIdToNodeMap.values()) {
-      // TODO SNode cast
-      if (!(n instanceof SNode)) continue;
-      SNode node = (SNode) n;
-      for (SReference reference : node.getReferences()) {
-        if (oldReference.equals(reference.getTargetSModelReference())) {
-          ((jetbrains.mps.smodel.SReference) reference).setTargetSModelReference(newModelReference);
-        }
-      }
-    }
-  }
-
-  public boolean updateRefs(List<SModuleReference> refs) {
-    boolean changed = false;
-    for (int i = 0; i < refs.size(); i++) {
-      SModuleReference ref = refs.get(i);
-      SModule module = ModuleRepositoryFacade.getInstance().getModule(ref);
-      if (module != null) {
-        SModuleReference newRef = module.getModuleReference();
-        refs.set(i, newRef);
-        changed = changed || RefUpdateUtil.differs(ref, newRef);
-      }
-    }
-    return changed;
-  }
-
-  public SModel createEmptyCopy() {
-    return new jetbrains.mps.smodel.SModel(getReference());
-  }
-
-  public void copyPropertiesTo(SModel to) {
-    for (ImportElement ie : getAdditionalModelVersions()) {
-      to.addAdditionalModelVersion(ie.copy());
-    }
-    for (ImportElement ie : importedModels()) {
-      to.addModelImport(ie.copy());
-    }
-    for (SModuleReference mr : importedDevkits()) {
-      to.addDevKit(mr);
-    }
-    for (Entry<SLanguage, Integer> mr : usedLanguagesWithVersions().entrySet()) {
-      to.addLanguage(mr.getKey(), mr.getValue());
-    }
-    for (SModuleReference mr : engagedOnGenerationLanguages()) {
-      to.addEngagedOnGenerationLanguage(mr);
-    }
-    to.setVersion(getVersion());
+  private SLanguageAdapterById ref2Id(SModuleReference ref) {
+    return new SLanguageAdapterById(new SLanguageId(((ModuleId.Regular) ref.getModuleId()).getUUID()), ref.getModuleName());
   }
 }
