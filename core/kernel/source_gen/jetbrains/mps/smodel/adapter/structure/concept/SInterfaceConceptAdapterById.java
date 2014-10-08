@@ -31,6 +31,7 @@ public class SInterfaceConceptAdapterById extends SInterfaceConceptAdapter imple
 
   public SInterfaceConceptAdapterById(@NotNull SConceptId conceptId, @NotNull String fqname) {
     super(fqname);
+    myConceptId = conceptId;
   }
 
   public boolean isSameConcept(SAbstractConceptAdapter c2) {

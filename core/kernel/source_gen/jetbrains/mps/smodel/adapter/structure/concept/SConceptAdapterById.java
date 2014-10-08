@@ -16,6 +16,7 @@ public class SConceptAdapterById extends SConceptAdapter implements SConcept {
 
   public SConceptAdapterById(@NotNull SConceptId conceptId, @NotNull String fqname) {
     super(fqname);
+    myConceptId = conceptId;
   }
 
 
