@@ -178,14 +178,17 @@ class InterpretedConceptDescriptor extends BaseConceptDescriptor {
         for (SNode link : SNodeUtil.getConcept_LinkDeclarations(declaration)) {
           String role = SModelUtil.getLinkDeclarationRole(link);
           if (role != null) {
-            if (SPropertyOperations.getBoolean(link, "unordered")) {
+            boolean unordered = SNodeUtil.getLinkDeclaration_IsUnordered(link);
+            if (unordered) {
               unorderedChildren.add(role);
             }
             if (SNodeUtil.getLinkDeclaration_IsReference(link)) {
               directReferences.add(role);
 
               SReferenceLinkId refId = MetaIdByDeclaration.getRefRoleId(((jetbrains.mps.smodel.SNode) link));
-              BaseReferenceDescriptor pd = new BaseReferenceDescriptor(refId, name);
+              BaseReferenceDescriptor pd = new BaseReferenceDescriptor(refId, name,
+                  MetaIdByDeclaration.getConceptId(((jetbrains.mps.smodel.SNode) SNodeUtil.getLinkTarget(link))),
+                  SNodeUtil.getLinkDeclaration_IsExactlyOneMultiplicity(link));
 
               directReferencesByIds.put(refId, pd);
               directReferencesByName.put(name, pd);
@@ -193,7 +196,11 @@ class InterpretedConceptDescriptor extends BaseConceptDescriptor {
               childrenMap.put(role, !SNodeUtil.getLinkDeclaration_IsSingular(link));
 
               SContainmentLinkId linkId = MetaIdByDeclaration.getLinkId(((jetbrains.mps.smodel.SNode) link));
-              BaseLinkDescriptor pd = new BaseLinkDescriptor(linkId, name);
+              BaseLinkDescriptor pd = new BaseLinkDescriptor(linkId, name,
+                  MetaIdByDeclaration.getConceptId(((jetbrains.mps.smodel.SNode)SNodeUtil.getLinkTarget(link))),
+                  SNodeUtil.getLinkDeclaration_IsExactlyOneMultiplicity(link),
+                  SNodeUtil.getLinkDeclaration_IsSingular(link),
+                  unordered);
 
               directLinksByIds.put(linkId, pd);
               directLinksByName.put(name, pd);
