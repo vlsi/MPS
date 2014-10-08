@@ -31,7 +31,6 @@ public abstract class SPropertyAdapter implements SProperty {
     myPropertyName = name;
   }
 
-  public abstract boolean isSameProperty(SPropertyAdapter p);
 
   protected abstract SNode findInConcept(SNode cnode);
 

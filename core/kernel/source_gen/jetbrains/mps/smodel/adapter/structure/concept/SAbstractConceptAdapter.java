@@ -46,8 +46,6 @@ public abstract class SAbstractConceptAdapter implements SAbstractConcept {
     myFqName = fqName;
   }
 
-  public abstract boolean isSameConcept(SAbstractConceptAdapter c);
-
   public abstract ConceptDescriptor getConceptDescriptor();
 
   protected abstract SNode findInModel(SModel strucModel);

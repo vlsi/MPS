@@ -41,7 +41,6 @@ public abstract class SReferenceLinkAdapter implements SReferenceLink {
     myName = name;
   }
 
-  public abstract boolean isSameReference(SReferenceLinkAdapter r);
 
   protected abstract ReferenceDescriptor getReferenceDescriptor();
 

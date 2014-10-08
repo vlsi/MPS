@@ -22,6 +22,7 @@ import jetbrains.mps.smodel.adapter.ids.SLanguageId;
 import jetbrains.mps.smodel.language.LanguageRegistry;
 import jetbrains.mps.smodel.language.LanguageRuntime;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.language.SLanguage;
 
 public class SLanguageAdapterById extends SLanguageAdapter{
   private SLanguageId myLanguage;
@@ -38,6 +39,11 @@ public class SLanguageAdapterById extends SLanguageAdapter{
   @Override
   public LanguageRuntime getLanguageRuntime() {
     return LanguageRegistry.getInstance().getLanguage(myLanguage);
+  }
+
+  @Override
+  public boolean isSame(SLanguage l2) {
+    return (l2 instanceof SLanguageAdapterById) ? myLanguage.equals(((SLanguageAdapterById) l2).myLanguage) : myLanguageFqName.equals(((SLanguageAdapter) l2).myLanguageFqName);
   }
 
   @Override

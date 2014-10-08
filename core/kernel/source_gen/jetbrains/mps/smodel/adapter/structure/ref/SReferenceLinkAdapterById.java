@@ -9,6 +9,7 @@ import jetbrains.mps.smodel.adapter.structure.concept.SInterfaceConceptAdapterBy
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import jetbrains.mps.smodel.runtime.ReferenceDescriptor;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.language.SReferenceLink;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 
@@ -20,9 +21,9 @@ public class SReferenceLinkAdapterById extends SReferenceLinkAdapter {
     myRoleId = roleId;
   }
 
-  public boolean isSameReference(SReferenceLinkAdapter l2) {
+  public boolean isSame(SReferenceLink l2) {
     return (l2 instanceof SReferenceLinkAdapterById) ? myRoleId.equals(((SReferenceLinkAdapterById) l2).myRoleId) :
-        (myConceptName + "#" + myName).equals(l2.myConceptName + "#" + l2.myName);
+        (myConceptName + "#" + myName).equals(((SReferenceLinkAdapter) l2).myConceptName + "#" + ((SReferenceLinkAdapter) l2).myName);
   }
 
   public SReferenceLinkId getRoleId() {

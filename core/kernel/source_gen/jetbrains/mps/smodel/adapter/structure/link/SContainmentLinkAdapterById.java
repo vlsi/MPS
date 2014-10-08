@@ -9,6 +9,7 @@ import jetbrains.mps.smodel.adapter.structure.concept.SInterfaceConceptAdapterBy
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import jetbrains.mps.smodel.runtime.LinkDescriptor;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 
@@ -20,9 +21,9 @@ public class SContainmentLinkAdapterById extends SContainmentLinkAdapter {
     myRoleId = roleId;
   }
 
-  public boolean isSameLink(SContainmentLinkAdapter l2) {
+  public boolean isSame(SContainmentLink l2) {
     return (l2 instanceof SContainmentLinkAdapterById) ? myRoleId.equals(((SContainmentLinkAdapterById) l2).myRoleId) :
-        (myConceptName + "#" + myName).equals(l2.myConceptName + "#" + l2.myName);
+        (myConceptName + "#" + myName).equals(((SContainmentLinkAdapter) l2).myConceptName + "#" + ((SContainmentLinkAdapter) l2).myName);
   }
 
   public SContainmentLinkId getRoleId() {

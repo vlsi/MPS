@@ -21,6 +21,7 @@ import jetbrains.mps.smodel.adapter.structure.concept.SInterfaceConceptAdapterBy
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import jetbrains.mps.smodel.runtime.LinkDescriptor;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.model.SNode;
 
 public class SContainmentLinkAdapterByName extends SContainmentLinkAdapter {
@@ -28,8 +29,8 @@ public class SContainmentLinkAdapterByName extends SContainmentLinkAdapter {
     super(conceptName, name);
   }
 
-  public boolean isSameLink(SContainmentLinkAdapter l2) {
-    return (myConceptName + "#" + myName).equals(l2.myConceptName + "#" + l2.myName);
+  public boolean isSame(SContainmentLink l2) {
+    return (myConceptName + "#" + myName).equals(((SContainmentLinkAdapter) l2).myConceptName + "#" + ((SContainmentLinkAdapter) l2).myName);
   }
 
   protected LinkDescriptor getLinkDescriptor() {

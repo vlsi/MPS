@@ -27,6 +27,8 @@ public interface SReferenceLink extends SAbstractLink {
 
   SAbstractConcept getContainingConcept();
 
+  boolean isSame(SReferenceLink c);
+
   /**
    * The concept for the nodes that this link points to.
    */

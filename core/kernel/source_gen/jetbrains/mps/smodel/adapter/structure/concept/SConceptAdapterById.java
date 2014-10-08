@@ -20,9 +20,8 @@ public class SConceptAdapterById extends SConceptAdapter implements SConcept {
   }
 
 
-  public boolean isSameConcept(SAbstractConceptAdapter c2) {
-    if (!(c2 instanceof SConceptAdapter)) return false;
-    return (c2 instanceof SConceptAdapterById) ? myConceptId.equals(((SConceptAdapterById) c2).myConceptId) : myFqName.equals(c2.myFqName);
+  public boolean isSame(SConcept c2) {
+    return (c2 instanceof SConceptAdapterById) ? myConceptId.equals(((SConceptAdapterById) c2).myConceptId) : myFqName.equals(((SConceptAdapter) c2).myFqName);
   }
 
   @Override

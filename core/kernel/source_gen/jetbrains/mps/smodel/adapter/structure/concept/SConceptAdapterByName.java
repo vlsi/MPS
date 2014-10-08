@@ -29,9 +29,8 @@ public class SConceptAdapterByName extends SConceptAdapter implements SConcept {
     super(fqName);
   }
 
-  public boolean isSameConcept(SAbstractConceptAdapter c2) {
-    if (!(c2 instanceof SConceptAdapter)) return false;
-    return myFqName.equals(c2.getQualifiedName());
+  public boolean isSame(SConcept c2) {
+    return myFqName.equals(((SConceptAdapter) c2).myFqName);
   }
 
   @Override

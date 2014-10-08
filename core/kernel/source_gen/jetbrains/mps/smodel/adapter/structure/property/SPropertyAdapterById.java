@@ -10,6 +10,7 @@ import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import jetbrains.mps.smodel.runtime.PropertyDescriptor;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import org.jetbrains.mps.openapi.language.SProperty;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 
@@ -26,9 +27,9 @@ public class SPropertyAdapterById extends SPropertyAdapter {
   }
 
   @Override
-  public boolean isSameProperty(SPropertyAdapter p) {
+  public boolean isSame(SProperty p) {
     return (p instanceof SPropertyAdapterById) ? myPropertyId.equals(((SPropertyAdapterById) p).myPropertyId) :
-        (myConceptName + "#" + myPropertyName).equals(p.myConceptName + "#" + p.myPropertyName);
+        (myConceptName + "#" + myPropertyName).equals(((SPropertyAdapter) p).myConceptName + "#" + ((SPropertyAdapter) p).myPropertyName);
   }
 
   @Override

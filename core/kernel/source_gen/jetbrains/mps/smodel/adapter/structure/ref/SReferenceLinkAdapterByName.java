@@ -21,6 +21,7 @@ import jetbrains.mps.smodel.adapter.structure.concept.SInterfaceConceptAdapterBy
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import jetbrains.mps.smodel.runtime.ReferenceDescriptor;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.language.SReferenceLink;
 import org.jetbrains.mps.openapi.model.SNode;
 
 public class SReferenceLinkAdapterByName extends SReferenceLinkAdapter {
@@ -28,8 +29,8 @@ public class SReferenceLinkAdapterByName extends SReferenceLinkAdapter {
     super(conceptName, role);
   }
 
-  public boolean isSameReference(SReferenceLinkAdapter l2) {
-    return (myConceptName + "#" + myName).equals(l2.myConceptName + "#" + l2.myName);
+  public boolean isSame(SReferenceLink l2) {
+    return (myConceptName + "#" + myName).equals(((SReferenceLinkAdapter) l2).myConceptName + "#" + ((SReferenceLinkAdapter) l2).myName);
   }
 
   protected ReferenceDescriptor getReferenceDescriptor() {

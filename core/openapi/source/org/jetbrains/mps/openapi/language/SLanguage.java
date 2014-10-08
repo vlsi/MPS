@@ -28,6 +28,8 @@ public interface SLanguage {
    */
   String getQualifiedName();
 
+  boolean isSame(SLanguage c);
+
   /**
    * All concepts defined in the language
    */

@@ -37,8 +37,6 @@ public abstract class SContainmentLinkAdapter implements SContainmentLink {
     myName = name;
   }
 
-  public abstract boolean isSameLink(SContainmentLinkAdapter c);
-
   protected abstract LinkDescriptor getLinkDescriptor();
 
   @Override
