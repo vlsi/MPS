@@ -20,6 +20,7 @@ import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.NodeReadAccessCasterInEditor;
 import jetbrains.mps.smodel.SNodeUtil;
+import jetbrains.mps.smodel.adapter.ids.MetaIdByDeclaration;
 import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import jetbrains.mps.smodel.adapter.ids.SContainmentLinkId;
 import jetbrains.mps.smodel.adapter.ids.SPropertyId;
@@ -114,16 +115,20 @@ class InterpretedConceptDescriptor extends BaseConceptDescriptor {
 
           if (superConceptNode == null && !SNodeUtil.concept_BaseConcept.equals(myName)) {
             superConcept = SNodeUtil.concept_BaseConcept;
+            superConceptId = SNodeUtil.conceptId_BaseConcept;
           } else {
             superConcept = NameUtil.nodeFQName(superConceptNode);
+            superConceptId = MetaIdByDeclaration.getConceptId(((jetbrains.mps.smodel.SNode) superConceptNode));
           }
         }
 
         // parents
         Set<String> parentsSet = new LinkedHashSet<String>();
+        Set<SConceptId> parentsIdsSet = new LinkedHashSet<SConceptId>();
 
         if (SNodeUtil.isInstanceOfConceptDeclaration(declaration)) {
           parentsSet.add(superConcept);
+          parentsIdsSet.add(superConceptId);
 
           for (SNode interfaceConcept : SNodeUtil.getConceptDeclaration_Implements(declaration)) {
             parentsSet.add(NameUtil.nodeFQName(interfaceConcept));
@@ -137,9 +142,11 @@ class InterpretedConceptDescriptor extends BaseConceptDescriptor {
         parentsSet.remove(null);
         if (superConcept == null && !SNodeUtil.concept_BaseConcept.equals(myName) && !isInterface) {
           parentsSet.add(SNodeUtil.concept_BaseConcept);
+          parentsIdsSet.add(SNodeUtil.conceptId_BaseConcept);
         }
 
         parents = new ArrayList<String>(parentsSet);
+        parentsIds = new ArrayList<SConceptId>(parentsIdsSet);
 
         // direct properties
         for (SNode property : SNodeUtil.getConcept_PropertyDeclarations(declaration)) {
