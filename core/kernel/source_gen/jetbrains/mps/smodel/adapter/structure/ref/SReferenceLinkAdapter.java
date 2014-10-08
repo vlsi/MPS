@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.smodel.adapter.structure.ref;
 
+import jetbrains.mps.logging.Logger;
 import jetbrains.mps.scope.Scope;
 import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import jetbrains.mps.smodel.adapter.structure.concept.ConceptRegistryUtil;
@@ -22,6 +23,7 @@ import jetbrains.mps.smodel.adapter.structure.concept.SConceptAdapterById;
 import jetbrains.mps.smodel.adapter.structure.concept.SInterfaceConceptAdapterById;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import jetbrains.mps.smodel.runtime.ReferenceDescriptor;
+import org.apache.log4j.LogManager;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
@@ -144,4 +146,10 @@ public abstract class SReferenceLinkAdapter implements SReferenceLink {
     }
   }
 
+  private static final Logger LOG = Logger.wrap(LogManager.getLogger(SReferenceLinkAdapter.class));
+  @Override
+  public boolean equals(Object obj) {
+    LOG.error("somebody's using equals", new Throwable());
+    return super.equals(obj);
+  }
 }

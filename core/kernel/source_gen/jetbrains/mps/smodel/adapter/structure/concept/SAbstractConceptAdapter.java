@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.smodel.adapter.structure.concept;
 
+import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.smodel.adapter.ids.SConceptId;
@@ -26,6 +27,7 @@ import jetbrains.mps.smodel.adapter.structure.property.SPropertyAdapterById;
 import jetbrains.mps.smodel.adapter.structure.ref.SReferenceLinkAdapterById;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import jetbrains.mps.util.NameUtil;
+import org.apache.log4j.LogManager;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SAbstractLink;
@@ -153,5 +155,12 @@ public abstract class SAbstractConceptAdapter implements SAbstractConcept {
     if (strucModel == null) return null;
 
     return findInModel(strucModel);
+  }
+
+  private static final Logger LOG = Logger.wrap(LogManager.getLogger(SAbstractConceptAdapter.class));
+  @Override
+  public boolean equals(Object obj) {
+    LOG.error("somebody's using equals", new Throwable());
+    return super.equals(obj);
   }
 }

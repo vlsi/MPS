@@ -15,7 +15,9 @@
  */
 package jetbrains.mps.smodel.adapter.structure.property;
 
+import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.runtime.PropertyDescriptor;
+import org.apache.log4j.LogManager;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SProperty;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -61,5 +63,12 @@ public abstract class SPropertyAdapter implements SProperty {
     SNode cnode = getContainingConcept().getDeclarationNode();
     if (cnode == null) return null;
     return findInConcept(cnode);
+  }
+
+  private static final Logger LOG = Logger.wrap(LogManager.getLogger(SPropertyAdapter.class));
+  @Override
+  public boolean equals(Object obj) {
+    LOG.error("somebody's using equals", new Throwable());
+    return super.equals(obj);
   }
 }

@@ -1,6 +1,7 @@
 package jetbrains.mps.smodel.adapter.structure.language;
 
 import jetbrains.mps.internal.collections.runtime.SetSequence;
+import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.dependency.modules.LanguageDependenciesManager;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.LanguageAspect;
@@ -10,6 +11,7 @@ import jetbrains.mps.smodel.adapter.structure.concept.SConceptAdapterById;
 import jetbrains.mps.smodel.adapter.structure.concept.SInterfaceConceptAdapterById;
 import jetbrains.mps.smodel.language.LanguageRuntime;
 import jetbrains.mps.util.NameUtil;
+import org.apache.log4j.LogManager;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SLanguage;
@@ -79,5 +81,12 @@ public abstract class SLanguageAdapter implements SLanguage {
 
   public int getLanguageVersion() {
     return getSourceModule().getLanguageVersion();
+  }
+
+  private static final Logger LOG = Logger.wrap(LogManager.getLogger(SLanguageAdapter.class));
+  @Override
+  public boolean equals(Object obj) {
+    LOG.error("somebody's using equals", new Throwable());
+    return super.equals(obj);
   }
 }

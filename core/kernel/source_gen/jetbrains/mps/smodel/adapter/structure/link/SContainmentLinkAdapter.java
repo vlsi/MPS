@@ -15,12 +15,14 @@
  */
 package jetbrains.mps.smodel.adapter.structure.link;
 
+import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import jetbrains.mps.smodel.adapter.structure.concept.ConceptRegistryUtil;
 import jetbrains.mps.smodel.adapter.structure.concept.SConceptAdapterById;
 import jetbrains.mps.smodel.adapter.structure.concept.SInterfaceConceptAdapterById;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import jetbrains.mps.smodel.runtime.LinkDescriptor;
+import org.apache.log4j.LogManager;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
@@ -96,5 +98,12 @@ public abstract class SContainmentLinkAdapter implements SContainmentLink {
     SNode cnode = getContainingConcept().getDeclarationNode();
     if (cnode == null) return null;
     return findInConcept(cnode);
+  }
+
+  private static final Logger LOG = Logger.wrap(LogManager.getLogger(SContainmentLinkAdapter.class));
+  @Override
+  public boolean equals(Object obj) {
+    LOG.error("somebody's using equals", new Throwable());
+    return super.equals(obj);
   }
 }
