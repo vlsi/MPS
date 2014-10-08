@@ -21,6 +21,7 @@ import org.apache.log4j.LogManager;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.module.SRepository;
+import org.jetbrains.mps.openapi.module.SRepositoryAttachListener;
 import org.jetbrains.mps.openapi.module.SRepositoryContentAdapter;
 import org.jetbrains.mps.openapi.module.SRepositoryListener;
 
@@ -45,16 +46,18 @@ public abstract class SRepositoryBase implements SRepository {
 
   @Override
   public final void addRepositoryListener(SRepositoryListener listener) {
+    getModelAccess().checkReadAccess();
     myListeners.add(listener);
-    if (listener instanceof SRepositoryContentAdapter) {
-      ((SRepositoryContentAdapter) listener).startListening(this);
+    if (listener instanceof SRepositoryAttachListener) {
+      ((SRepositoryAttachListener) listener).startListening(this);
     }
   }
 
   @Override
   public final void removeRepositoryListener(SRepositoryListener listener) {
-    if (listener instanceof SRepositoryContentAdapter) {
-      ((SRepositoryContentAdapter) listener).stopListening(this);
+    getModelAccess().checkReadAccess();
+    if (listener instanceof SRepositoryAttachListener) {
+      ((SRepositoryAttachListener) listener).stopListening(this);
     }
     myListeners.remove(listener);
   }
