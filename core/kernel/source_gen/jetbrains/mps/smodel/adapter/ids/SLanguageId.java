@@ -23,7 +23,7 @@ public final class SLanguageId {
   @NotNull
   private final UUID myId;
 
-  public SLanguageId(UUID id) {
+  public SLanguageId(@NotNull UUID id) {
     myId = id;
   }
 

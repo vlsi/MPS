@@ -15,11 +15,13 @@
  */
 package jetbrains.mps.smodel.adapter.ids;
 
+import org.jetbrains.annotations.NotNull;
+
 public final class SContainmentLinkId  {
   protected final SConceptId myConceptId;
   private final long myLinkId;
 
-  public SContainmentLinkId(SConceptId conceptId, long linkId) {
+  public SContainmentLinkId(@NotNull SConceptId conceptId, long linkId) {
     myConceptId = conceptId;
     myLinkId = linkId;
   }

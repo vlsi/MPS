@@ -15,11 +15,13 @@
  */
 package jetbrains.mps.smodel.adapter.ids;
 
+import org.jetbrains.annotations.NotNull;
+
 public final class SPropertyId {
   private final SConceptId myConceptId;
   private final long myPropertyId;
 
-  public SPropertyId(SConceptId conceptId, long propertyId) {
+  public SPropertyId(@NotNull SConceptId conceptId, long propertyId) {
     myConceptId = conceptId;
     myPropertyId = propertyId;
   }
@@ -40,14 +42,14 @@ public final class SPropertyId {
     SPropertyId that = (SPropertyId) o;
 
     if (myPropertyId != that.myPropertyId) return false;
-    if (myConceptId != null ? !myConceptId.equals(that.myConceptId) : that.myConceptId != null) return false;
+    if (!myConceptId.equals(that.myConceptId)) return false;
 
     return true;
   }
 
   @Override
   public int hashCode() {
-    int result = myConceptId != null ? myConceptId.hashCode() : 0;
+    int result = myConceptId.hashCode();
     result = (int) (31 * result + myPropertyId);
     return result;
   }

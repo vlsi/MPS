@@ -15,13 +15,22 @@
  */
 package jetbrains.mps.smodel.adapter.ids;
 
+import org.jetbrains.annotations.NotNull;
+
 public final class SConceptId {
   private final SLanguageId myLanguageId;
   private final long myConceptId;
 
-  public SConceptId(SLanguageId languageId, long conceptId) {
+  public SConceptId(@NotNull SLanguageId languageId, long conceptId) {
     myConceptId = conceptId;
     myLanguageId = languageId;
+  }
+
+  public static SConceptId deserialize(String s) {
+    int split = s.lastIndexOf("/");
+    SLanguageId lang = SLanguageId.deserialize(s.substring(0, split));
+    long concept = Long.parseLong(s.substring(split + 1));
+    return new SConceptId(lang, concept);
   }
 
   public SLanguageId getLanguageId() {
@@ -40,26 +49,19 @@ public final class SConceptId {
     SConceptId that = (SConceptId) o;
 
     if (myConceptId != that.myConceptId) return false;
-    if (myLanguageId != null ? !myLanguageId.equals(that.myLanguageId) : that.myLanguageId != null) return false;
+    if (!myLanguageId.equals(that.myLanguageId)) return false;
 
     return true;
   }
 
   @Override
   public int hashCode() {
-    long result = myLanguageId != null ? myLanguageId.hashCode() : 0;
+    long result = myLanguageId.hashCode();
     result = 31 * result + myConceptId;
     return (int) result;
   }
 
   public String serialize() {
     return myLanguageId.serialize() + "/" + myConceptId;
-  }
-
-  public static SConceptId deserialize(String s) {
-    int split = s.lastIndexOf("/");
-    SLanguageId lang = SLanguageId.deserialize(s.substring(0, split));
-    long concept = Long.parseLong(s.substring(split + 1));
-    return new SConceptId(lang, concept);
   }
 }

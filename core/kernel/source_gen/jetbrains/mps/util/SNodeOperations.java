@@ -14,7 +14,6 @@ import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SModelStereotype;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.language.SConceptRepository;
 import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -42,9 +41,7 @@ public class SNodeOperations {
    * FIXME what on earth this method is supposed to tell?
    */
   public static boolean isUnknown(SNode node) {
-    SConcept conceptId = node.getConcept();
-    // sNode.getConceptId() might be a non-null value for illegal concept, make sure the concept is known
-    return conceptId.getDeclarationNode()!=null;
+    return false;
   }
   public static boolean isAncestor(SNode ancestor, SNode node) {
     if (ancestor == node) {
