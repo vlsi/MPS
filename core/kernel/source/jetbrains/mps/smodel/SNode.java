@@ -21,11 +21,9 @@ import jetbrains.mps.extapi.model.SNodeBase;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.adapter.structure.concept.SConceptAdapterByName;
-import jetbrains.mps.smodel.adapter.structure.link.SContainmentLinkAdapter;
 import jetbrains.mps.smodel.adapter.structure.link.SContainmentLinkAdapterByName;
 import jetbrains.mps.smodel.adapter.structure.property.SPropertyAdapter;
 import jetbrains.mps.smodel.adapter.structure.property.SPropertyAdapterByName;
-import jetbrains.mps.smodel.adapter.structure.ref.SReferenceLinkAdapter;
 import jetbrains.mps.smodel.adapter.structure.ref.SReferenceLinkAdapterByName;
 import jetbrains.mps.smodel.references.UnregisteredNodes;
 import jetbrains.mps.smodel.search.SModelSearchUtil;
@@ -861,7 +859,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
     SReference toDelete = null;
     if (myReferences != null) {
       for (SReference reference : myReferences) {
-        if (!((SReferenceLinkAdapter) reference.getReferenceLink()).isSameReference(((SReferenceLinkAdapter) role))) continue;
+        if (!reference.getReferenceLink().isSame(role)) continue;
         toDelete = reference;
         break;
       }
@@ -903,7 +901,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
 
     SReference result = null;
     for (SReference reference : myReferences) {
-      if (((SReferenceLinkAdapter) reference.getReferenceLink()).isSameReference(((SReferenceLinkAdapter) role))) {
+      if (reference.getReferenceLink().isSame(role)) {
         result = reference;
         break;
       }
@@ -919,7 +917,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
 
     SReference toRemove = null;
     for (SReference r : myReferences) {
-      if (!((SReferenceLinkAdapter) r.getReferenceLink()).isSameReference(((SReferenceLinkAdapter) role))) continue;
+      if (!r.getReferenceLink().isSame(role)) continue;
       toRemove = r;
       break;
     }
@@ -1008,7 +1006,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
     if (role != null) {
       while (firstChild != null) {
         SContainmentLink childRole = firstChild.getContainmentLink();
-        if (((SContainmentLinkAdapter) childRole).isSameLink(((SContainmentLinkAdapter) role))) break;
+        if (childRole.isSame(role)) break;
         firstChild = firstChild.treeNext();
       }
     }
@@ -1021,7 +1019,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
   private int getPropertyIndex(SProperty id) {
     if (myProperties == null) return -1;
     for (int i = 0; i < myProperties.length; i += 2) {
-      if (((SPropertyAdapter) id).isSameProperty(((SPropertyAdapter) myProperties[i]))) return i;
+      if (id.isSame(((SPropertyAdapter) myProperties[i]))) return i;
     }
     return -1;
   }
@@ -1242,7 +1240,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
 
         do {
           node = node.treeNext();
-        } while (node != null && !((SContainmentLinkAdapter) node.getContainmentLink()).isSameLink(((SContainmentLinkAdapter) myRole)));
+        } while (node != null && !node.getContainmentLink().isSame(myRole));
         return node;
       }
 
@@ -1256,9 +1254,9 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
 
         do {
           node = node.treePrevious();
-        } while (node != fc && !((SContainmentLinkAdapter) node.getContainmentLink()).isSameLink(((SContainmentLinkAdapter) myRole)));
+        } while (node != fc && !node.getContainmentLink().isSame(myRole));
 
-        return ((SContainmentLinkAdapter) node.getContainmentLink()).isSameLink(((SContainmentLinkAdapter) myRole)) ? node : null;
+        return node.getContainmentLink().isSame(myRole) ? node : null;
       }
 
       @Override
