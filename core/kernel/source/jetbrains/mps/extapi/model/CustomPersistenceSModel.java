@@ -131,14 +131,10 @@ public final class CustomPersistenceSModel extends EditableSModelBase implements
 
     if (!isLoaded()) return;
 
-    final SModel newModel = loadSModel();
+    final SModel oldModel = myModel;
+    myModel = loadSModel();
     setChanged(false);
-    super.replaceModel(new Runnable() {
-      @Override
-      public void run() {
-        myModel = newModel;
-      }
-    });
+    replaceModelAndFireEvent(oldModel, myModel);
   }
 
   @Override

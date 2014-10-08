@@ -17,6 +17,7 @@ package jetbrains.mps.extapi.model;
 
 import jetbrains.mps.extapi.module.SModuleBase;
 import jetbrains.mps.smodel.InvalidSModel;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.loading.ModelLoadingState;
 import org.apache.log4j.LogManager;
@@ -335,6 +336,22 @@ public abstract class SModelBase extends SModelDescriptorStub implements SModel 
     myModelReference = newModelReference;
   }
 
+  protected synchronized void replaceModelAndFireEvent(jetbrains.mps.smodel.SModel oldModel, jetbrains.mps.smodel.SModel newModel) {
+    ModelAccess.assertLegalWrite();
+    if (oldModel != null) {
+      oldModel.setModelDescriptor(null);
+    }
+    if (newModel != null) {
+      newModel.setModelDescriptor(this);
+    }
+    if (oldModel != null) {
+      notifyModelReplaced(oldModel);
+    }
+
+    fireModelReplaced();
+
+    MPSModuleRepository.getInstance().invalidateCaches();
+  }
 
   protected void assertCanRead() {
 //    if (myRepository == null) return;
