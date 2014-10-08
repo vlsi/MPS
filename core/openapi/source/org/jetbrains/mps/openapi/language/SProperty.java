@@ -29,11 +29,6 @@ public interface SProperty {
 
   String getName();
 
-  /**
-   * Will be used to check validity of potential values.
-   */
-  boolean isValid(String value);
-
   @Nullable
   SNode getDeclarationNode();
 }
