@@ -94,8 +94,12 @@ public class ModulesWatcher {
     synchronized (LOCK) {
       for (SModule module : modules) {
         if (checkLoadableCondition(module)) continue;
+        Collection<? extends SModule> outs = myDepGraph.getOuts(module);
+        Collection<? extends SModule> backOuts = myBackDepGraph.getOuts(module);
         myDepGraph.removeVertex(module);
         myBackDepGraph.removeVertex(module);
+        for (SModule m : outs) myBackDepGraph.removeEdge(m, module);
+        for (SModule m : backOuts) myDepGraph.removeEdge(m, module);
       }
       myChanged = true;
     }
@@ -146,28 +150,29 @@ public class ModulesWatcher {
 
   private void constructEdges() {
     checkGraphsCorrectness();
-    int wasEdges = myDepGraph.clearEdges();
-    myBackDepGraph.clearEdges();
+    int wasEdges = myDepGraph.getEdgesCount();
 
     final Collection<SModule> modules = getModules();
     for (SModule module : modules) {
-      if (checkNotDisposed(module)) continue;
-      for (SModule depModule : GlobalModuleDependenciesManager.directlyUsedModules(module, true, true)) {
-        if (modules.contains(depModule)) {
-          myDepGraph.addEdge(module, depModule);
-          myBackDepGraph.addEdge(depModule, module);
+      if (!isModuleDisposed(module)) {
+        Collection<SModule> outs = new ArrayList<SModule>(myDepGraph.getOuts(module));
+        for (SModule m : outs) {
+          myDepGraph.removeEdge(module, m);
+          myBackDepGraph.removeEdge(m, module);
+        }
+        for (SModule depModule : GlobalModuleDependenciesManager.directlyUsedModules(module, true, true)) {
+          if (modules.contains(depModule)) {
+            myDepGraph.addEdge(module, depModule);
+            myBackDepGraph.addEdge(depModule, module);
+          }
         }
       }
     }
     LOG.debug("Difference in the edge count after validation " + (myDepGraph.getEdgesCount() - wasEdges));
   }
 
-  private boolean checkNotDisposed(SModule module) {
-    if (module.getRepository() == null) {
-      LOG.error("Disposed module in ModulesWatcher", new IllegalStateException());
-      return true;
-    }
-    return false;
+  private boolean isModuleDisposed(SModule module) {
+    return module.getRepository() == null;
   }
 
   private void resetStatus() {
@@ -195,9 +200,10 @@ public class ModulesWatcher {
   }
 
   private void checkGraphsCorrectness() {
-    assert (myDepGraph.getEdgesCount() == myBackDepGraph.getEdgesCount() &&
-        myDepGraph.getVerticesCount() == myBackDepGraph.getVerticesCount()) :
+    assert (myDepGraph.getEdgesCount() == myBackDepGraph.getEdgesCount()) :
         "Inconsistent state : dep. graph and transposed dep. graph have different number of edges";
+    assert (myDepGraph.getVerticesCount() == myBackDepGraph.getVerticesCount()) :
+        "Inconsistent state : dep. graph and transposed dep. graph have different number of vertices";
   }
 
   private void checkStatusMapCorrectness() {
@@ -281,12 +287,15 @@ public class ModulesWatcher {
 
     public boolean removeVertex(V v) {
       Set<V> removed = myOuts.remove(v);
+      if (removed != null) {
+        myEdgesCount -= removed.size();
+      }
       return removed != null;
     }
 
     public boolean addEdge(V v1, V v2) {
       if (!containsVertex(v1) || !containsVertex(v2)) throw new IllegalArgumentException("Trying to add an edge between nonexistent vertices");
-      Collection<V> vs = getOuts(v1);
+      Collection<V> vs = myOuts.get(v1);
       assert vs != null;
       if (vs.add(v2)) {
         ++myEdgesCount;
@@ -296,9 +305,8 @@ public class ModulesWatcher {
     }
 
     public boolean removeEdge(V v1, V v2) {
-      if (!containsVertex(v1) || !containsVertex(v2)) throw new IllegalArgumentException("Trying to add an edge between nonexistent vertices");
-      Collection<V> vs = getOuts(v1);
-      assert vs != null;
+      Collection<V> vs = myOuts.get(v1);
+      if (vs == null) return false;
       if (vs.remove(v2)) {
         --myEdgesCount;
         return true;
@@ -306,21 +314,12 @@ public class ModulesWatcher {
       return false;
     }
 
-    public Collection<V> getOuts(V v) {
+    public Collection<? extends V> getOuts(V v) {
       return myOuts.get(v);
     }
 
     public void dfs(Collection<V> starts, VertexVisitor<V> visitor) {
       new DfsTraversal<V>(this, starts, visitor).dfs();
-    }
-
-    public int clearEdges() {
-      int edgesCount = myEdgesCount;
-      for (Set<V> outs : myOuts.values()) {
-        outs.clear();
-      }
-      myEdgesCount = 0;
-      return edgesCount;
     }
 
     public Collection<V> getVertices() {

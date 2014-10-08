@@ -61,7 +61,6 @@ public class BootstrapLibContributor implements LibraryContributor, ApplicationC
         LibraryInitializer.getInstance().update(false);
       }
     });
-
   }
 
   @Override

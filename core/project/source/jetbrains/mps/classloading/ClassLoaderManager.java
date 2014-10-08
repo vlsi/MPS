@@ -256,10 +256,7 @@ public class ClassLoaderManager implements CoreComponent {
   private Set<SModule> doLoadModules(Iterable<? extends SModule> modules, @NotNull ProgressMonitor monitor) {
     synchronized (CLASS_LOADING_LOCK) {
       Set<SModule> modulesToLoad = new LinkedHashSet<SModule>(getValidModulesWithDeps(modules));
-      modulesToLoad = filterModules(modulesToLoad, negateCondition(myLoadedCondition));
-      if (modulesToLoad.isEmpty()) return modulesToLoad;
-
-      modulesToLoad = filterModules(modulesToLoad, myMPSLoadableCondition);
+      modulesToLoad = filterModules(modulesToLoad, myMPSLoadableCondition, negateCondition(myLoadedCondition));
       LOG.debug("Loading " + modulesToLoad.size() + " modules");
       Set<SModule> modulesToNotify = myClassLoadersHolder.doLoadModules(modulesToLoad, monitor);
       myBroadCaster.onLoad(modulesToNotify);
