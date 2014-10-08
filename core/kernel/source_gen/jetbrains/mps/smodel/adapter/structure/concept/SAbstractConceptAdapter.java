@@ -26,6 +26,7 @@ import jetbrains.mps.smodel.adapter.structure.link.SContainmentLinkAdapterById;
 import jetbrains.mps.smodel.adapter.structure.property.SPropertyAdapterById;
 import jetbrains.mps.smodel.adapter.structure.ref.SReferenceLinkAdapterById;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
+import jetbrains.mps.smodel.runtime.LinkDescriptor;
 import jetbrains.mps.util.NameUtil;
 import org.apache.log4j.LogManager;
 import org.jetbrains.annotations.Nullable;
@@ -40,6 +41,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import java.util.ArrayList;
 
 public abstract class SAbstractConceptAdapter implements SAbstractConcept {
+  private static final Logger LOG = Logger.wrap(LogManager.getLogger(SAbstractConceptAdapter.class));
   protected String myFqName;
 
   protected SAbstractConceptAdapter(String fqName) {
@@ -66,13 +68,13 @@ public abstract class SAbstractConceptAdapter implements SAbstractConcept {
 
     ArrayList<SReferenceLink> result = new ArrayList<SReferenceLink>();
     for (SReferenceLinkId rid : d.getReferenceIds()) {
-      result.add(new SReferenceLinkAdapterById(rid, d.getConceptFqName(),d.getRefDescriptor(rid).getName()));
+      result.add(new SReferenceLinkAdapterById(rid, d.getConceptFqName(), d.getRefDescriptor(rid).getName()));
     }
 
     for (SConceptId ii : d.getParentsIds()) {
       ConceptDescriptor id = ConceptRegistryUtil.getConceptDescriptor(ii);
       for (SReferenceLinkId rid : id.getReferenceIds()) {
-        result.add(new SReferenceLinkAdapterById(rid, id.getConceptFqName(),id.getRefDescriptor(rid).getName()));
+        result.add(new SReferenceLinkAdapterById(rid, id.getConceptFqName(), id.getRefDescriptor(rid).getName()));
       }
     }
 
@@ -85,13 +87,13 @@ public abstract class SAbstractConceptAdapter implements SAbstractConcept {
 
     ArrayList<SContainmentLink> result = new ArrayList<SContainmentLink>();
     for (SContainmentLinkId rid : d.getLinkIds()) {
-      result.add(new SContainmentLinkAdapterById(rid, d.getConceptFqName(),d.getLinkDescriptor(rid).getName()));
+      result.add(new SContainmentLinkAdapterById(rid, d.getConceptFqName(), d.getLinkDescriptor(rid).getName()));
     }
 
     for (SConceptId ii : d.getParentsIds()) {
       ConceptDescriptor id = ConceptRegistryUtil.getConceptDescriptor(ii);
       for (SContainmentLinkId rid : id.getLinkIds()) {
-        result.add(new SContainmentLinkAdapterById(rid, id.getConceptFqName(),id.getLinkDescriptor(rid).getName()));
+        result.add(new SContainmentLinkAdapterById(rid, id.getConceptFqName(), id.getLinkDescriptor(rid).getName()));
       }
     }
     return result;
@@ -100,7 +102,10 @@ public abstract class SAbstractConceptAdapter implements SAbstractConcept {
   @Override
   @Deprecated
   public SAbstractLink getLink(String role) {
-    throw new UnsupportedOperationException();
+    LinkDescriptor d = getConceptDescriptor().getLinkDescriptor(role);
+    SContainmentLinkId linkId = d.getId();
+    ConceptDescriptor cd = ConceptRegistryUtil.getConceptDescriptor(linkId.getConceptId());
+    return new SContainmentLinkAdapterById(linkId, cd.getConceptFqName(), role);
   }
 
   @Override
@@ -120,13 +125,13 @@ public abstract class SAbstractConceptAdapter implements SAbstractConcept {
 
     ArrayList<SProperty> result = new ArrayList<SProperty>();
     for (SPropertyId rid : d.getPropertyIds()) {
-      result.add(new SPropertyAdapterById(rid,d.getConceptFqName(), d.getPropertyDescriptor(rid).getName()));
+      result.add(new SPropertyAdapterById(rid, d.getConceptFqName(), d.getPropertyDescriptor(rid).getName()));
     }
 
     for (SConceptId ii : d.getParentsIds()) {
       ConceptDescriptor id = ConceptRegistryUtil.getConceptDescriptor(ii);
       for (SPropertyId rid : id.getPropertyIds()) {
-        result.add(new SPropertyAdapterById(rid,id.getConceptFqName(), id.getPropertyDescriptor(rid).getName()));
+        result.add(new SPropertyAdapterById(rid, id.getConceptFqName(), id.getPropertyDescriptor(rid).getName()));
       }
     }
     return result;
@@ -155,7 +160,6 @@ public abstract class SAbstractConceptAdapter implements SAbstractConcept {
     return findInModel(strucModel);
   }
 
-  private static final Logger LOG = Logger.wrap(LogManager.getLogger(SAbstractConceptAdapter.class));
   @Override
   public boolean equals(Object obj) {
     LOG.error("somebody's using equals", new Throwable());
