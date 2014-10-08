@@ -56,7 +56,12 @@ public abstract class SContainmentLinkAdapter implements SContainmentLink {
 
   @Override
   public String getRoleName() {
-    return getLinkDescriptor().getName();
+    LinkDescriptor d = getLinkDescriptor();
+    if (d == null) {
+      //invalid property, needed for propertyRead event in SNode until event is rewritten
+      return myName;
+    }
+    return d.getName();
   }
 
   @Override
