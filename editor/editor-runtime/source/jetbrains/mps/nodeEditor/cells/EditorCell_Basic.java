@@ -134,7 +134,7 @@ public abstract class EditorCell_Basic implements EditorCell {
 
   @Override
   public boolean isPunctuationLayout() {
-    return LayoutConstraints.PUNCTUATION_LAYOUT_CONSTRAINT.equals(getStyle().get(StyleAttributes.LAYOUT_CONSTRAINT));
+    return LayoutConstraints.PUNCTUATION_LAYOUT_CONSTRAINT.getName().equals(getStyle().get(StyleAttributes.LAYOUT_CONSTRAINT));
   }
 
   @Override
