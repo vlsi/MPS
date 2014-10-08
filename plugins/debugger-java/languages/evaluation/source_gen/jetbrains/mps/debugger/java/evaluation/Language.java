@@ -13,6 +13,8 @@ import jetbrains.mps.smodel.runtime.BehaviorAspectDescriptor;
 import jetbrains.mps.smodel.runtime.ConstraintsAspectDescriptor;
 import jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor;
 import jetbrains.mps.debugger.java.evaluation.editor.EditorAspectDescriptorImpl;
+import jetbrains.mps.smodel.runtime.MakeAspectDescriptor;
+import jetbrains.mps.debugger.java.evaluation.plugin.FacetAspectDescriptor;
 import jetbrains.mps.smodel.runtime.StructureAspectDescriptor;
 import jetbrains.mps.smodel.runtime.TextGenAspectDescriptor;
 import jetbrains.mps.smodel.runtime.interpreted.TextGenAspectInterpreted;
@@ -48,6 +50,9 @@ public class Language extends LanguageRuntime {
     }
     if (descriptorClass == EditorAspectDescriptor.class) {
       return (T) new EditorAspectDescriptorImpl();
+    }
+    if (descriptorClass == MakeAspectDescriptor.class) {
+      return (T) new FacetAspectDescriptor();
     }
     if (descriptorClass == StructureAspectDescriptor.class) {
       return (T) new jetbrains.mps.debugger.java.evaluation.structure.StructureAspectDescriptor();
