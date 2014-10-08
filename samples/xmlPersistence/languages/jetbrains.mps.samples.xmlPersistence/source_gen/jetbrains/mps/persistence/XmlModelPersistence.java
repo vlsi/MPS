@@ -159,8 +159,6 @@ public class XmlModelPersistence implements ModelFactory, SModelPersistence {
       name = FileUtil.getNameWithoutExtension(((SModelId.RelativePathSModelId) reference.getModelId()).getFileName());
     }
     SNode xmlFile = XmlConverter.newDocument(name);
-    sModel.addLanguage(MetaIdByDeclaration.getLanguageId(
-        PersistenceFacade.getInstance().createModuleReference("479c7a8c-02f9-43b5-9139-d910cb22f298(jetbrains.mps.core.xml)").getModuleId()), 0);
     sModel.addRootNode(xmlFile);
     return sModel;
   }

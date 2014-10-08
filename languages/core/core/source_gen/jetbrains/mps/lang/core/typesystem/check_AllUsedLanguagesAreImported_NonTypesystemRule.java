@@ -36,8 +36,6 @@ public class check_AllUsedLanguagesAreImported_NonTypesystemRule extends Abstrac
     Set<SLanguage> importedLanguages = new HashSet<SLanguage>();
     // XXX allImported doesn't built a closure of languages extended by those imported, is it what we want here? 
     for (SModuleReference importedLanguageReference : SetSequence.fromSet(SModelOperations.getAllImportedLanguages(SNodeOperations.getModel(root)))) {
-      SLanguage language = SConceptRepository.getInstance().getLanguage(MetaIdByDeclaration.getLanguageId(importedLanguageReference.getModuleId()));
-      importedLanguages.add(language);
     }
 
     for (SNode node : ListSequence.fromList(SNodeOperations.getDescendants(root, "jetbrains.mps.lang.core.structure.BaseConcept", true, new String[]{}))) {

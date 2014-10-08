@@ -5,7 +5,6 @@ package jetbrains.mps.project.persistence;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
-import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.Sequence;
@@ -21,7 +20,6 @@ import jetbrains.mps.project.structure.modules.LanguageDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleFacetDescriptor;
 import jetbrains.mps.smodel.LanguageID;
-import jetbrains.mps.smodel.language.MetaFactoryImpl;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.MacroHelper;
 import jetbrains.mps.util.xml.XmlUtil;
@@ -68,11 +66,11 @@ public class ModuleDescriptorPersistence {
       }
     }).toListSequence());
 
-    Sequence.fromIterable(XmlUtil.children(XmlUtil.first(root, "languageVersions"), "language")).visitAll(new IVisitor<Element>() {
-      public void visit(Element it) {
-        descriptor.getLanguageVersions().put(MetaFactoryImpl.getInstance().deserializeLanguage(it.getAttributeValue("id")), Integer.parseInt(it.getAttributeValue("version")));
-      }
-    });
+//    Sequence.fromIterable(XmlUtil.children(XmlUtil.first(root, "languageVersions"), "language")).visitAll(new IVisitor<Element>() {
+//      public void visit(Element it) {
+//        descriptor.getLanguageVersions().put(MetaFactoryImpl.getInstance().deserializeLanguage(it.getAttributeValue("id")), Integer.parseInt(it.getAttributeValue("version")));
+//      }
+//    });
 
     if (descriptor instanceof LanguageDescriptor) {
       LanguageDescriptor ld = (LanguageDescriptor) descriptor;
