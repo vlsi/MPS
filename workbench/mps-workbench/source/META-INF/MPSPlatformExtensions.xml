@@ -1,5 +1,5 @@
 <extensions>
-  <errorHandler implementation="com.intellij.diagnostic.ITNReporter"/>
+  <errorHandler implementation="jetbrains.mps.ide.blame.CharismaReporter"/>
   <appStarter implementation="com.intellij.openapi.diff.DiffApplication"/>
   <!--
   <appStarter implementation="com.intellij.openapi.diff.MergeApplication"/>
