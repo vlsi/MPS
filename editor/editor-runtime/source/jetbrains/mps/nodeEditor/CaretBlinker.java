@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2014 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,15 +28,16 @@ import org.jetbrains.annotations.NotNull;
 
 public class CaretBlinker implements ApplicationComponent {
   private static final Logger LOG = LogManager.getLogger(CaretBlinker.class);
-
   public static CaretBlinker getInstance() {
     return ApplicationManager.getApplication() == null ? null : ApplicationManager.getApplication().getComponent(CaretBlinker.class);
   }
 
   public static final int MIN_BLINKING_PERIOD = 100; //millis
+
   public static final int MAX_BLINKING_PERIOD = 1000;
 
   private boolean myStarted = false;
+  private MyRunnable myRunnable;
 
   private final Object myRegistrationLock = new Object();
 
@@ -48,11 +49,12 @@ public class CaretBlinker implements ApplicationComponent {
 
   public void launch() {
     if (myStarted) return;
-    Thread t = new Thread(new MyRunnable(), "caret blinker daemon");
+    myRunnable = new MyRunnable(getCaretBlinkingRateTimeMillis());
+    Thread t = new Thread(myRunnable, "caret blinker daemon");
     t.setDaemon(true);
     t.setPriority(3);
-    t.start();
     myStarted = true;
+    t.start();
   }
 
   public int getCaretBlinkingRateTimeMillis() {
@@ -61,6 +63,9 @@ public class CaretBlinker implements ApplicationComponent {
 
   public void setCaretBlinkingRateTimeMillis(int timeMillis) {
     EditorSettingsExternalizable.getInstance().setBlinkPeriod(timeMillis);
+    if (myRunnable != null) {
+      myRunnable.setBlinkRate(timeMillis);
+    }
   }
 
   public void registerEditor(EditorComponent editorComponent) {
@@ -91,6 +96,10 @@ public class CaretBlinker implements ApplicationComponent {
   }
 
   private class MyRunnable implements Runnable {
+    private int myBlinkRate;
+    public MyRunnable(int blinkValue) {
+      setBlinkRate(blinkValue);
+    }
     @Override
     @SuppressWarnings({"InfiniteLoopStatement"})
     public void run() {
@@ -108,12 +117,16 @@ public class CaretBlinker implements ApplicationComponent {
         }
         try {
           synchronized (this) {
-            wait(getCaretBlinkingRateTimeMillis());
+            wait(myBlinkRate);
           }
         } catch (Throwable t) {
           LOG.error(null, t);
         }
       }
+    }
+
+    public void setBlinkRate(int value) {
+      myBlinkRate = value;
     }
   }
 }
