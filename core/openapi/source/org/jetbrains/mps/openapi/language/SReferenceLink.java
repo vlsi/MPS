@@ -49,6 +49,8 @@ public interface SReferenceLink extends SAbstractLink {
   @Deprecated //always false
   boolean isMultiple();
 
+  boolean isValid();
+
   @Nullable
   SNode getDeclarationNode();
 

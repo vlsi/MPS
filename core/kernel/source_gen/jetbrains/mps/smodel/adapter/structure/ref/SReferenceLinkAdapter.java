@@ -82,6 +82,11 @@ public abstract class SReferenceLinkAdapter implements SReferenceLink {
   }
 
   @Override
+  public boolean isValid() {
+    return getReferenceDescriptor() != null;
+  }
+
+  @Override
   public SNode getDeclarationNode() {
     SNode cnode = getContainingConcept().getDeclarationNode();
     if (cnode == null) return null;

@@ -29,6 +29,8 @@ public interface SProperty {
 
   String getName();
 
+  boolean isValid();
+
   @Nullable
   SNode getDeclarationNode();
 }
