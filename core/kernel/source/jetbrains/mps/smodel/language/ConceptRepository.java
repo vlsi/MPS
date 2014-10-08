@@ -51,7 +51,8 @@ public class ConceptRepository extends SConceptRepository implements CoreCompone
   public SConcept getInstanceConcept(@NotNull String id) {
     SAbstractConcept concept = getConcept(id);
     if (concept instanceof SInterfaceConcept) {
-      return new SInterfaceInstanceAdapter((SInterfaceConcept) concept);
+      ConceptDescriptor desc = ConceptRegistry.getInstance().getConceptDescriptor(id);
+      return new SConceptAdapterById(desc.getId(), id);
     }
     if (concept == null) {
       // TODO separate implementation for an "invalid" concept?
