@@ -21,8 +21,11 @@ import jetbrains.mps.extapi.model.SNodeBase;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.adapter.structure.concept.SConceptAdapterByName;
+import jetbrains.mps.smodel.adapter.structure.link.SContainmentLinkAdapter;
 import jetbrains.mps.smodel.adapter.structure.link.SContainmentLinkAdapterByName;
+import jetbrains.mps.smodel.adapter.structure.property.SPropertyAdapter;
 import jetbrains.mps.smodel.adapter.structure.property.SPropertyAdapterByName;
+import jetbrains.mps.smodel.adapter.structure.ref.SReferenceLinkAdapter;
 import jetbrains.mps.smodel.adapter.structure.ref.SReferenceLinkAdapterByName;
 import jetbrains.mps.smodel.references.UnregisteredNodes;
 import jetbrains.mps.smodel.search.SModelSearchUtil;
@@ -636,7 +639,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
   private void removeReferenceInternal(final SReference ref) {
     int index = -1;
     for (int i = 0; i < myReferences.length; i++) {
-      if (myReferences[i].equals(ref)) {
+      if (myReferences[i] == ref) {
         index = i;
         break;
       }
@@ -858,7 +861,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
     SReference toDelete = null;
     if (myReferences != null) {
       for (SReference reference : myReferences) {
-        if (!reference.getReferenceLink().equals(role)) continue;
+        if (!((SReferenceLinkAdapter) reference.getReferenceLink()).isSameReference(((SReferenceLinkAdapter) role))) continue;
         toDelete = reference;
         break;
       }
@@ -900,7 +903,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
 
     SReference result = null;
     for (SReference reference : myReferences) {
-      if (reference.getReferenceLink().equals(role)) {
+      if (((SReferenceLinkAdapter) reference.getReferenceLink()).isSameReference(((SReferenceLinkAdapter) role))) {
         result = reference;
         break;
       }
@@ -914,22 +917,21 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
   public void setReference(SReferenceLink role, org.jetbrains.mps.openapi.model.SReference reference) {
     assertCanChange();
 
-    SReference toRemove1 = null;
+    SReference toRemove = null;
     for (SReference r : myReferences) {
-      if (!r.getReferenceLink().equals(role)) continue;
-      toRemove1 = r;
+      if (!((SReferenceLinkAdapter) r.getReferenceLink()).isSameReference(((SReferenceLinkAdapter) role))) continue;
+      toRemove = r;
       break;
     }
 
-    if (toRemove1 != null) {
-      removeReferenceInternal(toRemove1);
+    if (toRemove != null) {
+      removeReferenceInternal(toRemove);
     }
 
     if (reference != null) {
       assert reference.getSourceNode() == this;
       addReferenceInternal((SReference) reference);
     }
-    SReference toRemove = toRemove1;
 
     referenceChanged(role, toRemove, reference);
   }
@@ -938,12 +940,12 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
       @Nullable final org.jetbrains.mps.openapi.model.SNode anchor) {
     assertCanChange();
 
-    final SNode schild1 = (SNode) child;
-    SNode parentOfChild = schild1.getParent();
+    final SNode schild = (SNode) child;
+    SNode parentOfChild = schild.getParent();
     if (parentOfChild != null) {
       throw new RuntimeException(
           org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(
-              schild1) + " already has parent: " + org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(
+              schild) + " already has parent: " + org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(
               parentOfChild) + "\n" +
               "Couldn't add it to: " + org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(this)
       );
@@ -963,8 +965,8 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
       }
     }
 
-    schild1.myRoleInParent = role;
-    children_insertBefore(((SNode) anchor), schild1);
+    schild.myRoleInParent = role;
+    children_insertBefore(((SNode) anchor), schild);
 
     //if child is in unregistered nodes, add this one too to track undo for it
     UnregisteredNodes un = UnregisteredNodes.instance();
@@ -973,20 +975,19 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
     }
 
     if (myModel == null) {
-      if (schild1.myModel != null) {
-        schild1.clearModel();
+      if (schild.myModel != null) {
+        schild.clearModel();
       }
     } else {
-      schild1.registerInModel(myModel);
+      schild.registerInModel(myModel);
     }
 
     performUndoableAction(new Computable<SNodeUndoableAction>() {
       @Override
       public SNodeUndoableAction compute() {
-        return new InsertChildAtUndoableAction(SNode.this, anchor, role.getRole(), schild1);
+        return new InsertChildAtUndoableAction(SNode.this, anchor, role.getRole(), schild);
       }
     });
-    SNode schild = schild1;
 
     if (needFireEvent()) {
       myModel.fireChildAddedEvent(this, role.getRole(), schild, ((SNode) anchor));
@@ -1007,7 +1008,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
     if (role != null) {
       while (firstChild != null) {
         SContainmentLink childRole = firstChild.getContainmentLink();
-        if (childRole.equals(role)) break;
+        if (((SContainmentLinkAdapter) childRole).isSameLink(((SContainmentLinkAdapter) role))) break;
         firstChild = firstChild.treeNext();
       }
     }
@@ -1020,7 +1021,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
   private int getPropertyIndex(SProperty id) {
     if (myProperties == null) return -1;
     for (int i = 0; i < myProperties.length; i += 2) {
-      if (EqualUtil.equals(myProperties[i], id)) return i;
+      if (((SPropertyAdapter) id).isSameProperty(((SPropertyAdapter) myProperties[i]))) return i;
     }
     return -1;
   }
@@ -1241,7 +1242,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
 
         do {
           node = node.treeNext();
-        } while (node != null && !node.getContainmentLink().equals(myRole));
+        } while (node != null && !((SContainmentLinkAdapter) node.getContainmentLink()).isSameLink(((SContainmentLinkAdapter) myRole)));
         return node;
       }
 
@@ -1255,9 +1256,9 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
 
         do {
           node = node.treePrevious();
-        } while (node != fc && !node.getContainmentLink().equals(myRole));
+        } while (node != fc && !((SContainmentLinkAdapter) node.getContainmentLink()).isSameLink(((SContainmentLinkAdapter) myRole)));
 
-        return node.getContainmentLink().equals(myRole) ? node : null;
+        return ((SContainmentLinkAdapter) node.getContainmentLink()).isSameLink(((SContainmentLinkAdapter) myRole)) ? node : null;
       }
 
       @Override
