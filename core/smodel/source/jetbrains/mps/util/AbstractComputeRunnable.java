@@ -15,20 +15,21 @@
  */
 package jetbrains.mps.util;
 
-import org.jetbrains.annotations.NotNull;
-
 /**
- * @author Artem Tikhomirov
+ * User: shatalin
+ * Date: 09/10/14
  */
-public class ComputeRunnable<T> extends AbstractComputeRunnable<T> {
-  private final Computable<T> myComputable;
-
-  public ComputeRunnable(@NotNull Computable<T> computable) {
-    myComputable = computable;
-  }
+public abstract class AbstractComputeRunnable<T> implements Runnable {
+  private T myResult;
 
   @Override
-  protected T compute() {
-    return myComputable.compute();
+  public void run() {
+    myResult = compute();
   }
+
+  public T getResult() {
+    return myResult;
+  }
+
+  protected abstract T compute();
 }
