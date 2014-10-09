@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.smodel.adapter.structure.link;
 
+import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.smodel.adapter.structure.concept.ConceptRegistryUtil;
 import jetbrains.mps.smodel.adapter.structure.concept.SConceptAdapterById;
 import jetbrains.mps.smodel.adapter.structure.concept.SInterfaceConceptAdapterById;
@@ -40,11 +41,17 @@ public class SContainmentLinkAdapterByName extends SContainmentLinkAdapter {
   @Override
   public org.jetbrains.mps.openapi.language.SAbstractConcept getContainingConcept() {
     ConceptDescriptor concept = ConceptRegistryUtil.getConceptDescriptor(myConceptName);
-    return concept.isInterfaceConcept() ? new SInterfaceConceptAdapterById(concept.getId(),myConceptName) : new SConceptAdapterById(concept.getId(),myConceptName);
+    return concept.isInterfaceConcept() ? new SInterfaceConceptAdapterById(concept.getId(), myConceptName) :
+        new SConceptAdapterById(concept.getId(), myConceptName);
   }
 
   @Override
   protected SNode findInConcept(SNode cnode) {
-    throw new UnsupportedOperationException();
+    Iterable<? extends SNode> links = cnode.getChildren(SNodeUtil.link_AbstractConceptDeclaration_linkDeclaration);
+    for (SNode l : links) {
+      if (SNodeUtil.getLinkDeclaration_IsReference(l)) continue;
+      if (l.getProperty(SNodeUtil.property_LinkDeclaration_role).equals(myName)) return l;
+    }
+    return null;
   }
 }
