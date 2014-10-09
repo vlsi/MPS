@@ -155,6 +155,11 @@ public class SModelOperations {
     return new HashSet<SModuleReference>(((SModelInternal) model).getModelDepsManager().getAllImportedLanguages());
   }
 
+  @NotNull
+  public static Set<SLanguage> getAllImportedLanguageIds(SModel model) {
+    return new HashSet<SLanguage>(((SModelInternal) model).getModelDepsManager().getAllImportedLanguagesIds());
+  }
+
   // FIXME there's only 1 use of the method, does it justify its extraction here?
   public static Set<SModuleReference> getUsedLanguages(@NotNull SModel model) {
     Set<SModuleReference> result = new HashSet<SModuleReference>();
