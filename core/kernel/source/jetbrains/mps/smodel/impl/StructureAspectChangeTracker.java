@@ -27,8 +27,8 @@ import org.jetbrains.mps.openapi.model.SReference;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.module.SRepository;
-import org.jetbrains.mps.openapi.module.SRepositoryAdapter;
 import org.jetbrains.mps.openapi.module.SRepositoryAttachListener;
+import org.jetbrains.mps.openapi.module.SRepositoryListenerBase;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -53,7 +53,7 @@ import java.util.Set;
  * </pre>
  * @author Artem Tikhomirov
  */
-public final class StructureAspectChangeTracker extends SRepositoryAdapter implements SRepositoryAttachListener, SModelChangeListener, SModelListener {
+public final class StructureAspectChangeTracker extends SRepositoryListenerBase implements SRepositoryAttachListener, SModelChangeListener, SModelListener {
   // I assume model changes come in a single thread, as well as commandFinished notification, and do not care to synchronize
   private final Set<SModelReference> myChangedModels = new HashSet<SModelReference>();
   private final Set<SModuleReference> myChangedModules = new HashSet<SModuleReference>();
@@ -91,6 +91,9 @@ public final class StructureAspectChangeTracker extends SRepositoryAdapter imple
       return;
     }
     final SModel structureModel = ((Language) module).getStructureModelDescriptor();
+    if (structureModel == null) {
+      return;
+    }
     if (structureModel instanceof EditableSModel) {
       ((EditableSModel) structureModel).addChangeListener(this);
     }
@@ -102,6 +105,9 @@ public final class StructureAspectChangeTracker extends SRepositoryAdapter imple
       return;
     }
     final SModel structureModel = ((Language) module).getStructureModelDescriptor();
+    if (structureModel == null) {
+      return;
+    }
     if (structureModel instanceof EditableSModel) {
       ((EditableSModel) structureModel).removeChangeListener(this);
     }
