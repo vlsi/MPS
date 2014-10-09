@@ -50,7 +50,7 @@
   </target>
 
   <target name="force-resolve" depends="install-ivy, cleanCache">
-    <ivy:retrieve pattern="../[orgPath]/[artifact]"/>
+    <ivy:retrieve pattern="../[orgPath]/[artifact]" overwritemode="different" />
   </target>
 
   <target name="resolve" depends="checkPlatformIsUpToDate" description="--> Retreive dependencies with ivy if platform is changed" if="${platformNeedUpdate}">
