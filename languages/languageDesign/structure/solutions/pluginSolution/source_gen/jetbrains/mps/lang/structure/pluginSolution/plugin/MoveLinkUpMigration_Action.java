@@ -22,18 +22,19 @@ import jetbrains.mps.ide.refactoring.OptionDialog;
 import org.jetbrains.mps.openapi.model.SNodeUtil;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.Language;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 
-public class MoveLinkUp_Action extends BaseAction {
+public class MoveLinkUpMigration_Action extends BaseAction {
   private static final Icon ICON = null;
-  public MoveLinkUp_Action() {
-    super("Move Link Up", "", ICON);
+  public MoveLinkUpMigration_Action() {
+    super("Move Link Up New", "", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(true);
   }
@@ -52,7 +53,7 @@ public class MoveLinkUp_Action extends BaseAction {
       }
     } catch (Throwable t) {
       if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action doUpdate method failed. Action:" + "MoveLinkUp", t);
+        LOG.error("User's action doUpdate method failed. Action:" + "MoveLinkUpMigration", t);
       }
       this.disable(event.getPresentation());
     }
@@ -109,7 +110,7 @@ public class MoveLinkUp_Action extends BaseAction {
         }
       }
       final Boolean merge = mergeLinks;
-      modelAccess.runReadInEDT(new Runnable() {
+      modelAccess.executeCommandInEDT(new Runnable() {
         public void run() {
           if (!(SNodeUtil.isAccessible(((SNode) MapSequence.fromMap(_params).get("target")), MPSModuleRepository.getInstance()))) {
             return;
@@ -118,8 +119,9 @@ public class MoveLinkUp_Action extends BaseAction {
             return;
           }
           Language targetLanguage = Language.getLanguageFor(SNodeOperations.getModel(targetConcept));
-          AttributeOperations.setAttribute(((SNode) MapSequence.fromMap(_params).get("target")), new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation"), SConceptOperations.createNewNode("jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation", null));
           ListSequence.fromList(SLinkOperations.getTargets(targetConcept, "linkDeclaration", true)).addElement(SNodeOperations.copyNode(((SNode) MapSequence.fromMap(_params).get("target"))));
+          AttributeOperations.setAttribute(((SNode) MapSequence.fromMap(_params).get("target")), new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation"), SConceptOperations.createNewNode("jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation", null));
+          SPropertyOperations.set(((SNode) MapSequence.fromMap(_params).get("target")), "role", SPropertyOperations.getString(((SNode) MapSequence.fromMap(_params).get("target")), "role") + "_old");
         }
       });
 
@@ -127,9 +129,9 @@ public class MoveLinkUp_Action extends BaseAction {
 
     } catch (Throwable t) {
       if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action execute method failed. Action:" + "MoveLinkUp", t);
+        LOG.error("User's action execute method failed. Action:" + "MoveLinkUpMigration", t);
       }
     }
   }
-  protected static Logger LOG = LogManager.getLogger(MoveLinkUp_Action.class);
+  protected static Logger LOG = LogManager.getLogger(MoveLinkUpMigration_Action.class);
 }
