@@ -91,19 +91,29 @@ public class SRepositoryRegistry implements CoreComponent {
     }
   }
 
-  public void addGlobalListener(SRepositoryListener listener) {
+  public void addGlobalListener(final SRepositoryListener listener) {
     synchronized (LOCK) {
       myGlobalListeners.add(listener);
-      for (SRepository r : myRepositories) {
-        r.addRepositoryListener(listener);
+      for (final SRepository r : myRepositories) {
+        r.getModelAccess().runReadAction(new Runnable() {
+          @Override
+          public void run() {
+            r.addRepositoryListener(listener);
+          }
+        });
       }
     }
   }
 
-  public void removeGlobalListener(SRepositoryListener listener) {
+  public void removeGlobalListener(final SRepositoryListener listener) {
     synchronized (LOCK) {
-      for (SRepository r : myRepositories) {
-        r.removeRepositoryListener(listener);
+      for (final SRepository r : myRepositories) {
+        r.getModelAccess().runReadAction(new Runnable() {
+          @Override
+          public void run() {
+            r.removeRepositoryListener(listener);
+          }
+        });
       }
       myGlobalListeners.remove(listener);
     }

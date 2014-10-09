@@ -18,7 +18,7 @@ package org.jetbrains.mps.openapi.module;
 /**
  * A convenient empty implementation of the SRepositoryListener interface.
  */
-public class SRepositoryListenerBase implements SRepositoryListener {
+public abstract class SRepositoryListenerBase implements SRepositoryListener {
 
   @Override
   public void moduleAdded(SModule module) {

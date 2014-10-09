@@ -346,6 +346,7 @@ public abstract class SModelBase extends SModelDescriptorStub implements SModel 
     }
     if (oldModel != null) {
       notifyModelReplaced(oldModel);
+      // ONCE notifyModelReplaced gone, don't forget to dispose oldModel here (SModelRepository does this in addition to notification dispatch)
     }
 
     fireModelReplaced();
