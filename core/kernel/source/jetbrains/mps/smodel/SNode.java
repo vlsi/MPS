@@ -1061,7 +1061,9 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
   @Deprecated
   @Override
   public String getRoleInParent() {
-    return getContainmentLink().getRole();
+    SContainmentLink cl = getContainmentLink();
+    if (cl == null) return null;
+    return cl.getRole();
   }
 
   @Deprecated
