@@ -16,6 +16,7 @@
 package jetbrains.mps.nodeEditor.cells;
 
 import com.intellij.util.ui.UIUtil;
+import jetbrains.mps.editor.runtime.commands.EditorCommand;
 import jetbrains.mps.editor.runtime.impl.CellUtil;
 import jetbrains.mps.editor.runtime.impl.LayoutConstraints;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
@@ -423,9 +424,9 @@ public abstract class EditorCell_Basic implements EditorCell {
 
     if (!UIUtil.isReallyTypedEvent(e)) return false;
 
-    getContext().executeCommand(new Runnable() {
+    getContext().getRepository().getModelAccess().executeCommand(new EditorCommand(getContext()) {
       @Override
-      public void run() {
+      public void doExecute() {
         EditorComponent editor = getEditor();
         SNode oldNode = getSNode();
         SNode newNode = replaceWithDefault();

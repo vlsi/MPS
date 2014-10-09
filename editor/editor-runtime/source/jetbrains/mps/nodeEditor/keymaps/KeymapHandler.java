@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.nodeEditor.keymaps;
 
+import jetbrains.mps.editor.runtime.commands.EditorCommand;
 import jetbrains.mps.editor.runtime.impl.LanguagesKeymapManager;
 import jetbrains.mps.editor.runtime.style.StyleAttributesUtil;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
@@ -86,9 +87,9 @@ public abstract class KeymapHandler<E> {
     editorContext.runWithContextCell(contextCell, new Runnable() {
       @Override
       public void run() {
-        editorContext.executeCommand(new Runnable() {
+        editorContext.getRepository().getModelAccess().executeCommand(new EditorCommand(editorContext) {
           @Override
-          public void run() {
+          public void doExecute() {
             action.execute(editorContext);
           }
         });
@@ -130,7 +131,8 @@ public abstract class KeymapHandler<E> {
       for (SModuleReference ref : importedAndExtendedLanguages) {
         SModule language = ref.resolve(MPSModuleRepository.getInstance());
         if (language == null) continue;
-        if (!VisibilityUtil.isVisibleLanguage(editorContext.getModel().getModule(), SConceptRepository.getInstance().getLanguage(language.getModuleName()))) continue;
+        if (!VisibilityUtil.isVisibleLanguage(editorContext.getModel().getModule(), SConceptRepository.getInstance().getLanguage(language.getModuleName())))
+          continue;
 
         List<KeyMap> keyMapsForNamespace = LanguagesKeymapManager.getInstance().getKeyMapsForLanguage(((Language) language));
         if (keyMapsForNamespace != null) {

@@ -16,6 +16,7 @@
 package jetbrains.mps.nodeEditor.selection;
 
 import jetbrains.mps.classloading.ClassLoaderManager;
+import jetbrains.mps.editor.runtime.commands.EditorCommand;
 import jetbrains.mps.editor.runtime.selection.SelectionUtil;
 import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
 import jetbrains.mps.nodeEditor.cells.CellInfo;
@@ -30,9 +31,8 @@ import jetbrains.mps.openapi.editor.selection.SelectionInfo;
 import jetbrains.mps.openapi.editor.selection.SelectionManager;
 import jetbrains.mps.openapi.editor.selection.SelectionStoreException;
 import jetbrains.mps.project.structure.modules.ModuleReference;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelRepository;
-import jetbrains.mps.util.Computable;
+import jetbrains.mps.util.AbstractComputeRunnable;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -258,9 +258,9 @@ public class NodeRangeSelection extends AbstractMultipleSelection implements Mul
     final EditorContext editorContext = getEditorComponent().getEditorContext();
     int selectedCellsSize = getSelectedCells().size();
     if (selectedCellsSize > 1) {
-      editorContext.executeCommand(new Runnable() {
+      editorContext.getRepository().getModelAccess().executeCommand(new EditorCommand(editorContext) {
         @Override
-        public void run() {
+        public void doExecute() {
           List<SNode> selectedNodes = getSelectedNodes();
           assert selectedNodes.size() > 1;
           SNode prevSelectableNode = getNextSelectableNode(selectedNodes.get(0), false);
@@ -301,17 +301,21 @@ public class NodeRangeSelection extends AbstractMultipleSelection implements Mul
       final CellAction action = nodeCell.getAction(type);
       if (action == null) return;
 
-      if (!ModelAccess.instance().runReadAction(new Computable<Boolean>() {
+      AbstractComputeRunnable<Boolean> canExecute = new AbstractComputeRunnable<Boolean>() {
         @Override
         public Boolean compute() {
           return action.canExecute(editorContext);
         }
-      })) return;
+      };
+      editorContext.getRepository().getModelAccess().executeCommand(canExecute);
+      if (!canExecute.getResult()) {
+        return;
+      }
 
       if (action.executeInCommand()) {
-        editorContext.executeCommand(new Runnable() {
+        editorContext.getRepository().getModelAccess().executeCommand(new EditorCommand(editorContext) {
           @Override
-          public void run() {
+          public void doExecute() {
             action.execute(editorContext);
           }
         });
