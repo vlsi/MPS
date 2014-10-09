@@ -27,6 +27,7 @@ import jetbrains.mps.smodel.adapter.structure.property.SPropertyAdapterById;
 import jetbrains.mps.smodel.adapter.structure.ref.SReferenceLinkAdapterById;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import jetbrains.mps.smodel.runtime.LinkDescriptor;
+import jetbrains.mps.smodel.runtime.PropertyDescriptor;
 import jetbrains.mps.util.NameUtil;
 import org.apache.log4j.LogManager;
 import org.jetbrains.annotations.Nullable;
@@ -123,7 +124,10 @@ public abstract class SAbstractConceptAdapter implements SAbstractConcept {
   @Override
   @Deprecated
   public SProperty getProperty(String name) {
-    throw new UnsupportedOperationException();
+    PropertyDescriptor d = getConceptDescriptor().getPropertyDescriptor(name);
+    SPropertyId pid = d.getId();
+    ConceptDescriptor cd = ConceptRegistryUtil.getConceptDescriptor(pid.getConceptId());
+    return new SPropertyAdapterById(pid, cd.getConceptFqName(), name);
   }
 
   @Override
