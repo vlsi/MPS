@@ -62,6 +62,7 @@ public class ModulesMiner {
 
   public List<ModuleHandle> collectModules(IFile dir, Set<IFile> excludes, boolean refreshFiles) {
     List<ModuleHandle> result = new ArrayList<ModuleHandle>();
+    LOG.debug("Reading modules from " + dir);
     readModuleDescriptors(dir, excludes, result, refreshFiles, new DescriptorReader<ModuleHandle>() {
       @Override
       public ModuleHandle read(ModuleHandle handle) {

@@ -24,6 +24,8 @@ import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.PathManager;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.module.SModule;
 
@@ -31,6 +33,8 @@ import java.util.*;
 import java.util.concurrent.CopyOnWriteArrayList;
 
 public class LibraryInitializer implements CoreComponent {
+  private static final Logger LOG = LogManager.getLogger(LibraryInitializer.class);
+
   private static LibraryInitializer INSTANCE;
 
   public static LibraryInitializer getInstance() {
@@ -113,15 +117,17 @@ public class LibraryInitializer implements CoreComponent {
     }
     myLibraries.removeAll(toUnload);
 
+    if (toUnload.size() + toLoad.size() == 0) return;
+
+    LOG.info("Updating libraries");
+
     ModelAccess.instance().runWriteAction(new Runnable() {
       @Override
       public void run() {
-        // unload
         for (SLibrary unloadLib : toUnload) {
           unloadLib.dispose();
         }
 
-        //load new
         for (SLibrary loadLib : toLoad) {
           loadLib.attach(refreshFiles);
         }
@@ -176,10 +182,12 @@ public class LibraryInitializer implements CoreComponent {
   private List<LibraryContributor> myContributors = new CopyOnWriteArrayList<LibraryContributor>();
 
   public void addContributor(LibraryContributor c) {
+    LOG.info("Adding libraries from " + c);
     myContributors.add(c);
   }
 
   public void removeContributor(LibraryContributor c) {
+    LOG.info("Removing libraries from " + c);
     myContributors.remove(c);
   }
 }

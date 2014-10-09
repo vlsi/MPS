@@ -60,10 +60,6 @@ public class LibraryManager extends BaseLibraryManager implements ApplicationCom
   }
 
   @Override
-  public void disposeComponent() {
-  }
-
-  @Override
   public Set<Library> getUILibraries() {
     Set<Library> result = new HashSet<Library>(super.getUILibraries());
     result.addAll(myLibs);

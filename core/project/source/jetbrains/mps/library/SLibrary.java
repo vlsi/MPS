@@ -18,6 +18,7 @@ package jetbrains.mps.library;
 import jetbrains.mps.fs.MPSDirectoryWatcher;
 import jetbrains.mps.fs.WatchRequestor;
 import jetbrains.mps.library.ModulesMiner.ModuleHandle;
+import org.apache.log4j.Logger;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.smodel.MPSModuleOwner;
@@ -37,6 +38,7 @@ import java.util.concurrent.atomic.AtomicReference;
  * evgeny, 11/3/12
  */
 class SLibrary implements FileSystemListener, MPSModuleOwner {
+  private static final Logger LOG = Logger.getLogger(SLibrary.class);
 
   private final IFile file;
   private final ClassLoader parent;
@@ -67,12 +69,14 @@ class SLibrary implements FileSystemListener, MPSModuleOwner {
   }
 
   void attach(boolean refreshFiles) {
+    LOG.debug("Attaching " + this);
     MPSDirectoryWatcher.getInstance().addGlobalWatch(myWatchRequestor);
     update(refreshFiles);
     FileSystem.getInstance().addListener(this);
   }
 
   void dispose() {
+    LOG.debug("Disposing " + this);
     FileSystem.getInstance().removeListener(this);
     ModuleRepositoryFacade.getInstance().unregisterModules(this);
     MPSDirectoryWatcher.getInstance().removeGlobalWatch(myWatchRequestor);
@@ -140,6 +144,11 @@ class SLibrary implements FileSystemListener, MPSModuleOwner {
     if (!file.equals(library.file)) return false;
 
     return true;
+  }
+
+  @Override
+  public String toString() {
+    return "SLibrary with path " + file + ", classloader " + parent;
   }
 
   @Override

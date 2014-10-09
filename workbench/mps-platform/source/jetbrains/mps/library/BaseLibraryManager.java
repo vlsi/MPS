@@ -50,6 +50,23 @@ public abstract class BaseLibraryManager implements BaseComponent, Configurable,
   @Override
   public void initComponent() {
     LibraryInitializer.getInstance().addContributor(this);
+    ModelAccess.instance().runWriteAction(new Runnable() {
+      @Override
+      public void run() {
+        LibraryInitializer.getInstance().update();
+      }
+    });
+  }
+
+  @Override
+  public void disposeComponent() {
+    LibraryInitializer.getInstance().removeContributor(this);
+    ModelAccess.instance().runWriteAction(new Runnable() {
+      @Override
+      public void run() {
+        LibraryInitializer.getInstance().update();
+      }
+    });
   }
 
   //-------libraries

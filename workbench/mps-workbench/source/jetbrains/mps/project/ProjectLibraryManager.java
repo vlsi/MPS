@@ -61,35 +61,23 @@ public class ProjectLibraryManager extends BaseLibraryManager implements Project
 
   @Override
   public void initComponent() {
-    if (myProject.isDefault()) {
-      return;
-    }
+    if (myProject.isDefault()) return;
     super.initComponent();
   }
 
   @Override
   public void disposeComponent() {
-    LibraryInitializer.getInstance().removeContributor(this);
-    Application application = ApplicationManager.getApplication();
-    if (myProject.isDefault() || application.isUnitTestMode() && application.isDisposeInProgress()) {
-      return;
-    }
-    ModelAccess.instance().runWriteAction(new Runnable() {
-      @Override
-      public void run() {
-        LibraryInitializer.getInstance().update();
-      }
-    });
+    if (myProject.isDefault()) return;
+    super.disposeComponent();
   }
 
   @Override
   public void projectOpened() {
-      loadLibraries();
+    loadLibraries();
   }
 
   @Override
   public void projectClosed() {
-
   }
 
   @Override
