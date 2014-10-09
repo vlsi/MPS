@@ -53,7 +53,27 @@ public class SRepositoryRegistry implements CoreComponent {
     INSTANCE = null;
   }
 
-  public void addRepository(SRepository repository) {
+  public void addRepository(final SRepository repository) {
+    // listeners may access content of a newly added repository, hence the read lock
+    // Perhaps, caller shall be responsible for this (need to update method API/documentation then).
+    repository.getModelAccess().runReadAction(new Runnable() {
+      @Override
+      public void run() {
+        doRepositoryAdd(repository);
+      }
+    });
+  }
+
+  public void removeRepository(final SRepository repository) {
+    repository.getModelAccess().runReadAction(new Runnable() {
+      @Override
+      public void run() {
+        doRepositoryRemove(repository);
+      }
+    });
+  }
+
+  void doRepositoryAdd(SRepository repository) {
     synchronized (LOCK) {
       myRepositories.add(repository);
       for (SRepositoryListener l : myGlobalListeners) {
@@ -62,7 +82,7 @@ public class SRepositoryRegistry implements CoreComponent {
     }
   }
 
-  public void removeRepository(SRepository repository) {
+  void doRepositoryRemove(SRepository repository) {
     synchronized (LOCK) {
       for (SRepositoryListener l : myGlobalListeners) {
         repository.removeRepositoryListener(l);

@@ -22,7 +22,6 @@ import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.module.SRepository;
 import org.jetbrains.mps.openapi.module.SRepositoryAttachListener;
-import org.jetbrains.mps.openapi.module.SRepositoryContentAdapter;
 import org.jetbrains.mps.openapi.module.SRepositoryListener;
 
 import java.util.List;
@@ -35,7 +34,7 @@ public abstract class SRepositoryBase implements SRepository {
 
   private static final Logger LOG = Logger.wrap(LogManager.getLogger(SRepositoryBase.class));
 
-  private List<SRepositoryListener> myListeners = new CopyOnWriteArrayList<SRepositoryListener>();
+  private final List<SRepositoryListener> myListeners = new CopyOnWriteArrayList<SRepositoryListener>();
 
   protected SRepositoryBase() {
   }
