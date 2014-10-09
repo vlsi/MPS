@@ -28,6 +28,7 @@ import jetbrains.mps.smodel.adapter.structure.ref.SReferenceLinkAdapterById;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import jetbrains.mps.smodel.runtime.LinkDescriptor;
 import jetbrains.mps.smodel.runtime.PropertyDescriptor;
+import jetbrains.mps.smodel.runtime.ReferenceDescriptor;
 import jetbrains.mps.util.NameUtil;
 import org.apache.log4j.LogManager;
 import org.jetbrains.annotations.Nullable;
@@ -104,9 +105,17 @@ public abstract class SAbstractConceptAdapter implements SAbstractConcept {
   @Deprecated
   public SAbstractLink getLink(String role) {
     LinkDescriptor d = getConceptDescriptor().getLinkDescriptor(role);
-    SContainmentLinkId linkId = d.getId();
-    ConceptDescriptor cd = ConceptRegistryUtil.getConceptDescriptor(linkId.getConceptId());
-    return new SContainmentLinkAdapterById(linkId, cd.getConceptFqName(), role);
+    if (d != null) {
+      SContainmentLinkId linkId = d.getId();
+      ConceptDescriptor cd = ConceptRegistryUtil.getConceptDescriptor(linkId.getConceptId());
+      return new SContainmentLinkAdapterById(linkId, cd.getConceptFqName(), role);
+    } else {
+      ReferenceDescriptor r = getConceptDescriptor().getRefDescriptor(role);
+      SReferenceLinkId linkId = r.getId();
+      ConceptDescriptor cd = ConceptRegistryUtil.getConceptDescriptor(linkId.getConceptId());
+      return new SReferenceLinkAdapterById(linkId, cd.getConceptFqName(), role);
+    }
+
   }
 
   @Override
