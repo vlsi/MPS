@@ -21,7 +21,9 @@ import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.attribute.AttributeKind;
+import jetbrains.mps.nodeEditor.cells.APICellAdapter;
 import jetbrains.mps.nodeEditor.cells.CellFinderUtil;
+import jetbrains.mps.nodeEditor.cells.CellInfo;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Error;
 import jetbrains.mps.nodeEditor.cells.SynchronizeableEditorCell;
@@ -548,12 +550,13 @@ public class EditorManager {
     String sideTransformTag = STHintUtil.getTransformHintAnchorTag(node);
 
     EditorCell_STHint sideTransformHintCell =
-        new EditorCell_STHint(nodeCell, anchorCell, side, sideTransformTag, getEditorComponent(nodeCell.getContext()).getRecentlySelectedCellInfo());
+        new EditorCell_STHint(nodeCell, anchorCell, side, sideTransformTag, getCurrentlySelectedCellInfo(nodeCell.getContext()));
     return sideTransformHintCell.install();
   }
 
-  private EditorComponent getEditorComponent(EditorContext context) {
-    return ((jetbrains.mps.nodeEditor.EditorContext) context).getNodeEditorComponent();
+  private CellInfo getCurrentlySelectedCellInfo(EditorContext context) {
+    EditorCell selectedCell = context.getSelectedCell();
+    return selectedCell != null ? APICellAdapter.getCellInfo(selectedCell) : null;
   }
 
   private void pushTask(EditorContext context, String message) {

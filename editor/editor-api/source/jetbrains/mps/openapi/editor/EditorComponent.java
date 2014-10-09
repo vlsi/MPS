@@ -18,6 +18,7 @@ package jetbrains.mps.openapi.editor;
 import jetbrains.mps.openapi.editor.cells.CellAction;
 import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
+import jetbrains.mps.openapi.editor.commands.CommandContext;
 import jetbrains.mps.openapi.editor.selection.SelectionManager;
 import jetbrains.mps.openapi.editor.update.Updater;
 import jetbrains.mps.smodel.IOperationContext;
@@ -82,4 +83,6 @@ public interface EditorComponent {
 
   @NotNull
   Updater getUpdater();
+
+  CommandContext getCommandContext();
 }

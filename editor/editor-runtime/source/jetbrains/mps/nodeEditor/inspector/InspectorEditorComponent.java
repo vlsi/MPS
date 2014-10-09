@@ -20,14 +20,11 @@ import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.InspectorEditorContext;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
-import jetbrains.mps.smodel.event.SModelEvent;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.module.SRepository;
-
-import java.util.List;
 
 public class InspectorEditorComponent extends EditorComponent {
 
@@ -43,7 +40,7 @@ public class InspectorEditorComponent extends EditorComponent {
     myNodePointer = null;
     myContainingRoot = null;
     setNoVirtualFile(true);
-    rebuildEditorContent();
+    myRootCell = createEmptyCell();
   }
 
   @NotNull
@@ -64,15 +61,8 @@ public class InspectorEditorComponent extends EditorComponent {
     return true;
   }
 
-  @Override
-  public EditorCell createRootCell(List<SModelEvent> events) {
-    if (getEditedNode() == null || getEditedNode().getModel() == null) {
-      return new EditorCell_Constant(getEditorContext(), null, "<no inspect info>");
-    }
-    pushCellContext();
-    EditorCell inspectedCell = (EditorCell) getUpdater().updateRootCell(getEditedNode(), events);
-    popCellContext();
-    return inspectedCell;
+  public EditorCell createEmptyCell() {
+    return new EditorCell_Constant(getEditorContext(), null, "<no inspect info>");
   }
 
   protected boolean updateContainingRoot(SNode node) {
