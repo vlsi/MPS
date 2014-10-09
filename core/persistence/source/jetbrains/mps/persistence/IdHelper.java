@@ -28,6 +28,7 @@ import jetbrains.mps.smodel.adapter.structure.language.SLanguageAdapterById;
 import jetbrains.mps.smodel.adapter.structure.link.SContainmentLinkAdapterById;
 import jetbrains.mps.smodel.adapter.structure.property.SPropertyAdapterById;
 import jetbrains.mps.smodel.adapter.structure.ref.SReferenceLinkAdapterById;
+import jetbrains.mps.smodel.language.ConceptRegistry;
 import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
@@ -58,7 +59,7 @@ public class IdHelper {
     if (p instanceof SPropertyAdapterById) {
       return ((SPropertyAdapterById) p).getId();
     } else {
-      return MetaIdByDeclaration.getPropId(((SNode) p.getDeclarationNode()));
+      return ConceptRegistry.getInstance().getConceptDescriptor(p.getContainingConcept().getQualifiedName()).getPropertyDescriptor(p.getName()).getId();
     }
   }
 
@@ -66,7 +67,7 @@ public class IdHelper {
     if (r instanceof SReferenceLinkAdapterById) {
       return ((SReferenceLinkAdapterById) r).getRoleId();
     } else {
-      return MetaIdByDeclaration.getRefRoleId(((SNode) r.getDeclarationNode()));
+      return ConceptRegistry.getInstance().getConceptDescriptor(r.getContainingConcept().getQualifiedName()).getRefDescriptor(r.getRoleName()).getId();
     }
   }
 
@@ -74,7 +75,7 @@ public class IdHelper {
     if (l instanceof SContainmentLinkAdapterById) {
       return ((SContainmentLinkAdapterById) l).getRoleId();
     } else {
-      return MetaIdByDeclaration.getLinkId(((SNode) l.getDeclarationNode()));
+      return ConceptRegistry.getInstance().getConceptDescriptor(l.getContainingConcept().getQualifiedName()).getLinkDescriptor(l.getRoleName()).getId();
     }
   }
 }
