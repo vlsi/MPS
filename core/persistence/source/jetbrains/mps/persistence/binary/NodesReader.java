@@ -69,9 +69,12 @@ public class NodesReader {
 
   public Pair<SContainmentLink, jetbrains.mps.smodel.SNode> readNode(ModelInputStream is) throws IOException {
     SConceptId cid = readConceptId(is);
+    String cname = is.readString();
     SNodeId nodeId = is.readNodeId();
     String linkStr = is.readString();
-    SContainmentLinkId nodeRole = SContainmentLinkId.deserialize(linkStr);
+    String linkName = is.readString();
+    String cName = is.readString();
+    SContainmentLinkId nodeRole = linkStr == null ? null : SContainmentLinkId.deserialize(linkStr);
     byte nodeInfo = is.readByte();
     if (is.readByte() != '{') {
       throw new IOException("bad stream, no '{'");
@@ -84,7 +87,7 @@ public class NodesReader {
     }
     // TODO report if (nodeInfo != 0 && myEnv != null) .. myEnv.nodeRoleRead/conceptRead();
 
-    SConceptAdapterById c = new SConceptAdapterById(cid, DebugRegistry.getInstance().getConceptName(cid));
+    SConceptAdapterById c = new SConceptAdapterById(cid, cname);
     jetbrains.mps.smodel.SNode node = interfaceNode
         ? new InterfaceSNode(c)
         : new jetbrains.mps.smodel.SNode(c);
@@ -101,7 +104,8 @@ public class NodesReader {
     if (is.readByte() != '}') {
       throw new IOException("bad stream, no '}'");
     }
-    return new Pair<SContainmentLink, jetbrains.mps.smodel.SNode>(new SContainmentLinkAdapterById(nodeRole, DebugRegistry.getInstance().getConceptName(nodeRole.getConceptId()),DebugRegistry.getInstance().getLinkName(nodeRole)), node);
+    SContainmentLinkAdapterById linkAdapter = nodeRole == null ? null : new SContainmentLinkAdapterById(nodeRole, cName, linkName);
+    return new Pair<SContainmentLink, jetbrains.mps.smodel.SNode>(linkAdapter, node);
   }
 
   private ConceptKind getConceptKind(byte nodeInfo) {
@@ -132,10 +136,12 @@ public class NodesReader {
       SNodeId targetNodeId = kind == 1 ? readTargetNodeId(is) : null;
       DynamicReferenceOrigin origin = kind == 3 ? new DynamicReferenceOrigin(is.readNodePointer(), is.readNodePointer()) : null;
       SReferenceLinkId role = SReferenceLinkId.deserialize(is.readString());
+      String roleName = is.readString();
+      String cName = is.readString();
       SModelReference modelRef = is.readByte() == 18 ? is.readModelReference() : myModelReference;
       String resolveInfo = is.readString();
       SReferenceLinkAdapterById sref =
-          new SReferenceLinkAdapterById(role, DebugRegistry.getInstance().getConceptName(role.getConceptId()), DebugRegistry.getInstance().getRefName(role));
+          new SReferenceLinkAdapterById(role, cName, roleName);
       if (kind == 1) {
         SReference reference = new StaticReference(
             sref,
@@ -168,8 +174,10 @@ public class NodesReader {
     int properties = is.readInt();
     for (; properties > 0; properties--) {
       SPropertyId prop = SPropertyId.deserialize(is.readString());
+      String propName = is.readString();
+      String cName = is.readString();
       String value = is.readString();
-      node.setProperty(new SPropertyAdapterById(prop, DebugRegistry.getInstance().getConceptName(prop.getConceptId()), DebugRegistry.getInstance().getPropertyName(prop)), InternUtil.intern(value));
+      node.setProperty(new SPropertyAdapterById(prop, cName, propName), InternUtil.intern(value));
     }
   }
 
