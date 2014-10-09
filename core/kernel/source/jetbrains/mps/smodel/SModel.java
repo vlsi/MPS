@@ -38,6 +38,7 @@ import jetbrains.mps.smodel.nodeidmap.INodeIdToNodeMap;
 import jetbrains.mps.smodel.nodeidmap.UniversalOptimizedNodeIdMap;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.util.annotation.ToRemove;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
@@ -880,8 +881,17 @@ public class SModel implements SModelData {
     }
   }
 
-  private ModuleReference convertLanguageRef(SLanguage ref) {
-    return ((ModuleReference) ref.getSourceModule().getModuleReference());
+  @Deprecated
+  @ToRemove(version = 3.2)
+  private ModuleReference convertLanguageRef(final SLanguage ref) {
+    final ModuleReference[] result = new ModuleReference[1];
+    ModelAccess.instance().runReadAction(new Runnable() {
+      @Override
+      public void run() {
+        result[0] = (ModuleReference) ref.getSourceModule().getModuleReference();
+      }
+    });
+    return result[0];
   }
 
   public void removeEngagedOnGenerationLanguage(SModuleReference ref) {
