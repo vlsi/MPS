@@ -22,6 +22,8 @@ import jetbrains.mps.smodel.adapter.ids.SContainmentLinkId;
 import jetbrains.mps.smodel.adapter.ids.SPropertyId;
 import jetbrains.mps.smodel.adapter.ids.SReferenceLinkId;
 import jetbrains.mps.smodel.adapter.structure.concept.SConceptAdapterById;
+import jetbrains.mps.smodel.language.ConceptRegistry;
+import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.language.SProperty;
 import org.jetbrains.mps.openapi.language.SReferenceLink;
@@ -38,13 +40,15 @@ public class IdInfoCollector {
     for (SNode root : rootNodes) {
       for (SNode n : SNodeUtil.getDescendants(root)) {
         SConceptId conceptId = IdHelper.getConceptId(n.getConcept());
-        SConceptAdapterById concept = new SConceptAdapterById(conceptId, debugRegistry.getConceptName(conceptId));
+        ConceptDescriptor cd = ConceptRegistry.getInstance().getConceptDescriptor(conceptId);
+        String name = cd.getConceptFqName();
+        SConceptAdapterById concept = new SConceptAdapterById(conceptId, name);
         SNode conceptNode = concept.getDeclarationNode();
         conceptIds.put(conceptId, concept.getQualifiedName());
 
-        SContainmentLink role = n.getContainmentLink();
-        SContainmentLinkId roleId = IdHelper.getLinkId(role);
         if (n.getParent() != null) {
+          SContainmentLink role = n.getContainmentLink();
+          SContainmentLinkId roleId = IdHelper.getLinkId(role);
           SConceptId linkConceptId = roleId.getConceptId();
           SNode roleNode = role.getDeclarationNode();
           String roleName;
