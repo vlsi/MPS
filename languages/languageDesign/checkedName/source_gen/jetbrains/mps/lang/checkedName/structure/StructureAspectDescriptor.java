@@ -5,15 +5,18 @@ package jetbrains.mps.lang.checkedName.structure;
 import jetbrains.mps.smodel.runtime.BaseStructureAspectDescriptor;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder;
+import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
+import java.util.UUID;
 import jetbrains.mps.smodel.runtime.StaticScope;
 import java.util.Collection;
 import java.util.Arrays;
 import org.jetbrains.annotations.Nullable;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
-  /*package*/ final ConceptDescriptor myConceptICheckedNamePolicy = new ConceptDescriptorBuilder("jetbrains.mps.lang.checkedName.structure.ICheckedNamePolicy").interface_().create();
-  /*package*/ final ConceptDescriptor myConceptPropertyRefExpression = new ConceptDescriptorBuilder("jetbrains.mps.lang.checkedName.structure.PropertyRefExpression").super_("jetbrains.mps.baseLanguage.structure.Expression").parents("jetbrains.mps.baseLanguage.structure.Expression").references("propertyDeclaration").children(new String[]{"nodeExpr"}, new boolean[]{false}).alias("property/<node>,<role>/", "property reference").staticScope(StaticScope.NONE).create();
-  /*package*/ final ConceptDescriptor myConceptPropertyRefType = new ConceptDescriptorBuilder("jetbrains.mps.lang.checkedName.structure.PropertyRefType").super_("jetbrains.mps.baseLanguage.structure.Type").parents("jetbrains.mps.baseLanguage.structure.Type").alias("propRef", "").staticScope(StaticScope.NONE).create();
+
+  /*package*/ final ConceptDescriptor myConceptICheckedNamePolicy = new ConceptDescriptorBuilder("jetbrains.mps.lang.checkedName.structure.ICheckedNamePolicy", MetaIdFactory.conceptId(UUID.fromString("fe9d76d7-5809-45c9-ae28-a40915b4d6ff"), 4844813484172611384L)).interface_().create();
+  /*package*/ final ConceptDescriptor myConceptPropertyRefExpression = new ConceptDescriptorBuilder("jetbrains.mps.lang.checkedName.structure.PropertyRefExpression", MetaIdFactory.conceptId(UUID.fromString("fe9d76d7-5809-45c9-ae28-a40915b4d6ff"), 4844813484172611385L)).super_("jetbrains.mps.baseLanguage.structure.Expression").super_(MetaIdFactory.conceptId(UUID.fromString("fe9d76d7-5809-45c9-ae28-a40915b4d6ff"), 1068431790191L)).parents("jetbrains.mps.baseLanguage.structure.Expression").parentIds(MetaIdFactory.conceptId(UUID.fromString("fe9d76d7-5809-45c9-ae28-a40915b4d6ff"), 1068431790191L)).referenceDescriptors(new ConceptDescriptorBuilder.Ref(4844813484172611387L, "propertyDeclaration", MetaIdFactory.conceptId(UUID.fromString("fe9d76d7-5809-45c9-ae28-a40915b4d6ff"), 1071489288299L), false)).references("propertyDeclaration").childDescriptors(new ConceptDescriptorBuilder.Link(4844813484172611386L, "nodeExpr", MetaIdFactory.conceptId(UUID.fromString("fe9d76d7-5809-45c9-ae28-a40915b4d6ff"), 1068431790191L), false, false, false)).children(new String[]{"nodeExpr"}, new boolean[]{false}).alias("property/<node>,<role>/", "property reference").staticScope(StaticScope.NONE).create();
+  /*package*/ final ConceptDescriptor myConceptPropertyRefType = new ConceptDescriptorBuilder("jetbrains.mps.lang.checkedName.structure.PropertyRefType", MetaIdFactory.conceptId(UUID.fromString("fe9d76d7-5809-45c9-ae28-a40915b4d6ff"), 4844813484172611390L)).super_("jetbrains.mps.baseLanguage.structure.Type").super_(MetaIdFactory.conceptId(UUID.fromString("fe9d76d7-5809-45c9-ae28-a40915b4d6ff"), 1068431790189L)).parents("jetbrains.mps.baseLanguage.structure.Type").parentIds(MetaIdFactory.conceptId(UUID.fromString("fe9d76d7-5809-45c9-ae28-a40915b4d6ff"), 1068431790189L)).alias("propRef", "").staticScope(StaticScope.NONE).create();
 
   @Override
   public Collection<ConceptDescriptor> getDescriptors() {
@@ -23,7 +26,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   @Override
   @Nullable
   public ConceptDescriptor getDescriptor(String conceptFqName) {
-    switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0g, conceptFqName)) {
+    switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0h, conceptFqName)) {
       case 0:
         return myConceptICheckedNamePolicy;
       case 1:
@@ -34,5 +37,5 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
         return null;
     }
   }
-  private static String[] stringSwitchCases_1htk8d_a0a0g = new String[]{"jetbrains.mps.lang.checkedName.structure.ICheckedNamePolicy", "jetbrains.mps.lang.checkedName.structure.PropertyRefExpression", "jetbrains.mps.lang.checkedName.structure.PropertyRefType"};
+  private static String[] stringSwitchCases_1htk8d_a0a0h = new String[]{"jetbrains.mps.lang.checkedName.structure.ICheckedNamePolicy", "jetbrains.mps.lang.checkedName.structure.PropertyRefExpression", "jetbrains.mps.lang.checkedName.structure.PropertyRefType"};
 }

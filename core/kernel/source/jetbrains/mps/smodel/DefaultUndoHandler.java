@@ -36,7 +36,7 @@ public class DefaultUndoHandler implements UndoHandler {
 
   @Override
   public boolean isInsideUndoableCommand() {
-    return false;
+    return ModelAccess.instance().isInsideCommand();
   }
 
   @Override

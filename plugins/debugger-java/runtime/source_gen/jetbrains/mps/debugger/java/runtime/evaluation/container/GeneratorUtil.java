@@ -6,65 +6,92 @@ import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.project.Project;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.generator.generationTypes.InMemoryJavaGenerationHandler;
 import jetbrains.mps.debugger.java.api.evaluation.EvaluationException;
+import jetbrains.mps.make.IMakeService;
+import jetbrains.mps.make.MakeSession;
+import jetbrains.mps.make.script.IScript;
+import jetbrains.mps.make.script.ScriptBuilder;
+import jetbrains.mps.make.facet.IFacet;
+import jetbrains.mps.make.facet.ITarget;
+import jetbrains.mps.make.script.IResult;
+import jetbrains.mps.smodel.resources.ModelsToResources;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.compiler.JavaCompiler;
+import jetbrains.mps.make.resources.IResource;
+import jetbrains.mps.smodel.resources.FResource;
+import java.util.Map;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
+import jetbrains.mps.project.facets.JavaModuleOperations;
 import jetbrains.mps.util.SNodeOperations;
-import jetbrains.mps.messages.IMessageHandler;
-import com.intellij.openapi.progress.util.ProgressWindow;
-import jetbrains.mps.ide.project.ProjectHelper;
-import jetbrains.mps.generator.GenerationFacade;
-import java.util.Collections;
-import jetbrains.mps.progress.ProgressMonitorAdapter;
-import jetbrains.mps.generator.GenerationOptions;
-import jetbrains.mps.generator.impl.DefaultNonIncrementalStrategy;
-import jetbrains.mps.generator.TransientModelsProvider;
-import com.intellij.openapi.util.Disposer;
+import java.util.concurrent.ExecutionException;
 import java.lang.reflect.InvocationTargetException;
 import jetbrains.mps.debugger.java.api.evaluation.InvocationTargetEvaluationException;
 import jetbrains.mps.compiler.CompilationResultAdapter;
 import org.eclipse.jdt.internal.compiler.CompilationResult;
 import org.eclipse.jdt.core.compiler.CategorizedProblem;
-import jetbrains.mps.ide.messages.DefaultMessageHandler;
-import jetbrains.mps.messages.IMessage;
-import jetbrains.mps.messages.MessageKind;
 
 public class GeneratorUtil {
   @Nullable
-  public static Class generateAndLoadEvaluatorClass(Project project, SModel modelDescriptor, String className, IOperationContext context, boolean developerMode, InMemoryJavaGenerationHandler handler, ClassLoader parentloader) throws EvaluationException {
-    try {
+  public static Class generateAndLoadEvaluatorClass(Project project, SModel model, String className, IOperationContext context, boolean developerMode, ClassLoader parentloader) throws EvaluationException {
+    IMakeService makeService = IMakeService.INSTANCE.get();
+    MakeSession makeSession = new MakeSession(context);
+    if (makeService.openNewSession(makeSession)) {
+      try {
+        IScript script = new ScriptBuilder().withFacetNames(new IFacet.Name("jetbrains.mps.lang.core.Generate"), new IFacet.Name("jetbrains.mps.lang.core.TextGen"), new IFacet.Name("jetbrains.mps.debugger.java.evaluation.JavaDebugEvaluate"), new IFacet.Name("jetbrains.mps.make.facets.Make")).withFinalTarget(new ITarget.Name("jetbrains.mps.lang.core.TextGen.textGenToMemory")).toScript();
+        IResult result = makeService.make(makeSession, new ModelsToResources(Sequence.<SModel>singleton(model)).resources(false), script).get();
+        boolean successful = result.isSucessful();
+        String source = null;
+        final String desiredSourceUnitName = className + ".java";
+        if (successful) {
+          JavaCompiler javaCompiler = new JavaCompiler();
+          for (IResource res : Sequence.fromIterable(result.output())) {
+            if (res instanceof FResource) {
+              FResource fres = ((FResource) res);
+              Map<String, Object> contents = fres.contents();
+              for (String unitName : MapSequence.fromMap(contents).keySet()) {
+                if (!(unitName.endsWith(".java"))) {
+                  continue;
+                }
+                javaCompiler.addSource(fres.packageName() + '.' + unitName.substring(0, unitName.length() - 5), String.valueOf(MapSequence.fromMap(contents).get(unitName)));
+                if (unitName.equals(desiredSourceUnitName)) {
+                  source = String.valueOf(unitName);
+                }
+              }
+            }
+          }
+          GeneratorUtil.MyCompilationResultAdapter compilationResult = new GeneratorUtil.MyCompilationResultAdapter();
+          javaCompiler.addCompilationResultListener(compilationResult);
+          javaCompiler.compile(JavaModuleOperations.createClassPathItem(JavaModuleOperations.collectCompileClasspath(model.getModule()), GeneratorUtil.class.getName()));
+          javaCompiler.removeCompilationResultListener(compilationResult);
 
-      final String fullClassName = SNodeOperations.getModelLongName(modelDescriptor) + "." + className;
-      GeneratorUtil.MyCompilationResultAdapter compilationResult = new GeneratorUtil.MyCompilationResultAdapter();
-      handler.setCompilationListener(compilationResult);
-      IMessageHandler messageHandler = new GeneratorUtil.MyMessageHandler(project, developerMode);
-      ProgressWindow progressWindow = new ProgressWindow(false, ProjectHelper.toIdeaProject(project));
-      boolean successful = GenerationFacade.generateModels(context.getProject(), Collections.singletonList(modelDescriptor), context, handler, new ProgressMonitorAdapter(progressWindow), messageHandler, GenerationOptions.getDefaults().incremental(new DefaultNonIncrementalStrategy()).saveTransientModels(developerMode).rebuildAll(false).reporting(false, false, false, 0).create(), context.getProject().getComponent(TransientModelsProvider.class));
-
-      Disposer.dispose(progressWindow);
-
-      String source = handler.getSources().get(fullClassName);
-
-      if (successful && (source != null && source.length() > 0)) {
-        if (developerMode) {
-          System.err.println("[Generated text]\n" + source + "\n[Generated text]");
+          final String fullClassName = SNodeOperations.getModelLongName(model) + "." + className;
+          if (successful && (source != null && source.length() > 0)) {
+            if (developerMode) {
+              System.err.println("[Generated text]\n" + source + "\n[Generated text]");
+            }
+            return Class.forName(fullClassName, true, javaCompiler.getClassLoader(parentloader));
+          } else if ((source != null && source.length() > 0) && !(successful)) {
+            String text = "Errors during compilation";
+            if (compilationResult.hasErrors()) {
+              text += ":\n" + compilationResult.getMessage();
+            } else {
+              text += ".";
+            }
+            throw new EvaluationException(text);
+          }
         }
-        return Class.forName(fullClassName, true, handler.getCompiler().getClassLoader(parentloader));
-      } else if ((source != null && source.length() > 0) && !(successful)) {
-        String text = "Errors during compilation";
-        if (compilationResult.hasErrors()) {
-          text += ":\n" + compilationResult.getMessage();
-        } else {
-          text += ".";
-        }
-        throw new EvaluationException(text);
-      } else {
-        throw new EvaluationException("Errors during generation.");
+        // else fall-through, up to throws EvaluationException below 
+      } catch (InterruptedException e) {
+        throw new EvaluationException(e);
+      } catch (ExecutionException e) {
+        throw new EvaluationException(e);
+      } catch (ClassNotFoundException e) {
+        throw new EvaluationException(e);
+      } finally {
+        makeService.closeSession(makeSession);
       }
-    } catch (EvaluationException e) {
-      throw e;
-    } catch (ClassNotFoundException e) {
-      throw new EvaluationException(e);
     }
+    throw new EvaluationException("Errors during generation.");
   }
   public static <E> E createInstance(Class clazz, Class[] parameterClasses, Object[] parameters) throws EvaluationException {
     try {
@@ -99,25 +126,6 @@ public class GeneratorUtil {
     }
     public String getMessage() {
       return myBuffer.toString();
-    }
-  }
-  private static class MyMessageHandler implements IMessageHandler {
-    private final DefaultMessageHandler myInternalHandler;
-    private final boolean myDeveloperMode;
-    private MyMessageHandler(Project project, boolean developerMode) {
-      myInternalHandler = new DefaultMessageHandler(ProjectHelper.toIdeaProject(project));
-      myDeveloperMode = developerMode;
-    }
-    @Override
-    public void handle(IMessage message) {
-      if (myDeveloperMode && message.getKind().equals(MessageKind.ERROR)) {
-        System.err.println("[Generation error]" + message.getText());
-      }
-      myInternalHandler.handle(message);
-    }
-    @Override
-    public void clear() {
-      myInternalHandler.clear();
     }
   }
 }

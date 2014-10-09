@@ -5,12 +5,15 @@ package jetbrains.mps.make.outlook.structure;
 import jetbrains.mps.smodel.runtime.BaseStructureAspectDescriptor;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder;
+import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
+import java.util.UUID;
 import java.util.Collection;
 import java.util.Arrays;
 import org.jetbrains.annotations.Nullable;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
-  /*package*/ final ConceptDescriptor myConceptOutlook = new ConceptDescriptorBuilder("jetbrains.mps.make.outlook.structure.Outlook").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept").children(new String[]{"facet"}, new boolean[]{true}).create();
+
+  /*package*/ final ConceptDescriptor myConceptOutlook = new ConceptDescriptorBuilder("jetbrains.mps.make.outlook.structure.Outlook", MetaIdFactory.conceptId(UUID.fromString("dc54e1b2-86b3-49d2-9014-a76af17af22a"), 5608160002100057298L)).super_("jetbrains.mps.lang.core.structure.BaseConcept").super_(MetaIdFactory.conceptId(UUID.fromString("dc54e1b2-86b3-49d2-9014-a76af17af22a"), 1133920641626L)).parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept").parentIds(MetaIdFactory.conceptId(UUID.fromString("dc54e1b2-86b3-49d2-9014-a76af17af22a"), 1133920641626L), MetaIdFactory.conceptId(UUID.fromString("dc54e1b2-86b3-49d2-9014-a76af17af22a"), 1169194658468L)).childDescriptors(new ConceptDescriptorBuilder.Link(5608160002100058529L, "facet", MetaIdFactory.conceptId(UUID.fromString("dc54e1b2-86b3-49d2-9014-a76af17af22a"), 6447445394688422642L), true, true, false)).children(new String[]{"facet"}, new boolean[]{true}).create();
 
   @Override
   public Collection<ConceptDescriptor> getDescriptors() {
@@ -20,12 +23,12 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   @Override
   @Nullable
   public ConceptDescriptor getDescriptor(String conceptFqName) {
-    switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0e, conceptFqName)) {
+    switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0f, conceptFqName)) {
       case 0:
         return myConceptOutlook;
       default:
         return null;
     }
   }
-  private static String[] stringSwitchCases_1htk8d_a0a0e = new String[]{"jetbrains.mps.make.outlook.structure.Outlook"};
+  private static String[] stringSwitchCases_1htk8d_a0a0f = new String[]{"jetbrains.mps.make.outlook.structure.Outlook"};
 }

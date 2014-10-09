@@ -12,12 +12,10 @@ public class MPSPsiSetType extends MPSPsiCollectionType {
   public MPSPsiSetType(SNodeId id, String concept, String containingRole) {
     super(id, concept, containingRole);
   }
-
   @Override
   protected String getClassName() {
     return "java.util.Set";
   }
-
   @Override
   protected MPSPsiNode[] getChildTypeNodes() {
     return getChildrenOfType("elementType", MPSPsiNode.class);

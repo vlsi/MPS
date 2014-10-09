@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2014 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,17 +16,17 @@
 package jetbrains.mps.util;
 
 import jetbrains.mps.library.ModulesMiner;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 import jetbrains.mps.project.AbstractModule;
-import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.project.PathMacros;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.IFileUtils;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.module.SModule;
 
 import java.io.File;
 import java.util.Set;
@@ -131,9 +131,9 @@ public class MacrosFactory {
     @Override
     protected String expand(String path, IFile anchorFile) {
       if (path.startsWith(PROJECT)) {
-        IFile anchorFolder = anchorFile.getParent();
+        IFile projectDir = getProjectDir(anchorFile);
         String modelRelativePath = removePrefix(path);
-        return IFileUtils.getCanonicalPath(anchorFolder.getDescendant(modelRelativePath));
+        return IFileUtils.getCanonicalPath(projectDir.getDescendant(modelRelativePath));
       }
 
       return super.expand(path, anchorFile);
@@ -142,7 +142,7 @@ public class MacrosFactory {
     @Override
     protected String shrink(String absolutePath, IFile anchorFile) {
       //project dir (for any project persistence)
-      String prefix = IFileUtils.getCanonicalPath(anchorFile.isDirectory() ? anchorFile : anchorFile.getParent());
+      String prefix = IFileUtils.getCanonicalPath(getProjectDir(anchorFile));
 
       // TODO this doesn't make sense, review
 //      for (String samplesPath : SamplesManager.getInstance().getSamplesPaths()) {
@@ -161,6 +161,15 @@ public class MacrosFactory {
       }
 
       return super.shrink(absolutePath, anchorFile);
+    }
+
+    /**
+     * Project description is kept either as {project-root}/name.mpr file or as a directory structure, with {project-root}/.mps/modules.xml.
+     * Perhaps, this knowledge shall be external to the macro handling code (i.e. ProjectDescriptorPersistence shall care about the way project get persisted),
+     * although the fact we are in project-related handling makes the code legitimate, too.
+     */
+    private static IFile getProjectDir(IFile anchorFile) {
+      return anchorFile.isDirectory() ? anchorFile : anchorFile.getParent();
     }
   }
 

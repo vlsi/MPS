@@ -145,6 +145,11 @@ public class JavaCompiler {
     public boolean stopOnFirstError() {
       return false;
     }
+
+    @Override
+    public boolean ignoreAllErrors() {
+      return false;
+    }
   }
 
   public static String getClassName(ClassFile file) {

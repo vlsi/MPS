@@ -5,14 +5,17 @@ package jetbrains.mps.bootstrap.helgins.test.structure;
 import jetbrains.mps.smodel.runtime.BaseStructureAspectDescriptor;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder;
+import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
+import java.util.UUID;
 import jetbrains.mps.smodel.runtime.StaticScope;
 import java.util.Collection;
 import java.util.Arrays;
 import org.jetbrains.annotations.Nullable;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
-  /*package*/ final ConceptDescriptor myConceptAConcept = new ConceptDescriptorBuilder("jetbrains.mps.bootstrap.helgins.test.structure.AConcept").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").children(new String[]{"expression"}, new boolean[]{false}).create();
-  /*package*/ final ConceptDescriptor myConceptBConcept = new ConceptDescriptorBuilder("jetbrains.mps.bootstrap.helgins.test.structure.BConcept").super_("jetbrains.mps.baseLanguage.structure.Expression").parents("jetbrains.mps.baseLanguage.structure.Expression").alias("BCONCEPT", "").staticScope(StaticScope.NONE).create();
+
+  /*package*/ final ConceptDescriptor myConceptAConcept = new ConceptDescriptorBuilder("jetbrains.mps.bootstrap.helgins.test.structure.AConcept", MetaIdFactory.conceptId(UUID.fromString("145670e6-4b63-4079-b9f0-4a07fca69426"), 1185806650601L)).super_("jetbrains.mps.lang.core.structure.BaseConcept").super_(MetaIdFactory.conceptId(UUID.fromString("145670e6-4b63-4079-b9f0-4a07fca69426"), 1133920641626L)).parents("jetbrains.mps.lang.core.structure.BaseConcept").parentIds(MetaIdFactory.conceptId(UUID.fromString("145670e6-4b63-4079-b9f0-4a07fca69426"), 1133920641626L)).childDescriptors(new ConceptDescriptorBuilder.Link(1185806674055L, "expression", MetaIdFactory.conceptId(UUID.fromString("145670e6-4b63-4079-b9f0-4a07fca69426"), 1068431790191L), false, false, false)).children(new String[]{"expression"}, new boolean[]{false}).create();
+  /*package*/ final ConceptDescriptor myConceptBConcept = new ConceptDescriptorBuilder("jetbrains.mps.bootstrap.helgins.test.structure.BConcept", MetaIdFactory.conceptId(UUID.fromString("145670e6-4b63-4079-b9f0-4a07fca69426"), 1185959958415L)).super_("jetbrains.mps.baseLanguage.structure.Expression").super_(MetaIdFactory.conceptId(UUID.fromString("145670e6-4b63-4079-b9f0-4a07fca69426"), 1068431790191L)).parents("jetbrains.mps.baseLanguage.structure.Expression").parentIds(MetaIdFactory.conceptId(UUID.fromString("145670e6-4b63-4079-b9f0-4a07fca69426"), 1068431790191L)).alias("BCONCEPT", "").staticScope(StaticScope.NONE).create();
 
   @Override
   public Collection<ConceptDescriptor> getDescriptors() {
@@ -22,7 +25,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   @Override
   @Nullable
   public ConceptDescriptor getDescriptor(String conceptFqName) {
-    switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0f, conceptFqName)) {
+    switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0g, conceptFqName)) {
       case 0:
         return myConceptAConcept;
       case 1:
@@ -31,5 +34,5 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
         return null;
     }
   }
-  private static String[] stringSwitchCases_1htk8d_a0a0f = new String[]{"jetbrains.mps.bootstrap.helgins.test.structure.AConcept", "jetbrains.mps.bootstrap.helgins.test.structure.BConcept"};
+  private static String[] stringSwitchCases_1htk8d_a0a0g = new String[]{"jetbrains.mps.bootstrap.helgins.test.structure.AConcept", "jetbrains.mps.bootstrap.helgins.test.structure.BConcept"};
 }

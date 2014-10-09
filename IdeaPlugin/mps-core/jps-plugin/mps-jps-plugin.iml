@@ -27,13 +27,14 @@
     <orderEntry type="module-library" scope="TEST">
       <library>
         <CLASSES>
-          <root url="jar://$APPLICATION_HOME_DIR$/plugins/devkit/lib/jps/devkit-jps-plugin.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/plugins/devkit/lib/devkit-jps-plugin.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
       </library>
     </orderEntry>
     <orderEntry type="module" module-name="mps-java-jps-plugin" scope="TEST" />
+    <orderEntry type="library" scope="TEST" name="mps.MPS.Editor_auto" level="project" />
   </component>
 </module>
 

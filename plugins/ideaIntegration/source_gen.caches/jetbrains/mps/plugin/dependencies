@@ -133,6 +133,7 @@
     <classNode dependClassName="java.util.concurrent.atomic.AtomicReference" />
     <classNode dependClassName="javax.swing.Icon" />
     <classNode dependClassName="javax.swing.SwingUtilities" />
+    <classNode dependClassName="javax.swing.Timer" />
     <classNode dependClassName="jetbrains.mps.icons.MPSIcons" />
     <classNode dependClassName="jetbrains.mps.ide.ThreadUtils" />
     <classNode dependClassName="jetbrains.mps.logging.Logger" />
@@ -142,7 +143,6 @@
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode extendsClassName="com.intellij.openapi.wm.IconPresentation" />
     <classNode extendsClassName="com.intellij.openapi.wm.StatusBarWidget" />
-    <classNode extendsClassName="javax.swing.Timer" />
   </dependency>
 </dependenciesRoot>
 

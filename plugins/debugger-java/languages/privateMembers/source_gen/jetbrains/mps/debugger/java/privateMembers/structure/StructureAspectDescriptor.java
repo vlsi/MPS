@@ -5,16 +5,19 @@ package jetbrains.mps.debugger.java.privateMembers.structure;
 import jetbrains.mps.smodel.runtime.BaseStructureAspectDescriptor;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder;
+import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
+import java.util.UUID;
 import jetbrains.mps.smodel.runtime.StaticScope;
 import java.util.Collection;
 import java.util.Arrays;
 import org.jetbrains.annotations.Nullable;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
-  /*package*/ final ConceptDescriptor myConceptPrivateFieldReferenceOperation = new ConceptDescriptorBuilder("jetbrains.mps.debugger.java.privateMembers.structure.PrivateFieldReferenceOperation").super_("jetbrains.mps.baseLanguage.structure.FieldReferenceOperation").parents("jetbrains.mps.baseLanguage.structure.FieldReferenceOperation").staticScope(StaticScope.NONE).create();
-  /*package*/ final ConceptDescriptor myConceptPrivateInstanceMethodCallOperation = new ConceptDescriptorBuilder("jetbrains.mps.debugger.java.privateMembers.structure.PrivateInstanceMethodCallOperation").super_("jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation").parents("jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation").staticScope(StaticScope.NONE).create();
-  /*package*/ final ConceptDescriptor myConceptPrivateStaticFieldReference = new ConceptDescriptorBuilder("jetbrains.mps.debugger.java.privateMembers.structure.PrivateStaticFieldReference").super_("jetbrains.mps.baseLanguage.structure.StaticFieldReference").parents("jetbrains.mps.baseLanguage.structure.StaticFieldReference").staticScope(StaticScope.NONE).create();
-  /*package*/ final ConceptDescriptor myConceptPrivateStaticMethodCall = new ConceptDescriptorBuilder("jetbrains.mps.debugger.java.privateMembers.structure.PrivateStaticMethodCall").super_("jetbrains.mps.baseLanguage.structure.StaticMethodCall").parents("jetbrains.mps.baseLanguage.structure.StaticMethodCall").staticScope(StaticScope.NONE).create();
+
+  /*package*/ final ConceptDescriptor myConceptPrivateFieldReferenceOperation = new ConceptDescriptorBuilder("jetbrains.mps.debugger.java.privateMembers.structure.PrivateFieldReferenceOperation", MetaIdFactory.conceptId(UUID.fromString("80208897-4572-437d-b50e-8f050cba9566"), 6825241477451043705L)).super_("jetbrains.mps.baseLanguage.structure.FieldReferenceOperation").super_(MetaIdFactory.conceptId(UUID.fromString("80208897-4572-437d-b50e-8f050cba9566"), 1197029447546L)).parents("jetbrains.mps.baseLanguage.structure.FieldReferenceOperation").parentIds(MetaIdFactory.conceptId(UUID.fromString("80208897-4572-437d-b50e-8f050cba9566"), 1197029447546L)).staticScope(StaticScope.NONE).create();
+  /*package*/ final ConceptDescriptor myConceptPrivateInstanceMethodCallOperation = new ConceptDescriptorBuilder("jetbrains.mps.debugger.java.privateMembers.structure.PrivateInstanceMethodCallOperation", MetaIdFactory.conceptId(UUID.fromString("80208897-4572-437d-b50e-8f050cba9566"), 6825241477451051014L)).super_("jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation").super_(MetaIdFactory.conceptId(UUID.fromString("80208897-4572-437d-b50e-8f050cba9566"), 1202948039474L)).parents("jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation").parentIds(MetaIdFactory.conceptId(UUID.fromString("80208897-4572-437d-b50e-8f050cba9566"), 1202948039474L)).staticScope(StaticScope.NONE).create();
+  /*package*/ final ConceptDescriptor myConceptPrivateStaticFieldReference = new ConceptDescriptorBuilder("jetbrains.mps.debugger.java.privateMembers.structure.PrivateStaticFieldReference", MetaIdFactory.conceptId(UUID.fromString("80208897-4572-437d-b50e-8f050cba9566"), 4107550939057698505L)).super_("jetbrains.mps.baseLanguage.structure.StaticFieldReference").super_(MetaIdFactory.conceptId(UUID.fromString("80208897-4572-437d-b50e-8f050cba9566"), 1070533707846L)).parents("jetbrains.mps.baseLanguage.structure.StaticFieldReference").parentIds(MetaIdFactory.conceptId(UUID.fromString("80208897-4572-437d-b50e-8f050cba9566"), 1070533707846L)).staticScope(StaticScope.NONE).create();
+  /*package*/ final ConceptDescriptor myConceptPrivateStaticMethodCall = new ConceptDescriptorBuilder("jetbrains.mps.debugger.java.privateMembers.structure.PrivateStaticMethodCall", MetaIdFactory.conceptId(UUID.fromString("80208897-4572-437d-b50e-8f050cba9566"), 3374946611454212811L)).super_("jetbrains.mps.baseLanguage.structure.StaticMethodCall").super_(MetaIdFactory.conceptId(UUID.fromString("80208897-4572-437d-b50e-8f050cba9566"), 1081236700937L)).parents("jetbrains.mps.baseLanguage.structure.StaticMethodCall").parentIds(MetaIdFactory.conceptId(UUID.fromString("80208897-4572-437d-b50e-8f050cba9566"), 1081236700937L)).staticScope(StaticScope.NONE).create();
 
   @Override
   public Collection<ConceptDescriptor> getDescriptors() {
@@ -24,7 +27,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   @Override
   @Nullable
   public ConceptDescriptor getDescriptor(String conceptFqName) {
-    switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0h, conceptFqName)) {
+    switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0i, conceptFqName)) {
       case 0:
         return myConceptPrivateFieldReferenceOperation;
       case 1:
@@ -37,5 +40,5 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
         return null;
     }
   }
-  private static String[] stringSwitchCases_1htk8d_a0a0h = new String[]{"jetbrains.mps.debugger.java.privateMembers.structure.PrivateFieldReferenceOperation", "jetbrains.mps.debugger.java.privateMembers.structure.PrivateInstanceMethodCallOperation", "jetbrains.mps.debugger.java.privateMembers.structure.PrivateStaticFieldReference", "jetbrains.mps.debugger.java.privateMembers.structure.PrivateStaticMethodCall"};
+  private static String[] stringSwitchCases_1htk8d_a0a0i = new String[]{"jetbrains.mps.debugger.java.privateMembers.structure.PrivateFieldReferenceOperation", "jetbrains.mps.debugger.java.privateMembers.structure.PrivateInstanceMethodCallOperation", "jetbrains.mps.debugger.java.privateMembers.structure.PrivateStaticFieldReference", "jetbrains.mps.debugger.java.privateMembers.structure.PrivateStaticMethodCall"};
 }

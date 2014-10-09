@@ -12,20 +12,6 @@
   </component>
   <component name="MPSProject">
     <projectModules>
-      <modulePath path="$PROJECT_DIR$/../../../core/generator/solutions/generator/jetbrains.mps.generator.msd" folder="" />
-      <modulePath path="$PROJECT_DIR$/../../../core/kernel/patternRuntime/jetbrains.mps.lang.pattern.runtime.msd" folder="" />
-      <modulePath path="$PROJECT_DIR$/../../../plugins/mps-testing/languages/baseLanguage/unitTest/jetbrains.mps.baseLanguage.unitTest.mpl" folder="" />
-      <modulePath path="$PROJECT_DIR$/../plugin/jetbrains.mps.lang.plugin.mpl" folder="" />
-      <modulePath path="$PROJECT_DIR$/languages/descriptor/jetbrains.mps.lang.descriptor.mpl" folder="" />
-      <modulePath path="$PROJECT_DIR$/languages/errorReporting/jetbrains.mps.transformation.test.errorReporting.mpl" folder="" />
-      <modulePath path="$PROJECT_DIR$/languages/generationContext/jetbrains.mps.lang.generator.generationContext.mpl" folder="" />
-      <modulePath path="$PROJECT_DIR$/languages/generationParameters/jetbrains.mps.lang.generator.generationParameters.mpl" folder="" />
-      <modulePath path="$PROJECT_DIR$/languages/templateLanguage/jetbrains.mps.lang.generator.mpl" folder="" />
-      <modulePath path="$PROJECT_DIR$/test/incremental/jetbrains.mps.transformation.test.incremental.msd" folder="" />
-      <modulePath path="$PROJECT_DIR$/test/inputLang/jetbrains.mps.transformation.test.inputLang.mpl" folder="" />
-      <modulePath path="$PROJECT_DIR$/test/inputModels/jetbrains.mps.transformation.test.inputModels.msd" folder="" />
-      <modulePath path="$PROJECT_DIR$/test/outputLang/jetbrains.mps.transformation.test.outputLang.mpl" folder="" />
-      <modulePath path="$PROJECT_DIR$/test/sandbox/jetbrains.mps.generator.sandbox.msd" folder="" />
     </projectModules>
     <genConfs>
       <genConfModule name="generator engine (solution)" moduleRef="jetbrains.mps.generator" />

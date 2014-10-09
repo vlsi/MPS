@@ -23,8 +23,6 @@ public class ClassStubPsiMapper implements MPS2PsiMapper {
     return model instanceof JavaClassStubModelDescriptor;
   }
 
-
-
   public PsiElement getPsiElement(SNode nodeParam, Project project) {
     ModelAccess.instance().checkReadAccess();
 
@@ -58,8 +56,6 @@ public class ClassStubPsiMapper implements MPS2PsiMapper {
 
     return null;
   }
-
-
 
   private PsiClass findPsiClass(SNode claz, Project project) {
     String classFqName = BehaviorReflection.invokeVirtual(String.class, claz, "virtual_getFqName_1213877404258", new Object[]{});

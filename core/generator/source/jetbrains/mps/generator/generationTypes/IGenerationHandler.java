@@ -18,6 +18,7 @@ package jetbrains.mps.generator.generationTypes;
 import jetbrains.mps.generator.GenerationCanceledException;
 import jetbrains.mps.generator.GenerationStatus;
 import jetbrains.mps.generator.IGeneratorLogger;
+import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.util.Pair;
@@ -28,9 +29,14 @@ import java.io.IOException;
 import java.util.List;
 
 /**
- * FIXME This class cries for refactoring - methods #esimateCompilationMillis() and #compile(...List<Pair<SModule, List<SModel>>> input).
+ * @deprecated This class cries for refactoring - methods #esimateCompilationMillis() and #compile(...List<Pair<SModule, List<SModel>>> input). With Make
+ * facility in use, this class shall transform into generation process listener, and output handling tasks shall use Make facets instead. Updating the
+ * interface seems to be more complicated than to introduce a new one (pending).
+ *
  * Evgeny Gryaznov, Jan 20, 2010
  */
+@Deprecated
+@ToRemove(version = 3.2)
 public interface IGenerationHandler {
 
   void startGeneration(IGeneratorLogger logger);

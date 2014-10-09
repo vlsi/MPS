@@ -15,8 +15,8 @@
  */
 package jetbrains.mps.stubs.javastub.classpath;
 
-import org.jetbrains.asm4.ClassReader;
-import org.jetbrains.asm4.Opcodes;
+import org.jetbrains.org.objectweb.asm.ClassReader;
+import org.jetbrains.org.objectweb.asm.Opcodes;
 
 import java.io.IOException;
 import java.io.InputStream;

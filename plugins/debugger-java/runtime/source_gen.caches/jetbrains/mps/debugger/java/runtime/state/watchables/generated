@@ -13,7 +13,6 @@
     <file name="JavaWatchpointWatchable.java" />
   </source>
   <source id="3187167456722650105" name="JavaWatchpointValueWatchable" hash="4yrm8p16i4z7k8tp8uu7k11g70mwmd8">
-    <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
     <file name="JavaWatchpointValueWatchable.java" />
   </source>
   <source id="3187167456722650178" name="JavaReturnWatchable" hash="-3o6znhn74hhugnn3ita5kbwwpsjpywz">

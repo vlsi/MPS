@@ -18,11 +18,9 @@ package jetbrains.mps.workbench.nodesFs;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.vfs.VirtualFileSystem;
 import com.intellij.util.LocalTimeCounter;
-import jetbrains.mps.extapi.model.ReloadableSModelBase;
 import jetbrains.mps.generator.TransientModelsModule;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SModelStereotype;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
@@ -51,10 +49,9 @@ public class MPSNodeVirtualFile extends VirtualFile {
 
   MPSNodeVirtualFile(@NotNull SNodeReference nodePointer) {
     myNode = nodePointer;
-    SModel modelDescriptor =
-        nodePointer.getModelReference() == null ? null : SModelRepository.getInstance().getModelDescriptor(nodePointer.getModelReference());
-    if (modelDescriptor instanceof ReloadableSModelBase) {
-      myTimeStamp = ((ReloadableSModelBase) modelDescriptor).getSourceTimestamp();
+    SModel model = nodePointer.getModelReference() == null ? null : nodePointer.getModelReference().resolve(MPSModuleRepository.getInstance());
+    if (model != null) {
+      myTimeStamp = model.getSource().getTimestamp();
     }
     updateFields();
   }

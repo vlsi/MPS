@@ -5,17 +5,20 @@ package org.jetbrains.mps.samples.ParallelFor.structure;
 import jetbrains.mps.smodel.runtime.BaseStructureAspectDescriptor;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder;
+import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
+import java.util.UUID;
 import jetbrains.mps.smodel.runtime.StaticScope;
 import java.util.Collection;
 import java.util.Arrays;
 import org.jetbrains.annotations.Nullable;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
-  /*package*/ final ConceptDescriptor myConceptNonThreadSafeClass = new ConceptDescriptorBuilder("org.jetbrains.mps.samples.ParallelFor.structure.NonThreadSafeClass").super_("jetbrains.mps.lang.core.structure.NodeAttribute").parents("jetbrains.mps.lang.core.structure.NodeAttribute").create();
-  /*package*/ final ConceptDescriptor myConceptParallelFor = new ConceptDescriptorBuilder("org.jetbrains.mps.samples.ParallelFor.structure.ParallelFor").super_("jetbrains.mps.baseLanguage.structure.AbstractLoopStatement").parents("jetbrains.mps.baseLanguage.structure.AbstractLoopStatement", "jetbrains.mps.baseLanguage.structure.IMethodLike", "jetbrains.mps.baseLanguage.structure.IStatementListContainer").properties("nowait").children(new String[]{"loopVariable", "inputSequence", "threadPool"}, new boolean[]{false, false, false}).alias("parallelFor", "").staticScope(StaticScope.NONE).create();
-  /*package*/ final ConceptDescriptor myConceptParallelLoopVariable = new ConceptDescriptorBuilder("org.jetbrains.mps.samples.ParallelFor.structure.ParallelLoopVariable").super_("jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration").parents("jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration").create();
-  /*package*/ final ConceptDescriptor myConceptThreadPool = new ConceptDescriptorBuilder("org.jetbrains.mps.samples.ParallelFor.structure.ThreadPool").super_("jetbrains.mps.baseLanguage.structure.Expression").parents("jetbrains.mps.baseLanguage.structure.Expression").properties("numberOfThreads").alias("thread pool", "").staticScope(StaticScope.NONE).create();
-  /*package*/ final ConceptDescriptor myConceptThreadSafe = new ConceptDescriptorBuilder("org.jetbrains.mps.samples.ParallelFor.structure.ThreadSafe").super_("jetbrains.mps.lang.core.structure.NodeAttribute").parents("jetbrains.mps.lang.core.structure.NodeAttribute").create();
+
+  /*package*/ final ConceptDescriptor myConceptNonThreadSafeClass = new ConceptDescriptorBuilder("org.jetbrains.mps.samples.ParallelFor.structure.NonThreadSafeClass", MetaIdFactory.conceptId(UUID.fromString("cb7388e8-f182-4cda-bd83-9796e8634856"), 2975785153735230336L)).super_("jetbrains.mps.lang.core.structure.NodeAttribute").super_(MetaIdFactory.conceptId(UUID.fromString("cb7388e8-f182-4cda-bd83-9796e8634856"), 3364660638048049748L)).parents("jetbrains.mps.lang.core.structure.NodeAttribute").parentIds(MetaIdFactory.conceptId(UUID.fromString("cb7388e8-f182-4cda-bd83-9796e8634856"), 3364660638048049748L)).create();
+  /*package*/ final ConceptDescriptor myConceptParallelFor = new ConceptDescriptorBuilder("org.jetbrains.mps.samples.ParallelFor.structure.ParallelFor", MetaIdFactory.conceptId(UUID.fromString("cb7388e8-f182-4cda-bd83-9796e8634856"), 8923957828369477802L)).super_("jetbrains.mps.baseLanguage.structure.AbstractLoopStatement").super_(MetaIdFactory.conceptId(UUID.fromString("cb7388e8-f182-4cda-bd83-9796e8634856"), 1154032098014L)).parents("jetbrains.mps.baseLanguage.structure.AbstractLoopStatement", "jetbrains.mps.baseLanguage.structure.IMethodLike", "jetbrains.mps.baseLanguage.structure.IStatementListContainer").parentIds(MetaIdFactory.conceptId(UUID.fromString("cb7388e8-f182-4cda-bd83-9796e8634856"), 1154032098014L), MetaIdFactory.conceptId(UUID.fromString("cb7388e8-f182-4cda-bd83-9796e8634856"), 1239354281271L), MetaIdFactory.conceptId(UUID.fromString("cb7388e8-f182-4cda-bd83-9796e8634856"), 1199653749349L)).propertyDescriptors(new ConceptDescriptorBuilder.Prop(8374756414438970116L, "nowait")).properties("nowait").childDescriptors(new ConceptDescriptorBuilder.Link(8923957828369518786L, "loopVariable", MetaIdFactory.conceptId(UUID.fromString("cb7388e8-f182-4cda-bd83-9796e8634856"), 8923957828369477803L), false, false, false), new ConceptDescriptorBuilder.Link(8923957828369550462L, "inputSequence", MetaIdFactory.conceptId(UUID.fromString("cb7388e8-f182-4cda-bd83-9796e8634856"), 1068431790191L), false, false, false), new ConceptDescriptorBuilder.Link(4659204813808501246L, "threadPool", MetaIdFactory.conceptId(UUID.fromString("cb7388e8-f182-4cda-bd83-9796e8634856"), 1068431790191L), true, false, false)).children(new String[]{"loopVariable", "inputSequence", "threadPool"}, new boolean[]{false, false, false}).alias("parallelFor", "").staticScope(StaticScope.NONE).create();
+  /*package*/ final ConceptDescriptor myConceptParallelLoopVariable = new ConceptDescriptorBuilder("org.jetbrains.mps.samples.ParallelFor.structure.ParallelLoopVariable", MetaIdFactory.conceptId(UUID.fromString("cb7388e8-f182-4cda-bd83-9796e8634856"), 8923957828369477803L)).super_("jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration").super_(MetaIdFactory.conceptId(UUID.fromString("cb7388e8-f182-4cda-bd83-9796e8634856"), 1068581242863L)).parents("jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration").parentIds(MetaIdFactory.conceptId(UUID.fromString("cb7388e8-f182-4cda-bd83-9796e8634856"), 1068581242863L)).create();
+  /*package*/ final ConceptDescriptor myConceptThreadPool = new ConceptDescriptorBuilder("org.jetbrains.mps.samples.ParallelFor.structure.ThreadPool", MetaIdFactory.conceptId(UUID.fromString("cb7388e8-f182-4cda-bd83-9796e8634856"), 633195941006921788L)).super_("jetbrains.mps.baseLanguage.structure.Expression").super_(MetaIdFactory.conceptId(UUID.fromString("cb7388e8-f182-4cda-bd83-9796e8634856"), 1068431790191L)).parents("jetbrains.mps.baseLanguage.structure.Expression").parentIds(MetaIdFactory.conceptId(UUID.fromString("cb7388e8-f182-4cda-bd83-9796e8634856"), 1068431790191L)).propertyDescriptors(new ConceptDescriptorBuilder.Prop(633195941006921797L, "numberOfThreads")).properties("numberOfThreads").alias("thread pool", "").staticScope(StaticScope.NONE).create();
+  /*package*/ final ConceptDescriptor myConceptThreadSafe = new ConceptDescriptorBuilder("org.jetbrains.mps.samples.ParallelFor.structure.ThreadSafe", MetaIdFactory.conceptId(UUID.fromString("cb7388e8-f182-4cda-bd83-9796e8634856"), 2975785153735111398L)).super_("jetbrains.mps.lang.core.structure.NodeAttribute").super_(MetaIdFactory.conceptId(UUID.fromString("cb7388e8-f182-4cda-bd83-9796e8634856"), 3364660638048049748L)).parents("jetbrains.mps.lang.core.structure.NodeAttribute").parentIds(MetaIdFactory.conceptId(UUID.fromString("cb7388e8-f182-4cda-bd83-9796e8634856"), 3364660638048049748L)).create();
 
   @Override
   public Collection<ConceptDescriptor> getDescriptors() {
@@ -25,7 +28,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   @Override
   @Nullable
   public ConceptDescriptor getDescriptor(String conceptFqName) {
-    switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0i, conceptFqName)) {
+    switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0j, conceptFqName)) {
       case 0:
         return myConceptNonThreadSafeClass;
       case 1:
@@ -40,5 +43,5 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
         return null;
     }
   }
-  private static String[] stringSwitchCases_1htk8d_a0a0i = new String[]{"org.jetbrains.mps.samples.ParallelFor.structure.NonThreadSafeClass", "org.jetbrains.mps.samples.ParallelFor.structure.ParallelFor", "org.jetbrains.mps.samples.ParallelFor.structure.ParallelLoopVariable", "org.jetbrains.mps.samples.ParallelFor.structure.ThreadPool", "org.jetbrains.mps.samples.ParallelFor.structure.ThreadSafe"};
+  private static String[] stringSwitchCases_1htk8d_a0a0j = new String[]{"org.jetbrains.mps.samples.ParallelFor.structure.NonThreadSafeClass", "org.jetbrains.mps.samples.ParallelFor.structure.ParallelFor", "org.jetbrains.mps.samples.ParallelFor.structure.ParallelLoopVariable", "org.jetbrains.mps.samples.ParallelFor.structure.ThreadPool", "org.jetbrains.mps.samples.ParallelFor.structure.ThreadSafe"};
 }

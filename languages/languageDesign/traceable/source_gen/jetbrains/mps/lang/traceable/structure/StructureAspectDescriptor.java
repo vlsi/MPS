@@ -5,14 +5,17 @@ package jetbrains.mps.lang.traceable.structure;
 import jetbrains.mps.smodel.runtime.BaseStructureAspectDescriptor;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder;
+import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
+import java.util.UUID;
 import java.util.Collection;
 import java.util.Arrays;
 import org.jetbrains.annotations.Nullable;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
-  /*package*/ final ConceptDescriptor myConceptScopeConcept = new ConceptDescriptorBuilder("jetbrains.mps.lang.traceable.structure.ScopeConcept").interface_().create();
-  /*package*/ final ConceptDescriptor myConceptTraceableConcept = new ConceptDescriptorBuilder("jetbrains.mps.lang.traceable.structure.TraceableConcept").interface_().create();
-  /*package*/ final ConceptDescriptor myConceptUnitConcept = new ConceptDescriptorBuilder("jetbrains.mps.lang.traceable.structure.UnitConcept").interface_().create();
+
+  /*package*/ final ConceptDescriptor myConceptScopeConcept = new ConceptDescriptorBuilder("jetbrains.mps.lang.traceable.structure.ScopeConcept", MetaIdFactory.conceptId(UUID.fromString("9ded098b-ad6a-4657-bfd9-48636cfe8bc3"), 5067982036267369890L)).interface_().create();
+  /*package*/ final ConceptDescriptor myConceptTraceableConcept = new ConceptDescriptorBuilder("jetbrains.mps.lang.traceable.structure.TraceableConcept", MetaIdFactory.conceptId(UUID.fromString("9ded098b-ad6a-4657-bfd9-48636cfe8bc3"), 5067982036267369891L)).interface_().create();
+  /*package*/ final ConceptDescriptor myConceptUnitConcept = new ConceptDescriptorBuilder("jetbrains.mps.lang.traceable.structure.UnitConcept", MetaIdFactory.conceptId(UUID.fromString("9ded098b-ad6a-4657-bfd9-48636cfe8bc3"), 5067982036267369892L)).interface_().create();
 
   @Override
   public Collection<ConceptDescriptor> getDescriptors() {
@@ -22,7 +25,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   @Override
   @Nullable
   public ConceptDescriptor getDescriptor(String conceptFqName) {
-    switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0g, conceptFqName)) {
+    switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0h, conceptFqName)) {
       case 0:
         return myConceptScopeConcept;
       case 1:
@@ -33,5 +36,5 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
         return null;
     }
   }
-  private static String[] stringSwitchCases_1htk8d_a0a0g = new String[]{"jetbrains.mps.lang.traceable.structure.ScopeConcept", "jetbrains.mps.lang.traceable.structure.TraceableConcept", "jetbrains.mps.lang.traceable.structure.UnitConcept"};
+  private static String[] stringSwitchCases_1htk8d_a0a0h = new String[]{"jetbrains.mps.lang.traceable.structure.ScopeConcept", "jetbrains.mps.lang.traceable.structure.TraceableConcept", "jetbrains.mps.lang.traceable.structure.UnitConcept"};
 }
