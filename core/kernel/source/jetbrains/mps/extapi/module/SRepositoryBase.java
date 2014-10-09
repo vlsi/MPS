@@ -46,17 +46,17 @@ public abstract class SRepositoryBase implements SRepository {
 
   @Override
   public final void addRepositoryListener(SRepositoryListener listener) {
-    getModelAccess().checkReadAccess();
     myListeners.add(listener);
     if (listener instanceof SRepositoryAttachListener) {
+      getModelAccess().checkReadAccess();
       ((SRepositoryAttachListener) listener).startListening(this);
     }
   }
 
   @Override
   public final void removeRepositoryListener(SRepositoryListener listener) {
-    getModelAccess().checkReadAccess();
     if (listener instanceof SRepositoryAttachListener) {
+      getModelAccess().checkReadAccess();
       ((SRepositoryAttachListener) listener).stopListening(this);
     }
     myListeners.remove(listener);
