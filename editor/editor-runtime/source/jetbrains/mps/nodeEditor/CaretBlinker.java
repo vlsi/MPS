@@ -17,12 +17,10 @@ package jetbrains.mps.nodeEditor;
 
 import com.intellij.openapi.components.ServiceManager;
 import com.intellij.openapi.editor.ex.EditorSettingsExternalizable;
-import com.intellij.openapi.fileTypes.ex.FileTypeManagerEx;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.util.WeakSet;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
-import org.jetbrains.annotations.NotNull;
 
 
 public class CaretBlinker {
