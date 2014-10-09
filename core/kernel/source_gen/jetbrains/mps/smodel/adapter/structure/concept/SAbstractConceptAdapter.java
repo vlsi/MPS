@@ -110,7 +110,14 @@ public abstract class SAbstractConceptAdapter implements SAbstractConcept {
 
   @Override
   public Iterable<SAbstractLink> getLinks() {
-    throw new UnsupportedOperationException();
+    ArrayList<SAbstractLink> result = new ArrayList<SAbstractLink>();
+    ConceptDescriptor cd = getConceptDescriptor();
+    for (SContainmentLinkId lid: cd.getLinkIds()){
+      LinkDescriptor ld = cd.getLinkDescriptor(lid);
+      ConceptDescriptor origConcept = ConceptRegistryUtil.getConceptDescriptor(lid.getConceptId());
+      result.add(new SContainmentLinkAdapterById(lid, origConcept.getConceptFqName(), ld.getName()));
+    }
+    return result;
   }
 
   @Override
