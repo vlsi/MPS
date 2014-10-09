@@ -15,10 +15,8 @@
  */
 package jetbrains.mps.nodeEditor;
 
-import com.intellij.openapi.application.ApplicationManager;
-import com.intellij.openapi.components.ApplicationComponent;
+import com.intellij.openapi.components.ServiceManager;
 import com.intellij.openapi.editor.ex.EditorSettingsExternalizable;
-import com.intellij.openapi.fileTypes.ex.FileTypeManagerEx;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.util.WeakSet;
 import org.apache.log4j.LogManager;
@@ -26,17 +24,16 @@ import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 
 
-public class CaretBlinker implements ApplicationComponent {
+public class CaretBlinker {
   private static final Logger LOG = LogManager.getLogger(CaretBlinker.class);
+
   public static CaretBlinker getInstance() {
-    return ApplicationManager.getApplication() == null ? null : ApplicationManager.getApplication().getComponent(CaretBlinker.class);
+    return ServiceManager.getService(CaretBlinker.class);
   }
 
   public static final int MIN_BLINKING_PERIOD = 100; //millis
-
   public static final int MAX_BLINKING_PERIOD = 1000;
 
-  private boolean myStarted = false;
   private MyRunnable myRunnable;
 
   private final Object myRegistrationLock = new Object();
@@ -44,16 +41,15 @@ public class CaretBlinker implements ApplicationComponent {
   private WeakSet<EditorComponent> myEditors = new WeakSet<EditorComponent>();
 
 
-  public CaretBlinker(FileTypeManagerEx fileTypeManager) {
+  public CaretBlinker() {
+    launch();
   }
 
-  public void launch() {
-    if (myStarted) return;
+  private void launch() {
     myRunnable = new MyRunnable(getCaretBlinkingRateTimeMillis());
     Thread t = new Thread(myRunnable, "caret blinker daemon");
     t.setDaemon(true);
     t.setPriority(3);
-    myStarted = true;
     t.start();
   }
 
@@ -80,20 +76,6 @@ public class CaretBlinker implements ApplicationComponent {
     }
   }
 
-  @Override
-  public void initComponent() {
-    launch();
-  }
-
-  @Override
-  public void disposeComponent() {
-  }
-
-  @NotNull
-  @Override
-  public String getComponentName() {
-    return "Caret blinker";
-  }
 
   private class MyRunnable implements Runnable {
     private int myBlinkRate;
