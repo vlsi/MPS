@@ -5,8 +5,14 @@ package jetbrains.mps.vcs.diff.changes;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.vcs.diff.ChangeSet;
 import org.jetbrains.mps.openapi.model.SNodeId;
-import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.search.SModelSearchUtil;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
 
 public class SetPropertyChange extends NodeChange {
   private String myPropertyName;
@@ -19,6 +25,18 @@ public class SetPropertyChange extends NodeChange {
   @NotNull
   public String getPropertyName() {
     return myPropertyName;
+  }
+  private Boolean myMergeHint = null;
+  @Override
+  public boolean isNonConflicting() {
+    // check "nonconflicting" attribute in metamodel 
+    if (myMergeHint == null) {
+      SNode n = getChangeSet().getOldModel().getNode(getAffectedNodeId());
+      SNode c = SNodeOperations.getConceptDeclaration(n);
+      SNode propDecl = SNodeOperations.as(SModelSearchUtil.findPropertyDeclaration(c, myPropertyName), MetaAdapterFactory.getConcept(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489288299l, "jetbrains.mps.lang.structure.structure.PropertyDeclaration"));
+      myMergeHint = (AttributeOperations.getAttribute(propDecl, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.vcs.mergehints.structure.MergeHint")) != null) || (AttributeOperations.getAttribute(c, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.vcs.mergehints.structure.MergeHint")) != null);
+    }
+    return myMergeHint;
   }
   public String getNewValue() {
     return myNewValue;

@@ -7,12 +7,17 @@ import java.util.List;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.vcs.diff.ChangeSet;
 import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.search.SModelSearchUtil;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
-import jetbrains.mps.util.SNodeOperations;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.internal.collections.runtime.IterableUtils;
 import jetbrains.mps.internal.collections.runtime.ISelector;
@@ -56,6 +61,18 @@ public class NodeGroupChange extends ModelChange {
   public int getResultBegin() {
     return myResultBegin;
   }
+  private Boolean myMergeHint = null;
+  @Override
+  public boolean isNonConflicting() {
+    // check "nonconflicting" attribute in metamodel 
+    if (myMergeHint == null) {
+      SNode n = getChangeSet().getOldModel().getNode(getParentNodeId());
+      SNode c = SNodeOperations.getConceptDeclaration(n);
+      SNode linkDecl = SNodeOperations.as(SModelSearchUtil.findLinkDeclaration(c, myRole), MetaAdapterFactory.getConcept(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489288298l, "jetbrains.mps.lang.structure.structure.LinkDeclaration"));
+      myMergeHint = (AttributeOperations.getAttribute(linkDecl, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.vcs.mergehints.structure.MergeHint")) != null) || (AttributeOperations.getAttribute(c, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.vcs.mergehints.structure.MergeHint")) != null);
+    }
+    return myMergeHint;
+  }
   public void prepare() {
     if (myPreparedIdsToDelete == null) {
       SNode parent = getChangeSet().getOldModel().getNode(myParentNodeId);
@@ -91,7 +108,7 @@ public class NodeGroupChange extends ModelChange {
     SNode anchor = (myPreparedAnchorId == null ? null : model.getNode(myPreparedAnchorId));
     SNode parent = model.getNode(myParentNodeId);
     for (SNode newNode : ListSequence.fromList(nodesToAdd).reversedList()) {
-      SNodeOperations.insertChild(parent, myRole, newNode, anchor);
+      jetbrains.mps.util.SNodeOperations.insertChild(parent, myRole, newNode, anchor);
     }
   }
   @Nullable
@@ -138,7 +155,7 @@ public class NodeGroupChange extends ModelChange {
 
     String oldStuff = (myEnd - myBegin == 1 ? myRole : NameUtil.formatNumericalString(myEnd - myBegin, myRole));
     String newStuff = (myResultEnd - myResultBegin == 1 ? myRole : NameUtil.formatNumericalString(myResultEnd - myResultBegin, myRole));
-    if (eq_yjf6x2_a0a6a12(newStuff, myRole) && eq_yjf6x2_a0a6a12_0(oldStuff, myRole)) {
+    if (eq_yjf6x2_a0a6a32(newStuff, myRole) && eq_yjf6x2_a0a6a32_0(oldStuff, myRole)) {
       newStuff = "another";
     } else if (myEnd != myBegin) {
       newStuff = "another " + newStuff;
@@ -168,10 +185,10 @@ public class NodeGroupChange extends ModelChange {
   private static String nodeRange(int begin, int end) {
     return (begin + 1 == end ? String.format("node #%d", begin) : String.format("nodes #%d-%d", begin, end - 1));
   }
-  private static boolean eq_yjf6x2_a0a6a12(Object a, Object b) {
+  private static boolean eq_yjf6x2_a0a6a32(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
-  private static boolean eq_yjf6x2_a0a6a12_0(Object a, Object b) {
+  private static boolean eq_yjf6x2_a0a6a32_0(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
 }
