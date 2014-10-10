@@ -106,7 +106,6 @@ import jetbrains.mps.openapi.editor.cells.CellTraversalUtil;
 import jetbrains.mps.openapi.editor.cells.KeyMapAction;
 import jetbrains.mps.openapi.editor.cells.SubstituteAction;
 import jetbrains.mps.openapi.editor.cells.SubstituteInfo;
-import jetbrains.mps.openapi.editor.commands.CommandContext;
 import jetbrains.mps.openapi.editor.message.EditorMessageOwner;
 import jetbrains.mps.openapi.editor.message.SimpleEditorMessage;
 import jetbrains.mps.openapi.editor.selection.MultipleSelection;
@@ -332,7 +331,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   private final EditorMessageOwner myOwner = new EditorMessageOwner() {
   };
 
-  private CommandContext myCommandContext;
+  private CommandContextImpl myCommandContext;
 
   private IntentionsSupport myIntentionsSupport;
   @SuppressWarnings({"UnusedDeclaration"})
@@ -2449,7 +2448,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     return false;
   }
 
-  public CommandContext getCommandContext() {
+  public CommandContextImpl getCommandContext() {
     if (myCommandContext == null) {
       myCommandContext = new CommandContextImpl(this);
     }

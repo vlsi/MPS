@@ -118,11 +118,7 @@ public class UpdaterImpl implements Updater {
 
   @Override
   public void flushModelEvents() {
-    myModelListenersController.flush(false);
-  }
-
-  public void flushModelEventsAndSetSelection() {
-    myModelListenersController.flush(true);
+    myModelListenersController.flush(myEditorComponent.getCommandContext().isInsideCommand());
   }
 
   @Override

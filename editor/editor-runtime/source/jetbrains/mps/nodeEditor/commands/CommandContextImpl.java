@@ -35,9 +35,13 @@ public class CommandContextImpl implements CommandContext {
   }
 
   public void commandFinished() {
-    myCommandLevel--;
-    if (myCommandLevel == 0) {
-      myEditorComponent.getUpdater().flushModelEventsAndSetSelection();
+    if (myCommandLevel == 1) {
+      myEditorComponent.getUpdater().flushModelEvents();
     }
+    myCommandLevel--;
+  }
+
+  public boolean isInsideCommand() {
+    return myCommandLevel != 0;
   }
 }
