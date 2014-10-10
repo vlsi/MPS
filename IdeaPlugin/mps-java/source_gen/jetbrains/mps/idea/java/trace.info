@@ -30,7 +30,7 @@
       <node id="5993361350499561930" at="35,0,36,0" concept="0" trace="SetType" />
       <node id="5993361350499562155" at="36,0,37,0" concept="0" trace="MapType" />
       <unit id="5993361350499385230" at="7,0,40,0" name="jetbrains.mps.idea.java.Constants$ConceptNames" />
-      <unit id="5993361350499286549" at="6,0,43,0" name="jetbrains.mps.idea.java.Constants" />
+      <unit id="5993361350499286549" at="6,0,42,0" name="jetbrains.mps.idea.java.Constants" />
     </file>
   </root>
 </debug-info>

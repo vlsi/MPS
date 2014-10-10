@@ -32,7 +32,9 @@ import com.intellij.openapi.ui.popup.JBPopupAdapter;
 import com.intellij.openapi.ui.popup.LightweightWindowEvent;
 import com.intellij.openapi.wm.IdeFocusManager;
 import com.intellij.util.ui.UIUtil;
+import com.intellij.xdebugger.breakpoints.XLineBreakpoint;
 import com.intellij.xdebugger.impl.actions.EditBreakpointAction.ContextAction;
+import com.intellij.xdebugger.impl.breakpoints.XLineBreakpointImpl;
 import com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory;
 import com.intellij.xdebugger.impl.ui.DebuggerUIUtil;
 import jetbrains.mps.debugger.core.breakpoints.BreakpointIconRenderrerEx;
@@ -73,7 +75,9 @@ import java.awt.Point;
     if (true) {
       return null;
     }
-    DefaultActionGroup actions = (DefaultActionGroup) myBreakpoint.getHighlighter().getGutterIconRenderer().getPopupMenuActions();
+    DefaultActionGroup actions = new DefaultActionGroup();
+    if(myBreakpoint.getXBreakpoint() instanceof XLineBreakpointImpl)
+      actions.addAll(((XLineBreakpointImpl) myBreakpoint.getXBreakpoint()).getHighlighter().getGutterIconRenderer().getPopupMenuActions());
     for (AnAction action : actions.getChildActionsOrStubs()) {
       if (action instanceof ContextAction) {
         actions.remove(action);

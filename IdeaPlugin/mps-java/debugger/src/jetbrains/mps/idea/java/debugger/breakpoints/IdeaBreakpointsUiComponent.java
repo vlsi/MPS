@@ -19,7 +19,6 @@ package jetbrains.mps.idea.java.debugger.breakpoints;
 import com.intellij.debugger.DebuggerManagerEx;
 import com.intellij.debugger.engine.requests.RequestManagerImpl;
 import com.intellij.debugger.ui.breakpoints.Breakpoint;
-import com.intellij.debugger.ui.breakpoints.BreakpointManagerListener;
 import com.intellij.debugger.ui.breakpoints.BreakpointWithHighlighter;
 import com.intellij.debugger.ui.breakpoints.FieldBreakpoint;
 import com.intellij.openapi.application.ApplicationManager;
@@ -31,6 +30,9 @@ import com.intellij.psi.PsiDocumentManager;
 import com.intellij.psi.PsiField;
 import com.intellij.psi.PsiFile;
 import com.intellij.psi.util.PsiTreeUtil;
+import com.intellij.xdebugger.XDebuggerManager;
+import com.intellij.xdebugger.breakpoints.XBreakpoint;
+import com.intellij.xdebugger.breakpoints.XBreakpointListener;
 import jetbrains.mps.debugger.core.breakpoints.BreakpointsUiComponentEx;
 import jetbrains.mps.ide.editor.util.EditorComponentUtil;
 import jetbrains.mps.idea.java.trace.GeneratedSourcePosition;
@@ -47,7 +49,7 @@ import java.util.Set;
 
 public class IdeaBreakpointsUiComponent extends BreakpointsUiComponentEx<Breakpoint, BreakpointWithHighlighter> implements ProjectComponent {
   private DebuggerManagerEx myDebuggerManager;
-  private final BreakpointManagerListener myBreakpointListener = new MyBreakpointManagerListener();
+  private final XBreakpointListener myBreakpointListener = new MyBreakpointListener();
 
   public IdeaBreakpointsUiComponent(Project project, FileEditorManager manager) {
     super(project, manager);
@@ -65,13 +67,13 @@ public class IdeaBreakpointsUiComponent extends BreakpointsUiComponentEx<Breakpo
   public void initComponent() {
     super.init();
     myDebuggerManager = DebuggerManagerEx.getInstanceEx(myProject);
-    myDebuggerManager.getBreakpointManager().addBreakpointManagerListener(myBreakpointListener);
+    XDebuggerManager.getInstance(myProject).getBreakpointManager().addBreakpointListener(myBreakpointListener);
   }
 
   @Override
   public void disposeComponent() {
     super.dispose();
-    myDebuggerManager.getBreakpointManager().removeBreakpointManagerListener(myBreakpointListener);
+    XDebuggerManager.getInstance(myProject).getBreakpointManager().removeBreakpointListener(myBreakpointListener);
     myDebuggerManager = null;
   }
 
@@ -194,9 +196,16 @@ public class IdeaBreakpointsUiComponent extends BreakpointsUiComponentEx<Breakpo
     }
   }
 
-  private class MyBreakpointManagerListener implements BreakpointManagerListener {
+  private class MyBreakpointListener implements XBreakpointListener {
+
     @Override
-    public void breakpointsChanged() {
+    public void breakpointAdded(@NotNull XBreakpoint breakpoint) {}
+
+    @Override
+    public void breakpointRemoved(@NotNull XBreakpoint breakpoint) {}
+
+    @Override
+    public void breakpointChanged(@NotNull XBreakpoint breakpoint) {
       clearAllEditors();
 
       final List<Breakpoint> breakpoints = myDebuggerManager.getBreakpointManager().getBreakpoints();

@@ -1,5 +1,5 @@
 <extensions>
-  <errorHandler implementation="com.intellij.diagnostic.ITNReporter"/>
+  <errorHandler implementation="jetbrains.mps.ide.blame.CharismaReporter"/>
   <appStarter implementation="com.intellij.openapi.diff.DiffApplication"/>
   <!--
   <appStarter implementation="com.intellij.openapi.diff.MergeApplication"/>
@@ -10,7 +10,7 @@
   <appStarter implementation="com.intellij.ide.ui.search.TraverseUIStarter"/>
   <!--MPS Patch: enable project view-->
   <projectService serviceInterface="com.intellij.ide.projectView.ProjectView"
-                  serviceImplementation="com.intellij.ide.projectView.impl.ProjectViewImpl"/>
+                  serviceImplementation="jetbrains.mps.ide.projectView.ProjectViewImpl"/>
   <!--MPS Patch: enable project view-->
   <toolWindow id="Project" anchor="left" icon="MPSToolWindowIcons.ToolWindows.ToolWindowProject"
               factoryClass="jetbrains.mps.ide.projectPane.MPSProjectViewToolWindowFactory"/>
@@ -93,6 +93,9 @@
                       serviceImplementation="com.intellij.ide.ui.search.SearchableOptionsRegistrarImpl"/>
   <applicationService serviceInterface="com.intellij.openapi.fileEditor.impl.EditorEmptyTextPainter"
                       serviceImplementation="jetbrains.mps.ide.ui.fileEditor.MPSEditorEmptyTextPainter" />
+
+    <applicationService serviceInterface="com.intellij.openapi.editor.EditorCopyPasteHelper"
+                        serviceImplementation="com.intellij.openapi.editor.impl.EditorCopyPasteHelperImpl" />
 
   <applicationService serviceImplementation="com.intellij.openapi.options.ex.IdeConfigurablesGroup"/>
 
@@ -184,6 +187,9 @@
                       serviceImplementation="com.intellij.openapi.roots.ui.FileAppearanceServiceImpl"/>
 
   <applicationService serviceImplementation="com.intellij.internal.statistic.UsageTrigger"/>
+
+  <applicationService serviceInterface="com.intellij.openapi.application.PathMacros"
+                      serviceImplementation="com.intellij.application.options.PathMacrosImpl"/>
 
   <projectService serviceInterface="com.intellij.openapi.vfs.ReadonlyStatusHandler"
                   serviceImplementation="com.intellij.openapi.vcs.readOnlyHandler.ReadonlyStatusHandlerImpl"/>
@@ -283,6 +289,14 @@
 
   <applicationService serviceInterface="com.intellij.ui.ColorChooserService"
                       serviceImplementation="com.intellij.ui.ColorChooserServiceImpl"/>
+
+    <applicationService serviceInterface="com.intellij.openapi.actionSystem.AbbreviationManager"
+                        serviceImplementation="com.intellij.openapi.actionSystem.impl.AbbreviationManagerImpl"/>
+    <exportable serviceInterface="com.intellij.openapi.actionSystem.AbbreviationManager"/>
+
+  <applicationService serviceInterface="com.intellij.openapi.editor.ex.EditorSettingsExternalizable"
+                      serviceImplementation="com.intellij.openapi.editor.ex.EditorSettingsExternalizable"/>
+  <exportable serviceInterface="com.intellij.openapi.editor.ex.EditorSettingsExternalizable"/>
 
   <scopeParserExtension implementation="com.intellij.psi.search.scope.packageSet.FilePackageSetParserExtension"/>
   <applicationService serviceInterface="com.intellij.openapi.ui.popup.StackingPopupDispatcher" serviceImplementation="com.intellij.ui.popup.StackingPopupDispatcherImpl"/>

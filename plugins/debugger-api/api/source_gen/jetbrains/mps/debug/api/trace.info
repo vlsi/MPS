@@ -624,8 +624,8 @@
       <node id="4474271214082913799" at="28,42,29,24" concept="4" />
       <node id="4474271214082913819" at="31,31,32,21" concept="11" />
       <node id="4474271214082913825" at="36,36,37,31" concept="11" />
-      <node id="4474271214082913833" at="40,31,41,28" concept="4" />
-      <node id="4474271214082913840" at="44,34,45,31" concept="4" />
+      <node id="4474271214082913840" at="43,34,44,31" concept="4" />
+      <node id="4474271214082913833" at="47,31,48,28" concept="4" />
       <node id="4474271214082913857" at="54,61,55,105" concept="10" />
       <node id="4474271214082913870" at="56,36,57,18" concept="11" />
       <node id="4474271214082913872" at="58,5,59,66" concept="11" />
@@ -660,7 +660,7 @@
       <node id="4474271214082913725" at="130,0,132,0" concept="3" trace="DebugSessionAdapter#()V" />
       <node id="4474271214082913746" at="143,0,145,0" concept="3" trace="MyRunContentListener#()V" />
       <node id="4474271214082913815" at="31,0,34,0" concept="9" trace="getProject#()Lcom/intellij/openapi/project/Project;" />
-      <node id="4474271214082913843" at="47,0,50,0" concept="9" trace="projectOpened#()V" />
+      <node id="4474271214082913829" at="39,0,42,0" concept="9" trace="initComponent#()V" />
       <node id="4474271214082913848" at="50,0,53,0" concept="9" trace="projectClosed#()V" />
       <node id="4474271214082913865" at="55,105,58,5" concept="8" />
       <node id="4474271214082913913" at="69,83,72,5" concept="7" />
@@ -677,8 +677,8 @@
       <node id="4474271214082913733" at="135,0,138,0" concept="9" trace="currentSessionChanged#(Ljetbrains/mps/debug/api/AbstractDebugSession;)V" />
       <node id="4474271214082913738" at="138,0,141,0" concept="9" trace="detached#(Ljetbrains/mps/debug/api/AbstractDebugSession;)V" />
       <node id="4474271214082913787" at="27,0,31,0" concept="3" trace="DebugSessionManagerComponent#(Lcom/intellij/execution/ExecutionManager;Lcom/intellij/openapi/project/Project;)V" />
-      <node id="4474271214082913829" at="39,0,43,0" concept="9" trace="initComponent#()V" />
-      <node id="4474271214082913836" at="43,0,47,0" concept="9" trace="disposeComponent#()V" />
+      <node id="4474271214082913836" at="42,0,46,0" concept="9" trace="disposeComponent#()V" />
+      <node id="4474271214082913843" at="46,0,50,0" concept="9" trace="projectOpened#()V" />
       <node id="4474271214082913877" at="61,0,65,0" concept="9" trace="addRunContentListener#()V" />
       <node id="4474271214082913892" at="65,0,69,0" concept="9" trace="removeRunContentListener#()V" />
       <node id="4474271214082914103" at="147,47,151,7" concept="8" />
@@ -695,7 +695,7 @@
       <node id="4474271214082913853" at="53,0,61,0" concept="9" trace="getDebugSessionByCurrentTab#()Ljetbrains/mps/debug/api/AbstractDebugSession;" />
       <node id="4474271214082913749" at="145,0,153,0" concept="9" trace="contentSelected#(Lcom/intellij/execution/ui/RunContentDescriptor;)V" />
       <node id="4474271214082913981" at="92,0,101,0" concept="9" trace="addDebugSession#(Ljetbrains/mps/debug/api/AbstractDebugSession;)V" />
-      <scope id="4474271214082913846" at="48,31,48,31" />
+      <scope id="4474271214082913832" at="40,31,40,31" />
       <scope id="4474271214082913851" at="51,31,51,31" />
       <scope id="4474271214082914090" at="130,34,130,34" />
       <scope id="4474271214082914091" at="133,58,133,58" />
@@ -704,8 +704,8 @@
       <scope id="4474271214082914097" at="143,36,143,36" />
       <scope id="4474271214082913818" at="31,31,32,21" />
       <scope id="4474271214082913824" at="36,36,37,31" />
-      <scope id="4474271214082913832" at="40,31,41,28" />
-      <scope id="4474271214082913839" at="44,34,45,31" />
+      <scope id="4474271214082913839" at="43,34,44,31" />
+      <scope id="4474271214082913846" at="47,31,48,28" />
       <scope id="4474271214082913869" at="56,36,57,18" />
       <scope id="4474271214082913917" at="70,109,71,51" />
       <scope id="4474271214082913933" at="75,109,76,38" />
@@ -738,7 +738,7 @@
       <scope id="4474271214082913746" at="143,0,145,0" />
       <scope id="4474271214082914107" at="148,31,150,54" />
       <scope id="4474271214082913815" at="31,0,34,0" />
-      <scope id="4474271214082913843" at="47,0,50,0" />
+      <scope id="4474271214082913829" at="39,0,42,0" />
       <scope id="4474271214082913848" at="50,0,53,0" />
       <scope id="4474271214082913912" at="69,83,72,5" />
       <scope id="4474271214082913913" at="69,83,72,5">
@@ -776,8 +776,8 @@
         <var name="executionManager" id="4474271214082913790" />
         <var name="project" id="4474271214082913792" />
       </scope>
-      <scope id="4474271214082913829" at="39,0,43,0" />
-      <scope id="4474271214082913836" at="43,0,47,0" />
+      <scope id="4474271214082913836" at="42,0,46,0" />
+      <scope id="4474271214082913843" at="46,0,50,0" />
       <scope id="4474271214082913877" at="61,0,65,0" />
       <scope id="4474271214082913892" at="65,0,69,0" />
       <scope id="4474271214082913754" at="153,0,157,0">

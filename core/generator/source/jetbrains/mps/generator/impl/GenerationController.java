@@ -38,19 +38,21 @@ import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import org.jetbrains.mps.openapi.util.SubProgressKind;
 
 import java.util.ArrayList;
+import java.util.LinkedHashMap;
 import java.util.List;
+import java.util.Map;
 
 public class GenerationController implements ITaskPoolProvider {
 
   private List<? extends SModel> myInputModels;
   private final GenControllerContext myContext;
   private final IOperationContext myOperationContext;
-  protected final IGenerationHandler myGenerationHandler;
-  protected GeneratorLoggerAdapter myLogger;
+  private final IGenerationHandler myGenerationHandler;
+  private GeneratorLoggerAdapter myLogger;
   private GenerationOptions myOptions;
   private IGenerationTaskPool myParallelTaskPool;
 
-  protected List<Pair<SModule, List<SModel>>> myModuleSequence = new ArrayList<Pair<SModule, List<SModel>>>();
+  private final List<Pair<SModule, List<SModel>>> myModuleSequence = new ArrayList<Pair<SModule, List<SModel>>>();
 
   public GenerationController(List<? extends SModel> inputModels, @NotNull GenControllerContext context,
                 IGenerationHandler generationHandler, GeneratorLoggerAdapter generatorLogger, IOperationContext operationContext) {
@@ -63,21 +65,21 @@ public class GenerationController implements ITaskPoolProvider {
   }
 
   private void initMaps() {
-    SModule current = null;
-    ArrayList<SModel> currentList = null;
+    LinkedHashMap<SModule, List<SModel>> moduleSeq = new LinkedHashMap<SModule, List<SModel>>();
     for (SModel inputModel : myInputModels) {
-      SModule newModule = inputModel.getModule();
-      if (newModule == null) {
-        myLogger.warning("Model " + inputModel.getModelName() + " won't be generated");
+      SModule module = inputModel.getModule();
+      if (module == null) {
+        myLogger.warning(String.format("Model %s won't be generated as its module is unknown", inputModel.getModelName()));
         continue;
       }
-
-      if (current == null || newModule != current) {
-        current = newModule;
-        currentList = new ArrayList<SModel>();
-        myModuleSequence.add(new Pair<SModule, List<SModel>>(current, currentList));
+      List<SModel> models = moduleSeq.get(module);
+      if (models == null) {
+        moduleSeq.put(module, models = new ArrayList<SModel>(5));
       }
-      currentList.add(inputModel);
+      models.add(inputModel);
+    }
+    for (Map.Entry<SModule, List<SModel>> e : moduleSeq.entrySet()) {
+      myModuleSequence.add(new Pair<SModule, List<SModel>>(e.getKey(), e.getValue()));
     }
   }
 
@@ -89,17 +91,15 @@ public class GenerationController implements ITaskPoolProvider {
     initMaps();
     try {
       boolean generationOK = true;
-      final int compileWork = myGenerationHandler.estimateCompilationMillis();
-      int totalWork = compileWork;
-      for (Pair<SModule, List<SModel>> moduleAndDescriptors : myModuleSequence) {
-        totalWork += moduleAndDescriptors.o2 != null ? moduleAndDescriptors.o2.size() : 0;
-      }
+      final int compileWork = myModuleSequence.size();
+      int totalWork = compileWork + myInputModels.size();
       monitor.start("", totalWork);
       try {
         for (Pair<SModule, List<SModel>> moduleAndDescriptors : myModuleSequence) {
           final List<SModel> mlist = moduleAndDescriptors.o2;
-          boolean result = generateModelsInModule(moduleAndDescriptors.o1, mlist, monitor.subTask(mlist != null ? mlist.size() : 0));
-          monitor.advance(0);
+          final ProgressMonitor pm = monitor.subTask(mlist.size());
+          boolean result = generateModelsInModule(moduleAndDescriptors.o1, mlist, pm);
+          pm.done();
           generationOK = generationOK && result;
         }
       } finally {

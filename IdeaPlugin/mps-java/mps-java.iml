@@ -62,7 +62,6 @@
     <orderEntry type="library" name="mps.jetbrains.mps.tool.common" level="project" />
     <orderEntry type="library" name="mps.jetbrains.mps.lang.core_auto" level="project" />
     <orderEntry type="library" name="mps.collections.runtime_auto" level="project" />
-    <orderEntry type="library" name="mps.jetbrains.mps.make.runtime_auto (2)" level="project" />
     <orderEntry type="library" name="mps.jetbrains.mps.kernel_auto" level="project" />
     <orderEntry type="library" name="mps.closures.runtime_auto" level="project" />
     <orderEntry type="library" name="mps.jetbrains.mps.refactoring.runtime_auto" level="project" />
@@ -80,10 +79,7 @@
     <orderEntry type="library" name="mps.jetbrains.mps.smodel.resources_auto" level="project" />
     <orderEntry type="library" name="mps.jetbrains.mps.baseLanguage_auto" level="project" />
     <orderEntry type="library" name="mps.MPS.Editor_auto" level="project" />
-    <orderEntry type="library" name="mps.MPS.Core_auto (2)" level="project" />
     <orderEntry type="library" name="mps.MPS.Platform_auto" level="project" />
-    <orderEntry type="library" name="mps.MPS.OpenAPI_auto (2)" level="project" />
-    <orderEntry type="library" name="mps.Annotations_auto (2)" level="project" />
     <orderEntry type="library" name="mps.jetbrains.mps.baseLanguage.closures_auto" level="project" />
     <orderEntry type="library" name="mps.jetbrains.mps.baseLanguage.tuples.runtime_auto" level="project" />
   </component>

@@ -18,10 +18,6 @@ package jetbrains.mps;
 import jetbrains.mps.extapi.model.SModelBase;
 import jetbrains.mps.extapi.persistence.FileDataSource;
 import jetbrains.mps.ide.ThreadUtils;
-import jetbrains.mps.testbench.junit.runners.ProjectTestsSupport;
-import jetbrains.mps.testbench.junit.runners.ProjectTestsSupport.ProjectRunnable;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.DefaultSModelDescriptor;
@@ -32,11 +28,15 @@ import jetbrains.mps.smodel.loading.ModelLoadingState;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.smodel.persistence.def.ModelReadException;
 import jetbrains.mps.testbench.TestOutputFilter;
+import jetbrains.mps.testbench.junit.runners.ProjectTestsSupport;
+import jetbrains.mps.testbench.junit.runners.ProjectTestsSupport.ProjectRunnable;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.PathManager;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import junit.framework.AssertionFailedError;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.persistence.StreamDataSource;
 import org.junit.Test;
@@ -221,10 +221,8 @@ public class PersistenceTest extends WorkbenchMpsTest {
       int fromVersion = modelDescriptor.getPersistenceVersion();
       if (fromVersion >= toVersion) continue;
 
-      assert source != null;
-
       try {
-        jetbrains.mps.smodel.SModel model = wasInitialized ? modelDescriptor.getSModelInternal() : ModelPersistence.readModel(source, false);
+        jetbrains.mps.smodel.SModel model = wasInitialized ? modelDescriptor.getSModel() : ModelPersistence.readModel(source, false);
         ModelPersistence.saveModel(model, source, toVersion);
         modelDescriptor.reloadFromSource();
       } catch (ModelReadException e) {

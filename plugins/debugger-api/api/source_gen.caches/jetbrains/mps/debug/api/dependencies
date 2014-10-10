@@ -116,6 +116,8 @@
     <classNode dependClassName="java.util.ListIterator" />
     <classNode dependClassName="java.util.Map" />
     <classNode dependClassName="java.util.Set" />
+    <classNode dependClassName="jetbrains.mps.debug.api.IBreakpointManagerListener" />
+    <classNode dependClassName="jetbrains.mps.debug.api.IBreakpointsIO" />
     <classNode dependClassName="jetbrains.mps.debug.api.breakpoints.IBreakpoint" />
     <classNode dependClassName="jetbrains.mps.debug.api.breakpoints.ILocationBreakpoint" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IVisitor" />
@@ -132,13 +134,12 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
     <classNode extendsClassName="com.intellij.openapi.components.PersistentStateComponent" />
     <classNode extendsClassName="com.intellij.openapi.components.ProjectComponent" />
-    <classNode extendsClassName="jetbrains.mps.debug.api.IBreakpointManagerListener" />
-    <classNode extendsClassName="jetbrains.mps.debug.api.IBreakpointsIO" />
   </dependency>
   <dependency className="jetbrains.mps.debug.api.DebugSessionManagerComponent" file="DebugSessionManagerComponent.java">
     <classNode dependClassName="com.intellij.execution.ExecutionManager" />
     <classNode dependClassName="com.intellij.execution.process.ProcessHandler" />
     <classNode dependClassName="com.intellij.execution.ui.RunContentDescriptor" />
+    <classNode dependClassName="com.intellij.execution.ui.RunContentListener" />
     <classNode dependClassName="com.intellij.execution.ui.RunContentManager" />
     <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="java.lang.Override" />
@@ -150,11 +151,10 @@
     <classNode dependClassName="java.util.Map" />
     <classNode dependClassName="java.util.Set" />
     <classNode dependClassName="jetbrains.mps.debug.api.AbstractDebugSession" />
+    <classNode dependClassName="jetbrains.mps.debug.api.DebugSessionListener" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
-    <classNode extendsClassName="com.intellij.execution.ui.RunContentListener" />
     <classNode extendsClassName="com.intellij.openapi.components.ProjectComponent" />
-    <classNode extendsClassName="jetbrains.mps.debug.api.DebugSessionListener" />
   </dependency>
   <dependency className="jetbrains.mps.debug.api.DebuggableFramesSelector" file="DebuggableFramesSelector.java">
     <classNode dependClassName="com.intellij.openapi.project.Project" />

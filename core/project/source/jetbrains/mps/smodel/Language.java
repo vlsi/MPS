@@ -118,8 +118,9 @@ public class Language extends AbstractModule implements MPSModuleOwner {
       }
     }
 
-    if (BootstrapLanguages.coreLanguage() != null)
+    if(BootstrapLanguages.coreLanguage() != null) {
       dependencies.add(new SDependencyImpl(BootstrapLanguages.coreLanguage(), SDependencyScope.DEFAULT, true));
+    }
 
     return dependencies;
   }

@@ -12,12 +12,10 @@ public class MPSPsiSequenceType extends MPSPsiCollectionType {
   public MPSPsiSequenceType(SNodeId id, String concept, String containingRole) {
     super(id, concept, containingRole);
   }
-
   @Override
   protected String getClassName() {
     return "java.lang.Iterable";
   }
-
   @Override
   protected MPSPsiNode[] getChildTypeNodes() {
     // todo we could mimic the generator for SequenceType and do Iterable<? extends Iterable> for sequence<sequence<>> 

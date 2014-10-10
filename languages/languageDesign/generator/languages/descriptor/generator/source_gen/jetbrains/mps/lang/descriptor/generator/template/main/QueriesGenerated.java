@@ -123,6 +123,9 @@ public class QueriesGenerated {
   public static Object propertyMacro_GetPropertyValue_5102832340571708655(final PropertyMacroContext _context) {
     return SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "language", true), "namespace");
   }
+  public static Object propertyMacro_GetPropertyValue_6768722890464026761(final PropertyMacroContext _context) {
+    return SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "language", true), "uuid");
+  }
   public static Object propertyMacro_GetPropertyValue_2229091780083882944(final PropertyMacroContext _context) {
     return SPropertyOperations.getString(_context.getNode(), "qualifiedName");
   }
@@ -278,7 +281,7 @@ public class QueriesGenerated {
   public static Iterable<SNode> sourceNodesQuery_3829836699771395556(final SourceSubstituteMacroNodesContext _context) {
     return ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "model", true)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return eq_x583g4_a0a0a0a0a0a0a0lc(SPropertyOperations.getString(it, "stereotype"), SModelStereotype.GENERATOR);
+        return eq_x583g4_a0a0a0a0a0a0a0mc(SPropertyOperations.getString(it, "stereotype"), SModelStereotype.GENERATOR);
       }
     }).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
@@ -340,7 +343,7 @@ public class QueriesGenerated {
   private static boolean isEmptyString(String str) {
     return str == null || str.length() == 0;
   }
-  private static boolean eq_x583g4_a0a0a0a0a0a0a0lc(Object a, Object b) {
+  private static boolean eq_x583g4_a0a0a0a0a0a0a0mc(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
 }

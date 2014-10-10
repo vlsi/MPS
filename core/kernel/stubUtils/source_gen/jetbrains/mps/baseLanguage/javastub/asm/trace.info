@@ -66,7 +66,7 @@
       <node id="6849912058625332233" at="18,75,23,7" concept="4" />
       <node id="6849912058625332333" at="42,5,49,5" concept="6" />
       <node id="6849912058625332212" at="16,48,24,5" concept="6" />
-      <node id="6849912058625332199" at="15,0,26,0" concept="1" trace="ASMAnnotation#(Lorg/jetbrains/asm4/tree/AnnotationNode;)V" />
+      <node id="6849912058625332199" at="15,0,26,0" concept="1" trace="ASMAnnotation#(Lorg/jetbrains/org/objectweb/asm/tree/AnnotationNode;)V" />
       <node id="6849912058625332283" at="32,0,52,0" concept="12" trace="processValue#(Ljava/lang/Object;)Ljava/lang/Object;" />
       <scope id="6849912058625332375" at="26,42,27,110" />
       <scope id="6849912058625332389" at="29,28,30,18" />
@@ -123,15 +123,15 @@
       <node id="7241381882860007150" at="56,0,59,0" concept="7" trace="visitInnerClassType#(Ljava/lang/String;)V" />
       <node id="7241381882860007156" at="59,0,62,0" concept="7" trace="visitTypeArgument#()V" />
       <node id="7241381882860007168" at="66,0,69,0" concept="7" trace="visitEnd#()V" />
-      <node id="7241381882860007084" at="15,0,19,0" concept="7" trace="visitClassBound#()Lorg/jetbrains/asm4/signature/SignatureVisitor;" />
-      <node id="7241381882860007090" at="19,0,23,0" concept="7" trace="visitInterfaceBound#()Lorg/jetbrains/asm4/signature/SignatureVisitor;" />
-      <node id="7241381882860007096" at="23,0,27,0" concept="7" trace="visitSuperclass#()Lorg/jetbrains/asm4/signature/SignatureVisitor;" />
-      <node id="7241381882860007102" at="27,0,31,0" concept="7" trace="visitInterface#()Lorg/jetbrains/asm4/signature/SignatureVisitor;" />
-      <node id="7241381882860007108" at="31,0,35,0" concept="7" trace="visitParameterType#()Lorg/jetbrains/asm4/signature/SignatureVisitor;" />
-      <node id="7241381882860007114" at="35,0,39,0" concept="7" trace="visitReturnType#()Lorg/jetbrains/asm4/signature/SignatureVisitor;" />
-      <node id="7241381882860007120" at="39,0,43,0" concept="7" trace="visitExceptionType#()Lorg/jetbrains/asm4/signature/SignatureVisitor;" />
-      <node id="7241381882860007138" at="49,0,53,0" concept="7" trace="visitArrayType#()Lorg/jetbrains/asm4/signature/SignatureVisitor;" />
-      <node id="7241381882860007160" at="62,0,66,0" concept="7" trace="visitTypeArgument#(C)Lorg/jetbrains/asm4/signature/SignatureVisitor;" />
+      <node id="7241381882860007084" at="15,0,19,0" concept="7" trace="visitClassBound#()Lorg/jetbrains/org/objectweb/asm/signature/SignatureVisitor;" />
+      <node id="7241381882860007090" at="19,0,23,0" concept="7" trace="visitInterfaceBound#()Lorg/jetbrains/org/objectweb/asm/signature/SignatureVisitor;" />
+      <node id="7241381882860007096" at="23,0,27,0" concept="7" trace="visitSuperclass#()Lorg/jetbrains/org/objectweb/asm/signature/SignatureVisitor;" />
+      <node id="7241381882860007102" at="27,0,31,0" concept="7" trace="visitInterface#()Lorg/jetbrains/org/objectweb/asm/signature/SignatureVisitor;" />
+      <node id="7241381882860007108" at="31,0,35,0" concept="7" trace="visitParameterType#()Lorg/jetbrains/org/objectweb/asm/signature/SignatureVisitor;" />
+      <node id="7241381882860007114" at="35,0,39,0" concept="7" trace="visitReturnType#()Lorg/jetbrains/org/objectweb/asm/signature/SignatureVisitor;" />
+      <node id="7241381882860007120" at="39,0,43,0" concept="7" trace="visitExceptionType#()Lorg/jetbrains/org/objectweb/asm/signature/SignatureVisitor;" />
+      <node id="7241381882860007138" at="49,0,53,0" concept="7" trace="visitArrayType#()Lorg/jetbrains/org/objectweb/asm/signature/SignatureVisitor;" />
+      <node id="7241381882860007160" at="62,0,66,0" concept="7" trace="visitTypeArgument#(C)Lorg/jetbrains/org/objectweb/asm/signature/SignatureVisitor;" />
       <scope id="7241381882860007083" at="13,53,13,53" />
       <scope id="7241381882860007131" at="44,46,44,46" />
       <scope id="7241381882860007137" at="47,46,47,46" />
@@ -356,7 +356,7 @@
       <node id="7241381882860006185" at="97,5,113,5" concept="6" />
       <node id="7241381882860006317" at="113,5,129,5" concept="6" />
       <node id="7241381882860005976" at="65,89,85,5" concept="4" />
-      <node id="7241381882860005734" at="26,0,134,0" concept="1" trace="ASMMethod#(Lorg/jetbrains/asm4/tree/MethodNode;)V" />
+      <node id="7241381882860005734" at="26,0,134,0" concept="1" trace="ASMMethod#(Lorg/jetbrains/org/objectweb/asm/tree/MethodNode;)V" />
       <scope id="7241381882860005768" at="29,35,30,140" />
       <scope id="7241381882860005761" at="31,12,32,83" />
       <scope id="7241381882860005795" at="34,35,35,69" />
@@ -567,7 +567,7 @@
       <node id="7241381882860006842" at="20,86,24,7" concept="5" />
       <node id="7241381882860006878" at="26,51,31,5" concept="6" />
       <node id="7241381882860006818" at="18,20,25,5" concept="6" />
-      <node id="7241381882860006808" at="17,0,33,0" concept="1" trace="ASMField#(Lorg/jetbrains/asm4/tree/FieldNode;)V" />
+      <node id="7241381882860006808" at="17,0,33,0" concept="1" trace="ASMField#(Lorg/jetbrains/org/objectweb/asm/tree/FieldNode;)V" />
       <scope id="7241381882860006896" at="27,36,28,63" />
       <scope id="7241381882860006887" at="29,12,30,29" />
       <scope id="7241381882860006911" at="33,27,34,24" />
@@ -651,15 +651,15 @@
       <node id="7241381882860007278" at="57,0,60,0" concept="7" trace="visitInnerClassType#(Ljava/lang/String;)V" />
       <node id="7241381882860007284" at="60,0,63,0" concept="7" trace="visitTypeArgument#()V" />
       <node id="7241381882860007296" at="67,0,70,0" concept="7" trace="visitEnd#()V" />
-      <node id="7241381882860007212" at="16,0,20,0" concept="7" trace="visitClassBound#()Lorg/jetbrains/asm4/signature/SignatureVisitor;" />
-      <node id="7241381882860007218" at="20,0,24,0" concept="7" trace="visitInterfaceBound#()Lorg/jetbrains/asm4/signature/SignatureVisitor;" />
-      <node id="7241381882860007224" at="24,0,28,0" concept="7" trace="visitSuperclass#()Lorg/jetbrains/asm4/signature/SignatureVisitor;" />
-      <node id="7241381882860007230" at="28,0,32,0" concept="7" trace="visitInterface#()Lorg/jetbrains/asm4/signature/SignatureVisitor;" />
-      <node id="7241381882860007236" at="32,0,36,0" concept="7" trace="visitParameterType#()Lorg/jetbrains/asm4/signature/SignatureVisitor;" />
-      <node id="7241381882860007242" at="36,0,40,0" concept="7" trace="visitReturnType#()Lorg/jetbrains/asm4/signature/SignatureVisitor;" />
-      <node id="7241381882860007248" at="40,0,44,0" concept="7" trace="visitExceptionType#()Lorg/jetbrains/asm4/signature/SignatureVisitor;" />
-      <node id="7241381882860007266" at="50,0,54,0" concept="7" trace="visitArrayType#()Lorg/jetbrains/asm4/signature/SignatureVisitor;" />
-      <node id="7241381882860007288" at="63,0,67,0" concept="7" trace="visitTypeArgument#(C)Lorg/jetbrains/asm4/signature/SignatureVisitor;" />
+      <node id="7241381882860007212" at="16,0,20,0" concept="7" trace="visitClassBound#()Lorg/jetbrains/org/objectweb/asm/signature/SignatureVisitor;" />
+      <node id="7241381882860007218" at="20,0,24,0" concept="7" trace="visitInterfaceBound#()Lorg/jetbrains/org/objectweb/asm/signature/SignatureVisitor;" />
+      <node id="7241381882860007224" at="24,0,28,0" concept="7" trace="visitSuperclass#()Lorg/jetbrains/org/objectweb/asm/signature/SignatureVisitor;" />
+      <node id="7241381882860007230" at="28,0,32,0" concept="7" trace="visitInterface#()Lorg/jetbrains/org/objectweb/asm/signature/SignatureVisitor;" />
+      <node id="7241381882860007236" at="32,0,36,0" concept="7" trace="visitParameterType#()Lorg/jetbrains/org/objectweb/asm/signature/SignatureVisitor;" />
+      <node id="7241381882860007242" at="36,0,40,0" concept="7" trace="visitReturnType#()Lorg/jetbrains/org/objectweb/asm/signature/SignatureVisitor;" />
+      <node id="7241381882860007248" at="40,0,44,0" concept="7" trace="visitExceptionType#()Lorg/jetbrains/org/objectweb/asm/signature/SignatureVisitor;" />
+      <node id="7241381882860007266" at="50,0,54,0" concept="7" trace="visitArrayType#()Lorg/jetbrains/org/objectweb/asm/signature/SignatureVisitor;" />
+      <node id="7241381882860007288" at="63,0,67,0" concept="7" trace="visitTypeArgument#(C)Lorg/jetbrains/org/objectweb/asm/signature/SignatureVisitor;" />
       <scope id="7241381882860007211" at="14,53,14,53" />
       <scope id="7241381882860007259" at="45,46,45,46" />
       <scope id="7241381882860007265" at="48,46,48,46" />
@@ -860,7 +860,7 @@
       <node id="7241381882860007869" at="225,27,228,7" concept="6" />
       <node id="7241381882860007887" at="228,7,231,7" concept="6" />
       <node id="7241381882860008048" at="289,7,292,7" concept="6" />
-      <node id="7241381882860007514" at="60,0,64,0" concept="7" trace="visitReturnType#()Lorg/jetbrains/asm4/signature/SignatureVisitor;" />
+      <node id="7241381882860007514" at="60,0,64,0" concept="7" trace="visitReturnType#()Lorg/jetbrains/org/objectweb/asm/signature/SignatureVisitor;" />
       <node id="7241381882860007754" at="191,42,195,7" concept="6" />
       <node id="3275604661365224243" at="211,14,215,9" concept="0" />
       <node id="7241381882860007902" at="233,40,237,7" concept="6" />
@@ -868,23 +868,23 @@
       <node id="7241381882860007342" at="251,0,255,0" concept="7" trace="visitTypeArgument#()V" />
       <node id="7241381882860007350" at="260,0,264,0" concept="7" trace="visitBaseType#(C)V" />
       <node id="7241381882860007355" at="264,0,268,0" concept="7" trace="visitTypeVariable#(Ljava/lang/String;)V" />
-      <node id="7241381882860007360" at="268,0,272,0" concept="7" trace="visitArrayType#()Lorg/jetbrains/asm4/signature/SignatureVisitor;" />
+      <node id="7241381882860007360" at="268,0,272,0" concept="7" trace="visitArrayType#()Lorg/jetbrains/org/objectweb/asm/signature/SignatureVisitor;" />
       <node id="7241381882860007363" at="272,0,276,0" concept="7" trace="visitClassType#(Ljava/lang/String;)V" />
       <node id="7241381882860008024" at="285,37,289,7" concept="6" />
-      <node id="7241381882860007630" at="104,0,109,0" concept="7" trace="visitClassBound#()Lorg/jetbrains/asm4/signature/SignatureVisitor;" />
+      <node id="7241381882860007630" at="104,0,109,0" concept="7" trace="visitClassBound#()Lorg/jetbrains/org/objectweb/asm/signature/SignatureVisitor;" />
       <node id="7241381882860007797" at="198,98,203,9" concept="6" />
       <node id="3275604661364358360" at="244,42,249,7" concept="6" />
-      <node id="7241381882860007345" at="255,0,260,0" concept="7" trace="visitTypeArgument#(C)Lorg/jetbrains/asm4/signature/SignatureVisitor;" />
+      <node id="7241381882860007345" at="255,0,260,0" concept="7" trace="visitTypeArgument#(C)Lorg/jetbrains/org/objectweb/asm/signature/SignatureVisitor;" />
       <node id="7241381882860007507" at="58,82,64,7" concept="2" />
-      <node id="7241381882860007554" at="74,0,80,0" concept="7" trace="visitParameterType#()Lorg/jetbrains/asm4/signature/SignatureVisitor;" />
-      <node id="7241381882860007633" at="109,0,115,0" concept="7" trace="visitInterfaceBound#()Lorg/jetbrains/asm4/signature/SignatureVisitor;" />
+      <node id="7241381882860007554" at="74,0,80,0" concept="7" trace="visitParameterType#()Lorg/jetbrains/org/objectweb/asm/signature/SignatureVisitor;" />
+      <node id="7241381882860007633" at="109,0,115,0" concept="7" trace="visitInterfaceBound#()Lorg/jetbrains/org/objectweb/asm/signature/SignatureVisitor;" />
       <node id="5944751885067650179" at="136,53,142,11" concept="6" />
-      <node id="7241381882860007681" at="159,0,165,0" concept="7" trace="visitExceptionType#()Lorg/jetbrains/asm4/signature/SignatureVisitor;" />
+      <node id="7241381882860007681" at="159,0,165,0" concept="7" trace="visitExceptionType#()Lorg/jetbrains/org/objectweb/asm/signature/SignatureVisitor;" />
       <node id="7241381882860007993" at="277,28,283,7" concept="6" />
       <node id="7241381882860007451" at="41,22,48,9" concept="0" />
       <node id="7241381882860007625" at="97,0,104,0" concept="7" trace="visitFormalTypeParameter#(Ljava/lang/String;)V" />
-      <node id="7241381882860007636" at="115,0,122,0" concept="7" trace="visitReturnType#()Lorg/jetbrains/asm4/signature/SignatureVisitor;" />
-      <node id="7241381882860007639" at="122,0,129,0" concept="7" trace="visitSuperclass#()Lorg/jetbrains/asm4/signature/SignatureVisitor;" />
+      <node id="7241381882860007636" at="115,0,122,0" concept="7" trace="visitReturnType#()Lorg/jetbrains/org/objectweb/asm/signature/SignatureVisitor;" />
+      <node id="7241381882860007639" at="122,0,129,0" concept="7" trace="visitSuperclass#()Lorg/jetbrains/org/objectweb/asm/signature/SignatureVisitor;" />
       <node id="3275604661365222295" at="208,37,215,9" concept="6" />
       <node id="3275604661364265408" at="244,0,251,0" concept="7" trace="unwrap#(Ljetbrains/mps/baseLanguage/javastub/asm/ASMType;)Ljetbrains/mps/baseLanguage/javastub/asm/ASMType;" />
       <node id="7241381882860007547" at="72,100,80,7" concept="2" />
@@ -901,7 +901,7 @@
       <node id="7241381882860007647" at="152,0,172,0" concept="12" trace="getExceptionTypes#(Ljava/lang/String;)Ljava/util/List;" />
       <node id="7241381882860007769" at="195,7,216,7" concept="6" />
       <node id="7241381882860007389" at="19,50,50,5" concept="14" />
-      <node id="7241381882860007384" at="19,0,53,0" concept="12" trace="fromType#(Lorg/jetbrains/asm4/Type;)Ljetbrains/mps/baseLanguage/javastub/asm/ASMType;" />
+      <node id="7241381882860007384" at="19,0,53,0" concept="12" trace="fromType#(Lorg/jetbrains/org/objectweb/asm/Type;)Ljetbrains/mps/baseLanguage/javastub/asm/ASMType;" />
       <node id="7241381882860007329" at="191,0,225,0" concept="7" trace="addPart#(Ljetbrains/mps/baseLanguage/javastub/asm/ASMType;)V" />
       <node id="7241381882860007608" at="92,60,149,7" concept="2" />
       <node id="7241381882860007581" at="87,0,152,0" concept="12" trace="getFormalTypeParameters#(Ljava/lang/String;)Ljava/util/List;" />
@@ -1346,15 +1346,15 @@
       <node id="7241381882860010059" at="172,32,179,11" concept="6" />
       <node id="7241381882860009602" at="73,5,81,5" concept="5" />
       <node id="7241381882860010000" at="162,0,171,0" concept="7" trace="visitTypeVariable#(Ljava/lang/String;)V" />
-      <node id="7241381882860009554" at="39,0,49,0" concept="7" trace="visitSuperclass#()Lorg/jetbrains/asm4/signature/SignatureVisitor;" />
-      <node id="7241381882860009557" at="49,0,59,0" concept="7" trace="visitInterface#()Lorg/jetbrains/asm4/signature/SignatureVisitor;" />
+      <node id="7241381882860009554" at="39,0,49,0" concept="7" trace="visitSuperclass#()Lorg/jetbrains/org/objectweb/asm/signature/SignatureVisitor;" />
+      <node id="7241381882860009557" at="49,0,59,0" concept="7" trace="visitInterface#()Lorg/jetbrains/org/objectweb/asm/signature/SignatureVisitor;" />
       <node id="7241381882860010005" at="171,0,181,0" concept="7" trace="visitEnd#()V" />
       <node id="7241381882860009641" at="81,5,97,5" concept="6" />
       <node id="7241381882860009996" at="160,62,181,8" concept="9" />
       <node id="7241381882860009547" at="37,73,59,9" concept="2" />
-      <node id="7241381882860009399" at="159,0,183,0" concept="7" trace="visitTypeArgument#(C)Lorg/jetbrains/asm4/signature/SignatureVisitor;" />
+      <node id="7241381882860009399" at="159,0,183,0" concept="7" trace="visitTypeArgument#(C)Lorg/jetbrains/org/objectweb/asm/signature/SignatureVisitor;" />
       <node id="7241381882860009476" at="35,5,67,5" concept="6" />
-      <node id="7241381882860009454" at="28,0,99,0" concept="1" trace="ASMClass#(Lorg/jetbrains/asm4/ClassReader;)V" />
+      <node id="7241381882860009454" at="28,0,99,0" concept="1" trace="ASMClass#(Lorg/jetbrains/org/objectweb/asm/ClassReader;)V" />
       <scope id="7241381882860009987" at="154,41,154,41" />
       <scope id="5058383315259429774" at="30,9,31,102" />
       <scope id="7241381882860009494" at="61,37,62,83" />
