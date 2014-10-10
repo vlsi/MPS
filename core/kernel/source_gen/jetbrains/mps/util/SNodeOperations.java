@@ -13,6 +13,9 @@ import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SModelStereotype;
+import jetbrains.mps.smodel.adapter.structure.concept.SAbstractConceptAdapter;
+import jetbrains.mps.smodel.runtime.ConceptDescriptor;
+import jetbrains.mps.smodel.runtime.illegal.IllegalConceptDescriptor;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SConceptRepository;
 import org.jetbrains.mps.openapi.language.SLanguage;
@@ -40,9 +43,12 @@ public class SNodeOperations {
   /**
    * FIXME what on earth this method is supposed to tell?
    */
+
   public static boolean isUnknown(SNode node) {
-    return false;
+    ConceptDescriptor cd = ((SAbstractConceptAdapter) node.getConcept()).getConceptDescriptor();
+    return cd instanceof IllegalConceptDescriptor;
   }
+
   public static boolean isAncestor(SNode ancestor, SNode node) {
     if (ancestor == node) {
       return true;
