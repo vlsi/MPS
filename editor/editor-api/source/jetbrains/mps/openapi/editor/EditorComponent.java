@@ -60,6 +60,12 @@ public interface EditorComponent {
 
   void scrollToCell(@NotNull EditorCell cell);
 
+  /**
+   * Can be called update editor in accordance with actual state of the currently
+   * edited node.
+   * <p/>
+   * This method should be executed within MPS read action
+   */
   void rebuildEditorContent();
 
   boolean isDisposed();
