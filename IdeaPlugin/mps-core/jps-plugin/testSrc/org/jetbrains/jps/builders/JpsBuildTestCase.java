@@ -10,11 +10,11 @@ import com.intellij.testFramework.UsefulTestCase;
 import com.intellij.util.containers.hash.HashMap;
 import com.intellij.util.io.TestFileSystemBuilder;
 import org.jetbrains.annotations.Nullable;
-import org.jetbrains.jps.api.BuildType;
 import org.jetbrains.jps.api.CanceledStatus;
 import org.jetbrains.jps.builders.impl.BuildDataPathsImpl;
 import org.jetbrains.jps.builders.impl.BuildRootIndexImpl;
 import org.jetbrains.jps.builders.impl.BuildTargetIndexImpl;
+import org.jetbrains.jps.builders.impl.BuildTargetRegistryImpl;
 import org.jetbrains.jps.builders.logging.BuildLoggingManager;
 import org.jetbrains.jps.builders.storage.BuildDataPaths;
 import org.jetbrains.jps.cmdline.ClasspathBootstrap;
@@ -33,7 +33,11 @@ import org.jetbrains.jps.model.JpsDummyElement;
 import org.jetbrains.jps.model.JpsElementFactory;
 import org.jetbrains.jps.model.JpsModel;
 import org.jetbrains.jps.model.JpsProject;
-import org.jetbrains.jps.model.java.*;
+import org.jetbrains.jps.model.java.JavaSourceRootType;
+import org.jetbrains.jps.model.java.JpsJavaExtensionService;
+import org.jetbrains.jps.model.java.JpsJavaModuleExtension;
+import org.jetbrains.jps.model.java.JpsJavaModuleType;
+import org.jetbrains.jps.model.java.JpsJavaSdkType;
 import org.jetbrains.jps.model.library.JpsOrderRootType;
 import org.jetbrains.jps.model.library.JpsTypedLibrary;
 import org.jetbrains.jps.model.library.sdk.JpsSdk;
@@ -44,8 +48,6 @@ import org.jetbrains.jps.util.JpsPathUtil;
 
 import java.io.File;
 import java.io.IOException;
-import java.lang.reflect.InvocationTargetException;
-import java.lang.reflect.Method;
 import java.util.Collections;
 import java.util.Map;
 
@@ -164,11 +166,12 @@ public abstract class JpsBuildTestCase extends UsefulTestCase {
 
   protected ProjectDescriptor createProjectDescriptor(final BuildLoggingManager buildLoggingManager) {
     try {
-      BuildTargetIndexImpl targetIndex = new BuildTargetIndexImpl(myModel);
+      BuildTargetRegistryImpl targetRegistry = new BuildTargetRegistryImpl(myModel);
       ModuleExcludeIndex index = new ModuleExcludeIndexImpl(myModel);
       IgnoredFileIndexImpl ignoredFileIndex = new IgnoredFileIndexImpl(myModel);
       BuildDataPaths dataPaths = new BuildDataPathsImpl(myDataStorageRoot);
-      BuildRootIndexImpl buildRootIndex = new BuildRootIndexImpl(targetIndex, myModel, index, dataPaths, ignoredFileIndex);
+      BuildRootIndexImpl buildRootIndex = new BuildRootIndexImpl(targetRegistry, myModel, index, dataPaths, ignoredFileIndex);
+      BuildTargetIndexImpl targetIndex = new BuildTargetIndexImpl(targetRegistry, buildRootIndex);
       BuildTargetsState targetsState = new BuildTargetsState(dataPaths, myModel, buildRootIndex);
       ProjectTimestamps timestamps = new ProjectTimestamps(myDataStorageRoot, targetsState);
       BuildDataManager dataManager = new BuildDataManager(dataPaths, targetsState, true);

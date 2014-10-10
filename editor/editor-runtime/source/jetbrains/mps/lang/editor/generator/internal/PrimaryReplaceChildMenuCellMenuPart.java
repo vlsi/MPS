@@ -19,15 +19,13 @@ import jetbrains.mps.editor.runtime.impl.CellUtil;
 import jetbrains.mps.lang.editor.cellProviders.AggregationCellContext;
 import jetbrains.mps.nodeEditor.cellMenu.BasicCellContext;
 import jetbrains.mps.nodeEditor.cellMenu.CellContext;
-import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPart;
 import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.SubstituteAction;
+import jetbrains.mps.smodel.action.AbstractChildNodeSetter;
+import jetbrains.mps.smodel.action.ModelActions;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.smodel.action.AbstractChildNodeSetter;
-import jetbrains.mps.smodel.action.INodeSubstituteAction;
-import jetbrains.mps.smodel.action.ModelActions;
 import org.jetbrains.mps.openapi.model.SNodeUtil;
 
 import java.util.List;
@@ -36,7 +34,7 @@ import java.util.List;
  * Igor Alshannikov
  * Date: Dec 1, 2006
  */
-public class PrimaryReplaceChildMenuCellMenuPart implements SubstituteInfoPart, SubstituteInfoPartExt {
+public class PrimaryReplaceChildMenuCellMenuPart implements SubstituteInfoPartExt {
   @Override
   public List<SubstituteAction> createActions(CellContext cellContext, EditorContext editorContext) {
     SNode parentNode = (SNode) cellContext.get(BasicCellContext.EDITED_NODE);
@@ -44,25 +42,20 @@ public class PrimaryReplaceChildMenuCellMenuPart implements SubstituteInfoPart, 
     final String role = CellUtil.getLinkDeclarationRole(linkDeclaration);
     SNode currentChild = (SNode) cellContext.getOpt(AggregationCellContext.CURRENT_CHILD_NODE);
     return ModelActions.createChildNodeSubstituteActions(
-            parentNode,
-            currentChild,
-            CellUtil.getLinkDeclarationTarget(linkDeclaration),
-            new AbstractChildNodeSetter() {
-              @Override
-              public SNode doExecute(SNode parentNode, SNode oldChild, SNode newChild, @Nullable EditorContext editorContext) {
-                if (oldChild == null) {
-                  parentNode.addChild(role, newChild);
-                } else {
-                  SNodeUtil.replaceWithAnother(oldChild, newChild);
-                }
-                return newChild;
-              }
-            },
-            editorContext.getOperationContext());
-  }
-
-  @Override
-  public List<INodeSubstituteAction> createActions(CellContext cellContext, jetbrains.mps.nodeEditor.EditorContext editorContext) {
-    return (List) createActions(cellContext, (EditorContext) editorContext);
+        parentNode,
+        currentChild,
+        CellUtil.getLinkDeclarationTarget(linkDeclaration),
+        new AbstractChildNodeSetter() {
+          @Override
+          public SNode doExecute(SNode parentNode, SNode oldChild, SNode newChild, @Nullable EditorContext editorContext) {
+            if (oldChild == null) {
+              parentNode.addChild(role, newChild);
+            } else {
+              SNodeUtil.replaceWithAnother(oldChild, newChild);
+            }
+            return newChild;
+          }
+        },
+        editorContext.getOperationContext());
   }
 }

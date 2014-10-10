@@ -56,7 +56,7 @@ public abstract class EditorCellListHandler extends AbstractCellListHandler {
 
   @Override
   public EditorCell createNodeCell(jetbrains.mps.openapi.editor.EditorContext editorContext, SNode node) {
-    return editorContext.createNodeCell(node);
+    return editorContext.getEditorComponent().getUpdater().getCurrentUpdateSession().updateChildNodeCell(node);
   }
 
   @Override

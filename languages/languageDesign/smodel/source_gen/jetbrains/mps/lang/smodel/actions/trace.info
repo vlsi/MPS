@@ -531,7 +531,7 @@
     <file name="QueriesGenerated.java">
       <node id="1206996889215" at="345,219,346,93" concept="7" />
       <node id="1206996975737" at="349,42,350,394" concept="8" />
-      <node id="1206996889215" at="354,40,355,246" concept="2" />
+      <node id="1206996889215" at="354,40,355,228" concept="2" />
       <node id="1206996889215" at="358,5,359,18" concept="8" />
       <node id="1206996889215" at="349,0,352,0" concept="6" trace="compute#()Ljava/lang/Iterable;" />
       <node id="1206996889215" at="353,32,356,9" concept="4" />
@@ -541,7 +541,7 @@
       <node id="1206996889215" at="346,93,358,5" concept="0" />
       <node id="1206996889215" at="345,0,361,0" concept="10" trace="nodeSubstituteActionsBuilder_ActionsFactory_AbstractOperationParameter_1206996889215#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/action/NodeSubstituteActionsFactoryContext;)Ljava/util/List;" />
       <scope id="1206996889215" at="349,42,350,394" />
-      <scope id="1206996889215" at="354,40,355,246" />
+      <scope id="1206996889215" at="354,40,355,228" />
       <scope id="1206996889215" at="349,0,352,0" />
       <scope id="1206996889215" at="353,32,356,9" />
       <scope id="1206996889215" at="353,32,356,9">

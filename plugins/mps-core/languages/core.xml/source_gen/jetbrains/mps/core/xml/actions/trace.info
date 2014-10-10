@@ -652,8 +652,8 @@
   <root nodeRef="r:a097594c-50a7-4de7-9168-6b82c2b41d5c(jetbrains.mps.core.xml.actions)/8411468024378177417">
     <file name="QueriesGenerated.java">
       <node id="8411468024378177418" at="227,215,228,93" concept="6" />
-      <node id="8411468024378177418" at="228,93,229,324" concept="2" />
-      <node id="8411468024378177418" at="229,324,230,338" concept="2" />
+      <node id="8411468024378177418" at="228,93,229,306" concept="2" />
+      <node id="8411468024378177418" at="229,306,230,320" concept="2" />
       <node id="8411468024378177418" at="231,5,232,123" concept="6" />
       <node id="8411468024378177418" at="232,123,233,62" concept="6" />
       <node id="8411468024378177488" at="236,94,237,120" concept="7" />
@@ -689,8 +689,8 @@
       <node id="8411468024378177418" at="233,62,255,7" concept="4" />
       <node id="8411468024378177418" at="260,123,282,11" concept="2" />
       <node id="8411468024378177418" at="259,62,283,7" concept="4" />
-      <node id="8411468024378177418" at="230,338,256,5" concept="0" />
-      <node id="8411468024378177418" at="230,338,256,5" concept="0" />
+      <node id="8411468024378177418" at="230,320,256,5" concept="0" />
+      <node id="8411468024378177418" at="230,320,256,5" concept="0" />
       <node id="8411468024378177418" at="256,5,284,5" concept="0" />
       <node id="8411468024378177418" at="256,5,284,5" concept="0" />
       <node id="8411468024378177418" at="227,0,287,0" concept="10" trace="nodeSubstituteActionsBuilder_ActionsFactory_XmlPrologElement_8411468024378177418#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/action/NodeSubstituteActionsFactoryContext;)Ljava/util/List;" />
@@ -752,7 +752,7 @@
         <var name="childConcept" id="8411468024378177418" />
         <var name="outputConcept" id="8411468024378177418" />
       </scope>
-      <scope id="8411468024378177418" at="230,338,256,5" />
+      <scope id="8411468024378177418" at="230,320,256,5" />
       <scope id="8411468024378177418" at="257,5,283,7">
         <var name="childConcept" id="8411468024378177418" />
         <var name="outputConcept" id="8411468024378177418" />

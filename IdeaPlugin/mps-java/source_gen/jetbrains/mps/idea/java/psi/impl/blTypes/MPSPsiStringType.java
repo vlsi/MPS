@@ -18,7 +18,6 @@ public class MPSPsiStringType extends MPSPsiNode implements ComputesPsiType<PsiC
   public MPSPsiStringType(SNodeId id, String concept, String containingRole) {
     super(id, concept, containingRole);
   }
-
   @Override
   public PsiClassType getPsiType() {
     // we don't cache it to avoid possible subtle bugs, when JDK is changed or something 

@@ -55,7 +55,7 @@ public class PropertyDeclaration_Editor extends DefaultNodeEditor {
     {
       ModelAccessor modelAccessor = new TransactionalPropertyAccessor(node, "name", false, false, editorContext) {
         public void doCommit(final String oldValue, final String newValue) {
-          this.doCommitImpl(oldValue, newValue);
+          doCommitImpl(oldValue, newValue);
         }
         public void doCommitImpl(final String oldValue, final String newValue) {
           if (!(Sequence.fromIterable(ExtensionPoint.<_FunctionTypes._return_P4_E0<? extends Boolean, ? super EditorContext, ? super SNode, ? super String, ? super String>>generify(new ExtensionPoint("jetbrains.mps.lang.structure.NodeRenamer", _FunctionTypes._return_P4_E0.class)).getObjects()).any(new IWhereFilter<_FunctionTypes._return_P4_E0<? extends Boolean, ? super EditorContext, ? super SNode, ? super String, ? super String>>() {

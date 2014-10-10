@@ -5,15 +5,18 @@ package jetbrains.mps.lang.behavior.test.structure;
 import jetbrains.mps.smodel.runtime.BaseStructureAspectDescriptor;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder;
+import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
+import java.util.UUID;
 import java.util.Collection;
 import java.util.Arrays;
 import org.jetbrains.annotations.Nullable;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
-  /*package*/ final ConceptDescriptor myConceptA = new ConceptDescriptorBuilder("jetbrains.mps.lang.behavior.test.structure.A").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").create();
-  /*package*/ final ConceptDescriptor myConceptB = new ConceptDescriptorBuilder("jetbrains.mps.lang.behavior.test.structure.B").super_("jetbrains.mps.lang.behavior.test.structure.A").parents("jetbrains.mps.lang.behavior.test.structure.A").abstract_().create();
-  /*package*/ final ConceptDescriptor myConceptC = new ConceptDescriptorBuilder("jetbrains.mps.lang.behavior.test.structure.C").super_("jetbrains.mps.lang.behavior.test.structure.B").parents("jetbrains.mps.lang.behavior.test.structure.B", "jetbrains.mps.lang.behavior.test.structure.I").create();
-  /*package*/ final ConceptDescriptor myConceptI = new ConceptDescriptorBuilder("jetbrains.mps.lang.behavior.test.structure.I").interface_().create();
+
+  /*package*/ final ConceptDescriptor myConceptA = new ConceptDescriptorBuilder("jetbrains.mps.lang.behavior.test.structure.A", MetaIdFactory.conceptId(UUID.fromString("0a18fb83-1fb5-4541-97c9-a13312451954"), 4731970554577181482L)).super_("jetbrains.mps.lang.core.structure.BaseConcept").super_(MetaIdFactory.conceptId(UUID.fromString("0a18fb83-1fb5-4541-97c9-a13312451954"), 1133920641626L)).parents("jetbrains.mps.lang.core.structure.BaseConcept").parentIds(MetaIdFactory.conceptId(UUID.fromString("0a18fb83-1fb5-4541-97c9-a13312451954"), 1133920641626L)).create();
+  /*package*/ final ConceptDescriptor myConceptB = new ConceptDescriptorBuilder("jetbrains.mps.lang.behavior.test.structure.B", MetaIdFactory.conceptId(UUID.fromString("0a18fb83-1fb5-4541-97c9-a13312451954"), 4731970554577181534L)).super_("jetbrains.mps.lang.behavior.test.structure.A").super_(MetaIdFactory.conceptId(UUID.fromString("0a18fb83-1fb5-4541-97c9-a13312451954"), 4731970554577181482L)).parents("jetbrains.mps.lang.behavior.test.structure.A").parentIds(MetaIdFactory.conceptId(UUID.fromString("0a18fb83-1fb5-4541-97c9-a13312451954"), 4731970554577181482L)).abstract_().create();
+  /*package*/ final ConceptDescriptor myConceptC = new ConceptDescriptorBuilder("jetbrains.mps.lang.behavior.test.structure.C", MetaIdFactory.conceptId(UUID.fromString("0a18fb83-1fb5-4541-97c9-a13312451954"), 4731970554577184883L)).super_("jetbrains.mps.lang.behavior.test.structure.B").super_(MetaIdFactory.conceptId(UUID.fromString("0a18fb83-1fb5-4541-97c9-a13312451954"), 4731970554577181534L)).parents("jetbrains.mps.lang.behavior.test.structure.B", "jetbrains.mps.lang.behavior.test.structure.I").parentIds(MetaIdFactory.conceptId(UUID.fromString("0a18fb83-1fb5-4541-97c9-a13312451954"), 4731970554577181534L), MetaIdFactory.conceptId(UUID.fromString("0a18fb83-1fb5-4541-97c9-a13312451954"), 4731970554577184788L)).create();
+  /*package*/ final ConceptDescriptor myConceptI = new ConceptDescriptorBuilder("jetbrains.mps.lang.behavior.test.structure.I", MetaIdFactory.conceptId(UUID.fromString("0a18fb83-1fb5-4541-97c9-a13312451954"), 4731970554577184788L)).interface_().create();
 
   @Override
   public Collection<ConceptDescriptor> getDescriptors() {
@@ -23,7 +26,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   @Override
   @Nullable
   public ConceptDescriptor getDescriptor(String conceptFqName) {
-    switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0h, conceptFqName)) {
+    switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0i, conceptFqName)) {
       case 0:
         return myConceptA;
       case 1:
@@ -36,5 +39,5 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
         return null;
     }
   }
-  private static String[] stringSwitchCases_1htk8d_a0a0h = new String[]{"jetbrains.mps.lang.behavior.test.structure.A", "jetbrains.mps.lang.behavior.test.structure.B", "jetbrains.mps.lang.behavior.test.structure.C", "jetbrains.mps.lang.behavior.test.structure.I"};
+  private static String[] stringSwitchCases_1htk8d_a0a0i = new String[]{"jetbrains.mps.lang.behavior.test.structure.A", "jetbrains.mps.lang.behavior.test.structure.B", "jetbrains.mps.lang.behavior.test.structure.C", "jetbrains.mps.lang.behavior.test.structure.I"};
 }

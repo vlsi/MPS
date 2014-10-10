@@ -125,7 +125,7 @@ public class CodeSnippetParsingUtil {
     // $NON-NLS-1$ 
     CompilationResult compilationResult = new CompilationResult(sourceUnit, 0, 0, compilerOptions.maxProblemsPerUnit);
     CompilationUnitDeclaration unit = new CompilationUnitDeclaration(problemReporter, compilationResult, source.length);
-    Expression result = parser.parseExpression(source, offset, length, unit);
+    Expression result = parser.parseExpression(source, offset, length, unit, false);
     if (recordParsingInformation) {
       this.recordedParsingInformation = getRecordedParsingInformation(compilationResult, unit.comments);
     }

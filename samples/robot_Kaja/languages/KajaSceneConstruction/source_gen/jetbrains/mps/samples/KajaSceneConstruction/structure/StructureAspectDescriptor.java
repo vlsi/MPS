@@ -5,16 +5,19 @@ package jetbrains.mps.samples.KajaSceneConstruction.structure;
 import jetbrains.mps.smodel.runtime.BaseStructureAspectDescriptor;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder;
+import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
+import java.util.UUID;
 import java.util.Collection;
 import java.util.Arrays;
 import org.jetbrains.annotations.Nullable;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
-  /*package*/ final ConceptDescriptor myConceptAbstractBuilderCommand = new ConceptDescriptorBuilder("jetbrains.mps.samples.KajaSceneConstruction.structure.AbstractBuilderCommand").super_("jetbrains.mps.samples.Kaja.structure.AbstractCommand").parents("jetbrains.mps.samples.Kaja.structure.AbstractCommand").properties("row", "col").abstract_().create();
-  /*package*/ final ConceptDescriptor myConceptBuildWall = new ConceptDescriptorBuilder("jetbrains.mps.samples.KajaSceneConstruction.structure.BuildWall").super_("jetbrains.mps.samples.KajaSceneConstruction.structure.AbstractBuilderCommand").parents("jetbrains.mps.samples.KajaSceneConstruction.structure.AbstractBuilderCommand").alias("build wall", "").create();
-  /*package*/ final ConceptDescriptor myConceptDestroyWall = new ConceptDescriptorBuilder("jetbrains.mps.samples.KajaSceneConstruction.structure.DestroyWall").super_("jetbrains.mps.samples.KajaSceneConstruction.structure.AbstractBuilderCommand").parents("jetbrains.mps.samples.KajaSceneConstruction.structure.AbstractBuilderCommand").alias("destroy wall", "").create();
-  /*package*/ final ConceptDescriptor myConceptDropMark = new ConceptDescriptorBuilder("jetbrains.mps.samples.KajaSceneConstruction.structure.DropMark").super_("jetbrains.mps.samples.KajaSceneConstruction.structure.AbstractBuilderCommand").parents("jetbrains.mps.samples.KajaSceneConstruction.structure.AbstractBuilderCommand").alias("drop mark", "").create();
-  /*package*/ final ConceptDescriptor myConceptPickMark = new ConceptDescriptorBuilder("jetbrains.mps.samples.KajaSceneConstruction.structure.PickMark").super_("jetbrains.mps.samples.KajaSceneConstruction.structure.AbstractBuilderCommand").parents("jetbrains.mps.samples.KajaSceneConstruction.structure.AbstractBuilderCommand").alias("pick mark", "").create();
+
+  /*package*/ final ConceptDescriptor myConceptAbstractBuilderCommand = new ConceptDescriptorBuilder("jetbrains.mps.samples.KajaSceneConstruction.structure.AbstractBuilderCommand", MetaIdFactory.conceptId(UUID.fromString("b56912a3-674f-4530-b0cf-55261b526a1f"), 3210697320273608255L)).super_("jetbrains.mps.samples.Kaja.structure.AbstractCommand").super_(MetaIdFactory.conceptId(UUID.fromString("b56912a3-674f-4530-b0cf-55261b526a1f"), 3265739055509559114L)).parents("jetbrains.mps.samples.Kaja.structure.AbstractCommand").parentIds(MetaIdFactory.conceptId(UUID.fromString("b56912a3-674f-4530-b0cf-55261b526a1f"), 3265739055509559114L)).propertyDescriptors(new ConceptDescriptorBuilder.Prop(3210697320273608256L, "row"), new ConceptDescriptorBuilder.Prop(3210697320273608257L, "col")).properties("row", "col").abstract_().create();
+  /*package*/ final ConceptDescriptor myConceptBuildWall = new ConceptDescriptorBuilder("jetbrains.mps.samples.KajaSceneConstruction.structure.BuildWall", MetaIdFactory.conceptId(UUID.fromString("b56912a3-674f-4530-b0cf-55261b526a1f"), 3210697320273550864L)).super_("jetbrains.mps.samples.KajaSceneConstruction.structure.AbstractBuilderCommand").super_(MetaIdFactory.conceptId(UUID.fromString("b56912a3-674f-4530-b0cf-55261b526a1f"), 3210697320273608255L)).parents("jetbrains.mps.samples.KajaSceneConstruction.structure.AbstractBuilderCommand").parentIds(MetaIdFactory.conceptId(UUID.fromString("b56912a3-674f-4530-b0cf-55261b526a1f"), 3210697320273608255L)).alias("build wall", "").create();
+  /*package*/ final ConceptDescriptor myConceptDestroyWall = new ConceptDescriptorBuilder("jetbrains.mps.samples.KajaSceneConstruction.structure.DestroyWall", MetaIdFactory.conceptId(UUID.fromString("b56912a3-674f-4530-b0cf-55261b526a1f"), 3210697320273607253L)).super_("jetbrains.mps.samples.KajaSceneConstruction.structure.AbstractBuilderCommand").super_(MetaIdFactory.conceptId(UUID.fromString("b56912a3-674f-4530-b0cf-55261b526a1f"), 3210697320273608255L)).parents("jetbrains.mps.samples.KajaSceneConstruction.structure.AbstractBuilderCommand").parentIds(MetaIdFactory.conceptId(UUID.fromString("b56912a3-674f-4530-b0cf-55261b526a1f"), 3210697320273608255L)).alias("destroy wall", "").create();
+  /*package*/ final ConceptDescriptor myConceptDropMark = new ConceptDescriptorBuilder("jetbrains.mps.samples.KajaSceneConstruction.structure.DropMark", MetaIdFactory.conceptId(UUID.fromString("b56912a3-674f-4530-b0cf-55261b526a1f"), 3210697320273608254L)).super_("jetbrains.mps.samples.KajaSceneConstruction.structure.AbstractBuilderCommand").super_(MetaIdFactory.conceptId(UUID.fromString("b56912a3-674f-4530-b0cf-55261b526a1f"), 3210697320273608255L)).parents("jetbrains.mps.samples.KajaSceneConstruction.structure.AbstractBuilderCommand").parentIds(MetaIdFactory.conceptId(UUID.fromString("b56912a3-674f-4530-b0cf-55261b526a1f"), 3210697320273608255L)).alias("drop mark", "").create();
+  /*package*/ final ConceptDescriptor myConceptPickMark = new ConceptDescriptorBuilder("jetbrains.mps.samples.KajaSceneConstruction.structure.PickMark", MetaIdFactory.conceptId(UUID.fromString("b56912a3-674f-4530-b0cf-55261b526a1f"), 3210697320273614431L)).super_("jetbrains.mps.samples.KajaSceneConstruction.structure.AbstractBuilderCommand").super_(MetaIdFactory.conceptId(UUID.fromString("b56912a3-674f-4530-b0cf-55261b526a1f"), 3210697320273608255L)).parents("jetbrains.mps.samples.KajaSceneConstruction.structure.AbstractBuilderCommand").parentIds(MetaIdFactory.conceptId(UUID.fromString("b56912a3-674f-4530-b0cf-55261b526a1f"), 3210697320273608255L)).alias("pick mark", "").create();
 
   @Override
   public Collection<ConceptDescriptor> getDescriptors() {
@@ -24,7 +27,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   @Override
   @Nullable
   public ConceptDescriptor getDescriptor(String conceptFqName) {
-    switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0i, conceptFqName)) {
+    switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0j, conceptFqName)) {
       case 0:
         return myConceptAbstractBuilderCommand;
       case 1:
@@ -39,5 +42,5 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
         return null;
     }
   }
-  private static String[] stringSwitchCases_1htk8d_a0a0i = new String[]{"jetbrains.mps.samples.KajaSceneConstruction.structure.AbstractBuilderCommand", "jetbrains.mps.samples.KajaSceneConstruction.structure.BuildWall", "jetbrains.mps.samples.KajaSceneConstruction.structure.DestroyWall", "jetbrains.mps.samples.KajaSceneConstruction.structure.DropMark", "jetbrains.mps.samples.KajaSceneConstruction.structure.PickMark"};
+  private static String[] stringSwitchCases_1htk8d_a0a0j = new String[]{"jetbrains.mps.samples.KajaSceneConstruction.structure.AbstractBuilderCommand", "jetbrains.mps.samples.KajaSceneConstruction.structure.BuildWall", "jetbrains.mps.samples.KajaSceneConstruction.structure.DestroyWall", "jetbrains.mps.samples.KajaSceneConstruction.structure.DropMark", "jetbrains.mps.samples.KajaSceneConstruction.structure.PickMark"};
 }

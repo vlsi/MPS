@@ -313,7 +313,7 @@ public class WorkbenchMakeService extends AbstractMakeService implements IMakeSe
     }
     @Override
     public void runJobWithMonitor(_FunctionTypes._void_P1_E0<? super IJobMonitor> code) {
-      final boolean oldFlag = ApplicationImpl.setExceptionalThreadWithReadAccessFlag(true);
+      ApplicationImpl.setExceptionalThreadWithReadAccessFlag(true);
       try {
         code.invoke(jobMon);
       } catch (RuntimeException e) {
@@ -321,7 +321,7 @@ public class WorkbenchMakeService extends AbstractMakeService implements IMakeSe
         jobMon.reportFeedback(new IFeedback.ERROR("Error running job", e));
         throw e;
       } finally {
-        ApplicationImpl.setExceptionalThreadWithReadAccessFlag(oldFlag);
+        ApplicationImpl.setExceptionalThreadWithReadAccessFlag(false);
       }
     }
     @Override

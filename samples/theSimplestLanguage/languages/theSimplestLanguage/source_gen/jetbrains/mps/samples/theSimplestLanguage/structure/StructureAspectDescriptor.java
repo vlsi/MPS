@@ -5,12 +5,15 @@ package jetbrains.mps.samples.theSimplestLanguage.structure;
 import jetbrains.mps.smodel.runtime.BaseStructureAspectDescriptor;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder;
+import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
+import java.util.UUID;
 import java.util.Collection;
 import java.util.Arrays;
 import org.jetbrains.annotations.Nullable;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
-  /*package*/ final ConceptDescriptor myConceptTheSimplestConcept = new ConceptDescriptorBuilder("jetbrains.mps.samples.theSimplestLanguage.structure.TheSimplestConcept").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept", "jetbrains.mps.execution.util.structure.IMainClass").properties("text").create();
+
+  /*package*/ final ConceptDescriptor myConceptTheSimplestConcept = new ConceptDescriptorBuilder("jetbrains.mps.samples.theSimplestLanguage.structure.TheSimplestConcept", MetaIdFactory.conceptId(UUID.fromString("f8fecd49-3abe-4733-9741-0c637123d219"), 1222954937628L)).super_("jetbrains.mps.lang.core.structure.BaseConcept").super_(MetaIdFactory.conceptId(UUID.fromString("f8fecd49-3abe-4733-9741-0c637123d219"), 1133920641626L)).parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept", "jetbrains.mps.execution.util.structure.IMainClass").parentIds(MetaIdFactory.conceptId(UUID.fromString("f8fecd49-3abe-4733-9741-0c637123d219"), 1133920641626L), MetaIdFactory.conceptId(UUID.fromString("f8fecd49-3abe-4733-9741-0c637123d219"), 1169194658468L), MetaIdFactory.conceptId(UUID.fromString("f8fecd49-3abe-4733-9741-0c637123d219"), 4666195181811081429L)).propertyDescriptors(new ConceptDescriptorBuilder.Prop(1222954945083L, "text")).properties("text").create();
 
   @Override
   public Collection<ConceptDescriptor> getDescriptors() {
@@ -20,12 +23,12 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   @Override
   @Nullable
   public ConceptDescriptor getDescriptor(String conceptFqName) {
-    switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0e, conceptFqName)) {
+    switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0f, conceptFqName)) {
       case 0:
         return myConceptTheSimplestConcept;
       default:
         return null;
     }
   }
-  private static String[] stringSwitchCases_1htk8d_a0a0e = new String[]{"jetbrains.mps.samples.theSimplestLanguage.structure.TheSimplestConcept"};
+  private static String[] stringSwitchCases_1htk8d_a0a0f = new String[]{"jetbrains.mps.samples.theSimplestLanguage.structure.TheSimplestConcept"};
 }

@@ -11,12 +11,15 @@
     <classNode dependClassName="jetbrains.mps.generator.impl.DefaultTemplateContext" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.Generated" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.GenerationException" />
+    <classNode dependClassName="jetbrains.mps.generator.runtime.ReductionRuleBase" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.TemplateContext" />
+    <classNode dependClassName="jetbrains.mps.generator.runtime.TemplateCreateRootRule" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.TemplateDropRootRule" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.TemplateExecutionEnvironment" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.TemplateMappingScript" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.TemplateModel" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.TemplateReductionRule" />
+    <classNode dependClassName="jetbrains.mps.generator.runtime.TemplateRootMappingRule" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.TemplateUtil" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.TemplateWeavingRule" />
     <classNode dependClassName="jetbrains.mps.generator.template.BaseMappingRuleContext" />
@@ -37,10 +40,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeAccessUtil" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
-    <classNode extendsClassName="jetbrains.mps.generator.runtime.ReductionRuleBase" />
-    <classNode extendsClassName="jetbrains.mps.generator.runtime.TemplateCreateRootRule" />
     <classNode extendsClassName="jetbrains.mps.generator.runtime.TemplateMappingConfiguration" />
-    <classNode extendsClassName="jetbrains.mps.generator.runtime.TemplateRootMappingRule" />
   </dependency>
   <dependency className="jetbrains.mps.lang.descriptor.generator.template.main.QueriesGenerated" file="QueriesGenerated.java">
     <classNode dependClassName="java.lang.Iterable" />
@@ -98,9 +98,11 @@
     <classNode dependClassName="java.util.Collections" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.Generated" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.GenerationException" />
+    <classNode dependClassName="jetbrains.mps.generator.runtime.ReductionRuleBase" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.TemplateContext" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.TemplateExecutionEnvironment" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.TemplateReductionRule" />
+    <classNode dependClassName="jetbrains.mps.generator.runtime.TemplateRuleWithCondition" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.TemplateUtil" />
     <classNode dependClassName="jetbrains.mps.generator.template.PropertyMacroContext" />
     <classNode dependClassName="jetbrains.mps.generator.template.ReductionRuleQueryContext" />
@@ -112,8 +114,6 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeAccessUtil" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
-    <classNode extendsClassName="jetbrains.mps.generator.runtime.ReductionRuleBase" />
-    <classNode extendsClassName="jetbrains.mps.generator.runtime.TemplateRuleWithCondition" />
     <classNode extendsClassName="jetbrains.mps.generator.runtime.TemplateSwitchMapping" />
   </dependency>
   <dependency className="jetbrains.mps.lang.descriptor.generator.template.main.TemplateGenerator" file="TemplateGenerator.java">

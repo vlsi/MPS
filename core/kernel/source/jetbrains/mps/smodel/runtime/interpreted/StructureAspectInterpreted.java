@@ -26,11 +26,19 @@ import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.smodel.event.SModelCommandListener;
 import jetbrains.mps.smodel.event.SModelEvent;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
+import jetbrains.mps.smodel.runtime.LinkDescriptor;
+import jetbrains.mps.smodel.runtime.PropertyDescriptor;
+import jetbrains.mps.smodel.runtime.ReferenceDescriptor;
 import jetbrains.mps.smodel.runtime.StaticScope;
 import jetbrains.mps.smodel.runtime.StructureAspectDescriptor;
 import jetbrains.mps.smodel.runtime.base.BaseConceptDescriptor;
 import jetbrains.mps.smodel.runtime.illegal.IllegalConceptDescriptor;
 import jetbrains.mps.util.NameUtil;
+import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.language.SConceptId;
+import org.jetbrains.mps.openapi.language.SContainmentLinkId;
+import org.jetbrains.mps.openapi.language.SPropertyId;
+import org.jetbrains.mps.openapi.language.SReferenceLinkId;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.module.SRepositoryContentAdapter;
 
@@ -160,6 +168,8 @@ public class StructureAspectInterpreted implements StructureAspectDescriptor, Co
           } else {
             isLegal = true;
           }
+
+
 
           // isInterface
           isInterface = SNodeUtil.isInstanceOfInterfaceConceptDeclaration(declaration);
@@ -365,5 +375,52 @@ public class StructureAspectInterpreted implements StructureAspectDescriptor, Co
     public String getHelpUrl() {
       return helpURL;
     }
+
+    @Override
+    public SConceptId getId() {
+      return null;
+    }
+
+    @Nullable
+    @Override
+    public SConceptId getSuperConceptId() {
+      return null;
+    }
+
+    @Override
+    public List<SConceptId> getParentsIds() {
+      return null;
+    }
+
+    @Override
+    public Set<SPropertyId> getPropertyIds() {
+      return null;
+    }
+
+    @Override
+    public PropertyDescriptor getPropertyDescriptor(SPropertyId id) {
+      return null;
+    }
+
+    @Override
+    public ReferenceDescriptor getRefDescriptor(SReferenceLinkId id) {
+      return null;
+    }
+
+    @Override
+    public Set<SContainmentLinkId> getLinkIds() {
+      return null;
+    }
+
+    @Override
+    public Set<SReferenceLinkId> getReferenceIds() {
+      return null;
+    }
+
+    @Override
+    public LinkDescriptor getLinkDescriptor(SContainmentLinkId id) {
+      return null;
+    }
+
   }
 }

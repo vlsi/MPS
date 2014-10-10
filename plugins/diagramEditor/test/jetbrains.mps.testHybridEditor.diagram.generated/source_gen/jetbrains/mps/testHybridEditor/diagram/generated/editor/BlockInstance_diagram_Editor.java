@@ -78,7 +78,7 @@ public class BlockInstance_diagram_Editor extends DefaultNodeEditor {
         }
       };
       addEditorCell(myPropertyCell_79747v_a0a);
-      myPropertyCell_79747v_a0a.getEditor().addCellDependentOnNodeProperty(myPropertyCell_79747v_a0a, new Pair<SNodeReference, String>(new SNodePointer(node), "name"));
+      myPropertyCell_79747v_a0a.getEditorComponent().getUpdater().getCurrentUpdateSession().registerCleanDependency(myPropertyCell_79747v_a0a, new Pair<SNodeReference, String>(new SNodePointer(node), "name"));
       myProperty_79747v_a1a = new ReadableModelProperty<String>() {
         protected String getModelPropertyValue() {
           return SPropertyOperations.getString(SLinkOperations.getTarget(getSNode(), "metaBlock", false), "name");
@@ -94,7 +94,7 @@ public class BlockInstance_diagram_Editor extends DefaultNodeEditor {
         }
       };
       addEditorCell(myPropertyCell_79747v_a2a);
-      myPropertyCell_79747v_a2a.getEditor().addCellDependentOnNodeProperty(myPropertyCell_79747v_a2a, new Pair<SNodeReference, String>(new SNodePointer(node), "x"));
+      myPropertyCell_79747v_a2a.getEditorComponent().getUpdater().getCurrentUpdateSession().registerCleanDependency(myPropertyCell_79747v_a2a, new Pair<SNodeReference, String>(new SNodePointer(node), "x"));
       myPropertyCell_79747v_a3a = new PropertyMapperCell<Integer>(editorContext, node) {
         protected Integer getModelPropertyValueImpl() {
           return SPropertyOperations.getInteger(node, "y");
@@ -104,7 +104,7 @@ public class BlockInstance_diagram_Editor extends DefaultNodeEditor {
         }
       };
       addEditorCell(myPropertyCell_79747v_a3a);
-      myPropertyCell_79747v_a3a.getEditor().addCellDependentOnNodeProperty(myPropertyCell_79747v_a3a, new Pair<SNodeReference, String>(new SNodePointer(node), "y"));
+      myPropertyCell_79747v_a3a.getEditorComponent().getUpdater().getCurrentUpdateSession().registerCleanDependency(myPropertyCell_79747v_a3a, new Pair<SNodeReference, String>(new SNodePointer(node), "y"));
       myPropertyCell_79747v_a4a = new PropertyMapperCell<Integer>(editorContext, node) {
         protected Integer getModelPropertyValueImpl() {
           return SPropertyOperations.getInteger(node, "width");
@@ -114,7 +114,7 @@ public class BlockInstance_diagram_Editor extends DefaultNodeEditor {
         }
       };
       addEditorCell(myPropertyCell_79747v_a4a);
-      myPropertyCell_79747v_a4a.getEditor().addCellDependentOnNodeProperty(myPropertyCell_79747v_a4a, new Pair<SNodeReference, String>(new SNodePointer(node), "width"));
+      myPropertyCell_79747v_a4a.getEditorComponent().getUpdater().getCurrentUpdateSession().registerCleanDependency(myPropertyCell_79747v_a4a, new Pair<SNodeReference, String>(new SNodePointer(node), "width"));
       myPropertyCell_79747v_a5a = new PropertyMapperCell<Integer>(editorContext, node) {
         protected Integer getModelPropertyValueImpl() {
           return SPropertyOperations.getInteger(node, "height");
@@ -124,7 +124,7 @@ public class BlockInstance_diagram_Editor extends DefaultNodeEditor {
         }
       };
       addEditorCell(myPropertyCell_79747v_a5a);
-      myPropertyCell_79747v_a5a.getEditor().addCellDependentOnNodeProperty(myPropertyCell_79747v_a5a, new Pair<SNodeReference, String>(new SNodePointer(node), "height"));
+      myPropertyCell_79747v_a5a.getEditorComponent().getUpdater().getCurrentUpdateSession().registerCleanDependency(myPropertyCell_79747v_a5a, new Pair<SNodeReference, String>(new SNodePointer(node), "height"));
       synchronize();
     }
     public void synchronize() {

@@ -46,6 +46,7 @@ public class InspectorEditorComponent extends EditorComponent {
     rebuildEditorContent();
   }
 
+  @NotNull
   @Override
   protected EditorContext createEditorContext(@Nullable SModel model, @NotNull SRepository repository) {
     return new InspectorEditorContext(this, model, repository);
@@ -69,7 +70,7 @@ public class InspectorEditorComponent extends EditorComponent {
       return new EditorCell_Constant(getEditorContext(), null, "<no inspect info>");
     }
     pushCellContext();
-    EditorCell inspectedCell = getEditorContext().createInspectedCell(getEditedNode(), events);
+    EditorCell inspectedCell = (EditorCell) getUpdater().updateRootCell(getEditedNode(), events);
     popCellContext();
     return inspectedCell;
   }
@@ -82,7 +83,8 @@ public class InspectorEditorComponent extends EditorComponent {
   }
 
   @Override
-  protected SNode getNodeForTypechecking(SNode editedNode) {
+  public SNode getNodeForTypechecking() {
+    SNode editedNode = getEditedNode();
     if (editedNode == null) return null;
     // assuming the parameter is always a descendant of the current containing root, but may have been detached from the model
     return editedNode.getModel() != null ? editedNode.getContainingRoot() : myContainingRoot;

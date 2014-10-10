@@ -124,7 +124,7 @@ public class NodeEditorComponent extends EditorComponent {
       return new EditorCell_Constant(editorContext, getEditedNode(), getEditedNode() == null ? "<no edited node>" : "<edited node is not inside a model>");
     }
     pushCellContext();
-    EditorCell rootCell = getEditorContext().createRootCell(getEditedNode(), events);
+    EditorCell rootCell = (EditorCell) getUpdater().updateRootCell(getEditedNode(), events);
     popCellContext();
     return rootCell;
   }

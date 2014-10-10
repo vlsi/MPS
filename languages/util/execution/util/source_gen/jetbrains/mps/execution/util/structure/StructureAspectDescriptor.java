@@ -5,12 +5,15 @@ package jetbrains.mps.execution.util.structure;
 import jetbrains.mps.smodel.runtime.BaseStructureAspectDescriptor;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder;
+import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
+import java.util.UUID;
 import java.util.Collection;
 import java.util.Arrays;
 import org.jetbrains.annotations.Nullable;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
-  /*package*/ final ConceptDescriptor myConceptIMainClass = new ConceptDescriptorBuilder("jetbrains.mps.execution.util.structure.IMainClass").interface_().create();
+
+  /*package*/ final ConceptDescriptor myConceptIMainClass = new ConceptDescriptorBuilder("jetbrains.mps.execution.util.structure.IMainClass", MetaIdFactory.conceptId(UUID.fromString("4caf0310-491e-41f5-8a9b-2006b3a94898"), 4666195181811081429L)).interface_().create();
 
   @Override
   public Collection<ConceptDescriptor> getDescriptors() {
@@ -20,12 +23,12 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   @Override
   @Nullable
   public ConceptDescriptor getDescriptor(String conceptFqName) {
-    switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0e, conceptFqName)) {
+    switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0f, conceptFqName)) {
       case 0:
         return myConceptIMainClass;
       default:
         return null;
     }
   }
-  private static String[] stringSwitchCases_1htk8d_a0a0e = new String[]{"jetbrains.mps.execution.util.structure.IMainClass"};
+  private static String[] stringSwitchCases_1htk8d_a0a0f = new String[]{"jetbrains.mps.execution.util.structure.IMainClass"};
 }

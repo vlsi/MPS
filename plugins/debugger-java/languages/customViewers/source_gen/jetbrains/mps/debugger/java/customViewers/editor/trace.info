@@ -821,7 +821,7 @@
       <node id="5117350825036235733" at="123,84,124,22" concept="6" />
       <node id="5117350825036256296" at="126,100,127,32" concept="5" />
       <node id="5117350825036256299" at="129,30,130,63" concept="6" />
-      <node id="5117350825036256296" at="132,16,133,47" concept="2" />
+      <node id="5117350825036256296" at="132,17,133,47" concept="2" />
       <node id="5117350825036256296" at="133,47,134,29" concept="2" />
       <node id="5117350825036256296" at="134,29,135,22" concept="6" />
       <node id="5117350825036256303" at="137,91,138,82" concept="5" />
@@ -854,7 +854,7 @@
       <node id="5117350825036256296" at="129,0,132,0" concept="4" trace="invoke#()Ljava/lang/String;" />
       <node id="5117350825036256307" at="168,0,171,0" concept="7" trace="_QueryFunction_JComponent_rpujt6_a2b0#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Ljavax/swing/JComponent;" />
       <node id="5117350825036235733" at="100,33,105,5" concept="3" />
-      <node id="5117350825036256296" at="127,32,132,16" concept="2" />
+      <node id="5117350825036256296" at="127,32,132,17" concept="2" />
       <node id="5117350825036235733" at="163,0,168,0" concept="4" trace="createJComponent_rpujt6_c1a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
       <node id="5117350825036235746" at="54,0,60,0" concept="4" trace="createConstant_rpujt6_a0a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
       <node id="5117350825036235748" at="69,59,75,22" concept="3" />
@@ -1006,7 +1006,7 @@
         <var name="editorContext" id="5117350825036256303" />
         <var name="node" id="5117350825036256303" />
       </scope>
-      <unit id="5117350825036256296" at="128,75,132,5" name="jetbrains.mps.debugger.java.customViewers.editor.CustomWatchable_Editor$1" />
+      <unit id="5117350825036256296" at="128,125,132,5" name="jetbrains.mps.debugger.java.customViewers.editor.CustomWatchable_Editor$1" />
       <unit id="5117350825036235733" at="32,0,172,0" name="jetbrains.mps.debugger.java.customViewers.editor.CustomWatchable_Editor" />
     </file>
   </root>

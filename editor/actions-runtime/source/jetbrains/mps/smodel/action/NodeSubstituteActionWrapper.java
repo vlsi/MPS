@@ -21,13 +21,11 @@ import jetbrains.mps.openapi.editor.cells.SubstituteAction;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNode;
 
-import javax.swing.Icon;
-
 /**
  * Igor Alshannikov
  * Jan 30, 2006
  */
-public class NodeSubstituteActionWrapper implements INodeSubstituteAction {
+public class NodeSubstituteActionWrapper implements SubstituteAction {
   private SubstituteAction mySubstituteAction;
 
   public NodeSubstituteActionWrapper(SubstituteAction substituteAction) {
@@ -57,11 +55,6 @@ public class NodeSubstituteActionWrapper implements INodeSubstituteAction {
   @Override
   public boolean isReferentPresentation() {
     return mySubstituteAction.isReferentPresentation();
-  }
-
-  @Override
-  public Icon getIconFor(String pattern) {
-    return mySubstituteAction instanceof INodeSubstituteAction ? ((INodeSubstituteAction) mySubstituteAction).getIconFor(pattern) : null;
   }
 
   @Override

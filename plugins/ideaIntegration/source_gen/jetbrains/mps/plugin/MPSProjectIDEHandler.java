@@ -56,7 +56,7 @@ public class MPSProjectIDEHandler extends UnicastRemoteObject implements IMPSIDE
       @Override
       public void run() {
         try {
-          IProjectHandler handler = MPSPlugin.getInstance().getProjectHandler(myProject);
+          IProjectHandler handler = MPSPlugin.getInstance().getProjectHandler(myProject.getBasePath());
           if (handler == null) {
             return;
           }
@@ -75,7 +75,7 @@ public class MPSProjectIDEHandler extends UnicastRemoteObject implements IMPSIDE
     new Thread() {
       @Override
       public void run() {
-        IProjectHandler handler = MPSPlugin.getInstance().getProjectHandler(myProject);
+        IProjectHandler handler = MPSPlugin.getInstance().getProjectHandler(myProject.getBasePath());
         if (handler != null) {
           try {
             handler.removeIdeHandler(MPSProjectIDEHandler.this);

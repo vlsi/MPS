@@ -57,7 +57,7 @@ public class NodeWithSize_Editor extends DefaultNodeEditor {
         }
       };
       addEditorCell(myPropertyCell_3q5o1_a0a);
-      myPropertyCell_3q5o1_a0a.getEditor().addCellDependentOnNodeProperty(myPropertyCell_3q5o1_a0a, new Pair<SNodeReference, String>(new SNodePointer(node), "x"));
+      myPropertyCell_3q5o1_a0a.getEditorComponent().getUpdater().getCurrentUpdateSession().registerCleanDependency(myPropertyCell_3q5o1_a0a, new Pair<SNodeReference, String>(new SNodePointer(node), "x"));
       myPropertyCell_3q5o1_a1a = new PropertyMapperCell<Integer>(editorContext, node) {
         protected Integer getModelPropertyValueImpl() {
           return SPropertyOperations.getInteger(node, "y");
@@ -67,7 +67,7 @@ public class NodeWithSize_Editor extends DefaultNodeEditor {
         }
       };
       addEditorCell(myPropertyCell_3q5o1_a1a);
-      myPropertyCell_3q5o1_a1a.getEditor().addCellDependentOnNodeProperty(myPropertyCell_3q5o1_a1a, new Pair<SNodeReference, String>(new SNodePointer(node), "y"));
+      myPropertyCell_3q5o1_a1a.getEditorComponent().getUpdater().getCurrentUpdateSession().registerCleanDependency(myPropertyCell_3q5o1_a1a, new Pair<SNodeReference, String>(new SNodePointer(node), "y"));
       myPropertyCell_3q5o1_a2a = new PropertyMapperCell<Integer>(editorContext, node) {
         protected Integer getModelPropertyValueImpl() {
           return SPropertyOperations.getInteger(node, "width");
@@ -77,7 +77,7 @@ public class NodeWithSize_Editor extends DefaultNodeEditor {
         }
       };
       addEditorCell(myPropertyCell_3q5o1_a2a);
-      myPropertyCell_3q5o1_a2a.getEditor().addCellDependentOnNodeProperty(myPropertyCell_3q5o1_a2a, new Pair<SNodeReference, String>(new SNodePointer(node), "width"));
+      myPropertyCell_3q5o1_a2a.getEditorComponent().getUpdater().getCurrentUpdateSession().registerCleanDependency(myPropertyCell_3q5o1_a2a, new Pair<SNodeReference, String>(new SNodePointer(node), "width"));
       myPropertyCell_3q5o1_a3a = new PropertyMapperCell<Integer>(editorContext, node) {
         protected Integer getModelPropertyValueImpl() {
           return SPropertyOperations.getInteger(node, "height");
@@ -87,7 +87,7 @@ public class NodeWithSize_Editor extends DefaultNodeEditor {
         }
       };
       addEditorCell(myPropertyCell_3q5o1_a3a);
-      myPropertyCell_3q5o1_a3a.getEditor().addCellDependentOnNodeProperty(myPropertyCell_3q5o1_a3a, new Pair<SNodeReference, String>(new SNodePointer(node), "height"));
+      myPropertyCell_3q5o1_a3a.getEditorComponent().getUpdater().getCurrentUpdateSession().registerCleanDependency(myPropertyCell_3q5o1_a3a, new Pair<SNodeReference, String>(new SNodePointer(node), "height"));
       synchronize();
     }
     public void synchronize() {

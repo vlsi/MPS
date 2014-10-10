@@ -5,14 +5,17 @@ package jetbrains.mps.baseLanguage.logging.structure;
 import jetbrains.mps.smodel.runtime.BaseStructureAspectDescriptor;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder;
+import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
+import java.util.UUID;
 import jetbrains.mps.smodel.runtime.StaticScope;
 import java.util.Collection;
 import java.util.Arrays;
 import org.jetbrains.annotations.Nullable;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
-  /*package*/ final ConceptDescriptor myConceptLogStatement = new ConceptDescriptorBuilder("jetbrains.mps.baseLanguage.logging.structure.LogStatement").super_("jetbrains.mps.baseLanguage.structure.Statement").parents("jetbrains.mps.baseLanguage.structure.Statement", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault").properties("hasException", "severity").children(new String[]{"logExpression", "exception"}, new boolean[]{false, false}).staticScope(StaticScope.NONE).create();
-  /*package*/ final ConceptDescriptor myConceptPrintStatement = new ConceptDescriptorBuilder("jetbrains.mps.baseLanguage.logging.structure.PrintStatement").super_("jetbrains.mps.baseLanguage.structure.Statement").parents("jetbrains.mps.baseLanguage.structure.Statement").children(new String[]{"textExpression"}, new boolean[]{true}).alias("print", "").staticScope(StaticScope.NONE).create();
+
+  /*package*/ final ConceptDescriptor myConceptLogStatement = new ConceptDescriptorBuilder("jetbrains.mps.baseLanguage.logging.structure.LogStatement", MetaIdFactory.conceptId(UUID.fromString("760a0a8c-eabb-4521-8bfd-65db761a9ba3"), 1167227138527L)).super_("jetbrains.mps.baseLanguage.structure.Statement").super_(MetaIdFactory.conceptId(UUID.fromString("760a0a8c-eabb-4521-8bfd-65db761a9ba3"), 1068580123157L)).parents("jetbrains.mps.baseLanguage.structure.Statement", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault").parentIds(MetaIdFactory.conceptId(UUID.fromString("760a0a8c-eabb-4521-8bfd-65db761a9ba3"), 1068580123157L), MetaIdFactory.conceptId(UUID.fromString("760a0a8c-eabb-4521-8bfd-65db761a9ba3"), 1835621062190663819L)).propertyDescriptors(new ConceptDescriptorBuilder.Prop(1167228628751L, "hasException"), new ConceptDescriptorBuilder.Prop(1167245565795L, "severity")).properties("hasException", "severity").childDescriptors(new ConceptDescriptorBuilder.Link(1167227463056L, "logExpression", MetaIdFactory.conceptId(UUID.fromString("760a0a8c-eabb-4521-8bfd-65db761a9ba3"), 1068431790191L), false, false, false), new ConceptDescriptorBuilder.Link(1167227561449L, "exception", MetaIdFactory.conceptId(UUID.fromString("760a0a8c-eabb-4521-8bfd-65db761a9ba3"), 1068431790191L), true, false, false)).children(new String[]{"logExpression", "exception"}, new boolean[]{false, false}).staticScope(StaticScope.NONE).create();
+  /*package*/ final ConceptDescriptor myConceptPrintStatement = new ConceptDescriptorBuilder("jetbrains.mps.baseLanguage.logging.structure.PrintStatement", MetaIdFactory.conceptId(UUID.fromString("760a0a8c-eabb-4521-8bfd-65db761a9ba3"), 1168401810208L)).super_("jetbrains.mps.baseLanguage.structure.Statement").super_(MetaIdFactory.conceptId(UUID.fromString("760a0a8c-eabb-4521-8bfd-65db761a9ba3"), 1068580123157L)).parents("jetbrains.mps.baseLanguage.structure.Statement").parentIds(MetaIdFactory.conceptId(UUID.fromString("760a0a8c-eabb-4521-8bfd-65db761a9ba3"), 1068580123157L)).childDescriptors(new ConceptDescriptorBuilder.Link(1168401864803L, "textExpression", MetaIdFactory.conceptId(UUID.fromString("760a0a8c-eabb-4521-8bfd-65db761a9ba3"), 1068431790191L), true, true, false)).children(new String[]{"textExpression"}, new boolean[]{true}).alias("print", "").staticScope(StaticScope.NONE).create();
 
   @Override
   public Collection<ConceptDescriptor> getDescriptors() {
@@ -22,7 +25,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   @Override
   @Nullable
   public ConceptDescriptor getDescriptor(String conceptFqName) {
-    switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0f, conceptFqName)) {
+    switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0g, conceptFqName)) {
       case 0:
         return myConceptLogStatement;
       case 1:
@@ -31,5 +34,5 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
         return null;
     }
   }
-  private static String[] stringSwitchCases_1htk8d_a0a0f = new String[]{"jetbrains.mps.baseLanguage.logging.structure.LogStatement", "jetbrains.mps.baseLanguage.logging.structure.PrintStatement"};
+  private static String[] stringSwitchCases_1htk8d_a0a0g = new String[]{"jetbrains.mps.baseLanguage.logging.structure.LogStatement", "jetbrains.mps.baseLanguage.logging.structure.PrintStatement"};
 }

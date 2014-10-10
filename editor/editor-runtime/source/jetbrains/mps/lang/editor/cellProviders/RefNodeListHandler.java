@@ -44,7 +44,9 @@ public abstract class RefNodeListHandler extends AbstractCellListHandler {
       @Override
       public void run() {
         myLinkDeclaration = ((jetbrains.mps.smodel.SNode) ownerNode).getLinkDeclaration(childRole);
-        assert myLinkDeclaration != null : "link declaration was not found for role: \"" + childRole + "\" in concept: " + ownerNode.getConcept().getQualifiedName();
+        assert
+            myLinkDeclaration != null :
+            "link declaration was not found for role: \"" + childRole + "\" in concept: " + ownerNode.getConcept().getQualifiedName();
         SNode genuineLink = SModelUtil.getGenuineLinkDeclaration(myLinkDeclaration);
         myChildConcept = SModelUtil.getLinkDeclarationTarget(myLinkDeclaration);
         if (SNodeUtil.getLinkDeclaration_IsReference(genuineLink)) {
@@ -70,35 +72,11 @@ public abstract class RefNodeListHandler extends AbstractCellListHandler {
 
   @Override
   public EditorCell createNodeCell(EditorContext editorContext, SNode node) {
-    return createNodeCell((jetbrains.mps.nodeEditor.EditorContext) editorContext, node);
-  }
-
-  /**
-   * @deprecated starting from MPS 3.0 another method should be used:
-   *             <code>createNodeCell(jetbrains.mps.openapi.editor.EditorContext editorContext)</code>
-   *             This method should be removed, content moved to:
-   *             <code>createNodeCell(jetbrains.mps.openapi.editor.EditorContext editorContext)</code>
-   */
-  @Override
-  @Deprecated
-  public jetbrains.mps.nodeEditor.cells.EditorCell createNodeCell(jetbrains.mps.nodeEditor.EditorContext editorContext, SNode node) {
-    return editorContext.createNodeCell(node);
+    return editorContext.getEditorComponent().getUpdater().getCurrentUpdateSession().updateChildNodeCell(node);
   }
 
   @Override
   protected EditorCell createEmptyCell(EditorContext editorContext) {
-    return createEmptyCell((jetbrains.mps.nodeEditor.EditorContext) editorContext);
-  }
-
-  /**
-   * @deprecated starting from MPS 3.0 another method should be used:
-   *             <code>createEmptyCell(jetbrains.mps.openapi.editor.EditorContext editorContext)</code>
-   *             This method should be removed, content moved to:
-   *             <code>createEmptyCell(jetbrains.mps.openapi.editor.EditorContext editorContext)</code>
-   */
-  @Override
-  @Deprecated
-  protected jetbrains.mps.nodeEditor.cells.EditorCell createEmptyCell(jetbrains.mps.nodeEditor.EditorContext editorContext) {
     EditorCell_Constant emptyCell = new EditorCell_Constant(editorContext, getOwner(), null);
     emptyCell.setDefaultText("<< ... >>");
     emptyCell.setEditable(true);
@@ -107,7 +85,6 @@ public abstract class RefNodeListHandler extends AbstractCellListHandler {
     emptyCell.setCellId("empty_" + getElementRole());
     return emptyCell;
   }
-
 
   @Override
   protected SNode getAnchorNode(EditorCell anchorCell) {

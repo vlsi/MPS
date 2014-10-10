@@ -14,8 +14,6 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.ide.editor.MPSEditorDataKeys;
 import com.intellij.openapi.actionSystem.CommonDataKeys;
-import jetbrains.mps.typesystem.inference.TypeCheckingContext;
-import jetbrains.mps.newTypesystem.context.IncrementalTypecheckingContext;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.plugins.projectplugins.ProjectPluginManager;
 import jetbrains.mps.smodel.IOperationContext;
@@ -78,14 +76,9 @@ public class ShowTypeSystemTrace_Action extends BaseAction {
   }
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      TypeCheckingContext typeCheckingContext;
-      typeCheckingContext = ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getTypeCheckingContext();
-      if (typeCheckingContext instanceof IncrementalTypecheckingContext) {
-        IncrementalTypecheckingContext tcc = (IncrementalTypecheckingContext) typeCheckingContext;
-        TraceTool_Tool tool = ((Project) MapSequence.fromMap(_params).get("project")).getComponent(ProjectPluginManager.class).getTool(TraceTool_Tool.class);
-        tool.buildTrace(tcc, ((IOperationContext) MapSequence.fromMap(_params).get("context")), ((SNode) MapSequence.fromMap(_params).get("node")), ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")), true);
-        tool.openToolLater(true);
-      }
+      TraceTool_Tool tool = ((Project) MapSequence.fromMap(_params).get("project")).getComponent(ProjectPluginManager.class).getTool(TraceTool_Tool.class);
+      tool.buildTrace(((IOperationContext) MapSequence.fromMap(_params).get("context")), ((SNode) MapSequence.fromMap(_params).get("node")), ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")), true);
+      tool.openToolLater(true);
     } catch (Throwable t) {
       if (LOG.isEnabledFor(Level.ERROR)) {
         LOG.error("User's action execute method failed. Action:" + "ShowTypeSystemTrace", t);

@@ -6,37 +6,25 @@ import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.nodeEditor.AbstractCellProvider;
-import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Error;
+import jetbrains.mps.openapi.editor.style.Style;
+import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.editor.runtime.style.Padding;
-import jetbrains.mps.editor.runtime.cells.BigCellUtil;
+import jetbrains.mps.editor.runtime.style.Measure;
 
 public class BuildDependency_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCustom_kydt0p_a(editorContext, node);
+    return this.createError_kydt0p_a(editorContext, node);
   }
-  private EditorCell createCustom_kydt0p_a(final EditorContext editorContext, final SNode node) {
-    AbstractCellProvider provider = new _FunctionTypes._return_P0_E0<AbstractCellProvider>() {
-      public AbstractCellProvider invoke() {
-        return new AbstractCellProvider() {
-          @Override
-          public EditorCell createEditorCell(EditorContext context) {
-            EditorCell_Error result = new EditorCell_Error(context, node, "<no dependency>");
-            result.getStyle().set(StyleAttributes.PADDING_LEFT, new Padding(0.0));
-            result.getStyle().set(StyleAttributes.PADDING_RIGHT, new Padding(0.0));
-            return result;
-          }
-        };
-      }
-    }.invoke();
-    EditorCell editorCell = provider.createEditorCell(editorContext);
-    editorCell.setCellId("Custom_kydt0p_a");
-    EditorCell bigCell = BigCellUtil.findBigCell(editorCell, node);
-    if (bigCell != null) {
-      bigCell.setBig(true);
-    }
+  private EditorCell createError_kydt0p_a(EditorContext editorContext, SNode node) {
+    EditorCell_Error editorCell = new EditorCell_Error(editorContext, node, "<no dependency>");
+    editorCell.setCellId("Error_kydt0p_a");
+    editorCell.setBig(true);
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.PADDING_LEFT, new Padding(0, Measure.SPACES));
+    style.set(StyleAttributes.PADDING_RIGHT, new Padding(0, Measure.SPACES));
+    editorCell.getStyle().putAll(style);
     return editorCell;
   }
 }

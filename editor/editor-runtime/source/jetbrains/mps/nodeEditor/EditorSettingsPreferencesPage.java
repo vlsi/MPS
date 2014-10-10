@@ -208,7 +208,7 @@ class EditorSettingsPreferencesPage {
         }
       }
     };
-    myTimer = new Timer(mySettings.getCaretBlinker().getCaretBlinkingRateTimeMillis(), listener);
+    myTimer = new Timer(CaretBlinker.getInstance().getCaretBlinkingRateTimeMillis(), listener);
 
     myEditorSettingsPanel = new JPanel(new BorderLayout());
     myEditorSettingsPanel.add(panel, BorderLayout.NORTH);
@@ -234,7 +234,6 @@ class EditorSettingsPreferencesPage {
   private EditorComponent createBlinkingDemo() {
     EditorComponent blinking = new EditorComponent(MPSModuleRepository.getInstance()) {
       {
-        setEditorContext(null, MPSModuleRepository.getInstance());
         CaretBlinker.getInstance().unregisterEditor(this);
         ModelAccess.instance().runReadInEDT(new Runnable() {
           @Override
@@ -245,13 +244,8 @@ class EditorSettingsPreferencesPage {
       }
 
       @Override
-      public EditorCell createRootCell() {
-        return new EditorCell_Demo(getEditorContext(), "blinking");
-      }
-
-      @Override
       public EditorCell createRootCell(List<SModelEvent> events) {
-        return createRootCell();
+        return new EditorCell_Demo(getEditorContext(), "blinking");
       }
     };
     for (FocusListener listener : blinking.getListeners(FocusListener.class)) {

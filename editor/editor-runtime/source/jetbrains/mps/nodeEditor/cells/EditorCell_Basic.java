@@ -18,8 +18,8 @@ package jetbrains.mps.nodeEditor.cells;
 import com.intellij.util.ui.UIUtil;
 import jetbrains.mps.editor.runtime.impl.CellUtil;
 import jetbrains.mps.editor.runtime.impl.LayoutConstraints;
-import jetbrains.mps.editor.runtime.style.FocusPolicy;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
+import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.errors.MessageStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.logging.Logger;
@@ -30,7 +30,6 @@ import jetbrains.mps.nodeEditor.EditorSettings;
 import jetbrains.mps.nodeEditor.cellMenu.NodeSubstitutePatternEditor;
 import jetbrains.mps.nodeEditor.sidetransform.EditorCell_STHint;
 import jetbrains.mps.nodeEditor.sidetransform.STHintUtil;
-import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.TextBuilder;
 import jetbrains.mps.openapi.editor.cells.CellAction;
@@ -42,6 +41,7 @@ import jetbrains.mps.openapi.editor.cells.SubstituteAction;
 import jetbrains.mps.openapi.editor.cells.SubstituteInfo;
 import jetbrains.mps.openapi.editor.message.EditorMessageOwner;
 import jetbrains.mps.openapi.editor.message.SimpleEditorMessage;
+import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.constraints.ModelConstraints;
@@ -97,7 +97,7 @@ public abstract class EditorCell_Basic implements EditorCell {
   private SubstituteInfo mySubstituteInfo;
   private Map<CellActionType, CellAction> myActionMap = new ListMap<CellActionType, CellAction>();
 
-  private Style myStyle = new Style(this);
+  private Style myStyle = new StyleImpl();
 
   private KeyMap myKeyMap;
   private String myCellId;
@@ -384,15 +384,6 @@ public abstract class EditorCell_Basic implements EditorCell {
       myUserObjects = new ListMap();
     }
     myUserObjects.put(key, value);
-  }
-
-  /**
-   * @deprecated since MPS 3.0 use getContext() instead
-   */
-  @Override
-  @Deprecated
-  public jetbrains.mps.nodeEditor.EditorContext getEditorContext() {
-    return (jetbrains.mps.nodeEditor.EditorContext) getContext();
   }
 
   @Override
@@ -1020,11 +1011,6 @@ public abstract class EditorCell_Basic implements EditorCell {
       return this;
     }
     return getParent().getContainingBigCell();
-  }
-
-  @Override
-  public void setFocusPolicy(jetbrains.mps.nodeEditor.FocusPolicy fp) {
-    getStyle().set(StyleAttributes.FOCUS_POLICY, FocusPolicy.valueOf(fp.name()));
   }
 
   @Override

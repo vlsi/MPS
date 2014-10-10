@@ -47,7 +47,6 @@
   </dependency>
   <dependency className="jetbrains.mps.debugger.java.runtime.ui.evaluation.EvaluationPanel" file="EvaluationPanel.java">
     <classNode dependClassName="com.intellij.openapi.application.ApplicationManager" />
-    <classNode dependClassName="com.intellij.openapi.application.ModalityState" />
     <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="com.intellij.ui.components.JBScrollPane" />
     <classNode dependClassName="java.awt.event.ActionEvent" />
@@ -58,7 +57,6 @@
     <classNode dependClassName="javax.swing.JSplitPane" />
     <classNode dependClassName="javax.swing.JTabbedPane" />
     <classNode dependClassName="javax.swing.KeyStroke" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
     <classNode dependClassName="jetbrains.mps.debugger.java.runtime.evaluation.container.IEvaluationContainer" />
     <classNode dependClassName="jetbrains.mps.debugger.java.runtime.evaluation.container.Properties" />
     <classNode dependClassName="jetbrains.mps.debugger.java.runtime.state.DebugSession" />

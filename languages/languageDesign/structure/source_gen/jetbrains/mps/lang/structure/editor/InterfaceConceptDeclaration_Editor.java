@@ -88,7 +88,7 @@ public class InterfaceConceptDeclaration_Editor extends DefaultNodeEditor {
     {
       ModelAccessor modelAccessor = new TransactionalPropertyAccessor(node, "name", false, false, editorContext) {
         public void doCommit(final String oldValue, final String newValue) {
-          this.doCommitImpl(oldValue, newValue);
+          doCommitImpl(oldValue, newValue);
         }
         public void doCommitImpl(final String oldValue, final String newValue) {
           if (!(Sequence.fromIterable(ExtensionPoint.<_FunctionTypes._return_P4_E0<? extends Boolean, ? super EditorContext, ? super SNode, ? super String, ? super String>>generify(new ExtensionPoint("jetbrains.mps.lang.structure.NodeRenamer", _FunctionTypes._return_P4_E0.class)).getObjects()).any(new IWhereFilter<_FunctionTypes._return_P4_E0<? extends Boolean, ? super EditorContext, ? super SNode, ? super String, ? super String>>() {
@@ -350,7 +350,7 @@ public class InterfaceConceptDeclaration_Editor extends DefaultNodeEditor {
     }
     public SNode createNodeToInsert(EditorContext editorContext) {
       SNode listOwner = super.getOwner();
-      return this.nodeFactory(listOwner, editorContext);
+      return nodeFactory(listOwner, editorContext);
     }
     public SNode nodeFactory(SNode node, EditorContext editorContext) {
       SNode result = SNodeFactoryOperations.createNewNode(SNodeOperations.getModel(node), "jetbrains.mps.lang.structure.structure.LinkDeclaration", null);
@@ -451,7 +451,7 @@ public class InterfaceConceptDeclaration_Editor extends DefaultNodeEditor {
     }
     public SNode createNodeToInsert(EditorContext editorContext) {
       SNode listOwner = super.getOwner();
-      return this.nodeFactory(listOwner, editorContext);
+      return nodeFactory(listOwner, editorContext);
     }
     public SNode nodeFactory(SNode node, EditorContext editorContext) {
       SNode result = SNodeFactoryOperations.createNewNode(SNodeOperations.getModel(node), "jetbrains.mps.lang.structure.structure.LinkDeclaration", null);

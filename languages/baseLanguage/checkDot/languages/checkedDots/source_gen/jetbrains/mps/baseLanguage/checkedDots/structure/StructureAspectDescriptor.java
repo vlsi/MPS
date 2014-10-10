@@ -5,13 +5,16 @@ package jetbrains.mps.baseLanguage.checkedDots.structure;
 import jetbrains.mps.smodel.runtime.BaseStructureAspectDescriptor;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder;
+import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
+import java.util.UUID;
 import jetbrains.mps.smodel.runtime.StaticScope;
 import java.util.Collection;
 import java.util.Arrays;
 import org.jetbrains.annotations.Nullable;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
-  /*package*/ final ConceptDescriptor myConceptCheckedDotExpression = new ConceptDescriptorBuilder("jetbrains.mps.baseLanguage.checkedDots.structure.CheckedDotExpression").super_("jetbrains.mps.baseLanguage.structure.DotExpression").parents("jetbrains.mps.baseLanguage.structure.DotExpression").staticScope(StaticScope.NONE).create();
+
+  /*package*/ final ConceptDescriptor myConceptCheckedDotExpression = new ConceptDescriptorBuilder("jetbrains.mps.baseLanguage.checkedDots.structure.CheckedDotExpression", MetaIdFactory.conceptId(UUID.fromString("774bf8a0-62e5-41e1-af63-f4812e60e48b"), 4079382982702596667L)).super_("jetbrains.mps.baseLanguage.structure.DotExpression").super_(MetaIdFactory.conceptId(UUID.fromString("774bf8a0-62e5-41e1-af63-f4812e60e48b"), 1197027756228L)).parents("jetbrains.mps.baseLanguage.structure.DotExpression").parentIds(MetaIdFactory.conceptId(UUID.fromString("774bf8a0-62e5-41e1-af63-f4812e60e48b"), 1197027756228L)).staticScope(StaticScope.NONE).create();
 
   @Override
   public Collection<ConceptDescriptor> getDescriptors() {
@@ -21,12 +24,12 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   @Override
   @Nullable
   public ConceptDescriptor getDescriptor(String conceptFqName) {
-    switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0e, conceptFqName)) {
+    switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0f, conceptFqName)) {
       case 0:
         return myConceptCheckedDotExpression;
       default:
         return null;
     }
   }
-  private static String[] stringSwitchCases_1htk8d_a0a0e = new String[]{"jetbrains.mps.baseLanguage.checkedDots.structure.CheckedDotExpression"};
+  private static String[] stringSwitchCases_1htk8d_a0a0f = new String[]{"jetbrains.mps.baseLanguage.checkedDots.structure.CheckedDotExpression"};
 }

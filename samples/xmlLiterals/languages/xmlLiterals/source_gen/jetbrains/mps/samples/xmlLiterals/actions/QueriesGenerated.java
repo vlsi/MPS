@@ -14,7 +14,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 public class QueriesGenerated {
   public static List<SubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_XmlText_5081393330032046640(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
-    ListSequence.fromList(result).addSequence(ListSequence.fromList(ChildSubstituteActionsHelper.createDefaultSubstituteActions(SConceptOperations.findConceptDeclaration("jetbrains.mps.samples.xmlLiterals.structure.TextMacro"), _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext)));
+    ListSequence.fromList(result).addSequence(ListSequence.fromList(ChildSubstituteActionsHelper.createDefaultSubstituteActions(SConceptOperations.findConceptDeclaration("jetbrains.mps.samples.xmlLiterals.structure.TextMacro"), _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter())));
     return result;
   }
 }

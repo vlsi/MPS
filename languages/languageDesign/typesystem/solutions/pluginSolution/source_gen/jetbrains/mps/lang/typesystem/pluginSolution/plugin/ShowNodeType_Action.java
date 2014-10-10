@@ -11,13 +11,15 @@ import java.util.Map;
 import org.apache.log4j.Level;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.ide.editor.MPSEditorDataKeys;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
-import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.errors.IErrorReporter;
-import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.typesystem.inference.TypeContextManager;
+import jetbrains.mps.typesystem.inference.ITypechecking;
+import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import javax.swing.JOptionPane;
 import java.awt.Frame;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -61,7 +63,12 @@ public class ShowNodeType_Action extends BaseAction {
     if (MapSequence.fromMap(_params).get("frame") == null) {
       return false;
     }
-    MapSequence.fromMap(_params).put("node", event.getData(MPSCommonDataKeys.NODE));
+    {
+      SNode node = event.getData(MPSCommonDataKeys.NODE);
+      if (node != null) {
+      }
+      MapSequence.fromMap(_params).put("node", node);
+    }
     if (MapSequence.fromMap(_params).get("node") == null) {
       return false;
     }
@@ -79,18 +86,20 @@ public class ShowNodeType_Action extends BaseAction {
   }
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      final Wrappers._T<TypeCheckingContext> typeCheckingContext = new Wrappers._T<TypeCheckingContext>();
       final Wrappers._T<IErrorReporter> reporter = new Wrappers._T<IErrorReporter>();
       final Wrappers._T<SNode> type = new Wrappers._T<SNode>();
 
       ModelAccess.instance().runWriteAction(new Runnable() {
         public void run() {
-          typeCheckingContext.value = ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getTypeCheckingContext();
-          if (!(typeCheckingContext.value.isCheckedRoot(false))) {
-            typeCheckingContext.value.checkIfNotChecked(((SNode) MapSequence.fromMap(_params).get("node")), false);
-          }
-          type.value = typeCheckingContext.value.getTypeDontCheck(((SNode) MapSequence.fromMap(_params).get("node")));
-          reporter.value = typeCheckingContext.value.getTypeMessageDontCheck(((SNode) MapSequence.fromMap(_params).get("node")));
+          TypeContextManager.getInstance().runTypeCheckingAction(((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")), ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getNodeForTypechecking(), new ITypechecking.Action() {
+            public void run(TypeCheckingContext typeCheckingContext) {
+              if (!(typeCheckingContext.isCheckedRoot(false))) {
+                typeCheckingContext.checkIfNotChecked(((SNode) MapSequence.fromMap(_params).get("node")), false);
+              }
+              type.value = typeCheckingContext.getTypeDontCheck(((SNode) MapSequence.fromMap(_params).get("node")));
+              reporter.value = typeCheckingContext.getTypeMessageDontCheck(((SNode) MapSequence.fromMap(_params).get("node")));
+            }
+          });
         }
       });
 

@@ -123,7 +123,7 @@ public class DefaultCellInfo implements CellInfo {
   public EditorCell findCell(final EditorComponent editorComponent) {
     if (myCellId != null) {
       final EditorContext editorContext = editorComponent.getEditorContext();
-      if (myNodeReference == null || editorContext == null) return null;
+      if (myNodeReference == null) return null;
 
       final EditorCell[] cell = new EditorCell[]{null};
       editorContext.getRepository().getModelAccess().runReadAction(new Runnable() {

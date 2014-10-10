@@ -30,7 +30,6 @@ import com.intellij.openapi.ui.popup.ListPopup;
 import com.intellij.ui.awt.RelativePoint;
 import jetbrains.mps.editor.runtime.cells.ReadOnlyUtil;
 import jetbrains.mps.ide.actions.MPSActions;
-import jetbrains.mps.intentions.BaseIntention;
 import jetbrains.mps.intentions.IntentionExecutable;
 import jetbrains.mps.intentions.IntentionType;
 import jetbrains.mps.intentions.IntentionsManager;
@@ -48,7 +47,6 @@ import jetbrains.mps.typesystem.inference.ITypechecking.Computation;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.typesystem.inference.TypeContextManager;
 import jetbrains.mps.util.Computable;
-import jetbrains.mps.util.IconUtil;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.workbench.action.BaseAction;
 import jetbrains.mps.workbench.action.BaseGroup;
@@ -401,7 +399,7 @@ public class IntentionsSupport {
     final Set<Pair<IntentionExecutable, SNode>> result = new LinkedHashSet<Pair<IntentionExecutable, SNode>>();
     final SNode node = myEditor.getSelectedNode();
     final EditorContext editorContext = myEditor.getEditorContext();
-    if (node != null && editorContext != null) {
+    if (node != null) {
       final QueryDescriptor query = new QueryDescriptor();
       query.setEnabledOnly(true);
       final Collection<Pair<IntentionExecutable, SNode>> availableIntentions =

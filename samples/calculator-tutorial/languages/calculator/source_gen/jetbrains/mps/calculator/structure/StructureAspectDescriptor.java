@@ -5,16 +5,19 @@ package jetbrains.mps.calculator.structure;
 import jetbrains.mps.smodel.runtime.BaseStructureAspectDescriptor;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder;
+import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
+import java.util.UUID;
 import jetbrains.mps.smodel.runtime.StaticScope;
 import java.util.Collection;
 import java.util.Arrays;
 import org.jetbrains.annotations.Nullable;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
-  /*package*/ final ConceptDescriptor myConceptCalculator = new ConceptDescriptorBuilder("jetbrains.mps.calculator.structure.Calculator").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept", "jetbrains.mps.execution.util.structure.IMainClass", "jetbrains.mps.lang.core.structure.ScopeProvider").children(new String[]{"inputField", "outputField"}, new boolean[]{true, true}).create();
-  /*package*/ final ConceptDescriptor myConceptInputField = new ConceptDescriptorBuilder("jetbrains.mps.calculator.structure.InputField").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept").create();
-  /*package*/ final ConceptDescriptor myConceptInputFieldReference = new ConceptDescriptorBuilder("jetbrains.mps.calculator.structure.InputFieldReference").super_("jetbrains.mps.baseLanguage.structure.Expression").parents("jetbrains.mps.baseLanguage.structure.Expression").references("field").staticScope(StaticScope.NONE).create();
-  /*package*/ final ConceptDescriptor myConceptOutputField = new ConceptDescriptorBuilder("jetbrains.mps.calculator.structure.OutputField").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").children(new String[]{"expression"}, new boolean[]{false}).create();
+
+  /*package*/ final ConceptDescriptor myConceptCalculator = new ConceptDescriptorBuilder("jetbrains.mps.calculator.structure.Calculator", MetaIdFactory.conceptId(UUID.fromString("26b3d6d5-b99a-4ed6-83be-d2ea6f3627a1"), 1241362555920L)).super_("jetbrains.mps.lang.core.structure.BaseConcept").super_(MetaIdFactory.conceptId(UUID.fromString("26b3d6d5-b99a-4ed6-83be-d2ea6f3627a1"), 1133920641626L)).parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept", "jetbrains.mps.execution.util.structure.IMainClass", "jetbrains.mps.lang.core.structure.ScopeProvider").parentIds(MetaIdFactory.conceptId(UUID.fromString("26b3d6d5-b99a-4ed6-83be-d2ea6f3627a1"), 1133920641626L), MetaIdFactory.conceptId(UUID.fromString("26b3d6d5-b99a-4ed6-83be-d2ea6f3627a1"), 1169194658468L), MetaIdFactory.conceptId(UUID.fromString("26b3d6d5-b99a-4ed6-83be-d2ea6f3627a1"), 4666195181811081429L), MetaIdFactory.conceptId(UUID.fromString("26b3d6d5-b99a-4ed6-83be-d2ea6f3627a1"), 3734116213129792499L)).childDescriptors(new ConceptDescriptorBuilder.Link(1241362671336L, "inputField", MetaIdFactory.conceptId(UUID.fromString("26b3d6d5-b99a-4ed6-83be-d2ea6f3627a1"), 1241362608529L), true, true, false), new ConceptDescriptorBuilder.Link(1241362849617L, "outputField", MetaIdFactory.conceptId(UUID.fromString("26b3d6d5-b99a-4ed6-83be-d2ea6f3627a1"), 1241362815640L), true, true, false)).children(new String[]{"inputField", "outputField"}, new boolean[]{true, true}).create();
+  /*package*/ final ConceptDescriptor myConceptInputField = new ConceptDescriptorBuilder("jetbrains.mps.calculator.structure.InputField", MetaIdFactory.conceptId(UUID.fromString("26b3d6d5-b99a-4ed6-83be-d2ea6f3627a1"), 1241362608529L)).super_("jetbrains.mps.lang.core.structure.BaseConcept").super_(MetaIdFactory.conceptId(UUID.fromString("26b3d6d5-b99a-4ed6-83be-d2ea6f3627a1"), 1133920641626L)).parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept").parentIds(MetaIdFactory.conceptId(UUID.fromString("26b3d6d5-b99a-4ed6-83be-d2ea6f3627a1"), 1133920641626L), MetaIdFactory.conceptId(UUID.fromString("26b3d6d5-b99a-4ed6-83be-d2ea6f3627a1"), 1169194658468L)).create();
+  /*package*/ final ConceptDescriptor myConceptInputFieldReference = new ConceptDescriptorBuilder("jetbrains.mps.calculator.structure.InputFieldReference", MetaIdFactory.conceptId(UUID.fromString("26b3d6d5-b99a-4ed6-83be-d2ea6f3627a1"), 1241363083334L)).super_("jetbrains.mps.baseLanguage.structure.Expression").super_(MetaIdFactory.conceptId(UUID.fromString("26b3d6d5-b99a-4ed6-83be-d2ea6f3627a1"), 1068431790191L)).parents("jetbrains.mps.baseLanguage.structure.Expression").parentIds(MetaIdFactory.conceptId(UUID.fromString("26b3d6d5-b99a-4ed6-83be-d2ea6f3627a1"), 1068431790191L)).referenceDescriptors(new ConceptDescriptorBuilder.Ref(1241363105304L, "field", MetaIdFactory.conceptId(UUID.fromString("26b3d6d5-b99a-4ed6-83be-d2ea6f3627a1"), 1241362608529L), false)).references("field").staticScope(StaticScope.NONE).create();
+  /*package*/ final ConceptDescriptor myConceptOutputField = new ConceptDescriptorBuilder("jetbrains.mps.calculator.structure.OutputField", MetaIdFactory.conceptId(UUID.fromString("26b3d6d5-b99a-4ed6-83be-d2ea6f3627a1"), 1241362815640L)).super_("jetbrains.mps.lang.core.structure.BaseConcept").super_(MetaIdFactory.conceptId(UUID.fromString("26b3d6d5-b99a-4ed6-83be-d2ea6f3627a1"), 1133920641626L)).parents("jetbrains.mps.lang.core.structure.BaseConcept").parentIds(MetaIdFactory.conceptId(UUID.fromString("26b3d6d5-b99a-4ed6-83be-d2ea6f3627a1"), 1133920641626L)).childDescriptors(new ConceptDescriptorBuilder.Link(1241363046126L, "expression", MetaIdFactory.conceptId(UUID.fromString("26b3d6d5-b99a-4ed6-83be-d2ea6f3627a1"), 1068431790191L), false, false, false)).children(new String[]{"expression"}, new boolean[]{false}).create();
 
   @Override
   public Collection<ConceptDescriptor> getDescriptors() {
@@ -24,7 +27,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   @Override
   @Nullable
   public ConceptDescriptor getDescriptor(String conceptFqName) {
-    switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0h, conceptFqName)) {
+    switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0i, conceptFqName)) {
       case 0:
         return myConceptCalculator;
       case 1:
@@ -37,5 +40,5 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
         return null;
     }
   }
-  private static String[] stringSwitchCases_1htk8d_a0a0h = new String[]{"jetbrains.mps.calculator.structure.Calculator", "jetbrains.mps.calculator.structure.InputField", "jetbrains.mps.calculator.structure.InputFieldReference", "jetbrains.mps.calculator.structure.OutputField"};
+  private static String[] stringSwitchCases_1htk8d_a0a0i = new String[]{"jetbrains.mps.calculator.structure.Calculator", "jetbrains.mps.calculator.structure.InputField", "jetbrains.mps.calculator.structure.InputFieldReference", "jetbrains.mps.calculator.structure.OutputField"};
 }

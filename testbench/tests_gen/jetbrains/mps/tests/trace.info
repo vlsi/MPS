@@ -345,13 +345,5 @@
       <unit id="8565053360342421683" at="8,0,15,0" name="jetbrains.mps.tests.TestModule_jetbrains_mps_traceInfo_testWeaving" />
     </file>
   </root>
-  <root nodeRef="r:a549252a-5f7e-4e74-9e76-a86827f191ff(jetbrains.mps.tests)/8962644517494457561">
-    <file name="TestModule_jetbrains_mps_makeTest.java">
-      <node id="8962644517494457561" at="12,0,14,0" concept="0" trace="TestModule_jetbrains_mps_makeTest#()V" />
-      <scope id="8962644517494457561" at="12,46,12,46" />
-      <scope id="8962644517494457561" at="12,0,14,0" />
-      <unit id="8962644517494457561" at="8,0,15,0" name="jetbrains.mps.tests.TestModule_jetbrains_mps_makeTest" />
-    </file>
-  </root>
 </debug-info>
 

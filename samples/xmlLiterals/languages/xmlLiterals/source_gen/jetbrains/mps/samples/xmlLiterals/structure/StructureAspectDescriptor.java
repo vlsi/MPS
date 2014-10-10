@@ -5,15 +5,18 @@ package jetbrains.mps.samples.xmlLiterals.structure;
 import jetbrains.mps.smodel.runtime.BaseStructureAspectDescriptor;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder;
+import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
+import java.util.UUID;
 import jetbrains.mps.smodel.runtime.StaticScope;
 import java.util.Collection;
 import java.util.Arrays;
 import org.jetbrains.annotations.Nullable;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
-  /*package*/ final ConceptDescriptor myConceptElementMacro = new ConceptDescriptorBuilder("jetbrains.mps.samples.xmlLiterals.structure.ElementMacro").super_("jetbrains.mps.core.xml.structure.XmlContent").parents("jetbrains.mps.core.xml.structure.XmlContent").children(new String[]{"expression"}, new boolean[]{false}).alias("$${", "element macro").create();
-  /*package*/ final ConceptDescriptor myConceptTextMacro = new ConceptDescriptorBuilder("jetbrains.mps.samples.xmlLiterals.structure.TextMacro").super_("jetbrains.mps.core.xml.structure.XmlText").parents("jetbrains.mps.core.xml.structure.XmlText").children(new String[]{"expression"}, new boolean[]{false}).alias("${", "").create();
-  /*package*/ final ConceptDescriptor myConceptXmlLiteral = new ConceptDescriptorBuilder("jetbrains.mps.samples.xmlLiterals.structure.XmlLiteral").super_("jetbrains.mps.baseLanguage.structure.Expression").parents("jetbrains.mps.baseLanguage.structure.Expression").children(new String[]{"element"}, new boolean[]{false}).alias("xml literal", "").staticScope(StaticScope.NONE).create();
+
+  /*package*/ final ConceptDescriptor myConceptElementMacro = new ConceptDescriptorBuilder("jetbrains.mps.samples.xmlLiterals.structure.ElementMacro", MetaIdFactory.conceptId(UUID.fromString("a1896bc3-4f5b-4a31-b78b-b65514f8d0e5"), 9152904044274518122L)).super_("jetbrains.mps.core.xml.structure.XmlContent").super_(MetaIdFactory.conceptId(UUID.fromString("a1896bc3-4f5b-4a31-b78b-b65514f8d0e5"), 6666499814681299051L)).parents("jetbrains.mps.core.xml.structure.XmlContent").parentIds(MetaIdFactory.conceptId(UUID.fromString("a1896bc3-4f5b-4a31-b78b-b65514f8d0e5"), 6666499814681299051L)).childDescriptors(new ConceptDescriptorBuilder.Link(9152904044274518128L, "expression", MetaIdFactory.conceptId(UUID.fromString("a1896bc3-4f5b-4a31-b78b-b65514f8d0e5"), 1068431790191L), false, false, false)).children(new String[]{"expression"}, new boolean[]{false}).alias("$${", "element macro").create();
+  /*package*/ final ConceptDescriptor myConceptTextMacro = new ConceptDescriptorBuilder("jetbrains.mps.samples.xmlLiterals.structure.TextMacro", MetaIdFactory.conceptId(UUID.fromString("a1896bc3-4f5b-4a31-b78b-b65514f8d0e5"), 9152904044274469601L)).super_("jetbrains.mps.core.xml.structure.XmlText").super_(MetaIdFactory.conceptId(UUID.fromString("a1896bc3-4f5b-4a31-b78b-b65514f8d0e5"), 1622293396948952339L)).parents("jetbrains.mps.core.xml.structure.XmlText").parentIds(MetaIdFactory.conceptId(UUID.fromString("a1896bc3-4f5b-4a31-b78b-b65514f8d0e5"), 1622293396948952339L)).childDescriptors(new ConceptDescriptorBuilder.Link(9152904044274469602L, "expression", MetaIdFactory.conceptId(UUID.fromString("a1896bc3-4f5b-4a31-b78b-b65514f8d0e5"), 1068431790191L), false, false, false)).children(new String[]{"expression"}, new boolean[]{false}).alias("${", "").create();
+  /*package*/ final ConceptDescriptor myConceptXmlLiteral = new ConceptDescriptorBuilder("jetbrains.mps.samples.xmlLiterals.structure.XmlLiteral", MetaIdFactory.conceptId(UUID.fromString("a1896bc3-4f5b-4a31-b78b-b65514f8d0e5"), 9152904044274328259L)).super_("jetbrains.mps.baseLanguage.structure.Expression").super_(MetaIdFactory.conceptId(UUID.fromString("a1896bc3-4f5b-4a31-b78b-b65514f8d0e5"), 1068431790191L)).parents("jetbrains.mps.baseLanguage.structure.Expression").parentIds(MetaIdFactory.conceptId(UUID.fromString("a1896bc3-4f5b-4a31-b78b-b65514f8d0e5"), 1068431790191L)).childDescriptors(new ConceptDescriptorBuilder.Link(9152904044274328260L, "element", MetaIdFactory.conceptId(UUID.fromString("a1896bc3-4f5b-4a31-b78b-b65514f8d0e5"), 6666499814681415858L), false, false, false)).children(new String[]{"element"}, new boolean[]{false}).alias("xml literal", "").staticScope(StaticScope.NONE).create();
 
   @Override
   public Collection<ConceptDescriptor> getDescriptors() {
@@ -23,7 +26,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   @Override
   @Nullable
   public ConceptDescriptor getDescriptor(String conceptFqName) {
-    switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0g, conceptFqName)) {
+    switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0h, conceptFqName)) {
       case 0:
         return myConceptElementMacro;
       case 1:
@@ -34,5 +37,5 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
         return null;
     }
   }
-  private static String[] stringSwitchCases_1htk8d_a0a0g = new String[]{"jetbrains.mps.samples.xmlLiterals.structure.ElementMacro", "jetbrains.mps.samples.xmlLiterals.structure.TextMacro", "jetbrains.mps.samples.xmlLiterals.structure.XmlLiteral"};
+  private static String[] stringSwitchCases_1htk8d_a0a0h = new String[]{"jetbrains.mps.samples.xmlLiterals.structure.ElementMacro", "jetbrains.mps.samples.xmlLiterals.structure.TextMacro", "jetbrains.mps.samples.xmlLiterals.structure.XmlLiteral"};
 }

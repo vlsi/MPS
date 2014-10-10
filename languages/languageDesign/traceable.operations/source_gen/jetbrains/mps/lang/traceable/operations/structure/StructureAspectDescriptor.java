@@ -5,14 +5,17 @@ package jetbrains.mps.lang.traceable.operations.structure;
 import jetbrains.mps.smodel.runtime.BaseStructureAspectDescriptor;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder;
+import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
+import java.util.UUID;
 import jetbrains.mps.smodel.runtime.StaticScope;
 import java.util.Collection;
 import java.util.Arrays;
 import org.jetbrains.annotations.Nullable;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
-  /*package*/ final ConceptDescriptor myConceptNList_CopyWithTraceOperation = new ConceptDescriptorBuilder("jetbrains.mps.lang.traceable.operations.structure.NList_CopyWithTraceOperation").super_("jetbrains.mps.baseLanguage.structure.Expression").parents("jetbrains.mps.baseLanguage.structure.Expression").children(new String[]{"argument"}, new boolean[]{false}).alias("copy list with trace", "copies a list of nodes with trace").staticScope(StaticScope.NONE).create();
-  /*package*/ final ConceptDescriptor myConceptNode_CopyWithTraceOperation = new ConceptDescriptorBuilder("jetbrains.mps.lang.traceable.operations.structure.Node_CopyWithTraceOperation").super_("jetbrains.mps.lang.smodel.structure.SNodeOperation").parents("jetbrains.mps.lang.smodel.structure.SNodeOperation").alias("copy with trace", "copy a node with trace").staticScope(StaticScope.NONE).create();
+
+  /*package*/ final ConceptDescriptor myConceptNList_CopyWithTraceOperation = new ConceptDescriptorBuilder("jetbrains.mps.lang.traceable.operations.structure.NList_CopyWithTraceOperation", MetaIdFactory.conceptId(UUID.fromString("eba1dbb3-0bc4-4ce9-a184-05c9135353be"), 2603522263179374343L)).super_("jetbrains.mps.baseLanguage.structure.Expression").super_(MetaIdFactory.conceptId(UUID.fromString("eba1dbb3-0bc4-4ce9-a184-05c9135353be"), 1068431790191L)).parents("jetbrains.mps.baseLanguage.structure.Expression").parentIds(MetaIdFactory.conceptId(UUID.fromString("eba1dbb3-0bc4-4ce9-a184-05c9135353be"), 1068431790191L)).childDescriptors(new ConceptDescriptorBuilder.Link(2603522263179374348L, "argument", MetaIdFactory.conceptId(UUID.fromString("eba1dbb3-0bc4-4ce9-a184-05c9135353be"), 1068431790191L), false, false, false)).children(new String[]{"argument"}, new boolean[]{false}).alias("copy list with trace", "copies a list of nodes with trace").staticScope(StaticScope.NONE).create();
+  /*package*/ final ConceptDescriptor myConceptNode_CopyWithTraceOperation = new ConceptDescriptorBuilder("jetbrains.mps.lang.traceable.operations.structure.Node_CopyWithTraceOperation", MetaIdFactory.conceptId(UUID.fromString("eba1dbb3-0bc4-4ce9-a184-05c9135353be"), 6942529559415680891L)).super_("jetbrains.mps.lang.smodel.structure.SNodeOperation").super_(MetaIdFactory.conceptId(UUID.fromString("eba1dbb3-0bc4-4ce9-a184-05c9135353be"), 1138411891628L)).parents("jetbrains.mps.lang.smodel.structure.SNodeOperation").parentIds(MetaIdFactory.conceptId(UUID.fromString("eba1dbb3-0bc4-4ce9-a184-05c9135353be"), 1138411891628L)).alias("copy with trace", "copy a node with trace").staticScope(StaticScope.NONE).create();
 
   @Override
   public Collection<ConceptDescriptor> getDescriptors() {
@@ -22,7 +25,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   @Override
   @Nullable
   public ConceptDescriptor getDescriptor(String conceptFqName) {
-    switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0f, conceptFqName)) {
+    switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0g, conceptFqName)) {
       case 0:
         return myConceptNList_CopyWithTraceOperation;
       case 1:
@@ -31,5 +34,5 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
         return null;
     }
   }
-  private static String[] stringSwitchCases_1htk8d_a0a0f = new String[]{"jetbrains.mps.lang.traceable.operations.structure.NList_CopyWithTraceOperation", "jetbrains.mps.lang.traceable.operations.structure.Node_CopyWithTraceOperation"};
+  private static String[] stringSwitchCases_1htk8d_a0a0g = new String[]{"jetbrains.mps.lang.traceable.operations.structure.NList_CopyWithTraceOperation", "jetbrains.mps.lang.traceable.operations.structure.Node_CopyWithTraceOperation"};
 }

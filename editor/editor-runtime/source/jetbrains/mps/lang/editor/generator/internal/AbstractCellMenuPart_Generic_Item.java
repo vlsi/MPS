@@ -17,13 +17,11 @@ package jetbrains.mps.lang.editor.generator.internal;
 
 import jetbrains.mps.nodeEditor.cellMenu.BasicCellContext;
 import jetbrains.mps.nodeEditor.cellMenu.CellContext;
-import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPart;
 import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.SubstituteAction;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.action.AbstractNodeSubstituteAction;
-import jetbrains.mps.smodel.action.INodeSubstituteAction;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -35,7 +33,7 @@ import java.util.List;
  * Igor Alshannikov
  * Date: Nov 29, 2006
  */
-public abstract class AbstractCellMenuPart_Generic_Item implements SubstituteInfoPart, SubstituteInfoPartExt {
+public abstract class AbstractCellMenuPart_Generic_Item implements SubstituteInfoPartExt {
 
   @Override
   public List<SubstituteAction> createActions(CellContext cellContext, final EditorContext editorContext) {
@@ -65,11 +63,6 @@ public abstract class AbstractCellMenuPart_Generic_Item implements SubstituteInf
         return null;
       }
     });
-  }
-
-  @Override
-  public List<INodeSubstituteAction> createActions(CellContext cellContext, jetbrains.mps.nodeEditor.EditorContext editorContext) {
-    return (List) createActions(cellContext, (EditorContext) editorContext);
   }
 
   protected abstract void handleAction(SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext);

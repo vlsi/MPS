@@ -195,7 +195,7 @@ public class ProjectStructureModelRoot extends FileBasedModelRoot {
         return;
       }
       reload();
-      updateTimestamp();
+      myTimestampTracker.updateTimestamp(getSource());
     }
 
     private void reload() {

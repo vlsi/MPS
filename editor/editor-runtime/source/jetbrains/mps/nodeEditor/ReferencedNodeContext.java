@@ -20,10 +20,23 @@ import org.jetbrains.mps.openapi.model.SNode;
 
 import java.util.Stack;
 
+// TODO: move to jetbrains.mps.nodeEditor.updater package, make package-local
 public class ReferencedNodeContext {
-  private Stack<SNode> myContextRefererNodes = null;
-  private SNode myNode = null;
+  // Both stacks are used to identify "path" to the specified node via number of references.
+  // To distinguish between editor cells created as a part of referenced node cell in-place
+  // editor and cells created as a part of target node "main" editor or another in-place
+  // referenced cell editor.
+  //
+  // Important information for update process here is:
+  // - myNode (current context node)
+  // - sourceNode (the node where chain of references was started)
+  // - unique identities of each reference in this chain (roles/cellIDs/..)
+  //
+  // TODO: Simplify information persisted in this context object
   private Stack<String> myContextRoles = null;
+  private Stack<SNode> myContextRefererNodes = null;
+
+  private SNode myNode = null;
   private boolean myIsNodeAttribute = false;
 
   private ReferencedNodeContext(SNode node) {

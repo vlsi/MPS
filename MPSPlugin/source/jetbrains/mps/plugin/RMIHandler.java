@@ -84,7 +84,7 @@ public class RMIHandler {
       ProjectManager projectManager = ProjectManager.getInstance();
       for (Project p : projectManager.getOpenProjects()) {
         ProjectHandler handler = p.getComponent(ProjectHandler.class);
-        if (handler.findModule(projectPath) != null) {
+        if (handler != null && p.getBasePath().equals(projectPath)) {
           return handler;
         }
       }

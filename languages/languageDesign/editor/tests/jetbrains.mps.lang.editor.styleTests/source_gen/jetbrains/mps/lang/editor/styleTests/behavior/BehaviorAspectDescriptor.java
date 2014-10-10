@@ -11,13 +11,25 @@ public class BehaviorAspectDescriptor implements jetbrains.mps.smodel.runtime.Be
   }
   public BehaviorDescriptor getDescriptor(String fqName) {
     switch (Arrays.binarySearch(stringSwitchCases_846f5o_a0a0b, fqName)) {
-      case 1:
+      case 4:
         return new TestConceptWithStyleAttributes_BehaviorDescriptor();
+      case 2:
+        return new PriorityStyle_BehaviorDescriptor();
+      case 6:
+        return new TestSimpleAttribute_BehaviorDescriptor();
+      case 5:
+        return new TestInheritedAttribute_BehaviorDescriptor();
+      case 3:
+        return new PriorityStyleCopy_BehaviorDescriptor();
       case 0:
-        return new NodeContainer_BehaviorDescriptor();
+        return new HugePriorityStyle_BehaviorDescriptor();
+      case 7:
+        return new UnapplyPriorityStyleCopy_BehaviorDescriptor();
+      case 1:
+        return new LeafNode_BehaviorDescriptor();
       default:
         return BehaviorAspectInterpreted.getInstance().getDescriptor(fqName);
     }
   }
-  private static String[] stringSwitchCases_846f5o_a0a0b = new String[]{"jetbrains.mps.lang.editor.styleTests.structure.NodeContainer", "jetbrains.mps.lang.editor.styleTests.structure.TestConceptWithStyleAttributes"};
+  private static String[] stringSwitchCases_846f5o_a0a0b = new String[]{"jetbrains.mps.lang.editor.styleTests.structure.HugePriorityStyle", "jetbrains.mps.lang.editor.styleTests.structure.LeafNode", "jetbrains.mps.lang.editor.styleTests.structure.PriorityStyle", "jetbrains.mps.lang.editor.styleTests.structure.PriorityStyleCopy", "jetbrains.mps.lang.editor.styleTests.structure.TestConceptWithStyleAttributes", "jetbrains.mps.lang.editor.styleTests.structure.TestInheritedAttribute", "jetbrains.mps.lang.editor.styleTests.structure.TestSimpleAttribute", "jetbrains.mps.lang.editor.styleTests.structure.UnapplyPriorityStyleCopy"};
 }

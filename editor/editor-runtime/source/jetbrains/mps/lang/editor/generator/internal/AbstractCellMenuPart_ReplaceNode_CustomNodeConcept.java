@@ -18,7 +18,6 @@ package jetbrains.mps.lang.editor.generator.internal;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellContext;
 import jetbrains.mps.nodeEditor.cellMenu.CellContext;
-import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPart;
 import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.openapi.editor.EditorContext;
@@ -27,7 +26,6 @@ import jetbrains.mps.openapi.editor.cells.SubstituteAction;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.action.AbstractChildNodeSetter;
 import jetbrains.mps.smodel.action.IChildNodeSetter;
-import jetbrains.mps.smodel.action.INodeSubstituteAction;
 import jetbrains.mps.smodel.action.ModelActions;
 import jetbrains.mps.smodel.action.NodeSubstituteActionWrapper;
 import org.jetbrains.annotations.Nullable;
@@ -42,7 +40,7 @@ import java.util.List;
  * Igor Alshannikov
  * Date: Nov 29, 2006
  */
-public abstract class AbstractCellMenuPart_ReplaceNode_CustomNodeConcept extends AbstractChildNodeSetter implements SubstituteInfoPart, SubstituteInfoPartExt,
+public abstract class AbstractCellMenuPart_ReplaceNode_CustomNodeConcept extends AbstractChildNodeSetter implements SubstituteInfoPartExt,
     IChildNodeSetter {
   @Override
   public List<SubstituteAction> createActions(CellContext cellContext, EditorContext editorContext) {
@@ -86,11 +84,6 @@ public abstract class AbstractCellMenuPart_ReplaceNode_CustomNodeConcept extends
       });
     }
     return result;
-  }
-
-  @Override
-  public List<INodeSubstituteAction> createActions(CellContext cellContext, final jetbrains.mps.nodeEditor.EditorContext editorContext) {
-    return (List) createActions(cellContext, (EditorContext) editorContext);
   }
 
   protected abstract String getReplacementConceptName();

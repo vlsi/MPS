@@ -92,6 +92,12 @@ public abstract class SModelBase extends SModelDescriptorStub implements SModel 
       }
       myRepository = null;
     }
+    fireBeforeModelDisposed(this);
+    jetbrains.mps.smodel.SModel model = getCurrentModelInternal();
+    if (model != null) {
+      model.dispose();
+    }
+    clearListeners();
   }
 
   @Override

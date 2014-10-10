@@ -17,7 +17,6 @@ package jetbrains.mps.nodeEditor.cellProviders;
 
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import jetbrains.mps.openapi.editor.EditorContext;
-import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.cells.SubstituteInfo;
 import org.jetbrains.mps.openapi.model.SNode;
 
@@ -90,25 +89,5 @@ public abstract class CellProviderWithRole extends AbstractCellProvider {
 
   public AbstractCellProvider getAuxiliaryCellProvider() {
     return myAuxiliaryCellProvider;
-  }
-
-  /**
-   * Since MPS 3.0 can be removed together with deprecated
-   * <code>createEditorCell(jetbrains.mps.nodeEditor.EditorContext editorContext)</code> method below
-   */
-  @Override
-  public EditorCell createEditorCell(EditorContext editorContext) {
-    throw new RuntimeException("Method not implemented");
-  }
-
-  /**
-   * @deprecated starting from MPS 3.0 another method should be used:
-   *             <code>createEditorCell(jetbrains.mps.openapi.editor.EditorContext editorContext)</code>
-   */
-  @Deprecated
-  @Override
-  public jetbrains.mps.nodeEditor.cells.EditorCell createEditorCell(jetbrains.mps.nodeEditor.EditorContext editorContext) {
-    // calling new method for the compatibility with generated code
-    return (jetbrains.mps.nodeEditor.cells.EditorCell) createEditorCell((EditorContext) editorContext);
   }
 }

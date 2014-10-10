@@ -5,13 +5,16 @@ package org.jetbrains.mps.samples.DecisionTable.structure;
 import jetbrains.mps.smodel.runtime.BaseStructureAspectDescriptor;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder;
+import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
+import java.util.UUID;
 import jetbrains.mps.smodel.runtime.StaticScope;
 import java.util.Collection;
 import java.util.Arrays;
 import org.jetbrains.annotations.Nullable;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
-  /*package*/ final ConceptDescriptor myConceptDecisionTable = new ConceptDescriptorBuilder("org.jetbrains.mps.samples.DecisionTable.structure.DecisionTable").super_("jetbrains.mps.baseLanguage.structure.Expression").parents("jetbrains.mps.baseLanguage.structure.Expression").children(new String[]{"expectedType", "defaultValue", "colHeaders", "rowHeaders", "resultValues"}, new boolean[]{false, false, true, true, true}).alias("dectab", "").staticScope(StaticScope.NONE).create();
+
+  /*package*/ final ConceptDescriptor myConceptDecisionTable = new ConceptDescriptorBuilder("org.jetbrains.mps.samples.DecisionTable.structure.DecisionTable", MetaIdFactory.conceptId(UUID.fromString("65c13e67-09b6-4695-af88-52024b7d2027"), 1987251859606934913L)).super_("jetbrains.mps.baseLanguage.structure.Expression").super_(MetaIdFactory.conceptId(UUID.fromString("65c13e67-09b6-4695-af88-52024b7d2027"), 1068431790191L)).parents("jetbrains.mps.baseLanguage.structure.Expression").parentIds(MetaIdFactory.conceptId(UUID.fromString("65c13e67-09b6-4695-af88-52024b7d2027"), 1068431790191L)).childDescriptors(new ConceptDescriptorBuilder.Link(1987251859606934914L, "expectedType", MetaIdFactory.conceptId(UUID.fromString("65c13e67-09b6-4695-af88-52024b7d2027"), 1068431790189L), false, false, false), new ConceptDescriptorBuilder.Link(1987251859606934915L, "defaultValue", MetaIdFactory.conceptId(UUID.fromString("65c13e67-09b6-4695-af88-52024b7d2027"), 1068431790191L), false, false, false), new ConceptDescriptorBuilder.Link(1987251859606934916L, "colHeaders", MetaIdFactory.conceptId(UUID.fromString("65c13e67-09b6-4695-af88-52024b7d2027"), 1068431790191L), false, true, false), new ConceptDescriptorBuilder.Link(1987251859606934917L, "rowHeaders", MetaIdFactory.conceptId(UUID.fromString("65c13e67-09b6-4695-af88-52024b7d2027"), 1068431790191L), false, true, false), new ConceptDescriptorBuilder.Link(1987251859606934918L, "resultValues", MetaIdFactory.conceptId(UUID.fromString("65c13e67-09b6-4695-af88-52024b7d2027"), 1068431790191L), false, true, false)).children(new String[]{"expectedType", "defaultValue", "colHeaders", "rowHeaders", "resultValues"}, new boolean[]{false, false, true, true, true}).alias("dectab", "").staticScope(StaticScope.NONE).create();
 
   @Override
   public Collection<ConceptDescriptor> getDescriptors() {
@@ -21,12 +24,12 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   @Override
   @Nullable
   public ConceptDescriptor getDescriptor(String conceptFqName) {
-    switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0e, conceptFqName)) {
+    switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0f, conceptFqName)) {
       case 0:
         return myConceptDecisionTable;
       default:
         return null;
     }
   }
-  private static String[] stringSwitchCases_1htk8d_a0a0e = new String[]{"org.jetbrains.mps.samples.DecisionTable.structure.DecisionTable"};
+  private static String[] stringSwitchCases_1htk8d_a0a0f = new String[]{"org.jetbrains.mps.samples.DecisionTable.structure.DecisionTable"};
 }

@@ -84,67 +84,15 @@ public abstract class AbstractCellListHandler {
     return myInsertedNode != null;
   }
 
-  /**
-   * Since MPS 3.0
-   * should be transformed to abstract method in future
-   */
-  public EditorCell createNodeCell(EditorContext editorContext, SNode node) {
-    // calling deprecated method for the compatibility with generated code
-    return createNodeCell((jetbrains.mps.nodeEditor.EditorContext) editorContext, node);
-  }
-
-  /**
-   * @deprecated starting from MPS 3.0 another method should be used:
-   *             <code>createNodeCell(jetbrains.mps.openapi.editor.EditorContext editorContext)</code>
-   */
-  @Deprecated
-  public jetbrains.mps.nodeEditor.cells.EditorCell createNodeCell(jetbrains.mps.nodeEditor.EditorContext editorContext, SNode node) {
-    throw new RuntimeException("Method not implemented");
-  }
+  public abstract EditorCell createNodeCell(EditorContext editorContext, SNode node);
 
   protected EditorCell createSeparatorCell(EditorContext editorContext, SNode prevNode, SNode nextNode) {
-    return createSeparatorCell((jetbrains.mps.nodeEditor.EditorContext) editorContext, prevNode);
-  }
-
-  /**
-   * @deprecated starting from MPS 3.0 another method should be used:
-   *             <code>createSeparatorCell(jetbrains.mps.openapi.editor.EditorContext editorContext)</code>
-   */
-  @Deprecated
-  protected jetbrains.mps.nodeEditor.cells.EditorCell createSeparatorCell(jetbrains.mps.nodeEditor.EditorContext editorContext, SNode node) {
     return null;
   }
 
-  protected EditorCell createEmptyCell(EditorContext editorContext) {
-    return createEmptyCell((jetbrains.mps.nodeEditor.EditorContext) editorContext);
-  }
+  protected abstract EditorCell createEmptyCell(EditorContext editorContext);
 
-  /**
-   * @deprecated starting from MPS 3.0 another method should be used:
-   *             <code>createEmptyCell(jetbrains.mps.openapi.editor.EditorContext editorContext)</code>
-   */
-  @Deprecated
-  protected jetbrains.mps.nodeEditor.cells.EditorCell createEmptyCell(jetbrains.mps.nodeEditor.EditorContext editorContext) {
-    throw new RuntimeException("Method not implemented");
-  }
-
-  /**
-   * Since MPS 3.0
-   * should be transformed to abstract method in future
-   */
-  public SNode createNodeToInsert(EditorContext editorContext) {
-    // calling deprecated method for the compatibility with generated code
-    return createNodeToInsert((jetbrains.mps.nodeEditor.EditorContext) editorContext);
-  }
-
-  /**
-   * @deprecated starting from MPS 3.0 another method should be used:
-   *             <code>createNodeToInsert(jetbrains.mps.openapi.editor.EditorContext editorContext)</code>
-   */
-  @Deprecated
-  public SNode createNodeToInsert(jetbrains.mps.nodeEditor.EditorContext editorContext) {
-    throw new RuntimeException("Method not implemented");
-  }
+  public abstract SNode createNodeToInsert(EditorContext editorContext);
 
   public EditorCell_Collection createCells_Vertical(EditorContext editorContext) {
     return createCells(editorContext, new CellLayout_Vertical());

@@ -16,8 +16,6 @@
 package jetbrains.mps.nodeEditor.cells;
 
 import jetbrains.mps.nodeEditor.EditorComponent;
-import jetbrains.mps.nodeEditor.EditorContext;
-import jetbrains.mps.nodeEditor.FocusPolicy;
 import jetbrains.mps.nodeEditor.cellMenu.NodeSubstitutePatternEditor;
 import jetbrains.mps.openapi.editor.TextBuilder;
 import jetbrains.mps.openapi.editor.message.EditorMessageOwner;
@@ -33,8 +31,11 @@ import java.util.List;
 
 public interface EditorCell extends Cloneable, jetbrains.mps.openapi.editor.cells.EditorCell {
   void paint(Graphics g);
+
   void paint(Graphics g, ParentSettings parentSettings);
+
   void paintSelection(Graphics g, Color c, boolean drawBorder);
+
   void paintSelection(Graphics g, Color c, boolean drawBorder, ParentSettings parentSettings);
 
   boolean validate(boolean strict, boolean canActivatePopup);
@@ -44,17 +45,13 @@ public interface EditorCell extends Cloneable, jetbrains.mps.openapi.editor.cell
   boolean processMousePressed(MouseEvent e);
 
   boolean processKeyPressed(KeyEvent e, boolean allowErrors);
-  boolean processKeyTyped(KeyEvent e, boolean allowErrors);
 
-  /**
-   * @deprecated since MPS 3.0 use getContext() instead
-   */
-  @Deprecated
-  EditorContext getEditorContext();
+  boolean processKeyTyped(KeyEvent e, boolean allowErrors);
 
   EditorCell findLeaf(int x, int y, Condition<EditorCell> condition);
 
   EditorCell findCellWeak(int x, int y);
+
   EditorCell findCellWeak(int x, int y, Condition<EditorCell> condition);
 
   void synchronizeViewWithModel();
@@ -64,6 +61,7 @@ public interface EditorCell extends Cloneable, jetbrains.mps.openapi.editor.cell
 
   /**
    * Starting from MPS 3.0 use getEditorComponent(); instead
+   *
    * @return
    */
   @Deprecated
@@ -74,13 +72,16 @@ public interface EditorCell extends Cloneable, jetbrains.mps.openapi.editor.cell
   boolean isPunctuationLayout();
 
   Color getCellBackgroundColor();
+
   void setCellBackgroundColor(Color color);
 
   // TODO: move this method to open API
   CellInfo getCellInfo();
 
   void setRightTransformAnchorTag(String tag);
+
   String getRightTransformAnchorTag();
+
   boolean hasRightTransformAnchorTag(String tag);
 
   Iterator<EditorCell_Collection> parents();
@@ -89,73 +90,86 @@ public interface EditorCell extends Cloneable, jetbrains.mps.openapi.editor.cell
 
   // TODO: move to EditorCell_Collection & open API
   boolean isFolded();
+
   boolean isUnfoldedCollection();
+
   boolean canBePossiblyFolded();
 
   boolean isFirstPositionInBigCell();
+
   boolean isLastPositionInBigCell();
 
   boolean isLastChild();
+
   boolean isFirstChild();
 
   boolean isFirstCaretPosition();
+
   boolean isLastCaretPosition();
 
   boolean isOnLeftBoundary();
+
   boolean isOnRightBoundary();
 
   EditorCell getContainingBigCell();
+
   boolean isAncestorOf(EditorCell cell);
 
-  /**
-   * @deprecated remove after MPS 3.0
-   */
-  @Deprecated
-  void setFocusPolicy(FocusPolicy fp);
-
   <T extends SimpleEditorMessage> List<T> getMessages(Class<T> clazz);
+
   List<SimpleEditorMessage> getMessagesForOwner(EditorMessageOwner owner);
+
   boolean hasErrorMessages();
 
   EditorCell_Label getSTHintCell();
 
-  @Override
-  jetbrains.mps.openapi.editor.style.Style getStyle();
-
   boolean isLeaf();
 
   EditorCell getNextSibling();
+
   EditorCell getNextSibling(Condition<EditorCell> condition);
 
   EditorCell getPrevSibling();
+
   EditorCell getPrevSibling(Condition<EditorCell> condition);
 
   EditorCell getNextLeaf();
+
   EditorCell getNextLeaf(Condition<EditorCell> condition);
 
   EditorCell getPrevLeaf();
+
   EditorCell getPrevLeaf(Condition<EditorCell> condition);
 
   EditorCell getFirstLeaf();
+
   EditorCell getFirstLeaf(Condition<EditorCell> condition);
 
   EditorCell getLastLeaf();
+
   EditorCell getLastLeaf(Condition<EditorCell> condition);
 
   EditorCell getLastChild();
+
   EditorCell getFirstChild();
 
   EditorCell getEndCell(Condition<EditorCell> condition);
+
   EditorCell getHomeCell(Condition<EditorCell> condition);
 
   EditorCell getLeafToLeft(Condition<EditorCell> condition);
+
   EditorCell getLeafToRight(Condition<EditorCell> condition);
 
   boolean isAbove(EditorCell cell);
+
   boolean isBelow(EditorCell cell);
+
   boolean isToLeft(EditorCell cell);
+
   boolean isToRight(EditorCell cell);
 
   EditorCell getUpper(Condition<EditorCell> condition, int baseX);
+
   EditorCell getLower(Condition<EditorCell> condition, int baseX);
 }

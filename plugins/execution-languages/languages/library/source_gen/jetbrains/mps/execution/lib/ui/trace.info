@@ -280,7 +280,7 @@
       <node id="6491532814231161793" at="15,38,16,77" concept="14" />
       <node id="1240470842553500325" at="18,70,19,32" concept="3" />
       <node id="1240470842553500352" at="22,51,23,166" concept="8" />
-      <node id="1240470842553500362" at="23,166,24,64" concept="8" />
+      <node id="1240470842553500362" at="23,166,24,58" concept="8" />
       <node id="1240470842553500373" at="25,67,26,77" concept="3" />
       <node id="4278380732219162316" at="31,45,32,32" concept="3" />
       <node id="4278380732219042440" at="32,32,33,37" concept="3" />
@@ -288,7 +288,7 @@
       <node id="1240470842553500276" at="38,38,39,35" concept="3" />
       <node id="1240470842553500289" at="41,28,42,37" concept="9" />
       <node id="1240470842553500315" at="15,0,18,0" concept="2" trace="FieldWithPathChooseDialog#()V" />
-      <node id="1240470842553500371" at="24,64,27,9" concept="6" />
+      <node id="1240470842553500371" at="24,58,27,9" concept="6" />
       <node id="1240470842553500262" at="35,0,38,0" concept="7" trace="getEditable#()Z" />
       <node id="1240470842553500272" at="38,0,41,0" concept="7" trace="setTitle#(Ljava/lang/String;)V" />
       <node id="1240470842553500285" at="41,0,44,0" concept="7" trace="getTitle#()Ljava/lang/String;" />

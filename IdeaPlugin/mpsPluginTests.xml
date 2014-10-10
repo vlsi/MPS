@@ -30,7 +30,7 @@
   </path>
   
   <path id="path.java.library.idea-devkit-jps">
-    <fileset file="${artifacts.IDEA}/plugins/devkit/lib/jps/devkit-jps-plugin.jar" />
+    <fileset file="${artifacts.IDEA}/plugins/devkit/lib/devkit-jps-plugin.jar" />
   </path>
   
   <taskdef name="javac2" classname="com.intellij.ant.Javac2" classpathref="path.javac2.classpath" />
@@ -158,10 +158,9 @@
         <fileset file="${artifacts.IDEA}/lib/annotations.jar" />
         <fileset file="${artifacts.IDEA}/lib/jdom.jar" />
         <fileset file="${artifacts.IDEA}/lib/log4j.jar" />
-        <fileset file="${artifacts.IDEA}/lib/ecj-4.3.2.jar" />
+        <fileset file="${artifacts.IDEA}/lib/ecj-4.4.jar" />
         <fileset file="${artifacts.IDEA}/lib/trove4j.jar" />
         <fileset file="${artifacts.IDEA}/lib/xstream-1.4.3.jar" />
-        <fileset file="${artifacts.IDEA}/lib/asm4-all.jar" />
         <fileset file="${artifacts.IDEA}/lib/asm-all.jar" />
         <fileset file="${artifacts.mpsPlugin}/mps-core/lib/diffutils-1.2.1.jar" />
         <fileset dir="${artifacts.IDEA}/lib/ant/lib" includes="*.jar" />
@@ -204,10 +203,9 @@
         <fileset file="${artifacts.IDEA}/lib/annotations.jar" />
         <fileset file="${artifacts.IDEA}/lib/jdom.jar" />
         <fileset file="${artifacts.IDEA}/lib/log4j.jar" />
-        <fileset file="${artifacts.IDEA}/lib/ecj-4.3.2.jar" />
+        <fileset file="${artifacts.IDEA}/lib/ecj-4.4.jar" />
         <fileset file="${artifacts.IDEA}/lib/trove4j.jar" />
         <fileset file="${artifacts.IDEA}/lib/xstream-1.4.3.jar" />
-        <fileset file="${artifacts.IDEA}/lib/asm4-all.jar" />
         <fileset file="${artifacts.IDEA}/lib/asm-all.jar" />
         <fileset file="${artifacts.mpsPlugin}/mps-core/lib/diffutils-1.2.1.jar" />
         <fileset dir="${artifacts.IDEA}/lib/ant/lib" includes="*.jar" />

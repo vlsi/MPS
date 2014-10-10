@@ -5,6 +5,7 @@ package jetbrains.mps.lang.test.runtime;
 import com.intellij.ide.DataManager;
 import com.intellij.ide.impl.DataManagerImpl;
 import jetbrains.mps.openapi.editor.Editor;
+import jetbrains.mps.ide.editor.MPSFileNodeEditor;
 import org.jetbrains.mps.openapi.model.SNode;
 import javax.swing.SwingUtilities;
 import jetbrains.mps.nodeEditor.EditorComponent;
@@ -25,7 +26,7 @@ import com.intellij.openapi.command.undo.UndoManager;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.workbench.nodesFs.MPSNodeVirtualFile;
 import jetbrains.mps.workbench.nodesFs.MPSNodesVirtualFileSystem;
-import jetbrains.mps.ide.editor.MPSFileNodeEditor;
+import jetbrains.mps.project.Project;
 import java.lang.reflect.InvocationTargetException;
 import java.awt.Component;
 import jetbrains.mps.intentions.IntentionsManager;
@@ -37,12 +38,15 @@ import com.intellij.openapi.actionSystem.ActionManager;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.workbench.action.ActionUtils;
 import com.intellij.openapi.actionSystem.ActionPlaces;
+import com.intellij.openapi.command.impl.CurrentEditorProvider;
+import com.intellij.openapi.fileEditor.FileEditor;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 
 public abstract class BaseEditorTestBody extends BaseTestBody {
   private static DataManager DATA_MANAGER = new DataManagerImpl();
-  public Editor myEditor;
+  protected Editor myEditor;
+  protected MPSFileNodeEditor myFileNodeEditor;
   private SNode myBefore;
   private SNode myResult;
   protected CellReference myStart;
@@ -88,7 +92,8 @@ public abstract class BaseEditorTestBody extends BaseTestBody {
           BaseEditorTestBody.this.myResult = BaseEditorTestBody.this.getNodeById(after);
           BaseEditorTestBody.this.myFinish = BaseEditorTestBody.this.findCellReference(BaseEditorTestBody.this.getRealNodeById(after));
         }
-        BaseEditorTestBody.this.myEditor = BaseEditorTestBody.this.openEditor();
+        myFileNodeEditor = openEditor();
+        myEditor = myFileNodeEditor.getNodeEditor();
         if (BaseEditorTestBody.this.myEditor.getCurrentEditorComponent() instanceof EditorComponent) {
           EditorComponent component = ((EditorComponent) BaseEditorTestBody.this.myEditor.getCurrentEditorComponent());
           component.addNotify();
@@ -149,35 +154,38 @@ public abstract class BaseEditorTestBody extends BaseTestBody {
 
   public abstract void testMethodImpl() throws Exception;
 
-  private Editor openEditor() {
+  private MPSFileNodeEditor openEditor() {
     assert ModelAccess.instance().isInEDT();
     MPSNodeVirtualFile file = MPSNodesVirtualFileSystem.getInstance().getFileFor(this.myBefore);
-    return new MPSFileNodeEditor(ProjectHelper.toIdeaProject(myProject), file).getNodeEditor();
+    return new MPSFileNodeEditor(ProjectHelper.toIdeaProject(myProject), file);
   }
 
   protected EditorComponent getEditorComponent() {
     return (EditorComponent) myEditor.getCurrentEditorComponent();
   }
 
+  protected Project getProject() {
+    return myProject;
+  }
+
   protected void typeString(final String text) throws InterruptedException, InvocationTargetException {
-    new KeyEventsDispatcher(myProject, getEditorComponent()).typeString(text);
+    new KeyEventsDispatcher(this).typeString(text);
   }
 
   protected void pressKeys(final List<String> keyStrokes) throws InterruptedException, InvocationTargetException {
-    new KeyEventsDispatcher(myProject, getEditorComponent()).pressKeys(keyStrokes);
+    new KeyEventsDispatcher(this).pressKeys(keyStrokes);
   }
 
   protected Component processMouseEvent(int x, int y, int eventType) throws InvocationTargetException, InterruptedException {
-    return new MouseEventsDispatcher(myProject, getEditorComponent()).processMouseEvent(x, y, eventType);
+    return new MouseEventsDispatcher(this).processMouseEvent(x, y, eventType);
   }
 
   protected void processSecondaryMouseEvent(final Component targetComponent, int x, int y, int eventType) throws InvocationTargetException, InterruptedException {
-    new MouseEventsDispatcher(myProject, getEditorComponent()).processSecondaryMouseEvent(targetComponent, x, y, eventType);
+    new MouseEventsDispatcher(this).processSecondaryMouseEvent(targetComponent, x, y, eventType);
   }
 
   protected void invokeIntention(final String name, final SNode node) throws InterruptedException, InvocationTargetException {
-    UndoHelper undoHelper = new UndoHelper(myProject, getEditorComponent());
-    undoHelper.runUndoableInEDTAndWait(new Runnable() {
+    runUndoableInEDTAndWait(new Runnable() {
       public void run() {
         myProject.getModelAccess().executeCommand(new Runnable() {
           public void run() {
@@ -197,10 +205,9 @@ public abstract class BaseEditorTestBody extends BaseTestBody {
   }
 
   protected void invokeAction(final String actionId) throws InvocationTargetException, InterruptedException {
-    UndoHelper undoHelper = new UndoHelper(myProject, getEditorComponent());
     final AnAction action = ActionManager.getInstance().getAction(actionId);
     final AnActionEvent event = ActionUtils.createEvent(ActionPlaces.MAIN_MENU, DATA_MANAGER.getDataContext(getEditorComponent()));
-    undoHelper.runUndoableInEDTAndWait(new Runnable() {
+    runUndoableInEDTAndWait(new Runnable() {
       public void run() {
         if (actionId.equals("$Undo")) {
           myEditor.getCurrentEditorComponent().rebuildEditorContent();
@@ -208,27 +215,37 @@ public abstract class BaseEditorTestBody extends BaseTestBody {
         action.actionPerformed(event);
       }
     });
-    flushEventQueueAfterAction();
   }
 
-  private static void flushEventQueueAfterAction() throws InvocationTargetException, InterruptedException {
-    // flush queue 
+  public void flushEDTEvents() throws InvocationTargetException, InterruptedException {
+    // wait for all events currently in EDT queue 
     SwingUtilities.invokeAndWait(new Runnable() {
       @Override
       public void run() {
         // empty task 
       }
     });
+    // flushing model events 
     ModelAccess.instance().flushEventQueue();
+  }
 
-    // some actions (Copy/Paste) are runing one more command later 
-    SwingUtilities.invokeAndWait(new Runnable() {
-      @Override
-      public void run() {
-        // empty task 
+  public void runUndoableInEDTAndWait(final Runnable runnable) throws InvocationTargetException, InterruptedException {
+    UndoManagerImpl undoManager = (UndoManagerImpl) UndoManager.getInstance(ProjectHelper.toIdeaProject(myProject));
+    CurrentEditorProvider oldEditorProvider = undoManager.getEditorProvider();
+    undoManager.setEditorProvider(new CurrentEditorProvider() {
+      public FileEditor getCurrentEditor() {
+        return myFileNodeEditor;
       }
     });
-    ModelAccess.instance().flushEventQueue();
+    SwingUtilities.invokeAndWait(new Runnable() {
+      public void run() {
+        runnable.run();
+      }
+    });
+    flushEDTEvents();
+    // some actions (Copy/Paste) are runing one more command later 
+    flushEDTEvents();
+    undoManager.setEditorProvider(oldEditorProvider);
   }
   protected static Logger LOG = LogManager.getLogger(BaseEditorTestBody.class);
 }

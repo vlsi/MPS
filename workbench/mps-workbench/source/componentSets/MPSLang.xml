@@ -75,5 +75,10 @@
     <component>
       <implementation-class>com.intellij.util.indexing.FileBasedIndexProjectHandler</implementation-class>
     </component>
+
+    <component>
+      <interface-class>com.intellij.openapi.roots.impl.PushedFilePropertiesUpdater</interface-class>
+      <implementation-class>com.intellij.openapi.roots.impl.PushedFilePropertiesUpdaterImpl</implementation-class>
+    </component>
   </project-components>
 </components>

@@ -5,16 +5,19 @@ package jetbrains.mps.samples.Shapes.structure;
 import jetbrains.mps.smodel.runtime.BaseStructureAspectDescriptor;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder;
+import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
+import java.util.UUID;
 import java.util.Collection;
 import java.util.Arrays;
 import org.jetbrains.annotations.Nullable;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
-  /*package*/ final ConceptDescriptor myConceptCanvas = new ConceptDescriptorBuilder("jetbrains.mps.samples.Shapes.structure.Canvas").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept", "jetbrains.mps.execution.util.structure.IMainClass").children(new String[]{"shapes"}, new boolean[]{true}).create();
-  /*package*/ final ConceptDescriptor myConceptCircle = new ConceptDescriptorBuilder("jetbrains.mps.samples.Shapes.structure.Circle").super_("jetbrains.mps.samples.Shapes.structure.Shape").parents("jetbrains.mps.samples.Shapes.structure.Shape").properties("x", "y", "radius").alias("circle", "").create();
-  /*package*/ final ConceptDescriptor myConceptColorReference = new ConceptDescriptorBuilder("jetbrains.mps.samples.Shapes.structure.ColorReference").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").references("color").create();
-  /*package*/ final ConceptDescriptor myConceptShape = new ConceptDescriptorBuilder("jetbrains.mps.samples.Shapes.structure.Shape").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").children(new String[]{"color"}, new boolean[]{false}).abstract_().create();
-  /*package*/ final ConceptDescriptor myConceptSquare = new ConceptDescriptorBuilder("jetbrains.mps.samples.Shapes.structure.Square").super_("jetbrains.mps.samples.Shapes.structure.Shape").parents("jetbrains.mps.samples.Shapes.structure.Shape").properties("upperLeftX", "upperLeftY", "size").alias("square", "").create();
+
+  /*package*/ final ConceptDescriptor myConceptCanvas = new ConceptDescriptorBuilder("jetbrains.mps.samples.Shapes.structure.Canvas", MetaIdFactory.conceptId(UUID.fromString("16bafbb4-c6cd-4cc5-8332-7c6de8729b3f"), 5898776707557467933L)).super_("jetbrains.mps.lang.core.structure.BaseConcept").super_(MetaIdFactory.conceptId(UUID.fromString("16bafbb4-c6cd-4cc5-8332-7c6de8729b3f"), 1133920641626L)).parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept", "jetbrains.mps.execution.util.structure.IMainClass").parentIds(MetaIdFactory.conceptId(UUID.fromString("16bafbb4-c6cd-4cc5-8332-7c6de8729b3f"), 1133920641626L), MetaIdFactory.conceptId(UUID.fromString("16bafbb4-c6cd-4cc5-8332-7c6de8729b3f"), 1169194658468L), MetaIdFactory.conceptId(UUID.fromString("16bafbb4-c6cd-4cc5-8332-7c6de8729b3f"), 4666195181811081429L)).childDescriptors(new ConceptDescriptorBuilder.Link(5898776707557489223L, "shapes", MetaIdFactory.conceptId(UUID.fromString("16bafbb4-c6cd-4cc5-8332-7c6de8729b3f"), 5898776707557474657L), true, true, false)).children(new String[]{"shapes"}, new boolean[]{true}).create();
+  /*package*/ final ConceptDescriptor myConceptCircle = new ConceptDescriptorBuilder("jetbrains.mps.samples.Shapes.structure.Circle", MetaIdFactory.conceptId(UUID.fromString("16bafbb4-c6cd-4cc5-8332-7c6de8729b3f"), 5898776707557474712L)).super_("jetbrains.mps.samples.Shapes.structure.Shape").super_(MetaIdFactory.conceptId(UUID.fromString("16bafbb4-c6cd-4cc5-8332-7c6de8729b3f"), 5898776707557474657L)).parents("jetbrains.mps.samples.Shapes.structure.Shape").parentIds(MetaIdFactory.conceptId(UUID.fromString("16bafbb4-c6cd-4cc5-8332-7c6de8729b3f"), 5898776707557474657L)).propertyDescriptors(new ConceptDescriptorBuilder.Prop(5898776707557474713L, "x"), new ConceptDescriptorBuilder.Prop(5898776707557474715L, "y"), new ConceptDescriptorBuilder.Prop(5898776707557474718L, "radius")).properties("x", "y", "radius").alias("circle", "").create();
+  /*package*/ final ConceptDescriptor myConceptColorReference = new ConceptDescriptorBuilder("jetbrains.mps.samples.Shapes.structure.ColorReference", MetaIdFactory.conceptId(UUID.fromString("16bafbb4-c6cd-4cc5-8332-7c6de8729b3f"), 4191445539799302575L)).super_("jetbrains.mps.lang.core.structure.BaseConcept").super_(MetaIdFactory.conceptId(UUID.fromString("16bafbb4-c6cd-4cc5-8332-7c6de8729b3f"), 1133920641626L)).parents("jetbrains.mps.lang.core.structure.BaseConcept").parentIds(MetaIdFactory.conceptId(UUID.fromString("16bafbb4-c6cd-4cc5-8332-7c6de8729b3f"), 1133920641626L)).referenceDescriptors(new ConceptDescriptorBuilder.Ref(4191445539799302810L, "color", MetaIdFactory.conceptId(UUID.fromString("16bafbb4-c6cd-4cc5-8332-7c6de8729b3f"), 1070462154015L), false)).references("color").create();
+  /*package*/ final ConceptDescriptor myConceptShape = new ConceptDescriptorBuilder("jetbrains.mps.samples.Shapes.structure.Shape", MetaIdFactory.conceptId(UUID.fromString("16bafbb4-c6cd-4cc5-8332-7c6de8729b3f"), 5898776707557474657L)).super_("jetbrains.mps.lang.core.structure.BaseConcept").super_(MetaIdFactory.conceptId(UUID.fromString("16bafbb4-c6cd-4cc5-8332-7c6de8729b3f"), 1133920641626L)).parents("jetbrains.mps.lang.core.structure.BaseConcept").parentIds(MetaIdFactory.conceptId(UUID.fromString("16bafbb4-c6cd-4cc5-8332-7c6de8729b3f"), 1133920641626L)).childDescriptors(new ConceptDescriptorBuilder.Link(4191445539799470732L, "color", MetaIdFactory.conceptId(UUID.fromString("16bafbb4-c6cd-4cc5-8332-7c6de8729b3f"), 4191445539799302575L), false, false, false)).children(new String[]{"color"}, new boolean[]{false}).abstract_().create();
+  /*package*/ final ConceptDescriptor myConceptSquare = new ConceptDescriptorBuilder("jetbrains.mps.samples.Shapes.structure.Square", MetaIdFactory.conceptId(UUID.fromString("16bafbb4-c6cd-4cc5-8332-7c6de8729b3f"), 5898776707557474722L)).super_("jetbrains.mps.samples.Shapes.structure.Shape").super_(MetaIdFactory.conceptId(UUID.fromString("16bafbb4-c6cd-4cc5-8332-7c6de8729b3f"), 5898776707557474657L)).parents("jetbrains.mps.samples.Shapes.structure.Shape").parentIds(MetaIdFactory.conceptId(UUID.fromString("16bafbb4-c6cd-4cc5-8332-7c6de8729b3f"), 5898776707557474657L)).propertyDescriptors(new ConceptDescriptorBuilder.Prop(5898776707557474723L, "upperLeftX"), new ConceptDescriptorBuilder.Prop(5898776707557474725L, "upperLeftY"), new ConceptDescriptorBuilder.Prop(5898776707557474728L, "size")).properties("upperLeftX", "upperLeftY", "size").alias("square", "").create();
 
   @Override
   public Collection<ConceptDescriptor> getDescriptors() {
@@ -24,7 +27,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   @Override
   @Nullable
   public ConceptDescriptor getDescriptor(String conceptFqName) {
-    switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0i, conceptFqName)) {
+    switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0j, conceptFqName)) {
       case 0:
         return myConceptCanvas;
       case 1:
@@ -39,5 +42,5 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
         return null;
     }
   }
-  private static String[] stringSwitchCases_1htk8d_a0a0i = new String[]{"jetbrains.mps.samples.Shapes.structure.Canvas", "jetbrains.mps.samples.Shapes.structure.Circle", "jetbrains.mps.samples.Shapes.structure.ColorReference", "jetbrains.mps.samples.Shapes.structure.Shape", "jetbrains.mps.samples.Shapes.structure.Square"};
+  private static String[] stringSwitchCases_1htk8d_a0a0j = new String[]{"jetbrains.mps.samples.Shapes.structure.Canvas", "jetbrains.mps.samples.Shapes.structure.Circle", "jetbrains.mps.samples.Shapes.structure.ColorReference", "jetbrains.mps.samples.Shapes.structure.Shape", "jetbrains.mps.samples.Shapes.structure.Square"};
 }

@@ -5,30 +5,54 @@ package jetbrains.mps.lang.editor.styleTests.structure;
 import jetbrains.mps.smodel.runtime.BaseStructureAspectDescriptor;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder;
+import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
+import java.util.UUID;
 import java.util.Collection;
 import java.util.Arrays;
 import org.jetbrains.annotations.Nullable;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
-  /*package*/ final ConceptDescriptor myConceptNodeContainer = new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.styleTests.structure.NodeContainer").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").children(new String[]{"node"}, new boolean[]{false}).create();
-  /*package*/ final ConceptDescriptor myConceptTestConceptWithStyleAttributes = new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.styleTests.structure.TestConceptWithStyleAttributes").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").create();
+
+  /*package*/ final ConceptDescriptor myConceptHugePriorityStyle = new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.styleTests.structure.HugePriorityStyle", MetaIdFactory.conceptId(UUID.fromString("a936c42c-cb2c-4d64-a1dc-12986579a998"), 8917170296719632906L)).super_("jetbrains.mps.lang.editor.styleTests.structure.NodeContainer").super_(MetaIdFactory.conceptId(UUID.fromString("a936c42c-cb2c-4d64-a1dc-12986579a998"), 8422442021223268684L)).parents("jetbrains.mps.lang.editor.styleTests.structure.NodeContainer").parentIds(MetaIdFactory.conceptId(UUID.fromString("a936c42c-cb2c-4d64-a1dc-12986579a998"), 8422442021223268684L)).alias("hugePriorityStyle", "").create();
+  /*package*/ final ConceptDescriptor myConceptLeafNode = new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.styleTests.structure.LeafNode", MetaIdFactory.conceptId(UUID.fromString("a936c42c-cb2c-4d64-a1dc-12986579a998"), 4078300376848435002L)).super_("jetbrains.mps.lang.editor.styleTests.structure.NodeContainer").super_(MetaIdFactory.conceptId(UUID.fromString("a936c42c-cb2c-4d64-a1dc-12986579a998"), 8422442021223268684L)).parents("jetbrains.mps.lang.editor.styleTests.structure.NodeContainer").parentIds(MetaIdFactory.conceptId(UUID.fromString("a936c42c-cb2c-4d64-a1dc-12986579a998"), 8422442021223268684L)).alias("leaf", "").create();
+  /*package*/ final ConceptDescriptor myConceptNodeContainer = new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.styleTests.structure.NodeContainer", MetaIdFactory.conceptId(UUID.fromString("a936c42c-cb2c-4d64-a1dc-12986579a998"), 8422442021223268684L)).super_("jetbrains.mps.lang.core.structure.BaseConcept").super_(MetaIdFactory.conceptId(UUID.fromString("a936c42c-cb2c-4d64-a1dc-12986579a998"), 1133920641626L)).parents("jetbrains.mps.lang.core.structure.BaseConcept").parentIds(MetaIdFactory.conceptId(UUID.fromString("a936c42c-cb2c-4d64-a1dc-12986579a998"), 1133920641626L)).childDescriptors(new ConceptDescriptorBuilder.Link(8422442021223269806L, "node", MetaIdFactory.conceptId(UUID.fromString("a936c42c-cb2c-4d64-a1dc-12986579a998"), 8422442021223268684L), true, true, false)).children(new String[]{"node"}, new boolean[]{true}).abstract_().alias("node container", "").create();
+  /*package*/ final ConceptDescriptor myConceptPriorityStyle = new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.styleTests.structure.PriorityStyle", MetaIdFactory.conceptId(UUID.fromString("a936c42c-cb2c-4d64-a1dc-12986579a998"), 8917170296719625334L)).super_("jetbrains.mps.lang.editor.styleTests.structure.NodeContainer").super_(MetaIdFactory.conceptId(UUID.fromString("a936c42c-cb2c-4d64-a1dc-12986579a998"), 8422442021223268684L)).parents("jetbrains.mps.lang.editor.styleTests.structure.NodeContainer").parentIds(MetaIdFactory.conceptId(UUID.fromString("a936c42c-cb2c-4d64-a1dc-12986579a998"), 8422442021223268684L)).alias("priorityStyle", "").create();
+  /*package*/ final ConceptDescriptor myConceptPriorityStyleCopy = new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.styleTests.structure.PriorityStyleCopy", MetaIdFactory.conceptId(UUID.fromString("a936c42c-cb2c-4d64-a1dc-12986579a998"), 8917170296719632542L)).super_("jetbrains.mps.lang.editor.styleTests.structure.NodeContainer").super_(MetaIdFactory.conceptId(UUID.fromString("a936c42c-cb2c-4d64-a1dc-12986579a998"), 8422442021223268684L)).parents("jetbrains.mps.lang.editor.styleTests.structure.NodeContainer").parentIds(MetaIdFactory.conceptId(UUID.fromString("a936c42c-cb2c-4d64-a1dc-12986579a998"), 8422442021223268684L)).alias("priorityStyleCopy", "").create();
+  /*package*/ final ConceptDescriptor myConceptTestConceptWithStyleAttributes = new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.styleTests.structure.TestConceptWithStyleAttributes", MetaIdFactory.conceptId(UUID.fromString("a936c42c-cb2c-4d64-a1dc-12986579a998"), 6609104295326650728L)).super_("jetbrains.mps.lang.core.structure.BaseConcept").super_(MetaIdFactory.conceptId(UUID.fromString("a936c42c-cb2c-4d64-a1dc-12986579a998"), 1133920641626L)).parents("jetbrains.mps.lang.core.structure.BaseConcept").parentIds(MetaIdFactory.conceptId(UUID.fromString("a936c42c-cb2c-4d64-a1dc-12986579a998"), 1133920641626L)).create();
+  /*package*/ final ConceptDescriptor myConceptTestInheritedAttribute = new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.styleTests.structure.TestInheritedAttribute", MetaIdFactory.conceptId(UUID.fromString("a936c42c-cb2c-4d64-a1dc-12986579a998"), 8917170296719630045L)).super_("jetbrains.mps.lang.editor.styleTests.structure.NodeContainer").super_(MetaIdFactory.conceptId(UUID.fromString("a936c42c-cb2c-4d64-a1dc-12986579a998"), 8422442021223268684L)).parents("jetbrains.mps.lang.editor.styleTests.structure.NodeContainer").parentIds(MetaIdFactory.conceptId(UUID.fromString("a936c42c-cb2c-4d64-a1dc-12986579a998"), 8422442021223268684L)).propertyDescriptors(new ConceptDescriptorBuilder.Prop(8917170296719630046L, "value")).properties("value").alias("test-inherited-attribute", "").create();
+  /*package*/ final ConceptDescriptor myConceptTestSimpleAttribute = new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.styleTests.structure.TestSimpleAttribute", MetaIdFactory.conceptId(UUID.fromString("a936c42c-cb2c-4d64-a1dc-12986579a998"), 8917170296719628637L)).super_("jetbrains.mps.lang.editor.styleTests.structure.NodeContainer").super_(MetaIdFactory.conceptId(UUID.fromString("a936c42c-cb2c-4d64-a1dc-12986579a998"), 8422442021223268684L)).parents("jetbrains.mps.lang.editor.styleTests.structure.NodeContainer").parentIds(MetaIdFactory.conceptId(UUID.fromString("a936c42c-cb2c-4d64-a1dc-12986579a998"), 8422442021223268684L)).propertyDescriptors(new ConceptDescriptorBuilder.Prop(8917170296719630035L, "value")).properties("value").alias("test-simple-attribute", "").create();
+  /*package*/ final ConceptDescriptor myConceptUnapplyPriorityStyleCopy = new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.styleTests.structure.UnapplyPriorityStyleCopy", MetaIdFactory.conceptId(UUID.fromString("a936c42c-cb2c-4d64-a1dc-12986579a998"), 8917170296719632911L)).super_("jetbrains.mps.lang.editor.styleTests.structure.NodeContainer").super_(MetaIdFactory.conceptId(UUID.fromString("a936c42c-cb2c-4d64-a1dc-12986579a998"), 8422442021223268684L)).parents("jetbrains.mps.lang.editor.styleTests.structure.NodeContainer").parentIds(MetaIdFactory.conceptId(UUID.fromString("a936c42c-cb2c-4d64-a1dc-12986579a998"), 8422442021223268684L)).alias("unapplyPriorityStyleCopy", "").create();
 
   @Override
   public Collection<ConceptDescriptor> getDescriptors() {
-    return Arrays.asList(myConceptNodeContainer, myConceptTestConceptWithStyleAttributes);
+    return Arrays.asList(myConceptHugePriorityStyle, myConceptLeafNode, myConceptNodeContainer, myConceptPriorityStyle, myConceptPriorityStyleCopy, myConceptTestConceptWithStyleAttributes, myConceptTestInheritedAttribute, myConceptTestSimpleAttribute, myConceptUnapplyPriorityStyleCopy);
   }
 
   @Override
   @Nullable
   public ConceptDescriptor getDescriptor(String conceptFqName) {
-    switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0f, conceptFqName)) {
+    switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0n, conceptFqName)) {
       case 0:
-        return myConceptNodeContainer;
+        return myConceptHugePriorityStyle;
       case 1:
+        return myConceptLeafNode;
+      case 2:
+        return myConceptNodeContainer;
+      case 3:
+        return myConceptPriorityStyle;
+      case 4:
+        return myConceptPriorityStyleCopy;
+      case 5:
         return myConceptTestConceptWithStyleAttributes;
+      case 6:
+        return myConceptTestInheritedAttribute;
+      case 7:
+        return myConceptTestSimpleAttribute;
+      case 8:
+        return myConceptUnapplyPriorityStyleCopy;
       default:
         return null;
     }
   }
-  private static String[] stringSwitchCases_1htk8d_a0a0f = new String[]{"jetbrains.mps.lang.editor.styleTests.structure.NodeContainer", "jetbrains.mps.lang.editor.styleTests.structure.TestConceptWithStyleAttributes"};
+  private static String[] stringSwitchCases_1htk8d_a0a0n = new String[]{"jetbrains.mps.lang.editor.styleTests.structure.HugePriorityStyle", "jetbrains.mps.lang.editor.styleTests.structure.LeafNode", "jetbrains.mps.lang.editor.styleTests.structure.NodeContainer", "jetbrains.mps.lang.editor.styleTests.structure.PriorityStyle", "jetbrains.mps.lang.editor.styleTests.structure.PriorityStyleCopy", "jetbrains.mps.lang.editor.styleTests.structure.TestConceptWithStyleAttributes", "jetbrains.mps.lang.editor.styleTests.structure.TestInheritedAttribute", "jetbrains.mps.lang.editor.styleTests.structure.TestSimpleAttribute", "jetbrains.mps.lang.editor.styleTests.structure.UnapplyPriorityStyleCopy"};
 }

@@ -1905,7 +1905,7 @@
                               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="7255550618273712401" resolveInfo="progress" />
                             </node>
                             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="8268447883325681152" nodeInfo="nn">
-                              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="50yc.~ProgressWindowWithNotification%dstop()%cvoid" resolveInfo="stop" />
+                              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="50yc.~ProgressWindow%dstop()%cvoid" resolveInfo="stop" />
                             </node>
                           </node>
                         </node>
@@ -2002,7 +2002,7 @@
                               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="7255550618273712401" resolveInfo="progress" />
                             </node>
                             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="7255550618273779748" nodeInfo="nn">
-                              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="50yc.~ProgressWindowWithNotification%dcancel()%cvoid" resolveInfo="cancel" />
+                              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="50yc.~ProgressIndicatorBase%dcancel()%cvoid" resolveInfo="cancel" />
                             </node>
                           </node>
                         </node>
@@ -2022,7 +2022,7 @@
                               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="7255550618273712401" resolveInfo="progress" />
                             </node>
                             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="7255550618273794761" nodeInfo="nn">
-                              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="50yc.~ProgressWindowWithNotification%dcancel()%cvoid" resolveInfo="cancel" />
+                              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="50yc.~ProgressIndicatorBase%dcancel()%cvoid" resolveInfo="cancel" />
                             </node>
                           </node>
                         </node>

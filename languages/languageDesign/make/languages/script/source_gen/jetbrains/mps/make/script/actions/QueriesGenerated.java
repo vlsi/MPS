@@ -71,7 +71,7 @@ public class QueriesGenerated {
   }
   public static List<SubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_OutputResources_2360002718792652028(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
-    ListSequence.fromList(result).addSequence(ListSequence.fromList(ChildSubstituteActionsHelper.createDefaultSubstituteActions(SConceptOperations.findConceptDeclaration("jetbrains.mps.make.script.structure.OutputResources"), _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext)));
+    ListSequence.fromList(result).addSequence(ListSequence.fromList(ChildSubstituteActionsHelper.createDefaultSubstituteActions(SConceptOperations.findConceptDeclaration("jetbrains.mps.make.script.structure.OutputResources"), _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter())));
     return result;
   }
   public static boolean nodeSubstituteActionsBuilder_Precondition_OutputResources_2360002718792652029(final IOperationContext operationContext, final NodeSubstitutePreconditionContext _context) {
@@ -79,7 +79,7 @@ public class QueriesGenerated {
   }
   public static List<SubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_Expression_1977954644795375337(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
-    ListSequence.fromList(result).addSequence(ListSequence.fromList(ChildSubstituteActionsHelper.createDefaultSubstituteActions(SConceptOperations.findConceptDeclaration("jetbrains.mps.make.script.structure.RelayQueryExpression"), _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext)));
+    ListSequence.fromList(result).addSequence(ListSequence.fromList(ChildSubstituteActionsHelper.createDefaultSubstituteActions(SConceptOperations.findConceptDeclaration("jetbrains.mps.make.script.structure.RelayQueryExpression"), _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter())));
     return result;
   }
   public static boolean nodeSubstituteActionsBuilder_Precondition_Expression_1977954644795375338(final IOperationContext operationContext, final NodeSubstitutePreconditionContext _context) {
@@ -137,8 +137,8 @@ public class QueriesGenerated {
         });
       }
     }
-    ListSequence.fromList(result).addSequence(ListSequence.fromList(ChildSubstituteActionsHelper.createDefaultSubstituteActions(SConceptOperations.findConceptDeclaration("jetbrains.mps.make.script.structure.AdvanceWorkStatement"), _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext)));
-    ListSequence.fromList(result).addSequence(ListSequence.fromList(ChildSubstituteActionsHelper.createDefaultSubstituteActions(SConceptOperations.findConceptDeclaration("jetbrains.mps.make.script.structure.FinishWorkStatement"), _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext)));
+    ListSequence.fromList(result).addSequence(ListSequence.fromList(ChildSubstituteActionsHelper.createDefaultSubstituteActions(SConceptOperations.findConceptDeclaration("jetbrains.mps.make.script.structure.AdvanceWorkStatement"), _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter())));
+    ListSequence.fromList(result).addSequence(ListSequence.fromList(ChildSubstituteActionsHelper.createDefaultSubstituteActions(SConceptOperations.findConceptDeclaration("jetbrains.mps.make.script.structure.FinishWorkStatement"), _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter())));
     {
       SNode outputConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.make.script.structure.AdvanceWorkStatement");
       SNode childConcept = (SNode) _context.getChildConcept();
@@ -198,7 +198,7 @@ public class QueriesGenerated {
   }
   public static List<SubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_Expression_3297237684108627750(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
-    ListSequence.fromList(result).addSequence(ListSequence.fromList(ChildSubstituteActionsHelper.createDefaultSubstituteActions(SConceptOperations.findConceptDeclaration("jetbrains.mps.make.script.structure.AllWorkLeftExpression"), _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext)));
+    ListSequence.fromList(result).addSequence(ListSequence.fromList(ChildSubstituteActionsHelper.createDefaultSubstituteActions(SConceptOperations.findConceptDeclaration("jetbrains.mps.make.script.structure.AllWorkLeftExpression"), _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter())));
     return result;
   }
   public static boolean nodeSubstituteActionsBuilder_Precondition_Expression_3297237684108627751(final IOperationContext operationContext, final NodeSubstitutePreconditionContext _context) {

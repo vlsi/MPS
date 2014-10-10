@@ -54,7 +54,7 @@ public class ClassifierMembers_Component implements ConceptEditorComponent {
     }
     public SNode createNodeToInsert(EditorContext editorContext) {
       SNode listOwner = super.getOwner();
-      return this.nodeFactory(listOwner, editorContext);
+      return nodeFactory(listOwner, editorContext);
     }
     public SNode nodeFactory(SNode node, EditorContext editorContext) {
       return SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.PlaceholderMember", null);

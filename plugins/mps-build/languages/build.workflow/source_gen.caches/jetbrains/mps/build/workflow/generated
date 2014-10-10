@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="1psw6nzf5vq9pyojoh52txrv3mkvtdj">
+<dependencies version="2" modelHash="eu6jk7ukovo28ju9cesxh0gycmmdn7">
   <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.generator.runtime(MPS.Core/jetbrains.mps.generator.runtime@java_stub)" />
   <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" hash="-2sqpydigz7vryaerubh22j78l4l08jz" />
-  <dep model="r:1267752b-a233-4432-a848-3e68e0ea0db1(jetbrains.mps.build.workflow.editor)" hash="eeq5wwka2t70xwqhdll7rj4ia6fkio3" />
+  <dep model="r:1267752b-a233-4432-a848-3e68e0ea0db1(jetbrains.mps.build.workflow.editor)" hash="du1nwtcva3m9oqwmwnnndxkt8o15q3r" />
   <dep model="r:6da6c71a-0aac-4fb2-b0ad-1b3a207cc189(jetbrains.mps.build.workflow.behavior)" hash="6p8xqwe5a6ktfvygentyifrwzuwcxfu" />
   <dep model="r:8c3c79a2-2377-4680-a62f-78d39fdded56(jetbrains.mps.build.workflow.constraints)" hash="7fb0w6giz6hk7xznswvjubjuf4r4uko" />
   <dep model="r:aa7cee44-7e41-4ff3-b944-4eb707b62ad6(jetbrains.mps.build.workflow.typesystem)" hash="-92yftbxc5no2m3srnd3amfg4rm6s5ln" />

@@ -18,11 +18,19 @@ import jetbrains.mps.baseLanguage.closures.runtime.YieldingIterator;
 import jetbrains.mps.project.AbstractModule;
 
 public class ModelsToResources {
-  private Iterable<SModel> models;
-  private IOperationContext context;
+  private final Iterable<SModel> models;
+  /**
+   * 
+   * 
+
+   * @deprecated use cons without IOperationContext
+   */
+  @Deprecated
   public ModelsToResources(IOperationContext context, Iterable<SModel> models) {
+    this(models);
+  }
+  public ModelsToResources(Iterable<SModel> models) {
     this.models = models;
-    this.context = context;
   }
   public Iterable<IResource> resources(boolean dirtyOnly) {
     Iterable<SModel> smds = Sequence.fromIterable(models).distinct();
@@ -32,7 +40,7 @@ public class ModelsToResources {
       }
     }, true);
     if (dirtyOnly) {
-      smds = ListSequence.fromListWithValues(new ArrayList<SModel>(), (Iterable<SModel>) GenerationFacade.getModifiedModels(Sequence.fromIterable(smds).toListSequence(), this.context));
+      smds = ListSequence.fromListWithValues(new ArrayList<SModel>(), (Iterable<SModel>) GenerationFacade.getModifiedModels(Sequence.fromIterable(smds).toListSequence()));
     }
     return arrangeByModule(smds);
   }
