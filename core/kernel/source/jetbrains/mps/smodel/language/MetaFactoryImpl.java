@@ -59,17 +59,17 @@ public class MetaFactoryImpl extends MetaFactory implements CoreComponent {
 
   @Override
   public String serializeProperty(SProperty property) {
-    return property.getContainingConcept().getName() + "#" + property.getName() + "#" + ((SPropertyAdapterById) property).getId().serialize();
+    return property.getContainingConcept().getQualifiedName() + "#" + property.getName() + "#" + ((SPropertyAdapterById) property).getId().serialize();
   }
 
   @Override
   public String serializeRole(SContainmentLink role) {
-    return role.getContainingConcept().getName() + "#" + role.getRoleName() + "#" + ((SContainmentLinkAdapterById) role).getRoleId().serialize();
+    return role.getContainingConcept().getQualifiedName() + "#" + role.getRoleName() + "#" + ((SContainmentLinkAdapterById) role).getRoleId().serialize();
   }
 
   @Override
   public String serializeReference(SReferenceLink ref) {
-    return ref.getContainingConcept().getName() + "#" + ref.getRoleName() + "#" + ((SReferenceLinkAdapterById) ref).getRoleId().serialize();
+    return ref.getContainingConcept().getQualifiedName() + "#" + ref.getRoleName() + "#" + ((SReferenceLinkAdapterById) ref).getRoleId().serialize();
   }
 
   @Override

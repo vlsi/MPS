@@ -601,7 +601,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
 
   //remove method after 3.2
   public void setConceptFqName(String conceptFQName) {
-    if (myConcept.getName().equals(conceptFQName)) return;
+    if (myConcept.getQualifiedName().equals(conceptFQName)) return;
     setConcept(new SConceptAdapterByName(conceptFQName));
 
     //MihMuh: that's strange since we try not to mark models as changed after refactorings

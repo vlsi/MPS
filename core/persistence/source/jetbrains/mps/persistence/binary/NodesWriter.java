@@ -76,7 +76,7 @@ public class NodesWriter {
     SContainmentLink roleInParentId = node.getContainmentLink();
     os.writeString(roleInParentId == null ? null : IdHelper.getLinkId(roleInParentId).serialize());
     os.writeString(roleInParentId == null ? null : roleInParentId.getRoleName());
-    os.writeString(roleInParentId == null ? null : roleInParentId.getContainingConcept().getName());
+    os.writeString(roleInParentId == null ? null : roleInParentId.getContainingConcept().getQualifiedName());
     os.writeByte(getNodeInfo(node));
     os.writeByte('{');
 
@@ -139,7 +139,7 @@ public class NodesWriter {
       }
       os.writeString(IdHelper.getRefId(reference.getReferenceLink()).serialize());
       os.writeString(reference.getReferenceLink().getRoleName());
-      os.writeString(reference.getReferenceLink().getContainingConcept().getName());
+      os.writeString(reference.getReferenceLink().getContainingConcept().getQualifiedName());
       if (targetModelReference != null && targetModelReference.equals(myModelReference)) {
         os.writeByte(17);
       } else {
@@ -159,7 +159,7 @@ public class NodesWriter {
     for (Entry<SProperty, String> entry : properties.entrySet()) {
       os.writeString(IdHelper.getPropertyId(entry.getKey()).serialize());
       os.writeString(entry.getKey().getName());
-      os.writeString(entry.getKey().getContainingConcept().getName());
+      os.writeString(entry.getKey().getContainingConcept().getQualifiedName());
       os.writeString(entry.getValue());
     }
   }
