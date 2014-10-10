@@ -1,11 +1,9 @@
 <components>
   <actions>
     <action id="jetbrains.mps.ide.mpsmigration.migration32.ClearHistoryFiles_Action" class="jetbrains.mps.ide.mpsmigration.migration32.ClearHistoryFiles_Action"></action>
-    <action id="jetbrains.mps.ide.mpsmigration.migration32.MigrateIds_Action" class="jetbrains.mps.ide.mpsmigration.migration32.MigrateIds_Action"></action>
     <action id="jetbrains.mps.ide.mpsmigration.migration32.MigrateSModelReference_Action" class="jetbrains.mps.ide.mpsmigration.migration32.MigrateSModelReference_Action"></action>
     <group id="jetbrains.mps.ide.mpsmigration.migration32.Migrations32_ActionGroup" text="Migration 3.2" popup="true">
       <reference ref="jetbrains.mps.ide.mpsmigration.migration32.MigrateSModelReference_Action" />
-      <reference ref="jetbrains.mps.ide.mpsmigration.migration32.MigrateIds_Action" />
       <reference ref="jetbrains.mps.ide.mpsmigration.migration32.ClearHistoryFiles_Action" />
       <add-to-group group-id="ToolsMenu" anchor="last" />
     </group>
