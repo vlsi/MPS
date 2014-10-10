@@ -43,12 +43,10 @@ public class SNodeOperations {
   /**
    * FIXME what on earth this method is supposed to tell?
    */
-
   public static boolean isUnknown(SNode node) {
     ConceptDescriptor cd = ((SAbstractConceptAdapter) node.getConcept()).getConceptDescriptor();
     return cd instanceof IllegalConceptDescriptor;
   }
-
   public static boolean isAncestor(SNode ancestor, SNode node) {
     if (ancestor == node) {
       return true;

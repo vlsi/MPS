@@ -4,6 +4,7 @@ package jetbrains.mps.smodel;
 
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
@@ -40,43 +41,32 @@ public class SNodeUtil {
   public static final SConceptId conceptId_ImplementationWithStubPart = SConceptId.deserialize("ceab5195-25ea-4f22-9b92-103b95ca8c0c/6999738288738427190");
 
   public static final String link_ConceptDeclaration_extends = "extends";
-  public static final SReferenceLinkId
-      linkId_ConceptDeclaration_extends = SReferenceLinkId.deserialize("c72da2b9-7cce-4447-8389-f407dc1158b7/1071489090640/1071489389519");
+  public static final SReferenceLinkId linkId_ConceptDeclaration_extends = SReferenceLinkId.deserialize("c72da2b9-7cce-4447-8389-f407dc1158b7/1071489090640/1071489389519");
   public static final String link_ConceptDeclaration_implements = "implements";
-  public static final SContainmentLinkId
-      linkId_ConceptDeclaration_implements = SContainmentLinkId.deserialize("c72da2b9-7cce-4447-8389-f407dc1158b7/1071489090640/1169129564478");
+  public static final SContainmentLinkId linkId_ConceptDeclaration_implements = SContainmentLinkId.deserialize("c72da2b9-7cce-4447-8389-f407dc1158b7/1071489090640/1169129564478");
   public static final String link_AbstractConceptDeclaration_linkDeclaration = "linkDeclaration";
-  public static final SContainmentLinkId
-      linkId_AbstractConceptDeclaration_linkDeclaration = SContainmentLinkId.deserialize("c72da2b9-7cce-4447-8389-f407dc1158b7/1169125787135/1071489727083");
+  public static final SContainmentLinkId linkId_AbstractConceptDeclaration_linkDeclaration = SContainmentLinkId.deserialize("c72da2b9-7cce-4447-8389-f407dc1158b7/1169125787135/1071489727083");
   public static final String link_AbstractConceptDeclaration_propertyDeclaration = "propertyDeclaration";
-  public static final SContainmentLinkId linkId_AbstractConceptDeclaration_propertyDeclaration = SContainmentLinkId.deserialize(
-      "c72da2b9-7cce-4447-8389-f407dc1158b7/1169125787135/1071489727084");
+  public static final SContainmentLinkId linkId_AbstractConceptDeclaration_propertyDeclaration = SContainmentLinkId.deserialize("c72da2b9-7cce-4447-8389-f407dc1158b7/1169125787135/1071489727084");
 
   public static final String property_AbstractConceptDeclaration_abstract = "abstract";
-  public static final SPropertyId
-      propertyId_AbstractConceptDeclaration_abstract = SPropertyId.deserialize("c72da2b9-7cce-4447-8389-f407dc1158b7/1169125787135/4628067390765956802");
+  public static final SPropertyId propertyId_AbstractConceptDeclaration_abstract = SPropertyId.deserialize("c72da2b9-7cce-4447-8389-f407dc1158b7/1169125787135/4628067390765956802");
   public static final String property_INamedConcept_name = "name";
   public static final SPropertyId propertyId_INamedConcept_name = SPropertyId.deserialize("ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001");
   public static final String property_LinkDeclaration_role = "role";
-  public static final SPropertyId
-      propertyId_LinkDeclaration_role = SPropertyId.deserialize("c72da2b9-7cce-4447-8389-f407dc1158b7/1071489288298/1071599776563");
+  public static final SPropertyId propertyId_LinkDeclaration_role = SPropertyId.deserialize("c72da2b9-7cce-4447-8389-f407dc1158b7/1071489288298/1071599776563");
   public static final String property_LinkDeclaration_metaClass = "metaClass";
-  public static final SPropertyId
-      propertyId_LinkDeclaration_metaClass = SPropertyId.deserialize("c72da2b9-7cce-4447-8389-f407dc1158b7/1071489288298/1071599937831");
+  public static final SPropertyId propertyId_LinkDeclaration_metaClass = SPropertyId.deserialize("c72da2b9-7cce-4447-8389-f407dc1158b7/1071489288298/1071599937831");
   public static final String property_IResolveInfo_resolveInfo = "resolveInfo";
-  public static final SPropertyId
-      propertyId_IResolveInfo_resolveInfo = SPropertyId.deserialize("ceab5195-25ea-4f22-9b92-103b95ca8c0c/1196978630214/1196978656277");
+  public static final SPropertyId propertyId_IResolveInfo_resolveInfo = SPropertyId.deserialize("ceab5195-25ea-4f22-9b92-103b95ca8c0c/1196978630214/1196978656277");
   public static final String property_BaseConcept_virtualPackage = "virtualPackage";
-  public static final SPropertyId
-      propertyId_BaseConcept_virtualPackage = SPropertyId.deserialize("ceab5195-25ea-4f22-9b92-103b95ca8c0c/1133920641626/1193676396447");
+  public static final SPropertyId propertyId_BaseConcept_virtualPackage = SPropertyId.deserialize("ceab5195-25ea-4f22-9b92-103b95ca8c0c/1133920641626/1193676396447");
   public static final String property_BaseConcept_alias = "alias";
   public static final SPropertyId propertyId_BaseConcept_alias = SPropertyId.deserialize("ceab5195-25ea-4f22-9b92-103b95ca8c0c/1133920641626/1156235010670");
   public static final String property_BaseConcept_shortDescription = "shortDescription";
-  public static final SPropertyId
-      propertyId_BaseConcept_shortDescription = SPropertyId.deserialize("ceab5195-25ea-4f22-9b92-103b95ca8c0c/1133920641626/1156234966388");
+  public static final SPropertyId propertyId_BaseConcept_shortDescription = SPropertyId.deserialize("ceab5195-25ea-4f22-9b92-103b95ca8c0c/1133920641626/1156234966388");
   public static final String link_BaseConcept_smodelAttribute = "smodelAttribute";
-  public static final SContainmentLinkId
-      linkId_BaseConcept_smodelAttribute = SContainmentLinkId.deserialize("ceab5195-25ea-4f22-9b92-103b95ca8c0c/1133920641626/5169995583184591170");
+  public static final SContainmentLinkId linkId_BaseConcept_smodelAttribute = SContainmentLinkId.deserialize("ceab5195-25ea-4f22-9b92-103b95ca8c0c/1133920641626/5169995583184591170");
   public SNodeUtil() {
   }
   public static String getPresentation(SNode node) {
@@ -205,17 +195,13 @@ public class SNodeUtil {
     return SPropertyOperations.hasValue(link, "sourceCardinality", "1", "0..1") || SPropertyOperations.hasValue(link, "sourceCardinality", "1..n", "0..1");
   }
   public static boolean getLinkDeclaration_IsSingular(SNode link) {
-    return SPropertyOperations.hasValue(link, "sourceCardinality", "1", "0..1") || SPropertyOperations.hasValue(link, "sourceCardinality", "0..1", "0..1");
+    SNode genuineLinkDeclaration = ((SNode) SModelUtil.getGenuineLinkDeclaration(link));
+    return SPropertyOperations.hasValue(genuineLinkDeclaration, "sourceCardinality", "0..1", "0..1") || SPropertyOperations.hasValue(genuineLinkDeclaration, "sourceCardinality", "1", "0..1");
   }
   public static boolean hasReferenceMacro(SNode node, String role) {
     return (AttributeOperations.getAttribute(node, new IAttributeDescriptor.LinkAttribute("jetbrains.mps.lang.generator.structure.ReferenceMacro", role)) != null);
   }
-
-  public static boolean getLinkDeclaration_IsUnordered(SNode link) {
-    return SPropertyOperations.getBoolean(link, "unordered");
-  }
-
   public static SNode getLinkTarget(SNode link) {
-    return link.getReferenceTarget("target");
+    return SLinkOperations.getTarget(link, "target", false);
   }
 }
