@@ -34,8 +34,8 @@ public class TemplateOutputRoot__2 implements TemplateDeclaration {
     final SNode tnode1 = environment.createOutputNode("jetbrains.mps.transformation.test.outputLang.structure.OutputRoot");
     try {
       environment.nodeCopied(context, tnode1, "tpl/r:00000000-0000-4000-0000-011c895905f7/1202338159177");
-      SNodeAccessUtil.setProperty(tnode1, "name", "OutputRoot_2");
       SNodeAccessUtil.setProperty(tnode1, "text", "'getPrevInputTest' output root (2)");
+      SNodeAccessUtil.setProperty(tnode1, "name", "OutputRoot_2");
       {
         final List<SNode> tlist2 = new ArrayList<SNode>();
         final Iterable<SNode> loopList2 = QueriesGenerated.sourceNodesQuery_1202338467105(new SourceSubstituteMacroNodesContext(context, loopMacroRef_ewlaka_b0a0a1a3a1a2));
