@@ -13,17 +13,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.openapi.editor.update;
-
-import jetbrains.mps.openapi.editor.EditorComponent;
-import jetbrains.mps.openapi.editor.cells.EditorCell;
+package jetbrains.mps.openapi.editor.commands;
 
 /**
  * User: shatalin
- * Date: 12/09/14
+ * Date: 09/10/14
  */
-public interface UpdaterListener {
-  public void cellSynchronizedWithModel(EditorCell cell);
+public interface CommandContext {
+  void commandStarted();
 
-  void editorUpdated(EditorComponent editorComponent);
+  void commandFinished();
 }

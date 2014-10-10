@@ -19,6 +19,7 @@ import com.intellij.openapi.command.CommandProcessor;
 import com.intellij.util.LocalTimeCounter;
 import com.intellij.util.ui.UIUtil;
 import jetbrains.mps.editor.runtime.cells.AbstractCellAction;
+import jetbrains.mps.editor.runtime.commands.EditorComputable;
 import jetbrains.mps.editor.runtime.style.Padding;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.editor.runtime.style.StyleAttributesUtil;
@@ -527,12 +528,9 @@ public abstract class EditorCell_Label extends EditorCell_Basic implements jetbr
       return false;
     }
     // TODO: check if we need command here or we can execute command from UI action...
-    boolean result = getContext().executeCommand(new ProcessTextActionCommand(type, allowErrors));
-    if (result) {
-      getContext().flushEvents();
-      getEditor().relayout();
-    }
-    return result;
+    ProcessTextActionCommand textAction = new ProcessTextActionCommand(getContext(), type, allowErrors);
+    getContext().getRepository().getModelAccess().executeCommand(textAction);
+    return textAction.getResult();
   }
 
   private boolean processMutableKeyTyped(final KeyEvent keyEvent, final boolean allowErrors) {
@@ -1018,18 +1016,19 @@ public abstract class EditorCell_Label extends EditorCell_Basic implements jetbr
     }
   }
 
-  private class ProcessTextActionCommand implements Computable<Boolean> {
+  private class ProcessTextActionCommand extends EditorComputable<Boolean> {
 
     private CellActionType myActionType;
     private boolean myAllowErrors;
 
-    ProcessTextActionCommand(CellActionType type, boolean allowErrors) {
+    ProcessTextActionCommand(EditorContext context, CellActionType type, boolean allowErrors) {
+      super(context);
       myActionType = type;
       myAllowErrors = allowErrors;
     }
 
     @Override
-    public Boolean compute() {
+    public Boolean doCompute() {
       String oldText = myTextLine.getText();
       int caretPosition = myTextLine.getCaretPosition();
 

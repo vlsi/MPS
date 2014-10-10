@@ -290,27 +290,17 @@
     <node role="enumConstant" roleId="tpee.1083245396908" type="tpee.EnumConstantDeclaration" typeId="tpee.1083245299891" id="1182113674817458495" nodeInfo="ig">
       <property name="name" nameId="tpck.1169194664001" value="NOFLOW_LAYOUT_CONSTRAINT" />
       <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="1182113674817458491" resolveInfo="LayoutConstraints" />
-      <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1182113674817458533" nodeInfo="nn">
-        <node role="operand" roleId="tpee.1197027771414" type="tp25.SEnumOperationInvocation" typeId="tp25.1240930118027" id="1182113674817458530" nodeInfo="nn">
-          <link role="enumDeclaration" roleId="tp25.1240930118028" targetNodeId="tpc2.1138197387103" resolveInfo="_Layout_Constraints_Enum" />
-          <node role="operation" roleId="tp25.1240930317927" type="tp25.SEnum_MemberOperation" typeId="tp25.1240930444945" id="1182113674817458537" nodeInfo="ng">
-            <link role="member" roleId="tp25.1240930444946" targetNodeId="tpc2.1138197619454" />
-          </node>
-        </node>
-        <node role="operation" roleId="tpee.1197027833540" type="tp25.EnumMember_ValueOperation" typeId="tp25.1240171359678" id="1182113674817458538" nodeInfo="nn" />
+      <node role="actualArgument" roleId="tpee.1068499141038" type="tp25.EnumMemberValueRefExpression" typeId="tp25.6973815483243445083" id="605573170305211398" nodeInfo="nn">
+        <link role="member" roleId="tp25.6973815483243565416" targetNodeId="tpc2.1138197619454" />
+        <link role="enum" roleId="tp25.6973815483243564601" targetNodeId="tpc2.1138197387103" resolveInfo="_Layout_Constraints_Enum" />
       </node>
     </node>
     <node role="enumConstant" roleId="tpee.1083245396908" type="tpee.EnumConstantDeclaration" typeId="tpee.1083245299891" id="1182113674817458496" nodeInfo="ig">
       <property name="name" nameId="tpck.1169194664001" value="PUNCTUATION_LAYOUT_CONSTRAINT" />
       <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="1182113674817458491" resolveInfo="LayoutConstraints" />
-      <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1182113674817458543" nodeInfo="nn">
-        <node role="operand" roleId="tpee.1197027771414" type="tp25.SEnumOperationInvocation" typeId="tp25.1240930118027" id="1182113674817458540" nodeInfo="nn">
-          <link role="enumDeclaration" roleId="tp25.1240930118028" targetNodeId="tpc2.1138197387103" resolveInfo="_Layout_Constraints_Enum" />
-          <node role="operation" roleId="tp25.1240930317927" type="tp25.SEnum_MemberOperation" typeId="tp25.1240930444945" id="1182113674817458542" nodeInfo="ng">
-            <link role="member" roleId="tp25.1240930444946" targetNodeId="tpc2.1138197387339" />
-          </node>
-        </node>
-        <node role="operation" roleId="tpee.1197027833540" type="tp25.EnumMember_ValueOperation" typeId="tp25.1240171359678" id="1182113674817458547" nodeInfo="nn" />
+      <node role="actualArgument" roleId="tpee.1068499141038" type="tp25.EnumMemberValueRefExpression" typeId="tp25.6973815483243445083" id="605573170305212703" nodeInfo="nn">
+        <link role="member" roleId="tp25.6973815483243565416" targetNodeId="tpc2.1138197387339" />
+        <link role="enum" roleId="tp25.6973815483243564601" targetNodeId="tpc2.1138197387103" resolveInfo="_Layout_Constraints_Enum" />
       </node>
     </node>
     <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="1182113674817458490" nodeInfo="nn" />

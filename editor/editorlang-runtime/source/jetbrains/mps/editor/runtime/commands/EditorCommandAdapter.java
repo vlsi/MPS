@@ -13,21 +13,36 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.openapi.editor.update;
+package jetbrains.mps.editor.runtime.commands;
 
 import jetbrains.mps.openapi.editor.EditorComponent;
-import jetbrains.mps.openapi.editor.cells.EditorCell;
+import jetbrains.mps.openapi.editor.EditorContext;
+import jetbrains.mps.openapi.editor.commands.CommandContext;
 
 /**
  * User: shatalin
- * Date: 12/09/14
+ * Date: 08/10/14
  */
-public class UpdaterListenerAdapter implements UpdaterListener {
-  @Override
-  public void cellSynchronizedWithModel(EditorCell cell) {
+public class EditorCommandAdapter extends EditorCommand {
+  private final Runnable myRunnable;
+
+  public EditorCommandAdapter(Runnable r, EditorComponent editorComponent) {
+    super(editorComponent);
+    myRunnable = r;
+  }
+
+  public EditorCommandAdapter(Runnable r, EditorContext editorContext) {
+    super(editorContext);
+    myRunnable = r;
+  }
+
+  public EditorCommandAdapter(Runnable r, CommandContext commandContext) {
+    super(commandContext);
+    myRunnable = r;
   }
 
   @Override
-  public void editorUpdated(EditorComponent editorComponent) {
+  protected void doExecute() {
+    myRunnable.run();
   }
 }

@@ -13,17 +13,23 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.openapi.editor.update;
-
-import jetbrains.mps.openapi.editor.EditorComponent;
-import jetbrains.mps.openapi.editor.cells.EditorCell;
+package jetbrains.mps.util;
 
 /**
  * User: shatalin
- * Date: 12/09/14
+ * Date: 09/10/14
  */
-public interface UpdaterListener {
-  public void cellSynchronizedWithModel(EditorCell cell);
+public abstract class AbstractComputeRunnable<T> implements Runnable {
+  private T myResult;
 
-  void editorUpdated(EditorComponent editorComponent);
+  @Override
+  public void run() {
+    myResult = compute();
+  }
+
+  public T getResult() {
+    return myResult;
+  }
+
+  protected abstract T compute();
 }

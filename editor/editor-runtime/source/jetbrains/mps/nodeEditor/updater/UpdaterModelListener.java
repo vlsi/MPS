@@ -29,6 +29,7 @@ import java.util.List;
 class UpdaterModelListener extends EventsCollector {
   private final EditorComponent myEditorComponent;
   private final UpdaterImpl myUpdater;
+  private boolean myProcessSelection;
 
   UpdaterModelListener(UpdaterImpl updater, EditorComponent editorComponent) {
     myUpdater = updater;
@@ -46,8 +47,14 @@ class UpdaterModelListener extends EventsCollector {
 
     myUpdater.update(events);
     myEditorComponent.relayout();
-    if (myUpdater.getEditorContext().isInsideCommand() && eventsAnalyzer.getSelectionHandler() != null) {
+    if (myProcessSelection && eventsAnalyzer.getSelectionHandler() != null) {
       eventsAnalyzer.getSelectionHandler().setEditorSelection(myEditorComponent, lastSelectedNode);
     }
+  }
+
+  public boolean setProcessSelection(boolean processSelection) {
+    boolean oldValue = myProcessSelection;
+    myProcessSelection = processSelection;
+    return oldValue;
   }
 }
