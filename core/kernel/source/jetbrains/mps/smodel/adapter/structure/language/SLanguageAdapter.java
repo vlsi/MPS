@@ -84,9 +84,15 @@ public abstract class SLanguageAdapter implements SLanguage {
   }
 
   private static final Logger LOG = Logger.wrap(LogManager.getLogger(SLanguageAdapter.class));
+
   @Override
   public boolean equals(Object obj) {
-    LOG.error("somebody's using equals", new Throwable());
-    return super.equals(obj);
+    if (!(obj instanceof SLanguage)) return  false;
+    return isSame(((SLanguage) obj));
+  }
+
+  @Override
+  public int hashCode() {
+    return 0;
   }
 }

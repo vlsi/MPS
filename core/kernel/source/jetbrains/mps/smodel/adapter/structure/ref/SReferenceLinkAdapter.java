@@ -146,9 +146,15 @@ public abstract class SReferenceLinkAdapter implements SReferenceLink {
   }
 
   private static final Logger LOG = Logger.wrap(LogManager.getLogger(SReferenceLinkAdapter.class));
+
   @Override
   public boolean equals(Object obj) {
-    LOG.error("somebody's using equals", new Throwable());
-    return super.equals(obj);
+    if (!(obj instanceof SReferenceLinkAdapter)) return  false;
+    return isSame(((SReferenceLinkAdapter) obj));
+  }
+
+  @Override
+  public int hashCode() {
+    return 0;
   }
 }

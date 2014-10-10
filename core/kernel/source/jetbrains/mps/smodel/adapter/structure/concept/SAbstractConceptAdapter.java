@@ -179,10 +179,4 @@ public abstract class SAbstractConceptAdapter implements SAbstractConcept {
 
     return findInModel(strucModel);
   }
-
-  @Override
-  public boolean equals(Object obj) {
-    LOG.error("somebody's using equals", new Throwable());
-    return super.equals(obj);
-  }
 }

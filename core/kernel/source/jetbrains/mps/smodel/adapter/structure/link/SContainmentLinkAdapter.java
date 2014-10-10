@@ -99,9 +99,15 @@ public abstract class SContainmentLinkAdapter implements SContainmentLink {
   }
 
   private static final Logger LOG = Logger.wrap(LogManager.getLogger(SContainmentLinkAdapter.class));
+
   @Override
   public boolean equals(Object obj) {
-    LOG.error("somebody's using equals", new Throwable());
-    return super.equals(obj);
+    if (!(obj instanceof SContainmentLink)) return  false;
+    return isSame(((SContainmentLink) obj));
+  }
+
+  @Override
+  public int hashCode() {
+    return 0;
   }
 }

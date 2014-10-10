@@ -65,9 +65,15 @@ public abstract class SPropertyAdapter implements SProperty {
   }
 
   private static final Logger LOG = Logger.wrap(LogManager.getLogger(SPropertyAdapter.class));
+
   @Override
   public boolean equals(Object obj) {
-    LOG.error("somebody's using equals", new Throwable());
-    return super.equals(obj);
+    if (!(obj instanceof SProperty)) return  false;
+    return isSame(((SProperty) obj));
+  }
+
+  @Override
+  public int hashCode() {
+    return 0;
   }
 }

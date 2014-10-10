@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.smodel.adapter.structure.concept;
 
-import jetbrains.mps.compiler.IClassesData;
 import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import org.jetbrains.mps.openapi.language.SConcept;
@@ -47,5 +46,16 @@ public abstract class SConceptAdapter extends SAbstractConceptAdapter implements
       res.add(new SInterfaceConceptAdapterById(id, ConceptRegistryUtil.getConceptDescriptor(id).getConceptFqName()));
     }
     return res;
+  }
+
+  @Override
+  public boolean equals(Object obj) {
+    if (!(obj instanceof SConcept)) return  false;
+    return isSame(((SConcept) obj));
+  }
+
+  @Override
+  public int hashCode() {
+    return 0;
   }
 }
