@@ -71,7 +71,7 @@ public class NodesWriter {
 
   public void writeNode(SNode node, ModelOutputStream os) throws IOException {
     os.writeString(IdHelper.getConceptId(node.getConcept()).serialize());
-    os.writeString(node.getConcept().getName());
+    os.writeString(node.getConcept().getQualifiedName());
     os.writeNodeId(node.getNodeId());
     SContainmentLink roleInParentId = node.getContainmentLink();
     os.writeString(roleInParentId == null ? null : IdHelper.getLinkId(roleInParentId).serialize());
