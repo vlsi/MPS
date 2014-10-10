@@ -24,6 +24,7 @@ import jetbrains.mps.smodel.adapter.ids.SLanguageId;
 import jetbrains.mps.smodel.adapter.ids.SPropertyId;
 import jetbrains.mps.smodel.adapter.ids.SReferenceLinkId;
 import jetbrains.mps.smodel.adapter.structure.concept.SConceptAdapterById;
+import jetbrains.mps.smodel.adapter.structure.concept.SInterfaceConceptAdapterById;
 import jetbrains.mps.smodel.adapter.structure.language.SLanguageAdapterById;
 import jetbrains.mps.smodel.adapter.structure.link.SContainmentLinkAdapterById;
 import jetbrains.mps.smodel.adapter.structure.property.SPropertyAdapterById;
@@ -50,6 +51,8 @@ public class IdHelper {
   public static SConceptId getConceptId(SAbstractConcept c) {
     if (c instanceof SConceptAdapterById) {
       return ((SConceptAdapterById) c).getId();
+    } else if (c instanceof SInterfaceConceptAdapterById) {
+      return ((SInterfaceConceptAdapterById) c).getId();
     } else {
       return MetaIdByDeclaration.getConceptId(((SNode) c.getDeclarationNode()));
     }
