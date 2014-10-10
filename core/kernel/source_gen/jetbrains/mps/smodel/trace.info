@@ -130,11 +130,12 @@
       <node id="580435652281619849" at="184,64,185,105" concept="4" />
       <node id="8642756583112011030" at="187,68,188,85" concept="4" />
       <node id="4554834459336322265" at="190,81,191,80" concept="4" />
-      <node id="8833246112936954381" at="193,81,194,155" concept="4" />
-      <node id="4732522968315615043" at="196,67,197,88" concept="3" />
-      <node id="1213877254560" at="197,88,198,191" concept="4" />
-      <node id="6583857619485997677" at="200,68,201,163" concept="4" />
-      <node id="6997053637257299714" at="203,49,204,60" concept="4" />
+      <node id="6591715872580187240" at="193,68,194,61" concept="4" />
+      <node id="8833246112936954381" at="196,81,197,155" concept="4" />
+      <node id="4732522968315615043" at="199,67,200,88" concept="3" />
+      <node id="1213877254560" at="200,88,201,191" concept="4" />
+      <node id="6583857619485997677" at="203,68,204,163" concept="4" />
+      <node id="6997053637257299714" at="206,49,207,60" concept="4" />
       <node id="2274990519051114061" at="69,0,71,0" concept="0" trace="SNodeUtil#()V" />
       <node id="2274990519051271953" at="78,0,81,0" concept="6" trace="getDetailedPresentation#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
       <node id="5858169027486689810" at="81,0,84,0" concept="6" trace="isDefaultSubstitutable#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
@@ -163,10 +164,11 @@
       <node id="580435652281619835" at="180,80,183,5" concept="1" />
       <node id="8642756583112011023" at="187,0,190,0" concept="6" trace="getLinkDeclaration_IsReference#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
       <node id="4554834459336322258" at="190,0,193,0" concept="6" trace="getLinkDeclaration_IsExactlyOneMultiplicity#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-      <node id="8833246112936954375" at="193,0,196,0" concept="6" trace="getLinkDeclaration_IsAtLeastOneMultiplicity#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-      <node id="6583857619485997667" at="200,0,203,0" concept="6" trace="hasReferenceMacro#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;)Z" />
-      <node id="6997053637257299710" at="203,0,206,0" concept="6" trace="getLinkTarget#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <node id="2773260032861973346" at="196,0,200,0" concept="6" trace="getLinkDeclaration_IsSingular#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+      <node id="6591715872580187234" at="193,0,196,0" concept="6" trace="getLinkDeclaration_IsUnordered#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+      <node id="8833246112936954375" at="196,0,199,0" concept="6" trace="getLinkDeclaration_IsAtLeastOneMultiplicity#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+      <node id="6583857619485997667" at="203,0,206,0" concept="6" trace="hasReferenceMacro#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;)Z" />
+      <node id="6997053637257299710" at="206,0,209,0" concept="6" trace="getLinkTarget#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <node id="2773260032861973346" at="199,0,203,0" concept="6" trace="getLinkDeclaration_IsSingular#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
       <node id="73043305440809463" at="71,52,76,5" concept="7" />
       <node id="2594890229324963752" at="118,81,123,7" concept="4" />
       <node id="5178936997682694537" at="134,87,139,7" concept="4" />
@@ -213,11 +215,12 @@
       <scope id="580435652281619836" at="181,23,182,19" />
       <scope id="8642756583112011026" at="187,68,188,85" />
       <scope id="4554834459336322261" at="190,81,191,80" />
-      <scope id="8833246112936954380" at="193,81,194,155" />
-      <scope id="6583857619485997670" at="200,68,201,163" />
-      <scope id="6997053637257299713" at="203,49,204,60" />
+      <scope id="6591715872580187239" at="193,68,194,61" />
+      <scope id="8833246112936954380" at="196,81,197,155" />
+      <scope id="6583857619485997670" at="203,68,204,163" />
+      <scope id="6997053637257299713" at="206,49,207,60" />
       <scope id="2274990519051114061" at="69,0,71,0" />
-      <scope id="2773260032861973349" at="196,67,198,191">
+      <scope id="2773260032861973349" at="199,67,201,191">
         <var name="genuineLinkDeclaration" id="4732522968315615044" />
       </scope>
       <scope id="2274990519051271953" at="78,0,81,0">
@@ -280,19 +283,22 @@
       <scope id="4554834459336322258" at="190,0,193,0">
         <var name="link" id="4554834459336322263" />
       </scope>
-      <scope id="8833246112936954375" at="193,0,196,0">
+      <scope id="6591715872580187234" at="193,0,196,0">
+        <var name="link" id="6591715872580187235" />
+      </scope>
+      <scope id="8833246112936954375" at="196,0,199,0">
         <var name="link" id="8833246112936954376" />
       </scope>
-      <scope id="6583857619485997667" at="200,0,203,0">
+      <scope id="6583857619485997667" at="203,0,206,0">
         <var name="node" id="6583857619485997672" />
         <var name="role" id="6583857619485997674" />
       </scope>
-      <scope id="6997053637257299710" at="203,0,206,0">
+      <scope id="6997053637257299710" at="206,0,209,0">
         <var name="link" id="6997053637257299723" />
       </scope>
       <scope id="8339862546319979452" at="93,68,97,116" />
       <scope id="8339862546319981453" at="99,77,103,125" />
-      <scope id="2773260032861973346" at="196,0,200,0">
+      <scope id="2773260032861973346" at="199,0,203,0">
         <var name="link" id="2773260032861973890" />
       </scope>
       <scope id="2274990519051152615" at="71,52,76,5" />
@@ -345,7 +351,7 @@
       </scope>
       <unit id="2594890229324963782" at="119,101,123,5" name="jetbrains.mps.smodel.SNodeUtil$1" />
       <unit id="5178936997682694549" at="135,98,139,5" name="jetbrains.mps.smodel.SNodeUtil$2" />
-      <unit id="2274990519051114059" at="20,0,207,0" name="jetbrains.mps.smodel.SNodeUtil" />
+      <unit id="2274990519051114059" at="20,0,210,0" name="jetbrains.mps.smodel.SNodeUtil" />
     </file>
   </root>
   <root nodeRef="r:5ff047e0-2953-4750-806a-bdc16824aa89(jetbrains.mps.smodel)/5073169472575923460">
