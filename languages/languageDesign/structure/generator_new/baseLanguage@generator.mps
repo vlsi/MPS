@@ -3821,7 +3821,7 @@
     <link role="applicableConcept" roleId="tpf8.1168285871518" targetNodeId="tpce.1169125787135" resolveInfo="AbstractConceptDeclaration" />
     <node role="contentNode" roleId="tpf8.1092060348987" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="4715720811466829482" nodeInfo="nn">
       <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="a7z3.~MetaIdFactory" resolveInfo="MetaIdFactory" />
-      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="a7z3.~MetaIdFactory%dconceptId(java%dutil%dUUID,long)%corg%djetbrains%dmps%dopenapi%dlanguage%dSConceptId" resolveInfo="conceptId" />
+      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="a7z3.~MetaIdFactory%dconceptId(java%dutil%dUUID,long)%cjetbrains%dmps%dsmodel%dadapter%dids%dSConceptId" resolveInfo="conceptId" />
       <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="4715720811466829483" nodeInfo="nn">
         <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="k7g3.~UUID" resolveInfo="UUID" />
         <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="k7g3.~UUID%dfromString(java%dlang%dString)%cjava%dutil%dUUID" resolveInfo="fromString" />
@@ -4015,7 +4015,7 @@
     <link role="applicableConcept" roleId="tpf8.1168285871518" targetNodeId="tpce.1071489288298" resolveInfo="LinkDeclaration" />
     <node role="contentNode" roleId="tpf8.1092060348987" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="5466719438543211451" nodeInfo="nn">
       <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="5466719438543211452" nodeInfo="nn">
-        <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="qgg.~ConceptDescriptorBuilder$Ref%d&lt;init&gt;(long,java%dlang%dString,org%djetbrains%dmps%dopenapi%dlanguage%dSConceptId,boolean)" resolveInfo="ConceptDescriptorBuilder.Ref" />
+        <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="qgg.~ConceptDescriptorBuilder$Ref%d&lt;init&gt;(long,java%dlang%dString,jetbrains%dmps%dsmodel%dadapter%dids%dSConceptId,boolean)" resolveInfo="ConceptDescriptorBuilder.Ref" />
         <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LongLiteral" typeId="tpee.4269842503726207156" id="5466719438543211453" nodeInfo="nn">
           <property name="value" nameId="tpee.4269842503726207157" value="0L" />
           <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.PropertyMacro" typeId="tpf8.1087833241328" id="5466719438543211454" nodeInfo="nn">
@@ -4122,7 +4122,7 @@
     <link role="applicableConcept" roleId="tpf8.1168285871518" targetNodeId="tpce.1071489288298" resolveInfo="LinkDeclaration" />
     <node role="contentNode" roleId="tpf8.1092060348987" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="5466719438543278037" nodeInfo="nn">
       <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="5466719438543278038" nodeInfo="nn">
-        <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="qgg.~ConceptDescriptorBuilder$Link%d&lt;init&gt;(long,java%dlang%dString,org%djetbrains%dmps%dopenapi%dlanguage%dSConceptId,boolean,boolean,boolean)" resolveInfo="ConceptDescriptorBuilder.Link" />
+        <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="qgg.~ConceptDescriptorBuilder$Link%d&lt;init&gt;(long,java%dlang%dString,jetbrains%dmps%dsmodel%dadapter%dids%dSConceptId,boolean,boolean,boolean)" resolveInfo="ConceptDescriptorBuilder.Link" />
         <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LongLiteral" typeId="tpee.4269842503726207156" id="5466719438543278039" nodeInfo="nn">
           <property name="value" nameId="tpee.4269842503726207157" value="0L" />
           <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.PropertyMacro" typeId="tpf8.1087833241328" id="5466719438543278040" nodeInfo="nn">
