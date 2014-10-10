@@ -35,6 +35,7 @@
     <file name="BaseTaskQueue.java" />
   </source>
   <source id="4707157387247635742" name="TaskQueue" hash="77rt1rn22mdpiq9j01ldrxh4ngkcjw1">
+    <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
     <file name="TaskQueue.java" />
   </source>
   <source id="4093906047203395592" name="SuspiciousModelIndex" hash="-267iaczc9ghlm2oc3mbikq279kllvqr">
@@ -55,6 +56,7 @@
     <file name="SuspiciousModelIndex.java" />
   </source>
   <source id="4093906047203396099" name="Conflictable" hash="-1cxa6l2xhb3wir85kzt11zh04etuaik">
+    <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
     <file name="Conflictable.java" />
   </source>
   <source id="4093906047203396155" name="ConflictableModelAdapter" hash="-e7sn3vowh0miq2wguvresbf7b3el07k">
@@ -70,7 +72,6 @@
     <dep model="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.util(MPS.Core/jetbrains.mps.util@java_stub)" />
     <dep model="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.vfs(MPS.Core/jetbrains.mps.vfs@java_stub)" />
     <dep model="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.module(MPS.OpenAPI/org.jetbrains.mps.openapi.module@java_stub)" />
-    <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c8959033a(jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main@generator)" />
     <file name="ConflictableModuleAdapter.java" />
   </source>

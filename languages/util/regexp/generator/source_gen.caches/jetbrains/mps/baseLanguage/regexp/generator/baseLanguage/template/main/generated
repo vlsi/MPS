@@ -15,7 +15,7 @@
   <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" hash="fgqypvsxmg86e28lt26xyps4tf5i1v" />
   <dep model="r:00000000-0000-4000-0000-011c895902f3(jetbrains.mps.lang.generator.generationContext.structure)" hash="-p8uwidl30dk4hm5jrnfqmhi5fuwpp" />
   <dep model="r:00000000-0000-4000-0000-011c895902f4(jetbrains.mps.lang.generator.generationContext.generator.baseLanguage.template.main@generator)" hash="-43ufz5s8wlb1b2u3nch8m3bnosgxrth" />
-  <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" hash="-2y8uo4tu49qnw2vhfchrtxn4mid0vus" />
+  <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" hash="-1z3361kpzl7vzkkqivv1k2cpu6lfdbi" />
   <dep model="r:00000000-0000-4000-0000-011c8959033a(jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main@generator)" hash="-b3dab08ja7vi0k0se11vqmnwfgecq5y" />
   <dep model="r:00000000-0000-4000-0000-011c89590514(jetbrains.mps.baseLanguage.regexp.behavior)" hash="-3xo1gexd3ca0yhrm8ijkef98nkp0xj3" />
   <dep model="r:00000000-0000-4000-0000-011c89590515(jetbrains.mps.baseLanguage.regexp.constraints)" hash="-5tgopoabt908cj6hatedp3rpqebcqd7" />
@@ -75,9 +75,7 @@
   <source id="1174510749043" name="main" hash="33wvgff8wiod7ybpokhgd0g4ol9di8w">
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
-  <source id="1174510782150" name="reduce_InlineRegexp" hash="-baiqb6v0y3t7go4yxpksd4uyplwxcnf">
-    <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
-  </source>
+  <source id="1174510782150" name="reduce_InlineRegexp" hash="-baiqb6v0y3t7go4yxpksd4uyplwxcnf" />
   <source id="1174512791870" name="reduce_MatchRegexp" hash="dq7b319v7h05goxzsw7ohaatayo8yg2" />
   <source id="1174657156447" name="reduce_ReplaceWithRegexp" hash="-2oz9gnl7959yhnudv1eaof6sg1lhx3k" />
   <source id="1174658244528" name="ReplacerTemplate" hash="-4ulqv6lokyfzyh05repo856bdv2a0kd">

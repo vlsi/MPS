@@ -62,12 +62,10 @@
     <file name="Data.java" />
   </source>
   <source id="7020394447413472663" name="UncaughtException" hash="uwomv1vfjvnerqc1lzc33y4l5nz1s6">
-    <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
     <dep model="r:c71b740e-a20d-4190-9688-0f8df932da4d(jetbrains.mps.baseLanguage.tuples.generator.template.main@generator)" />
     <file name="UncaughtException.java" />
   </source>
   <source id="7328148232284234498" name="InnerClassTest" hash="-6z41a9kugkqsafa0qi4onx4gcij2vjt">
-    <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
     <file name="InnerClassTest.java" />
   </source>
   <source id="1331672133304136819" name="TestTextSource" hash="b96j50bw9qte2136pr6jh4oicpqbcok">

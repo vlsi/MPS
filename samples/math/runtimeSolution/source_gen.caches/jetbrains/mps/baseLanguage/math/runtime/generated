@@ -29,7 +29,6 @@
     <file name="MatrixScalarOperations.java" />
   </source>
   <source id="877422884702771039" name="Complex" hash="161qqiz57z57dlvftacomilyzpkek92">
-    <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
     <file name="Complex.java" />
   </source>
   <source id="877422884702865830" name="BigComplexScalarOperations" hash="7ixlupwl0ukt8pcrcyh89t0hb058l8m">
@@ -37,7 +36,7 @@
     <file name="BigComplexScalarOperations.java" />
   </source>
   <source id="877422884702771040" name="BigComplex" hash="1olos5ih956a7p8fjc05scgeegz586g">
-    <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
     <file name="BigComplex.java" />
   </source>
   <source id="877422884702866560" name="MatrixOperation" hash="5rkdr01hxab2fzrrjchf61k0dpx92qb">
@@ -50,7 +49,6 @@
     <file name="NormKind.java" />
   </source>
   <source id="877422884702867294" name="BigDecimalScalarOperations" hash="-5t68g3i2up1xum8rlkq4bwbqq2ptyu4">
-    <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
     <file name="BigDecimalScalarOperations.java" />
   </source>
 </dependencies>

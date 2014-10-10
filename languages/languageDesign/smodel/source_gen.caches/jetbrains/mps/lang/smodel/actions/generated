@@ -84,7 +84,9 @@
   <source id="1138079717967" name="snodeOperation" hash="-6zh85y50jxuvalctxeg0vm3loptt006">
     <dep model="r:00000000-0000-4000-0000-011c895902b7(jetbrains.mps.lang.typesystem.generator.baseLanguage.template.main@generator)" />
   </source>
-  <source id="1171415341604" name="SModelLang_factories" hash="-7p3htlz3mt3wn2hiktovgbpderho9e1" />
+  <source id="1171415341604" name="SModelLang_factories" hash="-7p3htlz3mt3wn2hiktovgbpderho9e1">
+    <dep model="r:00000000-0000-4000-0000-011c895902b7(jetbrains.mps.lang.typesystem.generator.baseLanguage.template.main@generator)" />
+  </source>
   <source id="1179535152689" name="expression" hash="-ef28695wikbjs6g52fwd3pki2hy8n2g">
     <dep model="r:00000000-0000-4000-0000-011c895902b7(jetbrains.mps.lang.typesystem.generator.baseLanguage.template.main@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" />

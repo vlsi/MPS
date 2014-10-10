@@ -8,7 +8,7 @@
   <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-7vgk3jafz630zooccect8piiihx2bnu" />
   <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" hash="-2sqpydigz7vryaerubh22j78l4l08jz" />
   <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" hash="fgqypvsxmg86e28lt26xyps4tf5i1v" />
-  <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" hash="-2y8uo4tu49qnw2vhfchrtxn4mid0vus" />
+  <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" hash="-1z3361kpzl7vzkkqivv1k2cpu6lfdbi" />
   <dep model="r:00000000-0000-4000-0000-011c8959043c(jetbrains.mps.samples.formulaLanguage.structure)" hash="y2q5cddsqs5syau1vemum1w6ertem9" />
   <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="d987foka3qddszg3k3yjss0jaslj9i" />
   <dep model="r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)" hash="attjt7f9xsijagk72ems4fgf26chod2" />
@@ -26,7 +26,6 @@
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
-    <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c8959043c(jetbrains.mps.samples.formulaLanguage.structure)" />
     <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
@@ -34,16 +33,16 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="QueriesGenerated.java" />
   </common>
-  <source id="1112818835473" name="SWITCH_Expression_NewFunction_Default" hash="c6gj55hdkekgsfgb86xira8wyb46p97" />
-  <source id="1112819378866" name="_new_DoubleConstant_FromFloatingPointConstant" hash="-bli21118wsbyc2cz9hhn5p685kixh21" />
+  <source id="1112818835473" name="SWITCH_Expression_NewFunction_Default" hash="c6gj55hdkekgsfgb86xira8wyb46p97">
+    <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
+  </source>
+  <source id="1112819378866" name="_new_DoubleConstant_FromFloatingPointConstant" hash="-bli21118wsbyc2cz9hhn5p685kixh21">
+    <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
+  </source>
   <source id="1112819613607" name="_new_MultiplyOperation" hash="-a0ucs3k9vjst29twfeorcm10gofej2k" />
   <source id="1112820065510" name="_new_IfFunction_Default" hash="198dksmv6bsz99i3shp3sew70k5eo80" />
-  <source id="1112979325952" name="SWITCH_Expression_NewFunction_Double" hash="-dmfoddyn22zcpsq0l2i38dawwd4lpxh">
-    <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
-  </source>
+  <source id="1112979325952" name="SWITCH_Expression_NewFunction_Double" hash="-dmfoddyn22zcpsq0l2i38dawwd4lpxh" />
   <source id="1112979486128" name="_new_IfFunction_Double" hash="-6qhqqi4kc0nff27hrgx7v8kten0v6cb" />
-  <source id="1112980489607" name="_new_DoubleConstant_FromIntegerConstant" hash="4c9ljfqpbmca1o8wivrw3rzfiknwcal">
-    <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
-  </source>
+  <source id="1112980489607" name="_new_DoubleConstant_FromIntegerConstant" hash="4c9ljfqpbmca1o8wivrw3rzfiknwcal" />
 </dependencies>
 

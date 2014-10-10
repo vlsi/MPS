@@ -5,7 +5,6 @@
     <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
   </common>
   <source id="3515521059660696290" name="ReaderStrategy" hash="a5s2mxk4kekazotw41t5p6pyiuzga4p">
-    <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
     <file name="ReaderStrategy.java" />
   </source>
   <source id="3515521059660696316" name="Reader" hash="-eukfn7pw03uhrfgun29nphw9timnoin">

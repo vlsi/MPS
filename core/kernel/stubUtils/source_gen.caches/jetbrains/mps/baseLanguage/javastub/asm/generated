@@ -25,6 +25,7 @@
     <file name="ASMPrimitiveType.java" />
   </source>
   <source id="7241381882860006793" name="ASMField" hash="-299cp9502r9tz17u9hgxqwpzcrhphtm">
+    <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
     <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
     <file name="ASMField.java" />
   </source>
@@ -43,7 +44,6 @@
   <source id="7241381882860007306" name="TypeUtil" hash="cq6abzp3zvthke94z6m8zms0tuz62k0">
     <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
     <dep model="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#org.jetbrains.asm4.signature(MPS.Core/org.jetbrains.asm4.signature@java_stub)" />
-    <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
     <file name="TypeUtil.java" />
   </source>
   <source id="7241381882860008653" name="ASMType" hash="-8hgt62h7emxbdl617dz44ue4cydrzya">

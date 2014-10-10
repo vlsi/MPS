@@ -21,6 +21,7 @@
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895902de(jetbrains.mps.baseLanguage.blTypes.primitiveDescriptors)" />
+    <dep model="r:28e834a9-8b65-474e-9087-1e117e68bbbb(jetbrains.mps.baseLanguage.overloadedOperators.generator.template.main@generator)" />
     <file name="Complex.java" />
   </source>
   <source id="4226637275972869614" name="TestComplex" hash="at4z8bzqlii6qo62nnvf6t55htqlrt9" dependsOnNodes="true">
@@ -62,7 +63,6 @@
   </source>
   <source id="4888428037514503250" name="StringOperators" hash="ciqo38gn4qeqo2ul8aaeqbgcw9gvk22">
     <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
-    <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
     <file name="StringOperators.java" />
   </source>
 </dependencies>

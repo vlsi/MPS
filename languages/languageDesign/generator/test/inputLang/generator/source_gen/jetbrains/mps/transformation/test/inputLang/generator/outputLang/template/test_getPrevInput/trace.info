@@ -222,8 +222,8 @@
       <node id="1202255620269" at="129,5,130,18" concept="9" />
       <node id="1202255620269" at="132,158,133,123" concept="8" />
       <node id="1202255620269" at="134,9,135,106" concept="3" />
-      <node id="1202255620269" at="135,106,136,66" concept="3" />
-      <node id="1202255620269" at="136,66,137,88" concept="3" />
+      <node id="1202255620269" at="135,106,136,88" concept="3" />
+      <node id="1202255620269" at="136,88,137,66" concept="3" />
       <node id="1202255620269" at="138,7,139,68" concept="8" />
       <node id="1202255620269" at="140,61,141,49" concept="3" />
       <node id="1202255620269" at="142,9,143,31" concept="10" />
@@ -257,7 +257,7 @@
       <node id="1202255620269" at="102,31,107,33" concept="3" />
       <node id="1202255620269" at="121,45,126,39" concept="3" />
       <node id="1202255620269" at="120,62,127,9" concept="5" />
-      <node id="1202255620269" at="137,88,144,7" concept="0" />
+      <node id="1202255620269" at="137,66,144,7" concept="0" />
       <node id="1202255620269" at="100,11,108,11" concept="6" />
       <node id="1202255620269" at="72,46,81,15" concept="6" />
       <node id="1202255620269" at="117,7,128,7" concept="6" />
@@ -413,8 +413,8 @@
       <node id="1202338159177" at="30,43,31,32" concept="9" />
       <node id="1202338159177" at="33,158,34,123" concept="8" />
       <node id="1202338159177" at="35,9,36,106" concept="3" />
-      <node id="1202338159177" at="36,106,37,66" concept="3" />
-      <node id="1202338159177" at="37,66,38,88" concept="3" />
+      <node id="1202338159177" at="36,106,37,88" concept="3" />
+      <node id="1202338159177" at="37,88,38,66" concept="3" />
       <node id="1202338159177" at="39,7,40,58" concept="8" />
       <node id="1202338159177" at="40,58,41,172" concept="8" />
       <node id="1202338159177" at="43,32,44,21" concept="2" />
@@ -499,7 +499,7 @@
       <node id="1202338159177" at="55,181,132,13" concept="5" />
       <node id="1202338159177" at="48,177,137,11" concept="5" />
       <node id="1202338159177" at="41,172,142,9" concept="5" />
-      <node id="1202338159177" at="38,88,147,7" concept="0" />
+      <node id="1202338159177" at="38,66,147,7" concept="0" />
       <node id="1202338159177" at="34,123,149,5" concept="12" />
       <node id="1202338159177" at="33,0,152,0" concept="7" trace="apply#(Ljetbrains/mps/generator/runtime/TemplateExecutionEnvironment;Ljetbrains/mps/generator/runtime/TemplateContext;)Ljava/util/Collection;" />
       <scope id="1202338159177" at="28,34,28,34" />

@@ -9,18 +9,17 @@
   <source id="8307544070813664740" name="MultiplyOperation" hash="dwqsdba6n2irlhwfxzv7ux320vlgqhl">
     <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
     <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
-    <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="MultiplyOperation.java" />
   </source>
   <source id="8307544070813664794" name="IfFunction" hash="ewto2bofct3cjlyhdztx01u37hezv9s">
     <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
+    <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="IfFunction.java" />
   </source>
   <source id="8307544070813664858" name="Function" hash="-45u094gq5qvtrmcrdcef7delqom6cbz">
     <file name="Function.java" />
   </source>
   <source id="8307544070813664867" name="DoubleConstant" hash="azy96qjx70fwshoii2yqx1z23fu72w1">
-    <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
     <file name="DoubleConstant.java" />
   </source>
 </dependencies>

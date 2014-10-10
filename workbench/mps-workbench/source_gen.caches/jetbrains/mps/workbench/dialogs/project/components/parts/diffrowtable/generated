@@ -10,7 +10,6 @@
   <source id="1560298786499490568" name="DiffRowTable" hash="av70065e21199brfpcxlaeyrfo1pnnj">
     <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.awt(JDK/java.awt@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
-    <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="DiffRowTable.java" />
   </source>
   <source id="1560298786499496072" name="BasicDiffRowTableUI" hash="-19nvwzceghj5zb5mf6aicbz25g99ilg">

@@ -31,8 +31,8 @@ public class check_AllUsedLanguagesAreImported_NonTypesystemRule extends Abstrac
       return;
     }
     Set<SLanguage> importedLanguages = new HashSet<SLanguage>();
-    importedLanguages.addAll(SModelOperations.getAllImportedLanguageIds(SNodeOperations.getModel(root)));
     // XXX allImported doesn't built a closure of languages extended by those imported, is it what we want here? 
+    importedLanguages.addAll(SModelOperations.getAllImportedLanguageIds(SNodeOperations.getModel(root)));
 
     for (SNode node : ListSequence.fromList(SNodeOperations.getDescendants(root, "jetbrains.mps.lang.core.structure.BaseConcept", true, new String[]{}))) {
       if (!(importedLanguages.contains(node.getConcept().getLanguage()))) {

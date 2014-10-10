@@ -150,12 +150,8 @@
   <source id="1139186732963" name="mc_main" hash="-9szbip19kkgxyhacr2pshjztwbbs52h">
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
-  <source id="1139187530309" name="mc_property_operations" hash="122hgcjhrt8mpiyhwrgl17lc71uxcpn">
-    <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
-  </source>
-  <source id="1139275804866" name="reduce_SPropertyAccess_simple" hash="-aoevk90ega3rtno8lsfltjx7v92b9ne">
-    <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
-  </source>
+  <source id="1139187530309" name="mc_property_operations" hash="122hgcjhrt8mpiyhwrgl17lc71uxcpn" />
+  <source id="1139275804866" name="reduce_SPropertyAccess_simple" hash="-aoevk90ega3rtno8lsfltjx7v92b9ne" />
   <source id="1139337080836" name="reduce_EnumMemberReference_notNull_internalValue" hash="e8vlf3nbuv7z5ri4zkngm0v8l9a2i2x" />
   <source id="1139337716713" name="reduce_EnumMemberReference_null_internalValue" hash="93yyg96fu796260pu29s4km0iq242ga" />
   <source id="1139341814904" name="mc_link_operations" hash="-90e06kp9j7qbx3p0efdrscaej04wk9o" />
