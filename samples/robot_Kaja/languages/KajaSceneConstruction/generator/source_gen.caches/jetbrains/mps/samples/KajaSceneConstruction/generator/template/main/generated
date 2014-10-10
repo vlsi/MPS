@@ -35,8 +35,12 @@
   <source id="3210697320273563027" name="main" hash="9n2uut6uxadcitjsa5evkte8wttumeg">
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
-  <source id="3210697320273563034" name="reduce_BuildWall" hash="-68c1uh1pre0nbnau5tp16gqtejb47gr" />
-  <source id="3210697320273607275" name="reduce_DestroyWall" hash="axwkknye5r565f5rxx6vi5oc45d6zmn" />
+  <source id="3210697320273563034" name="reduce_BuildWall" hash="-68c1uh1pre0nbnau5tp16gqtejb47gr">
+    <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
+  </source>
+  <source id="3210697320273607275" name="reduce_DestroyWall" hash="axwkknye5r565f5rxx6vi5oc45d6zmn">
+    <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
+  </source>
   <source id="3210697320273612346" name="reduce_DropMark" hash="-aj4wjl8lwosfehr21l18897b65gyorw" />
   <source id="3210697320273614443" name="reduce_PickMark" hash="6e8yqmzl57yyuu4zcs0lad9zdauaivo" />
 </dependencies>
