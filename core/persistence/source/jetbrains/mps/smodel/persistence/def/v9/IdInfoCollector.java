@@ -16,7 +16,6 @@
 package jetbrains.mps.smodel.persistence.def.v9;
 
 import jetbrains.mps.persistence.IdHelper;
-import jetbrains.mps.smodel.DebugRegistry;
 import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import jetbrains.mps.smodel.adapter.ids.SContainmentLinkId;
 import jetbrains.mps.smodel.adapter.ids.SPropertyId;
@@ -36,7 +35,6 @@ import java.util.Map;
 public class IdInfoCollector {
   public static void getDebugInfoById(Iterable<SNode> rootNodes, Map<SConceptId, String> conceptIds, Map<SPropertyId, String> propIds,
       Map<SReferenceLinkId, String> refIds, Map<SContainmentLinkId, String> roleIds) {
-    DebugRegistry debugRegistry = DebugRegistry.getInstance();
     for (SNode root : rootNodes) {
       for (SNode n : SNodeUtil.getDescendants(root)) {
         SConceptId conceptId = IdHelper.getConceptId(n.getConcept());
@@ -60,8 +58,8 @@ public class IdInfoCollector {
             }
             roleName = roleNode.getProperty("role");
           } else {
-            conceptIds.put(linkConceptId, debugRegistry.getConceptName(linkConceptId));
-            roleName = debugRegistry.getLinkName(roleId);
+            conceptIds.put(linkConceptId, role.getContainingConcept().getQualifiedName());
+            roleName = role.getRoleName();
           }
           roleIds.put(roleId, roleName);
         }
@@ -79,8 +77,8 @@ public class IdInfoCollector {
             }
             propName = propNode.getName();
           } else {
-            conceptIds.put(propConceptId, debugRegistry.getConceptName(propConceptId));
-            propName = debugRegistry.getPropertyName(propId);
+            conceptIds.put(propConceptId, prop.getContainingConcept().getQualifiedName());
+            propName = prop.getName();
           }
           propIds.put(propId, propName);
         }
@@ -99,8 +97,8 @@ public class IdInfoCollector {
             }
             refName = refNode.getProperty("role");
           } else {
-            conceptIds.put(refConceptId, debugRegistry.getConceptName(refConceptId));
-            refName = debugRegistry.getRefName(refId);
+            conceptIds.put(refConceptId, refRole.getContainingConcept().getQualifiedName());
+            refName = refRole.getRoleName();
           }
           refIds.put(refId, refName);
         }
