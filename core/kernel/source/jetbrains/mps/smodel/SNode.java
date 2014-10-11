@@ -1068,7 +1068,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
 
   @Deprecated
   public void setRoleInParent(String newRole) {
-    setRoleInParent(new SContainmentLinkAdapterByName(getConcept().getQualifiedName(), newRole));
+    setRoleInParent(new SContainmentLinkAdapterByName(getParent().getConcept().getQualifiedName(), newRole));
   }
 
   @Deprecated
