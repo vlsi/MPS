@@ -94,7 +94,7 @@ public class ModelPersistence9 implements IModelPersistence {
 
   @Override
   public XMLSAXHandler<ModelLoadResult> getModelReaderHandler(ModelLoadingState state, SModelHeader header) {
-    return new ModelReader9Handler();
+    return new ModelReader9Handler(state == ModelLoadingState.INTERFACE_LOADED, state == ModelLoadingState.NO_IMPLEMENTATION, header);
   }
 
   @Override
