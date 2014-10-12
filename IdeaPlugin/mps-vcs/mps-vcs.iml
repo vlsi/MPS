@@ -8,13 +8,6 @@
     <content url="file://$MODULE_DIR$">
       <sourceFolder url="file://$MODULE_DIR$/source" isTestSource="false" />
     </content>
-    <content url="file://$MODULE_DIR$/../../plugins/vcs-core">
-      <sourceFolder url="file://$MODULE_DIR$/../../plugins/vcs-core/core/source_gen" isTestSource="false" />
-    </content>
-    <content url="file://$MODULE_DIR$/../../plugins/vcs/common">
-      <sourceFolder url="file://$MODULE_DIR$/../../plugins/vcs/common/source_gen" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../../plugins/vcs/common/source" isTestSource="false" />
-    </content>
     <orderEntry type="jdk" jdkName="IDEA IC" jdkType="IDEA JDK" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="mps-core" />
@@ -23,6 +16,24 @@
     <orderEntry type="library" name="mps.MPS.Core_auto" level="project" />
     <orderEntry type="library" name="mps.MPS.OpenAPI_auto" level="project" />
     <orderEntry type="library" name="mps.MPS.Editor" level="project" />
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://$PLUGINS_PATH$/mps-vcs/lib/mps-vcs-core.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://$PLUGINS_PATH$/mps-vcs/lib/mps-vcs-platform.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
   </component>
 </module>
 
