@@ -27,7 +27,7 @@ import org.jetbrains.mps.openapi.language.SProperty;
 import org.jetbrains.mps.openapi.model.SNode;
 
 public class SPropertyAdapterByName extends SPropertyAdapter {
-  public SPropertyAdapterByName( @NotNull String conceptName, @NotNull String propName) {
+  public SPropertyAdapterByName(@NotNull String conceptName, @NotNull String propName) {
     super(conceptName, propName);
   }
 

@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.smodel.adapter.structure.concept;
 
-import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.smodel.adapter.ids.SConceptId;
@@ -25,12 +24,12 @@ import jetbrains.mps.smodel.adapter.ids.SReferenceLinkId;
 import jetbrains.mps.smodel.adapter.structure.link.SContainmentLinkAdapterById;
 import jetbrains.mps.smodel.adapter.structure.property.SPropertyAdapterById;
 import jetbrains.mps.smodel.adapter.structure.ref.SReferenceLinkAdapterById;
+import jetbrains.mps.smodel.language.ConceptRegistry;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import jetbrains.mps.smodel.runtime.LinkDescriptor;
 import jetbrains.mps.smodel.runtime.PropertyDescriptor;
 import jetbrains.mps.smodel.runtime.ReferenceDescriptor;
 import jetbrains.mps.util.NameUtil;
-import org.apache.log4j.LogManager;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SAbstractLink;
@@ -43,7 +42,6 @@ import org.jetbrains.mps.openapi.model.SNode;
 import java.util.ArrayList;
 
 public abstract class SAbstractConceptAdapter implements SAbstractConcept {
-  private static final Logger LOG = Logger.wrap(LogManager.getLogger(SAbstractConceptAdapter.class));
   protected String myFqName;
 
   protected SAbstractConceptAdapter(String fqName) {
@@ -70,16 +68,8 @@ public abstract class SAbstractConceptAdapter implements SAbstractConcept {
 
     ArrayList<SReferenceLink> result = new ArrayList<SReferenceLink>();
     for (SReferenceLinkId rid : d.getReferenceIds()) {
-      result.add(new SReferenceLinkAdapterById(rid, d.getConceptFqName(), d.getRefDescriptor(rid).getName()));
+      result.add(new SReferenceLinkAdapterById(rid, ConceptRegistryUtil.getConceptDescriptor(rid.getConceptId()).getConceptFqName(), d.getRefDescriptor(rid).getName()));
     }
-
-    for (SConceptId ii : d.getParentsIds()) {
-      ConceptDescriptor id = ConceptRegistryUtil.getConceptDescriptor(ii);
-      for (SReferenceLinkId rid : id.getReferenceIds()) {
-        result.add(new SReferenceLinkAdapterById(rid, id.getConceptFqName(), id.getRefDescriptor(rid).getName()));
-      }
-    }
-
     return result;
   }
 
@@ -89,14 +79,7 @@ public abstract class SAbstractConceptAdapter implements SAbstractConcept {
 
     ArrayList<SContainmentLink> result = new ArrayList<SContainmentLink>();
     for (SContainmentLinkId rid : d.getLinkIds()) {
-      result.add(new SContainmentLinkAdapterById(rid, d.getConceptFqName(), d.getLinkDescriptor(rid).getName()));
-    }
-
-    for (SConceptId ii : d.getParentsIds()) {
-      ConceptDescriptor id = ConceptRegistryUtil.getConceptDescriptor(ii);
-      for (SContainmentLinkId rid : id.getLinkIds()) {
-        result.add(new SContainmentLinkAdapterById(rid, id.getConceptFqName(), id.getLinkDescriptor(rid).getName()));
-      }
+      result.add(new SContainmentLinkAdapterById(rid, ConceptRegistryUtil.getConceptDescriptor(rid.getConceptId()).getConceptFqName(), d.getLinkDescriptor(rid).getName()));
     }
     return result;
   }
@@ -144,15 +127,8 @@ public abstract class SAbstractConceptAdapter implements SAbstractConcept {
     ConceptDescriptor d = getConceptDescriptor();
 
     ArrayList<SProperty> result = new ArrayList<SProperty>();
-    for (SPropertyId rid : d.getPropertyIds()) {
-      result.add(new SPropertyAdapterById(rid, d.getConceptFqName(), d.getPropertyDescriptor(rid).getName()));
-    }
-
-    for (SConceptId ii : d.getParentsIds()) {
-      ConceptDescriptor id = ConceptRegistryUtil.getConceptDescriptor(ii);
-      for (SPropertyId rid : id.getPropertyIds()) {
-        result.add(new SPropertyAdapterById(rid, id.getConceptFqName(), id.getPropertyDescriptor(rid).getName()));
-      }
+    for (SPropertyId pid : d.getPropertyIds()) {
+      result.add(new SPropertyAdapterById(pid, ConceptRegistryUtil.getConceptDescriptor(pid.getConceptId()).getConceptFqName(), d.getPropertyDescriptor(pid).getName()));
     }
     return result;
   }
