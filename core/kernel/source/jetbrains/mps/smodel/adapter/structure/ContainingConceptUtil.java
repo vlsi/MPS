@@ -25,16 +25,25 @@ public class ContainingConceptUtil {
   public static String getConceptContainingProperty(String conceptName, String propName) {
     ConceptDescriptor conceptDescriptor = ConceptRegistryUtil.getConceptDescriptor(conceptName);
     PropertyDescriptor propertyDescriptor = conceptDescriptor.getPropertyDescriptor(propName);
+    if (propertyDescriptor == null) {
+      return jetbrains.mps.smodel.SNodeUtil.concept_BaseConcept;
+    }
     return ConceptRegistryUtil.getConceptDescriptor(propertyDescriptor.getId().getConceptId()).getConceptFqName();
   }
   public static String getConceptContainingReference(String conceptName, String refName) {
     ConceptDescriptor conceptDescriptor = ConceptRegistryUtil.getConceptDescriptor(conceptName);
     ReferenceDescriptor referenceDescriptor = conceptDescriptor.getRefDescriptor(refName);
+    if (referenceDescriptor == null) {
+      return jetbrains.mps.smodel.SNodeUtil.concept_BaseConcept;
+    }
     return ConceptRegistryUtil.getConceptDescriptor(referenceDescriptor.getId().getConceptId()).getConceptFqName();
   }
   public static String getConceptContainingLink(String conceptName, String linkName) {
     ConceptDescriptor conceptDescriptor = ConceptRegistryUtil.getConceptDescriptor(conceptName);
     LinkDescriptor linkDescriptor = conceptDescriptor.getLinkDescriptor(linkName);
+    if (linkDescriptor == null) {
+      return jetbrains.mps.smodel.SNodeUtil.concept_BaseConcept;
+    }
     return ConceptRegistryUtil.getConceptDescriptor(linkDescriptor.getId().getConceptId()).getConceptFqName();
   }
 }
