@@ -34,6 +34,7 @@ import jetbrains.mps.smodel.persistence.def.IModelWriter;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.util.CollectConsumer;
 import jetbrains.mps.util.IterableUtil;
+import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.StringUtil;
 import org.jdom.Document;
 import org.jdom.Element;
@@ -143,7 +144,7 @@ public class ModelWriter9 implements IModelWriter {
     for (Entry<SConceptId, String> e : conceptIds.entrySet()) {
       Element langElement = new Element(ModelPersistence9.DEBUG_INFO_CONCEPT);
       langElement.setAttribute(ModelPersistence9.ID, e.getKey().serialize());
-      langElement.setAttribute(ModelPersistence9.DEBUG_INFO_NAME, e.getValue());
+      langElement.setAttribute(ModelPersistence9.DEBUG_INFO_NAME, NameUtil.shortNameFromLongName(e.getValue()));
       debugInfoElement.addContent(langElement);
     }
 
