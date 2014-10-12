@@ -20,6 +20,7 @@ import jetbrains.mps.persistence.ModelEnvironmentInfo;
 import jetbrains.mps.smodel.DynamicReference;
 import jetbrains.mps.smodel.DynamicReference.DynamicReferenceOrigin;
 import jetbrains.mps.smodel.StaticReference;
+import jetbrains.mps.smodel.persistence.def.v9.IdInfoCollector;
 import jetbrains.mps.smodel.runtime.ConceptKind;
 import jetbrains.mps.smodel.runtime.StaticScope;
 import jetbrains.mps.util.IterableUtil;
@@ -71,12 +72,12 @@ public class NodesWriter {
 
   public void writeNode(SNode node, ModelOutputStream os) throws IOException {
     os.writeString(IdHelper.getConceptId(node.getConcept()).serialize());
-    os.writeString(node.getConcept().getQualifiedName());
+    os.writeString(IdInfoCollector.getConceptName(IdHelper.getConceptId(node.getConcept())));
     os.writeNodeId(node.getNodeId());
     SContainmentLink roleInParentId = node.getContainmentLink();
     os.writeString(roleInParentId == null ? null : IdHelper.getLinkId(roleInParentId).serialize());
-    os.writeString(roleInParentId == null ? null : roleInParentId.getRoleName());
-    os.writeString(roleInParentId == null ? null : roleInParentId.getContainingConcept().getQualifiedName());
+    os.writeString(roleInParentId == null ? null : IdInfoCollector.getLinkName(IdHelper.getLinkId(roleInParentId)));
+    os.writeString(roleInParentId == null ? null : IdInfoCollector.getConceptName(IdHelper.getLinkId(roleInParentId).getConceptId()));
     os.writeByte(getNodeInfo(node));
     os.writeByte('{');
 
@@ -138,8 +139,8 @@ public class NodesWriter {
         throw new IOException("cannot store reference: " + reference.toString());
       }
       os.writeString(IdHelper.getRefId(reference.getReferenceLink()).serialize());
-      os.writeString(reference.getReferenceLink().getRoleName());
-      os.writeString(reference.getReferenceLink().getContainingConcept().getQualifiedName());
+      os.writeString(IdInfoCollector.getReferenceName(IdHelper.getRefId(reference.getReferenceLink())));
+      os.writeString(IdInfoCollector.getConceptName(IdHelper.getRefId(reference.getReferenceLink()).getConceptId()));
       if (targetModelReference != null && targetModelReference.equals(myModelReference)) {
         os.writeByte(17);
       } else {
@@ -158,8 +159,8 @@ public class NodesWriter {
     os.writeInt(properties.size());
     for (Entry<SProperty, String> entry : properties.entrySet()) {
       os.writeString(IdHelper.getPropertyId(entry.getKey()).serialize());
-      os.writeString(entry.getKey().getName());
-      os.writeString(entry.getKey().getContainingConcept().getQualifiedName());
+      os.writeString(IdInfoCollector.getPropertyName(IdHelper.getPropertyId(entry.getKey())));
+      os.writeString(IdInfoCollector.getConceptName(IdHelper.getPropertyId(entry.getKey()).getConceptId()));
       os.writeString(entry.getValue());
     }
   }

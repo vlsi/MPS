@@ -85,17 +85,9 @@ public class DebugRegistry implements CoreComponent {
     return pair == null ? null : pair.o2;
   }
 
+  //fqName
   public synchronized String getConceptName(SConceptId conceptId) {
     return myConcepts.get(conceptId);
-  }
-
-  public synchronized String getConceptFqName(SConceptId conceptId) {
-    String languageName = getLanguageName(conceptId.getLanguageId());
-    String conceptName = getConceptName(conceptId);
-    if (languageName == null || conceptName == null) {
-      return null;
-    }
-    return NameUtil.conceptFQNameFromNamespaceAndShortName(languageName, conceptName);
   }
 
   public synchronized String getLanguageName(SLanguageId languageId) {
@@ -122,6 +114,7 @@ public class DebugRegistry implements CoreComponent {
     myChildRoles.put(linkId, new Pair<SConceptId, String>(linkId.getConceptId(), name));
   }
 
+  //fqName
   public synchronized void addConceptName(SConceptId conceptId, String name) {
     myConcepts.put(conceptId, name);
   }
