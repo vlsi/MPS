@@ -151,7 +151,7 @@ public class ConceptRegistry implements CoreComponent, LanguageRegistryListener 
     }
 
     if (!startLoad(id, LanguageAspect.STRUCTURE)) {
-      return new IllegalConceptDescriptor(DebugRegistry.getInstance().getConceptName(id));
+      return new IllegalConceptDescriptor(DebugRegistry.getInstance().getConceptFqName(id));
     }
 
     try {
@@ -166,7 +166,7 @@ public class ConceptRegistry implements CoreComponent, LanguageRegistryListener 
       }
 
       if (descriptor == null) {
-        descriptor = new IllegalConceptDescriptor(DebugRegistry.getInstance().getConceptName(id));
+        descriptor = new IllegalConceptDescriptor(DebugRegistry.getInstance().getConceptFqName(id));
       }
 
       if (!(descriptor instanceof IllegalConceptDescriptor)) {

@@ -21,6 +21,7 @@ import jetbrains.mps.smodel.adapter.ids.SContainmentLinkId;
 import jetbrains.mps.smodel.adapter.ids.SLanguageId;
 import jetbrains.mps.smodel.adapter.ids.SPropertyId;
 import jetbrains.mps.smodel.adapter.ids.SReferenceLinkId;
+import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.Pair;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 
@@ -86,6 +87,15 @@ public class DebugRegistry implements CoreComponent {
 
   public synchronized String getConceptName(SConceptId conceptId) {
     return myConcepts.get(conceptId);
+  }
+
+  public synchronized String getConceptFqName(SConceptId conceptId) {
+    String languageName = getLanguageName(conceptId.getLanguageId());
+    String conceptName = getConceptName(conceptId);
+    if (languageName == null || conceptName == null) {
+      return null;
+    }
+    return NameUtil.conceptFQNameFromNamespaceAndShortName(languageName, conceptName);
   }
 
   public synchronized String getLanguageName(SLanguageId languageId) {
