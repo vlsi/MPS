@@ -94,11 +94,13 @@ public abstract class SAbstractConceptAdapter implements SAbstractConcept {
       return new SContainmentLinkAdapterById(linkId, cd.getConceptFqName(), role);
     } else {
       ReferenceDescriptor r = getConceptDescriptor().getRefDescriptor(role);
+      if (r == null) {
+        return null;
+      }
       SReferenceLinkId linkId = r.getId();
       ConceptDescriptor cd = ConceptRegistryUtil.getConceptDescriptor(linkId.getConceptId());
       return new SReferenceLinkAdapterById(linkId, cd.getConceptFqName(), role);
     }
-
   }
 
   @Override
