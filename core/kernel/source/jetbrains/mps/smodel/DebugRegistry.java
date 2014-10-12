@@ -22,8 +22,10 @@ import jetbrains.mps.smodel.adapter.ids.SLanguageId;
 import jetbrains.mps.smodel.adapter.ids.SPropertyId;
 import jetbrains.mps.smodel.adapter.ids.SReferenceLinkId;
 import jetbrains.mps.util.Pair;
-import jetbrains.mps.util.containers.BidirectionalMap;
 import org.jetbrains.mps.openapi.module.SModuleReference;
+
+import java.util.HashMap;
+import java.util.Map;
 
 public class DebugRegistry implements CoreComponent {
   private static DebugRegistry INSTANCE;
@@ -49,15 +51,15 @@ public class DebugRegistry implements CoreComponent {
   }
 
 
-  private BidirectionalMap<org.jetbrains.mps.openapi.model.SModelReference, String> myModels =
-      new BidirectionalMap<org.jetbrains.mps.openapi.model.SModelReference, String>();
-  private BidirectionalMap<SModuleReference, String> myModules = new BidirectionalMap<SModuleReference, String>();
+  private Map<org.jetbrains.mps.openapi.model.SModelReference, String> myModels =
+      new HashMap<org.jetbrains.mps.openapi.model.SModelReference, String>();
+  private Map<SModuleReference, String> myModules = new HashMap<SModuleReference, String>();
 
-  private BidirectionalMap<SPropertyId, Pair<SConceptId, String>> myProperties = new BidirectionalMap<SPropertyId, Pair<SConceptId, String>>();
-  private BidirectionalMap<SReferenceLinkId, Pair<SConceptId, String>> myLinks = new BidirectionalMap<SReferenceLinkId, Pair<SConceptId, String>>();
-  private BidirectionalMap<SContainmentLinkId, Pair<SConceptId, String>> myChildRoles = new BidirectionalMap<SContainmentLinkId, Pair<SConceptId, String>>();
-  private BidirectionalMap<SConceptId, String> myConcepts = new BidirectionalMap<SConceptId, String>();
-  private BidirectionalMap<SLanguageId, String> myLanguages = new BidirectionalMap<SLanguageId, String>();
+  private Map<SPropertyId, Pair<SConceptId, String>> myProperties = new HashMap<SPropertyId, Pair<SConceptId, String>>();
+  private Map<SReferenceLinkId, Pair<SConceptId, String>> myLinks = new HashMap<SReferenceLinkId, Pair<SConceptId, String>>();
+  private Map<SContainmentLinkId, Pair<SConceptId, String>> myChildRoles = new HashMap<SContainmentLinkId, Pair<SConceptId, String>>();
+  private Map<SConceptId, String> myConcepts = new HashMap<SConceptId, String>();
+  private Map<SLanguageId, String> myLanguages = new HashMap<SLanguageId, String>();
 
   public synchronized String getModelName(org.jetbrains.mps.openapi.model.SModelReference modelId) {
     return myModels.get(modelId);
