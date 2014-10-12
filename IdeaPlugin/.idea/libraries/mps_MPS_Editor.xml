@@ -1,11 +1,14 @@
 <component name="libraryTable">
-  <library name="mps.MPS.Editor">
+  <library name="mps.MPS.Editor" type="mps.solution.library">
     <CLASSES>
       <root url="jar://$PLUGINS_PATH$/mps-core/lib/mps-editor-runtime.jar!/" />
       <root url="jar://$PLUGINS_PATH$/mps-core/lib/mps-editor-api.jar!/" />
       <root url="jar://$PLUGINS_PATH$/mps-core/lib/mps-editor.jar!/" />
     </CLASSES>
     <JAVADOC />
+    <MPS_MODULE_XML>
+      <root url="jar://$PLUGINS_PATH$/mps-core/lib/mps-editor.jar!/modules/MPS.Editor/MPS.Editor.msd" />
+    </MPS_MODULE_XML>
     <SOURCES />
   </library>
 </component>
