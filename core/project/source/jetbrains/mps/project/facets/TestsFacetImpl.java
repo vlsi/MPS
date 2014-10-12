@@ -46,9 +46,10 @@ public class TestsFacetImpl extends ModuleFacetBase implements TestsFacet {
     myModuleHome = moduleHome;
   }
 
+  @Nullable
   @Override
   public IFile getTestsOutputPath() {
-    assert myModuleHome != null;
+    if (myModuleHome == null) return null;
     return myModuleHome.getDescendant("test_gen");
   }
 

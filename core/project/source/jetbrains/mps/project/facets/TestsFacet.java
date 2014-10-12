@@ -16,11 +16,16 @@
 package jetbrains.mps.project.facets;
 
 import jetbrains.mps.vfs.IFile;
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.module.SModuleFacet;
 
 public interface TestsFacet extends SModuleFacet {
 
   public static final String FACET_TYPE = "tests";
 
+  /**
+   * @return test output folder, if there is one. Otherwise returns null.
+   */
+  @Nullable
   IFile getTestsOutputPath();
 }
