@@ -15,20 +15,22 @@
  */
 package jetbrains.mps.smodel.adapter.structure.property;
 
+import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.SNodeUtil;
-import jetbrains.mps.smodel.adapter.ids.SConceptId;
+import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 import jetbrains.mps.smodel.adapter.ids.SPropertyId;
 import jetbrains.mps.smodel.adapter.structure.concept.ConceptRegistryUtil;
-import jetbrains.mps.smodel.adapter.structure.concept.SConceptAdapterById;
-import jetbrains.mps.smodel.adapter.structure.concept.SInterfaceConceptAdapterById;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import jetbrains.mps.smodel.runtime.PropertyDescriptor;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SProperty;
 import org.jetbrains.mps.openapi.model.SNode;
 
+import java.util.UUID;
+
 public class SPropertyAdapterByName extends SPropertyAdapter {
+  private static final Logger LOG = Logger.wrap(org.apache.log4j.Logger.getLogger(SPropertyAdapterByName.class));
+
   public SPropertyAdapterByName(@NotNull String conceptName, @NotNull String propName) {
     super(conceptName, propName);
   }
@@ -40,12 +42,19 @@ public class SPropertyAdapterByName extends SPropertyAdapter {
 
   @Override
   protected PropertyDescriptor getPropertyDescriptor() {
-    return ConceptRegistryUtil.getConceptDescriptor(myConceptName).getPropertyDescriptor(myPropertyName);
+    ConceptDescriptor conceptDescriptor = ConceptRegistryUtil.getConceptDescriptor(myConceptName);
+    if (conceptDescriptor == null) return null;
+    return conceptDescriptor.getPropertyDescriptor(myPropertyName);
   }
 
   @Override
   public SPropertyId getId() {
-    return getPropertyDescriptor().getId();
+    PropertyDescriptor d = getPropertyDescriptor();
+    if (d == null) {
+      LOG.error("property descriptor not found for property " + myPropertyName);
+      return MetaIdFactory.INVALID_PROP_ID;
+    }
+    return d.getId();
   }
 
   @Override

@@ -25,6 +25,7 @@ import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import jetbrains.mps.smodel.runtime.LinkDescriptor;
 import org.apache.log4j.LogManager;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -38,6 +39,7 @@ public abstract class SContainmentLinkAdapter implements SContainmentLink {
     myName = name;
   }
 
+  @Nullable
   protected abstract LinkDescriptor getLinkDescriptor();
 
   protected abstract SNode findInConcept(SNode cnode);

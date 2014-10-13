@@ -24,6 +24,7 @@ import jetbrains.mps.smodel.adapter.structure.concept.SInterfaceConceptAdapterBy
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import jetbrains.mps.smodel.runtime.PropertyDescriptor;
 import org.apache.log4j.LogManager;
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SProperty;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -36,7 +37,6 @@ public abstract class SPropertyAdapter implements SProperty {
     myConceptName = conceptName;
     myPropertyName = name;
   }
-
 
   protected abstract SNode findInConcept(SNode cnode);
 
@@ -55,6 +55,7 @@ public abstract class SPropertyAdapter implements SProperty {
         new SConceptAdapterById(id, concept.getConceptFqName());
   }
 
+  @Nullable
   protected abstract PropertyDescriptor getPropertyDescriptor();
 
   @Override

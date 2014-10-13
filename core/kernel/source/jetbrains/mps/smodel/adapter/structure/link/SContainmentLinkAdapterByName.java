@@ -15,11 +15,14 @@
  */
 package jetbrains.mps.smodel.adapter.structure.link;
 
+import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.SNodeUtil;
+import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 import jetbrains.mps.smodel.adapter.ids.SContainmentLinkId;
 import jetbrains.mps.smodel.adapter.structure.concept.ConceptRegistryUtil;
 import jetbrains.mps.smodel.adapter.structure.concept.SConceptAdapterById;
 import jetbrains.mps.smodel.adapter.structure.concept.SInterfaceConceptAdapterById;
+import jetbrains.mps.smodel.adapter.structure.property.SPropertyAdapterByName;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import jetbrains.mps.smodel.runtime.LinkDescriptor;
 import org.jetbrains.annotations.NotNull;
@@ -27,6 +30,8 @@ import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.model.SNode;
 
 public class SContainmentLinkAdapterByName extends SContainmentLinkAdapter {
+  private static final Logger LOG = Logger.wrap(org.apache.log4j.Logger.getLogger(SContainmentLinkAdapterByName.class));
+
   public SContainmentLinkAdapterByName(@NotNull String conceptName, @NotNull String name) {
     super(conceptName, name);
   }
@@ -36,7 +41,9 @@ public class SContainmentLinkAdapterByName extends SContainmentLinkAdapter {
   }
 
   protected LinkDescriptor getLinkDescriptor() {
-    return ConceptRegistryUtil.getConceptDescriptor(myConceptName).getLinkDescriptor(myName);
+    ConceptDescriptor cd = ConceptRegistryUtil.getConceptDescriptor(myConceptName);
+    if (cd == null) return null;
+    return cd.getLinkDescriptor(myName);
   }
 
   @Override
@@ -48,7 +55,12 @@ public class SContainmentLinkAdapterByName extends SContainmentLinkAdapter {
 
   @Override
   public SContainmentLinkId getRoleId() {
-    return getLinkDescriptor().getId();
+    LinkDescriptor d = getLinkDescriptor();
+    if (d == null) {
+      LOG.error("link descriptor not found for link " + myName);
+      return MetaIdFactory.INVALID_LINK_ID;
+    }
+    return d.getId();
   }
 
   @Override

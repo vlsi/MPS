@@ -42,6 +42,7 @@ public abstract class SReferenceLinkAdapter implements SReferenceLink {
     myName = name;
   }
 
+  @Nullable
   protected abstract ReferenceDescriptor getReferenceDescriptor();
 
   public abstract SReferenceLinkId getRoleId();

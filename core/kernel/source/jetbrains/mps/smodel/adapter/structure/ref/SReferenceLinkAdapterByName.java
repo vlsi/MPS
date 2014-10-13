@@ -15,11 +15,14 @@
  */
 package jetbrains.mps.smodel.adapter.structure.ref;
 
+import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.SNodeUtil;
+import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 import jetbrains.mps.smodel.adapter.ids.SReferenceLinkId;
 import jetbrains.mps.smodel.adapter.structure.concept.ConceptRegistryUtil;
 import jetbrains.mps.smodel.adapter.structure.concept.SConceptAdapterById;
 import jetbrains.mps.smodel.adapter.structure.concept.SInterfaceConceptAdapterById;
+import jetbrains.mps.smodel.adapter.structure.link.SContainmentLinkAdapterByName;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import jetbrains.mps.smodel.runtime.ReferenceDescriptor;
 import org.jetbrains.annotations.NotNull;
@@ -27,6 +30,8 @@ import org.jetbrains.mps.openapi.language.SReferenceLink;
 import org.jetbrains.mps.openapi.model.SNode;
 
 public class SReferenceLinkAdapterByName extends SReferenceLinkAdapter {
+  private static final Logger LOG = Logger.wrap(org.apache.log4j.Logger.getLogger(SReferenceLinkAdapterByName.class));
+
   public SReferenceLinkAdapterByName(@NotNull String conceptName, @NotNull String role) {
     super(conceptName, role);
   }
@@ -36,7 +41,9 @@ public class SReferenceLinkAdapterByName extends SReferenceLinkAdapter {
   }
 
   protected ReferenceDescriptor getReferenceDescriptor() {
-    return ConceptRegistryUtil.getConceptDescriptor(myConceptName).getRefDescriptor(myName);
+    ConceptDescriptor cd = ConceptRegistryUtil.getConceptDescriptor(myConceptName);
+    if (cd == null) return null;
+    return cd.getRefDescriptor(myName);
   }
 
   @Override
@@ -48,7 +55,12 @@ public class SReferenceLinkAdapterByName extends SReferenceLinkAdapter {
 
   @Override
   public SReferenceLinkId getRoleId() {
-    return getReferenceDescriptor().getId();
+    ReferenceDescriptor d = getReferenceDescriptor();
+    if (d == null) {
+      LOG.error("ref descriptor not found for ref " + myName);
+      return MetaIdFactory.INVALID_REF_ID ;
+    }
+    return d.getId();
   }
 
   @Override

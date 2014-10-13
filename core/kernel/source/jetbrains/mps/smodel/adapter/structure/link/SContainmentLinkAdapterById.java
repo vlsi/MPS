@@ -46,7 +46,9 @@ public class SContainmentLinkAdapterById extends SContainmentLinkAdapter {
   }
 
   protected LinkDescriptor getLinkDescriptor() {
-    return ConceptRegistryUtil.getConceptDescriptor(myRoleId.getConceptId()).getLinkDescriptor(myRoleId);
+    ConceptDescriptor cd = ConceptRegistryUtil.getConceptDescriptor(myRoleId.getConceptId());
+    if (cd == null) return null;
+    return cd.getLinkDescriptor(myRoleId);
   }
 
   @Override
