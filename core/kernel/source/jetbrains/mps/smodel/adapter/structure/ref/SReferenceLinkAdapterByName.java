@@ -54,6 +54,11 @@ public class SReferenceLinkAdapterByName extends SReferenceLinkAdapter {
   }
 
   @Override
+  public String getRoleName() {
+    return myName;
+  }
+
+  @Override
   public SReferenceLinkId getRoleId() {
     ReferenceDescriptor d = getReferenceDescriptor();
     if (d == null) {

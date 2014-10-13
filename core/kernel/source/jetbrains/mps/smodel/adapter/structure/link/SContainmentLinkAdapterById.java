@@ -45,6 +45,16 @@ public class SContainmentLinkAdapterById extends SContainmentLinkAdapter {
     return myRoleId;
   }
 
+  @Override
+  public String getRoleName() {
+    LinkDescriptor d = getLinkDescriptor();
+    if (d == null) {
+      //invalid property, needed for propertyRead event in SNode until event is rewritten
+      return myName;
+    }
+    return d.getName();
+  }
+
   protected LinkDescriptor getLinkDescriptor() {
     ConceptDescriptor cd = ConceptRegistryUtil.getConceptDescriptor(myRoleId.getConceptId());
     if (cd == null) return null;

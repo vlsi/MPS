@@ -44,6 +44,16 @@ public class SReferenceLinkAdapterById extends SReferenceLinkAdapter {
   public SReferenceLinkId getRoleId() {
     return myRoleId;
   }
+  @Override
+  public String getRoleName() {
+    ReferenceDescriptor d = getReferenceDescriptor();
+    if (d == null) {
+      //invalid property, needed for propertyRead event in SNode until event is rewritten
+      return myName;
+    }
+    return d.getName();
+  }
+
 
   protected ReferenceDescriptor getReferenceDescriptor() {
     ConceptDescriptor cd = ConceptRegistryUtil.getConceptDescriptor(myRoleId.getConceptId());

@@ -64,6 +64,11 @@ public class SContainmentLinkAdapterByName extends SContainmentLinkAdapter {
   }
 
   @Override
+  public String getRoleName() {
+    return myName;
+  }
+
+  @Override
   protected SNode findInConcept(SNode cnode) {
     Iterable<? extends SNode> links = cnode.getChildren(SNodeUtil.link_AbstractConceptDeclaration_linkDeclaration);
     for (SNode l : links) {

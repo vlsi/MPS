@@ -68,16 +68,6 @@ public abstract class SReferenceLinkAdapter implements SReferenceLink {
   }
 
   @Override
-  public String getRoleName() {
-    ReferenceDescriptor d = getReferenceDescriptor();
-    if (d == null) {
-      //invalid property, needed for propertyRead event in SNode until event is rewritten
-      return myName;
-    }
-    return d.getName();
-  }
-
-  @Override
   public SAbstractConcept getTargetConcept() {
     SConceptId id = getReferenceDescriptor().getTargetConcept();
     ConceptDescriptor concept = ConceptRegistryUtil.getConceptDescriptor(id);

@@ -48,6 +48,11 @@ public class SPropertyAdapterByName extends SPropertyAdapter {
   }
 
   @Override
+  public String getName() {
+    return myPropertyName;
+  }
+
+  @Override
   public SPropertyId getId() {
     PropertyDescriptor d = getPropertyDescriptor();
     if (d == null) {

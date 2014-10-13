@@ -44,6 +44,16 @@ public class SPropertyAdapterById extends SPropertyAdapter {
   }
 
   @Override
+  public String getName() {
+    PropertyDescriptor d = getPropertyDescriptor();
+    if (d == null) {
+      //invalid property, needed for propertyRead event in SNode until event is rewritten
+      return myPropertyName;
+    }
+    return d.getName();
+  }
+
+  @Override
   protected PropertyDescriptor getPropertyDescriptor() {
     ConceptDescriptor cd = ConceptRegistryUtil.getConceptDescriptor(myPropertyId.getConceptId());
     if (cd == null) return null;

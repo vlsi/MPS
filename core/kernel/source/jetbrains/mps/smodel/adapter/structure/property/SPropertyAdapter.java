@@ -59,16 +59,6 @@ public abstract class SPropertyAdapter implements SProperty {
   protected abstract PropertyDescriptor getPropertyDescriptor();
 
   @Override
-  public String getName() {
-    PropertyDescriptor d = getPropertyDescriptor();
-    if (d == null) {
-      //invalid property, needed for propertyRead event in SNode until event is rewritten
-      return myPropertyName;
-    }
-    return d.getName();
-  }
-
-  @Override
   public boolean isValid() {
     return getPropertyDescriptor() != null;
   }
