@@ -16,11 +16,11 @@
 package jetbrains.mps.smodel.runtime;
 
 
-import com.sun.istack.internal.Nullable;
 import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import jetbrains.mps.smodel.adapter.ids.SContainmentLinkId;
 import jetbrains.mps.smodel.adapter.ids.SPropertyId;
 import jetbrains.mps.smodel.adapter.ids.SReferenceLinkId;
+import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 import java.util.Set;
