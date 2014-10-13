@@ -23,7 +23,6 @@
   <import index="d2v5" modelUID="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.persistence(MPS.Core/jetbrains.mps.persistence@java_stub)" version="-1" />
   <import index="1p1s" modelUID="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps(MPS.Core/jetbrains.mps@java_stub)" version="-1" />
   <import index="ec5l" modelUID="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)" version="-1" />
-  <import index="oox4" modelUID="r:78975c1c-5d20-4b6d-8542-15df2bc9a786(jetbrains.mps.ide.mpsmigration.migration32.idMigration)" version="-1" />
   <import index="t3eg" modelUID="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.language(MPS.OpenAPI/org.jetbrains.mps.openapi.language@java_stub)" version="-1" />
   <import index="tpcn" modelUID="r:00000000-0000-4000-0000-011c8959028b(jetbrains.mps.lang.structure.behavior)" version="-1" />
   <import index="tpck" modelUID="ceab5195-25ea-4f22-9b92-103b95ca8c0c/r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core/jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
@@ -392,8 +391,8 @@
   </root>
   <root type="tp4k.ActionGroupDeclaration" typeId="tp4k.1203087890642" id="9056562259284885831" nodeInfo="ng">
     <property name="name" nameId="tpck.1169194664001" value="Migrations32" />
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="migration" />
     <property name="caption" nameId="tp4k.1204991940915" value="Migration 3.2" />
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="migration" />
     <property name="isPluginXmlGroup" nameId="tp4k.6368583333374291912" value="true" />
     <property name="isPopup" nameId="tp4k.1213283637680" value="true" />
     <node role="contents" roleId="tp4k.1207145245948" type="tp4k.ElementListContents" typeId="tp4k.1207145163717" id="9056562259285025195" nodeInfo="ng">
