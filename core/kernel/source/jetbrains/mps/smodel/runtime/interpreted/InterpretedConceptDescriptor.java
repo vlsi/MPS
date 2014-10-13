@@ -143,15 +143,17 @@ class InterpretedConceptDescriptor extends BaseConceptDescriptor {
 
           for (SNode interfaceConcept : SNodeUtil.getConceptDeclaration_Implements(declaration)) {
             parentsSet.add(NameUtil.nodeFQName(interfaceConcept));
+            parentsIdsSet.add(MetaIdByDeclaration.getConceptId(((jetbrains.mps.smodel.SNode) interfaceConcept)));
           }
         } else if (SNodeUtil.isInstanceOfInterfaceConceptDeclaration(declaration)) {
           for (SNode interfaceConcept : SNodeUtil.getInterfaceConceptDeclaration_Extends(declaration)) {
             parentsSet.add(NameUtil.nodeFQName(interfaceConcept));
+            parentsIdsSet.add(MetaIdByDeclaration.getConceptId(((jetbrains.mps.smodel.SNode) interfaceConcept)));
           }
         }
 
         parentsSet.remove(null);
-        if (superConcept == null && !SNodeUtil.concept_BaseConcept.equals(myName) && !isInterface) {
+        if (superConcept == null && !SNodeUtil.concept_BaseConcept.equals(myName)) {
           parentsSet.add(SNodeUtil.concept_BaseConcept);
           parentsIdsSet.add(SNodeUtil.conceptId_BaseConcept);
         }

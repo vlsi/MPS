@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.smodel.runtime.impl;
 
+import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import jetbrains.mps.smodel.adapter.ids.SContainmentLinkId;
 import jetbrains.mps.smodel.adapter.ids.SPropertyId;
@@ -137,6 +138,10 @@ public class CompiledConceptDescriptor extends BaseConceptDescriptor {
       for (String parent : myParentNames) {
         ConceptDescriptor descriptor = ConceptRegistry.getInstance().getConceptDescriptor(parent);
         parentDescriptors.add(descriptor);
+      }
+
+      if (isInterfaceConcept()){
+        parentDescriptors.add(ConceptRegistry.getInstance().getConceptDescriptor(SNodeUtil.conceptId_BaseConcept));
       }
 
       initAncestors(parentDescriptors);
