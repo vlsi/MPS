@@ -38,7 +38,7 @@ public class SContainmentLinkAdapterById extends SContainmentLinkAdapter {
 
   public boolean isSame(SContainmentLink l2) {
     return (l2 instanceof SContainmentLinkAdapterById) ? myRoleId.equals(((SContainmentLinkAdapterById) l2).myRoleId) :
-        (myConceptName + "#" + myName).equals(((SContainmentLinkAdapter) l2).myConceptName + "#" + ((SContainmentLinkAdapter) l2).myName);
+        myName.equals(((SContainmentLinkAdapter) l2).myName);
   }
 
   public SContainmentLinkId getRoleId() {
@@ -47,13 +47,6 @@ public class SContainmentLinkAdapterById extends SContainmentLinkAdapter {
 
   protected LinkDescriptor getLinkDescriptor() {
     return ConceptRegistryUtil.getConceptDescriptor(myRoleId.getConceptId()).getLinkDescriptor(myRoleId);
-  }
-
-  @Override
-  public org.jetbrains.mps.openapi.language.SAbstractConcept getContainingConcept() {
-    SConceptId id = myRoleId.getConceptId();
-    ConceptDescriptor concept = ConceptRegistryUtil.getConceptDescriptor(id);
-    return concept.isInterfaceConcept() ? new SInterfaceConceptAdapterById(id, concept.getConceptFqName()) : new SConceptAdapterById(id, concept.getConceptFqName());
   }
 
   @Override

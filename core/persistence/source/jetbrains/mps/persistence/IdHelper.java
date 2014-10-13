@@ -26,9 +26,8 @@ import jetbrains.mps.smodel.adapter.ids.SReferenceLinkId;
 import jetbrains.mps.smodel.adapter.structure.concept.SConceptAdapterById;
 import jetbrains.mps.smodel.adapter.structure.concept.SInterfaceConceptAdapterById;
 import jetbrains.mps.smodel.adapter.structure.language.SLanguageAdapterById;
-import jetbrains.mps.smodel.adapter.structure.link.SContainmentLinkAdapterById;
+import jetbrains.mps.smodel.adapter.structure.link.SContainmentLinkAdapter;
 import jetbrains.mps.smodel.adapter.structure.property.SPropertyAdapter;
-import jetbrains.mps.smodel.adapter.structure.property.SPropertyAdapterById;
 import jetbrains.mps.smodel.adapter.structure.ref.SReferenceLinkAdapterById;
 import jetbrains.mps.smodel.language.ConceptRegistry;
 import jetbrains.mps.util.annotation.ToRemove;
@@ -72,10 +71,6 @@ public class IdHelper {
   }
 
   public static SContainmentLinkId getLinkId(SContainmentLink l) {
-    if (l instanceof SContainmentLinkAdapterById) {
-      return ((SContainmentLinkAdapterById) l).getRoleId();
-    } else {
-      return ConceptRegistry.getInstance().getConceptDescriptor(l.getContainingConcept().getQualifiedName()).getLinkDescriptor(l.getRoleName()).getId();
-    }
+    return ((SContainmentLinkAdapter) l).getRoleId();
   }
 }

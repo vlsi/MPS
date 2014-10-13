@@ -16,6 +16,7 @@
 package jetbrains.mps.smodel.adapter.structure.link;
 
 import jetbrains.mps.smodel.SNodeUtil;
+import jetbrains.mps.smodel.adapter.ids.SContainmentLinkId;
 import jetbrains.mps.smodel.adapter.structure.concept.ConceptRegistryUtil;
 import jetbrains.mps.smodel.adapter.structure.concept.SConceptAdapterById;
 import jetbrains.mps.smodel.adapter.structure.concept.SInterfaceConceptAdapterById;
@@ -31,7 +32,7 @@ public class SContainmentLinkAdapterByName extends SContainmentLinkAdapter {
   }
 
   public boolean isSame(SContainmentLink l2) {
-    return (myConceptName + "#" + myName).equals(((SContainmentLinkAdapter) l2).myConceptName + "#" + ((SContainmentLinkAdapter) l2).myName);
+    return myName.equals(((SContainmentLinkAdapter) l2).myName);
   }
 
   protected LinkDescriptor getLinkDescriptor() {
@@ -43,6 +44,11 @@ public class SContainmentLinkAdapterByName extends SContainmentLinkAdapter {
     ConceptDescriptor concept = ConceptRegistryUtil.getConceptDescriptor(myConceptName);
     return concept.isInterfaceConcept() ? new SInterfaceConceptAdapterById(concept.getId(), myConceptName) :
         new SConceptAdapterById(concept.getId(), myConceptName);
+  }
+
+  @Override
+  public SContainmentLinkId getRoleId() {
+    return getLinkDescriptor().getId();
   }
 
   @Override

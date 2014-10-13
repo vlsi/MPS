@@ -17,6 +17,7 @@ package jetbrains.mps.smodel.adapter.structure.link;
 
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.adapter.ids.SConceptId;
+import jetbrains.mps.smodel.adapter.ids.SContainmentLinkId;
 import jetbrains.mps.smodel.adapter.structure.concept.ConceptRegistryUtil;
 import jetbrains.mps.smodel.adapter.structure.concept.SConceptAdapterById;
 import jetbrains.mps.smodel.adapter.structure.concept.SInterfaceConceptAdapterById;
@@ -39,10 +40,9 @@ public abstract class SContainmentLinkAdapter implements SContainmentLink {
 
   protected abstract LinkDescriptor getLinkDescriptor();
 
-  @Override
-  public abstract SAbstractConcept getContainingConcept();
-
   protected abstract SNode findInConcept(SNode cnode);
+
+  public abstract SContainmentLinkId getRoleId();
 
   @Override
   public String getRole() {
@@ -62,6 +62,13 @@ public abstract class SContainmentLinkAdapter implements SContainmentLink {
       return myName;
     }
     return d.getName();
+  }
+
+  @Override
+  public org.jetbrains.mps.openapi.language.SAbstractConcept getContainingConcept() {
+    SConceptId id = getRoleId().getConceptId();
+    ConceptDescriptor concept = ConceptRegistryUtil.getConceptDescriptor(id);
+    return concept.isInterfaceConcept() ? new SInterfaceConceptAdapterById(id, concept.getConceptFqName()) : new SConceptAdapterById(id, concept.getConceptFqName());
   }
 
   @Override
