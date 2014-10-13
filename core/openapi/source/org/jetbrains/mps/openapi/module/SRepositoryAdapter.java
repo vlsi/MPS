@@ -16,43 +16,10 @@
 package org.jetbrains.mps.openapi.module;
 
 /**
- * A convenient empty implementation of the SRepositoryListener interface.
+ * @deprecated Bad name (not an adapter for a repository), use {@link org.jetbrains.mps.openapi.module.SRepositoryListenerBase} instead.
+ * Will be removed after 3.2.
+ * @ToRemove(version = 3.2)
  */
-public class SRepositoryAdapter implements SRepositoryListener {
-
-  @Override
-  public void moduleAdded(SModule module) {
-  }
-
-  @Override
-  public void beforeModuleRemoved(SModule module) {
-  }
-
-  @Override
-  public void moduleRemoved(SModuleReference module) {
-  }
-
-  @Override
-  public void commandStarted(SRepository repository) {
-  }
-
-  @Override
-  public void commandFinished(SRepository repository) {
-  }
-
-  @Override
-  public void updateStarted(SRepository repository) {
-  }
-
-  @Override
-  public void updateFinished(SRepository repository) {
-  }
-
-  @Override
-  public void repositoryCommandStarted(SRepository repository) {
-  }
-
-  @Override
-  public void repositoryCommandFinished(SRepository repository) {
-  }
+@Deprecated
+public class SRepositoryAdapter extends SRepositoryListenerBase {
 }

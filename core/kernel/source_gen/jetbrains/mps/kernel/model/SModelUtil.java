@@ -7,18 +7,11 @@ import org.jetbrains.mps.openapi.model.SNode;
 import java.util.concurrent.ConcurrentHashMap;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.util.InternUtil;
-import jetbrains.mps.util.NameUtil;
-import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.util.SNodeOperations;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
-import org.apache.log4j.Level;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.smodel.NodeReadAccessCasterInEditor;
 import jetbrains.mps.util.Computable;
+import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.smodel.ConceptDeclarationLookup;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
@@ -28,12 +21,12 @@ import java.util.List;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.LinkedHashSet;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.search.ConceptAndSuperConceptsScope;
 import java.util.ArrayList;
 import jetbrains.mps.smodel.language.ConceptRegistry;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SEnumOperations;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 
 public class SModelUtil {
   private static ConcurrentMap<String, SNode> myFQNameToConcepDecl = new ConcurrentHashMap<String, SNode>();
@@ -49,26 +42,6 @@ public class SModelUtil {
     if ((concept != null)) {
       myFQNameToConcepDecl.put(InternUtil.intern(newName), concept);
     }
-  }
-  @Deprecated
-  public static SNode findNodeByFQName(String nodeFQName, SNode concept) {
-    String modelName = NameUtil.namespaceFromLongName(nodeFQName);
-    String name = NameUtil.shortNameFromLongName(nodeFQName);
-    for (SModel descriptor : Sequence.fromIterable(GlobalScope.getInstance().getModels())) {
-      if (!(modelName.equals(SNodeOperations.getModelLongName(descriptor)))) {
-        continue;
-      }
-      SModel model = descriptor;
-      for (SNode root : ListSequence.fromList(SModelOperations.getRoots(model, null))) {
-        if (name.equals(root.getName()) && jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.isInstanceOf(root, NameUtil.nodeFQName(concept))) {
-          return root;
-        }
-      }
-    }
-    if (LOG.isEnabledFor(Level.WARN)) {
-      LOG.warn("couldn't find node by fqname: " + nodeFQName);
-    }
-    return null;
   }
   public static SNode findConceptDeclaration(@NotNull final String conceptFQName) {
     SNode cd = MapSequence.fromMap(myFQNameToConcepDecl).get(conceptFQName);
@@ -138,7 +111,7 @@ public class SModelUtil {
   public static List<SNode> getDirectSuperInterfacesAndTheirSupers(SNode concept) {
     Set<SNode> result = SetSequence.fromSet(new LinkedHashSet<SNode>());
     for (SNode superConcept : ListSequence.fromList(getDirectSuperConcepts(concept))) {
-      if (jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.isInstanceOf(superConcept, "jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration") && !(SetSequence.fromSet(result).contains(superConcept))) {
+      if (SNodeOperations.isInstanceOf(superConcept, "jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration") && !(SetSequence.fromSet(result).contains(superConcept))) {
         for (SNode node : ListSequence.fromList(new ConceptAndSuperConceptsScope(superConcept).getConcepts())) {
           SetSequence.fromSet(result).addElement((SNode) node);
         }
@@ -148,7 +121,7 @@ public class SModelUtil {
   }
   public static List<SNode> getDirectSuperConcepts(SNode concept) {
     List<SNode> result = ListSequence.fromList(new ArrayList<SNode>());
-    if (jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.isInstanceOf(concept, "jetbrains.mps.lang.structure.structure.ConceptDeclaration")) {
+    if (SNodeOperations.isInstanceOf(concept, "jetbrains.mps.lang.structure.structure.ConceptDeclaration")) {
       SNode conceptDecl = (SNode) concept;
       SNode extended = SLinkOperations.getTarget(conceptDecl, "extends", false);
       if (extended != null) {
@@ -170,8 +143,8 @@ public class SModelUtil {
     return result;
   }
   public static boolean isAssignableConcept(SNode from, SNode to) {
-    assert jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getModel(from) != null : "working with disposed concept: " + NameUtil.nodeFQName(from);
-    assert jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getModel(to) != null : "working with disposed concept: " + NameUtil.nodeFQName(to);
+    assert SNodeOperations.getModel(from) != null : "working with disposed concept: " + NameUtil.nodeFQName(from);
+    assert SNodeOperations.getModel(to) != null : "working with disposed concept: " + NameUtil.nodeFQName(to);
     if (from == to) {
       return true;
     }
@@ -191,7 +164,7 @@ public class SModelUtil {
     return isAssignableConcept(fromFqName, toFqName);
   }
   public static boolean isAssignableConcept(String fromFqName, String toFqName) {
-    if (eq_74see4_a0a0p(fromFqName, toFqName)) {
+    if (eq_74see4_a0a0o(fromFqName, toFqName)) {
       return true;
     }
     if (fromFqName == null || toFqName == null) {
@@ -225,8 +198,7 @@ public class SModelUtil {
   public static String getLinkDeclarationRole(SNode link) {
     return SPropertyOperations.getString(link, "role");
   }
-  protected static Logger LOG = LogManager.getLogger(SModelUtil.class);
-  private static boolean eq_74see4_a0a0p(Object a, Object b) {
+  private static boolean eq_74see4_a0a0o(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
 }

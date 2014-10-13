@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2014 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,107 +15,65 @@
  */
 package jetbrains.mps.smodel;
 
-import jetbrains.mps.smodel.SModelRepositoryListener.SModelRepositoryListenerPriority;
-import jetbrains.mps.smodel.tempmodel.TemporaryModels;
-import org.apache.log4j.LogManager;
-import org.jetbrains.mps.openapi.model.SModel;
-
-import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNode;
-
+import jetbrains.mps.classloading.ClassLoaderManager;
+import jetbrains.mps.classloading.MPSClassesListener;
+import jetbrains.mps.classloading.MPSClassesListenerAdapter;
 import jetbrains.mps.components.CoreComponent;
+import jetbrains.mps.extapi.module.SRepositoryRegistry;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.classloading.ClassLoaderManager;
-import jetbrains.mps.reloading.ReloadAdapter;
 import jetbrains.mps.smodel.constraints.ModelConstraints;
-import jetbrains.mps.smodel.event.SModelListener.SModelListenerPriority;
-import jetbrains.mps.smodel.event.SModelPropertyEvent;
-import jetbrains.mps.smodel.event.SModelRootEvent;
+import jetbrains.mps.smodel.impl.StructureAspectChangeTracker;
 import jetbrains.mps.smodel.search.ConceptAndSuperConceptsScope;
 import jetbrains.mps.smodel.search.SModelSearchUtil;
+import jetbrains.mps.smodel.tempmodel.TemporaryModels;
 import jetbrains.mps.util.NameUtil;
+import org.apache.log4j.LogManager;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SNodeId;
+import org.jetbrains.mps.openapi.module.SModule;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 
 import java.util.List;
 import java.util.Set;
 
 public class SModelUtil_new implements CoreComponent {
   private static final Logger LOG = Logger.wrap(LogManager.getLogger(SModelUtil_new.class));
-  private ClassLoaderManager myClManager;
-  private GlobalSModelEventsManager myMeManager;
-  private ReloadAdapter myReloadHandler = new ReloadAdapter() {
+  private final ClassLoaderManager myClManager;
+  private final SRepositoryRegistry myRepositoryRegistry;
+  private MPSClassesListener myReloadHandler = new MPSClassesListenerAdapter() {
     @Override
-    public void unload() {
+    public void beforeClassesUnloaded(Set<SModule> unloadedModules) {
       SModelUtil.clearCaches();
     }
   };
-  private SModelAdapter myModelListener = new SModelAdapter(SModelListenerPriority.PLATFORM) {
-    @Override
-    public void rootRemoved(SModelRootEvent p0) {
-      if (!LanguageAspect.STRUCTURE.is(p0.getModel())) {
-        return;
-      }
-      if (!(SNodeUtil.isInstanceOfAbstractConceptDeclaration(p0.getRoot()))) {
-        return;
-      }
 
+  private final StructureAspectChangeTracker myStructureChangeTracker = new StructureAspectChangeTracker(null, new StructureAspectChangeTracker.ModuleListener() {
+    @Override
+    public void structureAspectChanged(Set<SModuleReference> changedModules) {
       SModelUtil.clearCaches();
     }
+  });
 
-
-    @Override
-    public void propertyChanged(SModelPropertyEvent p0) {
-      if (!LanguageAspect.STRUCTURE.is(p0.getModel())) {
-        return;
-      }
-      if (!(SNodeUtil.isInstanceOfAbstractConceptDeclaration(p0.getNode()))) {
-        return;
-      }
-      if (!p0.getPropertyName().equals("name")) {
-        return;
-      }
-
-      String modelName = jetbrains.mps.util.SNodeOperations.getModelLongName(p0.getNode().getModel());
-      String newName = modelName + "." + p0.getNewPropertyValue();
-      String oldName = modelName + "." + p0.getOldPropertyValue();
-      SModelUtil.conceptRenamed(oldName, newName);
-    }
-  };
-
-  private SModelRepositoryAdapter myRepositoryListener = new SModelRepositoryAdapter(SModelRepositoryListenerPriority.PLATFORM) {
-    @Override
-    public void modelsReplaced(Set<SModel> replacedModels) {
-      for (SModel descriptor : replacedModels) {
-        if (!jetbrains.mps.util.SNodeOperations.isRegistered(descriptor))  {
-          continue;
-        }
-        if (Language.getModelAspect(descriptor) == LanguageAspect.STRUCTURE) {
-          SModelUtil.clearCaches();
-          return;
-        }
-      }
-    }
-  };
-
-  public SModelUtil_new(ClassLoaderManager clManager, GlobalSModelEventsManager meManager) {
+  public SModelUtil_new(ClassLoaderManager clManager, SRepositoryRegistry repositoryRegistry) {
     myClManager = clManager;
-    myMeManager = meManager;
+    myRepositoryRegistry = repositoryRegistry;
   }
 
   @Override
   public void init() {
-    SModelRepository.getInstance().addModelRepositoryListener(myRepositoryListener);
-    myClManager.addReloadHandler(myReloadHandler);
-    myMeManager.addGlobalModelListener(myModelListener);
+    myRepositoryRegistry.addGlobalListener(myStructureChangeTracker);
+    myClManager.addClassesHandler(myReloadHandler);
   }
 
   @Override
   public void dispose() {
-    myMeManager.removeGlobalModelListener(myModelListener);
-    myClManager.removeReloadHandler(myReloadHandler);
-    SModelRepository.getInstance().removeModelRepositoryListener(myRepositoryListener);
+    myClManager.removeClassesHandler(myReloadHandler);
+    myRepositoryRegistry.removeGlobalListener(myStructureChangeTracker);
   }
 
   /**

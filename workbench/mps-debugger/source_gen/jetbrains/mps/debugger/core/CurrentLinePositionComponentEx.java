@@ -29,7 +29,7 @@ import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.nodeEditor.AdditionalPainter;
-import org.jetbrains.mps.openapi.module.SRepositoryAdapter;
+import org.jetbrains.mps.openapi.module.SRepositoryListenerBase;
 import org.jetbrains.mps.openapi.module.SRepository;
 import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 
@@ -212,7 +212,7 @@ public abstract class CurrentLinePositionComponentEx<S> {
       }
     }
   }
-  private class MyRepositoryListener extends SRepositoryAdapter {
+  private class MyRepositoryListener extends SRepositoryListenerBase {
     @Override
     public void commandFinished(SRepository repository) {
       for (S session : CollectionSequence.fromCollection(getAllSessions())) {

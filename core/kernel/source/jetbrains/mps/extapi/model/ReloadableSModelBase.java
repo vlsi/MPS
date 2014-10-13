@@ -67,27 +67,9 @@ public abstract class ReloadableSModelBase extends SModelBase implements ModelSo
   }
 
   protected synchronized void replaceModel(Runnable replacer) {
-    ModelAccess.assertLegalWrite();
-
     final jetbrains.mps.smodel.SModel oldSModel = getCurrentModelInternal();
-
-    if (oldSModel != null) {
-      oldSModel.setModelDescriptor(null);
-    }
-
     replacer.run();
-
     jetbrains.mps.smodel.SModel newModel = getCurrentModelInternal();
-    if (newModel != null) {
-      newModel.setModelDescriptor(this);
-    }
-
-    if (oldSModel != null) {
-      notifyModelReplaced(oldSModel);
-    }
-
-    fireModelReplaced();
-
-    MPSModuleRepository.getInstance().invalidateCaches();
+    replaceModelAndFireEvent(oldSModel, newModel);
   }
 }

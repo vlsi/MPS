@@ -31,7 +31,6 @@ import jetbrains.mps.ide.findusages.findalgorithm.finders.IFinder;
 import jetbrains.mps.ide.findusages.view.UsagesViewTool;
 import jetbrains.mps.ide.findusages.view.FindUtils;
 import jetbrains.mps.kernel.model.SModelUtil;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.Sequence;
@@ -40,6 +39,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.ide.findusages.model.IResultProvider;
 import org.jetbrains.mps.openapi.module.SearchScope;
 import jetbrains.mps.util.Computable;
+import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 
 public class MPSProjectIDEHandler extends UnicastRemoteObject implements IMPSIDEHandler, ProjectComponent {
   private static final Logger LOG = LogManager.getLogger(MPSProjectIDEHandler.class);
@@ -146,7 +147,7 @@ public class MPSProjectIDEHandler extends UnicastRemoteObject implements IMPSIDE
     ModelAccess.instance().runReadAction(new Runnable() {
       @Override
       public void run() {
-        SNode cls = SModelUtil.findNodeByFQName(fqName, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.Classifier"));
+        SNode cls = findClassByName(fqName);
         if (cls == null) {
           MPSProjectIDEHandler.LOG.error("Can't find a class " + fqName);
           return;
@@ -166,7 +167,7 @@ public class MPSProjectIDEHandler extends UnicastRemoteObject implements IMPSIDE
           return;
 
         }
-        SNode cls = jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.as(SModelUtil.findNodeByFQName(classFqName, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.Classifier")), "jetbrains.mps.baseLanguage.structure.Classifier");
+        SNode cls = findClassByName(classFqName);
         if (cls == null) {
           MPSProjectIDEHandler.LOG.error("Can't find a class " + classFqName);
           return;
@@ -204,5 +205,23 @@ public class MPSProjectIDEHandler extends UnicastRemoteObject implements IMPSIDE
         myProject.getComponent(UsagesViewTool.class).findUsages(provider, query, true, true, false, "No usages for that node");
       }
     }.start();
+  }
+  private SNode findClassByName(String classFqName) {
+    // This is slightly updated SModelUtil.findNodeByFQName, which moved here as it's the only place we use it 
+    // FIXME however, it's ugly and needs rework 
+    String modelName = NameUtil.namespaceFromLongName(classFqName);
+    String name = NameUtil.shortNameFromLongName(classFqName);
+    for (SModel m : Sequence.fromIterable(GlobalScope.getInstance().getModels())) {
+      if (!(modelName.equals(NameUtil.getModelLongName(m)))) {
+        continue;
+      }
+      SModel model = m;
+      for (SNode root : ListSequence.fromList(SModelOperations.getRoots(model, "jetbrains.mps.baseLanguage.structure.Classifier"))) {
+        if (name.equals(SPropertyOperations.getString(root, "name"))) {
+          return root;
+        }
+      }
+    }
+    return null;
   }
 }

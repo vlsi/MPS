@@ -17,18 +17,20 @@ package jetbrains.mps.generator;
 
 import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.extapi.model.GeneratableSModel;
+import jetbrains.mps.extapi.module.SRepositoryRegistry;
 import jetbrains.mps.smodel.SModelRepository;
-import jetbrains.mps.smodel.SModelRepositoryAdapter;
+import jetbrains.mps.util.SNodeOperations;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.EditableSModel;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
+import org.jetbrains.mps.openapi.module.SModule;
+import org.jetbrains.mps.openapi.module.SRepositoryContentAdapter;
 
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.HashSet;
+import java.util.Collections;
 import java.util.List;
-import java.util.Set;
 
 public class ModelGenerationStatusManager implements CoreComponent {
   private static ModelGenerationStatusManager INSTANCE;
@@ -41,16 +43,27 @@ public class ModelGenerationStatusManager implements CoreComponent {
 
   private ModelHashSource myModelHashSource;
 
-  private final SModelRepositoryAdapter mySmodelReloadListener = new SModelRepositoryAdapter() {
+  private final SRepositoryContentAdapter myModelReloadListener = new SRepositoryContentAdapter() {
     @Override
-    public void modelsReplaced(Set<SModel> replacedModels) {
-      Set<SModel> registeredModels = new HashSet<SModel>();
-      for (SModel modelDescriptor : replacedModels) {
-        if (jetbrains.mps.util.SNodeOperations.isRegistered(modelDescriptor)) {
-          registeredModels.add(modelDescriptor);
-        }
+    protected boolean isIncluded(SModule module) {
+      return !module.isPackaged() && !module.isReadOnly();
+    }
+
+    @Override
+    protected void startListening(SModel model) {
+      if (SNodeOperations.isGeneratable(model)) {
+        model.addModelListener(this);
       }
-      ModelGenerationStatusManager.this.invalidateData(registeredModels);
+    }
+
+    @Override
+    protected void stopListening(SModel model) {
+      model.removeModelListener(this);
+    }
+
+    @Override
+    public void modelReplaced(SModel model) {
+      ModelGenerationStatusManager.this.invalidateData(Collections.singleton(model));
     }
   };
 
@@ -72,12 +85,12 @@ public class ModelGenerationStatusManager implements CoreComponent {
     }
 
     INSTANCE = this;
-    SModelRepository.getInstance().addModelRepositoryListener(mySmodelReloadListener);
+    SRepositoryRegistry.getInstance().addGlobalListener(myModelReloadListener);
   }
 
   @Override
   public void dispose() {
-    SModelRepository.getInstance().removeModelRepositoryListener(mySmodelReloadListener);
+    SRepositoryRegistry.getInstance().removeGlobalListener(myModelReloadListener);
     INSTANCE = null;
   }
 

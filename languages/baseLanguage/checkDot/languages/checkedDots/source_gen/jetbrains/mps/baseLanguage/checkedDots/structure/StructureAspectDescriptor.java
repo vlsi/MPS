@@ -14,7 +14,7 @@ import org.jetbrains.annotations.Nullable;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
-  /*package*/ final ConceptDescriptor myConceptCheckedDotExpression = new ConceptDescriptorBuilder("jetbrains.mps.baseLanguage.checkedDots.structure.CheckedDotExpression", MetaIdFactory.conceptId(UUID.fromString("774bf8a0-62e5-41e1-af63-f4812e60e48b"), 4079382982702596667L)).super_("jetbrains.mps.baseLanguage.structure.DotExpression").super_(MetaIdFactory.conceptId(UUID.fromString("774bf8a0-62e5-41e1-af63-f4812e60e48b"), 1197027756228L)).parents("jetbrains.mps.baseLanguage.structure.DotExpression").parentIds(MetaIdFactory.conceptId(UUID.fromString("774bf8a0-62e5-41e1-af63-f4812e60e48b"), 1197027756228L)).staticScope(StaticScope.NONE).create();
+  /*package*/ final ConceptDescriptor myConceptCheckedDotExpression = new ConceptDescriptorBuilder("jetbrains.mps.baseLanguage.checkedDots.structure.CheckedDotExpression", MetaIdFactory.conceptId(UUID.fromString("774bf8a0-62e5-41e1-af63-f4812e60e48b"), 4079382982702596667L)).super_("jetbrains.mps.baseLanguage.structure.DotExpression").super_(MetaIdFactory.conceptId(UUID.fromString("f3061a53-9226-4cc5-a443-f952ceaf5816"), 1197027756228L)).parents("jetbrains.mps.baseLanguage.structure.DotExpression").parentIds(MetaIdFactory.conceptId(UUID.fromString("f3061a53-9226-4cc5-a443-f952ceaf5816"), 1197027756228L)).staticScope(StaticScope.NONE).create();
 
   @Override
   public Collection<ConceptDescriptor> getDescriptors() {
