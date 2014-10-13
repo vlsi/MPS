@@ -129,7 +129,7 @@ class InterpretedConceptDescriptor extends BaseConceptDescriptor {
             superConceptId = SNodeUtil.conceptId_BaseConcept;
           } else {
             superConcept = NameUtil.nodeFQName(superConceptNode);
-            superConceptId = MetaIdByDeclaration.getConceptId(((jetbrains.mps.smodel.SNode) superConceptNode));
+            superConceptId = superConceptNode == null ? null : MetaIdByDeclaration.getConceptId(((jetbrains.mps.smodel.SNode) superConceptNode));
           }
         }
 
@@ -199,7 +199,7 @@ class InterpretedConceptDescriptor extends BaseConceptDescriptor {
 
               SContainmentLinkId linkId = MetaIdByDeclaration.getLinkId(((jetbrains.mps.smodel.SNode) link));
               BaseLinkDescriptor pd = new BaseLinkDescriptor(linkId, name,
-                  MetaIdByDeclaration.getConceptId(((jetbrains.mps.smodel.SNode)SNodeUtil.getLinkTarget(link))),
+                  MetaIdByDeclaration.getConceptId(((jetbrains.mps.smodel.SNode) SNodeUtil.getLinkTarget(link))),
                   SNodeUtil.getLinkDeclaration_IsExactlyOneMultiplicity(link),
                   SNodeUtil.getLinkDeclaration_IsSingular(link),
                   unordered);
@@ -273,7 +273,7 @@ class InterpretedConceptDescriptor extends BaseConceptDescriptor {
 
       referenceNames = Collections.unmodifiableSet(references);
       myReferences = Collections.unmodifiableMap(referencesByIds);
-      myReferencesByName  = Collections.unmodifiableMap(referencesByName);
+      myReferencesByName = Collections.unmodifiableMap(referencesByName);
 
       // children
       Map<SContainmentLinkId, LinkDescriptor> linksByIds = new HashMap<SContainmentLinkId, LinkDescriptor>();
@@ -299,7 +299,7 @@ class InterpretedConceptDescriptor extends BaseConceptDescriptor {
       childrenNames = Collections.unmodifiableSet(childrenMap.keySet());
 
       myLinks = Collections.unmodifiableMap(linksByIds);
-      myLinksByName  = Collections.unmodifiableMap(linksByName);
+      myLinksByName = Collections.unmodifiableMap(linksByName);
     }
   }
 
