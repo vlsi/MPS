@@ -44,6 +44,11 @@ public class SConceptAdapterByName extends SConceptAdapter implements SConcept {
   }
 
   @Override
+  public String getQualifiedName() {
+    return myFqName;
+  }
+
+  @Override
   protected SNode findInModel(SModel strucModel) {
     for (SNode root : strucModel.getRootNodes()) {
       if (root.getName().equals(NameUtil.shortNameFromLongName(myFqName))) return root;

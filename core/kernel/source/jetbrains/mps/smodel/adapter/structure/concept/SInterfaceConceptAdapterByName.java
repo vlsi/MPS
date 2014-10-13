@@ -39,6 +39,11 @@ public class SInterfaceConceptAdapterByName extends SInterfaceConceptAdapter imp
   }
 
   @Override
+  public String getQualifiedName() {
+    return myFqName;
+  }
+
+  @Override
   public SLanguage getLanguage() {
     return new SLanguageAdapterByName(NameUtil.namespaceFromConceptFQName(myFqName));
   }

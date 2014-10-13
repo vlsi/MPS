@@ -49,6 +49,16 @@ public class SInterfaceConceptAdapterById extends SInterfaceConceptAdapter imple
   }
 
   @Override
+  public String getQualifiedName() {
+    ConceptDescriptor cd = getConceptDescriptor();
+    if (cd == null) {
+      //invalid concept
+      return myFqName;
+    }
+    return cd.getConceptFqName();
+  }
+
+  @Override
   public SLanguage getLanguage() {
     return new SLanguageAdapterById(myConceptId.getLanguageId(), NameUtil.namespaceFromConceptFQName(myFqName));
   }

@@ -40,6 +40,16 @@ public class SConceptAdapterById extends SConceptAdapter implements SConcept {
   }
 
   @Override
+  public String getQualifiedName() {
+    ConceptDescriptor cd = getConceptDescriptor();
+    if (cd == null) {
+      //invalid concept
+      return myFqName;
+    }
+    return cd.getConceptFqName();
+  }
+
+  @Override
   public ConceptDescriptor getConceptDescriptor() {
     return ConceptRegistryUtil.getConceptDescriptor(myConceptId);
   }

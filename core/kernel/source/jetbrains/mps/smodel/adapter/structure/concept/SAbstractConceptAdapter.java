@@ -53,16 +53,6 @@ public abstract class SAbstractConceptAdapter implements SAbstractConcept {
   protected abstract SNode findInModel(SModel strucModel);
 
   @Override
-  public String getQualifiedName() {
-    ConceptDescriptor cd = getConceptDescriptor();
-    if (cd == null) {
-      //invalid concept
-      return myFqName;
-    }
-    return cd.getConceptFqName();
-  }
-
-  @Override
   public String getName() {
     return NameUtil.shortNameFromLongName(getQualifiedName());
   }
