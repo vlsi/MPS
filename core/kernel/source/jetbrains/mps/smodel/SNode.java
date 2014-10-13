@@ -1069,25 +1069,25 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
 
   @Deprecated
   public void setRoleInParent(String newRole) {
-    setRoleInParent(new SContainmentLinkAdapterByName(ContainingConceptUtil.getConceptContainingLink(getConcept().getQualifiedName(), newRole), newRole));
+    setRoleInParent(ContainingConceptUtil.getLink(getConcept().getQualifiedName(), newRole));
   }
 
   @Deprecated
   @Override
   public final boolean hasProperty(String propertyName) {
-    return hasProperty(new SPropertyAdapterByName(ContainingConceptUtil.getConceptContainingProperty(getConcept().getQualifiedName(), propertyName), propertyName));
+    return hasProperty(ContainingConceptUtil.getProperty(getConcept().getQualifiedName(), propertyName));
   }
 
   @Deprecated
   @Override
   public final String getProperty(String propertyName) {
-    return getProperty(new SPropertyAdapterByName(ContainingConceptUtil.getConceptContainingProperty(getConcept().getQualifiedName(), propertyName), propertyName));
+    return getProperty(ContainingConceptUtil.getProperty(getConcept().getQualifiedName(), propertyName));
   }
 
   @Deprecated
   @Override
   public void setProperty(String propertyName, String propertyValue) {
-    setProperty(new SPropertyAdapterByName(ContainingConceptUtil.getConceptContainingProperty(getConcept().getQualifiedName(), propertyName), propertyName), propertyValue);
+    setProperty(ContainingConceptUtil.getProperty(getConcept().getQualifiedName(), propertyName), propertyValue);
   }
 
   @Deprecated
@@ -1103,31 +1103,31 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
   @Deprecated
   @Override
   public void setReferenceTarget(String role, @Nullable org.jetbrains.mps.openapi.model.SNode target) {
-    setReferenceTarget(new SReferenceLinkAdapterByName(ContainingConceptUtil.getConceptContainingReference(getConcept().getQualifiedName(), role), role), target);
+    setReferenceTarget(ContainingConceptUtil.getReference(getConcept().getQualifiedName(), role), target);
   }
 
   @Deprecated
   @Override
   public SNode getReferenceTarget(String role) {
-    return getReferenceTarget(new SReferenceLinkAdapterByName(ContainingConceptUtil.getConceptContainingReference(getConcept().getQualifiedName(), role), role));
+    return getReferenceTarget(ContainingConceptUtil.getReference(getConcept().getQualifiedName(), role));
   }
 
   @Deprecated
   @Override
   public SReference getReference(String role) {
-    return getReference(new SReferenceLinkAdapterByName(ContainingConceptUtil.getConceptContainingReference(getConcept().getQualifiedName(), role), role));
+    return getReference(ContainingConceptUtil.getReference(getConcept().getQualifiedName(), role));
   }
 
   @Deprecated
   @Override
   public void setReference(String role, @Nullable org.jetbrains.mps.openapi.model.SReference reference) {
-    setReference(new SReferenceLinkAdapterByName(ContainingConceptUtil.getConceptContainingReference(getConcept().getQualifiedName(), role), role), reference);
+    setReference(ContainingConceptUtil.getReference(getConcept().getQualifiedName(), role), reference);
   }
 
   @Deprecated
   public void insertChildBefore(@NotNull String role, org.jetbrains.mps.openapi.model.SNode child,
       @Nullable final org.jetbrains.mps.openapi.model.SNode anchor) {
-    insertChildBefore(new SContainmentLinkAdapterByName(ContainingConceptUtil.getConceptContainingLink(getConcept().getQualifiedName(), role), role), child, anchor);
+    insertChildBefore(ContainingConceptUtil.getLink(getConcept().getQualifiedName(), role), child, anchor);
   }
 
   @Deprecated
@@ -1140,7 +1140,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
   @Override
   @NotNull
   public List<SNode> getChildren(String role) {
-    return getChildren(new SContainmentLinkAdapterByName(ContainingConceptUtil.getConceptContainingLink(getConcept().getQualifiedName(), role), role));
+    return getChildren(ContainingConceptUtil.getLink(getConcept().getQualifiedName(), role));
   }
 
   private void referenceRead(String role) {

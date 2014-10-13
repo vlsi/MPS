@@ -15,35 +15,45 @@
  */
 package jetbrains.mps.smodel.adapter.structure;
 
+import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.smodel.adapter.structure.concept.ConceptRegistryUtil;
+import jetbrains.mps.smodel.adapter.structure.link.SContainmentLinkAdapter;
+import jetbrains.mps.smodel.adapter.structure.link.SContainmentLinkAdapterById;
+import jetbrains.mps.smodel.adapter.structure.link.SContainmentLinkAdapterByName;
+import jetbrains.mps.smodel.adapter.structure.property.SPropertyAdapter;
+import jetbrains.mps.smodel.adapter.structure.property.SPropertyAdapterById;
+import jetbrains.mps.smodel.adapter.structure.property.SPropertyAdapterByName;
+import jetbrains.mps.smodel.adapter.structure.ref.SReferenceLinkAdapter;
+import jetbrains.mps.smodel.adapter.structure.ref.SReferenceLinkAdapterById;
+import jetbrains.mps.smodel.adapter.structure.ref.SReferenceLinkAdapterByName;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import jetbrains.mps.smodel.runtime.LinkDescriptor;
 import jetbrains.mps.smodel.runtime.PropertyDescriptor;
 import jetbrains.mps.smodel.runtime.ReferenceDescriptor;
 
 public class ContainingConceptUtil {
-  public static String getConceptContainingProperty(String conceptName, String propName) {
+  public static SPropertyAdapter getProperty(String conceptName, String propName) {
     ConceptDescriptor conceptDescriptor = ConceptRegistryUtil.getConceptDescriptor(conceptName);
     PropertyDescriptor propertyDescriptor = conceptDescriptor.getPropertyDescriptor(propName);
-    if (propertyDescriptor == null) {
-      return jetbrains.mps.smodel.SNodeUtil.concept_BaseConcept;
+    if (propertyDescriptor != null) {
+      return new SPropertyAdapterById(propertyDescriptor.getId(), ConceptRegistryUtil.getConceptDescriptor(propertyDescriptor.getId().getConceptId()).getConceptFqName(), propName);
     }
-    return ConceptRegistryUtil.getConceptDescriptor(propertyDescriptor.getId().getConceptId()).getConceptFqName();
+    return new SPropertyAdapterByName(SNodeUtil.concept_BaseConcept, propName);
   }
-  public static String getConceptContainingReference(String conceptName, String refName) {
+  public static SReferenceLinkAdapter getReference(String conceptName, String refName) {
     ConceptDescriptor conceptDescriptor = ConceptRegistryUtil.getConceptDescriptor(conceptName);
     ReferenceDescriptor referenceDescriptor = conceptDescriptor.getRefDescriptor(refName);
-    if (referenceDescriptor == null) {
-      return jetbrains.mps.smodel.SNodeUtil.concept_BaseConcept;
+    if (referenceDescriptor != null) {
+      return new SReferenceLinkAdapterById(referenceDescriptor.getId(), ConceptRegistryUtil.getConceptDescriptor(referenceDescriptor.getId().getConceptId()).getConceptFqName(), refName);
     }
-    return ConceptRegistryUtil.getConceptDescriptor(referenceDescriptor.getId().getConceptId()).getConceptFqName();
+    return new SReferenceLinkAdapterByName(SNodeUtil.concept_BaseConcept , refName);
   }
-  public static String getConceptContainingLink(String conceptName, String linkName) {
+  public static SContainmentLinkAdapter getLink(String conceptName, String linkName) {
     ConceptDescriptor conceptDescriptor = ConceptRegistryUtil.getConceptDescriptor(conceptName);
     LinkDescriptor linkDescriptor = conceptDescriptor.getLinkDescriptor(linkName);
-    if (linkDescriptor == null) {
-      return jetbrains.mps.smodel.SNodeUtil.concept_BaseConcept;
+    if (linkDescriptor != null) {
+      return new SContainmentLinkAdapterById(linkDescriptor.getId(), ConceptRegistryUtil.getConceptDescriptor(linkDescriptor.getId().getConceptId()).getConceptFqName(), linkName);
     }
-    return ConceptRegistryUtil.getConceptDescriptor(linkDescriptor.getId().getConceptId()).getConceptFqName();
+    return new SContainmentLinkAdapterByName(SNodeUtil.concept_BaseConcept, linkName);
   }
 }

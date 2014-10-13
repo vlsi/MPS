@@ -46,8 +46,7 @@ public abstract class SReference implements org.jetbrains.mps.openapi.model.SRef
    */
   @Deprecated
   protected SReference(String role, SNode sourceNode) {
-    myRoleId = new SReferenceLinkAdapterByName(
-        ContainingConceptUtil.getConceptContainingReference(sourceNode.getConcept().getQualifiedName(), role), role);
+    myRoleId = ContainingConceptUtil.getReference(sourceNode.getConcept().getQualifiedName(), role);
     mySourceNode = sourceNode;
   }
 
@@ -113,8 +112,7 @@ public abstract class SReference implements org.jetbrains.mps.openapi.model.SRef
   }
 
   public void setRole(String newRole) {
-    myRoleId =  new SReferenceLinkAdapterByName(
-        ContainingConceptUtil.getConceptContainingReference(mySourceNode.getConcept().getQualifiedName(), newRole), newRole);
+    myRoleId = ContainingConceptUtil.getReference(mySourceNode.getConcept().getQualifiedName(), newRole);
   }
 
   @Override
