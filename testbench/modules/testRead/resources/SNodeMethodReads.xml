@@ -167,7 +167,7 @@
    <int>1</int>
   </void>
   <void method="put">
-   <string>public java.util.List&lt;jetbrains.mps.smodel.SNode&gt; jetbrains.mps.smodel.SNode.getChildren(org.jetbrains.mps.openapi.language.SContainmentLinkId)</string>
+   <string>public java.util.List&lt;jetbrains.mps.smodel.SNode&gt; jetbrains.mps.smodel.SNode.getChildren(org.jetbrains.mps.openapi.language.SContainmentLink)</string>
    <int>0</int>
   </void>
   <void method="put">
@@ -283,7 +283,7 @@
    <int>1</int>
   </void>
   <void method="put">
-   <string>public org.jetbrains.mps.openapi.model.SNode jetbrains.mps.smodel.SNode.getReferenceTarget(org.jetbrains.mps.openapi.language.SReferenceLinkId)</string>
+   <string>public org.jetbrains.mps.openapi.model.SNode jetbrains.mps.smodel.SNode.getReferenceTarget(org.jetbrains.mps.openapi.language.SReferenceLink)</string>
    <int>1</int>
   </void>
   <void method="put">
@@ -379,10 +379,6 @@
    <int>0</int>
   </void>
   <void method="put">
-   <string>public org.jetbrains.mps.openapi.language.SConcept jetbrains.mps.smodel.SNode.getConceptId()</string>
-   <int>0</int>
-  </void>
-  <void method="put">
    <string>public jetbrains.mps.smodel.Language jetbrains.mps.smodel.SNode.getNodeLanguage()</string>
    <int>1</int>
   </void>
@@ -395,7 +391,7 @@
    <int>4</int>
   </void>
   <void method="put">
-   <string>public final java.lang.String jetbrains.mps.smodel.SNode.getProperty(org.jetbrains.mps.openapi.language.SPropertyId)</string>
+   <string>public final java.lang.String jetbrains.mps.smodel.SNode.getProperty(org.jetbrains.mps.openapi.language.SProperty)</string>
    <int>4</int>
   </void>
   <void method="put">
@@ -499,7 +495,7 @@
    <int>1</int>
   </void>
   <void method="put">
-   <string>public jetbrains.mps.smodel.SReference jetbrains.mps.smodel.SNode.getReference(org.jetbrains.mps.openapi.language.SReferenceLinkId)</string>
+   <string>public jetbrains.mps.smodel.SReference jetbrains.mps.smodel.SNode.getReference(org.jetbrains.mps.openapi.language.SReferenceLink)</string>
    <int>1</int>
   </void>
   <void method="put">
@@ -563,7 +559,7 @@
    <int>4</int>
   </void>
   <void method="put">
-   <string>public final boolean jetbrains.mps.smodel.SNode.hasProperty(org.jetbrains.mps.openapi.language.SPropertyId)</string>
+   <string>public final boolean jetbrains.mps.smodel.SNode.hasProperty(org.jetbrains.mps.openapi.language.SProperty)</string>
    <int>4</int>
   </void>
   <void method="put">
@@ -631,7 +627,7 @@
     <int>0</int>
   </void>
   <void method="put">
-    <string>public org.jetbrains.mps.openapi.language.SContainmentLink jetbrains.mps.smodel.SNode.getRoleInParentId()</string>
+    <string>public org.jetbrains.mps.openapi.language.SContainmentLink jetbrains.mps.smodel.SNode.getContainmentLink()</string>
     <int>0</int>
   </void>
   <void method="put">
@@ -647,7 +643,7 @@
     <int>1</int>
   </void>
   <void method="put">
-    <string>public java.lang.Iterable&lt;org.jetbrains.mps.openapi.language.SPropertyId&gt; jetbrains.mps.smodel.SNode.getPropertyIds()</string>
+    <string>public java.lang.Iterable&lt;org.jetbrains.mps.openapi.language.SProperty&gt; jetbrains.mps.smodel.SNode.getProperties()</string>
     <int>1</int>
   </void>
   <void method="put">
