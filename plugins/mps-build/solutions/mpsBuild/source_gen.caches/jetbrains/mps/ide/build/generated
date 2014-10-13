@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="2e05sayg2rwiwwbslc0p61wy2wqwqi">
+<dependencies version="2" modelHash="69k4j671ehd7jn1zzqpfrsqis7mn6sl">
   <dep model="r:14f06230-41df-42af-9a25-81de46539bf1(jetbrains.mps.build.workflow.accessories)" hash="-b7uc8zn9s21moznq6gl69vj86eo9fz" />
   <dep model="r:4c16a3e9-db56-4447-9b0d-14adce23db0d(jetbrains.mps.build.mps.accessories)" hash="b3levz77xf5i5ay54ipz1d9fnhdtp28" />
   <dep model="r:54537613-52b5-40a8-b223-e87f0960b04f(jetbrains.mps.build.mps.generator.template.main@generator)" hash="40w4tafksrmoi59jj87zjjwh0k3hgnj" />
@@ -7,7 +7,7 @@
   <dep model="r:ed179f4d-7cf2-479d-8348-50c1fc63b96a(jetbrains.mps.build.workflow.structure)" hash="-9i0utctu4gh98t6104p2puj8upul9i2" />
   <dep model="r:fdebfc98-bbd7-4c50-8a8d-eda16da9406e(jetbrains.mps.build.generator.template.main@generator)" hash="4yigknai5a5xrg9mr88a1eqcru75k2n" />
   <common hash="cioytbmqhdj7hubm734da7u3ixz7jn9" />
-  <source id="7926701909975931624" name="mpsBootstrapCore" hash="7gxawc28ah2b1r8os98l3ahkjtu61te">
+  <source id="7926701909975931624" name="mpsBootstrapCore" hash="-czdb44kjimjriml2e0bhbnpe0y8kzzx">
     <dep root="7181125477683264500" />
     <dep model="r:54537613-52b5-40a8-b223-e87f0960b04f(jetbrains.mps.build.mps.generator.template.main@generator)" />
     <dep model="r:d8d06a40-eb90-4ad9-a679-19e3fc235859(jetbrains.mps.build.workflow.generator.template.main@generator)" />
@@ -15,7 +15,7 @@
     <dep model="r:fdebfc98-bbd7-4c50-8a8d-eda16da9406e(jetbrains.mps.build.generator.template.main@generator)" />
     <file name="mpsBootstrapCore.xml" />
   </source>
-  <source id="2569834391839970845" name="mpsWorkbench" hash="-14f628z63ja2fjcl6d00qfmqm5aka6">
+  <source id="2569834391839970845" name="mpsWorkbench" hash="-73w8gz3smlevg7u36da2sw8zhpz75kz">
     <dep root="618786790401812237" />
     <dep root="6503539749405386437" />
     <dep root="7181125477683264500" />
@@ -29,7 +29,7 @@
     <file name="mpsWorkbench.xml" />
   </source>
   <source id="7181125477683264500" name="IDEA" hash="-7d518u70k8duxv5qs0aqct0r6royqao" />
-  <source id="5148601452480491524" name="mpsPlugin" hash="4c5lfrhs7km9ixc1u0ggl4afvxzuihr">
+  <source id="5148601452480491524" name="mpsPlugin" hash="-c2nh72gej7mdb49xxky4ojxeey3p0sv">
     <dep root="618786790401812237" />
     <dep root="6503539749405386437" />
     <dep root="7181125477683264500" />
@@ -68,7 +68,7 @@
     <dep model="r:fdebfc98-bbd7-4c50-8a8d-eda16da9406e(jetbrains.mps.build.generator.template.main@generator)" />
     <file name="mpsDistribution.xml" />
   </source>
-  <source id="4301118715654192646" name="mps" hash="-8puf1le67q7480jsjklz0vo5hw91e1w">
+  <source id="4301118715654192646" name="mps" hash="-31nov4q5a79w9jobkn33w4ptahbplmr">
     <dep root="1392391688312941958" />
     <dep root="1545517825663017278" />
     <dep root="2405506926871158265" />
@@ -92,7 +92,7 @@
     <dep model="r:fdebfc98-bbd7-4c50-8a8d-eda16da9406e(jetbrains.mps.build.generator.template.main@generator)" />
     <file name="mps.xml" />
   </source>
-  <source id="4301118715654819483" name="mpsTroveCollections" hash="-1on4wjeowjazui5ayamwmv9va2swscn">
+  <source id="4301118715654819483" name="mpsTroveCollections" hash="-a9elfnuueqxpv8gq141wjkz28pjodlu">
     <dep root="6503539749405386437" />
     <dep root="7181125477683264500" />
     <dep root="7926701909975931624" />
@@ -104,7 +104,7 @@
     <dep model="r:fdebfc98-bbd7-4c50-8a8d-eda16da9406e(jetbrains.mps.build.generator.template.main@generator)" />
     <file name="mpsTroveCollections.xml" />
   </source>
-  <source id="6391307088354381121" name="mpsPlugins" hash="-4ayi7kljy4jtxrohrymbj91xcvfw4km">
+  <source id="6391307088354381121" name="mpsPlugins" hash="-2kcxumo3o6e9zgo6vjr1dxxkodutv7t">
     <dep root="2569834391839970845" />
     <dep root="4301118715654819483" />
     <dep root="5548512857136492214" />
@@ -123,7 +123,7 @@
     <dep model="r:fdebfc98-bbd7-4c50-8a8d-eda16da9406e(jetbrains.mps.build.generator.template.main@generator)" />
     <file name="mpsPlugins.xml" />
   </source>
-  <source id="8524659923334108558" name="mpsBuild" hash="-4kgtb3aadcce3gqqjr6tqzwjwqn8kbb">
+  <source id="8524659923334108558" name="mpsBuild" hash="-b4ih3d0q7q1yscf8zzqbl0c9uk2ydy1">
     <dep root="6503539749405386437" />
     <dep root="7181125477683264500" />
     <dep root="7926701909975931624" />
@@ -135,7 +135,7 @@
     <dep model="r:fdebfc98-bbd7-4c50-8a8d-eda16da9406e(jetbrains.mps.build.generator.template.main@generator)" />
     <file name="mpsBuild.xml" />
   </source>
-  <source id="1545517825663017278" name="mpsVcs" hash="-49762gcb0an56iqv1nzf7rxqiw0yrf3">
+  <source id="1545517825663017278" name="mpsVcs" hash="-czgm7o4mgncgzkjg9y70ke4cqs3aast">
     <dep root="2569834391839970845" />
     <dep root="4301118715654819483" />
     <dep root="5548512857136492214" />
@@ -167,7 +167,7 @@
     <dep model="r:fdebfc98-bbd7-4c50-8a8d-eda16da9406e(jetbrains.mps.build.generator.template.main@generator)" />
     <file name="mpsPluginDist.xml" />
   </source>
-  <source id="6164334420696839314" name="mpsDebuggerPlugin" hash="-dnyz0yx5q8sjsgvstebvafy5zcy7vqu">
+  <source id="6164334420696839314" name="mpsDebuggerPlugin" hash="-eghms06w6kdxch018apd9tixafdnpt0">
     <dep root="2569834391839970845" />
     <dep root="618786790401812237" />
     <dep root="6503539749405386437" />
@@ -181,7 +181,7 @@
     <dep model="r:fdebfc98-bbd7-4c50-8a8d-eda16da9406e(jetbrains.mps.build.generator.template.main@generator)" />
     <file name="mpsDebuggerPlugin.xml" />
   </source>
-  <source id="6361939271669846483" name="mpsExecutionPlugin" hash="-2ruvu6rwy60ba9dzuj9e45tqmkrqrgx">
+  <source id="6361939271669846483" name="mpsExecutionPlugin" hash="-bn1j0pgbcvaltynq36urkwxae9y5xr1">
     <dep root="2569834391839970845" />
     <dep root="4301118715654819483" />
     <dep root="6164334420696839314" />
@@ -198,7 +198,7 @@
     <dep model="r:fdebfc98-bbd7-4c50-8a8d-eda16da9406e(jetbrains.mps.build.generator.template.main@generator)" />
     <file name="mpsExecutionPlugin.xml" />
   </source>
-  <source id="6503539749405386437" name="mpsCore" hash="epix822x6xgdn2dhy0ms13yp0yjbpx5">
+  <source id="6503539749405386437" name="mpsCore" hash="-er7weg7wbcy4jp3sg0g0bs2ghyrb1mh">
     <dep root="7181125477683264500" />
     <dep root="7926701909975931624" />
     <dep model="r:14f06230-41df-42af-9a25-81de46539bf1(jetbrains.mps.build.workflow.accessories)" />
@@ -209,7 +209,7 @@
     <dep model="r:fdebfc98-bbd7-4c50-8a8d-eda16da9406e(jetbrains.mps.build.generator.template.main@generator)" />
     <file name="mpsCore.xml" />
   </source>
-  <source id="8227093612176368028" name="mpsBuildUI" hash="-dv15psgrc9szs2a3zurggqr9jcas7xy">
+  <source id="8227093612176368028" name="mpsBuildUI" hash="6i6ekxi9auouwusnpmezv04w603gvqa">
     <dep root="2569834391839970845" />
     <dep root="4301118715654819483" />
     <dep root="6164334420696839314" />
@@ -227,7 +227,7 @@
     <dep model="r:fdebfc98-bbd7-4c50-8a8d-eda16da9406e(jetbrains.mps.build.generator.template.main@generator)" />
     <file name="mpsBuildUI.xml" />
   </source>
-  <source id="6977615362525216882" name="mpsPluginTests" hash="-18nfr5tcxxt28hygskjtuxfxr9qfgen">
+  <source id="6977615362525216882" name="mpsPluginTests" hash="4to98f6kmsu3uht6y5lpumoetwg2val">
     <dep root="5148601452480491524" />
     <dep root="618786790401812237" />
     <dep root="6503539749405386437" />
@@ -240,7 +240,7 @@
     <dep model="r:fdebfc98-bbd7-4c50-8a8d-eda16da9406e(jetbrains.mps.build.generator.template.main@generator)" />
     <file name="mpsPluginTests.xml" />
   </source>
-  <source id="5970299968953452763" name="mpsConnectorPlugin" hash="-dtqjxlf64mwq73sr6vnxodnv68y4ton">
+  <source id="5970299968953452763" name="mpsConnectorPlugin" hash="-50v246i8voxe5mzbn8rv895jnzzogrd">
     <dep model="r:d8d06a40-eb90-4ad9-a679-19e3fc235859(jetbrains.mps.build.workflow.generator.template.main@generator)" />
     <dep model="r:ed179f4d-7cf2-479d-8348-50c1fc63b96a(jetbrains.mps.build.workflow.structure)" />
     <dep model="r:fdebfc98-bbd7-4c50-8a8d-eda16da9406e(jetbrains.mps.build.generator.template.main@generator)" />
@@ -253,7 +253,7 @@
     <file name="mps.vmoptions" />
     <file name="mps64.vmoptions" />
   </source>
-  <source id="5548512857136492214" name="mpsDevKit" hash="-3k1oif61yq5o84kdlcsshyg5mzra2pf">
+  <source id="5548512857136492214" name="mpsDevKit" hash="-a6rp8qx2ahd07j0q1csqsttk8gmkof7">
     <dep root="2569834391839970845" />
     <dep root="618786790401812237" />
     <dep root="6503539749405386437" />
@@ -278,7 +278,7 @@
     <dep model="r:fdebfc98-bbd7-4c50-8a8d-eda16da9406e(jetbrains.mps.build.generator.template.main@generator)" />
     <file name="mpsStandalone.xml" />
   </source>
-  <source id="6265574260762011003" name="mpsMakePlugin" hash="-3j8xicxlakapte1ekogzqqd8scbqrqv">
+  <source id="6265574260762011003" name="mpsMakePlugin" hash="3z43oawgpumn2asnt0rvan35qcfry4b">
     <dep root="2569834391839970845" />
     <dep root="4301118715654819483" />
     <dep root="6164334420696839314" />
@@ -294,7 +294,7 @@
     <dep model="r:fdebfc98-bbd7-4c50-8a8d-eda16da9406e(jetbrains.mps.build.generator.template.main@generator)" />
     <file name="mpsMakePlugin.xml" />
   </source>
-  <source id="7401958389406848608" name="mpsJava" hash="-4a7x1pjhz6ziqkl2l2ony550muputu9">
+  <source id="7401958389406848608" name="mpsJava" hash="8v3ifpdfmq1l3jdgxuho0sk14r29g4e">
     <dep root="7181125477683264500" />
     <dep root="7926701909975931624" />
     <dep model="r:14f06230-41df-42af-9a25-81de46539bf1(jetbrains.mps.build.workflow.accessories)" />
@@ -317,10 +317,10 @@
     <dep model="r:fdebfc98-bbd7-4c50-8a8d-eda16da9406e(jetbrains.mps.build.generator.template.main@generator)" />
     <file name="mpsTesting.xml" />
   </source>
-  <source id="1731640411968857441" name="installer.nsi" hash="-9lb6tqn1uw5q1ki3bb5vo88lh3z7ros">
+  <source id="1731640411968857441" name="installer.nsi" hash="-4fbjoex0v2dz4yhgozodu1i9jq5x9kd">
     <file name="installer.nsi" />
   </source>
-  <source id="4305752832749937830" name="mpsDiagramEditor" hash="-22i63u6klw65dlbvk7mcdqc1wwr531b">
+  <source id="4305752832749937830" name="mpsDiagramEditor" hash="-8qznbnzs4l9q4m10vcdjc9x9xv1ptho">
     <dep root="2405506926871158265" />
     <dep root="6503539749405386437" />
     <dep root="7181125477683264500" />
@@ -333,7 +333,7 @@
     <dep model="r:fdebfc98-bbd7-4c50-8a8d-eda16da9406e(jetbrains.mps.build.generator.template.main@generator)" />
     <file name="mpsDiagramEditor.xml" />
   </source>
-  <source id="2405506926871158265" name="jetpad" hash="5xr6f48bxet1o4263ljjftz19888cg1">
+  <source id="2405506926871158265" name="jetpad" hash="esvxgbc4bl2iu5tlwdg7m2ejekpnzva">
     <dep root="6503539749405386437" />
     <dep root="7181125477683264500" />
     <dep root="7926701909975931624" />
