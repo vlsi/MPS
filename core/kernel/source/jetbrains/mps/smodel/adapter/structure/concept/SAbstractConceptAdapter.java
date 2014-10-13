@@ -54,7 +54,12 @@ public abstract class SAbstractConceptAdapter implements SAbstractConcept {
 
   @Override
   public String getQualifiedName() {
-    return getConceptDescriptor().getConceptFqName();
+    ConceptDescriptor cd = getConceptDescriptor();
+    if (cd == null) {
+      //invalid concept
+      return myFqName;
+    }
+    return cd.getConceptFqName();
   }
 
   @Override
