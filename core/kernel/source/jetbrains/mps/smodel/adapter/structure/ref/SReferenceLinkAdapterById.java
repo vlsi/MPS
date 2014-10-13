@@ -19,6 +19,7 @@ import jetbrains.mps.smodel.SNodeId;
 import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import jetbrains.mps.smodel.adapter.ids.SReferenceLinkId;
 import jetbrains.mps.smodel.adapter.structure.concept.ConceptRegistryUtil;
+import jetbrains.mps.smodel.adapter.structure.link.SContainmentLinkAdapter;
 import jetbrains.mps.smodel.adapter.structure.concept.SConceptAdapterById;
 import jetbrains.mps.smodel.adapter.structure.concept.SInterfaceConceptAdapterById;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
@@ -38,7 +39,7 @@ public class SReferenceLinkAdapterById extends SReferenceLinkAdapter {
 
   public boolean isSame(SReferenceLink l2) {
     return (l2 instanceof SReferenceLinkAdapterById) ? myRoleId.equals(((SReferenceLinkAdapterById) l2).myRoleId) :
-        (myConceptName + "#" + myName).equals(((SReferenceLinkAdapter) l2).myConceptName + "#" + ((SReferenceLinkAdapter) l2).myName);
+        myName.equals(((SReferenceLinkAdapter) l2).myName);
   }
 
   public SReferenceLinkId getRoleId() {
@@ -47,13 +48,6 @@ public class SReferenceLinkAdapterById extends SReferenceLinkAdapter {
 
   protected ReferenceDescriptor getReferenceDescriptor() {
     return ConceptRegistryUtil.getConceptDescriptor(myRoleId.getConceptId()).getRefDescriptor(myRoleId);
-  }
-
-  @Override
-  public org.jetbrains.mps.openapi.language.SAbstractConcept getContainingConcept() {
-    SConceptId id = myRoleId.getConceptId();
-    ConceptDescriptor concept = ConceptRegistryUtil.getConceptDescriptor(id);
-    return concept.isInterfaceConcept() ? new SInterfaceConceptAdapterById(id, concept.getConceptFqName()) : new SConceptAdapterById(id, concept.getConceptFqName());
   }
 
   @Override

@@ -16,6 +16,7 @@
 package jetbrains.mps.smodel.adapter.structure.ref;
 
 import jetbrains.mps.smodel.SNodeUtil;
+import jetbrains.mps.smodel.adapter.ids.SReferenceLinkId;
 import jetbrains.mps.smodel.adapter.structure.concept.ConceptRegistryUtil;
 import jetbrains.mps.smodel.adapter.structure.concept.SConceptAdapterById;
 import jetbrains.mps.smodel.adapter.structure.concept.SInterfaceConceptAdapterById;
@@ -31,7 +32,7 @@ public class SReferenceLinkAdapterByName extends SReferenceLinkAdapter {
   }
 
   public boolean isSame(SReferenceLink l2) {
-    return (myConceptName + "#" + myName).equals(((SReferenceLinkAdapter) l2).myConceptName + "#" + ((SReferenceLinkAdapter) l2).myName);
+    return myName.equals(((SReferenceLinkAdapter) l2).myName);
   }
 
   protected ReferenceDescriptor getReferenceDescriptor() {
@@ -43,6 +44,11 @@ public class SReferenceLinkAdapterByName extends SReferenceLinkAdapter {
     ConceptDescriptor concept = ConceptRegistryUtil.getConceptDescriptor(myConceptName);
     return concept.isInterfaceConcept() ? new SInterfaceConceptAdapterById(concept.getId(), myConceptName) :
         new SConceptAdapterById(concept.getId(), myConceptName);
+  }
+
+  @Override
+  public SReferenceLinkId getRoleId() {
+    return getReferenceDescriptor().getId();
   }
 
   @Override

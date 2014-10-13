@@ -18,6 +18,7 @@ package jetbrains.mps.smodel.adapter.structure.ref;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.scope.Scope;
 import jetbrains.mps.smodel.adapter.ids.SConceptId;
+import jetbrains.mps.smodel.adapter.ids.SReferenceLinkId;
 import jetbrains.mps.smodel.adapter.structure.concept.ConceptRegistryUtil;
 import jetbrains.mps.smodel.adapter.structure.concept.SConceptAdapterById;
 import jetbrains.mps.smodel.adapter.structure.concept.SInterfaceConceptAdapterById;
@@ -41,11 +42,17 @@ public abstract class SReferenceLinkAdapter implements SReferenceLink {
     myName = name;
   }
 
-
   protected abstract ReferenceDescriptor getReferenceDescriptor();
 
+  public abstract SReferenceLinkId getRoleId();
+
   @Override
-  public abstract SAbstractConcept getContainingConcept();
+  public org.jetbrains.mps.openapi.language.SAbstractConcept getContainingConcept() {
+    SConceptId id = getRoleId().getConceptId();
+    ConceptDescriptor concept = ConceptRegistryUtil.getConceptDescriptor(id);
+    return concept.isInterfaceConcept() ? new SInterfaceConceptAdapterById(id, concept.getConceptFqName()) :
+        new SConceptAdapterById(id, concept.getConceptFqName());
+  }
 
   protected abstract SNode findInConcept(SNode cnode);
 
@@ -149,7 +156,7 @@ public abstract class SReferenceLinkAdapter implements SReferenceLink {
 
   @Override
   public boolean equals(Object obj) {
-    if (!(obj instanceof SReferenceLinkAdapter)) return  false;
+    if (!(obj instanceof SReferenceLinkAdapter)) return false;
     return isSame(((SReferenceLinkAdapter) obj));
   }
 
