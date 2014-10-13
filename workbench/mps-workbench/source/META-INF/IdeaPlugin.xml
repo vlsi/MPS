@@ -63,7 +63,6 @@
                  implementationClass="jetbrains.mps.workbench.dataExtraction.runConfig.LocationRule"/>
 
     <editorTabTitleProvider implementation="jetbrains.mps.ide.editor.tabs.EditorTabTitleProviderImpl"/>
-    <mps.modelRootEntry rootType="obsolete" className="jetbrains.mps.ide.ui.dialogs.properties.roots.editors.SModelRootEntryFactory"/>
   </extensions>
 
 </idea-plugin>
