@@ -34,7 +34,6 @@
     <dep root="7283836008113024215" />
     <dep root="8524227390952646882" />
     <dep model="r:00000000-0000-4000-0000-011c895902b7(jetbrains.mps.lang.typesystem.generator.baseLanguage.template.main@generator)" />
-    <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" />
     <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
@@ -104,6 +103,7 @@
   </source>
   <source id="1556973682253873271" name="RemoveUnknownReference" hash="co6jnu3nmjk4tvuidtro86as2npti56">
     <dep model="r:00000000-0000-4000-0000-011c895902b7(jetbrains.mps.lang.typesystem.generator.baseLanguage.template.main@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
     <file name="RemoveUnknownReference_QuickFix.java" />
   </source>
   <source id="1556973682253891011" name="RemoveUnnecessaryChildrenInSingleRole" hash="-bslc5ef6vu5t71r2lll171p0dhqkz3x">
@@ -159,7 +159,6 @@
   </source>
   <source id="6268689888341989285" name="ImportUsedLanguage" hash="isbj63fqavu6b0r0ds9flbtek8zq42">
     <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
-    <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" />
     <file name="ImportUsedLanguage_QuickFix.java" />
   </source>
 </dependencies>

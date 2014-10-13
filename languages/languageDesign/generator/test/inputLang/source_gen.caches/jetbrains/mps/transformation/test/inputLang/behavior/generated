@@ -57,7 +57,6 @@
   <source id="3315811491560235390" name="RefTestMethod_Behavior" hash="-3ctqbf3w4u5ok0uvj2woiy9qfc0277i">
     <dep model="r:00000000-0000-4000-0000-011c89590282(jetbrains.mps.lang.core.behavior)" />
     <dep model="r:00000000-0000-4000-0000-011c895905f4(jetbrains.mps.transformation.test.inputLang.structure)" />
-    <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="RefTestMethod_Behavior.java" />
   </source>
 </dependencies>

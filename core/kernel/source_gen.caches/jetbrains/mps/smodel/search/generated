@@ -19,6 +19,7 @@
   <source id="4642948870877886449" name="SimpleSearchScope" hash="21vkzc8r0rphzcdaoz95m77jmoswwex">
     <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" />
     <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="SimpleSearchScope.java" />
@@ -40,10 +41,11 @@
     <file name="ModelNodesSearchScope.java" />
   </source>
   <source id="4642948870877886852" name="SubnodesSearchScope" hash="-8hf9bytssmqsvqm12ccphdy4bx4szr6">
-    <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" />
     <file name="SubnodesSearchScope.java" />
   </source>
   <source id="4642948870877886891" name="AbstractSearchScope" hash="-4ba7lvp2b2wmjx5ign275qrmsm7lr68">
+    <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" />
     <file name="AbstractSearchScope.java" />
   </source>
   <source id="4642948870877887054" name="SearchScopeWithNode" hash="55v3kpdmp539birpa26m5ltyw63dpbn">
