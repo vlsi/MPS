@@ -18,19 +18,24 @@ package jetbrains.mps.smodel.adapter.ids;
 import java.util.UUID;
 
 public abstract class MetaIdFactory {
-  public static SConceptId conceptId(UUID lang, long concept){
+  public static final SConceptId INVALID_CONCEPT_ID = MetaIdFactory.conceptId(new UUID(-1, -1), -1);
+  public static final SPropertyId INVALID_PROP_ID = MetaIdFactory.propId(new UUID(-1, -1), -1, -1);
+  public static final SReferenceLinkId INVALID_REF_ID = MetaIdFactory.refId(new UUID(-1, -1), -1, -1);
+  public static final SContainmentLinkId INVALID_LINK_ID = MetaIdFactory.linkId(new UUID(-1, -1), -1, -1);
+
+  public static SConceptId conceptId(UUID lang, long concept) {
     return new SConceptId(new SLanguageId(lang), concept);
   }
 
-  public static SPropertyId propId(UUID lang, long concept, long prop){
-    return new SPropertyId(conceptId(lang, concept),prop);
+  public static SPropertyId propId(UUID lang, long concept, long prop) {
+    return new SPropertyId(conceptId(lang, concept), prop);
   }
 
-  public static SReferenceLinkId refId(UUID lang, long concept, long ref){
-    return new SReferenceLinkId(conceptId(lang, concept),ref);
+  public static SReferenceLinkId refId(UUID lang, long concept, long ref) {
+    return new SReferenceLinkId(conceptId(lang, concept), ref);
   }
 
-  public static  SContainmentLinkId linkId(UUID lang, long concept, long link){
-    return new SContainmentLinkId(conceptId(lang, concept),link);
+  public static SContainmentLinkId linkId(UUID lang, long concept, long link) {
+    return new SContainmentLinkId(conceptId(lang, concept), link);
   }
 }
