@@ -16,7 +16,6 @@
 package jetbrains.mps.smodel;
 
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.smodel.adapter.structure.ContainingConceptUtil;
 import jetbrains.mps.smodel.adapter.structure.ref.SReferenceLinkAdapterByName;
 import jetbrains.mps.util.InternUtil;
 import jetbrains.mps.util.WeakSet;
@@ -46,7 +45,7 @@ public abstract class SReference implements org.jetbrains.mps.openapi.model.SRef
    */
   @Deprecated
   protected SReference(String role, SNode sourceNode) {
-    myRoleId = ContainingConceptUtil.getReference(sourceNode.getConcept().getQualifiedName(), role);
+    myRoleId = new SReferenceLinkAdapterByName(sourceNode.getConcept().getQualifiedName(), role);
     mySourceNode = sourceNode;
   }
 
@@ -112,7 +111,7 @@ public abstract class SReference implements org.jetbrains.mps.openapi.model.SRef
   }
 
   public void setRole(String newRole) {
-    myRoleId = ContainingConceptUtil.getReference(mySourceNode.getConcept().getQualifiedName(), newRole);
+    myRoleId = new SReferenceLinkAdapterByName(mySourceNode.getConcept().getQualifiedName(), newRole);
   }
 
   @Override

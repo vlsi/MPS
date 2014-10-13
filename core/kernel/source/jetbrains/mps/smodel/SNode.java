@@ -20,7 +20,6 @@ import jetbrains.mps.extapi.model.SModelBase;
 import jetbrains.mps.extapi.model.SNodeBase;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.smodel.adapter.structure.ContainingConceptUtil;
 import jetbrains.mps.smodel.adapter.structure.concept.SConceptAdapterByName;
 import jetbrains.mps.smodel.adapter.structure.link.SContainmentLinkAdapterByName;
 import jetbrains.mps.smodel.adapter.structure.property.SPropertyAdapter;
@@ -1069,25 +1068,25 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
 
   @Deprecated
   public void setRoleInParent(String newRole) {
-    setRoleInParent(ContainingConceptUtil.getLink(getConcept().getQualifiedName(), newRole));
+    setRoleInParent(new SContainmentLinkAdapterByName(getConcept().getQualifiedName(), newRole));
   }
 
   @Deprecated
   @Override
   public final boolean hasProperty(String propertyName) {
-    return hasProperty(ContainingConceptUtil.getProperty(getConcept().getQualifiedName(), propertyName));
+    return hasProperty(new SPropertyAdapterByName(getConcept().getQualifiedName(), propertyName));
   }
 
   @Deprecated
   @Override
   public final String getProperty(String propertyName) {
-    return getProperty(ContainingConceptUtil.getProperty(getConcept().getQualifiedName(), propertyName));
+    return getProperty(new SPropertyAdapterByName(getConcept().getQualifiedName(), propertyName));
   }
 
   @Deprecated
   @Override
   public void setProperty(String propertyName, String propertyValue) {
-    setProperty(ContainingConceptUtil.getProperty(getConcept().getQualifiedName(), propertyName), propertyValue);
+    setProperty(new SPropertyAdapterByName(getConcept().getQualifiedName(), propertyName), propertyValue);
   }
 
   @Deprecated
@@ -1103,31 +1102,31 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
   @Deprecated
   @Override
   public void setReferenceTarget(String role, @Nullable org.jetbrains.mps.openapi.model.SNode target) {
-    setReferenceTarget(ContainingConceptUtil.getReference(getConcept().getQualifiedName(), role), target);
+    setReferenceTarget(new SReferenceLinkAdapterByName(getConcept().getQualifiedName(), role), target);
   }
 
   @Deprecated
   @Override
   public SNode getReferenceTarget(String role) {
-    return getReferenceTarget(ContainingConceptUtil.getReference(getConcept().getQualifiedName(), role));
+    return getReferenceTarget(new SReferenceLinkAdapterByName(getConcept().getQualifiedName(), role));
   }
 
   @Deprecated
   @Override
   public SReference getReference(String role) {
-    return getReference(ContainingConceptUtil.getReference(getConcept().getQualifiedName(), role));
+    return getReference(new SReferenceLinkAdapterByName(getConcept().getQualifiedName(), role));
   }
 
   @Deprecated
   @Override
   public void setReference(String role, @Nullable org.jetbrains.mps.openapi.model.SReference reference) {
-    setReference(ContainingConceptUtil.getReference(getConcept().getQualifiedName(), role), reference);
+    setReference(new SReferenceLinkAdapterByName(getConcept().getQualifiedName(), role), reference);
   }
 
   @Deprecated
   public void insertChildBefore(@NotNull String role, org.jetbrains.mps.openapi.model.SNode child,
       @Nullable final org.jetbrains.mps.openapi.model.SNode anchor) {
-    insertChildBefore(ContainingConceptUtil.getLink(getConcept().getQualifiedName(), role), child, anchor);
+    insertChildBefore(new SContainmentLinkAdapterByName(getConcept().getQualifiedName(), role), child, anchor);
   }
 
   @Deprecated
@@ -1140,7 +1139,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
   @Override
   @NotNull
   public List<SNode> getChildren(String role) {
-    return getChildren(ContainingConceptUtil.getLink(getConcept().getQualifiedName(), role));
+    return getChildren(new SContainmentLinkAdapterByName(getConcept().getQualifiedName(), role));
   }
 
   private void referenceRead(String role) {
