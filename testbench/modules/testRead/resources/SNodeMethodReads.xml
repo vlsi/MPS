@@ -164,7 +164,7 @@
   </void>
   <void method="put">
    <string>public java.util.List&lt;jetbrains.mps.smodel.SNode&gt; jetbrains.mps.smodel.SNode.getChildren(java.lang.String)</string>
-   <int>1</int>
+   <int>0</int>
   </void>
   <void method="put">
    <string>public java.util.List&lt;jetbrains.mps.smodel.SNode&gt; jetbrains.mps.smodel.SNode.getChildren(org.jetbrains.mps.openapi.language.SContainmentLink)</string>
