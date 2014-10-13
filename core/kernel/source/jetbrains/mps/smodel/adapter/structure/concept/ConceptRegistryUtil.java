@@ -36,33 +36,33 @@ public class ConceptRegistryUtil {
 
   public static ConceptDescriptor getConceptDescriptor(SConceptId id) {
     ConceptDescriptor res = ConceptRegistry.getInstance().getConceptDescriptor(id);
-    if (res instanceof IllegalConceptDescriptor) {
-      SLanguageId languageId = id.getLanguageId();
-      // report each language only once
-      if (reportedLanguages.contains(languageId)) return res;
+    if (!(res instanceof IllegalConceptDescriptor)) return res;
 
-      reportedLanguages.add(languageId);
-      if (LOG.isEnabledFor(Level.WARN)) {
-        LOG.warn("No concept found for id " + DebugRegistry.getInstance().getConceptName(id) + ". Please check the language " +
-            DebugRegistry.getInstance().getLanguageName(languageId) + " is built and compiled.");
-      }
+    SLanguageId languageId = id.getLanguageId();
+    // report each language only once
+    if (reportedLanguages.contains(languageId)) return res;
+
+    reportedLanguages.add(languageId);
+    if (LOG.isEnabledFor(Level.WARN)) {
+      LOG.warn("No concept found for id " + DebugRegistry.getInstance().getConceptName(id) + ". Please check the language " +
+          DebugRegistry.getInstance().getLanguageName(languageId) + " is built and compiled.");
     }
-    return res;
+    return null;
   }
 
   public static ConceptDescriptor getConceptDescriptor(String fqName) {
     ConceptDescriptor res = ConceptRegistry.getInstance().getConceptDescriptor(fqName);
-    if (res instanceof IllegalConceptDescriptor) {
-      String languageId = NameUtil.namespaceFromConceptFQName(fqName);
-      // report each language only once
-      if (reportedLanguages2.contains(languageId)) return res;
+    if (!(res instanceof IllegalConceptDescriptor)) return res;
 
-      reportedLanguages2.add(languageId);
-      if (LOG.isEnabledFor(Level.WARN)) {
-        LOG.warn("No concept found for id " + fqName + ". Please check the language " +
-            languageId + " is built and compiled.");
-      }
+    String languageId = NameUtil.namespaceFromConceptFQName(fqName);
+    // report each language only once
+    if (reportedLanguages2.contains(languageId)) return res;
+
+    reportedLanguages2.add(languageId);
+    if (LOG.isEnabledFor(Level.WARN)) {
+      LOG.warn("No concept found for id " + fqName + ". Please check the language " +
+          languageId + " is built and compiled.");
     }
-    return res;
+    return null;
   }
 }
