@@ -27,6 +27,7 @@ import jetbrains.mps.smodel.adapter.structure.concept.SConceptAdapterById;
 import jetbrains.mps.smodel.adapter.structure.concept.SInterfaceConceptAdapterById;
 import jetbrains.mps.smodel.adapter.structure.language.SLanguageAdapterById;
 import jetbrains.mps.smodel.adapter.structure.link.SContainmentLinkAdapterById;
+import jetbrains.mps.smodel.adapter.structure.property.SPropertyAdapter;
 import jetbrains.mps.smodel.adapter.structure.property.SPropertyAdapterById;
 import jetbrains.mps.smodel.adapter.structure.ref.SReferenceLinkAdapterById;
 import jetbrains.mps.smodel.language.ConceptRegistry;
@@ -59,11 +60,7 @@ public class IdHelper {
   }
 
   public static SPropertyId getPropertyId(SProperty p) {
-    if (p instanceof SPropertyAdapterById) {
-      return ((SPropertyAdapterById) p).getId();
-    } else {
-      return ConceptRegistry.getInstance().getConceptDescriptor(p.getContainingConcept().getQualifiedName()).getPropertyDescriptor(p.getName()).getId();
-    }
+    return ((SPropertyAdapter) p).getId();
   }
 
   public static SReferenceLinkId getRefId(SReferenceLink r) {

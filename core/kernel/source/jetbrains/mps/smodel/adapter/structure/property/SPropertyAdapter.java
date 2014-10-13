@@ -16,6 +16,12 @@
 package jetbrains.mps.smodel.adapter.structure.property;
 
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.smodel.adapter.ids.SConceptId;
+import jetbrains.mps.smodel.adapter.ids.SPropertyId;
+import jetbrains.mps.smodel.adapter.structure.concept.ConceptRegistryUtil;
+import jetbrains.mps.smodel.adapter.structure.concept.SConceptAdapterById;
+import jetbrains.mps.smodel.adapter.structure.concept.SInterfaceConceptAdapterById;
+import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import jetbrains.mps.smodel.runtime.PropertyDescriptor;
 import org.apache.log4j.LogManager;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
@@ -39,7 +45,15 @@ public abstract class SPropertyAdapter implements SProperty {
     return getContainingConcept();
   }
 
-  public abstract SAbstractConcept getContainingConcept();
+  public abstract SPropertyId getId();
+
+  @Override
+  public SAbstractConcept getContainingConcept() {
+    SConceptId id = getId().getConceptId();
+    ConceptDescriptor concept = ConceptRegistryUtil.getConceptDescriptor(id);
+    return concept.isInterfaceConcept() ? new SInterfaceConceptAdapterById(id, concept.getConceptFqName()) :
+        new SConceptAdapterById(id, concept.getConceptFqName());
+  }
 
   protected abstract PropertyDescriptor getPropertyDescriptor();
 

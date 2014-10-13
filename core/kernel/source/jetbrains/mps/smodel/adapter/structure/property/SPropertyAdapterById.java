@@ -44,20 +44,12 @@ public class SPropertyAdapterById extends SPropertyAdapter {
   @Override
   public boolean isSame(SProperty p) {
     return (p instanceof SPropertyAdapterById) ? myPropertyId.equals(((SPropertyAdapterById) p).myPropertyId) :
-        (myConceptName + "#" + myPropertyName).equals(((SPropertyAdapter) p).myConceptName + "#" + ((SPropertyAdapter) p).myPropertyName);
+        myPropertyName.equals(((SPropertyAdapter) p).myPropertyName);
   }
 
   @Override
   protected PropertyDescriptor getPropertyDescriptor() {
     return ConceptRegistryUtil.getConceptDescriptor(myPropertyId.getConceptId()).getPropertyDescriptor(myPropertyId);
-  }
-
-  @Override
-  public SAbstractConcept getContainingConcept() {
-    SConceptId id = myPropertyId.getConceptId();
-    ConceptDescriptor concept = ConceptRegistryUtil.getConceptDescriptor(id);
-    return concept.isInterfaceConcept() ? new SInterfaceConceptAdapterById(id, concept.getConceptFqName()) :
-        new SConceptAdapterById(id, concept.getConceptFqName());
   }
 
   @Override

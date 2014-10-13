@@ -16,6 +16,8 @@
 package jetbrains.mps.smodel.adapter.structure.property;
 
 import jetbrains.mps.smodel.SNodeUtil;
+import jetbrains.mps.smodel.adapter.ids.SConceptId;
+import jetbrains.mps.smodel.adapter.ids.SPropertyId;
 import jetbrains.mps.smodel.adapter.structure.concept.ConceptRegistryUtil;
 import jetbrains.mps.smodel.adapter.structure.concept.SConceptAdapterById;
 import jetbrains.mps.smodel.adapter.structure.concept.SInterfaceConceptAdapterById;
@@ -33,7 +35,7 @@ public class SPropertyAdapterByName extends SPropertyAdapter {
 
   @Override
   public boolean isSame(SProperty p) {
-    return (myConceptName + "#" + myPropertyName).equals(((SPropertyAdapter) p).myConceptName + "#" + ((SPropertyAdapter) p).myPropertyName);
+    return myPropertyName.equals(((SPropertyAdapter) p).myPropertyName);
   }
 
   @Override
@@ -42,9 +44,8 @@ public class SPropertyAdapterByName extends SPropertyAdapter {
   }
 
   @Override
-  public SAbstractConcept getContainingConcept() {
-    ConceptDescriptor concept = ConceptRegistryUtil.getConceptDescriptor(myConceptName);
-    return concept.isInterfaceConcept() ? new SInterfaceConceptAdapterById(concept.getId(),myConceptName) : new SConceptAdapterById(concept.getId(),myConceptName);
+  public SPropertyId getId() {
+    return getPropertyDescriptor().getId();
   }
 
   @Override
