@@ -35,7 +35,9 @@ public class ConceptRegistryUtil {
   protected static Logger LOG = LogManager.getLogger(ConceptRegistryUtil.class);
 
   public static ConceptDescriptor getConceptDescriptor(SConceptId id) {
-    ConceptDescriptor res = ConceptRegistry.getInstance().getConceptDescriptor(id);
+    ConceptRegistry cr = ConceptRegistry.getInstance();
+    if (cr == null) return null; //for tests
+    ConceptDescriptor res = cr.getConceptDescriptor(id);
     if (!(res instanceof IllegalConceptDescriptor)) return res;
 
     SLanguageId languageId = id.getLanguageId();
@@ -51,7 +53,9 @@ public class ConceptRegistryUtil {
   }
 
   public static ConceptDescriptor getConceptDescriptor(String fqName) {
-    ConceptDescriptor res = ConceptRegistry.getInstance().getConceptDescriptor(fqName);
+    ConceptRegistry cr = ConceptRegistry.getInstance();
+    if (cr == null) return null; //for tests
+    ConceptDescriptor res = cr.getConceptDescriptor(fqName);
     if (!(res instanceof IllegalConceptDescriptor)) return res;
 
     String languageId = NameUtil.namespaceFromConceptFQName(fqName);
