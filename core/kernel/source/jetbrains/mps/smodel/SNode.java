@@ -86,7 +86,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
   //-------------old methods working by name---------------
   @Deprecated//since 3.1, remove after next release
   public SNode(@NotNull String conceptFqName) {
-    myConcept = SConceptRepository.getInstance().getInstanceConcept(conceptFqName);
+    myConcept = new SConceptAdapterByName(conceptFqName);
     myId = SModel.generateUniqueId();
   }
 
