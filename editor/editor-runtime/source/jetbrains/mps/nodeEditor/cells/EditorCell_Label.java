@@ -38,8 +38,6 @@ import jetbrains.mps.openapi.editor.cells.SubstituteInfo;
 import jetbrains.mps.openapi.editor.selection.MultipleSelection;
 import jetbrains.mps.openapi.editor.selection.SelectionManager;
 import jetbrains.mps.smodel.ModelAccessHelper;
-import jetbrains.mps.smodel.SNodeUndoableAction;
-import jetbrains.mps.smodel.UndoHelper;
 import jetbrains.mps.smodel.UndoRunnable;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.EqualUtil;
@@ -55,7 +53,6 @@ import java.awt.Graphics;
 import java.awt.Rectangle;
 import java.awt.event.KeyEvent;
 import java.awt.event.MouseEvent;
-import java.lang.ref.WeakReference;
 
 public abstract class EditorCell_Label extends EditorCell_Basic implements jetbrains.mps.openapi.editor.cells.EditorCell_Label {
   protected boolean myNoTextSet;
@@ -409,7 +406,8 @@ public abstract class EditorCell_Label extends EditorCell_Basic implements jetbr
     if (myTextLine.getCaretPosition() == 0 && !StyleAttributesUtil.isFirstPositionAllowed(getStyle()) && isCaretPositionAllowed(1)) {
       setCaretPosition(1);
     }
-    if (myTextLine.getCaretPosition() == getText().length() && !StyleAttributesUtil.isLastPositionAllowed(getStyle()) && isCaretPositionAllowed(getText().length() - 1)) {
+    if (myTextLine.getCaretPosition() == getText().length() && !StyleAttributesUtil.isLastPositionAllowed(getStyle()) &&
+        isCaretPositionAllowed(getText().length() - 1)) {
       setCaretPosition(getText().length() - 1);
     }
     getEditor().getBracesHighlighter().updateBracesSelection(this);
@@ -535,7 +533,6 @@ public abstract class EditorCell_Label extends EditorCell_Basic implements jetbr
 
   private boolean processMutableKeyTyped(final KeyEvent keyEvent, final boolean allowErrors) {
     String oldText = myTextLine.getText();
-    EditorComponent editor = getEditor();
 
     int startSelection = myTextLine.getStartTextSelectionPosition();
     int endSelection = myTextLine.getEndTextSelectionPosition();
@@ -628,8 +625,6 @@ public abstract class EditorCell_Label extends EditorCell_Basic implements jetbr
     if (CommandProcessor.getInstance().getCurrentCommand() == null) return;
     if (EqualUtil.equals(oldText, text)) return;
     if (isValidText(text)) return;
-
-    UndoHelper.getInstance().addUndoableAction(new MySNodeUndoableAction(node, cellInfo, editor, oldText, text));
 
     if (node.getModel() == null) return;
 
@@ -775,45 +770,8 @@ public abstract class EditorCell_Label extends EditorCell_Basic implements jetbr
 
   private boolean isTheOnlyCompletelySelectedLabelInBigCell() {
     EditorCell containingBigCell = getContainingBigCell();
-    return containingBigCell != null && containingBigCell.getFirstLeaf() == this && containingBigCell.getLastLeaf() == this && getText().equals(getSelectedText());
-  }
-
-  private static class MySNodeUndoableAction extends SNodeUndoableAction {
-    private final CellInfo myCellInfo;
-    private final WeakReference<EditorComponent> myEditor;
-    private final String myOldText;
-    private final String myText;
-
-    public MySNodeUndoableAction(SNode node, CellInfo cellInfo, EditorComponent editor, String oldText, String text) {
-      super(node);
-      myCellInfo = cellInfo;
-      myEditor = new WeakReference<EditorComponent>(editor);
-      myOldText = oldText;
-      myText = text;
-    }
-
-    @Override
-    protected void doUndo() {
-      EditorComponent editor = myEditor.get();
-      if (editor == null) return;
-
-      EditorCell_Label cell = (EditorCell_Label) myCellInfo.findCell(editor);
-      if (cell != null) {
-        cell.changeText(myOldText);
-        cell.getEditor().relayout();
-      }
-    }
-
-    @Override
-    protected void doRedo() {
-      EditorComponent editor = myEditor.get();
-      if (editor == null) return;
-
-      EditorCell_Label cell = (EditorCell_Label) myCellInfo.findCell(editor);
-      if (cell != null) {
-        cell.changeText(myText);
-      }
-    }
+    return containingBigCell != null && containingBigCell.getFirstLeaf() == this && containingBigCell.getLastLeaf() == this &&
+        getText().equals(getSelectedText());
   }
 
   private class MoveLeft extends AbstractCellAction {

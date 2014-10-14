@@ -156,6 +156,14 @@ class Memento {
 
   private boolean restoreErrors(EditorComponent editor) {
     boolean needsRelayout = false;
+    for (EditorCell cell : editor.getCellTracker().getErrorCells()) {
+      if (cell instanceof EditorCell_Label && cell.getStyle().get(StyleAttributes.EDITABLE)) {
+        EditorCell_Label label = (EditorCell_Label) cell;
+        label.synchronizeViewWithModel();
+        needsRelayout = true;
+      }
+    }
+
     for (Entry<CellInfo, String> entry : myErrorTexts.entrySet()) {
       EditorCell_Label cell = (EditorCell_Label) entry.getKey().findCell(editor);
       if (cell != null) {
