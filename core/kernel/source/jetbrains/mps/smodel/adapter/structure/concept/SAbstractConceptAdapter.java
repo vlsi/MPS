@@ -17,14 +17,12 @@ package jetbrains.mps.smodel.adapter.structure.concept;
 
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.LanguageAspect;
-import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import jetbrains.mps.smodel.adapter.ids.SContainmentLinkId;
 import jetbrains.mps.smodel.adapter.ids.SPropertyId;
 import jetbrains.mps.smodel.adapter.ids.SReferenceLinkId;
 import jetbrains.mps.smodel.adapter.structure.link.SContainmentLinkAdapterById;
 import jetbrains.mps.smodel.adapter.structure.property.SPropertyAdapterById;
 import jetbrains.mps.smodel.adapter.structure.ref.SReferenceLinkAdapterById;
-import jetbrains.mps.smodel.language.ConceptRegistry;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import jetbrains.mps.smodel.runtime.LinkDescriptor;
 import jetbrains.mps.smodel.runtime.PropertyDescriptor;
@@ -63,7 +61,8 @@ public abstract class SAbstractConceptAdapter implements SAbstractConcept {
 
     ArrayList<SReferenceLink> result = new ArrayList<SReferenceLink>();
     for (SReferenceLinkId rid : d.getReferenceIds()) {
-      result.add(new SReferenceLinkAdapterById(rid, ConceptRegistryUtil.getConceptDescriptor(rid.getConceptId()).getConceptFqName(), d.getRefDescriptor(rid).getName()));
+      result.add(new SReferenceLinkAdapterById(rid, ConceptRegistryUtil.getConceptDescriptor(rid.getConceptId()).getConceptFqName(),
+          d.getRefDescriptor(rid).getName()));
     }
     return result;
   }
@@ -74,7 +73,8 @@ public abstract class SAbstractConceptAdapter implements SAbstractConcept {
 
     ArrayList<SContainmentLink> result = new ArrayList<SContainmentLink>();
     for (SContainmentLinkId rid : d.getLinkIds()) {
-      result.add(new SContainmentLinkAdapterById(rid, ConceptRegistryUtil.getConceptDescriptor(rid.getConceptId()).getConceptFqName(), d.getLinkDescriptor(rid).getName()));
+      result.add(new SContainmentLinkAdapterById(rid, ConceptRegistryUtil.getConceptDescriptor(rid.getConceptId()).getConceptFqName(),
+          d.getLinkDescriptor(rid).getName()));
     }
     return result;
   }
@@ -102,7 +102,7 @@ public abstract class SAbstractConceptAdapter implements SAbstractConcept {
   public Iterable<SAbstractLink> getLinks() {
     ArrayList<SAbstractLink> result = new ArrayList<SAbstractLink>();
     ConceptDescriptor cd = getConceptDescriptor();
-    for (SContainmentLinkId lid: cd.getLinkIds()){
+    for (SContainmentLinkId lid : cd.getLinkIds()) {
       LinkDescriptor ld = cd.getLinkDescriptor(lid);
       ConceptDescriptor origConcept = ConceptRegistryUtil.getConceptDescriptor(lid.getConceptId());
       result.add(new SContainmentLinkAdapterById(lid, origConcept.getConceptFqName(), ld.getName()));
@@ -125,7 +125,8 @@ public abstract class SAbstractConceptAdapter implements SAbstractConcept {
 
     ArrayList<SProperty> result = new ArrayList<SProperty>();
     for (SPropertyId pid : d.getPropertyIds()) {
-      result.add(new SPropertyAdapterById(pid, ConceptRegistryUtil.getConceptDescriptor(pid.getConceptId()).getConceptFqName(), d.getPropertyDescriptor(pid).getName()));
+      result.add(new SPropertyAdapterById(pid, ConceptRegistryUtil.getConceptDescriptor(pid.getConceptId()).getConceptFqName(),
+          d.getPropertyDescriptor(pid).getName()));
     }
     return result;
   }
@@ -137,6 +138,7 @@ public abstract class SAbstractConceptAdapter implements SAbstractConcept {
     if ("jetbrains.mps.lang.core.structure.BaseConcept".equals(concept.getQualifiedName())) return true;
 
     ConceptDescriptor d = getConceptDescriptor();
+    if (d == null) return false;
 
     return d.isAssignableTo(concept.getQualifiedName());
   }
