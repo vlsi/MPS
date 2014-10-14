@@ -1735,7 +1735,7 @@
     <property name="vendorLogo" nameId="tp4k.4167053799973858143" value="/MPS_16.png" />
     <property name="name" nameId="tpck.1169194664001" value="Debugger API for MPS" />
     <property name="ideaVersion" nameId="tp4k.5023285075122009373" value="135.1" />
-    <property name="version" nameId="tp4k.5023285075122009369" value="3.1.4" />
+    <property name="version" nameId="tp4k.5023285075122009369" value="3.1.5" />
   </root>
   <root type="tpee.ClassConcept" typeId="tpee.1068390468198" id="2392684134639444998" nodeInfo="ig">
     <property name="name" nameId="tpck.1169194664001" value="MuteBreakpoints" />
