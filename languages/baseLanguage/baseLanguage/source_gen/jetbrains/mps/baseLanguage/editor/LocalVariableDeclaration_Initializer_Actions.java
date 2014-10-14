@@ -7,11 +7,10 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.editor.runtime.cells.AbstractCellAction;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.openapi.editor.EditorComponent;
-import jetbrains.mps.nodeEditor.cells.CellConditions;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.editor.runtime.selection.SelectionUtil;
+import jetbrains.mps.openapi.editor.selection.SelectionManager;
 
 public class LocalVariableDeclaration_Initializer_Actions {
   public static void setCellActions(EditorCell editorCell, SNode node, EditorContext context) {
@@ -30,14 +29,11 @@ public class LocalVariableDeclaration_Initializer_Actions {
       this.execute_internal(editorContext, this.myNode);
     }
     public void execute_internal(EditorContext editorContext, SNode node) {
-      SNodeOperations.detachNode(SLinkOperations.getTarget(node, "initializer", true));
-      editorContext.flushEvents();
-      EditorComponent editor = editorContext.getEditorComponent();
-      EditorCell nodeCell = editor.findNodeCell(node);
-      EditorCell lastSelectable = ((jetbrains.mps.nodeEditor.cells.EditorCell) nodeCell).getLastLeaf(CellConditions.SELECTABLE);
-      editor.changeSelection(lastSelectable);
-      if (lastSelectable instanceof EditorCell_Label) {
-        ((EditorCell_Label) lastSelectable).end();
+      if (SLinkOperations.getTarget(node, "initializer", true) != null) {
+        SNodeOperations.deleteNode(SLinkOperations.getTarget(node, "initializer", true));
+        SelectionUtil.selectLabelCellAnSetCaret(editorContext, node, SelectionManager.LAST_CELL, -1);
+      } else {
+        SNodeOperations.deleteNode(node);
       }
     }
   }
@@ -53,14 +49,11 @@ public class LocalVariableDeclaration_Initializer_Actions {
       this.execute_internal(editorContext, this.myNode);
     }
     public void execute_internal(EditorContext editorContext, SNode node) {
-      SNodeOperations.detachNode(SLinkOperations.getTarget(node, "initializer", true));
-      editorContext.flushEvents();
-      EditorComponent editor = editorContext.getEditorComponent();
-      EditorCell nodeCell = editor.findNodeCell(node);
-      EditorCell lastSelectable = ((jetbrains.mps.nodeEditor.cells.EditorCell) nodeCell).getLastLeaf(CellConditions.SELECTABLE);
-      editor.changeSelection(lastSelectable);
-      if (lastSelectable instanceof EditorCell_Label) {
-        ((EditorCell_Label) lastSelectable).end();
+      if (SLinkOperations.getTarget(node, "initializer", true) != null) {
+        SNodeOperations.deleteNode(SLinkOperations.getTarget(node, "initializer", true));
+        SelectionUtil.selectLabelCellAnSetCaret(editorContext, node, SelectionManager.LAST_CELL, -1);
+      } else {
+        SNodeOperations.deleteNode(node);
       }
     }
   }
