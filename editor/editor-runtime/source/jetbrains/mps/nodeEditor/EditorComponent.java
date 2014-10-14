@@ -2212,6 +2212,10 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
       }
     }
 
+    if (myRootCell != null) {
+      myRootCell.relayout();
+    }
+
     if (myRootCell != null && g.hitClip(myRootCell.getX(), myRootCell.getY(), myRootCell.getWidth(), myRootCell.getHeight())) {
       g.setColor(EditorColorsManager.getInstance().getGlobalScheme().getColor(EditorColors.RIGHT_MARGIN_COLOR));
       int boundPosition = myRootCell.getX() + setting.getVerticalBoundWidth();
