@@ -26,10 +26,10 @@ import org.jetbrains.mps.openapi.module.SModuleReference;
 import java.io.IOException;
 import java.util.Collection;
 import java.util.Comparator;
-import java.util.HashMap;
 import java.util.LinkedHashSet;
 import java.util.Map;
 import java.util.Map.Entry;
+import java.util.TreeMap;
 import java.util.TreeSet;
 
 /**
@@ -40,6 +40,7 @@ import java.util.TreeSet;
 public class ModuleDescriptor {
   private static final SModuleReferenceComparator MODULE_REFERENCE_COMPARATOR = new SModuleReferenceComparator();
   private static final DependencyComparator DEPENDENCY_COMPARATOR = new DependencyComparator(MODULE_REFERENCE_COMPARATOR);
+  private static final SLanguageComparator LANGUAGE_COMPARATOR = new SLanguageComparator();
 
   private ModuleId myId;
   private String myNamespace;
@@ -64,7 +65,7 @@ public class ModuleDescriptor {
     myDependencies = new TreeSet<Dependency>(DEPENDENCY_COMPARATOR);
     myUsedLanguages = new TreeSet<SModuleReference>(MODULE_REFERENCE_COMPARATOR);
     myUsedDevkits = new TreeSet<SModuleReference>(MODULE_REFERENCE_COMPARATOR);
-    myLanguageVersions = new HashMap<SLanguage, Integer>();
+    myLanguageVersions = new TreeMap<SLanguage, Integer>(LANGUAGE_COMPARATOR);
     myAdditionalJavaStubPaths = new LinkedHashSet<String>();
     mySourcePaths = new LinkedHashSet<String>();
   }
@@ -294,6 +295,13 @@ public class ModuleDescriptor {
         return -1;
       }
       return moduleFqName1.compareTo(moduleFqName2);
+    }
+  }
+
+  private static class SLanguageComparator implements Comparator<SLanguage> {
+    @Override
+    public int compare(SLanguage lang1, SLanguage lang2) {
+      return lang1.getQualifiedName().compareTo(lang2.getQualifiedName());
     }
   }
 
