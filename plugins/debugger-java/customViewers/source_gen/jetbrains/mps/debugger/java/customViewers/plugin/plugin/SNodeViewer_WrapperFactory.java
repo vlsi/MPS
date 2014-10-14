@@ -72,7 +72,7 @@ public class SNodeViewer_WrapperFactory extends ValueWrapperFactory {
         result.add(new SNodeWatchables.MyWatchable_parent(CustomViewersManager.getInstance().fromJdi(((IObjectValueProxy) node.getFieldValue("parent")).getJDIValue(), getThreadReference()), "parent"));
       }
 
-      IObjectValueProxy properties = ((IObjectValueProxy) node.invokeMethod("getPropertyNames", "()Ljava/util/Set;", getThreadReference()));
+      IObjectValueProxy properties = ((IObjectValueProxy) node.invokeMethod("getPropertyNames", "()Ljava/util/Collection;", getThreadReference()));
       if (!((Boolean) ((((PrimitiveValueProxy) properties.invokeMethod("isEmpty", "()Z", getThreadReference())))).getJavaValue())) {
         for (IObjectValueProxy property : EvaluationUtils.getInstance().<IObjectValueProxy>toIterableProxy(((IObjectValueProxy) ((IObjectValueProxy) EvaluationUtils.getInstance().invokeStaticMethod("jetbrains.mps.util.SNodeOperations", "getProperties", "(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/util/Map;", getThreadReference(), value)).invokeMethod("entrySet", "()Ljava/util/Set;", getThreadReference())), getThreadReference())) {
           result.add(new SNodeWatchables.MyWatchable_property(CustomViewersManager.getInstance().fromJdi(property.getJDIValue(), getThreadReference()), "property"));
