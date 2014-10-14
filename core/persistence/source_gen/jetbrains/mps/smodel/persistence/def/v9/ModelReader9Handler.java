@@ -172,7 +172,7 @@ public class ModelReader9Handler extends XMLSAXHandler<ModelLoadResult> {
       fieldmodel.setPersistenceVersion(9);
       fieldhelper = new ReadHelper9(fieldmodel.getReference());
       ModelLoadResult result = new ModelLoadResult(fieldmodel, ModelLoadingState.NOT_LOADED);
-      result.setState((fieldinterfaceOnly ? ModelLoadingState.INTERFACE_LOADED : ModelLoadingState.NO_IMPLEMENTATION));
+      result.setState((fieldinterfaceOnly ? ModelLoadingState.INTERFACE_LOADED : ((fieldstripImplementation ? ModelLoadingState.NO_IMPLEMENTATION : ModelLoadingState.FULLY_LOADED))));
       return result;
     }
     @Override
