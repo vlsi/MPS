@@ -198,19 +198,7 @@ public enum LanguageAspect {
     public String getHelpURL() {
       return "";
     }
-  },
-
-  STUBS("stubs") {
-    @Override
-    public SModuleReference getMainLanguage() {
-      return BootstrapLanguages.stubsLanguageRef();
-    }
-
-    @Override
-    public String getHelpURL() {
-      return "";
-    }
-  },;
+  };
 
   public static final String CONFLUENCE_BASE = "http://confluence.jetbrains.com/display/MPSD31/";
 

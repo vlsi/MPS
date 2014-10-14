@@ -64,8 +64,6 @@
     <file name="NodeChooserDialog.java" />
   </source>
   <source id="121110127371584518" name="TreeStructureActionsOwner" hash="-9ngctqo3gv9jt6slvamfuv1zcs12i5t">
-    <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
-    <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" />
     <file name="TreeStructureActionsOwner.java" />
   </source>
   <source id="121110127371512982" name="FileStructurePopup" hash="-4kggbvxsldcddiyiw9ha5kteaaootj3">
