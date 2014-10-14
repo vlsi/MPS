@@ -42,7 +42,7 @@ public class SPropertyOperations {
   }
   public static int getInteger(String value) {
     try {
-      return Integer.parseInt(value);
+      return (value == null ? 0 : Integer.parseInt(value));
     } catch (Exception e) {
       return 0;
     }
