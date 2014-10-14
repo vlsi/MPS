@@ -48,11 +48,13 @@ import org.jetbrains.mps.openapi.module.SRepository;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collection;
 import java.util.Collections;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
+import java.util.TreeSet;
 
 public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.SNode {
   private static final Logger LOG = Logger.wrap(LogManager.getLogger(SNode.class));
@@ -844,8 +846,8 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
 
     fireNodeReadAccess();
     fireNodeUnclassifiedReadAccess();
-    List<SProperty> result = new ArrayList<SProperty>(5);
-    if (myProperties == null) return result;
+    if (myProperties == null) return new EmptyIterable<SProperty>();
+    List<SProperty> result = new ArrayList<SProperty>(myProperties.length/2);
     for (int i = 0; i < myProperties.length; i += 2) {
       result.add((SProperty) myProperties[i]);
     }
@@ -1091,8 +1093,8 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
 
   @Deprecated
   @Override
-  public Set<String> getPropertyNames() {
-    HashSet<String> res = new HashSet<String>();
+  public Collection<String> getPropertyNames() {
+    List<String> res = new ArrayList<String>(myProperties == null ? 0 : myProperties.length/2);
     for (SProperty p : getProperties()) {
       res.add(p.getName());
     }
