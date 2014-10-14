@@ -23,7 +23,7 @@ public class LocalVariableDeclaration_Initializer_Actions {
       this.myNode = node;
     }
     public String getDescriptionText() {
-      return "remove initializer";
+      return "delete";
     }
     public void execute(EditorContext editorContext) {
       this.execute_internal(editorContext, this.myNode);
@@ -43,7 +43,7 @@ public class LocalVariableDeclaration_Initializer_Actions {
       this.myNode = node;
     }
     public String getDescriptionText() {
-      return "remove initializer";
+      return "delete";
     }
     public void execute(EditorContext editorContext) {
       this.execute_internal(editorContext, this.myNode);
