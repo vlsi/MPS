@@ -1332,6 +1332,9 @@ public abstract class EditorCell_Basic implements EditorCell {
   }
 
   public void requestRelayout() {
+    if (myIsNeedRelayout) {
+      return;
+    }
     myIsNeedRelayout = true;
     if (getParent() != null) {
       getParent().requestRelayout();
