@@ -17,6 +17,10 @@ package jetbrains.mps;
 
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.application.ModalityState;
+import com.intellij.openapi.vfs.LocalFileSystem;
+import com.intellij.openapi.vfs.VirtualFile;
+import com.intellij.openapi.vfs.newvfs.RefreshQueue;
+import com.intellij.openapi.vfs.newvfs.RefreshSession;
 import jetbrains.mps.extapi.model.SModelBase;
 import jetbrains.mps.extapi.persistence.FileDataSource;
 import jetbrains.mps.ide.ThreadUtils;
@@ -71,6 +75,7 @@ public class PersistenceTest extends WorkbenchMpsTest {
   };
 
   private jetbrains.mps.smodel.SModel myModelBackup;
+  private File MODEL_FILE;
 
   @Test
   public void testPersistenceWriteRead() {
@@ -126,12 +131,23 @@ public class PersistenceTest extends WorkbenchMpsTest {
       ProjectTestsSupport.testOnProjectCopy(sourceZip, tempDir, TEST_PERSISTENCE_PROJECT,
           new ProjectRunnable() {
             public boolean execute(final Project project) {
+              //update files in FS cache
               ModelAccess.instance().runReadAction(new Runnable() {
                 public void run() {
+                  MODEL_FILE = new File(((FileDataSource) getModel(project).getSource()).getFile().getPath());
+                }
+              });
+              refreshVfs();
+              waitEDT();
+              ModelAccess.instance().runWriteAction(new Runnable() {
+                @Override
+                public void run() {
+                  getModel(project).reloadFromSource();
                   myModelBackup = CopyUtil.copyModel(getModel(project).getSModel());
                 }
               });
 
+              //do the test
               for (int fromVersion = START_PERSISTENCE_TEST_VERSION; fromVersion < ModelPersistence.LAST_VERSION; fromVersion++) {
                 for (int toVersion = fromVersion + 1; toVersion <= ModelPersistence.LAST_VERSION; toVersion++) {
                   ModelLoadResult resultFrom = setInitialVersion(getModel(project), fromVersion);
@@ -149,7 +165,7 @@ public class PersistenceTest extends WorkbenchMpsTest {
 
   private ModelLoadResult setInitialVersion(final DefaultSModelDescriptor testModel, final int fromVersion) {
     //check result of the operation by independent load from the same file
-    final boolean[] correctPersistenceVersion = new boolean[1];
+    final boolean[] correctPersistenceVersion = new boolean[]{true};
     final ModelLoadResult[] result = new ModelLoadResult[1];
     final boolean[] wasException = {false};
 
@@ -169,6 +185,7 @@ public class PersistenceTest extends WorkbenchMpsTest {
               result[0] = ModelPersistence.readModel(SModelHeader.create(fromVersion), (StreamDataSource) testModel.getSource(),
                   ModelLoadingState.FULLY_LOADED);
             } catch (ModelReadException e) {
+              e.printStackTrace();
               wasException[0] = true;
             }
           }
@@ -203,6 +220,7 @@ public class PersistenceTest extends WorkbenchMpsTest {
               result[0] = ModelPersistence.readModel(SModelHeader.create(finalToVersion), (StreamDataSource) testModel.getSource(),
                   ModelLoadingState.FULLY_LOADED);
             } catch (ModelReadException e) {
+              e.printStackTrace();
               wasException[0] = true;
             }
           }
@@ -214,7 +232,7 @@ public class PersistenceTest extends WorkbenchMpsTest {
     assertTrue(correctVersion[0]);
     assertFalse(wasException[0]);
     assertNotNull(result[0]);
-    assertTrue(result[0].getState() == ModelLoadingState.FULLY_LOADED);
+    assertTrue(result[0].getState().equals(ModelLoadingState.FULLY_LOADED));
     ModelAccess.instance().runReadAction(new Runnable() {
       @Override
       public void run() {
@@ -240,6 +258,7 @@ public class PersistenceTest extends WorkbenchMpsTest {
               model.reloadFromSource();   // no way to remove model from repository, so reloading
               correctVersion[0] = (START_PERSISTENCE_TEST_VERSION == model.getPersistenceVersion());
             } catch (IOException e) {
+              e.printStackTrace();
               wasException[0] = true;
             }
           }
@@ -250,6 +269,8 @@ public class PersistenceTest extends WorkbenchMpsTest {
     //all asserts must reside in original thread
     assertTrue(correctVersion[0]);
     assertFalse(wasException[0]);
+
+    refreshVfs();
 
     waitEDT();
   }
@@ -275,6 +296,17 @@ public class PersistenceTest extends WorkbenchMpsTest {
 
       }
     });
+  }
+
+  private void refreshVfs() {
+    VirtualFile vf = LocalFileSystem.getInstance().findFileByIoFile(MODEL_FILE);
+    if (vf == null || !(vf.exists())) {
+      vf = LocalFileSystem.getInstance().findFileByIoFile(MODEL_FILE.getParentFile());
+    }
+    RefreshSession rs = RefreshQueue.getInstance().createSession(false, true, null);
+    assert vf != null;
+    rs.addFile(vf);
+    rs.launch();
   }
 
   public void upgradePersistence(DefaultSModelDescriptor modelDescriptor, final int toVersion) {
