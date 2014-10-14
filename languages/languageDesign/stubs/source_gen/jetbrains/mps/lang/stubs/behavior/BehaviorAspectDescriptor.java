@@ -11,33 +11,9 @@ public class BehaviorAspectDescriptor implements jetbrains.mps.smodel.runtime.Be
   }
   public BehaviorDescriptor getDescriptor(String fqName) {
     switch (Arrays.binarySearch(stringSwitchCases_846f5o_a0a0b, fqName)) {
-      case 5:
-        return new LanguageRef_BehaviorDescriptor();
-      case 6:
-        return new ModelCreationSettings_BehaviorDescriptor();
-      case 9:
-        return new Model_ConceptFunctionParameter_BehaviorDescriptor();
-      case 7:
-        return new ModelManagerDeclaration_BehaviorDescriptor();
-      case 3:
-        return new DescriptorsFunction_BehaviorDescriptor();
-      case 1:
-        return new CreateBlock_BehaviorDescriptor();
-      case 2:
-        return new CreateFunction_BehaviorDescriptor();
-      case 8:
-        return new ModelRoot_ConceptFunctionParameter_BehaviorDescriptor();
-      case 4:
-        return new IModule_ConceptFunctionParameter_BehaviorDescriptor();
-      case 10:
-        return new SModelFqName_ConceptFunctionParameter_BehaviorDescriptor();
-      case 0:
-        return new CanCreateFunction_BehaviorDescriptor();
-      case 11:
-        return new SModelRoot_ConceptFunctionParameter_BehaviorDescriptor();
       default:
         return BehaviorAspectInterpreted.getInstance().getDescriptor(fqName);
     }
   }
-  private static String[] stringSwitchCases_846f5o_a0a0b = new String[]{"jetbrains.mps.lang.stubs.structure.CanCreateFunction", "jetbrains.mps.lang.stubs.structure.CreateBlock", "jetbrains.mps.lang.stubs.structure.CreateFunction", "jetbrains.mps.lang.stubs.structure.DescriptorsFunction", "jetbrains.mps.lang.stubs.structure.IModule_ConceptFunctionParameter", "jetbrains.mps.lang.stubs.structure.LanguageRef", "jetbrains.mps.lang.stubs.structure.ModelCreationSettings", "jetbrains.mps.lang.stubs.structure.ModelManagerDeclaration", "jetbrains.mps.lang.stubs.structure.ModelRoot_ConceptFunctionParameter", "jetbrains.mps.lang.stubs.structure.Model_ConceptFunctionParameter", "jetbrains.mps.lang.stubs.structure.SModelFqName_ConceptFunctionParameter", "jetbrains.mps.lang.stubs.structure.SModelRoot_ConceptFunctionParameter"};
+  private static String[] stringSwitchCases_846f5o_a0a0b = new String[]{};
 }

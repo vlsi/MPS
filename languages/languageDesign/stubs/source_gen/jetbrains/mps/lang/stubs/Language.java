@@ -9,11 +9,6 @@ import java.util.Collection;
 import jetbrains.mps.generator.runtime.TemplateModule;
 import jetbrains.mps.generator.runtime.TemplateUtil;
 import jetbrains.mps.smodel.runtime.LanguageAspectDescriptor;
-import jetbrains.mps.smodel.runtime.BehaviorAspectDescriptor;
-import jetbrains.mps.smodel.runtime.ConstraintsAspectDescriptor;
-import jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor;
-import jetbrains.mps.lang.stubs.editor.EditorAspectDescriptorImpl;
-import jetbrains.mps.smodel.runtime.StructureAspectDescriptor;
 
 public class Language extends LanguageRuntime {
   public static String MODULE_REF = "ef703a71-a5a3-42af-b53c-ddced816ad5c(jetbrains.mps.lang.stubs)";
@@ -36,18 +31,6 @@ public class Language extends LanguageRuntime {
   }
   @Override
   protected <T extends LanguageAspectDescriptor> T createAspectDescriptor(Class<T> descriptorClass) {
-    if (descriptorClass == BehaviorAspectDescriptor.class) {
-      return (T) new jetbrains.mps.lang.stubs.behavior.BehaviorAspectDescriptor();
-    }
-    if (descriptorClass == ConstraintsAspectDescriptor.class) {
-      return (T) new jetbrains.mps.lang.stubs.constraints.ConstraintsAspectDescriptor();
-    }
-    if (descriptorClass == EditorAspectDescriptor.class) {
-      return (T) new EditorAspectDescriptorImpl();
-    }
-    if (descriptorClass == StructureAspectDescriptor.class) {
-      return (T) new jetbrains.mps.lang.stubs.structure.StructureAspectDescriptor();
-    }
     return super.createAspectDescriptor(descriptorClass);
   }
 }

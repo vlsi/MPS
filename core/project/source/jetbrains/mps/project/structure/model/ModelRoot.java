@@ -21,14 +21,10 @@ import org.jetbrains.mps.openapi.persistence.Memento;
 //should implement Comparable in order to be saved from idea-plugin
 @Deprecated
 public class ModelRoot implements Comparable<ModelRoot> {
-  public static final String PATH = "path";
-  public static final String MANAGER = "manager";
-
   private String myPath;
   private ModelRootManager myManager;
 
   public ModelRoot() {
-
   }
 
   public ModelRoot(String path) {
@@ -63,9 +59,8 @@ public class ModelRoot implements Comparable<ModelRoot> {
     ModelRoot that = (ModelRoot) o;
 
     if (!EqualUtil.equals(myManager, that.myManager)) return false;
-    if (!EqualUtil.equals(myPath, that.myPath)) return false;
+    return EqualUtil.equals(myPath, that.myPath);
 
-    return true;
   }
 
   public int hashCode() {
