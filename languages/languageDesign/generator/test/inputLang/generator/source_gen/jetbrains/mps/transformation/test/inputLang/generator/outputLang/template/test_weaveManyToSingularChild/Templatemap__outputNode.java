@@ -28,8 +28,8 @@ public class Templatemap__outputNode implements TemplateDeclaration {
     final SNode tnode2 = environment.createOutputNode("jetbrains.mps.transformation.test.outputLang.structure.OutputRoot");
     try {
       environment.nodeCopied(context1, tnode2, "tpl/r:00000000-0000-4000-0000-011c895905fa/1218738789586");
-      SNodeAccessUtil.setProperty(tnode2, "text", "output root");
       SNodeAccessUtil.setProperty(tnode2, "name", "map_outputNode");
+      SNodeAccessUtil.setProperty(tnode2, "text", "output root");
       {
         final SNode tnode3 = environment.createOutputNode("jetbrains.mps.transformation.test.outputLang.structure.OutputNode");
         try {

@@ -30,8 +30,8 @@ public class TemplateOutputRoot implements TemplateDeclaration {
     final SNode tnode1 = environment.createOutputNode("jetbrains.mps.transformation.test.outputLang.structure.OutputRoot");
     try {
       environment.nodeCopied(context, tnode1, "tpl/r:00000000-0000-4000-0000-011c895905f9/1206460153890");
-      SNodeAccessUtil.setProperty(tnode1, "text", "root in Reduce Inheritors test (expect: A, B, B)");
       SNodeAccessUtil.setProperty(tnode1, "name", "OutputRoot");
+      SNodeAccessUtil.setProperty(tnode1, "text", "root in Reduce Inheritors test (expect: A, B, B)");
       {
         Collection<SNode> tlist2 = null;
         try {

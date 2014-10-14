@@ -27,8 +27,8 @@ public class TemplateMyOutputRoot1 implements TemplateDeclaration {
     final SNode tnode1 = environment.createOutputNode("jetbrains.mps.transformation.test.outputLang.structure.OutputRoot");
     try {
       environment.nodeCopied(context, tnode1, "tpl/r:b5afdf3a-04e4-43b0-b72c-a4e3b5141a37/7496726876599898724");
-      SNodeAccessUtil.setProperty(tnode1, "text", "text");
       SNodeAccessUtil.setProperty(tnode1, "name", "MyOutputRoot1");
+      SNodeAccessUtil.setProperty(tnode1, "text", "text");
       {
         Collection<SNode> tlist2 = null;
         final Iterable<SNode> copyListInput2 = QueriesGenerated.sourceNodesQuery_7496726876599914779(new SourceSubstituteMacroNodesContext(context, copySrcListMacro_yzj738_b0a0a1a3a1a2));

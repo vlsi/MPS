@@ -94,8 +94,8 @@ public class CreateTypesystemIntention_Intention implements IntentionFactory {
     quotedNode_2.addChild("body", quotedNode_4);
     quotedNode_1.addChild("executeBlock", quotedNode_2);
     quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.typesystem.structure.OriginalNodeId", null, null, false);
-    SNodeAccessUtil.setProperty(quotedNode_3, "modelId", "jetbrains.mps.lang.typesystem.intentions");
     SNodeAccessUtil.setProperty(quotedNode_3, "nodeId", "3302086321380616758");
+    SNodeAccessUtil.setProperty(quotedNode_3, "modelId", "jetbrains.mps.lang.typesystem.intentions");
     quotedNode_1.addChild("smodelAttribute", quotedNode_3);
     return quotedNode_1;
   }

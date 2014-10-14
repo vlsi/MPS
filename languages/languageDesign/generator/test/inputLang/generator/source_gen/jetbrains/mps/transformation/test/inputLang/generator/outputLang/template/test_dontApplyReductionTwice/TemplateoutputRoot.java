@@ -26,8 +26,8 @@ public class TemplateoutputRoot implements TemplateDeclaration {
     final SNode tnode1 = environment.createOutputNode("jetbrains.mps.transformation.test.outputLang.structure.OutputRoot");
     try {
       environment.nodeCopied(context, tnode1, "tpl/r:00000000-0000-4000-0000-011c895905f5/1209605205934");
-      SNodeAccessUtil.setProperty(tnode1, "text", "output for 'don't apply reduction rule twice' test");
       SNodeAccessUtil.setProperty(tnode1, "name", "outputRoot");
+      SNodeAccessUtil.setProperty(tnode1, "text", "output for 'don't apply reduction rule twice' test");
       {
         final SNode tnode2 = environment.createOutputNode("jetbrains.mps.transformation.test.outputLang.structure.OutputNode_forDontApplyReductionTwice_test");
         try {

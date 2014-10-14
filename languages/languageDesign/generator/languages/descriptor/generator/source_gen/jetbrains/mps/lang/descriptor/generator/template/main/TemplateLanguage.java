@@ -248,8 +248,8 @@ public class TemplateLanguage implements TemplateDeclaration {
           SNodeAccessUtil.setProperty(tnode20, "isAbstract", "false");
           SNodeAccessUtil.setProperty(tnode20, "name", "getId");
           SNodeAccessUtil.setProperty(tnode20, "isSynchronized", "false");
-          SNodeAccessUtil.setProperty(tnode20, "isNative", "false");
           SNodeAccessUtil.setProperty(tnode20, "isFinal", "false");
+          SNodeAccessUtil.setProperty(tnode20, "isNative", "false");
           {
             final SNode tnode21 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.StatementList");
             try {
@@ -354,10 +354,10 @@ public class TemplateLanguage implements TemplateDeclaration {
         final SNode tnode29 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration");
         try {
           environment.nodeCopied(context1, tnode29, "tpl/r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508/2088709642112073968");
-          SNodeAccessUtil.setProperty(tnode29, "isDeprecated", "false");
           SNodeAccessUtil.setProperty(tnode29, "isAbstract", "false");
           SNodeAccessUtil.setProperty(tnode29, "name", "getExtendedLanguageIDs");
           SNodeAccessUtil.setProperty(tnode29, "isFinal", "false");
+          SNodeAccessUtil.setProperty(tnode29, "isDeprecated", "false");
           {
             final SNode tnode30 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.ArrayType");
             try {
@@ -700,10 +700,10 @@ public class TemplateLanguage implements TemplateDeclaration {
         final SNode tnode63 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration");
         try {
           environment.nodeCopied(context1, tnode63, "tpl/r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508/931939946132714361");
-          SNodeAccessUtil.setProperty(tnode63, "isDeprecated", "false");
           SNodeAccessUtil.setProperty(tnode63, "isAbstract", "false");
           SNodeAccessUtil.setProperty(tnode63, "name", "createAspectDescriptor");
           SNodeAccessUtil.setProperty(tnode63, "isFinal", "false");
+          SNodeAccessUtil.setProperty(tnode63, "isDeprecated", "false");
           {
             final SNode tnode64 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.ProtectedVisibility");
             try {

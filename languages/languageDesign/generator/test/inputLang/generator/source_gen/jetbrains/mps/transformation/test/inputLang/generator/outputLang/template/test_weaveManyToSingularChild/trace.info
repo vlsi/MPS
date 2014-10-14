@@ -186,8 +186,8 @@
       <node id="1218738789586" at="26,36,27,68" concept="6" />
       <node id="1218738789586" at="27,68,28,123" concept="6" />
       <node id="1218738789586" at="29,9,30,107" concept="2" />
-      <node id="1218738789586" at="30,107,31,65" concept="2" />
-      <node id="1218738789586" at="31,65,32,68" concept="2" />
+      <node id="1218738789586" at="30,107,31,68" concept="2" />
+      <node id="1218738789586" at="31,68,32,65" concept="2" />
       <node id="1218738789586" at="33,7,34,127" concept="6" />
       <node id="1218738789586" at="35,13,36,111" concept="2" />
       <node id="1218738789586" at="36,111,37,98" concept="2" />
@@ -201,7 +201,7 @@
       <node id="1218738789586" at="22,0,25,0" concept="5" trace="getTemplateNode#()Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
       <node id="1218738789586" at="39,9,42,9" concept="4" />
       <node id="1218738789586" at="34,127,39,9" concept="10" />
-      <node id="1218738789586" at="32,68,44,7" concept="0" />
+      <node id="1218738789586" at="32,65,44,7" concept="0" />
       <node id="1218738789586" at="28,123,46,5" concept="10" />
       <node id="1218738789586" at="25,0,51,0" concept="5" trace="apply#(Ljetbrains/mps/generator/runtime/TemplateExecutionEnvironment;Ljetbrains/mps/generator/runtime/TemplateContext;)Ljava/util/Collection;" />
       <scope id="1218738789586" at="20,36,20,36" />

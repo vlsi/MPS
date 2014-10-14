@@ -231,8 +231,8 @@
       <node id="1206460153890" at="26,43,27,32" concept="9" />
       <node id="1206460153890" at="29,158,30,123" concept="8" />
       <node id="1206460153890" at="31,9,32,106" concept="3" />
-      <node id="1206460153890" at="32,106,33,102" concept="3" />
-      <node id="1206460153890" at="33,102,34,64" concept="3" />
+      <node id="1206460153890" at="32,106,33,64" concept="3" />
+      <node id="1206460153890" at="33,64,34,102" concept="3" />
       <node id="1206460153890" at="35,7,36,40" concept="8" />
       <node id="1206460153890" at="37,13,38,30" concept="8" />
       <node id="1206460153890" at="38,30,39,171" concept="8" />
@@ -276,7 +276,7 @@
       <node id="1206460153890" at="72,7,84,7" concept="0" />
       <node id="1206460153890" at="42,54,56,11" concept="6" />
       <node id="1206460153890" at="36,40,58,9" concept="14" />
-      <node id="1206460153890" at="34,64,63,7" concept="0" />
+      <node id="1206460153890" at="34,102,63,7" concept="0" />
       <node id="1206460153890" at="30,123,86,5" concept="14" />
       <node id="1206460153890" at="29,0,89,0" concept="7" trace="apply#(Ljetbrains/mps/generator/runtime/TemplateExecutionEnvironment;Ljetbrains/mps/generator/runtime/TemplateContext;)Ljava/util/Collection;" />
       <scope id="1206460153890" at="24,31,24,31" />
