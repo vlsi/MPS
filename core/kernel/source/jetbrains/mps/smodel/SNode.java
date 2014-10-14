@@ -56,7 +56,7 @@ import java.util.List;
 import java.util.Set;
 import java.util.TreeSet;
 
-public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.SNode {
+public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.SNode, SReferenceLinkAdapterProvider {
   private static final Logger LOG = Logger.wrap(LogManager.getLogger(SNode.class));
   private static final String[] EMPTY_ARRAY = new String[0];
   private static final Object USER_OBJECT_LOCK = new Object();
@@ -1282,5 +1282,10 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
         return node;
       }
     }
+  }
+
+  @Override
+  public SReferenceLink createSReferenceLinkAdapterByName(String conceptName, String role) {
+    return new SReferenceLinkAdapterByName(conceptName, role);
   }
 }
