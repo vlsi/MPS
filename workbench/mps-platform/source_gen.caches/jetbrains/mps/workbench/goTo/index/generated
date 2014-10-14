@@ -33,8 +33,6 @@
   </source>
   <source id="13265610250550760" name="JavaStubNodeDescriptor" hash="3ew0umgxvhvjfyihl6vqsy6uul1k1xi">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
-    <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
-    <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" />
     <file name="JavaStubNodeDescriptor.java" />
   </source>
 </dependencies>
