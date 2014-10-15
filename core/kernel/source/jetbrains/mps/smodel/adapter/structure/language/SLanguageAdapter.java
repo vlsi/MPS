@@ -32,7 +32,7 @@ public abstract class SLanguageAdapter implements SLanguage {
     this.myLanguageFqName = language;
   }
 
-  public abstract LanguageRuntime getLanguageRuntime();
+  public abstract LanguageRuntime getLanguageDescriptor();
 
   @Override
   public abstract Language getSourceModule();
@@ -44,7 +44,7 @@ public abstract class SLanguageAdapter implements SLanguage {
 
   @Override
   public Iterable<SAbstractConcept> getConcepts() {
-    LanguageRuntime runtime = getLanguageRuntime();
+    LanguageRuntime runtime = getLanguageDescriptor();
     if (runtime == null) {
       return Collections.<SAbstractConcept>emptySet();
     }

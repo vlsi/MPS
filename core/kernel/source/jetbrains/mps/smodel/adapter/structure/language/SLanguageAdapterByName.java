@@ -28,7 +28,7 @@ public class SLanguageAdapterByName extends SLanguageAdapter {
   }
 
   @Override
-  public LanguageRuntime getLanguageRuntime() {
+  public LanguageRuntime getLanguageDescriptor() {
     return LanguageRegistry.getInstance().getLanguage(myLanguageFqName);
   }
 
