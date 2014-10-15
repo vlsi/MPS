@@ -9,15 +9,15 @@
   <source id="6374450524837363737" name="ValueDouble" hash="c1g5mo28bt2yhqio3wf78v3c6psb1ca">
     <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
     <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
-    <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="ValueDouble.java" />
   </source>
   <source id="6374450524837363794" name="ValueQuantity" hash="-9mqyv8n8v6g91topn90g2p3s146q0b7">
     <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
-    <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
     <file name="ValueQuantity.java" />
   </source>
   <source id="6374450524837363835" name="PostingRule_Formula" hash="7j0wknappzaf8rlqnb6ybf5a295rxdq">
+    <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
+    <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="PostingRule_Formula.java" />
   </source>
   <source id="6374450524837363871" name="MoneyAdapter" hash="-3c6oeiz4hn39z41nr5zqbkuzk7wob0">
@@ -27,6 +27,7 @@
     <file name="MoneyAddOperation.java" />
   </source>
   <source id="6374450524837363964" name="UsageDouble" hash="-cmqy73l4nrnniqj7c2zt3bqo1i1sl8n">
+    <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
     <file name="UsageDouble.java" />
   </source>
   <source id="6374450524837363990" name="MoneyConstant" hash="-e19avslx75bygf1m3fxcxb1gimrjg78">

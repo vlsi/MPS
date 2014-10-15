@@ -35,7 +35,7 @@
   <dep model="r:32324a64-526d-42e5-8157-b55154efce2d(jetbrains.mps.make.facet.behavior)" hash="-7imp4e0mntpka2p5s7kpbtia9gy5sqw" />
   <dep model="r:b16ff46d-fa06-479d-9f5c-5b6e17e7f1b2(jetbrains.mps.make.facet.structure)" hash="-wnhwb6p7650wjwrra6fute9eoqekuz" />
   <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="d987foka3qddszg3k3yjss0jaslj9i" />
-  <dep model="r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)" hash="attjt7f9xsijagk72ems4fgf26chod2" />
+  <dep model="r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)" hash="-3v2j1dmdnreus232u87z8v47gc23d87" />
   <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="8cdjk2e5d2y2u9lult1ptgxxrttxv07" />
   <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" hash="5g3rtdo35mi5yfu1kii2pegdk4kei4n" />
   <common hash="681g80wjh1bymuwfqnjjouo2rven348" dependsOnNodes="true">
@@ -93,7 +93,9 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="QueriesGenerated.java" />
   </common>
-  <source id="5086995156117116955" name="main" hash="-79wjfwg2fquv95j6ckmjk1bkefdzly7" />
+  <source id="5086995156117116955" name="main" hash="-79wjfwg2fquv95j6ckmjk1bkefdzly7">
+    <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
+  </source>
   <source id="5086995156117142503" name="Facet_" hash="6awgk8w67ytepuixihds1fubzmmpj8a">
     <dep model="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.generator.runtime(MPS.Core/jetbrains.mps.generator.runtime@java_stub)" />
   </source>
@@ -102,11 +104,8 @@
   <source id="5189627237350270233" name="frag_FacetDeclaration_related" hash="-e6lrfxd6m356j807spqv47l5e83ej1c" />
   <source id="671853460608709077" name="FacetManifest" hash="-8nbil857zgeq9tgdjwqj93so2xcnu7m">
     <dep model="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.generator.runtime(MPS.Core/jetbrains.mps.generator.runtime@java_stub)" />
-    <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
-  <source id="7320828025189345704" name="reduce_PropertiesDeclaration" hash="-5e033k3fkbrb5jgm8gfi1bq82p9qjhz">
-    <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
-  </source>
+  <source id="7320828025189345704" name="reduce_PropertiesDeclaration" hash="-5e033k3fkbrb5jgm8gfi1bq82p9qjhz" />
   <source id="7320828025189474083" name="reduce_LocalPropertiesExpression" hash="-6p3gd0kwretfjvpv6a4rb0v7wse4siw" />
   <source id="6872280991287182616" name="reduce_ForeignPropertiesExpression_external" hash="-7v3ze1hredogg83psdyx4hw0tbws9xb" />
   <source id="2824583209542418197" name="FacetAspectDescriptor" hash="xxwvc80smtkropc9twghswf33yhzd8">

@@ -15,7 +15,6 @@
   </common>
   <source id="5447719361346501252" name="Money" hash="n8h6e5qdckdls64jnhlkodn0h0l4kg">
     <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
-    <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
     <file name="Money.java" />
   </source>
   <source id="5447719361346501301" name="MoneyConversion" hash="8ifxpfg0n58sg8ry6sbfhoszfv0d6uk">

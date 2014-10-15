@@ -262,6 +262,7 @@
   <source id="9184644532456897460" name="BuildStringContainer" hash="-bf00afy1jha699d2izn98b062yiko77" />
   <source id="9184644532457106504" name="BuildLayout_CopyFilterReplaceRegex" hash="b94d3j2g55dxkmvd0yos2qkk3rcfu5c" />
   <source id="9184644532457106613" name="AntRegexFlags" hash="5eukvvd9rqyciyebxons1bfpzgmmgrw">
+    <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
     <file name="AntRegexFlags_PropertySupport.java" />
   </source>
   <source id="7655580649838832276" name="BuildLayout_EchoXml" hash="-8x2qgk1qsiyehp1uf5mbzrkkqaqcr5h" />
@@ -281,6 +282,7 @@
   <source id="7801138212747054656" name="BuildLayout_Filemode" hash="7tib1e9mynq4j0wp5qlnijohzf547ia" />
   <source id="6977615362525721939" name="BuildLayout_CopyFlattenMapper" hash="-191oi1yhjlhbr163vd46knjgoymb7wy" />
   <source id="7801138212747054659" name="BuildLayout_UnixFilemode" hash="3470fepiaq72lsw41r1avisdhrvy9h">
+    <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
     <file name="BuildLayout_UnixFilemode_PropertySupport.java" />
   </source>
   <source id="6977615362525721938" name="BuildLayout_CopyMapper" hash="yzsmwd26a778p6ojzjp4iz1p4wn5v4" />

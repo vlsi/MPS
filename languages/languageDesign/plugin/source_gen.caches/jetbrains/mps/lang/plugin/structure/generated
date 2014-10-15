@@ -170,7 +170,6 @@
   <source id="1204908117386" name="Separator" hash="-aag8tncf7f0jh8rb03hs1qic7crvp8f" />
   <source id="1205676676847" name="mnemonic" hash="4k2w0rdptrmzvfikthc6zha77wj62gw">
     <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
-    <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="mnemonic_PropertySupport.java" />
   </source>
   <source id="1205679047295" name="ActionParameterDeclaration" hash="-8t6moll0qqwqcm4uhlg1ug52wblu278" />
@@ -198,7 +197,6 @@
   <source id="1210763550007" name="PreferencePageIsModifiedBlock" hash="2gv40na9m1q6d2e720mstgpditwfua4" />
   <source id="1212578595463" name="digit" hash="-bcgawla1i1hutiotn6vetm4lhbxweco">
     <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
-    <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="digit_PropertySupport.java" />
   </source>
   <source id="1213888653896" name="InitBlock" hash="e4ojanll7gub502z5kwkfm6is5l9no9" />
@@ -223,6 +221,7 @@
     <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+    <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="Keymap.java" />
     <file name="Keymap_PropertySupport.java" />
@@ -269,6 +268,7 @@
     <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+    <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="ToolPosition.java" />
     <file name="ToolPosition_PropertySupport.java" />

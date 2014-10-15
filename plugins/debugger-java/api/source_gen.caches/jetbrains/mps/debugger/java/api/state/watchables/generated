@@ -13,7 +13,6 @@
     <file name="JavaWatchable.java" />
   </source>
   <source id="3432969378036014277" name="JavaThisObject" hash="-7dtbidyvsqhmi0tvx323v5b2o078r4h">
-    <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
     <file name="JavaThisObject.java" />
   </source>
   <source id="3432969378036015831" name="CustomJavaWatchable" hash="luns7zgnikk8xhv2ppfouueom1foy8">

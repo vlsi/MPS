@@ -16,13 +16,14 @@
   <source id="3669442855016277665" name="Test3" hash="ci0o115knia1o0h0wh3hpt0flcpra0e">
     <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
     <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
-    <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="Test3.java" />
   </source>
   <source id="4347343044614079991" name="Test4" hash="-3u2pduaeo43hvbf1wwk0ranp571hcq9">
+    <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
     <file name="Test4.java" />
   </source>
   <source id="8923434991440662525" name="SimpleRunner" hash="8dbocmjetuuejpc9rtz439acfo044hl">
+    <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="SimpleRunner.java" />
   </source>
   <source id="6829399386646795190" name="TestMain" hash="4vd6xdbnaqzrhjj91w6j03b0oiprwe9">

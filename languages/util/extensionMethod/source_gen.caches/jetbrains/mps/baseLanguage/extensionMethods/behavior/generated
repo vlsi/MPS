@@ -60,6 +60,7 @@
     <file name="ExtensionMethodDeclaration_Behavior.java" />
   </source>
   <source id="1713017043373861885" name="ExtensionStaticFieldDeclaration_Behavior" hash="73pnc0pmtlbwtsrcgpu4gwwc5iswc2c">
+    <dep model="r:00000000-0000-4000-0000-011c895902b7(jetbrains.mps.lang.typesystem.generator.baseLanguage.template.main@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
     <dep model="r:4f6f8ed5-c3d7-49f4-b0dd-d70029feffdf(jetbrains.mps.baseLanguage.extensionMethods.structure)" />
@@ -68,7 +69,6 @@
   <source id="8578055449697886098" name="BaseExtensionMethodContainer_Behavior" hash="6mva5mshq3fh9fqokwmbp18geq82bo5">
     <dep model="r:00000000-0000-4000-0000-011c895902b7(jetbrains.mps.lang.typesystem.generator.baseLanguage.template.main@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)" />
-    <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" />
     <dep model="r:4f6f8ed5-c3d7-49f4-b0dd-d70029feffdf(jetbrains.mps.baseLanguage.extensionMethods.structure)" />
     <file name="BaseExtensionMethodContainer_Behavior.java" />
   </source>

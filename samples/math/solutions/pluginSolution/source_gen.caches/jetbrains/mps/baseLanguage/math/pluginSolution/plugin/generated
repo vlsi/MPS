@@ -20,7 +20,6 @@
     <file name="EditorCell_VerticalLine.java" />
   </source>
   <source id="5487985028841941621" name="VLineCellProvider" hash="-elgks3bs7udqp550fg7c4raf9ma4r3k">
-    <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" />
     <file name="VLineCellProvider.java" />
   </source>
 </dependencies>

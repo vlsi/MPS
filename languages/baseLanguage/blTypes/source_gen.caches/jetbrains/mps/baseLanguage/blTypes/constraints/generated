@@ -20,7 +20,6 @@
   </common>
   <source id="1227084833325" name="PrimitiveTypeDescriptor_Constraints" hash="bbxbtudvo6rkjucjdo20s646v8fhhvp">
     <dep model="r:00000000-0000-4000-0000-011c895902dd(jetbrains.mps.baseLanguage.blTypes.structure)" />
-    <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="PrimitiveTypeDescriptor_Constraints.java" />
   </source>
 </dependencies>

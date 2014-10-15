@@ -11,7 +11,7 @@
   <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" hash="-1z3361kpzl7vzkkqivv1k2cpu6lfdbi" />
   <dep model="r:00000000-0000-4000-0000-011c8959043c(jetbrains.mps.samples.formulaLanguage.structure)" hash="y2q5cddsqs5syau1vemum1w6ertem9" />
   <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="d987foka3qddszg3k3yjss0jaslj9i" />
-  <dep model="r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)" hash="attjt7f9xsijagk72ems4fgf26chod2" />
+  <dep model="r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)" hash="-3v2j1dmdnreus232u87z8v47gc23d87" />
   <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="8cdjk2e5d2y2u9lult1ptgxxrttxv07" />
   <common hash="1egpm21jianiurwxyr9rfobkxlhc95n" dependsOnNodes="true">
     <dep root="1112819378866" />
@@ -36,9 +36,7 @@
   <source id="1112818835473" name="SWITCH_Expression_NewFunction_Default" hash="c6gj55hdkekgsfgb86xira8wyb46p97">
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
-  <source id="1112819378866" name="_new_DoubleConstant_FromFloatingPointConstant" hash="-bli21118wsbyc2cz9hhn5p685kixh21">
-    <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
-  </source>
+  <source id="1112819378866" name="_new_DoubleConstant_FromFloatingPointConstant" hash="-bli21118wsbyc2cz9hhn5p685kixh21" />
   <source id="1112819613607" name="_new_MultiplyOperation" hash="-a0ucs3k9vjst29twfeorcm10gofej2k" />
   <source id="1112820065510" name="_new_IfFunction_Default" hash="198dksmv6bsz99i3shp3sew70k5eo80" />
   <source id="1112979325952" name="SWITCH_Expression_NewFunction_Double" hash="-dmfoddyn22zcpsq0l2i38dawwd4lpxh" />

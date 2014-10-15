@@ -23,7 +23,6 @@
   </source>
   <source id="7803854675610520166" name="DelOnChild1DeleteParent" hash="-bctp8bzcf75961r05n0s5gwo5ul6eb1" dependsOnNodes="true">
     <dep root="7803854675609827855" />
-    <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c89590369(jetbrains.mps.lang.plugin.generator.baseLanguage.template.main@generator)" />
     <dep model="r:9832fb5f-2578-4b58-8014-a5de79da988e(jetbrains.mps.ide.editor.actions)" />
     <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />

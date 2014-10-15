@@ -38,6 +38,7 @@
   </source>
   <source id="1343659934891487707" name="OutputPathRedirects" hash="5rb4a7ghtt8dr9k8qee7ih46byxonus">
     <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
+    <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
     <file name="OutputPathRedirects.java" />
   </source>
   <source id="1169333190357286292" name="IRedirects" hash="-blf2dr2vewkuosdjklq09o552j9mo3m">

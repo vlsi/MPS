@@ -34,7 +34,7 @@
   <dep model="r:00000000-0000-4000-0000-011c89590346(jetbrains.mps.lang.pattern.generator.baseLanguage.template.main@generator)" hash="-e79pnx2t8lyhgjudlbmvbm9y8ru3t0p" />
   <dep model="r:00000000-0000-4000-0000-011c895903ac(jetbrains.mps.baseLanguageInternal.structure)" hash="-5x7fc7x57e647e6x16e9hsaxviu353h" />
   <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="d987foka3qddszg3k3yjss0jaslj9i" />
-  <dep model="r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)" hash="attjt7f9xsijagk72ems4fgf26chod2" />
+  <dep model="r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)" hash="-3v2j1dmdnreus232u87z8v47gc23d87" />
   <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="8cdjk2e5d2y2u9lult1ptgxxrttxv07" />
   <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" hash="5g3rtdo35mi5yfu1kii2pegdk4kei4n" />
   <common hash="-5riqmfm65c2v8ye0m1t3cbcr8fje94b" dependsOnNodes="true">
@@ -108,7 +108,9 @@
   <source id="1201792021422" name="internal" hash="646rfzpsbi2bb28j5xjvkku49pry1p5">
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
-  <source id="1202904627607" name="convertclosures" hash="-4468uee8tvy5wm6scvn6eb41pqr6t7p" />
+  <source id="1202904627607" name="convertclosures" hash="-4468uee8tvy5wm6scvn6eb41pqr6t7p">
+    <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
+  </source>
   <source id="1203340411125" name="switch_sequence_operation_toSequence" hash="bsuh1qm8ifv3nozasxiln33xb1d9ksb" />
   <source id="1204989320848" name="legacy" hash="1ysjpd7s116y73zxzxgpq8w30m5uxn7" />
   <source id="1205836166464" name="switch_closure_body" hash="-dpvdiotr1fpiz975r15sfcbqpjqkzyj" />

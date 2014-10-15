@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependencies version="2" modelHash="-5u9v655q6n3evqm881xoekem1ydfun4">
   <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" hash="-2sqpydigz7vryaerubh22j78l4l08jz" />
-  <dep model="r:7b2ffdb7-2bfc-4488-8c0c-ee8fe93fe3c1(jetbrains.mps.build.ant)" hash="-9r5ukgudqnqtfxp1yu09otrgh34dbqp" />
+  <dep model="r:7b2ffdb7-2bfc-4488-8c0c-ee8fe93fe3c1(jetbrains.mps.build.ant)" hash="-dliww6wxdmec3df9agsy5pyxe1ncqq" />
   <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="d987foka3qddszg3k3yjss0jaslj9i" />
   <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="8cdjk2e5d2y2u9lult1ptgxxrttxv07" />
   <common hash="dloft05pp08vbny8uxv5xyxoq0ldj4p" dependsOnNodes="true">
@@ -23,7 +23,6 @@
     <file name="GenerateTask.java" />
   </source>
   <source id="978600701689990961" name="Plugin" hash="bcw20t9itvce8be481uvj6tely809lv">
-    <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
     <file name="Plugin.java" />
   </source>
   <source id="861826518923203126" name="GenTestTask" hash="-cbzhqsd9p3i2zyjh8qlkgvfvgz5o7s3">

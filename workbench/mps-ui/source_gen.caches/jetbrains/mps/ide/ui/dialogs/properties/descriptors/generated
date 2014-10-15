@@ -8,6 +8,7 @@
   </common>
   <source id="3995997045458428838" name="ColumnDescriptor" hash="-bqhimp891aqnl7civ0zc1fnur0udl9b">
     <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
+    <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="ColumnDescriptor.java" />
   </source>
   <source id="3995997045458428896" name="VoidColumnDescriptor" hash="55vs4sosof07m4bl52kxfp7816idzkb">

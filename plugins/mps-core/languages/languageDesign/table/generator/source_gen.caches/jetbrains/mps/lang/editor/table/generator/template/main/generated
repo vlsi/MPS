@@ -16,7 +16,7 @@
   <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" hash="-1z3361kpzl7vzkkqivv1k2cpu6lfdbi" />
   <dep model="r:2ae43476-98ce-4354-9a55-d7b44e372d64(jetbrains.mps.lang.editor.table.structure)" hash="5vci080wotrtuvl8h2asb1d3lrpn8ea" />
   <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="d987foka3qddszg3k3yjss0jaslj9i" />
-  <dep model="r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)" hash="attjt7f9xsijagk72ems4fgf26chod2" />
+  <dep model="r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)" hash="-3v2j1dmdnreus232u87z8v47gc23d87" />
   <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="8cdjk2e5d2y2u9lult1ptgxxrttxv07" />
   <common hash="7aiivc4hqdu3ud5dk4r6879i7jaiy9f" dependsOnNodes="true">
     <dep root="6189378527250534337" />
@@ -44,7 +44,11 @@
   <source id="4677325677876405345" name="main" hash="-340f7ojoek4kjgzif8fx4rli7ib76xf">
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
-  <source id="6189378527250534337" name="reduce_CellModel_Table" hash="bofxarid6l7ybsivjdru7q0ci62znm6" />
-  <source id="6216065619544964985" name="tables" hash="-36xitl9ukikbqjmozinnwialx8hyja5" />
+  <source id="6189378527250534337" name="reduce_CellModel_Table" hash="bofxarid6l7ybsivjdru7q0ci62znm6">
+    <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
+  </source>
+  <source id="6216065619544964985" name="tables" hash="-36xitl9ukikbqjmozinnwialx8hyja5">
+    <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
+  </source>
 </dependencies>
 

@@ -24,6 +24,7 @@
     <file name="Script.java" />
   </source>
   <source id="878521226297928383" name="ScriptData" hash="-c930nnvkbiogjpt19k2zflnpqi3r6qs">
+    <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
     <file name="ScriptData.java" />
   </source>
   <source id="2546981710035421490" name="IMessageFormat" hash="-99ur413ox0t0i4zwrs5lqa73t2iryl8">
@@ -46,7 +47,6 @@
     <dep model="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#org.apache.log4j(MPS.Core/org.apache.log4j@java_stub)" />
     <dep model="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#org.jdom.input(MPS.Core/org.jdom.input@java_stub)" />
     <dep model="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#org.jdom.output(MPS.Core/org.jdom.output@java_stub)" />
-    <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="JDOMUtil.java" />
   </source>
   <source id="3415722583340914388" name="GeneratorProperties" hash="-83nskza8cxc45j2ycpjwx2rnti9f4o1">

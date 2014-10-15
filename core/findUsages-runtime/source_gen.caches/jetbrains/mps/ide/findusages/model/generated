@@ -9,6 +9,7 @@
   </common>
   <source id="847291649004062081" name="CategoryKind" hash="cgb9974q3ewdus0tei6woye2yec6gtu">
     <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
+    <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="CategoryKind.java" />
   </source>
   <source id="847291649004063466" name="IResultProvider" hash="-bv4443i2gheypzp9m18glpuj7krb1bb">
@@ -17,12 +18,10 @@
   <source id="847291649004063609" name="SearchResult" hash="-bk69angpfcjm6zral7w9o36o547buz8">
     <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
     <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
-    <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="SearchResult.java" />
   </source>
   <source id="847291649004065516" name="SearchResults" hash="-aa5h8qzge0nzmbsy7qrytx2btdmve0b">
     <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
-    <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
     <file name="SearchResults.java" />
   </source>
   <source id="847291649006544485" name="SearchQuery" hash="33bdkjvad7o3hhjpszg3exjd5ppv5jl">

@@ -36,7 +36,7 @@
   <dep model="r:3b7ed80f-6cfd-45bc-b051-2f66c620dd27(jetbrains.mps.lang.traceable.structure)" hash="76myxegtoxgbtj6tyvu3vtcyqh6ntew" />
   <dep model="r:4f6f8ed5-c3d7-49f4-b0dd-d70029feffdf(jetbrains.mps.baseLanguage.extensionMethods.structure)" hash="-b28o332bqhcgizdp856vge0bfdourxb" />
   <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="d987foka3qddszg3k3yjss0jaslj9i" />
-  <dep model="r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)" hash="attjt7f9xsijagk72ems4fgf26chod2" />
+  <dep model="r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)" hash="-3v2j1dmdnreus232u87z8v47gc23d87" />
   <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="8cdjk2e5d2y2u9lult1ptgxxrttxv07" />
   <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" hash="5g3rtdo35mi5yfu1kii2pegdk4kei4n" />
   <common hash="-4k1nxr7jnh5cnqixtifid4k1yvac7pf" dependsOnNodes="true">
@@ -134,7 +134,9 @@
   <source id="1199623542211" name="main" hash="eesvlqa3crd9sz26ybsd5qislf6d8bk">
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
-  <source id="1199624723387" name="reduce_ClosureLiteral_no_yield" hash="-3qf8o9iiiprs2vl5h2rlt6799a1kf45" />
+  <source id="1199624723387" name="reduce_ClosureLiteral_no_yield" hash="-3qf8o9iiiprs2vl5h2rlt6799a1kf45">
+    <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
+  </source>
   <source id="1201011417445" name="prep_ClosureLiteral" hash="6ezxdvk3duq91s9kp5g225dqv526o9g" />
   <source id="1201016823876" name="reduce_ClosureLiteral_yield" hash="-cnw741rjt1thkew65qqg31pgh56mvdj" />
   <source id="1201019233482" name="weave_field_for_LocalVariableDeclaration" hash="5t3tx5hzegavk2wbjwue03v8x7mfott" />

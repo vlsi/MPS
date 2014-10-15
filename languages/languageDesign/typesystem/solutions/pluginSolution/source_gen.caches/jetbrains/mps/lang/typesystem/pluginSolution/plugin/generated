@@ -42,7 +42,6 @@
   <source id="5487985028841908585" name="TypesystemActions" hash="7ik5hlaecdlp7316mli2flagyci081p">
     <dep root="5487985028841908720" />
     <dep model="r:00000000-0000-4000-0000-011c89590369(jetbrains.mps.lang.plugin.generator.baseLanguage.template.main@generator)" />
-    <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
     <file name="TypesystemActions_ActionGroup.java" />
   </source>
   <source id="5487985028841908720" name="ShowNodeType" hash="-erc8dk59cguceo5vcbzud29kbzrjzly" dependsOnNodes="true">
@@ -87,7 +86,6 @@
     <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c89590369(jetbrains.mps.lang.plugin.generator.baseLanguage.template.main@generator)" />
-    <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="Default_KeymapChanges.java" />
   </source>
   <source id="7162597690967702203" hash="-6d9ajqnayi5v0kpo3a04mmznh5ivbtf" dependsOnNodes="true">

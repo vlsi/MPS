@@ -20,7 +20,7 @@
   <dep model="r:935ba0ee-7291-4caa-a807-d76e8fc69391(jetbrains.mps.console.blCommand.structure)" hash="-6qdopu2qrt4u24g6xjyitmvzz6qmd2o" />
   <dep model="r:b4d3e080-529f-482d-ad99-114342004f83(jetbrains.mps.console.blCommand.runtime.util)" hash="-5vn0a5j33xlaiykqgm7o5lha9xqkap8" />
   <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="d987foka3qddszg3k3yjss0jaslj9i" />
-  <dep model="r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)" hash="attjt7f9xsijagk72ems4fgf26chod2" />
+  <dep model="r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)" hash="-3v2j1dmdnreus232u87z8v47gc23d87" />
   <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="8cdjk2e5d2y2u9lult1ptgxxrttxv07" />
   <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" hash="5g3rtdo35mi5yfu1kii2pegdk4kei4n" />
   <common hash="-1nnf9ckibtvtfhbwqsk2svwwe663oqb" dependsOnNodes="true">
@@ -71,8 +71,12 @@
   </common>
   <source id="5336086527852811410" name="main" hash="-1w6k4y4qetiaptcr7cbubp9qws77l2w" />
   <source id="5336086527852812352" name="reduce_BLCommand" hash="-1yjzxkchy8j7d0ioy4e5qs4xz3vub0i" />
-  <source id="4417779018064685310" name="reduce_PrintNodeReferenceExpression" hash="-3pwdhpg31zd9sqfmc7bo8a7ac95fix9" />
-  <source id="1125969196844485895" name="reduce_ShowExpression" hash="6r8agfmab4n7yxvnhny1jqdbvuyqbnu" />
+  <source id="4417779018064685310" name="reduce_PrintNodeReferenceExpression" hash="-3pwdhpg31zd9sqfmc7bo8a7ac95fix9">
+    <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
+  </source>
+  <source id="1125969196844485895" name="reduce_ShowExpression" hash="6r8agfmab4n7yxvnhny1jqdbvuyqbnu">
+    <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
+  </source>
   <source id="7738379549905438724" name="reduce_UsagesExpression" hash="e8bpciadtc8vo8s3c47cii2jhaksezh">
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>

@@ -16,10 +16,10 @@
   <source id="4727801710070563175" name="Evaluator" hash="6asog8vvv5aofpcpw5e5iyx68ttprqc">
     <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
     <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
+    <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="Evaluator.java" />
   </source>
   <source id="4727801710070563657" name="InvocationTargetEvaluationException" hash="-19qw8fureuuo3pogc43j7nufrh8k3oz">
-    <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="InvocationTargetEvaluationException.java" />
   </source>
   <source id="4727801710070563829" name="EvaluationRuntimeException" hash="-pihfciods7v4efdn58f7bt72o4dlfx">

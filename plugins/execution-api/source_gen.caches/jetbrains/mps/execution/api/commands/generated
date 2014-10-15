@@ -48,7 +48,6 @@
   </source>
   <source id="8234001627574071091" name="PropertyCommandPart" hash="-ctj9pa3atnzi0z0m8i2dex4n07keuke">
     <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
-    <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
     <file name="PropertyCommandPart.java" />
   </source>
   <source id="889694274152177360" name="CommandPart" hash="-5648jyacck4oc8ccxksyqsz0dwld51m">

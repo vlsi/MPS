@@ -13,7 +13,7 @@
   <dep model="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" hash="-338jlg9jnnsqr989i2p5xrxtyjckaso" />
   <dep model="r:935ba0ee-7291-4caa-a807-d76e8fc69391(jetbrains.mps.console.blCommand.structure)" hash="-6qdopu2qrt4u24g6xjyitmvzz6qmd2o" />
   <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="d987foka3qddszg3k3yjss0jaslj9i" />
-  <dep model="r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)" hash="attjt7f9xsijagk72ems4fgf26chod2" />
+  <dep model="r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)" hash="-3v2j1dmdnreus232u87z8v47gc23d87" />
   <dep model="r:e712f353-5c3c-4288-adce-87c956a52ffb(jetbrains.mps.console.scripts.structure)" hash="4akemz69qu6naw83blsx2vw1n5igkf6" />
   <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="8cdjk2e5d2y2u9lult1ptgxxrttxv07" />
   <common hash="-al7e5rt10t8zeyxp52vbniqm7r2hd8l" dependsOnNodes="true">
@@ -41,8 +41,14 @@
   <source id="1734392475490465061" name="main" hash="81oep1vn6rad1hv39pmmll85cvfa79l">
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
-  <source id="1734392475491234391" name="reduce_Execute" hash="-6qrxgjcbhu5ixalgbxqvf2tqvxofkws" />
-  <source id="1672541786945837086" name="reduce_RefactorOperation" hash="-b0vg746ctdt4muytlvjf7pqq1m67ggx" />
-  <source id="1672541786946132901" name="execute" hash="4m9nf85s4uz7m1bq2ux0afn5xkg8aw4" />
+  <source id="1734392475491234391" name="reduce_Execute" hash="-6qrxgjcbhu5ixalgbxqvf2tqvxofkws">
+    <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
+  </source>
+  <source id="1672541786945837086" name="reduce_RefactorOperation" hash="-b0vg746ctdt4muytlvjf7pqq1m67ggx">
+    <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
+  </source>
+  <source id="1672541786946132901" name="execute" hash="4m9nf85s4uz7m1bq2ux0afn5xkg8aw4">
+    <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
+  </source>
 </dependencies>
 
