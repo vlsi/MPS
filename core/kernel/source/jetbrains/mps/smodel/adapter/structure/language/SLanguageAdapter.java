@@ -13,6 +13,7 @@ import jetbrains.mps.smodel.language.LanguageRuntime;
 import jetbrains.mps.util.NameUtil;
 import org.apache.log4j.LogManager;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -32,6 +33,7 @@ public abstract class SLanguageAdapter implements SLanguage {
     this.myLanguageFqName = language;
   }
 
+  @Nullable
   public abstract LanguageRuntime getLanguageDescriptor();
 
   @Override

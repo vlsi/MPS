@@ -20,6 +20,7 @@ import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.smodel.language.LanguageRegistry;
 import jetbrains.mps.smodel.language.LanguageRuntime;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SLanguage;
 
 public class SLanguageAdapterByName extends SLanguageAdapter {
@@ -28,6 +29,7 @@ public class SLanguageAdapterByName extends SLanguageAdapter {
   }
 
   @Override
+  @Nullable
   public LanguageRuntime getLanguageDescriptor() {
     return LanguageRegistry.getInstance().getLanguage(myLanguageFqName);
   }
