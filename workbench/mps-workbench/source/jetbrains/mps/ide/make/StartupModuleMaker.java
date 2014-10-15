@@ -21,24 +21,22 @@ import com.intellij.openapi.progress.ProgressIndicator;
 import com.intellij.openapi.progress.ProgressManager;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.startup.StartupManager;
-import jetbrains.mps.MPSCore;
+import jetbrains.mps.RuntimeFlags;
+import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.messages.MessagesViewTool;
 import jetbrains.mps.ide.platform.watching.ReloadManagerComponent;
 import jetbrains.mps.library.ProjectLibraryManager;
 import jetbrains.mps.make.ModuleMaker;
-import jetbrains.mps.messages.IMessage;
-import jetbrains.mps.messages.IMessageHandler;
 import jetbrains.mps.messages.MessageKind;
 import jetbrains.mps.progress.EmptyProgressMonitor;
-import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import jetbrains.mps.progress.ProgressMonitorAdapter;
 import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.IterableUtil;
+import org.jetbrains.mps.openapi.util.ProgressMonitor;
 
 public class StartupModuleMaker extends AbstractProjectComponent {
   private final ReloadManagerComponent myReloadManager;
@@ -51,7 +49,7 @@ public class StartupModuleMaker extends AbstractProjectComponent {
 
   @Override
   public void projectOpened() {
-    if (MPSCore.getInstance().isTestMode())
+    if (RuntimeFlags.isTestMode())
       return;
     compileProjectModulesWithProgress(true);
   }

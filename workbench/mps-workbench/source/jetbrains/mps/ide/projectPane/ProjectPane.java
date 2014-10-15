@@ -35,7 +35,7 @@ import com.intellij.openapi.wm.ToolWindowManager;
 import com.intellij.ui.components.JBScrollPane;
 import com.intellij.util.ui.update.MergingUpdateQueue;
 import com.intellij.util.ui.update.Update;
-import jetbrains.mps.MPSCore;
+import jetbrains.mps.RuntimeFlags;
 import jetbrains.mps.icons.MPSIcons;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.editor.MPSFileNodeEditor;
@@ -53,7 +53,6 @@ import jetbrains.mps.ide.ui.tree.smodel.SNodeTreeNode;
 import jetbrains.mps.openapi.editor.EditorComponent;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.SNodeOperations;
 import jetbrains.mps.util.annotation.Hack;
 import org.apache.log4j.LogManager;
@@ -244,8 +243,8 @@ public class ProjectPane extends BaseLogicalViewProjectPane {
 
     myScrollPane = new MyScrollPane(getTree());
     addListeners();
-    if (!MPSCore.getInstance().isTestMode()) {
-      // Looks like thid method can be called from different threads
+    if (!RuntimeFlags.isTestMode()) {
+      // Looks like this method can be called from different threads
       ThreadUtils.runInUIThreadNoWait(new Runnable() {
         @Override
         public void run() {
