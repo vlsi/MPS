@@ -135,6 +135,7 @@ public class GlobalModuleDependenciesManager {
     if (includeNonReexport) {
       if (runtimes) {
         for (SLanguage l : module.getUsedLanguages()) {
+          if (l.getSourceModule() == null) continue;
           for (SModuleReference runtimeRef : l.getLanguageRuntimes()) {
             SModule runtime = ModuleRepositoryFacade.getInstance().getModule(runtimeRef);
             if (runtime != null) {
