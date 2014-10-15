@@ -58,11 +58,6 @@ public abstract class SPropertyAdapter implements SProperty {
   @Nullable
   protected abstract PropertyDescriptor getPropertyDescriptor();
 
-  @Override
-  public boolean isValid() {
-    return getPropertyDescriptor() != null;
-  }
-
   public final SNode getDeclarationNode() {
     SNode cnode = getContainingConcept().getDeclarationNode();
     if (cnode == null) return null;

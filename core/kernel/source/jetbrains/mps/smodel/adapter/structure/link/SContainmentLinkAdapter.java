@@ -16,6 +16,7 @@
 package jetbrains.mps.smodel.adapter.structure.link;
 
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import jetbrains.mps.smodel.adapter.ids.SContainmentLinkId;
 import jetbrains.mps.smodel.adapter.structure.concept.ConceptRegistryUtil;
@@ -53,19 +54,26 @@ public abstract class SContainmentLinkAdapter implements SContainmentLink {
 
   @Override
   public boolean isOptional() {
-    return getLinkDescriptor().isOptional();
+    LinkDescriptor ld = getLinkDescriptor();
+    if (ld == null) return true;
+
+    return ld.isOptional();
   }
 
   @Override
   public org.jetbrains.mps.openapi.language.SAbstractConcept getContainingConcept() {
     SConceptId id = getRoleId().getConceptId();
     ConceptDescriptor concept = ConceptRegistryUtil.getConceptDescriptor(id);
-    return concept.isInterfaceConcept() ? new SInterfaceConceptAdapterById(id, concept.getConceptFqName()) : new SConceptAdapterById(id, concept.getConceptFqName());
+    return concept.isInterfaceConcept() ? new SInterfaceConceptAdapterById(id, concept.getConceptFqName()) :
+        new SConceptAdapterById(id, concept.getConceptFqName());
   }
 
   @Override
   public SAbstractConcept getTargetConcept() {
-    SConceptId id = getLinkDescriptor().getTargetConcept();
+    LinkDescriptor ld = getLinkDescriptor();
+    if (ld == null) return new SConceptAdapterById(SNodeUtil.conceptId_BaseConcept, SNodeUtil.concept_BaseConcept);
+
+    SConceptId id = ld.getTargetConcept();
     ConceptDescriptor concept = ConceptRegistryUtil.getConceptDescriptor(id);
     return concept.isInterfaceConcept() ? new SInterfaceConceptAdapterById(id, concept.getConceptFqName()) :
         new SConceptAdapterById(id, concept.getConceptFqName());
@@ -78,16 +86,17 @@ public abstract class SContainmentLinkAdapter implements SContainmentLink {
 
   @Override
   public boolean isMultiple() {
-    return getLinkDescriptor().isMultiple();
+    LinkDescriptor ld = getLinkDescriptor();
+    if (ld == null) return true;
+
+    return ld.isMultiple();
   }
 
   public boolean isUnordered() {
-    return getLinkDescriptor().isUnordered();
-  }
+    LinkDescriptor ld = getLinkDescriptor();
+    if (ld == null) return false;
 
-  @Override
-  public boolean isValid() {
-    return getLinkDescriptor() != null;
+    return ld.isUnordered();
   }
 
   @Override
@@ -101,7 +110,7 @@ public abstract class SContainmentLinkAdapter implements SContainmentLink {
 
   @Override
   public boolean equals(Object obj) {
-    if (!(obj instanceof SContainmentLink)) return  false;
+    if (!(obj instanceof SContainmentLink)) return false;
     return isSame(((SContainmentLink) obj));
   }
 

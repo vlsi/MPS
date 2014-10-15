@@ -31,8 +31,6 @@ public interface SProperty {
 
   boolean isSame(SProperty c);
 
-  boolean isValid();
-
   @Nullable
   SNode getDeclarationNode();
 }

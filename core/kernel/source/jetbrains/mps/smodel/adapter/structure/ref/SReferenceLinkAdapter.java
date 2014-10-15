@@ -17,6 +17,7 @@ package jetbrains.mps.smodel.adapter.structure.ref;
 
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.scope.Scope;
+import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import jetbrains.mps.smodel.adapter.ids.SReferenceLinkId;
 import jetbrains.mps.smodel.adapter.structure.concept.ConceptRegistryUtil;
@@ -64,12 +65,18 @@ public abstract class SReferenceLinkAdapter implements SReferenceLink {
 
   @Override
   public boolean isOptional() {
-    return getReferenceDescriptor().isOptional();
+    ReferenceDescriptor rd = getReferenceDescriptor();
+    if (rd == null) return true;
+
+    return rd.isOptional();
   }
 
   @Override
   public SAbstractConcept getTargetConcept() {
-    SConceptId id = getReferenceDescriptor().getTargetConcept();
+    ReferenceDescriptor rd = getReferenceDescriptor();
+    if (rd == null) return new SConceptAdapterById(SNodeUtil.conceptId_BaseConcept,SNodeUtil.concept_BaseConcept);
+
+    SConceptId id = rd.getTargetConcept();
     ConceptDescriptor concept = ConceptRegistryUtil.getConceptDescriptor(id);
     return concept.isInterfaceConcept() ? new SInterfaceConceptAdapterById(id, concept.getConceptFqName()) :
         new SConceptAdapterById(id, concept.getConceptFqName());
@@ -83,11 +90,6 @@ public abstract class SReferenceLinkAdapter implements SReferenceLink {
   @Override
   public boolean isMultiple() {
     return false;
-  }
-
-  @Override
-  public boolean isValid() {
-    return getReferenceDescriptor() != null;
   }
 
   @Override

@@ -55,8 +55,6 @@ public interface SContainmentLink extends SAbstractLink {
    */
   boolean isUnordered();
 
-  boolean isValid();
-
   @Nullable
   SNode getDeclarationNode();
 }

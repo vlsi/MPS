@@ -26,6 +26,7 @@ import jetbrains.mps.smodel.adapter.structure.link.SContainmentLinkAdapterByName
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import jetbrains.mps.smodel.runtime.ReferenceDescriptor;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SReferenceLink;
 import org.jetbrains.mps.openapi.model.SNode;
 
@@ -40,6 +41,8 @@ public class SReferenceLinkAdapterByName extends SReferenceLinkAdapter {
     return myName.equals(((SReferenceLinkAdapter) l2).myName);
   }
 
+  @Override
+  @Nullable
   protected ReferenceDescriptor getReferenceDescriptor() {
     ConceptDescriptor cd = ConceptRegistryUtil.getConceptDescriptor(myConceptName);
     if (cd == null) return null;
