@@ -42,7 +42,7 @@ public class MatchingUtil {
     if (node1 == node2) return true;
     if (node1 == null) return false;
     if (node2 == null) return false;
-    if (!node1.getConcept().isSame(node2.getConcept())) return false;
+    if (!node1.getConcept().equals(node2.getConcept())) return false;
 
     //properties
     final Set<String> propertyNames = new HashSet<String>();

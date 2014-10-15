@@ -29,8 +29,6 @@ public interface SProperty {
 
   String getName();
 
-  boolean isSame(SProperty c);
-
   @Nullable
   SNode getDeclarationNode();
 }

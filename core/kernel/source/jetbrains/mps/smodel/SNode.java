@@ -861,7 +861,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
     SReference toDelete = null;
     if (myReferences != null) {
       for (SReference reference : myReferences) {
-        if (!reference.getReferenceLink().isSame(role)) continue;
+        if (!reference.getReferenceLink().equals(role)) continue;
         toDelete = reference;
         break;
       }
@@ -903,7 +903,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
 
     SReference result = null;
     for (SReference reference : myReferences) {
-      if (reference.getReferenceLink().isSame(role)) {
+      if (reference.getReferenceLink().equals(role)) {
         result = reference;
         break;
       }
@@ -919,7 +919,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
 
     SReference toRemove = null;
     for (SReference r : myReferences) {
-      if (!r.getReferenceLink().isSame(role)) continue;
+      if (!r.getReferenceLink().equals(role)) continue;
       toRemove = r;
       break;
     }
@@ -1008,7 +1008,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
     if (role != null) {
       while (firstChild != null) {
         SContainmentLink childRole = firstChild.getContainmentLink();
-        if (childRole.isSame(role)) break;
+        if (childRole.equals(role)) break;
         firstChild = firstChild.treeNext();
       }
     }
@@ -1021,7 +1021,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
   private int getPropertyIndex(SProperty id) {
     if (myProperties == null) return -1;
     for (int i = 0; i < myProperties.length; i += 2) {
-      if (id.isSame(((SPropertyAdapter) myProperties[i]))) return i;
+      if (id.equals(((SPropertyAdapter) myProperties[i]))) return i;
     }
     return -1;
   }
@@ -1244,7 +1244,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
 
         do {
           node = node.treeNext();
-        } while (node != null && !node.getContainmentLink().isSame(myRole));
+        } while (node != null && !node.getContainmentLink().equals(myRole));
         return node;
       }
 
@@ -1258,9 +1258,9 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
 
         do {
           node = node.treePrevious();
-        } while (node != fc && !node.getContainmentLink().isSame(myRole));
+        } while (node != fc && !node.getContainmentLink().equals(myRole));
 
-        return node.getContainmentLink().isSame(myRole) ? node : null;
+        return node.getContainmentLink().equals(myRole) ? node : null;
       }
 
       @Override

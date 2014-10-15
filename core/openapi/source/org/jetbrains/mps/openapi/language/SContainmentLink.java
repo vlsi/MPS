@@ -24,8 +24,6 @@ import org.jetbrains.mps.openapi.model.SNode;
 public interface SContainmentLink extends SAbstractLink {
   String getRoleName();
 
-  boolean isSame(SContainmentLink c);
-
   SAbstractConcept getContainingConcept();
 
   /**

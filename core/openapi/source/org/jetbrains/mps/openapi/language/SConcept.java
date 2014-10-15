@@ -26,6 +26,4 @@ public interface SConcept extends SAbstractConcept {
   SConcept getSuperConcept();
 
   Iterable<SInterfaceConcept> getSuperInterfaces();
-
-  boolean isSame(SConcept c);
 }

@@ -21,6 +21,4 @@ package org.jetbrains.mps.openapi.language;
 public interface SInterfaceConcept extends SAbstractConcept {
 
   Iterable<SInterfaceConcept> getSuperInterfaces();
-
-  boolean isSame(SInterfaceConcept c);
 }
