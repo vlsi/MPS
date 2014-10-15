@@ -156,7 +156,7 @@ class Memento {
 
   private boolean restoreErrors(EditorComponent editor) {
     boolean needsRelayout = false;
-    for (EditorCell cell : editor.getCellTracker().getErrorCells()) {
+    for (EditorCell cell : new ArrayList<EditorCell>(editor.getCellTracker().getErrorCells())) {
       if (cell instanceof EditorCell_Label && cell.getStyle().get(StyleAttributes.EDITABLE)) {
         EditorCell_Label label = (EditorCell_Label) cell;
         label.synchronizeViewWithModel();
