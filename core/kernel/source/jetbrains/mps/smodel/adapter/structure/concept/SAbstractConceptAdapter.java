@@ -46,6 +46,7 @@ public abstract class SAbstractConceptAdapter implements SAbstractConcept {
     myFqName = fqName;
   }
 
+  @Nullable
   public abstract ConceptDescriptor getConceptDescriptor();
 
   protected abstract SNode findInModel(SModel strucModel);

@@ -21,6 +21,7 @@ import jetbrains.mps.smodel.adapter.structure.language.SLanguageAdapterById;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import jetbrains.mps.util.NameUtil;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SInterfaceConcept;
 import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -40,6 +41,7 @@ public class SInterfaceConceptAdapterById extends SInterfaceConceptAdapter imple
   }
 
   @Override
+  @Nullable
   public ConceptDescriptor getConceptDescriptor() {
     return ConceptRegistryUtil.getConceptDescriptor(myConceptId);
   }
