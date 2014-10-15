@@ -55,12 +55,6 @@ public abstract class SConceptAdapter extends SAbstractConceptAdapter implements
   }
 
   @Override
-  public boolean equals(Object obj) {
-    if (!(obj instanceof SConcept)) return false;
-    return isSame(((SConcept) obj));
-  }
-
-  @Override
   public int hashCode() {
     return 0;
   }

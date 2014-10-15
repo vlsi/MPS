@@ -30,8 +30,10 @@ public class SInterfaceConceptAdapterByName extends SInterfaceConceptAdapter imp
     super( fqname);
   }
 
-  public boolean isSame(SInterfaceConcept c2) {
-    return myFqName.equals(((SInterfaceConceptAdapter) c2).myFqName);
+  @Override
+  public boolean equals(Object obj) {
+    if (!(obj instanceof SInterfaceConcept)) return  false;
+    return myFqName.equals(((SInterfaceConceptAdapter) obj).myFqName);
   }
 
   @Override

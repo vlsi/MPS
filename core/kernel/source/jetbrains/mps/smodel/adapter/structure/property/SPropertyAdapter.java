@@ -62,14 +62,6 @@ public abstract class SPropertyAdapter implements SProperty {
     return findInConcept(cnode);
   }
 
-  private static final Logger LOG = Logger.wrap(LogManager.getLogger(SPropertyAdapter.class));
-
-  @Override
-  public boolean equals(Object obj) {
-    if (!(obj instanceof SProperty)) return  false;
-    return isSame(((SProperty) obj));
-  }
-
   @Override
   public int hashCode() {
     return 0;

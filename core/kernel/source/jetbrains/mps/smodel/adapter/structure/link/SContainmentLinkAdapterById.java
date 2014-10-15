@@ -34,9 +34,11 @@ public class SContainmentLinkAdapterById extends SContainmentLinkAdapter {
     myRoleId = roleId;
   }
 
-  public boolean isSame(SContainmentLink l2) {
-    return (l2 instanceof SContainmentLinkAdapterById) ? myRoleId.equals(((SContainmentLinkAdapterById) l2).myRoleId) :
-        myName.equals(((SContainmentLinkAdapter) l2).myName);
+  @Override
+  public boolean equals(Object obj) {
+    if (!(obj instanceof SContainmentLink)) return false;
+    return (obj instanceof SContainmentLinkAdapterById) ? myRoleId.equals(((SContainmentLinkAdapterById) obj).myRoleId) :
+        myName.equals(((SContainmentLinkAdapter) obj).myName);
   }
 
   public SContainmentLinkId getRoleId() {

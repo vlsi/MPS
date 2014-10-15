@@ -86,14 +86,6 @@ public abstract class SLanguageAdapter implements SLanguage {
     return getSourceModule().getLanguageVersion();
   }
 
-  private static final Logger LOG = Logger.wrap(LogManager.getLogger(SLanguageAdapter.class));
-
-  @Override
-  public boolean equals(Object obj) {
-    if (!(obj instanceof SLanguage)) return  false;
-    return isSame(((SLanguage) obj));
-  }
-
   @Override
   public int hashCode() {
     return 0;

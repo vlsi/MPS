@@ -34,9 +34,11 @@ public class SReferenceLinkAdapterById extends SReferenceLinkAdapter {
     myRoleId = roleId;
   }
 
-  public boolean isSame(SReferenceLink l2) {
-    return (l2 instanceof SReferenceLinkAdapterById) ? myRoleId.equals(((SReferenceLinkAdapterById) l2).myRoleId) :
-        myName.equals(((SReferenceLinkAdapter) l2).myName);
+  @Override
+  public boolean equals(Object obj) {
+    if (!(obj instanceof SReferenceLinkAdapter)) return false;
+    return (obj instanceof SReferenceLinkAdapterById) ? myRoleId.equals(((SReferenceLinkAdapterById) obj).myRoleId) :
+        myName.equals(((SReferenceLinkAdapter) obj).myName);
   }
 
   public SReferenceLinkId getRoleId() {

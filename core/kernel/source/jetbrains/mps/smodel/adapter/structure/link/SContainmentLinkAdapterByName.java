@@ -39,8 +39,10 @@ public class SContainmentLinkAdapterByName extends SContainmentLinkAdapter {
     myConceptName = conceptName;
   }
 
-  public boolean isSame(SContainmentLink l2) {
-    return myName.equals(((SContainmentLinkAdapter) l2).myName);
+  @Override
+  public boolean equals(Object obj) {
+    if (!(obj instanceof SContainmentLink)) return false;
+    return myName.equals(((SContainmentLinkAdapter) obj).myName);
   }
 
   @Override

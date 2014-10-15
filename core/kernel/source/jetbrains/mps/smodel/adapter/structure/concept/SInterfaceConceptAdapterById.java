@@ -35,9 +35,11 @@ public class SInterfaceConceptAdapterById extends SInterfaceConceptAdapter imple
     myConceptId = conceptId;
   }
 
-  public boolean isSame(SInterfaceConcept c2) {
-    return (c2 instanceof SInterfaceConceptAdapterById) ? myConceptId.equals(((SInterfaceConceptAdapterById) c2).myConceptId) : myFqName.equals(
-        ((SInterfaceConceptAdapter) c2).myFqName);
+  @Override
+  public boolean equals(Object obj) {
+    if (!(obj instanceof SInterfaceConcept)) return  false;
+    return (obj instanceof SInterfaceConceptAdapterById) ? myConceptId.equals(((SInterfaceConceptAdapterById) obj).myConceptId) : myFqName.equals(
+        ((SInterfaceConceptAdapter) obj).myFqName);
   }
 
   @Override

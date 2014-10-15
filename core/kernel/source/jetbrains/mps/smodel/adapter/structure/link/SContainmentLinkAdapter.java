@@ -104,14 +104,6 @@ public abstract class SContainmentLinkAdapter implements SContainmentLink {
     return findInConcept(cnode);
   }
 
-  private static final Logger LOG = Logger.wrap(LogManager.getLogger(SContainmentLinkAdapter.class));
-
-  @Override
-  public boolean equals(Object obj) {
-    if (!(obj instanceof SContainmentLink)) return false;
-    return isSame(((SContainmentLink) obj));
-  }
-
   @Override
   public int hashCode() {
     return 0;

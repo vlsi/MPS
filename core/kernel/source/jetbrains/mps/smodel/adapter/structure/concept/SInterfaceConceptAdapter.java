@@ -41,12 +41,6 @@ public abstract class SInterfaceConceptAdapter extends SAbstractConceptAdapter i
   }
 
   @Override
-  public boolean equals(Object obj) {
-    if (!(obj instanceof SInterfaceConcept)) return  false;
-    return isSame(((SInterfaceConcept) obj));
-  }
-
-  @Override
   public int hashCode() {
     return 0;
   }

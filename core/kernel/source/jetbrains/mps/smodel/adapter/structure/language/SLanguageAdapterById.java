@@ -44,8 +44,9 @@ public class SLanguageAdapterById extends SLanguageAdapter{
   }
 
   @Override
-  public boolean isSame(SLanguage l2) {
-    return (l2 instanceof SLanguageAdapterById) ? myLanguage.equals(((SLanguageAdapterById) l2).myLanguage) : myLanguageFqName.equals(((SLanguageAdapter) l2).myLanguageFqName);
+  public boolean equals(Object obj) {
+    if (!(obj instanceof SLanguage)) return  false;
+    return ( obj instanceof SLanguageAdapterById) ? myLanguage.equals(((SLanguageAdapterById) obj).myLanguage) : myLanguageFqName.equals(((SLanguageAdapter) obj).myLanguageFqName);
   }
 
   @Override

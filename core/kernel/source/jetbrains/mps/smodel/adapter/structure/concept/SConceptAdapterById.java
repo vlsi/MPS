@@ -35,9 +35,10 @@ public class SConceptAdapterById extends SConceptAdapter implements SConcept {
     myConceptId = conceptId;
   }
 
-
-  public boolean isSame(SConcept c2) {
-    return (c2 instanceof SConceptAdapterById) ? myConceptId.equals(((SConceptAdapterById) c2).myConceptId) : myFqName.equals(((SConceptAdapter) c2).myFqName);
+  @Override
+  public boolean equals(Object obj) {
+    if (!(obj instanceof SConcept)) return false;
+    return (obj instanceof SConceptAdapterById) ? myConceptId.equals(((SConceptAdapterById) obj).myConceptId) : myFqName.equals(((SConceptAdapter) obj).myFqName);
   }
 
   @Override

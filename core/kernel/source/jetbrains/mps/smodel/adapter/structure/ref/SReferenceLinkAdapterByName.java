@@ -39,8 +39,10 @@ public class SReferenceLinkAdapterByName extends SReferenceLinkAdapter {
     myConceptName = conceptName;
   }
 
-  public boolean isSame(SReferenceLink l2) {
-    return myName.equals(((SReferenceLinkAdapter) l2).myName);
+  @Override
+  public boolean equals(Object obj) {
+    if (!(obj instanceof SReferenceLinkAdapter)) return false;
+    return myName.equals(((SReferenceLinkAdapter) obj).myName);
   }
 
   @Override

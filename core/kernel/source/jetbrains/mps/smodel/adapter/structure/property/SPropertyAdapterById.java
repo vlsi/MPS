@@ -38,9 +38,10 @@ public class SPropertyAdapterById extends SPropertyAdapter {
   }
 
   @Override
-  public boolean isSame(SProperty p) {
-    return (p instanceof SPropertyAdapterById) ? myPropertyId.equals(((SPropertyAdapterById) p).myPropertyId) :
-        myPropertyName.equals(((SPropertyAdapter) p).myPropertyName);
+  public boolean equals(Object obj) {
+    if (!(obj instanceof SProperty)) return  false;
+    return (obj instanceof SPropertyAdapterById) ? myPropertyId.equals(((SPropertyAdapterById) obj).myPropertyId) :
+        myPropertyName.equals(((SPropertyAdapter) obj).myPropertyName);
   }
 
   @Override

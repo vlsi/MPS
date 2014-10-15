@@ -26,15 +26,15 @@ import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 
-import java.util.Collections;
-
 public class SConceptAdapterByName extends SConceptAdapter implements SConcept {
   public SConceptAdapterByName(@NotNull String fqName) {
     super(fqName);
   }
 
-  public boolean isSame(SConcept c2) {
-    return myFqName.equals(((SConceptAdapter) c2).myFqName);
+  @Override
+  public boolean equals(Object obj) {
+    if (!(obj instanceof SConcept)) return false;
+    return myFqName.equals(((SConceptAdapter) obj).myFqName);
   }
 
   @Override
