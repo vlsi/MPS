@@ -15,12 +15,14 @@
  */
 package jetbrains.mps.smodel.adapter.structure.concept;
 
+import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.language.SInterfaceConcept;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public abstract class SConceptAdapter extends SAbstractConceptAdapter implements SConcept {
@@ -31,6 +33,8 @@ public abstract class SConceptAdapter extends SAbstractConceptAdapter implements
   @Override
   public SConcept getSuperConcept() {
     ConceptDescriptor d = getConceptDescriptor();
+    if (d == null) return new SConceptAdapterById(SNodeUtil.conceptId_BaseConcept, SNodeUtil.concept_BaseConcept);
+
     SConceptId superConcept = d.getSuperConceptId();
     if (superConcept == null) return null;
 
@@ -40,6 +44,8 @@ public abstract class SConceptAdapter extends SAbstractConceptAdapter implements
   @Override
   public Iterable<SInterfaceConcept> getSuperInterfaces() {
     ConceptDescriptor d = getConceptDescriptor();
+    if (d == null) return Collections.emptyList();
+
     List<SInterfaceConcept> res = new ArrayList<SInterfaceConcept>();
     for (SConceptId id : d.getParentsIds()) {
       if (id.equals(d.getSuperConceptId())) continue;
@@ -50,7 +56,7 @@ public abstract class SConceptAdapter extends SAbstractConceptAdapter implements
 
   @Override
   public boolean equals(Object obj) {
-    if (!(obj instanceof SConcept)) return  false;
+    if (!(obj instanceof SConcept)) return false;
     return isSame(((SConcept) obj));
   }
 

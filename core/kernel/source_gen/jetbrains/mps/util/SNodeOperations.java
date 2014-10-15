@@ -5,7 +5,6 @@ package jetbrains.mps.util;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import jetbrains.mps.smodel.adapter.structure.concept.SAbstractConceptAdapter;
-import jetbrains.mps.smodel.runtime.illegal.IllegalConceptDescriptor;
 import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
@@ -44,7 +43,7 @@ public class SNodeOperations {
    */
   public static boolean isUnknown(SNode node) {
     ConceptDescriptor cd = ((SAbstractConceptAdapter) node.getConcept()).getConceptDescriptor();
-    return cd instanceof IllegalConceptDescriptor;
+    return cd == null;
   }
   public static boolean isAncestor(SNode ancestor, SNode node) {
     if (ancestor == node) {

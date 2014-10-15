@@ -20,6 +20,7 @@ import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import org.jetbrains.mps.openapi.language.SInterfaceConcept;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public abstract class SInterfaceConceptAdapter extends SAbstractConceptAdapter implements SInterfaceConcept {
@@ -30,6 +31,8 @@ public abstract class SInterfaceConceptAdapter extends SAbstractConceptAdapter i
   @Override
   public Iterable<SInterfaceConcept> getSuperInterfaces() {
     ConceptDescriptor d = getConceptDescriptor();
+    if (d == null) return Collections.emptyList();
+
     List<SInterfaceConcept> res = new ArrayList<SInterfaceConcept>();
     for (SConceptId id : d.getParentsIds()) {
       res.add(new SInterfaceConceptAdapterById(id, ConceptRegistryUtil.getConceptDescriptor(id).getConceptFqName()));

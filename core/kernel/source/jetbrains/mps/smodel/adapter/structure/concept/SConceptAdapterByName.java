@@ -16,6 +16,7 @@
 package jetbrains.mps.smodel.adapter.structure.concept;
 
 import jetbrains.mps.smodel.adapter.structure.language.SLanguageAdapterById;
+import jetbrains.mps.smodel.adapter.structure.language.SLanguageAdapterByName;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import jetbrains.mps.util.NameUtil;
 import org.jetbrains.annotations.NotNull;
@@ -24,6 +25,8 @@ import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
+
+import java.util.Collections;
 
 public class SConceptAdapterByName extends SConceptAdapter implements SConcept {
   public SConceptAdapterByName(@NotNull String fqName) {
@@ -42,7 +45,10 @@ public class SConceptAdapterByName extends SConceptAdapter implements SConcept {
 
   @Override
   public SLanguage getLanguage() {
-    return new SLanguageAdapterById(getConceptDescriptor().getId().getLanguageId(), NameUtil.namespaceFromConceptFQName(myFqName));
+    ConceptDescriptor cd = getConceptDescriptor();
+    if (cd == null) return new SLanguageAdapterByName(NameUtil.namespaceFromConceptFQName(myFqName));
+
+    return new SLanguageAdapterById(cd.getId().getLanguageId(), NameUtil.namespaceFromConceptFQName(myFqName));
   }
 
   @Override
