@@ -1759,7 +1759,6 @@
     <classNode dependClassName="jetbrains.mps.lang.editor.editor.StubCellModel_Collection_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.editor.editor.StubCellModel_Component_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.editor.editor.StubCellModel_Constant_Editor" />
-    <classNode dependClassName="jetbrains.mps.lang.editor.editor.StubDominatesRecord_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.editor.editor.StyleAttributeDeclaration_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.editor.editor.StyleAttributeReferenceExpression_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.editor.editor.StyleClassReferenceList_Editor" />
@@ -2613,16 +2612,6 @@
     <classNode dependClassName="jetbrains.mps.editor.runtime.cells.BigCellUtil" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleImpl" />
     <classNode dependClassName="jetbrains.mps.lang.project.editor.ProjectStructure_StyleSheet" />
-    <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
-    <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
-    <classNode dependClassName="jetbrains.mps.openapi.editor.style.Style" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
-    <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
-  </dependency>
-  <dependency className="jetbrains.mps.lang.editor.editor.StubDominatesRecord_Editor" file="StubDominatesRecord_Editor.java">
-    <classNode dependClassName="jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet" />
-    <classNode dependClassName="jetbrains.mps.editor.runtime.cells.BigCellUtil" />
-    <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleImpl" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.style.Style" />

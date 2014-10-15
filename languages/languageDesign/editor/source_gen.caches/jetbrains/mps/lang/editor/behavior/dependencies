@@ -352,7 +352,6 @@
     <classNode dependClassName="jetbrains.mps.lang.editor.behavior.StubCellModel_Component_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.editor.behavior.StubCellModel_Constant_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.editor.behavior.StubCellModel_ReadOnlyModelAccessor_BehaviorDescriptor" />
-    <classNode dependClassName="jetbrains.mps.lang.editor.behavior.StubDominatesRecord_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.editor.behavior.StyleAttributeDeclaration_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.editor.behavior.StyleAttributeReferenceExpression_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.editor.behavior.StyleClassReferenceList_BehaviorDescriptor" />
@@ -1675,7 +1674,7 @@
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor" />
-    <classNode dependClassName="jetbrains.mps.lang.core.behavior.ImplementationWithStubPart_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.lang.core.behavior.ImplementationPart_BehaviorDescriptor" />
     <classNode extendsClassName="java.lang.Cloneable" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
@@ -2981,17 +2980,6 @@
     <classNode dependClassName="jetbrains.mps.lang.core.behavior.ISuppressErrors_Behavior" />
     <classNode dependClassName="jetbrains.mps.lang.core.behavior.ISuppressErrors_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.editor.behavior.CellModel_ReadOnlyModelAccessor_BehaviorDescriptor" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
-    <classNode extendsClassName="java.lang.Cloneable" />
-    <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
-  </dependency>
-  <dependency className="jetbrains.mps.lang.editor.behavior.StubDominatesRecord_BehaviorDescriptor" file="StubDominatesRecord_BehaviorDescriptor.java">
-    <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.lang.core.behavior.IDontSubstituteByDefault_BehaviorDescriptor" />
-    <classNode dependClassName="jetbrains.mps.lang.core.behavior.ISuppressErrors_Behavior" />
-    <classNode dependClassName="jetbrains.mps.lang.core.behavior.ISuppressErrors_BehaviorDescriptor" />
-    <classNode dependClassName="jetbrains.mps.lang.editor.behavior.DominatesRecord_BehaviorDescriptor" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="java.lang.Cloneable" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />

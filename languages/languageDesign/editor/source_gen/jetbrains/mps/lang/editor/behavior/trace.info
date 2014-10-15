@@ -418,7 +418,7 @@
       <unit at="6,0,14,0" name="jetbrains.mps.lang.editor.behavior.ApplyStyleClass_BehaviorDescriptor" />
     </file>
     <file name="BehaviorAspectDescriptor.java">
-      <unit at="9,0,440,0" name="jetbrains.mps.lang.editor.behavior.BehaviorAspectDescriptor" />
+      <unit at="9,0,438,0" name="jetbrains.mps.lang.editor.behavior.BehaviorAspectDescriptor" />
     </file>
     <file name="StubCellModel_Component_BehaviorDescriptor.java">
       <unit at="10,0,21,0" name="jetbrains.mps.lang.editor.behavior.StubCellModel_Component_BehaviorDescriptor" />
@@ -683,9 +683,6 @@
     </file>
     <file name="UnderlinedStyleClassItem_BehaviorDescriptor.java">
       <unit at="6,0,14,0" name="jetbrains.mps.lang.editor.behavior.UnderlinedStyleClassItem_BehaviorDescriptor" />
-    </file>
-    <file name="StubDominatesRecord_BehaviorDescriptor.java">
-      <unit at="10,0,21,0" name="jetbrains.mps.lang.editor.behavior.StubDominatesRecord_BehaviorDescriptor" />
     </file>
     <file name="StyleKey_BehaviorDescriptor.java">
       <unit at="8,0,19,0" name="jetbrains.mps.lang.editor.behavior.StyleKey_BehaviorDescriptor" />

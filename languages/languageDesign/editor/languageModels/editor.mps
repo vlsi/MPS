@@ -12086,15 +12086,6 @@
       <link role="editorComponent" roleId="tpc2.1078939183255" targetNodeId="tpco.3596842757766811989" resolveInfo="ImplementationRemovedInStubMessage" />
     </node>
   </root>
-  <root type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="7531406846490636415" nodeInfo="ig">
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="Stylesheet" />
-    <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="tpc2.7531406846490636382" resolveInfo="StubDominatesRecord" />
-    <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Component" typeId="tpc2.1078939183254" id="3596842757766946459" nodeInfo="sg">
-      <property name="attractsFocus" nameId="tpc2.1130859485024" value="0" />
-      <link role="parentStyleClass" roleId="tpc2.1381004262292426837" targetNodeId="tpen.1186415544875" resolveInfo="KeyWord" />
-      <link role="editorComponent" roleId="tpc2.1078939183255" targetNodeId="tpco.3596842757766811989" resolveInfo="ImplementationRemovedInStubMessage" />
-    </node>
-  </root>
   <root type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="3162947552742194572" nodeInfo="ig">
     <property name="virtualPackage" nameId="tpck.1193676396447" value="CellModel" />
     <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="tpc2.3162947552742194261" resolveInfo="StubCellModel_Component" />
