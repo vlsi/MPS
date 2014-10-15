@@ -13,7 +13,7 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
   <root>
     <file name="EditorAspectDescriptorImpl.java">
-      <unit at="13,0,295,0" name="jetbrains.mps.lang.editor.editor.EditorAspectDescriptorImpl" />
+      <unit at="13,0,297,0" name="jetbrains.mps.lang.editor.editor.EditorAspectDescriptorImpl" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590299(jetbrains.mps.lang.editor.editor)/1078153915535">
@@ -30544,6 +30544,33 @@
       <unit id="7279578193766839311" at="18,0,30,0" name="jetbrains.mps.lang.editor.editor.CellModel_RefNodeList_AddHint_Actions$CellModel_RefNodeList_AddHint_Actions_INSERT" />
       <unit id="7279578193766839311" at="30,0,42,0" name="jetbrains.mps.lang.editor.editor.CellModel_RefNodeList_AddHint_Actions$CellModel_RefNodeList_AddHint_Actions_INSERT_BEFORE" />
       <unit id="7279578193766839311" at="13,0,43,0" name="jetbrains.mps.lang.editor.editor.CellModel_RefNodeList_AddHint_Actions" />
+    </file>
+  </root>
+  <root nodeRef="r:00000000-0000-4000-0000-011c89590299(jetbrains.mps.lang.editor.editor)/730538219796139763">
+    <file name="StubEditorCellModel_Editor.java">
+      <node id="730538219796139763" at="12,79,13,62" concept="8" />
+      <node id="730538219796139765" at="15,88,16,160" concept="7" />
+      <node id="730538219796139765" at="16,160,17,67" concept="7" />
+      <node id="730538219796139765" at="18,26,19,27" concept="2" />
+      <node id="730538219796139765" at="20,5,21,22" concept="8" />
+      <node id="730538219796139763" at="12,0,15,0" concept="6" trace="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+      <node id="730538219796139765" at="17,67,20,5" concept="5" />
+      <node id="730538219796139765" at="15,0,23,0" concept="6" trace="createComponent_py9cz4_a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+      <scope id="730538219796139763" at="12,79,13,62" />
+      <scope id="730538219796139765" at="18,26,19,27" />
+      <scope id="730538219796139763" at="12,0,15,0">
+        <var name="editorContext" id="730538219796139763" />
+        <var name="node" id="730538219796139763" />
+      </scope>
+      <scope id="730538219796139765" at="15,88,21,22">
+        <var name="bigCell" id="730538219796139765" />
+        <var name="editorCell" id="730538219796139765" />
+      </scope>
+      <scope id="730538219796139765" at="15,0,23,0">
+        <var name="editorContext" id="730538219796139765" />
+        <var name="node" id="730538219796139765" />
+      </scope>
+      <unit id="730538219796139763" at="11,0,24,0" name="jetbrains.mps.lang.editor.editor.StubEditorCellModel_Editor" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590299(jetbrains.mps.lang.editor.editor)/7348800710862483284">

@@ -5,6 +5,7 @@ package jetbrains.mps.lang.test.behavior;
 import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
 import jetbrains.mps.baseLanguage.unitTest.behavior.ITestCase_BehaviorDescriptor;
 import jetbrains.mps.baseLanguage.classifiers.behavior.IClassifier_BehaviorDescriptor;
+import jetbrains.mps.lang.core.behavior.ImplementationPart_BehaviorDescriptor;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.baseLanguage.classifiers.behavior.IClassifier_Behavior;
 import jetbrains.mps.baseLanguage.unitTest.behavior.ITestCase_Behavior;
@@ -12,7 +13,7 @@ import jetbrains.mps.baseLanguage.util.plugin.refactorings.IExtractMethodRefacto
 import java.util.List;
 import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
 
-public class NodesTestCase_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements ITestCase_BehaviorDescriptor, IClassifier_BehaviorDescriptor {
+public class NodesTestCase_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements ITestCase_BehaviorDescriptor, IClassifier_BehaviorDescriptor, ImplementationPart_BehaviorDescriptor {
   public NodesTestCase_BehaviorDescriptor() {
   }
   public SNode virtual_createSuperType_1217433657148(SNode thisNode) {

@@ -6,12 +6,13 @@ import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
 import jetbrains.mps.lang.core.behavior.INamedConcept_BehaviorDescriptor;
 import jetbrains.mps.baseLanguage.unitTest.behavior.ITestCase_BehaviorDescriptor;
 import jetbrains.mps.baseLanguage.unitTest.behavior.ITestMethod_BehaviorDescriptor;
+import jetbrains.mps.lang.core.behavior.ImplementationPart_BehaviorDescriptor;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
 import jetbrains.mps.baseLanguage.unitTest.behavior.ITestCase_Behavior;
 import java.util.List;
 
-public class PatternTest_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements INamedConcept_BehaviorDescriptor, ITestCase_BehaviorDescriptor, ITestMethod_BehaviorDescriptor {
+public class PatternTest_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements INamedConcept_BehaviorDescriptor, ITestCase_BehaviorDescriptor, ITestMethod_BehaviorDescriptor, ImplementationPart_BehaviorDescriptor {
   public PatternTest_BehaviorDescriptor() {
   }
   public String virtual_getClassName_1216136193905(SNode thisNode) {
