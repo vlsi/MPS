@@ -28,7 +28,7 @@ import com.intellij.openapi.wm.impl.IdeFocusManagerHeadless;
 import com.intellij.ui.TreeUIHelper;
 import com.intellij.util.ui.update.MergingUpdateQueue;
 import com.intellij.util.ui.update.Update;
-import jetbrains.mps.MPSCore;
+import jetbrains.mps.RuntimeFlags;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.smodel.ModelAccess;
 import org.apache.log4j.LogManager;
@@ -372,7 +372,7 @@ public abstract class MPSTree extends DnDAwareTree implements Disposable {
   }
 
   public void runRebuildAction(final Runnable rebuildAction, final boolean saveExpansion) {
-    if (MPSCore.getInstance().isTestMode()) {
+    if (RuntimeFlags.isTestMode()) {
       return;
     }
     if (!ThreadUtils.isEventDispatchThread()) {

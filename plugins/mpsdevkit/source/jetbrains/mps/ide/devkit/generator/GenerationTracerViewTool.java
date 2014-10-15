@@ -28,10 +28,11 @@ import com.intellij.ui.content.ContentManagerAdapter;
 import com.intellij.ui.content.ContentManagerEvent;
 import jetbrains.mps.generator.GenerationTrace;
 import jetbrains.mps.ide.generator.TransientModelsComponent;
+import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.ide.tools.BaseProjectTool;
 import jetbrains.mps.ide.tools.CloseAction;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.Computable;
+import jetbrains.mps.util.ComputeRunnable;
 import jetbrains.mps.workbench.action.ActionUtils;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModelReference;
@@ -67,13 +68,15 @@ public class GenerationTracerViewTool extends BaseProjectTool {
 
   //////
   public boolean hasTracingData() {
-    // FIXME not quite nice code
-    return ModelAccess.instance().runReadAction(new Computable<Boolean>() {
+    ComputeRunnable<Boolean> r = new ComputeRunnable<Boolean>(new Computable<Boolean>() {
       @Override
       public Boolean compute() {
+        // FIXME not quite nice code
         return myTransientModelsOwner.getModules().iterator().hasNext();
       }
     });
+    ProjectHelper.getModelAccess(getProject()).runReadAction(r);
+    return r.getResult();
   }
   public boolean hasTraceInputData(SModelReference modelReference) {
     return myTransientModelsOwner.getTrace(modelReference) != null;

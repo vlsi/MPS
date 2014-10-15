@@ -67,6 +67,7 @@ final class GenerationTracerView {
     myViewToken = viewToken;
     myPanel = new JPanel(new BorderLayout());
     myTree = new GenerationTracerTree(this, tracerNode, ProjectHelper.toMPSProject(tool.getProject()));
+    myTree.setRootVisible(false);
     myPanel.add(ScrollPaneFactory.createScrollPane(myTree), BorderLayout.CENTER);
     myPanel.add(createActionsToolbar(), BorderLayout.WEST);
 
