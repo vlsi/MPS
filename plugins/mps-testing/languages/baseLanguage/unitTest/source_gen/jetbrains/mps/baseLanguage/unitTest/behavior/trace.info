@@ -65,7 +65,7 @@
       <unit at="9,0,48,0" name="jetbrains.mps.baseLanguage.unitTest.behavior.BehaviorAspectDescriptor" />
     </file>
     <file name="BTestCase_BehaviorDescriptor.java">
-      <unit at="10,0,39,0" name="jetbrains.mps.baseLanguage.unitTest.behavior.BTestCase_BehaviorDescriptor" />
+      <unit at="11,0,40,0" name="jetbrains.mps.baseLanguage.unitTest.behavior.BTestCase_BehaviorDescriptor" />
     </file>
     <file name="BeforeTest_BehaviorDescriptor.java">
       <unit at="7,0,18,0" name="jetbrains.mps.baseLanguage.unitTest.behavior.BeforeTest_BehaviorDescriptor" />

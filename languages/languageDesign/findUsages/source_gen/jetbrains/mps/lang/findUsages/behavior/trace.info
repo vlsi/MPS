@@ -28,7 +28,7 @@
       <unit at="10,0,27,0" name="jetbrains.mps.lang.findUsages.behavior.CategorizeBlock_BehaviorDescriptor" />
     </file>
     <file name="FinderDeclaration_BehaviorDescriptor.java">
-      <unit at="15,0,50,0" name="jetbrains.mps.lang.findUsages.behavior.FinderDeclaration_BehaviorDescriptor" />
+      <unit at="16,0,51,0" name="jetbrains.mps.lang.findUsages.behavior.FinderDeclaration_BehaviorDescriptor" />
     </file>
     <file name="IsUsedByDefault_BehaviorDescriptor.java">
       <unit at="10,0,27,0" name="jetbrains.mps.lang.findUsages.behavior.IsUsedByDefault_BehaviorDescriptor" />
