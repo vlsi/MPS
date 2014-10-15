@@ -2450,6 +2450,107 @@
       <unit id="2907839077756756657" at="13,0,37,0" name="jetbrains.mps.editorTest.TryingToLeftTransformNewExpression_Test" />
     </file>
   </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/3150412412946301151">
+    <file name="UndoLocalVariableDeclarationCreation_Test.java">
+      <node id="3150412412946301151" at="15,76,16,107" concept="2" />
+      <node id="3150412412946301151" at="16,107,17,117" concept="2" />
+      <node id="3150412412946301151" at="24,51,25,63" concept="2" />
+      <node id="3150412412952081458" at="25,63,26,74" concept="2" />
+      <node id="3150412412946453625" at="26,74,27,30" concept="2" />
+      <node id="3150412412947330515" at="27,30,28,33" concept="2" />
+      <node id="3150412412950570803" at="28,33,29,33" concept="2" />
+      <node id="3150412412946301151" at="12,0,14,0" concept="1" trace="UndoLocalVariableDeclarationCreation_Test#()V" />
+      <node id="3150412412946301151" at="21,0,23,0" concept="1" trace="TestBody#()V" />
+      <node id="3150412412946301151" at="14,0,19,0" concept="5" trace="test_UndoLocalVariableDeclarationCreation#()V" />
+      <node id="3150412412946301151" at="23,0,31,0" concept="5" trace="testMethodImpl#()V" />
+      <scope id="3150412412946301151" at="12,54,12,54" />
+      <scope id="3150412412946301151" at="21,23,21,23" />
+      <scope id="3150412412946301151" at="12,0,14,0" />
+      <scope id="3150412412946301151" at="15,76,17,117" />
+      <scope id="3150412412946301151" at="21,0,23,0" />
+      <scope id="3150412412946301151" at="14,0,19,0" />
+      <scope id="3150412412946301151" at="24,51,29,33" />
+      <scope id="3150412412946301151" at="23,0,31,0" />
+      <unit id="3150412412946301151" at="19,0,32,0" name="jetbrains.mps.editorTest.UndoLocalVariableDeclarationCreation_Test$TestBody" />
+      <unit id="3150412412946301151" at="10,0,33,0" name="jetbrains.mps.editorTest.UndoLocalVariableDeclarationCreation_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/3150412412946403109">
+    <file name="CreateByTyping_Test.java">
+      <node id="3150412412946403109" at="15,54,16,107" concept="2" />
+      <node id="3150412412946403109" at="16,107,17,95" concept="2" />
+      <node id="3150412412946403109" at="24,51,25,63" concept="2" />
+      <node id="3150412412946403909" at="25,63,26,32" concept="2" />
+      <node id="3150412412946403109" at="12,0,14,0" concept="1" trace="CreateByTyping_Test#()V" />
+      <node id="3150412412946403109" at="21,0,23,0" concept="1" trace="TestBody#()V" />
+      <node id="3150412412946403109" at="14,0,19,0" concept="5" trace="test_CreateByTyping#()V" />
+      <node id="3150412412946403109" at="23,0,28,0" concept="5" trace="testMethodImpl#()V" />
+      <scope id="3150412412946403109" at="12,32,12,32" />
+      <scope id="3150412412946403109" at="21,23,21,23" />
+      <scope id="3150412412946403109" at="12,0,14,0" />
+      <scope id="3150412412946403109" at="15,54,17,95" />
+      <scope id="3150412412946403109" at="21,0,23,0" />
+      <scope id="3150412412946403109" at="24,51,26,32" />
+      <scope id="3150412412946403109" at="14,0,19,0" />
+      <scope id="3150412412946403109" at="23,0,28,0" />
+      <unit id="3150412412946403109" at="19,0,29,0" name="jetbrains.mps.editorTest.CreateByTyping_Test$TestBody" />
+      <unit id="3150412412946403109" at="10,0,30,0" name="jetbrains.mps.editorTest.CreateByTyping_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/3150412412953606797">
+    <file name="UndoRedoLocalVariableDeclarationWithInitializerCreation_Test.java">
+      <node id="3150412412953606797" at="15,95,16,107" concept="2" />
+      <node id="3150412412953606797" at="16,107,17,136" concept="2" />
+      <node id="3150412412953606797" at="24,51,25,63" concept="2" />
+      <node id="3150412412953606806" at="25,63,26,74" concept="2" />
+      <node id="3150412412953606808" at="26,74,27,32" concept="2" />
+      <node id="3150412412953606812" at="27,32,28,33" concept="2" />
+      <node id="3150412412953606814" at="28,33,29,33" concept="2" />
+      <node id="3150412412954398181" at="29,33,30,33" concept="2" />
+      <node id="3150412412954398198" at="30,33,31,33" concept="2" />
+      <node id="3150412412954398230" at="31,33,32,33" concept="2" />
+      <node id="3150412412954398267" at="32,33,33,33" concept="2" />
+      <node id="3150412412954398290" at="33,33,34,33" concept="2" />
+      <node id="3150412412954398315" at="34,33,35,33" concept="2" />
+      <node id="3150412412953606797" at="12,0,14,0" concept="1" trace="UndoRedoLocalVariableDeclarationWithInitializerCreation_Test#()V" />
+      <node id="3150412412953606797" at="21,0,23,0" concept="1" trace="TestBody#()V" />
+      <node id="3150412412953606797" at="14,0,19,0" concept="5" trace="test_UndoRedoLocalVariableDeclarationWithInitializerCreation#()V" />
+      <node id="3150412412953606797" at="23,0,37,0" concept="5" trace="testMethodImpl#()V" />
+      <scope id="3150412412953606797" at="12,73,12,73" />
+      <scope id="3150412412953606797" at="21,23,21,23" />
+      <scope id="3150412412953606797" at="12,0,14,0" />
+      <scope id="3150412412953606797" at="15,95,17,136" />
+      <scope id="3150412412953606797" at="21,0,23,0" />
+      <scope id="3150412412953606797" at="14,0,19,0" />
+      <scope id="3150412412953606797" at="24,51,35,33" />
+      <scope id="3150412412953606797" at="23,0,37,0" />
+      <unit id="3150412412953606797" at="19,0,38,0" name="jetbrains.mps.editorTest.UndoRedoLocalVariableDeclarationWithInitializerCreation_Test$TestBody" />
+      <unit id="3150412412953606797" at="10,0,39,0" name="jetbrains.mps.editorTest.UndoRedoLocalVariableDeclarationWithInitializerCreation_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/3150412412955176356">
+    <file name="RestoreRefCellAfterUndo_Test.java">
+      <node id="3150412412955176356" at="15,63,16,107" concept="2" />
+      <node id="3150412412955176356" at="16,107,17,104" concept="2" />
+      <node id="3150412412955176356" at="24,51,25,63" concept="2" />
+      <node id="3150412412955242258" at="25,63,26,74" concept="2" />
+      <node id="3150412412955257137" at="26,74,27,33" concept="2" />
+      <node id="3150412412955176356" at="12,0,14,0" concept="1" trace="RestoreRefCellAfterUndo_Test#()V" />
+      <node id="3150412412955176356" at="21,0,23,0" concept="1" trace="TestBody#()V" />
+      <node id="3150412412955176356" at="14,0,19,0" concept="5" trace="test_RestoreRefCellAfterUndo#()V" />
+      <node id="3150412412955176356" at="23,0,29,0" concept="5" trace="testMethodImpl#()V" />
+      <scope id="3150412412955176356" at="12,41,12,41" />
+      <scope id="3150412412955176356" at="21,23,21,23" />
+      <scope id="3150412412955176356" at="12,0,14,0" />
+      <scope id="3150412412955176356" at="15,63,17,104" />
+      <scope id="3150412412955176356" at="21,0,23,0" />
+      <scope id="3150412412955176356" at="24,51,27,33" />
+      <scope id="3150412412955176356" at="14,0,19,0" />
+      <scope id="3150412412955176356" at="23,0,29,0" />
+      <unit id="3150412412955176356" at="19,0,30,0" name="jetbrains.mps.editorTest.RestoreRefCellAfterUndo_Test$TestBody" />
+      <unit id="3150412412955176356" at="10,0,31,0" name="jetbrains.mps.editorTest.RestoreRefCellAfterUndo_Test" />
+    </file>
+  </root>
   <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/3237167448830985234">
     <file name="AddMultiParensToCast3_Test.java">
       <node id="3237167448830985234" at="15,61,16,107" concept="2" />
