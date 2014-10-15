@@ -49,6 +49,9 @@ public interface SReferenceLink extends SAbstractLink {
   @Deprecated //always false
   boolean isMultiple();
 
+  /**
+   * Returns the declaration node in case sources for this concept are present in IDE
+   */
   @Nullable
   SNode getDeclarationNode();
 

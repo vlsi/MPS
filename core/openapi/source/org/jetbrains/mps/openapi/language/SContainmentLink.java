@@ -53,6 +53,9 @@ public interface SContainmentLink extends SAbstractLink {
    */
   boolean isUnordered();
 
+  /**
+   * Returns the declaration node in case sources for this concept are present in IDE
+   */
   @Nullable
   SNode getDeclarationNode();
 }

@@ -29,6 +29,9 @@ public interface SProperty {
 
   String getName();
 
+  /**
+   * Returns the declaration node in case sources for this concept are present in IDE
+   */
   @Nullable
   SNode getDeclarationNode();
 }
