@@ -15931,37 +15931,6 @@
       </node>
     </node>
   </root>
-  <root type="1i04.ConceptBehavior" typeId="1i04.1225194240794" id="3708815482283562237" nodeInfo="ng">
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="CellModel" />
-    <link role="concept" roleId="1i04.1225194240799" targetNodeId="tpc2.3708815482283559694" resolveInfo="StubCellModel_ReadOnlyModelAccessor" />
-    <node role="constructor" roleId="1i04.1225194240801" type="1i04.ConceptConstructorDeclaration" typeId="1i04.1225194413805" id="3708815482283562392" nodeInfo="in">
-      <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="3708815482283562393" nodeInfo="sn">
-        <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="3708815482283661742" nodeInfo="nn">
-          <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="3708815482283672293" nodeInfo="nn">
-            <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="3708815482283662107" nodeInfo="nn">
-              <node role="operand" roleId="tpee.1197027771414" type="1i04.ThisNodeExpression" typeId="1i04.1225194691553" id="3708815482283661741" nodeInfo="nn" />
-              <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkAccess" typeId="tp25.1138056143562" id="2354370838250522537" nodeInfo="nn">
-                <link role="link" roleId="tp25.1138056516764" targetNodeId="tpc2.3708815482283800576" />
-              </node>
-            </node>
-            <node role="operation" roleId="tpee.1197027833540" type="tp25.Link_SetTargetOperation" typeId="tp25.1140725362528" id="3708815482283674528" nodeInfo="nn">
-              <node role="linkTarget" roleId="tp25.1140725362529" type="tp3r.NodeBuilder" typeId="tp3r.5455284157993863837" id="3162947552741863154" nodeInfo="nn">
-                <node role="quotedNode" roleId="tp3r.5455284157993863838" type="tp3r.NodeBuilderNode" typeId="tp3r.5455284157993863840" id="3162947552741863155" nodeInfo="nn">
-                  <link role="concept" roleId="tp3r.5455284157993910961" targetNodeId="tpee.1068580320020" resolveInfo="IntegerConstant" />
-                  <node role="values" roleId="tp3r.5455284157993911099" type="tp3r.NodeBuilderInitProperty" typeId="tp3r.5455284157993911077" id="3162947552741863156" nodeInfo="ng">
-                    <link role="property" roleId="tp3r.5455284157993911078" targetNodeId="tpee.1068580320021" resolveInfo="value" />
-                    <node role="expression" roleId="tp3r.5455284157993911094" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="3162947552741863157" nodeInfo="nn">
-                      <property name="value" nameId="tpee.1068580320021" value="0" />
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-  </root>
   <root type="1i04.ConceptBehavior" typeId="1i04.1225194240794" id="3708815482283885474" nodeInfo="ng">
     <property name="virtualPackage" nameId="tpck.1193676396447" value="CellModel" />
     <link role="concept" roleId="1i04.1225194240799" targetNodeId="tpc2.3610246225209162225" resolveInfo="StubCellModel_Constant" />

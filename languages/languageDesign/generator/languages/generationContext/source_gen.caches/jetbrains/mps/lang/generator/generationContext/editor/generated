@@ -11,14 +11,14 @@
   <dep model="r:00000000-0000-4000-0000-011c89590284(jetbrains.mps.lang.core.editor)" hash="9dlbnsu62z9ukeyv13dw3ae5z48ml1k" />
   <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="-2hubvwh7bwismm0eld02cqmdefvj5by" />
   <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" hash="-ds0k2lb74rgixgd3bdaak41qmp1755x" />
-  <dep model="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" hash="c1c4dyqb2h5goyroxd9bqbzw3iw4rip" />
-  <dep model="r:00000000-0000-4000-0000-011c8959029f(jetbrains.mps.lang.editor.generator.baseLanguage.template.main@generator)" hash="-alucnlm4sqrgploap9zx36juz6musgg" />
+  <dep model="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" hash="-7hm9ywweejrft2rk4p3f23aqeu8z0w" />
+  <dep model="r:00000000-0000-4000-0000-011c8959029f(jetbrains.mps.lang.editor.generator.baseLanguage.template.main@generator)" hash="8f8fs9xpss5tcz1dmiq3tks30zogcvq" />
   <dep model="r:00000000-0000-4000-0000-011c895902a9(jetbrains.mps.lang.actions.generator.baseLanguage.template.main@generator)" hash="-apuhhsvtqf96ld067hryef9m21351gc" />
   <dep model="r:00000000-0000-4000-0000-011c895902c3(jetbrains.mps.baseLanguage.editor)" hash="ckh4z9r67f3yh5ngrcziuo6xzid3e9q" />
   <dep model="r:00000000-0000-4000-0000-011c895902cc(jetbrains.mps.baseLanguage.generator.java.conceptFunctionDefaults@generator)" hash="c1hnhdpddphjo2fhgyvonweo0t1r37x" />
   <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" hash="-2sqpydigz7vryaerubh22j78l4l08jz" />
-  <dep model="r:00000000-0000-4000-0000-011c895902e3(jetbrains.mps.lang.generator.editor)" hash="71pei8ajngu49874pvq3fs8kzutd18w" />
-  <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" hash="-79i17jk4byaivi4oolmtv7u5cdm5yg5" />
+  <dep model="r:00000000-0000-4000-0000-011c895902e3(jetbrains.mps.lang.generator.editor)" hash="w7iosjgabfghhnqf2gj3haf1t772tj" />
+  <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" hash="-7ksa50ano7293nutni4lxvvdwfvuhod" />
   <dep model="r:00000000-0000-4000-0000-011c895902f3(jetbrains.mps.lang.generator.generationContext.structure)" hash="-p8uwidl30dk4hm5jrnfqmhi5fuwpp" />
   <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" hash="-88dq2j910t3rwbhdmvczf6foy7a2l1t" />
   <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="d987foka3qddszg3k3yjss0jaslj9i" />
@@ -83,7 +83,7 @@
     <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895902e3(jetbrains.mps.lang.generator.editor)" />
     <dep model="r:00000000-0000-4000-0000-011c895902f3(jetbrains.mps.lang.generator.generationContext.structure)" />
-    <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" />
     <file name="GenerationContextOp_GetOutputByLabel_Editor.java" />
   </source>
   <source id="1217004808034" name="GenerationContextOp_Base_Editor" hash="-b6gulx01lpd5f1iwebtrbwiwy6tvpa2">
@@ -105,7 +105,6 @@
     <dep model="r:00000000-0000-4000-0000-011c8959029f(jetbrains.mps.lang.editor.generator.baseLanguage.template.main@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895902e3(jetbrains.mps.lang.generator.editor)" />
     <dep model="r:00000000-0000-4000-0000-011c895902f3(jetbrains.mps.lang.generator.generationContext.structure)" />
-    <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" />
     <file name="GenerationContextOp_GetPrevInputByLabel_Editor.java" />
   </source>
   <source id="1217884859679" name="GenerationContextOp_GetCopiedOutputByInput_Editor" hash="clqsoge040s6n3f5ezub89b4rflqmc0">

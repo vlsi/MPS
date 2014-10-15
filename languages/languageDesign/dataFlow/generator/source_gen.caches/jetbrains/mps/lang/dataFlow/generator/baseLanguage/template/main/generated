@@ -70,7 +70,9 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="QueriesGenerated.java" />
   </common>
-  <source id="1206455304202" name="main" hash="-23thbr2mtjmn9u0vzzt8bzt2m7ma4hm" />
+  <source id="1206455304202" name="main" hash="-23thbr2mtjmn9u0vzzt8bzt2m7ma4hm">
+    <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
+  </source>
   <source id="1206455361358" name="DFABuilders" hash="e5dborr52k4ww4axruj0opuyrjjgsgf">
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.generator.runtime(MPS.Core/jetbrains.mps.generator.runtime@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />

@@ -1756,9 +1756,7 @@
     <classNode dependClassName="jetbrains.mps.lang.editor.editor.SelectInEditorOperation_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.editor.editor.SelectPositionParameter_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.editor.editor.SideTransformAnchorTagStyleClassItem_Editor" />
-    <classNode dependClassName="jetbrains.mps.lang.editor.editor.StubCellModel_Collection_Editor" />
-    <classNode dependClassName="jetbrains.mps.lang.editor.editor.StubCellModel_Component_Editor" />
-    <classNode dependClassName="jetbrains.mps.lang.editor.editor.StubCellModel_Constant_Editor" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.editor.StubEditorCellModel_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.editor.editor.StyleAttributeDeclaration_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.editor.editor.StyleAttributeReferenceExpression_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.editor.editor.StyleClassReferenceList_Editor" />
@@ -2588,33 +2586,10 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.editor.StubCellModel_Collection_Editor" file="StubCellModel_Collection_Editor.java">
-    <classNode dependClassName="jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet" />
+  <dependency className="jetbrains.mps.lang.editor.editor.StubEditorCellModel_Editor" file="StubEditorCellModel_Editor.java">
     <classNode dependClassName="jetbrains.mps.editor.runtime.cells.BigCellUtil" />
-    <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleImpl" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
-    <classNode dependClassName="jetbrains.mps.openapi.editor.style.Style" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
-    <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
-  </dependency>
-  <dependency className="jetbrains.mps.lang.editor.editor.StubCellModel_Component_Editor" file="StubCellModel_Component_Editor.java">
-    <classNode dependClassName="jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet" />
-    <classNode dependClassName="jetbrains.mps.editor.runtime.cells.BigCellUtil" />
-    <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleImpl" />
-    <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
-    <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
-    <classNode dependClassName="jetbrains.mps.openapi.editor.style.Style" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
-    <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
-  </dependency>
-  <dependency className="jetbrains.mps.lang.editor.editor.StubCellModel_Constant_Editor" file="StubCellModel_Constant_Editor.java">
-    <classNode dependClassName="jetbrains.mps.editor.runtime.cells.BigCellUtil" />
-    <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleImpl" />
-    <classNode dependClassName="jetbrains.mps.lang.project.editor.ProjectStructure_StyleSheet" />
-    <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
-    <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
-    <classNode dependClassName="jetbrains.mps.openapi.editor.style.Style" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>

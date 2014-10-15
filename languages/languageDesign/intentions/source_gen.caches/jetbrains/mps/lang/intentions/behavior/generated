@@ -89,7 +89,6 @@
   <source id="1240396432370" name="ParameterizedIntentionDeclaration_Behavior" hash="-egny5oxm7liqw7gdyup1uednq6yaael">
     <dep root="6263518417926802282" />
     <dep model="r:00000000-0000-4000-0000-011c89590353(jetbrains.mps.lang.intentions.structure)" />
-    <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="ParameterizedIntentionDeclaration_Behavior.java" />
   </source>
   <source id="6263518417926802282" name="BaseIntentionDeclaration_Behavior" hash="-eirsli1yhr0d964pbylq2m5droq67f3">

@@ -7,23 +7,17 @@ import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.editor.runtime.cells.BigCellUtil;
-import jetbrains.mps.openapi.editor.style.Style;
-import jetbrains.mps.editor.runtime.style.StyleImpl;
-import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 
-public class StubCellModel_Collection_Editor extends DefaultNodeEditor {
+public class StubEditorCellModel_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createComponent_ibgzh0_a(editorContext, node);
+    return this.createComponent_py9cz4_a(editorContext, node);
   }
-  private EditorCell createComponent_ibgzh0_a(EditorContext editorContext, SNode node) {
+  private EditorCell createComponent_py9cz4_a(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.core.editor.ImplementationRemovedInStubMessage");
     EditorCell bigCell = BigCellUtil.findBigCell(editorCell, node);
     if (bigCell != null) {
       bigCell.setBig(true);
     }
-    Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.apply_KeyWord(style, editorCell);
-    editorCell.getStyle().putAll(style);
     return editorCell;
   }
 }
