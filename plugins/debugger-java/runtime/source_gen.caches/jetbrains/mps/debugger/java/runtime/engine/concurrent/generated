@@ -36,7 +36,6 @@
     <file name="IManagerCommand.java" />
   </source>
   <source id="6520954994829104397" name="Commands" hash="5oyizipilrhip4m1dddfpb08s9gobuh">
-    <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
     <file name="Commands.java" />
   </source>
 </dependencies>

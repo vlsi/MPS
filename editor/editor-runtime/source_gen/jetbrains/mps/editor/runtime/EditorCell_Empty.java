@@ -13,7 +13,7 @@ import jetbrains.mps.editor.runtime.style.Padding;
 import java.awt.event.KeyEvent;
 import jetbrains.mps.nodeEditor.CellSide;
 import com.intellij.util.ui.UIUtil;
-import jetbrains.mps.util.Computable;
+import jetbrains.mps.editor.runtime.commands.EditorComputable;
 import jetbrains.mps.openapi.editor.cells.CellAction;
 import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.editor.runtime.style.StyleAttributesUtil;
@@ -71,9 +71,8 @@ public class EditorCell_Empty extends EditorCell_Basic {
       side = CellSide.RIGHT;
     }
     final CellSide fside = side;
-    return editorContext.executeCommand(new Computable<Boolean>() {
-      @Override
-      public Boolean compute() {
+    EditorComputable<Boolean> transformCommand = new EditorComputable<Boolean>(editorContext) {
+      protected Boolean doCompute() {
         if (fside == CellSide.LEFT) {
           return EditorCell_Empty.this.applyLeftTransform(editorContext, EditorCell_Empty.this, symbol);
         } else if (fside == CellSide.RIGHT) {
@@ -82,7 +81,10 @@ public class EditorCell_Empty extends EditorCell_Basic {
           return true;
         }
       }
-    });
+    };
+
+    editorContext.getRepository().getModelAccess().executeCommand(transformCommand);
+    return transformCommand.getResult();
   }
   private boolean applyLeftTransform(EditorContext editorContext, EditorCell_Empty cellForNewNode, String text) {
     CellAction ltAction = editorContext.getEditorComponent().getActionHandler().getApplicableCellAction(cellForNewNode, CellActionType.LEFT_TRANSFORM);

@@ -51,8 +51,8 @@ import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleAdapter;
 import org.jetbrains.mps.openapi.module.SModuleId;
 import org.jetbrains.mps.openapi.module.SModuleListener;
-import org.jetbrains.mps.openapi.module.SRepositoryAdapter;
 import org.jetbrains.mps.openapi.module.SRepositoryListener;
+import org.jetbrains.mps.openapi.module.SRepositoryListenerBase;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 
 import java.util.ArrayList;
@@ -74,7 +74,7 @@ public class ProjectStructureModule extends AbstractModule implements CoreCompon
   private final SModuleListener myModuleListener = new SModuleAdapter() {
 
   };
-  private final SRepositoryListener myListener = new SRepositoryAdapter() {
+  private final SRepositoryListener myListener = new SRepositoryListenerBase() {
     @Override
     public void moduleAdded(SModule module) {
       refreshModule(module, false);
@@ -274,15 +274,15 @@ public class ProjectStructureModule extends AbstractModule implements CoreCompon
     private void dropModel() {
       if (mySModel == null) return;
 
-      (mySModel).setModelDescriptor(null);
+      final jetbrains.mps.smodel.SModel oldModel = mySModel;
       mySModel = null;
       if (ModelAccess.instance().canWrite()) {
-        notifyModelReplaced(mySModel);
+        replaceModelAndFireEvent(oldModel, null);
       } else {
         ModelAccess.instance().runWriteInEDT(new Runnable() {
           @Override
           public void run() {
-            notifyModelReplaced(mySModel);
+            replaceModelAndFireEvent(oldModel, null);
           }
         });
       }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2014 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,44 +15,41 @@
  */
 package jetbrains.mps.nodeEditor;
 
-import com.intellij.openapi.application.ApplicationManager;
-import com.intellij.openapi.components.ApplicationComponent;
+import com.intellij.openapi.components.ServiceManager;
 import com.intellij.openapi.editor.ex.EditorSettingsExternalizable;
-import com.intellij.openapi.fileTypes.ex.FileTypeManagerEx;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.util.WeakSet;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
-import org.jetbrains.annotations.NotNull;
 
 
-public class CaretBlinker implements ApplicationComponent {
+public class CaretBlinker {
   private static final Logger LOG = LogManager.getLogger(CaretBlinker.class);
 
   public static CaretBlinker getInstance() {
-    return ApplicationManager.getApplication() == null ? null : ApplicationManager.getApplication().getComponent(CaretBlinker.class);
+    return ServiceManager.getService(CaretBlinker.class);
   }
 
   public static final int MIN_BLINKING_PERIOD = 100; //millis
   public static final int MAX_BLINKING_PERIOD = 1000;
 
-  private boolean myStarted = false;
+  private MyRunnable myRunnable;
 
   private final Object myRegistrationLock = new Object();
 
   private WeakSet<EditorComponent> myEditors = new WeakSet<EditorComponent>();
 
 
-  public CaretBlinker(FileTypeManagerEx fileTypeManager) {
+  public CaretBlinker() {
+    launch();
   }
 
-  public void launch() {
-    if (myStarted) return;
-    Thread t = new Thread(new MyRunnable(), "caret blinker daemon");
+  private void launch() {
+    myRunnable = new MyRunnable(getCaretBlinkingRateTimeMillis());
+    Thread t = new Thread(myRunnable, "caret blinker daemon");
     t.setDaemon(true);
     t.setPriority(3);
     t.start();
-    myStarted = true;
   }
 
   public int getCaretBlinkingRateTimeMillis() {
@@ -61,6 +58,9 @@ public class CaretBlinker implements ApplicationComponent {
 
   public void setCaretBlinkingRateTimeMillis(int timeMillis) {
     EditorSettingsExternalizable.getInstance().setBlinkPeriod(timeMillis);
+    if (myRunnable != null) {
+      myRunnable.setBlinkRate(timeMillis);
+    }
   }
 
   public void registerEditor(EditorComponent editorComponent) {
@@ -75,22 +75,12 @@ public class CaretBlinker implements ApplicationComponent {
     }
   }
 
-  @Override
-  public void initComponent() {
-    launch();
-  }
-
-  @Override
-  public void disposeComponent() {
-  }
-
-  @NotNull
-  @Override
-  public String getComponentName() {
-    return "Caret blinker";
-  }
 
   private class MyRunnable implements Runnable {
+    private int myBlinkRate;
+    public MyRunnable(int blinkValue) {
+      setBlinkRate(blinkValue);
+    }
     @Override
     @SuppressWarnings({"InfiniteLoopStatement"})
     public void run() {
@@ -108,12 +98,16 @@ public class CaretBlinker implements ApplicationComponent {
         }
         try {
           synchronized (this) {
-            wait(getCaretBlinkingRateTimeMillis());
+            wait(myBlinkRate);
           }
         } catch (Throwable t) {
           LOG.error(null, t);
         }
       }
+    }
+
+    public void setBlinkRate(int value) {
+      myBlinkRate = value;
     }
   }
 }

@@ -101,7 +101,7 @@ public final class CustomPersistenceSModel extends EditableSModelBase implements
           brokenModel.load();
           // force save
           setChanged(true);
-          return brokenModel.getSModelInternal();
+          return brokenModel.getSModel();
         }
       }
       return (SModel) myPersistence.readModel(getReference(), getSource());
@@ -131,19 +131,15 @@ public final class CustomPersistenceSModel extends EditableSModelBase implements
 
     if (!isLoaded()) return;
 
-    final SModel newModel = loadSModel();
+    final SModel oldModel = myModel;
+    myModel = loadSModel();
     setChanged(false);
-    super.replaceModel(new Runnable() {
-      @Override
-      public void run() {
-        myModel = newModel;
-      }
-    });
+    replaceModelAndFireEvent(oldModel, myModel);
   }
 
   @Override
   protected boolean saveModel() throws ModelSaveException, IOException {
-    SModel smodel = getSModelInternal();
+    SModel smodel = getSModel();
     if (smodel instanceof InvalidSModel) {
       // we do not save stub model to not overwrite the real model
       return false;

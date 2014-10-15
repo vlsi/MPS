@@ -28,6 +28,7 @@ import jetbrains.mps.util.io.ModelOutputStream;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -256,6 +257,12 @@ public abstract class FileSwapOwner implements TransientSwapOwner {
     SModelBase result = new SModelBase(resultModel.getReference(), new NullDataSource()) {
       @Override
       public jetbrains.mps.smodel.SModel getSModelInternal() {
+        return getCurrentModelInternal();
+      }
+
+      @Nullable
+      @Override
+      protected jetbrains.mps.smodel.SModel getCurrentModelInternal() {
         return resultModel;
       }
 

@@ -62,7 +62,7 @@ public class ScriptBuilder_Test extends MockTestCase {
     }));
   }
   @Test
-  public void test_none() throws Exception {
+  public void test_notExisting() throws Exception {
     ScriptBuilder scb = new ScriptBuilder();
     scb.withFacetNames(Sequence.fromIterable(Sequence.fromArray(facets)).select(new ISelector<IFacet, IFacet.Name>() {
       public IFacet.Name select(IFacet f) {
@@ -75,6 +75,25 @@ public class ScriptBuilder_Test extends MockTestCase {
     Assert.assertFalse(sc.isValid());
     Assert.assertTrue(Sequence.fromIterable(sc.validationErrors()).count() == 1);
     Assert.assertTrue(Sequence.fromIterable(sc.validationErrors()).first().toString().contains("target not found: none"));
+  }
+  @Test
+  public void test_noFacets() throws Exception {
+    // Test empty script (no languages/make facets involved) 
+    ScriptBuilder scb = new ScriptBuilder();
+    scb.withFinalTarget(new ITarget.Name("none"));
+    IScript sc = scb.toScript();
+    Assert.assertNotNull(sc);
+    Assert.assertFalse(sc.isValid());
+    Assert.assertTrue(Sequence.fromIterable(sc.validationErrors()).count() == 1);
+    Assert.assertTrue(Sequence.fromIterable(sc.validationErrors()).first().toString().contains("nothing to make"));
+    // Fake ScriptBuilder invocation, to satisfy mock expectations of setUp/tearDown 
+    scb = new ScriptBuilder();
+    scb.withFacetNames(Sequence.fromIterable(Sequence.fromArray(facets)).select(new ISelector<IFacet, IFacet.Name>() {
+      public IFacet.Name select(IFacet f) {
+        return f.getName();
+      }
+    }));
+    scb.toScript();
   }
   public ScriptBuilder_Test() {
   }
@@ -97,27 +116,27 @@ public class ScriptBuilder_Test extends MockTestCase {
     context.checking(new Expectations() {
       {
         atLeast(1).of(fmake).targets();
-        will(returnValue(Sequence.fromArray(new ITarget[]{tmake})));
+        will(Expectations.returnValue(Sequence.fromArray(new ITarget[]{tmake})));
 
         atLeast(1).of(fgen).required();
-        will(returnValue(Sequence.fromArray(new IFacet.Name[]{fmake.getName()})));
+        will(Expectations.returnValue(Sequence.fromArray(new IFacet.Name[]{fmake.getName()})));
         atLeast(1).of(fgen).targets();
-        will(returnValue(Sequence.fromArray(new ITarget[]{tgen, tcfg})));
+        will(Expectations.returnValue(Sequence.fromArray(new ITarget[]{tgen, tcfg})));
 
         allowing(tgen).before();
-        will(returnValue(Sequence.fromArray(new ITarget.Name[]{new ITarget.Name("make")})));
+        will(Expectations.returnValue(Sequence.fromArray(new ITarget.Name[]{new ITarget.Name("make")})));
         allowing(tgen).after();
-        will(returnValue(Sequence.fromArray(new ITarget.Name[]{new ITarget.Name("cfg")})));
+        will(Expectations.returnValue(Sequence.fromArray(new ITarget.Name[]{new ITarget.Name("cfg")})));
 
         atLeast(1).of(ftextgen).required();
-        will(returnValue(Sequence.fromArray(new IFacet.Name[]{fmake.getName(), fgen.getName()})));
+        will(Expectations.returnValue(Sequence.fromArray(new IFacet.Name[]{fmake.getName(), fgen.getName()})));
         atLeast(1).of(ftextgen).targets();
-        will(returnValue(Sequence.fromArray(new ITarget[]{ttextgen})));
+        will(Expectations.returnValue(Sequence.fromArray(new ITarget[]{ttextgen})));
 
         allowing(ttextgen).before();
-        will(returnValue(Sequence.fromArray(new ITarget.Name[]{new ITarget.Name("make")})));
+        will(Expectations.returnValue(Sequence.fromArray(new ITarget.Name[]{new ITarget.Name("make")})));
         allowing(ttextgen).after();
-        will(returnValue(Sequence.fromArray(new ITarget.Name[]{new ITarget.Name("gen")})));
+        will(Expectations.returnValue(Sequence.fromArray(new ITarget.Name[]{new ITarget.Name("gen")})));
       }
     });
     FacetRegistry.getInstance().register(fmake);

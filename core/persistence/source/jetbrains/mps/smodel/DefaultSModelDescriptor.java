@@ -148,7 +148,7 @@ public class DefaultSModelDescriptor extends LazyEditableSModelBase implements G
 
   @Override
   protected boolean saveModel() throws IOException {
-    LazySModel smodel = getSModelInternal();
+    SModel smodel = getSModel();
     if (smodel instanceof InvalidSModel) {
       // we do not save stub model to not overwrite the real model
       return false;
@@ -240,7 +240,7 @@ public class DefaultSModelDescriptor extends LazyEditableSModelBase implements G
     try {
       myHeader = myPersistence.readHeader();
     } catch (ModelReadException e) {
-      updateTimestamp();
+      myTimestampTracker.updateTimestamp(getSource());
       SuspiciousModelHandler.getHandler().handleSuspiciousModel(this, false);
       return;
     }

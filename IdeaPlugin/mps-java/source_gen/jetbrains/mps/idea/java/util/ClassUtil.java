@@ -9,7 +9,6 @@ import jetbrains.mps.smodel.SModelStereotype;
 
 public class ClassUtil {
 
-
   public static String getClassFQName(SNode claz) {
 
     SNode curr = SNodeOperations.cast(((SNode) claz), "jetbrains.mps.baseLanguage.structure.Classifier");

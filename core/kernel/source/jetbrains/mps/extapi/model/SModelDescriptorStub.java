@@ -30,6 +30,7 @@ import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.language.SLanguage;
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.module.SModuleReference;
@@ -169,9 +170,17 @@ public abstract class SModelDescriptorStub implements SModelInternal, SModel, Fa
     }
   }
 
+  // likely has to return SModelData
   public jetbrains.mps.smodel.SModel getSModel() {
     return getSModelInternal();
   }
+
+  /**
+   * Likely, shall return SModelData eventually
+   * @return actual model data or <code>null</code> if not initialized yet
+   */
+  @Nullable
+  protected abstract jetbrains.mps.smodel.SModel getCurrentModelInternal();
 
   //
 

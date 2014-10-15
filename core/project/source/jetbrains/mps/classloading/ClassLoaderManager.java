@@ -19,7 +19,6 @@ import gnu.trove.THashMap;
 import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.progress.EmptyProgressMonitor;
-import jetbrains.mps.project.SModelRootClassesListener;
 import jetbrains.mps.project.SModuleOperations;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.facets.JavaModuleFacet;
@@ -101,7 +100,6 @@ public class ClassLoaderManager implements CoreComponent {
       throw new IllegalStateException("already initialized");
     }
     INSTANCE = this;
-    addClassesHandler(SModelRootClassesListener.INSTANCE);
     myRepository.addRepositoryListener(myRepositoryListener);
     FacetsFacade.getInstance().addFactory(DumbIdeaPluginFacet.FACET_TYPE, new FacetFactory() {
       @Override

@@ -118,21 +118,19 @@ public class TestModule extends AbstractModule {
 
   @Override
   public SModel resolveInDependencies(SModelId reference) {
-    boolean own = myModels.keySet().contains(SModelStereotype.withoutStereotype(reference.getModelName()));
+    boolean own = reference.getModelName() != null && myModels.keySet().contains(SModelStereotype.withoutStereotype(reference.getModelName()));
     if (!own) return super.resolveInDependencies(reference);
     return myModels.get(reference.getModelName());
   }
 
   @Override
   public Iterable<SDependency> getDeclaredDependencies() {
-    //todo make scope more precise. Was left untouched since Evgeny wrote this class
-    return (Iterable)MPSModuleRepository.getInstance().getModules();
+    return myPeer.getDeclaredDependencies();
   }
 
   @Override
   public Set<SLanguage> getUsedLanguages() {
-    //todo make scope more precise. Was left untouched since Evgeny wrote this class
-    return (Set)CollectionUtil.filter(Language.class, IterableUtil.asSet(MPSModuleRepository.getInstance().getModules()));
+    return myPeer.getUsedLanguages();
   }
 
   class TestSModelDescriptor extends BaseSpecialModelDescriptor {
@@ -147,6 +145,12 @@ public class TestModule extends AbstractModule {
 
     @Override
     public jetbrains.mps.smodel.SModel createModel() {
+      if (!myToCopy.isLoaded()) {
+        // we are going to access internal/implementation model which might be in a partially-loaded
+        // state (only public API guarantees proper loading). With partial model, we could face odd
+        // issues (e.g. incomplete set of implicit imports as implementation node's concepts are not considered)
+        myToCopy.load();
+      }
       Document document = ModelPersistence.saveModel(((SModelBase) myToCopy).getSModel());
       Element rootElement = document.getRootElement();
       rootElement.setAttribute(ModelPersistence.MODEL_UID, getReference().toString());

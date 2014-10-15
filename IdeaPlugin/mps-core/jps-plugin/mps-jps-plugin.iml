@@ -24,16 +24,26 @@
     <orderEntry type="library" name="mps.MPS.Core_auto" level="project" />
     <orderEntry type="library" name="mps.MPS.OpenAPI_auto" level="project" />
     <orderEntry type="library" name="mps.jetbrains.mps.tool.common" level="project" />
-    <orderEntry type="module-library" scope="TEST">
+    <orderEntry type="module" module-name="mps-java-jps-plugin" scope="TEST" />
+    <orderEntry type="library" scope="TEST" name="mps.MPS.Editor_auto" level="project" />
+    <orderEntry type="module-library">
       <library>
         <CLASSES>
-          <root url="jar://$APPLICATION_HOME_DIR$/plugins/devkit/lib/jps/devkit-jps-plugin.jar!/" />
+          <root url="jar://$APPLICATION_HOME_DIR$/lib/jps-model.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
       </library>
     </orderEntry>
-    <orderEntry type="module" module-name="mps-java-jps-plugin" scope="TEST" />
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://$APPLICATION_HOME_DIR$/plugins/devkit/lib/devkit-jps-plugin.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
   </component>
 </module>
 
