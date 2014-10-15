@@ -96,9 +96,6 @@
       <implementation-class>jetbrains.mps.idea.core.make.MPSCompilerComponent</implementation-class>
     </component>
     <component>
-      <implementation-class>jetbrains.mps.idea.core.IdeaLibLoader</implementation-class>
-    </component>
-    <component>
       <implementation-class>jetbrains.mps.idea.core.psi.impl.MPSPsiProvider</implementation-class>
     </component>
   </project-components>

@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.openapi.editor.update;
 
+import jetbrains.mps.openapi.editor.EditorComponent;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 
 /**
@@ -24,5 +25,9 @@ import jetbrains.mps.openapi.editor.cells.EditorCell;
 public class UpdaterListenerAdapter implements UpdaterListener {
   @Override
   public void cellSynchronizedWithModel(EditorCell cell) {
+  }
+
+  @Override
+  public void editorUpdated(EditorComponent editorComponent) {
   }
 }

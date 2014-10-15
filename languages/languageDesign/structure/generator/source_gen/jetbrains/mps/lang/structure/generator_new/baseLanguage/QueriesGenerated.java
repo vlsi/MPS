@@ -16,6 +16,7 @@ import jetbrains.mps.lang.structure.behavior.EnumerationMemberDeclaration_Behavi
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.smodel.SNodeId;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
@@ -28,7 +29,6 @@ import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.generator.template.MapSrcMacroContext;
-import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.generator.template.MapSrcMacroPostProcContext;
 import jetbrains.mps.generator.template.TemplateFragmentContext;
 import jetbrains.mps.baseLanguage.behavior.Classifier_Behavior;
@@ -122,7 +122,9 @@ public class QueriesGenerated {
     return NameUtil.nodeFQName(_context.getNode());
   }
   public static Object propertyMacro_GetPropertyValue_4715720811466829486(final PropertyMacroContext _context) {
-    return ((ModuleId.Regular) _context.getOriginalInputModel().getModule().getModuleId()).getUUID().toString();
+    boolean sameModels = _context.getInputModel() == SNodeOperations.getModel(_context.getNode());
+    SModel mainModel = (sameModels ? _context.getOriginalInputModel() : SNodeOperations.getModel(_context.getNode()));
+    return ((ModuleId.Regular) mainModel.getModule().getModuleId()).getUUID().toString();
   }
   public static Object propertyMacro_GetPropertyValue_4715720811466829506(final PropertyMacroContext _context) {
     return ((SNodeId.Regular) _context.getNode().getNodeId()).getId() + "L";

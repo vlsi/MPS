@@ -13,7 +13,7 @@ import org.jetbrains.annotations.Nullable;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
-  /*package*/ final ConceptDescriptor myConceptDispatchModifier = new ConceptDescriptorBuilder("jetbrains.mps.baseLanguage.doubleDispatch.structure.DispatchModifier", MetaIdFactory.conceptId(UUID.fromString("7db4447f-913e-4b81-bd75-c9a473319ac6"), 2403002034744698617L)).super_("jetbrains.mps.baseLanguage.structure.Modifier").super_(MetaIdFactory.conceptId(UUID.fromString("7db4447f-913e-4b81-bd75-c9a473319ac6"), 2403002034744051110L)).parents("jetbrains.mps.baseLanguage.structure.Modifier").parentIds(MetaIdFactory.conceptId(UUID.fromString("7db4447f-913e-4b81-bd75-c9a473319ac6"), 2403002034744051110L)).alias("dispatch", "").create();
+  /*package*/ final ConceptDescriptor myConceptDispatchModifier = new ConceptDescriptorBuilder("jetbrains.mps.baseLanguage.doubleDispatch.structure.DispatchModifier", MetaIdFactory.conceptId(UUID.fromString("7db4447f-913e-4b81-bd75-c9a473319ac6"), 2403002034744698617L)).super_("jetbrains.mps.baseLanguage.structure.Modifier").super_(MetaIdFactory.conceptId(UUID.fromString("f3061a53-9226-4cc5-a443-f952ceaf5816"), 2403002034744051110L)).parents("jetbrains.mps.baseLanguage.structure.Modifier").parentIds(MetaIdFactory.conceptId(UUID.fromString("f3061a53-9226-4cc5-a443-f952ceaf5816"), 2403002034744051110L)).alias("dispatch", "").create();
 
   @Override
   public Collection<ConceptDescriptor> getDescriptors() {
