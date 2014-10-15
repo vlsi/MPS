@@ -35,6 +35,7 @@ public class SLanguageAdapterByName extends SLanguageAdapter {
   }
 
   @Override
+  @Nullable
   public Language getSourceModule() {
     return ModuleRepositoryFacade.getInstance().getModule(myLanguageFqName, Language.class);
   }
