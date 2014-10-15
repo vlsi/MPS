@@ -85,9 +85,7 @@
   <source id="1119639069735" name="EDTL_node_substitute" hash="5x6pqno2z8wpappfbmg3o6s4ojnyxzi">
     <dep model="r:00000000-0000-4000-0000-011c895902b7(jetbrains.mps.lang.typesystem.generator.baseLanguage.template.main@generator)" />
   </source>
-  <source id="1158947431096" name="EDTL_node_factories" hash="-c0pkvyk1axop2hwi4rpi15i8m0zx1pq">
-    <dep model="r:00000000-0000-4000-0000-011c895902b7(jetbrains.mps.lang.typesystem.generator.baseLanguage.template.main@generator)" />
-  </source>
+  <source id="1158947431096" name="EDTL_node_factories" hash="-c0pkvyk1axop2hwi4rpi15i8m0zx1pq" />
   <source id="1177585757706" name="custom_actions" hash="-9ttizm2ar8sb4adgcu49p7t88gp5ekj" />
   <source id="1185874421312" name="EDTL_Actions_node_substitute" hash="cepl1rj1gmblkhlwowcedoelgfiuce1" />
   <source id="1222177296905" name="StyleClassItem" hash="-6lmtr2cnywpn2ccrohy71gglhlrj5xr" />

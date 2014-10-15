@@ -164,7 +164,9 @@
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.generator.runtime(MPS.Core/jetbrains.mps.generator.runtime@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
-  <source id="1096647705671" name="reduce_CellModel_Collection" hash="58og3ek9y1hsvf9k2knncsi573lm2lb" />
+  <source id="1096647705671" name="reduce_CellModel_Collection" hash="58og3ek9y1hsvf9k2knncsi573lm2lb">
+    <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
+  </source>
   <source id="1097139242515" name="reduce_CellModel_Alternation" hash="qzyfb633vm9dzsx746820czi4wulg0" />
   <source id="1097143944735" name="class_EditorComponentDeclaration" hash="bqbb0wctri6qccht9s77etc80qz9s0m">
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.generator.runtime(MPS.Core/jetbrains.mps.generator.runtime@java_stub)" />
