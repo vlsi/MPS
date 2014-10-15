@@ -18,10 +18,15 @@ package jetbrains.mps.smodel.adapter.ids;
 import java.util.UUID;
 
 public abstract class MetaIdFactory {
+  public static final SLanguageId INVALID_LANGUAGE_ID = MetaIdFactory.langId(new UUID(-1, -1));
   public static final SConceptId INVALID_CONCEPT_ID = MetaIdFactory.conceptId(new UUID(-1, -1), -1);
   public static final SPropertyId INVALID_PROP_ID = MetaIdFactory.propId(new UUID(-1, -1), -1, -1);
   public static final SReferenceLinkId INVALID_REF_ID = MetaIdFactory.refId(new UUID(-1, -1), -1, -1);
   public static final SContainmentLinkId INVALID_LINK_ID = MetaIdFactory.linkId(new UUID(-1, -1), -1, -1);
+
+  public static SLanguageId langId(UUID lang) {
+    return new SLanguageId(lang);
+  }
 
   public static SConceptId conceptId(UUID lang, long concept) {
     return new SConceptId(new SLanguageId(lang), concept);
