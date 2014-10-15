@@ -4,11 +4,12 @@ package jetbrains.mps.lang.actions.behavior;
 
 import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
 import jetbrains.mps.lang.core.behavior.ScopeProvider_BehaviorDescriptor;
+import jetbrains.mps.lang.core.behavior.InterfacePart_BehaviorDescriptor;
 import jetbrains.mps.scope.Scope;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.core.behavior.ScopeProvider_Behavior;
 
-public class SideTransformHintSubstituteActionsBuilder_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements ScopeProvider_BehaviorDescriptor {
+public class SideTransformHintSubstituteActionsBuilder_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements ScopeProvider_BehaviorDescriptor, InterfacePart_BehaviorDescriptor {
   public SideTransformHintSubstituteActionsBuilder_BehaviorDescriptor() {
   }
   public Scope virtual_getScope_3734116213129936182(SNode thisNode, SNode kind, SNode child) {
