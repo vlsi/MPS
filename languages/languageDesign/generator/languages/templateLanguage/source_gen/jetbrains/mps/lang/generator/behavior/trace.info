@@ -36,9 +36,6 @@
     <file name="TemplateDeclarationReference_BehaviorDescriptor.java">
       <unit at="8,0,25,0" name="jetbrains.mps.lang.generator.behavior.TemplateDeclarationReference_BehaviorDescriptor" />
     </file>
-    <file name="StubPatternReduction_MappingRule_BehaviorDescriptor.java">
-      <unit at="10,0,21,0" name="jetbrains.mps.lang.generator.behavior.StubPatternReduction_MappingRule_BehaviorDescriptor" />
-    </file>
     <file name="TemplateArgumentQuery_BehaviorDescriptor.java">
       <unit at="9,0,26,0" name="jetbrains.mps.lang.generator.behavior.TemplateArgumentQuery_BehaviorDescriptor" />
     </file>
@@ -51,12 +48,6 @@
     <file name="InlineSwitch_RuleConsequence_BehaviorDescriptor.java">
       <unit at="7,0,15,0" name="jetbrains.mps.lang.generator.behavior.InlineSwitch_RuleConsequence_BehaviorDescriptor" />
     </file>
-    <file name="StubRoot_MappingRule_BehaviorDescriptor.java">
-      <unit at="10,0,21,0" name="jetbrains.mps.lang.generator.behavior.StubRoot_MappingRule_BehaviorDescriptor" />
-    </file>
-    <file name="StubTemplateDeclarationReference_BehaviorDescriptor.java">
-      <unit at="10,0,21,0" name="jetbrains.mps.lang.generator.behavior.StubTemplateDeclarationReference_BehaviorDescriptor" />
-    </file>
     <file name="CreateRootRule_BehaviorDescriptor.java">
       <unit at="9,0,20,0" name="jetbrains.mps.lang.generator.behavior.CreateRootRule_BehaviorDescriptor" />
     </file>
@@ -66,9 +57,6 @@
     <file name="TemplateParameterDeclaration_BehaviorDescriptor.java">
       <unit at="10,0,21,0" name="jetbrains.mps.lang.generator.behavior.TemplateParameterDeclaration_BehaviorDescriptor" />
     </file>
-    <file name="StubWeaveEach_RuleConsequence_BehaviorDescriptor.java">
-      <unit at="10,0,21,0" name="jetbrains.mps.lang.generator.behavior.StubWeaveEach_RuleConsequence_BehaviorDescriptor" />
-    </file>
     <file name="MappingLabelDeclaration_BehaviorDescriptor.java">
       <unit at="11,0,22,0" name="jetbrains.mps.lang.generator.behavior.MappingLabelDeclaration_BehaviorDescriptor" />
     </file>
@@ -76,7 +64,7 @@
       <unit at="9,0,26,0" name="jetbrains.mps.lang.generator.behavior.MappingConfiguration_Condition_BehaviorDescriptor" />
     </file>
     <file name="BehaviorAspectDescriptor.java">
-      <unit at="9,0,188,0" name="jetbrains.mps.lang.generator.behavior.BehaviorAspectDescriptor" />
+      <unit at="9,0,164,0" name="jetbrains.mps.lang.generator.behavior.BehaviorAspectDescriptor" />
     </file>
     <file name="TemplateFragment_ContextNodeQuery_BehaviorDescriptor.java">
       <unit at="9,0,26,0" name="jetbrains.mps.lang.generator.behavior.TemplateFragment_ContextNodeQuery_BehaviorDescriptor" />
@@ -89,9 +77,6 @@
     </file>
     <file name="TemplateDeclaration_BehaviorDescriptor.java">
       <unit at="14,0,37,0" name="jetbrains.mps.lang.generator.behavior.TemplateDeclaration_BehaviorDescriptor" />
-    </file>
-    <file name="StubCreateRootRule_BehaviorDescriptor.java">
-      <unit at="10,0,21,0" name="jetbrains.mps.lang.generator.behavior.StubCreateRootRule_BehaviorDescriptor" />
     </file>
     <file name="Weaving_MappingRule_BehaviorDescriptor.java">
       <unit at="7,0,15,0" name="jetbrains.mps.lang.generator.behavior.Weaving_MappingRule_BehaviorDescriptor" />
@@ -107,9 +92,6 @@
     </file>
     <file name="NodeMacro_BehaviorDescriptor.java">
       <unit at="8,0,22,0" name="jetbrains.mps.lang.generator.behavior.NodeMacro_BehaviorDescriptor" />
-    </file>
-    <file name="StubWeaving_MappingRule_BehaviorDescriptor.java">
-      <unit at="10,0,21,0" name="jetbrains.mps.lang.generator.behavior.StubWeaving_MappingRule_BehaviorDescriptor" />
     </file>
     <file name="SourceSubstituteMacro_SourceNodeQuery_BehaviorDescriptor.java">
       <unit at="9,0,26,0" name="jetbrains.mps.lang.generator.behavior.SourceSubstituteMacro_SourceNodeQuery_BehaviorDescriptor" />
@@ -144,9 +126,6 @@
     <file name="TemplateArgumentVariableRefExpression_BehaviorDescriptor.java">
       <unit at="7,0,15,0" name="jetbrains.mps.lang.generator.behavior.TemplateArgumentVariableRefExpression_BehaviorDescriptor" />
     </file>
-    <file name="StubInlineTemplateWithContext_RuleConsequence_BehaviorDescriptor.java">
-      <unit at="10,0,21,0" name="jetbrains.mps.lang.generator.behavior.StubInlineTemplateWithContext_RuleConsequence_BehaviorDescriptor" />
-    </file>
     <file name="TemplateArgumentParameterExpression_BehaviorDescriptor.java">
       <unit at="7,0,15,0" name="jetbrains.mps.lang.generator.behavior.TemplateArgumentParameterExpression_BehaviorDescriptor" />
     </file>
@@ -161,9 +140,6 @@
     </file>
     <file name="VarMacro_ValueQuery_BehaviorDescriptor.java">
       <unit at="9,0,26,0" name="jetbrains.mps.lang.generator.behavior.VarMacro_ValueQuery_BehaviorDescriptor" />
-    </file>
-    <file name="StubInlineTemplate_RuleConsequence_BehaviorDescriptor.java">
-      <unit at="10,0,21,0" name="jetbrains.mps.lang.generator.behavior.StubInlineTemplate_RuleConsequence_BehaviorDescriptor" />
     </file>
     <file name="TemplateArgumentLinkPatternRefExpression_BehaviorDescriptor.java">
       <unit at="7,0,18,0" name="jetbrains.mps.lang.generator.behavior.TemplateArgumentLinkPatternRefExpression_BehaviorDescriptor" />
@@ -189,14 +165,8 @@
     <file name="TemplateFunctionParameter_parentOutputNode_BehaviorDescriptor.java">
       <unit at="9,0,20,0" name="jetbrains.mps.lang.generator.behavior.TemplateFunctionParameter_parentOutputNode_BehaviorDescriptor" />
     </file>
-    <file name="StubReduction_MappingRule_BehaviorDescriptor.java">
-      <unit at="10,0,21,0" name="jetbrains.mps.lang.generator.behavior.StubReduction_MappingRule_BehaviorDescriptor" />
-    </file>
     <file name="BaseMappingRule_BehaviorDescriptor.java">
       <unit at="8,0,22,0" name="jetbrains.mps.lang.generator.behavior.BaseMappingRule_BehaviorDescriptor" />
-    </file>
-    <file name="StubGeneratorMessage_BehaviorDescriptor.java">
-      <unit at="10,0,21,0" name="jetbrains.mps.lang.generator.behavior.StubGeneratorMessage_BehaviorDescriptor" />
     </file>
     <file name="MappingScript_CodeBlock_BehaviorDescriptor.java">
       <unit at="9,0,23,0" name="jetbrains.mps.lang.generator.behavior.MappingScript_CodeBlock_BehaviorDescriptor" />
@@ -243,9 +213,6 @@
     <file name="AbandonInput_RuleConsequence_BehaviorDescriptor.java">
       <unit at="6,0,14,0" name="jetbrains.mps.lang.generator.behavior.AbandonInput_RuleConsequence_BehaviorDescriptor" />
     </file>
-    <file name="StubInlineSwitch_RuleConsequence_BehaviorDescriptor.java">
-      <unit at="10,0,21,0" name="jetbrains.mps.lang.generator.behavior.StubInlineSwitch_RuleConsequence_BehaviorDescriptor" />
-    </file>
     <file name="MappingScriptReference_BehaviorDescriptor.java">
       <unit at="8,0,16,0" name="jetbrains.mps.lang.generator.behavior.MappingScriptReference_BehaviorDescriptor" />
     </file>
@@ -281,9 +248,6 @@
     </file>
     <file name="PropertyMacro_GetPropertyValue_BehaviorDescriptor.java">
       <unit at="9,0,26,0" name="jetbrains.mps.lang.generator.behavior.PropertyMacro_GetPropertyValue_BehaviorDescriptor" />
-    </file>
-    <file name="StubDropRootRule_BehaviorDescriptor.java">
-      <unit at="10,0,21,0" name="jetbrains.mps.lang.generator.behavior.StubDropRootRule_BehaviorDescriptor" />
     </file>
     <file name="PropertyMacro_BehaviorDescriptor.java">
       <unit at="8,0,16,0" name="jetbrains.mps.lang.generator.behavior.PropertyMacro_BehaviorDescriptor" />
@@ -2107,209 +2071,6 @@
       <unit id="1805153994417064760" at="9,0,19,0" name="jetbrains.mps.lang.generator.behavior.PatternReduction_MappingRule_Behavior" />
     </file>
   </root>
-  <root nodeRef="r:00000000-0000-4000-0000-011c895902e1(jetbrains.mps.lang.generator.behavior)/2354370838250464334">
-    <file name="StubDropRootRule_Behavior.java">
-      <node id="2354370838250484450" at="11,43,12,107" concept="4" />
-      <node id="3162947552741831769" at="14,62,15,63" concept="9" />
-      <node id="3162947552741831769" at="15,63,16,129" concept="9" />
-      <node id="3162947552741831769" at="16,129,17,36" concept="0" />
-      <node id="3162947552741831769" at="16,129,17,36" concept="4" />
-      <node id="3162947552741831769" at="17,36,18,14" concept="10" />
-      <node id="2354370838250464334" at="11,0,14,0" concept="13" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <node id="3162947552741831769" at="14,0,20,0" concept="13" trace="createIntegerConstant_k8dhuj_a0a0a0#()Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <scope id="2354370838250464487" at="11,43,12,107" />
-      <scope id="3162947552741831769" at="16,129,17,36" />
-      <scope id="2354370838250464334" at="11,0,14,0">
-        <var name="thisNode" id="2354370838250464334" />
-      </scope>
-      <scope id="3162947552741831769" at="14,62,18,14">
-        <var name="facade" id="3162947552741831769" />
-        <var name="n1" id="3162947552741831769" />
-      </scope>
-      <scope id="3162947552741831769" at="14,0,20,0" />
-      <unit id="2354370838250464334" at="10,0,21,0" name="jetbrains.mps.lang.generator.behavior.StubDropRootRule_Behavior" />
-    </file>
-  </root>
-  <root nodeRef="r:00000000-0000-4000-0000-011c895902e1(jetbrains.mps.lang.generator.behavior)/2354370838250548122">
-    <file name="StubCreateRootRule_Behavior.java">
-      <node id="2354370838250548126" at="11,43,12,102" concept="4" />
-      <node id="3162947552741832337" at="14,62,15,63" concept="9" />
-      <node id="3162947552741832337" at="15,63,16,129" concept="9" />
-      <node id="3162947552741832337" at="16,129,17,36" concept="0" />
-      <node id="3162947552741832337" at="16,129,17,36" concept="4" />
-      <node id="3162947552741832337" at="17,36,18,14" concept="10" />
-      <node id="2354370838250548122" at="11,0,14,0" concept="13" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <node id="3162947552741832337" at="14,0,20,0" concept="13" trace="createIntegerConstant_js7oys_a0a0a0#()Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <scope id="2354370838250548124" at="11,43,12,102" />
-      <scope id="3162947552741832337" at="16,129,17,36" />
-      <scope id="2354370838250548122" at="11,0,14,0">
-        <var name="thisNode" id="2354370838250548122" />
-      </scope>
-      <scope id="3162947552741832337" at="14,62,18,14">
-        <var name="facade" id="3162947552741832337" />
-        <var name="n1" id="3162947552741832337" />
-      </scope>
-      <scope id="3162947552741832337" at="14,0,20,0" />
-      <unit id="2354370838250548122" at="10,0,21,0" name="jetbrains.mps.lang.generator.behavior.StubCreateRootRule_Behavior" />
-    </file>
-  </root>
-  <root nodeRef="r:00000000-0000-4000-0000-011c895902e1(jetbrains.mps.lang.generator.behavior)/2354370838250558067">
-    <file name="StubRoot_MappingRule_Behavior.java">
-      <node id="2354370838250558094" at="11,43,12,107" concept="4" />
-      <node id="2354370838250561745" at="12,107,13,98" concept="4" />
-      <node id="3162947552741844554" at="15,62,16,63" concept="9" />
-      <node id="3162947552741844554" at="16,63,17,129" concept="9" />
-      <node id="3162947552741844554" at="17,129,18,36" concept="0" />
-      <node id="3162947552741844554" at="17,129,18,36" concept="4" />
-      <node id="3162947552741844554" at="18,36,19,14" concept="10" />
-      <node id="3162947552741844878" at="21,62,22,63" concept="9" />
-      <node id="3162947552741844878" at="22,63,23,129" concept="9" />
-      <node id="3162947552741844878" at="23,129,24,36" concept="0" />
-      <node id="3162947552741844878" at="23,129,24,36" concept="4" />
-      <node id="3162947552741844878" at="24,36,25,14" concept="10" />
-      <node id="2354370838250558067" at="11,0,15,0" concept="13" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <node id="3162947552741844554" at="15,0,21,0" concept="13" trace="createIntegerConstant_7p9iqz_a0a0a0#()Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <node id="3162947552741844878" at="21,0,27,0" concept="13" trace="createIntegerConstant_7p9iqz_a0a1a0#()Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <scope id="3162947552741844554" at="17,129,18,36" />
-      <scope id="3162947552741844878" at="23,129,24,36" />
-      <scope id="2354370838250558069" at="11,43,13,98" />
-      <scope id="2354370838250558067" at="11,0,15,0">
-        <var name="thisNode" id="2354370838250558067" />
-      </scope>
-      <scope id="3162947552741844554" at="15,62,19,14">
-        <var name="facade" id="3162947552741844554" />
-        <var name="n1" id="3162947552741844554" />
-      </scope>
-      <scope id="3162947552741844878" at="21,62,25,14">
-        <var name="facade" id="3162947552741844878" />
-        <var name="n1" id="3162947552741844878" />
-      </scope>
-      <scope id="3162947552741844554" at="15,0,21,0" />
-      <scope id="3162947552741844878" at="21,0,27,0" />
-      <unit id="2354370838250558067" at="10,0,28,0" name="jetbrains.mps.lang.generator.behavior.StubRoot_MappingRule_Behavior" />
-    </file>
-  </root>
-  <root nodeRef="r:00000000-0000-4000-0000-011c895902e1(jetbrains.mps.lang.generator.behavior)/2354370838250565510">
-    <file name="StubReduction_MappingRule_Behavior.java">
-      <node id="2354370838250565897" at="11,43,12,107" concept="4" />
-      <node id="2354370838250565905" at="12,107,13,104" concept="4" />
-      <node id="3162947552741845604" at="15,62,16,63" concept="9" />
-      <node id="3162947552741845604" at="16,63,17,129" concept="9" />
-      <node id="3162947552741845604" at="17,129,18,36" concept="0" />
-      <node id="3162947552741845604" at="17,129,18,36" concept="4" />
-      <node id="3162947552741845604" at="18,36,19,14" concept="10" />
-      <node id="3162947552741845938" at="21,62,22,63" concept="9" />
-      <node id="3162947552741845938" at="22,63,23,129" concept="9" />
-      <node id="3162947552741845938" at="23,129,24,36" concept="0" />
-      <node id="3162947552741845938" at="23,129,24,36" concept="4" />
-      <node id="3162947552741845938" at="24,36,25,14" concept="10" />
-      <node id="2354370838250565510" at="11,0,15,0" concept="13" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <node id="3162947552741845604" at="15,0,21,0" concept="13" trace="createIntegerConstant_v664xs_a0a0a0#()Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <node id="3162947552741845938" at="21,0,27,0" concept="13" trace="createIntegerConstant_v664xs_a0a1a0#()Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <scope id="3162947552741845604" at="17,129,18,36" />
-      <scope id="3162947552741845938" at="23,129,24,36" />
-      <scope id="2354370838250565512" at="11,43,13,104" />
-      <scope id="2354370838250565510" at="11,0,15,0">
-        <var name="thisNode" id="2354370838250565510" />
-      </scope>
-      <scope id="3162947552741845604" at="15,62,19,14">
-        <var name="facade" id="3162947552741845604" />
-        <var name="n1" id="3162947552741845604" />
-      </scope>
-      <scope id="3162947552741845938" at="21,62,25,14">
-        <var name="facade" id="3162947552741845938" />
-        <var name="n1" id="3162947552741845938" />
-      </scope>
-      <scope id="3162947552741845604" at="15,0,21,0" />
-      <scope id="3162947552741845938" at="21,0,27,0" />
-      <unit id="2354370838250565510" at="10,0,28,0" name="jetbrains.mps.lang.generator.behavior.StubReduction_MappingRule_Behavior" />
-    </file>
-  </root>
-  <root nodeRef="r:00000000-0000-4000-0000-011c895902e1(jetbrains.mps.lang.generator.behavior)/2354370838250586067">
-    <file name="StubPatternReduction_MappingRule_Behavior.java">
-      <node id="2354370838250586118" at="11,43,12,104" concept="4" />
-      <node id="2354370838250586126" at="12,104,13,96" concept="4" />
-      <node id="3162947552741836824" at="15,62,16,63" concept="9" />
-      <node id="3162947552741836824" at="16,63,17,129" concept="9" />
-      <node id="3162947552741836824" at="17,129,18,36" concept="0" />
-      <node id="3162947552741836824" at="17,129,18,36" concept="4" />
-      <node id="3162947552741836824" at="18,36,19,14" concept="10" />
-      <node id="3162947552741840707" at="21,62,22,63" concept="9" />
-      <node id="3162947552741840707" at="22,63,23,129" concept="9" />
-      <node id="3162947552741840707" at="23,129,24,36" concept="0" />
-      <node id="3162947552741840707" at="23,129,24,36" concept="4" />
-      <node id="3162947552741840707" at="24,36,25,14" concept="10" />
-      <node id="2354370838250586067" at="11,0,15,0" concept="13" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <node id="3162947552741836824" at="15,0,21,0" concept="13" trace="createIntegerConstant_ql8tu2_a0a0a0#()Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <node id="3162947552741840707" at="21,0,27,0" concept="13" trace="createIntegerConstant_ql8tu2_a0a1a0#()Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <scope id="3162947552741836824" at="17,129,18,36" />
-      <scope id="3162947552741840707" at="23,129,24,36" />
-      <scope id="2354370838250586069" at="11,43,13,96" />
-      <scope id="2354370838250586067" at="11,0,15,0">
-        <var name="thisNode" id="2354370838250586067" />
-      </scope>
-      <scope id="3162947552741836824" at="15,62,19,14">
-        <var name="facade" id="3162947552741836824" />
-        <var name="n1" id="3162947552741836824" />
-      </scope>
-      <scope id="3162947552741840707" at="21,62,25,14">
-        <var name="facade" id="3162947552741840707" />
-        <var name="n1" id="3162947552741840707" />
-      </scope>
-      <scope id="3162947552741836824" at="15,0,21,0" />
-      <scope id="3162947552741840707" at="21,0,27,0" />
-      <unit id="2354370838250586067" at="10,0,28,0" name="jetbrains.mps.lang.generator.behavior.StubPatternReduction_MappingRule_Behavior" />
-    </file>
-  </root>
-  <root nodeRef="r:00000000-0000-4000-0000-011c895902e1(jetbrains.mps.lang.generator.behavior)/2354370838250593730">
-    <file name="StubWeaving_MappingRule_Behavior.java">
-      <node id="2354370838250593781" at="11,43,12,107" concept="4" />
-      <node id="2354370838250603573" at="12,107,13,104" concept="4" />
-      <node id="2354370838250593789" at="13,104,14,105" concept="4" />
-      <node id="3162947552741843190" at="16,62,17,63" concept="9" />
-      <node id="3162947552741843190" at="17,63,18,129" concept="9" />
-      <node id="3162947552741843190" at="18,129,19,36" concept="0" />
-      <node id="3162947552741843190" at="18,129,19,36" concept="4" />
-      <node id="3162947552741843190" at="19,36,20,14" concept="10" />
-      <node id="3162947552741843514" at="22,62,23,63" concept="9" />
-      <node id="3162947552741843514" at="23,63,24,129" concept="9" />
-      <node id="3162947552741843514" at="24,129,25,36" concept="0" />
-      <node id="3162947552741843514" at="24,129,25,36" concept="4" />
-      <node id="3162947552741843514" at="25,36,26,14" concept="10" />
-      <node id="3162947552741843838" at="28,62,29,63" concept="9" />
-      <node id="3162947552741843838" at="29,63,30,129" concept="9" />
-      <node id="3162947552741843838" at="30,129,31,36" concept="0" />
-      <node id="3162947552741843838" at="30,129,31,36" concept="4" />
-      <node id="3162947552741843838" at="31,36,32,14" concept="10" />
-      <node id="2354370838250593730" at="11,0,16,0" concept="13" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <node id="3162947552741843190" at="16,0,22,0" concept="13" trace="createIntegerConstant_9ho8ze_a0a0a0#()Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <node id="3162947552741843514" at="22,0,28,0" concept="13" trace="createIntegerConstant_9ho8ze_a0a1a0#()Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <node id="3162947552741843838" at="28,0,34,0" concept="13" trace="createIntegerConstant_9ho8ze_a0a2a0#()Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <scope id="3162947552741843190" at="18,129,19,36" />
-      <scope id="3162947552741843514" at="24,129,25,36" />
-      <scope id="3162947552741843838" at="30,129,31,36" />
-      <scope id="2354370838250593732" at="11,43,14,105" />
-      <scope id="3162947552741843190" at="16,62,20,14">
-        <var name="facade" id="3162947552741843190" />
-        <var name="n1" id="3162947552741843190" />
-      </scope>
-      <scope id="3162947552741843514" at="22,62,26,14">
-        <var name="facade" id="3162947552741843514" />
-        <var name="n1" id="3162947552741843514" />
-      </scope>
-      <scope id="3162947552741843838" at="28,62,32,14">
-        <var name="facade" id="3162947552741843838" />
-        <var name="n1" id="3162947552741843838" />
-      </scope>
-      <scope id="2354370838250593730" at="11,0,16,0">
-        <var name="thisNode" id="2354370838250593730" />
-      </scope>
-      <scope id="3162947552741843190" at="16,0,22,0" />
-      <scope id="3162947552741843514" at="22,0,28,0" />
-      <scope id="3162947552741843838" at="28,0,34,0" />
-      <unit id="2354370838250593730" at="10,0,35,0" name="jetbrains.mps.lang.generator.behavior.StubWeaving_MappingRule_Behavior" />
-    </file>
-  </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902e1(jetbrains.mps.lang.generator.behavior)/2400318052852908806">
     <file name="TemplateQueryBase_Behavior.java">
       <node id="2400318052852908860" at="12,112,13,28" concept="10" />
@@ -2427,111 +2188,6 @@
         <var name="thisNode" id="2902001550282064516" />
       </scope>
       <unit id="2902001550282064516" at="9,0,16,0" name="jetbrains.mps.lang.generator.behavior.TemplateArgumentPropertyPatternRefExpression_Behavior" />
-    </file>
-  </root>
-  <root nodeRef="r:00000000-0000-4000-0000-011c895902e1(jetbrains.mps.lang.generator.behavior)/3162947552741666846">
-    <file name="StubInlineTemplate_RuleConsequence_Behavior.java">
-      <node id="3162947552741695782" at="11,43,12,101" concept="4" />
-      <node id="3162947552741828134" at="14,62,15,63" concept="9" />
-      <node id="3162947552741828134" at="15,63,16,129" concept="9" />
-      <node id="3162947552741828134" at="16,129,17,36" concept="0" />
-      <node id="3162947552741828134" at="16,129,17,36" concept="4" />
-      <node id="3162947552741828134" at="17,36,18,14" concept="10" />
-      <node id="3162947552741666846" at="11,0,14,0" concept="13" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <node id="3162947552741828134" at="14,0,20,0" concept="13" trace="createIntegerConstant_ual6kk_a0a0a0#()Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <scope id="3162947552741667002" at="11,43,12,101" />
-      <scope id="3162947552741828134" at="16,129,17,36" />
-      <scope id="3162947552741666846" at="11,0,14,0">
-        <var name="thisNode" id="3162947552741666846" />
-      </scope>
-      <scope id="3162947552741828134" at="14,62,18,14">
-        <var name="facade" id="3162947552741828134" />
-        <var name="n1" id="3162947552741828134" />
-      </scope>
-      <scope id="3162947552741828134" at="14,0,20,0" />
-      <unit id="3162947552741666846" at="10,0,21,0" name="jetbrains.mps.lang.generator.behavior.StubInlineTemplate_RuleConsequence_Behavior" />
-    </file>
-  </root>
-  <root nodeRef="r:00000000-0000-4000-0000-011c895902e1(jetbrains.mps.lang.generator.behavior)/3162947552741856495">
-    <file name="StubInlineSwitch_RuleConsequence_Behavior.java">
-      <node id="3162947552741856499" at="11,43,12,107" concept="4" />
-      <node id="3162947552741863154" at="14,62,15,63" concept="9" />
-      <node id="3162947552741863154" at="15,63,16,129" concept="9" />
-      <node id="3162947552741863154" at="16,129,17,36" concept="0" />
-      <node id="3162947552741863154" at="16,129,17,36" concept="4" />
-      <node id="3162947552741863154" at="17,36,18,14" concept="10" />
-      <node id="3162947552741856495" at="11,0,14,0" concept="13" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <node id="3162947552741863154" at="14,0,20,0" concept="13" trace="createIntegerConstant_m3ax2f_a0a0a0#()Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <scope id="3162947552741856497" at="11,43,12,107" />
-      <scope id="3162947552741863154" at="16,129,17,36" />
-      <scope id="3162947552741856495" at="11,0,14,0">
-        <var name="thisNode" id="3162947552741856495" />
-      </scope>
-      <scope id="3162947552741863154" at="14,62,18,14">
-        <var name="facade" id="3162947552741863154" />
-        <var name="n1" id="3162947552741863154" />
-      </scope>
-      <scope id="3162947552741863154" at="14,0,20,0" />
-      <unit id="3162947552741856495" at="10,0,21,0" name="jetbrains.mps.lang.generator.behavior.StubInlineSwitch_RuleConsequence_Behavior" />
-    </file>
-  </root>
-  <root nodeRef="r:00000000-0000-4000-0000-011c895902e1(jetbrains.mps.lang.generator.behavior)/3162947552741866794">
-    <file name="StubInlineTemplateWithContext_RuleConsequence_Behavior.java">
-      <node id="3162947552741866798" at="11,43,12,100" concept="4" />
-      <node id="3162947552741876887" at="14,62,15,63" concept="9" />
-      <node id="3162947552741876887" at="15,63,16,129" concept="9" />
-      <node id="3162947552741876887" at="16,129,17,36" concept="0" />
-      <node id="3162947552741876887" at="16,129,17,36" concept="4" />
-      <node id="3162947552741876887" at="17,36,18,14" concept="10" />
-      <node id="3162947552741866794" at="11,0,14,0" concept="13" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <node id="3162947552741876887" at="14,0,20,0" concept="13" trace="createIntegerConstant_khxlyo_a0a0a0#()Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <scope id="3162947552741866796" at="11,43,12,100" />
-      <scope id="3162947552741876887" at="16,129,17,36" />
-      <scope id="3162947552741866794" at="11,0,14,0">
-        <var name="thisNode" id="3162947552741866794" />
-      </scope>
-      <scope id="3162947552741876887" at="14,62,18,14">
-        <var name="facade" id="3162947552741876887" />
-        <var name="n1" id="3162947552741876887" />
-      </scope>
-      <scope id="3162947552741876887" at="14,0,20,0" />
-      <unit id="3162947552741866794" at="10,0,21,0" name="jetbrains.mps.lang.generator.behavior.StubInlineTemplateWithContext_RuleConsequence_Behavior" />
-    </file>
-  </root>
-  <root nodeRef="r:00000000-0000-4000-0000-011c895902e1(jetbrains.mps.lang.generator.behavior)/3162947552741895187">
-    <file name="StubWeaveEach_RuleConsequence_Behavior.java">
-      <node id="3162947552741895191" at="11,43,12,98" concept="4" />
-      <node id="3162947552741903321" at="12,98,13,105" concept="4" />
-      <node id="3162947552741903075" at="15,62,16,63" concept="9" />
-      <node id="3162947552741903075" at="16,63,17,129" concept="9" />
-      <node id="3162947552741903075" at="17,129,18,36" concept="0" />
-      <node id="3162947552741903075" at="17,129,18,36" concept="4" />
-      <node id="3162947552741903075" at="18,36,19,14" concept="10" />
-      <node id="3162947552741909367" at="21,62,22,63" concept="9" />
-      <node id="3162947552741909367" at="22,63,23,129" concept="9" />
-      <node id="3162947552741909367" at="23,129,24,36" concept="0" />
-      <node id="3162947552741909367" at="23,129,24,36" concept="4" />
-      <node id="3162947552741909367" at="24,36,25,14" concept="10" />
-      <node id="3162947552741895187" at="11,0,15,0" concept="13" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <node id="3162947552741903075" at="15,0,21,0" concept="13" trace="createIntegerConstant_puc516_a0a0a0#()Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <node id="3162947552741909367" at="21,0,27,0" concept="13" trace="createIntegerConstant_puc516_a0a1a0#()Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <scope id="3162947552741903075" at="17,129,18,36" />
-      <scope id="3162947552741909367" at="23,129,24,36" />
-      <scope id="3162947552741895189" at="11,43,13,105" />
-      <scope id="3162947552741895187" at="11,0,15,0">
-        <var name="thisNode" id="3162947552741895187" />
-      </scope>
-      <scope id="3162947552741903075" at="15,62,19,14">
-        <var name="facade" id="3162947552741903075" />
-        <var name="n1" id="3162947552741903075" />
-      </scope>
-      <scope id="3162947552741909367" at="21,62,25,14">
-        <var name="facade" id="3162947552741909367" />
-        <var name="n1" id="3162947552741909367" />
-      </scope>
-      <scope id="3162947552741903075" at="15,0,21,0" />
-      <scope id="3162947552741909367" at="21,0,27,0" />
-      <unit id="3162947552741895187" at="10,0,28,0" name="jetbrains.mps.lang.generator.behavior.StubWeaveEach_RuleConsequence_Behavior" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902e1(jetbrains.mps.lang.generator.behavior)/3462145372627957703">

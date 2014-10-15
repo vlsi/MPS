@@ -27,8 +27,6 @@
   <import index="tp4f" modelUID="r:00000000-0000-4000-0000-011c89590373(jetbrains.mps.baseLanguage.classifiers.structure)" version="0" implicit="yes" />
   <import index="tpdg" modelUID="r:00000000-0000-4000-0000-011c895902a8(jetbrains.mps.lang.actions.structure)" version="23" implicit="yes" />
   <import index="pxpg" modelUID="r:5a550369-d6d9-4c89-a89b-1bb748dc20b3(jetbrains.mps.baseLanguage.checkedDots.structure)" version="-1" implicit="yes" />
-  <import index="tpco" modelUID="r:00000000-0000-4000-0000-011c89590284(jetbrains.mps.lang.core.editor)" version="-1" implicit="yes" />
-  <import index="tpen" modelUID="r:00000000-0000-4000-0000-011c895902c3(jetbrains.mps.baseLanguage.editor)" version="-1" implicit="yes" />
   <root type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="1087903454703" nodeInfo="ig">
     <property name="name" nameId="tpck.1169194664001" value="PropertyMacro_Editor" />
     <property name="virtualPackage" nameId="tpck.1193676396447" value="macro" />
@@ -7092,114 +7090,6 @@
         </node>
       </node>
       <node role="cellLayout" roleId="tpc2.1106270802874" type="tpc2.CellLayout_Indent" typeId="tpc2.1237303669825" id="4426797670062835734" nodeInfo="nn" />
-    </node>
-  </root>
-  <root type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="3596842757766722088" nodeInfo="ig">
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="rule" />
-    <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="tpf8.6751079257640565958" resolveInfo="StubCreateRootRule" />
-    <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Component" typeId="tpc2.1078939183254" id="3596842757766945107" nodeInfo="sg">
-      <property name="attractsFocus" nameId="tpc2.1130859485024" value="0" />
-      <link role="editorComponent" roleId="tpc2.1078939183255" targetNodeId="tpco.3596842757766811989" resolveInfo="ImplementationRemovedInStubMessage" />
-      <link role="parentStyleClass" roleId="tpc2.1381004262292426837" targetNodeId="tpen.1186415544875" resolveInfo="KeyWord" />
-    </node>
-  </root>
-  <root type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="3596842757766946364" nodeInfo="ig">
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="rule" />
-    <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="tpf8.6751079257640565922" resolveInfo="StubReduction_MappingRule" />
-    <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Component" typeId="tpc2.1078939183254" id="3596842757766946369" nodeInfo="sg">
-      <property name="attractsFocus" nameId="tpc2.1130859485024" value="0" />
-      <link role="parentStyleClass" roleId="tpc2.1381004262292426837" targetNodeId="tpen.1186415544875" resolveInfo="KeyWord" />
-      <link role="editorComponent" roleId="tpc2.1078939183255" targetNodeId="tpco.3596842757766811989" resolveInfo="ImplementationRemovedInStubMessage" />
-    </node>
-  </root>
-  <root type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="3596842757766946394" nodeInfo="ig">
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="rule" />
-    <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="tpf8.6751079257640565916" resolveInfo="StubRoot_MappingRule" />
-    <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Component" typeId="tpc2.1078939183254" id="3596842757766946399" nodeInfo="sg">
-      <property name="attractsFocus" nameId="tpc2.1130859485024" value="0" />
-      <link role="editorComponent" roleId="tpc2.1078939183255" targetNodeId="tpco.3596842757766811989" resolveInfo="ImplementationRemovedInStubMessage" />
-      <link role="parentStyleClass" roleId="tpc2.1381004262292426837" targetNodeId="tpen.1186415544875" resolveInfo="KeyWord" />
-    </node>
-  </root>
-  <root type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="3596842757766946424" nodeInfo="ig">
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="rule" />
-    <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="tpf8.6751079257640565920" resolveInfo="StubWeaving_MappingRule" />
-    <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Component" typeId="tpc2.1078939183254" id="3596842757766946429" nodeInfo="sg">
-      <property name="attractsFocus" nameId="tpc2.1130859485024" value="0" />
-      <link role="parentStyleClass" roleId="tpc2.1381004262292426837" targetNodeId="tpen.1186415544875" resolveInfo="KeyWord" />
-      <link role="editorComponent" roleId="tpc2.1078939183255" targetNodeId="tpco.3596842757766811989" resolveInfo="ImplementationRemovedInStubMessage" />
-    </node>
-  </root>
-  <root type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="3596842757766946454" nodeInfo="ig">
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="rule" />
-    <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="tpf8.6751079257640565962" resolveInfo="StubDropRootRule" />
-    <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Component" typeId="tpc2.1078939183254" id="3596842757766946459" nodeInfo="sg">
-      <property name="attractsFocus" nameId="tpc2.1130859485024" value="0" />
-      <link role="parentStyleClass" roleId="tpc2.1381004262292426837" targetNodeId="tpen.1186415544875" resolveInfo="KeyWord" />
-      <link role="editorComponent" roleId="tpc2.1078939183255" targetNodeId="tpco.3596842757766811989" resolveInfo="ImplementationRemovedInStubMessage" />
-    </node>
-  </root>
-  <root type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="3596842757766946484" nodeInfo="ig">
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="rule" />
-    <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="tpf8.6751079257640565921" resolveInfo="StubPatternReduction_MappingRule" />
-    <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Component" typeId="tpc2.1078939183254" id="3596842757766946489" nodeInfo="sg">
-      <property name="attractsFocus" nameId="tpc2.1130859485024" value="0" />
-      <link role="editorComponent" roleId="tpc2.1078939183255" targetNodeId="tpco.3596842757766811989" resolveInfo="ImplementationRemovedInStubMessage" />
-      <link role="parentStyleClass" roleId="tpc2.1381004262292426837" targetNodeId="tpen.1186415544875" resolveInfo="KeyWord" />
-    </node>
-  </root>
-  <root type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="3596842757766946514" nodeInfo="ig">
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="rule.consequence" />
-    <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="tpf8.6751079257640565966" resolveInfo="StubGeneratorMessage" />
-    <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Component" typeId="tpc2.1078939183254" id="3596842757766946519" nodeInfo="sg">
-      <property name="attractsFocus" nameId="tpc2.1130859485024" value="0" />
-      <link role="parentStyleClass" roleId="tpc2.1381004262292426837" targetNodeId="tpen.1186415544875" resolveInfo="KeyWord" />
-      <link role="editorComponent" roleId="tpc2.1078939183255" targetNodeId="tpco.3596842757766811989" resolveInfo="ImplementationRemovedInStubMessage" />
-    </node>
-  </root>
-  <root type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="3596842757766946544" nodeInfo="ig">
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="rule.consequence" />
-    <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="tpf8.6751079257640565965" resolveInfo="StubTemplateDeclarationReference" />
-    <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Component" typeId="tpc2.1078939183254" id="3596842757766946549" nodeInfo="sg">
-      <property name="attractsFocus" nameId="tpc2.1130859485024" value="0" />
-      <link role="parentStyleClass" roleId="tpc2.1381004262292426837" targetNodeId="tpen.1186415544875" resolveInfo="KeyWord" />
-      <link role="editorComponent" roleId="tpc2.1078939183255" targetNodeId="tpco.3596842757766811989" resolveInfo="ImplementationRemovedInStubMessage" />
-    </node>
-  </root>
-  <root type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="3162947552741877194" nodeInfo="ig">
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="rule.consequence" />
-    <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="tpf8.3162947552741866761" resolveInfo="StubInlineTemplateWithContext_RuleConsequence" />
-    <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Component" typeId="tpc2.1078939183254" id="3162947552741877263" nodeInfo="sg">
-      <property name="attractsFocus" nameId="tpc2.1130859485024" value="0" />
-      <link role="editorComponent" roleId="tpc2.1078939183255" targetNodeId="tpco.3596842757766811989" resolveInfo="ImplementationRemovedInStubMessage" />
-      <link role="parentStyleClass" roleId="tpc2.1381004262292426837" targetNodeId="tpen.1186415544875" resolveInfo="KeyWord" />
-    </node>
-  </root>
-  <root type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="3162947552741877540" nodeInfo="ig">
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="rule.consequence" />
-    <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="tpf8.3162947552741856447" resolveInfo="StubInlineSwitch_RuleConsequence" />
-    <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Component" typeId="tpc2.1078939183254" id="3162947552741877545" nodeInfo="sg">
-      <property name="attractsFocus" nameId="tpc2.1130859485024" value="0" />
-      <link role="parentStyleClass" roleId="tpc2.1381004262292426837" targetNodeId="tpen.1186415544875" resolveInfo="KeyWord" />
-      <link role="editorComponent" roleId="tpc2.1078939183255" targetNodeId="tpco.3596842757766811989" resolveInfo="ImplementationRemovedInStubMessage" />
-    </node>
-  </root>
-  <root type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="3162947552741877570" nodeInfo="ig">
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="rule.consequence" />
-    <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="tpf8.3162947552741666822" resolveInfo="StubInlineTemplate_RuleConsequence" />
-    <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Component" typeId="tpc2.1078939183254" id="3162947552741877575" nodeInfo="sg">
-      <property name="attractsFocus" nameId="tpc2.1130859485024" value="0" />
-      <link role="parentStyleClass" roleId="tpc2.1381004262292426837" targetNodeId="tpen.1186415544875" resolveInfo="KeyWord" />
-      <link role="editorComponent" roleId="tpc2.1078939183255" targetNodeId="tpco.3596842757766811989" resolveInfo="ImplementationRemovedInStubMessage" />
-    </node>
-  </root>
-  <root type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="3162947552741909652" nodeInfo="ig">
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="rule.consequence" />
-    <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="tpf8.3162947552741894472" resolveInfo="StubWeaveEach_RuleConsequence" />
-    <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Component" typeId="tpc2.1078939183254" id="3162947552741909828" nodeInfo="sg">
-      <property name="attractsFocus" nameId="tpc2.1130859485024" value="0" />
-      <link role="editorComponent" roleId="tpc2.1078939183255" targetNodeId="tpco.3596842757766811989" resolveInfo="ImplementationRemovedInStubMessage" />
-      <link role="parentStyleClass" roleId="tpc2.1381004262292426837" targetNodeId="tpen.1186415544875" resolveInfo="KeyWord" />
     </node>
   </root>
 </model>
