@@ -21,14 +21,6 @@
       <implementation-class>com.intellij.openapi.components.impl.ServiceManagerImpl</implementation-class>
       <loadForDefaultProject/>
     </component>
-    <component>
-      <interface-class>com.intellij.execution.ExecutionManager</interface-class>
-      <implementation-class>com.intellij.execution.impl.ExecutionManagerImpl</implementation-class>
-    </component>
-    <component>
-      <interface-class>com.intellij.execution.ExecutionTargetManager</interface-class>
-      <implementation-class>com.intellij.execution.ExecutionTargetManagerImpl</implementation-class>
-    </component>
   </project-components>
 
   <xi:include href="/componentSets/Platform.xml" xpointer="xpointer(/components/*)"/>
@@ -36,12 +28,7 @@
   <xi:include href="/componentSets/WindowManagement.xml" xpointer="xpointer(/components/*)"/>
   <xi:include href="/componentSets/MPSLang.xml" xpointer="xpointer(/components/*)"/>
   <xi:include href="/componentSets/MPSProjectView.xml" xpointer="xpointer(/components/*)"/>
-<!-- <xi:include href="Toolwindows.xml" xpointer="xpointer(/components/*)"/> -->
   <xi:include href="/componentSets/Editor.xml" xpointer="xpointer(/components/*)"/>
-<!--
-  <xi:include href="Misc.xml" xpointer="xpointer(/components/*)"/>
-  <xi:include href="Compiler.xml" xpointer="xpointer(/components/*)"/>
--->
   <xi:include href="/componentSets/Execution.xml" xpointer="xpointer(/components/*)"/>
   <xi:include href="/componentSets/VCS.xml" xpointer="xpointer(/components/*)"/>
 </components>
