@@ -4828,18 +4828,6 @@
       <unit id="3696012239575646494" at="9,0,22,0" name="jetbrains.mps.lang.editor.behavior.CellModel_URL_Behavior" />
     </file>
   </root>
-  <root nodeRef="r:00000000-0000-4000-0000-011c89590297(jetbrains.mps.lang.editor.behavior)/3708815482283885474">
-    <file name="StubCellModel_Constant_Behavior.java">
-      <node id="3708815482283885478" at="9,43,10,50" concept="5" />
-      <node id="3708815482283890497" at="10,50,11,54" concept="5" />
-      <node id="3708815482283885474" at="9,0,13,0" concept="15" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <scope id="3708815482283885476" at="9,43,11,54" />
-      <scope id="3708815482283885474" at="9,0,13,0">
-        <var name="thisNode" id="3708815482283885474" />
-      </scope>
-      <unit id="3708815482283885474" at="8,0,14,0" name="jetbrains.mps.lang.editor.behavior.StubCellModel_Constant_Behavior" />
-    </file>
-  </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590297(jetbrains.mps.lang.editor.behavior)/3982520150125054532">
     <file name="QueryFunction_AttributeStyleParameter_Behavior.java">
       <node id="3982520150128905378" at="12,83,13,219" concept="12" />

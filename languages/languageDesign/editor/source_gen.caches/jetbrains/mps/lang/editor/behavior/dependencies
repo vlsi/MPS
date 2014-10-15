@@ -2964,10 +2964,6 @@
     <classNode dependClassName="jetbrains.mps.lang.editor.behavior.StubEditorCellModel_BehaviorDescriptor" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.behavior.StubCellModel_Constant_Behavior" file="StubCellModel_Constant_Behavior.java">
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
-  </dependency>
   <dependency className="jetbrains.mps.lang.editor.behavior.StubCellModel_Constant_BehaviorDescriptor" file="StubCellModel_Constant_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
