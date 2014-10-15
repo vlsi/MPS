@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.persistence.binary;
 
-import jetbrains.mps.smodel.DebugRegistry;
 import jetbrains.mps.smodel.DynamicReference;
 import jetbrains.mps.smodel.DynamicReference.DynamicReferenceOrigin;
 import jetbrains.mps.smodel.InterfaceSNode;
@@ -104,7 +103,7 @@ public class NodesReader {
     if (is.readByte() != '}') {
       throw new IOException("bad stream, no '}'");
     }
-    SContainmentLinkAdapterById linkAdapter = nodeRole == null ? null : new SContainmentLinkAdapterById(nodeRole, cName, linkName);
+    SContainmentLinkAdapterById linkAdapter = nodeRole == null ? null : new SContainmentLinkAdapterById(nodeRole, linkName);
     return new Pair<SContainmentLink, jetbrains.mps.smodel.SNode>(linkAdapter, node);
   }
 
@@ -141,7 +140,7 @@ public class NodesReader {
       SModelReference modelRef = is.readByte() == 18 ? is.readModelReference() : myModelReference;
       String resolveInfo = is.readString();
       SReferenceLinkAdapterById sref =
-          new SReferenceLinkAdapterById(role, cName, roleName);
+          new SReferenceLinkAdapterById(role, roleName);
       if (kind == 1) {
         SReference reference = new StaticReference(
             sref,
@@ -177,7 +176,7 @@ public class NodesReader {
       String propName = is.readString();
       String cName = is.readString();
       String value = is.readString();
-      node.setProperty(new SPropertyAdapterById(prop, cName, propName), InternUtil.intern(value));
+      node.setProperty(new SPropertyAdapterById(prop, propName), InternUtil.intern(value));
     }
   }
 

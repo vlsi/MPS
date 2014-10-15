@@ -21,7 +21,6 @@ import jetbrains.mps.smodel.adapter.structure.concept.ConceptRegistryUtil;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import jetbrains.mps.smodel.runtime.PropertyDescriptor;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SProperty;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -29,8 +28,8 @@ import org.jetbrains.mps.openapi.model.SNode;
 public class SPropertyAdapterById extends SPropertyAdapter {
   private SPropertyId myPropertyId;
 
-  public SPropertyAdapterById(@NotNull SPropertyId propertyId, @NotNull String conceptName, @NotNull String propName) {
-    super(conceptName, propName);
+  public SPropertyAdapterById(@NotNull SPropertyId propertyId, @NotNull String propName) {
+    super(propName);
     this.myPropertyId = propertyId;
   }
 

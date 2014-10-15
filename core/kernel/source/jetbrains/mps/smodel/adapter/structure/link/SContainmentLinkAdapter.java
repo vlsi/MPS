@@ -33,10 +33,8 @@ import org.jetbrains.mps.openapi.model.SNode;
 
 public abstract class SContainmentLinkAdapter implements SContainmentLink {
   protected String myName;
-  protected String myConceptName;
 
-  protected SContainmentLinkAdapter(@NotNull String conceptName, @NotNull String name) {
-    myConceptName = conceptName;
+  protected SContainmentLinkAdapter(@NotNull String name) {
     myName = name;
   }
 

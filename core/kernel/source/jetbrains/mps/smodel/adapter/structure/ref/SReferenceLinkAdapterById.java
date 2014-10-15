@@ -18,9 +18,6 @@ package jetbrains.mps.smodel.adapter.structure.ref;
 import jetbrains.mps.smodel.SNodeId;
 import jetbrains.mps.smodel.adapter.ids.SReferenceLinkId;
 import jetbrains.mps.smodel.adapter.structure.concept.ConceptRegistryUtil;
-import jetbrains.mps.smodel.adapter.structure.link.SContainmentLinkAdapter;
-import jetbrains.mps.smodel.adapter.structure.concept.SConceptAdapterById;
-import jetbrains.mps.smodel.adapter.structure.concept.SInterfaceConceptAdapterById;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import jetbrains.mps.smodel.runtime.ReferenceDescriptor;
 import org.jetbrains.annotations.NotNull;
@@ -32,8 +29,8 @@ import org.jetbrains.mps.openapi.model.SNode;
 public class SReferenceLinkAdapterById extends SReferenceLinkAdapter {
   protected SReferenceLinkId myRoleId;
 
-  public SReferenceLinkAdapterById(@NotNull SReferenceLinkId roleId, @NotNull String conceptName, @NotNull String refName) {
-    super(conceptName, refName);
+  public SReferenceLinkAdapterById(@NotNull SReferenceLinkId roleId, @NotNull String refName) {
+    super(refName);
     myRoleId = roleId;
   }
 

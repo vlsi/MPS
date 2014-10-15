@@ -30,11 +30,9 @@ import org.jetbrains.mps.openapi.language.SProperty;
 import org.jetbrains.mps.openapi.model.SNode;
 
 public abstract class SPropertyAdapter implements SProperty {
-  protected String myConceptName;
   protected String myPropertyName;
 
-  public SPropertyAdapter(String conceptName, String name) {
-    myConceptName = conceptName;
+  public SPropertyAdapter(String name) {
     myPropertyName = name;
   }
 

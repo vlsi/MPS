@@ -22,7 +22,6 @@ import jetbrains.mps.smodel.adapter.ids.SContainmentLinkId;
 import jetbrains.mps.smodel.adapter.structure.concept.ConceptRegistryUtil;
 import jetbrains.mps.smodel.adapter.structure.concept.SConceptAdapterById;
 import jetbrains.mps.smodel.adapter.structure.concept.SInterfaceConceptAdapterById;
-import jetbrains.mps.smodel.adapter.structure.property.SPropertyAdapterByName;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import jetbrains.mps.smodel.runtime.LinkDescriptor;
 import org.jetbrains.annotations.NotNull;
@@ -33,8 +32,11 @@ import org.jetbrains.mps.openapi.model.SNode;
 public class SContainmentLinkAdapterByName extends SContainmentLinkAdapter {
   private static final Logger LOG = Logger.wrap(org.apache.log4j.Logger.getLogger(SContainmentLinkAdapterByName.class));
 
+  protected String myConceptName;
+
   public SContainmentLinkAdapterByName(@NotNull String conceptName, @NotNull String name) {
-    super(conceptName, name);
+    super(name);
+    myConceptName = conceptName;
   }
 
   public boolean isSame(SContainmentLink l2) {

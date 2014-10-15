@@ -26,13 +26,14 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.language.SProperty;
 import org.jetbrains.mps.openapi.model.SNode;
 
-import java.util.UUID;
-
 public class SPropertyAdapterByName extends SPropertyAdapter {
   private static final Logger LOG = Logger.wrap(org.apache.log4j.Logger.getLogger(SPropertyAdapterByName.class));
 
+  protected String myConceptName;
+
   public SPropertyAdapterByName(@NotNull String conceptName, @NotNull String propName) {
-    super(conceptName, propName);
+    super(propName);
+    myConceptName = conceptName;
   }
 
   @Override

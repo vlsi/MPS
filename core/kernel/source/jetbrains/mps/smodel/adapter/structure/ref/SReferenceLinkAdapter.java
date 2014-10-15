@@ -36,10 +36,8 @@ import org.jetbrains.mps.openapi.model.SNode;
 
 public abstract class SReferenceLinkAdapter implements SReferenceLink {
   protected String myName;
-  protected String myConceptName;
 
-  protected SReferenceLinkAdapter(@NotNull String conceptName, @NotNull String name) {
-    myConceptName = conceptName;
+  protected SReferenceLinkAdapter(@NotNull String name) {
     myName = name;
   }
 

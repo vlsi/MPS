@@ -64,7 +64,7 @@ public abstract class SAbstractConceptAdapter implements SAbstractConcept {
 
     ArrayList<SReferenceLink> result = new ArrayList<SReferenceLink>();
     for (SReferenceLinkId rid : d.getReferenceIds()) {
-      result.add(new SReferenceLinkAdapterById(rid, ConceptRegistryUtil.getConceptDescriptor(rid.getConceptId()).getConceptFqName(),
+      result.add(new SReferenceLinkAdapterById(rid,
           d.getRefDescriptor(rid).getName()));
     }
     return result;
@@ -77,7 +77,7 @@ public abstract class SAbstractConceptAdapter implements SAbstractConcept {
 
     ArrayList<SContainmentLink> result = new ArrayList<SContainmentLink>();
     for (SContainmentLinkId rid : d.getLinkIds()) {
-      result.add(new SContainmentLinkAdapterById(rid, ConceptRegistryUtil.getConceptDescriptor(rid.getConceptId()).getConceptFqName(),
+      result.add(new SContainmentLinkAdapterById(rid,
           d.getLinkDescriptor(rid).getName()));
     }
     return result;
@@ -93,14 +93,14 @@ public abstract class SAbstractConceptAdapter implements SAbstractConcept {
     if (d != null) {
       SContainmentLinkId linkId = d.getId();
       ConceptDescriptor cd = ConceptRegistryUtil.getConceptDescriptor(linkId.getConceptId());
-      return new SContainmentLinkAdapterById(linkId, cd.getConceptFqName(), role);
+      return new SContainmentLinkAdapterById(linkId, role);
     } else {
       ReferenceDescriptor r = nodeConcept.getRefDescriptor(role);
       if (r == null)  return null;
 
       SReferenceLinkId linkId = r.getId();
       ConceptDescriptor cd = ConceptRegistryUtil.getConceptDescriptor(linkId.getConceptId());
-      return new SReferenceLinkAdapterById(linkId, cd.getConceptFqName(), role);
+      return new SReferenceLinkAdapterById(linkId, role);
     }
   }
 
@@ -113,7 +113,7 @@ public abstract class SAbstractConceptAdapter implements SAbstractConcept {
     for (SContainmentLinkId lid : cd.getLinkIds()) {
       LinkDescriptor ld = cd.getLinkDescriptor(lid);
       ConceptDescriptor origConcept = ConceptRegistryUtil.getConceptDescriptor(lid.getConceptId());
-      result.add(new SContainmentLinkAdapterById(lid, origConcept.getConceptFqName(), ld.getName()));
+      result.add(new SContainmentLinkAdapterById(lid, ld.getName()));
     }
     return result;
   }
@@ -127,7 +127,7 @@ public abstract class SAbstractConceptAdapter implements SAbstractConcept {
     PropertyDescriptor d = cd.getPropertyDescriptor(name);
     SPropertyId pid = d.getId();
     ConceptDescriptor originalConcept = ConceptRegistryUtil.getConceptDescriptor(pid.getConceptId());
-    return new SPropertyAdapterById(pid, originalConcept.getConceptFqName(), name);
+    return new SPropertyAdapterById(pid, name);
   }
 
   @Override
@@ -137,7 +137,7 @@ public abstract class SAbstractConceptAdapter implements SAbstractConcept {
 
     ArrayList<SProperty> result = new ArrayList<SProperty>();
     for (SPropertyId pid : d.getPropertyIds()) {
-      result.add(new SPropertyAdapterById(pid, ConceptRegistryUtil.getConceptDescriptor(pid.getConceptId()).getConceptFqName(),
+      result.add(new SPropertyAdapterById(pid,
           d.getPropertyDescriptor(pid).getName()));
     }
     return result;
