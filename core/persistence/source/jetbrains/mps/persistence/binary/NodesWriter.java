@@ -72,12 +72,11 @@ public class NodesWriter {
 
   public void writeNode(SNode node, ModelOutputStream os) throws IOException {
     os.writeString(IdHelper.getConceptId(node.getConcept()).serialize());
-    os.writeString(IdInfoCollector.getConceptName(IdHelper.getConceptId(node.getConcept())));
+    os.writeString(node.getConcept().getQualifiedName());
     os.writeNodeId(node.getNodeId());
     SContainmentLink roleInParentId = node.getContainmentLink();
     os.writeString(roleInParentId == null ? null : IdHelper.getLinkId(roleInParentId).serialize());
-    os.writeString(roleInParentId == null ? null : IdInfoCollector.getLinkName(IdHelper.getLinkId(roleInParentId)));
-    os.writeString(roleInParentId == null ? null : IdInfoCollector.getConceptName(IdHelper.getLinkId(roleInParentId).getConceptId()));
+    os.writeString(roleInParentId == null ? null : roleInParentId.getRoleName());
     os.writeByte(getNodeInfo(node));
     os.writeByte('{');
 
@@ -139,8 +138,7 @@ public class NodesWriter {
         throw new IOException("cannot store reference: " + reference.toString());
       }
       os.writeString(IdHelper.getRefId(reference.getReferenceLink()).serialize());
-      os.writeString(IdInfoCollector.getReferenceName(IdHelper.getRefId(reference.getReferenceLink())));
-      os.writeString(IdInfoCollector.getConceptName(IdHelper.getRefId(reference.getReferenceLink()).getConceptId()));
+      os.writeString(reference.getReferenceLink().getRoleName());
       if (targetModelReference != null && targetModelReference.equals(myModelReference)) {
         os.writeByte(17);
       } else {
@@ -159,8 +157,7 @@ public class NodesWriter {
     os.writeInt(properties.size());
     for (Entry<SProperty, String> entry : properties.entrySet()) {
       os.writeString(IdHelper.getPropertyId(entry.getKey()).serialize());
-      os.writeString(IdInfoCollector.getPropertyName(IdHelper.getPropertyId(entry.getKey())));
-      os.writeString(IdInfoCollector.getConceptName(IdHelper.getPropertyId(entry.getKey()).getConceptId()));
+      os.writeString(entry.getKey().getName());
       os.writeString(entry.getValue());
     }
   }

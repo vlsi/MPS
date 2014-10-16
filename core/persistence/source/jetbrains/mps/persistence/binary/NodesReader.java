@@ -72,7 +72,6 @@ public class NodesReader {
     SNodeId nodeId = is.readNodeId();
     String linkStr = is.readString();
     String linkName = is.readString();
-    String cName = is.readString();
     SContainmentLinkId nodeRole = linkStr == null ? null : SContainmentLinkId.deserialize(linkStr);
     byte nodeInfo = is.readByte();
     if (is.readByte() != '{') {
@@ -136,7 +135,6 @@ public class NodesReader {
       DynamicReferenceOrigin origin = kind == 3 ? new DynamicReferenceOrigin(is.readNodePointer(), is.readNodePointer()) : null;
       SReferenceLinkId role = SReferenceLinkId.deserialize(is.readString());
       String roleName = is.readString();
-      String cName = is.readString();
       SModelReference modelRef = is.readByte() == 18 ? is.readModelReference() : myModelReference;
       String resolveInfo = is.readString();
       SReferenceLinkAdapterById sref =
@@ -174,7 +172,6 @@ public class NodesReader {
     for (; properties > 0; properties--) {
       SPropertyId prop = SPropertyId.deserialize(is.readString());
       String propName = is.readString();
-      String cName = is.readString();
       String value = is.readString();
       node.setProperty(new SPropertyAdapterById(prop, propName), InternUtil.intern(value));
     }
