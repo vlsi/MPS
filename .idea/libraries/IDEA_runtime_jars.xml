@@ -6,6 +6,7 @@
       <root url="jar://$PROJECT_DIR$/lib/commons-codec-1.8.jar!/" />
       <root url="jar://$PROJECT_DIR$/lib/commons-net-3.1.jar!/" />
       <root url="jar://$PROJECT_DIR$/lib/guava-17.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/snappy-in-java-0.3.jar!/" />
     </CLASSES>
     <JAVADOC>
       <root url="jar://$PROJECT_DIR$/lib/src/commons-httpclient-3.1-src-patched.zip!/commons-httpclient-3.1/docs/apidocs" />
@@ -20,6 +21,8 @@
       <root url="jar://$PROJECT_DIR$/lib/src/commons-httpclient-3.1-src-patched.zip!/commons-httpclient-3.1/src/examples" />
       <root url="jar://$PROJECT_DIR$/lib/src/commons-net-3.1-sources.jar!/" />
       <root url="jar://$PROJECT_DIR$/lib/src/guava-17.0-sources.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/src/snappy-in-java-0.3-src.jar!/snappy-snappy-0.3/src/main/java" />
+      <root url="jar://$PROJECT_DIR$/lib/src/snappy-in-java-0.3-src.jar!/snappy-snappy-0.3/src/test/java" />
     </SOURCES>
   </library>
 </component>
