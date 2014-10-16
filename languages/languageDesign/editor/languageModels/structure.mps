@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<model modelUID="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" version="39">
+<model modelUID="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" version="40">
   <persistence version="8" />
   <language namespace="c72da2b9-7cce-4447-8389-f407dc1158b7(jetbrains.mps.lang.structure)" />
   <language namespace="f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)" />
@@ -3880,7 +3880,7 @@
   </root>
   <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="8104358048506730324" nodeInfo="ig">
     <property name="virtualPackage" nameId="tpck.1193676396447" value="CellModel" />
-    <property name="name" nameId="tpck.1169194664001" value="StubCellModel_HierarchicalTable" />
+    <property name="name" nameId="tpck.1169194664001" value="StubCellModel_HierarchycalTable" />
     <link role="extends" roleId="tpce.1071489389519" targetNodeId="730538219796139730" resolveInfo="StubEditorCellModel" />
   </root>
   <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="8104358048506731195" nodeInfo="ig">

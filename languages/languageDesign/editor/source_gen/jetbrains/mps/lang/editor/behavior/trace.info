@@ -663,9 +663,6 @@
     <file name="BooleanStyleSheetItem_BehaviorDescriptor.java">
       <unit at="8,0,20,0" name="jetbrains.mps.lang.editor.behavior.BooleanStyleSheetItem_BehaviorDescriptor" />
     </file>
-    <file name="StubCellModel_HierarchicalTable_BehaviorDescriptor.java">
-      <unit at="6,0,14,0" name="jetbrains.mps.lang.editor.behavior.StubCellModel_HierarchicalTable_BehaviorDescriptor" />
-    </file>
     <file name="CellMenuPart_ReplaceChild_currentChild_BehaviorDescriptor.java">
       <unit at="8,0,16,0" name="jetbrains.mps.lang.editor.behavior.CellMenuPart_ReplaceChild_currentChild_BehaviorDescriptor" />
     </file>
@@ -722,6 +719,9 @@
     </file>
     <file name="QueryFunction_Color_BehaviorDescriptor.java">
       <unit at="7,0,24,0" name="jetbrains.mps.lang.editor.behavior.QueryFunction_Color_BehaviorDescriptor" />
+    </file>
+    <file name="StubCellModel_HierarchycalTable_BehaviorDescriptor.java">
+      <unit at="6,0,14,0" name="jetbrains.mps.lang.editor.behavior.StubCellModel_HierarchycalTable_BehaviorDescriptor" />
     </file>
     <file name="CellModel_Constant_BehaviorDescriptor.java">
       <unit at="7,0,24,0" name="jetbrains.mps.lang.editor.behavior.CellModel_Constant_BehaviorDescriptor" />
