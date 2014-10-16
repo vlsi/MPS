@@ -57,6 +57,7 @@ public class DFABuilders extends DataFlowBuilders {
     manager.register("jetbrains.mps.baseLanguage.structure.StatementList", new StatementList_DataFlow());
     manager.register("jetbrains.mps.baseLanguage.structure.StaticInitializer", new StaticInitializer_DataFlow());
     manager.register("jetbrains.mps.baseLanguage.structure.StaticMethodCall", new StaticMethodCall_DataFlow());
+    manager.register("jetbrains.mps.baseLanguage.structure.StubStatementList", new StubStatementList_DataFlow());
     manager.register("jetbrains.mps.baseLanguage.structure.SubstringExpression", new SubstringExpression_DataFlow());
     manager.register("jetbrains.mps.baseLanguage.structure.SwitchCase", new SwitchCase_DataFlow());
     manager.register("jetbrains.mps.baseLanguage.structure.SwitchStatement", new SwitchStatement_DataFlow());

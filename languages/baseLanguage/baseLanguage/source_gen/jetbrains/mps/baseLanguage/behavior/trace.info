@@ -306,7 +306,7 @@
       <unit at="9,0,20,0" name="jetbrains.mps.baseLanguage.behavior.BaseVariableDeclaration_BehaviorDescriptor" />
     </file>
     <file name="GetAccessor_BehaviorDescriptor.java">
-      <unit at="9,0,41,0" name="jetbrains.mps.baseLanguage.behavior.GetAccessor_BehaviorDescriptor" />
+      <unit at="9,0,44,0" name="jetbrains.mps.baseLanguage.behavior.GetAccessor_BehaviorDescriptor" />
     </file>
     <file name="IBLDeprecatable_BehaviorDescriptor.java">
       <unit at="8,0,12,0" name="jetbrains.mps.baseLanguage.behavior.IBLDeprecatable_BehaviorDescriptor" />
@@ -321,7 +321,7 @@
       <unit at="8,0,40,0" name="jetbrains.mps.baseLanguage.behavior.ClassCreator_BehaviorDescriptor" />
     </file>
     <file name="BaseMethodDeclaration_BehaviorDescriptor.java">
-      <unit at="16,0,106,0" name="jetbrains.mps.baseLanguage.behavior.BaseMethodDeclaration_BehaviorDescriptor" />
+      <unit at="16,0,109,0" name="jetbrains.mps.baseLanguage.behavior.BaseMethodDeclaration_BehaviorDescriptor" />
     </file>
     <file name="AbstractForStatement_BehaviorDescriptor.java">
       <unit at="8,0,19,0" name="jetbrains.mps.baseLanguage.behavior.AbstractForStatement_BehaviorDescriptor" />
@@ -531,7 +531,7 @@
       <unit at="7,0,15,0" name="jetbrains.mps.baseLanguage.behavior.ImplicitAnnotationInstanceValue_BehaviorDescriptor" />
     </file>
     <file name="ConceptFunction_BehaviorDescriptor.java">
-      <unit at="15,0,77,0" name="jetbrains.mps.baseLanguage.behavior.ConceptFunction_BehaviorDescriptor" />
+      <unit at="15,0,80,0" name="jetbrains.mps.baseLanguage.behavior.ConceptFunction_BehaviorDescriptor" />
     </file>
     <file name="IGenericType_BehaviorDescriptor.java">
       <unit at="9,0,16,0" name="jetbrains.mps.baseLanguage.behavior.IGenericType_BehaviorDescriptor" />
@@ -792,7 +792,7 @@
       <unit at="6,0,8,0" name="jetbrains.mps.baseLanguage.behavior.IHasModifiers_BehaviorDescriptor" />
     </file>
     <file name="SetAccessor_BehaviorDescriptor.java">
-      <unit at="9,0,41,0" name="jetbrains.mps.baseLanguage.behavior.SetAccessor_BehaviorDescriptor" />
+      <unit at="9,0,44,0" name="jetbrains.mps.baseLanguage.behavior.SetAccessor_BehaviorDescriptor" />
     </file>
     <file name="ShiftLeftExpression_BehaviorDescriptor.java">
       <unit at="7,0,18,0" name="jetbrains.mps.baseLanguage.behavior.ShiftLeftExpression_BehaviorDescriptor" />
@@ -837,7 +837,7 @@
       <unit at="11,0,52,0" name="jetbrains.mps.baseLanguage.behavior.VariableDeclaration_BehaviorDescriptor" />
     </file>
     <file name="IMethodLike_BehaviorDescriptor.java">
-      <unit at="8,0,16,0" name="jetbrains.mps.baseLanguage.behavior.IMethodLike_BehaviorDescriptor" />
+      <unit at="9,0,17,0" name="jetbrains.mps.baseLanguage.behavior.IMethodLike_BehaviorDescriptor" />
     </file>
     <file name="PlusExpression_BehaviorDescriptor.java">
       <unit at="9,0,23,0" name="jetbrains.mps.baseLanguage.behavior.PlusExpression_BehaviorDescriptor" />
@@ -10761,12 +10761,16 @@
       <node id="2432385533253965715" at="34,5,35,25" concept="13" />
       <node id="4989157187872667483" at="37,84,38,17" concept="13" />
       <node id="8510677279630867634" at="40,95,41,16" concept="13" />
+      <node id="1439622639016362250" at="43,91,44,437" concept="13" />
+      <node id="1439622639016634747" at="46,64,47,46" concept="13" />
       <node id="1239354340297" at="15,0,17,0" concept="17" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="2432385533253995627" at="31,12,33,7" concept="1" />
       <node id="1239354340297" at="17,0,20,0" concept="17" trace="virtual_getLastStatement_1239354409446#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="2432385533253965681" at="22,135,25,5" concept="21" />
       <node id="1239354340297" at="37,0,40,0" concept="17" trace="virtual_implicitThrows_4989157187872658723#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
       <node id="1239354340297" at="40,0,43,0" concept="17" trace="virtual_supportsCheckedExceptions_8510677279630867629#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+      <node id="1239354340297" at="43,0,46,0" concept="17" trace="virtual_suppress_3393165121846091591#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+      <node id="1439622639016634747" at="46,0,49,0" concept="17" trace="eq_snrb2w_a0a0a0f#(Ljava/lang/Object;Ljava/lang/Object;)Z" />
       <node id="2432385533253995609" at="28,171,33,7" concept="10" />
       <node id="2432385533253965708" at="26,67,34,5" concept="10" />
       <node id="1239354340297" at="20,0,37,0" concept="17" trace="call_getLastStatement_2432385533253965663#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
@@ -10777,6 +10781,8 @@
       <scope id="2432385533253995628" at="31,14,32,108" />
       <scope id="4989157187872658726" at="37,84,38,17" />
       <scope id="8510677279630867632" at="40,95,41,16" />
+      <scope id="1439622639016362242" at="43,91,44,437" />
+      <scope id="1439622639016634747" at="46,64,47,46" />
       <scope id="1239354340297" at="15,0,17,0">
         <var name="thisNode" id="1239354340297" />
       </scope>
@@ -10789,6 +10795,14 @@
       <scope id="1239354340297" at="40,0,43,0">
         <var name="thisNode" id="1239354340297" />
       </scope>
+      <scope id="1239354340297" at="43,0,46,0">
+        <var name="child" id="1439622639016362243" />
+        <var name="thisNode" id="1239354340297" />
+      </scope>
+      <scope id="1439622639016634747" at="46,0,49,0">
+        <var name="a" id="1439622639016634747" />
+        <var name="b" id="1439622639016634747" />
+      </scope>
       <scope id="2432385533253965709" at="27,109,33,7">
         <var name="innerStatementList" id="2432385533253995603" />
       </scope>
@@ -10800,7 +10814,7 @@
         <var name="statementList" id="2432385533253965669" />
         <var name="thisNode" id="1239354340297" />
       </scope>
-      <unit id="1239354340297" at="14,0,44,0" name="jetbrains.mps.baseLanguage.behavior.IMethodLike_Behavior" />
+      <unit id="1239354340297" at="14,0,50,0" name="jetbrains.mps.baseLanguage.behavior.IMethodLike_Behavior" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)/1239355135682">

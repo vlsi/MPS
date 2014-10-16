@@ -40,4 +40,10 @@ public class IMethodLike_Behavior {
   public static boolean virtual_supportsCheckedExceptions_8510677279630867629(SNode thisNode) {
     return true;
   }
+  public static boolean virtual_suppress_3393165121846091591(SNode thisNode, SNode child) {
+    return BehaviorReflection.invokeSuper(Boolean.TYPE, thisNode, "jetbrains.mps.lang.core.structure.ISuppressErrors", "virtual_suppress_3393165121846091591", new Object[]{child}) && eq_snrb2w_a0a0a0f(child, BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getBody_1239354440022", new Object[]{})) && SNodeOperations.isInstanceOf(child, "jetbrains.mps.baseLanguage.structure.StubStatementList");
+  }
+  private static boolean eq_snrb2w_a0a0a0f(Object a, Object b) {
+    return (a != null ? a.equals(b) : a == b);
+  }
 }

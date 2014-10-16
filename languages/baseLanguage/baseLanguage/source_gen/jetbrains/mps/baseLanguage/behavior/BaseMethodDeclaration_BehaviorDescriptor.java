@@ -95,6 +95,9 @@ public abstract class BaseMethodDeclaration_BehaviorDescriptor extends GenericDe
   public boolean virtual_supportsCheckedExceptions_8510677279630867629(SNode thisNode) {
     return IMethodLike_Behavior.virtual_supportsCheckedExceptions_8510677279630867629(thisNode);
   }
+  public boolean virtual_suppress_3393165121846091591(SNode thisNode, SNode child) {
+    return IMethodLike_Behavior.virtual_suppress_3393165121846091591(thisNode, child);
+  }
   public void virtual_unmarkDeprecated_7983358747957674666(SNode thisNode) {
     BaseMethodDeclaration_Behavior.virtual_unmarkDeprecated_7983358747957674666(thisNode);
   }
