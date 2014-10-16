@@ -16,7 +16,6 @@
 package jetbrains.mps.project.dependency.modules;
 
 import gnu.trove.THashSet;
-import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
@@ -24,6 +23,7 @@ import org.jetbrains.mps.openapi.module.SModuleReference;
 
 import java.util.Collections;
 import java.util.LinkedHashSet;
+import java.util.LinkedList;
 import java.util.Queue;
 import java.util.Set;
 import java.util.concurrent.ConcurrentMap;

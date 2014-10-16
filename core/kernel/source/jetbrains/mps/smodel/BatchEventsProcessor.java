@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.smodel;
 
-import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleReference;
@@ -38,7 +37,7 @@ import java.util.List;
 public class BatchEventsProcessor {
   private volatile boolean myBatchStarted = false;
 
-  private final List<SRepositoryEvent> myEvents = new LinkedList<SRepositoryEvent>();
+  private final List<SRepositoryEvent> myEvents = new ArrayList<SRepositoryEvent>();
 
   private final SRepositoryListener mySRepositoryListener = new MySRepositoryListener();
 
@@ -53,8 +52,8 @@ public class BatchEventsProcessor {
   }
 
   public void startBatching() {
-    assert !myBatchStarted;
-    assert myEvents.isEmpty();
+    if (myBatchStarted) throw new IllegalStateException("Batching has been already started");
+    if (!myEvents.isEmpty()) throw new IllegalStateException("Events have not been flushed");
     myBatchStarted = true;
     myRepository.addRepositoryListener(mySRepositoryListener);
   }
