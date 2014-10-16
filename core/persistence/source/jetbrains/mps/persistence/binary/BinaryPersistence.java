@@ -231,7 +231,8 @@ public class BinaryPersistence {
   }
 
   private static void saveModel(SModel model, ModelOutputStream os) throws IOException {
-    model.validateImplicitlyUsedLanguages();
+    //model.validateImplicitlyUsedLanguages();
+
     saveModelProperties(model, os);
 
     ArrayList<SNode> roots = new ArrayList<SNode>(IterableUtil.asCollection(model.getRootNodes()).size());
