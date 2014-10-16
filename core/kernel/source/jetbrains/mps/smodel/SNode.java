@@ -222,7 +222,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
         "Can't remove a node not from it's parent node: removing " + child.getReference().toString() + " from " + getReference().toString();
 
     final SNode wasChild = (SNode) child;
-    final String wasRole = wasChild.getRoleInParent();
+    final SContainmentLink wasRole = wasChild.getContainmentLink();
     final SNode anchor = firstChild() == wasChild ? null : wasChild.treePrevious();
 
     assert wasRole != null;
@@ -238,7 +238,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
     performUndoableAction(new Computable<SNodeUndoableAction>() {
       @Override
       public SNodeUndoableAction compute() {
-        return new RemoveChildUndoableAction(SNode.this, anchor, wasRole, wasChild);
+        return new RemoveChildUndoableAction(SNode.this, anchor, wasRole.getRoleName(), wasChild);
       }
     });
 
@@ -1062,6 +1062,14 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
     emd.fireNodeAdded(this, l.getRoleName(), child);
   }
 
+  private void nodeRemoved(org.jetbrains.mps.openapi.model.SNode child, SContainmentLink role) {
+    if (myModel != null && myModel.isUpdateMode()) return;
+    SModelBase md = getRealModel();
+    if (md == null) return;
+    EditableSModelBase emd = (EditableSModelBase) md;
+    emd.fireNodeRemoved(this, role.getRoleName(), child);
+  }
+
   private void fireNodePropertyReadAccess(SProperty p, String propertyValue) {
     if (myModel == null || !myModel.canFireReadEvent()) return;
     NodeReadEventsCaster.fireNodePropertyReadAccess(this, p.getName(), propertyValue);
@@ -1159,14 +1167,6 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
   @NotNull
   public List<SNode> getChildren(String role) {
     return getChildren(new SContainmentLinkAdapterByName(getConcept().getQualifiedName(), role));
-  }
-
-  private void nodeRemoved(org.jetbrains.mps.openapi.model.SNode child, String role) {
-    if (myModel != null && myModel.isUpdateMode()) return;
-    SModelBase md = getRealModel();
-    if (md == null) return;
-    EditableSModelBase emd = (EditableSModelBase) md;
-    emd.fireNodeRemoved(this, role, child);
   }
 
   private static class ChildrenList extends AbstractSequentialList<SNode> {

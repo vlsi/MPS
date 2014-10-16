@@ -506,10 +506,10 @@ public class SModel implements SModelData {
 
   //---------node id--------
 
-  void fireChildRemovedEvent(@NotNull SNode parent, @NotNull String role, @NotNull SNode child, SNode anchor) {
+  void fireChildRemovedEvent(@NotNull SNode parent, @NotNull SContainmentLink role, @NotNull SNode child, SNode anchor) {
     if (!canFireEvent()) return;
     int childIndex = anchor == null ? 0 : parent.getChildren().indexOf(anchor) + 1;
-    final SModelChildEvent event = new SModelChildEvent(getModelDescriptor(), false, parent, role, childIndex, child);
+    final SModelChildEvent event = new SModelChildEvent(getModelDescriptor(), false, parent, role.getRoleName(), childIndex, child);
     for (SModelListener sModelListener : getModelListeners()) {
       try {
         sModelListener.childRemoved(event);
@@ -519,10 +519,10 @@ public class SModel implements SModelData {
     }
   }
 
-  void fireBeforeChildRemovedEvent(@NotNull SNode parent, @NotNull String role, @NotNull SNode child, SNode anchor) {
+  void fireBeforeChildRemovedEvent(@NotNull SNode parent, @NotNull SContainmentLink role, @NotNull SNode child, SNode anchor) {
     if (!canFireEvent()) return;
     int childIndex = anchor == null ? 0 : parent.getChildren().indexOf(anchor) + 1;
-    final SModelChildEvent event = new SModelChildEvent(getModelDescriptor(), false, parent, role, childIndex, child);
+    final SModelChildEvent event = new SModelChildEvent(getModelDescriptor(), false, parent, role.getRoleName(), childIndex, child);
     for (SModelListener sModelListener : getModelListeners()) {
       try {
         sModelListener.beforeChildRemoved(event);
