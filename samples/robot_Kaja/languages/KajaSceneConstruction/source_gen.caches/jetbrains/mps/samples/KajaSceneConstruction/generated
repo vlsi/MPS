@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-9ipihmj8qd65d3la1c9hz9js4udg06y">
-  <dep model="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.generator.runtime(MPS.Core/jetbrains.mps.generator.runtime@java_stub)" />
+<dependencies version="2" modelHash="8sgr8kg01yiqh5rtjfb582iazq4q4i5">
+  <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.generator.runtime(MPS.Core/jetbrains.mps.generator.runtime@java_stub)" />
   <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" hash="-2sqpydigz7vryaerubh22j78l4l08jz" />
   <dep model="r:2fc89695-11de-42f3-aaa2-c1d64e5fec72(jetbrains.mps.samples.KajaSceneConstruction.behavior)" hash="99ioeas85twmtyscoifg34xgymme7bg" />
   <dep model="r:51084303-7aff-48f9-ad2c-085e46b32c5e(jetbrains.mps.samples.KajaSceneConstruction.typesystem)" hash="9r5ock912fgzmn7792x3zug4uxgulnp" />
@@ -10,7 +10,7 @@
   <dep model="r:ce42c9d0-9778-4b7f-ba63-609d51a475fd(jetbrains.mps.samples.KajaSceneConstruction.structure)" hash="1qi8zm4wef3pjhxk11nznubagueb1ym" />
   <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="8cdjk2e5d2y2u9lult1ptgxxrttxv07" />
   <common dependsOnNodes="true">
-    <dep model="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.generator.runtime(MPS.Core/jetbrains.mps.generator.runtime@java_stub)" />
+    <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.generator.runtime(MPS.Core/jetbrains.mps.generator.runtime@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
     <dep model="r:2fc89695-11de-42f3-aaa2-c1d64e5fec72(jetbrains.mps.samples.KajaSceneConstruction.behavior)" />
     <dep model="r:51084303-7aff-48f9-ad2c-085e46b32c5e(jetbrains.mps.samples.KajaSceneConstruction.typesystem)" />

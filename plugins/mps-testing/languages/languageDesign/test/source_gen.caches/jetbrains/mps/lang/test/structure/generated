@@ -1,13 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="116hbc3z9z7lx5pv4xy7mnn2etb0mrx">
-  <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
+<dependencies version="2" modelHash="d9vxgq31l54hilasa2o97w9uaj33uhr">
+  <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
+  <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
+  <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.adapter.ids(MPS.Core/jetbrains.mps.smodel.adapter.ids@java_stub)" />
+  <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.runtime.impl(MPS.Core/jetbrains.mps.smodel.runtime.impl@java_stub)" />
   <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="-2hubvwh7bwismm0eld02cqmdefvj5by" />
-  <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" hash="earelxj8tgzojre3f83be708tts5353" />
-  <dep model="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" hash="cdw0r0ghy7zw4nao3b9hupwp9d3a0om" />
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-7vgk3jafz630zooccect8piiihx2bnu" />
+  <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" hash="-ds0k2lb74rgixgd3bdaak41qmp1755x" />
+  <dep model="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" hash="-aexanvh8yqbopdohp0lfr6dh33hsjv0" />
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-cs7m40i7d9o09jkq6mrq5z7w0hqwzmp" />
   <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" hash="-2sqpydigz7vryaerubh22j78l4l08jz" />
-  <dep model="r:00000000-0000-4000-0000-011c895902d7(jetbrains.mps.baseLanguage.unitTest.structure)" hash="737sisbz01jin0qywchcl62x9q29ha6" />
-  <dep model="r:00000000-0000-4000-0000-011c89590353(jetbrains.mps.lang.intentions.structure)" hash="7em77rbt2zb3icarp3kxkvaqsekal4i" />
+  <dep model="r:00000000-0000-4000-0000-011c895902d7(jetbrains.mps.baseLanguage.unitTest.structure)" hash="-drvnpjti6w9om4lvrccll3adyzb5tsh" />
+  <dep model="r:00000000-0000-4000-0000-011c89590353(jetbrains.mps.lang.intentions.structure)" hash="d75igm8p26i4e73b4dc7pu4kh3en0hv" />
   <dep model="r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)" hash="-481cohd26ja05mnw0h5pxziif8zqatm" />
   <dep model="r:00000000-0000-4000-0000-011c89590373(jetbrains.mps.baseLanguage.classifiers.structure)" hash="2rnsukeaoekb324wbbx6a2bi8ccu9xr" />
   <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="d987foka3qddszg3k3yjss0jaslj9i" />
@@ -77,7 +80,10 @@
     <dep root="8578280453507219248" />
     <dep root="8578280453509464010" />
     <dep root="95706764259116183" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
+    <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.adapter.ids(MPS.Core/jetbrains.mps.smodel.adapter.ids@java_stub)" />
+    <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.runtime.impl(MPS.Core/jetbrains.mps.smodel.runtime.impl@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" />
@@ -108,7 +114,7 @@
   <source id="1215612918969" name="NodeUnreachable" hash="ahrfbzaon5e75i07arsxsstnvi6jvwo" />
   <source id="1215614394933" name="VariableInitialized" hash="-6dg6uev573gwds3ubr1gjfn9l2iozcc" />
   <source id="1215616993394" name="VariableAlive" hash="-1k2ft90j0pkkj3pn0fdi387dezb6315" />
-  <source id="1216913645126" name="NodesTestCase" hash="-e7hknppup59sxfuhuar50cf6qpswx05" />
+  <source id="1216913645126" name="NodesTestCase" hash="6spqjupfiucy5gq2jjccdik2j0yuvlx" />
   <source id="1216913689992" name="NodesTestMethod" hash="-23yu79nktdt9ltv7o5t3hvoswks7xe2" />
   <source id="1216989428737" name="TestNode" hash="7xn7s70t8lbnf43610mmblensxh15a7" />
   <source id="1217425837708" name="CheckNodeDataflow" hash="-75bk57wt264jb5ei8n411ow5nv2ylsj" />
@@ -121,7 +127,7 @@
   <source id="1228584180295" name="INodeAnnotation" hash="d51yyoi4me2jynx0oh1ctboa09uel3x" />
   <source id="1227182079811" name="TypeKeyStatement" hash="-bpivaaa7ks0otbovmaggo4lu584sc7b" />
   <source id="1228934484974" name="PressKeyStatement" hash="avv137usly7hoy950s3o0fx0q0kzttq" />
-  <source id="1229187653856" name="EditorTestCase" hash="-3fwv5uqgno2ke6dfh0uxye7897fh2z2" />
+  <source id="1229187653856" name="EditorTestCase" hash="54rrvxpz2uysvsw1hb6zbw2gkqk5djy" />
   <source id="1229194968594" name="AnonymousCellAnnotation" hash="-eduowg70y7i3wgjaeyoecso4i2scbjl" />
   <source id="1230224281548" name="MockAnnotation" hash="-10ukw8c5x4uhwzvebhigtxal3a1c39x" />
   <source id="95706764259116183" name="NodeTypeSetCheckOperation" hash="7jsjou5nmstmitq57pgh50qy2z0xxf6" />

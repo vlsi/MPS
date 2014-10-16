@@ -11,7 +11,7 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
   <root>
     <file name="EditorAspectDescriptorImpl.java">
-      <unit at="13,0,52,0" name="jetbrains.mps.lang.core.editor.EditorAspectDescriptorImpl" />
+      <unit at="13,0,54,0" name="jetbrains.mps.lang.core.editor.EditorAspectDescriptorImpl" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590284(jetbrains.mps.lang.core.editor)/2565736246230036155">
@@ -357,6 +357,56 @@
       </scope>
       <unit id="2900100530630621653" at="31,83,40,5" name="jetbrains.mps.lang.core.editor.alias$1" />
       <unit id="2900100530630621651" at="23,0,50,0" name="jetbrains.mps.lang.core.editor.alias" />
+    </file>
+  </root>
+  <root nodeRef="r:00000000-0000-4000-0000-011c89590284(jetbrains.mps.lang.core.editor)/3013115976262163896">
+    <file name="BaseStyles_StyleSheet.java">
+      <node id="3013115976262163896" at="11,5,12,23" concept="6" />
+      <node id="3013115976262163896" at="12,23,13,72" concept="2" />
+      <node id="3013115976262163896" at="13,72,14,34" concept="2" />
+      <node id="3013115976262163896" at="10,83,15,5" concept="0" />
+      <node id="3013115976262163896" at="10,0,17,0" concept="8" trace="apply_StubImplementation#(Ljetbrains/mps/openapi/editor/style/Style;Ljetbrains/mps/openapi/editor/cells/EditorCell;)V" />
+      <scope id="3013115976262163896" at="11,5,14,34">
+        <var name="styleToPut" id="3013115976262163896" />
+      </scope>
+      <scope id="3013115976262163896" at="10,83,15,5" />
+      <scope id="3013115976262163896" at="10,0,17,0">
+        <var name="editorCell" id="3013115976262163896" />
+        <var name="style" id="3013115976262163896" />
+      </scope>
+      <unit id="3013115976262163896" at="9,0,19,0" name="jetbrains.mps.lang.core.editor.BaseStyles_StyleSheet" />
+    </file>
+  </root>
+  <root nodeRef="r:00000000-0000-4000-0000-011c89590284(jetbrains.mps.lang.core.editor)/3596842757766811989">
+    <file name="ImplementationRemovedInStubMessage.java">
+      <node id="3596842757766811989" at="16,47,17,35" concept="7" />
+      <node id="3596842757766811989" at="19,79,20,61" concept="7" />
+      <node id="3596842757766812347" at="22,87,23,105" concept="6" />
+      <node id="3596842757766812347" at="23,105,24,46" concept="2" />
+      <node id="3596842757766812347" at="24,46,25,34" concept="6" />
+      <node id="3596842757766812347" at="25,34,26,70" concept="2" />
+      <node id="3596842757766812347" at="26,70,27,40" concept="2" />
+      <node id="3596842757766812347" at="27,40,28,34" concept="2" />
+      <node id="3596842757766812347" at="28,34,29,22" concept="7" />
+      <node id="3596842757766811989" at="16,0,19,0" concept="5" trace="getContextHints#()Ljava/util/Collection;" />
+      <node id="3596842757766811989" at="19,0,22,0" concept="5" trace="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+      <node id="3596842757766812347" at="22,0,31,0" concept="5" trace="createConstant_a0me9v_a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+      <scope id="3596842757766811989" at="16,47,17,35" />
+      <scope id="3596842757766811989" at="19,79,20,61" />
+      <scope id="3596842757766811989" at="16,0,19,0" />
+      <scope id="3596842757766811989" at="19,0,22,0">
+        <var name="editorContext" id="3596842757766811989" />
+        <var name="node" id="3596842757766811989" />
+      </scope>
+      <scope id="3596842757766812347" at="22,87,29,22">
+        <var name="editorCell" id="3596842757766812347" />
+        <var name="style" id="3596842757766812347" />
+      </scope>
+      <scope id="3596842757766812347" at="22,0,31,0">
+        <var name="editorContext" id="3596842757766812347" />
+        <var name="node" id="3596842757766812347" />
+      </scope>
+      <unit id="3596842757766811989" at="15,0,32,0" name="jetbrains.mps.lang.core.editor.ImplementationRemovedInStubMessage" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590284(jetbrains.mps.lang.core.editor)/5169995583184591171">

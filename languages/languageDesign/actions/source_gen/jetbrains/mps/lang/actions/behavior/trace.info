@@ -58,13 +58,13 @@
       <unit at="6,0,14,0" name="jetbrains.mps.lang.actions.behavior.ConceptsSubstituteMenuPart_BehaviorDescriptor" />
     </file>
     <file name="PasteWrappers_BehaviorDescriptor.java">
-      <unit at="13,0,36,0" name="jetbrains.mps.lang.actions.behavior.PasteWrappers_BehaviorDescriptor" />
+      <unit at="14,0,37,0" name="jetbrains.mps.lang.actions.behavior.PasteWrappers_BehaviorDescriptor" />
     </file>
     <file name="QueryFunction_SubstituteString_BehaviorDescriptor.java">
       <unit at="9,0,26,0" name="jetbrains.mps.lang.actions.behavior.QueryFunction_SubstituteString_BehaviorDescriptor" />
     </file>
     <file name="SubstituteNodeBuilderVariableDeclaration_BehaviorDescriptor.java">
-      <unit at="8,0,16,0" name="jetbrains.mps.lang.actions.behavior.SubstituteNodeBuilderVariableDeclaration_BehaviorDescriptor" />
+      <unit at="9,0,17,0" name="jetbrains.mps.lang.actions.behavior.SubstituteNodeBuilderVariableDeclaration_BehaviorDescriptor" />
     </file>
     <file name="QueryFunction_Substitute_Handler_BehaviorDescriptor.java">
       <unit at="9,0,26,0" name="jetbrains.mps.lang.actions.behavior.QueryFunction_Substitute_Handler_BehaviorDescriptor" />
@@ -79,7 +79,7 @@
       <unit at="8,0,19,0" name="jetbrains.mps.lang.actions.behavior.ConceptFunctionParameter_nodeToPastePostProcess_BehaviorDescriptor" />
     </file>
     <file name="SideTransformHintSubstituteActionsBuilder_BehaviorDescriptor.java">
-      <unit at="11,0,25,0" name="jetbrains.mps.lang.actions.behavior.SideTransformHintSubstituteActionsBuilder_BehaviorDescriptor" />
+      <unit at="12,0,26,0" name="jetbrains.mps.lang.actions.behavior.SideTransformHintSubstituteActionsBuilder_BehaviorDescriptor" />
     </file>
     <file name="QueryFunction_SideTransform_ConceptHandler_BehaviorDescriptor.java">
       <unit at="10,0,27,0" name="jetbrains.mps.lang.actions.behavior.QueryFunction_SideTransform_ConceptHandler_BehaviorDescriptor" />
@@ -88,7 +88,7 @@
       <unit at="8,0,16,0" name="jetbrains.mps.lang.actions.behavior.ConceptFunctionParameter_childConcept_BehaviorDescriptor" />
     </file>
     <file name="NodeSubstituteActionsBuilder_BehaviorDescriptor.java">
-      <unit at="11,0,25,0" name="jetbrains.mps.lang.actions.behavior.NodeSubstituteActionsBuilder_BehaviorDescriptor" />
+      <unit at="12,0,26,0" name="jetbrains.mps.lang.actions.behavior.NodeSubstituteActionsBuilder_BehaviorDescriptor" />
     </file>
     <file name="NF_Node_ReplaceWithNewOperation_BehaviorDescriptor.java">
       <unit at="8,0,19,0" name="jetbrains.mps.lang.actions.behavior.NF_Node_ReplaceWithNewOperation_BehaviorDescriptor" />
@@ -112,7 +112,7 @@
       <unit at="9,0,23,0" name="jetbrains.mps.lang.actions.behavior.ExecuteSmartActionFunction_BehaviorDescriptor" />
     </file>
     <file name="PasteWrapper_BehaviorDescriptor.java">
-      <unit at="7,0,15,0" name="jetbrains.mps.lang.actions.behavior.PasteWrapper_BehaviorDescriptor" />
+      <unit at="8,0,16,0" name="jetbrains.mps.lang.actions.behavior.PasteWrapper_BehaviorDescriptor" />
     </file>
     <file name="NF_LinkList_AddNewChildOperation_BehaviorDescriptor.java">
       <unit at="8,0,19,0" name="jetbrains.mps.lang.actions.behavior.NF_LinkList_AddNewChildOperation_BehaviorDescriptor" />
@@ -163,7 +163,7 @@
       <unit at="9,0,26,0" name="jetbrains.mps.lang.actions.behavior.QueryFunction_ActionType_BehaviorDescriptor" />
     </file>
     <file name="NodeFactory_BehaviorDescriptor.java">
-      <unit at="7,0,15,0" name="jetbrains.mps.lang.actions.behavior.NodeFactory_BehaviorDescriptor" />
+      <unit at="8,0,16,0" name="jetbrains.mps.lang.actions.behavior.NodeFactory_BehaviorDescriptor" />
     </file>
     <file name="SideTransformVariableReference_BehaviorDescriptor.java">
       <unit at="8,0,19,0" name="jetbrains.mps.lang.actions.behavior.SideTransformVariableReference_BehaviorDescriptor" />
@@ -214,7 +214,7 @@
       <unit at="6,0,8,0" name="jetbrains.mps.lang.actions.behavior.ISubstitute_String_BehaviorDescriptor" />
     </file>
     <file name="SideTransformVariableDeclaration_BehaviorDescriptor.java">
-      <unit at="8,0,16,0" name="jetbrains.mps.lang.actions.behavior.SideTransformVariableDeclaration_BehaviorDescriptor" />
+      <unit at="9,0,17,0" name="jetbrains.mps.lang.actions.behavior.SideTransformVariableDeclaration_BehaviorDescriptor" />
     </file>
     <file name="IncludeRightTransformForNodePart_BehaviorDescriptor.java">
       <unit at="7,0,15,0" name="jetbrains.mps.lang.actions.behavior.IncludeRightTransformForNodePart_BehaviorDescriptor" />

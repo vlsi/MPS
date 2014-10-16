@@ -8,10 +8,6 @@
   <appStarter implementation="com.intellij.help.impl.KeymapGenerator"/>
   <!--MPS Patch: search in settings-->
   <appStarter implementation="com.intellij.ide.ui.search.TraverseUIStarter"/>
-  <!--MPS Patch: enable project view-->
-  <projectService serviceInterface="com.intellij.ide.projectView.ProjectView"
-                  serviceImplementation="jetbrains.mps.ide.projectView.ProjectViewImpl"/>
-  <!--MPS Patch: enable project view-->
   <toolWindow id="Project" anchor="left" icon="MPSToolWindowIcons.ToolWindows.ToolWindowProject"
               factoryClass="jetbrains.mps.ide.projectPane.MPSProjectViewToolWindowFactory"/>
   <!--MPS Patch Start: project view tool tabs-->

@@ -28,6 +28,7 @@
       <root url="jar://$PROJECT_DIR$/lib/httpcore-4.3.1.jar!/" />
       <root url="jar://$PROJECT_DIR$/lib/proxy-vole_20120920.jar!/" />
       <root url="jar://$PROJECT_DIR$/lib/netty-all-4.1.0.Beta3.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/snappy-in-java-0.3.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>
@@ -134,6 +135,8 @@
       <root url="jar://$PROJECT_DIR$/lib/src/httpcomponents-core-4.3.1-src.zip!/httpcomponents-core-4.3.1/httpcore-nio/src/examples" />
       <root url="jar://$PROJECT_DIR$/lib/src/jhsrc.jar!/" />
       <root url="jar://$PROJECT_DIR$/lib/src/netty-all-4.1.0.Beta3-sources.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/src/snappy-in-java-0.3-src.jar!/snappy-snappy-0.3/src/main/java" />
+      <root url="jar://$PROJECT_DIR$/lib/src/snappy-in-java-0.3-src.jar!/snappy-snappy-0.3/src/test/java" />
     </SOURCES>
   </library>
 </component>

@@ -1,40 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-alucnlm4sqrgploap9zx36juz6musgg">
-  <dep model="1ed103c3-3aa6-49b7-9c21-6765ee11f224/f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.editor.runtime.style(MPS.Editor/jetbrains.mps.editor.runtime.style@java_stub)" />
-  <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
-  <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
-  <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang.reflect(JDK/java.lang.reflect@java_stub)" />
-  <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
-  <dep model="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.generator.runtime(MPS.Core/jetbrains.mps.generator.runtime@java_stub)" />
-  <dep model="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.generator.template(MPS.Core/jetbrains.mps.generator.template@java_stub)" />
-  <dep model="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.lang.smodel.generator.smodelAdapter(MPS.Core/jetbrains.mps.lang.smodel.generator.smodelAdapter@java_stub)" />
-  <dep model="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.behaviour(MPS.Core/jetbrains.mps.smodel.behaviour@java_stub)" />
-  <dep model="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.util(MPS.Core/jetbrains.mps.util@java_stub)" />
-  <dep model="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.language(MPS.OpenAPI/org.jetbrains.mps.openapi.language@java_stub)" />
-  <dep model="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)" />
+<dependencies version="2" modelHash="8f8fs9xpss5tcz1dmiq3tks30zogcvq">
+  <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.editor.runtime.style(MPS.Editor/jetbrains.mps.editor.runtime.style@java_stub)" />
+  <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
+  <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
+  <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang.reflect(JDK/java.lang.reflect@java_stub)" />
+  <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
+  <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.generator.runtime(MPS.Core/jetbrains.mps.generator.runtime@java_stub)" />
+  <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.generator.template(MPS.Core/jetbrains.mps.generator.template@java_stub)" />
+  <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.lang.smodel.generator.smodelAdapter(MPS.Core/jetbrains.mps.lang.smodel.generator.smodelAdapter@java_stub)" />
+  <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.behaviour(MPS.Core/jetbrains.mps.smodel.behaviour@java_stub)" />
+  <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.util(MPS.Core/jetbrains.mps.util@java_stub)" />
+  <dep model="f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.language(MPS.OpenAPI/org.jetbrains.mps.openapi.language@java_stub)" />
+  <dep model="f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)" />
   <dep model="r:00000000-0000-4000-0000-011c89590282(jetbrains.mps.lang.core.behavior)" hash="-e9d5nh0v10iyyec2hlwv9sastebu16m" />
   <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="-2hubvwh7bwismm0eld02cqmdefvj5by" />
   <dep model="r:00000000-0000-4000-0000-011c8959028b(jetbrains.mps.lang.structure.behavior)" hash="-cp90xqjcai867ueevcixh6300lkgpj1" />
   <dep model="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" hash="-9ldgxz9rhq8ml7m0oicwqjga5mmtyef" />
-  <dep model="r:00000000-0000-4000-0000-011c89590297(jetbrains.mps.lang.editor.behavior)" hash="370ens6mk1uexan47n9rt63drnuk247" />
-  <dep model="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" hash="-5ecwjgaipx993n4ohi2ov8zqmgai7yg" />
+  <dep model="r:00000000-0000-4000-0000-011c89590297(jetbrains.mps.lang.editor.behavior)" hash="-clutmls124ppxty7hll81jlnuf7yv8b" />
+  <dep model="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" hash="crw8ctxa852tlbo23cgaqlilejqml9q" />
   <dep model="r:00000000-0000-4000-0000-011c895902a0(jetbrains.mps.lang.editor.generator.baseLanguage.template.util)" hash="-bktcmuqvlq220an6y22qav0wiwzqc83" />
-  <dep model="r:00000000-0000-4000-0000-011c895902a8(jetbrains.mps.lang.actions.structure)" hash="4ylw21tmk8y4jk0g88x2x7t4iommm94" />
+  <dep model="r:00000000-0000-4000-0000-011c895902a8(jetbrains.mps.lang.actions.structure)" hash="-b9d9gk5bny71n7054rbxiylhtc3baww" />
   <dep model="r:00000000-0000-4000-0000-011c895902bc(jetbrains.mps.lang.sharedConcepts.structure)" hash="-6yjiczkqjwscghxi9lwknmryu3quk5c" />
   <dep model="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)" hash="-ea32iv3pfnifz5jli60lv04g3n5rkoc" />
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-7vgk3jafz630zooccect8piiihx2bnu" />
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-cs7m40i7d9o09jkq6mrq5z7w0hqwzmp" />
   <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" hash="-2sqpydigz7vryaerubh22j78l4l08jz" />
-  <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" hash="fgqypvsxmg86e28lt26xyps4tf5i1v" />
+  <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" hash="5x61swj2xk8ahkbfsqqqzte940apitq" />
   <dep model="r:00000000-0000-4000-0000-011c895902f4(jetbrains.mps.lang.generator.generationContext.generator.baseLanguage.template.main@generator)" hash="-43ufz5s8wlb1b2u3nch8m3bnosgxrth" />
   <dep model="r:00000000-0000-4000-0000-011c895902fa(jetbrains.mps.lang.smodel.behavior)" hash="6drdcdxswtgamwb061gyd3jy4efzjg4" />
-  <dep model="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" hash="-7hehm2af2yfmmbvuk9w60pbuly8kubj" />
-  <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" hash="-1z3361kpzl7vzkkqivv1k2cpu6lfdbi" />
+  <dep model="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" hash="-99d34p0m2k4qkzb960gcpgvg9vxfiju" />
+  <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" hash="-88dq2j910t3rwbhdmvczf6foy7a2l1t" />
   <dep model="r:00000000-0000-4000-0000-011c8959033a(jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main@generator)" hash="-b3dab08ja7vi0k0se11vqmnwfgecq5y" />
   <dep model="r:00000000-0000-4000-0000-011c89590373(jetbrains.mps.baseLanguage.classifiers.structure)" hash="2rnsukeaoekb324wbbx6a2bi8ccu9xr" />
   <dep model="r:1e25de74-7cc0-4f15-8cec-3735c776efd2(jetbrains.mps.editor.runtime.style)" hash="aeoc6ur1zk5p9zo2xdtwg6k3mehg12p" />
   <dep model="r:2c4d9270-b6d6-44af-aecd-e01a223680db(jetbrains.mps.kernel.model)" hash="3y0myloektdq3o7ovugjjwul8uoh591" />
   <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="d987foka3qddszg3k3yjss0jaslj9i" />
-  <dep model="r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)" hash="-3v2j1dmdnreus232u87z8v47gc23d87" />
+  <dep model="r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)" hash="attjt7f9xsijagk72ems4fgf26chod2" />
   <dep model="r:d1558b8f-fc9e-4ca7-bb90-70ac789f336e(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.post@generator)" hash="-4utzo1nfl3cbkn5oql46johrk65jj1k" />
   <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="8cdjk2e5d2y2u9lult1ptgxxrttxv07" />
   <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" hash="5g3rtdo35mi5yfu1kii2pegdk4kei4n" />
@@ -120,18 +120,18 @@
     <dep root="8313721352726742367" />
     <dep root="9122903797325718360" />
     <dep root="996730828437272666" />
-    <dep model="1ed103c3-3aa6-49b7-9c21-6765ee11f224/f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.editor.runtime.style(MPS.Editor/jetbrains.mps.editor.runtime.style@java_stub)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang.reflect(JDK/java.lang.reflect@java_stub)" />
-    <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
-    <dep model="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.generator.runtime(MPS.Core/jetbrains.mps.generator.runtime@java_stub)" />
-    <dep model="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.generator.template(MPS.Core/jetbrains.mps.generator.template@java_stub)" />
-    <dep model="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.lang.smodel.generator.smodelAdapter(MPS.Core/jetbrains.mps.lang.smodel.generator.smodelAdapter@java_stub)" />
-    <dep model="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.behaviour(MPS.Core/jetbrains.mps.smodel.behaviour@java_stub)" />
-    <dep model="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.util(MPS.Core/jetbrains.mps.util@java_stub)" />
-    <dep model="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.language(MPS.OpenAPI/org.jetbrains.mps.openapi.language@java_stub)" />
-    <dep model="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)" />
+    <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.editor.runtime.style(MPS.Editor/jetbrains.mps.editor.runtime.style@java_stub)" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang.reflect(JDK/java.lang.reflect@java_stub)" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
+    <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.generator.runtime(MPS.Core/jetbrains.mps.generator.runtime@java_stub)" />
+    <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.generator.template(MPS.Core/jetbrains.mps.generator.template@java_stub)" />
+    <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.lang.smodel.generator.smodelAdapter(MPS.Core/jetbrains.mps.lang.smodel.generator.smodelAdapter@java_stub)" />
+    <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.behaviour(MPS.Core/jetbrains.mps.smodel.behaviour@java_stub)" />
+    <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.util(MPS.Core/jetbrains.mps.util@java_stub)" />
+    <dep model="f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.language(MPS.OpenAPI/org.jetbrains.mps.openapi.language@java_stub)" />
+    <dep model="f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c89590282(jetbrains.mps.lang.core.behavior)" />
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c8959028b(jetbrains.mps.lang.structure.behavior)" />
@@ -160,121 +160,123 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="QueriesGenerated.java" />
   </common>
-  <source id="1096630339736" name="class_ConceptEditorDeclaration" hash="axpemrtjyuqcpmlsgevln4ozoob6v5v">
-    <dep model="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.generator.runtime(MPS.Core/jetbrains.mps.generator.runtime@java_stub)" />
+  <source id="1096630339736" name="class_ConceptEditorDeclaration" hash="6jmcdy46jmwncxivie0t9rhyi0iivtk">
+    <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.generator.runtime(MPS.Core/jetbrains.mps.generator.runtime@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
-  <source id="1096647705671" name="reduce_CellModel_Collection" hash="31cmslm0haz12fejuloenpq6dvupbti" />
-  <source id="1097139242515" name="reduce_CellModel_Alternation" hash="3k8zyek3zygv1geduoxhzi05ee7icyc" />
-  <source id="1097143944735" name="class_EditorComponentDeclaration" hash="-9l3xbydl5yi62h1w3lg7lgwlr6cwzdp">
-    <dep model="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.generator.runtime(MPS.Core/jetbrains.mps.generator.runtime@java_stub)" />
+  <source id="1096647705671" name="reduce_CellModel_Collection" hash="58og3ek9y1hsvf9k2knncsi573lm2lb">
+    <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
-  <source id="1097151314077" name="reduce_CellModel_Constant" hash="-7umedykfic2vhky47lwt7lufi6aycx4" />
-  <source id="1097158831835" name="reduce_CellModel_Custom" hash="tfbp5c3gl2xoqoaa9ng0gxcbh2v2bx" />
-  <source id="1097243716762" name="reduce_CellModel_Error" hash="bvddku6jmh3wzsw6w8embwu2mmbgqun" />
-  <source id="1097659173341" name="reduce_CellModel_RefNodeList" hash="41k15r6zigishymou6gdkt2k6vp9orz" />
-  <source id="1097663873068" name="reduce_CellModel_Component" hash="2mdhwlr4knbw6k44lh8n673xir2vkt4" />
-  <source id="1097667551918" name="reduce_CellModel_ModelAccess" hash="-amij036tm57y5o3d1t8enmkkwvvult6" />
-  <source id="1099843327895" name="class_CellKeyMapDeclaration" hash="cv7z3r43uvbykqtfs4xwhcbmyaxza77">
-    <dep model="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.generator.runtime(MPS.Core/jetbrains.mps.generator.runtime@java_stub)" />
+  <source id="1097139242515" name="reduce_CellModel_Alternation" hash="qzyfb633vm9dzsx746820czi4wulg0" />
+  <source id="1097143944735" name="class_EditorComponentDeclaration" hash="bqbb0wctri6qccht9s77etc80qz9s0m">
+    <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.generator.runtime(MPS.Core/jetbrains.mps.generator.runtime@java_stub)" />
   </source>
-  <source id="1134495075165" name="reuce_CellModel_AttributedPropertyCell" hash="-2ydodd2315v08pxnx8vrcrff6ac71n7" />
-  <source id="1136565058540" name="reduce_CellModel_AttributedLinkCell" hash="cvmrjx99fh5cup8894ncu5frzsmwc9g" />
-  <source id="1137185939697" name="MAPPING_KeyMap" hash="bomjc41hron5r52drwahkf85wfzy79m" />
-  <source id="1139748492512" name="reduce_CellModel_Image" hash="-ekzto85cu2uaqi7eyf5rc4la9o4jhvw" />
-  <source id="1139852871567" name="reduce_CellModel_WithRole" hash="-c1i0lewuzs9srhlbmw0ct5pajrkxo81" />
-  <source id="1139959997313" name="MAPPING_ActionMap" hash="-bx7ev9z99j4xx33yf3wj3lkz1tjzrj0" />
-  <source id="1139960192475" name="class_CellActionMapDeclaration" hash="-cmfzezjzzgrz2wmhcu3663fwu480468">
-    <dep model="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.generator.runtime(MPS.Core/jetbrains.mps.generator.runtime@java_stub)" />
+  <source id="1097151314077" name="reduce_CellModel_Constant" hash="5foj5zxkd9a1xzbepe91pinuxek2o42" />
+  <source id="1097158831835" name="reduce_CellModel_Custom" hash="-cbyf18td2o1nzdnz8pgziqquf17jh8g" />
+  <source id="1097243716762" name="reduce_CellModel_Error" hash="4l8c49zhcoy2vmp5oe1dh3e9tt1krg7" />
+  <source id="1097659173341" name="reduce_CellModel_RefNodeList" hash="-atdzu29sgods4886hsv7i8jp05heyaq" />
+  <source id="1097663873068" name="reduce_CellModel_Component" hash="8y25jlqbikf7uexgxb9bb342oas6079" />
+  <source id="1097667551918" name="reduce_CellModel_ModelAccess" hash="409smos71mlcbwfhxi12ejg59nczne2" />
+  <source id="1099843327895" name="class_CellKeyMapDeclaration" hash="-3xz9rbm8yc3rojvaby0ovdow3rz2x6b">
+    <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.generator.runtime(MPS.Core/jetbrains.mps.generator.runtime@java_stub)" />
   </source>
-  <source id="1141852515844" name="MAPPING_CellMenu" hash="-e1t0x5j1cq5f6puk93lr1ez7xkg7cn6" />
-  <source id="1143051457456" name="MAPPING_queryFunction" hash="-7lsbku8nfuxcpy30qiluvgcp9dy0ie" />
-  <source id="1143052634969" name="reduce_QueryFunction_NodeCondition" hash="-5xk864essoq4y0c2kfe2cumsujlm71u" />
-  <source id="1149851533317" name="reduce_CellModel_AttributedNodeCell" hash="-1vw9rgqywmuxfvq7ptwrhtdy9myomtw" />
+  <source id="1134495075165" name="reuce_CellModel_AttributedPropertyCell" hash="3ac7dhgbe0p6roxgry8udl066xr5mma" />
+  <source id="1136565058540" name="reduce_CellModel_AttributedLinkCell" hash="-5iz5qxl5drcf8xib7tg190zq1635k3m" />
+  <source id="1137185939697" name="MAPPING_KeyMap" hash="7pf88pmmzgyujkh9h4mzm8fpyf11oiy" />
+  <source id="1139748492512" name="reduce_CellModel_Image" hash="-ac3rwj98n1ph5uga4uv2doinwuvea8u" />
+  <source id="1139852871567" name="reduce_CellModel_WithRole" hash="1w8qoslzbrkbr8k44lhv1ihpmx1p6m" />
+  <source id="1139959997313" name="MAPPING_ActionMap" hash="-cnexu80derlyq4ts4tlp4h4a0qk4tea" />
+  <source id="1139960192475" name="class_CellActionMapDeclaration" hash="-8cabwjhl3wwis9sjb3ksv4q1u108goe">
+    <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.generator.runtime(MPS.Core/jetbrains.mps.generator.runtime@java_stub)" />
+  </source>
+  <source id="1141852515844" name="MAPPING_CellMenu" hash="-av56scvg6jp4mrhhar8onjxc56bnfzu" />
+  <source id="1143051457456" name="MAPPING_queryFunction" hash="-5ncqwmhftts5yti6qcbqywf1ujf5f2e" />
+  <source id="1143052634969" name="reduce_QueryFunction_NodeCondition" hash="-91b2io4cuw3p49y9zgxy53id9etoaue" />
+  <source id="1149851533317" name="reduce_CellModel_AttributedNodeCell" hash="273d03w5xsoah8h7i4012lcca9j5t7f" />
   <source id="1164844794756" name="stuff_CellMenuPart" hash="-5i6hw294y1ab1cz15jy2jhrr8ibw17n">
-    <dep model="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.generator.runtime(MPS.Core/jetbrains.mps.generator.runtime@java_stub)" />
+    <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.generator.runtime(MPS.Core/jetbrains.mps.generator.runtime@java_stub)" />
   </source>
-  <source id="1165277100275" name="template_CellMenuPart_AbstractGroup" hash="m4p1z36naxl33235pcavhrbef9sa20" />
-  <source id="1165793019302" name="template_CreateCellExpression" hash="-oto6g0jhyt7aec6prk2pbrpw3ycpoq" />
-  <source id="1166063029142" name="class_CellMenuComponent" hash="-d7n2zydjlvpdqc49v6gzme3qgyeh4pd">
-    <dep model="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.generator.runtime(MPS.Core/jetbrains.mps.generator.runtime@java_stub)" />
+  <source id="1165277100275" name="template_CellMenuPart_AbstractGroup" hash="-ffijlb23ger3ynl8gqsqcp5tfsoy2j" />
+  <source id="1165793019302" name="template_CreateCellExpression" hash="brb3mop919pib2mecjfbjasffjc4ko" />
+  <source id="1166063029142" name="class_CellMenuComponent" hash="-ztmmphnvpjgfqribcj0e3qsye4l8le">
+    <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.generator.runtime(MPS.Core/jetbrains.mps.generator.runtime@java_stub)" />
   </source>
-  <source id="1176476223559" name="reduce_QueryFunction_JComponent" hash="6d9nolrjo6x6xdjmpkeetxnzmbjf4e3" />
-  <source id="1176732010646" name="reduce_ConceptFunctionParameter_oldText" hash="-ctxkpk797v6f3nusaqixu3n2gcngo4h" />
-  <source id="1176886006175" name="reduce_QueryFunction_StyleParameter" hash="-bcx79hww4u68pvtuqj5t3lz32hbyzj9" />
-  <source id="1184139379136" name="reduce_InlineEditorComponent" hash="dg54skvqmfmtpmusput4quow9alm9yl" />
-  <source id="1184142154197" name="reduce_RefNodeList_ListHandler" hash="-bel9eixjuiva3ut74vultyx15vupx1x" />
-  <source id="1184143608362" name="reduce_CellMenuPart_PropertyValues" hash="8gjpbclltekymje91zc8cyv0w563pqr" />
-  <source id="1184143801020" name="reduce_CellMenuPart_PropertyPostfixHints" hash="-7s742cora1r0hkv6nug6vql4sgxibl4" />
-  <source id="1184144092414" name="reduce_CellMenuPart_ReplaceNode_CustomNodeConcept" hash="66hvbagp1z270w65sedo2hyl50wdc7l" />
-  <source id="1184144431685" name="reduce_CellMenuPart_ReplaceNode_Group" hash="ktjxqpv2i1b47arx6hefoonc1q56on" />
-  <source id="1184144527953" name="reduce_CellMenuPart_ReferentPrimary" hash="1eeggyay89gfh3mfrpuyxbmo6iyjfd8" />
-  <source id="1184144810392" name="reduce_CellMenuPart_ReplaceChildPrimary" hash="5rcupkqg9txkfmfed332mwlij4oeywy" />
-  <source id="1184144908080" name="reduce_CellMenuPart_ReplaceChild_Group" hash="b5uc7r8qng707kc1z26angsb9kuan3y" />
-  <source id="1184144995846" name="reduce_CellMenuPart_ReplaceChild_Item" hash="b6unqhjc3i4kwrdjg174jo4qx1e3wzf" />
-  <source id="1184145097536" name="reduce_CellMenuPart_ReplaceChild_CustomChildConcept" hash="-e9ur7qgdplngcwhoabtqf9jyb3ujr1b" />
-  <source id="1184145217087" name="reduce_CellMenuPart_Generic_Group" hash="-d003ji84wguqqt89erceye6knlqr3bz" />
-  <source id="1184145320988" name="reduce_CellMenuPart_Generic_Item" hash="-aej6fw0jh3z8z1p8pvmq57ihpkud36j" />
-  <source id="1184145395052" name="reduce_CelllMenuPart_CellMenuComponent" hash="-4l518lq8np51flbt0z1tatfyp10oi55" />
-  <source id="1186404688558" name="StyleSheet" hash="313xhtskf396qvpmkwkw3e87tfoezm2" />
-  <source id="1186404727331" name="StyleSheetClass" hash="5wtztwys3hg1d3j7mr72qogf35o8efs">
-    <dep model="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.generator.runtime(MPS.Core/jetbrains.mps.generator.runtime@java_stub)" />
+  <source id="1176476223559" name="reduce_QueryFunction_JComponent" hash="-70pb6ol99h18am39ryxbu80zs6iv5e1" />
+  <source id="1176732010646" name="reduce_ConceptFunctionParameter_oldText" hash="9jmmqsuskjunceo2lmb85ouf2jrhi7n" />
+  <source id="1176886006175" name="reduce_QueryFunction_StyleParameter" hash="czpb3nndlyl9y0r6cbuxn5v0ys0zfag" />
+  <source id="1184139379136" name="reduce_InlineEditorComponent" hash="-1i1z9685apv9nx08czqayne23diax3j" />
+  <source id="1184142154197" name="reduce_RefNodeList_ListHandler" hash="erxeebr5o3josjcjdkynglo0kqsbzr5" />
+  <source id="1184143608362" name="reduce_CellMenuPart_PropertyValues" hash="6240y36fb97rmohm0mn7i5n7enzjl0" />
+  <source id="1184143801020" name="reduce_CellMenuPart_PropertyPostfixHints" hash="-awnsj9wi1gez690e93lxrxqn6lvnoy0" />
+  <source id="1184144092414" name="reduce_CellMenuPart_ReplaceNode_CustomNodeConcept" hash="b2wkhg3lgoq62olk6avc2l4seoye96o" />
+  <source id="1184144431685" name="reduce_CellMenuPart_ReplaceNode_Group" hash="-6whbeezb6i3zn80jmmmfnrrl1wc0mpd" />
+  <source id="1184144527953" name="reduce_CellMenuPart_ReferentPrimary" hash="-2iyphoencs9vpg3kx5tu1u2i2mti3bk" />
+  <source id="1184144810392" name="reduce_CellMenuPart_ReplaceChildPrimary" hash="44np8rckpoe4yvar2x34u8dtxbj0tez" />
+  <source id="1184144908080" name="reduce_CellMenuPart_ReplaceChild_Group" hash="-17zz1708e0souydn51zwexuox3v1rea" />
+  <source id="1184144995846" name="reduce_CellMenuPart_ReplaceChild_Item" hash="-d2637sbvwz8r3bba6798bp3mhfnkgi6" />
+  <source id="1184145097536" name="reduce_CellMenuPart_ReplaceChild_CustomChildConcept" hash="-815v14qibe5an0egakkk13288l40vw5" />
+  <source id="1184145217087" name="reduce_CellMenuPart_Generic_Group" hash="-4bmnws52mt09c22z290izz4zzfk5bg4" />
+  <source id="1184145320988" name="reduce_CellMenuPart_Generic_Item" hash="-a76ww4hk3kixdsp0d3ctpg0ccbqbd9t" />
+  <source id="1184145395052" name="reduce_CelllMenuPart_CellMenuComponent" hash="b9pilfmnebuhlheie201wrmrqgc7m76" />
+  <source id="1186404688558" name="StyleSheet" hash="2ouibvwiz1j5ywkv811s81al87mqclb" />
+  <source id="1186404727331" name="StyleSheetClass" hash="-2rwwoli6zm34bq6hsipuqp8wpv4dxe1">
+    <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.generator.runtime(MPS.Core/jetbrains.mps.generator.runtime@java_stub)" />
   </source>
-  <source id="1186404942965" name="StyleAttributeValue" hash="-c1033i1amxio9tzm7id0qvqnt266i2r" />
+  <source id="1186404942965" name="StyleAttributeValue" hash="-2h7hgnk4f5lxo7de6jca0hl9066qw8t" />
   <source id="1186410990478" name="StyleSheetClass_Stub" hash="5tr226bxeianith9uybpa4wwt486q1e">
-    <dep model="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.generator.runtime(MPS.Core/jetbrains.mps.generator.runtime@java_stub)" />
+    <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.generator.runtime(MPS.Core/jetbrains.mps.generator.runtime@java_stub)" />
   </source>
-  <source id="1198257250013" name="reduce_CellModel_Indent" hash="ajkavb9bmn8lspbcw05w8w0ixfeg9u6" />
-  <source id="1198258144506" name="reduce_CellModel_BlockStart" hash="-2q6si4ae293yt606ep83amtocf4qmge" />
-  <source id="1198258322917" name="MAPPING_Sugar" hash="b1cvhy1fy4lxlasp03bw8r9cvm1jway" />
-  <source id="1198258380049" name="reduce_CellModel_BlockEnd" hash="aeiuyiz3q1keezsi7c0qvbdwwiedkc3" />
-  <source id="1198490666793" name="reduce_CellModel_Block" hash="9y460boc4kqio28ev9ylgj5ijt1zjla" />
-  <source id="1201269922332" name="MAPPING_nodesOperations" hash="-dwouuy7vfv908jpslzfxxo7vxx4d1m9" />
-  <source id="1204307861396" name="reduce_WrapRootConditionCell" hash="-2ehh0drh9v9g4z56h2t66klbfady5jy" />
-  <source id="1216382671510" name="reduce_CellModel_TransactionalProperty" hash="-5tu22lfr8293zdzqv9o4hmhyl3qpyuc" />
-  <source id="1225901291056" name="reduce_CellModel_ReadOnlyModelAccessor" hash="-7e4nhdodtmq9c0tg49t9tco14g0ezrs" />
-  <source id="1229342844257" name="reduce_WrapRootRefNode" hash="6s01wwuaix6wjfz8y2lwtio2vg4dmz7" />
-  <source id="1236442846524" name="reduce_QueryFunction_String" hash="-528or0g4tw5nqxh81k4er0w1i5x3fom" />
-  <source id="5170495790389304146" name="template_cellSetupBlock" hash="-88t3pbbqia61ps02pw24xf1xl6x7vxp" />
-  <source id="996730828437272666" name="reduce_CellModel_JComponent" hash="-3yxph4zhfdaifgj4dkw724y451ebjso" />
-  <source id="625126330683217337" name="reduce_CellModel_ReferencePresentation" hash="aius9dxudstp2xoy6sgisbgvkxp4vz7" />
-  <source id="4755152624710441322" name="class_ParametersInformation" hash="-ajmabbgrpgo7osanetupwb0k6r2kox2">
-    <dep model="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.generator.runtime(MPS.Core/jetbrains.mps.generator.runtime@java_stub)" />
+  <source id="1198257250013" name="reduce_CellModel_Indent" hash="-61gdvugue3itc10nsr6svjzb56b4s38" />
+  <source id="1198258144506" name="reduce_CellModel_BlockStart" hash="-6yua164ykf01s87b93bs3zf56sp782g" />
+  <source id="1198258322917" name="MAPPING_Sugar" hash="1wkp17o9zrjsb3484xaj2mqayjr9voy" />
+  <source id="1198258380049" name="reduce_CellModel_BlockEnd" hash="-bqrkmiuka4ztzy91575p9pvfwvw4sfz" />
+  <source id="1198490666793" name="reduce_CellModel_Block" hash="bcsvr3xyvis5988r3vgu2g1nbhuaig2" />
+  <source id="1201269922332" name="MAPPING_nodesOperations" hash="-ao089ns2k62tkgs026766ygivw75354" />
+  <source id="1204307861396" name="reduce_WrapRootConditionCell" hash="8rrcr0vt68tos415v2bdr0hcjlt7auz" />
+  <source id="1216382671510" name="reduce_CellModel_TransactionalProperty" hash="-4tes5mzwzopedsmrznz3fvyof0zo3ys" />
+  <source id="1225901291056" name="reduce_CellModel_ReadOnlyModelAccessor" hash="-8frqc067uctuor4t8r2x27jitzls5yw" />
+  <source id="1229342844257" name="reduce_WrapRootRefNode" hash="8wv2jsqs1znc34t71ygwutulx55t53r" />
+  <source id="1236442846524" name="reduce_QueryFunction_String" hash="2yw6x5tqyf84lse0p0yw53qd77mj54" />
+  <source id="5170495790389304146" name="template_cellSetupBlock" hash="-34n4lp18mbj32831kjcb739o4m5kruh" />
+  <source id="996730828437272666" name="reduce_CellModel_JComponent" hash="dk74u9ed3boon97lgri98ifbq8u5zss" />
+  <source id="625126330683217337" name="reduce_CellModel_ReferencePresentation" hash="-34pt06qornmqxczzmc0ndsgi0qonj96" />
+  <source id="4755152624710441322" name="class_ParametersInformation" hash="bkm1m272ekuhrx6y2gm477z2olp673h">
+    <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.generator.runtime(MPS.Core/jetbrains.mps.generator.runtime@java_stub)" />
   </source>
-  <source id="4514257407427004628" name="reduce_AbstractOperation" hash="8m35spatdeu1kajawreq1ot9j9z8st7" />
-  <source id="8313721352726742367" name="reduce_CellModel_Empty" hash="-1eev3jj4aj4fc4heh55rfg0l0487bid" />
-  <source id="1096629760203" name="MAPPING_main" hash="8uemgnc3ckj7r7xeqgy6mrz37xrpghm" />
-  <source id="6287772348368334582" name="template_cellSetSubstituteInfo" hash="-1no9f7vi3gn5w8jsshk462eshfq0h3g" />
-  <source id="6083395046987581465" name="StyleAttribute" hash="a0wnnhdcy59f4q1xpd4ojdd8c8ggoq6" />
-  <source id="7991857262602250026" name="template_StyleClassItemQueryCall" hash="-15hk0l7fpgqnwc5wlt1i6jpquznl44s" />
-  <source id="8233876857997955247" name="reduce_CellMenuPart_ApplySideTransforms" hash="-5jinut6tf38jfa48n7beh94pnlkp1v9" />
-  <source id="2548761562328299818" name="CellModelChildrenIterator" hash="8vycgs7jsu0e39vbpx3et6rjyqyk40z" />
-  <source id="2548761562337839713" name="template_EditorCellModel_CommonMethods" hash="-17sztm4xj89c8tbaat3uwdb9rx6te2o" />
-  <source id="4666785434457834557" name="StyleKeyPackEnum" hash="-72jt2f7k0skptbvoaadtrm30vichocb">
-    <dep model="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.generator.runtime(MPS.Core/jetbrains.mps.generator.runtime@java_stub)" />
+  <source id="4514257407427004628" name="reduce_AbstractOperation" hash="ax5hqxzh0pfznqi3njq9ejc9hppfym1" />
+  <source id="8313721352726742367" name="reduce_CellModel_Empty" hash="9svn1olpxm5y33gniy2ofwp85fdndmn" />
+  <source id="1096629760203" name="MAPPING_main" hash="1se8z38ai34hcd45a644ph74y5vqum9" />
+  <source id="6287772348368334582" name="template_cellSetSubstituteInfo" hash="3ehrq549v7ulvgiuhrl9j6rgwuxyk70" />
+  <source id="6083395046987581465" name="StyleAttribute" hash="-4s3n1dux19sohr6y8sxbbuqc90oo167" />
+  <source id="7991857262602250026" name="template_StyleClassItemQueryCall" hash="-8n75klwfua2e02mt1se80s9470m7muo" />
+  <source id="8233876857997955247" name="reduce_CellMenuPart_ApplySideTransforms" hash="-7xoohnhjx2vmhd7gc0tz8dsncagpp23" />
+  <source id="2548761562328299818" name="CellModelChildrenIterator" hash="9h48rspv1rx6dtydhsbm7mnnt8nmnur" />
+  <source id="2548761562337839713" name="template_EditorCellModel_CommonMethods" hash="cjya8myu8nxuga2vdmklme5q7mudrr9" />
+  <source id="4666785434457834557" name="StyleKeyPackEnum" hash="5ko94t1yf4p0wzpnoi8vrbe08apfsgy">
+    <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.generator.runtime(MPS.Core/jetbrains.mps.generator.runtime@java_stub)" />
   </source>
-  <source id="2548761562342008913" name="StyleClassItemQueryMethods" hash="7wca274o3k292xkd2qxrr7znfal0qpc" />
-  <source id="4644225720240136236" name="EditorAspectDescriptorImpl" hash="4k181ydww5xokhrtbbn2jnno6ar0qi8">
-    <dep model="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.generator.runtime(MPS.Core/jetbrains.mps.generator.runtime@java_stub)" />
+  <source id="2548761562342008913" name="StyleClassItemQueryMethods" hash="-2v4pk0bkw0nrv7mjaxj46vyv7afkb3y" />
+  <source id="4644225720240136236" name="EditorAspectDescriptorImpl" hash="-8i29z26rdubf8lluqrmgglo0ceh9ypc">
+    <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.generator.runtime(MPS.Core/jetbrains.mps.generator.runtime@java_stub)" />
   </source>
-  <source id="5950344441595452468" name="template_collectionCellChildCreation" hash="-4di1atktkby532igyf38sqx22q61ehh" />
-  <source id="4820515453827608594" name="reduce_QueryHintsSpecification" hash="-74gg6rwxp8rqzbnlvhrc5oxcs8hhpsw" />
-  <source id="4820515453828757973" name="ContextHintsSpecificationQueryMethod" hash="85ur3sq89brng8pi0snzcm0cexg5ltr" />
-  <source id="5861024100074850862" name="CellProviderWithRoleInitializer" hash="-d73egt6bk444knioi4oxif4z6fnoiv4" />
-  <source id="2467262375112194488" name="EditorAspectDescriptorImpl_returnConceptEditorComponentColleciton" hash="-8mwcl2d55wd7jdgx9ll4q26njxbaqt3" />
-  <source id="8190678916244312086" name="reduce_SelectNodeInEditorOperation" hash="-9fij4eojz60l7gfpbfpdk567q4gmdj3" />
-  <source id="3604384757227223536" name="reduce_SelectLabelAndSetCaretInEditorOperation" hash="-2qhtbiwl10kprxswch5c0ksgf9shdcp" />
-  <source id="4510086454721348408" name="reduce_SelectCellInEditorOperation" hash="2le4vu5go7m9b1eoduwztzllkh16wsm" />
-  <source id="2701921320713163185" name="reduce_SelectLabelWithRangeSelectionInEditorOperation" hash="-enopaxmjn8szpkf6eliqmmiklq01wv6" />
-  <source id="4699812310057987085" name="StyleClassItem" hash="-1kfmpfwh684t5yqghn3xxmhk4zbk6qb" />
-  <source id="1797240026135963960" name="CheckLicenseGlobal" hash="-e14j0560lencbjqg11qw8xiwep5ckfx" />
-  <source id="5907421649460509979" name="CheckLicenseInFactoryMethod" hash="-6zxetcji2prxn3yfz7cxky2xc7sy3lz" />
-  <source id="9122903797325718360" name="IStyle" hash="-ewud6w5n4rezos0yl9jajzcw1g53tny" />
-  <source id="6029276237634455622" name="reduce_StyleAttributeReferenceExpression" hash="17tuacz4fm346wsmcc396typufielke" />
-  <source id="6029276237642832162" name="reduce_StyleAttributeDeclaration" hash="-754nrokd4i9l57spoxsneekjb4fajns" />
-  <source id="5299592197031388192" name="SetBigCellProperty" hash="7fa1mun3kj13y3kerfxggum73tlmqgb" />
-  <source id="5299592197032597843" name="SetBigCellForImportedCell" hash="-e0b2hqtuyx5fjgnfljv2s3moopmn4ji" />
-  <source id="4911702205467697533" name="SugaredCellActionMapDeclaration" hash="enejg1ruj0hyk02hrl47iyol73tjssa" />
-  <source id="5302599516797851129" name="CellModel_TP_paramValueConverter" hash="d0j0jhaqh9yg9u11drfu1juzdljoine" />
+  <source id="5950344441595452468" name="template_collectionCellChildCreation" hash="40emmupo807b6tjr9j38ha9vyre2yx7" />
+  <source id="4820515453827608594" name="reduce_QueryHintsSpecification" hash="-d40qwp9qid8v8o3gjabocsgsgliyu2m" />
+  <source id="4820515453828757973" name="ContextHintsSpecificationQueryMethod" hash="-6qjezczsfd2qnn962ewgejbyg3uqhhr" />
+  <source id="5861024100074850862" name="CellProviderWithRoleInitializer" hash="atlfbwyhzwcj4z2zgx0kudn65rt95v1" />
+  <source id="2467262375112194488" name="EditorAspectDescriptorImpl_returnConceptEditorComponentColleciton" hash="-9p2i05elxkiton68bznrhmfvotson94" />
+  <source id="8190678916244312086" name="reduce_SelectNodeInEditorOperation" hash="-54khhukpkots50b91qr4virvu1zoh7a" />
+  <source id="3604384757227223536" name="reduce_SelectLabelAndSetCaretInEditorOperation" hash="1d4jww3l7l9qg6270dykmehxc3h97jp" />
+  <source id="4510086454721348408" name="reduce_SelectCellInEditorOperation" hash="e0mc63s7qordng1owfqy0mkq48xneli" />
+  <source id="2701921320713163185" name="reduce_SelectLabelWithRangeSelectionInEditorOperation" hash="-9pahx2uaixkodtwpd0sbacaol9kfkms" />
+  <source id="4699812310057987085" name="StyleClassItem" hash="-5c92o5bvjytmeefeqxwnc2rblcynvr6" />
+  <source id="1797240026135963960" name="CheckLicenseGlobal" hash="-ccej3rrizgnsxd4jd2wv85pwbrf6u7o" />
+  <source id="5907421649460509979" name="CheckLicenseInFactoryMethod" hash="-b8fbxdplk4gtm2ata7nflvajafd09uf" />
+  <source id="9122903797325718360" name="IStyle" hash="-5kol2yenbl4ki3tv1i4e5ao6g6q8kmf" />
+  <source id="6029276237634455622" name="reduce_StyleAttributeReferenceExpression" hash="-4e4wpd5vc91yd6cngq621rk3oct3xuo" />
+  <source id="6029276237642832162" name="reduce_StyleAttributeDeclaration" hash="-d01t6r62h39g3euw7x5n978bg4cpjs6" />
+  <source id="5299592197031388192" name="SetBigCellProperty" hash="2ukduo0zzivoaalb2l3islg8ofqbilz" />
+  <source id="5299592197032597843" name="SetBigCellForImportedCell" hash="-2gqbni4xfddd30nag4tw43saqu69fhz" />
+  <source id="4911702205467697533" name="SugaredCellActionMapDeclaration" hash="6ntppod8efg9tyrx39893mze3qki98a" />
+  <source id="5302599516797851129" name="CellModel_TP_paramValueConverter" hash="-4qf3bbt0v9q21eqzvpqk9s8oqgiikcr" />
 </dependencies>
 
