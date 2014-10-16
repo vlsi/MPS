@@ -188,24 +188,24 @@ class InterpretedConceptDescriptor extends BaseConceptDescriptor {
               directReferences.add(role);
 
               SReferenceLinkId refId = MetaIdByDeclaration.getRefRoleId(((jetbrains.mps.smodel.SNode) link));
-              BaseReferenceDescriptor pd = new BaseReferenceDescriptor(refId, name,
+              BaseReferenceDescriptor pd = new BaseReferenceDescriptor(refId, role,
                   MetaIdByDeclaration.getConceptId(((jetbrains.mps.smodel.SNode) SNodeUtil.getLinkTarget(link))),
                   SNodeUtil.getLinkDeclaration_IsExactlyOneMultiplicity(link));
 
               directReferencesByIds.put(refId, pd);
-              directReferencesByName.put(name, pd);
+              directReferencesByName.put(role, pd);
             } else {
               childrenMap.put(role, !SNodeUtil.getLinkDeclaration_IsSingular(link));
 
               SContainmentLinkId linkId = MetaIdByDeclaration.getLinkId(((jetbrains.mps.smodel.SNode) link));
-              BaseLinkDescriptor pd = new BaseLinkDescriptor(linkId, name,
+              BaseLinkDescriptor pd = new BaseLinkDescriptor(linkId, role,
                   MetaIdByDeclaration.getConceptId(((jetbrains.mps.smodel.SNode) SNodeUtil.getLinkTarget(link))),
                   SNodeUtil.getLinkDeclaration_IsExactlyOneMultiplicity(link),
                   SNodeUtil.getLinkDeclaration_IsSingular(link),
                   unordered);
 
               directLinksByIds.put(linkId, pd);
-              directLinksByName.put(name, pd);
+              directLinksByName.put(role, pd);
             }
           }
         }
