@@ -92,14 +92,12 @@ public abstract class SAbstractConceptAdapter implements SAbstractConcept {
     LinkDescriptor d = nodeConcept.getLinkDescriptor(role);
     if (d != null) {
       SContainmentLinkId linkId = d.getId();
-      ConceptDescriptor cd = ConceptRegistryUtil.getConceptDescriptor(linkId.getConceptId());
       return new SContainmentLinkAdapterById(linkId, role);
     } else {
       ReferenceDescriptor r = nodeConcept.getRefDescriptor(role);
       if (r == null)  return null;
 
       SReferenceLinkId linkId = r.getId();
-      ConceptDescriptor cd = ConceptRegistryUtil.getConceptDescriptor(linkId.getConceptId());
       return new SReferenceLinkAdapterById(linkId, role);
     }
   }
@@ -112,7 +110,6 @@ public abstract class SAbstractConceptAdapter implements SAbstractConcept {
 
     for (SContainmentLinkId lid : cd.getLinkIds()) {
       LinkDescriptor ld = cd.getLinkDescriptor(lid);
-      ConceptDescriptor origConcept = ConceptRegistryUtil.getConceptDescriptor(lid.getConceptId());
       result.add(new SContainmentLinkAdapterById(lid, ld.getName()));
     }
     return result;
@@ -126,7 +123,6 @@ public abstract class SAbstractConceptAdapter implements SAbstractConcept {
 
     PropertyDescriptor d = cd.getPropertyDescriptor(name);
     SPropertyId pid = d.getId();
-    ConceptDescriptor originalConcept = ConceptRegistryUtil.getConceptDescriptor(pid.getConceptId());
     return new SPropertyAdapterById(pid, name);
   }
 
