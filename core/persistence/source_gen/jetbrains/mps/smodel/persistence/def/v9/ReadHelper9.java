@@ -149,6 +149,10 @@ public class ReadHelper9 {
   }
 
   public SConceptId readConceptId(String s) {
+    if (s.startsWith("" + WriteHelper.MODEL_SEPARATOR_CHAR)) {
+      s = s.substring(1);
+      return SConceptId.deserialize(s);
+    }
     int ix = s.indexOf(WriteHelper.MODEL_SEPARATOR_CHAR);
     if (ix <= 0) {
       // no model ID - fqName is here 
