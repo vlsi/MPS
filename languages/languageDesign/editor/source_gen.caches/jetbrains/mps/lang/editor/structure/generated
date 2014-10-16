@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="crw8ctxa852tlbo23cgaqlilejqml9q">
+<dependencies version="2" modelHash="-43wpnkioqajg1q8dqu9lhvhjka8e9ot">
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
   <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.adapter.ids(MPS.Core/jetbrains.mps.smodel.adapter.ids@java_stub)" />
@@ -270,6 +270,18 @@
     <dep root="795210086017940429" />
     <dep root="7991857262589829730" />
     <dep root="7991857262589831666" />
+    <dep root="8104358048506729356" />
+    <dep root="8104358048506729357" />
+    <dep root="8104358048506729358" />
+    <dep root="8104358048506729359" />
+    <dep root="8104358048506729361" />
+    <dep root="8104358048506730066" />
+    <dep root="8104358048506730068" />
+    <dep root="8104358048506730159" />
+    <dep root="8104358048506730324" />
+    <dep root="8104358048506731195" />
+    <dep root="8104358048506731196" />
+    <dep root="8104358048506731197" />
     <dep root="8233876857994246075" />
     <dep root="8255250703325730686" />
     <dep root="8255250703325731016" />
@@ -297,17 +309,17 @@
     <file name="StructureAspectDescriptor.java" />
   </common>
   <source id="1071666914219" name="ConceptEditorDeclaration" hash="70itcx15kse676vmtemsu2jjjdkby0e" />
-  <source id="1073389214265" name="EditorCellModel" hash="9w5p4w3hlconina36cwxuwd9q3yzohw" />
-  <source id="1073389446423" name="CellModel_Collection" hash="-7xhpt6ds2npbng9f8ccuosqkuk7pt6i" />
-  <source id="1073389577006" name="CellModel_Constant" hash="6eqiylkeow94sw89k7r71sez6jms6fo" />
-  <source id="1073389658414" name="CellModel_Property" hash="-8ih28lo7z06h7k2uk4u2twiimv71dzv" />
-  <source id="1073389882823" name="CellModel_RefNode" hash="-5sxipbfry60hwmpqeikslw7txsf6xel" />
-  <source id="1073390211982" name="CellModel_RefNodeList" hash="9xypk1i9uzwf34ky75qqhr7dlz2q4p7" />
+  <source id="1073389214265" name="EditorCellModel" hash="d0zhx87j749lcxlzkxf528apkfzedji" />
+  <source id="1073389446423" name="CellModel_Collection" hash="mqo1p270vc7y0xzorumjbfr1jbtgd3" />
+  <source id="1073389577006" name="CellModel_Constant" hash="8g1raqr9oadqkr9l2fdm00szfwdww5m" />
+  <source id="1073389658414" name="CellModel_Property" hash="5mk87v410clcolz4c9x3h5rpu2qgjza" />
+  <source id="1073389882823" name="CellModel_RefNode" hash="v44n14jywgh34oayvodc6darlj98sv" />
+  <source id="1073390211982" name="CellModel_RefNodeList" hash="-ebb9iapnfkhs5dqyecbg51oat6brini" />
   <source id="1074767920765" name="CellModel_ModelAccess" hash="90ynj6hn13l4qh57zt31oo5rfikst9a" />
   <source id="1075375595203" name="CellModel_Error" hash="bho2tduwzn471riolav7p80pry0wrcl" />
   <source id="1078308402140" name="CellModel_Custom" hash="dx7l4qkrdtomvwh9gcklz35ugh17x5e" />
   <source id="1078938745671" name="EditorComponentDeclaration" hash="-a8g2qjj6myd1ttusq2m578dp15kgdwg" />
-  <source id="1078939183254" name="CellModel_Component" hash="-5mxsvr9dcprlmpm470gp7gkuqhqhv81" />
+  <source id="1078939183254" name="CellModel_Component" hash="bmts9voxdu8s5nyhx4jrggd0pjyef3p" />
   <source id="1079353555532" name="CellModel_AbstractLabel" hash="-buukdbgpejg5eo1xbndnc751twj073o" />
   <source id="1080736578640" name="BaseEditorComponent" hash="1toq76k064bzldqlo927pgkaxfxfr1h" />
   <source id="1081293058843" name="CellKeyMapDeclaration" hash="87pir4kw9ouw4c95j1neyxhli64lceu" />
@@ -327,12 +339,11 @@
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
-    <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="_Colors_Enum.java" />
     <file name="_Colors_Enum_PropertySupport.java" />
   </source>
-  <source id="1088013125922" name="CellModel_RefCell" hash="1wbx35us8qvwp62u10xs7m8i9fy7h3j" />
+  <source id="1088013125922" name="CellModel_RefCell" hash="-5hod2dqjr0f06hwz6lsotjui6ma3ass" />
   <source id="1088185857835" name="InlineEditorComponent" hash="-6wlcma9cek8ff21j36rvmb0o7hwvyna" />
   <source id="1088612959204" name="CellModel_Alternation" hash="dghvytektwb3h70411fgcfqkowvfj0l" />
   <source id="1101211480448" name="_FontStyle_Enum" hash="-1kapkyaj6j4a73kvfemga1ton18ht86">
@@ -340,7 +351,7 @@
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
-    <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="_FontStyle_Enum.java" />
     <file name="_FontStyle_Enum_PropertySupport.java" />
@@ -365,7 +376,6 @@
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
-    <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="FocusPolicy.java" />
     <file name="FocusPolicy_PropertySupport.java" />
@@ -382,7 +392,6 @@
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
-    <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="_Layout_Constraints_Enum.java" />
     <file name="_Layout_Constraints_Enum_PropertySupport.java" />
@@ -571,7 +580,7 @@
   <source id="1225456097782" name="IQueryFunction_Color" hash="-88j9otmq2osjiwok0r4oidjwl1uz65x" />
   <source id="1225456267680" name="RGBColor" hash="-2kj34fs6aycz7gmkeej6hng7q64lmox" />
   <source id="1225898583838" name="ReadOnlyModelAccessor" hash="-cbasao9u5uw32crriu1h8cvtxdh6ioc" />
-  <source id="1225900081164" name="CellModel_ReadOnlyModelAccessor" hash="-7o60g27d0t2ltf21n5wu9vi1tb0bwh8" />
+  <source id="1225900081164" name="CellModel_ReadOnlyModelAccessor" hash="-e6bew1cwsmn5y5j9dy8l7n13smai23y" />
   <source id="1226339751946" name="PaddingTopStyleClassItem" hash="-200ostpfi1o12gn2ba0e2amcz433umd" />
   <source id="1226339813308" name="PaddingBottomStyleClassItem" hash="cmjkgq9cd5ji6bflsfn4vyhsqfz4ggp" />
   <source id="1226339938453" name="AbstractPaddingStyleClassItem" hash="bze318xqp1ko5ww4j0ail3ucngcpmk3" />
@@ -612,7 +621,7 @@
   </source>
   <source id="1239814640496" name="CellLayout_VerticalGrid" hash="e0hhlcol8c6135dsdbu7772h8751umv" />
   <source id="1240253180846" name="IndentLayoutNoWrapClassItem" hash="-13r26z9jnbgsx60iiqfaw7k6vniy7u7" />
-  <source id="625126330682908270" name="CellModel_ReferencePresentation" hash="147ejhpu83ittd9d690znmztw7etvli" />
+  <source id="625126330682908270" name="CellModel_ReferencePresentation" hash="-3e96upmfndwqkep8unbt1mps6mg2o0d" />
   <source id="7667276221847570194" name="ParametersInformationStyleClassItem" hash="awuseg3m9vfq2q3f13okyj9wzgvhjf3" />
   <source id="7667276221847612622" name="ParametersInformationQuery" hash="etzxwuoy8lgaqeps6frs04gtehnfc3m" />
   <source id="7667276221847612943" name="QueryFunction_ParametersList" hash="-2oifa5dpqdibyfkh1wswv5ydmlsk5x2" />
@@ -739,5 +748,17 @@
   <source id="730538219796134178" name="StubCellModel_NonEmptyProperty" hash="auh2zwlt8kguin56ien50n8ywyszxt5" />
   <source id="730538219796139730" name="StubEditorCellModel" hash="-9ik7of8lw53kkfaw0m0ftpzh447wgcf" />
   <source id="2794558372793454595" name="StubCellModel_RefNodeList" hash="1bd35rfxd4qhxo09pcor6jrhu0bfsa4" />
+  <source id="8104358048506729356" name="StubCellModel_Error" hash="8qmmdta8lexlu7nnm9ykuv8ktujzt1w" />
+  <source id="8104358048506729357" name="StubCellModel_ModelAccess" hash="-4jswi69m3r1vmbu9rqaernnkluzatgo" />
+  <source id="8104358048506729358" name="StubCellModel_TransactionalProperty" hash="3af8z2peon2d3z71oefqfxfqkpcn6vj" />
+  <source id="8104358048506729359" name="StubCellModel_URL" hash="-1urvoilmhrsdncu08u013zjtzsuczw7" />
+  <source id="8104358048506729361" name="StubCellModel_Alteration" hash="-9t7w7fpm3oti9u0xtwcfgk9bp3i06c6" />
+  <source id="8104358048506730066" name="StubCellModel_Block" hash="-cebo2vwf6d762hrq31dtxnzns9m1thz" />
+  <source id="8104358048506730068" name="StubCellModel_Custom" hash="471q3fr06gfkrjdnd0enf8yhx6pbwzo" />
+  <source id="8104358048506730159" name="StubCellModel_Empty" hash="-3m0vpzdkmdjxipgxqin8el83qmekd23" />
+  <source id="8104358048506730324" name="StubCellModel_HierarchicalTable" hash="-7c51fnxmvclpw6v5wf2ne120nl262s0" />
+  <source id="8104358048506731195" name="StubCellModel_Image" hash="dz5q7jvgqi2msbk22vd1cpqocuzbkfu" />
+  <source id="8104358048506731196" name="StubCellModel_JComponent" hash="-6g5morgrulseozwwipxs5hwr7awqw90" />
+  <source id="8104358048506731197" name="StubCellModel_Table" hash="4zler8az4avs7ll6m0ptwjio9z7s6bm" />
 </dependencies>
 

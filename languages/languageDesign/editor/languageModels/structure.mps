@@ -52,8 +52,8 @@
     <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="1381004262292426852" nodeInfo="ig">
       <link role="intfc" roleId="tpce.1169127628841" targetNodeId="1381004262292414836" resolveInfo="ICellStyle" />
     </node>
-    <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="3387418896081914048" nodeInfo="ig">
-      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="tpck.1319728274783077719" resolveInfo="ImplementationPart" />
+    <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="8104358048506727197" nodeInfo="ig">
+      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="tpck.6999738288738427190" resolveInfo="ImplementationWithStubPart" />
     </node>
     <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="1142887637401" nodeInfo="ig">
       <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
@@ -101,9 +101,6 @@
     <link role="extends" roleId="tpce.1071489389519" targetNodeId="1073389214265" resolveInfo="EditorCellModel" />
     <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="4033442785759946545" nodeInfo="ig">
       <link role="intfc" roleId="tpce.1169127628841" targetNodeId="8770580973047386957" resolveInfo="Synchronizeable" />
-    </node>
-    <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="3387418896081916805" nodeInfo="ig">
-      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="tpck.6999738288738427190" resolveInfo="ImplementationWithStubPart" />
     </node>
     <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="1073389446424" nodeInfo="ig">
       <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
@@ -173,9 +170,6 @@
     <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="4033442785759943145" nodeInfo="ig">
       <link role="intfc" roleId="tpce.1169127628841" targetNodeId="8770580973047386957" resolveInfo="Synchronizeable" />
     </node>
-    <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="3387418896081914751" nodeInfo="ig">
-      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="tpck.6999738288738427190" resolveInfo="ImplementationWithStubPart" />
-    </node>
     <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="1073389577007" nodeInfo="ig">
       <property name="name" nameId="tpck.1169194664001" value="text" />
       <link role="dataType" roleId="tpce.1082985295845" targetNodeId="tpck.1082983041843" resolveInfo="string" />
@@ -195,9 +189,6 @@
     <link role="extends" roleId="tpce.1071489389519" targetNodeId="1139848536355" resolveInfo="CellModel_WithRole" />
     <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="4033442785759955240" nodeInfo="ig">
       <link role="intfc" roleId="tpce.1169127628841" targetNodeId="8770580973047386957" resolveInfo="Synchronizeable" />
-    </node>
-    <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="730538219796134129" nodeInfo="ig">
-      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="tpck.6999738288738427190" resolveInfo="ImplementationWithStubPart" />
     </node>
     <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="1073389964684" nodeInfo="ig">
       <property name="role" nameId="tpce.1071599776563" value="propertyDeclaration" />
@@ -230,9 +221,6 @@
       <property name="sourceCardinality" nameId="tpce.1071599893252" value="1" />
       <link role="target" roleId="tpce.1071599976176" targetNodeId="tpce.1071489288298" resolveInfo="LinkDeclaration" />
       <link role="specializedLink" roleId="tpce.1071599698500" targetNodeId="1140103550593" />
-    </node>
-    <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="730538219795960752" nodeInfo="ig">
-      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="tpck.6999738288738427190" resolveInfo="ImplementationWithStubPart" />
     </node>
   </root>
   <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1073390211982" nodeInfo="ig">
@@ -277,9 +265,6 @@
       <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
       <property name="role" nameId="tpce.1071599776563" value="removeHints" />
       <link role="target" roleId="tpce.1071599976176" targetNodeId="4653693564097968040" resolveInfo="ContextHintsSpecification" />
-    </node>
-    <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="2794558372793454593" nodeInfo="ig">
-      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="tpck.6999738288738427190" resolveInfo="ImplementationWithStubPart" />
     </node>
   </root>
   <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1074767920765" nodeInfo="ig">
@@ -370,9 +355,6 @@
       <property name="role" nameId="tpce.1071599776563" value="editorComponent" />
       <property name="sourceCardinality" nameId="tpce.1071599893252" value="1" />
       <link role="target" roleId="tpce.1071599976176" targetNodeId="1078938745671" resolveInfo="EditorComponentDeclaration" />
-    </node>
-    <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="3387418896081916800" nodeInfo="ig">
-      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="tpck.6999738288738427190" resolveInfo="ImplementationWithStubPart" />
     </node>
   </root>
   <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1079353555532" nodeInfo="ig">
@@ -547,9 +529,6 @@
       <property name="role" nameId="tpce.1071599776563" value="editorComponent" />
       <property name="sourceCardinality" nameId="tpce.1071599893252" value="1" />
       <link role="target" roleId="tpce.1071599976176" targetNodeId="1088185857835" resolveInfo="InlineEditorComponent" />
-    </node>
-    <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="730538219795941028" nodeInfo="ig">
-      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="tpck.6999738288738427190" resolveInfo="ImplementationWithStubPart" />
     </node>
   </root>
   <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1088185857835" nodeInfo="ig">
@@ -2617,9 +2596,6 @@
       <property name="sourceCardinality" nameId="tpce.1071599893252" value="1" />
       <link role="target" roleId="tpce.1071599976176" targetNodeId="1225898583838" resolveInfo="ReadOnlyModelAccessor" />
     </node>
-    <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="3387418896081916798" nodeInfo="ig">
-      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="tpck.6999738288738427190" resolveInfo="ImplementationWithStubPart" />
-    </node>
   </root>
   <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1226339751946" nodeInfo="ig">
     <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
@@ -2857,9 +2833,6 @@
     <property name="virtualPackage" nameId="tpck.1193676396447" value="CellModel" />
     <property name="conceptAlias" nameId="tpce.5092175715804935370" value="ref. presentation" />
     <link role="extends" roleId="tpce.1071489389519" targetNodeId="1073389214265" resolveInfo="EditorCellModel" />
-    <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="730538219795961223" nodeInfo="ig">
-      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="tpck.6999738288738427190" resolveInfo="ImplementationWithStubPart" />
-    </node>
   </root>
   <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="7667276221847570194" nodeInfo="ig">
     <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
@@ -3863,6 +3836,66 @@
   <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="2794558372793454595" nodeInfo="ig">
     <property name="virtualPackage" nameId="tpck.1193676396447" value="CellModel" />
     <property name="name" nameId="tpck.1169194664001" value="StubCellModel_RefNodeList" />
+    <link role="extends" roleId="tpce.1071489389519" targetNodeId="730538219796139730" resolveInfo="StubEditorCellModel" />
+  </root>
+  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="8104358048506729356" nodeInfo="ig">
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="CellModel" />
+    <property name="name" nameId="tpck.1169194664001" value="StubCellModel_Error" />
+    <link role="extends" roleId="tpce.1071489389519" targetNodeId="730538219796139730" resolveInfo="StubEditorCellModel" />
+  </root>
+  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="8104358048506729357" nodeInfo="ig">
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="CellModel" />
+    <property name="name" nameId="tpck.1169194664001" value="StubCellModel_ModelAccess" />
+    <link role="extends" roleId="tpce.1071489389519" targetNodeId="730538219796139730" resolveInfo="StubEditorCellModel" />
+  </root>
+  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="8104358048506729358" nodeInfo="ig">
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="CellModel" />
+    <property name="name" nameId="tpck.1169194664001" value="StubCellModel_TransactionalProperty" />
+    <link role="extends" roleId="tpce.1071489389519" targetNodeId="730538219796139730" resolveInfo="StubEditorCellModel" />
+  </root>
+  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="8104358048506729359" nodeInfo="ig">
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="CellModel" />
+    <property name="name" nameId="tpck.1169194664001" value="StubCellModel_URL" />
+    <link role="extends" roleId="tpce.1071489389519" targetNodeId="730538219796139730" resolveInfo="StubEditorCellModel" />
+  </root>
+  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="8104358048506729361" nodeInfo="ig">
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="CellModel" />
+    <property name="name" nameId="tpck.1169194664001" value="StubCellModel_Alteration" />
+    <link role="extends" roleId="tpce.1071489389519" targetNodeId="730538219796139730" resolveInfo="StubEditorCellModel" />
+  </root>
+  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="8104358048506730066" nodeInfo="ig">
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="CellModel" />
+    <property name="name" nameId="tpck.1169194664001" value="StubCellModel_Block" />
+    <link role="extends" roleId="tpce.1071489389519" targetNodeId="730538219796139730" resolveInfo="StubEditorCellModel" />
+  </root>
+  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="8104358048506730068" nodeInfo="ig">
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="CellModel" />
+    <property name="name" nameId="tpck.1169194664001" value="StubCellModel_Custom" />
+    <link role="extends" roleId="tpce.1071489389519" targetNodeId="730538219796139730" resolveInfo="StubEditorCellModel" />
+  </root>
+  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="8104358048506730159" nodeInfo="ig">
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="CellModel" />
+    <property name="name" nameId="tpck.1169194664001" value="StubCellModel_Empty" />
+    <link role="extends" roleId="tpce.1071489389519" targetNodeId="730538219796139730" resolveInfo="StubEditorCellModel" />
+  </root>
+  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="8104358048506730324" nodeInfo="ig">
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="CellModel" />
+    <property name="name" nameId="tpck.1169194664001" value="StubCellModel_HierarchicalTable" />
+    <link role="extends" roleId="tpce.1071489389519" targetNodeId="730538219796139730" resolveInfo="StubEditorCellModel" />
+  </root>
+  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="8104358048506731195" nodeInfo="ig">
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="CellModel" />
+    <property name="name" nameId="tpck.1169194664001" value="StubCellModel_Image" />
+    <link role="extends" roleId="tpce.1071489389519" targetNodeId="730538219796139730" resolveInfo="StubEditorCellModel" />
+  </root>
+  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="8104358048506731196" nodeInfo="ig">
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="CellModel" />
+    <property name="name" nameId="tpck.1169194664001" value="StubCellModel_JComponent" />
+    <link role="extends" roleId="tpce.1071489389519" targetNodeId="730538219796139730" resolveInfo="StubEditorCellModel" />
+  </root>
+  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="8104358048506731197" nodeInfo="ig">
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="CellModel" />
+    <property name="name" nameId="tpck.1169194664001" value="StubCellModel_Table" />
     <link role="extends" roleId="tpce.1071489389519" targetNodeId="730538219796139730" resolveInfo="StubEditorCellModel" />
   </root>
 </model>
