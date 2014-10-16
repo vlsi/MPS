@@ -57,7 +57,7 @@ import jetbrains.mps.openapi.navigation.NavigationSupport;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.DevKit;
 import jetbrains.mps.project.Solution;
-import jetbrains.mps.smodel.CommandAdapter;
+import jetbrains.mps.smodel.CommandListenerAdapter;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.MPSModuleRepository;
@@ -515,7 +515,7 @@ public abstract class BaseLogicalViewProjectPane extends AbstractProjectViewPane
     }
   }
 
-  private class MyCommandListener extends CommandAdapter {
+  private class MyCommandListener extends CommandListenerAdapter {
     @Override
     public void commandStarted() {
       myNeedRebuild = false;

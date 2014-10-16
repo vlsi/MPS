@@ -18,7 +18,7 @@ package jetbrains.mps.ide.findusages.view.treeholder.tree;
 import jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.ModelNodeData;
 import jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.ModuleNodeData;
 import jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData;
-import jetbrains.mps.smodel.CommandAdapter;
+import jetbrains.mps.smodel.CommandListenerAdapter;
 import jetbrains.mps.smodel.GlobalSModelEventsManager;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
@@ -127,7 +127,7 @@ public class DataTreeChangesNotifier {
     }
   }
 
-  private class MyCommandListener extends CommandAdapter {
+  private class MyCommandListener extends CommandListenerAdapter {
     @Override
     public void commandFinished() {
       if (!myChanged) return;
