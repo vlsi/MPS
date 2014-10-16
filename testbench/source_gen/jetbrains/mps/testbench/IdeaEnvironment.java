@@ -51,7 +51,6 @@ public class IdeaEnvironment implements Environment {
     ActiveEnvironment.activateEnvironment(this);
     EnvironmentUtils.setSystemProperties(true);
     EnvironmentUtils.setIdeaPluginsToLoad(config);
-    // <node> 
 
     myIdeaApplication = createIdeaTestApp();
     myLibContributor = initLibraries(config);
