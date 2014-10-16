@@ -25,6 +25,7 @@ import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import jetbrains.mps.smodel.runtime.LinkDescriptor;
 import jetbrains.mps.smodel.runtime.PropertyDescriptor;
 import jetbrains.mps.smodel.runtime.ReferenceDescriptor;
+import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.language.SProperty;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeUtil;
@@ -38,53 +39,31 @@ public class IdInfoCollector {
     for (SNode root : rootNodes) {
       for (SNode n : SNodeUtil.getDescendants(root)) {
         SConceptId conceptId = IdHelper.getConceptId(n.getConcept());
-        conceptIds.put(conceptId, getConceptName(conceptId));
+        conceptIds.put(conceptId, n.getConcept().getQualifiedName());
 
 
         if (n.getParent() != null) {
-          SContainmentLinkId linkId = IdHelper.getLinkId(n.getContainmentLink());
-          linkIds.put(linkId, getLinkName(linkId));
-          SConceptId linkConceptId = linkId.getConceptId();
-          conceptIds.put(linkConceptId, getConceptName(linkConceptId));
+          SContainmentLink link = n.getContainmentLink();
+          SContainmentLinkId linkId = IdHelper.getLinkId(link);
+          linkIds.put(linkId, link.getRoleName());
+          //SConceptId linkConceptId = linkId.getConceptId();
+          //conceptIds.put(linkConceptId, getConceptName(linkConceptId));
         }
 
         for (SProperty prop : n.getProperties()) {
           SPropertyId propId = IdHelper.getPropertyId(prop);
-          propIds.put(propId, getPropertyName(propId));
-          SConceptId propConceptId = propId.getConceptId();
-          conceptIds.put(propConceptId, getConceptName(propConceptId));
+          propIds.put(propId, prop.getName());
+          //SConceptId propConceptId = propId.getConceptId();
+          //conceptIds.put(propConceptId, getConceptName(propConceptId));
         }
 
         for (SReference ref : n.getReferences()) {
           SReferenceLinkId refId = IdHelper.getRefId(ref.getReferenceLink());
-          refIds.put(refId, getReferenceName(refId));
-          SConceptId refConceptId = refId.getConceptId();
-          conceptIds.put(refConceptId, getConceptName(refConceptId));
+          refIds.put(refId, ref.getRole());
+          //SConceptId refConceptId = refId.getConceptId();
+          //conceptIds.put(refConceptId, getConceptName(refConceptId));
         }
       }
     }
-  }
-
-  public static String getLinkName(SContainmentLinkId linkId) {
-    ConceptDescriptor cd = ConceptRegistry.getInstance().getConceptDescriptor(linkId.getConceptId());
-    LinkDescriptor ld = cd.getLinkDescriptor(linkId);
-    return ld.getName();
-  }
-
-  public static String getPropertyName(SPropertyId propId) {
-    ConceptDescriptor cd = ConceptRegistry.getInstance().getConceptDescriptor(propId.getConceptId());
-    PropertyDescriptor pd = cd.getPropertyDescriptor(propId);
-    return pd.getName();
-  }
-
-  public static String getReferenceName(SReferenceLinkId refId) {
-    ConceptDescriptor cd = ConceptRegistry.getInstance().getConceptDescriptor(refId.getConceptId());
-    ReferenceDescriptor rd = cd.getRefDescriptor(refId);
-    return rd.getName();
-  }
-
-  public static String getConceptName(SConceptId conceptId) {
-    ConceptDescriptor cd = ConceptRegistry.getInstance().getConceptDescriptor(conceptId);
-    return cd.getConceptFqName();
   }
 }
