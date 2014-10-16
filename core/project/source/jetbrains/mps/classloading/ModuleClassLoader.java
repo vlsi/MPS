@@ -28,6 +28,7 @@ import org.jetbrains.mps.openapi.module.SModule;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Enumeration;
 import java.util.HashMap;
 import java.util.HashSet;
@@ -144,7 +145,7 @@ public class ModuleClassLoader extends ClassLoader {
   }
 
   private Class<?> loadFromDeps(String name) throws ClassNotFoundException {
-    Set<ClassLoader> dependencyClassLoaders = getDependencyClassLoaders();
+    Collection<? extends ClassLoader> dependencyClassLoaders = getDependencyClassLoaders();
 
     // loading from ModuleClassLoaders firstly; it's faster, we can tell right here if we can find class there.
     for (ClassLoader depCL : dependencyClassLoaders) {
@@ -222,7 +223,7 @@ public class ModuleClassLoader extends ClassLoader {
   /**
    * @return all dependencies [excluding itself]
    */
-  private Set<ClassLoader> getDependencyClassLoaders() {
+  private Set<? extends ClassLoader> getDependencyClassLoaders() {
     if (myDependenciesClassLoaders != null) {
       return myDependenciesClassLoaders;
     }
@@ -230,9 +231,7 @@ public class ModuleClassLoader extends ClassLoader {
     for (SModule dep : mySupport.getCompileDependencies()) {
       if (dep == mySupport.getModule()) continue;
       ClassLoader classLoader = myManager.getClassLoader(dep);
-      if (classLoader == null) {
-        throw new IllegalStateException("The class loader dependency " + dep + " is not loaded");
-      }
+      if (classLoader == null) LOG.warn("The class loader dependency " + dep + " is not loaded");
       classLoaders.add(classLoader);
     }
     myDependenciesClassLoaders = classLoaders;

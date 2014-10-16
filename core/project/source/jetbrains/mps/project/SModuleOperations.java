@@ -16,6 +16,8 @@
 package jetbrains.mps.project;
 
 import jetbrains.mps.classloading.ClassLoaderManager;
+import jetbrains.mps.classloading.CustomClassLoadingFacet;
+import jetbrains.mps.classloading.DumbIdeaPluginFacet;
 import jetbrains.mps.extapi.persistence.FileBasedModelRoot;
 import jetbrains.mps.extapi.persistence.FolderModelRootBase;
 import jetbrains.mps.kernel.model.MissingDependenciesFixer;
@@ -133,8 +135,8 @@ public class SModuleOperations {
 
     if (module instanceof Solution) {
       Solution solution = (Solution) module;
-      if (solution.getKind() != SolutionKind.NONE)
-        return true;
+      if (solution.getKind() != SolutionKind.NONE) return true; // this is a future MPS-facet
+      if (solution.getFacet(CustomClassLoadingFacet.class) != null) return true;
     }
     return false;
   }

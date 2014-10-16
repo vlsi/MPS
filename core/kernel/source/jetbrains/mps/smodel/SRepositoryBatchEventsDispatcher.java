@@ -84,11 +84,7 @@ public class SRepositoryBatchEventsDispatcher implements WriteActionListener {
   private void fireModuleEvents(List<SRepositoryEvent> events) {
     ModelAccess.assertLegalWrite();
     for (SRepositoryBatchListener listener : myListeners) {
-      try {
-        listener.eventsHappened(events);
-      } catch (Throwable t) {
-        LOG.error("Exception during batch events dispatching", t);
-      }
+      listener.eventsHappened(events);
     }
   }
 }

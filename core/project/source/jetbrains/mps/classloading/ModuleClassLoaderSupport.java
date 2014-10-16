@@ -24,19 +24,20 @@ import java.net.URL;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.Enumeration;
+import java.util.LinkedHashSet;
 
 public class ModuleClassLoaderSupport {
   private final SModule myModule;
   private final IClassPathItem myClassPathItem;
-  private final Collection<SModule> myCompileDependencies;
+  private final Collection<? extends SModule> myCompileDependencies;
 
-  private ModuleClassLoaderSupport(SModule module, ModulesWatcher watcher) {
+  private ModuleClassLoaderSupport(SModule module, Collection<? extends SModule> compileDependencies) {
     assert canCreate(module);
     myModule = module;
     JavaModuleFacet facet = module.getFacet(JavaModuleFacet.class);
     //noinspection ConstantConditions
     myClassPathItem = JavaModuleOperations.createClassPathItem(facet.getClassPath(), ModuleClassLoaderSupport.class.getName());
-    myCompileDependencies = watcher.getDependencies(Collections.singleton(module));
+    myCompileDependencies = compileDependencies;
   }
 
   /**
@@ -51,8 +52,8 @@ public class ModuleClassLoaderSupport {
     return facet != null && facet.isCompileInMps() && module.getFacet(CustomClassLoadingFacet.class) == null;
   }
 
-  public static ModuleClassLoaderSupport create(SModule module, ModulesWatcher watcher) {
-    return new ModuleClassLoaderSupport(module, watcher);
+  public static ModuleClassLoaderSupport create(SModule module, Collection<? extends SModule> compileDependencies) {
+    return new ModuleClassLoaderSupport(module, compileDependencies);
   }
 
   public SModule getModule() {
@@ -79,7 +80,7 @@ public class ModuleClassLoaderSupport {
     return myClassPathItem.getResources(name);
   }
 
-  public Collection<SModule> getCompileDependencies() {
+  public Collection<? extends SModule> getCompileDependencies() {
     return myCompileDependencies;
   }
 }

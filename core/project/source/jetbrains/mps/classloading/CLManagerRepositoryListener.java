@@ -67,23 +67,24 @@ class CLManagerRepositoryListener extends SRepositoryAdapter implements SReposit
 
   @Override
   public void moduleAdded(@NotNull SModule module) {
-    if (myManager.canLoad(module)) {
-      // instant notification here, we want to watch modules right after they added to the repository
-      myModulesWatcher.onModulesAdded(Collections.singleton(module));
-    }
+    // instant notification here, we want to watch modules right after they added to the repository
+    myModulesWatcher.onModulesAdded(Collections.singleton(module));
+  }
+
+  public void modulesRemoved(List<SModule> modules) {
+    // delayed notification here, we want to watch modules dependencies until we actually unload them (then we don't need them)
+    myModulesWatcher.onModulesRemoved(modules);
   }
 
   private void loadModules(List<SModule> modules) {
     Collections.sort(modules, MODULE_COMPARATOR);
-    myManager.loadModules(modules);
+    myManager.preLoadModules(modules);
   }
 
   private void unloadModules(List<SModule> modules) {
     Collections.sort(modules, MODULE_COMPARATOR);
     myManager.unloadModules(modules);
-
-    // delayed notification here, we want to watch modules dependencies until we actually unload them (then we don't need them)
-    myModulesWatcher.onModulesRemoved(modules);
+    modulesRemoved(modules);
   }
 
   @Override
@@ -107,7 +108,7 @@ class CLManagerRepositoryListener extends SRepositoryAdapter implements SReposit
     @Override
     public void visit(SModuleAddedEvent event) {
       SModule module = event.getModule();
-      if (myManager.canLoad(module)) myModulesToLoad.add(module);
+      myModulesToLoad.add(module);
     }
 
     @Override
@@ -118,10 +119,8 @@ class CLManagerRepositoryListener extends SRepositoryAdapter implements SReposit
     @Override
     public void visit(SModuleRemovingEvent event) {
       SModule module = event.getModule();
-      if (myManager.canLoad(module)) {
-        myModulesToLoad.remove(module);
-        myModulesToUnload.add(module);
-      }
+      myModulesToLoad.remove(module);
+      myModulesToUnload.add(module);
     }
 
     public List<SModule> getModulesToUnload() {

@@ -23,6 +23,7 @@ import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
 
+import java.util.Arrays;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.HashMap;
@@ -141,8 +142,7 @@ public class ClassLoadersHolder {
 
     @Nullable
     private ClassLoader getModuleClassLoader(SModule module) throws ClassLoaderNotFoundException {
-      if (!myClassLoaders.containsKey(module))
-        throw new ClassLoaderNotFoundException();
+      if (!myClassLoaders.containsKey(module)) throw new ClassLoaderNotFoundException();
       return myClassLoaders.get(module);
     }
 
@@ -199,7 +199,9 @@ public class ClassLoadersHolder {
 
     private ModuleClassLoader createModuleClassLoader(SModule module) {
       LOG.debug("Creating ModuleClassLoader for " + module);
-      ModuleClassLoaderSupport support = ModuleClassLoaderSupport.create(module, myModulesWatcher);
+
+      Collection<? extends SModule> deps = myModulesWatcher.getLoadableDependencies(Arrays.asList(module));
+      ModuleClassLoaderSupport support = ModuleClassLoaderSupport.create(module, deps);
       return new ModuleClassLoader(myManager, support);
     }
 
