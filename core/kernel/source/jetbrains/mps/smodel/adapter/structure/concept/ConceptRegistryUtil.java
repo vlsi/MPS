@@ -45,10 +45,10 @@ public class ConceptRegistryUtil {
     if (reportedLanguages.contains(languageId)) return res;
 
     reportedLanguages.add(languageId);
-    if (LOG.isEnabledFor(Level.WARN)) {
-      LOG.warn("No concept found for id " + DebugRegistry.getInstance().getConceptName(id) + ". Please check the language " +
-          DebugRegistry.getInstance().getLanguageName(languageId) + " is built and compiled.");
-    }
+//    if (LOG.isEnabledFor(Level.WARN)) {
+//      LOG.warn("No concept found for id " + id + ". Please check the language " +
+//          languageId + " is built and compiled.");
+//    }
     return null;
   }
 
@@ -63,10 +63,10 @@ public class ConceptRegistryUtil {
     if (reportedLanguages2.contains(languageId)) return res;
 
     reportedLanguages2.add(languageId);
-    if (LOG.isEnabledFor(Level.WARN)) {
-      LOG.warn("No concept found for id " + fqName + ". Please check the language " +
-          languageId + " is built and compiled.");
-    }
+//    if (LOG.isEnabledFor(Level.WARN)) {
+//      LOG.warn("No concept found for id " + fqName + ". Please check the language " +
+//          languageId + " is built and compiled.");
+//    }
     return null;
   }
 }
