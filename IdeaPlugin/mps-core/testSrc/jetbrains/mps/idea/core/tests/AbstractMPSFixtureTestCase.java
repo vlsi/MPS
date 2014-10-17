@@ -102,7 +102,6 @@ public abstract class AbstractMPSFixtureTestCase extends UsefulTestCase {
     myFixture.setTestDataPath(getTestDataPath());
     myModule = moduleFixtureBuilder.getFixture().getModule();
 
-    CompilerWorkspaceConfiguration.getInstance(myModule.getProject()).USE_OUT_OF_PROCESS_BUILD = false;
     myFacet = addMPSFacet(myModule);
 
     if (TRACE_ON_HACK) Logger.setFactory(LoggerFactory.class);

@@ -531,7 +531,7 @@
       <unit at="7,0,15,0" name="jetbrains.mps.baseLanguage.behavior.ImplicitAnnotationInstanceValue_BehaviorDescriptor" />
     </file>
     <file name="ConceptFunction_BehaviorDescriptor.java">
-      <unit at="14,0,76,0" name="jetbrains.mps.baseLanguage.behavior.ConceptFunction_BehaviorDescriptor" />
+      <unit at="15,0,77,0" name="jetbrains.mps.baseLanguage.behavior.ConceptFunction_BehaviorDescriptor" />
     </file>
     <file name="IGenericType_BehaviorDescriptor.java">
       <unit at="9,0,16,0" name="jetbrains.mps.baseLanguage.behavior.IGenericType_BehaviorDescriptor" />
@@ -648,7 +648,7 @@
       <unit at="10,0,21,0" name="jetbrains.mps.baseLanguage.behavior.LoopLabel_BehaviorDescriptor" />
     </file>
     <file name="StubStatementList_BehaviorDescriptor.java">
-      <unit at="7,0,15,0" name="jetbrains.mps.baseLanguage.behavior.StubStatementList_BehaviorDescriptor" />
+      <unit at="10,0,21,0" name="jetbrains.mps.baseLanguage.behavior.StubStatementList_BehaviorDescriptor" />
     </file>
     <file name="FloatingPointFloatConstant_BehaviorDescriptor.java">
       <unit at="10,0,24,0" name="jetbrains.mps.baseLanguage.behavior.FloatingPointFloatConstant_BehaviorDescriptor" />

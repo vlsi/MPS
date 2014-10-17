@@ -33,8 +33,10 @@ public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
       case 0:
         switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a0a2, editorComponentId)) {
           case 0:
-            return Collections.<ConceptEditorComponent>singletonList(new ShortDescriptionEditorComponent());
+            return Collections.<ConceptEditorComponent>singletonList(new ImplementationRemovedInStubMessage());
           case 1:
+            return Collections.<ConceptEditorComponent>singletonList(new ShortDescriptionEditorComponent());
+          case 2:
             return Collections.<ConceptEditorComponent>singletonList(new alias());
           default:
         }
@@ -46,6 +48,6 @@ public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
 
 
   private static String[] stringSwitchCases_xbvbvu_a0a0b = new String[]{"jetbrains.mps.lang.core.structure.Attribute", "jetbrains.mps.lang.core.structure.ExportScopeModule", "jetbrains.mps.lang.core.structure.ExportScopeNamespace", "jetbrains.mps.lang.core.structure.ExportScopePublic", "jetbrains.mps.lang.core.structure.SuppressErrorsAnnotation"};
-  private static String[] stringSwitchCases_xbvbvu_a0a0a0a2 = new String[]{"jetbrains.mps.lang.core.editor.ShortDescriptionEditorComponent", "jetbrains.mps.lang.core.editor.alias"};
+  private static String[] stringSwitchCases_xbvbvu_a0a0a0a2 = new String[]{"jetbrains.mps.lang.core.editor.ImplementationRemovedInStubMessage", "jetbrains.mps.lang.core.editor.ShortDescriptionEditorComponent", "jetbrains.mps.lang.core.editor.alias"};
   private static String[] stringSwitchCases_xbvbvu_a0a0c = new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"};
 }

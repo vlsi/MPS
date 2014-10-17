@@ -127,7 +127,7 @@ public class RunConfigurationsStateManager implements ProjectComponent, PluginRe
   }
 
   private List<RunContentDescriptor> collectDescriptorsToDispose() {
-    ExecutionManager executionManager = myProject.getComponent(ExecutionManager.class);
+    ExecutionManager executionManager = ExecutionManager.getInstance(myProject);
     final RunContentManagerImpl contentManager = (RunContentManagerImpl) executionManager.getContentManager();
 
     final List<String> reloadableConfigurationNames = Sequence.fromIterable(Sequence.fromArray(getRunManager().getAllConfigurations())).where(new IWhereFilter<RunConfiguration>() {

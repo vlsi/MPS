@@ -914,126 +914,90 @@
   </root>
   <root nodeRef="r:b4456070-b665-4c03-b3d3-15a7362ba923(jetbrains.mps.debugger.java.runtime.ui.evaluation)/920354110794004331">
     <file name="EvaluationPanel.java">
-      <node id="920354110794004952" at="26,0,27,0" concept="3" trace="myTabbedPane" />
-      <node id="920354110794004963" at="27,0,28,0" concept="3" trace="myEditor" />
-      <node id="920354110794004966" at="28,0,29,0" concept="3" trace="myResultEditor" />
-      <node id="920354110794004969" at="29,0,30,0" concept="3" trace="myEvaluationModel" />
-      <node id="920354110794005626" at="30,0,31,0" concept="3" trace="myHighlighter" />
-      <node id="1055996919827581981" at="31,0,32,0" concept="3" trace="myIsDisposed" />
-      <node id="7406771907178600471" at="32,132,33,31" concept="14" />
-      <node id="920354110794004992" at="33,31,34,60" concept="2" />
-      <node id="920354110794005047" at="34,60,35,0" concept="11" />
-      <node id="920354110794005048" at="35,0,36,40" concept="2" />
-      <node id="920354110794005069" at="39,42,40,65" concept="2" />
-      <node id="920354110794005079" at="43,5,44,0" concept="11" />
-      <node id="2034046503373005563" at="46,25,47,49" concept="8" />
-      <node id="2034046503373005570" at="47,49,48,91" concept="2" />
-      <node id="2034046503373005583" at="48,91,49,32" concept="2" />
-      <node id="920354110794005155" at="51,7,52,0" concept="11" />
-      <node id="7406771907178600501" at="52,0,53,39" concept="2" />
-      <node id="7930787450152615900" at="54,36,55,81" concept="2" />
-      <node id="7406771907178600499" at="56,5,57,0" concept="11" />
-      <node id="7283833278907755783" at="57,0,58,69" concept="8" />
-      <node id="1055996919827634276" at="58,69,59,35" concept="2" />
-      <node id="7283833278907755789" at="59,35,60,40" concept="2" />
-      <node id="7283833278907755803" at="60,40,61,59" concept="2" />
-      <node id="7283833278907755810" at="61,59,62,0" concept="11" />
-      <node id="7283833278907755813" at="63,39,64,45" concept="2" />
-      <node id="7283833278907755819" at="64,45,65,24" concept="2" />
-      <node id="7283833278907755827" at="66,12,67,21" concept="2" />
-      <node id="1321036565876643956" at="68,5,69,0" concept="11" />
-      <node id="1321036565876658989" at="72,51,73,19" concept="2" />
-      <node id="8668174811004042154" at="75,92,76,0" concept="11" />
-      <node id="7283833278907755831" at="76,0,77,60" concept="2" />
-      <node id="7222423519129192559" at="79,56,80,29" concept="9" />
-      <node id="9220693556914316976" at="83,25,84,65" concept="2" />
-      <node id="6405654937062418794" at="85,23,86,13" concept="9" />
-      <node id="6405654937062418796" at="87,5,88,24" concept="2" />
-      <node id="3196684409401005433" at="88,24,89,20" concept="2" />
-      <node id="6405654937062418805" at="89,20,90,63" concept="2" />
-      <node id="6405654937062418812" at="90,63,91,29" concept="2" />
-      <node id="7406771907178599908" at="94,26,95,32" concept="2" />
-      <node id="2034046503373012020" at="102,31,103,103" concept="2" />
-      <node id="8782044674114023436" at="105,13,106,63" concept="2" />
-      <node id="8782044674114023448" at="106,63,107,34" concept="2" />
-      <node id="2034046503373008738" at="110,29,111,53" concept="2" />
-      <node id="3196684409401005385" at="118,27,119,36" concept="2" />
-      <node id="7283833278907755825" at="66,10,68,5" concept="0" />
-      <node id="920354110794005067" at="39,0,42,0" concept="7" trace="invoke#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <node id="7930787450152614848" at="53,39,56,5" concept="6" />
-      <node id="7222423519129192554" at="79,0,82,0" concept="7" trace="getEvaluationContainer#()Ljetbrains/mps/debugger/java/runtime/evaluation/container/IEvaluationContainer;" />
-      <node id="6405654937062418792" at="84,65,87,5" concept="6" />
-      <node id="2034046503373012017" at="102,0,105,0" concept="7" trace="run#()V" />
-      <node id="2034046503373008736" at="110,0,113,0" concept="7" trace="run#()V" />
-      <node id="1321036565876658983" at="71,0,75,0" concept="7" trace="actionPerformed#(Ljava/awt/event/ActionEvent;)V" />
-      <node id="920354110794005252" at="93,0,97,0" concept="7" trace="evaluate#()V" />
-      <node id="3196684409401005381" at="117,0,121,0" concept="7" trace="update#()V" />
-      <node id="920354110794005063" at="37,39,42,9" concept="2" />
-      <node id="2034046503373005560" at="46,0,51,0" concept="7" trace="run#()V" />
-      <node id="2034046503373012013" at="100,37,105,13" concept="2" />
-      <node id="2034046503373008732" at="108,9,113,11" concept="2" />
-      <node id="7283833278907755811" at="62,0,68,5" concept="6" />
-      <node id="1321036565876657781" at="69,0,75,92" concept="2" />
-      <node id="920354110794005061" at="36,40,43,5" concept="6" />
-      <node id="2034046503373005556" at="44,0,51,7" concept="2" />
-      <node id="8782044674114023411" at="99,25,108,9" concept="6" />
-      <node id="7283833278907764604" at="82,0,93,0" concept="7" trace="dispose#()V" />
-      <node id="8782044674113980378" at="99,0,115,0" concept="7" trace="run#()V" />
-      <node id="920354110794005538" at="97,71,115,32" concept="2" />
-      <node id="920354110794005532" at="97,0,117,0" concept="7" trace="updateGenerationResultTab#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <node id="920354110794004972" at="32,0,79,0" concept="1" trace="EvaluationPanel#(Lcom/intellij/openapi/project/Project;Ljetbrains/mps/debugger/java/runtime/state/DebugSession;Ljetbrains/mps/debugger/java/runtime/evaluation/container/IEvaluationContainer;Z)V" />
-      <scope id="920354110794005068" at="39,42,40,65" />
-      <scope id="7930787450152614849" at="54,36,55,81" />
-      <scope id="7283833278907755826" at="66,12,67,21" />
-      <scope id="1321036565876658988" at="72,51,73,19" />
-      <scope id="7222423519129192557" at="79,56,80,29" />
-      <scope id="6405654937062418793" at="85,23,86,13" />
-      <scope id="920354110794005255" at="94,26,95,32" />
-      <scope id="2034046503373012019" at="102,31,103,103" />
-      <scope id="2034046503373008737" at="110,29,111,53" />
-      <scope id="3196684409401005384" at="118,27,119,36" />
-      <scope id="7283833278907755812" at="63,39,65,24" />
-      <scope id="920354110794005067" at="39,0,42,0">
-        <var name="result" id="920354110794005067" />
-      </scope>
-      <scope id="2034046503373005562" at="46,25,49,32">
+      <node id="920354110794004952" at="24,0,25,0" concept="3" trace="myTabbedPane" />
+      <node id="920354110794004963" at="25,0,26,0" concept="3" trace="myEditor" />
+      <node id="920354110794004966" at="26,0,27,0" concept="3" trace="myResultEditor" />
+      <node id="920354110794004969" at="27,0,28,0" concept="3" trace="myEvaluationModel" />
+      <node id="920354110794005626" at="28,0,29,0" concept="3" trace="myHighlighter" />
+      <node id="1055996919827581981" at="29,0,30,0" concept="3" trace="myIsDisposed" />
+      <node id="7406771907178600471" at="30,132,31,31" concept="14" />
+      <node id="920354110794004992" at="31,31,32,60" concept="2" />
+      <node id="920354110794005047" at="32,60,33,0" concept="11" />
+      <node id="920354110794005048" at="33,0,34,40" concept="2" />
+      <node id="920354110794005079" at="34,40,35,0" concept="11" />
+      <node id="2034046503373005563" at="37,25,38,49" concept="8" />
+      <node id="2034046503373005570" at="38,49,39,91" concept="2" />
+      <node id="2034046503373005583" at="39,91,40,32" concept="2" />
+      <node id="920354110794005155" at="42,7,43,0" concept="11" />
+      <node id="7406771907178600501" at="43,0,44,39" concept="2" />
+      <node id="7930787450152615900" at="45,36,46,81" concept="2" />
+      <node id="7406771907178600499" at="47,5,48,0" concept="11" />
+      <node id="7283833278907755783" at="48,0,49,69" concept="8" />
+      <node id="1055996919827634276" at="49,69,50,35" concept="2" />
+      <node id="7283833278907755789" at="50,35,51,40" concept="2" />
+      <node id="7283833278907755803" at="51,40,52,59" concept="2" />
+      <node id="7283833278907755810" at="52,59,53,0" concept="11" />
+      <node id="7283833278907755813" at="54,39,55,45" concept="2" />
+      <node id="7283833278907755819" at="55,45,56,24" concept="2" />
+      <node id="7283833278907755827" at="57,12,58,21" concept="2" />
+      <node id="1321036565876643956" at="59,5,60,0" concept="11" />
+      <node id="1321036565876658989" at="63,51,64,19" concept="2" />
+      <node id="8668174811004042154" at="66,92,67,0" concept="11" />
+      <node id="7283833278907755831" at="67,0,68,60" concept="2" />
+      <node id="7222423519129192559" at="70,56,71,29" concept="9" />
+      <node id="9220693556914316976" at="74,25,75,65" concept="2" />
+      <node id="6405654937062418794" at="76,23,77,13" concept="9" />
+      <node id="6405654937062418796" at="78,5,79,24" concept="2" />
+      <node id="3196684409401005433" at="79,24,80,20" concept="2" />
+      <node id="6405654937062418805" at="80,20,81,63" concept="2" />
+      <node id="6405654937062418812" at="81,63,82,29" concept="2" />
+      <node id="7406771907178599908" at="85,26,86,32" concept="2" />
+      <node id="3196684409401005385" at="89,27,90,36" concept="2" />
+      <node id="7283833278907755825" at="57,10,59,5" concept="0" />
+      <node id="7930787450152614848" at="44,39,47,5" concept="6" />
+      <node id="7222423519129192554" at="70,0,73,0" concept="7" trace="getEvaluationContainer#()Ljetbrains/mps/debugger/java/runtime/evaluation/container/IEvaluationContainer;" />
+      <node id="6405654937062418792" at="75,65,78,5" concept="6" />
+      <node id="1321036565876658983" at="62,0,66,0" concept="7" trace="actionPerformed#(Ljava/awt/event/ActionEvent;)V" />
+      <node id="920354110794005252" at="84,0,88,0" concept="7" trace="evaluate#()V" />
+      <node id="3196684409401005381" at="88,0,92,0" concept="7" trace="update#()V" />
+      <node id="2034046503373005560" at="37,0,42,0" concept="7" trace="run#()V" />
+      <node id="7283833278907755811" at="53,0,59,5" concept="6" />
+      <node id="1321036565876657781" at="60,0,66,92" concept="2" />
+      <node id="2034046503373005556" at="35,0,42,7" concept="2" />
+      <node id="7283833278907764604" at="73,0,84,0" concept="7" trace="dispose#()V" />
+      <node id="920354110794004972" at="30,0,70,0" concept="1" trace="EvaluationPanel#(Lcom/intellij/openapi/project/Project;Ljetbrains/mps/debugger/java/runtime/state/DebugSession;Ljetbrains/mps/debugger/java/runtime/evaluation/container/IEvaluationContainer;Z)V" />
+      <scope id="7930787450152614849" at="45,36,46,81" />
+      <scope id="7283833278907755826" at="57,12,58,21" />
+      <scope id="1321036565876658988" at="63,51,64,19" />
+      <scope id="7222423519129192557" at="70,56,71,29" />
+      <scope id="6405654937062418793" at="76,23,77,13" />
+      <scope id="920354110794005255" at="85,26,86,32" />
+      <scope id="3196684409401005384" at="89,27,90,36" />
+      <scope id="7283833278907755812" at="54,39,56,24" />
+      <scope id="2034046503373005562" at="37,25,40,32">
         <var name="node" id="2034046503373005564" />
       </scope>
-      <scope id="7222423519129192554" at="79,0,82,0" />
-      <scope id="2034046503373012017" at="102,0,105,0" />
-      <scope id="2034046503373008736" at="110,0,113,0" />
-      <scope id="1321036565876658983" at="71,0,75,0">
+      <scope id="7222423519129192554" at="70,0,73,0" />
+      <scope id="1321036565876658983" at="62,0,66,0">
         <var name="p0" id="1321036565876658986" />
       </scope>
-      <scope id="920354110794005252" at="93,0,97,0" />
-      <scope id="3196684409401005381" at="117,0,121,0" />
-      <scope id="920354110794005062" at="37,39,42,9" />
-      <scope id="2034046503373005560" at="46,0,51,0" />
-      <scope id="8782044674114023412" at="100,37,107,34" />
-      <scope id="7283833278907764607" at="83,25,91,29" />
-      <scope id="7283833278907764604" at="82,0,93,0" />
-      <scope id="8782044674113980380" at="99,25,113,11" />
-      <scope id="8782044674113980378" at="99,0,115,0" />
-      <scope id="920354110794005537" at="97,71,115,32" />
-      <scope id="920354110794005532" at="97,0,117,0">
-        <var name="generatedResult" id="920354110794005533" />
-      </scope>
-      <scope id="920354110794004980" at="32,132,77,60">
+      <scope id="920354110794005252" at="84,0,88,0" />
+      <scope id="3196684409401005381" at="88,0,92,0" />
+      <scope id="2034046503373005560" at="37,0,42,0" />
+      <scope id="7283833278907764607" at="74,25,82,29" />
+      <scope id="7283833278907764604" at="73,0,84,0" />
+      <scope id="920354110794004980" at="30,132,68,60">
         <var name="splitPane" id="7283833278907755784" />
       </scope>
-      <scope id="920354110794004972" at="32,0,79,0">
+      <scope id="920354110794004972" at="30,0,70,0">
         <var name="autoUpdate" id="8668174811004040710" />
         <var name="evaluationModel" id="2814952292830089907" />
         <var name="project" id="920354110794194624" />
         <var name="session" id="2814952292830089909" />
       </scope>
-      <unit id="920354110794005067" at="38,50,42,7" name="jetbrains.mps.debugger.java.runtime.ui.evaluation.EvaluationPanel$1" />
-      <unit id="2034046503373012017" at="101,61,105,11" name="jetbrains.mps.debugger.java.runtime.ui.evaluation.EvaluationPanel$5" />
-      <unit id="2034046503373008736" at="109,59,113,9" name="jetbrains.mps.debugger.java.runtime.ui.evaluation.EvaluationPanel$5" />
-      <unit id="1321036565876658981" at="70,40,75,5" name="jetbrains.mps.debugger.java.runtime.ui.evaluation.EvaluationPanel$3" />
-      <unit id="2034046503373005560" at="45,55,51,5" name="jetbrains.mps.debugger.java.runtime.ui.evaluation.EvaluationPanel$2" />
-      <unit id="8782044674113980378" at="98,56,115,5" name="jetbrains.mps.debugger.java.runtime.ui.evaluation.EvaluationPanel$4" />
-      <unit id="920354110794004331" at="25,0,122,0" name="jetbrains.mps.debugger.java.runtime.ui.evaluation.EvaluationPanel" />
+      <unit id="1321036565876658981" at="61,40,66,5" name="jetbrains.mps.debugger.java.runtime.ui.evaluation.EvaluationPanel$2" />
+      <unit id="2034046503373005560" at="36,55,42,5" name="jetbrains.mps.debugger.java.runtime.ui.evaluation.EvaluationPanel$1" />
+      <unit id="920354110794004331" at="23,0,93,0" name="jetbrains.mps.debugger.java.runtime.ui.evaluation.EvaluationPanel" />
     </file>
   </root>
 </debug-info>

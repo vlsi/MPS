@@ -5,7 +5,6 @@
     <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
   </common>
   <source id="121824560294376345" name="PaletteElement" hash="-89hhue3gpw3eboh30m7i8zig6yoks3l">
-    <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
     <file name="PaletteElement.java" />
   </source>
   <source id="121824560294376355" name="PaletteActionGroup" hash="-ki2l784cs12k6lmeg3neydec2k7339">

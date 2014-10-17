@@ -25,7 +25,6 @@ public class MultiplePsiJavaStubDataSource extends DataSourceBase implements Jav
   private List<PsiJavaStubDataSource> myDataSources;
   private List<DataSourceListener> myListeners = ListSequence.fromList(new ArrayList<DataSourceListener>());
 
-
   public MultiplePsiJavaStubDataSource(final Module module, Iterable<PsiDirectory> dirs) {
     myDataSources = Sequence.fromIterable(dirs).select(new ISelector<PsiDirectory, PsiJavaStubDataSource>() {
       public PsiJavaStubDataSource select(PsiDirectory it) {
@@ -34,8 +33,6 @@ public class MultiplePsiJavaStubDataSource extends DataSourceBase implements Jav
     }).toListSequence();
   }
 
-
-
   public Iterable<PsiJavaFile> getJavaFiles() {
     return ListSequence.fromList(myDataSources).translate(new ITranslator2<PsiJavaStubDataSource, PsiJavaFile>() {
       public Iterable<PsiJavaFile> translate(PsiJavaStubDataSource it) {
@@ -43,8 +40,6 @@ public class MultiplePsiJavaStubDataSource extends DataSourceBase implements Jav
       }
     });
   }
-
-
 
   public void changed(final DataSource source, final PsiJavaStubEvent event) {
     synchronized (LOCK) {
@@ -59,7 +54,6 @@ public class MultiplePsiJavaStubDataSource extends DataSourceBase implements Jav
       });
     }
   }
-
   public void changed(final DataSource source) {
     synchronized (LOCK) {
       // Q: pass this dataSource 'this' or original 'source' ? 
@@ -70,8 +64,6 @@ public class MultiplePsiJavaStubDataSource extends DataSourceBase implements Jav
       });
     }
   }
-
-
 
   @Override
   public void addListener(DataSourceListener listener) {
@@ -84,8 +76,6 @@ public class MultiplePsiJavaStubDataSource extends DataSourceBase implements Jav
     }
   }
 
-
-
   @Override
   public void removeListener(DataSourceListener listener) {
     synchronized (LOCK) {
@@ -96,8 +86,6 @@ public class MultiplePsiJavaStubDataSource extends DataSourceBase implements Jav
     }
   }
 
-
-
   private void startListening() {
     ListSequence.fromList(myDataSources).visitAll(new IVisitor<PsiJavaStubDataSource>() {
       public void visit(PsiJavaStubDataSource it) {
@@ -105,8 +93,6 @@ public class MultiplePsiJavaStubDataSource extends DataSourceBase implements Jav
       }
     });
   }
-
-
 
   private void stopListening() {
     ListSequence.fromList(myDataSources).visitAll(new IVisitor<PsiJavaStubDataSource>() {

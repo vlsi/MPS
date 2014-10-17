@@ -4,8 +4,9 @@ package jetbrains.mps.lang.editor.behavior;
 
 import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
 import jetbrains.mps.lang.core.behavior.IDontSubstituteByDefault_BehaviorDescriptor;
+import jetbrains.mps.lang.core.behavior.ImplementationPart_BehaviorDescriptor;
 
-public class CellActionMapItem_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements IDontSubstituteByDefault_BehaviorDescriptor {
+public class CellActionMapItem_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements IDontSubstituteByDefault_BehaviorDescriptor, ImplementationPart_BehaviorDescriptor {
   public CellActionMapItem_BehaviorDescriptor() {
   }
   @Override

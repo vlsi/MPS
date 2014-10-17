@@ -17,6 +17,7 @@ package jetbrains.mps.extapi.model;
 
 import jetbrains.mps.extapi.module.SModuleBase;
 import jetbrains.mps.smodel.InvalidSModel;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.loading.ModelLoadingState;
 import org.apache.log4j.LogManager;
@@ -92,6 +93,12 @@ public abstract class SModelBase extends SModelDescriptorStub implements SModel 
       }
       myRepository = null;
     }
+    fireBeforeModelDisposed(this);
+    jetbrains.mps.smodel.SModel model = getCurrentModelInternal();
+    if (model != null) {
+      model.dispose();
+    }
+    clearListeners();
   }
 
   @Override
@@ -329,6 +336,23 @@ public abstract class SModelBase extends SModelDescriptorStub implements SModel 
     myModelReference = newModelReference;
   }
 
+  protected synchronized void replaceModelAndFireEvent(jetbrains.mps.smodel.SModel oldModel, jetbrains.mps.smodel.SModel newModel) {
+    ModelAccess.assertLegalWrite();
+    if (oldModel != null) {
+      oldModel.setModelDescriptor(null);
+    }
+    if (newModel != null) {
+      newModel.setModelDescriptor(this);
+    }
+    if (oldModel != null) {
+      notifyModelReplaced(oldModel);
+      // ONCE notifyModelReplaced gone, don't forget to dispose oldModel here (SModelRepository does this in addition to notification dispatch)
+    }
+
+    fireModelReplaced();
+
+    MPSModuleRepository.getInstance().invalidateCaches();
+  }
 
   protected void assertCanRead() {
 //    if (myRepository == null) return;

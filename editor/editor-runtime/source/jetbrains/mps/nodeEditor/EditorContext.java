@@ -321,20 +321,39 @@ public class EditorContext implements jetbrains.mps.openapi.editor.EditorContext
     return myNodeEditorComponent.getSelectedNodes();
   }
 
+  /**
+   * Executing command and updating selection in accordance with changes made by this command
+   *
+   * @deprecated since MPS 3.2 should not be used anymore outside of editor implementation.
+   * For internal editor implementation needs separate class EditorCommand was created in MPS
+   * editor implementation module
+   */
+  @Deprecated
   @Override
   public void executeCommand(Runnable r) {
     myNodeEditorComponent.executeCommand(r);
   }
 
+  /**
+   * Executing command and updating selection in accordance with changes made by this command
+   *
+   * @deprecated since MPS 3.2 should not be used anymore outside of editor implementation.
+   * For internal editor implementation needs separate class EditorComputable was created in MPS
+   * editor implementation module
+   */
+  @Deprecated
   @Override
   public <T> T executeCommand(Computable<T> c) {
     return myNodeEditorComponent.executeCommand(c);
   }
 
+  /**
+   * @deprecated since MPS 3.2 not used anymore
+   */
+  @Deprecated
   @Override
   public boolean isInsideCommand() {
-// TODO: move executeCommand logic into EditorContext & reimplement isForcedFocusChangeEnabled() method using isInsideCommand()
-    return myNodeEditorComponent.isForcedFocusChangeEnabled();
+    return false;
   }
 
   void startTracing(String name) {

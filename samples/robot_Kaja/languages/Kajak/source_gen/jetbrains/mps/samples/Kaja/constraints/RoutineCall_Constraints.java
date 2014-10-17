@@ -18,10 +18,10 @@ import jetbrains.mps.scope.CompositeScope;
 import jetbrains.mps.scope.SimpleRoleScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.scope.ListScope;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.smodel.SNodePointer;
@@ -49,61 +49,13 @@ public class RoutineCall_Constraints extends BaseConstraintsDescriptor {
           @Override
           public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
             {
-              final CompositeScope scope = new CompositeScope(SimpleRoleScope.forNamedElements(SNodeOperations.getAncestor(_context.getEnclosingNode(), "jetbrains.mps.samples.Kaja.structure.Script", true, false), SLinkOperations.findLinkDeclaration("jetbrains.mps.samples.Kaja.structure.Script", "definitions")), SimpleRoleScope.forNamedElements(SNodeOperations.getAncestor(_context.getEnclosingNode(), "jetbrains.mps.samples.Kaja.structure.Library", true, false), SLinkOperations.findLinkDeclaration("jetbrains.mps.samples.Kaja.structure.Library", "definitions")), new Scope() {
-                /**
-                 * Returns all available elements in the scope.
-                 * 
-                 * @param prefix (if not null) filters out elements whose reference text doesn't start with prefix
-                 * @return list of nodes in the scope
-                 */
-                @Override
-                public Iterable<SNode> getAvailableElements(@Nullable String prefix) {
-                  return ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(SNodeOperations.getAncestor(_context.getEnclosingNode(), "jetbrains.mps.samples.Kaja.structure.Script", true, false), "body", true), "commands", true)).where(new IWhereFilter<SNode>() {
-                    public boolean accept(SNode it) {
-                      return SNodeOperations.isInstanceOf(it, "jetbrains.mps.samples.Kaja.structure.RoutineDefinition");
-                    }
-                  });
+              final CompositeScope scope = new CompositeScope(SimpleRoleScope.forNamedElements(SNodeOperations.getAncestor(_context.getEnclosingNode(), "jetbrains.mps.samples.Kaja.structure.Script", true, false), SLinkOperations.findLinkDeclaration("jetbrains.mps.samples.Kaja.structure.Script", "definitions")), SimpleRoleScope.forNamedElements(SNodeOperations.getAncestor(_context.getEnclosingNode(), "jetbrains.mps.samples.Kaja.structure.Library", true, false), SLinkOperations.findLinkDeclaration("jetbrains.mps.samples.Kaja.structure.Library", "definitions")), new ListScope(ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(SNodeOperations.getAncestor(_context.getEnclosingNode(), "jetbrains.mps.samples.Kaja.structure.Script", true, false), "body", true), "commands", true)).where(new IWhereFilter<SNode>() {
+                public boolean accept(SNode it) {
+                  return SNodeOperations.isInstanceOf(it, "jetbrains.mps.samples.Kaja.structure.RoutineDefinition");
                 }
-                /**
-                 * Resolves element by reference text.
-                 * 
-                 * Invariant: getReferenceText(contextNode, resolve(contextNode, refText)) == refText
-                 * 
-                 * @param contextNode source node for the reference, or its nearest parent node (if source node is unavailable)
-                 * @param refText reference text
-                 * @return resolved element when reference text unambiguously identifies element, null otherwise
-                 */
-                @Nullable
-                @Override
-                public SNode resolve(SNode contextNode, @NotNull final String refText) {
-                  return ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(SNodeOperations.getAncestor(_context.getEnclosingNode(), "jetbrains.mps.samples.Kaja.structure.Script", true, false), "body", true), "commands", true)).where(new IWhereFilter<SNode>() {
-                    public boolean accept(SNode it) {
-                      return SNodeOperations.isInstanceOf(it, "jetbrains.mps.samples.Kaja.structure.RoutineDefinition");
-                    }
-                  }).where(new IWhereFilter<SNode>() {
-                    public boolean accept(SNode it) {
-                      return SPropertyOperations.getString(SNodeOperations.cast(it, "jetbrains.mps.samples.Kaja.structure.RoutineDefinition"), "name").equals(refText);
-                    }
-                  }).first();
-                }
-                /**
-                 * Creates textual reference for scope element. If element has no textual representation
-                 * for the reference, returns null.
-                 * 
-                 * Invariant: resolve(contextNode, getReferenceText(contextNode, node)) == node
-                 * 
-                 * @param contextNode source node for the reference, or its nearest parent node (if source node is unavailable)
-                 * @param node element from the current scope (contains(node) == true)
-                 * @return reference text for the node element in the current scope
-                 */
-                @Nullable
-                @Override
-                public String getReferenceText(SNode contextNode, @NotNull SNode node) {
-                  if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.samples.Kaja.structure.RoutineDefinition")) {
-                    return SPropertyOperations.getString(SNodeOperations.cast(node, "jetbrains.mps.samples.Kaja.structure.RoutineDefinition"), "name");
-                  } else {
-                    return null;
-                  }
+              })) {
+                public String getName(SNode child) {
+                  return SPropertyOperations.getString(SNodeOperations.cast(child, "jetbrains.mps.lang.core.structure.INamedConcept"), "name");
                 }
               });
 

@@ -38,7 +38,6 @@ public class DebugSessionManagerComponent implements ProjectComponent {
   }
   @Override
   public void initComponent() {
-    addRunContentListener();
   }
   @Override
   public void disposeComponent() {
@@ -46,6 +45,7 @@ public class DebugSessionManagerComponent implements ProjectComponent {
   }
   @Override
   public void projectOpened() {
+    addRunContentListener();
   }
   @Override
   public void projectClosed() {

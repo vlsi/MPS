@@ -201,18 +201,6 @@ public enum LanguageAspect {
     }
   },
 
-  STUBS("stubs") {
-    @Override
-    public SModuleReference getMainLanguage() {
-      return BootstrapLanguages.stubsLanguageRef();
-    }
-
-    @Override
-    public String getHelpURL() {
-      return "";
-    }
-  },
-
   MIGRATION("migration") {
     @Override
     public SModuleReference getMainLanguage() {

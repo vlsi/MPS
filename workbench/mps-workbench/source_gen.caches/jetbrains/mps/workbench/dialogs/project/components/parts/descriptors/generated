@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="45yieau09z5dx7cqsgrsrybzifxzykt">
+<dependencies version="2" modelHash="-4ktcgqfjfqtrxbcknosvrglo0jawz4i">
   <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" hash="-2sqpydigz7vryaerubh22j78l4l08jz" />
   <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="d987foka3qddszg3k3yjss0jaslj9i" />
   <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="8cdjk2e5d2y2u9lult1ptgxxrttxv07" />
@@ -18,10 +18,6 @@
   </source>
   <source id="1560298786499493471" name="ModuleDescriptor" hash="dxywezy4th3flh4s4hflnofv8e2be2c">
     <file name="ModuleDescriptor.java" />
-  </source>
-  <source id="1560298786499494704" name="ManagerDescriptor" hash="o52yr6m67wg8gto9nnioxrrvcuyt2k">
-    <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
-    <file name="ManagerDescriptor.java" />
   </source>
   <source id="1560298786499495292" name="DepDescriptor" hash="bfn6niz80j618vozsdho97wpzhup3fq">
     <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />

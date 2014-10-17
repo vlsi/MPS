@@ -24,29 +24,30 @@ import com.intellij.debugger.impl.DebuggerContextListener;
 import com.intellij.debugger.impl.DebuggerManagerListener;
 import com.intellij.debugger.impl.DebuggerSession;
 import com.intellij.execution.ExecutionManager;
+import com.intellij.execution.Executor;
 import com.intellij.execution.ui.RunContentDescriptor;
-import com.intellij.execution.ui.RunContentListener;
+import com.intellij.execution.ui.RunContentManager;
+import com.intellij.execution.ui.RunContentWithExecutorListener;
 import com.intellij.openapi.components.ProjectComponent;
 import com.intellij.openapi.fileEditor.FileEditorManager;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.debugger.core.CurrentLinePositionComponentEx;
 import jetbrains.mps.idea.java.trace.MpsSourcePosition;
-import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.model.SNode;
 
 import java.util.Collection;
-import java.util.Set;
 
 public class IdeaDebuggerPositionHighlighter extends CurrentLinePositionComponentEx<DebuggerSession> implements ProjectComponent {
   private DebuggerManagerEx myDebuggerManager;
   private final DebuggerManagerListener myDebuggerManagerListener = new MyDebuggerManagerListener();
   private final DebuggerContextListener mySessionListener = new MyDebuggerContextListener();
-  private final RunContentListener myRunContentListener = new MyRunContentListener();
+  private final RunContentWithExecutorListener myRunContentListener = new MyRunContentListener();
   private final ExecutionManager myExecutionManager;
 
-  public IdeaDebuggerPositionHighlighter(Project project, FileEditorManager fileEditorManager, ExecutionManager executionManager) {
+  public IdeaDebuggerPositionHighlighter(Project project, FileEditorManager fileEditorManager) {
     super(project, fileEditorManager);
-    myExecutionManager = executionManager;
+    myExecutionManager = ExecutionManager.getInstance(myProject);
   }
 
   @Override
@@ -60,15 +61,10 @@ public class IdeaDebuggerPositionHighlighter extends CurrentLinePositionComponen
 
   @Override
   public void initComponent() {
-    myDebuggerManager = DebuggerManagerEx.getInstanceEx(myProject);
-    myDebuggerManager.addDebuggerManagerListener(myDebuggerManagerListener);
-    myExecutionManager.getContentManager().addRunContentListener(myRunContentListener);
   }
 
   @Override
   public void disposeComponent() {
-    myExecutionManager.getContentManager().removeRunContentListener(myRunContentListener);
-    myDebuggerManager.removeDebuggerManagerListener(myDebuggerManagerListener);
   }
 
   @NotNull
@@ -79,10 +75,14 @@ public class IdeaDebuggerPositionHighlighter extends CurrentLinePositionComponen
 
   @Override
   public void projectOpened() {
+    myDebuggerManager = DebuggerManagerEx.getInstanceEx(myProject);
+    myDebuggerManager.addDebuggerManagerListener(myDebuggerManagerListener);
+    myProject.getMessageBus().connect(myProject).subscribe(RunContentManager.TOPIC, myRunContentListener);
   }
 
   @Override
   public void projectClosed() {
+    myDebuggerManager.removeDebuggerManagerListener(myDebuggerManagerListener);
   }
 
   @Override
@@ -125,14 +125,11 @@ public class IdeaDebuggerPositionHighlighter extends CurrentLinePositionComponen
     }
   }
 
-  private class MyRunContentListener implements RunContentListener {
-    private MyRunContentListener() {
-    }
-
+  private class MyRunContentListener implements RunContentWithExecutorListener {
     @Override
-    public void contentSelected(RunContentDescriptor descriptor) {
-      if (descriptor != null) {
-        DebugProcess debugProcess = myDebuggerManager.getDebugProcess(descriptor.getProcessHandler());
+    public void contentSelected(RunContentDescriptor runContentDescriptor, @NotNull Executor executor) {
+      if (runContentDescriptor != null) {
+        DebugProcess debugProcess = myDebuggerManager.getDebugProcess(runContentDescriptor.getProcessHandler());
         if (debugProcess != null) {
           DebuggerSession debuggerSession = myDebuggerManager.getSession(debugProcess);
           currentSessionChanged(debuggerSession);
@@ -141,7 +138,8 @@ public class IdeaDebuggerPositionHighlighter extends CurrentLinePositionComponen
     }
 
     @Override
-    public void contentRemoved(RunContentDescriptor descriptor) {
+    public void contentRemoved(RunContentDescriptor runContentDescriptor, @NotNull Executor executor) {
+
     }
   }
 }

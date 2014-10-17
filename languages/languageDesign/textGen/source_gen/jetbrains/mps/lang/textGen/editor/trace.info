@@ -11,7 +11,7 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
   <root>
     <file name="EditorAspectDescriptorImpl.java">
-      <unit at="13,0,62,0" name="jetbrains.mps.lang.textGen.editor.EditorAspectDescriptorImpl" />
+      <unit at="13,0,64,0" name="jetbrains.mps.lang.textGen.editor.EditorAspectDescriptorImpl" />
     </file>
   </root>
   <root nodeRef="r:8234d58c-a8a4-433b-96ca-0413d4ef8df8(jetbrains.mps.lang.textGen.editor)/1233670266779">
@@ -3600,6 +3600,37 @@
         <var name="node" id="1237470771563" />
       </scope>
       <unit id="1237470749854" at="23,0,75,0" name="jetbrains.mps.lang.textGen.editor.FoundErrorOperation_Editor" />
+    </file>
+  </root>
+  <root nodeRef="r:8234d58c-a8a4-433b-96ca-0413d4ef8df8(jetbrains.mps.lang.textGen.editor)/3147100357551285949">
+    <file name="StubOperationDeclaration_Editor.java">
+      <node id="3147100357551285949" at="15,79,16,62" concept="6" />
+      <node id="3596842757766946459" at="18,88,19,160" concept="5" />
+      <node id="3596842757766946459" at="19,160,20,67" concept="5" />
+      <node id="3596842757766946459" at="21,26,22,27" concept="2" />
+      <node id="3596842757766946459" at="23,5,24,34" concept="5" />
+      <node id="3596842757766946459" at="24,34,25,66" concept="2" />
+      <node id="3596842757766946459" at="25,66,26,40" concept="2" />
+      <node id="3596842757766946459" at="26,40,27,22" concept="6" />
+      <node id="3147100357551285949" at="15,0,18,0" concept="4" trace="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+      <node id="3596842757766946459" at="20,67,23,5" concept="3" />
+      <node id="3596842757766946459" at="18,0,29,0" concept="4" trace="createComponent_n6jjlx_a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+      <scope id="3147100357551285949" at="15,79,16,62" />
+      <scope id="3596842757766946459" at="21,26,22,27" />
+      <scope id="3147100357551285949" at="15,0,18,0">
+        <var name="editorContext" id="3147100357551285949" />
+        <var name="node" id="3147100357551285949" />
+      </scope>
+      <scope id="3596842757766946459" at="18,88,27,22">
+        <var name="bigCell" id="3596842757766946459" />
+        <var name="editorCell" id="3596842757766946459" />
+        <var name="style" id="3596842757766946459" />
+      </scope>
+      <scope id="3596842757766946459" at="18,0,29,0">
+        <var name="editorContext" id="3596842757766946459" />
+        <var name="node" id="3596842757766946459" />
+      </scope>
+      <unit id="3147100357551285949" at="14,0,30,0" name="jetbrains.mps.lang.textGen.editor.StubOperationDeclaration_Editor" />
     </file>
   </root>
   <root nodeRef="r:8234d58c-a8a4-433b-96ca-0413d4ef8df8(jetbrains.mps.lang.textGen.editor)/6911933836258445311">

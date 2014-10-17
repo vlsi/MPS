@@ -116,7 +116,7 @@
       <unit at="7,0,15,0" name="jetbrains.mps.lang.test.behavior.InvokeIntentionStatement_BehaviorDescriptor" />
     </file>
     <file name="EditorTestCase_BehaviorDescriptor.java">
-      <unit at="15,0,50,0" name="jetbrains.mps.lang.test.behavior.EditorTestCase_BehaviorDescriptor" />
+      <unit at="16,0,51,0" name="jetbrains.mps.lang.test.behavior.EditorTestCase_BehaviorDescriptor" />
     </file>
     <file name="ReportErrorStatementReference_BehaviorDescriptor.java">
       <unit at="8,0,19,0" name="jetbrains.mps.lang.test.behavior.ReportErrorStatementReference_BehaviorDescriptor" />
@@ -176,7 +176,7 @@
       <unit at="7,0,21,0" name="jetbrains.mps.lang.test.behavior.NodeTypeSystemWarningCheckOperation_BehaviorDescriptor" />
     </file>
     <file name="NodesTestCase_BehaviorDescriptor.java">
-      <unit at="15,0,59,0" name="jetbrains.mps.lang.test.behavior.NodesTestCase_BehaviorDescriptor" />
+      <unit at="16,0,60,0" name="jetbrains.mps.lang.test.behavior.NodesTestCase_BehaviorDescriptor" />
     </file>
     <file name="PressKeyStatement_BehaviorDescriptor.java">
       <unit at="7,0,15,0" name="jetbrains.mps.lang.test.behavior.PressKeyStatement_BehaviorDescriptor" />

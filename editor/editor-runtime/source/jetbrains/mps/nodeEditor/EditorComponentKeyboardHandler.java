@@ -16,11 +16,11 @@
 package jetbrains.mps.nodeEditor;
 
 
+import jetbrains.mps.editor.runtime.commands.EditorComputable;
 import jetbrains.mps.nodeEditor.cells.APICellAdapter;
 import jetbrains.mps.nodeEditor.keymaps.KeymapHandler;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.cells.KeyMapAction;
-import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.Pair;
 
 import java.awt.event.KeyEvent;
@@ -80,14 +80,15 @@ public class EditorComponentKeyboardHandler implements KeyboardHandler {
           jetbrains.mps.openapi.editor.cells.CellActionType.LEFT_TRANSFORM.equals(actionType);
 
       if (selectedCell.isErrorState() && strictMatching) {
-        boolean res = editorContext.executeCommand(new Computable<Boolean>() {
+        EditorComputable<Boolean> validateCommand = new EditorComputable<Boolean>(editorContext) {
           @Override
-          public Boolean compute() {
+          protected Boolean doCompute() {
             return APICellAdapter.validate(selectedCell, true, false);
           }
-        });
+        };
+        editorContext.getRepository().getModelAccess().executeCommand(validateCommand);
 
-        if (res) return true;
+        if (validateCommand.getResult()) return true;
       }
 
       if (actionType != null

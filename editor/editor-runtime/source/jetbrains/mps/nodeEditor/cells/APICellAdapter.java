@@ -43,7 +43,7 @@ import java.util.List;
 // TODO: Temporary adapter should be removed at the end of migration onto EditorCel API
 public class APICellAdapter {
   public static boolean isPunctuationLayout(EditorCell cell) {
-    return LayoutConstraints.PUNCTUATION_LAYOUT_CONSTRAINT.equals(cell.getStyle().get(StyleAttributes.LAYOUT_CONSTRAINT));
+    return LayoutConstraints.PUNCTUATION_LAYOUT_CONSTRAINT.getName().equals(cell.getStyle().get(StyleAttributes.LAYOUT_CONSTRAINT));
   }
 
   public static boolean hasErrorMessages(EditorCell cell) {

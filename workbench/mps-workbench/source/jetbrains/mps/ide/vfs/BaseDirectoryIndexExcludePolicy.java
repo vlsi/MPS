@@ -43,16 +43,6 @@ public abstract class BaseDirectoryIndexExcludePolicy implements DirectoryIndexE
   protected abstract Set<VirtualFile> getAllExcludeRoots();
 
   @Override
-  public boolean isExcludeRoot(VirtualFile file) {
-    return getAllExcludeRoots().contains(file);
-  }
-
-  @Override
-  public boolean isExcludeRootForModule(Module module, VirtualFile file) {
-    return getAllExcludeRoots().contains(file);
-  }
-
-  @Override
   public VirtualFile[] getExcludeRootsForProject() {
     if (myProject.isDisposed()) {
       return VirtualFile.EMPTY_ARRAY;

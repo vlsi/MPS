@@ -86,15 +86,9 @@ public class JavaSourceStubModelDescriptor extends ReloadableSModelBase implemen
     }
     MapSequence.fromMap(myRootsPerFile).clear();
     MapSequence.fromMap(myRootsById).clear();
-    final SModel cloned = createModel();
-    // <node> 
-    // <node> 
-    super.replaceModel(new Runnable() {
-      public void run() {
-        myModel = cloned;
-      }
-    });
-    cloned.setModelDescriptor(this);
+    final SModel oldModel = myModel;
+    myModel = createModel();
+    replaceModelAndFireEvent(oldModel, myModel);
   }
 
   @Override

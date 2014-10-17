@@ -188,7 +188,7 @@ public class CellLayout_Flow extends AbstractCellLayout {
         }
 
         //if no flow
-        if (LayoutConstraints.NOFLOW_LAYOUT_CONSTRAINT.equals(cell.getStyle().get(StyleAttributes.LAYOUT_CONSTRAINT))) {
+        if (LayoutConstraints.NOFLOW_LAYOUT_CONSTRAINT.getName().equals(cell.getStyle().get(StyleAttributes.LAYOUT_CONSTRAINT))) {
           if (!getCurrentLine().isEmpty()) {
             alignLine();
             nextLine();
@@ -335,7 +335,7 @@ public class CellLayout_Flow extends AbstractCellLayout {
     TextBuilder result = jetbrains.mps.nodeEditor.text.TextBuilder.getEmptyTextBuilder();
     for (;it.hasNext();) {
       EditorCell editorCell = it.next();
-      if (LayoutConstraints.NOFLOW_LAYOUT_CONSTRAINT.equals(editorCell.getStyle().get(StyleAttributes.LAYOUT_CONSTRAINT))) {
+      if (LayoutConstraints.NOFLOW_LAYOUT_CONSTRAINT.getName().equals(editorCell.getStyle().get(StyleAttributes.LAYOUT_CONSTRAINT))) {
         return result.appendToTheBottom(editorCell.renderText());
       }
       result = result.appendToTheRight(editorCell.renderText(), !APICellAdapter.isPunctuationLayout(editorCell));

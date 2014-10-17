@@ -9,7 +9,7 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
   <root>
     <file name="BaseIntentionDeclaration_BehaviorDescriptor.java">
-      <unit at="16,0,58,0" name="jetbrains.mps.lang.intentions.behavior.BaseIntentionDeclaration_BehaviorDescriptor" />
+      <unit at="17,0,59,0" name="jetbrains.mps.lang.intentions.behavior.BaseIntentionDeclaration_BehaviorDescriptor" />
     </file>
     <file name="ParameterizedIntentionDeclaration_BehaviorDescriptor.java">
       <unit at="7,0,18,0" name="jetbrains.mps.lang.intentions.behavior.ParameterizedIntentionDeclaration_BehaviorDescriptor" />

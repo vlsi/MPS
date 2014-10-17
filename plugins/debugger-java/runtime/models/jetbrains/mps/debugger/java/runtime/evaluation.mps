@@ -2992,7 +2992,7 @@
                       <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="6108369403998157180" resolveInfo="virtualMachine" />
                     </node>
                     <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="6108369403998530424" nodeInfo="nn">
-                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="f5hi.~VirtualMachine%dmirrorOf(boolean)%ccom%dsun%djdi%dBooleanValue" resolveInfo="mirrorOf" />
+                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="f5hi.~VirtualMachine%dmirrorOf(byte)%ccom%dsun%djdi%dByteValue" resolveInfo="mirrorOf" />
                       <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.CastExpression" typeId="tpee.1070534934090" id="6108369403998548545" nodeInfo="nn">
                         <node role="type" roleId="tpee.1070534934091" type="tpee.ByteType" typeId="tpee.1070534604311" id="6108369403998548552" nodeInfo="in" />
                         <node role="expression" roleId="tpee.1070534934092" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="6108369403998530461" nodeInfo="nn">
@@ -3028,7 +3028,7 @@
                       <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="6108369403998157180" resolveInfo="virtualMachine" />
                     </node>
                     <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="6108369403998548560" nodeInfo="nn">
-                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="f5hi.~VirtualMachine%dmirrorOf(boolean)%ccom%dsun%djdi%dBooleanValue" resolveInfo="mirrorOf" />
+                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="f5hi.~VirtualMachine%dmirrorOf(char)%ccom%dsun%djdi%dCharValue" resolveInfo="mirrorOf" />
                       <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.CharConstant" typeId="tpee.1200397529627" id="6108369403998551510" nodeInfo="nn">
                         <property name="charConstant" nameId="tpee.1200397540847" value="C" />
                       </node>
@@ -3061,7 +3061,7 @@
                       <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="6108369403998157180" resolveInfo="virtualMachine" />
                     </node>
                     <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="6108369403998548599" nodeInfo="nn">
-                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="f5hi.~VirtualMachine%dmirrorOf(boolean)%ccom%dsun%djdi%dBooleanValue" resolveInfo="mirrorOf" />
+                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="f5hi.~VirtualMachine%dmirrorOf(short)%ccom%dsun%djdi%dShortValue" resolveInfo="mirrorOf" />
                       <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.CastExpression" typeId="tpee.1070534934090" id="6108369403998548600" nodeInfo="nn">
                         <node role="type" roleId="tpee.1070534934091" type="tpee.ShortType" typeId="tpee.1070533982221" id="6108369403998635350" nodeInfo="in" />
                         <node role="expression" roleId="tpee.1070534934092" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="6108369403998548602" nodeInfo="nn">
@@ -3097,7 +3097,7 @@
                       <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="6108369403998157180" resolveInfo="virtualMachine" />
                     </node>
                     <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="6108369403998548651" nodeInfo="nn">
-                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="f5hi.~VirtualMachine%dmirrorOf(boolean)%ccom%dsun%djdi%dBooleanValue" resolveInfo="mirrorOf" />
+                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="f5hi.~VirtualMachine%dmirrorOf(int)%ccom%dsun%djdi%dIntegerValue" resolveInfo="mirrorOf" />
                       <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="6108369403998548654" nodeInfo="nn">
                         <property name="value" nameId="tpee.1068580320021" value="1" />
                       </node>
@@ -3130,7 +3130,7 @@
                       <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="6108369403998157180" resolveInfo="virtualMachine" />
                     </node>
                     <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="6108369403998548716" nodeInfo="nn">
-                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="f5hi.~VirtualMachine%dmirrorOf(boolean)%ccom%dsun%djdi%dBooleanValue" resolveInfo="mirrorOf" />
+                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="f5hi.~VirtualMachine%dmirrorOf(long)%ccom%dsun%djdi%dLongValue" resolveInfo="mirrorOf" />
                       <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.CastExpression" typeId="tpee.1070534934090" id="6108369403998548717" nodeInfo="nn">
                         <node role="type" roleId="tpee.1070534934091" type="tpee.LongType" typeId="tpee.1068581242867" id="6108369403998689692" nodeInfo="in" />
                         <node role="expression" roleId="tpee.1070534934092" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="6108369403998548719" nodeInfo="nn">
@@ -3166,7 +3166,7 @@
                       <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="6108369403998157180" resolveInfo="virtualMachine" />
                     </node>
                     <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="6108369403998548794" nodeInfo="nn">
-                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="f5hi.~VirtualMachine%dmirrorOf(boolean)%ccom%dsun%djdi%dBooleanValue" resolveInfo="mirrorOf" />
+                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="f5hi.~VirtualMachine%dmirrorOf(float)%ccom%dsun%djdi%dFloatValue" resolveInfo="mirrorOf" />
                       <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.CastExpression" typeId="tpee.1070534934090" id="6108369403998548795" nodeInfo="nn">
                         <node role="type" roleId="tpee.1070534934091" type="tpee.FloatType" typeId="tpee.1070534436861" id="6108369403998691982" nodeInfo="in" />
                         <node role="expression" roleId="tpee.1070534934092" type="tpee.FloatingPointConstant" typeId="tpee.1111509017652" id="6108369403998691980" nodeInfo="nn">
@@ -3202,7 +3202,7 @@
                       <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="6108369403998157180" resolveInfo="virtualMachine" />
                     </node>
                     <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="6108369403998548885" nodeInfo="nn">
-                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="f5hi.~VirtualMachine%dmirrorOf(boolean)%ccom%dsun%djdi%dBooleanValue" resolveInfo="mirrorOf" />
+                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="f5hi.~VirtualMachine%dmirrorOf(double)%ccom%dsun%djdi%dDoubleValue" resolveInfo="mirrorOf" />
                       <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.CastExpression" typeId="tpee.1070534934090" id="6108369403998548886" nodeInfo="nn">
                         <node role="type" roleId="tpee.1070534934091" type="tpee.DoubleType" typeId="tpee.1070534513062" id="6108369403998694244" nodeInfo="in" />
                         <node role="expression" roleId="tpee.1070534934092" type="tpee.FloatingPointConstant" typeId="tpee.1111509017652" id="6108369403998694273" nodeInfo="nn">

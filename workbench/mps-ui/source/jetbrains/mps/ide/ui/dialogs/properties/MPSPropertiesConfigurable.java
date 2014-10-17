@@ -332,12 +332,12 @@ public abstract class MPSPropertiesConfigurable implements Configurable, Disposa
       if(myDependTableModel.getRoleColumnIndex() >= 0) {
         column = tableDepend.getTableHeader().getColumnModel().getColumn(myDependTableModel.getRoleColumnIndex());
         column.setMinWidth(80);
-        column.setPreferredWidth(100);
-        column.setMaxWidth(120);
+        column.setPreferredWidth(130);
+        column.setMaxWidth(200);
       }
       if(myDependTableModel.getItemColumnIndex() >= 0) {
         column = tableDepend.getTableHeader().getColumnModel().getColumn(myDependTableModel.getItemColumnIndex());
-        column.setPreferredWidth(200);
+        column.setPreferredWidth(250);
       }
 
 

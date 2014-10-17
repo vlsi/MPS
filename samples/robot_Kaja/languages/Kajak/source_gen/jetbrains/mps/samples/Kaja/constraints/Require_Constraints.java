@@ -22,8 +22,7 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.scope.ListScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.SNodePointer;
 
@@ -81,53 +80,9 @@ public class Require_Constraints extends BaseConstraintsDescriptor {
                   });
                 }
               });
-              return new Scope() {
-                /**
-                 * Returns all available elements in the scope.
-                 * 
-                 * @param prefix (if not null) filters out elements whose reference text doesn't start with prefix
-                 * @return list of nodes in the scope
-                 */
-                @Override
-                public Iterable<SNode> getAvailableElements(@Nullable String prefix) {
-                  return libraries;
-                }
-                /**
-                 * Resolves element by reference text.
-                 * 
-                 * Invariant: getReferenceText(contextNode, resolve(contextNode, refText)) == refText
-                 * 
-                 * @param contextNode source node for the reference, or its nearest parent node (if source node is unavailable)
-                 * @param refText reference text
-                 * @return resolved element when reference text unambiguously identifies element, null otherwise
-                 */
-                @Nullable
-                @Override
-                public SNode resolve(SNode contextNode, @NotNull final String refText) {
-                  return Sequence.fromIterable(libraries).where(new IWhereFilter<SNode>() {
-                    public boolean accept(SNode it) {
-                      return SPropertyOperations.getString(it, "name").equals(refText);
-                    }
-                  }).first();
-                }
-                /**
-                 * Creates textual reference for scope element. If element has no textual representation
-                 * for the reference, returns null.
-                 * 
-                 * Invariant: resolve(contextNode, getReferenceText(contextNode, node)) == node
-                 * 
-                 * @param contextNode source node for the reference, or its nearest parent node (if source node is unavailable)
-                 * @param node element from the current scope (contains(node) == true)
-                 * @return reference text for the node element in the current scope
-                 */
-                @Nullable
-                @Override
-                public String getReferenceText(SNode contextNode, @NotNull SNode node) {
-                  if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.samples.Kaja.structure.Library")) {
-                    return SPropertyOperations.getString(SNodeOperations.cast(node, "jetbrains.mps.samples.Kaja.structure.Library"), "name");
-                  } else {
-                    return null;
-                  }
+              return new ListScope(libraries) {
+                public String getName(SNode child) {
+                  return SPropertyOperations.getString(SNodeOperations.cast(child, "jetbrains.mps.lang.core.structure.INamedConcept"), "name");
                 }
               };
             }

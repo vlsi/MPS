@@ -16,7 +16,7 @@
       <unit at="7,0,15,0" name="jetbrains.mps.lang.textGen.behavior.UtilityMethodDeclaration_BehaviorDescriptor" />
     </file>
     <file name="OperationDeclaration_BehaviorDescriptor.java">
-      <unit at="8,0,22,0" name="jetbrains.mps.lang.textGen.behavior.OperationDeclaration_BehaviorDescriptor" />
+      <unit at="9,0,23,0" name="jetbrains.mps.lang.textGen.behavior.OperationDeclaration_BehaviorDescriptor" />
     </file>
     <file name="NodeParameter_BehaviorDescriptor.java">
       <unit at="7,0,18,0" name="jetbrains.mps.lang.textGen.behavior.NodeParameter_BehaviorDescriptor" />
@@ -40,10 +40,10 @@
       <unit at="9,0,26,0" name="jetbrains.mps.lang.textGen.behavior.LanguageTextGenDeclaration_BehaviorDescriptor" />
     </file>
     <file name="AbstractTextGenDeclaration_BehaviorDescriptor.java">
-      <unit at="11,0,28,0" name="jetbrains.mps.lang.textGen.behavior.AbstractTextGenDeclaration_BehaviorDescriptor" />
+      <unit at="12,0,29,0" name="jetbrains.mps.lang.textGen.behavior.AbstractTextGenDeclaration_BehaviorDescriptor" />
     </file>
     <file name="BehaviorAspectDescriptor.java">
-      <unit at="9,0,72,0" name="jetbrains.mps.lang.textGen.behavior.BehaviorAspectDescriptor" />
+      <unit at="9,0,74,0" name="jetbrains.mps.lang.textGen.behavior.BehaviorAspectDescriptor" />
     </file>
     <file name="NodeAppendPart_BehaviorDescriptor.java">
       <unit at="7,0,18,0" name="jetbrains.mps.lang.textGen.behavior.NodeAppendPart_BehaviorDescriptor" />
@@ -65,6 +65,9 @@
     </file>
     <file name="EncodingLiteral_BehaviorDescriptor.java">
       <unit at="7,0,15,0" name="jetbrains.mps.lang.textGen.behavior.EncodingLiteral_BehaviorDescriptor" />
+    </file>
+    <file name="StubOperationDeclaration_BehaviorDescriptor.java">
+      <unit at="10,0,21,0" name="jetbrains.mps.lang.textGen.behavior.StubOperationDeclaration_BehaviorDescriptor" />
     </file>
     <file name="GenerateTextDeclaration_BehaviorDescriptor.java">
       <unit at="10,0,24,0" name="jetbrains.mps.lang.textGen.behavior.GenerateTextDeclaration_BehaviorDescriptor" />
@@ -613,6 +616,29 @@
         <var name="thisConcept" id="3044950653914725127" />
       </scope>
       <unit id="3044950653914725127" at="14,0,34,0" name="jetbrains.mps.lang.textGen.behavior.GenerateTextDeclaration_Behavior" />
+    </file>
+  </root>
+  <root nodeRef="r:0fa39ea9-f6a4-454d-9b16-ce07a09428ca(jetbrains.mps.lang.textGen.behavior)/3147100357551177052">
+    <file name="StubOperationDeclaration_Behavior.java">
+      <node id="3147100357551243789" at="18,127,18,127" concept="0" />
+      <node id="3147100357551284750" at="12,43,13,149" concept="1" />
+      <node id="3147100357551191182" at="13,149,14,91" concept="1" />
+      <node id="3147100357551243789" at="16,60,17,63" concept="5" />
+      <node id="3147100357551243789" at="17,63,18,127" concept="5" />
+      <node id="3147100357551243789" at="18,127,19,14" concept="6" />
+      <node id="3147100357551177052" at="12,0,16,0" concept="7" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="3147100357551243789" at="16,0,21,0" concept="7" trace="createStatementList_8pk1bs_a0a1a0#()Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <scope id="3147100357551243789" at="18,127,18,127" />
+      <scope id="3147100357551177054" at="12,43,14,91" />
+      <scope id="3147100357551243789" at="16,60,19,14">
+        <var name="facade" id="3147100357551243789" />
+        <var name="n1" id="3147100357551243789" />
+      </scope>
+      <scope id="3147100357551177052" at="12,0,16,0">
+        <var name="thisNode" id="3147100357551177052" />
+      </scope>
+      <scope id="3147100357551243789" at="16,0,21,0" />
+      <unit id="3147100357551177052" at="11,0,22,0" name="jetbrains.mps.lang.textGen.behavior.StubOperationDeclaration_Behavior" />
     </file>
   </root>
   <root nodeRef="r:0fa39ea9-f6a4-454d-9b16-ce07a09428ca(jetbrains.mps.lang.textGen.behavior)/45307784116575513">

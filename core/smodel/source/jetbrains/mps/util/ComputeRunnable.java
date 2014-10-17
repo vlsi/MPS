@@ -20,20 +20,15 @@ import org.jetbrains.annotations.NotNull;
 /**
  * @author Artem Tikhomirov
  */
-public class ComputeRunnable<T> implements Runnable {
+public class ComputeRunnable<T> extends AbstractComputeRunnable<T> {
   private final Computable<T> myComputable;
-  private T myResult;
 
   public ComputeRunnable(@NotNull Computable<T> computable) {
     myComputable = computable;
   }
 
   @Override
-  public void run() {
-    myResult = myComputable.compute();
-  }
-
-  public T getResult() {
-    return myResult;
+  protected T compute() {
+    return myComputable.compute();
   }
 }

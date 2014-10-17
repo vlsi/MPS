@@ -4058,7 +4058,7 @@
             <property name="value" nameId="tpee.1070475926801" value="log4j.jar" />
           </node>
           <node role="initValue" roleId="tpee.1154542803372" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="6343863109990879300" nodeInfo="nn">
-            <property name="value" nameId="tpee.1070475926801" value="ecj-4.3.2.jar" />
+            <property name="value" nameId="tpee.1070475926801" value="ecj-4.4.jar" />
           </node>
           <node role="initValue" roleId="tpee.1154542803372" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="7757477914028964031" nodeInfo="nn">
             <property name="value" nameId="tpee.1070475926801" value="xstream-1.4.3.jar" />

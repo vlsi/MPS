@@ -4,8 +4,9 @@ package jetbrains.mps.lang.actions.behavior;
 
 import jetbrains.mps.baseLanguage.behavior.VariableDeclaration_BehaviorDescriptor;
 import jetbrains.mps.lang.core.behavior.IDontSubstituteByDefault_BehaviorDescriptor;
+import jetbrains.mps.lang.core.behavior.InterfacePart_BehaviorDescriptor;
 
-public class SubstituteNodeBuilderVariableDeclaration_BehaviorDescriptor extends VariableDeclaration_BehaviorDescriptor implements IDontSubstituteByDefault_BehaviorDescriptor {
+public class SubstituteNodeBuilderVariableDeclaration_BehaviorDescriptor extends VariableDeclaration_BehaviorDescriptor implements IDontSubstituteByDefault_BehaviorDescriptor, InterfacePart_BehaviorDescriptor {
   public SubstituteNodeBuilderVariableDeclaration_BehaviorDescriptor() {
   }
   @Override

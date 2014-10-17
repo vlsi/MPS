@@ -13,7 +13,7 @@ import org.jetbrains.annotations.Nullable;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
-  /*package*/ final ConceptDescriptor myConceptIGeneratedToClass = new ConceptDescriptorBuilder("jetbrains.mps.execution.common.structure.IGeneratedToClass", MetaIdFactory.conceptId(UUID.fromString("73c1a490-99fa-4d0d-8292-b8985697c74b"), 946964771156905387L)).interface_().parents("jetbrains.mps.lang.core.structure.INamedConcept").parentIds(MetaIdFactory.conceptId(UUID.fromString("73c1a490-99fa-4d0d-8292-b8985697c74b"), 1169194658468L)).create();
+  /*package*/ final ConceptDescriptor myConceptIGeneratedToClass = new ConceptDescriptorBuilder("jetbrains.mps.execution.common.structure.IGeneratedToClass", MetaIdFactory.conceptId(UUID.fromString("73c1a490-99fa-4d0d-8292-b8985697c74b"), 946964771156905387L)).interface_().parents("jetbrains.mps.lang.core.structure.INamedConcept").parentIds(MetaIdFactory.conceptId(UUID.fromString("ceab5195-25ea-4f22-9b92-103b95ca8c0c"), 1169194658468L)).create();
 
   @Override
   public Collection<ConceptDescriptor> getDescriptors() {

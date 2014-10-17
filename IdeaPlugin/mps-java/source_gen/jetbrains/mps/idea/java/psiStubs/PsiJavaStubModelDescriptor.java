@@ -53,39 +53,31 @@ public class PsiJavaStubModelDescriptor extends ReloadableSModelBase implements 
   private Map<SNodeId, PsiElement> myGlobalMps2PsiMapping = MapSequence.fromMap(new HashMap<SNodeId, PsiElement>());
   private PsiJavaStubModelDescriptor.MyMps2PsiMapper myMps2PsiMapper = new PsiJavaStubModelDescriptor.MyMps2PsiMapper();
 
-
   public PsiJavaStubModelDescriptor(SModelReference modelRef, JavaFilesHolder dataSource) {
     super(modelRef, dataSource);
     myModelRef = modelRef;
     myDataSource = dataSource;
   }
-
   @Override
   @NotNull
   public JavaFilesHolder getSource() {
     return myDataSource;
   }
-
   @Override
   public void attach(SRepository repository) {
     super.attach(repository);
     myDataSource.addListener(this);
   }
-
   @Override
   public void detach() {
     super.detach();
     myDataSource.removeListener(this);
   }
 
-
-
   @Override
   public boolean isLoaded() {
     return myModel != null;
   }
-
-
 
   @Override
   public synchronized SModel getSModelInternal() {
@@ -99,8 +91,6 @@ public class PsiJavaStubModelDescriptor extends ReloadableSModelBase implements 
     return myModel;
   }
 
-
-
   public void unload() {
     ModelAccess.assertLegalWrite();
     SModel oldModel = myModel;
@@ -110,7 +100,6 @@ public class PsiJavaStubModelDescriptor extends ReloadableSModelBase implements 
       fireModelStateChanged(ModelLoadingState.NOT_LOADED);
     }
   }
-
   private void loadContents(SModel into) {
     // todo think why it's needed (otherwise we get ProcessCancelException) 
     // in idea ce it's used only twice: and one case is switch from stubs to AST 
@@ -147,13 +136,11 @@ public class PsiJavaStubModelDescriptor extends ReloadableSModelBase implements 
       section.done();
     }
   }
-
   @Override
   public void changed(DataSource source) {
     // ignore, we should never receive this one 
     // always the more detailed changed(source, psiEvent) 
   }
-
   @Override
   public synchronized void changed(DataSource source, final PsiJavaStubEvent event) {
 
@@ -230,22 +217,16 @@ public class PsiJavaStubModelDescriptor extends ReloadableSModelBase implements 
   }
 
 
-
-
   @Override
   public boolean needsReloading() {
     return false;
   }
-
   public void reloadFromDiskSafe() {
     // ignoring 
   }
-
   protected SModel getCurrentModelInternal() {
     return myModel;
   }
-
-
 
   private SNode getImports(PsiImportStatementBase[] imports) {
     SNode javaImports = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.JavaImports", null);
@@ -267,13 +248,9 @@ public class PsiJavaStubModelDescriptor extends ReloadableSModelBase implements 
     return javaImports;
   }
 
-
-
   public PsiElement getPsiSource(SNode node) {
     return MapSequence.fromMap(myGlobalMps2PsiMapping).get(node.getNodeId());
   }
-
-
 
   private class MyMps2PsiMapper implements Consumer<Pair<SNode, PsiElement>> {
     @Override
@@ -290,8 +267,6 @@ public class PsiJavaStubModelDescriptor extends ReloadableSModelBase implements 
       }
       SetSequence.fromSet(mapForFile).addElement(node.getNodeId());
     }
-
-
 
     /*package*/ void clearFile(String fileName) {
 

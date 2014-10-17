@@ -15,8 +15,9 @@
  */
 package jetbrains.mps.smodel.runtime;
 
-import org.jetbrains.mps.openapi.language.SConceptId;
-import org.jetbrains.mps.openapi.language.SReferenceLinkId;
+
+import jetbrains.mps.smodel.adapter.ids.SConceptId;
+import jetbrains.mps.smodel.adapter.ids.SReferenceLinkId;
 
 public class BaseReferenceDescriptor implements ReferenceDescriptor {
   private final SReferenceLinkId myId;

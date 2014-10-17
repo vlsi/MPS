@@ -30,6 +30,7 @@
   <import index="tp2v" modelUID="r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)" version="-1" />
   <import index="e2lb" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" version="-1" />
   <import index="t3eg" modelUID="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.language(MPS.OpenAPI/org.jetbrains.mps.openapi.language@java_stub)" version="-1" />
+  <import index="a7z3" modelUID="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.adapter.ids(MPS.Core/jetbrains.mps.smodel.adapter.ids@java_stub)" version="-1" />
   <import index="tp3r" modelUID="r:00000000-0000-4000-0000-011c8959034b(jetbrains.mps.lang.quotation.structure)" version="0" implicit="yes" />
   <import index="tp3t" modelUID="r:00000000-0000-4000-0000-011c89590345(jetbrains.mps.lang.pattern.structure)" version="0" implicit="yes" />
   <root type="tpd4.InferenceRule" typeId="tpd4.1174643105530" id="1178287490510" nodeInfo="ng">
@@ -9330,8 +9331,8 @@
     </node>
   </root>
   <root type="tpd4.SubtypingRule" typeId="tpd4.1175147670730" id="360223900469204289" nodeInfo="ng">
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="type" />
     <property name="name" nameId="tpck.1169194664001" value="supertypesOf_ListType_SNodeList" />
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="type" />
     <node role="body" roleId="tpd4.1175147624276" type="tpee.StatementList" typeId="tpee.1068580123136" id="360223900469204290" nodeInfo="sn">
       <node role="statement" roleId="tpee.1068581517665" type="tpee.LocalVariableDeclarationStatement" typeId="tpee.1068581242864" id="6102360556953399351" nodeInfo="nn">
         <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="6102360556953399352" nodeInfo="nr">
@@ -9407,8 +9408,8 @@
     </node>
   </root>
   <root type="tpd4.InequationReplacementRule" typeId="tpd4.1201607707634" id="8725877324454745043" nodeInfo="ng">
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="type" />
     <property name="name" nameId="tpck.1169194664001" value="nlist_subtypeOf_sequence_of_nodes" />
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="type" />
     <node role="supertypeNode" roleId="tpd4.1201607798918" type="tpd4.PatternCondition" typeId="tpd4.1174642900584" id="8725877324454749317" nodeInfo="ig">
       <property name="name" nameId="tpck.1169194664001" value="seq" />
       <node role="pattern" roleId="tpd4.1174642936809" type="tp3t.PatternExpression" typeId="tp3t.1136720037777" id="8725877324454749347" nodeInfo="in">
@@ -9463,8 +9464,8 @@
       <node role="statement" roleId="tpee.1068581517665" type="tpd4.CreateEquationStatement" typeId="tpd4.1174658326157" id="2644386474300082521" nodeInfo="nn">
         <node role="rightExpression" roleId="tpd4.1174660783414" type="tpd4.NormalTypeClause" typeId="tpd4.1185788614172" id="2644386474300082522" nodeInfo="ng">
           <node role="normalType" roleId="tpd4.1185788644032" type="tp3r.Quotation" typeId="tp3r.1196350785113" id="2644386474300082523" nodeInfo="nn">
-            <node role="quotedNode" roleId="tp3r.1196350785114" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2644386474300182432" nodeInfo="in">
-              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="t3eg.~SConceptId" resolveInfo="SConceptId" />
+            <node role="quotedNode" roleId="tp3r.1196350785114" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="6997053637257271636" nodeInfo="in">
+              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="a7z3.~SConceptId" resolveInfo="SConceptId" />
             </node>
           </node>
         </node>
@@ -9491,8 +9492,8 @@
           <node role="statement" roleId="tpee.1068581517665" type="tpd4.CreateEquationStatement" typeId="tpd4.1174658326157" id="2644386474301440425" nodeInfo="nn">
             <node role="rightExpression" roleId="tpd4.1174660783414" type="tpd4.NormalTypeClause" typeId="tpd4.1185788614172" id="2644386474301440426" nodeInfo="ng">
               <node role="normalType" roleId="tpd4.1185788644032" type="tp3r.Quotation" typeId="tp3r.1196350785113" id="2644386474301440427" nodeInfo="nn">
-                <node role="quotedNode" roleId="tp3r.1196350785114" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2644386474301985628" nodeInfo="in">
-                  <link role="classifier" roleId="tpee.1107535924139" targetNodeId="t3eg.~SContainmentLinkId" resolveInfo="SContainmentLinkId" />
+                <node role="quotedNode" roleId="tp3r.1196350785114" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="6997053637257271292" nodeInfo="in">
+                  <link role="classifier" roleId="tpee.1107535924139" targetNodeId="a7z3.~SContainmentLinkId" resolveInfo="SContainmentLinkId" />
                 </node>
               </node>
             </node>
@@ -9530,8 +9531,8 @@
             <node role="statement" roleId="tpee.1068581517665" type="tpd4.CreateEquationStatement" typeId="tpd4.1174658326157" id="2644386474301986203" nodeInfo="nn">
               <node role="rightExpression" roleId="tpd4.1174660783414" type="tpd4.NormalTypeClause" typeId="tpd4.1185788614172" id="2644386474301986204" nodeInfo="ng">
                 <node role="normalType" roleId="tpd4.1185788644032" type="tp3r.Quotation" typeId="tp3r.1196350785113" id="2644386474301986205" nodeInfo="nn">
-                  <node role="quotedNode" roleId="tp3r.1196350785114" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2644386474301986327" nodeInfo="in">
-                    <link role="classifier" roleId="tpee.1107535924139" targetNodeId="t3eg.~SReferenceLinkId" resolveInfo="SReferenceLinkId" />
+                  <node role="quotedNode" roleId="tp3r.1196350785114" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="6997053637257271359" nodeInfo="in">
+                    <link role="classifier" roleId="tpee.1107535924139" targetNodeId="a7z3.~SReferenceLinkId" resolveInfo="SReferenceLinkId" />
                   </node>
                 </node>
               </node>
@@ -9559,8 +9560,8 @@
       <node role="statement" roleId="tpee.1068581517665" type="tpd4.CreateEquationStatement" typeId="tpd4.1174658326157" id="2644386474302410927" nodeInfo="nn">
         <node role="rightExpression" roleId="tpd4.1174660783414" type="tpd4.NormalTypeClause" typeId="tpd4.1185788614172" id="2644386474302410928" nodeInfo="ng">
           <node role="normalType" roleId="tpd4.1185788644032" type="tp3r.Quotation" typeId="tp3r.1196350785113" id="2644386474302410929" nodeInfo="nn">
-            <node role="quotedNode" roleId="tp3r.1196350785114" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2644386474302415183" nodeInfo="in">
-              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="t3eg.~SPropertyId" resolveInfo="SPropertyId" />
+            <node role="quotedNode" roleId="tp3r.1196350785114" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="6997053637257266472" nodeInfo="in">
+              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="a7z3.~SPropertyId" resolveInfo="SPropertyId" />
             </node>
           </node>
         </node>

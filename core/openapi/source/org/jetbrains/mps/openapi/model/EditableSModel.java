@@ -33,11 +33,13 @@ public interface EditableSModel extends SModel {
 
   void rename(String newModelName, boolean changeFile);
 
+  // FIXME questionable API, single external use. Deprecate, make internal?
   void updateTimestamp();
 
   boolean needsReloading();
 
   //note this can unregister the model
+  // FIXME why load and DataSource are exposed in SModel, but reloadFromSource() is limited to EditableSModel?
   void reloadFromSource();
 
   void addChangeListener(SModelChangeListener l);

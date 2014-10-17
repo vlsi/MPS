@@ -11,11 +11,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.util.Set;
 import org.jetbrains.mps.openapi.language.SLanguage;
 import java.util.HashSet;
-import org.jetbrains.mps.openapi.module.SModuleReference;
-import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.smodel.SModelOperations;
-import org.jetbrains.mps.openapi.language.SConceptRepository;
-import jetbrains.mps.smodel.adapter.IdHelper;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
@@ -35,10 +31,7 @@ public class check_AllUsedLanguagesAreImported_NonTypesystemRule extends Abstrac
     }
     Set<SLanguage> importedLanguages = new HashSet<SLanguage>();
     // XXX allImported doesn't built a closure of languages extended by those imported, is it what we want here? 
-    for (SModuleReference importedLanguageReference : SetSequence.fromSet(SModelOperations.getAllImportedLanguages(SNodeOperations.getModel(root)))) {
-      SLanguage language = SConceptRepository.getInstance().getLanguage(IdHelper.getLanguageId(importedLanguageReference.getModuleId()));
-      importedLanguages.add(language);
-    }
+    importedLanguages.addAll(SModelOperations.getAllImportedLanguageIds(SNodeOperations.getModel(root)));
 
     for (SNode node : ListSequence.fromList(SNodeOperations.getDescendants(root, "jetbrains.mps.lang.core.structure.BaseConcept", true, new String[]{}))) {
       if (!(importedLanguages.contains(node.getConcept().getLanguage()))) {

@@ -20,6 +20,7 @@ import org.jetbrains.annotations.NotNull;
 /**
  * This singleton class provides a per-concept access to SLanguageRepository
  */
+@Deprecated // since 3.2
 public abstract class SConceptRepository {
 
   protected SConceptRepository() {
@@ -31,24 +32,12 @@ public abstract class SConceptRepository {
     return INSTANCE;
   }
 
-  @NotNull
-  public abstract SConcept getInstanceConcept(@NotNull SConceptId conceptId);
-
-  public abstract SAbstractConcept getConcept(@NotNull SConceptId conceptId);
-
-  public abstract SEnumeration getEnumeration(@NotNull SConceptId conceptId);
-
-  public abstract SLanguage getLanguage(@NotNull SLanguageId languageId);
-
   @Deprecated // since 3.2
   @NotNull
   public abstract SConcept getInstanceConcept(@NotNull String qualifiedName);
 
   @Deprecated // since 3.2
   public abstract SAbstractConcept getConcept(@NotNull String qualifiedName);
-
-  @Deprecated // since 3.2
-  public abstract SEnumeration getEnumeration(@NotNull String qualifiedName);
 
   @Deprecated // since 3.2
   public abstract SLanguage getLanguage(@NotNull String qualifiedName);

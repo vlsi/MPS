@@ -42,7 +42,7 @@ public class CellAction_DeleteNode extends AbstractCellAction {
 
   @Override
   public boolean canExecute(EditorContext context) {
-    EditorCell cell = (EditorCell) context.getEditorComponent().findNodeCell(mySemanticNode);
+    jetbrains.mps.openapi.editor.cells.EditorCell cell = context.getEditorComponent().findNodeCell(mySemanticNode);
     return cell != null && cell.getParent() != null && !ReadOnlyUtil.isCellOrSelectionReadOnlyInEditor(context.getEditorComponent(), cell);
   }
 

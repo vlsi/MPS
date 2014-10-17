@@ -15,6 +15,7 @@
  */
 package org.jetbrains.mps.openapi.language;
 
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 
@@ -28,13 +29,10 @@ public interface SLanguage {
    */
   String getQualifiedName();
 
-  SLanguageId getId();
   /**
    * All concepts defined in the language
    */
   Iterable<SAbstractConcept> getConcepts();
-
-  Iterable<SEnumeration> getEnumerations();
 
   /**
    * All the runtime dependencies that a language needs after generation to run the generated code.
@@ -47,8 +45,8 @@ public interface SLanguage {
    * the definition of a concept for a used language element.
    * It may be null.
    */
+  @Nullable
   SModule getSourceModule();
 
   int getLanguageVersion();
-
 }

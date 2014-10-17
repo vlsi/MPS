@@ -12,9 +12,6 @@ import jetbrains.mps.resolve.ReferenceResolverUtils;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import typesystemIntegration.languageChecker.EditorBasedReferenceResolverUtils;
 import jetbrains.mps.nodeEditor.EditorComponent;
-import jetbrains.mps.nodeEditor.cells.EditorCell;
-import java.util.List;
-import jetbrains.mps.smodel.event.SModelEvent;
 
 public class EditorResolver implements IResolver {
   public EditorResolver() {
@@ -37,11 +34,6 @@ public class EditorResolver implements IResolver {
     public FakeEditorComponent(SNode node, SRepository repository) {
       super(repository);
       editNode(node);
-    }
-
-    @Override
-    protected EditorCell createRootCell(List<SModelEvent> events) {
-      return (EditorCell) getUpdater().updateRootCell(getEditedNode(), events);
     }
 
     @Override

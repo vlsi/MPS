@@ -35,7 +35,7 @@ public enum SDependencyScope {
   /* all types of modules */
   DEFAULT("regular", "Default"),
   /**
-   * DESIGN dependency between generator indicates there's no run-time bound between the two.
+   * DESIGN dependency between generators indicates there's no run-time bound between the two.
    * Unlike DEFAULT and EXTENDS, which require target generator to be available at generation time,
    * DESIGN dependency serves primarily the purpose to declare priorities between generator without actually
    * enforcing inclusion of all dependant generators into generation process.

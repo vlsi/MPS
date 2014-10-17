@@ -11,7 +11,6 @@
     <file name="IThread.java" />
   </source>
   <source id="4474271214082913347" name="NullLocation" hash="81dev5mt4i22mobue2qew4y0lerjmid">
-    <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="NullLocation.java" />
   </source>

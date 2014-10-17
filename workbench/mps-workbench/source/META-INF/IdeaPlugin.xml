@@ -38,8 +38,8 @@
 
     <projectService serviceInterface="com.intellij.ide.projectView.impl.nodes.ProjectViewDirectoryHelper"
                     serviceImplementation="com.intellij.ide.projectView.impl.nodes.ProjectViewDirectoryHelper"/>
-    <projectService serviceInterface="com.intellij.openapi.vcs.changes.patch.PatchBaseDirectoryDetector"
-                    serviceImplementation="jetbrains.mps.MPSPatchBaseDirectoryDetector"/>
+    <!--<projectService serviceInterface="com.intellij.openapi.vcs.changes.patch.PatchBaseDirectoryDetector"
+                    serviceImplementation="jetbrains.mps.MPSPatchBaseDirectoryDetector"/>-->
 
     <projectService serviceInterface="com.intellij.openapi.vcs.impl.ExcludedFileIndex"
                     serviceImplementation="com.intellij.openapi.vcs.impl.ProjectExcludedFileIndex"/>
@@ -63,7 +63,6 @@
                  implementationClass="jetbrains.mps.workbench.dataExtraction.runConfig.LocationRule"/>
 
     <editorTabTitleProvider implementation="jetbrains.mps.ide.editor.tabs.EditorTabTitleProviderImpl"/>
-    <mps.modelRootEntry rootType="obsolete" className="jetbrains.mps.ide.ui.dialogs.properties.roots.editors.SModelRootEntryFactory"/>
   </extensions>
 
 </idea-plugin>

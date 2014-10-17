@@ -14,10 +14,10 @@ import org.xml.sax.SAXParseException;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
-import org.jetbrains.mps.openapi.language.SLanguageId;
+import jetbrains.mps.smodel.adapter.ids.SLanguageId;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import jetbrains.mps.smodel.SNodeId;
-import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.smodel.DebugRegistry;
 
 public class AnnotationInfoReader9Handler extends XMLSAXHandler<List<LineContent>> {
   private static String[] EMPTY_ARRAY = new String[0];
@@ -305,7 +305,7 @@ public class AnnotationInfoReader9Handler extends XMLSAXHandler<List<LineContent
     }
     @Override
     protected String createObject(Attributes attrs) throws SAXException {
-      return MPSModuleRepository.getInstance().getDebugRegistry().getPropertyName(fieldhelper.readPropId(attrs.getValue("role")));
+      return DebugRegistry.getInstance().getPropertyName(fieldhelper.readPropId(attrs.getValue("role")));
     }
     @Override
     protected String[] requiredAttributes() {
@@ -326,7 +326,7 @@ public class AnnotationInfoReader9Handler extends XMLSAXHandler<List<LineContent
     }
     @Override
     protected String createObject(Attributes attrs) throws SAXException {
-      MPSModuleRepository.getInstance().getDebugRegistry().getLinkName(fieldhelper.readRefRole(attrs.getValue("role")));
+      DebugRegistry.getInstance().getRefName(fieldhelper.readRefRole(attrs.getValue("role")));
       return attrs.getValue("role");
     }
     @Override

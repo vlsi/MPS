@@ -19,16 +19,17 @@ import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.project.structure.model.ModelRootDescriptor;
 import jetbrains.mps.util.io.ModelInputStream;
 import jetbrains.mps.util.io.ModelOutputStream;
-import org.jetbrains.mps.openapi.language.SLanguageId;
+import org.jetbrains.mps.openapi.language.MetaFactory;
+import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 
 import java.io.IOException;
 import java.util.Collection;
 import java.util.Comparator;
-import java.util.HashMap;
 import java.util.LinkedHashSet;
 import java.util.Map;
 import java.util.Map.Entry;
+import java.util.TreeMap;
 import java.util.TreeSet;
 
 /**
@@ -39,6 +40,7 @@ import java.util.TreeSet;
 public class ModuleDescriptor {
   private static final SModuleReferenceComparator MODULE_REFERENCE_COMPARATOR = new SModuleReferenceComparator();
   private static final DependencyComparator DEPENDENCY_COMPARATOR = new DependencyComparator(MODULE_REFERENCE_COMPARATOR);
+  private static final SLanguageComparator LANGUAGE_COMPARATOR = new SLanguageComparator();
 
   private ModuleId myId;
   private String myNamespace;
@@ -49,7 +51,7 @@ public class ModuleDescriptor {
   private Collection<Dependency> myDependencies;
   private Collection<SModuleReference> myUsedLanguages;
   private Collection<SModuleReference> myUsedDevkits;
-  private final Map<SLanguageId, Integer> myLanguageVersions;
+  private final Map<SLanguage, Integer> myLanguageVersions;
   private Collection<String> myAdditionalJavaStubPaths;
   private Collection<String> mySourcePaths;
   private DeploymentDescriptor myDeploymentDescriptor;
@@ -63,7 +65,7 @@ public class ModuleDescriptor {
     myDependencies = new TreeSet<Dependency>(DEPENDENCY_COMPARATOR);
     myUsedLanguages = new TreeSet<SModuleReference>(MODULE_REFERENCE_COMPARATOR);
     myUsedDevkits = new TreeSet<SModuleReference>(MODULE_REFERENCE_COMPARATOR);
-    myLanguageVersions = new HashMap<SLanguageId, Integer>();
+    myLanguageVersions = new TreeMap<SLanguage, Integer>(LANGUAGE_COMPARATOR);
     myAdditionalJavaStubPaths = new LinkedHashSet<String>();
     mySourcePaths = new LinkedHashSet<String>();
   }
@@ -116,7 +118,7 @@ public class ModuleDescriptor {
     return myUsedLanguages;
   }
 
-  public Map<SLanguageId, Integer> getLanguageVersions() {
+  public Map<SLanguage, Integer> getLanguageVersions() {
     return myLanguageVersions;
   }
 
@@ -204,8 +206,8 @@ public class ModuleDescriptor {
     }
 
     stream.writeInt(myLanguageVersions.size());
-    for (Entry<SLanguageId, Integer> entry : myLanguageVersions.entrySet()) {
-      stream.writeString(entry.getKey().serialize());
+    for (Entry<SLanguage, Integer> entry : myLanguageVersions.entrySet()) {
+      stream.writeString(MetaFactory.getInstance().serializeLanguage(entry.getKey()));
       stream.writeInt(entry.getValue());
     }
 
@@ -257,7 +259,7 @@ public class ModuleDescriptor {
 
     myLanguageVersions.clear();
     for (int size = stream.readInt(); size > 0; size--) {
-      myLanguageVersions.put(SLanguageId.deserialize(stream.readString()), stream.readInt());
+      myLanguageVersions.put(MetaFactory.getInstance().deserializeLanguage(stream.readString()), stream.readInt());
     }
 
     myAdditionalJavaStubPaths.clear();
@@ -293,6 +295,13 @@ public class ModuleDescriptor {
         return -1;
       }
       return moduleFqName1.compareTo(moduleFqName2);
+    }
+  }
+
+  private static class SLanguageComparator implements Comparator<SLanguage> {
+    @Override
+    public int compare(SLanguage lang1, SLanguage lang2) {
+      return lang1.getQualifiedName().compareTo(lang2.getQualifiedName());
     }
   }
 

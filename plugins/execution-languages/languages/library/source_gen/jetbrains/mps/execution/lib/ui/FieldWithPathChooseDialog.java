@@ -21,7 +21,7 @@ public class FieldWithPathChooseDialog extends TextFieldWithBrowseButton.NoPathC
       @Override
       public void actionPerformed(ActionEvent p0) {
         FileChooserDialog dialog = FileChooserFactory.getInstance().createFileChooser(FieldWithPathChooseDialog.this.myChooser, null, FieldWithPathChooseDialog.this);
-        VirtualFile[] selectedFiles = dialog.choose(null, null);
+        VirtualFile[] selectedFiles = dialog.choose(null);
         if (selectedFiles.length > 0 && selectedFiles[0] != null) {
           FieldWithPathChooseDialog.this.setText(selectedFiles[0].getPath());
         }

@@ -31,7 +31,7 @@ import java.util.Set;
  * In addition it tracks all objects (modules, models and nodes) as they come and leave the repository.
  */
 public class SRepositoryContentAdapter extends SModuleAdapter implements SModelChangeListener, SModelAccessListener,
-    SModelListener, SModuleListener, SRepositoryListener {
+    SModelListener, SModuleListener, SRepositoryListener, SRepositoryAttachListener {
 
   private final Set<SRepository> commandStack = new HashSet<SRepository>();
 
@@ -111,6 +111,7 @@ public class SRepositoryContentAdapter extends SModuleAdapter implements SModelC
     repository.addRepositoryListener(this);
   }
 
+  @Override
   public void startListening(SRepository repository) {
     for (SModule module : repository.getModules()) {
       startListening(module);
@@ -128,6 +129,7 @@ public class SRepositoryContentAdapter extends SModuleAdapter implements SModelC
     repository.removeRepositoryListener(this);
   }
 
+  @Override
   public void stopListening(SRepository repository) {
     for (SModule module : repository.getModules()) {
       stopListening(module);

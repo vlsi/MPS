@@ -23,8 +23,8 @@ import jetbrains.mps.vfs.IFileUtils;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SRepository;
-import org.jetbrains.mps.openapi.module.SRepositoryAdapter;
 import org.jetbrains.mps.openapi.module.SRepositoryListener;
+import org.jetbrains.mps.openapi.module.SRepositoryListenerBase;
 
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
@@ -82,7 +82,7 @@ public class ModuleFileTracker implements CoreComponent {
     }
   }
 
-  private class MyModuleRepositoryListener extends SRepositoryAdapter {
+  private class MyModuleRepositoryListener extends SRepositoryListenerBase {
     @Override
     public void beforeModuleRemoved(SModule module) {
       IFile file = ((AbstractModule) module).getDescriptorFile();

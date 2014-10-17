@@ -45,6 +45,7 @@ public class UpdaterRepositoryListener extends SModelRepositoryAdapter {
     for (SModel model : replacedModels) {
       if (myUsedModels.contains(model.getReference())) {
         myEditorComponent.rebuildAfterReloadModel();
+        myEditorComponent.rebuildEditorContent();
         return;
       }
     }

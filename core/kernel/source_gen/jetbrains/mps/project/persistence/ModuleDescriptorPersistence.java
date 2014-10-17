@@ -10,12 +10,15 @@ import jetbrains.mps.internal.collections.runtime.ISelector;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
-import org.jetbrains.mps.openapi.language.SLanguageId;
+import jetbrains.mps.smodel.adapter.structure.language.SLanguageAdapterById;
+import jetbrains.mps.smodel.adapter.ids.SLanguageId;
 import jetbrains.mps.project.structure.modules.LanguageDescriptor;
 import jetbrains.mps.project.structure.modules.Dependency;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 import java.util.Map;
+import org.jetbrains.mps.openapi.language.SLanguage;
+import jetbrains.mps.persistence.IdHelper;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.List;
@@ -67,7 +70,7 @@ public class ModuleDescriptorPersistence {
 
     Sequence.fromIterable(XmlUtil.children(XmlUtil.first(root, "languageVersions"), "language")).visitAll(new IVisitor<Element>() {
       public void visit(Element it) {
-        descriptor.getLanguageVersions().put(SLanguageId.deserialize(it.getAttributeValue("id")), Integer.parseInt(it.getAttributeValue("version")));
+        descriptor.getLanguageVersions().put(new SLanguageAdapterById(SLanguageId.deserialize(it.getAttributeValue("id")), it.getAttributeValue("fqName")), Integer.parseInt(it.getAttributeValue("version")));
       }
     });
 
@@ -104,9 +107,10 @@ public class ModuleDescriptorPersistence {
     }
     if (!((descriptor.getLanguageVersions().isEmpty()))) {
       Element languageVersions = new Element("languageVersions");
-      for (Map.Entry<SLanguageId, Integer> lv : descriptor.getLanguageVersions().entrySet()) {
+      for (Map.Entry<SLanguage, Integer> lv : descriptor.getLanguageVersions().entrySet()) {
         Element languageVersion = new Element("language");
-        languageVersion.setAttribute("id", lv.getKey().serialize());
+        languageVersion.setAttribute("id", IdHelper.getLanguageId(lv.getKey()).serialize());
+        languageVersion.setAttribute("fqName", lv.getKey().getQualifiedName());
         languageVersion.setAttribute("version", String.valueOf(lv.getValue()));
         languageVersions.addContent(languageVersion);
       }

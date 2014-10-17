@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.nodeEditor;
 
+import jetbrains.mps.editor.runtime.commands.EditorCommand;
 import jetbrains.mps.nodeEditor.cells.CellFinderUtil;
 import jetbrains.mps.openapi.editor.EditorComponent;
 import jetbrains.mps.openapi.editor.cells.DfsTraverserIterable;
@@ -58,9 +59,9 @@ class IntelligentNodeMover {
   }
 
   void move() {
-    myComponent.getEditorContext().executeCommand(new Runnable() {
+    myComponent.getEditorContext().getRepository().getModelAccess().executeCommand(new EditorCommand(myComponent) {
       @Override
-      public void run() {
+      public void doExecute() {
         if (!findAppropriateNode(myComponent.getSelectedNodes())) {
           return;
         }
@@ -141,7 +142,6 @@ class IntelligentNodeMover {
     }
 
   }
-
 
 
   private void moveNotBoundaryNode() {
@@ -253,7 +253,8 @@ class IntelligentNodeMover {
   private boolean haveSimilarLink(SNode current) {
     for (SAbstractConcept concept : SConceptUtil.getAllSuperConcepts(current.getConcept())) {
       SAbstractLink currentLink = concept.getLink(myLink.getRole());
-      if (currentLink != null && !currentLink.isReference()  && currentLink.isMultiple() && currentLink.getTargetConcept().getQualifiedName().equals(myLink.getTargetConcept().getQualifiedName())) {
+      if (currentLink != null && !currentLink.isReference() && currentLink.isMultiple() &&
+          currentLink.getTargetConcept().getQualifiedName().equals(myLink.getTargetConcept().getQualifiedName())) {
         return true;
       }
     }

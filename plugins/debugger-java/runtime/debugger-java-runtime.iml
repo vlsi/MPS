@@ -32,6 +32,8 @@
     <orderEntry type="module" module-name="findUsages-runtime" />
     <orderEntry type="library" name="Log4j" level="project" />
     <orderEntry type="module" module-name="mps-ui" />
+    <orderEntry type="module" module-name="make-runtime" />
+    <orderEntry type="module" module-name="kernel-resources" />
   </component>
 </module>
 

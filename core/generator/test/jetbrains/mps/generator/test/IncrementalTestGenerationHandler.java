@@ -26,15 +26,13 @@ import jetbrains.mps.generator.impl.cache.IntermediateCacheHelper;
 import jetbrains.mps.generator.impl.dependencies.GenerationDependencies;
 import jetbrains.mps.generator.impl.plan.GenerationPlan;
 import jetbrains.mps.generator.impl.textgen.TextFacility;
-import jetbrains.mps.messages.IMessage;
-import jetbrains.mps.messages.IMessageHandler;
-import jetbrains.mps.messages.MessageKind;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.project.SModuleOperations;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.textgen.trace.TraceInfoCache;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.JDOMUtil;
+import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.util.performance.IPerformanceTracer.NullPerformanceTracer;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
@@ -57,6 +55,7 @@ import java.util.Map;
  * <p/>
  * Evgeny Gryaznov, Oct 4, 2010
  */
+@ToRemove(version = 3.2)
 public class IncrementalTestGenerationHandler extends GenerationHandlerBase {
 
   private final Map<String, String> generatedContent = new HashMap<String, String>();
@@ -89,10 +88,6 @@ public class IncrementalTestGenerationHandler extends GenerationHandlerBase {
 
   public Map<String, String> getGeneratedContent() {
     return generatedContent;
-  }
-
-  public IMessageHandler getMessageHandler() {
-    return new TestMessageHandler();
   }
 
   public Map<String, String> getExistingContent() {
@@ -205,28 +200,6 @@ public class IncrementalTestGenerationHandler extends GenerationHandlerBase {
       Assert.assertNotNull("non-existing file touched: " + value);
       myCollectedContent.put(name, value);
       return true;
-    }
-  }
-
-  private static class TestMessageHandler implements IMessageHandler {
-
-    @Override
-    public void handle(IMessage msg) {
-      switch (msg.getKind()) {
-        case ERROR:
-        case WARNING:
-          Assert.fail((msg.getKind() == MessageKind.ERROR ? "error: " : "warning: ") + msg.getText() + msg.getException());
-          break;
-
-        case INFORMATION:
-          //System.out.println(msg.getText());
-          break;
-      }
-    }
-
-    @Override
-
-    public void clear() {
     }
   }
 }

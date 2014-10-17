@@ -104,12 +104,8 @@ public class JavaClassStubModelDescriptor extends ReloadableSModelBase {
     if (myModel == null) {
       return;
     }
-    final SModel result = createModel();
-    super.replaceModel(new Runnable() {
-      @Override
-      public void run() {
-        myModel = result;
-      }
-    });
+    final SModel oldModel = myModel;
+    myModel = createModel();
+    replaceModelAndFireEvent(oldModel, myModel);
   }
 }

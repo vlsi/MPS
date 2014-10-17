@@ -6,7 +6,6 @@
     <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
   </common>
   <source id="6168415856807657256" name="IResource" hash="-dnmmr5aguziclqcp068ublg09mmmlj4">
-    <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
     <file name="IResource.java" />
   </source>
   <source id="3353120829256410483" name="IPropertiesAccessor" hash="bg9t6b73ng4kwv77q5n5m5r0tk20tlp">

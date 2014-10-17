@@ -53,45 +53,33 @@ public class ASTConverter {
   protected final Consumer<Pair<SNode, PsiElement>> myMps2PsiMapper;
 
 
-
   public ASTConverter() {
     myState = new ASTConverter.State();
     myMps2PsiMapper = null;
   }
-
-
 
   public ASTConverter(Consumer<Pair<SNode, PsiElement>> mps2psiMapper) {
     myState = new ASTConverter.State();
     myMps2PsiMapper = mps2psiMapper;
   }
 
-
-
   public ASTConverter(Consumer<Pair<SNode, PsiElement>> mps2psiMapper, ASTConverter.State state) {
     myState = state;
     myMps2PsiMapper = mps2psiMapper;
   }
 
-
-
   private ASTConverter withTypeVarNames(Set<String> typeVarNames) {
     return new ASTConverter(myMps2PsiMapper, new ASTConverter.State(myState, typeVarNames));
   }
-
-
 
   private ASTConverter withTypeVarDecls(Iterable<SNode> typeVars) {
     return new ASTConverter(myMps2PsiMapper, new ASTConverter.State(myState, typeVars));
   }
 
 
-
-
   protected boolean needToSetId() {
     return true;
   }
-
   public SNode convertClass(PsiClass x) {
 
     final Wrappers._T<SNode> classifier = new Wrappers._T<SNode>();
@@ -204,7 +192,6 @@ public class ASTConverter {
 
     return classifier.value;
   }
-
   public SNode convertField(PsiField x, SNode parentConcept) {
     SNode field;
     if (isStatic(x) || SConceptOperations.isSubConceptOf(parentConcept, "jetbrains.mps.baseLanguage.structure.Interface")) {
@@ -231,7 +218,6 @@ public class ASTConverter {
 
     return field;
   }
-
   public SNode convertMethod(PsiMethod x, SNode parentConcept) {
     SNode method;
 
@@ -302,7 +288,6 @@ public class ASTConverter {
 
     return method;
   }
-
   public SNode convertType(PsiType x) {
     if (x == null) {
       return null;
@@ -383,7 +368,6 @@ public class ASTConverter {
       return null;
     }
   }
-
   public SNode convertTypeParameter(PsiTypeParameter x) {
     SNode typeVar = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.TypeVariableDeclaration", null);
     SPropertyOperations.set(typeVar, "name", "" + (x.getName()));
@@ -400,7 +384,6 @@ public class ASTConverter {
 
     return typeVar;
   }
-
   public SNode convertExpression(PsiExpression exp) {
     if (exp instanceof PsiLiteralExpression) {
       Object value = ((PsiLiteralExpression) exp).getValue();
@@ -414,7 +397,6 @@ public class ASTConverter {
     }
     return null;
   }
-
   public SNode resolveClass(PsiClassType t) {
     SNode clsType = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ClassifierType", null);
     clsType.setReference("classifier", new DynamicReference("classifier", clsType, null, t.getClassName()));
@@ -427,7 +409,6 @@ public class ASTConverter {
 
     return clsType;
   }
-
   public SNode resolveAnnotation(PsiAnnotation a) {
     String fqName = a.getQualifiedName();
 
@@ -441,7 +422,6 @@ public class ASTConverter {
 
     return anno;
   }
-
   private SNode getVisibility(PsiModifierListOwner x) {
     if (x.hasModifierProperty(PsiModifier.PUBLIC)) {
       return SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.PublicVisibility", null);
@@ -453,16 +433,12 @@ public class ASTConverter {
       return null;
     }
   }
-
   private boolean isFinal(PsiModifierListOwner x) {
     return x.hasModifierProperty(PsiModifier.FINAL);
   }
-
   public boolean isStatic(PsiModifierListOwner x) {
     return x.hasModifierProperty(PsiModifier.STATIC);
   }
-
-
 
   private ASTConverter addTypeParams(PsiTypeParameterListOwner from, SNode to) {
     Iterable<SNode> typeVarDecls = Sequence.fromIterable(Sequence.fromArray(from.getTypeParameters())).select(new ISelector<PsiTypeParameter, SNode>() {
@@ -473,8 +449,6 @@ public class ASTConverter {
     ListSequence.fromList(SLinkOperations.getTargets(to, "typeVariableDeclaration", true)).addSequence(Sequence.fromIterable(typeVarDecls));
     return withTypeVarDecls(typeVarDecls);
   }
-
-
 
   private void addAnnotations(PsiModifierListOwner from, SNode to) {
 
@@ -503,17 +477,12 @@ public class ASTConverter {
     }));
   }
 
-
-
   public static class State {
     private ASTConverter.State parentState;
     private Map<String, SNode> myTypeVars = MapSequence.fromMap(new HashMap<String, SNode>());
 
-
     public State() {
     }
-
-
 
     public State(ASTConverter.State base, Set<String> typeVarNames) {
       parentState = base;
@@ -524,16 +493,12 @@ public class ASTConverter {
       });
     }
 
-
-
     public State(ASTConverter.State base, Iterable<SNode> typeVars) {
       parentState = base;
       for (SNode tv : Sequence.fromIterable(typeVars)) {
         MapSequence.fromMap(myTypeVars).put(SPropertyOperations.getString(tv, "name"), tv);
       }
     }
-
-
 
     protected SNode resolveTypeVar(String name) {
       if (myTypeVars == null) {
@@ -566,10 +531,7 @@ public class ASTConverter {
     }
 
 
-
   }
-
-
 
   public static String typeReferenceId(PsiTypeElement psiTypeElem) {
     // FIXME a) check it's good for node id, b) try to be the same as binary stubs 
@@ -588,7 +550,9 @@ public class ASTConverter {
 
     return str;
   }
-
+  private static boolean isNotEmptyString(String str) {
+    return str != null && str.length() > 0;
+  }
   private static SNode _quotation_createNode_rbndtb_a0a6a2c0t(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
@@ -600,7 +564,6 @@ public class ASTConverter {
     }
     return quotedNode_2;
   }
-
   private static SNode _quotation_createNode_rbndtb_a0a0g0c2a91(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
@@ -612,16 +575,11 @@ public class ASTConverter {
     }
     return quotedNode_2;
   }
-
   private static SNode _quotation_createNode_rbndtb_a0a1a0a12(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StringLiteral", null, null, false);
     SNodeAccessUtil.setProperty(quotedNode_2, "value", (String) parameter_1);
     return quotedNode_2;
-  }
-
-  private static boolean isNotEmptyString(String str) {
-    return str != null && str.length() > 0;
   }
 }

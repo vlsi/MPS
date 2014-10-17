@@ -32,7 +32,7 @@ import jetbrains.mps.project.persistence.LanguageDescriptorPersistence;
 import jetbrains.mps.project.structure.modules.GeneratorDescriptor;
 import jetbrains.mps.project.structure.modules.LanguageDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
-import jetbrains.mps.smodel.adapter.IdHelper;
+import jetbrains.mps.smodel.adapter.ids.MetaIdByDeclaration;
 import jetbrains.mps.smodel.descriptor.RefactorableSModelDescriptor;
 import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.util.IterableUtil;
@@ -42,6 +42,7 @@ import jetbrains.mps.util.ProtectionDomainUtil;
 import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -241,8 +242,9 @@ public class Language extends AbstractModule implements MPSModuleOwner {
 
   public void setLanguageVersion(int version) {
     getModuleDescriptor().setVersion(version);
-    if (getModuleDescriptor().getLanguageVersions().containsKey(IdHelper.getLanguageId(getModuleId()))) {
-      getModuleDescriptor().getLanguageVersions().put(IdHelper.getLanguageId(getModuleId()), version);
+    SLanguage langId = MetaIdByDeclaration.ref2Id(getModuleReference());
+    if (getModuleDescriptor().getLanguageVersions().containsKey(langId)) {
+      getModuleDescriptor().getLanguageVersions().put(langId, version);
     }
     setChanged();
   }

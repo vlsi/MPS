@@ -26,13 +26,10 @@ public class PsiJavaStubDataSource extends DataSourceBase implements JavaFilesHo
   private PsiDirectory myDirectory;
   private List<DataSourceListener> myListeners = ListSequence.fromList(new ArrayList<DataSourceListener>());
 
-
   public PsiJavaStubDataSource(Module module, PsiDirectory dir) {
     myModule = module;
     myDirectory = dir;
   }
-
-
 
   public void psiChanged(final JavaPsiListener.PsiEvent event) {
 
@@ -65,8 +62,6 @@ public class PsiJavaStubDataSource extends DataSourceBase implements JavaFilesHo
     }
   }
 
-
-
   @Override
   public void addListener(DataSourceListener listener) {
     synchronized (LOCK) {
@@ -76,8 +71,6 @@ public class PsiJavaStubDataSource extends DataSourceBase implements JavaFilesHo
       myListeners.add(listener);
     }
   }
-
-
 
   @Override
   public void removeListener(DataSourceListener listener) {
@@ -89,24 +82,17 @@ public class PsiJavaStubDataSource extends DataSourceBase implements JavaFilesHo
     }
   }
 
-
-
   /*package*/ void startListening() {
     myModule.getProject().getComponent(PsiChangesWatcher.class).addListener(this);
   }
-
   /*package*/ void stopListening() {
     myModule.getProject().getComponent(PsiChangesWatcher.class).removeListener(this);
   }
 
 
-
-
   public PsiDirectory getDirectory() {
     return myDirectory;
   }
-
-
 
   public Iterable<PsiJavaFile> getJavaFiles() {
     if (!(isValid())) {
@@ -115,20 +101,15 @@ public class PsiJavaStubDataSource extends DataSourceBase implements JavaFilesHo
     return Sequence.fromIterable(Sequence.fromArray(myDirectory.getFiles())).ofType(PsiJavaFile.class);
   }
 
-
-
   private boolean isValid() {
     return myDirectory.isValid() && !(myModule.getProject().isDisposed());
   }
-
-
 
   private class OurEvent extends PsiJavaStubEvent {
 
     private Set<PsiJavaFile> removed = SetSequence.fromSet(new HashSet<PsiJavaFile>());
     private Set<JavaPsiListener.FSRename> renamed = SetSequence.fromSet(new HashSet<JavaPsiListener.FSRename>());
     private Set<PsiJavaFile> reparse = SetSequence.fromSet(new HashSet<PsiJavaFile>());
-
 
     /*package*/ OurEvent(JavaPsiListener.PsiEvent psiEvent) {
 
@@ -174,21 +155,15 @@ public class PsiJavaStubDataSource extends DataSourceBase implements JavaFilesHo
       }
     }
 
-
-
     public Iterable<PsiJavaFile> removed() {
       return removed;
     }
-
     public Set<PsiJavaFile> needReparse() {
       return reparse;
     }
-
     public Set<JavaPsiListener.FSRename> renamed() {
       return renamed;
     }
-
-
 
     private boolean isOurJavaFile(PsiFileSystemItem fsItem) {
       if (!(fsItem instanceof PsiJavaFile)) {
@@ -202,7 +177,6 @@ public class PsiJavaStubDataSource extends DataSourceBase implements JavaFilesHo
       }
       return true;
     }
-
 
   }
 }

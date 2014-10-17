@@ -35,6 +35,7 @@ import jetbrains.jetpad.event.Key;
 import jetbrains.mps.editor.runtime.selection.SelectionUtil;
 import java.util.List;
 import jetbrains.mps.openapi.editor.cells.SubstituteAction;
+import jetbrains.mps.editor.runtime.commands.EditorCommand;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.nodeEditor.cellMenu.CellContext;
 import java.util.ArrayList;
@@ -266,8 +267,8 @@ public abstract class DiagramCell extends AbstractJetpadCell implements EditorCe
     if (!(result[0])) {
       return false;
     }
-    getContext().executeCommand(new Runnable() {
-      public void run() {
+    getContext().getRepository().getModelAccess().executeCommand(new EditorCommand(getContext()) {
+      protected void doExecute() {
         theAction.substitute(getContext(), "");
       }
     });

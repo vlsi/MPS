@@ -165,6 +165,7 @@
     <classNode dependClassName="jetbrains.mps.debugger.java.api.evaluation.proxies.IObjectValueProxy" />
     <classNode dependClassName="jetbrains.mps.debugger.java.api.evaluation.proxies.IValueProxy" />
     <classNode dependClassName="jetbrains.mps.debugger.java.api.evaluation.proxies.MirrorUtil" />
+    <classNode dependClassName="jetbrains.mps.debugger.java.api.evaluation.proxies.PrimitiveValueProxy" />
     <classNode dependClassName="jetbrains.mps.debugger.java.api.evaluation.proxies.ProxyEqualsUtil" />
     <classNode dependClassName="jetbrains.mps.debugger.java.api.state.customViewers.CustomViewersManager" />
     <classNode dependClassName="jetbrains.mps.debugger.java.api.state.proxy.ValueWrapper" />

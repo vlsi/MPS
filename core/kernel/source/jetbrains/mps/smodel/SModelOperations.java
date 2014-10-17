@@ -23,28 +23,17 @@ import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager;
 import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager.Deptype;
 import jetbrains.mps.project.dependency.modules.LanguageDependenciesManager;
 import jetbrains.mps.smodel.SModel.ImportElement;
-import jetbrains.mps.smodel.adapter.IdHelper;
-import jetbrains.mps.smodel.adapter.SConceptAdapter;
-import jetbrains.mps.smodel.adapter.SContainmentLinkAdapter;
-import jetbrains.mps.smodel.adapter.SLanguageAdapter;
-import jetbrains.mps.smodel.adapter.SPropertyAdapter;
-import jetbrains.mps.smodel.adapter.SReferenceLinkAdapter;
+import jetbrains.mps.smodel.adapter.ids.MetaIdByDeclaration;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
-import org.jetbrains.mps.openapi.language.SConceptId;
-import org.jetbrains.mps.openapi.language.SContainmentLinkId;
-import org.jetbrains.mps.openapi.language.SLanguageId;
-import org.jetbrains.mps.openapi.language.SPropertyId;
-import org.jetbrains.mps.openapi.language.SReferenceLinkId;
 import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeUtil;
 import org.jetbrains.mps.openapi.model.SReference;
-import org.jetbrains.mps.openapi.module.DebugRegistry;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 
@@ -54,7 +43,6 @@ import java.util.Collections;
 import java.util.HashSet;
 import java.util.LinkedHashSet;
 import java.util.List;
-import java.util.Map;
 import java.util.Set;
 
 public class SModelOperations {
@@ -116,7 +104,7 @@ public class SModelOperations {
         }
 
         usedLanguages.add(ref);
-        ((jetbrains.mps.smodel.SModelInternal) model).addLanguageId(IdHelper.getLanguageId(ref.getModuleId()), version);
+        ((jetbrains.mps.smodel.SModelInternal) model).addLanguageId(MetaIdByDeclaration.ref2Id(ref), version);
       }
     }
     for (SModelReference targetModelReference : modelScanner.getCrossModelReferences()) {
@@ -165,6 +153,11 @@ public class SModelOperations {
   @NotNull
   public static Set<SModuleReference> getAllImportedLanguages(SModel model) {
     return new HashSet<SModuleReference>(((SModelInternal) model).getModelDepsManager().getAllImportedLanguages());
+  }
+
+  @NotNull
+  public static Set<SLanguage> getAllImportedLanguageIds(SModel model) {
+    return new HashSet<SLanguage>(((SModelInternal) model).getModelDepsManager().getAllImportedLanguagesIds());
   }
 
   // FIXME there's only 1 use of the method, does it justify its extraction here?
@@ -378,7 +371,7 @@ public class SModelOperations {
           }
 
           usedLanguages.add(ref);
-          model.addLanguage(IdHelper.getLanguageId(ref.getModuleId()), version);
+          model.addLanguage(MetaIdByDeclaration.ref2Id(ref), version);
         }
 
         for (SReference reference : node.getReferences()) {
@@ -425,8 +418,8 @@ public class SModelOperations {
   public static List<Language> getLanguages(jetbrains.mps.smodel.SModel model) {
     Set<Language> languages = new LinkedHashSet<Language>();
 
-    for (SLanguageId lang : model.usedLanguages()) {
-      Language language = new SLanguageAdapter(lang).getSourceModule();
+    for (SLanguage lang : model.usedLanguages()) {
+      Language language = ((Language) lang.getSourceModule());
 
       if (language != null) {
         languages.add(language);

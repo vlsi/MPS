@@ -15,6 +15,10 @@
  */
 package jetbrains.mps.smodel.runtime;
 
+import jetbrains.mps.smodel.adapter.ids.SConceptId;
+
+import java.util.Collection;
+
 /**
  * Interface to access generated meta-information about structure aspect.
  * IMPORTANT: generated code shall not implement this interface directly, rather extend
@@ -25,4 +29,7 @@ package jetbrains.mps.smodel.runtime;
  */
 public interface StructureAspectDescriptor extends LanguageAspectDescriptor {
   ConceptDescriptor getDescriptor(String fqName);
+
+  Collection<SConceptId> getConceptIds();
+  ConceptDescriptor getDescriptor(SConceptId id);
 }

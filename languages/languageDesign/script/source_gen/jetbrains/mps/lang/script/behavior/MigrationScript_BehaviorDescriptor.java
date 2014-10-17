@@ -4,10 +4,11 @@ package jetbrains.mps.lang.script.behavior;
 
 import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
 import jetbrains.mps.baseLanguage.behavior.IValidIdentifier_BehaviorDescriptor;
+import jetbrains.mps.lang.core.behavior.InterfacePart_BehaviorDescriptor;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
 
-public class MigrationScript_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements IValidIdentifier_BehaviorDescriptor {
+public class MigrationScript_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements IValidIdentifier_BehaviorDescriptor, InterfacePart_BehaviorDescriptor {
   public MigrationScript_BehaviorDescriptor() {
   }
   public String virtual_getFqName_1213877404258(SNode thisNode) {

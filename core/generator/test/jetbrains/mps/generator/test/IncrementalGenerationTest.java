@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2014 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,10 +16,12 @@
 package jetbrains.mps.generator.test;
 
 import jetbrains.mps.project.Project;
-import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.smodel.SModelOperations;
+import jetbrains.mps.smodel.SNodeUtil;
 import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
+import org.junit.After;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -31,12 +33,24 @@ import java.io.IOException;
  */
 public class IncrementalGenerationTest extends GenerationTestBase {
 
+  private Project myProject;
+
+  @After
+  public void tearDown() throws Exception {
+    if (myProject != null) {
+      cleanup(myProject);
+    }
+  }
+
+  /**
+   * Passes (with IllegalStateException: Event outside of a command and TestModule$TestSModelDescriptor !instanceof EditableSModel).
+   */
   @Test
   public void testIncSolution1() throws IOException {
-    final Project p = loadProject(new File(System.getProperty("user.dir") + "/languages/languageDesign/generator"));
-    SModel descr = findModel(p, "test_Closure");
+    myProject = loadProject(new File(System.getProperty("user.dir") + "/languages/languageDesign/generator"));
+    SModel descr = findModel(myProject, "test_Closure");
 
-    doTestIncrementalGeneration(p, descr,
+    doTestIncrementalGeneration(myProject, descr,
       new ModelChangeRunnable() {
         @Override
         public void run(SModel descr) {
@@ -54,35 +68,38 @@ public class IncrementalGenerationTest extends GenerationTestBase {
           SNodeAccessUtil.setProperty(found, SNodeUtil.property_INamedConcept_name, "testRename3");
         }
       });
-
-    cleanup(p);
   }
 
+  /**
+   * Fails with diff: ConceptMethodCallUtils tells whether to use reflection for non-virtual method based on module instanceof Solution
+   * However, during test, j.m.ide.actions is inside TestModule, which is not a Solution, hence calls to non-virtual methods are generated differently.
+   */
   @Test
   public void testIdeActions() throws IOException {
-    final Project p = loadProject(new File(System.getProperty("user.dir")));
-    SModel descr = findModel(p, "jetbrains.mps.ide.actions");
+    myProject = loadProject(new File(System.getProperty("user.dir")));
+    SModel descr = findModel(myProject, "jetbrains.mps.ide.actions");
 
-    doTestIncrementalGeneration(p, descr,
-      new ModelChangeRunnable() {
-        @Override
-        public void run(SModel descr) {
-          SModel model = descr;
-          SNode root = SModelOperations.getRootByName(model,"GoToFile");
-          Assert.assertNotNull("No root in model", root);
-          SNodeAccessUtil.setProperty(root, SNodeUtil.property_INamedConcept_name, "GoToFile2");
-        }
-      });
-
-    cleanup(p);
+    doTestIncrementalGeneration(myProject, descr,
+        new ModelChangeRunnable() {
+          @Override
+          public void run(SModel descr) {
+            SModel model = descr;
+            SNode root = SModelOperations.getRootByName(model, "GoToFile");
+            Assert.assertNotNull("No root in model", root);
+            SNodeAccessUtil.setProperty(root, SNodeUtil.property_INamedConcept_name, "GoToFile2");
+          }
+        });
   }
 
+  /**
+   * Passes when runs alone, (with CCE in SNode.setProperty due to TestModule$TestSModelDescriptor !instanceof EditableSModel)
+   */
   @Test
   public void testBaseLanguageStructure() throws IOException {
-    final Project p = loadProject(new File(System.getProperty("user.dir")));
-    SModel descr = findModel(p, "jetbrains.mps.baseLanguage.structure");
+    myProject = loadProject(new File(System.getProperty("user.dir")));
+    SModel descr = findModel(myProject, "jetbrains.mps.baseLanguage.structure");
 
-    doTestIncrementalGeneration(p, descr,
+    doTestIncrementalGeneration(myProject, descr,
       new ModelChangeRunnable() {
         @Override
         public void run(SModel descr) {
@@ -92,26 +109,25 @@ public class IncrementalGenerationTest extends GenerationTestBase {
           SNodeAccessUtil.setProperty(root, SNodeUtil.property_INamedConcept_name, "ReExpression");
         }
       });
-
-    cleanup(p);
   }
 
+  /**
+   * Fails with UnsupportedOperationException in SModelBase.removeRootNode
+   */
   @Test
   public void testBaseLanguageEditor() throws IOException {
-    final Project p = loadProject(new File(System.getProperty("user.dir")));
-    SModel descr = findModel(p, "jetbrains.mps.baseLanguage.editor");
+    myProject = loadProject(new File(System.getProperty("user.dir")));
+    SModel descr = findModel(myProject, "jetbrains.mps.baseLanguage.editor");
 
-    doTestIncrementalGeneration(p, descr,
-      new ModelChangeRunnable() {
-        @Override
-        public void run(SModel descr) {
-          SModel model = descr;
-          SNode root = SModelOperations.getRootByName(model,"StatementList_Editor");
-          Assert.assertNotNull("No root in model", root);
-          descr.removeRootNode(root);
-        }
-      });
-
-    cleanup(p);
+    doTestIncrementalGeneration(myProject, descr,
+        new ModelChangeRunnable() {
+          @Override
+          public void run(SModel descr) {
+            SModel model = descr;
+            SNode root = SModelOperations.getRootByName(model, "StatementList_Editor");
+            Assert.assertNotNull("No root in model", root);
+            descr.removeRootNode(root);
+          }
+        });
   }
 }

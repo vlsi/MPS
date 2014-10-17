@@ -28,7 +28,7 @@
       <unit at="6,0,14,0" name="jetbrains.mps.lang.script.behavior.MigrationScriptPart_Instance_BehaviorDescriptor" />
     </file>
     <file name="MigrationScript_BehaviorDescriptor.java">
-      <unit at="10,0,21,0" name="jetbrains.mps.lang.script.behavior.MigrationScript_BehaviorDescriptor" />
+      <unit at="11,0,22,0" name="jetbrains.mps.lang.script.behavior.MigrationScript_BehaviorDescriptor" />
     </file>
     <file name="ExtractInterfaceMigration_BehaviorDescriptor.java">
       <unit at="6,0,14,0" name="jetbrains.mps.lang.script.behavior.ExtractInterfaceMigration_BehaviorDescriptor" />
@@ -58,7 +58,7 @@
       <unit at="6,0,14,0" name="jetbrains.mps.lang.script.behavior.CommentMigrationScriptPart_BehaviorDescriptor" />
     </file>
     <file name="MigrationScriptPart_BehaviorDescriptor.java">
-      <unit at="7,0,15,0" name="jetbrains.mps.lang.script.behavior.MigrationScriptPart_BehaviorDescriptor" />
+      <unit at="8,0,16,0" name="jetbrains.mps.lang.script.behavior.MigrationScriptPart_BehaviorDescriptor" />
     </file>
   </root>
   <root nodeRef="r:517c56ca-40bd-411e-9f43-d0d0e622b0d9(jetbrains.mps.lang.script.behavior)/2291767839160328141">

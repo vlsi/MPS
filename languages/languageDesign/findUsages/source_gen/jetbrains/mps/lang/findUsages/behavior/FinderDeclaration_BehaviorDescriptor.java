@@ -5,6 +5,7 @@ package jetbrains.mps.lang.findUsages.behavior;
 import jetbrains.mps.lang.core.behavior.INamedConcept_BehaviorDescriptor;
 import jetbrains.mps.lang.checkedName.behavior.ICheckedNamePolicy_BehaviorDescriptor;
 import jetbrains.mps.lang.structure.behavior.IConceptAspect_BehaviorDescriptor;
+import jetbrains.mps.lang.core.behavior.InterfacePart_BehaviorDescriptor;
 import java.util.List;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.structure.behavior.IConceptAspect_Behavior;
@@ -12,7 +13,7 @@ import jetbrains.mps.lang.checkedName.behavior.ICheckedNamePolicy_Behavior;
 import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
 import jetbrains.mps.checkedName.PropertyReference;
 
-public class FinderDeclaration_BehaviorDescriptor extends AbstractFinderDeclaration_BehaviorDescriptor implements INamedConcept_BehaviorDescriptor, ICheckedNamePolicy_BehaviorDescriptor, IConceptAspect_BehaviorDescriptor {
+public class FinderDeclaration_BehaviorDescriptor extends AbstractFinderDeclaration_BehaviorDescriptor implements INamedConcept_BehaviorDescriptor, ICheckedNamePolicy_BehaviorDescriptor, IConceptAspect_BehaviorDescriptor, InterfacePart_BehaviorDescriptor {
   public FinderDeclaration_BehaviorDescriptor() {
   }
   public List<SNode> virtual_getBaseConceptCollection_5270353093116013036(SNode thisNode) {

@@ -12,11 +12,12 @@
                     interface="jetbrains.mps.nodeEditor.IntentionActionsProvider"/>
   </extensionPoints>
 
-  <application-components>
-    <component>
-      <implementation-class>jetbrains.mps.nodeEditor.CaretBlinker</implementation-class>
-    </component>
+  <extensions defaultExtensionNs="com.intellij">
+    <applicationService serviceInterface="jetbrains.mps.nodeEditor.CaretBlinker"
+                        serviceImplementation="jetbrains.mps.nodeEditor.CaretBlinker"/>
+  </extensions>
 
+  <application-components>
     <component>
       <implementation-class>jetbrains.mps.nodeEditor.EditorSettings</implementation-class>
     </component>

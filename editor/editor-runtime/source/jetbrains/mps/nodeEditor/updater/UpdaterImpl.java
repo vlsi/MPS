@@ -16,16 +16,21 @@
 package jetbrains.mps.nodeEditor.updater;
 
 import jetbrains.mps.extapi.module.SRepositoryRegistry;
+import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.cells.APICellAdapter;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.update.Updater;
 import jetbrains.mps.openapi.editor.update.UpdaterListener;
+import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.event.SModelEvent;
+import jetbrains.mps.typesystem.inference.TypeContextManager;
+import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.util.WeakSet;
+import org.apache.log4j.LogManager;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
@@ -46,6 +51,8 @@ import java.util.WeakHashMap;
  * Date: 03/09/14
  */
 public class UpdaterImpl implements Updater {
+  private static final Logger LOG = Logger.wrap(LogManager.getLogger(UpdaterImpl.class));
+
   private final EditorComponent myEditorComponent;
   private UpdateSessionImpl myUpdateSession;
   private final ModelListenersController myModelListenersController;
@@ -60,47 +67,43 @@ public class UpdaterImpl implements Updater {
       new HashMap<Pair<SNodeReference, String>, WeakSet<EditorCell>>();
   private Map<Pair<SNodeReference, String>, WeakSet<EditorCell>> myExistenceDependentCells =
       new HashMap<Pair<SNodeReference, String>, WeakSet<EditorCell>>();
+  private boolean myDisposed;
 
   public UpdaterImpl(EditorComponent editorComponent) {
     myEditorComponent = editorComponent;
     myModelListenersController = new ModelListenersController();
   }
 
-  /**
-   * This method should be used to perform incremental update of the associated editor
-   * content (tree of EditorCells) to reflect changes captured within passed list of
-   * model events.
-   * <p/>
-   * New UpdateSession instance will be created within this method and will be available
-   * via getCurrentUpdateSession() method until the end of update process, so it can be
-   * used from any code called as a sub-sequence of this method execution. E.g. the code
-   * generated from the editor aspect of any language.
-   * <p/>
-   * This method will setting new rootCell for the associated EditorComponent.
-   * <p/>
-   * Internal update process-specific information about the model will be collected during
-   * this method execution, so it is important to always use this method to update root
-   * cell of the associated EditorComponent.
-   * <p/>
-   * null can be passed as an events parameter to invoke complete editor cell tree rebuild
-   * process. It can be useful in the case of "unknown" model changes performed to rebuild
-   * editor content and in the same time let Updater track any future changed correctly.
-   *
-   * @param events - model events collected since last update session or null if editor
-   *               should be re-created completely
-   */
+  @Override
   public void update(List<SModelEvent> events) {
-    if (events == null) {
-      clearCaches();
+    LOG.assertLog(ModelAccess.instance().isInEDT(), "You should do this in EDT");
+    if (myDisposed) {
+      return;
     }
-    myEditorComponent.rebuildEditorContent(events);
+    getEditorContext().getRepository().getModelAccess().checkReadAccess();
+
+    SNode editedNode = myEditorComponent.getEditedNode();
+    EditorCell newRootCell;
+    if (editedNode == null || editedNode.getModel() == null) {
+      newRootCell = myEditorComponent.createEmptyCell();
+    } else {
+      newRootCell = updateRootCell(editedNode, events);
+    }
+    myEditorComponent.setRootCell(newRootCell);
+    fireEditorUpdated();
   }
 
+  @Override
   public EditorCell updateRootCell(SNode node, List<SModelEvent> events) {
     myUpdateSession = createUpdateSession(node, events);
     EditorCell result = null;
     try {
-      result = myUpdateSession.performUpdate();
+      result = TypeContextManager.getInstance().runTypecheckingAction(myEditorComponent, new Computable<EditorCell>() {
+        @Override
+        public EditorCell compute() {
+          return myUpdateSession.performUpdate();
+        }
+      });
     } finally {
       myUpdateSession = null;
     }
@@ -115,7 +118,7 @@ public class UpdaterImpl implements Updater {
 
   @Override
   public void flushModelEvents() {
-    myModelListenersController.flush();
+    myModelListenersController.flush(myEditorComponent.getCommandContext().isInsideCommand());
   }
 
   @Override
@@ -131,6 +134,12 @@ public class UpdaterImpl implements Updater {
   private void fireCellSynchronized(EditorCell cell) {
     for (UpdaterListener nextListener : myListeners) {
       nextListener.cellSynchronizedWithModel(cell);
+    }
+  }
+
+  private void fireEditorUpdated() {
+    for (UpdaterListener nextListener : myListeners) {
+      nextListener.editorUpdated(myEditorComponent);
     }
   }
 
@@ -155,6 +164,7 @@ public class UpdaterImpl implements Updater {
   public void dispose() {
     myModelListenersController.dispose();
     clearCaches();
+    myDisposed = true;
   }
 
   public EditorCell getBigCell(SNode node) {
@@ -322,9 +332,14 @@ public class UpdaterImpl implements Updater {
       return myListeningModels.contains(model);
     }
 
-    public void flush() {
+    public void flush(boolean processSelection) {
       if (myModelListener != null) {
-        myModelListener.flush();
+        boolean oldProcessSelection = myModelListener.setProcessSelection(processSelection);
+        try {
+          myModelListener.flush();
+        } finally {
+          myModelListener.setProcessSelection(oldProcessSelection);
+        }
       }
     }
 

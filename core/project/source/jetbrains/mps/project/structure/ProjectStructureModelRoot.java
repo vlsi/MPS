@@ -193,20 +193,16 @@ public class ProjectStructureModelRoot extends FileBasedModelRoot {
         return;
       }
       reload();
-      updateTimestamp();
+      myTimestampTracker.updateTimestamp(getSource());
     }
 
     private void reload() {
       if (myModel == null) {
         return;
       }
-      final jetbrains.mps.smodel.SModel result = createModel();
-      super.replaceModel(new Runnable() {
-        @Override
-        public void run() {
-          myModel = result;
-        }
-      });
+      final jetbrains.mps.smodel.SModel oldModel = myModel;
+      myModel = createModel();
+      replaceModelAndFireEvent(oldModel, myModel);
     }
 
   }

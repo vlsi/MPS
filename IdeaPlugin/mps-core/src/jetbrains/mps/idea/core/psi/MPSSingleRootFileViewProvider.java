@@ -61,6 +61,7 @@ public abstract class MPSSingleRootFileViewProvider extends SingleRootFileViewPr
     PsiFile psiFile = getCachedPsi(MPSLanguage.INSTANCE);
     if (psiFile == null || (psiFile instanceof MPSPsiNodeBase && !psiFile.isValid())) {
       psiFile = createFile();
+      if(psiFile == null) return null;
       forceCachedPsi(psiFile);
     }
     return psiFile;

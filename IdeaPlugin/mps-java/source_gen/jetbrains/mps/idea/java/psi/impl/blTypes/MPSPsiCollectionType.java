@@ -23,7 +23,6 @@ public abstract class MPSPsiCollectionType extends MPSPsiNode implements Compute
   public MPSPsiCollectionType(SNodeId id, String concept, String containingRole) {
     super(id, concept, containingRole);
   }
-
   @Override
   public PsiClassType getPsiType() {
     Project project = getProject();
@@ -43,8 +42,6 @@ public abstract class MPSPsiCollectionType extends MPSPsiNode implements Compute
     PsiSubstitutor subst = PsiSubstitutor.EMPTY.putAll(claz, psiChildTypes);
     return new PsiImmediateClassType(claz, subst);
   }
-
   protected abstract String getClassName();
-
   protected abstract MPSPsiNode[] getChildTypeNodes();
 }

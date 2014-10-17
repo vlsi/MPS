@@ -1,8 +1,6 @@
 package org.jetbrains.jps.builders;
 
-import org.jetbrains.jps.api.BuildType;
 import org.jetbrains.jps.builders.java.JavaModuleBuildTargetType;
-import org.jetbrains.jps.incremental.BuilderRegistry;
 import org.jetbrains.jps.incremental.CompileScope;
 import org.jetbrains.jps.incremental.CompileScopeImpl;
 import org.jetbrains.jps.incremental.ModuleBuildTarget;

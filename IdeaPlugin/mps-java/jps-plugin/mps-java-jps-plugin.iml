@@ -12,7 +12,6 @@
     <orderEntry type="module" module-name="mps-common" />
     <orderEntry type="module" module-name="mps-java-common" />
     <orderEntry type="library" name="mps.MPS.OpenAPI_auto" level="project" />
-    <orderEntry type="library" name="junit-4.11" level="project" />
   </component>
 </module>
 

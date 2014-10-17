@@ -26,7 +26,6 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cells.ParentSettings;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.event.SModelEvent;
 
 import javax.swing.BorderFactory;
 import javax.swing.BoxLayout;
@@ -208,7 +207,7 @@ class EditorSettingsPreferencesPage {
         }
       }
     };
-    myTimer = new Timer(mySettings.getCaretBlinker().getCaretBlinkingRateTimeMillis(), listener);
+    myTimer = new Timer(CaretBlinker.getInstance().getCaretBlinkingRateTimeMillis(), listener);
 
     myEditorSettingsPanel = new JPanel(new BorderLayout());
     myEditorSettingsPanel.add(panel, BorderLayout.NORTH);
@@ -244,7 +243,7 @@ class EditorSettingsPreferencesPage {
       }
 
       @Override
-      public EditorCell createRootCell(List<SModelEvent> events) {
+      public jetbrains.mps.openapi.editor.cells.EditorCell createEmptyCell() {
         return new EditorCell_Demo(getEditorContext(), "blinking");
       }
     };

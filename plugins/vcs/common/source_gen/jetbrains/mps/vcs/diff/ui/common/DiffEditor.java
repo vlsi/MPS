@@ -26,8 +26,7 @@ import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import javax.swing.JComponent;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.nodeEditor.cells.EditorCell;
-import jetbrains.mps.smodel.event.SModelEvent;
+import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import org.jetbrains.annotations.NonNls;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
@@ -136,18 +135,12 @@ public class DiffEditor implements EditorMessageOwner {
       super(repository, false, rightToLeft);
       myDiffFileEditor = new DiffFileEditor(this);
     }
+
     @Override
-    public EditorCell createRootCell(List<SModelEvent> events) {
-      if (getEditedNode() == null || getEditedNode().getModel() == null) {
-        return new EditorCell_Constant(getEditorContext(), getEditedNode(), "");
-      }
-      pushCellContext();
-      try {
-        return (EditorCell) getUpdater().updateRootCell(getEditedNode(), events);
-      } finally {
-        popCellContext();
-      }
+    public EditorCell createEmptyCell() {
+      return new EditorCell_Constant(getEditorContext(), getEditedNode(), "");
     }
+
     @Override
     public Object getData(@NonNls String dataId) {
       if (dataId.equals(PlatformDataKeys.FILE_EDITOR.getName())) {

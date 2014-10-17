@@ -35,12 +35,9 @@ public class PsiJavaStubModelRoot extends ModelRootBase implements JavaPsiListen
   @NotNull
   private Module myIdeaModule;
 
-
   public PsiJavaStubModelRoot(Module module) {
     myIdeaModule = module;
   }
-
-
 
   /**
    * Equals is defined only by our ideaModule, all the state is not taken into acount
@@ -53,28 +50,23 @@ public class PsiJavaStubModelRoot extends ModelRootBase implements JavaPsiListen
     }
     return myIdeaModule.equals(((PsiJavaStubModelRoot) root).myIdeaModule);
   }
-
   @Override
   public int hashCode() {
     return myIdeaModule.hashCode();
   }
-
   @Override
   public String getType() {
     return TYPE;
   }
-
   @Override
   public String getPresentation() {
     return "Java PSI stubs";
   }
-
   @Override
   public SModel getModel(SModelId id) {
     // TODO 
     return null;
   }
-
   @Override
   public void attach() {
     super.attach();
@@ -83,14 +75,12 @@ public class PsiJavaStubModelRoot extends ModelRootBase implements JavaPsiListen
     PsiChangesWatcher w = myIdeaModule.getProject().getComponent(PsiChangesWatcher.class);
     w.addListener(this);
   }
-
   @Override
   public void dispose() {
     super.dispose();
     PsiChangesWatcher w = myIdeaModule.getProject().getComponent(PsiChangesWatcher.class);
     w.removeListener(this);
   }
-
   @Override
   public Iterable<SModel> loadModels() {
     Map<SModelReference, List<PsiDirectory>> packageToDirs = MapSequence.fromMap(new HashMap<SModelReference, List<PsiDirectory>>());
@@ -114,7 +104,6 @@ public class PsiJavaStubModelRoot extends ModelRootBase implements JavaPsiListen
 
     return models;
   }
-
   private void collectPackagesInDir(PsiDirectory sourceRoot, PsiDirectory dir, Map<SModelReference, List<PsiDirectory>> result) {
     if (Sequence.fromIterable(Sequence.fromArray(dir.getFiles())).ofType(PsiJavaFile.class).isNotEmpty()) {
 
@@ -133,14 +122,12 @@ public class PsiJavaStubModelRoot extends ModelRootBase implements JavaPsiListen
       collectPackagesInDir(sourceRoot, subDir, result);
     }
   }
-
   private PsiJavaStubModelDescriptor makeModelDescriptor(SModelReference modelRef, Iterable<PsiDirectory> dirs) {
     MultiplePsiJavaStubDataSource ds = new MultiplePsiJavaStubDataSource(myIdeaModule, dirs);
     PsiJavaStubModelDescriptor md = new PsiJavaStubModelDescriptor(modelRef, ds);
     md.setModelRoot(this);
     return md;
   }
-
   private jetbrains.mps.smodel.SModelReference makeModelReference(PsiDirectory sourceRoot, PsiDirectory dir) {
     int skipPrefix = sourceRoot.toString().length();
     String relativeDirName = dir.toString().substring(skipPrefix);
@@ -156,32 +143,25 @@ public class PsiJavaStubModelRoot extends ModelRootBase implements JavaPsiListen
 
     return (jetbrains.mps.smodel.SModelReference) Util.makeModelReference(packageName, getModule());
   }
-
   public boolean isReadOnly() {
     return true;
   }
-
   @Override
   public boolean canCreateModel(String modelName) {
     return false;
   }
-
   @Override
   public SModel createModel(String modelName) {
     return null;
   }
-
   @Override
   public void save(Memento memento) {
     throw new UnsupportedOperationException("JavaPsiStubs: unsupported for now");
   }
-
   @Override
   public void load(Memento memento) {
     throw new UnsupportedOperationException("JavaPsiStubs: unsupported for now");
   }
-
-
 
   @Override
   public void psiChanged(JavaPsiListener.PsiEvent event) {
@@ -219,13 +199,9 @@ public class PsiJavaStubModelRoot extends ModelRootBase implements JavaPsiListen
   }
 
 
-
-
   private boolean importantFsItem(PsiFileSystemItem fsItem) {
     return (fsItem instanceof PsiDirectory || fsItem instanceof PsiJavaFile) && findOurSourceRoot(fsItem) != null;
   }
-
-
 
   private PsiDirectory findOurSourceRoot(PsiFileSystemItem item) {
     for (VirtualFile sourceRoot : ModuleRootManager.getInstance(myIdeaModule).getSourceRoots()) {

@@ -127,10 +127,9 @@
       <node id="189703917320704881" at="318,98,319,110" concept="3" />
       <node id="189703917320704887" at="319,110,320,92" concept="3" />
       <node id="189703917320704893" at="320,92,321,104" concept="3" />
-      <node id="189703917320704899" at="321,104,322,96" concept="3" />
-      <node id="189703917320704905" at="322,96,323,94" concept="3" />
-      <node id="189703917320704911" at="323,94,324,102" concept="3" />
-      <node id="189703917320704917" at="324,102,325,106" concept="3" />
+      <node id="189703917320704905" at="321,104,322,94" concept="3" />
+      <node id="189703917320704911" at="322,94,323,102" concept="3" />
+      <node id="189703917320704917" at="323,102,324,106" concept="3" />
       <node id="2434140849679604420" at="73,0,75,0" concept="2" trace="IconManager#()V" />
       <node id="2434140849679605222" at="101,16,103,11" concept="0" />
       <node id="2434140849679605246" at="108,16,110,11" concept="0" />
@@ -368,7 +367,7 @@
       <scope id="2434140849679604775" at="233,0,248,0">
         <var name="module" id="2434140849679604778" />
       </scope>
-      <scope id="189703917320704822" at="309,10,325,106" />
+      <scope id="189703917320704822" at="309,10,324,106" />
       <scope id="2434140849679604580" at="160,0,177,0">
         <var name="conceptFQName" id="2434140849679604583" />
       </scope>
@@ -412,7 +411,7 @@
       </scope>
       <unit id="2434140849679604402" at="60,44,72,3" name="jetbrains.mps.ide.icons.IconManager$1" />
       <unit id="2434140849679604492" at="82,52,135,5" name="jetbrains.mps.ide.icons.IconManager$2" />
-      <unit id="2434140849679604371" at="55,0,328,0" name="jetbrains.mps.ide.icons.IconManager" />
+      <unit id="2434140849679604371" at="55,0,327,0" name="jetbrains.mps.ide.icons.IconManager" />
     </file>
   </root>
 </debug-info>

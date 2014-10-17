@@ -5,13 +5,14 @@ package jetbrains.mps.baseLanguage.behavior;
 import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
 import jetbrains.mps.lang.core.behavior.ImplementationContainer_BehaviorDescriptor;
 import jetbrains.mps.lang.core.behavior.ScopeProvider_BehaviorDescriptor;
+import jetbrains.mps.lang.core.behavior.InterfacePart_BehaviorDescriptor;
 import java.util.List;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.language.SConcept;
 import jetbrains.mps.scope.Scope;
 import jetbrains.mps.lang.core.behavior.ScopeProvider_Behavior;
 
-public abstract class ConceptFunction_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements IMethodLike_BehaviorDescriptor, IStatementListContainer_BehaviorDescriptor, ImplementationContainer_BehaviorDescriptor, ScopeProvider_BehaviorDescriptor {
+public abstract class ConceptFunction_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements IMethodLike_BehaviorDescriptor, IStatementListContainer_BehaviorDescriptor, ImplementationContainer_BehaviorDescriptor, ScopeProvider_BehaviorDescriptor, InterfacePart_BehaviorDescriptor {
   public ConceptFunction_BehaviorDescriptor() {
   }
   public List<SNode> virtual_getApplicableConceptFunctionParameter_3044950653914717136(SConcept thisConcept) {

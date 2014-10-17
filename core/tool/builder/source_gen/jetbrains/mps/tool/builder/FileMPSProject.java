@@ -121,6 +121,10 @@ public class FileMPSProject extends Project {
         for (SModule m : getModules()) {
           ((AbstractModule) m).onModuleLoad();
         }
+        /*
+          // FIXME This is a hack to workaround issue MPS-20526, missing JavaModuleFacet on module registration 
+        */
+        ClassLoaderManager.getInstance().reloadClasses(getModules(), new EmptyProgressMonitor());
       }
     });
   }

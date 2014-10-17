@@ -209,9 +209,6 @@ public abstract class BaseEditorTestBody extends BaseTestBody {
     final AnActionEvent event = ActionUtils.createEvent(ActionPlaces.MAIN_MENU, DATA_MANAGER.getDataContext(getEditorComponent()));
     runUndoableInEDTAndWait(new Runnable() {
       public void run() {
-        if (actionId.equals("$Undo")) {
-          myEditor.getCurrentEditorComponent().rebuildEditorContent();
-        }
         action.actionPerformed(event);
       }
     });
@@ -243,7 +240,7 @@ public abstract class BaseEditorTestBody extends BaseTestBody {
       }
     });
     flushEDTEvents();
-    // some actions (Copy/Paste) are runing one more command later 
+    // some actions (Copy/Paste) are running one more command later 
     flushEDTEvents();
     undoManager.setEditorProvider(oldEditorProvider);
   }

@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.extapi.model;
 
+import jetbrains.mps.extapi.persistence.ModelSourceChangeTracker;
 import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
@@ -26,27 +27,18 @@ import org.jetbrains.mps.openapi.persistence.DataSourceListener;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
 
 /**
+ * DO NOT USE
+ * This class is in the process of deprecation and its DataSource change tracking functionality has been extracted into
+ * ModelSourceChangeTracker (intention is to split EditableSModelBase and reload functionality)
  * evgeny, 3/21/13
  */
-public abstract class ReloadableSModelBase extends SModelBase {
+public abstract class ReloadableSModelBase extends SModelBase implements ModelSourceChangeTracker.ReloadCallback {
 
-  private DataSourceListener mySourceListener = new DataSourceListener() {
-    @Override
-    public void changed(DataSource source) {
-      ProgressMonitor monitor = new EmptyProgressMonitor();
-      if (!needsReloading()) return;
-
-      monitor.start("Reloading " + getModelName(), 1);
-      reloadFromDiskSafe();
-      monitor.done();
-    }
-  };
-
-  private long mySourceTimestamp;
+  protected final ModelSourceChangeTracker myTimestampTracker;
 
   protected ReloadableSModelBase(@NotNull SModelReference modelReference, @NotNull DataSource source) {
     super(modelReference, source);
-    mySourceTimestamp = source.getTimestamp();
+    myTimestampTracker = new ModelSourceChangeTracker(this);
   }
 
   /*
@@ -54,60 +46,30 @@ public abstract class ReloadableSModelBase extends SModelBase {
    */
   public abstract void reloadFromDiskSafe();
 
-  public long getSourceTimestamp() {
-    return mySourceTimestamp;
-  }
-
   public void updateTimestamp() {
-    mySourceTimestamp = getSource().getTimestamp();
+    myTimestampTracker.updateTimestamp(getSource());
   }
 
   public boolean needsReloading() {
-    return getSource().getTimestamp() != mySourceTimestamp;
+    return myTimestampTracker.needsReloading(getSource());
   }
 
   @Override
   public void attach(SRepository repository) {
-    getSource().addListener(mySourceListener);
     super.attach(repository);
+    myTimestampTracker.attach(this);
   }
 
   @Override
   public void detach() {
-    getSource().removeListener(mySourceListener);
+    myTimestampTracker.detach(this);
     super.detach();
-    fireBeforeModelDisposed(this);
-    jetbrains.mps.smodel.SModel model = getCurrentModelInternal();
-    if (model != null) {
-      model.dispose();
-    }
-    clearListeners();
   }
 
-  protected abstract jetbrains.mps.smodel.SModel getCurrentModelInternal();
-
   protected synchronized void replaceModel(Runnable replacer) {
-    ModelAccess.assertLegalWrite();
-
     final jetbrains.mps.smodel.SModel oldSModel = getCurrentModelInternal();
-
-    if (oldSModel != null) {
-      oldSModel.setModelDescriptor(null);
-    }
-
     replacer.run();
-
     jetbrains.mps.smodel.SModel newModel = getCurrentModelInternal();
-    if (newModel != null) {
-      newModel.setModelDescriptor(this);
-    }
-
-    if (oldSModel != null) {
-      notifyModelReplaced(oldSModel);
-    }
-
-    fireModelReplaced();
-
-    MPSModuleRepository.getInstance().invalidateCaches();
+    replaceModelAndFireEvent(oldSModel, newModel);
   }
 }

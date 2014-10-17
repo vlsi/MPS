@@ -62,7 +62,6 @@
   </source>
   <source id="4888428037514503250" name="StringOperators" hash="ciqo38gn4qeqo2ul8aaeqbgcw9gvk22">
     <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
-    <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
     <file name="StringOperators.java" />
   </source>
 </dependencies>

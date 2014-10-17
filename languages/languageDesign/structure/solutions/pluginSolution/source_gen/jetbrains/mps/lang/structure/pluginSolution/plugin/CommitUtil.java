@@ -7,8 +7,9 @@ import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.Language;
-import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.smodel.adapter.IdHelper;
+import jetbrains.mps.smodel.DebugRegistry;
+import jetbrains.mps.smodel.adapter.ids.MetaIdByDeclaration;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class CommitUtil {
@@ -18,16 +19,16 @@ public class CommitUtil {
       return false;
     }
     if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration")) {
-      MPSModuleRepository.getInstance().getDebugRegistry().addConceptName(IdHelper.getConceptId((jetbrains.mps.smodel.SNode) node), newValue);
+      DebugRegistry.getInstance().addConceptName(MetaIdByDeclaration.getConceptId((jetbrains.mps.smodel.SNode) node), BehaviorReflection.invokeVirtual(String.class, SNodeOperations.cast(node, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"), "virtual_getFqName_1213877404258", new Object[]{}));
     }
     if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.structure.structure.PropertyDeclaration")) {
-      MPSModuleRepository.getInstance().getDebugRegistry().addPropertyName(IdHelper.getPropId((jetbrains.mps.smodel.SNode) node), newValue);
+      DebugRegistry.getInstance().addPropertyName(MetaIdByDeclaration.getPropId((jetbrains.mps.smodel.SNode) node), newValue);
     }
     if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.structure.structure.LinkDeclaration")) {
       if (SPropertyOperations.hasValue(SNodeOperations.cast(node, "jetbrains.mps.lang.structure.structure.LinkDeclaration"), "metaClass", "aggregation", "reference")) {
-        MPSModuleRepository.getInstance().getDebugRegistry().addLinkName(IdHelper.getNodeRoleId((jetbrains.mps.smodel.SNode) node), newValue);
+        DebugRegistry.getInstance().addLinkName(MetaIdByDeclaration.getLinkId((jetbrains.mps.smodel.SNode) node), newValue);
       } else {
-        MPSModuleRepository.getInstance().getDebugRegistry().addLinkName(IdHelper.getRefRoleId((jetbrains.mps.smodel.SNode) node), newValue);
+        DebugRegistry.getInstance().addRefName(MetaIdByDeclaration.getRefRoleId((jetbrains.mps.smodel.SNode) node), newValue);
       }
     }
     return false;

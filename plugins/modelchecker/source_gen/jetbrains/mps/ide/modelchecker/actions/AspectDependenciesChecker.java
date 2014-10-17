@@ -124,8 +124,6 @@ public class AspectDependenciesChecker extends SpecificChecker {
             return CORE;
           case STRUCTURE:
             return CORE;
-          case STUBS:
-            return CORE;
           case MIGRATION:
             return CORE;
           case TEST:

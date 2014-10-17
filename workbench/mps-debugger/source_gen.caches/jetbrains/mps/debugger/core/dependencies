@@ -50,8 +50,8 @@
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SRepository" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.module.SRepositoryAdapter" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SRepositoryListener" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.module.SRepositoryListenerBase" />
   </dependency>
   <dependency className="jetbrains.mps.debugger.core.DebuggerCellPainter" file="DebuggerCellPainter.java">
     <classNode dependClassName="java.awt.Color" />

@@ -94,14 +94,14 @@ public class FastNodeFinderManager {
       ourStructureChangeTrackers.putIfAbsent(repo, tracker1);
       if (tracker1 == ourStructureChangeTrackers.get(repo)) {
         // if another thread got luck, we don't need to attach tracker1 to the repo
-        tracker1.attachTo(repo);
+        repo.addRepositoryListener(tracker1);
       }
     }
     if (!ourLifecycleTrackers.containsKey(repo)) {
       ModelLifecycleTracker tracker2 = new ModelLifecycleTracker();
       ourLifecycleTrackers.putIfAbsent(repo, tracker2);
       if (tracker2 == ourLifecycleTrackers.get(repo)) {
-        tracker2.subscribeTo(repo);
+        repo.addRepositoryListener(tracker2);
       }
     }
   }

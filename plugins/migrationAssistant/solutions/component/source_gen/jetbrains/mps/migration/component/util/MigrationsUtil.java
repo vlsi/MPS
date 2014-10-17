@@ -51,8 +51,8 @@ public class MigrationsUtil {
     module.validateLanguageVersions();
     List<Tuples._3<SModule, Integer, Integer>> result = ListSequence.fromList(new ArrayList<Tuples._3<SModule, Integer, Integer>>());
     for (SLanguage lang : SetSequence.fromSet(module.getUsedLanguages())) {
-      if (module.getModuleDescriptor().getLanguageVersions().get(lang.getId()) != lang.getLanguageVersion()) {
-        ListSequence.fromList(result).addElement(MultiTuple.<SModule,Integer,Integer>from(lang.getSourceModule(), module.getModuleDescriptor().getLanguageVersions().get(lang.getId()), as_7hm1hv_a0c0a0a0a0c0c(lang.getSourceModule(), Language.class).getLanguageVersion()));
+      if (module.getModuleDescriptor().getLanguageVersions().get(lang) != lang.getLanguageVersion()) {
+        ListSequence.fromList(result).addElement(MultiTuple.<SModule,Integer,Integer>from(lang.getSourceModule(), module.getModuleDescriptor().getLanguageVersions().get(lang), as_7hm1hv_a0c0a0a0a0c0c(lang.getSourceModule(), Language.class).getLanguageVersion()));
       }
     }
     return result;

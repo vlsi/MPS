@@ -16,18 +16,24 @@
 package jetbrains.mps.persistence.binary;
 
 import jetbrains.mps.extapi.model.GeneratableSModel;
+import jetbrains.mps.persistence.IdHelper;
 import jetbrains.mps.persistence.PersistenceRegistry;
-import jetbrains.mps.smodel.Language;
-import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.smodel.DebugRegistry;
 import jetbrains.mps.smodel.DefaultSModel;
 import jetbrains.mps.smodel.LazySModel;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.adapter.SLanguageAdapter;
-import jetbrains.mps.smodel.DebugRegistryUtil;
 import jetbrains.mps.smodel.SModelHeader;
+import jetbrains.mps.smodel.adapter.ids.SConceptId;
+import jetbrains.mps.smodel.adapter.ids.SContainmentLinkId;
+import jetbrains.mps.smodel.adapter.ids.SLanguageId;
+import jetbrains.mps.smodel.adapter.ids.SPropertyId;
+import jetbrains.mps.smodel.adapter.ids.SReferenceLinkId;
+import jetbrains.mps.smodel.adapter.structure.language.SLanguageAdapterById;
 import jetbrains.mps.smodel.loading.ModelLoadResult;
 import jetbrains.mps.smodel.loading.ModelLoadingState;
 import jetbrains.mps.smodel.persistence.def.ModelReadException;
+import jetbrains.mps.smodel.persistence.def.v9.IdInfoCollector;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.util.Pair;
@@ -35,15 +41,11 @@ import jetbrains.mps.util.io.ModelInputStream;
 import jetbrains.mps.util.io.ModelOutputStream;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
-import org.jetbrains.mps.openapi.language.SConceptId;
-import org.jetbrains.mps.openapi.language.SContainmentLinkId;
-import org.jetbrains.mps.openapi.language.SLanguageId;
-import org.jetbrains.mps.openapi.language.SPropertyId;
-import org.jetbrains.mps.openapi.language.SReferenceLinkId;
+import org.jetbrains.mps.openapi.language.SContainmentLink;
+import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeId;
-import org.jetbrains.mps.openapi.module.DebugRegistry;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.persistence.StreamDataSource;
 import org.jetbrains.mps.openapi.util.Consumer;
@@ -145,7 +147,7 @@ public class BinaryPersistence {
       loadDebugInfo(is);
     }
 
-    for (Pair<Pair<SLanguageId, Integer>, Boolean> ref : loadUsedLanguagesList(is)) {
+    for (Pair<Pair<SLanguage, Integer>, Boolean> ref : loadUsedLanguagesList(is)) {
       if (!ref.o2) {
         model.addLanguage(ref.o1.o1, ref.o1.o2);
       } else {
@@ -164,12 +166,11 @@ public class BinaryPersistence {
   }
 
   private static void loadDebugInfo(ModelInputStream is) throws IOException {
-    DebugRegistry debugRegistry = MPSModuleRepository.getInstance().getDebugRegistry();
 
     //languages info
     int languagesSize = is.readInt();
     for (int i = 0; i < languagesSize; i++) {
-      debugRegistry.addLanguageName(SLanguageId.deserialize(is.readString()), is.readString());
+      DebugRegistry.getInstance().addLanguageName(SLanguageId.deserialize(is.readString()), is.readString());
     }
 
     //  devkits??
@@ -177,31 +178,31 @@ public class BinaryPersistence {
     //models info
     int modelsSize = is.readInt();
     for (int i = 0; i < modelsSize; i++) {
-      debugRegistry.addModelName(is.readModelReference(), is.readString());
+      DebugRegistry.getInstance().addModelName(is.readModelReference(), is.readString());
     }
 
     // write concepts
     int conceptsSize = is.readInt();
     for (int i = 0; i < conceptsSize; i++) {
-      debugRegistry.addConceptName(SConceptId.deserialize(is.readString()), is.readString());
+      DebugRegistry.getInstance().addConceptName(SConceptId.deserialize(is.readString()), is.readString());
     }
 
     // write properties
     int propertiesSize = is.readInt();
     for (int i = 0; i < propertiesSize; i++) {
-      debugRegistry.addPropertyName(SPropertyId.deserialize(is.readString()), is.readString());
+      DebugRegistry.getInstance().addPropertyName(SPropertyId.deserialize(is.readString()), is.readString());
     }
 
     // write reference roles
     int referencesSize = is.readInt();
     for (int i = 0; i < referencesSize; i++) {
-      debugRegistry.addLinkName(SReferenceLinkId.deserialize(is.readString()), is.readString());
+      DebugRegistry.getInstance().addRefName(SReferenceLinkId.deserialize(is.readString()), is.readString());
     }
 
     // write child roles
     int childrenSize = is.readInt();
     for (int i = 0; i < childrenSize; i++) {
-      debugRegistry.addLinkName(SContainmentLinkId.deserialize(is.readString()), is.readString());
+      DebugRegistry.getInstance().addLinkName(SContainmentLinkId.deserialize(is.readString()), is.readString());
     }
   }
 
@@ -216,8 +217,8 @@ public class BinaryPersistence {
     loadModelProperties(model, is);
 
     NodesReader reader = new NodesReader(modelReference, interfaceOnly);
-    List<Pair<SContainmentLinkId, jetbrains.mps.smodel.SNode>> roots = reader.readNodes(is);
-    for (Pair<SContainmentLinkId, jetbrains.mps.smodel.SNode> r : roots) {
+    List<Pair<SContainmentLink, jetbrains.mps.smodel.SNode>> roots = reader.readNodes(is);
+    for (Pair<SContainmentLink, jetbrains.mps.smodel.SNode> r : roots) {
       model.addRootNode(r.o2);
     }
 
@@ -230,7 +231,8 @@ public class BinaryPersistence {
   }
 
   private static void saveModel(SModel model, ModelOutputStream os) throws IOException {
-    model.validateImplicitlyUsedLanguages();
+    //model.validateImplicitlyUsedLanguages();
+
     saveModelProperties(model, os);
 
     ArrayList<SNode> roots = new ArrayList<SNode>(IterableUtil.asCollection(model.getRootNodes()).size());
@@ -268,16 +270,13 @@ public class BinaryPersistence {
     os.writeInt(0xbaba);
   }
 
-  private static void saveDebugInfo(Collection<SLanguageId> languages, Collection<ImportElement> importedModels, Iterable<SNode> rootNodes, ModelOutputStream os) throws IOException {
-    DebugRegistry debugRegistry = MPSModuleRepository.getInstance().getDebugRegistry();
+  private static void saveDebugInfo(Collection<SLanguage> languages, Collection<ImportElement> importedModels, Iterable<SNode> rootNodes, ModelOutputStream os) throws IOException {
 
     //save used languages info
     os.writeInt(languages.size());
-    for (SLanguageId languageId : languages) {
-      Language lang = new SLanguageAdapter(languageId).getSourceModule();
-      String name = lang != null ? lang.getModuleName() : debugRegistry.getLanguageName(languageId);
-      os.writeString(languageId.serialize());
-      os.writeString(name == null ? "" : name);
+    for (SLanguage language : languages) {
+      os.writeString(IdHelper.getLanguageId(language).serialize());
+      os.writeString(language.getQualifiedName());
     }
 
     //  devkits??
@@ -287,7 +286,7 @@ public class BinaryPersistence {
     for (ImportElement ie : importedModels) {
       SModelReference ref = ie.getModelReference();
       org.jetbrains.mps.openapi.model.SModel model = ref.resolve(MPSModuleRepository.getInstance());
-      String name = model != null ? model.getModelName() : debugRegistry.getModelName(ref);
+      String name = model != null ? model.getModelName() : DebugRegistry.getInstance().getModelName(ref);
 
       os.writeModelReference(ref);
       os.writeString(name == null ? "" : name);
@@ -301,7 +300,7 @@ public class BinaryPersistence {
     Map<SReferenceLinkId, String> refIds = new HashMap<SReferenceLinkId, String>();
     Map<SContainmentLinkId, String> roleIds = new HashMap<SContainmentLinkId, String>();
 
-    DebugRegistryUtil.getDebugInfoById(rootNodes, conceptIds, propIds, refIds, roleIds);
+    IdInfoCollector.getDebugInfoById(rootNodes, conceptIds, propIds, refIds, roleIds);
 
     // write concepts
     os.writeInt(conceptIds.size());
@@ -332,16 +331,16 @@ public class BinaryPersistence {
     }
   }
 
-  private static void saveUsedLanguagesList(Map<SLanguageId, Integer> refs, Map<SLanguageId, Integer> implicit, ModelOutputStream os) throws IOException {
+  private static void saveUsedLanguagesList(Map<SLanguage, Integer> refs, Map<SLanguage, Integer> implicit, ModelOutputStream os) throws IOException {
     os.writeInt(refs.size() + implicit.size());
-    for (Entry<SLanguageId, Integer> ref : refs.entrySet()) {
-      os.writeString(ref.getKey().serialize());
-      os.writeInt(ref.getValue());
+    for (Entry<SLanguage, Integer> e : refs.entrySet()) {
+      os.writeString(IdHelper.getLanguageId(e.getKey()).serialize());
+      os.writeInt(e.getValue());
       os.writeBoolean(false);
     }
-    for (Entry<SLanguageId, Integer> ref : implicit.entrySet()) {
-      os.writeString(ref.getKey().serialize());
-      os.writeInt(ref.getValue());
+    for (Entry<SLanguage, Integer> e : implicit.entrySet()) {
+      os.writeString(IdHelper.getLanguageId(e.getKey()).serialize());
+      os.writeInt(e.getValue());
       os.writeBoolean(true);
     }
   }
@@ -353,14 +352,15 @@ public class BinaryPersistence {
     }
   }
 
-  private static Collection<Pair<Pair<SLanguageId, Integer>, Boolean>> loadUsedLanguagesList(ModelInputStream is) throws IOException {
+  private static Collection<Pair<Pair<SLanguage, Integer>, Boolean>> loadUsedLanguagesList(ModelInputStream is) throws IOException {
     int size = is.readInt();
-    List<Pair<Pair<SLanguageId, Integer>, Boolean>> result = new ArrayList<Pair<Pair<SLanguageId, Integer>, Boolean>>();
+    List<Pair<Pair<SLanguage, Integer>, Boolean>> result = new ArrayList<Pair<Pair<SLanguage, Integer>, Boolean>>();
     for (int i = 0; i < size; i++) {
       SLanguageId id = SLanguageId.deserialize(is.readString());
+      SLanguage l = new SLanguageAdapterById(id, DebugRegistry.getInstance().getLanguageName(id));
       int version = is.readInt();
       boolean implicit = is.readBoolean();
-      result.add(new Pair<Pair<SLanguageId, Integer>, Boolean>(new Pair<SLanguageId, Integer>(id, version), implicit));
+      result.add(new Pair<Pair<SLanguage, Integer>, Boolean>(new Pair<SLanguage, Integer>(l, version), implicit));
     }
     return result;
   }
@@ -406,7 +406,7 @@ public class BinaryPersistence {
         @Override
         protected SConceptId readConceptId(ModelInputStream is) throws IOException {
           SConceptId cid = super.readConceptId(is);
-          String name = MPSModuleRepository.getInstance().getDebugRegistry().getConceptName(cid);
+          String name = DebugRegistry.getInstance().getConceptName(cid);
           consumer.consume(name);
           return cid;
         }

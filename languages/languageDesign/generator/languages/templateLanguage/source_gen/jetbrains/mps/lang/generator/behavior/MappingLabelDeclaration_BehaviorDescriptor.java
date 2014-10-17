@@ -4,10 +4,11 @@ package jetbrains.mps.lang.generator.behavior;
 
 import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
 import jetbrains.mps.lang.core.behavior.INamedConcept_BehaviorDescriptor;
+import jetbrains.mps.lang.core.behavior.ImplementationPart_BehaviorDescriptor;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
 
-public class MappingLabelDeclaration_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements INamedConcept_BehaviorDescriptor {
+public class MappingLabelDeclaration_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements INamedConcept_BehaviorDescriptor, ImplementationPart_BehaviorDescriptor {
   public MappingLabelDeclaration_BehaviorDescriptor() {
   }
   public String virtual_getFqName_1213877404258(SNode thisNode) {

@@ -36,6 +36,7 @@ import org.jetbrains.mps.openapi.module.SRepository;
 import org.jetbrains.mps.openapi.module.SRepositoryContentAdapter;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -116,7 +117,7 @@ public class DirectoryIndexExcludeUpdater extends AbstractProjectComponent {
 
   private boolean isExcluded(VirtualFile dir) {
     for (DirectoryIndexExcludePolicy ep : myExcludePolicies) {
-      if (ep.isExcludeRoot(dir)) {
+      if (Arrays.asList(ep.getExcludeRootsForProject()).contains(dir)) {
         return true;
       }
     }

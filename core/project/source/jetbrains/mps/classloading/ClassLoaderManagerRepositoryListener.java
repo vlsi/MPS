@@ -22,7 +22,7 @@ import jetbrains.mps.smodel.MPSModuleRepository;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.mps.openapi.module.SModule;
-import org.jetbrains.mps.openapi.module.SRepositoryAdapter;
+import org.jetbrains.mps.openapi.module.SRepositoryListenerBase;
 
 import java.util.Arrays;
 import java.util.Collection;
@@ -32,7 +32,7 @@ import java.util.Set;
 /**
 * Created by alexeyka on 3/7/14.
 */
-class ClassLoaderManagerRepositoryListener extends SRepositoryAdapter {
+class ClassLoaderManagerRepositoryListener extends SRepositoryListenerBase {
   private static final Logger LOG = LogManager.getLogger(ClassLoaderManagerRepositoryListener.class);
 
   private final ClassLoaderManager myClassLoaderManager;

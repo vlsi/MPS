@@ -109,6 +109,7 @@ public class TextPreviewFile extends StubVirtualFile {
     public TextPreviewVirtualFileSystem() {
     }
     @Override
+    @NotNull
     public String getCanonicallyCasedName(VirtualFile file) {
       return file.getName();
     }
@@ -169,6 +170,7 @@ public class TextPreviewFile extends StubVirtualFile {
     public void deleteFile(Object object, @NotNull VirtualFile file) throws IOException {
     }
     @Override
+    @NotNull
     public VirtualFile createChildFile(Object object, @NotNull VirtualFile file, @NotNull String string) throws IOException {
       return null;
     }
@@ -178,6 +180,7 @@ public class TextPreviewFile extends StubVirtualFile {
       return null;
     }
     @Override
+    @NotNull
     public VirtualFile copyFile(Object object, @NotNull VirtualFile file, @NotNull VirtualFile file1, @NotNull String string) throws IOException {
       return null;
     }

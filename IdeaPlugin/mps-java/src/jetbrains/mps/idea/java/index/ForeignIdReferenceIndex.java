@@ -170,7 +170,7 @@ public class ForeignIdReferenceIndex extends FileBasedIndexExtension<String, Col
   }
 
   @Override
-  public boolean isKeyHighlySelective() {
+  public boolean keyIsUniqueForIndexedFile() {
     return true;
   }
 

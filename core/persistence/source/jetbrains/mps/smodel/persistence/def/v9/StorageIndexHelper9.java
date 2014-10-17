@@ -15,28 +15,18 @@
  */
 package jetbrains.mps.smodel.persistence.def.v9;
 
-import jetbrains.mps.RuntimeFlags;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.persistence.ModelEnvironmentInfo;
-import jetbrains.mps.persistence.PersistenceRegistry;
 import jetbrains.mps.smodel.StaticReference;
+import jetbrains.mps.smodel.adapter.ids.SConceptId;
+import jetbrains.mps.smodel.adapter.ids.SContainmentLinkId;
+import jetbrains.mps.smodel.adapter.ids.SLanguageId;
+import jetbrains.mps.smodel.adapter.ids.SPropertyId;
+import jetbrains.mps.smodel.adapter.ids.SReferenceLinkId;
 import jetbrains.mps.smodel.persistence.def.v7.WriteHelper;
-import jetbrains.mps.smodel.runtime.ConceptKind;
-import jetbrains.mps.smodel.runtime.StaticScope;
 import org.apache.log4j.Level;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.mps.openapi.language.SConcept;
-import org.jetbrains.mps.openapi.language.SConceptId;
-import org.jetbrains.mps.openapi.language.SContainmentLinkId;
-import org.jetbrains.mps.openapi.language.SLanguage;
-import org.jetbrains.mps.openapi.language.SLanguageId;
-import org.jetbrains.mps.openapi.language.SPropertyId;
-import org.jetbrains.mps.openapi.language.SReferenceLinkId;
 import org.jetbrains.mps.openapi.model.SModelReference;
-import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.model.SReference;
 
 import java.util.HashMap;
@@ -97,7 +87,7 @@ public class StorageIndexHelper9 {
     return getConceptIndex(prop.getConceptId()) + MODEL_SEPARATOR_CHAR + prop.getPropertyId();
   }
 
-  public String getNodeRoleIndex(@NotNull SContainmentLinkId linkId) {
+  public String getLinkIndex(@NotNull SContainmentLinkId linkId) {
     return getConceptIndex(linkId.getConceptId()) + MODEL_SEPARATOR_CHAR + linkId.getContainmentLinkId();
   }
 

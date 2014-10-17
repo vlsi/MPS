@@ -9,5 +9,9 @@
   <usedLanguages>
     <usedLanguage>33f294fd-370a-4a40-999b-43f382910018(jetbrains.mps.samples.mindmaps)</usedLanguage>
   </usedLanguages>
+  <languageVersions>
+    <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" fqName="jetbrains.mps.lang.core" version="0" />
+    <language id="33f294fd-370a-4a40-999b-43f382910018" fqName="jetbrains.mps.samples.mindmaps" version="0" />
+  </languageVersions>
 </solution>
 

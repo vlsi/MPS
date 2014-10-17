@@ -22,7 +22,7 @@
       <unit at="9,0,23,0" name="jetbrains.mps.lang.generator.behavior.MapSrcMacro_PostMapperFunction_BehaviorDescriptor" />
     </file>
     <file name="ReductionRule_BehaviorDescriptor.java">
-      <unit at="6,0,8,0" name="jetbrains.mps.lang.generator.behavior.ReductionRule_BehaviorDescriptor" />
+      <unit at="7,0,9,0" name="jetbrains.mps.lang.generator.behavior.ReductionRule_BehaviorDescriptor" />
     </file>
     <file name="InlineTemplate_RuleConsequence_BehaviorDescriptor.java">
       <unit at="7,0,18,0" name="jetbrains.mps.lang.generator.behavior.InlineTemplate_RuleConsequence_BehaviorDescriptor" />
@@ -40,7 +40,7 @@
       <unit at="9,0,26,0" name="jetbrains.mps.lang.generator.behavior.TemplateArgumentQuery_BehaviorDescriptor" />
     </file>
     <file name="MappingScript_BehaviorDescriptor.java">
-      <unit at="10,0,21,0" name="jetbrains.mps.lang.generator.behavior.MappingScript_BehaviorDescriptor" />
+      <unit at="11,0,22,0" name="jetbrains.mps.lang.generator.behavior.MappingScript_BehaviorDescriptor" />
     </file>
     <file name="TraceMacro_BehaviorDescriptor.java">
       <unit at="6,0,14,0" name="jetbrains.mps.lang.generator.behavior.TraceMacro_BehaviorDescriptor" />
@@ -49,7 +49,7 @@
       <unit at="7,0,15,0" name="jetbrains.mps.lang.generator.behavior.InlineSwitch_RuleConsequence_BehaviorDescriptor" />
     </file>
     <file name="CreateRootRule_BehaviorDescriptor.java">
-      <unit at="8,0,19,0" name="jetbrains.mps.lang.generator.behavior.CreateRootRule_BehaviorDescriptor" />
+      <unit at="9,0,20,0" name="jetbrains.mps.lang.generator.behavior.CreateRootRule_BehaviorDescriptor" />
     </file>
     <file name="IGeneratorParameter_BehaviorDescriptor.java">
       <unit at="8,0,11,0" name="jetbrains.mps.lang.generator.behavior.IGeneratorParameter_BehaviorDescriptor" />
@@ -58,7 +58,7 @@
       <unit at="10,0,21,0" name="jetbrains.mps.lang.generator.behavior.TemplateParameterDeclaration_BehaviorDescriptor" />
     </file>
     <file name="MappingLabelDeclaration_BehaviorDescriptor.java">
-      <unit at="10,0,21,0" name="jetbrains.mps.lang.generator.behavior.MappingLabelDeclaration_BehaviorDescriptor" />
+      <unit at="11,0,22,0" name="jetbrains.mps.lang.generator.behavior.MappingLabelDeclaration_BehaviorDescriptor" />
     </file>
     <file name="MappingConfiguration_Condition_BehaviorDescriptor.java">
       <unit at="9,0,26,0" name="jetbrains.mps.lang.generator.behavior.MappingConfiguration_Condition_BehaviorDescriptor" />
@@ -70,16 +70,16 @@
       <unit at="9,0,26,0" name="jetbrains.mps.lang.generator.behavior.TemplateFragment_ContextNodeQuery_BehaviorDescriptor" />
     </file>
     <file name="AbstractMacro_BehaviorDescriptor.java">
-      <unit at="6,0,8,0" name="jetbrains.mps.lang.generator.behavior.AbstractMacro_BehaviorDescriptor" />
+      <unit at="7,0,9,0" name="jetbrains.mps.lang.generator.behavior.AbstractMacro_BehaviorDescriptor" />
     </file>
     <file name="CopySrcNodeMacro_BehaviorDescriptor.java">
       <unit at="8,0,22,0" name="jetbrains.mps.lang.generator.behavior.CopySrcNodeMacro_BehaviorDescriptor" />
     </file>
     <file name="TemplateDeclaration_BehaviorDescriptor.java">
-      <unit at="13,0,36,0" name="jetbrains.mps.lang.generator.behavior.TemplateDeclaration_BehaviorDescriptor" />
+      <unit at="14,0,37,0" name="jetbrains.mps.lang.generator.behavior.TemplateDeclaration_BehaviorDescriptor" />
     </file>
     <file name="Weaving_MappingRule_BehaviorDescriptor.java">
-      <unit at="6,0,14,0" name="jetbrains.mps.lang.generator.behavior.Weaving_MappingRule_BehaviorDescriptor" />
+      <unit at="7,0,15,0" name="jetbrains.mps.lang.generator.behavior.Weaving_MappingRule_BehaviorDescriptor" />
     </file>
     <file name="ITemplateCall_BehaviorDescriptor.java">
       <unit at="8,0,11,0" name="jetbrains.mps.lang.generator.behavior.ITemplateCall_BehaviorDescriptor" />
@@ -109,7 +109,7 @@
       <unit at="8,0,22,0" name="jetbrains.mps.lang.generator.behavior.CopySrcListMacro_BehaviorDescriptor" />
     </file>
     <file name="Root_MappingRule_BehaviorDescriptor.java">
-      <unit at="7,0,18,0" name="jetbrains.mps.lang.generator.behavior.Root_MappingRule_BehaviorDescriptor" />
+      <unit at="8,0,19,0" name="jetbrains.mps.lang.generator.behavior.Root_MappingRule_BehaviorDescriptor" />
     </file>
     <file name="Weaving_MappingRule_ContextNodeQuery_BehaviorDescriptor.java">
       <unit at="9,0,26,0" name="jetbrains.mps.lang.generator.behavior.Weaving_MappingRule_ContextNodeQuery_BehaviorDescriptor" />
@@ -157,7 +157,7 @@
       <unit at="7,0,18,0" name="jetbrains.mps.lang.generator.behavior.MapSrcListMacro_BehaviorDescriptor" />
     </file>
     <file name="GeneratorMessage_BehaviorDescriptor.java">
-      <unit at="7,0,15,0" name="jetbrains.mps.lang.generator.behavior.GeneratorMessage_BehaviorDescriptor" />
+      <unit at="8,0,16,0" name="jetbrains.mps.lang.generator.behavior.GeneratorMessage_BehaviorDescriptor" />
     </file>
     <file name="InlineSwitch_Case_BehaviorDescriptor.java">
       <unit at="7,0,15,0" name="jetbrains.mps.lang.generator.behavior.InlineSwitch_Case_BehaviorDescriptor" />
@@ -214,13 +214,13 @@
       <unit at="6,0,14,0" name="jetbrains.mps.lang.generator.behavior.AbandonInput_RuleConsequence_BehaviorDescriptor" />
     </file>
     <file name="MappingScriptReference_BehaviorDescriptor.java">
-      <unit at="7,0,15,0" name="jetbrains.mps.lang.generator.behavior.MappingScriptReference_BehaviorDescriptor" />
+      <unit at="8,0,16,0" name="jetbrains.mps.lang.generator.behavior.MappingScriptReference_BehaviorDescriptor" />
     </file>
     <file name="TemplateFunctionParameter_sourceNode_BehaviorDescriptor.java">
       <unit at="8,0,16,0" name="jetbrains.mps.lang.generator.behavior.TemplateFunctionParameter_sourceNode_BehaviorDescriptor" />
     </file>
     <file name="MappingConfiguration_BehaviorDescriptor.java">
-      <unit at="15,0,47,0" name="jetbrains.mps.lang.generator.behavior.MappingConfiguration_BehaviorDescriptor" />
+      <unit at="16,0,48,0" name="jetbrains.mps.lang.generator.behavior.MappingConfiguration_BehaviorDescriptor" />
     </file>
     <file name="TemplateArgumentPatternRef_BehaviorDescriptor.java">
       <unit at="8,0,17,0" name="jetbrains.mps.lang.generator.behavior.TemplateArgumentPatternRef_BehaviorDescriptor" />
@@ -232,16 +232,16 @@
       <unit at="9,0,26,0" name="jetbrains.mps.lang.generator.behavior.IfMacro_Condition_BehaviorDescriptor" />
     </file>
     <file name="RuleConsequence_BehaviorDescriptor.java">
-      <unit at="8,0,19,0" name="jetbrains.mps.lang.generator.behavior.RuleConsequence_BehaviorDescriptor" />
+      <unit at="9,0,20,0" name="jetbrains.mps.lang.generator.behavior.RuleConsequence_BehaviorDescriptor" />
     </file>
     <file name="TemplateCallMacro_BehaviorDescriptor.java">
       <unit at="8,0,25,0" name="jetbrains.mps.lang.generator.behavior.TemplateCallMacro_BehaviorDescriptor" />
     </file>
     <file name="DropRootRule_BehaviorDescriptor.java">
-      <unit at="7,0,15,0" name="jetbrains.mps.lang.generator.behavior.DropRootRule_BehaviorDescriptor" />
+      <unit at="8,0,16,0" name="jetbrains.mps.lang.generator.behavior.DropRootRule_BehaviorDescriptor" />
     </file>
     <file name="RootTemplateAnnotation_BehaviorDescriptor.java">
-      <unit at="7,0,15,0" name="jetbrains.mps.lang.generator.behavior.RootTemplateAnnotation_BehaviorDescriptor" />
+      <unit at="8,0,16,0" name="jetbrains.mps.lang.generator.behavior.RootTemplateAnnotation_BehaviorDescriptor" />
     </file>
     <file name="CreateRootRule_Condition_BehaviorDescriptor.java">
       <unit at="9,0,26,0" name="jetbrains.mps.lang.generator.behavior.CreateRootRule_Condition_BehaviorDescriptor" />
@@ -253,7 +253,7 @@
       <unit at="8,0,16,0" name="jetbrains.mps.lang.generator.behavior.PropertyMacro_BehaviorDescriptor" />
     </file>
     <file name="TemplateSwitch_BehaviorDescriptor.java">
-      <unit at="13,0,36,0" name="jetbrains.mps.lang.generator.behavior.TemplateSwitch_BehaviorDescriptor" />
+      <unit at="14,0,37,0" name="jetbrains.mps.lang.generator.behavior.TemplateSwitch_BehaviorDescriptor" />
     </file>
     <file name="SwitchMacro_BehaviorDescriptor.java">
       <unit at="7,0,18,0" name="jetbrains.mps.lang.generator.behavior.SwitchMacro_BehaviorDescriptor" />

@@ -6,6 +6,9 @@ import com.intellij.openapi.components.AbstractProjectComponent;
 import jetbrains.mps.ide.migration.MigrationManager;
 import jetbrains.mps.lang.migration.runtime.base.DataCollector;
 import java.util.Map;
+
+import jetbrains.mps.smodel.adapter.ids.MetaIdByDeclaration;
+import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.lang.migration.runtime.base.MigrationDescriptor;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
@@ -26,8 +29,6 @@ import jetbrains.mps.ide.migration.ScriptApplied;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.lang.migration.runtime.base.MigrationScriptReference;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
-import org.jetbrains.mps.openapi.language.SLanguageId;
-import jetbrains.mps.smodel.adapter.IdHelper;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
@@ -179,7 +180,7 @@ public class MigrationComponent extends AbstractProjectComponent implements Migr
   public boolean executeScript(ScriptApplied sa) {
     MigrationScript script = sa.getScript();
     AbstractModule module = ((AbstractModule) sa.getModule());
-    SLanguageId languageId = IdHelper.getLanguageId(script.getDescriptor().getModuleReference().getModuleId());
+    SLanguage languageId = MetaIdByDeclaration.ref2Id(script.getDescriptor().getModuleReference());
     assert module.getModuleDescriptor().getLanguageVersions().get(languageId) == script.getDescriptor().getFromVersion();
     try {
       SNode data = script.execute(module, this);

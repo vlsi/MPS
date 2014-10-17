@@ -26,11 +26,6 @@ import org.jetbrains.mps.openapi.model.SNode;
  */
 public interface SAbstractConcept {
   /**
-   * Uniquely identifies this concept in its concept repository.
-   */
-  SConceptId getId();
-
-  /**
    * The user visible name of the concept
    */
   String getName();
@@ -40,12 +35,19 @@ public interface SAbstractConcept {
    */
   SLanguage getLanguage();
 
+  /**
+   * Returns all the references this concept has, including inherited
+   */
   Iterable<SReferenceLink> getReferences();
 
+  /**
+   * Returns all the links this concept has, including inherited
+   * There's no "specialized links" at the compiled language level, all links are "original"
+   */
   Iterable<SContainmentLink> getChildren();
 
   /**
-   * All properties
+     * Returns all the properties this concept has, including inherited
    */
   Iterable<SProperty> getProperties();
 
@@ -54,8 +56,11 @@ public interface SAbstractConcept {
    */
   boolean isSubConceptOf(SAbstractConcept concept);
 
+  /**
+   * Returns the declaration node in case sources for this concept are present in IDE
+   */
   @Nullable
-  SNode getConceptDeclarationNode();
+  SNode getDeclarationNode();
 
   //----------deprecated------------
 

@@ -52,10 +52,10 @@ public class ReloadManagerComponent extends ReloadManager implements Application
   }
 
   public void initComponent() {
-    setInstance(this);
+    ReloadManager.setInstance(this);
   }
   public void disposeComponent() {
-    setInstance(null);
+    ReloadManager.setInstance(null);
     if (myMakeService != null) {
       myMakeService.removeListener(myMakeListener);
       myMakeService = null;

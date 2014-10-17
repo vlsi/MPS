@@ -48,6 +48,8 @@ import com.intellij.util.ui.ButtonlessScrollBarUI;
 import jetbrains.mps.RuntimeFlags;
 import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.editor.runtime.cells.ReadOnlyUtil;
+import jetbrains.mps.editor.runtime.commands.EditorCommand;
+import jetbrains.mps.editor.runtime.commands.EditorCommandAdapter;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.ide.actions.MPSActions;
@@ -75,7 +77,6 @@ import jetbrains.mps.nodeEditor.cells.APICellAdapter;
 import jetbrains.mps.nodeEditor.cells.CellConditions;
 import jetbrains.mps.nodeEditor.cells.CellFinderUtil;
 import jetbrains.mps.nodeEditor.cells.CellFinderUtil.Finder;
-import jetbrains.mps.nodeEditor.cells.CellInfo;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Basic;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
@@ -83,6 +84,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
 import jetbrains.mps.nodeEditor.cells.ParentSettings;
+import jetbrains.mps.nodeEditor.commands.CommandContextImpl;
 import jetbrains.mps.nodeEditor.folding.CallAction_ToggleCellFolding;
 import jetbrains.mps.nodeEditor.folding.CellAction_FoldAll;
 import jetbrains.mps.nodeEditor.folding.CellAction_FoldCell;
@@ -112,7 +114,7 @@ import jetbrains.mps.openapi.editor.selection.SelectionListener;
 import jetbrains.mps.openapi.editor.selection.SelectionManager;
 import jetbrains.mps.openapi.editor.selection.SingularSelection;
 import jetbrains.mps.openapi.editor.style.StyleRegistry;
-import jetbrains.mps.openapi.editor.update.UpdaterListener;
+import jetbrains.mps.openapi.editor.update.UpdaterListenerAdapter;
 import jetbrains.mps.reloading.ReloadAdapter;
 import jetbrains.mps.reloading.ReloadListener;
 import jetbrains.mps.smodel.IOperationContext;
@@ -260,7 +262,12 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   private EditorSettingsListener mySettingsListener = new EditorSettingsListener() {
     @Override
     public void settingsChanged() {
-      rebuildEditorContent();
+      getModelAccess().runReadInEDT(new Runnable() {
+        @Override
+        public void run() {
+          rebuildEditorContent();
+        }
+      });
     }
   };
   private ReloadListener myReloadListener = new ReloadAdapter() {
@@ -304,6 +311,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   private NodeInformationDialog myNodeInformationDialog;
 
   private List<RebuildListener> myRebuildListeners = new ArrayList<RebuildListener>();
+  private List<CellSynchronizationWithModelListener> myCellSynchronizationListeners = new ArrayList<CellSynchronizationWithModelListener>();
   private List<EditorDisposeListener> myDisposeListeners = new ArrayList<EditorDisposeListener>();
   private PropertyChangeListener myFocusListener;
   private NodeHighlightManager myHighlightManager = new NodeHighlightManager(this);
@@ -320,11 +328,10 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   protected SNodeReference myNodePointer;
   @NotNull
   private EditorContext myEditorContext;
-  private CellInfo myRecentlySelectedCellInfo = null;
   private final EditorMessageOwner myOwner = new EditorMessageOwner() {
   };
 
-  private boolean myInsideOfCommand = false;
+  private CommandContextImpl myCommandContext;
 
   private IntentionsSupport myIntentionsSupport;
   @SuppressWarnings({"UnusedDeclaration"})
@@ -352,6 +359,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     setLayout(new EditorComponentLayoutManager(this));
     myRepository = repository;
     myUpdater = createUpdater();
+    myUpdater.addListener(new UpdaterEventDispatcher());
     setEditorContext(null, repository);
 
     //TODO: fix problem with NPE
@@ -1225,9 +1233,9 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
    */
   @Deprecated
   public void executeIntention(final Intention intention, final SNode node, final jetbrains.mps.openapi.editor.EditorContext context) {
-    context.executeCommand(new Runnable() {
+    getModelAccess().executeCommand(new EditorCommand(this) {
       @Override
-      public void run() {
+      protected void doExecute() {
         try {
           intention.execute(node, context);
         } catch (Throwable t) {
@@ -1279,16 +1287,9 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     return myEditorContext;
   }
 
+  @NotNull
   protected SRepository getRepository() {
     return myRepository;
-  }
-
-  /**
-   * @deprecated since MPS 3.2. Looks like not used.
-   */
-  @Deprecated
-  public EditorCell createRootCell() {
-    return createRootCell(null);
   }
 
   protected void pushCellContext() {
@@ -1311,7 +1312,15 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     getEditorContext().getCellFactory().popCellContext();
   }
 
-  protected abstract EditorCell createRootCell(List<SModelEvent> events);
+  /**
+   * Creating a cell representing empty editor content. Empty means editor has no node (getEditedNode() == null)
+   * or currently editing node is not within a model (getEditedNode().getModel() == null)
+   *
+   * @return new EditorCell
+   */
+  public jetbrains.mps.openapi.editor.cells.EditorCell createEmptyCell() {
+    return new EditorCell_Constant(getEditorContext(), getEditedNode(), getEditedNode() == null ? "<no node>" : "<node is not inside a model>");
+  }
 
   public void setFolded(EditorCell cell, boolean folded) {
     if (folded) {
@@ -1472,22 +1481,34 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     return isDisposed() || getEditedNode() == null;
   }
 
-  private void setRootCell(EditorCell rootCell) {
-    getEditorContext().pushTracerTask("setting root cell", true);
+  public void setRootCell(jetbrains.mps.openapi.editor.cells.EditorCell rootCell) {
+    boolean cellSwapInProgress = myCellSwapInProgress;
+    try {
+      myCellSwapInProgress = true;
+      Object memento = getEditorContext().createMemento();
+      if (getComponents().length > 0) {
+        removeAll();
+      }
+      if (myRootCell != null) {
+        ((EditorCell_Basic) myRootCell).onRemove();
+      }
 
-    if (myRootCell != null) {
-      ((EditorCell_Basic) myRootCell).onRemove();
+      myRootCell = (EditorCell) rootCell;
+
+      if (myRootCell != null) {
+        ((EditorCell_Basic) myRootCell).onAdd();
+      }
+      for (EditorCell_WithComponent component : getCellTracker().getComponentCells()) {
+        add(component.getComponent());
+      }
+
+      getEditorContext().setMemento(memento);
+    } finally {
+      myCellSwapInProgress = cellSwapInProgress;
     }
-
-    myRootCell = rootCell;
-
-    if (myRootCell != null) {
-      ((EditorCell_Basic) myRootCell).onAdd();
-    }
-
     revalidate();
     repaint();
-    getEditorContext().popTracerTask();
+    updateMessages();
   }
 
   @Override
@@ -1583,15 +1604,14 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   boolean executeComponentAction(jetbrains.mps.openapi.editor.cells.CellActionType type) {
     final CellAction action = getComponentAction(type);
     if (action != null && action.executeInCommand()) {
-      executeCommand(new Runnable() {
+      getModelAccess().executeCommand(new EditorCommand(getCommandContext()) {
         @Override
-        public void run() {
+        protected void doExecute() {
           jetbrains.mps.openapi.editor.EditorContext editorContext = getEditorContext();
           if (!editorContext.getOperationContext().isValid()) return;
           action.execute(editorContext);
         }
       });
-
       return true;
     }
     return false;
@@ -1779,59 +1799,16 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   @Override
   public void rebuildEditorContent() {
     LOG.assertLog(ModelAccess.instance().isInEDT() || SwingUtilities.isEventDispatchThread(), "You should do this in EDT");
-
-    rebuildEditorContent(null);
-
+    getUpdater().update(null);
     relayout();
   }
 
+  /**
+   * @deprecated since MPS 3.2 use rebuildEditorContent() instead
+   */
+  @Deprecated
   public void rebuildEditorContent(final List<SModelEvent> events) {
-    LOG.assertLog(ModelAccess.instance().isInEDT() || SwingUtilities.isEventDispatchThread(), "You should do this in EDT");
-    //i.e. we are disposed. it's too late to rebuild
-    if (isDisposed()) {
-      return;
-    }
-    getEditorContext().pushTracerTask("Rebuilding Editor Content", true);
-    getModelAccess().runReadAction(new Runnable() {
-      @Override
-      public void run() {
-        TypeContextManager.getInstance().runTypecheckingAction(EditorComponent.this, new Runnable() {
-          @Override
-          public void run() {
-            doRebuildEditorContent(events);
-          }
-        });
-      }
-    });
-    getEditorContext().popTracerTask();
-  }
-
-  private void doRebuildEditorContent(final List<SModelEvent> events) {
-    if (getComponents().length > 0) {
-      removeAll();
-    }
-
-    getEditorContext().pushTracerTask("Running swap editor cell action", true);
-
-    runSwapCellsActions(new Runnable() {
-      @Override
-      public void run() {
-        setRootCell(createRootCell(events));
-      }
-    });
-    getEditorContext().popTracerTask();
-
-    for (EditorCell_WithComponent component : getCellTracker().getComponentCells()) {
-      EditorComponent.this.add(component.getComponent());
-    }
-    validate();
-    getEditorContext().pushTracerTask("Executing rebuild liteners", true);
-    for (RebuildListener listener : myRebuildListeners) {
-      listener.editorRebuilt(EditorComponent.this);
-    }
-    getEditorContext().popTracerTask();
-
-    updateMessages();
+    rebuildEditorContent();
   }
 
   private void fireEditorWillBeDisposed() {
@@ -1850,10 +1827,18 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     myDisposeListeners.remove(listener);
   }
 
+  /**
+   * @deprecated since MPS 3.2 use getUpdater().addListener()
+   */
+  @Deprecated
   public void addRebuildListener(RebuildListener listener) {
     myRebuildListeners.add(listener);
   }
 
+  /**
+   * @deprecated since MPS 3.2 use getUpdater().removeListener()
+   */
+  @Deprecated
   public void removeRebuildListener(RebuildListener listener) {
     myRebuildListeners.remove(listener);
   }
@@ -1863,7 +1848,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
    */
   @Deprecated
   public void addSynchronizationListener(CellSynchronizationWithModelListener listener) {
-    getUpdater().addListener(listener);
+    myCellSynchronizationListeners.add(listener);
   }
 
   /**
@@ -1871,7 +1856,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
    */
   @Deprecated
   public void removeSynchronizationListener(CellSynchronizationWithModelListener listener) {
-    getUpdater().removeListener(listener);
+    myCellSynchronizationListeners.remove(listener);
   }
 
   public jetbrains.mps.openapi.editor.cells.EditorCell findCellWeak(int x, int y) {
@@ -1902,9 +1887,9 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
 
   private void goByCurrentReference() {
     final DataContext dataContext = DataManager.getInstance().getDataContext(this);
-    getModelAccess().executeCommand(new Runnable() {
+    getModelAccess().executeCommand(new EditorCommand(getCommandContext()) {
       @Override
-      public void run() {
+      protected void doExecute() {
         AnAction action = ActionManager.getInstance().getAction(MPSActions.EDITOR_GOTO_DECLARATION);
         if (action != null) {
           AnActionEvent event = ActionUtils.createEvent(ActionPlaces.EDITOR_POPUP, dataContext);
@@ -2386,12 +2371,8 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
         getModelAccess().runReadAction(new Runnable() {
           @Override
           public void run() {
-            SNode sNode = getRootCell().getSNode();
-            if (sNode == null) {
-              return;
-            }
-            releaseTypeCheckingContext();
-            acquireTypeCheckingContext();
+            //TODO: check if it's necessary to clear updater caches here?..
+            rebuildAfterReloadModel();
             Highlighter highlighter = getOperationContext().getComponent(Highlighter.class);
             if (highlighter != null) {
               highlighter.resetCheckedState(EditorComponent.this);
@@ -2467,25 +2448,31 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     return false;
   }
 
-  void executeCommand(final Runnable r) {
-    if (myInsideOfCommand) {
-      r.run();
-      return;
+  public CommandContextImpl getCommandContext() {
+    if (myCommandContext == null) {
+      myCommandContext = new CommandContextImpl(this);
     }
-    myInsideOfCommand = true;
-    try {
-      getModelAccess().executeCommand(r);
-    } finally {
-      myInsideOfCommand = false;
-    }
-
-    relayout();
+    return myCommandContext;
   }
 
+  /**
+   * Executing command and updating selection in accordance with changes made by this command
+   *
+   * @deprecated since MPS 3.2 use getModelAccess().executeCommand() & {@link jetbrains.mps.editor.runtime.commands.EditorCommand} or
+   * {@link jetbrains.mps.editor.runtime.commands.EditorCommandAdapter} in accordance
+   */
+  @Deprecated
+  void executeCommand(final Runnable r) {
+    getModelAccess().executeCommand(new EditorCommandAdapter(r, this));
+  }
+
+  /**
+   * Executing command and updating selection in accordance with changes made by this command
+   *
+   * @deprecated since MPS 3.2 use getModelAccess().executeCommand() & {@link jetbrains.mps.editor.runtime.commands.EditorComputable}
+   */
+  @Deprecated
   <T> T executeCommand(final Computable<T> c) {
-    if (myInsideOfCommand) {
-      return c.compute();
-    }
     ComputeRunnable<T> r = new ComputeRunnable<T>(c);
     executeCommand(r);
     return r.getResult();
@@ -2505,10 +2492,6 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
 
   private jetbrains.mps.project.Project getCurrentProject() {
     return ProjectHelper.getProject(myRepository);
-  }
-
-  boolean isForcedFocusChangeEnabled() {
-    return myInsideOfCommand;
   }
 
   public boolean activateNodeSubstituteChooser(jetbrains.mps.openapi.editor.cells.EditorCell editorCell, boolean resetPattern) {
@@ -2762,33 +2745,8 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     return new EditorContext(this, model, repository);
   }
 
-  private void runSwapCellsActions(Runnable action) {
-    try {
-      myCellSwapInProgress = true;
-      EditorContext ec = getEditorContext();
-
-      jetbrains.mps.openapi.editor.cells.EditorCell sc = getSelectedCell();
-      if (sc != null) {
-        myRecentlySelectedCellInfo = APICellAdapter.getCellInfo(sc);
-      }
-      Object memento = ec.createMemento();
-      action.run();
-      ec.pushTracerTask("restoring memento", true);
-      ec.setMemento(memento);
-      ec.popTracerTask();
-
-      myRecentlySelectedCellInfo = null;
-    } finally {
-      myCellSwapInProgress = false;
-    }
-  }
-
   boolean isCellSwapInProgress() {
     return myCellSwapInProgress;
-  }
-
-  CellInfo getRecentlySelectedCellInfo() {
-    return myRecentlySelectedCellInfo;
   }
 
   @Override
@@ -2905,14 +2863,12 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     return myBracesHighlighter;
   }
 
-  // TODO: merge with rebuldEditorContent() method?
   public void rebuildAfterReloadModel() {
     releaseTypeCheckingContext();
     if (myNodePointer != null) {
       myNode = myNodePointer.resolve(getRepository());
     }
     acquireTypeCheckingContext();
-    rebuildEditorContent();
   }
 
   private static class MyBaseAction extends BaseAction implements DumbAware {
@@ -2940,6 +2896,30 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     }
   }
 
+  /**
+   * This class should be removed after MPS 3.2 together with
+   * RebuildListener/CellSynchronizationWithModelListener
+   */
+  private class UpdaterEventDispatcher extends UpdaterListenerAdapter {
+    @Override
+    public void cellSynchronizedWithModel(jetbrains.mps.openapi.editor.cells.EditorCell cell) {
+      for (CellSynchronizationWithModelListener listener : myCellSynchronizationListeners) {
+        listener.cellSynchronizedWithModel(cell);
+      }
+    }
+
+    @Override
+    public void editorUpdated(jetbrains.mps.openapi.editor.EditorComponent editorComponent) {
+      for (RebuildListener listener : myRebuildListeners) {
+        listener.editorRebuilt(EditorComponent.this);
+      }
+    }
+  }
+
+  /**
+   * @deprecated since MPS 3.2 use {@link jetbrains.mps.openapi.editor.update.UpdaterListener} instead
+   */
+  @Deprecated
   public static interface RebuildListener {
     public void editorRebuilt(EditorComponent editor);
   }
@@ -2948,7 +2928,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
    * @deprecated since MPS 3.2 use UpdaterListener instead
    */
   @Deprecated
-  public static interface CellSynchronizationWithModelListener extends UpdaterListener {
+  public static interface CellSynchronizationWithModelListener {
     public void cellSynchronizedWithModel(jetbrains.mps.openapi.editor.cells.EditorCell cell);
   }
 
@@ -3088,13 +3068,12 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     }
   }
 
-
   private class MyCutProvider implements CutProvider {
     @Override
     public void performCut(@NotNull final DataContext dataContext) {
-      getModelAccess().executeCommandInEDT(new Runnable() {
+      getModelAccess().executeCommandInEDT(new EditorCommand(getCommandContext()) {
         @Override
-        public void run() {
+        protected void doExecute() {
           if (isInvalid() || !isCutEnabled(dataContext)) {
             return;
           }
@@ -3126,9 +3105,9 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   private class MyCopyProvider implements CopyProvider {
     @Override
     public void performCopy(@NotNull DataContext dataContext) {
-      getModelAccess().executeCommandInEDT(new Runnable() {
+      getModelAccess().executeCommandInEDT(new EditorCommand(getCommandContext()) {
         @Override
-        public void run() {
+        protected void doExecute() {
           if (isDisposed() || isInvalid()) {
             return;
           }
@@ -3158,9 +3137,9 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   private class MyPasteProvider implements PasteProvider {
     @Override
     public void performPaste(@NotNull final DataContext dataContext) {
-      getModelAccess().executeCommandInEDT(new Runnable() {
+      getModelAccess().executeCommandInEDT(new EditorCommand(getCommandContext()) {
         @Override
-        public void run() {
+        protected void doExecute() {
           if (isInvalid() || !isPastePossible(dataContext)) {
             return;
           }

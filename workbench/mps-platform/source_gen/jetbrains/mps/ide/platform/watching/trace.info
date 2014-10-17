@@ -179,8 +179,8 @@
       <node id="4774203567238981671" at="47,0,48,0" concept="5" trace="mySuspendCount" />
       <node id="4774203567224681690" at="49,64,50,43" concept="4" />
       <node id="4774203567247398287" at="50,43,51,39" concept="4" />
-      <node id="4774203567223365722" at="54,31,55,22" concept="4" />
-      <node id="4774203567223403737" at="57,34,58,22" concept="4" />
+      <node id="4774203567223365722" at="54,31,55,36" concept="4" />
+      <node id="4774203567223403737" at="57,34,58,36" concept="4" />
       <node id="4774203567223462843" at="59,32,60,51" concept="4" />
       <node id="4774203567223462848" at="60,51,61,27" concept="4" />
       <node id="4774203567222253387" at="66,36,67,28" concept="10" />
@@ -261,7 +261,7 @@
       <node id="4774203567223025539" at="34,0,38,0" concept="8" trace="sessionOpened#(Ljetbrains/mps/make/MakeNotification;)V" />
       <node id="4774203567223025548" at="38,0,42,0" concept="8" trace="sessionClosed#(Ljetbrains/mps/make/MakeNotification;)V" />
       <node id="4774203567222689890" at="49,0,53,0" concept="2" trace="ReloadManagerComponent#(Lcom/intellij/openapi/project/ProjectManager;)V" />
-      <node id="4774203567223462841" at="58,22,62,5" concept="7" />
+      <node id="4774203567223462841" at="58,36,62,5" concept="7" />
       <node id="4774203567222993654" at="72,10,76,5" concept="1" />
       <node id="4774203567243108205" at="110,0,114,0" concept="8" trace="addReloadListener#(Ljetbrains/mps/ide/platform/watching/ReloadListener;)V" />
       <node id="4774203567243108212" at="114,0,118,0" concept="8" trace="removeReloadListener#(Ljetbrains/mps/ide/platform/watching/ReloadListener;)V" />
@@ -295,7 +295,7 @@
       <node id="4774203567224191030" at="139,0,177,0" concept="8" trace="queueReloadSession#()V" />
       <scope id="4774203567223025544" at="35,62,36,23" />
       <scope id="4774203567223025553" at="39,62,40,22" />
-      <scope id="4774203567222215635" at="54,31,55,22" />
+      <scope id="4774203567222215635" at="54,31,55,36" />
       <scope id="4774203567222215650" at="66,36,67,28" />
       <scope id="4774203567222993648" at="70,21,71,37" />
       <scope id="4774203567222993657" at="73,34,74,53" />

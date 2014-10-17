@@ -14,7 +14,7 @@ import org.jetbrains.annotations.Nullable;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
-  /*package*/ final ConceptDescriptor myConceptGeneratedForeach = new ConceptDescriptorBuilder("jetbrains.mps.traceInfo.tracemacro.testlang.structure.GeneratedForeach", MetaIdFactory.conceptId(UUID.fromString("140c4818-bfbc-4850-bf7c-e3d80739a03c"), 7980748436587788162L)).super_("jetbrains.mps.baseLanguage.collections.structure.ForEachStatement").super_(MetaIdFactory.conceptId(UUID.fromString("140c4818-bfbc-4850-bf7c-e3d80739a03c"), 1153943597977L)).parents("jetbrains.mps.baseLanguage.collections.structure.ForEachStatement").parentIds(MetaIdFactory.conceptId(UUID.fromString("140c4818-bfbc-4850-bf7c-e3d80739a03c"), 1153943597977L)).staticScope(StaticScope.NONE).create();
+  /*package*/ final ConceptDescriptor myConceptGeneratedForeach = new ConceptDescriptorBuilder("jetbrains.mps.traceInfo.tracemacro.testlang.structure.GeneratedForeach", MetaIdFactory.conceptId(UUID.fromString("140c4818-bfbc-4850-bf7c-e3d80739a03c"), 7980748436587788162L)).super_("jetbrains.mps.baseLanguage.collections.structure.ForEachStatement").super_(MetaIdFactory.conceptId(UUID.fromString("83888646-71ce-4f1c-9c53-c54016f6ad4f"), 1153943597977L)).parents("jetbrains.mps.baseLanguage.collections.structure.ForEachStatement").parentIds(MetaIdFactory.conceptId(UUID.fromString("83888646-71ce-4f1c-9c53-c54016f6ad4f"), 1153943597977L)).staticScope(StaticScope.NONE).create();
 
   @Override
   public Collection<ConceptDescriptor> getDescriptors() {

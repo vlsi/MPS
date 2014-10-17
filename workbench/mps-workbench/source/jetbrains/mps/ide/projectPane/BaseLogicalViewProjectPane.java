@@ -36,13 +36,13 @@ import jetbrains.mps.ide.actions.CopyNode_Action;
 import jetbrains.mps.ide.actions.CutNode_Action;
 import jetbrains.mps.ide.actions.PasteNode_Action;
 import jetbrains.mps.ide.projectPane.fileSystem.nodes.ProjectTreeNode;
-import jetbrains.mps.ide.ui.tree.module.ProjectModuleTreeNode;
-import jetbrains.mps.ide.ui.tree.module.TransientModelsTreeNode;
 import jetbrains.mps.ide.ui.tree.MPSTree;
 import jetbrains.mps.ide.ui.tree.MPSTreeNode;
 import jetbrains.mps.ide.ui.tree.MPSTreeNodeEx;
 import jetbrains.mps.ide.ui.tree.module.GeneratorTreeNode;
 import jetbrains.mps.ide.ui.tree.module.NamespaceTextNode;
+import jetbrains.mps.ide.ui.tree.module.ProjectModuleTreeNode;
+import jetbrains.mps.ide.ui.tree.module.TransientModelsTreeNode;
 import jetbrains.mps.ide.ui.tree.smodel.PackageNode;
 import jetbrains.mps.ide.ui.tree.smodel.SModelTreeNode;
 import jetbrains.mps.ide.ui.tree.smodel.SNodeTreeNode;
@@ -76,8 +76,8 @@ import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.module.SModule;
-import org.jetbrains.mps.openapi.module.SRepositoryAdapter;
 import org.jetbrains.mps.openapi.module.SRepositoryListener;
+import org.jetbrains.mps.openapi.module.SRepositoryListenerBase;
 
 import javax.swing.JTree;
 import javax.swing.tree.TreeNode;
@@ -501,7 +501,7 @@ public abstract class BaseLogicalViewProjectPane extends AbstractProjectViewPane
     }
   }
 
-  private class MyModuleRepositoryListener extends SRepositoryAdapter {
+  private class MyModuleRepositoryListener extends SRepositoryListenerBase {
     @Override
     public void moduleAdded(SModule module) {
       myNeedRebuild = true;

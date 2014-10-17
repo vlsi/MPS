@@ -76,14 +76,14 @@ public class LanguageHierarchyCache implements CoreComponent {
     }
 
     INSTANCE = this;
-    myRepositoryListener.subscribeTo(myModuleRepository);
-    myStructureModelChange.attachTo(myModuleRepository);
+    myModuleRepository.addRepositoryListener(myRepositoryListener);
+    myModuleRepository.addRepositoryListener(myStructureModelChange);
   }
 
   @Override
   public void dispose() {
-    myStructureModelChange.detachFrom(myModuleRepository);
-    myRepositoryListener.unsubscribeFrom(myModuleRepository);
+    myModuleRepository.removeRepositoryListener(myStructureModelChange);
+    myModuleRepository.removeRepositoryListener(myRepositoryListener);
     INSTANCE = null;
   }
 

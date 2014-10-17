@@ -12,12 +12,10 @@ public class MPSPsiListType extends MPSPsiCollectionType {
   public MPSPsiListType(SNodeId id, String concept, String containingRole) {
     super(id, concept, containingRole);
   }
-
   @Override
   protected String getClassName() {
     return "java.util.List";
   }
-
   @Override
   protected MPSPsiNode[] getChildTypeNodes() {
     return getChildrenOfType("elementType", MPSPsiNode.class);

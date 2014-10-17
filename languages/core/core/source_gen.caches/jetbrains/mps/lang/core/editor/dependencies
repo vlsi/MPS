@@ -23,6 +23,11 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
+  <dependency className="jetbrains.mps.lang.core.editor.BaseStyles_StyleSheet" file="BaseStyles_StyleSheet.java">
+    <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.style.Style" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.style.StyleRegistry" />
+  </dependency>
   <dependency className="jetbrains.mps.lang.core.editor.DeleteExportScope" file="DeleteExportScope.java">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.cells.AbstractCellAction" />
@@ -41,6 +46,7 @@
     <classNode dependClassName="jetbrains.mps.lang.core.editor.ExportScopeModule_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.core.editor.ExportScopeNamespace_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.core.editor.ExportScopePublic_Editor" />
+    <classNode dependClassName="jetbrains.mps.lang.core.editor.ImplementationRemovedInStubMessage" />
     <classNode dependClassName="jetbrains.mps.lang.core.editor.ShortDescriptionEditorComponent" />
     <classNode dependClassName="jetbrains.mps.lang.core.editor.SuppressErrorsAnnotation_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.core.editor.alias" />
@@ -94,6 +100,19 @@
     <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.core.editor.ImplementationRemovedInStubMessage" file="ImplementationRemovedInStubMessage.java">
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.Collection" />
+    <classNode dependClassName="java.util.Collections" />
+    <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleImpl" />
+    <classNode dependClassName="jetbrains.mps.lang.core.editor.BaseStyles_StyleSheet" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.cells.EditorCell_Constant" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.style.Style" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode extendsClassName="jetbrains.mps.openapi.editor.descriptor.ConceptEditorComponent" />
   </dependency>
   <dependency className="jetbrains.mps.lang.core.editor.ShortDescriptionEditorComponent" file="ShortDescriptionEditorComponent.java">
     <classNode dependClassName="java.lang.String" />

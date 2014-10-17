@@ -70,14 +70,7 @@ public class EditorSettings implements PersistentStateComponent<MyState> {
 
   private EditorSettingsPreferencesPage myPreferencesPage;
 
-  CaretBlinker getCaretBlinker() {
-    return myCaretBlinker;
-  }
-
-  private CaretBlinker myCaretBlinker;
-
-  public EditorSettings(CaretBlinker caretBlinker, EditorColorsManager colorsManager) {
-    myCaretBlinker = caretBlinker;
+  public EditorSettings(EditorColorsManager colorsManager) {
     myColorsManager = colorsManager;
     updateCachedValue();
     registerUIListener();

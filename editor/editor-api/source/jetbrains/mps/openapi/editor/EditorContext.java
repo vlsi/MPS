@@ -75,10 +75,30 @@ public interface EditorContext {
 
   IOperationContext getOperationContext();
 
+  /**
+   * Executing command and updating selection in accordance with changes made by this command
+   *
+   * @deprecated since MPS 3.2 should not be used anymore outside of editor implementation.
+   * For internal editor implementation needs separate class EditorCommand was created in MPS
+   * editor implementation module
+   */
+  @Deprecated
   void executeCommand(Runnable r);
 
+  /**
+   * Executing command and updating selection in accordance with changes made by this command
+   *
+   * @deprecated since MPS 3.2 should not be used anymore outside of editor implementation.
+   * For internal editor implementation needs separate class EditorComputable was created in MPS
+   * editor implementation module
+   */
+  @Deprecated
   <T> T executeCommand(Computable<T> c);
 
+  /**
+   * @deprecated since MPS 3.2 not used anymore
+   */
+  @Deprecated
   boolean isInsideCommand();
 
   void flushEvents();

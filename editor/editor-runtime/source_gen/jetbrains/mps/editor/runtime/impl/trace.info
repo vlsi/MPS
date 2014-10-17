@@ -58,18 +58,18 @@
   </root>
   <root nodeRef="r:8095f777-2745-40ce-ad34-6655ef50b7cc(jetbrains.mps.editor.runtime.impl)/1182113674817458489">
     <file name="LayoutConstraints.java">
-      <node id="1182113674817458500" at="14,0,15,0" concept="4" trace="myName" />
-      <node id="1182113674817458504" at="15,34,16,18" concept="3" />
-      <node id="1182113674817458515" at="18,27,19,18" concept="9" />
-      <node id="1182113674817458491" at="15,0,18,0" concept="2" trace="LayoutConstraints#(Ljava/lang/String;)V" />
-      <node id="1182113674817458510" at="18,0,21,0" concept="7" trace="getName#()Ljava/lang/String;" />
-      <scope id="1182113674817458494" at="15,34,16,18" />
-      <scope id="1182113674817458513" at="18,27,19,18" />
-      <scope id="1182113674817458491" at="15,0,18,0">
+      <node id="1182113674817458500" at="13,0,14,0" concept="4" trace="myName" />
+      <node id="1182113674817458504" at="14,34,15,18" concept="3" />
+      <node id="1182113674817458515" at="17,27,18,18" concept="9" />
+      <node id="1182113674817458491" at="14,0,17,0" concept="2" trace="LayoutConstraints#(Ljava/lang/String;)V" />
+      <node id="1182113674817458510" at="17,0,20,0" concept="7" trace="getName#()Ljava/lang/String;" />
+      <scope id="1182113674817458494" at="14,34,15,18" />
+      <scope id="1182113674817458513" at="17,27,18,18" />
+      <scope id="1182113674817458491" at="14,0,17,0">
         <var name="name" id="1182113674817458498" />
       </scope>
-      <scope id="1182113674817458510" at="18,0,21,0" />
-      <unit id="1182113674817458489" at="7,0,22,0" name="jetbrains.mps.editor.runtime.impl.LayoutConstraints" />
+      <scope id="1182113674817458510" at="17,0,20,0" />
+      <unit id="1182113674817458489" at="6,0,21,0" name="jetbrains.mps.editor.runtime.impl.LayoutConstraints" />
     </file>
   </root>
   <root nodeRef="r:8095f777-2745-40ce-ad34-6655ef50b7cc(jetbrains.mps.editor.runtime.impl)/1182113674817469564">

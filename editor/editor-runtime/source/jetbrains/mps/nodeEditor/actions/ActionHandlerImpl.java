@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.nodeEditor.actions;
 
+import jetbrains.mps.editor.runtime.commands.EditorCommand;
 import jetbrains.mps.openapi.editor.ActionHandler;
 import jetbrains.mps.openapi.editor.EditorComponent;
 import jetbrains.mps.openapi.editor.EditorContext;
@@ -49,9 +50,9 @@ public class ActionHandlerImpl implements ActionHandler {
     }
 
     if (action.executeInCommand()) {
-      getEditorContext().executeCommand(new Runnable() {
+      getEditorContext().getRepository().getModelAccess().executeCommand(new EditorCommand(getEditorContext()) {
         @Override
-        public void run() {
+        public void doExecute() {
           action.execute(getEditorContext());
         }
       });
@@ -90,7 +91,8 @@ public class ActionHandlerImpl implements ActionHandler {
   }
 
   private CellAction getOverridingRightBoundaryAction(CellAction action, EditorCell editorCell, CellActionType type) {
-    for (EditorCell_Collection currentCell = editorCell.getParent(); currentCell != null && CellTraversalUtil.getLastLeaf(currentCell) == editorCell; currentCell = currentCell.getParent()) {
+    for (EditorCell_Collection currentCell = editorCell.getParent(); currentCell != null && CellTraversalUtil.getLastLeaf(currentCell) == editorCell;
+         currentCell = currentCell.getParent()) {
       CellAction currentCellAction = currentCell.getAction(type);
       if (currentCellAction != null) {
         action = currentCellAction;

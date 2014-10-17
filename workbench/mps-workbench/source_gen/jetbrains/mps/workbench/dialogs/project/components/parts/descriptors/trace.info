@@ -79,30 +79,6 @@
       <unit id="1560298786499493471" at="10,0,19,0" name="jetbrains.mps.workbench.dialogs.project.components.parts.descriptors.ModuleDescriptor" />
     </file>
   </root>
-  <root nodeRef="r:d62677ed-8479-4ddb-b75f-f00b4df16e4b(jetbrains.mps.workbench.dialogs.project.components.parts.descriptors)/1560298786499494704">
-    <file name="ManagerDescriptor.java">
-      <node id="1560298786499494707" at="14,0,15,0" concept="2" trace="myOwner" />
-      <node id="1560298786499494721" at="15,88,16,31" concept="6" />
-      <node id="1560298786499494725" at="16,31,17,20" concept="1" />
-      <node id="1560298786499494735" at="20,41,21,40" concept="5" />
-      <node id="1560298786499494745" at="24,45,25,58" concept="5" />
-      <node id="1560298786499494710" at="15,0,19,0" concept="0" trace="ManagerDescriptor#(Ljetbrains/mps/workbench/dialogs/project/IBindedDialog;Ljava/lang/String;Ljava/lang/String;I)V" />
-      <node id="1560298786499494731" at="19,0,23,0" concept="3" trace="createEditor#()Ljavax/swing/table/TableCellEditor;" />
-      <node id="1560298786499494741" at="23,0,27,0" concept="3" trace="createRenderer#()Ljavax/swing/table/TableCellRenderer;" />
-      <scope id="1560298786499494734" at="20,41,21,40" />
-      <scope id="1560298786499494744" at="24,45,25,58" />
-      <scope id="1560298786499494720" at="15,88,17,20" />
-      <scope id="1560298786499494710" at="15,0,19,0">
-        <var name="header" id="1560298786499494716" />
-        <var name="name" id="1560298786499494714" />
-        <var name="owner" id="1560298786499494712" />
-        <var name="width" id="1560298786499494718" />
-      </scope>
-      <scope id="1560298786499494731" at="19,0,23,0" />
-      <scope id="1560298786499494741" at="23,0,27,0" />
-      <unit id="1560298786499494704" at="13,0,28,0" name="jetbrains.mps.workbench.dialogs.project.components.parts.descriptors.ManagerDescriptor" />
-    </file>
-  </root>
   <root nodeRef="r:d62677ed-8479-4ddb-b75f-f00b4df16e4b(jetbrains.mps.workbench.dialogs.project.components.parts.descriptors)/1560298786499495292">
     <file name="DepDescriptor.java">
       <node id="1560298786499495295" at="12,0,13,0" concept="2" trace="myOwner" />

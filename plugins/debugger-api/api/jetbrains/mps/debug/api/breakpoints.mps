@@ -972,7 +972,7 @@
               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="9117694126970442163" resolveInfo="r" />
             </node>
             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="9117694126970547923" nodeInfo="nn">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="msyo.~ComputeRunnable%dgetResult()%cjava%dlang%dObject" resolveInfo="getResult" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="msyo.~AbstractComputeRunnable%dgetResult()%cjava%dlang%dObject" resolveInfo="getResult" />
             </node>
           </node>
         </node>

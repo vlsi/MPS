@@ -37,6 +37,7 @@ import jetbrains.mps.project.facets.JavaModuleFacet;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.Pair;
+import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -47,10 +48,13 @@ import java.io.IOException;
 import java.util.List;
 
 /**
+ * @deprecated see {@link jetbrains.mps.generator.generationTypes.IGenerationHandler}
  * Stores files on disk, compiles and reloads classes.
  * <p/>
  * Evgeny Gryaznov, Jan 21, 2010
  */
+@Deprecated
+@ToRemove(version = 3.2)
 public class JavaGenerationHandler extends GenerationHandlerBase {
 
   private FileProcessor myProcessor;

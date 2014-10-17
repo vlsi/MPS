@@ -360,7 +360,7 @@ public class ProjectHandler extends UnicastRemoteObject implements ProjectCompon
   }
 
   public static int getDistance(VirtualFile ancestor, VirtualFile descendant) {
-    if (ancestor == descendant) return 0;
+    if (ancestor.equals(descendant)) return 0;
     if (descendant.getParent() == null) return -1;
 
     int distance = getDistance(ancestor, descendant.getParent());

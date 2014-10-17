@@ -34,7 +34,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Command {
-  public static final String YOUTRACK_BASE_URL = "http://youtrack.jetbrains.com";
+  public static final String YOUTRACK_BASE_URL = "https://youtrack.jetbrains.com";
   public static final String LOGIN = "/rest/user/login";
   public static final String POST_ISSUE = "/rest/issue/";
   public static final String ISSUE_COMMAND_FORMAT = "/rest/issue/%s/execute";

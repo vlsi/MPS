@@ -30,8 +30,6 @@ import jetbrains.mps.openapi.editor.cells.CellTraversalUtil;
 import java.awt.Rectangle;
 import javax.swing.BorderFactory;
 import java.awt.Color;
-import java.util.List;
-import jetbrains.mps.smodel.event.SModelEvent;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 
 public class BaseVersionEditorComponent extends EditorComponent implements EditorMessageOwner {
@@ -92,13 +90,12 @@ public class BaseVersionEditorComponent extends EditorComponent implements Edito
     myScrollPane.setPreferredSize(viewRect.getSize());
     myScrollPane.getViewport().setViewPosition(viewRect.getLocation());
   }
+
   @Override
-  protected jetbrains.mps.nodeEditor.cells.EditorCell createRootCell(List<SModelEvent> events) {
-    if (getEditedNode() == null || getEditedNode().getModel() == null) {
-      return new EditorCell_Constant(getEditorContext(), getEditedNode(), "");
-    }
-    return (jetbrains.mps.nodeEditor.cells.EditorCell) getUpdater().updateRootCell(getEditedNode(), events);
+  public EditorCell createEmptyCell() {
+    return new EditorCell_Constant(getEditorContext(), getEditedNode(), "");
   }
+
   @Override
   public void dispose() {
     ModelAccess.instance().requireWrite(new Runnable() {

@@ -4,7 +4,7 @@ package jetbrains.mps.lang.editor.styleTests.behavior;
 
 import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
 
-public class NodeContainer_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor {
+public abstract class NodeContainer_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor {
   public NodeContainer_BehaviorDescriptor() {
   }
   @Override

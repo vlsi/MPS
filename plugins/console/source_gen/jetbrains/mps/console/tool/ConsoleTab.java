@@ -20,9 +20,9 @@ import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.smodel.tempmodel.TemporaryModels;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import org.jetbrains.annotations.NonNls;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
 
@@ -123,7 +123,15 @@ public class ConsoleTab extends BaseConsoleTab implements DataProvider {
       super("Clear", "Clear console window", AllIcons.Actions.Clean);
     }
     protected void doExecute(AnActionEvent event, Map<String, Object> arg) {
-      ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(myRoot, "history", true), "item", true)).clear();
+      SNode command = SLinkOperations.getTarget(SLinkOperations.getTarget(myRoot, "commandHolder", true), "command", true);
+      SNode newRoot = SConceptOperations.createNewNode("jetbrains.mps.console.base.structure.ConsoleRoot", null);
+      SLinkOperations.setTarget(newRoot, "commandHolder", SConceptOperations.createNewNode("jetbrains.mps.console.base.structure.CommandHolder", null), true);
+      SLinkOperations.setTarget(newRoot, "history", SConceptOperations.createNewNode("jetbrains.mps.console.base.structure.History", null), true);
+      SLinkOperations.setTarget(SLinkOperations.getTarget(newRoot, "commandHolder", true), "command", command, true);
+      SModelOperations.addRootNode(myModel, newRoot);
+      myEditor.editNode(newRoot);
+      SNodeOperations.deleteNode(myRoot);
+      myRoot = newRoot;
       validateImports();
       setSelection();
     }

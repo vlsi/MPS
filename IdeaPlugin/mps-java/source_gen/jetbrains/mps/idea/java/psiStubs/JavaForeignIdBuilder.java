@@ -31,7 +31,6 @@ import com.intellij.psi.PsiType;
 
 public class JavaForeignIdBuilder {
 
-
   public static NodePtr computeNodePtr(PsiElement element) {
     SNodeId nodeId = computeNodeId(element);
     SModelReference modelRef = computeModelReference(element);
@@ -40,8 +39,6 @@ public class JavaForeignIdBuilder {
     }
     return new NodePtr(modelRef, nodeId);
   }
-
-
 
   @Nullable
   public static SNodeId.Foreign computeNodeId(@NotNull PsiElement element) {
@@ -64,8 +61,6 @@ public class JavaForeignIdBuilder {
     }
     return computeNodeId(prefix, element);
   }
-
-
 
   @Nullable
   public static SModelReference computeModelReference(PsiElement element) {
@@ -101,8 +96,6 @@ public class JavaForeignIdBuilder {
     return Util.makeModelReference(packageName, mpsModule);
   }
 
-
-
   /*package*/ static jetbrains.mps.smodel.SModelReference computeModelReference(String packageName, String mpsModuleId) {
     String stereotype = "java_stub";
     if (packageName.length() == 0) {
@@ -113,8 +106,6 @@ public class JavaForeignIdBuilder {
 
     return new jetbrains.mps.smodel.SModelReference(null, modelId, packageName + "@" + stereotype);
   }
-
-
 
   /*package*/ static SNodeId.Foreign computeNodeId(String prefix, PsiElement element) {
     StringBuilder sb = new StringBuilder(prefix);

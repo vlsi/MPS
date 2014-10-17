@@ -4,25 +4,28 @@ package jetbrains.mps.smodel.persistence.def.v9;
 
 import org.jetbrains.mps.openapi.model.SModelReference;
 import java.util.Map;
-import org.jetbrains.mps.openapi.language.SLanguageId;
+import jetbrains.mps.smodel.adapter.ids.SLanguageId;
+import jetbrains.mps.smodel.DebugRegistry;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
 import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.adapter.structure.language.SLanguageAdapterById;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.persistence.def.v7.WriteHelper;
 import org.jetbrains.mps.openapi.model.SNodeId;
-import org.jetbrains.mps.openapi.language.SConceptId;
+import org.jetbrains.mps.openapi.language.SConcept;
+import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import jetbrains.mps.smodel.runtime.ConceptKind;
 import jetbrains.mps.smodel.runtime.StaticScope;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import org.apache.log4j.Level;
 import java.util.UUID;
-import org.jetbrains.mps.openapi.language.SContainmentLinkId;
-import org.jetbrains.mps.openapi.language.SReferenceLinkId;
-import org.jetbrains.mps.openapi.language.SPropertyId;
+import jetbrains.mps.smodel.adapter.ids.SContainmentLinkId;
+import jetbrains.mps.smodel.adapter.ids.SReferenceLinkId;
+import jetbrains.mps.smodel.adapter.ids.SPropertyId;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 
@@ -30,11 +33,13 @@ public class ReadHelper9 {
   private SModelReference myModelRef;
   private Map<String, SModelReference> myModelByIx;
   private Map<String, SLanguageId> myLanguageByIx;
+  private DebugRegistry myDebugRegistry;
 
   public ReadHelper9(SModelReference modelRef) {
     myModelByIx = MapSequence.fromMap(new HashMap<String, SModelReference>());
     myLanguageByIx = MapSequence.fromMap(new HashMap<String, SLanguageId>());
     myModelRef = modelRef;
+    myDebugRegistry = new DebugRegistry();
   }
 
   public void addImportToModel(SModel model, String index, SModelReference ref, boolean implicit) {
@@ -48,11 +53,11 @@ public class ReadHelper9 {
   }
 
   public void addUsedLanguage(SModel model, String index, SLanguageId ref, int version) {
-    model.addLanguage(ref, version);
+    model.addLanguage(new SLanguageAdapterById(ref, DebugRegistry.getInstance().getLanguageName(ref)), version);
     registerLanguage(index, ref);
   }
   public void addImplicitlyUsedLanguage(SModel model, String index, SLanguageId ref, int version) {
-    model.addImplicitlyUsedLanguage(ref, version);
+    model.addImplicitlyUsedLanguage(new SLanguageAdapterById(ref, DebugRegistry.getInstance().getLanguageName(ref)), version);
     registerLanguage(index, ref);
   }
   public void registerLanguage(String index, SLanguageId ref) {
@@ -92,7 +97,7 @@ public class ReadHelper9 {
     return nodeInfo != null && nodeInfo.startsWith("s");
   }
 
-  public SConceptId getStubConcept(SConceptId type) {
+  public SConcept getStubConcept(SConceptId type) {
     // todo 
     return null;
   }
@@ -144,6 +149,10 @@ public class ReadHelper9 {
   }
 
   public SConceptId readConceptId(String s) {
+    if (s.startsWith("" + WriteHelper.MODEL_SEPARATOR_CHAR)) {
+      s = s.substring(1);
+      return SConceptId.deserialize(s);
+    }
     int ix = s.indexOf(WriteHelper.MODEL_SEPARATOR_CHAR);
     if (ix <= 0) {
       // no model ID - fqName is here 

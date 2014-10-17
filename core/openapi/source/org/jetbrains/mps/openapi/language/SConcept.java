@@ -22,7 +22,6 @@ import org.jetbrains.annotations.Nullable;
  * Represents a concept
  */
 public interface SConcept extends SAbstractConcept {
-
   @Nullable
   SConcept getSuperConcept();
 

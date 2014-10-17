@@ -16,65 +16,20 @@
 package jetbrains.mps.smodel.language;
 
 import jetbrains.mps.components.CoreComponent;
-import jetbrains.mps.smodel.adapter.SAbstractConceptAdapter;
-import jetbrains.mps.smodel.adapter.SConceptAdapter;
-import jetbrains.mps.smodel.adapter.SInterfaceConceptAdapter;
-import jetbrains.mps.smodel.adapter.SLanguageAdapter;
+import jetbrains.mps.smodel.adapter.structure.concept.SConceptAdapterById;
+import jetbrains.mps.smodel.adapter.structure.concept.SConceptAdapterByName;
+import jetbrains.mps.smodel.adapter.structure.concept.SInterfaceConceptAdapterById;
+import jetbrains.mps.smodel.adapter.structure.language.SLanguageAdapterByName;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import jetbrains.mps.smodel.runtime.illegal.IllegalConceptDescriptor;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import org.jetbrains.mps.openapi.language.SAbstractLink;
 import org.jetbrains.mps.openapi.language.SConcept;
-import org.jetbrains.mps.openapi.language.SConceptId;
 import org.jetbrains.mps.openapi.language.SConceptRepository;
-import org.jetbrains.mps.openapi.language.SContainmentLink;
-import org.jetbrains.mps.openapi.language.SEnumeration;
 import org.jetbrains.mps.openapi.language.SInterfaceConcept;
 import org.jetbrains.mps.openapi.language.SLanguage;
-import org.jetbrains.mps.openapi.language.SLanguageId;
-import org.jetbrains.mps.openapi.language.SProperty;
-import org.jetbrains.mps.openapi.language.SPropertyId;
-import org.jetbrains.mps.openapi.language.SReferenceLink;
-import org.jetbrains.mps.openapi.language.SReferenceLinkId;
-import org.jetbrains.mps.openapi.model.SNode;
 
 public class ConceptRepository extends SConceptRepository implements CoreComponent {
-
-  @Override
-  @NotNull
-  public SConcept getInstanceConcept(@NotNull SConceptId conceptId) {
-    SAbstractConcept concept = getConcept(conceptId);
-    if (concept instanceof SInterfaceConcept) {
-      return new SInterfaceInstanceAdapter((SInterfaceConcept) concept);
-    }
-    if (concept == null) {
-      // TODO separate implementation for an "invalid" concept?
-      return new SConceptAdapter(conceptId);
-    }
-    return (SConcept) concept;
-  }
-
-  @Override
-  public SAbstractConcept getConcept(@NotNull SConceptId conceptId) {
-    ConceptDescriptor desc = ConceptRegistry.getInstance().getConceptDescriptor(new SAbstractConceptAdapter(conceptId).getQualifiedName());
-    if (desc instanceof IllegalConceptDescriptor) return null;
-
-    return desc.isInterfaceConcept() ? new SInterfaceConceptAdapter(conceptId) : new SConceptAdapter(conceptId);
-  }
-
-  @Override
-  public SEnumeration getEnumeration(@NotNull SConceptId conceptId) {
-    // TODO
-    return null;
-  }
-
-  @Override
-  public SLanguage getLanguage(@NotNull SLanguageId languageId) {
-    return new SLanguageAdapter(languageId);
-  }
-
   @Override
   public void init() {
     if (INSTANCE != null) {
@@ -88,86 +43,6 @@ public class ConceptRepository extends SConceptRepository implements CoreCompone
     INSTANCE = null;
   }
 
-  private static class SInterfaceInstanceAdapter implements SConcept {
-
-    private final SInterfaceConcept target;
-
-    private SInterfaceInstanceAdapter(SInterfaceConcept target) {
-      this.target = target;
-    }
-
-    @Override
-    public SConceptId getId() {
-      return target.getId();
-    }
-
-    @Override
-    public String getQualifiedName() {
-      return target.getQualifiedName();
-    }
-
-    @Override
-    public String getName() {
-      return target.getName();
-    }
-
-    @Override
-    public SLanguage getLanguage() {
-      return target.getLanguage();
-    }
-
-    @Override
-    public Iterable<SReferenceLink> getReferences() {
-      return target.getReferences();
-    }
-
-    @Override
-    public Iterable<SContainmentLink> getChildren() {
-      return target.getChildren();
-    }
-
-    @Override
-    public SAbstractLink getLink(String role) {
-      return target.getLink(role);
-    }
-
-    @Override
-    public Iterable<SAbstractLink> getLinks() {
-      return target.getLinks();
-    }
-
-    @Override
-    public SProperty getProperty(String name) {
-      return target.getProperty(name);
-    }
-
-    @Override
-    public Iterable<SProperty> getProperties() {
-      return target.getProperties();
-    }
-
-    @Override
-    public boolean isSubConceptOf(SAbstractConcept concept) {
-      return target.isSubConceptOf(concept);
-    }
-
-    @Nullable
-    @Override
-    public SNode getConceptDeclarationNode() {
-      return target.getConceptDeclarationNode();
-    }
-
-    @Override
-    public SConcept getSuperConcept() {
-      return null;
-    }
-
-    @Override
-    public Iterable<SInterfaceConcept> getSuperInterfaces() {
-      return target.getSuperInterfaces();
-    }
-  }
-
   //-----------------deprecated since 3.2--------------------
 
   @Deprecated
@@ -176,11 +51,12 @@ public class ConceptRepository extends SConceptRepository implements CoreCompone
   public SConcept getInstanceConcept(@NotNull String id) {
     SAbstractConcept concept = getConcept(id);
     if (concept instanceof SInterfaceConcept) {
-      return new SInterfaceInstanceAdapter((SInterfaceConcept) concept);
+      ConceptDescriptor desc = ConceptRegistry.getInstance().getConceptDescriptor(id);
+      return new SConceptAdapterById(desc.getId(), id);
     }
     if (concept == null) {
       // TODO separate implementation for an "invalid" concept?
-      return new SConceptAdapter(id);
+      return new SConceptAdapterByName(id);
     }
     return (SConcept) concept;
   }
@@ -191,19 +67,12 @@ public class ConceptRepository extends SConceptRepository implements CoreCompone
     ConceptDescriptor desc = ConceptRegistry.getInstance().getConceptDescriptor(id);
     if (desc instanceof IllegalConceptDescriptor) return null;
 
-    return desc.isInterfaceConcept() ? new SInterfaceConceptAdapter(id) : new SConceptAdapter(id);
-  }
-
-  @Deprecated
-  @Override
-  public SEnumeration getEnumeration(@NotNull String qualifiedName) {
-    // TODO
-    return null;
+    return desc.isInterfaceConcept() ? new SInterfaceConceptAdapterById(desc.getId(), id) : new SConceptAdapterById(desc.getId(), id);
   }
 
   @Deprecated
   @Override
   public SLanguage getLanguage(@NotNull String qualifiedName) {
-    return new SLanguageAdapter(qualifiedName);
+    return new SLanguageAdapterByName(qualifiedName);
   }
 }

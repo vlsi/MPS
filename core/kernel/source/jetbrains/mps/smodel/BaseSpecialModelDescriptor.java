@@ -18,6 +18,7 @@ package jetbrains.mps.smodel;
 import jetbrains.mps.extapi.model.SModelBase;
 import jetbrains.mps.smodel.loading.ModelLoadingState;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.persistence.NullDataSource;
 
@@ -48,23 +49,18 @@ public abstract class BaseSpecialModelDescriptor extends SModelBase {
     return mySModel;
   }
 
+  @Nullable
+  @Override
+  protected SModel getCurrentModelInternal() {
+    return mySModel;
+  }
+
   @Override
   public boolean isLoaded() {
     return mySModel != null;
   }
 
   protected abstract jetbrains.mps.smodel.SModel createModel();
-
-  @Override
-  public void detach() {
-    super.detach();
-    fireBeforeModelDisposed(this);
-    jetbrains.mps.smodel.SModel model = mySModel;
-    if (model != null) {
-      model.dispose();
-    }
-    clearListeners();
-  }
 
   @Override
   public synchronized void unload() {

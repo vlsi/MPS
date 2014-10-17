@@ -14,8 +14,8 @@
 
   <project-components>
     <component>
-      <implementation-class>jetbrains.mps.execution.impl.configurations.RunConfigurationsStateManager
-      </implementation-class>
+      <implementation-class>jetbrains.mps.execution.impl.configurations.RunConfigurationsStateManager</implementation-class>
+      <skipForDummyProject/>
     </component>
   </project-components>
 

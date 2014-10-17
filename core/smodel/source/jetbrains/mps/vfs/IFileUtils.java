@@ -53,6 +53,10 @@ public class IFileUtils {
 
   public static IFile createTmpDir() {
     IFile tmpHome = FileSystem.getInstance().getFileByPath(System.getProperty("java.io.tmpdir"));
+    // For e.g. Mac, tmpdir might reside under /var/folders, with canonical path /private/var/folders
+    // IDEA's VirtualFile seems to be incapable to notice changes done through other location, which may lead to
+    // puzzling failures (i.e. U see the file at fs location, but VirtualFile for the same (though, aliased) location doesn't list it).
+    tmpHome = FileSystem.getInstance().getFileByPath(getCanonicalPath(tmpHome));
     int i = 1;
     String prefix = "mps-" + new SimpleDateFormat("yyyy-MM-dd-").format(new Date());
     while (tmpHome.getDescendant(prefix + i).exists()) {

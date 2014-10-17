@@ -14,7 +14,7 @@ import org.jetbrains.annotations.Nullable;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
-  /*package*/ final ConceptDescriptor myConceptStringSwitchStatement = new ConceptDescriptorBuilder("jetbrains.mps.baseLanguage.jdk7.structure.StringSwitchStatement", MetaIdFactory.conceptId(UUID.fromString("96ee7a94-411d-4cf8-9b94-96cad7e52411"), 400642802549924137L)).super_("jetbrains.mps.baseLanguage.structure.SwitchStatement").super_(MetaIdFactory.conceptId(UUID.fromString("96ee7a94-411d-4cf8-9b94-96cad7e52411"), 1163670490218L)).parents("jetbrains.mps.baseLanguage.structure.SwitchStatement").parentIds(MetaIdFactory.conceptId(UUID.fromString("96ee7a94-411d-4cf8-9b94-96cad7e52411"), 1163670490218L)).alias("switch", "").staticScope(StaticScope.NONE).create();
+  /*package*/ final ConceptDescriptor myConceptStringSwitchStatement = new ConceptDescriptorBuilder("jetbrains.mps.baseLanguage.jdk7.structure.StringSwitchStatement", MetaIdFactory.conceptId(UUID.fromString("96ee7a94-411d-4cf8-9b94-96cad7e52411"), 400642802549924137L)).super_("jetbrains.mps.baseLanguage.structure.SwitchStatement").super_(MetaIdFactory.conceptId(UUID.fromString("f3061a53-9226-4cc5-a443-f952ceaf5816"), 1163670490218L)).parents("jetbrains.mps.baseLanguage.structure.SwitchStatement").parentIds(MetaIdFactory.conceptId(UUID.fromString("f3061a53-9226-4cc5-a443-f952ceaf5816"), 1163670490218L)).alias("switch", "").staticScope(StaticScope.NONE).create();
 
   @Override
   public Collection<ConceptDescriptor> getDescriptors() {

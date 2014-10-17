@@ -8,13 +8,13 @@
    <string>public abstract void org.jetbrains.mps.openapi.model.SNode.setReferenceTarget(java.lang.String,org.jetbrains.mps.openapi.model.SNode)</string> 
   </void> 
   <void method="add">
-   <string>public abstract void org.jetbrains.mps.openapi.model.SNode.setReferenceTarget(org.jetbrains.mps.openapi.language.SReferenceLinkId,org.jetbrains.mps.openapi.model.SNode)</string>
+   <string>public abstract void org.jetbrains.mps.openapi.model.SNode.setReferenceTarget(org.jetbrains.mps.openapi.language.SReferenceLink,org.jetbrains.mps.openapi.model.SNode)</string>
   </void>
   <void method="add">
    <string>public abstract java.lang.String org.jetbrains.mps.openapi.model.SNode.getRoleInParent()</string>
   </void> 
   <void method="add">
-   <string>public abstract org.jetbrains.mps.openapi.language.SContainmentLinkId org.jetbrains.mps.openapi.model.SNode.getRoleInParentId()</string>
+   <string>public abstract org.jetbrains.mps.openapi.language.SContainmentLink org.jetbrains.mps.openapi.model.SNode.getContainmentLink()</string>
   </void>
   <void method="add">
    <string>public abstract java.lang.Iterable&lt;java.lang.Object&gt; org.jetbrains.mps.openapi.model.SNode.getUserObjectKeys()</string>
@@ -26,7 +26,7 @@
    <string>public abstract java.lang.Iterable&lt;java.lang.String&gt; org.jetbrains.mps.openapi.model.SNode.getPropertyNames()</string>
   </void>
   <void method="add">
-   <string>public abstract java.lang.Iterable&lt;org.jetbrains.mps.openapi.language.SPropertyId&gt; org.jetbrains.mps.openapi.model.SNode.getPropertyIds()</string>
+   <string>public abstract java.lang.Iterable&lt;org.jetbrains.mps.openapi.language.SProperty&gt; org.jetbrains.mps.openapi.model.SNode.getProperties()</string>
   </void>
   <void method="add">
    <string>public abstract org.jetbrains.mps.openapi.model.SNode org.jetbrains.mps.openapi.model.SNode.getPrevSibling()</string>
@@ -38,7 +38,7 @@
    <string>public abstract java.lang.Iterable&lt;? extends org.jetbrains.mps.openapi.model.SNode&gt; org.jetbrains.mps.openapi.model.SNode.getChildren(java.lang.String)</string> 
   </void> 
   <void method="add">
-   <string>public abstract java.lang.Iterable&lt;? extends org.jetbrains.mps.openapi.model.SNode&gt; org.jetbrains.mps.openapi.model.SNode.getChildren(org.jetbrains.mps.openapi.language.SContainmentLinkId)</string>
+   <string>public abstract java.lang.Iterable&lt;? extends org.jetbrains.mps.openapi.model.SNode&gt; org.jetbrains.mps.openapi.model.SNode.getChildren(org.jetbrains.mps.openapi.language.SContainmentLink)</string>
   </void>
   <void method="add">
    <string>public abstract java.lang.String org.jetbrains.mps.openapi.model.SNode.getPresentation()</string> 
@@ -47,7 +47,7 @@
    <string>public abstract void org.jetbrains.mps.openapi.model.SNode.insertChildBefore(java.lang.String,org.jetbrains.mps.openapi.model.SNode,org.jetbrains.mps.openapi.model.SNode)</string>
   </void>
   <void method="add">
-   <string>public abstract void org.jetbrains.mps.openapi.model.SNode.insertChildBefore(org.jetbrains.mps.openapi.language.SContainmentLinkId,org.jetbrains.mps.openapi.model.SNode,org.jetbrains.mps.openapi.model.SNode)</string>
+   <string>public abstract void org.jetbrains.mps.openapi.model.SNode.insertChildBefore(org.jetbrains.mps.openapi.language.SContainmentLink,org.jetbrains.mps.openapi.model.SNode,org.jetbrains.mps.openapi.model.SNode)</string>
   </void>
   <void method="add">
    <string>public abstract org.jetbrains.mps.openapi.model.SNode org.jetbrains.mps.openapi.model.SNode.getFirstChild()</string>
@@ -59,7 +59,7 @@
    <string>public abstract java.lang.String org.jetbrains.mps.openapi.model.SNode.getProperty(java.lang.String)</string> 
   </void>
   <void method="add">
-   <string>public abstract java.lang.String org.jetbrains.mps.openapi.model.SNode.getProperty(org.jetbrains.mps.openapi.language.SPropertyId)</string>
+   <string>public abstract java.lang.String org.jetbrains.mps.openapi.model.SNode.getProperty(org.jetbrains.mps.openapi.language.SProperty)</string>
   </void>
   <void method="add">
    <string>public abstract org.jetbrains.mps.openapi.model.SNode org.jetbrains.mps.openapi.model.SNode.getContainingRoot()</string>
@@ -68,13 +68,13 @@
    <string>public abstract org.jetbrains.mps.openapi.model.SReference org.jetbrains.mps.openapi.model.SNode.getReference(java.lang.String)</string> 
   </void> 
   <void method="add">
-   <string>public abstract org.jetbrains.mps.openapi.model.SReference org.jetbrains.mps.openapi.model.SNode.getReference(org.jetbrains.mps.openapi.language.SReferenceLinkId)</string>
+   <string>public abstract org.jetbrains.mps.openapi.model.SReference org.jetbrains.mps.openapi.model.SNode.getReference(org.jetbrains.mps.openapi.language.SReferenceLink)</string>
   </void>
   <void method="add">
    <string>public abstract org.jetbrains.mps.openapi.model.SNode org.jetbrains.mps.openapi.model.SNode.getReferenceTarget(java.lang.String)</string> 
   </void> 
   <void method="add">
-   <string>public abstract org.jetbrains.mps.openapi.model.SNode org.jetbrains.mps.openapi.model.SNode.getReferenceTarget(org.jetbrains.mps.openapi.language.SReferenceLinkId)</string>
+   <string>public abstract org.jetbrains.mps.openapi.model.SNode org.jetbrains.mps.openapi.model.SNode.getReferenceTarget(org.jetbrains.mps.openapi.language.SReferenceLink)</string>
   </void>
   <void method="add">
    <string>public abstract void org.jetbrains.mps.openapi.model.SNode.delete()</string> 
@@ -86,13 +86,10 @@
    <string>public abstract org.jetbrains.mps.openapi.language.SConcept org.jetbrains.mps.openapi.model.SNode.getConcept()</string> 
   </void>
   <void method="add">
-   <string>public abstract org.jetbrains.mps.openapi.language.SConceptId org.jetbrains.mps.openapi.model.SNode.getConceptId()</string>
-  </void>
-  <void method="add">
    <string>public abstract void org.jetbrains.mps.openapi.model.SNode.setProperty(java.lang.String,java.lang.String)</string> 
   </void> 
   <void method="add">
-   <string>public abstract void org.jetbrains.mps.openapi.model.SNode.setProperty(org.jetbrains.mps.openapi.language.SPropertyId,java.lang.String)</string>
+   <string>public abstract void org.jetbrains.mps.openapi.model.SNode.setProperty(org.jetbrains.mps.openapi.language.SProperty,java.lang.String)</string>
   </void>
   <void method="add">
    <string>public abstract void org.jetbrains.mps.openapi.model.SNode.putUserObject(java.lang.Object,java.lang.Object)</string> 
@@ -104,13 +101,13 @@
    <string>public abstract boolean org.jetbrains.mps.openapi.model.SNode.hasProperty(java.lang.String)</string> 
   </void> 
   <void method="add">
-   <string>public abstract boolean org.jetbrains.mps.openapi.model.SNode.hasProperty(org.jetbrains.mps.openapi.language.SPropertyId)</string>
+   <string>public abstract boolean org.jetbrains.mps.openapi.model.SNode.hasProperty(org.jetbrains.mps.openapi.language.SProperty)</string>
   </void>
   <void method="add">
    <string>public abstract void org.jetbrains.mps.openapi.model.SNode.addChild(java.lang.String,org.jetbrains.mps.openapi.model.SNode)</string> 
   </void>
   <void method="add">
-   <string>public abstract void org.jetbrains.mps.openapi.model.SNode.addChild(org.jetbrains.mps.openapi.language.SContainmentLinkId,org.jetbrains.mps.openapi.model.SNode)</string>
+   <string>public abstract void org.jetbrains.mps.openapi.model.SNode.addChild(org.jetbrains.mps.openapi.language.SContainmentLink,org.jetbrains.mps.openapi.model.SNode)</string>
   </void>
   <void method="add">
    <string>public abstract java.lang.Iterable&lt;? extends org.jetbrains.mps.openapi.model.SReference&gt; org.jetbrains.mps.openapi.model.SNode.getReferences()</string>
@@ -131,7 +128,7 @@
    <string>public abstract void org.jetbrains.mps.openapi.model.SNode.setReference(java.lang.String,org.jetbrains.mps.openapi.model.SReference)</string>
   </void>
   <void method="add">
-   <string>public abstract void org.jetbrains.mps.openapi.model.SNode.setReference(org.jetbrains.mps.openapi.language.SReferenceLinkId,org.jetbrains.mps.openapi.model.SReference)</string>
+   <string>public abstract void org.jetbrains.mps.openapi.model.SNode.setReference(org.jetbrains.mps.openapi.language.SReferenceLink,org.jetbrains.mps.openapi.model.SReference)</string>
   </void>
  </object>
 </java> 

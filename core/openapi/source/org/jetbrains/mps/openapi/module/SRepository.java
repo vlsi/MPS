@@ -49,11 +49,18 @@ public interface SRepository {
 
   RepositoryAccess getRepositoryAccess();
 
-  DebugRegistry getDebugRegistry();
-
   void saveAll();
 
+  /**
+   * Register a listener for the repository.
+   * If a listener is {@link org.jetbrains.mps.openapi.module.SRepositoryAttachListener}, it gets additionally
+   * notified and can perform own initialization (e.g. handle modules already in the repository)
+   */
   void addRepositoryListener(SRepositoryListener listener);
 
+  /**
+   * Remove a listener.
+   * If a listener is {@link org.jetbrains.mps.openapi.module.SRepositoryAttachListener}, it is notified of detach event.
+   */
   void removeRepositoryListener(SRepositoryListener listener);
 }

@@ -1369,9 +1369,8 @@
                               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1240470842553500353" resolveInfo="dialog" />
                             </node>
                             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1240470842553500368" nodeInfo="nn">
-                              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="qnm7.~FileChooserDialog%dchoose(com%dintellij%dopenapi%dvfs%dVirtualFile,com%dintellij%dopenapi%dproject%dProject)%ccom%dintellij%dopenapi%dvfs%dVirtualFile[]" resolveInfo="choose" />
+                              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="qnm7.~FileChooserDialog%dchoose(com%dintellij%dopenapi%dproject%dProject,com%dintellij%dopenapi%dvfs%dVirtualFile%d%d%d)%ccom%dintellij%dopenapi%dvfs%dVirtualFile[]" resolveInfo="choose" />
                               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.NullLiteral" typeId="tpee.1070534058343" id="1240470842553500369" nodeInfo="nn" />
-                              <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.NullLiteral" typeId="tpee.1070534058343" id="1240470842553500370" nodeInfo="nn" />
                             </node>
                           </node>
                         </node>

@@ -6,13 +6,14 @@ import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
 import jetbrains.mps.lang.core.behavior.INamedConcept_BehaviorDescriptor;
 import jetbrains.mps.baseLanguage.behavior.IMemberContainer_BehaviorDescriptor;
 import jetbrains.mps.lang.structure.behavior.IConceptAspect_BehaviorDescriptor;
+import jetbrains.mps.lang.core.behavior.InterfacePart_BehaviorDescriptor;
 import java.util.List;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.structure.behavior.IConceptAspect_Behavior;
 import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
 import jetbrains.mps.baseLanguage.behavior.IMemberContainer_Behavior;
 
-public class MappingConfiguration_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements INamedConcept_BehaviorDescriptor, IMemberContainer_BehaviorDescriptor, IConceptAspect_BehaviorDescriptor {
+public class MappingConfiguration_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements INamedConcept_BehaviorDescriptor, IMemberContainer_BehaviorDescriptor, IConceptAspect_BehaviorDescriptor, InterfacePart_BehaviorDescriptor {
   public MappingConfiguration_BehaviorDescriptor() {
   }
   public List<SNode> virtual_getBaseConceptCollection_5270353093116013036(SNode thisNode) {

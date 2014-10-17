@@ -92,51 +92,54 @@
   </root>
   <root nodeRef="r:b9f36c08-4a75-4513-9277-a390d3426e0f(jetbrains.mps.editor.runtime.impl.cellActions)/2298389068003808761">
     <file name="CellAction_DeleteSmart.java">
-      <node id="2298389068003808764" at="15,0,16,0" concept="3" trace="mySource" />
-      <node id="2298389068003808767" at="16,0,17,0" concept="3" trace="myLink" />
-      <node id="2298389068003808770" at="17,0,18,0" concept="3" trace="myTarget" />
-      <node id="6020129713119394457" at="18,0,19,0" concept="3" trace="myCanBeNull" />
-      <node id="6020129713119481414" at="19,0,20,0" concept="3" trace="myEnabled" />
-      <node id="6020129713119587282" at="20,0,21,0" concept="3" trace="myRole" />
-      <node id="2298389068003808783" at="21,73,22,22" concept="2" />
-      <node id="2298389068003808787" at="22,22,23,18" concept="2" />
-      <node id="2298389068003808791" at="23,18,24,22" concept="2" />
-      <node id="6020129713119384812" at="24,22,25,80" concept="7" />
-      <node id="6020129713119590272" at="25,80,26,75" concept="2" />
-      <node id="6655597586176291926" at="26,75,27,51" concept="9" />
-      <node id="6020129713119491974" at="27,51,28,295" concept="2" />
-      <node id="6020129713119398431" at="28,295,29,108" concept="2" />
-      <node id="6020129713119571530" at="30,25,31,133" concept="2" />
-      <node id="6020129713119560790" at="35,52,36,21" concept="8" />
-      <node id="2298389068003820080" at="39,46,40,41" concept="2" />
-      <node id="2298389068004278098" at="41,25,42,161" concept="7" />
-      <node id="3395068133255634675" at="42,161,43,71" concept="2" />
-      <node id="6020129713119570126" at="29,108,32,5" concept="5" />
-      <node id="2298389068003808795" at="34,0,38,0" concept="6" trace="canExecute#(Ljetbrains/mps/openapi/editor/EditorContext;)Z" />
-      <node id="2298389068003820088" at="40,41,44,5" concept="5" />
-      <node id="2298389068003808803" at="38,0,46,0" concept="6" trace="execute#(Ljetbrains/mps/openapi/editor/EditorContext;)V" />
-      <node id="2298389068003808773" at="21,0,34,0" concept="1" trace="CellAction_DeleteSmart#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <scope id="6020129713119570129" at="30,25,31,133" />
-      <scope id="2298389068003808800" at="35,52,36,21" />
-      <scope id="2298389068003820089" at="41,25,43,71">
+      <node id="2298389068003808764" at="17,0,18,0" concept="3" trace="mySource" />
+      <node id="2298389068003808767" at="18,0,19,0" concept="3" trace="myLink" />
+      <node id="2298389068003808770" at="19,0,20,0" concept="3" trace="myTarget" />
+      <node id="6020129713119394457" at="20,0,21,0" concept="3" trace="myCanBeNull" />
+      <node id="6020129713119481414" at="21,0,22,0" concept="3" trace="myEnabled" />
+      <node id="6020129713119587282" at="22,0,23,0" concept="3" trace="myRole" />
+      <node id="2298389068003808783" at="23,73,24,22" concept="2" />
+      <node id="2298389068003808787" at="24,22,25,18" concept="2" />
+      <node id="2298389068003808791" at="25,18,26,22" concept="2" />
+      <node id="6020129713119384812" at="26,22,27,80" concept="7" />
+      <node id="6020129713119590272" at="27,80,28,75" concept="2" />
+      <node id="6655597586176291926" at="28,75,29,51" concept="9" />
+      <node id="6020129713119491974" at="29,51,30,295" concept="2" />
+      <node id="6020129713119398431" at="30,295,31,108" concept="2" />
+      <node id="6020129713119571530" at="32,25,33,133" concept="2" />
+      <node id="1395491627848273959" at="37,52,38,82" concept="7" />
+      <node id="1395491627848273965" at="38,82,39,118" concept="8" />
+      <node id="2298389068003820080" at="42,46,43,41" concept="2" />
+      <node id="2298389068004278098" at="44,25,45,161" concept="7" />
+      <node id="3395068133255634675" at="45,161,46,71" concept="2" />
+      <node id="6020129713119570126" at="31,108,34,5" concept="5" />
+      <node id="2298389068003820088" at="43,41,47,5" concept="5" />
+      <node id="2298389068003808795" at="36,0,41,0" concept="6" trace="canExecute#(Ljetbrains/mps/openapi/editor/EditorContext;)Z" />
+      <node id="2298389068003808803" at="41,0,49,0" concept="6" trace="execute#(Ljetbrains/mps/openapi/editor/EditorContext;)V" />
+      <node id="2298389068003808773" at="23,0,36,0" concept="1" trace="CellAction_DeleteSmart#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <scope id="6020129713119570129" at="32,25,33,133" />
+      <scope id="2298389068003808800" at="37,52,39,118">
+        <var name="myTargetCell" id="1395491627848273958" />
+      </scope>
+      <scope id="2298389068003820089" at="44,25,46,71">
         <var name="defaultTarget" id="2298389068004278099" />
       </scope>
-      <scope id="2298389068003808795" at="34,0,38,0">
+      <scope id="2298389068003808795" at="36,0,41,0">
         <var name="context" id="2298389068003808798" />
       </scope>
-      <scope id="2298389068003808808" at="39,46,44,5" />
-      <scope id="2298389068003808803" at="38,0,46,0">
+      <scope id="2298389068003808808" at="42,46,47,5" />
+      <scope id="2298389068003808803" at="41,0,49,0">
         <var name="context" id="2298389068003808806" />
       </scope>
-      <scope id="2298389068003808782" at="21,73,32,5">
+      <scope id="2298389068003808782" at="23,73,34,5">
         <var name="genuineLinkDeclaration" id="6020129713119384813" />
       </scope>
-      <scope id="2298389068003808773" at="21,0,34,0">
+      <scope id="2298389068003808773" at="23,0,36,0">
         <var name="link" id="2298389068003808778" />
         <var name="source" id="2298389068003808776" />
         <var name="target" id="2298389068003808780" />
       </scope>
-      <unit id="2298389068003808761" at="14,0,47,0" name="jetbrains.mps.editor.runtime.impl.cellActions.CellAction_DeleteSmart" />
+      <unit id="2298389068003808761" at="16,0,50,0" name="jetbrains.mps.editor.runtime.impl.cellActions.CellAction_DeleteSmart" />
     </file>
   </root>
   <root nodeRef="r:b9f36c08-4a75-4513-9277-a390d3426e0f(jetbrains.mps.editor.runtime.impl.cellActions)/6859763651190628904">

@@ -9,18 +9,16 @@ import jetbrains.mps.nodeEditor.Highlighter;
 import com.intellij.openapi.project.Project;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.debugger.java.runtime.state.DebugSession;
-import jetbrains.mps.debugger.java.runtime.evaluation.container.Properties;
-import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
-import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.ModelAccess;
+import org.jetbrains.mps.openapi.model.SNode;
 import javax.swing.JSplitPane;
 import com.intellij.ui.components.JBScrollPane;
+import jetbrains.mps.debugger.java.runtime.evaluation.container.Properties;
 import javax.swing.AbstractAction;
 import java.awt.event.ActionEvent;
 import javax.swing.KeyStroke;
 import javax.swing.JComponent;
 import com.intellij.openapi.application.ApplicationManager;
-import com.intellij.openapi.application.ModalityState;
 
 public class EvaluationPanel extends EvaluationUi {
   private final JTabbedPane myTabbedPane = new JTabbedPane();
@@ -34,13 +32,6 @@ public class EvaluationPanel extends EvaluationUi {
     myHighlighter = project.getComponent(Highlighter.class);
 
     myEvaluationModel = evaluationModel;
-    if (Properties.IS_DEVELOPER_MODE) {
-      myEvaluationModel.addGenerationListener(new _FunctionTypes._void_P1_E0<SNode>() {
-        public void invoke(SNode result) {
-          EvaluationPanel.this.updateGenerationResultTab(result);
-        }
-      });
-    }
 
     ModelAccess.instance().runWriteActionInCommand(new Runnable() {
       public void run() {
@@ -93,26 +84,6 @@ public class EvaluationPanel extends EvaluationUi {
   @Override
   public void evaluate() {
     evaluate(myEvaluationModel);
-  }
-  private void updateGenerationResultTab(final SNode generatedResult) {
-    ApplicationManager.getApplication().invokeLater(new Runnable() {
-      public void run() {
-        if (myResultEditor == null) {
-          ModelAccess.instance().runWriteActionInCommand(new Runnable() {
-            public void run() {
-              myResultEditor = new EmbeddableEditor(myEvaluationModel.getContext().getProject(), true);
-            }
-          });
-          myTabbedPane.add("Generated Result", myResultEditor);
-          myTabbedPane.validate();
-        }
-        ModelAccess.instance().runWriteActionInCommand(new Runnable() {
-          public void run() {
-            myResultEditor.editNode(generatedResult);
-          }
-        });
-      }
-    }, ModalityState.NON_MODAL);
   }
   @Override
   protected void update() {

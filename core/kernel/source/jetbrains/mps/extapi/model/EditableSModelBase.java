@@ -71,7 +71,7 @@ public abstract class EditableSModelBase extends ReloadableSModelBase implements
   @Override
   public void addRootNode(@NotNull org.jetbrains.mps.openapi.model.SNode node) {
     assertCanChange();
-    getSModelInternal().addRootNode(node);
+    getSModel().addRootNode(node);
     fireNodeAdded(null, null, node);
     setChanged(true);
   }
@@ -79,7 +79,7 @@ public abstract class EditableSModelBase extends ReloadableSModelBase implements
   @Override
   public void removeRootNode(@NotNull org.jetbrains.mps.openapi.model.SNode node) {
     assertCanChange();
-    getSModelInternal().removeRootNode(node);
+    getSModel().removeRootNode(node);
     fireNodeRemoved(null, null, node);
     setChanged(true);
   }
@@ -133,7 +133,7 @@ public abstract class EditableSModelBase extends ReloadableSModelBase implements
   protected abstract void reloadContents();
 
   public void resolveDiskConflict() {
-    LOG.warning("Model=" + getReference().getModelName() + ", file ts=" + getSource().getTimestamp() + ", model ts=" + getSourceTimestamp(),
+    LOG.warning("Model=" + getReference().getModelName() + ", file ts=" + getSource().getTimestamp() + ", model ts=" + myTimestampTracker.getTimestamp(),
         new Throwable());  // more information
     fireConflictDetected();
   }
@@ -161,7 +161,7 @@ public abstract class EditableSModelBase extends ReloadableSModelBase implements
     if (source.getFile().getPath().equals(newModelFile.getPath())) return;
 
     IFile oldFile = source.getFile();
-    jetbrains.mps.smodel.SModel model = getSModelInternal();
+    jetbrains.mps.smodel.SModel model = getSModel();
     fireBeforeModelFileChanged(new SModelFileChangedEvent(model.getModelDescriptor(), oldFile, newModelFile));
     source.setFile(newModelFile);
     updateTimestamp();
@@ -259,6 +259,16 @@ public abstract class EditableSModelBase extends ReloadableSModelBase implements
 
     fireModelRenamed(new SModelRenamedEvent(this, oldName.getModelName(), newModelName));
     fireModelRenamed(oldName);
+  }
+
+  @Override
+  public void updateTimestamp() {
+    myTimestampTracker.updateTimestamp(getSource());
+  }
+
+  @Override
+  public boolean needsReloading() {
+    return myTimestampTracker.needsReloading(getSource());
   }
 
   @Override

@@ -761,6 +761,9 @@
           </node>
         </node>
       </node>
+      <node role="statement" roleId="tpee.1068581517665" type="tpd4.TypeVarDeclaration" typeId="tpd4.1174665551739" id="1190968896992143296" nodeInfo="ng">
+        <property name="name" nameId="tpck.1169194664001" value="v" />
+      </node>
       <node role="statement" roleId="tpee.1068581517665" type="tpd4.CreateLessThanInequationStatement" typeId="tpd4.1174663118805" id="2840424593984891858" nodeInfo="nn">
         <node role="leftExpression" roleId="tpd4.1174660783413" type="tpd4.NormalTypeClause" typeId="tpd4.1185788614172" id="2840424593984891859" nodeInfo="ng">
           <node role="normalType" roleId="tpd4.1185788644032" type="tpd4.TypeOfExpression" typeId="tpd4.1174657487114" id="2840424593984891860" nodeInfo="nn">
@@ -777,23 +780,44 @@
         <node role="rightExpression" roleId="tpd4.1174660783414" type="tpd4.NormalTypeClause" typeId="tpd4.1185788614172" id="2840424593984891862" nodeInfo="ng">
           <node role="normalType" roleId="tpd4.1185788644032" type="tp3r.Quotation" typeId="tp3r.1196350785113" id="2840424593984891863" nodeInfo="nn">
             <node role="quotedNode" roleId="tp3r.1196350785114" type="tpd4.JoinType" typeId="tpd4.1179479408386" id="2840424593984891864" nodeInfo="ng">
-              <node role="argument" roleId="tpd4.1179479418730" type="tp25.SModelType" typeId="tp25.1143226024141" id="2840424593984891865" nodeInfo="in" />
-              <node role="argument" roleId="tpd4.1179479418730" type="tp2q.SequenceType" typeId="tp2q.1151689724996" id="2840424593984891866" nodeInfo="in">
-                <node role="elementType" roleId="tp2q.1151689745422" type="tp25.SModelType" typeId="tp25.1143226024141" id="2840424593984891867" nodeInfo="in" />
-              </node>
               <node role="argument" roleId="tpd4.1179479418730" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2840424593984891868" nodeInfo="in">
                 <link role="classifier" roleId="tpee.1107535924139" targetNodeId="88zw.~SModule" resolveInfo="SModule" />
+                <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp3r.Antiquotation" typeId="tp3r.1196350785112" id="1190968896992143347" nodeInfo="ng">
+                  <node role="expression" roleId="tp3r.1196350785111" type="tpd4.TypeVarReference" typeId="tpd4.1174666260556" id="1190968896992143367" nodeInfo="nn">
+                    <link role="typeVarDeclaration" roleId="tpd4.1174666276259" targetNodeId="1190968896992143296" resolveInfo="v" />
+                  </node>
+                </node>
               </node>
               <node role="argument" roleId="tpd4.1179479418730" type="tp2q.SequenceType" typeId="tp2q.1151689724996" id="2840424593984891869" nodeInfo="in">
-                <node role="elementType" roleId="tp2q.1151689745422" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2840424593984891870" nodeInfo="in">
-                  <link role="classifier" roleId="tpee.1107535924139" targetNodeId="88zw.~SModule" resolveInfo="SModule" />
+                <node role="elementType" roleId="tp2q.1151689745422" type="tpee.WildCardType" typeId="tpee.1171903607971" id="1190968896992143252" nodeInfo="in">
+                  <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp3r.Antiquotation" typeId="tp3r.1196350785112" id="1190968896992143255" nodeInfo="ng">
+                    <node role="expression" roleId="tp3r.1196350785111" type="tpd4.TypeVarReference" typeId="tpd4.1174666260556" id="1190968896992143334" nodeInfo="nn">
+                      <link role="typeVarDeclaration" roleId="tpd4.1174666276259" targetNodeId="1190968896992143296" resolveInfo="v" />
+                    </node>
+                  </node>
                 </node>
               </node>
             </node>
           </node>
         </node>
       </node>
-      <node role="statement" roleId="tpee.1068581517665" type="tpee.Statement" typeId="tpee.1068580123157" id="5308946314780453315" nodeInfo="nn" />
+      <node role="statement" roleId="tpee.1068581517665" type="tpd4.CreateLessThanInequationStatement" typeId="tpd4.1174663118805" id="1190968896992143863" nodeInfo="nn">
+        <node role="rightExpression" roleId="tpd4.1174660783414" type="tpd4.NormalTypeClause" typeId="tpd4.1185788614172" id="1190968896992143908" nodeInfo="ng">
+          <node role="normalType" roleId="tpd4.1185788644032" type="tp3r.Quotation" typeId="tp3r.1196350785113" id="1190968896992143904" nodeInfo="nn">
+            <node role="quotedNode" roleId="tp3r.1196350785114" type="tpd4.JoinType" typeId="tpd4.1179479408386" id="1190968896992143941" nodeInfo="ng">
+              <node role="argument" roleId="tpd4.1179479418730" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1190968896992143978" nodeInfo="in">
+                <link role="classifier" roleId="tpee.1107535924139" targetNodeId="88zw.~SModule" resolveInfo="SModule" />
+              </node>
+              <node role="argument" roleId="tpd4.1179479418730" type="tp25.SModelType" typeId="tp25.1143226024141" id="1190968896992144059" nodeInfo="in" />
+            </node>
+          </node>
+        </node>
+        <node role="leftExpression" roleId="tpd4.1174660783413" type="tpd4.NormalTypeClause" typeId="tpd4.1185788614172" id="1190968896992143866" nodeInfo="ng">
+          <node role="normalType" roleId="tpd4.1185788644032" type="tpd4.TypeVarReference" typeId="tpd4.1174666260556" id="1190968896992143473" nodeInfo="nn">
+            <link role="typeVarDeclaration" roleId="tpd4.1174666276259" targetNodeId="1190968896992143296" resolveInfo="v" />
+          </node>
+        </node>
+      </node>
     </node>
     <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="2840424593984891399" nodeInfo="ig">
       <property name="name" nameId="tpck.1169194664001" value="absractMake" />

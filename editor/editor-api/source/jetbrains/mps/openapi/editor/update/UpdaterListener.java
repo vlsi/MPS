@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.openapi.editor.update;
 
+import jetbrains.mps.openapi.editor.EditorComponent;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 
 /**
@@ -23,4 +24,6 @@ import jetbrains.mps.openapi.editor.cells.EditorCell;
  */
 public interface UpdaterListener {
   public void cellSynchronizedWithModel(EditorCell cell);
+
+  void editorUpdated(EditorComponent editorComponent);
 }

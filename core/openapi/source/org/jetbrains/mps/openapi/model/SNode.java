@@ -18,10 +18,9 @@ package org.jetbrains.mps.openapi.model;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SConcept;
-import org.jetbrains.mps.openapi.language.SConceptId;
-import org.jetbrains.mps.openapi.language.SContainmentLinkId;
-import org.jetbrains.mps.openapi.language.SPropertyId;
-import org.jetbrains.mps.openapi.language.SReferenceLinkId;
+import org.jetbrains.mps.openapi.language.SContainmentLink;
+import org.jetbrains.mps.openapi.language.SProperty;
+import org.jetbrains.mps.openapi.language.SReferenceLink;
 
 /**
  * NODE STATES
@@ -73,13 +72,10 @@ public interface SNode {
    */
   SNodeReference getReference();
 
-  SConceptId getConceptId();
-
   /**
    * The concept that this node represents. Concepts can be compared using the "==" operator.
    * Does not produce node read event as the result value can't be changed.
    */
-  // deprecate? [Mihail Muhin]
   @NotNull
   SConcept getConcept();
 
@@ -95,7 +91,7 @@ public interface SNode {
 
   // tree operation
 
-  void addChild(SContainmentLinkId role, SNode child);
+  void addChild(SContainmentLink role, SNode child);
 
   /**
    * Inserts the given node as a child of the current node of the specified role directly behind the anchor node.<br/>
@@ -105,7 +101,7 @@ public interface SNode {
    * @param anchor a new child node will be inserted just before this node. If anchor is not specified,
    *               a new child is inserted as a last child
    */
-  void insertChildBefore(SContainmentLinkId role, SNode child, @Nullable SNode anchor);
+  void insertChildBefore(SContainmentLink role, SNode child, @Nullable SNode anchor);
 
   /**
    * Removes the child of this node. See "node manipulation" section in class doc
@@ -141,7 +137,7 @@ public interface SNode {
   /**
    * Returns role of this node in parent node
    */
-  SContainmentLinkId getRoleInParentId();
+  SContainmentLink getContainmentLink();
 
   SNode getFirstChild();
 
@@ -164,7 +160,7 @@ public interface SNode {
    * Does not produce read on current as current is already obtained, produces read accesses to child nodes lazily (when really accessed),
    * does not produce read accesses for skipped children
    */
-  Iterable<? extends SNode> getChildren(SContainmentLinkId role);
+  Iterable<? extends SNode> getChildren(SContainmentLink role);
 
   /**
    * Returns an immutable collection of all children.
@@ -177,12 +173,12 @@ public interface SNode {
   /**
    * Sets a reference of the given role to a particular node
    */
-  void setReferenceTarget(SReferenceLinkId role, @Nullable SNode target);
+  void setReferenceTarget(SReferenceLink role, @Nullable SNode target);
 
   /**
    * Null means the reference has not been set or was set to null. It's impossible to the distinguish the two cases.
    */
-  SNode getReferenceTarget(SReferenceLinkId role);
+  SNode getReferenceTarget(SReferenceLink role);
 
   // SReferences
 
@@ -191,14 +187,14 @@ public interface SNode {
    * Since SReference can refer to nodes by name and resolve them dynamically, this method may be able to help you resolve
    * the target node even when working with invalid code.
    */
-  SReference getReference(SReferenceLinkId role);
+  SReference getReference(SReferenceLink role);
 
   /**
    * Sets a reference of the given role to a node that is resolved from the SReference.
    * Since SReference can refer to nodes by name and resolve them dynamically, this method may be able to resolve
    * the target node even when working with invalid code.
    */
-  void setReference(SReferenceLinkId role, SReference reference);
+  void setReference(SReferenceLink role, SReference reference);
 
   /**
    * Retrieves all SReferences from the node.
@@ -215,13 +211,13 @@ public interface SNode {
   /**
    * Retrieves keys of all properties. The returned collection is immutable.
    */
-  Iterable<SPropertyId> getPropertyIds();
+  Iterable<SProperty> getProperties();
 
-  boolean hasProperty(SPropertyId property);
+  boolean hasProperty(SProperty property);
 
-  String getProperty(SPropertyId property);
+  String getProperty(SProperty property);
 
-  void setProperty(SPropertyId property, String propertyValue);
+  void setProperty(SProperty property, String propertyValue);
 
   // user objects
 

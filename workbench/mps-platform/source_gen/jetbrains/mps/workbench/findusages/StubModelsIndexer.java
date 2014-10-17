@@ -10,7 +10,7 @@ import java.util.Map;
 import com.intellij.psi.impl.cache.impl.id.IdIndexEntry;
 import com.intellij.util.indexing.FileContent;
 import java.util.Collections;
-import org.jetbrains.asm4.ClassReader;
+import org.jetbrains.org.objectweb.asm.ClassReader;
 import org.apache.log4j.Level;
 import jetbrains.mps.baseLanguage.javastub.asm.ASMClass;
 import jetbrains.mps.reloading.AbstractClassPathItem;

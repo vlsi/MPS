@@ -25,7 +25,6 @@
   </common>
   <source id="7036359038356246776" name="TestObject" hash="1pfc6ltt0d07hs0ekpqfzm3fgxey8a9">
     <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
-    <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
     <file name="TestObject.java" />
   </source>
   <source id="7036359038356253954" name="testExtensionPoint" hash="-akovi6kiqscmkosy6pn04mtrdqla8x7" />
@@ -44,7 +43,6 @@
   </source>
   <source id="2622946712629256054" name="lazyTestExtensionPoint_extension" hash="2lkw7upojemdvzcgzk81t63m3wn6olo">
     <dep root="2622946712629256033" />
-    <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="Extension_lazyTestExtensionPoint2622946712629256054_.java" />
   </source>
   <source id="4451661519483734255" name="multiExtensionPoint" hash="-a54q86xvnryz4t55vlu2zfnk6su0sg4" />

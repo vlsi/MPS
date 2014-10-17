@@ -11,14 +11,11 @@ import com.intellij.openapi.project.Project;
 
 public class Mapper implements MPS2PsiMapper {
 
-
   @Override
   public boolean hasCorrespondingPsi(SModel model) {
     ModelAccess.assertLegalRead();
     return model instanceof PsiJavaStubModelDescriptor;
   }
-
-
 
   @Override
   public PsiElement getPsiElement(final SNode node, Project project) {

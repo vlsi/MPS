@@ -29,7 +29,8 @@ import jetbrains.mps.smodel.loading.ModelLoadingState;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.mps.openapi.language.SLanguageId;
+import org.jetbrains.mps.openapi.language.SLanguage;
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.module.SModuleReference;
@@ -169,9 +170,17 @@ public abstract class SModelDescriptorStub implements SModelInternal, SModel, Fa
     }
   }
 
+  // likely has to return SModelData
   public jetbrains.mps.smodel.SModel getSModel() {
     return getSModelInternal();
   }
+
+  /**
+   * Likely, shall return SModelData eventually
+   * @return actual model data or <code>null</code> if not initialized yet
+   */
+  @Nullable
+  protected abstract jetbrains.mps.smodel.SModel getCurrentModelInternal();
 
   //
 
@@ -197,22 +206,22 @@ public abstract class SModelDescriptorStub implements SModelInternal, SModel, Fa
   }
 
   @Override
-  public java.util.Collection<SLanguageId> importedLanguageIds() {
+  public java.util.Collection<SLanguage> importedLanguageIds() {
     return getSModelInternal().usedLanguages();
   }
 
   @Override
-  public Map<SLanguageId, Integer> importedLanguageIdsWithVersions() {
+  public Map<SLanguage, Integer> importedLanguageIdsWithVersions() {
     return getSModelInternal().usedLanguagesWithVersions();
   }
 
   @Override
-  public Map<SLanguageId, Integer> implicitLanguageIdsWithVersions() {
+  public Map<SLanguage, Integer> implicitLanguageIdsWithVersions() {
     return getSModelInternal().implicitlyUsedLanguagesWithVersions();
   }
 
   @Override
-  public void deleteLanguageId(@NotNull SLanguageId ref) {
+  public void deleteLanguageId(@NotNull SLanguage ref) {
     getSModelInternal().deleteLanguage(ref);
   }
 
@@ -222,7 +231,7 @@ public abstract class SModelDescriptorStub implements SModelInternal, SModel, Fa
   }
 
   @Override
-  public void addLanguageId(SLanguageId ref, int version) {
+  public void addLanguageId(SLanguage ref, int version) {
     getSModelInternal().addLanguage(ref, version);
   }
 
