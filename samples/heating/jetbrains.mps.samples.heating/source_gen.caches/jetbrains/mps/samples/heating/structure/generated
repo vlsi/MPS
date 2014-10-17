@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-3hiwgs0sb9q5s3agb4vk6xucqufyf4d">
+<dependencies version="2" modelHash="55hol8gnkg3j4fdp416oxs25d1msq47">
   <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
   <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
-  <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="-2hubvwh7bwismm0eld02cqmdefvj5by" />
-  <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" hash="earelxj8tgzojre3f83be708tts5353" />
-  <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" hash="-2sqpydigz7vryaerubh22j78l4l08jz" />
-  <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="d987foka3qddszg3k3yjss0jaslj9i" />
-  <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="8cdjk2e5d2y2u9lult1ptgxxrttxv07" />
-  <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" hash="5g3rtdo35mi5yfu1kii2pegdk4kei4n" />
-  <common hash="7ls4hnfyzbmypk3ch1rp3bn8pak45nh" dependsOnNodes="true">
+  <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="asr5cx3a2t742wnhd54bmw5nnorf27b" />
+  <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" hash="-ao0l10z0f2wkpgbk7im0sm0thsegm6l" />
+  <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" hash="-53rt67n6c8bg7qn5r7z7snc1hbcxlo0" />
+  <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="-aoqr8hwyzn1gt1phtgpxwftwo6ha0xu" />
+  <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="-7vi6o2vv1wkdocz9yt650rota5r2v6a" />
+  <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" hash="38r3raexgu59nqkszt3w5pcueyx37lt" />
+  <common hash="55hol8gnkg3j4fdp416oxs25d1msq47" dependsOnNodes="true">
     <dep root="4664795093170414652" />
     <dep root="4664795093170436280" />
     <dep root="4664795093170436346" />
@@ -29,10 +29,10 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="StructureAspectDescriptor.java" />
   </common>
-  <source id="5063359128232698866" name="HeatingPlan" hash="b5ozlfj7j69ivxfdh0kodqesy66an8o" />
-  <source id="5063359128232717391" name="DailyPlan" hash="d5hsxpo1yjdolzux87ej6znvtudxqgc" />
-  <source id="5063359128232717410" name="ChangeEvent" hash="1he4s44mhktj26595jg4f1zlaqpmlz9" />
-  <source id="5063359128233346660" name="DayDataType" hash="8zs4bvijn0ts98il8yws364jk3u9t6t">
+  <source id="5063359128232698866" name="HeatingPlan" />
+  <source id="5063359128232717391" name="DailyPlan" />
+  <source id="5063359128232717410" name="ChangeEvent" />
+  <source id="5063359128233346660" name="DayDataType">
     <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
@@ -43,13 +43,13 @@
     <file name="DayDataType.java" />
     <file name="DayDataType_PropertySupport.java" />
   </source>
-  <source id="4664795093170414652" name="Applicability" hash="4gwh90elbyzkcooxxwtwivbaejbo7kd" />
-  <source id="4664795093170436280" name="NotSpecified" hash="-9zen5rhsxfml0xub4wiqs0ymz68j7nz" />
-  <source id="4664795093170436346" name="WeekendDay" hash="-4pkuzeayeua034985jsxacl5bs5wliv" />
-  <source id="4664795093170605733" name="WeekDays" hash="3rha6fi9156gpk1q8208p6f5crb4gtk" />
-  <source id="4664795093170605734" name="SpecificDay" hash="-evkmw6fagclrl0mjv7pmmbai40x5x7p" />
-  <source id="4664795093170636139" name="DayRange" hash="8zuh8upr6erk46mbw4l2dah9nxbaeo5" />
-  <source id="5726447348463731062" name="Slot" hash="-bxepcnlpdxxnycangvpkvmygyiuwy0v" />
-  <source id="935069066462619696" name="DailyPlanReference" hash="-a6d9xe2f1ze0nrj9y58helkfbpkrc8p" />
+  <source id="4664795093170414652" name="Applicability" />
+  <source id="4664795093170436280" name="NotSpecified" />
+  <source id="4664795093170436346" name="WeekendDay" />
+  <source id="4664795093170605733" name="WeekDays" />
+  <source id="4664795093170605734" name="SpecificDay" />
+  <source id="4664795093170636139" name="DayRange" />
+  <source id="5726447348463731062" name="Slot" />
+  <source id="935069066462619696" name="DailyPlanReference" />
 </dependencies>
 

@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-6nphmv16ywz12esuftzqyd50386b33n">
-  <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="d987foka3qddszg3k3yjss0jaslj9i" />
-  <common hash="-ek1auhyafkvffdfye0e2inykn94w2l" dependsOnNodes="true">
+<dependencies version="2" modelHash="-bnqqvl7lmtp79fqu83pny1luojjzui6">
+  <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="-aoqr8hwyzn1gt1phtgpxwftwo6ha0xu" />
+  <common hash="-bnqqvl7lmtp79fqu83pny1luojjzui6" dependsOnNodes="true">
     <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
   </common>
-  <source id="3515521059660696284" name="Usage" hash="97e0prlk4n6h6s7rddth61uwxoy1gjd">
+  <source id="3515521059660696284" name="Usage">
     <file name="Usage.java" />
   </source>
-  <source id="3515521059660696310" name="ServiceCall" hash="-11l0laruiww39qaayr858qamctgrbqz">
+  <source id="3515521059660696310" name="ServiceCall">
     <file name="ServiceCall.java" />
   </source>
 </dependencies>

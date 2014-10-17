@@ -429,7 +429,7 @@ public class TemplateFinderClass implements TemplateDeclaration {
               final SNode tnode37 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.AnnotationInstance");
               try {
                 environment.nodeCopied(context, tnode37, "tpl/r:00000000-0000-4000-0000-011c8959035c/6297023828537985155");
-                tnode37.setReference("annotation", SReference.create("annotation", tnode37, PersistenceFacade.getInstance().createModelReference("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(java.lang@java_stub)"), PersistenceFacade.getInstance().createNodeId("~Override")));
+                tnode37.setReference("annotation", SReference.create("annotation", tnode37, PersistenceFacade.getInstance().createModelReference("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), PersistenceFacade.getInstance().createNodeId("~Override")));
               } finally {
               }
               if (tnode37 != null) {
@@ -491,7 +491,7 @@ public class TemplateFinderClass implements TemplateDeclaration {
               final SNode tnode45 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.AnnotationInstance");
               try {
                 environment.nodeCopied(context, tnode45, "tpl/r:00000000-0000-4000-0000-011c8959035c/100784871543498844");
-                tnode45.setReference("annotation", SReference.create("annotation", tnode45, PersistenceFacade.getInstance().createModelReference("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(java.lang@java_stub)"), PersistenceFacade.getInstance().createNodeId("~Override")));
+                tnode45.setReference("annotation", SReference.create("annotation", tnode45, PersistenceFacade.getInstance().createModelReference("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), PersistenceFacade.getInstance().createNodeId("~Override")));
               } finally {
               }
               if (tnode45 != null) {
@@ -540,7 +540,7 @@ public class TemplateFinderClass implements TemplateDeclaration {
             final SNode tnode50 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.AnnotationInstance");
             try {
               environment.nodeCopied(context, tnode50, "tpl/r:00000000-0000-4000-0000-011c8959035c/8441762775552293512");
-              tnode50.setReference("annotation", SReference.create("annotation", tnode50, PersistenceFacade.getInstance().createModelReference("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(java.lang@java_stub)"), PersistenceFacade.getInstance().createNodeId("~Override")));
+              tnode50.setReference("annotation", SReference.create("annotation", tnode50, PersistenceFacade.getInstance().createModelReference("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), PersistenceFacade.getInstance().createNodeId("~Override")));
             } finally {
             }
             if (tnode50 != null) {
@@ -622,7 +622,7 @@ public class TemplateFinderClass implements TemplateDeclaration {
               final SNode tnode58 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.AnnotationInstance");
               try {
                 environment.nodeCopied(context, tnode58, "tpl/r:00000000-0000-4000-0000-011c8959035c/8441762775552293509");
-                tnode58.setReference("annotation", SReference.create("annotation", tnode58, PersistenceFacade.getInstance().createModelReference("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(java.lang@java_stub)"), PersistenceFacade.getInstance().createNodeId("~Override")));
+                tnode58.setReference("annotation", SReference.create("annotation", tnode58, PersistenceFacade.getInstance().createModelReference("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), PersistenceFacade.getInstance().createNodeId("~Override")));
               } finally {
               }
               if (tnode58 != null) {
@@ -704,7 +704,7 @@ public class TemplateFinderClass implements TemplateDeclaration {
             final SNode tnode66 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.AnnotationInstance");
             try {
               environment.nodeCopied(context, tnode66, "tpl/r:00000000-0000-4000-0000-011c8959035c/8441762775552293511");
-              tnode66.setReference("annotation", SReference.create("annotation", tnode66, PersistenceFacade.getInstance().createModelReference("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(java.lang@java_stub)"), PersistenceFacade.getInstance().createNodeId("~Override")));
+              tnode66.setReference("annotation", SReference.create("annotation", tnode66, PersistenceFacade.getInstance().createModelReference("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), PersistenceFacade.getInstance().createNodeId("~Override")));
             } finally {
             }
             if (tnode66 != null) {
@@ -786,7 +786,7 @@ public class TemplateFinderClass implements TemplateDeclaration {
               final SNode tnode74 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.AnnotationInstance");
               try {
                 environment.nodeCopied(context, tnode74, "tpl/r:00000000-0000-4000-0000-011c8959035c/8441762775552230284");
-                tnode74.setReference("annotation", SReference.create("annotation", tnode74, PersistenceFacade.getInstance().createModelReference("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(java.lang@java_stub)"), PersistenceFacade.getInstance().createNodeId("~Override")));
+                tnode74.setReference("annotation", SReference.create("annotation", tnode74, PersistenceFacade.getInstance().createModelReference("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), PersistenceFacade.getInstance().createNodeId("~Override")));
               } finally {
               }
               if (tnode74 != null) {
@@ -866,7 +866,7 @@ public class TemplateFinderClass implements TemplateDeclaration {
             final SNode tnode83 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.AnnotationInstance");
             try {
               environment.nodeCopied(context, tnode83, "tpl/r:00000000-0000-4000-0000-011c8959035c/8441762775552213287");
-              tnode83.setReference("annotation", SReference.create("annotation", tnode83, PersistenceFacade.getInstance().createModelReference("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(java.lang@java_stub)"), PersistenceFacade.getInstance().createNodeId("~Override")));
+              tnode83.setReference("annotation", SReference.create("annotation", tnode83, PersistenceFacade.getInstance().createModelReference("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), PersistenceFacade.getInstance().createNodeId("~Override")));
             } finally {
             }
             if (tnode83 != null) {
@@ -1170,7 +1170,7 @@ public class TemplateFinderClass implements TemplateDeclaration {
               final SNode tnode113 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.AnnotationInstance");
               try {
                 environment.nodeCopied(context, tnode113, "tpl/r:00000000-0000-4000-0000-011c8959035c/8441762775552293510");
-                tnode113.setReference("annotation", SReference.create("annotation", tnode113, PersistenceFacade.getInstance().createModelReference("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(java.lang@java_stub)"), PersistenceFacade.getInstance().createNodeId("~Override")));
+                tnode113.setReference("annotation", SReference.create("annotation", tnode113, PersistenceFacade.getInstance().createModelReference("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), PersistenceFacade.getInstance().createNodeId("~Override")));
               } finally {
               }
               if (tnode113 != null) {
@@ -1299,7 +1299,7 @@ public class TemplateFinderClass implements TemplateDeclaration {
               final SNode tnode127 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.AnnotationInstance");
               try {
                 environment.nodeCopied(context, tnode127, "tpl/r:00000000-0000-4000-0000-011c8959035c/8441762775552293508");
-                tnode127.setReference("annotation", SReference.create("annotation", tnode127, PersistenceFacade.getInstance().createModelReference("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(java.lang@java_stub)"), PersistenceFacade.getInstance().createNodeId("~Override")));
+                tnode127.setReference("annotation", SReference.create("annotation", tnode127, PersistenceFacade.getInstance().createModelReference("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), PersistenceFacade.getInstance().createNodeId("~Override")));
               } finally {
               }
               if (tnode127 != null) {

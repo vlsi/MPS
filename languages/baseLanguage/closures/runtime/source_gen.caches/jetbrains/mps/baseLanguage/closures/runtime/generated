@@ -1,43 +1,44 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="1lvd3jbfhep9lv3y6d6of9h2mq6llgw">
-  <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" hash="-2sqpydigz7vryaerubh22j78l4l08jz" />
-  <dep model="r:00000000-0000-4000-0000-011c8959033a(jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main@generator)" hash="-b3dab08ja7vi0k0se11vqmnwfgecq5y" />
-  <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="d987foka3qddszg3k3yjss0jaslj9i" />
-  <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="8cdjk2e5d2y2u9lult1ptgxxrttxv07" />
-  <common hash="-4l0dazqgqqktwkym9yok21ult83r1v5" dependsOnNodes="true">
+<dependencies version="2" modelHash="8sg68lb93k5e3qd6z6kcl4yzkns9dtd">
+  <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" hash="-53rt67n6c8bg7qn5r7z7snc1hbcxlo0" />
+  <dep model="r:00000000-0000-4000-0000-011c8959033a(jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main@generator)" hash="dw57a8jlsa54y21wyq1k7w87qs6tc1x" />
+  <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="-aoqr8hwyzn1gt1phtgpxwftwo6ha0xu" />
+  <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="-7vi6o2vv1wkdocz9yt650rota5r2v6a" />
+  <common hash="8sg68lb93k5e3qd6z6kcl4yzkns9dtd" dependsOnNodes="true">
     <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c8959033a(jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main@generator)" />
     <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
-    <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="_UnrestrictedClosures.java" />
   </common>
-  <source id="8649343297855554552" name="AdapterClass" hash="b229pq4ggwb0mrho8yaypvqjfnxqp7r">
+  <source id="8649343297855554552" name="AdapterClass">
     <file name="AdapterClass.java" />
   </source>
-  <source id="3812443517665722597" name="Outcome" hash="-a3j8xx34ld029hcifbg80nd3r322f6r">
+  <source id="3812443517665722597" name="Outcome">
     <file name="Outcome.java" />
   </source>
-  <source id="3812443517665722609" name="Nothing" hash="3193k62s78v27kgnzzuw6aeh668heb2">
+  <source id="3812443517665722609" name="Nothing">
     <file name="Nothing.java" />
   </source>
-  <source id="3812443517665722615" name="Wrappers" hash="bfwnqqadurgjh8lav8abm3bhuudp5e6">
+  <source id="3812443517665722615" name="Wrappers">
     <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
     <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
     <file name="Wrappers.java" />
   </source>
-  <source id="3812443517665722868" name="DelayedException" hash="40c1w3awapoagibm017erla3i41gwu0">
+  <source id="3812443517665722868" name="DelayedException">
+    <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="DelayedException.java" />
   </source>
-  <source id="3812443517665722916" name="YieldingIterator" hash="85xc6fylxjupm5tvtu3rk9m4am5brej">
+  <source id="3812443517665722916" name="YieldingIterator">
     <file name="YieldingIterator.java" />
   </source>
-  <source id="4914003190800642467" name="Result" hash="7qceq1s5hc6oenpu6lenv5iib4e4s1l">
+  <source id="4914003190800642467" name="Result">
+    <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
     <file name="Result.java" />
   </source>
-  <source id="5571879668402581510" name="_FunctionTypes" hash="-rf62m0rz4cxwkj82w3iwc2qg8t2jml">
+  <source id="5571879668402581510" name="_FunctionTypes">
     <file name="_FunctionTypes.java" />
   </source>
-  <source id="3216938209400119778" name="_UnrestrictedFunctionTypes" hash="-9ip2nn9obwmpth5oi8obbt0hrebfjjr">
+  <source id="3216938209400119778" name="_UnrestrictedFunctionTypes">
     <file name="_UnrestrictedFunctionTypes.java" />
   </source>
 </dependencies>

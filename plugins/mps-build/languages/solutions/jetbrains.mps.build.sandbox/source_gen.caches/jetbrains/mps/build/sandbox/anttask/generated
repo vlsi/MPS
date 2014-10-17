@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-44ph047xh93a01k4tk2csf5t4mx97fh">
-  <common hash="2o08w1d9p8lztbyvfqqw3xchkviq765" />
-  <source id="5738701198683704599" name="genxmltest" hash="-diidnqbiglwpq37cm9dhy63q3i7m0wj">
+<dependencies version="2" modelHash="-d8lz7hbxq4nqq1uxxy0g3lcrrqdup9z">
+  <common hash="-d8lz7hbxq4nqq1uxxy0g3lcrrqdup9z" />
+  <source id="5738701198683704599" name="genxmltest">
     <file name="genxmltest.xml" />
   </source>
 </dependencies>

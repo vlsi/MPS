@@ -1,40 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="1t7j7tcxdhpq0n0o4eacggeu5qq1wbk">
+<dependencies version="2" modelHash="4kj5mm1l7utygtxk6h4vgdthp1vba77">
   <dep model="a3e4657f-a76c-45bb-bbda-c764596ecc65/f:java_stub#a3e4657f-a76c-45bb-bbda-c764596ecc65#org.apache.log4j(jetbrains.mps.baseLanguage.logging.runtime/org.apache.log4j@java_stub)" />
-  <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" hash="-2sqpydigz7vryaerubh22j78l4l08jz" />
-  <dep model="r:00000000-0000-4000-0000-011c89590580(jetbrains.mps.baseLanguage.logging.generator.baseLanguage.template.main@generator)" hash="esw4kfzqsep0i31uc99yts4q6nnhwtf" />
-  <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="d987foka3qddszg3k3yjss0jaslj9i" />
-  <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="8cdjk2e5d2y2u9lult1ptgxxrttxv07" />
-  <common hash="-76szgturty9l4gw09rn6qg37fko8x3b" dependsOnNodes="true">
+  <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" hash="-53rt67n6c8bg7qn5r7z7snc1hbcxlo0" />
+  <dep model="r:00000000-0000-4000-0000-011c89590580(jetbrains.mps.baseLanguage.logging.generator.baseLanguage.template.main@generator)" hash="-8k8y74fj79goafxbx7epzdumg6xfyu4" />
+  <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="-aoqr8hwyzn1gt1phtgpxwftwo6ha0xu" />
+  <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="-7vi6o2vv1wkdocz9yt650rota5r2v6a" />
+  <common hash="4kj5mm1l7utygtxk6h4vgdthp1vba77" dependsOnNodes="true">
     <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
   </common>
-  <source id="4727801710070561555" name="EvaluationUtils" hash="bh5jpm2jpm614lf0b5h4mzpfshkrtsc">
+  <source id="4727801710070561555" name="EvaluationUtils">
     <dep model="a3e4657f-a76c-45bb-bbda-c764596ecc65/f:java_stub#a3e4657f-a76c-45bb-bbda-c764596ecc65#org.apache.log4j(jetbrains.mps.baseLanguage.logging.runtime/org.apache.log4j@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c89590580(jetbrains.mps.baseLanguage.logging.generator.baseLanguage.template.main@generator)" />
     <file name="EvaluationUtils.java" />
   </source>
-  <source id="4727801710070563175" name="Evaluator" hash="6asog8vvv5aofpcpw5e5iyx68ttprqc">
+  <source id="4727801710070563175" name="Evaluator">
     <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
     <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
-    <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="Evaluator.java" />
   </source>
-  <source id="4727801710070563657" name="InvocationTargetEvaluationException" hash="-19qw8fureuuo3pogc43j7nufrh8k3oz">
+  <source id="4727801710070563657" name="InvocationTargetEvaluationException">
+    <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="InvocationTargetEvaluationException.java" />
   </source>
-  <source id="4727801710070563829" name="EvaluationRuntimeException" hash="-pihfciods7v4efdn58f7bt72o4dlfx">
+  <source id="4727801710070563829" name="EvaluationRuntimeException">
     <file name="EvaluationRuntimeException.java" />
   </source>
-  <source id="4727801710070563894" name="EvaluationException" hash="-b1kysdmku8lbxt0oiv7ijh1iv0wofl6">
+  <source id="4727801710070563894" name="EvaluationException">
     <file name="EvaluationException.java" />
   </source>
-  <source id="4727801710070563977" name="TargetVMEvaluationException" hash="-akjtp26ceskckl1wbqnzoqz2naiyzyr">
+  <source id="4727801710070563977" name="TargetVMEvaluationException">
     <file name="TargetVMEvaluationException.java" />
   </source>
-  <source id="4727801710070564141" name="InvalidEvaluatedExpressionException" hash="4hmi20eva07v5joqbgsfe5068ury81q">
+  <source id="4727801710070564141" name="InvalidEvaluatedExpressionException">
     <file name="InvalidEvaluatedExpressionException.java" />
   </source>
-  <source id="4963955491753979760" name="JdiRuntimeExceptionEvaluationException" hash="emvf0ronxwvrj0l8y9831m9q2eppqh9">
+  <source id="4963955491753979760" name="JdiRuntimeExceptionEvaluationException">
     <file name="JdiRuntimeExceptionEvaluationException.java" />
   </source>
 </dependencies>
