@@ -34,7 +34,6 @@ import jetbrains.mps.smodel.persistence.def.IModelWriter;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.util.CollectConsumer;
 import jetbrains.mps.util.IterableUtil;
-import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.StringUtil;
 import org.jdom.Document;
 import org.jdom.Element;
@@ -46,6 +45,9 @@ import org.jetbrains.mps.openapi.model.SNodeId;
 import org.jetbrains.mps.openapi.model.SReference;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.HashMap;
 import java.util.LinkedHashSet;
 import java.util.Map;
@@ -223,23 +225,41 @@ public class ModelWriter9 implements IModelWriter {
   }
 
   private void saveUsedLanguages(Element rootElement, SModel sourceModel) {
-    for (Entry<SLanguage, Integer> language : sourceModel.usedLanguagesWithVersions().entrySet()) {
-      myHelper.addLanguage(IdHelper.getLanguageId(language.getKey()));
+    Map<SLanguage, Integer> usedLangs = sourceModel.usedLanguagesWithVersions();
+    ArrayList<SLanguage> keys = new ArrayList<SLanguage>(usedLangs.keySet());
+    sortLanguages(keys);
+
+    for (SLanguage l : keys) {
+      myHelper.addLanguage(IdHelper.getLanguageId(l));
       Element languageElem = new Element(ModelPersistence9.USED_LANGUAGE);
-      languageElem.setAttribute(ModelPersistence9.ID, IdHelper.getLanguageId(language.getKey()).serialize());
-      languageElem.setAttribute(ModelPersistence9.VERSION, Integer.toString(language.getValue()));
-      languageElem.setAttribute(ModelPersistence9.USE_INDEX, myHelper.getUsedLanguageIndex(IdHelper.getLanguageId(language.getKey())));
+      languageElem.setAttribute(ModelPersistence9.ID, IdHelper.getLanguageId(l).serialize());
+      languageElem.setAttribute(ModelPersistence9.VERSION, Integer.toString(usedLangs.get(l)));
+      languageElem.setAttribute(ModelPersistence9.USE_INDEX, myHelper.getUsedLanguageIndex(IdHelper.getLanguageId(l)));
       rootElement.addContent(languageElem);
     }
-    for (Entry<SLanguage, Integer> language : sourceModel.implicitlyUsedLanguagesWithVersions().entrySet()) {
-      myHelper.addLanguage(IdHelper.getLanguageId(language.getKey()));
+
+    usedLangs = sourceModel.implicitlyUsedLanguagesWithVersions();
+    keys = new ArrayList<SLanguage>(usedLangs.keySet());
+    sortLanguages(keys);
+
+    for (SLanguage l : keys) {
+      myHelper.addLanguage(IdHelper.getLanguageId(l));
       Element languageElem = new Element(ModelPersistence9.USED_LANGUAGE);
-      languageElem.setAttribute(ModelPersistence9.ID, IdHelper.getLanguageId(language.getKey()).serialize());
-      languageElem.setAttribute(ModelPersistence9.VERSION, Integer.toString(language.getValue()));
+      languageElem.setAttribute(ModelPersistence9.ID, IdHelper.getLanguageId(l).serialize());
+      languageElem.setAttribute(ModelPersistence9.VERSION, Integer.toString(usedLangs.get(l)));
       languageElem.setAttribute(ModelPersistence9.IMPLICIT, "true");
-      languageElem.setAttribute(ModelPersistence9.USE_INDEX, myHelper.getUsedLanguageIndex(IdHelper.getLanguageId(language.getKey())));
+      languageElem.setAttribute(ModelPersistence9.USE_INDEX, myHelper.getUsedLanguageIndex(IdHelper.getLanguageId(l)));
       rootElement.addContent(languageElem);
     }
+  }
+
+  private void sortLanguages(ArrayList<SLanguage> keys) {
+    Collections.sort(keys, new Comparator<SLanguage>() {
+      @Override
+      public int compare(SLanguage o1, SLanguage o2) {
+        return o1.getQualifiedName().compareTo(o2.getQualifiedName());
+      }
+    });
   }
 
 
