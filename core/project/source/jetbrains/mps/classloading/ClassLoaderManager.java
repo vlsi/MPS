@@ -345,7 +345,7 @@ public class ClassLoaderManager implements CoreComponent {
   }
 
   /**
-   * @deprecated use module-specific methods
+   * @deprecated use module-specific method {@link jetbrains.mps.module.ReloadableModule#reload()}
    * @see jetbrains.mps.module.ReloadableModule
    * @see jetbrains.mps.project.ReloadableAbstractModule
    */
