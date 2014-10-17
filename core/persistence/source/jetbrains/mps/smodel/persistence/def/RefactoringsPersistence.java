@@ -58,8 +58,9 @@ public class RefactoringsPersistence {
       save(((FileDataSource) dataSource).getFile(), log);
     } else if (dataSource instanceof MultiStreamDataSource) {
       save((MultiStreamDataSource) dataSource, log);
+    } else {
+      throw new UnsupportedOperationException("cannot save structure modification log for " + dataSource.getClass().getName());
     }
-    throw new UnsupportedOperationException("cannot save structure modification log for " + dataSource);
   }
 
   public static void save(IFile modelFile, StructureModificationLog log) {
