@@ -9,12 +9,12 @@
   </common>
   <source id="3432969378036014056" name="JavaWatchable">
     <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
+    <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="JavaWatchable.java" />
   </source>
   <source id="3432969378036014277" name="JavaThisObject">
     <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
     <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
-    <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="JavaThisObject.java" />
   </source>
   <source id="3432969378036015831" name="CustomJavaWatchable">
@@ -25,10 +25,11 @@
     <file name="JavaStaticContext.java" />
   </source>
   <source id="3432969378036016095" name="JavaStaticField">
-    <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
     <file name="JavaStaticField.java" />
   </source>
   <source id="3432969378036014276" name="JavaLocalVariable">
+    <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
     <file name="JavaLocalVariable.java" />
   </source>
   <source id="3432969378036017747" name="CalculatedWatchable">

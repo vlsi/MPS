@@ -21,9 +21,11 @@
     <file name="JavaReturnWatchable.java" />
   </source>
   <source id="3187167456722650243" name="JavaMethodWatchable">
+    <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
     <file name="JavaMethodWatchable.java" />
   </source>
   <source id="3187167456722650363" name="JavaExceptionWatchable">
+    <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
     <file name="JavaExceptionWatchable.java" />
   </source>
   <source id="3187167456722821378" name="EventWatchablesCreator">

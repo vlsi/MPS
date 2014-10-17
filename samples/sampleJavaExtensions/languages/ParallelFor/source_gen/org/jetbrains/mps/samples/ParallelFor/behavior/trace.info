@@ -10,7 +10,7 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.WhileStatement" />
   <root>
     <file name="ParallelFor_BehaviorDescriptor.java">
-      <unit at="15,0,53,0" name="org.jetbrains.mps.samples.ParallelFor.behavior.ParallelFor_BehaviorDescriptor" />
+      <unit at="15,0,56,0" name="org.jetbrains.mps.samples.ParallelFor.behavior.ParallelFor_BehaviorDescriptor" />
     </file>
     <file name="ThreadPool_BehaviorDescriptor.java">
       <unit at="7,0,15,0" name="org.jetbrains.mps.samples.ParallelFor.behavior.ThreadPool_BehaviorDescriptor" />

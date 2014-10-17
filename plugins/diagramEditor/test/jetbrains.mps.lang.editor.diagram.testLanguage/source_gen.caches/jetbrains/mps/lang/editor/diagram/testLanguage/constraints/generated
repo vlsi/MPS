@@ -20,7 +20,6 @@
   </common>
   <source id="8794120090377793827" name="NodeWithSize_Constraints">
     <dep model="r:02ea189f-ea3a-4774-be86-1c8ef281dd30(jetbrains.mps.lang.editor.diagram.testLanguage.structure)" />
-    <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="NodeWithSize_Constraints.java" />
   </source>
 </dependencies>

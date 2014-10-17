@@ -14,11 +14,10 @@
     <file name="ASMArrayType.java" />
   </source>
   <source id="7241381882860002170" name="ASMClassType">
-    <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
-    <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="ASMClassType.java" />
   </source>
   <source id="7241381882860005690" name="ASMMethod">
+    <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
     <file name="ASMMethod.java" />
   </source>
   <source id="7241381882860006706" name="ASMPrimitiveType">
@@ -26,7 +25,6 @@
   </source>
   <source id="7241381882860006793" name="ASMField">
     <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
-    <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
     <file name="ASMField.java" />
   </source>
   <source id="7241381882860001929" name="SignatureVisitorAdapter">

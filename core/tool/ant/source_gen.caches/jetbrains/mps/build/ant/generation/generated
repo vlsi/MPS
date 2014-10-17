@@ -13,6 +13,7 @@
     <file name="Chunk.java" />
   </source>
   <source id="9096318311151864960" name="ModuleChunkPart">
+    <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
     <file name="ModuleChunkPart.java" />
   </source>
   <source id="4263887295358464059" name="GenerateTask">
@@ -22,11 +23,9 @@
     <file name="GenerateTask.java" />
   </source>
   <source id="978600701689990961" name="Plugin">
-    <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
     <file name="Plugin.java" />
   </source>
   <source id="861826518923203126" name="GenTestTask">
-    <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
     <file name="GenTestTask.java" />
   </source>
 </dependencies>

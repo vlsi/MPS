@@ -443,30 +443,30 @@ public class BehaviorAspectDescriptor implements jetbrains.mps.smodel.runtime.Be
         return new StubEditorCellModel_BehaviorDescriptor();
       case 202:
         return new StubCellModel_RefNodeList_BehaviorDescriptor();
-      case 192:
-        return new StubCellModel_Error_BehaviorDescriptor();
-      case 196:
-        return new StubCellModel_ModelAccess_BehaviorDescriptor();
-      case 205:
-        return new StubCellModel_TransactionalProperty_BehaviorDescriptor();
-      case 206:
-        return new StubCellModel_URL_BehaviorDescriptor();
-      case 185:
-        return new StubCellModel_Alteration_BehaviorDescriptor();
-      case 186:
-        return new StubCellModel_Block_BehaviorDescriptor();
-      case 190:
-        return new StubCellModel_Custom_BehaviorDescriptor();
-      case 191:
-        return new StubCellModel_Empty_BehaviorDescriptor();
-      case 193:
-        return new StubCellModel_HierarchycalTable_BehaviorDescriptor();
       case 194:
         return new StubCellModel_Image_BehaviorDescriptor();
       case 195:
         return new StubCellModel_JComponent_BehaviorDescriptor();
       case 204:
         return new StubCellModel_Table_BehaviorDescriptor();
+      case 185:
+        return new StubCellModel_Alteration_BehaviorDescriptor();
+      case 193:
+        return new StubCellModel_HierarchycalTable_BehaviorDescriptor();
+      case 191:
+        return new StubCellModel_Empty_BehaviorDescriptor();
+      case 206:
+        return new StubCellModel_URL_BehaviorDescriptor();
+      case 205:
+        return new StubCellModel_TransactionalProperty_BehaviorDescriptor();
+      case 196:
+        return new StubCellModel_ModelAccess_BehaviorDescriptor();
+      case 192:
+        return new StubCellModel_Error_BehaviorDescriptor();
+      case 190:
+        return new StubCellModel_Custom_BehaviorDescriptor();
+      case 186:
+        return new StubCellModel_Block_BehaviorDescriptor();
       default:
         return BehaviorAspectInterpreted.getInstance().getDescriptor(fqName);
     }

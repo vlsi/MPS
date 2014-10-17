@@ -19,10 +19,10 @@
     <file name="Evaluator.java" />
   </source>
   <source id="4727801710070563657" name="InvocationTargetEvaluationException">
-    <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="InvocationTargetEvaluationException.java" />
   </source>
   <source id="4727801710070563829" name="EvaluationRuntimeException">
+    <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="EvaluationRuntimeException.java" />
   </source>
   <source id="4727801710070563894" name="EvaluationException">

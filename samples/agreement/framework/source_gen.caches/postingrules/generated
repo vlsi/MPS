@@ -38,7 +38,6 @@
     <file name="TaxEvent.java" />
   </source>
   <source id="6531435794299652730" name="Usage">
-    <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
     <file name="Usage.java" />
   </source>
   <source id="6531435794299653396" name="ServiceAgreement">

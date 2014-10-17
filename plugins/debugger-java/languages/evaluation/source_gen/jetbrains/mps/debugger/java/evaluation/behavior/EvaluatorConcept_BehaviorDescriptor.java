@@ -32,6 +32,9 @@ public class EvaluatorConcept_BehaviorDescriptor extends BaseConcept_BehaviorDes
   public boolean virtual_supportsCheckedExceptions_8510677279630867629(SNode thisNode) {
     return IMethodLike_Behavior.virtual_supportsCheckedExceptions_8510677279630867629(thisNode);
   }
+  public boolean virtual_suppress_3393165121846091591(SNode thisNode, SNode child) {
+    return IMethodLike_Behavior.virtual_suppress_3393165121846091591(thisNode, child);
+  }
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.debugger.java.evaluation.structure.EvaluatorConcept";

@@ -13,12 +13,15 @@
     <file name="MultiplyOperation.java" />
   </source>
   <source id="8307544070813664794" name="IfFunction">
+    <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
+    <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="IfFunction.java" />
   </source>
   <source id="8307544070813664858" name="Function">
     <file name="Function.java" />
   </source>
   <source id="8307544070813664867" name="DoubleConstant">
+    <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
     <file name="DoubleConstant.java" />
   </source>
 </dependencies>

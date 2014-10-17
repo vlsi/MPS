@@ -15,6 +15,7 @@
   </source>
   <source id="6877931680625741277" name="HStateMachineFactory">
     <dep model="r:84968794-d306-4a7a-9857-08605b2b07d6(jetbrains.mps.samples.secretCompartmentLanguage.runtime)" />
+    <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="HStateMachineFactory.java" />
   </source>
 </dependencies>
