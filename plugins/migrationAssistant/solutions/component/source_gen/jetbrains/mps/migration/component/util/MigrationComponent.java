@@ -6,9 +6,6 @@ import com.intellij.openapi.components.AbstractProjectComponent;
 import jetbrains.mps.ide.migration.MigrationManager;
 import jetbrains.mps.lang.migration.runtime.base.DataCollector;
 import java.util.Map;
-
-import jetbrains.mps.smodel.adapter.ids.MetaIdByDeclaration;
-import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.lang.migration.runtime.base.MigrationDescriptor;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
@@ -29,6 +26,8 @@ import jetbrains.mps.ide.migration.ScriptApplied;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.lang.migration.runtime.base.MigrationScriptReference;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
+import org.jetbrains.mps.openapi.language.SLanguage;
+import jetbrains.mps.smodel.adapter.ids.MetaIdByDeclaration;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
