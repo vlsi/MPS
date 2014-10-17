@@ -17,12 +17,10 @@ package jetbrains.mps.smodel;
 
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.module.SModule;
-import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.module.SRepository;
-import org.jetbrains.mps.openapi.module.SRepositoryAdapter;
 import org.jetbrains.mps.openapi.module.SRepositoryListener;
+import org.jetbrains.mps.openapi.module.SRepositoryListenerBase;
 import org.jetbrains.mps.openapi.module.event.SModuleAddedEvent;
-import org.jetbrains.mps.openapi.module.event.SModuleRemovedEvent;
 import org.jetbrains.mps.openapi.module.event.SModuleRemovingEvent;
 import org.jetbrains.mps.openapi.module.event.SRepositoryEvent;
 
@@ -79,8 +77,8 @@ public class BatchEventsProcessor {
     myRepository.removeRepositoryListener(mySRepositoryListener);
   }
 
-
-  private class MySRepositoryListener extends SRepositoryAdapter {
+  // repository listener picks only two events
+  private class MySRepositoryListener extends SRepositoryListenerBase {
     private void addEventToList(@NotNull SRepositoryEvent event) {
       myEvents.add(event);
     }
@@ -93,11 +91,6 @@ public class BatchEventsProcessor {
     @Override
     public void beforeModuleRemoved(@NotNull SModule module) {
       addEventToList(new SModuleRemovingEvent(module));
-    }
-
-    @Override
-    public void moduleRemoved(@NotNull SModuleReference module) {
-      addEventToList(new SModuleRemovedEvent(module, myRepository));
     }
   }
 }
