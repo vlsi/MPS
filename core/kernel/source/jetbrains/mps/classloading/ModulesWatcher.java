@@ -42,7 +42,7 @@ import static jetbrains.mps.classloading.ModulesWatcher.ClassLoadingStatus.INVAL
 import static jetbrains.mps.classloading.ModulesWatcher.ClassLoadingStatus.VALID;
 
 /**
- * This class watches all modules in the repository and dependencies between them.
+ * This class watches all the reloadable modules in the repository and dependencies between them.
  *
  * Note: due to lazy implementation of module unloading, there is a possible situation,
  * when there are some disposed modules in ModulesWatcher.
@@ -70,9 +70,10 @@ public class ModulesWatcher {
   }
 
   public ClassLoadingStatus getStatus(SModule module) {
+    if (!myLoadableCondition.met(module)) LOG.error("Non-loadable module was passed to ModulesWatcher", new Throwable());
     synchronized (LOCK) {
       if (myChanged) recountStatus();
-      if (!getModules().contains(module)) throw new IllegalArgumentException("The module " + module + " is not watched by ModulesWatcher");
+      if (!getModules().contains(module)) throw new IllegalArgumentException("The module " + module + " does not belong to the repository");
       if (!myStatusMap.containsKey(module)) throw new IllegalArgumentException("No status for module " + module);
       return myStatusMap.get(module);
     }
@@ -80,14 +81,18 @@ public class ModulesWatcher {
 
   public void onModulesAdded(@NotNull Collection<? extends SModule> modules) {
     synchronized (LOCK) {
-      for (SModule module : modules) addVertex(module);
+      for (SModule module : modules) {
+        if (myLoadableCondition.met(module)) addVertex(module);
+      }
       myChanged = true;
     }
   }
 
   public void onModulesRemoved(@NotNull Collection<? extends SModule> modules) {
     synchronized (LOCK) {
-      for (SModule module : modules) removeVertex(module);
+      for (SModule module : modules) {
+        if (myLoadableCondition.met(module)) removeVertex(module);
+      }
       myChanged = true;
     }
   }
@@ -147,7 +152,9 @@ public class ModulesWatcher {
         Collection<? extends SModule> outs = new ArrayList<SModule>(myDepGraph.getOuts(module));
         for (SModule m : outs) removeEdge(module, m);
         Collection<? extends SModule> depModules = GlobalModuleDependenciesManager.directlyUsedModules(module, true, true);
-        for (SModule depModule : depModules) addEdge(module, depModule);
+        for (SModule depModule : depModules) {
+          if (modules.contains(depModule)) addEdge(module, depModule);
+        }
       }
     }
     LOG.debug("Difference in the edge count after validation " + (myDepGraph.getEdgesCount() - wasEdges));
@@ -255,7 +262,8 @@ public class ModulesWatcher {
   public Collection<? extends SModule> getLoadableDependencies(Collection<? extends SModule> modules) {
     Collection<SModule> result = new LinkedHashSet<SModule>();
     for (SModule dep : getDependencies(modules)) {
-      if (myLoadableCondition.met(dep)) result.add(dep);
+      assert myLoadableCondition.met(dep);
+      result.add(dep);
     }
     return result;
   }
@@ -284,6 +292,7 @@ public class ModulesWatcher {
     myBackDepGraph.removeEdge(m2, m1);
   }
 
+  // TODO : merge with jetbrains.mps.util.Graph (mps.util.Graph needs to be modified for a bit)
   static class Graph<V> {
     private final Map<V, Set<V>> myOuts = new LinkedHashMap<V, Set<V>>();
     private int myEdgesCount;

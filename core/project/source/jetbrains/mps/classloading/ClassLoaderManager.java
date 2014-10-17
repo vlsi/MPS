@@ -274,7 +274,7 @@ public class ClassLoaderManager implements CoreComponent {
       monitor.start("Unloading modules...", 1);
       try {
         Condition<SModule> loadedCondition = negateCondition(myUnloadedCondition);
-        Set<SModule> modulesToUnload = IterableUtil.asSet(modules);
+        Set<SModule> modulesToUnload = filterModules(modules, myLoadableCondition);
         if (modulesToUnload.isEmpty()) return modulesToUnload;
 
         // transitive closure
