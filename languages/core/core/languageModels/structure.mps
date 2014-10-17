@@ -274,6 +274,9 @@
         <reference role="4jta.1169127622168.1169127628841" target="1319728274783077719" resolveInfo="ImplementationPart" />
       </node>
     </node>
+    <node concept="4jta.1169125989551" id="155087542027447621" info="ig">
+      <property role="asn4.1169194658468.1169194664001" value="IStubForAnotherConcept" />
+    </node>
   </contents>
 </model>
 

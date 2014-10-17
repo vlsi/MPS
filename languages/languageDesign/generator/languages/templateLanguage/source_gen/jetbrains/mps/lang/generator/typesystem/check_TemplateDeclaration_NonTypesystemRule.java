@@ -19,7 +19,7 @@ public class check_TemplateDeclaration_NonTypesystemRule extends AbstractNonType
   public check_TemplateDeclaration_NonTypesystemRule() {
   }
   public void applyRule(final SNode td, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    if ((SLinkOperations.getTarget(td, "contentNode", true) != null) && ListSequence.fromList(SNodeOperations.getDescendants(td, "jetbrains.mps.lang.generator.structure.TemplateFragment", false, new String[]{})).isEmpty()) {
+    if ((SLinkOperations.getTarget(td, "contentNode", true) != null) && ListSequence.fromList(SNodeOperations.getDescendants(td, "jetbrains.mps.lang.generator.structure.TemplateFragment", false, new String[]{})).isEmpty() && ListSequence.fromList(SNodeOperations.getDescendants(td, "jetbrains.mps.lang.core.structure.IStubForAnotherConcept", false, new String[]{})).isEmpty()) {
       {
         MessageTarget errorTarget = new NodeMessageTarget();
         IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(td, "No template fragments found", "r:00000000-0000-4000-0000-011c895902e4(jetbrains.mps.lang.generator.typesystem)", "7952422520064723850", null, errorTarget);

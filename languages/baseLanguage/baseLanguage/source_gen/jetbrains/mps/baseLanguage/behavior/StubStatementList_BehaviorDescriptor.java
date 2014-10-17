@@ -4,10 +4,11 @@ package jetbrains.mps.baseLanguage.behavior;
 
 import jetbrains.mps.lang.core.behavior.IDontSubstituteByDefault_BehaviorDescriptor;
 import jetbrains.mps.lang.core.behavior.ISuppressErrors_BehaviorDescriptor;
+import jetbrains.mps.lang.core.behavior.IStubForAnotherConcept_BehaviorDescriptor;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.core.behavior.ISuppressErrors_Behavior;
 
-public class StubStatementList_BehaviorDescriptor extends StatementList_BehaviorDescriptor implements IDontSubstituteByDefault_BehaviorDescriptor, ISuppressErrors_BehaviorDescriptor {
+public class StubStatementList_BehaviorDescriptor extends StatementList_BehaviorDescriptor implements IDontSubstituteByDefault_BehaviorDescriptor, ISuppressErrors_BehaviorDescriptor, IStubForAnotherConcept_BehaviorDescriptor {
   public StubStatementList_BehaviorDescriptor() {
   }
   public boolean virtual_suppress_3393165121846091591(SNode thisNode, SNode child) {
