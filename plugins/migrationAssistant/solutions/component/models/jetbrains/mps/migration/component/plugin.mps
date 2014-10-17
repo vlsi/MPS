@@ -18,28 +18,23 @@
     <model ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#jetbrains.mps.ide.actions(MPS.Platform/jetbrains.mps.ide.actions@java_stub)" name="jetbrains.mps.ide.actions@java_stub" />
     <model ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.actionSystem(MPS.IDEA/com.intellij.openapi.actionSystem@java_stub)" name="com.intellij.openapi.actionSystem@java_stub" />
     <model ref="r:a9597bdf-0806-4a79-8ace-88240c6b9878(jetbrains.mps.ide.migration)" name="jetbrains.mps.ide.migration" />
-    <concept id="443f4c36-fcf5-4eb6-9500-8d06ed259e3e/1205752633985" name="ThisClassifierExpression" />
-    <concept id="28f9e497-3b42-4291-aeba-0a1039153ab1/1203071646776" name="ActionDeclaration" />
-    <concept id="28f9e497-3b42-4291-aeba-0a1039153ab1/1217252428768" name="ActionDataParameterReferenceOperation" />
-    <concept id="28f9e497-3b42-4291-aeba-0a1039153ab1/1217252042208" name="ActionDataParameterDeclaration" />
-    <concept id="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468" name="INamedConcept" />
-    <concept id="443f4c36-fcf5-4eb6-9500-8d06ed259e3e/1205756064662" name="IMemberOperation" />
-    <concept id="28f9e497-3b42-4291-aeba-0a1039153ab1/1203083511112" name="ExecuteBlock" />
-    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1197027756228" name="DotExpression" />
-    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1202948039474" name="InstanceMethodCallOperation" />
-    <concept id="ef7bf5ac-d06c-4342-b11d-e42104eb9343/7520713872864775836" name="StandalonePluginDescriptor" />
-    <concept id="28f9e497-3b42-4291-aeba-0a1039153ab1/5538333046911348654" name="RequiredCondition" />
-    <concept id="28f9e497-3b42-4291-aeba-0a1039153ab1/1217413147516" name="ActionParameter" />
-    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1204053956946" name="IMethodCall" />
-    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1137021947720" name="ConceptFunction" />
-    <concept id="28f9e497-3b42-4291-aeba-0a1039153ab1/1207145163717" name="ElementListContents" />
-    <concept id="28f9e497-3b42-4291-aeba-0a1039153ab1/1203092361741" name="ModificationStatement" />
-    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123136" name="StatementList" />
-    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123155" name="ExpressionStatement" />
-    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1116615150612" name="ClassifierClassExpression" />
-    <concept id="28f9e497-3b42-4291-aeba-0a1039153ab1/5023285075122009364" name="IdeaInitializerDescriptor" />
-    <concept id="28f9e497-3b42-4291-aeba-0a1039153ab1/1203088046679" name="ActionInstance" />
-    <concept id="28f9e497-3b42-4291-aeba-0a1039153ab1/1203087890642" name="ActionGroupDeclaration" />
+    <concept id="443f4c36-fcf5-4eb6-9500-8d06ed259e3e/1205752633985" name="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression" />
+    <concept id="28f9e497-3b42-4291-aeba-0a1039153ab1/1203071646776" name="jetbrains.mps.lang.plugin.structure.ActionDeclaration" />
+    <concept id="28f9e497-3b42-4291-aeba-0a1039153ab1/1217252042208" name="jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration" />
+    <concept id="28f9e497-3b42-4291-aeba-0a1039153ab1/1217252428768" name="jetbrains.mps.lang.plugin.structure.ActionDataParameterReferenceOperation" />
+    <concept id="28f9e497-3b42-4291-aeba-0a1039153ab1/1203083511112" name="jetbrains.mps.lang.plugin.structure.ExecuteBlock" />
+    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1197027756228" name="jetbrains.mps.baseLanguage.structure.DotExpression" />
+    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1202948039474" name="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" />
+    <concept id="ef7bf5ac-d06c-4342-b11d-e42104eb9343/7520713872864775836" name="jetbrains.mps.lang.plugin.standalone.structure.StandalonePluginDescriptor" />
+    <concept id="28f9e497-3b42-4291-aeba-0a1039153ab1/5538333046911348654" name="jetbrains.mps.lang.plugin.structure.RequiredCondition" />
+    <concept id="28f9e497-3b42-4291-aeba-0a1039153ab1/1207145163717" name="jetbrains.mps.lang.plugin.structure.ElementListContents" />
+    <concept id="28f9e497-3b42-4291-aeba-0a1039153ab1/1203092361741" name="jetbrains.mps.lang.plugin.structure.ModificationStatement" />
+    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" />
+    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123155" name="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1116615150612" name="jetbrains.mps.baseLanguage.structure.ClassifierClassExpression" />
+    <concept id="28f9e497-3b42-4291-aeba-0a1039153ab1/5023285075122009364" name="jetbrains.mps.lang.plugin.structure.IdeaInitializerDescriptor" />
+    <concept id="28f9e497-3b42-4291-aeba-0a1039153ab1/1203088046679" name="jetbrains.mps.lang.plugin.structure.ActionInstance" />
+    <concept id="28f9e497-3b42-4291-aeba-0a1039153ab1/1203087890642" name="jetbrains.mps.lang.plugin.structure.ActionGroupDeclaration" />
     <property id="28f9e497-3b42-4291-aeba-0a1039153ab1/5023285075122009364/5023285075122009373" name="ideaVersion" />
     <property id="28f9e497-3b42-4291-aeba-0a1039153ab1/5023285075122009364/1573568368168371217" name="handleErrors" />
     <property id="28f9e497-3b42-4291-aeba-0a1039153ab1/5023285075122009364/5023285075122009368" name="descripttion" />
@@ -120,7 +115,7 @@
         <reference role="79nr.1217252042208.1217252646389" target="nx1.~CommonDataKeys%dPROJECT" resolveInfo="PROJECT" />
         <node concept="79nr.5538333046911348654" id="8898893144448210490" role="79nr.1217413147516.5538333046911298738" info="ng" />
       </node>
-      <node concept="79nr.1203083511112" id="7834630562321988559" role="79nr.1203071646776.1203083461638" info="nn">
+      <node concept="79nr.1203083511112" id="7834630562321988559" role="79nr.1203071646776.1203083461638" info="in">
         <node concept="vg0i.1068580123136" id="7834630562321988560" role="vg0i.1137021947720.1137022507850" info="sn">
           <node concept="vg0i.1068580123155" id="7834630562322086058" role="vg0i.1068580123136.1068581517665" info="nn">
             <node concept="vg0i.1197027756228" id="7834630562322122778" role="vg0i.1068580123155.1068580123156" info="nn">

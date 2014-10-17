@@ -6,17 +6,14 @@
     <lang id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core" />
     <model ref="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" name="jetbrains.mps.baseLanguage.closures.structure" />
     <model ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" name="jetbrains.mps.baseLanguage.structure" />
-    <concept id="c72da2b9-7cce-4447-8389-f407dc1158b7/1169125787135" name="AbstractConceptDeclaration" />
-    <concept id="c72da2b9-7cce-4447-8389-f407dc1158b7/1169125989551" name="InterfaceConceptDeclaration" />
-    <concept id="c72da2b9-7cce-4447-8389-f407dc1158b7/6054523464627964745" name="AttributeInfo_AttributedConcept" />
-    <concept id="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468" name="INamedConcept" />
-    <concept id="c72da2b9-7cce-4447-8389-f407dc1158b7/6054523464626862044" name="AttributeInfo_IsMultiple" />
-    <concept id="c72da2b9-7cce-4447-8389-f407dc1158b7/1169127622168" name="InterfaceConceptReference" />
-    <concept id="c72da2b9-7cce-4447-8389-f407dc1158b7/1071489288298" name="LinkDeclaration" />
-    <concept id="c72da2b9-7cce-4447-8389-f407dc1158b7/1071489288299" name="PropertyDeclaration" />
-    <concept id="c72da2b9-7cce-4447-8389-f407dc1158b7/2992811758677295509" name="AttributeInfo" />
-    <concept id="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1133920641626" name="BaseConcept" />
-    <concept id="c72da2b9-7cce-4447-8389-f407dc1158b7/1071489090640" name="ConceptDeclaration" />
+    <concept id="c72da2b9-7cce-4447-8389-f407dc1158b7/1169125989551" name="jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration" />
+    <concept id="c72da2b9-7cce-4447-8389-f407dc1158b7/6054523464627964745" name="jetbrains.mps.lang.structure.structure.AttributeInfo_AttributedConcept" />
+    <concept id="c72da2b9-7cce-4447-8389-f407dc1158b7/6054523464626862044" name="jetbrains.mps.lang.structure.structure.AttributeInfo_IsMultiple" />
+    <concept id="c72da2b9-7cce-4447-8389-f407dc1158b7/1169127622168" name="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" />
+    <concept id="c72da2b9-7cce-4447-8389-f407dc1158b7/1071489288298" name="jetbrains.mps.lang.structure.structure.LinkDeclaration" />
+    <concept id="c72da2b9-7cce-4447-8389-f407dc1158b7/1071489288299" name="jetbrains.mps.lang.structure.structure.PropertyDeclaration" />
+    <concept id="c72da2b9-7cce-4447-8389-f407dc1158b7/2992811758677295509" name="jetbrains.mps.lang.structure.structure.AttributeInfo" />
+    <concept id="c72da2b9-7cce-4447-8389-f407dc1158b7/1071489090640" name="jetbrains.mps.lang.structure.structure.ConceptDeclaration" />
     <property id="c72da2b9-7cce-4447-8389-f407dc1158b7/1169125787135/4628067390765956807" name="final" />
     <property id="c72da2b9-7cce-4447-8389-f407dc1158b7/6054523464626862044/6054523464626875854" name="value" />
     <property id="c72da2b9-7cce-4447-8389-f407dc1158b7/1071489288298/1071599893252" name="sourceCardinality" />
