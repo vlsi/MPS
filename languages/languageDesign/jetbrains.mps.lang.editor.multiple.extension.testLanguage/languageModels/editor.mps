@@ -2,32 +2,32 @@
 <model ref="r:a554b43d-e081-43aa-820b-45da05206260(jetbrains.mps.lang.editor.multiple.extension.testLanguage.editor)">
   <persistence version="9" />
   <debugInfo>
-    <lang id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" />
     <lang id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core" />
+    <lang id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" />
     <model ref="r:eb859fb0-1cb5-4829-a090-c7f47391d585(jetbrains.mps.lang.editor.multiple.testLanguage.structure)" name="jetbrains.mps.lang.editor.multiple.testLanguage.structure" />
     <model ref="r:34f73689-316b-4d10-bb10-be0263c09014(jetbrains.mps.lang.editor.multiple.testLanguage.editor)" name="jetbrains.mps.lang.editor.multiple.testLanguage.editor" />
-    <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1073389658414" name="jetbrains.mps.lang.editor.structure.CellModel_Property" />
-    <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1186414976055" name="jetbrains.mps.lang.editor.structure.DrawBorderStyleClassItem" />
-    <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1186414928363" name="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" />
     <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1071666914219" name="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" />
-    <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1078938745671" name="jetbrains.mps.lang.editor.structure.EditorComponentDeclaration" />
-    <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/7033942394256351208" name="jetbrains.mps.lang.editor.structure.EditorComponentDeclarationReference" />
-    <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1106270549637" name="jetbrains.mps.lang.editor.structure.CellLayout_Horizontal" />
     <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1073389446423" name="jetbrains.mps.lang.editor.structure.CellModel_Collection" />
+    <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1073389658414" name="jetbrains.mps.lang.editor.structure.CellModel_Property" />
+    <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1078938745671" name="jetbrains.mps.lang.editor.structure.EditorComponentDeclaration" />
+    <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1106270549637" name="jetbrains.mps.lang.editor.structure.CellLayout_Horizontal" />
+    <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1186414928363" name="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" />
+    <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1186414976055" name="jetbrains.mps.lang.editor.structure.DrawBorderStyleClassItem" />
     <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/6822301196700715228" name="jetbrains.mps.lang.editor.structure.ConceptEditorHintDeclarationReference" />
-    <property id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1186414536763/1186414551515" name="flag" />
+    <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/7033942394256351208" name="jetbrains.mps.lang.editor.structure.EditorComponentDeclarationReference" />
     <property id="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001" name="name" />
-    <refRole id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1166049232041/1166049300910" name="conceptDeclaration" />
+    <property id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1186414536763/1186414551515" name="flag" />
     <refRole id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1139848536355/1140103550593" name="relationDeclaration" />
-    <refRole id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/7033942394256351208/7033942394256351817" name="editorComponent" />
+    <refRole id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1166049232041/1166049300910" name="conceptDeclaration" />
     <refRole id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/6822301196700715228/5944657839026714445" name="hint" />
-    <childRole id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1080736578640/1080736633877" name="cellModel" />
+    <refRole id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/7033942394256351208/7033942394256351817" name="editorComponent" />
     <childRole id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1073389446423/1073389446424" name="childCellModel" />
-    <childRole id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1078938745671/7033942394258392116" name="overridenEditorComponent" />
-    <childRole id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1078938745671/7348800710862477686" name="contextHints" />
-    <childRole id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1071666914219/2597348684684069742" name="contextHints" />
+    <childRole id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1080736578640/1080736633877" name="cellModel" />
     <childRole id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1073389446423/1106270802874" name="cellLayout" />
     <childRole id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1219418625346/1219418656006" name="styleItem" />
+    <childRole id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1071666914219/2597348684684069742" name="contextHints" />
+    <childRole id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1078938745671/7033942394258392116" name="overridenEditorComponent" />
+    <childRole id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1078938745671/7348800710862477686" name="contextHints" />
   </debugInfo>
   <languages>
     <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" version="-1" index="9wj7" />

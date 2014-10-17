@@ -2,23 +2,23 @@
 <model ref="r:d1210bb2-885b-42ea-aaec-fbe9b5a5e2ba(testDefaultEditor.editor)">
   <persistence version="9" />
   <debugInfo>
-    <lang id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" />
     <lang id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core" />
-    <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1136564507907" name="jetbrains.mps.lang.editor.structure.CellModel_AttributedLinkCell" />
+    <lang id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" />
+    <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1071666914219" name="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" />
+    <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1073389446423" name="jetbrains.mps.lang.editor.structure.CellModel_Collection" />
     <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1073389577006" name="jetbrains.mps.lang.editor.structure.CellModel_Constant" />
+    <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1134379236839" name="jetbrains.mps.lang.editor.structure.CellModel_AttributedPropertyCell" />
+    <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1136564507907" name="jetbrains.mps.lang.editor.structure.CellModel_AttributedLinkCell" />
     <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1149850725784" name="jetbrains.mps.lang.editor.structure.CellModel_AttributedNodeCell" />
     <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1237303669825" name="jetbrains.mps.lang.editor.structure.CellLayout_Indent" />
-    <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1071666914219" name="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" />
     <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/4323500428121233431" name="jetbrains.mps.lang.editor.structure.EditorCellId" />
-    <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1134379236839" name="jetbrains.mps.lang.editor.structure.CellModel_AttributedPropertyCell" />
-    <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1073389446423" name="jetbrains.mps.lang.editor.structure.CellModel_Collection" />
     <property id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1073389577006/1073389577007" name="text" />
     <property id="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001" name="name" />
     <refRole id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1166049232041/1166049300910" name="conceptDeclaration" />
-    <childRole id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1080736578640/1080736633877" name="cellModel" />
     <childRole id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1073389446423/1073389446424" name="childCellModel" />
-    <childRole id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1073389214265/4323500428121274054" name="id" />
+    <childRole id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1080736578640/1080736633877" name="cellModel" />
     <childRole id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1073389446423/1106270802874" name="cellLayout" />
+    <childRole id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1073389214265/4323500428121274054" name="id" />
   </debugInfo>
   <languages>
     <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" version="-1" index="9wj7" />

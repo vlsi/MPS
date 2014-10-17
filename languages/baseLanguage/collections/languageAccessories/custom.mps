@@ -2,35 +2,35 @@
 <model ref="r:dfdf3542-dbcf-43df-870a-3c3504b3c840(jetbrains.mps.baseLanguage.collections.custom)" doNotGenerate="true">
   <persistence version="9" />
   <debugInfo>
-    <lang id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" />
     <lang id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" />
+    <lang id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" />
     <lang id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core" />
     <model ref="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" name="java.util@java_stub" />
     <model ref="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.util(MPS.Core/jetbrains.mps.util@java_stub)" name="jetbrains.mps.util@java_stub" />
-    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1109283449304" name="jetbrains.mps.baseLanguage.structure.TypeVariableReference" />
-    <concept id="83888646-71ce-4f1c-9c53-c54016f6ad4f/1226511727824" name="jetbrains.mps.baseLanguage.collections.structure.SetType" />
-    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1109279763828" name="jetbrains.mps.baseLanguage.structure.TypeVariableDeclaration" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1107535904670" name="jetbrains.mps.baseLanguage.structure.ClassifierType" />
+    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1109279763828" name="jetbrains.mps.baseLanguage.structure.TypeVariableDeclaration" />
+    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1109283449304" name="jetbrains.mps.baseLanguage.structure.TypeVariableReference" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1146644602865" name="jetbrains.mps.baseLanguage.structure.PublicVisibility" />
-    <concept id="83888646-71ce-4f1c-9c53-c54016f6ad4f/6099516049394485216" name="jetbrains.mps.baseLanguage.collections.structure.CustomContainerDeclaration" />
     <concept id="83888646-71ce-4f1c-9c53-c54016f6ad4f/1197683403723" name="jetbrains.mps.baseLanguage.collections.structure.MapType" />
+    <concept id="83888646-71ce-4f1c-9c53-c54016f6ad4f/1226511727824" name="jetbrains.mps.baseLanguage.collections.structure.SetType" />
+    <concept id="83888646-71ce-4f1c-9c53-c54016f6ad4f/6099516049394485216" name="jetbrains.mps.baseLanguage.collections.structure.CustomContainerDeclaration" />
     <concept id="83888646-71ce-4f1c-9c53-c54016f6ad4f/6099516049394485324" name="jetbrains.mps.baseLanguage.collections.structure.CustomContainers" />
     <property id="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001" name="name" />
-    <refRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1109283449304/1109283546497" name="typeVariableDeclaration" />
     <refRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1107535904670/1107535924139" name="classifier" />
+    <refRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1109283449304/1109283546497" name="typeVariableDeclaration" />
     <childRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1107535904670/1109201940907" name="parameter" />
-    <childRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1178549954367/1178549979242" name="visibility" />
     <childRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1109279851642/1109279881614" name="typeVariableDeclaration" />
-    <childRole id="83888646-71ce-4f1c-9c53-c54016f6ad4f/6099516049394485216/6099516049394485312" name="runtimeType" />
+    <childRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1178549954367/1178549979242" name="visibility" />
     <childRole id="83888646-71ce-4f1c-9c53-c54016f6ad4f/1197683403723/1197683466920" name="keyType" />
-    <childRole id="83888646-71ce-4f1c-9c53-c54016f6ad4f/6099516049394485216/6099516049394485311" name="containerType" />
-    <childRole id="83888646-71ce-4f1c-9c53-c54016f6ad4f/1226511727824/1226511765987" name="elementType" />
     <childRole id="83888646-71ce-4f1c-9c53-c54016f6ad4f/1197683403723/1197683475734" name="valueType" />
+    <childRole id="83888646-71ce-4f1c-9c53-c54016f6ad4f/1226511727824/1226511765987" name="elementType" />
+    <childRole id="83888646-71ce-4f1c-9c53-c54016f6ad4f/6099516049394485216/6099516049394485311" name="containerType" />
+    <childRole id="83888646-71ce-4f1c-9c53-c54016f6ad4f/6099516049394485216/6099516049394485312" name="runtimeType" />
     <childRole id="83888646-71ce-4f1c-9c53-c54016f6ad4f/6099516049394485324/6099516049394485326" name="containerDeclaration" />
   </debugInfo>
   <languages>
-    <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" version="-1" index="j0ph" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" version="-1" index="vg0i" />
+    <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" version="-1" index="j0ph" />
     <use id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" version="0" implicit="true" index="asn4" />
   </languages>
   <imports>

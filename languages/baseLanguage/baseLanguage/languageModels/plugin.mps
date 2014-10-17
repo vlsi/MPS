@@ -2,12 +2,12 @@
 <model ref="r:00000000-0000-4000-0000-011c895902c8(jetbrains.mps.baseLanguage.plugin)">
   <persistence version="9" />
   <debugInfo>
-    <lang id="696c1165-4a59-463b-bc5d-902caab85dd0" name="jetbrains.mps.make.facet" />
-    <lang id="95f8a3e6-f994-4ca0-a65e-763c9bae2d3b" name="jetbrains.mps.make.script" />
-    <lang id="982eb8df-2c96-4bd7-9963-11712ea622e5" name="jetbrains.mps.lang.resources" />
+    <lang id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" />
     <lang id="774bf8a0-62e5-41e1-af63-f4812e60e48b" name="jetbrains.mps.baseLanguage.checkedDots" />
     <lang id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core" />
-    <lang id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" />
+    <lang id="982eb8df-2c96-4bd7-9963-11712ea622e5" name="jetbrains.mps.lang.resources" />
+    <lang id="696c1165-4a59-463b-bc5d-902caab85dd0" name="jetbrains.mps.make.facet" />
+    <lang id="95f8a3e6-f994-4ca0-a65e-763c9bae2d3b" name="jetbrains.mps.make.script" />
     <model ref="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(java.lang@java_stub)" name="java.lang@java_stub" />
     <model ref="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.messages(MPS.Core/jetbrains.mps.messages@java_stub)" name="jetbrains.mps.messages@java_stub" />
     <model ref="r:6ba2667b-185e-45cd-ac65-e4b9d66da28e(jetbrains.mps.smodel.resources)" name="jetbrains.mps.smodel.resources" />
@@ -33,24 +33,24 @@
     <model ref="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" name="java.util@java_stub" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1070533707846" name="jetbrains.mps.baseLanguage.structure.StaticFieldReference" />
     <concept id="982eb8df-2c96-4bd7-9963-11712ea622e5/8974276187400029883" name="jetbrains.mps.lang.resources.structure.IconResource" />
+    <concept id="982eb8df-2c96-4bd7-9963-11712ea622e5/8974276187400029885" name="jetbrains.mps.lang.resources.structure.IconResourceBundle" />
     <concept id="982eb8df-2c96-4bd7-9963-11712ea622e5/8974276187400029888" name="jetbrains.mps.lang.resources.structure.IconResourceDeclaration" />
     <concept id="982eb8df-2c96-4bd7-9963-11712ea622e5/8974276187400029891" name="jetbrains.mps.lang.resources.structure.IconResourceExpression" />
-    <concept id="982eb8df-2c96-4bd7-9963-11712ea622e5/8974276187400029885" name="jetbrains.mps.lang.resources.structure.IconResourceBundle" />
     <property id="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001" name="name" />
-    <refRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1070533707846/1144433057691" name="classifier" />
     <refRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068498886296/1068581517664" name="variableDeclaration" />
+    <refRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1070533707846/1144433057691" name="classifier" />
     <childRole id="982eb8df-2c96-4bd7-9963-11712ea622e5/8974276187400029883/6976585500156684809" name="iconExpression" />
-    <childRole id="982eb8df-2c96-4bd7-9963-11712ea622e5/8974276187400029888/8974276187400029889" name="iconExpression" />
     <childRole id="982eb8df-2c96-4bd7-9963-11712ea622e5/8974276187400029885/8974276187400029886" name="icons" />
+    <childRole id="982eb8df-2c96-4bd7-9963-11712ea622e5/8974276187400029888/8974276187400029889" name="iconExpression" />
     <childRole id="982eb8df-2c96-4bd7-9963-11712ea622e5/8974276187400029891/8974276187400029893" name="icon" />
   </debugInfo>
   <languages>
+    <use id="774bf8a0-62e5-41e1-af63-f4812e60e48b" version="-1" index="zscr" />
+    <use id="982eb8df-2c96-4bd7-9963-11712ea622e5" version="-1" index="vf6k" />
     <use id="696c1165-4a59-463b-bc5d-902caab85dd0" version="-1" index="jhya" />
     <use id="95f8a3e6-f994-4ca0-a65e-763c9bae2d3b" version="-1" index="7875" />
-    <use id="982eb8df-2c96-4bd7-9963-11712ea622e5" version="-1" index="vf6k" />
-    <use id="774bf8a0-62e5-41e1-af63-f4812e60e48b" version="-1" index="zscr" />
-    <use id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" version="0" implicit="true" index="asn4" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" version="0" implicit="true" index="vg0i" />
+    <use id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" version="0" implicit="true" index="asn4" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>

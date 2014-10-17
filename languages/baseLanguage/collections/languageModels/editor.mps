@@ -2,15 +2,15 @@
 <model ref="r:00000000-0000-4000-0000-011c8959032a(jetbrains.mps.baseLanguage.collections.editor)">
   <persistence version="9" />
   <debugInfo>
-    <lang id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" />
-    <lang id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" />
     <lang id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" />
-    <lang id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" />
-    <lang id="7a5dda62-9140-4668-ab76-d5ed1746f2b2" name="jetbrains.mps.lang.typesystem" />
-    <lang id="13744753-c81f-424a-9c1b-cf8943bf4e86" name="jetbrains.mps.lang.sharedConcepts" />
     <lang id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" />
+    <lang id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" />
     <lang id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd" name="jetbrains.mps.lang.actions" />
     <lang id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core" />
+    <lang id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" />
+    <lang id="13744753-c81f-424a-9c1b-cf8943bf4e86" name="jetbrains.mps.lang.sharedConcepts" />
+    <lang id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" />
+    <lang id="7a5dda62-9140-4668-ab76-d5ed1746f2b2" name="jetbrains.mps.lang.typesystem" />
     <model ref="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" name="jetbrains.mps.baseLanguage.collections.structure" />
     <model ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" name="jetbrains.mps.lang.core.structure" />
     <model ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" name="jetbrains.mps.baseLanguage.structure" />
@@ -18,229 +18,229 @@
     <model ref="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)" name="jetbrains.mps.baseLanguage.behavior" />
     <model ref="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" name="jetbrains.mps.baseLanguage.closures.structure" />
     <model ref="r:00000000-0000-4000-0000-011c89590284(jetbrains.mps.lang.core.editor)" name="jetbrains.mps.lang.core.editor" />
-    <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1225900081164" name="jetbrains.mps.lang.editor.structure.CellModel_ReadOnlyModelAccessor" />
-    <concept id="7866978e-a0f0-4cc7-81bc-4d213d9375e1/1172420572800" name="jetbrains.mps.lang.smodel.structure.SConceptType" />
-    <concept id="7866978e-a0f0-4cc7-81bc-4d213d9375e1/1139621453865" name="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" />
-    <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1215085112640" name="jetbrains.mps.lang.editor.structure.FirstPositionAllowedStyleClassItem" />
-    <concept id="7866978e-a0f0-4cc7-81bc-4d213d9375e1/1138056143562" name="jetbrains.mps.lang.smodel.structure.SLinkAccess" />
-    <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1164824717996" name="jetbrains.mps.lang.editor.structure.CellMenuDescriptor" />
-    <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1176717841777" name="jetbrains.mps.lang.editor.structure.QueryFunction_ModelAccess_Getter" />
-    <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1186404549998" name="jetbrains.mps.lang.editor.structure.ForegroundColorStyleClassItem" />
-    <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1225898583838" name="jetbrains.mps.lang.editor.structure.ReadOnlyModelAccessor" />
-    <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1166059625718" name="jetbrains.mps.lang.editor.structure.CellMenuPart_CellMenuComponent" />
-    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068581242863" name="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" />
-    <concept id="7866978e-a0f0-4cc7-81bc-4d213d9375e1/1171999116870" name="jetbrains.mps.lang.smodel.structure.Node_IsNullOperation" />
-    <concept id="7866978e-a0f0-4cc7-81bc-4d213d9375e1/1172323065820" name="jetbrains.mps.lang.smodel.structure.Node_GetConceptOperation" />
-    <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1073389882823" name="jetbrains.mps.lang.editor.structure.CellModel_RefNode" />
-    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068581242864" name="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1163613822479" name="jetbrains.mps.lang.editor.structure.CellMenuPart_Abstract_editedNode" />
-    <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1237303669825" name="jetbrains.mps.lang.editor.structure.CellLayout_Indent" />
-    <concept id="7866978e-a0f0-4cc7-81bc-4d213d9375e1/1179409122411" name="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" />
-    <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1402906326895675325" name="jetbrains.mps.lang.editor.structure.CellActionMap_FunctionParm_selectedNode" />
-    <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1139535280617" name="jetbrains.mps.lang.editor.structure.CellActionMapItem" />
-    <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1136916976737" name="jetbrains.mps.lang.editor.structure.CellKeyMapKeystroke" />
-    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1163668896201" name="jetbrains.mps.baseLanguage.structure.TernaryOperatorExpression" />
-    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/4836112446988635817" name="jetbrains.mps.baseLanguage.structure.UndefinedType" />
-    <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1180615838666" name="jetbrains.mps.lang.editor.structure.CellMenuPart_PropertyPostfixHints" />
-    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068581242878" name="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1197027756228" name="jetbrains.mps.baseLanguage.structure.DotExpression" />
-    <concept id="7866978e-a0f0-4cc7-81bc-4d213d9375e1/1140131837776" name="jetbrains.mps.lang.smodel.structure.Node_ReplaceWithAnotherOperation" />
-    <concept id="83888646-71ce-4f1c-9c53-c54016f6ad4f/1202120902084" name="jetbrains.mps.baseLanguage.collections.structure.WhereOperation" />
-    <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1198256887712" name="jetbrains.mps.lang.editor.structure.CellModel_Indent" />
-    <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1088612959204" name="jetbrains.mps.lang.editor.structure.CellModel_Alternation" />
-    <concept id="83888646-71ce-4f1c-9c53-c54016f6ad4f/1180964022718" name="jetbrains.mps.baseLanguage.collections.structure.ConcatOperation" />
-    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" />
-    <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1106270549637" name="jetbrains.mps.lang.editor.structure.CellLayout_Horizontal" />
-    <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1186402211651" name="jetbrains.mps.lang.editor.structure.StyleSheet" />
-    <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1166040637528" name="jetbrains.mps.lang.editor.structure.CellMenuComponent" />
-    <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1163613131943" name="jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceNode_Group_Create" />
-    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1081516740877" name="jetbrains.mps.baseLanguage.structure.NotExpression" />
-    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1073239437375" name="jetbrains.mps.baseLanguage.structure.NotEqualsExpression" />
-    <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1142886221719" name="jetbrains.mps.lang.editor.structure.QueryFunction_NodeCondition" />
-    <concept id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd/7776141288922801652" name="jetbrains.mps.lang.actions.structure.NF_Concept_NewInstance" />
-    <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1073390211982" name="jetbrains.mps.lang.editor.structure.CellModel_RefNodeList" />
-    <concept id="7866978e-a0f0-4cc7-81bc-4d213d9375e1/1172424058054" name="jetbrains.mps.lang.smodel.structure.ConceptRefExpression" />
-    <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1214320119173" name="jetbrains.mps.lang.editor.structure.SideTransformAnchorTagStyleClassItem" />
-    <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1163613549566" name="jetbrains.mps.lang.editor.structure.CellMenuPart_AbstractGroup_parameterObject" />
-    <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1950447826681509042" name="jetbrains.mps.lang.editor.structure.ApplyStyleClass" />
-    <concept id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd/767145758118872830" name="jetbrains.mps.lang.actions.structure.NF_Link_SetNewChildOperation" />
-    <concept id="7866978e-a0f0-4cc7-81bc-4d213d9375e1/1177026924588" name="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" />
-    <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1233758997495" name="jetbrains.mps.lang.editor.structure.PunctuationLeftStyleClassItem" />
-    <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1073389658414" name="jetbrains.mps.lang.editor.structure.CellModel_Property" />
-    <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1136916919141" name="jetbrains.mps.lang.editor.structure.CellKeyMapItem" />
-    <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1186414928363" name="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" />
-    <concept id="7866978e-a0f0-4cc7-81bc-4d213d9375e1/1181952871644" name="jetbrains.mps.lang.smodel.structure.Concept_GetAllSubConcepts" />
-    <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1163613035599" name="jetbrains.mps.lang.editor.structure.CellMenuPart_AbstractGroup_Query" />
-    <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1073389446423" name="jetbrains.mps.lang.editor.structure.CellModel_Collection" />
-    <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/9122903797312246523" name="jetbrains.mps.lang.editor.structure.StyleReference" />
-    <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1180616057533" name="jetbrains.mps.lang.editor.structure.CellMenuPart_PropertyPostfixHints_GetPostfixes" />
-    <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1073389577006" name="jetbrains.mps.lang.editor.structure.CellModel_Constant" />
-    <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1088013125922" name="jetbrains.mps.lang.editor.structure.CellModel_RefCell" />
-    <concept id="83888646-71ce-4f1c-9c53-c54016f6ad4f/1151702311717" name="jetbrains.mps.baseLanguage.collections.structure.ToListOperation" />
-    <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1240253180846" name="jetbrains.mps.lang.editor.structure.IndentLayoutNoWrapClassItem" />
-    <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1237308012275" name="jetbrains.mps.lang.editor.structure.IndentLayoutNewLineStyleClassItem" />
-    <concept id="7866978e-a0f0-4cc7-81bc-4d213d9375e1/1143234257716" name="jetbrains.mps.lang.smodel.structure.Node_GetModelOperation" />
-    <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1186414860679" name="jetbrains.mps.lang.editor.structure.EditableStyleClassItem" />
-    <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1088185857835" name="jetbrains.mps.lang.editor.structure.InlineEditorComponent" />
-    <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1078939183254" name="jetbrains.mps.lang.editor.structure.CellModel_Component" />
-    <concept id="83888646-71ce-4f1c-9c53-c54016f6ad4f/1160600644654" name="jetbrains.mps.baseLanguage.collections.structure.ListCreatorWithInit" />
-    <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/3383245079137382180" name="jetbrains.mps.lang.editor.structure.StyleClass" />
-    <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1078938745671" name="jetbrains.mps.lang.editor.structure.EditorComponentDeclaration" />
-    <concept id="7866978e-a0f0-4cc7-81bc-4d213d9375e1/1146253292180" name="jetbrains.mps.lang.smodel.structure.Property_HasValue_Simple" />
-    <concept id="7a5dda62-9140-4668-ab76-d5ed1746f2b2/1176544042499" name="jetbrains.mps.lang.typesystem.structure.Node_TypeOperation" />
-    <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1139535439104" name="jetbrains.mps.lang.editor.structure.CellActionMap_ExecuteFunction" />
-    <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1215085197271" name="jetbrains.mps.lang.editor.structure.LastPositionAllowedStyleClassItem" />
-    <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1106270571710" name="jetbrains.mps.lang.editor.structure.CellLayout_Vertical" />
-    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1145552977093" name="jetbrains.mps.baseLanguage.structure.GenericNewExpression" />
-    <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1136917288805" name="jetbrains.mps.lang.editor.structure.CellKeyMap_ExecuteFunction" />
-    <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1071666914219" name="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" />
-    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1080120340718" name="jetbrains.mps.baseLanguage.structure.AndExpression" />
-    <concept id="83888646-71ce-4f1c-9c53-c54016f6ad4f/1203518072036" name="jetbrains.mps.baseLanguage.collections.structure.SmartClosureParameterDeclaration" />
-    <concept id="7866978e-a0f0-4cc7-81bc-4d213d9375e1/1138056022639" name="jetbrains.mps.lang.smodel.structure.SPropertyAccess" />
-    <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1233759184865" name="jetbrains.mps.lang.editor.structure.PunctuationRightStyleClassItem" />
-    <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1075375595203" name="jetbrains.mps.lang.editor.structure.CellModel_Error" />
-    <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1165004207520" name="jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceNode_Group" />
-    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1070534058343" name="jetbrains.mps.baseLanguage.structure.NullLiteral" />
-    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1225271177708" name="jetbrains.mps.baseLanguage.structure.StringType" />
-    <concept id="7866978e-a0f0-4cc7-81bc-4d213d9375e1/1172008320231" name="jetbrains.mps.lang.smodel.structure.Node_IsNotNullOperation" />
-    <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1164914519156" name="jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceNode_CustomNodeConcept" />
-    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1080223426719" name="jetbrains.mps.baseLanguage.structure.OrExpression" />
-    <concept id="83888646-71ce-4f1c-9c53-c54016f6ad4f/1151688443754" name="jetbrains.mps.baseLanguage.collections.structure.ListType" />
-    <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1236262245656" name="jetbrains.mps.lang.editor.structure.MatchingLabelStyleClassItem" />
-    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123155" name="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068498886296" name="jetbrains.mps.baseLanguage.structure.VariableReference" />
-    <concept id="83888646-71ce-4f1c-9c53-c54016f6ad4f/1176501494711" name="jetbrains.mps.baseLanguage.collections.structure.IsNotEmptyOperation" />
+    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" />
+    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123155" name="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123159" name="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1142886811589" name="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_node" />
-    <concept id="fd392034-7849-419d-9071-12563d152375/1199569711397" name="jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral" />
-    <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1139535219966" name="jetbrains.mps.lang.editor.structure.CellActionMapDeclaration" />
-    <concept id="83888646-71ce-4f1c-9c53-c54016f6ad4f/1160666733551" name="jetbrains.mps.baseLanguage.collections.structure.AddAllElementsOperation" />
-    <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1215007897487" name="jetbrains.mps.lang.editor.structure.PaddingRightStyleClassItem" />
-    <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1186403751766" name="jetbrains.mps.lang.editor.structure.FontStyleStyleClassItem" />
-    <concept id="7866978e-a0f0-4cc7-81bc-4d213d9375e1/1138056282393" name="jetbrains.mps.lang.smodel.structure.SLinkListAccess" />
-    <concept id="7866978e-a0f0-4cc7-81bc-4d213d9375e1/1172326502327" name="jetbrains.mps.lang.smodel.structure.Concept_IsExactlyOperation" />
-    <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1136917249679" name="jetbrains.mps.lang.editor.structure.CellKeyMap_IsApplicableFunction" />
+    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068581242863" name="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" />
+    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068581242864" name="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068581242878" name="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1070534058343" name="jetbrains.mps.baseLanguage.structure.NullLiteral" />
+    <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1071666914219" name="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" />
+    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1073239437375" name="jetbrains.mps.baseLanguage.structure.NotEqualsExpression" />
+    <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1073389446423" name="jetbrains.mps.lang.editor.structure.CellModel_Collection" />
+    <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1073389577006" name="jetbrains.mps.lang.editor.structure.CellModel_Constant" />
+    <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1073389658414" name="jetbrains.mps.lang.editor.structure.CellModel_Property" />
+    <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1073389882823" name="jetbrains.mps.lang.editor.structure.CellModel_RefNode" />
+    <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1073390211982" name="jetbrains.mps.lang.editor.structure.CellModel_RefNodeList" />
+    <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1075375595203" name="jetbrains.mps.lang.editor.structure.CellModel_Error" />
+    <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1078938745671" name="jetbrains.mps.lang.editor.structure.EditorComponentDeclaration" />
+    <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1078939183254" name="jetbrains.mps.lang.editor.structure.CellModel_Component" />
+    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1080120340718" name="jetbrains.mps.baseLanguage.structure.AndExpression" />
+    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1080223426719" name="jetbrains.mps.baseLanguage.structure.OrExpression" />
     <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1081293058843" name="jetbrains.mps.lang.editor.structure.CellKeyMapDeclaration" />
-    <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1237307900041" name="jetbrains.mps.lang.editor.structure.IndentLayoutIndentStyleClassItem" />
+    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1081516740877" name="jetbrains.mps.baseLanguage.structure.NotExpression" />
+    <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1088013125922" name="jetbrains.mps.lang.editor.structure.CellModel_RefCell" />
+    <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1088185857835" name="jetbrains.mps.lang.editor.structure.InlineEditorComponent" />
+    <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1088612959204" name="jetbrains.mps.lang.editor.structure.CellModel_Alternation" />
+    <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1106270549637" name="jetbrains.mps.lang.editor.structure.CellLayout_Horizontal" />
+    <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1106270571710" name="jetbrains.mps.lang.editor.structure.CellLayout_Vertical" />
+    <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1136916919141" name="jetbrains.mps.lang.editor.structure.CellKeyMapItem" />
+    <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1136916976737" name="jetbrains.mps.lang.editor.structure.CellKeyMapKeystroke" />
+    <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1136917249679" name="jetbrains.mps.lang.editor.structure.CellKeyMap_IsApplicableFunction" />
+    <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1136917288805" name="jetbrains.mps.lang.editor.structure.CellKeyMap_ExecuteFunction" />
+    <concept id="7866978e-a0f0-4cc7-81bc-4d213d9375e1/1138056022639" name="jetbrains.mps.lang.smodel.structure.SPropertyAccess" />
+    <concept id="7866978e-a0f0-4cc7-81bc-4d213d9375e1/1138056143562" name="jetbrains.mps.lang.smodel.structure.SLinkAccess" />
+    <concept id="7866978e-a0f0-4cc7-81bc-4d213d9375e1/1138056282393" name="jetbrains.mps.lang.smodel.structure.SLinkListAccess" />
+    <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1139535219966" name="jetbrains.mps.lang.editor.structure.CellActionMapDeclaration" />
+    <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1139535280617" name="jetbrains.mps.lang.editor.structure.CellActionMapItem" />
+    <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1139535439104" name="jetbrains.mps.lang.editor.structure.CellActionMap_ExecuteFunction" />
+    <concept id="7866978e-a0f0-4cc7-81bc-4d213d9375e1/1139621453865" name="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" />
+    <concept id="7866978e-a0f0-4cc7-81bc-4d213d9375e1/1140131837776" name="jetbrains.mps.lang.smodel.structure.Node_ReplaceWithAnotherOperation" />
     <concept id="7866978e-a0f0-4cc7-81bc-4d213d9375e1/1140137987495" name="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" />
+    <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1142886221719" name="jetbrains.mps.lang.editor.structure.QueryFunction_NodeCondition" />
+    <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1142886811589" name="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_node" />
+    <concept id="7866978e-a0f0-4cc7-81bc-4d213d9375e1/1143234257716" name="jetbrains.mps.lang.smodel.structure.Node_GetModelOperation" />
+    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1145552977093" name="jetbrains.mps.baseLanguage.structure.GenericNewExpression" />
+    <concept id="7866978e-a0f0-4cc7-81bc-4d213d9375e1/1146253292180" name="jetbrains.mps.lang.smodel.structure.Property_HasValue_Simple" />
+    <concept id="83888646-71ce-4f1c-9c53-c54016f6ad4f/1151688443754" name="jetbrains.mps.baseLanguage.collections.structure.ListType" />
+    <concept id="83888646-71ce-4f1c-9c53-c54016f6ad4f/1151702311717" name="jetbrains.mps.baseLanguage.collections.structure.ToListOperation" />
+    <concept id="83888646-71ce-4f1c-9c53-c54016f6ad4f/1160600644654" name="jetbrains.mps.baseLanguage.collections.structure.ListCreatorWithInit" />
+    <concept id="83888646-71ce-4f1c-9c53-c54016f6ad4f/1160666733551" name="jetbrains.mps.baseLanguage.collections.structure.AddAllElementsOperation" />
+    <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1163613035599" name="jetbrains.mps.lang.editor.structure.CellMenuPart_AbstractGroup_Query" />
+    <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1163613131943" name="jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceNode_Group_Create" />
+    <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1163613549566" name="jetbrains.mps.lang.editor.structure.CellMenuPart_AbstractGroup_parameterObject" />
+    <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1163613822479" name="jetbrains.mps.lang.editor.structure.CellMenuPart_Abstract_editedNode" />
+    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1163668896201" name="jetbrains.mps.baseLanguage.structure.TernaryOperatorExpression" />
+    <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1164824717996" name="jetbrains.mps.lang.editor.structure.CellMenuDescriptor" />
+    <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1164914519156" name="jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceNode_CustomNodeConcept" />
+    <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1165004207520" name="jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceNode_Group" />
+    <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1166040637528" name="jetbrains.mps.lang.editor.structure.CellMenuComponent" />
+    <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1166059625718" name="jetbrains.mps.lang.editor.structure.CellMenuPart_CellMenuComponent" />
+    <concept id="7866978e-a0f0-4cc7-81bc-4d213d9375e1/1171999116870" name="jetbrains.mps.lang.smodel.structure.Node_IsNullOperation" />
+    <concept id="7866978e-a0f0-4cc7-81bc-4d213d9375e1/1172008320231" name="jetbrains.mps.lang.smodel.structure.Node_IsNotNullOperation" />
+    <concept id="7866978e-a0f0-4cc7-81bc-4d213d9375e1/1172323065820" name="jetbrains.mps.lang.smodel.structure.Node_GetConceptOperation" />
+    <concept id="7866978e-a0f0-4cc7-81bc-4d213d9375e1/1172326502327" name="jetbrains.mps.lang.smodel.structure.Concept_IsExactlyOperation" />
+    <concept id="7866978e-a0f0-4cc7-81bc-4d213d9375e1/1172420572800" name="jetbrains.mps.lang.smodel.structure.SConceptType" />
+    <concept id="7866978e-a0f0-4cc7-81bc-4d213d9375e1/1172424058054" name="jetbrains.mps.lang.smodel.structure.ConceptRefExpression" />
+    <concept id="83888646-71ce-4f1c-9c53-c54016f6ad4f/1176501494711" name="jetbrains.mps.baseLanguage.collections.structure.IsNotEmptyOperation" />
+    <concept id="7a5dda62-9140-4668-ab76-d5ed1746f2b2/1176544042499" name="jetbrains.mps.lang.typesystem.structure.Node_TypeOperation" />
+    <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1176717841777" name="jetbrains.mps.lang.editor.structure.QueryFunction_ModelAccess_Getter" />
+    <concept id="7866978e-a0f0-4cc7-81bc-4d213d9375e1/1177026924588" name="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" />
+    <concept id="7866978e-a0f0-4cc7-81bc-4d213d9375e1/1179409122411" name="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" />
+    <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1180615838666" name="jetbrains.mps.lang.editor.structure.CellMenuPart_PropertyPostfixHints" />
+    <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1180616057533" name="jetbrains.mps.lang.editor.structure.CellMenuPart_PropertyPostfixHints_GetPostfixes" />
+    <concept id="83888646-71ce-4f1c-9c53-c54016f6ad4f/1180964022718" name="jetbrains.mps.baseLanguage.collections.structure.ConcatOperation" />
+    <concept id="7866978e-a0f0-4cc7-81bc-4d213d9375e1/1181952871644" name="jetbrains.mps.lang.smodel.structure.Concept_GetAllSubConcepts" />
+    <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1186402211651" name="jetbrains.mps.lang.editor.structure.StyleSheet" />
+    <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1186403751766" name="jetbrains.mps.lang.editor.structure.FontStyleStyleClassItem" />
+    <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1186404549998" name="jetbrains.mps.lang.editor.structure.ForegroundColorStyleClassItem" />
+    <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1186414860679" name="jetbrains.mps.lang.editor.structure.EditableStyleClassItem" />
+    <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1186414928363" name="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" />
+    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1197027756228" name="jetbrains.mps.baseLanguage.structure.DotExpression" />
+    <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1198256887712" name="jetbrains.mps.lang.editor.structure.CellModel_Indent" />
+    <concept id="fd392034-7849-419d-9071-12563d152375/1199569711397" name="jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral" />
+    <concept id="83888646-71ce-4f1c-9c53-c54016f6ad4f/1202120902084" name="jetbrains.mps.baseLanguage.collections.structure.WhereOperation" />
+    <concept id="83888646-71ce-4f1c-9c53-c54016f6ad4f/1203518072036" name="jetbrains.mps.baseLanguage.collections.structure.SmartClosureParameterDeclaration" />
+    <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1214320119173" name="jetbrains.mps.lang.editor.structure.SideTransformAnchorTagStyleClassItem" />
+    <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1215007897487" name="jetbrains.mps.lang.editor.structure.PaddingRightStyleClassItem" />
+    <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1215085112640" name="jetbrains.mps.lang.editor.structure.FirstPositionAllowedStyleClassItem" />
+    <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1215085197271" name="jetbrains.mps.lang.editor.structure.LastPositionAllowedStyleClassItem" />
+    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1225271177708" name="jetbrains.mps.baseLanguage.structure.StringType" />
+    <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1225898583838" name="jetbrains.mps.lang.editor.structure.ReadOnlyModelAccessor" />
+    <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1225900081164" name="jetbrains.mps.lang.editor.structure.CellModel_ReadOnlyModelAccessor" />
+    <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1233758997495" name="jetbrains.mps.lang.editor.structure.PunctuationLeftStyleClassItem" />
+    <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1233759184865" name="jetbrains.mps.lang.editor.structure.PunctuationRightStyleClassItem" />
+    <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1236262245656" name="jetbrains.mps.lang.editor.structure.MatchingLabelStyleClassItem" />
+    <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1237303669825" name="jetbrains.mps.lang.editor.structure.CellLayout_Indent" />
+    <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1237307900041" name="jetbrains.mps.lang.editor.structure.IndentLayoutIndentStyleClassItem" />
+    <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1237308012275" name="jetbrains.mps.lang.editor.structure.IndentLayoutNewLineStyleClassItem" />
+    <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1240253180846" name="jetbrains.mps.lang.editor.structure.IndentLayoutNoWrapClassItem" />
+    <concept id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd/767145758118872830" name="jetbrains.mps.lang.actions.structure.NF_Link_SetNewChildOperation" />
+    <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1402906326895675325" name="jetbrains.mps.lang.editor.structure.CellActionMap_FunctionParm_selectedNode" />
     <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1402906326896143883" name="jetbrains.mps.lang.editor.structure.CellKeyMap_FunctionParm_selectedNode" />
-    <property id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1139848536355/1214560368769" name="emptyNoTargetText" />
-    <property id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1139848536355/1140017977771" name="readOnly" />
+    <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1950447826681509042" name="jetbrains.mps.lang.editor.structure.ApplyStyleClass" />
+    <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/3383245079137382180" name="jetbrains.mps.lang.editor.structure.StyleClass" />
+    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/4836112446988635817" name="jetbrains.mps.baseLanguage.structure.UndefinedType" />
+    <concept id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd/7776141288922801652" name="jetbrains.mps.lang.actions.structure.NF_Concept_NewInstance" />
+    <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/9122903797312246523" name="jetbrains.mps.lang.editor.structure.StyleReference" />
     <property id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1073389446423/1073389446425" name="vertical" />
+    <property id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1073389577006/1073389577007" name="text" />
     <property id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1075375595203/1075375595204" name="text" />
+    <property id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1073389577006/1082639509531" name="nullText" />
     <property id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1088612959204/1088613081987" name="vertical" />
-    <property id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1140524381322/1156252885376" name="separatorLayoutConstraint" />
-    <property id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1236262245656/1238091709220" name="labelName" />
+    <property id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1073389214265/1130859485024" name="attractsFocus" />
     <property id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1136916919141/1136916941877" name="description" />
-    <property id="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1133920641626/1193676396447" name="virtualPackage" />
-    <property id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1186414536763/1186414551515" name="flag" />
-    <property id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1139535280617/1139537298254" name="description" />
-    <property id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1139848536355/1139852716018" name="noTargetText" />
     <property id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1136916976737/1136923970224" name="keycode" />
     <property id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1139535280617/1139535298778" name="actionId" />
-    <property id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1186403694788/1186403713874" name="color" />
-    <property id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1214320119173/1214320119174" name="tag" />
+    <property id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1139535280617/1139537298254" name="description" />
+    <property id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1139848536355/1139852716018" name="noTargetText" />
+    <property id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1139848536355/1140017977771" name="readOnly" />
     <property id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1140524381322/1140524450557" name="separatorText" />
-    <property id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1073389577006/1082639509531" name="nullText" />
+    <property id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1140524381322/1156252885376" name="separatorLayoutConstraint" />
     <property id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1136916919141/1163507208434" name="showInPopup" />
-    <property id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1073389577006/1073389577007" name="text" />
-    <property id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1215007762405/1215007802031" name="value" />
-    <property id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1186403751766/1186403771423" name="style" />
-    <property id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1073389214265/1130859485024" name="attractsFocus" />
     <property id="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001" name="name" />
-    <refRole id="7866978e-a0f0-4cc7-81bc-4d213d9375e1/1138056282393/1138056546658" name="link" />
-    <refRole id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1166049232041/1166049300910" name="conceptDeclaration" />
-    <refRole id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1381004262292414836/1381004262292426837" name="parentStyleClass" />
-    <refRole id="7866978e-a0f0-4cc7-81bc-4d213d9375e1/1177026924588/1177026940964" name="conceptDeclaration" />
-    <refRole id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1078939183254/1078939183255" name="editorComponent" />
-    <refRole id="7866978e-a0f0-4cc7-81bc-4d213d9375e1/1172424058054/1172424100906" name="conceptDeclaration" />
+    <property id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1186403694788/1186403713874" name="color" />
+    <property id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1186403751766/1186403771423" name="style" />
+    <property id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1186414536763/1186414551515" name="flag" />
+    <property id="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1133920641626/1193676396447" name="virtualPackage" />
+    <property id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1214320119173/1214320119174" name="tag" />
+    <property id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1139848536355/1214560368769" name="emptyNoTargetText" />
+    <property id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1215007762405/1215007802031" name="value" />
+    <property id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1236262245656/1238091709220" name="labelName" />
     <refRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1204053956946/1068499141037" name="baseMethodDeclaration" />
-    <refRole id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1166059625718/1166059677893" name="cellMenuComponent" />
+    <refRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068498886296/1068581517664" name="variableDeclaration" />
+    <refRole id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1078939183254/1078939183255" name="editorComponent" />
+    <refRole id="7866978e-a0f0-4cc7-81bc-4d213d9375e1/1138056022639/1138056395725" name="property" />
+    <refRole id="7866978e-a0f0-4cc7-81bc-4d213d9375e1/1138056143562/1138056516764" name="link" />
+    <refRole id="7866978e-a0f0-4cc7-81bc-4d213d9375e1/1138056282393/1138056546658" name="link" />
     <refRole id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1081293058843/1139445935125" name="applicableConcept" />
     <refRole id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1139535219966/1139535219968" name="applicableConcept" />
     <refRole id="7866978e-a0f0-4cc7-81bc-4d213d9375e1/1138757581985/1139880128956" name="concept" />
-    <refRole id="7866978e-a0f0-4cc7-81bc-4d213d9375e1/1138056143562/1138056516764" name="link" />
-    <refRole id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1139848536355/1140103550593" name="relationDeclaration" />
-    <refRole id="7866978e-a0f0-4cc7-81bc-4d213d9375e1/1172420572800/1180481110358" name="conceptDeclaraton" />
-    <refRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068498886296/1068581517664" name="variableDeclaration" />
-    <refRole id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/9122903797312246523/9122903797312247166" name="style" />
-    <refRole id="7866978e-a0f0-4cc7-81bc-4d213d9375e1/1138056022639/1138056395725" name="property" />
-    <refRole id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1164914519156/1164914727930" name="replacementConcept" />
     <refRole id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1073389214265/1139959269582" name="actionMap" />
+    <refRole id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1139848536355/1140103550593" name="relationDeclaration" />
     <refRole id="7866978e-a0f0-4cc7-81bc-4d213d9375e1/1140137987495/1140138128738" name="concept" />
-    <childRole id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1225900081164/1225900141900" name="modelAccessor" />
-    <childRole id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1136916919141/1136916998332" name="keystroke" />
-    <childRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1081773326031/1081773367580" name="leftExpression" />
-    <childRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1163668896201/1163668922816" name="ifTrue" />
-    <childRole id="83888646-71ce-4f1c-9c53-c54016f6ad4f/1176906603202/1176906787974" name="rightExpression" />
-    <childRole id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1088612959204/1088612973955" name="ifFalseCellModel" />
-    <childRole id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1219418625346/1219418656006" name="styleItem" />
-    <childRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1081773326031/1081773367579" name="rightExpression" />
-    <childRole id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1073389214265/1198512004906" name="focusPolicyApplicable" />
-    <childRole id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1186402211651/1186402402630" name="styleClass" />
-    <childRole id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd/7776141288922801652/3757480014665178932" name="prototype" />
-    <childRole id="7866978e-a0f0-4cc7-81bc-4d213d9375e1/1181952871644/1182506816063" name="smodel" />
-    <childRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068581242864/1068581242865" name="localVariableDeclaration" />
+    <refRole id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1164914519156/1164914727930" name="replacementConcept" />
+    <refRole id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1166049232041/1166049300910" name="conceptDeclaration" />
+    <refRole id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1166059625718/1166059677893" name="cellMenuComponent" />
+    <refRole id="7866978e-a0f0-4cc7-81bc-4d213d9375e1/1172424058054/1172424100906" name="conceptDeclaration" />
+    <refRole id="7866978e-a0f0-4cc7-81bc-4d213d9375e1/1177026924588/1177026940964" name="conceptDeclaration" />
+    <refRole id="7866978e-a0f0-4cc7-81bc-4d213d9375e1/1172420572800/1180481110358" name="conceptDeclaraton" />
+    <refRole id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1381004262292414836/1381004262292426837" name="parentStyleClass" />
+    <refRole id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/9122903797312246523/9122903797312247166" name="style" />
     <childRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068431474542/1068431790190" name="initializer" />
-    <childRole id="7866978e-a0f0-4cc7-81bc-4d213d9375e1/1140131837776/1140131861877" name="replacementNode" />
-    <childRole id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1081293058843/1136930944870" name="item" />
-    <childRole id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1166040637528/1166041505377" name="menuDescriptor" />
-    <childRole id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1073389446423/1073389446424" name="childCellModel" />
-    <childRole id="7866978e-a0f0-4cc7-81bc-4d213d9375e1/1139621453865/1177027386292" name="conceptArgument" />
-    <childRole id="83888646-71ce-4f1c-9c53-c54016f6ad4f/1237721394592/1237721435807" name="elementType" />
     <childRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123155/1068580123156" name="expression" />
-    <childRole id="83888646-71ce-4f1c-9c53-c54016f6ad4f/540871147943773365/540871147943773366" name="argument" />
-    <childRole id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1180615838666/1180615838667" name="postfixesFunction" />
-    <childRole id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1088612959204/1088612958265" name="ifTrueCellModel" />
-    <childRole id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1073389214265/1164826688380" name="menuDescriptor" />
-    <childRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/4972933694980447171/5680397130376446158" name="type" />
-    <childRole id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1225898583838/1225898971709" name="getter" />
-    <childRole id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1136916919141/1136917325338" name="isApplicableFunction" />
-    <childRole id="83888646-71ce-4f1c-9c53-c54016f6ad4f/1204796164442/1204796294226" name="closure" />
-    <childRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1197027756228/1197027833540" name="operation" />
-    <childRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068581242878/1068581517676" name="expression" />
-    <childRole id="fd392034-7849-419d-9071-12563d152375/1199569711397/1199569906740" name="parameter" />
-    <childRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1137021947720/1137022507850" name="body" />
-    <childRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1163668896201/1163668934364" name="ifFalse" />
-    <childRole id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1071666914219/1078153129734" name="inspectedCellModel" />
-    <childRole id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1088612959204/1145918517974" name="alternationCondition" />
-    <childRole id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1140524381322/1140524464359" name="emptyCellModel" />
-    <childRole id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1088013125922/1088186146602" name="editorComponent" />
-    <childRole id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1080736578640/1080736633877" name="cellModel" />
-    <childRole id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1073389214265/1142887637401" name="renderingCondition" />
-    <childRole id="fd392034-7849-419d-9071-12563d152375/1199569711397/1199569916463" name="body" />
-    <childRole id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1140524381322/1140524464360" name="cellLayout" />
-    <childRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123159/1068580123161" name="ifTrue" />
-    <childRole id="7866978e-a0f0-4cc7-81bc-4d213d9375e1/1172326502327/1206733650006" name="conceptArgument" />
     <childRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123159/1068580123160" name="condition" />
+    <childRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123159/1068580123161" name="ifTrue" />
+    <childRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068581242864/1068581242865" name="localVariableDeclaration" />
+    <childRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123136/1068581517665" name="statement" />
+    <childRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068581242878/1068581517676" name="expression" />
+    <childRole id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1073389446423/1073389446424" name="childCellModel" />
+    <childRole id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1071666914219/1078153129734" name="inspectedCellModel" />
+    <childRole id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1080736578640/1080736633877" name="cellModel" />
+    <childRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1081516740877/1081516765348" name="expression" />
+    <childRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1081773326031/1081773367579" name="rightExpression" />
+    <childRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1081773326031/1081773367580" name="leftExpression" />
+    <childRole id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1088013125922/1088186146602" name="editorComponent" />
+    <childRole id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1088612959204/1088612958265" name="ifTrueCellModel" />
+    <childRole id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1088612959204/1088612973955" name="ifFalseCellModel" />
+    <childRole id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1073389446423/1106270802874" name="cellLayout" />
+    <childRole id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1136916919141/1136916998332" name="keystroke" />
+    <childRole id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1136916919141/1136917325338" name="isApplicableFunction" />
+    <childRole id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1136916919141/1136920925604" name="executeFunction" />
+    <childRole id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1081293058843/1136930944870" name="item" />
+    <childRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1137021947720/1137022507850" name="body" />
+    <childRole id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1139535219966/1139535219969" name="item" />
+    <childRole id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1139535280617/1139535280620" name="executeFunction" />
+    <childRole id="7866978e-a0f0-4cc7-81bc-4d213d9375e1/1140131837776/1140131861877" name="replacementNode" />
+    <childRole id="7866978e-a0f0-4cc7-81bc-4d213d9375e1/1140137987495/1140138123956" name="leftExpression" />
+    <childRole id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1140524381322/1140524464359" name="emptyCellModel" />
+    <childRole id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1140524381322/1140524464360" name="cellLayout" />
+    <childRole id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1073389214265/1142887637401" name="renderingCondition" />
+    <childRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1145552977093/1145553007750" name="creator" />
+    <childRole id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1088612959204/1145918517974" name="alternationCondition" />
+    <childRole id="7866978e-a0f0-4cc7-81bc-4d213d9375e1/1146253292180/1146253292181" name="value" />
+    <childRole id="83888646-71ce-4f1c-9c53-c54016f6ad4f/1151688443754/1151688676805" name="elementType" />
+    <childRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1163668896201/1163668914799" name="condition" />
+    <childRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1163668896201/1163668922816" name="ifTrue" />
+    <childRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1163668896201/1163668934364" name="ifFalse" />
+    <childRole id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1164824717996/1164824815888" name="cellMenuPart" />
+    <childRole id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1073389214265/1164826688380" name="menuDescriptor" />
     <childRole id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1165004207520/1165004529292" name="parametersFunction" />
     <childRole id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1165004207520/1165004529293" name="createFunction" />
-    <childRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1145552977093/1145553007750" name="creator" />
-    <childRole id="83888646-71ce-4f1c-9c53-c54016f6ad4f/1237721394592/1237721435808" name="initValue" />
-    <childRole id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1073389446423/1106270802874" name="cellLayout" />
-    <childRole id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1164824717996/1164824815888" name="cellMenuPart" />
-    <childRole id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1950447826681509042/1950447826683828796" name="target" />
-    <childRole id="83888646-71ce-4f1c-9c53-c54016f6ad4f/1151688443754/1151688676805" name="elementType" />
-    <childRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1081516740877/1081516765348" name="expression" />
-    <childRole id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1139535280617/1139535280620" name="executeFunction" />
-    <childRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1163668896201/1163668914799" name="condition" />
     <childRole id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1165253627126/1165253890469" name="parameterObjectType" />
-    <childRole id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1139535219966/1139535219969" name="item" />
-    <childRole id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1136916919141/1136920925604" name="executeFunction" />
-    <childRole id="7866978e-a0f0-4cc7-81bc-4d213d9375e1/1146253292180/1146253292181" name="value" />
+    <childRole id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1166040637528/1166041505377" name="menuDescriptor" />
+    <childRole id="83888646-71ce-4f1c-9c53-c54016f6ad4f/1176906603202/1176906787974" name="rightExpression" />
+    <childRole id="7866978e-a0f0-4cc7-81bc-4d213d9375e1/1139621453865/1177027386292" name="conceptArgument" />
+    <childRole id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1180615838666/1180615838667" name="postfixesFunction" />
+    <childRole id="7866978e-a0f0-4cc7-81bc-4d213d9375e1/1181952871644/1182506816063" name="smodel" />
+    <childRole id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1186402211651/1186402402630" name="styleClass" />
     <childRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1197027756228/1197027771414" name="operand" />
-    <childRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123136/1068581517665" name="statement" />
-    <childRole id="7866978e-a0f0-4cc7-81bc-4d213d9375e1/1140137987495/1140138123956" name="leftExpression" />
+    <childRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1197027756228/1197027833540" name="operation" />
+    <childRole id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1073389214265/1198512004906" name="focusPolicyApplicable" />
+    <childRole id="fd392034-7849-419d-9071-12563d152375/1199569711397/1199569906740" name="parameter" />
+    <childRole id="fd392034-7849-419d-9071-12563d152375/1199569711397/1199569916463" name="body" />
+    <childRole id="83888646-71ce-4f1c-9c53-c54016f6ad4f/1204796164442/1204796294226" name="closure" />
+    <childRole id="7866978e-a0f0-4cc7-81bc-4d213d9375e1/1172326502327/1206733650006" name="conceptArgument" />
+    <childRole id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1219418625346/1219418656006" name="styleItem" />
+    <childRole id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1225898583838/1225898971709" name="getter" />
+    <childRole id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1225900081164/1225900141900" name="modelAccessor" />
+    <childRole id="83888646-71ce-4f1c-9c53-c54016f6ad4f/1237721394592/1237721435807" name="elementType" />
+    <childRole id="83888646-71ce-4f1c-9c53-c54016f6ad4f/1237721394592/1237721435808" name="initValue" />
+    <childRole id="83888646-71ce-4f1c-9c53-c54016f6ad4f/540871147943773365/540871147943773366" name="argument" />
+    <childRole id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1950447826681509042/1950447826683828796" name="target" />
+    <childRole id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd/7776141288922801652/3757480014665178932" name="prototype" />
+    <childRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/4972933694980447171/5680397130376446158" name="type" />
   </debugInfo>
   <languages>
-    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" version="-1" index="9wj7" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" version="-1" index="4ia1" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" version="-1" index="vg0i" />
-    <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" version="-1" index="j0ph" />
-    <use id="7a5dda62-9140-4668-ab76-d5ed1746f2b2" version="-1" index="swut" />
-    <use id="13744753-c81f-424a-9c1b-cf8943bf4e86" version="-1" index="1v6e" />
     <use id="fd392034-7849-419d-9071-12563d152375" version="-1" index="cakq" />
+    <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" version="-1" index="j0ph" />
     <use id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd" version="-1" index="abtv" />
+    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" version="-1" index="9wj7" />
+    <use id="13744753-c81f-424a-9c1b-cf8943bf4e86" version="-1" index="1v6e" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" version="-1" index="4ia1" />
+    <use id="7a5dda62-9140-4668-ab76-d5ed1746f2b2" version="-1" index="swut" />
     <use id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" version="0" implicit="true" index="asn4" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>

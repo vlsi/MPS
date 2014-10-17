@@ -4,35 +4,35 @@
   <debugInfo>
     <lang id="daafa647-f1f7-4b0b-b096-69cd7c8408c0" name="jetbrains.mps.baseLanguage.regexp" />
     <lang id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core" />
-    <concept id="daafa647-f1f7-4b0b-b096-69cd7c8408c0/1174554386384" name="jetbrains.mps.baseLanguage.regexp.structure.PredefinedSymbolClassDeclaration" />
-    <concept id="daafa647-f1f7-4b0b-b096-69cd7c8408c0/1174483125581" name="jetbrains.mps.baseLanguage.regexp.structure.RegexpDeclaration" />
-    <concept id="daafa647-f1f7-4b0b-b096-69cd7c8408c0/1174482804200" name="jetbrains.mps.baseLanguage.regexp.structure.PlusRegexp" />
-    <concept id="daafa647-f1f7-4b0b-b096-69cd7c8408c0/1174662351725" name="jetbrains.mps.baseLanguage.regexp.structure.Regexps" />
-    <concept id="daafa647-f1f7-4b0b-b096-69cd7c8408c0/1174552240608" name="jetbrains.mps.baseLanguage.regexp.structure.QuestionRegexp" />
-    <concept id="daafa647-f1f7-4b0b-b096-69cd7c8408c0/1174662605354" name="jetbrains.mps.baseLanguage.regexp.structure.RegexpDeclarationReferenceRegexp" />
-    <concept id="daafa647-f1f7-4b0b-b096-69cd7c8408c0/1174484562151" name="jetbrains.mps.baseLanguage.regexp.structure.SeqRegexp" />
     <concept id="daafa647-f1f7-4b0b-b096-69cd7c8408c0/1174482753837" name="jetbrains.mps.baseLanguage.regexp.structure.StringLiteralRegexp" />
-    <concept id="daafa647-f1f7-4b0b-b096-69cd7c8408c0/1174554406855" name="jetbrains.mps.baseLanguage.regexp.structure.PredefinedSymbolClasses" />
     <concept id="daafa647-f1f7-4b0b-b096-69cd7c8408c0/1174482769792" name="jetbrains.mps.baseLanguage.regexp.structure.OrRegexp" />
-    <concept id="daafa647-f1f7-4b0b-b096-69cd7c8408c0/1174558792178" name="jetbrains.mps.baseLanguage.regexp.structure.PredefinedSymbolClassSymbolClassPart" />
+    <concept id="daafa647-f1f7-4b0b-b096-69cd7c8408c0/1174482804200" name="jetbrains.mps.baseLanguage.regexp.structure.PlusRegexp" />
     <concept id="daafa647-f1f7-4b0b-b096-69cd7c8408c0/1174482808826" name="jetbrains.mps.baseLanguage.regexp.structure.StarRegexp" />
+    <concept id="daafa647-f1f7-4b0b-b096-69cd7c8408c0/1174483125581" name="jetbrains.mps.baseLanguage.regexp.structure.RegexpDeclaration" />
+    <concept id="daafa647-f1f7-4b0b-b096-69cd7c8408c0/1174484562151" name="jetbrains.mps.baseLanguage.regexp.structure.SeqRegexp" />
     <concept id="daafa647-f1f7-4b0b-b096-69cd7c8408c0/1174491169200" name="jetbrains.mps.baseLanguage.regexp.structure.ParensRegexp" />
-    <concept id="daafa647-f1f7-4b0b-b096-69cd7c8408c0/1174557878319" name="jetbrains.mps.baseLanguage.regexp.structure.CharacterSymbolClassPart" />
+    <concept id="daafa647-f1f7-4b0b-b096-69cd7c8408c0/1174552240608" name="jetbrains.mps.baseLanguage.regexp.structure.QuestionRegexp" />
     <concept id="daafa647-f1f7-4b0b-b096-69cd7c8408c0/1174554211468" name="jetbrains.mps.baseLanguage.regexp.structure.PositiveSymbolClassRegexp" />
+    <concept id="daafa647-f1f7-4b0b-b096-69cd7c8408c0/1174554386384" name="jetbrains.mps.baseLanguage.regexp.structure.PredefinedSymbolClassDeclaration" />
+    <concept id="daafa647-f1f7-4b0b-b096-69cd7c8408c0/1174554406855" name="jetbrains.mps.baseLanguage.regexp.structure.PredefinedSymbolClasses" />
+    <concept id="daafa647-f1f7-4b0b-b096-69cd7c8408c0/1174557878319" name="jetbrains.mps.baseLanguage.regexp.structure.CharacterSymbolClassPart" />
+    <concept id="daafa647-f1f7-4b0b-b096-69cd7c8408c0/1174558792178" name="jetbrains.mps.baseLanguage.regexp.structure.PredefinedSymbolClassSymbolClassPart" />
+    <concept id="daafa647-f1f7-4b0b-b096-69cd7c8408c0/1174662351725" name="jetbrains.mps.baseLanguage.regexp.structure.Regexps" />
+    <concept id="daafa647-f1f7-4b0b-b096-69cd7c8408c0/1174662605354" name="jetbrains.mps.baseLanguage.regexp.structure.RegexpDeclarationReferenceRegexp" />
+    <property id="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001" name="name" />
     <property id="daafa647-f1f7-4b0b-b096-69cd7c8408c0/1174482753837/1174482761807" name="text" />
+    <property id="daafa647-f1f7-4b0b-b096-69cd7c8408c0/1174554386384/1174554540628" name="description" />
     <property id="daafa647-f1f7-4b0b-b096-69cd7c8408c0/1174557878319/1174557887320" name="character" />
     <property id="daafa647-f1f7-4b0b-b096-69cd7c8408c0/1174483125581/1174662978120" name="description" />
-    <property id="daafa647-f1f7-4b0b-b096-69cd7c8408c0/1174554386384/1174554540628" name="description" />
-    <property id="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001" name="name" />
-    <refRole id="daafa647-f1f7-4b0b-b096-69cd7c8408c0/1174662605354/1174662628918" name="regexp" />
     <refRole id="daafa647-f1f7-4b0b-b096-69cd7c8408c0/1174558792178/1174558819022" name="declaration" />
-    <childRole id="daafa647-f1f7-4b0b-b096-69cd7c8408c0/1174554186090/1174557628217" name="part" />
-    <childRole id="daafa647-f1f7-4b0b-b096-69cd7c8408c0/1174485167097/1174485181039" name="right" />
-    <childRole id="daafa647-f1f7-4b0b-b096-69cd7c8408c0/1174485167097/1174485176897" name="left" />
+    <refRole id="daafa647-f1f7-4b0b-b096-69cd7c8408c0/1174662605354/1174662628918" name="regexp" />
     <childRole id="daafa647-f1f7-4b0b-b096-69cd7c8408c0/1174483125581/1174483133849" name="regexp" />
-    <childRole id="daafa647-f1f7-4b0b-b096-69cd7c8408c0/1174554406855/1174554418919" name="symbolClass" />
+    <childRole id="daafa647-f1f7-4b0b-b096-69cd7c8408c0/1174485167097/1174485176897" name="left" />
+    <childRole id="daafa647-f1f7-4b0b-b096-69cd7c8408c0/1174485167097/1174485181039" name="right" />
     <childRole id="daafa647-f1f7-4b0b-b096-69cd7c8408c0/1174485235885/1174485243418" name="regexp" />
     <childRole id="daafa647-f1f7-4b0b-b096-69cd7c8408c0/1174491169200/1174491174779" name="expr" />
+    <childRole id="daafa647-f1f7-4b0b-b096-69cd7c8408c0/1174554406855/1174554418919" name="symbolClass" />
+    <childRole id="daafa647-f1f7-4b0b-b096-69cd7c8408c0/1174554186090/1174557628217" name="part" />
     <childRole id="daafa647-f1f7-4b0b-b096-69cd7c8408c0/1174662351725/1174662369010" name="regexp" />
   </debugInfo>
   <languages>
