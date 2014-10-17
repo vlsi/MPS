@@ -1,3902 +1,3964 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<model modelUID="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" version="40">
-  <persistence version="8" />
-  <language namespace="c72da2b9-7cce-4447-8389-f407dc1158b7(jetbrains.mps.lang.structure)" />
-  <language namespace="f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)" />
-  <language namespace="7866978e-a0f0-4cc7-81bc-4d213d9375e1(jetbrains.mps.lang.smodel)" />
-  <language namespace="18bc6592-03a6-4e29-a83a-7ff23bde13ba(jetbrains.mps.lang.editor)" />
-  <devkit namespace="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
-  <import index="tpce" modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" />
-  <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
-  <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="5" />
-  <import index="tpcw" modelUID="r:00000000-0000-4000-0000-011c895902bc(jetbrains.mps.lang.sharedConcepts.structure)" version="0" />
-  <import index="tp25" modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" />
-  <import index="tp4f" modelUID="r:00000000-0000-4000-0000-011c89590373(jetbrains.mps.baseLanguage.classifiers.structure)" version="0" />
-  <import index="tpdg" modelUID="r:00000000-0000-4000-0000-011c895902a8(jetbrains.mps.lang.actions.structure)" version="-1" />
-  <import index="8q6x" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.awt.event(java.awt.event@java_stub)" version="-1" />
-  <import index="tpcb" modelUID="r:00000000-0000-4000-0000-011c89590297(jetbrains.mps.lang.editor.behavior)" version="-1" />
-  <import index="tpc2" modelUID="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" version="39" implicit="yes" />
-  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1071666914219" nodeInfo="ig">
-    <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
-    <property name="rootable" nameId="tpce.1096454100552" value="true" />
-    <property name="final" nameId="tpce.4628067390765956807" value="false" />
-    <property name="iconPath" nameId="tpce.1160488491229" value="${language_descriptor}/icons/editor.png" />
-    <property name="name" nameId="tpck.1169194664001" value="ConceptEditorDeclaration" />
-    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="Concept Editor" />
-    <link role="extends" roleId="tpce.1071489389519" targetNodeId="1080736578640" resolveInfo="BaseEditorComponent" />
-    <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="1210369064378" nodeInfo="ig">
-      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="tpck.1169194658468" resolveInfo="INamedConcept" />
-    </node>
-    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="1078153129734" nodeInfo="ig">
-      <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
-      <property name="role" nameId="tpce.1071599776563" value="inspectedCellModel" />
-      <property name="sourceCardinality" nameId="tpce.1071599893252" value="0..1" />
-      <link role="target" roleId="tpce.1071599976176" targetNodeId="1073389214265" resolveInfo="EditorCellModel" />
-    </node>
-    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="2597348684684069742" nodeInfo="ig">
-      <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
-      <property name="role" nameId="tpce.1071599776563" value="contextHints" />
-      <property name="sourceCardinality" nameId="tpce.1071599893252" value="0..n" />
-      <link role="target" roleId="tpce.1071599976176" targetNodeId="6822301196700715228" resolveInfo="ConceptEditorHintDeclarationReference" />
-    </node>
-    <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="2621449412040149672" nodeInfo="ig">
-      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="tpce.2621449412040133764" resolveInfo="IConceptAspect" />
-    </node>
-  </root>
-  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1073389214265" nodeInfo="ig">
-    <property name="abstract" nameId="tpce.4628067390765956802" value="true" />
-    <property name="final" nameId="tpce.4628067390765956807" value="false" />
-    <property name="name" nameId="tpck.1169194664001" value="EditorCellModel" />
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="CellModel" />
-    <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
-    <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="1381004262292426852" nodeInfo="ig">
-      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="1381004262292414836" resolveInfo="ICellStyle" />
-    </node>
-    <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="8104358048506727197" nodeInfo="ig">
-      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="tpck.6999738288738427190" resolveInfo="ImplementationWithStubPart" />
-    </node>
-    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="1142887637401" nodeInfo="ig">
-      <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
-      <property name="role" nameId="tpce.1071599776563" value="renderingCondition" />
-      <property name="sourceCardinality" nameId="tpce.1071599893252" value="0..1" />
-      <link role="target" roleId="tpce.1071599976176" targetNodeId="1142886221719" resolveInfo="QueryFunction_NodeCondition" />
-    </node>
-    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="1139959269582" nodeInfo="ig">
-      <property name="role" nameId="tpce.1071599776563" value="actionMap" />
-      <link role="target" roleId="tpce.1071599976176" targetNodeId="1139535219966" resolveInfo="CellActionMapDeclaration" />
-    </node>
-    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="1081339532145" nodeInfo="ig">
-      <property name="role" nameId="tpce.1071599776563" value="keyMap" />
-      <property name="sourceCardinality" nameId="tpce.1071599893252" value="0..1" />
-      <link role="target" roleId="tpce.1071599976176" targetNodeId="1081293058843" resolveInfo="CellKeyMapDeclaration" />
-    </node>
-    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="1164826688380" nodeInfo="ig">
-      <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
-      <property name="role" nameId="tpce.1071599776563" value="menuDescriptor" />
-      <link role="target" roleId="tpce.1071599976176" targetNodeId="1164824717996" resolveInfo="CellMenuDescriptor" />
-    </node>
-    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="1198512004906" nodeInfo="ig">
-      <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
-      <property name="role" nameId="tpce.1071599776563" value="focusPolicyApplicable" />
-      <link role="target" roleId="tpce.1071599976176" targetNodeId="1142886221719" resolveInfo="QueryFunction_NodeCondition" />
-    </node>
-    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="4323500428121274054" nodeInfo="ig">
-      <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
-      <property name="role" nameId="tpce.1071599776563" value="id" />
-      <link role="target" roleId="tpce.1071599976176" targetNodeId="4323500428121233431" resolveInfo="EditorCellId" />
-    </node>
-    <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="1130859485024" nodeInfo="ig">
-      <property name="name" nameId="tpck.1169194664001" value="attractsFocus" />
-      <link role="dataType" roleId="tpce.1082985295845" targetNodeId="1130926557197" resolveInfo="FocusPolicy" />
-    </node>
-  </root>
-  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1073389446423" nodeInfo="ig">
-    <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
-    <property name="final" nameId="tpce.4628067390765956807" value="false" />
-    <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="collection of cells" />
-    <property name="name" nameId="tpck.1169194664001" value="CellModel_Collection" />
-    <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="CellModel" />
-    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="collection" />
-    <link role="extends" roleId="tpce.1071489389519" targetNodeId="1073389214265" resolveInfo="EditorCellModel" />
-    <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="4033442785759946545" nodeInfo="ig">
-      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="8770580973047386957" resolveInfo="Synchronizeable" />
-    </node>
-    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="1073389446424" nodeInfo="ig">
-      <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
-      <property name="role" nameId="tpce.1071599776563" value="childCellModel" />
-      <property name="sourceCardinality" nameId="tpce.1071599893252" value="0..n" />
-      <link role="target" roleId="tpce.1071599976176" targetNodeId="1073389214265" resolveInfo="EditorCellModel" />
-    </node>
-    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="7723470090030138869" nodeInfo="ig">
-      <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
-      <property name="role" nameId="tpce.1071599776563" value="foldedCellModel" />
-      <link role="target" roleId="tpce.1071599976176" targetNodeId="1073389214265" resolveInfo="EditorCellModel" />
-    </node>
-    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="1106270802874" nodeInfo="ig">
-      <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
-      <property name="role" nameId="tpce.1071599776563" value="cellLayout" />
-      <property name="sourceCardinality" nameId="tpce.1071599893252" value="0..1" />
-      <link role="target" roleId="tpce.1071599976176" targetNodeId="1106270491082" resolveInfo="CellLayout" />
-    </node>
-    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="8709572687796959088" nodeInfo="ig">
-      <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
-      <property name="role" nameId="tpce.1071599776563" value="usesFoldingCondition" />
-      <link role="target" roleId="tpce.1071599976176" targetNodeId="1142886221719" resolveInfo="QueryFunction_NodeCondition" />
-    </node>
-    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="4242538589862653897" nodeInfo="ig">
-      <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
-      <property name="role" nameId="tpce.1071599776563" value="addHints" />
-      <property name="sourceCardinality" nameId="tpce.1071599893252" value="0..1" />
-      <link role="target" roleId="tpce.1071599976176" targetNodeId="4653693564097968040" resolveInfo="ContextHintsSpecification" />
-    </node>
-    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="4242538589862654489" nodeInfo="ig">
-      <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
-      <property name="role" nameId="tpce.1071599776563" value="removeHints" />
-      <link role="target" roleId="tpce.1071599976176" targetNodeId="4653693564097968040" resolveInfo="ContextHintsSpecification" />
-    </node>
-    <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="1073389446425" nodeInfo="ig">
-      <property name="name" nameId="tpck.1169194664001" value="vertical" />
-      <link role="dataType" roleId="tpce.1082985295845" targetNodeId="tpck.1082983657063" resolveInfo="boolean" />
-      <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpce.DeprecatedNodeAnnotation" typeId="tpce.1224240836180" id="1239869892471" nodeInfo="ig">
-        <property name="comment" nameId="tpce.1225118933224" value="Use isVertical()" />
+<model ref="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)">
+  <persistence version="9" />
+  <debugInfo>
+    <lang id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure" />
+    <lang id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" />
+    <lang id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" />
+    <lang id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" />
+    <lang id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core" />
+    <model ref="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" name="jetbrains.mps.lang.structure.structure" />
+    <model ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" name="jetbrains.mps.lang.core.structure" />
+    <model ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" name="jetbrains.mps.baseLanguage.structure" />
+    <model ref="r:00000000-0000-4000-0000-011c895902bc(jetbrains.mps.lang.sharedConcepts.structure)" name="jetbrains.mps.lang.sharedConcepts.structure" />
+    <model ref="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" name="jetbrains.mps.lang.smodel.structure" />
+    <model ref="r:00000000-0000-4000-0000-011c89590373(jetbrains.mps.baseLanguage.classifiers.structure)" name="jetbrains.mps.baseLanguage.classifiers.structure" />
+    <model ref="r:00000000-0000-4000-0000-011c895902a8(jetbrains.mps.lang.actions.structure)" name="jetbrains.mps.lang.actions.structure" />
+    <model ref="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.awt.event(java.awt.event@java_stub)" name="java.awt.event@java_stub" />
+    <model ref="r:00000000-0000-4000-0000-011c89590297(jetbrains.mps.lang.editor.behavior)" name="jetbrains.mps.lang.editor.behavior" />
+    <concept id="c72da2b9-7cce-4447-8389-f407dc1158b7/1083171877298" name="jetbrains.mps.lang.structure.structure.EnumerationMemberDeclaration" />
+    <concept id="c72da2b9-7cce-4447-8389-f407dc1158b7/1169125989551" name="jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration" />
+    <concept id="c72da2b9-7cce-4447-8389-f407dc1158b7/1082978164219" name="jetbrains.mps.lang.structure.structure.EnumerationDataTypeDeclaration" />
+    <concept id="c72da2b9-7cce-4447-8389-f407dc1158b7/1224240836180" name="jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation" />
+    <concept id="c72da2b9-7cce-4447-8389-f407dc1158b7/1071489288298" name="jetbrains.mps.lang.structure.structure.LinkDeclaration" />
+    <concept id="c72da2b9-7cce-4447-8389-f407dc1158b7/1169127622168" name="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" />
+    <concept id="c72da2b9-7cce-4447-8389-f407dc1158b7/1071489288299" name="jetbrains.mps.lang.structure.structure.PropertyDeclaration" />
+    <concept id="c72da2b9-7cce-4447-8389-f407dc1158b7/1082978499127" name="jetbrains.mps.lang.structure.structure.ConstrainedDataTypeDeclaration" />
+    <concept id="c72da2b9-7cce-4447-8389-f407dc1158b7/1071489090640" name="jetbrains.mps.lang.structure.structure.ConceptDeclaration" />
+    <property id="c72da2b9-7cce-4447-8389-f407dc1158b7/1169125787135/4628067390765956807" name="final" />
+    <property id="c72da2b9-7cce-4447-8389-f407dc1158b7/1083171877298/1083923523171" name="internalValue" />
+    <property id="c72da2b9-7cce-4447-8389-f407dc1158b7/1071489288298/1071599893252" name="sourceCardinality" />
+    <property id="c72da2b9-7cce-4447-8389-f407dc1158b7/1082978164219/1212080844762" name="hasNoDefaultMember" />
+    <property id="c72da2b9-7cce-4447-8389-f407dc1158b7/1169125787135/4628067390765956802" name="abstract" />
+    <property id="c72da2b9-7cce-4447-8389-f407dc1158b7/1071489090640/5404671619616246344" name="staticScope" />
+    <property id="c72da2b9-7cce-4447-8389-f407dc1158b7/1071489090640/1096454100552" name="rootable" />
+    <property id="c72da2b9-7cce-4447-8389-f407dc1158b7/1071489288298/1071599776563" name="role" />
+    <property id="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1133920641626/1193676396447" name="virtualPackage" />
+    <property id="c72da2b9-7cce-4447-8389-f407dc1158b7/1224240836180/1225118933224" name="comment" />
+    <property id="c72da2b9-7cce-4447-8389-f407dc1158b7/1071489090640/1160488491229" name="iconPath" />
+    <property id="c72da2b9-7cce-4447-8389-f407dc1158b7/1169125787135/5092175715804935370" name="conceptAlias" />
+    <property id="c72da2b9-7cce-4447-8389-f407dc1158b7/1083171877298/1083923523172" name="externalValue" />
+    <property id="c72da2b9-7cce-4447-8389-f407dc1158b7/1082978499127/1083066089218" name="constraint" />
+    <property id="c72da2b9-7cce-4447-8389-f407dc1158b7/1169125787135/4628067390765907488" name="conceptShortDescription" />
+    <property id="c72da2b9-7cce-4447-8389-f407dc1158b7/1071489288298/1071599937831" name="metaClass" />
+    <property id="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001" name="name" />
+    <refRole id="c72da2b9-7cce-4447-8389-f407dc1158b7/1082978164219/1083241965437" name="defaultMember" />
+    <refRole id="c72da2b9-7cce-4447-8389-f407dc1158b7/1071489090640/1071489389519" name="extends" />
+    <refRole id="c72da2b9-7cce-4447-8389-f407dc1158b7/1071489288299/1082985295845" name="dataType" />
+    <refRole id="c72da2b9-7cce-4447-8389-f407dc1158b7/1169127622168/1169127628841" name="intfc" />
+    <refRole id="c72da2b9-7cce-4447-8389-f407dc1158b7/1071489288298/1071599698500" name="specializedLink" />
+    <refRole id="c72da2b9-7cce-4447-8389-f407dc1158b7/1071489288298/1071599976176" name="target" />
+    <refRole id="c72da2b9-7cce-4447-8389-f407dc1158b7/1082978164219/1083171729157" name="memberDataType" />
+    <childRole id="c72da2b9-7cce-4447-8389-f407dc1158b7/1082978164219/1083172003582" name="member" />
+    <childRole id="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1133920641626/5169995583184591170" name="smodelAttribute" />
+    <childRole id="c72da2b9-7cce-4447-8389-f407dc1158b7/1071489090640/1169129564478" name="implements" />
+    <childRole id="c72da2b9-7cce-4447-8389-f407dc1158b7/1169125989551/1169127546356" name="extends" />
+    <childRole id="c72da2b9-7cce-4447-8389-f407dc1158b7/1169125787135/1071489727083" name="linkDeclaration" />
+    <childRole id="c72da2b9-7cce-4447-8389-f407dc1158b7/1169125787135/1071489727084" name="propertyDeclaration" />
+  </debugInfo>
+  <languages>
+    <use id="c72da2b9-7cce-4447-8389-f407dc1158b7" version="-1" index="4jta" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" version="-1" index="vg0i" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" version="-1" index="4ia1" />
+    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" version="-1" index="9wj7" />
+    <use id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" version="0" implicit="true" index="asn4" />
+    <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
+  </languages>
+  <imports>
+    <import index="tpce" ref="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" />
+    <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
+    <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <import index="tpcw" ref="r:00000000-0000-4000-0000-011c895902bc(jetbrains.mps.lang.sharedConcepts.structure)" />
+    <import index="tp25" ref="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" />
+    <import index="tp4f" ref="r:00000000-0000-4000-0000-011c89590373(jetbrains.mps.baseLanguage.classifiers.structure)" />
+    <import index="tpdg" ref="r:00000000-0000-4000-0000-011c895902a8(jetbrains.mps.lang.actions.structure)" />
+    <import index="8q6x" ref="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.awt.event(java.awt.event@java_stub)" />
+    <import index="tpcb" ref="r:00000000-0000-4000-0000-011c89590297(jetbrains.mps.lang.editor.behavior)" />
+    <import index="tpc2" ref="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" implicit="true" />
+  </imports>
+  <contents>
+    <node concept="4jta.1071489090640" id="1071666914219" info="ig">
+      <property role="4jta.1169125787135.4628067390765956802" value="false" />
+      <property role="4jta.1071489090640.1096454100552" value="true" />
+      <property role="4jta.1169125787135.4628067390765956807" value="false" />
+      <property role="4jta.1071489090640.1160488491229" value="${language_descriptor}/icons/editor.png" />
+      <property role="asn4.1169194658468.1169194664001" value="ConceptEditorDeclaration" />
+      <property role="4jta.1169125787135.5092175715804935370" value="Concept Editor" />
+      <reference role="4jta.1071489090640.1071489389519" target="1080736578640" resolveInfo="BaseEditorComponent" />
+      <node concept="4jta.1169127622168" id="1210369064378" role="4jta.1071489090640.1169129564478" info="ig">
+        <reference role="4jta.1169127622168.1169127628841" target="tpck.1169194658468" resolveInfo="INamedConcept" />
+      </node>
+      <node concept="4jta.1071489288298" id="1078153129734" role="4jta.1169125787135.1071489727083" info="ig">
+        <property role="4jta.1071489288298.1071599937831" value="aggregation" />
+        <property role="4jta.1071489288298.1071599776563" value="inspectedCellModel" />
+        <property role="4jta.1071489288298.1071599893252" value="0..1" />
+        <reference role="4jta.1071489288298.1071599976176" target="1073389214265" resolveInfo="EditorCellModel" />
+      </node>
+      <node concept="4jta.1071489288298" id="2597348684684069742" role="4jta.1169125787135.1071489727083" info="ig">
+        <property role="4jta.1071489288298.1071599937831" value="aggregation" />
+        <property role="4jta.1071489288298.1071599776563" value="contextHints" />
+        <property role="4jta.1071489288298.1071599893252" value="0..n" />
+        <reference role="4jta.1071489288298.1071599976176" target="6822301196700715228" resolveInfo="ConceptEditorHintDeclarationReference" />
+      </node>
+      <node concept="4jta.1169127622168" id="2621449412040149672" role="4jta.1071489090640.1169129564478" info="ig">
+        <reference role="4jta.1169127622168.1169127628841" target="tpce.2621449412040133764" resolveInfo="IConceptAspect" />
       </node>
     </node>
-    <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="1073389446426" nodeInfo="ig">
-      <property name="name" nameId="tpck.1169194664001" value="gridLayout" />
-      <link role="dataType" roleId="tpce.1082985295845" targetNodeId="tpck.1082983657063" resolveInfo="boolean" />
-      <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpce.DeprecatedNodeAnnotation" typeId="tpce.1224240836180" id="1239869894921" nodeInfo="ig">
-        <property name="comment" nameId="tpce.1225118933224" value="Use isVerticalGrid()" />
+    <node concept="4jta.1071489090640" id="1073389214265" info="ig">
+      <property role="4jta.1169125787135.4628067390765956802" value="true" />
+      <property role="4jta.1169125787135.4628067390765956807" value="false" />
+      <property role="asn4.1169194658468.1169194664001" value="EditorCellModel" />
+      <property role="asn4.1133920641626.1193676396447" value="CellModel" />
+      <reference role="4jta.1071489090640.1071489389519" target="tpck.1133920641626" resolveInfo="BaseConcept" />
+      <node concept="4jta.1169127622168" id="1381004262292426852" role="4jta.1071489090640.1169129564478" info="ig">
+        <reference role="4jta.1169127622168.1169127628841" target="1381004262292414836" resolveInfo="ICellStyle" />
+      </node>
+      <node concept="4jta.1169127622168" id="8104358048506727197" role="4jta.1071489090640.1169129564478" info="ig">
+        <reference role="4jta.1169127622168.1169127628841" target="tpck.6999738288738427190" resolveInfo="ImplementationWithStubPart" />
+      </node>
+      <node concept="4jta.1071489288298" id="1142887637401" role="4jta.1169125787135.1071489727083" info="ig">
+        <property role="4jta.1071489288298.1071599937831" value="aggregation" />
+        <property role="4jta.1071489288298.1071599776563" value="renderingCondition" />
+        <property role="4jta.1071489288298.1071599893252" value="0..1" />
+        <reference role="4jta.1071489288298.1071599976176" target="1142886221719" resolveInfo="QueryFunction_NodeCondition" />
+      </node>
+      <node concept="4jta.1071489288298" id="1139959269582" role="4jta.1169125787135.1071489727083" info="ig">
+        <property role="4jta.1071489288298.1071599776563" value="actionMap" />
+        <reference role="4jta.1071489288298.1071599976176" target="1139535219966" resolveInfo="CellActionMapDeclaration" />
+      </node>
+      <node concept="4jta.1071489288298" id="1081339532145" role="4jta.1169125787135.1071489727083" info="ig">
+        <property role="4jta.1071489288298.1071599776563" value="keyMap" />
+        <property role="4jta.1071489288298.1071599893252" value="0..1" />
+        <reference role="4jta.1071489288298.1071599976176" target="1081293058843" resolveInfo="CellKeyMapDeclaration" />
+      </node>
+      <node concept="4jta.1071489288298" id="1164826688380" role="4jta.1169125787135.1071489727083" info="ig">
+        <property role="4jta.1071489288298.1071599937831" value="aggregation" />
+        <property role="4jta.1071489288298.1071599776563" value="menuDescriptor" />
+        <reference role="4jta.1071489288298.1071599976176" target="1164824717996" resolveInfo="CellMenuDescriptor" />
+      </node>
+      <node concept="4jta.1071489288298" id="1198512004906" role="4jta.1169125787135.1071489727083" info="ig">
+        <property role="4jta.1071489288298.1071599937831" value="aggregation" />
+        <property role="4jta.1071489288298.1071599776563" value="focusPolicyApplicable" />
+        <reference role="4jta.1071489288298.1071599976176" target="1142886221719" resolveInfo="QueryFunction_NodeCondition" />
+      </node>
+      <node concept="4jta.1071489288298" id="4323500428121274054" role="4jta.1169125787135.1071489727083" info="ig">
+        <property role="4jta.1071489288298.1071599937831" value="aggregation" />
+        <property role="4jta.1071489288298.1071599776563" value="id" />
+        <reference role="4jta.1071489288298.1071599976176" target="4323500428121233431" resolveInfo="EditorCellId" />
+      </node>
+      <node concept="4jta.1071489288299" id="1130859485024" role="4jta.1169125787135.1071489727084" info="ig">
+        <property role="asn4.1169194658468.1169194664001" value="attractsFocus" />
+        <reference role="4jta.1071489288299.1082985295845" target="1130926557197" resolveInfo="FocusPolicy" />
       </node>
     </node>
-    <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="1139416841293" nodeInfo="ig">
-      <property name="name" nameId="tpck.1169194664001" value="usesBraces" />
-      <link role="dataType" roleId="tpce.1082985295845" targetNodeId="tpck.1082983657063" resolveInfo="boolean" />
-    </node>
-    <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="1160590353935" nodeInfo="ig">
-      <property name="name" nameId="tpck.1169194664001" value="usesFolding" />
-      <link role="dataType" roleId="tpce.1082985295845" targetNodeId="tpck.1082983657063" resolveInfo="boolean" />
-    </node>
-  </root>
-  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1073389577006" nodeInfo="ig">
-    <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
-    <property name="final" nameId="tpce.4628067390765956807" value="false" />
-    <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="text label" />
-    <property name="name" nameId="tpck.1169194664001" value="CellModel_Constant" />
-    <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="CellModel" />
-    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="constant" />
-    <link role="extends" roleId="tpce.1071489389519" targetNodeId="1079353555532" resolveInfo="CellModel_AbstractLabel" />
-    <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="4033442785759943145" nodeInfo="ig">
-      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="8770580973047386957" resolveInfo="Synchronizeable" />
-    </node>
-    <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="1073389577007" nodeInfo="ig">
-      <property name="name" nameId="tpck.1169194664001" value="text" />
-      <link role="dataType" roleId="tpce.1082985295845" targetNodeId="tpck.1082983041843" resolveInfo="string" />
-    </node>
-    <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="1082639509531" nodeInfo="ig">
-      <property name="name" nameId="tpck.1169194664001" value="nullText" />
-      <link role="dataType" roleId="tpce.1082985295845" targetNodeId="tpck.1082983041843" resolveInfo="string" />
-    </node>
-  </root>
-  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1073389658414" nodeInfo="ig">
-    <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
-    <property name="final" nameId="tpce.4628067390765956807" value="false" />
-    <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="property" />
-    <property name="name" nameId="tpck.1169194664001" value="CellModel_Property" />
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="CellModel" />
-    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="{&lt;{propertyDeclaration}&gt;}" />
-    <link role="extends" roleId="tpce.1071489389519" targetNodeId="1139848536355" resolveInfo="CellModel_WithRole" />
-    <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="4033442785759955240" nodeInfo="ig">
-      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="8770580973047386957" resolveInfo="Synchronizeable" />
-    </node>
-    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="1073389964684" nodeInfo="ig">
-      <property name="role" nameId="tpce.1071599776563" value="propertyDeclaration" />
-      <property name="sourceCardinality" nameId="tpce.1071599893252" value="1" />
-      <link role="target" roleId="tpce.1071599976176" targetNodeId="tpce.1071489288299" resolveInfo="PropertyDeclaration" />
-      <link role="specializedLink" roleId="tpce.1071599698500" targetNodeId="1140103550593" />
-    </node>
-  </root>
-  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1073389882823" nodeInfo="ig">
-    <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
-    <property name="final" nameId="tpce.4628067390765956807" value="false" />
-    <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="single aggregation" />
-    <property name="name" nameId="tpck.1169194664001" value="CellModel_RefNode" />
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="CellModel" />
-    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="%&lt;{linkDeclaration}&gt;%" />
-    <link role="extends" roleId="tpce.1071489389519" targetNodeId="1139848536355" resolveInfo="CellModel_WithRole" />
-    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="5861024100072578575" nodeInfo="ig">
-      <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
-      <property name="role" nameId="tpce.1071599776563" value="addHints" />
-      <property name="sourceCardinality" nameId="tpce.1071599893252" value="0..1" />
-      <link role="target" roleId="tpce.1071599976176" targetNodeId="4653693564097968040" resolveInfo="ContextHintsSpecification" />
-    </node>
-    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="5861024100072578576" nodeInfo="ig">
-      <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
-      <property name="role" nameId="tpce.1071599776563" value="removeHints" />
-      <link role="target" roleId="tpce.1071599976176" targetNodeId="4653693564097968040" resolveInfo="ContextHintsSpecification" />
-    </node>
-    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="1073389882824" nodeInfo="ig">
-      <property name="role" nameId="tpce.1071599776563" value="linkDeclaration" />
-      <property name="sourceCardinality" nameId="tpce.1071599893252" value="1" />
-      <link role="target" roleId="tpce.1071599976176" targetNodeId="tpce.1071489288298" resolveInfo="LinkDeclaration" />
-      <link role="specializedLink" roleId="tpce.1071599698500" targetNodeId="1140103550593" />
-    </node>
-  </root>
-  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1073390211982" nodeInfo="ig">
-    <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
-    <property name="final" nameId="tpce.4628067390765956807" value="false" />
-    <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="multiple aggregation" />
-    <property name="name" nameId="tpck.1169194664001" value="CellModel_RefNodeList" />
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="CellModel" />
-    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="%&lt;{linkDeclaration}&gt;%" />
-    <link role="extends" roleId="tpce.1071489389519" targetNodeId="1140524381322" resolveInfo="CellModel_ListWithRole" />
-    <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="1145360728033" nodeInfo="ig">
-      <property name="name" nameId="tpck.1169194664001" value="reverse" />
-      <link role="dataType" roleId="tpce.1082985295845" targetNodeId="tpck.1082983657063" resolveInfo="boolean" />
-    </node>
-    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="1073390211987" nodeInfo="ig">
-      <property name="role" nameId="tpce.1071599776563" value="linkDeclaration" />
-      <property name="sourceCardinality" nameId="tpce.1071599893252" value="1" />
-      <link role="target" roleId="tpce.1071599976176" targetNodeId="tpce.1071489288298" resolveInfo="LinkDeclaration" />
-      <link role="specializedLink" roleId="tpce.1071599698500" targetNodeId="1140103550593" />
-    </node>
-    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="1165347032372" nodeInfo="ig">
-      <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
-      <property name="role" nameId="tpce.1071599776563" value="elementMenuDescriptor" />
-      <link role="target" roleId="tpce.1071599976176" targetNodeId="1164824717996" resolveInfo="CellMenuDescriptor" />
-    </node>
-    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="1173177718857" nodeInfo="ig">
-      <property name="role" nameId="tpce.1071599776563" value="elementActionMap" />
-      <link role="target" roleId="tpce.1071599976176" targetNodeId="1139535219966" resolveInfo="CellActionMapDeclaration" />
-    </node>
-    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="1182233390675" nodeInfo="ig">
-      <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
-      <property name="role" nameId="tpce.1071599776563" value="filter" />
-      <link role="target" roleId="tpce.1071599976176" targetNodeId="1182191800432" resolveInfo="QueryFunction_NodeListFilter" />
-    </node>
-    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="7279578193766667846" nodeInfo="ig">
-      <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
-      <property name="role" nameId="tpce.1071599776563" value="addHints" />
-      <property name="sourceCardinality" nameId="tpce.1071599893252" value="0..1" />
-      <link role="target" roleId="tpce.1071599976176" targetNodeId="4653693564097968040" resolveInfo="ContextHintsSpecification" />
-    </node>
-    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="7279578193766667847" nodeInfo="ig">
-      <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
-      <property name="role" nameId="tpce.1071599776563" value="removeHints" />
-      <link role="target" roleId="tpce.1071599976176" targetNodeId="4653693564097968040" resolveInfo="ContextHintsSpecification" />
-    </node>
-  </root>
-  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1074767920765" nodeInfo="ig">
-    <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
-    <property name="final" nameId="tpce.4628067390765956807" value="false" />
-    <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="reference to accessor" />
-    <property name="name" nameId="tpck.1169194664001" value="CellModel_ModelAccess" />
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="CellModel" />
-    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="model access" />
-    <link role="extends" roleId="tpce.1071489389519" targetNodeId="1079353555532" resolveInfo="CellModel_AbstractLabel" />
-    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="1176718152741" nodeInfo="ig">
-      <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
-      <property name="role" nameId="tpce.1071599776563" value="modelAcessor" />
-      <property name="sourceCardinality" nameId="tpce.1071599893252" value="1" />
-      <link role="target" roleId="tpce.1071599976176" targetNodeId="1176717996748" resolveInfo="ModelAccessor" />
-    </node>
-    <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="1082638248796" nodeInfo="ig">
-      <property name="name" nameId="tpck.1169194664001" value="nullText" />
-      <link role="dataType" roleId="tpce.1082985295845" targetNodeId="tpck.1082983041843" resolveInfo="string" />
-    </node>
-  </root>
-  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1075375595203" nodeInfo="ig">
-    <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
-    <property name="final" nameId="tpce.4628067390765956807" value="false" />
-    <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="red text label" />
-    <property name="name" nameId="tpck.1169194664001" value="CellModel_Error" />
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="CellModel" />
-    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="error" />
-    <link role="extends" roleId="tpce.1071489389519" targetNodeId="1079353555532" resolveInfo="CellModel_AbstractLabel" />
-    <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="1075375595204" nodeInfo="ig">
-      <property name="name" nameId="tpck.1169194664001" value="text" />
-      <link role="dataType" roleId="tpce.1082985295845" targetNodeId="tpck.1082983041843" resolveInfo="string" />
-    </node>
-  </root>
-  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1078308402140" nodeInfo="ig">
-    <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
-    <property name="final" nameId="tpce.4628067390765956807" value="false" />
-    <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="reference to cell provider" />
-    <property name="name" nameId="tpck.1169194664001" value="CellModel_Custom" />
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="CellModel" />
-    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="custom" />
-    <link role="extends" roleId="tpce.1071489389519" targetNodeId="1073389214265" resolveInfo="EditorCellModel" />
-    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="1176795024817" nodeInfo="ig">
-      <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
-      <property name="role" nameId="tpce.1071599776563" value="cellProvider" />
-      <property name="sourceCardinality" nameId="tpce.1071599893252" value="1" />
-      <link role="target" roleId="tpce.1071599976176" targetNodeId="1176749715029" resolveInfo="QueryFunction_CellProvider" />
-    </node>
-  </root>
-  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1078938745671" nodeInfo="ig">
-    <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
-    <property name="rootable" nameId="tpce.1096454100552" value="true" />
-    <property name="final" nameId="tpce.4628067390765956807" value="false" />
-    <property name="iconPath" nameId="tpce.1160488491229" value="${language_descriptor}/icons/editorComponent.png" />
-    <property name="name" nameId="tpck.1169194664001" value="EditorComponentDeclaration" />
-    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="Editor Component" />
-    <link role="extends" roleId="tpce.1071489389519" targetNodeId="1080736578640" resolveInfo="BaseEditorComponent" />
-    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="7033942394258392116" nodeInfo="ig">
-      <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
-      <property name="role" nameId="tpce.1071599776563" value="overridenEditorComponent" />
-      <link role="target" roleId="tpce.1071599976176" targetNodeId="7033942394256351208" resolveInfo="EditorComponentDeclarationReference" />
-    </node>
-    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="7348800710862477686" nodeInfo="ig">
-      <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
-      <property name="role" nameId="tpce.1071599776563" value="contextHints" />
-      <property name="sourceCardinality" nameId="tpce.1071599893252" value="0..n" />
-      <link role="target" roleId="tpce.1071599976176" targetNodeId="6822301196700715228" resolveInfo="ConceptEditorHintDeclarationReference" />
-    </node>
-    <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="1210369055138" nodeInfo="ig">
-      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="tpck.1169194658468" resolveInfo="INamedConcept" />
-    </node>
-    <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="7033942394262078020" nodeInfo="ig">
-      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="tpee.1212170275853" resolveInfo="IValidIdentifier" />
-    </node>
-    <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="5270353093116097894" nodeInfo="ig">
-      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="tpce.2621449412040133764" resolveInfo="IConceptAspect" />
-    </node>
-  </root>
-  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1078939183254" nodeInfo="ig">
-    <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
-    <property name="final" nameId="tpce.4628067390765956807" value="false" />
-    <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="reference to editor component" />
-    <property name="name" nameId="tpck.1169194664001" value="CellModel_Component" />
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="CellModel" />
-    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="component" />
-    <link role="extends" roleId="tpce.1071489389519" targetNodeId="1073389214265" resolveInfo="EditorCellModel" />
-    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="1078939183255" nodeInfo="ig">
-      <property name="role" nameId="tpce.1071599776563" value="editorComponent" />
-      <property name="sourceCardinality" nameId="tpce.1071599893252" value="1" />
-      <link role="target" roleId="tpce.1071599976176" targetNodeId="1078938745671" resolveInfo="EditorComponentDeclaration" />
-    </node>
-  </root>
-  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1079353555532" nodeInfo="ig">
-    <property name="abstract" nameId="tpce.4628067390765956802" value="true" />
-    <property name="final" nameId="tpce.4628067390765956807" value="false" />
-    <property name="name" nameId="tpck.1169194664001" value="CellModel_AbstractLabel" />
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="CellModel" />
-    <link role="extends" roleId="tpce.1071489389519" targetNodeId="1073389214265" resolveInfo="EditorCellModel" />
-    <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="1197893615481" nodeInfo="ig">
-      <property name="name" nameId="tpck.1169194664001" value="defaultCaretPosition" />
-      <link role="dataType" roleId="tpce.1082985295845" targetNodeId="1197893505573" resolveInfo="_CaretPosition_Enum" />
-    </node>
-  </root>
-  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1080736578640" nodeInfo="ig">
-    <property name="abstract" nameId="tpce.4628067390765956802" value="true" />
-    <property name="final" nameId="tpce.4628067390765956807" value="false" />
-    <property name="name" nameId="tpck.1169194664001" value="BaseEditorComponent" />
-    <link role="extends" roleId="tpce.1071489389519" targetNodeId="1166049232041" resolveInfo="AbstractComponent" />
-    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="1080736633877" nodeInfo="ig">
-      <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
-      <property name="role" nameId="tpce.1071599776563" value="cellModel" />
-      <property name="sourceCardinality" nameId="tpce.1071599893252" value="1" />
-      <link role="target" roleId="tpce.1071599976176" targetNodeId="1073389214265" resolveInfo="EditorCellModel" />
-    </node>
-    <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="7348800710866295304" nodeInfo="ig">
-      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="tpck.3734116213129792499" resolveInfo="ScopeProvider" />
-    </node>
-    <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="6574908096408188181" nodeInfo="ig">
-      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="tpck.1319728274784973096" resolveInfo="InterfacePart" />
-    </node>
-  </root>
-  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1081293058843" nodeInfo="ig">
-    <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
-    <property name="rootable" nameId="tpce.1096454100552" value="true" />
-    <property name="final" nameId="tpce.4628067390765956807" value="false" />
-    <property name="iconPath" nameId="tpce.1160488491229" value="${language_descriptor}/icons/keyMap.png" />
-    <property name="name" nameId="tpck.1169194664001" value="CellKeyMapDeclaration" />
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="CellKeyMap" />
-    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="Cell Keymap" />
-    <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="690365078554480293" nodeInfo="ig">
-      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="tpee.1212170275853" resolveInfo="IValidIdentifier" />
-    </node>
-    <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="5270353093116096533" nodeInfo="ig">
-      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="tpce.2621449412040133764" resolveInfo="IConceptAspect" />
-    </node>
-    <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="3596842757769574519" nodeInfo="ig">
-      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="tpck.1319728274784973096" resolveInfo="InterfacePart" />
-    </node>
-    <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="1149937560128" nodeInfo="ig">
-      <property name="name" nameId="tpck.1169194664001" value="everyModel" />
-      <link role="dataType" roleId="tpce.1082985295845" targetNodeId="tpck.1082983657063" resolveInfo="boolean" />
-    </node>
-    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="1139445935125" nodeInfo="ig">
-      <property name="role" nameId="tpce.1071599776563" value="applicableConcept" />
-      <link role="target" roleId="tpce.1071599976176" targetNodeId="tpce.1169125787135" resolveInfo="AbstractConceptDeclaration" />
-    </node>
-    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="1136930944870" nodeInfo="ig">
-      <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
-      <property name="role" nameId="tpce.1071599776563" value="item" />
-      <property name="sourceCardinality" nameId="tpce.1071599893252" value="0..n" />
-      <link role="target" roleId="tpce.1071599976176" targetNodeId="1136916919141" resolveInfo="CellKeyMapItem" />
-    </node>
-  </root>
-  <root type="tpce.EnumerationDataTypeDeclaration" typeId="tpce.1082978164219" id="1083928804390" nodeInfo="ng">
-    <property name="name" nameId="tpck.1169194664001" value="_YesNoDefault_Enum" />
-    <link role="defaultMember" roleId="tpce.1083241965437" targetNodeId="1083928804393" resolveInfo="none" />
-    <link role="memberDataType" roleId="tpce.1083171729157" targetNodeId="tpck.1082983041843" resolveInfo="string" />
-    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="1083928804391" nodeInfo="ig">
-      <property name="internalValue" nameId="tpce.1083923523171" value="true" />
-      <property name="externalValue" nameId="tpce.1083923523172" value="yes" />
-    </node>
-    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="1083928804392" nodeInfo="ig">
-      <property name="internalValue" nameId="tpce.1083923523171" value="false" />
-      <property name="externalValue" nameId="tpce.1083923523172" value="no" />
-    </node>
-    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="1083928804393" nodeInfo="ig">
-      <property name="externalValue" nameId="tpce.1083923523172" value="none" />
-    </node>
-  </root>
-  <root type="tpce.EnumerationDataTypeDeclaration" typeId="tpce.1082978164219" id="1083952545109" nodeInfo="ng">
-    <property name="name" nameId="tpck.1169194664001" value="_Colors_Enum" />
-    <link role="defaultMember" roleId="tpce.1083241965437" targetNodeId="1083952545110" resolveInfo="none" />
-    <link role="memberDataType" roleId="tpce.1083171729157" targetNodeId="tpck.1082983041843" resolveInfo="string" />
-    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="1083952545110" nodeInfo="ig">
-      <property name="externalValue" nameId="tpce.1083923523172" value="none" />
-    </node>
-    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="1083952545111" nodeInfo="ig">
-      <property name="internalValue" nameId="tpce.1083923523171" value="red" />
-      <property name="externalValue" nameId="tpce.1083923523172" value="red" />
-    </node>
-    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="1083952545112" nodeInfo="ig">
-      <property name="internalValue" nameId="tpce.1083923523171" value="pink" />
-      <property name="externalValue" nameId="tpce.1083923523172" value="pink" />
-    </node>
-    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="1083952545113" nodeInfo="ig">
-      <property name="internalValue" nameId="tpce.1083923523171" value="orange" />
-      <property name="externalValue" nameId="tpce.1083923523172" value="orange" />
-    </node>
-    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="1083952545114" nodeInfo="ig">
-      <property name="internalValue" nameId="tpce.1083923523171" value="yellow" />
-      <property name="externalValue" nameId="tpce.1083923523172" value="yellow" />
-    </node>
-    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="1083952545115" nodeInfo="ig">
-      <property name="internalValue" nameId="tpce.1083923523171" value="green" />
-      <property name="externalValue" nameId="tpce.1083923523172" value="green" />
-    </node>
-    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="1101213169706" nodeInfo="ig">
-      <property name="internalValue" nameId="tpce.1083923523171" value="DARK_GREEN" />
-      <property name="externalValue" nameId="tpce.1083923523172" value="darkGreen" />
-    </node>
-    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="1083952545116" nodeInfo="ig">
-      <property name="internalValue" nameId="tpce.1083923523171" value="magenta" />
-      <property name="externalValue" nameId="tpce.1083923523172" value="magenta" />
-    </node>
-    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="1101213185757" nodeInfo="ig">
-      <property name="internalValue" nameId="tpce.1083923523171" value="DARK_MAGENTA" />
-      <property name="externalValue" nameId="tpce.1083923523172" value="darkMagenta" />
-    </node>
-    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="1083952545117" nodeInfo="ig">
-      <property name="internalValue" nameId="tpce.1083923523171" value="cyan" />
-      <property name="externalValue" nameId="tpce.1083923523172" value="cyan" />
-    </node>
-    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="1083952545118" nodeInfo="ig">
-      <property name="internalValue" nameId="tpce.1083923523171" value="blue" />
-      <property name="externalValue" nameId="tpce.1083923523172" value="blue" />
-    </node>
-    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="1216404713420" nodeInfo="ig">
-      <property name="internalValue" nameId="tpce.1083923523171" value="LIGHT_BLUE" />
-      <property name="externalValue" nameId="tpce.1083923523172" value="lightBlue" />
-    </node>
-    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="1101209985304" nodeInfo="ig">
-      <property name="internalValue" nameId="tpce.1083923523171" value="DARK_BLUE" />
-      <property name="externalValue" nameId="tpce.1083923523172" value="darkBlue" />
-    </node>
-    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="1084208529765" nodeInfo="ig">
-      <property name="internalValue" nameId="tpce.1083923523171" value="gray" />
-      <property name="externalValue" nameId="tpce.1083923523172" value="gray" />
-    </node>
-    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="1084208529766" nodeInfo="ig">
-      <property name="internalValue" nameId="tpce.1083923523171" value="lightGray" />
-      <property name="externalValue" nameId="tpce.1083923523172" value="lightGray" />
-    </node>
-    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="1084208529767" nodeInfo="ig">
-      <property name="internalValue" nameId="tpce.1083923523171" value="darkGray" />
-      <property name="externalValue" nameId="tpce.1083923523172" value="darkGray" />
-    </node>
-    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="1214395400259" nodeInfo="ig">
-      <property name="internalValue" nameId="tpce.1083923523171" value="WHITE" />
-      <property name="externalValue" nameId="tpce.1083923523172" value="white" />
-    </node>
-    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="7151630269404055096" nodeInfo="ig">
-      <property name="internalValue" nameId="tpce.1083923523171" value="black" />
-      <property name="externalValue" nameId="tpce.1083923523172" value="black" />
-    </node>
-  </root>
-  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1088013125922" nodeInfo="ig">
-    <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
-    <property name="final" nameId="tpce.4628067390765956807" value="false" />
-    <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="reference" />
-    <property name="name" nameId="tpck.1169194664001" value="CellModel_RefCell" />
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="CellModel" />
-    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="%&lt;{linkDeclaration}&gt;%-&gt;" />
-    <link role="extends" roleId="tpce.1071489389519" targetNodeId="1139848536355" resolveInfo="CellModel_WithRole" />
-    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="1088013239202" nodeInfo="ig">
-      <property name="role" nameId="tpce.1071599776563" value="linkDeclaration" />
-      <property name="sourceCardinality" nameId="tpce.1071599893252" value="1" />
-      <link role="target" roleId="tpce.1071599976176" targetNodeId="tpce.1071489288298" resolveInfo="LinkDeclaration" />
-      <link role="specializedLink" roleId="tpce.1071599698500" targetNodeId="1140103550593" />
-    </node>
-    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="1088186146602" nodeInfo="ig">
-      <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
-      <property name="role" nameId="tpce.1071599776563" value="editorComponent" />
-      <property name="sourceCardinality" nameId="tpce.1071599893252" value="1" />
-      <link role="target" roleId="tpce.1071599976176" targetNodeId="1088185857835" resolveInfo="InlineEditorComponent" />
-    </node>
-  </root>
-  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1088185857835" nodeInfo="ig">
-    <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
-    <property name="final" nameId="tpce.4628067390765956807" value="false" />
-    <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="in-line editor component" />
-    <property name="name" nameId="tpck.1169194664001" value="InlineEditorComponent" />
-    <link role="extends" roleId="tpce.1071489389519" targetNodeId="1080736578640" resolveInfo="BaseEditorComponent" />
-  </root>
-  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1088612959204" nodeInfo="ig">
-    <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
-    <property name="final" nameId="tpce.4628067390765956807" value="false" />
-    <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="cell alternation" />
-    <property name="name" nameId="tpck.1169194664001" value="CellModel_Alternation" />
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="CellModel" />
-    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="alternation" />
-    <link role="extends" roleId="tpce.1071489389519" targetNodeId="1073389214265" resolveInfo="EditorCellModel" />
-    <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="1088613081987" nodeInfo="ig">
-      <property name="name" nameId="tpck.1169194664001" value="vertical" />
-      <link role="dataType" roleId="tpce.1082985295845" targetNodeId="tpck.1082983657063" resolveInfo="boolean" />
-    </node>
-    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="1145918517974" nodeInfo="ig">
-      <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
-      <property name="role" nameId="tpce.1071599776563" value="alternationCondition" />
-      <property name="sourceCardinality" nameId="tpce.1071599893252" value="1" />
-      <link role="target" roleId="tpce.1071599976176" targetNodeId="1142886221719" resolveInfo="QueryFunction_NodeCondition" />
-    </node>
-    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="1088612958265" nodeInfo="ig">
-      <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
-      <property name="role" nameId="tpce.1071599776563" value="ifTrueCellModel" />
-      <property name="sourceCardinality" nameId="tpce.1071599893252" value="1" />
-      <link role="target" roleId="tpce.1071599976176" targetNodeId="1073389214265" resolveInfo="EditorCellModel" />
-    </node>
-    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="1088612973955" nodeInfo="ig">
-      <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
-      <property name="role" nameId="tpce.1071599776563" value="ifFalseCellModel" />
-      <property name="sourceCardinality" nameId="tpce.1071599893252" value="1" />
-      <link role="target" roleId="tpce.1071599976176" targetNodeId="1073389214265" resolveInfo="EditorCellModel" />
-    </node>
-  </root>
-  <root type="tpce.EnumerationDataTypeDeclaration" typeId="tpce.1082978164219" id="1101211480448" nodeInfo="ng">
-    <property name="name" nameId="tpck.1169194664001" value="_FontStyle_Enum" />
-    <link role="memberDataType" roleId="tpce.1083171729157" targetNodeId="tpck.1082983041843" resolveInfo="string" />
-    <link role="defaultMember" roleId="tpce.1083241965437" targetNodeId="1134577855137" resolveInfo="plain" />
-    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="1101211523070" nodeInfo="ig">
-      <property name="internalValue" nameId="tpce.1083923523171" value="BOLD" />
-      <property name="externalValue" nameId="tpce.1083923523172" value="bold" />
-    </node>
-    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="1101211542532" nodeInfo="ig">
-      <property name="internalValue" nameId="tpce.1083923523171" value="ITALIC" />
-      <property name="externalValue" nameId="tpce.1083923523172" value="italic" />
-    </node>
-    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="1101213960346" nodeInfo="ig">
-      <property name="internalValue" nameId="tpce.1083923523171" value="BOLD_ITALIC" />
-      <property name="externalValue" nameId="tpce.1083923523172" value="boldItalic" />
-    </node>
-    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="1134577855137" nodeInfo="ig">
-      <property name="internalValue" nameId="tpce.1083923523171" value="PLAIN" />
-      <property name="externalValue" nameId="tpce.1083923523172" value="plain" />
-    </node>
-    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="1220973684614" nodeInfo="ig">
-      <property name="internalValue" nameId="tpce.1083923523171" value="QUERY" />
-      <property name="externalValue" nameId="tpce.1083923523172" value="query" />
-    </node>
-  </root>
-  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1103016434866" nodeInfo="ig">
-    <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
-    <property name="final" nameId="tpce.4628067390765956807" value="false" />
-    <property name="name" nameId="tpck.1169194664001" value="CellModel_JComponent" />
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="CellModel" />
-    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="swing component" />
-    <link role="extends" roleId="tpce.1071489389519" targetNodeId="1073389214265" resolveInfo="EditorCellModel" />
-    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="1176475119347" nodeInfo="ig">
-      <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
-      <property name="role" nameId="tpce.1071599776563" value="componentProvider" />
-      <property name="sourceCardinality" nameId="tpce.1071599893252" value="1" />
-      <link role="target" roleId="tpce.1071599976176" targetNodeId="1176474535556" resolveInfo="QueryFunction_JComponent" />
-    </node>
-  </root>
-  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1106270491082" nodeInfo="ig">
-    <property name="abstract" nameId="tpce.4628067390765956802" value="true" />
-    <property name="final" nameId="tpce.4628067390765956807" value="false" />
-    <property name="name" nameId="tpck.1169194664001" value="CellLayout" />
-    <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="CellLayout" />
-  </root>
-  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1106270549637" nodeInfo="ig">
-    <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
-    <property name="final" nameId="tpce.4628067390765956807" value="false" />
-    <property name="name" nameId="tpck.1169194664001" value="CellLayout_Horizontal" />
-    <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="CellLayout" />
-    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="horizontal" />
-    <link role="extends" roleId="tpce.1071489389519" targetNodeId="1106270491082" resolveInfo="CellLayout" />
-  </root>
-  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1106270571710" nodeInfo="ig">
-    <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
-    <property name="final" nameId="tpce.4628067390765956807" value="false" />
-    <property name="name" nameId="tpck.1169194664001" value="CellLayout_Vertical" />
-    <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="CellLayout" />
-    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="vertical" />
-    <link role="extends" roleId="tpce.1071489389519" targetNodeId="1106270491082" resolveInfo="CellLayout" />
-  </root>
-  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1106270637846" nodeInfo="ig">
-    <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
-    <property name="final" nameId="tpce.4628067390765956807" value="false" />
-    <property name="name" nameId="tpck.1169194664001" value="CellLayout_Flow" />
-    <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="CellLayout" />
-    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="flow" />
-    <link role="extends" roleId="tpce.1071489389519" targetNodeId="1106270491082" resolveInfo="CellLayout" />
-  </root>
-  <root type="tpce.EnumerationDataTypeDeclaration" typeId="tpce.1082978164219" id="1130847686886" nodeInfo="ng">
-    <property name="name" nameId="tpck.1169194664001" value="UnderlineStyle" />
-    <link role="memberDataType" roleId="tpce.1083171729157" targetNodeId="tpck.1082983657062" resolveInfo="integer" />
-    <link role="defaultMember" roleId="tpce.1083241965437" targetNodeId="1130847686918" resolveInfo="as_is" />
-    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="1130847686918" nodeInfo="ig">
-      <property name="internalValue" nameId="tpce.1083923523171" value="0" />
-      <property name="externalValue" nameId="tpce.1083923523172" value="as_is" />
-    </node>
-    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="1130847816499" nodeInfo="ig">
-      <property name="internalValue" nameId="tpce.1083923523171" value="1" />
-      <property name="externalValue" nameId="tpce.1083923523172" value="not_underlined" />
-    </node>
-    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="1130847833453" nodeInfo="ig">
-      <property name="internalValue" nameId="tpce.1083923523171" value="2" />
-      <property name="externalValue" nameId="tpce.1083923523172" value="underlined" />
-    </node>
-  </root>
-  <root type="tpce.EnumerationDataTypeDeclaration" typeId="tpce.1082978164219" id="1130926557197" nodeInfo="ng">
-    <property name="name" nameId="tpck.1169194664001" value="FocusPolicy" />
-    <link role="memberDataType" roleId="tpce.1083171729157" targetNodeId="tpck.1082983657062" resolveInfo="integer" />
-    <link role="defaultMember" roleId="tpce.1083241965437" targetNodeId="1130926557292" resolveInfo="noAttraction" />
-    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="1130926557292" nodeInfo="ig">
-      <property name="internalValue" nameId="tpce.1083923523171" value="0" />
-      <property name="externalValue" nameId="tpce.1083923523172" value="noAttraction" />
-    </node>
-    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="1130926591919" nodeInfo="ig">
-      <property name="internalValue" nameId="tpce.1083923523171" value="1" />
-      <property name="externalValue" nameId="tpce.1083923523172" value="attractsFocus" />
-    </node>
-    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="1130926603060" nodeInfo="ig">
-      <property name="internalValue" nameId="tpce.1083923523171" value="2" />
-      <property name="externalValue" nameId="tpce.1083923523172" value="firstEditableCell" />
-    </node>
-    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="1227082414196" nodeInfo="ig">
-      <property name="internalValue" nameId="tpce.1083923523171" value="3" />
-      <property name="externalValue" nameId="tpce.1083923523172" value="attractsRecursively" />
-    </node>
-  </root>
-  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1134379236839" nodeInfo="ig">
-    <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
-    <property name="final" nameId="tpce.4628067390765956807" value="false" />
-    <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="cell for attributed property" />
-    <property name="name" nameId="tpck.1169194664001" value="CellModel_AttributedPropertyCell" />
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="CellModel" />
-    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="attributed property" />
-    <link role="extends" roleId="tpce.1071489389519" targetNodeId="1073389214265" resolveInfo="EditorCellModel" />
-  </root>
-  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1136564507907" nodeInfo="ig">
-    <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
-    <property name="final" nameId="tpce.4628067390765956807" value="false" />
-    <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="cell for attributed link" />
-    <property name="name" nameId="tpck.1169194664001" value="CellModel_AttributedLinkCell" />
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="CellModel" />
-    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="attributed link" />
-    <link role="extends" roleId="tpce.1071489389519" targetNodeId="1073389214265" resolveInfo="EditorCellModel" />
-  </root>
-  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1136916919141" nodeInfo="ig">
-    <property name="name" nameId="tpck.1169194664001" value="CellKeyMapItem" />
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="CellKeyMap" />
-    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="1136916998332" nodeInfo="ig">
-      <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
-      <property name="role" nameId="tpce.1071599776563" value="keystroke" />
-      <property name="sourceCardinality" nameId="tpce.1071599893252" value="1..n" />
-      <link role="target" roleId="tpce.1071599976176" targetNodeId="1136916976737" resolveInfo="CellKeyMapKeystroke" />
-    </node>
-    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="1136917325338" nodeInfo="ig">
-      <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
-      <property name="role" nameId="tpce.1071599776563" value="isApplicableFunction" />
-      <property name="sourceCardinality" nameId="tpce.1071599893252" value="0..1" />
-      <link role="target" roleId="tpce.1071599976176" targetNodeId="1136917249679" resolveInfo="CellKeyMap_IsApplicableFunction" />
-    </node>
-    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="1136920925604" nodeInfo="ig">
-      <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
-      <property name="role" nameId="tpce.1071599776563" value="executeFunction" />
-      <property name="sourceCardinality" nameId="tpce.1071599893252" value="1" />
-      <link role="target" roleId="tpce.1071599976176" targetNodeId="1136917288805" resolveInfo="CellKeyMap_ExecuteFunction" />
-    </node>
-    <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="1136916941877" nodeInfo="ig">
-      <property name="name" nameId="tpck.1169194664001" value="description" />
-      <link role="dataType" roleId="tpce.1082985295845" targetNodeId="tpck.1082983041843" resolveInfo="string" />
-    </node>
-    <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="1141091278922" nodeInfo="ig">
-      <property name="name" nameId="tpck.1169194664001" value="caretPolicy" />
-      <link role="dataType" roleId="tpce.1082985295845" targetNodeId="1141091053936" resolveInfo="CellKeyMapCaretPolicy" />
-    </node>
-    <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="1163507208434" nodeInfo="ig">
-      <property name="name" nameId="tpck.1169194664001" value="showInPopup" />
-      <link role="dataType" roleId="tpce.1082985295845" targetNodeId="tpck.1082983657063" resolveInfo="boolean" />
-    </node>
-    <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="1184322083615" nodeInfo="ig">
-      <property name="name" nameId="tpck.1169194664001" value="menuAlwaysShown" />
-      <link role="dataType" roleId="tpce.1082985295845" targetNodeId="tpck.1082983657063" resolveInfo="boolean" />
-    </node>
-    <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="3596842757769574512" nodeInfo="ig">
-      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="tpck.1319728274783077719" resolveInfo="ImplementationPart" />
-    </node>
-  </root>
-  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1136916976737" nodeInfo="ig">
-    <property name="name" nameId="tpck.1169194664001" value="CellKeyMapKeystroke" />
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="CellKeyMap" />
-    <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
-    <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="1136923970223" nodeInfo="ig">
-      <property name="name" nameId="tpck.1169194664001" value="modifiers" />
-      <link role="dataType" roleId="tpce.1082985295845" targetNodeId="tpck.1082983041843" resolveInfo="string" />
-    </node>
-    <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="1136923970224" nodeInfo="ig">
-      <property name="name" nameId="tpck.1169194664001" value="keycode" />
-      <link role="dataType" roleId="tpce.1082985295845" targetNodeId="tpck.1082983041843" resolveInfo="string" />
-    </node>
-  </root>
-  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1136917155755" nodeInfo="ig">
-    <property name="abstract" nameId="tpce.4628067390765956802" value="true" />
-    <property name="final" nameId="tpce.4628067390765956807" value="false" />
-    <property name="name" nameId="tpck.1169194664001" value="CellKeyMap_AbstractFunction" />
-    <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="CellKeyMap" />
-    <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1137021947720" resolveInfo="ConceptFunction" />
-  </root>
-  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1136917249679" nodeInfo="ig">
-    <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
-    <property name="final" nameId="tpce.4628067390765956807" value="false" />
-    <property name="name" nameId="tpck.1169194664001" value="CellKeyMap_IsApplicableFunction" />
-    <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="CellKeyMap" />
-    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="is applicable block" />
-    <link role="extends" roleId="tpce.1071489389519" targetNodeId="1136917155755" resolveInfo="CellKeyMap_AbstractFunction" />
-  </root>
-  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1136917288805" nodeInfo="ig">
-    <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
-    <property name="final" nameId="tpce.4628067390765956807" value="false" />
-    <property name="name" nameId="tpck.1169194664001" value="CellKeyMap_ExecuteFunction" />
-    <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="CellKeyMap" />
-    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="execute block" />
-    <link role="extends" roleId="tpce.1071489389519" targetNodeId="1136917155755" resolveInfo="CellKeyMap_AbstractFunction" />
-  </root>
-  <root type="tpce.EnumerationDataTypeDeclaration" typeId="tpce.1082978164219" id="1138197387103" nodeInfo="ng">
-    <property name="name" nameId="tpck.1169194664001" value="_Layout_Constraints_Enum" />
-    <link role="memberDataType" roleId="tpce.1083171729157" targetNodeId="tpck.1082983041843" resolveInfo="string" />
-    <link role="defaultMember" roleId="tpce.1083241965437" targetNodeId="1138197631095" resolveInfo="none" />
-    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="1138197387339" nodeInfo="ig">
-      <property name="internalValue" nameId="tpce.1083923523171" value="punctuation" />
-      <property name="externalValue" nameId="tpce.1083923523172" value="punctuation" />
-    </node>
-    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="1138197619454" nodeInfo="ig">
-      <property name="internalValue" nameId="tpce.1083923523171" value="noflow" />
-      <property name="externalValue" nameId="tpce.1083923523172" value="noflow" />
-    </node>
-    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="1138197631095" nodeInfo="ig">
-      <property name="externalValue" nameId="tpce.1083923523172" value="none" />
-    </node>
-  </root>
-  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1139535219966" nodeInfo="ig">
-    <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
-    <property name="rootable" nameId="tpce.1096454100552" value="true" />
-    <property name="final" nameId="tpce.4628067390765956807" value="false" />
-    <property name="iconPath" nameId="tpce.1160488491229" value="${language_descriptor}/icons/actionMap.png" />
-    <property name="name" nameId="tpck.1169194664001" value="CellActionMapDeclaration" />
-    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="Cell Action Map" />
-    <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="690365078554551278" nodeInfo="ig">
-      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="tpee.1212170275853" resolveInfo="IValidIdentifier" />
-    </node>
-    <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="5270353093116090437" nodeInfo="ig">
-      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="tpce.2621449412040133764" resolveInfo="IConceptAspect" />
-    </node>
-    <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="3130793210636640075" nodeInfo="ig">
-      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="tpck.1319728274784973096" resolveInfo="InterfacePart" />
-    </node>
-    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="1139535219968" nodeInfo="ig">
-      <property name="role" nameId="tpce.1071599776563" value="applicableConcept" />
-      <link role="target" roleId="tpce.1071599976176" targetNodeId="tpce.1169125787135" resolveInfo="AbstractConceptDeclaration" />
-    </node>
-    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="1139535219969" nodeInfo="ig">
-      <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
-      <property name="role" nameId="tpce.1071599776563" value="item" />
-      <property name="sourceCardinality" nameId="tpce.1071599893252" value="0..n" />
-      <link role="target" roleId="tpce.1071599976176" targetNodeId="1139535280617" resolveInfo="CellActionMapItem" />
-    </node>
-  </root>
-  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1139535280617" nodeInfo="ig">
-    <property name="name" nameId="tpck.1169194664001" value="CellActionMapItem" />
-    <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
-    <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="1139537298254" nodeInfo="ig">
-      <property name="name" nameId="tpck.1169194664001" value="description" />
-      <link role="dataType" roleId="tpce.1082985295845" targetNodeId="tpck.1082983041843" resolveInfo="string" />
-    </node>
-    <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="1139535298778" nodeInfo="ig">
-      <property name="name" nameId="tpck.1169194664001" value="actionId" />
-      <link role="dataType" roleId="tpce.1082985295845" targetNodeId="1139535328871" resolveInfo="CellActionId" />
-    </node>
-    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="1139535280620" nodeInfo="ig">
-      <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
-      <property name="role" nameId="tpce.1071599776563" value="executeFunction" />
-      <property name="sourceCardinality" nameId="tpce.1071599893252" value="1" />
-      <link role="target" roleId="tpce.1071599976176" targetNodeId="1139535439104" resolveInfo="CellActionMap_ExecuteFunction" />
-    </node>
-    <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="1262430001741642214" nodeInfo="ig">
-      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="tpck.1835621062190663819" resolveInfo="IDontSubstituteByDefault" />
-    </node>
-    <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="1167929589872169213" nodeInfo="ig">
-      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="tpck.1319728274783077719" resolveInfo="ImplementationPart" />
-    </node>
-  </root>
-  <root type="tpce.EnumerationDataTypeDeclaration" typeId="tpce.1082978164219" id="1139535328871" nodeInfo="ng">
-    <property name="name" nameId="tpck.1169194664001" value="CellActionId" />
-    <link role="memberDataType" roleId="tpce.1083171729157" targetNodeId="tpck.1082983041843" resolveInfo="string" />
-    <link role="defaultMember" roleId="tpce.1083241965437" targetNodeId="1139535329028" />
-    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="1139535329028" nodeInfo="ig">
-      <property name="internalValue" nameId="tpce.1083923523171" value="right_transform_action_id" />
-      <property name="externalValue" nameId="tpce.1083923523172" value="RIGHT_TRANSFORM" />
-    </node>
-    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="1139535387060" nodeInfo="ig">
-      <property name="internalValue" nameId="tpce.1083923523171" value="delete_action_id" />
-      <property name="externalValue" nameId="tpce.1083923523172" value="DELETE" />
-    </node>
-    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="1222746468862079483" nodeInfo="ig">
-      <property name="internalValue" nameId="tpce.1083923523171" value="insert_action_id" />
-      <property name="externalValue" nameId="tpce.1083923523172" value="INSERT" />
-    </node>
-    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="1222746468862079484" nodeInfo="ig">
-      <property name="internalValue" nameId="tpce.1083923523171" value="insert_before_action_id" />
-      <property name="externalValue" nameId="tpce.1083923523172" value="INSERT_BEFORE" />
-    </node>
-    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="9025760234657675082" nodeInfo="ig">
-      <property name="internalValue" nameId="tpce.1083923523171" value="backspace_action_id" />
-      <property name="externalValue" nameId="tpce.1083923523172" value="BACKSPACE" />
-    </node>
-    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="9025760234657707152" nodeInfo="ig">
-      <property name="internalValue" nameId="tpce.1083923523171" value="delete_to_word_end_action_id" />
-      <property name="externalValue" nameId="tpce.1083923523172" value="DELETE_TO_WORD_END" />
-    </node>
-    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="9025760234657707153" nodeInfo="ig">
-      <property name="internalValue" nameId="tpce.1083923523171" value="copy_action_id" />
-      <property name="externalValue" nameId="tpce.1083923523172" value="COPY" />
-    </node>
-    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="9025760234657707154" nodeInfo="ig">
-      <property name="internalValue" nameId="tpce.1083923523171" value="cut_action_id" />
-      <property name="externalValue" nameId="tpce.1083923523172" value="CUT" />
-    </node>
-    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="9025760234657707155" nodeInfo="ig">
-      <property name="internalValue" nameId="tpce.1083923523171" value="paste_action_id" />
-      <property name="externalValue" nameId="tpce.1083923523172" value="PASTE" />
-    </node>
-    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="9025760234657707156" nodeInfo="ig">
-      <property name="internalValue" nameId="tpce.1083923523171" value="paste_before_action_id" />
-      <property name="externalValue" nameId="tpce.1083923523172" value="PASTE_BEFORE" />
-    </node>
-    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="9025760234657707157" nodeInfo="ig">
-      <property name="internalValue" nameId="tpce.1083923523171" value="paste_after_action_id" />
-      <property name="externalValue" nameId="tpce.1083923523172" value="PASTE_AFTER" />
-    </node>
-    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="9025760234657707158" nodeInfo="ig">
-      <property name="internalValue" nameId="tpce.1083923523171" value="left_action_id" />
-      <property name="externalValue" nameId="tpce.1083923523172" value="LEFT" />
-    </node>
-    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="9025760234657707159" nodeInfo="ig">
-      <property name="internalValue" nameId="tpce.1083923523171" value="right_action_id" />
-      <property name="externalValue" nameId="tpce.1083923523172" value="RIGHT" />
-    </node>
-    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="9025760234657707160" nodeInfo="ig">
-      <property name="internalValue" nameId="tpce.1083923523171" value="up_action_id" />
-      <property name="externalValue" nameId="tpce.1083923523172" value="UP" />
-    </node>
-    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="9025760234657707161" nodeInfo="ig">
-      <property name="internalValue" nameId="tpce.1083923523171" value="down_action_id" />
-      <property name="externalValue" nameId="tpce.1083923523172" value="DOWN" />
-    </node>
-    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="9025760234657707162" nodeInfo="ig">
-      <property name="internalValue" nameId="tpce.1083923523171" value="next_action_id" />
-      <property name="externalValue" nameId="tpce.1083923523172" value="NEXT" />
-    </node>
-    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="9025760234657707163" nodeInfo="ig">
-      <property name="internalValue" nameId="tpce.1083923523171" value="prev_action_id" />
-      <property name="externalValue" nameId="tpce.1083923523172" value="PREV" />
-    </node>
-    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="9025760234657707164" nodeInfo="ig">
-      <property name="internalValue" nameId="tpce.1083923523171" value="home_action_id" />
-      <property name="externalValue" nameId="tpce.1083923523172" value="HOME" />
-    </node>
-    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="9025760234657707165" nodeInfo="ig">
-      <property name="internalValue" nameId="tpce.1083923523171" value="end_action_id" />
-      <property name="externalValue" nameId="tpce.1083923523172" value="END" />
-    </node>
-    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="9025760234657707166" nodeInfo="ig">
-      <property name="internalValue" nameId="tpce.1083923523171" value="page_up_action_id" />
-      <property name="externalValue" nameId="tpce.1083923523172" value="PAGE_UP" />
-    </node>
-    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="9025760234657707167" nodeInfo="ig">
-      <property name="internalValue" nameId="tpce.1083923523171" value="page_down_action_id" />
-      <property name="externalValue" nameId="tpce.1083923523172" value="PAGE_DOWN" />
-    </node>
-    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="9025760234657707168" nodeInfo="ig">
-      <property name="internalValue" nameId="tpce.1083923523171" value="root_home_action_id" />
-      <property name="externalValue" nameId="tpce.1083923523172" value="ROOT_HOME" />
-    </node>
-    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="9025760234657707169" nodeInfo="ig">
-      <property name="internalValue" nameId="tpce.1083923523171" value="root_end_action_id" />
-      <property name="externalValue" nameId="tpce.1083923523172" value="ROOT_END" />
-    </node>
-    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="9025760234657707170" nodeInfo="ig">
-      <property name="internalValue" nameId="tpce.1083923523171" value="local_home_action_id" />
-      <property name="externalValue" nameId="tpce.1083923523172" value="LOCAL_HOME" />
-    </node>
-    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="9025760234657707171" nodeInfo="ig">
-      <property name="internalValue" nameId="tpce.1083923523171" value="local_end_action_id" />
-      <property name="externalValue" nameId="tpce.1083923523172" value="LOCAL_END" />
-    </node>
-    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="9025760234657707172" nodeInfo="ig">
-      <property name="internalValue" nameId="tpce.1083923523171" value="select_left_action_id" />
-      <property name="externalValue" nameId="tpce.1083923523172" value="SELECT_LEFT" />
-    </node>
-    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="9025760234657707173" nodeInfo="ig">
-      <property name="internalValue" nameId="tpce.1083923523171" value="select_right_action_id" />
-      <property name="externalValue" nameId="tpce.1083923523172" value="SELECT_RIGHT" />
-    </node>
-    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="9025760234657707174" nodeInfo="ig">
-      <property name="internalValue" nameId="tpce.1083923523171" value="select_up_action_id" />
-      <property name="externalValue" nameId="tpce.1083923523172" value="SELECT_UP" />
-    </node>
-    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="9025760234657707175" nodeInfo="ig">
-      <property name="internalValue" nameId="tpce.1083923523171" value="select_down_action_id" />
-      <property name="externalValue" nameId="tpce.1083923523172" value="SELECT_DOWN" />
-    </node>
-    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="9025760234657707176" nodeInfo="ig">
-      <property name="internalValue" nameId="tpce.1083923523171" value="select_home_action_id" />
-      <property name="externalValue" nameId="tpce.1083923523172" value="SELECT_HOME" />
-    </node>
-    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="9025760234657707177" nodeInfo="ig">
-      <property name="internalValue" nameId="tpce.1083923523171" value="select_end_action_id" />
-      <property name="externalValue" nameId="tpce.1083923523172" value="SELECT_END" />
-    </node>
-    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="9025760234657707178" nodeInfo="ig">
-      <property name="internalValue" nameId="tpce.1083923523171" value="select_local_end_action_id" />
-      <property name="externalValue" nameId="tpce.1083923523172" value="SELECT_LOCAL_END" />
-    </node>
-    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="9025760234657707179" nodeInfo="ig">
-      <property name="internalValue" nameId="tpce.1083923523171" value="select_local_home_action_id" />
-      <property name="externalValue" nameId="tpce.1083923523172" value="SELECT_LOCAL_HOME" />
-    </node>
-    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="9025760234657707180" nodeInfo="ig">
-      <property name="internalValue" nameId="tpce.1083923523171" value="select_next_action_id" />
-      <property name="externalValue" nameId="tpce.1083923523172" value="SELECT_NEXT" />
-    </node>
-    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="9025760234657707181" nodeInfo="ig">
-      <property name="internalValue" nameId="tpce.1083923523171" value="select_previous_action_id" />
-      <property name="externalValue" nameId="tpce.1083923523172" value="SELECT_PREVIOUS" />
-    </node>
-    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="9025760234657707182" nodeInfo="ig">
-      <property name="internalValue" nameId="tpce.1083923523171" value="left_transform_action_id" />
-      <property name="externalValue" nameId="tpce.1083923523172" value="LEFT_TRANSFORM" />
-    </node>
-    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="9025760234657707183" nodeInfo="ig">
-      <property name="internalValue" nameId="tpce.1083923523171" value="complete_action_id" />
-      <property name="externalValue" nameId="tpce.1083923523172" value="COMPLETE" />
-    </node>
-    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="9025760234657707184" nodeInfo="ig">
-      <property name="internalValue" nameId="tpce.1083923523171" value="complete_smart_action_id" />
-      <property name="externalValue" nameId="tpce.1083923523172" value="COMPLETE_SMART" />
-    </node>
-    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="9025760234657707185" nodeInfo="ig">
-      <property name="internalValue" nameId="tpce.1083923523171" value="fold_action_id" />
-      <property name="externalValue" nameId="tpce.1083923523172" value="FOLD" />
-    </node>
-    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="9025760234657707186" nodeInfo="ig">
-      <property name="internalValue" nameId="tpce.1083923523171" value="unfold_action_id" />
-      <property name="externalValue" nameId="tpce.1083923523172" value="UNFOLD" />
-    </node>
-    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="9025760234657707187" nodeInfo="ig">
-      <property name="internalValue" nameId="tpce.1083923523171" value="fold_all_action_id" />
-      <property name="externalValue" nameId="tpce.1083923523172" value="FOLD_ALL" />
-    </node>
-    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="9025760234657707188" nodeInfo="ig">
-      <property name="internalValue" nameId="tpce.1083923523171" value="unfold_all_action_id" />
-      <property name="externalValue" nameId="tpce.1083923523172" value="UNFOLD_ALL" />
-    </node>
-    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="9025760234657707189" nodeInfo="ig">
-      <property name="internalValue" nameId="tpce.1083923523171" value="toggle_folding_action_id" />
-      <property name="externalValue" nameId="tpce.1083923523172" value="TOGGLE_FOLDING" />
-    </node>
-    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="9025760234657707190" nodeInfo="ig">
-      <property name="internalValue" nameId="tpce.1083923523171" value="show_message_action_id" />
-      <property name="externalValue" nameId="tpce.1083923523172" value="SHOW_MESSAGE" />
-    </node>
-  </root>
-  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1139535439104" nodeInfo="ig">
-    <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
-    <property name="final" nameId="tpce.4628067390765956807" value="false" />
-    <property name="name" nameId="tpck.1169194664001" value="CellActionMap_ExecuteFunction" />
-    <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
-    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="execute block" />
-    <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1137021947720" resolveInfo="ConceptFunction" />
-  </root>
-  <root type="tpce.EnumerationDataTypeDeclaration" typeId="tpce.1082978164219" id="1139744471051" nodeInfo="ng">
-    <property name="name" nameId="tpck.1169194664001" value="_ImageAlignment_Enum" />
-    <link role="memberDataType" roleId="tpce.1083171729157" targetNodeId="tpck.1082983041843" resolveInfo="string" />
-    <link role="defaultMember" roleId="tpce.1083241965437" targetNodeId="1139744471411" resolveInfo="alignmentJustify" />
-    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="1139744471411" nodeInfo="ig">
-      <property name="internalValue" nameId="tpce.1083923523171" value="justify" />
-      <property name="externalValue" nameId="tpce.1083923523172" value="alignmentJustify" />
-    </node>
-    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="1139744531598" nodeInfo="ig">
-      <property name="internalValue" nameId="tpce.1083923523171" value="center" />
-      <property name="externalValue" nameId="tpce.1083923523172" value="alignmentCenter" />
-    </node>
-    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="1139744545740" nodeInfo="ig">
-      <property name="internalValue" nameId="tpce.1083923523171" value="tile" />
-      <property name="externalValue" nameId="tpce.1083923523172" value="alignmentTile" />
-    </node>
-  </root>
-  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1139744628335" nodeInfo="ig">
-    <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
-    <property name="final" nameId="tpce.4628067390765956807" value="false" />
-    <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="cell for an image" />
-    <property name="name" nameId="tpck.1169194664001" value="CellModel_Image" />
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="CellModel" />
-    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="image" />
-    <link role="extends" roleId="tpce.1071489389519" targetNodeId="1073389214265" resolveInfo="EditorCellModel" />
-    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="1176899909521" nodeInfo="ig">
-      <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
-      <property name="role" nameId="tpce.1071599776563" value="imagePathProvider" />
-      <link role="target" roleId="tpce.1071599976176" targetNodeId="1176899348742" resolveInfo="QueryFunction_ImagePath" />
-    </node>
-    <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="1139746504291" nodeInfo="ig">
-      <property name="name" nameId="tpck.1169194664001" value="imageFile" />
-      <link role="dataType" roleId="tpce.1082985295845" targetNodeId="tpck.1082983041843" resolveInfo="string" />
-    </node>
-    <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="1139858284555" nodeInfo="ig">
-      <property name="name" nameId="tpck.1169194664001" value="descent" />
-      <link role="dataType" roleId="tpce.1082985295845" targetNodeId="tpck.1082983657062" resolveInfo="integer" />
-    </node>
-  </root>
-  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1139848536355" nodeInfo="ig">
-    <property name="abstract" nameId="tpce.4628067390765956802" value="true" />
-    <property name="final" nameId="tpce.4628067390765956807" value="false" />
-    <property name="name" nameId="tpck.1169194664001" value="CellModel_WithRole" />
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="CellModel" />
-    <link role="extends" roleId="tpce.1071489389519" targetNodeId="1079353555532" resolveInfo="CellModel_AbstractLabel" />
-    <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="1139852716018" nodeInfo="ig">
-      <property name="name" nameId="tpck.1169194664001" value="noTargetText" />
-      <link role="dataType" roleId="tpce.1082985295845" targetNodeId="tpck.1082983041843" resolveInfo="string" />
-    </node>
-    <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="1214560368769" nodeInfo="ig">
-      <property name="name" nameId="tpck.1169194664001" value="emptyNoTargetText" />
-      <link role="dataType" roleId="tpce.1082985295845" targetNodeId="tpck.1082983657063" resolveInfo="boolean" />
-    </node>
-    <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="1140017977771" nodeInfo="ig">
-      <property name="name" nameId="tpck.1169194664001" value="readOnly" />
-      <link role="dataType" roleId="tpce.1082985295845" targetNodeId="tpck.1082983657063" resolveInfo="boolean" />
-    </node>
-    <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="1140114345053" nodeInfo="ig">
-      <property name="name" nameId="tpck.1169194664001" value="allowEmptyText" />
-      <link role="dataType" roleId="tpce.1082985295845" targetNodeId="tpck.1082983657063" resolveInfo="boolean" />
-    </node>
-    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="1140103550593" nodeInfo="ig">
-      <property name="role" nameId="tpce.1071599776563" value="relationDeclaration" />
-      <property name="sourceCardinality" nameId="tpce.1071599893252" value="1" />
-      <link role="target" roleId="tpce.1071599976176" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
-    </node>
-  </root>
-  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1140524381322" nodeInfo="ig">
-    <property name="abstract" nameId="tpce.4628067390765956802" value="true" />
-    <property name="final" nameId="tpce.4628067390765956807" value="false" />
-    <property name="name" nameId="tpck.1169194664001" value="CellModel_ListWithRole" />
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="CellModel" />
-    <link role="extends" roleId="tpce.1071489389519" targetNodeId="1139848536355" resolveInfo="CellModel_WithRole" />
-    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="1176897874615" nodeInfo="ig">
-      <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
-      <property name="role" nameId="tpce.1071599776563" value="nodeFactory" />
-      <link role="target" roleId="tpce.1071599976176" targetNodeId="1176897764478" resolveInfo="QueryFunction_NodeFactory" />
-    </node>
-    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="1140524464359" nodeInfo="ig">
-      <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
-      <property name="role" nameId="tpce.1071599776563" value="emptyCellModel" />
-      <property name="sourceCardinality" nameId="tpce.1071599893252" value="0..1" />
-      <link role="target" roleId="tpce.1071599976176" targetNodeId="1073389214265" resolveInfo="EditorCellModel" />
-    </node>
-    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="6046489571270834038" nodeInfo="ig">
-      <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
-      <property name="role" nameId="tpce.1071599776563" value="foldedCellModel" />
-      <link role="target" roleId="tpce.1071599976176" targetNodeId="1073389214265" resolveInfo="EditorCellModel" />
-    </node>
-    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="1140524464360" nodeInfo="ig">
-      <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
-      <property name="role" nameId="tpce.1071599776563" value="cellLayout" />
-      <property name="sourceCardinality" nameId="tpce.1071599893252" value="0..1" />
-      <link role="target" roleId="tpce.1071599976176" targetNodeId="1106270491082" resolveInfo="CellLayout" />
-    </node>
-    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="1233141163694" nodeInfo="ig">
-      <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
-      <property name="role" nameId="tpce.1071599776563" value="separatorStyle" />
-      <link role="target" roleId="tpce.1071599976176" targetNodeId="1233148810477" resolveInfo="InlineStyleDeclaration" />
-    </node>
-    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="928328222691832421" nodeInfo="ig">
-      <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
-      <property name="role" nameId="tpce.1071599776563" value="separatorTextQuery" />
-      <link role="target" roleId="tpce.1071599976176" targetNodeId="709996738298806197" resolveInfo="QueryFunction_SeparatorText" />
-    </node>
-    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="4601216887035799527" nodeInfo="ig">
-      <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
-      <property name="role" nameId="tpce.1071599776563" value="usesFoldingCondition" />
-      <link role="target" roleId="tpce.1071599976176" targetNodeId="1142886221719" resolveInfo="QueryFunction_NodeCondition" />
-    </node>
-    <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="1140524450554" nodeInfo="ig">
-      <property name="name" nameId="tpck.1169194664001" value="vertical" />
-      <link role="dataType" roleId="tpce.1082985295845" targetNodeId="tpck.1082983657063" resolveInfo="boolean" />
-      <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpce.DeprecatedNodeAnnotation" typeId="tpce.1224240836180" id="1239873962700" nodeInfo="ig" />
-    </node>
-    <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="1140524450555" nodeInfo="ig">
-      <property name="name" nameId="tpck.1169194664001" value="gridLayout" />
-      <link role="dataType" roleId="tpce.1082985295845" targetNodeId="tpck.1082983657063" resolveInfo="boolean" />
-      <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpce.DeprecatedNodeAnnotation" typeId="tpce.1224240836180" id="1239873964974" nodeInfo="ig" />
-    </node>
-    <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="1140524450556" nodeInfo="ig">
-      <property name="name" nameId="tpck.1169194664001" value="usesBraces" />
-      <link role="dataType" roleId="tpce.1082985295845" targetNodeId="tpck.1082983657063" resolveInfo="boolean" />
-    </node>
-    <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="1160590307797" nodeInfo="ig">
-      <property name="name" nameId="tpck.1169194664001" value="usesFolding" />
-      <link role="dataType" roleId="tpce.1082985295845" targetNodeId="tpck.1082983657063" resolveInfo="boolean" />
-    </node>
-    <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="1140524450557" nodeInfo="ig">
-      <property name="name" nameId="tpck.1169194664001" value="separatorText" />
-      <link role="dataType" roleId="tpce.1082985295845" targetNodeId="tpck.1082983041843" resolveInfo="string" />
-    </node>
-    <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="1156252885376" nodeInfo="ig">
-      <property name="name" nameId="tpck.1169194664001" value="separatorLayoutConstraint" />
-      <link role="dataType" roleId="tpce.1082985295845" targetNodeId="1138197387103" resolveInfo="_Layout_Constraints_Enum" />
-    </node>
-  </root>
-  <root type="tpce.EnumerationDataTypeDeclaration" typeId="tpce.1082978164219" id="1140813780565" nodeInfo="ng">
-    <property name="name" nameId="tpck.1169194664001" value="RightTransformAnchorTag" />
-    <link role="memberDataType" roleId="tpce.1083171729157" targetNodeId="tpck.1082983041843" resolveInfo="string" />
-    <link role="defaultMember" roleId="tpce.1083241965437" targetNodeId="1140813780644" resolveInfo="none" />
-    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="1140813780644" nodeInfo="ig">
-      <property name="externalValue" nameId="tpce.1083923523172" value="none" />
-    </node>
-    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="1140813835051" nodeInfo="ig">
-      <property name="internalValue" nameId="tpce.1083923523171" value="default_RTransform" />
-      <property name="externalValue" nameId="tpce.1083923523172" value="default_" />
-    </node>
-    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="1140813898505" nodeInfo="ig">
-      <property name="internalValue" nameId="tpce.1083923523171" value="ext_1_RTransform" />
-      <property name="externalValue" nameId="tpce.1083923523172" value="ext_1" />
-    </node>
-    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="1140813939727" nodeInfo="ig">
-      <property name="internalValue" nameId="tpce.1083923523171" value="ext_2_RTransform" />
-      <property name="externalValue" nameId="tpce.1083923523172" value="ext_2" />
-    </node>
-    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="1140813947731" nodeInfo="ig">
-      <property name="internalValue" nameId="tpce.1083923523171" value="ext_3_RTransform" />
-      <property name="externalValue" nameId="tpce.1083923523172" value="ext_3" />
-    </node>
-    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="1140813957048" nodeInfo="ig">
-      <property name="internalValue" nameId="tpce.1083923523171" value="ext_4_RTransform" />
-      <property name="externalValue" nameId="tpce.1083923523172" value="ext_4" />
-    </node>
-    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="1140813967505" nodeInfo="ig">
-      <property name="internalValue" nameId="tpce.1083923523171" value="ext_5_RTransform" />
-      <property name="externalValue" nameId="tpce.1083923523172" value="ext_5" />
-    </node>
-  </root>
-  <root type="tpce.EnumerationDataTypeDeclaration" typeId="tpce.1082978164219" id="1141091053936" nodeInfo="ng">
-    <property name="name" nameId="tpck.1169194664001" value="CellKeyMapCaretPolicy" />
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="CellKeyMap" />
-    <link role="memberDataType" roleId="tpce.1083171729157" targetNodeId="tpck.1082983041843" resolveInfo="string" />
-    <link role="defaultMember" roleId="tpce.1083241965437" targetNodeId="1141091054266" resolveInfo="ANY_POSITION" />
-    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="1141091054266" nodeInfo="ig">
-      <property name="externalValue" nameId="tpce.1083923523172" value="ANY_POSITION" />
-    </node>
-    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="1141091172402" nodeInfo="ig">
-      <property name="internalValue" nameId="tpce.1083923523171" value="caret_at_first_position" />
-      <property name="externalValue" nameId="tpce.1083923523172" value="FIRST_POSITION" />
-    </node>
-    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="1141091209420" nodeInfo="ig">
-      <property name="internalValue" nameId="tpce.1083923523171" value="caret_at_last_position" />
-      <property name="externalValue" nameId="tpce.1083923523172" value="LAST_POSITION" />
-    </node>
-    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="1143573566373" nodeInfo="ig">
-      <property name="internalValue" nameId="tpce.1083923523171" value="caret_at_intermediate_position" />
-      <property name="externalValue" nameId="tpce.1083923523172" value="INTERMEDIATE_POSITION" />
-    </node>
-  </root>
-  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1142886221719" nodeInfo="ig">
-    <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
-    <property name="final" nameId="tpce.4628067390765956807" value="false" />
-    <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="embedded block of code" />
-    <property name="name" nameId="tpck.1169194664001" value="QueryFunction_NodeCondition" />
-    <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="QueryFunction" />
-    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="condition" />
-    <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1137021947720" resolveInfo="ConceptFunction" />
-  </root>
-  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1142886811589" nodeInfo="ig">
-    <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
-    <property name="final" nameId="tpce.4628067390765956807" value="false" />
-    <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="function parameter" />
-    <property name="name" nameId="tpck.1169194664001" value="ConceptFunctionParameter_node" />
-    <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="QueryFunction.Parameters" />
-    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="node" />
-    <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1107135704075" resolveInfo="ConceptFunctionParameter" />
-    <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="1262430001741642741" nodeInfo="ig">
-      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="tpck.1835621062190663819" resolveInfo="IDontSubstituteByDefault" />
-    </node>
-  </root>
-  <root type="tpce.EnumerationDataTypeDeclaration" typeId="tpce.1082978164219" id="1143891911797" nodeInfo="ng">
-    <property name="name" nameId="tpck.1169194664001" value="_LeftRight_Enum" />
-    <link role="memberDataType" roleId="tpce.1083171729157" targetNodeId="tpck.1082983657063" resolveInfo="boolean" />
-    <link role="defaultMember" roleId="tpce.1083241965437" targetNodeId="1143891911798" resolveInfo="left" />
-    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="1143891911798" nodeInfo="ig">
-      <property name="internalValue" nameId="tpce.1083923523171" value="true" />
-      <property name="externalValue" nameId="tpce.1083923523172" value="left" />
-    </node>
-    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="1143891954220" nodeInfo="ig">
-      <property name="internalValue" nameId="tpce.1083923523171" value="false" />
-      <property name="externalValue" nameId="tpce.1083923523172" value="right" />
-    </node>
-  </root>
-  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1149850725784" nodeInfo="ig">
-    <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
-    <property name="final" nameId="tpce.4628067390765956807" value="false" />
-    <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="cell for attributed node" />
-    <property name="name" nameId="tpck.1169194664001" value="CellModel_AttributedNodeCell" />
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="CellModel" />
-    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="attributed node" />
-    <link role="extends" roleId="tpce.1071489389519" targetNodeId="1073389214265" resolveInfo="EditorCellModel" />
-  </root>
-  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1160493135005" nodeInfo="ig">
-    <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
-    <property name="final" nameId="tpce.4628067390765956807" value="false" />
-    <property name="name" nameId="tpck.1169194664001" value="CellMenuPart_PropertyValues_GetValues" />
-    <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="CellMenu" />
-    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="property values" />
-    <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1137021947720" resolveInfo="ConceptFunction" />
-  </root>
-  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1161622981231" nodeInfo="ig">
-    <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
-    <property name="final" nameId="tpce.4628067390765956807" value="false" />
-    <property name="name" nameId="tpck.1169194664001" value="ConceptFunctionParameter_editorContext" />
-    <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="QueryFunction.Parameters" />
-    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="editorContext" />
-    <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1107135704075" resolveInfo="ConceptFunctionParameter" />
-    <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="1262430001741702895" nodeInfo="ig">
-      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="tpck.1835621062190663819" resolveInfo="IDontSubstituteByDefault" />
-    </node>
-  </root>
-  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1162497113192" nodeInfo="ig">
-    <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
-    <property name="final" nameId="tpce.4628067390765956807" value="false" />
-    <property name="name" nameId="tpck.1169194664001" value="CellMenuPart_ReplaceChild_currentChild" />
-    <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="CellMenu" />
-    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="currentChild" />
-    <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1107135704075" resolveInfo="ConceptFunctionParameter" />
-    <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="1262430001741523462" nodeInfo="ig">
-      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="tpck.1835621062190663819" resolveInfo="IDontSubstituteByDefault" />
-    </node>
-  </root>
-  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1162498275506" nodeInfo="ig">
-    <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
-    <property name="final" nameId="tpce.4628067390765956807" value="false" />
-    <property name="name" nameId="tpck.1169194664001" value="CellMenuPart_ReplaceChild_defaultConceptOfChild" />
-    <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="CellMenu" />
-    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="defaultConceptOfChild" />
-    <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1107135704075" resolveInfo="ConceptFunctionParameter" />
-    <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="1262430001741642941" nodeInfo="ig">
-      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="tpck.1835621062190663819" resolveInfo="IDontSubstituteByDefault" />
-    </node>
-  </root>
-  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1163613035599" nodeInfo="ig">
-    <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
-    <property name="final" nameId="tpce.4628067390765956807" value="false" />
-    <property name="name" nameId="tpck.1169194664001" value="CellMenuPart_AbstractGroup_Query" />
-    <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="CellMenu" />
-    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="get objects" />
-    <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1137021947720" resolveInfo="ConceptFunction" />
-  </root>
-  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1163613131943" nodeInfo="ig">
-    <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
-    <property name="final" nameId="tpce.4628067390765956807" value="false" />
-    <property name="name" nameId="tpck.1169194664001" value="CellMenuPart_ReplaceNode_Group_Create" />
-    <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="CellMenu" />
-    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="create replacement node" />
-    <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1137021947720" resolveInfo="ConceptFunction" />
-  </root>
-  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1163613549566" nodeInfo="ig">
-    <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
-    <property name="final" nameId="tpce.4628067390765956807" value="false" />
-    <property name="name" nameId="tpck.1169194664001" value="CellMenuPart_AbstractGroup_parameterObject" />
-    <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="CellMenu" />
-    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="parameterObject" />
-    <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1107135704075" resolveInfo="ConceptFunctionParameter" />
-    <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="1262430001741704576" nodeInfo="ig">
-      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="tpck.1835621062190663819" resolveInfo="IDontSubstituteByDefault" />
-    </node>
-  </root>
-  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1163613822479" nodeInfo="ig">
-    <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
-    <property name="final" nameId="tpce.4628067390765956807" value="false" />
-    <property name="name" nameId="tpck.1169194664001" value="CellMenuPart_Abstract_editedNode" />
-    <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="CellMenu" />
-    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="node" />
-    <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1107135704075" resolveInfo="ConceptFunctionParameter" />
-    <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="1262430001741718748" nodeInfo="ig">
-      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="tpck.1835621062190663819" resolveInfo="IDontSubstituteByDefault" />
-    </node>
-  </root>
-  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1164052439493" nodeInfo="ig">
-    <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
-    <property name="final" nameId="tpce.4628067390765956807" value="false" />
-    <property name="name" nameId="tpck.1169194664001" value="CellMenuPart_AbstractGroup_MatchingText" />
-    <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="CellMenu" />
-    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="matching text" />
-    <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1137021947720" resolveInfo="ConceptFunction" />
-  </root>
-  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1164052588708" nodeInfo="ig">
-    <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
-    <property name="final" nameId="tpce.4628067390765956807" value="false" />
-    <property name="name" nameId="tpck.1169194664001" value="CellMenuPart_AbstractGroup_DescriptionText" />
-    <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="CellMenu" />
-    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="description text" />
-    <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1137021947720" resolveInfo="ConceptFunction" />
-  </root>
-  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1164824717996" nodeInfo="ig">
-    <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
-    <property name="final" nameId="tpce.4628067390765956807" value="false" />
-    <property name="name" nameId="tpck.1169194664001" value="CellMenuDescriptor" />
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="CellMenu" />
-    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="cell menu" />
-    <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
-    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="1164824815888" nodeInfo="ig">
-      <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
-      <property name="role" nameId="tpce.1071599776563" value="cellMenuPart" />
-      <property name="sourceCardinality" nameId="tpce.1071599893252" value="0..n" />
-      <link role="target" roleId="tpce.1071599976176" targetNodeId="1164824854750" resolveInfo="CellMenuPart_Abstract" />
-    </node>
-  </root>
-  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1164824854750" nodeInfo="ig">
-    <property name="abstract" nameId="tpce.4628067390765956802" value="true" />
-    <property name="final" nameId="tpce.4628067390765956807" value="false" />
-    <property name="name" nameId="tpck.1169194664001" value="CellMenuPart_Abstract" />
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="CellMenu" />
-    <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
-  </root>
-  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1164833692343" nodeInfo="ig">
-    <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
-    <property name="final" nameId="tpce.4628067390765956807" value="false" />
-    <property name="name" nameId="tpck.1169194664001" value="CellMenuPart_PropertyValues" />
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="CellMenu" />
-    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="property values" />
-    <link role="extends" roleId="tpce.1071489389519" targetNodeId="1164824854750" resolveInfo="CellMenuPart_Abstract" />
-    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="1164833692344" nodeInfo="ig">
-      <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
-      <property name="role" nameId="tpce.1071599776563" value="valuesFunction" />
-      <property name="sourceCardinality" nameId="tpce.1071599893252" value="1" />
-      <link role="target" roleId="tpce.1071599976176" targetNodeId="1160493135005" resolveInfo="CellMenuPart_PropertyValues_GetValues" />
-    </node>
-    <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="1262430001741647420" nodeInfo="ig">
-      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="tpck.1835621062190663819" resolveInfo="IDontSubstituteByDefault" />
-    </node>
-  </root>
-  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1164914519156" nodeInfo="ig">
-    <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
-    <property name="final" nameId="tpce.4628067390765956807" value="false" />
-    <property name="name" nameId="tpck.1169194664001" value="CellMenuPart_ReplaceNode_CustomNodeConcept" />
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="CellMenu" />
-    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="replace node (custom node concept)" />
-    <link role="extends" roleId="tpce.1071489389519" targetNodeId="1164824854750" resolveInfo="CellMenuPart_Abstract" />
-    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="1164914727930" nodeInfo="ig">
-      <property name="role" nameId="tpce.1071599776563" value="replacementConcept" />
-      <property name="sourceCardinality" nameId="tpce.1071599893252" value="1" />
-      <link role="target" roleId="tpce.1071599976176" targetNodeId="tpce.1169125787135" resolveInfo="AbstractConceptDeclaration" />
-    </node>
-  </root>
-  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1164996492011" nodeInfo="ig">
-    <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
-    <property name="final" nameId="tpce.4628067390765956807" value="false" />
-    <property name="name" nameId="tpck.1169194664001" value="CellMenuPart_ReferentPrimary" />
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="CellMenu" />
-    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="primary choose referent menu" />
-    <link role="extends" roleId="tpce.1071489389519" targetNodeId="1164824854750" resolveInfo="CellMenuPart_Abstract" />
-    <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="1262430001741523500" nodeInfo="ig">
-      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="tpck.1835621062190663819" resolveInfo="IDontSubstituteByDefault" />
-    </node>
-  </root>
-  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1165004207520" nodeInfo="ig">
-    <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
-    <property name="final" nameId="tpce.4628067390765956807" value="false" />
-    <property name="name" nameId="tpck.1169194664001" value="CellMenuPart_ReplaceNode_Group" />
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="CellMenu" />
-    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="replace node (group of custom actions)" />
-    <link role="extends" roleId="tpce.1071489389519" targetNodeId="1165253627126" resolveInfo="CellMenuPart_AbstractGroup" />
-    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="1165004529292" nodeInfo="ig">
-      <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
-      <property name="role" nameId="tpce.1071599776563" value="parametersFunction" />
-      <property name="sourceCardinality" nameId="tpce.1071599893252" value="1" />
-      <link role="target" roleId="tpce.1071599976176" targetNodeId="1163613035599" resolveInfo="CellMenuPart_AbstractGroup_Query" />
-    </node>
-    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="1165004529293" nodeInfo="ig">
-      <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
-      <property name="role" nameId="tpce.1071599776563" value="createFunction" />
-      <property name="sourceCardinality" nameId="tpce.1071599893252" value="1" />
-      <link role="target" roleId="tpce.1071599976176" targetNodeId="1163613131943" resolveInfo="CellMenuPart_ReplaceNode_Group_Create" />
-    </node>
-  </root>
-  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1165253627126" nodeInfo="ig">
-    <property name="abstract" nameId="tpce.4628067390765956802" value="true" />
-    <property name="final" nameId="tpce.4628067390765956807" value="false" />
-    <property name="name" nameId="tpck.1169194664001" value="CellMenuPart_AbstractGroup" />
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="CellMenu" />
-    <link role="extends" roleId="tpce.1071489389519" targetNodeId="1164824854750" resolveInfo="CellMenuPart_Abstract" />
-    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="1165253890469" nodeInfo="ig">
-      <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
-      <property name="role" nameId="tpce.1071599776563" value="parameterObjectType" />
-      <property name="sourceCardinality" nameId="tpce.1071599893252" value="1" />
-      <link role="target" roleId="tpce.1071599976176" targetNodeId="tpee.1068431790189" resolveInfo="Type" />
-    </node>
-    <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="1165254125954" nodeInfo="ig">
-      <property name="name" nameId="tpck.1169194664001" value="presentation" />
-      <link role="dataType" roleId="tpce.1082985295845" targetNodeId="tpcw.1165007009656" resolveInfo="NodePresentationOptions" />
-    </node>
-    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="1165254159533" nodeInfo="ig">
-      <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
-      <property name="role" nameId="tpce.1071599776563" value="matchingTextFunction" />
-      <link role="target" roleId="tpce.1071599976176" targetNodeId="1164052439493" resolveInfo="CellMenuPart_AbstractGroup_MatchingText" />
-    </node>
-    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="1165254180581" nodeInfo="ig">
-      <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
-      <property name="role" nameId="tpce.1071599776563" value="descriptionTextFunction" />
-      <link role="target" roleId="tpce.1071599976176" targetNodeId="1164052588708" resolveInfo="CellMenuPart_AbstractGroup_DescriptionText" />
-    </node>
-  </root>
-  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1165270418989" nodeInfo="ig">
-    <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
-    <property name="final" nameId="tpce.4628067390765956807" value="false" />
-    <property name="name" nameId="tpck.1169194664001" value="CellMenuPart_ReplaceChild_Group" />
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="CellMenu" />
-    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="replace child (group of custom actions)" />
-    <link role="extends" roleId="tpce.1071489389519" targetNodeId="1165253627126" resolveInfo="CellMenuPart_AbstractGroup" />
-    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="1165270418991" nodeInfo="ig">
-      <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
-      <property name="role" nameId="tpce.1071599776563" value="parametersFunction" />
-      <property name="sourceCardinality" nameId="tpce.1071599893252" value="1" />
-      <link role="target" roleId="tpce.1071599976176" targetNodeId="1165270662927" resolveInfo="CellMenuPart_ReplaceChild_Group_Query" />
-    </node>
-    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="1165270418992" nodeInfo="ig">
-      <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
-      <property name="role" nameId="tpce.1071599776563" value="createFunction" />
-      <link role="target" roleId="tpce.1071599976176" targetNodeId="1165270999881" resolveInfo="CellMenuPart_ReplaceChild_Group_Create" />
-    </node>
-    <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="1262430001741703130" nodeInfo="ig">
-      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="tpck.1835621062190663819" resolveInfo="IDontSubstituteByDefault" />
-    </node>
-  </root>
-  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1165270662927" nodeInfo="ig">
-    <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
-    <property name="final" nameId="tpce.4628067390765956807" value="false" />
-    <property name="name" nameId="tpck.1169194664001" value="CellMenuPart_ReplaceChild_Group_Query" />
-    <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="CellMenu" />
-    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="get objects" />
-    <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1137021947720" resolveInfo="ConceptFunction" />
-  </root>
-  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1165270999881" nodeInfo="ig">
-    <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
-    <property name="final" nameId="tpce.4628067390765956807" value="false" />
-    <property name="name" nameId="tpck.1169194664001" value="CellMenuPart_ReplaceChild_Group_Create" />
-    <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="CellMenu" />
-    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="create new child" />
-    <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1137021947720" resolveInfo="ConceptFunction" />
-  </root>
-  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1165280503630" nodeInfo="ig">
-    <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
-    <property name="final" nameId="tpce.4628067390765956807" value="false" />
-    <property name="name" nameId="tpck.1169194664001" value="CellMenuPart_ReplaceChild_CustomChildConcept" />
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="CellMenu" />
-    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="replace child (custom child's concept)" />
-    <link role="extends" roleId="tpce.1071489389519" targetNodeId="1164824854750" resolveInfo="CellMenuPart_Abstract" />
-    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="1165280503631" nodeInfo="ig">
-      <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
-      <property name="role" nameId="tpce.1071599776563" value="childConceptFunction" />
-      <property name="sourceCardinality" nameId="tpce.1071599893252" value="1" />
-      <link role="target" roleId="tpce.1071599976176" targetNodeId="1165280856333" resolveInfo="CellMenuPart_ReplaceChild_CustomChildConcept_Query" />
-    </node>
-    <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="1262430001741647053" nodeInfo="ig">
-      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="tpck.1835621062190663819" resolveInfo="IDontSubstituteByDefault" />
-    </node>
-  </root>
-  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1165280856333" nodeInfo="ig">
-    <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
-    <property name="final" nameId="tpce.4628067390765956807" value="false" />
-    <property name="name" nameId="tpck.1169194664001" value="CellMenuPart_ReplaceChild_CustomChildConcept_Query" />
-    <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="CellMenu" />
-    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="get child concept" />
-    <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1137021947720" resolveInfo="ConceptFunction" />
-  </root>
-  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1165339175678" nodeInfo="ig">
-    <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
-    <property name="final" nameId="tpce.4628067390765956807" value="false" />
-    <property name="name" nameId="tpck.1169194664001" value="CellMenuPart_ReplaceChild_Item" />
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="CellMenu" />
-    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="replace child (custom action)" />
-    <link role="extends" roleId="tpce.1071489389519" targetNodeId="1164824854750" resolveInfo="CellMenuPart_Abstract" />
-    <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="1165339639991" nodeInfo="ig">
-      <property name="name" nameId="tpck.1169194664001" value="matchingText" />
-      <link role="dataType" roleId="tpce.1082985295845" targetNodeId="tpck.1082983041843" resolveInfo="string" />
-    </node>
-    <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="1175117579502" nodeInfo="ig">
-      <property name="name" nameId="tpck.1169194664001" value="descriptionText" />
-      <link role="dataType" roleId="tpce.1082985295845" targetNodeId="tpck.1082983041843" resolveInfo="string" />
-    </node>
-    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="1165339175680" nodeInfo="ig">
-      <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
-      <property name="role" nameId="tpce.1071599776563" value="createFunction" />
-      <link role="target" roleId="tpce.1071599976176" targetNodeId="1165339307433" resolveInfo="CellMenuPart_ReplaceChild_Item_Create" />
-    </node>
-    <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="1262430001741520159" nodeInfo="ig">
-      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="tpck.1835621062190663819" resolveInfo="IDontSubstituteByDefault" />
-    </node>
-  </root>
-  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1165339307433" nodeInfo="ig">
-    <property name="name" nameId="tpck.1169194664001" value="CellMenuPart_ReplaceChild_Item_Create" />
-    <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="CellMenu" />
-    <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1137021947720" resolveInfo="ConceptFunction" />
-  </root>
-  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1165420413719" nodeInfo="ig">
-    <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
-    <property name="final" nameId="tpce.4628067390765956807" value="false" />
-    <property name="name" nameId="tpck.1169194664001" value="CellMenuPart_Generic_Group" />
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="CellMenu" />
-    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="generic group" />
-    <link role="extends" roleId="tpce.1071489389519" targetNodeId="1165253627126" resolveInfo="CellMenuPart_AbstractGroup" />
-    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="1165420413720" nodeInfo="ig">
-      <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
-      <property name="role" nameId="tpce.1071599776563" value="parametersFunction" />
-      <property name="sourceCardinality" nameId="tpce.1071599893252" value="1" />
-      <link role="target" roleId="tpce.1071599976176" targetNodeId="1163613035599" resolveInfo="CellMenuPart_AbstractGroup_Query" />
-    </node>
-    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="1165420413721" nodeInfo="ig">
-      <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
-      <property name="role" nameId="tpce.1071599776563" value="handlerFunction" />
-      <property name="sourceCardinality" nameId="tpce.1071599893252" value="1" />
-      <link role="target" roleId="tpce.1071599976176" targetNodeId="1165420626554" resolveInfo="CellMenuPart_Generic_Group_Handler" />
-    </node>
-  </root>
-  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1165420626554" nodeInfo="ig">
-    <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
-    <property name="final" nameId="tpce.4628067390765956807" value="false" />
-    <property name="name" nameId="tpck.1169194664001" value="CellMenuPart_Generic_Group_Handler" />
-    <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="CellMenu" />
-    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="generic handler" />
-    <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1137021947720" resolveInfo="ConceptFunction" />
-  </root>
-  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1165424453110" nodeInfo="ig">
-    <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
-    <property name="final" nameId="tpce.4628067390765956807" value="false" />
-    <property name="name" nameId="tpck.1169194664001" value="CellMenuPart_Generic_Item" />
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="CellMenu" />
-    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="generic item" />
-    <link role="extends" roleId="tpce.1071489389519" targetNodeId="1164824854750" resolveInfo="CellMenuPart_Abstract" />
-    <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="1165424453111" nodeInfo="ig">
-      <property name="name" nameId="tpck.1169194664001" value="matchingText" />
-      <link role="dataType" roleId="tpce.1082985295845" targetNodeId="tpck.1082983041843" resolveInfo="string" />
-    </node>
-    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="1165424453112" nodeInfo="ig">
-      <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
-      <property name="role" nameId="tpce.1071599776563" value="handlerFunction" />
-      <property name="sourceCardinality" nameId="tpce.1071599893252" value="1" />
-      <link role="target" roleId="tpce.1071599976176" targetNodeId="1165424657443" resolveInfo="CellMenuPart_Generic_Item_Handler" />
-    </node>
-  </root>
-  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1165424657443" nodeInfo="ig">
-    <property name="name" nameId="tpck.1169194664001" value="CellMenuPart_Generic_Item_Handler" />
-    <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="CellMenu" />
-    <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1137021947720" resolveInfo="ConceptFunction" />
-  </root>
-  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1166040637528" nodeInfo="ig">
-    <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
-    <property name="rootable" nameId="tpce.1096454100552" value="true" />
-    <property name="final" nameId="tpce.4628067390765956807" value="false" />
-    <property name="iconPath" nameId="tpce.1160488491229" value="${language_descriptor}/icons/menuComponent.png" />
-    <property name="name" nameId="tpck.1169194664001" value="CellMenuComponent" />
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="CellMenu" />
-    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="Cell Menu Component" />
-    <link role="extends" roleId="tpce.1071489389519" targetNodeId="1166049232041" resolveInfo="AbstractComponent" />
-    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="1166040865497" nodeInfo="ig">
-      <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
-      <property name="role" nameId="tpce.1071599776563" value="applicableFeature" />
-      <link role="target" roleId="tpce.1071599976176" targetNodeId="1166041033436" resolveInfo="CellMenuComponentFeature" />
-    </node>
-    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="1166041505377" nodeInfo="ig">
-      <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
-      <property name="role" nameId="tpce.1071599776563" value="menuDescriptor" />
-      <property name="sourceCardinality" nameId="tpce.1071599893252" value="1" />
-      <link role="target" roleId="tpce.1071599976176" targetNodeId="1164824717996" resolveInfo="CellMenuDescriptor" />
-    </node>
-    <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="690365078554485265" nodeInfo="ig">
-      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="tpee.1212170275853" resolveInfo="IValidIdentifier" />
-    </node>
-    <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="5270353093116097656" nodeInfo="ig">
-      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="tpce.2621449412040133764" resolveInfo="IConceptAspect" />
-    </node>
-  </root>
-  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1166041033436" nodeInfo="ig">
-    <property name="abstract" nameId="tpce.4628067390765956802" value="true" />
-    <property name="final" nameId="tpce.4628067390765956807" value="false" />
-    <property name="name" nameId="tpck.1169194664001" value="CellMenuComponentFeature" />
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="CellMenu" />
-    <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
-    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="1166054297096" nodeInfo="ig">
-      <property name="role" nameId="tpce.1071599776563" value="relationDeclaration" />
-      <property name="sourceCardinality" nameId="tpce.1071599893252" value="1" />
-      <link role="target" roleId="tpce.1071599976176" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
-    </node>
-  </root>
-  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1166041748520" nodeInfo="ig">
-    <property name="name" nameId="tpck.1169194664001" value="CellMenuComponentFeature_Property" />
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="CellMenu" />
-    <link role="extends" roleId="tpce.1071489389519" targetNodeId="1166041033436" resolveInfo="CellMenuComponentFeature" />
-    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="1166041884271" nodeInfo="ig">
-      <property name="role" nameId="tpce.1071599776563" value="propertyDeclaration" />
-      <property name="sourceCardinality" nameId="tpce.1071599893252" value="1" />
-      <link role="target" roleId="tpce.1071599976176" targetNodeId="tpce.1071489288299" resolveInfo="PropertyDeclaration" />
-      <link role="specializedLink" roleId="tpce.1071599698500" targetNodeId="1166054297096" />
-    </node>
-  </root>
-  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1166042131867" nodeInfo="ig">
-    <property name="name" nameId="tpck.1169194664001" value="CellMenuComponentFeature_Link" />
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="CellMenu" />
-    <link role="extends" roleId="tpce.1071489389519" targetNodeId="1166041033436" resolveInfo="CellMenuComponentFeature" />
-    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="1166042131869" nodeInfo="ig">
-      <property name="role" nameId="tpce.1071599776563" value="linkDeclaration" />
-      <property name="sourceCardinality" nameId="tpce.1071599893252" value="1" />
-      <link role="target" roleId="tpce.1071599976176" targetNodeId="tpce.1071489288298" resolveInfo="LinkDeclaration" />
-      <link role="specializedLink" roleId="tpce.1071599698500" targetNodeId="1166054297096" />
-    </node>
-  </root>
-  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1166049232041" nodeInfo="ig">
-    <property name="abstract" nameId="tpce.4628067390765956802" value="true" />
-    <property name="final" nameId="tpce.4628067390765956807" value="false" />
-    <property name="name" nameId="tpck.1169194664001" value="AbstractComponent" />
-    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="1166049300910" nodeInfo="ig">
-      <property name="role" nameId="tpce.1071599776563" value="conceptDeclaration" />
-      <property name="sourceCardinality" nameId="tpce.1071599893252" value="0..1" />
-      <link role="target" roleId="tpce.1071599976176" targetNodeId="tpce.1169125787135" resolveInfo="AbstractConceptDeclaration" />
-    </node>
-  </root>
-  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1166059625718" nodeInfo="ig">
-    <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
-    <property name="final" nameId="tpce.4628067390765956807" value="false" />
-    <property name="name" nameId="tpck.1169194664001" value="CellMenuPart_CellMenuComponent" />
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="CellMenu" />
-    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="menu component" />
-    <link role="extends" roleId="tpce.1071489389519" targetNodeId="1164824854750" resolveInfo="CellMenuPart_Abstract" />
-    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="1166059677893" nodeInfo="ig">
-      <property name="role" nameId="tpce.1071599776563" value="cellMenuComponent" />
-      <property name="sourceCardinality" nameId="tpce.1071599893252" value="1" />
-      <link role="target" roleId="tpce.1071599976176" targetNodeId="1166040637528" resolveInfo="CellMenuComponent" />
-    </node>
-  </root>
-  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1174088067129" nodeInfo="ig">
-    <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
-    <property name="final" nameId="tpce.4628067390765956807" value="false" />
-    <property name="name" nameId="tpck.1169194664001" value="CellMenuPart_ReplaceChildPrimary" />
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="CellMenu" />
-    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="primary replace child menu" />
-    <link role="extends" roleId="tpce.1071489389519" targetNodeId="1164824854750" resolveInfo="CellMenuPart_Abstract" />
-    <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="1262430001741702896" nodeInfo="ig">
-      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="tpck.1835621062190663819" resolveInfo="IDontSubstituteByDefault" />
-    </node>
-  </root>
-  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1176474535556" nodeInfo="ig">
-    <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
-    <property name="final" nameId="tpce.4628067390765956807" value="false" />
-    <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="embedded block of code" />
-    <property name="name" nameId="tpck.1169194664001" value="QueryFunction_JComponent" />
-    <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="QueryFunction" />
-    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="component" />
-    <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1137021947720" resolveInfo="ConceptFunction" />
-  </root>
-  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1176717779940" nodeInfo="ig">
-    <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
-    <property name="final" nameId="tpce.4628067390765956807" value="false" />
-    <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="function parameter" />
-    <property name="name" nameId="tpck.1169194664001" value="ConceptFunctionParameter_text" />
-    <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
-    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="text" />
-    <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1107135704075" resolveInfo="ConceptFunctionParameter" />
-    <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="1262430001741647440" nodeInfo="ig">
-      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="tpck.1835621062190663819" resolveInfo="IDontSubstituteByDefault" />
-    </node>
-  </root>
-  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1176717841777" nodeInfo="ig">
-    <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
-    <property name="final" nameId="tpce.4628067390765956807" value="false" />
-    <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="embedded block of code" />
-    <property name="name" nameId="tpck.1169194664001" value="QueryFunction_ModelAccess_Getter" />
-    <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="QueryFunction" />
-    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="condition" />
-    <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1137021947720" resolveInfo="ConceptFunction" />
-  </root>
-  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1176717871254" nodeInfo="ig">
-    <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
-    <property name="final" nameId="tpce.4628067390765956807" value="false" />
-    <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="embedded block of code" />
-    <property name="name" nameId="tpck.1169194664001" value="QueryFunction_ModelAccess_Setter" />
-    <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="QueryFunction" />
-    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="condition" />
-    <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1137021947720" resolveInfo="ConceptFunction" />
-  </root>
-  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1176717888428" nodeInfo="ig">
-    <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
-    <property name="final" nameId="tpce.4628067390765956807" value="false" />
-    <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="embedded block of code" />
-    <property name="name" nameId="tpck.1169194664001" value="QueryFunction_ModelAccess_Validator" />
-    <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="QueryFunction" />
-    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="condition" />
-    <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1137021947720" resolveInfo="ConceptFunction" />
-  </root>
-  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1176717996748" nodeInfo="ig">
-    <property name="name" nameId="tpck.1169194664001" value="ModelAccessor" />
-    <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
-    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="1176718001874" nodeInfo="ig">
-      <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
-      <property name="role" nameId="tpce.1071599776563" value="getter" />
-      <property name="sourceCardinality" nameId="tpce.1071599893252" value="1" />
-      <link role="target" roleId="tpce.1071599976176" targetNodeId="1176717841777" resolveInfo="QueryFunction_ModelAccess_Getter" />
-    </node>
-    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="1176718007938" nodeInfo="ig">
-      <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
-      <property name="role" nameId="tpce.1071599776563" value="setter" />
-      <property name="sourceCardinality" nameId="tpce.1071599893252" value="1" />
-      <link role="target" roleId="tpce.1071599976176" targetNodeId="1176717871254" resolveInfo="QueryFunction_ModelAccess_Setter" />
-    </node>
-    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="1176718014393" nodeInfo="ig">
-      <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
-      <property name="role" nameId="tpce.1071599776563" value="validator" />
-      <property name="sourceCardinality" nameId="tpce.1071599893252" value="1" />
-      <link role="target" roleId="tpce.1071599976176" targetNodeId="1176717888428" resolveInfo="QueryFunction_ModelAccess_Validator" />
-    </node>
-  </root>
-  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1176731909317" nodeInfo="ig">
-    <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
-    <property name="final" nameId="tpce.4628067390765956807" value="false" />
-    <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="function parameter" />
-    <property name="name" nameId="tpck.1169194664001" value="ConceptFunctionParameter_oldText" />
-    <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
-    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="oldText" />
-    <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1107135704075" resolveInfo="ConceptFunctionParameter" />
-    <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="1262430001741703107" nodeInfo="ig">
-      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="tpck.1835621062190663819" resolveInfo="IDontSubstituteByDefault" />
-    </node>
-  </root>
-  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1176749715029" nodeInfo="ig">
-    <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
-    <property name="final" nameId="tpce.4628067390765956807" value="false" />
-    <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="embedded block of code" />
-    <property name="name" nameId="tpck.1169194664001" value="QueryFunction_CellProvider" />
-    <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="QueryFunction" />
-    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="cell provider" />
-    <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1137021947720" resolveInfo="ConceptFunction" />
-  </root>
-  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1176809959526" nodeInfo="ig">
-    <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
-    <property name="final" nameId="tpce.4628067390765956807" value="false" />
-    <property name="name" nameId="tpck.1169194664001" value="QueryFunction_Color" />
-    <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="QueryFunction.Style" />
-    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="color function" />
-    <link role="extends" roleId="tpce.1071489389519" targetNodeId="1221059528506" resolveInfo="QueryFunction_StyleParameter" />
-    <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="1225456207992" nodeInfo="ig">
-      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="1225456097782" resolveInfo="IQueryFunction_Color" />
-    </node>
-  </root>
-  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1176897764478" nodeInfo="ig">
-    <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
-    <property name="final" nameId="tpce.4628067390765956807" value="false" />
-    <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="embedded block of code" />
-    <property name="name" nameId="tpck.1169194664001" value="QueryFunction_NodeFactory" />
-    <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="QueryFunction" />
-    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="node factory" />
-    <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1137021947720" resolveInfo="ConceptFunction" />
-  </root>
-  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1176899348742" nodeInfo="ig">
-    <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
-    <property name="final" nameId="tpce.4628067390765956807" value="false" />
-    <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="embedded block of code" />
-    <property name="name" nameId="tpck.1169194664001" value="QueryFunction_ImagePath" />
-    <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="QueryFunction" />
-    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="string" />
-    <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1137021947720" resolveInfo="ConceptFunction" />
-  </root>
-  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1180615838666" nodeInfo="ig">
-    <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
-    <property name="final" nameId="tpce.4628067390765956807" value="false" />
-    <property name="name" nameId="tpck.1169194664001" value="CellMenuPart_PropertyPostfixHints" />
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="CellMenu" />
-    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="property postfix hints" />
-    <link role="extends" roleId="tpce.1071489389519" targetNodeId="1164824854750" resolveInfo="CellMenuPart_Abstract" />
-    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="1180615838667" nodeInfo="ig">
-      <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
-      <property name="role" nameId="tpce.1071599776563" value="postfixesFunction" />
-      <property name="sourceCardinality" nameId="tpce.1071599893252" value="1" />
-      <link role="target" roleId="tpce.1071599976176" targetNodeId="1180616057533" resolveInfo="CellMenuPart_PropertyPostfixHints_GetPostfixes" />
-    </node>
-    <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="1262430001741704680" nodeInfo="ig">
-      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="tpck.1835621062190663819" resolveInfo="IDontSubstituteByDefault" />
-    </node>
-  </root>
-  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1180616057533" nodeInfo="ig">
-    <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
-    <property name="final" nameId="tpce.4628067390765956807" value="false" />
-    <property name="name" nameId="tpck.1169194664001" value="CellMenuPart_PropertyPostfixHints_GetPostfixes" />
-    <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="CellMenu" />
-    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="postfixes" />
-    <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1137021947720" resolveInfo="ConceptFunction" />
-  </root>
-  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1182191800432" nodeInfo="ig">
-    <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
-    <property name="final" nameId="tpce.4628067390765956807" value="false" />
-    <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="embedded block of code" />
-    <property name="name" nameId="tpck.1169194664001" value="QueryFunction_NodeListFilter" />
-    <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="QueryFunction" />
-    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="node list provider" />
-    <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1137021947720" resolveInfo="ConceptFunction" />
-  </root>
-  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1182233249301" nodeInfo="ig">
-    <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
-    <property name="final" nameId="tpce.4628067390765956807" value="false" />
-    <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="function parameter" />
-    <property name="name" nameId="tpck.1169194664001" value="ConceptFunctionParameter_childNode" />
-    <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
-    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="childNode" />
-    <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1107135704075" resolveInfo="ConceptFunctionParameter" />
-    <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="1262430001741703380" nodeInfo="ig">
-      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="tpck.1835621062190663819" resolveInfo="IDontSubstituteByDefault" />
-    </node>
-  </root>
-  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1184319644772" nodeInfo="ig">
-    <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
-    <property name="final" nameId="tpce.4628067390765956807" value="false" />
-    <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="not empty property" />
-    <property name="name" nameId="tpck.1169194664001" value="CellModel_NonEmptyProperty" />
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="CellModel" />
-    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="{+&lt;{propertyDeclaration}&gt;+}" />
-    <link role="extends" roleId="tpce.1071489389519" targetNodeId="1073389658414" resolveInfo="CellModel_Property" />
-    <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="1262430001741704574" nodeInfo="ig">
-      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="tpck.1835621062190663819" resolveInfo="IDontSubstituteByDefault" />
-    </node>
-  </root>
-  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1186402211651" nodeInfo="ig">
-    <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
-    <property name="rootable" nameId="tpce.1096454100552" value="true" />
-    <property name="final" nameId="tpce.4628067390765956807" value="false" />
-    <property name="iconPath" nameId="tpce.1160488491229" value="${language_descriptor}/icons/editorStylesheet.png" />
-    <property name="name" nameId="tpck.1169194664001" value="StyleSheet" />
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="Stylesheet" />
-    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="Stylesheet" />
-    <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
-    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="1186402402630" nodeInfo="ig">
-      <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
-      <property name="role" nameId="tpce.1071599776563" value="styleClass" />
-      <property name="sourceCardinality" nameId="tpce.1071599893252" value="0..n" />
-      <link role="target" roleId="tpce.1071599976176" targetNodeId="8714766435263473176" resolveInfo="IStyleSheetItem" />
-    </node>
-    <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="4241518279048800693" nodeInfo="ig">
-      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="tpee.1212170275853" resolveInfo="IValidIdentifier" />
-    </node>
-  </root>
-  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1186402373407" nodeInfo="ig">
-    <property name="name" nameId="tpck.1169194664001" value="StyleSheetClass" />
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="Stylesheet" />
-    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="style" />
-    <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
-    <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpce.DeprecatedNodeAnnotation" typeId="tpce.1224240836180" id="9122903797336079904" nodeInfo="ig" />
-    <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="3383245079137382173" nodeInfo="ig">
-      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="3383245079136928391" resolveInfo="IStyleSheetMember" />
-    </node>
-    <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="2491174914162276359" nodeInfo="ig">
-      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="tpck.1835621062190663819" resolveInfo="IDontSubstituteByDefault" />
-    </node>
-    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="1198252369256" nodeInfo="ig">
-      <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
-      <property name="role" nameId="tpce.1071599776563" value="extendedClass" />
-      <link role="target" roleId="tpce.1071599976176" targetNodeId="1198252130653" resolveInfo="StyleSheetClassReference" />
-    </node>
-  </root>
-  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1186402475462" nodeInfo="ig">
-    <property name="abstract" nameId="tpce.4628067390765956802" value="true" />
-    <property name="final" nameId="tpce.4628067390765956807" value="false" />
-    <property name="name" nameId="tpck.1169194664001" value="StyleClassItem" />
-    <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="Stylesheet" />
-    <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
-    <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="2354370838250341435" nodeInfo="ig">
-      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="tpck.1319728274783077719" resolveInfo="ImplementationPart" />
-    </node>
-  </root>
-  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1186403694788" nodeInfo="ig">
-    <property name="abstract" nameId="tpce.4628067390765956802" value="true" />
-    <property name="final" nameId="tpce.4628067390765956807" value="false" />
-    <property name="name" nameId="tpck.1169194664001" value="ColorStyleClassItem" />
-    <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="Stylesheet" />
-    <link role="extends" roleId="tpce.1071489389519" targetNodeId="1186402475462" resolveInfo="StyleClassItem" />
-    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="1186403803051" nodeInfo="ig">
-      <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
-      <property name="role" nameId="tpce.1071599776563" value="query" />
-      <link role="target" roleId="tpce.1071599976176" targetNodeId="1225456097782" resolveInfo="IQueryFunction_Color" />
-    </node>
-    <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="1186403713874" nodeInfo="ig">
-      <property name="name" nameId="tpck.1169194664001" value="color" />
-      <link role="dataType" roleId="tpce.1082985295845" targetNodeId="1083952545109" resolveInfo="_Colors_Enum" />
-    </node>
-  </root>
-  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1186403751766" nodeInfo="ig">
-    <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
-    <property name="final" nameId="tpce.4628067390765956807" value="false" />
-    <property name="name" nameId="tpck.1169194664001" value="FontStyleStyleClassItem" />
-    <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="Stylesheet" />
-    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="font-style" />
-    <link role="extends" roleId="tpce.1071489389519" targetNodeId="1186402475462" resolveInfo="StyleClassItem" />
-    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="1220975211821" nodeInfo="ig">
-      <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
-      <property name="role" nameId="tpce.1071599776563" value="query" />
-      <link role="target" roleId="tpce.1071599976176" targetNodeId="1220974635399" resolveInfo="QueryFunction_FontStyle" />
-    </node>
-    <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="1186403771423" nodeInfo="ig">
-      <property name="name" nameId="tpck.1169194664001" value="style" />
-      <link role="dataType" roleId="tpce.1082985295845" targetNodeId="1101211480448" resolveInfo="_FontStyle_Enum" />
-    </node>
-  </root>
-  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1186404549998" nodeInfo="ig">
-    <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
-    <property name="final" nameId="tpce.4628067390765956807" value="false" />
-    <property name="name" nameId="tpck.1169194664001" value="ForegroundColorStyleClassItem" />
-    <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="Stylesheet" />
-    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="text-foreground-color" />
-    <link role="extends" roleId="tpce.1071489389519" targetNodeId="1186403694788" resolveInfo="ColorStyleClassItem" />
-  </root>
-  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1186404574412" nodeInfo="ig">
-    <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
-    <property name="final" nameId="tpce.4628067390765956807" value="false" />
-    <property name="name" nameId="tpck.1169194664001" value="BackgroundColorStyleClassItem" />
-    <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="Stylesheet" />
-    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="background-color" />
-    <link role="extends" roleId="tpce.1071489389519" targetNodeId="1186403694788" resolveInfo="ColorStyleClassItem" />
-  </root>
-  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1186413799158" nodeInfo="ig">
-    <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
-    <property name="final" nameId="tpce.4628067390765956807" value="false" />
-    <property name="name" nameId="tpck.1169194664001" value="BracketColorStyleClassItem" />
-    <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="Stylesheet" />
-    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="bracket-color" />
-    <link role="extends" roleId="tpce.1071489389519" targetNodeId="1186403694788" resolveInfo="ColorStyleClassItem" />
-  </root>
-  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1186414536763" nodeInfo="ig">
-    <property name="abstract" nameId="tpce.4628067390765956802" value="true" />
-    <property name="final" nameId="tpce.4628067390765956807" value="false" />
-    <property name="name" nameId="tpck.1169194664001" value="BooleanStyleSheetItem" />
-    <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="Stylesheet" />
-    <link role="extends" roleId="tpce.1071489389519" targetNodeId="1186402475462" resolveInfo="StyleClassItem" />
-    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="1223387335081" nodeInfo="ig">
-      <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
-      <property name="role" nameId="tpce.1071599776563" value="query" />
-      <link role="target" roleId="tpce.1071599976176" targetNodeId="1223387125302" resolveInfo="QueryFunction_Boolean" />
-    </node>
-    <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="1186414551515" nodeInfo="ig">
-      <property name="name" nameId="tpck.1169194664001" value="flag" />
-      <link role="dataType" roleId="tpce.1082985295845" targetNodeId="tpck.1082983657063" resolveInfo="boolean" />
-    </node>
-  </root>
-  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1186414928363" nodeInfo="ig">
-    <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
-    <property name="final" nameId="tpce.4628067390765956807" value="false" />
-    <property name="name" nameId="tpck.1169194664001" value="SelectableStyleSheetItem" />
-    <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="Stylesheet" />
-    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="selectable" />
-    <link role="extends" roleId="tpce.1071489389519" targetNodeId="1186414536763" resolveInfo="BooleanStyleSheetItem" />
-  </root>
-  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1186414949600" nodeInfo="ig">
-    <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
-    <property name="final" nameId="tpce.4628067390765956807" value="false" />
-    <property name="name" nameId="tpck.1169194664001" value="AutoDeletableStyleClassItem" />
-    <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="Stylesheet" />
-    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="auto-deletable" />
-    <link role="extends" roleId="tpce.1071489389519" targetNodeId="1186414536763" resolveInfo="BooleanStyleSheetItem" />
-  </root>
-  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1186414976055" nodeInfo="ig">
-    <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
-    <property name="final" nameId="tpce.4628067390765956807" value="false" />
-    <property name="name" nameId="tpck.1169194664001" value="DrawBorderStyleClassItem" />
-    <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="Stylesheet" />
-    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="draw-border" />
-    <link role="extends" roleId="tpce.1071489389519" targetNodeId="1186414536763" resolveInfo="BooleanStyleSheetItem" />
-  </root>
-  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1186414999511" nodeInfo="ig">
-    <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
-    <property name="final" nameId="tpce.4628067390765956807" value="false" />
-    <property name="name" nameId="tpck.1169194664001" value="UnderlinedStyleClassItem" />
-    <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="Stylesheet" />
-    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="underlined" />
-    <link role="extends" roleId="tpce.1071489389519" targetNodeId="1186402475462" resolveInfo="StyleClassItem" />
-    <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="1214316229833" nodeInfo="ig">
-      <property name="name" nameId="tpck.1169194664001" value="underlined" />
-      <link role="dataType" roleId="tpce.1082985295845" targetNodeId="1130847686886" resolveInfo="UnderlineStyle" />
-    </node>
-    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="1221219051630" nodeInfo="ig">
-      <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
-      <property name="role" nameId="tpce.1071599776563" value="query" />
-      <link role="target" roleId="tpce.1071599976176" targetNodeId="1221062700015" resolveInfo="QueryFunction_Underlined" />
-    </node>
-  </root>
-  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1186415722038" nodeInfo="ig">
-    <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
-    <property name="final" nameId="tpce.4628067390765956807" value="false" />
-    <property name="name" nameId="tpck.1169194664001" value="FontSizeStyleClassItem" />
-    <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="Stylesheet" />
-    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="font-size" />
-    <link role="extends" roleId="tpce.1071489389519" targetNodeId="1186402475462" resolveInfo="StyleClassItem" />
-    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="1221064706952" nodeInfo="ig">
-      <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
-      <property name="role" nameId="tpce.1071599776563" value="query" />
-      <property name="sourceCardinality" nameId="tpce.1071599893252" value="0..1" />
-      <link role="target" roleId="tpce.1071599976176" targetNodeId="1221057094638" resolveInfo="QueryFunction_Integer" />
-    </node>
-    <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="1221209241505" nodeInfo="ig">
-      <property name="name" nameId="tpck.1169194664001" value="value" />
-      <link role="dataType" roleId="tpce.1082985295845" targetNodeId="tpck.1082983657062" resolveInfo="integer" />
-    </node>
-  </root>
-  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1186414860679" nodeInfo="ig">
-    <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
-    <property name="final" nameId="tpce.4628067390765956807" value="false" />
-    <property name="name" nameId="tpck.1169194664001" value="EditableStyleClassItem" />
-    <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="Stylesheet" />
-    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="editable" />
-    <link role="extends" roleId="tpce.1071489389519" targetNodeId="1186414536763" resolveInfo="BooleanStyleSheetItem" />
-  </root>
-  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1187258617779" nodeInfo="ig">
-    <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
-    <property name="final" nameId="tpce.4628067390765956807" value="false" />
-    <property name="name" nameId="tpck.1169194664001" value="ForegroundNullColorStyleClassItem" />
-    <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="Stylesheet" />
-    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="text-foreground-null-color" />
-    <link role="extends" roleId="tpce.1071489389519" targetNodeId="1186403694788" resolveInfo="ColorStyleClassItem" />
-  </root>
-  <root type="tpce.EnumerationDataTypeDeclaration" typeId="tpce.1082978164219" id="1197893505573" nodeInfo="ng">
-    <property name="name" nameId="tpck.1169194664001" value="_CaretPosition_Enum" />
-    <link role="memberDataType" roleId="tpce.1083171729157" targetNodeId="tpck.1082983041843" resolveInfo="string" />
-    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="1197893505574" nodeInfo="ig">
-      <property name="internalValue" nameId="tpce.1083923523171" value="NONE" />
-      <property name="externalValue" nameId="tpce.1083923523172" value="none" />
-    </node>
-    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="1197893580900" nodeInfo="ig">
-      <property name="internalValue" nameId="tpce.1083923523171" value="FIRST" />
-      <property name="externalValue" nameId="tpce.1083923523172" value="first" />
-    </node>
-    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="1197893584870" nodeInfo="ig">
-      <property name="internalValue" nameId="tpce.1083923523171" value="LAST" />
-      <property name="externalValue" nameId="tpce.1083923523172" value="last" />
-    </node>
-  </root>
-  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1198252130653" nodeInfo="ig">
-    <property name="name" nameId="tpck.1169194664001" value="StyleSheetClassReference" />
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="Stylesheet" />
-    <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
-    <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpce.DeprecatedNodeAnnotation" typeId="tpce.1224240836180" id="9122903797336079906" nodeInfo="ig" />
-    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="1198252276894" nodeInfo="ig">
-      <property name="role" nameId="tpce.1071599776563" value="styleSheetClass" />
-      <property name="sourceCardinality" nameId="tpce.1071599893252" value="1" />
-      <link role="target" roleId="tpce.1071599976176" targetNodeId="1186402373407" resolveInfo="StyleSheetClass" />
-    </node>
-  </root>
-  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1198256887712" nodeInfo="ig">
-    <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
-    <property name="final" nameId="tpce.4628067390765956807" value="false" />
-    <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="indent" />
-    <property name="name" nameId="tpck.1169194664001" value="CellModel_Indent" />
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="CellModel" />
-    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="---&gt;" />
-    <link role="extends" roleId="tpce.1071489389519" targetNodeId="1073389214265" resolveInfo="EditorCellModel" />
-  </root>
-  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1198257632966" nodeInfo="ig">
-    <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
-    <property name="final" nameId="tpce.4628067390765956807" value="false" />
-    <property name="name" nameId="tpck.1169194664001" value="CellModel_BlockStart" />
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="CellModel" />
-    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="block start" />
-    <link role="extends" roleId="tpce.1071489389519" targetNodeId="1073389214265" resolveInfo="EditorCellModel" />
-    <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="1198504797640" nodeInfo="ig">
-      <property name="name" nameId="tpck.1169194664001" value="openBrace" />
-      <link role="dataType" roleId="tpce.1082985295845" targetNodeId="tpck.1082983041843" resolveInfo="string" />
-    </node>
-  </root>
-  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1198257747917" nodeInfo="ig">
-    <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
-    <property name="final" nameId="tpce.4628067390765956807" value="false" />
-    <property name="name" nameId="tpck.1169194664001" value="CellModel_BlockEnd" />
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="CellModel" />
-    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="block end" />
-    <link role="extends" roleId="tpce.1071489389519" targetNodeId="1073389214265" resolveInfo="EditorCellModel" />
-    <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="1198506631483" nodeInfo="ig">
-      <property name="name" nameId="tpck.1169194664001" value="closeBrace" />
-      <link role="dataType" roleId="tpce.1082985295845" targetNodeId="tpck.1082983041843" resolveInfo="string" />
-    </node>
-  </root>
-  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1198489924438" nodeInfo="ig">
-    <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
-    <property name="final" nameId="tpce.4628067390765956807" value="false" />
-    <property name="name" nameId="tpck.1169194664001" value="CellModel_Block" />
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="CellModel" />
-    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="block" />
-    <link role="extends" roleId="tpce.1071489389519" targetNodeId="1073389214265" resolveInfo="EditorCellModel" />
-    <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="1198508727334" nodeInfo="ig">
-      <property name="name" nameId="tpck.1169194664001" value="openBrace" />
-      <link role="dataType" roleId="tpce.1082985295845" targetNodeId="tpck.1082983041843" resolveInfo="string" />
-    </node>
-    <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="1198508733600" nodeInfo="ig">
-      <property name="name" nameId="tpck.1169194664001" value="closeBrace" />
-      <link role="dataType" roleId="tpce.1082985295845" targetNodeId="tpck.1082983041843" resolveInfo="string" />
-    </node>
-    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="1198489985045" nodeInfo="ig">
-      <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
-      <property name="role" nameId="tpce.1071599776563" value="header" />
-      <property name="sourceCardinality" nameId="tpce.1071599893252" value="0..1" />
-      <link role="target" roleId="tpce.1071599976176" targetNodeId="1073389214265" resolveInfo="EditorCellModel" />
-    </node>
-    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="1198489993734" nodeInfo="ig">
-      <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
-      <property name="role" nameId="tpce.1071599776563" value="body" />
-      <property name="sourceCardinality" nameId="tpce.1071599893252" value="1" />
-      <link role="target" roleId="tpce.1071599976176" targetNodeId="1073389214265" resolveInfo="EditorCellModel" />
-    </node>
-  </root>
-  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1201266127262" nodeInfo="ig">
-    <property name="abstract" nameId="tpce.4628067390765956802" value="true" />
-    <property name="final" nameId="tpce.4628067390765956807" value="false" />
-    <property name="name" nameId="tpck.1169194664001" value="SelectParameter" />
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="SNode" />
-    <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
-  </root>
-  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1201268783309" nodeInfo="ig">
-    <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
-    <property name="final" nameId="tpce.4628067390765956807" value="false" />
-    <property name="name" nameId="tpck.1169194664001" value="SelectPositionParameter" />
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="SNode" />
-    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="position=" />
-    <link role="extends" roleId="tpce.1071489389519" targetNodeId="1201266127262" resolveInfo="SelectParameter" />
-    <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="1201268881975" nodeInfo="ig">
-      <property name="name" nameId="tpck.1169194664001" value="position" />
-      <link role="dataType" roleId="tpce.1082985295845" targetNodeId="1201268793545" resolveInfo="SelectPosition" />
-    </node>
-  </root>
-  <root type="tpce.EnumerationDataTypeDeclaration" typeId="tpce.1082978164219" id="1201268793545" nodeInfo="ng">
-    <property name="name" nameId="tpck.1169194664001" value="SelectPosition" />
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="SNode" />
-    <link role="memberDataType" roleId="tpce.1083171729157" targetNodeId="tpck.1082983041843" resolveInfo="string" />
-    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="1201268793546" nodeInfo="ig">
-      <property name="internalValue" nameId="tpce.1083923523171" value="before" />
-      <property name="externalValue" nameId="tpce.1083923523172" value="before" />
-    </node>
-    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="1201268803781" nodeInfo="ig">
-      <property name="internalValue" nameId="tpce.1083923523171" value="after" />
-      <property name="externalValue" nameId="tpce.1083923523172" value="after" />
-    </node>
-  </root>
-  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1201270864927" nodeInfo="ig">
-    <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
-    <property name="final" nameId="tpce.4628067390765956807" value="false" />
-    <property name="name" nameId="tpck.1169194664001" value="CaretPositionParameter" />
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="SNode" />
-    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="caret position=" />
-    <link role="extends" roleId="tpce.1071489389519" targetNodeId="1201266127262" resolveInfo="SelectParameter" />
-    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="1201270907764" nodeInfo="ig">
-      <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
-      <property name="role" nameId="tpce.1071599776563" value="position" />
-      <property name="sourceCardinality" nameId="tpce.1071599893252" value="1" />
-      <link role="target" roleId="tpce.1071599976176" targetNodeId="tpee.1068431790191" resolveInfo="Expression" />
-    </node>
-  </root>
-  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1214317859050" nodeInfo="ig">
-    <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
-    <property name="final" nameId="tpce.4628067390765956807" value="false" />
-    <property name="name" nameId="tpck.1169194664001" value="LayoutConstraintStyleClassItem" />
-    <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="Stylesheet" />
-    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="layout constraint" />
-    <link role="extends" roleId="tpce.1071489389519" targetNodeId="1186402475462" resolveInfo="StyleClassItem" />
-    <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="1214317859051" nodeInfo="ig">
-      <property name="name" nameId="tpck.1169194664001" value="layoutConstraint" />
-      <link role="dataType" roleId="tpce.1082985295845" targetNodeId="1138197387103" resolveInfo="_Layout_Constraints_Enum" />
-    </node>
-  </root>
-  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1214320119173" nodeInfo="ig">
-    <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
-    <property name="final" nameId="tpce.4628067390765956807" value="false" />
-    <property name="name" nameId="tpck.1169194664001" value="SideTransformAnchorTagStyleClassItem" />
-    <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="Stylesheet" />
-    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="side-transform-anchor-tag" />
-    <link role="extends" roleId="tpce.1071489389519" targetNodeId="1186402475462" resolveInfo="StyleClassItem" />
-    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="3608226089191997414" nodeInfo="ig">
-      <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
-      <property name="role" nameId="tpce.1071599776563" value="tags" />
-      <property name="sourceCardinality" nameId="tpce.1071599893252" value="0..n" />
-      <link role="target" roleId="tpce.1071599976176" targetNodeId="3608226089191997415" resolveInfo="RightTransformAnchorTagWrapper" />
-    </node>
-    <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="1214320119174" nodeInfo="ig">
-      <property name="name" nameId="tpck.1169194664001" value="tag" />
-      <link role="dataType" roleId="tpce.1082985295845" targetNodeId="1140813780565" resolveInfo="RightTransformAnchorTag" />
-    </node>
-  </root>
-  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1214406454886" nodeInfo="ig">
-    <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
-    <property name="final" nameId="tpce.4628067390765956807" value="false" />
-    <property name="name" nameId="tpck.1169194664001" value="TextBackgroundColorStyleClassItem" />
-    <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="Stylesheet" />
-    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="text-background-color" />
-    <link role="extends" roleId="tpce.1071489389519" targetNodeId="1186403694788" resolveInfo="ColorStyleClassItem" />
-  </root>
-  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1214406466686" nodeInfo="ig">
-    <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
-    <property name="final" nameId="tpce.4628067390765956807" value="false" />
-    <property name="name" nameId="tpck.1169194664001" value="TextBackgroundColorSelectedStyleClassItem" />
-    <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="Stylesheet" />
-    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="text-background-color-selected" />
-    <link role="extends" roleId="tpce.1071489389519" targetNodeId="1186403694788" resolveInfo="ColorStyleClassItem" />
-  </root>
-  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1214472762472" nodeInfo="ig">
-    <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
-    <property name="final" nameId="tpce.4628067390765956807" value="false" />
-    <property name="name" nameId="tpck.1169194664001" value="DefaultCaretPositionStyleClassItem" />
-    <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="Stylesheet" />
-    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="default-caret-position" />
-    <link role="extends" roleId="tpce.1071489389519" targetNodeId="1186402475462" resolveInfo="StyleClassItem" />
-    <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="1214472762473" nodeInfo="ig">
-      <property name="name" nameId="tpck.1169194664001" value="position" />
-      <link role="dataType" roleId="tpce.1082985295845" targetNodeId="1197893505573" resolveInfo="_CaretPosition_Enum" />
-    </node>
-  </root>
-  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1215007762405" nodeInfo="ig">
-    <property name="abstract" nameId="tpce.4628067390765956802" value="true" />
-    <property name="final" nameId="tpce.4628067390765956807" value="false" />
-    <property name="name" nameId="tpck.1169194664001" value="FloatStyleClassItem" />
-    <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="Stylesheet" />
-    <link role="extends" roleId="tpce.1071489389519" targetNodeId="1186402475462" resolveInfo="StyleClassItem" />
-    <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="1215007802031" nodeInfo="ig">
-      <property name="name" nameId="tpck.1169194664001" value="value" />
-      <link role="dataType" roleId="tpce.1082985295845" targetNodeId="1239805001815" resolveInfo="_FloatOrInteger_String" />
-    </node>
-  </root>
-  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1215007883204" nodeInfo="ig">
-    <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
-    <property name="final" nameId="tpce.4628067390765956807" value="false" />
-    <property name="name" nameId="tpck.1169194664001" value="PaddingLeftStyleClassItem" />
-    <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="Stylesheet.Paddings" />
-    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="padding-left" />
-    <link role="extends" roleId="tpce.1071489389519" targetNodeId="1226339938453" resolveInfo="AbstractPaddingStyleClassItem" />
-  </root>
-  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1215007897487" nodeInfo="ig">
-    <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
-    <property name="final" nameId="tpce.4628067390765956807" value="false" />
-    <property name="name" nameId="tpck.1169194664001" value="PaddingRightStyleClassItem" />
-    <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="Stylesheet.Paddings" />
-    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="padding-right" />
-    <link role="extends" roleId="tpce.1071489389519" targetNodeId="1226339938453" resolveInfo="AbstractPaddingStyleClassItem" />
-  </root>
-  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1215085112640" nodeInfo="ig">
-    <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
-    <property name="final" nameId="tpce.4628067390765956807" value="false" />
-    <property name="name" nameId="tpck.1169194664001" value="FirstPositionAllowedStyleClassItem" />
-    <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="Stylesheet" />
-    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="first-position-allowed" />
-    <link role="extends" roleId="tpce.1071489389519" targetNodeId="1186414536763" resolveInfo="BooleanStyleSheetItem" />
-  </root>
-  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1215085197271" nodeInfo="ig">
-    <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
-    <property name="final" nameId="tpce.4628067390765956807" value="false" />
-    <property name="name" nameId="tpck.1169194664001" value="LastPositionAllowedStyleClassItem" />
-    <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="Stylesheet" />
-    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="last-position-allowed" />
-    <link role="extends" roleId="tpce.1071489389519" targetNodeId="1186414536763" resolveInfo="BooleanStyleSheetItem" />
-  </root>
-  <root type="tpce.EnumerationDataTypeDeclaration" typeId="tpce.1082978164219" id="1216308376568" nodeInfo="ng">
-    <property name="name" nameId="tpck.1169194664001" value="_NextLine_Enum" />
-    <link role="memberDataType" roleId="tpce.1083171729157" targetNodeId="tpck.1082983041843" resolveInfo="string" />
-    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="1216308507057" nodeInfo="ig">
-      <property name="externalValue" nameId="tpce.1083923523172" value="right" />
-    </node>
-    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="1216308502931" nodeInfo="ig">
-      <property name="internalValue" nameId="tpce.1083923523171" value="next-line" />
-      <property name="externalValue" nameId="tpce.1083923523172" value="next-line" />
-    </node>
-    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="1216308376569" nodeInfo="ig">
-      <property name="internalValue" nameId="tpce.1083923523171" value="indented" />
-      <property name="externalValue" nameId="tpce.1083923523172" value="indented" />
-    </node>
-  </root>
-  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1216308599511" nodeInfo="ig">
-    <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
-    <property name="rootable" nameId="tpce.1096454100552" value="false" />
-    <property name="final" nameId="tpce.4628067390765956807" value="false" />
-    <property name="name" nameId="tpck.1169194664001" value="PositionStyleClassItem" />
-    <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="Stylesheet" />
-    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="position" />
-    <link role="extends" roleId="tpce.1071489389519" targetNodeId="1186402475462" resolveInfo="StyleClassItem" />
-    <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="1216308761668" nodeInfo="ig">
-      <property name="name" nameId="tpck.1169194664001" value="position" />
-      <link role="dataType" roleId="tpce.1082985295845" targetNodeId="1216308376568" resolveInfo="_NextLine_Enum" />
-    </node>
-  </root>
-  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1216380990741" nodeInfo="ig">
-    <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
-    <property name="final" nameId="tpce.4628067390765956807" value="false" />
-    <property name="name" nameId="tpck.1169194664001" value="CellModel_TransactionalProperty" />
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="CellModel" />
-    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="{T &lt;{property}&gt; T}" />
-    <link role="extends" roleId="tpce.1071489389519" targetNodeId="1079353555532" resolveInfo="CellModel_AbstractLabel" />
-    <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="1232439938817" nodeInfo="ig">
-      <property name="name" nameId="tpck.1169194664001" value="runInCommand" />
-      <link role="dataType" roleId="tpce.1082985295845" targetNodeId="tpck.1082983657063" resolveInfo="boolean" />
-    </node>
-    <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="8251517099537646385" nodeInfo="ig">
-      <property name="name" nameId="tpck.1169194664001" value="allowEmptyText" />
-      <link role="dataType" roleId="tpce.1082985295845" targetNodeId="tpck.1082983657063" resolveInfo="boolean" />
-    </node>
-    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="1216381211800" nodeInfo="ig">
-      <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
-      <property name="role" nameId="tpce.1071599776563" value="handlerBlock" />
-      <property name="sourceCardinality" nameId="tpce.1071599893252" value="1" />
-      <link role="target" roleId="tpce.1071599976176" targetNodeId="1216381054717" resolveInfo="TransactionalPropertyHandler" />
-    </node>
-    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="1216381219207" nodeInfo="ig">
-      <property name="metaClass" nameId="tpce.1071599937831" value="reference" />
-      <property name="role" nameId="tpce.1071599776563" value="property" />
-      <property name="sourceCardinality" nameId="tpce.1071599893252" value="1" />
-      <link role="target" roleId="tpce.1071599976176" targetNodeId="tpce.1071489288299" resolveInfo="PropertyDeclaration" />
-    </node>
-    <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="1262430001741718855" nodeInfo="ig">
-      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="tpck.1835621062190663819" resolveInfo="IDontSubstituteByDefault" />
-    </node>
-  </root>
-  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1216381054717" nodeInfo="ig">
-    <property name="name" nameId="tpck.1169194664001" value="TransactionalPropertyHandler" />
-    <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="QueryFunction" />
-    <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1137021947720" resolveInfo="ConceptFunction" />
-  </root>
-  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1216381117100" nodeInfo="ig">
-    <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
-    <property name="final" nameId="tpce.4628067390765956807" value="false" />
-    <property name="name" nameId="tpck.1169194664001" value="TransactionPropertyHandler_oldValue" />
-    <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="QueryFunction" />
-    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="oldValue" />
-    <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1107135704075" resolveInfo="ConceptFunctionParameter" />
-  </root>
-  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1216381148013" nodeInfo="ig">
-    <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
-    <property name="final" nameId="tpce.4628067390765956807" value="false" />
-    <property name="name" nameId="tpck.1169194664001" value="TransactionPropertyHandler_newValue" />
-    <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="QueryFunction" />
-    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="newValue" />
-    <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1107135704075" resolveInfo="ConceptFunctionParameter" />
-    <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="1262430001741641622" nodeInfo="ig">
-      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="tpck.1835621062190663819" resolveInfo="IDontSubstituteByDefault" />
-    </node>
-  </root>
-  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1216560327200" nodeInfo="ig">
-    <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
-    <property name="final" nameId="tpce.4628067390765956807" value="false" />
-    <property name="name" nameId="tpck.1169194664001" value="PositionChildrenStyleClassItem" />
-    <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="Stylesheet" />
-    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="position-children" />
-    <link role="extends" roleId="tpce.1071489389519" targetNodeId="1186402475462" resolveInfo="StyleClassItem" />
-    <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="1216560518566" nodeInfo="ig">
-      <property name="name" nameId="tpck.1169194664001" value="position" />
-      <link role="dataType" roleId="tpce.1082985295845" targetNodeId="1216308376568" resolveInfo="_NextLine_Enum" />
-    </node>
-  </root>
-  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1216672142186" nodeInfo="ig">
-    <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
-    <property name="final" nameId="tpce.4628067390765956807" value="false" />
-    <property name="name" nameId="tpck.1169194664001" value="CellLayout_Indent_Old" />
-    <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="CellLayout" />
-    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="indent_old" />
-    <link role="extends" roleId="tpce.1071489389519" targetNodeId="1106270491082" resolveInfo="CellLayout" />
-    <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpce.DeprecatedNodeAnnotation" typeId="tpce.1224240836180" id="7945085613660522985" nodeInfo="ig" />
-  </root>
-  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1219226236603" nodeInfo="ig">
-    <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
-    <property name="final" nameId="tpce.4628067390765956807" value="false" />
-    <property name="name" nameId="tpck.1169194664001" value="DrawBracketsStyleClassItem" />
-    <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="Stylesheet" />
-    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="draw-brackets" />
-    <link role="extends" roleId="tpce.1071489389519" targetNodeId="1186414536763" resolveInfo="BooleanStyleSheetItem" />
-  </root>
-  <root type="tpce.InterfaceConceptDeclaration" typeId="tpce.1169125989551" id="1219418625346" nodeInfo="ig">
-    <property name="name" nameId="tpck.1169194664001" value="IStyleContainer" />
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="Stylesheet" />
-    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="1219418656006" nodeInfo="ig">
-      <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
-      <property name="role" nameId="tpce.1071599776563" value="styleItem" />
-      <property name="sourceCardinality" nameId="tpce.1071599893252" value="0..n" />
-      <link role="target" roleId="tpce.1071599976176" targetNodeId="1186402475462" resolveInfo="StyleClassItem" />
-    </node>
-  </root>
-  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1220974635399" nodeInfo="ig">
-    <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
-    <property name="final" nameId="tpce.4628067390765956807" value="false" />
-    <property name="name" nameId="tpck.1169194664001" value="QueryFunction_FontStyle" />
-    <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="QueryFunction.Style" />
-    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="font style function" />
-    <link role="extends" roleId="tpce.1071489389519" targetNodeId="1221059528506" resolveInfo="QueryFunction_StyleParameter" />
-  </root>
-  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1221057094638" nodeInfo="ig">
-    <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
-    <property name="final" nameId="tpce.4628067390765956807" value="false" />
-    <property name="name" nameId="tpck.1169194664001" value="QueryFunction_Integer" />
-    <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="QueryFunction.Style" />
-    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="int function" />
-    <link role="extends" roleId="tpce.1071489389519" targetNodeId="1221059528506" resolveInfo="QueryFunction_StyleParameter" />
-  </root>
-  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1221059528506" nodeInfo="ig">
-    <property name="abstract" nameId="tpce.4628067390765956802" value="true" />
-    <property name="final" nameId="tpce.4628067390765956807" value="false" />
-    <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="embedded block of code" />
-    <property name="name" nameId="tpck.1169194664001" value="QueryFunction_StyleParameter" />
-    <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="QueryFunction.Style" />
-    <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1137021947720" resolveInfo="ConceptFunction" />
-  </root>
-  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1221062700015" nodeInfo="ig">
-    <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
-    <property name="final" nameId="tpce.4628067390765956807" value="false" />
-    <property name="name" nameId="tpck.1169194664001" value="QueryFunction_Underlined" />
-    <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="QueryFunction.Style" />
-    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="underlined function" />
-    <link role="extends" roleId="tpce.1071489389519" targetNodeId="1221059528506" resolveInfo="QueryFunction_StyleParameter" />
-  </root>
-  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1223386653097" nodeInfo="ig">
-    <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
-    <property name="final" nameId="tpce.4628067390765956807" value="false" />
-    <property name="name" nameId="tpck.1169194664001" value="StrikeOutStyleSheet" />
-    <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="Stylesheet" />
-    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="strike-out" />
-    <link role="extends" roleId="tpce.1071489389519" targetNodeId="1186414536763" resolveInfo="BooleanStyleSheetItem" />
-  </root>
-  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1223387125302" nodeInfo="ig">
-    <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
-    <property name="final" nameId="tpce.4628067390765956807" value="false" />
-    <property name="name" nameId="tpck.1169194664001" value="QueryFunction_Boolean" />
-    <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="QueryFunction.Style" />
-    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="boolean function" />
-    <link role="extends" roleId="tpce.1071489389519" targetNodeId="1221059528506" resolveInfo="QueryFunction_StyleParameter" />
-  </root>
-  <root type="tpce.InterfaceConceptDeclaration" typeId="tpce.1169125989551" id="1225456097782" nodeInfo="ig">
-    <property name="name" nameId="tpck.1169194664001" value="IQueryFunction_Color" />
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="QueryFunction.Style" />
-  </root>
-  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1225456267680" nodeInfo="ig">
-    <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
-    <property name="final" nameId="tpce.4628067390765956807" value="false" />
-    <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="#RRGGBB" />
-    <property name="name" nameId="tpck.1169194664001" value="RGBColor" />
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="Stylesheet" />
-    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="#" />
-    <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
-    <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="1225456281899" nodeInfo="ig">
-      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="1225456097782" resolveInfo="IQueryFunction_Color" />
-    </node>
-    <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="1225456424731" nodeInfo="ig">
-      <property name="name" nameId="tpck.1169194664001" value="value" />
-      <link role="dataType" roleId="tpce.1082985295845" targetNodeId="tpck.1082983041843" resolveInfo="string" />
-    </node>
-  </root>
-  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1225898583838" nodeInfo="ig">
-    <property name="name" nameId="tpck.1169194664001" value="ReadOnlyModelAccessor" />
-    <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
-    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="1225898971709" nodeInfo="ig">
-      <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
-      <property name="role" nameId="tpce.1071599776563" value="getter" />
-      <property name="sourceCardinality" nameId="tpce.1071599893252" value="1" />
-      <link role="target" roleId="tpce.1071599976176" targetNodeId="1176717841777" resolveInfo="QueryFunction_ModelAccess_Getter" />
-    </node>
-  </root>
-  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1225900081164" nodeInfo="ig">
-    <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
-    <property name="final" nameId="tpce.4628067390765956807" value="false" />
-    <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="reference to read only accessor" />
-    <property name="name" nameId="tpck.1169194664001" value="CellModel_ReadOnlyModelAccessor" />
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="CellModel" />
-    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="read only model access" />
-    <link role="extends" roleId="tpce.1071489389519" targetNodeId="1079353555532" resolveInfo="CellModel_AbstractLabel" />
-    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="1225900141900" nodeInfo="ig">
-      <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
-      <property name="role" nameId="tpce.1071599776563" value="modelAccessor" />
-      <property name="sourceCardinality" nameId="tpce.1071599893252" value="1" />
-      <link role="target" roleId="tpce.1071599976176" targetNodeId="1225898583838" resolveInfo="ReadOnlyModelAccessor" />
-    </node>
-  </root>
-  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1226339751946" nodeInfo="ig">
-    <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
-    <property name="final" nameId="tpce.4628067390765956807" value="false" />
-    <property name="name" nameId="tpck.1169194664001" value="PaddingTopStyleClassItem" />
-    <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="Stylesheet.Paddings" />
-    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="padding-top" />
-    <link role="extends" roleId="tpce.1071489389519" targetNodeId="1226339938453" resolveInfo="AbstractPaddingStyleClassItem" />
-  </root>
-  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1226339813308" nodeInfo="ig">
-    <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
-    <property name="final" nameId="tpce.4628067390765956807" value="false" />
-    <property name="name" nameId="tpck.1169194664001" value="PaddingBottomStyleClassItem" />
-    <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="Stylesheet.Paddings" />
-    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="padding-bottom" />
-    <link role="extends" roleId="tpce.1071489389519" targetNodeId="1226339938453" resolveInfo="AbstractPaddingStyleClassItem" />
-  </root>
-  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1226339938453" nodeInfo="ig">
-    <property name="abstract" nameId="tpce.4628067390765956802" value="true" />
-    <property name="final" nameId="tpce.4628067390765956807" value="false" />
-    <property name="name" nameId="tpck.1169194664001" value="AbstractPaddingStyleClassItem" />
-    <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="Stylesheet.Paddings" />
-    <link role="extends" roleId="tpce.1071489389519" targetNodeId="1215007762405" resolveInfo="FloatStyleClassItem" />
-    <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="1226504838901" nodeInfo="ig">
-      <property name="name" nameId="tpck.1169194664001" value="measure" />
-      <link role="dataType" roleId="tpce.1082985295845" targetNodeId="1226504633752" resolveInfo="_Enum_Measure" />
-    </node>
-  </root>
-  <root type="tpce.EnumerationDataTypeDeclaration" typeId="tpce.1082978164219" id="1226504633752" nodeInfo="ng">
-    <property name="name" nameId="tpck.1169194664001" value="_Enum_Measure" />
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="Stylesheet.Paddings" />
-    <link role="memberDataType" roleId="tpce.1083171729157" targetNodeId="tpck.1082983041843" resolveInfo="string" />
-    <link role="defaultMember" roleId="tpce.1083241965437" targetNodeId="1226504706052" />
-    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="1226504633753" nodeInfo="ig">
-      <property name="internalValue" nameId="tpce.1083923523171" value="PIXELS" />
-      <property name="externalValue" nameId="tpce.1083923523172" value="pixels" />
-    </node>
-    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="1226504706052" nodeInfo="ig">
-      <property name="internalValue" nameId="tpce.1083923523171" value="SPACES" />
-      <property name="externalValue" nameId="tpce.1083923523172" value="spaces" />
-    </node>
-  </root>
-  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1227861515039" nodeInfo="ig">
-    <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
-    <property name="final" nameId="tpce.4628067390765956807" value="false" />
-    <property name="name" nameId="tpck.1169194664001" value="NavigatableReferenceStyleClassItem" />
-    <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="Stylesheet" />
-    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="navigatable-reference" />
-    <link role="extends" roleId="tpce.1071489389519" targetNodeId="1186402475462" resolveInfo="StyleClassItem" />
-    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="1227861587090" nodeInfo="ig">
-      <property name="metaClass" nameId="tpce.1071599937831" value="reference" />
-      <property name="role" nameId="tpce.1071599776563" value="link" />
-      <property name="sourceCardinality" nameId="tpce.1071599893252" value="0..1" />
-      <link role="target" roleId="tpce.1071599976176" targetNodeId="tpce.1071489288298" resolveInfo="LinkDeclaration" />
-    </node>
-  </root>
-  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1233148810477" nodeInfo="ig">
-    <property name="name" nameId="tpck.1169194664001" value="InlineStyleDeclaration" />
-    <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
-    <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="1381004262292426860" nodeInfo="ig">
-      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="1381004262292414836" resolveInfo="ICellStyle" />
-    </node>
-  </root>
-  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1233758997495" nodeInfo="ig">
-    <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
-    <property name="final" nameId="tpce.4628067390765956807" value="false" />
-    <property name="name" nameId="tpck.1169194664001" value="PunctuationLeftStyleClassItem" />
-    <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="Stylesheet" />
-    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="punctuation-left" />
-    <link role="extends" roleId="tpce.1071489389519" targetNodeId="1186414536763" resolveInfo="BooleanStyleSheetItem" />
-  </root>
-  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1233759184865" nodeInfo="ig">
-    <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
-    <property name="final" nameId="tpce.4628067390765956807" value="false" />
-    <property name="name" nameId="tpck.1169194664001" value="PunctuationRightStyleClassItem" />
-    <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="Stylesheet" />
-    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="punctuation-right" />
-    <link role="extends" roleId="tpce.1071489389519" targetNodeId="1186414536763" resolveInfo="BooleanStyleSheetItem" />
-  </root>
-  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1233823429331" nodeInfo="ig">
-    <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
-    <property name="final" nameId="tpce.4628067390765956807" value="false" />
-    <property name="name" nameId="tpck.1169194664001" value="HorizontalGapStyleClassItem" />
-    <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="Stylesheet.Paddings" />
-    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="horizontal-gap" />
-    <link role="extends" roleId="tpce.1071489389519" targetNodeId="1226339938453" resolveInfo="AbstractPaddingStyleClassItem" />
-  </root>
-  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1235728439575" nodeInfo="ig">
-    <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
-    <property name="final" nameId="tpce.4628067390765956807" value="false" />
-    <property name="name" nameId="tpck.1169194664001" value="BaseLineCell" />
-    <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="Stylesheet" />
-    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="base-line-cell" />
-    <link role="extends" roleId="tpce.1071489389519" targetNodeId="1186414536763" resolveInfo="BooleanStyleSheetItem" />
-  </root>
-  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1235999440492" nodeInfo="ig">
-    <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
-    <property name="final" nameId="tpce.4628067390765956807" value="false" />
-    <property name="name" nameId="tpck.1169194664001" value="HorizontalAlign" />
-    <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="Stylesheet" />
-    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="horizontal-align" />
-    <link role="extends" roleId="tpce.1071489389519" targetNodeId="1186402475462" resolveInfo="StyleClassItem" />
-    <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="1235999920262" nodeInfo="ig">
-      <property name="name" nameId="tpck.1169194664001" value="align" />
-      <link role="dataType" roleId="tpce.1082985295845" targetNodeId="1235999709834" resolveInfo="AlignEnum" />
-    </node>
-  </root>
-  <root type="tpce.EnumerationDataTypeDeclaration" typeId="tpce.1082978164219" id="1235999709834" nodeInfo="ng">
-    <property name="name" nameId="tpck.1169194664001" value="AlignEnum" />
-    <link role="memberDataType" roleId="tpce.1083171729157" targetNodeId="tpck.1082983041843" resolveInfo="string" />
-    <link role="defaultMember" roleId="tpce.1083241965437" targetNodeId="1235999709835" />
-    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="1235999709835" nodeInfo="ig">
-      <property name="internalValue" nameId="tpce.1083923523171" value="LEFT" />
-      <property name="externalValue" nameId="tpce.1083923523172" value="left" />
-    </node>
-    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="1235999738057" nodeInfo="ig">
-      <property name="internalValue" nameId="tpce.1083923523171" value="RIGHT" />
-      <property name="externalValue" nameId="tpce.1083923523172" value="right" />
-    </node>
-    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="1235999744266" nodeInfo="ig">
-      <property name="internalValue" nameId="tpce.1083923523171" value="CENTER" />
-      <property name="externalValue" nameId="tpce.1083923523172" value="center" />
-    </node>
-  </root>
-  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1236262245656" nodeInfo="ig">
-    <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
-    <property name="final" nameId="tpce.4628067390765956807" value="false" />
-    <property name="name" nameId="tpck.1169194664001" value="MatchingLabelStyleClassItem" />
-    <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="Stylesheet" />
-    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="matching-label" />
-    <link role="extends" roleId="tpce.1071489389519" targetNodeId="1186402475462" resolveInfo="StyleClassItem" />
-    <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="1238091709220" nodeInfo="ig">
-      <property name="name" nameId="tpck.1169194664001" value="labelName" />
-      <link role="dataType" roleId="tpce.1082985295845" targetNodeId="tpck.1082983041843" resolveInfo="string" />
-    </node>
-    <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="5915179142332960580" nodeInfo="ig">
-      <property name="name" nameId="tpck.1169194664001" value="hasNoLabel" />
-      <link role="dataType" roleId="tpce.1082985295845" targetNodeId="tpck.1082983657063" resolveInfo="boolean" />
-    </node>
-    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="1236443321503" nodeInfo="ig">
-      <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
-      <property name="role" nameId="tpce.1071599776563" value="query" />
-      <property name="sourceCardinality" nameId="tpce.1071599893252" value="0..1" />
-      <link role="target" roleId="tpce.1071599976176" targetNodeId="1236443640684" resolveInfo="QueryFunction_String" />
-    </node>
-  </root>
-  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1236443640684" nodeInfo="ig">
-    <property name="name" nameId="tpck.1169194664001" value="QueryFunction_String" />
-    <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="QueryFunction" />
-    <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1137021947720" resolveInfo="ConceptFunction" />
-  </root>
-  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1237303669825" nodeInfo="ig">
-    <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
-    <property name="final" nameId="tpce.4628067390765956807" value="false" />
-    <property name="name" nameId="tpck.1169194664001" value="CellLayout_Indent" />
-    <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="CellLayout" />
-    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="indent" />
-    <link role="extends" roleId="tpce.1071489389519" targetNodeId="1106270491082" resolveInfo="CellLayout" />
-  </root>
-  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1237307900041" nodeInfo="ig">
-    <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
-    <property name="final" nameId="tpce.4628067390765956807" value="false" />
-    <property name="name" nameId="tpck.1169194664001" value="IndentLayoutIndentStyleClassItem" />
-    <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="Stylesheet.IndentLayout" />
-    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="indent-layout-indent" />
-    <link role="extends" roleId="tpce.1071489389519" targetNodeId="1186414536763" resolveInfo="BooleanStyleSheetItem" />
-  </root>
-  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1237308012275" nodeInfo="ig">
-    <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
-    <property name="final" nameId="tpce.4628067390765956807" value="false" />
-    <property name="name" nameId="tpck.1169194664001" value="IndentLayoutNewLineStyleClassItem" />
-    <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="Stylesheet.IndentLayout" />
-    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="indent-layout-new-line" />
-    <link role="extends" roleId="tpce.1071489389519" targetNodeId="1186414536763" resolveInfo="BooleanStyleSheetItem" />
-  </root>
-  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1237375020029" nodeInfo="ig">
-    <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
-    <property name="final" nameId="tpce.4628067390765956807" value="false" />
-    <property name="name" nameId="tpck.1169194664001" value="IndentLayoutNewLineChildrenStyleClassItem" />
-    <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="Stylesheet.IndentLayout" />
-    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="indent-layout-new-line-children" />
-    <link role="extends" roleId="tpce.1071489389519" targetNodeId="1186414536763" resolveInfo="BooleanStyleSheetItem" />
-  </root>
-  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1237385578942" nodeInfo="ig">
-    <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
-    <property name="final" nameId="tpce.4628067390765956807" value="false" />
-    <property name="name" nameId="tpck.1169194664001" value="IndentLayoutOnNewLineStyleClassItem" />
-    <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="Stylesheet.IndentLayout" />
-    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="indent-layout-on-new-line" />
-    <link role="extends" roleId="tpce.1071489389519" targetNodeId="1186414536763" resolveInfo="BooleanStyleSheetItem" />
-  </root>
-  <root type="tpce.ConstrainedDataTypeDeclaration" typeId="tpce.1082978499127" id="1239805001815" nodeInfo="ng">
-    <property name="name" nameId="tpck.1169194664001" value="_FloatOrInteger_String" />
-    <property name="constraint" nameId="tpce.1083066089218" value="-?[0-9]+\\.?[0-9]*" />
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="Stylesheet.Paddings" />
-  </root>
-  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1239814640496" nodeInfo="ig">
-    <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
-    <property name="final" nameId="tpce.4628067390765956807" value="false" />
-    <property name="name" nameId="tpck.1169194664001" value="CellLayout_VerticalGrid" />
-    <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="CellLayout" />
-    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="vertical grid" />
-    <link role="extends" roleId="tpce.1071489389519" targetNodeId="1106270571710" resolveInfo="CellLayout_Vertical" />
-  </root>
-  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1240253180846" nodeInfo="ig">
-    <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
-    <property name="final" nameId="tpce.4628067390765956807" value="false" />
-    <property name="name" nameId="tpck.1169194664001" value="IndentLayoutNoWrapClassItem" />
-    <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="Stylesheet.IndentLayout" />
-    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="indent-layout-no-wrap" />
-    <link role="extends" roleId="tpce.1071489389519" targetNodeId="1186414536763" resolveInfo="BooleanStyleSheetItem" />
-  </root>
-  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="625126330682908270" nodeInfo="ig">
-    <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
-    <property name="final" nameId="tpce.4628067390765956807" value="false" />
-    <property name="name" nameId="tpck.1169194664001" value="CellModel_ReferencePresentation" />
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="CellModel" />
-    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="ref. presentation" />
-    <link role="extends" roleId="tpce.1071489389519" targetNodeId="1073389214265" resolveInfo="EditorCellModel" />
-  </root>
-  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="7667276221847570194" nodeInfo="ig">
-    <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
-    <property name="final" nameId="tpce.4628067390765956807" value="false" />
-    <property name="name" nameId="tpck.1169194664001" value="ParametersInformationStyleClassItem" />
-    <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="Stylesheet" />
-    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="parameters-information" />
-    <link role="extends" roleId="tpce.1071489389519" targetNodeId="1186402475462" resolveInfo="StyleClassItem" />
-    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="8863456892852949148" nodeInfo="ig">
-      <property name="metaClass" nameId="tpce.1071599937831" value="reference" />
-      <property name="role" nameId="tpce.1071599776563" value="parametersInformation" />
-      <property name="sourceCardinality" nameId="tpce.1071599893252" value="1" />
-      <link role="target" roleId="tpce.1071599976176" targetNodeId="7667276221847612622" resolveInfo="ParametersInformationQuery" />
-    </node>
-  </root>
-  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="7667276221847612622" nodeInfo="ig">
-    <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
-    <property name="rootable" nameId="tpce.1096454100552" value="true" />
-    <property name="final" nameId="tpce.4628067390765956807" value="false" />
-    <property name="iconPath" nameId="tpce.1160488491229" value="${language_descriptor}/icons/parametersInformation.png" />
-    <property name="name" nameId="tpck.1169194664001" value="ParametersInformationQuery" />
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="MethodParameters" />
-    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="Parameters Information Query" />
-    <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
-    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="4203201205843994215" nodeInfo="ig">
-      <property name="metaClass" nameId="tpce.1071599937831" value="reference" />
-      <property name="role" nameId="tpce.1071599776563" value="applicableConcept" />
-      <link role="target" roleId="tpce.1071599976176" targetNodeId="tpce.1169125787135" resolveInfo="AbstractConceptDeclaration" />
-    </node>
-    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="8178273524755058633" nodeInfo="ig">
-      <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
-      <property name="role" nameId="tpce.1071599776563" value="type" />
-      <property name="sourceCardinality" nameId="tpce.1071599893252" value="1" />
-      <link role="target" roleId="tpce.1071599976176" targetNodeId="tpee.1068431790189" resolveInfo="Type" />
-    </node>
-    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="7667276221847612623" nodeInfo="ig">
-      <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
-      <property name="role" nameId="tpce.1071599776563" value="methods" />
-      <property name="sourceCardinality" nameId="tpce.1071599893252" value="1" />
-      <link role="target" roleId="tpce.1071599976176" targetNodeId="7667276221847612943" resolveInfo="QueryFunction_ParametersList" />
-    </node>
-    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="671290755174161557" nodeInfo="ig">
-      <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
-      <property name="role" nameId="tpce.1071599776563" value="presentation" />
-      <property name="sourceCardinality" nameId="tpce.1071599893252" value="1" />
-      <link role="target" roleId="tpce.1071599976176" targetNodeId="671290755174094686" resolveInfo="QueryFunction_MethodPresentation" />
-    </node>
-    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="6419604448124516218" nodeInfo="ig">
-      <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
-      <property name="role" nameId="tpce.1071599776563" value="isMethodCurrent" />
-      <property name="sourceCardinality" nameId="tpce.1071599893252" value="1" />
-      <link role="target" roleId="tpce.1071599976176" targetNodeId="6419604448124516209" resolveInfo="QueryFunction_IsMethodCurrent" />
-    </node>
-    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="1336839120510622371" nodeInfo="ig">
-      <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
-      <property name="role" nameId="tpce.1071599776563" value="methodDeclaration" />
-      <property name="sourceCardinality" nameId="tpce.1071599893252" value="0..n" />
-      <link role="target" roleId="tpce.1071599976176" targetNodeId="tp4f.1205769003971" resolveInfo="DefaultClassifierMethodDeclaration" />
-    </node>
-    <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="690365078554527399" nodeInfo="ig">
-      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="tpee.1212170275853" resolveInfo="IValidIdentifier" />
-    </node>
-    <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="1336839120510359488" nodeInfo="ig">
-      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="tp4f.1205751982837" resolveInfo="IClassifier" />
-    </node>
-  </root>
-  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="7667276221847612943" nodeInfo="ig">
-    <property name="name" nameId="tpck.1169194664001" value="QueryFunction_ParametersList" />
-    <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="MethodParameters" />
-    <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1137021947720" resolveInfo="ConceptFunction" />
-  </root>
-  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="671290755174094686" nodeInfo="ig">
-    <property name="name" nameId="tpck.1169194664001" value="QueryFunction_MethodPresentation" />
-    <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="MethodParameters" />
-    <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1137021947720" resolveInfo="ConceptFunction" />
-  </root>
-  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="671290755174094691" nodeInfo="ig">
-    <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
-    <property name="final" nameId="tpce.4628067390765956807" value="false" />
-    <property name="name" nameId="tpck.1169194664001" value="ConceptFunctionParameter_parameterObject" />
-    <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="MethodParameters" />
-    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="parameterObject" />
-    <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1107135704075" resolveInfo="ConceptFunctionParameter" />
-    <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="1262430001741719857" nodeInfo="ig">
-      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="tpck.1835621062190663819" resolveInfo="IDontSubstituteByDefault" />
-    </node>
-  </root>
-  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="6419604448124516209" nodeInfo="ig">
-    <property name="name" nameId="tpck.1169194664001" value="QueryFunction_IsMethodCurrent" />
-    <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="MethodParameters" />
-    <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1137021947720" resolveInfo="ConceptFunction" />
-  </root>
-  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="4526149749187797167" nodeInfo="ig">
-    <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
-    <property name="final" nameId="tpce.4628067390765956807" value="false" />
-    <property name="name" nameId="tpck.1169194664001" value="ConceptFunctionParameter_StyledText" />
-    <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="MethodParameters" />
-    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="styledText" />
-    <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1107135704075" resolveInfo="ConceptFunctionParameter" />
-    <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="1262430001741641670" nodeInfo="ig">
-      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="tpck.1835621062190663819" resolveInfo="IDontSubstituteByDefault" />
-    </node>
-  </root>
-  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="280151408461567367" nodeInfo="ig">
-    <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
-    <property name="final" nameId="tpce.4628067390765956807" value="false" />
-    <property name="name" nameId="tpck.1169194664001" value="AppendTextOperation" />
-    <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="MethodParameters" />
-    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="append" />
-    <link role="extends" roleId="tpce.1071489389519" targetNodeId="4531786690998636238" resolveInfo="AbstractStyledTextOperation" />
-  </root>
-  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="280151408461909164" nodeInfo="ig">
-    <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
-    <property name="final" nameId="tpce.4628067390765956807" value="false" />
-    <property name="name" nameId="tpck.1169194664001" value="SetBoldOperation" />
-    <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="MethodParameters" />
-    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="setBold" />
-    <link role="extends" roleId="tpce.1071489389519" targetNodeId="4531786690998636238" resolveInfo="AbstractStyledTextOperation" />
-  </root>
-  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="4531786690998636238" nodeInfo="ig">
-    <property name="abstract" nameId="tpce.4628067390765956802" value="true" />
-    <property name="final" nameId="tpce.4628067390765956807" value="false" />
-    <property name="name" nameId="tpck.1169194664001" value="AbstractStyledTextOperation" />
-    <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="MethodParameters" />
-    <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
-    <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="4531786690998636239" nodeInfo="ig">
-      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="tpee.1197027803184" resolveInfo="IOperation" />
-    </node>
-    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="4531786690998636240" nodeInfo="ig">
-      <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
-      <property name="role" nameId="tpce.1071599776563" value="actualArgument" />
-      <property name="sourceCardinality" nameId="tpce.1071599893252" value="0..n" />
-      <link role="target" roleId="tpce.1071599976176" targetNodeId="tpee.1068431790191" resolveInfo="Expression" />
-    </node>
-    <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="1262430001741703014" nodeInfo="ig">
-      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="tpck.1835621062190663819" resolveInfo="IDontSubstituteByDefault" />
-    </node>
-  </root>
-  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="3903367331818357915" nodeInfo="ig">
-    <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
-    <property name="final" nameId="tpce.4628067390765956807" value="false" />
-    <property name="name" nameId="tpck.1169194664001" value="StyledTextType" />
-    <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="MethodParameters" />
-    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="styled text" />
-    <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1068431790189" resolveInfo="Type" />
-  </root>
-  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="7620205565664569937" nodeInfo="ig">
-    <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
-    <property name="final" nameId="tpce.4628067390765956807" value="false" />
-    <property name="name" nameId="tpck.1169194664001" value="DefaultBaseLine" />
-    <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="Stylesheet" />
-    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="default-baseline" />
-    <link role="extends" roleId="tpce.1071489389519" targetNodeId="1186402475462" resolveInfo="StyleClassItem" />
-    <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="7620205565664606477" nodeInfo="ig">
-      <property name="name" nameId="tpck.1169194664001" value="baseline" />
-      <link role="dataType" roleId="tpce.1082985295845" targetNodeId="7620205565664606377" resolveInfo="DefaultBaseLineEnum" />
-    </node>
-  </root>
-  <root type="tpce.EnumerationDataTypeDeclaration" typeId="tpce.1082978164219" id="7620205565664606377" nodeInfo="ng">
-    <property name="name" nameId="tpck.1169194664001" value="DefaultBaseLineEnum" />
-    <link role="memberDataType" roleId="tpce.1083171729157" targetNodeId="tpck.1082983041843" resolveInfo="string" />
-    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="7620205565664606378" nodeInfo="ig">
-      <property name="internalValue" nameId="tpce.1083923523171" value="FIRST" />
-      <property name="externalValue" nameId="tpce.1083923523172" value="first cell baseline" />
-    </node>
-    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="7620205565664606380" nodeInfo="ig">
-      <property name="internalValue" nameId="tpce.1083923523171" value="CENTER" />
-      <property name="externalValue" nameId="tpce.1083923523172" value="collection center" />
-    </node>
-    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="7620205565664606448" nodeInfo="ig">
-      <property name="internalValue" nameId="tpce.1083923523171" value="LAST" />
-      <property name="externalValue" nameId="tpce.1083923523172" value="last cell baseline" />
-    </node>
-  </root>
-  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1886960078078641793" nodeInfo="ig">
-    <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
-    <property name="final" nameId="tpce.4628067390765956807" value="false" />
-    <property name="name" nameId="tpck.1169194664001" value="CellLayout_Superscript" />
-    <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="CellLayout" />
-    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="superscript" />
-    <link role="extends" roleId="tpce.1071489389519" targetNodeId="1106270491082" resolveInfo="CellLayout" />
-  </root>
-  <root type="tpce.EnumerationDataTypeDeclaration" typeId="tpce.1082978164219" id="8255250703325730686" nodeInfo="ng">
-    <property name="name" nameId="tpck.1169194664001" value="ScriptSwitchEnum" />
-    <link role="memberDataType" roleId="tpce.1083171729157" targetNodeId="tpck.1082983041843" resolveInfo="string" />
-    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="8255250703325730687" nodeInfo="ig">
-      <property name="internalValue" nameId="tpce.1083923523171" value="NORMAL" />
-      <property name="externalValue" nameId="tpce.1083923523172" value="plain text" />
-    </node>
-    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="8255250703325731012" nodeInfo="ig">
-      <property name="internalValue" nameId="tpce.1083923523171" value="SUPERSCRIPT" />
-      <property name="externalValue" nameId="tpce.1083923523172" value="superscript" />
-    </node>
-    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="8255250703325731013" nodeInfo="ig">
-      <property name="internalValue" nameId="tpce.1083923523171" value="SUBSCRIPT" />
-      <property name="externalValue" nameId="tpce.1083923523172" value="subscript" />
-    </node>
-  </root>
-  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="8255250703325731016" nodeInfo="ig">
-    <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
-    <property name="final" nameId="tpce.4628067390765956807" value="false" />
-    <property name="name" nameId="tpck.1169194664001" value="ScriptKindClassItem" />
-    <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="Stylesheet" />
-    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="script-kind" />
-    <link role="extends" roleId="tpce.1071489389519" targetNodeId="1186402475462" resolveInfo="StyleClassItem" />
-    <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="8255250703325731018" nodeInfo="ig">
-      <property name="name" nameId="tpck.1169194664001" value="script" />
-      <link role="dataType" roleId="tpce.1082985295845" targetNodeId="8255250703325730686" resolveInfo="ScriptSwitchEnum" />
-    </node>
-  </root>
-  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="4203201205844553978" nodeInfo="ig">
-    <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
-    <property name="final" nameId="tpce.4628067390765956807" value="false" />
-    <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="selected node" />
-    <property name="name" nameId="tpck.1169194664001" value="ConceptFunctionParameter_selectedNode" />
-    <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="MethodParameters" />
-    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="node" />
-    <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1107135704075" resolveInfo="ConceptFunctionParameter" />
-    <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="1262430001741646912" nodeInfo="ig">
-      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="tpck.1835621062190663819" resolveInfo="IDontSubstituteByDefault" />
-    </node>
-  </root>
-  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="5949640294884234625" nodeInfo="ig">
-    <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
-    <property name="final" nameId="tpce.4628067390765956807" value="false" />
-    <property name="name" nameId="tpck.1169194664001" value="CellLayout_Table" />
-    <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="CellLayout" />
-    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="table" />
-    <link role="extends" roleId="tpce.1071489389519" targetNodeId="1106270491082" resolveInfo="CellLayout" />
-  </root>
-  <root type="tpce.EnumerationDataTypeDeclaration" typeId="tpce.1082978164219" id="6820251943131810951" nodeInfo="ng">
-    <property name="name" nameId="tpck.1169194664001" value="TableComponentEnum" />
-    <link role="memberDataType" roleId="tpce.1083171729157" targetNodeId="tpck.1082983041843" resolveInfo="string" />
-    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="6820251943131810953" nodeInfo="ig">
-      <property name="internalValue" nameId="tpce.1083923523171" value="HORIZONTAL_COLLECTION" />
-      <property name="externalValue" nameId="tpce.1083923523172" value="horizontal collection" />
-    </node>
-    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="6820251943131810954" nodeInfo="ig">
-      <property name="internalValue" nameId="tpce.1083923523171" value="VERTICAL_COLLECTION" />
-      <property name="externalValue" nameId="tpce.1083923523172" value="vertical collection" />
-    </node>
-  </root>
-  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="6820251943131810950" nodeInfo="ig">
-    <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
-    <property name="final" nameId="tpce.4628067390765956807" value="false" />
-    <property name="name" nameId="tpck.1169194664001" value="TableComponentStyleClassItem" />
-    <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="Stylesheet" />
-    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="table-component" />
-    <link role="extends" roleId="tpce.1071489389519" targetNodeId="1186402475462" resolveInfo="StyleClassItem" />
-    <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="6820251943131810955" nodeInfo="ig">
-      <property name="name" nameId="tpck.1169194664001" value="tableComponent" />
-      <link role="dataType" roleId="tpce.1082985295845" targetNodeId="6820251943131810951" resolveInfo="TableComponentEnum" />
-    </node>
-  </root>
-  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="8313721352726366579" nodeInfo="ig">
-    <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
-    <property name="final" nameId="tpce.4628067390765956807" value="false" />
-    <property name="name" nameId="tpck.1169194664001" value="CellModel_Empty" />
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="CellModel" />
-    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="empty" />
-    <link role="extends" roleId="tpce.1071489389519" targetNodeId="1073389214265" resolveInfo="EditorCellModel" />
-  </root>
-  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="7597241200646296617" nodeInfo="ig">
-    <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
-    <property name="final" nameId="tpce.4628067390765956807" value="false" />
-    <property name="name" nameId="tpck.1169194664001" value="NavigatableNodeStyleClassItem" />
-    <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="Stylesheet" />
-    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="navigatable-node" />
-    <link role="extends" roleId="tpce.1071489389519" targetNodeId="1186402475462" resolveInfo="StyleClassItem" />
-    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="7597241200646296618" nodeInfo="ig">
-      <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
-      <property name="role" nameId="tpce.1071599776563" value="functionNode" />
-      <property name="sourceCardinality" nameId="tpce.1071599893252" value="1" />
-      <link role="target" roleId="tpce.1071599976176" targetNodeId="7597241200646296619" resolveInfo="QueryFunction_SNode" />
-    </node>
-  </root>
-  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="7597241200646296619" nodeInfo="ig">
-    <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
-    <property name="final" nameId="tpce.4628067390765956807" value="false" />
-    <property name="name" nameId="tpck.1169194664001" value="QueryFunction_SNode" />
-    <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="QueryFunction.Style" />
-    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="snode function" />
-    <link role="extends" roleId="tpce.1071489389519" targetNodeId="1221059528506" resolveInfo="QueryFunction_StyleParameter" />
-  </root>
-  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="3696012239575138270" nodeInfo="ig">
-    <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
-    <property name="final" nameId="tpce.4628067390765956807" value="false" />
-    <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="URL property" />
-    <property name="name" nameId="tpck.1169194664001" value="CellModel_URL" />
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="CellModel" />
-    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="URL" />
-    <link role="extends" roleId="tpce.1071489389519" targetNodeId="1139848536355" resolveInfo="CellModel_WithRole" />
-    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="3696012239575138271" nodeInfo="ig">
-      <property name="role" nameId="tpce.1071599776563" value="propertyDeclaration" />
-      <property name="sourceCardinality" nameId="tpce.1071599893252" value="1" />
-      <link role="specializedLink" roleId="tpce.1071599698500" targetNodeId="1140103550593" />
-      <link role="target" roleId="tpce.1071599976176" targetNodeId="tpce.1071489288299" resolveInfo="PropertyDeclaration" />
-    </node>
-  </root>
-  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="3608226089191997415" nodeInfo="ig">
-    <property name="name" nameId="tpck.1169194664001" value="RightTransformAnchorTagWrapper" />
-    <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
-    <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="3608226089191997418" nodeInfo="ig">
-      <property name="name" nameId="tpck.1169194664001" value="tag" />
-      <link role="dataType" roleId="tpce.1082985295845" targetNodeId="1140813780565" resolveInfo="RightTransformAnchorTag" />
-    </node>
-  </root>
-  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="709996738298806197" nodeInfo="ig">
-    <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
-    <property name="final" nameId="tpce.4628067390765956807" value="false" />
-    <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="embedded block of code" />
-    <property name="name" nameId="tpck.1169194664001" value="QueryFunction_SeparatorText" />
-    <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="QueryFunction" />
-    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="separator text" />
-    <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1137021947720" resolveInfo="ConceptFunction" />
-  </root>
-  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="7651593722933768974" nodeInfo="ig">
-    <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
-    <property name="final" nameId="tpce.4628067390765956807" value="false" />
-    <property name="name" nameId="tpck.1169194664001" value="MaxWidthStyleClassItem" />
-    <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="Stylesheet.Layout" />
-    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="max-width" />
-    <link role="extends" roleId="tpce.1071489389519" targetNodeId="1186402475462" resolveInfo="StyleClassItem" />
-    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="7651593722933768976" nodeInfo="ig">
-      <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
-      <property name="role" nameId="tpce.1071599776563" value="query" />
-      <property name="sourceCardinality" nameId="tpce.1071599893252" value="0..1" />
-      <link role="target" roleId="tpce.1071599976176" targetNodeId="1221057094638" resolveInfo="QueryFunction_Integer" />
-    </node>
-    <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="7651593722933768975" nodeInfo="ig">
-      <property name="name" nameId="tpck.1169194664001" value="value" />
-      <link role="dataType" roleId="tpce.1082985295845" targetNodeId="tpck.1082983657062" resolveInfo="integer" />
-    </node>
-  </root>
-  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="7667708318090877006" nodeInfo="ig">
-    <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
-    <property name="final" nameId="tpce.4628067390765956807" value="false" />
-    <property name="name" nameId="tpck.1169194664001" value="IndentLayoutWrapAnchorStyleClassItem" />
-    <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="Stylesheet.IndentLayout" />
-    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="indent-layout-wrap-anchor" />
-    <link role="extends" roleId="tpce.1071489389519" targetNodeId="1186414536763" resolveInfo="BooleanStyleSheetItem" />
-  </root>
-  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="7667708318090725848" nodeInfo="ig">
-    <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
-    <property name="final" nameId="tpce.4628067390765956807" value="false" />
-    <property name="name" nameId="tpck.1169194664001" value="IndentLayoutIndentAnchorStyleClassItem" />
-    <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="Stylesheet.IndentLayout" />
-    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="indent-layout-indent-anchor" />
-    <link role="extends" roleId="tpce.1071489389519" targetNodeId="1186414536763" resolveInfo="BooleanStyleSheetItem" />
-  </root>
-  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1402906326895675325" nodeInfo="ig">
-    <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="selected node (action map function parameter)" />
-    <property name="name" nameId="tpck.1169194664001" value="CellActionMap_FunctionParm_selectedNode" />
-    <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="MethodParameters" />
-    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="node" />
-    <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1107135704075" resolveInfo="ConceptFunctionParameter" />
-  </root>
-  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1402906326896143883" nodeInfo="ig">
-    <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="keymap function parameter" />
-    <property name="name" nameId="tpck.1169194664001" value="CellKeyMap_FunctionParm_selectedNode" />
-    <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="MethodParameters" />
-    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="node" />
-    <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1107135704075" resolveInfo="ConceptFunctionParameter" />
-  </root>
-  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1402906326896143909" nodeInfo="ig">
-    <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="keymap function parameter" />
-    <property name="name" nameId="tpck.1169194664001" value="CellKeyMap_FunctionParm_selectedNodes" />
-    <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="MethodParameters" />
-    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="selectedNodes" />
-    <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1107135704075" resolveInfo="ConceptFunctionParameter" />
-  </root>
-  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="7991857262589831666" nodeInfo="ig">
-    <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
-    <property name="final" nameId="tpce.4628067390765956807" value="false" />
-    <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="function parameter" />
-    <property name="name" nameId="tpck.1169194664001" value="ConceptFunctionParameter_prevNode" />
-    <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="QueryFunction.Parameters" />
-    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="prevNode" />
-    <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1107135704075" resolveInfo="ConceptFunctionParameter" />
-    <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="7991857262589831667" nodeInfo="ig">
-      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="tpck.1835621062190663819" resolveInfo="IDontSubstituteByDefault" />
-    </node>
-  </root>
-  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="7991857262589829730" nodeInfo="ig">
-    <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
-    <property name="final" nameId="tpce.4628067390765956807" value="false" />
-    <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="function parameter" />
-    <property name="name" nameId="tpck.1169194664001" value="ConceptFunctionParameter_nextNode" />
-    <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="QueryFunction.Parameters" />
-    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="nextNode" />
-    <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1107135704075" resolveInfo="ConceptFunctionParameter" />
-    <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="7991857262589829731" nodeInfo="ig">
-      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="tpck.1835621062190663819" resolveInfo="IDontSubstituteByDefault" />
-    </node>
-  </root>
-  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="4151393920404716535" nodeInfo="ig">
-    <property name="name" nameId="tpck.1169194664001" value="PreDefinedStyleClassItem" />
-    <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="Stylesheet" />
-    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="pre-defined-style" />
-    <link role="extends" roleId="tpce.1071489389519" targetNodeId="1186402475462" resolveInfo="StyleClassItem" />
-    <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpce.DeprecatedNodeAnnotation" typeId="tpce.1224240836180" id="9122903797335909684" nodeInfo="ig" />
-    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="8730965736661186051" nodeInfo="ig">
-      <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
-      <property name="role" nameId="tpce.1071599776563" value="query" />
-      <link role="target" roleId="tpce.1071599976176" targetNodeId="1223387125302" resolveInfo="QueryFunction_Boolean" />
-    </node>
-    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="4151393920404978387" nodeInfo="ig">
-      <property name="metaClass" nameId="tpce.1071599937831" value="reference" />
-      <property name="role" nameId="tpce.1071599776563" value="key" />
-      <property name="sourceCardinality" nameId="tpce.1071599893252" value="0..1" />
-      <link role="target" roleId="tpce.1071599976176" targetNodeId="4151393920374910634" resolveInfo="StyleKey" />
-    </node>
-  </root>
-  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="4151393920374910634" nodeInfo="ig">
-    <property name="name" nameId="tpck.1169194664001" value="StyleKey" />
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="Stylesheet" />
-    <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1070475926800" resolveInfo="StringLiteral" />
-    <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="9122903797325336958" nodeInfo="ig">
-      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="9122903797320402872" resolveInfo="IStyle" />
-    </node>
-  </root>
-  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="4151393920374910722" nodeInfo="ig">
-    <property name="rootable" nameId="tpce.1096454100552" value="true" />
-    <property name="name" nameId="tpck.1169194664001" value="StyleKeyPack" />
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="Stylesheet" />
-    <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
-    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="4151393920375014512" nodeInfo="ig">
-      <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
-      <property name="role" nameId="tpce.1071599776563" value="styleKey" />
-      <property name="sourceCardinality" nameId="tpce.1071599893252" value="0..n" />
-      <link role="target" roleId="tpce.1071599976176" targetNodeId="4151393920374910634" resolveInfo="StyleKey" />
-    </node>
-    <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="4151393920375014510" nodeInfo="ig">
-      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="tpck.1169194658468" resolveInfo="INamedConcept" />
-    </node>
-  </root>
-  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="8233876857994246075" nodeInfo="ig">
-    <property name="name" nameId="tpck.1169194664001" value="CellMenuPart_ApplySideTransforms" />
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="CellMenu" />
-    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="apply side transforms" />
-    <link role="extends" roleId="tpce.1071489389519" targetNodeId="1164824854750" resolveInfo="CellMenuPart_Abstract" />
-    <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="8233876857994286197" nodeInfo="ig">
-      <property name="name" nameId="tpck.1169194664001" value="side" />
-      <link role="dataType" roleId="tpce.1082985295845" targetNodeId="tpdg.1215604970641" resolveInfo="Side" />
-    </node>
-    <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="870577895075788418" nodeInfo="ig">
-      <property name="name" nameId="tpck.1169194664001" value="tag" />
-      <link role="dataType" roleId="tpce.1082985295845" targetNodeId="1140813780565" resolveInfo="RightTransformAnchorTag" />
-    </node>
-  </root>
-  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="3525058663444303551" nodeInfo="ig">
-    <property name="name" nameId="tpck.1169194664001" value="QueryFunction_Style" />
-    <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="QueryFunction.Style" />
-    <link role="extends" roleId="tpce.1071489389519" targetNodeId="1221059528506" resolveInfo="QueryFunction_StyleParameter" />
-  </root>
-  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="6822301196700715228" nodeInfo="ig">
-    <property name="name" nameId="tpck.1169194664001" value="ConceptEditorHintDeclarationReference" />
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="EditorContextHints" />
-    <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
-    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="5944657839026714445" nodeInfo="ig">
-      <property name="metaClass" nameId="tpce.1071599937831" value="reference" />
-      <property name="role" nameId="tpce.1071599776563" value="hint" />
-      <property name="sourceCardinality" nameId="tpce.1071599893252" value="1" />
-      <link role="target" roleId="tpce.1071599976176" targetNodeId="5944657839003601246" resolveInfo="ConceptEditorHintDeclaration" />
-    </node>
-    <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="5774959771349728933" nodeInfo="ig">
-      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="tpck.1319728274784973096" resolveInfo="InterfacePart" />
-    </node>
-  </root>
-  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="4242538589859161874" nodeInfo="ig">
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="EditorContextHints" />
-    <property name="name" nameId="tpck.1169194664001" value="ExplicitHintsSpecification" />
-    <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
-    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="4242538589859162459" nodeInfo="ig">
-      <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
-      <property name="role" nameId="tpce.1071599776563" value="hints" />
-      <property name="sourceCardinality" nameId="tpce.1071599893252" value="0..n" />
-      <link role="target" roleId="tpce.1071599976176" targetNodeId="6822301196700715228" resolveInfo="ConceptEditorHintDeclarationReference" />
-    </node>
-    <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="4653693564098546479" nodeInfo="ig">
-      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="4653693564097968040" resolveInfo="ContextHintsSpecification" />
-    </node>
-  </root>
-  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="5944657839000868711" nodeInfo="ig">
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="EditorContextHints" />
-    <property name="rootable" nameId="tpce.1096454100552" value="true" />
-    <property name="name" nameId="tpck.1169194664001" value="ConceptEditorContextHints" />
-    <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
-    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="5944657839000877563" nodeInfo="ig">
-      <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
-      <property name="role" nameId="tpce.1071599776563" value="hints" />
-      <property name="sourceCardinality" nameId="tpce.1071599893252" value="0..n" />
-      <link role="target" roleId="tpce.1071599976176" targetNodeId="5944657839003601246" resolveInfo="ConceptEditorHintDeclaration" />
-    </node>
-    <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="5944657839036545854" nodeInfo="ig">
-      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="tpck.1169194658468" resolveInfo="INamedConcept" />
-    </node>
-    <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="5774959771349753394" nodeInfo="ig">
-      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="tpck.1319728274784973096" resolveInfo="InterfacePart" />
-    </node>
-  </root>
-  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="5944657839003601246" nodeInfo="ig">
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="EditorContextHints" />
-    <property name="name" nameId="tpck.1169194664001" value="ConceptEditorHintDeclaration" />
-    <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
-    <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="5944657839012629576" nodeInfo="ig">
-      <property name="name" nameId="tpck.1169194664001" value="presentation" />
-      <link role="dataType" roleId="tpce.1082985295845" targetNodeId="tpck.1082983041843" resolveInfo="string" />
-    </node>
-    <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="168363875802087287" nodeInfo="ig">
-      <property name="name" nameId="tpck.1169194664001" value="showInUI" />
-      <link role="dataType" roleId="tpce.1082985295845" targetNodeId="tpck.1082983657063" resolveInfo="boolean" />
-    </node>
-    <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="5944657839003606229" nodeInfo="ig">
-      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="tpck.1169194658468" resolveInfo="INamedConcept" />
-    </node>
-    <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="5774959771349753400" nodeInfo="ig">
-      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="tpck.1319728274784973096" resolveInfo="InterfacePart" />
-    </node>
-  </root>
-  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="6150987479542522273" nodeInfo="ig">
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="EditorContextHints" />
-    <property name="name" nameId="tpck.1169194664001" value="QueryHintsSpecification" />
-    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="query" />
-    <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1137021947720" resolveInfo="ConceptFunction" />
-    <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="4653693564098547079" nodeInfo="ig">
-      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="4653693564097968040" resolveInfo="ContextHintsSpecification" />
-    </node>
-  </root>
-  <root type="tpce.InterfaceConceptDeclaration" typeId="tpce.1169125989551" id="4653693564097968040" nodeInfo="ig">
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="EditorContextHints" />
-    <property name="name" nameId="tpck.1169194664001" value="ContextHintsSpecification" />
-    <node role="extends" roleId="tpce.1169127546356" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="4653693564098486956" nodeInfo="ig">
-      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="tpck.1835621062190663819" resolveInfo="IDontSubstituteByDefault" />
-    </node>
-  </root>
-  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="4820515453818318288" nodeInfo="ig">
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="EditorContextHints" />
-    <property name="name" nameId="tpck.1169194664001" value="ConceptEditorHintDeclarationReferenceExpression" />
-    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="concept editor hint/&lt;name&gt;/" />
-    <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1068431790191" resolveInfo="Expression" />
-    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="4820515453818318891" nodeInfo="ig">
-      <property name="metaClass" nameId="tpce.1071599937831" value="reference" />
-      <property name="role" nameId="tpce.1071599776563" value="hint" />
-      <property name="sourceCardinality" nameId="tpce.1071599893252" value="1" />
-      <link role="target" roleId="tpce.1071599976176" targetNodeId="5944657839003601246" resolveInfo="ConceptEditorHintDeclaration" />
-    </node>
-  </root>
-  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="7033942394256351208" nodeInfo="ig">
-    <property name="name" nameId="tpck.1169194664001" value="EditorComponentDeclarationReference" />
-    <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
-    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="7033942394256351817" nodeInfo="ig">
-      <property name="metaClass" nameId="tpce.1071599937831" value="reference" />
-      <property name="sourceCardinality" nameId="tpce.1071599893252" value="1" />
-      <property name="role" nameId="tpce.1071599776563" value="editorComponent" />
-      <link role="target" roleId="tpce.1071599976176" targetNodeId="1078938745671" resolveInfo="EditorComponentDeclaration" />
-    </node>
-  </root>
-  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="3647146066980922272" nodeInfo="ig">
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="SNode.select" />
-    <property name="name" nameId="tpck.1169194664001" value="SelectInEditorOperation" />
-    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="select" />
-    <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
-    <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="select node in the editor" />
-    <link role="extends" roleId="tpce.1071489389519" targetNodeId="tp25.1138411891628" resolveInfo="SNodeOperation" />
-    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="1948540814633499358" nodeInfo="ig">
-      <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
-      <property name="role" nameId="tpce.1071599776563" value="editorContext" />
-      <property name="sourceCardinality" nameId="tpce.1071599893252" value="1" />
-      <link role="target" roleId="tpce.1071599976176" targetNodeId="tpee.1068431790191" resolveInfo="Expression" />
-    </node>
-    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="1948540814635895774" nodeInfo="ig">
-      <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
-      <property name="role" nameId="tpce.1071599776563" value="cellSelector" />
-      <link role="target" roleId="tpce.1071599976176" targetNodeId="1948540814635886374" resolveInfo="AbstractCellSelector" />
-    </node>
-    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="3604384757217586546" nodeInfo="ig">
-      <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
-      <property name="role" nameId="tpce.1071599776563" value="selectionStart" />
-      <link role="target" roleId="tpce.1071599976176" targetNodeId="tpee.1068431790191" resolveInfo="Expression" />
-    </node>
-    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="2701921320705252232" nodeInfo="ig">
-      <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
-      <property name="role" nameId="tpce.1071599776563" value="selectionEnd" />
-      <link role="target" roleId="tpce.1071599976176" targetNodeId="tpee.1068431790191" resolveInfo="Expression" />
-    </node>
-    <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="4510086454767561658" nodeInfo="ig">
-      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="tpck.3734116213129792499" resolveInfo="ScopeProvider" />
-    </node>
-  </root>
-  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1948540814635886374" nodeInfo="ig">
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="SNode.select" />
-    <property name="name" nameId="tpck.1169194664001" value="AbstractCellSelector" />
-    <property name="abstract" nameId="tpce.4628067390765956802" value="true" />
-    <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
-    <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="2162403111526915125" nodeInfo="ig">
-      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="tpck.1835621062190663819" resolveInfo="IDontSubstituteByDefault" />
-    </node>
-  </root>
-  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="3547227755871693971" nodeInfo="ig">
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="SNode.select" />
-    <property name="name" nameId="tpck.1169194664001" value="PredefinedSelector" />
-    <link role="extends" roleId="tpce.1071489389519" targetNodeId="1948540814635886374" resolveInfo="AbstractCellSelector" />
-    <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="2162403111523065396" nodeInfo="ig">
-      <property name="name" nameId="tpck.1169194664001" value="cellId" />
-      <link role="dataType" roleId="tpce.1082985295845" targetNodeId="2162403111523060375" resolveInfo="PredefinedCellID" />
-    </node>
-  </root>
-  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="2162403111523059536" nodeInfo="ig">
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="SNode.select" />
-    <property name="name" nameId="tpck.1169194664001" value="IdSelector" />
-    <link role="extends" roleId="tpce.1071489389519" targetNodeId="1948540814635886374" resolveInfo="AbstractCellSelector" />
-    <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="2162403111529391190" nodeInfo="ig">
-      <property name="name" nameId="tpck.1169194664001" value="cellId" />
-      <link role="dataType" roleId="tpce.1082985295845" targetNodeId="tpck.1082983041843" resolveInfo="string" />
-    </node>
-  </root>
-  <root type="tpce.EnumerationDataTypeDeclaration" typeId="tpce.1082978164219" id="2162403111523060375" nodeInfo="ng">
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="SNode.select" />
-    <property name="name" nameId="tpck.1169194664001" value="PredefinedCellID" />
-    <link role="memberDataType" roleId="tpce.1083171729157" targetNodeId="tpck.1082983041843" resolveInfo="string" />
-    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="2162403111523060376" nodeInfo="ig">
-      <property name="externalValue" nameId="tpce.1083923523172" value="FIRST" />
-      <property name="internalValue" nameId="tpce.1083923523171" value="first" />
-    </node>
-    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="2162403111523062256" nodeInfo="ig">
-      <property name="externalValue" nameId="tpce.1083923523172" value="LAST" />
-      <property name="internalValue" nameId="tpce.1083923523171" value="last" />
-    </node>
-    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="2162403111523062252" nodeInfo="ig">
-      <property name="externalValue" nameId="tpce.1083923523172" value="FIRST_EDITABLE" />
-      <property name="internalValue" nameId="tpce.1083923523171" value="firstEditable" />
-    </node>
-    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="2162403111523062249" nodeInfo="ig">
-      <property name="externalValue" nameId="tpce.1083923523172" value="LAST_EDITABLE" />
-      <property name="internalValue" nameId="tpce.1083923523171" value="lastEditable" />
-    </node>
-  </root>
-  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="4510086454722552739" nodeInfo="ig">
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="SNode.select" />
-    <property name="name" nameId="tpck.1169194664001" value="PropertyDeclarationCellSelector" />
-    <link role="extends" roleId="tpce.1071489389519" targetNodeId="1948540814635886374" resolveInfo="AbstractCellSelector" />
-    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="4510086454740628767" nodeInfo="ig">
-      <property name="metaClass" nameId="tpce.1071599937831" value="reference" />
-      <property name="sourceCardinality" nameId="tpce.1071599893252" value="1" />
-      <property name="role" nameId="tpce.1071599776563" value="propertyDeclaration" />
-      <link role="target" roleId="tpce.1071599976176" targetNodeId="tpce.1071489288299" resolveInfo="PropertyDeclaration" />
-    </node>
-  </root>
-  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="4510086454726375946" nodeInfo="ig">
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="SNode.select" />
-    <property name="name" nameId="tpck.1169194664001" value="PropertyExpressionCellSelector" />
-    <link role="extends" roleId="tpce.1071489389519" targetNodeId="1948540814635886374" resolveInfo="AbstractCellSelector" />
-    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="4510086454769912032" nodeInfo="ig">
-      <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
-      <property name="role" nameId="tpce.1071599776563" value="propertyDeclaration" />
-      <property name="sourceCardinality" nameId="tpce.1071599893252" value="1" />
-      <link role="target" roleId="tpce.1071599976176" targetNodeId="tpee.1068431790191" resolveInfo="Expression" />
-    </node>
-  </root>
-  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="4323500428121233431" nodeInfo="ig">
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="CellModel" />
-    <property name="name" nameId="tpck.1169194664001" value="EditorCellId" />
-    <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
-    <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="4323500428126727727" nodeInfo="ig">
-      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="tpck.1835621062190663819" resolveInfo="IDontSubstituteByDefault" />
-    </node>
-    <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="4323500428153895294" nodeInfo="ig">
-      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="tpck.1169194658468" resolveInfo="INamedConcept" />
-    </node>
-  </root>
-  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="4323500428136740385" nodeInfo="ig">
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="SNode.select" />
-    <property name="name" nameId="tpck.1169194664001" value="CellIdReferenceSelector" />
-    <link role="extends" roleId="tpce.1071489389519" targetNodeId="1948540814635886374" resolveInfo="AbstractCellSelector" />
-    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="4323500428136742952" nodeInfo="ig">
-      <property name="metaClass" nameId="tpce.1071599937831" value="reference" />
-      <property name="sourceCardinality" nameId="tpce.1071599893252" value="1" />
-      <property name="role" nameId="tpce.1071599776563" value="id" />
-      <link role="target" roleId="tpce.1071599976176" targetNodeId="4323500428121233431" resolveInfo="EditorCellId" />
-    </node>
-  </root>
-  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="3383245079137382180" nodeInfo="ig">
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="Stylesheet" />
-    <property name="name" nameId="tpck.1169194664001" value="StyleClass" />
-    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="style" />
-    <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
-    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="3383245079137422296" nodeInfo="ig">
-      <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
-      <property name="role" nameId="tpce.1071599776563" value="dominates" />
-      <link role="target" roleId="tpce.1071599976176" targetNodeId="2491174914159318432" resolveInfo="DominatesRecord" />
-    </node>
-    <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="3383245079137422281" nodeInfo="ig">
-      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="3383245079136928391" resolveInfo="IStyleSheetMember" />
-    </node>
-    <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="9122903797325741811" nodeInfo="ig">
-      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="9122903797320402872" resolveInfo="IStyle" />
-    </node>
-    <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="5163058412366247618" nodeInfo="ig">
-      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="1219418625346" resolveInfo="IStyleContainer" />
-    </node>
-    <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="5163058412366247981" nodeInfo="ig">
-      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="tpee.1212170275853" resolveInfo="IValidIdentifier" />
-    </node>
-  </root>
-  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="795210086017940429" nodeInfo="ig">
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="Stylesheet" />
-    <property name="name" nameId="tpck.1169194664001" value="ReadOnlyStyleClassItem" />
-    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="read-only" />
-    <link role="extends" roleId="tpce.1071489389519" targetNodeId="1186414536763" resolveInfo="BooleanStyleSheetItem" />
-  </root>
-  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1950447826686048995" nodeInfo="ig">
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="Stylesheet" />
-    <property name="name" nameId="tpck.1169194664001" value="UnapplyStyle" />
-    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="unapply" />
-    <link role="extends" roleId="tpce.1071489389519" targetNodeId="1186402475462" resolveInfo="StyleClassItem" />
-    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="1950447826686049051" nodeInfo="ig">
-      <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
-      <property name="role" nameId="tpce.1071599776563" value="target" />
-      <property name="sourceCardinality" nameId="tpce.1071599893252" value="1" />
-      <link role="target" roleId="tpce.1071599976176" targetNodeId="9122903797312246523" resolveInfo="StyleReference" />
-    </node>
-  </root>
-  <root type="tpce.InterfaceConceptDeclaration" typeId="tpce.1169125989551" id="3383245079136928391" nodeInfo="ig">
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="Stylesheet" />
-    <property name="name" nameId="tpck.1169194664001" value="IStyleSheetMember" />
-    <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpce.DeprecatedNodeAnnotation" typeId="tpce.1224240836180" id="9122903797336079902" nodeInfo="ig" />
-    <node role="extends" roleId="tpce.1169127546356" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="1666929921461326726" nodeInfo="ig">
-      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="9122903797320402872" resolveInfo="IStyle" />
-    </node>
-    <node role="extends" roleId="tpce.1169127546356" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="2984340427841566890" nodeInfo="ig">
-      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="1219418625346" resolveInfo="IStyleContainer" />
-    </node>
-    <node role="extends" roleId="tpce.1169127546356" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="9122903797325337611" nodeInfo="ig">
-      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="tpee.1212170275853" resolveInfo="IValidIdentifier" />
-    </node>
-    <node role="extends" roleId="tpce.1169127546356" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="8714766435263483694" nodeInfo="ig">
-      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="8714766435263473176" resolveInfo="IStyleSheetItem" />
-    </node>
-  </root>
-  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="3383245079137422349" nodeInfo="ig">
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="Stylesheet" />
-    <property name="name" nameId="tpck.1169194664001" value="StyleClassReference" />
-    <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
-    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="3383245079137422350" nodeInfo="ig">
-      <property name="metaClass" nameId="tpce.1071599937831" value="reference" />
-      <property name="role" nameId="tpce.1071599776563" value="styleClass" />
-      <property name="sourceCardinality" nameId="tpce.1071599893252" value="1" />
-      <link role="target" roleId="tpce.1071599976176" targetNodeId="3383245079137382180" resolveInfo="StyleClass" />
-    </node>
-  </root>
-  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1950447826681509042" nodeInfo="ig">
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="Stylesheet" />
-    <property name="name" nameId="tpck.1169194664001" value="ApplyStyleClass" />
-    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="apply" />
-    <link role="extends" roleId="tpce.1071489389519" targetNodeId="1186402475462" resolveInfo="StyleClassItem" />
-    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="1950447826683828796" nodeInfo="ig">
-      <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
-      <property name="role" nameId="tpce.1071599776563" value="target" />
-      <property name="sourceCardinality" nameId="tpce.1071599893252" value="1" />
-      <link role="target" roleId="tpce.1071599976176" targetNodeId="9122903797312246523" resolveInfo="StyleReference" />
-    </node>
-  </root>
-  <root type="tpce.InterfaceConceptDeclaration" typeId="tpce.1169125989551" id="9122903797320402872" nodeInfo="ig">
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="Stylesheet" />
-    <property name="name" nameId="tpck.1169194664001" value="IStyle" />
-  </root>
-  <root type="tpce.InterfaceConceptDeclaration" typeId="tpce.1169125989551" id="8770580973047386957" nodeInfo="ig">
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="CellModel" />
-    <property name="name" nameId="tpck.1169194664001" value="Synchronizeable" />
-  </root>
-  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="9122903797276194520" nodeInfo="ig">
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="Stylesheet" />
-    <property name="name" nameId="tpck.1169194664001" value="StyleClassReferenceList" />
-    <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
-    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="9122903797276195161" nodeInfo="ig">
-      <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
-      <property name="role" nameId="tpce.1071599776563" value="element" />
-      <property name="sourceCardinality" nameId="tpce.1071599893252" value="1..n" />
-      <link role="target" roleId="tpce.1071599976176" targetNodeId="3383245079137422349" resolveInfo="StyleClassReference" />
-    </node>
-    <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="2491174914162137966" nodeInfo="ig">
-      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="tpck.1835621062190663819" resolveInfo="IDontSubstituteByDefault" />
-    </node>
-  </root>
-  <root type="tpce.InterfaceConceptDeclaration" typeId="tpce.1169125989551" id="1381004262292414836" nodeInfo="ig">
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="CellModel" />
-    <property name="name" nameId="tpck.1169194664001" value="ICellStyle" />
-    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="1381004262292426837" nodeInfo="ig">
-      <property name="role" nameId="tpce.1071599776563" value="parentStyleClass" />
-      <link role="target" roleId="tpce.1071599976176" targetNodeId="3383245079136928391" resolveInfo="IStyleSheetMember" />
-    </node>
-    <node role="extends" roleId="tpce.1169127546356" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="1381004262292421018" nodeInfo="ig">
-      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="1219418625346" resolveInfo="IStyleContainer" />
-    </node>
-  </root>
-  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="9122903797336200704" nodeInfo="ig">
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="Stylesheet" />
-    <property name="name" nameId="tpck.1169194664001" value="ApplyStyleClassCondition" />
-    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="apply-if" />
-    <link role="extends" roleId="tpce.1071489389519" targetNodeId="1950447826681509042" resolveInfo="ApplyStyleClass" />
-    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="9122903797336200706" nodeInfo="ig">
-      <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
-      <property name="role" nameId="tpce.1071599776563" value="query" />
-      <property name="sourceCardinality" nameId="tpce.1071599893252" value="1" />
-      <link role="target" roleId="tpce.1071599976176" targetNodeId="1223387125302" resolveInfo="QueryFunction_Boolean" />
-    </node>
-  </root>
-  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="2491174914159318432" nodeInfo="ig">
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="Stylesheet" />
-    <property name="name" nameId="tpck.1169194664001" value="DominatesRecord" />
-    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="dominates over" />
-    <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
-    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="2491174914159330058" nodeInfo="ig">
-      <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
-      <property name="role" nameId="tpce.1071599776563" value="dominatesStyleClassList" />
-      <property name="sourceCardinality" nameId="tpce.1071599893252" value="0..1" />
-      <link role="target" roleId="tpce.1071599976176" targetNodeId="9122903797276194520" resolveInfo="StyleClassReferenceList" />
-    </node>
-    <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="9015952930121301858" nodeInfo="ig">
-      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="tpck.1319728274783077719" resolveInfo="ImplementationPart" />
-    </node>
-  </root>
-  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="9122903797312246523" nodeInfo="ig">
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="Stylesheet" />
-    <property name="name" nameId="tpck.1169194664001" value="StyleReference" />
-    <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
-    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="9122903797312247166" nodeInfo="ig">
-      <property name="metaClass" nameId="tpce.1071599937831" value="reference" />
-      <property name="role" nameId="tpce.1071599776563" value="style" />
-      <property name="sourceCardinality" nameId="tpce.1071599893252" value="1" />
-      <link role="target" roleId="tpce.1071599976176" targetNodeId="9122903797320402872" resolveInfo="IStyle" />
-    </node>
-  </root>
-  <root type="tpce.InterfaceConceptDeclaration" typeId="tpce.1169125989551" id="8714766435263473176" nodeInfo="ig">
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="Stylesheet" />
-    <property name="name" nameId="tpck.1169194664001" value="IStyleSheetItem" />
-    <node role="extends" roleId="tpce.1169127546356" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="7531406846490636378" nodeInfo="ig">
-      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="tpck.1319728274784973096" resolveInfo="InterfacePart" />
-    </node>
-  </root>
-  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="6029276237631252951" nodeInfo="ig">
-    <property name="name" nameId="tpck.1169194664001" value="StyleAttributeReferenceExpression" />
-    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="styleAttribute" />
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="Stylesheet" />
-    <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1068431790191" resolveInfo="Expression" />
-    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="6029276237631253682" nodeInfo="ig">
-      <property name="metaClass" nameId="tpce.1071599937831" value="reference" />
-      <property name="sourceCardinality" nameId="tpce.1071599893252" value="1" />
-      <property name="role" nameId="tpce.1071599776563" value="attributeDeclaration" />
-      <link role="target" roleId="tpce.1071599976176" targetNodeId="3982520150113085419" resolveInfo="StyleAttributeDeclaration" />
-    </node>
-  </root>
-  <root type="tpce.EnumerationDataTypeDeclaration" typeId="tpce.1082978164219" id="8714766435264464204" nodeInfo="ng">
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="Stylesheet" />
-    <property name="name" nameId="tpck.1169194664001" value="StyleAttributeKind" />
-    <property name="hasNoDefaultMember" nameId="tpce.1212080844762" value="false" />
-    <link role="memberDataType" roleId="tpce.1083171729157" targetNodeId="tpck.1082983657063" resolveInfo="boolean" />
-    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="8714766435264464205" nodeInfo="ig">
-      <property name="internalValue" nameId="tpce.1083923523171" value="true" />
-      <property name="externalValue" nameId="tpce.1083923523172" value="inherited" />
-    </node>
-    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="8714766435264464206" nodeInfo="ig">
-      <property name="internalValue" nameId="tpce.1083923523171" value="false" />
-      <property name="externalValue" nameId="tpce.1083923523172" value="simple" />
-    </node>
-  </root>
-  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="3982520150113085419" nodeInfo="ig">
-    <property name="name" nameId="tpck.1169194664001" value="StyleAttributeDeclaration" />
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="Stylesheet" />
-    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="style attribute" />
-    <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
-    <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="8714766435264464176" nodeInfo="ig">
-      <property name="name" nameId="tpck.1169194664001" value="inherited" />
-      <link role="dataType" roleId="tpce.1082985295845" targetNodeId="8714766435264464204" resolveInfo="StyleAttributeKind" />
-    </node>
-    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="3982520150113092206" nodeInfo="ig">
-      <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
-      <property name="role" nameId="tpce.1071599776563" value="valueType" />
-      <property name="sourceCardinality" nameId="tpce.1071599893252" value="1" />
-      <link role="target" roleId="tpce.1071599976176" targetNodeId="tpee.1068431790189" resolveInfo="Type" />
-    </node>
-    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="3982520150113147643" nodeInfo="ig">
-      <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
-      <property name="role" nameId="tpce.1071599776563" value="defaultValue" />
-      <link role="target" roleId="tpce.1071599976176" targetNodeId="tpee.1068431790191" resolveInfo="Expression" />
-    </node>
-    <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="8714766435263483702" nodeInfo="ig">
-      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="8714766435263473176" resolveInfo="IStyleSheetItem" />
-    </node>
-    <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="3982520150113086086" nodeInfo="ig">
-      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="tpck.1169194658468" resolveInfo="INamedConcept" />
-    </node>
-  </root>
-  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="3982520150122341378" nodeInfo="ig">
-    <property name="name" nameId="tpck.1169194664001" value="AttributeStyleClassItem" />
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="Stylesheet" />
-    <link role="extends" roleId="tpce.1071489389519" targetNodeId="1186402475462" resolveInfo="StyleClassItem" />
-    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="3982520150122341379" nodeInfo="ig">
-      <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
-      <property name="role" nameId="tpce.1071599776563" value="query" />
-      <property name="sourceCardinality" nameId="tpce.1071599893252" value="1" />
-      <link role="target" roleId="tpce.1071599976176" targetNodeId="3982520150125052579" resolveInfo="QueryFunction_AttributeStyleParameter" />
-    </node>
-    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="3982520150122346707" nodeInfo="ig">
-      <property name="metaClass" nameId="tpce.1071599937831" value="reference" />
-      <property name="role" nameId="tpce.1071599776563" value="attribute" />
-      <property name="sourceCardinality" nameId="tpce.1071599893252" value="1" />
-      <link role="target" roleId="tpce.1071599976176" targetNodeId="3982520150113085419" resolveInfo="StyleAttributeDeclaration" />
-    </node>
-  </root>
-  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="3982520150125052579" nodeInfo="ig">
-    <property name="name" nameId="tpck.1169194664001" value="QueryFunction_AttributeStyleParameter" />
-    <link role="extends" roleId="tpce.1071489389519" targetNodeId="1221059528506" resolveInfo="QueryFunction_StyleParameter" />
-  </root>
-  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="3610246225209162225" nodeInfo="ig">
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="CellModel" />
-    <property name="name" nameId="tpck.1169194664001" value="StubCellModel_Constant" />
-    <link role="extends" roleId="tpce.1071489389519" targetNodeId="730538219796139730" resolveInfo="StubEditorCellModel" />
-  </root>
-  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="3013115976261988961" nodeInfo="ig">
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="CellModel" />
-    <property name="name" nameId="tpck.1169194664001" value="StubCellModel_Collection" />
-    <link role="extends" roleId="tpce.1071489389519" targetNodeId="730538219796139730" resolveInfo="StubEditorCellModel" />
-  </root>
-  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="3708815482283559694" nodeInfo="ig">
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="CellModel" />
-    <property name="name" nameId="tpck.1169194664001" value="StubCellModel_ReadOnlyModelAccessor" />
-    <link role="extends" roleId="tpce.1071489389519" targetNodeId="730538219796139730" resolveInfo="StubEditorCellModel" />
-  </root>
-  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="3162947552742194261" nodeInfo="ig">
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="CellModel" />
-    <property name="name" nameId="tpck.1169194664001" value="StubCellModel_Component" />
-    <link role="extends" roleId="tpce.1071489389519" targetNodeId="730538219796139730" resolveInfo="StubEditorCellModel" />
-  </root>
-  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="730538219795941030" nodeInfo="ig">
-    <property name="name" nameId="tpck.1169194664001" value="StubCellModel_RefCell" />
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="CellModel" />
-    <link role="extends" roleId="tpce.1071489389519" targetNodeId="730538219796139730" resolveInfo="StubEditorCellModel" />
-  </root>
-  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="730538219795960754" nodeInfo="ig">
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="CellModel" />
-    <property name="name" nameId="tpck.1169194664001" value="StubCellModel_RefNode" />
-    <link role="extends" roleId="tpce.1071489389519" targetNodeId="730538219796139730" resolveInfo="StubEditorCellModel" />
-  </root>
-  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="730538219795961225" nodeInfo="ig">
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="CellModel" />
-    <property name="name" nameId="tpck.1169194664001" value="StubCellModel_ReferencePresentation" />
-    <link role="extends" roleId="tpce.1071489389519" targetNodeId="730538219796139730" resolveInfo="StubEditorCellModel" />
-  </root>
-  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="730538219796134133" nodeInfo="ig">
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="CellModel" />
-    <property name="name" nameId="tpck.1169194664001" value="StubCellModel_Property" />
-    <link role="extends" roleId="tpce.1071489389519" targetNodeId="730538219796139730" resolveInfo="StubEditorCellModel" />
-  </root>
-  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="730538219796134178" nodeInfo="ig">
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="CellModel" />
-    <property name="name" nameId="tpck.1169194664001" value="StubCellModel_NonEmptyProperty" />
-    <link role="extends" roleId="tpce.1071489389519" targetNodeId="730538219796139730" resolveInfo="StubEditorCellModel" />
-  </root>
-  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="730538219796139730" nodeInfo="ig">
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="CellModel" />
-    <property name="name" nameId="tpck.1169194664001" value="StubEditorCellModel" />
-    <link role="extends" roleId="tpce.1071489389519" targetNodeId="1073389214265" resolveInfo="EditorCellModel" />
-    <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="730538219796139731" nodeInfo="ig">
-      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="tpck.1835621062190663819" resolveInfo="IDontSubstituteByDefault" />
-    </node>
-    <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="730538219796139736" nodeInfo="ig">
-      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="tpck.3393165121846091587" resolveInfo="ISuppressErrors" />
-    </node>
-  </root>
-  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="2794558372793454595" nodeInfo="ig">
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="CellModel" />
-    <property name="name" nameId="tpck.1169194664001" value="StubCellModel_RefNodeList" />
-    <link role="extends" roleId="tpce.1071489389519" targetNodeId="730538219796139730" resolveInfo="StubEditorCellModel" />
-  </root>
-  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="8104358048506729356" nodeInfo="ig">
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="CellModel" />
-    <property name="name" nameId="tpck.1169194664001" value="StubCellModel_Error" />
-    <link role="extends" roleId="tpce.1071489389519" targetNodeId="730538219796139730" resolveInfo="StubEditorCellModel" />
-  </root>
-  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="8104358048506729357" nodeInfo="ig">
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="CellModel" />
-    <property name="name" nameId="tpck.1169194664001" value="StubCellModel_ModelAccess" />
-    <link role="extends" roleId="tpce.1071489389519" targetNodeId="730538219796139730" resolveInfo="StubEditorCellModel" />
-  </root>
-  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="8104358048506729358" nodeInfo="ig">
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="CellModel" />
-    <property name="name" nameId="tpck.1169194664001" value="StubCellModel_TransactionalProperty" />
-    <link role="extends" roleId="tpce.1071489389519" targetNodeId="730538219796139730" resolveInfo="StubEditorCellModel" />
-  </root>
-  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="8104358048506729359" nodeInfo="ig">
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="CellModel" />
-    <property name="name" nameId="tpck.1169194664001" value="StubCellModel_URL" />
-    <link role="extends" roleId="tpce.1071489389519" targetNodeId="730538219796139730" resolveInfo="StubEditorCellModel" />
-  </root>
-  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="8104358048506729361" nodeInfo="ig">
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="CellModel" />
-    <property name="name" nameId="tpck.1169194664001" value="StubCellModel_Alteration" />
-    <link role="extends" roleId="tpce.1071489389519" targetNodeId="730538219796139730" resolveInfo="StubEditorCellModel" />
-  </root>
-  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="8104358048506730066" nodeInfo="ig">
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="CellModel" />
-    <property name="name" nameId="tpck.1169194664001" value="StubCellModel_Block" />
-    <link role="extends" roleId="tpce.1071489389519" targetNodeId="730538219796139730" resolveInfo="StubEditorCellModel" />
-  </root>
-  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="8104358048506730068" nodeInfo="ig">
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="CellModel" />
-    <property name="name" nameId="tpck.1169194664001" value="StubCellModel_Custom" />
-    <link role="extends" roleId="tpce.1071489389519" targetNodeId="730538219796139730" resolveInfo="StubEditorCellModel" />
-  </root>
-  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="8104358048506730159" nodeInfo="ig">
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="CellModel" />
-    <property name="name" nameId="tpck.1169194664001" value="StubCellModel_Empty" />
-    <link role="extends" roleId="tpce.1071489389519" targetNodeId="730538219796139730" resolveInfo="StubEditorCellModel" />
-  </root>
-  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="8104358048506730324" nodeInfo="ig">
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="CellModel" />
-    <property name="name" nameId="tpck.1169194664001" value="StubCellModel_HierarchycalTable" />
-    <link role="extends" roleId="tpce.1071489389519" targetNodeId="730538219796139730" resolveInfo="StubEditorCellModel" />
-  </root>
-  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="8104358048506731195" nodeInfo="ig">
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="CellModel" />
-    <property name="name" nameId="tpck.1169194664001" value="StubCellModel_Image" />
-    <link role="extends" roleId="tpce.1071489389519" targetNodeId="730538219796139730" resolveInfo="StubEditorCellModel" />
-  </root>
-  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="8104358048506731196" nodeInfo="ig">
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="CellModel" />
-    <property name="name" nameId="tpck.1169194664001" value="StubCellModel_JComponent" />
-    <link role="extends" roleId="tpce.1071489389519" targetNodeId="730538219796139730" resolveInfo="StubEditorCellModel" />
-  </root>
-  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="8104358048506731197" nodeInfo="ig">
-    <property name="virtualPackage" nameId="tpck.1193676396447" value="CellModel" />
-    <property name="name" nameId="tpck.1169194664001" value="StubCellModel_Table" />
-    <link role="extends" roleId="tpce.1071489389519" targetNodeId="730538219796139730" resolveInfo="StubEditorCellModel" />
-  </root>
+    <node concept="4jta.1071489090640" id="1073389446423" info="ig">
+      <property role="4jta.1169125787135.4628067390765956802" value="false" />
+      <property role="4jta.1169125787135.4628067390765956807" value="false" />
+      <property role="4jta.1169125787135.4628067390765907488" value="collection of cells" />
+      <property role="asn4.1169194658468.1169194664001" value="CellModel_Collection" />
+      <property role="4jta.1071489090640.5404671619616246344" value="none" />
+      <property role="asn4.1133920641626.1193676396447" value="CellModel" />
+      <property role="4jta.1169125787135.5092175715804935370" value="collection" />
+      <reference role="4jta.1071489090640.1071489389519" target="1073389214265" resolveInfo="EditorCellModel" />
+      <node concept="4jta.1169127622168" id="4033442785759946545" role="4jta.1071489090640.1169129564478" info="ig">
+        <reference role="4jta.1169127622168.1169127628841" target="8770580973047386957" resolveInfo="Synchronizeable" />
+      </node>
+      <node concept="4jta.1071489288298" id="1073389446424" role="4jta.1169125787135.1071489727083" info="ig">
+        <property role="4jta.1071489288298.1071599937831" value="aggregation" />
+        <property role="4jta.1071489288298.1071599776563" value="childCellModel" />
+        <property role="4jta.1071489288298.1071599893252" value="0..n" />
+        <reference role="4jta.1071489288298.1071599976176" target="1073389214265" resolveInfo="EditorCellModel" />
+      </node>
+      <node concept="4jta.1071489288298" id="7723470090030138869" role="4jta.1169125787135.1071489727083" info="ig">
+        <property role="4jta.1071489288298.1071599937831" value="aggregation" />
+        <property role="4jta.1071489288298.1071599776563" value="foldedCellModel" />
+        <reference role="4jta.1071489288298.1071599976176" target="1073389214265" resolveInfo="EditorCellModel" />
+      </node>
+      <node concept="4jta.1071489288298" id="1106270802874" role="4jta.1169125787135.1071489727083" info="ig">
+        <property role="4jta.1071489288298.1071599937831" value="aggregation" />
+        <property role="4jta.1071489288298.1071599776563" value="cellLayout" />
+        <property role="4jta.1071489288298.1071599893252" value="0..1" />
+        <reference role="4jta.1071489288298.1071599976176" target="1106270491082" resolveInfo="CellLayout" />
+      </node>
+      <node concept="4jta.1071489288298" id="8709572687796959088" role="4jta.1169125787135.1071489727083" info="ig">
+        <property role="4jta.1071489288298.1071599937831" value="aggregation" />
+        <property role="4jta.1071489288298.1071599776563" value="usesFoldingCondition" />
+        <reference role="4jta.1071489288298.1071599976176" target="1142886221719" resolveInfo="QueryFunction_NodeCondition" />
+      </node>
+      <node concept="4jta.1071489288298" id="4242538589862653897" role="4jta.1169125787135.1071489727083" info="ig">
+        <property role="4jta.1071489288298.1071599937831" value="aggregation" />
+        <property role="4jta.1071489288298.1071599776563" value="addHints" />
+        <property role="4jta.1071489288298.1071599893252" value="0..1" />
+        <reference role="4jta.1071489288298.1071599976176" target="4653693564097968040" resolveInfo="ContextHintsSpecification" />
+      </node>
+      <node concept="4jta.1071489288298" id="4242538589862654489" role="4jta.1169125787135.1071489727083" info="ig">
+        <property role="4jta.1071489288298.1071599937831" value="aggregation" />
+        <property role="4jta.1071489288298.1071599776563" value="removeHints" />
+        <reference role="4jta.1071489288298.1071599976176" target="4653693564097968040" resolveInfo="ContextHintsSpecification" />
+      </node>
+      <node concept="4jta.1071489288299" id="1073389446425" role="4jta.1169125787135.1071489727084" info="ig">
+        <property role="asn4.1169194658468.1169194664001" value="vertical" />
+        <reference role="4jta.1071489288299.1082985295845" target="tpck.1082983657063" resolveInfo="boolean" />
+        <node concept="4jta.1224240836180" id="1239869892471" role="asn4.1133920641626.5169995583184591170" info="ig">
+          <property role="4jta.1224240836180.1225118933224" value="Use isVertical()" />
+        </node>
+      </node>
+      <node concept="4jta.1071489288299" id="1073389446426" role="4jta.1169125787135.1071489727084" info="ig">
+        <property role="asn4.1169194658468.1169194664001" value="gridLayout" />
+        <reference role="4jta.1071489288299.1082985295845" target="tpck.1082983657063" resolveInfo="boolean" />
+        <node concept="4jta.1224240836180" id="1239869894921" role="asn4.1133920641626.5169995583184591170" info="ig">
+          <property role="4jta.1224240836180.1225118933224" value="Use isVerticalGrid()" />
+        </node>
+      </node>
+      <node concept="4jta.1071489288299" id="1139416841293" role="4jta.1169125787135.1071489727084" info="ig">
+        <property role="asn4.1169194658468.1169194664001" value="usesBraces" />
+        <reference role="4jta.1071489288299.1082985295845" target="tpck.1082983657063" resolveInfo="boolean" />
+      </node>
+      <node concept="4jta.1071489288299" id="1160590353935" role="4jta.1169125787135.1071489727084" info="ig">
+        <property role="asn4.1169194658468.1169194664001" value="usesFolding" />
+        <reference role="4jta.1071489288299.1082985295845" target="tpck.1082983657063" resolveInfo="boolean" />
+      </node>
+    </node>
+    <node concept="4jta.1071489090640" id="1073389577006" info="ig">
+      <property role="4jta.1169125787135.4628067390765956802" value="false" />
+      <property role="4jta.1169125787135.4628067390765956807" value="false" />
+      <property role="4jta.1169125787135.4628067390765907488" value="text label" />
+      <property role="asn4.1169194658468.1169194664001" value="CellModel_Constant" />
+      <property role="4jta.1071489090640.5404671619616246344" value="none" />
+      <property role="asn4.1133920641626.1193676396447" value="CellModel" />
+      <property role="4jta.1169125787135.5092175715804935370" value="constant" />
+      <reference role="4jta.1071489090640.1071489389519" target="1079353555532" resolveInfo="CellModel_AbstractLabel" />
+      <node concept="4jta.1169127622168" id="4033442785759943145" role="4jta.1071489090640.1169129564478" info="ig">
+        <reference role="4jta.1169127622168.1169127628841" target="8770580973047386957" resolveInfo="Synchronizeable" />
+      </node>
+      <node concept="4jta.1071489288299" id="1073389577007" role="4jta.1169125787135.1071489727084" info="ig">
+        <property role="asn4.1169194658468.1169194664001" value="text" />
+        <reference role="4jta.1071489288299.1082985295845" target="tpck.1082983041843" resolveInfo="string" />
+      </node>
+      <node concept="4jta.1071489288299" id="1082639509531" role="4jta.1169125787135.1071489727084" info="ig">
+        <property role="asn4.1169194658468.1169194664001" value="nullText" />
+        <reference role="4jta.1071489288299.1082985295845" target="tpck.1082983041843" resolveInfo="string" />
+      </node>
+    </node>
+    <node concept="4jta.1071489090640" id="1073389658414" info="ig">
+      <property role="4jta.1169125787135.4628067390765956802" value="false" />
+      <property role="4jta.1169125787135.4628067390765956807" value="false" />
+      <property role="4jta.1169125787135.4628067390765907488" value="property" />
+      <property role="asn4.1169194658468.1169194664001" value="CellModel_Property" />
+      <property role="asn4.1133920641626.1193676396447" value="CellModel" />
+      <property role="4jta.1169125787135.5092175715804935370" value="{&lt;{propertyDeclaration}&gt;}" />
+      <reference role="4jta.1071489090640.1071489389519" target="1139848536355" resolveInfo="CellModel_WithRole" />
+      <node concept="4jta.1169127622168" id="4033442785759955240" role="4jta.1071489090640.1169129564478" info="ig">
+        <reference role="4jta.1169127622168.1169127628841" target="8770580973047386957" resolveInfo="Synchronizeable" />
+      </node>
+      <node concept="4jta.1071489288298" id="1073389964684" role="4jta.1169125787135.1071489727083" info="ig">
+        <property role="4jta.1071489288298.1071599776563" value="propertyDeclaration" />
+        <property role="4jta.1071489288298.1071599893252" value="1" />
+        <reference role="4jta.1071489288298.1071599976176" target="tpce.1071489288299" resolveInfo="PropertyDeclaration" />
+        <reference role="4jta.1071489288298.1071599698500" target="1140103550593" />
+      </node>
+    </node>
+    <node concept="4jta.1071489090640" id="1073389882823" info="ig">
+      <property role="4jta.1169125787135.4628067390765956802" value="false" />
+      <property role="4jta.1169125787135.4628067390765956807" value="false" />
+      <property role="4jta.1169125787135.4628067390765907488" value="single aggregation" />
+      <property role="asn4.1169194658468.1169194664001" value="CellModel_RefNode" />
+      <property role="asn4.1133920641626.1193676396447" value="CellModel" />
+      <property role="4jta.1169125787135.5092175715804935370" value="%&lt;{linkDeclaration}&gt;%" />
+      <reference role="4jta.1071489090640.1071489389519" target="1139848536355" resolveInfo="CellModel_WithRole" />
+      <node concept="4jta.1071489288298" id="5861024100072578575" role="4jta.1169125787135.1071489727083" info="ig">
+        <property role="4jta.1071489288298.1071599937831" value="aggregation" />
+        <property role="4jta.1071489288298.1071599776563" value="addHints" />
+        <property role="4jta.1071489288298.1071599893252" value="0..1" />
+        <reference role="4jta.1071489288298.1071599976176" target="4653693564097968040" resolveInfo="ContextHintsSpecification" />
+      </node>
+      <node concept="4jta.1071489288298" id="5861024100072578576" role="4jta.1169125787135.1071489727083" info="ig">
+        <property role="4jta.1071489288298.1071599937831" value="aggregation" />
+        <property role="4jta.1071489288298.1071599776563" value="removeHints" />
+        <reference role="4jta.1071489288298.1071599976176" target="4653693564097968040" resolveInfo="ContextHintsSpecification" />
+      </node>
+      <node concept="4jta.1071489288298" id="1073389882824" role="4jta.1169125787135.1071489727083" info="ig">
+        <property role="4jta.1071489288298.1071599776563" value="linkDeclaration" />
+        <property role="4jta.1071489288298.1071599893252" value="1" />
+        <reference role="4jta.1071489288298.1071599976176" target="tpce.1071489288298" resolveInfo="LinkDeclaration" />
+        <reference role="4jta.1071489288298.1071599698500" target="1140103550593" />
+      </node>
+    </node>
+    <node concept="4jta.1071489090640" id="1073390211982" info="ig">
+      <property role="4jta.1169125787135.4628067390765956802" value="false" />
+      <property role="4jta.1169125787135.4628067390765956807" value="false" />
+      <property role="4jta.1169125787135.4628067390765907488" value="multiple aggregation" />
+      <property role="asn4.1169194658468.1169194664001" value="CellModel_RefNodeList" />
+      <property role="asn4.1133920641626.1193676396447" value="CellModel" />
+      <property role="4jta.1169125787135.5092175715804935370" value="%&lt;{linkDeclaration}&gt;%" />
+      <reference role="4jta.1071489090640.1071489389519" target="1140524381322" resolveInfo="CellModel_ListWithRole" />
+      <node concept="4jta.1071489288299" id="1145360728033" role="4jta.1169125787135.1071489727084" info="ig">
+        <property role="asn4.1169194658468.1169194664001" value="reverse" />
+        <reference role="4jta.1071489288299.1082985295845" target="tpck.1082983657063" resolveInfo="boolean" />
+      </node>
+      <node concept="4jta.1071489288298" id="1073390211987" role="4jta.1169125787135.1071489727083" info="ig">
+        <property role="4jta.1071489288298.1071599776563" value="linkDeclaration" />
+        <property role="4jta.1071489288298.1071599893252" value="1" />
+        <reference role="4jta.1071489288298.1071599976176" target="tpce.1071489288298" resolveInfo="LinkDeclaration" />
+        <reference role="4jta.1071489288298.1071599698500" target="1140103550593" />
+      </node>
+      <node concept="4jta.1071489288298" id="1165347032372" role="4jta.1169125787135.1071489727083" info="ig">
+        <property role="4jta.1071489288298.1071599937831" value="aggregation" />
+        <property role="4jta.1071489288298.1071599776563" value="elementMenuDescriptor" />
+        <reference role="4jta.1071489288298.1071599976176" target="1164824717996" resolveInfo="CellMenuDescriptor" />
+      </node>
+      <node concept="4jta.1071489288298" id="1173177718857" role="4jta.1169125787135.1071489727083" info="ig">
+        <property role="4jta.1071489288298.1071599776563" value="elementActionMap" />
+        <reference role="4jta.1071489288298.1071599976176" target="1139535219966" resolveInfo="CellActionMapDeclaration" />
+      </node>
+      <node concept="4jta.1071489288298" id="1182233390675" role="4jta.1169125787135.1071489727083" info="ig">
+        <property role="4jta.1071489288298.1071599937831" value="aggregation" />
+        <property role="4jta.1071489288298.1071599776563" value="filter" />
+        <reference role="4jta.1071489288298.1071599976176" target="1182191800432" resolveInfo="QueryFunction_NodeListFilter" />
+      </node>
+      <node concept="4jta.1071489288298" id="7279578193766667846" role="4jta.1169125787135.1071489727083" info="ig">
+        <property role="4jta.1071489288298.1071599937831" value="aggregation" />
+        <property role="4jta.1071489288298.1071599776563" value="addHints" />
+        <property role="4jta.1071489288298.1071599893252" value="0..1" />
+        <reference role="4jta.1071489288298.1071599976176" target="4653693564097968040" resolveInfo="ContextHintsSpecification" />
+      </node>
+      <node concept="4jta.1071489288298" id="7279578193766667847" role="4jta.1169125787135.1071489727083" info="ig">
+        <property role="4jta.1071489288298.1071599937831" value="aggregation" />
+        <property role="4jta.1071489288298.1071599776563" value="removeHints" />
+        <reference role="4jta.1071489288298.1071599976176" target="4653693564097968040" resolveInfo="ContextHintsSpecification" />
+      </node>
+    </node>
+    <node concept="4jta.1071489090640" id="1074767920765" info="ig">
+      <property role="4jta.1169125787135.4628067390765956802" value="false" />
+      <property role="4jta.1169125787135.4628067390765956807" value="false" />
+      <property role="4jta.1169125787135.4628067390765907488" value="reference to accessor" />
+      <property role="asn4.1169194658468.1169194664001" value="CellModel_ModelAccess" />
+      <property role="asn4.1133920641626.1193676396447" value="CellModel" />
+      <property role="4jta.1169125787135.5092175715804935370" value="model access" />
+      <reference role="4jta.1071489090640.1071489389519" target="1079353555532" resolveInfo="CellModel_AbstractLabel" />
+      <node concept="4jta.1071489288298" id="1176718152741" role="4jta.1169125787135.1071489727083" info="ig">
+        <property role="4jta.1071489288298.1071599937831" value="aggregation" />
+        <property role="4jta.1071489288298.1071599776563" value="modelAcessor" />
+        <property role="4jta.1071489288298.1071599893252" value="1" />
+        <reference role="4jta.1071489288298.1071599976176" target="1176717996748" resolveInfo="ModelAccessor" />
+      </node>
+      <node concept="4jta.1071489288299" id="1082638248796" role="4jta.1169125787135.1071489727084" info="ig">
+        <property role="asn4.1169194658468.1169194664001" value="nullText" />
+        <reference role="4jta.1071489288299.1082985295845" target="tpck.1082983041843" resolveInfo="string" />
+      </node>
+    </node>
+    <node concept="4jta.1071489090640" id="1075375595203" info="ig">
+      <property role="4jta.1169125787135.4628067390765956802" value="false" />
+      <property role="4jta.1169125787135.4628067390765956807" value="false" />
+      <property role="4jta.1169125787135.4628067390765907488" value="red text label" />
+      <property role="asn4.1169194658468.1169194664001" value="CellModel_Error" />
+      <property role="asn4.1133920641626.1193676396447" value="CellModel" />
+      <property role="4jta.1169125787135.5092175715804935370" value="error" />
+      <reference role="4jta.1071489090640.1071489389519" target="1079353555532" resolveInfo="CellModel_AbstractLabel" />
+      <node concept="4jta.1071489288299" id="1075375595204" role="4jta.1169125787135.1071489727084" info="ig">
+        <property role="asn4.1169194658468.1169194664001" value="text" />
+        <reference role="4jta.1071489288299.1082985295845" target="tpck.1082983041843" resolveInfo="string" />
+      </node>
+    </node>
+    <node concept="4jta.1071489090640" id="1078308402140" info="ig">
+      <property role="4jta.1169125787135.4628067390765956802" value="false" />
+      <property role="4jta.1169125787135.4628067390765956807" value="false" />
+      <property role="4jta.1169125787135.4628067390765907488" value="reference to cell provider" />
+      <property role="asn4.1169194658468.1169194664001" value="CellModel_Custom" />
+      <property role="asn4.1133920641626.1193676396447" value="CellModel" />
+      <property role="4jta.1169125787135.5092175715804935370" value="custom" />
+      <reference role="4jta.1071489090640.1071489389519" target="1073389214265" resolveInfo="EditorCellModel" />
+      <node concept="4jta.1071489288298" id="1176795024817" role="4jta.1169125787135.1071489727083" info="ig">
+        <property role="4jta.1071489288298.1071599937831" value="aggregation" />
+        <property role="4jta.1071489288298.1071599776563" value="cellProvider" />
+        <property role="4jta.1071489288298.1071599893252" value="1" />
+        <reference role="4jta.1071489288298.1071599976176" target="1176749715029" resolveInfo="QueryFunction_CellProvider" />
+      </node>
+    </node>
+    <node concept="4jta.1071489090640" id="1078938745671" info="ig">
+      <property role="4jta.1169125787135.4628067390765956802" value="false" />
+      <property role="4jta.1071489090640.1096454100552" value="true" />
+      <property role="4jta.1169125787135.4628067390765956807" value="false" />
+      <property role="4jta.1071489090640.1160488491229" value="${language_descriptor}/icons/editorComponent.png" />
+      <property role="asn4.1169194658468.1169194664001" value="EditorComponentDeclaration" />
+      <property role="4jta.1169125787135.5092175715804935370" value="Editor Component" />
+      <reference role="4jta.1071489090640.1071489389519" target="1080736578640" resolveInfo="BaseEditorComponent" />
+      <node concept="4jta.1071489288298" id="7033942394258392116" role="4jta.1169125787135.1071489727083" info="ig">
+        <property role="4jta.1071489288298.1071599937831" value="aggregation" />
+        <property role="4jta.1071489288298.1071599776563" value="overridenEditorComponent" />
+        <reference role="4jta.1071489288298.1071599976176" target="7033942394256351208" resolveInfo="EditorComponentDeclarationReference" />
+      </node>
+      <node concept="4jta.1071489288298" id="7348800710862477686" role="4jta.1169125787135.1071489727083" info="ig">
+        <property role="4jta.1071489288298.1071599937831" value="aggregation" />
+        <property role="4jta.1071489288298.1071599776563" value="contextHints" />
+        <property role="4jta.1071489288298.1071599893252" value="0..n" />
+        <reference role="4jta.1071489288298.1071599976176" target="6822301196700715228" resolveInfo="ConceptEditorHintDeclarationReference" />
+      </node>
+      <node concept="4jta.1169127622168" id="1210369055138" role="4jta.1071489090640.1169129564478" info="ig">
+        <reference role="4jta.1169127622168.1169127628841" target="tpck.1169194658468" resolveInfo="INamedConcept" />
+      </node>
+      <node concept="4jta.1169127622168" id="7033942394262078020" role="4jta.1071489090640.1169129564478" info="ig">
+        <reference role="4jta.1169127622168.1169127628841" target="tpee.1212170275853" resolveInfo="IValidIdentifier" />
+      </node>
+      <node concept="4jta.1169127622168" id="5270353093116097894" role="4jta.1071489090640.1169129564478" info="ig">
+        <reference role="4jta.1169127622168.1169127628841" target="tpce.2621449412040133764" resolveInfo="IConceptAspect" />
+      </node>
+    </node>
+    <node concept="4jta.1071489090640" id="1078939183254" info="ig">
+      <property role="4jta.1169125787135.4628067390765956802" value="false" />
+      <property role="4jta.1169125787135.4628067390765956807" value="false" />
+      <property role="4jta.1169125787135.4628067390765907488" value="reference to editor component" />
+      <property role="asn4.1169194658468.1169194664001" value="CellModel_Component" />
+      <property role="asn4.1133920641626.1193676396447" value="CellModel" />
+      <property role="4jta.1169125787135.5092175715804935370" value="component" />
+      <reference role="4jta.1071489090640.1071489389519" target="1073389214265" resolveInfo="EditorCellModel" />
+      <node concept="4jta.1071489288298" id="1078939183255" role="4jta.1169125787135.1071489727083" info="ig">
+        <property role="4jta.1071489288298.1071599776563" value="editorComponent" />
+        <property role="4jta.1071489288298.1071599893252" value="1" />
+        <reference role="4jta.1071489288298.1071599976176" target="1078938745671" resolveInfo="EditorComponentDeclaration" />
+      </node>
+    </node>
+    <node concept="4jta.1071489090640" id="1079353555532" info="ig">
+      <property role="4jta.1169125787135.4628067390765956802" value="true" />
+      <property role="4jta.1169125787135.4628067390765956807" value="false" />
+      <property role="asn4.1169194658468.1169194664001" value="CellModel_AbstractLabel" />
+      <property role="asn4.1133920641626.1193676396447" value="CellModel" />
+      <reference role="4jta.1071489090640.1071489389519" target="1073389214265" resolveInfo="EditorCellModel" />
+      <node concept="4jta.1071489288299" id="1197893615481" role="4jta.1169125787135.1071489727084" info="ig">
+        <property role="asn4.1169194658468.1169194664001" value="defaultCaretPosition" />
+        <reference role="4jta.1071489288299.1082985295845" target="1197893505573" resolveInfo="_CaretPosition_Enum" />
+      </node>
+    </node>
+    <node concept="4jta.1071489090640" id="1080736578640" info="ig">
+      <property role="4jta.1169125787135.4628067390765956802" value="true" />
+      <property role="4jta.1169125787135.4628067390765956807" value="false" />
+      <property role="asn4.1169194658468.1169194664001" value="BaseEditorComponent" />
+      <reference role="4jta.1071489090640.1071489389519" target="1166049232041" resolveInfo="AbstractComponent" />
+      <node concept="4jta.1071489288298" id="1080736633877" role="4jta.1169125787135.1071489727083" info="ig">
+        <property role="4jta.1071489288298.1071599937831" value="aggregation" />
+        <property role="4jta.1071489288298.1071599776563" value="cellModel" />
+        <property role="4jta.1071489288298.1071599893252" value="1" />
+        <reference role="4jta.1071489288298.1071599976176" target="1073389214265" resolveInfo="EditorCellModel" />
+      </node>
+      <node concept="4jta.1169127622168" id="7348800710866295304" role="4jta.1071489090640.1169129564478" info="ig">
+        <reference role="4jta.1169127622168.1169127628841" target="tpck.3734116213129792499" resolveInfo="ScopeProvider" />
+      </node>
+      <node concept="4jta.1169127622168" id="6574908096408188181" role="4jta.1071489090640.1169129564478" info="ig">
+        <reference role="4jta.1169127622168.1169127628841" target="tpck.1319728274784973096" resolveInfo="InterfacePart" />
+      </node>
+    </node>
+    <node concept="4jta.1071489090640" id="1081293058843" info="ig">
+      <property role="4jta.1169125787135.4628067390765956802" value="false" />
+      <property role="4jta.1071489090640.1096454100552" value="true" />
+      <property role="4jta.1169125787135.4628067390765956807" value="false" />
+      <property role="4jta.1071489090640.1160488491229" value="${language_descriptor}/icons/keyMap.png" />
+      <property role="asn4.1169194658468.1169194664001" value="CellKeyMapDeclaration" />
+      <property role="asn4.1133920641626.1193676396447" value="CellKeyMap" />
+      <property role="4jta.1169125787135.5092175715804935370" value="Cell Keymap" />
+      <node concept="4jta.1169127622168" id="690365078554480293" role="4jta.1071489090640.1169129564478" info="ig">
+        <reference role="4jta.1169127622168.1169127628841" target="tpee.1212170275853" resolveInfo="IValidIdentifier" />
+      </node>
+      <node concept="4jta.1169127622168" id="5270353093116096533" role="4jta.1071489090640.1169129564478" info="ig">
+        <reference role="4jta.1169127622168.1169127628841" target="tpce.2621449412040133764" resolveInfo="IConceptAspect" />
+      </node>
+      <node concept="4jta.1169127622168" id="3596842757769574519" role="4jta.1071489090640.1169129564478" info="ig">
+        <reference role="4jta.1169127622168.1169127628841" target="tpck.1319728274784973096" resolveInfo="InterfacePart" />
+      </node>
+      <node concept="4jta.1071489288299" id="1149937560128" role="4jta.1169125787135.1071489727084" info="ig">
+        <property role="asn4.1169194658468.1169194664001" value="everyModel" />
+        <reference role="4jta.1071489288299.1082985295845" target="tpck.1082983657063" resolveInfo="boolean" />
+      </node>
+      <node concept="4jta.1071489288298" id="1139445935125" role="4jta.1169125787135.1071489727083" info="ig">
+        <property role="4jta.1071489288298.1071599776563" value="applicableConcept" />
+        <reference role="4jta.1071489288298.1071599976176" target="tpce.1169125787135" resolveInfo="AbstractConceptDeclaration" />
+      </node>
+      <node concept="4jta.1071489288298" id="1136930944870" role="4jta.1169125787135.1071489727083" info="ig">
+        <property role="4jta.1071489288298.1071599937831" value="aggregation" />
+        <property role="4jta.1071489288298.1071599776563" value="item" />
+        <property role="4jta.1071489288298.1071599893252" value="0..n" />
+        <reference role="4jta.1071489288298.1071599976176" target="1136916919141" resolveInfo="CellKeyMapItem" />
+      </node>
+    </node>
+    <node concept="4jta.1082978164219" id="1083928804390" info="ng">
+      <property role="asn4.1169194658468.1169194664001" value="_YesNoDefault_Enum" />
+      <reference role="4jta.1082978164219.1083241965437" target="1083928804393" resolveInfo="none" />
+      <reference role="4jta.1082978164219.1083171729157" target="tpck.1082983041843" resolveInfo="string" />
+      <node concept="4jta.1083171877298" id="1083928804391" role="4jta.1082978164219.1083172003582" info="ig">
+        <property role="4jta.1083171877298.1083923523171" value="true" />
+        <property role="4jta.1083171877298.1083923523172" value="yes" />
+      </node>
+      <node concept="4jta.1083171877298" id="1083928804392" role="4jta.1082978164219.1083172003582" info="ig">
+        <property role="4jta.1083171877298.1083923523171" value="false" />
+        <property role="4jta.1083171877298.1083923523172" value="no" />
+      </node>
+      <node concept="4jta.1083171877298" id="1083928804393" role="4jta.1082978164219.1083172003582" info="ig">
+        <property role="4jta.1083171877298.1083923523172" value="none" />
+      </node>
+    </node>
+    <node concept="4jta.1082978164219" id="1083952545109" info="ng">
+      <property role="asn4.1169194658468.1169194664001" value="_Colors_Enum" />
+      <reference role="4jta.1082978164219.1083241965437" target="1083952545110" resolveInfo="none" />
+      <reference role="4jta.1082978164219.1083171729157" target="tpck.1082983041843" resolveInfo="string" />
+      <node concept="4jta.1083171877298" id="1083952545110" role="4jta.1082978164219.1083172003582" info="ig">
+        <property role="4jta.1083171877298.1083923523172" value="none" />
+      </node>
+      <node concept="4jta.1083171877298" id="1083952545111" role="4jta.1082978164219.1083172003582" info="ig">
+        <property role="4jta.1083171877298.1083923523171" value="red" />
+        <property role="4jta.1083171877298.1083923523172" value="red" />
+      </node>
+      <node concept="4jta.1083171877298" id="1083952545112" role="4jta.1082978164219.1083172003582" info="ig">
+        <property role="4jta.1083171877298.1083923523171" value="pink" />
+        <property role="4jta.1083171877298.1083923523172" value="pink" />
+      </node>
+      <node concept="4jta.1083171877298" id="1083952545113" role="4jta.1082978164219.1083172003582" info="ig">
+        <property role="4jta.1083171877298.1083923523171" value="orange" />
+        <property role="4jta.1083171877298.1083923523172" value="orange" />
+      </node>
+      <node concept="4jta.1083171877298" id="1083952545114" role="4jta.1082978164219.1083172003582" info="ig">
+        <property role="4jta.1083171877298.1083923523171" value="yellow" />
+        <property role="4jta.1083171877298.1083923523172" value="yellow" />
+      </node>
+      <node concept="4jta.1083171877298" id="1083952545115" role="4jta.1082978164219.1083172003582" info="ig">
+        <property role="4jta.1083171877298.1083923523171" value="green" />
+        <property role="4jta.1083171877298.1083923523172" value="green" />
+      </node>
+      <node concept="4jta.1083171877298" id="1101213169706" role="4jta.1082978164219.1083172003582" info="ig">
+        <property role="4jta.1083171877298.1083923523171" value="DARK_GREEN" />
+        <property role="4jta.1083171877298.1083923523172" value="darkGreen" />
+      </node>
+      <node concept="4jta.1083171877298" id="1083952545116" role="4jta.1082978164219.1083172003582" info="ig">
+        <property role="4jta.1083171877298.1083923523171" value="magenta" />
+        <property role="4jta.1083171877298.1083923523172" value="magenta" />
+      </node>
+      <node concept="4jta.1083171877298" id="1101213185757" role="4jta.1082978164219.1083172003582" info="ig">
+        <property role="4jta.1083171877298.1083923523171" value="DARK_MAGENTA" />
+        <property role="4jta.1083171877298.1083923523172" value="darkMagenta" />
+      </node>
+      <node concept="4jta.1083171877298" id="1083952545117" role="4jta.1082978164219.1083172003582" info="ig">
+        <property role="4jta.1083171877298.1083923523171" value="cyan" />
+        <property role="4jta.1083171877298.1083923523172" value="cyan" />
+      </node>
+      <node concept="4jta.1083171877298" id="1083952545118" role="4jta.1082978164219.1083172003582" info="ig">
+        <property role="4jta.1083171877298.1083923523171" value="blue" />
+        <property role="4jta.1083171877298.1083923523172" value="blue" />
+      </node>
+      <node concept="4jta.1083171877298" id="1216404713420" role="4jta.1082978164219.1083172003582" info="ig">
+        <property role="4jta.1083171877298.1083923523171" value="LIGHT_BLUE" />
+        <property role="4jta.1083171877298.1083923523172" value="lightBlue" />
+      </node>
+      <node concept="4jta.1083171877298" id="1101209985304" role="4jta.1082978164219.1083172003582" info="ig">
+        <property role="4jta.1083171877298.1083923523171" value="DARK_BLUE" />
+        <property role="4jta.1083171877298.1083923523172" value="darkBlue" />
+      </node>
+      <node concept="4jta.1083171877298" id="1084208529765" role="4jta.1082978164219.1083172003582" info="ig">
+        <property role="4jta.1083171877298.1083923523171" value="gray" />
+        <property role="4jta.1083171877298.1083923523172" value="gray" />
+      </node>
+      <node concept="4jta.1083171877298" id="1084208529766" role="4jta.1082978164219.1083172003582" info="ig">
+        <property role="4jta.1083171877298.1083923523171" value="lightGray" />
+        <property role="4jta.1083171877298.1083923523172" value="lightGray" />
+      </node>
+      <node concept="4jta.1083171877298" id="1084208529767" role="4jta.1082978164219.1083172003582" info="ig">
+        <property role="4jta.1083171877298.1083923523171" value="darkGray" />
+        <property role="4jta.1083171877298.1083923523172" value="darkGray" />
+      </node>
+      <node concept="4jta.1083171877298" id="1214395400259" role="4jta.1082978164219.1083172003582" info="ig">
+        <property role="4jta.1083171877298.1083923523171" value="WHITE" />
+        <property role="4jta.1083171877298.1083923523172" value="white" />
+      </node>
+      <node concept="4jta.1083171877298" id="7151630269404055096" role="4jta.1082978164219.1083172003582" info="ig">
+        <property role="4jta.1083171877298.1083923523171" value="black" />
+        <property role="4jta.1083171877298.1083923523172" value="black" />
+      </node>
+    </node>
+    <node concept="4jta.1071489090640" id="1088013125922" info="ig">
+      <property role="4jta.1169125787135.4628067390765956802" value="false" />
+      <property role="4jta.1169125787135.4628067390765956807" value="false" />
+      <property role="4jta.1169125787135.4628067390765907488" value="reference" />
+      <property role="asn4.1169194658468.1169194664001" value="CellModel_RefCell" />
+      <property role="asn4.1133920641626.1193676396447" value="CellModel" />
+      <property role="4jta.1169125787135.5092175715804935370" value="%&lt;{linkDeclaration}&gt;%-&gt;" />
+      <reference role="4jta.1071489090640.1071489389519" target="1139848536355" resolveInfo="CellModel_WithRole" />
+      <node concept="4jta.1071489288298" id="1088013239202" role="4jta.1169125787135.1071489727083" info="ig">
+        <property role="4jta.1071489288298.1071599776563" value="linkDeclaration" />
+        <property role="4jta.1071489288298.1071599893252" value="1" />
+        <reference role="4jta.1071489288298.1071599976176" target="tpce.1071489288298" resolveInfo="LinkDeclaration" />
+        <reference role="4jta.1071489288298.1071599698500" target="1140103550593" />
+      </node>
+      <node concept="4jta.1071489288298" id="1088186146602" role="4jta.1169125787135.1071489727083" info="ig">
+        <property role="4jta.1071489288298.1071599937831" value="aggregation" />
+        <property role="4jta.1071489288298.1071599776563" value="editorComponent" />
+        <property role="4jta.1071489288298.1071599893252" value="1" />
+        <reference role="4jta.1071489288298.1071599976176" target="1088185857835" resolveInfo="InlineEditorComponent" />
+      </node>
+    </node>
+    <node concept="4jta.1071489090640" id="1088185857835" info="ig">
+      <property role="4jta.1169125787135.4628067390765956802" value="false" />
+      <property role="4jta.1169125787135.4628067390765956807" value="false" />
+      <property role="4jta.1169125787135.4628067390765907488" value="in-line editor component" />
+      <property role="asn4.1169194658468.1169194664001" value="InlineEditorComponent" />
+      <reference role="4jta.1071489090640.1071489389519" target="1080736578640" resolveInfo="BaseEditorComponent" />
+    </node>
+    <node concept="4jta.1071489090640" id="1088612959204" info="ig">
+      <property role="4jta.1169125787135.4628067390765956802" value="false" />
+      <property role="4jta.1169125787135.4628067390765956807" value="false" />
+      <property role="4jta.1169125787135.4628067390765907488" value="cell alternation" />
+      <property role="asn4.1169194658468.1169194664001" value="CellModel_Alternation" />
+      <property role="asn4.1133920641626.1193676396447" value="CellModel" />
+      <property role="4jta.1169125787135.5092175715804935370" value="alternation" />
+      <reference role="4jta.1071489090640.1071489389519" target="1073389214265" resolveInfo="EditorCellModel" />
+      <node concept="4jta.1071489288299" id="1088613081987" role="4jta.1169125787135.1071489727084" info="ig">
+        <property role="asn4.1169194658468.1169194664001" value="vertical" />
+        <reference role="4jta.1071489288299.1082985295845" target="tpck.1082983657063" resolveInfo="boolean" />
+      </node>
+      <node concept="4jta.1071489288298" id="1145918517974" role="4jta.1169125787135.1071489727083" info="ig">
+        <property role="4jta.1071489288298.1071599937831" value="aggregation" />
+        <property role="4jta.1071489288298.1071599776563" value="alternationCondition" />
+        <property role="4jta.1071489288298.1071599893252" value="1" />
+        <reference role="4jta.1071489288298.1071599976176" target="1142886221719" resolveInfo="QueryFunction_NodeCondition" />
+      </node>
+      <node concept="4jta.1071489288298" id="1088612958265" role="4jta.1169125787135.1071489727083" info="ig">
+        <property role="4jta.1071489288298.1071599937831" value="aggregation" />
+        <property role="4jta.1071489288298.1071599776563" value="ifTrueCellModel" />
+        <property role="4jta.1071489288298.1071599893252" value="1" />
+        <reference role="4jta.1071489288298.1071599976176" target="1073389214265" resolveInfo="EditorCellModel" />
+      </node>
+      <node concept="4jta.1071489288298" id="1088612973955" role="4jta.1169125787135.1071489727083" info="ig">
+        <property role="4jta.1071489288298.1071599937831" value="aggregation" />
+        <property role="4jta.1071489288298.1071599776563" value="ifFalseCellModel" />
+        <property role="4jta.1071489288298.1071599893252" value="1" />
+        <reference role="4jta.1071489288298.1071599976176" target="1073389214265" resolveInfo="EditorCellModel" />
+      </node>
+    </node>
+    <node concept="4jta.1082978164219" id="1101211480448" info="ng">
+      <property role="asn4.1169194658468.1169194664001" value="_FontStyle_Enum" />
+      <reference role="4jta.1082978164219.1083171729157" target="tpck.1082983041843" resolveInfo="string" />
+      <reference role="4jta.1082978164219.1083241965437" target="1134577855137" resolveInfo="plain" />
+      <node concept="4jta.1083171877298" id="1101211523070" role="4jta.1082978164219.1083172003582" info="ig">
+        <property role="4jta.1083171877298.1083923523171" value="BOLD" />
+        <property role="4jta.1083171877298.1083923523172" value="bold" />
+      </node>
+      <node concept="4jta.1083171877298" id="1101211542532" role="4jta.1082978164219.1083172003582" info="ig">
+        <property role="4jta.1083171877298.1083923523171" value="ITALIC" />
+        <property role="4jta.1083171877298.1083923523172" value="italic" />
+      </node>
+      <node concept="4jta.1083171877298" id="1101213960346" role="4jta.1082978164219.1083172003582" info="ig">
+        <property role="4jta.1083171877298.1083923523171" value="BOLD_ITALIC" />
+        <property role="4jta.1083171877298.1083923523172" value="boldItalic" />
+      </node>
+      <node concept="4jta.1083171877298" id="1134577855137" role="4jta.1082978164219.1083172003582" info="ig">
+        <property role="4jta.1083171877298.1083923523171" value="PLAIN" />
+        <property role="4jta.1083171877298.1083923523172" value="plain" />
+      </node>
+      <node concept="4jta.1083171877298" id="1220973684614" role="4jta.1082978164219.1083172003582" info="ig">
+        <property role="4jta.1083171877298.1083923523171" value="QUERY" />
+        <property role="4jta.1083171877298.1083923523172" value="query" />
+      </node>
+    </node>
+    <node concept="4jta.1071489090640" id="1103016434866" info="ig">
+      <property role="4jta.1169125787135.4628067390765956802" value="false" />
+      <property role="4jta.1169125787135.4628067390765956807" value="false" />
+      <property role="asn4.1169194658468.1169194664001" value="CellModel_JComponent" />
+      <property role="asn4.1133920641626.1193676396447" value="CellModel" />
+      <property role="4jta.1169125787135.5092175715804935370" value="swing component" />
+      <reference role="4jta.1071489090640.1071489389519" target="1073389214265" resolveInfo="EditorCellModel" />
+      <node concept="4jta.1071489288298" id="1176475119347" role="4jta.1169125787135.1071489727083" info="ig">
+        <property role="4jta.1071489288298.1071599937831" value="aggregation" />
+        <property role="4jta.1071489288298.1071599776563" value="componentProvider" />
+        <property role="4jta.1071489288298.1071599893252" value="1" />
+        <reference role="4jta.1071489288298.1071599976176" target="1176474535556" resolveInfo="QueryFunction_JComponent" />
+      </node>
+    </node>
+    <node concept="4jta.1071489090640" id="1106270491082" info="ig">
+      <property role="4jta.1169125787135.4628067390765956802" value="true" />
+      <property role="4jta.1169125787135.4628067390765956807" value="false" />
+      <property role="asn4.1169194658468.1169194664001" value="CellLayout" />
+      <property role="4jta.1071489090640.5404671619616246344" value="none" />
+      <property role="asn4.1133920641626.1193676396447" value="CellLayout" />
+    </node>
+    <node concept="4jta.1071489090640" id="1106270549637" info="ig">
+      <property role="4jta.1169125787135.4628067390765956802" value="false" />
+      <property role="4jta.1169125787135.4628067390765956807" value="false" />
+      <property role="asn4.1169194658468.1169194664001" value="CellLayout_Horizontal" />
+      <property role="4jta.1071489090640.5404671619616246344" value="none" />
+      <property role="asn4.1133920641626.1193676396447" value="CellLayout" />
+      <property role="4jta.1169125787135.5092175715804935370" value="horizontal" />
+      <reference role="4jta.1071489090640.1071489389519" target="1106270491082" resolveInfo="CellLayout" />
+    </node>
+    <node concept="4jta.1071489090640" id="1106270571710" info="ig">
+      <property role="4jta.1169125787135.4628067390765956802" value="false" />
+      <property role="4jta.1169125787135.4628067390765956807" value="false" />
+      <property role="asn4.1169194658468.1169194664001" value="CellLayout_Vertical" />
+      <property role="4jta.1071489090640.5404671619616246344" value="none" />
+      <property role="asn4.1133920641626.1193676396447" value="CellLayout" />
+      <property role="4jta.1169125787135.5092175715804935370" value="vertical" />
+      <reference role="4jta.1071489090640.1071489389519" target="1106270491082" resolveInfo="CellLayout" />
+    </node>
+    <node concept="4jta.1071489090640" id="1106270637846" info="ig">
+      <property role="4jta.1169125787135.4628067390765956802" value="false" />
+      <property role="4jta.1169125787135.4628067390765956807" value="false" />
+      <property role="asn4.1169194658468.1169194664001" value="CellLayout_Flow" />
+      <property role="4jta.1071489090640.5404671619616246344" value="none" />
+      <property role="asn4.1133920641626.1193676396447" value="CellLayout" />
+      <property role="4jta.1169125787135.5092175715804935370" value="flow" />
+      <reference role="4jta.1071489090640.1071489389519" target="1106270491082" resolveInfo="CellLayout" />
+    </node>
+    <node concept="4jta.1082978164219" id="1130847686886" info="ng">
+      <property role="asn4.1169194658468.1169194664001" value="UnderlineStyle" />
+      <reference role="4jta.1082978164219.1083171729157" target="tpck.1082983657062" resolveInfo="integer" />
+      <reference role="4jta.1082978164219.1083241965437" target="1130847686918" resolveInfo="as_is" />
+      <node concept="4jta.1083171877298" id="1130847686918" role="4jta.1082978164219.1083172003582" info="ig">
+        <property role="4jta.1083171877298.1083923523171" value="0" />
+        <property role="4jta.1083171877298.1083923523172" value="as_is" />
+      </node>
+      <node concept="4jta.1083171877298" id="1130847816499" role="4jta.1082978164219.1083172003582" info="ig">
+        <property role="4jta.1083171877298.1083923523171" value="1" />
+        <property role="4jta.1083171877298.1083923523172" value="not_underlined" />
+      </node>
+      <node concept="4jta.1083171877298" id="1130847833453" role="4jta.1082978164219.1083172003582" info="ig">
+        <property role="4jta.1083171877298.1083923523171" value="2" />
+        <property role="4jta.1083171877298.1083923523172" value="underlined" />
+      </node>
+    </node>
+    <node concept="4jta.1082978164219" id="1130926557197" info="ng">
+      <property role="asn4.1169194658468.1169194664001" value="FocusPolicy" />
+      <reference role="4jta.1082978164219.1083171729157" target="tpck.1082983657062" resolveInfo="integer" />
+      <reference role="4jta.1082978164219.1083241965437" target="1130926557292" resolveInfo="noAttraction" />
+      <node concept="4jta.1083171877298" id="1130926557292" role="4jta.1082978164219.1083172003582" info="ig">
+        <property role="4jta.1083171877298.1083923523171" value="0" />
+        <property role="4jta.1083171877298.1083923523172" value="noAttraction" />
+      </node>
+      <node concept="4jta.1083171877298" id="1130926591919" role="4jta.1082978164219.1083172003582" info="ig">
+        <property role="4jta.1083171877298.1083923523171" value="1" />
+        <property role="4jta.1083171877298.1083923523172" value="attractsFocus" />
+      </node>
+      <node concept="4jta.1083171877298" id="1130926603060" role="4jta.1082978164219.1083172003582" info="ig">
+        <property role="4jta.1083171877298.1083923523171" value="2" />
+        <property role="4jta.1083171877298.1083923523172" value="firstEditableCell" />
+      </node>
+      <node concept="4jta.1083171877298" id="1227082414196" role="4jta.1082978164219.1083172003582" info="ig">
+        <property role="4jta.1083171877298.1083923523171" value="3" />
+        <property role="4jta.1083171877298.1083923523172" value="attractsRecursively" />
+      </node>
+    </node>
+    <node concept="4jta.1071489090640" id="1134379236839" info="ig">
+      <property role="4jta.1169125787135.4628067390765956802" value="false" />
+      <property role="4jta.1169125787135.4628067390765956807" value="false" />
+      <property role="4jta.1169125787135.4628067390765907488" value="cell for attributed property" />
+      <property role="asn4.1169194658468.1169194664001" value="CellModel_AttributedPropertyCell" />
+      <property role="asn4.1133920641626.1193676396447" value="CellModel" />
+      <property role="4jta.1169125787135.5092175715804935370" value="attributed property" />
+      <reference role="4jta.1071489090640.1071489389519" target="1073389214265" resolveInfo="EditorCellModel" />
+    </node>
+    <node concept="4jta.1071489090640" id="1136564507907" info="ig">
+      <property role="4jta.1169125787135.4628067390765956802" value="false" />
+      <property role="4jta.1169125787135.4628067390765956807" value="false" />
+      <property role="4jta.1169125787135.4628067390765907488" value="cell for attributed link" />
+      <property role="asn4.1169194658468.1169194664001" value="CellModel_AttributedLinkCell" />
+      <property role="asn4.1133920641626.1193676396447" value="CellModel" />
+      <property role="4jta.1169125787135.5092175715804935370" value="attributed link" />
+      <reference role="4jta.1071489090640.1071489389519" target="1073389214265" resolveInfo="EditorCellModel" />
+    </node>
+    <node concept="4jta.1071489090640" id="1136916919141" info="ig">
+      <property role="asn4.1169194658468.1169194664001" value="CellKeyMapItem" />
+      <property role="asn4.1133920641626.1193676396447" value="CellKeyMap" />
+      <node concept="4jta.1071489288298" id="1136916998332" role="4jta.1169125787135.1071489727083" info="ig">
+        <property role="4jta.1071489288298.1071599937831" value="aggregation" />
+        <property role="4jta.1071489288298.1071599776563" value="keystroke" />
+        <property role="4jta.1071489288298.1071599893252" value="1..n" />
+        <reference role="4jta.1071489288298.1071599976176" target="1136916976737" resolveInfo="CellKeyMapKeystroke" />
+      </node>
+      <node concept="4jta.1071489288298" id="1136917325338" role="4jta.1169125787135.1071489727083" info="ig">
+        <property role="4jta.1071489288298.1071599937831" value="aggregation" />
+        <property role="4jta.1071489288298.1071599776563" value="isApplicableFunction" />
+        <property role="4jta.1071489288298.1071599893252" value="0..1" />
+        <reference role="4jta.1071489288298.1071599976176" target="1136917249679" resolveInfo="CellKeyMap_IsApplicableFunction" />
+      </node>
+      <node concept="4jta.1071489288298" id="1136920925604" role="4jta.1169125787135.1071489727083" info="ig">
+        <property role="4jta.1071489288298.1071599937831" value="aggregation" />
+        <property role="4jta.1071489288298.1071599776563" value="executeFunction" />
+        <property role="4jta.1071489288298.1071599893252" value="1" />
+        <reference role="4jta.1071489288298.1071599976176" target="1136917288805" resolveInfo="CellKeyMap_ExecuteFunction" />
+      </node>
+      <node concept="4jta.1071489288299" id="1136916941877" role="4jta.1169125787135.1071489727084" info="ig">
+        <property role="asn4.1169194658468.1169194664001" value="description" />
+        <reference role="4jta.1071489288299.1082985295845" target="tpck.1082983041843" resolveInfo="string" />
+      </node>
+      <node concept="4jta.1071489288299" id="1141091278922" role="4jta.1169125787135.1071489727084" info="ig">
+        <property role="asn4.1169194658468.1169194664001" value="caretPolicy" />
+        <reference role="4jta.1071489288299.1082985295845" target="1141091053936" resolveInfo="CellKeyMapCaretPolicy" />
+      </node>
+      <node concept="4jta.1071489288299" id="1163507208434" role="4jta.1169125787135.1071489727084" info="ig">
+        <property role="asn4.1169194658468.1169194664001" value="showInPopup" />
+        <reference role="4jta.1071489288299.1082985295845" target="tpck.1082983657063" resolveInfo="boolean" />
+      </node>
+      <node concept="4jta.1071489288299" id="1184322083615" role="4jta.1169125787135.1071489727084" info="ig">
+        <property role="asn4.1169194658468.1169194664001" value="menuAlwaysShown" />
+        <reference role="4jta.1071489288299.1082985295845" target="tpck.1082983657063" resolveInfo="boolean" />
+      </node>
+      <node concept="4jta.1169127622168" id="3596842757769574512" role="4jta.1071489090640.1169129564478" info="ig">
+        <reference role="4jta.1169127622168.1169127628841" target="tpck.1319728274783077719" resolveInfo="ImplementationPart" />
+      </node>
+    </node>
+    <node concept="4jta.1071489090640" id="1136916976737" info="ig">
+      <property role="asn4.1169194658468.1169194664001" value="CellKeyMapKeystroke" />
+      <property role="asn4.1133920641626.1193676396447" value="CellKeyMap" />
+      <reference role="4jta.1071489090640.1071489389519" target="tpck.1133920641626" resolveInfo="BaseConcept" />
+      <node concept="4jta.1071489288299" id="1136923970223" role="4jta.1169125787135.1071489727084" info="ig">
+        <property role="asn4.1169194658468.1169194664001" value="modifiers" />
+        <reference role="4jta.1071489288299.1082985295845" target="tpck.1082983041843" resolveInfo="string" />
+      </node>
+      <node concept="4jta.1071489288299" id="1136923970224" role="4jta.1169125787135.1071489727084" info="ig">
+        <property role="asn4.1169194658468.1169194664001" value="keycode" />
+        <reference role="4jta.1071489288299.1082985295845" target="tpck.1082983041843" resolveInfo="string" />
+      </node>
+    </node>
+    <node concept="4jta.1071489090640" id="1136917155755" info="ig">
+      <property role="4jta.1169125787135.4628067390765956802" value="true" />
+      <property role="4jta.1169125787135.4628067390765956807" value="false" />
+      <property role="asn4.1169194658468.1169194664001" value="CellKeyMap_AbstractFunction" />
+      <property role="4jta.1071489090640.5404671619616246344" value="none" />
+      <property role="asn4.1133920641626.1193676396447" value="CellKeyMap" />
+      <reference role="4jta.1071489090640.1071489389519" target="tpee.1137021947720" resolveInfo="ConceptFunction" />
+    </node>
+    <node concept="4jta.1071489090640" id="1136917249679" info="ig">
+      <property role="4jta.1169125787135.4628067390765956802" value="false" />
+      <property role="4jta.1169125787135.4628067390765956807" value="false" />
+      <property role="asn4.1169194658468.1169194664001" value="CellKeyMap_IsApplicableFunction" />
+      <property role="4jta.1071489090640.5404671619616246344" value="none" />
+      <property role="asn4.1133920641626.1193676396447" value="CellKeyMap" />
+      <property role="4jta.1169125787135.5092175715804935370" value="is applicable block" />
+      <reference role="4jta.1071489090640.1071489389519" target="1136917155755" resolveInfo="CellKeyMap_AbstractFunction" />
+    </node>
+    <node concept="4jta.1071489090640" id="1136917288805" info="ig">
+      <property role="4jta.1169125787135.4628067390765956802" value="false" />
+      <property role="4jta.1169125787135.4628067390765956807" value="false" />
+      <property role="asn4.1169194658468.1169194664001" value="CellKeyMap_ExecuteFunction" />
+      <property role="4jta.1071489090640.5404671619616246344" value="none" />
+      <property role="asn4.1133920641626.1193676396447" value="CellKeyMap" />
+      <property role="4jta.1169125787135.5092175715804935370" value="execute block" />
+      <reference role="4jta.1071489090640.1071489389519" target="1136917155755" resolveInfo="CellKeyMap_AbstractFunction" />
+    </node>
+    <node concept="4jta.1082978164219" id="1138197387103" info="ng">
+      <property role="asn4.1169194658468.1169194664001" value="_Layout_Constraints_Enum" />
+      <reference role="4jta.1082978164219.1083171729157" target="tpck.1082983041843" resolveInfo="string" />
+      <reference role="4jta.1082978164219.1083241965437" target="1138197631095" resolveInfo="none" />
+      <node concept="4jta.1083171877298" id="1138197387339" role="4jta.1082978164219.1083172003582" info="ig">
+        <property role="4jta.1083171877298.1083923523171" value="punctuation" />
+        <property role="4jta.1083171877298.1083923523172" value="punctuation" />
+      </node>
+      <node concept="4jta.1083171877298" id="1138197619454" role="4jta.1082978164219.1083172003582" info="ig">
+        <property role="4jta.1083171877298.1083923523171" value="noflow" />
+        <property role="4jta.1083171877298.1083923523172" value="noflow" />
+      </node>
+      <node concept="4jta.1083171877298" id="1138197631095" role="4jta.1082978164219.1083172003582" info="ig">
+        <property role="4jta.1083171877298.1083923523172" value="none" />
+      </node>
+    </node>
+    <node concept="4jta.1071489090640" id="1139535219966" info="ig">
+      <property role="4jta.1169125787135.4628067390765956802" value="false" />
+      <property role="4jta.1071489090640.1096454100552" value="true" />
+      <property role="4jta.1169125787135.4628067390765956807" value="false" />
+      <property role="4jta.1071489090640.1160488491229" value="${language_descriptor}/icons/actionMap.png" />
+      <property role="asn4.1169194658468.1169194664001" value="CellActionMapDeclaration" />
+      <property role="4jta.1169125787135.5092175715804935370" value="Cell Action Map" />
+      <node concept="4jta.1169127622168" id="690365078554551278" role="4jta.1071489090640.1169129564478" info="ig">
+        <reference role="4jta.1169127622168.1169127628841" target="tpee.1212170275853" resolveInfo="IValidIdentifier" />
+      </node>
+      <node concept="4jta.1169127622168" id="5270353093116090437" role="4jta.1071489090640.1169129564478" info="ig">
+        <reference role="4jta.1169127622168.1169127628841" target="tpce.2621449412040133764" resolveInfo="IConceptAspect" />
+      </node>
+      <node concept="4jta.1169127622168" id="3130793210636640075" role="4jta.1071489090640.1169129564478" info="ig">
+        <reference role="4jta.1169127622168.1169127628841" target="tpck.1319728274784973096" resolveInfo="InterfacePart" />
+      </node>
+      <node concept="4jta.1071489288298" id="1139535219968" role="4jta.1169125787135.1071489727083" info="ig">
+        <property role="4jta.1071489288298.1071599776563" value="applicableConcept" />
+        <reference role="4jta.1071489288298.1071599976176" target="tpce.1169125787135" resolveInfo="AbstractConceptDeclaration" />
+      </node>
+      <node concept="4jta.1071489288298" id="1139535219969" role="4jta.1169125787135.1071489727083" info="ig">
+        <property role="4jta.1071489288298.1071599937831" value="aggregation" />
+        <property role="4jta.1071489288298.1071599776563" value="item" />
+        <property role="4jta.1071489288298.1071599893252" value="0..n" />
+        <reference role="4jta.1071489288298.1071599976176" target="1139535280617" resolveInfo="CellActionMapItem" />
+      </node>
+    </node>
+    <node concept="4jta.1071489090640" id="1139535280617" info="ig">
+      <property role="asn4.1169194658468.1169194664001" value="CellActionMapItem" />
+      <reference role="4jta.1071489090640.1071489389519" target="tpck.1133920641626" resolveInfo="BaseConcept" />
+      <node concept="4jta.1071489288299" id="1139537298254" role="4jta.1169125787135.1071489727084" info="ig">
+        <property role="asn4.1169194658468.1169194664001" value="description" />
+        <reference role="4jta.1071489288299.1082985295845" target="tpck.1082983041843" resolveInfo="string" />
+      </node>
+      <node concept="4jta.1071489288299" id="1139535298778" role="4jta.1169125787135.1071489727084" info="ig">
+        <property role="asn4.1169194658468.1169194664001" value="actionId" />
+        <reference role="4jta.1071489288299.1082985295845" target="1139535328871" resolveInfo="CellActionId" />
+      </node>
+      <node concept="4jta.1071489288298" id="1139535280620" role="4jta.1169125787135.1071489727083" info="ig">
+        <property role="4jta.1071489288298.1071599937831" value="aggregation" />
+        <property role="4jta.1071489288298.1071599776563" value="executeFunction" />
+        <property role="4jta.1071489288298.1071599893252" value="1" />
+        <reference role="4jta.1071489288298.1071599976176" target="1139535439104" resolveInfo="CellActionMap_ExecuteFunction" />
+      </node>
+      <node concept="4jta.1169127622168" id="1262430001741642214" role="4jta.1071489090640.1169129564478" info="ig">
+        <reference role="4jta.1169127622168.1169127628841" target="tpck.1835621062190663819" resolveInfo="IDontSubstituteByDefault" />
+      </node>
+      <node concept="4jta.1169127622168" id="1167929589872169213" role="4jta.1071489090640.1169129564478" info="ig">
+        <reference role="4jta.1169127622168.1169127628841" target="tpck.1319728274783077719" resolveInfo="ImplementationPart" />
+      </node>
+    </node>
+    <node concept="4jta.1082978164219" id="1139535328871" info="ng">
+      <property role="asn4.1169194658468.1169194664001" value="CellActionId" />
+      <reference role="4jta.1082978164219.1083171729157" target="tpck.1082983041843" resolveInfo="string" />
+      <reference role="4jta.1082978164219.1083241965437" target="1139535329028" />
+      <node concept="4jta.1083171877298" id="1139535329028" role="4jta.1082978164219.1083172003582" info="ig">
+        <property role="4jta.1083171877298.1083923523171" value="right_transform_action_id" />
+        <property role="4jta.1083171877298.1083923523172" value="RIGHT_TRANSFORM" />
+      </node>
+      <node concept="4jta.1083171877298" id="1139535387060" role="4jta.1082978164219.1083172003582" info="ig">
+        <property role="4jta.1083171877298.1083923523171" value="delete_action_id" />
+        <property role="4jta.1083171877298.1083923523172" value="DELETE" />
+      </node>
+      <node concept="4jta.1083171877298" id="1222746468862079483" role="4jta.1082978164219.1083172003582" info="ig">
+        <property role="4jta.1083171877298.1083923523171" value="insert_action_id" />
+        <property role="4jta.1083171877298.1083923523172" value="INSERT" />
+      </node>
+      <node concept="4jta.1083171877298" id="1222746468862079484" role="4jta.1082978164219.1083172003582" info="ig">
+        <property role="4jta.1083171877298.1083923523171" value="insert_before_action_id" />
+        <property role="4jta.1083171877298.1083923523172" value="INSERT_BEFORE" />
+      </node>
+      <node concept="4jta.1083171877298" id="9025760234657675082" role="4jta.1082978164219.1083172003582" info="ig">
+        <property role="4jta.1083171877298.1083923523171" value="backspace_action_id" />
+        <property role="4jta.1083171877298.1083923523172" value="BACKSPACE" />
+      </node>
+      <node concept="4jta.1083171877298" id="9025760234657707152" role="4jta.1082978164219.1083172003582" info="ig">
+        <property role="4jta.1083171877298.1083923523171" value="delete_to_word_end_action_id" />
+        <property role="4jta.1083171877298.1083923523172" value="DELETE_TO_WORD_END" />
+      </node>
+      <node concept="4jta.1083171877298" id="9025760234657707153" role="4jta.1082978164219.1083172003582" info="ig">
+        <property role="4jta.1083171877298.1083923523171" value="copy_action_id" />
+        <property role="4jta.1083171877298.1083923523172" value="COPY" />
+      </node>
+      <node concept="4jta.1083171877298" id="9025760234657707154" role="4jta.1082978164219.1083172003582" info="ig">
+        <property role="4jta.1083171877298.1083923523171" value="cut_action_id" />
+        <property role="4jta.1083171877298.1083923523172" value="CUT" />
+      </node>
+      <node concept="4jta.1083171877298" id="9025760234657707155" role="4jta.1082978164219.1083172003582" info="ig">
+        <property role="4jta.1083171877298.1083923523171" value="paste_action_id" />
+        <property role="4jta.1083171877298.1083923523172" value="PASTE" />
+      </node>
+      <node concept="4jta.1083171877298" id="9025760234657707156" role="4jta.1082978164219.1083172003582" info="ig">
+        <property role="4jta.1083171877298.1083923523171" value="paste_before_action_id" />
+        <property role="4jta.1083171877298.1083923523172" value="PASTE_BEFORE" />
+      </node>
+      <node concept="4jta.1083171877298" id="9025760234657707157" role="4jta.1082978164219.1083172003582" info="ig">
+        <property role="4jta.1083171877298.1083923523171" value="paste_after_action_id" />
+        <property role="4jta.1083171877298.1083923523172" value="PASTE_AFTER" />
+      </node>
+      <node concept="4jta.1083171877298" id="9025760234657707158" role="4jta.1082978164219.1083172003582" info="ig">
+        <property role="4jta.1083171877298.1083923523171" value="left_action_id" />
+        <property role="4jta.1083171877298.1083923523172" value="LEFT" />
+      </node>
+      <node concept="4jta.1083171877298" id="9025760234657707159" role="4jta.1082978164219.1083172003582" info="ig">
+        <property role="4jta.1083171877298.1083923523171" value="right_action_id" />
+        <property role="4jta.1083171877298.1083923523172" value="RIGHT" />
+      </node>
+      <node concept="4jta.1083171877298" id="9025760234657707160" role="4jta.1082978164219.1083172003582" info="ig">
+        <property role="4jta.1083171877298.1083923523171" value="up_action_id" />
+        <property role="4jta.1083171877298.1083923523172" value="UP" />
+      </node>
+      <node concept="4jta.1083171877298" id="9025760234657707161" role="4jta.1082978164219.1083172003582" info="ig">
+        <property role="4jta.1083171877298.1083923523171" value="down_action_id" />
+        <property role="4jta.1083171877298.1083923523172" value="DOWN" />
+      </node>
+      <node concept="4jta.1083171877298" id="9025760234657707162" role="4jta.1082978164219.1083172003582" info="ig">
+        <property role="4jta.1083171877298.1083923523171" value="next_action_id" />
+        <property role="4jta.1083171877298.1083923523172" value="NEXT" />
+      </node>
+      <node concept="4jta.1083171877298" id="9025760234657707163" role="4jta.1082978164219.1083172003582" info="ig">
+        <property role="4jta.1083171877298.1083923523171" value="prev_action_id" />
+        <property role="4jta.1083171877298.1083923523172" value="PREV" />
+      </node>
+      <node concept="4jta.1083171877298" id="9025760234657707164" role="4jta.1082978164219.1083172003582" info="ig">
+        <property role="4jta.1083171877298.1083923523171" value="home_action_id" />
+        <property role="4jta.1083171877298.1083923523172" value="HOME" />
+      </node>
+      <node concept="4jta.1083171877298" id="9025760234657707165" role="4jta.1082978164219.1083172003582" info="ig">
+        <property role="4jta.1083171877298.1083923523171" value="end_action_id" />
+        <property role="4jta.1083171877298.1083923523172" value="END" />
+      </node>
+      <node concept="4jta.1083171877298" id="9025760234657707166" role="4jta.1082978164219.1083172003582" info="ig">
+        <property role="4jta.1083171877298.1083923523171" value="page_up_action_id" />
+        <property role="4jta.1083171877298.1083923523172" value="PAGE_UP" />
+      </node>
+      <node concept="4jta.1083171877298" id="9025760234657707167" role="4jta.1082978164219.1083172003582" info="ig">
+        <property role="4jta.1083171877298.1083923523171" value="page_down_action_id" />
+        <property role="4jta.1083171877298.1083923523172" value="PAGE_DOWN" />
+      </node>
+      <node concept="4jta.1083171877298" id="9025760234657707168" role="4jta.1082978164219.1083172003582" info="ig">
+        <property role="4jta.1083171877298.1083923523171" value="root_home_action_id" />
+        <property role="4jta.1083171877298.1083923523172" value="ROOT_HOME" />
+      </node>
+      <node concept="4jta.1083171877298" id="9025760234657707169" role="4jta.1082978164219.1083172003582" info="ig">
+        <property role="4jta.1083171877298.1083923523171" value="root_end_action_id" />
+        <property role="4jta.1083171877298.1083923523172" value="ROOT_END" />
+      </node>
+      <node concept="4jta.1083171877298" id="9025760234657707170" role="4jta.1082978164219.1083172003582" info="ig">
+        <property role="4jta.1083171877298.1083923523171" value="local_home_action_id" />
+        <property role="4jta.1083171877298.1083923523172" value="LOCAL_HOME" />
+      </node>
+      <node concept="4jta.1083171877298" id="9025760234657707171" role="4jta.1082978164219.1083172003582" info="ig">
+        <property role="4jta.1083171877298.1083923523171" value="local_end_action_id" />
+        <property role="4jta.1083171877298.1083923523172" value="LOCAL_END" />
+      </node>
+      <node concept="4jta.1083171877298" id="9025760234657707172" role="4jta.1082978164219.1083172003582" info="ig">
+        <property role="4jta.1083171877298.1083923523171" value="select_left_action_id" />
+        <property role="4jta.1083171877298.1083923523172" value="SELECT_LEFT" />
+      </node>
+      <node concept="4jta.1083171877298" id="9025760234657707173" role="4jta.1082978164219.1083172003582" info="ig">
+        <property role="4jta.1083171877298.1083923523171" value="select_right_action_id" />
+        <property role="4jta.1083171877298.1083923523172" value="SELECT_RIGHT" />
+      </node>
+      <node concept="4jta.1083171877298" id="9025760234657707174" role="4jta.1082978164219.1083172003582" info="ig">
+        <property role="4jta.1083171877298.1083923523171" value="select_up_action_id" />
+        <property role="4jta.1083171877298.1083923523172" value="SELECT_UP" />
+      </node>
+      <node concept="4jta.1083171877298" id="9025760234657707175" role="4jta.1082978164219.1083172003582" info="ig">
+        <property role="4jta.1083171877298.1083923523171" value="select_down_action_id" />
+        <property role="4jta.1083171877298.1083923523172" value="SELECT_DOWN" />
+      </node>
+      <node concept="4jta.1083171877298" id="9025760234657707176" role="4jta.1082978164219.1083172003582" info="ig">
+        <property role="4jta.1083171877298.1083923523171" value="select_home_action_id" />
+        <property role="4jta.1083171877298.1083923523172" value="SELECT_HOME" />
+      </node>
+      <node concept="4jta.1083171877298" id="9025760234657707177" role="4jta.1082978164219.1083172003582" info="ig">
+        <property role="4jta.1083171877298.1083923523171" value="select_end_action_id" />
+        <property role="4jta.1083171877298.1083923523172" value="SELECT_END" />
+      </node>
+      <node concept="4jta.1083171877298" id="9025760234657707178" role="4jta.1082978164219.1083172003582" info="ig">
+        <property role="4jta.1083171877298.1083923523171" value="select_local_end_action_id" />
+        <property role="4jta.1083171877298.1083923523172" value="SELECT_LOCAL_END" />
+      </node>
+      <node concept="4jta.1083171877298" id="9025760234657707179" role="4jta.1082978164219.1083172003582" info="ig">
+        <property role="4jta.1083171877298.1083923523171" value="select_local_home_action_id" />
+        <property role="4jta.1083171877298.1083923523172" value="SELECT_LOCAL_HOME" />
+      </node>
+      <node concept="4jta.1083171877298" id="9025760234657707180" role="4jta.1082978164219.1083172003582" info="ig">
+        <property role="4jta.1083171877298.1083923523171" value="select_next_action_id" />
+        <property role="4jta.1083171877298.1083923523172" value="SELECT_NEXT" />
+      </node>
+      <node concept="4jta.1083171877298" id="9025760234657707181" role="4jta.1082978164219.1083172003582" info="ig">
+        <property role="4jta.1083171877298.1083923523171" value="select_previous_action_id" />
+        <property role="4jta.1083171877298.1083923523172" value="SELECT_PREVIOUS" />
+      </node>
+      <node concept="4jta.1083171877298" id="9025760234657707182" role="4jta.1082978164219.1083172003582" info="ig">
+        <property role="4jta.1083171877298.1083923523171" value="left_transform_action_id" />
+        <property role="4jta.1083171877298.1083923523172" value="LEFT_TRANSFORM" />
+      </node>
+      <node concept="4jta.1083171877298" id="9025760234657707183" role="4jta.1082978164219.1083172003582" info="ig">
+        <property role="4jta.1083171877298.1083923523171" value="complete_action_id" />
+        <property role="4jta.1083171877298.1083923523172" value="COMPLETE" />
+      </node>
+      <node concept="4jta.1083171877298" id="9025760234657707184" role="4jta.1082978164219.1083172003582" info="ig">
+        <property role="4jta.1083171877298.1083923523171" value="complete_smart_action_id" />
+        <property role="4jta.1083171877298.1083923523172" value="COMPLETE_SMART" />
+      </node>
+      <node concept="4jta.1083171877298" id="9025760234657707185" role="4jta.1082978164219.1083172003582" info="ig">
+        <property role="4jta.1083171877298.1083923523171" value="fold_action_id" />
+        <property role="4jta.1083171877298.1083923523172" value="FOLD" />
+      </node>
+      <node concept="4jta.1083171877298" id="9025760234657707186" role="4jta.1082978164219.1083172003582" info="ig">
+        <property role="4jta.1083171877298.1083923523171" value="unfold_action_id" />
+        <property role="4jta.1083171877298.1083923523172" value="UNFOLD" />
+      </node>
+      <node concept="4jta.1083171877298" id="9025760234657707187" role="4jta.1082978164219.1083172003582" info="ig">
+        <property role="4jta.1083171877298.1083923523171" value="fold_all_action_id" />
+        <property role="4jta.1083171877298.1083923523172" value="FOLD_ALL" />
+      </node>
+      <node concept="4jta.1083171877298" id="9025760234657707188" role="4jta.1082978164219.1083172003582" info="ig">
+        <property role="4jta.1083171877298.1083923523171" value="unfold_all_action_id" />
+        <property role="4jta.1083171877298.1083923523172" value="UNFOLD_ALL" />
+      </node>
+      <node concept="4jta.1083171877298" id="9025760234657707189" role="4jta.1082978164219.1083172003582" info="ig">
+        <property role="4jta.1083171877298.1083923523171" value="toggle_folding_action_id" />
+        <property role="4jta.1083171877298.1083923523172" value="TOGGLE_FOLDING" />
+      </node>
+      <node concept="4jta.1083171877298" id="9025760234657707190" role="4jta.1082978164219.1083172003582" info="ig">
+        <property role="4jta.1083171877298.1083923523171" value="show_message_action_id" />
+        <property role="4jta.1083171877298.1083923523172" value="SHOW_MESSAGE" />
+      </node>
+    </node>
+    <node concept="4jta.1071489090640" id="1139535439104" info="ig">
+      <property role="4jta.1169125787135.4628067390765956802" value="false" />
+      <property role="4jta.1169125787135.4628067390765956807" value="false" />
+      <property role="asn4.1169194658468.1169194664001" value="CellActionMap_ExecuteFunction" />
+      <property role="4jta.1071489090640.5404671619616246344" value="none" />
+      <property role="4jta.1169125787135.5092175715804935370" value="execute block" />
+      <reference role="4jta.1071489090640.1071489389519" target="tpee.1137021947720" resolveInfo="ConceptFunction" />
+    </node>
+    <node concept="4jta.1082978164219" id="1139744471051" info="ng">
+      <property role="asn4.1169194658468.1169194664001" value="_ImageAlignment_Enum" />
+      <reference role="4jta.1082978164219.1083171729157" target="tpck.1082983041843" resolveInfo="string" />
+      <reference role="4jta.1082978164219.1083241965437" target="1139744471411" resolveInfo="alignmentJustify" />
+      <node concept="4jta.1083171877298" id="1139744471411" role="4jta.1082978164219.1083172003582" info="ig">
+        <property role="4jta.1083171877298.1083923523171" value="justify" />
+        <property role="4jta.1083171877298.1083923523172" value="alignmentJustify" />
+      </node>
+      <node concept="4jta.1083171877298" id="1139744531598" role="4jta.1082978164219.1083172003582" info="ig">
+        <property role="4jta.1083171877298.1083923523171" value="center" />
+        <property role="4jta.1083171877298.1083923523172" value="alignmentCenter" />
+      </node>
+      <node concept="4jta.1083171877298" id="1139744545740" role="4jta.1082978164219.1083172003582" info="ig">
+        <property role="4jta.1083171877298.1083923523171" value="tile" />
+        <property role="4jta.1083171877298.1083923523172" value="alignmentTile" />
+      </node>
+    </node>
+    <node concept="4jta.1071489090640" id="1139744628335" info="ig">
+      <property role="4jta.1169125787135.4628067390765956802" value="false" />
+      <property role="4jta.1169125787135.4628067390765956807" value="false" />
+      <property role="4jta.1169125787135.4628067390765907488" value="cell for an image" />
+      <property role="asn4.1169194658468.1169194664001" value="CellModel_Image" />
+      <property role="asn4.1133920641626.1193676396447" value="CellModel" />
+      <property role="4jta.1169125787135.5092175715804935370" value="image" />
+      <reference role="4jta.1071489090640.1071489389519" target="1073389214265" resolveInfo="EditorCellModel" />
+      <node concept="4jta.1071489288298" id="1176899909521" role="4jta.1169125787135.1071489727083" info="ig">
+        <property role="4jta.1071489288298.1071599937831" value="aggregation" />
+        <property role="4jta.1071489288298.1071599776563" value="imagePathProvider" />
+        <reference role="4jta.1071489288298.1071599976176" target="1176899348742" resolveInfo="QueryFunction_ImagePath" />
+      </node>
+      <node concept="4jta.1071489288299" id="1139746504291" role="4jta.1169125787135.1071489727084" info="ig">
+        <property role="asn4.1169194658468.1169194664001" value="imageFile" />
+        <reference role="4jta.1071489288299.1082985295845" target="tpck.1082983041843" resolveInfo="string" />
+      </node>
+      <node concept="4jta.1071489288299" id="1139858284555" role="4jta.1169125787135.1071489727084" info="ig">
+        <property role="asn4.1169194658468.1169194664001" value="descent" />
+        <reference role="4jta.1071489288299.1082985295845" target="tpck.1082983657062" resolveInfo="integer" />
+      </node>
+    </node>
+    <node concept="4jta.1071489090640" id="1139848536355" info="ig">
+      <property role="4jta.1169125787135.4628067390765956802" value="true" />
+      <property role="4jta.1169125787135.4628067390765956807" value="false" />
+      <property role="asn4.1169194658468.1169194664001" value="CellModel_WithRole" />
+      <property role="asn4.1133920641626.1193676396447" value="CellModel" />
+      <reference role="4jta.1071489090640.1071489389519" target="1079353555532" resolveInfo="CellModel_AbstractLabel" />
+      <node concept="4jta.1071489288299" id="1139852716018" role="4jta.1169125787135.1071489727084" info="ig">
+        <property role="asn4.1169194658468.1169194664001" value="noTargetText" />
+        <reference role="4jta.1071489288299.1082985295845" target="tpck.1082983041843" resolveInfo="string" />
+      </node>
+      <node concept="4jta.1071489288299" id="1214560368769" role="4jta.1169125787135.1071489727084" info="ig">
+        <property role="asn4.1169194658468.1169194664001" value="emptyNoTargetText" />
+        <reference role="4jta.1071489288299.1082985295845" target="tpck.1082983657063" resolveInfo="boolean" />
+      </node>
+      <node concept="4jta.1071489288299" id="1140017977771" role="4jta.1169125787135.1071489727084" info="ig">
+        <property role="asn4.1169194658468.1169194664001" value="readOnly" />
+        <reference role="4jta.1071489288299.1082985295845" target="tpck.1082983657063" resolveInfo="boolean" />
+      </node>
+      <node concept="4jta.1071489288299" id="1140114345053" role="4jta.1169125787135.1071489727084" info="ig">
+        <property role="asn4.1169194658468.1169194664001" value="allowEmptyText" />
+        <reference role="4jta.1071489288299.1082985295845" target="tpck.1082983657063" resolveInfo="boolean" />
+      </node>
+      <node concept="4jta.1071489288298" id="1140103550593" role="4jta.1169125787135.1071489727083" info="ig">
+        <property role="4jta.1071489288298.1071599776563" value="relationDeclaration" />
+        <property role="4jta.1071489288298.1071599893252" value="1" />
+        <reference role="4jta.1071489288298.1071599976176" target="tpck.1133920641626" resolveInfo="BaseConcept" />
+      </node>
+    </node>
+    <node concept="4jta.1071489090640" id="1140524381322" info="ig">
+      <property role="4jta.1169125787135.4628067390765956802" value="true" />
+      <property role="4jta.1169125787135.4628067390765956807" value="false" />
+      <property role="asn4.1169194658468.1169194664001" value="CellModel_ListWithRole" />
+      <property role="asn4.1133920641626.1193676396447" value="CellModel" />
+      <reference role="4jta.1071489090640.1071489389519" target="1139848536355" resolveInfo="CellModel_WithRole" />
+      <node concept="4jta.1071489288298" id="1176897874615" role="4jta.1169125787135.1071489727083" info="ig">
+        <property role="4jta.1071489288298.1071599937831" value="aggregation" />
+        <property role="4jta.1071489288298.1071599776563" value="nodeFactory" />
+        <reference role="4jta.1071489288298.1071599976176" target="1176897764478" resolveInfo="QueryFunction_NodeFactory" />
+      </node>
+      <node concept="4jta.1071489288298" id="1140524464359" role="4jta.1169125787135.1071489727083" info="ig">
+        <property role="4jta.1071489288298.1071599937831" value="aggregation" />
+        <property role="4jta.1071489288298.1071599776563" value="emptyCellModel" />
+        <property role="4jta.1071489288298.1071599893252" value="0..1" />
+        <reference role="4jta.1071489288298.1071599976176" target="1073389214265" resolveInfo="EditorCellModel" />
+      </node>
+      <node concept="4jta.1071489288298" id="6046489571270834038" role="4jta.1169125787135.1071489727083" info="ig">
+        <property role="4jta.1071489288298.1071599937831" value="aggregation" />
+        <property role="4jta.1071489288298.1071599776563" value="foldedCellModel" />
+        <reference role="4jta.1071489288298.1071599976176" target="1073389214265" resolveInfo="EditorCellModel" />
+      </node>
+      <node concept="4jta.1071489288298" id="1140524464360" role="4jta.1169125787135.1071489727083" info="ig">
+        <property role="4jta.1071489288298.1071599937831" value="aggregation" />
+        <property role="4jta.1071489288298.1071599776563" value="cellLayout" />
+        <property role="4jta.1071489288298.1071599893252" value="0..1" />
+        <reference role="4jta.1071489288298.1071599976176" target="1106270491082" resolveInfo="CellLayout" />
+      </node>
+      <node concept="4jta.1071489288298" id="1233141163694" role="4jta.1169125787135.1071489727083" info="ig">
+        <property role="4jta.1071489288298.1071599937831" value="aggregation" />
+        <property role="4jta.1071489288298.1071599776563" value="separatorStyle" />
+        <reference role="4jta.1071489288298.1071599976176" target="1233148810477" resolveInfo="InlineStyleDeclaration" />
+      </node>
+      <node concept="4jta.1071489288298" id="928328222691832421" role="4jta.1169125787135.1071489727083" info="ig">
+        <property role="4jta.1071489288298.1071599937831" value="aggregation" />
+        <property role="4jta.1071489288298.1071599776563" value="separatorTextQuery" />
+        <reference role="4jta.1071489288298.1071599976176" target="709996738298806197" resolveInfo="QueryFunction_SeparatorText" />
+      </node>
+      <node concept="4jta.1071489288298" id="4601216887035799527" role="4jta.1169125787135.1071489727083" info="ig">
+        <property role="4jta.1071489288298.1071599937831" value="aggregation" />
+        <property role="4jta.1071489288298.1071599776563" value="usesFoldingCondition" />
+        <reference role="4jta.1071489288298.1071599976176" target="1142886221719" resolveInfo="QueryFunction_NodeCondition" />
+      </node>
+      <node concept="4jta.1071489288299" id="1140524450554" role="4jta.1169125787135.1071489727084" info="ig">
+        <property role="asn4.1169194658468.1169194664001" value="vertical" />
+        <reference role="4jta.1071489288299.1082985295845" target="tpck.1082983657063" resolveInfo="boolean" />
+        <node concept="4jta.1224240836180" id="1239873962700" role="asn4.1133920641626.5169995583184591170" info="ig" />
+      </node>
+      <node concept="4jta.1071489288299" id="1140524450555" role="4jta.1169125787135.1071489727084" info="ig">
+        <property role="asn4.1169194658468.1169194664001" value="gridLayout" />
+        <reference role="4jta.1071489288299.1082985295845" target="tpck.1082983657063" resolveInfo="boolean" />
+        <node concept="4jta.1224240836180" id="1239873964974" role="asn4.1133920641626.5169995583184591170" info="ig" />
+      </node>
+      <node concept="4jta.1071489288299" id="1140524450556" role="4jta.1169125787135.1071489727084" info="ig">
+        <property role="asn4.1169194658468.1169194664001" value="usesBraces" />
+        <reference role="4jta.1071489288299.1082985295845" target="tpck.1082983657063" resolveInfo="boolean" />
+      </node>
+      <node concept="4jta.1071489288299" id="1160590307797" role="4jta.1169125787135.1071489727084" info="ig">
+        <property role="asn4.1169194658468.1169194664001" value="usesFolding" />
+        <reference role="4jta.1071489288299.1082985295845" target="tpck.1082983657063" resolveInfo="boolean" />
+      </node>
+      <node concept="4jta.1071489288299" id="1140524450557" role="4jta.1169125787135.1071489727084" info="ig">
+        <property role="asn4.1169194658468.1169194664001" value="separatorText" />
+        <reference role="4jta.1071489288299.1082985295845" target="tpck.1082983041843" resolveInfo="string" />
+      </node>
+      <node concept="4jta.1071489288299" id="1156252885376" role="4jta.1169125787135.1071489727084" info="ig">
+        <property role="asn4.1169194658468.1169194664001" value="separatorLayoutConstraint" />
+        <reference role="4jta.1071489288299.1082985295845" target="1138197387103" resolveInfo="_Layout_Constraints_Enum" />
+      </node>
+    </node>
+    <node concept="4jta.1082978164219" id="1140813780565" info="ng">
+      <property role="asn4.1169194658468.1169194664001" value="RightTransformAnchorTag" />
+      <reference role="4jta.1082978164219.1083171729157" target="tpck.1082983041843" resolveInfo="string" />
+      <reference role="4jta.1082978164219.1083241965437" target="1140813780644" resolveInfo="none" />
+      <node concept="4jta.1083171877298" id="1140813780644" role="4jta.1082978164219.1083172003582" info="ig">
+        <property role="4jta.1083171877298.1083923523172" value="none" />
+      </node>
+      <node concept="4jta.1083171877298" id="1140813835051" role="4jta.1082978164219.1083172003582" info="ig">
+        <property role="4jta.1083171877298.1083923523171" value="default_RTransform" />
+        <property role="4jta.1083171877298.1083923523172" value="default_" />
+      </node>
+      <node concept="4jta.1083171877298" id="1140813898505" role="4jta.1082978164219.1083172003582" info="ig">
+        <property role="4jta.1083171877298.1083923523171" value="ext_1_RTransform" />
+        <property role="4jta.1083171877298.1083923523172" value="ext_1" />
+      </node>
+      <node concept="4jta.1083171877298" id="1140813939727" role="4jta.1082978164219.1083172003582" info="ig">
+        <property role="4jta.1083171877298.1083923523171" value="ext_2_RTransform" />
+        <property role="4jta.1083171877298.1083923523172" value="ext_2" />
+      </node>
+      <node concept="4jta.1083171877298" id="1140813947731" role="4jta.1082978164219.1083172003582" info="ig">
+        <property role="4jta.1083171877298.1083923523171" value="ext_3_RTransform" />
+        <property role="4jta.1083171877298.1083923523172" value="ext_3" />
+      </node>
+      <node concept="4jta.1083171877298" id="1140813957048" role="4jta.1082978164219.1083172003582" info="ig">
+        <property role="4jta.1083171877298.1083923523171" value="ext_4_RTransform" />
+        <property role="4jta.1083171877298.1083923523172" value="ext_4" />
+      </node>
+      <node concept="4jta.1083171877298" id="1140813967505" role="4jta.1082978164219.1083172003582" info="ig">
+        <property role="4jta.1083171877298.1083923523171" value="ext_5_RTransform" />
+        <property role="4jta.1083171877298.1083923523172" value="ext_5" />
+      </node>
+    </node>
+    <node concept="4jta.1082978164219" id="1141091053936" info="ng">
+      <property role="asn4.1169194658468.1169194664001" value="CellKeyMapCaretPolicy" />
+      <property role="asn4.1133920641626.1193676396447" value="CellKeyMap" />
+      <reference role="4jta.1082978164219.1083171729157" target="tpck.1082983041843" resolveInfo="string" />
+      <reference role="4jta.1082978164219.1083241965437" target="1141091054266" resolveInfo="ANY_POSITION" />
+      <node concept="4jta.1083171877298" id="1141091054266" role="4jta.1082978164219.1083172003582" info="ig">
+        <property role="4jta.1083171877298.1083923523172" value="ANY_POSITION" />
+      </node>
+      <node concept="4jta.1083171877298" id="1141091172402" role="4jta.1082978164219.1083172003582" info="ig">
+        <property role="4jta.1083171877298.1083923523171" value="caret_at_first_position" />
+        <property role="4jta.1083171877298.1083923523172" value="FIRST_POSITION" />
+      </node>
+      <node concept="4jta.1083171877298" id="1141091209420" role="4jta.1082978164219.1083172003582" info="ig">
+        <property role="4jta.1083171877298.1083923523171" value="caret_at_last_position" />
+        <property role="4jta.1083171877298.1083923523172" value="LAST_POSITION" />
+      </node>
+      <node concept="4jta.1083171877298" id="1143573566373" role="4jta.1082978164219.1083172003582" info="ig">
+        <property role="4jta.1083171877298.1083923523171" value="caret_at_intermediate_position" />
+        <property role="4jta.1083171877298.1083923523172" value="INTERMEDIATE_POSITION" />
+      </node>
+    </node>
+    <node concept="4jta.1071489090640" id="1142886221719" info="ig">
+      <property role="4jta.1169125787135.4628067390765956802" value="false" />
+      <property role="4jta.1169125787135.4628067390765956807" value="false" />
+      <property role="4jta.1169125787135.4628067390765907488" value="embedded block of code" />
+      <property role="asn4.1169194658468.1169194664001" value="QueryFunction_NodeCondition" />
+      <property role="4jta.1071489090640.5404671619616246344" value="none" />
+      <property role="asn4.1133920641626.1193676396447" value="QueryFunction" />
+      <property role="4jta.1169125787135.5092175715804935370" value="condition" />
+      <reference role="4jta.1071489090640.1071489389519" target="tpee.1137021947720" resolveInfo="ConceptFunction" />
+    </node>
+    <node concept="4jta.1071489090640" id="1142886811589" info="ig">
+      <property role="4jta.1169125787135.4628067390765956802" value="false" />
+      <property role="4jta.1169125787135.4628067390765956807" value="false" />
+      <property role="4jta.1169125787135.4628067390765907488" value="function parameter" />
+      <property role="asn4.1169194658468.1169194664001" value="ConceptFunctionParameter_node" />
+      <property role="4jta.1071489090640.5404671619616246344" value="none" />
+      <property role="asn4.1133920641626.1193676396447" value="QueryFunction.Parameters" />
+      <property role="4jta.1169125787135.5092175715804935370" value="node" />
+      <reference role="4jta.1071489090640.1071489389519" target="tpee.1107135704075" resolveInfo="ConceptFunctionParameter" />
+      <node concept="4jta.1169127622168" id="1262430001741642741" role="4jta.1071489090640.1169129564478" info="ig">
+        <reference role="4jta.1169127622168.1169127628841" target="tpck.1835621062190663819" resolveInfo="IDontSubstituteByDefault" />
+      </node>
+    </node>
+    <node concept="4jta.1082978164219" id="1143891911797" info="ng">
+      <property role="asn4.1169194658468.1169194664001" value="_LeftRight_Enum" />
+      <reference role="4jta.1082978164219.1083171729157" target="tpck.1082983657063" resolveInfo="boolean" />
+      <reference role="4jta.1082978164219.1083241965437" target="1143891911798" resolveInfo="left" />
+      <node concept="4jta.1083171877298" id="1143891911798" role="4jta.1082978164219.1083172003582" info="ig">
+        <property role="4jta.1083171877298.1083923523171" value="true" />
+        <property role="4jta.1083171877298.1083923523172" value="left" />
+      </node>
+      <node concept="4jta.1083171877298" id="1143891954220" role="4jta.1082978164219.1083172003582" info="ig">
+        <property role="4jta.1083171877298.1083923523171" value="false" />
+        <property role="4jta.1083171877298.1083923523172" value="right" />
+      </node>
+    </node>
+    <node concept="4jta.1071489090640" id="1149850725784" info="ig">
+      <property role="4jta.1169125787135.4628067390765956802" value="false" />
+      <property role="4jta.1169125787135.4628067390765956807" value="false" />
+      <property role="4jta.1169125787135.4628067390765907488" value="cell for attributed node" />
+      <property role="asn4.1169194658468.1169194664001" value="CellModel_AttributedNodeCell" />
+      <property role="asn4.1133920641626.1193676396447" value="CellModel" />
+      <property role="4jta.1169125787135.5092175715804935370" value="attributed node" />
+      <reference role="4jta.1071489090640.1071489389519" target="1073389214265" resolveInfo="EditorCellModel" />
+    </node>
+    <node concept="4jta.1071489090640" id="1160493135005" info="ig">
+      <property role="4jta.1169125787135.4628067390765956802" value="false" />
+      <property role="4jta.1169125787135.4628067390765956807" value="false" />
+      <property role="asn4.1169194658468.1169194664001" value="CellMenuPart_PropertyValues_GetValues" />
+      <property role="4jta.1071489090640.5404671619616246344" value="none" />
+      <property role="asn4.1133920641626.1193676396447" value="CellMenu" />
+      <property role="4jta.1169125787135.5092175715804935370" value="property values" />
+      <reference role="4jta.1071489090640.1071489389519" target="tpee.1137021947720" resolveInfo="ConceptFunction" />
+    </node>
+    <node concept="4jta.1071489090640" id="1161622981231" info="ig">
+      <property role="4jta.1169125787135.4628067390765956802" value="false" />
+      <property role="4jta.1169125787135.4628067390765956807" value="false" />
+      <property role="asn4.1169194658468.1169194664001" value="ConceptFunctionParameter_editorContext" />
+      <property role="4jta.1071489090640.5404671619616246344" value="none" />
+      <property role="asn4.1133920641626.1193676396447" value="QueryFunction.Parameters" />
+      <property role="4jta.1169125787135.5092175715804935370" value="editorContext" />
+      <reference role="4jta.1071489090640.1071489389519" target="tpee.1107135704075" resolveInfo="ConceptFunctionParameter" />
+      <node concept="4jta.1169127622168" id="1262430001741702895" role="4jta.1071489090640.1169129564478" info="ig">
+        <reference role="4jta.1169127622168.1169127628841" target="tpck.1835621062190663819" resolveInfo="IDontSubstituteByDefault" />
+      </node>
+    </node>
+    <node concept="4jta.1071489090640" id="1162497113192" info="ig">
+      <property role="4jta.1169125787135.4628067390765956802" value="false" />
+      <property role="4jta.1169125787135.4628067390765956807" value="false" />
+      <property role="asn4.1169194658468.1169194664001" value="CellMenuPart_ReplaceChild_currentChild" />
+      <property role="4jta.1071489090640.5404671619616246344" value="none" />
+      <property role="asn4.1133920641626.1193676396447" value="CellMenu" />
+      <property role="4jta.1169125787135.5092175715804935370" value="currentChild" />
+      <reference role="4jta.1071489090640.1071489389519" target="tpee.1107135704075" resolveInfo="ConceptFunctionParameter" />
+      <node concept="4jta.1169127622168" id="1262430001741523462" role="4jta.1071489090640.1169129564478" info="ig">
+        <reference role="4jta.1169127622168.1169127628841" target="tpck.1835621062190663819" resolveInfo="IDontSubstituteByDefault" />
+      </node>
+    </node>
+    <node concept="4jta.1071489090640" id="1162498275506" info="ig">
+      <property role="4jta.1169125787135.4628067390765956802" value="false" />
+      <property role="4jta.1169125787135.4628067390765956807" value="false" />
+      <property role="asn4.1169194658468.1169194664001" value="CellMenuPart_ReplaceChild_defaultConceptOfChild" />
+      <property role="4jta.1071489090640.5404671619616246344" value="none" />
+      <property role="asn4.1133920641626.1193676396447" value="CellMenu" />
+      <property role="4jta.1169125787135.5092175715804935370" value="defaultConceptOfChild" />
+      <reference role="4jta.1071489090640.1071489389519" target="tpee.1107135704075" resolveInfo="ConceptFunctionParameter" />
+      <node concept="4jta.1169127622168" id="1262430001741642941" role="4jta.1071489090640.1169129564478" info="ig">
+        <reference role="4jta.1169127622168.1169127628841" target="tpck.1835621062190663819" resolveInfo="IDontSubstituteByDefault" />
+      </node>
+    </node>
+    <node concept="4jta.1071489090640" id="1163613035599" info="ig">
+      <property role="4jta.1169125787135.4628067390765956802" value="false" />
+      <property role="4jta.1169125787135.4628067390765956807" value="false" />
+      <property role="asn4.1169194658468.1169194664001" value="CellMenuPart_AbstractGroup_Query" />
+      <property role="4jta.1071489090640.5404671619616246344" value="none" />
+      <property role="asn4.1133920641626.1193676396447" value="CellMenu" />
+      <property role="4jta.1169125787135.5092175715804935370" value="get objects" />
+      <reference role="4jta.1071489090640.1071489389519" target="tpee.1137021947720" resolveInfo="ConceptFunction" />
+    </node>
+    <node concept="4jta.1071489090640" id="1163613131943" info="ig">
+      <property role="4jta.1169125787135.4628067390765956802" value="false" />
+      <property role="4jta.1169125787135.4628067390765956807" value="false" />
+      <property role="asn4.1169194658468.1169194664001" value="CellMenuPart_ReplaceNode_Group_Create" />
+      <property role="4jta.1071489090640.5404671619616246344" value="none" />
+      <property role="asn4.1133920641626.1193676396447" value="CellMenu" />
+      <property role="4jta.1169125787135.5092175715804935370" value="create replacement node" />
+      <reference role="4jta.1071489090640.1071489389519" target="tpee.1137021947720" resolveInfo="ConceptFunction" />
+    </node>
+    <node concept="4jta.1071489090640" id="1163613549566" info="ig">
+      <property role="4jta.1169125787135.4628067390765956802" value="false" />
+      <property role="4jta.1169125787135.4628067390765956807" value="false" />
+      <property role="asn4.1169194658468.1169194664001" value="CellMenuPart_AbstractGroup_parameterObject" />
+      <property role="4jta.1071489090640.5404671619616246344" value="none" />
+      <property role="asn4.1133920641626.1193676396447" value="CellMenu" />
+      <property role="4jta.1169125787135.5092175715804935370" value="parameterObject" />
+      <reference role="4jta.1071489090640.1071489389519" target="tpee.1107135704075" resolveInfo="ConceptFunctionParameter" />
+      <node concept="4jta.1169127622168" id="1262430001741704576" role="4jta.1071489090640.1169129564478" info="ig">
+        <reference role="4jta.1169127622168.1169127628841" target="tpck.1835621062190663819" resolveInfo="IDontSubstituteByDefault" />
+      </node>
+    </node>
+    <node concept="4jta.1071489090640" id="1163613822479" info="ig">
+      <property role="4jta.1169125787135.4628067390765956802" value="false" />
+      <property role="4jta.1169125787135.4628067390765956807" value="false" />
+      <property role="asn4.1169194658468.1169194664001" value="CellMenuPart_Abstract_editedNode" />
+      <property role="4jta.1071489090640.5404671619616246344" value="none" />
+      <property role="asn4.1133920641626.1193676396447" value="CellMenu" />
+      <property role="4jta.1169125787135.5092175715804935370" value="node" />
+      <reference role="4jta.1071489090640.1071489389519" target="tpee.1107135704075" resolveInfo="ConceptFunctionParameter" />
+      <node concept="4jta.1169127622168" id="1262430001741718748" role="4jta.1071489090640.1169129564478" info="ig">
+        <reference role="4jta.1169127622168.1169127628841" target="tpck.1835621062190663819" resolveInfo="IDontSubstituteByDefault" />
+      </node>
+    </node>
+    <node concept="4jta.1071489090640" id="1164052439493" info="ig">
+      <property role="4jta.1169125787135.4628067390765956802" value="false" />
+      <property role="4jta.1169125787135.4628067390765956807" value="false" />
+      <property role="asn4.1169194658468.1169194664001" value="CellMenuPart_AbstractGroup_MatchingText" />
+      <property role="4jta.1071489090640.5404671619616246344" value="none" />
+      <property role="asn4.1133920641626.1193676396447" value="CellMenu" />
+      <property role="4jta.1169125787135.5092175715804935370" value="matching text" />
+      <reference role="4jta.1071489090640.1071489389519" target="tpee.1137021947720" resolveInfo="ConceptFunction" />
+    </node>
+    <node concept="4jta.1071489090640" id="1164052588708" info="ig">
+      <property role="4jta.1169125787135.4628067390765956802" value="false" />
+      <property role="4jta.1169125787135.4628067390765956807" value="false" />
+      <property role="asn4.1169194658468.1169194664001" value="CellMenuPart_AbstractGroup_DescriptionText" />
+      <property role="4jta.1071489090640.5404671619616246344" value="none" />
+      <property role="asn4.1133920641626.1193676396447" value="CellMenu" />
+      <property role="4jta.1169125787135.5092175715804935370" value="description text" />
+      <reference role="4jta.1071489090640.1071489389519" target="tpee.1137021947720" resolveInfo="ConceptFunction" />
+    </node>
+    <node concept="4jta.1071489090640" id="1164824717996" info="ig">
+      <property role="4jta.1169125787135.4628067390765956802" value="false" />
+      <property role="4jta.1169125787135.4628067390765956807" value="false" />
+      <property role="asn4.1169194658468.1169194664001" value="CellMenuDescriptor" />
+      <property role="asn4.1133920641626.1193676396447" value="CellMenu" />
+      <property role="4jta.1169125787135.5092175715804935370" value="cell menu" />
+      <reference role="4jta.1071489090640.1071489389519" target="tpck.1133920641626" resolveInfo="BaseConcept" />
+      <node concept="4jta.1071489288298" id="1164824815888" role="4jta.1169125787135.1071489727083" info="ig">
+        <property role="4jta.1071489288298.1071599937831" value="aggregation" />
+        <property role="4jta.1071489288298.1071599776563" value="cellMenuPart" />
+        <property role="4jta.1071489288298.1071599893252" value="0..n" />
+        <reference role="4jta.1071489288298.1071599976176" target="1164824854750" resolveInfo="CellMenuPart_Abstract" />
+      </node>
+    </node>
+    <node concept="4jta.1071489090640" id="1164824854750" info="ig">
+      <property role="4jta.1169125787135.4628067390765956802" value="true" />
+      <property role="4jta.1169125787135.4628067390765956807" value="false" />
+      <property role="asn4.1169194658468.1169194664001" value="CellMenuPart_Abstract" />
+      <property role="asn4.1133920641626.1193676396447" value="CellMenu" />
+      <reference role="4jta.1071489090640.1071489389519" target="tpck.1133920641626" resolveInfo="BaseConcept" />
+    </node>
+    <node concept="4jta.1071489090640" id="1164833692343" info="ig">
+      <property role="4jta.1169125787135.4628067390765956802" value="false" />
+      <property role="4jta.1169125787135.4628067390765956807" value="false" />
+      <property role="asn4.1169194658468.1169194664001" value="CellMenuPart_PropertyValues" />
+      <property role="asn4.1133920641626.1193676396447" value="CellMenu" />
+      <property role="4jta.1169125787135.5092175715804935370" value="property values" />
+      <reference role="4jta.1071489090640.1071489389519" target="1164824854750" resolveInfo="CellMenuPart_Abstract" />
+      <node concept="4jta.1071489288298" id="1164833692344" role="4jta.1169125787135.1071489727083" info="ig">
+        <property role="4jta.1071489288298.1071599937831" value="aggregation" />
+        <property role="4jta.1071489288298.1071599776563" value="valuesFunction" />
+        <property role="4jta.1071489288298.1071599893252" value="1" />
+        <reference role="4jta.1071489288298.1071599976176" target="1160493135005" resolveInfo="CellMenuPart_PropertyValues_GetValues" />
+      </node>
+      <node concept="4jta.1169127622168" id="1262430001741647420" role="4jta.1071489090640.1169129564478" info="ig">
+        <reference role="4jta.1169127622168.1169127628841" target="tpck.1835621062190663819" resolveInfo="IDontSubstituteByDefault" />
+      </node>
+    </node>
+    <node concept="4jta.1071489090640" id="1164914519156" info="ig">
+      <property role="4jta.1169125787135.4628067390765956802" value="false" />
+      <property role="4jta.1169125787135.4628067390765956807" value="false" />
+      <property role="asn4.1169194658468.1169194664001" value="CellMenuPart_ReplaceNode_CustomNodeConcept" />
+      <property role="asn4.1133920641626.1193676396447" value="CellMenu" />
+      <property role="4jta.1169125787135.5092175715804935370" value="replace node (custom node concept)" />
+      <reference role="4jta.1071489090640.1071489389519" target="1164824854750" resolveInfo="CellMenuPart_Abstract" />
+      <node concept="4jta.1071489288298" id="1164914727930" role="4jta.1169125787135.1071489727083" info="ig">
+        <property role="4jta.1071489288298.1071599776563" value="replacementConcept" />
+        <property role="4jta.1071489288298.1071599893252" value="1" />
+        <reference role="4jta.1071489288298.1071599976176" target="tpce.1169125787135" resolveInfo="AbstractConceptDeclaration" />
+      </node>
+    </node>
+    <node concept="4jta.1071489090640" id="1164996492011" info="ig">
+      <property role="4jta.1169125787135.4628067390765956802" value="false" />
+      <property role="4jta.1169125787135.4628067390765956807" value="false" />
+      <property role="asn4.1169194658468.1169194664001" value="CellMenuPart_ReferentPrimary" />
+      <property role="asn4.1133920641626.1193676396447" value="CellMenu" />
+      <property role="4jta.1169125787135.5092175715804935370" value="primary choose referent menu" />
+      <reference role="4jta.1071489090640.1071489389519" target="1164824854750" resolveInfo="CellMenuPart_Abstract" />
+      <node concept="4jta.1169127622168" id="1262430001741523500" role="4jta.1071489090640.1169129564478" info="ig">
+        <reference role="4jta.1169127622168.1169127628841" target="tpck.1835621062190663819" resolveInfo="IDontSubstituteByDefault" />
+      </node>
+    </node>
+    <node concept="4jta.1071489090640" id="1165004207520" info="ig">
+      <property role="4jta.1169125787135.4628067390765956802" value="false" />
+      <property role="4jta.1169125787135.4628067390765956807" value="false" />
+      <property role="asn4.1169194658468.1169194664001" value="CellMenuPart_ReplaceNode_Group" />
+      <property role="asn4.1133920641626.1193676396447" value="CellMenu" />
+      <property role="4jta.1169125787135.5092175715804935370" value="replace node (group of custom actions)" />
+      <reference role="4jta.1071489090640.1071489389519" target="1165253627126" resolveInfo="CellMenuPart_AbstractGroup" />
+      <node concept="4jta.1071489288298" id="1165004529292" role="4jta.1169125787135.1071489727083" info="ig">
+        <property role="4jta.1071489288298.1071599937831" value="aggregation" />
+        <property role="4jta.1071489288298.1071599776563" value="parametersFunction" />
+        <property role="4jta.1071489288298.1071599893252" value="1" />
+        <reference role="4jta.1071489288298.1071599976176" target="1163613035599" resolveInfo="CellMenuPart_AbstractGroup_Query" />
+      </node>
+      <node concept="4jta.1071489288298" id="1165004529293" role="4jta.1169125787135.1071489727083" info="ig">
+        <property role="4jta.1071489288298.1071599937831" value="aggregation" />
+        <property role="4jta.1071489288298.1071599776563" value="createFunction" />
+        <property role="4jta.1071489288298.1071599893252" value="1" />
+        <reference role="4jta.1071489288298.1071599976176" target="1163613131943" resolveInfo="CellMenuPart_ReplaceNode_Group_Create" />
+      </node>
+    </node>
+    <node concept="4jta.1071489090640" id="1165253627126" info="ig">
+      <property role="4jta.1169125787135.4628067390765956802" value="true" />
+      <property role="4jta.1169125787135.4628067390765956807" value="false" />
+      <property role="asn4.1169194658468.1169194664001" value="CellMenuPart_AbstractGroup" />
+      <property role="asn4.1133920641626.1193676396447" value="CellMenu" />
+      <reference role="4jta.1071489090640.1071489389519" target="1164824854750" resolveInfo="CellMenuPart_Abstract" />
+      <node concept="4jta.1071489288298" id="1165253890469" role="4jta.1169125787135.1071489727083" info="ig">
+        <property role="4jta.1071489288298.1071599937831" value="aggregation" />
+        <property role="4jta.1071489288298.1071599776563" value="parameterObjectType" />
+        <property role="4jta.1071489288298.1071599893252" value="1" />
+        <reference role="4jta.1071489288298.1071599976176" target="tpee.1068431790189" resolveInfo="Type" />
+      </node>
+      <node concept="4jta.1071489288299" id="1165254125954" role="4jta.1169125787135.1071489727084" info="ig">
+        <property role="asn4.1169194658468.1169194664001" value="presentation" />
+        <reference role="4jta.1071489288299.1082985295845" target="tpcw.1165007009656" resolveInfo="NodePresentationOptions" />
+      </node>
+      <node concept="4jta.1071489288298" id="1165254159533" role="4jta.1169125787135.1071489727083" info="ig">
+        <property role="4jta.1071489288298.1071599937831" value="aggregation" />
+        <property role="4jta.1071489288298.1071599776563" value="matchingTextFunction" />
+        <reference role="4jta.1071489288298.1071599976176" target="1164052439493" resolveInfo="CellMenuPart_AbstractGroup_MatchingText" />
+      </node>
+      <node concept="4jta.1071489288298" id="1165254180581" role="4jta.1169125787135.1071489727083" info="ig">
+        <property role="4jta.1071489288298.1071599937831" value="aggregation" />
+        <property role="4jta.1071489288298.1071599776563" value="descriptionTextFunction" />
+        <reference role="4jta.1071489288298.1071599976176" target="1164052588708" resolveInfo="CellMenuPart_AbstractGroup_DescriptionText" />
+      </node>
+    </node>
+    <node concept="4jta.1071489090640" id="1165270418989" info="ig">
+      <property role="4jta.1169125787135.4628067390765956802" value="false" />
+      <property role="4jta.1169125787135.4628067390765956807" value="false" />
+      <property role="asn4.1169194658468.1169194664001" value="CellMenuPart_ReplaceChild_Group" />
+      <property role="asn4.1133920641626.1193676396447" value="CellMenu" />
+      <property role="4jta.1169125787135.5092175715804935370" value="replace child (group of custom actions)" />
+      <reference role="4jta.1071489090640.1071489389519" target="1165253627126" resolveInfo="CellMenuPart_AbstractGroup" />
+      <node concept="4jta.1071489288298" id="1165270418991" role="4jta.1169125787135.1071489727083" info="ig">
+        <property role="4jta.1071489288298.1071599937831" value="aggregation" />
+        <property role="4jta.1071489288298.1071599776563" value="parametersFunction" />
+        <property role="4jta.1071489288298.1071599893252" value="1" />
+        <reference role="4jta.1071489288298.1071599976176" target="1165270662927" resolveInfo="CellMenuPart_ReplaceChild_Group_Query" />
+      </node>
+      <node concept="4jta.1071489288298" id="1165270418992" role="4jta.1169125787135.1071489727083" info="ig">
+        <property role="4jta.1071489288298.1071599937831" value="aggregation" />
+        <property role="4jta.1071489288298.1071599776563" value="createFunction" />
+        <reference role="4jta.1071489288298.1071599976176" target="1165270999881" resolveInfo="CellMenuPart_ReplaceChild_Group_Create" />
+      </node>
+      <node concept="4jta.1169127622168" id="1262430001741703130" role="4jta.1071489090640.1169129564478" info="ig">
+        <reference role="4jta.1169127622168.1169127628841" target="tpck.1835621062190663819" resolveInfo="IDontSubstituteByDefault" />
+      </node>
+    </node>
+    <node concept="4jta.1071489090640" id="1165270662927" info="ig">
+      <property role="4jta.1169125787135.4628067390765956802" value="false" />
+      <property role="4jta.1169125787135.4628067390765956807" value="false" />
+      <property role="asn4.1169194658468.1169194664001" value="CellMenuPart_ReplaceChild_Group_Query" />
+      <property role="4jta.1071489090640.5404671619616246344" value="none" />
+      <property role="asn4.1133920641626.1193676396447" value="CellMenu" />
+      <property role="4jta.1169125787135.5092175715804935370" value="get objects" />
+      <reference role="4jta.1071489090640.1071489389519" target="tpee.1137021947720" resolveInfo="ConceptFunction" />
+    </node>
+    <node concept="4jta.1071489090640" id="1165270999881" info="ig">
+      <property role="4jta.1169125787135.4628067390765956802" value="false" />
+      <property role="4jta.1169125787135.4628067390765956807" value="false" />
+      <property role="asn4.1169194658468.1169194664001" value="CellMenuPart_ReplaceChild_Group_Create" />
+      <property role="4jta.1071489090640.5404671619616246344" value="none" />
+      <property role="asn4.1133920641626.1193676396447" value="CellMenu" />
+      <property role="4jta.1169125787135.5092175715804935370" value="create new child" />
+      <reference role="4jta.1071489090640.1071489389519" target="tpee.1137021947720" resolveInfo="ConceptFunction" />
+    </node>
+    <node concept="4jta.1071489090640" id="1165280503630" info="ig">
+      <property role="4jta.1169125787135.4628067390765956802" value="false" />
+      <property role="4jta.1169125787135.4628067390765956807" value="false" />
+      <property role="asn4.1169194658468.1169194664001" value="CellMenuPart_ReplaceChild_CustomChildConcept" />
+      <property role="asn4.1133920641626.1193676396447" value="CellMenu" />
+      <property role="4jta.1169125787135.5092175715804935370" value="replace child (custom child's concept)" />
+      <reference role="4jta.1071489090640.1071489389519" target="1164824854750" resolveInfo="CellMenuPart_Abstract" />
+      <node concept="4jta.1071489288298" id="1165280503631" role="4jta.1169125787135.1071489727083" info="ig">
+        <property role="4jta.1071489288298.1071599937831" value="aggregation" />
+        <property role="4jta.1071489288298.1071599776563" value="childConceptFunction" />
+        <property role="4jta.1071489288298.1071599893252" value="1" />
+        <reference role="4jta.1071489288298.1071599976176" target="1165280856333" resolveInfo="CellMenuPart_ReplaceChild_CustomChildConcept_Query" />
+      </node>
+      <node concept="4jta.1169127622168" id="1262430001741647053" role="4jta.1071489090640.1169129564478" info="ig">
+        <reference role="4jta.1169127622168.1169127628841" target="tpck.1835621062190663819" resolveInfo="IDontSubstituteByDefault" />
+      </node>
+    </node>
+    <node concept="4jta.1071489090640" id="1165280856333" info="ig">
+      <property role="4jta.1169125787135.4628067390765956802" value="false" />
+      <property role="4jta.1169125787135.4628067390765956807" value="false" />
+      <property role="asn4.1169194658468.1169194664001" value="CellMenuPart_ReplaceChild_CustomChildConcept_Query" />
+      <property role="4jta.1071489090640.5404671619616246344" value="none" />
+      <property role="asn4.1133920641626.1193676396447" value="CellMenu" />
+      <property role="4jta.1169125787135.5092175715804935370" value="get child concept" />
+      <reference role="4jta.1071489090640.1071489389519" target="tpee.1137021947720" resolveInfo="ConceptFunction" />
+    </node>
+    <node concept="4jta.1071489090640" id="1165339175678" info="ig">
+      <property role="4jta.1169125787135.4628067390765956802" value="false" />
+      <property role="4jta.1169125787135.4628067390765956807" value="false" />
+      <property role="asn4.1169194658468.1169194664001" value="CellMenuPart_ReplaceChild_Item" />
+      <property role="asn4.1133920641626.1193676396447" value="CellMenu" />
+      <property role="4jta.1169125787135.5092175715804935370" value="replace child (custom action)" />
+      <reference role="4jta.1071489090640.1071489389519" target="1164824854750" resolveInfo="CellMenuPart_Abstract" />
+      <node concept="4jta.1071489288299" id="1165339639991" role="4jta.1169125787135.1071489727084" info="ig">
+        <property role="asn4.1169194658468.1169194664001" value="matchingText" />
+        <reference role="4jta.1071489288299.1082985295845" target="tpck.1082983041843" resolveInfo="string" />
+      </node>
+      <node concept="4jta.1071489288299" id="1175117579502" role="4jta.1169125787135.1071489727084" info="ig">
+        <property role="asn4.1169194658468.1169194664001" value="descriptionText" />
+        <reference role="4jta.1071489288299.1082985295845" target="tpck.1082983041843" resolveInfo="string" />
+      </node>
+      <node concept="4jta.1071489288298" id="1165339175680" role="4jta.1169125787135.1071489727083" info="ig">
+        <property role="4jta.1071489288298.1071599937831" value="aggregation" />
+        <property role="4jta.1071489288298.1071599776563" value="createFunction" />
+        <reference role="4jta.1071489288298.1071599976176" target="1165339307433" resolveInfo="CellMenuPart_ReplaceChild_Item_Create" />
+      </node>
+      <node concept="4jta.1169127622168" id="1262430001741520159" role="4jta.1071489090640.1169129564478" info="ig">
+        <reference role="4jta.1169127622168.1169127628841" target="tpck.1835621062190663819" resolveInfo="IDontSubstituteByDefault" />
+      </node>
+    </node>
+    <node concept="4jta.1071489090640" id="1165339307433" info="ig">
+      <property role="asn4.1169194658468.1169194664001" value="CellMenuPart_ReplaceChild_Item_Create" />
+      <property role="4jta.1071489090640.5404671619616246344" value="none" />
+      <property role="asn4.1133920641626.1193676396447" value="CellMenu" />
+      <reference role="4jta.1071489090640.1071489389519" target="tpee.1137021947720" resolveInfo="ConceptFunction" />
+    </node>
+    <node concept="4jta.1071489090640" id="1165420413719" info="ig">
+      <property role="4jta.1169125787135.4628067390765956802" value="false" />
+      <property role="4jta.1169125787135.4628067390765956807" value="false" />
+      <property role="asn4.1169194658468.1169194664001" value="CellMenuPart_Generic_Group" />
+      <property role="asn4.1133920641626.1193676396447" value="CellMenu" />
+      <property role="4jta.1169125787135.5092175715804935370" value="generic group" />
+      <reference role="4jta.1071489090640.1071489389519" target="1165253627126" resolveInfo="CellMenuPart_AbstractGroup" />
+      <node concept="4jta.1071489288298" id="1165420413720" role="4jta.1169125787135.1071489727083" info="ig">
+        <property role="4jta.1071489288298.1071599937831" value="aggregation" />
+        <property role="4jta.1071489288298.1071599776563" value="parametersFunction" />
+        <property role="4jta.1071489288298.1071599893252" value="1" />
+        <reference role="4jta.1071489288298.1071599976176" target="1163613035599" resolveInfo="CellMenuPart_AbstractGroup_Query" />
+      </node>
+      <node concept="4jta.1071489288298" id="1165420413721" role="4jta.1169125787135.1071489727083" info="ig">
+        <property role="4jta.1071489288298.1071599937831" value="aggregation" />
+        <property role="4jta.1071489288298.1071599776563" value="handlerFunction" />
+        <property role="4jta.1071489288298.1071599893252" value="1" />
+        <reference role="4jta.1071489288298.1071599976176" target="1165420626554" resolveInfo="CellMenuPart_Generic_Group_Handler" />
+      </node>
+    </node>
+    <node concept="4jta.1071489090640" id="1165420626554" info="ig">
+      <property role="4jta.1169125787135.4628067390765956802" value="false" />
+      <property role="4jta.1169125787135.4628067390765956807" value="false" />
+      <property role="asn4.1169194658468.1169194664001" value="CellMenuPart_Generic_Group_Handler" />
+      <property role="4jta.1071489090640.5404671619616246344" value="none" />
+      <property role="asn4.1133920641626.1193676396447" value="CellMenu" />
+      <property role="4jta.1169125787135.5092175715804935370" value="generic handler" />
+      <reference role="4jta.1071489090640.1071489389519" target="tpee.1137021947720" resolveInfo="ConceptFunction" />
+    </node>
+    <node concept="4jta.1071489090640" id="1165424453110" info="ig">
+      <property role="4jta.1169125787135.4628067390765956802" value="false" />
+      <property role="4jta.1169125787135.4628067390765956807" value="false" />
+      <property role="asn4.1169194658468.1169194664001" value="CellMenuPart_Generic_Item" />
+      <property role="asn4.1133920641626.1193676396447" value="CellMenu" />
+      <property role="4jta.1169125787135.5092175715804935370" value="generic item" />
+      <reference role="4jta.1071489090640.1071489389519" target="1164824854750" resolveInfo="CellMenuPart_Abstract" />
+      <node concept="4jta.1071489288299" id="1165424453111" role="4jta.1169125787135.1071489727084" info="ig">
+        <property role="asn4.1169194658468.1169194664001" value="matchingText" />
+        <reference role="4jta.1071489288299.1082985295845" target="tpck.1082983041843" resolveInfo="string" />
+      </node>
+      <node concept="4jta.1071489288298" id="1165424453112" role="4jta.1169125787135.1071489727083" info="ig">
+        <property role="4jta.1071489288298.1071599937831" value="aggregation" />
+        <property role="4jta.1071489288298.1071599776563" value="handlerFunction" />
+        <property role="4jta.1071489288298.1071599893252" value="1" />
+        <reference role="4jta.1071489288298.1071599976176" target="1165424657443" resolveInfo="CellMenuPart_Generic_Item_Handler" />
+      </node>
+    </node>
+    <node concept="4jta.1071489090640" id="1165424657443" info="ig">
+      <property role="asn4.1169194658468.1169194664001" value="CellMenuPart_Generic_Item_Handler" />
+      <property role="4jta.1071489090640.5404671619616246344" value="none" />
+      <property role="asn4.1133920641626.1193676396447" value="CellMenu" />
+      <reference role="4jta.1071489090640.1071489389519" target="tpee.1137021947720" resolveInfo="ConceptFunction" />
+    </node>
+    <node concept="4jta.1071489090640" id="1166040637528" info="ig">
+      <property role="4jta.1169125787135.4628067390765956802" value="false" />
+      <property role="4jta.1071489090640.1096454100552" value="true" />
+      <property role="4jta.1169125787135.4628067390765956807" value="false" />
+      <property role="4jta.1071489090640.1160488491229" value="${language_descriptor}/icons/menuComponent.png" />
+      <property role="asn4.1169194658468.1169194664001" value="CellMenuComponent" />
+      <property role="asn4.1133920641626.1193676396447" value="CellMenu" />
+      <property role="4jta.1169125787135.5092175715804935370" value="Cell Menu Component" />
+      <reference role="4jta.1071489090640.1071489389519" target="1166049232041" resolveInfo="AbstractComponent" />
+      <node concept="4jta.1071489288298" id="1166040865497" role="4jta.1169125787135.1071489727083" info="ig">
+        <property role="4jta.1071489288298.1071599937831" value="aggregation" />
+        <property role="4jta.1071489288298.1071599776563" value="applicableFeature" />
+        <reference role="4jta.1071489288298.1071599976176" target="1166041033436" resolveInfo="CellMenuComponentFeature" />
+      </node>
+      <node concept="4jta.1071489288298" id="1166041505377" role="4jta.1169125787135.1071489727083" info="ig">
+        <property role="4jta.1071489288298.1071599937831" value="aggregation" />
+        <property role="4jta.1071489288298.1071599776563" value="menuDescriptor" />
+        <property role="4jta.1071489288298.1071599893252" value="1" />
+        <reference role="4jta.1071489288298.1071599976176" target="1164824717996" resolveInfo="CellMenuDescriptor" />
+      </node>
+      <node concept="4jta.1169127622168" id="690365078554485265" role="4jta.1071489090640.1169129564478" info="ig">
+        <reference role="4jta.1169127622168.1169127628841" target="tpee.1212170275853" resolveInfo="IValidIdentifier" />
+      </node>
+      <node concept="4jta.1169127622168" id="5270353093116097656" role="4jta.1071489090640.1169129564478" info="ig">
+        <reference role="4jta.1169127622168.1169127628841" target="tpce.2621449412040133764" resolveInfo="IConceptAspect" />
+      </node>
+    </node>
+    <node concept="4jta.1071489090640" id="1166041033436" info="ig">
+      <property role="4jta.1169125787135.4628067390765956802" value="true" />
+      <property role="4jta.1169125787135.4628067390765956807" value="false" />
+      <property role="asn4.1169194658468.1169194664001" value="CellMenuComponentFeature" />
+      <property role="asn4.1133920641626.1193676396447" value="CellMenu" />
+      <reference role="4jta.1071489090640.1071489389519" target="tpck.1133920641626" resolveInfo="BaseConcept" />
+      <node concept="4jta.1071489288298" id="1166054297096" role="4jta.1169125787135.1071489727083" info="ig">
+        <property role="4jta.1071489288298.1071599776563" value="relationDeclaration" />
+        <property role="4jta.1071489288298.1071599893252" value="1" />
+        <reference role="4jta.1071489288298.1071599976176" target="tpck.1133920641626" resolveInfo="BaseConcept" />
+      </node>
+    </node>
+    <node concept="4jta.1071489090640" id="1166041748520" info="ig">
+      <property role="asn4.1169194658468.1169194664001" value="CellMenuComponentFeature_Property" />
+      <property role="asn4.1133920641626.1193676396447" value="CellMenu" />
+      <reference role="4jta.1071489090640.1071489389519" target="1166041033436" resolveInfo="CellMenuComponentFeature" />
+      <node concept="4jta.1071489288298" id="1166041884271" role="4jta.1169125787135.1071489727083" info="ig">
+        <property role="4jta.1071489288298.1071599776563" value="propertyDeclaration" />
+        <property role="4jta.1071489288298.1071599893252" value="1" />
+        <reference role="4jta.1071489288298.1071599976176" target="tpce.1071489288299" resolveInfo="PropertyDeclaration" />
+        <reference role="4jta.1071489288298.1071599698500" target="1166054297096" />
+      </node>
+    </node>
+    <node concept="4jta.1071489090640" id="1166042131867" info="ig">
+      <property role="asn4.1169194658468.1169194664001" value="CellMenuComponentFeature_Link" />
+      <property role="asn4.1133920641626.1193676396447" value="CellMenu" />
+      <reference role="4jta.1071489090640.1071489389519" target="1166041033436" resolveInfo="CellMenuComponentFeature" />
+      <node concept="4jta.1071489288298" id="1166042131869" role="4jta.1169125787135.1071489727083" info="ig">
+        <property role="4jta.1071489288298.1071599776563" value="linkDeclaration" />
+        <property role="4jta.1071489288298.1071599893252" value="1" />
+        <reference role="4jta.1071489288298.1071599976176" target="tpce.1071489288298" resolveInfo="LinkDeclaration" />
+        <reference role="4jta.1071489288298.1071599698500" target="1166054297096" />
+      </node>
+    </node>
+    <node concept="4jta.1071489090640" id="1166049232041" info="ig">
+      <property role="4jta.1169125787135.4628067390765956802" value="true" />
+      <property role="4jta.1169125787135.4628067390765956807" value="false" />
+      <property role="asn4.1169194658468.1169194664001" value="AbstractComponent" />
+      <node concept="4jta.1071489288298" id="1166049300910" role="4jta.1169125787135.1071489727083" info="ig">
+        <property role="4jta.1071489288298.1071599776563" value="conceptDeclaration" />
+        <property role="4jta.1071489288298.1071599893252" value="0..1" />
+        <reference role="4jta.1071489288298.1071599976176" target="tpce.1169125787135" resolveInfo="AbstractConceptDeclaration" />
+      </node>
+    </node>
+    <node concept="4jta.1071489090640" id="1166059625718" info="ig">
+      <property role="4jta.1169125787135.4628067390765956802" value="false" />
+      <property role="4jta.1169125787135.4628067390765956807" value="false" />
+      <property role="asn4.1169194658468.1169194664001" value="CellMenuPart_CellMenuComponent" />
+      <property role="asn4.1133920641626.1193676396447" value="CellMenu" />
+      <property role="4jta.1169125787135.5092175715804935370" value="menu component" />
+      <reference role="4jta.1071489090640.1071489389519" target="1164824854750" resolveInfo="CellMenuPart_Abstract" />
+      <node concept="4jta.1071489288298" id="1166059677893" role="4jta.1169125787135.1071489727083" info="ig">
+        <property role="4jta.1071489288298.1071599776563" value="cellMenuComponent" />
+        <property role="4jta.1071489288298.1071599893252" value="1" />
+        <reference role="4jta.1071489288298.1071599976176" target="1166040637528" resolveInfo="CellMenuComponent" />
+      </node>
+    </node>
+    <node concept="4jta.1071489090640" id="1174088067129" info="ig">
+      <property role="4jta.1169125787135.4628067390765956802" value="false" />
+      <property role="4jta.1169125787135.4628067390765956807" value="false" />
+      <property role="asn4.1169194658468.1169194664001" value="CellMenuPart_ReplaceChildPrimary" />
+      <property role="asn4.1133920641626.1193676396447" value="CellMenu" />
+      <property role="4jta.1169125787135.5092175715804935370" value="primary replace child menu" />
+      <reference role="4jta.1071489090640.1071489389519" target="1164824854750" resolveInfo="CellMenuPart_Abstract" />
+      <node concept="4jta.1169127622168" id="1262430001741702896" role="4jta.1071489090640.1169129564478" info="ig">
+        <reference role="4jta.1169127622168.1169127628841" target="tpck.1835621062190663819" resolveInfo="IDontSubstituteByDefault" />
+      </node>
+    </node>
+    <node concept="4jta.1071489090640" id="1176474535556" info="ig">
+      <property role="4jta.1169125787135.4628067390765956802" value="false" />
+      <property role="4jta.1169125787135.4628067390765956807" value="false" />
+      <property role="4jta.1169125787135.4628067390765907488" value="embedded block of code" />
+      <property role="asn4.1169194658468.1169194664001" value="QueryFunction_JComponent" />
+      <property role="4jta.1071489090640.5404671619616246344" value="none" />
+      <property role="asn4.1133920641626.1193676396447" value="QueryFunction" />
+      <property role="4jta.1169125787135.5092175715804935370" value="component" />
+      <reference role="4jta.1071489090640.1071489389519" target="tpee.1137021947720" resolveInfo="ConceptFunction" />
+    </node>
+    <node concept="4jta.1071489090640" id="1176717779940" info="ig">
+      <property role="4jta.1169125787135.4628067390765956802" value="false" />
+      <property role="4jta.1169125787135.4628067390765956807" value="false" />
+      <property role="4jta.1169125787135.4628067390765907488" value="function parameter" />
+      <property role="asn4.1169194658468.1169194664001" value="ConceptFunctionParameter_text" />
+      <property role="4jta.1071489090640.5404671619616246344" value="none" />
+      <property role="4jta.1169125787135.5092175715804935370" value="text" />
+      <reference role="4jta.1071489090640.1071489389519" target="tpee.1107135704075" resolveInfo="ConceptFunctionParameter" />
+      <node concept="4jta.1169127622168" id="1262430001741647440" role="4jta.1071489090640.1169129564478" info="ig">
+        <reference role="4jta.1169127622168.1169127628841" target="tpck.1835621062190663819" resolveInfo="IDontSubstituteByDefault" />
+      </node>
+    </node>
+    <node concept="4jta.1071489090640" id="1176717841777" info="ig">
+      <property role="4jta.1169125787135.4628067390765956802" value="false" />
+      <property role="4jta.1169125787135.4628067390765956807" value="false" />
+      <property role="4jta.1169125787135.4628067390765907488" value="embedded block of code" />
+      <property role="asn4.1169194658468.1169194664001" value="QueryFunction_ModelAccess_Getter" />
+      <property role="4jta.1071489090640.5404671619616246344" value="none" />
+      <property role="asn4.1133920641626.1193676396447" value="QueryFunction" />
+      <property role="4jta.1169125787135.5092175715804935370" value="condition" />
+      <reference role="4jta.1071489090640.1071489389519" target="tpee.1137021947720" resolveInfo="ConceptFunction" />
+    </node>
+    <node concept="4jta.1071489090640" id="1176717871254" info="ig">
+      <property role="4jta.1169125787135.4628067390765956802" value="false" />
+      <property role="4jta.1169125787135.4628067390765956807" value="false" />
+      <property role="4jta.1169125787135.4628067390765907488" value="embedded block of code" />
+      <property role="asn4.1169194658468.1169194664001" value="QueryFunction_ModelAccess_Setter" />
+      <property role="4jta.1071489090640.5404671619616246344" value="none" />
+      <property role="asn4.1133920641626.1193676396447" value="QueryFunction" />
+      <property role="4jta.1169125787135.5092175715804935370" value="condition" />
+      <reference role="4jta.1071489090640.1071489389519" target="tpee.1137021947720" resolveInfo="ConceptFunction" />
+    </node>
+    <node concept="4jta.1071489090640" id="1176717888428" info="ig">
+      <property role="4jta.1169125787135.4628067390765956802" value="false" />
+      <property role="4jta.1169125787135.4628067390765956807" value="false" />
+      <property role="4jta.1169125787135.4628067390765907488" value="embedded block of code" />
+      <property role="asn4.1169194658468.1169194664001" value="QueryFunction_ModelAccess_Validator" />
+      <property role="4jta.1071489090640.5404671619616246344" value="none" />
+      <property role="asn4.1133920641626.1193676396447" value="QueryFunction" />
+      <property role="4jta.1169125787135.5092175715804935370" value="condition" />
+      <reference role="4jta.1071489090640.1071489389519" target="tpee.1137021947720" resolveInfo="ConceptFunction" />
+    </node>
+    <node concept="4jta.1071489090640" id="1176717996748" info="ig">
+      <property role="asn4.1169194658468.1169194664001" value="ModelAccessor" />
+      <reference role="4jta.1071489090640.1071489389519" target="tpck.1133920641626" resolveInfo="BaseConcept" />
+      <node concept="4jta.1071489288298" id="1176718001874" role="4jta.1169125787135.1071489727083" info="ig">
+        <property role="4jta.1071489288298.1071599937831" value="aggregation" />
+        <property role="4jta.1071489288298.1071599776563" value="getter" />
+        <property role="4jta.1071489288298.1071599893252" value="1" />
+        <reference role="4jta.1071489288298.1071599976176" target="1176717841777" resolveInfo="QueryFunction_ModelAccess_Getter" />
+      </node>
+      <node concept="4jta.1071489288298" id="1176718007938" role="4jta.1169125787135.1071489727083" info="ig">
+        <property role="4jta.1071489288298.1071599937831" value="aggregation" />
+        <property role="4jta.1071489288298.1071599776563" value="setter" />
+        <property role="4jta.1071489288298.1071599893252" value="1" />
+        <reference role="4jta.1071489288298.1071599976176" target="1176717871254" resolveInfo="QueryFunction_ModelAccess_Setter" />
+      </node>
+      <node concept="4jta.1071489288298" id="1176718014393" role="4jta.1169125787135.1071489727083" info="ig">
+        <property role="4jta.1071489288298.1071599937831" value="aggregation" />
+        <property role="4jta.1071489288298.1071599776563" value="validator" />
+        <property role="4jta.1071489288298.1071599893252" value="1" />
+        <reference role="4jta.1071489288298.1071599976176" target="1176717888428" resolveInfo="QueryFunction_ModelAccess_Validator" />
+      </node>
+    </node>
+    <node concept="4jta.1071489090640" id="1176731909317" info="ig">
+      <property role="4jta.1169125787135.4628067390765956802" value="false" />
+      <property role="4jta.1169125787135.4628067390765956807" value="false" />
+      <property role="4jta.1169125787135.4628067390765907488" value="function parameter" />
+      <property role="asn4.1169194658468.1169194664001" value="ConceptFunctionParameter_oldText" />
+      <property role="4jta.1071489090640.5404671619616246344" value="none" />
+      <property role="4jta.1169125787135.5092175715804935370" value="oldText" />
+      <reference role="4jta.1071489090640.1071489389519" target="tpee.1107135704075" resolveInfo="ConceptFunctionParameter" />
+      <node concept="4jta.1169127622168" id="1262430001741703107" role="4jta.1071489090640.1169129564478" info="ig">
+        <reference role="4jta.1169127622168.1169127628841" target="tpck.1835621062190663819" resolveInfo="IDontSubstituteByDefault" />
+      </node>
+    </node>
+    <node concept="4jta.1071489090640" id="1176749715029" info="ig">
+      <property role="4jta.1169125787135.4628067390765956802" value="false" />
+      <property role="4jta.1169125787135.4628067390765956807" value="false" />
+      <property role="4jta.1169125787135.4628067390765907488" value="embedded block of code" />
+      <property role="asn4.1169194658468.1169194664001" value="QueryFunction_CellProvider" />
+      <property role="4jta.1071489090640.5404671619616246344" value="none" />
+      <property role="asn4.1133920641626.1193676396447" value="QueryFunction" />
+      <property role="4jta.1169125787135.5092175715804935370" value="cell provider" />
+      <reference role="4jta.1071489090640.1071489389519" target="tpee.1137021947720" resolveInfo="ConceptFunction" />
+    </node>
+    <node concept="4jta.1071489090640" id="1176809959526" info="ig">
+      <property role="4jta.1169125787135.4628067390765956802" value="false" />
+      <property role="4jta.1169125787135.4628067390765956807" value="false" />
+      <property role="asn4.1169194658468.1169194664001" value="QueryFunction_Color" />
+      <property role="4jta.1071489090640.5404671619616246344" value="none" />
+      <property role="asn4.1133920641626.1193676396447" value="QueryFunction.Style" />
+      <property role="4jta.1169125787135.5092175715804935370" value="color function" />
+      <reference role="4jta.1071489090640.1071489389519" target="1221059528506" resolveInfo="QueryFunction_StyleParameter" />
+      <node concept="4jta.1169127622168" id="1225456207992" role="4jta.1071489090640.1169129564478" info="ig">
+        <reference role="4jta.1169127622168.1169127628841" target="1225456097782" resolveInfo="IQueryFunction_Color" />
+      </node>
+    </node>
+    <node concept="4jta.1071489090640" id="1176897764478" info="ig">
+      <property role="4jta.1169125787135.4628067390765956802" value="false" />
+      <property role="4jta.1169125787135.4628067390765956807" value="false" />
+      <property role="4jta.1169125787135.4628067390765907488" value="embedded block of code" />
+      <property role="asn4.1169194658468.1169194664001" value="QueryFunction_NodeFactory" />
+      <property role="4jta.1071489090640.5404671619616246344" value="none" />
+      <property role="asn4.1133920641626.1193676396447" value="QueryFunction" />
+      <property role="4jta.1169125787135.5092175715804935370" value="node factory" />
+      <reference role="4jta.1071489090640.1071489389519" target="tpee.1137021947720" resolveInfo="ConceptFunction" />
+    </node>
+    <node concept="4jta.1071489090640" id="1176899348742" info="ig">
+      <property role="4jta.1169125787135.4628067390765956802" value="false" />
+      <property role="4jta.1169125787135.4628067390765956807" value="false" />
+      <property role="4jta.1169125787135.4628067390765907488" value="embedded block of code" />
+      <property role="asn4.1169194658468.1169194664001" value="QueryFunction_ImagePath" />
+      <property role="4jta.1071489090640.5404671619616246344" value="none" />
+      <property role="asn4.1133920641626.1193676396447" value="QueryFunction" />
+      <property role="4jta.1169125787135.5092175715804935370" value="string" />
+      <reference role="4jta.1071489090640.1071489389519" target="tpee.1137021947720" resolveInfo="ConceptFunction" />
+    </node>
+    <node concept="4jta.1071489090640" id="1180615838666" info="ig">
+      <property role="4jta.1169125787135.4628067390765956802" value="false" />
+      <property role="4jta.1169125787135.4628067390765956807" value="false" />
+      <property role="asn4.1169194658468.1169194664001" value="CellMenuPart_PropertyPostfixHints" />
+      <property role="asn4.1133920641626.1193676396447" value="CellMenu" />
+      <property role="4jta.1169125787135.5092175715804935370" value="property postfix hints" />
+      <reference role="4jta.1071489090640.1071489389519" target="1164824854750" resolveInfo="CellMenuPart_Abstract" />
+      <node concept="4jta.1071489288298" id="1180615838667" role="4jta.1169125787135.1071489727083" info="ig">
+        <property role="4jta.1071489288298.1071599937831" value="aggregation" />
+        <property role="4jta.1071489288298.1071599776563" value="postfixesFunction" />
+        <property role="4jta.1071489288298.1071599893252" value="1" />
+        <reference role="4jta.1071489288298.1071599976176" target="1180616057533" resolveInfo="CellMenuPart_PropertyPostfixHints_GetPostfixes" />
+      </node>
+      <node concept="4jta.1169127622168" id="1262430001741704680" role="4jta.1071489090640.1169129564478" info="ig">
+        <reference role="4jta.1169127622168.1169127628841" target="tpck.1835621062190663819" resolveInfo="IDontSubstituteByDefault" />
+      </node>
+    </node>
+    <node concept="4jta.1071489090640" id="1180616057533" info="ig">
+      <property role="4jta.1169125787135.4628067390765956802" value="false" />
+      <property role="4jta.1169125787135.4628067390765956807" value="false" />
+      <property role="asn4.1169194658468.1169194664001" value="CellMenuPart_PropertyPostfixHints_GetPostfixes" />
+      <property role="4jta.1071489090640.5404671619616246344" value="none" />
+      <property role="asn4.1133920641626.1193676396447" value="CellMenu" />
+      <property role="4jta.1169125787135.5092175715804935370" value="postfixes" />
+      <reference role="4jta.1071489090640.1071489389519" target="tpee.1137021947720" resolveInfo="ConceptFunction" />
+    </node>
+    <node concept="4jta.1071489090640" id="1182191800432" info="ig">
+      <property role="4jta.1169125787135.4628067390765956802" value="false" />
+      <property role="4jta.1169125787135.4628067390765956807" value="false" />
+      <property role="4jta.1169125787135.4628067390765907488" value="embedded block of code" />
+      <property role="asn4.1169194658468.1169194664001" value="QueryFunction_NodeListFilter" />
+      <property role="4jta.1071489090640.5404671619616246344" value="none" />
+      <property role="asn4.1133920641626.1193676396447" value="QueryFunction" />
+      <property role="4jta.1169125787135.5092175715804935370" value="node list provider" />
+      <reference role="4jta.1071489090640.1071489389519" target="tpee.1137021947720" resolveInfo="ConceptFunction" />
+    </node>
+    <node concept="4jta.1071489090640" id="1182233249301" info="ig">
+      <property role="4jta.1169125787135.4628067390765956802" value="false" />
+      <property role="4jta.1169125787135.4628067390765956807" value="false" />
+      <property role="4jta.1169125787135.4628067390765907488" value="function parameter" />
+      <property role="asn4.1169194658468.1169194664001" value="ConceptFunctionParameter_childNode" />
+      <property role="4jta.1071489090640.5404671619616246344" value="none" />
+      <property role="4jta.1169125787135.5092175715804935370" value="childNode" />
+      <reference role="4jta.1071489090640.1071489389519" target="tpee.1107135704075" resolveInfo="ConceptFunctionParameter" />
+      <node concept="4jta.1169127622168" id="1262430001741703380" role="4jta.1071489090640.1169129564478" info="ig">
+        <reference role="4jta.1169127622168.1169127628841" target="tpck.1835621062190663819" resolveInfo="IDontSubstituteByDefault" />
+      </node>
+    </node>
+    <node concept="4jta.1071489090640" id="1184319644772" info="ig">
+      <property role="4jta.1169125787135.4628067390765956802" value="false" />
+      <property role="4jta.1169125787135.4628067390765956807" value="false" />
+      <property role="4jta.1169125787135.4628067390765907488" value="not empty property" />
+      <property role="asn4.1169194658468.1169194664001" value="CellModel_NonEmptyProperty" />
+      <property role="asn4.1133920641626.1193676396447" value="CellModel" />
+      <property role="4jta.1169125787135.5092175715804935370" value="{+&lt;{propertyDeclaration}&gt;+}" />
+      <reference role="4jta.1071489090640.1071489389519" target="1073389658414" resolveInfo="CellModel_Property" />
+      <node concept="4jta.1169127622168" id="1262430001741704574" role="4jta.1071489090640.1169129564478" info="ig">
+        <reference role="4jta.1169127622168.1169127628841" target="tpck.1835621062190663819" resolveInfo="IDontSubstituteByDefault" />
+      </node>
+    </node>
+    <node concept="4jta.1071489090640" id="1186402211651" info="ig">
+      <property role="4jta.1169125787135.4628067390765956802" value="false" />
+      <property role="4jta.1071489090640.1096454100552" value="true" />
+      <property role="4jta.1169125787135.4628067390765956807" value="false" />
+      <property role="4jta.1071489090640.1160488491229" value="${language_descriptor}/icons/editorStylesheet.png" />
+      <property role="asn4.1169194658468.1169194664001" value="StyleSheet" />
+      <property role="asn4.1133920641626.1193676396447" value="Stylesheet" />
+      <property role="4jta.1169125787135.5092175715804935370" value="Stylesheet" />
+      <reference role="4jta.1071489090640.1071489389519" target="tpck.1133920641626" resolveInfo="BaseConcept" />
+      <node concept="4jta.1071489288298" id="1186402402630" role="4jta.1169125787135.1071489727083" info="ig">
+        <property role="4jta.1071489288298.1071599937831" value="aggregation" />
+        <property role="4jta.1071489288298.1071599776563" value="styleClass" />
+        <property role="4jta.1071489288298.1071599893252" value="0..n" />
+        <reference role="4jta.1071489288298.1071599976176" target="8714766435263473176" resolveInfo="IStyleSheetItem" />
+      </node>
+      <node concept="4jta.1169127622168" id="4241518279048800693" role="4jta.1071489090640.1169129564478" info="ig">
+        <reference role="4jta.1169127622168.1169127628841" target="tpee.1212170275853" resolveInfo="IValidIdentifier" />
+      </node>
+    </node>
+    <node concept="4jta.1071489090640" id="1186402373407" info="ig">
+      <property role="asn4.1169194658468.1169194664001" value="StyleSheetClass" />
+      <property role="asn4.1133920641626.1193676396447" value="Stylesheet" />
+      <property role="4jta.1169125787135.5092175715804935370" value="style" />
+      <reference role="4jta.1071489090640.1071489389519" target="tpck.1133920641626" resolveInfo="BaseConcept" />
+      <node concept="4jta.1224240836180" id="9122903797336079904" role="asn4.1133920641626.5169995583184591170" info="ig" />
+      <node concept="4jta.1169127622168" id="3383245079137382173" role="4jta.1071489090640.1169129564478" info="ig">
+        <reference role="4jta.1169127622168.1169127628841" target="3383245079136928391" resolveInfo="IStyleSheetMember" />
+      </node>
+      <node concept="4jta.1169127622168" id="2491174914162276359" role="4jta.1071489090640.1169129564478" info="ig">
+        <reference role="4jta.1169127622168.1169127628841" target="tpck.1835621062190663819" resolveInfo="IDontSubstituteByDefault" />
+      </node>
+      <node concept="4jta.1071489288298" id="1198252369256" role="4jta.1169125787135.1071489727083" info="ig">
+        <property role="4jta.1071489288298.1071599937831" value="aggregation" />
+        <property role="4jta.1071489288298.1071599776563" value="extendedClass" />
+        <reference role="4jta.1071489288298.1071599976176" target="1198252130653" resolveInfo="StyleSheetClassReference" />
+      </node>
+    </node>
+    <node concept="4jta.1071489090640" id="1186402475462" info="ig">
+      <property role="4jta.1169125787135.4628067390765956802" value="true" />
+      <property role="4jta.1169125787135.4628067390765956807" value="false" />
+      <property role="asn4.1169194658468.1169194664001" value="StyleClassItem" />
+      <property role="4jta.1071489090640.5404671619616246344" value="none" />
+      <property role="asn4.1133920641626.1193676396447" value="Stylesheet" />
+      <reference role="4jta.1071489090640.1071489389519" target="tpck.1133920641626" resolveInfo="BaseConcept" />
+      <node concept="4jta.1169127622168" id="2354370838250341435" role="4jta.1071489090640.1169129564478" info="ig">
+        <reference role="4jta.1169127622168.1169127628841" target="tpck.1319728274783077719" resolveInfo="ImplementationPart" />
+      </node>
+    </node>
+    <node concept="4jta.1071489090640" id="1186403694788" info="ig">
+      <property role="4jta.1169125787135.4628067390765956802" value="true" />
+      <property role="4jta.1169125787135.4628067390765956807" value="false" />
+      <property role="asn4.1169194658468.1169194664001" value="ColorStyleClassItem" />
+      <property role="4jta.1071489090640.5404671619616246344" value="none" />
+      <property role="asn4.1133920641626.1193676396447" value="Stylesheet" />
+      <reference role="4jta.1071489090640.1071489389519" target="1186402475462" resolveInfo="StyleClassItem" />
+      <node concept="4jta.1071489288298" id="1186403803051" role="4jta.1169125787135.1071489727083" info="ig">
+        <property role="4jta.1071489288298.1071599937831" value="aggregation" />
+        <property role="4jta.1071489288298.1071599776563" value="query" />
+        <reference role="4jta.1071489288298.1071599976176" target="1225456097782" resolveInfo="IQueryFunction_Color" />
+      </node>
+      <node concept="4jta.1071489288299" id="1186403713874" role="4jta.1169125787135.1071489727084" info="ig">
+        <property role="asn4.1169194658468.1169194664001" value="color" />
+        <reference role="4jta.1071489288299.1082985295845" target="1083952545109" resolveInfo="_Colors_Enum" />
+      </node>
+    </node>
+    <node concept="4jta.1071489090640" id="1186403751766" info="ig">
+      <property role="4jta.1169125787135.4628067390765956802" value="false" />
+      <property role="4jta.1169125787135.4628067390765956807" value="false" />
+      <property role="asn4.1169194658468.1169194664001" value="FontStyleStyleClassItem" />
+      <property role="4jta.1071489090640.5404671619616246344" value="none" />
+      <property role="asn4.1133920641626.1193676396447" value="Stylesheet" />
+      <property role="4jta.1169125787135.5092175715804935370" value="font-style" />
+      <reference role="4jta.1071489090640.1071489389519" target="1186402475462" resolveInfo="StyleClassItem" />
+      <node concept="4jta.1071489288298" id="1220975211821" role="4jta.1169125787135.1071489727083" info="ig">
+        <property role="4jta.1071489288298.1071599937831" value="aggregation" />
+        <property role="4jta.1071489288298.1071599776563" value="query" />
+        <reference role="4jta.1071489288298.1071599976176" target="1220974635399" resolveInfo="QueryFunction_FontStyle" />
+      </node>
+      <node concept="4jta.1071489288299" id="1186403771423" role="4jta.1169125787135.1071489727084" info="ig">
+        <property role="asn4.1169194658468.1169194664001" value="style" />
+        <reference role="4jta.1071489288299.1082985295845" target="1101211480448" resolveInfo="_FontStyle_Enum" />
+      </node>
+    </node>
+    <node concept="4jta.1071489090640" id="1186404549998" info="ig">
+      <property role="4jta.1169125787135.4628067390765956802" value="false" />
+      <property role="4jta.1169125787135.4628067390765956807" value="false" />
+      <property role="asn4.1169194658468.1169194664001" value="ForegroundColorStyleClassItem" />
+      <property role="4jta.1071489090640.5404671619616246344" value="none" />
+      <property role="asn4.1133920641626.1193676396447" value="Stylesheet" />
+      <property role="4jta.1169125787135.5092175715804935370" value="text-foreground-color" />
+      <reference role="4jta.1071489090640.1071489389519" target="1186403694788" resolveInfo="ColorStyleClassItem" />
+    </node>
+    <node concept="4jta.1071489090640" id="1186404574412" info="ig">
+      <property role="4jta.1169125787135.4628067390765956802" value="false" />
+      <property role="4jta.1169125787135.4628067390765956807" value="false" />
+      <property role="asn4.1169194658468.1169194664001" value="BackgroundColorStyleClassItem" />
+      <property role="4jta.1071489090640.5404671619616246344" value="none" />
+      <property role="asn4.1133920641626.1193676396447" value="Stylesheet" />
+      <property role="4jta.1169125787135.5092175715804935370" value="background-color" />
+      <reference role="4jta.1071489090640.1071489389519" target="1186403694788" resolveInfo="ColorStyleClassItem" />
+    </node>
+    <node concept="4jta.1071489090640" id="1186413799158" info="ig">
+      <property role="4jta.1169125787135.4628067390765956802" value="false" />
+      <property role="4jta.1169125787135.4628067390765956807" value="false" />
+      <property role="asn4.1169194658468.1169194664001" value="BracketColorStyleClassItem" />
+      <property role="4jta.1071489090640.5404671619616246344" value="none" />
+      <property role="asn4.1133920641626.1193676396447" value="Stylesheet" />
+      <property role="4jta.1169125787135.5092175715804935370" value="bracket-color" />
+      <reference role="4jta.1071489090640.1071489389519" target="1186403694788" resolveInfo="ColorStyleClassItem" />
+    </node>
+    <node concept="4jta.1071489090640" id="1186414536763" info="ig">
+      <property role="4jta.1169125787135.4628067390765956802" value="true" />
+      <property role="4jta.1169125787135.4628067390765956807" value="false" />
+      <property role="asn4.1169194658468.1169194664001" value="BooleanStyleSheetItem" />
+      <property role="4jta.1071489090640.5404671619616246344" value="none" />
+      <property role="asn4.1133920641626.1193676396447" value="Stylesheet" />
+      <reference role="4jta.1071489090640.1071489389519" target="1186402475462" resolveInfo="StyleClassItem" />
+      <node concept="4jta.1071489288298" id="1223387335081" role="4jta.1169125787135.1071489727083" info="ig">
+        <property role="4jta.1071489288298.1071599937831" value="aggregation" />
+        <property role="4jta.1071489288298.1071599776563" value="query" />
+        <reference role="4jta.1071489288298.1071599976176" target="1223387125302" resolveInfo="QueryFunction_Boolean" />
+      </node>
+      <node concept="4jta.1071489288299" id="1186414551515" role="4jta.1169125787135.1071489727084" info="ig">
+        <property role="asn4.1169194658468.1169194664001" value="flag" />
+        <reference role="4jta.1071489288299.1082985295845" target="tpck.1082983657063" resolveInfo="boolean" />
+      </node>
+    </node>
+    <node concept="4jta.1071489090640" id="1186414928363" info="ig">
+      <property role="4jta.1169125787135.4628067390765956802" value="false" />
+      <property role="4jta.1169125787135.4628067390765956807" value="false" />
+      <property role="asn4.1169194658468.1169194664001" value="SelectableStyleSheetItem" />
+      <property role="4jta.1071489090640.5404671619616246344" value="none" />
+      <property role="asn4.1133920641626.1193676396447" value="Stylesheet" />
+      <property role="4jta.1169125787135.5092175715804935370" value="selectable" />
+      <reference role="4jta.1071489090640.1071489389519" target="1186414536763" resolveInfo="BooleanStyleSheetItem" />
+    </node>
+    <node concept="4jta.1071489090640" id="1186414949600" info="ig">
+      <property role="4jta.1169125787135.4628067390765956802" value="false" />
+      <property role="4jta.1169125787135.4628067390765956807" value="false" />
+      <property role="asn4.1169194658468.1169194664001" value="AutoDeletableStyleClassItem" />
+      <property role="4jta.1071489090640.5404671619616246344" value="none" />
+      <property role="asn4.1133920641626.1193676396447" value="Stylesheet" />
+      <property role="4jta.1169125787135.5092175715804935370" value="auto-deletable" />
+      <reference role="4jta.1071489090640.1071489389519" target="1186414536763" resolveInfo="BooleanStyleSheetItem" />
+    </node>
+    <node concept="4jta.1071489090640" id="1186414976055" info="ig">
+      <property role="4jta.1169125787135.4628067390765956802" value="false" />
+      <property role="4jta.1169125787135.4628067390765956807" value="false" />
+      <property role="asn4.1169194658468.1169194664001" value="DrawBorderStyleClassItem" />
+      <property role="4jta.1071489090640.5404671619616246344" value="none" />
+      <property role="asn4.1133920641626.1193676396447" value="Stylesheet" />
+      <property role="4jta.1169125787135.5092175715804935370" value="draw-border" />
+      <reference role="4jta.1071489090640.1071489389519" target="1186414536763" resolveInfo="BooleanStyleSheetItem" />
+    </node>
+    <node concept="4jta.1071489090640" id="1186414999511" info="ig">
+      <property role="4jta.1169125787135.4628067390765956802" value="false" />
+      <property role="4jta.1169125787135.4628067390765956807" value="false" />
+      <property role="asn4.1169194658468.1169194664001" value="UnderlinedStyleClassItem" />
+      <property role="4jta.1071489090640.5404671619616246344" value="none" />
+      <property role="asn4.1133920641626.1193676396447" value="Stylesheet" />
+      <property role="4jta.1169125787135.5092175715804935370" value="underlined" />
+      <reference role="4jta.1071489090640.1071489389519" target="1186402475462" resolveInfo="StyleClassItem" />
+      <node concept="4jta.1071489288299" id="1214316229833" role="4jta.1169125787135.1071489727084" info="ig">
+        <property role="asn4.1169194658468.1169194664001" value="underlined" />
+        <reference role="4jta.1071489288299.1082985295845" target="1130847686886" resolveInfo="UnderlineStyle" />
+      </node>
+      <node concept="4jta.1071489288298" id="1221219051630" role="4jta.1169125787135.1071489727083" info="ig">
+        <property role="4jta.1071489288298.1071599937831" value="aggregation" />
+        <property role="4jta.1071489288298.1071599776563" value="query" />
+        <reference role="4jta.1071489288298.1071599976176" target="1221062700015" resolveInfo="QueryFunction_Underlined" />
+      </node>
+    </node>
+    <node concept="4jta.1071489090640" id="1186415722038" info="ig">
+      <property role="4jta.1169125787135.4628067390765956802" value="false" />
+      <property role="4jta.1169125787135.4628067390765956807" value="false" />
+      <property role="asn4.1169194658468.1169194664001" value="FontSizeStyleClassItem" />
+      <property role="4jta.1071489090640.5404671619616246344" value="none" />
+      <property role="asn4.1133920641626.1193676396447" value="Stylesheet" />
+      <property role="4jta.1169125787135.5092175715804935370" value="font-size" />
+      <reference role="4jta.1071489090640.1071489389519" target="1186402475462" resolveInfo="StyleClassItem" />
+      <node concept="4jta.1071489288298" id="1221064706952" role="4jta.1169125787135.1071489727083" info="ig">
+        <property role="4jta.1071489288298.1071599937831" value="aggregation" />
+        <property role="4jta.1071489288298.1071599776563" value="query" />
+        <property role="4jta.1071489288298.1071599893252" value="0..1" />
+        <reference role="4jta.1071489288298.1071599976176" target="1221057094638" resolveInfo="QueryFunction_Integer" />
+      </node>
+      <node concept="4jta.1071489288299" id="1221209241505" role="4jta.1169125787135.1071489727084" info="ig">
+        <property role="asn4.1169194658468.1169194664001" value="value" />
+        <reference role="4jta.1071489288299.1082985295845" target="tpck.1082983657062" resolveInfo="integer" />
+      </node>
+    </node>
+    <node concept="4jta.1071489090640" id="1186414860679" info="ig">
+      <property role="4jta.1169125787135.4628067390765956802" value="false" />
+      <property role="4jta.1169125787135.4628067390765956807" value="false" />
+      <property role="asn4.1169194658468.1169194664001" value="EditableStyleClassItem" />
+      <property role="4jta.1071489090640.5404671619616246344" value="none" />
+      <property role="asn4.1133920641626.1193676396447" value="Stylesheet" />
+      <property role="4jta.1169125787135.5092175715804935370" value="editable" />
+      <reference role="4jta.1071489090640.1071489389519" target="1186414536763" resolveInfo="BooleanStyleSheetItem" />
+    </node>
+    <node concept="4jta.1071489090640" id="1187258617779" info="ig">
+      <property role="4jta.1169125787135.4628067390765956802" value="false" />
+      <property role="4jta.1169125787135.4628067390765956807" value="false" />
+      <property role="asn4.1169194658468.1169194664001" value="ForegroundNullColorStyleClassItem" />
+      <property role="4jta.1071489090640.5404671619616246344" value="none" />
+      <property role="asn4.1133920641626.1193676396447" value="Stylesheet" />
+      <property role="4jta.1169125787135.5092175715804935370" value="text-foreground-null-color" />
+      <reference role="4jta.1071489090640.1071489389519" target="1186403694788" resolveInfo="ColorStyleClassItem" />
+    </node>
+    <node concept="4jta.1082978164219" id="1197893505573" info="ng">
+      <property role="asn4.1169194658468.1169194664001" value="_CaretPosition_Enum" />
+      <reference role="4jta.1082978164219.1083171729157" target="tpck.1082983041843" resolveInfo="string" />
+      <node concept="4jta.1083171877298" id="1197893505574" role="4jta.1082978164219.1083172003582" info="ig">
+        <property role="4jta.1083171877298.1083923523171" value="NONE" />
+        <property role="4jta.1083171877298.1083923523172" value="none" />
+      </node>
+      <node concept="4jta.1083171877298" id="1197893580900" role="4jta.1082978164219.1083172003582" info="ig">
+        <property role="4jta.1083171877298.1083923523171" value="FIRST" />
+        <property role="4jta.1083171877298.1083923523172" value="first" />
+      </node>
+      <node concept="4jta.1083171877298" id="1197893584870" role="4jta.1082978164219.1083172003582" info="ig">
+        <property role="4jta.1083171877298.1083923523171" value="LAST" />
+        <property role="4jta.1083171877298.1083923523172" value="last" />
+      </node>
+    </node>
+    <node concept="4jta.1071489090640" id="1198252130653" info="ig">
+      <property role="asn4.1169194658468.1169194664001" value="StyleSheetClassReference" />
+      <property role="asn4.1133920641626.1193676396447" value="Stylesheet" />
+      <reference role="4jta.1071489090640.1071489389519" target="tpck.1133920641626" resolveInfo="BaseConcept" />
+      <node concept="4jta.1224240836180" id="9122903797336079906" role="asn4.1133920641626.5169995583184591170" info="ig" />
+      <node concept="4jta.1071489288298" id="1198252276894" role="4jta.1169125787135.1071489727083" info="ig">
+        <property role="4jta.1071489288298.1071599776563" value="styleSheetClass" />
+        <property role="4jta.1071489288298.1071599893252" value="1" />
+        <reference role="4jta.1071489288298.1071599976176" target="1186402373407" resolveInfo="StyleSheetClass" />
+      </node>
+    </node>
+    <node concept="4jta.1071489090640" id="1198256887712" info="ig">
+      <property role="4jta.1169125787135.4628067390765956802" value="false" />
+      <property role="4jta.1169125787135.4628067390765956807" value="false" />
+      <property role="4jta.1169125787135.4628067390765907488" value="indent" />
+      <property role="asn4.1169194658468.1169194664001" value="CellModel_Indent" />
+      <property role="asn4.1133920641626.1193676396447" value="CellModel" />
+      <property role="4jta.1169125787135.5092175715804935370" value="---&gt;" />
+      <reference role="4jta.1071489090640.1071489389519" target="1073389214265" resolveInfo="EditorCellModel" />
+    </node>
+    <node concept="4jta.1071489090640" id="1198257632966" info="ig">
+      <property role="4jta.1169125787135.4628067390765956802" value="false" />
+      <property role="4jta.1169125787135.4628067390765956807" value="false" />
+      <property role="asn4.1169194658468.1169194664001" value="CellModel_BlockStart" />
+      <property role="asn4.1133920641626.1193676396447" value="CellModel" />
+      <property role="4jta.1169125787135.5092175715804935370" value="block start" />
+      <reference role="4jta.1071489090640.1071489389519" target="1073389214265" resolveInfo="EditorCellModel" />
+      <node concept="4jta.1071489288299" id="1198504797640" role="4jta.1169125787135.1071489727084" info="ig">
+        <property role="asn4.1169194658468.1169194664001" value="openBrace" />
+        <reference role="4jta.1071489288299.1082985295845" target="tpck.1082983041843" resolveInfo="string" />
+      </node>
+    </node>
+    <node concept="4jta.1071489090640" id="1198257747917" info="ig">
+      <property role="4jta.1169125787135.4628067390765956802" value="false" />
+      <property role="4jta.1169125787135.4628067390765956807" value="false" />
+      <property role="asn4.1169194658468.1169194664001" value="CellModel_BlockEnd" />
+      <property role="asn4.1133920641626.1193676396447" value="CellModel" />
+      <property role="4jta.1169125787135.5092175715804935370" value="block end" />
+      <reference role="4jta.1071489090640.1071489389519" target="1073389214265" resolveInfo="EditorCellModel" />
+      <node concept="4jta.1071489288299" id="1198506631483" role="4jta.1169125787135.1071489727084" info="ig">
+        <property role="asn4.1169194658468.1169194664001" value="closeBrace" />
+        <reference role="4jta.1071489288299.1082985295845" target="tpck.1082983041843" resolveInfo="string" />
+      </node>
+    </node>
+    <node concept="4jta.1071489090640" id="1198489924438" info="ig">
+      <property role="4jta.1169125787135.4628067390765956802" value="false" />
+      <property role="4jta.1169125787135.4628067390765956807" value="false" />
+      <property role="asn4.1169194658468.1169194664001" value="CellModel_Block" />
+      <property role="asn4.1133920641626.1193676396447" value="CellModel" />
+      <property role="4jta.1169125787135.5092175715804935370" value="block" />
+      <reference role="4jta.1071489090640.1071489389519" target="1073389214265" resolveInfo="EditorCellModel" />
+      <node concept="4jta.1071489288299" id="1198508727334" role="4jta.1169125787135.1071489727084" info="ig">
+        <property role="asn4.1169194658468.1169194664001" value="openBrace" />
+        <reference role="4jta.1071489288299.1082985295845" target="tpck.1082983041843" resolveInfo="string" />
+      </node>
+      <node concept="4jta.1071489288299" id="1198508733600" role="4jta.1169125787135.1071489727084" info="ig">
+        <property role="asn4.1169194658468.1169194664001" value="closeBrace" />
+        <reference role="4jta.1071489288299.1082985295845" target="tpck.1082983041843" resolveInfo="string" />
+      </node>
+      <node concept="4jta.1071489288298" id="1198489985045" role="4jta.1169125787135.1071489727083" info="ig">
+        <property role="4jta.1071489288298.1071599937831" value="aggregation" />
+        <property role="4jta.1071489288298.1071599776563" value="header" />
+        <property role="4jta.1071489288298.1071599893252" value="0..1" />
+        <reference role="4jta.1071489288298.1071599976176" target="1073389214265" resolveInfo="EditorCellModel" />
+      </node>
+      <node concept="4jta.1071489288298" id="1198489993734" role="4jta.1169125787135.1071489727083" info="ig">
+        <property role="4jta.1071489288298.1071599937831" value="aggregation" />
+        <property role="4jta.1071489288298.1071599776563" value="body" />
+        <property role="4jta.1071489288298.1071599893252" value="1" />
+        <reference role="4jta.1071489288298.1071599976176" target="1073389214265" resolveInfo="EditorCellModel" />
+      </node>
+    </node>
+    <node concept="4jta.1071489090640" id="1201266127262" info="ig">
+      <property role="4jta.1169125787135.4628067390765956802" value="true" />
+      <property role="4jta.1169125787135.4628067390765956807" value="false" />
+      <property role="asn4.1169194658468.1169194664001" value="SelectParameter" />
+      <property role="asn4.1133920641626.1193676396447" value="SNode" />
+      <reference role="4jta.1071489090640.1071489389519" target="tpck.1133920641626" resolveInfo="BaseConcept" />
+    </node>
+    <node concept="4jta.1071489090640" id="1201268783309" info="ig">
+      <property role="4jta.1169125787135.4628067390765956802" value="false" />
+      <property role="4jta.1169125787135.4628067390765956807" value="false" />
+      <property role="asn4.1169194658468.1169194664001" value="SelectPositionParameter" />
+      <property role="asn4.1133920641626.1193676396447" value="SNode" />
+      <property role="4jta.1169125787135.5092175715804935370" value="position=" />
+      <reference role="4jta.1071489090640.1071489389519" target="1201266127262" resolveInfo="SelectParameter" />
+      <node concept="4jta.1071489288299" id="1201268881975" role="4jta.1169125787135.1071489727084" info="ig">
+        <property role="asn4.1169194658468.1169194664001" value="position" />
+        <reference role="4jta.1071489288299.1082985295845" target="1201268793545" resolveInfo="SelectPosition" />
+      </node>
+    </node>
+    <node concept="4jta.1082978164219" id="1201268793545" info="ng">
+      <property role="asn4.1169194658468.1169194664001" value="SelectPosition" />
+      <property role="asn4.1133920641626.1193676396447" value="SNode" />
+      <reference role="4jta.1082978164219.1083171729157" target="tpck.1082983041843" resolveInfo="string" />
+      <node concept="4jta.1083171877298" id="1201268793546" role="4jta.1082978164219.1083172003582" info="ig">
+        <property role="4jta.1083171877298.1083923523171" value="before" />
+        <property role="4jta.1083171877298.1083923523172" value="before" />
+      </node>
+      <node concept="4jta.1083171877298" id="1201268803781" role="4jta.1082978164219.1083172003582" info="ig">
+        <property role="4jta.1083171877298.1083923523171" value="after" />
+        <property role="4jta.1083171877298.1083923523172" value="after" />
+      </node>
+    </node>
+    <node concept="4jta.1071489090640" id="1201270864927" info="ig">
+      <property role="4jta.1169125787135.4628067390765956802" value="false" />
+      <property role="4jta.1169125787135.4628067390765956807" value="false" />
+      <property role="asn4.1169194658468.1169194664001" value="CaretPositionParameter" />
+      <property role="asn4.1133920641626.1193676396447" value="SNode" />
+      <property role="4jta.1169125787135.5092175715804935370" value="caret position=" />
+      <reference role="4jta.1071489090640.1071489389519" target="1201266127262" resolveInfo="SelectParameter" />
+      <node concept="4jta.1071489288298" id="1201270907764" role="4jta.1169125787135.1071489727083" info="ig">
+        <property role="4jta.1071489288298.1071599937831" value="aggregation" />
+        <property role="4jta.1071489288298.1071599776563" value="position" />
+        <property role="4jta.1071489288298.1071599893252" value="1" />
+        <reference role="4jta.1071489288298.1071599976176" target="tpee.1068431790191" resolveInfo="Expression" />
+      </node>
+    </node>
+    <node concept="4jta.1071489090640" id="1214317859050" info="ig">
+      <property role="4jta.1169125787135.4628067390765956802" value="false" />
+      <property role="4jta.1169125787135.4628067390765956807" value="false" />
+      <property role="asn4.1169194658468.1169194664001" value="LayoutConstraintStyleClassItem" />
+      <property role="4jta.1071489090640.5404671619616246344" value="none" />
+      <property role="asn4.1133920641626.1193676396447" value="Stylesheet" />
+      <property role="4jta.1169125787135.5092175715804935370" value="layout constraint" />
+      <reference role="4jta.1071489090640.1071489389519" target="1186402475462" resolveInfo="StyleClassItem" />
+      <node concept="4jta.1071489288299" id="1214317859051" role="4jta.1169125787135.1071489727084" info="ig">
+        <property role="asn4.1169194658468.1169194664001" value="layoutConstraint" />
+        <reference role="4jta.1071489288299.1082985295845" target="1138197387103" resolveInfo="_Layout_Constraints_Enum" />
+      </node>
+    </node>
+    <node concept="4jta.1071489090640" id="1214320119173" info="ig">
+      <property role="4jta.1169125787135.4628067390765956802" value="false" />
+      <property role="4jta.1169125787135.4628067390765956807" value="false" />
+      <property role="asn4.1169194658468.1169194664001" value="SideTransformAnchorTagStyleClassItem" />
+      <property role="4jta.1071489090640.5404671619616246344" value="none" />
+      <property role="asn4.1133920641626.1193676396447" value="Stylesheet" />
+      <property role="4jta.1169125787135.5092175715804935370" value="side-transform-anchor-tag" />
+      <reference role="4jta.1071489090640.1071489389519" target="1186402475462" resolveInfo="StyleClassItem" />
+      <node concept="4jta.1071489288298" id="3608226089191997414" role="4jta.1169125787135.1071489727083" info="ig">
+        <property role="4jta.1071489288298.1071599937831" value="aggregation" />
+        <property role="4jta.1071489288298.1071599776563" value="tags" />
+        <property role="4jta.1071489288298.1071599893252" value="0..n" />
+        <reference role="4jta.1071489288298.1071599976176" target="3608226089191997415" resolveInfo="RightTransformAnchorTagWrapper" />
+      </node>
+      <node concept="4jta.1071489288299" id="1214320119174" role="4jta.1169125787135.1071489727084" info="ig">
+        <property role="asn4.1169194658468.1169194664001" value="tag" />
+        <reference role="4jta.1071489288299.1082985295845" target="1140813780565" resolveInfo="RightTransformAnchorTag" />
+      </node>
+    </node>
+    <node concept="4jta.1071489090640" id="1214406454886" info="ig">
+      <property role="4jta.1169125787135.4628067390765956802" value="false" />
+      <property role="4jta.1169125787135.4628067390765956807" value="false" />
+      <property role="asn4.1169194658468.1169194664001" value="TextBackgroundColorStyleClassItem" />
+      <property role="4jta.1071489090640.5404671619616246344" value="none" />
+      <property role="asn4.1133920641626.1193676396447" value="Stylesheet" />
+      <property role="4jta.1169125787135.5092175715804935370" value="text-background-color" />
+      <reference role="4jta.1071489090640.1071489389519" target="1186403694788" resolveInfo="ColorStyleClassItem" />
+    </node>
+    <node concept="4jta.1071489090640" id="1214406466686" info="ig">
+      <property role="4jta.1169125787135.4628067390765956802" value="false" />
+      <property role="4jta.1169125787135.4628067390765956807" value="false" />
+      <property role="asn4.1169194658468.1169194664001" value="TextBackgroundColorSelectedStyleClassItem" />
+      <property role="4jta.1071489090640.5404671619616246344" value="none" />
+      <property role="asn4.1133920641626.1193676396447" value="Stylesheet" />
+      <property role="4jta.1169125787135.5092175715804935370" value="text-background-color-selected" />
+      <reference role="4jta.1071489090640.1071489389519" target="1186403694788" resolveInfo="ColorStyleClassItem" />
+    </node>
+    <node concept="4jta.1071489090640" id="1214472762472" info="ig">
+      <property role="4jta.1169125787135.4628067390765956802" value="false" />
+      <property role="4jta.1169125787135.4628067390765956807" value="false" />
+      <property role="asn4.1169194658468.1169194664001" value="DefaultCaretPositionStyleClassItem" />
+      <property role="4jta.1071489090640.5404671619616246344" value="none" />
+      <property role="asn4.1133920641626.1193676396447" value="Stylesheet" />
+      <property role="4jta.1169125787135.5092175715804935370" value="default-caret-position" />
+      <reference role="4jta.1071489090640.1071489389519" target="1186402475462" resolveInfo="StyleClassItem" />
+      <node concept="4jta.1071489288299" id="1214472762473" role="4jta.1169125787135.1071489727084" info="ig">
+        <property role="asn4.1169194658468.1169194664001" value="position" />
+        <reference role="4jta.1071489288299.1082985295845" target="1197893505573" resolveInfo="_CaretPosition_Enum" />
+      </node>
+    </node>
+    <node concept="4jta.1071489090640" id="1215007762405" info="ig">
+      <property role="4jta.1169125787135.4628067390765956802" value="true" />
+      <property role="4jta.1169125787135.4628067390765956807" value="false" />
+      <property role="asn4.1169194658468.1169194664001" value="FloatStyleClassItem" />
+      <property role="4jta.1071489090640.5404671619616246344" value="none" />
+      <property role="asn4.1133920641626.1193676396447" value="Stylesheet" />
+      <reference role="4jta.1071489090640.1071489389519" target="1186402475462" resolveInfo="StyleClassItem" />
+      <node concept="4jta.1071489288299" id="1215007802031" role="4jta.1169125787135.1071489727084" info="ig">
+        <property role="asn4.1169194658468.1169194664001" value="value" />
+        <reference role="4jta.1071489288299.1082985295845" target="1239805001815" resolveInfo="_FloatOrInteger_String" />
+      </node>
+    </node>
+    <node concept="4jta.1071489090640" id="1215007883204" info="ig">
+      <property role="4jta.1169125787135.4628067390765956802" value="false" />
+      <property role="4jta.1169125787135.4628067390765956807" value="false" />
+      <property role="asn4.1169194658468.1169194664001" value="PaddingLeftStyleClassItem" />
+      <property role="4jta.1071489090640.5404671619616246344" value="none" />
+      <property role="asn4.1133920641626.1193676396447" value="Stylesheet.Paddings" />
+      <property role="4jta.1169125787135.5092175715804935370" value="padding-left" />
+      <reference role="4jta.1071489090640.1071489389519" target="1226339938453" resolveInfo="AbstractPaddingStyleClassItem" />
+    </node>
+    <node concept="4jta.1071489090640" id="1215007897487" info="ig">
+      <property role="4jta.1169125787135.4628067390765956802" value="false" />
+      <property role="4jta.1169125787135.4628067390765956807" value="false" />
+      <property role="asn4.1169194658468.1169194664001" value="PaddingRightStyleClassItem" />
+      <property role="4jta.1071489090640.5404671619616246344" value="none" />
+      <property role="asn4.1133920641626.1193676396447" value="Stylesheet.Paddings" />
+      <property role="4jta.1169125787135.5092175715804935370" value="padding-right" />
+      <reference role="4jta.1071489090640.1071489389519" target="1226339938453" resolveInfo="AbstractPaddingStyleClassItem" />
+    </node>
+    <node concept="4jta.1071489090640" id="1215085112640" info="ig">
+      <property role="4jta.1169125787135.4628067390765956802" value="false" />
+      <property role="4jta.1169125787135.4628067390765956807" value="false" />
+      <property role="asn4.1169194658468.1169194664001" value="FirstPositionAllowedStyleClassItem" />
+      <property role="4jta.1071489090640.5404671619616246344" value="none" />
+      <property role="asn4.1133920641626.1193676396447" value="Stylesheet" />
+      <property role="4jta.1169125787135.5092175715804935370" value="first-position-allowed" />
+      <reference role="4jta.1071489090640.1071489389519" target="1186414536763" resolveInfo="BooleanStyleSheetItem" />
+    </node>
+    <node concept="4jta.1071489090640" id="1215085197271" info="ig">
+      <property role="4jta.1169125787135.4628067390765956802" value="false" />
+      <property role="4jta.1169125787135.4628067390765956807" value="false" />
+      <property role="asn4.1169194658468.1169194664001" value="LastPositionAllowedStyleClassItem" />
+      <property role="4jta.1071489090640.5404671619616246344" value="none" />
+      <property role="asn4.1133920641626.1193676396447" value="Stylesheet" />
+      <property role="4jta.1169125787135.5092175715804935370" value="last-position-allowed" />
+      <reference role="4jta.1071489090640.1071489389519" target="1186414536763" resolveInfo="BooleanStyleSheetItem" />
+    </node>
+    <node concept="4jta.1082978164219" id="1216308376568" info="ng">
+      <property role="asn4.1169194658468.1169194664001" value="_NextLine_Enum" />
+      <reference role="4jta.1082978164219.1083171729157" target="tpck.1082983041843" resolveInfo="string" />
+      <node concept="4jta.1083171877298" id="1216308507057" role="4jta.1082978164219.1083172003582" info="ig">
+        <property role="4jta.1083171877298.1083923523172" value="right" />
+      </node>
+      <node concept="4jta.1083171877298" id="1216308502931" role="4jta.1082978164219.1083172003582" info="ig">
+        <property role="4jta.1083171877298.1083923523171" value="next-line" />
+        <property role="4jta.1083171877298.1083923523172" value="next-line" />
+      </node>
+      <node concept="4jta.1083171877298" id="1216308376569" role="4jta.1082978164219.1083172003582" info="ig">
+        <property role="4jta.1083171877298.1083923523171" value="indented" />
+        <property role="4jta.1083171877298.1083923523172" value="indented" />
+      </node>
+    </node>
+    <node concept="4jta.1071489090640" id="1216308599511" info="ig">
+      <property role="4jta.1169125787135.4628067390765956802" value="false" />
+      <property role="4jta.1071489090640.1096454100552" value="false" />
+      <property role="4jta.1169125787135.4628067390765956807" value="false" />
+      <property role="asn4.1169194658468.1169194664001" value="PositionStyleClassItem" />
+      <property role="4jta.1071489090640.5404671619616246344" value="none" />
+      <property role="asn4.1133920641626.1193676396447" value="Stylesheet" />
+      <property role="4jta.1169125787135.5092175715804935370" value="position" />
+      <reference role="4jta.1071489090640.1071489389519" target="1186402475462" resolveInfo="StyleClassItem" />
+      <node concept="4jta.1071489288299" id="1216308761668" role="4jta.1169125787135.1071489727084" info="ig">
+        <property role="asn4.1169194658468.1169194664001" value="position" />
+        <reference role="4jta.1071489288299.1082985295845" target="1216308376568" resolveInfo="_NextLine_Enum" />
+      </node>
+    </node>
+    <node concept="4jta.1071489090640" id="1216380990741" info="ig">
+      <property role="4jta.1169125787135.4628067390765956802" value="false" />
+      <property role="4jta.1169125787135.4628067390765956807" value="false" />
+      <property role="asn4.1169194658468.1169194664001" value="CellModel_TransactionalProperty" />
+      <property role="asn4.1133920641626.1193676396447" value="CellModel" />
+      <property role="4jta.1169125787135.5092175715804935370" value="{T &lt;{property}&gt; T}" />
+      <reference role="4jta.1071489090640.1071489389519" target="1079353555532" resolveInfo="CellModel_AbstractLabel" />
+      <node concept="4jta.1071489288299" id="1232439938817" role="4jta.1169125787135.1071489727084" info="ig">
+        <property role="asn4.1169194658468.1169194664001" value="runInCommand" />
+        <reference role="4jta.1071489288299.1082985295845" target="tpck.1082983657063" resolveInfo="boolean" />
+      </node>
+      <node concept="4jta.1071489288299" id="8251517099537646385" role="4jta.1169125787135.1071489727084" info="ig">
+        <property role="asn4.1169194658468.1169194664001" value="allowEmptyText" />
+        <reference role="4jta.1071489288299.1082985295845" target="tpck.1082983657063" resolveInfo="boolean" />
+      </node>
+      <node concept="4jta.1071489288298" id="1216381211800" role="4jta.1169125787135.1071489727083" info="ig">
+        <property role="4jta.1071489288298.1071599937831" value="aggregation" />
+        <property role="4jta.1071489288298.1071599776563" value="handlerBlock" />
+        <property role="4jta.1071489288298.1071599893252" value="1" />
+        <reference role="4jta.1071489288298.1071599976176" target="1216381054717" resolveInfo="TransactionalPropertyHandler" />
+      </node>
+      <node concept="4jta.1071489288298" id="1216381219207" role="4jta.1169125787135.1071489727083" info="ig">
+        <property role="4jta.1071489288298.1071599937831" value="reference" />
+        <property role="4jta.1071489288298.1071599776563" value="property" />
+        <property role="4jta.1071489288298.1071599893252" value="1" />
+        <reference role="4jta.1071489288298.1071599976176" target="tpce.1071489288299" resolveInfo="PropertyDeclaration" />
+      </node>
+      <node concept="4jta.1169127622168" id="1262430001741718855" role="4jta.1071489090640.1169129564478" info="ig">
+        <reference role="4jta.1169127622168.1169127628841" target="tpck.1835621062190663819" resolveInfo="IDontSubstituteByDefault" />
+      </node>
+    </node>
+    <node concept="4jta.1071489090640" id="1216381054717" info="ig">
+      <property role="asn4.1169194658468.1169194664001" value="TransactionalPropertyHandler" />
+      <property role="4jta.1071489090640.5404671619616246344" value="none" />
+      <property role="asn4.1133920641626.1193676396447" value="QueryFunction" />
+      <reference role="4jta.1071489090640.1071489389519" target="tpee.1137021947720" resolveInfo="ConceptFunction" />
+    </node>
+    <node concept="4jta.1071489090640" id="1216381117100" info="ig">
+      <property role="4jta.1169125787135.4628067390765956802" value="false" />
+      <property role="4jta.1169125787135.4628067390765956807" value="false" />
+      <property role="asn4.1169194658468.1169194664001" value="TransactionPropertyHandler_oldValue" />
+      <property role="4jta.1071489090640.5404671619616246344" value="none" />
+      <property role="asn4.1133920641626.1193676396447" value="QueryFunction" />
+      <property role="4jta.1169125787135.5092175715804935370" value="oldValue" />
+      <reference role="4jta.1071489090640.1071489389519" target="tpee.1107135704075" resolveInfo="ConceptFunctionParameter" />
+    </node>
+    <node concept="4jta.1071489090640" id="1216381148013" info="ig">
+      <property role="4jta.1169125787135.4628067390765956802" value="false" />
+      <property role="4jta.1169125787135.4628067390765956807" value="false" />
+      <property role="asn4.1169194658468.1169194664001" value="TransactionPropertyHandler_newValue" />
+      <property role="4jta.1071489090640.5404671619616246344" value="none" />
+      <property role="asn4.1133920641626.1193676396447" value="QueryFunction" />
+      <property role="4jta.1169125787135.5092175715804935370" value="newValue" />
+      <reference role="4jta.1071489090640.1071489389519" target="tpee.1107135704075" resolveInfo="ConceptFunctionParameter" />
+      <node concept="4jta.1169127622168" id="1262430001741641622" role="4jta.1071489090640.1169129564478" info="ig">
+        <reference role="4jta.1169127622168.1169127628841" target="tpck.1835621062190663819" resolveInfo="IDontSubstituteByDefault" />
+      </node>
+    </node>
+    <node concept="4jta.1071489090640" id="1216560327200" info="ig">
+      <property role="4jta.1169125787135.4628067390765956802" value="false" />
+      <property role="4jta.1169125787135.4628067390765956807" value="false" />
+      <property role="asn4.1169194658468.1169194664001" value="PositionChildrenStyleClassItem" />
+      <property role="4jta.1071489090640.5404671619616246344" value="none" />
+      <property role="asn4.1133920641626.1193676396447" value="Stylesheet" />
+      <property role="4jta.1169125787135.5092175715804935370" value="position-children" />
+      <reference role="4jta.1071489090640.1071489389519" target="1186402475462" resolveInfo="StyleClassItem" />
+      <node concept="4jta.1071489288299" id="1216560518566" role="4jta.1169125787135.1071489727084" info="ig">
+        <property role="asn4.1169194658468.1169194664001" value="position" />
+        <reference role="4jta.1071489288299.1082985295845" target="1216308376568" resolveInfo="_NextLine_Enum" />
+      </node>
+    </node>
+    <node concept="4jta.1071489090640" id="1216672142186" info="ig">
+      <property role="4jta.1169125787135.4628067390765956802" value="false" />
+      <property role="4jta.1169125787135.4628067390765956807" value="false" />
+      <property role="asn4.1169194658468.1169194664001" value="CellLayout_Indent_Old" />
+      <property role="4jta.1071489090640.5404671619616246344" value="none" />
+      <property role="asn4.1133920641626.1193676396447" value="CellLayout" />
+      <property role="4jta.1169125787135.5092175715804935370" value="indent_old" />
+      <reference role="4jta.1071489090640.1071489389519" target="1106270491082" resolveInfo="CellLayout" />
+      <node concept="4jta.1224240836180" id="7945085613660522985" role="asn4.1133920641626.5169995583184591170" info="ig" />
+    </node>
+    <node concept="4jta.1071489090640" id="1219226236603" info="ig">
+      <property role="4jta.1169125787135.4628067390765956802" value="false" />
+      <property role="4jta.1169125787135.4628067390765956807" value="false" />
+      <property role="asn4.1169194658468.1169194664001" value="DrawBracketsStyleClassItem" />
+      <property role="4jta.1071489090640.5404671619616246344" value="none" />
+      <property role="asn4.1133920641626.1193676396447" value="Stylesheet" />
+      <property role="4jta.1169125787135.5092175715804935370" value="draw-brackets" />
+      <reference role="4jta.1071489090640.1071489389519" target="1186414536763" resolveInfo="BooleanStyleSheetItem" />
+    </node>
+    <node concept="4jta.1169125989551" id="1219418625346" info="ig">
+      <property role="asn4.1169194658468.1169194664001" value="IStyleContainer" />
+      <property role="asn4.1133920641626.1193676396447" value="Stylesheet" />
+      <node concept="4jta.1071489288298" id="1219418656006" role="4jta.1169125787135.1071489727083" info="ig">
+        <property role="4jta.1071489288298.1071599937831" value="aggregation" />
+        <property role="4jta.1071489288298.1071599776563" value="styleItem" />
+        <property role="4jta.1071489288298.1071599893252" value="0..n" />
+        <reference role="4jta.1071489288298.1071599976176" target="1186402475462" resolveInfo="StyleClassItem" />
+      </node>
+    </node>
+    <node concept="4jta.1071489090640" id="1220974635399" info="ig">
+      <property role="4jta.1169125787135.4628067390765956802" value="false" />
+      <property role="4jta.1169125787135.4628067390765956807" value="false" />
+      <property role="asn4.1169194658468.1169194664001" value="QueryFunction_FontStyle" />
+      <property role="4jta.1071489090640.5404671619616246344" value="none" />
+      <property role="asn4.1133920641626.1193676396447" value="QueryFunction.Style" />
+      <property role="4jta.1169125787135.5092175715804935370" value="font style function" />
+      <reference role="4jta.1071489090640.1071489389519" target="1221059528506" resolveInfo="QueryFunction_StyleParameter" />
+    </node>
+    <node concept="4jta.1071489090640" id="1221057094638" info="ig">
+      <property role="4jta.1169125787135.4628067390765956802" value="false" />
+      <property role="4jta.1169125787135.4628067390765956807" value="false" />
+      <property role="asn4.1169194658468.1169194664001" value="QueryFunction_Integer" />
+      <property role="4jta.1071489090640.5404671619616246344" value="none" />
+      <property role="asn4.1133920641626.1193676396447" value="QueryFunction.Style" />
+      <property role="4jta.1169125787135.5092175715804935370" value="int function" />
+      <reference role="4jta.1071489090640.1071489389519" target="1221059528506" resolveInfo="QueryFunction_StyleParameter" />
+    </node>
+    <node concept="4jta.1071489090640" id="1221059528506" info="ig">
+      <property role="4jta.1169125787135.4628067390765956802" value="true" />
+      <property role="4jta.1169125787135.4628067390765956807" value="false" />
+      <property role="4jta.1169125787135.4628067390765907488" value="embedded block of code" />
+      <property role="asn4.1169194658468.1169194664001" value="QueryFunction_StyleParameter" />
+      <property role="4jta.1071489090640.5404671619616246344" value="none" />
+      <property role="asn4.1133920641626.1193676396447" value="QueryFunction.Style" />
+      <reference role="4jta.1071489090640.1071489389519" target="tpee.1137021947720" resolveInfo="ConceptFunction" />
+    </node>
+    <node concept="4jta.1071489090640" id="1221062700015" info="ig">
+      <property role="4jta.1169125787135.4628067390765956802" value="false" />
+      <property role="4jta.1169125787135.4628067390765956807" value="false" />
+      <property role="asn4.1169194658468.1169194664001" value="QueryFunction_Underlined" />
+      <property role="4jta.1071489090640.5404671619616246344" value="none" />
+      <property role="asn4.1133920641626.1193676396447" value="QueryFunction.Style" />
+      <property role="4jta.1169125787135.5092175715804935370" value="underlined function" />
+      <reference role="4jta.1071489090640.1071489389519" target="1221059528506" resolveInfo="QueryFunction_StyleParameter" />
+    </node>
+    <node concept="4jta.1071489090640" id="1223386653097" info="ig">
+      <property role="4jta.1169125787135.4628067390765956802" value="false" />
+      <property role="4jta.1169125787135.4628067390765956807" value="false" />
+      <property role="asn4.1169194658468.1169194664001" value="StrikeOutStyleSheet" />
+      <property role="4jta.1071489090640.5404671619616246344" value="none" />
+      <property role="asn4.1133920641626.1193676396447" value="Stylesheet" />
+      <property role="4jta.1169125787135.5092175715804935370" value="strike-out" />
+      <reference role="4jta.1071489090640.1071489389519" target="1186414536763" resolveInfo="BooleanStyleSheetItem" />
+    </node>
+    <node concept="4jta.1071489090640" id="1223387125302" info="ig">
+      <property role="4jta.1169125787135.4628067390765956802" value="false" />
+      <property role="4jta.1169125787135.4628067390765956807" value="false" />
+      <property role="asn4.1169194658468.1169194664001" value="QueryFunction_Boolean" />
+      <property role="4jta.1071489090640.5404671619616246344" value="none" />
+      <property role="asn4.1133920641626.1193676396447" value="QueryFunction.Style" />
+      <property role="4jta.1169125787135.5092175715804935370" value="boolean function" />
+      <reference role="4jta.1071489090640.1071489389519" target="1221059528506" resolveInfo="QueryFunction_StyleParameter" />
+    </node>
+    <node concept="4jta.1169125989551" id="1225456097782" info="ig">
+      <property role="asn4.1169194658468.1169194664001" value="IQueryFunction_Color" />
+      <property role="asn4.1133920641626.1193676396447" value="QueryFunction.Style" />
+    </node>
+    <node concept="4jta.1071489090640" id="1225456267680" info="ig">
+      <property role="4jta.1169125787135.4628067390765956802" value="false" />
+      <property role="4jta.1169125787135.4628067390765956807" value="false" />
+      <property role="4jta.1169125787135.4628067390765907488" value="#RRGGBB" />
+      <property role="asn4.1169194658468.1169194664001" value="RGBColor" />
+      <property role="asn4.1133920641626.1193676396447" value="Stylesheet" />
+      <property role="4jta.1169125787135.5092175715804935370" value="#" />
+      <reference role="4jta.1071489090640.1071489389519" target="tpck.1133920641626" resolveInfo="BaseConcept" />
+      <node concept="4jta.1169127622168" id="1225456281899" role="4jta.1071489090640.1169129564478" info="ig">
+        <reference role="4jta.1169127622168.1169127628841" target="1225456097782" resolveInfo="IQueryFunction_Color" />
+      </node>
+      <node concept="4jta.1071489288299" id="1225456424731" role="4jta.1169125787135.1071489727084" info="ig">
+        <property role="asn4.1169194658468.1169194664001" value="value" />
+        <reference role="4jta.1071489288299.1082985295845" target="tpck.1082983041843" resolveInfo="string" />
+      </node>
+    </node>
+    <node concept="4jta.1071489090640" id="1225898583838" info="ig">
+      <property role="asn4.1169194658468.1169194664001" value="ReadOnlyModelAccessor" />
+      <reference role="4jta.1071489090640.1071489389519" target="tpck.1133920641626" resolveInfo="BaseConcept" />
+      <node concept="4jta.1071489288298" id="1225898971709" role="4jta.1169125787135.1071489727083" info="ig">
+        <property role="4jta.1071489288298.1071599937831" value="aggregation" />
+        <property role="4jta.1071489288298.1071599776563" value="getter" />
+        <property role="4jta.1071489288298.1071599893252" value="1" />
+        <reference role="4jta.1071489288298.1071599976176" target="1176717841777" resolveInfo="QueryFunction_ModelAccess_Getter" />
+      </node>
+    </node>
+    <node concept="4jta.1071489090640" id="1225900081164" info="ig">
+      <property role="4jta.1169125787135.4628067390765956802" value="false" />
+      <property role="4jta.1169125787135.4628067390765956807" value="false" />
+      <property role="4jta.1169125787135.4628067390765907488" value="reference to read only accessor" />
+      <property role="asn4.1169194658468.1169194664001" value="CellModel_ReadOnlyModelAccessor" />
+      <property role="asn4.1133920641626.1193676396447" value="CellModel" />
+      <property role="4jta.1169125787135.5092175715804935370" value="read only model access" />
+      <reference role="4jta.1071489090640.1071489389519" target="1079353555532" resolveInfo="CellModel_AbstractLabel" />
+      <node concept="4jta.1071489288298" id="1225900141900" role="4jta.1169125787135.1071489727083" info="ig">
+        <property role="4jta.1071489288298.1071599937831" value="aggregation" />
+        <property role="4jta.1071489288298.1071599776563" value="modelAccessor" />
+        <property role="4jta.1071489288298.1071599893252" value="1" />
+        <reference role="4jta.1071489288298.1071599976176" target="1225898583838" resolveInfo="ReadOnlyModelAccessor" />
+      </node>
+    </node>
+    <node concept="4jta.1071489090640" id="1226339751946" info="ig">
+      <property role="4jta.1169125787135.4628067390765956802" value="false" />
+      <property role="4jta.1169125787135.4628067390765956807" value="false" />
+      <property role="asn4.1169194658468.1169194664001" value="PaddingTopStyleClassItem" />
+      <property role="4jta.1071489090640.5404671619616246344" value="none" />
+      <property role="asn4.1133920641626.1193676396447" value="Stylesheet.Paddings" />
+      <property role="4jta.1169125787135.5092175715804935370" value="padding-top" />
+      <reference role="4jta.1071489090640.1071489389519" target="1226339938453" resolveInfo="AbstractPaddingStyleClassItem" />
+    </node>
+    <node concept="4jta.1071489090640" id="1226339813308" info="ig">
+      <property role="4jta.1169125787135.4628067390765956802" value="false" />
+      <property role="4jta.1169125787135.4628067390765956807" value="false" />
+      <property role="asn4.1169194658468.1169194664001" value="PaddingBottomStyleClassItem" />
+      <property role="4jta.1071489090640.5404671619616246344" value="none" />
+      <property role="asn4.1133920641626.1193676396447" value="Stylesheet.Paddings" />
+      <property role="4jta.1169125787135.5092175715804935370" value="padding-bottom" />
+      <reference role="4jta.1071489090640.1071489389519" target="1226339938453" resolveInfo="AbstractPaddingStyleClassItem" />
+    </node>
+    <node concept="4jta.1071489090640" id="1226339938453" info="ig">
+      <property role="4jta.1169125787135.4628067390765956802" value="true" />
+      <property role="4jta.1169125787135.4628067390765956807" value="false" />
+      <property role="asn4.1169194658468.1169194664001" value="AbstractPaddingStyleClassItem" />
+      <property role="4jta.1071489090640.5404671619616246344" value="none" />
+      <property role="asn4.1133920641626.1193676396447" value="Stylesheet.Paddings" />
+      <reference role="4jta.1071489090640.1071489389519" target="1215007762405" resolveInfo="FloatStyleClassItem" />
+      <node concept="4jta.1071489288299" id="1226504838901" role="4jta.1169125787135.1071489727084" info="ig">
+        <property role="asn4.1169194658468.1169194664001" value="measure" />
+        <reference role="4jta.1071489288299.1082985295845" target="1226504633752" resolveInfo="_Enum_Measure" />
+      </node>
+    </node>
+    <node concept="4jta.1082978164219" id="1226504633752" info="ng">
+      <property role="asn4.1169194658468.1169194664001" value="_Enum_Measure" />
+      <property role="asn4.1133920641626.1193676396447" value="Stylesheet.Paddings" />
+      <reference role="4jta.1082978164219.1083171729157" target="tpck.1082983041843" resolveInfo="string" />
+      <reference role="4jta.1082978164219.1083241965437" target="1226504706052" />
+      <node concept="4jta.1083171877298" id="1226504633753" role="4jta.1082978164219.1083172003582" info="ig">
+        <property role="4jta.1083171877298.1083923523171" value="PIXELS" />
+        <property role="4jta.1083171877298.1083923523172" value="pixels" />
+      </node>
+      <node concept="4jta.1083171877298" id="1226504706052" role="4jta.1082978164219.1083172003582" info="ig">
+        <property role="4jta.1083171877298.1083923523171" value="SPACES" />
+        <property role="4jta.1083171877298.1083923523172" value="spaces" />
+      </node>
+    </node>
+    <node concept="4jta.1071489090640" id="1227861515039" info="ig">
+      <property role="4jta.1169125787135.4628067390765956802" value="false" />
+      <property role="4jta.1169125787135.4628067390765956807" value="false" />
+      <property role="asn4.1169194658468.1169194664001" value="NavigatableReferenceStyleClassItem" />
+      <property role="4jta.1071489090640.5404671619616246344" value="none" />
+      <property role="asn4.1133920641626.1193676396447" value="Stylesheet" />
+      <property role="4jta.1169125787135.5092175715804935370" value="navigatable-reference" />
+      <reference role="4jta.1071489090640.1071489389519" target="1186402475462" resolveInfo="StyleClassItem" />
+      <node concept="4jta.1071489288298" id="1227861587090" role="4jta.1169125787135.1071489727083" info="ig">
+        <property role="4jta.1071489288298.1071599937831" value="reference" />
+        <property role="4jta.1071489288298.1071599776563" value="link" />
+        <property role="4jta.1071489288298.1071599893252" value="0..1" />
+        <reference role="4jta.1071489288298.1071599976176" target="tpce.1071489288298" resolveInfo="LinkDeclaration" />
+      </node>
+    </node>
+    <node concept="4jta.1071489090640" id="1233148810477" info="ig">
+      <property role="asn4.1169194658468.1169194664001" value="InlineStyleDeclaration" />
+      <reference role="4jta.1071489090640.1071489389519" target="tpck.1133920641626" resolveInfo="BaseConcept" />
+      <node concept="4jta.1169127622168" id="1381004262292426860" role="4jta.1071489090640.1169129564478" info="ig">
+        <reference role="4jta.1169127622168.1169127628841" target="1381004262292414836" resolveInfo="ICellStyle" />
+      </node>
+    </node>
+    <node concept="4jta.1071489090640" id="1233758997495" info="ig">
+      <property role="4jta.1169125787135.4628067390765956802" value="false" />
+      <property role="4jta.1169125787135.4628067390765956807" value="false" />
+      <property role="asn4.1169194658468.1169194664001" value="PunctuationLeftStyleClassItem" />
+      <property role="4jta.1071489090640.5404671619616246344" value="none" />
+      <property role="asn4.1133920641626.1193676396447" value="Stylesheet" />
+      <property role="4jta.1169125787135.5092175715804935370" value="punctuation-left" />
+      <reference role="4jta.1071489090640.1071489389519" target="1186414536763" resolveInfo="BooleanStyleSheetItem" />
+    </node>
+    <node concept="4jta.1071489090640" id="1233759184865" info="ig">
+      <property role="4jta.1169125787135.4628067390765956802" value="false" />
+      <property role="4jta.1169125787135.4628067390765956807" value="false" />
+      <property role="asn4.1169194658468.1169194664001" value="PunctuationRightStyleClassItem" />
+      <property role="4jta.1071489090640.5404671619616246344" value="none" />
+      <property role="asn4.1133920641626.1193676396447" value="Stylesheet" />
+      <property role="4jta.1169125787135.5092175715804935370" value="punctuation-right" />
+      <reference role="4jta.1071489090640.1071489389519" target="1186414536763" resolveInfo="BooleanStyleSheetItem" />
+    </node>
+    <node concept="4jta.1071489090640" id="1233823429331" info="ig">
+      <property role="4jta.1169125787135.4628067390765956802" value="false" />
+      <property role="4jta.1169125787135.4628067390765956807" value="false" />
+      <property role="asn4.1169194658468.1169194664001" value="HorizontalGapStyleClassItem" />
+      <property role="4jta.1071489090640.5404671619616246344" value="none" />
+      <property role="asn4.1133920641626.1193676396447" value="Stylesheet.Paddings" />
+      <property role="4jta.1169125787135.5092175715804935370" value="horizontal-gap" />
+      <reference role="4jta.1071489090640.1071489389519" target="1226339938453" resolveInfo="AbstractPaddingStyleClassItem" />
+    </node>
+    <node concept="4jta.1071489090640" id="1235728439575" info="ig">
+      <property role="4jta.1169125787135.4628067390765956802" value="false" />
+      <property role="4jta.1169125787135.4628067390765956807" value="false" />
+      <property role="asn4.1169194658468.1169194664001" value="BaseLineCell" />
+      <property role="4jta.1071489090640.5404671619616246344" value="none" />
+      <property role="asn4.1133920641626.1193676396447" value="Stylesheet" />
+      <property role="4jta.1169125787135.5092175715804935370" value="base-line-cell" />
+      <reference role="4jta.1071489090640.1071489389519" target="1186414536763" resolveInfo="BooleanStyleSheetItem" />
+    </node>
+    <node concept="4jta.1071489090640" id="1235999440492" info="ig">
+      <property role="4jta.1169125787135.4628067390765956802" value="false" />
+      <property role="4jta.1169125787135.4628067390765956807" value="false" />
+      <property role="asn4.1169194658468.1169194664001" value="HorizontalAlign" />
+      <property role="4jta.1071489090640.5404671619616246344" value="none" />
+      <property role="asn4.1133920641626.1193676396447" value="Stylesheet" />
+      <property role="4jta.1169125787135.5092175715804935370" value="horizontal-align" />
+      <reference role="4jta.1071489090640.1071489389519" target="1186402475462" resolveInfo="StyleClassItem" />
+      <node concept="4jta.1071489288299" id="1235999920262" role="4jta.1169125787135.1071489727084" info="ig">
+        <property role="asn4.1169194658468.1169194664001" value="align" />
+        <reference role="4jta.1071489288299.1082985295845" target="1235999709834" resolveInfo="AlignEnum" />
+      </node>
+    </node>
+    <node concept="4jta.1082978164219" id="1235999709834" info="ng">
+      <property role="asn4.1169194658468.1169194664001" value="AlignEnum" />
+      <reference role="4jta.1082978164219.1083171729157" target="tpck.1082983041843" resolveInfo="string" />
+      <reference role="4jta.1082978164219.1083241965437" target="1235999709835" />
+      <node concept="4jta.1083171877298" id="1235999709835" role="4jta.1082978164219.1083172003582" info="ig">
+        <property role="4jta.1083171877298.1083923523171" value="LEFT" />
+        <property role="4jta.1083171877298.1083923523172" value="left" />
+      </node>
+      <node concept="4jta.1083171877298" id="1235999738057" role="4jta.1082978164219.1083172003582" info="ig">
+        <property role="4jta.1083171877298.1083923523171" value="RIGHT" />
+        <property role="4jta.1083171877298.1083923523172" value="right" />
+      </node>
+      <node concept="4jta.1083171877298" id="1235999744266" role="4jta.1082978164219.1083172003582" info="ig">
+        <property role="4jta.1083171877298.1083923523171" value="CENTER" />
+        <property role="4jta.1083171877298.1083923523172" value="center" />
+      </node>
+    </node>
+    <node concept="4jta.1071489090640" id="1236262245656" info="ig">
+      <property role="4jta.1169125787135.4628067390765956802" value="false" />
+      <property role="4jta.1169125787135.4628067390765956807" value="false" />
+      <property role="asn4.1169194658468.1169194664001" value="MatchingLabelStyleClassItem" />
+      <property role="4jta.1071489090640.5404671619616246344" value="none" />
+      <property role="asn4.1133920641626.1193676396447" value="Stylesheet" />
+      <property role="4jta.1169125787135.5092175715804935370" value="matching-label" />
+      <reference role="4jta.1071489090640.1071489389519" target="1186402475462" resolveInfo="StyleClassItem" />
+      <node concept="4jta.1071489288299" id="1238091709220" role="4jta.1169125787135.1071489727084" info="ig">
+        <property role="asn4.1169194658468.1169194664001" value="labelName" />
+        <reference role="4jta.1071489288299.1082985295845" target="tpck.1082983041843" resolveInfo="string" />
+      </node>
+      <node concept="4jta.1071489288299" id="5915179142332960580" role="4jta.1169125787135.1071489727084" info="ig">
+        <property role="asn4.1169194658468.1169194664001" value="hasNoLabel" />
+        <reference role="4jta.1071489288299.1082985295845" target="tpck.1082983657063" resolveInfo="boolean" />
+      </node>
+      <node concept="4jta.1071489288298" id="1236443321503" role="4jta.1169125787135.1071489727083" info="ig">
+        <property role="4jta.1071489288298.1071599937831" value="aggregation" />
+        <property role="4jta.1071489288298.1071599776563" value="query" />
+        <property role="4jta.1071489288298.1071599893252" value="0..1" />
+        <reference role="4jta.1071489288298.1071599976176" target="1236443640684" resolveInfo="QueryFunction_String" />
+      </node>
+    </node>
+    <node concept="4jta.1071489090640" id="1236443640684" info="ig">
+      <property role="asn4.1169194658468.1169194664001" value="QueryFunction_String" />
+      <property role="4jta.1071489090640.5404671619616246344" value="none" />
+      <property role="asn4.1133920641626.1193676396447" value="QueryFunction" />
+      <reference role="4jta.1071489090640.1071489389519" target="tpee.1137021947720" resolveInfo="ConceptFunction" />
+    </node>
+    <node concept="4jta.1071489090640" id="1237303669825" info="ig">
+      <property role="4jta.1169125787135.4628067390765956802" value="false" />
+      <property role="4jta.1169125787135.4628067390765956807" value="false" />
+      <property role="asn4.1169194658468.1169194664001" value="CellLayout_Indent" />
+      <property role="4jta.1071489090640.5404671619616246344" value="none" />
+      <property role="asn4.1133920641626.1193676396447" value="CellLayout" />
+      <property role="4jta.1169125787135.5092175715804935370" value="indent" />
+      <reference role="4jta.1071489090640.1071489389519" target="1106270491082" resolveInfo="CellLayout" />
+    </node>
+    <node concept="4jta.1071489090640" id="1237307900041" info="ig">
+      <property role="4jta.1169125787135.4628067390765956802" value="false" />
+      <property role="4jta.1169125787135.4628067390765956807" value="false" />
+      <property role="asn4.1169194658468.1169194664001" value="IndentLayoutIndentStyleClassItem" />
+      <property role="4jta.1071489090640.5404671619616246344" value="none" />
+      <property role="asn4.1133920641626.1193676396447" value="Stylesheet.IndentLayout" />
+      <property role="4jta.1169125787135.5092175715804935370" value="indent-layout-indent" />
+      <reference role="4jta.1071489090640.1071489389519" target="1186414536763" resolveInfo="BooleanStyleSheetItem" />
+    </node>
+    <node concept="4jta.1071489090640" id="1237308012275" info="ig">
+      <property role="4jta.1169125787135.4628067390765956802" value="false" />
+      <property role="4jta.1169125787135.4628067390765956807" value="false" />
+      <property role="asn4.1169194658468.1169194664001" value="IndentLayoutNewLineStyleClassItem" />
+      <property role="4jta.1071489090640.5404671619616246344" value="none" />
+      <property role="asn4.1133920641626.1193676396447" value="Stylesheet.IndentLayout" />
+      <property role="4jta.1169125787135.5092175715804935370" value="indent-layout-new-line" />
+      <reference role="4jta.1071489090640.1071489389519" target="1186414536763" resolveInfo="BooleanStyleSheetItem" />
+    </node>
+    <node concept="4jta.1071489090640" id="1237375020029" info="ig">
+      <property role="4jta.1169125787135.4628067390765956802" value="false" />
+      <property role="4jta.1169125787135.4628067390765956807" value="false" />
+      <property role="asn4.1169194658468.1169194664001" value="IndentLayoutNewLineChildrenStyleClassItem" />
+      <property role="4jta.1071489090640.5404671619616246344" value="none" />
+      <property role="asn4.1133920641626.1193676396447" value="Stylesheet.IndentLayout" />
+      <property role="4jta.1169125787135.5092175715804935370" value="indent-layout-new-line-children" />
+      <reference role="4jta.1071489090640.1071489389519" target="1186414536763" resolveInfo="BooleanStyleSheetItem" />
+    </node>
+    <node concept="4jta.1071489090640" id="1237385578942" info="ig">
+      <property role="4jta.1169125787135.4628067390765956802" value="false" />
+      <property role="4jta.1169125787135.4628067390765956807" value="false" />
+      <property role="asn4.1169194658468.1169194664001" value="IndentLayoutOnNewLineStyleClassItem" />
+      <property role="4jta.1071489090640.5404671619616246344" value="none" />
+      <property role="asn4.1133920641626.1193676396447" value="Stylesheet.IndentLayout" />
+      <property role="4jta.1169125787135.5092175715804935370" value="indent-layout-on-new-line" />
+      <reference role="4jta.1071489090640.1071489389519" target="1186414536763" resolveInfo="BooleanStyleSheetItem" />
+    </node>
+    <node concept="4jta.1082978499127" id="1239805001815" info="ng">
+      <property role="asn4.1169194658468.1169194664001" value="_FloatOrInteger_String" />
+      <property role="4jta.1082978499127.1083066089218" value="-?[0-9]+\\.?[0-9]*" />
+      <property role="asn4.1133920641626.1193676396447" value="Stylesheet.Paddings" />
+    </node>
+    <node concept="4jta.1071489090640" id="1239814640496" info="ig">
+      <property role="4jta.1169125787135.4628067390765956802" value="false" />
+      <property role="4jta.1169125787135.4628067390765956807" value="false" />
+      <property role="asn4.1169194658468.1169194664001" value="CellLayout_VerticalGrid" />
+      <property role="4jta.1071489090640.5404671619616246344" value="none" />
+      <property role="asn4.1133920641626.1193676396447" value="CellLayout" />
+      <property role="4jta.1169125787135.5092175715804935370" value="vertical grid" />
+      <reference role="4jta.1071489090640.1071489389519" target="1106270571710" resolveInfo="CellLayout_Vertical" />
+    </node>
+    <node concept="4jta.1071489090640" id="1240253180846" info="ig">
+      <property role="4jta.1169125787135.4628067390765956802" value="false" />
+      <property role="4jta.1169125787135.4628067390765956807" value="false" />
+      <property role="asn4.1169194658468.1169194664001" value="IndentLayoutNoWrapClassItem" />
+      <property role="4jta.1071489090640.5404671619616246344" value="none" />
+      <property role="asn4.1133920641626.1193676396447" value="Stylesheet.IndentLayout" />
+      <property role="4jta.1169125787135.5092175715804935370" value="indent-layout-no-wrap" />
+      <reference role="4jta.1071489090640.1071489389519" target="1186414536763" resolveInfo="BooleanStyleSheetItem" />
+    </node>
+    <node concept="4jta.1071489090640" id="625126330682908270" info="ig">
+      <property role="4jta.1169125787135.4628067390765956802" value="false" />
+      <property role="4jta.1169125787135.4628067390765956807" value="false" />
+      <property role="asn4.1169194658468.1169194664001" value="CellModel_ReferencePresentation" />
+      <property role="asn4.1133920641626.1193676396447" value="CellModel" />
+      <property role="4jta.1169125787135.5092175715804935370" value="ref. presentation" />
+      <reference role="4jta.1071489090640.1071489389519" target="1073389214265" resolveInfo="EditorCellModel" />
+    </node>
+    <node concept="4jta.1071489090640" id="7667276221847570194" info="ig">
+      <property role="4jta.1169125787135.4628067390765956802" value="false" />
+      <property role="4jta.1169125787135.4628067390765956807" value="false" />
+      <property role="asn4.1169194658468.1169194664001" value="ParametersInformationStyleClassItem" />
+      <property role="4jta.1071489090640.5404671619616246344" value="none" />
+      <property role="asn4.1133920641626.1193676396447" value="Stylesheet" />
+      <property role="4jta.1169125787135.5092175715804935370" value="parameters-information" />
+      <reference role="4jta.1071489090640.1071489389519" target="1186402475462" resolveInfo="StyleClassItem" />
+      <node concept="4jta.1071489288298" id="8863456892852949148" role="4jta.1169125787135.1071489727083" info="ig">
+        <property role="4jta.1071489288298.1071599937831" value="reference" />
+        <property role="4jta.1071489288298.1071599776563" value="parametersInformation" />
+        <property role="4jta.1071489288298.1071599893252" value="1" />
+        <reference role="4jta.1071489288298.1071599976176" target="7667276221847612622" resolveInfo="ParametersInformationQuery" />
+      </node>
+    </node>
+    <node concept="4jta.1071489090640" id="7667276221847612622" info="ig">
+      <property role="4jta.1169125787135.4628067390765956802" value="false" />
+      <property role="4jta.1071489090640.1096454100552" value="true" />
+      <property role="4jta.1169125787135.4628067390765956807" value="false" />
+      <property role="4jta.1071489090640.1160488491229" value="${language_descriptor}/icons/parametersInformation.png" />
+      <property role="asn4.1169194658468.1169194664001" value="ParametersInformationQuery" />
+      <property role="asn4.1133920641626.1193676396447" value="MethodParameters" />
+      <property role="4jta.1169125787135.5092175715804935370" value="Parameters Information Query" />
+      <reference role="4jta.1071489090640.1071489389519" target="tpck.1133920641626" resolveInfo="BaseConcept" />
+      <node concept="4jta.1071489288298" id="4203201205843994215" role="4jta.1169125787135.1071489727083" info="ig">
+        <property role="4jta.1071489288298.1071599937831" value="reference" />
+        <property role="4jta.1071489288298.1071599776563" value="applicableConcept" />
+        <reference role="4jta.1071489288298.1071599976176" target="tpce.1169125787135" resolveInfo="AbstractConceptDeclaration" />
+      </node>
+      <node concept="4jta.1071489288298" id="8178273524755058633" role="4jta.1169125787135.1071489727083" info="ig">
+        <property role="4jta.1071489288298.1071599937831" value="aggregation" />
+        <property role="4jta.1071489288298.1071599776563" value="type" />
+        <property role="4jta.1071489288298.1071599893252" value="1" />
+        <reference role="4jta.1071489288298.1071599976176" target="tpee.1068431790189" resolveInfo="Type" />
+      </node>
+      <node concept="4jta.1071489288298" id="7667276221847612623" role="4jta.1169125787135.1071489727083" info="ig">
+        <property role="4jta.1071489288298.1071599937831" value="aggregation" />
+        <property role="4jta.1071489288298.1071599776563" value="methods" />
+        <property role="4jta.1071489288298.1071599893252" value="1" />
+        <reference role="4jta.1071489288298.1071599976176" target="7667276221847612943" resolveInfo="QueryFunction_ParametersList" />
+      </node>
+      <node concept="4jta.1071489288298" id="671290755174161557" role="4jta.1169125787135.1071489727083" info="ig">
+        <property role="4jta.1071489288298.1071599937831" value="aggregation" />
+        <property role="4jta.1071489288298.1071599776563" value="presentation" />
+        <property role="4jta.1071489288298.1071599893252" value="1" />
+        <reference role="4jta.1071489288298.1071599976176" target="671290755174094686" resolveInfo="QueryFunction_MethodPresentation" />
+      </node>
+      <node concept="4jta.1071489288298" id="6419604448124516218" role="4jta.1169125787135.1071489727083" info="ig">
+        <property role="4jta.1071489288298.1071599937831" value="aggregation" />
+        <property role="4jta.1071489288298.1071599776563" value="isMethodCurrent" />
+        <property role="4jta.1071489288298.1071599893252" value="1" />
+        <reference role="4jta.1071489288298.1071599976176" target="6419604448124516209" resolveInfo="QueryFunction_IsMethodCurrent" />
+      </node>
+      <node concept="4jta.1071489288298" id="1336839120510622371" role="4jta.1169125787135.1071489727083" info="ig">
+        <property role="4jta.1071489288298.1071599937831" value="aggregation" />
+        <property role="4jta.1071489288298.1071599776563" value="methodDeclaration" />
+        <property role="4jta.1071489288298.1071599893252" value="0..n" />
+        <reference role="4jta.1071489288298.1071599976176" target="tp4f.1205769003971" resolveInfo="DefaultClassifierMethodDeclaration" />
+      </node>
+      <node concept="4jta.1169127622168" id="690365078554527399" role="4jta.1071489090640.1169129564478" info="ig">
+        <reference role="4jta.1169127622168.1169127628841" target="tpee.1212170275853" resolveInfo="IValidIdentifier" />
+      </node>
+      <node concept="4jta.1169127622168" id="1336839120510359488" role="4jta.1071489090640.1169129564478" info="ig">
+        <reference role="4jta.1169127622168.1169127628841" target="tp4f.1205751982837" resolveInfo="IClassifier" />
+      </node>
+    </node>
+    <node concept="4jta.1071489090640" id="7667276221847612943" info="ig">
+      <property role="asn4.1169194658468.1169194664001" value="QueryFunction_ParametersList" />
+      <property role="4jta.1071489090640.5404671619616246344" value="none" />
+      <property role="asn4.1133920641626.1193676396447" value="MethodParameters" />
+      <reference role="4jta.1071489090640.1071489389519" target="tpee.1137021947720" resolveInfo="ConceptFunction" />
+    </node>
+    <node concept="4jta.1071489090640" id="671290755174094686" info="ig">
+      <property role="asn4.1169194658468.1169194664001" value="QueryFunction_MethodPresentation" />
+      <property role="4jta.1071489090640.5404671619616246344" value="none" />
+      <property role="asn4.1133920641626.1193676396447" value="MethodParameters" />
+      <reference role="4jta.1071489090640.1071489389519" target="tpee.1137021947720" resolveInfo="ConceptFunction" />
+    </node>
+    <node concept="4jta.1071489090640" id="671290755174094691" info="ig">
+      <property role="4jta.1169125787135.4628067390765956802" value="false" />
+      <property role="4jta.1169125787135.4628067390765956807" value="false" />
+      <property role="asn4.1169194658468.1169194664001" value="ConceptFunctionParameter_parameterObject" />
+      <property role="4jta.1071489090640.5404671619616246344" value="none" />
+      <property role="asn4.1133920641626.1193676396447" value="MethodParameters" />
+      <property role="4jta.1169125787135.5092175715804935370" value="parameterObject" />
+      <reference role="4jta.1071489090640.1071489389519" target="tpee.1107135704075" resolveInfo="ConceptFunctionParameter" />
+      <node concept="4jta.1169127622168" id="1262430001741719857" role="4jta.1071489090640.1169129564478" info="ig">
+        <reference role="4jta.1169127622168.1169127628841" target="tpck.1835621062190663819" resolveInfo="IDontSubstituteByDefault" />
+      </node>
+    </node>
+    <node concept="4jta.1071489090640" id="6419604448124516209" info="ig">
+      <property role="asn4.1169194658468.1169194664001" value="QueryFunction_IsMethodCurrent" />
+      <property role="4jta.1071489090640.5404671619616246344" value="none" />
+      <property role="asn4.1133920641626.1193676396447" value="MethodParameters" />
+      <reference role="4jta.1071489090640.1071489389519" target="tpee.1137021947720" resolveInfo="ConceptFunction" />
+    </node>
+    <node concept="4jta.1071489090640" id="4526149749187797167" info="ig">
+      <property role="4jta.1169125787135.4628067390765956802" value="false" />
+      <property role="4jta.1169125787135.4628067390765956807" value="false" />
+      <property role="asn4.1169194658468.1169194664001" value="ConceptFunctionParameter_StyledText" />
+      <property role="4jta.1071489090640.5404671619616246344" value="none" />
+      <property role="asn4.1133920641626.1193676396447" value="MethodParameters" />
+      <property role="4jta.1169125787135.5092175715804935370" value="styledText" />
+      <reference role="4jta.1071489090640.1071489389519" target="tpee.1107135704075" resolveInfo="ConceptFunctionParameter" />
+      <node concept="4jta.1169127622168" id="1262430001741641670" role="4jta.1071489090640.1169129564478" info="ig">
+        <reference role="4jta.1169127622168.1169127628841" target="tpck.1835621062190663819" resolveInfo="IDontSubstituteByDefault" />
+      </node>
+    </node>
+    <node concept="4jta.1071489090640" id="280151408461567367" info="ig">
+      <property role="4jta.1169125787135.4628067390765956802" value="false" />
+      <property role="4jta.1169125787135.4628067390765956807" value="false" />
+      <property role="asn4.1169194658468.1169194664001" value="AppendTextOperation" />
+      <property role="4jta.1071489090640.5404671619616246344" value="none" />
+      <property role="asn4.1133920641626.1193676396447" value="MethodParameters" />
+      <property role="4jta.1169125787135.5092175715804935370" value="append" />
+      <reference role="4jta.1071489090640.1071489389519" target="4531786690998636238" resolveInfo="AbstractStyledTextOperation" />
+    </node>
+    <node concept="4jta.1071489090640" id="280151408461909164" info="ig">
+      <property role="4jta.1169125787135.4628067390765956802" value="false" />
+      <property role="4jta.1169125787135.4628067390765956807" value="false" />
+      <property role="asn4.1169194658468.1169194664001" value="SetBoldOperation" />
+      <property role="4jta.1071489090640.5404671619616246344" value="none" />
+      <property role="asn4.1133920641626.1193676396447" value="MethodParameters" />
+      <property role="4jta.1169125787135.5092175715804935370" value="setBold" />
+      <reference role="4jta.1071489090640.1071489389519" target="4531786690998636238" resolveInfo="AbstractStyledTextOperation" />
+    </node>
+    <node concept="4jta.1071489090640" id="4531786690998636238" info="ig">
+      <property role="4jta.1169125787135.4628067390765956802" value="true" />
+      <property role="4jta.1169125787135.4628067390765956807" value="false" />
+      <property role="asn4.1169194658468.1169194664001" value="AbstractStyledTextOperation" />
+      <property role="4jta.1071489090640.5404671619616246344" value="none" />
+      <property role="asn4.1133920641626.1193676396447" value="MethodParameters" />
+      <reference role="4jta.1071489090640.1071489389519" target="tpck.1133920641626" resolveInfo="BaseConcept" />
+      <node concept="4jta.1169127622168" id="4531786690998636239" role="4jta.1071489090640.1169129564478" info="ig">
+        <reference role="4jta.1169127622168.1169127628841" target="tpee.1197027803184" resolveInfo="IOperation" />
+      </node>
+      <node concept="4jta.1071489288298" id="4531786690998636240" role="4jta.1169125787135.1071489727083" info="ig">
+        <property role="4jta.1071489288298.1071599937831" value="aggregation" />
+        <property role="4jta.1071489288298.1071599776563" value="actualArgument" />
+        <property role="4jta.1071489288298.1071599893252" value="0..n" />
+        <reference role="4jta.1071489288298.1071599976176" target="tpee.1068431790191" resolveInfo="Expression" />
+      </node>
+      <node concept="4jta.1169127622168" id="1262430001741703014" role="4jta.1071489090640.1169129564478" info="ig">
+        <reference role="4jta.1169127622168.1169127628841" target="tpck.1835621062190663819" resolveInfo="IDontSubstituteByDefault" />
+      </node>
+    </node>
+    <node concept="4jta.1071489090640" id="3903367331818357915" info="ig">
+      <property role="4jta.1169125787135.4628067390765956802" value="false" />
+      <property role="4jta.1169125787135.4628067390765956807" value="false" />
+      <property role="asn4.1169194658468.1169194664001" value="StyledTextType" />
+      <property role="4jta.1071489090640.5404671619616246344" value="none" />
+      <property role="asn4.1133920641626.1193676396447" value="MethodParameters" />
+      <property role="4jta.1169125787135.5092175715804935370" value="styled text" />
+      <reference role="4jta.1071489090640.1071489389519" target="tpee.1068431790189" resolveInfo="Type" />
+    </node>
+    <node concept="4jta.1071489090640" id="7620205565664569937" info="ig">
+      <property role="4jta.1169125787135.4628067390765956802" value="false" />
+      <property role="4jta.1169125787135.4628067390765956807" value="false" />
+      <property role="asn4.1169194658468.1169194664001" value="DefaultBaseLine" />
+      <property role="4jta.1071489090640.5404671619616246344" value="none" />
+      <property role="asn4.1133920641626.1193676396447" value="Stylesheet" />
+      <property role="4jta.1169125787135.5092175715804935370" value="default-baseline" />
+      <reference role="4jta.1071489090640.1071489389519" target="1186402475462" resolveInfo="StyleClassItem" />
+      <node concept="4jta.1071489288299" id="7620205565664606477" role="4jta.1169125787135.1071489727084" info="ig">
+        <property role="asn4.1169194658468.1169194664001" value="baseline" />
+        <reference role="4jta.1071489288299.1082985295845" target="7620205565664606377" resolveInfo="DefaultBaseLineEnum" />
+      </node>
+    </node>
+    <node concept="4jta.1082978164219" id="7620205565664606377" info="ng">
+      <property role="asn4.1169194658468.1169194664001" value="DefaultBaseLineEnum" />
+      <reference role="4jta.1082978164219.1083171729157" target="tpck.1082983041843" resolveInfo="string" />
+      <node concept="4jta.1083171877298" id="7620205565664606378" role="4jta.1082978164219.1083172003582" info="ig">
+        <property role="4jta.1083171877298.1083923523171" value="FIRST" />
+        <property role="4jta.1083171877298.1083923523172" value="first cell baseline" />
+      </node>
+      <node concept="4jta.1083171877298" id="7620205565664606380" role="4jta.1082978164219.1083172003582" info="ig">
+        <property role="4jta.1083171877298.1083923523171" value="CENTER" />
+        <property role="4jta.1083171877298.1083923523172" value="collection center" />
+      </node>
+      <node concept="4jta.1083171877298" id="7620205565664606448" role="4jta.1082978164219.1083172003582" info="ig">
+        <property role="4jta.1083171877298.1083923523171" value="LAST" />
+        <property role="4jta.1083171877298.1083923523172" value="last cell baseline" />
+      </node>
+    </node>
+    <node concept="4jta.1071489090640" id="1886960078078641793" info="ig">
+      <property role="4jta.1169125787135.4628067390765956802" value="false" />
+      <property role="4jta.1169125787135.4628067390765956807" value="false" />
+      <property role="asn4.1169194658468.1169194664001" value="CellLayout_Superscript" />
+      <property role="4jta.1071489090640.5404671619616246344" value="none" />
+      <property role="asn4.1133920641626.1193676396447" value="CellLayout" />
+      <property role="4jta.1169125787135.5092175715804935370" value="superscript" />
+      <reference role="4jta.1071489090640.1071489389519" target="1106270491082" resolveInfo="CellLayout" />
+    </node>
+    <node concept="4jta.1082978164219" id="8255250703325730686" info="ng">
+      <property role="asn4.1169194658468.1169194664001" value="ScriptSwitchEnum" />
+      <reference role="4jta.1082978164219.1083171729157" target="tpck.1082983041843" resolveInfo="string" />
+      <node concept="4jta.1083171877298" id="8255250703325730687" role="4jta.1082978164219.1083172003582" info="ig">
+        <property role="4jta.1083171877298.1083923523171" value="NORMAL" />
+        <property role="4jta.1083171877298.1083923523172" value="plain text" />
+      </node>
+      <node concept="4jta.1083171877298" id="8255250703325731012" role="4jta.1082978164219.1083172003582" info="ig">
+        <property role="4jta.1083171877298.1083923523171" value="SUPERSCRIPT" />
+        <property role="4jta.1083171877298.1083923523172" value="superscript" />
+      </node>
+      <node concept="4jta.1083171877298" id="8255250703325731013" role="4jta.1082978164219.1083172003582" info="ig">
+        <property role="4jta.1083171877298.1083923523171" value="SUBSCRIPT" />
+        <property role="4jta.1083171877298.1083923523172" value="subscript" />
+      </node>
+    </node>
+    <node concept="4jta.1071489090640" id="8255250703325731016" info="ig">
+      <property role="4jta.1169125787135.4628067390765956802" value="false" />
+      <property role="4jta.1169125787135.4628067390765956807" value="false" />
+      <property role="asn4.1169194658468.1169194664001" value="ScriptKindClassItem" />
+      <property role="4jta.1071489090640.5404671619616246344" value="none" />
+      <property role="asn4.1133920641626.1193676396447" value="Stylesheet" />
+      <property role="4jta.1169125787135.5092175715804935370" value="script-kind" />
+      <reference role="4jta.1071489090640.1071489389519" target="1186402475462" resolveInfo="StyleClassItem" />
+      <node concept="4jta.1071489288299" id="8255250703325731018" role="4jta.1169125787135.1071489727084" info="ig">
+        <property role="asn4.1169194658468.1169194664001" value="script" />
+        <reference role="4jta.1071489288299.1082985295845" target="8255250703325730686" resolveInfo="ScriptSwitchEnum" />
+      </node>
+    </node>
+    <node concept="4jta.1071489090640" id="4203201205844553978" info="ig">
+      <property role="4jta.1169125787135.4628067390765956802" value="false" />
+      <property role="4jta.1169125787135.4628067390765956807" value="false" />
+      <property role="4jta.1169125787135.4628067390765907488" value="selected node" />
+      <property role="asn4.1169194658468.1169194664001" value="ConceptFunctionParameter_selectedNode" />
+      <property role="4jta.1071489090640.5404671619616246344" value="none" />
+      <property role="asn4.1133920641626.1193676396447" value="MethodParameters" />
+      <property role="4jta.1169125787135.5092175715804935370" value="node" />
+      <reference role="4jta.1071489090640.1071489389519" target="tpee.1107135704075" resolveInfo="ConceptFunctionParameter" />
+      <node concept="4jta.1169127622168" id="1262430001741646912" role="4jta.1071489090640.1169129564478" info="ig">
+        <reference role="4jta.1169127622168.1169127628841" target="tpck.1835621062190663819" resolveInfo="IDontSubstituteByDefault" />
+      </node>
+    </node>
+    <node concept="4jta.1071489090640" id="5949640294884234625" info="ig">
+      <property role="4jta.1169125787135.4628067390765956802" value="false" />
+      <property role="4jta.1169125787135.4628067390765956807" value="false" />
+      <property role="asn4.1169194658468.1169194664001" value="CellLayout_Table" />
+      <property role="4jta.1071489090640.5404671619616246344" value="none" />
+      <property role="asn4.1133920641626.1193676396447" value="CellLayout" />
+      <property role="4jta.1169125787135.5092175715804935370" value="table" />
+      <reference role="4jta.1071489090640.1071489389519" target="1106270491082" resolveInfo="CellLayout" />
+    </node>
+    <node concept="4jta.1082978164219" id="6820251943131810951" info="ng">
+      <property role="asn4.1169194658468.1169194664001" value="TableComponentEnum" />
+      <reference role="4jta.1082978164219.1083171729157" target="tpck.1082983041843" resolveInfo="string" />
+      <node concept="4jta.1083171877298" id="6820251943131810953" role="4jta.1082978164219.1083172003582" info="ig">
+        <property role="4jta.1083171877298.1083923523171" value="HORIZONTAL_COLLECTION" />
+        <property role="4jta.1083171877298.1083923523172" value="horizontal collection" />
+      </node>
+      <node concept="4jta.1083171877298" id="6820251943131810954" role="4jta.1082978164219.1083172003582" info="ig">
+        <property role="4jta.1083171877298.1083923523171" value="VERTICAL_COLLECTION" />
+        <property role="4jta.1083171877298.1083923523172" value="vertical collection" />
+      </node>
+    </node>
+    <node concept="4jta.1071489090640" id="6820251943131810950" info="ig">
+      <property role="4jta.1169125787135.4628067390765956802" value="false" />
+      <property role="4jta.1169125787135.4628067390765956807" value="false" />
+      <property role="asn4.1169194658468.1169194664001" value="TableComponentStyleClassItem" />
+      <property role="4jta.1071489090640.5404671619616246344" value="none" />
+      <property role="asn4.1133920641626.1193676396447" value="Stylesheet" />
+      <property role="4jta.1169125787135.5092175715804935370" value="table-component" />
+      <reference role="4jta.1071489090640.1071489389519" target="1186402475462" resolveInfo="StyleClassItem" />
+      <node concept="4jta.1071489288299" id="6820251943131810955" role="4jta.1169125787135.1071489727084" info="ig">
+        <property role="asn4.1169194658468.1169194664001" value="tableComponent" />
+        <reference role="4jta.1071489288299.1082985295845" target="6820251943131810951" resolveInfo="TableComponentEnum" />
+      </node>
+    </node>
+    <node concept="4jta.1071489090640" id="8313721352726366579" info="ig">
+      <property role="4jta.1169125787135.4628067390765956802" value="false" />
+      <property role="4jta.1169125787135.4628067390765956807" value="false" />
+      <property role="asn4.1169194658468.1169194664001" value="CellModel_Empty" />
+      <property role="asn4.1133920641626.1193676396447" value="CellModel" />
+      <property role="4jta.1169125787135.5092175715804935370" value="empty" />
+      <reference role="4jta.1071489090640.1071489389519" target="1073389214265" resolveInfo="EditorCellModel" />
+    </node>
+    <node concept="4jta.1071489090640" id="7597241200646296617" info="ig">
+      <property role="4jta.1169125787135.4628067390765956802" value="false" />
+      <property role="4jta.1169125787135.4628067390765956807" value="false" />
+      <property role="asn4.1169194658468.1169194664001" value="NavigatableNodeStyleClassItem" />
+      <property role="4jta.1071489090640.5404671619616246344" value="none" />
+      <property role="asn4.1133920641626.1193676396447" value="Stylesheet" />
+      <property role="4jta.1169125787135.5092175715804935370" value="navigatable-node" />
+      <reference role="4jta.1071489090640.1071489389519" target="1186402475462" resolveInfo="StyleClassItem" />
+      <node concept="4jta.1071489288298" id="7597241200646296618" role="4jta.1169125787135.1071489727083" info="ig">
+        <property role="4jta.1071489288298.1071599937831" value="aggregation" />
+        <property role="4jta.1071489288298.1071599776563" value="functionNode" />
+        <property role="4jta.1071489288298.1071599893252" value="1" />
+        <reference role="4jta.1071489288298.1071599976176" target="7597241200646296619" resolveInfo="QueryFunction_SNode" />
+      </node>
+    </node>
+    <node concept="4jta.1071489090640" id="7597241200646296619" info="ig">
+      <property role="4jta.1169125787135.4628067390765956802" value="false" />
+      <property role="4jta.1169125787135.4628067390765956807" value="false" />
+      <property role="asn4.1169194658468.1169194664001" value="QueryFunction_SNode" />
+      <property role="4jta.1071489090640.5404671619616246344" value="none" />
+      <property role="asn4.1133920641626.1193676396447" value="QueryFunction.Style" />
+      <property role="4jta.1169125787135.5092175715804935370" value="snode function" />
+      <reference role="4jta.1071489090640.1071489389519" target="1221059528506" resolveInfo="QueryFunction_StyleParameter" />
+    </node>
+    <node concept="4jta.1071489090640" id="3696012239575138270" info="ig">
+      <property role="4jta.1169125787135.4628067390765956802" value="false" />
+      <property role="4jta.1169125787135.4628067390765956807" value="false" />
+      <property role="4jta.1169125787135.4628067390765907488" value="URL property" />
+      <property role="asn4.1169194658468.1169194664001" value="CellModel_URL" />
+      <property role="asn4.1133920641626.1193676396447" value="CellModel" />
+      <property role="4jta.1169125787135.5092175715804935370" value="URL" />
+      <reference role="4jta.1071489090640.1071489389519" target="1139848536355" resolveInfo="CellModel_WithRole" />
+      <node concept="4jta.1071489288298" id="3696012239575138271" role="4jta.1169125787135.1071489727083" info="ig">
+        <property role="4jta.1071489288298.1071599776563" value="propertyDeclaration" />
+        <property role="4jta.1071489288298.1071599893252" value="1" />
+        <reference role="4jta.1071489288298.1071599698500" target="1140103550593" />
+        <reference role="4jta.1071489288298.1071599976176" target="tpce.1071489288299" resolveInfo="PropertyDeclaration" />
+      </node>
+    </node>
+    <node concept="4jta.1071489090640" id="3608226089191997415" info="ig">
+      <property role="asn4.1169194658468.1169194664001" value="RightTransformAnchorTagWrapper" />
+      <reference role="4jta.1071489090640.1071489389519" target="tpck.1133920641626" resolveInfo="BaseConcept" />
+      <node concept="4jta.1071489288299" id="3608226089191997418" role="4jta.1169125787135.1071489727084" info="ig">
+        <property role="asn4.1169194658468.1169194664001" value="tag" />
+        <reference role="4jta.1071489288299.1082985295845" target="1140813780565" resolveInfo="RightTransformAnchorTag" />
+      </node>
+    </node>
+    <node concept="4jta.1071489090640" id="709996738298806197" info="ig">
+      <property role="4jta.1169125787135.4628067390765956802" value="false" />
+      <property role="4jta.1169125787135.4628067390765956807" value="false" />
+      <property role="4jta.1169125787135.4628067390765907488" value="embedded block of code" />
+      <property role="asn4.1169194658468.1169194664001" value="QueryFunction_SeparatorText" />
+      <property role="4jta.1071489090640.5404671619616246344" value="none" />
+      <property role="asn4.1133920641626.1193676396447" value="QueryFunction" />
+      <property role="4jta.1169125787135.5092175715804935370" value="separator text" />
+      <reference role="4jta.1071489090640.1071489389519" target="tpee.1137021947720" resolveInfo="ConceptFunction" />
+    </node>
+    <node concept="4jta.1071489090640" id="7651593722933768974" info="ig">
+      <property role="4jta.1169125787135.4628067390765956802" value="false" />
+      <property role="4jta.1169125787135.4628067390765956807" value="false" />
+      <property role="asn4.1169194658468.1169194664001" value="MaxWidthStyleClassItem" />
+      <property role="4jta.1071489090640.5404671619616246344" value="none" />
+      <property role="asn4.1133920641626.1193676396447" value="Stylesheet.Layout" />
+      <property role="4jta.1169125787135.5092175715804935370" value="max-width" />
+      <reference role="4jta.1071489090640.1071489389519" target="1186402475462" resolveInfo="StyleClassItem" />
+      <node concept="4jta.1071489288298" id="7651593722933768976" role="4jta.1169125787135.1071489727083" info="ig">
+        <property role="4jta.1071489288298.1071599937831" value="aggregation" />
+        <property role="4jta.1071489288298.1071599776563" value="query" />
+        <property role="4jta.1071489288298.1071599893252" value="0..1" />
+        <reference role="4jta.1071489288298.1071599976176" target="1221057094638" resolveInfo="QueryFunction_Integer" />
+      </node>
+      <node concept="4jta.1071489288299" id="7651593722933768975" role="4jta.1169125787135.1071489727084" info="ig">
+        <property role="asn4.1169194658468.1169194664001" value="value" />
+        <reference role="4jta.1071489288299.1082985295845" target="tpck.1082983657062" resolveInfo="integer" />
+      </node>
+    </node>
+    <node concept="4jta.1071489090640" id="7667708318090877006" info="ig">
+      <property role="4jta.1169125787135.4628067390765956802" value="false" />
+      <property role="4jta.1169125787135.4628067390765956807" value="false" />
+      <property role="asn4.1169194658468.1169194664001" value="IndentLayoutWrapAnchorStyleClassItem" />
+      <property role="4jta.1071489090640.5404671619616246344" value="none" />
+      <property role="asn4.1133920641626.1193676396447" value="Stylesheet.IndentLayout" />
+      <property role="4jta.1169125787135.5092175715804935370" value="indent-layout-wrap-anchor" />
+      <reference role="4jta.1071489090640.1071489389519" target="1186414536763" resolveInfo="BooleanStyleSheetItem" />
+    </node>
+    <node concept="4jta.1071489090640" id="7667708318090725848" info="ig">
+      <property role="4jta.1169125787135.4628067390765956802" value="false" />
+      <property role="4jta.1169125787135.4628067390765956807" value="false" />
+      <property role="asn4.1169194658468.1169194664001" value="IndentLayoutIndentAnchorStyleClassItem" />
+      <property role="4jta.1071489090640.5404671619616246344" value="none" />
+      <property role="asn4.1133920641626.1193676396447" value="Stylesheet.IndentLayout" />
+      <property role="4jta.1169125787135.5092175715804935370" value="indent-layout-indent-anchor" />
+      <reference role="4jta.1071489090640.1071489389519" target="1186414536763" resolveInfo="BooleanStyleSheetItem" />
+    </node>
+    <node concept="4jta.1071489090640" id="1402906326895675325" info="ig">
+      <property role="4jta.1169125787135.4628067390765907488" value="selected node (action map function parameter)" />
+      <property role="asn4.1169194658468.1169194664001" value="CellActionMap_FunctionParm_selectedNode" />
+      <property role="4jta.1071489090640.5404671619616246344" value="none" />
+      <property role="asn4.1133920641626.1193676396447" value="MethodParameters" />
+      <property role="4jta.1169125787135.5092175715804935370" value="node" />
+      <reference role="4jta.1071489090640.1071489389519" target="tpee.1107135704075" resolveInfo="ConceptFunctionParameter" />
+    </node>
+    <node concept="4jta.1071489090640" id="1402906326896143883" info="ig">
+      <property role="4jta.1169125787135.4628067390765907488" value="keymap function parameter" />
+      <property role="asn4.1169194658468.1169194664001" value="CellKeyMap_FunctionParm_selectedNode" />
+      <property role="4jta.1071489090640.5404671619616246344" value="none" />
+      <property role="asn4.1133920641626.1193676396447" value="MethodParameters" />
+      <property role="4jta.1169125787135.5092175715804935370" value="node" />
+      <reference role="4jta.1071489090640.1071489389519" target="tpee.1107135704075" resolveInfo="ConceptFunctionParameter" />
+    </node>
+    <node concept="4jta.1071489090640" id="1402906326896143909" info="ig">
+      <property role="4jta.1169125787135.4628067390765907488" value="keymap function parameter" />
+      <property role="asn4.1169194658468.1169194664001" value="CellKeyMap_FunctionParm_selectedNodes" />
+      <property role="4jta.1071489090640.5404671619616246344" value="none" />
+      <property role="asn4.1133920641626.1193676396447" value="MethodParameters" />
+      <property role="4jta.1169125787135.5092175715804935370" value="selectedNodes" />
+      <reference role="4jta.1071489090640.1071489389519" target="tpee.1107135704075" resolveInfo="ConceptFunctionParameter" />
+    </node>
+    <node concept="4jta.1071489090640" id="7991857262589831666" info="ig">
+      <property role="4jta.1169125787135.4628067390765956802" value="false" />
+      <property role="4jta.1169125787135.4628067390765956807" value="false" />
+      <property role="4jta.1169125787135.4628067390765907488" value="function parameter" />
+      <property role="asn4.1169194658468.1169194664001" value="ConceptFunctionParameter_prevNode" />
+      <property role="4jta.1071489090640.5404671619616246344" value="none" />
+      <property role="asn4.1133920641626.1193676396447" value="QueryFunction.Parameters" />
+      <property role="4jta.1169125787135.5092175715804935370" value="prevNode" />
+      <reference role="4jta.1071489090640.1071489389519" target="tpee.1107135704075" resolveInfo="ConceptFunctionParameter" />
+      <node concept="4jta.1169127622168" id="7991857262589831667" role="4jta.1071489090640.1169129564478" info="ig">
+        <reference role="4jta.1169127622168.1169127628841" target="tpck.1835621062190663819" resolveInfo="IDontSubstituteByDefault" />
+      </node>
+    </node>
+    <node concept="4jta.1071489090640" id="7991857262589829730" info="ig">
+      <property role="4jta.1169125787135.4628067390765956802" value="false" />
+      <property role="4jta.1169125787135.4628067390765956807" value="false" />
+      <property role="4jta.1169125787135.4628067390765907488" value="function parameter" />
+      <property role="asn4.1169194658468.1169194664001" value="ConceptFunctionParameter_nextNode" />
+      <property role="4jta.1071489090640.5404671619616246344" value="none" />
+      <property role="asn4.1133920641626.1193676396447" value="QueryFunction.Parameters" />
+      <property role="4jta.1169125787135.5092175715804935370" value="nextNode" />
+      <reference role="4jta.1071489090640.1071489389519" target="tpee.1107135704075" resolveInfo="ConceptFunctionParameter" />
+      <node concept="4jta.1169127622168" id="7991857262589829731" role="4jta.1071489090640.1169129564478" info="ig">
+        <reference role="4jta.1169127622168.1169127628841" target="tpck.1835621062190663819" resolveInfo="IDontSubstituteByDefault" />
+      </node>
+    </node>
+    <node concept="4jta.1071489090640" id="4151393920404716535" info="ig">
+      <property role="asn4.1169194658468.1169194664001" value="PreDefinedStyleClassItem" />
+      <property role="4jta.1071489090640.5404671619616246344" value="none" />
+      <property role="asn4.1133920641626.1193676396447" value="Stylesheet" />
+      <property role="4jta.1169125787135.5092175715804935370" value="pre-defined-style" />
+      <reference role="4jta.1071489090640.1071489389519" target="1186402475462" resolveInfo="StyleClassItem" />
+      <node concept="4jta.1224240836180" id="9122903797335909684" role="asn4.1133920641626.5169995583184591170" info="ig" />
+      <node concept="4jta.1071489288298" id="8730965736661186051" role="4jta.1169125787135.1071489727083" info="ig">
+        <property role="4jta.1071489288298.1071599937831" value="aggregation" />
+        <property role="4jta.1071489288298.1071599776563" value="query" />
+        <reference role="4jta.1071489288298.1071599976176" target="1223387125302" resolveInfo="QueryFunction_Boolean" />
+      </node>
+      <node concept="4jta.1071489288298" id="4151393920404978387" role="4jta.1169125787135.1071489727083" info="ig">
+        <property role="4jta.1071489288298.1071599937831" value="reference" />
+        <property role="4jta.1071489288298.1071599776563" value="key" />
+        <property role="4jta.1071489288298.1071599893252" value="0..1" />
+        <reference role="4jta.1071489288298.1071599976176" target="4151393920374910634" resolveInfo="StyleKey" />
+      </node>
+    </node>
+    <node concept="4jta.1071489090640" id="4151393920374910634" info="ig">
+      <property role="asn4.1169194658468.1169194664001" value="StyleKey" />
+      <property role="asn4.1133920641626.1193676396447" value="Stylesheet" />
+      <reference role="4jta.1071489090640.1071489389519" target="tpee.1070475926800" resolveInfo="StringLiteral" />
+      <node concept="4jta.1169127622168" id="9122903797325336958" role="4jta.1071489090640.1169129564478" info="ig">
+        <reference role="4jta.1169127622168.1169127628841" target="9122903797320402872" resolveInfo="IStyle" />
+      </node>
+    </node>
+    <node concept="4jta.1071489090640" id="4151393920374910722" info="ig">
+      <property role="4jta.1071489090640.1096454100552" value="true" />
+      <property role="asn4.1169194658468.1169194664001" value="StyleKeyPack" />
+      <property role="asn4.1133920641626.1193676396447" value="Stylesheet" />
+      <reference role="4jta.1071489090640.1071489389519" target="tpck.1133920641626" resolveInfo="BaseConcept" />
+      <node concept="4jta.1071489288298" id="4151393920375014512" role="4jta.1169125787135.1071489727083" info="ig">
+        <property role="4jta.1071489288298.1071599937831" value="aggregation" />
+        <property role="4jta.1071489288298.1071599776563" value="styleKey" />
+        <property role="4jta.1071489288298.1071599893252" value="0..n" />
+        <reference role="4jta.1071489288298.1071599976176" target="4151393920374910634" resolveInfo="StyleKey" />
+      </node>
+      <node concept="4jta.1169127622168" id="4151393920375014510" role="4jta.1071489090640.1169129564478" info="ig">
+        <reference role="4jta.1169127622168.1169127628841" target="tpck.1169194658468" resolveInfo="INamedConcept" />
+      </node>
+    </node>
+    <node concept="4jta.1071489090640" id="8233876857994246075" info="ig">
+      <property role="asn4.1169194658468.1169194664001" value="CellMenuPart_ApplySideTransforms" />
+      <property role="asn4.1133920641626.1193676396447" value="CellMenu" />
+      <property role="4jta.1169125787135.5092175715804935370" value="apply side transforms" />
+      <reference role="4jta.1071489090640.1071489389519" target="1164824854750" resolveInfo="CellMenuPart_Abstract" />
+      <node concept="4jta.1071489288299" id="8233876857994286197" role="4jta.1169125787135.1071489727084" info="ig">
+        <property role="asn4.1169194658468.1169194664001" value="side" />
+        <reference role="4jta.1071489288299.1082985295845" target="tpdg.1215604970641" resolveInfo="Side" />
+      </node>
+      <node concept="4jta.1071489288299" id="870577895075788418" role="4jta.1169125787135.1071489727084" info="ig">
+        <property role="asn4.1169194658468.1169194664001" value="tag" />
+        <reference role="4jta.1071489288299.1082985295845" target="1140813780565" resolveInfo="RightTransformAnchorTag" />
+      </node>
+    </node>
+    <node concept="4jta.1071489090640" id="3525058663444303551" info="ig">
+      <property role="asn4.1169194658468.1169194664001" value="QueryFunction_Style" />
+      <property role="4jta.1071489090640.5404671619616246344" value="none" />
+      <property role="asn4.1133920641626.1193676396447" value="QueryFunction.Style" />
+      <reference role="4jta.1071489090640.1071489389519" target="1221059528506" resolveInfo="QueryFunction_StyleParameter" />
+    </node>
+    <node concept="4jta.1071489090640" id="6822301196700715228" info="ig">
+      <property role="asn4.1169194658468.1169194664001" value="ConceptEditorHintDeclarationReference" />
+      <property role="asn4.1133920641626.1193676396447" value="EditorContextHints" />
+      <reference role="4jta.1071489090640.1071489389519" target="tpck.1133920641626" resolveInfo="BaseConcept" />
+      <node concept="4jta.1071489288298" id="5944657839026714445" role="4jta.1169125787135.1071489727083" info="ig">
+        <property role="4jta.1071489288298.1071599937831" value="reference" />
+        <property role="4jta.1071489288298.1071599776563" value="hint" />
+        <property role="4jta.1071489288298.1071599893252" value="1" />
+        <reference role="4jta.1071489288298.1071599976176" target="5944657839003601246" resolveInfo="ConceptEditorHintDeclaration" />
+      </node>
+      <node concept="4jta.1169127622168" id="5774959771349728933" role="4jta.1071489090640.1169129564478" info="ig">
+        <reference role="4jta.1169127622168.1169127628841" target="tpck.1319728274784973096" resolveInfo="InterfacePart" />
+      </node>
+    </node>
+    <node concept="4jta.1071489090640" id="4242538589859161874" info="ig">
+      <property role="asn4.1133920641626.1193676396447" value="EditorContextHints" />
+      <property role="asn4.1169194658468.1169194664001" value="ExplicitHintsSpecification" />
+      <reference role="4jta.1071489090640.1071489389519" target="tpck.1133920641626" resolveInfo="BaseConcept" />
+      <node concept="4jta.1071489288298" id="4242538589859162459" role="4jta.1169125787135.1071489727083" info="ig">
+        <property role="4jta.1071489288298.1071599937831" value="aggregation" />
+        <property role="4jta.1071489288298.1071599776563" value="hints" />
+        <property role="4jta.1071489288298.1071599893252" value="0..n" />
+        <reference role="4jta.1071489288298.1071599976176" target="6822301196700715228" resolveInfo="ConceptEditorHintDeclarationReference" />
+      </node>
+      <node concept="4jta.1169127622168" id="4653693564098546479" role="4jta.1071489090640.1169129564478" info="ig">
+        <reference role="4jta.1169127622168.1169127628841" target="4653693564097968040" resolveInfo="ContextHintsSpecification" />
+      </node>
+    </node>
+    <node concept="4jta.1071489090640" id="5944657839000868711" info="ig">
+      <property role="asn4.1133920641626.1193676396447" value="EditorContextHints" />
+      <property role="4jta.1071489090640.1096454100552" value="true" />
+      <property role="asn4.1169194658468.1169194664001" value="ConceptEditorContextHints" />
+      <reference role="4jta.1071489090640.1071489389519" target="tpck.1133920641626" resolveInfo="BaseConcept" />
+      <node concept="4jta.1071489288298" id="5944657839000877563" role="4jta.1169125787135.1071489727083" info="ig">
+        <property role="4jta.1071489288298.1071599937831" value="aggregation" />
+        <property role="4jta.1071489288298.1071599776563" value="hints" />
+        <property role="4jta.1071489288298.1071599893252" value="0..n" />
+        <reference role="4jta.1071489288298.1071599976176" target="5944657839003601246" resolveInfo="ConceptEditorHintDeclaration" />
+      </node>
+      <node concept="4jta.1169127622168" id="5944657839036545854" role="4jta.1071489090640.1169129564478" info="ig">
+        <reference role="4jta.1169127622168.1169127628841" target="tpck.1169194658468" resolveInfo="INamedConcept" />
+      </node>
+      <node concept="4jta.1169127622168" id="5774959771349753394" role="4jta.1071489090640.1169129564478" info="ig">
+        <reference role="4jta.1169127622168.1169127628841" target="tpck.1319728274784973096" resolveInfo="InterfacePart" />
+      </node>
+    </node>
+    <node concept="4jta.1071489090640" id="5944657839003601246" info="ig">
+      <property role="asn4.1133920641626.1193676396447" value="EditorContextHints" />
+      <property role="asn4.1169194658468.1169194664001" value="ConceptEditorHintDeclaration" />
+      <reference role="4jta.1071489090640.1071489389519" target="tpck.1133920641626" resolveInfo="BaseConcept" />
+      <node concept="4jta.1071489288299" id="5944657839012629576" role="4jta.1169125787135.1071489727084" info="ig">
+        <property role="asn4.1169194658468.1169194664001" value="presentation" />
+        <reference role="4jta.1071489288299.1082985295845" target="tpck.1082983041843" resolveInfo="string" />
+      </node>
+      <node concept="4jta.1071489288299" id="168363875802087287" role="4jta.1169125787135.1071489727084" info="ig">
+        <property role="asn4.1169194658468.1169194664001" value="showInUI" />
+        <reference role="4jta.1071489288299.1082985295845" target="tpck.1082983657063" resolveInfo="boolean" />
+      </node>
+      <node concept="4jta.1169127622168" id="5944657839003606229" role="4jta.1071489090640.1169129564478" info="ig">
+        <reference role="4jta.1169127622168.1169127628841" target="tpck.1169194658468" resolveInfo="INamedConcept" />
+      </node>
+      <node concept="4jta.1169127622168" id="5774959771349753400" role="4jta.1071489090640.1169129564478" info="ig">
+        <reference role="4jta.1169127622168.1169127628841" target="tpck.1319728274784973096" resolveInfo="InterfacePart" />
+      </node>
+    </node>
+    <node concept="4jta.1071489090640" id="6150987479542522273" info="ig">
+      <property role="asn4.1133920641626.1193676396447" value="EditorContextHints" />
+      <property role="asn4.1169194658468.1169194664001" value="QueryHintsSpecification" />
+      <property role="4jta.1169125787135.5092175715804935370" value="query" />
+      <reference role="4jta.1071489090640.1071489389519" target="tpee.1137021947720" resolveInfo="ConceptFunction" />
+      <node concept="4jta.1169127622168" id="4653693564098547079" role="4jta.1071489090640.1169129564478" info="ig">
+        <reference role="4jta.1169127622168.1169127628841" target="4653693564097968040" resolveInfo="ContextHintsSpecification" />
+      </node>
+    </node>
+    <node concept="4jta.1169125989551" id="4653693564097968040" info="ig">
+      <property role="asn4.1133920641626.1193676396447" value="EditorContextHints" />
+      <property role="asn4.1169194658468.1169194664001" value="ContextHintsSpecification" />
+      <node concept="4jta.1169127622168" id="4653693564098486956" role="4jta.1169125989551.1169127546356" info="ig">
+        <reference role="4jta.1169127622168.1169127628841" target="tpck.1835621062190663819" resolveInfo="IDontSubstituteByDefault" />
+      </node>
+    </node>
+    <node concept="4jta.1071489090640" id="4820515453818318288" info="ig">
+      <property role="asn4.1133920641626.1193676396447" value="EditorContextHints" />
+      <property role="asn4.1169194658468.1169194664001" value="ConceptEditorHintDeclarationReferenceExpression" />
+      <property role="4jta.1169125787135.5092175715804935370" value="concept editor hint/&lt;name&gt;/" />
+      <reference role="4jta.1071489090640.1071489389519" target="tpee.1068431790191" resolveInfo="Expression" />
+      <node concept="4jta.1071489288298" id="4820515453818318891" role="4jta.1169125787135.1071489727083" info="ig">
+        <property role="4jta.1071489288298.1071599937831" value="reference" />
+        <property role="4jta.1071489288298.1071599776563" value="hint" />
+        <property role="4jta.1071489288298.1071599893252" value="1" />
+        <reference role="4jta.1071489288298.1071599976176" target="5944657839003601246" resolveInfo="ConceptEditorHintDeclaration" />
+      </node>
+    </node>
+    <node concept="4jta.1071489090640" id="7033942394256351208" info="ig">
+      <property role="asn4.1169194658468.1169194664001" value="EditorComponentDeclarationReference" />
+      <reference role="4jta.1071489090640.1071489389519" target="tpck.1133920641626" resolveInfo="BaseConcept" />
+      <node concept="4jta.1071489288298" id="7033942394256351817" role="4jta.1169125787135.1071489727083" info="ig">
+        <property role="4jta.1071489288298.1071599937831" value="reference" />
+        <property role="4jta.1071489288298.1071599893252" value="1" />
+        <property role="4jta.1071489288298.1071599776563" value="editorComponent" />
+        <reference role="4jta.1071489288298.1071599976176" target="1078938745671" resolveInfo="EditorComponentDeclaration" />
+      </node>
+    </node>
+    <node concept="4jta.1071489090640" id="3647146066980922272" info="ig">
+      <property role="asn4.1133920641626.1193676396447" value="SNode.select" />
+      <property role="asn4.1169194658468.1169194664001" value="SelectInEditorOperation" />
+      <property role="4jta.1169125787135.5092175715804935370" value="select" />
+      <property role="4jta.1071489090640.5404671619616246344" value="none" />
+      <property role="4jta.1169125787135.4628067390765907488" value="select node in the editor" />
+      <reference role="4jta.1071489090640.1071489389519" target="tp25.1138411891628" resolveInfo="SNodeOperation" />
+      <node concept="4jta.1071489288298" id="1948540814633499358" role="4jta.1169125787135.1071489727083" info="ig">
+        <property role="4jta.1071489288298.1071599937831" value="aggregation" />
+        <property role="4jta.1071489288298.1071599776563" value="editorContext" />
+        <property role="4jta.1071489288298.1071599893252" value="1" />
+        <reference role="4jta.1071489288298.1071599976176" target="tpee.1068431790191" resolveInfo="Expression" />
+      </node>
+      <node concept="4jta.1071489288298" id="1948540814635895774" role="4jta.1169125787135.1071489727083" info="ig">
+        <property role="4jta.1071489288298.1071599937831" value="aggregation" />
+        <property role="4jta.1071489288298.1071599776563" value="cellSelector" />
+        <reference role="4jta.1071489288298.1071599976176" target="1948540814635886374" resolveInfo="AbstractCellSelector" />
+      </node>
+      <node concept="4jta.1071489288298" id="3604384757217586546" role="4jta.1169125787135.1071489727083" info="ig">
+        <property role="4jta.1071489288298.1071599937831" value="aggregation" />
+        <property role="4jta.1071489288298.1071599776563" value="selectionStart" />
+        <reference role="4jta.1071489288298.1071599976176" target="tpee.1068431790191" resolveInfo="Expression" />
+      </node>
+      <node concept="4jta.1071489288298" id="2701921320705252232" role="4jta.1169125787135.1071489727083" info="ig">
+        <property role="4jta.1071489288298.1071599937831" value="aggregation" />
+        <property role="4jta.1071489288298.1071599776563" value="selectionEnd" />
+        <reference role="4jta.1071489288298.1071599976176" target="tpee.1068431790191" resolveInfo="Expression" />
+      </node>
+      <node concept="4jta.1169127622168" id="4510086454767561658" role="4jta.1071489090640.1169129564478" info="ig">
+        <reference role="4jta.1169127622168.1169127628841" target="tpck.3734116213129792499" resolveInfo="ScopeProvider" />
+      </node>
+    </node>
+    <node concept="4jta.1071489090640" id="1948540814635886374" info="ig">
+      <property role="asn4.1133920641626.1193676396447" value="SNode.select" />
+      <property role="asn4.1169194658468.1169194664001" value="AbstractCellSelector" />
+      <property role="4jta.1169125787135.4628067390765956802" value="true" />
+      <reference role="4jta.1071489090640.1071489389519" target="tpck.1133920641626" resolveInfo="BaseConcept" />
+      <node concept="4jta.1169127622168" id="2162403111526915125" role="4jta.1071489090640.1169129564478" info="ig">
+        <reference role="4jta.1169127622168.1169127628841" target="tpck.1835621062190663819" resolveInfo="IDontSubstituteByDefault" />
+      </node>
+    </node>
+    <node concept="4jta.1071489090640" id="3547227755871693971" info="ig">
+      <property role="asn4.1133920641626.1193676396447" value="SNode.select" />
+      <property role="asn4.1169194658468.1169194664001" value="PredefinedSelector" />
+      <reference role="4jta.1071489090640.1071489389519" target="1948540814635886374" resolveInfo="AbstractCellSelector" />
+      <node concept="4jta.1071489288299" id="2162403111523065396" role="4jta.1169125787135.1071489727084" info="ig">
+        <property role="asn4.1169194658468.1169194664001" value="cellId" />
+        <reference role="4jta.1071489288299.1082985295845" target="2162403111523060375" resolveInfo="PredefinedCellID" />
+      </node>
+    </node>
+    <node concept="4jta.1071489090640" id="2162403111523059536" info="ig">
+      <property role="asn4.1133920641626.1193676396447" value="SNode.select" />
+      <property role="asn4.1169194658468.1169194664001" value="IdSelector" />
+      <reference role="4jta.1071489090640.1071489389519" target="1948540814635886374" resolveInfo="AbstractCellSelector" />
+      <node concept="4jta.1071489288299" id="2162403111529391190" role="4jta.1169125787135.1071489727084" info="ig">
+        <property role="asn4.1169194658468.1169194664001" value="cellId" />
+        <reference role="4jta.1071489288299.1082985295845" target="tpck.1082983041843" resolveInfo="string" />
+      </node>
+    </node>
+    <node concept="4jta.1082978164219" id="2162403111523060375" info="ng">
+      <property role="asn4.1133920641626.1193676396447" value="SNode.select" />
+      <property role="asn4.1169194658468.1169194664001" value="PredefinedCellID" />
+      <reference role="4jta.1082978164219.1083171729157" target="tpck.1082983041843" resolveInfo="string" />
+      <node concept="4jta.1083171877298" id="2162403111523060376" role="4jta.1082978164219.1083172003582" info="ig">
+        <property role="4jta.1083171877298.1083923523172" value="FIRST" />
+        <property role="4jta.1083171877298.1083923523171" value="first" />
+      </node>
+      <node concept="4jta.1083171877298" id="2162403111523062256" role="4jta.1082978164219.1083172003582" info="ig">
+        <property role="4jta.1083171877298.1083923523172" value="LAST" />
+        <property role="4jta.1083171877298.1083923523171" value="last" />
+      </node>
+      <node concept="4jta.1083171877298" id="2162403111523062252" role="4jta.1082978164219.1083172003582" info="ig">
+        <property role="4jta.1083171877298.1083923523172" value="FIRST_EDITABLE" />
+        <property role="4jta.1083171877298.1083923523171" value="firstEditable" />
+      </node>
+      <node concept="4jta.1083171877298" id="2162403111523062249" role="4jta.1082978164219.1083172003582" info="ig">
+        <property role="4jta.1083171877298.1083923523172" value="LAST_EDITABLE" />
+        <property role="4jta.1083171877298.1083923523171" value="lastEditable" />
+      </node>
+    </node>
+    <node concept="4jta.1071489090640" id="4510086454722552739" info="ig">
+      <property role="asn4.1133920641626.1193676396447" value="SNode.select" />
+      <property role="asn4.1169194658468.1169194664001" value="PropertyDeclarationCellSelector" />
+      <reference role="4jta.1071489090640.1071489389519" target="1948540814635886374" resolveInfo="AbstractCellSelector" />
+      <node concept="4jta.1071489288298" id="4510086454740628767" role="4jta.1169125787135.1071489727083" info="ig">
+        <property role="4jta.1071489288298.1071599937831" value="reference" />
+        <property role="4jta.1071489288298.1071599893252" value="1" />
+        <property role="4jta.1071489288298.1071599776563" value="propertyDeclaration" />
+        <reference role="4jta.1071489288298.1071599976176" target="tpce.1071489288299" resolveInfo="PropertyDeclaration" />
+      </node>
+    </node>
+    <node concept="4jta.1071489090640" id="4510086454726375946" info="ig">
+      <property role="asn4.1133920641626.1193676396447" value="SNode.select" />
+      <property role="asn4.1169194658468.1169194664001" value="PropertyExpressionCellSelector" />
+      <reference role="4jta.1071489090640.1071489389519" target="1948540814635886374" resolveInfo="AbstractCellSelector" />
+      <node concept="4jta.1071489288298" id="4510086454769912032" role="4jta.1169125787135.1071489727083" info="ig">
+        <property role="4jta.1071489288298.1071599937831" value="aggregation" />
+        <property role="4jta.1071489288298.1071599776563" value="propertyDeclaration" />
+        <property role="4jta.1071489288298.1071599893252" value="1" />
+        <reference role="4jta.1071489288298.1071599976176" target="tpee.1068431790191" resolveInfo="Expression" />
+      </node>
+    </node>
+    <node concept="4jta.1071489090640" id="4323500428121233431" info="ig">
+      <property role="asn4.1133920641626.1193676396447" value="CellModel" />
+      <property role="asn4.1169194658468.1169194664001" value="EditorCellId" />
+      <reference role="4jta.1071489090640.1071489389519" target="tpck.1133920641626" resolveInfo="BaseConcept" />
+      <node concept="4jta.1169127622168" id="4323500428126727727" role="4jta.1071489090640.1169129564478" info="ig">
+        <reference role="4jta.1169127622168.1169127628841" target="tpck.1835621062190663819" resolveInfo="IDontSubstituteByDefault" />
+      </node>
+      <node concept="4jta.1169127622168" id="4323500428153895294" role="4jta.1071489090640.1169129564478" info="ig">
+        <reference role="4jta.1169127622168.1169127628841" target="tpck.1169194658468" resolveInfo="INamedConcept" />
+      </node>
+    </node>
+    <node concept="4jta.1071489090640" id="4323500428136740385" info="ig">
+      <property role="asn4.1133920641626.1193676396447" value="SNode.select" />
+      <property role="asn4.1169194658468.1169194664001" value="CellIdReferenceSelector" />
+      <reference role="4jta.1071489090640.1071489389519" target="1948540814635886374" resolveInfo="AbstractCellSelector" />
+      <node concept="4jta.1071489288298" id="4323500428136742952" role="4jta.1169125787135.1071489727083" info="ig">
+        <property role="4jta.1071489288298.1071599937831" value="reference" />
+        <property role="4jta.1071489288298.1071599893252" value="1" />
+        <property role="4jta.1071489288298.1071599776563" value="id" />
+        <reference role="4jta.1071489288298.1071599976176" target="4323500428121233431" resolveInfo="EditorCellId" />
+      </node>
+    </node>
+    <node concept="4jta.1071489090640" id="3383245079137382180" info="ig">
+      <property role="asn4.1133920641626.1193676396447" value="Stylesheet" />
+      <property role="asn4.1169194658468.1169194664001" value="StyleClass" />
+      <property role="4jta.1169125787135.5092175715804935370" value="style" />
+      <reference role="4jta.1071489090640.1071489389519" target="tpck.1133920641626" resolveInfo="BaseConcept" />
+      <node concept="4jta.1071489288298" id="3383245079137422296" role="4jta.1169125787135.1071489727083" info="ig">
+        <property role="4jta.1071489288298.1071599937831" value="aggregation" />
+        <property role="4jta.1071489288298.1071599776563" value="dominates" />
+        <reference role="4jta.1071489288298.1071599976176" target="2491174914159318432" resolveInfo="DominatesRecord" />
+      </node>
+      <node concept="4jta.1169127622168" id="3383245079137422281" role="4jta.1071489090640.1169129564478" info="ig">
+        <reference role="4jta.1169127622168.1169127628841" target="3383245079136928391" resolveInfo="IStyleSheetMember" />
+      </node>
+      <node concept="4jta.1169127622168" id="9122903797325741811" role="4jta.1071489090640.1169129564478" info="ig">
+        <reference role="4jta.1169127622168.1169127628841" target="9122903797320402872" resolveInfo="IStyle" />
+      </node>
+      <node concept="4jta.1169127622168" id="5163058412366247618" role="4jta.1071489090640.1169129564478" info="ig">
+        <reference role="4jta.1169127622168.1169127628841" target="1219418625346" resolveInfo="IStyleContainer" />
+      </node>
+      <node concept="4jta.1169127622168" id="5163058412366247981" role="4jta.1071489090640.1169129564478" info="ig">
+        <reference role="4jta.1169127622168.1169127628841" target="tpee.1212170275853" resolveInfo="IValidIdentifier" />
+      </node>
+    </node>
+    <node concept="4jta.1071489090640" id="795210086017940429" info="ig">
+      <property role="asn4.1133920641626.1193676396447" value="Stylesheet" />
+      <property role="asn4.1169194658468.1169194664001" value="ReadOnlyStyleClassItem" />
+      <property role="4jta.1169125787135.5092175715804935370" value="read-only" />
+      <reference role="4jta.1071489090640.1071489389519" target="1186414536763" resolveInfo="BooleanStyleSheetItem" />
+    </node>
+    <node concept="4jta.1071489090640" id="1950447826686048995" info="ig">
+      <property role="asn4.1133920641626.1193676396447" value="Stylesheet" />
+      <property role="asn4.1169194658468.1169194664001" value="UnapplyStyle" />
+      <property role="4jta.1169125787135.5092175715804935370" value="unapply" />
+      <reference role="4jta.1071489090640.1071489389519" target="1186402475462" resolveInfo="StyleClassItem" />
+      <node concept="4jta.1071489288298" id="1950447826686049051" role="4jta.1169125787135.1071489727083" info="ig">
+        <property role="4jta.1071489288298.1071599937831" value="aggregation" />
+        <property role="4jta.1071489288298.1071599776563" value="target" />
+        <property role="4jta.1071489288298.1071599893252" value="1" />
+        <reference role="4jta.1071489288298.1071599976176" target="9122903797312246523" resolveInfo="StyleReference" />
+      </node>
+    </node>
+    <node concept="4jta.1169125989551" id="3383245079136928391" info="ig">
+      <property role="asn4.1133920641626.1193676396447" value="Stylesheet" />
+      <property role="asn4.1169194658468.1169194664001" value="IStyleSheetMember" />
+      <node concept="4jta.1224240836180" id="9122903797336079902" role="asn4.1133920641626.5169995583184591170" info="ig" />
+      <node concept="4jta.1169127622168" id="1666929921461326726" role="4jta.1169125989551.1169127546356" info="ig">
+        <reference role="4jta.1169127622168.1169127628841" target="9122903797320402872" resolveInfo="IStyle" />
+      </node>
+      <node concept="4jta.1169127622168" id="2984340427841566890" role="4jta.1169125989551.1169127546356" info="ig">
+        <reference role="4jta.1169127622168.1169127628841" target="1219418625346" resolveInfo="IStyleContainer" />
+      </node>
+      <node concept="4jta.1169127622168" id="9122903797325337611" role="4jta.1169125989551.1169127546356" info="ig">
+        <reference role="4jta.1169127622168.1169127628841" target="tpee.1212170275853" resolveInfo="IValidIdentifier" />
+      </node>
+      <node concept="4jta.1169127622168" id="8714766435263483694" role="4jta.1169125989551.1169127546356" info="ig">
+        <reference role="4jta.1169127622168.1169127628841" target="8714766435263473176" resolveInfo="IStyleSheetItem" />
+      </node>
+    </node>
+    <node concept="4jta.1071489090640" id="3383245079137422349" info="ig">
+      <property role="asn4.1133920641626.1193676396447" value="Stylesheet" />
+      <property role="asn4.1169194658468.1169194664001" value="StyleClassReference" />
+      <reference role="4jta.1071489090640.1071489389519" target="tpck.1133920641626" resolveInfo="BaseConcept" />
+      <node concept="4jta.1071489288298" id="3383245079137422350" role="4jta.1169125787135.1071489727083" info="ig">
+        <property role="4jta.1071489288298.1071599937831" value="reference" />
+        <property role="4jta.1071489288298.1071599776563" value="styleClass" />
+        <property role="4jta.1071489288298.1071599893252" value="1" />
+        <reference role="4jta.1071489288298.1071599976176" target="3383245079137382180" resolveInfo="StyleClass" />
+      </node>
+    </node>
+    <node concept="4jta.1071489090640" id="1950447826681509042" info="ig">
+      <property role="asn4.1133920641626.1193676396447" value="Stylesheet" />
+      <property role="asn4.1169194658468.1169194664001" value="ApplyStyleClass" />
+      <property role="4jta.1169125787135.5092175715804935370" value="apply" />
+      <reference role="4jta.1071489090640.1071489389519" target="1186402475462" resolveInfo="StyleClassItem" />
+      <node concept="4jta.1071489288298" id="1950447826683828796" role="4jta.1169125787135.1071489727083" info="ig">
+        <property role="4jta.1071489288298.1071599937831" value="aggregation" />
+        <property role="4jta.1071489288298.1071599776563" value="target" />
+        <property role="4jta.1071489288298.1071599893252" value="1" />
+        <reference role="4jta.1071489288298.1071599976176" target="9122903797312246523" resolveInfo="StyleReference" />
+      </node>
+    </node>
+    <node concept="4jta.1169125989551" id="9122903797320402872" info="ig">
+      <property role="asn4.1133920641626.1193676396447" value="Stylesheet" />
+      <property role="asn4.1169194658468.1169194664001" value="IStyle" />
+    </node>
+    <node concept="4jta.1169125989551" id="8770580973047386957" info="ig">
+      <property role="asn4.1133920641626.1193676396447" value="CellModel" />
+      <property role="asn4.1169194658468.1169194664001" value="Synchronizeable" />
+    </node>
+    <node concept="4jta.1071489090640" id="9122903797276194520" info="ig">
+      <property role="asn4.1133920641626.1193676396447" value="Stylesheet" />
+      <property role="asn4.1169194658468.1169194664001" value="StyleClassReferenceList" />
+      <reference role="4jta.1071489090640.1071489389519" target="tpck.1133920641626" resolveInfo="BaseConcept" />
+      <node concept="4jta.1071489288298" id="9122903797276195161" role="4jta.1169125787135.1071489727083" info="ig">
+        <property role="4jta.1071489288298.1071599937831" value="aggregation" />
+        <property role="4jta.1071489288298.1071599776563" value="element" />
+        <property role="4jta.1071489288298.1071599893252" value="1..n" />
+        <reference role="4jta.1071489288298.1071599976176" target="3383245079137422349" resolveInfo="StyleClassReference" />
+      </node>
+      <node concept="4jta.1169127622168" id="2491174914162137966" role="4jta.1071489090640.1169129564478" info="ig">
+        <reference role="4jta.1169127622168.1169127628841" target="tpck.1835621062190663819" resolveInfo="IDontSubstituteByDefault" />
+      </node>
+    </node>
+    <node concept="4jta.1169125989551" id="1381004262292414836" info="ig">
+      <property role="asn4.1133920641626.1193676396447" value="CellModel" />
+      <property role="asn4.1169194658468.1169194664001" value="ICellStyle" />
+      <node concept="4jta.1071489288298" id="1381004262292426837" role="4jta.1169125787135.1071489727083" info="ig">
+        <property role="4jta.1071489288298.1071599776563" value="parentStyleClass" />
+        <reference role="4jta.1071489288298.1071599976176" target="3383245079136928391" resolveInfo="IStyleSheetMember" />
+      </node>
+      <node concept="4jta.1169127622168" id="1381004262292421018" role="4jta.1169125989551.1169127546356" info="ig">
+        <reference role="4jta.1169127622168.1169127628841" target="1219418625346" resolveInfo="IStyleContainer" />
+      </node>
+    </node>
+    <node concept="4jta.1071489090640" id="9122903797336200704" info="ig">
+      <property role="asn4.1133920641626.1193676396447" value="Stylesheet" />
+      <property role="asn4.1169194658468.1169194664001" value="ApplyStyleClassCondition" />
+      <property role="4jta.1169125787135.5092175715804935370" value="apply-if" />
+      <reference role="4jta.1071489090640.1071489389519" target="1950447826681509042" resolveInfo="ApplyStyleClass" />
+      <node concept="4jta.1071489288298" id="9122903797336200706" role="4jta.1169125787135.1071489727083" info="ig">
+        <property role="4jta.1071489288298.1071599937831" value="aggregation" />
+        <property role="4jta.1071489288298.1071599776563" value="query" />
+        <property role="4jta.1071489288298.1071599893252" value="1" />
+        <reference role="4jta.1071489288298.1071599976176" target="1223387125302" resolveInfo="QueryFunction_Boolean" />
+      </node>
+    </node>
+    <node concept="4jta.1071489090640" id="2491174914159318432" info="ig">
+      <property role="asn4.1133920641626.1193676396447" value="Stylesheet" />
+      <property role="asn4.1169194658468.1169194664001" value="DominatesRecord" />
+      <property role="4jta.1169125787135.5092175715804935370" value="dominates over" />
+      <reference role="4jta.1071489090640.1071489389519" target="tpck.1133920641626" resolveInfo="BaseConcept" />
+      <node concept="4jta.1071489288298" id="2491174914159330058" role="4jta.1169125787135.1071489727083" info="ig">
+        <property role="4jta.1071489288298.1071599937831" value="aggregation" />
+        <property role="4jta.1071489288298.1071599776563" value="dominatesStyleClassList" />
+        <property role="4jta.1071489288298.1071599893252" value="0..1" />
+        <reference role="4jta.1071489288298.1071599976176" target="9122903797276194520" resolveInfo="StyleClassReferenceList" />
+      </node>
+      <node concept="4jta.1169127622168" id="9015952930121301858" role="4jta.1071489090640.1169129564478" info="ig">
+        <reference role="4jta.1169127622168.1169127628841" target="tpck.1319728274783077719" resolveInfo="ImplementationPart" />
+      </node>
+    </node>
+    <node concept="4jta.1071489090640" id="9122903797312246523" info="ig">
+      <property role="asn4.1133920641626.1193676396447" value="Stylesheet" />
+      <property role="asn4.1169194658468.1169194664001" value="StyleReference" />
+      <reference role="4jta.1071489090640.1071489389519" target="tpck.1133920641626" resolveInfo="BaseConcept" />
+      <node concept="4jta.1071489288298" id="9122903797312247166" role="4jta.1169125787135.1071489727083" info="ig">
+        <property role="4jta.1071489288298.1071599937831" value="reference" />
+        <property role="4jta.1071489288298.1071599776563" value="style" />
+        <property role="4jta.1071489288298.1071599893252" value="1" />
+        <reference role="4jta.1071489288298.1071599976176" target="9122903797320402872" resolveInfo="IStyle" />
+      </node>
+    </node>
+    <node concept="4jta.1169125989551" id="8714766435263473176" info="ig">
+      <property role="asn4.1133920641626.1193676396447" value="Stylesheet" />
+      <property role="asn4.1169194658468.1169194664001" value="IStyleSheetItem" />
+      <node concept="4jta.1169127622168" id="7531406846490636378" role="4jta.1169125989551.1169127546356" info="ig">
+        <reference role="4jta.1169127622168.1169127628841" target="tpck.1319728274784973096" resolveInfo="InterfacePart" />
+      </node>
+    </node>
+    <node concept="4jta.1071489090640" id="6029276237631252951" info="ig">
+      <property role="asn4.1169194658468.1169194664001" value="StyleAttributeReferenceExpression" />
+      <property role="4jta.1169125787135.5092175715804935370" value="styleAttribute" />
+      <property role="asn4.1133920641626.1193676396447" value="Stylesheet" />
+      <reference role="4jta.1071489090640.1071489389519" target="tpee.1068431790191" resolveInfo="Expression" />
+      <node concept="4jta.1071489288298" id="6029276237631253682" role="4jta.1169125787135.1071489727083" info="ig">
+        <property role="4jta.1071489288298.1071599937831" value="reference" />
+        <property role="4jta.1071489288298.1071599893252" value="1" />
+        <property role="4jta.1071489288298.1071599776563" value="attributeDeclaration" />
+        <reference role="4jta.1071489288298.1071599976176" target="3982520150113085419" resolveInfo="StyleAttributeDeclaration" />
+      </node>
+    </node>
+    <node concept="4jta.1082978164219" id="8714766435264464204" info="ng">
+      <property role="asn4.1133920641626.1193676396447" value="Stylesheet" />
+      <property role="asn4.1169194658468.1169194664001" value="StyleAttributeKind" />
+      <property role="4jta.1082978164219.1212080844762" value="false" />
+      <reference role="4jta.1082978164219.1083171729157" target="tpck.1082983657063" resolveInfo="boolean" />
+      <node concept="4jta.1083171877298" id="8714766435264464205" role="4jta.1082978164219.1083172003582" info="ig">
+        <property role="4jta.1083171877298.1083923523171" value="true" />
+        <property role="4jta.1083171877298.1083923523172" value="inherited" />
+      </node>
+      <node concept="4jta.1083171877298" id="8714766435264464206" role="4jta.1082978164219.1083172003582" info="ig">
+        <property role="4jta.1083171877298.1083923523171" value="false" />
+        <property role="4jta.1083171877298.1083923523172" value="simple" />
+      </node>
+    </node>
+    <node concept="4jta.1071489090640" id="3982520150113085419" info="ig">
+      <property role="asn4.1169194658468.1169194664001" value="StyleAttributeDeclaration" />
+      <property role="asn4.1133920641626.1193676396447" value="Stylesheet" />
+      <property role="4jta.1169125787135.5092175715804935370" value="style attribute" />
+      <reference role="4jta.1071489090640.1071489389519" target="tpck.1133920641626" resolveInfo="BaseConcept" />
+      <node concept="4jta.1071489288299" id="8714766435264464176" role="4jta.1169125787135.1071489727084" info="ig">
+        <property role="asn4.1169194658468.1169194664001" value="inherited" />
+        <reference role="4jta.1071489288299.1082985295845" target="8714766435264464204" resolveInfo="StyleAttributeKind" />
+      </node>
+      <node concept="4jta.1071489288298" id="3982520150113092206" role="4jta.1169125787135.1071489727083" info="ig">
+        <property role="4jta.1071489288298.1071599937831" value="aggregation" />
+        <property role="4jta.1071489288298.1071599776563" value="valueType" />
+        <property role="4jta.1071489288298.1071599893252" value="1" />
+        <reference role="4jta.1071489288298.1071599976176" target="tpee.1068431790189" resolveInfo="Type" />
+      </node>
+      <node concept="4jta.1071489288298" id="3982520150113147643" role="4jta.1169125787135.1071489727083" info="ig">
+        <property role="4jta.1071489288298.1071599937831" value="aggregation" />
+        <property role="4jta.1071489288298.1071599776563" value="defaultValue" />
+        <reference role="4jta.1071489288298.1071599976176" target="tpee.1068431790191" resolveInfo="Expression" />
+      </node>
+      <node concept="4jta.1169127622168" id="8714766435263483702" role="4jta.1071489090640.1169129564478" info="ig">
+        <reference role="4jta.1169127622168.1169127628841" target="8714766435263473176" resolveInfo="IStyleSheetItem" />
+      </node>
+      <node concept="4jta.1169127622168" id="3982520150113086086" role="4jta.1071489090640.1169129564478" info="ig">
+        <reference role="4jta.1169127622168.1169127628841" target="tpck.1169194658468" resolveInfo="INamedConcept" />
+      </node>
+    </node>
+    <node concept="4jta.1071489090640" id="3982520150122341378" info="ig">
+      <property role="asn4.1169194658468.1169194664001" value="AttributeStyleClassItem" />
+      <property role="asn4.1133920641626.1193676396447" value="Stylesheet" />
+      <reference role="4jta.1071489090640.1071489389519" target="1186402475462" resolveInfo="StyleClassItem" />
+      <node concept="4jta.1071489288298" id="3982520150122341379" role="4jta.1169125787135.1071489727083" info="ig">
+        <property role="4jta.1071489288298.1071599937831" value="aggregation" />
+        <property role="4jta.1071489288298.1071599776563" value="query" />
+        <property role="4jta.1071489288298.1071599893252" value="1" />
+        <reference role="4jta.1071489288298.1071599976176" target="3982520150125052579" resolveInfo="QueryFunction_AttributeStyleParameter" />
+      </node>
+      <node concept="4jta.1071489288298" id="3982520150122346707" role="4jta.1169125787135.1071489727083" info="ig">
+        <property role="4jta.1071489288298.1071599937831" value="reference" />
+        <property role="4jta.1071489288298.1071599776563" value="attribute" />
+        <property role="4jta.1071489288298.1071599893252" value="1" />
+        <reference role="4jta.1071489288298.1071599976176" target="3982520150113085419" resolveInfo="StyleAttributeDeclaration" />
+      </node>
+    </node>
+    <node concept="4jta.1071489090640" id="3982520150125052579" info="ig">
+      <property role="asn4.1169194658468.1169194664001" value="QueryFunction_AttributeStyleParameter" />
+      <reference role="4jta.1071489090640.1071489389519" target="1221059528506" resolveInfo="QueryFunction_StyleParameter" />
+    </node>
+    <node concept="4jta.1071489090640" id="3610246225209162225" info="ig">
+      <property role="asn4.1133920641626.1193676396447" value="CellModel" />
+      <property role="asn4.1169194658468.1169194664001" value="StubCellModel_Constant" />
+      <reference role="4jta.1071489090640.1071489389519" target="730538219796139730" resolveInfo="StubEditorCellModel" />
+    </node>
+    <node concept="4jta.1071489090640" id="3013115976261988961" info="ig">
+      <property role="asn4.1133920641626.1193676396447" value="CellModel" />
+      <property role="asn4.1169194658468.1169194664001" value="StubCellModel_Collection" />
+      <reference role="4jta.1071489090640.1071489389519" target="730538219796139730" resolveInfo="StubEditorCellModel" />
+    </node>
+    <node concept="4jta.1071489090640" id="3708815482283559694" info="ig">
+      <property role="asn4.1133920641626.1193676396447" value="CellModel" />
+      <property role="asn4.1169194658468.1169194664001" value="StubCellModel_ReadOnlyModelAccessor" />
+      <reference role="4jta.1071489090640.1071489389519" target="730538219796139730" resolveInfo="StubEditorCellModel" />
+    </node>
+    <node concept="4jta.1071489090640" id="3162947552742194261" info="ig">
+      <property role="asn4.1133920641626.1193676396447" value="CellModel" />
+      <property role="asn4.1169194658468.1169194664001" value="StubCellModel_Component" />
+      <reference role="4jta.1071489090640.1071489389519" target="730538219796139730" resolveInfo="StubEditorCellModel" />
+    </node>
+    <node concept="4jta.1071489090640" id="730538219795941030" info="ig">
+      <property role="asn4.1169194658468.1169194664001" value="StubCellModel_RefCell" />
+      <property role="asn4.1133920641626.1193676396447" value="CellModel" />
+      <reference role="4jta.1071489090640.1071489389519" target="730538219796139730" resolveInfo="StubEditorCellModel" />
+    </node>
+    <node concept="4jta.1071489090640" id="730538219795960754" info="ig">
+      <property role="asn4.1133920641626.1193676396447" value="CellModel" />
+      <property role="asn4.1169194658468.1169194664001" value="StubCellModel_RefNode" />
+      <reference role="4jta.1071489090640.1071489389519" target="730538219796139730" resolveInfo="StubEditorCellModel" />
+    </node>
+    <node concept="4jta.1071489090640" id="730538219795961225" info="ig">
+      <property role="asn4.1133920641626.1193676396447" value="CellModel" />
+      <property role="asn4.1169194658468.1169194664001" value="StubCellModel_ReferencePresentation" />
+      <reference role="4jta.1071489090640.1071489389519" target="730538219796139730" resolveInfo="StubEditorCellModel" />
+    </node>
+    <node concept="4jta.1071489090640" id="730538219796134133" info="ig">
+      <property role="asn4.1133920641626.1193676396447" value="CellModel" />
+      <property role="asn4.1169194658468.1169194664001" value="StubCellModel_Property" />
+      <reference role="4jta.1071489090640.1071489389519" target="730538219796139730" resolveInfo="StubEditorCellModel" />
+    </node>
+    <node concept="4jta.1071489090640" id="730538219796134178" info="ig">
+      <property role="asn4.1133920641626.1193676396447" value="CellModel" />
+      <property role="asn4.1169194658468.1169194664001" value="StubCellModel_NonEmptyProperty" />
+      <reference role="4jta.1071489090640.1071489389519" target="730538219796139730" resolveInfo="StubEditorCellModel" />
+    </node>
+    <node concept="4jta.1071489090640" id="730538219796139730" info="ig">
+      <property role="asn4.1133920641626.1193676396447" value="CellModel" />
+      <property role="asn4.1169194658468.1169194664001" value="StubEditorCellModel" />
+      <reference role="4jta.1071489090640.1071489389519" target="1073389214265" resolveInfo="EditorCellModel" />
+      <node concept="4jta.1169127622168" id="730538219796139731" role="4jta.1071489090640.1169129564478" info="ig">
+        <reference role="4jta.1169127622168.1169127628841" target="tpck.1835621062190663819" resolveInfo="IDontSubstituteByDefault" />
+      </node>
+      <node concept="4jta.1169127622168" id="730538219796139736" role="4jta.1071489090640.1169129564478" info="ig">
+        <reference role="4jta.1169127622168.1169127628841" target="tpck.3393165121846091587" resolveInfo="ISuppressErrors" />
+      </node>
+    </node>
+    <node concept="4jta.1071489090640" id="2794558372793454595" info="ig">
+      <property role="asn4.1133920641626.1193676396447" value="CellModel" />
+      <property role="asn4.1169194658468.1169194664001" value="StubCellModel_RefNodeList" />
+      <reference role="4jta.1071489090640.1071489389519" target="730538219796139730" resolveInfo="StubEditorCellModel" />
+    </node>
+    <node concept="4jta.1071489090640" id="8104358048506729356" info="ig">
+      <property role="asn4.1133920641626.1193676396447" value="CellModel" />
+      <property role="asn4.1169194658468.1169194664001" value="StubCellModel_Error" />
+      <reference role="4jta.1071489090640.1071489389519" target="730538219796139730" resolveInfo="StubEditorCellModel" />
+    </node>
+    <node concept="4jta.1071489090640" id="8104358048506729357" info="ig">
+      <property role="asn4.1133920641626.1193676396447" value="CellModel" />
+      <property role="asn4.1169194658468.1169194664001" value="StubCellModel_ModelAccess" />
+      <reference role="4jta.1071489090640.1071489389519" target="730538219796139730" resolveInfo="StubEditorCellModel" />
+    </node>
+    <node concept="4jta.1071489090640" id="8104358048506729358" info="ig">
+      <property role="asn4.1133920641626.1193676396447" value="CellModel" />
+      <property role="asn4.1169194658468.1169194664001" value="StubCellModel_TransactionalProperty" />
+      <reference role="4jta.1071489090640.1071489389519" target="730538219796139730" resolveInfo="StubEditorCellModel" />
+    </node>
+    <node concept="4jta.1071489090640" id="8104358048506729359" info="ig">
+      <property role="asn4.1133920641626.1193676396447" value="CellModel" />
+      <property role="asn4.1169194658468.1169194664001" value="StubCellModel_URL" />
+      <reference role="4jta.1071489090640.1071489389519" target="730538219796139730" resolveInfo="StubEditorCellModel" />
+    </node>
+    <node concept="4jta.1071489090640" id="8104358048506729361" info="ig">
+      <property role="asn4.1133920641626.1193676396447" value="CellModel" />
+      <property role="asn4.1169194658468.1169194664001" value="StubCellModel_Alteration" />
+      <reference role="4jta.1071489090640.1071489389519" target="730538219796139730" resolveInfo="StubEditorCellModel" />
+    </node>
+    <node concept="4jta.1071489090640" id="8104358048506730066" info="ig">
+      <property role="asn4.1133920641626.1193676396447" value="CellModel" />
+      <property role="asn4.1169194658468.1169194664001" value="StubCellModel_Block" />
+      <reference role="4jta.1071489090640.1071489389519" target="730538219796139730" resolveInfo="StubEditorCellModel" />
+    </node>
+    <node concept="4jta.1071489090640" id="8104358048506730068" info="ig">
+      <property role="asn4.1133920641626.1193676396447" value="CellModel" />
+      <property role="asn4.1169194658468.1169194664001" value="StubCellModel_Custom" />
+      <reference role="4jta.1071489090640.1071489389519" target="730538219796139730" resolveInfo="StubEditorCellModel" />
+    </node>
+    <node concept="4jta.1071489090640" id="8104358048506730159" info="ig">
+      <property role="asn4.1133920641626.1193676396447" value="CellModel" />
+      <property role="asn4.1169194658468.1169194664001" value="StubCellModel_Empty" />
+      <reference role="4jta.1071489090640.1071489389519" target="730538219796139730" resolveInfo="StubEditorCellModel" />
+    </node>
+    <node concept="4jta.1071489090640" id="8104358048506730324" info="ig">
+      <property role="asn4.1133920641626.1193676396447" value="CellModel" />
+      <property role="asn4.1169194658468.1169194664001" value="StubCellModel_HierarchycalTable" />
+      <reference role="4jta.1071489090640.1071489389519" target="730538219796139730" resolveInfo="StubEditorCellModel" />
+    </node>
+    <node concept="4jta.1071489090640" id="8104358048506731195" info="ig">
+      <property role="asn4.1133920641626.1193676396447" value="CellModel" />
+      <property role="asn4.1169194658468.1169194664001" value="StubCellModel_Image" />
+      <reference role="4jta.1071489090640.1071489389519" target="730538219796139730" resolveInfo="StubEditorCellModel" />
+    </node>
+    <node concept="4jta.1071489090640" id="8104358048506731196" info="ig">
+      <property role="asn4.1133920641626.1193676396447" value="CellModel" />
+      <property role="asn4.1169194658468.1169194664001" value="StubCellModel_JComponent" />
+      <reference role="4jta.1071489090640.1071489389519" target="730538219796139730" resolveInfo="StubEditorCellModel" />
+    </node>
+    <node concept="4jta.1071489090640" id="8104358048506731197" info="ig">
+      <property role="asn4.1133920641626.1193676396447" value="CellModel" />
+      <property role="asn4.1169194658468.1169194664001" value="StubCellModel_Table" />
+      <reference role="4jta.1071489090640.1071489389519" target="730538219796139730" resolveInfo="StubEditorCellModel" />
+    </node>
+  </contents>
 </model>
 

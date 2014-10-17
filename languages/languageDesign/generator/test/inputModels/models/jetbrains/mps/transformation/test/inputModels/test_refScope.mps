@@ -1,48 +1,66 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<model modelUID="r:2aa4e867-ebbb-4b23-8a17-68a84c27a14d(jetbrains.mps.transformation.test.inputModels.test_refScope)" doNotGenerate="true">
-  <persistence version="8" />
-  <language namespace="ab0ae915-e3b5-4f35-b55a-c655d649a03c(jetbrains.mps.transformation.test.inputLang)" />
-  <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
-  <import index="tpm0" modelUID="r:00000000-0000-4000-0000-011c895905f4(jetbrains.mps.transformation.test.inputLang.structure)" version="-1" implicit="yes" />
-  <root type="tpm0.RefTestClass" typeId="tpm0.3315811491560119803" id="3315811491560187089" nodeInfo="ng">
-    <property name="name" nameId="tpck.1169194664001" value="BaseCl" />
-    <node role="methods" roleId="tpm0.3315811491560119846" type="tpm0.RefTestMethod" typeId="tpm0.3315811491560119806" id="3315811491560187090" nodeInfo="ng">
-      <property name="name" nameId="tpck.1169194664001" value="equals" />
-      <node role="params" roleId="tpm0.3315811491560119872" type="tpm0.RefTestParam" typeId="tpm0.3315811491560119808" id="3315811491560194572" nodeInfo="ng">
-        <property name="name" nameId="tpck.1169194664001" value="target" />
+<model ref="r:2aa4e867-ebbb-4b23-8a17-68a84c27a14d(jetbrains.mps.transformation.test.inputModels.test_refScope)" doNotGenerate="true">
+  <persistence version="9" />
+  <debugInfo>
+    <lang id="ab0ae915-e3b5-4f35-b55a-c655d649a03c" name="jetbrains.mps.transformation.test.inputLang" />
+    <lang id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core" />
+    <concept id="ab0ae915-e3b5-4f35-b55a-c655d649a03c/3315811491560119808" name="jetbrains.mps.transformation.test.inputLang.structure.RefTestParam" />
+    <concept id="ab0ae915-e3b5-4f35-b55a-c655d649a03c/3315811491560119806" name="jetbrains.mps.transformation.test.inputLang.structure.RefTestMethod" />
+    <concept id="ab0ae915-e3b5-4f35-b55a-c655d649a03c/3315811491560119803" name="jetbrains.mps.transformation.test.inputLang.structure.RefTestClass" />
+    <property id="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001" name="name" />
+    <refRole id="ab0ae915-e3b5-4f35-b55a-c655d649a03c/3315811491560119803/3315811491560119805" name="extends" />
+    <childRole id="ab0ae915-e3b5-4f35-b55a-c655d649a03c/3315811491560119806/3315811491560119872" name="params" />
+    <childRole id="ab0ae915-e3b5-4f35-b55a-c655d649a03c/3315811491560119803/3315811491560119846" name="methods" />
+  </debugInfo>
+  <languages>
+    <use id="ab0ae915-e3b5-4f35-b55a-c655d649a03c" version="-1" index="9749" />
+    <use id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" version="0" implicit="true" index="asn4" />
+  </languages>
+  <imports>
+    <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
+    <import index="tpm0" ref="r:00000000-0000-4000-0000-011c895905f4(jetbrains.mps.transformation.test.inputLang.structure)" implicit="true" />
+  </imports>
+  <contents>
+    <node concept="9749.3315811491560119803" id="3315811491560187089" info="ng">
+      <property role="asn4.1169194658468.1169194664001" value="BaseCl" />
+      <node concept="9749.3315811491560119806" id="3315811491560187090" role="9749.3315811491560119803.3315811491560119846" info="ng">
+        <property role="asn4.1169194658468.1169194664001" value="equals" />
+        <node concept="9749.3315811491560119808" id="3315811491560194572" role="9749.3315811491560119806.3315811491560119872" info="ng">
+          <property role="asn4.1169194658468.1169194664001" value="target" />
+        </node>
+      </node>
+      <node concept="9749.3315811491560119806" id="3315811491560194573" role="9749.3315811491560119803.3315811491560119846" info="ng">
+        <property role="asn4.1169194658468.1169194664001" value="hashCode" />
       </node>
     </node>
-    <node role="methods" roleId="tpm0.3315811491560119846" type="tpm0.RefTestMethod" typeId="tpm0.3315811491560119806" id="3315811491560194573" nodeInfo="ng">
-      <property name="name" nameId="tpck.1169194664001" value="hashCode" />
-    </node>
-  </root>
-  <root type="tpm0.RefTestClass" typeId="tpm0.3315811491560119803" id="3315811491560194589" nodeInfo="ng">
-    <property name="name" nameId="tpck.1169194664001" value="SubClass" />
-    <link role="extends" roleId="tpm0.3315811491560119805" targetNodeId="3315811491560187089" resolveInfo="BaseCl" />
-    <node role="methods" roleId="tpm0.3315811491560119846" type="tpm0.RefTestMethod" typeId="tpm0.3315811491560119806" id="3315811491560194590" nodeInfo="ng">
-      <property name="name" nameId="tpck.1169194664001" value="work" />
-      <node role="params" roleId="tpm0.3315811491560119872" type="tpm0.RefTestParam" typeId="tpm0.3315811491560119808" id="3315811491560194593" nodeInfo="ng">
-        <property name="name" nameId="tpck.1169194664001" value="a" />
+    <node concept="9749.3315811491560119803" id="3315811491560194589" info="ng">
+      <property role="asn4.1169194658468.1169194664001" value="SubClass" />
+      <reference role="9749.3315811491560119803.3315811491560119805" target="3315811491560187089" resolveInfo="BaseCl" />
+      <node concept="9749.3315811491560119806" id="3315811491560194590" role="9749.3315811491560119803.3315811491560119846" info="ng">
+        <property role="asn4.1169194658468.1169194664001" value="work" />
+        <node concept="9749.3315811491560119808" id="3315811491560194593" role="9749.3315811491560119806.3315811491560119872" info="ng">
+          <property role="asn4.1169194658468.1169194664001" value="a" />
+        </node>
+        <node concept="9749.3315811491560119808" id="3315811491560194594" role="9749.3315811491560119806.3315811491560119872" info="ng">
+          <property role="asn4.1169194658468.1169194664001" value="b" />
+        </node>
+        <node concept="9749.3315811491560119808" id="3315811491560194595" role="9749.3315811491560119806.3315811491560119872" info="ng">
+          <property role="asn4.1169194658468.1169194664001" value="c" />
+        </node>
       </node>
-      <node role="params" roleId="tpm0.3315811491560119872" type="tpm0.RefTestParam" typeId="tpm0.3315811491560119808" id="3315811491560194594" nodeInfo="ng">
-        <property name="name" nameId="tpck.1169194664001" value="b" />
-      </node>
-      <node role="params" roleId="tpm0.3315811491560119872" type="tpm0.RefTestParam" typeId="tpm0.3315811491560119808" id="3315811491560194595" nodeInfo="ng">
-        <property name="name" nameId="tpck.1169194664001" value="c" />
-      </node>
-    </node>
-    <node role="methods" roleId="tpm0.3315811491560119846" type="tpm0.RefTestMethod" typeId="tpm0.3315811491560119806" id="3315811491560194597" nodeInfo="ng">
-      <property name="name" nameId="tpck.1169194664001" value="work2" />
-      <node role="params" roleId="tpm0.3315811491560119872" type="tpm0.RefTestParam" typeId="tpm0.3315811491560119808" id="3315811491560194598" nodeInfo="ng">
-        <property name="name" nameId="tpck.1169194664001" value="a" />
+      <node concept="9749.3315811491560119806" id="3315811491560194597" role="9749.3315811491560119803.3315811491560119846" info="ng">
+        <property role="asn4.1169194658468.1169194664001" value="work2" />
+        <node concept="9749.3315811491560119808" id="3315811491560194598" role="9749.3315811491560119806.3315811491560119872" info="ng">
+          <property role="asn4.1169194658468.1169194664001" value="a" />
+        </node>
       </node>
     </node>
-  </root>
-  <root type="tpm0.RefTestClass" typeId="tpm0.3315811491560119803" id="3715568794894764201" nodeInfo="ng">
-    <property name="name" nameId="tpck.1169194664001" value="WrongEqualsContainer" />
-    <node role="methods" roleId="tpm0.3315811491560119846" type="tpm0.RefTestMethod" typeId="tpm0.3315811491560119806" id="3715568794894764202" nodeInfo="ng">
-      <property name="name" nameId="tpck.1169194664001" value="equals" />
+    <node concept="9749.3315811491560119803" id="3715568794894764201" info="ng">
+      <property role="asn4.1169194658468.1169194664001" value="WrongEqualsContainer" />
+      <node concept="9749.3315811491560119806" id="3715568794894764202" role="9749.3315811491560119803.3315811491560119846" info="ng">
+        <property role="asn4.1169194658468.1169194664001" value="equals" />
+      </node>
     </node>
-  </root>
+  </contents>
 </model>
 
