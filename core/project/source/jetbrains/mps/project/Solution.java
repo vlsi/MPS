@@ -17,8 +17,10 @@ package jetbrains.mps.project;
 
 import jetbrains.mps.ClasspathReader;
 import jetbrains.mps.classloading.ClassLoaderManager;
+import jetbrains.mps.classloading.CustomClassLoadingFacet;
 import jetbrains.mps.library.ModulesMiner;
 import jetbrains.mps.library.ModulesMiner.ModuleHandle;
+import jetbrains.mps.module.ReloadableModule;
 import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.project.facets.TestsFacet;
 import jetbrains.mps.project.persistence.SolutionDescriptorPersistence;
@@ -31,6 +33,7 @@ import jetbrains.mps.smodel.MPSModuleOwner;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.util.MacrosFactory;
 import jetbrains.mps.vfs.IFile;
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 
 import java.util.Collection;
@@ -42,7 +45,7 @@ import java.util.Set;
  * Igor Alshannikov
  * Aug 26, 2005
  */
-public class Solution extends AbstractModule {
+public class Solution extends ReloadableAbstractModule {
   private SolutionDescriptor mySolutionDescriptor;
   public static final String SOLUTION_MODELS = "models";
   // idea plugin wants to turn it off sometimes, when it knows better what jdk is and what platform is
@@ -182,5 +185,37 @@ public class Solution extends AbstractModule {
   @Deprecated
   public static Solution newInstance(ModuleHandle handle, MPSModuleOwner moduleOwner) {
     return (Solution) ModuleRepositoryFacade.createModule(handle, moduleOwner);
+  }
+
+  private boolean canLoad() {
+    // TODO mps facet from this [like IDEA plugin facet]
+    return getKind() != SolutionKind.NONE || getFacet(CustomClassLoadingFacet.class) != null;
+  }
+
+  @Nullable
+  @Override
+  public Class<?> getClass(String classFqName) {
+    if (!canLoad()) return null;
+    return super.getClass(classFqName);
+  }
+
+  @Nullable
+  @Override
+  public Class<?> getOwnClass(String classFqName) {
+    if (!canLoad()) return null;
+    return super.getOwnClass(classFqName);
+  }
+
+  @Nullable
+  @Override
+  public ClassLoader getClassLoader() {
+    if (!canLoad()) return null;
+    return super.getClassLoader();
+  }
+
+  @Override
+  public void reload() {
+    if (!canLoad()) return;
+    super.reload();
   }
 }

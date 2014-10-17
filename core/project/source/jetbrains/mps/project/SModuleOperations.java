@@ -123,24 +123,6 @@ public class SModuleOperations {
     return facet != null && !facet.isCompileInMps();
   }
 
-  /**
-   * A module which can be associated with some class loader.
-   * Currently it can be either MPS ModuleClassLoader or IdeaPlugin PluginClassLoader.
-   */
-  public static boolean isLoadable(SModule module) {
-    if (module instanceof Language)
-      return true;
-    if (module instanceof Generator)
-      return true;
-
-    if (module instanceof Solution) {
-      Solution solution = (Solution) module;
-      if (solution.getKind() != SolutionKind.NONE) return true; // this is a future MPS-facet
-      if (solution.getFacet(CustomClassLoadingFacet.class) != null) return true;
-    }
-    return false;
-  }
-
   public static Set<String> getAllSourcePaths(SModule module) {
     // todo: get rid from source paths?
     Set<String> paths = new HashSet<String>();

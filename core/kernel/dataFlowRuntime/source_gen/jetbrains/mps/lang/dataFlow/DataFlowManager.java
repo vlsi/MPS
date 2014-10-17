@@ -15,7 +15,6 @@ import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.util.SNodeOperations;
-import jetbrains.mps.classloading.ClassLoaderManager;
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
@@ -76,7 +75,7 @@ public class DataFlowManager implements CoreComponent {
       SModel dfaModel = LanguageAspect.DATA_FLOW.get(l);
       if (dfaModel != null && dfaModel.getRootNodes().iterator().hasNext()) {
         String dfaBuildersClassName = SNodeOperations.getModelLongName(dfaModel) + ".DFABuilders";
-        Class<? extends DataFlowBuilders> buildersClass = ClassLoaderManager.getInstance().getOwnClass(l, dfaBuildersClassName);
+        Class<? extends DataFlowBuilders> buildersClass = ((Class<? extends DataFlowBuilders>) l.getOwnClass(dfaBuildersClassName));
         if (buildersClass != null) {
           try {
             DataFlowBuilders builders = buildersClass.newInstance();

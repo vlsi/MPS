@@ -20,12 +20,12 @@ import jetbrains.mps.classloading.ModuleClassLoaderSupport;
 import jetbrains.mps.library.LibraryInitializer;
 import jetbrains.mps.library.ModulesMiner;
 import jetbrains.mps.library.ModulesMiner.ModuleHandle;
+import jetbrains.mps.module.ReloadableModule;
 import jetbrains.mps.module.SDependencyImpl;
-import jetbrains.mps.progress.EmptyProgressMonitor;
-import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.DevKit;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.ModelsAutoImportsManager;
+import jetbrains.mps.project.ReloadableAbstractModule;
 import jetbrains.mps.project.dependency.modules.LanguageDependenciesManager;
 import jetbrains.mps.project.facets.JavaModuleFacet;
 import jetbrains.mps.project.facets.JavaModuleOperations;
@@ -43,7 +43,10 @@ import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.ProtectionDomainUtil;
 import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.vfs.IFile;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -61,7 +64,9 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Set;
 
-public class Language extends AbstractModule implements MPSModuleOwner {
+public class Language extends ReloadableAbstractModule implements MPSModuleOwner, ReloadableModule {
+
+  private static final Logger LOG = LogManager.getLogger(Language.class);
 
   public static final String LANGUAGE_MODELS = "languageModels";
 
@@ -72,7 +77,7 @@ public class Language extends AbstractModule implements MPSModuleOwner {
   private LanguageDescriptor myLanguageDescriptor;
 
   //todo [MihMuh] this should be replaced in 3.0 (don't know exactly with what now)
-  private ClassLoader myStubsLoader = new MyClassLoader();
+  private ClassLoader myStubsLoader = new StubsClassLoader();
 
   protected Language(LanguageDescriptor descriptor, IFile file) {
     super(file);
@@ -266,10 +271,6 @@ public class Language extends AbstractModule implements MPSModuleOwner {
     return LanguageAspect.STRUCTURE.get(this);
   }
 
-  public ClassLoader getStubsLoader() {
-    return myStubsLoader;
-  }
-
   /**
    * @deprecated  Either switch to SConcept, or use {@link jetbrains.mps.smodel.ConceptDeclarationLookup} in case concept's SNode is what you truly need.
    */
@@ -374,8 +375,24 @@ public class Language extends AbstractModule implements MPSModuleOwner {
     return false;
   }
 
-  private class MyClassLoader extends ClassLoader {
-    public MyClassLoader() {
+  @Nullable
+  protected Class<?> getClass(String classFqName, boolean ownClassOnly) {
+    // first check if class comes from stubs
+    if (classFqName.startsWith(getModuleName() + ".stubs.")) {
+      try {
+        return myStubsLoader.loadClass(classFqName);
+      } catch (ClassNotFoundException e) {
+        LOG.error("Exception during stubs' class loading", e);
+        return null;
+      }
+    }
+
+    // if not then call standard #getClass
+    return super.getClass(classFqName, ownClassOnly);
+  }
+
+  private class StubsClassLoader extends ClassLoader {
+    public StubsClassLoader() {
       super(Language.class.getClassLoader());
     }
 

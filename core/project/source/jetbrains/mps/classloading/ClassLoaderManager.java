@@ -18,15 +18,13 @@ package jetbrains.mps.classloading;
 import jetbrains.mps.classloading.ClassLoadersHolder.ClassLoadingProgress;
 import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.internal.collections.runtime.IterableUtils;
-import jetbrains.mps.logging.Logger;
+import jetbrains.mps.module.ReloadableModule;
 import jetbrains.mps.progress.EmptyProgressMonitor;
-import jetbrains.mps.project.SModuleOperations;
-import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.util.InternUtil;
 import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.util.annotation.ToRemove;
 import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.module.FacetsFacade;
@@ -50,7 +48,8 @@ import java.util.Set;
  * [Note: the module's classes must be manageable by MPS. {@link #canLoad} must return true]
  *
  * General information: CLM stores information about modules in the repository {@link #myRepository}.
- * It stores information only about modules which are loadable by MPS [so called MPS-loadable], i.e. it is possible to create ModuleClassLoader for them.
+ * It stores information only about modules which are loadable by MPS [so called MPS-loadable],
+ * i.e. it is possible to create ModuleClassLoader for them.
  * @see #myMPSLoadableCondition
  *
  * Any loadable module M has a class loading lifecycle like this:
@@ -61,7 +60,7 @@ import java.util.Set;
  */
 @SuppressWarnings("unchecked")
 public class ClassLoaderManager implements CoreComponent {
-  private static final Logger LOG = Logger.wrap(LogManager.getLogger(ClassLoaderManager.class));
+  private static final Logger LOG = LogManager.getLogger(ClassLoaderManager.class);
 
   private static final Object CLASS_LOADING_LOCK = new Object();
 
@@ -128,9 +127,11 @@ public class ClassLoaderManager implements CoreComponent {
    * ensure returns true before calling {@link #getClass} method
    * @return true whenever module can be associated with some class loader.
    * [Currently it can be either MPS ModuleClassLoader or Idea PluginClassLoader]
+   *
+   * @deprecated it is better to check whether the module is an instance of ReloadableModule
    */
   public boolean canLoad(@NotNull SModule module) {
-    return SModuleOperations.isLoadable(module);
+    return module instanceof ReloadableModule;
   }
 
   private void assertCanLoad(@NotNull SModule module) {
@@ -142,54 +143,42 @@ public class ClassLoaderManager implements CoreComponent {
   /**
    * Contract: @param module must be loadable ({@link #myLoadableCondition}
    * So if {@link #canLoad} method returns true you will get your class
+   *
+   * @deprecated use module-specific methods
+   * @see jetbrains.mps.module.ReloadableModule
+   * @see jetbrains.mps.project.ReloadableAbstractModule
    */
+  @Deprecated
+  @ToRemove(version = 3.2)
   @Nullable
-  public Class getClass(@NotNull SModule module, String classFqName) {
-    return getClass(module, classFqName, false);
-  }
-
-  @Nullable
-  public Class getOwnClass(@NotNull SModule module, String classFqName) {
-    return getClass(module, classFqName, true);
-  }
-
-  @Nullable
-  private Class getClass(@NotNull SModule module, String classFqName, boolean ownClassOnly) {
+  public Class<?> getClass(@NotNull SModule module, String classFqName) {
     assertCanLoad(module);
+    return ((ReloadableModule) module).getClass(classFqName);
+  }
 
-    // todo: hack for stubs. stub classes should not be managed by ClassLoaderManager
-    if (module instanceof Language) {
-      if (classFqName.startsWith(module.getModuleName() + ".stubs.")) {
-        try {
-          return ((Language) module).getStubsLoader().loadClass(classFqName);
-        } catch (ClassNotFoundException e) {
-          LOG.error("Exception during stubs' class loading", e);
-          return null;
-        }
-      }
-    }
-
-    ClassLoader classLoader = getClassLoader(module);
-    if (classLoader == null) return null;
-    try {
-      String internClassName = InternUtil.intern(classFqName);
-      if (ownClassOnly && classLoader instanceof ModuleClassLoader) {
-        return ((ModuleClassLoader) classLoader).loadOwnClass(internClassName);
-      }
-      return classLoader.loadClass(internClassName);
-    } catch (ClassNotFoundException e) {
-      if (!ownClassOnly) LOG.error("Exception during class loading", e);
-    } catch (Throwable t) {
-      LOG.error("Exception during class loading", t);
-    }
-    return null;
+  /**
+   * @deprecated use module-specific methods
+   * @see jetbrains.mps.module.ReloadableModule
+   * @see jetbrains.mps.project.ReloadableAbstractModule
+   */
+  @Deprecated
+  @ToRemove(version = 3.2)
+  @Nullable
+  public Class<?> getOwnClass(@NotNull SModule module, String classFqName) {
+    assertCanLoad(module);
+    return ((ReloadableModule) module).getOwnClass(classFqName);
   }
 
   /**
    * @return the class loader associated with the module.
    * Also can return the class loader of the IDEA plugin which manages the module's classes.
    * Use it if you want to get a class from the module with IdeaPluginFacet.
+   *
+   * @deprecated use module-specific methods
+   * @see jetbrains.mps.module.ReloadableModule
+   * @see jetbrains.mps.project.ReloadableAbstractModule
    */
+  @Deprecated
   @Nullable
   public ClassLoader getClassLoader(final SModule module) {
     if (!myLoadableCondition.met(module)) return null;
@@ -355,6 +344,13 @@ public class ClassLoaderManager implements CoreComponent {
     return reloadModules(modules, new EmptyProgressMonitor());
   }
 
+  /**
+   * @deprecated use module-specific methods
+   * @see jetbrains.mps.module.ReloadableModule
+   * @see jetbrains.mps.project.ReloadableAbstractModule
+   */
+  @Deprecated
+  @ToRemove(version = 3.2)
   public Collection<SModule> reloadModule(SModule module) {
     return reloadModules(Collections.singleton(module), new EmptyProgressMonitor());
   }
