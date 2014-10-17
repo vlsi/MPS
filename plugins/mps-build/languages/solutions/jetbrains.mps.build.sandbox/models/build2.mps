@@ -5,66 +5,66 @@
     <lang id="698a8d22-a104-47a0-ba8d-10e3ec237f13" name="jetbrains.mps.build.workflow" />
     <lang id="479c7a8c-02f9-43b5-9139-d910cb22f298" name="jetbrains.mps.core.xml" />
     <lang id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core" />
-    <concept id="698a8d22-a104-47a0-ba8d-10e3ec237f13/3961775458390032824" name="jetbrains.mps.build.workflow.structure.BwfTaskPart" />
-    <concept id="698a8d22-a104-47a0-ba8d-10e3ec237f13/4755209551904389316" name="jetbrains.mps.build.workflow.structure.BwfJavaModuleReference" />
-    <concept id="698a8d22-a104-47a0-ba8d-10e3ec237f13/6647099934207069215" name="jetbrains.mps.build.workflow.structure.BwfPathReference" />
-    <concept id="698a8d22-a104-47a0-ba8d-10e3ec237f13/6647099934206976119" name="jetbrains.mps.build.workflow.structure.BwfJavaClassPath" />
-    <concept id="479c7a8c-02f9-43b5-9139-d910cb22f298/6666499814681447923" name="jetbrains.mps.core.xml.structure.XmlAttribute" />
-    <concept id="479c7a8c-02f9-43b5-9139-d910cb22f298/6666499814681541919" name="jetbrains.mps.core.xml.structure.XmlTextValue" />
-    <concept id="698a8d22-a104-47a0-ba8d-10e3ec237f13/2769948622284546677" name="jetbrains.mps.build.workflow.structure.BwfSubTask" />
     <concept id="479c7a8c-02f9-43b5-9139-d910cb22f298/1622293396948952339" name="jetbrains.mps.core.xml.structure.XmlText" />
-    <concept id="698a8d22-a104-47a0-ba8d-10e3ec237f13/7306485738221471031" name="jetbrains.mps.build.workflow.structure.BwfTaskLibraryDependency" />
-    <concept id="698a8d22-a104-47a0-ba8d-10e3ec237f13/7926701909975416091" name="jetbrains.mps.build.workflow.structure.BwfFileSet" />
     <concept id="479c7a8c-02f9-43b5-9139-d910cb22f298/1622293396949036126" name="jetbrains.mps.core.xml.structure.XmlCommentLine" />
     <concept id="698a8d22-a104-47a0-ba8d-10e3ec237f13/2769948622284546673" name="jetbrains.mps.build.workflow.structure.BwfProject" />
-    <concept id="698a8d22-a104-47a0-ba8d-10e3ec237f13/6647099934207069200" name="jetbrains.mps.build.workflow.structure.BwfPathDeclaration" />
-    <concept id="698a8d22-a104-47a0-ba8d-10e3ec237f13/2769948622284768359" name="jetbrains.mps.build.workflow.structure.BwfAntStatement" />
-    <concept id="479c7a8c-02f9-43b5-9139-d910cb22f298/6666499814681299064" name="jetbrains.mps.core.xml.structure.XmlComment" />
+    <concept id="698a8d22-a104-47a0-ba8d-10e3ec237f13/2769948622284546677" name="jetbrains.mps.build.workflow.structure.BwfSubTask" />
     <concept id="698a8d22-a104-47a0-ba8d-10e3ec237f13/2769948622284605880" name="jetbrains.mps.build.workflow.structure.BwfSubTaskDependency" />
+    <concept id="698a8d22-a104-47a0-ba8d-10e3ec237f13/2769948622284768359" name="jetbrains.mps.build.workflow.structure.BwfAntStatement" />
+    <concept id="698a8d22-a104-47a0-ba8d-10e3ec237f13/3961775458390032824" name="jetbrains.mps.build.workflow.structure.BwfTaskPart" />
     <concept id="698a8d22-a104-47a0-ba8d-10e3ec237f13/4755209551904389307" name="jetbrains.mps.build.workflow.structure.BwfJavaModule" />
-    <concept id="698a8d22-a104-47a0-ba8d-10e3ec237f13/7306485738221315929" name="jetbrains.mps.build.workflow.structure.BwfJavaDescriptor" />
-    <concept id="698a8d22-a104-47a0-ba8d-10e3ec237f13/6896005762093571400" name="jetbrains.mps.build.workflow.structure.BwfMacro" />
+    <concept id="698a8d22-a104-47a0-ba8d-10e3ec237f13/4755209551904389316" name="jetbrains.mps.build.workflow.structure.BwfJavaModuleReference" />
+    <concept id="698a8d22-a104-47a0-ba8d-10e3ec237f13/6647099934206976119" name="jetbrains.mps.build.workflow.structure.BwfJavaClassPath" />
+    <concept id="698a8d22-a104-47a0-ba8d-10e3ec237f13/6647099934207069200" name="jetbrains.mps.build.workflow.structure.BwfPathDeclaration" />
+    <concept id="698a8d22-a104-47a0-ba8d-10e3ec237f13/6647099934207069215" name="jetbrains.mps.build.workflow.structure.BwfPathReference" />
+    <concept id="479c7a8c-02f9-43b5-9139-d910cb22f298/6666499814681299064" name="jetbrains.mps.core.xml.structure.XmlComment" />
     <concept id="479c7a8c-02f9-43b5-9139-d910cb22f298/6666499814681415858" name="jetbrains.mps.core.xml.structure.XmlElement" />
-    <property id="698a8d22-a104-47a0-ba8d-10e3ec237f13/6896005762093571400/6896005762093571406" name="exportToProperiesFile" />
-    <property id="698a8d22-a104-47a0-ba8d-10e3ec237f13/2769948622284546673/7385586609667765566" name="temporaryFolder" />
-    <property id="698a8d22-a104-47a0-ba8d-10e3ec237f13/6896005762093571400/6896005762093571407" name="isLocation" />
+    <concept id="479c7a8c-02f9-43b5-9139-d910cb22f298/6666499814681447923" name="jetbrains.mps.core.xml.structure.XmlAttribute" />
+    <concept id="479c7a8c-02f9-43b5-9139-d910cb22f298/6666499814681541919" name="jetbrains.mps.core.xml.structure.XmlTextValue" />
+    <concept id="698a8d22-a104-47a0-ba8d-10e3ec237f13/6896005762093571400" name="jetbrains.mps.build.workflow.structure.BwfMacro" />
+    <concept id="698a8d22-a104-47a0-ba8d-10e3ec237f13/7306485738221315929" name="jetbrains.mps.build.workflow.structure.BwfJavaDescriptor" />
+    <concept id="698a8d22-a104-47a0-ba8d-10e3ec237f13/7306485738221471031" name="jetbrains.mps.build.workflow.structure.BwfTaskLibraryDependency" />
+    <concept id="698a8d22-a104-47a0-ba8d-10e3ec237f13/7926701909975416091" name="jetbrains.mps.build.workflow.structure.BwfFileSet" />
+    <property id="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001" name="name" />
     <property id="698a8d22-a104-47a0-ba8d-10e3ec237f13/4755209551904389307/927724900262033861" name="generateDebugInfo" />
     <property id="698a8d22-a104-47a0-ba8d-10e3ec237f13/4755209551904389307/927724900262398947" name="heapSize" />
-    <property id="479c7a8c-02f9-43b5-9139-d910cb22f298/1622293396949036126/1622293396949036127" name="text" />
-    <property id="479c7a8c-02f9-43b5-9139-d910cb22f298/6666499814681541919/6666499814681541920" name="text" />
-    <property id="698a8d22-a104-47a0-ba8d-10e3ec237f13/2769948622284546673/5178006408628608654" name="baseDirectory" />
-    <property id="698a8d22-a104-47a0-ba8d-10e3ec237f13/6896005762093571400/6896005762093571402" name="defaultValue" />
-    <property id="698a8d22-a104-47a0-ba8d-10e3ec237f13/4755209551904389307/1476884141930130693" name="compilerOptions" />
-    <property id="479c7a8c-02f9-43b5-9139-d910cb22f298/6666499814681415858/6666499814681415862" name="tagName" />
-    <property id="698a8d22-a104-47a0-ba8d-10e3ec237f13/4755209551904389307/6998860900671418236" name="javaLevelSource" />
-    <property id="698a8d22-a104-47a0-ba8d-10e3ec237f13/4755209551904389307/7385586609667649463" name="outputFolder" />
-    <property id="479c7a8c-02f9-43b5-9139-d910cb22f298/6666499814681447923/6666499814681447926" name="attrName" />
-    <property id="479c7a8c-02f9-43b5-9139-d910cb22f298/1622293396948952339/1622293396948953704" name="value" />
     <property id="698a8d22-a104-47a0-ba8d-10e3ec237f13/4755209551904389307/927724900262398958" name="noWarnings" />
-    <property id="479c7a8c-02f9-43b5-9139-d910cb22f298/6666499814681415858/6999033275467544021" name="shortEmptyNotation" />
+    <property id="698a8d22-a104-47a0-ba8d-10e3ec237f13/4755209551904389307/1476884141930130693" name="compilerOptions" />
+    <property id="479c7a8c-02f9-43b5-9139-d910cb22f298/1622293396948952339/1622293396948953704" name="value" />
+    <property id="479c7a8c-02f9-43b5-9139-d910cb22f298/1622293396949036126/1622293396949036127" name="text" />
+    <property id="698a8d22-a104-47a0-ba8d-10e3ec237f13/2769948622284546673/5178006408628608654" name="baseDirectory" />
+    <property id="479c7a8c-02f9-43b5-9139-d910cb22f298/6666499814681415858/6666499814681415862" name="tagName" />
+    <property id="479c7a8c-02f9-43b5-9139-d910cb22f298/6666499814681447923/6666499814681447926" name="attrName" />
+    <property id="479c7a8c-02f9-43b5-9139-d910cb22f298/6666499814681541919/6666499814681541920" name="text" />
+    <property id="698a8d22-a104-47a0-ba8d-10e3ec237f13/6896005762093571400/6896005762093571402" name="defaultValue" />
+    <property id="698a8d22-a104-47a0-ba8d-10e3ec237f13/6896005762093571400/6896005762093571406" name="exportToProperiesFile" />
+    <property id="698a8d22-a104-47a0-ba8d-10e3ec237f13/6896005762093571400/6896005762093571407" name="isLocation" />
+    <property id="698a8d22-a104-47a0-ba8d-10e3ec237f13/4755209551904389307/6998860900671418236" name="javaLevelSource" />
     <property id="698a8d22-a104-47a0-ba8d-10e3ec237f13/4755209551904389307/6998860900671530572" name="javaLevelTarget" />
-    <property id="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001" name="name" />
-    <refRole id="698a8d22-a104-47a0-ba8d-10e3ec237f13/7306485738221471031/7306485738221471032" name="target" />
+    <property id="479c7a8c-02f9-43b5-9139-d910cb22f298/6666499814681415858/6999033275467544021" name="shortEmptyNotation" />
+    <property id="698a8d22-a104-47a0-ba8d-10e3ec237f13/4755209551904389307/7385586609667649463" name="outputFolder" />
+    <property id="698a8d22-a104-47a0-ba8d-10e3ec237f13/2769948622284546673/7385586609667765566" name="temporaryFolder" />
+    <refRole id="698a8d22-a104-47a0-ba8d-10e3ec237f13/2769948622284605880/2769948622284605881" name="target" />
+    <refRole id="698a8d22-a104-47a0-ba8d-10e3ec237f13/3961775458390032824/3961775458390032825" name="task" />
     <refRole id="698a8d22-a104-47a0-ba8d-10e3ec237f13/4755209551904389316/4755209551904389317" name="target" />
     <refRole id="698a8d22-a104-47a0-ba8d-10e3ec237f13/6647099934207069215/6647099934207069216" name="target" />
-    <refRole id="698a8d22-a104-47a0-ba8d-10e3ec237f13/3961775458390032824/3961775458390032825" name="task" />
-    <refRole id="698a8d22-a104-47a0-ba8d-10e3ec237f13/2769948622284605880/2769948622284605881" name="target" />
+    <refRole id="698a8d22-a104-47a0-ba8d-10e3ec237f13/7306485738221471031/7306485738221471032" name="target" />
     <childRole id="479c7a8c-02f9-43b5-9139-d910cb22f298/6666499814681415858/1622293396948928802" name="content" />
-    <childRole id="698a8d22-a104-47a0-ba8d-10e3ec237f13/2769948622284546673/7306485738221455031" name="imports" />
     <childRole id="479c7a8c-02f9-43b5-9139-d910cb22f298/6666499814681299064/1622293396949036151" name="lines" />
+    <childRole id="698a8d22-a104-47a0-ba8d-10e3ec237f13/4755209551904389307/1659807394254493213" name="resources" />
+    <childRole id="698a8d22-a104-47a0-ba8d-10e3ec237f13/2769948622284546673/2769948622284574304" name="parts" />
     <childRole id="698a8d22-a104-47a0-ba8d-10e3ec237f13/2769948622284546677/2769948622284605953" name="after" />
-    <childRole id="479c7a8c-02f9-43b5-9139-d910cb22f298/6666499814681415858/6666499814681415861" name="attributes" />
-    <childRole id="698a8d22-a104-47a0-ba8d-10e3ec237f13/4755209551904389307/4755209551904389320" name="dependencies" />
-    <childRole id="698a8d22-a104-47a0-ba8d-10e3ec237f13/4755209551904389307/7926701909975416101" name="sources" />
+    <childRole id="698a8d22-a104-47a0-ba8d-10e3ec237f13/2769948622284546677/2769948622284606050" name="statements" />
     <childRole id="698a8d22-a104-47a0-ba8d-10e3ec237f13/2769948622284768359/2769948622284768360" name="element" />
     <childRole id="698a8d22-a104-47a0-ba8d-10e3ec237f13/3961775458390032824/3961775458390032826" name="subTasks" />
+    <childRole id="698a8d22-a104-47a0-ba8d-10e3ec237f13/4755209551904389307/4755209551904389320" name="dependencies" />
     <childRole id="698a8d22-a104-47a0-ba8d-10e3ec237f13/6647099934207069200/6647099934207071047" name="content" />
-    <childRole id="698a8d22-a104-47a0-ba8d-10e3ec237f13/7926701909975416091/7926701909975416092" name="elements" />
+    <childRole id="479c7a8c-02f9-43b5-9139-d910cb22f298/6666499814681415858/6666499814681415861" name="attributes" />
     <childRole id="479c7a8c-02f9-43b5-9139-d910cb22f298/6666499814681447923/6666499814681541918" name="value" />
-    <childRole id="698a8d22-a104-47a0-ba8d-10e3ec237f13/2769948622284546673/2769948622284574304" name="parts" />
+    <childRole id="698a8d22-a104-47a0-ba8d-10e3ec237f13/2769948622284546673/7306485738221455031" name="imports" />
+    <childRole id="698a8d22-a104-47a0-ba8d-10e3ec237f13/7926701909975416091/7926701909975416092" name="elements" />
+    <childRole id="698a8d22-a104-47a0-ba8d-10e3ec237f13/4755209551904389307/7926701909975416101" name="sources" />
     <childRole id="698a8d22-a104-47a0-ba8d-10e3ec237f13/6647099934206976119/7926701909975791137" name="classpath" />
-    <childRole id="698a8d22-a104-47a0-ba8d-10e3ec237f13/4755209551904389307/1659807394254493213" name="resources" />
-    <childRole id="698a8d22-a104-47a0-ba8d-10e3ec237f13/2769948622284546677/2769948622284606050" name="statements" />
   </debugInfo>
   <languages>
     <use id="698a8d22-a104-47a0-ba8d-10e3ec237f13" version="-1" index="dnci" />

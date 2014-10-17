@@ -2,26 +2,26 @@
 <model ref="r:28a6d337-ad89-4400-b975-c1bd6e33dc8a(jetbrains.mps.samples.Shapes.sandbox)">
   <persistence version="9" />
   <debugInfo>
-    <lang id="16bafbb4-c6cd-4cc5-8332-7c6de8729b3f" name="jetbrains.mps.samples.Shapes" />
     <lang id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core" />
-    <concept id="16bafbb4-c6cd-4cc5-8332-7c6de8729b3f/5898776707557467933" name="jetbrains.mps.samples.Shapes.structure.Canvas" />
-    <concept id="16bafbb4-c6cd-4cc5-8332-7c6de8729b3f/5898776707557474722" name="jetbrains.mps.samples.Shapes.structure.Square" />
+    <lang id="16bafbb4-c6cd-4cc5-8332-7c6de8729b3f" name="jetbrains.mps.samples.Shapes" />
     <concept id="16bafbb4-c6cd-4cc5-8332-7c6de8729b3f/4191445539799302575" name="jetbrains.mps.samples.Shapes.structure.ColorReference" />
+    <concept id="16bafbb4-c6cd-4cc5-8332-7c6de8729b3f/5898776707557467933" name="jetbrains.mps.samples.Shapes.structure.Canvas" />
     <concept id="16bafbb4-c6cd-4cc5-8332-7c6de8729b3f/5898776707557474712" name="jetbrains.mps.samples.Shapes.structure.Circle" />
+    <concept id="16bafbb4-c6cd-4cc5-8332-7c6de8729b3f/5898776707557474722" name="jetbrains.mps.samples.Shapes.structure.Square" />
+    <property id="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001" name="name" />
+    <property id="16bafbb4-c6cd-4cc5-8332-7c6de8729b3f/5898776707557474712/5898776707557474713" name="x" />
+    <property id="16bafbb4-c6cd-4cc5-8332-7c6de8729b3f/5898776707557474712/5898776707557474715" name="y" />
+    <property id="16bafbb4-c6cd-4cc5-8332-7c6de8729b3f/5898776707557474712/5898776707557474718" name="radius" />
     <property id="16bafbb4-c6cd-4cc5-8332-7c6de8729b3f/5898776707557474722/5898776707557474723" name="upperLeftX" />
     <property id="16bafbb4-c6cd-4cc5-8332-7c6de8729b3f/5898776707557474722/5898776707557474725" name="upperLeftY" />
-    <property id="16bafbb4-c6cd-4cc5-8332-7c6de8729b3f/5898776707557474712/5898776707557474718" name="radius" />
     <property id="16bafbb4-c6cd-4cc5-8332-7c6de8729b3f/5898776707557474722/5898776707557474728" name="size" />
-    <property id="16bafbb4-c6cd-4cc5-8332-7c6de8729b3f/5898776707557474712/5898776707557474715" name="y" />
-    <property id="16bafbb4-c6cd-4cc5-8332-7c6de8729b3f/5898776707557474712/5898776707557474713" name="x" />
-    <property id="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001" name="name" />
     <refRole id="16bafbb4-c6cd-4cc5-8332-7c6de8729b3f/4191445539799302575/4191445539799302810" name="color" />
-    <childRole id="16bafbb4-c6cd-4cc5-8332-7c6de8729b3f/5898776707557467933/5898776707557489223" name="shapes" />
     <childRole id="16bafbb4-c6cd-4cc5-8332-7c6de8729b3f/5898776707557474657/4191445539799470732" name="color" />
+    <childRole id="16bafbb4-c6cd-4cc5-8332-7c6de8729b3f/5898776707557467933/5898776707557489223" name="shapes" />
   </debugInfo>
   <languages>
-    <use id="16bafbb4-c6cd-4cc5-8332-7c6de8729b3f" version="-1" index="xpnn" />
     <use id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" version="-1" index="asn4" />
+    <use id="16bafbb4-c6cd-4cc5-8332-7c6de8729b3f" version="-1" index="xpnn" />
   </languages>
   <imports>
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />

@@ -6,18 +6,18 @@
     <lang id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core" />
     <model ref="r:14f06230-41df-42af-9a25-81de46539bf1(jetbrains.mps.build.workflow.accessories)" name="jetbrains.mps.build.workflow.accessories" />
     <model ref="r:4c16a3e9-db56-4447-9b0d-14adce23db0d(jetbrains.mps.build.mps.accessories)" name="jetbrains.mps.build.mps.accessories" />
-    <concept id="698a8d22-a104-47a0-ba8d-10e3ec237f13/3961775458390032824" name="jetbrains.mps.build.workflow.structure.BwfTaskPart" />
-    <concept id="698a8d22-a104-47a0-ba8d-10e3ec237f13/7306485738221471031" name="jetbrains.mps.build.workflow.structure.BwfTaskLibraryDependency" />
-    <concept id="698a8d22-a104-47a0-ba8d-10e3ec237f13/2769948622284574294" name="jetbrains.mps.build.workflow.structure.BwfTaskDependency" />
     <concept id="698a8d22-a104-47a0-ba8d-10e3ec237f13/2769948622284546675" name="jetbrains.mps.build.workflow.structure.BwfTask" />
+    <concept id="698a8d22-a104-47a0-ba8d-10e3ec237f13/2769948622284574294" name="jetbrains.mps.build.workflow.structure.BwfTaskDependency" />
+    <concept id="698a8d22-a104-47a0-ba8d-10e3ec237f13/3961775458390032824" name="jetbrains.mps.build.workflow.structure.BwfTaskPart" />
     <concept id="698a8d22-a104-47a0-ba8d-10e3ec237f13/7306485738221391506" name="jetbrains.mps.build.workflow.structure.BwfTaskLibrary" />
+    <concept id="698a8d22-a104-47a0-ba8d-10e3ec237f13/7306485738221471031" name="jetbrains.mps.build.workflow.structure.BwfTaskLibraryDependency" />
     <property id="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001" name="name" />
-    <refRole id="698a8d22-a104-47a0-ba8d-10e3ec237f13/7306485738221471031/7306485738221471032" name="target" />
-    <refRole id="698a8d22-a104-47a0-ba8d-10e3ec237f13/3961775458390032824/3961775458390032825" name="task" />
     <refRole id="698a8d22-a104-47a0-ba8d-10e3ec237f13/2769948622284574294/2769948622284574295" name="target" />
+    <refRole id="698a8d22-a104-47a0-ba8d-10e3ec237f13/3961775458390032824/3961775458390032825" name="task" />
+    <refRole id="698a8d22-a104-47a0-ba8d-10e3ec237f13/7306485738221471031/7306485738221471032" name="target" />
     <childRole id="698a8d22-a104-47a0-ba8d-10e3ec237f13/2769948622284546675/2769948622284574302" name="dependencies" />
-    <childRole id="698a8d22-a104-47a0-ba8d-10e3ec237f13/7306485738221391506/7306485738221391508" name="parts" />
     <childRole id="698a8d22-a104-47a0-ba8d-10e3ec237f13/3961775458390032824/3961775458390352322" name="additionalDependencies" />
+    <childRole id="698a8d22-a104-47a0-ba8d-10e3ec237f13/7306485738221391506/7306485738221391508" name="parts" />
     <childRole id="698a8d22-a104-47a0-ba8d-10e3ec237f13/7306485738221391506/7306485738221455030" name="imports" />
   </debugInfo>
   <languages>

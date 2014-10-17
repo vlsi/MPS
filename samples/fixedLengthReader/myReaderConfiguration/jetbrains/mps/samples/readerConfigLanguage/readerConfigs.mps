@@ -2,18 +2,18 @@
 <model ref="r:00000000-0000-4000-0000-011c89590433(jetbrains.mps.samples.readerConfigLanguage.readerConfigs)">
   <persistence version="9" />
   <debugInfo>
-    <lang id="089e26c5-bfc3-4a60-9953-f68169a4608a" name="jetbrains.mps.samples.readerConfigLanguage" />
     <lang id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core" />
-    <concept id="089e26c5-bfc3-4a60-9953-f68169a4608a/1116534914096" name="jetbrains.mps.samples.readerConfigLanguage.structure.Mapping" />
+    <lang id="089e26c5-bfc3-4a60-9953-f68169a4608a" name="jetbrains.mps.samples.readerConfigLanguage" />
     <concept id="089e26c5-bfc3-4a60-9953-f68169a4608a/1116534870455" name="jetbrains.mps.samples.readerConfigLanguage.structure.ReaderConfiguration" />
+    <concept id="089e26c5-bfc3-4a60-9953-f68169a4608a/1116534914096" name="jetbrains.mps.samples.readerConfigLanguage.structure.Mapping" />
     <concept id="089e26c5-bfc3-4a60-9953-f68169a4608a/1116534962441" name="jetbrains.mps.samples.readerConfigLanguage.structure.Field" />
     <property id="089e26c5-bfc3-4a60-9953-f68169a4608a/1116534914096/1116534988614" name="code" />
     <property id="089e26c5-bfc3-4a60-9953-f68169a4608a/1116534914096/1116534997224" name="targetClass" />
     <property id="089e26c5-bfc3-4a60-9953-f68169a4608a/1116534962441/1116535027491" name="start" />
     <property id="089e26c5-bfc3-4a60-9953-f68169a4608a/1116534962441/1116535032695" name="end" />
     <property id="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001" name="name" />
-    <childRole id="089e26c5-bfc3-4a60-9953-f68169a4608a/1116534914096/1116535614925" name="field" />
     <childRole id="089e26c5-bfc3-4a60-9953-f68169a4608a/1116534870455/1116535202619" name="mapping" />
+    <childRole id="089e26c5-bfc3-4a60-9953-f68169a4608a/1116534914096/1116535614925" name="field" />
   </debugInfo>
   <languages>
     <use id="089e26c5-bfc3-4a60-9953-f68169a4608a" version="-1" index="vc8e" />

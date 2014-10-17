@@ -2,15 +2,15 @@
 <model ref="r:2aa4e867-ebbb-4b23-8a17-68a84c27a14d(jetbrains.mps.transformation.test.inputModels.test_refScope)" doNotGenerate="true">
   <persistence version="9" />
   <debugInfo>
-    <lang id="ab0ae915-e3b5-4f35-b55a-c655d649a03c" name="jetbrains.mps.transformation.test.inputLang" />
     <lang id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core" />
-    <concept id="ab0ae915-e3b5-4f35-b55a-c655d649a03c/3315811491560119808" name="jetbrains.mps.transformation.test.inputLang.structure.RefTestParam" />
-    <concept id="ab0ae915-e3b5-4f35-b55a-c655d649a03c/3315811491560119806" name="jetbrains.mps.transformation.test.inputLang.structure.RefTestMethod" />
+    <lang id="ab0ae915-e3b5-4f35-b55a-c655d649a03c" name="jetbrains.mps.transformation.test.inputLang" />
     <concept id="ab0ae915-e3b5-4f35-b55a-c655d649a03c/3315811491560119803" name="jetbrains.mps.transformation.test.inputLang.structure.RefTestClass" />
+    <concept id="ab0ae915-e3b5-4f35-b55a-c655d649a03c/3315811491560119806" name="jetbrains.mps.transformation.test.inputLang.structure.RefTestMethod" />
+    <concept id="ab0ae915-e3b5-4f35-b55a-c655d649a03c/3315811491560119808" name="jetbrains.mps.transformation.test.inputLang.structure.RefTestParam" />
     <property id="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001" name="name" />
     <refRole id="ab0ae915-e3b5-4f35-b55a-c655d649a03c/3315811491560119803/3315811491560119805" name="extends" />
-    <childRole id="ab0ae915-e3b5-4f35-b55a-c655d649a03c/3315811491560119806/3315811491560119872" name="params" />
     <childRole id="ab0ae915-e3b5-4f35-b55a-c655d649a03c/3315811491560119803/3315811491560119846" name="methods" />
+    <childRole id="ab0ae915-e3b5-4f35-b55a-c655d649a03c/3315811491560119806/3315811491560119872" name="params" />
   </debugInfo>
   <languages>
     <use id="ab0ae915-e3b5-4f35-b55a-c655d649a03c" version="-1" index="9749" />

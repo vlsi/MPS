@@ -2,33 +2,33 @@
 <model ref="r:39176b67-3f1b-4c69-b735-1b7cc44a78f3(jetbrains.mps.samples.heating.sandbox)">
   <persistence version="9" />
   <debugInfo>
-    <lang id="a7d67633-e8d9-473b-98ce-995a7aa66941" name="jetbrains.mps.samples.heating" />
     <lang id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core" />
+    <lang id="a7d67633-e8d9-473b-98ce-995a7aa66941" name="jetbrains.mps.samples.heating" />
     <lang id="000a73b2-ac88-49d9-bfcf-a3fa90cdb367" name="jetbrains.mps.samples.heating.tabular" />
-    <concept id="a7d67633-e8d9-473b-98ce-995a7aa66941/5726447348463731062" name="jetbrains.mps.samples.heating.structure.Slot" />
-    <concept id="a7d67633-e8d9-473b-98ce-995a7aa66941/4664795093170436346" name="jetbrains.mps.samples.heating.structure.WeekendDay" />
-    <concept id="a7d67633-e8d9-473b-98ce-995a7aa66941/5063359128232698866" name="jetbrains.mps.samples.heating.structure.HeatingPlan" />
     <concept id="a7d67633-e8d9-473b-98ce-995a7aa66941/935069066462619696" name="jetbrains.mps.samples.heating.structure.DailyPlanReference" />
-    <concept id="a7d67633-e8d9-473b-98ce-995a7aa66941/4664795093170636139" name="jetbrains.mps.samples.heating.structure.DayRange" />
-    <concept id="a7d67633-e8d9-473b-98ce-995a7aa66941/4664795093170605734" name="jetbrains.mps.samples.heating.structure.SpecificDay" />
+    <concept id="a7d67633-e8d9-473b-98ce-995a7aa66941/4664795093170436346" name="jetbrains.mps.samples.heating.structure.WeekendDay" />
     <concept id="a7d67633-e8d9-473b-98ce-995a7aa66941/4664795093170605733" name="jetbrains.mps.samples.heating.structure.WeekDays" />
-    <concept id="a7d67633-e8d9-473b-98ce-995a7aa66941/5063359128232717410" name="jetbrains.mps.samples.heating.structure.ChangeEvent" />
+    <concept id="a7d67633-e8d9-473b-98ce-995a7aa66941/4664795093170605734" name="jetbrains.mps.samples.heating.structure.SpecificDay" />
+    <concept id="a7d67633-e8d9-473b-98ce-995a7aa66941/4664795093170636139" name="jetbrains.mps.samples.heating.structure.DayRange" />
+    <concept id="a7d67633-e8d9-473b-98ce-995a7aa66941/5063359128232698866" name="jetbrains.mps.samples.heating.structure.HeatingPlan" />
     <concept id="a7d67633-e8d9-473b-98ce-995a7aa66941/5063359128232717391" name="jetbrains.mps.samples.heating.structure.DailyPlan" />
-    <property id="a7d67633-e8d9-473b-98ce-995a7aa66941/5726447348463731062/5726447348463731324" name="start" />
-    <property id="a7d67633-e8d9-473b-98ce-995a7aa66941/4664795093170636139/4664795093170636193" name="end" />
-    <property id="a7d67633-e8d9-473b-98ce-995a7aa66941/4664795093170605734/4664795093170605735" name="day" />
-    <property id="a7d67633-e8d9-473b-98ce-995a7aa66941/5063359128232717410/5063359128232717424" name="temperature" />
+    <concept id="a7d67633-e8d9-473b-98ce-995a7aa66941/5063359128232717410" name="jetbrains.mps.samples.heating.structure.ChangeEvent" />
+    <concept id="a7d67633-e8d9-473b-98ce-995a7aa66941/5726447348463731062" name="jetbrains.mps.samples.heating.structure.Slot" />
     <property id="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001" name="name" />
+    <property id="a7d67633-e8d9-473b-98ce-995a7aa66941/4664795093170605734/4664795093170605735" name="day" />
+    <property id="a7d67633-e8d9-473b-98ce-995a7aa66941/4664795093170636139/4664795093170636193" name="end" />
+    <property id="a7d67633-e8d9-473b-98ce-995a7aa66941/5063359128232717410/5063359128232717424" name="temperature" />
+    <property id="a7d67633-e8d9-473b-98ce-995a7aa66941/5726447348463731062/5726447348463731324" name="start" />
     <refRole id="a7d67633-e8d9-473b-98ce-995a7aa66941/935069066462619696/935069066462619697" name="target" />
     <childRole id="a7d67633-e8d9-473b-98ce-995a7aa66941/5063359128232717391/935069066462790136" name="customizes" />
-    <childRole id="a7d67633-e8d9-473b-98ce-995a7aa66941/5063359128232717391/5063359128232717399" name="items" />
     <childRole id="a7d67633-e8d9-473b-98ce-995a7aa66941/5063359128232717391/4664795093170417662" name="applicability" />
     <childRole id="a7d67633-e8d9-473b-98ce-995a7aa66941/5063359128232698866/5063359128232717389" name="dailyPlans" />
+    <childRole id="a7d67633-e8d9-473b-98ce-995a7aa66941/5063359128232717391/5063359128232717399" name="items" />
     <childRole id="a7d67633-e8d9-473b-98ce-995a7aa66941/5726447348463731062/5726447348463738321" name="event" />
   </debugInfo>
   <languages>
-    <use id="a7d67633-e8d9-473b-98ce-995a7aa66941" version="-1" index="zfv7" />
     <use id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" version="-1" index="asn4" />
+    <use id="a7d67633-e8d9-473b-98ce-995a7aa66941" version="-1" index="zfv7" />
     <use id="000a73b2-ac88-49d9-bfcf-a3fa90cdb367" version="-1" index="esc6" />
   </languages>
   <imports>

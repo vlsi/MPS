@@ -2,23 +2,23 @@
 <model ref="r:6ff1dacd-2ea5-47a0-9336-2eaecdee8a37(jetbrains.mps.execution.languages.plugin)">
   <persistence version="9" />
   <debugInfo>
+    <lang id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core" />
     <lang id="28f9e497-3b42-4291-aeba-0a1039153ab1" name="jetbrains.mps.lang.plugin" />
     <lang id="ef7bf5ac-d06c-4342-b11d-e42104eb9343" name="jetbrains.mps.lang.plugin.standalone" />
-    <lang id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core" />
+    <concept id="28f9e497-3b42-4291-aeba-0a1039153ab1/5023285075122009364" name="jetbrains.mps.lang.plugin.structure.IdeaInitializerDescriptor" />
     <concept id="28f9e497-3b42-4291-aeba-0a1039153ab1/5864553086652219116" name="jetbrains.mps.lang.plugin.structure.IdeaPluginDependency" />
     <concept id="ef7bf5ac-d06c-4342-b11d-e42104eb9343/7520713872864775836" name="jetbrains.mps.lang.plugin.standalone.structure.StandalonePluginDescriptor" />
-    <concept id="28f9e497-3b42-4291-aeba-0a1039153ab1/5023285075122009364" name="jetbrains.mps.lang.plugin.structure.IdeaInitializerDescriptor" />
+    <property id="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001" name="name" />
+    <property id="28f9e497-3b42-4291-aeba-0a1039153ab1/5023285075122009364/1573568368168371217" name="handleErrors" />
+    <property id="28f9e497-3b42-4291-aeba-0a1039153ab1/5023285075122009364/4167053799973858143" name="vendorLogo" />
+    <property id="28f9e497-3b42-4291-aeba-0a1039153ab1/5023285075122009364/5023285075122009366" name="id" />
+    <property id="28f9e497-3b42-4291-aeba-0a1039153ab1/5023285075122009364/5023285075122009368" name="descripttion" />
+    <property id="28f9e497-3b42-4291-aeba-0a1039153ab1/5023285075122009364/5023285075122009369" name="version" />
+    <property id="28f9e497-3b42-4291-aeba-0a1039153ab1/5023285075122009364/5023285075122009371" name="vendor" />
+    <property id="28f9e497-3b42-4291-aeba-0a1039153ab1/5023285075122009364/5023285075122009372" name="vendorUrl" />
     <property id="28f9e497-3b42-4291-aeba-0a1039153ab1/5023285075122009364/5023285075122009373" name="ideaVersion" />
     <property id="28f9e497-3b42-4291-aeba-0a1039153ab1/5864553086652219116/5864553086652219119" name="pluginId" />
-    <property id="28f9e497-3b42-4291-aeba-0a1039153ab1/5023285075122009364/1573568368168371217" name="handleErrors" />
-    <property id="28f9e497-3b42-4291-aeba-0a1039153ab1/5023285075122009364/5023285075122009368" name="descripttion" />
     <property id="28f9e497-3b42-4291-aeba-0a1039153ab1/5023285075122009364/8842945788826116904" name="loadModules" />
-    <property id="28f9e497-3b42-4291-aeba-0a1039153ab1/5023285075122009364/5023285075122009366" name="id" />
-    <property id="28f9e497-3b42-4291-aeba-0a1039153ab1/5023285075122009364/5023285075122009372" name="vendorUrl" />
-    <property id="28f9e497-3b42-4291-aeba-0a1039153ab1/5023285075122009364/4167053799973858143" name="vendorLogo" />
-    <property id="28f9e497-3b42-4291-aeba-0a1039153ab1/5023285075122009364/5023285075122009371" name="vendor" />
-    <property id="28f9e497-3b42-4291-aeba-0a1039153ab1/5023285075122009364/5023285075122009369" name="version" />
-    <property id="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001" name="name" />
     <childRole id="28f9e497-3b42-4291-aeba-0a1039153ab1/5023285075122009364/5864553086652219115" name="dependency" />
   </debugInfo>
   <languages>

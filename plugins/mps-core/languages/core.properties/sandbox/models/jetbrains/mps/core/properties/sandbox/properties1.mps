@@ -4,13 +4,13 @@
   <debugInfo>
     <lang id="58f98fef-90ad-4b72-a390-fad66ec7005a" name="jetbrains.mps.core.properties" />
     <lang id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core" />
+    <concept id="58f98fef-90ad-4b72-a390-fad66ec7005a/3961775458390517588" name="jetbrains.mps.core.properties.structure.PropertiesFile" />
     <concept id="58f98fef-90ad-4b72-a390-fad66ec7005a/3961775458390522561" name="jetbrains.mps.core.properties.structure.PropertiesDeclaration" />
     <concept id="58f98fef-90ad-4b72-a390-fad66ec7005a/3961775458390522562" name="jetbrains.mps.core.properties.structure.PropertiesLine" />
-    <concept id="58f98fef-90ad-4b72-a390-fad66ec7005a/3961775458390517588" name="jetbrains.mps.core.properties.structure.PropertiesFile" />
     <concept id="58f98fef-90ad-4b72-a390-fad66ec7005a/3961775458390522585" name="jetbrains.mps.core.properties.structure.PropertiesComment" />
-    <property id="58f98fef-90ad-4b72-a390-fad66ec7005a/3961775458390522561/3961775458390522596" name="value" />
-    <property id="58f98fef-90ad-4b72-a390-fad66ec7005a/3961775458390522585/3961775458390522586" name="text" />
     <property id="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001" name="name" />
+    <property id="58f98fef-90ad-4b72-a390-fad66ec7005a/3961775458390522585/3961775458390522586" name="text" />
+    <property id="58f98fef-90ad-4b72-a390-fad66ec7005a/3961775458390522561/3961775458390522596" name="value" />
     <childRole id="58f98fef-90ad-4b72-a390-fad66ec7005a/3961775458390517588/3961775458390522563" name="lines" />
   </debugInfo>
   <languages>

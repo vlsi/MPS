@@ -2,21 +2,21 @@
 <model ref="r:c7a7a9f3-0c2b-433c-8f15-ea1325dc7241(jetbrains.mps.samples.mindmaps.sandbox.model)">
   <persistence version="9" />
   <debugInfo>
-    <lang id="33f294fd-370a-4a40-999b-43f382910018" name="jetbrains.mps.samples.mindmaps" />
     <lang id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core" />
+    <lang id="33f294fd-370a-4a40-999b-43f382910018" name="jetbrains.mps.samples.mindmaps" />
     <concept id="33f294fd-370a-4a40-999b-43f382910018/79242395703866767" name="jetbrains.mps.samples.mindmaps.structure.MindMap" />
     <concept id="33f294fd-370a-4a40-999b-43f382910018/79242395703884488" name="jetbrains.mps.samples.mindmaps.structure.Thought" />
     <concept id="33f294fd-370a-4a40-999b-43f382910018/79242395703884499" name="jetbrains.mps.samples.mindmaps.structure.Relationship" />
-    <concept id="33f294fd-370a-4a40-999b-43f382910018/5058522826399342676" name="jetbrains.mps.samples.mindmaps.structure.CoreThrought" />
     <concept id="33f294fd-370a-4a40-999b-43f382910018/5058522826399262785" name="jetbrains.mps.samples.mindmaps.structure.Specializes" />
-    <property id="33f294fd-370a-4a40-999b-43f382910018/79242395703953958/79242395703953959" name="x" />
-    <property id="33f294fd-370a-4a40-999b-43f382910018/79242395703953958/5871420002487302178" name="myIsClicked" />
-    <property id="33f294fd-370a-4a40-999b-43f382910018/79242395703953958/79242395703953961" name="y" />
+    <concept id="33f294fd-370a-4a40-999b-43f382910018/5058522826399342676" name="jetbrains.mps.samples.mindmaps.structure.CoreThrought" />
     <property id="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001" name="name" />
+    <property id="33f294fd-370a-4a40-999b-43f382910018/79242395703953958/79242395703953959" name="x" />
+    <property id="33f294fd-370a-4a40-999b-43f382910018/79242395703953958/79242395703953961" name="y" />
+    <property id="33f294fd-370a-4a40-999b-43f382910018/79242395703953958/5871420002487302178" name="myIsClicked" />
     <refRole id="33f294fd-370a-4a40-999b-43f382910018/79242395703884499/79242395703887327" name="target" />
     <refRole id="33f294fd-370a-4a40-999b-43f382910018/79242395703884499/5871420002487876254" name="source" />
-    <childRole id="33f294fd-370a-4a40-999b-43f382910018/79242395703866767/79242395703887323" name="relationships" />
     <childRole id="33f294fd-370a-4a40-999b-43f382910018/79242395703866767/79242395703887318" name="thoughts" />
+    <childRole id="33f294fd-370a-4a40-999b-43f382910018/79242395703866767/79242395703887323" name="relationships" />
   </debugInfo>
   <languages>
     <use id="33f294fd-370a-4a40-999b-43f382910018" version="-1" index="47di" />

@@ -2,44 +2,44 @@
 <model ref="r:bfc3cc23-55a3-453e-8ef5-e40fe2c110a4(jetbrains.mps.testHybridEditor.sandbox.testModel)">
   <persistence version="9" />
   <debugInfo>
-    <lang id="913a1d63-9e19-48fa-ad03-e33ecccd3814" name="jetbrains.mps.testHybridEditor" />
     <lang id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core" />
-    <concept id="913a1d63-9e19-48fa-ad03-e33ecccd3814/725186580883451828" name="jetbrains.mps.testHybridEditor.structure.InputPort" />
-    <concept id="913a1d63-9e19-48fa-ad03-e33ecccd3814/2353136177973886045" name="jetbrains.mps.testHybridEditor.structure.MetaPort" />
-    <concept id="913a1d63-9e19-48fa-ad03-e33ecccd3814/2353136177973871304" name="jetbrains.mps.testHybridEditor.structure.MetaBlock" />
-    <concept id="913a1d63-9e19-48fa-ad03-e33ecccd3814/5288989961863963745" name="jetbrains.mps.testHybridEditor.structure.ConnectorEndInstance" />
-    <concept id="913a1d63-9e19-48fa-ad03-e33ecccd3814/725186580883451800" name="jetbrains.mps.testHybridEditor.structure.Block" />
-    <concept id="913a1d63-9e19-48fa-ad03-e33ecccd3814/2353136177974088982" name="jetbrains.mps.testHybridEditor.structure.ConnectorInstance" />
-    <concept id="913a1d63-9e19-48fa-ad03-e33ecccd3814/725186580883451809" name="jetbrains.mps.testHybridEditor.structure.Connector" />
-    <concept id="913a1d63-9e19-48fa-ad03-e33ecccd3814/2353136177974080669" name="jetbrains.mps.testHybridEditor.structure.BlockInstance" />
-    <concept id="913a1d63-9e19-48fa-ad03-e33ecccd3814/725186580883451839" name="jetbrains.mps.testHybridEditor.structure.OutputPort" />
-    <concept id="913a1d63-9e19-48fa-ad03-e33ecccd3814/725186580883451585" name="jetbrains.mps.testHybridEditor.structure.Diagram" />
+    <lang id="913a1d63-9e19-48fa-ad03-e33ecccd3814" name="jetbrains.mps.testHybridEditor" />
     <concept id="913a1d63-9e19-48fa-ad03-e33ecccd3814/320213057867540364" name="jetbrains.mps.testHybridEditor.structure.BlockExt" />
+    <concept id="913a1d63-9e19-48fa-ad03-e33ecccd3814/725186580883451585" name="jetbrains.mps.testHybridEditor.structure.Diagram" />
+    <concept id="913a1d63-9e19-48fa-ad03-e33ecccd3814/725186580883451800" name="jetbrains.mps.testHybridEditor.structure.Block" />
+    <concept id="913a1d63-9e19-48fa-ad03-e33ecccd3814/725186580883451809" name="jetbrains.mps.testHybridEditor.structure.Connector" />
+    <concept id="913a1d63-9e19-48fa-ad03-e33ecccd3814/725186580883451828" name="jetbrains.mps.testHybridEditor.structure.InputPort" />
+    <concept id="913a1d63-9e19-48fa-ad03-e33ecccd3814/725186580883451839" name="jetbrains.mps.testHybridEditor.structure.OutputPort" />
+    <concept id="913a1d63-9e19-48fa-ad03-e33ecccd3814/2353136177973871304" name="jetbrains.mps.testHybridEditor.structure.MetaBlock" />
+    <concept id="913a1d63-9e19-48fa-ad03-e33ecccd3814/2353136177973886045" name="jetbrains.mps.testHybridEditor.structure.MetaPort" />
+    <concept id="913a1d63-9e19-48fa-ad03-e33ecccd3814/2353136177974080669" name="jetbrains.mps.testHybridEditor.structure.BlockInstance" />
+    <concept id="913a1d63-9e19-48fa-ad03-e33ecccd3814/2353136177974088982" name="jetbrains.mps.testHybridEditor.structure.ConnectorInstance" />
+    <concept id="913a1d63-9e19-48fa-ad03-e33ecccd3814/5288989961863963745" name="jetbrains.mps.testHybridEditor.structure.ConnectorEndInstance" />
+    <property id="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001" name="name" />
+    <property id="913a1d63-9e19-48fa-ad03-e33ecccd3814/2353136177974080669/2353136177974084745" name="x" />
+    <property id="913a1d63-9e19-48fa-ad03-e33ecccd3814/2353136177974080669/2353136177974084746" name="y" />
     <property id="913a1d63-9e19-48fa-ad03-e33ecccd3814/2353136177974080669/3175567003993184638" name="width" />
+    <property id="913a1d63-9e19-48fa-ad03-e33ecccd3814/2353136177974080669/3175567003993184686" name="height" />
+    <property id="913a1d63-9e19-48fa-ad03-e33ecccd3814/725186580883451800/4950140401485715589" name="myBooleanProperty" />
+    <property id="913a1d63-9e19-48fa-ad03-e33ecccd3814/725186580883451800/6279035160242221415" name="x" />
     <property id="913a1d63-9e19-48fa-ad03-e33ecccd3814/725186580883451800/6279035160242221911" name="y" />
     <property id="913a1d63-9e19-48fa-ad03-e33ecccd3814/2353136177973871304/9168054762589307856" name="iconPath" />
-    <property id="913a1d63-9e19-48fa-ad03-e33ecccd3814/725186580883451800/6279035160242221415" name="x" />
-    <property id="913a1d63-9e19-48fa-ad03-e33ecccd3814/2353136177974080669/2353136177974084745" name="x" />
-    <property id="913a1d63-9e19-48fa-ad03-e33ecccd3814/2353136177974080669/3175567003993184686" name="height" />
-    <property id="913a1d63-9e19-48fa-ad03-e33ecccd3814/2353136177974080669/2353136177974084746" name="y" />
-    <property id="913a1d63-9e19-48fa-ad03-e33ecccd3814/725186580883451800/4950140401485715589" name="myBooleanProperty" />
-    <property id="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001" name="name" />
-    <refRole id="913a1d63-9e19-48fa-ad03-e33ecccd3814/725186580883451809/725186580883451924" name="outputPort" />
     <refRole id="913a1d63-9e19-48fa-ad03-e33ecccd3814/320213057867540364/320213057867544063" name="mb" />
+    <refRole id="913a1d63-9e19-48fa-ad03-e33ecccd3814/725186580883451809/725186580883451924" name="outputPort" />
     <refRole id="913a1d63-9e19-48fa-ad03-e33ecccd3814/725186580883451809/725186580883451928" name="inputPort" />
     <refRole id="913a1d63-9e19-48fa-ad03-e33ecccd3814/2353136177974080669/2353136177974084777" name="metaBlock" />
-    <refRole id="913a1d63-9e19-48fa-ad03-e33ecccd3814/5288989961863963745/5288989961863964093" name="metaPort" />
     <refRole id="913a1d63-9e19-48fa-ad03-e33ecccd3814/5288989961863963745/5288989961863964092" name="block" />
-    <childRole id="913a1d63-9e19-48fa-ad03-e33ecccd3814/725186580883451800/725186580883451904" name="outputPorts" />
-    <childRole id="913a1d63-9e19-48fa-ad03-e33ecccd3814/2353136177974088982/5288989961863964102" name="target" />
-    <childRole id="913a1d63-9e19-48fa-ad03-e33ecccd3814/725186580883451800/725186580883451902" name="inputPorts" />
+    <refRole id="913a1d63-9e19-48fa-ad03-e33ecccd3814/5288989961863963745/5288989961863964093" name="metaPort" />
     <childRole id="913a1d63-9e19-48fa-ad03-e33ecccd3814/725186580883451585/725186580883451864" name="blocks" />
-    <childRole id="913a1d63-9e19-48fa-ad03-e33ecccd3814/725186580883451585/2353136177974093280" name="newConnectors" />
     <childRole id="913a1d63-9e19-48fa-ad03-e33ecccd3814/725186580883451585/725186580883451866" name="connectors" />
-    <childRole id="913a1d63-9e19-48fa-ad03-e33ecccd3814/725186580883451585/2353136177974080694" name="newBlocks" />
-    <childRole id="913a1d63-9e19-48fa-ad03-e33ecccd3814/2353136177973871304/3229274890675219468" name="outMetaPorts" />
+    <childRole id="913a1d63-9e19-48fa-ad03-e33ecccd3814/725186580883451800/725186580883451902" name="inputPorts" />
+    <childRole id="913a1d63-9e19-48fa-ad03-e33ecccd3814/725186580883451800/725186580883451904" name="outputPorts" />
     <childRole id="913a1d63-9e19-48fa-ad03-e33ecccd3814/2353136177973871304/2353136177973888134" name="inMetaPorts" />
+    <childRole id="913a1d63-9e19-48fa-ad03-e33ecccd3814/725186580883451585/2353136177974080694" name="newBlocks" />
+    <childRole id="913a1d63-9e19-48fa-ad03-e33ecccd3814/725186580883451585/2353136177974093280" name="newConnectors" />
+    <childRole id="913a1d63-9e19-48fa-ad03-e33ecccd3814/2353136177973871304/3229274890675219468" name="outMetaPorts" />
     <childRole id="913a1d63-9e19-48fa-ad03-e33ecccd3814/2353136177974088982/5288989961863964096" name="source" />
+    <childRole id="913a1d63-9e19-48fa-ad03-e33ecccd3814/2353136177974088982/5288989961863964102" name="target" />
   </debugInfo>
   <languages>
     <use id="913a1d63-9e19-48fa-ad03-e33ecccd3814" version="-1" index="10vn" />

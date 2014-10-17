@@ -4,81 +4,81 @@
   <debugInfo>
     <lang id="798100da-4f0a-421a-b991-71f8c50ce5d2" name="jetbrains.mps.build" />
     <lang id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core" />
-    <concept id="798100da-4f0a-421a-b991-71f8c50ce5d2/7181125477683370806" name="jetbrains.mps.build.structure.BuildLayout_FileStub" />
-    <concept id="798100da-4f0a-421a-b991-71f8c50ce5d2/6977615362525721939" name="jetbrains.mps.build.structure.BuildLayout_CopyFlattenMapper" />
-    <concept id="798100da-4f0a-421a-b991-71f8c50ce5d2/7389400916848036984" name="jetbrains.mps.build.structure.BuildLayout_Folder" />
-    <concept id="798100da-4f0a-421a-b991-71f8c50ce5d2/8577651205286814211" name="jetbrains.mps.build.structure.BuildLayout_Tar" />
-    <concept id="798100da-4f0a-421a-b991-71f8c50ce5d2/5617550519002745363" name="jetbrains.mps.build.structure.BuildProject" />
-    <concept id="798100da-4f0a-421a-b991-71f8c50ce5d2/5617550519002745364" name="jetbrains.mps.build.structure.BuildLayout" />
-    <concept id="798100da-4f0a-421a-b991-71f8c50ce5d2/5248329904288051100" name="jetbrains.mps.build.structure.BuildFileIncludeSelector" />
-    <concept id="798100da-4f0a-421a-b991-71f8c50ce5d2/4993211115183325728" name="jetbrains.mps.build.structure.BuildProjectDependency" />
-    <concept id="798100da-4f0a-421a-b991-71f8c50ce5d2/8618885170173601777" name="jetbrains.mps.build.structure.BuildCompositePath" />
-    <concept id="798100da-4f0a-421a-b991-71f8c50ce5d2/5610619299013057363" name="jetbrains.mps.build.structure.BuildLayout_ImportContent" />
-    <concept id="798100da-4f0a-421a-b991-71f8c50ce5d2/7181125477683216329" name="jetbrains.mps.build.structure.BuildExternalLayout" />
-    <concept id="798100da-4f0a-421a-b991-71f8c50ce5d2/7801138212747054656" name="jetbrains.mps.build.structure.BuildLayout_Filemode" />
-    <concept id="798100da-4f0a-421a-b991-71f8c50ce5d2/2754769020641646247" name="jetbrains.mps.build.structure.BuildSource_JavaDependencyModule" />
-    <concept id="798100da-4f0a-421a-b991-71f8c50ce5d2/7181125477683417252" name="jetbrains.mps.build.structure.BuildExternalLayoutDependency" />
-    <concept id="798100da-4f0a-421a-b991-71f8c50ce5d2/9126048691955220717" name="jetbrains.mps.build.structure.BuildLayout_File" />
-    <concept id="798100da-4f0a-421a-b991-71f8c50ce5d2/5481553824944787378" name="jetbrains.mps.build.structure.BuildSourceProjectRelativePath" />
-    <concept id="798100da-4f0a-421a-b991-71f8c50ce5d2/7389400916848073784" name="jetbrains.mps.build.structure.BuildSource_JavaModule" />
-    <concept id="798100da-4f0a-421a-b991-71f8c50ce5d2/6057319140845467763" name="jetbrains.mps.build.structure.BuildSource_JavaLibrary" />
-    <concept id="798100da-4f0a-421a-b991-71f8c50ce5d2/4993211115183250894" name="jetbrains.mps.build.structure.BuildSource_JavaDependencyLibrary" />
+    <concept id="798100da-4f0a-421a-b991-71f8c50ce5d2/841011766565753074" name="jetbrains.mps.build.structure.BuildLayout_Import" />
+    <concept id="798100da-4f0a-421a-b991-71f8c50ce5d2/841011766566059607" name="jetbrains.mps.build.structure.BuildStringNotEmpty" />
     <concept id="798100da-4f0a-421a-b991-71f8c50ce5d2/1500819558096177282" name="jetbrains.mps.build.structure.BuildSource_JavaFiles" />
-    <concept id="798100da-4f0a-421a-b991-71f8c50ce5d2/7389400916848050071" name="jetbrains.mps.build.structure.BuildLayout_Zip" />
-    <concept id="798100da-4f0a-421a-b991-71f8c50ce5d2/5610619299014446503" name="jetbrains.mps.build.structure.BuildSource_JavaLibraryExternalJar" />
+    <concept id="798100da-4f0a-421a-b991-71f8c50ce5d2/2303926226081001727" name="jetbrains.mps.build.structure.BuildInputSingleFolder" />
+    <concept id="798100da-4f0a-421a-b991-71f8c50ce5d2/2750015747481074431" name="jetbrains.mps.build.structure.BuildLayout_Files" />
+    <concept id="798100da-4f0a-421a-b991-71f8c50ce5d2/2754769020641646247" name="jetbrains.mps.build.structure.BuildSource_JavaDependencyModule" />
+    <concept id="798100da-4f0a-421a-b991-71f8c50ce5d2/3717132724152913083" name="jetbrains.mps.build.structure.BuildSource_JavaLibraryCP" />
     <concept id="798100da-4f0a-421a-b991-71f8c50ce5d2/4198392933254416812" name="jetbrains.mps.build.structure.BuildLayout_CopyFilterFixCRLF" />
     <concept id="798100da-4f0a-421a-b991-71f8c50ce5d2/4903714810883702019" name="jetbrains.mps.build.structure.BuildTextStringPart" />
-    <concept id="798100da-4f0a-421a-b991-71f8c50ce5d2/3717132724152913083" name="jetbrains.mps.build.structure.BuildSource_JavaLibraryCP" />
+    <concept id="798100da-4f0a-421a-b991-71f8c50ce5d2/4993211115183250894" name="jetbrains.mps.build.structure.BuildSource_JavaDependencyLibrary" />
+    <concept id="798100da-4f0a-421a-b991-71f8c50ce5d2/4993211115183325728" name="jetbrains.mps.build.structure.BuildProjectDependency" />
+    <concept id="798100da-4f0a-421a-b991-71f8c50ce5d2/5248329904288051100" name="jetbrains.mps.build.structure.BuildFileIncludeSelector" />
+    <concept id="798100da-4f0a-421a-b991-71f8c50ce5d2/5481553824944787378" name="jetbrains.mps.build.structure.BuildSourceProjectRelativePath" />
+    <concept id="798100da-4f0a-421a-b991-71f8c50ce5d2/5610619299013057363" name="jetbrains.mps.build.structure.BuildLayout_ImportContent" />
     <concept id="798100da-4f0a-421a-b991-71f8c50ce5d2/5610619299014309452" name="jetbrains.mps.build.structure.BuildSource_JavaExternalJarRef" />
-    <concept id="798100da-4f0a-421a-b991-71f8c50ce5d2/841011766565753074" name="jetbrains.mps.build.structure.BuildLayout_Import" />
+    <concept id="798100da-4f0a-421a-b991-71f8c50ce5d2/5610619299014446503" name="jetbrains.mps.build.structure.BuildSource_JavaLibraryExternalJar" />
+    <concept id="798100da-4f0a-421a-b991-71f8c50ce5d2/5617550519002745363" name="jetbrains.mps.build.structure.BuildProject" />
+    <concept id="798100da-4f0a-421a-b991-71f8c50ce5d2/5617550519002745364" name="jetbrains.mps.build.structure.BuildLayout" />
+    <concept id="798100da-4f0a-421a-b991-71f8c50ce5d2/6057319140845467763" name="jetbrains.mps.build.structure.BuildSource_JavaLibrary" />
     <concept id="798100da-4f0a-421a-b991-71f8c50ce5d2/6647099934206700647" name="jetbrains.mps.build.structure.BuildJavaPlugin" />
-    <concept id="798100da-4f0a-421a-b991-71f8c50ce5d2/841011766566059607" name="jetbrains.mps.build.structure.BuildStringNotEmpty" />
-    <concept id="798100da-4f0a-421a-b991-71f8c50ce5d2/2303926226081001727" name="jetbrains.mps.build.structure.BuildInputSingleFolder" />
     <concept id="798100da-4f0a-421a-b991-71f8c50ce5d2/6859736767834557908" name="jetbrains.mps.build.structure.BuildSource_JavaDependencyExternalJar" />
-    <concept id="798100da-4f0a-421a-b991-71f8c50ce5d2/2750015747481074431" name="jetbrains.mps.build.structure.BuildLayout_Files" />
+    <concept id="798100da-4f0a-421a-b991-71f8c50ce5d2/6977615362525721939" name="jetbrains.mps.build.structure.BuildLayout_CopyFlattenMapper" />
+    <concept id="798100da-4f0a-421a-b991-71f8c50ce5d2/7181125477683216329" name="jetbrains.mps.build.structure.BuildExternalLayout" />
+    <concept id="798100da-4f0a-421a-b991-71f8c50ce5d2/7181125477683370806" name="jetbrains.mps.build.structure.BuildLayout_FileStub" />
+    <concept id="798100da-4f0a-421a-b991-71f8c50ce5d2/7181125477683417252" name="jetbrains.mps.build.structure.BuildExternalLayoutDependency" />
+    <concept id="798100da-4f0a-421a-b991-71f8c50ce5d2/7389400916848036984" name="jetbrains.mps.build.structure.BuildLayout_Folder" />
+    <concept id="798100da-4f0a-421a-b991-71f8c50ce5d2/7389400916848050071" name="jetbrains.mps.build.structure.BuildLayout_Zip" />
+    <concept id="798100da-4f0a-421a-b991-71f8c50ce5d2/7389400916848073784" name="jetbrains.mps.build.structure.BuildSource_JavaModule" />
+    <concept id="798100da-4f0a-421a-b991-71f8c50ce5d2/7801138212747054656" name="jetbrains.mps.build.structure.BuildLayout_Filemode" />
+    <concept id="798100da-4f0a-421a-b991-71f8c50ce5d2/8577651205286814211" name="jetbrains.mps.build.structure.BuildLayout_Tar" />
+    <concept id="798100da-4f0a-421a-b991-71f8c50ce5d2/8618885170173601777" name="jetbrains.mps.build.structure.BuildCompositePath" />
+    <concept id="798100da-4f0a-421a-b991-71f8c50ce5d2/9126048691955220717" name="jetbrains.mps.build.structure.BuildLayout_File" />
+    <property id="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001" name="name" />
+    <property id="798100da-4f0a-421a-b991-71f8c50ce5d2/8577651205286814211/1979010778009209128" name="compression" />
+    <property id="798100da-4f0a-421a-b991-71f8c50ce5d2/4198392933254416812/4198392933254416822" name="eol" />
+    <property id="798100da-4f0a-421a-b991-71f8c50ce5d2/4198392933254416812/4198392933254551900" name="removeEOF" />
     <property id="798100da-4f0a-421a-b991-71f8c50ce5d2/4903714810883702019/4903714810883755350" name="text" />
     <property id="798100da-4f0a-421a-b991-71f8c50ce5d2/5617550519002745363/4915877860348071612" name="fileName" />
-    <property id="798100da-4f0a-421a-b991-71f8c50ce5d2/8577651205286814211/1979010778009209128" name="compression" />
-    <property id="798100da-4f0a-421a-b991-71f8c50ce5d2/4198392933254416812/4198392933254551900" name="removeEOF" />
-    <property id="798100da-4f0a-421a-b991-71f8c50ce5d2/5248329904288051100/5248329904288051101" name="pattern" />
     <property id="798100da-4f0a-421a-b991-71f8c50ce5d2/5617550519002745363/5204048710541015587" name="internalBaseDirectory" />
+    <property id="798100da-4f0a-421a-b991-71f8c50ce5d2/5248329904288051100/5248329904288051101" name="pattern" />
     <property id="798100da-4f0a-421a-b991-71f8c50ce5d2/6859736767834557908/6859736767834590422" name="reexport" />
-    <property id="798100da-4f0a-421a-b991-71f8c50ce5d2/7801138212747054656/7801138212747054661" name="dirmode" />
     <property id="798100da-4f0a-421a-b991-71f8c50ce5d2/7801138212747054656/7801138212747054660" name="filemode" />
-    <property id="798100da-4f0a-421a-b991-71f8c50ce5d2/4198392933254416812/4198392933254416822" name="eol" />
+    <property id="798100da-4f0a-421a-b991-71f8c50ce5d2/7801138212747054656/7801138212747054661" name="dirmode" />
     <property id="798100da-4f0a-421a-b991-71f8c50ce5d2/8618885170173601777/8618885170173601779" name="head" />
-    <property id="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001" name="name" />
-    <refRole id="798100da-4f0a-421a-b991-71f8c50ce5d2/5610619299014309452/5610619299014309453" name="jar" />
-    <refRole id="798100da-4f0a-421a-b991-71f8c50ce5d2/4993211115183325728/5617550519002745380" name="script" />
     <refRole id="798100da-4f0a-421a-b991-71f8c50ce5d2/841011766565753074/841011766565753076" name="target" />
+    <refRole id="798100da-4f0a-421a-b991-71f8c50ce5d2/2754769020641646247/2754769020641646250" name="module" />
     <refRole id="798100da-4f0a-421a-b991-71f8c50ce5d2/4993211115183250894/4993211115183250895" name="library" />
     <refRole id="798100da-4f0a-421a-b991-71f8c50ce5d2/5610619299013057363/5610619299013057365" name="target" />
-    <refRole id="798100da-4f0a-421a-b991-71f8c50ce5d2/2754769020641646247/2754769020641646250" name="module" />
+    <refRole id="798100da-4f0a-421a-b991-71f8c50ce5d2/5610619299014309452/5610619299014309453" name="jar" />
+    <refRole id="798100da-4f0a-421a-b991-71f8c50ce5d2/4993211115183325728/5617550519002745380" name="script" />
     <refRole id="798100da-4f0a-421a-b991-71f8c50ce5d2/7181125477683417252/7181125477683417255" name="layout" />
-    <childRole id="798100da-4f0a-421a-b991-71f8c50ce5d2/4701820937132344003/7389400916848037006" name="children" />
-    <childRole id="798100da-4f0a-421a-b991-71f8c50ce5d2/2303926226081001727/2303926226081001728" name="path" />
-    <childRole id="798100da-4f0a-421a-b991-71f8c50ce5d2/3717132724152913083/3717132724152913085" name="classpath" />
-    <childRole id="798100da-4f0a-421a-b991-71f8c50ce5d2/2750015747481074431/2750015747481074433" name="parameters" />
-    <childRole id="798100da-4f0a-421a-b991-71f8c50ce5d2/6859736767834557908/5610619299014309674" name="extJar" />
-    <childRole id="798100da-4f0a-421a-b991-71f8c50ce5d2/2750015747481074431/2750015747481074432" name="path" />
-    <childRole id="798100da-4f0a-421a-b991-71f8c50ce5d2/8618885170173601777/8618885170173601778" name="tail" />
-    <childRole id="798100da-4f0a-421a-b991-71f8c50ce5d2/9126048691955220717/9126048691955220774" name="parameters" />
-    <childRole id="798100da-4f0a-421a-b991-71f8c50ce5d2/7389400916848073784/2754769020641646251" name="dependencies" />
-    <childRole id="798100da-4f0a-421a-b991-71f8c50ce5d2/5617550519002745363/6647099934206700656" name="plugins" />
-    <childRole id="798100da-4f0a-421a-b991-71f8c50ce5d2/5617550519002745363/7389400916848080626" name="parts" />
-    <childRole id="798100da-4f0a-421a-b991-71f8c50ce5d2/4380385936562003279/4903714810883783243" name="parts" />
-    <childRole id="798100da-4f0a-421a-b991-71f8c50ce5d2/6057319140845467763/6057319140845478673" name="elements" />
-    <childRole id="798100da-4f0a-421a-b991-71f8c50ce5d2/9126048691955220717/9126048691955220762" name="path" />
-    <childRole id="798100da-4f0a-421a-b991-71f8c50ce5d2/5610619299014446503/5610619299014446504" name="extJar" />
-    <childRole id="798100da-4f0a-421a-b991-71f8c50ce5d2/7389400916848050060/4380385936562148502" name="containerName" />
     <childRole id="798100da-4f0a-421a-b991-71f8c50ce5d2/1500819558096177282/1500819558096177283" name="resset" />
-    <childRole id="798100da-4f0a-421a-b991-71f8c50ce5d2/7181125477683370806/7181125477683370900" name="fileName" />
-    <childRole id="798100da-4f0a-421a-b991-71f8c50ce5d2/5617550519002745363/5617550519002745381" name="dependencies" />
+    <childRole id="798100da-4f0a-421a-b991-71f8c50ce5d2/2303926226081001727/2303926226081001728" name="path" />
+    <childRole id="798100da-4f0a-421a-b991-71f8c50ce5d2/2750015747481074431/2750015747481074432" name="path" />
+    <childRole id="798100da-4f0a-421a-b991-71f8c50ce5d2/2750015747481074431/2750015747481074433" name="parameters" />
+    <childRole id="798100da-4f0a-421a-b991-71f8c50ce5d2/7389400916848073784/2754769020641646251" name="dependencies" />
+    <childRole id="798100da-4f0a-421a-b991-71f8c50ce5d2/3717132724152913083/3717132724152913085" name="classpath" />
+    <childRole id="798100da-4f0a-421a-b991-71f8c50ce5d2/7389400916848050060/4380385936562148502" name="containerName" />
     <childRole id="798100da-4f0a-421a-b991-71f8c50ce5d2/5617550519002745363/4796668409958418110" name="scriptsDir" />
-    <childRole id="798100da-4f0a-421a-b991-71f8c50ce5d2/7389400916848073784/7389400916848073826" name="sources" />
-    <childRole id="798100da-4f0a-421a-b991-71f8c50ce5d2/7321017245476976379/7321017245477039051" name="compositePart" />
-    <childRole id="798100da-4f0a-421a-b991-71f8c50ce5d2/7181125477683417252/7181125477683417254" name="artifacts" />
+    <childRole id="798100da-4f0a-421a-b991-71f8c50ce5d2/4380385936562003279/4903714810883783243" name="parts" />
+    <childRole id="798100da-4f0a-421a-b991-71f8c50ce5d2/6859736767834557908/5610619299014309674" name="extJar" />
+    <childRole id="798100da-4f0a-421a-b991-71f8c50ce5d2/5610619299014446503/5610619299014446504" name="extJar" />
     <childRole id="798100da-4f0a-421a-b991-71f8c50ce5d2/5617550519002745363/5617550519002745372" name="layout" />
+    <childRole id="798100da-4f0a-421a-b991-71f8c50ce5d2/5617550519002745363/5617550519002745381" name="dependencies" />
+    <childRole id="798100da-4f0a-421a-b991-71f8c50ce5d2/6057319140845467763/6057319140845478673" name="elements" />
+    <childRole id="798100da-4f0a-421a-b991-71f8c50ce5d2/5617550519002745363/6647099934206700656" name="plugins" />
+    <childRole id="798100da-4f0a-421a-b991-71f8c50ce5d2/7181125477683370806/7181125477683370900" name="fileName" />
+    <childRole id="798100da-4f0a-421a-b991-71f8c50ce5d2/7181125477683417252/7181125477683417254" name="artifacts" />
+    <childRole id="798100da-4f0a-421a-b991-71f8c50ce5d2/7321017245476976379/7321017245477039051" name="compositePart" />
+    <childRole id="798100da-4f0a-421a-b991-71f8c50ce5d2/4701820937132344003/7389400916848037006" name="children" />
+    <childRole id="798100da-4f0a-421a-b991-71f8c50ce5d2/7389400916848073784/7389400916848073826" name="sources" />
+    <childRole id="798100da-4f0a-421a-b991-71f8c50ce5d2/5617550519002745363/7389400916848080626" name="parts" />
+    <childRole id="798100da-4f0a-421a-b991-71f8c50ce5d2/8618885170173601777/8618885170173601778" name="tail" />
+    <childRole id="798100da-4f0a-421a-b991-71f8c50ce5d2/9126048691955220717/9126048691955220762" name="path" />
+    <childRole id="798100da-4f0a-421a-b991-71f8c50ce5d2/9126048691955220717/9126048691955220774" name="parameters" />
   </debugInfo>
   <languages>
     <use id="798100da-4f0a-421a-b991-71f8c50ce5d2" version="-1" index="219m" />

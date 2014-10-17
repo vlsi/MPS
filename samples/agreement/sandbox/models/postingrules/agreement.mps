@@ -2,50 +2,50 @@
 <model ref="r:00000000-0000-4000-0000-011c8959040f(postingrules.agreement)">
   <persistence version="9" />
   <debugInfo>
+    <lang id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core" />
     <lang id="144f7012-c2d5-43be-be2b-4bfb7dff6503" name="jetbrains.mps.samples.agreementLanguage" />
     <lang id="b1a9bc47-8a26-4792-8b68-4660c531090a" name="jetbrains.mps.samples.formulaLanguage" />
-    <lang id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core" />
     <model ref="r:00000000-0000-4000-0000-011c8959040b(jetbrains.mps.samples.agreementLanguage.declarations)" name="jetbrains.mps.samples.agreementLanguage.declarations" />
-    <concept id="144f7012-c2d5-43be-be2b-4bfb7dff6503/1116445695828" name="jetbrains.mps.samples.agreementLanguage.structure.Date_Past" />
-    <concept id="b1a9bc47-8a26-4792-8b68-4660c531090a/1111786301085" name="jetbrains.mps.samples.formulaLanguage.structure.PlusOperation" />
-    <concept id="144f7012-c2d5-43be-be2b-4bfb7dff6503/1111791020814" name="jetbrains.mps.samples.agreementLanguage.structure.Value" />
-    <concept id="144f7012-c2d5-43be-be2b-4bfb7dff6503/1112036490295" name="jetbrains.mps.samples.agreementLanguage.structure.EventVariableReference" />
     <concept id="b1a9bc47-8a26-4792-8b68-4660c531090a/1111784926012" name="jetbrains.mps.samples.formulaLanguage.structure.FloatingPointConstant" />
     <concept id="b1a9bc47-8a26-4792-8b68-4660c531090a/1111785030296" name="jetbrains.mps.samples.formulaLanguage.structure.IfFunction" />
-    <concept id="144f7012-c2d5-43be-be2b-4bfb7dff6503/1111791038612" name="jetbrains.mps.samples.agreementLanguage.structure.Event" />
-    <concept id="144f7012-c2d5-43be-be2b-4bfb7dff6503/1112038445100" name="jetbrains.mps.samples.agreementLanguage.structure.ValueReference" />
-    <concept id="144f7012-c2d5-43be-be2b-4bfb7dff6503/1111794888922" name="jetbrains.mps.samples.agreementLanguage.structure.PostingRule" />
+    <concept id="b1a9bc47-8a26-4792-8b68-4660c531090a/1111786301085" name="jetbrains.mps.samples.formulaLanguage.structure.PlusOperation" />
     <concept id="144f7012-c2d5-43be-be2b-4bfb7dff6503/1111790951422" name="jetbrains.mps.samples.agreementLanguage.structure.Plan" />
+    <concept id="144f7012-c2d5-43be-be2b-4bfb7dff6503/1111791020814" name="jetbrains.mps.samples.agreementLanguage.structure.Value" />
+    <concept id="144f7012-c2d5-43be-be2b-4bfb7dff6503/1111791038612" name="jetbrains.mps.samples.agreementLanguage.structure.Event" />
+    <concept id="144f7012-c2d5-43be-be2b-4bfb7dff6503/1111792102248" name="jetbrains.mps.samples.agreementLanguage.structure.Quantity" />
     <concept id="144f7012-c2d5-43be-be2b-4bfb7dff6503/1111792389581" name="jetbrains.mps.samples.agreementLanguage.structure.Date" />
     <concept id="144f7012-c2d5-43be-be2b-4bfb7dff6503/1111792520557" name="jetbrains.mps.samples.agreementLanguage.structure.QuantityTemporalProperty" />
-    <concept id="b1a9bc47-8a26-4792-8b68-4660c531090a/1112406908640" name="jetbrains.mps.samples.formulaLanguage.structure.GreaterThanOperation" />
     <concept id="144f7012-c2d5-43be-be2b-4bfb7dff6503/1111794734295" name="jetbrains.mps.samples.agreementLanguage.structure.PostingRuleTemporalProperty" />
-    <concept id="144f7012-c2d5-43be-be2b-4bfb7dff6503/1111792102248" name="jetbrains.mps.samples.agreementLanguage.structure.Quantity" />
+    <concept id="144f7012-c2d5-43be-be2b-4bfb7dff6503/1111794888922" name="jetbrains.mps.samples.agreementLanguage.structure.PostingRule" />
+    <concept id="144f7012-c2d5-43be-be2b-4bfb7dff6503/1112036490295" name="jetbrains.mps.samples.agreementLanguage.structure.EventVariableReference" />
+    <concept id="144f7012-c2d5-43be-be2b-4bfb7dff6503/1112038445100" name="jetbrains.mps.samples.agreementLanguage.structure.ValueReference" />
     <concept id="b1a9bc47-8a26-4792-8b68-4660c531090a/1112384225757" name="jetbrains.mps.samples.formulaLanguage.structure.MultOperation" />
-    <property id="144f7012-c2d5-43be-be2b-4bfb7dff6503/1111791038612/1116368080504" name="taxable" />
+    <concept id="b1a9bc47-8a26-4792-8b68-4660c531090a/1112406908640" name="jetbrains.mps.samples.formulaLanguage.structure.GreaterThanOperation" />
+    <concept id="144f7012-c2d5-43be-be2b-4bfb7dff6503/1116445695828" name="jetbrains.mps.samples.agreementLanguage.structure.Date_Past" />
     <property id="144f7012-c2d5-43be-be2b-4bfb7dff6503/1111792389581/1111792409129" name="year" />
     <property id="144f7012-c2d5-43be-be2b-4bfb7dff6503/1111792389581/1111792417427" name="month" />
-    <property id="b1a9bc47-8a26-4792-8b68-4660c531090a/1111784926012/1113257000626" name="value" />
-    <property id="144f7012-c2d5-43be-be2b-4bfb7dff6503/1111792102248/1111793358083" name="unit" />
     <property id="144f7012-c2d5-43be-be2b-4bfb7dff6503/1111792389581/1111792417975" name="day" />
+    <property id="144f7012-c2d5-43be-be2b-4bfb7dff6503/1111792102248/1111793358083" name="unit" />
+    <property id="b1a9bc47-8a26-4792-8b68-4660c531090a/1111784926012/1113257000626" name="value" />
+    <property id="144f7012-c2d5-43be-be2b-4bfb7dff6503/1111791038612/1116368080504" name="taxable" />
     <property id="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001" name="name" />
     <refRole id="144f7012-c2d5-43be-be2b-4bfb7dff6503/1111791038612/1111793668132" name="type" />
-    <refRole id="144f7012-c2d5-43be-be2b-4bfb7dff6503/1112038445100/1112038462507" name="value" />
     <refRole id="144f7012-c2d5-43be-be2b-4bfb7dff6503/1111794888922/1111795211704" name="account" />
     <refRole id="144f7012-c2d5-43be-be2b-4bfb7dff6503/1112036490295/1112036516483" name="eventVariable" />
-    <childRole id="144f7012-c2d5-43be-be2b-4bfb7dff6503/1111791020814/1111791826558" name="quantity" />
+    <refRole id="144f7012-c2d5-43be-be2b-4bfb7dff6503/1112038445100/1112038462507" name="value" />
+    <childRole id="b1a9bc47-8a26-4792-8b68-4660c531090a/1111784210516/1111784226798" name="expression" />
+    <childRole id="b1a9bc47-8a26-4792-8b68-4660c531090a/1111784562907/1111784613299" name="leftOperand" />
+    <childRole id="b1a9bc47-8a26-4792-8b68-4660c531090a/1111784562907/1111784647019" name="rightOperand" />
+    <childRole id="b1a9bc47-8a26-4792-8b68-4660c531090a/1111785030296/1111785044750" name="logicalTest" />
     <childRole id="b1a9bc47-8a26-4792-8b68-4660c531090a/1111785030296/1111785091720" name="valueIfTrue" />
     <childRole id="b1a9bc47-8a26-4792-8b68-4660c531090a/1111785030296/1111785124143" name="valueIfFalse" />
-    <childRole id="144f7012-c2d5-43be-be2b-4bfb7dff6503/1111791038612/1111794644919" name="postingRule" />
-    <childRole id="b1a9bc47-8a26-4792-8b68-4660c531090a/1111785030296/1111785044750" name="logicalTest" />
-    <childRole id="144f7012-c2d5-43be-be2b-4bfb7dff6503/1111792102248/1111793363741" name="amount" />
-    <childRole id="144f7012-c2d5-43be-be2b-4bfb7dff6503/1111792355423/1111792463585" name="value" />
-    <childRole id="b1a9bc47-8a26-4792-8b68-4660c531090a/1111784562907/1111784613299" name="leftOperand" />
-    <childRole id="144f7012-c2d5-43be-be2b-4bfb7dff6503/1111790951422/1111791084333" name="event" />
-    <childRole id="144f7012-c2d5-43be-be2b-4bfb7dff6503/1111792355423/1111792372299" name="date" />
-    <childRole id="b1a9bc47-8a26-4792-8b68-4660c531090a/1111784210516/1111784226798" name="expression" />
-    <childRole id="b1a9bc47-8a26-4792-8b68-4660c531090a/1111784562907/1111784647019" name="rightOperand" />
     <childRole id="144f7012-c2d5-43be-be2b-4bfb7dff6503/1111790951422/1111791064925" name="value" />
+    <childRole id="144f7012-c2d5-43be-be2b-4bfb7dff6503/1111790951422/1111791084333" name="event" />
+    <childRole id="144f7012-c2d5-43be-be2b-4bfb7dff6503/1111791020814/1111791826558" name="quantity" />
+    <childRole id="144f7012-c2d5-43be-be2b-4bfb7dff6503/1111792355423/1111792372299" name="date" />
+    <childRole id="144f7012-c2d5-43be-be2b-4bfb7dff6503/1111792355423/1111792463585" name="value" />
+    <childRole id="144f7012-c2d5-43be-be2b-4bfb7dff6503/1111792102248/1111793363741" name="amount" />
+    <childRole id="144f7012-c2d5-43be-be2b-4bfb7dff6503/1111791038612/1111794644919" name="postingRule" />
   </debugInfo>
   <languages>
     <use id="144f7012-c2d5-43be-be2b-4bfb7dff6503" version="-1" index="t74k" />
