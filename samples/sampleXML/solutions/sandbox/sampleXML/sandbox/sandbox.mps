@@ -1,35 +1,56 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<model modelUID="r:9275a8a2-e7f7-46e1-b987-f14e658b8954(sampleXML.sandbox.sandbox)">
-  <persistence version="8" />
-  <language namespace="772f6dcd-8c0d-48f7-869c-908e036f7c8e(jetbrains.mps.sampleXML)" />
-  <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
-  <import index="dghb" modelUID="r:ec0ffc91-3a14-4002-ac57-dd36c5dcf10a(jetbrains.mps.sampleXML.structure)" version="-1" implicit="yes" />
-  <root type="dghb.Document" typeId="dghb.1225239603382" id="1225239897606" nodeInfo="ng">
-    <property name="name" nameId="tpck.1169194664001" value="AAA" />
-    <node role="rootElement" roleId="dghb.1225239603384" type="dghb.Element" typeId="dghb.1225239603385" id="1225239897607" nodeInfo="ng">
-      <property name="name" nameId="tpck.1169194664001" value="aaa" />
-      <node role="content" roleId="dghb.1225239603387" type="dghb.Element" typeId="dghb.1225239603385" id="1225239905109" nodeInfo="ng">
-        <property name="name" nameId="tpck.1169194664001" value="asdasd" />
-        <node role="attribute" roleId="dghb.1225239603386" type="dghb.Attribute" typeId="dghb.1225239603361" id="1225240178066" nodeInfo="ng">
-          <property name="name" nameId="tpck.1169194664001" value="aaa" />
-          <property name="value" nameId="dghb.1225239603363" value="jkjkljklj" />
+<model ref="r:9275a8a2-e7f7-46e1-b987-f14e658b8954(sampleXML.sandbox.sandbox)">
+  <persistence version="9" />
+  <debugInfo>
+    <lang id="772f6dcd-8c0d-48f7-869c-908e036f7c8e" name="jetbrains.mps.sampleXML" />
+    <lang id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core" />
+    <concept id="772f6dcd-8c0d-48f7-869c-908e036f7c8e/1225239603382" name="jetbrains.mps.sampleXML.structure.Document" />
+    <concept id="772f6dcd-8c0d-48f7-869c-908e036f7c8e/1225239603385" name="jetbrains.mps.sampleXML.structure.Element" />
+    <concept id="772f6dcd-8c0d-48f7-869c-908e036f7c8e/1225239603393" name="jetbrains.mps.sampleXML.structure.Text" />
+    <concept id="772f6dcd-8c0d-48f7-869c-908e036f7c8e/1225239603361" name="jetbrains.mps.sampleXML.structure.Attribute" />
+    <property id="772f6dcd-8c0d-48f7-869c-908e036f7c8e/1225239603361/1225239603363" name="value" />
+    <property id="772f6dcd-8c0d-48f7-869c-908e036f7c8e/1225239603393/1225239603394" name="text" />
+    <property id="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001" name="name" />
+    <childRole id="772f6dcd-8c0d-48f7-869c-908e036f7c8e/1225239603385/1225239603387" name="content" />
+    <childRole id="772f6dcd-8c0d-48f7-869c-908e036f7c8e/1225239603382/1225239603384" name="rootElement" />
+    <childRole id="772f6dcd-8c0d-48f7-869c-908e036f7c8e/1225239603385/1225239603386" name="attribute" />
+  </debugInfo>
+  <languages>
+    <use id="772f6dcd-8c0d-48f7-869c-908e036f7c8e" version="-1" index="rinu" />
+    <use id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" version="0" implicit="true" index="asn4" />
+  </languages>
+  <imports>
+    <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
+    <import index="dghb" ref="r:ec0ffc91-3a14-4002-ac57-dd36c5dcf10a(jetbrains.mps.sampleXML.structure)" implicit="true" />
+  </imports>
+  <contents>
+    <node concept="rinu.1225239603382" id="1225239897606" info="ng">
+      <property role="asn4.1169194658468.1169194664001" value="AAA" />
+      <node concept="rinu.1225239603385" id="1225239897607" role="rinu.1225239603382.1225239603384" info="ng">
+        <property role="asn4.1169194658468.1169194664001" value="aaa" />
+        <node concept="rinu.1225239603385" id="1225239905109" role="rinu.1225239603385.1225239603387" info="ng">
+          <property role="asn4.1169194658468.1169194664001" value="asdasd" />
+          <node concept="rinu.1225239603361" id="1225240178066" role="rinu.1225239603385.1225239603386" info="ng">
+            <property role="asn4.1169194658468.1169194664001" value="aaa" />
+            <property role="rinu.1225239603361.1225239603363" value="jkjkljklj" />
+          </node>
+          <node concept="rinu.1225239603393" id="1225240180848" role="rinu.1225239603385.1225239603387" info="ng">
+            <property role="asn4.1169194658468.1169194664001" value="a" />
+            <property role="rinu.1225239603393.1225239603394" value="text" />
+          </node>
+          <node concept="rinu.1225239603385" id="1225240190819" role="rinu.1225239603385.1225239603387" info="ng">
+            <property role="asn4.1169194658468.1169194664001" value="element" />
+          </node>
         </node>
-        <node role="content" roleId="dghb.1225239603387" type="dghb.Text" typeId="dghb.1225239603393" id="1225240180848" nodeInfo="ng">
-          <property name="name" nameId="tpck.1169194664001" value="a" />
-          <property name="text" nameId="dghb.1225239603394" value="text" />
-        </node>
-        <node role="content" roleId="dghb.1225239603387" type="dghb.Element" typeId="dghb.1225239603385" id="1225240190819" nodeInfo="ng">
-          <property name="name" nameId="tpck.1169194664001" value="element" />
-        </node>
-      </node>
-      <node role="content" roleId="dghb.1225239603387" type="dghb.Element" typeId="dghb.1225239603385" id="5211164146775932546" nodeInfo="ng">
-        <property name="name" nameId="tpck.1169194664001" value="asd" />
-        <node role="attribute" roleId="dghb.1225239603386" type="dghb.Attribute" typeId="dghb.1225239603361" id="5211164146775932547" nodeInfo="ng">
-          <property name="name" nameId="tpck.1169194664001" value="asdasd" />
-          <property name="value" nameId="dghb.1225239603363" value="21233123" />
+        <node concept="rinu.1225239603385" id="5211164146775932546" role="rinu.1225239603385.1225239603387" info="ng">
+          <property role="asn4.1169194658468.1169194664001" value="asd" />
+          <node concept="rinu.1225239603361" id="5211164146775932547" role="rinu.1225239603385.1225239603386" info="ng">
+            <property role="asn4.1169194658468.1169194664001" value="asdasd" />
+            <property role="rinu.1225239603361.1225239603363" value="21233123" />
+          </node>
         </node>
       </node>
     </node>
-  </root>
+  </contents>
 </model>
 
