@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="clu76ttb1sk236al1vkt24s0c3zezi2">
-  <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="-aoqr8hwyzn1gt1phtgpxwftwo6ha0xu" />
-  <common hash="clu76ttb1sk236al1vkt24s0c3zezi2" dependsOnNodes="true">
+<dependencies version="2" modelHash="3jwxf64v0z0aaw09tsmlmrn4mqe3tur">
+  <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="-byzd16c9464mzaxq1u6n0ssaly7qydz" />
+  <common hash="3jwxf64v0z0aaw09tsmlmrn4mqe3tur" dependsOnNodes="true">
     <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
   </common>
   <source id="3515521059660696290" name="ReaderStrategy">

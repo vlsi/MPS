@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="51ounmih520v7aaf3031wvcluupq48u">
-  <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" hash="-53rt67n6c8bg7qn5r7z7snc1hbcxlo0" />
+<dependencies version="2" modelHash="-5zka0bc5dokg69vhs4qkqubozmd9ash">
+  <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" hash="-9fyf8ube0aqhy2tpqxm8qrxfi4z6r48" />
   <dep model="r:32f04269-9811-4a1a-a3d2-c0b28ec8365b(jetbrains.mps.execution.util.constraints)" hash="-byxsnz6fjys5ucyoifg80ufvej9k8na" />
-  <dep model="r:7f489494-339f-481c-be61-2af4deb51551(jetbrains.mps.execution.util.behavior)" hash="80hsbhijbf8ahtb7icdqnxthpd8x8i3" />
+  <dep model="r:7f489494-339f-481c-be61-2af4deb51551(jetbrains.mps.execution.util.behavior)" hash="-cque37apvb5yr6miqhtxd57ru67w8z1" />
   <dep model="r:8142d06c-b8f8-4092-a833-7eed9ae12263(jetbrains.mps.execution.util.typesystem)" hash="d50b3u35uqxn3mg12ay5qengtwu76d5" />
-  <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="-aoqr8hwyzn1gt1phtgpxwftwo6ha0xu" />
+  <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="-byzd16c9464mzaxq1u6n0ssaly7qydz" />
   <dep model="r:ead2b261-1ceb-48c7-9051-5cc8b9b183e9(jetbrains.mps.execution.util.editor)" hash="7f5v9gbl2hmkq4quxdeg0ha9czm1w71" />
-  <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="-7vi6o2vv1wkdocz9yt650rota5r2v6a" />
-  <dep model="r:fa713d69-08ea-4732-b1f2-cb07f9e103ef(jetbrains.mps.execution.util.structure)" hash="b95zoa1inbx4ofy9wx98brppua2g26c" />
+  <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="-8tpnzgwrbijeinrlmy2syctrrkkgmqe" />
+  <dep model="r:fa713d69-08ea-4732-b1f2-cb07f9e103ef(jetbrains.mps.execution.util.structure)" hash="5uxnnumpy2q1fw01dq932dub3sdw9jk" />
   <common dependsOnNodes="true">
     <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
     <dep model="r:32f04269-9811-4a1a-a3d2-c0b28ec8365b(jetbrains.mps.execution.util.constraints)" />

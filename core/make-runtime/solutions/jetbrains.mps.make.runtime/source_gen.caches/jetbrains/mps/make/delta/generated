@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="8sj0zhyme753mg39dscyn3r0gotomoo">
-  <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="-aoqr8hwyzn1gt1phtgpxwftwo6ha0xu" />
-  <common hash="8sj0zhyme753mg39dscyn3r0gotomoo" dependsOnNodes="true">
+<dependencies version="2" modelHash="bn1ht8kabxnex51v8h22xp70qqd0kkk">
+  <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="-byzd16c9464mzaxq1u6n0ssaly7qydz" />
+  <common hash="bn1ht8kabxnex51v8h22xp70qqd0kkk" dependsOnNodes="true">
     <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
   </common>
   <source id="1268765481875672245" name="IDelta">

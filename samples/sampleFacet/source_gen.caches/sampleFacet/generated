@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-axs5q2s4j90c9hr0g43lbsrebbou3h4">
-  <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" hash="-53rt67n6c8bg7qn5r7z7snc1hbcxlo0" />
+<dependencies version="2" modelHash="3u5rnbkqpbex1u7l6g8kbcjgv9oqag8">
+  <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" hash="-9fyf8ube0aqhy2tpqxm8qrxfi4z6r48" />
   <dep model="r:27e66384-1be4-449f-9e15-e25da79aa65f(sampleFacet.editor)" hash="9ry768rs7ky1lzla3uq8vf4qhd94tew" />
-  <dep model="r:2e067ce5-0c73-40e5-8ee8-70f504f9cb98(sampleFacet.plugin)" hash="2xpvqnshqj7c18ogw8dbj2jqeq6j3ab" />
+  <dep model="r:2e067ce5-0c73-40e5-8ee8-70f504f9cb98(sampleFacet.plugin)" hash="7js1vrxd3hdlcah2hdvncphxi01cqut" />
   <dep model="r:39f8657b-b535-46e0-8816-0d372df2609d(sampleFacet.typesystem)" hash="73ai7r8r45hyrxcmvme94z47wyqajad" />
-  <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="-aoqr8hwyzn1gt1phtgpxwftwo6ha0xu" />
+  <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="-byzd16c9464mzaxq1u6n0ssaly7qydz" />
   <dep model="r:db8b81de-f10e-4210-8145-1d71b7824d00(sampleFacet.behavior)" hash="-ceff2i9gao57h6qdgie333c19hfzo7l" />
   <dep model="r:ee865879-8e09-4027-8d62-d483a0f0f0d9(sampleFacet.constraints)" hash="6tgbh7ydpab7bue0tqttkejnku0uyry" />
   <dep model="r:ef3bdd93-260b-4a16-89d1-13a87cfa78c9(sampleFacet.structure)" hash="8dzps550voha4qvx2z2umtwdc4k24a0" />
-  <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="-7vi6o2vv1wkdocz9yt650rota5r2v6a" />
+  <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="-8tpnzgwrbijeinrlmy2syctrrkkgmqe" />
   <common dependsOnNodes="true">
     <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
     <dep model="r:27e66384-1be4-449f-9e15-e25da79aa65f(sampleFacet.editor)" />

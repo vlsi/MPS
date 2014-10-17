@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="2vvqpoqqxzxyzu9dz4v69a3c1usugzp">
-  <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" hash="-53rt67n6c8bg7qn5r7z7snc1hbcxlo0" />
+<dependencies version="2" modelHash="-cip8lh9zjds2f66iz8rombhrjrf68r6">
+  <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" hash="-9fyf8ube0aqhy2tpqxm8qrxfi4z6r48" />
   <dep model="r:1ac15270-5dd7-4487-b5dd-b54b735cd330(jetbrains.mps.samples.mindmaps.constraints)" hash="bzvcw2ljjgveahek86kngz4n7ysaapy" />
   <dep model="r:91a2c042-3f07-4aab-ac1d-2c62da638af5(jetbrains.mps.samples.mindmaps.typesystem)" hash="13e8bmwj2pvd656h1u65eveiyx6ceur" />
   <dep model="r:9940e5b3-dd3d-44ad-a9dd-ff43afa4bdfe(jetbrains.mps.samples.mindmaps.behavior)" hash="-6h6cm3tkz6r5tqvv97yg32x4qgk0zzk" />
-  <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="-aoqr8hwyzn1gt1phtgpxwftwo6ha0xu" />
-  <dep model="r:c21673e4-6a17-4077-8632-3ea58685019b(jetbrains.mps.samples.mindmaps.structure)" hash="b595b0p3k47gr5vnhagwh8v2bk0wsoq" />
-  <dep model="r:e9cbc3d8-bcea-4ffe-8042-8e61a2d1bcc9(jetbrains.mps.samples.mindmaps.editor)" hash="855756bflmj952e1056pyv51vn5zjzh" />
-  <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="-7vi6o2vv1wkdocz9yt650rota5r2v6a" />
+  <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="-byzd16c9464mzaxq1u6n0ssaly7qydz" />
+  <dep model="r:c21673e4-6a17-4077-8632-3ea58685019b(jetbrains.mps.samples.mindmaps.structure)" hash="da174qkklkpzy7s4t2gqi5h1ndphp43" />
+  <dep model="r:e9cbc3d8-bcea-4ffe-8042-8e61a2d1bcc9(jetbrains.mps.samples.mindmaps.editor)" hash="-6xeq8x4us9z1t0ta2soxpo2khgq9bcd" />
+  <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="-8tpnzgwrbijeinrlmy2syctrrkkgmqe" />
   <common dependsOnNodes="true">
     <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
     <dep model="r:1ac15270-5dd7-4487-b5dd-b54b735cd330(jetbrains.mps.samples.mindmaps.constraints)" />

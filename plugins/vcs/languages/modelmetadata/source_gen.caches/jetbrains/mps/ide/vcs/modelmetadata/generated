@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="2a1swmif2l66ecvvgrwkgim8ywvyqjy">
-  <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" hash="-53rt67n6c8bg7qn5r7z7snc1hbcxlo0" />
-  <dep model="r:49557b84-7502-4b9b-9724-3895f647c500(jetbrains.mps.ide.vcs.modelmetadata.typesystem)" hash="2u76znlkep2vo5hlcjl6dzfpsx6aje5" />
+<dependencies version="2" modelHash="dbf05qnrl6ehjhv18r2887l60d43h3">
+  <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" hash="-9fyf8ube0aqhy2tpqxm8qrxfi4z6r48" />
+  <dep model="r:49557b84-7502-4b9b-9724-3895f647c500(jetbrains.mps.ide.vcs.modelmetadata.typesystem)" hash="-1orlqlygp26n3g4h41vm0zz7jg3dolu" />
   <dep model="r:6bace024-8d21-4b10-a0fc-81e9abb14b9d(jetbrains.mps.ide.vcs.modelmetadata.behavior)" hash="-5zhg1m3yldsiw0nb030iyy13esmb25e" />
   <dep model="r:80b17fca-896d-42bf-addf-cbec909db537(jetbrains.mps.ide.vcs.modelmetadata.constraints)" hash="-3ezec50wcb91npj2ha4yrcx90cu1lcq" />
-  <dep model="r:adc6b163-e3a1-4d17-80bf-c7e84b5a0628(jetbrains.mps.ide.vcs.modelmetadata.editor)" hash="-3k424kpo7h4mzz9d806ytij5lfzvr8q" />
-  <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="-aoqr8hwyzn1gt1phtgpxwftwo6ha0xu" />
-  <dep model="r:d1664c60-f6de-4b25-a874-54417df516ea(jetbrains.mps.ide.vcs.modelmetadata.structure)" hash="-4dcxc1e5xcj1a727twwopbg6mx4hlfh" />
-  <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="-7vi6o2vv1wkdocz9yt650rota5r2v6a" />
+  <dep model="r:adc6b163-e3a1-4d17-80bf-c7e84b5a0628(jetbrains.mps.ide.vcs.modelmetadata.editor)" hash="-8fj9sxxes9hb6nboyskm6bwuqc1yxi9" />
+  <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="-byzd16c9464mzaxq1u6n0ssaly7qydz" />
+  <dep model="r:d1664c60-f6de-4b25-a874-54417df516ea(jetbrains.mps.ide.vcs.modelmetadata.structure)" hash="-aq9jorxsf89tiozdt8s7r5px7bivtlg" />
+  <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="-8tpnzgwrbijeinrlmy2syctrrkkgmqe" />
   <common dependsOnNodes="true">
     <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
     <dep model="r:49557b84-7502-4b9b-9724-3895f647c500(jetbrains.mps.ide.vcs.modelmetadata.typesystem)" />
