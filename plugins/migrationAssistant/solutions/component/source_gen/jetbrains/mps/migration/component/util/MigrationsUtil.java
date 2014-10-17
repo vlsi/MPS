@@ -51,8 +51,15 @@ public class MigrationsUtil {
     module.validateLanguageVersions();
     List<Tuples._3<SModule, Integer, Integer>> result = ListSequence.fromList(new ArrayList<Tuples._3<SModule, Integer, Integer>>());
     for (SLanguage lang : SetSequence.fromSet(module.getUsedLanguages())) {
-      if (module.getModuleDescriptor().getLanguageVersions().get(lang) != lang.getLanguageVersion()) {
-        ListSequence.fromList(result).addElement(MultiTuple.<SModule,Integer,Integer>from(lang.getSourceModule(), module.getModuleDescriptor().getLanguageVersions().get(lang), as_7hm1hv_a0c0a0a0a0c0c(lang.getSourceModule(), Language.class).getLanguageVersion()));
+      Integer ver = module.getModuleDescriptor().getLanguageVersions().get(lang);
+      if (ver == null) {
+        if (LOG.isEnabledFor(Level.WARN)) {
+          LOG.warn("no version for language " + lang.getQualifiedName() + " in " + module.getModuleName());
+        }
+      } else {
+        if (ver != lang.getLanguageVersion()) {
+          ListSequence.fromList(result).addElement(MultiTuple.<SModule,Integer,Integer>from(lang.getSourceModule(), ver, as_7hm1hv_a0c0a0a0a0a1a2a2(lang.getSourceModule(), Language.class).getLanguageVersion()));
+        }
       }
     }
     return result;
@@ -82,7 +89,7 @@ public class MigrationsUtil {
     });
   }
   protected static Logger LOG = LogManager.getLogger(MigrationsUtil.class);
-  private static <T> T as_7hm1hv_a0c0a0a0a0c0c(Object o, Class<T> type) {
+  private static <T> T as_7hm1hv_a0c0a0a0a0a1a2a2(Object o, Class<T> type) {
     return (type.isInstance(o) ? (T) o : null);
   }
   private static boolean eq_7hm1hv_a0a0a0a0a0a0a0d(Object a, Object b) {
