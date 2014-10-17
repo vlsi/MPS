@@ -26,16 +26,16 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.dataFlow.DataFlowManager" file="DataFlowManager.java">
     <classNode dependClassName="java.lang.Class" />
+    <classNode dependClassName="java.lang.IllegalAccessException" />
     <classNode dependClassName="java.lang.IllegalStateException" />
+    <classNode dependClassName="java.lang.InstantiationException" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="java.util.HashMap" />
     <classNode dependClassName="java.util.Map" />
-    <classNode dependClassName="java.util.Set" />
     <classNode dependClassName="jetbrains.mps.classloading.ClassLoaderManager" />
-    <classNode dependClassName="jetbrains.mps.classloading.MPSClassesListener" />
-    <classNode dependClassName="jetbrains.mps.classloading.MPSClassesListenerAdapter" />
+    <classNode dependClassName="jetbrains.mps.cleanup.CleanupListener" />
+    <classNode dependClassName="jetbrains.mps.cleanup.CleanupManager" />
     <classNode dependClassName="jetbrains.mps.lang.dataFlow.DataFlowBuilder" />
     <classNode dependClassName="jetbrains.mps.lang.dataFlow.DataFlowBuilders" />
     <classNode dependClassName="jetbrains.mps.lang.dataFlow.MPSProgramBuilder" />
@@ -45,11 +45,11 @@
     <classNode dependClassName="jetbrains.mps.smodel.MPSModuleRepository" />
     <classNode dependClassName="jetbrains.mps.smodel.ModuleRepositoryFacade" />
     <classNode dependClassName="jetbrains.mps.util.SNodeOperations" />
+    <classNode dependClassName="org.apache.log4j.Level" />
     <classNode dependClassName="org.apache.log4j.LogManager" />
     <classNode dependClassName="org.apache.log4j.Logger" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
     <classNode extendsClassName="jetbrains.mps.components.CoreComponent" />
   </dependency>
   <dependency className="jetbrains.mps.lang.dataFlow.DataflowBuilderException" file="DataflowBuilderException.java">

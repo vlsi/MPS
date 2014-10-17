@@ -55,7 +55,6 @@ public class ModuleDependenciesTest extends WorkbenchMpsTest {
   @After
   public void afterTest() {
     ModuleRepositoryFacade.getInstance().unregisterModules(OWNER);
-    CleanupManager.getInstance().cleanup();
   }
 
   //------------module depends on solution------------

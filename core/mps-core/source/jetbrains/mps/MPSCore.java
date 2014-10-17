@@ -57,14 +57,18 @@ import jetbrains.mps.util.QueryMethodGenerated;
 import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.validation.ValidationSettings;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
+import org.jetbrains.mps.openapi.module.SRepository;
 
 /**
  * Evgeny Gryaznov, Sep 1, 2010
  */
 public final class MPSCore extends ComponentPlugin {
-
-  public MPSCore() {
-  }
+  private SRepositoryRegistry myRepositoryRegistry;
+  private SModelRepository myModelRepository;
+  private MPSModuleRepository myMPSModuleRepository;
+  private ClassLoaderManager myClassLoaderManager;
+  private CleanupManager myCleanupManager;
+  private LanguageRegistry myLanguageRegistry;
 
   /**
    * @deprecated MPSCore instance is kept by initialization code (which activates the environment)
@@ -91,36 +95,36 @@ public final class MPSCore extends ComponentPlugin {
     init(new FindUsagesManager());
 
     // repositories
-    final SRepositoryRegistry repositoryRegistry = init(new SRepositoryRegistry());
-    SModelRepository modelRepository = init(new SModelRepository());
-    MPSModuleRepository moduleRepository = init(new MPSModuleRepository());
-    GlobalSModelEventsManager globalSModelEventsManager = init(new GlobalSModelEventsManager(modelRepository));
-    ClassLoaderManager classLoaderManager = init(new ClassLoaderManager(moduleRepository));
+    myRepositoryRegistry = init(new SRepositoryRegistry());
+    myModelRepository = init(new SModelRepository());
+    myMPSModuleRepository = init(new MPSModuleRepository());
+    init(new GlobalSModelEventsManager(myModelRepository));
+    myClassLoaderManager = init(new ClassLoaderManager(myMPSModuleRepository));
 
     init(new SModelFileTracker(SRepositoryRegistry.getInstance()));
-    init(new ModuleRepositoryFacade(moduleRepository));
-    init(new ModuleFileTracker(moduleRepository));
-    init(new CleanupManager(classLoaderManager));
+    init(new ModuleRepositoryFacade(myMPSModuleRepository));
+    init(new ModuleFileTracker(myMPSModuleRepository));
+    myCleanupManager = init(new CleanupManager(myClassLoaderManager));
     init(new PathMacros());
-    init(new LibraryInitializer(moduleRepository, classLoaderManager));
-    init(new GlobalScope(moduleRepository, modelRepository));
-    init(new ImmatureReferences(moduleRepository));
+    init(new LibraryInitializer(myMPSModuleRepository, myClassLoaderManager));
+    init(new GlobalScope(myMPSModuleRepository, myModelRepository));
+    init(new ImmatureReferences(myMPSModuleRepository));
 
-    init(new QueryMethodGenerated(classLoaderManager));
-    LanguageRegistry languageRegistry = init(new LanguageRegistry(classLoaderManager));
-    init(new ConceptRegistry(languageRegistry));
-    init(new ExtensionRegistry(classLoaderManager, moduleRepository));
-    init(new LanguageHierarchyCache(moduleRepository));
-    init(new ConceptDescendantsCache(moduleRepository, languageRegistry));
+    init(new QueryMethodGenerated(myClassLoaderManager));
+    myLanguageRegistry = init(new LanguageRegistry(myClassLoaderManager));
+    init(new ConceptRegistry(myLanguageRegistry));
+    init(new ExtensionRegistry(myClassLoaderManager, myMPSModuleRepository));
+    init(new LanguageHierarchyCache(myMPSModuleRepository));
+    init(new ConceptDescendantsCache(myMPSModuleRepository, myLanguageRegistry));
     init(new StructureAspectInterpreted());
-    init(new SModelUtil_new(classLoaderManager, repositoryRegistry));
-    init(new CachesManager(classLoaderManager, modelRepository));
-    init(new LanguageDescriptorModelProvider(moduleRepository));
-    init(new ProjectStructureModule(moduleRepository, modelRepository));
-    init(new CopyPasteManager(classLoaderManager));
-    init(new PasteWrappersManager(classLoaderManager));
-    init(new BLDependenciesCache(moduleRepository));
-    init(new DataFlowManager(classLoaderManager, moduleRepository));
+    init(new SModelUtil_new(myClassLoaderManager, myRepositoryRegistry));
+    init(new CachesManager(myClassLoaderManager, myModelRepository));
+    init(new LanguageDescriptorModelProvider(myMPSModuleRepository));
+    init(new ProjectStructureModule(myMPSModuleRepository, myModelRepository));
+    init(new CopyPasteManager(myCleanupManager));
+    init(new PasteWrappersManager(myClassLoaderManager));
+    init(new BLDependenciesCache(myMPSModuleRepository, myCleanupManager));
+    init(new DataFlowManager(myCleanupManager, myMPSModuleRepository));
 
     init(new ResolverComponent());
     init(new CheckersComponent());

@@ -26,10 +26,12 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 
-public class CleanupManager implements CoreComponent{
+public class CleanupManager implements CoreComponent {
   private static CleanupManager INSTANCE;
   private ClassLoaderManager myManager;
   private MPSClassesListener myClassesListener;
+  private final Object myLock = new Object();
+  private List<CleanupListener> myCleanupListeners = new ArrayList<CleanupListener>();
 
   public static CleanupManager getInstance() {
     return INSTANCE;
@@ -38,7 +40,7 @@ public class CleanupManager implements CoreComponent{
   @Override
   public void init() {
     if (INSTANCE != null) {
-      throw new IllegalStateException("double initialization");
+      throw new IllegalStateException("CleanupManager is already initialized");
     }
     myClassesListener = new MPSClassesListenerAdapter() {
       @Override
@@ -46,18 +48,15 @@ public class CleanupManager implements CoreComponent{
         cleanup();
       }
     };
-    myManager.addClassesHandler(myClassesListener);
     INSTANCE = this;
+    myManager.addClassesHandler(myClassesListener);
   }
 
   @Override
   public void dispose() {
-    INSTANCE = null;
     myManager.removeClassesHandler(myClassesListener);
+    INSTANCE = null;
   }
-
-  private final Object myLock = new Object();
-  private List<CleanupListener> myCleanupListeners = new ArrayList<CleanupListener>();
 
   public CleanupManager(ClassLoaderManager manager) {
     myManager = manager;

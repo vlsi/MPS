@@ -65,7 +65,6 @@ public class FileMPSProject extends Project {
       @Override
       public void run() {
         ModuleRepositoryFacade.getInstance().unregisterModules(FileMPSProject.this);
-        CleanupManager.getInstance().cleanup();
       }
     });
   }

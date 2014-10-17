@@ -16,6 +16,7 @@
 package jetbrains.mps.generator.impl.dependencies;
 
 import jetbrains.mps.InternalFlag;
+import jetbrains.mps.cleanup.CleanupManager;
 import jetbrains.mps.generator.GenerationStatus;
 import jetbrains.mps.generator.ModelGenerationStatusListener;
 import jetbrains.mps.generator.ModelGenerationStatusManager;
@@ -57,8 +58,8 @@ public class GenerationDependenciesCache extends BaseModelCache<GenerationDepend
 
   private List<CachePathRedirect> myCachePathRedirects = Collections.synchronizedList(new ArrayList<CachePathRedirect>());
 
-  public GenerationDependenciesCache(SRepository repository, ModelGenerationStatusManager genStatusManager) {
-    super(repository);
+  public GenerationDependenciesCache(SRepository repository, CleanupManager cleanupManager, ModelGenerationStatusManager genStatusManager) {
+    super(repository, cleanupManager);
     myGenStatusManager = genStatusManager;
   }
 
