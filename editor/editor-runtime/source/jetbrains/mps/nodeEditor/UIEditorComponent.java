@@ -15,16 +15,12 @@
  */
 package jetbrains.mps.nodeEditor;
 
-import jetbrains.mps.nodeEditor.cells.EditorCell;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.inspector.InspectorEditorComponent;
 import jetbrains.mps.nodeEditor.selection.SingularSelectionListenerAdapter;
 import jetbrains.mps.openapi.editor.selection.SingularSelection;
-import jetbrains.mps.smodel.event.SModelEvent;
 import org.jetbrains.mps.openapi.module.SRepository;
 
 import javax.swing.KeyStroke;
-import java.util.List;
 
 public class UIEditorComponent extends EditorComponent {
   private InspectorEditorComponent myInspector;
@@ -43,14 +39,6 @@ public class UIEditorComponent extends EditorComponent {
         myInspector.editNode(newSelection.getEditorCell().getSNode());
       }
     });
-  }
-
-  @Override
-  public EditorCell createRootCell(List<SModelEvent> events) {
-    if (getEditedNode() == null) {
-      return new EditorCell_Constant(getEditorContext(), null, "<NO NODE>");
-    }
-    return (EditorCell) getUpdater().updateRootCell(getEditedNode(), events);
   }
 
   @Override

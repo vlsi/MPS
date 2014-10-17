@@ -120,12 +120,9 @@ public abstract class LazyEditableSModelBase extends EditableSModelBase {
 
     if (newModel == getCurrentModelInternal()) return;
     setChanged(false);
-    super.replaceModel(new Runnable() {
-      @Override
-      public void run() {
-        myModel.replaceWith(newModel, state);
-      }
-    });
+    final SModel oldModel = getCurrentModelInternal();
+    myModel.replaceWith(newModel, state);
+    replaceModelAndFireEvent(oldModel, newModel);
   }
 
   @Override

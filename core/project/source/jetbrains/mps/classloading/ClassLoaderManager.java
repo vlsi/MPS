@@ -20,7 +20,6 @@ import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.internal.collections.runtime.IterableUtils;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.progress.EmptyProgressMonitor;
-import jetbrains.mps.project.SModelRootClassesListener;
 import jetbrains.mps.project.SModuleOperations;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.ModelAccess;
@@ -105,7 +104,6 @@ public class ClassLoaderManager implements CoreComponent {
     ModelAccess.assertLegalWrite();
     if (INSTANCE != null) throw new IllegalStateException("ClassLoaderManager is already initialized");
     INSTANCE = this;
-    addClassesHandler(SModelRootClassesListener.INSTANCE);
     myClassLoadersHolder.init(this);
     myClassLoadingChecker.init(this);
     myRepositoryListener.init(this);
@@ -120,7 +118,6 @@ public class ClassLoaderManager implements CoreComponent {
   @Override
   public void dispose() {
     ModelAccess.assertLegalWrite();
-    removeClassesHandler(SModelRootClassesListener.INSTANCE);
     myRepositoryListener.dispose();
     myClassLoadingChecker.dispose(this);
     myClassLoadersHolder.dispose();
@@ -319,14 +316,13 @@ public class ClassLoaderManager implements CoreComponent {
   }
 
   /**
-   * @deprecated just call #getClass, it will create right class loaders automatically.
+   * NOTE: It is recommended to use lazy loading (just #getClass, it will create the right class loaders automatically)
+   * Although you can use the old listening mechanism {@link MPSClassesListener}
    */
-  @Deprecated
   public void addClassesHandler(MPSClassesListener handler) {
     myBroadCaster.addClassesHandler(handler);
   }
 
-  @Deprecated
   public void removeClassesHandler(MPSClassesListener handler) {
     myBroadCaster.removeClassesHandler(handler);
   }

@@ -22,6 +22,7 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.module.SRepository;
+import org.jetbrains.mps.openapi.module.SRepositoryAttachListener;
 import org.jetbrains.mps.openapi.module.SRepositoryContentAdapter;
 import org.jetbrains.mps.openapi.module.SRepositoryListener;
 
@@ -44,15 +45,16 @@ public class SRepositoryEventsDispatcher {
 
   public final void addRepositoryListener(SRepositoryListener listener) {
     myListeners.add(listener);
-    //FIXME: that does not look good, must do it at SRepositoryContentAdapter
-    if (listener instanceof SRepositoryContentAdapter) {
-      ((SRepositoryContentAdapter) listener).startListening(myRepository);
+    if (listener instanceof SRepositoryAttachListener) {
+      myRepository.getModelAccess().checkReadAccess();
+      ((SRepositoryAttachListener) listener).startListening(myRepository);
     }
   }
 
   public final void removeRepositoryListener(SRepositoryListener listener) {
-    if (listener instanceof SRepositoryContentAdapter) {
-      ((SRepositoryContentAdapter) listener).stopListening(myRepository);
+    if (listener instanceof SRepositoryAttachListener) {
+      myRepository.getModelAccess().checkReadAccess();
+      ((SRepositoryAttachListener) listener).stopListening(myRepository);
     }
     myListeners.remove(listener);
   }

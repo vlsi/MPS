@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.smodel.action;
 
+import jetbrains.mps.editor.runtime.commands.EditorCommandAdapter;
 import jetbrains.mps.nodeEditor.cells.CellFinderUtil;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
@@ -185,7 +186,7 @@ public abstract class AbstractNodeSubstituteAction implements SubstituteAction {
     };
 
     if (context != null) {
-      context.executeCommand(runnable);
+      context.getRepository().getModelAccess().executeCommand(new EditorCommandAdapter(runnable, context));
     } else {
       runnable.run();
     }

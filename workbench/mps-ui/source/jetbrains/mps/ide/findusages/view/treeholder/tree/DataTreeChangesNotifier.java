@@ -34,7 +34,7 @@ import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.module.SModuleReference;
-import org.jetbrains.mps.openapi.module.SRepositoryAdapter;
+import org.jetbrains.mps.openapi.module.SRepositoryListenerBase;
 
 import java.util.HashSet;
 import java.util.List;
@@ -136,7 +136,7 @@ public class DataTreeChangesNotifier {
     }
   }
 
-  private class MyModuleRepositoryListener extends SRepositoryAdapter {
+  private class MyModuleRepositoryListener extends SRepositoryListenerBase {
     @Override
     public void moduleRemoved(@NotNull SModuleReference module) {
       if (!myModules.contains(module)) return;

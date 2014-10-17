@@ -151,7 +151,6 @@
       <modulePath path="$PROJECT_DIR$/languages/languageDesign/smodel/solutions/typetest/smodelLanguage_typetest.msd" folder="core.languages.smodel" />
       <modulePath path="$PROJECT_DIR$/languages/languageDesign/structure/jetbrains.mps.lang.structure.mpl" folder="core.aspects.structure" />
       <modulePath path="$PROJECT_DIR$/languages/languageDesign/structure/solutions/pluginSolution/jetbrains.mps.lang.structure.pluginSolution.msd" folder="core.aspects.structure" />
-      <modulePath path="$PROJECT_DIR$/languages/languageDesign/stubs/jetbrains.mps.lang.stubs.mpl" folder="core.aspects.stubs" />
       <modulePath path="$PROJECT_DIR$/languages/languageDesign/textGen/jetbrains.mps.lang.textGen.mpl" folder="core.aspects.textgen" />
       <modulePath path="$PROJECT_DIR$/languages/languageDesign/traceable.operations/jetbrains.mps.lang.traceable.operations.mpl" folder="core.languages.smodel" />
       <modulePath path="$PROJECT_DIR$/languages/languageDesign/traceable.operations/tests/jetbrains.mps.lang.traceable.operations.test.msd" folder="core.languages.smodel" />

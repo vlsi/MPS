@@ -18,7 +18,8 @@ package org.jetbrains.mps.openapi.module;
 import org.jetbrains.annotations.NotNull;
 
 /**
- * A convenient empty implementation of the SRepositoryListener interface.
+ * @deprecated Bad name (not an adapter for a repository), use {@link org.jetbrains.mps.openapi.module.SRepositoryListenerBase} instead.
+ * Will be removed after 3.2.
  */
 public class SRepositoryAdapter implements SRepositoryListener {
 

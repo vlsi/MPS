@@ -28,8 +28,8 @@ import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.module.SModule;
-import org.jetbrains.mps.openapi.module.SRepositoryAdapter;
 import org.jetbrains.mps.openapi.module.SRepositoryListener;
+import org.jetbrains.mps.openapi.module.SRepositoryListenerBase;
 
 import java.util.Collection;
 import java.util.HashMap;
@@ -191,7 +191,7 @@ public class ExtensionRegistry extends BaseExtensionRegistry implements CoreComp
     return null;
   }
 
-  private class MyModuleRepositoryAdapter extends SRepositoryAdapter {
+  private class MyModuleRepositoryAdapter extends SRepositoryListenerBase {
     @Override
     public void moduleAdded(@NotNull SModule module) {
       // awaiting next classes reload?

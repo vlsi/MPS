@@ -5,12 +5,13 @@ package jetbrains.mps.lang.editor.behavior;
 import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
 import jetbrains.mps.baseLanguage.behavior.IValidIdentifier_BehaviorDescriptor;
 import jetbrains.mps.lang.structure.behavior.IConceptAspect_BehaviorDescriptor;
+import jetbrains.mps.lang.core.behavior.InterfacePart_BehaviorDescriptor;
 import java.util.List;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.structure.behavior.IConceptAspect_Behavior;
 import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
 
-public class CellActionMapDeclaration_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements IValidIdentifier_BehaviorDescriptor, IConceptAspect_BehaviorDescriptor {
+public class CellActionMapDeclaration_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements IValidIdentifier_BehaviorDescriptor, IConceptAspect_BehaviorDescriptor, InterfacePart_BehaviorDescriptor {
   public CellActionMapDeclaration_BehaviorDescriptor() {
   }
   public List<SNode> virtual_getBaseConceptCollection_5270353093116013036(SNode thisNode) {

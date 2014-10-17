@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2014 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,9 +21,9 @@ import com.intellij.openapi.components.ApplicationComponent;
 import com.intellij.openapi.extensions.PluginId;
 import jetbrains.mps.LanguageLibrary;
 import jetbrains.mps.library.LibraryInitializer;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 import jetbrains.mps.smodel.ModelAccess;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.HashSet;
@@ -54,10 +54,11 @@ public class PluginLibrariesContributor implements LibraryContributor, Applicati
     return result;
   }
 
+  // FIXME this code duplicates BootstrapLibContributor, need a better approach to trigger update of LibraryInitializer
   @Override
   public void initComponent() {
     LibraryInitializer.getInstance().addContributor(this);
-    ModelAccess.instance().runWriteAction(new Runnable() {
+    ModelAccess.instance().runWriteInEDT(new Runnable() {
       @Override
       public void run() {
         LibraryInitializer.getInstance().update(true);

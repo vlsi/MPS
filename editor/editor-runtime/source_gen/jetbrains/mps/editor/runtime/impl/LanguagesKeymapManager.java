@@ -31,7 +31,7 @@ import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import com.intellij.openapi.application.ApplicationManager;
-import org.jetbrains.mps.openapi.module.SRepositoryAdapter;
+import org.jetbrains.mps.openapi.module.SRepositoryListenerBase;
 
 public class LanguagesKeymapManager implements ApplicationComponent {
   private static final Logger LOG = LogManager.getLogger(LanguagesKeymapManager.class);
@@ -115,7 +115,7 @@ public class LanguagesKeymapManager implements ApplicationComponent {
   public static LanguagesKeymapManager getInstance() {
     return ApplicationManager.getApplication().getComponent(LanguagesKeymapManager.class);
   }
-  private class MyModuleRepositoryListener extends SRepositoryAdapter {
+  private class MyModuleRepositoryListener extends SRepositoryListenerBase {
     private MyModuleRepositoryListener() {
     }
     @Override

@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2013 JetBrains s.r.o.
+ * Copyright 2003-2014 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -29,7 +29,14 @@ import static org.jetbrains.mps.openapi.module.FacetsFacade.FacetFactory;
  */
 public class MPSWorkbenchComponents implements ApplicationComponent {
 
+  private final MPSCoreComponents myCoreComponent;
+
   public MPSWorkbenchComponents(MPSCoreComponents components) {
+    myCoreComponent = components;
+  }
+
+  public MPSCoreComponents getMPSCoreComponents() {
+    return myCoreComponent;
   }
 
   @Override

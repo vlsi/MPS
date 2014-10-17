@@ -19,15 +19,17 @@ import jetbrains.mps.smodel.Language;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.EditableSModel;
 import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.model.SModel.Problem;
 import org.jetbrains.mps.openapi.model.SModelChangeListener;
+import org.jetbrains.mps.openapi.model.SModelListener;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SReference;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.module.SRepository;
-import org.jetbrains.mps.openapi.module.SRepositoryAdapter;
-import org.jetbrains.mps.openapi.module.SRepositoryListener;
+import org.jetbrains.mps.openapi.module.SRepositoryAttachListener;
+import org.jetbrains.mps.openapi.module.SRepositoryListenerBase;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -52,7 +54,7 @@ import java.util.Set;
  * </pre>
  * @author Artem Tikhomirov
  */
-public final class StructureAspectChangeTracker extends SRepositoryAdapter implements SRepositoryListener, SModelChangeListener {
+public final class StructureAspectChangeTracker extends SRepositoryListenerBase implements SRepositoryAttachListener, SModelChangeListener, SModelListener {
   // I assume model changes come in a single thread, as well as commandFinished notification, and do not care to synchronize
   private final Set<SModelReference> myChangedModels = new HashSet<SModelReference>();
   private final Set<SModuleReference> myChangedModules = new HashSet<SModuleReference>();
@@ -67,20 +69,19 @@ public final class StructureAspectChangeTracker extends SRepositoryAdapter imple
     myModuleListener = l2;
   }
 
-  public void attachTo(SRepository repository) {
+  @Override
+  public void startListening(SRepository repository) {
     for (SModule module : repository.getModules()) {
       startListening(module);
     }
-    repository.addRepositoryListener(this);
   }
 
-  public void detachFrom(SRepository repository) {
+  @Override
+  public void stopListening(SRepository repository) {
     for (SModule module : repository.getModules()) {
       stopListening(module);
     }
-    repository.removeRepositoryListener(this);
   }
-
 
   private boolean isLanguageAndCanChange(SModule module) {
     return !module.isReadOnly() && module instanceof Language;
@@ -91,9 +92,13 @@ public final class StructureAspectChangeTracker extends SRepositoryAdapter imple
       return;
     }
     final SModel structureModel = ((Language) module).getStructureModelDescriptor();
+    if (structureModel == null) {
+      return;
+    }
     if (structureModel instanceof EditableSModel) {
       ((EditableSModel) structureModel).addChangeListener(this);
     }
+    structureModel.addModelListener(this);
   }
 
   private void stopListening(SModule module) {
@@ -101,9 +106,13 @@ public final class StructureAspectChangeTracker extends SRepositoryAdapter imple
       return;
     }
     final SModel structureModel = ((Language) module).getStructureModelDescriptor();
+    if (structureModel == null) {
+      return;
+    }
     if (structureModel instanceof EditableSModel) {
       ((EditableSModel) structureModel).removeChangeListener(this);
     }
+    structureModel.removeModelListener(this);
   }
 
   @Override
@@ -151,6 +160,47 @@ public final class StructureAspectChangeTracker extends SRepositoryAdapter imple
   public void commandFinished(SRepository repository) {
     fireStructureAspectChanged();
   }
+
+  //
+  // SModelListener - care about model unload/replace, fire structure aspect changed event right away
+  //
+
+  @Override
+  public void modelLoaded(SModel model, boolean partially) {
+    // no-op
+  }
+
+  @Override
+  public void modelReplaced(SModel model) {
+    structureModelChanged(model);
+    fireStructureAspectChanged();
+  }
+
+  @Override
+  public void modelUnloaded(SModel model) {
+    structureModelChanged(model);
+    fireStructureAspectChanged();
+  }
+
+  @Override
+  public void modelSaved(SModel model) {
+    // no-op
+  }
+
+  @Override
+  public void conflictDetected(SModel model) {
+    // no-op
+  }
+
+  @Override
+  public void problemsDetected(SModel model, Iterable<Problem> problems) {
+    // no-op
+  }
+
+  //
+  // SModelListener
+  //
+
 
   private void fireStructureAspectChanged() {
     if (!myChangedModels.isEmpty()) {

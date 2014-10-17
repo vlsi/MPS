@@ -29,7 +29,7 @@ import org.jetbrains.mps.openapi.model.SReference;
  * In addition it tracks all objects (modules, models and nodes) as they come and leave the repository.
  */
 public class SRepositoryContentAdapter extends SModuleAdapter implements SModelChangeListener, SModelAccessListener,
-    SModelListener, SModuleListener, SRepositoryListener {
+    SModelListener, SModuleListener, SRepositoryListener, SRepositoryAttachListener {
 
   protected SRepositoryContentAdapter() {
   }
@@ -40,17 +40,19 @@ public class SRepositoryContentAdapter extends SModuleAdapter implements SModelC
     repository.addRepositoryListener(this);
   }
 
+  public void unsubscribeFrom(SRepository repository) {
+    repository.getModelAccess().checkReadAccess();
+    repository.removeRepositoryListener(this);
+  }
+
+  @Override
   public void startListening(SRepository repository) {
     for (SModule module : repository.getModules()) {
       startListening(module);
     }
   }
 
-  public void unsubscribeFrom(SRepository repository) {
-    repository.getModelAccess().checkReadAccess();
-    repository.removeRepositoryListener(this);
-  }
-
+  @Override
   public void stopListening(SRepository repository) {
     for (SModule module : repository.getModules()) {
       stopListening(module);
