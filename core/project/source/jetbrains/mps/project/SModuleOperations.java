@@ -224,7 +224,7 @@ public class SModuleOperations {
   }
 
   /**
-   * Reads module from file and reloads its class loader
+   * Reads module from file and reloads it
    */
   public static void reloadFromDisk(AbstractModule module) {
     ModelAccess.assertLegalWrite();
