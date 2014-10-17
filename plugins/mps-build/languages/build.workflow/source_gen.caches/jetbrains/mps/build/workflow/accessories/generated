@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-b7uc8zn9s21moznq6gl69vj86eo9fz">
-  <dep model="r:d8d06a40-eb90-4ad9-a679-19e3fc235859(jetbrains.mps.build.workflow.generator.template.main@generator)" hash="-2guiet2wf96ttkc55cea84uaqji2aiv" />
-  <common hash="-703nsppkmk939uwk1ummk730vb33l2n" />
-  <source id="7306485738221408314" name="java" hash="-3o1fj8w6vkbnizgrgze9hkd47xwogmm">
+<dependencies version="2" modelHash="-72s3nxkfgc2c62gn8gbk3qdv1xjozo3">
+  <dep model="r:d8d06a40-eb90-4ad9-a679-19e3fc235859(jetbrains.mps.build.workflow.generator.template.main@generator)" hash="39wwzmeg5ijekf7kfixg8iosik1c6ce" />
+  <common hash="-72s3nxkfgc2c62gn8gbk3qdv1xjozo3" />
+  <source id="7306485738221408314" name="java">
     <dep root="7306485738221408315" />
     <dep model="r:d8d06a40-eb90-4ad9-a679-19e3fc235859(jetbrains.mps.build.workflow.generator.template.main@generator)" />
     <file name="java" />
   </source>
-  <source id="7306485738221408315" name="common" hash="-7sjy5m4mlhxpupw3b7w55vf84xaqero">
+  <source id="7306485738221408315" name="common">
     <dep model="r:d8d06a40-eb90-4ad9-a679-19e3fc235859(jetbrains.mps.build.workflow.generator.template.main@generator)" />
     <file name="common" />
   </source>

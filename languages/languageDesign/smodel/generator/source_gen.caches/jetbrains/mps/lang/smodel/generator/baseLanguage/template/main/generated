@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-1z3361kpzl7vzkkqivv1k2cpu6lfdbi">
+<dependencies version="2" modelHash="bn57e82yda86jwtmt721s8tttc16yrq">
   <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
   <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
   <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
@@ -12,26 +12,26 @@
   <dep model="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.typesystem.inference(MPS.Core/jetbrains.mps.typesystem.inference@java_stub)" />
   <dep model="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.util(MPS.Core/jetbrains.mps.util@java_stub)" />
   <dep model="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)" />
-  <dep model="r:00000000-0000-4000-0000-011c89590282(jetbrains.mps.lang.core.behavior)" hash="-e9d5nh0v10iyyec2hlwv9sastebu16m" />
-  <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="-2hubvwh7bwismm0eld02cqmdefvj5by" />
-  <dep model="r:00000000-0000-4000-0000-011c8959028b(jetbrains.mps.lang.structure.behavior)" hash="-cp90xqjcai867ueevcixh6300lkgpj1" />
-  <dep model="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" hash="-9ldgxz9rhq8ml7m0oicwqjga5mmtyef" />
-  <dep model="r:00000000-0000-4000-0000-011c895902b7(jetbrains.mps.lang.typesystem.generator.baseLanguage.template.main@generator)" hash="ap3jfyglz3p6riq1l0hcn05adforip3" />
-  <dep model="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)" hash="-ea32iv3pfnifz5jli60lv04g3n5rkoc" />
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-7vgk3jafz630zooccect8piiihx2bnu" />
-  <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" hash="-2sqpydigz7vryaerubh22j78l4l08jz" />
-  <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" hash="fgqypvsxmg86e28lt26xyps4tf5i1v" />
-  <dep model="r:00000000-0000-4000-0000-011c895902f4(jetbrains.mps.lang.generator.generationContext.generator.baseLanguage.template.main@generator)" hash="-43ufz5s8wlb1b2u3nch8m3bnosgxrth" />
-  <dep model="r:00000000-0000-4000-0000-011c895902fa(jetbrains.mps.lang.smodel.behavior)" hash="6drdcdxswtgamwb061gyd3jy4efzjg4" />
-  <dep model="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" hash="-7hehm2af2yfmmbvuk9w60pbuly8kubj" />
-  <dep model="r:00000000-0000-4000-0000-011c89590302(jetbrains.mps.lang.smodel.generator.baseLanguage.util)" hash="-c61o6o5b19nj6wyfifl2yv664pf9gkg" />
-  <dep model="r:3270011d-8b2d-4938-8dff-d256a759e017(jetbrains.mps.lang.behavior.structure)" hash="-60ddqw73cp0h65xquipjtgfyk93182x" />
-  <dep model="r:a91e42c5-728b-4866-86c4-d97454f4aee4(jetbrains.mps.lang.behavior.behavior)" hash="ajat84c12z2b4b2sbfrlezyscfr1e4w" />
-  <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="d987foka3qddszg3k3yjss0jaslj9i" />
-  <dep model="r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)" hash="-3v2j1dmdnreus232u87z8v47gc23d87" />
-  <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="8cdjk2e5d2y2u9lult1ptgxxrttxv07" />
-  <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" hash="5g3rtdo35mi5yfu1kii2pegdk4kei4n" />
-  <common hash="9js50zeijmahb2uregel2fyds9pjgtb" dependsOnNodes="true">
+  <dep model="r:00000000-0000-4000-0000-011c89590282(jetbrains.mps.lang.core.behavior)" hash="-8trodvifhc63lr70l0scvwpnu9x9njm" />
+  <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="asr5cx3a2t742wnhd54bmw5nnorf27b" />
+  <dep model="r:00000000-0000-4000-0000-011c8959028b(jetbrains.mps.lang.structure.behavior)" hash="-8wbx42tb8ktzwtrvwpuonuh8dgf5639" />
+  <dep model="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" hash="51czmcvmqguwso03bswxptnnv1cngvj" />
+  <dep model="r:00000000-0000-4000-0000-011c895902b7(jetbrains.mps.lang.typesystem.generator.baseLanguage.template.main@generator)" hash="-2bkayq3nivejsq2zvt17n703bz2h4h9" />
+  <dep model="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)" hash="-ewm47bzchbp1yzirk6mqkfcua6qvyl6" />
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="detd1ziqskg7dbnc0pibtezhcafegwq" />
+  <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" hash="-53rt67n6c8bg7qn5r7z7snc1hbcxlo0" />
+  <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" hash="894wkkcyd32px804ahatxk90ugc52ly" />
+  <dep model="r:00000000-0000-4000-0000-011c895902f4(jetbrains.mps.lang.generator.generationContext.generator.baseLanguage.template.main@generator)" hash="4gmi3e4z9e2bko2e9ttlclxsbpk06hf" />
+  <dep model="r:00000000-0000-4000-0000-011c895902fa(jetbrains.mps.lang.smodel.behavior)" hash="2brg0i5smrc1n510bvh5gljytaol3ed" />
+  <dep model="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" hash="-4al4car2mu3o6enm2qyxoobwq5qfm1z" />
+  <dep model="r:00000000-0000-4000-0000-011c89590302(jetbrains.mps.lang.smodel.generator.baseLanguage.util)" hash="6m8bd829w6ouoy755im2byx9z113dqs" />
+  <dep model="r:3270011d-8b2d-4938-8dff-d256a759e017(jetbrains.mps.lang.behavior.structure)" hash="-34e5ra2ono93v6xgys6yemqjsyv3q68" />
+  <dep model="r:a91e42c5-728b-4866-86c4-d97454f4aee4(jetbrains.mps.lang.behavior.behavior)" hash="ebhzp599abg27at43czmlotep4leqxg" />
+  <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="-aoqr8hwyzn1gt1phtgpxwftwo6ha0xu" />
+  <dep model="r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)" hash="ciooks7vd9q22s8xs5h06dqughl3rvl" />
+  <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="-7vi6o2vv1wkdocz9yt650rota5r2v6a" />
+  <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" hash="38r3raexgu59nqkszt3w5pcueyx37lt" />
+  <common hash="bn57e82yda86jwtmt721s8tttc16yrq" dependsOnNodes="true">
     <dep root="1139186732963" />
     <dep root="1139187530309" />
     <dep root="1139275804866" />
@@ -147,90 +147,90 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="QueriesGenerated.java" />
   </common>
-  <source id="1139186732963" name="mc_main" hash="-9szbip19kkgxyhacr2pshjztwbbs52h">
+  <source id="1139186732963" name="mc_main">
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
-  <source id="1139187530309" name="mc_property_operations" hash="122hgcjhrt8mpiyhwrgl17lc71uxcpn" />
-  <source id="1139275804866" name="reduce_SPropertyAccess_simple" hash="-aoevk90ega3rtno8lsfltjx7v92b9ne" />
-  <source id="1139337080836" name="reduce_EnumMemberReference_notNull_internalValue" hash="e8vlf3nbuv7z5ri4zkngm0v8l9a2i2x" />
-  <source id="1139337716713" name="reduce_EnumMemberReference_null_internalValue" hash="93yyg96fu796260pu29s4km0iq242ga" />
-  <source id="1139341814904" name="mc_link_operations" hash="-90e06kp9j7qbx3p0efdrscaej04wk9o" />
-  <source id="1139619842725" name="mc_node_operations" hash="-49k6vu044au7229cdtqyo9o8pw0uhnt" />
-  <source id="1139860712752" name="reduce_InsertNewNextSiblingOperation" hash="d1nxixabwm32gwltpnut1qi6tq0mskn" />
-  <source id="1139868534269" name="reduce_ReplaceWithNewOperation" hash="-8khsb9hmtkh9ut16kk7ubw35psf2lfj" />
-  <source id="1140132803080" name="reduce_ReplaceWithAnotherOperation" hash="-63ovi4p2k03z36wqa20qw0vvjm2qcge" />
-  <source id="1143221281255" name="reduce_InsertNewPrevSiblingOperation" hash="6rzi1wru2tijp80e824eib08yss0ln5" />
-  <source id="1143225332667" name="reduce_InsertNextSiblingOperation" hash="-a2t8wnmdp7lip9jk3dhqkjulrqkmvro" />
-  <source id="1143225530636" name="reduce_InsertPrevSiblingOperation" hash="c88ctlf11y3sy1w1eil2zg0gxc3rk1e" />
-  <source id="1143235821620" name="mc_model_operations" hash="-crisnwrpqm8xy56xmlidmaf9w31jcez" />
-  <source id="1143235980693" name="reduce_Model_CreateNewNode" hash="8jvn2irnyp272mylzm7jk55b3b3dzih" />
-  <source id="1143240338758" name="reduce_GetModelOperation" hash="72vo3fexhmtsef6d9cfsw4uptg1seek" />
-  <source id="1143512740044" name="reduce_GetNextSiblingOperation" hash="-ejqy10qo9c0pcq53z0ug34ewx3uh90l" />
-  <source id="1143512764019" name="reduce_GetPrevSiblingOperation" hash="-eohyt9gmrok9s64bpby7xcsg6d6ag2t" />
-  <source id="1144151252418" name="reduce_CopyOperation" hash="952kbm1dgph30ef9v3mw9803rhmcd43" />
-  <source id="1144196353853" name="reduce_IsRoleOperation" hash="-cyog3fsni3zeja557jmt1zrslpel0fo" />
-  <source id="1145572255293" name="reduce_GetNextSiblingsOperation" hash="d4adme25b35p4o0ql9u98ozs0pkqen5" />
-  <source id="1145573188503" name="reduce_GetPrevSiblingsOperation" hash="-9ti567rd1y5jzxkdtcpvptoenddioa5" />
-  <source id="1145573721933" name="reduce_GetAllSiblingsOperation" hash="9d7qzxcy24zre7irhandw66ct6cfhva" />
-  <source id="1146176981592" name="reduce_Property_HasValue_Enum_notNullDefaultValue" hash="7kcpuq4s201j163inlwnbfbd4ms8agw" />
-  <source id="1146178533035" name="reduce_Property_HasValue_Enum_nullDefaultValue" hash="-1uwufkac1n3h942wb7fky04zz7309p6" />
-  <source id="1146249898887" name="reduce_SPropertyAccess_enum" hash="-7rk7003p5mk0zlvl2a09ukb4mw67vx6" />
-  <source id="1146256190196" name="reduce_Property_HasValue_Simple" hash="-dds0jvs759mx7xyqcevqis0ll1xsttr" />
-  <source id="1166648267350" name="reduce_Model_CreateNewRootNode" hash="38p57kkjtttxwq5vmodc3kb4hji8bld" />
-  <source id="1168908126680" name="mc_linklist_operations" hash="dl68g0e04nim366ktl60kmts9r3plxm" />
-  <source id="1171307696664" name="reduce_GetDescendants_noConceptsList" hash="cnprgsqa9s87gj0nj9dbtxwphpa0ib9" />
-  <source id="1171312080424" name="reduce_GetContainingRootOperation" hash="-7ey8s56m9m8pg1g62aju42xbsi8xqkp" />
-  <source id="1171322948481" name="reduce_Model_RootsOperation_hasConcept" hash="6fsrxke6pk1qwz6aj5z9l874ry4ndfp" />
-  <source id="1171323120109" name="reduce_Model_RootsOperation_noConcept" hash="du0sj4d6q3z7s2cahlj2bkoouobs8k9" />
-  <source id="1171324405763" name="reduce_Model_NodesOperation_hasConcept" hash="69wpqxxsfiadlstejkzgyme4dxdqs6y" />
-  <source id="1171324442827" name="reduce_Model_NodesOperation_noConcept" hash="88jdb43jfuum8hm33chkj1ak15y85sk" />
-  <source id="1171415812313" name="reduce_GetAncestor_noConceptList" hash="-8956s1a7yq1mn6fd2gecv85u9cu252k" />
-  <source id="1171415959992" name="reduce_GetAncestor_whereConceptInList" hash="-mwn47k6ld656fw0k00k4mq4cbtsfjz" />
-  <source id="1171501128990" name="reduce_GetChildrenOperation_noLinkQualifier" hash="3kfkz4dlqy46o5jbb327iij9xnbo5li" />
-  <source id="1171999358177" name="reduce_IsNullOperation" hash="em5cmwxrdbd11lh27xscvu8y2g9vpby" />
-  <source id="1172008524513" name="reduce_IsNotNullOperation" hash="-eo79rknvzj60vfl4dn9qtde6yhcx4tn" />
-  <source id="1172323346325" name="reduce_GetConceptOperation" hash="-c2w67gz48t196zouretew3sy6x73nik" />
-  <source id="1172328557997" name="mc_concept_operations" hash="2xbvsbo8iye693fpkc43fa7waep5zkq" />
-  <source id="1173119356571" name="reduce_GetDescendants_whereConceptInList" hash="6rgjmahrkl647zazcly3uakou40hcyb" />
-  <source id="1173123173263" name="reduce_GetAncestors_noConceptsList" hash="-7n19garzcihe2ygek35nftion6ngezw" />
-  <source id="1173123284724" name="reduce_GetAncestors_whereConceptInList" hash="1hp9ntrmjonp12mmmy40uauzz67zfpc" />
-  <source id="1176109882192" name="reduce_Model_RootsIncludingImportedOperation_hasConcept" hash="-dgqsgo03a3je0f69dssqadt0rakybl9" />
-  <source id="1176109959275" name="reduce_Model_RootsIncludingImportedOperation_noConcept" hash="-er3626hq8j8sfv08ly2b44s4ktsjo0h" />
-  <source id="1179168430704" name="reduce_GetIndexInParentOperation" hash="-e3wa8yvdiugr0chb6jz2ao73ndtyigf" />
-  <source id="1179411798670" name="reduce_ConceptMethodCall_NonVirtual" hash="4dyzupsgjs3jd3t4835jevx82o7hlyk" />
-  <source id="1181945881357" name="reduce_GenericNewExpression_with_SNodeCreator" hash="-6m2x3ylp9wrvpmtjdj1tr1v203u8jqg" />
-  <source id="1181950938878" name="reduce_Concept_NewInstance" hash="8tvs63f9n698c8fteqi06mcdun0zbzu" />
-  <source id="1182511526037" name="reduce_Model_NodesIncludingImportedOperation_hasConcept" hash="-37j8wm1g0ixqcu5flm3mrycj9liiucs" />
-  <source id="1182511568451" name="reduce_Model_NodesIncludingImportedOperation_noConcept" hash="4ltn3bpbjfcabagzigz3tq2vi2ra1q0" />
-  <source id="1205432344145" name="switch_toLinkRoleStringExp" hash="3udjz955ove92xy8zjyzv6yxmm2gu9" />
-  <source id="1206551858932" name="mc_assignmentStatement" hash="abwqjfbv240eqn2ffs5sjdp2zbpapvz" />
-  <source id="1206653629433" name="switch_toConceptNameStringExpr" hash="-7b9rtatjeetun1z7cvoqsuid59oy62i" />
-  <source id="1221171785929" name="mc_searchScope_operations" hash="7ayfqhcaru1lslkhuaiercxr6ij8aph" />
-  <source id="1240159487170" name="mc_enum_operations" hash="-4dqvptm10t63pv7lxlxxmuj9s9a5iau" />
-  <source id="1240327119637" name="mc_enums" hash="1854gp0y9ttf9rhwfrlgbw8f5jdv8wp" />
-  <source id="1241008307357" name="reduce_EnumRef" hash="-ah1shk57i9pxbotdwigxkpb4iybk1lg" />
-  <source id="8405512791876077151" name="reduce_SLinkImplicitSelect_Singular" hash="-5z9ni08r24s90as2mig7xtzl0brc2si" />
-  <source id="8405512791876077211" name="reduce_SLinkImplicitSelect_Plural" hash="-8cwbkz5o644df4tw6ba2zvjchuauksq" />
-  <source id="7551657168185584731" name="mc_implicitSelect" hash="-2ys3d9yo5faupzi8qse4ev5ruulow7k" />
-  <source id="5692182839348358131" name="mc_reflection" hash="chvqte0tuxbanj9fx725gsxg5ao1yhi" />
-  <source id="5079980551111235342" name="switch_toLinkDeclaration" hash="s5jke13ioq6vr57zkz1om9xgbhs4y5" />
-  <source id="6119287946611399777" name="reduce_GetChildrenOperation_whereLinkQualifier" hash="-evbev5dzahfd335p4rkjpxqfmt3f6i1" />
-  <source id="4357968816427529264" name="reduce_CheckedModuleReference" hash="ds6cvrzcoz4vx72k94tfmqu8pspq995" />
-  <source id="2853323645193762342" name="reduce_ConceptMethodCall_Reflection" hash="-5vqfdld51vn78h0pp7y0ltick48lqok" />
-  <source id="1627366655853340206" name="reduce_GetAncestor_noConceptList_SameML" hash="-7bfko68grnmw3aioavxioz5y21vabo2" />
-  <source id="1627366655853340240" name="reduce_GetAncestor_whereConceptInList_SameML" hash="-epy3uvfj06wed29pvh3nedodarf7jcz" />
-  <source id="1883223317721107150" name="reduce_IfInstanceOfStatement" hash="-94ccjpjd32ntbaqb0tw33ou28k38lny" />
-  <source id="6407023681583038100" name="mc_attribute_access" hash="8aiuvyx0iuer7c3hd7ubnyjilra956f" />
-  <source id="6407023681583040708" name="reduce_AbstractConceptDeclaration" hash="-8caek693topg9uyg0z2pm6ozwxbkeow" />
-  <source id="6407023681583040746" name="switch_ILinkQualifier" hash="2k7yk0o4o659rfojv0s01rvlsypfs2o" />
-  <source id="6407023681583040763" name="reduce_LinkDeclaration" hash="-1bmij8x2xy5q6m7hr8fwyet5g5yc9ia" />
-  <source id="6407023681583040924" name="reduce_PropertyDeclaration" hash="bprsg4gna43czewxwkr1g7dxzyl5jjy" />
-  <source id="6407023681583040956" name="switch_IPropertyQualifier" hash="8qvmmvb46rwz2lfhna0z4j0zfhvghwe" />
-  <source id="4040588429969066518" name="reduce_ModuleReferenceExpression" hash="6d4dw4zsitwe4t889ku13aflk3gic80" />
-  <source id="4040588429969069954" name="reduce_LanguageReferenceExpression" hash="al2pzovnlhz3b7bol14e9d1jxtd1r57" />
-  <source id="7552281371882288144" name="mc_concept_method_call" hash="pk6tgeux6mu3r496zpwdqs9wcnv01r" />
-  <source id="1717381292179408189" name="mc_concept_switch" hash="cn39zcadevrp68b3a1icm3dw9tf8c1j" />
-  <source id="4693937538534631146" name="mc_sequence_operations" hash="8600iaaiunisx2rvife24q88fbbl1y2" />
-  <source id="2837022116960087580" name="reduce_OperationParamConcept" hash="-eie39omxbm92m91iwet9igho9pi5gv1" />
+  <source id="1139187530309" name="mc_property_operations" />
+  <source id="1139275804866" name="reduce_SPropertyAccess_simple" />
+  <source id="1139337080836" name="reduce_EnumMemberReference_notNull_internalValue" />
+  <source id="1139337716713" name="reduce_EnumMemberReference_null_internalValue" />
+  <source id="1139341814904" name="mc_link_operations" />
+  <source id="1139619842725" name="mc_node_operations" />
+  <source id="1139860712752" name="reduce_InsertNewNextSiblingOperation" />
+  <source id="1139868534269" name="reduce_ReplaceWithNewOperation" />
+  <source id="1140132803080" name="reduce_ReplaceWithAnotherOperation" />
+  <source id="1143221281255" name="reduce_InsertNewPrevSiblingOperation" />
+  <source id="1143225332667" name="reduce_InsertNextSiblingOperation" />
+  <source id="1143225530636" name="reduce_InsertPrevSiblingOperation" />
+  <source id="1143235821620" name="mc_model_operations" />
+  <source id="1143235980693" name="reduce_Model_CreateNewNode" />
+  <source id="1143240338758" name="reduce_GetModelOperation" />
+  <source id="1143512740044" name="reduce_GetNextSiblingOperation" />
+  <source id="1143512764019" name="reduce_GetPrevSiblingOperation" />
+  <source id="1144151252418" name="reduce_CopyOperation" />
+  <source id="1144196353853" name="reduce_IsRoleOperation" />
+  <source id="1145572255293" name="reduce_GetNextSiblingsOperation" />
+  <source id="1145573188503" name="reduce_GetPrevSiblingsOperation" />
+  <source id="1145573721933" name="reduce_GetAllSiblingsOperation" />
+  <source id="1146176981592" name="reduce_Property_HasValue_Enum_notNullDefaultValue" />
+  <source id="1146178533035" name="reduce_Property_HasValue_Enum_nullDefaultValue" />
+  <source id="1146249898887" name="reduce_SPropertyAccess_enum" />
+  <source id="1146256190196" name="reduce_Property_HasValue_Simple" />
+  <source id="1166648267350" name="reduce_Model_CreateNewRootNode" />
+  <source id="1168908126680" name="mc_linklist_operations" />
+  <source id="1171307696664" name="reduce_GetDescendants_noConceptsList" />
+  <source id="1171312080424" name="reduce_GetContainingRootOperation" />
+  <source id="1171322948481" name="reduce_Model_RootsOperation_hasConcept" />
+  <source id="1171323120109" name="reduce_Model_RootsOperation_noConcept" />
+  <source id="1171324405763" name="reduce_Model_NodesOperation_hasConcept" />
+  <source id="1171324442827" name="reduce_Model_NodesOperation_noConcept" />
+  <source id="1171415812313" name="reduce_GetAncestor_noConceptList" />
+  <source id="1171415959992" name="reduce_GetAncestor_whereConceptInList" />
+  <source id="1171501128990" name="reduce_GetChildrenOperation_noLinkQualifier" />
+  <source id="1171999358177" name="reduce_IsNullOperation" />
+  <source id="1172008524513" name="reduce_IsNotNullOperation" />
+  <source id="1172323346325" name="reduce_GetConceptOperation" />
+  <source id="1172328557997" name="mc_concept_operations" />
+  <source id="1173119356571" name="reduce_GetDescendants_whereConceptInList" />
+  <source id="1173123173263" name="reduce_GetAncestors_noConceptsList" />
+  <source id="1173123284724" name="reduce_GetAncestors_whereConceptInList" />
+  <source id="1176109882192" name="reduce_Model_RootsIncludingImportedOperation_hasConcept" />
+  <source id="1176109959275" name="reduce_Model_RootsIncludingImportedOperation_noConcept" />
+  <source id="1179168430704" name="reduce_GetIndexInParentOperation" />
+  <source id="1179411798670" name="reduce_ConceptMethodCall_NonVirtual" />
+  <source id="1181945881357" name="reduce_GenericNewExpression_with_SNodeCreator" />
+  <source id="1181950938878" name="reduce_Concept_NewInstance" />
+  <source id="1182511526037" name="reduce_Model_NodesIncludingImportedOperation_hasConcept" />
+  <source id="1182511568451" name="reduce_Model_NodesIncludingImportedOperation_noConcept" />
+  <source id="1205432344145" name="switch_toLinkRoleStringExp" />
+  <source id="1206551858932" name="mc_assignmentStatement" />
+  <source id="1206653629433" name="switch_toConceptNameStringExpr" />
+  <source id="1221171785929" name="mc_searchScope_operations" />
+  <source id="1240159487170" name="mc_enum_operations" />
+  <source id="1240327119637" name="mc_enums" />
+  <source id="1241008307357" name="reduce_EnumRef" />
+  <source id="8405512791876077151" name="reduce_SLinkImplicitSelect_Singular" />
+  <source id="8405512791876077211" name="reduce_SLinkImplicitSelect_Plural" />
+  <source id="7551657168185584731" name="mc_implicitSelect" />
+  <source id="5692182839348358131" name="mc_reflection" />
+  <source id="5079980551111235342" name="switch_toLinkDeclaration" />
+  <source id="6119287946611399777" name="reduce_GetChildrenOperation_whereLinkQualifier" />
+  <source id="4357968816427529264" name="reduce_CheckedModuleReference" />
+  <source id="2853323645193762342" name="reduce_ConceptMethodCall_Reflection" />
+  <source id="1627366655853340206" name="reduce_GetAncestor_noConceptList_SameML" />
+  <source id="1627366655853340240" name="reduce_GetAncestor_whereConceptInList_SameML" />
+  <source id="1883223317721107150" name="reduce_IfInstanceOfStatement" />
+  <source id="6407023681583038100" name="mc_attribute_access" />
+  <source id="6407023681583040708" name="reduce_AbstractConceptDeclaration" />
+  <source id="6407023681583040746" name="switch_ILinkQualifier" />
+  <source id="6407023681583040763" name="reduce_LinkDeclaration" />
+  <source id="6407023681583040924" name="reduce_PropertyDeclaration" />
+  <source id="6407023681583040956" name="switch_IPropertyQualifier" />
+  <source id="4040588429969066518" name="reduce_ModuleReferenceExpression" />
+  <source id="4040588429969069954" name="reduce_LanguageReferenceExpression" />
+  <source id="7552281371882288144" name="mc_concept_method_call" />
+  <source id="1717381292179408189" name="mc_concept_switch" />
+  <source id="4693937538534631146" name="mc_sequence_operations" />
+  <source id="2837022116960087580" name="reduce_OperationParamConcept" />
 </dependencies>
 

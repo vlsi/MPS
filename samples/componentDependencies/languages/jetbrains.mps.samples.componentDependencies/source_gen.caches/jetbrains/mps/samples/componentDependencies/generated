@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-dlwh0knyyyze6a5d4pkezblajn7j19l">
-  <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" hash="-2sqpydigz7vryaerubh22j78l4l08jz" />
-  <dep model="r:2b855002-fb92-4fa1-acaa-ec457490e763(jetbrains.mps.samples.componentDependencies.behavior)" hash="3yjmebpdi87okfhhsbf7mw8cg40dd7h" />
-  <dep model="r:6c7cc4eb-60e9-407a-94da-5f4d6ac9650c(jetbrains.mps.samples.componentDependencies.typesystem)" hash="auu2ky023olonbpw3qgttmt6goxsep4" />
-  <dep model="r:7ef60438-f5cb-4ce3-b173-829ec8cb68a1(jetbrains.mps.samples.componentDependencies.editor)" hash="1yb4gcdn8tomwnekhz2vmvfc8oxvuct" />
-  <dep model="r:a5fe27e7-3b9f-4548-9154-66721114c30d(jetbrains.mps.samples.componentDependencies.constraints)" hash="-eo3cff6n14dd5wqst3cpm8vqw5tw4vb" />
-  <dep model="r:afaf73eb-94a1-4aae-902b-ed4d28124667(jetbrains.mps.samples.componentDependencies.structure)" hash="-bl5acuggrt0ereaa9q24i36gcfqd1ki" />
-  <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="d987foka3qddszg3k3yjss0jaslj9i" />
-  <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="8cdjk2e5d2y2u9lult1ptgxxrttxv07" />
+<dependencies version="2" modelHash="-bsdr0n8qva39tyglmis3n4jabh20e76">
+  <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" hash="-53rt67n6c8bg7qn5r7z7snc1hbcxlo0" />
+  <dep model="r:2b855002-fb92-4fa1-acaa-ec457490e763(jetbrains.mps.samples.componentDependencies.behavior)" hash="7ut8pga5zz71t4m3fkevct7dy3z7qq5" />
+  <dep model="r:6c7cc4eb-60e9-407a-94da-5f4d6ac9650c(jetbrains.mps.samples.componentDependencies.typesystem)" hash="c043fndduati2gt1ahyknxvtsv74vrm" />
+  <dep model="r:7ef60438-f5cb-4ce3-b173-829ec8cb68a1(jetbrains.mps.samples.componentDependencies.editor)" hash="qz0vuhness5o0rzvbmoujs8v3lkreu" />
+  <dep model="r:a5fe27e7-3b9f-4548-9154-66721114c30d(jetbrains.mps.samples.componentDependencies.constraints)" hash="-44bypor3c0un5ka7m14cqkc0ua1o50v" />
+  <dep model="r:afaf73eb-94a1-4aae-902b-ed4d28124667(jetbrains.mps.samples.componentDependencies.structure)" hash="dupxwczf3c3g9fl8h8vyct0dfkdwm5i" />
+  <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="-aoqr8hwyzn1gt1phtgpxwftwo6ha0xu" />
+  <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="-7vi6o2vv1wkdocz9yt650rota5r2v6a" />
   <common dependsOnNodes="true">
     <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
     <dep model="r:2b855002-fb92-4fa1-acaa-ec457490e763(jetbrains.mps.samples.componentDependencies.behavior)" />

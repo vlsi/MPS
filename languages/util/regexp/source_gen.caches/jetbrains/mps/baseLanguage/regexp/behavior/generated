@@ -1,27 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-3xo1gexd3ca0yhrm8ijkef98nkp0xj3">
+<dependencies version="2" modelHash="3w1365hk16703p3vo297o4kpl8sxofo">
   <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
   <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
   <dep model="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.behaviour(MPS.Core/jetbrains.mps.smodel.behaviour@java_stub)" />
   <dep model="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)" />
-  <dep model="r:00000000-0000-4000-0000-011c89590282(jetbrains.mps.lang.core.behavior)" hash="-e9d5nh0v10iyyec2hlwv9sastebu16m" />
-  <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="-2hubvwh7bwismm0eld02cqmdefvj5by" />
-  <dep model="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" hash="-9ldgxz9rhq8ml7m0oicwqjga5mmtyef" />
-  <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" hash="earelxj8tgzojre3f83be708tts5353" />
-  <dep model="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)" hash="-ea32iv3pfnifz5jli60lv04g3n5rkoc" />
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-7vgk3jafz630zooccect8piiihx2bnu" />
-  <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" hash="-2sqpydigz7vryaerubh22j78l4l08jz" />
-  <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" hash="-1z3361kpzl7vzkkqivv1k2cpu6lfdbi" />
-  <dep model="r:00000000-0000-4000-0000-011c89590518(jetbrains.mps.baseLanguage.regexp.structure)" hash="-cryn38hxvmucch3izwels2bwdm3eqbr" />
-  <dep model="r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)" hash="-b72wuumjxgks1989cjkgk5zmwisrevj" />
-  <dep model="r:3b7ed80f-6cfd-45bc-b051-2f66c620dd27(jetbrains.mps.lang.traceable.structure)" hash="76myxegtoxgbtj6tyvu3vtcyqh6ntew" />
-  <dep model="r:95397225-9080-48bc-b1aa-0ce7c4f3d2ce(jetbrains.mps.lang.traceable.behavior)" hash="3qjblg746btbob3tbjfxdag9i0x0wk1" />
-  <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="d987foka3qddszg3k3yjss0jaslj9i" />
-  <dep model="r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)" hash="-3v2j1dmdnreus232u87z8v47gc23d87" />
-  <dep model="r:d1558b8f-fc9e-4ca7-bb90-70ac789f336e(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.post@generator)" hash="-4utzo1nfl3cbkn5oql46johrk65jj1k" />
-  <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="8cdjk2e5d2y2u9lult1ptgxxrttxv07" />
-  <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" hash="5g3rtdo35mi5yfu1kii2pegdk4kei4n" />
-  <common hash="6kub8knaer09pu4ejg86wujws9uh3r7" dependsOnNodes="true">
+  <dep model="r:00000000-0000-4000-0000-011c89590282(jetbrains.mps.lang.core.behavior)" hash="-8trodvifhc63lr70l0scvwpnu9x9njm" />
+  <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="asr5cx3a2t742wnhd54bmw5nnorf27b" />
+  <dep model="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" hash="51czmcvmqguwso03bswxptnnv1cngvj" />
+  <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" hash="-ao0l10z0f2wkpgbk7im0sm0thsegm6l" />
+  <dep model="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)" hash="-ewm47bzchbp1yzirk6mqkfcua6qvyl6" />
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="detd1ziqskg7dbnc0pibtezhcafegwq" />
+  <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" hash="-53rt67n6c8bg7qn5r7z7snc1hbcxlo0" />
+  <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" hash="bn57e82yda86jwtmt721s8tttc16yrq" />
+  <dep model="r:00000000-0000-4000-0000-011c89590518(jetbrains.mps.baseLanguage.regexp.structure)" hash="-8910hzqzibj77k5fl38v9988ea7lpu1" />
+  <dep model="r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)" hash="a4e3gapc6z40tiq41l3c9y62bd4hddb" />
+  <dep model="r:3b7ed80f-6cfd-45bc-b051-2f66c620dd27(jetbrains.mps.lang.traceable.structure)" hash="-9rz09wi96tvye9a1g9wpdz8xkh3b3c6" />
+  <dep model="r:95397225-9080-48bc-b1aa-0ce7c4f3d2ce(jetbrains.mps.lang.traceable.behavior)" hash="6l933nvyx2n1pckoyaxmzh4f1fmx0lb" />
+  <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="-aoqr8hwyzn1gt1phtgpxwftwo6ha0xu" />
+  <dep model="r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)" hash="ciooks7vd9q22s8xs5h06dqughl3rvl" />
+  <dep model="r:d1558b8f-fc9e-4ca7-bb90-70ac789f336e(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.post@generator)" hash="-bgnantp1cew03uc33iisp4p6353medo" />
+  <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="-7vi6o2vv1wkdocz9yt650rota5r2v6a" />
+  <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" hash="38r3raexgu59nqkszt3w5pcueyx37lt" />
+  <common hash="3w1365hk16703p3vo297o4kpl8sxofo" dependsOnNodes="true">
     <dep root="1213877429450" />
     <dep root="1213877475221" />
     <dep root="1213877492182" />
@@ -124,7 +124,7 @@
     <file name="UnaryRegexp_BehaviorDescriptor.java" />
     <file name="UnicodeCharacterRegexp_BehaviorDescriptor.java" />
   </common>
-  <source id="1213877429450" name="Regexp_Behavior" hash="-6ki1mthvu1lpo16tledkl6m4o5swy0b">
+  <source id="1213877429450" name="Regexp_Behavior">
     <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
     <dep model="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)" />
@@ -135,10 +135,11 @@
     <dep model="r:00000000-0000-4000-0000-011c89590518(jetbrains.mps.baseLanguage.regexp.structure)" />
     <dep model="r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)" />
     <dep model="r:d1558b8f-fc9e-4ca7-bb90-70ac789f336e(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.post@generator)" />
+    <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="Regexp_Behavior.java" />
   </source>
-  <source id="1213877475221" name="MatchParensRegexp_Behavior" hash="-1k89kras3nnzv7j0cjxdcrbllai38ap">
+  <source id="1213877475221" name="MatchParensRegexp_Behavior">
     <dep root="1213877429450" />
     <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
@@ -153,19 +154,18 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="MatchParensRegexp_Behavior.java" />
   </source>
-  <source id="1213877492182" name="MatchVariableReferenceRegexp_Behavior" hash="agrqd69ufv3kjwyyst5crqn4lesl3f1">
+  <source id="1213877492182" name="MatchVariableReferenceRegexp_Behavior">
     <dep root="1213877429450" />
     <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
     <dep model="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
-    <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c89590518(jetbrains.mps.baseLanguage.regexp.structure)" />
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="MatchVariableReferenceRegexp_Behavior.java" />
   </source>
-  <source id="1222431791866" name="StringLiteralRegexp_Behavior" hash="4o6lhfw6e0m6rs5y8g9hzcm92e9os0u">
+  <source id="1222431791866" name="StringLiteralRegexp_Behavior">
     <dep root="1213877429450" />
     <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
@@ -177,14 +177,14 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="StringLiteralRegexp_Behavior.java" />
   </source>
-  <source id="1222433039738" name="UnicodeCharacterRegexp_Behavior" hash="-cqzcs2hhqlhjro6yw174wq12o44h3r3">
+  <source id="1222433039738" name="UnicodeCharacterRegexp_Behavior">
     <dep root="1213877429450" />
     <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c89590518(jetbrains.mps.baseLanguage.regexp.structure)" />
     <dep model="r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)" />
     <file name="UnicodeCharacterRegexp_Behavior.java" />
   </source>
-  <source id="1222433139931" name="PredefinedSymbolClassRegexp_Behavior" hash="6rfd8engo3jcluf9ir1xfn57dsvqa2e">
+  <source id="1222433139931" name="PredefinedSymbolClassRegexp_Behavior">
     <dep root="1213877429450" />
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" />
@@ -192,7 +192,7 @@
     <dep model="r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)" />
     <file name="PredefinedSymbolClassRegexp_Behavior.java" />
   </source>
-  <source id="1222433930821" name="OrRegexp_Behavior" hash="-c67op1k3tcgjool2um04tww0pl6u137">
+  <source id="1222433930821" name="OrRegexp_Behavior">
     <dep root="1213877429450" />
     <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)" />
@@ -202,28 +202,28 @@
     <dep model="r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)" />
     <file name="OrRegexp_Behavior.java" />
   </source>
-  <source id="1222434887346" name="ParensRegexp_Behavior" hash="co00l6l1zede5ycrv460sfli8yt1kzn">
+  <source id="1222434887346" name="ParensRegexp_Behavior">
     <dep root="1213877429450" />
     <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c89590518(jetbrains.mps.baseLanguage.regexp.structure)" />
     <file name="ParensRegexp_Behavior.java" />
   </source>
-  <source id="1222436753891" name="SeqRegexp_Behavior" hash="-9ck3p4yb3depikkjmn25tntvd021es1">
+  <source id="1222436753891" name="SeqRegexp_Behavior">
     <dep root="1213877429450" />
     <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c89590518(jetbrains.mps.baseLanguage.regexp.structure)" />
     <file name="SeqRegexp_Behavior.java" />
   </source>
-  <source id="1222437176020" name="RegexpDeclarationReferenceRegexp_Behavior" hash="7w6qwaz9nginj8zcbxzunkar7khnk8h">
+  <source id="1222437176020" name="RegexpDeclarationReferenceRegexp_Behavior">
     <dep root="1213877429450" />
     <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c89590518(jetbrains.mps.baseLanguage.regexp.structure)" />
     <file name="RegexpDeclarationReferenceRegexp_Behavior.java" />
   </source>
-  <source id="1222437727387" name="NTimesRegexp_Behavior" hash="bdlrva4mk278ld91rg7uug9xfxl0iqu">
+  <source id="1222437727387" name="NTimesRegexp_Behavior">
     <dep root="1213877429450" />
     <dep root="1222867682828" />
     <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
@@ -233,7 +233,7 @@
     <dep model="r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)" />
     <file name="NTimesRegexp_Behavior.java" />
   </source>
-  <source id="1222609599871" name="AtLeastNTimesRegexp_Behavior" hash="7b90eal68d6m8m2xk79omw5q17gq5xz">
+  <source id="1222609599871" name="AtLeastNTimesRegexp_Behavior">
     <dep root="1213877429450" />
     <dep root="1222867682828" />
     <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
@@ -243,7 +243,7 @@
     <dep model="r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)" />
     <file name="AtLeastNTimesRegexp_Behavior.java" />
   </source>
-  <source id="1222609846769" name="FromNToMTimesRegexp_Behavior" hash="-2x5ogfw6da3kup2hqrmfzhcqbyi0meu">
+  <source id="1222609846769" name="FromNToMTimesRegexp_Behavior">
     <dep root="1213877429450" />
     <dep root="1222867682828" />
     <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
@@ -253,7 +253,7 @@
     <dep model="r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)" />
     <file name="FromNToMTimesRegexp_Behavior.java" />
   </source>
-  <source id="1222857576752" name="SymbolClassRegexp_Behavior" hash="-9r12w9uh1y63x2n8k740te7nxza9u9n">
+  <source id="1222857576752" name="SymbolClassRegexp_Behavior">
     <dep root="1213877429450" />
     <dep root="8173814113624650479" />
     <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
@@ -267,7 +267,7 @@
     <dep model="r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)" />
     <file name="SymbolClassRegexp_Behavior.java" />
   </source>
-  <source id="1222861534672" name="LookRegexp_Behavior" hash="dcttmdmaiejyr1mkrf6j6eaue9nakot">
+  <source id="1222861534672" name="LookRegexp_Behavior">
     <dep root="1213877429450" />
     <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
@@ -277,7 +277,7 @@
     <dep model="r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)" />
     <file name="LookRegexp_Behavior.java" />
   </source>
-  <source id="1222867682828" name="UnaryRegexp_Behavior" hash="-cgb3aacgsnp4ipdpfqamxok8fib4ubb">
+  <source id="1222867682828" name="UnaryRegexp_Behavior">
     <dep root="1213877429450" />
     <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
@@ -287,13 +287,13 @@
     <dep model="r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)" />
     <file name="UnaryRegexp_Behavior.java" />
   </source>
-  <source id="8173814113624637182" name="SymbolClassPart_Behavior" hash="a1yjkvux0fd5rivyidyr7u07p65g9jf">
+  <source id="8173814113624637182" name="SymbolClassPart_Behavior">
     <dep root="1222431791866" />
     <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c89590518(jetbrains.mps.baseLanguage.regexp.structure)" />
     <file name="SymbolClassPart_Behavior.java" />
   </source>
-  <source id="8173814113624637190" name="PredefinedSymbolClassSymbolClassPart_Behavior" hash="7oz5cz1a7nn5n4y5tmknh8kbe6h9bj2">
+  <source id="8173814113624637190" name="PredefinedSymbolClassSymbolClassPart_Behavior">
     <dep root="8173814113624650479" />
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" />
@@ -301,7 +301,7 @@
     <dep model="r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)" />
     <file name="PredefinedSymbolClassSymbolClassPart_Behavior.java" />
   </source>
-  <source id="8173814113624637220" name="IntervalSymbolClassPart_Behavior" hash="24sm56geor4no01vrwo2sbas9sazgv4">
+  <source id="8173814113624637220" name="IntervalSymbolClassPart_Behavior">
     <dep root="8173814113624637182" />
     <dep root="8173814113624650479" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
@@ -310,14 +310,14 @@
     <dep model="r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)" />
     <file name="IntervalSymbolClassPart_Behavior.java" />
   </source>
-  <source id="8173814113624637890" name="IntersectionSymbolClassPart_Behavior" hash="-369asysb2aukdwj4psbd1rv5uedj5uh">
+  <source id="8173814113624637890" name="IntersectionSymbolClassPart_Behavior">
     <dep root="8173814113624650479" />
     <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c89590518(jetbrains.mps.baseLanguage.regexp.structure)" />
     <file name="IntersectionSymbolClassPart_Behavior.java" />
   </source>
-  <source id="8173814113624637901" name="CharacterSymbolClassPart_Behavior" hash="-39h6e49bnnwhlzk0j24bzie862dazy8">
+  <source id="8173814113624637901" name="CharacterSymbolClassPart_Behavior">
     <dep root="8173814113624637182" />
     <dep root="8173814113624650479" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
@@ -326,22 +326,22 @@
     <dep model="r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)" />
     <file name="CharacterSymbolClassPart_Behavior.java" />
   </source>
-  <source id="8173814113624650479" name="SymbolClassRegexpAndPart_Behavior" hash="39av0oq3mom58xsux7cahxsi0kgklqv">
+  <source id="8173814113624650479" name="SymbolClassRegexpAndPart_Behavior">
     <dep model="r:00000000-0000-4000-0000-011c89590518(jetbrains.mps.baseLanguage.regexp.structure)" />
     <file name="SymbolClassRegexpAndPart_Behavior.java" />
   </source>
-  <source id="3796137614137207004" name="ReplaceRegexpOperation_Behavior" hash="aq85t07cs2l0xojsqi0ho1i0bpl7vs0">
+  <source id="3796137614137207004" name="ReplaceRegexpOperation_Behavior">
     <dep root="3796137614137538899" />
     <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c89590518(jetbrains.mps.baseLanguage.regexp.structure)" />
     <file name="ReplaceRegexpOperation_Behavior.java" />
   </source>
-  <source id="3796137614137538899" name="Replacement_Behavior" hash="-dwu430wytfs4ud4xg2yiie51vamga6w">
+  <source id="3796137614137538899" name="Replacement_Behavior">
     <dep model="r:00000000-0000-4000-0000-011c89590518(jetbrains.mps.baseLanguage.regexp.structure)" />
     <file name="Replacement_Behavior.java" />
   </source>
-  <source id="3796137614137538913" name="LiteralReplacement_Behavior" hash="-c96bibajtbfh6o0w7612kz9bgw8a1i9">
+  <source id="3796137614137538913" name="LiteralReplacement_Behavior">
     <dep root="1222431791866" />
     <dep root="3796137614137538899" />
     <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
@@ -352,7 +352,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="LiteralReplacement_Behavior.java" />
   </source>
-  <source id="3796137614137539492" name="MatchVariableReferenceReplacement_Behavior" hash="-28yehsnkrgqdem5kzlvvkkjylvrapbt">
+  <source id="3796137614137539492" name="MatchVariableReferenceReplacement_Behavior">
     <dep root="1213877429450" />
     <dep root="3796137614137538899" />
     <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
@@ -365,7 +365,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="MatchVariableReferenceReplacement_Behavior.java" />
   </source>
-  <source id="658365993682020152" name="ReplaceBlock_Behavior" hash="cv47829vrly4bp86otnh302nj9x9twe">
+  <source id="658365993682020152" name="ReplaceBlock_Behavior">
     <dep model="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)" />
     <dep model="r:00000000-0000-4000-0000-011c89590518(jetbrains.mps.baseLanguage.regexp.structure)" />
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
