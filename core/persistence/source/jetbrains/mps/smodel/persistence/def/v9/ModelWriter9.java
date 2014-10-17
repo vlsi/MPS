@@ -33,7 +33,6 @@ import jetbrains.mps.smodel.persistence.def.FilePerRootFormatUtil;
 import jetbrains.mps.smodel.persistence.def.IModelWriter;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.util.CollectConsumer;
-import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.util.StringUtil;
 import org.jdom.Document;
 import org.jdom.Element;
@@ -51,7 +50,6 @@ import java.util.Comparator;
 import java.util.HashMap;
 import java.util.LinkedHashSet;
 import java.util.Map;
-import java.util.Map.Entry;
 
 public class ModelWriter9 implements IModelWriter {
   public static final int VERSION = 9;
@@ -111,7 +109,11 @@ public class ModelWriter9 implements IModelWriter {
     DebugRegistry debugRegistry = DebugRegistry.getInstance();
 
     //save used languages info
-    for (SLanguage id : IterableUtil.merge(sourceModel.usedLanguages(), sourceModel.implicitlyUsedLanguagesWithVersions().keySet())) {
+    ArrayList<SLanguage> langs = new ArrayList<SLanguage>(sourceModel.usedLanguages());
+    langs.addAll(sourceModel.implicitlyUsedLanguagesWithVersions().keySet());
+    sortLanguages(langs);
+
+    for (SLanguage id : langs) {
       Element langElement = new Element(ModelPersistence9.DEBUG_INFO_LANG);
       langElement.setAttribute(ModelPersistence9.ID, IdHelper.getLanguageId(id).serialize());
       langElement.setAttribute(ModelPersistence9.DEBUG_INFO_NAME, id.getQualifiedName());
@@ -143,34 +145,42 @@ public class ModelWriter9 implements IModelWriter {
     IdInfoCollector.getDebugInfoById(sourceModel.getRootNodes(), conceptIds, propIds, refIds, roleIds);
 
     // write concepts
-    for (Entry<SConceptId, String> e : conceptIds.entrySet()) {
+    ArrayList<SConceptId> cids = new ArrayList<SConceptId>(conceptIds.keySet());
+    sortConcepts(cids);
+    for (SConceptId id : cids) {
       Element langElement = new Element(ModelPersistence9.DEBUG_INFO_CONCEPT);
-      langElement.setAttribute(ModelPersistence9.ID, e.getKey().serialize());
-      langElement.setAttribute(ModelPersistence9.DEBUG_INFO_NAME, e.getValue());
+      langElement.setAttribute(ModelPersistence9.ID, id.serialize());
+      langElement.setAttribute(ModelPersistence9.DEBUG_INFO_NAME, conceptIds.get(id));
       debugInfoElement.addContent(langElement);
     }
 
     // write properties
-    for (Entry<SPropertyId, String> e : propIds.entrySet()) {
+    ArrayList<SPropertyId> pids = new ArrayList<SPropertyId>(propIds.keySet());
+    sortProps(pids);
+    for (SPropertyId id : pids) {
       Element langElement = new Element(ModelPersistence9.DEBUG_INFO_PROP);
-      langElement.setAttribute(ModelPersistence9.ID, e.getKey().serialize());
-      langElement.setAttribute(ModelPersistence9.DEBUG_INFO_NAME, e.getValue());
+      langElement.setAttribute(ModelPersistence9.ID, id.serialize());
+      langElement.setAttribute(ModelPersistence9.DEBUG_INFO_NAME, propIds.get(id));
       debugInfoElement.addContent(langElement);
     }
 
     // write reference roles
-    for (Entry<SReferenceLinkId, String> e : refIds.entrySet()) {
+    ArrayList<SReferenceLinkId> rids = new ArrayList<SReferenceLinkId>(refIds.keySet());
+    sortRefs(rids);
+    for (SReferenceLinkId id : rids) {
       Element langElement = new Element(ModelPersistence9.DEBUG_INFO_REF_ROLE);
-      langElement.setAttribute(ModelPersistence9.ID, e.getKey().serialize());
-      langElement.setAttribute(ModelPersistence9.DEBUG_INFO_NAME, e.getValue());
+      langElement.setAttribute(ModelPersistence9.ID, id.serialize());
+      langElement.setAttribute(ModelPersistence9.DEBUG_INFO_NAME, refIds.get(id));
       debugInfoElement.addContent(langElement);
     }
 
     // write child roles
-    for (Entry<SContainmentLinkId, String> e : roleIds.entrySet()) {
+    ArrayList<SContainmentLinkId> lids = new ArrayList<SContainmentLinkId>(roleIds.keySet());
+    sortLinks(lids);
+    for (SContainmentLinkId id : lids) {
       Element langElement = new Element(ModelPersistence9.DEBUG_INFO_CHILD_ROLE);
-      langElement.setAttribute(ModelPersistence9.ID, e.getKey().serialize());
-      langElement.setAttribute(ModelPersistence9.DEBUG_INFO_NAME, e.getValue());
+      langElement.setAttribute(ModelPersistence9.ID, id.serialize());
+      langElement.setAttribute(ModelPersistence9.DEBUG_INFO_NAME, roleIds.get(id));
       debugInfoElement.addContent(langElement);
     }
   }
@@ -252,16 +262,6 @@ public class ModelWriter9 implements IModelWriter {
       rootElement.addContent(languageElem);
     }
   }
-
-  private void sortLanguages(ArrayList<SLanguage> keys) {
-    Collections.sort(keys, new Comparator<SLanguage>() {
-      @Override
-      public int compare(SLanguage o1, SLanguage o2) {
-        return o1.getQualifiedName().compareTo(o2.getQualifiedName());
-      }
-    });
-  }
-
 
   protected void saveModelNodes(Element parent, SModel sourceModel) {
     for (SNode root : sourceModel.getRootNodes()) {
@@ -347,4 +347,67 @@ public class ModelWriter9 implements IModelWriter {
     return result;
   }
 
+  private void sortLanguages(ArrayList<SLanguage> keys) {
+    Collections.sort(keys, new Comparator<SLanguage>() {
+      @Override
+      public int compare(SLanguage o1, SLanguage o2) {
+        return o1.getQualifiedName().compareTo(o2.getQualifiedName());
+      }
+    });
+  }
+
+  private void sortConcepts(ArrayList<SConceptId> keys) {
+    Collections.sort(keys, new Comparator<SConceptId>() {
+      @Override
+      public int compare(SConceptId o1, SConceptId o2) {
+        return compareConcepts(o1, o2);
+      }
+    });
+  }
+
+  private void sortProps(ArrayList<SPropertyId> keys) {
+    Collections.sort(keys, new Comparator<SPropertyId>() {
+      @Override
+      public int compare(SPropertyId o1, SPropertyId o2) {
+        long p1 = o1.getPropertyId();
+        long p2 = o2.getPropertyId();
+        if (p1 != p2) return p1 > p2 ? 1 : -1;
+
+        return compareConcepts(o1.getConceptId(), o2.getConceptId());
+      }
+    });
+  }
+
+  private void sortRefs(ArrayList<SReferenceLinkId> keys) {
+    Collections.sort(keys, new Comparator<SReferenceLinkId>() {
+      @Override
+      public int compare(SReferenceLinkId o1, SReferenceLinkId o2) {
+        long r1 = o1.getReferenceLinkId();
+        long r2 = o2.getReferenceLinkId();
+        if (r1 != r2) return r1 > r2 ? 1 : -1;
+
+        return compareConcepts(o1.getConceptId(), o2.getConceptId());
+      }
+    });
+  }
+
+  private void sortLinks(ArrayList<SContainmentLinkId> keys) {
+    Collections.sort(keys, new Comparator<SContainmentLinkId>() {
+      @Override
+      public int compare(SContainmentLinkId o1, SContainmentLinkId o2) {
+        long l1 = o1.getContainmentLinkId();
+        long l2 = o2.getContainmentLinkId();
+        if (l1 != l2) return l1 > l2 ? 1 : -1;
+
+        return compareConcepts(o1.getConceptId(), o2.getConceptId());
+      }
+    });
+  }
+
+  private int compareConcepts(SConceptId o1, SConceptId o2) {
+    long c1 = o1.getConceptId();
+    long c2 = o2.getConceptId();
+    if (c1 != c2) return c1 > c2 ? 1 : -1;
+    return o1.getLanguageId().getId().compareTo(o2.getLanguageId().getId());
+  }
 }
