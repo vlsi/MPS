@@ -19,6 +19,8 @@ import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.smodel.DefaultSModel;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
+import org.jetbrains.mps.openapi.module.SModuleReference;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.LazySModel;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
@@ -66,6 +68,20 @@ public class MigrateIds_Action extends BaseAction {
           return it.getSModelInternal() instanceof DefaultSModel && as_fu9gb8_a0a0a0a0a0a0a0b0a0f(it.getSModelInternal(), DefaultSModel.class).getPersistenceVersion() < 9;
         }
       });
+      Sequence.fromIterable(models).visitAll(new IVisitor<DefaultSModelDescriptor>() {
+        public void visit(DefaultSModelDescriptor it) {
+          it.load();
+        }
+      });
+
+      // do not migrate test refactoring models 
+      models = Sequence.fromIterable(models).subtract(Sequence.fromIterable(models).where(new IWhereFilter<DefaultSModelDescriptor>() {
+        public boolean accept(DefaultSModelDescriptor it) {
+          SModuleReference mr = it.getModule().getModuleReference();
+          return mr.equals(PersistenceFacade.getInstance().createModuleReference("343e2a8b-449f-45b3-9da8-1463945cb208(testRefactoring)")) || mr.equals(PersistenceFacade.getInstance().createModuleReference("7bb4f305-7fb7-495b-be9c-5777cd6ab9d6(testRefactoringTargetLang)")) || mr.equals(PersistenceFacade.getInstance().createModuleReference("343e2a8b-449f-45b3-9da8-1463945cb208(testRefactoring)")) || mr.equals(PersistenceFacade.getInstance().createModuleReference("24106442-1955-413a-8c2b-cc6969a4b149(testRefactoring.sandbox)"));
+        }
+      }));
+
       Sequence.fromIterable(models).visitAll(new IVisitor<DefaultSModelDescriptor>() {
         public void visit(DefaultSModelDescriptor model) {
           LazySModel innerModel = model.getSModelInternal();
