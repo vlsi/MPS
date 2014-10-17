@@ -19,7 +19,7 @@ import org.jetbrains.annotations.NotNull;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.mps.openapi.module.SRepository;
-import org.jetbrains.mps.openapi.module.WriteActionListener;
+import org.jetbrains.mps.openapi.repository.WriteActionListener;
 import org.jetbrains.mps.openapi.module.event.SRepositoryEvent;
 
 import java.util.List;

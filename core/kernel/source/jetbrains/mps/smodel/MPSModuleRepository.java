@@ -28,7 +28,7 @@ import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.util.containers.ManyToManyMap;
 import org.apache.log4j.LogManager;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.mps.openapi.module.CommandListener;
+import org.jetbrains.mps.openapi.repository.CommandListener;
 import org.jetbrains.mps.openapi.module.DebugRegistry;
 import org.jetbrains.mps.openapi.module.RepositoryAccess;
 import org.jetbrains.mps.openapi.module.SModule;

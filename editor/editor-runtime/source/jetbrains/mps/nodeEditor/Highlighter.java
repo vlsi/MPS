@@ -39,7 +39,7 @@ import jetbrains.mps.nodeEditor.highlighter.EditorsHelper;
 import jetbrains.mps.nodeEditor.inspector.InspectorEditorComponent;
 import jetbrains.mps.openapi.editor.message.EditorMessageOwner;
 import jetbrains.mps.project.MPSProject;
-import org.jetbrains.mps.openapi.module.CommandListener;
+import org.jetbrains.mps.openapi.repository.CommandListener;
 import jetbrains.mps.smodel.GlobalSModelEventsManager;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.MPSModuleRepository;

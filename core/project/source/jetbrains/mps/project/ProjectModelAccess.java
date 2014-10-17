@@ -16,7 +16,7 @@
 package jetbrains.mps.project;
 
 import jetbrains.mps.smodel.ModelAccessBase;
-import org.jetbrains.mps.openapi.module.WriteActionListener;
+import org.jetbrains.mps.openapi.repository.WriteActionListener;
 
 /**
  * This class represents a ModelAccess for cases when there is an available project in scope.

@@ -29,7 +29,7 @@ import jetbrains.mps.smodel.event.SModelRootEvent;
 import jetbrains.mps.smodel.loading.ModelLoadingState;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModel;
-import org.jetbrains.mps.openapi.module.CommandListener;
+import org.jetbrains.mps.openapi.repository.CommandListener;
 
 import java.util.ArrayList;
 import java.util.Collections;

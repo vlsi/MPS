@@ -32,7 +32,7 @@ import jetbrains.mps.progress.ProgressMonitorAdapter;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.IllegalModelAccessError;
 import jetbrains.mps.smodel.ModelAccess;
-import org.jetbrains.mps.openapi.module.CommandListener;
+import org.jetbrains.mps.openapi.repository.CommandListener;
 import jetbrains.mps.smodel.TimeOutRuntimeException;
 import jetbrains.mps.smodel.UndoHelper;
 import jetbrains.mps.smodel.UndoRunnable;

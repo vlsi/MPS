@@ -19,7 +19,7 @@ import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
-import org.jetbrains.mps.openapi.module.CommandListener;
+import org.jetbrains.mps.openapi.repository.CommandListener;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
 
 import java.util.concurrent.ConcurrentMap;

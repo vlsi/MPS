@@ -15,8 +15,8 @@
  */
 package jetbrains.mps.smodel;
 
-import org.jetbrains.mps.openapi.module.CommandListener;
-import org.jetbrains.mps.openapi.module.WriteActionListener;
+import org.jetbrains.mps.openapi.repository.CommandListener;
+import org.jetbrains.mps.openapi.repository.WriteActionListener;
 
 /**
  * ModelAccess basic implementation: all non-command methods are implemented here.

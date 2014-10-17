@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.jetbrains.mps.openapi.module;
+package org.jetbrains.mps.openapi.repository;
 
 /**
  * It can be used for listening to commandStarted and commandFinished events of

@@ -22,7 +22,7 @@ import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 import jetbrains.mps.util.Computable;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.mps.openapi.module.WriteActionListener;
+import org.jetbrains.mps.openapi.repository.WriteActionListener;
 
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;

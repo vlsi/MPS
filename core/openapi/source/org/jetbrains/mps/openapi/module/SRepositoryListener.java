@@ -28,7 +28,7 @@ public interface SRepositoryListener {
   void moduleRemoved(@NotNull SModuleReference module);
 
   /**
-   * use {@link CommandListener} instead
+   * use {@link org.jetbrains.mps.openapi.repository.CommandListener} instead
    */
   @Deprecated
   void commandStarted(SRepository repository);

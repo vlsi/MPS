@@ -22,7 +22,7 @@ import jetbrains.mps.smodel.CommandListenerAdapter;
 import jetbrains.mps.smodel.GlobalSModelEventsManager;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
-import org.jetbrains.mps.openapi.module.CommandListener;
+import org.jetbrains.mps.openapi.repository.CommandListener;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SModelRepositoryAdapter;
 import jetbrains.mps.smodel.event.SModelChildEvent;

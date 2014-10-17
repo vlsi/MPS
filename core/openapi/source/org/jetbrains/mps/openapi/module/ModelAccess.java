@@ -15,6 +15,9 @@
  */
 package org.jetbrains.mps.openapi.module;
 
+import org.jetbrains.mps.openapi.repository.CommandListener;
+import org.jetbrains.mps.openapi.repository.WriteActionListener;
+
 /**
  * Grants access to objects in the repository (e.g., models)
  */
