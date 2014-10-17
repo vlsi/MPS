@@ -18,6 +18,9 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 import java.util.Map;
 import org.jetbrains.mps.openapi.language.SLanguage;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import jetbrains.mps.persistence.IdHelper;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
@@ -34,7 +37,6 @@ import jetbrains.mps.smodel.LanguageID;
 import jetbrains.mps.persistence.MementoImpl;
 import jetbrains.mps.project.structure.ProjectStructureModelRoot;
 import jetbrains.mps.util.MacroHelper;
-import java.util.ArrayList;
 import jetbrains.mps.project.structure.modules.ModuleFacetDescriptor;
 import org.jdom.Attribute;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
@@ -105,17 +107,22 @@ public class ModuleDescriptorPersistence {
       }
       result.addContent(usedDevKits);
     }
-    if (!((descriptor.getLanguageVersions().isEmpty()))) {
-      Element languageVersions = new Element("languageVersions");
-      for (Map.Entry<SLanguage, Integer> lv : descriptor.getLanguageVersions().entrySet()) {
-        Element languageVersion = new Element("language");
-        languageVersion.setAttribute("id", IdHelper.getLanguageId(lv.getKey()).serialize());
-        languageVersion.setAttribute("fqName", lv.getKey().getQualifiedName());
-        languageVersion.setAttribute("version", String.valueOf(lv.getValue()));
-        languageVersions.addContent(languageVersion);
+    Map<SLanguage, Integer> lver = descriptor.getLanguageVersions();
+    ArrayList<SLanguage> langs = new ArrayList<SLanguage>(lver.keySet());
+    Collections.sort(langs, new Comparator<SLanguage>() {
+      public int compare(SLanguage p0, SLanguage p1) {
+        return p0.getQualifiedName().compareTo(p1.getQualifiedName());
       }
-      result.addContent(languageVersions);
+    });
+    Element languageVersions = new Element("languageVersions");
+    for (SLanguage l : langs) {
+      Element languageVersion = new Element("language");
+      languageVersion.setAttribute("id", IdHelper.getLanguageId(l).serialize());
+      languageVersion.setAttribute("fqName", l.getQualifiedName());
+      languageVersion.setAttribute("version", String.valueOf(lver.get(l)));
+      languageVersions.addContent(languageVersion);
     }
+    result.addContent(languageVersions);
 
     if (descriptor instanceof LanguageDescriptor) {
       LanguageDescriptor ld = ((LanguageDescriptor) descriptor);
