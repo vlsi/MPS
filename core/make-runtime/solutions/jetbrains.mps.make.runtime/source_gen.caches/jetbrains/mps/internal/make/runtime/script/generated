@@ -92,6 +92,7 @@
     <file name="CompositeResult.java" />
   </source>
   <source id="7797884084018533742" name="LoggingProgressStrategy" hash="370h5iinah7x8w0wdfwzx1kllil5tto">
+    <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
     <file name="LoggingProgressStrategy.java" />
   </source>
   <source id="7797884084018670112" name="LoggingFeedbackStrategy" hash="112ww85th88aa70c4ho225ngsrg0rv8">

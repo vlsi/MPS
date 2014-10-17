@@ -22,7 +22,6 @@
   </common>
   <source id="1560298786499489409" name="PathRenderer" hash="-ao8mkimvuz5u0k6r8ka69nbw5ffng7r">
     <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
-    <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="PathRenderer.java" />
   </source>
@@ -35,6 +34,7 @@
     <file name="ProjectPathRenderer.java" />
   </source>
   <source id="1560298786499492721" name="ProjectLevelRenderer" hash="-7l5pxqdbhig7gqbm32n38frls1pyc27">
+    <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
     <file name="ProjectLevelRenderer.java" />
   </source>
   <source id="1560298786499492799" name="StringPathRenderer" hash="-1j9ubdaluuj0o85wvb1ny7u8rd0b3wr">

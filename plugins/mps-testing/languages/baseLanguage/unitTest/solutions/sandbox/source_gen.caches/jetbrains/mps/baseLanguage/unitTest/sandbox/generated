@@ -19,7 +19,6 @@
     <file name="Test3.java" />
   </source>
   <source id="4347343044614079991" name="Test4" hash="-3u2pduaeo43hvbf1wwk0ranp571hcq9">
-    <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
     <file name="Test4.java" />
   </source>
   <source id="8923434991440662525" name="SimpleRunner" hash="8dbocmjetuuejpc9rtz439acfo044hl">

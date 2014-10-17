@@ -17,7 +17,9 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.internal.collections.runtime.ISelector;
-import jetbrains.mps.smodel.adapter.IdHelper;
+import jetbrains.mps.smodel.adapter.ids.SLanguageId;
+import jetbrains.mps.smodel.adapter.ids.MetaIdByDeclaration;
+import jetbrains.mps.smodel.adapter.structure.language.SLanguageAdapterById;
 import org.jetbrains.annotations.NotNull;
 import org.apache.log4j.Level;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
@@ -63,8 +65,10 @@ public class CorrectLanguageVersion_Action extends BaseAction {
       }
     }, false).first(), "fromVersion");
 
-    if (lang.getModuleDescriptor().getLanguageVersions().containsKey(IdHelper.getLanguageId(lang.getModuleId()))) {
-      if (lang.getModuleDescriptor().getLanguageVersions().get(IdHelper.getLanguageId(lang.getModuleId())) != lang.getLanguageVersion()) {
+    SLanguageId langId = MetaIdByDeclaration.getLanguageId(lang);
+    SLanguageAdapterById slang = new SLanguageAdapterById(langId, lang.getModuleName());
+    if (lang.getModuleDescriptor().getLanguageVersions().containsKey(slang)) {
+      if (lang.getModuleDescriptor().getLanguageVersions().get(slang) != lang.getLanguageVersion()) {
         return true;
       }
     }

@@ -41,6 +41,9 @@
       <scope id="1127341420738" at="25,0,33,0" />
       <unit id="1127341420738" at="10,0,34,0" name="jetbrains.mps.samples.readerConfigLanguage.readerConfigs.Config1" />
     </file>
+    <file name="Config1.xml">
+      <unit id="1127341420738" at="1,0,14,22" name="jetbrains.mps.samples.readerConfigLanguage.readerConfigs.Config1" />
+    </file>
   </root>
 </debug-info>
 

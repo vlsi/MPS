@@ -106,6 +106,9 @@ public class QueriesGenerated {
   public static Object referenceMacro_GetReferent_5872110852616414238(final ReferenceMacroContext _context) {
     return SNodeOperations.getConceptDeclaration(SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.cast(_context.getOriginalCopiedInputNode(_context.getNode()), "jetbrains.mps.lang.migration.structure.ForEachMatchingExpression"), "pattern", true), "patternNode", true));
   }
+  public static Object referenceMacro_GetReferent_7681855492436628804(final ReferenceMacroContext _context) {
+    return SNodeOperations.getConceptDeclaration(SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.cast(_context.getOriginalCopiedInputNode(_context.getNode()), "jetbrains.mps.lang.migration.structure.ForEachMatchingExpression"), "pattern", true), "patternNode", true));
+  }
   public static boolean ifMacro_Condition_7153805464404355802(final IfMacroContext _context) {
     return MigrationScript_Behavior.call_getProducedData_8585153554445933384(_context.getNode()) == null;
   }
