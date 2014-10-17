@@ -17,6 +17,7 @@ package jetbrains.mps.smodel;
 
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.language.SContainmentLink;
 
 public final class LazySNode extends SNode {
 
@@ -31,13 +32,14 @@ public final class LazySNode extends SNode {
   }
 
   @Override
-  protected SNode firstChildInRole(@NotNull String role) {
+  public void insertChildBefore(String role, org.jetbrains.mps.openapi.model.SNode child, @Nullable final org.jetbrains.mps.openapi.model.SNode anchor) {
     enforceModelLoad();
-    return super.firstChildInRole(role);
+    super.insertChildBefore(role, child, anchor);
   }
 
   @Override
-  public void insertChildBefore(String role, org.jetbrains.mps.openapi.model.SNode child, @Nullable final org.jetbrains.mps.openapi.model.SNode anchor) {
+  public void insertChildBefore(@NotNull SContainmentLink role, org.jetbrains.mps.openapi.model.SNode child,
+      @Nullable org.jetbrains.mps.openapi.model.SNode anchor) {
     enforceModelLoad();
     super.insertChildBefore(role, child, anchor);
   }

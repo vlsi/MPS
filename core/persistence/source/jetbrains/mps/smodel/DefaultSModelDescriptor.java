@@ -78,6 +78,7 @@ public class DefaultSModelDescriptor extends LazyEditableSModelBase implements G
     try {
       result = myPersistence.readModel(myHeader, state);
     } catch (ModelReadException e) {
+      LOG.warning(e.getMessage());
       SuspiciousModelHandler.getHandler().handleSuspiciousModel(this, false);
       LazySModel newModel = new InvalidDefaultSModel(getReference(), e);
       return new ModelLoadResult(newModel, ModelLoadingState.NOT_LOADED);
@@ -224,7 +225,7 @@ public class DefaultSModelDescriptor extends LazyEditableSModelBase implements G
     myStructureModificationLog = null;  // we don't need to keep log in memory
     if (latestVersion != -1) {
       loadedSModel.setVersion(latestVersion);
-      LOG.error("Version for model " + getModelName() + " was not set.");
+      //LOG.error("Version for model " + getModelName() + " was not set.");
     }
   }
 

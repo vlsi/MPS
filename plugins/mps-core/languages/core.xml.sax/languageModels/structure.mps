@@ -210,6 +210,11 @@
       <property name="sourceCardinality" nameId="tpce.1071599893252" value="0..n" />
       <link role="target" roleId="tpce.1071599976176" targetNodeId="2264311582634140376" resolveInfo="XMLSAXChildRule" />
     </node>
+    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="4250669309761816325" nodeInfo="ig">
+      <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
+      <property name="role" nameId="tpce.1071599776563" value="defaultChild" />
+      <link role="target" roleId="tpce.1071599976176" targetNodeId="4250669309761661311" resolveInfo="XMLSAXDefaultChildRule" />
+    </node>
     <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="2264311582634140406" nodeInfo="ig">
       <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
       <property name="role" nameId="tpce.1071599776563" value="text" />
@@ -345,6 +350,38 @@
     <property name="name" nameId="tpck.1169194664001" value="XMLSAXChildRuleCondition" />
     <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
     <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1137021947720" resolveInfo="ConceptFunction" />
+  </root>
+  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="4250669309761661311" nodeInfo="ig">
+    <property name="name" nameId="tpck.1169194664001" value="XMLSAXDefaultChildRule" />
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="sax" />
+    <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
+    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="4250669309761661313" nodeInfo="ig">
+      <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
+      <property name="role" nameId="tpce.1071599776563" value="handler" />
+      <link role="target" roleId="tpce.1071599976176" targetNodeId="4250669309761678855" resolveInfo="XMLSAXDefaultChildHandler" />
+    </node>
+    <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="4250669309761661318" nodeInfo="ig">
+      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="tpck.3734116213129792499" resolveInfo="ScopeProvider" />
+    </node>
+  </root>
+  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="4250669309761678855" nodeInfo="ig">
+    <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
+    <property name="final" nameId="tpce.4628067390765956807" value="false" />
+    <property name="name" nameId="tpck.1169194664001" value="XMLSAXDefaultChildHandler" />
+    <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="sax" />
+    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="child handler" />
+    <link role="extends" roleId="tpce.1071489389519" targetNodeId="2264311582634140387" resolveInfo="XMLSAXHandlerFunction" />
+  </root>
+  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="4250669309762245972" nodeInfo="ig">
+    <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
+    <property name="final" nameId="tpce.4628067390765956807" value="false" />
+    <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="tag name" />
+    <property name="name" nameId="tpck.1169194664001" value="XMLSAXDefaultChildHandler_tagName" />
+    <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="sax" />
+    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="name" />
+    <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1107135704075" resolveInfo="ConceptFunctionParameter" />
   </root>
 </model>
 

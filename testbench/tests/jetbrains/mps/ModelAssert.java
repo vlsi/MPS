@@ -81,7 +81,6 @@ public class ModelAssert {
       boolean found = false;
       for (ImportElement actualEl : actualLanguageAspects) {
         if (actualEl.getModelReference().equals(expectedEl.getModelReference())) {
-          assertSameLanguageAspects(expectedEl, actualEl);
           found = true;
           break;
         }
@@ -96,7 +95,6 @@ public class ModelAssert {
       boolean found = false;
       for (ImportElement expectedEl : expectedLanguageAspects) {
         if (actualEl.getModelReference().equals(expectedEl.getModelReference())) {
-          assertSameLanguageAspects(expectedEl, actualEl);
           found = true;
           break;
         }
@@ -108,22 +106,15 @@ public class ModelAssert {
     }
   }
 
-  private static void assertSameLanguageAspects(ImportElement expectedEl, ImportElement actualEl) {
-    assertEquals("Language aspect verion of model " + expectedEl.getModelReference() + " differ ", expectedEl.getUsedVersion(), actualEl.getUsedVersion());
-  }
-
   private static void assertSameImports(jetbrains.mps.smodel.SModel expectedModel, jetbrains.mps.smodel.SModel actualModel) {
     assertListsEqual((expectedModel).getAdditionalModelVersions(),
-      (actualModel).getAdditionalModelVersions(), new Comparator<ImportElement>() {
-        @Override
-        public int compare(ImportElement import1, ImportElement import2) {
-          if (import1.getModelReference().equals(import2.getModelReference())) {
-            return import1.getUsedVersion() - import2.getUsedVersion();
+        (actualModel).getAdditionalModelVersions(), new Comparator<ImportElement>() {
+          @Override
+          public int compare(ImportElement import1, ImportElement import2) {
+            return import1.getModelReference().equals(import2.getModelReference()) ? 0 : 1;
           }
-          return 1;
-        }
-      },
-      "import");
+        },
+        "import");
   }
 
   private static <C> void assertListsEqual(List<C> expectedList, List<C> actualList, String name) {
@@ -175,8 +166,8 @@ public class ModelAssert {
 
   public static void assertDeepNodeEquals(SNode expectedNode, SNode actualNode) {
     assertEquals(getErrorString("concept", expectedNode, actualNode),
-      expectedNode.getConcept().getQualifiedName(),
-      actualNode.getConcept().getQualifiedName());
+        expectedNode.getConcept().getQualifiedName(),
+        actualNode.getConcept().getQualifiedName());
 
     // match properties
     assertPropertyEquals(expectedNode, actualNode);
@@ -236,14 +227,14 @@ public class ModelAssert {
 
     for (String role : roles) {
       Assert.assertEquals(getErrorString("different number of referents in role " + role, expectedNode, actualNode),
-        expRoleToReferenceMap.get(role).size(), actRoleToReferenceMap.get(role).size());
+          expRoleToReferenceMap.get(role).size(), actRoleToReferenceMap.get(role).size());
 
       SReference expectedReference = expectedNode.getReference(role);
       SReference actualReference = actualNode.getReference(role);
 
       assertReferenceEquals(getErrorString("reference in role " + role, expectedNode, actualNode),
-        expectedReference,
-        actualReference);
+          expectedReference,
+          actualReference);
     }
   }
 
@@ -266,7 +257,8 @@ public class ModelAssert {
     assertNotNull(errorString, actualReference);
 
 //    assertIdEqualsOrBothNull(errorString, expectedReference.getTargetNode(), actualReference.getTargetNode());
-    assertEquals(errorString, ((jetbrains.mps.smodel.SReference) expectedReference).getResolveInfo(), ((jetbrains.mps.smodel.SReference) actualReference).getResolveInfo());
+    assertEquals(errorString, ((jetbrains.mps.smodel.SReference) expectedReference).getResolveInfo(),
+        ((jetbrains.mps.smodel.SReference) actualReference).getResolveInfo());
     assertEquals(errorString, expectedReference.getRole(), actualReference.getRole());
     assertEquals(errorString, expectedReference.getTargetNodeId(), actualReference.getTargetNodeId());
   }

@@ -12,5 +12,10 @@
   <usedLanguages>
     <usedLanguage>343e2a8b-449f-45b3-9da8-1463945cb208(testRefactoring)</usedLanguage>
   </usedLanguages>
+  <languageVersions>
+    <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" fqName="jetbrains.mps.lang.core" version="0" />
+    <language id="343e2a8b-449f-45b3-9da8-1463945cb208" fqName="testRefactoring" version="0" />
+    <language id="7bb4f305-7fb7-495b-be9c-5777cd6ab9d6" fqName="testRefactoringTargetLang" version="0" />
+  </languageVersions>
 </solution>
 

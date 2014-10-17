@@ -96,7 +96,9 @@ public class DefaultSModel extends LazySModel {
 
   @Override
   public SModel createEmptyCopy() {
-    return new DefaultSModel(getReference());
+    DefaultSModel result = new DefaultSModel(getReference());
+    result.setPersistenceVersion(getPersistenceVersion());
+    return result;
   }
 
   @Override

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="cvgpbniw2k1k1rvqf5eqso6l8qq4csz">
-  <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.generator.runtime(MPS.Core/jetbrains.mps.generator.runtime@java_stub)" />
+<dependencies version="2" modelHash="bonhaihho6p20svncbpwwp5vtwjwx16">
+  <dep model="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.generator.runtime(MPS.Core/jetbrains.mps.generator.runtime@java_stub)" />
   <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" hash="-2sqpydigz7vryaerubh22j78l4l08jz" />
   <dep model="r:10b3b956-11f8-4dce-a96b-c10e225a71df(jetbrains.mps.make.outlook.typesystem)" hash="7gtzrg7um4t4alf9xbnm8qwh6v6z6lv" />
   <dep model="r:3fdffc2d-2910-40d3-af7b-829c9c53a744(jetbrains.mps.make.outlook.constraints)" hash="dmoqx01tdoyhp67tsvog43xwvsytbpr" />
@@ -10,7 +10,7 @@
   <dep model="r:d9cc47d9-65f3-44ac-ba13-c0e9adf60c8b(jetbrains.mps.make.outlook.behavior)" hash="-1xuca1fdbztajnlyqafcella5r8xk19" />
   <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="8cdjk2e5d2y2u9lult1ptgxxrttxv07" />
   <common dependsOnNodes="true">
-    <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.generator.runtime(MPS.Core/jetbrains.mps.generator.runtime@java_stub)" />
+    <dep model="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.generator.runtime(MPS.Core/jetbrains.mps.generator.runtime@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
     <dep model="r:10b3b956-11f8-4dce-a96b-c10e225a71df(jetbrains.mps.make.outlook.typesystem)" />
     <dep model="r:3fdffc2d-2910-40d3-af7b-829c9c53a744(jetbrains.mps.make.outlook.constraints)" />

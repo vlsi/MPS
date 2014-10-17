@@ -16,6 +16,8 @@
 package jetbrains.mps.smodel.references;
 
 import jetbrains.mps.components.CoreComponent;
+import jetbrains.mps.project.ModuleId;
+import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.SModelId;
 import jetbrains.mps.smodel.SReferenceBase;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -63,7 +65,7 @@ public class ImmatureReferences implements CoreComponent {
     for (int i = 0; i < POOL_SIZE; i++) {
       myReferencesSetPool.add(new ConcurrentHashMap<SReferenceBase, Object>());
     }
-    myVirtualRef = PersistenceFacade.getInstance().createModelReference(null, SModelId.generate(), "$ImmatureRefsModelRef$");
+    myVirtualRef = PersistenceFacade.getInstance().createModelReference(new ModuleReference("$ImmatureRefsModuleRef$", ModuleId.regular()), SModelId.generate(), "$ImmatureRefsModelRef$");
   }
 
   public void enable() {

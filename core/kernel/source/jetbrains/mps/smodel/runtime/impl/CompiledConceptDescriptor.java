@@ -15,6 +15,11 @@
  */
 package jetbrains.mps.smodel.runtime.impl;
 
+import jetbrains.mps.smodel.SNodeUtil;
+import jetbrains.mps.smodel.adapter.ids.SConceptId;
+import jetbrains.mps.smodel.adapter.ids.SContainmentLinkId;
+import jetbrains.mps.smodel.adapter.ids.SPropertyId;
+import jetbrains.mps.smodel.adapter.ids.SReferenceLinkId;
 import jetbrains.mps.smodel.language.ConceptRegistry;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import jetbrains.mps.smodel.runtime.LinkDescriptor;
@@ -23,10 +28,6 @@ import jetbrains.mps.smodel.runtime.ReferenceDescriptor;
 import jetbrains.mps.smodel.runtime.StaticScope;
 import jetbrains.mps.smodel.runtime.base.BaseConceptDescriptor;
 import org.jetbrains.annotations.Nullable;
-import org.jetbrains.mps.openapi.language.SConceptId;
-import org.jetbrains.mps.openapi.language.SContainmentLinkId;
-import org.jetbrains.mps.openapi.language.SPropertyId;
-import org.jetbrains.mps.openapi.language.SReferenceLinkId;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -61,23 +62,23 @@ public class CompiledConceptDescriptor extends BaseConceptDescriptor {
   private final String myConceptShortDescription;
   private final String myHelpUrl;
   private final StaticScope myStaticScope;
-
+  private final HashMap<String, Boolean> childMap = new HashMap<String, Boolean>();
+  private final Object myLock = "";
   // to be initialized
   private Set<String> ancestors;
   private List<String> parentNames;
   private Set<String> propertyNames;
   private Set<String> referenceNames;
-  private final HashMap<String, Boolean> childMap = new HashMap<String, Boolean>();
   private Set<String> childNames;
   private Set<String> unorderedNames;
-
   private List<SConceptId> parents;
   private Map<SPropertyId, PropertyDescriptor> properties;
   private Map<SReferenceLinkId, ReferenceDescriptor> references;
   private Map<SContainmentLinkId, LinkDescriptor> links;
-
+  private Map<String, PropertyDescriptor> propertiesByName;
+  private Map<String, ReferenceDescriptor> referencesByName;
+  private Map<String, LinkDescriptor> linksByName;
   private boolean myInitialized = false;
-  private final Object myLock = "";
 
   CompiledConceptDescriptor(SConceptId id,
       String conceptFqName,
@@ -139,6 +140,10 @@ public class CompiledConceptDescriptor extends BaseConceptDescriptor {
         parentDescriptors.add(descriptor);
       }
 
+      if (isInterfaceConcept()){
+        parentDescriptors.add(ConceptRegistry.getInstance().getConceptDescriptor(SNodeUtil.conceptId_BaseConcept));
+      }
+
       initAncestors(parentDescriptors);
       initPropertyNames(parentDescriptors);
       initReferenceNames(parentDescriptors);
@@ -170,15 +175,20 @@ public class CompiledConceptDescriptor extends BaseConceptDescriptor {
     propertyNames = Collections.unmodifiableSet(prs);
 
     Map<SPropertyId, PropertyDescriptor> propsMap = new HashMap<SPropertyId, PropertyDescriptor>();
+    HashMap<String, PropertyDescriptor> propByNameMap = new HashMap<String, PropertyDescriptor>();
     for (PropertyDescriptor p : myOwnProperties) {
       propsMap.put(p.getId(), p);
+      propByNameMap.put(p.getName(), p);
     }
     for (ConceptDescriptor parentDescriptor : parentDescriptors) {
       for (SPropertyId p : parentDescriptor.getPropertyIds()) {
-        propsMap.put(p, parentDescriptor.getPropertyDescriptor(p));
+        PropertyDescriptor pd = parentDescriptor.getPropertyDescriptor(p);
+        propsMap.put(p, pd);
+        propByNameMap.put(pd.getName(), pd);
       }
     }
     properties = propsMap;
+    propertiesByName = propByNameMap;
   }
 
   private void initReferenceNames(List<ConceptDescriptor> parentDescriptors) {
@@ -192,15 +202,20 @@ public class CompiledConceptDescriptor extends BaseConceptDescriptor {
     referenceNames = Collections.unmodifiableSet(rfs);
 
     Map<SReferenceLinkId, ReferenceDescriptor> refsMap = new HashMap<SReferenceLinkId, ReferenceDescriptor>();
+    HashMap<String, ReferenceDescriptor> refsByNameMap = new HashMap<String, ReferenceDescriptor>();
     for (ReferenceDescriptor r : myOwnReferences) {
       refsMap.put(r.getId(), r);
+      refsByNameMap.put(r.getName(), r);
     }
     for (ConceptDescriptor parentDescriptor : parentDescriptors) {
       for (SReferenceLinkId r : parentDescriptor.getReferenceIds()) {
-        refsMap.put(r, parentDescriptor.getRefDescriptor(r));
+        ReferenceDescriptor rd = parentDescriptor.getRefDescriptor(r);
+        refsMap.put(r, rd);
+        refsByNameMap.put(rd.getName(), rd);
       }
     }
     references = refsMap;
+    referencesByName = refsByNameMap;
   }
 
   private void initChildNames(List<ConceptDescriptor> parentDescriptors) {
@@ -223,15 +238,20 @@ public class CompiledConceptDescriptor extends BaseConceptDescriptor {
 
     //ids
     Map<SContainmentLinkId, LinkDescriptor> linksMap = new HashMap<SContainmentLinkId, LinkDescriptor>();
+    HashMap<String, LinkDescriptor> linksByNameMap = new HashMap<String, LinkDescriptor>();
     for (LinkDescriptor r : myOwnLinks) {
       linksMap.put(r.getId(), r);
+      linksByNameMap.put(r.getName(), r);
     }
     for (ConceptDescriptor parentDescriptor : parentDescriptors) {
       for (SContainmentLinkId r : parentDescriptor.getLinkIds()) {
-        linksMap.put(r, parentDescriptor.getLinkDescriptor(r));
+        LinkDescriptor ld = parentDescriptor.getLinkDescriptor(r);
+        linksMap.put(r, ld);
+        linksByNameMap.put(ld.getName(), ld);
       }
     }
     links = linksMap;
+    linksByName = linksByNameMap;
   }
 
   @Override
@@ -352,6 +372,12 @@ public class CompiledConceptDescriptor extends BaseConceptDescriptor {
   }
 
   @Override
+  public PropertyDescriptor getPropertyDescriptor(String name) {
+    init();
+    return propertiesByName.get(name);
+  }
+
+  @Override
   public Set<SReferenceLinkId> getReferenceIds() {
     init();
     return references.keySet();
@@ -361,6 +387,12 @@ public class CompiledConceptDescriptor extends BaseConceptDescriptor {
   public ReferenceDescriptor getRefDescriptor(SReferenceLinkId id) {
     init();
     return references.get(id);
+  }
+
+  @Override
+  public ReferenceDescriptor getRefDescriptor(String name) {
+    init();
+    return referencesByName.get(name);
   }
 
   @Override
@@ -375,4 +407,9 @@ public class CompiledConceptDescriptor extends BaseConceptDescriptor {
     return links.get(id);
   }
 
+  @Override
+  public LinkDescriptor getLinkDescriptor(String name) {
+    init();
+    return linksByName.get(name);
+  }
 }

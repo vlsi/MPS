@@ -19,6 +19,7 @@ import jetbrains.mps.smodel.references.ImmatureReferences;
 import jetbrains.mps.util.InternUtil;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.language.SReferenceLink;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -33,6 +34,21 @@ public abstract class SReferenceBase extends SReference {
   protected volatile SNode myImmatureTargetNode;            // young
   private volatile SModelReference myTargetModelReference;  // mature
 
+  protected SReferenceBase(SReferenceLink role, SNode sourceNode, @Nullable SModelReference targetModelReference,
+      @Nullable SNode immatureTargetNode) {
+    super(role, sourceNode);
+
+    // if ref is 'mature' then 'targetModelRefernce' is either NOT NULL, or it is broken external reference, or it is dynamic reference
+    myTargetModelReference = targetModelReference;
+
+    // 'young' reference
+    if (immatureTargetNode != null) {
+      ImmatureReferences.getInstance().add(this);
+    }
+    myImmatureTargetNode = immatureTargetNode;
+  }
+
+  @Deprecated
   protected SReferenceBase(String role, SNode sourceNode, @Nullable SModelReference targetModelReference,
       @Nullable SNode immatureTargetNode) {
     super(InternUtil.intern(role), sourceNode);

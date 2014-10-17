@@ -51,7 +51,7 @@ public class QueriesGenerated {
   public final boolean NEEDS_OPCONTEXT = false;
   public static boolean dropRootRule_Condition_4914935534439454950(final DropRootRuleContext _context) {
     if (SConceptOperations.isSubConceptOf(SNodeOperations.getConceptDeclaration(_context.getNode()), "jetbrains.mps.baseLanguage.structure.ClassConcept")) {
-      final SNode generatedAnn = SNodeOperations.getNode("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.generator.runtime(MPS.Core/jetbrains.mps.generator.runtime@java_stub)", "~Generated");
+      final SNode generatedAnn = SNodeOperations.getNode("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.generator.runtime(MPS.Core/jetbrains.mps.generator.runtime@java_stub)", "~Generated");
       return AttributeOperations.getAttribute(_context.getNode(), new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.generator.structure.RootTemplateAnnotation")) != null || ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.as(_context.getNode(), "jetbrains.mps.baseLanguage.structure.ClassConcept"), "annotation", true)).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
           return (SLinkOperations.getTarget(it, "annotation", false) != null);

@@ -15,11 +15,12 @@
  */
 package jetbrains.mps.smodel.runtime;
 
+
+import jetbrains.mps.smodel.adapter.ids.SConceptId;
+import jetbrains.mps.smodel.adapter.ids.SContainmentLinkId;
+import jetbrains.mps.smodel.adapter.ids.SPropertyId;
+import jetbrains.mps.smodel.adapter.ids.SReferenceLinkId;
 import org.jetbrains.annotations.Nullable;
-import org.jetbrains.mps.openapi.language.SConceptId;
-import org.jetbrains.mps.openapi.language.SContainmentLinkId;
-import org.jetbrains.mps.openapi.language.SPropertyId;
-import org.jetbrains.mps.openapi.language.SReferenceLinkId;
 
 import java.util.List;
 import java.util.Set;
@@ -74,6 +75,9 @@ public interface ConceptDescriptor {
   PropertyDescriptor getPropertyDescriptor(SPropertyId id);
 
   @Deprecated
+  PropertyDescriptor getPropertyDescriptor(String name);
+
+  @Deprecated
   Set<String> getPropertyNames();
 
   @Deprecated
@@ -86,6 +90,9 @@ public interface ConceptDescriptor {
   ReferenceDescriptor getRefDescriptor(SReferenceLinkId id);
 
   @Deprecated
+  ReferenceDescriptor getRefDescriptor(String name);
+
+  @Deprecated
   Set<String> getReferenceNames();
 
   @Deprecated
@@ -96,6 +103,9 @@ public interface ConceptDescriptor {
   Set<SContainmentLinkId> getLinkIds();
 
   LinkDescriptor getLinkDescriptor(SContainmentLinkId id);
+
+  @Deprecated
+  LinkDescriptor getLinkDescriptor(String name);
 
   @Deprecated
   Set<String> getChildrenNames();

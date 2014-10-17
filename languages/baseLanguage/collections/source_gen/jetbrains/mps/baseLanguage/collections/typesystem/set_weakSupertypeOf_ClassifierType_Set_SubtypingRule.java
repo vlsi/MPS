@@ -95,5 +95,5 @@ public class set_weakSupertypeOf_ClassifierType_Set_SubtypingRule extends Subtyp
     }
     return quotedNode_2;
   }
-  private static SNodePointer SNODE_POINTER_lt6k7h_a0a0a0a0b0b0a0a0a0a0a0e = new SNodePointer("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)", "~Set");
+  private static SNodePointer SNODE_POINTER_lt6k7h_a0a0a0a0b0b0a0a0a0a0a0e = new SNodePointer("6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)", "~Set");
 }

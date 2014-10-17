@@ -90,7 +90,7 @@ public class TemplateExecutionEnvironmentImpl implements TemplateExecutionEnviro
   @Override
   public SNode createOutputNode(@NotNull String conceptName) {
     // I use getInstanceConcept because it doesn't return null for unknown concepts
-    // Another alternative is to check getConcept for null and instantiate BaseConcept then
+    // Another alternative is to check getContainingConcept for null and instantiate BaseConcept then
     SConcept c = SConceptRepository.getInstance().getInstanceConcept(conceptName);
     return generator.getOutputModel().createNode(c);
   }

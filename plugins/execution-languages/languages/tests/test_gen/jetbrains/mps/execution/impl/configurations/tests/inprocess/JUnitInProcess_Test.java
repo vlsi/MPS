@@ -16,7 +16,6 @@ import java.util.ArrayList;
 import jetbrains.mps.baseLanguage.unitTest.execution.client.ITestNodeWrapper;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SModelRepository;
-import jetbrains.mps.smodel.SModelReference;
 import java.util.List;
 import jetbrains.mps.baseLanguage.unitTest.execution.client.TestRunState;
 import jetbrains.mps.baseLanguage.unitTest.execution.client.TestEventsDispatcher;
@@ -64,7 +63,7 @@ public class JUnitInProcess_Test extends BaseTransformationTest {
       this.checkTests(ListSequence.fromList(new ArrayList<ITestNodeWrapper>()), JUnitUtil.wrapTests(this.getMyModel(), Sequence.<String>singleton(testName)));
     }
     public SModel getMyModel() {
-      return SModelRepository.getInstance().getModelDescriptor(new SModelReference("jetbrains.mps.execution.impl.configurations.tests.commands.sandbox2", "tests"));
+      return SModelRepository.getInstance().getModelDescriptor("jetbrains.mps.execution.impl.configurations.tests.commands.sandbox2@tests");
     }
     public void checkTests(final List<ITestNodeWrapper> success, final List<ITestNodeWrapper> failure) {
       try {

@@ -15,11 +15,9 @@ import com.intellij.openapi.options.ConfigurationException;
 public class DemoApplication_Configuration_Editor extends SettingsEditorEx<DemoApplication_Configuration> {
   private JLabel myLabel;
   private NodeByConcept_Configuration_Editor myNode;
-
   public void disposeEditor() {
     Disposer.dispose(myNode);
   }
-
   @NotNull
   public JPanel createEditor() {
     myLabel = new JLabel("Select some node:");
@@ -29,15 +27,12 @@ public class DemoApplication_Configuration_Editor extends SettingsEditorEx<DemoA
     panel.add(nodeChooser, BorderLayout.CENTER);
     return panel;
   }
-
   public void applyEditorTo(final DemoApplication_Configuration configuration) throws ConfigurationException {
     myNode.applyEditorTo(configuration.getNode());
   }
-
   public void resetEditorFrom(final DemoApplication_Configuration configuration) {
     myNode.resetEditorFrom(configuration.getNode());
   }
-
   public DemoApplication_Configuration_Editor(NodeByConcept_Configuration_Editor node) {
     myNode = node;
   }

@@ -49,8 +49,6 @@ public interface SRepository {
 
   RepositoryAccess getRepositoryAccess();
 
-  DebugRegistry getDebugRegistry();
-
   void saveAll();
 
   /**

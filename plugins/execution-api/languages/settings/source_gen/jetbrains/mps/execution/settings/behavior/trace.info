@@ -184,11 +184,11 @@
       <node id="2797684467151253561" at="21,63,22,63" concept="5" />
       <node id="2797684467151253561" at="22,63,23,30" concept="5" />
       <node id="2797684467151253561" at="23,30,24,138" concept="2" />
-      <node id="2797684467151253561" at="24,138,25,323" concept="2" />
-      <node id="2797684467151253561" at="25,323,26,24" concept="6" />
+      <node id="2797684467151253561" at="24,138,25,360" concept="2" />
+      <node id="2797684467151253561" at="25,360,26,24" concept="6" />
       <node id="2797684467151253534" at="15,0,17,0" concept="7" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <node id="2797684467151253561" at="23,30,25,323" concept="1" />
-      <node id="2797684467151253561" at="23,30,25,323" concept="1" />
+      <node id="2797684467151253561" at="23,30,25,360" concept="1" />
+      <node id="2797684467151253561" at="23,30,25,360" concept="1" />
       <node id="2797684467151253534" at="17,0,21,0" concept="7" trace="virtual_collectUncaughtMethodThrowables_5412515780383134223#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/util/Set;Z)V" />
       <node id="2797684467151253561" at="21,0,28,0" concept="7" trace="_quotation_createNode_3gtax0_a0a0b0a#()Lorg/jetbrains/mps/openapi/model/SNode;" />
       <scope id="2797684467151253536" at="15,43,15,43" />
@@ -196,7 +196,7 @@
         <var name="thisNode" id="2797684467151253534" />
       </scope>
       <scope id="2797684467151253539" at="17,152,19,135" />
-      <scope id="2797684467151253561" at="23,30,25,323" />
+      <scope id="2797684467151253561" at="23,30,25,360" />
       <scope id="2797684467151253534" at="17,0,21,0">
         <var name="ignoreMayBeThrowables" id="2797684467151253543" />
         <var name="thisNode" id="2797684467151253534" />
@@ -407,11 +407,11 @@
       <node id="658365993681975735" at="26,60,27,63" concept="5" />
       <node id="658365993681975735" at="27,63,28,30" concept="5" />
       <node id="658365993681975735" at="28,30,29,138" concept="2" />
-      <node id="658365993681975735" at="29,138,30,247" concept="2" />
-      <node id="658365993681975735" at="30,247,31,24" concept="6" />
+      <node id="658365993681975735" at="29,138,30,284" concept="2" />
+      <node id="658365993681975735" at="30,284,31,24" concept="6" />
       <node id="946964771156066803" at="12,0,14,0" concept="7" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <node id="658365993681975735" at="28,30,30,247" concept="1" />
-      <node id="658365993681975735" at="28,30,30,247" concept="1" />
+      <node id="658365993681975735" at="28,30,30,284" concept="1" />
+      <node id="658365993681975735" at="28,30,30,284" concept="1" />
       <node id="946964771156066803" at="14,0,17,0" concept="7" trace="virtual_getJavaMethod_946964771156066991#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="946964771156066803" at="17,0,20,0" concept="7" trace="virtual_getPublicJavaMethod_203908296139519011#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="946964771156066803" at="20,0,23,0" concept="7" trace="virtual_showName_1262430001741498082#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Z" />
@@ -425,7 +425,7 @@
       <scope id="946964771156066803" at="12,0,14,0">
         <var name="thisNode" id="946964771156066803" />
       </scope>
-      <scope id="658365993681975735" at="28,30,30,247" />
+      <scope id="658365993681975735" at="28,30,30,284" />
       <scope id="946964771156066803" at="14,0,17,0">
         <var name="thisNode" id="946964771156066803" />
       </scope>
@@ -672,7 +672,7 @@
         <var name="name" id="946964771156067000" />
         <var name="thisNode" id="946964771156066990" />
       </scope>
-      <unit id="946964771156067009" at="16,486,20,5" name="jetbrains.mps.execution.settings.behavior.EditorOperationDeclaration_Behavior$1" />
+      <unit id="946964771156067009" at="16,523,20,5" name="jetbrains.mps.execution.settings.behavior.EditorOperationDeclaration_Behavior$1" />
       <unit id="946964771156066990" at="12,0,23,0" name="jetbrains.mps.execution.settings.behavior.EditorOperationDeclaration_Behavior" />
     </file>
   </root>

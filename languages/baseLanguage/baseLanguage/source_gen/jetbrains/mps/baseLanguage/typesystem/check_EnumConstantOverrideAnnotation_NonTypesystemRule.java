@@ -28,7 +28,7 @@ public class check_EnumConstantOverrideAnnotation_NonTypesystemRule extends Abst
     Set<SNode> overridingMethods = finder.getOverridingMethods();
     for (SNode method : SLinkOperations.getTargets(enumConstant, "method", true)) {
       for (SNode annotationInstance : SLinkOperations.getTargets(method, "annotation", true)) {
-        if (SLinkOperations.getTarget(annotationInstance, "annotation", false) == SNodeOperations.getNode("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)", "~Override") && !(SetSequence.fromSet(overridingMethods).contains(method))) {
+        if (SLinkOperations.getTarget(annotationInstance, "annotation", false) == SNodeOperations.getNode("6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)", "~Override") && !(SetSequence.fromSet(overridingMethods).contains(method))) {
           {
             MessageTarget errorTarget = new NodeMessageTarget();
             IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(annotationInstance, "Method does not override method from its superclass", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "6941917182338144464", null, errorTarget);

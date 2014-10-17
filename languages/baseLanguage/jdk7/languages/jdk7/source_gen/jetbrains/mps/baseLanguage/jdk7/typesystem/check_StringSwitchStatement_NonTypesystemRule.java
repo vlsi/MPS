@@ -29,13 +29,13 @@ public class check_StringSwitchStatement_NonTypesystemRule extends AbstractNonTy
     }
 
     if (SNodeOperations.isInstanceOf(TypeChecker.getInstance().getTypeOf(arg), "jetbrains.mps.baseLanguage.structure.ClassifierType")) {
-      if (BehaviorReflection.invokeVirtual(Boolean.TYPE, SLinkOperations.getTarget(SNodeOperations.cast(TypeChecker.getInstance().getTypeOf(arg), "jetbrains.mps.baseLanguage.structure.ClassifierType"), "classifier", false), "virtual_isDescendant_7165541881557222913", new Object[]{SNodeOperations.getNode("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)", "~String")})) {
+      if (BehaviorReflection.invokeVirtual(Boolean.TYPE, SLinkOperations.getTarget(SNodeOperations.cast(TypeChecker.getInstance().getTypeOf(arg), "jetbrains.mps.baseLanguage.structure.ClassifierType"), "classifier", false), "virtual_isDescendant_7165541881557222913", new Object[]{SNodeOperations.getNode("6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)", "~String")})) {
         return;
       }
     }
 
     if (SNodeOperations.isInstanceOf(TypeChecker.getInstance().getTypeOf(arg), "jetbrains.mps.baseLanguage.structure.IWillBeClassifier")) {
-      if (BehaviorReflection.invokeVirtual(Boolean.TYPE, BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(TypeChecker.getInstance().getTypeOf(arg), "jetbrains.mps.baseLanguage.structure.IWillBeClassifier"), "virtual_baseClassifier_4125795553993767872", new Object[]{}), "virtual_isDescendant_7165541881557222913", new Object[]{SNodeOperations.getNode("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)", "~String")})) {
+      if (BehaviorReflection.invokeVirtual(Boolean.TYPE, BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(TypeChecker.getInstance().getTypeOf(arg), "jetbrains.mps.baseLanguage.structure.IWillBeClassifier"), "virtual_baseClassifier_4125795553993767872", new Object[]{}), "virtual_isDescendant_7165541881557222913", new Object[]{SNodeOperations.getNode("6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)", "~String")})) {
         return;
       }
     }

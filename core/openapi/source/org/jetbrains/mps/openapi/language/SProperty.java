@@ -15,17 +15,23 @@
  */
 package org.jetbrains.mps.openapi.language;
 
+import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.model.SNode;
+
 /**
  * Represents a concept property
  */
 public interface SProperty {
+  @Deprecated //renamed to getContainingConcept, remove after 3.2
+  SAbstractConcept getConcept();
+
+  SAbstractConcept getContainingConcept();
 
   String getName();
 
-  SDataType getType();
-
   /**
-   * Will be used to check validity of potential values.
+   * Returns the declaration node in case sources for this concept are present in IDE
    */
-  boolean isValid(String value);
+  @Nullable
+  SNode getDeclarationNode();
 }

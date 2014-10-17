@@ -27,7 +27,7 @@ public class MigrationFromMapsToCollections_MigrationScript extends BaseMigratio
         return "jetbrains.mps.baseLanguage.structure.ClassifierType";
       }
       public boolean isApplicableInstanceNode(SNode node) {
-        return ListMigrationUtil.isApplicableForType(node, 2, ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.getNode("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)", "~Map"), SNodeOperations.getNode("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)", "~HashMap")));
+        return ListMigrationUtil.isApplicableForType(node, 2, ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.getNode("6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)", "~Map"), SNodeOperations.getNode("6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)", "~HashMap")));
       }
       public void doUpdateInstanceNode(SNode node) {
         SNode result = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.collections.structure.MapType", null);

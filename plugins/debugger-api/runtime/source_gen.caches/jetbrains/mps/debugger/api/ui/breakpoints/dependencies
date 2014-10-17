@@ -20,9 +20,12 @@
     <classNode dependClassName="jetbrains.mps.debugger.api.ui.breakpoints.BreakpointIconRenderer" />
     <classNode dependClassName="jetbrains.mps.debugger.api.ui.breakpoints.BreakpointViewSettingsComponent" />
     <classNode dependClassName="jetbrains.mps.debugger.api.ui.breakpoints.BreakpointsUtil" />
+    <classNode dependClassName="jetbrains.mps.debugger.api.ui.breakpoints.GroupKind" />
     <classNode dependClassName="jetbrains.mps.debugger.api.ui.breakpoints.GroupedTree" />
     <classNode dependClassName="jetbrains.mps.ide.icons.IconManager" />
     <classNode dependClassName="jetbrains.mps.ide.platform.ui.CheckBoxNodeRenderer" />
+    <classNode dependClassName="jetbrains.mps.ide.platform.ui.NodeData" />
+    <classNode dependClassName="jetbrains.mps.ide.ui.tree.MPSTreeNode" />
     <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
     <classNode dependClassName="jetbrains.mps.smodel.MPSModuleRepository" />
     <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
@@ -39,9 +42,6 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
     <classNode extendsClassName="jetbrains.mps.debugger.api.ui.breakpoints.BreakpointsView" />
-    <classNode extendsClassName="jetbrains.mps.debugger.api.ui.breakpoints.GroupKind" />
-    <classNode extendsClassName="jetbrains.mps.ide.platform.ui.NodeData" />
-    <classNode extendsClassName="jetbrains.mps.ide.ui.tree.MPSTreeNode" />
   </dependency>
   <dependency className="jetbrains.mps.debugger.api.ui.breakpoints.BreakpointIconRenderer" file="BreakpointIconRenderer.java">
     <classNode dependClassName="com.intellij.ide.DataManager" />
@@ -182,11 +182,16 @@
     <classNode dependClassName="jetbrains.mps.debug.api.AbstractDebugSession" />
     <classNode dependClassName="jetbrains.mps.debug.api.BreakpointCreatorsManager" />
     <classNode dependClassName="jetbrains.mps.debug.api.BreakpointManagerComponent" />
+    <classNode dependClassName="jetbrains.mps.debug.api.DebugSessionAdapter" />
     <classNode dependClassName="jetbrains.mps.debug.api.DebugSessionManagerComponent" />
+    <classNode dependClassName="jetbrains.mps.debug.api.IBreakpointManagerListener" />
+    <classNode dependClassName="jetbrains.mps.debug.api.IBreakpointsIO" />
+    <classNode dependClassName="jetbrains.mps.debug.api.SessionChangeAdapter" />
     <classNode dependClassName="jetbrains.mps.debug.api.SessionChangeListener" />
     <classNode dependClassName="jetbrains.mps.debug.api.breakpoints.BreakpointProvidersManager" />
     <classNode dependClassName="jetbrains.mps.debug.api.breakpoints.IBreakpoint" />
     <classNode dependClassName="jetbrains.mps.debug.api.breakpoints.IBreakpointKind" />
+    <classNode dependClassName="jetbrains.mps.debug.api.breakpoints.IBreakpointListener" />
     <classNode dependClassName="jetbrains.mps.debug.api.breakpoints.IBreakpointsProvider" />
     <classNode dependClassName="jetbrains.mps.debug.api.breakpoints.ILocationBreakpoint" />
     <classNode dependClassName="jetbrains.mps.debugger.api.ui.breakpoints.BreakpointIconRenderer" />
@@ -211,11 +216,6 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeUtil" />
     <classNode extendsClassName="com.intellij.openapi.components.ProjectComponent" />
-    <classNode extendsClassName="jetbrains.mps.debug.api.DebugSessionAdapter" />
-    <classNode extendsClassName="jetbrains.mps.debug.api.IBreakpointManagerListener" />
-    <classNode extendsClassName="jetbrains.mps.debug.api.IBreakpointsIO" />
-    <classNode extendsClassName="jetbrains.mps.debug.api.SessionChangeAdapter" />
-    <classNode extendsClassName="jetbrains.mps.debug.api.breakpoints.IBreakpointListener" />
     <classNode extendsClassName="jetbrains.mps.debugger.core.breakpoints.BreakpointsUiComponentEx" />
   </dependency>
   <dependency className="jetbrains.mps.debugger.api.ui.breakpoints.BreakpointsUtil" file="BreakpointsUtil.java">
@@ -258,12 +258,12 @@
     <classNode dependClassName="javax.swing.Icon" />
     <classNode dependClassName="javax.swing.UIManager" />
     <classNode dependClassName="jetbrains.mps.ide.platform.ui.CheckBoxNodeRenderer" />
+    <classNode dependClassName="jetbrains.mps.ide.platform.ui.NodeData" />
+    <classNode dependClassName="jetbrains.mps.ide.ui.tree.MPSTreeNode" />
     <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
-    <classNode extendsClassName="jetbrains.mps.ide.platform.ui.NodeData" />
     <classNode extendsClassName="jetbrains.mps.ide.ui.tree.MPSTree" />
-    <classNode extendsClassName="jetbrains.mps.ide.ui.tree.MPSTreeNode" />
   </dependency>
   <dependency className="jetbrains.mps.debugger.api.ui.breakpoints.JPanelWithCheckbox" file="JPanelWithCheckbox.java">
     <classNode dependClassName="java.awt.Color" />

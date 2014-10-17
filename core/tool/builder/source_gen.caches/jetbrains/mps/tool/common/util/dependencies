@@ -19,6 +19,7 @@
     <classNode dependClassName="java.net.URISyntaxException" />
     <classNode dependClassName="java.net.URL" />
     <classNode dependClassName="java.util.ArrayList" />
+    <classNode dependClassName="java.util.Enumeration" />
     <classNode dependClassName="java.util.HashMap" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="java.util.NoSuchElementException" />
@@ -30,7 +31,6 @@
     <classNode dependClassName="org.jetbrains.annotations.NonNls" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode dependClassName="sun.misc.Resource" />
-    <classNode extendsClassName="java.util.Enumeration" />
   </dependency>
   <dependency className="jetbrains.mps.tool.common.util.ClasspathCache" file="ClasspathCache.java">
     <classNode dependClassName="java.lang.String" />
@@ -83,8 +83,8 @@
     <classNode dependClassName="jetbrains.mps.tool.common.util.UrlClassLoader" />
     <classNode dependClassName="org.jetbrains.annotations.NonNls" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
+    <classNode dependClassName="sun.misc.Resource" />
     <classNode extendsClassName="jetbrains.mps.tool.common.util.Loader" />
-    <classNode extendsClassName="sun.misc.Resource" />
   </dependency>
   <dependency className="jetbrains.mps.tool.common.util.FileUtil" file="FileUtil.java">
     <classNode dependClassName="java.io.File" />
@@ -116,8 +116,8 @@
     <classNode dependClassName="org.jetbrains.annotations.NonNls" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
+    <classNode dependClassName="sun.misc.Resource" />
     <classNode extendsClassName="jetbrains.mps.tool.common.util.Loader" />
-    <classNode extendsClassName="sun.misc.Resource" />
   </dependency>
   <dependency className="jetbrains.mps.tool.common.util.Loader" file="Loader.java">
     <classNode dependClassName="java.io.IOException" />

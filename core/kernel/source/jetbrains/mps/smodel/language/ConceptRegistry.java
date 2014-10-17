@@ -16,7 +16,9 @@
 package jetbrains.mps.smodel.language;
 
 import jetbrains.mps.components.CoreComponent;
+import jetbrains.mps.smodel.DebugRegistry;
 import jetbrains.mps.smodel.LanguageAspect;
+import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import jetbrains.mps.smodel.runtime.BehaviorAspectDescriptor;
 import jetbrains.mps.smodel.runtime.BehaviorDescriptor;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
@@ -50,6 +52,7 @@ public class ConceptRegistry implements CoreComponent, LanguageRegistryListener 
   private static final Logger LOG = LogManager.getLogger(ConceptRegistry.class);
 
   private final Map<String, ConceptDescriptor> conceptDescriptors = new ConcurrentHashMap<String, ConceptDescriptor>();
+  private final Map<SConceptId, ConceptDescriptor> conceptDescriptorsById = new ConcurrentHashMap<SConceptId, ConceptDescriptor>();
   private final Map<String, BehaviorDescriptor> behaviorDescriptors = new ConcurrentHashMap<String, BehaviorDescriptor>();
   private final Map<String, ConstraintsDescriptor> constraintsDescriptors = new ConcurrentHashMap<String, ConstraintsDescriptor>();
   private final Map<String, TextGenDescriptor> textGenDescriptors = new ConcurrentHashMap<String, TextGenDescriptor>();
@@ -57,10 +60,10 @@ public class ConceptRegistry implements CoreComponent, LanguageRegistryListener 
   private final LanguageRegistry myLanguageRegistry;
 
   //ConceptRegistry is a singleton, so we can omit remove() here though the field is not static
-  private final ThreadLocal<Set<Pair<String, LanguageAspect>>> conceptsInLoading = new ThreadLocal<Set<Pair<String, LanguageAspect>>>() {
+  private final ThreadLocal<Set<Pair<Object, LanguageAspect>>> conceptsInLoading = new ThreadLocal<Set<Pair<Object, LanguageAspect>>>() {
     @Override
-    protected Set<Pair<String, LanguageAspect>> initialValue() {
-      return new HashSet<Pair<String, LanguageAspect>>();
+    protected Set<Pair<Object, LanguageAspect>> initialValue() {
+      return new HashSet<Pair<Object, LanguageAspect>>();
     }
   };
 
@@ -89,8 +92,8 @@ public class ConceptRegistry implements CoreComponent, LanguageRegistryListener 
     INSTANCE = null;
   }
 
-  private boolean startLoad(String fqName, LanguageAspect aspect) {
-    Pair<String, LanguageAspect> currentConceptAndLanguageAspect = new Pair<String, LanguageAspect>(fqName, aspect);
+  private boolean startLoad(Object id, LanguageAspect aspect) {
+    Pair<Object, LanguageAspect> currentConceptAndLanguageAspect = new Pair<Object, LanguageAspect>(id, aspect);
     if (conceptsInLoading.get().contains(currentConceptAndLanguageAspect)) {
       return false;
     }
@@ -98,12 +101,12 @@ public class ConceptRegistry implements CoreComponent, LanguageRegistryListener 
     return true;
   }
 
-  private void finishLoad(String fqName, LanguageAspect aspect) {
-    conceptsInLoading.get().remove(new Pair<String, LanguageAspect>(fqName, aspect));
+  private void finishLoad(Object fqName, LanguageAspect aspect) {
+    conceptsInLoading.get().remove(new Pair<Object, LanguageAspect>(fqName, aspect));
   }
 
   @NotNull
-  public ConceptDescriptor getConceptDescriptor(@Nullable String fqName) {
+  public ConceptDescriptor getConceptDescriptor(@NotNull String fqName) {
     ConceptDescriptor descriptor = conceptDescriptors.get(fqName);
 
     if (descriptor != null) {
@@ -136,6 +139,43 @@ public class ConceptRegistry implements CoreComponent, LanguageRegistryListener 
       return descriptor;
     } finally {
       finishLoad(fqName, LanguageAspect.STRUCTURE);
+    }
+  }
+
+  @NotNull
+  public ConceptDescriptor getConceptDescriptor(@NotNull SConceptId id) {
+    ConceptDescriptor descriptor = conceptDescriptorsById.get(id);
+
+    if (descriptor != null) {
+      return descriptor;
+    }
+
+    if (!startLoad(id, LanguageAspect.STRUCTURE)) {
+      return new IllegalConceptDescriptor(DebugRegistry.getInstance().getConceptName(id));
+    }
+
+    try {
+      try {
+        LanguageRuntime languageRuntime = myLanguageRegistry.getLanguage(id.getLanguageId());
+        if (languageRuntime != null) {
+          StructureAspectDescriptor structureAspectDescriptor = languageRuntime.getAspect(StructureAspectDescriptor.class);
+          descriptor = structureAspectDescriptor.getDescriptor(id);
+        }
+      } catch (Throwable e) {
+        LOG.error("Exception while structure descriptor creating for the concept " + id, e);
+      }
+
+      if (descriptor == null) {
+        descriptor = new IllegalConceptDescriptor(DebugRegistry.getInstance().getConceptName(id));
+      }
+
+      if (!(descriptor instanceof IllegalConceptDescriptor)) {
+        conceptDescriptorsById.put(id, descriptor);
+      }
+
+      return descriptor;
+    } finally {
+      finishLoad(id, LanguageAspect.STRUCTURE);
     }
   }
 
@@ -278,6 +318,7 @@ public class ConceptRegistry implements CoreComponent, LanguageRegistryListener 
   @Override
   public void afterLanguagesLoaded(Iterable<LanguageRuntime> languages) {
     // todo: incremental?
+    conceptDescriptorsById.clear();
     conceptDescriptors.clear();
     behaviorDescriptors.clear();
     constraintsDescriptors.clear();

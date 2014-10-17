@@ -47,7 +47,6 @@ public class SolutionDescriptor extends ModuleDescriptor {
     return myCompileInMPS;
   }
 
-  @Override
   public void setCompileInMPS(boolean compileInMPS) {
     myCompileInMPS = compileInMPS;
   }

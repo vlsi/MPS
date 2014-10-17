@@ -36,6 +36,7 @@ import jetbrains.mps.project.structure.LanguageDescriptorModelProvider;
 import jetbrains.mps.project.structure.ProjectStructureModule;
 import jetbrains.mps.resolve.ResolverComponent;
 import jetbrains.mps.smodel.ConceptDescendantsCache;
+import jetbrains.mps.smodel.DebugRegistry;
 import jetbrains.mps.smodel.DefaultModelAccess;
 import jetbrains.mps.smodel.GlobalSModelEventsManager;
 import jetbrains.mps.smodel.LanguageHierarchyCache;
@@ -52,7 +53,6 @@ import jetbrains.mps.smodel.language.ConceptRepository;
 import jetbrains.mps.smodel.language.ExtensionRegistry;
 import jetbrains.mps.smodel.language.LanguageRegistry;
 import jetbrains.mps.smodel.references.ImmatureReferences;
-import jetbrains.mps.smodel.runtime.interpreted.StructureAspectInterpreted;
 import jetbrains.mps.util.QueryMethodGenerated;
 import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.validation.ValidationSettings;
@@ -96,6 +96,7 @@ public final class MPSCore extends ComponentPlugin {
     MPSModuleRepository moduleRepository = init(new MPSModuleRepository());
     GlobalSModelEventsManager globalSModelEventsManager = init(new GlobalSModelEventsManager(modelRepository));
     ClassLoaderManager classLoaderManager = init(new ClassLoaderManager(moduleRepository));
+    init(new DebugRegistry());
 
     init(new SModelFileTracker(SRepositoryRegistry.getInstance()));
     init(new ModuleRepositoryFacade(moduleRepository));
@@ -112,7 +113,6 @@ public final class MPSCore extends ComponentPlugin {
     init(new ExtensionRegistry(classLoaderManager, moduleRepository));
     init(new LanguageHierarchyCache(moduleRepository));
     init(new ConceptDescendantsCache(moduleRepository, languageRegistry));
-    init(new StructureAspectInterpreted());
     init(new SModelUtil_new(classLoaderManager, repositoryRegistry));
     init(new CachesManager(classLoaderManager, modelRepository));
     init(new LanguageDescriptorModelProvider(moduleRepository));

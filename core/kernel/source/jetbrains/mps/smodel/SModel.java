@@ -20,8 +20,13 @@ import jetbrains.mps.extapi.model.SModelBase;
 import jetbrains.mps.extapi.model.SModelData;
 import jetbrains.mps.persistence.ModelEnvironmentInfo;
 import jetbrains.mps.persistence.PersistenceRegistry;
+import jetbrains.mps.project.ModuleId;
+import jetbrains.mps.project.ModuleId.Regular;
 import jetbrains.mps.project.dependency.ModelDependenciesManager;
+import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.project.structure.modules.RefUpdateUtil;
+import jetbrains.mps.smodel.adapter.ids.MetaIdByDeclaration;
+import jetbrains.mps.smodel.adapter.structure.language.SLanguageAdapterById;
 import jetbrains.mps.smodel.descriptor.RefactorableSModelDescriptor;
 import jetbrains.mps.smodel.event.SModelChildEvent;
 import jetbrains.mps.smodel.event.SModelDevKitEvent;
@@ -35,10 +40,15 @@ import jetbrains.mps.smodel.nodeidmap.INodeIdToNodeMap;
 import jetbrains.mps.smodel.nodeidmap.UniversalOptimizedNodeIdMap;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.util.annotation.ToRemove;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.language.SConcept;
+import org.jetbrains.mps.openapi.language.SContainmentLink;
+import org.jetbrains.mps.openapi.language.SLanguage;
+import org.jetbrains.mps.openapi.language.SProperty;
 import org.jetbrains.mps.openapi.model.EditableSModel;
 import org.jetbrains.mps.openapi.model.SModelId;
 import org.jetbrains.mps.openapi.model.SModelReference;
@@ -51,32 +61,39 @@ import org.jetbrains.mps.openapi.module.SRepository;
 
 import java.security.SecureRandom;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
+import java.util.LinkedHashMap;
 import java.util.LinkedHashSet;
 import java.util.List;
+import java.util.Map;
+import java.util.Map.Entry;
 import java.util.Set;
 import java.util.concurrent.atomic.AtomicLong;
 
 public class SModel implements SModelData {
   private static final Logger LOG = LogManager.getLogger(SModel.class);
+  private static AtomicLong ourCounter = new AtomicLong();
 
+  static {
+    resetIdCounter();
+  }
+
+  protected SModelBase myModelDescriptor;
   private Set<SNode> myRoots = new LinkedHashSet<SNode>();
   private SModelReference myReference;
-
   private boolean myDisposed;
-
   private List<SModuleReference> myLanguages = new ArrayList<SModuleReference>();
   private List<SModuleReference> myLanguagesEngagedOnGeneration = new ArrayList<SModuleReference>();
+  private Map<SLanguage, Integer> myLanguagesIds = new LinkedHashMap<SLanguage, Integer>();
+  private Map<SLanguage, Integer> myImplicitLanguagesIds = new LinkedHashMap<SLanguage, Integer>();
   private List<SModuleReference> myDevKits = new ArrayList<SModuleReference>();
   private List<ImportElement> myImports = new ArrayList<ImportElement>();
   private List<ImportElement> myImplicitImports = new ArrayList<ImportElement>();
-
   private INodeIdToNodeMap myIdToNodeMap = createNodeIdMap();
-
-  protected SModelBase myModelDescriptor;
-
   private StackTraceElement[] myDisposedStacktrace = null;
   private ModelDependenciesManager myModelDependenciesManager;
 
@@ -87,6 +104,58 @@ public class SModel implements SModelData {
   public SModel(@NotNull SModelReference modelReference, INodeIdToNodeMap map) {
     myReference = modelReference;
     myIdToNodeMap = map;
+  }
+
+  static void resetIdCounter() {
+    ourCounter.set(Math.abs(new SecureRandom().nextLong()));
+  }
+
+  public static SNodeId generateUniqueId() {
+    long id = Math.abs(ourCounter.incrementAndGet());
+    return new jetbrains.mps.smodel.SNodeId.Regular(id);
+  }
+
+  @NotNull
+  public static Set<SModelReference> collectUsedModels(@NotNull SModel model, @NotNull Set<SModelReference> result) {
+    ModelEnvironmentInfo env = PersistenceRegistry.getInstance().getModelEnvironmentInfo();
+    for (org.jetbrains.mps.openapi.model.SNode node : model.myIdToNodeMap.values()) {
+      SNodeReference ptrConcept = env.getConceptId(node);
+      if (ptrConcept == null) {
+        LOG.warn("concept not found for node " + SNodeUtil.getDebugText(node));
+      } else {
+        result.add(ptrConcept.getModelReference());
+      }
+      for (String propname : node.getPropertyNames()) {
+        SNodeReference ptrDecl = env.getPropertyId(node, propname);
+        if (ptrDecl == null) {
+          LOG.warn("undeclared property: '" + propname + "' in node " + SNodeUtil.getDebugText(node));
+        } else {
+          result.add(ptrDecl.getModelReference());
+        }
+      }
+      for (SReference ref : node.getReferences()) {
+        if (ref.getTargetSModelReference() != null) {
+          result.add(ref.getTargetSModelReference());
+        }
+        SNodeReference ptrDecl = env.getReferenceRoleId(ref);
+        if (ptrDecl == null) {
+          LOG.warn("undeclared link role: '" + ref.getRole() + "' in node " + SNodeUtil.getDebugText(node));
+        } else {
+          result.add(ptrDecl.getModelReference());
+        }
+      }
+      for (org.jetbrains.mps.openapi.model.SNode child : node.getChildren()) {
+        SNodeReference ptrDecl = env.getNodeRoleId(child);
+        if (ptrDecl == null) {
+          LOG.warn(
+              "undeclared child role: '" + child.getRoleInParent() + "' in node " + SNodeUtil.getDebugText(
+                  node));
+        } else {
+          result.add(ptrDecl.getModelReference());
+        }
+      }
+    }
+    return result;
   }
 
   public SModelId getModelId() {
@@ -137,6 +206,8 @@ public class SModel implements SModelData {
   public boolean isRoot(@Nullable org.jetbrains.mps.openapi.model.SNode node) {
     return myRoots.contains(node);
   }
+
+  //--------------IMPLEMENTATION-------------------
 
   @Override
   public void addRootNode(final org.jetbrains.mps.openapi.model.SNode node) {
@@ -218,8 +289,6 @@ public class SModel implements SModelData {
     return myReference.toString();
   }
 
-  //--------------IMPLEMENTATION-------------------
-
   //todo get rid of, try to cast, show an error if not casted
   public boolean isDisposed() {
     return myDisposed;
@@ -258,11 +327,15 @@ public class SModel implements SModelData {
     }
   }
 
+//---------listeners--------
+
   protected void performUndoableAction(Computable<SNodeUndoableAction> action) {
     if (!canFireEvent()) return;
     if (!UndoHelper.getInstance().needRegisterUndo()) return;
     UndoHelper.getInstance().addUndoableAction(action.compute());
   }
+
+  //todo code in the following methods should be written w/o duplication
 
   public boolean canFireEvent() {
     return myModelDescriptor != null && jetbrains.mps.util.SNodeOperations.isRegistered(myModelDescriptor) && !isUpdateMode();
@@ -291,14 +364,10 @@ public class SModel implements SModelData {
     LOG.error(new IllegalModelAccessError("accessing disposed model"));
   }
 
-//---------listeners--------
-
   private List<SModelListener> getModelListeners() {
     if (myModelDescriptor == null) return Collections.emptyList();
     return ((SModelBase) myModelDescriptor).getModelListeners();
   }
-
-  //todo code in the following methods should be written w/o duplication
 
   private void fireDevKitAddedEvent(@NotNull SModuleReference ref) {
     if (!canFireEvent()) return;
@@ -420,6 +489,8 @@ public class SModel implements SModelData {
     }
   }
 
+  //---------fast node finder--------
+
   void fireChildAddedEvent(@NotNull SNode parent, @NotNull String role, @NotNull SNode child, SNode anchor) {
     if (!canFireEvent()) return;
     int childIndex = anchor == null ? 0 : parent.getChildren().indexOf(anchor) + 1;
@@ -433,10 +504,12 @@ public class SModel implements SModelData {
     }
   }
 
-  void fireChildRemovedEvent(@NotNull SNode parent, @NotNull String role, @NotNull SNode child, SNode anchor) {
+  //---------node id--------
+
+  void fireChildRemovedEvent(@NotNull SNode parent, @NotNull SContainmentLink role, @NotNull SNode child, SNode anchor) {
     if (!canFireEvent()) return;
     int childIndex = anchor == null ? 0 : parent.getChildren().indexOf(anchor) + 1;
-    final SModelChildEvent event = new SModelChildEvent(getModelDescriptor(), false, parent, role, childIndex, child);
+    final SModelChildEvent event = new SModelChildEvent(getModelDescriptor(), false, parent, role.getRoleName(), childIndex, child);
     for (SModelListener sModelListener : getModelListeners()) {
       try {
         sModelListener.childRemoved(event);
@@ -446,10 +519,10 @@ public class SModel implements SModelData {
     }
   }
 
-  void fireBeforeChildRemovedEvent(@NotNull SNode parent, @NotNull String role, @NotNull SNode child, SNode anchor) {
+  void fireBeforeChildRemovedEvent(@NotNull SNode parent, @NotNull SContainmentLink role, @NotNull SNode child, SNode anchor) {
     if (!canFireEvent()) return;
     int childIndex = anchor == null ? 0 : parent.getChildren().indexOf(anchor) + 1;
-    final SModelChildEvent event = new SModelChildEvent(getModelDescriptor(), false, parent, role, childIndex, child);
+    final SModelChildEvent event = new SModelChildEvent(getModelDescriptor(), false, parent, role.getRoleName(), childIndex, child);
     for (SModelListener sModelListener : getModelListeners()) {
       try {
         sModelListener.beforeChildRemoved(event);
@@ -483,34 +556,15 @@ public class SModel implements SModelData {
     }
   }
 
-  //---------fast node finder--------
-
   public FastNodeFinder createFastNodeFinder() {
     return new DefaultFastNodeFinder(getModelDescriptor());
   }
 
-  //---------node id--------
-
-  private static AtomicLong ourCounter = new AtomicLong();
-
-  static {
-    resetIdCounter();
-  }
+  //---------node registration--------
 
   protected final INodeIdToNodeMap createNodeIdMap() {
     return new UniversalOptimizedNodeIdMap();
   }
-
-  static void resetIdCounter() {
-    ourCounter.set(Math.abs(new SecureRandom().nextLong()));
-  }
-
-  public static SNodeId generateUniqueId() {
-    long id = Math.abs(ourCounter.incrementAndGet());
-    return new jetbrains.mps.smodel.SNodeId.Regular(id);
-  }
-
-  //---------node registration--------
 
   void registerNode(@NotNull SNode node) {
     checkNotDisposed();
@@ -544,6 +598,8 @@ public class SModel implements SModelData {
     myIdToNodeMap.put(id, node);
   }
 
+  //---------imports manipulation--------
+
   void unregisterNode(@NotNull SNode node) {
     checkNotDisposed();
 
@@ -552,8 +608,6 @@ public class SModel implements SModelData {
     if (myDisposed || id == null) return;
     myIdToNodeMap.remove(id);
   }
-
-  //---------imports manipulation--------
 
   public ModelDependenciesManager getModelDepsManager() {
     if (myModelDependenciesManager == null) {
@@ -566,18 +620,80 @@ public class SModel implements SModelData {
     }
     return myModelDependenciesManager;
   }
+
+  //language
+
   private void invalidateModelDepsManager() {
     if (myModelDependenciesManager != null) {
       myModelDependenciesManager.invalidate();
     }
   }
 
-  //language
+  public void validateImplicitlyUsedLanguages() {
+    Set<SLanguage> myUsedLanguages = new HashSet<SLanguage>();
 
+    for (org.jetbrains.mps.openapi.model.SNode root : getRootNodes()) {
+      for (org.jetbrains.mps.openapi.model.SNode n : SNodeUtil.getDescendants(root)) {
+        SConcept conceptId = n.getConcept();
+        myUsedLanguages.add(conceptId.getLanguage());
+
+        if (n.getParent() != null) {
+          SContainmentLink roleId = n.getContainmentLink();
+          myUsedLanguages.add(roleId.getContainingConcept().getLanguage());
+        }
+        for (SProperty pid : n.getProperties()) {
+          myUsedLanguages.add(pid.getContainingConcept().getLanguage());
+        }
+
+        for (SReference ref : n.getReferences()) {
+          myUsedLanguages.add(ref.getReferenceLink().getContainingConcept().getLanguage());
+        }
+      }
+    }
+
+    Map<SLanguage, Integer> myNewImplicitLanguagesIds = new HashMap<SLanguage, Integer>(myUsedLanguages.size());
+
+    for (SLanguage lang : myLanguagesIds.keySet()) {
+      myUsedLanguages.remove(lang);
+    }
+
+    for (Entry<SLanguage, Integer> lang : myImplicitLanguagesIds.entrySet()) {
+      if (myUsedLanguages.remove(lang.getKey())) {
+        myNewImplicitLanguagesIds.put(lang.getKey(), lang.getValue());
+      }
+    }
+
+    for (SLanguage lang : myUsedLanguages) {
+      int version = ((Language) lang.getSourceModule()).getLanguageVersion();
+      myNewImplicitLanguagesIds.put(lang, version);
+    }
+
+    myImplicitLanguagesIds = myNewImplicitLanguagesIds;
+  }
+
+  // for persistence
+  public void addImplicitlyUsedLanguage(SLanguage id, int version) {
+    myImplicitLanguagesIds.put(id, version);
+  }
+
+  public Map<SLanguage, Integer> implicitlyUsedLanguagesWithVersions() {
+    return myImplicitLanguagesIds;
+  }
+
+  public Collection<SLanguage> usedLanguages() {
+    return Collections.unmodifiableSet(myLanguagesIds.keySet());
+  }
+
+  public Map<SLanguage, Integer> usedLanguagesWithVersions() {
+    return Collections.unmodifiableMap(myLanguagesIds);
+  }
+
+  @Deprecated
   public List<SModuleReference> importedLanguages() {
     return Collections.unmodifiableList(myLanguages);
   }
 
+  @Deprecated
   public void deleteLanguage(@NotNull SModuleReference ref) {
     assertLegalChange();
 
@@ -587,8 +703,23 @@ public class SModel implements SModelData {
       fireLanguageRemovedEvent(ref);
       markChanged();
     }
+
+    deleteLanguage(MetaIdByDeclaration.ref2Id(ref));
   }
 
+  public void deleteLanguage(@NotNull SLanguage id) {
+    if (myModelDescriptor != null) {
+      ModelChange.assertLegalChange_new(myModelDescriptor);
+    }
+
+    if (myLanguagesIds.remove(id) != null) {
+      invalidateModelDepsManager();
+      fireLanguageRemovedEvent(convertLanguageRef(id));
+      markChanged();
+    }
+  }
+
+  @Deprecated
   public void addLanguage(SModuleReference ref) {
     assertLegalChange();
 
@@ -603,9 +734,40 @@ public class SModel implements SModelData {
       fireLanguageAddedEvent(ref);
       markChanged();
     }
+
+    addLanguage(MetaIdByDeclaration.ref2Id(ref), -1);
+  }
+
+  public void addLanguage(Language language) {
+    addLanguage(new SLanguageAdapterById(MetaIdByDeclaration.getLanguageId(language), language.getModuleName()), language.getLanguageVersion());
   }
 
   //devkit
+
+  public void addLanguage(SLanguage id, int version) {
+    if (myModelDescriptor != null) {
+      ModelChange.assertLegalChange_new(myModelDescriptor);
+    }
+
+    Integer existingVersion = myLanguagesIds.get(id);
+    if (existingVersion != null) {
+      if (version == -1 || existingVersion == version) {
+        return;
+      }
+      if (existingVersion == -1) {
+        myLanguagesIds.remove(id);
+      } else {
+        assert false;
+      }
+    }
+
+    myLanguagesIds.put(id, version);
+    invalidateModelDepsManager();
+    fireLanguageAddedEvent(convertLanguageRef(id));
+    markChanged();
+
+    addLanguage(convertLanguageRef(id));
+  }
 
   public List<SModuleReference> importedDevkits() {
     return Collections.unmodifiableList(myDevKits);
@@ -621,6 +783,8 @@ public class SModel implements SModelData {
     }
   }
 
+  //model
+
   public void deleteDevKit(@NotNull SModuleReference ref) {
     assertLegalChange();
 
@@ -630,8 +794,6 @@ public class SModel implements SModelData {
       markChanged();
     }
   }
-
-  //model
 
   public List<ImportElement> importedModels() {
     return Collections.unmodifiableList(myImports);
@@ -674,49 +836,6 @@ public class SModel implements SModelData {
       fireImportRemovedEvent(modelReference);
       markChanged();
     }
-  }
-
-  @NotNull
-  public static Set<SModelReference> collectUsedModels(@NotNull SModel model, @NotNull Set<SModelReference> result) {
-    ModelEnvironmentInfo env = PersistenceRegistry.getInstance().getModelEnvironmentInfo();
-    for (org.jetbrains.mps.openapi.model.SNode node : model.myIdToNodeMap.values()) {
-      SNodeReference ptrConcept = env.getConceptId(node);
-      if (ptrConcept == null) {
-        LOG.warn("concept not found for node " + SNodeUtil.getDebugText(node));
-      } else {
-        result.add(ptrConcept.getModelReference());
-      }
-      for (String propname : node.getPropertyNames()) {
-        SNodeReference ptrDecl = env.getPropertyId(node, propname);
-        if (ptrDecl == null) {
-          LOG.warn("undeclared property: '" + propname + "' in node " + SNodeUtil.getDebugText(node));
-        } else {
-          result.add(ptrDecl.getModelReference());
-        }
-      }
-      for (SReference ref : node.getReferences()) {
-        if (ref.getTargetSModelReference() != null) {
-          result.add(ref.getTargetSModelReference());
-        }
-        SNodeReference ptrDecl = env.getReferenceRoleId(ref);
-        if (ptrDecl == null) {
-          LOG.warn("undeclared link role: '" + ref.getRole() + "' in node " + SNodeUtil.getDebugText(node));
-        } else {
-          result.add(ptrDecl.getModelReference());
-        }
-      }
-      for (org.jetbrains.mps.openapi.model.SNode child : node.getChildren()) {
-        SNodeReference ptrDecl = env.getNodeRoleId(child);
-        if (ptrDecl == null) {
-          LOG.warn(
-              "undeclared child role: '" + child.getRoleInParent() + "' in node " + SNodeUtil.getDebugText(
-                  node));
-        } else {
-          result.add(ptrDecl.getModelReference());
-        }
-      }
-    }
-    return result;
   }
 
   // create new implicit import list based on used models, explicit import and old implicit import list
@@ -762,6 +881,24 @@ public class SModel implements SModelData {
         markChanged();
       }
     }
+  }
+
+  @Deprecated
+  @ToRemove(version = 3.2)
+  private ModuleReference convertLanguageRef(final SLanguage ref) {
+    final ModuleReference[] result = new ModuleReference[1];
+    ModelAccess.instance().runReadAction(new Runnable() {
+      @Override
+      public void run() {
+        if (ref instanceof SLanguageAdapterById){
+          //this hack is needed while we have 2 types of language adapters for ConvertModelToBinary ant task to work
+          result[0] = new ModuleReference(ref.getQualifiedName(), ModuleId.regular(((SLanguageAdapterById) ref).getId().getId()));
+        }else{
+          result[0] = (ModuleReference) ref.getSourceModule().getModuleReference();
+        }
+      }
+    });
+    return result[0];
   }
 
   public void removeEngagedOnGenerationLanguage(SModuleReference ref) {
@@ -815,82 +952,12 @@ public class SModel implements SModelData {
       ModelChange.assertLegalChange(this);
     }
   }
-  public static class ImportElement {
-    private SModelReference myModelReference;
-    private int myReferenceID;  // persistence related index
-    private int myUsedVersion;
-
-    @Deprecated
-    public ImportElement(SModelReference modelReference, int referenceID) {
-      this(modelReference, referenceID, -1);
-    }
-
-    public ImportElement(SModelReference modelReference, int referenceID, int usedVersion) {
-      myModelReference = modelReference;
-      myReferenceID = referenceID;
-      myUsedVersion = usedVersion;
-    }
-
-    public SModelReference getModelReference() {
-      return myModelReference;
-    }
-
-    public void setModelReference(SModelReference modelReference) {
-      myModelReference = modelReference;
-    }
-
-    public int getReferenceID() {
-      return myReferenceID;
-    }
-
-    public void setReferenceID(int referenceID) {
-      myReferenceID = referenceID;
-    }
-
-    public int getUsedVersion() {
-      return myUsedVersion;
-    }
-
-    protected ImportElement copy() {
-      return new ImportElement(myModelReference, myReferenceID, myUsedVersion);
-    }
-
-    public String toString() {
-      return "ImportElement(" +
-          "uid=" + myModelReference + ", " +
-          "referenceId=" + myReferenceID + ", " +
-          "usedVersion=" + myUsedVersion + ")";
-    }
-
-    @Override
-    public boolean equals(Object o) {
-      if (this == o) return true;
-      if (o == null || getClass() != o.getClass()) return false;
-
-      ImportElement that = (ImportElement) o;
-
-      if (myReferenceID != that.myReferenceID) return false;
-      if (myUsedVersion != that.myUsedVersion) return false;
-      if (myModelReference != null ? !myModelReference.equals(that.myModelReference) : that.myModelReference != null)
-        return false;
-
-      return true;
-    }
-
-    @Override
-    public int hashCode() {
-      int result = myModelReference != null ? myModelReference.hashCode() : 0;
-      result = 31 * result + myReferenceID;
-      result = 31 * result + myUsedVersion;
-      return result;
-    }
-  }
-
-  //---------refactorings--------
 
   public int getVersion() {
     return -1;
   }
+
+  //---------refactorings--------
 
   public void setVersion(int version) {
 
@@ -957,7 +1024,6 @@ public class SModel implements SModelData {
     assertLegalChange();
 
 
-
     boolean changed = false;
 
     if (updateRefs(myDevKits)) {
@@ -1019,12 +1085,91 @@ public class SModel implements SModelData {
     for (SModuleReference mr : importedDevkits()) {
       to.addDevKit(mr);
     }
-    for (SModuleReference mr : importedLanguages()) {
-      to.addLanguage(mr);
+    for (Entry<SLanguage, Integer> mr : usedLanguagesWithVersions().entrySet()) {
+      to.addLanguage(mr.getKey(), mr.getValue());
     }
     for (SModuleReference mr : engagedOnGenerationLanguages()) {
       to.addEngagedOnGenerationLanguage(mr);
     }
     to.setVersion(getVersion());
   }
+
+  public static class ImportElement {
+    private SModelReference myModelReference;
+    private int myReferenceID;  // persistence related index
+    private int myUsedVersion;
+
+    @Deprecated
+    public ImportElement(SModelReference modelReference, int referenceID) {
+      this(modelReference, referenceID, -1);
+    }
+
+    @Deprecated
+    public ImportElement(SModelReference modelReference, int referenceID, int usedVersion) {
+      myModelReference = modelReference;
+      myReferenceID = referenceID;
+      myUsedVersion = usedVersion;
+    }
+
+    public ImportElement(SModelReference modelReference) {
+      myModelReference = modelReference;
+      myReferenceID = 0;
+      myUsedVersion = -1;
+    }
+
+    public SModelReference getModelReference() {
+      return myModelReference;
+    }
+
+    public void setModelReference(SModelReference modelReference) {
+      myModelReference = modelReference;
+    }
+
+    public int getReferenceID() {
+      return myReferenceID;
+    }
+
+    public void setReferenceID(int referenceID) {
+      myReferenceID = referenceID;
+    }
+
+    public int getUsedVersion() {
+      return myUsedVersion;
+    }
+
+    protected ImportElement copy() {
+      return new ImportElement(myModelReference, myReferenceID, myUsedVersion);
+    }
+
+    public String toString() {
+      return "ImportElement(" +
+          "uid=" + myModelReference + ", " +
+          "referenceId=" + myReferenceID + ", " +
+          "usedVersion=" + myUsedVersion + ")";
+    }
+
+    @Override
+    public boolean equals(Object o) {
+      if (this == o) return true;
+      if (o == null || getClass() != o.getClass()) return false;
+
+      ImportElement that = (ImportElement) o;
+
+      if (myReferenceID != that.myReferenceID) return false;
+      if (myUsedVersion != that.myUsedVersion) return false;
+      if (myModelReference != null ? !myModelReference.equals(that.myModelReference) : that.myModelReference != null)
+        return false;
+
+      return true;
+    }
+
+    @Override
+    public int hashCode() {
+      int result = myModelReference != null ? myModelReference.hashCode() : 0;
+      result = 31 * result + myReferenceID;
+      result = 31 * result + myUsedVersion;
+      return result;
+    }
+  }
+
 }

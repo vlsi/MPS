@@ -15,8 +15,9 @@
  */
 package jetbrains.mps.smodel.runtime;
 
-import org.jetbrains.mps.openapi.language.SConceptId;
-import org.jetbrains.mps.openapi.language.SContainmentLinkId;
+
+import jetbrains.mps.smodel.adapter.ids.SConceptId;
+import jetbrains.mps.smodel.adapter.ids.SContainmentLinkId;
 
 public class BaseLinkDescriptor implements LinkDescriptor {
   private final SContainmentLinkId myId;

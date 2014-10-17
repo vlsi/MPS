@@ -15,6 +15,9 @@
  */
 package org.jetbrains.mps.openapi.language;
 
+import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.model.SNode;
+
 /**
  * A descriptor of a concept. Concepts define categories for AST nodes.
  * The descriptor is read-only, so it is not possible to change the concept through its descriptor.
@@ -22,12 +25,6 @@ package org.jetbrains.mps.openapi.language;
  * note: the relationship between SNode and SConcept is analogical to the relationship between an object and its Class in Java
  */
 public interface SAbstractConcept {
-
-  /**
-   * The qualified name of the concept. Uniquely identifies this concept in its concept repository.
-   */
-  String getQualifiedName();
-
   /**
    * The user visible name of the concept
    */
@@ -39,22 +36,18 @@ public interface SAbstractConcept {
   SLanguage getLanguage();
 
   /**
-   * Retrieves an associated link identified by the given role.
+   * Returns all the references this concept has, including inherited
    */
-  SAbstractLink getLink(String role);
+  Iterable<SReferenceLink> getReferences();
 
   /**
-   * Retrieves all links associated with the concept.
+   * Returns all the links this concept has, including inherited
+   * There's no "specialized links" at the compiled language level, all links are "original"
    */
-  Iterable<SAbstractLink> getLinks();
+  Iterable<SContainmentLink> getChildren();
 
   /**
-   * Finds a concept's property by name
-   */
-  SProperty getProperty(String name);
-
-  /**
-   * All properties
+     * Returns all the properties this concept has, including inherited
    */
   Iterable<SProperty> getProperties();
 
@@ -62,4 +55,24 @@ public interface SAbstractConcept {
    * Either implementing or extending the supplied concept
    */
   boolean isSubConceptOf(SAbstractConcept concept);
+
+  /**
+   * Returns the declaration node in case sources for this concept are present in IDE
+   */
+  @Nullable
+  SNode getDeclarationNode();
+
+  //----------deprecated------------
+
+  @Deprecated
+  String getQualifiedName();
+
+  @Deprecated
+  Iterable<SAbstractLink> getLinks();
+
+  @Deprecated
+  SProperty getProperty(String name);
+
+  @Deprecated
+  SAbstractLink getLink(String role);
 }

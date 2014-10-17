@@ -35,11 +35,13 @@ import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.persistence.DataSource;
 import org.jetbrains.mps.openapi.persistence.ModelFactory;
 import org.jetbrains.mps.openapi.persistence.MultiStreamDataSource;
+import org.jetbrains.mps.openapi.persistence.NullDataSource;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import org.jetbrains.mps.openapi.persistence.StreamDataSource;
 import org.jetbrains.mps.openapi.persistence.UnsupportedDataSourceException;
 import org.xml.sax.InputSource;
 
+import javax.sound.midi.InvalidMidiDataException;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -120,6 +122,11 @@ public class DefaultModelPersistence implements CoreComponent, ModelFactory {
     if (modelName == null) {
       throw new IOException("modelName is not provided");
     }
+    String modulRef = options.get(OPTION_MODULEREF);
+    if (modulRef == null) {
+      throw new IOException("moduleRef is not provided");
+    }
+
     final SModelHeader header = SModelHeader.create(ModelPersistence.LAST_VERSION);
     header.setModelReference(PersistenceFacade.getInstance().createModelReference(null, jetbrains.mps.smodel.SModelId.generate(), modelName));
     return new DefaultSModelDescriptor(new PersistenceFacility(this, (StreamDataSource) dataSource), header);
@@ -170,7 +177,7 @@ public class DefaultModelPersistence implements CoreComponent, ModelFactory {
     if (!(dataSource instanceof StreamDataSource)) {
       throw new UnsupportedDataSourceException(dataSource);
     }
-    int persistenceVersion = model instanceof DefaultSModelDescriptor ? ((DefaultSModelDescriptor) model).getPersistenceVersion() : ModelPersistence.LAST_VERSION;
+    int persistenceVersion = model instanceof PersistenceVersionAware ? ((PersistenceVersionAware) model).getPersistenceVersion() : ModelPersistence.LAST_VERSION;
 
     ModelPersistence.saveModel(((SModelBase) model).getSModel(), (StreamDataSource) dataSource, persistenceVersion);
   }

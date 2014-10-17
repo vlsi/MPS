@@ -218,6 +218,8 @@
       <modulePath path="$PROJECT_DIR$/plugins/execution-languages/languages/commands/jetbrains.mps.execution.commands.mpl" folder="workbench.execution" />
       <modulePath path="$PROJECT_DIR$/plugins/execution-languages/languages/configurations/jetbrains.mps.execution.configurations.mpl" folder="workbench.execution" />
       <modulePath path="$PROJECT_DIR$/plugins/execution-languages/languages/configurations/solutions/pluginSolution/jetbrains.mps.execution.configurations.pluginSolution.msd" folder="workbench.execution" />
+      <modulePath path="$PROJECT_DIR$/plugins/execution-languages/languages/demo/jetbrains.mps.execution.demo.mpl" folder="workbench.execution" />
+      <modulePath path="$PROJECT_DIR$/plugins/execution-languages/languages/demo/pluginSolution/jetbrains.mps.execution.demo.pluginSolution.msd" folder="workbench.execution" />
       <modulePath path="$PROJECT_DIR$/plugins/execution-languages/languages/devkit/devkit.devkit" folder="workbench.execution" />
       <modulePath path="$PROJECT_DIR$/plugins/execution-languages/languages/jetbrains.mps.execution.impl/jetbrains.mps.execution.impl.msd" folder="workbench.execution" />
       <modulePath path="$PROJECT_DIR$/plugins/execution-languages/languages/library/jetbrains.mps.execution.library.msd" folder="workbench.execution" />

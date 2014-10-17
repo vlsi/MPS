@@ -35,6 +35,7 @@
     <classNode dependClassName="jetbrains.mps.debugger.java.api.evaluation.EvaluationException" />
     <classNode dependClassName="jetbrains.mps.debugger.java.api.evaluation.EvaluationRuntimeException" />
     <classNode dependClassName="jetbrains.mps.debugger.java.api.evaluation.InvalidEvaluatedExpressionException" />
+    <classNode dependClassName="jetbrains.mps.debugger.java.api.evaluation.Invocatable" />
     <classNode dependClassName="jetbrains.mps.debugger.java.api.evaluation.InvocationTargetEvaluationException" />
     <classNode dependClassName="jetbrains.mps.debugger.java.api.evaluation.JdiRuntimeExceptionEvaluationException" />
     <classNode dependClassName="jetbrains.mps.debugger.java.api.evaluation.TargetVMEvaluationException" />
@@ -47,7 +48,6 @@
     <classNode dependClassName="org.apache.log4j.Logger" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
-    <classNode extendsClassName="jetbrains.mps.debugger.java.api.evaluation.Invocatable" />
   </dependency>
   <dependency className="jetbrains.mps.debugger.java.api.evaluation.Evaluator" file="Evaluator.java">
     <classNode dependClassName="com.sun.jdi.ObjectReference" />

@@ -18,12 +18,12 @@ package org.jetbrains.mps.openapi.language;
 /**
  * Represents an abstract meta-definition of node connections. These can express either references or containment relationships.
  */
+@Deprecated //just remove this class after 3.2
 public interface SAbstractLink {
-
-  /**
-   * The identifier of the link within the containing concept.
-   */
+  @Deprecated
   String getRole();
+
+  SAbstractConcept getContainingConcept();
 
   /**
    * The concept for the nodes that this link points to.
@@ -33,6 +33,7 @@ public interface SAbstractLink {
   /**
    * True for references, false for containment relationships.
    */
+  @Deprecated
   boolean isReference();
 
   /**

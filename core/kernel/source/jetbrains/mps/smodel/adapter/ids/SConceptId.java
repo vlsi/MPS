@@ -15,20 +15,29 @@
  */
 package jetbrains.mps.smodel.adapter.ids;
 
-public final class SConceptId implements org.jetbrains.mps.openapi.language.SConceptId {
-  private final SLanguageId myLanguageId;
-  private final int myConceptId;
+import org.jetbrains.annotations.NotNull;
 
-  public SConceptId(SLanguageId languageId, long conceptId) {
-    myConceptId = (int) conceptId;
+public final class SConceptId {
+  private final SLanguageId myLanguageId;
+  private final long myConceptId;
+
+  public SConceptId(@NotNull SLanguageId languageId, long conceptId) {
+    myConceptId = conceptId;
     myLanguageId = languageId;
+  }
+
+  public static SConceptId deserialize(String s) {
+    int split = s.lastIndexOf("/");
+    SLanguageId lang = SLanguageId.deserialize(s.substring(0, split));
+    long concept = Long.parseLong(s.substring(split + 1));
+    return new SConceptId(lang, concept);
   }
 
   public SLanguageId getLanguageId() {
     return myLanguageId;
   }
 
-  public int getConceptId() {
+  public long getConceptId() {
     return myConceptId;
   }
 
@@ -40,15 +49,19 @@ public final class SConceptId implements org.jetbrains.mps.openapi.language.SCon
     SConceptId that = (SConceptId) o;
 
     if (myConceptId != that.myConceptId) return false;
-    if (myLanguageId != null ? !myLanguageId.equals(that.myLanguageId) : that.myLanguageId != null) return false;
+    if (!myLanguageId.equals(that.myLanguageId)) return false;
 
     return true;
   }
 
   @Override
   public int hashCode() {
-    int result = myLanguageId != null ? myLanguageId.hashCode() : 0;
+    long result = myLanguageId.hashCode();
     result = 31 * result + myConceptId;
-    return result;
+    return (int) result;
+  }
+
+  public String serialize() {
+    return myLanguageId.serialize() + "/" + myConceptId;
   }
 }

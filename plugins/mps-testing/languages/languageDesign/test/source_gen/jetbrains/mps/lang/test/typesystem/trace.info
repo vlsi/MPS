@@ -241,11 +241,11 @@
       <node id="1225985126098" at="37,61,38,63" concept="7" />
       <node id="1225985126098" at="38,63,39,30" concept="7" />
       <node id="1225985126098" at="39,30,40,138" concept="3" />
-      <node id="1225985126098" at="40,138,41,284" concept="3" />
-      <node id="1225985126098" at="41,284,42,24" concept="8" />
+      <node id="1225985126098" at="40,138,41,321" concept="3" />
+      <node id="1225985126098" at="41,321,42,24" concept="8" />
       <node id="1225984593084" at="16,0,18,0" concept="2" trace="typeof_EditorExpression_InferenceRule#()V" />
-      <node id="1225985126098" at="39,30,41,284" concept="0" />
-      <node id="1225985126098" at="39,30,41,284" concept="0" />
+      <node id="1225985126098" at="39,30,41,321" concept="0" />
+      <node id="1225985126098" at="39,30,41,321" concept="0" />
       <node id="1225984593084" at="25,0,28,0" concept="6" trace="getApplicableConceptFQName#()Ljava/lang/String;" />
       <node id="1225984593084" at="34,0,37,0" concept="6" trace="overrides#()Z" />
       <node id="1225984593084" at="28,68,32,5" concept="0" />
@@ -260,7 +260,7 @@
       <scope id="1225984593084" at="29,5,31,45">
         <var name="b" id="1225984593084" />
       </scope>
-      <scope id="1225985126098" at="39,30,41,284" />
+      <scope id="1225985126098" at="39,30,41,321" />
       <scope id="1225984944721" at="19,5,22,271">
         <var name="_info_12389875345" id="1225984944721" />
         <var name="_nodeToCheck_1029348928467" id="1225984944721" />
@@ -297,11 +297,11 @@
       <node id="1228148731340" at="37,61,38,63" concept="7" />
       <node id="1228148731340" at="38,63,39,30" concept="7" />
       <node id="1228148731340" at="39,30,40,138" concept="3" />
-      <node id="1228148731340" at="40,138,41,291" concept="3" />
-      <node id="1228148731340" at="41,291,42,24" concept="8" />
+      <node id="1228148731340" at="40,138,41,328" concept="3" />
+      <node id="1228148731340" at="41,328,42,24" concept="8" />
       <node id="1228148619872" at="16,0,18,0" concept="2" trace="typeof_ModelExpression_InferenceRule#()V" />
-      <node id="1228148731340" at="39,30,41,291" concept="0" />
-      <node id="1228148731340" at="39,30,41,291" concept="0" />
+      <node id="1228148731340" at="39,30,41,328" concept="0" />
+      <node id="1228148731340" at="39,30,41,328" concept="0" />
       <node id="1228148619872" at="25,0,28,0" concept="6" trace="getApplicableConceptFQName#()Ljava/lang/String;" />
       <node id="1228148619872" at="34,0,37,0" concept="6" trace="overrides#()Z" />
       <node id="1228148619872" at="28,68,32,5" concept="0" />
@@ -316,7 +316,7 @@
       <scope id="1228148619872" at="29,5,31,45">
         <var name="b" id="1228148619872" />
       </scope>
-      <scope id="1228148731340" at="39,30,41,291" />
+      <scope id="1228148731340" at="39,30,41,328" />
       <scope id="1228148726945" at="19,5,22,295">
         <var name="_info_12389875345" id="1228148726945" />
         <var name="_nodeToCheck_1029348928467" id="1228148726945" />
@@ -353,11 +353,11 @@
       <node id="1229343523395" at="37,61,38,63" concept="7" />
       <node id="1229343523395" at="38,63,39,30" concept="7" />
       <node id="1229343523395" at="39,30,40,138" concept="3" />
-      <node id="1229343523395" at="40,138,41,269" concept="3" />
-      <node id="1229343523395" at="41,269,42,24" concept="8" />
+      <node id="1229343523395" at="40,138,41,306" concept="3" />
+      <node id="1229343523395" at="41,306,42,24" concept="8" />
       <node id="1228148844375" at="16,0,18,0" concept="2" trace="typeof_ProjectExpression_InferenceRule#()V" />
-      <node id="1229343523395" at="39,30,41,269" concept="0" />
-      <node id="1229343523395" at="39,30,41,269" concept="0" />
+      <node id="1229343523395" at="39,30,41,306" concept="0" />
+      <node id="1229343523395" at="39,30,41,306" concept="0" />
       <node id="1228148844375" at="25,0,28,0" concept="6" trace="getApplicableConceptFQName#()Ljava/lang/String;" />
       <node id="1228148844375" at="34,0,37,0" concept="6" trace="overrides#()Z" />
       <node id="1228148844375" at="28,68,32,5" concept="0" />
@@ -372,7 +372,7 @@
       <scope id="1228148844375" at="29,5,31,45">
         <var name="b" id="1228148844375" />
       </scope>
-      <scope id="1229343523395" at="39,30,41,269" />
+      <scope id="1229343523395" at="39,30,41,306" />
       <scope id="1229343523390" at="19,5,22,271">
         <var name="_info_12389875345" id="1229343523390" />
         <var name="_nodeToCheck_1029348928467" id="1229343523390" />
@@ -495,11 +495,11 @@
       <node id="5773579205430190114" at="37,61,38,63" concept="7" />
       <node id="5773579205430190114" at="38,63,39,30" concept="7" />
       <node id="5773579205430190114" at="39,30,40,138" concept="3" />
-      <node id="5773579205430190114" at="40,138,41,285" concept="3" />
-      <node id="5773579205430190114" at="41,285,42,24" concept="8" />
+      <node id="5773579205430190114" at="40,138,41,322" concept="3" />
+      <node id="5773579205430190114" at="41,322,42,24" concept="8" />
       <node id="5773579205430173663" at="16,0,18,0" concept="2" trace="typeof_EditorComponentExpression_InferenceRule#()V" />
-      <node id="5773579205430190114" at="39,30,41,285" concept="0" />
-      <node id="5773579205430190114" at="39,30,41,285" concept="0" />
+      <node id="5773579205430190114" at="39,30,41,322" concept="0" />
+      <node id="5773579205430190114" at="39,30,41,322" concept="0" />
       <node id="5773579205430173663" at="25,0,28,0" concept="6" trace="getApplicableConceptFQName#()Ljava/lang/String;" />
       <node id="5773579205430173663" at="34,0,37,0" concept="6" trace="overrides#()Z" />
       <node id="5773579205430173663" at="28,68,32,5" concept="0" />
@@ -514,7 +514,7 @@
       <scope id="5773579205430173663" at="29,5,31,45">
         <var name="b" id="5773579205430173663" />
       </scope>
-      <scope id="5773579205430190114" at="39,30,41,285" />
+      <scope id="5773579205430190114" at="39,30,41,322" />
       <scope id="5773579205430190112" at="19,5,22,277">
         <var name="_info_12389875345" id="5773579205430190112" />
         <var name="_nodeToCheck_1029348928467" id="5773579205430190112" />

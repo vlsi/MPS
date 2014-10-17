@@ -48,7 +48,9 @@ import org.junit.runners.Suite;
     jetbrains.mps.workbench.dialogs.project.components.parts.lists.SortedListTest.class,
     jetbrains.mps.smodel.language.ExtensionRegistryTest.class,
     jetbrains.mps.editor.runtime.style.StyleTests.class,
-    jetbrains.mps.smodel.TreeIteratorTest.class
+    jetbrains.mps.smodel.TreeIteratorTest.class,
+    jetbrains.mps.smodel.SModelReferenceTest.class,
+    jetbrains.mps.smodel.adapter.SAdapterEqualityTest.class
 })
 public class GlobalTestSuite {
 }

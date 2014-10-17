@@ -15,15 +15,19 @@
  */
 package jetbrains.mps.persistence.binary;
 
+import jetbrains.mps.persistence.IdHelper;
 import jetbrains.mps.persistence.ModelEnvironmentInfo;
 import jetbrains.mps.smodel.DynamicReference;
 import jetbrains.mps.smodel.DynamicReference.DynamicReferenceOrigin;
 import jetbrains.mps.smodel.StaticReference;
+import jetbrains.mps.smodel.persistence.def.v9.IdInfoCollector;
 import jetbrains.mps.smodel.runtime.ConceptKind;
 import jetbrains.mps.smodel.runtime.StaticScope;
 import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.util.io.ModelOutputStream;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.language.SContainmentLink;
+import org.jetbrains.mps.openapi.language.SProperty;
 import org.jetbrains.mps.openapi.model.SModelId;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -67,9 +71,12 @@ public class NodesWriter {
   }
 
   public void writeNode(SNode node, ModelOutputStream os) throws IOException {
+    os.writeString(IdHelper.getConceptId(node.getConcept()).serialize());
     os.writeString(node.getConcept().getQualifiedName());
     os.writeNodeId(node.getNodeId());
-    os.writeString(node.getRoleInParent());
+    SContainmentLink roleInParentId = node.getContainmentLink();
+    os.writeString(roleInParentId == null ? null : IdHelper.getLinkId(roleInParentId).serialize());
+    os.writeString(roleInParentId == null ? null : roleInParentId.getRoleName());
     os.writeByte(getNodeInfo(node));
     os.writeByte('{');
 
@@ -130,7 +137,8 @@ public class NodesWriter {
       } else {
         throw new IOException("cannot store reference: " + reference.toString());
       }
-      os.writeString(reference.getRole());
+      os.writeString(IdHelper.getRefId(reference.getReferenceLink()).serialize());
+      os.writeString(reference.getReferenceLink().getRoleName());
       if (targetModelReference != null && targetModelReference.equals(myModelReference)) {
         os.writeByte(17);
       } else {
@@ -142,13 +150,14 @@ public class NodesWriter {
   }
 
   protected void writeProperties(SNode node, ModelOutputStream os) throws IOException {
-    final Map<String, String> properties = new HashMap<String, String>();
-    for (String name : node.getPropertyNames()) {
-      properties.put(name, node.getProperty(name));
+    final Map<SProperty, String> properties = new HashMap<SProperty, String>();
+    for (SProperty id : node.getProperties()) {
+      properties.put(id, node.getProperty(id));
     }
     os.writeInt(properties.size());
-    for (Entry<String, String> entry : properties.entrySet()) {
-      os.writeString(entry.getKey());
+    for (Entry<SProperty, String> entry : properties.entrySet()) {
+      os.writeString(IdHelper.getPropertyId(entry.getKey()).serialize());
+      os.writeString(entry.getKey().getName());
       os.writeString(entry.getValue());
     }
   }

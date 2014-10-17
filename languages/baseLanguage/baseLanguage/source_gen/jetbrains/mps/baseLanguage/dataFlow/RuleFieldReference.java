@@ -27,7 +27,7 @@ public class RuleFieldReference extends DataFlowConstructor {
       if (SLinkOperations.getTargets(field, "annotation", true) != null) {
         for (SNode annotation : SLinkOperations.getTargets(field, "annotation", true)) {
           String name = SPropertyOperations.getString(SLinkOperations.getTarget(annotation, "annotation", false), "name");
-          if (SLinkOperations.getTarget(annotation, "annotation", false) == SNodeOperations.getNode("f:java_stub#3f233e7f-b8a6-46d2-a57f-795d56775243#org.jetbrains.annotations(Annotations/org.jetbrains.annotations@java_stub)", "~NotNull")) {
+          if (SLinkOperations.getTarget(annotation, "annotation", false) == SNodeOperations.getNode("3f233e7f-b8a6-46d2-a57f-795d56775243/f:java_stub#3f233e7f-b8a6-46d2-a57f-795d56775243#org.jetbrains.annotations(Annotations/org.jetbrains.annotations@java_stub)", "~NotNull")) {
             {
               Object object = node;
               if (((Program) o).contains(object)) {
