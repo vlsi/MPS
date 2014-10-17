@@ -19,13 +19,14 @@ import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.ComputeRunnable;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
-import org.jetbrains.mps.openapi.module.WriteActionListener;
+import org.jetbrains.mps.openapi.repository.WriteActionListener;
 
 import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
 
 public final class WriteActionDispatcher {
   private static final Logger LOG = LogManager.getLogger(WriteActionDispatcher.class);
+
   private final List<WriteActionListener> myListeners = new CopyOnWriteArrayList<WriteActionListener>();
 
   private volatile int myWriteActionLevel = 0;
@@ -49,21 +50,13 @@ public final class WriteActionDispatcher {
 
   private void onActionStarted() {
     for (WriteActionListener listener : myListeners) {
-      try {
-        listener.actionStarted();
-      } catch (Throwable t) {
-        LOG.error(t.getMessage(), t);
-      }
+      listener.actionStarted();
     }
   }
 
   private void onActionFinished() {
     for (WriteActionListener listener : myListeners) {
-      try {
-        listener.actionFinished();
-      } catch (Throwable t) {
-        LOG.error(t.getMessage(), t);
-      }
+      listener.actionFinished();
     }
   }
 
@@ -72,18 +65,14 @@ public final class WriteActionDispatcher {
   }
 
   public void addWriteActionListener(WriteActionListener listener) {
-    if (myListeners.contains(listener))
-      throw new ListenersConsistenceException("Adding the same listener again");
-    if (inWriteAction())
-      listener.actionStarted();
+    if (myListeners.contains(listener)) throw new ListenersConsistenceException("Adding the same listener again");
+    if (inWriteAction()) listener.actionStarted();
     myListeners.add(listener);
   }
 
   public void removeWriteActionListener(WriteActionListener listener) {
-    if (!myListeners.contains(listener))
-      throw new ListenersConsistenceException("The listener you trying to remove does not exist");
-    if (inWriteAction())
-      listener.actionFinished();
+    if (!myListeners.contains(listener)) throw new ListenersConsistenceException("The listener you trying to remove does not exist");
+    if (inWriteAction()) listener.actionFinished();
     myListeners.remove(listener);
   }
 
