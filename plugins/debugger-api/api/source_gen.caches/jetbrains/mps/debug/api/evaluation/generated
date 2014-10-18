@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-cpc994cjnia2j2kd8bj18rdq8uzoyvt">
-  <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="-aoqr8hwyzn1gt1phtgpxwftwo6ha0xu" />
-  <common hash="-cpc994cjnia2j2kd8bj18rdq8uzoyvt" dependsOnNodes="true">
+<dependencies version="2" modelHash="-3eprunzbbg1zu5tvq1pwkspjxrdch5n">
+  <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="-byzd16c9464mzaxq1u6n0ssaly7qydz" />
+  <common hash="-3eprunzbbg1zu5tvq1pwkspjxrdch5n" dependsOnNodes="true">
     <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
   </common>
   <source id="4474271214082914177" name="IEvaluationProvider">

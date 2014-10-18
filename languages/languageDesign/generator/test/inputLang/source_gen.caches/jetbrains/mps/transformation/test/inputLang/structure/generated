@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-er52je1ir7datgrpgjv704dmnifpgah">
+<dependencies version="2" modelHash="-8qh7hsjhwvv1kdjs9g4mfgooaq7j3x1">
   <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
   <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
-  <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="-2hubvwh7bwismm0eld02cqmdefvj5by" />
-  <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" hash="earelxj8tgzojre3f83be708tts5353" />
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-cs7m40i7d9o09jkq6mrq5z7w0hqwzmp" />
-  <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" hash="-2sqpydigz7vryaerubh22j78l4l08jz" />
-  <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="d987foka3qddszg3k3yjss0jaslj9i" />
-  <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="8cdjk2e5d2y2u9lult1ptgxxrttxv07" />
-  <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" hash="5g3rtdo35mi5yfu1kii2pegdk4kei4n" />
-  <common hash="-anez1agbv24sdp5ry26n4cqfwduak7t" dependsOnNodes="true">
+  <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="5j4ycjpdxb0hhd1qpfbo5sg6kqjw5n1" />
+  <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" hash="7k4a98pk3z957ipickh98qliybx88fh" />
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-3fid1lc9vuvtwe9bdm13cz1ariv49fa" />
+  <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" hash="-9fyf8ube0aqhy2tpqxm8qrxfi4z6r48" />
+  <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="-byzd16c9464mzaxq1u6n0ssaly7qydz" />
+  <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="-8tpnzgwrbijeinrlmy2syctrrkkgmqe" />
+  <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" hash="-ejdnkl4k7oblmzppkwdag96g8xt530f" />
+  <common hash="-8qh7hsjhwvv1kdjs9g4mfgooaq7j3x1" dependsOnNodes="true">
     <dep root="1195168316083" />
     <dep root="1195169091918" />
     <dep root="1195169251499" />
@@ -34,9 +34,9 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="StructureAspectDescriptor.java" />
   </common>
-  <source id="1195168316083" name="InputRoot" hash="-ccl68ee6fezvqu6s8p6fdua2iajf9le" />
-  <source id="1195169091918" name="InputNode" hash="5p5atn0uxbeirl2j21m1qs6572itox8" />
-  <source id="1195169251499" name="Option" hash="-ca0stjep98b6k8yh5nxl4s45knfhpmw">
+  <source id="1195168316083" name="InputRoot" />
+  <source id="1195169091918" name="InputNode" />
+  <source id="1195169251499" name="Option">
     <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
@@ -47,25 +47,26 @@
     <file name="Option.java" />
     <file name="Option_PropertySupport.java" />
   </source>
-  <source id="1195171011194" name="InputNode_A" hash="3c681ekk2h23aqtcuyp6ru3piexqhx7" />
-  <source id="1202242680337" name="UseInTest" hash="1ztg7p94w8ivfjctmcq6qrec557hman">
+  <source id="1195171011194" name="InputNode_A" />
+  <source id="1202242680337" name="UseInTest">
     <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="UseInTest.java" />
     <file name="UseInTest_PropertySupport.java" />
   </source>
-  <source id="1206459872650" name="InputNode_B" hash="4t1i04tiughl95osxneujfn6mjs8fiw" />
-  <source id="1206462895210" name="InputNode_C" hash="-6imfw70hbyxrmkqtpostbpihzyvt2lb" />
-  <source id="1209146548167" name="ExpressionToReduceToStatement" hash="8hm2374cf9qf4pkcmmttkj1tfhnvn7c" />
-  <source id="1209149421970" name="InputRootWithStatementList" hash="-5cchznb46oknw3bdrwdmkyg3y9lrgot" />
-  <source id="3315811491560119803" name="RefTestClass" hash="-63slf57s13g9pl4x0xyq45uzslew59j" />
-  <source id="3315811491560119806" name="RefTestMethod" hash="-1iejo4y1s6y743xotct46de72zw64ma" />
-  <source id="3315811491560119808" name="RefTestParam" hash="-eqj92jnfd3am33tpfnfdh2pnc7lqd22" />
-  <source id="3315811491560119809" name="RefTestExpression" hash="-3l601ajezha1pagbr8dkryeinoowqzg" />
-  <source id="3315811491560119815" name="RefTestParamRef" hash="4rkqjaw1x5wbjebpu615uggmcnt7onq" />
-  <source id="3315811491560119817" name="RefTestMethodCall" hash="-8qtau1f3acl93pkr3ibgh8b7i3uxggn" />
+  <source id="1206459872650" name="InputNode_B" />
+  <source id="1206462895210" name="InputNode_C" />
+  <source id="1209146548167" name="ExpressionToReduceToStatement" />
+  <source id="1209149421970" name="InputRootWithStatementList" />
+  <source id="3315811491560119803" name="RefTestClass" />
+  <source id="3315811491560119806" name="RefTestMethod" />
+  <source id="3315811491560119808" name="RefTestParam" />
+  <source id="3315811491560119809" name="RefTestExpression" />
+  <source id="3315811491560119815" name="RefTestParamRef" />
+  <source id="3315811491560119817" name="RefTestMethodCall" />
 </dependencies>
 

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="8sx61icdfzv9rf7t4drr9j4qnibkwxw">
-  <common hash="8sx61icdfzv9rf7t4drr9j4qnibkwxw" />
+<dependencies version="2" modelHash="-6eq8teifv40hq4xv7bmvz8w2jfmthy2">
+  <common hash="-6eq8teifv40hq4xv7bmvz8w2jfmthy2" />
   <source id="9212378209272341619" name="plugin">
     <file name="plugin.xml" />
   </source>

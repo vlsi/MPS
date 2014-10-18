@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-92fmgvwirqz1tzwctbovaas9i7gewgq">
-  <dep model="r:14f06230-41df-42af-9a25-81de46539bf1(jetbrains.mps.build.workflow.accessories)" hash="-72s3nxkfgc2c62gn8gbk3qdv1xjozo3" />
-  <dep model="r:d8d06a40-eb90-4ad9-a679-19e3fc235859(jetbrains.mps.build.workflow.generator.template.main@generator)" hash="39wwzmeg5ijekf7kfixg8iosik1c6ce" />
-  <common hash="-92fmgvwirqz1tzwctbovaas9i7gewgq" />
+<dependencies version="2" modelHash="1jmcgjsbgdy5u5trwb3c2b996wjf09g">
+  <dep model="r:14f06230-41df-42af-9a25-81de46539bf1(jetbrains.mps.build.workflow.accessories)" hash="-63sxou2luys98vh9r2azsksaogdn5n" />
+  <dep model="r:d8d06a40-eb90-4ad9-a679-19e3fc235859(jetbrains.mps.build.workflow.generator.template.main@generator)" hash="-6a7k317vqxw6eszijlerg7gvq52v00e" />
+  <common hash="1jmcgjsbgdy5u5trwb3c2b996wjf09g" />
   <source id="398731435597190701" name="module-tests">
     <dep model="r:14f06230-41df-42af-9a25-81de46539bf1(jetbrains.mps.build.workflow.accessories)" />
     <dep model="r:d8d06a40-eb90-4ad9-a679-19e3fc235859(jetbrains.mps.build.workflow.generator.template.main@generator)" />
