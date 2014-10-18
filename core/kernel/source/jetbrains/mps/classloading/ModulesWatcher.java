@@ -58,6 +58,7 @@ public class ModulesWatcher {
   private final SRepository myRepository;
   private final Condition<SModule> myLoadableCondition;
 
+  // change the boolean property to the list of "dirty" modules
   private boolean myChanged = false;
   private final Graph<SModule> myDepGraph; // A -> B iff A depends on B
   private final Graph<SModule> myBackDepGraph; // myDepGraph transposed

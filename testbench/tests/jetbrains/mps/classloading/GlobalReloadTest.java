@@ -40,7 +40,7 @@ import java.util.TreeMap;
 
 import static org.junit.Assert.fail;
 
-public class ClassesReloadTest extends WorkbenchMpsTest {
+public class GlobalReloadTest extends WorkbenchMpsTest {
   private static final String PROJECT_PATH = PathManager.getHomePath();
 
   private Map<String, String> myModuleNamesToErrors = new TreeMap<String, String>();
