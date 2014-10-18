@@ -65,8 +65,8 @@ public class IdeaEnvironment implements Environment {
   }
 
   private void initMacros(EnvironmentConfig config) {
-    for (String macro : MapSequence.fromMap(config.macros()).keySet()) {
-      setMacro(macro, MapSequence.fromMap(config.macros()).get(macro));
+    for (String macro : MapSequence.fromMap(config.getMacros()).keySet()) {
+      setMacro(macro, MapSequence.fromMap(config.getMacros()).get(macro));
     }
   }
 
@@ -82,7 +82,7 @@ public class IdeaEnvironment implements Environment {
       LOG.info("Initializing libraries");
     }
 
-    final LibraryContributor libContributor = EnvironmentUtils.createLibContributor(false, config.libs());
+    final LibraryContributor libContributor = EnvironmentUtils.createLibContributor(config.getLibs());
     LibraryInitializer.getInstance().addContributor(libContributor);
     try {
       SwingUtilities.invokeAndWait(new Runnable() {

@@ -80,7 +80,7 @@ public abstract class MpsWorker {
       config = config.addMacro(macro.key(), new File(macro.value()));
     }
     for (IMapping<String, File> lib : MapSequence.fromMap(whatToDo.getLibraries())) {
-      config = config.addLib(lib.key(), lib.value());
+      config = config.addLib(lib.value());
     }
     if (whatToDo.isLoadBootstrapLibraries()) {
       config = config.withBootstrapLibraries();

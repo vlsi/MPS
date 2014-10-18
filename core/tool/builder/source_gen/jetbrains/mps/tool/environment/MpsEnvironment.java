@@ -55,8 +55,8 @@ public class MpsEnvironment implements Environment {
 
   private PathMacrosProvider initMacros(EnvironmentConfig config) {
     Map<String, String> macros = MapSequence.fromMap(new HashMap<String, String>());
-    for (String name : MapSequence.fromMap(config.macros()).keySet()) {
-      MapSequence.fromMap(macros).put(name, MapSequence.fromMap(config.macros()).get(name).getAbsolutePath());
+    for (String name : MapSequence.fromMap(config.getMacros()).keySet()) {
+      MapSequence.fromMap(macros).put(name, MapSequence.fromMap(config.getMacros()).get(name).getAbsolutePath());
     }
     MapPathMacrosProvider macrosProvider = EnvironmentUtils.createMapMacrosProvider(macros);
     PathMacros.getInstance().addMacrosProvider(macrosProvider);
@@ -82,7 +82,7 @@ public class MpsEnvironment implements Environment {
   }
 
   protected Iterable<LibraryContributor> createLibContributors(EnvironmentConfig config) {
-    return Sequence.<LibraryContributor>singleton(EnvironmentUtils.createLibContributor(false, config.libs()));
+    return Sequence.<LibraryContributor>singleton(EnvironmentUtils.createLibContributor(config.getLibs()));
   }
 
   @Override

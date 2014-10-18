@@ -1059,7 +1059,6 @@
             <node role="initializer" roleId="tpee.1068431790190" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="2654128911717083381" nodeInfo="nn">
               <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="79ha.6170820365633512305" resolveInfo="createLibContributor" />
               <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="79ha.6170820365631519376" resolveInfo="EnvironmentUtils" />
-              <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.BooleanConstant" typeId="tpee.1068580123137" id="2654128911717083382" nodeInfo="nn" />
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="2654128911717083383" nodeInfo="nn">
                 <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="2654128911717083384" nodeInfo="nn">
                   <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="79ha.106664114202436231" resolveInfo="libs" />
