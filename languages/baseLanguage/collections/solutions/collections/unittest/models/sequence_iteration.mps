@@ -1,438 +1,150 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<model modelUID="r:00000000-0000-4000-0000-011c895903c1(jetbrains.mps.baseLanguage.collections.unittest.sequence_iteration)">
-  <persistence version="8" />
-  <language namespace="f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)" />
-  <language namespace="83888646-71ce-4f1c-9c53-c54016f6ad4f(jetbrains.mps.baseLanguage.collections)" />
-  <language namespace="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
-  <import index="eupq" modelUID="f:java_stub#83f155ff-422c-4b5a-a2f2-b459302dd215#junit.framework(jetbrains.mps.baseLanguage.unitTest.libs/junit.framework@java_stub)" version="-1" />
-  <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="5" implicit="yes" />
-  <import index="tp2q" modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="7" implicit="yes" />
-  <import index="tp2c" modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" version="3" implicit="yes" />
-  <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
-  <root type="tpee.ClassConcept" typeId="tpee.1068390468198" id="1165449350640" nodeInfo="ig">
-    <property name="name" nameId="tpck.1169194664001" value="Sequence_iteration1" />
-    <node role="superclass" roleId="tpee.1165602531693" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1165789752807" nodeInfo="in">
-      <link role="classifier" roleId="tpee.1107535924139" targetNodeId="eupq.~TestCase" resolveInfo="TestCase" />
-    </node>
-    <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="1201003723168" nodeInfo="nn" />
-    <node role="member" roleId="tpee.5375687026011219971" type="tpee.ConstructorDeclaration" typeId="tpee.1068580123140" id="3891516456976043498" nodeInfo="igu">
-      <node role="returnType" roleId="tpee.1068580123133" type="tpee.VoidType" typeId="tpee.1068581517677" id="3891516456976043499" nodeInfo="in" />
-      <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="3891516456976043500" nodeInfo="sn" />
-      <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="3891516456976043501" nodeInfo="nn" />
-    </node>
-    <node role="member" roleId="tpee.5375687026011219971" type="tpee.InstanceMethodDeclaration" typeId="tpee.1068580123165" id="1165449450252" nodeInfo="igu">
-      <property name="name" nameId="tpck.1169194664001" value="test_shortSequence1" />
-      <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="1165449450253" nodeInfo="sn">
-        <node role="statement" roleId="tpee.1068581517665" type="tpee.SingleLineComment" typeId="tpee.6329021646629104954" id="7376433222636454325" nodeInfo="nn">
-          <node role="commentPart" roleId="tpee.6329021646629175155" type="tpee.TextCommentPart" typeId="tpee.6329021646629104957" id="7376433222636454326" nodeInfo="nn">
-            <property name="text" nameId="tpee.6329021646629104958" value="sequence with no memory" />
-          </node>
-        </node>
-        <node role="statement" roleId="tpee.1068581517665" type="tpee.LocalVariableDeclarationStatement" typeId="tpee.1068581242864" id="1165449466317" nodeInfo="nn">
-          <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="1165449466318" nodeInfo="nr">
-            <property name="name" nameId="tpck.1169194664001" value="ss" />
-            <node role="type" roleId="tpee.5680397130376446158" type="tp2q.SequenceType" typeId="tp2q.1151689724996" id="1165449466319" nodeInfo="in">
-              <node role="elementType" roleId="tp2q.1151689745422" type="tpee.StringType" typeId="tpee.1225271177708" id="1225196592518" nodeInfo="in" />
-            </node>
-            <node role="initializer" roleId="tpee.1068431790190" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="1165449511870" nodeInfo="nn">
-              <node role="creator" roleId="tpee.1145553007750" type="tp2q.SequenceCreator" typeId="tp2q.1224414427926" id="1224596675509" nodeInfo="nn">
-                <node role="elementType" roleId="tp2q.1224414456414" type="tpee.StringType" typeId="tpee.1225271177708" id="1225196577007" nodeInfo="in" />
-                <node role="initializer" roleId="tp2q.1224414466839" type="tp2c.ClosureLiteral" typeId="tp2c.1199569711397" id="1224596675511" nodeInfo="nn">
-                  <node role="body" roleId="tp2c.1199569916463" type="tpee.StatementList" typeId="tpee.1068580123136" id="1224596675512" nodeInfo="sn">
-                    <node role="statement" roleId="tpee.1068581517665" type="tp2c.YieldStatement" typeId="tp2c.1200830824066" id="1224596679629" nodeInfo="nn">
-                      <node role="expression" roleId="tp2c.1200830928149" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="1224596679630" nodeInfo="nn">
-                        <property name="value" nameId="tpee.1070475926801" value="0" />
-                      </node>
-                    </node>
-                    <node role="statement" roleId="tpee.1068581517665" type="tp2c.YieldStatement" typeId="tp2c.1200830824066" id="1224596679951" nodeInfo="nn">
-                      <node role="expression" roleId="tp2c.1200830928149" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="1224596679952" nodeInfo="nn">
-                        <property name="value" nameId="tpee.1070475926801" value="1" />
-                      </node>
-                    </node>
-                    <node role="statement" roleId="tpee.1068581517665" type="tp2c.YieldStatement" typeId="tp2c.1200830824066" id="1224596680153" nodeInfo="nn">
-                      <node role="expression" roleId="tp2c.1200830928149" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="1224596680154" nodeInfo="nn">
-                        <property name="value" nameId="tpee.1070475926801" value="2" />
-                      </node>
-                    </node>
-                    <node role="statement" roleId="tpee.1068581517665" type="tp2c.YieldStatement" typeId="tp2c.1200830824066" id="1224596680047" nodeInfo="nn">
-                      <node role="expression" roleId="tp2c.1200830928149" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="1224596680048" nodeInfo="nn">
-                        <property name="value" nameId="tpee.1070475926801" value="3" />
-                      </node>
-                    </node>
-                    <node role="statement" roleId="tpee.1068581517665" type="tp2c.YieldStatement" typeId="tp2c.1200830824066" id="1224596679941" nodeInfo="nn">
-                      <node role="expression" roleId="tp2c.1200830928149" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="1224596679942" nodeInfo="nn">
-                        <property name="value" nameId="tpee.1070475926801" value="4" />
-                      </node>
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-        <node role="statement" roleId="tpee.1068581517665" type="tpee.LocalVariableDeclarationStatement" typeId="tpee.1068581242864" id="1165449748239" nodeInfo="nn">
-          <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="1165449748240" nodeInfo="nr">
-            <property name="name" nameId="tpck.1169194664001" value="count" />
-            <node role="type" roleId="tpee.5680397130376446158" type="tpee.IntegerType" typeId="tpee.1070534370425" id="1165449748241" nodeInfo="in" />
-            <node role="initializer" roleId="tpee.1068431790190" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="1165449754431" nodeInfo="nn">
-              <property name="value" nameId="tpee.1068580320021" value="0" />
-            </node>
-          </node>
-        </node>
-        <node role="statement" roleId="tpee.1068581517665" type="tp2q.ForEachStatement" typeId="tp2q.1153943597977" id="1165449584333" nodeInfo="nn">
-          <node role="variable" roleId="tp2q.1153944400369" type="tp2q.ForEachVariable" typeId="tp2q.1153944193378" id="1165449584334" nodeInfo="nr">
-            <property name="name" nameId="tpck.1169194664001" value="s" />
-          </node>
-          <node role="inputSequence" roleId="tp2q.1153944424730" type="tpee.VariableReference" typeId="tpee.1068498886296" id="4265636116363072689" nodeInfo="nn">
-            <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1165449466318" resolveInfo="ss" />
-          </node>
-          <node role="body" roleId="tpee.1154032183016" type="tpee.StatementList" typeId="tpee.1068580123136" id="1165449584336" nodeInfo="sn">
-            <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="1165449602213" nodeInfo="nn">
-              <node role="expression" roleId="tpee.1068580123156" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="1165449714184" nodeInfo="nn">
-                <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="eupq.~Assert" resolveInfo="Assert" />
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="eupq.~Assert%dassertEquals(java%dlang%dString,java%dlang%dString)%cvoid" resolveInfo="assertEquals" />
-                <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.PlusExpression" typeId="tpee.1068581242875" id="1165449773683" nodeInfo="nn">
-                  <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.VariableReference" typeId="tpee.1068498886296" id="4265636116363093492" nodeInfo="nn">
-                    <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1165449748240" resolveInfo="count" />
-                  </node>
-                  <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="1165449766088" nodeInfo="nn" />
-                </node>
-                <node role="actualArgument" roleId="tpee.1068499141038" type="tp2q.ForEachVariableReference" typeId="tp2q.1153944233411" id="1165449790000" nodeInfo="nn">
-                  <link role="variable" roleId="tp2q.1153944258490" targetNodeId="1165449584334" resolveInfo="s" />
-                </node>
-              </node>
-            </node>
-            <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="1165450085162" nodeInfo="nn">
-              <node role="expression" roleId="tpee.1068580123156" type="tpee.PostfixIncrementExpression" typeId="tpee.1214918800624" id="1238145924580" nodeInfo="nn">
-                <node role="expression" roleId="tpee.1239714902950" type="tpee.VariableReference" typeId="tpee.1068498886296" id="4265636116363067607" nodeInfo="nn">
-                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1165449748240" resolveInfo="count" />
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-        <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="1165451147063" nodeInfo="nn">
-          <node role="expression" roleId="tpee.1068580123156" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="1053275602486064335" nodeInfo="nn">
-            <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="eupq.~Assert" resolveInfo="Assert" />
-            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="eupq.~Assert%dassertEquals(int,int)%cvoid" resolveInfo="assertEquals" />
-            <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.VariableReference" typeId="tpee.1068498886296" id="4265636116363092587" nodeInfo="nn">
-              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1165449748240" resolveInfo="count" />
-            </node>
-            <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="1053275602486064337" nodeInfo="nn">
-              <property name="value" nameId="tpee.1068580320021" value="5" />
-            </node>
-          </node>
-        </node>
-        <node role="statement" roleId="tpee.1068581517665" type="tp2q.ForEachStatement" typeId="tp2q.1153943597977" id="1165453645681" nodeInfo="nn">
-          <node role="variable" roleId="tp2q.1153944400369" type="tp2q.ForEachVariable" typeId="tp2q.1153944193378" id="1165453645682" nodeInfo="nr">
-            <property name="name" nameId="tpck.1169194664001" value="s" />
-          </node>
-          <node role="inputSequence" roleId="tp2q.1153944424730" type="tpee.VariableReference" typeId="tpee.1068498886296" id="4265636116363089469" nodeInfo="nn">
-            <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1165449466318" resolveInfo="ss" />
-          </node>
-          <node role="body" roleId="tpee.1154032183016" type="tpee.StatementList" typeId="tpee.1068580123136" id="1165453645684" nodeInfo="sn">
-            <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="1165453645685" nodeInfo="nn">
-              <node role="expression" roleId="tpee.1068580123156" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="1053275602486064338" nodeInfo="nn">
-                <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="eupq.~Assert" resolveInfo="Assert" />
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="eupq.~Assert%dassertEquals(java%dlang%dString,java%dlang%dString)%cvoid" resolveInfo="assertEquals" />
-                <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.PlusExpression" typeId="tpee.1068581242875" id="1053275602486064339" nodeInfo="nn">
-                  <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.ParenthesizedExpression" typeId="tpee.1079359253375" id="1053275602486064340" nodeInfo="nn">
-                    <node role="expression" roleId="tpee.1079359253376" type="tpee.MinusExpression" typeId="tpee.1068581242869" id="1053275602486064341" nodeInfo="nn">
-                      <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="1053275602486064342" nodeInfo="nn">
-                        <property name="value" nameId="tpee.1068580320021" value="5" />
-                      </node>
-                      <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.VariableReference" typeId="tpee.1068498886296" id="4265636116363096418" nodeInfo="nn">
-                        <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1165449748240" resolveInfo="count" />
-                      </node>
-                    </node>
-                  </node>
-                  <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="1053275602486064344" nodeInfo="nn" />
-                </node>
-                <node role="actualArgument" roleId="tpee.1068499141038" type="tp2q.ForEachVariableReference" typeId="tp2q.1153944233411" id="1053275602486064345" nodeInfo="nn">
-                  <link role="variable" roleId="tp2q.1153944258490" targetNodeId="1165453645682" resolveInfo="s" />
-                </node>
-              </node>
-            </node>
-            <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="1165453645691" nodeInfo="nn">
-              <node role="expression" roleId="tpee.1068580123156" type="tpee.PostfixIncrementExpression" typeId="tpee.1214918800624" id="1238145924529" nodeInfo="nn">
-                <node role="expression" roleId="tpee.1239714902950" type="tpee.VariableReference" typeId="tpee.1068498886296" id="4265636116363096906" nodeInfo="nn">
-                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1165449748240" resolveInfo="count" />
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-        <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="1165453645697" nodeInfo="nn">
-          <node role="expression" roleId="tpee.1068580123156" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="1053275602486064346" nodeInfo="nn">
-            <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="eupq.~Assert" resolveInfo="Assert" />
-            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="eupq.~Assert%dassertEquals(int,int)%cvoid" resolveInfo="assertEquals" />
-            <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.VariableReference" typeId="tpee.1068498886296" id="4265636116363071494" nodeInfo="nn">
-              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1165449748240" resolveInfo="count" />
-            </node>
-            <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="1053275602486064348" nodeInfo="nn">
-              <property name="value" nameId="tpee.1068580320021" value="10" />
-            </node>
-          </node>
-        </node>
+<model ref="r:00000000-0000-4000-0000-011c895903c1(jetbrains.mps.baseLanguage.collections.unittest.sequence_iteration)">
+  <persistence version="9" />
+  <debugInfo>
+    <lang id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" />
+    <lang id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" />
+    <lang id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" />
+    <lang id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core" />
+    <model ref="f:java_stub#83f155ff-422c-4b5a-a2f2-b459302dd215#junit.framework(jetbrains.mps.baseLanguage.unitTest.libs/junit.framework@java_stub)" name="junit.framework@java_stub" />
+    <concept id="83888646-71ce-4f1c-9c53-c54016f6ad4f/1153943597977" name="jetbrains.mps.baseLanguage.collections.structure.ForEachStatement" />
+    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1146644602865" name="jetbrains.mps.baseLanguage.structure.PublicVisibility" />
+    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1092119917967" name="jetbrains.mps.baseLanguage.structure.MulExpression" />
+    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1225271177708" name="jetbrains.mps.baseLanguage.structure.StringType" />
+    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068581242863" name="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" />
+    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1081236700937" name="jetbrains.mps.baseLanguage.structure.StaticMethodCall" />
+    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068581242864" name="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123165" name="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" />
+    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1144231330558" name="jetbrains.mps.baseLanguage.structure.ForStatement" />
+    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/6329021646629104954" name="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1107535904670" name="jetbrains.mps.baseLanguage.structure.ClassifierType" />
+    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123155" name="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/6329021646629104957" name="jetbrains.mps.baseLanguage.structure.TextCommentPart" />
+    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068498886296" name="jetbrains.mps.baseLanguage.structure.VariableReference" />
+    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1081506773034" name="jetbrains.mps.baseLanguage.structure.LessThanExpression" />
+    <concept id="fd392034-7849-419d-9071-12563d152375/1199569711397" name="jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral" />
+    <concept id="83888646-71ce-4f1c-9c53-c54016f6ad4f/1153944193378" name="jetbrains.mps.baseLanguage.collections.structure.ForEachVariable" />
+    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123140" name="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" />
+    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068581242875" name="jetbrains.mps.baseLanguage.structure.PlusExpression" />
+    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1070534370425" name="jetbrains.mps.baseLanguage.structure.IntegerType" />
+    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1079359253375" name="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression" />
+    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068581517677" name="jetbrains.mps.baseLanguage.structure.VoidType" />
+    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068390468198" name="jetbrains.mps.baseLanguage.structure.ClassConcept" />
+    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068581242869" name="jetbrains.mps.baseLanguage.structure.MinusExpression" />
+    <concept id="fd392034-7849-419d-9071-12563d152375/1200830824066" name="jetbrains.mps.baseLanguage.closures.structure.YieldStatement" />
+    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1070475926800" name="jetbrains.mps.baseLanguage.structure.StringLiteral" />
+    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1145552977093" name="jetbrains.mps.baseLanguage.structure.GenericNewExpression" />
+    <concept id="83888646-71ce-4f1c-9c53-c54016f6ad4f/1224414427926" name="jetbrains.mps.baseLanguage.collections.structure.SequenceCreator" />
+    <concept id="83888646-71ce-4f1c-9c53-c54016f6ad4f/1153944233411" name="jetbrains.mps.baseLanguage.collections.structure.ForEachVariableReference" />
+    <concept id="83888646-71ce-4f1c-9c53-c54016f6ad4f/1151689724996" name="jetbrains.mps.baseLanguage.collections.structure.SequenceType" />
+    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" />
+    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068580320020" name="jetbrains.mps.baseLanguage.structure.IntegerConstant" />
+    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1214918800624" name="jetbrains.mps.baseLanguage.structure.PostfixIncrementExpression" />
+    <property id="f3061a53-9226-4cc5-a443-f952ceaf5816/6329021646629104957/6329021646629104958" name="text" />
+    <property id="f3061a53-9226-4cc5-a443-f952ceaf5816/1070475926800/1070475926801" name="value" />
+    <property id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068580320020/1068580320021" name="value" />
+    <property id="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001" name="name" />
+    <refRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1081236700937/1144433194310" name="classConcept" />
+    <refRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068498886296/1068581517664" name="variableDeclaration" />
+    <refRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1107535904670/1107535924139" name="classifier" />
+    <refRole id="83888646-71ce-4f1c-9c53-c54016f6ad4f/1153944233411/1153944258490" name="variable" />
+    <refRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1204053956946/1068499141037" name="baseMethodDeclaration" />
+    <childRole id="83888646-71ce-4f1c-9c53-c54016f6ad4f/1153943597977/1153944400369" name="variable" />
+    <childRole id="83888646-71ce-4f1c-9c53-c54016f6ad4f/1224414427926/1224414456414" name="elementType" />
+    <childRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068390468198/1165602531693" name="superclass" />
+    <childRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1081773326031/1081773367580" name="leftExpression" />
+    <childRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1144231330558/1144231399730" name="condition" />
+    <childRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1107461130800/5375687026011219971" name="member" />
+    <childRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123132/1068580123133" name="returnType" />
+    <childRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123132/1068580123135" name="body" />
+    <childRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/6329021646629104954/6329021646629175155" name="commentPart" />
+    <childRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1204053956946/1068499141038" name="actualArgument" />
+    <childRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1081773326031/1081773367579" name="rightExpression" />
+    <childRole id="fd392034-7849-419d-9071-12563d152375/1199569711397/1199569916463" name="body" />
+    <childRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1239714755177/1239714902950" name="expression" />
+    <childRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1144231330558/1144231408325" name="iteration" />
+    <childRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1154032098014/1154032183016" name="body" />
+    <childRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068431474542/1068431790190" name="initializer" />
+    <childRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068581242864/1068581242865" name="localVariableDeclaration" />
+    <childRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1079359253375/1079359253376" name="expression" />
+    <childRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1145552977093/1145553007750" name="creator" />
+    <childRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1144230876926/1144230900587" name="variable" />
+    <childRole id="83888646-71ce-4f1c-9c53-c54016f6ad4f/1151689724996/1151689745422" name="elementType" />
+    <childRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123155/1068580123156" name="expression" />
+    <childRole id="83888646-71ce-4f1c-9c53-c54016f6ad4f/1153943597977/1153944424730" name="inputSequence" />
+    <childRole id="fd392034-7849-419d-9071-12563d152375/1200830824066/1200830928149" name="expression" />
+    <childRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/4972933694980447171/5680397130376446158" name="type" />
+    <childRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1178549954367/1178549979242" name="visibility" />
+    <childRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123136/1068581517665" name="statement" />
+    <childRole id="83888646-71ce-4f1c-9c53-c54016f6ad4f/1224414427926/1224414466839" name="initializer" />
+  </debugInfo>
+  <languages>
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" version="-1" index="vg0i" />
+    <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" version="-1" index="j0ph" />
+    <use id="fd392034-7849-419d-9071-12563d152375" version="-1" index="cakq" />
+    <use id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" version="0" implicit="true" index="asn4" />
+  </languages>
+  <imports>
+    <import index="eupq" ref="f:java_stub#83f155ff-422c-4b5a-a2f2-b459302dd215#junit.framework(jetbrains.mps.baseLanguage.unitTest.libs/junit.framework@java_stub)" />
+    <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" implicit="true" />
+    <import index="tp2q" ref="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" implicit="true" />
+    <import index="tp2c" ref="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" implicit="true" />
+    <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
+  </imports>
+  <contents>
+    <node concept="vg0i.1068390468198" id="1165449350640" info="ig">
+      <property role="asn4.1169194658468.1169194664001" value="Sequence_iteration1" />
+      <node concept="vg0i.1107535904670" id="1165789752807" role="vg0i.1068390468198.1165602531693" info="in">
+        <reference role="vg0i.1107535904670.1107535924139" target="eupq.~TestCase" resolveInfo="TestCase" />
       </node>
-      <node role="returnType" roleId="tpee.1068580123133" type="tpee.VoidType" typeId="tpee.1068581517677" id="1165449450254" nodeInfo="in" />
-      <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="1201003725961" nodeInfo="nn" />
-    </node>
-    <node role="member" roleId="tpee.5375687026011219971" type="tpee.InstanceMethodDeclaration" typeId="tpee.1068580123165" id="1165451039404" nodeInfo="igu">
-      <property name="name" nameId="tpck.1169194664001" value="test_shortSequence2" />
-      <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="1165451039405" nodeInfo="sn">
-        <node role="statement" roleId="tpee.1068581517665" type="tpee.SingleLineComment" typeId="tpee.6329021646629104954" id="7376433222636453175" nodeInfo="nn">
-          <node role="commentPart" roleId="tpee.6329021646629175155" type="tpee.TextCommentPart" typeId="tpee.6329021646629104957" id="7376433222636453176" nodeInfo="nn">
-            <property name="text" nameId="tpee.6329021646629104958" value="sequence with memory" />
-          </node>
-        </node>
-        <node role="statement" roleId="tpee.1068581517665" type="tpee.LocalVariableDeclarationStatement" typeId="tpee.1068581242864" id="1165453934275" nodeInfo="nn">
-          <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="1165453934276" nodeInfo="nr">
-            <property name="name" nameId="tpck.1169194664001" value="yield_count" />
-            <node role="type" roleId="tpee.5680397130376446158" type="tpee.IntegerType" typeId="tpee.1070534370425" id="1165453934277" nodeInfo="in" />
-            <node role="initializer" roleId="tpee.1068431790190" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="1165453954920" nodeInfo="nn">
-              <property name="value" nameId="tpee.1068580320021" value="0" />
-            </node>
-          </node>
-        </node>
-        <node role="statement" roleId="tpee.1068581517665" type="tpee.LocalVariableDeclarationStatement" typeId="tpee.1068581242864" id="1165453981203" nodeInfo="nn">
-          <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="1165453981204" nodeInfo="nr">
-            <property name="name" nameId="tpck.1169194664001" value="ss" />
-            <node role="type" roleId="tpee.5680397130376446158" type="tp2q.SequenceType" typeId="tp2q.1151689724996" id="1165453981205" nodeInfo="in">
-              <node role="elementType" roleId="tp2q.1151689745422" type="tpee.StringType" typeId="tpee.1225271177708" id="1225196572439" nodeInfo="in" />
-            </node>
-            <node role="initializer" roleId="tpee.1068431790190" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="1165453993521" nodeInfo="nn">
-              <node role="creator" roleId="tpee.1145553007750" type="tp2q.SequenceCreator" typeId="tp2q.1224414427926" id="1224596675278" nodeInfo="nn">
-                <node role="elementType" roleId="tp2q.1224414456414" type="tpee.StringType" typeId="tpee.1225271177708" id="1225196568870" nodeInfo="in" />
-                <node role="initializer" roleId="tp2q.1224414466839" type="tp2c.ClosureLiteral" typeId="tp2c.1199569711397" id="1224596675280" nodeInfo="nn">
-                  <node role="body" roleId="tp2c.1199569916463" type="tpee.StatementList" typeId="tpee.1068580123136" id="1224596675281" nodeInfo="sn">
-                    <node role="statement" roleId="tpee.1068581517665" type="tpee.ForStatement" typeId="tpee.1144231330558" id="1224596675282" nodeInfo="nn">
-                      <node role="variable" roleId="tpee.1144230900587" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="1224596675283" nodeInfo="nr">
-                        <property name="name" nameId="tpck.1169194664001" value="i" />
-                        <node role="type" roleId="tpee.5680397130376446158" type="tpee.IntegerType" typeId="tpee.1070534370425" id="1224596675284" nodeInfo="in" />
-                        <node role="initializer" roleId="tpee.1068431790190" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="1224596675285" nodeInfo="nn">
-                          <property name="value" nameId="tpee.1068580320021" value="0" />
-                        </node>
-                      </node>
-                      <node role="body" roleId="tpee.1154032183016" type="tpee.StatementList" typeId="tpee.1068580123136" id="1224596675286" nodeInfo="sn">
-                        <node role="statement" roleId="tpee.1068581517665" type="tp2c.YieldStatement" typeId="tp2c.1200830824066" id="1224596679539" nodeInfo="nn">
-                          <node role="expression" roleId="tp2c.1200830928149" type="tpee.PlusExpression" typeId="tpee.1068581242875" id="1224596679540" nodeInfo="nn">
-                            <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.VariableReference" typeId="tpee.1068498886296" id="4265636116363090336" nodeInfo="nn">
-                              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1165453934276" resolveInfo="yield_count" />
-                            </node>
-                            <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="1224596679542" nodeInfo="nn" />
-                          </node>
-                        </node>
-                        <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="1224596675291" nodeInfo="nn">
-                          <node role="expression" roleId="tpee.1068580123156" type="tpee.PostfixIncrementExpression" typeId="tpee.1214918800624" id="1238145920964" nodeInfo="nn">
-                            <node role="expression" roleId="tpee.1239714902950" type="tpee.VariableReference" typeId="tpee.1068498886296" id="4265636116363093633" nodeInfo="nn">
-                              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1165453934276" resolveInfo="yield_count" />
-                            </node>
-                          </node>
-                        </node>
-                      </node>
-                      <node role="condition" roleId="tpee.1144231399730" type="tpee.LessThanExpression" typeId="tpee.1081506773034" id="1224596675297" nodeInfo="nn">
-                        <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="1224596675298" nodeInfo="nn">
-                          <property name="value" nameId="tpee.1068580320021" value="5" />
-                        </node>
-                        <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.VariableReference" typeId="tpee.1068498886296" id="4265636116363113623" nodeInfo="nn">
-                          <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1224596675283" resolveInfo="i" />
-                        </node>
-                      </node>
-                      <node role="iteration" roleId="tpee.1144231408325" type="tpee.PostfixIncrementExpression" typeId="tpee.1214918800624" id="1238145922551" nodeInfo="nn">
-                        <node role="expression" roleId="tpee.1239714902950" type="tpee.VariableReference" typeId="tpee.1068498886296" id="4265636116363112970" nodeInfo="nn">
-                          <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1224596675283" resolveInfo="i" />
-                        </node>
-                      </node>
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-        <node role="statement" roleId="tpee.1068581517665" type="tpee.LocalVariableDeclarationStatement" typeId="tpee.1068581242864" id="1165454291896" nodeInfo="nn">
-          <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="1165454291897" nodeInfo="nr">
-            <property name="name" nameId="tpck.1169194664001" value="count" />
-            <node role="type" roleId="tpee.5680397130376446158" type="tpee.IntegerType" typeId="tpee.1070534370425" id="1165454291898" nodeInfo="in" />
-            <node role="initializer" roleId="tpee.1068431790190" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="1165454291899" nodeInfo="nn">
-              <property name="value" nameId="tpee.1068580320021" value="0" />
-            </node>
-          </node>
-        </node>
-        <node role="statement" roleId="tpee.1068581517665" type="tp2q.ForEachStatement" typeId="tp2q.1153943597977" id="1165454291900" nodeInfo="nn">
-          <node role="variable" roleId="tp2q.1153944400369" type="tp2q.ForEachVariable" typeId="tp2q.1153944193378" id="1165454291901" nodeInfo="nr">
-            <property name="name" nameId="tpck.1169194664001" value="s" />
-          </node>
-          <node role="inputSequence" roleId="tp2q.1153944424730" type="tpee.VariableReference" typeId="tpee.1068498886296" id="4265636116363108289" nodeInfo="nn">
-            <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1165453981204" resolveInfo="ss" />
-          </node>
-          <node role="body" roleId="tpee.1154032183016" type="tpee.StatementList" typeId="tpee.1068580123136" id="1165454291903" nodeInfo="sn">
-            <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="1165454291904" nodeInfo="nn">
-              <node role="expression" roleId="tpee.1068580123156" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="1165454291905" nodeInfo="nn">
-                <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="eupq.~Assert" resolveInfo="Assert" />
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="eupq.~Assert%dassertEquals(java%dlang%dString,java%dlang%dString)%cvoid" resolveInfo="assertEquals" />
-                <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.PlusExpression" typeId="tpee.1068581242875" id="1165454291906" nodeInfo="nn">
-                  <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.VariableReference" typeId="tpee.1068498886296" id="4265636116363084795" nodeInfo="nn">
-                    <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1165454291897" resolveInfo="count" />
-                  </node>
-                  <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="1165454291908" nodeInfo="nn" />
-                </node>
-                <node role="actualArgument" roleId="tpee.1068499141038" type="tp2q.ForEachVariableReference" typeId="tp2q.1153944233411" id="1165454291909" nodeInfo="nn">
-                  <link role="variable" roleId="tp2q.1153944258490" targetNodeId="1165454291901" resolveInfo="s" />
-                </node>
-              </node>
-            </node>
-            <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="1165454291910" nodeInfo="nn">
-              <node role="expression" roleId="tpee.1068580123156" type="tpee.PostfixIncrementExpression" typeId="tpee.1214918800624" id="1238145920291" nodeInfo="nn">
-                <node role="expression" roleId="tpee.1239714902950" type="tpee.VariableReference" typeId="tpee.1068498886296" id="4265636116363085265" nodeInfo="nn">
-                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1165454291897" resolveInfo="count" />
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-        <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="1165454291916" nodeInfo="nn">
-          <node role="expression" roleId="tpee.1068580123156" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="1165454291917" nodeInfo="nn">
-            <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="eupq.~Assert" resolveInfo="Assert" />
-            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="eupq.~Assert%dassertEquals(int,int)%cvoid" resolveInfo="assertEquals" />
-            <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.VariableReference" typeId="tpee.1068498886296" id="4265636116363115039" nodeInfo="nn">
-              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1165454291897" resolveInfo="count" />
-            </node>
-            <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="1165454291919" nodeInfo="nn">
-              <property name="value" nameId="tpee.1068580320021" value="5" />
-            </node>
-          </node>
-        </node>
-        <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="1165454318156" nodeInfo="nn">
-          <node role="expression" roleId="tpee.1068580123156" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="1165454318157" nodeInfo="nn">
-            <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="eupq.~Assert" resolveInfo="Assert" />
-            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="eupq.~Assert%dassertEquals(int,int)%cvoid" resolveInfo="assertEquals" />
-            <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.VariableReference" typeId="tpee.1068498886296" id="4265636116363098259" nodeInfo="nn">
-              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1165453934276" resolveInfo="yield_count" />
-            </node>
-            <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="1165454318159" nodeInfo="nn">
-              <property name="value" nameId="tpee.1068580320021" value="5" />
-            </node>
-          </node>
-        </node>
-        <node role="statement" roleId="tpee.1068581517665" type="tp2q.ForEachStatement" typeId="tp2q.1153943597977" id="1165454291920" nodeInfo="nn">
-          <node role="variable" roleId="tp2q.1153944400369" type="tp2q.ForEachVariable" typeId="tp2q.1153944193378" id="1165454291921" nodeInfo="nr">
-            <property name="name" nameId="tpck.1169194664001" value="s" />
-          </node>
-          <node role="inputSequence" roleId="tp2q.1153944424730" type="tpee.VariableReference" typeId="tpee.1068498886296" id="4265636116363074548" nodeInfo="nn">
-            <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1165453981204" resolveInfo="ss" />
-          </node>
-          <node role="body" roleId="tpee.1154032183016" type="tpee.StatementList" typeId="tpee.1068580123136" id="1165454291923" nodeInfo="sn">
-            <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="1165454291924" nodeInfo="nn">
-              <node role="expression" roleId="tpee.1068580123156" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="1165454291925" nodeInfo="nn">
-                <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="eupq.~Assert" resolveInfo="Assert" />
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="eupq.~Assert%dassertEquals(java%dlang%dString,java%dlang%dString)%cvoid" resolveInfo="assertEquals" />
-                <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.PlusExpression" typeId="tpee.1068581242875" id="1165454291926" nodeInfo="nn">
-                  <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.VariableReference" typeId="tpee.1068498886296" id="4265636116363105299" nodeInfo="nn">
-                    <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1165454291897" resolveInfo="count" />
-                  </node>
-                  <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="1165454291931" nodeInfo="nn" />
-                </node>
-                <node role="actualArgument" roleId="tpee.1068499141038" type="tp2q.ForEachVariableReference" typeId="tp2q.1153944233411" id="1165454291932" nodeInfo="nn">
-                  <link role="variable" roleId="tp2q.1153944258490" targetNodeId="1165454291921" resolveInfo="s" />
-                </node>
-              </node>
-            </node>
-            <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="1165454291933" nodeInfo="nn">
-              <node role="expression" roleId="tpee.1068580123156" type="tpee.PostfixIncrementExpression" typeId="tpee.1214918800624" id="1238145924208" nodeInfo="nn">
-                <node role="expression" roleId="tpee.1239714902950" type="tpee.VariableReference" typeId="tpee.1068498886296" id="4265636116363101257" nodeInfo="nn">
-                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1165454291897" resolveInfo="count" />
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-        <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="1165454291939" nodeInfo="nn">
-          <node role="expression" roleId="tpee.1068580123156" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="1165454291940" nodeInfo="nn">
-            <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="eupq.~Assert" resolveInfo="Assert" />
-            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="eupq.~Assert%dassertEquals(int,int)%cvoid" resolveInfo="assertEquals" />
-            <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.VariableReference" typeId="tpee.1068498886296" id="4265636116363086102" nodeInfo="nn">
-              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1165454291897" resolveInfo="count" />
-            </node>
-            <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="1165454291942" nodeInfo="nn">
-              <property name="value" nameId="tpee.1068580320021" value="10" />
-            </node>
-          </node>
-        </node>
-        <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="1165454382312" nodeInfo="nn">
-          <node role="expression" roleId="tpee.1068580123156" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="1165454382313" nodeInfo="nn">
-            <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="eupq.~Assert" resolveInfo="Assert" />
-            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="eupq.~Assert%dassertEquals(int,int)%cvoid" resolveInfo="assertEquals" />
-            <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.VariableReference" typeId="tpee.1068498886296" id="4265636116363085984" nodeInfo="nn">
-              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1165453934276" resolveInfo="yield_count" />
-            </node>
-            <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="1165454382315" nodeInfo="nn">
-              <property name="value" nameId="tpee.1068580320021" value="10" />
-            </node>
-          </node>
-        </node>
+      <node concept="vg0i.1146644602865" id="1201003723168" role="vg0i.1178549954367.1178549979242" info="nn" />
+      <node concept="vg0i.1068580123140" id="3891516456976043498" role="vg0i.1107461130800.5375687026011219971" info="igu">
+        <node concept="vg0i.1068581517677" id="3891516456976043499" role="vg0i.1068580123132.1068580123133" info="in" />
+        <node concept="vg0i.1068580123136" id="3891516456976043500" role="vg0i.1068580123132.1068580123135" info="sn" />
+        <node concept="vg0i.1146644602865" id="3891516456976043501" role="vg0i.1178549954367.1178549979242" info="nn" />
       </node>
-      <node role="returnType" roleId="tpee.1068580123133" type="tpee.VoidType" typeId="tpee.1068581517677" id="1165451039444" nodeInfo="in" />
-      <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="1201003729631" nodeInfo="nn" />
-    </node>
-    <node role="member" roleId="tpee.5375687026011219971" type="tpee.InstanceMethodDeclaration" typeId="tpee.1068580123165" id="1165597014892" nodeInfo="igu">
-      <property name="name" nameId="tpck.1169194664001" value="test_longSequence1" />
-      <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="1165597014893" nodeInfo="sn">
-        <node role="statement" roleId="tpee.1068581517665" type="tpee.SingleLineComment" typeId="tpee.6329021646629104954" id="7376433222636454209" nodeInfo="nn">
-          <node role="commentPart" roleId="tpee.6329021646629175155" type="tpee.TextCommentPart" typeId="tpee.6329021646629104957" id="7376433222636454210" nodeInfo="nn">
-            <property name="text" nameId="tpee.6329021646629104958" value="sequence with no memory" />
-          </node>
-        </node>
-        <node role="statement" roleId="tpee.1068581517665" type="tpee.LocalVariableDeclarationStatement" typeId="tpee.1068581242864" id="1165597202156" nodeInfo="nn">
-          <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="1165597202157" nodeInfo="nr">
-            <property name="name" nameId="tpck.1169194664001" value="sequence_size" />
-            <node role="type" roleId="tpee.5680397130376446158" type="tpee.IntegerType" typeId="tpee.1070534370425" id="1165597202158" nodeInfo="in" />
-            <node role="initializer" roleId="tpee.1068431790190" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="1165597223051" nodeInfo="nn">
-              <property name="value" nameId="tpee.1068580320021" value="1234" />
+      <node concept="vg0i.1068580123165" id="1165449450252" role="vg0i.1107461130800.5375687026011219971" info="igu">
+        <property role="asn4.1169194658468.1169194664001" value="test_shortSequence1" />
+        <node concept="vg0i.1068580123136" id="1165449450253" role="vg0i.1068580123132.1068580123135" info="sn">
+          <node concept="vg0i.6329021646629104954" id="7376433222636454325" role="vg0i.1068580123136.1068581517665" info="nn">
+            <node concept="vg0i.6329021646629104957" id="7376433222636454326" role="vg0i.6329021646629104954.6329021646629175155" info="nn">
+              <property role="vg0i.6329021646629104957.6329021646629104958" value="sequence with no memory" />
             </node>
           </node>
-        </node>
-        <node role="statement" roleId="tpee.1068581517665" type="tpee.LocalVariableDeclarationStatement" typeId="tpee.1068581242864" id="1165597014898" nodeInfo="nn">
-          <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="1165597014899" nodeInfo="nr">
-            <property name="name" nameId="tpck.1169194664001" value="ss" />
-            <node role="type" roleId="tpee.5680397130376446158" type="tp2q.SequenceType" typeId="tp2q.1151689724996" id="1165597014900" nodeInfo="in">
-              <node role="elementType" roleId="tp2q.1151689745422" type="tpee.StringType" typeId="tpee.1225271177708" id="1225196580576" nodeInfo="in" />
-            </node>
-            <node role="initializer" roleId="tpee.1068431790190" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="1165597014902" nodeInfo="nn">
-              <node role="creator" roleId="tpee.1145553007750" type="tp2q.SequenceCreator" typeId="tp2q.1224414427926" id="1224596674690" nodeInfo="nn">
-                <node role="elementType" roleId="tp2q.1224414456414" type="tpee.StringType" typeId="tpee.1225271177708" id="1225196605337" nodeInfo="in" />
-                <node role="initializer" roleId="tp2q.1224414466839" type="tp2c.ClosureLiteral" typeId="tp2c.1199569711397" id="1224596674692" nodeInfo="nn">
-                  <node role="body" roleId="tp2c.1199569916463" type="tpee.StatementList" typeId="tpee.1068580123136" id="1224596674693" nodeInfo="sn">
-                    <node role="statement" roleId="tpee.1068581517665" type="tpee.ForStatement" typeId="tpee.1144231330558" id="1224596674694" nodeInfo="nn">
-                      <node role="variable" roleId="tpee.1144230900587" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="1224596674695" nodeInfo="nr">
-                        <property name="name" nameId="tpck.1169194664001" value="i" />
-                        <node role="type" roleId="tpee.5680397130376446158" type="tpee.IntegerType" typeId="tpee.1070534370425" id="1224596674696" nodeInfo="in" />
-                        <node role="initializer" roleId="tpee.1068431790190" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="1224596674697" nodeInfo="nn">
-                          <property name="value" nameId="tpee.1068580320021" value="0" />
+          <node concept="vg0i.1068581242864" id="1165449466317" role="vg0i.1068580123136.1068581517665" info="nn">
+            <node concept="vg0i.1068581242863" id="1165449466318" role="vg0i.1068581242864.1068581242865" info="nr">
+              <property role="asn4.1169194658468.1169194664001" value="ss" />
+              <node concept="j0ph.1151689724996" id="1165449466319" role="vg0i.4972933694980447171.5680397130376446158" info="in">
+                <node concept="vg0i.1225271177708" id="1225196592518" role="j0ph.1151689724996.1151689745422" info="in" />
+              </node>
+              <node concept="vg0i.1145552977093" id="1165449511870" role="vg0i.1068431474542.1068431790190" info="nn">
+                <node concept="j0ph.1224414427926" id="1224596675509" role="vg0i.1145552977093.1145553007750" info="nn">
+                  <node concept="vg0i.1225271177708" id="1225196577007" role="j0ph.1224414427926.1224414456414" info="in" />
+                  <node concept="cakq.1199569711397" id="1224596675511" role="j0ph.1224414427926.1224414466839" info="nn">
+                    <node concept="vg0i.1068580123136" id="1224596675512" role="cakq.1199569711397.1199569916463" info="sn">
+                      <node concept="cakq.1200830824066" id="1224596679629" role="vg0i.1068580123136.1068581517665" info="nn">
+                        <node concept="vg0i.1070475926800" id="1224596679630" role="cakq.1200830824066.1200830928149" info="nn">
+                          <property role="vg0i.1070475926800.1070475926801" value="0" />
                         </node>
                       </node>
-                      <node role="body" roleId="tpee.1154032183016" type="tpee.StatementList" typeId="tpee.1068580123136" id="1224596674698" nodeInfo="sn">
-                        <node role="statement" roleId="tpee.1068581517665" type="tp2c.YieldStatement" typeId="tp2c.1200830824066" id="1224596680284" nodeInfo="nn">
-                          <node role="expression" roleId="tp2c.1200830928149" type="tpee.PlusExpression" typeId="tpee.1068581242875" id="1224596680285" nodeInfo="nn">
-                            <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.VariableReference" typeId="tpee.1068498886296" id="4265636116363111430" nodeInfo="nn">
-                              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1224596674695" resolveInfo="i" />
-                            </node>
-                            <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="1224596680287" nodeInfo="nn" />
-                          </node>
+                      <node concept="cakq.1200830824066" id="1224596679951" role="vg0i.1068580123136.1068581517665" info="nn">
+                        <node concept="vg0i.1070475926800" id="1224596679952" role="cakq.1200830824066.1200830928149" info="nn">
+                          <property role="vg0i.1070475926800.1070475926801" value="1" />
                         </node>
                       </node>
-                      <node role="condition" roleId="tpee.1144231399730" type="tpee.LessThanExpression" typeId="tpee.1081506773034" id="1224596674703" nodeInfo="nn">
-                        <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.VariableReference" typeId="tpee.1068498886296" id="4265636116363074797" nodeInfo="nn">
-                          <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1165597202157" resolveInfo="sequence_size" />
-                        </node>
-                        <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.VariableReference" typeId="tpee.1068498886296" id="4265636116363066418" nodeInfo="nn">
-                          <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1224596674695" resolveInfo="i" />
+                      <node concept="cakq.1200830824066" id="1224596680153" role="vg0i.1068580123136.1068581517665" info="nn">
+                        <node concept="vg0i.1070475926800" id="1224596680154" role="cakq.1200830824066.1200830928149" info="nn">
+                          <property role="vg0i.1070475926800.1070475926801" value="2" />
                         </node>
                       </node>
-                      <node role="iteration" roleId="tpee.1144231408325" type="tpee.PostfixIncrementExpression" typeId="tpee.1214918800624" id="1238145921739" nodeInfo="nn">
-                        <node role="expression" roleId="tpee.1239714902950" type="tpee.VariableReference" typeId="tpee.1068498886296" id="4265636116363072942" nodeInfo="nn">
-                          <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1224596674695" resolveInfo="i" />
+                      <node concept="cakq.1200830824066" id="1224596680047" role="vg0i.1068580123136.1068581517665" info="nn">
+                        <node concept="vg0i.1070475926800" id="1224596680048" role="cakq.1200830824066.1200830928149" info="nn">
+                          <property role="vg0i.1070475926800.1070475926801" value="3" />
+                        </node>
+                      </node>
+                      <node concept="cakq.1200830824066" id="1224596679941" role="vg0i.1068580123136.1068581517665" info="nn">
+                        <node concept="vg0i.1070475926800" id="1224596679942" role="cakq.1200830824066.1200830928149" info="nn">
+                          <property role="vg0i.1070475926800.1070475926801" value="4" />
                         </node>
                       </node>
                     </node>
@@ -441,193 +153,179 @@
               </node>
             </node>
           </node>
-        </node>
-        <node role="statement" roleId="tpee.1068581517665" type="tpee.LocalVariableDeclarationStatement" typeId="tpee.1068581242864" id="1165597014916" nodeInfo="nn">
-          <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="1165597014917" nodeInfo="nr">
-            <property name="name" nameId="tpck.1169194664001" value="count" />
-            <node role="type" roleId="tpee.5680397130376446158" type="tpee.IntegerType" typeId="tpee.1070534370425" id="1165597014918" nodeInfo="in" />
-            <node role="initializer" roleId="tpee.1068431790190" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="1165597014919" nodeInfo="nn">
-              <property name="value" nameId="tpee.1068580320021" value="0" />
+          <node concept="vg0i.1068581242864" id="1165449748239" role="vg0i.1068580123136.1068581517665" info="nn">
+            <node concept="vg0i.1068581242863" id="1165449748240" role="vg0i.1068581242864.1068581242865" info="nr">
+              <property role="asn4.1169194658468.1169194664001" value="count" />
+              <node concept="vg0i.1070534370425" id="1165449748241" role="vg0i.4972933694980447171.5680397130376446158" info="in" />
+              <node concept="vg0i.1068580320020" id="1165449754431" role="vg0i.1068431474542.1068431790190" info="nn">
+                <property role="vg0i.1068580320020.1068580320021" value="0" />
+              </node>
             </node>
           </node>
-        </node>
-        <node role="statement" roleId="tpee.1068581517665" type="tp2q.ForEachStatement" typeId="tp2q.1153943597977" id="1165597014920" nodeInfo="nn">
-          <node role="variable" roleId="tp2q.1153944400369" type="tp2q.ForEachVariable" typeId="tp2q.1153944193378" id="1165597014921" nodeInfo="nr">
-            <property name="name" nameId="tpck.1169194664001" value="s" />
-          </node>
-          <node role="inputSequence" roleId="tp2q.1153944424730" type="tpee.VariableReference" typeId="tpee.1068498886296" id="4265636116363080980" nodeInfo="nn">
-            <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1165597014899" resolveInfo="ss" />
-          </node>
-          <node role="body" roleId="tpee.1154032183016" type="tpee.StatementList" typeId="tpee.1068580123136" id="1165597014923" nodeInfo="sn">
-            <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="1165597014924" nodeInfo="nn">
-              <node role="expression" roleId="tpee.1068580123156" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="1165597014925" nodeInfo="nn">
-                <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="eupq.~Assert" resolveInfo="Assert" />
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="eupq.~Assert%dassertEquals(java%dlang%dString,java%dlang%dString)%cvoid" resolveInfo="assertEquals" />
-                <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.PlusExpression" typeId="tpee.1068581242875" id="1165597014926" nodeInfo="nn">
-                  <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.VariableReference" typeId="tpee.1068498886296" id="4265636116363110652" nodeInfo="nn">
-                    <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1165597014917" resolveInfo="count" />
+          <node concept="j0ph.1153943597977" id="1165449584333" role="vg0i.1068580123136.1068581517665" info="nn">
+            <node concept="j0ph.1153944193378" id="1165449584334" role="j0ph.1153943597977.1153944400369" info="nr">
+              <property role="asn4.1169194658468.1169194664001" value="s" />
+            </node>
+            <node concept="vg0i.1068498886296" id="4265636116363072689" role="j0ph.1153943597977.1153944424730" info="nn">
+              <reference role="vg0i.1068498886296.1068581517664" target="1165449466318" resolveInfo="ss" />
+            </node>
+            <node concept="vg0i.1068580123136" id="1165449584336" role="vg0i.1154032098014.1154032183016" info="sn">
+              <node concept="vg0i.1068580123155" id="1165449602213" role="vg0i.1068580123136.1068581517665" info="nn">
+                <node concept="vg0i.1081236700937" id="1165449714184" role="vg0i.1068580123155.1068580123156" info="nn">
+                  <reference role="vg0i.1081236700937.1144433194310" target="eupq.~Assert" resolveInfo="Assert" />
+                  <reference role="vg0i.1204053956946.1068499141037" target="eupq.~Assert%dassertEquals(java%dlang%dString,java%dlang%dString)%cvoid" resolveInfo="assertEquals" />
+                  <node concept="vg0i.1068581242875" id="1165449773683" role="vg0i.1204053956946.1068499141038" info="nn">
+                    <node concept="vg0i.1068498886296" id="4265636116363093492" role="vg0i.1081773326031.1081773367579" info="nn">
+                      <reference role="vg0i.1068498886296.1068581517664" target="1165449748240" resolveInfo="count" />
+                    </node>
+                    <node concept="vg0i.1070475926800" id="1165449766088" role="vg0i.1081773326031.1081773367580" info="nn" />
                   </node>
-                  <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="1165597014928" nodeInfo="nn" />
+                  <node concept="j0ph.1153944233411" id="1165449790000" role="vg0i.1204053956946.1068499141038" info="nn">
+                    <reference role="j0ph.1153944233411.1153944258490" target="1165449584334" resolveInfo="s" />
+                  </node>
                 </node>
-                <node role="actualArgument" roleId="tpee.1068499141038" type="tp2q.ForEachVariableReference" typeId="tp2q.1153944233411" id="1165597014929" nodeInfo="nn">
-                  <link role="variable" roleId="tp2q.1153944258490" targetNodeId="1165597014921" resolveInfo="s" />
+              </node>
+              <node concept="vg0i.1068580123155" id="1165450085162" role="vg0i.1068580123136.1068581517665" info="nn">
+                <node concept="vg0i.1214918800624" id="1238145924580" role="vg0i.1068580123155.1068580123156" info="nn">
+                  <node concept="vg0i.1068498886296" id="4265636116363067607" role="vg0i.1239714755177.1239714902950" info="nn">
+                    <reference role="vg0i.1068498886296.1068581517664" target="1165449748240" resolveInfo="count" />
+                  </node>
                 </node>
               </node>
             </node>
-            <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="1165597014930" nodeInfo="nn">
-              <node role="expression" roleId="tpee.1068580123156" type="tpee.PostfixIncrementExpression" typeId="tpee.1214918800624" id="1238145925463" nodeInfo="nn">
-                <node role="expression" roleId="tpee.1239714902950" type="tpee.VariableReference" typeId="tpee.1068498886296" id="4265636116363101970" nodeInfo="nn">
-                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1165597014917" resolveInfo="count" />
-                </node>
+          </node>
+          <node concept="vg0i.1068580123155" id="1165451147063" role="vg0i.1068580123136.1068581517665" info="nn">
+            <node concept="vg0i.1081236700937" id="1053275602486064335" role="vg0i.1068580123155.1068580123156" info="nn">
+              <reference role="vg0i.1081236700937.1144433194310" target="eupq.~Assert" resolveInfo="Assert" />
+              <reference role="vg0i.1204053956946.1068499141037" target="eupq.~Assert%dassertEquals(int,int)%cvoid" resolveInfo="assertEquals" />
+              <node concept="vg0i.1068498886296" id="4265636116363092587" role="vg0i.1204053956946.1068499141038" info="nn">
+                <reference role="vg0i.1068498886296.1068581517664" target="1165449748240" resolveInfo="count" />
+              </node>
+              <node concept="vg0i.1068580320020" id="1053275602486064337" role="vg0i.1204053956946.1068499141038" info="nn">
+                <property role="vg0i.1068580320020.1068580320021" value="5" />
               </node>
             </node>
           </node>
-        </node>
-        <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="1165597014936" nodeInfo="nn">
-          <node role="expression" roleId="tpee.1068580123156" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="1165597014937" nodeInfo="nn">
-            <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="eupq.~Assert" resolveInfo="Assert" />
-            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="eupq.~Assert%dassertEquals(int,int)%cvoid" resolveInfo="assertEquals" />
-            <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.VariableReference" typeId="tpee.1068498886296" id="4265636116363083818" nodeInfo="nn">
-              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1165597014917" resolveInfo="count" />
+          <node concept="j0ph.1153943597977" id="1165453645681" role="vg0i.1068580123136.1068581517665" info="nn">
+            <node concept="j0ph.1153944193378" id="1165453645682" role="j0ph.1153943597977.1153944400369" info="nr">
+              <property role="asn4.1169194658468.1169194664001" value="s" />
             </node>
-            <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.VariableReference" typeId="tpee.1068498886296" id="4265636116363113466" nodeInfo="nn">
-              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1165597202157" resolveInfo="sequence_size" />
+            <node concept="vg0i.1068498886296" id="4265636116363089469" role="j0ph.1153943597977.1153944424730" info="nn">
+              <reference role="vg0i.1068498886296.1068581517664" target="1165449466318" resolveInfo="ss" />
             </node>
-          </node>
-        </node>
-        <node role="statement" roleId="tpee.1068581517665" type="tp2q.ForEachStatement" typeId="tp2q.1153943597977" id="1165597014940" nodeInfo="nn">
-          <node role="variable" roleId="tp2q.1153944400369" type="tp2q.ForEachVariable" typeId="tp2q.1153944193378" id="1165597014941" nodeInfo="nr">
-            <property name="name" nameId="tpck.1169194664001" value="s" />
-          </node>
-          <node role="inputSequence" roleId="tp2q.1153944424730" type="tpee.VariableReference" typeId="tpee.1068498886296" id="4265636116363114245" nodeInfo="nn">
-            <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1165597014899" resolveInfo="ss" />
-          </node>
-          <node role="body" roleId="tpee.1154032183016" type="tpee.StatementList" typeId="tpee.1068580123136" id="1165597014943" nodeInfo="sn">
-            <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="1165597014944" nodeInfo="nn">
-              <node role="expression" roleId="tpee.1068580123156" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="1165597014945" nodeInfo="nn">
-                <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="eupq.~Assert" resolveInfo="Assert" />
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="eupq.~Assert%dassertEquals(java%dlang%dString,java%dlang%dString)%cvoid" resolveInfo="assertEquals" />
-                <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.PlusExpression" typeId="tpee.1068581242875" id="1165597014946" nodeInfo="nn">
-                  <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.ParenthesizedExpression" typeId="tpee.1079359253375" id="1165597014947" nodeInfo="nn">
-                    <node role="expression" roleId="tpee.1079359253376" type="tpee.MinusExpression" typeId="tpee.1068581242869" id="1165597014948" nodeInfo="nn">
-                      <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.VariableReference" typeId="tpee.1068498886296" id="4265636116363088608" nodeInfo="nn">
-                        <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1165597202157" resolveInfo="sequence_size" />
-                      </node>
-                      <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.VariableReference" typeId="tpee.1068498886296" id="4265636116363110228" nodeInfo="nn">
-                        <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1165597014917" resolveInfo="count" />
+            <node concept="vg0i.1068580123136" id="1165453645684" role="vg0i.1154032098014.1154032183016" info="sn">
+              <node concept="vg0i.1068580123155" id="1165453645685" role="vg0i.1068580123136.1068581517665" info="nn">
+                <node concept="vg0i.1081236700937" id="1053275602486064338" role="vg0i.1068580123155.1068580123156" info="nn">
+                  <reference role="vg0i.1081236700937.1144433194310" target="eupq.~Assert" resolveInfo="Assert" />
+                  <reference role="vg0i.1204053956946.1068499141037" target="eupq.~Assert%dassertEquals(java%dlang%dString,java%dlang%dString)%cvoid" resolveInfo="assertEquals" />
+                  <node concept="vg0i.1068581242875" id="1053275602486064339" role="vg0i.1204053956946.1068499141038" info="nn">
+                    <node concept="vg0i.1079359253375" id="1053275602486064340" role="vg0i.1081773326031.1081773367579" info="nn">
+                      <node concept="vg0i.1068581242869" id="1053275602486064341" role="vg0i.1079359253375.1079359253376" info="nn">
+                        <node concept="vg0i.1068580320020" id="1053275602486064342" role="vg0i.1081773326031.1081773367579" info="nn">
+                          <property role="vg0i.1068580320020.1068580320021" value="5" />
+                        </node>
+                        <node concept="vg0i.1068498886296" id="4265636116363096418" role="vg0i.1081773326031.1081773367580" info="nn">
+                          <reference role="vg0i.1068498886296.1068581517664" target="1165449748240" resolveInfo="count" />
+                        </node>
                       </node>
                     </node>
+                    <node concept="vg0i.1070475926800" id="1053275602486064344" role="vg0i.1081773326031.1081773367580" info="nn" />
                   </node>
-                  <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="1165597014951" nodeInfo="nn" />
-                </node>
-                <node role="actualArgument" roleId="tpee.1068499141038" type="tp2q.ForEachVariableReference" typeId="tp2q.1153944233411" id="1165597014952" nodeInfo="nn">
-                  <link role="variable" roleId="tp2q.1153944258490" targetNodeId="1165597014941" resolveInfo="s" />
+                  <node concept="j0ph.1153944233411" id="1053275602486064345" role="vg0i.1204053956946.1068499141038" info="nn">
+                    <reference role="j0ph.1153944233411.1153944258490" target="1165453645682" resolveInfo="s" />
+                  </node>
                 </node>
               </node>
-            </node>
-            <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="1165597014953" nodeInfo="nn">
-              <node role="expression" roleId="tpee.1068580123156" type="tpee.PostfixIncrementExpression" typeId="tpee.1214918800624" id="1238145920409" nodeInfo="nn">
-                <node role="expression" roleId="tpee.1239714902950" type="tpee.VariableReference" typeId="tpee.1068498886296" id="4265636116363103098" nodeInfo="nn">
-                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1165597014917" resolveInfo="count" />
+              <node concept="vg0i.1068580123155" id="1165453645691" role="vg0i.1068580123136.1068581517665" info="nn">
+                <node concept="vg0i.1214918800624" id="1238145924529" role="vg0i.1068580123155.1068580123156" info="nn">
+                  <node concept="vg0i.1068498886296" id="4265636116363096906" role="vg0i.1239714755177.1239714902950" info="nn">
+                    <reference role="vg0i.1068498886296.1068581517664" target="1165449748240" resolveInfo="count" />
+                  </node>
                 </node>
               </node>
             </node>
           </node>
-        </node>
-        <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="1165597014959" nodeInfo="nn">
-          <node role="expression" roleId="tpee.1068580123156" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="1165597014960" nodeInfo="nn">
-            <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="eupq.~Assert" resolveInfo="Assert" />
-            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="eupq.~Assert%dassertEquals(int,int)%cvoid" resolveInfo="assertEquals" />
-            <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.VariableReference" typeId="tpee.1068498886296" id="4265636116363065806" nodeInfo="nn">
-              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1165597014917" resolveInfo="count" />
-            </node>
-            <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.MulExpression" typeId="tpee.1092119917967" id="1165597316808" nodeInfo="nn">
-              <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="1165597319092" nodeInfo="nn">
-                <property name="value" nameId="tpee.1068580320021" value="2" />
+          <node concept="vg0i.1068580123155" id="1165453645697" role="vg0i.1068580123136.1068581517665" info="nn">
+            <node concept="vg0i.1081236700937" id="1053275602486064346" role="vg0i.1068580123155.1068580123156" info="nn">
+              <reference role="vg0i.1081236700937.1144433194310" target="eupq.~Assert" resolveInfo="Assert" />
+              <reference role="vg0i.1204053956946.1068499141037" target="eupq.~Assert%dassertEquals(int,int)%cvoid" resolveInfo="assertEquals" />
+              <node concept="vg0i.1068498886296" id="4265636116363071494" role="vg0i.1204053956946.1068499141038" info="nn">
+                <reference role="vg0i.1068498886296.1068581517664" target="1165449748240" resolveInfo="count" />
               </node>
-              <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.VariableReference" typeId="tpee.1068498886296" id="4265636116363076292" nodeInfo="nn">
-                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1165597202157" resolveInfo="sequence_size" />
+              <node concept="vg0i.1068580320020" id="1053275602486064348" role="vg0i.1204053956946.1068499141038" info="nn">
+                <property role="vg0i.1068580320020.1068580320021" value="10" />
               </node>
             </node>
           </node>
         </node>
+        <node concept="vg0i.1068581517677" id="1165449450254" role="vg0i.1068580123132.1068580123133" info="in" />
+        <node concept="vg0i.1146644602865" id="1201003725961" role="vg0i.1178549954367.1178549979242" info="nn" />
       </node>
-      <node role="returnType" roleId="tpee.1068580123133" type="tpee.VoidType" typeId="tpee.1068581517677" id="1165597014963" nodeInfo="in" />
-      <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="1201003732041" nodeInfo="nn" />
-    </node>
-    <node role="member" roleId="tpee.5375687026011219971" type="tpee.InstanceMethodDeclaration" typeId="tpee.1068580123165" id="1165597014964" nodeInfo="igu">
-      <property name="name" nameId="tpck.1169194664001" value="test_longSequence2" />
-      <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="1165597014965" nodeInfo="sn">
-        <node role="statement" roleId="tpee.1068581517665" type="tpee.SingleLineComment" typeId="tpee.6329021646629104954" id="7376433222636453479" nodeInfo="nn">
-          <node role="commentPart" roleId="tpee.6329021646629175155" type="tpee.TextCommentPart" typeId="tpee.6329021646629104957" id="7376433222636453480" nodeInfo="nn">
-            <property name="text" nameId="tpee.6329021646629104958" value="sequence with memory" />
-          </node>
-        </node>
-        <node role="statement" roleId="tpee.1068581517665" type="tpee.LocalVariableDeclarationStatement" typeId="tpee.1068581242864" id="1165597357929" nodeInfo="nn">
-          <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="1165597357930" nodeInfo="nr">
-            <property name="name" nameId="tpck.1169194664001" value="sequence_size" />
-            <node role="type" roleId="tpee.5680397130376446158" type="tpee.IntegerType" typeId="tpee.1070534370425" id="1165597357931" nodeInfo="in" />
-            <node role="initializer" roleId="tpee.1068431790190" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="1165597357932" nodeInfo="nn">
-              <property name="value" nameId="tpee.1068580320021" value="1234" />
+      <node concept="vg0i.1068580123165" id="1165451039404" role="vg0i.1107461130800.5375687026011219971" info="igu">
+        <property role="asn4.1169194658468.1169194664001" value="test_shortSequence2" />
+        <node concept="vg0i.1068580123136" id="1165451039405" role="vg0i.1068580123132.1068580123135" info="sn">
+          <node concept="vg0i.6329021646629104954" id="7376433222636453175" role="vg0i.1068580123136.1068581517665" info="nn">
+            <node concept="vg0i.6329021646629104957" id="7376433222636453176" role="vg0i.6329021646629104954.6329021646629175155" info="nn">
+              <property role="vg0i.6329021646629104957.6329021646629104958" value="sequence with memory" />
             </node>
           </node>
-        </node>
-        <node role="statement" roleId="tpee.1068581517665" type="tpee.LocalVariableDeclarationStatement" typeId="tpee.1068581242864" id="1165597014970" nodeInfo="nn">
-          <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="1165597014971" nodeInfo="nr">
-            <property name="name" nameId="tpck.1169194664001" value="yield_count" />
-            <node role="type" roleId="tpee.5680397130376446158" type="tpee.IntegerType" typeId="tpee.1070534370425" id="1165597014972" nodeInfo="in" />
-            <node role="initializer" roleId="tpee.1068431790190" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="1165597014973" nodeInfo="nn">
-              <property name="value" nameId="tpee.1068580320021" value="0" />
+          <node concept="vg0i.1068581242864" id="1165453934275" role="vg0i.1068580123136.1068581517665" info="nn">
+            <node concept="vg0i.1068581242863" id="1165453934276" role="vg0i.1068581242864.1068581242865" info="nr">
+              <property role="asn4.1169194658468.1169194664001" value="yield_count" />
+              <node concept="vg0i.1070534370425" id="1165453934277" role="vg0i.4972933694980447171.5680397130376446158" info="in" />
+              <node concept="vg0i.1068580320020" id="1165453954920" role="vg0i.1068431474542.1068431790190" info="nn">
+                <property role="vg0i.1068580320020.1068580320021" value="0" />
+              </node>
             </node>
           </node>
-        </node>
-        <node role="statement" roleId="tpee.1068581517665" type="tpee.LocalVariableDeclarationStatement" typeId="tpee.1068581242864" id="1165597014974" nodeInfo="nn">
-          <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="1165597014975" nodeInfo="nr">
-            <property name="name" nameId="tpck.1169194664001" value="ss" />
-            <node role="type" roleId="tpee.5680397130376446158" type="tp2q.SequenceType" typeId="tp2q.1151689724996" id="1165597014976" nodeInfo="in">
-              <node role="elementType" roleId="tp2q.1151689745422" type="tpee.StringType" typeId="tpee.1225271177708" id="1225196598607" nodeInfo="in" />
-            </node>
-            <node role="initializer" roleId="tpee.1068431790190" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="1165597014978" nodeInfo="nn">
-              <node role="creator" roleId="tpee.1145553007750" type="tp2q.SequenceCreator" typeId="tp2q.1224414427926" id="1224596674576" nodeInfo="nn">
-                <node role="elementType" roleId="tp2q.1224414456414" type="tpee.StringType" typeId="tpee.1225271177708" id="1225196591924" nodeInfo="in" />
-                <node role="initializer" roleId="tp2q.1224414466839" type="tp2c.ClosureLiteral" typeId="tp2c.1199569711397" id="1224596674578" nodeInfo="nn">
-                  <node role="body" roleId="tp2c.1199569916463" type="tpee.StatementList" typeId="tpee.1068580123136" id="1224596674579" nodeInfo="sn">
-                    <node role="statement" roleId="tpee.1068581517665" type="tpee.ForStatement" typeId="tpee.1144231330558" id="1224596674580" nodeInfo="nn">
-                      <node role="variable" roleId="tpee.1144230900587" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="1224596674581" nodeInfo="nr">
-                        <property name="name" nameId="tpck.1169194664001" value="i" />
-                        <node role="type" roleId="tpee.5680397130376446158" type="tpee.IntegerType" typeId="tpee.1070534370425" id="1224596674582" nodeInfo="in" />
-                        <node role="initializer" roleId="tpee.1068431790190" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="1224596674583" nodeInfo="nn">
-                          <property name="value" nameId="tpee.1068580320021" value="0" />
-                        </node>
-                      </node>
-                      <node role="body" roleId="tpee.1154032183016" type="tpee.StatementList" typeId="tpee.1068580123136" id="1224596674584" nodeInfo="sn">
-                        <node role="statement" roleId="tpee.1068581517665" type="tp2c.YieldStatement" typeId="tp2c.1200830824066" id="1224596680324" nodeInfo="nn">
-                          <node role="expression" roleId="tp2c.1200830928149" type="tpee.PlusExpression" typeId="tpee.1068581242875" id="1224596680325" nodeInfo="nn">
-                            <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.VariableReference" typeId="tpee.1068498886296" id="4265636116363088292" nodeInfo="nn">
-                              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1165597014971" resolveInfo="yield_count" />
-                            </node>
-                            <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="1224596680327" nodeInfo="nn" />
+          <node concept="vg0i.1068581242864" id="1165453981203" role="vg0i.1068580123136.1068581517665" info="nn">
+            <node concept="vg0i.1068581242863" id="1165453981204" role="vg0i.1068581242864.1068581242865" info="nr">
+              <property role="asn4.1169194658468.1169194664001" value="ss" />
+              <node concept="j0ph.1151689724996" id="1165453981205" role="vg0i.4972933694980447171.5680397130376446158" info="in">
+                <node concept="vg0i.1225271177708" id="1225196572439" role="j0ph.1151689724996.1151689745422" info="in" />
+              </node>
+              <node concept="vg0i.1145552977093" id="1165453993521" role="vg0i.1068431474542.1068431790190" info="nn">
+                <node concept="j0ph.1224414427926" id="1224596675278" role="vg0i.1145552977093.1145553007750" info="nn">
+                  <node concept="vg0i.1225271177708" id="1225196568870" role="j0ph.1224414427926.1224414456414" info="in" />
+                  <node concept="cakq.1199569711397" id="1224596675280" role="j0ph.1224414427926.1224414466839" info="nn">
+                    <node concept="vg0i.1068580123136" id="1224596675281" role="cakq.1199569711397.1199569916463" info="sn">
+                      <node concept="vg0i.1144231330558" id="1224596675282" role="vg0i.1068580123136.1068581517665" info="nn">
+                        <node concept="vg0i.1068581242863" id="1224596675283" role="vg0i.1144230876926.1144230900587" info="nr">
+                          <property role="asn4.1169194658468.1169194664001" value="i" />
+                          <node concept="vg0i.1070534370425" id="1224596675284" role="vg0i.4972933694980447171.5680397130376446158" info="in" />
+                          <node concept="vg0i.1068580320020" id="1224596675285" role="vg0i.1068431474542.1068431790190" info="nn">
+                            <property role="vg0i.1068580320020.1068580320021" value="0" />
                           </node>
                         </node>
-                        <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="1224596674589" nodeInfo="nn">
-                          <node role="expression" roleId="tpee.1068580123156" type="tpee.PostfixIncrementExpression" typeId="tpee.1214918800624" id="1238145921960" nodeInfo="nn">
-                            <node role="expression" roleId="tpee.1239714902950" type="tpee.VariableReference" typeId="tpee.1068498886296" id="4265636116363096596" nodeInfo="nn">
-                              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1165597014971" resolveInfo="yield_count" />
+                        <node concept="vg0i.1068580123136" id="1224596675286" role="vg0i.1154032098014.1154032183016" info="sn">
+                          <node concept="cakq.1200830824066" id="1224596679539" role="vg0i.1068580123136.1068581517665" info="nn">
+                            <node concept="vg0i.1068581242875" id="1224596679540" role="cakq.1200830824066.1200830928149" info="nn">
+                              <node concept="vg0i.1068498886296" id="4265636116363090336" role="vg0i.1081773326031.1081773367579" info="nn">
+                                <reference role="vg0i.1068498886296.1068581517664" target="1165453934276" resolveInfo="yield_count" />
+                              </node>
+                              <node concept="vg0i.1070475926800" id="1224596679542" role="vg0i.1081773326031.1081773367580" info="nn" />
+                            </node>
+                          </node>
+                          <node concept="vg0i.1068580123155" id="1224596675291" role="vg0i.1068580123136.1068581517665" info="nn">
+                            <node concept="vg0i.1214918800624" id="1238145920964" role="vg0i.1068580123155.1068580123156" info="nn">
+                              <node concept="vg0i.1068498886296" id="4265636116363093633" role="vg0i.1239714755177.1239714902950" info="nn">
+                                <reference role="vg0i.1068498886296.1068581517664" target="1165453934276" resolveInfo="yield_count" />
+                              </node>
                             </node>
                           </node>
                         </node>
-                      </node>
-                      <node role="condition" roleId="tpee.1144231399730" type="tpee.LessThanExpression" typeId="tpee.1081506773034" id="1224596674595" nodeInfo="nn">
-                        <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.VariableReference" typeId="tpee.1068498886296" id="4265636116363107284" nodeInfo="nn">
-                          <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1165597357930" resolveInfo="sequence_size" />
+                        <node concept="vg0i.1081506773034" id="1224596675297" role="vg0i.1144231330558.1144231399730" info="nn">
+                          <node concept="vg0i.1068580320020" id="1224596675298" role="vg0i.1081773326031.1081773367579" info="nn">
+                            <property role="vg0i.1068580320020.1068580320021" value="5" />
+                          </node>
+                          <node concept="vg0i.1068498886296" id="4265636116363113623" role="vg0i.1081773326031.1081773367580" info="nn">
+                            <reference role="vg0i.1068498886296.1068581517664" target="1224596675283" resolveInfo="i" />
+                          </node>
                         </node>
-                        <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.VariableReference" typeId="tpee.1068498886296" id="4265636116363097799" nodeInfo="nn">
-                          <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1224596674581" resolveInfo="i" />
-                        </node>
-                      </node>
-                      <node role="iteration" roleId="tpee.1144231408325" type="tpee.PostfixIncrementExpression" typeId="tpee.1214918800624" id="1238145920477" nodeInfo="nn">
-                        <node role="expression" roleId="tpee.1239714902950" type="tpee.VariableReference" typeId="tpee.1068498886296" id="4265636116363105233" nodeInfo="nn">
-                          <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1224596674581" resolveInfo="i" />
+                        <node concept="vg0i.1214918800624" id="1238145922551" role="vg0i.1144231330558.1144231408325" info="nn">
+                          <node concept="vg0i.1068498886296" id="4265636116363112970" role="vg0i.1239714755177.1239714902950" info="nn">
+                            <reference role="vg0i.1068498886296.1068581517664" target="1224596675283" resolveInfo="i" />
+                          </node>
                         </node>
                       </node>
                     </node>
@@ -636,196 +334,190 @@
               </node>
             </node>
           </node>
-        </node>
-        <node role="statement" roleId="tpee.1068581517665" type="tpee.LocalVariableDeclarationStatement" typeId="tpee.1068581242864" id="1165597015005" nodeInfo="nn">
-          <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="1165597015006" nodeInfo="nr">
-            <property name="name" nameId="tpck.1169194664001" value="count" />
-            <node role="type" roleId="tpee.5680397130376446158" type="tpee.IntegerType" typeId="tpee.1070534370425" id="1165597015007" nodeInfo="in" />
-            <node role="initializer" roleId="tpee.1068431790190" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="1165597015008" nodeInfo="nn">
-              <property name="value" nameId="tpee.1068580320021" value="0" />
+          <node concept="vg0i.1068581242864" id="1165454291896" role="vg0i.1068580123136.1068581517665" info="nn">
+            <node concept="vg0i.1068581242863" id="1165454291897" role="vg0i.1068581242864.1068581242865" info="nr">
+              <property role="asn4.1169194658468.1169194664001" value="count" />
+              <node concept="vg0i.1070534370425" id="1165454291898" role="vg0i.4972933694980447171.5680397130376446158" info="in" />
+              <node concept="vg0i.1068580320020" id="1165454291899" role="vg0i.1068431474542.1068431790190" info="nn">
+                <property role="vg0i.1068580320020.1068580320021" value="0" />
+              </node>
             </node>
           </node>
-        </node>
-        <node role="statement" roleId="tpee.1068581517665" type="tp2q.ForEachStatement" typeId="tp2q.1153943597977" id="1165597015009" nodeInfo="nn">
-          <node role="variable" roleId="tp2q.1153944400369" type="tp2q.ForEachVariable" typeId="tp2q.1153944193378" id="1165597015010" nodeInfo="nr">
-            <property name="name" nameId="tpck.1169194664001" value="s" />
-          </node>
-          <node role="inputSequence" roleId="tp2q.1153944424730" type="tpee.VariableReference" typeId="tpee.1068498886296" id="4265636116363071148" nodeInfo="nn">
-            <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1165597014975" resolveInfo="ss" />
-          </node>
-          <node role="body" roleId="tpee.1154032183016" type="tpee.StatementList" typeId="tpee.1068580123136" id="1165597015012" nodeInfo="sn">
-            <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="1165597015013" nodeInfo="nn">
-              <node role="expression" roleId="tpee.1068580123156" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="1165597015014" nodeInfo="nn">
-                <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="eupq.~Assert" resolveInfo="Assert" />
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="eupq.~Assert%dassertEquals(java%dlang%dString,java%dlang%dString)%cvoid" resolveInfo="assertEquals" />
-                <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.PlusExpression" typeId="tpee.1068581242875" id="1165597015015" nodeInfo="nn">
-                  <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.VariableReference" typeId="tpee.1068498886296" id="4265636116363086724" nodeInfo="nn">
-                    <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1165597015006" resolveInfo="count" />
+          <node concept="j0ph.1153943597977" id="1165454291900" role="vg0i.1068580123136.1068581517665" info="nn">
+            <node concept="j0ph.1153944193378" id="1165454291901" role="j0ph.1153943597977.1153944400369" info="nr">
+              <property role="asn4.1169194658468.1169194664001" value="s" />
+            </node>
+            <node concept="vg0i.1068498886296" id="4265636116363108289" role="j0ph.1153943597977.1153944424730" info="nn">
+              <reference role="vg0i.1068498886296.1068581517664" target="1165453981204" resolveInfo="ss" />
+            </node>
+            <node concept="vg0i.1068580123136" id="1165454291903" role="vg0i.1154032098014.1154032183016" info="sn">
+              <node concept="vg0i.1068580123155" id="1165454291904" role="vg0i.1068580123136.1068581517665" info="nn">
+                <node concept="vg0i.1081236700937" id="1165454291905" role="vg0i.1068580123155.1068580123156" info="nn">
+                  <reference role="vg0i.1081236700937.1144433194310" target="eupq.~Assert" resolveInfo="Assert" />
+                  <reference role="vg0i.1204053956946.1068499141037" target="eupq.~Assert%dassertEquals(java%dlang%dString,java%dlang%dString)%cvoid" resolveInfo="assertEquals" />
+                  <node concept="vg0i.1068581242875" id="1165454291906" role="vg0i.1204053956946.1068499141038" info="nn">
+                    <node concept="vg0i.1068498886296" id="4265636116363084795" role="vg0i.1081773326031.1081773367579" info="nn">
+                      <reference role="vg0i.1068498886296.1068581517664" target="1165454291897" resolveInfo="count" />
+                    </node>
+                    <node concept="vg0i.1070475926800" id="1165454291908" role="vg0i.1081773326031.1081773367580" info="nn" />
                   </node>
-                  <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="1165597015017" nodeInfo="nn" />
-                </node>
-                <node role="actualArgument" roleId="tpee.1068499141038" type="tp2q.ForEachVariableReference" typeId="tp2q.1153944233411" id="1165597015018" nodeInfo="nn">
-                  <link role="variable" roleId="tp2q.1153944258490" targetNodeId="1165597015010" resolveInfo="s" />
-                </node>
-              </node>
-            </node>
-            <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="1165597015019" nodeInfo="nn">
-              <node role="expression" roleId="tpee.1068580123156" type="tpee.PostfixIncrementExpression" typeId="tpee.1214918800624" id="1238145920694" nodeInfo="nn">
-                <node role="expression" roleId="tpee.1239714902950" type="tpee.VariableReference" typeId="tpee.1068498886296" id="4265636116363090497" nodeInfo="nn">
-                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1165597015006" resolveInfo="count" />
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-        <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="1165597015025" nodeInfo="nn">
-          <node role="expression" roleId="tpee.1068580123156" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="1165597015026" nodeInfo="nn">
-            <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="eupq.~Assert" resolveInfo="Assert" />
-            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="eupq.~Assert%dassertEquals(int,int)%cvoid" resolveInfo="assertEquals" />
-            <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.VariableReference" typeId="tpee.1068498886296" id="4265636116363110104" nodeInfo="nn">
-              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1165597015006" resolveInfo="count" />
-            </node>
-            <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.VariableReference" typeId="tpee.1068498886296" id="4265636116363098962" nodeInfo="nn">
-              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1165597357930" resolveInfo="sequence_size" />
-            </node>
-          </node>
-        </node>
-        <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="1165597015029" nodeInfo="nn">
-          <node role="expression" roleId="tpee.1068580123156" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="1165597015030" nodeInfo="nn">
-            <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="eupq.~Assert" resolveInfo="Assert" />
-            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="eupq.~Assert%dassertEquals(int,int)%cvoid" resolveInfo="assertEquals" />
-            <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.VariableReference" typeId="tpee.1068498886296" id="4265636116363110854" nodeInfo="nn">
-              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1165597014971" resolveInfo="yield_count" />
-            </node>
-            <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.VariableReference" typeId="tpee.1068498886296" id="4265636116363103728" nodeInfo="nn">
-              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1165597357930" resolveInfo="sequence_size" />
-            </node>
-          </node>
-        </node>
-        <node role="statement" roleId="tpee.1068581517665" type="tp2q.ForEachStatement" typeId="tp2q.1153943597977" id="1165597015033" nodeInfo="nn">
-          <node role="variable" roleId="tp2q.1153944400369" type="tp2q.ForEachVariable" typeId="tp2q.1153944193378" id="1165597015034" nodeInfo="nr">
-            <property name="name" nameId="tpck.1169194664001" value="s" />
-          </node>
-          <node role="inputSequence" roleId="tp2q.1153944424730" type="tpee.VariableReference" typeId="tpee.1068498886296" id="4265636116363082683" nodeInfo="nn">
-            <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1165597014975" resolveInfo="ss" />
-          </node>
-          <node role="body" roleId="tpee.1154032183016" type="tpee.StatementList" typeId="tpee.1068580123136" id="1165597015036" nodeInfo="sn">
-            <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="1165597015037" nodeInfo="nn">
-              <node role="expression" roleId="tpee.1068580123156" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="1165597015038" nodeInfo="nn">
-                <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="eupq.~Assert" resolveInfo="Assert" />
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="eupq.~Assert%dassertEquals(java%dlang%dString,java%dlang%dString)%cvoid" resolveInfo="assertEquals" />
-                <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.PlusExpression" typeId="tpee.1068581242875" id="1165597015039" nodeInfo="nn">
-                  <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.VariableReference" typeId="tpee.1068498886296" id="4265636116363090255" nodeInfo="nn">
-                    <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1165597015006" resolveInfo="count" />
+                  <node concept="j0ph.1153944233411" id="1165454291909" role="vg0i.1204053956946.1068499141038" info="nn">
+                    <reference role="j0ph.1153944233411.1153944258490" target="1165454291901" resolveInfo="s" />
                   </node>
-                  <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="1165597015041" nodeInfo="nn" />
-                </node>
-                <node role="actualArgument" roleId="tpee.1068499141038" type="tp2q.ForEachVariableReference" typeId="tp2q.1153944233411" id="1165597015042" nodeInfo="nn">
-                  <link role="variable" roleId="tp2q.1153944258490" targetNodeId="1165597015034" resolveInfo="s" />
                 </node>
               </node>
-            </node>
-            <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="1165597015043" nodeInfo="nn">
-              <node role="expression" roleId="tpee.1068580123156" type="tpee.PostfixIncrementExpression" typeId="tpee.1214918800624" id="1238145924801" nodeInfo="nn">
-                <node role="expression" roleId="tpee.1239714902950" type="tpee.VariableReference" typeId="tpee.1068498886296" id="4265636116363102905" nodeInfo="nn">
-                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1165597015006" resolveInfo="count" />
+              <node concept="vg0i.1068580123155" id="1165454291910" role="vg0i.1068580123136.1068581517665" info="nn">
+                <node concept="vg0i.1214918800624" id="1238145920291" role="vg0i.1068580123155.1068580123156" info="nn">
+                  <node concept="vg0i.1068498886296" id="4265636116363085265" role="vg0i.1239714755177.1239714902950" info="nn">
+                    <reference role="vg0i.1068498886296.1068581517664" target="1165454291897" resolveInfo="count" />
+                  </node>
                 </node>
               </node>
             </node>
           </node>
-        </node>
-        <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="1165597015049" nodeInfo="nn">
-          <node role="expression" roleId="tpee.1068580123156" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="1165597015050" nodeInfo="nn">
-            <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="eupq.~Assert" resolveInfo="Assert" />
-            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="eupq.~Assert%dassertEquals(int,int)%cvoid" resolveInfo="assertEquals" />
-            <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.VariableReference" typeId="tpee.1068498886296" id="4265636116363086350" nodeInfo="nn">
-              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1165597015006" resolveInfo="count" />
-            </node>
-            <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.MulExpression" typeId="tpee.1092119917967" id="1165597419625" nodeInfo="nn">
-              <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="1165597420956" nodeInfo="nn">
-                <property name="value" nameId="tpee.1068580320021" value="2" />
+          <node concept="vg0i.1068580123155" id="1165454291916" role="vg0i.1068580123136.1068581517665" info="nn">
+            <node concept="vg0i.1081236700937" id="1165454291917" role="vg0i.1068580123155.1068580123156" info="nn">
+              <reference role="vg0i.1081236700937.1144433194310" target="eupq.~Assert" resolveInfo="Assert" />
+              <reference role="vg0i.1204053956946.1068499141037" target="eupq.~Assert%dassertEquals(int,int)%cvoid" resolveInfo="assertEquals" />
+              <node concept="vg0i.1068498886296" id="4265636116363115039" role="vg0i.1204053956946.1068499141038" info="nn">
+                <reference role="vg0i.1068498886296.1068581517664" target="1165454291897" resolveInfo="count" />
               </node>
-              <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.VariableReference" typeId="tpee.1068498886296" id="4265636116363109640" nodeInfo="nn">
-                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1165597357930" resolveInfo="sequence_size" />
+              <node concept="vg0i.1068580320020" id="1165454291919" role="vg0i.1204053956946.1068499141038" info="nn">
+                <property role="vg0i.1068580320020.1068580320021" value="5" />
+              </node>
+            </node>
+          </node>
+          <node concept="vg0i.1068580123155" id="1165454318156" role="vg0i.1068580123136.1068581517665" info="nn">
+            <node concept="vg0i.1081236700937" id="1165454318157" role="vg0i.1068580123155.1068580123156" info="nn">
+              <reference role="vg0i.1081236700937.1144433194310" target="eupq.~Assert" resolveInfo="Assert" />
+              <reference role="vg0i.1204053956946.1068499141037" target="eupq.~Assert%dassertEquals(int,int)%cvoid" resolveInfo="assertEquals" />
+              <node concept="vg0i.1068498886296" id="4265636116363098259" role="vg0i.1204053956946.1068499141038" info="nn">
+                <reference role="vg0i.1068498886296.1068581517664" target="1165453934276" resolveInfo="yield_count" />
+              </node>
+              <node concept="vg0i.1068580320020" id="1165454318159" role="vg0i.1204053956946.1068499141038" info="nn">
+                <property role="vg0i.1068580320020.1068580320021" value="5" />
+              </node>
+            </node>
+          </node>
+          <node concept="j0ph.1153943597977" id="1165454291920" role="vg0i.1068580123136.1068581517665" info="nn">
+            <node concept="j0ph.1153944193378" id="1165454291921" role="j0ph.1153943597977.1153944400369" info="nr">
+              <property role="asn4.1169194658468.1169194664001" value="s" />
+            </node>
+            <node concept="vg0i.1068498886296" id="4265636116363074548" role="j0ph.1153943597977.1153944424730" info="nn">
+              <reference role="vg0i.1068498886296.1068581517664" target="1165453981204" resolveInfo="ss" />
+            </node>
+            <node concept="vg0i.1068580123136" id="1165454291923" role="vg0i.1154032098014.1154032183016" info="sn">
+              <node concept="vg0i.1068580123155" id="1165454291924" role="vg0i.1068580123136.1068581517665" info="nn">
+                <node concept="vg0i.1081236700937" id="1165454291925" role="vg0i.1068580123155.1068580123156" info="nn">
+                  <reference role="vg0i.1081236700937.1144433194310" target="eupq.~Assert" resolveInfo="Assert" />
+                  <reference role="vg0i.1204053956946.1068499141037" target="eupq.~Assert%dassertEquals(java%dlang%dString,java%dlang%dString)%cvoid" resolveInfo="assertEquals" />
+                  <node concept="vg0i.1068581242875" id="1165454291926" role="vg0i.1204053956946.1068499141038" info="nn">
+                    <node concept="vg0i.1068498886296" id="4265636116363105299" role="vg0i.1081773326031.1081773367579" info="nn">
+                      <reference role="vg0i.1068498886296.1068581517664" target="1165454291897" resolveInfo="count" />
+                    </node>
+                    <node concept="vg0i.1070475926800" id="1165454291931" role="vg0i.1081773326031.1081773367580" info="nn" />
+                  </node>
+                  <node concept="j0ph.1153944233411" id="1165454291932" role="vg0i.1204053956946.1068499141038" info="nn">
+                    <reference role="j0ph.1153944233411.1153944258490" target="1165454291921" resolveInfo="s" />
+                  </node>
+                </node>
+              </node>
+              <node concept="vg0i.1068580123155" id="1165454291933" role="vg0i.1068580123136.1068581517665" info="nn">
+                <node concept="vg0i.1214918800624" id="1238145924208" role="vg0i.1068580123155.1068580123156" info="nn">
+                  <node concept="vg0i.1068498886296" id="4265636116363101257" role="vg0i.1239714755177.1239714902950" info="nn">
+                    <reference role="vg0i.1068498886296.1068581517664" target="1165454291897" resolveInfo="count" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="vg0i.1068580123155" id="1165454291939" role="vg0i.1068580123136.1068581517665" info="nn">
+            <node concept="vg0i.1081236700937" id="1165454291940" role="vg0i.1068580123155.1068580123156" info="nn">
+              <reference role="vg0i.1081236700937.1144433194310" target="eupq.~Assert" resolveInfo="Assert" />
+              <reference role="vg0i.1204053956946.1068499141037" target="eupq.~Assert%dassertEquals(int,int)%cvoid" resolveInfo="assertEquals" />
+              <node concept="vg0i.1068498886296" id="4265636116363086102" role="vg0i.1204053956946.1068499141038" info="nn">
+                <reference role="vg0i.1068498886296.1068581517664" target="1165454291897" resolveInfo="count" />
+              </node>
+              <node concept="vg0i.1068580320020" id="1165454291942" role="vg0i.1204053956946.1068499141038" info="nn">
+                <property role="vg0i.1068580320020.1068580320021" value="10" />
+              </node>
+            </node>
+          </node>
+          <node concept="vg0i.1068580123155" id="1165454382312" role="vg0i.1068580123136.1068581517665" info="nn">
+            <node concept="vg0i.1081236700937" id="1165454382313" role="vg0i.1068580123155.1068580123156" info="nn">
+              <reference role="vg0i.1081236700937.1144433194310" target="eupq.~Assert" resolveInfo="Assert" />
+              <reference role="vg0i.1204053956946.1068499141037" target="eupq.~Assert%dassertEquals(int,int)%cvoid" resolveInfo="assertEquals" />
+              <node concept="vg0i.1068498886296" id="4265636116363085984" role="vg0i.1204053956946.1068499141038" info="nn">
+                <reference role="vg0i.1068498886296.1068581517664" target="1165453934276" resolveInfo="yield_count" />
+              </node>
+              <node concept="vg0i.1068580320020" id="1165454382315" role="vg0i.1204053956946.1068499141038" info="nn">
+                <property role="vg0i.1068580320020.1068580320021" value="10" />
               </node>
             </node>
           </node>
         </node>
-        <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="1165597015053" nodeInfo="nn">
-          <node role="expression" roleId="tpee.1068580123156" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="1165597015054" nodeInfo="nn">
-            <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="eupq.~Assert" resolveInfo="Assert" />
-            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="eupq.~Assert%dassertEquals(int,int)%cvoid" resolveInfo="assertEquals" />
-            <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.VariableReference" typeId="tpee.1068498886296" id="4265636116363088945" nodeInfo="nn">
-              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1165597014971" resolveInfo="yield_count" />
-            </node>
-            <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.MulExpression" typeId="tpee.1092119917967" id="1165597429224" nodeInfo="nn">
-              <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="1165597430461" nodeInfo="nn">
-                <property name="value" nameId="tpee.1068580320021" value="2" />
-              </node>
-              <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.VariableReference" typeId="tpee.1068498886296" id="4265636116363090467" nodeInfo="nn">
-                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1165597357930" resolveInfo="sequence_size" />
-              </node>
-            </node>
-          </node>
-        </node>
+        <node concept="vg0i.1068581517677" id="1165451039444" role="vg0i.1068580123132.1068580123133" info="in" />
+        <node concept="vg0i.1146644602865" id="1201003729631" role="vg0i.1178549954367.1178549979242" info="nn" />
       </node>
-      <node role="returnType" roleId="tpee.1068580123133" type="tpee.VoidType" typeId="tpee.1068581517677" id="1165597015057" nodeInfo="in" />
-      <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="1201003734388" nodeInfo="nn" />
-    </node>
-  </root>
-  <root type="tpee.ClassConcept" typeId="tpee.1068390468198" id="1165600539955" nodeInfo="ig">
-    <property name="name" nameId="tpck.1169194664001" value="Sequence_iteration2" />
-    <node role="superclass" roleId="tpee.1165602531693" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1165789763480" nodeInfo="in">
-      <link role="classifier" roleId="tpee.1107535924139" targetNodeId="eupq.~TestCase" resolveInfo="TestCase" />
-    </node>
-    <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="1201003743377" nodeInfo="nn" />
-    <node role="member" roleId="tpee.5375687026011219971" type="tpee.ConstructorDeclaration" typeId="tpee.1068580123140" id="3891516456976043502" nodeInfo="igu">
-      <node role="returnType" roleId="tpee.1068580123133" type="tpee.VoidType" typeId="tpee.1068581517677" id="3891516456976043503" nodeInfo="in" />
-      <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="3891516456976043504" nodeInfo="sn" />
-      <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="3891516456976043505" nodeInfo="nn" />
-    </node>
-    <node role="member" roleId="tpee.5375687026011219971" type="tpee.InstanceMethodDeclaration" typeId="tpee.1068580123165" id="1165600539956" nodeInfo="igu">
-      <property name="name" nameId="tpck.1169194664001" value="test_1" />
-      <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="1165600539957" nodeInfo="sn">
-        <node role="statement" roleId="tpee.1068581517665" type="tpee.SingleLineComment" typeId="tpee.6329021646629104954" id="7376433222636453769" nodeInfo="nn">
-          <node role="commentPart" roleId="tpee.6329021646629175155" type="tpee.TextCommentPart" typeId="tpee.6329021646629104957" id="7376433222636453770" nodeInfo="nn">
-            <property name="text" nameId="tpee.6329021646629104958" value="inner iteration" />
-          </node>
-        </node>
-        <node role="statement" roleId="tpee.1068581517665" type="tpee.LocalVariableDeclarationStatement" typeId="tpee.1068581242864" id="1165600539962" nodeInfo="nn">
-          <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="1165600539963" nodeInfo="nr">
-            <property name="name" nameId="tpck.1169194664001" value="ss" />
-            <node role="type" roleId="tpee.5680397130376446158" type="tp2q.SequenceType" typeId="tp2q.1151689724996" id="1165600539964" nodeInfo="in">
-              <node role="elementType" roleId="tp2q.1151689745422" type="tpee.StringType" typeId="tpee.1225271177708" id="1225196575786" nodeInfo="in" />
+      <node concept="vg0i.1068580123165" id="1165597014892" role="vg0i.1107461130800.5375687026011219971" info="igu">
+        <property role="asn4.1169194658468.1169194664001" value="test_longSequence1" />
+        <node concept="vg0i.1068580123136" id="1165597014893" role="vg0i.1068580123132.1068580123135" info="sn">
+          <node concept="vg0i.6329021646629104954" id="7376433222636454209" role="vg0i.1068580123136.1068581517665" info="nn">
+            <node concept="vg0i.6329021646629104957" id="7376433222636454210" role="vg0i.6329021646629104954.6329021646629175155" info="nn">
+              <property role="vg0i.6329021646629104957.6329021646629104958" value="sequence with no memory" />
             </node>
-            <node role="initializer" roleId="tpee.1068431790190" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="1165600539966" nodeInfo="nn">
-              <node role="creator" roleId="tpee.1145553007750" type="tp2q.SequenceCreator" typeId="tp2q.1224414427926" id="1224596675060" nodeInfo="nn">
-                <node role="elementType" roleId="tp2q.1224414456414" type="tpee.StringType" typeId="tpee.1225271177708" id="1225196593724" nodeInfo="in" />
-                <node role="initializer" roleId="tp2q.1224414466839" type="tp2c.ClosureLiteral" typeId="tp2c.1199569711397" id="1224596675062" nodeInfo="nn">
-                  <node role="body" roleId="tp2c.1199569916463" type="tpee.StatementList" typeId="tpee.1068580123136" id="1224596675063" nodeInfo="sn">
-                    <node role="statement" roleId="tpee.1068581517665" type="tp2c.YieldStatement" typeId="tp2c.1200830824066" id="1224596680367" nodeInfo="nn">
-                      <node role="expression" roleId="tp2c.1200830928149" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="1224596680368" nodeInfo="nn">
-                        <property name="value" nameId="tpee.1070475926801" value="0" />
-                      </node>
-                    </node>
-                    <node role="statement" roleId="tpee.1068581517665" type="tp2c.YieldStatement" typeId="tp2c.1200830824066" id="1224596679733" nodeInfo="nn">
-                      <node role="expression" roleId="tp2c.1200830928149" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="1224596679734" nodeInfo="nn">
-                        <property name="value" nameId="tpee.1070475926801" value="1" />
-                      </node>
-                    </node>
-                    <node role="statement" roleId="tpee.1068581517665" type="tp2c.YieldStatement" typeId="tp2c.1200830824066" id="1224596679867" nodeInfo="nn">
-                      <node role="expression" roleId="tp2c.1200830928149" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="1224596679868" nodeInfo="nn">
-                        <property name="value" nameId="tpee.1070475926801" value="2" />
-                      </node>
-                    </node>
-                    <node role="statement" roleId="tpee.1068581517665" type="tp2c.YieldStatement" typeId="tp2c.1200830824066" id="1224596680145" nodeInfo="nn">
-                      <node role="expression" roleId="tp2c.1200830928149" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="1224596680146" nodeInfo="nn">
-                        <property name="value" nameId="tpee.1070475926801" value="3" />
-                      </node>
-                    </node>
-                    <node role="statement" roleId="tpee.1068581517665" type="tp2c.YieldStatement" typeId="tp2c.1200830824066" id="1224596680409" nodeInfo="nn">
-                      <node role="expression" roleId="tp2c.1200830928149" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="1224596680410" nodeInfo="nn">
-                        <property name="value" nameId="tpee.1070475926801" value="4" />
+          </node>
+          <node concept="vg0i.1068581242864" id="1165597202156" role="vg0i.1068580123136.1068581517665" info="nn">
+            <node concept="vg0i.1068581242863" id="1165597202157" role="vg0i.1068581242864.1068581242865" info="nr">
+              <property role="asn4.1169194658468.1169194664001" value="sequence_size" />
+              <node concept="vg0i.1070534370425" id="1165597202158" role="vg0i.4972933694980447171.5680397130376446158" info="in" />
+              <node concept="vg0i.1068580320020" id="1165597223051" role="vg0i.1068431474542.1068431790190" info="nn">
+                <property role="vg0i.1068580320020.1068580320021" value="1234" />
+              </node>
+            </node>
+          </node>
+          <node concept="vg0i.1068581242864" id="1165597014898" role="vg0i.1068580123136.1068581517665" info="nn">
+            <node concept="vg0i.1068581242863" id="1165597014899" role="vg0i.1068581242864.1068581242865" info="nr">
+              <property role="asn4.1169194658468.1169194664001" value="ss" />
+              <node concept="j0ph.1151689724996" id="1165597014900" role="vg0i.4972933694980447171.5680397130376446158" info="in">
+                <node concept="vg0i.1225271177708" id="1225196580576" role="j0ph.1151689724996.1151689745422" info="in" />
+              </node>
+              <node concept="vg0i.1145552977093" id="1165597014902" role="vg0i.1068431474542.1068431790190" info="nn">
+                <node concept="j0ph.1224414427926" id="1224596674690" role="vg0i.1145552977093.1145553007750" info="nn">
+                  <node concept="vg0i.1225271177708" id="1225196605337" role="j0ph.1224414427926.1224414456414" info="in" />
+                  <node concept="cakq.1199569711397" id="1224596674692" role="j0ph.1224414427926.1224414466839" info="nn">
+                    <node concept="vg0i.1068580123136" id="1224596674693" role="cakq.1199569711397.1199569916463" info="sn">
+                      <node concept="vg0i.1144231330558" id="1224596674694" role="vg0i.1068580123136.1068581517665" info="nn">
+                        <node concept="vg0i.1068581242863" id="1224596674695" role="vg0i.1144230876926.1144230900587" info="nr">
+                          <property role="asn4.1169194658468.1169194664001" value="i" />
+                          <node concept="vg0i.1070534370425" id="1224596674696" role="vg0i.4972933694980447171.5680397130376446158" info="in" />
+                          <node concept="vg0i.1068580320020" id="1224596674697" role="vg0i.1068431474542.1068431790190" info="nn">
+                            <property role="vg0i.1068580320020.1068580320021" value="0" />
+                          </node>
+                        </node>
+                        <node concept="vg0i.1068580123136" id="1224596674698" role="vg0i.1154032098014.1154032183016" info="sn">
+                          <node concept="cakq.1200830824066" id="1224596680284" role="vg0i.1068580123136.1068581517665" info="nn">
+                            <node concept="vg0i.1068581242875" id="1224596680285" role="cakq.1200830824066.1200830928149" info="nn">
+                              <node concept="vg0i.1068498886296" id="4265636116363111430" role="vg0i.1081773326031.1081773367579" info="nn">
+                                <reference role="vg0i.1068498886296.1068581517664" target="1224596674695" resolveInfo="i" />
+                              </node>
+                              <node concept="vg0i.1070475926800" id="1224596680287" role="vg0i.1081773326031.1081773367580" info="nn" />
+                            </node>
+                          </node>
+                        </node>
+                        <node concept="vg0i.1081506773034" id="1224596674703" role="vg0i.1144231330558.1144231399730" info="nn">
+                          <node concept="vg0i.1068498886296" id="4265636116363074797" role="vg0i.1081773326031.1081773367579" info="nn">
+                            <reference role="vg0i.1068498886296.1068581517664" target="1165597202157" resolveInfo="sequence_size" />
+                          </node>
+                          <node concept="vg0i.1068498886296" id="4265636116363066418" role="vg0i.1081773326031.1081773367580" info="nn">
+                            <reference role="vg0i.1068498886296.1068581517664" target="1224596674695" resolveInfo="i" />
+                          </node>
+                        </node>
+                        <node concept="vg0i.1214918800624" id="1238145921739" role="vg0i.1144231330558.1144231408325" info="nn">
+                          <node concept="vg0i.1068498886296" id="4265636116363072942" role="vg0i.1239714755177.1239714902950" info="nn">
+                            <reference role="vg0i.1068498886296.1068581517664" target="1224596674695" resolveInfo="i" />
+                          </node>
+                        </node>
                       </node>
                     </node>
                   </node>
@@ -833,117 +525,509 @@
               </node>
             </node>
           </node>
-        </node>
-        <node role="statement" roleId="tpee.1068581517665" type="tpee.LocalVariableDeclarationStatement" typeId="tpee.1068581242864" id="1165600539980" nodeInfo="nn">
-          <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="1165600539981" nodeInfo="nr">
-            <property name="name" nameId="tpck.1169194664001" value="count" />
-            <node role="type" roleId="tpee.5680397130376446158" type="tpee.IntegerType" typeId="tpee.1070534370425" id="1165600539982" nodeInfo="in" />
-            <node role="initializer" roleId="tpee.1068431790190" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="1165600539983" nodeInfo="nn">
-              <property name="value" nameId="tpee.1068580320021" value="0" />
+          <node concept="vg0i.1068581242864" id="1165597014916" role="vg0i.1068580123136.1068581517665" info="nn">
+            <node concept="vg0i.1068581242863" id="1165597014917" role="vg0i.1068581242864.1068581242865" info="nr">
+              <property role="asn4.1169194658468.1169194664001" value="count" />
+              <node concept="vg0i.1070534370425" id="1165597014918" role="vg0i.4972933694980447171.5680397130376446158" info="in" />
+              <node concept="vg0i.1068580320020" id="1165597014919" role="vg0i.1068431474542.1068431790190" info="nn">
+                <property role="vg0i.1068580320020.1068580320021" value="0" />
+              </node>
             </node>
           </node>
-        </node>
-        <node role="statement" roleId="tpee.1068581517665" type="tp2q.ForEachStatement" typeId="tp2q.1153943597977" id="1165600539984" nodeInfo="nn">
-          <node role="variable" roleId="tp2q.1153944400369" type="tp2q.ForEachVariable" typeId="tp2q.1153944193378" id="1165600539985" nodeInfo="nr">
-            <property name="name" nameId="tpck.1169194664001" value="s" />
-          </node>
-          <node role="inputSequence" roleId="tp2q.1153944424730" type="tpee.VariableReference" typeId="tpee.1068498886296" id="4265636116363104298" nodeInfo="nn">
-            <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1165600539963" resolveInfo="ss" />
-          </node>
-          <node role="body" roleId="tpee.1154032183016" type="tpee.StatementList" typeId="tpee.1068580123136" id="1165600539987" nodeInfo="sn">
-            <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="1165600539988" nodeInfo="nn">
-              <node role="expression" roleId="tpee.1068580123156" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="1165600539989" nodeInfo="nn">
-                <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="eupq.~Assert" resolveInfo="Assert" />
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="eupq.~Assert%dassertEquals(java%dlang%dString,java%dlang%dString)%cvoid" resolveInfo="assertEquals" />
-                <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.PlusExpression" typeId="tpee.1068581242875" id="1165600539990" nodeInfo="nn">
-                  <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.VariableReference" typeId="tpee.1068498886296" id="4265636116363111117" nodeInfo="nn">
-                    <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1165600539981" resolveInfo="count" />
+          <node concept="j0ph.1153943597977" id="1165597014920" role="vg0i.1068580123136.1068581517665" info="nn">
+            <node concept="j0ph.1153944193378" id="1165597014921" role="j0ph.1153943597977.1153944400369" info="nr">
+              <property role="asn4.1169194658468.1169194664001" value="s" />
+            </node>
+            <node concept="vg0i.1068498886296" id="4265636116363080980" role="j0ph.1153943597977.1153944424730" info="nn">
+              <reference role="vg0i.1068498886296.1068581517664" target="1165597014899" resolveInfo="ss" />
+            </node>
+            <node concept="vg0i.1068580123136" id="1165597014923" role="vg0i.1154032098014.1154032183016" info="sn">
+              <node concept="vg0i.1068580123155" id="1165597014924" role="vg0i.1068580123136.1068581517665" info="nn">
+                <node concept="vg0i.1081236700937" id="1165597014925" role="vg0i.1068580123155.1068580123156" info="nn">
+                  <reference role="vg0i.1081236700937.1144433194310" target="eupq.~Assert" resolveInfo="Assert" />
+                  <reference role="vg0i.1204053956946.1068499141037" target="eupq.~Assert%dassertEquals(java%dlang%dString,java%dlang%dString)%cvoid" resolveInfo="assertEquals" />
+                  <node concept="vg0i.1068581242875" id="1165597014926" role="vg0i.1204053956946.1068499141038" info="nn">
+                    <node concept="vg0i.1068498886296" id="4265636116363110652" role="vg0i.1081773326031.1081773367579" info="nn">
+                      <reference role="vg0i.1068498886296.1068581517664" target="1165597014917" resolveInfo="count" />
+                    </node>
+                    <node concept="vg0i.1070475926800" id="1165597014928" role="vg0i.1081773326031.1081773367580" info="nn" />
                   </node>
-                  <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="1165600539992" nodeInfo="nn" />
-                </node>
-                <node role="actualArgument" roleId="tpee.1068499141038" type="tp2q.ForEachVariableReference" typeId="tp2q.1153944233411" id="1165600539993" nodeInfo="nn">
-                  <link role="variable" roleId="tp2q.1153944258490" targetNodeId="1165600539985" resolveInfo="s" />
-                </node>
-              </node>
-            </node>
-            <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="1165600539994" nodeInfo="nn">
-              <node role="expression" roleId="tpee.1068580123156" type="tpee.PostfixIncrementExpression" typeId="tpee.1214918800624" id="1238145922635" nodeInfo="nn">
-                <node role="expression" roleId="tpee.1239714902950" type="tpee.VariableReference" typeId="tpee.1068498886296" id="4265636116363072987" nodeInfo="nn">
-                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1165600539981" resolveInfo="count" />
+                  <node concept="j0ph.1153944233411" id="1165597014929" role="vg0i.1204053956946.1068499141038" info="nn">
+                    <reference role="j0ph.1153944233411.1153944258490" target="1165597014921" resolveInfo="s" />
+                  </node>
                 </node>
               </node>
-            </node>
-            <node role="statement" roleId="tpee.1068581517665" type="tpee.LocalVariableDeclarationStatement" typeId="tpee.1068581242864" id="1165600619519" nodeInfo="nn">
-              <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="1165600619520" nodeInfo="nr">
-                <property name="name" nameId="tpck.1169194664001" value="count_inner" />
-                <node role="type" roleId="tpee.5680397130376446158" type="tpee.IntegerType" typeId="tpee.1070534370425" id="1165600619521" nodeInfo="in" />
-                <node role="initializer" roleId="tpee.1068431790190" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="1165600627883" nodeInfo="nn">
-                  <property name="value" nameId="tpee.1068580320021" value="0" />
+              <node concept="vg0i.1068580123155" id="1165597014930" role="vg0i.1068580123136.1068581517665" info="nn">
+                <node concept="vg0i.1214918800624" id="1238145925463" role="vg0i.1068580123155.1068580123156" info="nn">
+                  <node concept="vg0i.1068498886296" id="4265636116363101970" role="vg0i.1239714755177.1239714902950" info="nn">
+                    <reference role="vg0i.1068498886296.1068581517664" target="1165597014917" resolveInfo="count" />
+                  </node>
                 </node>
               </node>
             </node>
-            <node role="statement" roleId="tpee.1068581517665" type="tp2q.ForEachStatement" typeId="tp2q.1153943597977" id="1165600600810" nodeInfo="nn">
-              <node role="variable" roleId="tp2q.1153944400369" type="tp2q.ForEachVariable" typeId="tp2q.1153944193378" id="1165600600811" nodeInfo="nr">
-                <property name="name" nameId="tpck.1169194664001" value="s_inner" />
+          </node>
+          <node concept="vg0i.1068580123155" id="1165597014936" role="vg0i.1068580123136.1068581517665" info="nn">
+            <node concept="vg0i.1081236700937" id="1165597014937" role="vg0i.1068580123155.1068580123156" info="nn">
+              <reference role="vg0i.1081236700937.1144433194310" target="eupq.~Assert" resolveInfo="Assert" />
+              <reference role="vg0i.1204053956946.1068499141037" target="eupq.~Assert%dassertEquals(int,int)%cvoid" resolveInfo="assertEquals" />
+              <node concept="vg0i.1068498886296" id="4265636116363083818" role="vg0i.1204053956946.1068499141038" info="nn">
+                <reference role="vg0i.1068498886296.1068581517664" target="1165597014917" resolveInfo="count" />
               </node>
-              <node role="inputSequence" roleId="tp2q.1153944424730" type="tpee.VariableReference" typeId="tpee.1068498886296" id="4265636116363072620" nodeInfo="nn">
-                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1165600539963" resolveInfo="ss" />
+              <node concept="vg0i.1068498886296" id="4265636116363113466" role="vg0i.1204053956946.1068499141038" info="nn">
+                <reference role="vg0i.1068498886296.1068581517664" target="1165597202157" resolveInfo="sequence_size" />
               </node>
-              <node role="body" roleId="tpee.1154032183016" type="tpee.StatementList" typeId="tpee.1068580123136" id="1165600600813" nodeInfo="sn">
-                <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="1165601476914" nodeInfo="nn">
-                  <node role="expression" roleId="tpee.1068580123156" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="1165601476915" nodeInfo="nn">
-                    <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="eupq.~Assert" resolveInfo="Assert" />
-                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="eupq.~Assert%dassertEquals(java%dlang%dString,java%dlang%dString)%cvoid" resolveInfo="assertEquals" />
-                    <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.PlusExpression" typeId="tpee.1068581242875" id="1165601476916" nodeInfo="nn">
-                      <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.VariableReference" typeId="tpee.1068498886296" id="4265636116363102349" nodeInfo="nn">
-                        <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1165600619520" resolveInfo="count_inner" />
+            </node>
+          </node>
+          <node concept="j0ph.1153943597977" id="1165597014940" role="vg0i.1068580123136.1068581517665" info="nn">
+            <node concept="j0ph.1153944193378" id="1165597014941" role="j0ph.1153943597977.1153944400369" info="nr">
+              <property role="asn4.1169194658468.1169194664001" value="s" />
+            </node>
+            <node concept="vg0i.1068498886296" id="4265636116363114245" role="j0ph.1153943597977.1153944424730" info="nn">
+              <reference role="vg0i.1068498886296.1068581517664" target="1165597014899" resolveInfo="ss" />
+            </node>
+            <node concept="vg0i.1068580123136" id="1165597014943" role="vg0i.1154032098014.1154032183016" info="sn">
+              <node concept="vg0i.1068580123155" id="1165597014944" role="vg0i.1068580123136.1068581517665" info="nn">
+                <node concept="vg0i.1081236700937" id="1165597014945" role="vg0i.1068580123155.1068580123156" info="nn">
+                  <reference role="vg0i.1081236700937.1144433194310" target="eupq.~Assert" resolveInfo="Assert" />
+                  <reference role="vg0i.1204053956946.1068499141037" target="eupq.~Assert%dassertEquals(java%dlang%dString,java%dlang%dString)%cvoid" resolveInfo="assertEquals" />
+                  <node concept="vg0i.1068581242875" id="1165597014946" role="vg0i.1204053956946.1068499141038" info="nn">
+                    <node concept="vg0i.1079359253375" id="1165597014947" role="vg0i.1081773326031.1081773367579" info="nn">
+                      <node concept="vg0i.1068581242869" id="1165597014948" role="vg0i.1079359253375.1079359253376" info="nn">
+                        <node concept="vg0i.1068498886296" id="4265636116363088608" role="vg0i.1081773326031.1081773367579" info="nn">
+                          <reference role="vg0i.1068498886296.1068581517664" target="1165597202157" resolveInfo="sequence_size" />
+                        </node>
+                        <node concept="vg0i.1068498886296" id="4265636116363110228" role="vg0i.1081773326031.1081773367580" info="nn">
+                          <reference role="vg0i.1068498886296.1068581517664" target="1165597014917" resolveInfo="count" />
+                        </node>
                       </node>
-                      <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="1165601476918" nodeInfo="nn" />
                     </node>
-                    <node role="actualArgument" roleId="tpee.1068499141038" type="tp2q.ForEachVariableReference" typeId="tp2q.1153944233411" id="1165601476919" nodeInfo="nn">
-                      <link role="variable" roleId="tp2q.1153944258490" targetNodeId="1165600600811" resolveInfo="s_inner" />
-                    </node>
+                    <node concept="vg0i.1070475926800" id="1165597014951" role="vg0i.1081773326031.1081773367580" info="nn" />
+                  </node>
+                  <node concept="j0ph.1153944233411" id="1165597014952" role="vg0i.1204053956946.1068499141038" info="nn">
+                    <reference role="j0ph.1153944233411.1153944258490" target="1165597014941" resolveInfo="s" />
                   </node>
                 </node>
-                <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="1165600634361" nodeInfo="nn">
-                  <node role="expression" roleId="tpee.1068580123156" type="tpee.PostfixIncrementExpression" typeId="tpee.1214918800624" id="1238145923531" nodeInfo="nn">
-                    <node role="expression" roleId="tpee.1239714902950" type="tpee.VariableReference" typeId="tpee.1068498886296" id="4265636116363084652" nodeInfo="nn">
-                      <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1165600619520" resolveInfo="count_inner" />
-                    </node>
+              </node>
+              <node concept="vg0i.1068580123155" id="1165597014953" role="vg0i.1068580123136.1068581517665" info="nn">
+                <node concept="vg0i.1214918800624" id="1238145920409" role="vg0i.1068580123155.1068580123156" info="nn">
+                  <node concept="vg0i.1068498886296" id="4265636116363103098" role="vg0i.1239714755177.1239714902950" info="nn">
+                    <reference role="vg0i.1068498886296.1068581517664" target="1165597014917" resolveInfo="count" />
                   </node>
                 </node>
               </node>
             </node>
-            <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="1165601499337" nodeInfo="nn">
-              <node role="expression" roleId="tpee.1068580123156" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="1165601499338" nodeInfo="nn">
-                <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="eupq.~Assert" resolveInfo="Assert" />
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="eupq.~Assert%dassertEquals(int,int)%cvoid" resolveInfo="assertEquals" />
-                <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.VariableReference" typeId="tpee.1068498886296" id="4265636116363081905" nodeInfo="nn">
-                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1165600619520" resolveInfo="count_inner" />
+          </node>
+          <node concept="vg0i.1068580123155" id="1165597014959" role="vg0i.1068580123136.1068581517665" info="nn">
+            <node concept="vg0i.1081236700937" id="1165597014960" role="vg0i.1068580123155.1068580123156" info="nn">
+              <reference role="vg0i.1081236700937.1144433194310" target="eupq.~Assert" resolveInfo="Assert" />
+              <reference role="vg0i.1204053956946.1068499141037" target="eupq.~Assert%dassertEquals(int,int)%cvoid" resolveInfo="assertEquals" />
+              <node concept="vg0i.1068498886296" id="4265636116363065806" role="vg0i.1204053956946.1068499141038" info="nn">
+                <reference role="vg0i.1068498886296.1068581517664" target="1165597014917" resolveInfo="count" />
+              </node>
+              <node concept="vg0i.1092119917967" id="1165597316808" role="vg0i.1204053956946.1068499141038" info="nn">
+                <node concept="vg0i.1068580320020" id="1165597319092" role="vg0i.1081773326031.1081773367579" info="nn">
+                  <property role="vg0i.1068580320020.1068580320021" value="2" />
                 </node>
-                <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="1165601499340" nodeInfo="nn">
-                  <property name="value" nameId="tpee.1068580320021" value="5" />
+                <node concept="vg0i.1068498886296" id="4265636116363076292" role="vg0i.1081773326031.1081773367580" info="nn">
+                  <reference role="vg0i.1068498886296.1068581517664" target="1165597202157" resolveInfo="sequence_size" />
                 </node>
               </node>
             </node>
           </node>
         </node>
-        <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="1165600540000" nodeInfo="nn">
-          <node role="expression" roleId="tpee.1068580123156" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="1165600540001" nodeInfo="nn">
-            <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="eupq.~Assert" resolveInfo="Assert" />
-            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="eupq.~Assert%dassertEquals(int,int)%cvoid" resolveInfo="assertEquals" />
-            <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.VariableReference" typeId="tpee.1068498886296" id="4265636116363109760" nodeInfo="nn">
-              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1165600539981" resolveInfo="count" />
-            </node>
-            <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="1165600540003" nodeInfo="nn">
-              <property name="value" nameId="tpee.1068580320021" value="5" />
-            </node>
-          </node>
-        </node>
+        <node concept="vg0i.1068581517677" id="1165597014963" role="vg0i.1068580123132.1068580123133" info="in" />
+        <node concept="vg0i.1146644602865" id="1201003732041" role="vg0i.1178549954367.1178549979242" info="nn" />
       </node>
-      <node role="returnType" roleId="tpee.1068580123133" type="tpee.VoidType" typeId="tpee.1068581517677" id="1165600540027" nodeInfo="in" />
-      <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="1201003746273" nodeInfo="nn" />
+      <node concept="vg0i.1068580123165" id="1165597014964" role="vg0i.1107461130800.5375687026011219971" info="igu">
+        <property role="asn4.1169194658468.1169194664001" value="test_longSequence2" />
+        <node concept="vg0i.1068580123136" id="1165597014965" role="vg0i.1068580123132.1068580123135" info="sn">
+          <node concept="vg0i.6329021646629104954" id="7376433222636453479" role="vg0i.1068580123136.1068581517665" info="nn">
+            <node concept="vg0i.6329021646629104957" id="7376433222636453480" role="vg0i.6329021646629104954.6329021646629175155" info="nn">
+              <property role="vg0i.6329021646629104957.6329021646629104958" value="sequence with memory" />
+            </node>
+          </node>
+          <node concept="vg0i.1068581242864" id="1165597357929" role="vg0i.1068580123136.1068581517665" info="nn">
+            <node concept="vg0i.1068581242863" id="1165597357930" role="vg0i.1068581242864.1068581242865" info="nr">
+              <property role="asn4.1169194658468.1169194664001" value="sequence_size" />
+              <node concept="vg0i.1070534370425" id="1165597357931" role="vg0i.4972933694980447171.5680397130376446158" info="in" />
+              <node concept="vg0i.1068580320020" id="1165597357932" role="vg0i.1068431474542.1068431790190" info="nn">
+                <property role="vg0i.1068580320020.1068580320021" value="1234" />
+              </node>
+            </node>
+          </node>
+          <node concept="vg0i.1068581242864" id="1165597014970" role="vg0i.1068580123136.1068581517665" info="nn">
+            <node concept="vg0i.1068581242863" id="1165597014971" role="vg0i.1068581242864.1068581242865" info="nr">
+              <property role="asn4.1169194658468.1169194664001" value="yield_count" />
+              <node concept="vg0i.1070534370425" id="1165597014972" role="vg0i.4972933694980447171.5680397130376446158" info="in" />
+              <node concept="vg0i.1068580320020" id="1165597014973" role="vg0i.1068431474542.1068431790190" info="nn">
+                <property role="vg0i.1068580320020.1068580320021" value="0" />
+              </node>
+            </node>
+          </node>
+          <node concept="vg0i.1068581242864" id="1165597014974" role="vg0i.1068580123136.1068581517665" info="nn">
+            <node concept="vg0i.1068581242863" id="1165597014975" role="vg0i.1068581242864.1068581242865" info="nr">
+              <property role="asn4.1169194658468.1169194664001" value="ss" />
+              <node concept="j0ph.1151689724996" id="1165597014976" role="vg0i.4972933694980447171.5680397130376446158" info="in">
+                <node concept="vg0i.1225271177708" id="1225196598607" role="j0ph.1151689724996.1151689745422" info="in" />
+              </node>
+              <node concept="vg0i.1145552977093" id="1165597014978" role="vg0i.1068431474542.1068431790190" info="nn">
+                <node concept="j0ph.1224414427926" id="1224596674576" role="vg0i.1145552977093.1145553007750" info="nn">
+                  <node concept="vg0i.1225271177708" id="1225196591924" role="j0ph.1224414427926.1224414456414" info="in" />
+                  <node concept="cakq.1199569711397" id="1224596674578" role="j0ph.1224414427926.1224414466839" info="nn">
+                    <node concept="vg0i.1068580123136" id="1224596674579" role="cakq.1199569711397.1199569916463" info="sn">
+                      <node concept="vg0i.1144231330558" id="1224596674580" role="vg0i.1068580123136.1068581517665" info="nn">
+                        <node concept="vg0i.1068581242863" id="1224596674581" role="vg0i.1144230876926.1144230900587" info="nr">
+                          <property role="asn4.1169194658468.1169194664001" value="i" />
+                          <node concept="vg0i.1070534370425" id="1224596674582" role="vg0i.4972933694980447171.5680397130376446158" info="in" />
+                          <node concept="vg0i.1068580320020" id="1224596674583" role="vg0i.1068431474542.1068431790190" info="nn">
+                            <property role="vg0i.1068580320020.1068580320021" value="0" />
+                          </node>
+                        </node>
+                        <node concept="vg0i.1068580123136" id="1224596674584" role="vg0i.1154032098014.1154032183016" info="sn">
+                          <node concept="cakq.1200830824066" id="1224596680324" role="vg0i.1068580123136.1068581517665" info="nn">
+                            <node concept="vg0i.1068581242875" id="1224596680325" role="cakq.1200830824066.1200830928149" info="nn">
+                              <node concept="vg0i.1068498886296" id="4265636116363088292" role="vg0i.1081773326031.1081773367579" info="nn">
+                                <reference role="vg0i.1068498886296.1068581517664" target="1165597014971" resolveInfo="yield_count" />
+                              </node>
+                              <node concept="vg0i.1070475926800" id="1224596680327" role="vg0i.1081773326031.1081773367580" info="nn" />
+                            </node>
+                          </node>
+                          <node concept="vg0i.1068580123155" id="1224596674589" role="vg0i.1068580123136.1068581517665" info="nn">
+                            <node concept="vg0i.1214918800624" id="1238145921960" role="vg0i.1068580123155.1068580123156" info="nn">
+                              <node concept="vg0i.1068498886296" id="4265636116363096596" role="vg0i.1239714755177.1239714902950" info="nn">
+                                <reference role="vg0i.1068498886296.1068581517664" target="1165597014971" resolveInfo="yield_count" />
+                              </node>
+                            </node>
+                          </node>
+                        </node>
+                        <node concept="vg0i.1081506773034" id="1224596674595" role="vg0i.1144231330558.1144231399730" info="nn">
+                          <node concept="vg0i.1068498886296" id="4265636116363107284" role="vg0i.1081773326031.1081773367579" info="nn">
+                            <reference role="vg0i.1068498886296.1068581517664" target="1165597357930" resolveInfo="sequence_size" />
+                          </node>
+                          <node concept="vg0i.1068498886296" id="4265636116363097799" role="vg0i.1081773326031.1081773367580" info="nn">
+                            <reference role="vg0i.1068498886296.1068581517664" target="1224596674581" resolveInfo="i" />
+                          </node>
+                        </node>
+                        <node concept="vg0i.1214918800624" id="1238145920477" role="vg0i.1144231330558.1144231408325" info="nn">
+                          <node concept="vg0i.1068498886296" id="4265636116363105233" role="vg0i.1239714755177.1239714902950" info="nn">
+                            <reference role="vg0i.1068498886296.1068581517664" target="1224596674581" resolveInfo="i" />
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="vg0i.1068581242864" id="1165597015005" role="vg0i.1068580123136.1068581517665" info="nn">
+            <node concept="vg0i.1068581242863" id="1165597015006" role="vg0i.1068581242864.1068581242865" info="nr">
+              <property role="asn4.1169194658468.1169194664001" value="count" />
+              <node concept="vg0i.1070534370425" id="1165597015007" role="vg0i.4972933694980447171.5680397130376446158" info="in" />
+              <node concept="vg0i.1068580320020" id="1165597015008" role="vg0i.1068431474542.1068431790190" info="nn">
+                <property role="vg0i.1068580320020.1068580320021" value="0" />
+              </node>
+            </node>
+          </node>
+          <node concept="j0ph.1153943597977" id="1165597015009" role="vg0i.1068580123136.1068581517665" info="nn">
+            <node concept="j0ph.1153944193378" id="1165597015010" role="j0ph.1153943597977.1153944400369" info="nr">
+              <property role="asn4.1169194658468.1169194664001" value="s" />
+            </node>
+            <node concept="vg0i.1068498886296" id="4265636116363071148" role="j0ph.1153943597977.1153944424730" info="nn">
+              <reference role="vg0i.1068498886296.1068581517664" target="1165597014975" resolveInfo="ss" />
+            </node>
+            <node concept="vg0i.1068580123136" id="1165597015012" role="vg0i.1154032098014.1154032183016" info="sn">
+              <node concept="vg0i.1068580123155" id="1165597015013" role="vg0i.1068580123136.1068581517665" info="nn">
+                <node concept="vg0i.1081236700937" id="1165597015014" role="vg0i.1068580123155.1068580123156" info="nn">
+                  <reference role="vg0i.1081236700937.1144433194310" target="eupq.~Assert" resolveInfo="Assert" />
+                  <reference role="vg0i.1204053956946.1068499141037" target="eupq.~Assert%dassertEquals(java%dlang%dString,java%dlang%dString)%cvoid" resolveInfo="assertEquals" />
+                  <node concept="vg0i.1068581242875" id="1165597015015" role="vg0i.1204053956946.1068499141038" info="nn">
+                    <node concept="vg0i.1068498886296" id="4265636116363086724" role="vg0i.1081773326031.1081773367579" info="nn">
+                      <reference role="vg0i.1068498886296.1068581517664" target="1165597015006" resolveInfo="count" />
+                    </node>
+                    <node concept="vg0i.1070475926800" id="1165597015017" role="vg0i.1081773326031.1081773367580" info="nn" />
+                  </node>
+                  <node concept="j0ph.1153944233411" id="1165597015018" role="vg0i.1204053956946.1068499141038" info="nn">
+                    <reference role="j0ph.1153944233411.1153944258490" target="1165597015010" resolveInfo="s" />
+                  </node>
+                </node>
+              </node>
+              <node concept="vg0i.1068580123155" id="1165597015019" role="vg0i.1068580123136.1068581517665" info="nn">
+                <node concept="vg0i.1214918800624" id="1238145920694" role="vg0i.1068580123155.1068580123156" info="nn">
+                  <node concept="vg0i.1068498886296" id="4265636116363090497" role="vg0i.1239714755177.1239714902950" info="nn">
+                    <reference role="vg0i.1068498886296.1068581517664" target="1165597015006" resolveInfo="count" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="vg0i.1068580123155" id="1165597015025" role="vg0i.1068580123136.1068581517665" info="nn">
+            <node concept="vg0i.1081236700937" id="1165597015026" role="vg0i.1068580123155.1068580123156" info="nn">
+              <reference role="vg0i.1081236700937.1144433194310" target="eupq.~Assert" resolveInfo="Assert" />
+              <reference role="vg0i.1204053956946.1068499141037" target="eupq.~Assert%dassertEquals(int,int)%cvoid" resolveInfo="assertEquals" />
+              <node concept="vg0i.1068498886296" id="4265636116363110104" role="vg0i.1204053956946.1068499141038" info="nn">
+                <reference role="vg0i.1068498886296.1068581517664" target="1165597015006" resolveInfo="count" />
+              </node>
+              <node concept="vg0i.1068498886296" id="4265636116363098962" role="vg0i.1204053956946.1068499141038" info="nn">
+                <reference role="vg0i.1068498886296.1068581517664" target="1165597357930" resolveInfo="sequence_size" />
+              </node>
+            </node>
+          </node>
+          <node concept="vg0i.1068580123155" id="1165597015029" role="vg0i.1068580123136.1068581517665" info="nn">
+            <node concept="vg0i.1081236700937" id="1165597015030" role="vg0i.1068580123155.1068580123156" info="nn">
+              <reference role="vg0i.1081236700937.1144433194310" target="eupq.~Assert" resolveInfo="Assert" />
+              <reference role="vg0i.1204053956946.1068499141037" target="eupq.~Assert%dassertEquals(int,int)%cvoid" resolveInfo="assertEquals" />
+              <node concept="vg0i.1068498886296" id="4265636116363110854" role="vg0i.1204053956946.1068499141038" info="nn">
+                <reference role="vg0i.1068498886296.1068581517664" target="1165597014971" resolveInfo="yield_count" />
+              </node>
+              <node concept="vg0i.1068498886296" id="4265636116363103728" role="vg0i.1204053956946.1068499141038" info="nn">
+                <reference role="vg0i.1068498886296.1068581517664" target="1165597357930" resolveInfo="sequence_size" />
+              </node>
+            </node>
+          </node>
+          <node concept="j0ph.1153943597977" id="1165597015033" role="vg0i.1068580123136.1068581517665" info="nn">
+            <node concept="j0ph.1153944193378" id="1165597015034" role="j0ph.1153943597977.1153944400369" info="nr">
+              <property role="asn4.1169194658468.1169194664001" value="s" />
+            </node>
+            <node concept="vg0i.1068498886296" id="4265636116363082683" role="j0ph.1153943597977.1153944424730" info="nn">
+              <reference role="vg0i.1068498886296.1068581517664" target="1165597014975" resolveInfo="ss" />
+            </node>
+            <node concept="vg0i.1068580123136" id="1165597015036" role="vg0i.1154032098014.1154032183016" info="sn">
+              <node concept="vg0i.1068580123155" id="1165597015037" role="vg0i.1068580123136.1068581517665" info="nn">
+                <node concept="vg0i.1081236700937" id="1165597015038" role="vg0i.1068580123155.1068580123156" info="nn">
+                  <reference role="vg0i.1081236700937.1144433194310" target="eupq.~Assert" resolveInfo="Assert" />
+                  <reference role="vg0i.1204053956946.1068499141037" target="eupq.~Assert%dassertEquals(java%dlang%dString,java%dlang%dString)%cvoid" resolveInfo="assertEquals" />
+                  <node concept="vg0i.1068581242875" id="1165597015039" role="vg0i.1204053956946.1068499141038" info="nn">
+                    <node concept="vg0i.1068498886296" id="4265636116363090255" role="vg0i.1081773326031.1081773367579" info="nn">
+                      <reference role="vg0i.1068498886296.1068581517664" target="1165597015006" resolveInfo="count" />
+                    </node>
+                    <node concept="vg0i.1070475926800" id="1165597015041" role="vg0i.1081773326031.1081773367580" info="nn" />
+                  </node>
+                  <node concept="j0ph.1153944233411" id="1165597015042" role="vg0i.1204053956946.1068499141038" info="nn">
+                    <reference role="j0ph.1153944233411.1153944258490" target="1165597015034" resolveInfo="s" />
+                  </node>
+                </node>
+              </node>
+              <node concept="vg0i.1068580123155" id="1165597015043" role="vg0i.1068580123136.1068581517665" info="nn">
+                <node concept="vg0i.1214918800624" id="1238145924801" role="vg0i.1068580123155.1068580123156" info="nn">
+                  <node concept="vg0i.1068498886296" id="4265636116363102905" role="vg0i.1239714755177.1239714902950" info="nn">
+                    <reference role="vg0i.1068498886296.1068581517664" target="1165597015006" resolveInfo="count" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="vg0i.1068580123155" id="1165597015049" role="vg0i.1068580123136.1068581517665" info="nn">
+            <node concept="vg0i.1081236700937" id="1165597015050" role="vg0i.1068580123155.1068580123156" info="nn">
+              <reference role="vg0i.1081236700937.1144433194310" target="eupq.~Assert" resolveInfo="Assert" />
+              <reference role="vg0i.1204053956946.1068499141037" target="eupq.~Assert%dassertEquals(int,int)%cvoid" resolveInfo="assertEquals" />
+              <node concept="vg0i.1068498886296" id="4265636116363086350" role="vg0i.1204053956946.1068499141038" info="nn">
+                <reference role="vg0i.1068498886296.1068581517664" target="1165597015006" resolveInfo="count" />
+              </node>
+              <node concept="vg0i.1092119917967" id="1165597419625" role="vg0i.1204053956946.1068499141038" info="nn">
+                <node concept="vg0i.1068580320020" id="1165597420956" role="vg0i.1081773326031.1081773367579" info="nn">
+                  <property role="vg0i.1068580320020.1068580320021" value="2" />
+                </node>
+                <node concept="vg0i.1068498886296" id="4265636116363109640" role="vg0i.1081773326031.1081773367580" info="nn">
+                  <reference role="vg0i.1068498886296.1068581517664" target="1165597357930" resolveInfo="sequence_size" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="vg0i.1068580123155" id="1165597015053" role="vg0i.1068580123136.1068581517665" info="nn">
+            <node concept="vg0i.1081236700937" id="1165597015054" role="vg0i.1068580123155.1068580123156" info="nn">
+              <reference role="vg0i.1081236700937.1144433194310" target="eupq.~Assert" resolveInfo="Assert" />
+              <reference role="vg0i.1204053956946.1068499141037" target="eupq.~Assert%dassertEquals(int,int)%cvoid" resolveInfo="assertEquals" />
+              <node concept="vg0i.1068498886296" id="4265636116363088945" role="vg0i.1204053956946.1068499141038" info="nn">
+                <reference role="vg0i.1068498886296.1068581517664" target="1165597014971" resolveInfo="yield_count" />
+              </node>
+              <node concept="vg0i.1092119917967" id="1165597429224" role="vg0i.1204053956946.1068499141038" info="nn">
+                <node concept="vg0i.1068580320020" id="1165597430461" role="vg0i.1081773326031.1081773367579" info="nn">
+                  <property role="vg0i.1068580320020.1068580320021" value="2" />
+                </node>
+                <node concept="vg0i.1068498886296" id="4265636116363090467" role="vg0i.1081773326031.1081773367580" info="nn">
+                  <reference role="vg0i.1068498886296.1068581517664" target="1165597357930" resolveInfo="sequence_size" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="vg0i.1068581517677" id="1165597015057" role="vg0i.1068580123132.1068580123133" info="in" />
+        <node concept="vg0i.1146644602865" id="1201003734388" role="vg0i.1178549954367.1178549979242" info="nn" />
+      </node>
     </node>
-  </root>
+    <node concept="vg0i.1068390468198" id="1165600539955" info="ig">
+      <property role="asn4.1169194658468.1169194664001" value="Sequence_iteration2" />
+      <node concept="vg0i.1107535904670" id="1165789763480" role="vg0i.1068390468198.1165602531693" info="in">
+        <reference role="vg0i.1107535904670.1107535924139" target="eupq.~TestCase" resolveInfo="TestCase" />
+      </node>
+      <node concept="vg0i.1146644602865" id="1201003743377" role="vg0i.1178549954367.1178549979242" info="nn" />
+      <node concept="vg0i.1068580123140" id="3891516456976043502" role="vg0i.1107461130800.5375687026011219971" info="igu">
+        <node concept="vg0i.1068581517677" id="3891516456976043503" role="vg0i.1068580123132.1068580123133" info="in" />
+        <node concept="vg0i.1068580123136" id="3891516456976043504" role="vg0i.1068580123132.1068580123135" info="sn" />
+        <node concept="vg0i.1146644602865" id="3891516456976043505" role="vg0i.1178549954367.1178549979242" info="nn" />
+      </node>
+      <node concept="vg0i.1068580123165" id="1165600539956" role="vg0i.1107461130800.5375687026011219971" info="igu">
+        <property role="asn4.1169194658468.1169194664001" value="test_1" />
+        <node concept="vg0i.1068580123136" id="1165600539957" role="vg0i.1068580123132.1068580123135" info="sn">
+          <node concept="vg0i.6329021646629104954" id="7376433222636453769" role="vg0i.1068580123136.1068581517665" info="nn">
+            <node concept="vg0i.6329021646629104957" id="7376433222636453770" role="vg0i.6329021646629104954.6329021646629175155" info="nn">
+              <property role="vg0i.6329021646629104957.6329021646629104958" value="inner iteration" />
+            </node>
+          </node>
+          <node concept="vg0i.1068581242864" id="1165600539962" role="vg0i.1068580123136.1068581517665" info="nn">
+            <node concept="vg0i.1068581242863" id="1165600539963" role="vg0i.1068581242864.1068581242865" info="nr">
+              <property role="asn4.1169194658468.1169194664001" value="ss" />
+              <node concept="j0ph.1151689724996" id="1165600539964" role="vg0i.4972933694980447171.5680397130376446158" info="in">
+                <node concept="vg0i.1225271177708" id="1225196575786" role="j0ph.1151689724996.1151689745422" info="in" />
+              </node>
+              <node concept="vg0i.1145552977093" id="1165600539966" role="vg0i.1068431474542.1068431790190" info="nn">
+                <node concept="j0ph.1224414427926" id="1224596675060" role="vg0i.1145552977093.1145553007750" info="nn">
+                  <node concept="vg0i.1225271177708" id="1225196593724" role="j0ph.1224414427926.1224414456414" info="in" />
+                  <node concept="cakq.1199569711397" id="1224596675062" role="j0ph.1224414427926.1224414466839" info="nn">
+                    <node concept="vg0i.1068580123136" id="1224596675063" role="cakq.1199569711397.1199569916463" info="sn">
+                      <node concept="cakq.1200830824066" id="1224596680367" role="vg0i.1068580123136.1068581517665" info="nn">
+                        <node concept="vg0i.1070475926800" id="1224596680368" role="cakq.1200830824066.1200830928149" info="nn">
+                          <property role="vg0i.1070475926800.1070475926801" value="0" />
+                        </node>
+                      </node>
+                      <node concept="cakq.1200830824066" id="1224596679733" role="vg0i.1068580123136.1068581517665" info="nn">
+                        <node concept="vg0i.1070475926800" id="1224596679734" role="cakq.1200830824066.1200830928149" info="nn">
+                          <property role="vg0i.1070475926800.1070475926801" value="1" />
+                        </node>
+                      </node>
+                      <node concept="cakq.1200830824066" id="1224596679867" role="vg0i.1068580123136.1068581517665" info="nn">
+                        <node concept="vg0i.1070475926800" id="1224596679868" role="cakq.1200830824066.1200830928149" info="nn">
+                          <property role="vg0i.1070475926800.1070475926801" value="2" />
+                        </node>
+                      </node>
+                      <node concept="cakq.1200830824066" id="1224596680145" role="vg0i.1068580123136.1068581517665" info="nn">
+                        <node concept="vg0i.1070475926800" id="1224596680146" role="cakq.1200830824066.1200830928149" info="nn">
+                          <property role="vg0i.1070475926800.1070475926801" value="3" />
+                        </node>
+                      </node>
+                      <node concept="cakq.1200830824066" id="1224596680409" role="vg0i.1068580123136.1068581517665" info="nn">
+                        <node concept="vg0i.1070475926800" id="1224596680410" role="cakq.1200830824066.1200830928149" info="nn">
+                          <property role="vg0i.1070475926800.1070475926801" value="4" />
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="vg0i.1068581242864" id="1165600539980" role="vg0i.1068580123136.1068581517665" info="nn">
+            <node concept="vg0i.1068581242863" id="1165600539981" role="vg0i.1068581242864.1068581242865" info="nr">
+              <property role="asn4.1169194658468.1169194664001" value="count" />
+              <node concept="vg0i.1070534370425" id="1165600539982" role="vg0i.4972933694980447171.5680397130376446158" info="in" />
+              <node concept="vg0i.1068580320020" id="1165600539983" role="vg0i.1068431474542.1068431790190" info="nn">
+                <property role="vg0i.1068580320020.1068580320021" value="0" />
+              </node>
+            </node>
+          </node>
+          <node concept="j0ph.1153943597977" id="1165600539984" role="vg0i.1068580123136.1068581517665" info="nn">
+            <node concept="j0ph.1153944193378" id="1165600539985" role="j0ph.1153943597977.1153944400369" info="nr">
+              <property role="asn4.1169194658468.1169194664001" value="s" />
+            </node>
+            <node concept="vg0i.1068498886296" id="4265636116363104298" role="j0ph.1153943597977.1153944424730" info="nn">
+              <reference role="vg0i.1068498886296.1068581517664" target="1165600539963" resolveInfo="ss" />
+            </node>
+            <node concept="vg0i.1068580123136" id="1165600539987" role="vg0i.1154032098014.1154032183016" info="sn">
+              <node concept="vg0i.1068580123155" id="1165600539988" role="vg0i.1068580123136.1068581517665" info="nn">
+                <node concept="vg0i.1081236700937" id="1165600539989" role="vg0i.1068580123155.1068580123156" info="nn">
+                  <reference role="vg0i.1081236700937.1144433194310" target="eupq.~Assert" resolveInfo="Assert" />
+                  <reference role="vg0i.1204053956946.1068499141037" target="eupq.~Assert%dassertEquals(java%dlang%dString,java%dlang%dString)%cvoid" resolveInfo="assertEquals" />
+                  <node concept="vg0i.1068581242875" id="1165600539990" role="vg0i.1204053956946.1068499141038" info="nn">
+                    <node concept="vg0i.1068498886296" id="4265636116363111117" role="vg0i.1081773326031.1081773367579" info="nn">
+                      <reference role="vg0i.1068498886296.1068581517664" target="1165600539981" resolveInfo="count" />
+                    </node>
+                    <node concept="vg0i.1070475926800" id="1165600539992" role="vg0i.1081773326031.1081773367580" info="nn" />
+                  </node>
+                  <node concept="j0ph.1153944233411" id="1165600539993" role="vg0i.1204053956946.1068499141038" info="nn">
+                    <reference role="j0ph.1153944233411.1153944258490" target="1165600539985" resolveInfo="s" />
+                  </node>
+                </node>
+              </node>
+              <node concept="vg0i.1068580123155" id="1165600539994" role="vg0i.1068580123136.1068581517665" info="nn">
+                <node concept="vg0i.1214918800624" id="1238145922635" role="vg0i.1068580123155.1068580123156" info="nn">
+                  <node concept="vg0i.1068498886296" id="4265636116363072987" role="vg0i.1239714755177.1239714902950" info="nn">
+                    <reference role="vg0i.1068498886296.1068581517664" target="1165600539981" resolveInfo="count" />
+                  </node>
+                </node>
+              </node>
+              <node concept="vg0i.1068581242864" id="1165600619519" role="vg0i.1068580123136.1068581517665" info="nn">
+                <node concept="vg0i.1068581242863" id="1165600619520" role="vg0i.1068581242864.1068581242865" info="nr">
+                  <property role="asn4.1169194658468.1169194664001" value="count_inner" />
+                  <node concept="vg0i.1070534370425" id="1165600619521" role="vg0i.4972933694980447171.5680397130376446158" info="in" />
+                  <node concept="vg0i.1068580320020" id="1165600627883" role="vg0i.1068431474542.1068431790190" info="nn">
+                    <property role="vg0i.1068580320020.1068580320021" value="0" />
+                  </node>
+                </node>
+              </node>
+              <node concept="j0ph.1153943597977" id="1165600600810" role="vg0i.1068580123136.1068581517665" info="nn">
+                <node concept="j0ph.1153944193378" id="1165600600811" role="j0ph.1153943597977.1153944400369" info="nr">
+                  <property role="asn4.1169194658468.1169194664001" value="s_inner" />
+                </node>
+                <node concept="vg0i.1068498886296" id="4265636116363072620" role="j0ph.1153943597977.1153944424730" info="nn">
+                  <reference role="vg0i.1068498886296.1068581517664" target="1165600539963" resolveInfo="ss" />
+                </node>
+                <node concept="vg0i.1068580123136" id="1165600600813" role="vg0i.1154032098014.1154032183016" info="sn">
+                  <node concept="vg0i.1068580123155" id="1165601476914" role="vg0i.1068580123136.1068581517665" info="nn">
+                    <node concept="vg0i.1081236700937" id="1165601476915" role="vg0i.1068580123155.1068580123156" info="nn">
+                      <reference role="vg0i.1081236700937.1144433194310" target="eupq.~Assert" resolveInfo="Assert" />
+                      <reference role="vg0i.1204053956946.1068499141037" target="eupq.~Assert%dassertEquals(java%dlang%dString,java%dlang%dString)%cvoid" resolveInfo="assertEquals" />
+                      <node concept="vg0i.1068581242875" id="1165601476916" role="vg0i.1204053956946.1068499141038" info="nn">
+                        <node concept="vg0i.1068498886296" id="4265636116363102349" role="vg0i.1081773326031.1081773367579" info="nn">
+                          <reference role="vg0i.1068498886296.1068581517664" target="1165600619520" resolveInfo="count_inner" />
+                        </node>
+                        <node concept="vg0i.1070475926800" id="1165601476918" role="vg0i.1081773326031.1081773367580" info="nn" />
+                      </node>
+                      <node concept="j0ph.1153944233411" id="1165601476919" role="vg0i.1204053956946.1068499141038" info="nn">
+                        <reference role="j0ph.1153944233411.1153944258490" target="1165600600811" resolveInfo="s_inner" />
+                      </node>
+                    </node>
+                  </node>
+                  <node concept="vg0i.1068580123155" id="1165600634361" role="vg0i.1068580123136.1068581517665" info="nn">
+                    <node concept="vg0i.1214918800624" id="1238145923531" role="vg0i.1068580123155.1068580123156" info="nn">
+                      <node concept="vg0i.1068498886296" id="4265636116363084652" role="vg0i.1239714755177.1239714902950" info="nn">
+                        <reference role="vg0i.1068498886296.1068581517664" target="1165600619520" resolveInfo="count_inner" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node concept="vg0i.1068580123155" id="1165601499337" role="vg0i.1068580123136.1068581517665" info="nn">
+                <node concept="vg0i.1081236700937" id="1165601499338" role="vg0i.1068580123155.1068580123156" info="nn">
+                  <reference role="vg0i.1081236700937.1144433194310" target="eupq.~Assert" resolveInfo="Assert" />
+                  <reference role="vg0i.1204053956946.1068499141037" target="eupq.~Assert%dassertEquals(int,int)%cvoid" resolveInfo="assertEquals" />
+                  <node concept="vg0i.1068498886296" id="4265636116363081905" role="vg0i.1204053956946.1068499141038" info="nn">
+                    <reference role="vg0i.1068498886296.1068581517664" target="1165600619520" resolveInfo="count_inner" />
+                  </node>
+                  <node concept="vg0i.1068580320020" id="1165601499340" role="vg0i.1204053956946.1068499141038" info="nn">
+                    <property role="vg0i.1068580320020.1068580320021" value="5" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="vg0i.1068580123155" id="1165600540000" role="vg0i.1068580123136.1068581517665" info="nn">
+            <node concept="vg0i.1081236700937" id="1165600540001" role="vg0i.1068580123155.1068580123156" info="nn">
+              <reference role="vg0i.1081236700937.1144433194310" target="eupq.~Assert" resolveInfo="Assert" />
+              <reference role="vg0i.1204053956946.1068499141037" target="eupq.~Assert%dassertEquals(int,int)%cvoid" resolveInfo="assertEquals" />
+              <node concept="vg0i.1068498886296" id="4265636116363109760" role="vg0i.1204053956946.1068499141038" info="nn">
+                <reference role="vg0i.1068498886296.1068581517664" target="1165600539981" resolveInfo="count" />
+              </node>
+              <node concept="vg0i.1068580320020" id="1165600540003" role="vg0i.1204053956946.1068499141038" info="nn">
+                <property role="vg0i.1068580320020.1068580320021" value="5" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="vg0i.1068581517677" id="1165600540027" role="vg0i.1068580123132.1068580123133" info="in" />
+        <node concept="vg0i.1146644602865" id="1201003746273" role="vg0i.1178549954367.1178549979242" info="nn" />
+      </node>
+    </node>
+  </contents>
 </model>
 

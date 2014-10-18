@@ -1,67 +1,111 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<model modelUID="r:973d936b-3327-48c9-8c54-368bfb7ea31c(jetbrains.mps.lang.migration.constraints)" version="0">
-  <persistence version="8" />
-  <language namespace="3f4bc5f5-c6c1-4a28-8b10-c83066ffa4a1(jetbrains.mps.lang.constraints)" />
-  <devkit namespace="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
-  <import index="tp1t" modelUID="r:00000000-0000-4000-0000-011c8959030d(jetbrains.mps.lang.constraints.structure)" version="9" implicit="yes" />
-  <import index="53vh" modelUID="r:53885008-7612-46ff-8b11-27f1d42c3adb(jetbrains.mps.lang.migration.structure)" version="0" implicit="yes" />
-  <import index="tp3t" modelUID="r:00000000-0000-4000-0000-011c89590345(jetbrains.mps.lang.pattern.structure)" version="0" implicit="yes" />
-  <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="5" implicit="yes" />
-  <import index="tp25" modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" implicit="yes" />
-  <root type="tp1t.ConceptConstraints" typeId="tp1t.1213093968558" id="7153805464398835594" nodeInfo="ng">
-    <link role="concept" roleId="tp1t.1213093996982" targetNodeId="53vh.7153805464398780214" resolveInfo="DataDependencyReference" />
-    <node role="referent" roleId="tp1t.1213100494875" type="tp1t.NodeReferentConstraint" typeId="tp1t.1148687176410" id="7153805464398835595" nodeInfo="ng">
-      <link role="applicableLink" roleId="tp1t.1148687202698" targetNodeId="53vh.7153805464398780217" />
-      <node role="searchScopeFactory" roleId="tp1t.1148687345559" type="tp1t.InheritedNodeScopeFactory" typeId="tp1t.8401916545537438642" id="7153805464398835597" nodeInfo="ng">
-        <link role="kind" roleId="tp1t.8401916545537438643" targetNodeId="53vh.4950161090496546961" resolveInfo="DataDependency" />
+<model ref="r:973d936b-3327-48c9-8c54-368bfb7ea31c(jetbrains.mps.lang.migration.constraints)">
+  <persistence version="9" />
+  <debugInfo>
+    <lang id="3f4bc5f5-c6c1-4a28-8b10-c83066ffa4a1" name="jetbrains.mps.lang.constraints" />
+    <lang id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" />
+    <lang id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" />
+    <concept id="7866978e-a0f0-4cc7-81bc-4d213d9375e1/1177026924588" name="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" />
+    <concept id="3f4bc5f5-c6c1-4a28-8b10-c83066ffa4a1/1202989531578" name="jetbrains.mps.lang.constraints.structure.ConstraintFunction_CanBeAChild" />
+    <concept id="7866978e-a0f0-4cc7-81bc-4d213d9375e1/1139621453865" name="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" />
+    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1197027756228" name="jetbrains.mps.baseLanguage.structure.DotExpression" />
+    <concept id="7866978e-a0f0-4cc7-81bc-4d213d9375e1/1138056143562" name="jetbrains.mps.lang.smodel.structure.SLinkAccess" />
+    <concept id="3f4bc5f5-c6c1-4a28-8b10-c83066ffa4a1/1148687176410" name="jetbrains.mps.lang.constraints.structure.NodeReferentConstraint" />
+    <concept id="3f4bc5f5-c6c1-4a28-8b10-c83066ffa4a1/1213093968558" name="jetbrains.mps.lang.constraints.structure.ConceptConstraints" />
+    <concept id="7866978e-a0f0-4cc7-81bc-4d213d9375e1/1140137987495" name="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" />
+    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" />
+    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123155" name="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <concept id="3f4bc5f5-c6c1-4a28-8b10-c83066ffa4a1/8401916545537438642" name="jetbrains.mps.lang.constraints.structure.InheritedNodeScopeFactory" />
+    <concept id="3f4bc5f5-c6c1-4a28-8b10-c83066ffa4a1/1202989658459" name="jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_parentNode" />
+    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1080120340718" name="jetbrains.mps.baseLanguage.structure.AndExpression" />
+    <refRole id="7866978e-a0f0-4cc7-81bc-4d213d9375e1/1138056143562/1138056516764" name="link" />
+    <refRole id="7866978e-a0f0-4cc7-81bc-4d213d9375e1/1177026924588/1177026940964" name="conceptDeclaration" />
+    <refRole id="3f4bc5f5-c6c1-4a28-8b10-c83066ffa4a1/8401916545537438642/8401916545537438643" name="kind" />
+    <refRole id="3f4bc5f5-c6c1-4a28-8b10-c83066ffa4a1/1148687176410/1148687202698" name="applicableLink" />
+    <refRole id="3f4bc5f5-c6c1-4a28-8b10-c83066ffa4a1/1213093968558/1213093996982" name="concept" />
+    <refRole id="7866978e-a0f0-4cc7-81bc-4d213d9375e1/1140137987495/1140138128738" name="concept" />
+    <childRole id="3f4bc5f5-c6c1-4a28-8b10-c83066ffa4a1/1148687176410/1148687345559" name="searchScopeFactory" />
+    <childRole id="7866978e-a0f0-4cc7-81bc-4d213d9375e1/1139621453865/1177027386292" name="conceptArgument" />
+    <childRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123155/1068580123156" name="expression" />
+    <childRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1137021947720/1137022507850" name="body" />
+    <childRole id="3f4bc5f5-c6c1-4a28-8b10-c83066ffa4a1/1213093968558/1213100494875" name="referent" />
+    <childRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1081773326031/1081773367580" name="leftExpression" />
+    <childRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1197027756228/1197027771414" name="operand" />
+    <childRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123136/1068581517665" name="statement" />
+    <childRole id="3f4bc5f5-c6c1-4a28-8b10-c83066ffa4a1/1213093968558/1213106463729" name="canBeChild" />
+    <childRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1197027756228/1197027833540" name="operation" />
+    <childRole id="7866978e-a0f0-4cc7-81bc-4d213d9375e1/1140137987495/1140138123956" name="leftExpression" />
+    <childRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1081773326031/1081773367579" name="rightExpression" />
+  </debugInfo>
+  <languages>
+    <use id="3f4bc5f5-c6c1-4a28-8b10-c83066ffa4a1" version="-1" index="qzws" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" version="0" implicit="true" index="vg0i" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" version="0" implicit="true" index="4ia1" />
+    <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
+  </languages>
+  <imports>
+    <import index="tp1t" ref="r:00000000-0000-4000-0000-011c8959030d(jetbrains.mps.lang.constraints.structure)" implicit="true" />
+    <import index="53vh" ref="r:53885008-7612-46ff-8b11-27f1d42c3adb(jetbrains.mps.lang.migration.structure)" implicit="true" />
+    <import index="tp3t" ref="r:00000000-0000-4000-0000-011c89590345(jetbrains.mps.lang.pattern.structure)" implicit="true" />
+    <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" implicit="true" />
+    <import index="tp25" ref="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" implicit="true" />
+  </imports>
+  <contents>
+    <node concept="qzws.1213093968558" id="7153805464398835594" info="ng">
+      <reference role="qzws.1213093968558.1213093996982" target="53vh.7153805464398780214" resolveInfo="DataDependencyReference" />
+      <node concept="qzws.1148687176410" id="7153805464398835595" role="qzws.1213093968558.1213100494875" info="ng">
+        <reference role="qzws.1148687176410.1148687202698" target="53vh.7153805464398780217" />
+        <node concept="qzws.8401916545537438642" id="7153805464398835597" role="qzws.1148687176410.1148687345559" info="ng">
+          <reference role="qzws.8401916545537438642.8401916545537438643" target="53vh.4950161090496546961" resolveInfo="DataDependency" />
+        </node>
       </node>
     </node>
-  </root>
-  <root type="tp1t.ConceptConstraints" typeId="tp1t.1213093968558" id="3220955710218065205" nodeInfo="ng">
-    <link role="concept" roleId="tp1t.1213093996982" targetNodeId="53vh.3220955710218030028" resolveInfo="PropertyPatternVariableReference" />
-    <node role="referent" roleId="tp1t.1213100494875" type="tp1t.NodeReferentConstraint" typeId="tp1t.1148687176410" id="3220955710218065206" nodeInfo="ng">
-      <link role="applicableLink" roleId="tp1t.1148687202698" targetNodeId="53vh.3220955710218036329" />
-      <node role="searchScopeFactory" roleId="tp1t.1148687345559" type="tp1t.InheritedNodeScopeFactory" typeId="tp1t.8401916545537438642" id="3220955710218374757" nodeInfo="ng">
-        <link role="kind" roleId="tp1t.8401916545537438643" targetNodeId="tp3t.1136720037781" resolveInfo="PropertyPatternVariableDeclaration" />
+    <node concept="qzws.1213093968558" id="3220955710218065205" info="ng">
+      <reference role="qzws.1213093968558.1213093996982" target="53vh.3220955710218030028" resolveInfo="PropertyPatternVariableReference" />
+      <node concept="qzws.1148687176410" id="3220955710218065206" role="qzws.1213093968558.1213100494875" info="ng">
+        <reference role="qzws.1148687176410.1148687202698" target="53vh.3220955710218036329" />
+        <node concept="qzws.8401916545537438642" id="3220955710218374757" role="qzws.1148687176410.1148687345559" info="ng">
+          <reference role="qzws.8401916545537438642.8401916545537438643" target="tp3t.1136720037781" resolveInfo="PropertyPatternVariableDeclaration" />
+        </node>
       </node>
     </node>
-  </root>
-  <root type="tp1t.ConceptConstraints" typeId="tp1t.1213093968558" id="3220955710218443160" nodeInfo="ng">
-    <link role="concept" roleId="tp1t.1213093996982" targetNodeId="53vh.3220955710218421371" resolveInfo="LinkPatternVariableReference" />
-    <node role="referent" roleId="tp1t.1213100494875" type="tp1t.NodeReferentConstraint" typeId="tp1t.1148687176410" id="3220955710218443161" nodeInfo="ng">
-      <link role="applicableLink" roleId="tp1t.1148687202698" targetNodeId="53vh.3220955710218421372" />
-      <node role="searchScopeFactory" roleId="tp1t.1148687345559" type="tp1t.InheritedNodeScopeFactory" typeId="tp1t.8401916545537438642" id="3220955710218443162" nodeInfo="ng">
-        <link role="kind" roleId="tp1t.8401916545537438643" targetNodeId="tp3t.1137418540378" resolveInfo="LinkPatternVariableDeclaration" />
+    <node concept="qzws.1213093968558" id="3220955710218443160" info="ng">
+      <reference role="qzws.1213093968558.1213093996982" target="53vh.3220955710218421371" resolveInfo="LinkPatternVariableReference" />
+      <node concept="qzws.1148687176410" id="3220955710218443161" role="qzws.1213093968558.1213100494875" info="ng">
+        <reference role="qzws.1148687176410.1148687202698" target="53vh.3220955710218421372" />
+        <node concept="qzws.8401916545537438642" id="3220955710218443162" role="qzws.1148687176410.1148687345559" info="ng">
+          <reference role="qzws.8401916545537438642.8401916545537438643" target="tp3t.1137418540378" resolveInfo="LinkPatternVariableDeclaration" />
+        </node>
       </node>
     </node>
-  </root>
-  <root type="tp1t.ConceptConstraints" typeId="tp1t.1213093968558" id="5872110852616312537" nodeInfo="ng">
-    <link role="concept" roleId="tp1t.1213093996982" targetNodeId="53vh.3220955710217809656" resolveInfo="MigrateOperation" />
-    <node role="canBeChild" roleId="tp1t.1213106463729" type="tp1t.ConstraintFunction_CanBeAChild" typeId="tp1t.1202989531578" id="5872110852616312538" nodeInfo="nn">
-      <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="5872110852616312539" nodeInfo="sn">
-        <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="5872110852616313205" nodeInfo="nn">
-          <node role="expression" roleId="tpee.1068580123156" type="tpee.AndExpression" typeId="tpee.1080120340718" id="5872110852616319574" nodeInfo="nn">
-            <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.DotExpression" typeId="tpee.1197027756228" id="5872110852616328947" nodeInfo="nn">
-              <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="5872110852616324840" nodeInfo="nn">
-                <node role="operand" roleId="tpee.1197027771414" type="tp25.SNodeTypeCastExpression" typeId="tp25.1140137987495" id="5872110852616322890" nodeInfo="nn">
-                  <link role="concept" roleId="tp25.1140138128738" targetNodeId="tpee.1197027756228" resolveInfo="DotExpression" />
-                  <node role="leftExpression" roleId="tp25.1140138123956" type="tp1t.ConstraintFunctionParameter_parentNode" typeId="tp1t.1202989658459" id="5872110852616320435" nodeInfo="nn" />
+    <node concept="qzws.1213093968558" id="5872110852616312537" info="ng">
+      <reference role="qzws.1213093968558.1213093996982" target="53vh.3220955710217809656" resolveInfo="MigrateOperation" />
+      <node concept="qzws.1202989531578" id="5872110852616312538" role="qzws.1213093968558.1213106463729" info="in">
+        <node concept="vg0i.1068580123136" id="5872110852616312539" role="vg0i.1137021947720.1137022507850" info="sn">
+          <node concept="vg0i.1068580123155" id="5872110852616313205" role="vg0i.1068580123136.1068581517665" info="nn">
+            <node concept="vg0i.1080120340718" id="5872110852616319574" role="vg0i.1068580123155.1068580123156" info="nn">
+              <node concept="vg0i.1197027756228" id="5872110852616328947" role="vg0i.1081773326031.1081773367579" info="nn">
+                <node concept="vg0i.1197027756228" id="5872110852616324840" role="vg0i.1197027756228.1197027771414" info="nn">
+                  <node concept="4ia1.1140137987495" id="5872110852616322890" role="vg0i.1197027756228.1197027771414" info="nn">
+                    <reference role="4ia1.1140137987495.1140138128738" target="tpee.1197027756228" resolveInfo="DotExpression" />
+                    <node concept="qzws.1202989658459" id="5872110852616320435" role="4ia1.1140137987495.1140138123956" info="nn" />
+                  </node>
+                  <node concept="4ia1.1138056143562" id="5872110852616327159" role="vg0i.1197027756228.1197027833540" info="nn">
+                    <reference role="4ia1.1138056143562.1138056516764" target="tpee.1197027771414" />
+                  </node>
                 </node>
-                <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkAccess" typeId="tp25.1138056143562" id="5872110852616327159" nodeInfo="nn">
-                  <link role="link" roleId="tp25.1138056516764" targetNodeId="tpee.1197027771414" />
+                <node concept="4ia1.1139621453865" id="5872110852616330805" role="vg0i.1197027756228.1197027833540" info="nn">
+                  <node concept="4ia1.1177026924588" id="5872110852616331827" role="4ia1.1139621453865.1177027386292" info="nn">
+                    <reference role="4ia1.1177026924588.1177026940964" target="53vh.1901572971595836243" resolveInfo="ForEachMatchingExpression" />
+                  </node>
                 </node>
               </node>
-              <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_IsInstanceOfOperation" typeId="tp25.1139621453865" id="5872110852616330805" nodeInfo="nn">
-                <node role="conceptArgument" roleId="tp25.1177027386292" type="tp25.RefConcept_Reference" typeId="tp25.1177026924588" id="5872110852616331827" nodeInfo="nn">
-                  <link role="conceptDeclaration" roleId="tp25.1177026940964" targetNodeId="53vh.1901572971595836243" resolveInfo="ForEachMatchingExpression" />
-                </node>
-              </node>
-            </node>
-            <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.DotExpression" typeId="tpee.1197027756228" id="5872110852616314066" nodeInfo="nn">
-              <node role="operand" roleId="tpee.1197027771414" type="tp1t.ConstraintFunctionParameter_parentNode" typeId="tp1t.1202989658459" id="5872110852616313204" nodeInfo="nn" />
-              <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_IsInstanceOfOperation" typeId="tp25.1139621453865" id="5872110852616317528" nodeInfo="nn">
-                <node role="conceptArgument" roleId="tp25.1177027386292" type="tp25.RefConcept_Reference" typeId="tp25.1177026924588" id="5872110852616318274" nodeInfo="nn">
-                  <link role="conceptDeclaration" roleId="tp25.1177026940964" targetNodeId="tpee.1197027756228" resolveInfo="DotExpression" />
+              <node concept="vg0i.1197027756228" id="5872110852616314066" role="vg0i.1081773326031.1081773367580" info="nn">
+                <node concept="qzws.1202989658459" id="5872110852616313204" role="vg0i.1197027756228.1197027771414" info="nn" />
+                <node concept="4ia1.1139621453865" id="5872110852616317528" role="vg0i.1197027756228.1197027833540" info="nn">
+                  <node concept="4ia1.1177026924588" id="5872110852616318274" role="4ia1.1139621453865.1177027386292" info="nn">
+                    <reference role="4ia1.1177026924588.1177026940964" target="tpee.1197027756228" resolveInfo="DotExpression" />
+                  </node>
                 </node>
               </node>
             </node>
@@ -69,15 +113,15 @@
         </node>
       </node>
     </node>
-  </root>
-  <root type="tp1t.ConceptConstraints" typeId="tp1t.1213093968558" id="7527743013695059103" nodeInfo="ng">
-    <link role="concept" roleId="tp1t.1213093996982" targetNodeId="53vh.7527743013695058339" resolveInfo="NodePatternVariableReference" />
-    <node role="referent" roleId="tp1t.1213100494875" type="tp1t.NodeReferentConstraint" typeId="tp1t.1148687176410" id="7527743013695059104" nodeInfo="ng">
-      <link role="applicableLink" roleId="tp1t.1148687202698" targetNodeId="53vh.7527743013695058340" />
-      <node role="searchScopeFactory" roleId="tp1t.1148687345559" type="tp1t.InheritedNodeScopeFactory" typeId="tp1t.8401916545537438642" id="7527743013695059105" nodeInfo="ng">
-        <link role="kind" roleId="tp1t.8401916545537438643" targetNodeId="53vh.7527743013695058339" resolveInfo="NodePatternVariableReference" />
+    <node concept="qzws.1213093968558" id="7527743013695059103" info="ng">
+      <reference role="qzws.1213093968558.1213093996982" target="53vh.7527743013695058339" resolveInfo="NodePatternVariableReference" />
+      <node concept="qzws.1148687176410" id="7527743013695059104" role="qzws.1213093968558.1213100494875" info="ng">
+        <reference role="qzws.1148687176410.1148687202698" target="53vh.7527743013695058340" />
+        <node concept="qzws.8401916545537438642" id="7527743013695059105" role="qzws.1148687176410.1148687345559" info="ng">
+          <reference role="qzws.8401916545537438642.8401916545537438643" target="53vh.7527743013695058339" resolveInfo="NodePatternVariableReference" />
+        </node>
       </node>
     </node>
-  </root>
+  </contents>
 </model>
 
