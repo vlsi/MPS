@@ -122,7 +122,11 @@ public class LanguagesKeymapManager implements ApplicationComponent {
     if (language == null) {
       return null;
     }
-    return ((Class<KeyMap>) language.getOwnClass(fqName));
+    try {
+      return ((Class<KeyMap>) language.getOwnClass(fqName));
+    } catch (ClassNotFoundException ignored) {
+      return null;
+    }
   }
 
   private void unregisterLanguageKeyMaps(Language language) {

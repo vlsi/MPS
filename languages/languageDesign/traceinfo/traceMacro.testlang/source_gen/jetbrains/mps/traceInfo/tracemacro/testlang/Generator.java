@@ -10,7 +10,7 @@ import jetbrains.mps.generator.runtime.TemplateUtil;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.language.LanguageRuntime;
-import jetbrains.mps.classloading.ClassLoaderManager;
+import jetbrains.mps.module.ReloadableModule;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.generator.runtime.TemplateModule;
 
@@ -57,8 +57,15 @@ public class Generator extends TemplateModuleBase {
     return referencedGenerators;
   }
   private TemplateModel getTemplateModel(String modelName) {
-    Class<TemplateModel> clazz =
-        (Class<TemplateModel>) ClassLoaderManager.getInstance().getClass(ModuleRepositoryFacade.getInstance().getModule(getReference()), modelName);
+    ReloadableModule module = (ReloadableModule) ModuleRepositoryFacade.getInstance().getModule(getReference());
+    Class<TemplateModel> clazz = null;
+    if (module != null) {
+      try {
+        clazz = (Class<TemplateModel>) module.getClass(modelName);
+      } catch (ClassNotFoundException e) {
+        throw new IllegalStateException("", e);
+      }
+    }
     if (clazz == null) {
       throw new IllegalStateException(String.format("Failed to obtain generator runtime class for model %s", modelName));
     }

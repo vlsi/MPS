@@ -19,6 +19,7 @@
   <dependency className="jetbrains.mps.editor.runtime.impl.LanguagesKeymapManager" file="LanguagesKeymapManager.java">
     <classNode dependClassName="com.intellij.openapi.application.ApplicationManager" />
     <classNode dependClassName="java.lang.Class" />
+    <classNode dependClassName="java.lang.ClassNotFoundException" />
     <classNode dependClassName="java.lang.IllegalAccessException" />
     <classNode dependClassName="java.lang.InstantiationException" />
     <classNode dependClassName="java.lang.Object" />

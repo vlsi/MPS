@@ -108,13 +108,14 @@
       <node id="1182113674817469847" at="119,41,120,95" concept="8" />
       <node id="1182113674817469861" at="120,95,121,106" concept="8" />
       <node id="1182113674817469875" at="122,27,123,18" concept="9" />
-      <node id="1182113674817469877" at="124,5,125,58" concept="9" />
-      <node id="1182113674817540198" at="128,61,129,66" concept="3" />
-      <node id="1182113674817469639" at="132,54,133,90" concept="9" />
-      <node id="1182113674817469591" at="142,39,143,53" concept="3" />
-      <node id="1182113674817469564" at="147,0,148,0" concept="11" trace="LOG" />
+      <node id="1182113674817469877" at="125,9,126,60" concept="9" />
+      <node id="1875514556278939225" at="127,46,128,18" concept="9" />
+      <node id="1182113674817540198" at="132,61,133,66" concept="3" />
+      <node id="1182113674817469639" at="136,54,137,90" concept="9" />
+      <node id="1182113674817469591" at="146,39,147,53" concept="3" />
+      <node id="1182113674817469564" at="151,0,152,0" concept="11" trace="LOG" />
       <node id="1182113674817469760" at="110,10,112,5" concept="1" />
-      <node id="1182113674817469570" at="137,0,139,0" concept="2" trace="MyModuleRepositoryListener#()V" />
+      <node id="1182113674817469570" at="141,0,143,0" concept="2" trace="MyModuleRepositoryListener#()V" />
       <node id="1182113674817469670" at="55,66,58,5" concept="6" />
       <node id="1182113674817469721" at="81,0,84,0" concept="7" trace="clearCaches#()V" />
       <node id="1182113674817469809" at="95,54,98,13" concept="6" />
@@ -123,24 +124,25 @@
       <node id="3689217605463219715" at="103,46,106,13" concept="1" />
       <node id="3689217605463219715" at="103,46,106,13" concept="6" />
       <node id="1182113674817469870" at="121,106,124,5" concept="6" />
-      <node id="1182113674817469882" at="128,0,131,0" concept="7" trace="unregisterLanguageKeyMaps#(Ljetbrains/mps/smodel/Language;)V" />
-      <node id="1182113674817469635" at="132,0,135,0" concept="12" trace="getInstance#()Ljetbrains/mps/editor/runtime/impl/LanguagesKeymapManager;" />
-      <node id="1182113674817469586" at="141,62,144,7" concept="6" />
+      <node id="1182113674817469882" at="132,0,135,0" concept="7" trace="unregisterLanguageKeyMaps#(Ljetbrains/mps/smodel/Language;)V" />
+      <node id="1182113674817469635" at="136,0,139,0" concept="12" trace="getInstance#()Ljetbrains/mps/editor/runtime/impl/LanguagesKeymapManager;" />
+      <node id="1182113674817469586" at="145,62,148,7" concept="6" />
       <node id="3689217605462439544" at="43,0,47,0" concept="7" trace="performCleanup#()V" />
       <node id="1182113674817469644" at="49,0,54,0" concept="2" trace="LanguagesKeymapManager#(Ljetbrains/mps/ide/MPSCoreComponents;)V" />
       <node id="1182113674817469685" at="62,0,67,0" concept="7" trace="initComponent#()V" />
       <node id="1182113674817469707" at="75,0,80,0" concept="7" trace="disposeComponent#()V" />
+      <node id="1875514556278910834" at="124,5,129,5" concept="13" />
       <node id="1058093769518981030" at="42,0,48,0" concept="4" trace="myCleanupListener" />
       <node id="1182113674817469662" at="55,0,61,0" concept="7" trace="getKeyMapsForLanguage#(Ljetbrains/mps/smodel/Language;)Ljava/util/List;" />
       <node id="1182113674817469699" at="68,0,74,0" concept="7" trace="getComponentName#()Ljava/lang/String;" />
-      <node id="1182113674817469580" at="140,0,146,0" concept="7" trace="beforeModuleRemoved#(Lorg/jetbrains/mps/openapi/module/SModule;)V" />
-      <node id="1182113674817469825" at="116,0,127,0" concept="7" trace="findKeyMapClassByDeclaration#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/Class;" />
+      <node id="1182113674817469580" at="144,0,150,0" concept="7" trace="beforeModuleRemoved#(Lorg/jetbrains/mps/openapi/module/SModule;)V" />
       <node id="3689217605463202338" at="93,34,107,11" concept="13" />
+      <node id="1182113674817469825" at="116,0,131,0" concept="7" trace="findKeyMapClassByDeclaration#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/Class;" />
       <node id="1182113674817469798" at="92,84,108,9" concept="6" />
       <node id="1182113674817540157" at="90,63,109,7" concept="5" />
       <node id="1182113674817469756" at="88,25,112,5" concept="6" />
       <node id="1182113674817469729" at="85,0,115,0" concept="7" trace="registerLanguageKeyMaps#(Ljetbrains/mps/smodel/Language;)V" />
-      <scope id="1182113674817469573" at="137,42,137,42" />
+      <scope id="1182113674817469573" at="141,42,141,42" />
       <scope id="3689217605462439547" at="44,34,45,48" />
       <scope id="1182113674817469676" at="56,70,57,33" />
       <scope id="1182113674817469702" at="71,36,72,37" />
@@ -150,12 +152,17 @@
       <scope id="3689217605463219715" at="104,48,105,31" />
       <scope id="1182113674817469761" at="110,12,111,40" />
       <scope id="1182113674817469874" at="122,27,123,18" />
-      <scope id="1182113674817469887" at="128,61,129,66" />
-      <scope id="1182113674817469638" at="132,54,133,90" />
-      <scope id="1182113674817469590" at="142,39,143,53" />
+      <scope id="1875514556278910835" at="125,9,126,60" />
+      <scope id="1875514556278910830" at="127,0,128,18">
+        <var name="ignored" id="1875514556278910832" />
+      </scope>
+      <scope id="1875514556278910831" at="127,46,128,18" />
+      <scope id="1182113674817469887" at="132,61,133,66" />
+      <scope id="1182113674817469638" at="136,54,137,90" />
+      <scope id="1182113674817469590" at="146,39,147,53" />
       <scope id="1182113674817469688" at="63,31,65,51" />
       <scope id="1182113674817469710" at="76,34,78,62" />
-      <scope id="1182113674817469570" at="137,0,139,0" />
+      <scope id="1182113674817469570" at="141,0,143,0" />
       <scope id="1182113674817469653" at="49,67,52,52" />
       <scope id="1182113674817469721" at="81,0,84,0" />
       <scope id="3689217605463202330" at="99,0,102,13">
@@ -168,11 +175,11 @@
       </scope>
       <scope id="3689217605463202335" at="103,46,106,13" />
       <scope id="3689217605463219715" at="103,46,106,13" />
-      <scope id="1182113674817469882" at="128,0,131,0">
+      <scope id="1182113674817469882" at="132,0,135,0">
         <var name="language" id="1182113674817469885" />
       </scope>
-      <scope id="1182113674817469635" at="132,0,135,0" />
-      <scope id="1182113674817469585" at="141,62,144,7" />
+      <scope id="1182113674817469635" at="136,0,139,0" />
+      <scope id="1182113674817469585" at="145,62,148,7" />
       <scope id="3689217605462439544" at="43,0,47,0" />
       <scope id="1182113674817469669" at="55,66,59,60" />
       <scope id="3689217605463202339" at="94,15,98,13">
@@ -187,19 +194,19 @@
         <var name="l" id="1182113674817469666" />
       </scope>
       <scope id="1182113674817469699" at="68,0,74,0" />
-      <scope id="1182113674817469580" at="140,0,146,0">
+      <scope id="1182113674817469580" at="144,0,150,0">
         <var name="module" id="1182113674817469583" />
       </scope>
-      <scope id="1182113674817469831" at="116,73,125,58">
+      <scope id="1182113674817469831" at="116,73,129,5">
         <var name="fqName" id="1182113674817540189" />
         <var name="language" id="1182113674817469862" />
         <var name="languageNamespace" id="1182113674817469848" />
         <var name="namespace" id="1182113674817469838" />
       </scope>
-      <scope id="1182113674817469825" at="116,0,127,0">
+      <scope id="1182113674817469802" at="93,34,107,11" />
+      <scope id="1182113674817469825" at="116,0,131,0">
         <var name="declaration" id="1182113674817469829" />
       </scope>
-      <scope id="1182113674817469802" at="93,34,107,11" />
       <scope id="1182113674817540160" at="91,162,108,9">
         <var name="keyMapClass" id="1182113674817469793" />
       </scope>
@@ -216,8 +223,8 @@
         <var name="language" id="1182113674817469732" />
       </scope>
       <unit id="7084145171935594013" at="42,56,47,3" name="jetbrains.mps.editor.runtime.impl.LanguagesKeymapManager$1" />
-      <unit id="1182113674817469567" at="136,0,147,0" name="jetbrains.mps.editor.runtime.impl.LanguagesKeymapManager$MyModuleRepositoryListener" />
-      <unit id="1182113674817469564" at="36,0,149,0" name="jetbrains.mps.editor.runtime.impl.LanguagesKeymapManager" />
+      <unit id="1182113674817469567" at="140,0,151,0" name="jetbrains.mps.editor.runtime.impl.LanguagesKeymapManager$MyModuleRepositoryListener" />
+      <unit id="1182113674817469564" at="36,0,153,0" name="jetbrains.mps.editor.runtime.impl.LanguagesKeymapManager" />
     </file>
   </root>
   <root nodeRef="r:8095f777-2745-40ce-ad34-6655ef50b7cc(jetbrains.mps.editor.runtime.impl)/1482016848005717282">
