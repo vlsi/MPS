@@ -173,11 +173,11 @@ public class ModulesWatcher {
         status = INVALID;
         LOG.debug("Module " + module + " is disposed and therefore was marked invalid for class loading");
       } else {
-        for (SModuleReference reference : getModuleDescriptorDeps(module)) {
-          SModule resolvedModule = reference.resolve(myRepository);
-          if (resolvedModule == null) {
+        for (SModuleReference depRef : getModuleDescriptorDeps(module)) {
+          SModule resolvedDep = depRef.resolve(myRepository);
+          if (resolvedDep == null) {
             status = INVALID;
-            LOG.warn("Module " + module + " has a disposed dependency and therefore was marked invalid for class loading");
+            LOG.warn("Module " + module + " has a disposed dependency " + depRef.getModuleName() + " and therefore was marked invalid for class loading");
             break;
           }
         }
