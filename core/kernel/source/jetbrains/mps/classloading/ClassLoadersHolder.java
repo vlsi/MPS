@@ -101,6 +101,10 @@ public class ClassLoadersHolder {
     return moduleFacet == null || moduleFacet.isCompileInMps();
   }
 
+  /**
+   * @return {@link ClassLoadingProgress} for the module. See the documentation of
+   * {@link ClassLoadingProgress} for the description of states and a typical lifecycle of module in a repository.
+   */
   @NotNull
   public ClassLoadingProgress getClassLoadingProgress(SModule module) {
     return myMPSClassLoadersRegistry.getClassLoadingProgress(module);
@@ -230,7 +234,21 @@ public class ClassLoadersHolder {
   }
 
   /**
-   * Class loading progress of each MPS-loadable module
+   * Class loading progress of each MPS-loadable module.
+   *
+   * Module lifecycle:
+   * At first the module is UNLOADED. It comes to repository, then a call of {@link ClassLoaderManager#preLoadModules(Iterable)} happens.
+   * Then we check whether the module's dependencies are valid to load (and some other conditions). If everything is okay then we send
+   * broadcast notification to the clients of {@link jetbrains.mps.classloading.MPSClassesListener}. The state of module is changed to
+   * LAZY_LOADED at that moment.
+   * When the classes of module are requested the actual ClassLoader construction happens and then the module is marked as LOADED.
+   * When user calls {@link jetbrains.mps.classloading.ClassLoaderManager#unloadModules(Iterable)}, state comes to UNLOADED (no matter what).
+   * So the state diagram looks like this:
+   * UNLOADED -> LAZY_LOADED
+   * UNLOADED -> LOADED
+   * LAZY_LOADED -> LOADED
+   * LAZY_LOADED -> UNLOADED
+   * LOADED -> UNLOADED
    */
   public static enum ClassLoadingProgress {
     /**
