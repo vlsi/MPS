@@ -21,7 +21,6 @@ import jetbrains.mps.extapi.model.SModelData;
 import jetbrains.mps.persistence.ModelEnvironmentInfo;
 import jetbrains.mps.persistence.PersistenceRegistry;
 import jetbrains.mps.project.ModuleId;
-import jetbrains.mps.project.ModuleId.Regular;
 import jetbrains.mps.project.dependency.ModelDependenciesManager;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.project.structure.modules.RefUpdateUtil;
@@ -664,7 +663,9 @@ public class SModel implements SModelData {
     }
 
     for (SLanguage lang : myUsedLanguages) {
-      int version = ((Language) lang.getSourceModule()).getLanguageVersion();
+      SModule sm = lang.getSourceModule();
+      if (sm == null) continue;
+      int version = ((Language) sm).getLanguageVersion();
       myNewImplicitLanguagesIds.put(lang, version);
     }
 
@@ -890,10 +891,10 @@ public class SModel implements SModelData {
     ModelAccess.instance().runReadAction(new Runnable() {
       @Override
       public void run() {
-        if (ref instanceof SLanguageAdapterById){
+        if (ref instanceof SLanguageAdapterById) {
           //this hack is needed while we have 2 types of language adapters for ConvertModelToBinary ant task to work
           result[0] = new ModuleReference(ref.getQualifiedName(), ModuleId.regular(((SLanguageAdapterById) ref).getId().getId()));
-        }else{
+        } else {
           result[0] = (ModuleReference) ref.getSourceModule().getModuleReference();
         }
       }

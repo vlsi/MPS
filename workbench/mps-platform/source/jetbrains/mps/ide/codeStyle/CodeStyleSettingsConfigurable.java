@@ -15,6 +15,8 @@
  */
 package jetbrains.mps.ide.codeStyle;
 
+import com.intellij.openapi.options.Configurable;
+import com.intellij.openapi.options.Configurable.Composite;
 import com.intellij.openapi.options.ConfigurationException;
 import com.intellij.openapi.options.SearchableConfigurable;
 import com.intellij.openapi.project.Project;
@@ -26,7 +28,7 @@ import javax.swing.JComponent;
 /**
  * Evgeny Gryaznov, 1/6/11
  */
-public class CodeStyleSettingsConfigurable implements SearchableConfigurable {
+public class CodeStyleSettingsConfigurable implements SearchableConfigurable, Composite {
   private CodeStylePreferencesPage myPage;
   private final Project myProject;
 
@@ -39,6 +41,11 @@ public class CodeStyleSettingsConfigurable implements SearchableConfigurable {
       myPage = new CodeStylePreferencesPage(CodeStyleSettingsComponent.getInstance(myProject).getState());
     }
     return myPage;
+  }
+
+  @Override
+  public Configurable[] getConfigurables() {
+    return new Configurable[0];
   }
 
   @Override
