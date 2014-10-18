@@ -25,7 +25,7 @@ import jetbrains.mps.module.SDependencyImpl;
 import jetbrains.mps.project.DevKit;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.ModelsAutoImportsManager;
-import jetbrains.mps.project.ReloadableAbstractModule;
+import jetbrains.mps.module.ReloadableAbstractModule;
 import jetbrains.mps.project.dependency.modules.LanguageDependenciesManager;
 import jetbrains.mps.project.facets.JavaModuleFacet;
 import jetbrains.mps.project.facets.JavaModuleOperations;

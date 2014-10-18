@@ -7,7 +7,6 @@ import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 import java.io.File;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
-import jetbrains.mps.cleanup.CleanupManager;
 import java.util.Set;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.project.structure.project.Path;

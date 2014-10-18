@@ -21,7 +21,6 @@ import jetbrains.mps.internal.collections.runtime.IterableUtils;
 import jetbrains.mps.module.ReloadableModule;
 import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.util.annotation.ToRemove;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
@@ -146,7 +145,7 @@ public class ClassLoaderManager implements CoreComponent {
    *
    * @deprecated use module-specific methods
    * @see jetbrains.mps.module.ReloadableModule
-   * @see jetbrains.mps.project.ReloadableAbstractModule
+   * @see jetbrains.mps.module.ReloadableAbstractModule
    */
   @Deprecated
   @ToRemove(version = 3.2)
@@ -159,7 +158,7 @@ public class ClassLoaderManager implements CoreComponent {
   /**
    * @deprecated use module-specific methods
    * @see jetbrains.mps.module.ReloadableModule
-   * @see jetbrains.mps.project.ReloadableAbstractModule
+   * @see jetbrains.mps.module.ReloadableAbstractModule
    */
   @Deprecated
   @ToRemove(version = 3.2)
@@ -176,7 +175,7 @@ public class ClassLoaderManager implements CoreComponent {
    *
    * @deprecated use module-specific methods
    * @see jetbrains.mps.module.ReloadableModule
-   * @see jetbrains.mps.project.ReloadableAbstractModule
+   * @see jetbrains.mps.module.ReloadableAbstractModule
    */
   @Deprecated
   @Nullable
@@ -347,7 +346,7 @@ public class ClassLoaderManager implements CoreComponent {
   /**
    * @deprecated use module-specific method {@link jetbrains.mps.module.ReloadableModule#reload()}
    * @see jetbrains.mps.module.ReloadableModule
-   * @see jetbrains.mps.project.ReloadableAbstractModule
+   * @see jetbrains.mps.module.ReloadableAbstractModule
    */
   @Deprecated
   @ToRemove(version = 3.2)

@@ -55,7 +55,8 @@ public class Generator extends TemplateModuleBase {
     return null;
   }
   private TemplateModel getTemplateModel(String modelName) {
-    Class<TemplateModel> clazz = ClassLoaderManager.getInstance().getClass(ModuleRepositoryFacade.getInstance().getModule(getReference()), modelName);
+    Class<TemplateModel> clazz =
+        (Class<TemplateModel>) ClassLoaderManager.getInstance().getClass(ModuleRepositoryFacade.getInstance().getModule(getReference()), modelName);
     if (clazz == null) {
       throw new IllegalStateException(String.format("Failed to obtain generator runtime class for model %s", modelName));
     }

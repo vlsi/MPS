@@ -16,12 +16,10 @@
 package jetbrains.mps.project;
 
 import jetbrains.mps.ClasspathReader;
-import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.classloading.CustomClassLoadingFacet;
 import jetbrains.mps.library.ModulesMiner;
 import jetbrains.mps.library.ModulesMiner.ModuleHandle;
-import jetbrains.mps.module.ReloadableModule;
-import jetbrains.mps.progress.EmptyProgressMonitor;
+import jetbrains.mps.module.ReloadableAbstractModule;
 import jetbrains.mps.project.facets.TestsFacet;
 import jetbrains.mps.project.persistence.SolutionDescriptorPersistence;
 import jetbrains.mps.project.structure.model.ModelRootDescriptor;

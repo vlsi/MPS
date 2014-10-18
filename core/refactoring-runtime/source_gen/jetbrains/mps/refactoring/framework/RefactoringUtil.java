@@ -82,7 +82,7 @@ public class RefactoringUtil {
       for (SNode refactoring : SModelOperations.getRoots(refactoringsModel, "jetbrains.mps.lang.refactoring.structure.Refactoring")) {
         try {
           String fqName = packageName + "." + SPropertyOperations.getString(refactoring, "name");
-          Class<IRefactoring> cls = (Class<IRefactoring>) language.getClass(fqName);
+          Class<IRefactoring> cls = ((Class<IRefactoring>) ClassLoaderManager.getInstance().getClass(language, fqName));
           if (cls == null) {
             LOG.error("Can't find " + fqName);
             continue;
