@@ -15,15 +15,13 @@
  */
 package jetbrains.mps.ide.depanalyzer;
 
+import jetbrains.mps.CoreMpsTest;
 import jetbrains.mps.WorkbenchMpsTest;
-import jetbrains.mps.cleanup.CleanupManager;
 import jetbrains.mps.library.ModulesMiner.ModuleHandle;
 import jetbrains.mps.project.DevKit;
 import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.StubSolution;
-import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager;
-import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager.Deptype;
 import jetbrains.mps.project.structure.modules.DevkitDescriptor;
 import jetbrains.mps.project.structure.modules.LanguageDescriptor;
 import jetbrains.mps.project.structure.modules.SolutionDescriptor;
@@ -45,7 +43,7 @@ import java.util.UUID;
 
 import static junit.framework.Assert.assertEquals;
 
-public class ModuleDependenciesTest extends WorkbenchMpsTest {
+public class ModuleDependenciesTest extends CoreMpsTest {
   private static final MPSModuleOwner OWNER = new BaseMPSModuleOwner() {
   };
 
