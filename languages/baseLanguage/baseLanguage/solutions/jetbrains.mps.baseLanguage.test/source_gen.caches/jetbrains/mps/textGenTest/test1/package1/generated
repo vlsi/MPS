@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="65d8a3sjoe51povu2zswkbwwql4xaeg">
-  <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="d987foka3qddszg3k3yjss0jaslj9i" />
-  <common hash="-3qi8dwdfrd8zkgwvgd3dewiy4487pil" dependsOnNodes="true">
+<dependencies version="2" modelHash="bklfqvlhvmnd422viukfplde6hfn6p4">
+  <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="-aoqr8hwyzn1gt1phtgpxwftwo6ha0xu" />
+  <common hash="bklfqvlhvmnd422viukfplde6hfn6p4" dependsOnNodes="true">
     <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
   </common>
-  <source id="5257650213624905139" name="Clazz" hash="-4qbx5qualqhux4xvm37aguhcntctjia">
+  <source id="5257650213624905139" name="Clazz">
     <file name="Clazz.java" />
   </source>
 </dependencies>

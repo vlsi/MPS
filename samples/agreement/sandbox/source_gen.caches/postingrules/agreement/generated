@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="49kpenao2n09kqc2mlfbno7uqwpdz2q">
-  <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" hash="-2sqpydigz7vryaerubh22j78l4l08jz" />
+<dependencies version="2" modelHash="oillu4ool8fbgvmbb56xhxmrkahif5">
+  <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" hash="-53rt67n6c8bg7qn5r7z7snc1hbcxlo0" />
   <dep model="r:00000000-0000-4000-0000-011c8959040b(jetbrains.mps.samples.agreementLanguage.declarations)" />
-  <dep model="r:00000000-0000-4000-0000-011c8959040c(jetbrains.mps.samples.agreementLanguage.generator.baseLanguage@generator)" hash="-9g9nrfw62lbkhwkm8garncl1hmk44a1" />
-  <dep model="r:54cc1fc5-5f96-4560-9408-18b968230021(postingrules)" hash="2r2molypponb0v3ndy4q6spqx3x6g0x" />
-  <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="d987foka3qddszg3k3yjss0jaslj9i" />
-  <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="8cdjk2e5d2y2u9lult1ptgxxrttxv07" />
-  <common hash="-agma3mr9vjn7n3r77qmzrk0h79s6j6i" dependsOnNodes="true">
+  <dep model="r:00000000-0000-4000-0000-011c8959040c(jetbrains.mps.samples.agreementLanguage.generator.baseLanguage@generator)" hash="-c03aqmy4x4fr4u6l39tyupev34hpg6t" />
+  <dep model="r:54cc1fc5-5f96-4560-9408-18b968230021(postingrules)" hash="-awdfw7wrg92xc1r7knt2k9lpauhwq4g" />
+  <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="-aoqr8hwyzn1gt1phtgpxwftwo6ha0xu" />
+  <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="-7vi6o2vv1wkdocz9yt650rota5r2v6a" />
+  <common hash="oillu4ool8fbgvmbb56xhxmrkahif5" dependsOnNodes="true">
     <dep root="1112303557868" />
     <dep root="1112304761925" />
     <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
@@ -17,7 +17,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="AgreementRegistryBuilder.java" />
   </common>
-  <source id="1112303557868" name="Regular" hash="-d1pu2upfp82oneux6c1v6e5pgj5wpp5" />
-  <source id="1112304761925" name="LowPay" hash="-c170jxs1ly1rsw2i1pp3d9m0bbftx1w" />
+  <source id="1112303557868" name="Regular" />
+  <source id="1112304761925" name="LowPay" />
 </dependencies>
 

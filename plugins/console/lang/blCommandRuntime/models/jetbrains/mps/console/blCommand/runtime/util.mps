@@ -1670,6 +1670,14 @@
                       <reference role="vg0i.1107535904670.1107535924139" target="88zw.~SearchScope" resolveInfo="SearchScope" />
                     </node>
                     <node concept="vg0i.1163668896201" id="4307205004143621577" role="vg0i.1068431474542.1068431790190" info="nn">
+                      <node concept="vg0i.1197027756228" id="3842191445091516541" role="vg0i.1163668896201.1163668922816" info="nn">
+                        <node concept="vg0i.1068498886296" id="3842191445091505090" role="vg0i.1197027756228.1197027771414" info="nn">
+                          <reference role="vg0i.1068498886296.1068581517664" target="4307205004143739297" resolveInfo="context" />
+                        </node>
+                        <node concept="vg0i.1202948039474" id="3842191445091517242" role="vg0i.1197027756228.1197027833540" info="nn">
+                          <reference role="vg0i.1204053956946.1068499141037" target="qgo0.3842191445091237663" resolveInfo="getDefaultSearchscope" />
+                        </node>
+                      </node>
                       <node concept="vg0i.1068498886296" id="4307205004144068496" role="vg0i.1163668896201.1163668934364" info="nn">
                         <reference role="vg0i.1068498886296.1068581517664" target="4307205004142749181" resolveInfo="searchScope" />
                       </node>
@@ -1677,14 +1685,6 @@
                         <node concept="vg0i.1070534058343" id="4307205004143619964" role="vg0i.1081773326031.1081773367579" info="nn" />
                         <node concept="vg0i.1068498886296" id="4307205004143617208" role="vg0i.1081773326031.1081773367580" info="nn">
                           <reference role="vg0i.1068498886296.1068581517664" target="4307205004142749181" resolveInfo="searchScope" />
-                        </node>
-                      </node>
-                      <node concept="vg0i.1197027756228" id="3842191445091516541" role="vg0i.1163668896201.1163668922816" info="nn">
-                        <node concept="vg0i.1068498886296" id="3842191445091505090" role="vg0i.1197027756228.1197027771414" info="nn">
-                          <reference role="vg0i.1068498886296.1068581517664" target="4307205004143739297" resolveInfo="context" />
-                        </node>
-                        <node concept="vg0i.1202948039474" id="3842191445091517242" role="vg0i.1197027756228.1197027833540" info="nn">
-                          <reference role="vg0i.1204053956946.1068499141037" target="qgo0.3842191445091237663" resolveInfo="getDefaultSearchscope" />
                         </node>
                       </node>
                     </node>

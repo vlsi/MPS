@@ -1,30 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-4sl2nht051bpanowfoq56ejygodl7iu">
-  <dep model="r:d8d06a40-eb90-4ad9-a679-19e3fc235859(jetbrains.mps.build.workflow.generator.template.main@generator)" hash="-2guiet2wf96ttkc55cea84uaqji2aiv" />
-  <dep model="r:ed179f4d-7cf2-479d-8348-50c1fc63b96a(jetbrains.mps.build.workflow.structure)" hash="-9i0utctu4gh98t6104p2puj8upul9i2" />
-  <dep model="r:fdebfc98-bbd7-4c50-8a8d-eda16da9406e(jetbrains.mps.build.generator.template.main@generator)" hash="4yigknai5a5xrg9mr88a1eqcru75k2n" />
-  <common hash="-4u43tn6bxmzqdi5wrqfy67c1zpnpb5g" />
-  <source id="5253498789149585672" name="buildMpsA" hash="7h8mzca7csu26993z9ulvforoh8qo1q">
+<dependencies version="2" modelHash="1wcoh0hxeh4jhiihod3x0a4g127ynly">
+  <dep model="r:d8d06a40-eb90-4ad9-a679-19e3fc235859(jetbrains.mps.build.workflow.generator.template.main@generator)" hash="39wwzmeg5ijekf7kfixg8iosik1c6ce" />
+  <dep model="r:ed179f4d-7cf2-479d-8348-50c1fc63b96a(jetbrains.mps.build.workflow.structure)" hash="-15sk1iivfpcc1lej36r6n12uf6hdv2e" />
+  <dep model="r:fdebfc98-bbd7-4c50-8a8d-eda16da9406e(jetbrains.mps.build.generator.template.main@generator)" hash="-3dr1c99vbxctigryuypdaooq4xtulcq" />
+  <common hash="1wcoh0hxeh4jhiihod3x0a4g127ynly" />
+  <source id="5253498789149585672" name="buildMpsA">
     <dep root="6859736767834635843" />
     <dep model="r:d8d06a40-eb90-4ad9-a679-19e3fc235859(jetbrains.mps.build.workflow.generator.template.main@generator)" />
     <dep model="r:ed179f4d-7cf2-479d-8348-50c1fc63b96a(jetbrains.mps.build.workflow.structure)" />
     <dep model="r:fdebfc98-bbd7-4c50-8a8d-eda16da9406e(jetbrains.mps.build.generator.template.main@generator)" />
     <file name="buildMpsA.xml" />
   </source>
-  <source id="6859736767834635843" name="buildMpsB" hash="-5nqikqnxxz8ocyl8sirwoeer9cwmvcq">
+  <source id="6859736767834635843" name="buildMpsB">
     <dep model="r:d8d06a40-eb90-4ad9-a679-19e3fc235859(jetbrains.mps.build.workflow.generator.template.main@generator)" />
     <dep model="r:ed179f4d-7cf2-479d-8348-50c1fc63b96a(jetbrains.mps.build.workflow.structure)" />
     <dep model="r:fdebfc98-bbd7-4c50-8a8d-eda16da9406e(jetbrains.mps.build.generator.template.main@generator)" />
     <file name="buildMpsB.xml" />
   </source>
-  <source id="5610619299014495717" name="JarFromA" hash="-m40kod1y1bgr06nxsi5rmveq6uc0t" />
-  <source id="5610619299014495733" name="buildMpsC" hash="2g6inwzeqnxd3b6zc7sa7o1oepms9hk">
+  <source id="5610619299014495717" name="JarFromA" />
+  <source id="5610619299014495733" name="buildMpsC">
     <dep root="5610619299014495717" />
     <dep model="r:d8d06a40-eb90-4ad9-a679-19e3fc235859(jetbrains.mps.build.workflow.generator.template.main@generator)" />
     <dep model="r:fdebfc98-bbd7-4c50-8a8d-eda16da9406e(jetbrains.mps.build.generator.template.main@generator)" />
     <file name="buildMpsC.xml" />
   </source>
-  <source id="8775597636506171310" name="buildMpsD" hash="-62p5grwu9y7b95ilx1zjy2ztyugzvz6">
+  <source id="8775597636506171310" name="buildMpsD">
     <dep root="5610619299014495717" />
     <dep root="5610619299014495733" />
     <dep model="r:d8d06a40-eb90-4ad9-a679-19e3fc235859(jetbrains.mps.build.workflow.generator.template.main@generator)" />

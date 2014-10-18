@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-76bpt4bvj71gkkcvwk886lngzmbd8sb">
-  <common hash="-ad1gc9yijmfe614sr5d3nch34zk719j" />
-  <source id="1225239897606" name="AAA" hash="-a9nea5wp3kpogalu45nmwdxjtptr28s">
+<dependencies version="2" modelHash="5f0pz1dxqritrr2hbz2qeuqtfiofuoo">
+  <common hash="5f0pz1dxqritrr2hbz2qeuqtfiofuoo" />
+  <source id="1225239897606" name="AAA">
     <file name="AAA.xml" />
   </source>
 </dependencies>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-7ojj05ew12bj1azxrl2ghrfwyltf99b">
-  <common hash="-b6b9m7kk5lb3uvt6d9pyj40v8v8705j" />
-  <source id="3675491646420810827" name="org.jetbrains.workflow" hash="-9thh04k1gjvz3ms4ni1h9hovnn7crsb">
+<dependencies version="2" modelHash="78g9ypl6e6fs8gkmzlalo1yl1eqf6dx">
+  <common hash="78g9ypl6e6fs8gkmzlalo1yl1eqf6dx" />
+  <source id="3675491646420810827" name="org.jetbrains.workflow">
     <file name="org.jetbrains.workflow" />
   </source>
 </dependencies>
