@@ -20,17 +20,47 @@ import com.intellij.ide.plugins.PluginManager;
 import com.intellij.openapi.components.ApplicationComponent;
 import com.intellij.openapi.extensions.PluginId;
 import jetbrains.mps.LanguageLibrary;
+import jetbrains.mps.ide.MPSCoreComponents;
 import jetbrains.mps.library.LibraryInitializer;
-import jetbrains.mps.smodel.ModelAccess;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.module.SRepository;
 
 import java.util.HashSet;
 import java.util.Set;
 
 public class PluginLibrariesContributor implements LibraryContributor, ApplicationComponent {
   private static final Logger LOG = LogManager.getLogger(PluginLibrariesContributor.class);
+
+  private final SRepository myRepository;
+
+  public PluginLibrariesContributor(MPSCoreComponents dep) {
+    myRepository = dep.getModuleRepository();
+  }
+
+  // FIXME this code duplicates BootstrapLibContributor, need a better approach to trigger update of LibraryInitializer
+  @Override
+  public void initComponent() {
+    LibraryInitializer.getInstance().addContributor(this);
+    myRepository.getModelAccess().runWriteInEDT(new Runnable() {
+      @Override
+      public void run() {
+        LibraryInitializer.getInstance().update(true);
+      }
+    });
+  }
+
+  @Override
+  public void disposeComponent() {
+    LibraryInitializer.getInstance().removeContributor(this);
+    myRepository.getModelAccess().runWriteInEDT(new Runnable() {
+      @Override
+      public void run() {
+        LibraryInitializer.getInstance().update(false);
+      }
+    });
+  }
 
   @Override
   public Set<LibDescriptor> getLibraries() {
@@ -52,29 +82,6 @@ public class PluginLibrariesContributor implements LibraryContributor, Applicati
       }
     }
     return result;
-  }
-
-  // FIXME this code duplicates BootstrapLibContributor, need a better approach to trigger update of LibraryInitializer
-  @Override
-  public void initComponent() {
-    LibraryInitializer.getInstance().addContributor(this);
-    ModelAccess.instance().runWriteInEDT(new Runnable() {
-      @Override
-      public void run() {
-        LibraryInitializer.getInstance().update(true);
-      }
-    });
-  }
-
-  @Override
-  public void disposeComponent() {
-    LibraryInitializer.getInstance().removeContributor(this);
-    ModelAccess.instance().runWriteAction(new Runnable() {
-      @Override
-      public void run() {
-        LibraryInitializer.getInstance().update(false);
-      }
-    });
   }
 
   @Override

@@ -28,6 +28,7 @@ import jetbrains.mps.util.MacrosFactory;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.module.SRepository;
 
 import javax.swing.Icon;
 import javax.swing.JComponent;
@@ -38,8 +39,10 @@ import java.util.Map.Entry;
 import java.util.Set;
 
 public abstract class BaseLibraryManager implements BaseComponent, Configurable, PersistentStateComponent<MyState>, LibraryContributor {
+  private final SRepository myRepository;
 
   public BaseLibraryManager(MPSCoreComponents components) {
+    myRepository = components.getModuleRepository();
   }
 
   @Override
@@ -50,7 +53,7 @@ public abstract class BaseLibraryManager implements BaseComponent, Configurable,
   @Override
   public void initComponent() {
     LibraryInitializer.getInstance().addContributor(this);
-    ModelAccess.instance().runWriteAction(new Runnable() {
+    myRepository.getModelAccess().runWriteInEDT(new Runnable() {
       @Override
       public void run() {
         LibraryInitializer.getInstance().update();
@@ -61,7 +64,7 @@ public abstract class BaseLibraryManager implements BaseComponent, Configurable,
   @Override
   public void disposeComponent() {
     LibraryInitializer.getInstance().removeContributor(this);
-    ModelAccess.instance().runWriteAction(new Runnable() {
+    myRepository.getModelAccess().runWriteInEDT(new Runnable() {
       @Override
       public void run() {
         LibraryInitializer.getInstance().update();
