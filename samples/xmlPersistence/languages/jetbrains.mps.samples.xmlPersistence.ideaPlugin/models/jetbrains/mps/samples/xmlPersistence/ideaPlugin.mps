@@ -5,32 +5,32 @@
     <lang id="479c7a8c-02f9-43b5-9139-d910cb22f298" name="jetbrains.mps.core.xml" />
     <lang id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core" />
     <concept id="479c7a8c-02f9-43b5-9139-d910cb22f298/1622293396948952339" name="jetbrains.mps.core.xml.structure.XmlText" />
-    <concept id="479c7a8c-02f9-43b5-9139-d910cb22f298/6666499814681299057" name="jetbrains.mps.core.xml.structure.XmlProlog" />
+    <concept id="479c7a8c-02f9-43b5-9139-d910cb22f298/2133624044437898907" name="jetbrains.mps.core.xml.structure.XmlDoctypeDeclaration" />
     <concept id="479c7a8c-02f9-43b5-9139-d910cb22f298/2133624044438029119" name="jetbrains.mps.core.xml.structure.XmlExternalId" />
+    <concept id="479c7a8c-02f9-43b5-9139-d910cb22f298/6666499814681299057" name="jetbrains.mps.core.xml.structure.XmlProlog" />
+    <concept id="479c7a8c-02f9-43b5-9139-d910cb22f298/6666499814681415858" name="jetbrains.mps.core.xml.structure.XmlElement" />
     <concept id="479c7a8c-02f9-43b5-9139-d910cb22f298/6666499814681447923" name="jetbrains.mps.core.xml.structure.XmlAttribute" />
-    <concept id="479c7a8c-02f9-43b5-9139-d910cb22f298/6786756355279841993" name="jetbrains.mps.core.xml.structure.XmlDocument" />
     <concept id="479c7a8c-02f9-43b5-9139-d910cb22f298/6666499814681515200" name="jetbrains.mps.core.xml.structure.XmlFile" />
     <concept id="479c7a8c-02f9-43b5-9139-d910cb22f298/6666499814681541919" name="jetbrains.mps.core.xml.structure.XmlTextValue" />
-    <concept id="479c7a8c-02f9-43b5-9139-d910cb22f298/2133624044437898907" name="jetbrains.mps.core.xml.structure.XmlDoctypeDeclaration" />
-    <concept id="479c7a8c-02f9-43b5-9139-d910cb22f298/6666499814681415858" name="jetbrains.mps.core.xml.structure.XmlElement" />
-    <property id="479c7a8c-02f9-43b5-9139-d910cb22f298/2133624044437898907/2133624044437898910" name="doctypeName" />
-    <property id="479c7a8c-02f9-43b5-9139-d910cb22f298/6666499814681447923/6666499814681447926" name="attrName" />
-    <property id="479c7a8c-02f9-43b5-9139-d910cb22f298/2133624044438029119/2133624044438029123" name="publicId" />
-    <property id="479c7a8c-02f9-43b5-9139-d910cb22f298/1622293396948952339/1622293396948953704" name="value" />
-    <property id="479c7a8c-02f9-43b5-9139-d910cb22f298/2133624044438029119/2133624044438029125" name="isPublic" />
-    <property id="479c7a8c-02f9-43b5-9139-d910cb22f298/2133624044438029119/2133624044438029124" name="systemId" />
-    <property id="479c7a8c-02f9-43b5-9139-d910cb22f298/6666499814681415858/6999033275467544021" name="shortEmptyNotation" />
-    <property id="479c7a8c-02f9-43b5-9139-d910cb22f298/6666499814681541919/6666499814681541920" name="text" />
-    <property id="479c7a8c-02f9-43b5-9139-d910cb22f298/6666499814681415858/6666499814681415862" name="tagName" />
+    <concept id="479c7a8c-02f9-43b5-9139-d910cb22f298/6786756355279841993" name="jetbrains.mps.core.xml.structure.XmlDocument" />
     <property id="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001" name="name" />
+    <property id="479c7a8c-02f9-43b5-9139-d910cb22f298/1622293396948952339/1622293396948953704" name="value" />
+    <property id="479c7a8c-02f9-43b5-9139-d910cb22f298/2133624044437898907/2133624044437898910" name="doctypeName" />
+    <property id="479c7a8c-02f9-43b5-9139-d910cb22f298/2133624044438029119/2133624044438029123" name="publicId" />
+    <property id="479c7a8c-02f9-43b5-9139-d910cb22f298/2133624044438029119/2133624044438029124" name="systemId" />
+    <property id="479c7a8c-02f9-43b5-9139-d910cb22f298/2133624044438029119/2133624044438029125" name="isPublic" />
+    <property id="479c7a8c-02f9-43b5-9139-d910cb22f298/6666499814681415858/6666499814681415862" name="tagName" />
+    <property id="479c7a8c-02f9-43b5-9139-d910cb22f298/6666499814681447923/6666499814681447926" name="attrName" />
+    <property id="479c7a8c-02f9-43b5-9139-d910cb22f298/6666499814681541919/6666499814681541920" name="text" />
+    <property id="479c7a8c-02f9-43b5-9139-d910cb22f298/6666499814681415858/6999033275467544021" name="shortEmptyNotation" />
     <childRole id="479c7a8c-02f9-43b5-9139-d910cb22f298/6666499814681415858/1622293396948928802" name="content" />
-    <childRole id="479c7a8c-02f9-43b5-9139-d910cb22f298/6786756355279841993/6666499814681299055" name="rootElement" />
-    <childRole id="479c7a8c-02f9-43b5-9139-d910cb22f298/6666499814681415858/6666499814681415861" name="attributes" />
-    <childRole id="479c7a8c-02f9-43b5-9139-d910cb22f298/6786756355279841993/6666499814681299060" name="prolog" />
-    <childRole id="479c7a8c-02f9-43b5-9139-d910cb22f298/6666499814681447923/6666499814681541918" name="value" />
     <childRole id="479c7a8c-02f9-43b5-9139-d910cb22f298/2133624044437898907/2133624044438029120" name="externalId" />
-    <childRole id="479c7a8c-02f9-43b5-9139-d910cb22f298/6666499814681299057/7604553062773674214" name="elements" />
+    <childRole id="479c7a8c-02f9-43b5-9139-d910cb22f298/6786756355279841993/6666499814681299055" name="rootElement" />
+    <childRole id="479c7a8c-02f9-43b5-9139-d910cb22f298/6786756355279841993/6666499814681299060" name="prolog" />
+    <childRole id="479c7a8c-02f9-43b5-9139-d910cb22f298/6666499814681415858/6666499814681415861" name="attributes" />
     <childRole id="479c7a8c-02f9-43b5-9139-d910cb22f298/6666499814681515200/6666499814681515201" name="document" />
+    <childRole id="479c7a8c-02f9-43b5-9139-d910cb22f298/6666499814681447923/6666499814681541918" name="value" />
+    <childRole id="479c7a8c-02f9-43b5-9139-d910cb22f298/6666499814681299057/7604553062773674214" name="elements" />
   </debugInfo>
   <languages>
     <use id="479c7a8c-02f9-43b5-9139-d910cb22f298" version="-1" index="ki41" />

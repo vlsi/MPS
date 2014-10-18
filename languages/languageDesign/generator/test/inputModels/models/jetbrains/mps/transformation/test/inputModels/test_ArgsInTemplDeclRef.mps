@@ -2,15 +2,15 @@
 <model ref="r:28e28940-56d5-4c82-9733-48f8f13c0358(jetbrains.mps.transformation.test.inputModels.test_ArgsInTemplDeclRef)">
   <persistence version="9" />
   <debugInfo>
-    <lang id="ab0ae915-e3b5-4f35-b55a-c655d649a03c" name="jetbrains.mps.transformation.test.inputLang" />
     <lang id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core" />
-    <concept id="ab0ae915-e3b5-4f35-b55a-c655d649a03c/1195171011194" name="jetbrains.mps.transformation.test.inputLang.structure.InputNode_A" />
-    <concept id="ab0ae915-e3b5-4f35-b55a-c655d649a03c/1206462895210" name="jetbrains.mps.transformation.test.inputLang.structure.InputNode_C" />
+    <lang id="ab0ae915-e3b5-4f35-b55a-c655d649a03c" name="jetbrains.mps.transformation.test.inputLang" />
     <concept id="ab0ae915-e3b5-4f35-b55a-c655d649a03c/1195168316083" name="jetbrains.mps.transformation.test.inputLang.structure.InputRoot" />
+    <concept id="ab0ae915-e3b5-4f35-b55a-c655d649a03c/1195171011194" name="jetbrains.mps.transformation.test.inputLang.structure.InputNode_A" />
     <concept id="ab0ae915-e3b5-4f35-b55a-c655d649a03c/1206459872650" name="jetbrains.mps.transformation.test.inputLang.structure.InputNode_B" />
+    <concept id="ab0ae915-e3b5-4f35-b55a-c655d649a03c/1206462895210" name="jetbrains.mps.transformation.test.inputLang.structure.InputNode_C" />
+    <property id="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001" name="name" />
     <property id="ab0ae915-e3b5-4f35-b55a-c655d649a03c/1195168316083/1202243304949" name="useInTest" />
     <property id="ab0ae915-e3b5-4f35-b55a-c655d649a03c/1206462895210/4929591503636438728" name="key" />
-    <property id="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001" name="name" />
     <childRole id="ab0ae915-e3b5-4f35-b55a-c655d649a03c/1195168316083/1195169805620" name="inputChild" />
   </debugInfo>
   <languages>

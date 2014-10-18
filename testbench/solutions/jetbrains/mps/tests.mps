@@ -69,18 +69,18 @@
     <model ref="r:e796bc79-24a8-4433-8903-c71c59526bf7(jetbrains.mps.lang.editor.style.test)" name="jetbrains.mps.lang.editor.style.test" />
     <model ref="r:c44f4b8c-137c-4225-8bd9-38d232a9b736(jetbrains.mps.lang.editor.actions.test)" name="jetbrains.mps.lang.editor.actions.test" />
     <concept id="d3c5a46f-b8c2-47db-ad0a-30b8f19c2055/1280144168199506908" name="jetbrains.mps.testbench.suite.structure.SolutionRef" />
-    <concept id="d3c5a46f-b8c2-47db-ad0a-30b8f19c2055/4504141816188599481" name="jetbrains.mps.testbench.suite.structure.JUnit3TestCaseRef" />
+    <concept id="d3c5a46f-b8c2-47db-ad0a-30b8f19c2055/4504141816188599477" name="jetbrains.mps.testbench.suite.structure.ModuleSuite" />
     <concept id="d3c5a46f-b8c2-47db-ad0a-30b8f19c2055/4504141816188599479" name="jetbrains.mps.testbench.suite.structure.TestCaseRef" />
     <concept id="d3c5a46f-b8c2-47db-ad0a-30b8f19c2055/4504141816188599480" name="jetbrains.mps.testbench.suite.structure.JUnit4TestCaseRef" />
-    <concept id="d3c5a46f-b8c2-47db-ad0a-30b8f19c2055/4504141816188599477" name="jetbrains.mps.testbench.suite.structure.ModuleSuite" />
-    <property id="d3c5a46f-b8c2-47db-ad0a-30b8f19c2055/1280144168199506908/1280144168199506910" name="moduleID" />
+    <concept id="d3c5a46f-b8c2-47db-ad0a-30b8f19c2055/4504141816188599481" name="jetbrains.mps.testbench.suite.structure.JUnit3TestCaseRef" />
     <property id="d3c5a46f-b8c2-47db-ad0a-30b8f19c2055/1280144168199506908/1280144168199506909" name="moduleFQName" />
+    <property id="d3c5a46f-b8c2-47db-ad0a-30b8f19c2055/1280144168199506908/1280144168199506910" name="moduleID" />
     <property id="d3c5a46f-b8c2-47db-ad0a-30b8f19c2055/4504141816188599482/8605005254686522462" name="muted" />
-    <refRole id="d3c5a46f-b8c2-47db-ad0a-30b8f19c2055/4504141816188599480/4504141816188599489" name="klass" />
-    <refRole id="d3c5a46f-b8c2-47db-ad0a-30b8f19c2055/4504141816188599479/4504141816188599488" name="testCase" />
     <refRole id="d3c5a46f-b8c2-47db-ad0a-30b8f19c2055/4504141816188599481/1280144168199457727" name="klass" />
-    <childRole id="d3c5a46f-b8c2-47db-ad0a-30b8f19c2055/4504141816188599477/4504141816188599486" name="testRef" />
+    <refRole id="d3c5a46f-b8c2-47db-ad0a-30b8f19c2055/4504141816188599479/4504141816188599488" name="testCase" />
+    <refRole id="d3c5a46f-b8c2-47db-ad0a-30b8f19c2055/4504141816188599480/4504141816188599489" name="klass" />
     <childRole id="d3c5a46f-b8c2-47db-ad0a-30b8f19c2055/4504141816188599477/1280144168199507080" name="moduleRef" />
+    <childRole id="d3c5a46f-b8c2-47db-ad0a-30b8f19c2055/4504141816188599477/4504141816188599486" name="testRef" />
   </debugInfo>
   <languages>
     <use id="d3c5a46f-b8c2-47db-ad0a-30b8f19c2055" version="-1" index="2ogp" />

@@ -2,32 +2,32 @@
 <model ref="r:920bc876-6f94-40e8-b2db-7e978827efe9(jetbrains.mps.build.startup.textGen)">
   <persistence version="9" />
   <debugInfo>
-    <lang id="b83431fe-5c8f-40bc-8a36-65e25f4dd253" name="jetbrains.mps.lang.textGen" />
     <lang id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" />
     <lang id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" />
+    <lang id="b83431fe-5c8f-40bc-8a36-65e25f4dd253" name="jetbrains.mps.lang.textGen" />
     <model ref="r:a930f08c-5447-4203-8f2e-507bb76fab12(jetbrains.mps.build.startup.structure)" name="jetbrains.mps.build.startup.structure" />
-    <concept id="7866978e-a0f0-4cc7-81bc-4d213d9375e1/1138056022639" name="jetbrains.mps.lang.smodel.structure.SPropertyAccess" />
-    <concept id="b83431fe-5c8f-40bc-8a36-65e25f4dd253/1237305334312" name="jetbrains.mps.lang.textGen.structure.NodeAppendPart" />
-    <concept id="b83431fe-5c8f-40bc-8a36-65e25f4dd253/1233749247888" name="jetbrains.mps.lang.textGen.structure.GenerateTextDeclaration" />
-    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1197027756228" name="jetbrains.mps.baseLanguage.structure.DotExpression" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" />
-    <concept id="b83431fe-5c8f-40bc-8a36-65e25f4dd253/1233670071145" name="jetbrains.mps.lang.textGen.structure.ConceptTextGenDeclaration" />
-    <concept id="b83431fe-5c8f-40bc-8a36-65e25f4dd253/1237306079178" name="jetbrains.mps.lang.textGen.structure.AppendOperation" />
-    <concept id="b83431fe-5c8f-40bc-8a36-65e25f4dd253/1233748055915" name="jetbrains.mps.lang.textGen.structure.NodeParameter" />
-    <concept id="b83431fe-5c8f-40bc-8a36-65e25f4dd253/1237305491868" name="jetbrains.mps.lang.textGen.structure.CollectionAppendPart" />
+    <concept id="7866978e-a0f0-4cc7-81bc-4d213d9375e1/1138056022639" name="jetbrains.mps.lang.smodel.structure.SPropertyAccess" />
     <concept id="7866978e-a0f0-4cc7-81bc-4d213d9375e1/1138056282393" name="jetbrains.mps.lang.smodel.structure.SLinkListAccess" />
+    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1197027756228" name="jetbrains.mps.baseLanguage.structure.DotExpression" />
+    <concept id="b83431fe-5c8f-40bc-8a36-65e25f4dd253/1233670071145" name="jetbrains.mps.lang.textGen.structure.ConceptTextGenDeclaration" />
+    <concept id="b83431fe-5c8f-40bc-8a36-65e25f4dd253/1233748055915" name="jetbrains.mps.lang.textGen.structure.NodeParameter" />
+    <concept id="b83431fe-5c8f-40bc-8a36-65e25f4dd253/1233749247888" name="jetbrains.mps.lang.textGen.structure.GenerateTextDeclaration" />
     <concept id="b83431fe-5c8f-40bc-8a36-65e25f4dd253/1237305208784" name="jetbrains.mps.lang.textGen.structure.NewLineAppendPart" />
-    <refRole id="7866978e-a0f0-4cc7-81bc-4d213d9375e1/1138056282393/1138056546658" name="link" />
+    <concept id="b83431fe-5c8f-40bc-8a36-65e25f4dd253/1237305334312" name="jetbrains.mps.lang.textGen.structure.NodeAppendPart" />
+    <concept id="b83431fe-5c8f-40bc-8a36-65e25f4dd253/1237305491868" name="jetbrains.mps.lang.textGen.structure.CollectionAppendPart" />
+    <concept id="b83431fe-5c8f-40bc-8a36-65e25f4dd253/1237306079178" name="jetbrains.mps.lang.textGen.structure.AppendOperation" />
     <refRole id="7866978e-a0f0-4cc7-81bc-4d213d9375e1/1138056022639/1138056395725" name="property" />
+    <refRole id="7866978e-a0f0-4cc7-81bc-4d213d9375e1/1138056282393/1138056546658" name="link" />
     <refRole id="b83431fe-5c8f-40bc-8a36-65e25f4dd253/1233670071145/1233670257997" name="conceptDeclaration" />
-    <childRole id="b83431fe-5c8f-40bc-8a36-65e25f4dd253/1237305334312/1237305790512" name="value" />
-    <childRole id="b83431fe-5c8f-40bc-8a36-65e25f4dd253/1233670071145/1233749296504" name="textGenBlock" />
-    <childRole id="b83431fe-5c8f-40bc-8a36-65e25f4dd253/1237306079178/1237306115446" name="part" />
+    <childRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123136/1068581517665" name="statement" />
     <childRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1137021947720/1137022507850" name="body" />
     <childRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1197027756228/1197027771414" name="operand" />
-    <childRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123136/1068581517665" name="statement" />
-    <childRole id="b83431fe-5c8f-40bc-8a36-65e25f4dd253/1237305491868/1237305945551" name="list" />
     <childRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1197027756228/1197027833540" name="operation" />
+    <childRole id="b83431fe-5c8f-40bc-8a36-65e25f4dd253/1233670071145/1233749296504" name="textGenBlock" />
+    <childRole id="b83431fe-5c8f-40bc-8a36-65e25f4dd253/1237305334312/1237305790512" name="value" />
+    <childRole id="b83431fe-5c8f-40bc-8a36-65e25f4dd253/1237305491868/1237305945551" name="list" />
+    <childRole id="b83431fe-5c8f-40bc-8a36-65e25f4dd253/1237306079178/1237306115446" name="part" />
   </debugInfo>
   <languages>
     <use id="b83431fe-5c8f-40bc-8a36-65e25f4dd253" version="-1" index="yw37" />

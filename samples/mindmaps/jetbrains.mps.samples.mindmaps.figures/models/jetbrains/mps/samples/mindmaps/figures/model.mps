@@ -3,8 +3,8 @@
   <persistence version="9" />
   <debugInfo>
     <lang id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" />
-    <lang id="d7722d50-4b93-4c3a-ae06-1903d05f95a7" name="jetbrains.mps.lang.editor.figures" />
     <lang id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" />
+    <lang id="d7722d50-4b93-4c3a-ae06-1903d05f95a7" name="jetbrains.mps.lang.editor.figures" />
     <model ref="f:java_stub#67b3c41d-58b3-4756-b971-30bf8a9d63e6#jetbrains.jetpad.cell(jetbrains.jetpad/jetbrains.jetpad.cell@java_stub)" name="jetbrains.jetpad.cell@java_stub" />
     <model ref="f:java_stub#67b3c41d-58b3-4756-b971-30bf8a9d63e6#jetbrains.jetpad.event(jetbrains.jetpad/jetbrains.jetpad.event@java_stub)" name="jetbrains.jetpad.event@java_stub" />
     <model ref="f:java_stub#67b3c41d-58b3-4756-b971-30bf8a9d63e6#jetbrains.jetpad.model.property(jetbrains.jetpad/jetbrains.jetpad.model.property@java_stub)" name="jetbrains.jetpad.model.property@java_stub" />
@@ -18,8 +18,8 @@
   </debugInfo>
   <languages>
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" version="-1" index="vg0i" />
-    <use id="d7722d50-4b93-4c3a-ae06-1903d05f95a7" version="-1" index="jxzi" />
     <use id="fd392034-7849-419d-9071-12563d152375" version="-1" index="cakq" />
+    <use id="d7722d50-4b93-4c3a-ae06-1903d05f95a7" version="-1" index="jxzi" />
   </languages>
   <imports>
     <import index="racr" ref="f:java_stub#67b3c41d-58b3-4756-b971-30bf8a9d63e6#jetbrains.jetpad.cell(jetbrains.jetpad/jetbrains.jetpad.cell@java_stub)" />

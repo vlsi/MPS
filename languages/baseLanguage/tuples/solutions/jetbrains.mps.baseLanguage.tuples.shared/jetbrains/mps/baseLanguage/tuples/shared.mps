@@ -5,17 +5,17 @@
     <lang id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" />
     <lang id="a247e09e-2435-45ba-b8d2-07e93feba96a" name="jetbrains.mps.baseLanguage.tuples" />
     <lang id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core" />
-    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1109283449304" name="jetbrains.mps.baseLanguage.structure.TypeVariableReference" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1109279763828" name="jetbrains.mps.baseLanguage.structure.TypeVariableDeclaration" />
+    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1109283449304" name="jetbrains.mps.baseLanguage.structure.TypeVariableReference" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1146644602865" name="jetbrains.mps.baseLanguage.structure.PublicVisibility" />
-    <concept id="a247e09e-2435-45ba-b8d2-07e93feba96a/1239462176079" name="jetbrains.mps.baseLanguage.tuples.structure.NamedTupleComponentDeclaration" />
     <concept id="a247e09e-2435-45ba-b8d2-07e93feba96a/1239360506533" name="jetbrains.mps.baseLanguage.tuples.structure.NamedTupleDeclaration" />
-    <property id="a247e09e-2435-45ba-b8d2-07e93feba96a/1239462176079/1240400839614" name="final" />
+    <concept id="a247e09e-2435-45ba-b8d2-07e93feba96a/1239462176079" name="jetbrains.mps.baseLanguage.tuples.structure.NamedTupleComponentDeclaration" />
     <property id="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001" name="name" />
+    <property id="a247e09e-2435-45ba-b8d2-07e93feba96a/1239462176079/1240400839614" name="final" />
     <refRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1109283449304/1109283546497" name="typeVariableDeclaration" />
-    <childRole id="a247e09e-2435-45ba-b8d2-07e93feba96a/1239462176079/1239462974287" name="type" />
-    <childRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1178549954367/1178549979242" name="visibility" />
     <childRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1109279851642/1109279881614" name="typeVariableDeclaration" />
+    <childRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1178549954367/1178549979242" name="visibility" />
+    <childRole id="a247e09e-2435-45ba-b8d2-07e93feba96a/1239462176079/1239462974287" name="type" />
     <childRole id="a247e09e-2435-45ba-b8d2-07e93feba96a/1239360506533/1239529553065" name="component" />
   </debugInfo>
   <languages>

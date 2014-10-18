@@ -2,35 +2,35 @@
 <model ref="r:46f53b30-44a8-4c39-ba0f-5abf40394bee(sandboxModel2)">
   <persistence version="9" />
   <debugInfo>
-    <lang id="7c9e2807-94ad-4afc-adf0-aaee45eb2895" name="jetbrains.mps.samples.lambdaCalculus" />
     <lang id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core" />
-    <concept id="7c9e2807-94ad-4afc-adf0-aaee45eb2895/6645816968628162282" name="jetbrains.mps.samples.lambdaCalculus.structure.MultiplyOperation" />
-    <concept id="7c9e2807-94ad-4afc-adf0-aaee45eb2895/3978364766705449817" name="jetbrains.mps.samples.lambdaCalculus.structure.ParenthesisExpression" />
-    <concept id="7c9e2807-94ad-4afc-adf0-aaee45eb2895/6645816968628162284" name="jetbrains.mps.samples.lambdaCalculus.structure.SubtractOperation" />
-    <concept id="7c9e2807-94ad-4afc-adf0-aaee45eb2895/8360767178776325736" name="jetbrains.mps.samples.lambdaCalculus.structure.LetVariable" />
-    <concept id="7c9e2807-94ad-4afc-adf0-aaee45eb2895/4939219901991602079" name="jetbrains.mps.samples.lambdaCalculus.structure.LetExpression" />
-    <concept id="7c9e2807-94ad-4afc-adf0-aaee45eb2895/4939219901992083820" name="jetbrains.mps.samples.lambdaCalculus.structure.LetRef" />
+    <lang id="7c9e2807-94ad-4afc-adf0-aaee45eb2895" name="jetbrains.mps.samples.lambdaCalculus" />
     <concept id="7c9e2807-94ad-4afc-adf0-aaee45eb2895/1934341835352312169" name="jetbrains.mps.samples.lambdaCalculus.structure.AddOperation" />
+    <concept id="7c9e2807-94ad-4afc-adf0-aaee45eb2895/3978364766705449817" name="jetbrains.mps.samples.lambdaCalculus.structure.ParenthesisExpression" />
+    <concept id="7c9e2807-94ad-4afc-adf0-aaee45eb2895/4022026349914673024" name="jetbrains.mps.samples.lambdaCalculus.structure.LambdaAbstraction" />
+    <concept id="7c9e2807-94ad-4afc-adf0-aaee45eb2895/4022026349914673025" name="jetbrains.mps.samples.lambdaCalculus.structure.AbstractionVariable" />
+    <concept id="7c9e2807-94ad-4afc-adf0-aaee45eb2895/4022026349914762709" name="jetbrains.mps.samples.lambdaCalculus.structure.NumericConstant" />
     <concept id="7c9e2807-94ad-4afc-adf0-aaee45eb2895/4022026349914762717" name="jetbrains.mps.samples.lambdaCalculus.structure.LambdaApplication" />
     <concept id="7c9e2807-94ad-4afc-adf0-aaee45eb2895/4022026349915669385" name="jetbrains.mps.samples.lambdaCalculus.structure.Program" />
     <concept id="7c9e2807-94ad-4afc-adf0-aaee45eb2895/4022026349915821199" name="jetbrains.mps.samples.lambdaCalculus.structure.AbstractionVarRef" />
-    <concept id="7c9e2807-94ad-4afc-adf0-aaee45eb2895/4022026349914762709" name="jetbrains.mps.samples.lambdaCalculus.structure.NumericConstant" />
-    <concept id="7c9e2807-94ad-4afc-adf0-aaee45eb2895/4022026349914673025" name="jetbrains.mps.samples.lambdaCalculus.structure.AbstractionVariable" />
-    <concept id="7c9e2807-94ad-4afc-adf0-aaee45eb2895/4022026349914673024" name="jetbrains.mps.samples.lambdaCalculus.structure.LambdaAbstraction" />
-    <property id="7c9e2807-94ad-4afc-adf0-aaee45eb2895/4022026349914762709/4022026349914762710" name="value" />
+    <concept id="7c9e2807-94ad-4afc-adf0-aaee45eb2895/4939219901991602079" name="jetbrains.mps.samples.lambdaCalculus.structure.LetExpression" />
+    <concept id="7c9e2807-94ad-4afc-adf0-aaee45eb2895/4939219901992083820" name="jetbrains.mps.samples.lambdaCalculus.structure.LetRef" />
+    <concept id="7c9e2807-94ad-4afc-adf0-aaee45eb2895/6645816968628162282" name="jetbrains.mps.samples.lambdaCalculus.structure.MultiplyOperation" />
+    <concept id="7c9e2807-94ad-4afc-adf0-aaee45eb2895/6645816968628162284" name="jetbrains.mps.samples.lambdaCalculus.structure.SubtractOperation" />
+    <concept id="7c9e2807-94ad-4afc-adf0-aaee45eb2895/8360767178776325736" name="jetbrains.mps.samples.lambdaCalculus.structure.LetVariable" />
     <property id="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001" name="name" />
+    <property id="7c9e2807-94ad-4afc-adf0-aaee45eb2895/4022026349914762709/4022026349914762710" name="value" />
     <refRole id="7c9e2807-94ad-4afc-adf0-aaee45eb2895/5249919352014727944/5249919352014732020" name="variable" />
-    <childRole id="7c9e2807-94ad-4afc-adf0-aaee45eb2895/4939219901991602079/4939219901991602080" name="value" />
-    <childRole id="7c9e2807-94ad-4afc-adf0-aaee45eb2895/4939219901991602079/8360767178776358704" name="variable" />
-    <childRole id="7c9e2807-94ad-4afc-adf0-aaee45eb2895/4939219901991602079/4939219901991602081" name="expression" />
-    <childRole id="7c9e2807-94ad-4afc-adf0-aaee45eb2895/1934341835352312155/1934341835352312157" name="right" />
     <childRole id="7c9e2807-94ad-4afc-adf0-aaee45eb2895/1934341835352312155/1934341835352312156" name="left" />
-    <childRole id="7c9e2807-94ad-4afc-adf0-aaee45eb2895/4022026349914673024/4022026349914762693" name="body" />
+    <childRole id="7c9e2807-94ad-4afc-adf0-aaee45eb2895/1934341835352312155/1934341835352312157" name="right" />
     <childRole id="7c9e2807-94ad-4afc-adf0-aaee45eb2895/3978364766705449817/3978364766705449818" name="expression" />
-    <childRole id="7c9e2807-94ad-4afc-adf0-aaee45eb2895/4022026349914762717/4022026349914762721" name="argument" />
     <childRole id="7c9e2807-94ad-4afc-adf0-aaee45eb2895/4022026349914673024/4022026349914762681" name="variable" />
+    <childRole id="7c9e2807-94ad-4afc-adf0-aaee45eb2895/4022026349914673024/4022026349914762693" name="body" />
     <childRole id="7c9e2807-94ad-4afc-adf0-aaee45eb2895/4022026349914762717/4022026349914762720" name="function" />
+    <childRole id="7c9e2807-94ad-4afc-adf0-aaee45eb2895/4022026349914762717/4022026349914762721" name="argument" />
     <childRole id="7c9e2807-94ad-4afc-adf0-aaee45eb2895/4022026349915669385/4022026349915669386" name="expression" />
+    <childRole id="7c9e2807-94ad-4afc-adf0-aaee45eb2895/4939219901991602079/4939219901991602080" name="value" />
+    <childRole id="7c9e2807-94ad-4afc-adf0-aaee45eb2895/4939219901991602079/4939219901991602081" name="expression" />
+    <childRole id="7c9e2807-94ad-4afc-adf0-aaee45eb2895/4939219901991602079/8360767178776358704" name="variable" />
   </debugInfo>
   <languages>
     <use id="7c9e2807-94ad-4afc-adf0-aaee45eb2895" version="-1" index="lf28" />

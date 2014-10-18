@@ -5,9 +5,9 @@
     <lang id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" />
     <lang id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" />
     <lang id="c0080a47-7e37-4558-bee9-9ae18e690549" name="jetbrains.mps.lang.extension" />
+    <concept id="83888646-71ce-4f1c-9c53-c54016f6ad4f/1151688443754" name="jetbrains.mps.baseLanguage.collections.structure.ListType" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1225271177708" name="jetbrains.mps.baseLanguage.structure.StringType" />
     <concept id="c0080a47-7e37-4558-bee9-9ae18e690549/3729007189729192406" name="jetbrains.mps.lang.extension.structure.ExtensionPointDeclaration" />
-    <concept id="83888646-71ce-4f1c-9c53-c54016f6ad4f/1151688443754" name="jetbrains.mps.baseLanguage.collections.structure.ListType" />
     <property id="c0080a47-7e37-4558-bee9-9ae18e690549/3729007189729192406/5911785528834333590" name="extensionName" />
     <childRole id="83888646-71ce-4f1c-9c53-c54016f6ad4f/1151688443754/1151688676805" name="elementType" />
     <childRole id="c0080a47-7e37-4558-bee9-9ae18e690549/3729007189729192406/8029776554053057803" name="objectType" />

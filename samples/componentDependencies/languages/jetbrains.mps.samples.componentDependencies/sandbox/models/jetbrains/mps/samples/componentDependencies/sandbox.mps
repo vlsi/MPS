@@ -2,31 +2,31 @@
 <model ref="r:436384fb-e97b-487f-9379-826737776648(cg.demo.stateMachine.sandbox)">
   <persistence version="9" />
   <debugInfo>
-    <lang id="3066bc09-2438-4300-a936-5bd59917ae9b" name="jetbrains.mps.samples.componentDependencies" />
-    <lang id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core" />
     <lang id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" />
+    <lang id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core" />
+    <lang id="3066bc09-2438-4300-a936-5bd59917ae9b" name="jetbrains.mps.samples.componentDependencies" />
     <model ref="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" name="java.util@java_stub" />
-    <concept id="3066bc09-2438-4300-a936-5bd59917ae9b/6223439730610762144" name="jetbrains.mps.samples.componentDependencies.structure.Dependency" />
     <concept id="3066bc09-2438-4300-a936-5bd59917ae9b/6223439730610283563" name="jetbrains.mps.samples.componentDependencies.structure.ComponentSet" />
     <concept id="3066bc09-2438-4300-a936-5bd59917ae9b/6223439730610336068" name="jetbrains.mps.samples.componentDependencies.structure.Component" />
+    <concept id="3066bc09-2438-4300-a936-5bd59917ae9b/6223439730610762144" name="jetbrains.mps.samples.componentDependencies.structure.Dependency" />
     <concept id="3066bc09-2438-4300-a936-5bd59917ae9b/6223439730610790725" name="jetbrains.mps.samples.componentDependencies.structure.OutPort" />
     <concept id="3066bc09-2438-4300-a936-5bd59917ae9b/6223439730610790758" name="jetbrains.mps.samples.componentDependencies.structure.InPort" />
-    <property id="3066bc09-2438-4300-a936-5bd59917ae9b/6223439730610336068/8153794773743967147" name="subsystem" />
-    <property id="3066bc09-2438-4300-a936-5bd59917ae9b/6223439730610336068/6223439730610789197" name="x" />
-    <property id="3066bc09-2438-4300-a936-5bd59917ae9b/6223439730610336068/8153794773743967112" name="width" />
-    <property id="3066bc09-2438-4300-a936-5bd59917ae9b/6223439730610336068/6223439730610789199" name="y" />
-    <property id="3066bc09-2438-4300-a936-5bd59917ae9b/6223439730610336068/8153794773743967119" name="heigh" />
     <property id="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001" name="name" />
+    <property id="3066bc09-2438-4300-a936-5bd59917ae9b/6223439730610336068/6223439730610789197" name="x" />
+    <property id="3066bc09-2438-4300-a936-5bd59917ae9b/6223439730610336068/6223439730610789199" name="y" />
+    <property id="3066bc09-2438-4300-a936-5bd59917ae9b/6223439730610336068/8153794773743967112" name="width" />
+    <property id="3066bc09-2438-4300-a936-5bd59917ae9b/6223439730610336068/8153794773743967119" name="heigh" />
+    <property id="3066bc09-2438-4300-a936-5bd59917ae9b/6223439730610336068/8153794773743967147" name="subsystem" />
     <refRole id="3066bc09-2438-4300-a936-5bd59917ae9b/6223439730610762144/6223439730610763348" name="to" />
-    <childRole id="3066bc09-2438-4300-a936-5bd59917ae9b/6223439730610336068/6223439730610790726" name="out" />
-    <childRole id="3066bc09-2438-4300-a936-5bd59917ae9b/6223439730610336068/6223439730610790722" name="in" />
-    <childRole id="3066bc09-2438-4300-a936-5bd59917ae9b/6223439730610336068/6223439730610336071" name="dep" />
     <childRole id="3066bc09-2438-4300-a936-5bd59917ae9b/6223439730610283563/6223439730610302888" name="component" />
+    <childRole id="3066bc09-2438-4300-a936-5bd59917ae9b/6223439730610336068/6223439730610336071" name="dep" />
+    <childRole id="3066bc09-2438-4300-a936-5bd59917ae9b/6223439730610336068/6223439730610790722" name="in" />
+    <childRole id="3066bc09-2438-4300-a936-5bd59917ae9b/6223439730610336068/6223439730610790726" name="out" />
   </debugInfo>
   <languages>
-    <use id="3066bc09-2438-4300-a936-5bd59917ae9b" version="-1" index="jtxj" />
-    <use id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" version="-1" index="asn4" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" version="-1" index="vg0i" />
+    <use id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" version="-1" index="asn4" />
+    <use id="3066bc09-2438-4300-a936-5bd59917ae9b" version="-1" index="jtxj" />
   </languages>
   <imports>
     <import index="k7g3" ref="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
