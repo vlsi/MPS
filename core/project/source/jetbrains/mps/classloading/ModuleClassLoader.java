@@ -173,7 +173,9 @@ public class ModuleClassLoader extends ClassLoader {
   }
 
   private Class<?> loadFromParent(String name) throws ClassNotFoundException {
-    return getParent().loadClass(name);
+    ClassLoader parent = getParent();
+    if (parent == null) return null;
+    return parent.loadClass(name);
   }
 
   @Override
