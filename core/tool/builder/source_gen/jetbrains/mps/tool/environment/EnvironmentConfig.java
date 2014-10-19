@@ -11,6 +11,7 @@ import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.LinkedHashMap;
 import java.util.Collections;
 import jetbrains.mps.tool.builder.util.PathManager;
+import jetbrains.mps.tool.common.util.FileUtil;
 
 public class EnvironmentConfig {
   private final List<String> myPlugins = ListSequence.fromList(new ArrayList<String>());
@@ -59,7 +60,13 @@ public class EnvironmentConfig {
     for (String path : PathManager.getBootstrapPaths()) {
       addLib(new File(path));
     }
-    return addLib(new File(PathManager.getLanguagesPath()));
+    addLib(new File(PathManager.getLanguagesPath()));
+    // TODO: remove it after there are no dependencies from core up to workbench 
+    File workbenchPath = FileUtil.findFirstThatExist(PathManager.getHomePath() + File.separator + "workbench");
+    if (workbenchPath != null) {
+      addLib(workbenchPath);
+    }
+    return this;
   }
 
   public static EnvironmentConfig defaultEnvironment() {

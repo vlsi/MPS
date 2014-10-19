@@ -20,6 +20,7 @@
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
     <classNode dependClassName="jetbrains.mps.tool.builder.util.PathManager" />
+    <classNode dependClassName="jetbrains.mps.tool.common.util.FileUtil" />
   </dependency>
   <dependency className="jetbrains.mps.tool.environment.EnvironmentUtils" file="EnvironmentUtils.java">
     <classNode dependClassName="java.io.File" />
