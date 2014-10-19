@@ -2974,7 +2974,7 @@
         <node role="statement" roleId="tpee.1068581517665" type="tpib.LogStatement" typeId="tpib.1167227138527" id="5792583586807805478" nodeInfo="nn">
           <property name="severity" nameId="tpib.1167245565795" value="info" />
           <node role="logExpression" roleId="tpib.1167227463056" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="5792583586807805480" nodeInfo="nn">
-            <property name="value" nameId="tpee.1070475926801" value="Reloading classes" />
+            <property name="value" nameId="tpee.1070475926801" value="Reloading modules" />
           </node>
         </node>
         <node role="statement" roleId="tpee.1068581517665" type="tpee.Statement" typeId="tpee.1068580123157" id="4681254579908065227" nodeInfo="nn" />

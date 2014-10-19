@@ -9,14 +9,15 @@ import org.junit.AfterClass;
 
 public class CoreMpsTest {
   private static Environment CREATED_ENV;
+
   @BeforeClass
   public static void setup() {
-    // todo: CoreTestsSupport 
     CREATED_ENV = MpsTestsSupport.initEnv(false);
     if (CREATED_ENV != null) {
       MpsTestsSupport.makeAllInCreatedEnvironment();
     }
   }
+
   @AfterClass
   public static void cleanup() {
     if (CREATED_ENV != null) {

@@ -108,7 +108,7 @@ public class MpsTestsSupport {
   public static void reloadAllAfterMake(final MPSCompilationResult mpsCompilationResult) throws InterruptedException, InvocationTargetException {
     // TODO: refactor 
     if (LOG.isInfoEnabled()) {
-      LOG.info("Reloading classes");
+      LOG.info("Reloading modules");
     }
 
     // why we need it? because some classes loaded before maker - LanguageRuntime and TypeSystem classes 

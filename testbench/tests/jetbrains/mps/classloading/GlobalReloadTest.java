@@ -30,7 +30,6 @@ import jetbrains.mps.smodel.runtime.LanguageAspectDescriptor;
 import jetbrains.mps.smodel.runtime.MakeAspectDescriptor;
 import jetbrains.mps.smodel.runtime.StructureAspectDescriptor;
 import jetbrains.mps.tool.builder.util.PathManager;
-import org.junit.Assert;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.junit.Test;
 
