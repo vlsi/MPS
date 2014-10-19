@@ -109,8 +109,12 @@ public class ModuleMpsTest extends CoreMpsTest {
     return devKits[0];
   }
 
-  protected void removeModule(SModule module) {
-    ModuleRepositoryFacade.getInstance().removeModuleForced(module);
+  protected void removeModule(final SModule module) {
+    myAccess.runWriteAction(new Runnable() {
+      @Override
+      public void run() {
+        ModuleRepositoryFacade.getInstance().removeModuleForced(module);
+      }
+    });
   }
-
 }

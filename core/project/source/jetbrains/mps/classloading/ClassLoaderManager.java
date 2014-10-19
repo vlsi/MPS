@@ -152,7 +152,13 @@ public class ClassLoaderManager implements CoreComponent {
   @Nullable
   public Class<?> getClass(@NotNull SModule module, String classFqName) {
     assertCanLoad(module);
-    return ((ReloadableModule) module).getClass(classFqName);
+    try {
+      return ((ReloadableModule) module).getClass(classFqName);
+    } catch (ClassNotFoundException e) {
+      // TODO throw ClassNotFound; refactor all usages of getClass()
+      LOG.error("Exception during class loading", e);
+    }
+    return null;
   }
 
   /**
@@ -165,7 +171,12 @@ public class ClassLoaderManager implements CoreComponent {
   @Nullable
   public Class<?> getOwnClass(@NotNull SModule module, String classFqName) {
     assertCanLoad(module);
-    return ((ReloadableModule) module).getOwnClass(classFqName);
+    try {
+      return ((ReloadableModule) module).getOwnClass(classFqName);
+    } catch (ClassNotFoundException ignored) {
+      // TODO throw ClassNotFound; refactor all usages of getOwnClass()
+    }
+    return null;
   }
 
   /**

@@ -47,7 +47,6 @@ import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
 
-import javax.swing.SwingUtilities;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -324,7 +323,7 @@ public class ModuleMaker {
     }
   }
 
-  private String getName(char[][] compoundName) {
+  public static String convertCompoundToFqName(char[][] compoundName) {
     StringBuilder result = new StringBuilder();
     for (int i = 0; i < compoundName.length; i++) {
       char[] part = compoundName[i];
@@ -486,7 +485,7 @@ public class ModuleMaker {
 
       myTracer.push("storing files", false);
       for (ClassFile cf : cr.getClassFiles()) {
-        String fqName = getName(cf.getCompoundName());
+        String fqName = convertCompoundToFqName(cf.getCompoundName());
         String containerClassName = fqName;
         if (containerClassName.contains("$")) {
           int index = containerClassName.indexOf('$');

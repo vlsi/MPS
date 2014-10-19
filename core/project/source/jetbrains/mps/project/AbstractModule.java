@@ -249,10 +249,11 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
 
   //----adding different deps
 
-  public void addDependency(@NotNull SModuleReference moduleRef, boolean reexport) {
+  @Nullable
+  public Dependency addDependency(@NotNull SModuleReference moduleRef, boolean reexport) {
     assertCanChange();
     ModuleDescriptor descriptor = getModuleDescriptor();
-    if (descriptor == null) return;
+    if (descriptor == null) return null;
     for (Dependency dep : descriptor.getDependencies()) {
       if (!EqualUtil.equals(dep.getModuleRef(), moduleRef)) continue;
 
@@ -261,7 +262,7 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
         dependenciesChanged();
         setChanged();
       }
-      return;
+      return null;
     }
 
     Dependency dep = new Dependency();
@@ -271,6 +272,7 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
 
     dependenciesChanged();
     setChanged();
+    return dep;
   }
 
   public void removeDependency(@NotNull Dependency dependency) {

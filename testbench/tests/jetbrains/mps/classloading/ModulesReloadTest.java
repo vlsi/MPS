@@ -167,10 +167,49 @@ public class ModulesReloadTest extends ModuleMpsTest {
         l2.reload();
         Assert.assertTrue(classIsLoadableFromModule(l1));
         removeModule(l3);
-        Assert.assertTrue(classIsLoadableFromModule(l1)); // delayed notifications (!)
+        Assert.assertTrue(classIsLoadableFromModule(l1)); // delayed notification (!)
       }
     });
     Assert.assertTrue(!classIsLoadableFromModule(l1)); // and now it's gone!
+  }
+
+  @Test
+  public void testDisposedDepsIsNotValidForCL() {
+    final Language l1 = createLanguage();
+    addClassTo(l1);
+    final Language l2 = createLanguage();
+    final Language l3 = createLanguage();
+    final Wrapper<Dependency> dep12 = new Wrapper<Dependency>();
+    final Wrapper<Dependency> dep13 = new Wrapper<Dependency>();
+    myAccess.runWriteAction(new Runnable() {
+      @Override
+      public void run() {
+        dep12.setValue(l1.addDependency(l2.getModuleReference(), false));
+        dep13.setValue(l1.addDependency(l3.getModuleReference(), false));
+        l1.reload();
+      }
+    });
+    Assert.assertTrue(classIsLoadableFromModule(l1));
+    removeModule(l2);
+    Assert.assertTrue(!classIsLoadableFromModule(l1));
+    Assert.assertTrue(!classIsLoadableFromModule(l3));
+    removeModule(l3);
+    Assert.assertTrue(!classIsLoadableFromModule(l1));
+    myAccess.runWriteAction(new Runnable() {
+      @Override
+      public void run() {
+        l1.removeDependency(dep12.getValue());
+      }
+    });
+    Assert.assertTrue(!classIsLoadableFromModule(l1)); // still no, obviously
+    myAccess.runWriteAction(new Runnable() {
+      @Override
+      public void run() {
+        l1.removeDependency(dep13.getValue());
+        l1.reload();
+      }
+    });
+    Assert.assertTrue(classIsLoadableFromModule(l1));
   }
 
   /**
@@ -231,6 +270,23 @@ public class ModulesReloadTest extends ModuleMpsTest {
 
     public void setCompileInMps(boolean value) {
       myCompileInMps = value;
+    }
+  }
+
+
+  private static class Wrapper<T> {
+    private T myValue;
+
+    public Wrapper() {
+      myValue = null;
+    }
+
+    public void setValue(T value) {
+      myValue = value;
+    }
+
+    public T getValue() {
+      return myValue;
     }
   }
 }

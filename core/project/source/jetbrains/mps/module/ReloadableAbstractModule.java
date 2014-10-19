@@ -38,30 +38,25 @@ public abstract class ReloadableAbstractModule extends AbstractModule implements
   }
 
   @Nullable
-  protected Class<?> getClass(String classFqName, boolean ownClassOnly) {
+  protected Class<?> getClass(String classFqName, boolean ownClassOnly) throws ClassNotFoundException {
     ClassLoader classLoader = getClassLoader();
     if (classLoader == null) return null;
-    try {
-      String internClassName = InternUtil.intern(classFqName);
-      if (ownClassOnly && classLoader instanceof ModuleClassLoader) {
-        return ((ModuleClassLoader) classLoader).loadOwnClass(internClassName);
-      }
-      return classLoader.loadClass(internClassName);
-    } catch (ClassNotFoundException e) {
-      if (!ownClassOnly) LOG.error("Exception during class loading", e);
+    String internClassName = InternUtil.intern(classFqName);
+    if (ownClassOnly && classLoader instanceof ModuleClassLoader) {
+      return ((ModuleClassLoader) classLoader).loadOwnClass(internClassName);
     }
-    return null;
+    return classLoader.loadClass(internClassName);
   }
 
   @Nullable
   @Override
-  public Class<?> getClass(String classFqName) {
+  public Class<?> getClass(String classFqName) throws ClassNotFoundException {
     return getClass(classFqName, false);
   }
 
   @Nullable
   @Override
-  public Class<?> getOwnClass(String classFqName) {
+  public Class<?> getOwnClass(String classFqName) throws ClassNotFoundException {
     return getClass(classFqName, true);
   }
 

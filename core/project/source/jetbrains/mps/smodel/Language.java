@@ -375,7 +375,7 @@ public class Language extends ReloadableAbstractModule implements MPSModuleOwner
   }
 
   @Nullable
-  protected Class<?> getClass(String classFqName, boolean ownClassOnly) {
+  protected Class<?> getClass(String classFqName, boolean ownClassOnly) throws ClassNotFoundException {
     // first check if class comes from stubs
     if (classFqName.startsWith(getModuleName() + ".stubs.")) {
       try {

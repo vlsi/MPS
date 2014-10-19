@@ -32,11 +32,11 @@ import org.jetbrains.annotations.Nullable;
  */
 public interface ReloadableModule {
   /**
-   * @return a class which can be obtained by calling #getClass from
+   * @return a class which can be obtained by calling #getclass from
    * {@link #getClassLoader()} method.
    */
   @Nullable
-  public Class<?> getClass(String classFqName);
+  public Class<?> getClass(String classFqName) throws ClassNotFoundException;
 
   /**
    * @return a class which can be obtained by calling #getClass from
@@ -47,7 +47,7 @@ public interface ReloadableModule {
    * @see jetbrains.mps.classloading.ModuleClassLoader#loadOwnClass(String)
    */
   @Nullable
-  public Class<?> getOwnClass(String classFqName);
+  public Class<?> getOwnClass(String classFqName) throws ClassNotFoundException;
 
   /**
    * @return the class loader associated with the module.

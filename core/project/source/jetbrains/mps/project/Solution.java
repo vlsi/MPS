@@ -191,14 +191,14 @@ public class Solution extends ReloadableAbstractModule {
 
   @Nullable
   @Override
-  public Class<?> getClass(String classFqName) {
+  public Class<?> getClass(String classFqName) throws ClassNotFoundException {
     if (!canLoad()) return null;
     return super.getClass(classFqName);
   }
 
   @Nullable
   @Override
-  public Class<?> getOwnClass(String classFqName) {
+  public Class<?> getOwnClass(String classFqName) throws ClassNotFoundException {
     if (!canLoad()) return null;
     return super.getOwnClass(classFqName);
   }
