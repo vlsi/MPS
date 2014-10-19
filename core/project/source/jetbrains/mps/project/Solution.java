@@ -148,8 +148,7 @@ public class Solution extends ReloadableAbstractModule {
     for (String path : CommonPaths.getMPSPaths(classType)) {
       final Collection<ModelRootDescriptor> modelRootDescriptors = descriptor.getModelRootDescriptors();
       final ModelRootDescriptor javaStubsModelRoot = ModelRootDescriptor.getJavaStubsModelRoot(path, modelRootDescriptors);
-      if(javaStubsModelRoot != null)
-        modelRootDescriptors.add(javaStubsModelRoot);
+      if (javaStubsModelRoot != null) modelRootDescriptors.add(javaStubsModelRoot);
       descriptor.getAdditionalJavaStubPaths().add(path);
     }
   }

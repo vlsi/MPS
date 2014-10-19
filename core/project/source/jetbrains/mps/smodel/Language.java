@@ -76,7 +76,6 @@ public class Language extends ReloadableAbstractModule implements MPSModuleOwner
 
   private LanguageDescriptor myLanguageDescriptor;
 
-  //todo [MihMuh] this should be replaced in 3.0 (don't know exactly with what now)
   private ClassLoader myStubsLoader = new StubsClassLoader();
 
   protected Language(LanguageDescriptor descriptor, IFile file) {
@@ -314,7 +313,7 @@ public class Language extends ReloadableAbstractModule implements MPSModuleOwner
       }
     }
     setLanguageDescriptor(myLanguageDescriptor);
-    ClassLoaderManager.getInstance().reloadModule(this);
+    this.reload();
   }
 
   public String toString() {
