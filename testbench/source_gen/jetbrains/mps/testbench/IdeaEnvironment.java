@@ -22,7 +22,6 @@ import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.ide.ThreadUtils;
 import com.intellij.ide.IdeEventQueue;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
-import jetbrains.mps.smodel.DefaultModelAccess;
 import com.intellij.openapi.application.ApplicationManager;
 import jetbrains.mps.util.FileUtil;
 import java.io.InputStream;
@@ -152,7 +151,6 @@ public class IdeaEnvironment implements Environment {
       public void run() {
         myContainer.disposeProject(project);
         IdeEventQueue.getInstance().flushQueue();
-        System.gc();
       }
     });
   }
@@ -174,9 +172,6 @@ public class IdeaEnvironment implements Environment {
       disposeProject(project.getProjectFile());
     }
 
-    // todo: fix it in right way 
-    ModelAccess.setInstance(new DefaultModelAccess());
-
     ThreadUtils.runInUIThreadAndWait(new Runnable() {
       @Override
       public void run() {
@@ -187,6 +182,8 @@ public class IdeaEnvironment implements Environment {
         });
       }
     });
+
+    ModelAccess.instance().flushEventQueue();
 
     ActiveEnvironment.deactivateEnvironment(this);
   }

@@ -34,46 +34,49 @@ import org.jetbrains.mps.openapi.module.SModule;
 import org.junit.Test;
 
 import java.io.File;
+import java.util.Arrays;
+import java.util.LinkedHashSet;
 import java.util.Map;
+import java.util.Set;
 import java.util.TreeMap;
 
 import static org.junit.Assert.fail;
 
 public class GlobalReloadTest extends WorkbenchMpsTest {
   private static final String PROJECT_PATH = PathManager.getHomePath();
+  private static final Set<String> IGNORE_LIST = new LinkedHashSet<String>(Arrays.asList("jetbrains.mps.samples.xmlPersistence [solution]"));
 
   private Map<String, String> myModuleNamesToErrors = new TreeMap<String, String>();
 
   @Test
   public void ClassesAreLoaded() {
     Project project = openProject(new File(PROJECT_PATH));
-    try {
-      ModelAccess.instance().runReadAction(new Runnable() {
-        @Override
-        public void run() {
-          for (SModule module : MPSModuleRepository.getInstance().getModules()) {
-            checkModule(module);
-          }
-          if (!myModuleNamesToErrors.isEmpty()) {
-            System.err.println("Some class loading problems for modules:");
-            for (String moduleName : myModuleNamesToErrors.keySet())
-              System.err.println(moduleName + " ::: " + myModuleNamesToErrors.get(moduleName));
-            fail();
-          }
+    ModelAccess.instance().runReadAction(new Runnable() {
+      @Override
+      public void run() {
+        for (SModule module : MPSModuleRepository.getInstance().getModules()) {
+          checkModule(module);
         }
-      });
-    } finally {
-      disposeProject(project);
-    }
+        if (!myModuleNamesToErrors.isEmpty()) {
+          System.err.println("Some class loading problems for modules:");
+          for (String moduleName : myModuleNamesToErrors.keySet()) {
+            System.err.println(moduleName + " ::: " + myModuleNamesToErrors.get(moduleName));
+          }
+          fail();
+        }
+      }
+    });
   }
 
   private boolean checkModule(SModule module) {
+    if (isIgnored(module.toString())) return true;
     ClassLoaderManager classLoaderManager = ClassLoaderManager.getInstance();
-    if (classLoaderManager.canLoad(module))
+    if (classLoaderManager.canLoad(module)) {
       if (classLoaderManager.getClassLoader(module) == null) {
         myModuleNamesToErrors.put(module.toString(), "No class loader for the module");
         return false;
       }
+    }
 
     if (module instanceof Language)
       try {
@@ -83,10 +86,15 @@ public class GlobalReloadTest extends WorkbenchMpsTest {
       } catch (AssertionFailedException e) {
         myModuleNamesToErrors.put(module.toString(), e.getMsg());
         return false;
-      } catch (Throwable t) {
-        return false;
       }
     return true;
+  }
+
+  private boolean isIgnored(String module) {
+    for (String ignored : IGNORE_LIST) {
+      if (module.equals(ignored)) return true;
+    }
+    return false;
   }
 
   private void checkIsRegistered(Language language) throws AssertionFailedException {

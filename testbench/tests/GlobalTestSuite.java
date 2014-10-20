@@ -14,7 +14,6 @@
  * limitations under the License.
  */
 
-import jetbrains.mps.classloading.GlobalReloadTest;
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
 
@@ -31,7 +30,7 @@ import org.junit.runners.Suite;
     jetbrains.mps.ide.blame.command.YouTrackURLTest.class,
     jetbrains.mps.ide.platform.dependencyViewer.DependenciesViewerTest.class,
     jetbrains.mps.classloading.ClassLoadingDescriptorChangedTest.class,
-    GlobalReloadTest.class,
+    jetbrains.mps.classloading.GlobalReloadTest.class,
     jetbrains.mps.ide.messages.MessageViewListModelTest.class,
     jetbrains.mps.ide.depanalyzer.ModuleDependenciesTest.class,
     jetbrains.mps.make.TestMakeOnRealProject.class,

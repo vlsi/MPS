@@ -21,7 +21,8 @@ public class CoreMpsTest {
   @AfterClass
   public static void cleanup() {
     if (CREATED_ENV != null) {
-      CREATED_ENV.dispose();
+      // FIXME in suites we need this environment later, cannot dispose it 
+      // <node> 
     }
   }
 }

@@ -103,10 +103,15 @@ public class ModulesReloadTest extends ModuleMpsTest {
 
   @Test
   public void testPluginSolutionIsLoadable() {
-    Solution solution = createSolution();
+    final Solution solution = createSolution();
     addClassTo(solution);
     solution.getModuleDescriptor().setKind(SolutionKind.PLUGIN_CORE);
-    solution.reload();
+    myAccess.runWriteAction(new Runnable() {
+      @Override
+      public void run() {
+        solution.reload();
+      }
+    });
     Assert.assertTrue(classIsLoadableFromModule(solution));
   }
 
