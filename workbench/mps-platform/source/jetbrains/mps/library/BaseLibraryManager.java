@@ -64,12 +64,6 @@ public abstract class BaseLibraryManager implements BaseComponent, Configurable,
   @Override
   public void disposeComponent() {
     LibraryInitializer.getInstance().removeContributor(this);
-    myRepository.getModelAccess().runWriteInEDT(new Runnable() {
-      @Override
-      public void run() {
-        LibraryInitializer.getInstance().update();
-      }
-    });
   }
 
   //-------libraries

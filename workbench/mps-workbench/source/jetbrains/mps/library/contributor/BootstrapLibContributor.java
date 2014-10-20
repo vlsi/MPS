@@ -67,15 +67,14 @@ public class BootstrapLibContributor implements LibraryContributor, ApplicationC
     });
   }
 
+  /**
+   * FIXME
+   * Cannot perform update because with "invokeLaterInEDT" LibraryInitializer gets disposed!
+   * Maybe we need to update only at initComponent, but still.
+   */
   @Override
   public void disposeComponent() {
     LibraryInitializer.getInstance().removeContributor(this);
-    myRepository.getModelAccess().runWriteInEDT(new Runnable() {
-      @Override
-      public void run() {
-        LibraryInitializer.getInstance().update(false);
-      }
-    });
   }
 
   @Override

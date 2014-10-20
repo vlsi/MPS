@@ -54,12 +54,6 @@ public class PluginLibrariesContributor implements LibraryContributor, Applicati
   @Override
   public void disposeComponent() {
     LibraryInitializer.getInstance().removeContributor(this);
-    myRepository.getModelAccess().runWriteInEDT(new Runnable() {
-      @Override
-      public void run() {
-        LibraryInitializer.getInstance().update(false);
-      }
-    });
   }
 
   @Override
