@@ -43,6 +43,7 @@
     <checkinHandlerFactory
             implementation="jetbrains.mps.ide.modelchecker.platform.actions.ModelCheckerCheckinHandler$ModelCheckerCheckinHandlerFactory"/>
     <mps.ModelValidator implementation="jetbrains.mps.ide.modelchecker.ModelValidatorAdapter"/>
+    <applicationConfigurable groupId="build" groupWeight="160" instance="jetbrains.mps.ide.modelchecker.platform.actions.ModelCheckerPreferencesPage" id="preferences.modelCheckerSettings"/>
 
     <errorHandler implementation="jetbrains.mps.ide.blame.CharismaReporter"/>
   </extensions>

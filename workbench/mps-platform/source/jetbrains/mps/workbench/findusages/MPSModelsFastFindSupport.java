@@ -20,6 +20,8 @@ import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.psi.impl.cache.impl.id.IdIndex;
 import com.intellij.psi.impl.cache.impl.id.IdIndexEntry;
 import com.intellij.util.indexing.FileBasedIndex;
+import jetbrains.mps.persistence.IdHelper;
+import jetbrains.mps.smodel.adapter.structure.concept.SConceptAdapter;
 import org.jetbrains.mps.openapi.model.EditableSModel;
 import jetbrains.mps.extapi.persistence.FileDataSource;
 import jetbrains.mps.findUsages.FindUsagesUtil;
@@ -89,7 +91,7 @@ public class MPSModelsFastFindSupport implements ApplicationComponent, FindUsage
     MultiMap<SModel, SAbstractConcept> candidates = findCandidates(scope, concepts, processedConsumer, new Mapper<SAbstractConcept, String>() {
       @Override
       public String value(SAbstractConcept key) {
-        return key.getName();
+        return IdHelper.getConceptId(key).getConceptId()+"";
       }
     });
     for (Entry<SModel, Collection<SAbstractConcept>> candidate : candidates.entrySet()) {

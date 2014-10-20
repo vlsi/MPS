@@ -44,11 +44,6 @@ public class CodeStyleSettingsConfigurable implements SearchableConfigurable, Co
   }
 
   @Override
-  public Configurable[] getConfigurables() {
-    return new Configurable[0];
-  }
-
-  @Override
   public JComponent createComponent() {
     return getPage().getComponent();
   }
@@ -98,4 +93,8 @@ public class CodeStyleSettingsConfigurable implements SearchableConfigurable, Co
     return null;
   }
 
+  @Override
+  public Configurable[] getConfigurables() {
+    return new Configurable[0];
+  }
 }

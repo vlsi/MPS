@@ -66,13 +66,9 @@
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="javax.swing.Icon" />
     <classNode dependClassName="javax.swing.JComponent" />
-    <classNode dependClassName="jetbrains.mps.ide.icons.IdeIcons" />
     <classNode dependClassName="jetbrains.mps.workbench.dialogs.project.properties.project.ProjectPropertiesComponent" />
     <classNode dependClassName="org.jetbrains.annotations.Nls" />
-    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
-    <classNode extendsClassName="com.intellij.openapi.components.ProjectComponent" />
     <classNode extendsClassName="com.intellij.openapi.options.SearchableConfigurable" />
   </dependency>
 </dependenciesRoot>
