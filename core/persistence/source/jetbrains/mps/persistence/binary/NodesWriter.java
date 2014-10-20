@@ -21,7 +21,6 @@ import jetbrains.mps.smodel.DynamicReference;
 import jetbrains.mps.smodel.DynamicReference.DynamicReferenceOrigin;
 import jetbrains.mps.smodel.StaticReference;
 import jetbrains.mps.smodel.adapter.structure.concept.SConceptAdapterByName;
-import jetbrains.mps.smodel.persistence.def.v9.IdInfoCollector;
 import jetbrains.mps.smodel.runtime.ConceptKind;
 import jetbrains.mps.smodel.runtime.StaticScope;
 import jetbrains.mps.util.IterableUtil;
@@ -145,8 +144,8 @@ public class NodesWriter {
       } else {
         throw new IOException("cannot store reference: " + reference.toString());
       }
-      os.writeString(IdHelper.getRefId(reference.getReferenceLink()).serialize());
-      os.writeString(reference.getReferenceLink().getRoleName());
+      os.writeString(IdHelper.getRefId(reference.getLink()).serialize());
+      os.writeString(reference.getLink().getRoleName());
       if (targetModelReference != null && targetModelReference.equals(myModelReference)) {
         os.writeByte(17);
       } else {

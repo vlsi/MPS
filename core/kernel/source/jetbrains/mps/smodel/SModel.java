@@ -645,7 +645,7 @@ public class SModel implements SModelData {
         }
 
         for (SReference ref : n.getReferences()) {
-          myUsedLanguages.add(ref.getReferenceLink().getContainingConcept().getLanguage());
+          myUsedLanguages.add(ref.getLink().getContainingConcept().getLanguage());
         }
       }
     }

@@ -18,6 +18,7 @@ package jetbrains.mps.smodel;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.util.InternUtil;
 import jetbrains.mps.util.WeakSet;
+import jetbrains.mps.util.annotation.ToRemove;
 import org.apache.log4j.LogManager;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -108,10 +109,13 @@ public abstract class SReference implements org.jetbrains.mps.openapi.model.SRef
   }
 
   @Override
+  @ToRemove(version = 3.2)
   public String getRole() {
     return myRoleId.getRoleName();
   }
 
+  @Deprecated
+  @ToRemove(version = 3.2)
   public void setRole(String newRole) {
     if (!(mySourceNode instanceof SReferenceLinkAdapterProvider)) {
       throw new IllegalStateException();
@@ -120,7 +124,7 @@ public abstract class SReference implements org.jetbrains.mps.openapi.model.SRef
   }
 
   @Override
-  public SReferenceLink getReferenceLink() {
+  public SReferenceLink getLink() {
     return myRoleId;
   }
 
@@ -134,11 +138,6 @@ public abstract class SReference implements org.jetbrains.mps.openapi.model.SRef
   @Override
   public final SNode getTargetNode() {
     return getTargetNode_internal();
-  }
-
-  @Override
-  public SReferenceLink getLink() {
-    return (SReferenceLink) getSourceNode().getConcept().getLink(getRole());
   }
 
   @Override

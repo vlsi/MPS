@@ -54,7 +54,7 @@ public class IdInfoCollector {
         }
 
         for (SReference ref : n.getReferences()) {
-          SReferenceLinkId refId = IdHelper.getRefId(ref.getReferenceLink());
+          SReferenceLinkId refId = IdHelper.getRefId(ref.getLink());
           refIds.put(refId, ref.getRole());
           //SConceptId refConceptId = refId.getConceptId();
           //conceptIds.put(refConceptId, getConceptName(refConceptId));

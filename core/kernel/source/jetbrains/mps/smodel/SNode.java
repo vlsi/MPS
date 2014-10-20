@@ -856,7 +856,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
     SReference toDelete = null;
     if (myReferences != null) {
       for (SReference reference : myReferences) {
-        if (!reference.getReferenceLink().equals(role)) continue;
+        if (!reference.getLink().equals(role)) continue;
         toDelete = reference;
         break;
       }
@@ -898,7 +898,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
 
     SReference result = null;
     for (SReference reference : myReferences) {
-      if (reference.getReferenceLink().equals(role)) {
+      if (reference.getLink().equals(role)) {
         result = reference;
         break;
       }
@@ -914,7 +914,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
 
     SReference toRemove = null;
     for (SReference r : myReferences) {
-      if (!r.getReferenceLink().equals(role)) continue;
+      if (!r.getLink().equals(role)) continue;
       toRemove = r;
       break;
     }
