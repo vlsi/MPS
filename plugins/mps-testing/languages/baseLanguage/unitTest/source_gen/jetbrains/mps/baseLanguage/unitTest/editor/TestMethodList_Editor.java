@@ -78,13 +78,13 @@ public class TestMethodList_Editor extends DefaultNodeEditor {
       }
     }
     private EditorCell createConstant_bc5hcd_a0a(EditorContext editorContext, SNode node) {
-      EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "<<test methods>>");
+      EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
       editorCell.setCellId("Constant_bc5hcd_a0a");
       Style style = new StyleImpl();
-      style.set(StyleAttributes.EDITABLE, false);
+      style.set(StyleAttributes.EDITABLE, true);
       style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.gray));
       editorCell.getStyle().putAll(style);
-      editorCell.setDefaultText("");
+      editorCell.setDefaultText("<<test methods>>");
       return editorCell;
     }
   }
