@@ -1363,13 +1363,13 @@
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/languages-languageDesign-classLike-generator-template" prefix="module/generator/template" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/languages-languageDesign-classLike-languageModels" prefix="module/languageModels" />
     </jar>
-    <copyModels todir="${build.tmp}/customProcessors/copyModels/languages-languageDesign-migration-solutions-runtime-models">
-      <fileset dir="${mps_home}/languages/languageDesign/migration/solutions/runtime/models" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
+    <copyModels todir="${build.tmp}/customProcessors/copyModels/core-migration-runtime-models">
+      <fileset dir="${mps_home}/core/migration-runtime/models" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
     </copyModels>
     <jar destfile="${build.layout}/languages/languageDesign/jetbrains.mps.lang.migration.runtime.jar">
-      <zipfileset file="${mps_home}/languages/languageDesign/migration/solutions/runtime/jetbrains.mps.lang.migration.runtime.msd" prefix="modules/jetbrains.mps.lang.migration.runtime" />
-      <zipfileset dir="${mps_home}/languages/languageDesign/migration/solutions/runtime" includes="icons/**, resources/**" prefix="modules/jetbrains.mps.lang.migration.runtime" />
-      <zipfileset dir="${build.tmp}/customProcessors/copyModels/languages-languageDesign-migration-solutions-runtime-models" prefix="modules/jetbrains.mps.lang.migration.runtime/models" />
+      <zipfileset file="${mps_home}/core/migration-runtime/jetbrains.mps.lang.migration.runtime.msd" prefix="modules/jetbrains.mps.lang.migration.runtime" />
+      <zipfileset dir="${mps_home}/core/migration-runtime" includes="icons/**, resources/**" prefix="modules/jetbrains.mps.lang.migration.runtime" />
+      <zipfileset dir="${build.tmp}/customProcessors/copyModels/core-migration-runtime-models" prefix="modules/jetbrains.mps.lang.migration.runtime/models" />
     </jar>
     <mkdir dir="${build.tmp}/default/jetbrains.mps.lang.migration.jar" />
     <mkdir dir="${build.tmp}/default/jetbrains.mps.lang.migration.jar/META-INF" />
@@ -3219,7 +3219,7 @@
         <module file="${mps_home}/languages/languageDesign/generator/languages/generationContext/jetbrains.mps.lang.generator.generationContext.mpl" bootstrap="true" />
         <module file="${mps_home}/languages/languageDesign/intentions/jetbrains.mps.lang.intentions.mpl" bootstrap="true" />
         <module file="${mps_home}/languages/languageDesign/migration/jetbrains.mps.lang.migration.mpl" bootstrap="true" />
-        <module file="${mps_home}/languages/languageDesign/migration/solutions/runtime/jetbrains.mps.lang.migration.runtime.msd" bootstrap="true" />
+        <module file="${mps_home}/core/migration-runtime/jetbrains.mps.lang.migration.runtime.msd" bootstrap="true" />
         <module file="${mps_home}/languages/languageDesign/pattern/jetbrains.mps.lang.pattern.mpl" bootstrap="true" />
         <module file="${mps_home}/core/kernel/patternRuntime/jetbrains.mps.lang.pattern.runtime.msd" bootstrap="true" />
         <module file="${mps_home}/languages/languageDesign/plugin/jetbrains.mps.lang.plugin.mpl" bootstrap="true" />
@@ -3398,6 +3398,7 @@
         <pathelement path="${mps_home}/core/make-runtime/solutions/jetbrains.mps.make/source_gen" />
         <pathelement path="${mps_home}/core/make-runtime/solutions/jetbrains.mps.make.runtime/source_gen" />
         <pathelement path="${mps_home}/core/make-runtime/solutions/jetbrains.mps.make.facets/source_gen" />
+        <pathelement path="${mps_home}/core/migration-runtime/source_gen" />
         <pathelement path="${mps_home}/core/migration/source" />
         <pathelement path="${mps_home}/core/typesystemEngine/source" />
         <pathelement path="${mps_home}/core/typesystemEngine/source_gen" />
@@ -3448,6 +3449,7 @@
         <pathelement path="${mps_home}/core/make-runtime/solutions/jetbrains.mps.make/source_gen" />
         <pathelement path="${mps_home}/core/make-runtime/solutions/jetbrains.mps.make.runtime/source_gen" />
         <pathelement path="${mps_home}/core/make-runtime/solutions/jetbrains.mps.make.facets/source_gen" />
+        <pathelement path="${mps_home}/core/migration-runtime/source_gen" />
         <pathelement path="${mps_home}/core/migration/source" />
         <pathelement path="${mps_home}/core/typesystemEngine/source" />
         <pathelement path="${mps_home}/core/typesystemEngine/source_gen" />
@@ -3486,6 +3488,7 @@
       <fileset dir="${mps_home}/core/make-runtime/solutions/jetbrains.mps.make/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
       <fileset dir="${mps_home}/core/make-runtime/solutions/jetbrains.mps.make.runtime/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
       <fileset dir="${mps_home}/core/make-runtime/solutions/jetbrains.mps.make.facets/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
+      <fileset dir="${mps_home}/core/migration-runtime/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
       <fileset dir="${mps_home}/core/migration/source" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
       <fileset dir="${mps_home}/core/typesystemEngine/source" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
       <fileset dir="${mps_home}/core/typesystemEngine/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />

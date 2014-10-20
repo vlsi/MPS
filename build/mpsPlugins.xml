@@ -751,12 +751,12 @@
   </target>
   
   <target name="java.compile.migrationAssistant" depends="fetchDependencies">
-    <mkdir dir="${mps_home}/plugins/migrationAssistant/source" />
+    <mkdir dir="${mps_home}/plugins/migrationAssistant/solutions/component/source_gen" />
     <mkdir dir="${build.tmp}/java/out/migrationAssistant" />
     <javac2 destdir="${build.tmp}/java/out/migrationAssistant" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
       <src>
-        <path location="${mps_home}/plugins/migrationAssistant/source" />
+        <path location="${mps_home}/plugins/migrationAssistant/solutions/component/source_gen" />
       </src>
       <classpath>
         <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-core.jar" />
@@ -783,7 +783,7 @@
       </classpath>
     </javac2>
     <copy todir="${build.tmp}/java/out/migrationAssistant">
-      <fileset dir="${mps_home}/plugins/migrationAssistant/source" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
+      <fileset dir="${mps_home}/plugins/migrationAssistant/solutions/component/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
     </copy>
   </target>
   
