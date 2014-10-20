@@ -56,8 +56,6 @@
     <!-- allow mps to open mpr projects from command line -->
     <projectOpenProcessor implementation="jetbrains.mps.ide.project.MpsProjectOpenProcessor"/>
 
-    <applicationConfigurable implementation="com.intellij.application.options.pathMacros.PathMacroConfigurable"/>
-
     <!--For run config creation with action-->
     <getDataRule key="Location"
                  implementationClass="jetbrains.mps.workbench.dataExtraction.runConfig.LocationRule"/>

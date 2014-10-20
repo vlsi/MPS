@@ -92,19 +92,9 @@ public class LibraryManager extends BaseLibraryManager implements ApplicationCom
   //---------------------
 
   @Override
-  @Nls
-  public String getDisplayName() {
-    return "Global Libraries";
-  }
-
-  @Override
   @NotNull
   public String getComponentName() {
     return LibraryManager.class.getSimpleName();
   }
 
-  @Override
-  public String getHelpTopic() {
-    return "Library_Manager_(IDE)";
-  }
 }

@@ -160,7 +160,7 @@
                       serviceImplementation="com.intellij.ide.passwordSafe.config.PasswordSafeSettings"/>
   <applicationService serviceInterface="com.intellij.ide.passwordSafe.PasswordSafe"
                       serviceImplementation="com.intellij.ide.passwordSafe.impl.PasswordSafeImpl"/>
-  <applicationConfigurable instance="com.intellij.ide.passwordSafe.config.PasswordSafeConfigurable" id="application.passwordSafe"
+    <applicationConfigurable parentId="preferences.general" instance="com.intellij.ide.passwordSafe.config.PasswordSafeConfigurable" id="application.passwordSafe"
                            displayName="Passwords"/>
   <applicationService serviceInterface="com.intellij.execution.process.ColoredOutputTypeRegistry"
                       serviceImplementation="com.intellij.execution.process.ColoredOutputTypeRegistry"/>
@@ -191,6 +191,7 @@
                   serviceImplementation="com.intellij.openapi.vcs.readOnlyHandler.ReadonlyStatusHandlerImpl"/>
   <projectService serviceInterface="com.intellij.openapi.startup.StartupManager"
                   serviceImplementation="com.intellij.ide.startup.impl.StartupManagerImpl"/>
+    <projectService serviceImplementation="com.intellij.openapi.project.ProjectTypeService"/>
   <projectService serviceInterface="com.intellij.openapi.ui.MasterDetailsStateService" serviceImplementation="com.intellij.openapi.ui.MasterDetailsStateService"/>
   <projectService serviceInterface="com.intellij.ide.SelectInManager" serviceImplementation="com.intellij.ide.SelectInManager"/>
 
@@ -232,41 +233,43 @@
   <projectService serviceInterface="com.intellij.openapi.vcs.VcsFileListenerContextHelper"
                   serviceImplementation="com.intellij.openapi.vcs.VcsFileListenerContextHelper"/>
 
-  <projectService serviceImplementation="com.intellij.openapi.editor.LazyRangeMarkerFactory"/>
+    <projectService serviceInterface="com.intellij.openapi.editor.LazyRangeMarkerFactory"
+                    serviceImplementation="com.intellij.openapi.editor.impl.LazyRangeMarkerFactoryImpl"/>
 
   <!-- General -->
-  <applicationConfigurable instance="com.intellij.ide.GeneralSettingsConfigurable"/>
+    <applicationConfigurable groupId="appearance" groupWeight="120" key="title.general" bundle="messages.IdeBundle" id="preferences.general" instance="com.intellij.ide.GeneralSettingsConfigurable"/>
 
   <!-- Appearance -->
-  <applicationConfigurable instance="com.intellij.ide.ui.AppearanceConfigurable" id="appearance" key="title.appearance"
+    <applicationConfigurable groupId="appearance" groupWeight="150" instance="com.intellij.ide.ui.AppearanceConfigurable" id="appearance" key="title.appearance"
                            bundle="messages.IdeBundle"/>
 
   <!-- Keymap -->
-  <applicationConfigurable instance="com.intellij.openapi.keymap.impl.ui.KeymapPanel" id="preferences.keymap" key="keymap.display.name"
+    <applicationConfigurable groupId="appearance" groupWeight="140" instance="com.intellij.openapi.keymap.impl.ui.KeymapPanel" id="preferences.keymap" key="keymap.display.name"
                            bundle="messages.KeyMapBundle"/>
-  <applicationConfigurable instance="com.intellij.openapi.keymap.impl.ui.QuickListsPanel" id="reference.idesettings.quicklists"
+    <applicationConfigurable parentId="appearance" instance="com.intellij.openapi.keymap.impl.ui.QuickListsPanel" id="reference.idesettings.quicklists"
                            displayName="Quick Lists"/>
 
   <!-- Customizations -->
-  <applicationConfigurable instance="com.intellij.ide.ui.customization.CustomizationConfigurable" id="preferences.customizations"
+    <applicationConfigurable parentId="appearance" instance="com.intellij.ide.ui.customization.CustomizationConfigurable" id="preferences.customizations"
                            key="title.customizations" bundle="messages.IdeBundle"/>
 
   <!-- Web Browser -->
-  <applicationConfigurable instance="com.intellij.ide.browsers.BrowserSettings" id="reference.settings.ide.settings.web.browsers"
+  <applicationConfigurable groupId="tools" groupWeight="160" instance="com.intellij.ide.browsers.BrowserSettings" id="reference.settings.ide.settings.web.browsers"
                            key="browsers.settings" bundle="messages.IdeBundle"/>
   <applicationService serviceInterface="com.intellij.ide.browsers.WebBrowserManager"
                       serviceImplementation="com.intellij.ide.browsers.WebBrowserManager"/>
 
   <!-- Notifications -->
-  <applicationConfigurable instance="com.intellij.notification.impl.NotificationsConfigurable"/>
+    <applicationConfigurable groupId="appearance" groupWeight="110" displayName="Notifications" instance="com.intellij.notification.impl.NotificationsConfigurable"/>
 
   <!-- Plugins -->
-  <applicationConfigurable instance="com.intellij.ide.plugins.PluginManagerConfigurable" id="preferences.pluginManager"
+    <applicationConfigurable groupId="root" groupWeight="55" instance="com.intellij.ide.plugins.PluginManagerConfigurable" id="preferences.pluginManager"
                            displayName="Plugins"/>
-  <!--MPS Patch: remove updates tab-->
+  <actionFromOptionDescriptorProvider implementation="com.intellij.ide.plugins.InstalledPluginsManagerMain$PluginsActionFromOptionDescriptorProvider"/>
+  <applicationConfigurable parentId="preferences.general" instance="com.intellij.util.net.HttpProxyConfigurable" id="http.proxy" displayName="HTTP Proxy"/>
+  <applicationConfigurable groupId="tools" displayName="Server Certificates" instance="com.intellij.util.net.ssl.CertificateConfigurable"/>
   <!--
-  <applicationConfigurable instance="com.intellij.util.net.HTTPProxySettingsPanel" id="http.proxy" displayName="HTTP Proxy" />
-  <applicationConfigurable instance="com.intellij.openapi.diff.impl.external.DiffOptionsForm" id="diff" displayName="External Diff Tools" />
+  <applicationConfigurable groupId="tools" instance="com.intellij.openapi.diff.impl.external.DiffOptionsForm" id="diff" displayName="External Diff Tools" />
   -->
   <!--<applicationConfigurable instance="com.intellij.ui.switcher.QuickAccessConfigurable"/>-->
 
@@ -277,7 +280,7 @@
   <applicationService serviceInterface="com.intellij.openapi.options.colors.ColorSettingsPages"
                       serviceImplementation="com.intellij.openapi.options.colors.pages.ColorSettingsPagesImpl"/>
 
-  <applicationConfigurable instance="com.intellij.openapi.updateSettings.impl.UpdateSettingsConfigurable" id="preferences.updates"
+    <applicationConfigurable parentId="preferences.general" instance="com.intellij.openapi.updateSettings.impl.UpdateSettingsConfigurable" id="preferences.updates"
                            key="updates.settings.title" bundle="messages.IdeBundle"/>
 
   <applicationService serviceInterface="com.intellij.psi.search.scope.packageSet.PackageSetFactory"
@@ -305,7 +308,7 @@
   <ComponentRoamingType component="PropertiesComponent" type="DISABLED"/>
 
   <!--MPS Patch: we do not need javaee configurable
-  <projectConfigurable instance="com.intellij.javaee.ExternalResourceConfigurable" key="display.name.edit.external.resource"
+  <projectConfigurable groupId="language" groupWeight="110" instance="com.intellij.javaee.ExternalResourceConfigurable" key="display.name.edit.external.resource"
                          bundle="messages.XmlBundle" id="preferences.externalResources">
       <configurable instance="com.intellij.javaee.XMLCatalogConfigurable" displayName="XML Catalog" id="xml.catalog"/>
     </projectConfigurable>
@@ -332,7 +335,7 @@
   <statistics.usagesCollector implementation="com.intellij.internal.statistic.UiInfoUsageCollector"/>
   <statistics.usagesCollector implementation="com.intellij.internal.statistic.JdkInfoUsageCollector"/>
 
-  <applicationConfigurable instance="com.intellij.internal.statistic.configurable.StatisticsConfigurable" id="usage.statistics"
+    <applicationConfigurable parentId="preferences.general" instance="com.intellij.internal.statistic.configurable.StatisticsConfigurable" id="usage.statistics"
                            displayName="Usage Statistics"/>
 
   <virtualFileSystem key="dummy" implementationClass="com.intellij.openapi.vfs.ex.dummy.DummyFileSystem"/>
@@ -353,8 +356,11 @@
                       serviceImplementation="com.intellij.ide.TypePresentationServiceImpl"/>
 
   <postStartupActivity implementation="com.intellij.ide.TipOfTheDayManager"/>
+    <postStartupActivity implementation="com.intellij.ide.actions.PowerSaveModeNotifier"/>
   <postStartupActivity implementation="com.intellij.openapi.actionSystem.impl.ActionPreloader"/>
   <postStartupActivity id="OpenFilesActivity" implementation="com.intellij.openapi.fileEditor.impl.OpenFilesActivity"/>
+
+    <writingAccessProvider implementation="com.intellij.openapi.fileEditor.impl.NonProjectFileWritingAccessProvider" order="first"/>
 
   <patch.extension implementation="com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP"/>
   <patch.extension implementation="com.intellij.openapi.diff.impl.patch.CharsetEP"/>
@@ -370,6 +376,7 @@
 
   <applicationService serviceInterface="org.jetbrains.ide.BuiltInServerManager" serviceImplementation="org.jetbrains.ide.BuiltInServerManagerImpl"/>
   <applicationService serviceInterface="com.intellij.ide.XmlRpcServer" serviceImplementation="com.intellij.ide.XmlRpcServerImpl"/>
+  <applicationService serviceImplementation="com.intellij.util.net.ssl.CertificateManager"/>
   <httpRequestHandler implementation="com.intellij.ide.XmlRpcServerImpl$XmlRpcRequestHandler"/>
   <postStartupActivity implementation="org.jetbrains.ide.BuiltInServerManagerImpl$MyPostStartupActivity"/>
 
@@ -383,6 +390,11 @@
                    implementationClass="com.intellij.codeStyle.InconsistentLineSeparatorsInspection"/>
   <search.topHitProvider implementation="com.intellij.platform.DefaultPlatformTopHitProvider"/>
   <search.topHitProvider implementation="com.intellij.ide.ui.UISimpleSettingsProvider"/>
+    <search.topHitProvider implementation="com.intellij.ide.ui.AppearanceOptionsTopHitProvider"/>
+    <search.topHitProvider implementation="com.intellij.ide.ui.SystemOptionsTopHitProvider"/>
+    <search.topHitProvider implementation="com.intellij.ide.ui.EditorOptionsTopHitProvider"/>
+    <search.topHitProvider implementation="com.intellij.ide.ui.InspectionsTopHitProvider"/>
+    <search.topHitProvider implementation="com.intellij.ide.ui.RegistryOptionsTopHitProvider"/>
   <projectService serviceImplementation="com.intellij.openapi.updateSettings.impl.pluginsAdvertisement.UnknownFeaturesCollector"/>
   <postStartupActivity implementation="com.intellij.openapi.updateSettings.impl.pluginsAdvertisement.PluginsAdvertiser" order="before OpenFilesActivity"/>
   <actionPromoter implementation="com.intellij.ui.ToolbarDecoratorActionPromoter"/>

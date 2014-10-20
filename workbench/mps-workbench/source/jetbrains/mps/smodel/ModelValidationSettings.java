@@ -42,9 +42,7 @@ import java.awt.BorderLayout;
       file = "$APP_CONFIG$/mpsModelValidationSettings.xml"
     )}
 )
-public class ModelValidationSettings implements SearchableConfigurable, PersistentStateComponent<MyState>, ApplicationComponent, IModelValidationSettings {
-
-  private MyPreferencesPage myPreferencesPage;
+public class ModelValidationSettings implements PersistentStateComponent<MyState>, ApplicationComponent, IModelValidationSettings {
 
   private boolean myDisableCheckOpenAPI = true;
   private boolean myDisableTypeWasNotCalculated = true;
@@ -52,21 +50,17 @@ public class ModelValidationSettings implements SearchableConfigurable, Persiste
   public ModelValidationSettings(MPSCoreComponents coreComponents) {
   }
 
-  @Override
-  public JComponent createComponent() {
-    return getPreferencesPage();
-  }
-
-  private MyPreferencesPage getPreferencesPage() {
-    if (myPreferencesPage == null) {
-      myPreferencesPage = new MyPreferencesPage();
-    }
-    return myPreferencesPage;
+  void setDisableCheckOpenAPI(boolean disableCheckOpenAPI) {
+    myDisableCheckOpenAPI = disableCheckOpenAPI;
   }
 
   @Override
   public boolean isDisableCheckOpenAPI() {
     return myDisableCheckOpenAPI;
+  }
+
+  void setDisableTypeWasNotCalculated(boolean disableTypeWasNotCalculated) {
+    myDisableTypeWasNotCalculated = disableTypeWasNotCalculated;
   }
 
   @Override
@@ -78,53 +72,9 @@ public class ModelValidationSettings implements SearchableConfigurable, Persiste
     return ApplicationManager.getApplication().getComponent(ModelValidationSettings.class);
   }
 
-  @Override
-  @NotNull
-  public String getId() {
-    return "mps.modelValidation.settings";
-  }
-
-  @Override
-  public Runnable enableSearch(String option) {
-    return null;
-  }
-
-  @Override
-  @Nls
-  public String getDisplayName() {
-    return "Model Validation";
-  }
-
   @Nullable
   public Icon getIcon() {
     return null;
-  }
-
-  @Override
-  @Nullable
-  @NonNls
-  public String getHelpTopic() {
-    return null;
-  }
-
-  @Override
-  public void apply() throws ConfigurationException {
-    getPreferencesPage().commit();
-  }
-
-  @Override
-  public void reset() {
-    getPreferencesPage().reset();
-  }
-
-  @Override
-  public boolean isModified() {
-    return getPreferencesPage().isModified();
-  }
-
-  @Override
-  public void disposeUIResources() {
-    myPreferencesPage = null;
   }
 
   @Override
@@ -141,33 +91,6 @@ public class ModelValidationSettings implements SearchableConfigurable, Persiste
   @Override
   public String getComponentName() {
     return "Model Validation Settings";
-  }
-
-  public class MyPreferencesPage extends JPanel {
-    private JCheckBox myCheckBoxOpenAPI = new JCheckBox("Disable nonpublic API usage check");
-    private JCheckBox myCheckBoxTypeWasNotCalculated = new JCheckBox("Disable 'type was not calculated' check");
-
-    public MyPreferencesPage() {
-      super(new BorderLayout());
-      Box box = Box.createVerticalBox();
-      box.add(myCheckBoxOpenAPI);
-      box.add(myCheckBoxTypeWasNotCalculated);
-      add(box, BorderLayout.WEST);
-    }
-
-    public void commit() {
-      myDisableCheckOpenAPI = myCheckBoxOpenAPI.isSelected();
-      myDisableTypeWasNotCalculated = myCheckBoxTypeWasNotCalculated.isSelected();
-    }
-
-    public void reset() {
-      myCheckBoxOpenAPI.setSelected(myDisableCheckOpenAPI);
-      myCheckBoxTypeWasNotCalculated.setSelected(myDisableTypeWasNotCalculated);
-    }
-
-    public boolean isModified() {
-      return myDisableCheckOpenAPI != myCheckBoxOpenAPI.isSelected() || myDisableTypeWasNotCalculated != myCheckBoxTypeWasNotCalculated.isSelected();
-    }
   }
 
   @Override

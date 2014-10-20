@@ -44,7 +44,7 @@ import javax.swing.JComponent;
     )
   }
 )
-public class GenerationSettings implements PersistentStateComponent<MyState>, ApplicationComponent, SearchableConfigurable {
+public class GenerationSettings implements PersistentStateComponent<MyState>, ApplicationComponent {
 
   public static IModifiableGenerationSettings getInstance() {
     final GenerationSettings gs = ApplicationManager.getApplication().getComponent(GenerationSettings.class);
@@ -52,7 +52,6 @@ public class GenerationSettings implements PersistentStateComponent<MyState>, Ap
   }
 
   private final DefaultModifiableGenerationSettings myState = new DefaultModifiableGenerationSettings();
-  private GenerationSettingsPreferencesPage myPreferences;
 
   @Override
   @NotNull
@@ -104,65 +103,9 @@ public class GenerationSettings implements PersistentStateComponent<MyState>, Ap
     myState.setTraceSettings(gts);
   }
 
-  @Override
-  @Nls
-  public String getDisplayName() {
-    return "Generator";
-  }
-
   @Nullable
   public Icon getIcon() {
     return null;
-  }
-
-  @Override
-  @Nullable
-  @NonNls
-  public String getHelpTopic() {
-    return "preferences.generator";
-  }
-
-  @Override
-  public JComponent createComponent() {
-    return getPreferences().getComponent();
-  }
-
-  @Override
-  public boolean isModified() {
-    return getPreferences().isModified();
-  }
-
-  @Override
-  public void apply() throws ConfigurationException {
-    getPreferences().commit();
-  }
-
-  @Override
-  public void reset() {
-    getPreferences().update();
-  }
-
-  @Override
-  public void disposeUIResources() {
-    myPreferences = null;
-  }
-
-  @NotNull
-  @Override
-  public String getId() {
-    return "generator.manager";
-  }
-
-  @Override
-  public Runnable enableSearch(String option) {
-    return null;
-  }
-
-  private GenerationSettingsPreferencesPage getPreferences() {
-    if (myPreferences == null) {
-      myPreferences = new GenerationSettingsPreferencesPage(this);
-    }
-    return myPreferences;
   }
 
   public IModifiableGenerationSettings getModifiableSettings() {
