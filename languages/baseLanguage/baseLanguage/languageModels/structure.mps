@@ -3103,6 +3103,9 @@
       <node concept="4jta.1169127622168" id="6751079257640563488" role="4jta.1071489090640.1169129564478" info="ig">
         <reference role="4jta.1169127622168.1169127628841" target="tpck.3393165121846091587" resolveInfo="ISuppressErrors" />
       </node>
+      <node concept="4jta.1169127622168" id="155087542027490078" role="4jta.1071489090640.1169129564478" info="ig">
+        <reference role="4jta.1169127622168.1169127628841" target="tpck.155087542027447621" resolveInfo="IStubForAnotherConcept" />
+      </node>
     </node>
     <node concept="4jta.1071489090640" id="4957392803029437192" info="ig">
       <property role="asn4.1169194658468.1169194664001" value="OperationAssignmentExpression" />
