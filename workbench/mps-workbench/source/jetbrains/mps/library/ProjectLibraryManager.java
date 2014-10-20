@@ -53,12 +53,6 @@ public class ProjectLibraryManager extends BaseLibraryManager implements Project
   }
 
   @Override
-  @Nls
-  public String getDisplayName() {
-    return "Project Libraries";
-  }
-
-  @Override
   public void initComponent() {
     if (myProject.isDefault()) {
       return;
@@ -90,11 +84,6 @@ public class ProjectLibraryManager extends BaseLibraryManager implements Project
   @Override
   public void projectClosed() {
 
-  }
-
-  @Override
-  public String getHelpTopic() {
-    return "Library_Manager";
   }
 
   @Override

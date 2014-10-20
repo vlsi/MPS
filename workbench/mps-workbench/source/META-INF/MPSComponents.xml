@@ -82,9 +82,6 @@
       <implementation-class>jetbrains.mps.ide.navigation.NavigationSupportImpl</implementation-class>
     </component>
     <component>
-      <implementation-class>jetbrains.mps.intentions.IntentionsPreferencesPage</implementation-class>
-    </component>
-    <component>
       <implementation-class>jetbrains.mps.workbench.languagesFs.MPSLanguagesVirtualFileSystem
       </implementation-class>
     </component>
@@ -208,8 +205,11 @@
       <implementation-class>jetbrains.mps.ide.make.StartupModuleMaker</implementation-class>
     </component>
   </project-components>
-  <extensions>
+
+  <extensions defaultExtensionNs="com.intellij">
     <projectConfigurable instance="jetbrains.mps.workbench.dialogs.project.properties.project.ProjectPropertiesPrefsPage" id="project.options.prefs.page" nonDefaultProject="true"/>
+    <applicationConfigurable groupId="build" groupWeight="150" instance="jetbrains.mps.smodel.ModelValidationConfigurable" id="preferences.modelValidationSettings"/>
+    <applicationConfigurable groupId="build" groupWeight="140" instance="jetbrains.mps.ide.generator.GenerationSettingsPreferencesPage" id="preferences.generationSettings"/>
   </extensions>
 
 </components>

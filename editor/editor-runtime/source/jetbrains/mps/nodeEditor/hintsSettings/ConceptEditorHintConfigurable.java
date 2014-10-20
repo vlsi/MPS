@@ -16,6 +16,8 @@
 package jetbrains.mps.nodeEditor.hintsSettings;
 
 import com.intellij.openapi.fileEditor.FileEditorManager;
+import com.intellij.openapi.options.Configurable;
+import com.intellij.openapi.options.Configurable.Composite;
 import com.intellij.openapi.options.ConfigurationException;
 import com.intellij.openapi.options.SearchableConfigurable;
 import com.intellij.openapi.project.Project;
@@ -37,14 +39,14 @@ import javax.swing.JOptionPane;
  * Semen Alperovich
  * 05 15, 2013
  */
-public class ConceptEditorHintConfigurable implements SearchableConfigurable {
+public class ConceptEditorHintConfigurable implements SearchableConfigurable, Composite {
   private ConceptEditorHintSettings mySettings;
   private ConceptEditorHintPreferencesPage myPage;
   private final Project myProject;
   private LanguageRegistryListener myLanguageReloadListener;
   private boolean myLanguageRegistryChanged = false;
 
-  public ConceptEditorHintConfigurable(Project project) {
+  public ConceptEditorHintConfigurable(@NotNull Project project) {
     myProject = project;
   }
 
@@ -147,5 +149,10 @@ public class ConceptEditorHintConfigurable implements SearchableConfigurable {
     myPage = null;
     LanguageRegistry.getInstance().removeRegistryListener(myLanguageReloadListener);
     myLanguageReloadListener = null;
+  }
+
+  @Override
+  public Configurable[] getConfigurables() {
+    return new Configurable[0];
   }
 }

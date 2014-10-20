@@ -176,8 +176,10 @@
     <applicationService serviceInterface="com.intellij.patterns.compiler.PatternCompilerFactory"
                         serviceImplementation="com.intellij.patterns.compiler.PatternCompilerFactoryImpl"/>
 
+    -->
     <applicationService serviceInterface="com.intellij.ide.PowerSaveMode"
                         serviceImplementation="com.intellij.ide.PowerSaveMode"/>
+    <!--
 
     <applicationService serviceInterface="com.intellij.util.download.DownloadableFileService"
                         serviceImplementation="com.intellij.util.download.impl.DownloadableFileServiceImpl"/>
@@ -398,7 +400,7 @@
                              bundle="messages.ApplicationBundle" order="after appearance"
                              childrenEPName="com.intellij.editorOptionsProvider"/>
     <!--Editor Hints-->
-    <projectConfigurable instance="jetbrains.mps.nodeEditor.hintsSettings.ConceptEditorHintConfigurable" displayName="Editor hints" order="after codeStyle" nonDefaultProject="true"/>
+    <projectConfigurable groupId="editor" groupWeight="180" dynamic="true" instance="jetbrains.mps.nodeEditor.hintsSettings.ConceptEditorHintConfigurable" displayName="Editor hints" order="after codeStyle" nonDefaultProject="true"/>
 
     <!--<projectService serviceInterface="com.intellij.semantic.SemService" serviceImplementation="com.intellij.semantic.SemServiceImpl"/>-->
 
@@ -412,8 +414,8 @@
     <applicationConfigurable groupId="editor" groupWeight="120" instance="com.intellij.openapi.fileTypes.impl.FileTypeConfigurable" id="preferences.fileTypes"
                              key="filetype.settings.title" bundle="messages.FileTypesBundle"/>
 
+    <applicationConfigurable groupId="editor" key="intention.settings" bundle="messages.CodeInsightBundle" instance="jetbrains.mps.intentions.IntentionSettingsConfigurable" id="intentions"/>
     <!--
-    <applicationConfigurable groupId="editor" key="intention.settings" bundle="messages.CodeInsightBundle" instance="com.intellij.codeInsight.intention.impl.config.IntentionSettingsConfigurable" id="intentions"/>
 
     &lt;!&ndash; Live Templates &ndash;&gt;
     <applicationConfigurable groupId="editor" groupWeight="130" instance="com.intellij.codeInsight.template.impl.LiveTemplatesConfigurable" id="editing.templates"
@@ -817,7 +819,9 @@
     <psi.fileReferenceHelper implementation="com.intellij.psi.impl.source.resolve.reference.impl.providers.NullFileReferenceHelper" order="last"/>
 
     <projectConfigurable groupId="editor" groupWeight="140" key="file.encodings.configurable" bundle="messages.IdeBundle" instance="com.intellij.openapi.vfs.encoding.FileEncodingConfigurable"/>
+    -->
     <projectConfigurable groupId="appearance" instance="com.intellij.ui.tabs.FileColorsConfigurable" id="fileColors" displayName="File Colors"/>
+    <!--
 
     <uiDebuggerExtension implementation="com.intellij.ui.debugger.extensions.PlaybackDebugger"/>
     <uiDebuggerExtension implementation="com.intellij.ui.debugger.extensions.ActionTracer"/>
