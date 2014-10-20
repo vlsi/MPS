@@ -27,8 +27,11 @@ import org.jetbrains.mps.openapi.util.Consumer;
 public class Indexer9 {
   private static final String ATTR_SUFFIX = "=\"";
   private static final String TARGET_NODE_ID_PREFIX = ModelPersistence9.TARGET_NODE_ID + ATTR_SUFFIX;
+  private static final char TARGET_NODE_ID_FIRSTCHAR = ModelPersistence9.TARGET_NODE_ID.charAt(0);
   private static final String CONCEPT_ID_PREFIX = ModelPersistence9.CONCEPT_ID + ATTR_SUFFIX;
-  private static final String MODEL_UID_PREFIX = ModelPersistence9.ID + ATTR_SUFFIX;
+  private static final char CONCEPT_ID_FIRSTCHAR = ModelPersistence9.CONCEPT_ID.charAt(0);
+  private static final String MODEL_ID_PREFIX = ModelPersistence9.ID + ATTR_SUFFIX;
+  private static final char MODEL_ID_FIRSTCHAR = ModelPersistence9.ID.charAt(0);
 
   private char[] myData;
   private Consumer<String> myConsumer;
@@ -57,8 +60,14 @@ public class Indexer9 {
   }
 
   private void processWord(int offset, int len) {
-    if (myData[offset + len] != '=' || myData[offset] != 't' && myData[offset] != 'm') {
-      return; // optimization: ignore
+    //optimization: word should end with "="
+    if (myData[offset + len] != '=') return;
+
+    //optimization: ignore other words
+    if (myData[offset] != MODEL_ID_FIRSTCHAR &&
+        myData[offset] != CONCEPT_ID_FIRSTCHAR &&
+        myData[offset] != TARGET_NODE_ID_FIRSTCHAR) {
+      return;
     }
 
     if (contains( offset, TARGET_NODE_ID_PREFIX)) {
@@ -88,9 +97,9 @@ public class Indexer9 {
         String name = DebugRegistry.getInstance().getConceptName(SConceptId.deserialize(cid));
         myConsumer.consume(name);
       }
-    } else if (contains(offset, MODEL_UID_PREFIX) && prevWordIs(ModelPersistence.MODEL)) {
+    } else if (contains(offset, MODEL_ID_PREFIX) && prevWordIs(ModelPersistence.MODEL)) {
       // check pattern "modelUID=\"(.+?)\""
-      offset += MODEL_UID_PREFIX.length();
+      offset += MODEL_ID_PREFIX.length();
       int end = indexOfClosingQuote(offset);
       if (end > offset) {
         String modelRef = JDOMUtil.unescapeText(new String(myData, offset, end - offset));
