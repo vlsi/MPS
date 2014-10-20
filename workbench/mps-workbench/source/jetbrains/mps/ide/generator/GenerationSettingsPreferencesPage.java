@@ -15,11 +15,15 @@
  */
 package jetbrains.mps.ide.generator;
 
+import com.intellij.openapi.options.ConfigurationException;
+import com.intellij.openapi.options.SearchableConfigurable;
 import com.intellij.ui.IdeBorderFactory;
 import jetbrains.mps.InternalFlag;
 import jetbrains.mps.generator.GenerationOptions;
 import jetbrains.mps.generator.IModifiableGenerationSettings;
 import jetbrains.mps.icons.MPSIcons.Nodes;
+import org.jetbrains.annotations.Nls;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import javax.swing.AbstractButton;
@@ -44,7 +48,7 @@ import java.text.ParseException;
 import java.util.HashMap;
 import java.util.Map;
 
-class GenerationSettingsPreferencesPage {
+class GenerationSettingsPreferencesPage implements SearchableConfigurable {
   private JPanel myPage;
   private JCheckBox mySaveTransientModelsCheckBox = new JCheckBox("Save transient models on generation");
   private JCheckBox myCheckModelsBeforeGenerationCheckBox = new JCheckBox("Check models for errors before generation");
@@ -82,10 +86,10 @@ class GenerationSettingsPreferencesPage {
   private final IModifiableGenerationSettings myGenerationSettings;
   private final ButtonSelectStateTracker myButtonState = new ButtonSelectStateTracker();
 
-  public GenerationSettingsPreferencesPage(GenerationSettings settings) {
-    myGenerationSettings = settings.getModifiableSettings();
-    update();
-    myPage = createComponent();
+  public GenerationSettingsPreferencesPage() {
+    myGenerationSettings = GenerationSettings.getInstance();
+    reset();
+    myPage = createPage();
     myButtonState.reset();
   }
 
@@ -97,11 +101,12 @@ class GenerationSettingsPreferencesPage {
     return Nodes.Generator;
   }
 
-  public JComponent getComponent() {
+  @Override
+  public JComponent createComponent() {
     return myPage;
   }
 
-  public JPanel createComponent() {
+  public JPanel createPage() {
     JPanel myMainPanel = new JPanel(new GridBagLayout());
     GridBagConstraints c = new GridBagConstraints();
     c.gridx = 0;
@@ -291,7 +296,8 @@ class GenerationSettingsPreferencesPage {
     return true;
   }
 
-  public void commit() {
+  @Override
+  public void apply() throws ConfigurationException {
     myGenerationSettings.setSaveTransientModels(mySaveTransientModelsCheckBox.isSelected());
     myGenerationSettings.setCheckModelsBeforeGeneration(myCheckModelsBeforeGenerationCheckBox.isSelected());
     myGenerationSettings.setParallelGenerator(myUseNewGenerator.isSelected());
@@ -325,13 +331,20 @@ class GenerationSettingsPreferencesPage {
     return myLimitNumberOfModels.isSelected() ? (Integer) myNumberOfModelsToKeep.getValue() : -1;
   }
 
+  @Override
   public boolean isModified() {
     return myButtonState.isStateModified() ||
       myGenerationSettings.getNumberOfModelsToKeep() != getNumberOfModelsToKeep() ||
       myGenerationSettings.getNumberOfParallelThreads() != (Integer) myNumberOfParallelThreads.getValue();
   }
 
-  public void update() {
+  @Override
+  public void disposeUIResources() {
+
+  }
+
+  @Override
+  public void reset() {
     mySaveTransientModelsCheckBox.setSelected(myGenerationSettings.isSaveTransientModels());
     myCheckModelsBeforeGenerationCheckBox.setSelected(myGenerationSettings.isCheckModelsBeforeGeneration());
     myUseNewGenerator.setSelected(myGenerationSettings.isParallelGenerator());
@@ -377,6 +390,30 @@ class GenerationSettingsPreferencesPage {
       myStatusLabel.setOpaque(true);
       myStatusLabel.setVisible(true);
     }
+  }
+
+  @NotNull
+  @Override
+  public String getId() {
+    return "generator.manager";
+  }
+
+  @Nullable
+  @Override
+  public Runnable enableSearch(String option) {
+    return null;
+  }
+
+  @Nls
+  @Override
+  public String getDisplayName() {
+    return  "Generator";
+  }
+
+  @Nullable
+  @Override
+  public String getHelpTopic() {
+    return "preferences.generator";
   }
 
   private class RangeDecimalFormatter extends DefaultFormatter {
