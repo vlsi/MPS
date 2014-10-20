@@ -290,11 +290,15 @@
 
     &lt;!&ndash; Application Configurables &ndash;&gt;
 
-    &lt;!&ndash; Path Variables &ndash;&gt;
-    &lt;!&ndash; the implementation of this configurable is in platform-impl but it's not registered in platform because
-         it's only required in full IDEA &ndash;&gt;
-    <applicationConfigurable instance="com.intellij.application.options.pathMacros.PathMacroConfigurable" id="preferences.pathVariables"
+    -->
+    <!-- Path Variables -->
+    <!-- the implementation of this configurable is in platform-impl but it's not registered in platform because
+         it's only required in full IDEA -->
+    <applicationConfigurable groupId="build" instance="com.intellij.application.options.pathMacros.PathMacroConfigurable" id="preferences.pathVariables"
                              key="title.path.variables" bundle="messages.ApplicationBundle"/>
+    <projectConfigurable groupId="build" groupWeight="130" instance="jetbrains.mps.library.ProjectLibraryManagerConfigurable" id="preferences.projectLibraryManager"/>
+    <applicationConfigurable groupId="build" groupWeight="120" instance="jetbrains.mps.library.LibraryManagerConfigurable" id="preferences.libraryManager"/>
+    <!--
 
     <applicationConfigurable instance="com.intellij.execution.console.ConsoleFoldingConfigurable" id="Console Folding"
                              displayName="Console Folding"/>

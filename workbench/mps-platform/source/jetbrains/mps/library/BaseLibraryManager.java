@@ -37,7 +37,7 @@ import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Set;
 
-public abstract class BaseLibraryManager implements BaseComponent, Configurable, PersistentStateComponent<MyState>, LibraryContributor {
+public abstract class BaseLibraryManager implements BaseComponent, PersistentStateComponent<MyState>, LibraryContributor {
   protected final MPSModuleRepository myRepository;
 
   public BaseLibraryManager(MPSModuleRepository repo) {
@@ -110,54 +110,6 @@ public abstract class BaseLibraryManager implements BaseComponent, Configurable,
 
   protected String removeMacros(String path) {
     return MacrosFactory.getGlobal().expandPath(path);
-  }
-
-  //-------configurable stuff
-
-  private LibraryManagerPreferences myPreferences;
-
-  private LibraryManagerPreferences getPreferences() {
-    if (myPreferences == null) {
-      myPreferences = new LibraryManagerPreferences(this);
-    }
-    return myPreferences;
-  }
-
-  @Nullable
-  public Icon getIcon() {
-    return null;
-  }
-
-  @Override
-  @Nullable
-  @NonNls
-  public String getHelpTopic() {
-    return null;
-  }
-
-  @Override
-  public JComponent createComponent() {
-    return getPreferences().getComponent();
-  }
-
-  @Override
-  public boolean isModified() {
-    return getPreferences().isModified();
-  }
-
-  @Override
-  public void apply() throws ConfigurationException {
-    getPreferences().commit();
-  }
-
-  @Override
-  public void reset() {
-    getPreferences().reset();
-  }
-
-  @Override
-  public void disposeUIResources() {
-    myPreferences = null;
   }
 
   //-------component stuff

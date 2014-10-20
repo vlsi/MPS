@@ -16,6 +16,7 @@
 package jetbrains.mps.intentions;
 
 import com.intellij.openapi.options.Configurable;
+import com.intellij.openapi.options.Configurable.Composite;
 import com.intellij.openapi.options.ConfigurationException;
 import com.intellij.ui.CheckboxTree;
 import com.intellij.ui.CheckboxTree.CheckboxTreeCellRenderer;
@@ -40,13 +41,13 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class IntentionsPreferencesPage implements Configurable {
+public class IntentionSettingsConfigurable implements Configurable, Composite {
   private IntentionsManager myIntentionsManager;
 
   private CheckboxTree myTree;
   private Map<String, LanguageTreeNode> myLanguageTreeNodes = new HashMap<String, LanguageTreeNode>();
 
-  public IntentionsPreferencesPage(IntentionsManager intentionsManager) {
+  public IntentionSettingsConfigurable(IntentionsManager intentionsManager) {
     myIntentionsManager = intentionsManager;
   }
 
@@ -135,6 +136,11 @@ public class IntentionsPreferencesPage implements Configurable {
   @Override
   public void disposeUIResources() {
     myTree = null;
+  }
+
+  @Override
+  public Configurable[] getConfigurables() {
+    return new Configurable[0];
   }
 
   private class LanguageTreeNode extends CheckedTreeNode {

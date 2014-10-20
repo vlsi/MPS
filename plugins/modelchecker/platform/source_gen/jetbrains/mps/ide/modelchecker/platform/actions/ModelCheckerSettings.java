@@ -6,14 +6,10 @@ import com.intellij.openapi.components.State;
 import com.intellij.openapi.components.Storage;
 import com.intellij.openapi.components.PersistentStateComponent;
 import com.intellij.openapi.components.ApplicationComponent;
-import com.intellij.openapi.options.SearchableConfigurable;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nls;
 import org.jetbrains.annotations.Nullable;
 import javax.swing.Icon;
-import javax.swing.JComponent;
-import com.intellij.openapi.options.ConfigurationException;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
@@ -21,7 +17,7 @@ import com.intellij.openapi.application.ApplicationManager;
 
 @State(name = "ModelCheckerSettings", storages = {@Storage(id = "other", file = "$APP_CONFIG$/modelCheckerSettings.xml")
 })
-public class ModelCheckerSettings implements PersistentStateComponent<ModelCheckerSettings.MyState>, ApplicationComponent, SearchableConfigurable {
+public class ModelCheckerSettings implements PersistentStateComponent<ModelCheckerSettings.MyState>, ApplicationComponent {
   private ModelCheckerSettings.MyState myState = new ModelCheckerSettings.MyState();
   private ModelCheckerPreferencesPage myPreferences;
   private boolean myMigrationMode = false;
@@ -47,46 +43,8 @@ public class ModelCheckerSettings implements PersistentStateComponent<ModelCheck
   public void loadState(ModelCheckerSettings.MyState state) {
     myState = state;
   }
-  @Nls
-  @Override
-  public String getDisplayName() {
-    return "Model Checker";
-  }
   @Nullable
   public Icon getIcon() {
-    return null;
-  }
-  @Nullable
-  @NonNls
-  @Override
-  public String getHelpTopic() {
-    return "Model_Checker";
-  }
-  @Override
-  public JComponent createComponent() {
-    return getPreferences().getComponent();
-  }
-  @Override
-  public boolean isModified() {
-    return getPreferences().isModified();
-  }
-  @Override
-  public void apply() throws ConfigurationException {
-    getPreferences().commit();
-  }
-  @Override
-  public void reset() {
-  }
-  @Override
-  public void disposeUIResources() {
-    myPreferences = null;
-  }
-  @Override
-  public String getId() {
-    return "model.checker";
-  }
-  @Override
-  public Runnable enableSearch(String option) {
     return null;
   }
   private ModelCheckerPreferencesPage getPreferences() {
