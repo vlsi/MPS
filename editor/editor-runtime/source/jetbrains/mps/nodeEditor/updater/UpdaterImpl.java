@@ -93,7 +93,12 @@ public class UpdaterImpl implements Updater {
     fireEditorUpdated();
   }
 
-  @Override
+  /**
+   * This method will be private after MPS 3.2
+   *
+   * @deprecated
+   */
+  @Deprecated
   public EditorCell updateRootCell(SNode node, List<SModelEvent> events) {
     myUpdateSession = createUpdateSession(node, events);
     EditorCell result = null;

@@ -52,18 +52,6 @@ public interface Updater {
   void update(List<SModelEvent> events);
 
   /**
-   * Should be called to create new UpdateSession and invoke incremental editor update
-   * within it.
-   *
-   * @param node   - root editor node
-   * @param events - model events collected since last update session or null if editor
-   *               should be re-created completely
-   * @return EditorCell representing specified node updated in accordance with current
-   * node state
-   */
-  EditorCell updateRootCell(SNode node, List<SModelEvent> events);
-
-  /**
    * @return currently running update session or null if editor update was not executed
    */
   UpdateSession getCurrentUpdateSession();

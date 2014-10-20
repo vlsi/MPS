@@ -143,7 +143,7 @@ public class EditorContext implements jetbrains.mps.openapi.editor.EditorContext
    */
   @Deprecated
   public jetbrains.mps.nodeEditor.cells.EditorCell createRootCell(SNode node, java.util.List<SModelEvent> events) {
-    return (jetbrains.mps.nodeEditor.cells.EditorCell) getEditorComponent().getUpdater().updateRootCell(node, events);
+    return (jetbrains.mps.nodeEditor.cells.EditorCell) ((EditorComponent) getEditorComponent()).getUpdater().updateRootCell(node, events);
   }
 
   /**
@@ -151,7 +151,7 @@ public class EditorContext implements jetbrains.mps.openapi.editor.EditorContext
    */
   @Deprecated
   public jetbrains.mps.nodeEditor.cells.EditorCell createInspectedCell(SNode node, java.util.List<SModelEvent> events) {
-    return (jetbrains.mps.nodeEditor.cells.EditorCell) getEditorComponent().getUpdater().updateRootCell(node, events);
+    return (jetbrains.mps.nodeEditor.cells.EditorCell) ((EditorComponent) getEditorComponent()).getUpdater().updateRootCell(node, events);
   }
 
   /**
