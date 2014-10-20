@@ -23,6 +23,7 @@ import jetbrains.mps.util.iterable.IterableEnumeration;
 import jetbrains.mps.vfs.IFile;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.module.SModule;
 
 import java.io.IOException;
@@ -64,6 +65,7 @@ public class ModuleClassLoader extends ClassLoader {
     mySupport = classLoaderSupport;
   }
 
+  @NotNull
   public Class<?> loadOwnClass(String name) throws ClassNotFoundException {
     Class<?> aClass = loadClass(name, false, true);
     if (aClass == null) throw new ClassNotFoundException(name);
@@ -124,6 +126,10 @@ public class ModuleClassLoader extends ClassLoader {
         " using ModuleClassLoader of " + mySupport.getModule().getModuleName() + " module", new Throwable());
   }
 
+  /**
+   * @return null if there is no name in cache
+   * @throws ClassNotFoundException if class has been found already and it was null
+   */
   private Class<?> getClassFromCache(String name) throws ClassNotFoundException {
     if (!myClasses.containsKey(name)) return null;
     Class aClass = myClasses.get(name);

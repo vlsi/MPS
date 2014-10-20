@@ -39,22 +39,14 @@ public class ClassLoadingBroadCaster {
   public void onUnload(Set<SModule> toUnload) {
     if (toUnload.size() == 0) return;
     for (MPSClassesListener listener : myClassesHandlers) {
-      try {
-        listener.beforeClassesUnloaded(toUnload);
-      } catch (Throwable t) {
-        LOG.error("Exception on unloading event", t);
-      }
+      listener.beforeClassesUnloaded(toUnload);
     }
   }
 
   public void onLoad(Set<SModule> toLoad) {
     if (toLoad.size() == 0) return;
     for (MPSClassesListener listener : myClassesHandlers) {
-      try {
-        listener.afterClassesLoaded(toLoad);
-      } catch (Throwable t) {
-        LOG.error("Exception on loading event", t);
-      }
+      listener.afterClassesLoaded(toLoad);
     }
   }
 }

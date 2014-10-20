@@ -62,55 +62,35 @@ public class SRepositoryEventsDispatcher {
   public final void fireModuleAdded(@NotNull SModule module) {
     ModelAccess.assertLegalWrite();
     for (SRepositoryListener listener : myListeners) {
-      try {
-        listener.moduleAdded(module);
-      } catch (Throwable t) {
-        LOG.error("Error on module adding " + module.getModuleName(), t);
-      }
+      listener.moduleAdded(module);
     }
   }
 
   public final void fireBeforeModuleRemoved(@NotNull SModule module) {
     ModelAccess.assertLegalWrite();
     for (SRepositoryListener listener : myListeners) {
-      try {
-        listener.beforeModuleRemoved(module);
-      } catch (Throwable t) {
-        LOG.error("Error on before module removing " + module.getModuleName(), t);
-      }
+      listener.beforeModuleRemoved(module);
     }
   }
 
   public final void fireModuleRemoved(@NotNull SModuleReference module) {
     ModelAccess.assertLegalWrite();
     for (SRepositoryListener listener : myListeners) {
-      try {
-        listener.moduleRemoved(module);
-      } catch (Throwable t) {
-        LOG.error("Error on module removing " + module.getModuleName(), t);
-      }
+      listener.moduleRemoved(module);
     }
   }
 
   public final void fireCommandStarted() {
     ModelAccess.assertLegalWrite();
     for (SRepositoryListener listener : myListeners) {
-      try {
-        listener.commandStarted(myRepository);
-      } catch (Throwable t) {
-        LOG.error("Error on command starting ", t);
-      }
+      listener.commandStarted(myRepository);
     }
   }
 
   public final void fireCommandFinished() {
     ModelAccess.assertLegalWrite();
     for (SRepositoryListener listener : myListeners) {
-      try {
-        listener.commandFinished(myRepository);
-      } catch (Throwable t) {
-        LOG.error("Error on command finished ", t);
-      }
+      listener.commandFinished(myRepository);
     }
   }
 }
