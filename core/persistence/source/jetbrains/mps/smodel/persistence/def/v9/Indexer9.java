@@ -70,7 +70,7 @@ public class Indexer9 {
       return;
     }
 
-    if (contains( offset, TARGET_NODE_ID_PREFIX)) {
+     if (contains( offset, TARGET_NODE_ID_PREFIX)) {
       // check pattern "targetNodeId=\"(?:[0-9]+v?\\.)?(.+?)\""
       offset += TARGET_NODE_ID_PREFIX.length();
       int end = indexOfClosingQuote( offset);
@@ -94,8 +94,7 @@ public class Indexer9 {
       offset = start + 1;
       if (end > offset) {
         String cid = JDOMUtil.unescapeText(new String(myData, offset, end - offset));
-        String name = DebugRegistry.getInstance().getConceptName(SConceptId.deserialize(cid));
-        myConsumer.consume(name);
+        myConsumer.consume(cid);
       }
     } else if (contains(offset, MODEL_ID_PREFIX) && prevWordIs(ModelPersistence.MODEL)) {
       // check pattern "modelUID=\"(.+?)\""
