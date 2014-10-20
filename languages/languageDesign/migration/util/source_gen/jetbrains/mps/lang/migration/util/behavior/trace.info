@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<debug-info>
+  <root>
+    <file name="StepData_BehaviorDescriptor.java">
+      <unit at="7,0,15,0" name="jetbrains.mps.lang.migration.util.behavior.StepData_BehaviorDescriptor" />
+    </file>
+    <file name="BehaviorAspectDescriptor.java">
+      <unit at="9,0,26,0" name="jetbrains.mps.lang.migration.util.behavior.BehaviorAspectDescriptor" />
+    </file>
+    <file name="StringData_BehaviorDescriptor.java">
+      <unit at="7,0,15,0" name="jetbrains.mps.lang.migration.util.behavior.StringData_BehaviorDescriptor" />
+    </file>
+    <file name="MigrationScriptReference_BehaviorDescriptor.java">
+      <unit at="7,0,15,0" name="jetbrains.mps.lang.migration.util.behavior.MigrationScriptReference_BehaviorDescriptor" />
+    </file>
+  </root>
+</debug-info>
+

@@ -374,7 +374,7 @@ public class QueriesGenerated {
   public static Object propertyMacro_GetPropertyValue_2264311582633533482(final PropertyMacroContext _context) {
     return ActionDeclaration_Behavior.call_getGeneratedClassFQName_1213877371952(SLinkOperations.getTarget(_context.getNode(), "action", false));
   }
-  public static Object propertyMacro_GetPropertyValue_7266073704221024244(final PropertyMacroContext _context) {
+  public static Object propertyMacro_GetPropertyValue_913178413710656007(final PropertyMacroContext _context) {
     return SPropertyOperations.getString(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.lang.plugin.structure.ActionParameter", false, false), "name");
   }
   public static Object propertyMacro_GetPropertyValue_7266073704221023681(final PropertyMacroContext _context) {
@@ -619,7 +619,7 @@ public class QueriesGenerated {
   public static Object referenceMacro_GetReferent_8147690884614527803(final ReferenceMacroContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "baseNodeConcept", false);
   }
-  public static Object referenceMacro_GetReferent_7266073704221023883(final ReferenceMacroContext _context) {
+  public static Object referenceMacro_GetReferent_913178413710655980(final ReferenceMacroContext _context) {
     return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "map_ParameterCondition");
   }
   public static Object referenceMacro_GetReferent_1050311802978904092(final ReferenceMacroContext _context) {
@@ -1002,7 +1002,7 @@ public class QueriesGenerated {
   public static SNode sourceNodeQuery_9011731583464097410(final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "action", true);
   }
-  public static SNode sourceNodeQuery_7266073704221024258(final SourceSubstituteMacroNodeContext _context) {
+  public static SNode sourceNodeQuery_913178413710655991(final SourceSubstituteMacroNodeContext _context) {
     return SNodeOperations.copyNode(TypeChecker.getInstance().getTypeOf(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.lang.plugin.structure.ActionParameter", false, false)));
   }
   public static SNode sourceNodeQuery_1207146117813(final SourceSubstituteMacroNodeContext _context) {

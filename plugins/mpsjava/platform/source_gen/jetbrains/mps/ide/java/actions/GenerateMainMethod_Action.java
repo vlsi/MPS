@@ -39,6 +39,9 @@ public class GenerateMainMethod_Action extends BaseAction {
   }
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
     SNode classConcept = GenerateMainMethod_Action.this.getClassConcept(_params);
+    if (classConcept == null) {
+      return false;
+    }
     return !(Sequence.fromIterable(BehaviorReflection.invokeNonVirtual((Class<Iterable<SNode>>) ((Class) Object.class), classConcept, "jetbrains.mps.baseLanguage.structure.ClassConcept", "call_staticMethods_5292274854859435867", new Object[]{})).any(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return "main".equals(SPropertyOperations.getString(it, "name")) && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(it, "returnType", true), "jetbrains.mps.baseLanguage.structure.VoidType") && ListSequence.fromList(SLinkOperations.getTargets(it, "parameter", true)).count() == 1 && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(ListSequence.fromList(SLinkOperations.getTargets(it, "parameter", true)).first(), "type", true), "jetbrains.mps.baseLanguage.structure.ArrayType");

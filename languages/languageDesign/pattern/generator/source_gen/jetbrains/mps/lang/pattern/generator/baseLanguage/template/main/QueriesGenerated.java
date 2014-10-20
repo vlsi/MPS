@@ -331,6 +331,14 @@ public class QueriesGenerated {
     Iterable<? extends SNode> children = mainNode.getChildren(childRole_);
     return !(SNodeOperations.isInstanceOf(AttributeOperations.getAttribute(children.iterator().next(), new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.pattern.structure.AsPattern")), "jetbrains.mps.lang.pattern.structure.ListPattern"));
   }
+  public static boolean ifMacro_Condition_1710668040385328176(final IfMacroContext _context) {
+    SNode attribute = ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "smodelAttribute", true)).findFirst(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return !(SNodeOperations.isInstanceOf(it, "jetbrains.mps.lang.pattern.structure.ListPattern"));
+      }
+    });
+    return SNodeOperations.isInstanceOf(attribute, "jetbrains.mps.lang.pattern.structure.PatternVariableDeclaration");
+  }
   public static boolean ifMacro_Condition_6283201779507549732(final IfMacroContext _context) {
     SNode attribute = ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "smodelAttribute", true)).findFirst(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {

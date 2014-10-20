@@ -66,7 +66,7 @@ public class RebuildRequiredModels_Action extends BaseAction {
       final Wrappers._T<List<SModel>> models = new Wrappers._T<List<SModel>>();
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
-          Iterable<SModule> projectModules = ((MPSProject) MapSequence.fromMap(_params).get("mpsProject")).getModules();
+          Iterable<SModule> projectModules = ((MPSProject) MapSequence.fromMap(_params).get("mpsProject")).getModulesWithGenerators();
           final ModelGenerationStatusManager mgsm = ModelGenerationStatusManager.getInstance();
           models.value = ListSequence.fromListWithValues(new ArrayList<SModel>(), Sequence.fromIterable(projectModules).translate(new ITranslator2<SModule, SModel>() {
             public Iterable<SModel> translate(SModule it) {

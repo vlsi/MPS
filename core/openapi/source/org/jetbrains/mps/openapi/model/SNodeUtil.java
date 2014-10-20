@@ -69,18 +69,18 @@ public class SNodeUtil {
       return replacer;
     }
 
-    if (replacer != null) {
-      SNode replacerParent = replacer.getParent();
-      if (replacerParent != null) {
-        replacerParent.removeChild(replacer);
-      }
+    String role = node.getRoleInParent();
+    assert role != null;
 
-      String role = node.getRoleInParent();
-      assert role != null;
+    if (replacer != null) {
       // old and new child can have the same node Id
       // thus it is important to remove old child first
       SNode anchor = node.getNextSibling();
       nodeParent.removeChild(node);
+      SNode replacerParent = replacer.getParent();
+      if (replacerParent != null) {
+        replacerParent.removeChild(replacer);
+      }
       nodeParent.insertChildBefore(role, replacer, anchor);
     } else {
       nodeParent.removeChild(node);

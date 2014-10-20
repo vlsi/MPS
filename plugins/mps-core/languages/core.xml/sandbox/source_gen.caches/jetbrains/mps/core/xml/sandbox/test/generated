@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="b1o2xwnjypiaskn69ruibc8940zhkmm">
-  <common hash="b1o2xwnjypiaskn69ruibc8940zhkmm" />
+<dependencies version="2" modelHash="i8y53o23exqa6iaef1na3qlgrlmd6d">
+  <common hash="i8y53o23exqa6iaef1na3qlgrlmd6d" />
   <source id="6666499814681526040" name="test1">
     <file name="test1.xml" />
   </source>

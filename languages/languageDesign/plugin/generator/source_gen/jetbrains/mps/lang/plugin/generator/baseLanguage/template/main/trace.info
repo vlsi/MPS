@@ -1620,12 +1620,12 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590369(jetbrains.mps.lang.plugin.generator.baseLanguage.template.main@generator)/7266073704221023814">
     <file name="QueriesGenerated.java">
-      <node id="7266073704221024246" at="377,112,378,167" concept="7" />
-      <node id="7266073704221023885" at="622,109,623,106" concept="7" />
-      <node id="7266073704221024260" at="1005,108,1006,191" concept="7" />
-      <scope id="7266073704221024245" at="377,112,378,167" />
-      <scope id="7266073704221023884" at="622,109,623,106" />
-      <scope id="7266073704221024259" at="1005,108,1006,191" />
+      <node id="913178413710656009" at="377,111,378,167" concept="7" />
+      <node id="913178413710655982" at="622,108,623,106" concept="7" />
+      <node id="913178413710655993" at="1005,107,1006,191" concept="7" />
+      <scope id="913178413710656008" at="377,111,378,167" />
+      <scope id="913178413710655981" at="622,108,623,106" />
+      <scope id="913178413710655992" at="1005,107,1006,191" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590369(jetbrains.mps.lang.plugin.generator.baseLanguage.template.main@generator)/7575217966413875721">

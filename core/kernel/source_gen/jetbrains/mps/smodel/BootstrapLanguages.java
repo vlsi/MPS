@@ -27,6 +27,7 @@ public class BootstrapLanguages {
   public static final String SHARED_CONCEPTS_NAMESPACE = "jetbrains.mps.lang.sharedConcepts";
   public static final String SMODEL_NAMESPACE = "jetbrains.mps.lang.smodel";
   public static final String STRUCTURE_NAMESPACE = "jetbrains.mps.lang.structure";
+  public static final String MIGRATION_NAMESPACE = "jetbrains.mps.lang.migration";
   public static final String TEST_NAMESPACE = "jetbrains.mps.lang.test";
   public static final String TEXT_GEN_NAMESPACE = "jetbrains.mps.lang.textGen";
   public static final String TYPESYSTEM_NAMESPACE = "jetbrains.mps.lang.typesystem";
@@ -136,6 +137,9 @@ public class BootstrapLanguages {
   }
   public static SModuleReference textGenLanguageRef() {
     return PersistenceFacade.getInstance().createModuleReference("b83431fe-5c8f-40bc-8a36-65e25f4dd253(jetbrains.mps.lang.textGen)");
+  }
+  public static SModuleReference migrationLanguageRef() {
+    return PersistenceFacade.getInstance().createModuleReference("90746344-04fd-4286-97d5-b46ae6a81709(jetbrains.mps.lang.migration)");
   }
   public static SModuleReference unitTestLanguageRef() {
     return PersistenceFacade.getInstance().createModuleReference("f61473f9-130f-42f6-b98d-6c438812c2f6(jetbrains.mps.baseLanguage.unitTest)");

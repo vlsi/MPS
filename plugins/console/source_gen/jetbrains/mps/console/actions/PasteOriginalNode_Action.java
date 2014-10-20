@@ -10,6 +10,8 @@ import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.console.tool.BaseConsoleTab;
+import jetbrains.mps.editor.runtime.cells.ReadOnlyUtil;
+import jetbrains.mps.openapi.editor.cells.EditorCell;
 import org.jetbrains.annotations.NotNull;
 import org.apache.log4j.Level;
 import jetbrains.mps.ide.editor.MPSEditorDataKeys;
@@ -34,7 +36,7 @@ public class PasteOriginalNode_Action extends BaseAction {
     return true;
   }
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
-    return PlatformDataKeys.PASTE_PROVIDER.getData(((EditorComponent) MapSequence.fromMap(_params).get("editor"))) instanceof BaseConsoleTab.MyPasteProvider;
+    return PlatformDataKeys.PASTE_PROVIDER.getData(((EditorComponent) MapSequence.fromMap(_params).get("editor"))) instanceof BaseConsoleTab.MyPasteProvider && !(ReadOnlyUtil.isCellOrSelectionReadOnlyInEditor(((EditorComponent) MapSequence.fromMap(_params).get("editor")), ((EditorCell) MapSequence.fromMap(_params).get("cell"))));
   }
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
@@ -61,6 +63,10 @@ public class PasteOriginalNode_Action extends BaseAction {
       MapSequence.fromMap(_params).put("editor", editorComponent);
     }
     if (MapSequence.fromMap(_params).get("editor") == null) {
+      return false;
+    }
+    MapSequence.fromMap(_params).put("cell", event.getData(MPSEditorDataKeys.EDITOR_CELL));
+    if (MapSequence.fromMap(_params).get("cell") == null) {
       return false;
     }
     MapSequence.fromMap(_params).put("project", event.getData(CommonDataKeys.PROJECT));

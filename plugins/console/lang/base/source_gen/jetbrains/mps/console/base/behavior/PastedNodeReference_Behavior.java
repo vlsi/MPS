@@ -4,6 +4,7 @@ package jetbrains.mps.console.base.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import org.jetbrains.mps.openapi.model.SNodeId;
 
 public class PastedNodeReference_Behavior {
   public static void init(SNode thisNode) {
@@ -12,7 +13,11 @@ public class PastedNodeReference_Behavior {
     return SLinkOperations.getTarget(thisNode, "target", false);
   }
   public static String virtual_getTextWhenBroken_328850564593858078(SNode thisNode) {
-    int id = SLinkOperations.getTarget(thisNode, "target", false).getNodeId().hashCode();
+    SNodeId targetNodeId = thisNode.getReference("target").getTargetNodeId();
+    if (targetNodeId == null) {
+      return "(deleted node)";
+    }
+    int id = targetNodeId.hashCode();
     return "nodeRef@" + ((id >>> 16) + (id << 16 >>> 16));
   }
 }

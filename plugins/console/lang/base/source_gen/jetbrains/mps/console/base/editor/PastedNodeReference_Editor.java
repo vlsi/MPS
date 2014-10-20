@@ -12,19 +12,75 @@ import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.openapi.editor.style.StyleRegistry;
 import jetbrains.mps.nodeEditor.MPSColors;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
+import jetbrains.mps.nodeEditor.cells.ModelAccessor;
+import jetbrains.mps.util.EqualUtil;
+import jetbrains.mps.openapi.editor.cells.CellActionType;
+import jetbrains.mps.editor.runtime.cells.EmptyCellAction;
 
 public class PastedNodeReference_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createComponent_7k9x8q_a(editorContext, node);
+    return this.createAlternation_7k9x8q_a(editorContext, node);
   }
-  private EditorCell createComponent_7k9x8q_a(EditorContext editorContext, SNode node) {
-    EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.console.base.editor.INodeWithReference_EditorComponent");
+  private EditorCell createAlternation_7k9x8q_a(EditorContext editorContext, SNode node) {
+    boolean alternationCondition = true;
+    alternationCondition = PastedNodeReference_Editor.renderingCondition_7k9x8q_a0(node, editorContext);
+    EditorCell editorCell = null;
+    if (alternationCondition) {
+      editorCell = this.createReadOnlyModelAccessor_7k9x8q_a0(editorContext, node);
+    } else {
+      editorCell = this.createReadOnlyModelAccessor_7k9x8q_a0_0(editorContext, node);
+    }
     EditorCell bigCell = BigCellUtil.findBigCell(editorCell, node);
     if (bigCell != null) {
       bigCell.setBig(true);
     }
     Style style = new StyleImpl();
     style.set(StyleAttributes.BACKGROUND_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.yellow));
+    editorCell.getStyle().putAll(style);
+    return editorCell;
+  }
+  private static boolean renderingCondition_7k9x8q_a0(SNode node, EditorContext editorContext) {
+    return BehaviorReflection.invokeVirtual(Boolean.TYPE, node, "virtual_canExecute_3282455643657932881", new Object[]{});
+  }
+  private EditorCell createReadOnlyModelAccessor_7k9x8q_a0(final EditorContext editorContext, final SNode node) {
+    EditorCell_Property editorCell = EditorCell_Property.create(editorContext, new ModelAccessor() {
+      public String getText() {
+        return BehaviorReflection.invokeVirtual(String.class, node, "virtual_getTextWhenBroken_328850564593858078", new Object[]{});
+      }
+      public void setText(String s) {
+      }
+      public boolean isValidText(String s) {
+        return EqualUtil.equals(s, getText());
+      }
+    }, node);
+    editorCell.setAction(CellActionType.DELETE, EmptyCellAction.getInstance());
+    editorCell.setAction(CellActionType.BACKSPACE, EmptyCellAction.getInstance());
+    editorCell.setCellId("ReadOnlyModelAccessor_7k9x8q_a0");
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_BLUE));
+    style.set(StyleAttributes.UNDERLINED, true);
+    style.set(StyleAttributes.EDITABLE, false);
+    editorCell.getStyle().putAll(style);
+    return editorCell;
+  }
+  private EditorCell createReadOnlyModelAccessor_7k9x8q_a0_0(final EditorContext editorContext, final SNode node) {
+    EditorCell_Property editorCell = EditorCell_Property.create(editorContext, new ModelAccessor() {
+      public String getText() {
+        return BehaviorReflection.invokeVirtual(String.class, node, "virtual_getTextWhenBroken_328850564593858078", new Object[]{});
+      }
+      public void setText(String s) {
+      }
+      public boolean isValidText(String s) {
+        return EqualUtil.equals(s, getText());
+      }
+    }, node);
+    editorCell.setAction(CellActionType.DELETE, EmptyCellAction.getInstance());
+    editorCell.setAction(CellActionType.BACKSPACE, EmptyCellAction.getInstance());
+    editorCell.setCellId("ReadOnlyModelAccessor_7k9x8q_a0_0");
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.darkGray));
     editorCell.getStyle().putAll(style);
     return editorCell;
   }

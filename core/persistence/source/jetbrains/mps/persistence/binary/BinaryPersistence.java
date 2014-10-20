@@ -289,7 +289,7 @@ public class BinaryPersistence {
       String name = model != null ? model.getModelName() : DebugRegistry.getInstance().getModelName(ref);
 
       os.writeModelReference(ref);
-      os.writeString(name);
+      os.writeString(name == null ? "" : name);
     }
 
     //collect all language-level info
@@ -306,28 +306,28 @@ public class BinaryPersistence {
     os.writeInt(conceptIds.size());
     for (Entry<SConceptId, String> e : conceptIds.entrySet()) {
       os.writeString(e.getKey().serialize());
-      os.writeString(e.getValue());
+      os.writeString(e.getValue() == null ? "" : e.getValue());
     }
 
     // write properties
     os.writeInt(propIds.size());
     for (Entry<SPropertyId, String> e : propIds.entrySet()) {
       os.writeString(e.getKey().serialize());
-      os.writeString(e.getValue());
+      os.writeString(e.getValue() == null ? "" : e.getValue());
     }
 
     // write reference roles
     os.writeInt(refIds.size());
     for (Entry<SReferenceLinkId, String> e : refIds.entrySet()) {
       os.writeString(e.getKey().serialize());
-      os.writeString(e.getValue());
+      os.writeString(e.getValue() == null ? "" : e.getValue());
     }
 
     // write child roles
     os.writeInt(roleIds.size());
     for (Entry<SContainmentLinkId, String> e : roleIds.entrySet()) {
       os.writeString(e.getKey().serialize());
-      os.writeString(e.getValue());
+      os.writeString(e.getValue() == null ? "" : e.getValue());
     }
   }
 

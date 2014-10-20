@@ -2,34 +2,34 @@
 <model ref="r:c392e01b-c969-4146-91b4-5620944c9519(org.jetbrains.mps.stateMachine.sadbox.model)">
   <persistence version="9" />
   <debugInfo>
-    <lang id="530533ee-f789-4c1e-ba56-de1bbf3afda7" name="jetbrains.mps.samples.multipleProjections.stateMachine" />
-    <lang id="8d18a45b-ac7e-4d84-a539-75f1d720b09b" name="jetbrains.mps.samples.multipleProjections.requestTracking" />
     <lang id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core" />
-    <concept id="530533ee-f789-4c1e-ba56-de1bbf3afda7/763922957008729156" name="jetbrains.mps.samples.multipleProjections.stateMachine.structure.StateReference" />
-    <concept id="530533ee-f789-4c1e-ba56-de1bbf3afda7/763922957008729158" name="jetbrains.mps.samples.multipleProjections.stateMachine.structure.EventReference" />
-    <concept id="8d18a45b-ac7e-4d84-a539-75f1d720b09b/3675491646420739318" name="jetbrains.mps.samples.multipleProjections.requestTracking.structure.Workflow" />
-    <concept id="530533ee-f789-4c1e-ba56-de1bbf3afda7/763922957008729147" name="jetbrains.mps.samples.multipleProjections.stateMachine.structure.Event" />
+    <lang id="8d18a45b-ac7e-4d84-a539-75f1d720b09b" name="jetbrains.mps.samples.multipleProjections.requestTracking" />
+    <lang id="530533ee-f789-4c1e-ba56-de1bbf3afda7" name="jetbrains.mps.samples.multipleProjections.stateMachine" />
     <concept id="530533ee-f789-4c1e-ba56-de1bbf3afda7/763922957008726945" name="jetbrains.mps.samples.multipleProjections.stateMachine.structure.StateMachine" />
+    <concept id="530533ee-f789-4c1e-ba56-de1bbf3afda7/763922957008729147" name="jetbrains.mps.samples.multipleProjections.stateMachine.structure.Event" />
     <concept id="530533ee-f789-4c1e-ba56-de1bbf3afda7/763922957008729149" name="jetbrains.mps.samples.multipleProjections.stateMachine.structure.Transition" />
     <concept id="530533ee-f789-4c1e-ba56-de1bbf3afda7/763922957008729154" name="jetbrains.mps.samples.multipleProjections.stateMachine.structure.State" />
+    <concept id="530533ee-f789-4c1e-ba56-de1bbf3afda7/763922957008729156" name="jetbrains.mps.samples.multipleProjections.stateMachine.structure.StateReference" />
+    <concept id="530533ee-f789-4c1e-ba56-de1bbf3afda7/763922957008729158" name="jetbrains.mps.samples.multipleProjections.stateMachine.structure.EventReference" />
     <concept id="8d18a45b-ac7e-4d84-a539-75f1d720b09b/3675491646420733795" name="jetbrains.mps.samples.multipleProjections.requestTracking.structure.WorkflowContainer" />
+    <concept id="8d18a45b-ac7e-4d84-a539-75f1d720b09b/3675491646420739318" name="jetbrains.mps.samples.multipleProjections.requestTracking.structure.Workflow" />
+    <property id="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001" name="name" />
     <property id="530533ee-f789-4c1e-ba56-de1bbf3afda7/763922957008729149/763922957008729153" name="condition" />
     <property id="8d18a45b-ac7e-4d84-a539-75f1d720b09b/3675491646420739318/3675491646420872268" name="presentation" />
-    <property id="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001" name="name" />
-    <refRole id="530533ee-f789-4c1e-ba56-de1bbf3afda7/763922957008729158/763922957008729159" name="event" />
     <refRole id="530533ee-f789-4c1e-ba56-de1bbf3afda7/763922957008729156/763922957008729157" name="state" />
+    <refRole id="530533ee-f789-4c1e-ba56-de1bbf3afda7/763922957008729158/763922957008729159" name="event" />
+    <childRole id="530533ee-f789-4c1e-ba56-de1bbf3afda7/763922957008726945/763922957008726947" name="events" />
     <childRole id="530533ee-f789-4c1e-ba56-de1bbf3afda7/763922957008726945/763922957008726948" name="transitions" />
+    <childRole id="530533ee-f789-4c1e-ba56-de1bbf3afda7/763922957008726945/763922957008726949" name="states" />
     <childRole id="530533ee-f789-4c1e-ba56-de1bbf3afda7/763922957008729149/763922957008729150" name="fromState" />
     <childRole id="530533ee-f789-4c1e-ba56-de1bbf3afda7/763922957008729149/763922957008729151" name="trigger" />
-    <childRole id="8d18a45b-ac7e-4d84-a539-75f1d720b09b/3675491646420733795/3675491646420738766" name="workflows" />
     <childRole id="530533ee-f789-4c1e-ba56-de1bbf3afda7/763922957008729149/763922957008729152" name="toState" />
+    <childRole id="8d18a45b-ac7e-4d84-a539-75f1d720b09b/3675491646420733795/3675491646420738766" name="workflows" />
     <childRole id="8d18a45b-ac7e-4d84-a539-75f1d720b09b/3675491646420739318/3675491646420739343" name="stateMachine" />
-    <childRole id="530533ee-f789-4c1e-ba56-de1bbf3afda7/763922957008726945/763922957008726947" name="events" />
-    <childRole id="530533ee-f789-4c1e-ba56-de1bbf3afda7/763922957008726945/763922957008726949" name="states" />
   </debugInfo>
   <languages>
-    <use id="530533ee-f789-4c1e-ba56-de1bbf3afda7" version="-1" index="tq30" />
     <use id="8d18a45b-ac7e-4d84-a539-75f1d720b09b" version="-1" index="xpx" />
+    <use id="530533ee-f789-4c1e-ba56-de1bbf3afda7" version="-1" index="tq30" />
     <use id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" version="0" implicit="true" index="asn4" />
   </languages>
   <imports>

@@ -15,25 +15,19 @@
  */
 package jetbrains.mps.project;
 
+import org.jetbrains.annotations.NotNull;
+
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-/**
- * Created by IntelliJ IDEA.
- * User: fyodor
- * Date: 3/12/12
- * Time: 2:28 PM
- * To change this template use File | Settings | File Templates.
- */
 public class Version implements Comparable<Version> {
-  
   private static Pattern VERSION = Pattern.compile("(\\d+)\\.(\\d+)\\.?(\\d)?");
-  
+
   private final String myMajor;
   private final String myMinor;
   private final String myHotfix;
 
-  public static Version fromString (String versionString) throws IllegalArgumentException{
+  public static Version fromString(String versionString) throws IllegalArgumentException {
     Matcher matcher = VERSION.matcher(versionString);
     if (matcher.matches()) {
       String major = matcher.group(1);
@@ -41,7 +35,7 @@ public class Version implements Comparable<Version> {
       String hotfix = matcher.group(3);
       return new Version(major, minor, hotfix);
     }
-    throw new IllegalArgumentException("unrecognized version: "+versionString);
+    throw new IllegalArgumentException("unrecognized version: " + versionString);
   }
 
   private Version(String major, String minor, String hotfix) {
@@ -51,30 +45,23 @@ public class Version implements Comparable<Version> {
   }
 
   public boolean isMajorUpdate(Version newVersion) {
-    if (compareTo(newVersion) < 0) {
-      return compareString(this.myMajor, newVersion.myMajor) < 0;
-    }
-    return false;
+    return compareTo(newVersion) < 0 && compareString(this.myMajor, newVersion.myMajor) < 0;
   }
 
   public boolean isMinorUpdate(Version newVersion) {
-    if (compareTo(newVersion) < 0) {
-      return compareString(this.myMajor, newVersion.myMajor) == 0 &&
-             compareString(this.myMinor, newVersion.myMinor) < 0;
-    }
-    return false;
+    return compareTo(newVersion) < 0 &&
+        compareString(this.myMajor, newVersion.myMajor) == 0 &&
+        compareString(this.myMinor, newVersion.myMinor) < 0;
   }
 
   public boolean isHotfix(Version newVersion) {
-    if (compareTo(newVersion) < 0) {
-      return compareString(this.myMajor, newVersion.myMajor) == 0 &&
-             compareString(this.myMinor, newVersion.myMinor) == 0;
-    }
-    return false;
+    return compareTo(newVersion) < 0 &&
+        compareString(this.myMajor, newVersion.myMajor) == 0 &&
+        compareString(this.myMinor, newVersion.myMinor) == 0;
   }
 
   @Override
-  public int compareTo(Version that) {
+  public int compareTo(@NotNull Version that) {
     int maj = compareString(this.myMajor, that.myMajor);
     if (maj != 0) return maj;
 
@@ -108,11 +95,10 @@ public class Version implements Comparable<Version> {
 
   @Override
   public String toString() {
-    return myMajor+"."+myMinor+(myHotfix != null ? "."+myHotfix : "");
+    return myMajor + "." + myMinor + (myHotfix != null ? "." + myHotfix : "");
   }
 
   private int compareString(String a, String b) {
-    return a == b ? 0 : (a != null ? a.compareTo(b) : - b.compareTo(a));
+    return a == b ? 0 : (a != null ? a.compareTo(b) : -b.compareTo(a));
   }
-  
 }

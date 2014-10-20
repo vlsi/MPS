@@ -25,17 +25,21 @@
   <depends>jetbrains.mps.ide.mpsmigration</depends>
   <project-components>
     <component>
-      <implementation-class>jetbrains.mps.ide.migration.assistant.MigrationAssistant</implementation-class>
-    </component>
-    <component>
-      <implementation-class>jetbrains.mps.ide.migration.assistant.MigrationProcessor</implementation-class>
+      <implementation-class>jetbrains.mps.ide.migration.StartupMigrationExecutor</implementation-class>
     </component>
     <component>
       <implementation-class>jetbrains.mps.ide.migration.storage.StorageAssistant</implementation-class>
     </component>
+    <component>
+      <implementation-class>jetbrains.mps.migration.component.util.MigrationComponent</implementation-class>
+    </component>
+    <component>
+      <implementation-class>jetbrains.mps.migration.component.plugin.Component_PluginInitializer</implementation-class>
+    </component>
   </project-components>
 
   <extensions defaultExtensionNs="com.intellij">
+    <mps.LanguageLibrary dir="/solutions"/>
     <errorHandler implementation="jetbrains.mps.ide.blame.CharismaReporter"/>
   </extensions>
 </idea-plugin>

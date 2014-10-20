@@ -908,11 +908,15 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
       if (oldLanguageVersions.containsKey(lang)) {
         newLanguageVersions.put(lang, oldLanguageVersions.get(lang));
       } else {
+        setChanged();
         newLanguageVersions.put(lang, lang.getLanguageVersion());
       }
     }
-    oldLanguageVersions.clear();
-    oldLanguageVersions.putAll(newLanguageVersions);
+    if (oldLanguageVersions.size() != newLanguageVersions.size()) {
+      setChanged();
+      oldLanguageVersions.clear();
+      oldLanguageVersions.putAll(newLanguageVersions);
+    }
   }
 
 }

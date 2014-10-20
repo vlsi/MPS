@@ -2,58 +2,58 @@
 <model ref="r:1a01fdc1-6171-4a9b-86c9-e6b8bbdfe8af(Kaja.sandbox.sandbox)">
   <persistence version="9" />
   <debugInfo>
+    <lang id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core" />
     <lang id="049a08c5-1fe5-43cc-bd99-8b46d641d7f5" name="jetbrains.mps.samples.Kaja" />
     <lang id="44306fd2-ef94-4b56-9806-d9ab509536db" name="jetbrains.mps.samples.KajaAndOr" />
     <lang id="b56912a3-674f-4530-b0cf-55261b526a1f" name="jetbrains.mps.samples.KajaSceneConstruction" />
-    <lang id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core" />
-    <concept id="049a08c5-1fe5-43cc-bd99-8b46d641d7f5/3308300503039700882" name="jetbrains.mps.samples.Kaja.structure.RoutineCall" />
-    <concept id="44306fd2-ef94-4b56-9806-d9ab509536db/1904811872814253578" name="jetbrains.mps.samples.KajaAndOr.structure.And" />
-    <concept id="049a08c5-1fe5-43cc-bd99-8b46d641d7f5/4394627182934741782" name="jetbrains.mps.samples.Kaja.structure.Library" />
-    <concept id="049a08c5-1fe5-43cc-bd99-8b46d641d7f5/6405700485436287811" name="jetbrains.mps.samples.Kaja.structure.CommentLine" />
-    <concept id="049a08c5-1fe5-43cc-bd99-8b46d641d7f5/3308300503039647788" name="jetbrains.mps.samples.Kaja.structure.IsWall" />
-    <concept id="049a08c5-1fe5-43cc-bd99-8b46d641d7f5/3265739055509559110" name="jetbrains.mps.samples.Kaja.structure.Script" />
-    <concept id="049a08c5-1fe5-43cc-bd99-8b46d641d7f5/6405700485436120871" name="jetbrains.mps.samples.Kaja.structure.Drop" />
-    <concept id="049a08c5-1fe5-43cc-bd99-8b46d641d7f5/3308300503039667424" name="jetbrains.mps.samples.Kaja.structure.While" />
-    <concept id="049a08c5-1fe5-43cc-bd99-8b46d641d7f5/3308300503039660364" name="jetbrains.mps.samples.Kaja.structure.Repeat" />
-    <concept id="049a08c5-1fe5-43cc-bd99-8b46d641d7f5/3308300503039683644" name="jetbrains.mps.samples.Kaja.structure.West" />
-    <concept id="049a08c5-1fe5-43cc-bd99-8b46d641d7f5/3308300503039683649" name="jetbrains.mps.samples.Kaja.structure.Heading" />
     <concept id="049a08c5-1fe5-43cc-bd99-8b46d641d7f5/859008965969439768" name="jetbrains.mps.samples.Kaja.structure.IsFull" />
-    <concept id="049a08c5-1fe5-43cc-bd99-8b46d641d7f5/3308300503039740438" name="jetbrains.mps.samples.Kaja.structure.EmptyLine" />
-    <concept id="049a08c5-1fe5-43cc-bd99-8b46d641d7f5/3308300503039647678" name="jetbrains.mps.samples.Kaja.structure.IfStatement" />
-    <concept id="049a08c5-1fe5-43cc-bd99-8b46d641d7f5/6405700485436170013" name="jetbrains.mps.samples.Kaja.structure.Pick" />
-    <concept id="049a08c5-1fe5-43cc-bd99-8b46d641d7f5/3308300503039896127" name="jetbrains.mps.samples.Kaja.structure.CommandList" />
-    <concept id="049a08c5-1fe5-43cc-bd99-8b46d641d7f5/3308300503039675723" name="jetbrains.mps.samples.Kaja.structure.South" />
+    <concept id="44306fd2-ef94-4b56-9806-d9ab509536db/1904811872814253578" name="jetbrains.mps.samples.KajaAndOr.structure.And" />
     <concept id="b56912a3-674f-4530-b0cf-55261b526a1f/3210697320273550864" name="jetbrains.mps.samples.KajaSceneConstruction.structure.BuildWall" />
     <concept id="b56912a3-674f-4530-b0cf-55261b526a1f/3210697320273608254" name="jetbrains.mps.samples.KajaSceneConstruction.structure.DropMark" />
     <concept id="049a08c5-1fe5-43cc-bd99-8b46d641d7f5/3210697320273763054" name="jetbrains.mps.samples.Kaja.structure.TraceMessage" />
-    <concept id="049a08c5-1fe5-43cc-bd99-8b46d641d7f5/3308300503039654064" name="jetbrains.mps.samples.Kaja.structure.Not" />
-    <concept id="049a08c5-1fe5-43cc-bd99-8b46d641d7f5/4394627182934757449" name="jetbrains.mps.samples.Kaja.structure.Require" />
+    <concept id="049a08c5-1fe5-43cc-bd99-8b46d641d7f5/3265739055509559110" name="jetbrains.mps.samples.Kaja.structure.Script" />
     <concept id="049a08c5-1fe5-43cc-bd99-8b46d641d7f5/3265739055509559138" name="jetbrains.mps.samples.Kaja.structure.Step" />
-    <concept id="049a08c5-1fe5-43cc-bd99-8b46d641d7f5/3308300503039700857" name="jetbrains.mps.samples.Kaja.structure.RoutineDefinition" />
     <concept id="049a08c5-1fe5-43cc-bd99-8b46d641d7f5/3308300503039647627" name="jetbrains.mps.samples.Kaja.structure.LeftTurn" />
+    <concept id="049a08c5-1fe5-43cc-bd99-8b46d641d7f5/3308300503039647678" name="jetbrains.mps.samples.Kaja.structure.IfStatement" />
+    <concept id="049a08c5-1fe5-43cc-bd99-8b46d641d7f5/3308300503039647788" name="jetbrains.mps.samples.Kaja.structure.IsWall" />
+    <concept id="049a08c5-1fe5-43cc-bd99-8b46d641d7f5/3308300503039654064" name="jetbrains.mps.samples.Kaja.structure.Not" />
+    <concept id="049a08c5-1fe5-43cc-bd99-8b46d641d7f5/3308300503039660364" name="jetbrains.mps.samples.Kaja.structure.Repeat" />
+    <concept id="049a08c5-1fe5-43cc-bd99-8b46d641d7f5/3308300503039667424" name="jetbrains.mps.samples.Kaja.structure.While" />
+    <concept id="049a08c5-1fe5-43cc-bd99-8b46d641d7f5/3308300503039675723" name="jetbrains.mps.samples.Kaja.structure.South" />
+    <concept id="049a08c5-1fe5-43cc-bd99-8b46d641d7f5/3308300503039683644" name="jetbrains.mps.samples.Kaja.structure.West" />
+    <concept id="049a08c5-1fe5-43cc-bd99-8b46d641d7f5/3308300503039683649" name="jetbrains.mps.samples.Kaja.structure.Heading" />
+    <concept id="049a08c5-1fe5-43cc-bd99-8b46d641d7f5/3308300503039700857" name="jetbrains.mps.samples.Kaja.structure.RoutineDefinition" />
+    <concept id="049a08c5-1fe5-43cc-bd99-8b46d641d7f5/3308300503039700882" name="jetbrains.mps.samples.Kaja.structure.RoutineCall" />
+    <concept id="049a08c5-1fe5-43cc-bd99-8b46d641d7f5/3308300503039740438" name="jetbrains.mps.samples.Kaja.structure.EmptyLine" />
+    <concept id="049a08c5-1fe5-43cc-bd99-8b46d641d7f5/3308300503039896127" name="jetbrains.mps.samples.Kaja.structure.CommandList" />
+    <concept id="049a08c5-1fe5-43cc-bd99-8b46d641d7f5/4394627182934741782" name="jetbrains.mps.samples.Kaja.structure.Library" />
+    <concept id="049a08c5-1fe5-43cc-bd99-8b46d641d7f5/4394627182934757449" name="jetbrains.mps.samples.Kaja.structure.Require" />
+    <concept id="049a08c5-1fe5-43cc-bd99-8b46d641d7f5/6405700485436120871" name="jetbrains.mps.samples.Kaja.structure.Drop" />
+    <concept id="049a08c5-1fe5-43cc-bd99-8b46d641d7f5/6405700485436170013" name="jetbrains.mps.samples.Kaja.structure.Pick" />
     <concept id="049a08c5-1fe5-43cc-bd99-8b46d641d7f5/6405700485436186598" name="jetbrains.mps.samples.Kaja.structure.IsMark" />
-    <property id="049a08c5-1fe5-43cc-bd99-8b46d641d7f5/6405700485436287811/6405700485436287813" name="text" />
-    <property id="049a08c5-1fe5-43cc-bd99-8b46d641d7f5/3210697320273763054/3210697320273763055" name="message" />
-    <property id="b56912a3-674f-4530-b0cf-55261b526a1f/3210697320273608255/3210697320273608256" name="row" />
-    <property id="049a08c5-1fe5-43cc-bd99-8b46d641d7f5/3308300503039660364/3308300503039660366" name="count" />
-    <property id="b56912a3-674f-4530-b0cf-55261b526a1f/3210697320273608255/3210697320273608257" name="col" />
+    <concept id="049a08c5-1fe5-43cc-bd99-8b46d641d7f5/6405700485436287811" name="jetbrains.mps.samples.Kaja.structure.CommentLine" />
     <property id="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001" name="name" />
-    <refRole id="049a08c5-1fe5-43cc-bd99-8b46d641d7f5/4394627182934757449/4394627182934757450" name="library" />
+    <property id="b56912a3-674f-4530-b0cf-55261b526a1f/3210697320273608255/3210697320273608256" name="row" />
+    <property id="b56912a3-674f-4530-b0cf-55261b526a1f/3210697320273608255/3210697320273608257" name="col" />
+    <property id="049a08c5-1fe5-43cc-bd99-8b46d641d7f5/3210697320273763054/3210697320273763055" name="message" />
+    <property id="049a08c5-1fe5-43cc-bd99-8b46d641d7f5/3308300503039660364/3308300503039660366" name="count" />
+    <property id="049a08c5-1fe5-43cc-bd99-8b46d641d7f5/6405700485436287811/6405700485436287813" name="text" />
     <refRole id="049a08c5-1fe5-43cc-bd99-8b46d641d7f5/3308300503039700882/3308300503039730636" name="definition" />
-    <childRole id="049a08c5-1fe5-43cc-bd99-8b46d641d7f5/3308300503039896127/3308300503039896128" name="commands" />
-    <childRole id="049a08c5-1fe5-43cc-bd99-8b46d641d7f5/3308300503039647678/3308300503039647680" name="condition" />
-    <childRole id="049a08c5-1fe5-43cc-bd99-8b46d641d7f5/3308300503039667424/3308300503039667426" name="condition" />
-    <childRole id="049a08c5-1fe5-43cc-bd99-8b46d641d7f5/3308300503039667424/3308300503039667427" name="body" />
+    <refRole id="049a08c5-1fe5-43cc-bd99-8b46d641d7f5/4394627182934757449/4394627182934757450" name="library" />
     <childRole id="44306fd2-ef94-4b56-9806-d9ab509536db/1904811872814253785/1904811872814253580" name="left" />
-    <childRole id="049a08c5-1fe5-43cc-bd99-8b46d641d7f5/3308300503039660364/3308300503039660367" name="body" />
-    <childRole id="049a08c5-1fe5-43cc-bd99-8b46d641d7f5/3308300503039647678/3308300503039647685" name="falseBranch" />
-    <childRole id="049a08c5-1fe5-43cc-bd99-8b46d641d7f5/3308300503039647678/3308300503039647684" name="trueBranch" />
     <childRole id="44306fd2-ef94-4b56-9806-d9ab509536db/1904811872814253785/1904811872814253581" name="right" />
     <childRole id="049a08c5-1fe5-43cc-bd99-8b46d641d7f5/3265739055509559110/3265739055509559116" name="body" />
+    <childRole id="049a08c5-1fe5-43cc-bd99-8b46d641d7f5/3308300503039647678/3308300503039647680" name="condition" />
+    <childRole id="049a08c5-1fe5-43cc-bd99-8b46d641d7f5/3308300503039647678/3308300503039647684" name="trueBranch" />
+    <childRole id="049a08c5-1fe5-43cc-bd99-8b46d641d7f5/3308300503039647678/3308300503039647685" name="falseBranch" />
     <childRole id="049a08c5-1fe5-43cc-bd99-8b46d641d7f5/3308300503039654064/3308300503039654067" name="original" />
+    <childRole id="049a08c5-1fe5-43cc-bd99-8b46d641d7f5/3308300503039660364/3308300503039660367" name="body" />
+    <childRole id="049a08c5-1fe5-43cc-bd99-8b46d641d7f5/3308300503039667424/3308300503039667426" name="condition" />
+    <childRole id="049a08c5-1fe5-43cc-bd99-8b46d641d7f5/3308300503039667424/3308300503039667427" name="body" />
     <childRole id="049a08c5-1fe5-43cc-bd99-8b46d641d7f5/3308300503039683649/3308300503039683650" name="direction" />
-    <childRole id="049a08c5-1fe5-43cc-bd99-8b46d641d7f5/4394627182934741782/4394627182934741783" name="definitions" />
     <childRole id="049a08c5-1fe5-43cc-bd99-8b46d641d7f5/3308300503039700857/3308300503039700860" name="body" />
+    <childRole id="049a08c5-1fe5-43cc-bd99-8b46d641d7f5/3308300503039896127/3308300503039896128" name="commands" />
+    <childRole id="049a08c5-1fe5-43cc-bd99-8b46d641d7f5/4394627182934741782/4394627182934741783" name="definitions" />
   </debugInfo>
   <languages>
     <use id="049a08c5-1fe5-43cc-bd99-8b46d641d7f5" version="-1" index="98e2" />

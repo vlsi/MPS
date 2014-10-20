@@ -21,9 +21,12 @@ import jetbrains.mps.lang.structure.scripts.RefUtil;
 import jetbrains.mps.ide.refactoring.OptionDialog;
 import org.jetbrains.mps.openapi.model.SNodeUtil;
 import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.ide.platform.refactoring.RefactoringAccess;
-import jetbrains.mps.refactoring.framework.RefactoringContext;
-import java.util.Arrays;
+import jetbrains.mps.smodel.Language;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 
@@ -108,15 +111,15 @@ public class MoveLinkUp_Action extends BaseAction {
       final Boolean merge = mergeLinks;
       modelAccess.runReadInEDT(new Runnable() {
         public void run() {
-          SNode node = ((SNode) ((SNode) MapSequence.fromMap(_params).get("target")));
-          if (!(SNodeUtil.isAccessible(node, MPSModuleRepository.getInstance()))) {
+          if (!(SNodeUtil.isAccessible(((SNode) MapSequence.fromMap(_params).get("target")), MPSModuleRepository.getInstance()))) {
             return;
           }
-          SNode node1 = ((SNode) targetConcept);
-          if (!(SNodeUtil.isAccessible(node1, MPSModuleRepository.getInstance()))) {
+          if (!(SNodeUtil.isAccessible(targetConcept, MPSModuleRepository.getInstance()))) {
             return;
           }
-          RefactoringAccess.getInstance().getRefactoringFacade().execute(RefactoringContext.createRefactoringContextByName("jetbrains.mps.lang.structure.refactorings.MoveLinkUp", Arrays.asList("targetConcept", "mergeLinks"), Arrays.asList(targetConcept, merge), ((SNode) MapSequence.fromMap(_params).get("target")), ((MPSProject) MapSequence.fromMap(_params).get("project"))));
+          Language targetLanguage = Language.getLanguageFor(SNodeOperations.getModel(targetConcept));
+          AttributeOperations.setAttribute(((SNode) MapSequence.fromMap(_params).get("target")), new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation"), SConceptOperations.createNewNode("jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation", null));
+          ListSequence.fromList(SLinkOperations.getTargets(targetConcept, "linkDeclaration", true)).addElement(SNodeOperations.copyNode(((SNode) MapSequence.fromMap(_params).get("target"))));
         }
       });
 

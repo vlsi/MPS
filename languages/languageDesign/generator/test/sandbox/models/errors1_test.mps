@@ -2,11 +2,11 @@
 <model ref="r:65fc685c-7150-448a-852d-28be5daa3af8(errors1_test)" doNotGenerate="true">
   <persistence version="9" />
   <debugInfo>
-    <lang id="99a58581-8518-40c8-81f1-e364306f5ffc" name="jetbrains.mps.transformation.test.errorReporting" />
     <lang id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core" />
+    <lang id="99a58581-8518-40c8-81f1-e364306f5ffc" name="jetbrains.mps.transformation.test.errorReporting" />
     <concept id="99a58581-8518-40c8-81f1-e364306f5ffc/7287346816896104019" name="jetbrains.mps.transformation.test.errorReporting.structure.ErrorReportingRoot" />
-    <property id="99a58581-8518-40c8-81f1-e364306f5ffc/7287346816896104019/7287346816896111112" name="intval" />
     <property id="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001" name="name" />
+    <property id="99a58581-8518-40c8-81f1-e364306f5ffc/7287346816896104019/7287346816896111112" name="intval" />
   </debugInfo>
   <languages>
     <use id="99a58581-8518-40c8-81f1-e364306f5ffc" version="-1" index="bj69" />
