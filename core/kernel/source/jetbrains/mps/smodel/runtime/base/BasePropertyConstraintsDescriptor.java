@@ -65,7 +65,7 @@ public class BasePropertyConstraintsDescriptor implements PropertyConstraintsDis
     String namespace = NameUtil.namespaceFromConceptFQName(fqName);
 
     // 'bootstrap' properties
-    if (namespace.equals("jetbrains.mps.lang.structure") && propertyName.equals(SNodeUtil.property_INamedConcept_name)
+    if (namespace.equals("jetbrains.mps.lang.structure") && propertyName.equals(SNodeUtil.propertyName_INamedConcept_name)
         && !fqName.equals("jetbrains.mps.lang.structure.structure.AnnotationLinkDeclaration")) {
       return true;
     }

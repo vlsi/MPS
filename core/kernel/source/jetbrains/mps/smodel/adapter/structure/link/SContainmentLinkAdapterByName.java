@@ -77,10 +77,10 @@ public class SContainmentLinkAdapterByName extends SContainmentLinkAdapter {
 
   @Override
   protected SNode findInConcept(SNode cnode) {
-    Iterable<? extends SNode> links = cnode.getChildren(SNodeUtil.link_AbstractConceptDeclaration_linkDeclaration);
+    Iterable<? extends SNode> links = cnode.getChildren(SNodeUtil.linkName_AbstractConceptDeclaration_linkDeclaration);
     for (SNode l : links) {
       if (SNodeUtil.getLinkDeclaration_IsReference(l)) continue;
-      if (l.getProperty(SNodeUtil.property_LinkDeclaration_role).equals(myName)) return l;
+      if (l.getProperty(SNodeUtil.propertyName_LinkDeclaration_role).equals(myName)) return l;
     }
     return null;
   }

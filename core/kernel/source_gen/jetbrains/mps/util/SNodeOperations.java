@@ -202,7 +202,7 @@ public class SNodeOperations {
     if (resolveInfo != null) {
       return resolveInfo;
     }
-    return n.getProperty(jetbrains.mps.smodel.SNodeUtil.property_INamedConcept_name);
+    return n.getProperty(jetbrains.mps.smodel.SNodeUtil.propertyName_INamedConcept_name);
   }
   public static void copyProperties(SNode from, final SNode to) {
     for (String name : from.getPropertyNames()) {

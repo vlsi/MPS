@@ -66,9 +66,9 @@ public class SPropertyAdapterByName extends SPropertyAdapter {
 
   @Override
   protected SNode findInConcept(SNode cnode) {
-    Iterable<? extends SNode> props = cnode.getChildren(SNodeUtil.link_AbstractConceptDeclaration_propertyDeclaration);
+    Iterable<? extends SNode> props = cnode.getChildren(SNodeUtil.linkName_AbstractConceptDeclaration_propertyDeclaration);
     for (SNode p : props) {
-      if (p.getProperty(SNodeUtil.property_INamedConcept_name).equals(myPropertyName)) return p;
+      if (p.getProperty(SNodeUtil.propertyName_INamedConcept_name).equals(myPropertyName)) return p;
     }
     return null;
   }

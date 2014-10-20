@@ -72,7 +72,7 @@ public abstract class SReferenceLinkAdapter implements SReferenceLink {
   @Override
   public SAbstractConcept getTargetConcept() {
     ReferenceDescriptor rd = getReferenceDescriptor();
-    if (rd == null) return new SConceptAdapterById(SNodeUtil.conceptId_BaseConcept,SNodeUtil.concept_BaseConcept);
+    if (rd == null) return new SConceptAdapterById(SNodeUtil.conceptId_BaseConcept,SNodeUtil.conceptName_BaseConcept);
 
     SConceptId id = rd.getTargetConcept();
     ConceptDescriptor concept = ConceptRegistryUtil.getConceptDescriptor(id);

@@ -19,7 +19,8 @@ import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.smodel.Language;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.LanguageAspect;
-import jetbrains.mps.smodel.SNodeUtil;
+import jetbrains.mps.smodel.adapter.structure.property.SPropertyAdapterById;
+import jetbrains.mps.smodel.adapter.ids.SPropertyId;
 import java.util.Arrays;
 
 public class MigrationsCheckUtil {
@@ -76,15 +77,12 @@ public class MigrationsCheckUtil {
     }
     boolean hasIncompleteScript = false;
     List<Integer> scripts = new ArrayList<Integer>();
-    for (SNode root : migModel.getRootNodes()) {
-      if (!(SNodeOperations.isInstanceOf(root, SNodeUtil.concept_AbstractMigrationScript))) {
-        continue;
-      }
-      if (root.getProperty(SNodeUtil.property_AbstractMigrationScript_fromVersion) == null) {
+    for (SNode root : SModelOperations.getRoots(migModel, "jetbrains.mps.lang.migration.structure.MigrationScript")) {
+      if (root.getProperty(new SPropertyAdapterById(SPropertyId.deserialize("90746344-04fd-4286-97d5-b46ae6a81709/8352104482584315555/5820409521797704727"), "fromVersion")) == null) {
         hasIncompleteScript = true;
         continue;
       }
-      scripts.add(SPropertyOperations.getInteger(root, SNodeUtil.property_AbstractMigrationScript_fromVersion));
+      scripts.add(SPropertyOperations.getInteger(root, "fromVersion"));
     }
     if (scripts.isEmpty()) {
       return;

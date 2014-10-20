@@ -126,8 +126,8 @@ class InterpretedConceptDescriptor extends BaseConceptDescriptor {
         if (SNodeUtil.isInstanceOfConceptDeclaration(declaration)) {
           SNode superConceptNode = SNodeUtil.getConceptDeclaration_Extends(declaration);
 
-          if (superConceptNode == null && !SNodeUtil.concept_BaseConcept.equals(myName)) {
-            superConcept = SNodeUtil.concept_BaseConcept;
+          if (superConceptNode == null && !SNodeUtil.conceptName_BaseConcept.equals(myName)) {
+            superConcept = SNodeUtil.conceptName_BaseConcept;
             superConceptId = SNodeUtil.conceptId_BaseConcept;
           } else {
             superConcept = NameUtil.nodeFQName(superConceptNode);
@@ -155,8 +155,8 @@ class InterpretedConceptDescriptor extends BaseConceptDescriptor {
         }
 
         parentsSet.remove(null);
-        if (superConcept == null && !SNodeUtil.concept_BaseConcept.equals(myName)) {
-          parentsSet.add(SNodeUtil.concept_BaseConcept);
+        if (superConcept == null && !SNodeUtil.conceptName_BaseConcept.equals(myName)) {
+          parentsSet.add(SNodeUtil.conceptName_BaseConcept);
           parentsIdsSet.add(SNodeUtil.conceptId_BaseConcept);
         }
 

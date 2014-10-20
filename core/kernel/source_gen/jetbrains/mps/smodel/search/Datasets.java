@@ -127,7 +127,7 @@ import jetbrains.mps.util.FlattenIterable;
       if (SNodeUtil.isInstanceOfAbstractConceptDeclaration(event.getParent())) {
         String role = event.getChildRole();
         //  don't process adding of smth. to concept unless it is extended/implemented interface-concept 
-        if (SNodeUtil.link_ConceptDeclaration_implements.equals(role) || SNodeUtil.link_ConceptDeclaration_extends.equals(role)) {
+        if (SNodeUtil.linkName_ConceptDeclaration_implements.equals(role) || SNodeUtil.linkName_ConceptDeclaration_extends.equals(role)) {
           super.childAdded(event);
         }
       }
@@ -137,7 +137,7 @@ import jetbrains.mps.util.FlattenIterable;
       if (SNodeUtil.isInstanceOfAbstractConceptDeclaration(event.getParent())) {
         String role = event.getChildRole();
         //  don't process removing of smth. from concept unless it is extended/implemented interface-concept 
-        if (SNodeUtil.link_ConceptDeclaration_implements.equals(role) || SNodeUtil.link_ConceptDeclaration_extends.equals(role)) {
+        if (SNodeUtil.linkName_ConceptDeclaration_implements.equals(role) || SNodeUtil.linkName_ConceptDeclaration_extends.equals(role)) {
           super.childRemoved(event);
         }
       }
@@ -206,7 +206,7 @@ import jetbrains.mps.util.FlattenIterable;
       if (SNodeUtil.isInstanceOfAbstractConceptDeclaration(event.getParent())) {
         String role = event.getChildRole();
         //  don't process adding of smth. to concept unless it is property-declaration 
-        if (SNodeUtil.link_AbstractConceptDeclaration_propertyDeclaration.equals(role)) {
+        if (SNodeUtil.linkName_AbstractConceptDeclaration_propertyDeclaration.equals(role)) {
           super.childAdded(event);
         }
       }
@@ -216,7 +216,7 @@ import jetbrains.mps.util.FlattenIterable;
       if (SNodeUtil.isInstanceOfAbstractConceptDeclaration(event.getParent())) {
         String role = event.getChildRole();
         //  don't process removing of smth. from concept unless it is property-declaration 
-        if (SNodeUtil.link_AbstractConceptDeclaration_propertyDeclaration.equals(role)) {
+        if (SNodeUtil.linkName_AbstractConceptDeclaration_propertyDeclaration.equals(role)) {
           super.childRemoved(event);
         }
       }
@@ -323,7 +323,7 @@ import jetbrains.mps.util.FlattenIterable;
       if (SNodeUtil.isInstanceOfAbstractConceptDeclaration(event.getParent())) {
         String role = event.getChildRole();
         //  don't process adding of smth. to concept unless it is link-declaration 
-        if (SNodeUtil.link_AbstractConceptDeclaration_linkDeclaration.equals(role)) {
+        if (SNodeUtil.linkName_AbstractConceptDeclaration_linkDeclaration.equals(role)) {
           super.childAdded(event);
         }
       }
@@ -333,7 +333,7 @@ import jetbrains.mps.util.FlattenIterable;
       if (SNodeUtil.isInstanceOfAbstractConceptDeclaration(event.getParent())) {
         String role = event.getChildRole();
         //  don't process removing of smth. from concept unless it is link-declaration 
-        if (SNodeUtil.link_AbstractConceptDeclaration_linkDeclaration.equals(role)) {
+        if (SNodeUtil.linkName_AbstractConceptDeclaration_linkDeclaration.equals(role)) {
           super.childRemoved(event);
         }
       }
@@ -341,7 +341,7 @@ import jetbrains.mps.util.FlattenIterable;
     @Override
     public void propertyChanged(SModelPropertyEvent event) {
       //  don't process unless it is link's role 
-      if (!(SNodeUtil.property_LinkDeclaration_role.equals(event.getPropertyName())) || !(SNodeUtil.isInstanceOfLinkDeclaration(event.getNode()))) {
+      if (!(SNodeUtil.propertyName_LinkDeclaration_role.equals(event.getPropertyName())) || !(SNodeUtil.isInstanceOfLinkDeclaration(event.getNode()))) {
         return;
       }
       String oldRole = event.getOldPropertyValue();

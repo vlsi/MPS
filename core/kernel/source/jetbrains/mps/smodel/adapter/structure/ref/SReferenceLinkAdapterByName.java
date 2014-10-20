@@ -26,7 +26,6 @@ import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import jetbrains.mps.smodel.runtime.ReferenceDescriptor;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
-import org.jetbrains.mps.openapi.language.SReferenceLink;
 import org.jetbrains.mps.openapi.model.SNode;
 
 public class SReferenceLinkAdapterByName extends SReferenceLinkAdapter {
@@ -77,10 +76,10 @@ public class SReferenceLinkAdapterByName extends SReferenceLinkAdapter {
 
   @Override
   protected SNode findInConcept(SNode cnode) {
-    Iterable<? extends SNode> links = cnode.getChildren(SNodeUtil.link_AbstractConceptDeclaration_linkDeclaration);
+    Iterable<? extends SNode> links = cnode.getChildren(SNodeUtil.linkName_AbstractConceptDeclaration_linkDeclaration);
     for (SNode l : links) {
       if (!SNodeUtil.getLinkDeclaration_IsReference(l)) continue;
-      if (l.getProperty(SNodeUtil.property_LinkDeclaration_role).equals(myName)) return l;
+      if (l.getProperty(SNodeUtil.propertyName_LinkDeclaration_role).equals(myName)) return l;
     }
     return null;
   }
