@@ -493,7 +493,7 @@
           </node>
           <node concept="9wj7.1073389446423" id="1841835149314919770" role="9wj7.1073389446423.1073389446424" info="sn">
             <node concept="9wj7.1237303669825" id="1841835149314919771" role="9wj7.1073389446423.1106270802874" info="nn" />
-            <node concept="9wj7.1103016434866" id="8172593683334095610" role="9wj7.1073389446423.1073389446424" info="lg">
+            <node concept="9wj7.1103016434866" id="8172593683334095610" role="9wj7.1073389446423.1073389446424" info="sg">
               <node concept="9wj7.1176474535556" id="8172593683334095611" role="9wj7.1103016434866.1176475119347" info="in">
                 <node concept="vg0i.1068580123136" id="8172593683334095612" role="vg0i.1137021947720.1137022507850" info="sn">
                   <node concept="vg0i.1068581242864" id="1841835149314794851" role="vg0i.1068580123136.1068581517665" info="nn">
@@ -1003,7 +1003,7 @@
     <node concept="9wj7.1071666914219" id="5838209455209284443" info="ig">
       <property role="asn4.1133920641626.1193676396447" value="Dependencies" />
       <reference role="9wj7.1166049232041.1166049300910" target="3ior.5617550519002745379" resolveInfo="BuildDependency" />
-      <node concept="9wj7.1075375595203" id="2580966228160959852" role="9wj7.1080736578640.1080736633877" info="lg">
+      <node concept="9wj7.1075375595203" id="2580966228160959852" role="9wj7.1080736578640.1080736633877" info="sg">
         <property role="9wj7.1075375595203.1075375595204" value="&lt;no dependency&gt;" />
         <node concept="9wj7.1215007883204" id="2580966228161223121" role="9wj7.1219418625346.1219418656006" info="ln">
           <property role="9wj7.1215007762405.1215007802031" value="0" />
@@ -1222,7 +1222,7 @@
     <node concept="9wj7.1071666914219" id="7389400916848073738" info="ig">
       <property role="asn4.1133920641626.1193676396447" value="Project" />
       <reference role="9wj7.1166049232041.1166049300910" target="3ior.7389400916848073736" resolveInfo="BuildProjectPart" />
-      <node concept="9wj7.1075375595203" id="2580966228161604598" role="9wj7.1080736578640.1080736633877" info="lg">
+      <node concept="9wj7.1075375595203" id="2580966228161604598" role="9wj7.1080736578640.1080736633877" info="sg">
         <property role="9wj7.1075375595203.1075375595204" value="&lt;project part&gt;" />
         <node concept="9wj7.1215007883204" id="2580966228161604705" role="9wj7.1219418625346.1219418656006" info="ln">
           <property role="9wj7.1215007762405.1215007802031" value="0" />
@@ -1439,7 +1439,7 @@
     <node concept="9wj7.1071666914219" id="7389400916848073796" info="ig">
       <property role="asn4.1133920641626.1193676396447" value="SourcePath" />
       <reference role="9wj7.1166049232041.1166049300910" target="3ior.7389400916848073790" resolveInfo="BuildSourcePath" />
-      <node concept="9wj7.1075375595203" id="2580966228161600888" role="9wj7.1080736578640.1080736633877" info="lg">
+      <node concept="9wj7.1075375595203" id="2580966228161600888" role="9wj7.1080736578640.1080736633877" info="sg">
         <property role="9wj7.1075375595203.1075375595204" value="&lt;no path&gt;" />
         <node concept="9wj7.1215007883204" id="2580966228161600995" role="9wj7.1219418625346.1219418656006" info="ln">
           <property role="9wj7.1215007762405.1215007802031" value="0" />
@@ -1519,7 +1519,7 @@
     <node concept="9wj7.1071666914219" id="7389400916848144619" info="ig">
       <property role="asn4.1133920641626.1193676396447" value="Macro" />
       <reference role="9wj7.1166049232041.1166049300910" target="3ior.5617550519002745375" resolveInfo="BuildMacro" />
-      <node concept="9wj7.1078308402140" id="7389400916848144621" role="9wj7.1080736578640.1080736633877" info="lg">
+      <node concept="9wj7.1078308402140" id="7389400916848144621" role="9wj7.1080736578640.1080736633877" info="sg">
         <node concept="9wj7.1176749715029" id="7389400916848144622" role="9wj7.1078308402140.1176795024817" info="in">
           <node concept="vg0i.1068580123136" id="7389400916848144623" role="vg0i.1137021947720.1137022507850" info="sn">
             <node concept="vg0i.1068581242878" id="7389400916848144624" role="vg0i.1068580123136.1068581517665" info="nn">
@@ -1726,7 +1726,7 @@
     <node concept="9wj7.1071666914219" id="2754769020641646201" info="ig">
       <property role="asn4.1133920641626.1193676396447" value="Project.Java.Dependencies" />
       <reference role="9wj7.1166049232041.1166049300910" target="3ior.2754769020641646199" resolveInfo="BuildSource_JavaDependency" />
-      <node concept="9wj7.1075375595203" id="2580966228161615473" role="9wj7.1080736578640.1080736633877" info="lg">
+      <node concept="9wj7.1075375595203" id="2580966228161615473" role="9wj7.1080736578640.1080736633877" info="sg">
         <property role="9wj7.1075375595203.1075375595204" value="&lt;dependency&gt;" />
         <node concept="9wj7.1215007883204" id="2580966228161615580" role="9wj7.1219418625346.1219418656006" info="ln">
           <property role="9wj7.1215007762405.1215007802031" value="0" />
@@ -1833,7 +1833,7 @@
     <node concept="9wj7.1071666914219" id="6057319140845478690" info="ig">
       <property role="asn4.1133920641626.1193676396447" value="Project.Java.Library" />
       <reference role="9wj7.1166049232041.1166049300910" target="3ior.6057319140845478688" resolveInfo="BuildSource_JavaLibraryElement" />
-      <node concept="9wj7.1075375595203" id="2580966228161611890" role="9wj7.1080736578640.1080736633877" info="lg">
+      <node concept="9wj7.1075375595203" id="2580966228161611890" role="9wj7.1080736578640.1080736633877" info="sg">
         <property role="9wj7.1075375595203.1075375595204" value="&lt;no element&gt;" />
         <node concept="9wj7.1215007883204" id="2580966228161611997" role="9wj7.1219418625346.1219418656006" info="ln">
           <property role="9wj7.1215007762405.1215007802031" value="0" />
@@ -2047,7 +2047,7 @@
     </node>
     <node concept="9wj7.1071666914219" id="3542413272732750880" info="ig">
       <reference role="9wj7.1166049232041.1166049300910" target="3ior.3542413272732750877" resolveInfo="BuildAspect" />
-      <node concept="9wj7.1075375595203" id="2580966228161592018" role="9wj7.1080736578640.1080736633877" info="lg">
+      <node concept="9wj7.1075375595203" id="2580966228161592018" role="9wj7.1080736578640.1080736633877" info="sg">
         <property role="9wj7.1075375595203.1075375595204" value="&lt;build aspect&gt;" />
         <node concept="9wj7.1215007883204" id="2580966228161592125" role="9wj7.1219418625346.1219418656006" info="ln">
           <property role="9wj7.1215007762405.1215007802031" value="0" />
@@ -2444,7 +2444,7 @@
     <node concept="9wj7.1071666914219" id="6647099934206689696" info="ig">
       <property role="asn4.1133920641626.1193676396447" value="Plugins" />
       <reference role="9wj7.1166049232041.1166049300910" target="3ior.6647099934206689694" resolveInfo="BuildPlugin" />
-      <node concept="9wj7.1075375595203" id="6647099934206700646" role="9wj7.1080736578640.1080736633877" info="lg">
+      <node concept="9wj7.1075375595203" id="6647099934206700646" role="9wj7.1080736578640.1080736633877" info="sg">
         <property role="9wj7.1075375595203.1075375595204" value="&lt;no plugin&gt;" />
       </node>
     </node>
@@ -2491,7 +2491,7 @@
     <node concept="9wj7.1071666914219" id="4903714810883760416" info="ig">
       <property role="asn4.1133920641626.1193676396447" value="Names" />
       <reference role="9wj7.1166049232041.1166049300910" target="3ior.4903714810883702015" resolveInfo="BuildStringPart" />
-      <node concept="9wj7.1075375595203" id="2580966228161622527" role="9wj7.1080736578640.1080736633877" info="lg">
+      <node concept="9wj7.1075375595203" id="2580966228161622527" role="9wj7.1080736578640.1080736633877" info="sg">
         <property role="9wj7.1075375595203.1075375595204" value="&lt;no text&gt;" />
         <node concept="9wj7.1215007883204" id="2580966228161622634" role="9wj7.1219418625346.1219418656006" info="ln">
           <property role="9wj7.1215007762405.1215007802031" value="0" />
@@ -2518,7 +2518,7 @@
     <node concept="9wj7.1071666914219" id="5248329904287794601" info="ig">
       <property role="asn4.1133920641626.1193676396447" value="SourceSet.Selectors" />
       <reference role="9wj7.1166049232041.1166049300910" target="3ior.5248329904287794599" resolveInfo="BuildFileSelector" />
-      <node concept="9wj7.1075375595203" id="2580966228161597136" role="9wj7.1080736578640.1080736633877" info="lg">
+      <node concept="9wj7.1075375595203" id="2580966228161597136" role="9wj7.1080736578640.1080736633877" info="sg">
         <property role="9wj7.1075375595203.1075375595204" value="&lt;no selector&gt;" />
         <node concept="9wj7.1215007883204" id="2580966228161597243" role="9wj7.1219418625346.1219418656006" info="ln">
           <property role="9wj7.1215007762405.1215007802031" value="0" />
@@ -2531,7 +2531,7 @@
     <node concept="9wj7.1071666914219" id="5248329904287739120" info="ig">
       <property role="asn4.1133920641626.1193676396447" value="SourceSet" />
       <reference role="9wj7.1166049232041.1166049300910" target="3ior.5248329904287739114" resolveInfo="BuildInputResourceSet" />
-      <node concept="9wj7.1078308402140" id="5248329904287759710" role="9wj7.1080736578640.1080736633877" info="lg">
+      <node concept="9wj7.1078308402140" id="5248329904287759710" role="9wj7.1080736578640.1080736633877" info="sg">
         <node concept="9wj7.1176749715029" id="5248329904287759711" role="9wj7.1078308402140.1176795024817" info="in">
           <node concept="vg0i.1068580123136" id="5248329904287759712" role="vg0i.1137021947720.1137022507850" info="sn">
             <node concept="vg0i.1068581242878" id="5248329904287759713" role="vg0i.1068580123136.1068581517665" info="nn">
@@ -2665,9 +2665,9 @@
     <node concept="9wj7.1071666914219" id="4903714810883755351" info="ig">
       <property role="asn4.1133920641626.1193676396447" value="Names" />
       <reference role="9wj7.1166049232041.1166049300910" target="3ior.4903714810883702019" resolveInfo="BuildTextStringPart" />
-      <node concept="9wj7.1088612959204" id="6083230236994733239" role="9wj7.1080736578640.1080736633877" info="lg">
+      <node concept="9wj7.1088612959204" id="6083230236994733239" role="9wj7.1080736578640.1080736633877" info="sg">
         <property role="9wj7.1088612959204.1088613081987" value="true" />
-        <node concept="9wj7.1088612959204" id="6083230236994734467" role="9wj7.1088612959204.1088612958265" info="lg">
+        <node concept="9wj7.1088612959204" id="6083230236994734467" role="9wj7.1088612959204.1088612958265" info="sg">
           <property role="9wj7.1088612959204.1088613081987" value="true" />
           <node concept="9wj7.1073389658414" id="6083230236994734472" role="9wj7.1088612959204.1088612958265" info="sg">
             <reference role="9wj7.1139848536355.1140103550593" target="3ior.4903714810883755350" resolveInfo="text" />
@@ -2887,7 +2887,7 @@
             </node>
           </node>
         </node>
-        <node concept="9wj7.1088612959204" id="5096397858823299971" role="9wj7.1088612959204.1088612973955" info="lg">
+        <node concept="9wj7.1088612959204" id="5096397858823299971" role="9wj7.1088612959204.1088612973955" info="sg">
           <property role="9wj7.1088612959204.1088613081987" value="true" />
           <node concept="9wj7.1142886221719" id="5096397858823299972" role="9wj7.1088612959204.1145918517974" info="in">
             <node concept="vg0i.1068580123136" id="5096397858823299973" role="vg0i.1137021947720.1137022507850" info="sn">
@@ -3115,7 +3115,7 @@
     <node concept="9wj7.1071666914219" id="5248329904288265470" info="ig">
       <property role="asn4.1133920641626.1193676396447" value="Project.Java.Sources" />
       <reference role="9wj7.1166049232041.1166049300910" target="3ior.5248329904288265468" resolveInfo="BuildSource_JavaSources" />
-      <node concept="9wj7.1075375595203" id="2580966228161608265" role="9wj7.1080736578640.1080736633877" info="lg">
+      <node concept="9wj7.1075375595203" id="2580966228161608265" role="9wj7.1080736578640.1080736633877" info="sg">
         <property role="9wj7.1075375595203.1075375595204" value="&lt;no sources&gt;" />
         <node concept="9wj7.1215007883204" id="2580966228161608372" role="9wj7.1219418625346.1219418656006" info="ln">
           <property role="9wj7.1215007762405.1215007802031" value="0" />
@@ -3482,7 +3482,7 @@
           <reference role="9wj7.1139848536355.1140103550593" target="3ior.4903714810883783243" />
           <reference role="9wj7.1073389214265.1139959269582" target="1222746468862108406" resolveInfo="forbid_Insert" />
           <node concept="9wj7.1237303669825" id="841011766566102495" role="9wj7.1140524381322.1140524464360" info="nn" />
-          <node concept="9wj7.1075375595203" id="841011766566102815" role="9wj7.1140524381322.1140524464359" info="lg">
+          <node concept="9wj7.1075375595203" id="841011766566102815" role="9wj7.1140524381322.1140524464359" info="sg">
             <property role="9wj7.1075375595203.1075375595204" value="&lt;empty&gt;" />
           </node>
         </node>
@@ -3673,7 +3673,7 @@
     <node concept="9wj7.1071666914219" id="3717132724152837126" info="ig">
       <property role="asn4.1133920641626.1193676396447" value="Project.Java.Classpath" />
       <reference role="9wj7.1166049232041.1166049300910" target="3ior.3717132724152837124" resolveInfo="BuildSource_JavaCP" />
-      <node concept="9wj7.1075375595203" id="2580966228161619014" role="9wj7.1080736578640.1080736633877" info="lg">
+      <node concept="9wj7.1075375595203" id="2580966228161619014" role="9wj7.1080736578640.1080736633877" info="sg">
         <property role="9wj7.1075375595203.1075375595204" value="&lt;no classpath&gt;" />
         <node concept="9wj7.1215007883204" id="2580966228161619121" role="9wj7.1219418625346.1219418656006" info="ln">
           <property role="9wj7.1215007762405.1215007802031" value="0" />
@@ -4488,7 +4488,7 @@
     <node concept="9wj7.1071666914219" id="9184644532456508468" info="ig">
       <property role="asn4.1133920641626.1193676396447" value="Layout.File" />
       <reference role="9wj7.1166049232041.1166049300910" target="3ior.9184644532456508467" resolveInfo="BuildLayout_CopyHandler" />
-      <node concept="9wj7.1078308402140" id="9184644532456529072" role="9wj7.1080736578640.1080736633877" info="lg">
+      <node concept="9wj7.1078308402140" id="9184644532456529072" role="9wj7.1080736578640.1080736633877" info="sg">
         <node concept="9wj7.1176749715029" id="9184644532456529073" role="9wj7.1078308402140.1176795024817" info="in">
           <node concept="vg0i.1068580123136" id="9184644532456529074" role="vg0i.1137021947720.1137022507850" info="sn">
             <node concept="vg0i.1068581242878" id="9184644532456529075" role="vg0i.1068580123136.1068581517665" info="nn">
@@ -5073,7 +5073,7 @@
     <node concept="9wj7.1071666914219" id="2755237150521975433" info="ig">
       <property role="asn4.1133920641626.1193676396447" value="Macro" />
       <reference role="9wj7.1166049232041.1166049300910" target="3ior.2755237150521942442" resolveInfo="BuildVariableMacroInitValue" />
-      <node concept="9wj7.1075375595203" id="2755237150521975435" role="9wj7.1080736578640.1080736633877" info="lg">
+      <node concept="9wj7.1075375595203" id="2755237150521975435" role="9wj7.1080736578640.1080736633877" info="sg">
         <property role="9wj7.1075375595203.1075375595204" value="no value" />
       </node>
     </node>
@@ -5201,7 +5201,7 @@
             </node>
           </node>
         </node>
-        <node concept="9wj7.1088612959204" id="2750015747481563084" role="9wj7.1073389446423.1073389446424" info="lg">
+        <node concept="9wj7.1088612959204" id="2750015747481563084" role="9wj7.1073389446423.1073389446424" info="sg">
           <property role="9wj7.1088612959204.1088613081987" value="true" />
           <node concept="9wj7.1073390211982" id="2750015747481563146" role="9wj7.1088612959204.1088612958265" info="sg">
             <reference role="9wj7.1139848536355.1140103550593" target="3ior.9126048691955220774" />
@@ -5265,7 +5265,7 @@
         <node concept="9wj7.1073389882823" id="2750015747481074439" role="9wj7.1073389446423.1073389446424" info="sg">
           <reference role="9wj7.1139848536355.1140103550593" target="3ior.2750015747481074432" />
         </node>
-        <node concept="9wj7.1088612959204" id="2688703077000841779" role="9wj7.1073389446423.1073389446424" info="lg">
+        <node concept="9wj7.1088612959204" id="2688703077000841779" role="9wj7.1073389446423.1073389446424" info="sg">
           <property role="9wj7.1088612959204.1088613081987" value="true" />
           <node concept="9wj7.1073390211982" id="2688703077000841780" role="9wj7.1088612959204.1088612958265" info="sg">
             <reference role="9wj7.1139848536355.1140103550593" target="3ior.2750015747481074433" />

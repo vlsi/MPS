@@ -55,7 +55,7 @@
     <node concept="9wj7.1071666914219" id="481983775135178871" info="ig">
       <property role="asn4.1133920641626.1193676396447" value="Custom.ProjectPlugin" />
       <reference role="9wj7.1166049232041.1166049300910" target="tgbt.481983775135178834" resolveInfo="ProjectPluginDeclaration" />
-      <node concept="9wj7.1198489924438" id="481983775135178872" role="9wj7.1080736578640.1080736633877" info="lg">
+      <node concept="9wj7.1198489924438" id="481983775135178872" role="9wj7.1080736578640.1080736633877" info="sg">
         <node concept="9wj7.1073389446423" id="481983775135178873" role="9wj7.1198489924438.1198489993734" info="sn">
           <property role="9wj7.1073389446423.1073389446425" value="true" />
           <node concept="9wj7.1073390211982" id="481983775135178874" role="9wj7.1073389446423.1073389446424" info="sg">
@@ -190,7 +190,7 @@
     <node concept="9wj7.1071666914219" id="481983775135178916" info="ig">
       <property role="asn4.1133920641626.1193676396447" value="Custom.ApplicationPlugin" />
       <reference role="9wj7.1166049232041.1166049300910" target="tgbt.481983775135178840" resolveInfo="ApplicationPluginDeclaration" />
-      <node concept="9wj7.1198489924438" id="481983775135178917" role="9wj7.1080736578640.1080736633877" info="lg">
+      <node concept="9wj7.1198489924438" id="481983775135178917" role="9wj7.1080736578640.1080736633877" info="sg">
         <node concept="9wj7.1073389446423" id="481983775135178918" role="9wj7.1198489924438.1198489993734" info="sn">
           <property role="9wj7.1073389446423.1073389446425" value="true" />
           <node concept="9wj7.1073390211982" id="481983775135178919" role="9wj7.1073389446423.1073389446424" info="sg">

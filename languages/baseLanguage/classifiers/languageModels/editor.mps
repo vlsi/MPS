@@ -498,7 +498,7 @@
     </node>
     <node concept="9wj7.1071666914219" id="1205752655131" info="ig">
       <reference role="9wj7.1166049232041.1166049300910" target="tp4f.1205752633985" resolveInfo="ThisClassifierExpression" />
-      <node concept="9wj7.1088612959204" id="1218736911688" role="9wj7.1080736578640.1080736633877" info="lg">
+      <node concept="9wj7.1088612959204" id="1218736911688" role="9wj7.1080736578640.1080736633877" info="sg">
         <property role="9wj7.1088612959204.1088613081987" value="true" />
         <node concept="9wj7.1073389446423" id="1218736919162" role="9wj7.1088612959204.1088612958265" info="sn">
           <property role="9wj7.1073389446423.1073389446425" value="false" />

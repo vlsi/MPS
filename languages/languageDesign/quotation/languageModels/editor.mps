@@ -308,7 +308,7 @@
   <contents>
     <node concept="9wj7.1071666914219" id="1196350915486" info="ig">
       <reference role="9wj7.1166049232041.1166049300910" target="tp3r.1196350785110" resolveInfo="AbstractAntiquotation" />
-      <node concept="9wj7.1075375595203" id="1196350915487" role="9wj7.1080736578640.1080736633877" info="lg">
+      <node concept="9wj7.1075375595203" id="1196350915487" role="9wj7.1080736578640.1080736633877" info="sg">
         <property role="9wj7.1075375595203.1075375595204" value="abstract antiquotation" />
       </node>
     </node>
@@ -828,7 +828,7 @@
               </node>
             </node>
           </node>
-          <node concept="9wj7.1075375595203" id="8802842484753228659" role="9wj7.1073389446423.1073389446424" info="lg">
+          <node concept="9wj7.1075375595203" id="8802842484753228659" role="9wj7.1073389446423.1073389446424" info="sg">
             <property role="9wj7.1075375595203.1075375595204" value="&lt;not specified&gt;" />
             <node concept="9wj7.1164824717996" id="8802842484753228663" role="9wj7.1073389214265.1164826688380" info="ng">
               <node concept="9wj7.1166059625718" id="8802842484753228664" role="9wj7.1164824717996.1164824815888" info="ng">
@@ -2326,7 +2326,7 @@
             <property role="9wj7.1186403751766.1186403771423" value="BOLD" />
           </node>
         </node>
-        <node concept="9wj7.1088612959204" id="8182547171709589116" role="9wj7.1073389446423.1073389446424" info="lg">
+        <node concept="9wj7.1088612959204" id="8182547171709589116" role="9wj7.1073389446423.1073389446424" info="sg">
           <property role="9wj7.1088612959204.1088613081987" value="true" />
           <node concept="9wj7.1073389577006" id="8182547171709589121" role="9wj7.1088612959204.1088612958265" info="sn">
             <property role="9wj7.1073389577006.1073389577007" value="(" />
@@ -2498,7 +2498,7 @@
     <node concept="9wj7.1071666914219" id="8182547171709478734" info="ig">
       <property role="asn4.1133920641626.1193676396447" value="builder" />
       <reference role="9wj7.1166049232041.1166049300910" target="tp3r.5455284157993911097" resolveInfo="NodeBuilderInitPart" />
-      <node concept="9wj7.1075375595203" id="8182547171709478740" role="9wj7.1080736578640.1080736633877" info="lg">
+      <node concept="9wj7.1075375595203" id="8182547171709478740" role="9wj7.1080736578640.1080736633877" info="sg">
         <property role="9wj7.1075375595203.1075375595204" value="no argument" />
       </node>
     </node>

@@ -61,7 +61,7 @@
       <unit at="8,0,19,0" name="jetbrains.mps.baseLanguage.closures.behavior.YieldAllStatement_BehaviorDescriptor" />
     </file>
     <file name="ClosureLiteral_BehaviorDescriptor.java">
-      <unit at="20,0,70,0" name="jetbrains.mps.baseLanguage.closures.behavior.ClosureLiteral_BehaviorDescriptor" />
+      <unit at="20,0,73,0" name="jetbrains.mps.baseLanguage.closures.behavior.ClosureLiteral_BehaviorDescriptor" />
     </file>
     <file name="BehaviorAspectDescriptor.java">
       <unit at="9,0,58,0" name="jetbrains.mps.baseLanguage.closures.behavior.BehaviorAspectDescriptor" />

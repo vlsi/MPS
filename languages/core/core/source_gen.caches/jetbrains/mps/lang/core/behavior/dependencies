@@ -172,6 +172,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.lang.core.behavior.IResolveInfo_BehaviorDescriptor" file="IResolveInfo_BehaviorDescriptor.java" />
+  <dependency className="jetbrains.mps.lang.core.behavior.IStubForAnotherConcept_BehaviorDescriptor" file="IStubForAnotherConcept_BehaviorDescriptor.java" />
   <dependency className="jetbrains.mps.lang.core.behavior.ISuppressErrors_Behavior" file="ISuppressErrors_Behavior.java">
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>

@@ -25,6 +25,7 @@
   </source>
   <source id="8464977774480012290" name="IMakeNotificationListener">
     <dep root="8464977774479999203" />
+    <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
     <file name="IMakeNotificationListener.java" />
   </source>
   <source id="2958721966247272985" name="IHName">

@@ -113,8 +113,8 @@
       <node concept="4jta.1169127622168" id="1381004262292426852" role="4jta.1071489090640.1169129564478" info="ig">
         <reference role="4jta.1169127622168.1169127628841" target="1381004262292414836" resolveInfo="ICellStyle" />
       </node>
-      <node concept="4jta.1169127622168" id="3387418896081914048" role="4jta.1071489090640.1169129564478" info="ig">
-        <reference role="4jta.1169127622168.1169127628841" target="tpck.1319728274783077719" resolveInfo="ImplementationPart" />
+      <node concept="4jta.1169127622168" id="8104358048506727197" role="4jta.1071489090640.1169129564478" info="ig">
+        <reference role="4jta.1169127622168.1169127628841" target="tpck.6999738288738427190" resolveInfo="ImplementationWithStubPart" />
       </node>
       <node concept="4jta.1071489288298" id="1142887637401" role="4jta.1169125787135.1071489727083" info="ig">
         <property role="4jta.1071489288298.1071599937831" value="aggregation" />
@@ -162,9 +162,6 @@
       <reference role="4jta.1071489090640.1071489389519" target="1073389214265" resolveInfo="EditorCellModel" />
       <node concept="4jta.1169127622168" id="4033442785759946545" role="4jta.1071489090640.1169129564478" info="ig">
         <reference role="4jta.1169127622168.1169127628841" target="8770580973047386957" resolveInfo="Synchronizeable" />
-      </node>
-      <node concept="4jta.1169127622168" id="3387418896081916805" role="4jta.1071489090640.1169129564478" info="ig">
-        <reference role="4jta.1169127622168.1169127628841" target="tpck.6999738288738427190" resolveInfo="ImplementationWithStubPart" />
       </node>
       <node concept="4jta.1071489288298" id="1073389446424" role="4jta.1169125787135.1071489727083" info="ig">
         <property role="4jta.1071489288298.1071599937831" value="aggregation" />
@@ -234,9 +231,6 @@
       <node concept="4jta.1169127622168" id="4033442785759943145" role="4jta.1071489090640.1169129564478" info="ig">
         <reference role="4jta.1169127622168.1169127628841" target="8770580973047386957" resolveInfo="Synchronizeable" />
       </node>
-      <node concept="4jta.1169127622168" id="3387418896081914751" role="4jta.1071489090640.1169129564478" info="ig">
-        <reference role="4jta.1169127622168.1169127628841" target="tpck.6999738288738427190" resolveInfo="ImplementationWithStubPart" />
-      </node>
       <node concept="4jta.1071489288299" id="1073389577007" role="4jta.1169125787135.1071489727084" info="ig">
         <property role="asn4.1169194658468.1169194664001" value="text" />
         <reference role="4jta.1071489288299.1082985295845" target="tpck.1082983041843" resolveInfo="string" />
@@ -256,9 +250,6 @@
       <reference role="4jta.1071489090640.1071489389519" target="1139848536355" resolveInfo="CellModel_WithRole" />
       <node concept="4jta.1169127622168" id="4033442785759955240" role="4jta.1071489090640.1169129564478" info="ig">
         <reference role="4jta.1169127622168.1169127628841" target="8770580973047386957" resolveInfo="Synchronizeable" />
-      </node>
-      <node concept="4jta.1169127622168" id="730538219796134129" role="4jta.1071489090640.1169129564478" info="ig">
-        <reference role="4jta.1169127622168.1169127628841" target="tpck.6999738288738427190" resolveInfo="ImplementationWithStubPart" />
       </node>
       <node concept="4jta.1071489288298" id="1073389964684" role="4jta.1169125787135.1071489727083" info="ig">
         <property role="4jta.1071489288298.1071599776563" value="propertyDeclaration" />
@@ -291,9 +282,6 @@
         <property role="4jta.1071489288298.1071599893252" value="1" />
         <reference role="4jta.1071489288298.1071599976176" target="tpce.1071489288298" resolveInfo="LinkDeclaration" />
         <reference role="4jta.1071489288298.1071599698500" target="1140103550593" />
-      </node>
-      <node concept="4jta.1169127622168" id="730538219795960752" role="4jta.1071489090640.1169129564478" info="ig">
-        <reference role="4jta.1169127622168.1169127628841" target="tpck.6999738288738427190" resolveInfo="ImplementationWithStubPart" />
       </node>
     </node>
     <node concept="4jta.1071489090640" id="1073390211982" info="ig">
@@ -338,9 +326,6 @@
         <property role="4jta.1071489288298.1071599937831" value="aggregation" />
         <property role="4jta.1071489288298.1071599776563" value="removeHints" />
         <reference role="4jta.1071489288298.1071599976176" target="4653693564097968040" resolveInfo="ContextHintsSpecification" />
-      </node>
-      <node concept="4jta.1169127622168" id="2794558372793454593" role="4jta.1071489090640.1169129564478" info="ig">
-        <reference role="4jta.1169127622168.1169127628841" target="tpck.6999738288738427190" resolveInfo="ImplementationWithStubPart" />
       </node>
     </node>
     <node concept="4jta.1071489090640" id="1074767920765" info="ig">
@@ -431,9 +416,6 @@
         <property role="4jta.1071489288298.1071599776563" value="editorComponent" />
         <property role="4jta.1071489288298.1071599893252" value="1" />
         <reference role="4jta.1071489288298.1071599976176" target="1078938745671" resolveInfo="EditorComponentDeclaration" />
-      </node>
-      <node concept="4jta.1169127622168" id="3387418896081916800" role="4jta.1071489090640.1169129564478" info="ig">
-        <reference role="4jta.1169127622168.1169127628841" target="tpck.6999738288738427190" resolveInfo="ImplementationWithStubPart" />
       </node>
     </node>
     <node concept="4jta.1071489090640" id="1079353555532" info="ig">
@@ -608,9 +590,6 @@
         <property role="4jta.1071489288298.1071599776563" value="editorComponent" />
         <property role="4jta.1071489288298.1071599893252" value="1" />
         <reference role="4jta.1071489288298.1071599976176" target="1088185857835" resolveInfo="InlineEditorComponent" />
-      </node>
-      <node concept="4jta.1169127622168" id="730538219795941028" role="4jta.1071489090640.1169129564478" info="ig">
-        <reference role="4jta.1169127622168.1169127628841" target="tpck.6999738288738427190" resolveInfo="ImplementationWithStubPart" />
       </node>
     </node>
     <node concept="4jta.1071489090640" id="1088185857835" info="ig">
@@ -2678,9 +2657,6 @@
         <property role="4jta.1071489288298.1071599893252" value="1" />
         <reference role="4jta.1071489288298.1071599976176" target="1225898583838" resolveInfo="ReadOnlyModelAccessor" />
       </node>
-      <node concept="4jta.1169127622168" id="3387418896081916798" role="4jta.1071489090640.1169129564478" info="ig">
-        <reference role="4jta.1169127622168.1169127628841" target="tpck.6999738288738427190" resolveInfo="ImplementationWithStubPart" />
-      </node>
     </node>
     <node concept="4jta.1071489090640" id="1226339751946" info="ig">
       <property role="4jta.1169125787135.4628067390765956802" value="false" />
@@ -2918,9 +2894,6 @@
       <property role="asn4.1133920641626.1193676396447" value="CellModel" />
       <property role="4jta.1169125787135.5092175715804935370" value="ref. presentation" />
       <reference role="4jta.1071489090640.1071489389519" target="1073389214265" resolveInfo="EditorCellModel" />
-      <node concept="4jta.1169127622168" id="730538219795961223" role="4jta.1071489090640.1169129564478" info="ig">
-        <reference role="4jta.1169127622168.1169127628841" target="tpck.6999738288738427190" resolveInfo="ImplementationWithStubPart" />
-      </node>
     </node>
     <node concept="4jta.1071489090640" id="7667276221847570194" info="ig">
       <property role="4jta.1169125787135.4628067390765956802" value="false" />
@@ -3924,6 +3897,66 @@
     <node concept="4jta.1071489090640" id="2794558372793454595" info="ig">
       <property role="asn4.1133920641626.1193676396447" value="CellModel" />
       <property role="asn4.1169194658468.1169194664001" value="StubCellModel_RefNodeList" />
+      <reference role="4jta.1071489090640.1071489389519" target="730538219796139730" resolveInfo="StubEditorCellModel" />
+    </node>
+    <node concept="4jta.1071489090640" id="8104358048506731195" info="ig">
+      <property role="asn4.1133920641626.1193676396447" value="CellModel" />
+      <property role="asn4.1169194658468.1169194664001" value="StubCellModel_Image" />
+      <reference role="4jta.1071489090640.1071489389519" target="730538219796139730" resolveInfo="StubEditorCellModel" />
+    </node>
+    <node concept="4jta.1071489090640" id="8104358048506731196" info="ig">
+      <property role="asn4.1133920641626.1193676396447" value="CellModel" />
+      <property role="asn4.1169194658468.1169194664001" value="StubCellModel_JComponent" />
+      <reference role="4jta.1071489090640.1071489389519" target="730538219796139730" resolveInfo="StubEditorCellModel" />
+    </node>
+    <node concept="4jta.1071489090640" id="8104358048506731197" info="ig">
+      <property role="asn4.1133920641626.1193676396447" value="CellModel" />
+      <property role="asn4.1169194658468.1169194664001" value="StubCellModel_Table" />
+      <reference role="4jta.1071489090640.1071489389519" target="730538219796139730" resolveInfo="StubEditorCellModel" />
+    </node>
+    <node concept="4jta.1071489090640" id="8104358048506729361" info="ig">
+      <property role="asn4.1133920641626.1193676396447" value="CellModel" />
+      <property role="asn4.1169194658468.1169194664001" value="StubCellModel_Alteration" />
+      <reference role="4jta.1071489090640.1071489389519" target="730538219796139730" resolveInfo="StubEditorCellModel" />
+    </node>
+    <node concept="4jta.1071489090640" id="8104358048506730324" info="ig">
+      <property role="asn4.1133920641626.1193676396447" value="CellModel" />
+      <property role="asn4.1169194658468.1169194664001" value="StubCellModel_HierarchycalTable" />
+      <reference role="4jta.1071489090640.1071489389519" target="730538219796139730" resolveInfo="StubEditorCellModel" />
+    </node>
+    <node concept="4jta.1071489090640" id="8104358048506730159" info="ig">
+      <property role="asn4.1133920641626.1193676396447" value="CellModel" />
+      <property role="asn4.1169194658468.1169194664001" value="StubCellModel_Empty" />
+      <reference role="4jta.1071489090640.1071489389519" target="730538219796139730" resolveInfo="StubEditorCellModel" />
+    </node>
+    <node concept="4jta.1071489090640" id="8104358048506729359" info="ig">
+      <property role="asn4.1133920641626.1193676396447" value="CellModel" />
+      <property role="asn4.1169194658468.1169194664001" value="StubCellModel_URL" />
+      <reference role="4jta.1071489090640.1071489389519" target="730538219796139730" resolveInfo="StubEditorCellModel" />
+    </node>
+    <node concept="4jta.1071489090640" id="8104358048506729358" info="ig">
+      <property role="asn4.1133920641626.1193676396447" value="CellModel" />
+      <property role="asn4.1169194658468.1169194664001" value="StubCellModel_TransactionalProperty" />
+      <reference role="4jta.1071489090640.1071489389519" target="730538219796139730" resolveInfo="StubEditorCellModel" />
+    </node>
+    <node concept="4jta.1071489090640" id="8104358048506729357" info="ig">
+      <property role="asn4.1133920641626.1193676396447" value="CellModel" />
+      <property role="asn4.1169194658468.1169194664001" value="StubCellModel_ModelAccess" />
+      <reference role="4jta.1071489090640.1071489389519" target="730538219796139730" resolveInfo="StubEditorCellModel" />
+    </node>
+    <node concept="4jta.1071489090640" id="8104358048506729356" info="ig">
+      <property role="asn4.1133920641626.1193676396447" value="CellModel" />
+      <property role="asn4.1169194658468.1169194664001" value="StubCellModel_Error" />
+      <reference role="4jta.1071489090640.1071489389519" target="730538219796139730" resolveInfo="StubEditorCellModel" />
+    </node>
+    <node concept="4jta.1071489090640" id="8104358048506730068" info="ig">
+      <property role="asn4.1133920641626.1193676396447" value="CellModel" />
+      <property role="asn4.1169194658468.1169194664001" value="StubCellModel_Custom" />
+      <reference role="4jta.1071489090640.1071489389519" target="730538219796139730" resolveInfo="StubEditorCellModel" />
+    </node>
+    <node concept="4jta.1071489090640" id="8104358048506730066" info="ig">
+      <property role="asn4.1133920641626.1193676396447" value="CellModel" />
+      <property role="asn4.1169194658468.1169194664001" value="StubCellModel_Block" />
       <reference role="4jta.1071489090640.1071489389519" target="730538219796139730" resolveInfo="StubEditorCellModel" />
     </node>
   </contents>

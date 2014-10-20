@@ -206,7 +206,7 @@
           <reference role="9wj7.1078939183254.1078939183255" target="tpen.1196975362614" resolveInfo="ConceptFunction_Component" />
         </node>
       </node>
-      <node concept="9wj7.1078308402140" id="1240319640305" role="9wj7.1071666914219.1078153129734" info="lg">
+      <node concept="9wj7.1078308402140" id="1240319640305" role="9wj7.1071666914219.1078153129734" info="sg">
         <node concept="9wj7.1176749715029" id="1240319640306" role="9wj7.1078308402140.1176795024817" info="in">
           <node concept="vg0i.1068580123136" id="1240319640307" role="vg0i.1137021947720.1137022507850" info="sn">
             <node concept="vg0i.1068581242878" id="1240319640308" role="vg0i.1068580123136.1068581517665" info="nn">
@@ -471,7 +471,7 @@
     <node concept="9wj7.1071666914219" id="1240395571943" info="ig">
       <property role="asn4.1133920641626.1193676396447" value="parameterized" />
       <reference role="9wj7.1166049232041.1166049300910" target="tp3j.1240395258925" resolveInfo="ParameterizedIntentionDeclaration" />
-      <node concept="9wj7.1198489924438" id="1240395573429" role="9wj7.1080736578640.1080736633877" info="lg">
+      <node concept="9wj7.1198489924438" id="1240395573429" role="9wj7.1080736578640.1080736633877" info="sg">
         <node concept="9wj7.1073389446423" id="1240395573430" role="9wj7.1198489924438.1198489993734" info="sn">
           <property role="9wj7.1073389446423.1073389446425" value="true" />
           <node concept="9wj7.1073389446423" id="1240395573431" role="9wj7.1073389446423.1073389446424" info="sn">
@@ -585,7 +585,7 @@
     </node>
     <node concept="9wj7.1071666914219" id="6263518417926799610" info="ig">
       <reference role="9wj7.1166049232041.1166049300910" target="tp3j.2522969319638091381" resolveInfo="BaseIntentionDeclaration" />
-      <node concept="9wj7.1198489924438" id="6263518417926799612" role="9wj7.1080736578640.1080736633877" info="lg">
+      <node concept="9wj7.1198489924438" id="6263518417926799612" role="9wj7.1080736578640.1080736633877" info="sg">
         <node concept="9wj7.1073389446423" id="6263518417926799613" role="9wj7.1198489924438.1198489993734" info="sn">
           <property role="9wj7.1073389446423.1073389446425" value="true" />
           <node concept="9wj7.1073389446423" id="6263518417926799614" role="9wj7.1073389446423.1073389446424" info="sn">

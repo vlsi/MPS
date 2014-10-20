@@ -10,7 +10,6 @@
   </common>
   <source id="1197150020790" name="MrsH State Machine">
     <dep model="r:84968794-d306-4a7a-9857-08605b2b07d6(jetbrains.mps.samples.secretCompartmentLanguage.runtime)" />
-    <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
     <file name="MrsH_StateMachineFactory.java" />
   </source>
   <source id="1197247437082" name="MrsH State Machine Test">

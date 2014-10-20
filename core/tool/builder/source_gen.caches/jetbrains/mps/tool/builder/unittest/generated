@@ -29,6 +29,7 @@
     <file name="ITestReporter.java" />
   </source>
   <source id="2546981710036147218" name="UnitTestAdapter">
+    <dep model="r:00000000-0000-4000-0000-011c8959051a(jetbrains.mps.baseLanguage.regexp.generator.baseLanguage.template.main@generator)" />
     <file name="UnitTestAdapter.java" />
   </source>
   <source id="2546981710036147264" name="UnitTestListener">

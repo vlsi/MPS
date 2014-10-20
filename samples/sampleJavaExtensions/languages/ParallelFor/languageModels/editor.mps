@@ -392,7 +392,7 @@
           <property role="9wj7.1073389577006.1073389577007" value="@thread safe" />
           <reference role="9wj7.1381004262292414836.1381004262292426837" target="tpen.1198594875276" resolveInfo="Comment" />
         </node>
-        <node concept="9wj7.1149850725784" id="2975785153735220471" role="9wj7.1073389446423.1073389446424" info="lg" />
+        <node concept="9wj7.1149850725784" id="2975785153735220471" role="9wj7.1073389446423.1073389446424" info="sg" />
         <node concept="9wj7.1237303669825" id="2975785153735222021" role="9wj7.1073389446423.1106270802874" info="nn" />
       </node>
     </node>
@@ -403,7 +403,7 @@
           <property role="9wj7.1073389577006.1073389577007" value="@non thread safe" />
           <reference role="9wj7.1381004262292414836.1381004262292426837" target="tpen.1198594875276" resolveInfo="Comment" />
         </node>
-        <node concept="9wj7.1149850725784" id="2975785153735230346" role="9wj7.1073389446423.1073389446424" info="lg" />
+        <node concept="9wj7.1149850725784" id="2975785153735230346" role="9wj7.1073389446423.1073389446424" info="sg" />
         <node concept="9wj7.1237303669825" id="2975785153735230343" role="9wj7.1073389446423.1106270802874" info="nn" />
       </node>
     </node>

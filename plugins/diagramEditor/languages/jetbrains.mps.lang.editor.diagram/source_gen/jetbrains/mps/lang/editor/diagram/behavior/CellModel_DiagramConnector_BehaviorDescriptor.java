@@ -4,10 +4,9 @@ package jetbrains.mps.lang.editor.diagram.behavior;
 
 import jetbrains.mps.lang.editor.behavior.EditorCellModel_BehaviorDescriptor;
 import jetbrains.mps.lang.editor.behavior.Synchronizeable_BehaviorDescriptor;
-import jetbrains.mps.lang.core.behavior.ImplementationWithStubPart_BehaviorDescriptor;
 import org.jetbrains.mps.openapi.model.SNode;
 
-public class CellModel_DiagramConnector_BehaviorDescriptor extends EditorCellModel_BehaviorDescriptor implements Synchronizeable_BehaviorDescriptor, ImplementationWithStubPart_BehaviorDescriptor {
+public class CellModel_DiagramConnector_BehaviorDescriptor extends EditorCellModel_BehaviorDescriptor implements Synchronizeable_BehaviorDescriptor {
   public CellModel_DiagramConnector_BehaviorDescriptor() {
   }
   public boolean virtual_canBeSynchronized_4052492221165595783(SNode thisNode) {

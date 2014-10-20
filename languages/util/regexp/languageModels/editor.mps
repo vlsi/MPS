@@ -2410,7 +2410,7 @@
     <node concept="9wj7.1071666914219" id="1179358159391" info="ig">
       <property role="asn4.1133920641626.1193676396447" value="Regexps" />
       <reference role="9wj7.1166049232041.1166049300910" target="tpfo.1174482743037" resolveInfo="Regexp" />
-      <node concept="9wj7.1075375595203" id="1179358161315" role="9wj7.1080736578640.1080736633877" info="lg">
+      <node concept="9wj7.1075375595203" id="1179358161315" role="9wj7.1080736578640.1080736633877" info="sg">
         <property role="9wj7.1075375595203.1075375595204" value="regexp" />
       </node>
     </node>

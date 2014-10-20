@@ -70,9 +70,6 @@
       <node concept="4jta.1169127622168" id="7200199917722064560" role="4jta.1071489090640.1169129564478" info="ig">
         <reference role="4jta.1169127622168.1169127628841" target="tpc2.8770580973047386957" resolveInfo="Synchronizeable" />
       </node>
-      <node concept="4jta.1169127622168" id="730538219795610231" role="4jta.1071489090640.1169129564478" info="ig">
-        <reference role="4jta.1169127622168.1169127628841" target="tpck.6999738288738427190" resolveInfo="ImplementationWithStubPart" />
-      </node>
     </node>
     <node concept="4jta.1071489090640" id="1094405431463455190" info="ig">
       <property role="asn4.1169194658468.1169194664001" value="AbstractFigureReference" />
@@ -140,9 +137,6 @@
       <node concept="4jta.1169127622168" id="7200199917722063808" role="4jta.1071489090640.1169129564478" info="ig">
         <reference role="4jta.1169127622168.1169127628841" target="tpc2.8770580973047386957" resolveInfo="Synchronizeable" />
       </node>
-      <node concept="4jta.1169127622168" id="730538219795607746" role="4jta.1071489090640.1169129564478" info="ig">
-        <reference role="4jta.1169127622168.1169127628841" target="tpck.6999738288738427190" resolveInfo="ImplementationWithStubPart" />
-      </node>
     </node>
     <node concept="4jta.1071489090640" id="6382742553261733065" info="ig">
       <property role="asn4.1169194658468.1169194664001" value="CellModel_DiagramConnector" />
@@ -162,9 +156,6 @@
       </node>
       <node concept="4jta.1169127622168" id="7200199917722064749" role="4jta.1071489090640.1169129564478" info="ig">
         <reference role="4jta.1169127622168.1169127628841" target="tpc2.8770580973047386957" resolveInfo="Synchronizeable" />
-      </node>
-      <node concept="4jta.1169127622168" id="730538219795610224" role="4jta.1071489090640.1169129564478" info="ig">
-        <reference role="4jta.1169127622168.1169127628841" target="tpck.6999738288738427190" resolveInfo="ImplementationWithStubPart" />
       </node>
     </node>
     <node concept="4jta.1071489090640" id="5422656561926747342" info="ig">
@@ -231,9 +222,6 @@
       </node>
       <node concept="4jta.1169127622168" id="7200199917722064684" role="4jta.1071489090640.1169129564478" info="ig">
         <reference role="4jta.1169127622168.1169127628841" target="tpc2.8770580973047386957" resolveInfo="Synchronizeable" />
-      </node>
-      <node concept="4jta.1169127622168" id="730538219795610238" role="4jta.1071489090640.1169129564478" info="ig">
-        <reference role="4jta.1169127622168.1169127628841" target="tpck.6999738288738427190" resolveInfo="ImplementationWithStubPart" />
       </node>
     </node>
     <node concept="4jta.1071489090640" id="285670992213637294" info="ig">

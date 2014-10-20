@@ -138,7 +138,7 @@
     </node>
     <node concept="9wj7.1071666914219" id="1225239646565" info="ig">
       <reference role="9wj7.1166049232041.1166049300910" target="dghb.1225239603390" resolveInfo="ElementPart" />
-      <node concept="9wj7.1075375595203" id="1225239646566" role="9wj7.1080736578640.1080736633877" info="lg">
+      <node concept="9wj7.1075375595203" id="1225239646566" role="9wj7.1080736578640.1080736633877" info="sg">
         <property role="9wj7.1075375595203.1075375595204" value="&lt;choose content&gt;" />
       </node>
     </node>
@@ -186,7 +186,7 @@
         </node>
         <node concept="9wj7.1073389446423" id="1225239646581" role="9wj7.1073389446423.1073389446424" info="sn">
           <property role="9wj7.1073389446423.1073389446425" value="false" />
-          <node concept="9wj7.1198256887712" id="1225239646582" role="9wj7.1073389446423.1073389446424" info="lg" />
+          <node concept="9wj7.1198256887712" id="1225239646582" role="9wj7.1073389446423.1073389446424" info="sg" />
           <node concept="9wj7.1073390211982" id="1225239646583" role="9wj7.1073389446423.1073389446424" info="sg">
             <property role="9wj7.1140524381322.1140524450554" value="true" />
             <reference role="9wj7.1139848536355.1140103550593" target="dghb.1225239603387" />

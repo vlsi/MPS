@@ -473,7 +473,7 @@
     </node>
     <node concept="9wj7.1071666914219" id="1174914167958" info="ig">
       <reference role="9wj7.1166049232041.1166049300910" target="tp68.1174914042989" resolveInfo="InternalClassifierType" />
-      <node concept="9wj7.1088612959204" id="1202148781767" role="9wj7.1080736578640.1080736633877" info="lg">
+      <node concept="9wj7.1088612959204" id="1202148781767" role="9wj7.1080736578640.1080736633877" info="sg">
         <property role="9wj7.1088612959204.1088613081987" value="true" />
         <node concept="9wj7.1142886221719" id="1202148781768" role="9wj7.1088612959204.1145918517974" info="in">
           <node concept="vg0i.1068580123136" id="1202148781769" role="vg0i.1137021947720.1137022507850" info="sn">

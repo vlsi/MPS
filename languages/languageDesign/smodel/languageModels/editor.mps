@@ -2198,7 +2198,7 @@
     <node concept="9wj7.1078938745671" id="1206480334645" info="ig">
       <property role="asn4.1169194658468.1169194664001" value="ReplaceableAlias_Comp" />
       <reference role="9wj7.1166049232041.1166049300910" target="tp25.1138411891628" resolveInfo="SNodeOperation" />
-      <node concept="9wj7.1088612959204" id="1212008926114" role="9wj7.1080736578640.1080736633877" info="lg">
+      <node concept="9wj7.1088612959204" id="1212008926114" role="9wj7.1080736578640.1080736633877" info="sg">
         <property role="9wj7.1088612959204.1088613081987" value="true" />
         <node concept="9wj7.1078939183254" id="2886182022232400309" role="9wj7.1088612959204.1088612958265" info="sg">
           <property role="9wj7.1073389214265.1130859485024" value="0" />
@@ -2231,7 +2231,7 @@
             </node>
           </node>
         </node>
-        <node concept="9wj7.1075375595203" id="1212008965862" role="9wj7.1088612959204.1088612973955" info="lg">
+        <node concept="9wj7.1075375595203" id="1212008965862" role="9wj7.1088612959204.1088612973955" info="sg">
           <property role="9wj7.1075375595203.1075375595204" value="&lt;choose operaion&gt;" />
         </node>
       </node>
@@ -2801,7 +2801,7 @@
       <property role="asn4.1169194658468.1169194664001" value="AliasComponent" />
       <property role="asn4.1133920641626.1193676396447" value="operation.reference" />
       <reference role="9wj7.1166049232041.1166049300910" target="tp25.1547759872598425074" resolveInfo="IReferenceOperation" />
-      <node concept="9wj7.1088612959204" id="1547759872598425695" role="9wj7.1080736578640.1080736633877" info="lg">
+      <node concept="9wj7.1088612959204" id="1547759872598425695" role="9wj7.1080736578640.1080736633877" info="sg">
         <property role="9wj7.1088612959204.1088613081987" value="true" />
         <node concept="9wj7.1078939183254" id="2886182022232399940" role="9wj7.1088612959204.1088612958265" info="sg">
           <property role="9wj7.1073389214265.1130859485024" value="0" />
@@ -2834,7 +2834,7 @@
             </node>
           </node>
         </node>
-        <node concept="9wj7.1075375595203" id="1547759872598425710" role="9wj7.1088612959204.1088612973955" info="lg">
+        <node concept="9wj7.1075375595203" id="1547759872598425710" role="9wj7.1088612959204.1088612973955" info="sg">
           <property role="9wj7.1075375595203.1075375595204" value="&lt;choose operaion&gt;" />
         </node>
       </node>

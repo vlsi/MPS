@@ -12,7 +12,6 @@
     <file name="ColumnDescriptor.java" />
   </source>
   <source id="3995997045458428896" name="VoidColumnDescriptor">
-    <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="VoidColumnDescriptor.java" />
   </source>
   <source id="3995997045458428924" name="RuleTypeDescriptor">

@@ -220,6 +220,7 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.dataFlow.StatementList_DataFlow" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.dataFlow.StaticInitializer_DataFlow" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.dataFlow.StaticMethodCall_DataFlow" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.dataFlow.StubStatementList_DataFlow" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.dataFlow.SubstringExpression_DataFlow" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.dataFlow.SwitchCase_DataFlow" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.dataFlow.SwitchStatement_DataFlow" />
@@ -691,6 +692,15 @@
   <dependency className="jetbrains.mps.baseLanguage.dataFlow.StaticMethodCall_DataFlow" file="StaticMethodCall_DataFlow.java">
     <classNode dependClassName="jetbrains.mps.lang.dataFlow.DataFlowBuilderContext" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
+    <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode extendsClassName="jetbrains.mps.lang.dataFlow.DataFlowBuilder" />
+  </dependency>
+  <dependency className="jetbrains.mps.baseLanguage.dataFlow.StubStatementList_DataFlow" file="StubStatementList_DataFlow.java">
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
+    <classNode dependClassName="jetbrains.mps.lang.dataFlow.DataFlowBuilderContext" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.lang.dataFlow.DataFlowBuilder" />

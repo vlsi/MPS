@@ -282,7 +282,7 @@
     <node concept="9wj7.1071666914219" id="2769948622284567284" info="ig">
       <property role="asn4.1133920641626.1193676396447" value="Structure" />
       <reference role="9wj7.1166049232041.1166049300910" target="8xvf.2769948622284546695" resolveInfo="BwfProjectPart" />
-      <node concept="9wj7.1075375595203" id="2580966228161922989" role="9wj7.1080736578640.1080736633877" info="lg">
+      <node concept="9wj7.1075375595203" id="2580966228161922989" role="9wj7.1080736578640.1080736633877" info="sg">
         <property role="9wj7.1075375595203.1075375595204" value="&lt;project part&gt;" />
         <node concept="9wj7.1215007883204" id="2580966228161923096" role="9wj7.1219418625346.1219418656006" info="ln">
           <property role="9wj7.1215007762405.1215007802031" value="0" />
@@ -1162,7 +1162,7 @@
     <node concept="9wj7.1071666914219" id="6647099934206976116" info="ig">
       <property role="asn4.1133920641626.1193676396447" value="Structure" />
       <reference role="9wj7.1166049232041.1166049300910" target="8xvf.6647099934206976110" resolveInfo="BwfJavaDependency" />
-      <node concept="9wj7.1075375595203" id="6647099934206976118" role="9wj7.1080736578640.1080736633877" info="lg">
+      <node concept="9wj7.1075375595203" id="6647099934206976118" role="9wj7.1080736578640.1080736633877" info="sg">
         <property role="9wj7.1075375595203.1075375595204" value="&lt;no dependency&gt;" />
       </node>
     </node>

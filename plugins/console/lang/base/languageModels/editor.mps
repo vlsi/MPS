@@ -307,7 +307,7 @@
       <property role="asn4.1133920641626.1193676396447" value="response.interactive" />
       <property role="asn4.1169194658468.1169194664001" value="INodeWithReference_EditorComponent" />
       <reference role="9wj7.1166049232041.1166049300910" target="eynw.3939645998855102389" resolveInfo="INodeWithReference" />
-      <node concept="9wj7.1088612959204" id="328850564594145527" role="9wj7.1080736578640.1080736633877" info="lg">
+      <node concept="9wj7.1088612959204" id="328850564594145527" role="9wj7.1080736578640.1080736633877" info="sg">
         <property role="9wj7.1088612959204.1088613081987" value="true" />
         <node concept="9wj7.1142886221719" id="328850564594145528" role="9wj7.1088612959204.1145918517974" info="in">
           <node concept="vg0i.1068580123136" id="328850564594145529" role="vg0i.1137021947720.1137022507850" info="sn">
@@ -451,7 +451,7 @@
       <property role="asn4.1133920641626.1193676396447" value="response" />
       <reference role="9wj7.1166049232041.1166049300910" target="eynw.5637103006918228482" resolveInfo="Response" />
       <node concept="9wj7.1073389446423" id="5637103006919119973" role="9wj7.1080736578640.1080736633877" info="sn">
-        <node concept="9wj7.1198256887712" id="5637103006919119974" role="9wj7.1073389446423.1073389446424" info="lg" />
+        <node concept="9wj7.1198256887712" id="5637103006919119974" role="9wj7.1073389446423.1073389446424" info="sg" />
         <node concept="9wj7.1073389446423" id="5637103006919119975" role="9wj7.1073389446423.1073389446424" info="sn">
           <node concept="9wj7.1186414928363" id="5637103006919119976" role="9wj7.1219418625346.1219418656006" info="ln">
             <property role="9wj7.1186414536763.1186414551515" value="false" />
@@ -466,7 +466,7 @@
             </node>
             <node concept="9wj7.1237303669825" id="5637103006919121768" role="9wj7.1073389446423.1106270802874" info="nn" />
           </node>
-          <node concept="9wj7.1198256887712" id="5637103006919119983" role="9wj7.1073389446423.1073389446424" info="lg" />
+          <node concept="9wj7.1198256887712" id="5637103006919119983" role="9wj7.1073389446423.1073389446424" info="sg" />
           <node concept="9wj7.1106270549637" id="5637103006919119984" role="9wj7.1073389446423.1106270802874" info="nn" />
         </node>
         <node concept="9wj7.1106270549637" id="5637103006919119985" role="9wj7.1073389446423.1106270802874" info="nn" />

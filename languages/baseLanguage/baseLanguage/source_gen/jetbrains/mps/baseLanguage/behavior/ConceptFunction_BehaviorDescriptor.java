@@ -63,6 +63,9 @@ public abstract class ConceptFunction_BehaviorDescriptor extends BaseConcept_Beh
   public boolean virtual_supportsCheckedExceptions_8510677279630867629(SNode thisNode) {
     return IMethodLike_Behavior.virtual_supportsCheckedExceptions_8510677279630867629(thisNode);
   }
+  public boolean virtual_suppress_3393165121846091591(SNode thisNode, SNode child) {
+    return IMethodLike_Behavior.virtual_suppress_3393165121846091591(thisNode, child);
+  }
   public boolean virtual_usesParameterObjectFor_1213877374432(SNode thisNode, SNode parameter) {
     return ConceptFunction_Behavior.virtual_usesParameterObjectFor_1213877374432(thisNode, parameter);
   }

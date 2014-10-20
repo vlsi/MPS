@@ -580,7 +580,7 @@
     <node concept="9wj7.1071666914219" id="3189788309731903993" info="ig">
       <property role="asn4.1133920641626.1193676396447" value="Project.Runtime" />
       <reference role="9wj7.1166049232041.1166049300910" target="kdzh.3189788309731903991" resolveInfo="BuildMps_ModuleRuntime" />
-      <node concept="9wj7.1075375595203" id="2580966228161793214" role="9wj7.1080736578640.1080736633877" info="lg">
+      <node concept="9wj7.1075375595203" id="2580966228161793214" role="9wj7.1080736578640.1080736633877" info="sg">
         <property role="9wj7.1075375595203.1075375595204" value="&lt;no runtime&gt;" />
         <node concept="9wj7.1215007883204" id="2580966228161793321" role="9wj7.1219418625346.1219418656006" info="ln">
           <property role="9wj7.1215007762405.1215007802031" value="0" />
@@ -593,7 +593,7 @@
     <node concept="9wj7.1071666914219" id="3189788309731910470" info="ig">
       <property role="asn4.1133920641626.1193676396447" value="Project.Sources" />
       <reference role="9wj7.1166049232041.1166049300910" target="kdzh.5253498789149547823" resolveInfo="BuildMps_ModuleSource" />
-      <node concept="9wj7.1075375595203" id="2580966228161790731" role="9wj7.1080736578640.1080736633877" info="lg">
+      <node concept="9wj7.1075375595203" id="2580966228161790731" role="9wj7.1080736578640.1080736633877" info="sg">
         <property role="9wj7.1075375595203.1075375595204" value="&lt;no source&gt;" />
         <node concept="9wj7.1215007883204" id="2580966228161790838" role="9wj7.1219418625346.1219418656006" info="ln">
           <property role="9wj7.1215007762405.1215007802031" value="0" />
@@ -606,7 +606,7 @@
     <node concept="9wj7.1071666914219" id="3189788309731910532" info="ig">
       <property role="asn4.1133920641626.1193676396447" value="Project.Deps" />
       <reference role="9wj7.1166049232041.1166049300910" target="kdzh.5253498789149547703" resolveInfo="BuildMps_ModuleDependency" />
-      <node concept="9wj7.1075375595203" id="2580966228161798054" role="9wj7.1080736578640.1080736633877" info="lg">
+      <node concept="9wj7.1075375595203" id="2580966228161798054" role="9wj7.1080736578640.1080736633877" info="sg">
         <property role="9wj7.1075375595203.1075375595204" value="&lt;no dependency&gt;" />
         <node concept="9wj7.1215007883204" id="2580966228161798161" role="9wj7.1219418625346.1219418656006" info="ln">
           <property role="9wj7.1215007762405.1215007802031" value="0" />
@@ -1533,7 +1533,7 @@
     <node concept="9wj7.1071666914219" id="322010710375805253" info="ig">
       <property role="asn4.1133920641626.1193676396447" value="Project.DevKit" />
       <reference role="9wj7.1166049232041.1166049300910" target="kdzh.322010710375805251" resolveInfo="BuildMps_DevKitExport" />
-      <node concept="9wj7.1075375595203" id="2580966228161795655" role="9wj7.1080736578640.1080736633877" info="lg">
+      <node concept="9wj7.1075375595203" id="2580966228161795655" role="9wj7.1080736578640.1080736633877" info="sg">
         <property role="9wj7.1075375595203.1075375595204" value="&lt;no export&gt;" />
         <node concept="9wj7.1215007883204" id="2580966228161795762" role="9wj7.1219418625346.1219418656006" info="ln">
           <property role="9wj7.1215007762405.1215007802031" value="0" />
@@ -1580,7 +1580,7 @@
     <node concept="9wj7.1071666914219" id="322010710375871470" info="ig">
       <property role="asn4.1133920641626.1193676396447" value="Project" />
       <reference role="9wj7.1166049232041.1166049300910" target="kdzh.322010710375871467" resolveInfo="BuildMps_AbstractModule" />
-      <node concept="9wj7.1075375595203" id="2580966228161786693" role="9wj7.1080736578640.1080736633877" info="lg">
+      <node concept="9wj7.1075375595203" id="2580966228161786693" role="9wj7.1080736578640.1080736633877" info="sg">
         <property role="9wj7.1075375595203.1075375595204" value="&lt;no module&gt;" />
         <node concept="9wj7.1215007883204" id="2580966228161786800" role="9wj7.1219418625346.1219418656006" info="ln">
           <property role="9wj7.1215007762405.1215007802031" value="0" />
@@ -2574,7 +2574,7 @@
     <node concept="9wj7.1071666914219" id="6592112598314499053" info="ig">
       <property role="asn4.1133920641626.1193676396447" value="Project.Plugin" />
       <reference role="9wj7.1166049232041.1166049300910" target="kdzh.6592112598314499051" resolveInfo="BuildMps_IdeaPluginContent" />
-      <node concept="9wj7.1075375595203" id="6592112598314499055" role="9wj7.1080736578640.1080736633877" info="lg">
+      <node concept="9wj7.1075375595203" id="6592112598314499055" role="9wj7.1080736578640.1080736633877" info="sg">
         <property role="9wj7.1075375595203.1075375595204" value="none" />
       </node>
     </node>

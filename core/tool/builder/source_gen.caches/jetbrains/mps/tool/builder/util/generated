@@ -34,6 +34,7 @@
     <file name="SetLibraryContributor.java" />
   </source>
   <source id="878521226300613674" name="MpsPlatform">
+    <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
     <file name="MpsPlatform.java" />
   </source>
   <source id="1365200781785613152" name="ClassloaderUtil">

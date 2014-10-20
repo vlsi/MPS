@@ -26,7 +26,6 @@
     <file name="EvaluationRuntimeException.java" />
   </source>
   <source id="4727801710070563894" name="EvaluationException">
-    <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="EvaluationException.java" />
   </source>
   <source id="4727801710070563977" name="TargetVMEvaluationException">

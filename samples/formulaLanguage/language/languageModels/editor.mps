@@ -76,31 +76,31 @@
   <contents>
     <node concept="9wj7.1071666914219" id="1111785215770" info="ig">
       <reference role="9wj7.1166049232041.1166049300910" target="tpnk.1111784519527" resolveInfo="Constant" />
-      <node concept="9wj7.1075375595203" id="1111785320397" role="9wj7.1080736578640.1080736633877" info="lg">
+      <node concept="9wj7.1075375595203" id="1111785320397" role="9wj7.1080736578640.1080736633877" info="sg">
         <property role="9wj7.1075375595203.1075375595204" value="?constant?" />
       </node>
     </node>
     <node concept="9wj7.1071666914219" id="1111785346976" info="ig">
       <reference role="9wj7.1166049232041.1166049300910" target="tpnk.1111784312737" resolveInfo="Expression" />
-      <node concept="9wj7.1075375595203" id="1111785363258" role="9wj7.1080736578640.1080736633877" info="lg">
+      <node concept="9wj7.1075375595203" id="1111785363258" role="9wj7.1080736578640.1080736633877" info="sg">
         <property role="9wj7.1075375595203.1075375595204" value="?expression?" />
       </node>
     </node>
     <node concept="9wj7.1071666914219" id="1111785374806" info="ig">
       <reference role="9wj7.1166049232041.1166049300910" target="tpnk.1111784210516" resolveInfo="Formula" />
-      <node concept="9wj7.1075375595203" id="1111785390057" role="9wj7.1080736578640.1080736633877" info="lg">
+      <node concept="9wj7.1075375595203" id="1111785390057" role="9wj7.1080736578640.1080736633877" info="sg">
         <property role="9wj7.1075375595203.1075375595204" value="?formula?" />
       </node>
     </node>
     <node concept="9wj7.1071666914219" id="1111785405480" info="ig">
       <reference role="9wj7.1166049232041.1166049300910" target="tpnk.1111784331004" resolveInfo="Function" />
-      <node concept="9wj7.1075375595203" id="1111785438825" role="9wj7.1080736578640.1080736633877" info="lg">
+      <node concept="9wj7.1075375595203" id="1111785438825" role="9wj7.1080736578640.1080736633877" info="sg">
         <property role="9wj7.1075375595203.1075375595204" value="?function?" />
       </node>
     </node>
     <node concept="9wj7.1071666914219" id="1111785467013" info="ig">
       <reference role="9wj7.1166049232041.1166049300910" target="tpnk.1111784391790" resolveInfo="Reference" />
-      <node concept="9wj7.1075375595203" id="1111785482780" role="9wj7.1080736578640.1080736633877" info="lg">
+      <node concept="9wj7.1075375595203" id="1111785482780" role="9wj7.1080736578640.1080736633877" info="sg">
         <property role="9wj7.1075375595203.1075375595204" value="?reference?" />
       </node>
     </node>
@@ -167,7 +167,7 @@
           <reference role="9wj7.1139848536355.1140103550593" target="tpnk.1111784613299" />
           <reference role="9wj7.1073389214265.1139959269582" target="1154452994236" resolveInfo="Operation_leftOperand_Actions" />
         </node>
-        <node concept="9wj7.1075375595203" id="1113344932645" role="9wj7.1073389446423.1073389446424" info="lg">
+        <node concept="9wj7.1075375595203" id="1113344932645" role="9wj7.1073389446423.1073389446424" info="sg">
           <property role="9wj7.1075375595203.1075375595204" value=" " />
           <reference role="9wj7.1073389214265.1139959269582" target="1154453497787" resolveInfo="Operation_symbol_Actions" />
           <node concept="9wj7.1164824717996" id="1164923174789" role="9wj7.1073389214265.1164826688380" info="ng">

@@ -153,7 +153,7 @@
           <reference role="9wj7.1139848536355.1140103550593" target="tpck.1169194664001" resolveInfo="name" />
           <reference role="9wj7.1381004262292414836.1381004262292426837" target="tpen.1215189282959" resolveInfo="ClassName" />
         </node>
-        <node concept="9wj7.1088612959204" id="3308300503040114641" role="9wj7.1073389446423.1073389446424" info="lg">
+        <node concept="9wj7.1088612959204" id="3308300503040114641" role="9wj7.1073389446423.1073389446424" info="sg">
           <property role="9wj7.1088612959204.1088613081987" value="true" />
           <node concept="9wj7.1073389577006" id="3308300503040114646" role="9wj7.1088612959204.1088612958265" info="sn">
             <property role="9wj7.1073389577006.1073389577007" value="runs as" />

@@ -167,7 +167,7 @@
     </node>
     <node concept="9wj7.1071666914219" id="3702466984434806354" info="ig">
       <reference role="9wj7.1166049232041.1166049300910" target="68nn.3702466984434723497" resolveInfo="IBaseTestBlock" />
-      <node concept="9wj7.1075375595203" id="4828650071862732569" role="9wj7.1080736578640.1080736633877" info="lg">
+      <node concept="9wj7.1075375595203" id="4828650071862732569" role="9wj7.1080736578640.1080736633877" info="sg">
         <property role="9wj7.1075375595203.1075375595204" value="    " />
       </node>
     </node>
@@ -253,7 +253,7 @@
         <node concept="9wj7.1073389577006" id="7658393498702771304" role="9wj7.1073389446423.1073389446424" info="sn">
           <property role="9wj7.1073389577006.1073389577007" value="&lt;ref" />
         </node>
-        <node concept="9wj7.1136564507907" id="7658393498702861284" role="9wj7.1073389446423.1073389446424" info="lg" />
+        <node concept="9wj7.1136564507907" id="7658393498702861284" role="9wj7.1073389446423.1073389446424" info="sg" />
         <node concept="9wj7.1073389577006" id="7658393498702771306" role="9wj7.1073389446423.1073389446424" info="sn">
           <property role="9wj7.1073389577006.1073389577007" value="&gt;" />
           <node concept="9wj7.1233758997495" id="7658393498703098515" role="9wj7.1219418625346.1219418656006" info="ln">
@@ -490,7 +490,7 @@
           <property role="9wj7.1073389577006.1073389577007" value="@" />
           <reference role="9wj7.1073389214265.1139959269582" target="3447504547918701881" resolveInfo="SimplePropertyAttributeActions" />
         </node>
-        <node concept="9wj7.1134379236839" id="3447504547918537549" role="9wj7.1073389446423.1073389446424" info="lg" />
+        <node concept="9wj7.1134379236839" id="3447504547918537549" role="9wj7.1073389446423.1073389446424" info="sg" />
       </node>
     </node>
     <node concept="9wj7.1139535219966" id="3447504547918701881" info="ig">
