@@ -16,12 +16,12 @@
   <dep model="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.util(MPS.Core/jetbrains.mps.util@java_stub)" />
   <dep model="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.language(MPS.OpenAPI/org.jetbrains.mps.openapi.language@java_stub)" />
   <dep model="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)" />
-  <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="5j4ycjpdxb0hhd1qpfbo5sg6kqjw5n1" />
+  <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="-9v11jml7h7hfg6uq9r96opqu9hb42ca" />
   <dep model="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" hash="-ekxa7faaqy2t7xrm9vk185y2kztttvy" />
   <dep model="r:00000000-0000-4000-0000-011c895902b7(jetbrains.mps.lang.typesystem.generator.baseLanguage.template.main@generator)" hash="achzfedb7v8uxctx6l23vaueqcopyk3" />
   <dep model="r:00000000-0000-4000-0000-011c895902bc(jetbrains.mps.lang.sharedConcepts.structure)" hash="2zuvaw7f1hpwqg2jmyhrmyk2tflsius" />
   <dep model="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)" hash="4vovh9wszciw1ayx6x2vstyazklj3oj" />
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-9vncdvjupsekoqnu4ooyqsvj5b7w4im" />
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="56n8af9ybxrc7k9aiqt6t5tj3sb7rw0" />
   <dep model="r:00000000-0000-4000-0000-011c895902cc(jetbrains.mps.baseLanguage.generator.java.conceptFunctionDefaults@generator)" hash="-ab7vrsrfvw56136ih5wg3ezi981jd5a" />
   <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" hash="-9fyf8ube0aqhy2tpqxm8qrxfi4z6r48" />
   <dep model="r:00000000-0000-4000-0000-011c895902de(jetbrains.mps.baseLanguage.blTypes.primitiveDescriptors)" />
@@ -181,9 +181,15 @@
   <source id="1167163238171" name="TLB_main">
     <dep root="4914935534438618871" />
   </source>
-  <source id="1184374857687" name="insert_TemplateFragment_ContextNodeQuery" />
-  <source id="1199965771119" name="AddTypeHints" />
-  <source id="1217270660170" name="ReduceReferenceToText" />
+  <source id="1184374857687" name="insert_TemplateFragment_ContextNodeQuery">
+    <dep root="4914935534438618871" />
+  </source>
+  <source id="1199965771119" name="AddTypeHints">
+    <dep root="4914935534438618871" />
+  </source>
+  <source id="1217270660170" name="ReduceReferenceToText">
+    <dep root="4914935534438618871" />
+  </source>
   <source id="6342833957791858285" name="checkGenerator" />
   <source id="3084749922879516635" name="map_TemplateDeclaration">
     <dep model="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.generator.runtime(MPS.Core/jetbrains.mps.generator.runtime@java_stub)" />
