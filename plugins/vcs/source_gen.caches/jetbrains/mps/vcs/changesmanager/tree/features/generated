@@ -33,6 +33,7 @@
   </source>
   <source id="5060092229902868472" name="NodeAggregationFeature">
     <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" />
+    <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="NodeAggregationFeature.java" />
   </source>
   <source id="5060092229902868493" name="NodeFeature">

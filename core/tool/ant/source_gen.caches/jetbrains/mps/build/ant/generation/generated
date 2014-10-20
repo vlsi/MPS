@@ -23,6 +23,7 @@
     <file name="GenerateTask.java" />
   </source>
   <source id="978600701689990961" name="Plugin">
+    <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
     <file name="Plugin.java" />
   </source>
   <source id="861826518923203126" name="GenTestTask">

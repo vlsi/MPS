@@ -60,7 +60,6 @@
     <file name="CellAction_DeleteSmart.java" />
   </source>
   <source id="6859763651190628904" name="CellAction_CreateChildRangeSelection">
-    <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" />
     <file name="CellAction_CreateChildRangeSelection.java" />
   </source>
 </dependencies>

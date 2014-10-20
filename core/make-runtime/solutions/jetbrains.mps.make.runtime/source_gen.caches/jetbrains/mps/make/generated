@@ -9,7 +9,6 @@
     <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
   </common>
   <source id="2082624981609760242" name="IMakeService">
-    <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
     <dep model="r:4ea5a78b-cb8a-4831-b227-f7860a22491d(jetbrains.mps.make.resources)" />
     <file name="IMakeService.java" />
   </source>
@@ -26,6 +25,7 @@
   </source>
   <source id="8464977774480012290" name="IMakeNotificationListener">
     <dep root="8464977774479999203" />
+    <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
     <file name="IMakeNotificationListener.java" />
   </source>
   <source id="2958721966247272985" name="IHName">

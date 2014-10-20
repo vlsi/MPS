@@ -36,14 +36,12 @@
     <file name="Descendant.java" />
   </source>
   <source id="2323553266850069117" name="Arg1">
-    <dep model="r:9b747d6a-23f3-4201-9cdb-823e3b205a27(jetbrains.mps.baseLanguage.doubleDispatch.generator.template.main@generator)" />
     <file name="Arg1.java" />
   </source>
   <source id="2323553266850069150" name="Arg2">
     <file name="Arg2.java" />
   </source>
   <source id="2323553266850070343" name="Arg3">
-    <dep model="r:9b747d6a-23f3-4201-9cdb-823e3b205a27(jetbrains.mps.baseLanguage.doubleDispatch.generator.template.main@generator)" />
     <file name="Arg3.java" />
   </source>
   <source id="2323553266850070380" name="Arg4">
