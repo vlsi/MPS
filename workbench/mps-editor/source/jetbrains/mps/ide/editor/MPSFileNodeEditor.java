@@ -191,6 +191,12 @@ public class MPSFileNodeEditor extends UserDataHolderBase implements DocumentsEd
           myNodeEditor.loadState(wrapper.getEditorState());
         }
       });
+      ModelAccess.instance().runWriteInEDT(new Runnable() {
+        @Override
+        public void run() {
+          myNodeEditor.getCurrentEditorComponent().rebuildEditorContent();
+        }
+      });
     } else {
       myNodeEditor.loadState(wrapper.getEditorState());
     }

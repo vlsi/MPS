@@ -140,7 +140,7 @@ public class LocalVariableDeclaration_Editor extends DefaultNodeEditor {
   }
   private EditorCell createComponent_i0gfbw_d0(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.baseLanguage.editor.VariableDeclaration_NameCellComponent");
-    LocalVariableDeclaration_Initializer_Actions.setCellActions(editorCell, node, editorContext);
+    LocalVariableDeclaration_Name_Actions.setCellActions(editorCell, node, editorContext);
     return editorCell;
   }
   private EditorCell createCollection_i0gfbw_e0(EditorContext editorContext, SNode node) {

@@ -150,6 +150,6 @@ class ModelEventsVisitor implements SModelEventVisitor {
   }
 
   private boolean mayAffectSelection(SModelEvent event) {
-    return event.getAffectedRoot() == myEditorComponent.getEditedNode().getContainingRoot();
+    return myEditorComponent.getEditedNode() != null && myEditorComponent.getEditedNode().getContainingRoot() == event.getAffectedRoot();
   }
 }

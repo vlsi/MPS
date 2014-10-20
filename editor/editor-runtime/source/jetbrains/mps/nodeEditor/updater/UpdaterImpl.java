@@ -132,13 +132,13 @@ public class UpdaterImpl implements Updater {
   }
 
   private void fireCellSynchronized(EditorCell cell) {
-    for (UpdaterListener nextListener : myListeners) {
+    for (UpdaterListener nextListener : new ArrayList<UpdaterListener>(myListeners)) {
       nextListener.cellSynchronizedWithModel(cell);
     }
   }
 
   private void fireEditorUpdated() {
-    for (UpdaterListener nextListener : myListeners) {
+    for (UpdaterListener nextListener : new ArrayList<UpdaterListener>(myListeners)) {
       nextListener.editorUpdated(myEditorComponent);
     }
   }

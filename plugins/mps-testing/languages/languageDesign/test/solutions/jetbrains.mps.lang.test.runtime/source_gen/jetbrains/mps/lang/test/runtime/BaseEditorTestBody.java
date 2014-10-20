@@ -26,8 +26,8 @@ import com.intellij.openapi.command.undo.UndoManager;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.workbench.nodesFs.MPSNodeVirtualFile;
 import jetbrains.mps.workbench.nodesFs.MPSNodesVirtualFileSystem;
-import jetbrains.mps.project.Project;
 import java.lang.reflect.InvocationTargetException;
+import jetbrains.mps.project.Project;
 import java.awt.Component;
 import jetbrains.mps.intentions.IntentionsManager;
 import java.util.Collection;
@@ -141,6 +141,7 @@ public abstract class BaseEditorTestBody extends BaseTestBody {
     try {
       this.testMethodImpl();
       this.checkAssertion();
+      dispose();
     } finally {
       myProject.getModelAccess().runWriteInEDT(new Runnable() {
         public void run() {
@@ -153,6 +154,19 @@ public abstract class BaseEditorTestBody extends BaseTestBody {
   }
 
   public abstract void testMethodImpl() throws Exception;
+
+  private void dispose() throws InterruptedException, InvocationTargetException {
+    SwingUtilities.invokeAndWait(new Runnable() {
+      public void run() {
+        myProject.getModelAccess().runWriteAction(new Runnable() {
+          public void run() {
+            myFileNodeEditor.dispose();
+            myFileNodeEditor = null;
+          }
+        });
+      }
+    });
+  }
 
   private MPSFileNodeEditor openEditor() {
     assert ModelAccess.instance().isInEDT();
