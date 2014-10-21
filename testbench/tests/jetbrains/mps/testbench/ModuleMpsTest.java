@@ -46,7 +46,10 @@ import java.util.UUID;
  * @see jetbrains.mps.ide.depanalyzer.ModuleDependenciesTest
  */
 public class ModuleMpsTest extends CoreMpsTest {
-  private static final String TEST_PREFIX = "TEST_";
+  private static final String TEST_PREFIX_LANG = "TEST_LNG";
+  private static final String TEST_PREFIX_SOLUTION = "TEST_SLN";
+  private static final String TEST_PREFIX_DEVKIT = "TEST_DVK";
+  private static int ourId = 0;
   protected final ModelAccess myAccess = MPSModuleRepository.getInstance().getModelAccess();
 
   private static final MPSModuleOwner OWNER = new BaseMPSModuleOwner();
@@ -71,12 +74,16 @@ public class ModuleMpsTest extends CoreMpsTest {
       public void run() {
         SolutionDescriptor d = new SolutionDescriptor();
         String uuid = UUID.randomUUID().toString();
-        d.setNamespace(TEST_PREFIX + uuid);
+        d.setNamespace(TEST_PREFIX_SOLUTION + "_" + getNewId() + "_" + uuid);
         d.setId(ModuleId.fromString(uuid));
         solutions[0] = StubSolution.newInstance(d, OWNER);
       }
     });
     return solutions[0];
+  }
+
+  private int getNewId() {
+    return (++ourId);
   }
 
   protected Language createLanguage() {
@@ -86,7 +93,7 @@ public class ModuleMpsTest extends CoreMpsTest {
       public void run() {
         LanguageDescriptor d = new LanguageDescriptor();
         String uuid = UUID.randomUUID().toString();
-        d.setNamespace(TEST_PREFIX + uuid);
+        d.setNamespace(TEST_PREFIX_LANG + "_" + getNewId() + "_" + uuid);
         d.setId(ModuleId.fromString(uuid));
         languages[0] = TestLanguage.newInstance(d, OWNER);
       }
@@ -101,7 +108,7 @@ public class ModuleMpsTest extends CoreMpsTest {
       public void run() {
         DevkitDescriptor d = new DevkitDescriptor();
         String uuid = UUID.randomUUID().toString();
-        d.setNamespace(TEST_PREFIX + uuid);
+        d.setNamespace(TEST_PREFIX_DEVKIT + "_" + getNewId() + "_" + uuid);
         d.setId(ModuleId.fromString(uuid));
         devKits[0] = (DevKit) ModuleRepositoryFacade.createModule(new ModuleHandle(null, d), OWNER);
       }
