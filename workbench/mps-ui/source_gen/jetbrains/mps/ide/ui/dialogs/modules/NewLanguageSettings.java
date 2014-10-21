@@ -44,7 +44,7 @@ public class NewLanguageSettings extends JPanel {
     myProjectPath = projectPath;
 
     this.add(new JLabel("Language name:"), Util.getGridConstraints(0));
-    myLanguageName = new JTextField("NewLanguage");
+    myLanguageName = new JTextField();
     myLanguageName.setName("Name");
     myLanguageName.getDocument().addDocumentListener(new DocumentAdapter() {
       protected void textChanged(DocumentEvent p0) {
@@ -80,17 +80,15 @@ public class NewLanguageSettings extends JPanel {
     FileChooserFactory.getInstance().installFileCompletion(fieldPanel.getTextField(), descriptor, false, null);
     this.add(fieldPanel, Util.getGridConstraints(2));
 
-    myRuntimeSolution = new JCheckBox("Create Runtime Solution", false);
+    myRuntimeSolution = new JCheckBox("Create Runtime Solution");
     this.add(myRuntimeSolution, Util.getGridConstraints(3));
 
-    mySandboxSolution = new JCheckBox("Create Sandbox Solution", false);
+    mySandboxSolution = new JCheckBox("Create Sandbox Solution");
     this.add(mySandboxSolution, Util.getGridConstraints(4));
 
     this.setPreferredSize(new Dimension(400, 100));
 
-    if (myProjectPath != null) {
-      setLanguageLocation(myProjectPath + File.separator + "languages" + File.separator + getLanguageName());
-    }
+    reset();
   }
 
   public String getLanguageName() {
@@ -127,7 +125,7 @@ public class NewLanguageSettings extends JPanel {
     if ((oldProjectPath != null && oldProjectPath.length() > 0) && myLanguageLocation.getText().contains(oldProjectPath)) {
       setLanguageLocation(myLanguageLocation.getText().replace(oldProjectPath, myProjectPath));
     } else {
-      setLanguageLocation(myProjectPath + File.separator + "languages" + File.separator + getLanguageName());
+      setLanguageLocation(generateLanguagePath());
     }
     fireChanged();
   }
@@ -139,6 +137,17 @@ public class NewLanguageSettings extends JPanel {
     if (myListener != null) {
       myListener.changed();
     }
+  }
+  public void reset() {
+    setLanguageName("NewLanguage");
+    if (myProjectPath != null) {
+      setLanguageLocation(generateLanguagePath());
+    }
+    myRuntimeSolution.setSelected(false);
+    mySandboxSolution.setSelected(false);
+  }
+  private String generateLanguagePath() {
+    return myProjectPath + File.separator + "languages" + File.separator + getLanguageName();
   }
 
   public JComponent getPreferredFocusedComponent() {

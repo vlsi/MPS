@@ -56,7 +56,7 @@ public class DefaultSolutionProjectTemplate implements SolutionProjectTemplate {
   @Nullable
   @Override
   public JComponent getSettings() {
-    myNewSolutionSettings.setSolutionName("NewSolution");
+    myNewSolutionSettings.reset();
     return myNewSolutionSettings;
   }
 

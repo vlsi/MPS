@@ -57,7 +57,7 @@ public class DefaultLanguageProjectTemplate implements LanguageProjectTemplate {
   @Nullable
   @Override
   public JComponent getSettings() {
-    myLanguageSettings.setLanguageName("NewLanguage");
+    myLanguageSettings.reset();
     return myLanguageSettings;
   }
 

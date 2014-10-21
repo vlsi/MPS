@@ -40,7 +40,7 @@ public class NewSolutionSettings extends JPanel {
     myProjectPath = projectPath;
 
     this.add(new JLabel("Solution name:"), Util.getGridConstraints(0));
-    mySolutionName = new JTextField("NewSolution");
+    mySolutionName = new JTextField();
     mySolutionName.setName("Name");
     mySolutionName.getDocument().addDocumentListener(new DocumentAdapter() {
       protected void textChanged(DocumentEvent p0) {
@@ -77,9 +77,7 @@ public class NewSolutionSettings extends JPanel {
 
     this.setPreferredSize(new Dimension(400, 100));
 
-    if (myProjectPath != null) {
-      setSolutionLocation(myProjectPath + File.separator + "solutions" + File.separator + getSolutionName());
-    }
+    reset();
   }
   public String getSolutionName() {
     return mySolutionName.getText().trim();
@@ -116,6 +114,16 @@ public class NewSolutionSettings extends JPanel {
       myListener.changed();
     }
   }
+  public void reset() {
+    setSolutionName("NewSolution");
+    if (myProjectPath != null) {
+      setSolutionLocation(generateSolutionPath());
+    }
+  }
+  private String generateSolutionPath() {
+    return myProjectPath + File.separator + "solutions" + File.separator + getSolutionName();
+  }
+
 
 
   public JComponent getPreferredFocusedComponent() {
