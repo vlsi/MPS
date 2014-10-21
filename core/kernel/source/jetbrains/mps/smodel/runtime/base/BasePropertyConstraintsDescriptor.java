@@ -15,28 +15,37 @@
  */
 package jetbrains.mps.smodel.runtime.base;
 
+import jetbrains.mps.smodel.BootstrapLanguages;
 import jetbrains.mps.smodel.SNodeUtil;
+import jetbrains.mps.smodel.adapter.structure.property.SPropertyAdapterByName;
 import jetbrains.mps.smodel.language.ConceptRegistry;
 import jetbrains.mps.smodel.runtime.ConstraintsDescriptor;
 import jetbrains.mps.smodel.runtime.PropertyConstraintsDescriptor;
 import jetbrains.mps.smodel.runtime.PropertyConstraintsDispatchable;
 import jetbrains.mps.util.NameUtil;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.language.SConcept;
+import org.jetbrains.mps.openapi.language.SProperty;
 import org.jetbrains.mps.openapi.model.SNode;
 
 public class BasePropertyConstraintsDescriptor implements PropertyConstraintsDispatchable {
-  private final String name;
+  private final SProperty myProperty;
   private final ConstraintsDescriptor container;
 
   private final PropertyConstraintsDescriptor getterDescriptor;
   private final PropertyConstraintsDescriptor setterDescriptor;
   private final PropertyConstraintsDescriptor validatorDescriptor;
 
+  @Deprecated
   public BasePropertyConstraintsDescriptor(String propertyName, ConstraintsDescriptor container) {
-    this.name = propertyName;
+    this(new SPropertyAdapterByName(container.getConcept().getQualifiedName(), propertyName), container);
+  }
+
+  public BasePropertyConstraintsDescriptor(SProperty property, ConstraintsDescriptor container) {
+    this.myProperty = property;
     this.container = container;
 
-    if (!isBootstrapProperty(container.getConceptFqName(), propertyName)) {
+    if (!isBootstrapProperty(container.getConcept(), property)) {
       if (hasOwnGetter()) {
         getterDescriptor = this;
       } else {
@@ -61,20 +70,14 @@ public class BasePropertyConstraintsDescriptor implements PropertyConstraintsDis
     }
   }
 
-  private static boolean isBootstrapProperty(String fqName, String propertyName) {
-    String namespace = NameUtil.namespaceFromConceptFQName(fqName);
-
-    // 'bootstrap' properties
-    if (namespace.equals("jetbrains.mps.lang.structure") && propertyName.equals(SNodeUtil.propertyName_INamedConcept_name)
-        && !fqName.equals("jetbrains.mps.lang.structure.structure.AnnotationLinkDeclaration")) {
+  private static boolean isBootstrapProperty(SConcept concept, SProperty property) {
+    if (property.equals(SNodeUtil.property_INamedConcept_name) && concept.getLanguage().getQualifiedName().equals(BootstrapLanguages.STRUCTURE_NAMESPACE)) {
       return true;
     }
-
-    if (fqName.equals("jetbrains.mps.lang.typesystem.structure.RuntimeTypeVariable")) {
+    if (property.getContainingConcept().equals(SNodeUtil.concept_RuntimeTypeVariable)) {
       // helgins ku-ku!
       return true;
     }
-
     return false;
   }
 
@@ -139,8 +142,13 @@ public class BasePropertyConstraintsDescriptor implements PropertyConstraintsDis
   }
 
   @Override
+  public SProperty getProperty() {
+    return myProperty;
+  }
+
+  @Override
   public String getName() {
-    return name;
+    return myProperty.getName();
   }
 
   @Override

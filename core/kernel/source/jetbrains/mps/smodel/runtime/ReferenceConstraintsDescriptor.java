@@ -16,9 +16,13 @@
 package jetbrains.mps.smodel.runtime;
 
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.language.SReferenceLink;
 import org.jetbrains.mps.openapi.model.SNode;
 
 public interface ReferenceConstraintsDescriptor {
+  SReferenceLink getReferenceLink();
+
+  @Deprecated
   String getRole();
 
   ConstraintsDescriptor getContainer();

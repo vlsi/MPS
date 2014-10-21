@@ -15,49 +15,62 @@
  */
 package jetbrains.mps.smodel.runtime.base;
 
+import jetbrains.mps.internal.collections.runtime.IterableUtils;
+import jetbrains.mps.smodel.adapter.ids.SConceptId;
+import jetbrains.mps.smodel.adapter.structure.ref.SReferenceLinkAdapterByName;
 import jetbrains.mps.smodel.language.ConceptRegistry;
 import jetbrains.mps.smodel.runtime.ConstraintsDescriptor;
 import jetbrains.mps.smodel.runtime.PropertyConstraintsDispatchable;
 import jetbrains.mps.smodel.runtime.ReferenceConstraintsDescriptor;
 import jetbrains.mps.smodel.runtime.ReferenceConstraintsDispatchable;
 import jetbrains.mps.smodel.runtime.ReferenceScopeProvider;
+import jetbrains.mps.util.IterableUtil;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import org.jetbrains.mps.openapi.language.SConcept;
+import org.jetbrains.mps.openapi.language.SConceptUtil;
+import org.jetbrains.mps.openapi.language.SReferenceLink;
 import org.jetbrains.mps.openapi.model.SNode;
 
 public class BaseReferenceConstraintsDescriptor implements ReferenceConstraintsDispatchable {
-  private final String role;
+  private final SReferenceLink myReferenceLink;
   private final ConstraintsDescriptor container;
 
   private final ReferenceConstraintsDescriptor scopeProviderDescriptor;
   private final ReferenceConstraintsDescriptor onReferenceSetHandlerDescriptor;
 
-  public BaseReferenceConstraintsDescriptor(String role, ConstraintsDescriptor container) {
-    this.role = role;
+  @Deprecated
+  public BaseReferenceConstraintsDescriptor(String refName, ConstraintsDescriptor container) {
+    this(new SReferenceLinkAdapterByName(container.getConcept().getQualifiedName(), refName), container);
+  }
+
+  public BaseReferenceConstraintsDescriptor(SReferenceLink referenceLink, ConstraintsDescriptor container) {
+    this.myReferenceLink = referenceLink;
     this.container = container;
 
     if (hasOwnScopeProvider()) {
       scopeProviderDescriptor = this;
     } else {
-      scopeProviderDescriptor = getSomethingUsingInheritance(container.getConceptFqName(), role, SCOPE_INHERITANCE_PARAMETERS);
+      scopeProviderDescriptor = getSomethingUsingInheritance(container.getConcept(), referenceLink, SCOPE_INHERITANCE_PARAMETERS);
     }
 
     if (hasOwnOnReferenceSetHandler()) {
       onReferenceSetHandlerDescriptor = this;
     } else {
-      onReferenceSetHandlerDescriptor = getSomethingUsingInheritance(container.getConceptFqName(), role, ON_SET_HANDLER_INHERITANCE_PARAMETERS);
+      onReferenceSetHandlerDescriptor = getSomethingUsingInheritance(container.getConcept(), referenceLink, ON_SET_HANDLER_INHERITANCE_PARAMETERS);
     }
   }
 
 
   @Nullable
-  private static ReferenceConstraintsDescriptor getSomethingUsingInheritance(String conceptFqName, String roleName, InheritanceCalculateParameters parameters) {
-    for (String parent : ConceptRegistry.getInstance().getConceptDescriptor(conceptFqName).getParentsNames()) {
-      if (!ConceptRegistry.getInstance().getConceptDescriptor(parent).hasReference(roleName)) {
+  private static ReferenceConstraintsDescriptor getSomethingUsingInheritance(SAbstractConcept concept, SReferenceLink referenceLink, InheritanceCalculateParameters parameters) {
+    for (SAbstractConcept parent : SConceptUtil.getImmediateSuperConcepts(concept)) {
+      if (!IterableUtils.contains(parent.getReferences(), referenceLink)) {
         continue;
       }
 
-      ConstraintsDescriptor parentDescriptor = ConceptRegistry.getInstance().getConstraintsDescriptor(parent);
-      ReferenceConstraintsDescriptor parentReferenceDescriptor = parentDescriptor.getReference(roleName);
+      ConstraintsDescriptor parentDescriptor = ConceptRegistry.getInstance().getConstraintsDescriptor(parent.getQualifiedName());
+      ReferenceConstraintsDescriptor parentReferenceDescriptor = parentDescriptor.getReference(referenceLink);
 
       ReferenceConstraintsDescriptor parentCalculated;
 
@@ -67,7 +80,7 @@ public class BaseReferenceConstraintsDescriptor implements ReferenceConstraintsD
         if (parameters.hasOwn((ReferenceConstraintsDispatchable) parentReferenceDescriptor)) {
           parentCalculated = parentReferenceDescriptor;
         } else {
-          parentCalculated = getSomethingUsingInheritance(parent, roleName, parameters);
+          parentCalculated = getSomethingUsingInheritance(parent, referenceLink, parameters);
         }
       } else {
         parentCalculated = parentReferenceDescriptor;
@@ -82,8 +95,13 @@ public class BaseReferenceConstraintsDescriptor implements ReferenceConstraintsD
   }
 
   @Override
+  public SReferenceLink getReferenceLink() {
+    return myReferenceLink;
+  }
+
+  @Override
   public String getRole() {
-    return role;
+    return myReferenceLink.getRoleName();
   }
 
   @Override

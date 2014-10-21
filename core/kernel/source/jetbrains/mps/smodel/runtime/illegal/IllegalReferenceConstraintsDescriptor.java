@@ -19,21 +19,28 @@ import jetbrains.mps.smodel.runtime.ConstraintsDescriptor;
 import jetbrains.mps.smodel.runtime.ReferenceConstraintsDescriptor;
 import jetbrains.mps.smodel.runtime.ReferenceScopeProvider;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.language.SReferenceLink;
 import org.jetbrains.mps.openapi.model.SNode;
 
 public class IllegalReferenceConstraintsDescriptor implements ReferenceConstraintsDescriptor {
-  private final String role;
+  private final SReferenceLink myReferenceLink;
   private final ConstraintsDescriptor container;
 
-  public IllegalReferenceConstraintsDescriptor(String role, ConstraintsDescriptor container) {
-    this.role = role;
+  public IllegalReferenceConstraintsDescriptor(SReferenceLink referenceLink, ConstraintsDescriptor container) {
+    this.myReferenceLink = referenceLink;
     this.container = container;
   }
 
   @Override
-  public String getRole() {
-    return role;
+  public SReferenceLink getReferenceLink() {
+    return myReferenceLink;
   }
+
+  @Override
+  public String getRole() {
+    return myReferenceLink.getRoleName();
+  }
+
 
   @Override
   public ConstraintsDescriptor getContainer() {

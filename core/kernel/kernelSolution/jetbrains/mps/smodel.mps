@@ -24,6 +24,7 @@
     <model ref="r:2c4d9270-b6d6-44af-aecd-e01a223680db(jetbrains.mps.kernel.model)" name="jetbrains.mps.kernel.model" />
     <model ref="r:53885008-7612-46ff-8b11-27f1d42c3adb(jetbrains.mps.lang.migration.structure)" name="jetbrains.mps.lang.migration.structure" />
     <model ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.adapter.structure.concept(MPS.Core/jetbrains.mps.smodel.adapter.structure.concept@java_stub)" name="jetbrains.mps.smodel.adapter.structure.concept@java_stub" />
+    <model ref="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" name="jetbrains.mps.lang.typesystem.structure" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068390468198" name="jetbrains.mps.baseLanguage.structure.ClassConcept" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068498886292" name="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068498886296" name="jetbrains.mps.baseLanguage.structure.VariableReference" />
@@ -173,6 +174,7 @@
     <import index="iwwu" ref="r:2c4d9270-b6d6-44af-aecd-e01a223680db(jetbrains.mps.kernel.model)" />
     <import index="53vh" ref="r:53885008-7612-46ff-8b11-27f1d42c3adb(jetbrains.mps.lang.migration.structure)" />
     <import index="gct0" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.adapter.structure.concept(MPS.Core/jetbrains.mps.smodel.adapter.structure.concept@java_stub)" />
+    <import index="tpd4" ref="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" />
     <import index="tp25" ref="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" implicit="true" />
     <import index="tp2c" ref="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" implicit="true" />
     <import index="tp2q" ref="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" implicit="true" />
@@ -1400,6 +1402,17 @@
           <reference role="4ia1.2644386474300074836.2644386474300074837" target="tpck.6999738288738427190" resolveInfo="ImplementationWithStubPart" />
         </node>
         <node concept="vg0i.1107535904670" id="8786100149933454474" role="vg0i.4972933694980447171.5680397130376446158" info="in">
+          <reference role="vg0i.1107535904670.1107535924139" target="t3eg.~SConcept" resolveInfo="SConcept" />
+        </node>
+      </node>
+      <node concept="vg0i.1070462154015" id="1329021415739870301" role="vg0i.1107461130800.5375687026011219971" info="igu">
+        <property role="asn4.1169194658468.1169194664001" value="concept_RuntimeTypeVariable" />
+        <property role="vg0i.1068431474542.1176718929932" value="true" />
+        <node concept="vg0i.1146644602865" id="1329021415739870302" role="vg0i.1178549954367.1178549979242" info="nn" />
+        <node concept="4ia1.2644386474300074836" id="1329021415739870303" role="vg0i.1068431474542.1068431790190" info="nn">
+          <reference role="4ia1.2644386474300074836.2644386474300074837" target="tpd4.1185281562363" resolveInfo="RuntimeTypeVariable" />
+        </node>
+        <node concept="vg0i.1107535904670" id="1329021415739870304" role="vg0i.4972933694980447171.5680397130376446158" info="in">
           <reference role="vg0i.1107535904670.1107535924139" target="t3eg.~SConcept" resolveInfo="SConcept" />
         </node>
       </node>

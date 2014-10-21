@@ -51,6 +51,7 @@ public class SNodeUtil {
   public static final SConcept concept_ImplementationPart = new SConceptAdapterById(SConceptId.deserialize("ceab5195-25ea-4f22-9b92-103b95ca8c0c/1319728274783077719"), "jetbrains.mps.lang.core.structure.ImplementationPart");
   public static final String conceptName_ImplementationWithStubPart = "jetbrains.mps.lang.core.structure.ImplementationWithStubPart";
   public static final SConcept concept_ImplementationWithStubPart = new SConceptAdapterById(SConceptId.deserialize("ceab5195-25ea-4f22-9b92-103b95ca8c0c/6999738288738427190"), "jetbrains.mps.lang.core.structure.ImplementationWithStubPart");
+  public static final SConcept concept_RuntimeTypeVariable = new SConceptAdapterById(SConceptId.deserialize("7a5dda62-9140-4668-ab76-d5ed1746f2b2/1185281562363"), "jetbrains.mps.lang.typesystem.structure.RuntimeTypeVariable");
 
   public static final String linkName_ConceptDeclaration_extends = "extends";
   public static final SReferenceLink link_ConceptDeclaration_extends = new SReferenceLinkAdapterById(SReferenceLinkId.deserialize("c72da2b9-7cce-4447-8389-f407dc1158b7/1071489090640/1071489389519"), "extends");

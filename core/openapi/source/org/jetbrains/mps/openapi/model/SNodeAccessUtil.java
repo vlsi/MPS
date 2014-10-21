@@ -16,6 +16,8 @@
 package org.jetbrains.mps.openapi.model;
 
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.language.SProperty;
+import org.jetbrains.mps.openapi.language.SReferenceLink;
 
 /**
  * Access to node "properties" using getters and setters declared in MPS.
@@ -27,22 +29,49 @@ import org.jetbrains.annotations.Nullable;
  * LanguageRegistry (or something similar) will be an openAPI class.
  */
 public abstract class SNodeAccessUtil {
+
+  public static boolean hasProperty(SNode node, SProperty property) {
+    return myInstance.hasPropertyImpl(node, property);
+  }
+
+  @Deprecated
   public static boolean hasProperty(SNode node, String name) {
     return myInstance.hasPropertyImpl(node, name);
   }
 
+  public static String getProperty(SNode node, SProperty property) {
+    return myInstance.getPropertyImpl(node, property);
+  }
+
+  @Deprecated
   public static String getProperty(SNode node, String name) {
     return myInstance.getPropertyImpl(node, name);
   }
 
+  public static void setProperty(SNode node, SProperty property, String propertyValue) {
+    myInstance.setPropertyImpl(node, property, propertyValue);
+  }
+
+  @Deprecated
   public static void setProperty(SNode node, String propertyName, String propertyValue) {
     myInstance.setPropertyImpl(node, propertyName, propertyValue);
   }
 
+  public static void setReferenceTarget(SNode node, SReferenceLink referenceLink, @Nullable SNode target) {
+    myInstance.setReferenceTargetImpl(node, referenceLink, target);
+  }
+
+  @Deprecated
   public static void setReferenceTarget(SNode node, String role, @Nullable SNode target) {
     myInstance.setReferenceTargetImpl(node, role, target);
   }
 
+  public void setReference(SNode node, SReferenceLink referenceLink, @Nullable org.jetbrains.mps.openapi.model.SReference reference) {
+    //todo for symmetry. Not yet used
+    myInstance.setReferenceImpl(node, referenceLink, reference);
+  }
+
+  @Deprecated
   public void setReference(SNode node, String role, @Nullable org.jetbrains.mps.openapi.model.SReference reference) {
     //todo for symmetry. Not yet used
     myInstance.setReferenceImpl(node, role, reference);
@@ -60,13 +89,23 @@ public abstract class SNodeAccessUtil {
     myInstance = instance;
   }
 
+  protected abstract boolean hasPropertyImpl(SNode node, SProperty property);
+
   protected abstract boolean hasPropertyImpl(SNode node, String name);
+
+  protected abstract String getPropertyImpl(SNode node, SProperty property);
 
   protected abstract String getPropertyImpl(SNode node, String name);
 
+  protected abstract void setPropertyImpl(SNode node, SProperty property, String propertyValue);
+
   protected abstract void setPropertyImpl(SNode node, String propertyName, String propertyValue);
 
+  protected abstract void setReferenceTargetImpl(SNode node, SReferenceLink referenceLink, SNode target);
+
   protected abstract void setReferenceTargetImpl(SNode node, String role, SNode target);
+
+  protected abstract void setReferenceImpl(SNode node, SReferenceLink referenceLink, SReference reference);
 
   protected abstract void setReferenceImpl(SNode node, String role, SReference reference);
 }

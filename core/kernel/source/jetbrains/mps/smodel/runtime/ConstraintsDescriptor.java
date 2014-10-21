@@ -16,13 +16,19 @@
 package jetbrains.mps.smodel.runtime;
 
 import jetbrains.mps.smodel.IOperationContext;
+import org.jetbrains.mps.openapi.language.SConcept;
+import org.jetbrains.mps.openapi.language.SProperty;
+import org.jetbrains.mps.openapi.language.SReferenceLink;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 public interface ConstraintsDescriptor {
+  @Deprecated
   String getConceptFqName();
+
+  SConcept getConcept();
 
   boolean canBeChild(@Nullable SNode node, SNode parentNode, SNode link, @Deprecated SNode childConcept, IOperationContext operationContext, @Nullable CheckingNodeContext checkingNodeContext);
 
@@ -33,8 +39,16 @@ public interface ConstraintsDescriptor {
   boolean canBeAncestor(SNode node, @Nullable SNode childNode, SNode childConcept, IOperationContext operationContext, @Nullable CheckingNodeContext checkingNodeContext);
 
   @NotNull
+  PropertyConstraintsDescriptor getProperty(SProperty property);
+
+  @Deprecated
+  @NotNull
   PropertyConstraintsDescriptor getProperty(String name);
 
+  @NotNull
+  ReferenceConstraintsDescriptor getReference(SReferenceLink referenceLink);
+
+  @Deprecated
   @NotNull
   ReferenceConstraintsDescriptor getReference(String refName);
 
