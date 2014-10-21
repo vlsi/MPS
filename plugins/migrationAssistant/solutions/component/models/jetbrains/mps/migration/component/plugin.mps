@@ -12,7 +12,6 @@
     <lang id="fe9d76d7-5809-45c9-ae28-a40915b4d6ff" name="jetbrains.mps.lang.checkedName" />
     <lang id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core" />
     <lang id="28f9e497-3b42-4291-aeba-0a1039153ab1" name="jetbrains.mps.lang.plugin" />
-    <lang id="ef7bf5ac-d06c-4342-b11d-e42104eb9343" name="jetbrains.mps.lang.plugin.standalone" />
     <lang id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" />
     <lang id="9ded098b-ad6a-4657-bfd9-48636cfe8bc3" name="jetbrains.mps.lang.traceable" />
     <model ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#jetbrains.mps.ide.actions(MPS.Platform/jetbrains.mps.ide.actions@java_stub)" name="jetbrains.mps.ide.actions@java_stub" />
@@ -32,9 +31,10 @@
     <concept id="28f9e497-3b42-4291-aeba-0a1039153ab1/1207145163717" name="jetbrains.mps.lang.plugin.structure.ElementListContents" />
     <concept id="28f9e497-3b42-4291-aeba-0a1039153ab1/1217252042208" name="jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration" />
     <concept id="28f9e497-3b42-4291-aeba-0a1039153ab1/1217252428768" name="jetbrains.mps.lang.plugin.structure.ActionDataParameterReferenceOperation" />
+    <concept id="28f9e497-3b42-4291-aeba-0a1039153ab1/331224023792854814" name="jetbrains.mps.lang.plugin.structure.IdeaActionsDescriptor" />
+    <concept id="28f9e497-3b42-4291-aeba-0a1039153ab1/331224023792854815" name="jetbrains.mps.lang.plugin.structure.ActionGroupRef" />
     <concept id="28f9e497-3b42-4291-aeba-0a1039153ab1/5023285075122009364" name="jetbrains.mps.lang.plugin.structure.IdeaInitializerDescriptor" />
     <concept id="28f9e497-3b42-4291-aeba-0a1039153ab1/5538333046911348654" name="jetbrains.mps.lang.plugin.structure.RequiredCondition" />
-    <concept id="ef7bf5ac-d06c-4342-b11d-e42104eb9343/7520713872864775836" name="jetbrains.mps.lang.plugin.standalone.structure.StandalonePluginDescriptor" />
     <property id="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001" name="name" />
     <property id="28f9e497-3b42-4291-aeba-0a1039153ab1/1203071646776/1205250923097" name="caption" />
     <property id="28f9e497-3b42-4291-aeba-0a1039153ab1/1203071646776/1211298967294" name="outsideCommandExecution" />
@@ -46,13 +46,14 @@
     <property id="28f9e497-3b42-4291-aeba-0a1039153ab1/5023285075122009364/5023285075122009371" name="vendor" />
     <property id="28f9e497-3b42-4291-aeba-0a1039153ab1/5023285075122009364/5023285075122009372" name="vendorUrl" />
     <property id="28f9e497-3b42-4291-aeba-0a1039153ab1/5023285075122009364/5023285075122009373" name="ideaVersion" />
+    <property id="28f9e497-3b42-4291-aeba-0a1039153ab1/1203087890642/6368583333374291912" name="isPluginXmlGroup" />
     <refRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1204053956946/1068499141037" name="baseMethodDeclaration" />
     <refRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1116615150612/1116615189566" name="classifier" />
     <refRole id="28f9e497-3b42-4291-aeba-0a1039153ab1/1203088046679/1203088061055" name="action" />
     <refRole id="28f9e497-3b42-4291-aeba-0a1039153ab1/1203092361741/1203092736097" name="modifiedGroup" />
-    <refRole id="28f9e497-3b42-4291-aeba-0a1039153ab1/1203092361741/1204992316090" name="point" />
     <refRole id="443f4c36-fcf5-4eb6-9500-8d06ed259e3e/1205756064662/1205756909548" name="member" />
     <refRole id="28f9e497-3b42-4291-aeba-0a1039153ab1/1217252042208/1217252646389" name="key" />
+    <refRole id="28f9e497-3b42-4291-aeba-0a1039153ab1/331224023792854815/331224023792854816" name="group" />
     <childRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1204053956946/1068499141038" name="actualArgument" />
     <childRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123155/1068580123156" name="expression" />
     <childRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123136/1068581517665" name="statement" />
@@ -64,6 +65,8 @@
     <childRole id="28f9e497-3b42-4291-aeba-0a1039153ab1/1207145163717/1207145201301" name="reference" />
     <childRole id="28f9e497-3b42-4291-aeba-0a1039153ab1/1203087890642/1207145245948" name="contents" />
     <childRole id="28f9e497-3b42-4291-aeba-0a1039153ab1/1203071646776/1217413222820" name="parameter" />
+    <childRole id="28f9e497-3b42-4291-aeba-0a1039153ab1/331224023792854814/331224023792854818" name="actionGroups" />
+    <childRole id="28f9e497-3b42-4291-aeba-0a1039153ab1/5023285075122009364/331224023792859996" name="actions" />
     <childRole id="28f9e497-3b42-4291-aeba-0a1039153ab1/1217413147516/5538333046911298738" name="condition" />
   </debugInfo>
   <languages>
@@ -76,7 +79,6 @@
     <use id="a247e09e-2435-45ba-b8d2-07e93feba96a" version="0" index="x09z" />
     <use id="fe9d76d7-5809-45c9-ae28-a40915b4d6ff" version="0" index="ztns" />
     <use id="28f9e497-3b42-4291-aeba-0a1039153ab1" version="-1" index="79nr" />
-    <use id="ef7bf5ac-d06c-4342-b11d-e42104eb9343" version="0" index="50uk" />
     <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" version="0" index="4ia1" />
     <use id="9ded098b-ad6a-4657-bfd9-48636cfe8bc3" version="0" index="laik" />
     <use id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" version="0" implicit="true" index="asn4" />
@@ -91,19 +93,18 @@
     <import index="tprs" ref="r:00000000-0000-4000-0000-011c895904a4(jetbrains.mps.ide.actions)" implicit="true" />
     <import index="iiw6" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.components(MPS.IDEA/com.intellij.openapi.components@java_stub)" implicit="true" />
     <import index="tp4f" ref="r:00000000-0000-4000-0000-011c89590373(jetbrains.mps.baseLanguage.classifiers.structure)" implicit="true" />
-    <import index="tgbt" ref="r:c70ee934-afb1-4c02-b6a9-1c4d1908a792(jetbrains.mps.lang.plugin.standalone.structure)" implicit="true" />
   </imports>
   <contents>
     <node concept="79nr.1203087890642" id="7834630562321988169" info="ng">
       <property role="asn4.1169194658468.1169194664001" value="MigationAssistantActions" />
+      <property role="79nr.1203087890642.6368583333374291912" value="true" />
       <node concept="79nr.1207145163717" id="7834630562322129876" role="79nr.1203087890642.1207145245948" info="ng">
         <node concept="79nr.1203088046679" id="7834630562322129879" role="79nr.1207145163717.1207145201301" info="ng">
           <reference role="79nr.1203088046679.1203088061055" target="7834630562321988558" resolveInfo="ExecuteMigrationAssistant" />
         </node>
       </node>
       <node concept="79nr.1203092361741" id="7834630562322129881" role="79nr.1203087890642.1204991552650" info="ng">
-        <reference role="79nr.1203092361741.1203092736097" target="tprs.1204991238062" resolveInfo="Tools" />
-        <reference role="79nr.1203092361741.1204992316090" target="tprs.7738949347381711892" resolveInfo="migration" />
+        <reference role="79nr.1203092361741.1203092736097" target="tprs.1215012161252" resolveInfo="IDEATools" />
       </node>
     </node>
     <node concept="79nr.1203071646776" id="7834630562321988558" info="ng">
@@ -141,9 +142,8 @@
         </node>
       </node>
     </node>
-    <node concept="50uk.7520713872864775836" id="7834630562322286770" info="ng" />
     <node concept="79nr.5023285075122009364" id="1453248744423272128" info="ng">
-      <property role="79nr.5023285075122009364.5023285075122009366" value="jetbrains.mps.ide.modelchecker" />
+      <property role="79nr.5023285075122009364.5023285075122009366" value="jetbrains.mps.ide.migrationAssist" />
       <property role="79nr.5023285075122009364.1573568368168371217" value="true" />
       <property role="79nr.5023285075122009364.5023285075122009372" value="http://www.jetbrains.com/mps/" />
       <property role="79nr.5023285075122009364.5023285075122009368" value="Provides assistance migrating projects developed with earlier versions of MPS" />
@@ -152,6 +152,11 @@
       <property role="asn4.1169194658468.1169194664001" value="Migration Assistant" />
       <property role="79nr.5023285075122009364.5023285075122009373" value="136.1" />
       <property role="79nr.5023285075122009364.5023285075122009369" value="3.2" />
+      <node concept="79nr.331224023792854814" id="410076905192262197" role="79nr.5023285075122009364.331224023792859996" info="ng">
+        <node concept="79nr.331224023792854815" id="410076905192263352" role="79nr.331224023792854814.331224023792854818" info="ng">
+          <reference role="79nr.331224023792854815.331224023792854816" target="7834630562321988169" resolveInfo="MigationAssistantActions" />
+        </node>
+      </node>
     </node>
   </contents>
 </model>
