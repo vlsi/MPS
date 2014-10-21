@@ -95,8 +95,8 @@
   </dependency>
   <dependency className="jetbrains.mps.testbench.suite.pluginSolution.plugin._Adapters" file="_Adapters.java">
     <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
-    <classNode extendsClassName="java.lang.Runnable" />
   </dependency>
 </dependenciesRoot>
 
