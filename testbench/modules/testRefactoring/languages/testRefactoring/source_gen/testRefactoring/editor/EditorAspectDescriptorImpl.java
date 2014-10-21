@@ -15,7 +15,7 @@ public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
   public Collection<ConceptEditor> getEditors(ConceptDescriptor descriptor) {
     switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0b, descriptor.getConceptFqName())) {
       case 0:
-        return Collections.<ConceptEditor>singletonList(new MyVeryGoodConcept1_Editor());
+        return Collections.<ConceptEditor>singletonList(new MyVeryGoodConcept2_Editor());
       case 1:
         return Collections.<ConceptEditor>singletonList(new YetAnotherGoodConcept_Editor());
       default:
@@ -27,5 +27,5 @@ public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
   }
 
 
-  private static String[] stringSwitchCases_xbvbvu_a0a0b = new String[]{"testRefactoring.structure.MyVeryGoodConcept1", "testRefactoring.structure.YetAnotherGoodConcept"};
+  private static String[] stringSwitchCases_xbvbvu_a0a0b = new String[]{"testRefactoring.structure.MyVeryGoodConcept2", "testRefactoring.structure.YetAnotherGoodConcept"};
 }

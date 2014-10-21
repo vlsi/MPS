@@ -47,6 +47,7 @@ import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.facets.JavaModuleFacet;
 import jetbrains.mps.project.facets.JavaModuleFacetImpl;
 import jetbrains.mps.project.structure.model.ModelRootDescriptor;
+import jetbrains.mps.project.structure.modules.Dependency;
 import jetbrains.mps.project.structure.modules.SolutionDescriptor;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
@@ -250,7 +251,7 @@ public class SolutionIdea extends Solution {
   }
 
   @Override
-  public void addDependency(@NotNull SModuleReference moduleRef, boolean reexport) {
+  public Dependency addDependency(@NotNull SModuleReference moduleRef, boolean reexport) {
     // we do not add a dependency into solution, we add dependency to idea module instead
     ModifiableRootModel modifiableModel = ModuleRootManager.getInstance(myModule).getModifiableModel();
 
@@ -264,6 +265,7 @@ public class SolutionIdea extends Solution {
       ModuleRuntimeLibrariesImporter.importForUsedModules(myModule, Collections.singleton(moduleRef), modifiableModel);
     }
     modifiableModel.commit();
+    return null;
   }
 
   @Override
