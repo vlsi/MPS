@@ -17,6 +17,7 @@ package jetbrains.mps.smodel.presentation;
 
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.util.SNodeOperations;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -73,7 +74,7 @@ public class ReferenceConceptUtil {
               return link;
             }
           }
-          LOG.warn("the '" + alias + "' doesn't match any reference link in " + org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(concept));
+          LOG.warn("the '" + alias + "' doesn't match any reference link in " + SNodeOperations.getDebugText(concept));
         } else {
           // if concept declares exactly ONE REQUIRED reference link...
           if (links.size() == 1) {

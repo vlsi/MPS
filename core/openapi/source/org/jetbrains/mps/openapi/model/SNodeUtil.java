@@ -89,34 +89,6 @@ public class SNodeUtil {
     return replacer;
   }
 
-  public static String getDebugText(@NotNull SNode node) {
-    String roleText = "";
-    if (node.getModel() != null) {
-      SNode parent = node.getParent();
-      roleText = parent == null ? "[root]" : "[" + node.getRoleInParent() + "]";
-    }
-    String nameText;
-    String modelName;
-    try {
-      String role = SNodeAccessUtil.getProperty(node, "role");
-      if (role != null) {
-        nameText = '"' + role + '"';
-      } else {
-        nameText = "<no ref>";
-      }
-
-      nameText = nameText + "[" + node.getNodeId() + "]";
-
-      SModel model = node.getModel();
-      modelName = model != null ? model.getModelName() : "<no model>";
-
-    } catch (Exception e) {
-      nameText = "<??name??>";
-      modelName = "<??model??>";
-    }
-    return roleText + " " + node.getConcept().getName() + " " + nameText + " in " + modelName;
-  }
-
   /**
    * Iterates over all nodes in the given model.
    */

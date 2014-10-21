@@ -16,6 +16,7 @@
 package jetbrains.mps.smodel.persistence.def.v4;
 
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.util.SNodeOperations;
 import org.apache.log4j.LogManager;
 import jetbrains.mps.smodel.DefaultSModel;
 import jetbrains.mps.smodel.SModel;
@@ -34,7 +35,6 @@ import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 import org.jetbrains.mps.openapi.model.SNodeId;
-import org.jetbrains.mps.openapi.model.SNodeUtil;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 
 import java.util.ArrayList;
@@ -246,7 +246,7 @@ public class ModelReader4 implements IModelReader {
       String role = VersionUtil.getRole(rawRole);
       SNode childNode = readNode(childNodeElement, model, referenceDescriptors, useUIDs, versionsInfo);
       if (role == null || childNode == null) {
-        LOG.errorWithTrace("Error reading child node in node " + SNodeUtil.getDebugText(node));
+        LOG.errorWithTrace("Error reading child node in node " + SNodeOperations.getDebugText(node));
       } else {
         node.addChild(role, childNode);
         VersionUtil.fetchChildNodeRoleVersion(rawRole, childNode, versionsInfo);

@@ -20,13 +20,13 @@ import java.util.HashSet;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import org.jetbrains.mps.openapi.model.SReference;
 import java.util.LinkedList;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.Iterator;
 import jetbrains.mps.smodel.MPSModuleRepository;
+import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.Language;
 import org.jetbrains.mps.openapi.language.SLanguage;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
-import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.smodel.SModelRepository;
@@ -121,11 +121,7 @@ public class SNodeOperations {
    * todo rewrite the code using this
    */
   public static List<SNode> getChildren(SNode n) {
-    List<SNode> res = ListSequence.fromList(new ArrayList<SNode>());
-    for (SNode child : Sequence.fromIterable(n.getChildren())) {
-      ListSequence.fromList(res).addElement(child);
-    }
-    return res;
+    return IterableUtil.asList(n.getChildren());
   }
   /**
    * todo rewrite the code using this
@@ -176,7 +172,37 @@ public class SNodeOperations {
    * this is an utility method common to all nodes but needed only for our debug purposes, so we don't put it into SNode
    */
   public static String getDebugText(SNode node) {
-    return SNodeUtil.getDebugText(((SNode) node));
+    String roleText = "";
+    if (node.getModel() != null) {
+      SNode parent = node.getParent();
+      roleText = (parent == null ? "[root]" : "[" + node.getContainmentLink().getRoleName() + "]");
+    }
+    String nameText = null;
+    String modelName;
+    try {
+      if (node.getConcept().equals(jetbrains.mps.smodel.SNodeUtil.concept_LinkDeclaration)) {
+        String role = SNodeAccessUtil.getProperty(node, jetbrains.mps.smodel.SNodeUtil.propertyName_LinkDeclaration_role);
+        if ((role != null && role.length() > 0)) {
+          nameText = '\"' + role + '\"';
+        } else {
+          nameText = "<no ref>";
+        }
+      } else {
+        String name = SNodeAccessUtil.getProperty(node, jetbrains.mps.smodel.SNodeUtil.propertyName_INamedConcept_name);
+        if ((name != null && name.length() > 0)) {
+          nameText = '\"' + name + '\"';
+        } else {
+          nameText = "<no name>";
+        }
+      }
+      nameText = nameText + "[" + node.getNodeId() + "]";
+      SModel model = node.getModel();
+      modelName = (model != null ? model.getModelName() : "<no model>");
+    } catch (Exception e) {
+      nameText = "<??name??>";
+      modelName = "<??model??>";
+    }
+    return roleText + " " + node.getConcept().getName() + " " + nameText + " in " + modelName;
   }
   public static Set<String> getChildRoles(SNode n, boolean includeAttributeRoles) {
     final Set<String> augend = new HashSet<String>();
@@ -202,7 +228,7 @@ public class SNodeOperations {
     if (resolveInfo != null) {
       return resolveInfo;
     }
-    return n.getProperty(jetbrains.mps.smodel.SNodeUtil.propertyName_INamedConcept_name);
+    return n.getProperty(jetbrains.mps.smodel.SNodeUtil.property_INamedConcept_name);
   }
   public static void copyProperties(SNode from, final SNode to) {
     for (String name : from.getPropertyNames()) {

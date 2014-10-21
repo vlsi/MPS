@@ -149,7 +149,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
     if (!UndoHelper.getInstance().isInsideUndoableCommand()) {
       throw new IllegalModelChangeError(
           "registered node can only be modified inside undoable command or in 'loading' model " +
-              org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(this)
+              SNodeOperations.getDebugText(this)
       );
     }
   }
@@ -519,7 +519,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
     if (myModel == null) {
       myId = ((SNodeId) id);
     } else {
-      LOG.error("can't set id to registered node " + org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(this), new Throwable());
+      LOG.error("can't set id to registered node " + SNodeOperations.getDebugText(this), new Throwable());
     }
   }
 
@@ -939,10 +939,10 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
     SNode parentOfChild = schild.getParent();
     if (parentOfChild != null) {
       throw new RuntimeException(
-          org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(
-              schild) + " already has parent: " + org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(
+          SNodeOperations.getDebugText(
+              schild) + " already has parent: " + SNodeOperations.getDebugText(
               parentOfChild) + "\n" +
-              "Couldn't add it to: " + org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(this)
+              "Couldn't add it to: " + SNodeOperations.getDebugText(this)
       );
     }
 
@@ -954,8 +954,8 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
       if (anchor.getParent() != this) {
         throw new RuntimeException(
             "anchor is not a child of this node" + " | " +
-                "this: " + org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(this) + " | " +
-                "anchor: " + org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(anchor)
+                "this: " + SNodeOperations.getDebugText(this) + " | " +
+                "anchor: " + SNodeOperations.getDebugText(anchor)
         );
       }
     }

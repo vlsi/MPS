@@ -23,11 +23,11 @@ import jetbrains.mps.generator.impl.cache.TransientModelWithMetainfo;
 import jetbrains.mps.generator.impl.dependencies.DependenciesBuilder;
 import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.util.Pair;
+import jetbrains.mps.util.SNodeOperations;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeId;
-import org.jetbrains.mps.openapi.model.SNodeUtil;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -140,10 +140,10 @@ public final class GeneratorMappings {
       List<SNode> list = (List<SNode>) o;
       ProblemDescription[] descr = new ProblemDescription[list.size()];
       for (int i = 0; i < list.size(); i++) {
-        descr[i] = new ProblemDescription(list.get(i).getReference(), "output [" + i + "] : " + SNodeUtil.getDebugText(list.get(i)));
+        descr[i] = new ProblemDescription(list.get(i).getReference(), "output [" + i + "] : " + SNodeOperations.getDebugText(list.get(i)));
       }
       String msg = "%d  output nodes found for mapping label '%s' and input %s";
-      myLog.warning(inputNode.getReference(), String.format(msg, list.size(), mappingName, SNodeUtil.getDebugText(inputNode)), descr);
+      myLog.warning(inputNode.getReference(), String.format(msg, list.size(), mappingName, SNodeOperations.getDebugText(inputNode)), descr);
       return list.get(0);
     }
 

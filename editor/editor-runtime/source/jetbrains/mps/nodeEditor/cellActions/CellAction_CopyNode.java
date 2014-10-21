@@ -28,10 +28,10 @@ import jetbrains.mps.openapi.editor.cells.DfsTraverserIterable;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.cells.EditorCell_Collection;
 import jetbrains.mps.openapi.editor.selection.SelectionManager;
+import jetbrains.mps.util.SNodeOperations;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.mps.openapi.model.SNodeUtil;
 import org.jetbrains.mps.util.Condition;
 
 import java.util.ArrayList;
@@ -73,10 +73,10 @@ public class CellAction_CopyNode extends AbstractCellAction {
     if (selectedCells.size() > 1) {
       LOG.debug("Copy " + selectedCells.size() + " nodes : ");
       for (EditorCell aCell : selectedCells) {
-        LOG.debug("    " + SNodeUtil.getDebugText(aCell.getSNode()));
+        LOG.debug("    " + SNodeOperations.getDebugText(aCell.getSNode()));
       }
     } else {
-      LOG.debug("Copy node : " + SNodeUtil.getDebugText(selectedCells.get(0).getSNode()));
+      LOG.debug("Copy node : " + SNodeOperations.getDebugText(selectedCells.get(0).getSNode()));
     }
 
     List<SNode> copyNodeList = new ArrayList<SNode>();

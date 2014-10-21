@@ -29,6 +29,7 @@ import jetbrains.mps.smodel.search.ConceptAndSuperConceptsScope;
 import jetbrains.mps.smodel.search.SModelSearchUtil;
 import jetbrains.mps.smodel.tempmodel.TemporaryModels;
 import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.util.SNodeOperations;
 import org.apache.log4j.LogManager;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -151,7 +152,7 @@ public class SModelUtil_new implements CoreComponent {
     SNode conceptDeclaration = ((jetbrains.mps.smodel.SNode) sourceNode).getConceptDeclarationNode();
     SNode linkDeclaration = SModelSearchUtil.findMostSpecificLinkDeclaration(conceptDeclaration, role);
     if (linkDeclaration == null) {
-      LOG.error("couldn't find link declaration for role '" + role + "' in hierarchy of concept " + org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(conceptDeclaration), sourceNode);
+      LOG.error("couldn't find link declaration for role '" + role + "' in hierarchy of concept " + SNodeOperations.getDebugText(conceptDeclaration), sourceNode);
       return false;
     }
     return SModelUtil.isAcceptableTarget(linkDeclaration, targetNode);

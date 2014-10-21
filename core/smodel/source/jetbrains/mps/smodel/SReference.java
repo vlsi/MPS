@@ -204,7 +204,7 @@ public abstract class SReference implements org.jetbrains.mps.openapi.model.SRef
       ourErrorReportedRefs.add(this);
 
       Logger log = Logger.wrap(LogManager.getLogger(this.getClass()));
-      log.error(String.format("\ncouldn't resolve reference '%s' from %s", getRole(), org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(getSourceNode())),
+      log.error(String.format("\ncouldn't resolve reference '%s' from %s", getRole(), getSourceNode()),
           getSourceNode().getReference());
       if (message != null) log.error(" -- " + message);
       if (problems != null) {

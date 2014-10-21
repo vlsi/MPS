@@ -33,6 +33,7 @@ import jetbrains.mps.smodel.search.ISearchScope;
 import jetbrains.mps.smodel.search.SModelSearchUtil;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.util.SNodeOperations;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
@@ -107,7 +108,7 @@ public class ChildSubstituteActionsHelper {
     Language primaryLanguage = SModelUtil.getDeclaringLanguage(childConcept);
     if (primaryLanguage == null) {
       LOG.error("Couldn't build actions : couldn't get declaring language for concept " + childConcept == null ? "<null>" :
-          org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(childConcept));
+          SNodeOperations.getDebugText(childConcept));
       return Collections.emptyList();
     }
 
