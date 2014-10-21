@@ -489,6 +489,7 @@
           <node concept="vg0i.1068581242864" id="5847597366793222093" role="vg0i.1068580123136.1068581517665" info="nn">
             <node concept="vg0i.1068581242863" id="5847597366793222094" role="vg0i.1068581242864.1068581242865" info="nr">
               <property role="asn4.1169194658468.1169194664001" value="requiredData" />
+              <property role="vg0i.1068431474542.1176718929932" value="true" />
               <node concept="j0ph.1197683403723" id="5847597366793221782" role="vg0i.4972933694980447171.5680397130376446158" info="in">
                 <node concept="vg0i.1107535904670" id="5847597366793221935" role="j0ph.1197683403723.1197683466920" info="in">
                   <reference role="vg0i.1107535904670.1107535924139" target="88zw.~SModule" resolveInfo="SModule" />
