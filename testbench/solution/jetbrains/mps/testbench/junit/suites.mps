@@ -4552,8 +4552,8 @@
                             <property role="vg0i.1070475926800.1070475926801" value="unknown concept of node: " />
                           </node>
                           <node concept="vg0i.1081236700937" id="9170334376386473204" role="vg0i.1081773326031.1081773367579" info="nn">
-                            <reference role="vg0i.1081236700937.1144433194310" target="ec5l.~SNodeUtil" resolveInfo="SNodeUtil" />
-                            <reference role="vg0i.1204053956946.1068499141037" target="ec5l.~SNodeUtil%dgetDebugText(org%djetbrains%dmps%dopenapi%dmodel%dSNode)%cjava%dlang%dString" resolveInfo="getDebugText" />
+                            <reference role="vg0i.1081236700937.1144433194310" target="unno.2089287822043606602" resolveInfo="SNodeOperations" />
+                            <reference role="vg0i.1204053956946.1068499141037" target="unno.9117569544655367277" resolveInfo="getDebugText" />
                             <node concept="vg0i.1068498886296" id="9170334376386466727" role="vg0i.1204053956946.1068499141038" info="nn">
                               <reference role="vg0i.1068498886296.1068581517664" target="9170334376386466818" resolveInfo="node" />
                             </node>
@@ -4620,8 +4620,8 @@
                                 </node>
                               </node>
                               <node concept="vg0i.1081236700937" id="9170334376386473218" role="vg0i.1081773326031.1081773367579" info="nn">
-                                <reference role="vg0i.1081236700937.1144433194310" target="ec5l.~SNodeUtil" resolveInfo="SNodeUtil" />
-                                <reference role="vg0i.1204053956946.1068499141037" target="ec5l.~SNodeUtil%dgetDebugText(org%djetbrains%dmps%dopenapi%dmodel%dSNode)%cjava%dlang%dString" resolveInfo="getDebugText" />
+                                <reference role="vg0i.1081236700937.1144433194310" target="unno.2089287822043606602" resolveInfo="SNodeOperations" />
+                                <reference role="vg0i.1204053956946.1068499141037" target="unno.9117569544655367277" resolveInfo="getDebugText" />
                                 <node concept="vg0i.1068498886296" id="9170334376386466748" role="vg0i.1204053956946.1068499141038" info="nn">
                                   <reference role="vg0i.1068498886296.1068581517664" target="9170334376386466818" resolveInfo="node" />
                                 </node>
@@ -4723,8 +4723,8 @@
                                 </node>
                               </node>
                               <node concept="vg0i.1081236700937" id="9170334376386473244" role="vg0i.1081773326031.1081773367579" info="nn">
-                                <reference role="vg0i.1081236700937.1144433194310" target="ec5l.~SNodeUtil" resolveInfo="SNodeUtil" />
-                                <reference role="vg0i.1204053956946.1068499141037" target="ec5l.~SNodeUtil%dgetDebugText(org%djetbrains%dmps%dopenapi%dmodel%dSNode)%cjava%dlang%dString" resolveInfo="getDebugText" />
+                                <reference role="vg0i.1081236700937.1144433194310" target="unno.2089287822043606602" resolveInfo="SNodeOperations" />
+                                <reference role="vg0i.1204053956946.1068499141037" target="unno.9117569544655367277" resolveInfo="getDebugText" />
                                 <node concept="vg0i.1068498886296" id="9170334376386466779" role="vg0i.1204053956946.1068499141038" info="nn">
                                   <reference role="vg0i.1068498886296.1068581517664" target="9170334376386466818" resolveInfo="node" />
                                 </node>
@@ -4831,8 +4831,8 @@
                                 </node>
                               </node>
                               <node concept="vg0i.1081236700937" id="9170334376386473266" role="vg0i.1081773326031.1081773367579" info="nn">
-                                <reference role="vg0i.1081236700937.1144433194310" target="ec5l.~SNodeUtil" resolveInfo="SNodeUtil" />
-                                <reference role="vg0i.1204053956946.1068499141037" target="ec5l.~SNodeUtil%dgetDebugText(org%djetbrains%dmps%dopenapi%dmodel%dSNode)%cjava%dlang%dString" resolveInfo="getDebugText" />
+                                <reference role="vg0i.1081236700937.1144433194310" target="unno.2089287822043606602" resolveInfo="SNodeOperations" />
+                                <reference role="vg0i.1204053956946.1068499141037" target="unno.9117569544655367277" resolveInfo="getDebugText" />
                                 <node concept="vg0i.1068498886296" id="9170334376386466813" role="vg0i.1204053956946.1068499141038" info="nn">
                                   <reference role="vg0i.1068498886296.1068581517664" target="9170334376386466818" resolveInfo="node" />
                                 </node>

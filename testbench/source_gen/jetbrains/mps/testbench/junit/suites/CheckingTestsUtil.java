@@ -200,25 +200,25 @@ public class CheckingTestsUtil {
     for (final SNode node : SNodeUtil.getDescendants(model)) {
       final SConcept concept = node.getConcept();
       if (concept == null) {
-        result.add("unknown concept of node: " + SNodeUtil.getDebugText(node));
+        result.add("unknown concept of node: " + SNodeOperations.getDebugText(node));
         continue;
       }
       for (String name : node.getPropertyNames()) {
         if (concept.getProperty(name) == null) {
-          result.add("unknown property: `" + name + "' in node " + SNodeUtil.getDebugText(node));
+          result.add("unknown property: `" + name + "' in node " + SNodeOperations.getDebugText(node));
         }
       }
       for (SReference ref : node.getReferences()) {
         SAbstractLink link = concept.getLink(ref.getRole());
         if (link == null || !(link.isReference())) {
-          result.add("unknown link role: `" + ref.getRole() + "' in node " + SNodeUtil.getDebugText(node));
+          result.add("unknown link role: `" + ref.getRole() + "' in node " + SNodeOperations.getDebugText(node));
         }
       }
       for (SNode child : node.getChildren()) {
         String role = child.getRoleInParent();
         SAbstractLink link = concept.getLink(role);
         if (link == null || link.isReference()) {
-          result.add("unknown child role: `" + role + "' in node " + SNodeUtil.getDebugText(node));
+          result.add("unknown child role: `" + role + "' in node " + SNodeOperations.getDebugText(node));
         }
       }
     }
