@@ -108,6 +108,7 @@
     <extensionPoint name="projectStructureValidator"
                     interface="com.intellij.openapi.roots.ui.configuration.projectRoot.daemon.ProjectStructureValidator"/>
     -->
+    <xi:include href="/META-INF/dvcs.xml" xpointer="xpointer(/idea-plugin/extensionPoints/*)"/>
   </extensionPoints>
 
   <extensions defaultExtensionNs="com.intellij">
