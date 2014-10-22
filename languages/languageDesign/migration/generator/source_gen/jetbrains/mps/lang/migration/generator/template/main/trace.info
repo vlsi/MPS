@@ -129,10 +129,10 @@
   </root>
   <root nodeRef="r:1b8e1ff1-9bb5-4fe5-848a-c2f4efdb6402(jetbrains.mps.lang.migration.generator.template.main@generator)/5872110852616396096">
     <file name="QueriesGenerated.java">
-      <node id="5872110852616414240" at="106,109,107,288" concept="5" />
-      <node id="7681855492436630384" at="109,109,110,288" concept="5" />
-      <scope id="5872110852616414239" at="106,109,107,288" />
-      <scope id="7681855492436628805" at="109,109,110,288" />
+      <node id="5795567075300196102" at="106,109,107,288" concept="5" />
+      <node id="5795567075300196120" at="109,109,110,288" concept="5" />
+      <scope id="5795567075300196101" at="106,109,107,288" />
+      <scope id="5795567075300196119" at="109,109,110,288" />
     </file>
   </root>
   <root nodeRef="r:1b8e1ff1-9bb5-4fe5-848a-c2f4efdb6402(jetbrains.mps.lang.migration.generator.template.main@generator)/6452985437061870304">
