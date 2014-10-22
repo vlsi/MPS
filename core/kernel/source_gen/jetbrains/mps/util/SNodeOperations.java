@@ -24,6 +24,7 @@ import java.util.Iterator;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.Language;
 import org.jetbrains.mps.openapi.language.SLanguage;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
@@ -224,11 +225,11 @@ public class SNodeOperations {
    * This will be replaced by getting resolve info from a reference in a context containing it
    */
   public static String getResolveInfo(SNode n) {
-    String resolveInfo = jetbrains.mps.smodel.SNodeUtil.getResolveInfo(((SNode) n));
+    String resolveInfo = jetbrains.mps.smodel.SNodeUtil.getResolveInfo(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.as(n, "jetbrains.mps.lang.core.structure.IResolveInfo"));
     if (resolveInfo != null) {
       return resolveInfo;
     }
-    return n.getProperty(jetbrains.mps.smodel.SNodeUtil.property_INamedConcept_name);
+    return SPropertyOperations.getString(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.as(n, "jetbrains.mps.lang.core.structure.INamedConcept"), "name");
   }
   public static void copyProperties(SNode from, final SNode to) {
     for (String name : from.getPropertyNames()) {
