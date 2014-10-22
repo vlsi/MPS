@@ -178,7 +178,11 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
 
   @Override
   public String getName() {
-    return SNodeAccessUtil.getProperty(this, SNodeUtil.propertyName_INamedConcept_name);
+    if (getConcept().isSubConceptOf(SNodeUtil.concept_INamedConcept)) {
+      return SNodeAccessUtil.getProperty(this, SNodeUtil.propertyName_INamedConcept_name);
+    } else {
+      return null;
+    }
   }
 
   private void performUndoableAction(Computable<SNodeUndoableAction> computable) {
