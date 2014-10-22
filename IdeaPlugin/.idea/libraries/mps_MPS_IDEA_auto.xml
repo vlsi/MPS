@@ -1,8 +1,5 @@
 <component name="libraryTable">
   <library name="mps.MPS.IDEA_auto" type="mps.solution.library">
-    <MPS_MODULE_XML>
-      <root url="jar://$PLUGINS_PATH$/mps-core/lib/mps-platform.jar!/modules/MPS.IDEA/MPS.IDEA.msd" />
-    </MPS_MODULE_XML>
     <CLASSES>
       <root url="jar://$APPLICATION_HOME_DIR$/lib/extensions.jar!/" />
       <root url="jar://$PLUGINS_PATH$/mps-core/lib/mps-platform.jar!/" />
@@ -12,6 +9,9 @@
       <root url="jar://$APPLICATION_HOME_DIR$/lib/forms_rt.jar!/" />
     </CLASSES>
     <JAVADOC />
+    <MPS_MODULE_XML>
+      <root url="jar://$PLUGINS_PATH$/mps-core/lib/mps-platform.jar!/modules/MPS.IDEA/MPS.IDEA.msd" />
+    </MPS_MODULE_XML>
     <SOURCES />
   </library>
 </component>

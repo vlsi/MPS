@@ -1,12 +1,12 @@
 <component name="libraryTable">
   <library name="mps.jetbrains.mps.baseLanguage.closures_auto" type="mps.solution.library">
-    <MPS_MODULE_XML>
-      <root url="jar://$PLUGINS_PATH$/mps-core/languages/baseLanguage/jetbrains.mps.baseLanguage.closures.jar!/META-INF/module.xml" />
-    </MPS_MODULE_XML>
     <CLASSES>
       <root url="jar://$PLUGINS_PATH$/mps-core/languages/baseLanguage/jetbrains.mps.baseLanguage.closures.jar!/" />
     </CLASSES>
     <JAVADOC />
+    <MPS_MODULE_XML>
+      <root url="jar://$PLUGINS_PATH$/mps-core/languages/baseLanguage/jetbrains.mps.baseLanguage.closures.jar!/META-INF/module.xml" />
+    </MPS_MODULE_XML>
     <SOURCES />
   </library>
 </component>
