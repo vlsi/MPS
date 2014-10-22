@@ -224,11 +224,9 @@ public class ConceptRegistry implements CoreComponent, LanguageRegistryListener 
     }
   }
 
+  @Deprecated
   @NotNull
-  public ConstraintsDescriptor getConstraintsDescriptor(@Nullable String fqName) {
-    if (fqName == null) {
-      return new IllegalConstraintsDescriptor(null, null);
-    }
+  public ConstraintsDescriptor getConstraintsDescriptor(@NotNull String fqName) {
     ConceptDescriptor conceptDescriptor = getConceptDescriptor(fqName);
     return getConstraintsDescriptor(conceptDescriptor.getId());
   }

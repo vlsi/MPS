@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.smodel.runtime.illegal;
 
+import jetbrains.mps.smodel.DebugRegistry;
 import jetbrains.mps.smodel.adapter.ids.SReferenceLinkId;
 import jetbrains.mps.smodel.runtime.ConstraintsDescriptor;
 import jetbrains.mps.smodel.runtime.ReferenceConstraintsDescriptor;
@@ -29,8 +30,8 @@ public class IllegalReferenceConstraintsDescriptor implements ReferenceConstrain
 
   public IllegalReferenceConstraintsDescriptor(SReferenceLinkId referenceLink, String referenceLinkName, ConstraintsDescriptor container) {
     this.myReferenceLink = referenceLink;
-    this.myReferenceLinkName = referenceLinkName;
     this.container = container;
+    this.myReferenceLinkName = referenceLinkName == null ? DebugRegistry.getInstance().getRefName(referenceLink) : referenceLinkName;
   }
 
   @Override

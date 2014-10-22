@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.smodel.runtime.illegal;
 
+import jetbrains.mps.smodel.DebugRegistry;
 import jetbrains.mps.smodel.adapter.ids.SPropertyId;
 import jetbrains.mps.smodel.adapter.structure.property.SPropertyAdapter;
 import jetbrains.mps.smodel.adapter.structure.property.SPropertyAdapterById;
@@ -31,7 +32,7 @@ public class IllegalPropertyConstraintsDescriptor implements PropertyConstraints
   public IllegalPropertyConstraintsDescriptor(SPropertyId property, String propertyName, ConstraintsDescriptor container) {
     this.myProperty = property;
     this.container = container;
-    this.myPropertyName = propertyName;
+    this.myPropertyName = propertyName == null ? DebugRegistry.getInstance().getPropertyName(property) : propertyName;
   }
 
   @Override

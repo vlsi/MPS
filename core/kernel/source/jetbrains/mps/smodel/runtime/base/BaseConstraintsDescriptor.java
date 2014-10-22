@@ -264,7 +264,11 @@ public class BaseConstraintsDescriptor implements ConstraintsDispatchable {
   @NotNull
   @Override
   public PropertyConstraintsDescriptor getProperty(String propertyName) {
-    return getProperty(ConceptRegistryUtil.getConceptDescriptor(getConceptId()).getPropertyDescriptor(propertyName).getId());
+    PropertyDescriptor propertyDescriptor = ConceptRegistryUtil.getConceptDescriptor(getConceptId()).getPropertyDescriptor(propertyName);
+    if (propertyDescriptor == null) {
+      return new IllegalPropertyConstraintsDescriptor(null, propertyName, this);
+    }
+    return getProperty(propertyDescriptor.getId());
   }
 
   @NotNull
@@ -303,7 +307,11 @@ public class BaseConstraintsDescriptor implements ConstraintsDispatchable {
   @NotNull
   @Override
   public ReferenceConstraintsDescriptor getReference(String role) {
-    return getReference(ConceptRegistryUtil.getConceptDescriptor(myConcept).getRefDescriptor(role).getId());
+    ReferenceDescriptor refDescriptor = ConceptRegistryUtil.getConceptDescriptor(myConcept).getRefDescriptor(role);
+    if (refDescriptor == null) {
+      return new IllegalReferenceConstraintsDescriptor(null, role, this);
+    }
+    return getReference(refDescriptor.getId());
   }
 
   @Override

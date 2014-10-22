@@ -29,7 +29,7 @@ public class IllegalConstraintsDescriptor implements ConstraintsDescriptor {
   private final SConceptId myConcept;
   private final String myConceptName;
 
-  public IllegalConstraintsDescriptor(SConceptId concept, String conceptName) {
+  public IllegalConstraintsDescriptor(@NotNull SConceptId concept, @NotNull String conceptName) {
     this.myConcept = concept;
     this.myConceptName = conceptName;
   }
