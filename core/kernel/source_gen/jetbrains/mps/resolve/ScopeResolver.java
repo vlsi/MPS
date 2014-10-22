@@ -16,8 +16,6 @@ import jetbrains.mps.util.Computable;
 import jetbrains.mps.scope.Scope;
 import jetbrains.mps.smodel.constraints.ModelConstraints;
 import jetbrains.mps.scope.ErrorScope;
-import jetbrains.mps.util.NameUtil;
-import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
 public class ScopeResolver implements IResolver {
   private static final Logger LOG = LogManager.getLogger(ScopeResolver.class);
@@ -45,22 +43,6 @@ public class ScopeResolver implements IResolver {
             result = refScope.resolve(sourceNode, resolveInfo);
           } catch (Throwable t) {
             LOG.warn("Exception was thrown during reference resolving", t);
-          }
-          if (result == null) {
-            // for compatibility reasons, was copied from old Resolver implementation 
-            for (SNode node : refScope.getAvailableElements(null)) {
-              if (!(SNodeOperations.isInstanceOf(node, NameUtil.nodeFQName(referentConcept)))) {
-                continue;
-              }
-              if (resolveInfo.equals(node.getName()) || resolveInfo.equals(SNodeAccessUtil.getProperty(node, "nestedName"))) {
-                if (result == null) {
-                  result = node;
-                } else {
-                  // ambiguity 
-                  return false;
-                }
-              }
-            }
           }
         }
         if (result == null) {
