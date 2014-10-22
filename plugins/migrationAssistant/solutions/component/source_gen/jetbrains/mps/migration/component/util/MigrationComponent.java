@@ -156,7 +156,7 @@ public class MigrationComponent extends AbstractProjectComponent implements Migr
         return MigrationsUtil.isApplied(it, (AbstractModule) p.getModule());
       }
     });
-    if (dataDeps) {
+    if (dataDeps && orderDeps) {
       return true;
     }
     return false;
