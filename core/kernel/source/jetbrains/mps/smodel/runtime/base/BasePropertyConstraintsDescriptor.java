@@ -17,6 +17,7 @@ package jetbrains.mps.smodel.runtime.base;
 
 import jetbrains.mps.smodel.BootstrapLanguages;
 import jetbrains.mps.smodel.SNodeUtil;
+import jetbrains.mps.smodel.adapter.ids.MetaIdByDeclaration;
 import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import jetbrains.mps.smodel.adapter.ids.SPropertyId;
 import jetbrains.mps.smodel.adapter.structure.concept.ConceptRegistryUtil;
@@ -71,7 +72,8 @@ public class BasePropertyConstraintsDescriptor implements PropertyConstraintsDis
   }
 
   private static boolean isBootstrapProperty(SConceptId concept, SPropertyId property) {
-    if (property.equals(SNodeUtil.propertyId_INamedConcept_name) && concept.getLanguageId().equals(BootstrapLanguages.STRUCTURE_LANGUAGE)) {
+    if (property.equals(SNodeUtil.propertyId_INamedConcept_name) && concept.getLanguageId().equals(MetaIdByDeclaration.ref2LangId(
+        BootstrapLanguages.structureLanguageRef()))) {
       return true;
     }
     if (property.getConceptId().equals(SNodeUtil.conceptId_RuntimeTypeVariable)) {

@@ -51,6 +51,10 @@ public class MetaIdByDeclaration {
   }
 
   public static SLanguage ref2Id(SModuleReference ref) {
-    return new SLanguageAdapterById(new SLanguageId(((ModuleId.Regular) ref.getModuleId()).getUUID()), ref.getModuleName());
+    return new SLanguageAdapterById(ref2LangId(ref), ref.getModuleName());
+  }
+
+  public static SLanguageId ref2LangId(SModuleReference ref) {
+    return new SLanguageId(((ModuleId.Regular) ref.getModuleId()).getUUID());
   }
 }

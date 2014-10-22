@@ -4,6 +4,8 @@ package jetbrains.mps.smodel;
 
 import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import jetbrains.mps.smodel.adapter.structure.concept.SConceptAdapterById;
+import jetbrains.mps.smodel.adapter.ids.SPropertyId;
+import jetbrains.mps.smodel.adapter.structure.property.SPropertyAdapterById;
 import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.language.SReferenceLink;
 import jetbrains.mps.smodel.adapter.structure.ref.SReferenceLinkAdapterById;
@@ -12,8 +14,6 @@ import org.jetbrains.mps.openapi.language.SContainmentLink;
 import jetbrains.mps.smodel.adapter.structure.link.SContainmentLinkAdapterById;
 import jetbrains.mps.smodel.adapter.ids.SContainmentLinkId;
 import org.jetbrains.mps.openapi.language.SProperty;
-import jetbrains.mps.smodel.adapter.structure.property.SPropertyAdapterById;
-import jetbrains.mps.smodel.adapter.ids.SPropertyId;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import java.util.List;
@@ -30,6 +30,8 @@ public class SNodeUtil {
   public static final SConceptId conceptId_BaseConcept = ((SConceptAdapterById) new SConceptAdapterById(SConceptId.deserialize("ceab5195-25ea-4f22-9b92-103b95ca8c0c/1133920641626"), "jetbrains.mps.lang.core.structure.BaseConcept")).getId();
   public static final SConceptId conceptId_ConceptDeclaration = ((SConceptAdapterById) new SConceptAdapterById(SConceptId.deserialize("c72da2b9-7cce-4447-8389-f407dc1158b7/1071489090640"), "jetbrains.mps.lang.structure.structure.ConceptDeclaration")).getId();
   public static final SConceptId conceptId_InterfaceConceptDeclaration = ((SConceptAdapterById) new SConceptAdapterById(SConceptId.deserialize("c72da2b9-7cce-4447-8389-f407dc1158b7/1169125989551"), "jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration")).getId();
+  public static final SConceptId conceptId_RuntimeTypeVariable = ((SConceptAdapterById) new SConceptAdapterById(SConceptId.deserialize("7a5dda62-9140-4668-ab76-d5ed1746f2b2/1185281562363"), "jetbrains.mps.lang.typesystem.structure.RuntimeTypeVariable")).getId();
+  public static final SPropertyId propertyId_INamedConcept_name = ((SPropertyAdapterById) new SPropertyAdapterById(SPropertyId.deserialize("ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001"), "name")).getId();
 
   public static final String conceptName_IResolveInfo = "jetbrains.mps.lang.core.structure.IResolveInfo";
   public static final SConcept concept_IResolveInfo = new SConceptAdapterById(SConceptId.deserialize("ceab5195-25ea-4f22-9b92-103b95ca8c0c/1196978630214"), "jetbrains.mps.lang.core.structure.IResolveInfo");
@@ -78,9 +80,6 @@ public class SNodeUtil {
   public static final SProperty property_BaseConcept_shortDescription = new SPropertyAdapterById(SPropertyId.deserialize("ceab5195-25ea-4f22-9b92-103b95ca8c0c/1133920641626/1156234966388"), "shortDescription");
   public static final String linkName_BaseConcept_smodelAttribute = "smodelAttribute";
   public static final SContainmentLink link_BaseConcept_smodelAttribute = new SContainmentLinkAdapterById(SContainmentLinkId.deserialize("ceab5195-25ea-4f22-9b92-103b95ca8c0c/1133920641626/5169995583184591170"), "smodelAttribute");
-  public static final SConceptId conceptId_RuntimeTypeVariable = null;
-  public static final SPropertyId propertyId_INamedConcept_name = null;
-
   public SNodeUtil() {
   }
   public static String getPresentation(SNode node) {
