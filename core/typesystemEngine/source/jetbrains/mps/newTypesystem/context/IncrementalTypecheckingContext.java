@@ -159,8 +159,12 @@ public class IncrementalTypecheckingContext extends SimpleTypecheckingContext<St
   public IErrorReporter reportTypeError(SNode nodeWithError, String errorString, String ruleModel, String ruleId, QuickFixProvider intentionProvider, MessageTarget errorTarget) {
     SimpleErrorReporter reporter = new SimpleErrorReporter(nodeWithError, errorString, ruleModel, ruleId, MessageStatus.ERROR, errorTarget);
     reporter.setIntentionProvider(intentionProvider);
-    if (nodeWithError.getModel() == null) {
-      LOG.error("Node to report error for must be in a model. Node=" + SNodeOperations.getDebugText(nodeWithError), new Throwable());
+    if (nodeWithError == null) {
+      LOG.warn("Node used to report an error is null. Reported from model "+ruleModel+" by rule "+ruleId + ".", new Throwable());
+      return reporter;
+    }
+    else if (nodeWithError.getModel() == null) {
+      LOG.warn("Node used to report an error is not in a model. Node=" + SNodeOperations.getDebugText(nodeWithError) + ". Reported from model "+ruleModel+" by rule "+ruleId + ".", new Throwable());
       return reporter;
     }
     reportMessage(nodeWithError, reporter);
