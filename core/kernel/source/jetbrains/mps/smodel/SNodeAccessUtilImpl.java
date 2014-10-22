@@ -16,9 +16,13 @@
 package jetbrains.mps.smodel;
 
 import jetbrains.mps.RuntimeFlags;
+import jetbrains.mps.smodel.adapter.structure.concept.SConceptAdapterById;
+import jetbrains.mps.smodel.adapter.structure.property.SPropertyAdapterById;
 import jetbrains.mps.smodel.adapter.structure.property.SPropertyAdapterByName;
+import jetbrains.mps.smodel.adapter.structure.ref.SReferenceLinkAdapterById;
 import jetbrains.mps.smodel.adapter.structure.ref.SReferenceLinkAdapterByName;
 import jetbrains.mps.smodel.language.ConceptRegistry;
+import jetbrains.mps.smodel.runtime.ConstraintsDescriptor;
 import jetbrains.mps.smodel.runtime.PropertyConstraintsDescriptor;
 import jetbrains.mps.smodel.runtime.ReferenceConstraintsDescriptor;
 import jetbrains.mps.smodel.runtime.illegal.IllegalReferenceConstraintsDescriptor;
@@ -64,7 +68,7 @@ public class SNodeAccessUtilImpl extends SNodeAccessUtil {
 
     getters.add(current);
     try {
-      PropertyConstraintsDescriptor descriptor = ConceptRegistry.getInstance().getConstraintsDescriptor(node.getConcept().getQualifiedName()).getProperty(property);
+      PropertyConstraintsDescriptor descriptor = getPropertyConstraintsDescriptor(node, property);
       Object getterValue = descriptor.getValue(node);
       return getterValue == null ? null : String.valueOf(getterValue);
     } catch (Throwable t) {
@@ -73,6 +77,38 @@ public class SNodeAccessUtilImpl extends SNodeAccessUtil {
     } finally {
       getters.remove(current);
     }
+  }
+
+  private PropertyConstraintsDescriptor getPropertyConstraintsDescriptor(SNode node, SProperty property) {
+    ConstraintsDescriptor constraintsDescriptor;
+    if (node.getConcept() instanceof SConceptAdapterById) {
+      constraintsDescriptor = ConceptRegistry.getInstance().getConstraintsDescriptor(((SConceptAdapterById) node.getConcept()).getId());
+    } else {
+      constraintsDescriptor = ConceptRegistry.getInstance().getConstraintsDescriptor(node.getConcept().getQualifiedName());
+    }
+    PropertyConstraintsDescriptor descriptor;
+    if (property instanceof SPropertyAdapterById) {
+      descriptor = constraintsDescriptor.getProperty(((SPropertyAdapterById) property).getId());
+    } else {
+      descriptor = constraintsDescriptor.getProperty(property.getName());
+    }
+    return descriptor;
+  }
+
+  private ReferenceConstraintsDescriptor getReferenceConstraintsDescriptor(SNode node, SReferenceLink referenceLink) {
+    ConstraintsDescriptor constraintsDescriptor;
+    if (node.getConcept() instanceof SConceptAdapterById) {
+      constraintsDescriptor = ConceptRegistry.getInstance().getConstraintsDescriptor(((SConceptAdapterById) node.getConcept()).getId());
+    } else {
+      constraintsDescriptor = ConceptRegistry.getInstance().getConstraintsDescriptor(node.getConcept().getQualifiedName());
+    }
+    ReferenceConstraintsDescriptor descriptor;
+    if (referenceLink instanceof SReferenceLinkAdapterById) {
+      descriptor = constraintsDescriptor.getReference(((SReferenceLinkAdapterById) referenceLink).getRoleId());
+    } else {
+      descriptor = constraintsDescriptor.getReference(referenceLink.getRoleName());
+    }
+    return descriptor;
   }
 
   @Override
@@ -91,7 +127,7 @@ public class SNodeAccessUtilImpl extends SNodeAccessUtil {
       return;
     }
 
-    PropertyConstraintsDescriptor descriptor = ConceptRegistry.getInstance().getConstraintsDescriptor(node.getConcept().getQualifiedName()).getProperty(property);
+    PropertyConstraintsDescriptor descriptor = getPropertyConstraintsDescriptor(node, property);
     threadSet.add(pair);
     try {
       descriptor.setValue(node, propertyValue);
@@ -118,7 +154,7 @@ public class SNodeAccessUtilImpl extends SNodeAccessUtil {
       return;
     }
 
-    ReferenceConstraintsDescriptor descriptor = ConceptRegistry.getInstance().getConstraintsDescriptor(node.getConcept().getQualifiedName()).getReference(referenceLink);
+    ReferenceConstraintsDescriptor descriptor = getReferenceConstraintsDescriptor(node, referenceLink);
 
     if (descriptor instanceof IllegalReferenceConstraintsDescriptor) {
       node.setReferenceTarget(referenceLink, target);

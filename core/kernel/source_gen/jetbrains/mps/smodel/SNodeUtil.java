@@ -78,6 +78,9 @@ public class SNodeUtil {
   public static final SProperty property_BaseConcept_shortDescription = new SPropertyAdapterById(SPropertyId.deserialize("ceab5195-25ea-4f22-9b92-103b95ca8c0c/1133920641626/1156234966388"), "shortDescription");
   public static final String linkName_BaseConcept_smodelAttribute = "smodelAttribute";
   public static final SContainmentLink link_BaseConcept_smodelAttribute = new SContainmentLinkAdapterById(SContainmentLinkId.deserialize("ceab5195-25ea-4f22-9b92-103b95ca8c0c/1133920641626/5169995583184591170"), "smodelAttribute");
+  public static final SConceptId conceptId_RuntimeTypeVariable = null;
+  public static final SPropertyId propertyId_INamedConcept_name = null;
+
   public SNodeUtil() {
   }
   public static String getPresentation(SNode node) {

@@ -16,12 +16,9 @@
 package jetbrains.mps.smodel.runtime.illegal;
 
 import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.adapter.structure.concept.SConceptAdapterByName;
-import jetbrains.mps.smodel.adapter.structure.property.SPropertyAdapterByName;
-import jetbrains.mps.smodel.adapter.structure.ref.SReferenceLinkAdapterByName;
-import org.jetbrains.mps.openapi.language.SConcept;
-import org.jetbrains.mps.openapi.language.SProperty;
-import org.jetbrains.mps.openapi.language.SReferenceLink;
+import jetbrains.mps.smodel.adapter.ids.SConceptId;
+import jetbrains.mps.smodel.adapter.ids.SPropertyId;
+import jetbrains.mps.smodel.adapter.ids.SReferenceLinkId;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.runtime.*;
@@ -29,20 +26,22 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 public class IllegalConstraintsDescriptor implements ConstraintsDescriptor {
-  private final SConcept myConcept;
+  private final SConceptId myConcept;
+  private final String myConceptName;
 
-  public IllegalConstraintsDescriptor(String fqName) {
-    this.myConcept = new SConceptAdapterByName(fqName);
-  }
-
-  @Override
-  public SConcept getConcept() {
-    return myConcept;
+  public IllegalConstraintsDescriptor(SConceptId concept, String conceptName) {
+    this.myConcept = concept;
+    this.myConceptName = conceptName;
   }
 
   @Override
   public String getConceptFqName() {
-    return myConcept.getQualifiedName();
+    return myConceptName;
+  }
+
+  @Override
+  public SConceptId getConceptId() {
+    return myConcept;
   }
 
   @Override
@@ -67,26 +66,26 @@ public class IllegalConstraintsDescriptor implements ConstraintsDescriptor {
 
   @NotNull
   @Override
-  public PropertyConstraintsDescriptor getProperty(SProperty property) {
-    return new IllegalPropertyConstraintsDescriptor(property, this);
+  public PropertyConstraintsDescriptor getProperty(SPropertyId property) {
+    return new IllegalPropertyConstraintsDescriptor(property, null, this);
   }
 
   @NotNull
   @Override
   public PropertyConstraintsDescriptor getProperty(String name) {
-    return getProperty(new SPropertyAdapterByName(myConcept.getQualifiedName(), name));
+    return new IllegalPropertyConstraintsDescriptor(null, name, this);
   }
 
   @NotNull
   @Override
-  public ReferenceConstraintsDescriptor getReference(SReferenceLink referenceLink) {
-    return new IllegalReferenceConstraintsDescriptor(referenceLink, this);
+  public ReferenceConstraintsDescriptor getReference(SReferenceLinkId referenceLink) {
+    return new IllegalReferenceConstraintsDescriptor(referenceLink, null, this);
   }
 
   @NotNull
   @Override
   public ReferenceConstraintsDescriptor getReference(String refName) {
-    return getReference(new SReferenceLinkAdapterByName(myConcept.getQualifiedName(), refName));
+    return new IllegalReferenceConstraintsDescriptor(null, refName, this);
   }
 
   @Override
@@ -100,7 +99,7 @@ public class IllegalConstraintsDescriptor implements ConstraintsDescriptor {
   }
 
   @Override
-  public String getDefaultConcreteConceptFqName() {
-    return getConceptFqName();
+  public SConceptId getDefaultConcreteConceptId() {
+    return getConceptId();
   }
 }

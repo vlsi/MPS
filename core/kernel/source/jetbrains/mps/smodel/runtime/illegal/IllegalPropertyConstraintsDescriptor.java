@@ -15,28 +15,33 @@
  */
 package jetbrains.mps.smodel.runtime.illegal;
 
+import jetbrains.mps.smodel.adapter.ids.SPropertyId;
+import jetbrains.mps.smodel.adapter.structure.property.SPropertyAdapter;
+import jetbrains.mps.smodel.adapter.structure.property.SPropertyAdapterById;
+import jetbrains.mps.smodel.adapter.structure.property.SPropertyAdapterByName;
 import jetbrains.mps.smodel.runtime.ConstraintsDescriptor;
 import jetbrains.mps.smodel.runtime.PropertyConstraintsDescriptor;
-import org.jetbrains.mps.openapi.language.SProperty;
 import org.jetbrains.mps.openapi.model.SNode;
 
 public class IllegalPropertyConstraintsDescriptor implements PropertyConstraintsDescriptor {
-  private final SProperty myProperty;
+  private final SPropertyId myProperty;
+  private final String myPropertyName;
   private final ConstraintsDescriptor container;
 
-  public IllegalPropertyConstraintsDescriptor(SProperty property, ConstraintsDescriptor container) {
+  public IllegalPropertyConstraintsDescriptor(SPropertyId property, String propertyName, ConstraintsDescriptor container) {
     this.myProperty = property;
     this.container = container;
-  }
-
-  @Override
-  public SProperty getProperty() {
-    return myProperty;
+    this.myPropertyName = propertyName;
   }
 
   @Override
   public String getName() {
-    return myProperty.getName();
+    return myPropertyName;
+  }
+
+  @Override
+  public SPropertyId getProperty() {
+    return myProperty;
   }
 
   @Override
@@ -46,13 +51,25 @@ public class IllegalPropertyConstraintsDescriptor implements PropertyConstraints
 
   @Override
   public Object getValue(SNode node) {
-    return node.getProperty(myProperty);
+    SPropertyAdapter property;
+    if (myProperty != null) {
+      property = new SPropertyAdapterById(myProperty, myPropertyName);
+    } else {
+      property = new SPropertyAdapterByName(container.getConceptFqName(), myPropertyName);
+    }
+    return node.getProperty(property);
   }
 
   @Override
   public void setValue(SNode node, String value) {
 //    throw new UnsupportedOperationException("Unsupported set value for " + container.getContainingConcept().getId() + "." + getName() + " property");
-    node.setProperty(myProperty, value);
+    SPropertyAdapter property;
+    if (myProperty != null) {
+      property = new SPropertyAdapterById(myProperty, myPropertyName);
+    } else {
+      property = new SPropertyAdapterByName(container.getConceptFqName(), myPropertyName);
+    }
+    node.setProperty(property, value);
   }
 
   @Override

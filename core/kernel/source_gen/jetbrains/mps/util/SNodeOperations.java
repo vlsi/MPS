@@ -180,14 +180,14 @@ public class SNodeOperations {
     String nameText = null;
     String modelName;
     try {
-      if (node.getConcept().equals(jetbrains.mps.smodel.SNodeUtil.concept_LinkDeclaration)) {
+      if (node.getConcept().isSubConceptOf(jetbrains.mps.smodel.SNodeUtil.concept_LinkDeclaration)) {
         String role = SNodeAccessUtil.getProperty(node, jetbrains.mps.smodel.SNodeUtil.propertyName_LinkDeclaration_role);
         if ((role != null && role.length() > 0)) {
           nameText = '\"' + role + '\"';
         } else {
           nameText = "<no ref>";
         }
-      } else {
+      } else if (node.getConcept().isSubConceptOf(jetbrains.mps.smodel.SNodeUtil.concept_INamedConcept)) {
         String name = SNodeAccessUtil.getProperty(node, jetbrains.mps.smodel.SNodeUtil.propertyName_INamedConcept_name);
         if ((name != null && name.length() > 0)) {
           nameText = '\"' + name + '\"';
