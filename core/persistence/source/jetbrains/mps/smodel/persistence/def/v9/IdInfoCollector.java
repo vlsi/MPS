@@ -21,7 +21,7 @@ import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import jetbrains.mps.smodel.adapter.ids.SContainmentLinkId;
 import jetbrains.mps.smodel.adapter.ids.SPropertyId;
 import jetbrains.mps.smodel.adapter.ids.SReferenceLinkId;
-import jetbrains.mps.smodel.adapter.structure.concept.ConceptRegistryUtil;
+import jetbrains.mps.smodel.language.ConceptRegistry;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.language.SProperty;
@@ -73,7 +73,8 @@ public class IdInfoCollector {
   }
 
   private static String getConceptName(SConceptId conceptId) {
-    ConceptDescriptor conceptDescriptor = ConceptRegistryUtil.getConceptDescriptor(conceptId);
+    ConceptRegistry conceptRegistry = ConceptRegistry.getInstance();
+    ConceptDescriptor conceptDescriptor = conceptRegistry == null ? null : conceptRegistry.getConceptDescriptor(conceptId);
     if (conceptDescriptor != null) {
       return conceptDescriptor.getConceptFqName();
     }

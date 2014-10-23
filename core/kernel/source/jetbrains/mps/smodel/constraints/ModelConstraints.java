@@ -16,7 +16,6 @@
 package jetbrains.mps.smodel.constraints;
 
 import jetbrains.mps.kernel.model.SModelUtil;
-import jetbrains.mps.smodel.adapter.structure.concept.ConceptRegistryUtil;
 import jetbrains.mps.smodel.search.SModelSearchUtil;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.scope.*;
@@ -174,6 +173,7 @@ public class ModelConstraints {
 
   // other things
   public static String getDefaultConcreteConceptFqName(String fqName) {
-    return ConceptRegistryUtil.getConceptDescriptor(ConceptRegistry.getInstance().getConstraintsDescriptor(fqName).getDefaultConcreteConceptId()).getConceptFqName();
+    return ConceptRegistry.getInstance().getConceptDescriptor(
+        ConceptRegistry.getInstance().getConstraintsDescriptor(fqName).getDefaultConcreteConceptId()).getConceptFqName();
   }
 }

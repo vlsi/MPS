@@ -17,7 +17,6 @@ package jetbrains.mps.smodel.runtime.base;
 
 import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import jetbrains.mps.smodel.adapter.ids.SReferenceLinkId;
-import jetbrains.mps.smodel.adapter.structure.concept.ConceptRegistryUtil;
 import jetbrains.mps.smodel.language.ConceptRegistry;
 import jetbrains.mps.smodel.runtime.ConstraintsDescriptor;
 import jetbrains.mps.smodel.runtime.PropertyConstraintsDispatchable;
@@ -36,7 +35,7 @@ public class BaseReferenceConstraintsDescriptor implements ReferenceConstraintsD
 
   @Deprecated
   public BaseReferenceConstraintsDescriptor(String refName, ConstraintsDescriptor container) {
-    this(ConceptRegistryUtil.getConceptDescriptor(container.getConceptId()).getRefDescriptor(refName).getId(), container);
+    this(ConceptRegistry.getInstance().getConceptDescriptor(container.getConceptId()).getRefDescriptor(refName).getId(), container);
   }
 
   public BaseReferenceConstraintsDescriptor(SReferenceLinkId referenceLink, ConstraintsDescriptor container) {
@@ -59,7 +58,7 @@ public class BaseReferenceConstraintsDescriptor implements ReferenceConstraintsD
 
   @Nullable
   private static ReferenceConstraintsDescriptor getSomethingUsingInheritance(SConceptId concept, SReferenceLinkId referenceLinkId, InheritanceCalculateParameters parameters) {
-    for (SConceptId parent : ConceptRegistryUtil.getConceptDescriptor(concept).getParentsIds()) {
+    for (SConceptId parent : ConceptRegistry.getInstance().getConceptDescriptor(concept).getParentsIds()) {
       if (ConceptRegistry.getInstance().getConceptDescriptor(parent).getRefDescriptor(referenceLinkId) == null) {
         continue;
       }
@@ -96,7 +95,7 @@ public class BaseReferenceConstraintsDescriptor implements ReferenceConstraintsD
 
   @Override
   public String getName() {
-    return ConceptRegistryUtil.getConceptDescriptor(getContainer().getConceptId()).getRefDescriptor(myReferenceLink).getName();
+    return ConceptRegistry.getInstance().getConceptDescriptor(getContainer().getConceptId()).getRefDescriptor(myReferenceLink).getName();
   }
 
   @Override

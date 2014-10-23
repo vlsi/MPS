@@ -15,17 +15,15 @@
  */
 package jetbrains.mps.smodel.adapter.structure.ref;
 
-import jetbrains.mps.logging.Logger;
 import jetbrains.mps.scope.Scope;
 import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import jetbrains.mps.smodel.adapter.ids.SReferenceLinkId;
-import jetbrains.mps.smodel.adapter.structure.concept.ConceptRegistryUtil;
 import jetbrains.mps.smodel.adapter.structure.concept.SConceptAdapterById;
 import jetbrains.mps.smodel.adapter.structure.concept.SInterfaceConceptAdapterById;
+import jetbrains.mps.smodel.language.ConceptRegistry;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import jetbrains.mps.smodel.runtime.ReferenceDescriptor;
-import org.apache.log4j.LogManager;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
@@ -49,7 +47,7 @@ public abstract class SReferenceLinkAdapter implements SReferenceLink {
   @Override
   public org.jetbrains.mps.openapi.language.SAbstractConcept getContainingConcept() {
     SConceptId id = getRoleId().getConceptId();
-    ConceptDescriptor concept = ConceptRegistryUtil.getConceptDescriptor(id);
+    ConceptDescriptor concept = ConceptRegistry.getInstance().getConceptDescriptor(id);
     return concept.isInterfaceConcept() ? new SInterfaceConceptAdapterById(id, concept.getConceptFqName()) :
         new SConceptAdapterById(id, concept.getConceptFqName());
   }
@@ -75,7 +73,7 @@ public abstract class SReferenceLinkAdapter implements SReferenceLink {
     if (rd == null) return new SConceptAdapterById(SNodeUtil.conceptId_BaseConcept,SNodeUtil.conceptName_BaseConcept);
 
     SConceptId id = rd.getTargetConcept();
-    ConceptDescriptor concept = ConceptRegistryUtil.getConceptDescriptor(id);
+    ConceptDescriptor concept = ConceptRegistry.getInstance().getConceptDescriptor(id);
     return concept.isInterfaceConcept() ? new SInterfaceConceptAdapterById(id, concept.getConceptFqName()) :
         new SConceptAdapterById(id, concept.getConceptFqName());
   }

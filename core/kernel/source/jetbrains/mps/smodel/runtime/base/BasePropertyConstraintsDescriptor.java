@@ -20,7 +20,6 @@ import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.smodel.adapter.ids.MetaIdByDeclaration;
 import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import jetbrains.mps.smodel.adapter.ids.SPropertyId;
-import jetbrains.mps.smodel.adapter.structure.concept.ConceptRegistryUtil;
 import jetbrains.mps.smodel.adapter.structure.property.SPropertyAdapterById;
 import jetbrains.mps.smodel.language.ConceptRegistry;
 import jetbrains.mps.smodel.runtime.ConstraintsDescriptor;
@@ -39,7 +38,7 @@ public class BasePropertyConstraintsDescriptor implements PropertyConstraintsDis
 
   @Deprecated
   public BasePropertyConstraintsDescriptor(String propertyName, ConstraintsDescriptor container) {
-    this(ConceptRegistryUtil.getConceptDescriptor(container.getConceptId()).getPropertyDescriptor(propertyName).getId(), container);
+    this(ConceptRegistry.getInstance().getConceptDescriptor(container.getConceptId()).getPropertyDescriptor(propertyName).getId(), container);
   }
 
   public BasePropertyConstraintsDescriptor(SPropertyId property, ConstraintsDescriptor container) {
@@ -86,7 +85,7 @@ public class BasePropertyConstraintsDescriptor implements PropertyConstraintsDis
   @Nullable
   private static PropertyConstraintsDescriptor getSomethingUsingInheritance(SConceptId concept, SPropertyId propertyId,
       InheritanceCalculateParameters parameters) {
-    for (SConceptId parent : ConceptRegistryUtil.getConceptDescriptor(concept).getParentsIds()) {
+    for (SConceptId parent : ConceptRegistry.getInstance().getConceptDescriptor(concept).getParentsIds()) {
       if (ConceptRegistry.getInstance().getConceptDescriptor(parent).getPropertyDescriptor(propertyId) == null) {
         continue;
       }
@@ -145,7 +144,7 @@ public class BasePropertyConstraintsDescriptor implements PropertyConstraintsDis
 
   @Override
   public String getName() {
-    return ConceptRegistryUtil.getConceptDescriptor(container.getConceptId()).getPropertyDescriptor(myProperty).getName();
+    return ConceptRegistry.getInstance().getConceptDescriptor(container.getConceptId()).getPropertyDescriptor(myProperty).getName();
   }
 
   @Override
@@ -164,9 +163,11 @@ public class BasePropertyConstraintsDescriptor implements PropertyConstraintsDis
     //this line is just to get old compiled code not to get into infinite recursion.
     //remove it after 3.1
     //ask Mihail Muhin or Timur Abishev for details
-    if (getterDescriptor == this) return node.getProperty(new SPropertyAdapterById(getProperty(), ConceptRegistryUtil.getConceptDescriptor(getContainer().getConceptId()).getPropertyDescriptor(getProperty()).getName()));
+    if (getterDescriptor == this) return node.getProperty(new SPropertyAdapterById(getProperty(), ConceptRegistry.getInstance().getConceptDescriptor(
+        getContainer().getConceptId()).getPropertyDescriptor(getProperty()).getName()));
 
-    return getterDescriptor != null ? getterDescriptor.getValue(node) : node.getProperty(new SPropertyAdapterById(getProperty(), ConceptRegistryUtil.getConceptDescriptor(getContainer().getConceptId()).getPropertyDescriptor(getProperty()).getName()));
+    return getterDescriptor != null ? getterDescriptor.getValue(node) : node.getProperty(new SPropertyAdapterById(getProperty(), ConceptRegistry.getInstance().getConceptDescriptor(
+        getContainer().getConceptId()).getPropertyDescriptor(getProperty()).getName()));
   }
 
   @Override
@@ -175,14 +176,16 @@ public class BasePropertyConstraintsDescriptor implements PropertyConstraintsDis
     //remove it after 3.1
     //ask Mihail Muhin or Timur Abishev for details
     if (setterDescriptor == this) {
-      node.setProperty(new SPropertyAdapterById(getProperty(), ConceptRegistryUtil.getConceptDescriptor(getContainer().getConceptId()).getPropertyDescriptor(getProperty()).getName()), value);
+      node.setProperty(new SPropertyAdapterById(getProperty(), ConceptRegistry.getInstance().getConceptDescriptor(
+          getContainer().getConceptId()).getPropertyDescriptor(getProperty()).getName()), value);
       return;
     }
 
     if (setterDescriptor != null) {
       setterDescriptor.setValue(node, value);
     } else {
-      node.setProperty(new SPropertyAdapterById(getProperty(), ConceptRegistryUtil.getConceptDescriptor(getContainer().getConceptId()).getPropertyDescriptor(getProperty()).getName()), value);
+      node.setProperty(new SPropertyAdapterById(getProperty(), ConceptRegistry.getInstance().getConceptDescriptor(
+          getContainer().getConceptId()).getPropertyDescriptor(getProperty()).getName()), value);
     }
   }
 

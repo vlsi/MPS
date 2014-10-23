@@ -18,9 +18,9 @@ package jetbrains.mps.smodel.adapter.structure.link;
 import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import jetbrains.mps.smodel.adapter.ids.SContainmentLinkId;
-import jetbrains.mps.smodel.adapter.structure.concept.ConceptRegistryUtil;
 import jetbrains.mps.smodel.adapter.structure.concept.SConceptAdapterById;
 import jetbrains.mps.smodel.adapter.structure.concept.SInterfaceConceptAdapterById;
+import jetbrains.mps.smodel.language.ConceptRegistry;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import jetbrains.mps.smodel.runtime.LinkDescriptor;
 import org.jetbrains.annotations.NotNull;
@@ -59,7 +59,7 @@ public abstract class SContainmentLinkAdapter implements SContainmentLink {
   @Override
   public org.jetbrains.mps.openapi.language.SAbstractConcept getContainingConcept() {
     SConceptId id = getRoleId().getConceptId();
-    ConceptDescriptor concept = ConceptRegistryUtil.getConceptDescriptor(id);
+    ConceptDescriptor concept = ConceptRegistry.getInstance().getConceptDescriptor(id);
     return concept.isInterfaceConcept() ? new SInterfaceConceptAdapterById(id, concept.getConceptFqName()) :
         new SConceptAdapterById(id, concept.getConceptFqName());
   }
@@ -70,7 +70,7 @@ public abstract class SContainmentLinkAdapter implements SContainmentLink {
     if (ld == null) return new SConceptAdapterById(SNodeUtil.conceptId_BaseConcept, SNodeUtil.conceptName_BaseConcept);
 
     SConceptId id = ld.getTargetConcept();
-    ConceptDescriptor concept = ConceptRegistryUtil.getConceptDescriptor(id);
+    ConceptDescriptor concept = ConceptRegistry.getInstance().getConceptDescriptor(id);
     return concept.isInterfaceConcept() ? new SInterfaceConceptAdapterById(id, concept.getConceptFqName()) :
         new SConceptAdapterById(id, concept.getConceptFqName());
   }

@@ -17,6 +17,7 @@ package jetbrains.mps.smodel.adapter.structure.concept;
 
 import jetbrains.mps.smodel.adapter.structure.language.SLanguageAdapterById;
 import jetbrains.mps.smodel.adapter.structure.language.SLanguageAdapterByName;
+import jetbrains.mps.smodel.language.ConceptRegistry;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import jetbrains.mps.util.NameUtil;
 import org.jetbrains.annotations.NotNull;
@@ -40,7 +41,7 @@ public class SConceptAdapterByName extends SConceptAdapter implements SConcept {
   @Override
   @Nullable
   public ConceptDescriptor getConceptDescriptor() {
-    return ConceptRegistryUtil.getConceptDescriptor(myFqName);
+    return ConceptRegistry.getInstance().getConceptDescriptor(myFqName);
   }
 
   @Override
