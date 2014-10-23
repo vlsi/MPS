@@ -32,6 +32,7 @@
     <concept id="83888646-71ce-4f1c-9c53-c54016f6ad4f/1203518072036" name="jetbrains.mps.baseLanguage.collections.structure.SmartClosureParameterDeclaration" />
     <concept id="3f4bc5f5-c6c1-4a28-8b10-c83066ffa4a1/1212096972063" name="jetbrains.mps.lang.constraints.structure.ConstraintFunction_PropertyValidator" />
     <concept id="3f4bc5f5-c6c1-4a28-8b10-c83066ffa4a1/1213093968558" name="jetbrains.mps.lang.constraints.structure.ConceptConstraints" />
+    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1225271283259" name="jetbrains.mps.baseLanguage.structure.NPEEqualsExpression" />
     <concept id="83888646-71ce-4f1c-9c53-c54016f6ad4f/1235566554328" name="jetbrains.mps.baseLanguage.collections.structure.AnyOperation" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/4836112446988635817" name="jetbrains.mps.baseLanguage.structure.UndefinedType" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/6329021646629104954" name="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
@@ -45,10 +46,11 @@
     <refRole id="7866978e-a0f0-4cc7-81bc-4d213d9375e1/1138056022639/1138056395725" name="property" />
     <refRole id="3f4bc5f5-c6c1-4a28-8b10-c83066ffa4a1/1147467115080/1147467295099" name="applicableProperty" />
     <refRole id="3f4bc5f5-c6c1-4a28-8b10-c83066ffa4a1/1213093968558/1213093996982" name="concept" />
-    <childRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1204053956946/1068499141038" name="actualArgument" />
     <childRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123155/1068580123156" name="expression" />
     <childRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123136/1068581517665" name="statement" />
     <childRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068581242878/1068581517676" name="expression" />
+    <childRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1081773326031/1081773367579" name="rightExpression" />
+    <childRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1081773326031/1081773367580" name="leftExpression" />
     <childRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1137021947720/1137022507850" name="body" />
     <childRole id="7866978e-a0f0-4cc7-81bc-4d213d9375e1/1145404486709/1145404616321" name="leftExpression" />
     <childRole id="3f4bc5f5-c6c1-4a28-8b10-c83066ffa4a1/1147467115080/1147468630220" name="propertyGetter" />
@@ -81,9 +83,9 @@
     <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" implicit="true" />
     <import index="tp25" ref="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" implicit="true" />
     <import index="tp2c" ref="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" implicit="true" />
-    <import index="e2lb" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" implicit="true" />
     <import index="tp2q" ref="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" implicit="true" />
     <import index="tpcn" ref="r:00000000-0000-4000-0000-011c8959028b(jetbrains.mps.lang.structure.behavior)" implicit="true" />
+    <import index="tpce" ref="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" implicit="true" />
   </imports>
   <contents>
     <node concept="qzws.1213093968558" id="1213104856219" info="ng">
@@ -146,8 +148,8 @@
                   <node concept="cakq.1199569711397" id="2039428400893104457" role="j0ph.1204796164442.1204796294226" info="nn">
                     <node concept="vg0i.1068580123136" id="2039428400893104458" role="cakq.1199569711397.1199569916463" info="sn">
                       <node concept="vg0i.1068580123155" id="2039428400893105565" role="vg0i.1068580123136.1068581517665" info="nn">
-                        <node concept="vg0i.1197027756228" id="2039428400893112506" role="vg0i.1068580123155.1068580123156" info="nn">
-                          <node concept="vg0i.1197027756228" id="2039428400893106060" role="vg0i.1197027756228.1197027771414" info="nn">
+                        <node concept="vg0i.1225271283259" id="8429823377722592892" role="vg0i.1068580123155.1068580123156" info="nn">
+                          <node concept="vg0i.1197027756228" id="2039428400893106060" role="vg0i.1081773326031.1081773367580" info="nn">
                             <node concept="vg0i.1068498886296" id="2039428400893105564" role="vg0i.1197027756228.1197027771414" info="nn">
                               <reference role="vg0i.1068498886296.1068581517664" target="2039428400893104459" resolveInfo="it" />
                             </node>
@@ -155,10 +157,7 @@
                               <reference role="4ia1.1138056022639.1138056395725" target="tpck.1169194664001" resolveInfo="name" />
                             </node>
                           </node>
-                          <node concept="vg0i.1202948039474" id="2039428400893116637" role="vg0i.1197027756228.1197027833540" info="nn">
-                            <reference role="vg0i.1204053956946.1068499141037" target="e2lb.~String%dequals(java%dlang%dObject)%cboolean" resolveInfo="equals" />
-                            <node concept="qzws.1153138554286" id="2039428400893117867" role="vg0i.1204053956946.1068499141038" info="nn" />
-                          </node>
+                          <node concept="qzws.1153138554286" id="2039428400893117867" role="vg0i.1081773326031.1081773367579" info="nn" />
                         </node>
                       </node>
                     </node>
@@ -203,18 +202,15 @@
                   <node concept="cakq.1199569711397" id="2039428400893857414" role="j0ph.1204796164442.1204796294226" info="nn">
                     <node concept="vg0i.1068580123136" id="2039428400893857415" role="cakq.1199569711397.1199569916463" info="sn">
                       <node concept="vg0i.1068580123155" id="2039428400893857416" role="vg0i.1068580123136.1068581517665" info="nn">
-                        <node concept="vg0i.1197027756228" id="2039428400893857417" role="vg0i.1068580123155.1068580123156" info="nn">
-                          <node concept="vg0i.1197027756228" id="2039428400893857418" role="vg0i.1197027756228.1197027771414" info="nn">
+                        <node concept="vg0i.1225271283259" id="8429823377722587267" role="vg0i.1068580123155.1068580123156" info="nn">
+                          <node concept="qzws.1153138554286" id="8429823377722588829" role="vg0i.1081773326031.1081773367579" info="nn" />
+                          <node concept="vg0i.1197027756228" id="2039428400893857418" role="vg0i.1081773326031.1081773367580" info="nn">
                             <node concept="vg0i.1068498886296" id="2039428400893857419" role="vg0i.1197027756228.1197027771414" info="nn">
                               <reference role="vg0i.1068498886296.1068581517664" target="2039428400893857423" resolveInfo="it" />
                             </node>
-                            <node concept="4ia1.1138056022639" id="2039428400893857420" role="vg0i.1197027756228.1197027833540" info="nn">
-                              <reference role="4ia1.1138056022639.1138056395725" target="tpck.1169194664001" resolveInfo="name" />
+                            <node concept="4ia1.1138056022639" id="8429823377722499412" role="vg0i.1197027756228.1197027833540" info="nn">
+                              <reference role="4ia1.1138056022639.1138056395725" target="tpce.1071599776563" resolveInfo="role" />
                             </node>
-                          </node>
-                          <node concept="vg0i.1202948039474" id="2039428400893857421" role="vg0i.1197027756228.1197027833540" info="nn">
-                            <reference role="vg0i.1204053956946.1068499141037" target="e2lb.~String%dequals(java%dlang%dObject)%cboolean" resolveInfo="equals" />
-                            <node concept="qzws.1153138554286" id="2039428400893857422" role="vg0i.1204053956946.1068499141038" info="nn" />
                           </node>
                         </node>
                       </node>

@@ -31,11 +31,14 @@ public class LinkAttribute_Constraints extends BaseConstraintsDescriptor {
         String propertyName = "linkRole";
         return ListSequence.fromList(AbstractConceptDeclaration_Behavior.call_getReferenceLinkDeclarations_1213877394496(SNodeOperations.getConceptDeclaration(SNodeOperations.getParent(node)))).any(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {
-            return SPropertyOperations.getString(it, "name").equals((SPropertyOperations.getString(propertyValue)));
+            return eq_eprrss_a0a0a0a0a0a0b0b0a1a0b0b(SPropertyOperations.getString(it, "role"), (SPropertyOperations.getString(propertyValue)));
           }
         });
       }
     });
     return properties;
+  }
+  private static boolean eq_eprrss_a0a0a0a0a0a0b0b0a1a0b0b(Object a, Object b) {
+    return (a != null ? a.equals(b) : a == b);
   }
 }

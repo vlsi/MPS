@@ -31,11 +31,14 @@ public class PropertyAttribute_Constraints extends BaseConstraintsDescriptor {
         String propertyName = "propertyName";
         return ListSequence.fromList(AbstractConceptDeclaration_Behavior.call_getPropertyDeclarations_1213877394546(SNodeOperations.getConceptDeclaration(SNodeOperations.getParent(node)))).any(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {
-            return SPropertyOperations.getString(it, "name").equals((SPropertyOperations.getString(propertyValue)));
+            return eq_34vegv_a0a0a0a0a0a0b0b0a1a0b0b(SPropertyOperations.getString(it, "name"), (SPropertyOperations.getString(propertyValue)));
           }
         });
       }
     });
     return properties;
+  }
+  private static boolean eq_34vegv_a0a0a0a0a0a0b0b0a1a0b0b(Object a, Object b) {
+    return (a != null ? a.equals(b) : a == b);
   }
 }
