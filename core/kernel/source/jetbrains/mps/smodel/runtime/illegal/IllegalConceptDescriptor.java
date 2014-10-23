@@ -19,6 +19,7 @@ import jetbrains.mps.smodel.DebugRegistry;
 import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import jetbrains.mps.smodel.adapter.ids.SContainmentLinkId;
+import jetbrains.mps.smodel.adapter.ids.SLanguageId;
 import jetbrains.mps.smodel.adapter.ids.SPropertyId;
 import jetbrains.mps.smodel.adapter.ids.SReferenceLinkId;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
@@ -27,6 +28,9 @@ import jetbrains.mps.smodel.runtime.LinkDescriptor;
 import jetbrains.mps.smodel.runtime.PropertyDescriptor;
 import jetbrains.mps.smodel.runtime.ReferenceDescriptor;
 import jetbrains.mps.smodel.runtime.StaticScope;
+import jetbrains.mps.util.NameUtil;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -35,6 +39,8 @@ import java.util.List;
 import java.util.Set;
 
 public class IllegalConceptDescriptor implements ConceptDescriptor {
+  private static final Logger LOG = LogManager.getLogger(IllegalConceptDescriptor.class);
+
   private String fqName;
   private SConceptId myConceptId;
 
@@ -46,12 +52,17 @@ public class IllegalConceptDescriptor implements ConceptDescriptor {
     this(null, fqName);
   }
 
-  public IllegalConceptDescriptor(@Nullable SConceptId conceptId, @Nullable String fqName) {
+  private IllegalConceptDescriptor(@Nullable SConceptId conceptId, @Nullable String fqName) {
     if (conceptId == null && fqName == null) {
       throw new IllegalArgumentException();
     }
     this.fqName = fqName == null ? DebugRegistry.getInstance().getConceptName(conceptId) : fqName;
     this.myConceptId = conceptId == null ? MetaIdFactory.INVALID_CONCEPT_ID : conceptId;
+
+    String languageName = NameUtil.namespaceFromConceptFQName(fqName);
+    SLanguageId languageId = conceptId == null ? null : conceptId.getLanguageId();
+    LOG.warn("IllegalConceptDescriptor created for concept " + (fqName == null ? "" : fqName) + (conceptId == null ? "" : " with id " + conceptId) +
+        ". Please check the language " + (languageName == null ? "" : languageName) + (languageId == null ? "" : " with id " + languageId) + " is built and compiled.");
   }
 
   @Override
