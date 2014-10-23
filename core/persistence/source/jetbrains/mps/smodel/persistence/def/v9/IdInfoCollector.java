@@ -16,10 +16,13 @@
 package jetbrains.mps.smodel.persistence.def.v9;
 
 import jetbrains.mps.persistence.IdHelper;
+import jetbrains.mps.smodel.DebugRegistry;
 import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import jetbrains.mps.smodel.adapter.ids.SContainmentLinkId;
 import jetbrains.mps.smodel.adapter.ids.SPropertyId;
 import jetbrains.mps.smodel.adapter.ids.SReferenceLinkId;
+import jetbrains.mps.smodel.adapter.structure.concept.ConceptRegistryUtil;
+import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.language.SProperty;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -42,24 +45,39 @@ public class IdInfoCollector {
           SContainmentLink link = n.getContainmentLink();
           SContainmentLinkId linkId = IdHelper.getLinkId(link);
           linkIds.put(linkId, link.getRoleName());
-          //SConceptId linkConceptId = linkId.getConceptId();
-          //conceptIds.put(linkConceptId, getConceptName(linkConceptId));
+          SConceptId linkConceptId = linkId.getConceptId();
+          if (!conceptIds.containsKey(linkConceptId)) {
+            conceptIds.put(linkConceptId, getConceptName(linkConceptId));
+          }
         }
 
         for (SProperty prop : n.getProperties()) {
           SPropertyId propId = IdHelper.getPropertyId(prop);
           propIds.put(propId, prop.getName());
-          //SConceptId propConceptId = propId.getConceptId();
-          //conceptIds.put(propConceptId, getConceptName(propConceptId));
+          SConceptId propConceptId = propId.getConceptId();
+          if (!conceptIds.containsKey(propConceptId)) {
+            conceptIds.put(propConceptId, getConceptName(propConceptId));
+          }
         }
 
         for (SReference ref : n.getReferences()) {
           SReferenceLinkId refId = IdHelper.getRefId(ref.getLink());
           refIds.put(refId, ref.getRole());
-          //SConceptId refConceptId = refId.getConceptId();
-          //conceptIds.put(refConceptId, getConceptName(refConceptId));
+          SConceptId refConceptId = refId.getConceptId();
+          if (!conceptIds.containsKey(refConceptId)) {
+            conceptIds.put(refConceptId, getConceptName(refConceptId));
+          }
         }
       }
     }
   }
+
+  private static String getConceptName(SConceptId conceptId) {
+    ConceptDescriptor conceptDescriptor = ConceptRegistryUtil.getConceptDescriptor(conceptId);
+    if (conceptDescriptor != null) {
+      return conceptDescriptor.getConceptFqName();
+    }
+    return DebugRegistry.getInstance().getConceptName(conceptId);
+  }
+
 }
