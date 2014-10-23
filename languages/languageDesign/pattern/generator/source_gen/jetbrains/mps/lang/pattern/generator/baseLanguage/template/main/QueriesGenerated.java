@@ -305,6 +305,9 @@ public class QueriesGenerated {
   public static boolean ifMacro_Condition_7228132814203616114(final IfMacroContext _context) {
     return SNodeOperations.isInstanceOf(_context.getNode(), "jetbrains.mps.lang.pattern.structure.OrPatternVariableReference");
   }
+  public static boolean ifMacro_Condition_4687486099946724469(final IfMacroContext _context) {
+    return !(((Boolean) _context.getVariable("isInsideList")));
+  }
   public static boolean ifMacro_Condition_7207007552736236840(final IfMacroContext _context) {
     String refRole = SPropertyOperations.getString(_context.getNode(), "role");
     SNode mainNode = SLinkOperations.getTarget(_context.getNode(), "mainNode", false);
@@ -366,10 +369,10 @@ public class QueriesGenerated {
     String role = SPropertyOperations.getString(_context.getNode(), "role");
     return mainNode.getChildren(role).iterator().next();
   }
-  public static SNode sourceNodeQuery_6803895172776061265(final SourceSubstituteMacroNodeContext _context) {
+  public static SNode sourceNodeQuery_4687486099947012343(final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "patternNode", true);
   }
-  public static SNode sourceNodeQuery_6803895172776092899(final SourceSubstituteMacroNodeContext _context) {
+  public static SNode sourceNodeQuery_4687486099946875651(final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "patternNode", true);
   }
   public static SNode sourceNodeQuery_1767704432736121442(final SourceSubstituteMacroNodeContext _context) {
