@@ -20,6 +20,7 @@ import jetbrains.mps.icons.MPSIcons.Nodes;
 import jetbrains.mps.ide.newSolutionDialog.NewModuleUtil;
 import jetbrains.mps.ide.ui.dialogs.modules.NewLanguageSettings;
 import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.project.Solution;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.workbench.DocumentationHelper;
@@ -79,7 +80,8 @@ public class DefaultLanguageProjectTemplate implements LanguageProjectTemplate {
 
                                                                try {
                                                                  if (myLanguageSettings.isRuntimeSolutionNeeded()) {
-                                                                   NewModuleUtil.createRuntimeSolution(language, myLanguageSettings.getLanguageLocation(), project);
+                                                                   Solution runtimeSolution = NewModuleUtil.createRuntimeSolution(language, myLanguageSettings.getLanguageLocation(), project);
+                                                                   language.getModuleDescriptor().getRuntimeModules().add(runtimeSolution.getModuleReference());
                                                                  }
                                                                  if (myLanguageSettings.isSandboxSolutionNeeded()) {
                                                                    NewModuleUtil.createSandboxSolution(language, myLanguageSettings.getLanguageLocation(), project);
