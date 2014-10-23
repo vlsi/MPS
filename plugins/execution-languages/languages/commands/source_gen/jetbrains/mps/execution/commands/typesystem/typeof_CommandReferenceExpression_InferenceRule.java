@@ -20,7 +20,7 @@ public class typeof_CommandReferenceExpression_InferenceRule extends AbstractInf
     {
       SNode _nodeToCheck_1029348928467 = commandReferenceExpression;
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:3eecec87-82a4-4ea1-952b-7d3a8d81c769(jetbrains.mps.execution.commands.typesystem)", "946964771156863741", 0, null);
-      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:3eecec87-82a4-4ea1-952b-7d3a8d81c769(jetbrains.mps.execution.commands.typesystem)", "946964771156863754", true), (SNode) _quotation_createNode_ec8mha_a0a0b(SLinkOperations.getTarget(commandReferenceExpression, "command", false), SLinkOperations.getTarget(commandReferenceExpression, "command", false)), _info_12389875345);
+      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:3eecec87-82a4-4ea1-952b-7d3a8d81c769(jetbrains.mps.execution.commands.typesystem)", "946964771156863754", true), (SNode) _quotation_createNode_ec8mha_a0a0b(SLinkOperations.getTarget(commandReferenceExpression, "command", false)), _info_12389875345);
     }
   }
   public String getApplicableConceptFQName() {
@@ -35,12 +35,11 @@ public class typeof_CommandReferenceExpression_InferenceRule extends AbstractInf
   public boolean overrides() {
     return false;
   }
-  private static SNode _quotation_createNode_ec8mha_a0a0b(Object parameter_1, Object parameter_2) {
+  private static SNode _quotation_createNode_ec8mha_a0a0b(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
-    SNode quotedNode_3 = null;
-    quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.execution.commands.structure.CommandType", null, null, false);
-    SNodeAccessUtil.setReferenceTarget(quotedNode_3, "classifier", (SNode) parameter_2);
-    SNodeAccessUtil.setReferenceTarget(quotedNode_3, "command", (SNode) parameter_1);
-    return quotedNode_3;
+    SNode quotedNode_2 = null;
+    quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.execution.commands.structure.CommandType", null, null, false);
+    SNodeAccessUtil.setReferenceTarget(quotedNode_2, "classifier", (SNode) parameter_1);
+    return quotedNode_2;
   }
 }

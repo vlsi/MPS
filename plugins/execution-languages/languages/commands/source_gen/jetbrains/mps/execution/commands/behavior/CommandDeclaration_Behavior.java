@@ -31,7 +31,7 @@ public class CommandDeclaration_Behavior {
     return "Command";
   }
   public static SNode virtual_createType_1213877527970(SNode thisNode) {
-    return _quotation_createNode_5aznw1_a0a2(thisNode, thisNode);
+    return _quotation_createNode_5aznw1_a0a2(thisNode);
   }
   public static List<SNode> call_getDistinctFieldParameters_6129022259108623165(SNode thisNode) {
     // we get all parameters generated into fields and select a list with uniquie names 
@@ -96,13 +96,12 @@ public class CommandDeclaration_Behavior {
   public static String call_getGetDebuggerConfidurationMethodName_6226796386650472924(SAbstractConcept thisConcept) {
     return "getDebuggerConfiguration";
   }
-  private static SNode _quotation_createNode_5aznw1_a0a2(Object parameter_1, Object parameter_2) {
+  private static SNode _quotation_createNode_5aznw1_a0a2(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
-    SNode quotedNode_3 = null;
-    quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.execution.commands.structure.CommandType", null, null, false);
-    SNodeAccessUtil.setReferenceTarget(quotedNode_3, "classifier", (SNode) parameter_2);
-    SNodeAccessUtil.setReferenceTarget(quotedNode_3, "command", (SNode) parameter_1);
-    return quotedNode_3;
+    SNode quotedNode_2 = null;
+    quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.execution.commands.structure.CommandType", null, null, false);
+    SNodeAccessUtil.setReferenceTarget(quotedNode_2, "classifier", (SNode) parameter_1);
+    return quotedNode_2;
   }
   private static boolean eq_5aznw1_a0a0a0a0a0a0a0a0a0a0d0e(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
