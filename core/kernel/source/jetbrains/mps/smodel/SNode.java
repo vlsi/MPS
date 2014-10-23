@@ -94,9 +94,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
   @NotNull
   @Override
   public SConcept getConcept() {
-    // Note: during indexing we invoke `node.getContainingConcept().getQualifiedName()`
-    // 1) without read action 2) we must not use deployed version of the concept
-    //todo assertCanWrite()
+    nodeRead();
     return myConcept;
   }
 
