@@ -80,6 +80,7 @@
     <property id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068580320020/1068580320021" name="value" />
     <property id="f3061a53-9226-4cc5-a443-f952ceaf5816/1070475926800/1070475926801" name="value" />
     <property id="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001" name="name" />
+    <property id="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1133920641626/1193676396447" name="virtualPackage" />
     <property id="7a5dda62-9140-4668-ab76-d5ed1746f2b2/1174660718586/1206359757216" name="checkOnly" />
     <property id="ceab5195-25ea-4f22-9b92-103b95ca8c0c/3364660638048049745/1757699476691236116" name="linkRole" />
     <refRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1204053956946/1068499141037" name="baseMethodDeclaration" />
@@ -587,6 +588,7 @@
     </node>
     <node concept="swut.1174643105530" id="4084841995419799520" info="ig">
       <property role="asn4.1169194658468.1169194664001" value="typeof_DataDependency" />
+      <property role="asn4.1133920641626.1193676396447" value="member" />
       <node concept="vg0i.1068580123136" id="4084841995419799521" role="swut.1195213580585.1195213635060" info="sn">
         <node concept="swut.1174658326157" id="4084841995419799653" role="vg0i.1068580123136.1068581517665" info="nn">
           <node concept="swut.1185788614172" id="4084841995419799656" role="swut.1174660718586.1174660783413" info="ng">
@@ -633,6 +635,7 @@
     </node>
     <node concept="swut.1174643105530" id="7153805464398878019" info="ig">
       <property role="asn4.1169194658468.1169194664001" value="typeof_DataDependencyReference" />
+      <property role="asn4.1133920641626.1193676396447" value="member" />
       <node concept="vg0i.1068580123136" id="7153805464398878020" role="swut.1195213580585.1195213635060" info="sn">
         <node concept="swut.1174658326157" id="7153805464398878305" role="vg0i.1068580123136.1068581517665" info="nn">
           <node concept="swut.1185788614172" id="7153805464398878328" role="swut.1174660718586.1174660783414" info="ng">

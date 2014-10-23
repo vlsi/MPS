@@ -83,6 +83,7 @@
     <property id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123137/1068580123138" name="value" />
     <property id="f3061a53-9226-4cc5-a443-f952ceaf5816/1070475926800/1070475926801" name="value" />
     <property id="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001" name="name" />
+    <property id="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1133920641626/1193676396447" name="virtualPackage" />
     <property id="af65afd8-f0dd-4942-87d9-63a55f2a9db1/1225194472830/1225194472832" name="isVirtual" />
     <property id="af65afd8-f0dd-4942-87d9-63a55f2a9db1/1225194472830/1225194472834" name="isAbstract" />
     <property id="7866978e-a0f0-4cc7-81bc-4d213d9375e1/1140137987495/1238684351431" name="asCast" />
@@ -559,6 +560,7 @@
       </node>
     </node>
     <node concept="am4u.1225194240794" id="7153805464398619454" info="ng">
+      <property role="asn4.1133920641626.1193676396447" value="member" />
       <reference role="am4u.1225194240794.1225194240799" target="53vh.4436301628118948495" resolveInfo="RequiredDataDeclaration" />
       <node concept="am4u.1225194472830" id="7153805464398435085" role="am4u.1225194240794.1225194240805" info="ng">
         <property role="am4u.1225194472830.1225194472834" value="false" />
@@ -621,6 +623,7 @@
       </node>
     </node>
     <node concept="am4u.1225194240794" id="7153805464398779824" info="ng">
+      <property role="asn4.1133920641626.1193676396447" value="member" />
       <reference role="am4u.1225194240794.1225194240799" target="53vh.4950161090496546961" resolveInfo="DataDependency" />
       <node concept="am4u.1225194413805" id="7153805464398779825" role="am4u.1225194240794.1225194240801" info="in">
         <node concept="vg0i.1068580123136" id="7153805464398779826" role="vg0i.1137021947720.1137022507850" info="sn">
@@ -704,6 +707,7 @@
       </node>
     </node>
     <node concept="am4u.1225194240794" id="7153805464398883462" info="ng">
+      <property role="asn4.1133920641626.1193676396447" value="member" />
       <reference role="am4u.1225194240794.1225194240799" target="53vh.7153805464398780214" resolveInfo="DataDependencyReference" />
       <node concept="am4u.1225194413805" id="7153805464398883463" role="am4u.1225194240794.1225194240801" info="in">
         <node concept="vg0i.1068580123136" id="7153805464398883464" role="vg0i.1137021947720.1137022507850" info="sn" />

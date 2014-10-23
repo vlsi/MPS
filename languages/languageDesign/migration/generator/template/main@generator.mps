@@ -139,6 +139,7 @@
     <property id="df345b11-b8c7-4213-ac66-48d2a9b75d88/1176743162354/1176743296073" name="name" />
     <property id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123165/1178608670077" name="isAbstract" />
     <property id="b401a680-8325-4110-8fd3-84331ff25bef/1095416546421/1184950341882" name="topPriorityGroup" />
+    <property id="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1133920641626/1193676396447" name="virtualPackage" />
     <property id="ceab5195-25ea-4f22-9b92-103b95ca8c0c/3364660638048049745/1757699476691236116" name="linkRole" />
     <property id="ceab5195-25ea-4f22-9b92-103b95ca8c0c/3364660638048049750/1757699476691236117" name="propertyName" />
     <refRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1204053956946/1068499141037" name="baseMethodDeclaration" />
@@ -285,6 +286,7 @@
   <contents>
     <node concept="7gwc.1095416546421" id="3735414794051306688" info="ig">
       <property role="asn4.1169194658468.1169194664001" value="main" />
+      <property role="asn4.1133920641626.1193676396447" value="member" />
       <node concept="7gwc.1167087469898" id="3842191445091624727" role="7gwc.1095416546421.1167088157977" info="lg">
         <reference role="7gwc.1167087469898.1167087469901" target="3842191445091624729" resolveInfo="MigrationDescriptorImpl" />
       </node>

@@ -2,6 +2,7 @@
 <model ref="r:b37fdbd0-16ea-49c3-a711-9a930a47b589(jetbrains.mps.lang.migration.editor)">
   <persistence version="9" />
   <debugInfo>
+    <lang id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core" />
     <lang id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" />
     <model ref="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" name="jetbrains.mps.lang.structure.structure" />
     <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1071666914219" name="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" />
@@ -29,6 +30,7 @@
     <property id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1186403694788/1186403713874" name="color" />
     <property id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1186403751766/1186403771423" name="style" />
     <property id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1186414536763/1186414551515" name="flag" />
+    <property id="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1133920641626/1193676396447" name="virtualPackage" />
     <refRole id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1078939183254/1078939183255" name="editorComponent" />
     <refRole id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1139848536355/1140103550593" name="relationDeclaration" />
     <refRole id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1166049232041/1166049300910" name="conceptDeclaration" />
@@ -42,6 +44,7 @@
   </debugInfo>
   <languages>
     <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" version="-1" index="9wj7" />
+    <use id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" version="0" implicit="true" index="asn4" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
@@ -54,6 +57,7 @@
   </imports>
   <contents>
     <node concept="9wj7.1071666914219" id="3932724607435080292" info="ig">
+      <property role="asn4.1133920641626.1193676396447" value="member" />
       <reference role="9wj7.1166049232041.1166049300910" target="53vh.4436301628118948495" resolveInfo="RequiredDataDeclaration" />
       <node concept="9wj7.1073389446423" id="5722749943445027777" role="9wj7.1080736578640.1080736633877" info="sn">
         <node concept="9wj7.1078939183254" id="5820409521797705105" role="9wj7.1073389446423.1073389446424" info="sg">
@@ -82,6 +86,7 @@
       </node>
     </node>
     <node concept="9wj7.1071666914219" id="4950161090496559655" info="ig">
+      <property role="asn4.1133920641626.1193676396447" value="member" />
       <reference role="9wj7.1166049232041.1166049300910" target="53vh.4950161090496546961" resolveInfo="DataDependency" />
       <node concept="9wj7.1073389446423" id="3211321119092748692" role="9wj7.1080736578640.1080736633877" info="sn">
         <node concept="9wj7.1237303669825" id="3211321119092748693" role="9wj7.1073389446423.1106270802874" info="nn" />
@@ -136,6 +141,7 @@
       </node>
     </node>
     <node concept="9wj7.1071666914219" id="5820409521797704979" info="ig">
+      <property role="asn4.1133920641626.1193676396447" value="member" />
       <reference role="9wj7.1166049232041.1166049300910" target="53vh.5820409521797704955" resolveInfo="ProducedDataDeclaration" />
       <node concept="9wj7.1073389446423" id="5820409521797704983" role="9wj7.1080736578640.1080736633877" info="sn">
         <node concept="9wj7.1078939183254" id="5820409521797705075" role="9wj7.1073389446423.1073389446424" info="sg">
@@ -169,6 +175,7 @@
       </node>
     </node>
     <node concept="9wj7.1071666914219" id="7153805464398835506" info="ig">
+      <property role="asn4.1133920641626.1193676396447" value="member" />
       <reference role="9wj7.1166049232041.1166049300910" target="53vh.7153805464398780214" resolveInfo="DataDependencyReference" />
       <node concept="9wj7.1073389446423" id="8293956702609999790" role="9wj7.1080736578640.1080736633877" info="sn">
         <node concept="9wj7.1106270549637" id="8293956702609999792" role="9wj7.1073389446423.1106270802874" info="nn" />
@@ -256,6 +263,7 @@
       </node>
     </node>
     <node concept="9wj7.1071666914219" id="4144229974054254524" info="ig">
+      <property role="asn4.1133920641626.1193676396447" value="member" />
       <reference role="9wj7.1166049232041.1166049300910" target="53vh.4144229974054253572" resolveInfo="ExecuteAfterDeclaration" />
       <node concept="9wj7.1073389446423" id="4144229974054256128" role="9wj7.1080736578640.1080736633877" info="sn">
         <node concept="9wj7.1078939183254" id="4144229974054256129" role="9wj7.1073389446423.1073389446424" info="sg">
@@ -284,6 +292,7 @@
       </node>
     </node>
     <node concept="9wj7.1071666914219" id="4144229974054378391" info="ig">
+      <property role="asn4.1133920641626.1193676396447" value="member" />
       <reference role="9wj7.1166049232041.1166049300910" target="53vh.4144229974054378362" resolveInfo="OrderDependency" />
       <node concept="9wj7.1088013125922" id="4144229974054378594" role="9wj7.1080736578640.1080736633877" info="sg">
         <reference role="9wj7.1139848536355.1140103550593" target="53vh.4144229974054378363" />
