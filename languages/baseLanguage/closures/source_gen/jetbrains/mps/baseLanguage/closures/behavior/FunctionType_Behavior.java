@@ -10,6 +10,7 @@ import java.util.Arrays;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
+import org.apache.log4j.Level;
 import jetbrains.mps.baseLanguage.closures.constraints.ClassifierTypeUtil;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import java.util.ArrayList;
@@ -17,6 +18,8 @@ import jetbrains.mps.lang.pattern.IMatchingPattern;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.baseLanguage.closures.helper.FunctionTypeUtil;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.smodel.SReference;
@@ -96,7 +99,10 @@ with_meet:
     String rtCls = BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_getRuntimeClassName_1230472987259", new Object[]{}) + "." + BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_getRuntimeSignature_1213877404927", new Object[]{});
     SNode ice = MapSequence.fromMap(RuntimeUtils.getStaticRuntimeClassifier()).get(rtCls);
     if (ice == null) {
-      throw new RuntimeException("No classifier found:" + rtCls);
+      if (LOG.isEnabledFor(Level.WARN)) {
+        LOG.warn("No classifier found:" + rtCls);
+      }
+      ice = SLinkOperations.getTarget(_quotation_createNode_ksvwin_a0a1a2a8(), "classifier", false);
     }
     SNode ct = _quotation_createNode_ksvwin_a0d0i(ice);
     if ((BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getResultType_1230475757059", new Object[]{}) != null)) {
@@ -230,6 +236,7 @@ with_throws:
     }
     return resList;
   }
+  protected static Logger LOG = LogManager.getLogger(FunctionType_Behavior.class);
   private static SNode _quotation_createNode_ksvwin_a0a2() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
@@ -248,6 +255,13 @@ with_throws:
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.VoidType", null, null, false);
+    return quotedNode_1;
+  }
+  private static SNode _quotation_createNode_ksvwin_a0a1a2a8() {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
+    SNode quotedNode_1 = null;
+    quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, false);
+    quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, facade.createModelReference("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/jetbrains.mps.baseLanguage.closures.runtime@java_stub)"), facade.createNodeId("~_FunctionTypes$_return_P0_E0")));
     return quotedNode_1;
   }
   private static SNode _quotation_createNode_ksvwin_a0d0i(Object parameter_1) {
