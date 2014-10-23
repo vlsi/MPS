@@ -117,6 +117,12 @@
     <model ref="f:java_stub#86441d7a-e194-42da-81a5-2161ec62a379#jetbrains.mps.workbench.actions(jetbrains.mps.workbench.actions@java_stub)" name="jetbrains.mps.workbench.actions@java_stub" />
     <model ref="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.openapi.editor.style(MPS.Editor/jetbrains.mps.openapi.editor.style@java_stub)" name="jetbrains.mps.openapi.editor.style@java_stub" />
     <model ref="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel(MPS.Core/jetbrains.mps.smodel@java_stub)" name="jetbrains.mps.smodel@java_stub" />
+    <model ref="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.util.test(MPS.Core/jetbrains.mps.util.test@java_stub)" name="jetbrains.mps.util.test@java_stub" />
+    <model ref="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.util.ui(MPS.IDEA/com.intellij.util.ui@java_stub)" name="com.intellij.util.ui@java_stub" />
+    <model ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.wm.impl(MPS.IDEA/com.intellij.openapi.wm.impl@java_stub)" name="com.intellij.openapi.wm.impl@java_stub" />
+    <model ref="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.wm(MPS.IDEA/com.intellij.openapi.wm@java_stub)" name="com.intellij.openapi.wm@java_stub" />
+    <model ref="r:02644b91-9f58-4ab3-a983-62616280a698(jetbrains.mps.baseLanguage.unitTest.execution.server)" name="jetbrains.mps.baseLanguage.unitTest.execution.server" />
+    <model ref="r:5217bde7-686e-45b2-a47f-62b7d63f0fe9(jetbrains.mps.lang.test.util)" name="jetbrains.mps.lang.test.util" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068390468198" name="jetbrains.mps.baseLanguage.structure.ClassConcept" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068390468200" name="jetbrains.mps.baseLanguage.structure.FieldDeclaration" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068498886292" name="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" />
@@ -687,6 +693,12 @@
     <import index="2d93" ref="f:java_stub#86441d7a-e194-42da-81a5-2161ec62a379#jetbrains.mps.workbench.actions(jetbrains.mps.workbench.actions@java_stub)" />
     <import index="qe67" ref="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.openapi.editor.style(MPS.Editor/jetbrains.mps.openapi.editor.style@java_stub)" />
     <import index="cu2c" ref="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel(MPS.Core/jetbrains.mps.smodel@java_stub)" />
+    <import index="4rkw" ref="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.util.test(MPS.Core/jetbrains.mps.util.test@java_stub)" />
+    <import index="vuby" ref="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.util.ui(MPS.IDEA/com.intellij.util.ui@java_stub)" />
+    <import index="vqy0" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.wm.impl(MPS.IDEA/com.intellij.openapi.wm.impl@java_stub)" />
+    <import index="82u" ref="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.wm(MPS.IDEA/com.intellij.openapi.wm@java_stub)" />
+    <import index="inrv" ref="r:02644b91-9f58-4ab3-a983-62616280a698(jetbrains.mps.baseLanguage.unitTest.execution.server)" />
+    <import index="fnd7" ref="r:5217bde7-686e-45b2-a47f-62b7d63f0fe9(jetbrains.mps.lang.test.util)" />
     <import index="tp4k" ref="r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)" implicit="true" />
     <import index="fb9u" ref="r:0194e190-08ef-44f6-ab95-d9cffdb7e27b(jetbrains.mps.execution.settings.structure)" implicit="true" />
     <import index="tp25" ref="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" implicit="true" />
@@ -702,15 +714,7 @@
     <import index="tgbt" ref="r:c70ee934-afb1-4c02-b6a9-1c4d1908a792(jetbrains.mps.lang.plugin.standalone.structure)" implicit="true" />
     <import index="tp3r" ref="r:00000000-0000-4000-0000-011c8959034b(jetbrains.mps.lang.quotation.structure)" implicit="true" />
     <import index="tpib" ref="r:00000000-0000-4000-0000-011c8959057f(jetbrains.mps.baseLanguage.logging.structure)" implicit="true" />
-    <import index="hfuk" ref="r:b25dd364-bc3f-4a66-97d1-262009610c5e(jetbrains.mps.make)" implicit="true" />
-    <import index="inrv" ref="r:02644b91-9f58-4ab3-a983-62616280a698(jetbrains.mps.baseLanguage.unitTest.execution.server)" implicit="true" />
-    <import index="fn29" ref="r:6ba2667b-185e-45cd-ac65-e4b9d66da28e(jetbrains.mps.smodel.resources)" implicit="true" />
-    <import index="i9so" ref="r:9e5578e0-37f0-4c9b-a301-771bcb453678(jetbrains.mps.make.script)" implicit="true" />
-    <import index="fnd7" ref="r:5217bde7-686e-45b2-a47f-62b7d63f0fe9(jetbrains.mps.lang.test.util)" implicit="true" />
     <import index="m373" ref="r:4095af4f-a097-4799-aaa9-03df087ddfa6(jetbrains.mps.baseLanguage.javadoc.structure)" implicit="true" />
-    <import index="4rkw" ref="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.util.test(MPS.Core/jetbrains.mps.util.test@java_stub)" implicit="true" />
-    <import index="vuby" ref="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.util.ui(MPS.IDEA/com.intellij.util.ui@java_stub)" implicit="true" />
-    <import index="82u" ref="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.wm(MPS.IDEA/com.intellij.openapi.wm@java_stub)" implicit="true" />
   </imports>
   <contents>
     <node concept="79nr.5023285075122009364" id="6893245555985399815" info="ng">
@@ -9544,11 +9548,11 @@
             <node concept="vg0i.1068581242863" id="5057842142812859050" role="vg0i.1068581242864.1068581242865" info="nr">
               <property role="asn4.1169194658468.1169194664001" value="session" />
               <node concept="vg0i.1107535904670" id="5057842142812859051" role="vg0i.4972933694980447171.5680397130376446158" info="in">
-                <reference role="vg0i.1107535904670.1107535924139" target="hfuk.8695426379435232461" resolveInfo="MakeSession" />
+                <reference role="vg0i.1107535904670.1107535924139" target="hb0s.~MakeSession" resolveInfo="MakeSession" />
               </node>
               <node concept="vg0i.1145552977093" id="5057842142812859052" role="vg0i.1068431474542.1068431790190" info="nn">
                 <node concept="vg0i.1212685548494" id="5057842142812859053" role="vg0i.1145552977093.1145553007750" info="nn">
-                  <reference role="vg0i.1204053956946.1068499141037" target="hfuk.2181314052156502107" resolveInfo="MakeSession" />
+                  <reference role="vg0i.1204053956946.1068499141037" target="hb0s.~MakeSession%d&lt;init&gt;(jetbrains%dmps%dsmodel%dIOperationContext,jetbrains%dmps%dmessages%dIMessageHandler,boolean)" resolveInfo="MakeSession" />
                   <node concept="vg0i.1145552977093" id="5057842142812859054" role="vg0i.1204053956946.1068499141038" info="nn">
                     <node concept="vg0i.1212685548494" id="5057842142812859055" role="vg0i.1145552977093.1145553007750" info="nn">
                       <reference role="vg0i.1204053956946.1068499141037" target="vsqj.~ProjectOperationContext%d&lt;init&gt;(jetbrains%dmps%dproject%dProject)" resolveInfo="ProjectOperationContext" />
@@ -9575,23 +9579,23 @@
                   <node concept="vg0i.1107535904670" id="5057842142812859071" role="vg0i.4972933694980447171.5680397130376446158" info="in">
                     <reference role="vg0i.1107535904670.1107535924139" target="53gy.~Future" resolveInfo="Future" />
                     <node concept="vg0i.1107535904670" id="5057842142812859072" role="vg0i.1107535904670.1109201940907" info="in">
-                      <reference role="vg0i.1107535904670.1107535924139" target="i9so.1291978361072214397" resolveInfo="IResult" />
+                      <reference role="vg0i.1107535904670.1107535924139" target="wu7h.~IResult" resolveInfo="IResult" />
                     </node>
                   </node>
                   <node concept="vg0i.1197027756228" id="5057842142812859073" role="vg0i.1068431474542.1068431790190" info="nn">
                     <node concept="vg0i.1081236700937" id="5057842142812859074" role="vg0i.1197027756228.1197027771414" info="nn">
-                      <reference role="vg0i.1081236700937.1144433194310" target="hfuk.8695426379435177650" resolveInfo="IMakeService.INSTANCE" />
-                      <reference role="vg0i.1204053956946.1068499141037" target="hfuk.8695426379435177666" resolveInfo="get" />
+                      <reference role="vg0i.1081236700937.1144433194310" target="hb0s.~IMakeService$INSTANCE" resolveInfo="IMakeService.INSTANCE" />
+                      <reference role="vg0i.1204053956946.1068499141037" target="hb0s.~IMakeService$INSTANCE%dget()%cjetbrains%dmps%dmake%dIMakeService" resolveInfo="get" />
                     </node>
                     <node concept="vg0i.1202948039474" id="5057842142812859075" role="vg0i.1197027756228.1197027833540" info="nn">
-                      <reference role="vg0i.1204053956946.1068499141037" target="hfuk.8695426379435237680" resolveInfo="make" />
+                      <reference role="vg0i.1204053956946.1068499141037" target="hb0s.~IMakeService%dmake(jetbrains%dmps%dmake%dMakeSession,java%dlang%dIterable)%cjava%dutil%dconcurrent%dFuture" resolveInfo="make" />
                       <node concept="vg0i.1068498886296" id="5057842142812859076" role="vg0i.1204053956946.1068499141038" info="nn">
                         <reference role="vg0i.1068498886296.1068581517664" target="5057842142812859050" resolveInfo="session" />
                       </node>
                       <node concept="vg0i.1197027756228" id="5057842142812859077" role="vg0i.1204053956946.1068499141038" info="nn">
                         <node concept="vg0i.1145552977093" id="5057842142812859078" role="vg0i.1197027756228.1197027771414" info="nn">
                           <node concept="vg0i.1212685548494" id="5057842142812859079" role="vg0i.1145552977093.1145553007750" info="nn">
-                            <reference role="vg0i.1204053956946.1068499141037" target="fn29.7219626660275504881" resolveInfo="ModelsToResources" />
+                            <reference role="vg0i.1204053956946.1068499141037" target="lzhn.~ModelsToResources%d&lt;init&gt;(jetbrains%dmps%dsmodel%dIOperationContext,java%dlang%dIterable)" resolveInfo="ModelsToResources" />
                             <node concept="vg0i.1145552977093" id="5057842142812859080" role="vg0i.1204053956946.1068499141038" info="nn">
                               <node concept="vg0i.1212685548494" id="5057842142812859081" role="vg0i.1145552977093.1145553007750" info="nn">
                                 <reference role="vg0i.1204053956946.1068499141037" target="vsqj.~ProjectOperationContext%d&lt;init&gt;(jetbrains%dmps%dproject%dProject)" resolveInfo="ProjectOperationContext" />
@@ -9610,7 +9614,7 @@
                           </node>
                         </node>
                         <node concept="vg0i.1202948039474" id="5057842142812859088" role="vg0i.1197027756228.1197027833540" info="nn">
-                          <reference role="vg0i.1204053956946.1068499141037" target="fn29.7219626660275509691" resolveInfo="resources" />
+                          <reference role="vg0i.1204053956946.1068499141037" target="lzhn.~ModelsToResources%dresources(boolean)%cjava%dlang%dIterable" resolveInfo="resources" />
                           <node concept="vg0i.1068580123137" id="5057842142812859089" role="vg0i.1204053956946.1068499141038" info="nn">
                             <property role="vg0i.1068580123137.1068580123138" value="false" />
                           </node>
@@ -9624,7 +9628,7 @@
                 <node concept="vg0i.1068581242863" id="5057842142812859091" role="vg0i.1068581242864.1068581242865" info="nr">
                   <property role="asn4.1169194658468.1169194664001" value="result" />
                   <node concept="vg0i.1107535904670" id="5057842142812859092" role="vg0i.4972933694980447171.5680397130376446158" info="in">
-                    <reference role="vg0i.1107535904670.1107535924139" target="i9so.1291978361072214397" resolveInfo="IResult" />
+                    <reference role="vg0i.1107535904670.1107535924139" target="wu7h.~IResult" resolveInfo="IResult" />
                   </node>
                   <node concept="vg0i.1070534058343" id="5057842142812859093" role="vg0i.1068431474542.1068431790190" info="nn" />
                 </node>
@@ -9700,7 +9704,7 @@
                         <reference role="vg0i.1068498886296.1068581517664" target="5057842142812859091" resolveInfo="result" />
                       </node>
                       <node concept="vg0i.1202948039474" id="5057842142812870475" role="vg0i.1197027756228.1197027833540" info="nn">
-                        <reference role="vg0i.1204053956946.1068499141037" target="i9so.1291978361072214431" resolveInfo="isSucessful" />
+                        <reference role="vg0i.1204053956946.1068499141037" target="wu7h.~IResult%disSucessful()%cboolean" resolveInfo="isSucessful" />
                       </node>
                     </node>
                   </node>
@@ -9714,11 +9718,11 @@
             </node>
             <node concept="vg0i.1197027756228" id="5057842142812871626" role="vg0i.1068580123159.1068580123160" info="nn">
               <node concept="vg0i.1081236700937" id="5057842142812871627" role="vg0i.1197027756228.1197027771414" info="nn">
-                <reference role="vg0i.1204053956946.1068499141037" target="hfuk.8695426379435177666" resolveInfo="get" />
-                <reference role="vg0i.1081236700937.1144433194310" target="hfuk.8695426379435177650" resolveInfo="IMakeService.INSTANCE" />
+                <reference role="vg0i.1081236700937.1144433194310" target="hb0s.~IMakeService$INSTANCE" resolveInfo="IMakeService.INSTANCE" />
+                <reference role="vg0i.1204053956946.1068499141037" target="hb0s.~IMakeService$INSTANCE%dget()%cjetbrains%dmps%dmake%dIMakeService" resolveInfo="get" />
               </node>
               <node concept="vg0i.1202948039474" id="5057842142812871628" role="vg0i.1197027756228.1197027833540" info="nn">
-                <reference role="vg0i.1204053956946.1068499141037" target="hfuk.8695426379435237628" resolveInfo="openNewSession" />
+                <reference role="vg0i.1204053956946.1068499141037" target="hb0s.~IMakeService%dopenNewSession(jetbrains%dmps%dmake%dMakeSession)%cboolean" resolveInfo="openNewSession" />
                 <node concept="vg0i.1068498886296" id="5057842142812871629" role="vg0i.1204053956946.1068499141038" info="nn">
                   <reference role="vg0i.1068498886296.1068581517664" target="5057842142812859050" resolveInfo="session" />
                 </node>
@@ -12326,8 +12330,8 @@
                                 <property role="vg0i.1070475926800.1070475926801" value="-D" />
                               </node>
                               <node concept="vg0i.1070533707846" id="1353230511309618046" role="vg0i.1081773326031.1081773367579" info="nn">
-                                <reference role="vg0i.1070533707846.1144433057691" target="4rkw.~CachesUtil" resolveInfo="CachesUtil" />
                                 <reference role="vg0i.1068498886296.1068581517664" target="4rkw.~CachesUtil%dREUSE_CACHES_DIR" resolveInfo="REUSE_CACHES_DIR" />
+                                <reference role="vg0i.1070533707846.1144433057691" target="4rkw.~CachesUtil" resolveInfo="CachesUtil" />
                               </node>
                             </node>
                             <node concept="vg0i.1070475926800" id="1353230511309618047" role="vg0i.1081773326031.1081773367579" info="nn">
@@ -12496,8 +12500,8 @@
                   <node concept="vg0i.1068580123155" id="5809945197338050336" role="vg0i.1068580123136.1068581517665" info="nn">
                     <node concept="vg0i.1197027756228" id="5809945197338050337" role="vg0i.1068580123155.1068580123156" info="nn">
                       <node concept="vg0i.1081236700937" id="5809945197338050338" role="vg0i.1197027756228.1197027771414" info="nn">
-                        <reference role="vg0i.1081236700937.1144433194310" target="82u.~ToolWindowManager" resolveInfo="ToolWindowManager" />
                         <reference role="vg0i.1204053956946.1068499141037" target="82u.~ToolWindowManager%dgetInstance(com%dintellij%dopenapi%dproject%dProject)%ccom%dintellij%dopenapi%dwm%dToolWindowManager" resolveInfo="getInstance" />
+                        <reference role="vg0i.1081236700937.1144433194310" target="82u.~ToolWindowManager" resolveInfo="ToolWindowManager" />
                         <node concept="vg0i.1068498886296" id="5809945197338050339" role="vg0i.1204053956946.1068499141038" info="nn">
                           <reference role="vg0i.1068498886296.1068581517664" target="7425944265394325011" resolveInfo="myProject" />
                         </node>
