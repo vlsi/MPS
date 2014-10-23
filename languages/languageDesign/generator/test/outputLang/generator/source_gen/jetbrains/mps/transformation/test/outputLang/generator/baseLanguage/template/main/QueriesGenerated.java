@@ -478,7 +478,6 @@ public class QueriesGenerated {
   }
   public static class Pattern_x583g4_a0a0a63 extends GeneratedMatchingPattern implements IMatchingPattern {
     /*package*/ SNode patternVar_aaa;
-    /*package*/ String patternVar_null;
     public Pattern_x583g4_a0a0a63() {
     }
     public boolean match(SNode nodeToMatch) {
@@ -490,7 +489,6 @@ public class QueriesGenerated {
         if (!("22".equals(SNodeAccessUtil.getProperty(nodeToMatch_x583g4_a0a0a63, "ii")))) {
           return false;
         }
-        patternVar_null = SNodeAccessUtil.getProperty(nodeToMatch_x583g4_a0a0a63, "name");
         patternVar_aaa = nodeToMatch_x583g4_a0a0a63.getReferenceTarget("myStatement");
       }
       return true;
@@ -501,15 +499,11 @@ public class QueriesGenerated {
     public void fillFieldValuesFrom(GeneratedMatchingPattern pattern) {
       if (pattern != null && pattern.getClass() == this.getClass()) {
         patternVar_aaa = (SNode) pattern.getFieldValue("patternVar_aaa");
-        patternVar_null = (String) pattern.getFieldValue("patternVar_null");
       }
     }
     public Object getFieldValue(String fieldName) {
       if ("patternVar_aaa".equals(fieldName)) {
         return patternVar_aaa;
-      }
-      if ("patternVar_null".equals(fieldName)) {
-        return patternVar_null;
       }
       return null;
     }
