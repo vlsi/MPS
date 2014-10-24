@@ -4,6 +4,7 @@ package jetbrains.mps.lang.migration.runtime.base;
 
 import jetbrains.mps.util.containers.EmptyIterable;
 import org.jetbrains.mps.openapi.module.SModule;
+import org.jetbrains.mps.openapi.model.SNode;
 
 public abstract class MigrationScriptBase implements MigrationScript {
   public String getCaption() {
@@ -21,5 +22,8 @@ public abstract class MigrationScriptBase implements MigrationScript {
   @Override
   public String toString() {
     return getCaption();
+  }
+  protected void adjustMigratedIds(SNode node, SNode migrated) {
+    // todo 
   }
 }
