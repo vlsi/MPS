@@ -130,11 +130,11 @@ public class QueriesGenerated {
   public static boolean ifMacro_Condition_5636302460527141624(final IfMacroContext _context) {
     return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "consequence", true), "jetbrains.mps.lang.migration.structure.QuotationConsequence");
   }
-  public static boolean ifMacro_Condition_5636302460526963677(final IfMacroContext _context) {
-    return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "consequence", true), "jetbrains.mps.lang.migration.structure.QuotationConsequence");
-  }
   public static boolean ifMacro_Condition_5636302460527065976(final IfMacroContext _context) {
     return (SLinkOperations.getTarget(_context.getNode(), "postprocess", true) != null);
+  }
+  public static boolean ifMacro_Condition_5636302460526963677(final IfMacroContext _context) {
+    return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "consequence", true), "jetbrains.mps.lang.migration.structure.QuotationConsequence");
   }
   public static SNode sourceNodeQuery_5387853834547110633(final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "script", false);
