@@ -172,6 +172,9 @@
         <property role="4jta.1071489288298.1071599776563" value="postprocess" />
         <reference role="4jta.1071489288298.1071599976176" target="tp2c.1199569711397" resolveInfo="ClosureLiteral" />
       </node>
+      <node concept="4jta.1169127622168" id="6129256022887271573" role="4jta.1071489090640.1169129564478" info="ig">
+        <reference role="4jta.1169127622168.1169127628841" target="tpck.3734116213129792499" resolveInfo="ScopeProvider" />
+      </node>
     </node>
     <node concept="4jta.1169125989551" id="5636302460526173939" info="ig">
       <property role="asn4.1169194658468.1169194664001" value="TransformConsequence" />

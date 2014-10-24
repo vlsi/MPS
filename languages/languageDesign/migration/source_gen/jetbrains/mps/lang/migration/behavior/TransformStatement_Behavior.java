@@ -5,6 +5,10 @@ package jetbrains.mps.lang.migration.behavior;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.scope.Scope;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.scope.ListScope;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class TransformStatement_Behavior {
   public static void init(SNode thisNode) {
@@ -17,5 +21,15 @@ public class TransformStatement_Behavior {
       return null;
     }
     return SNodeOperations.getConceptDeclaration(SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(thisNode, "consequence", true), "jetbrains.mps.lang.migration.structure.QuotationConsequence"), "quotedNode", true));
+  }
+  public static Scope virtual_getScope_3734116213129936182(SNode thisNode, SNode kind, SNode child) {
+    if (!(SConceptOperations.isExactly(kind, "jetbrains.mps.lang.pattern.structure.PatternVariableDeclaration"))) {
+      return null;
+    }
+    return new ListScope(SNodeOperations.getDescendants(SLinkOperations.getTarget(thisNode, "pattern", true), "jetbrains.mps.lang.pattern.structure.PatternVariableDeclaration", false, new String[]{})) {
+      public String getName(SNode child) {
+        return SPropertyOperations.getString(SNodeOperations.cast(child, "jetbrains.mps.lang.pattern.structure.PatternVariableDeclaration"), "name");
+      }
+    };
   }
 }
