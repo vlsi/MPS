@@ -18,6 +18,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptDataDependencyReference = new ConceptDescriptorBuilder("jetbrains.mps.lang.migration.structure.DataDependencyReference", MetaIdFactory.conceptId(UUID.fromString("90746344-04fd-4286-97d5-b46ae6a81709"), 7153805464398780214L)).super_("jetbrains.mps.baseLanguage.structure.Expression").super_(MetaIdFactory.conceptId(UUID.fromString("f3061a53-9226-4cc5-a443-f952ceaf5816"), 1068431790191L)).parents("jetbrains.mps.baseLanguage.structure.Expression", "jetbrains.mps.baseLanguage.structure.IVariableReference").parentIds(MetaIdFactory.conceptId(UUID.fromString("f3061a53-9226-4cc5-a443-f952ceaf5816"), 1068431790191L), MetaIdFactory.conceptId(UUID.fromString("f3061a53-9226-4cc5-a443-f952ceaf5816"), 1023687332192347378L)).referenceDescriptors(new ConceptDescriptorBuilder.Ref(7153805464398780217L, "dataDependency", MetaIdFactory.conceptId(UUID.fromString("90746344-04fd-4286-97d5-b46ae6a81709"), 4950161090496546961L), false)).references("dataDependency").create();
   /*package*/ final ConceptDescriptor myConceptExecuteAfterDeclaration = new ConceptDescriptorBuilder("jetbrains.mps.lang.migration.structure.ExecuteAfterDeclaration", MetaIdFactory.conceptId(UUID.fromString("90746344-04fd-4286-97d5-b46ae6a81709"), 4144229974054253572L)).super_("jetbrains.mps.lang.core.structure.BaseConcept").super_(MetaIdFactory.conceptId(UUID.fromString("ceab5195-25ea-4f22-9b92-103b95ca8c0c"), 1133920641626L)).parents("jetbrains.mps.baseLanguage.structure.ClassifierMember", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault", "jetbrains.mps.lang.core.structure.BaseConcept").parentIds(MetaIdFactory.conceptId(UUID.fromString("f3061a53-9226-4cc5-a443-f952ceaf5816"), 1178285077437L), MetaIdFactory.conceptId(UUID.fromString("ceab5195-25ea-4f22-9b92-103b95ca8c0c"), 1835621062190663819L), MetaIdFactory.conceptId(UUID.fromString("ceab5195-25ea-4f22-9b92-103b95ca8c0c"), 1133920641626L)).childDescriptors(new ConceptDescriptorBuilder.Link(4144229974054377645L, "dependencies", MetaIdFactory.conceptId(UUID.fromString("90746344-04fd-4286-97d5-b46ae6a81709"), 4144229974054378362L), true, true, false)).children(new String[]{"dependencies"}, new boolean[]{true}).alias("execute after", "").create();
   /*package*/ final ConceptDescriptor myConceptLinkPatternVariableReference = new ConceptDescriptorBuilder("jetbrains.mps.lang.migration.structure.LinkPatternVariableReference", MetaIdFactory.conceptId(UUID.fromString("90746344-04fd-4286-97d5-b46ae6a81709"), 3220955710218421371L)).super_("jetbrains.mps.baseLanguage.structure.Expression").super_(MetaIdFactory.conceptId(UUID.fromString("f3061a53-9226-4cc5-a443-f952ceaf5816"), 1068431790191L)).parents("jetbrains.mps.baseLanguage.structure.Expression").parentIds(MetaIdFactory.conceptId(UUID.fromString("f3061a53-9226-4cc5-a443-f952ceaf5816"), 1068431790191L)).referenceDescriptors(new ConceptDescriptorBuilder.Ref(3220955710218421372L, "declaration", MetaIdFactory.conceptId(UUID.fromString("d4615e3b-d671-4ba9-af01-2b78369b0ba7"), 1137418540378L), false)).references("declaration").create();
+  /*package*/ final ConceptDescriptor myConceptListPatternVariableReference = new ConceptDescriptorBuilder("jetbrains.mps.lang.migration.structure.ListPatternVariableReference", MetaIdFactory.conceptId(UUID.fromString("90746344-04fd-4286-97d5-b46ae6a81709"), 6129256022887940218L)).super_("jetbrains.mps.baseLanguage.structure.Expression").super_(MetaIdFactory.conceptId(UUID.fromString("f3061a53-9226-4cc5-a443-f952ceaf5816"), 1068431790191L)).parents("jetbrains.mps.baseLanguage.structure.Expression").parentIds(MetaIdFactory.conceptId(UUID.fromString("f3061a53-9226-4cc5-a443-f952ceaf5816"), 1068431790191L)).referenceDescriptors(new ConceptDescriptorBuilder.Ref(6129256022887940219L, "declaration", MetaIdFactory.conceptId(UUID.fromString("d4615e3b-d671-4ba9-af01-2b78369b0ba7"), 1136727061274L), false)).references("declaration").create();
   /*package*/ final ConceptDescriptor myConceptMigrationScript = new ConceptDescriptorBuilder("jetbrains.mps.lang.migration.structure.MigrationScript", MetaIdFactory.conceptId(UUID.fromString("90746344-04fd-4286-97d5-b46ae6a81709"), 8352104482584315555L)).super_("jetbrains.mps.baseLanguage.structure.ClassConcept").super_(MetaIdFactory.conceptId(UUID.fromString("f3061a53-9226-4cc5-a443-f952ceaf5816"), 1068390468198L)).parents("jetbrains.mps.baseLanguage.structure.ClassConcept").parentIds(MetaIdFactory.conceptId(UUID.fromString("f3061a53-9226-4cc5-a443-f952ceaf5816"), 1068390468198L)).propertyDescriptors(new ConceptDescriptorBuilder.Prop(5820409521797704727L, "fromVersion")).properties("fromVersion").create();
   /*package*/ final ConceptDescriptor myConceptNodePatternVariableReference = new ConceptDescriptorBuilder("jetbrains.mps.lang.migration.structure.NodePatternVariableReference", MetaIdFactory.conceptId(UUID.fromString("90746344-04fd-4286-97d5-b46ae6a81709"), 7527743013695058339L)).super_("jetbrains.mps.baseLanguage.structure.Expression").super_(MetaIdFactory.conceptId(UUID.fromString("f3061a53-9226-4cc5-a443-f952ceaf5816"), 1068431790191L)).parents("jetbrains.mps.baseLanguage.structure.Expression").parentIds(MetaIdFactory.conceptId(UUID.fromString("f3061a53-9226-4cc5-a443-f952ceaf5816"), 1068431790191L)).referenceDescriptors(new ConceptDescriptorBuilder.Ref(7527743013695058340L, "declaration", MetaIdFactory.conceptId(UUID.fromString("d4615e3b-d671-4ba9-af01-2b78369b0ba7"), 1136720037779L), false)).references("declaration").create();
   /*package*/ final ConceptDescriptor myConceptOrderDependency = new ConceptDescriptorBuilder("jetbrains.mps.lang.migration.structure.OrderDependency", MetaIdFactory.conceptId(UUID.fromString("90746344-04fd-4286-97d5-b46ae6a81709"), 4144229974054378362L)).super_("jetbrains.mps.lang.core.structure.BaseConcept").super_(MetaIdFactory.conceptId(UUID.fromString("ceab5195-25ea-4f22-9b92-103b95ca8c0c"), 1133920641626L)).parents("jetbrains.mps.lang.core.structure.BaseConcept").parentIds(MetaIdFactory.conceptId(UUID.fromString("ceab5195-25ea-4f22-9b92-103b95ca8c0c"), 1133920641626L)).referenceDescriptors(new ConceptDescriptorBuilder.Ref(4144229974054378363L, "script", MetaIdFactory.conceptId(UUID.fromString("90746344-04fd-4286-97d5-b46ae6a81709"), 8352104482584315555L), false)).references("script").create();
@@ -30,13 +31,13 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
   @Override
   public Collection<ConceptDescriptor> getDescriptors() {
-    return Arrays.asList(myConceptConsequenceFunction, myConceptDataDependency, myConceptDataDependencyReference, myConceptExecuteAfterDeclaration, myConceptLinkPatternVariableReference, myConceptMigrationScript, myConceptNodePatternVariableReference, myConceptOrderDependency, myConceptProducedDataDeclaration, myConceptPropertyPatternVariableReference, myConceptQuotationConsequence, myConceptRequiredDataDeclaration, myConceptTransformConsequence, myConceptTransformStatement);
+    return Arrays.asList(myConceptConsequenceFunction, myConceptDataDependency, myConceptDataDependencyReference, myConceptExecuteAfterDeclaration, myConceptLinkPatternVariableReference, myConceptListPatternVariableReference, myConceptMigrationScript, myConceptNodePatternVariableReference, myConceptOrderDependency, myConceptProducedDataDeclaration, myConceptPropertyPatternVariableReference, myConceptQuotationConsequence, myConceptRequiredDataDeclaration, myConceptTransformConsequence, myConceptTransformStatement);
   }
 
   @Override
   @Nullable
   public ConceptDescriptor getDescriptor(String conceptFqName) {
-    switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0s, conceptFqName)) {
+    switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0t, conceptFqName)) {
       case 0:
         return myConceptConsequenceFunction;
       case 1:
@@ -48,26 +49,28 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
       case 4:
         return myConceptLinkPatternVariableReference;
       case 5:
-        return myConceptMigrationScript;
+        return myConceptListPatternVariableReference;
       case 6:
-        return myConceptNodePatternVariableReference;
+        return myConceptMigrationScript;
       case 7:
-        return myConceptOrderDependency;
+        return myConceptNodePatternVariableReference;
       case 8:
-        return myConceptProducedDataDeclaration;
+        return myConceptOrderDependency;
       case 9:
-        return myConceptPropertyPatternVariableReference;
+        return myConceptProducedDataDeclaration;
       case 10:
-        return myConceptQuotationConsequence;
+        return myConceptPropertyPatternVariableReference;
       case 11:
-        return myConceptRequiredDataDeclaration;
+        return myConceptQuotationConsequence;
       case 12:
-        return myConceptTransformConsequence;
+        return myConceptRequiredDataDeclaration;
       case 13:
+        return myConceptTransformConsequence;
+      case 14:
         return myConceptTransformStatement;
       default:
         return null;
     }
   }
-  private static String[] stringSwitchCases_1htk8d_a0a0s = new String[]{"jetbrains.mps.lang.migration.structure.ConsequenceFunction", "jetbrains.mps.lang.migration.structure.DataDependency", "jetbrains.mps.lang.migration.structure.DataDependencyReference", "jetbrains.mps.lang.migration.structure.ExecuteAfterDeclaration", "jetbrains.mps.lang.migration.structure.LinkPatternVariableReference", "jetbrains.mps.lang.migration.structure.MigrationScript", "jetbrains.mps.lang.migration.structure.NodePatternVariableReference", "jetbrains.mps.lang.migration.structure.OrderDependency", "jetbrains.mps.lang.migration.structure.ProducedDataDeclaration", "jetbrains.mps.lang.migration.structure.PropertyPatternVariableReference", "jetbrains.mps.lang.migration.structure.QuotationConsequence", "jetbrains.mps.lang.migration.structure.RequiredDataDeclaration", "jetbrains.mps.lang.migration.structure.TransformConsequence", "jetbrains.mps.lang.migration.structure.TransformStatement"};
+  private static String[] stringSwitchCases_1htk8d_a0a0t = new String[]{"jetbrains.mps.lang.migration.structure.ConsequenceFunction", "jetbrains.mps.lang.migration.structure.DataDependency", "jetbrains.mps.lang.migration.structure.DataDependencyReference", "jetbrains.mps.lang.migration.structure.ExecuteAfterDeclaration", "jetbrains.mps.lang.migration.structure.LinkPatternVariableReference", "jetbrains.mps.lang.migration.structure.ListPatternVariableReference", "jetbrains.mps.lang.migration.structure.MigrationScript", "jetbrains.mps.lang.migration.structure.NodePatternVariableReference", "jetbrains.mps.lang.migration.structure.OrderDependency", "jetbrains.mps.lang.migration.structure.ProducedDataDeclaration", "jetbrains.mps.lang.migration.structure.PropertyPatternVariableReference", "jetbrains.mps.lang.migration.structure.QuotationConsequence", "jetbrains.mps.lang.migration.structure.RequiredDataDeclaration", "jetbrains.mps.lang.migration.structure.TransformConsequence", "jetbrains.mps.lang.migration.structure.TransformStatement"};
 }

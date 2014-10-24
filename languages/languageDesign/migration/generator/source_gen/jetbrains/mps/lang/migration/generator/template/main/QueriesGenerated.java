@@ -103,6 +103,9 @@ public class QueriesGenerated {
   public static Object propertyMacro_GetPropertyValue_1309355481571303327(final PropertyMacroContext _context) {
     return PatternVarsUtil.getFieldName(SLinkOperations.getTarget(_context.getNode(), "declaration", false));
   }
+  public static Object propertyMacro_GetPropertyValue_6129256022887942008(final PropertyMacroContext _context) {
+    return PatternVarsUtil.getFieldName(SLinkOperations.getTarget(_context.getNode(), "declaration", false));
+  }
   public static Object referenceMacro_GetReferent_7153805464398888188(final ReferenceMacroContext _context) {
     return MigrationScript_Behavior.call_getProducedData_8585153554445933384(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "dataDependency", false), "script", false));
   }
@@ -146,7 +149,7 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(_context.getNode(), "script", false);
   }
   public static SNode sourceNodeQuery_5636302460526820673(final SourceSubstituteMacroNodeContext _context) {
-    return (SLinkOperations.getTarget(_context.getNode(), "precondition", true) != null ? SLinkOperations.getTarget(_context.getNode(), "precondition", true) : _quotation_createNode_x583g4_a0a0db());
+    return (SLinkOperations.getTarget(_context.getNode(), "precondition", true) != null ? SLinkOperations.getTarget(_context.getNode(), "precondition", true) : _quotation_createNode_x583g4_a0a0eb());
   }
   public static SNode sourceNodeQuery_5636302460526837072(final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "pattern", true);
@@ -176,7 +179,7 @@ public class QueriesGenerated {
     return SModelOperations.getRoots(_context.getInputModel(), "jetbrains.mps.lang.migration.structure.MigrationScript");
   }
   protected static Logger LOG = LogManager.getLogger(QueriesGenerated.class);
-  private static SNode _quotation_createNode_x583g4_a0a0db() {
+  private static SNode _quotation_createNode_x583g4_a0a0eb() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     SNode quotedNode_2 = null;

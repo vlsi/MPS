@@ -11,6 +11,9 @@
     <file name="RequiredDataDeclaration_BehaviorDescriptor.java">
       <unit at="13,0,45,0" name="jetbrains.mps.lang.migration.behavior.RequiredDataDeclaration_BehaviorDescriptor" />
     </file>
+    <file name="ListPatternVariableReference_BehaviorDescriptor.java">
+      <unit at="7,0,15,0" name="jetbrains.mps.lang.migration.behavior.ListPatternVariableReference_BehaviorDescriptor" />
+    </file>
     <file name="NodePatternVariableReference_BehaviorDescriptor.java">
       <unit at="7,0,15,0" name="jetbrains.mps.lang.migration.behavior.NodePatternVariableReference_BehaviorDescriptor" />
     </file>
@@ -39,7 +42,7 @@
       <unit at="7,0,15,0" name="jetbrains.mps.lang.migration.behavior.LinkPatternVariableReference_BehaviorDescriptor" />
     </file>
     <file name="BehaviorAspectDescriptor.java">
-      <unit at="9,0,46,0" name="jetbrains.mps.lang.migration.behavior.BehaviorAspectDescriptor" />
+      <unit at="9,0,48,0" name="jetbrains.mps.lang.migration.behavior.BehaviorAspectDescriptor" />
     </file>
     <file name="TransformStatement_BehaviorDescriptor.java">
       <unit at="11,0,25,0" name="jetbrains.mps.lang.migration.behavior.TransformStatement_BehaviorDescriptor" />

@@ -237,6 +237,17 @@
         <reference role="4jta.1071489288298.1071599976176" target="tp3t.1136720037781" resolveInfo="PropertyPatternVariableDeclaration" />
       </node>
     </node>
+    <node concept="4jta.1071489090640" id="6129256022887940218" info="ig">
+      <property role="asn4.1169194658468.1169194664001" value="ListPatternVariableReference" />
+      <property role="asn4.1133920641626.1193676396447" value="transformExtension" />
+      <reference role="4jta.1071489090640.1071489389519" target="tpee.1068431790191" resolveInfo="Expression" />
+      <node concept="4jta.1071489288298" id="6129256022887940219" role="4jta.1169125787135.1071489727083" info="ig">
+        <property role="4jta.1071489288298.1071599937831" value="reference" />
+        <property role="4jta.1071489288298.1071599893252" value="1" />
+        <property role="4jta.1071489288298.1071599776563" value="declaration" />
+        <reference role="4jta.1071489288298.1071599976176" target="tp3t.1136727061274" resolveInfo="ListPattern" />
+      </node>
+    </node>
   </contents>
 </model>
 

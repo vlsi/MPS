@@ -15,14 +15,16 @@ public class ConstraintsAspectDescriptor implements jetbrains.mps.smodel.runtime
         return new DataDependencyReference_Constraints();
       case 1:
         return new LinkPatternVariableReference_Constraints();
-      case 2:
-        return new NodePatternVariableReference_Constraints();
       case 3:
+        return new NodePatternVariableReference_Constraints();
+      case 4:
         return new PropertyPatternVariableReference_Constraints();
+      case 2:
+        return new ListPatternVariableReference_Constraints();
       default:
         // todo: illegal in some cases? 
         return new BaseConstraintsDescriptor(fqName);
     }
   }
-  private static String[] stringSwitchCases_2qnle6_a0a0b = new String[]{"jetbrains.mps.lang.migration.structure.DataDependencyReference", "jetbrains.mps.lang.migration.structure.LinkPatternVariableReference", "jetbrains.mps.lang.migration.structure.NodePatternVariableReference", "jetbrains.mps.lang.migration.structure.PropertyPatternVariableReference"};
+  private static String[] stringSwitchCases_2qnle6_a0a0b = new String[]{"jetbrains.mps.lang.migration.structure.DataDependencyReference", "jetbrains.mps.lang.migration.structure.LinkPatternVariableReference", "jetbrains.mps.lang.migration.structure.ListPatternVariableReference", "jetbrains.mps.lang.migration.structure.NodePatternVariableReference", "jetbrains.mps.lang.migration.structure.PropertyPatternVariableReference"};
 }
