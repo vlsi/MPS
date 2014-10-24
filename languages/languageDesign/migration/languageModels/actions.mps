@@ -96,31 +96,16 @@
   </imports>
   <contents>
     <node concept="abtv.1158700664498" id="1901572971594205598" info="ng">
+      <property role="asn4.1169194658468.1169194664001" value="TransformStatement" />
       <node concept="abtv.1158700725281" id="1901572971594206036" role="abtv.1158700664498.1158700779049" info="ig">
-        <reference role="abtv.1158700725281.1158700943156" target="53vh.3220955710217809656" resolveInfo="MigrateOperation" />
+        <reference role="abtv.1158700725281.1158700943156" target="53vh.5636302460526210743" resolveInfo="ConsequenceFunction" />
         <node concept="abtv.1158701162220" id="1901572971594223632" role="abtv.1158700725281.1158701448518" info="in">
           <node concept="vg0i.1068580123136" id="1901572971594223633" role="vg0i.1137021947720.1137022507850" info="sn">
-            <node concept="vg0i.1068581242864" id="5872110852616288949" role="vg0i.1068580123136.1068581517665" info="nn">
-              <node concept="vg0i.1068581242863" id="5872110852616288950" role="vg0i.1068581242864.1068581242865" info="nr">
-                <property role="asn4.1169194658468.1169194664001" value="closure" />
-                <node concept="4ia1.1138055754698" id="5872110852616288948" role="vg0i.4972933694980447171.5680397130376446158" info="in">
-                  <reference role="4ia1.1138055754698.1138405853777" target="tp2c.1199569711397" resolveInfo="ClosureLiteral" />
-                </node>
-                <node concept="vg0i.1197027756228" id="5872110852616288951" role="vg0i.1068431474542.1068431790190" info="nn">
-                  <node concept="4ia1.1172424058054" id="5872110852616288952" role="vg0i.1197027756228.1197027771414" info="nn">
-                    <reference role="4ia1.1172424058054.1172424100906" target="tp2c.1199569711397" resolveInfo="ClosureLiteral" />
-                  </node>
-                  <node concept="abtv.7776141288922801652" id="5872110852616288953" role="vg0i.1197027756228.1197027833540" info="nn" />
-                </node>
-              </node>
-            </node>
             <node concept="vg0i.1068580123155" id="1901572971594233973" role="vg0i.1068580123136.1068581517665" info="nn">
               <node concept="vg0i.1197027756228" id="1901572971594246469" role="vg0i.1068580123155.1068580123156" info="nn">
                 <node concept="vg0i.1197027756228" id="1901572971594237352" role="vg0i.1197027756228.1197027771414" info="nn">
-                  <node concept="vg0i.1068498886296" id="5872110852616292333" role="vg0i.1197027756228.1197027771414" info="nn">
-                    <reference role="vg0i.1068498886296.1068581517664" target="5872110852616288950" resolveInfo="closure" />
-                  </node>
-                  <node concept="4ia1.1138056282393" id="1901572971594239862" role="vg0i.1197027756228.1197027833540" info="nn">
+                  <node concept="abtv.5584396657084912703" id="5636302460526223141" role="vg0i.1197027756228.1197027771414" info="nn" />
+                  <node concept="4ia1.1138056282393" id="5636302460526232247" role="vg0i.1197027756228.1197027833540" info="nn">
                     <reference role="4ia1.1138056282393.1138056546658" target="tp2c.1199569906740" />
                   </node>
                 </node>
@@ -140,24 +125,9 @@
                   <property role="vg0i.1068580123137.1068580123138" value="true" />
                 </node>
                 <node concept="vg0i.1197027756228" id="7527743013694960813" role="vg0i.1215693861676.1068498886295" info="nn">
-                  <node concept="vg0i.1068498886296" id="7527743013694960555" role="vg0i.1197027756228.1197027771414" info="nn">
-                    <reference role="vg0i.1068498886296.1068581517664" target="5872110852616288950" resolveInfo="closure" />
-                  </node>
+                  <node concept="abtv.5584396657084912703" id="5636302460526234026" role="vg0i.1197027756228.1197027771414" info="nn" />
                   <node concept="4ia1.1138056022639" id="7527743013694965323" role="vg0i.1197027756228.1197027833540" info="nn">
                     <reference role="4ia1.1138056022639.1138056395725" target="tp2c.890797661671409019" resolveInfo="forceMultiLine" />
-                  </node>
-                </node>
-              </node>
-            </node>
-            <node concept="vg0i.1068580123155" id="1901572971594223656" role="vg0i.1068580123136.1068581517665" info="nn">
-              <node concept="vg0i.1068498886294" id="1901572971594227703" role="vg0i.1068580123155.1068580123156" info="nn">
-                <node concept="vg0i.1068498886296" id="5872110852616288954" role="vg0i.1215693861676.1068498886297" info="nn">
-                  <reference role="vg0i.1068498886296.1068581517664" target="5872110852616288950" resolveInfo="closure" />
-                </node>
-                <node concept="vg0i.1197027756228" id="1901572971594223843" role="vg0i.1215693861676.1068498886295" info="nn">
-                  <node concept="abtv.5584396657084912703" id="1901572971594223655" role="vg0i.1197027756228.1197027771414" info="nn" />
-                  <node concept="4ia1.1138056143562" id="1901572971594226163" role="vg0i.1197027756228.1197027833540" info="nn">
-                    <reference role="4ia1.1138056143562.1138056516764" target="53vh.3220955710217809905" />
                   </node>
                 </node>
               </node>

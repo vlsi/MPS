@@ -15,6 +15,7 @@
     <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1088013125922" name="jetbrains.mps.lang.editor.structure.CellModel_RefCell" />
     <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1088185857835" name="jetbrains.mps.lang.editor.structure.InlineEditorComponent" />
     <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1106270549637" name="jetbrains.mps.lang.editor.structure.CellLayout_Horizontal" />
+    <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1106270571710" name="jetbrains.mps.lang.editor.structure.CellLayout_Vertical" />
     <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1186403751766" name="jetbrains.mps.lang.editor.structure.FontStyleStyleClassItem" />
     <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1186404549998" name="jetbrains.mps.lang.editor.structure.ForegroundColorStyleClassItem" />
     <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1186414928363" name="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" />
@@ -36,6 +37,7 @@
     <refRole id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1166049232041/1166049300910" name="conceptDeclaration" />
     <refRole id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1381004262292414836/1381004262292426837" name="parentStyleClass" />
     <childRole id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1073389446423/1073389446424" name="childCellModel" />
+    <childRole id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1071666914219/1078153129734" name="inspectedCellModel" />
     <childRole id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1080736578640/1080736633877" name="cellModel" />
     <childRole id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1088013125922/1088186146602" name="editorComponent" />
     <childRole id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1073389446423/1106270802874" name="cellLayout" />
@@ -303,6 +305,41 @@
         <node concept="9wj7.1088185857835" id="4144229974054378596" role="9wj7.1088013125922.1088186146602" info="ig">
           <node concept="9wj7.625126330682908270" id="4144229974054378603" role="9wj7.1080736578640.1080736633877" info="sg" />
         </node>
+      </node>
+    </node>
+    <node concept="9wj7.1071666914219" id="5636302460526208378" info="ig">
+      <property role="asn4.1133920641626.1193676396447" value="transformExtension" />
+      <reference role="9wj7.1166049232041.1166049300910" target="53vh.5636302460526173897" resolveInfo="TransformStatement" />
+      <node concept="9wj7.1073389446423" id="5636302460526210034" role="9wj7.1080736578640.1080736633877" info="sn">
+        <node concept="9wj7.1073389577006" id="5636302460526210036" role="9wj7.1073389446423.1073389446424" info="sn">
+          <property role="9wj7.1073389577006.1073389577007" value="transform" />
+        </node>
+        <node concept="9wj7.1073389882823" id="5636302460526210044" role="9wj7.1073389446423.1073389446424" info="sg">
+          <reference role="9wj7.1139848536355.1140103550593" target="53vh.5636302460526173934" />
+        </node>
+        <node concept="9wj7.1073389577006" id="5636302460526210052" role="9wj7.1073389446423.1073389446424" info="sn">
+          <property role="9wj7.1073389577006.1073389577007" value="=&gt;" />
+        </node>
+        <node concept="9wj7.1073389882823" id="5636302460526210062" role="9wj7.1073389446423.1073389446424" info="sg">
+          <reference role="9wj7.1139848536355.1140103550593" target="53vh.5636302460526173936" />
+        </node>
+        <node concept="9wj7.1106270549637" id="5636302460526210037" role="9wj7.1073389446423.1106270802874" info="nn" />
+      </node>
+      <node concept="9wj7.1073389446423" id="5636302460526210068" role="9wj7.1071666914219.1078153129734" info="sn">
+        <node concept="9wj7.1073389577006" id="5636302460526210084" role="9wj7.1073389446423.1073389446424" info="sn">
+          <property role="9wj7.1073389577006.1073389577007" value="precondition:" />
+        </node>
+        <node concept="9wj7.1073389882823" id="5636302460526210074" role="9wj7.1073389446423.1073389446424" info="sg">
+          <reference role="9wj7.1139848536355.1140103550593" target="53vh.5636302460526173940" />
+        </node>
+        <node concept="9wj7.1073389577006" id="5636302460526210088" role="9wj7.1073389446423.1073389446424" info="sn" />
+        <node concept="9wj7.1073389577006" id="5636302460526210093" role="9wj7.1073389446423.1073389446424" info="sn">
+          <property role="9wj7.1073389577006.1073389577007" value="postprocess:" />
+        </node>
+        <node concept="9wj7.1073389882823" id="5636302460526210080" role="9wj7.1073389446423.1073389446424" info="sg">
+          <reference role="9wj7.1139848536355.1140103550593" target="53vh.5636302460526173944" />
+        </node>
+        <node concept="9wj7.1106270571710" id="5636302460526210069" role="9wj7.1073389446423.1106270802874" info="nn" />
       </node>
     </node>
   </contents>

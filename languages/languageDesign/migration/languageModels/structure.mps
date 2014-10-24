@@ -9,6 +9,7 @@
     <concept id="c72da2b9-7cce-4447-8389-f407dc1158b7/1071489090640" name="jetbrains.mps.lang.structure.structure.ConceptDeclaration" />
     <concept id="c72da2b9-7cce-4447-8389-f407dc1158b7/1071489288298" name="jetbrains.mps.lang.structure.structure.LinkDeclaration" />
     <concept id="c72da2b9-7cce-4447-8389-f407dc1158b7/1071489288299" name="jetbrains.mps.lang.structure.structure.PropertyDeclaration" />
+    <concept id="c72da2b9-7cce-4447-8389-f407dc1158b7/1169125989551" name="jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration" />
     <concept id="c72da2b9-7cce-4447-8389-f407dc1158b7/1169127622168" name="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" />
     <property id="c72da2b9-7cce-4447-8389-f407dc1158b7/1071489288298/1071599776563" name="role" />
     <property id="c72da2b9-7cce-4447-8389-f407dc1158b7/1071489288298/1071599893252" name="sourceCardinality" />
@@ -40,6 +41,7 @@
     <import index="53vh" ref="r:53885008-7612-46ff-8b11-27f1d42c3adb(jetbrains.mps.lang.migration.structure)" implicit="true" />
     <import index="tp3t" ref="r:00000000-0000-4000-0000-011c89590345(jetbrains.mps.lang.pattern.structure)" implicit="true" />
     <import index="tp2q" ref="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" implicit="true" />
+    <import index="tp2c" ref="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" implicit="true" />
   </imports>
   <contents>
     <node concept="4jta.1071489090640" id="4436301628118948495" info="ig">
@@ -209,6 +211,56 @@
         <property role="4jta.1071489288298.1071599776563" value="script" />
         <property role="4jta.1071489288298.1071599893252" value="1" />
         <reference role="4jta.1071489288298.1071599976176" target="8352104482584315555" resolveInfo="MigrationScript" />
+      </node>
+    </node>
+    <node concept="4jta.1071489090640" id="5636302460526173897" info="ig">
+      <property role="asn4.1169194658468.1169194664001" value="TransformStatement" />
+      <property role="4jta.1169125787135.5092175715804935370" value="transform" />
+      <property role="asn4.1133920641626.1193676396447" value="transformExtension" />
+      <reference role="4jta.1071489090640.1071489389519" target="tpee.1068580123157" resolveInfo="Statement" />
+      <node concept="4jta.1071489288298" id="5636302460526173934" role="4jta.1169125787135.1071489727083" info="ig">
+        <property role="4jta.1071489288298.1071599937831" value="aggregation" />
+        <property role="4jta.1071489288298.1071599776563" value="pattern" />
+        <property role="4jta.1071489288298.1071599893252" value="1" />
+        <reference role="4jta.1071489288298.1071599976176" target="tp3t.1136720037777" resolveInfo="PatternExpression" />
+      </node>
+      <node concept="4jta.1071489288298" id="5636302460526173936" role="4jta.1169125787135.1071489727083" info="ig">
+        <property role="4jta.1071489288298.1071599937831" value="aggregation" />
+        <property role="4jta.1071489288298.1071599776563" value="consequence" />
+        <property role="4jta.1071489288298.1071599893252" value="1" />
+        <reference role="4jta.1071489288298.1071599976176" target="5636302460526173939" resolveInfo="TransformConsequence" />
+      </node>
+      <node concept="4jta.1071489288298" id="5636302460526173940" role="4jta.1169125787135.1071489727083" info="ig">
+        <property role="4jta.1071489288298.1071599937831" value="aggregation" />
+        <property role="4jta.1071489288298.1071599776563" value="precondition" />
+        <reference role="4jta.1071489288298.1071599976176" target="tp2c.1199569711397" resolveInfo="ClosureLiteral" />
+      </node>
+      <node concept="4jta.1071489288298" id="5636302460526173944" role="4jta.1169125787135.1071489727083" info="ig">
+        <property role="4jta.1071489288298.1071599937831" value="aggregation" />
+        <property role="4jta.1071489288298.1071599776563" value="postprocess" />
+        <reference role="4jta.1071489288298.1071599976176" target="tp2c.1199569711397" resolveInfo="ClosureLiteral" />
+      </node>
+    </node>
+    <node concept="4jta.1169125989551" id="5636302460526173939" info="ig">
+      <property role="asn4.1169194658468.1169194664001" value="TransformConsequence" />
+      <property role="asn4.1133920641626.1193676396447" value="transformExtension" />
+    </node>
+    <node concept="4jta.1071489090640" id="5636302460526210369" info="ig">
+      <property role="asn4.1169194658468.1169194664001" value="QuotationConsequence" />
+      <property role="4jta.1169125787135.5092175715804935370" value="quotation" />
+      <property role="asn4.1133920641626.1193676396447" value="transformExtension" />
+      <reference role="4jta.1071489090640.1071489389519" target="tp3r.1196350785113" resolveInfo="Quotation" />
+      <node concept="4jta.1169127622168" id="5636302460526210370" role="4jta.1071489090640.1169129564478" info="ig">
+        <reference role="4jta.1169127622168.1169127628841" target="5636302460526173939" resolveInfo="TransformConsequence" />
+      </node>
+    </node>
+    <node concept="4jta.1071489090640" id="5636302460526210743" info="ig">
+      <property role="asn4.1169194658468.1169194664001" value="ConsequenceFunction" />
+      <property role="4jta.1169125787135.5092175715804935370" value="function" />
+      <property role="asn4.1133920641626.1193676396447" value="transformExtension" />
+      <reference role="4jta.1071489090640.1071489389519" target="tp2c.1199569711397" resolveInfo="ClosureLiteral" />
+      <node concept="4jta.1169127622168" id="5636302460526212903" role="4jta.1071489090640.1169129564478" info="ig">
+        <reference role="4jta.1169127622168.1169127628841" target="5636302460526173939" resolveInfo="TransformConsequence" />
       </node>
     </node>
   </contents>

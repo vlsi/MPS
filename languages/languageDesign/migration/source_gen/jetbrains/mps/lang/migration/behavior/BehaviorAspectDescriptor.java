@@ -11,33 +11,39 @@ public class BehaviorAspectDescriptor implements jetbrains.mps.smodel.runtime.Be
   }
   public BehaviorDescriptor getDescriptor(String fqName) {
     switch (Arrays.binarySearch(stringSwitchCases_846f5o_a0a0b, fqName)) {
-      case 11:
+      case 13:
         return new RequiredDataDeclaration_BehaviorDescriptor();
-      case 0:
-        return new DataDependency_BehaviorDescriptor();
-      case 6:
-        return new MigrationScript_BehaviorDescriptor();
-      case 9:
-        return new ProducedDataDeclaration_BehaviorDescriptor();
       case 1:
-        return new DataDependencyReference_BehaviorDescriptor();
-      case 5:
-        return new MigrateOperation_BehaviorDescriptor();
-      case 10:
-        return new PropertyPatternVariableReference_BehaviorDescriptor();
-      case 4:
-        return new LinkPatternVariableReference_BehaviorDescriptor();
-      case 3:
-        return new ForEachMatchingExpression_BehaviorDescriptor();
+        return new DataDependency_BehaviorDescriptor();
       case 7:
-        return new NodePatternVariableReference_BehaviorDescriptor();
+        return new MigrationScript_BehaviorDescriptor();
+      case 10:
+        return new ProducedDataDeclaration_BehaviorDescriptor();
       case 2:
-        return new ExecuteAfterDeclaration_BehaviorDescriptor();
+        return new DataDependencyReference_BehaviorDescriptor();
+      case 6:
+        return new MigrateOperation_BehaviorDescriptor();
+      case 11:
+        return new PropertyPatternVariableReference_BehaviorDescriptor();
+      case 5:
+        return new LinkPatternVariableReference_BehaviorDescriptor();
+      case 4:
+        return new ForEachMatchingExpression_BehaviorDescriptor();
       case 8:
+        return new NodePatternVariableReference_BehaviorDescriptor();
+      case 3:
+        return new ExecuteAfterDeclaration_BehaviorDescriptor();
+      case 9:
         return new OrderDependency_BehaviorDescriptor();
+      case 14:
+        return new TransformStatement_BehaviorDescriptor();
+      case 12:
+        return new QuotationConsequence_BehaviorDescriptor();
+      case 0:
+        return new ConsequenceFunction_BehaviorDescriptor();
       default:
         return BehaviorAspectInterpreted.getInstance().getDescriptor(fqName);
     }
   }
-  private static String[] stringSwitchCases_846f5o_a0a0b = new String[]{"jetbrains.mps.lang.migration.structure.DataDependency", "jetbrains.mps.lang.migration.structure.DataDependencyReference", "jetbrains.mps.lang.migration.structure.ExecuteAfterDeclaration", "jetbrains.mps.lang.migration.structure.ForEachMatchingExpression", "jetbrains.mps.lang.migration.structure.LinkPatternVariableReference", "jetbrains.mps.lang.migration.structure.MigrateOperation", "jetbrains.mps.lang.migration.structure.MigrationScript", "jetbrains.mps.lang.migration.structure.NodePatternVariableReference", "jetbrains.mps.lang.migration.structure.OrderDependency", "jetbrains.mps.lang.migration.structure.ProducedDataDeclaration", "jetbrains.mps.lang.migration.structure.PropertyPatternVariableReference", "jetbrains.mps.lang.migration.structure.RequiredDataDeclaration"};
+  private static String[] stringSwitchCases_846f5o_a0a0b = new String[]{"jetbrains.mps.lang.migration.structure.ConsequenceFunction", "jetbrains.mps.lang.migration.structure.DataDependency", "jetbrains.mps.lang.migration.structure.DataDependencyReference", "jetbrains.mps.lang.migration.structure.ExecuteAfterDeclaration", "jetbrains.mps.lang.migration.structure.ForEachMatchingExpression", "jetbrains.mps.lang.migration.structure.LinkPatternVariableReference", "jetbrains.mps.lang.migration.structure.MigrateOperation", "jetbrains.mps.lang.migration.structure.MigrationScript", "jetbrains.mps.lang.migration.structure.NodePatternVariableReference", "jetbrains.mps.lang.migration.structure.OrderDependency", "jetbrains.mps.lang.migration.structure.ProducedDataDeclaration", "jetbrains.mps.lang.migration.structure.PropertyPatternVariableReference", "jetbrains.mps.lang.migration.structure.QuotationConsequence", "jetbrains.mps.lang.migration.structure.RequiredDataDeclaration", "jetbrains.mps.lang.migration.structure.TransformStatement"};
 }

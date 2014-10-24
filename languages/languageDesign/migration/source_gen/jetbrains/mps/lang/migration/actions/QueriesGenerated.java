@@ -4,10 +4,6 @@ package jetbrains.mps.lang.migration.actions;
 
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.action.NodeSetupContext;
-import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.smodel.action.SNodeFactoryOperations;
-import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
@@ -15,18 +11,20 @@ import java.util.List;
 import jetbrains.mps.openapi.editor.cells.SubstituteAction;
 import jetbrains.mps.smodel.action.NodeSubstituteActionsFactoryContext;
 import java.util.ArrayList;
+import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.smodel.action.DefaultSimpleSubstituteAction;
 import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
 public class QueriesGenerated {
-  public static void nodeFactory_NodeSetup_MigrateOperation_1901572971594223632(final IOperationContext operationContext, final NodeSetupContext _context) {
-    SNode closure = SNodeFactoryOperations.createNewNode(NameUtil.nodeFQName(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral")), null);
-    ListSequence.fromList(SLinkOperations.getTargets(closure, "parameter", true)).addElement(_quotation_createNode_a0a1a0a());
-    SPropertyOperations.set(closure, "forceMultiLine", "" + (true));
-    SLinkOperations.setTarget(_context.getNewNode(), "closure", closure, true);
+  public static void nodeFactory_NodeSetup_ConsequenceFunction_1901572971594223632(final IOperationContext operationContext, final NodeSetupContext _context) {
+    ListSequence.fromList(SLinkOperations.getTargets(_context.getNewNode(), "parameter", true)).addElement(_quotation_createNode_md2x8h_a0a0a0a());
+    SPropertyOperations.set(_context.getNewNode(), "forceMultiLine", "" + (true));
   }
   public static List<SubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_Expression_7527743013694465754(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
@@ -55,7 +53,7 @@ public class QueriesGenerated {
     }
     return result;
   }
-  private static SNode _quotation_createNode_a0a1a0a() {
+  private static SNode _quotation_createNode_md2x8h_a0a0a0a() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     SNode quotedNode_2 = null;
