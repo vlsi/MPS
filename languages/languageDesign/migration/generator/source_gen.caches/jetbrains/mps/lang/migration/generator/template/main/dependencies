@@ -19,6 +19,7 @@
     <classNode dependClassName="jetbrains.mps.lang.migration.behavior.MigrationScript_Behavior" />
     <classNode dependClassName="jetbrains.mps.lang.migration.behavior.TransformStatement_Behavior" />
     <classNode dependClassName="jetbrains.mps.lang.migration.util.MigrationsCheckUtil" />
+    <classNode dependClassName="jetbrains.mps.lang.pattern.behavior.PatternVarsUtil" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations" />
