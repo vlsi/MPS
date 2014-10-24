@@ -15,6 +15,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.NodeReadAccessCasterInEditor;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.ref.SReferenceLinkAdapterById;
+import jetbrains.mps.smodel.adapter.ids.SReferenceLinkId;
 import java.util.Map;
 import java.util.HashMap;
 import java.lang.reflect.Method;
@@ -310,7 +312,7 @@ public class SNodeReadAccess_Test extends BaseTransformationTest {
       StatCountNodeReadAccessInEditorListener listener = new StatCountNodeReadAccessInEditorListener(sNode);
       NodeReadAccessCasterInEditor.setCellBuildNodeReadAccessListener(listener);
 
-      SNodeAccessUtil.setReferenceTarget(sNode, "localVariableDeclaration", SNodeOperations.cast(this.getNodeById("4195712261513781527"), "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration"));
+      SNodeAccessUtil.setReferenceTarget(sNode, new SReferenceLinkAdapterById(SReferenceLinkId.deserialize("f3061a53-9226-4cc5-a443-f952ceaf5816/1068498886296/1068581517664"), "variableDeclaration"), SNodeOperations.cast(this.getNodeById("4195712261513781527"), "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration"));
 
       this.assertMethod("public void jetbrains.mps.smodel.SNode.setReferenceTarget(java.lang.String,org.jetbrains.mps.openapi.model.SNode)", listener.getResults().o1);
     }
