@@ -22,6 +22,7 @@
         <generator generatorUID="b8e4beec-8383-4fb9-b0bb-9d1c9c159cfc(jetbrains.mps.lang.structure#1170324972255)" />
         <generator generatorUID="cedbe277-2e6e-42bf-ae23-90ac9db5a8e3(jetbrains.mps.lang.classLike#3751132065236752909)" />
         <generator generatorUID="2bdcefec-ba49-4b32-ab50-ebc7a41d5090(jetbrains.mps.lang.smodel#1139186730696)" />
+        <generator generatorUID="b736a816-59a2-4796-a8e6-372fc0a096ce(jetbrains.mps.lang.quotation#1196351859310)" />
       </external-templates>
       <dependencies>
         <dependency reexport="false">6354ebe7-c22a-4a0f-ac54-50b52ab9b065(JDK)</dependency>
@@ -73,7 +74,7 @@
         <language id="7a5dda62-9140-4668-ab76-d5ed1746f2b2" fqName="jetbrains.mps.lang.typesystem" version="0" />
       </languageVersions>
       <mapping-priorities>
-        <mapping-priority-rule kind="strictly_before">
+        <mapping-priority-rule kind="before_or_together">
           <greater-priority-mapping>
             <generator generatorUID="1500dd24-6c0b-4efb-bf73-cc8384a27d84(jetbrains.mps.lang.migration#3735414794051522719)" />
             <external-mapping>
@@ -81,53 +82,23 @@
             </external-mapping>
           </greater-priority-mapping>
           <lesser-priority-mapping>
-            <generator generatorUID="1500dd24-6c0b-4efb-bf73-cc8384a27d84(jetbrains.mps.lang.migration#3735414794051522719)" />
-            <external-mapping>
-              <mapping-set>
-                <mapping-set-element>
-                  <generator generatorUID="5f9babc9-8d5d-4825-8e61-17b241ee6272(jetbrains.mps.baseLanguage.collections#1151699677197)" />
-                  <external-mapping>
-                    <all-local-mappings />
-                  </external-mapping>
-                </mapping-set-element>
-                <mapping-set-element>
-                  <generator generatorUID="857d0a79-6f44-4f46-84ed-9c5b42632011(jetbrains.mps.baseLanguage.closures#1199623535494)" />
-                  <external-mapping>
-                    <all-local-mappings />
-                  </external-mapping>
-                </mapping-set-element>
-              </mapping-set>
-            </external-mapping>
+            <mapping-set>
+              <mapping-set-element>
+                <generator generatorUID="857d0a79-6f44-4f46-84ed-9c5b42632011(jetbrains.mps.baseLanguage.closures#1199623535494)" />
+                <external-mapping>
+                  <all-local-mappings />
+                </external-mapping>
+              </mapping-set-element>
+              <mapping-set-element>
+                <generator generatorUID="5f9babc9-8d5d-4825-8e61-17b241ee6272(jetbrains.mps.baseLanguage.collections#1151699677197)" />
+                <external-mapping>
+                  <all-local-mappings />
+                </external-mapping>
+              </mapping-set-element>
+            </mapping-set>
           </lesser-priority-mapping>
         </mapping-priority-rule>
-        <mapping-priority-rule kind="strictly_before">
-          <greater-priority-mapping>
-            <generator generatorUID="1500dd24-6c0b-4efb-bf73-cc8384a27d84(jetbrains.mps.lang.migration#3735414794051522719)" />
-            <external-mapping>
-              <all-local-mappings />
-            </external-mapping>
-          </greater-priority-mapping>
-          <lesser-priority-mapping>
-            <generator generatorUID="1500dd24-6c0b-4efb-bf73-cc8384a27d84(jetbrains.mps.lang.migration#3735414794051522719)" />
-            <external-mapping>
-              <mapping-set>
-                <mapping-set-element>
-                  <generator generatorUID="1500dd24-6c0b-4efb-bf73-cc8384a27d84(jetbrains.mps.lang.migration#3735414794051522719)" />
-                  <external-mapping>
-                    <mapping-node modelUID="r:1b8e1ff1-9bb5-4fe5-848a-c2f4efdb6402(jetbrains.mps.lang.migration.generator.template.main@generator)" nodeID="3735414794051306688" />
-                  </external-mapping>
-                </mapping-set-element>
-                <mapping-set-element>
-                  <generator generatorUID="46ef3033-ce72-4166-b19e-6ceed23b6844(jetbrains.mps.baseLanguageInternal#1238251529692)" />
-                  <external-mapping>
-                    <mapping-node modelUID="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" nodeID="1238251532162" />
-                  </external-mapping>
-                </mapping-set-element>
-              </mapping-set>
-            </external-mapping>
-          </lesser-priority-mapping>
-        </mapping-priority-rule>
-        <mapping-priority-rule kind="strictly_before">
+        <mapping-priority-rule kind="before_or_together">
           <greater-priority-mapping>
             <generator generatorUID="1500dd24-6c0b-4efb-bf73-cc8384a27d84(jetbrains.mps.lang.migration#3735414794051522719)" />
             <external-mapping>
@@ -141,7 +112,7 @@
             </external-mapping>
           </lesser-priority-mapping>
         </mapping-priority-rule>
-        <mapping-priority-rule kind="strictly_before">
+        <mapping-priority-rule kind="before_or_together">
           <greater-priority-mapping>
             <generator generatorUID="1500dd24-6c0b-4efb-bf73-cc8384a27d84(jetbrains.mps.lang.migration#3735414794051522719)" />
             <external-mapping>
@@ -167,6 +138,30 @@
             <external-mapping>
               <all-local-mappings />
             </external-mapping>
+          </lesser-priority-mapping>
+        </mapping-priority-rule>
+        <mapping-priority-rule kind="before_or_together">
+          <greater-priority-mapping>
+            <generator generatorUID="1500dd24-6c0b-4efb-bf73-cc8384a27d84(jetbrains.mps.lang.migration#3735414794051522719)" />
+            <external-mapping>
+              <all-local-mappings />
+            </external-mapping>
+          </greater-priority-mapping>
+          <lesser-priority-mapping>
+            <mapping-set>
+              <mapping-set-element>
+                <generator generatorUID="e7d4970e-3e9f-4cf0-a129-f5976c82d635(jetbrains.mps.lang.pattern#1174810948060)" />
+                <external-mapping>
+                  <all-local-mappings />
+                </external-mapping>
+              </mapping-set-element>
+              <mapping-set-element>
+                <generator generatorUID="b736a816-59a2-4796-a8e6-372fc0a096ce(jetbrains.mps.lang.quotation#1196351859310)" />
+                <external-mapping>
+                  <all-local-mappings />
+                </external-mapping>
+              </mapping-set-element>
+            </mapping-set>
           </lesser-priority-mapping>
         </mapping-priority-rule>
       </mapping-priorities>
