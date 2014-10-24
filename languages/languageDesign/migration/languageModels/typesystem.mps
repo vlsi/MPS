@@ -666,6 +666,7 @@
     </node>
     <node concept="swut.1174643105530" id="3220955710218147068" info="ig">
       <property role="asn4.1169194658468.1169194664001" value="typeof_PropertyPatternVariableReference" />
+      <property role="asn4.1133920641626.1193676396447" value="trash" />
       <node concept="vg0i.1068580123136" id="3220955710218147420" role="swut.1195213580585.1195213635060" info="sn">
         <node concept="swut.1174658326157" id="3220955710218147765" role="vg0i.1068580123136.1068581517665" info="nn">
           <node concept="swut.1185788614172" id="3220955710218147768" role="swut.1174660718586.1174660783413" info="ng">
@@ -696,6 +697,7 @@
     </node>
     <node concept="swut.1174643105530" id="3220955710218449867" info="ig">
       <property role="asn4.1169194658468.1169194664001" value="typeof_LinkPatternVariableReference" />
+      <property role="asn4.1133920641626.1193676396447" value="trash" />
       <node concept="vg0i.1068580123136" id="3220955710218449868" role="swut.1195213580585.1195213635060" info="sn">
         <node concept="swut.1174658326157" id="3220955710218450008" role="vg0i.1068580123136.1068581517665" info="nn">
           <node concept="swut.1185788614172" id="3220955710218450031" role="swut.1174660718586.1174660783414" info="ng">
@@ -726,6 +728,7 @@
     </node>
     <node concept="swut.1174643105530" id="1901572971594694882" info="ig">
       <property role="asn4.1169194658468.1169194664001" value="typeof_MigrateOperation" />
+      <property role="asn4.1133920641626.1193676396447" value="trash" />
       <node concept="vg0i.1068580123136" id="1901572971594695234" role="swut.1195213580585.1195213635060" info="sn">
         <node concept="swut.1174658326157" id="5872110852616337136" role="vg0i.1068580123136.1068581517665" info="nn">
           <node concept="swut.1185788614172" id="5872110852616337159" role="swut.1174660718586.1174660783414" info="ng">
@@ -772,6 +775,7 @@
     </node>
     <node concept="swut.1174643105530" id="5872110852616077757" info="ig">
       <property role="asn4.1169194658468.1169194664001" value="typeof_ForEachMatchingExpression" />
+      <property role="asn4.1133920641626.1193676396447" value="trash" />
       <node concept="vg0i.1068580123136" id="5872110852616078109" role="swut.1195213580585.1195213635060" info="sn">
         <node concept="swut.1174658326157" id="5872110852616080673" role="vg0i.1068580123136.1068581517665" info="nn">
           <node concept="swut.1185788614172" id="5872110852616080696" role="swut.1174660718586.1174660783414" info="ng">
@@ -810,6 +814,7 @@
     </node>
     <node concept="swut.1174643105530" id="7527743013695059382" info="ig">
       <property role="asn4.1169194658468.1169194664001" value="typeof_NodePatternVariableReference" />
+      <property role="asn4.1133920641626.1193676396447" value="trash" />
       <node concept="vg0i.1068580123136" id="7527743013695059383" role="swut.1195213580585.1195213635060" info="sn">
         <node concept="swut.1174658326157" id="7527743013695059384" role="vg0i.1068580123136.1068581517665" info="nn">
           <node concept="swut.1185788614172" id="7527743013695059385" role="swut.1174660718586.1174660783413" info="ng">

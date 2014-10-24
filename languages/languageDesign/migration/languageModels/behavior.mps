@@ -734,6 +734,7 @@
       </node>
     </node>
     <node concept="am4u.1225194240794" id="3220955710218376438" info="ng">
+      <property role="asn4.1133920641626.1193676396447" value="trash" />
       <reference role="am4u.1225194240794.1225194240799" target="53vh.3220955710217809656" resolveInfo="MigrateOperation" />
       <node concept="am4u.1225194413805" id="3220955710218376439" role="am4u.1225194240794.1225194240801" info="in">
         <node concept="vg0i.1068580123136" id="3220955710218376440" role="vg0i.1137021947720.1137022507850" info="sn" />
