@@ -28,6 +28,7 @@ public class TransformStatement_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createRefNode_pt4ick_b0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_pt4ick_c0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_pt4ick_d0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_pt4ick_e0(editorContext, node));
     return editorCell;
   }
   private EditorCell createConstant_pt4ick_a0(EditorContext editorContext, SNode node) {
@@ -78,6 +79,12 @@ public class TransformStatement_Editor extends DefaultNodeEditor {
       EditorManager manager = EditorManager.getInstanceFromContext(opContext);
       return manager.createNodeRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
     } else
+    return editorCell;
+  }
+  private EditorCell createConstant_pt4ick_e0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ";");
+    editorCell.setCellId("Constant_pt4ick_e0");
+    editorCell.setDefaultText("");
     return editorCell;
   }
   private EditorCell createCollection_pt4ick_a_0(EditorContext editorContext, SNode node) {

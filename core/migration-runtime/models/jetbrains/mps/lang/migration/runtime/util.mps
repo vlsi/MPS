@@ -17,8 +17,6 @@
     <concept id="7866978e-a0f0-4cc7-81bc-4d213d9375e1/1140131837776" name="jetbrains.mps.lang.smodel.structure.Node_ReplaceWithAnotherOperation" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1146644602865" name="jetbrains.mps.baseLanguage.structure.PublicVisibility" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1197027756228" name="jetbrains.mps.baseLanguage.structure.DotExpression" />
-    <concept id="fd392034-7849-419d-9071-12563d152375/1199542442495" name="jetbrains.mps.baseLanguage.closures.structure.FunctionType" />
-    <concept id="fd392034-7849-419d-9071-12563d152375/1225797177491" name="jetbrains.mps.baseLanguage.closures.structure.InvokeFunctionOperation" />
     <property id="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001" name="name" />
     <property id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123132/1181808852946" name="isFinal" />
     <property id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123132/4276006055363816570" name="isSynchronized" />
@@ -32,9 +30,6 @@
     <childRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1178549954367/1178549979242" name="visibility" />
     <childRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1197027756228/1197027771414" name="operand" />
     <childRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1197027756228/1197027833540" name="operation" />
-    <childRole id="fd392034-7849-419d-9071-12563d152375/1199542442495/1199542457201" name="resultType" />
-    <childRole id="fd392034-7849-419d-9071-12563d152375/1199542442495/1199542501692" name="parameterType" />
-    <childRole id="fd392034-7849-419d-9071-12563d152375/1225797177491/1225797361612" name="parameter" />
     <childRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1107461130800/5375687026011219971" name="member" />
     <childRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/4972933694980447171/5680397130376446158" name="type" />
   </debugInfo>
@@ -45,7 +40,6 @@
     <use id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" version="0" implicit="true" index="asn4" />
   </languages>
   <imports>
-    <import index="tp2c" ref="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" implicit="true" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
     <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" implicit="true" />
     <import index="tp25" ref="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" implicit="true" />
@@ -64,15 +58,8 @@
                 <reference role="vg0i.1068498886296.1068581517664" target="5872110852617734407" resolveInfo="node" />
               </node>
               <node concept="4ia1.1140131837776" id="5872110852617735265" role="vg0i.1197027756228.1197027833540" info="nn">
-                <node concept="vg0i.1197027756228" id="5872110852617735972" role="4ia1.1140131837776.1140131861877" info="nn">
-                  <node concept="vg0i.1068498886296" id="5872110852617735383" role="vg0i.1197027756228.1197027771414" info="nn">
-                    <reference role="vg0i.1068498886296.1068581517664" target="5872110852617734002" resolveInfo="migration" />
-                  </node>
-                  <node concept="cakq.1225797177491" id="5872110852617738068" role="vg0i.1197027756228.1197027833540" info="nn">
-                    <node concept="vg0i.1068498886296" id="5872110852617738221" role="cakq.1225797177491.1225797361612" info="nn">
-                      <reference role="vg0i.1068498886296.1068581517664" target="5872110852617734407" resolveInfo="node" />
-                    </node>
-                  </node>
+                <node concept="vg0i.1068498886296" id="5872110852617735383" role="4ia1.1140131837776.1140131861877" info="nn">
+                  <reference role="vg0i.1068498886296.1068581517664" target="5872110852617734002" resolveInfo="migrated" />
                 </node>
               </node>
             </node>
@@ -85,11 +72,8 @@
           <node concept="4ia1.1138055754698" id="5872110852617734423" role="vg0i.4972933694980447171.5680397130376446158" info="in" />
         </node>
         <node concept="vg0i.1068498886292" id="5872110852617734002" role="vg0i.1068580123132.1068580123134" info="ir">
-          <property role="asn4.1169194658468.1169194664001" value="migration" />
-          <node concept="cakq.1199542442495" id="5872110852617734000" role="vg0i.4972933694980447171.5680397130376446158" info="in">
-            <node concept="4ia1.1138055754698" id="5872110852617734039" role="cakq.1199542442495.1199542457201" info="in" />
-            <node concept="4ia1.1138055754698" id="5872110852617734021" role="cakq.1199542442495.1199542501692" info="in" />
-          </node>
+          <property role="asn4.1169194658468.1169194664001" value="migrated" />
+          <node concept="4ia1.1138055754698" id="5636302460526958311" role="vg0i.4972933694980447171.5680397130376446158" info="in" />
         </node>
       </node>
       <node concept="vg0i.1146644602865" id="5872110852617691964" role="vg0i.1178549954367.1178549979242" info="nn" />
