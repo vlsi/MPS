@@ -10,41 +10,20 @@
     <file name="RequiredDataDeclaration_BehaviorDescriptor.java">
       <unit at="13,0,45,0" name="jetbrains.mps.lang.migration.behavior.RequiredDataDeclaration_BehaviorDescriptor" />
     </file>
-    <file name="NodePatternVariableReference_BehaviorDescriptor.java">
-      <unit at="7,0,15,0" name="jetbrains.mps.lang.migration.behavior.NodePatternVariableReference_BehaviorDescriptor" />
-    </file>
-    <file name="DataDependencyReference_BehaviorDescriptor.java">
-      <unit at="9,0,20,0" name="jetbrains.mps.lang.migration.behavior.DataDependencyReference_BehaviorDescriptor" />
-    </file>
-    <file name="ExecuteAfterDeclaration_BehaviorDescriptor.java">
-      <unit at="13,0,45,0" name="jetbrains.mps.lang.migration.behavior.ExecuteAfterDeclaration_BehaviorDescriptor" />
-    </file>
-    <file name="ConsequenceFunction_BehaviorDescriptor.java">
-      <unit at="7,0,15,0" name="jetbrains.mps.lang.migration.behavior.ConsequenceFunction_BehaviorDescriptor" />
-    </file>
-    <file name="ForEachMatchingExpression_BehaviorDescriptor.java">
-      <unit at="8,0,16,0" name="jetbrains.mps.lang.migration.behavior.ForEachMatchingExpression_BehaviorDescriptor" />
-    </file>
-    <file name="MigrateOperation_BehaviorDescriptor.java">
-      <unit at="11,0,25,0" name="jetbrains.mps.lang.migration.behavior.MigrateOperation_BehaviorDescriptor" />
-    </file>
-    <file name="MigrationScript_BehaviorDescriptor.java">
-      <unit at="8,0,19,0" name="jetbrains.mps.lang.migration.behavior.MigrationScript_BehaviorDescriptor" />
-    </file>
     <file name="OrderDependency_BehaviorDescriptor.java">
       <unit at="7,0,15,0" name="jetbrains.mps.lang.migration.behavior.OrderDependency_BehaviorDescriptor" />
-    </file>
-    <file name="PropertyPatternVariableReference_BehaviorDescriptor.java">
-      <unit at="7,0,15,0" name="jetbrains.mps.lang.migration.behavior.PropertyPatternVariableReference_BehaviorDescriptor" />
     </file>
     <file name="TransformConsequence_BehaviorDescriptor.java">
       <unit at="6,0,8,0" name="jetbrains.mps.lang.migration.behavior.TransformConsequence_BehaviorDescriptor" />
     </file>
-    <file name="LinkPatternVariableReference_BehaviorDescriptor.java">
-      <unit at="7,0,15,0" name="jetbrains.mps.lang.migration.behavior.LinkPatternVariableReference_BehaviorDescriptor" />
+    <file name="ExecuteAfterDeclaration_BehaviorDescriptor.java">
+      <unit at="13,0,45,0" name="jetbrains.mps.lang.migration.behavior.ExecuteAfterDeclaration_BehaviorDescriptor" />
+    </file>
+    <file name="DataDependencyReference_BehaviorDescriptor.java">
+      <unit at="9,0,20,0" name="jetbrains.mps.lang.migration.behavior.DataDependencyReference_BehaviorDescriptor" />
     </file>
     <file name="BehaviorAspectDescriptor.java">
-      <unit at="9,0,50,0" name="jetbrains.mps.lang.migration.behavior.BehaviorAspectDescriptor" />
+      <unit at="9,0,40,0" name="jetbrains.mps.lang.migration.behavior.BehaviorAspectDescriptor" />
     </file>
     <file name="TransformStatement_BehaviorDescriptor.java">
       <unit at="7,0,15,0" name="jetbrains.mps.lang.migration.behavior.TransformStatement_BehaviorDescriptor" />
@@ -55,40 +34,14 @@
     <file name="DataDependency_BehaviorDescriptor.java">
       <unit at="16,0,51,0" name="jetbrains.mps.lang.migration.behavior.DataDependency_BehaviorDescriptor" />
     </file>
+    <file name="ConsequenceFunction_BehaviorDescriptor.java">
+      <unit at="7,0,15,0" name="jetbrains.mps.lang.migration.behavior.ConsequenceFunction_BehaviorDescriptor" />
+    </file>
+    <file name="MigrationScript_BehaviorDescriptor.java">
+      <unit at="8,0,19,0" name="jetbrains.mps.lang.migration.behavior.MigrationScript_BehaviorDescriptor" />
+    </file>
     <file name="ProducedDataDeclaration_BehaviorDescriptor.java">
       <unit at="12,0,44,0" name="jetbrains.mps.lang.migration.behavior.ProducedDataDeclaration_BehaviorDescriptor" />
-    </file>
-  </root>
-  <root nodeRef="r:306236c1-379e-4cee-b600-470a90233e2f(jetbrains.mps.lang.migration.behavior)/3220955710218376438">
-    <file name="MigrateOperation_Behavior.java">
-      <node id="3220955710218395637" at="19,137,20,317" concept="4" />
-      <node id="7527743013695212266" at="22,133,23,313" concept="4" />
-      <node id="2816368355911268798" at="25,133,26,309" concept="4" />
-      <node id="3220955710218377511" at="28,114,29,294" concept="4" />
-      <node id="3220955710218376472" at="31,5,32,183" concept="4" />
-      <node id="3220955710218376438" at="15,0,17,0" concept="5" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <node id="3220955710218395635" at="18,58,21,7" concept="1" />
-      <node id="7527743013695212264" at="21,7,24,7" concept="1" />
-      <node id="2816368355911268796" at="24,7,27,7" concept="1" />
-      <node id="3220955710218377013" at="27,7,30,7" concept="1" />
-      <node id="3220955710218376686" at="17,101,31,5" concept="1" />
-      <node id="3220955710218376438" at="17,0,34,0" concept="5" trace="virtual_getScope_3734116213129936182#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/scope/Scope;" />
-      <scope id="3220955710218376440" at="15,43,15,43" />
-      <scope id="3220955710218395636" at="19,137,20,317" />
-      <scope id="7527743013695212265" at="22,133,23,313" />
-      <scope id="2816368355911268797" at="25,133,26,309" />
-      <scope id="3220955710218377014" at="28,114,29,294" />
-      <scope id="3220955710218376438" at="15,0,17,0">
-        <var name="thisNode" id="3220955710218376438" />
-      </scope>
-      <scope id="3220955710218376689" at="18,58,30,7" />
-      <scope id="3220955710218376461" at="17,101,32,183" />
-      <scope id="3220955710218376438" at="17,0,34,0">
-        <var name="child" id="3220955710218376464" />
-        <var name="kind" id="3220955710218376462" />
-        <var name="thisNode" id="3220955710218376438" />
-      </scope>
-      <unit id="3220955710218376438" at="14,0,35,0" name="jetbrains.mps.lang.migration.behavior.MigrateOperation_Behavior" />
     </file>
   </root>
   <root nodeRef="r:306236c1-379e-4cee-b600-470a90233e2f(jetbrains.mps.lang.migration.behavior)/5636302460526286563">
