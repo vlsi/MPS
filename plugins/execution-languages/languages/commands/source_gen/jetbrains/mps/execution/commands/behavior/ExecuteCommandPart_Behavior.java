@@ -36,7 +36,7 @@ public class ExecuteCommandPart_Behavior {
   public static List<SNode> call_getRequiredParameters_6129022259108621289(SNode thisNode) {
     return ListSequence.fromList(ExecuteCommandPart_Behavior.call_getParameters_6129022259108621180(thisNode)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return BehaviorReflection.invokeVirtual(Boolean.TYPE, SNodeOperations.cast(it, "jetbrains.mps.execution.commands.structure.ExplicitCommandParameterDeclaration"), "virtual_isRequired_8287978476542625659", new Object[]{});
+        return BehaviorReflection.invokeVirtual(Boolean.TYPE, it, "virtual_isRequired_8287978476542625659", new Object[]{});
       }
     }).toListSequence();
   }
