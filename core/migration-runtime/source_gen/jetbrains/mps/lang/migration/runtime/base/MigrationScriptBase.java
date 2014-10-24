@@ -5,6 +5,8 @@ package jetbrains.mps.lang.migration.runtime.base;
 import jetbrains.mps.util.containers.EmptyIterable;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public abstract class MigrationScriptBase implements MigrationScript {
   public String getCaption() {
@@ -24,6 +26,8 @@ public abstract class MigrationScriptBase implements MigrationScript {
     return getCaption();
   }
   protected void adjustMigratedIds(SNode node, SNode migrated) {
-    // todo 
+    if (!(ListSequence.fromList(SNodeOperations.getAncestors(node, null, false)).contains(migrated))) {
+      ((jetbrains.mps.smodel.SNode) migrated).setId(((jetbrains.mps.smodel.SNode) node).getNodeId());
+    }
   }
 }
