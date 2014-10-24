@@ -95,6 +95,8 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
   @Override
   public SConcept getConcept() {
     nodeRead();
+    fireNodeReadAccess();
+    fireNodeUnclassifiedReadAccess();
     return myConcept;
   }
 
@@ -179,6 +181,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
     if (getConcept().isSubConceptOf(SNodeUtil.concept_INamedConcept)) {
       return SNodeAccessUtil.getProperty(this, SNodeUtil.propertyName_INamedConcept_name);
     } else {
+      fireNodeReadAccess();
       return null;
     }
   }
