@@ -21,7 +21,6 @@ import jetbrains.mps.generator.template.ReferenceMacroContext;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.generator.template.IfMacroContext;
-import jetbrains.mps.execution.commands.behavior.ExplicitCommandParameterDeclaration_Behavior;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 import jetbrains.mps.execution.commands.behavior.ExecuteCommandPart_Behavior;
@@ -127,7 +126,7 @@ public class QueriesGenerated {
     return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "CommandParameterToField");
   }
   public static boolean ifMacro_Condition_865001690840232912(final IfMacroContext _context) {
-    return !(ExplicitCommandParameterDeclaration_Behavior.call_isRequired_856705193941282030(SLinkOperations.getTarget(_context.getNode(), "parameter", false)));
+    return !(BehaviorReflection.invokeVirtual(Boolean.TYPE, SLinkOperations.getTarget(_context.getNode(), "parameter", false), "virtual_isRequired_8287978476542625659", new Object[]{}));
   }
   public static boolean ifMacro_Condition_865001690840232971(final IfMacroContext _context) {
     return (SLinkOperations.getTarget(_context.getNode(), "initializer", true) != null);

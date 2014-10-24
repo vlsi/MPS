@@ -10,6 +10,7 @@ import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import java.util.ArrayList;
 import jetbrains.mps.execution.common.behavior.IGeneratedToClass_Behavior;
 import org.jetbrains.mps.openapi.language.SConceptRepository;
@@ -35,7 +36,7 @@ public class ExecuteCommandPart_Behavior {
   public static List<SNode> call_getRequiredParameters_6129022259108621289(SNode thisNode) {
     return ListSequence.fromList(ExecuteCommandPart_Behavior.call_getParameters_6129022259108621180(thisNode)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return SNodeOperations.isInstanceOf(it, "jetbrains.mps.execution.commands.structure.ExplicitCommandParameterDeclaration") && ExplicitCommandParameterDeclaration_Behavior.call_isRequired_856705193941282030(SNodeOperations.cast(it, "jetbrains.mps.execution.commands.structure.ExplicitCommandParameterDeclaration"));
+        return BehaviorReflection.invokeVirtual(Boolean.TYPE, SNodeOperations.cast(it, "jetbrains.mps.execution.commands.structure.ExplicitCommandParameterDeclaration"), "virtual_isRequired_8287978476542625659", new Object[]{});
       }
     }).toListSequence();
   }

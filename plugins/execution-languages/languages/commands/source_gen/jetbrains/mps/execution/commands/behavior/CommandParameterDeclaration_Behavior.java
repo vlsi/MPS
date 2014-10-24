@@ -15,6 +15,9 @@ import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 public class CommandParameterDeclaration_Behavior {
   public static void init(SNode thisNode) {
   }
+  public static boolean virtual_isRequired_8287978476542625659(SNode thisNode) {
+    return false;
+  }
   public static boolean virtual_generateField_8478830098674441876(SNode thisNode) {
     return true;
   }
