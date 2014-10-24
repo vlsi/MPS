@@ -184,7 +184,13 @@
       <property role="asn4.1169194658468.1169194664001" value="QuotationConsequence" />
       <property role="4jta.1169125787135.5092175715804935370" value="quotation" />
       <property role="asn4.1133920641626.1193676396447" value="transformExtension" />
-      <reference role="4jta.1071489090640.1071489389519" target="tp3r.1196350785113" resolveInfo="Quotation" />
+      <reference role="4jta.1071489090640.1071489389519" target="tpck.1133920641626" resolveInfo="BaseConcept" />
+      <node concept="4jta.1071489288298" id="6129256022887780734" role="4jta.1169125787135.1071489727083" info="ig">
+        <property role="4jta.1071489288298.1071599937831" value="aggregation" />
+        <property role="4jta.1071489288298.1071599776563" value="quotation" />
+        <property role="4jta.1071489288298.1071599893252" value="1" />
+        <reference role="4jta.1071489288298.1071599976176" target="tp3r.1196350785113" resolveInfo="Quotation" />
+      </node>
       <node concept="4jta.1169127622168" id="5636302460526210370" role="4jta.1071489090640.1169129564478" info="ig">
         <reference role="4jta.1169127622168.1169127628841" target="5636302460526173939" resolveInfo="TransformConsequence" />
       </node>

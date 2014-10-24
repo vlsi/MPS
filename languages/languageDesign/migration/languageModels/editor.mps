@@ -324,6 +324,13 @@
         </node>
       </node>
     </node>
+    <node concept="9wj7.1071666914219" id="6129256022887781546" info="ig">
+      <property role="asn4.1133920641626.1193676396447" value="transformExtension" />
+      <reference role="9wj7.1166049232041.1166049300910" target="53vh.5636302460526210369" resolveInfo="QuotationConsequence" />
+      <node concept="9wj7.1073389882823" id="6129256022887784617" role="9wj7.1080736578640.1080736633877" info="sg">
+        <reference role="9wj7.1139848536355.1140103550593" target="53vh.6129256022887780734" />
+      </node>
+    </node>
   </contents>
 </model>
 

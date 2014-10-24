@@ -20,7 +20,7 @@ public class TransformStatement_Behavior {
     if (!((SNodeOperations.isInstanceOf(SLinkOperations.getTarget(thisNode, "consequence", true), "jetbrains.mps.lang.migration.structure.QuotationConsequence")))) {
       return null;
     }
-    return SNodeOperations.getConceptDeclaration(SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(thisNode, "consequence", true), "jetbrains.mps.lang.migration.structure.QuotationConsequence"), "quotedNode", true));
+    return SNodeOperations.getConceptDeclaration(SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(thisNode, "consequence", true), "jetbrains.mps.lang.migration.structure.QuotationConsequence"), "quotation", true), "quotedNode", true));
   }
   public static Scope virtual_getScope_3734116213129936182(SNode thisNode, SNode kind, SNode child) {
     if (SConceptOperations.isExactly(kind, "jetbrains.mps.lang.pattern.structure.PropertyPatternVariableDeclaration") || SConceptOperations.isExactly(kind, "jetbrains.mps.lang.pattern.structure.LinkPatternVariableDeclaration") || SConceptOperations.isExactly(kind, "jetbrains.mps.lang.pattern.structure.PatternVariableDeclaration") || SConceptOperations.isExactly(kind, "jetbrains.mps.lang.pattern.structure.ListPattern")) {

@@ -155,7 +155,7 @@ public class QueriesGenerated {
     return SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), "consequence", true), "jetbrains.mps.lang.migration.structure.ConsequenceFunction");
   }
   public static SNode sourceNodeQuery_5636302460527151371(final SourceSubstituteMacroNodeContext _context) {
-    return SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), "consequence", true), "jetbrains.mps.lang.migration.structure.QuotationConsequence");
+    return SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), "consequence", true), "jetbrains.mps.lang.migration.structure.QuotationConsequence"), "quotation", true);
   }
   public static SNode sourceNodeQuery_5636302460527089965(final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "postprocess", true);

@@ -33,8 +33,10 @@ public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
       case 8:
         return Collections.<ConceptEditor>singletonList(new PropertyPatternVariableReference_Editor());
       case 9:
-        return Collections.<ConceptEditor>singletonList(new RequiredDataDeclaration_Editor());
+        return Collections.<ConceptEditor>singletonList(new QuotationConsequence_Editor());
       case 10:
+        return Collections.<ConceptEditor>singletonList(new RequiredDataDeclaration_Editor());
+      case 11:
         return Collections.<ConceptEditor>singletonList(new TransformStatement_Editor());
       default:
     }
@@ -45,5 +47,5 @@ public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
   }
 
 
-  private static String[] stringSwitchCases_xbvbvu_a0a0b = new String[]{"jetbrains.mps.lang.migration.structure.DataDependency", "jetbrains.mps.lang.migration.structure.DataDependencyReference", "jetbrains.mps.lang.migration.structure.ExecuteAfterDeclaration", "jetbrains.mps.lang.migration.structure.LinkPatternVariableReference", "jetbrains.mps.lang.migration.structure.MigrationScript", "jetbrains.mps.lang.migration.structure.NodePatternVariableReference", "jetbrains.mps.lang.migration.structure.OrderDependency", "jetbrains.mps.lang.migration.structure.ProducedDataDeclaration", "jetbrains.mps.lang.migration.structure.PropertyPatternVariableReference", "jetbrains.mps.lang.migration.structure.RequiredDataDeclaration", "jetbrains.mps.lang.migration.structure.TransformStatement"};
+  private static String[] stringSwitchCases_xbvbvu_a0a0b = new String[]{"jetbrains.mps.lang.migration.structure.DataDependency", "jetbrains.mps.lang.migration.structure.DataDependencyReference", "jetbrains.mps.lang.migration.structure.ExecuteAfterDeclaration", "jetbrains.mps.lang.migration.structure.LinkPatternVariableReference", "jetbrains.mps.lang.migration.structure.MigrationScript", "jetbrains.mps.lang.migration.structure.NodePatternVariableReference", "jetbrains.mps.lang.migration.structure.OrderDependency", "jetbrains.mps.lang.migration.structure.ProducedDataDeclaration", "jetbrains.mps.lang.migration.structure.PropertyPatternVariableReference", "jetbrains.mps.lang.migration.structure.QuotationConsequence", "jetbrains.mps.lang.migration.structure.RequiredDataDeclaration", "jetbrains.mps.lang.migration.structure.TransformStatement"};
 }
