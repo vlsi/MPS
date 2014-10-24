@@ -22,6 +22,7 @@ import com.intellij.openapi.application.ModalityState;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.wm.WindowManager;
 import jetbrains.mps.classloading.ClassLoaderManager;
+import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.DevKit;
@@ -30,7 +31,6 @@ import jetbrains.mps.project.dependency.modules.LanguageDependenciesManager;
 import jetbrains.mps.smodel.BootstrapLanguages;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.smodel.SModelStereotype;
@@ -48,6 +48,7 @@ import jetbrains.mps.workbench.goTo.ui.MpsPopupFactory;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
+import org.jetbrains.mps.openapi.module.ModelAccess;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.module.SearchScope;
@@ -174,10 +175,11 @@ public class ImportHelper {
 
     @Override
     public void navigate(boolean requestFocus) {
-      assert !ModelAccess.instance().canRead();
-
+      ModelAccess modelAccess = ProjectHelper.getModelAccess(myProject);
+      assert modelAccess != null;
+      assert !modelAccess.canRead();
       final Set<SModuleReference> importCandidates = new HashSet<SModuleReference>();
-      ModelAccess.instance().runWriteAction(new Runnable() {
+      modelAccess.runWriteAction(new Runnable() {
         @Override
         public void run() {
           Language lang = ModuleRepositoryFacade.getInstance().getModule(getModuleReference(), Language.class);
@@ -216,7 +218,7 @@ public class ImportHelper {
 
       toImport.add(getModuleReference());
 
-      ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+      modelAccess.executeCommand(new Runnable() {
         @Override
         public void run() {
           boolean reload = false;
@@ -260,7 +262,6 @@ public class ImportHelper {
         return new RootNodeElement(object) {
           @Override
           public void navigate(boolean requestFocus) {
-            ModelAccess.assertLegalRead();
             new AddModelItem(project, model, object.getNodeReference().getModelReference()).navigate(requestFocus);
           }
         };
@@ -282,7 +283,7 @@ public class ImportHelper {
 
       @Override
       public void elementChosen(final Object element) {
-        ModelAccess.instance().runWriteAction(new Runnable() {
+        jetbrains.mps.smodel.ModelAccess.instance().runWriteAction(new Runnable() {
           @Override
           public void run() {
             NavigationItem navigationItem = (NavigationItem) element;
@@ -310,8 +311,17 @@ public class ImportHelper {
 
     @Override
     public void navigate(boolean requestFocus) {
-      SModelReference modelToImport = getModelReference();
-      new ModelImporter(myModel, getFrame()).execute(modelToImport);
+      ModelAccess modelAccess = ProjectHelper.getModelAccess(myProject);
+      assert modelAccess != null;
+      assert !modelAccess.canRead();
+
+      modelAccess.runWriteAction(new Runnable() {
+        @Override
+        public void run() {
+          SModelReference modelToImport = getModelReference();
+          new ModelImporter(myModel, getFrame()).execute(modelToImport);
+        }
+      });
     }
   }
 
