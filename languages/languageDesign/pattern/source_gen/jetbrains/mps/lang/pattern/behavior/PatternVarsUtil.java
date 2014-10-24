@@ -20,6 +20,9 @@ public class PatternVarsUtil {
     if (SNodeOperations.isInstanceOf(patternVar, "jetbrains.mps.lang.pattern.structure.PropertyPatternVariableDeclaration")) {
       return prefix + SPropertyOperations.getString(SNodeOperations.cast(patternVar, "jetbrains.mps.lang.pattern.structure.PropertyPatternVariableDeclaration"), "varName");
     }
+    if (SNodeOperations.isInstanceOf(patternVar, "jetbrains.mps.lang.pattern.structure.ListPattern")) {
+      return prefix + SPropertyOperations.getString(SNodeOperations.cast(patternVar, "jetbrains.mps.lang.pattern.structure.ListPattern"), "varName");
+    }
     return null;
   }
   public static boolean fieldTypeHasParameter(SNode patternVar) {
