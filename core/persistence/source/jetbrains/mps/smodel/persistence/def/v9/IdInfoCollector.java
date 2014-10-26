@@ -73,12 +73,7 @@ public class IdInfoCollector {
   }
 
   private static String getConceptName(SConceptId conceptId) {
-    ConceptRegistry conceptRegistry = ConceptRegistry.getInstance();
-    ConceptDescriptor conceptDescriptor = conceptRegistry == null ? null : conceptRegistry.getConceptDescriptor(conceptId);
-    if (conceptDescriptor != null) {
-      return conceptDescriptor.getConceptFqName();
-    }
-    return DebugRegistry.getInstance().getConceptName(conceptId);
+    return ConceptRegistry.getInstance().getConceptDescriptor(conceptId).getConceptFqName();
   }
 
 }
