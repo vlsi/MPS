@@ -66,13 +66,13 @@ public abstract class SNodeAccessUtil {
     myInstance.setReferenceTargetImpl(node, role, target);
   }
 
-  public void setReference(SNode node, SReferenceLink referenceLink, @Nullable org.jetbrains.mps.openapi.model.SReference reference) {
+  public static void setReference(SNode node, SReferenceLink referenceLink, @Nullable org.jetbrains.mps.openapi.model.SReference reference) {
     //todo for symmetry. Not yet used
     myInstance.setReferenceImpl(node, referenceLink, reference);
   }
 
   @Deprecated
-  public void setReference(SNode node, String role, @Nullable org.jetbrains.mps.openapi.model.SReference reference) {
+  public static void setReference(SNode node, String role, @Nullable org.jetbrains.mps.openapi.model.SReference reference) {
     //todo for symmetry. Not yet used
     myInstance.setReferenceImpl(node, role, reference);
   }
