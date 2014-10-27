@@ -19,6 +19,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.SNodeEditorUtil;
+import jetbrains.mps.util.annotation.ToRemove;
+import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.*;
@@ -50,6 +52,17 @@ public class SNodeFactoryOperations {
     return newNode;
   }
 
+  public static SNode addNewChild(SNode node, SContainmentLink role, String childConceptFQName) {
+    if (node != null) {
+      SNode newChild = NodeFactoryManager.createNode(childConceptFQName, null, node, node.getModel());
+      node.addChild(role, newChild);
+      return newChild;
+    }
+    return null;
+  }
+
+  @Deprecated
+  @ToRemove(version = 3.2)
   public static SNode addNewChild(SNode node, String role, String childConceptFQName) {
     if (node != null) {
       SNode newChild = NodeFactoryManager.createNode(childConceptFQName, null, node, node.getModel());
@@ -68,6 +81,19 @@ public class SNodeFactoryOperations {
     return null;
   }
 
+  public static SNode setNewChild(SNode node, SContainmentLink role, String childConceptFQName) {
+    if (node != null) {
+      Iterable<? extends SNode> ch = node.getChildren(role);
+      SNode prototypeNode = ch.iterator().hasNext() ? ch.iterator().next() : null;
+      SNode newChild = NodeFactoryManager.createNode(childConceptFQName, prototypeNode, node, node.getModel());
+      SNodeEditorUtil.setSingleChild(node, role, newChild);
+      return newChild;
+    }
+    return null;
+  }
+
+  @Deprecated
+  @ToRemove(version = 3.2)
   public static SNode setNewChild(SNode node, String role, String childConceptFQName) {
     if (node != null) {
       Iterable<? extends SNode> ch = node.getChildren(role);
