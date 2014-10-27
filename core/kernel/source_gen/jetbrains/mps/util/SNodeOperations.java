@@ -20,7 +20,9 @@ import java.util.HashSet;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import org.jetbrains.mps.openapi.model.SReference;
 import java.util.LinkedList;
+import jetbrains.mps.util.annotation.ToRemove;
 import java.util.Iterator;
+import org.jetbrains.mps.openapi.language.SContainmentLink;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -153,7 +155,20 @@ public class SNodeOperations {
   /**
    * todo rewrite the code via snode methods
    */
+  @Deprecated
+  @ToRemove(version = 3.2)
   public static void insertChild(SNode parent, String role, SNode child, SNode anchor) {
+    if (anchor != null) {
+      parent.insertChildBefore(role, child, ((jetbrains.mps.smodel.SNode) anchor).treeNext());
+      return;
+    }
+    Iterator<? extends SNode> it = parent.getChildren().iterator();
+    parent.insertChildBefore(role, child, (it.hasNext() ? it.next() : null));
+  }
+  /**
+   * todo rewrite the code via snode methods
+   */
+  public static void insertChild(SNode parent, SContainmentLink role, SNode child, SNode anchor) {
     if (anchor != null) {
       parent.insertChildBefore(role, child, ((jetbrains.mps.smodel.SNode) anchor).treeNext());
       return;
@@ -213,6 +228,13 @@ public class SNodeOperations {
       }
     }
     return augend;
+  }
+  public static SNode getChild(SNode node, SContainmentLink role) {
+    Iterable<? extends SNode> children = node.getChildren(role);
+    if (!(children.iterator().hasNext())) {
+      return null;
+    }
+    return children.iterator().next();
   }
   public static SNode getChild(SNode node, String role) {
     Iterable<? extends SNode> children = node.getChildren(role);

@@ -7,25 +7,27 @@ import org.jetbrains.mps.openapi.model.SNode;
 import java.util.List;
 import java.util.Collection;
 import java.util.Iterator;
+import org.jetbrains.mps.openapi.language.SContainmentLink;
 import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.util.SNodeOperations;
+import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
-/*package*/ abstract class AbstractSNodeList extends ArrayList<SNode> {
+/*package*/ abstract class AbstractSNodeList<LinkType> extends ArrayList<SNode> {
   protected final SNode myReferenceContainer;
-  protected final String myRole;
-  private AbstractSNodeList(SNode referenceContainer, String role, int initialSize) {
+  protected final LinkType myRole;
+  private AbstractSNodeList(SNode referenceContainer, LinkType role, int initialSize) {
     super(initialSize);
     assert referenceContainer != null;
     myReferenceContainer = referenceContainer;
     assert role != null;
     myRole = role;
   }
-  protected AbstractSNodeList(SNode referenceContainer, String role, List<? extends SNode> referents) {
+  protected AbstractSNodeList(SNode referenceContainer, LinkType role, List<? extends SNode> referents) {
     this(referenceContainer, role, referents.size());
     super.addAll(referents);
   }
-  protected AbstractSNodeList(SNode referenceContainer, String role, SNode referent) {
+  protected AbstractSNodeList(SNode referenceContainer, LinkType role, SNode referent) {
     this(referenceContainer, role, 1);
     super.add(referent);
   }
@@ -139,7 +141,33 @@ import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
     addReference(index, element);
     return result;
   }
-  public static class AggregatedSNodesList extends AbstractSNodeList {
+  public static class ChildrenSNodesList extends AbstractSNodeList<SContainmentLink> {
+    public ChildrenSNodesList(SNode parent, SContainmentLink role) {
+      super(parent, role, IterableUtil.asList(parent.getChildren(role)));
+    }
+    @Override
+    protected void doRemoveReference(SNode node) {
+      myReferenceContainer.removeChild(node);
+    }
+    @Override
+    protected void doAddReference(SNode node) {
+      if (node.getParent() != null) {
+        node.getParent().removeChild(node);
+      }
+      myReferenceContainer.addChild(myRole, node);
+    }
+    @Override
+    protected void insertAfter(SNode node, SNode anchorNode) {
+      if (node.getParent() != null) {
+        node.getParent().removeChild(node);
+      }
+      SNodeOperations.insertChild(myReferenceContainer, myRole, node, anchorNode);
+    }
+  }
+  @Deprecated
+  @ToRemove(version = 3.2)
+  public static class AggregatedSNodesList extends AbstractSNodeList<String> {
+    @Deprecated
     public AggregatedSNodesList(SNode parent, String role) {
       super(parent, role, IterableUtil.asList(parent.getChildren(role)));
     }
@@ -162,7 +190,10 @@ import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
       SNodeOperations.insertChild(myReferenceContainer, myRole, node, anchorNode);
     }
   }
-  public static class LinkedSNodesList extends AbstractSNodeList {
+  @Deprecated
+  @ToRemove(version = 3.2)
+  public static class LinkedSNodesList extends AbstractSNodeList<String> {
+    @Deprecated
     public LinkedSNodesList(SNode referenceContainer, String role) {
       super(referenceContainer, role, referenceContainer.getReferenceTarget(role));
     }
@@ -179,4 +210,5 @@ import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
       doAddReference(node);
     }
   }
+
 }

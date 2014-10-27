@@ -5,8 +5,11 @@ package jetbrains.mps.lang.smodel.generator.smodelAdapter;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.smodel.search.SModelSearchUtil;
-import java.util.Iterator;
+import org.jetbrains.mps.openapi.language.SContainmentLink;
 import jetbrains.mps.util.SNodeOperations;
+import org.jetbrains.mps.openapi.language.SReferenceLink;
+import jetbrains.mps.util.annotation.ToRemove;
+import java.util.Iterator;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 import java.util.List;
 import jetbrains.mps.util.IterableUtil;
@@ -22,6 +25,20 @@ public class SLinkOperations {
     SNode linkDeclaration = SModelSearchUtil.findLinkDeclaration(concept, linkRole);
     return linkDeclaration;
   }
+  public static SNode getChild(SNode node, SContainmentLink role) {
+    if (node == null) {
+      return null;
+    }
+    return SNodeOperations.getChild(node, role);
+  }
+  public static SNode getReferenceTarget(SNode node, SReferenceLink role) {
+    if (node == null) {
+      return null;
+    }
+    return node.getReferenceTarget(role);
+  }
+  @Deprecated
+  @ToRemove(version = 3.2)
   public static SNode getTarget(SNode node, String role, boolean child) {
     if (node != null) {
       if (child) {
@@ -32,6 +49,33 @@ public class SLinkOperations {
     }
     return null;
   }
+  public static SNode setChild(SNode node, SContainmentLink role, SNode targetNode) {
+    if (node != null) {
+      SNode oldChild = getChild(node, role);
+      if (oldChild != null) {
+        node.removeChild(oldChild);
+      }
+
+      if (targetNode != null) {
+        SNode targetParent = targetNode.getParent();
+        if (targetParent != node) {
+          if (targetParent != null) {
+            targetParent.removeChild(targetNode);
+          }
+          node.addChild(role, targetNode);
+        }
+      }
+    }
+    return targetNode;
+  }
+  public static SNode setReferenceTarget(SNode node, SReferenceLink role, SNode targetNode) {
+    if (node != null) {
+      SNodeAccessUtil.setReferenceTarget(node, role, targetNode);
+    }
+    return targetNode;
+  }
+  @Deprecated
+  @ToRemove(version = 3.2)
   public static SNode setTarget(SNode node, String role, SNode targetNode, boolean child) {
     if (node != null) {
       if (child) {
@@ -55,6 +99,16 @@ public class SLinkOperations {
     }
     return targetNode;
   }
+  public static SNode setNewChild(SNode node, SContainmentLink role, String childConceptFQName) {
+    if (node != null) {
+      SNode newChild = SModelOperations.createNewNode(node.getModel(), childConceptFQName);
+      setChild(node, role, newChild);
+      return newChild;
+    }
+    return null;
+  }
+  @Deprecated
+  @ToRemove(version = 3.2)
   public static SNode setNewChild(SNode node, String role, String childConceptFQName) {
     if (node != null) {
       SNode newChild = SModelOperations.createNewNode(node.getModel(), childConceptFQName);
@@ -63,12 +117,30 @@ public class SLinkOperations {
     }
     return null;
   }
+  public static List<SNode> getChildren(SNode node, SContainmentLink role, boolean child) {
+    if (node != null && role != null) {
+      return new AbstractSNodeList.ChildrenSNodesList(node, role);
+    }
+    return jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.EMPTY_LIST;
+  }
+  @Deprecated
+  @ToRemove(version = 3.2)
   public static List<SNode> getTargets(SNode node, String role, boolean child) {
     if (node != null && role != null) {
       return (child ? new AbstractSNodeList.AggregatedSNodesList(node, role) : new AbstractSNodeList.LinkedSNodesList(node, role));
     }
     return jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.EMPTY_LIST;
   }
+  public static SNode addNewChild(SNode node, SContainmentLink role, String childConceptFQName) {
+    if (node != null) {
+      SNode newChild = SModelOperations.createNewNode(node.getModel(), childConceptFQName);
+      node.addChild(role, newChild);
+      return newChild;
+    }
+    return null;
+  }
+  @Deprecated
+  @ToRemove(version = 3.2)
   public static SNode addNewChild(SNode node, String role, String childConceptFQName) {
     if (node != null) {
       SNode newChild = SModelOperations.createNewNode(node.getModel(), childConceptFQName);
@@ -77,22 +149,7 @@ public class SLinkOperations {
     }
     return null;
   }
-  public static SNode addChild(SNode parent, String role, SNode child) {
-    if (parent != null && child != null) {
-      SNode childParent = child.getParent();
-      if (childParent != null) {
-        childParent.removeChild(child);
-      }
-      parent.addChild(role, child);
-    }
-    return child;
-  }
-  public static void addAll(SNode parent, String role, List<SNode> nodeList) {
-    for (SNode node : nodeList) {
-      addChild(parent, role, node);
-    }
-  }
-  public static SNode insertChildFirst(SNode parent, String role, SNode child) {
+  public static SNode addChild(SNode parent, SContainmentLink role, SNode child) {
     if (parent != null && child != null) {
       SNode childParent = child.getParent();
       if (childParent != null) {
@@ -103,19 +160,63 @@ public class SLinkOperations {
     return child;
   }
   @Deprecated
-  public static SNode removeChild(SNode parent, String role) {
-    // use SNodeOperations.detachNode 
-    if (parent == null) {
-      return null;
+  @ToRemove(version = 3.2)
+  public static SNode addChild(SNode parent, String role, SNode child) {
+    if (parent != null && child != null) {
+      SNode childParent = child.getParent();
+      if (childParent != null) {
+        childParent.removeChild(child);
+      }
+      parent.addChild(role, child);
     }
-    Iterator<SNode> it = ((Iterator) parent.getChildren(role).iterator());
-    SNode child = (it.hasNext() ? it.next() : null);
-    if (child != null) {
-      parent.removeChild(child);
-      return child;
-    }
-    return null;
+    return child;
   }
+  public static void addAll(SNode parent, SContainmentLink role, List<SNode> nodeList) {
+    for (SNode node : nodeList) {
+      addChild(parent, role, node);
+    }
+  }
+  @Deprecated
+  @ToRemove(version = 3.2)
+  public static void addAll(SNode parent, String role, List<SNode> nodeList) {
+    for (SNode node : nodeList) {
+      addChild(parent, role, node);
+    }
+  }
+  public static SNode insertChildFirst(SNode parent, SContainmentLink role, SNode child) {
+    if (parent != null && child != null) {
+      SNode childParent = child.getParent();
+      if (childParent != null) {
+        childParent.removeChild(child);
+      }
+      parent.addChild(role, child);
+    }
+    return child;
+  }
+  @Deprecated
+  @ToRemove(version = 3.2)
+  public static SNode insertChildFirst(SNode parent, String role, SNode child) {
+    if (parent != null && child != null) {
+      SNode childParent = child.getParent();
+      if (childParent != null) {
+        childParent.removeChild(child);
+      }
+      parent.addChild(role, child);
+    }
+    return child;
+  }
+  public static List<SNode> removeAllChildren(SNode parent, SContainmentLink role) {
+    if (parent == null) {
+      return jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.EMPTY_LIST;
+    }
+    Iterable<? extends SNode> children = parent.getChildren(role);
+    for (SNode child : children) {
+      parent.removeChild(child);
+    }
+    return IterableUtil.asList(children);
+  }
+  @Deprecated
+  @ToRemove(version = 3.2)
   public static List<SNode> removeAllChildren(SNode parent, String role) {
     if (parent == null) {
       return jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.EMPTY_LIST;
