@@ -19,12 +19,9 @@ import com.intellij.openapi.editor.colors.EditorColors;
 import com.intellij.openapi.editor.colors.EditorColorsManager;
 import com.intellij.ui.ScrollPaneFactory;
 import com.intellij.ui.components.JBList;
-import com.intellij.util.ui.AbstractLayoutManager;
 import com.intellij.util.ui.UIUtil;
 import jetbrains.mps.RuntimeFlags;
 import jetbrains.mps.editor.runtime.impl.NodeSubstituteActionsComparator;
-import jetbrains.mps.ide.icons.IconManager;
-import jetbrains.mps.ide.icons.IdeIcons;
 import jetbrains.mps.nodeEditor.CellSide;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.EditorContext;
@@ -37,16 +34,13 @@ import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.cells.SubstituteAction;
 import jetbrains.mps.openapi.editor.cells.SubstituteInfo;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.smodel.action.AbstractNodeSubstituteAction;
-import jetbrains.mps.smodel.presentation.NodePresentationUtil;
 import jetbrains.mps.typesystem.inference.ITypeContextOwner;
 import jetbrains.mps.typesystem.inference.ITypechecking.Computation;
 import jetbrains.mps.typesystem.inference.NonReusableTypecheckingContextOwner;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.typesystem.inference.TypeContextManager;
 import jetbrains.mps.util.Computable;
-import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.WindowsUtil;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
@@ -54,22 +48,15 @@ import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNode;
 
 import javax.swing.DefaultListModel;
-import javax.swing.Icon;
-import javax.swing.JLabel;
 import javax.swing.JList;
-import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JWindow;
-import javax.swing.ListCellRenderer;
 import javax.swing.ListModel;
 import javax.swing.ListSelectionModel;
 import javax.swing.event.ListDataListener;
-import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Component;
-import java.awt.Container;
 import java.awt.Dimension;
-import java.awt.Font;
 import java.awt.Point;
 import java.awt.Rectangle;
 import java.awt.Window;
@@ -266,10 +253,10 @@ public class NodeSubstituteChooser implements KeyboardHandler {
       matchingActions = getMatchingActions(trimPattern, false);
     }
     try {
-      Collections.sort(matchingActions, SubstituteActionUtil.createComparator(needToTrim ? trimPattern : pattern));
-
-      if (myIsSmart /*&& false*/) {
+      if (myIsSmart) {
         sortSmartActions(matchingActions);
+      } else {
+        Collections.sort(matchingActions, SubstituteActionUtil.createComparator(needToTrim ? trimPattern : pattern));
       }
     } catch (Exception e) {
       LOG.error(e, e);
@@ -303,22 +290,6 @@ public class NodeSubstituteChooser implements KeyboardHandler {
 
   private void sortSmartActions(List<SubstituteAction> matchingActions) {
     Collections.sort(matchingActions, new NodeSubstituteActionsComparator(myContextCell.getSNode().getContainingRoot()));
-  }
-
-  private int getDescriptionLength(SubstituteAction action, String pattern) {
-    String descriptionText = action.getDescriptionText(pattern);
-    if (descriptionText == null) {
-      descriptionText = "";
-    }
-    return descriptionText.length();
-  }
-
-  private int getTextLength(SubstituteAction action, String pattern) {
-    String text = action.getVisibleMatchingText(pattern);
-    if (text == null) {
-      text = "";
-    }
-    return text.length();
   }
 
   @Override
@@ -442,11 +413,6 @@ public class NodeSubstituteChooser implements KeyboardHandler {
         action.substitute(myEditorComponent.getEditorContext(), pattern);
       }
     });
-  }
-
-  public void doSubstituteSelection(String pattern, int index) {
-    List<SubstituteAction> actions = getMatchingActions(pattern, false);
-    actions.get(index).substitute(myEditorComponent.getEditorContext(), pattern);
   }
 
   private void repaintPopupMenu() {
@@ -590,10 +556,6 @@ public class NodeSubstituteChooser implements KeyboardHandler {
       super.dispose();
     }
 
-    public int getFontWidth() {
-      return getFontMetrics(myList.getFont()).stringWidth("x");
-    }
-
     public void setRelativeCell(EditorCell cell) {
       myRelativeCell = cell;
     }
@@ -609,19 +571,6 @@ public class NodeSubstituteChooser implements KeyboardHandler {
         index = 0;
       }
       myList.setSelectedIndex(index);
-    }
-
-    public String getSelectedText(final String pattern) {
-      if (getSelectionIndex() != -1) {
-        String result = ModelAccess.instance().runReadAction(new Computable<String>() {
-          @Override
-          public String compute() {
-            return mySubstituteActions.get(getSelectionIndex()).getMatchingText(pattern);
-          }
-        });
-        return result != null ? result : "";
-      }
-      return "";
     }
 
     public void relayout() {
