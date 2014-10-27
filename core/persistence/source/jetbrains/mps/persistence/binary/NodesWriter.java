@@ -20,12 +20,14 @@ import jetbrains.mps.persistence.ModelEnvironmentInfo;
 import jetbrains.mps.smodel.DynamicReference;
 import jetbrains.mps.smodel.DynamicReference.DynamicReferenceOrigin;
 import jetbrains.mps.smodel.StaticReference;
+import jetbrains.mps.smodel.adapter.structure.concept.SConceptAdapterByName;
 import jetbrains.mps.smodel.persistence.def.v9.IdInfoCollector;
 import jetbrains.mps.smodel.runtime.ConceptKind;
 import jetbrains.mps.smodel.runtime.StaticScope;
 import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.util.io.ModelOutputStream;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.language.SProperty;
 import org.jetbrains.mps.openapi.model.SModelId;
@@ -71,8 +73,14 @@ public class NodesWriter {
   }
 
   public void writeNode(SNode node, ModelOutputStream os) throws IOException {
-    os.writeString(IdHelper.getConceptId(node.getConcept()).serialize());
-    os.writeString(node.getConcept().getQualifiedName());
+    SConcept concept = node.getConcept();
+    if (concept instanceof SConceptAdapterByName){
+      os.writeByte(0x70);
+    } else{
+      os.writeByte(0x71);
+      os.writeString(IdHelper.getConceptId(concept).serialize());
+    }
+    os.writeString(concept.getQualifiedName());
     os.writeNodeId(node.getNodeId());
     SContainmentLink roleInParentId = node.getContainmentLink();
     os.writeString(roleInParentId == null ? null : IdHelper.getLinkId(roleInParentId).serialize());
