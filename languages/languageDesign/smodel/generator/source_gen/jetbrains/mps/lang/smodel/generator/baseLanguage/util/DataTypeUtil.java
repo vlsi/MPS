@@ -6,6 +6,8 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.structure.behavior.EnumerationDataTypeDeclaration_Behavior;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.link.SContainmentLinkAdapterById;
+import jetbrains.mps.smodel.adapter.ids.SContainmentLinkId;
 
 public class DataTypeUtil {
   public DataTypeUtil() {
@@ -15,6 +17,6 @@ public class DataTypeUtil {
     if (defMember != null) {
       return defMember;
     }
-    return ListSequence.fromList(SLinkOperations.getTargets(enumDatatype, "member", true)).first();
+    return ListSequence.fromList(SLinkOperations.getChildren(enumDatatype, new SContainmentLinkAdapterById(SContainmentLinkId.deserialize("c72da2b9-7cce-4447-8389-f407dc1158b7/1082978164219/1083172003582"), "member"))).first();
   }
 }

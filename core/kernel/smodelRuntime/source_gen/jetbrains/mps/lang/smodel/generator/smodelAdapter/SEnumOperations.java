@@ -10,6 +10,8 @@ import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import java.util.List;
+import jetbrains.mps.smodel.adapter.structure.link.SContainmentLinkAdapterById;
+import jetbrains.mps.smodel.adapter.ids.SContainmentLinkId;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 
 public class SEnumOperations {
@@ -23,7 +25,7 @@ public class SEnumOperations {
     }).first());
   }
   public static List<SNode> getEnumMembers(SNode enumm) {
-    return SLinkOperations.getTargets(enumm, "member", true);
+    return SLinkOperations.getChildren(enumm, new SContainmentLinkAdapterById(SContainmentLinkId.deserialize("c72da2b9-7cce-4447-8389-f407dc1158b7/1082978164219/1083172003582"), "member"));
   }
   public static SNode getEnumMember(SNode enumm, String name) {
     return enumMemberForName(enumm, name);
@@ -36,7 +38,7 @@ public class SEnumOperations {
   }
   public static SNode enumMemberForName(SNode enumm, final String name) {
     SNode enumNode = (SNode) enumm;
-    return ((SNode) ListSequence.fromList(SLinkOperations.getTargets(enumNode, "member", true)).findFirst(new IWhereFilter<SNode>() {
+    return ((SNode) ListSequence.fromList(SLinkOperations.getChildren(enumNode, new SContainmentLinkAdapterById(SContainmentLinkId.deserialize("c72da2b9-7cce-4447-8389-f407dc1158b7/1082978164219/1083172003582"), "member"))).findFirst(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return BehaviorReflection.invokeNonVirtual(String.class, it, "jetbrains.mps.lang.structure.structure.EnumerationMemberDeclaration", "call_getName_1240169660918", new Object[]{}).equals(name);
       }
@@ -46,7 +48,7 @@ public class SEnumOperations {
     if (value == null) {
       return ((SNode) BehaviorReflection.invokeNonVirtual((Class<SNode>) ((Class) Object.class), enumm, "jetbrains.mps.lang.structure.structure.EnumerationDataTypeDeclaration", "call_getDefaultMember_1213877397785", new Object[]{}));
     }
-    return ((SNode) ListSequence.fromList(SLinkOperations.getTargets(enumm, "member", true)).findFirst(new IWhereFilter<SNode>() {
+    return ((SNode) ListSequence.fromList(SLinkOperations.getChildren(enumm, new SContainmentLinkAdapterById(SContainmentLinkId.deserialize("c72da2b9-7cce-4447-8389-f407dc1158b7/1082978164219/1083172003582"), "member"))).findFirst(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SPropertyOperations.getString(it, "internalValue").equals(value);
       }

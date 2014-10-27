@@ -9,6 +9,10 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.link.SContainmentLinkAdapterById;
+import jetbrains.mps.smodel.adapter.ids.SContainmentLinkId;
+import jetbrains.mps.smodel.adapter.structure.ref.SReferenceLinkAdapterById;
+import jetbrains.mps.smodel.adapter.ids.SReferenceLinkId;
 import jetbrains.mps.lang.structure.behavior.PrimitiveDataTypeDeclaration_Behavior;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.baseLanguage.behavior.ClassConcept_Behavior;
@@ -20,9 +24,9 @@ public class QueriesUtil {
   public static List<SNode> getNodeOperation_ConceptList_concepts(SNode operation) {
     SNode parm_ConceptList = SNodeOperations.cast(SModelLanguageUtil.findNodeOperationParameter(operation, SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.smodel.structure.OperationParm_ConceptList")), "jetbrains.mps.lang.smodel.structure.OperationParm_ConceptList");
     List<SNode> result = new ArrayList<SNode>();
-    for (SNode cRef : ListSequence.fromList(SLinkOperations.getTargets(parm_ConceptList, "concept", true))) {
-      if (SLinkOperations.getTarget(cRef, "concept", false) != null) {
-        ListSequence.fromList(result).addElement(SLinkOperations.getTarget(cRef, "concept", false));
+    for (SNode cRef : ListSequence.fromList(SLinkOperations.getChildren(parm_ConceptList, new SContainmentLinkAdapterById(SContainmentLinkId.deserialize("7866978e-a0f0-4cc7-81bc-4d213d9375e1/1154546920561/1154546920563"), "concept")))) {
+      if (SLinkOperations.getTarget(cRef, new SReferenceLinkAdapterById(SReferenceLinkId.deserialize("7866978e-a0f0-4cc7-81bc-4d213d9375e1/1154546950173/1154546997487"), "concept")) != null) {
+        ListSequence.fromList(result).addElement(SLinkOperations.getTarget(cRef, new SReferenceLinkAdapterById(SReferenceLinkId.deserialize("7866978e-a0f0-4cc7-81bc-4d213d9375e1/1154546950173/1154546997487"), "concept")));
       }
     }
     return result;
@@ -33,9 +37,9 @@ public class QueriesUtil {
     if ((parm_StopList == null)) {
       return result;
     }
-    for (SNode cRef : ListSequence.fromList(SLinkOperations.getTargets(parm_StopList, "concept", true))) {
-      if (SLinkOperations.getTarget(cRef, "concept", false) != null) {
-        ListSequence.fromList(result).addElement(SLinkOperations.getTarget(cRef, "concept", false));
+    for (SNode cRef : ListSequence.fromList(SLinkOperations.getChildren(parm_StopList, new SContainmentLinkAdapterById(SContainmentLinkId.deserialize("7866978e-a0f0-4cc7-81bc-4d213d9375e1/1803469493727536395/1803469493727536396"), "concept")))) {
+      if (SLinkOperations.getTarget(cRef, new SReferenceLinkAdapterById(SReferenceLinkId.deserialize("7866978e-a0f0-4cc7-81bc-4d213d9375e1/1154546950173/1154546997487"), "concept")) != null) {
+        ListSequence.fromList(result).addElement(SLinkOperations.getTarget(cRef, new SReferenceLinkAdapterById(SReferenceLinkId.deserialize("7866978e-a0f0-4cc7-81bc-4d213d9375e1/1154546950173/1154546997487"), "concept")));
       }
     }
     return result;
@@ -50,7 +54,7 @@ public class QueriesUtil {
     return SModelLanguageUtil.findNodeOperationParameter(inputNode, SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.smodel.structure.OperationParm_Root")) != null;
   }
   public static SNode get_SPropertyAccess_simple_getterMethod(SNode operation) {
-    SNode datatype = SLinkOperations.getTarget(SLinkOperations.getTarget(operation, "property", false), "dataType", false);
+    SNode datatype = SLinkOperations.getTarget(SLinkOperations.getTarget(operation, new SReferenceLinkAdapterById(SReferenceLinkId.deserialize("7866978e-a0f0-4cc7-81bc-4d213d9375e1/1138056022639/1138056395725"), "property")), new SReferenceLinkAdapterById(SReferenceLinkId.deserialize("c72da2b9-7cce-4447-8389-f407dc1158b7/1071489288299/1082985295845"), "dataType"));
     String methodName = "getString";
     if (SNodeOperations.isInstanceOf(datatype, "jetbrains.mps.lang.structure.structure.PrimitiveDataTypeDeclaration")) {
       SNode primitiveDatatype = SNodeOperations.cast(datatype, "jetbrains.mps.lang.structure.structure.PrimitiveDataTypeDeclaration");
@@ -69,8 +73,8 @@ public class QueriesUtil {
     return null;
   }
   public static SNode get_SPropertyAccess_enum_getterMethod(SNode operation) {
-    SNode datatype = SLinkOperations.getTarget(SLinkOperations.getTarget(operation, "property", false), "dataType", false);
-    SNode primitiveDatatype = SLinkOperations.getTarget((SNodeOperations.cast(datatype, "jetbrains.mps.lang.structure.structure.EnumerationDataTypeDeclaration")), "memberDataType", false);
+    SNode datatype = SLinkOperations.getTarget(SLinkOperations.getTarget(operation, new SReferenceLinkAdapterById(SReferenceLinkId.deserialize("7866978e-a0f0-4cc7-81bc-4d213d9375e1/1138056022639/1138056395725"), "property")), new SReferenceLinkAdapterById(SReferenceLinkId.deserialize("c72da2b9-7cce-4447-8389-f407dc1158b7/1071489288299/1082985295845"), "dataType"));
+    SNode primitiveDatatype = SLinkOperations.getTarget((SNodeOperations.cast(datatype, "jetbrains.mps.lang.structure.structure.EnumerationDataTypeDeclaration")), new SReferenceLinkAdapterById(SReferenceLinkId.deserialize("c72da2b9-7cce-4447-8389-f407dc1158b7/1082978164219/1083171729157"), "memberDataType"));
     String methodName = "getString_def";
     if (PrimitiveDataTypeDeclaration_Behavior.call_isInteger_1220268780075(primitiveDatatype)) {
       methodName = "getInteger_def";
@@ -86,7 +90,7 @@ public class QueriesUtil {
     return null;
   }
   public static String get_SPropertyAccess_enum_defaultValue(SNode operation) {
-    return SPropertyOperations.getString(DataTypeUtil.getDefaultMember(SNodeOperations.cast(SLinkOperations.getTarget(SLinkOperations.getTarget(operation, "property", false), "dataType", false), "jetbrains.mps.lang.structure.structure.EnumerationDataTypeDeclaration")), "internalValue");
+    return SPropertyOperations.getString(DataTypeUtil.getDefaultMember(SNodeOperations.cast(SLinkOperations.getTarget(SLinkOperations.getTarget(operation, "property", false), "dataType", false), "jetbrains.mps.lang.structure.structure.EnumerationDataTypeDeclaration")), new SPropertyAdapterById(SPropertyId.deserialize("c72da2b9-7cce-4447-8389-f407dc1158b7/1083171877298/1083923523171"), "internalValue"));
   }
   public static boolean nodeOp_noParm_conceptList(SNode op) {
     SNode parm = SModelLanguageUtil.findNodeOperationParameter(op, SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.smodel.structure.OperationParm_Concept"));

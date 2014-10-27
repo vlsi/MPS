@@ -26,6 +26,10 @@ import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.project.structure.ProjectStructureModule;
+import jetbrains.mps.smodel.adapter.structure.link.SContainmentLinkAdapterById;
+import jetbrains.mps.smodel.adapter.ids.SContainmentLinkId;
+import jetbrains.mps.smodel.adapter.structure.property.SPropertyAdapterById;
+import jetbrains.mps.smodel.adapter.ids.SPropertyId;
 
 public class SModelOperations {
   public SModelOperations() {
@@ -172,7 +176,7 @@ public class SModelOperations {
         return null;
       }
       SNode l = ListSequence.fromList(SModelOperations.getRoots(m, "jetbrains.mps.lang.project.structure.Language")).first();
-      return (l == null ? null : ListSequence.fromList(SLinkOperations.getTargets(l, "generator", true)).findFirst(new IWhereFilter<SNode>() {
+      return (l == null ? null : ListSequence.fromList(SLinkOperations.getChildren(l, new SContainmentLinkAdapterById(SContainmentLinkId.deserialize("86ef8290-12bb-4ca7-947f-093788f263a9/6370754048397540895/6370754048397540919"), "generator"))).findFirst(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
           return eq_kkj9n5_a0a0a0a0a0a4a1a21(SPropertyOperations.getString(it, "uuid"), module.getModuleReference().getModuleId().toString());
         }

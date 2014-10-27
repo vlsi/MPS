@@ -5,12 +5,14 @@ package jetbrains.mps.lang.smodel.generator.baseLanguage.util;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.link.SContainmentLinkAdapterById;
+import jetbrains.mps.smodel.adapter.ids.SContainmentLinkId;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.util.NameUtil;
 
 public class SModelLanguageUtil {
   public static SNode findNodeOperationParameter(SNode operation, SNode parameterConcept) {
-    for (SNode parameter : ListSequence.fromList(SLinkOperations.getTargets(operation, "parameter", true))) {
+    for (SNode parameter : ListSequence.fromList(SLinkOperations.getChildren(operation, new SContainmentLinkAdapterById(SContainmentLinkId.deserialize("7866978e-a0f0-4cc7-81bc-4d213d9375e1/1138411891628/1144104376918"), "parameter")))) {
       if (SNodeOperations.isInstanceOf(parameter, NameUtil.nodeFQName(parameterConcept))) {
         return parameter;
       }

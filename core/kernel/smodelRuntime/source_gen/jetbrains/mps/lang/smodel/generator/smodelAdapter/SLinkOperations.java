@@ -25,13 +25,13 @@ public class SLinkOperations {
     SNode linkDeclaration = SModelSearchUtil.findLinkDeclaration(concept, linkRole);
     return linkDeclaration;
   }
-  public static SNode getChild(SNode node, SContainmentLink role) {
+  public static SNode getTarget(SNode node, SContainmentLink role) {
     if (node == null) {
       return null;
     }
     return SNodeOperations.getChild(node, role);
   }
-  public static SNode getReferenceTarget(SNode node, SReferenceLink role) {
+  public static SNode getTarget(SNode node, SReferenceLink role) {
     if (node == null) {
       return null;
     }
@@ -49,9 +49,9 @@ public class SLinkOperations {
     }
     return null;
   }
-  public static SNode setChild(SNode node, SContainmentLink role, SNode targetNode) {
+  public static SNode setTarget(SNode node, SContainmentLink role, SNode targetNode) {
     if (node != null) {
-      SNode oldChild = getChild(node, role);
+      SNode oldChild = getTarget(node, role);
       if (oldChild != null) {
         node.removeChild(oldChild);
       }
@@ -68,7 +68,7 @@ public class SLinkOperations {
     }
     return targetNode;
   }
-  public static SNode setReferenceTarget(SNode node, SReferenceLink role, SNode targetNode) {
+  public static SNode setTarget(SNode node, SReferenceLink role, SNode targetNode) {
     if (node != null) {
       SNodeAccessUtil.setReferenceTarget(node, role, targetNode);
     }
@@ -102,7 +102,7 @@ public class SLinkOperations {
   public static SNode setNewChild(SNode node, SContainmentLink role, String childConceptFQName) {
     if (node != null) {
       SNode newChild = SModelOperations.createNewNode(node.getModel(), childConceptFQName);
-      setChild(node, role, newChild);
+      setTarget(node, role, newChild);
       return newChild;
     }
     return null;
@@ -117,7 +117,7 @@ public class SLinkOperations {
     }
     return null;
   }
-  public static List<SNode> getChildren(SNode node, SContainmentLink role, boolean child) {
+  public static List<SNode> getChildren(SNode node, SContainmentLink role) {
     if (node != null && role != null) {
       return new AbstractSNodeList.ChildrenSNodesList(node, role);
     }
