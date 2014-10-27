@@ -173,6 +173,9 @@ public class ReadHelper9 {
   }
 
   public SContainmentLinkId readNodeRole(String s) {
+    if (s == null) {
+      return null;
+    }
     int ix = s.lastIndexOf(WriteHelper.MODEL_SEPARATOR_CHAR);
     SConceptId concept = readConceptId(s.substring(0, ix));
     return new SContainmentLinkId(concept, Long.parseLong(s.substring(ix + 1)));
