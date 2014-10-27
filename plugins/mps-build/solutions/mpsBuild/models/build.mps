@@ -8427,6 +8427,11 @@
           <node concept="bxtc.3189788309731981027" id="5992093632073327205" role="bxtc.3189788309731840248.3189788309731917348" info="ng">
             <reference role="bxtc.3189788309731981027.3189788309731981028" target="5992093632073277155" resolveInfo="jetbrains.mps.lang.migration.runtime" />
           </node>
+          <node concept="bxtc.7259033139236285166" id="3135188134673730529" role="bxtc.5253498789149381388.5253498789149547704" info="nn">
+            <node concept="bxtc.4278635856200794926" id="3135188134673730530" role="bxtc.7259033139236285166.7259033139236285167" info="ng">
+              <reference role="bxtc.4278635856200794926.4278635856200794928" target="8939513996048536140" resolveInfo="jetbrains.mps.lang.quotation" />
+            </node>
+          </node>
         </node>
         <node concept="bxtc.3189788309731840248" id="7771377617298925680" role="bxtc.1500819558095907805.1500819558095907806" info="ng">
           <property role="bxtc.322010710375871467.8369506495128725901" value="true" />
