@@ -83,15 +83,9 @@ public class QueriesGenerated {
     }
     return originalNode.getConcept().getQualifiedName();
   }
-  public static Object propertyMacro_GetPropertyValue_6497389703574369338(final PropertyMacroContext _context) {
-    return _context.getNode().getProperty("propertyName");
-  }
   public static Object propertyMacro_GetPropertyValue_6497389703574369348(final PropertyMacroContext _context) {
-    String value = _context.getNode().getProperty("propertyValue");
+    String value = SPropertyOperations.getString(_context.getNode(), new SPropertyAdapterById(SPropertyId.deserialize("3a13115c-633c-4c5c-bbcc-75c4219e9555/8389748773577451463/8389748773577451513"), "propertyValue"));
     return NameUtil.escapeString(value);
-  }
-  public static Object propertyMacro_GetPropertyValue_6497389703574369246(final PropertyMacroContext _context) {
-    return AttributeOperations.getPropertyName(_context.getNode());
   }
   public static Object propertyMacro_GetPropertyValue_3691177885151654308(final PropertyMacroContext _context) {
     return _context.getNode().getProperty("role");
@@ -365,6 +359,12 @@ public class QueriesGenerated {
   public static boolean ifMacro_Condition_429601079676782080(final IfMacroContext _context) {
     return (SLinkOperations.getTarget(((Tuples._2<SNode, Integer>) _context.getVariable("var:root"))._0(), new SContainmentLinkAdapterById(SContainmentLinkId.deserialize("3a13115c-633c-4c5c-bbcc-75c4219e9555/5455284157993863837/5455284157993863839"), "modelToCreate")) != null);
   }
+  public static SNode sourceNodeQuery_2652588855788549395(final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), new SReferenceLinkAdapterById(SReferenceLinkId.deserialize("3a13115c-633c-4c5c-bbcc-75c4219e9555/8389748773577451463/8389748773577465499"), "property"));
+  }
+  public static SNode sourceNodeQuery_2652588855788911651(final SourceSubstituteMacroNodeContext _context) {
+    return AttributeOperations.getPropertyDeclaration(_context.getNode());
+  }
   public static SNode sourceNodeQuery_8438065045294025901(final SourceSubstituteMacroNodeContext _context) {
     // Here comes major trick with quotations. They are expected to see input model 
     // the same way user did. First attempt to accomplish this was to use 'top-priority' mappings, 
@@ -397,7 +397,7 @@ public class QueriesGenerated {
     return _context.getNode();
   }
   public static Iterable<SNode> sourceNodesQuery_1196351886802(final SourceSubstituteMacroNodesContext _context) {
-    final List<SNode> result = new ArrayList<SNode>();
+    final List<SNode> result = ListSequence.fromList(new ArrayList<SNode>());
     for (SProperty property : Sequence.fromIterable(_context.getNode().getProperties())) {
       if ((AttributeOperations.getAttribute(_context.getNode(), new IAttributeDescriptor.PropertyAttribute("jetbrains.mps.lang.quotation.structure.PropertyAntiquotation", property.getName())) != null)) {
         continue;
