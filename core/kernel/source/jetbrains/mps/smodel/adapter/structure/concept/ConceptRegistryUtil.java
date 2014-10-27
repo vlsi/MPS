@@ -42,9 +42,9 @@ public class ConceptRegistryUtil {
 
     SLanguageId languageId = id.getLanguageId();
     // report each language only once
-    if (reportedLanguages.contains(languageId)) return res;
-
+    if (reportedLanguages.contains(languageId)) return null;
     reportedLanguages.add(languageId);
+
 //    if (LOG.isEnabledFor(Level.WARN)) {
 //      LOG.warn("No concept found for id " + id + ". Please check the language " +
 //          languageId + " is built and compiled.");
@@ -60,7 +60,7 @@ public class ConceptRegistryUtil {
 
     String languageId = NameUtil.namespaceFromConceptFQName(fqName);
     // report each language only once
-    if (reportedLanguages2.contains(languageId)) return res;
+    if (reportedLanguages2.contains(languageId)) return null;
 
     reportedLanguages2.add(languageId);
 //    if (LOG.isEnabledFor(Level.WARN)) {
