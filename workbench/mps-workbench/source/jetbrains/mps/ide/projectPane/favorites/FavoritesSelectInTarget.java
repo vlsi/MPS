@@ -44,7 +44,7 @@ public class FavoritesSelectInTarget extends AbstractProjectViewSelectInTarget {
     for (Object o : objects) {
       FavoritesRoot favoritesRoot = FavoritesRoot.createForValue(o);
       if (favoritesRoot == null) continue;
-      result.addAll(favoritesRoot.getAvaliableNodes());
+      result.addAll(favoritesRoot.getAvailableNodes());
     }
     return result;
   }

@@ -71,7 +71,7 @@ public abstract class MPSTree extends DnDAwareTree implements Disposable {
   private boolean myAutoOpen = false;
   private boolean myLoadingDisabled;
 
-  private Set<MPSTreeNode> myExpadingNodes = new HashSet<MPSTreeNode>();
+  private Set<MPSTreeNode> myExpandingNodes = new HashSet<MPSTreeNode>();
 
   private List<MPSTreeNodeListener> myTreeNodeListeners = new ArrayList<MPSTreeNodeListener>();
 
@@ -103,9 +103,9 @@ public abstract class MPSTree extends DnDAwareTree implements Disposable {
   }
 
   protected void doInit(final MPSTreeNode node) {
-    if (myExpadingNodes.contains(node)) return;
+    if (myExpandingNodes.contains(node)) return;
 
-    myExpadingNodes.add(node);
+    myExpandingNodes.add(node);
     try {
       TextTreeNode progressNode = null;
       if (!myLoadingDisabled && node.isLoadingEnabled()) {
@@ -131,7 +131,7 @@ public abstract class MPSTree extends DnDAwareTree implements Disposable {
       }
 
     } finally {
-      myExpadingNodes.remove(node);
+      myExpandingNodes.remove(node);
     }
   }
 

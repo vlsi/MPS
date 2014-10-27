@@ -39,7 +39,7 @@ class NodeFavoritesRoot extends FavoritesRoot<SNodeReference> {
   }
 
   @Override
-  public List<SNode> getAvaliableNodes() {
+  public List<SNode> getAvailableNodes() {
     return Collections.singletonList(getValue().resolve(MPSModuleRepository.getInstance()));
   }
 }

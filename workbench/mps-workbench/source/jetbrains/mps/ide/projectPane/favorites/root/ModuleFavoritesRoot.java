@@ -44,7 +44,7 @@ class ModuleFavoritesRoot extends FavoritesRoot<SModuleReference> {
   }
 
   @Override
-  public List<SNode> getAvaliableNodes() {
+  public List<SNode> getAvailableNodes() {
     List<SNode> result = new ArrayList<SNode>();
     SModule module = ModuleRepositoryFacade.getInstance().getModule(getValue());
     if (module == null) return result;

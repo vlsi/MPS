@@ -224,11 +224,13 @@ public class FavoritesProjectPane extends BaseLogicalViewProjectPane {
   }
 
   private class MyLogicalViewTree extends MPSTree implements NodeNavigationProvider {
+
+
     @Override
     protected MPSTreeNode rebuild() {
       String subId = getSubId();
       TextTreeNode invisibleRoot = new TextTreeNode(subId == null ? "Favorites" : subId);
-      invisibleRoot.setIcon(new EmptyIcon(10));
+      invisibleRoot.setIcon(EmptyIcon.create(10));
       List<Object> objectList = myFavoritesManager.getRoots(subId);
       if (objectList == null || objectList.size() == 0) {
         invisibleRoot.setText("There is nothing to display.");

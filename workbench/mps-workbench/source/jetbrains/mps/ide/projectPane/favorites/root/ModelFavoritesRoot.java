@@ -39,7 +39,7 @@ class ModelFavoritesRoot extends FavoritesRoot<SModelReference> {
   }
 
   @Override
-  public List<SNode> getAvaliableNodes() {
+  public List<SNode> getAvailableNodes() {
     List<SNode> result = new ArrayList<SNode>();
     final SModel md = SModelRepository.getInstance().getModelDescriptor(getValue());
     if (md == null) return result;

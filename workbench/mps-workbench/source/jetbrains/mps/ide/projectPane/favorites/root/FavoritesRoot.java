@@ -40,13 +40,15 @@ public abstract class FavoritesRoot<T> {
   public static FavoritesRoot createForTreeNode(MPSTreeNode treeNode) {
     Object o = null;
     if (treeNode instanceof SNodeTreeNode) {
-      o = new jetbrains.mps.smodel.SNodePointer(((SNodeTreeNode) treeNode).getSNode());
+      o = ((SNodeTreeNode) treeNode).getSNode().getReference();
     } else if (treeNode instanceof SModelTreeNode) {
-      o = (((SModelTreeNode) treeNode).getModel()).getReference();
+      o = ((SModelTreeNode) treeNode).getModel().getReference();
     } else if (treeNode instanceof ProjectModuleTreeNode) {
-      o = (((ProjectModuleTreeNode) treeNode).getModule()).getModuleReference();
+      o = ((ProjectModuleTreeNode) treeNode).getModule().getModuleReference();
     }
-    if (o != null) return createForValue(o);
+    if (o != null) {
+      return createForValue(o);
+    }
     return null;
   }
 
@@ -60,5 +62,5 @@ public abstract class FavoritesRoot<T> {
 
   public abstract MPSTreeNode getTreeNode(IOperationContext context);
 
-  public abstract List<SNode> getAvaliableNodes();
+  public abstract List<SNode> getAvailableNodes();
 }
