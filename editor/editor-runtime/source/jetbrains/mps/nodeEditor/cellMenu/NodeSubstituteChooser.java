@@ -19,6 +19,7 @@ import com.intellij.openapi.editor.colors.EditorColors;
 import com.intellij.openapi.editor.colors.EditorColorsManager;
 import com.intellij.ui.ScrollPaneFactory;
 import com.intellij.ui.components.JBList;
+import com.intellij.util.ui.AbstractLayoutManager;
 import com.intellij.util.ui.UIUtil;
 import jetbrains.mps.RuntimeFlags;
 import jetbrains.mps.editor.runtime.impl.NodeSubstituteActionsComparator;
@@ -66,6 +67,7 @@ import javax.swing.event.ListDataListener;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Component;
+import java.awt.Container;
 import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.Point;
@@ -88,7 +90,7 @@ public class NodeSubstituteChooser implements KeyboardHandler {
   private static final Logger LOG = LogManager.getLogger(NodeSubstituteChooser.class);
 
   public static final int PREFERRED_WIDTH = 300;
-  public static final int PREFERRED_HEIGHT = 200;
+  public static final int PREFERRED_HEIGHT = 500;
 
   private PopupWindow myPopupWindow = null;
   private boolean myChooserActivated = false;
@@ -104,6 +106,7 @@ public class NodeSubstituteChooser implements KeyboardHandler {
   private SubstituteInfo myNodeSubstituteInfo;
   private List<SubstituteAction> mySubstituteActions = new ArrayList<SubstituteAction>();
   private boolean myMenuEmpty;
+  private NodeItemCellRenderer myCellRenderer;
 
   public NodeSubstituteChooser(EditorComponent editorComponent) {
     myEditorComponent = editorComponent;
@@ -145,6 +148,7 @@ public class NodeSubstituteChooser implements KeyboardHandler {
 
   public void setPatternEditor(NodeSubstitutePatternEditor patternEditor) {
     myPatternEditor = patternEditor;
+    getCellRenderer().setPatternEditor(myPatternEditor);
   }
 
   public void setContextCell(EditorCell contextCell) {
@@ -162,6 +166,13 @@ public class NodeSubstituteChooser implements KeyboardHandler {
     return myPatternEditor;
   }
 
+  NodeItemCellRenderer getCellRenderer() {
+    if (myCellRenderer == null) {
+      myCellRenderer = new NodeItemCellRenderer(getPatternEditor());
+    }
+    return myCellRenderer;
+  }
+
   public boolean isVisible() {
     return myChooserActivated;
   }
@@ -170,14 +181,14 @@ public class NodeSubstituteChooser implements KeyboardHandler {
     return myMenuEmpty;
   }
 
+
+
   public void setVisible(boolean visible) {
-    if (myChooserActivated != visible) {
+     if (myChooserActivated != visible) {
       boolean canShowPopup = getEditorWindow() != null && getEditorWindow().isShowing() && !(RuntimeFlags.isTestMode());
       if (visible) {
         getPatternEditor().activate(getEditorWindow(), myPatternEditorLocation, myPatternEditorSize, canShowPopup);
         myEditorComponent.pushKeyboardHandler(this);
-        myNodeSubstituteInfo.invalidateActions();
-        rebuildMenuEntries();
         if (canShowPopup) {
           getPopupWindow().setVisible(true);
           getPopupWindow().relayout();
@@ -217,7 +228,7 @@ public class NodeSubstituteChooser implements KeyboardHandler {
         });
   }
 
-  private void rebuildMenuEntries() {
+  public void rebuildMenuEntries() {
     Runnable todo = new Runnable() {
       @Override
       public void run() {
@@ -284,16 +295,9 @@ public class NodeSubstituteChooser implements KeyboardHandler {
         }
       });
     }
-
-    int textLength = 0;
-    int descriptionLength = 0;
+    getCellRenderer().resetMaxSize();
     for (SubstituteAction item : mySubstituteActions) {
-      try {
-        textLength = Math.max(textLength, getTextLength(item, pattern));
-        descriptionLength = Math.max(descriptionLength, getDescriptionLength(item, pattern));
-      } catch (Throwable t) {
-        LOG.error(t, t);
-      }
+      getCellRenderer().updateMaxSize(item);
     }
   }
 
@@ -495,25 +499,14 @@ public class NodeSubstituteChooser implements KeyboardHandler {
   }
 
   private class PopupWindow extends JWindow {
+    private final int MAX_LOOKUP_LIST_HEIGHT = 11;
     //COLORS: change after IDEA com.intellij.codeInsight.lookup.impl.LookupCellRenderer will be refactored to use Editor's Fonts & Colors settings
     private final Color BACKGROUND_COLOR = UIUtil.isUnderDarcula() ? new Color(0x141D29) : new Color(235, 244, 254);
     private final Color FOREGROUND_COLOR = EditorColorsManager.getInstance().getGlobalScheme().getDefaultForeground();
     private final Color SELECTED_BACKGROUND_COLOR = EditorColorsManager.getInstance().getGlobalScheme().getColor(EditorColors.SELECTION_BACKGROUND_COLOR);
     private final Color SELECTED_FOREGROUND_COLOR = EditorColorsManager.getInstance().getGlobalScheme().getColor(EditorColors.SELECTION_FOREGROUND_COLOR);
-    private JList myList = new JBList(new DefaultListModel()) {
-      @Override
-      public Dimension getPreferredScrollableViewportSize() {
-        Dimension preferredSize = getPreferredSize();
-        if (preferredSize.getWidth() < PREFERRED_WIDTH) {
-          preferredSize.width = PREFERRED_WIDTH;
-        }
-        if (preferredSize.getHeight() > PREFERRED_HEIGHT) {
-          preferredSize.height = PREFERRED_HEIGHT;
-        }
-        return preferredSize;
-      }
-    };
-    private NodeItemCellRenderer myCellRenderer;
+    private JList myList = new JBList(new DefaultListModel());
+
     private PopupWindowPosition myPosition = PopupWindowPosition.BOTTOM;
     private JScrollPane myScroller = ScrollPaneFactory.createScrollPane(myList, JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED,
         JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
@@ -530,7 +523,26 @@ public class NodeSubstituteChooser implements KeyboardHandler {
 
     public PopupWindow(final Window owner) {
       super(owner);
-
+//      setLayout(new AbstractLayoutManager() {
+//        @Override
+//        public Dimension preferredLayoutSize(Container parent) {
+//          int maxCellWidth = myLookup.myLookupTextWidth + myLookup.myCellRenderer.getIconIndent();
+//          int scrollBarWidth = myScrollPane.getPreferredSize().width - myScrollPane.getViewport().getPreferredSize().width;
+//          int listWidth = Math.min(scrollBarWidth + maxCellWidth, UISettings.getInstance().MAX_LOOKUP_WIDTH2);
+//
+//          Dimension adSize = myAdvertiser.getAdComponent().getPreferredSize();
+//
+//          int panelHeight = myList.getPreferredScrollableViewportSize().height + adSize.height;
+//          if (myList.getModel().getSize() > myList.getVisibleRowCount() && myList.getVisibleRowCount() >= 5) {
+//            panelHeight -= myList.getFixedCellHeight() / 2;
+//          }
+//          return new Dimension(Math.max(listWidth, adSize.width), Math.min(panelHeight, myMaximumHeight));
+//        }
+//
+//        @Override
+//        public void layoutContainer(Container parent) {
+//        }
+//      });
       getOwner().addComponentListener(myComponentListener);
 
       myList.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
@@ -560,7 +572,7 @@ public class NodeSubstituteChooser implements KeyboardHandler {
         }
       });
 
-      myList.setCellRenderer(myCellRenderer = new NodeItemCellRenderer());
+      myList.setCellRenderer(getCellRenderer());
 
       add(myScroller);
 
@@ -570,7 +582,6 @@ public class NodeSubstituteChooser implements KeyboardHandler {
       myList.setFocusable(false);
       pack();
     }
-
 
     @Override
     public void dispose() {
@@ -629,6 +640,10 @@ public class NodeSubstituteChooser implements KeyboardHandler {
       int oldIndex = getSelectionIndex();
 
       initListModel();
+
+      myList.setFixedCellHeight(getCellRenderer().getMaxHeight());
+      myList.setFixedCellWidth(getCellRenderer().getMaxWidth());
+      myList.setVisibleRowCount(Math.min(mySubstituteActions.size(), MAX_LOOKUP_LIST_HEIGHT));
 
       if (oldIndex != -1) {
         setSelectionIndex(oldIndex);
@@ -700,118 +715,5 @@ public class NodeSubstituteChooser implements KeyboardHandler {
     }
   }
 
-  private class NodeItemCellRenderer extends JPanel implements ListCellRenderer {
 
-    private JLabel myLeft = new JLabel("", JLabel.LEFT);
-    private JLabel myRight = new JLabel("", JLabel.RIGHT);
-    private static final int HORIZONTAL_GAP = 10;
-    private boolean myLightweightMode = false;
-    private final Color HIGHLIGHT_COLOR = UIUtil.isUnderDarcula() ? new Color(217, 149, 219) : new Color(189, 55, 186);
-    private final Color SELECTION_HIGHLIGHT_COLOR = UIUtil.isUnderDarcula() ? HIGHLIGHT_COLOR : new Color(250, 239, 215);
-    private final String STRING_HIGHLIGHT_COLOR = colorToHtml(HIGHLIGHT_COLOR);
-    private final String STRING_SELECTION_HIGHLIGHT_COLOR = colorToHtml(SELECTION_HIGHLIGHT_COLOR);
-
-    private NodeItemCellRenderer() {
-      setLayout(new BorderLayout(HORIZONTAL_GAP / 2, 0));
-      myLeft.setFont(EditorSettings.getInstance().getDefaultEditorFont());
-      myRight.setFont(EditorSettings.getInstance().getDefaultEditorFont());
-      add(myLeft, BorderLayout.WEST);
-      add(myRight, BorderLayout.EAST);
-    }
-
-    @Override
-    public Component getListCellRendererComponent(final JList list, final Object value, int index, final boolean isSelected, boolean cellHasFocus) {
-      ModelAccess.instance().runReadAction(new Runnable() {
-        @Override
-        public void run() {
-          setupThis(list, value, isSelected);
-        }
-      });
-
-      return this;
-    }
-
-    private void setupThis(JList list, Object value, boolean isSelected) {
-      SubstituteAction action = (SubstituteAction) value;
-      String pattern = getPatternEditor().getPattern();
-
-      if (!myLightweightMode) {
-        try {
-          Icon icon;
-          SNode iconNode = action.getIconNode(pattern);
-          if (iconNode != null) {
-            icon = (SNodeUtil.isInstanceOfConceptDeclaration(iconNode) && !(action.isReferentPresentation())) ?
-                IconManager.getIconForConceptFQName(NameUtil.nodeFQName(iconNode)) : IconManager.getIconFor(iconNode);
-          } else {
-            icon = IdeIcons.DEFAULT_ICON;
-          }
-          myLeft.setIcon(icon);
-        } catch (Throwable t) {
-          LOG.error(null, t);
-        }
-      }
-
-      try {
-        int style;
-        if (action.getParameterObject() instanceof SNode) {
-          style = NodePresentationUtil.getFontStyle(action.getSourceNode(), (SNode) action.getParameterObject());
-        } else {
-          style = Font.PLAIN;
-        }
-        int oldStyle = myLeft.getFont().getStyle();
-
-        if (oldStyle != style) {
-          myLeft.setFont(myLeft.getFont().deriveFont(style));
-          myRight.setFont(myRight.getFont().deriveFont(style));
-        }
-
-      } catch (Throwable t) {
-        LOG.error(null, t);
-      }
-
-      try {
-        if (!isSelected) {
-          myLeft.setText(SubstituteActionUtil.createText(action, pattern, STRING_HIGHLIGHT_COLOR));
-        } else {
-          myLeft.setText(SubstituteActionUtil.createText(action, pattern, STRING_SELECTION_HIGHLIGHT_COLOR));
-        }
-      } catch (Throwable t) {
-        myLeft.setText("!Exception was thrown!");
-        LOG.error(null, t);
-      }
-
-      try {
-        myRight.setText(action.getDescriptionText(pattern));
-      } catch (Throwable t) {
-        myRight.setText("!Exception was thrown!");
-        LOG.error(null, t);
-      }
-
-      if (isSelected) {
-        setBackground(list.getSelectionBackground());
-        setForeground(list.getSelectionForeground());
-        myLeft.setForeground(list.getSelectionForeground());
-        myRight.setForeground(list.getSelectionForeground());
-      } else {
-        setBackground(list.getBackground());
-        setForeground(list.getForeground());
-        myLeft.setForeground(list.getForeground());
-        myRight.setForeground(list.getForeground());
-      }
-
-      //todo hack
-      myLeft.setPreferredSize(null);
-      Dimension oldPreferredSize = myLeft.getPreferredSize();
-      myLeft.setPreferredSize(new Dimension(oldPreferredSize.width + 1, oldPreferredSize.height));
-    }
-
-    private String colorToHtml(Color color) {
-      String rgb = Integer.toHexString(color.getRGB());
-      return rgb.substring(2, rgb.length());
-    }
-
-    public void setLightweightMode(boolean isLightweightMode) {
-      myLightweightMode = isLightweightMode;
-    }
-  }
 }

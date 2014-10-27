@@ -2574,6 +2574,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     myNodeSubstituteChooser.setLocationRelative(editorCell);
     myNodeSubstituteChooser.setIsSmart(isSmart);
     myNodeSubstituteChooser.setContextCell(editorCell);
+    myNodeSubstituteChooser.rebuildMenuEntries();
     myNodeSubstituteChooser.setVisible(true);
     return true;
   }
