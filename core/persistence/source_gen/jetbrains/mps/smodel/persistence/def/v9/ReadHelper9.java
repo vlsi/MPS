@@ -17,6 +17,8 @@ import jetbrains.mps.smodel.persistence.def.v7.WriteHelper;
 import org.jetbrains.mps.openapi.model.SNodeId;
 import org.jetbrains.mps.openapi.language.SConcept;
 import jetbrains.mps.smodel.adapter.ids.SConceptId;
+import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.smodel.adapter.structure.concept.SConceptAdapterByName;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import jetbrains.mps.smodel.runtime.ConceptKind;
 import jetbrains.mps.smodel.runtime.StaticScope;
@@ -98,8 +100,10 @@ public class ReadHelper9 {
   }
 
   public SConcept getStubConcept(SConceptId type) {
-    // todo 
-    return null;
+    String cname = DebugRegistry.getInstance().getConceptName(type);
+    String ns = NameUtil.namespaceFromLongName(cname);
+    String sname = NameUtil.shortNameFromLongName(cname);
+    return new SConceptAdapterByName(ns + ((ns.equals("") ? "" : ".")) + "Stub" + sname);
   }
 
   public Tuples._3<ConceptKind, StaticScope, Boolean> readNodeInfo(String s) {
