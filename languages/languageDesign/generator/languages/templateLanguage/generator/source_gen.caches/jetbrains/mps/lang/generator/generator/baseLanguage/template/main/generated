@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-6it9vv095s68siri6qky7zc4x3vyyaq">
+<dependencies version="2" modelHash="-pxsenmb06794q5fhxc9ex5nue4bzbv">
   <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
   <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
   <dep model="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang.reflect(JDK/java.lang.reflect@java_stub)" />
@@ -25,12 +25,12 @@
   <dep model="r:00000000-0000-4000-0000-011c895902cc(jetbrains.mps.baseLanguage.generator.java.conceptFunctionDefaults@generator)" hash="-ab7vrsrfvw56136ih5wg3ezi981jd5a" />
   <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" hash="-9fyf8ube0aqhy2tpqxm8qrxfi4z6r48" />
   <dep model="r:00000000-0000-4000-0000-011c895902de(jetbrains.mps.baseLanguage.blTypes.primitiveDescriptors)" />
-  <dep model="r:00000000-0000-4000-0000-011c895902e1(jetbrains.mps.lang.generator.behavior)" hash="1v62sc50y7kdloaqkw8i6lbco073bwd" />
-  <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" hash="3d4fesev8aa6yk7wfkhhfg2so4xc7rn" />
+  <dep model="r:00000000-0000-4000-0000-011c895902e1(jetbrains.mps.lang.generator.behavior)" hash="9lfewplxybx7zfvumzf0dt1s5vuveno" />
+  <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" hash="1j880r0s0obipaj0kmand7t8a7tb51v" />
   <dep model="r:00000000-0000-4000-0000-011c895902ea(jetbrains.mps.lang.generator.generator.baseLanguage.template.util)" hash="9erevke7o9uqk5gtl66dstv9ja4yxfg" />
   <dep model="r:00000000-0000-4000-0000-011c895902ed(jetbrains.mps.lang.generator.generationContext.behavior)" hash="avja8bufoh64zon39fmwho060mdo69t" />
-  <dep model="r:00000000-0000-4000-0000-011c895902f3(jetbrains.mps.lang.generator.generationContext.structure)" hash="-9nw54cvt7kxp0egu70m6g51a89gisa1" />
-  <dep model="r:00000000-0000-4000-0000-011c895902f4(jetbrains.mps.lang.generator.generationContext.generator.baseLanguage.template.main@generator)" hash="emhu1idb9n9fqep608sipq966v2x04x" />
+  <dep model="r:00000000-0000-4000-0000-011c895902f3(jetbrains.mps.lang.generator.generationContext.structure)" hash="bhoxa2o78zmgy4gr4uo8nnwxaci0793" />
+  <dep model="r:00000000-0000-4000-0000-011c895902f4(jetbrains.mps.lang.generator.generationContext.generator.baseLanguage.template.main@generator)" hash="4h79t36bbfgbjx4fdgeljf5yyh0tkzk" />
   <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" hash="-610g15eqhir34hi97kjvv8wjan6ei80" />
   <dep model="r:00000000-0000-4000-0000-011c8959033a(jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main@generator)" hash="-c5a7mltxustiuoq016ff4c3tez8g5t3" />
   <dep model="r:00000000-0000-4000-0000-011c8959033f(jetbrains.mps.lang.pattern.behavior)" hash="-ap7upcx0rnkrvxyt08zhx7832aa6waz" />
@@ -44,7 +44,7 @@
   <dep model="r:d1558b8f-fc9e-4ca7-bb90-70ac789f336e(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.post@generator)" hash="79abo4rm4x9i6c9gxi45ihjhfc9imy0" />
   <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="-8tpnzgwrbijeinrlmy2syctrrkkgmqe" />
   <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" hash="-ejdnkl4k7oblmzppkwdag96g8xt530f" />
-  <common hash="-6it9vv095s68siri6qky7zc4x3vyyaq" dependsOnNodes="true">
+  <common hash="-pxsenmb06794q5fhxc9ex5nue4bzbv" dependsOnNodes="true">
     <dep root="1147906725605225569" />
     <dep root="1167163229003" />
     <dep root="1167163238171" />
@@ -84,8 +84,10 @@
     <dep root="344761564571002709" />
     <dep root="344761564571002720" />
     <dep root="3462145372628093810" />
+    <dep root="4355167635272070850" />
     <dep root="4426797670062862910" />
     <dep root="4429320018138031253" />
+    <dep root="4626277467846863433" />
     <dep root="4914935534438618871" />
     <dep root="5015072279636784093" />
     <dep root="5301578252490218394" />
@@ -124,6 +126,7 @@
     <dep root="8961331321403206046" />
     <dep root="9056552524812524602" />
     <dep root="9071348379728451047" />
+    <dep root="9109410030988204341" />
     <dep root="9191117361655148442" />
     <dep root="9191117361655150306" />
     <dep root="9196441569928383154" />
@@ -178,18 +181,10 @@
     <dep root="4914935534438618871" />
     <dep model="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.generator.runtime(MPS.Core/jetbrains.mps.generator.runtime@java_stub)" />
   </source>
-  <source id="1167163238171" name="TLB_main">
-    <dep root="4914935534438618871" />
-  </source>
-  <source id="1184374857687" name="insert_TemplateFragment_ContextNodeQuery">
-    <dep root="4914935534438618871" />
-  </source>
-  <source id="1199965771119" name="AddTypeHints">
-    <dep root="4914935534438618871" />
-  </source>
-  <source id="1217270660170" name="ReduceReferenceToText">
-    <dep root="4914935534438618871" />
-  </source>
+  <source id="1167163238171" name="TLB_main" />
+  <source id="1184374857687" name="insert_TemplateFragment_ContextNodeQuery" />
+  <source id="1199965771119" name="AddTypeHints" />
+  <source id="1217270660170" name="ReduceReferenceToText" />
   <source id="6342833957791858285" name="checkGenerator" />
   <source id="3084749922879516635" name="map_TemplateDeclaration">
     <dep model="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.generator.runtime(MPS.Core/jetbrains.mps.generator.runtime@java_stub)" />
@@ -281,5 +276,9 @@
   <source id="9056552524812524602" name="getIfMacroCondition" />
   <source id="8530069850499411438" name="getInlineSwitchCaseCondition" />
   <source id="4426797670062862910" name="reduce_TemplateArgumentVariableRefExpression" />
+  <source id="9109410030988204341" name="ExportLabelFunctions">
+    <dep model="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.generator.runtime(MPS.Core/jetbrains.mps.generator.runtime@java_stub)" />
+  </source>
+  <source id="4355167635272070850" name="CrossModelGenerator" />
 </dependencies>
 

@@ -19,6 +19,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptGenerationContextOp_DirtyNode = new ConceptDescriptorBuilder("jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_DirtyNode", MetaIdFactory.conceptId(UUID.fromString("d7706f63-9be2-479c-a3da-ae92af1e64d5"), 5403673535105109113L)).super_("jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_Base").super_(MetaIdFactory.conceptId(UUID.fromString("d7706f63-9be2-479c-a3da-ae92af1e64d5"), 1216860049619L)).parents("jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_Base").parentIds(MetaIdFactory.conceptId(UUID.fromString("d7706f63-9be2-479c-a3da-ae92af1e64d5"), 1216860049619L)).childDescriptors(new ConceptDescriptorBuilder.Link(5403673535105109114L, "nodeToCheck", MetaIdFactory.conceptId(UUID.fromString("f3061a53-9226-4cc5-a443-f952ceaf5816"), 1068431790191L), false, false, false)).children(new String[]{"nodeToCheck"}, new boolean[]{false}).alias("is dirty", "checks if node is not ignored by generator").staticScope(StaticScope.NONE).create();
   /*package*/ final ConceptDescriptor myConceptGenerationContextOp_GenParameterRef = new ConceptDescriptorBuilder("jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GenParameterRef", MetaIdFactory.conceptId(UUID.fromString("d7706f63-9be2-479c-a3da-ae92af1e64d5"), 2507865635201615235L)).super_("jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_Base").super_(MetaIdFactory.conceptId(UUID.fromString("d7706f63-9be2-479c-a3da-ae92af1e64d5"), 1216860049619L)).parents("jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_Base").parentIds(MetaIdFactory.conceptId(UUID.fromString("d7706f63-9be2-479c-a3da-ae92af1e64d5"), 1216860049619L)).propertyDescriptors(new ConceptDescriptorBuilder.Prop(4517825979522476799L, "name_intern")).properties("name_intern").referenceDescriptors(new ConceptDescriptorBuilder.Ref(2507865635201615236L, "importClause", MetaIdFactory.conceptId(UUID.fromString("b401a680-8325-4110-8fd3-84331ff25bef"), 650531548511911818L), false)).references("importClause").staticScope(StaticScope.NONE).create();
   /*package*/ final ConceptDescriptor myConceptGenerationContextOp_GetCopiedOutputByInput = new ConceptDescriptorBuilder("jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetCopiedOutputByInput", MetaIdFactory.conceptId(UUID.fromString("d7706f63-9be2-479c-a3da-ae92af1e64d5"), 1217884725453L)).super_("jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_Base").super_(MetaIdFactory.conceptId(UUID.fromString("d7706f63-9be2-479c-a3da-ae92af1e64d5"), 1216860049619L)).parents("jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_Base").parentIds(MetaIdFactory.conceptId(UUID.fromString("d7706f63-9be2-479c-a3da-ae92af1e64d5"), 1216860049619L)).childDescriptors(new ConceptDescriptorBuilder.Link(1217884725459L, "inputNode", MetaIdFactory.conceptId(UUID.fromString("f3061a53-9226-4cc5-a443-f952ceaf5816"), 1068431790191L), false, false, false)).children(new String[]{"inputNode"}, new boolean[]{false}).alias("get copied output by input", "search output node").staticScope(StaticScope.NONE).create();
+  /*package*/ final ConceptDescriptor myConceptGenerationContextOp_GetExport = new ConceptDescriptorBuilder("jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetExport", MetaIdFactory.conceptId(UUID.fromString("d7706f63-9be2-479c-a3da-ae92af1e64d5"), 494100551407707431L)).super_("jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_Base").super_(MetaIdFactory.conceptId(UUID.fromString("d7706f63-9be2-479c-a3da-ae92af1e64d5"), 1216860049619L)).parents("jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_Base").parentIds(MetaIdFactory.conceptId(UUID.fromString("d7706f63-9be2-479c-a3da-ae92af1e64d5"), 1216860049619L)).propertyDescriptors(new ConceptDescriptorBuilder.Prop(7717883705482693609L, "name_intern")).properties("name_intern").referenceDescriptors(new ConceptDescriptorBuilder.Ref(494100551407707432L, "label", MetaIdFactory.conceptId(UUID.fromString("b401a680-8325-4110-8fd3-84331ff25bef"), 494100551407614666L), false)).references("label").childDescriptors(new ConceptDescriptorBuilder.Link(1770874776445951671L, "inputNode", MetaIdFactory.conceptId(UUID.fromString("f3061a53-9226-4cc5-a443-f952ceaf5816"), 1068431790191L), false, false, false)).children(new String[]{"inputNode"}, new boolean[]{false}).alias("getExported", "retrieve proxy object for cross-model reference target").create();
   /*package*/ final ConceptDescriptor myConceptGenerationContextOp_GetInputModel = new ConceptDescriptorBuilder("jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetInputModel", MetaIdFactory.conceptId(UUID.fromString("d7706f63-9be2-479c-a3da-ae92af1e64d5"), 1217004708011L)).super_("jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_Base").super_(MetaIdFactory.conceptId(UUID.fromString("d7706f63-9be2-479c-a3da-ae92af1e64d5"), 1216860049619L)).parents("jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_Base").parentIds(MetaIdFactory.conceptId(UUID.fromString("d7706f63-9be2-479c-a3da-ae92af1e64d5"), 1216860049619L)).alias("inputModel", "current input model").staticScope(StaticScope.NONE).create();
   /*package*/ final ConceptDescriptor myConceptGenerationContextOp_GetInvocationContext = new ConceptDescriptorBuilder("jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetInvocationContext", MetaIdFactory.conceptId(UUID.fromString("d7706f63-9be2-479c-a3da-ae92af1e64d5"), 1224102704684L)).super_("jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_Base").super_(MetaIdFactory.conceptId(UUID.fromString("d7706f63-9be2-479c-a3da-ae92af1e64d5"), 1216860049619L)).parents("jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_Base").parentIds(MetaIdFactory.conceptId(UUID.fromString("d7706f63-9be2-479c-a3da-ae92af1e64d5"), 1216860049619L)).alias("invocation context", "generator invocation context (IOperationContext)").staticScope(StaticScope.NONE).create();
   /*package*/ final ConceptDescriptor myConceptGenerationContextOp_GetOriginalCopiedInputByOutput = new ConceptDescriptorBuilder("jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetOriginalCopiedInputByOutput", MetaIdFactory.conceptId(UUID.fromString("d7706f63-9be2-479c-a3da-ae92af1e64d5"), 1229477454423L)).super_("jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_Base").super_(MetaIdFactory.conceptId(UUID.fromString("d7706f63-9be2-479c-a3da-ae92af1e64d5"), 1216860049619L)).parents("jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_Base").parentIds(MetaIdFactory.conceptId(UUID.fromString("d7706f63-9be2-479c-a3da-ae92af1e64d5"), 1216860049619L)).childDescriptors(new ConceptDescriptorBuilder.Link(1229477520175L, "outputNode", MetaIdFactory.conceptId(UUID.fromString("f3061a53-9226-4cc5-a443-f952ceaf5816"), 1068431790191L), false, false, false)).children(new String[]{"outputNode"}, new boolean[]{false}).alias("get original copied input by output", "original input node copied to output").staticScope(StaticScope.NONE).create();
@@ -50,13 +51,13 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
   @Override
   public Collection<ConceptDescriptor> getDescriptors() {
-    return Arrays.asList(myConceptGenerationContextOp_Base, myConceptGenerationContextOp_CreateUniqueName, myConceptGenerationContextOp_DirtyNode, myConceptGenerationContextOp_GenParameterRef, myConceptGenerationContextOp_GetCopiedOutputByInput, myConceptGenerationContextOp_GetInputModel, myConceptGenerationContextOp_GetInvocationContext, myConceptGenerationContextOp_GetOriginalCopiedInputByOutput, myConceptGenerationContextOp_GetOriginalInputModel, myConceptGenerationContextOp_GetOutputByLabel, myConceptGenerationContextOp_GetOutputByLabelAndInput, myConceptGenerationContextOp_GetOutputByLabelAndInputAndReferenceScope, myConceptGenerationContextOp_GetOutputListByLabelAndInput, myConceptGenerationContextOp_GetOutputModel, myConceptGenerationContextOp_GetPrevInputByLabel, myConceptGenerationContextOp_GetScope, myConceptGenerationContextOp_GetTemplateNode, myConceptGenerationContextOp_LinkPatternRef, myConceptGenerationContextOp_NodePatternRef, myConceptGenerationContextOp_ParameterRef, myConceptGenerationContextOp_PatternRef, myConceptGenerationContextOp_PropertyPatternRef, myConceptGenerationContextOp_SessionObjectAccess, myConceptGenerationContextOp_ShowErrorMessage, myConceptGenerationContextOp_ShowInfoMessage, myConceptGenerationContextOp_ShowMessageBase, myConceptGenerationContextOp_ShowWarningMessage, myConceptGenerationContextOp_StepObjectAccess, myConceptGenerationContextOp_TransientObjectAccess, myConceptGenerationContextOp_UserObjectAccessBase, myConceptGenerationContextOp_VarRef, myConceptGenerationContextType, myConceptTemplateFunctionParameter_generationContext);
+    return Arrays.asList(myConceptGenerationContextOp_Base, myConceptGenerationContextOp_CreateUniqueName, myConceptGenerationContextOp_DirtyNode, myConceptGenerationContextOp_GenParameterRef, myConceptGenerationContextOp_GetCopiedOutputByInput, myConceptGenerationContextOp_GetExport, myConceptGenerationContextOp_GetInputModel, myConceptGenerationContextOp_GetInvocationContext, myConceptGenerationContextOp_GetOriginalCopiedInputByOutput, myConceptGenerationContextOp_GetOriginalInputModel, myConceptGenerationContextOp_GetOutputByLabel, myConceptGenerationContextOp_GetOutputByLabelAndInput, myConceptGenerationContextOp_GetOutputByLabelAndInputAndReferenceScope, myConceptGenerationContextOp_GetOutputListByLabelAndInput, myConceptGenerationContextOp_GetOutputModel, myConceptGenerationContextOp_GetPrevInputByLabel, myConceptGenerationContextOp_GetScope, myConceptGenerationContextOp_GetTemplateNode, myConceptGenerationContextOp_LinkPatternRef, myConceptGenerationContextOp_NodePatternRef, myConceptGenerationContextOp_ParameterRef, myConceptGenerationContextOp_PatternRef, myConceptGenerationContextOp_PropertyPatternRef, myConceptGenerationContextOp_SessionObjectAccess, myConceptGenerationContextOp_ShowErrorMessage, myConceptGenerationContextOp_ShowInfoMessage, myConceptGenerationContextOp_ShowMessageBase, myConceptGenerationContextOp_ShowWarningMessage, myConceptGenerationContextOp_StepObjectAccess, myConceptGenerationContextOp_TransientObjectAccess, myConceptGenerationContextOp_UserObjectAccessBase, myConceptGenerationContextOp_VarRef, myConceptGenerationContextType, myConceptTemplateFunctionParameter_generationContext);
   }
 
   @Override
   @Nullable
   public ConceptDescriptor getDescriptor(String conceptFqName) {
-    switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0lb, conceptFqName)) {
+    switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0mb, conceptFqName)) {
       case 0:
         return myConceptGenerationContextOp_Base;
       case 1:
@@ -68,64 +69,66 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
       case 4:
         return myConceptGenerationContextOp_GetCopiedOutputByInput;
       case 5:
-        return myConceptGenerationContextOp_GetInputModel;
+        return myConceptGenerationContextOp_GetExport;
       case 6:
-        return myConceptGenerationContextOp_GetInvocationContext;
+        return myConceptGenerationContextOp_GetInputModel;
       case 7:
-        return myConceptGenerationContextOp_GetOriginalCopiedInputByOutput;
+        return myConceptGenerationContextOp_GetInvocationContext;
       case 8:
-        return myConceptGenerationContextOp_GetOriginalInputModel;
+        return myConceptGenerationContextOp_GetOriginalCopiedInputByOutput;
       case 9:
-        return myConceptGenerationContextOp_GetOutputByLabel;
+        return myConceptGenerationContextOp_GetOriginalInputModel;
       case 10:
-        return myConceptGenerationContextOp_GetOutputByLabelAndInput;
+        return myConceptGenerationContextOp_GetOutputByLabel;
       case 11:
-        return myConceptGenerationContextOp_GetOutputByLabelAndInputAndReferenceScope;
+        return myConceptGenerationContextOp_GetOutputByLabelAndInput;
       case 12:
-        return myConceptGenerationContextOp_GetOutputListByLabelAndInput;
+        return myConceptGenerationContextOp_GetOutputByLabelAndInputAndReferenceScope;
       case 13:
-        return myConceptGenerationContextOp_GetOutputModel;
+        return myConceptGenerationContextOp_GetOutputListByLabelAndInput;
       case 14:
-        return myConceptGenerationContextOp_GetPrevInputByLabel;
+        return myConceptGenerationContextOp_GetOutputModel;
       case 15:
-        return myConceptGenerationContextOp_GetScope;
+        return myConceptGenerationContextOp_GetPrevInputByLabel;
       case 16:
-        return myConceptGenerationContextOp_GetTemplateNode;
+        return myConceptGenerationContextOp_GetScope;
       case 17:
-        return myConceptGenerationContextOp_LinkPatternRef;
+        return myConceptGenerationContextOp_GetTemplateNode;
       case 18:
-        return myConceptGenerationContextOp_NodePatternRef;
+        return myConceptGenerationContextOp_LinkPatternRef;
       case 19:
-        return myConceptGenerationContextOp_ParameterRef;
+        return myConceptGenerationContextOp_NodePatternRef;
       case 20:
-        return myConceptGenerationContextOp_PatternRef;
+        return myConceptGenerationContextOp_ParameterRef;
       case 21:
-        return myConceptGenerationContextOp_PropertyPatternRef;
+        return myConceptGenerationContextOp_PatternRef;
       case 22:
-        return myConceptGenerationContextOp_SessionObjectAccess;
+        return myConceptGenerationContextOp_PropertyPatternRef;
       case 23:
-        return myConceptGenerationContextOp_ShowErrorMessage;
+        return myConceptGenerationContextOp_SessionObjectAccess;
       case 24:
-        return myConceptGenerationContextOp_ShowInfoMessage;
+        return myConceptGenerationContextOp_ShowErrorMessage;
       case 25:
-        return myConceptGenerationContextOp_ShowMessageBase;
+        return myConceptGenerationContextOp_ShowInfoMessage;
       case 26:
-        return myConceptGenerationContextOp_ShowWarningMessage;
+        return myConceptGenerationContextOp_ShowMessageBase;
       case 27:
-        return myConceptGenerationContextOp_StepObjectAccess;
+        return myConceptGenerationContextOp_ShowWarningMessage;
       case 28:
-        return myConceptGenerationContextOp_TransientObjectAccess;
+        return myConceptGenerationContextOp_StepObjectAccess;
       case 29:
-        return myConceptGenerationContextOp_UserObjectAccessBase;
+        return myConceptGenerationContextOp_TransientObjectAccess;
       case 30:
-        return myConceptGenerationContextOp_VarRef;
+        return myConceptGenerationContextOp_UserObjectAccessBase;
       case 31:
-        return myConceptGenerationContextType;
+        return myConceptGenerationContextOp_VarRef;
       case 32:
+        return myConceptGenerationContextType;
+      case 33:
         return myConceptTemplateFunctionParameter_generationContext;
       default:
         return null;
     }
   }
-  private static String[] stringSwitchCases_1htk8d_a0a0lb = new String[]{"jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_Base", "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_CreateUniqueName", "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_DirtyNode", "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GenParameterRef", "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetCopiedOutputByInput", "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetInputModel", "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetInvocationContext", "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetOriginalCopiedInputByOutput", "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetOriginalInputModel", "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetOutputByLabel", "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetOutputByLabelAndInput", "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetOutputByLabelAndInputAndReferenceScope", "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetOutputListByLabelAndInput", "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetOutputModel", "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetPrevInputByLabel", "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetScope", "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetTemplateNode", "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_LinkPatternRef", "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_NodePatternRef", "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_ParameterRef", "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_PatternRef", "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_PropertyPatternRef", "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_SessionObjectAccess", "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_ShowErrorMessage", "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_ShowInfoMessage", "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_ShowMessageBase", "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_ShowWarningMessage", "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_StepObjectAccess", "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_TransientObjectAccess", "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_UserObjectAccessBase", "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_VarRef", "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextType", "jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext"};
+  private static String[] stringSwitchCases_1htk8d_a0a0mb = new String[]{"jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_Base", "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_CreateUniqueName", "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_DirtyNode", "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GenParameterRef", "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetCopiedOutputByInput", "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetExport", "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetInputModel", "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetInvocationContext", "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetOriginalCopiedInputByOutput", "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetOriginalInputModel", "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetOutputByLabel", "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetOutputByLabelAndInput", "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetOutputByLabelAndInputAndReferenceScope", "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetOutputListByLabelAndInput", "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetOutputModel", "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetPrevInputByLabel", "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetScope", "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetTemplateNode", "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_LinkPatternRef", "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_NodePatternRef", "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_ParameterRef", "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_PatternRef", "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_PropertyPatternRef", "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_SessionObjectAccess", "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_ShowErrorMessage", "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_ShowInfoMessage", "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_ShowMessageBase", "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_ShowWarningMessage", "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_StepObjectAccess", "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_TransientObjectAccess", "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_UserObjectAccessBase", "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_VarRef", "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextType", "jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext"};
 }

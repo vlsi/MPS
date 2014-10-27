@@ -31,7 +31,7 @@ import java.util.Arrays;
 import java.util.Collection;
 import java.util.List;
 
-// FIXME there's another, pretty much the same jetbrains.mps.internal.make.runtime.java.FileProcessor, get rid of one of them
+// FIXME there's another, pretty much identical jetbrains.mps.internal.make.runtime.java.FileProcessor, get rid of one of them
 class FileProcessor {
   private static final Logger LOG = LogManager.getLogger(FileProcessor.class);
 
@@ -222,7 +222,7 @@ class FileProcessor {
     @Override
     public void saveToFile(IFile file) {
       try {
-        JDOMUtil.writeDocument(new Document(myElement), file);
+        JDOMUtil.writeDocument(myElement.getDocument() != null && myElement.isRootElement() ? myElement.getDocument() : new Document(myElement), file);
       } catch (IOException e) {
         LOG.error(null, e);
       }

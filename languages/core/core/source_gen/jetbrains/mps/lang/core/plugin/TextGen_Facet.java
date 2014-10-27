@@ -47,6 +47,7 @@ import jetbrains.mps.generator.impl.cache.CacheGenLayout;
 import jetbrains.mps.make.java.BLDependenciesCache;
 import jetbrains.mps.generator.impl.dependencies.GenerationDependenciesCache;
 import jetbrains.mps.textgen.trace.TraceInfoCache;
+import jetbrains.mps.generator.ModelExports;
 import java.util.Iterator;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.smodel.resources.TResource;
@@ -202,6 +203,7 @@ public class TextGen_Facet extends IFacet.Stub {
                         if (_generateDebugInfo) {
                           cgl.register(javaSourcesLoc, TraceInfoCache.getInstance().getGenerator());
                         }
+                        cgl.register(javaSourcesLoc, new ModelExports.CacheGen());
                         tf.serializeCaches(cgl);
                         staleFileCollector.updateDelta(d1);
                         new StaleFilesCollector(cacheOutputDir).updateDelta(d2);

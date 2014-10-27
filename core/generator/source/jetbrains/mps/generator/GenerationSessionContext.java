@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.generator;
 
+import jetbrains.mps.generator.impl.ExportsSessionContext;
 import jetbrains.mps.generator.impl.GenControllerContext;
 import jetbrains.mps.generator.impl.GenerationSessionLogger;
 import jetbrains.mps.generator.impl.RoleValidation;
@@ -49,7 +50,7 @@ import java.util.concurrent.ConcurrentMap;
  */
 public class GenerationSessionContext extends StandaloneMPSContext implements GeneratorQueryProvider.Source {
 
-  private static final Object COPIED_ROOTS = new Object();
+  private final Object COPIED_ROOTS = new Object();
 
   private final SModel myOriginalInputModel;
 
@@ -80,6 +81,8 @@ public class GenerationSessionContext extends StandaloneMPSContext implements Ge
    */
   private final Map<Object, Object> mySessionObjects;
 
+  private final ExportsSessionContext myExportsSession;
+
   // these objects survive through all steps of generation
   private final ConcurrentMap<SNodeReference, Set<String>> myUsedNames;
   private final SAbstractConcept myNamedConcept;
@@ -100,6 +103,7 @@ public class GenerationSessionContext extends StandaloneMPSContext implements Ge
     myGenerationPlan = null;
     myValidation = new RoleValidation(environment.getOptions().isShowBadChildWarning());
     myNamedConcept = SConceptRepository.getInstance().getConcept(SNodeUtil.concept_INamedConcept);
+    myExportsSession = new ExportsSessionContext(environment.getExportModels(), this);
     mySessionObjects = new ConcurrentHashMap<Object, Object>();
     myTransientObjects = new ConcurrentHashMap<Object, Object>();
     myStepObjects = new ConcurrentHashMap<Object, Object>();
@@ -119,6 +123,7 @@ public class GenerationSessionContext extends StandaloneMPSContext implements Ge
     myNamedConcept = prevContext.myNamedConcept;
     myQueryProviders = prevContext.myQueryProviders;
     myGenerationPlan = generationPlan;
+    myExportsSession = prevContext.myExportsSession;
     // the moment this copy cons is used, nothing happened, reuse
     myStepObjects = prevContext.myStepObjects;
     myTransientObjects = prevContext.myTransientObjects;
@@ -139,6 +144,7 @@ public class GenerationSessionContext extends StandaloneMPSContext implements Ge
     myNamedConcept = prevContext.myNamedConcept;
     myGenerationPlan = prevContext.myGenerationPlan;
     myQueryProviders = prevContext.myQueryProviders;
+    myExportsSession = prevContext.myExportsSession;
     // this copy cons indicate new major step, hence new empty maps
     myTransientObjects = new ConcurrentHashMap<Object, Object>();
     myStepObjects = new ConcurrentHashMap<Object, Object>();
@@ -198,6 +204,10 @@ public class GenerationSessionContext extends StandaloneMPSContext implements Ge
   public Object getSessionObject(Object key) {
     Object result = mySessionObjects.get(key);
     return result == NULL_OBJECT ? null : result;
+  }
+
+  public ExportsSessionContext getExports() {
+    return myExportsSession;
   }
 
   private static String nodeUniqueId(SNode node) {
