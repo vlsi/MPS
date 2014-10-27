@@ -268,7 +268,7 @@ public class NodeSubstituteChooser implements KeyboardHandler {
       mySubstituteActions.add(new AbstractNodeSubstituteAction() {
         @Override
         public String getMatchingText(String pattern) {
-          return "No variants for \"" + getPatternEditor().getPattern() + "\"";
+          return "No suggestions for \"" + getPatternEditor().getPattern() + "\"";
         }
 
         @Override
