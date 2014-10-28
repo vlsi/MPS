@@ -174,11 +174,14 @@ public class NodeSubstituteChooser implements KeyboardHandler {
      if (myChooserActivated != visible) {
       boolean canShowPopup = getEditorWindow() != null && getEditorWindow().isShowing() && !(RuntimeFlags.isTestMode());
       if (visible) {
-        getPatternEditor().activate(getEditorWindow(), myPatternEditorLocation, myPatternEditorSize, canShowPopup);
         myEditorComponent.pushKeyboardHandler(this);
+        rebuildMenuEntries();
+        getPatternEditor().activate(getEditorWindow(), myPatternEditorLocation, myPatternEditorSize, canShowPopup);
         if (canShowPopup) {
-          getPopupWindow().setVisible(true);
           getPopupWindow().relayout();
+          getPopupWindow().validate();
+          getPopupWindow().setVisible(true);
+          getPopupWindow().repaint();
         } else {
           getPopupWindow().initListModel();
         }
@@ -215,7 +218,7 @@ public class NodeSubstituteChooser implements KeyboardHandler {
         });
   }
 
-  public void rebuildMenuEntries() {
+  private void rebuildMenuEntries() {
     Runnable todo = new Runnable() {
       @Override
       public void run() {
@@ -285,7 +288,7 @@ public class NodeSubstituteChooser implements KeyboardHandler {
 
     myPopupWindow.resetMaxSize();
     for (SubstituteAction item : mySubstituteActions) {
-      Dimension dimension = getCellRenderer().getMax(item);
+      Dimension dimension = getCellRenderer().getMaxDimension(item);
       myPopupWindow.updateMaxHeight(dimension.height);
       myPopupWindow.updateMaxWidth(dimension.width);
     }
@@ -428,6 +431,7 @@ public class NodeSubstituteChooser implements KeyboardHandler {
   private void relayoutPopupMenu() {
     if (myPopupActivated) {
       getPopupWindow().relayout();
+      getPopupWindow().validate();
       getPopupWindow().repaint();
     }
   }
@@ -489,6 +493,8 @@ public class NodeSubstituteChooser implements KeyboardHandler {
         NodeSubstituteChooser.this.setLocationRelative(myRelativeCell);
         getPopupWindow().relayout();
         getPatternEditor().setLocation(myPatternEditorLocation);
+        getPopupWindow().validate();
+        getPopupWindow().repaint();
       }
     };
 
@@ -616,11 +622,6 @@ public class NodeSubstituteChooser implements KeyboardHandler {
       }
 
       setLocation(newLocation);
-
-      synchronized (getTreeLock()) {
-        validateTree();
-      }
-      repaint();
     }
 
     private void initListModel() {

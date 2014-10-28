@@ -2543,6 +2543,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     boolean atTheEndOfLine = pattern.equals(patternEditor.getText());
     // 1st - try to do substitution with current pattern (if cursor at the end of text)
     if (originalTextChanged || atTheEndOfLine) {
+      substituteInfo.invalidateActions();
       List<SubstituteAction> matchingActions = getMatchingActions(editorCell, substituteInfo, isSmart, pattern);
       if (matchingActions.size() == 1 && pattern.length() > 0) {
         // Just one applicable action in the completion menu
@@ -2574,7 +2575,6 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     myNodeSubstituteChooser.setLocationRelative(editorCell);
     myNodeSubstituteChooser.setIsSmart(isSmart);
     myNodeSubstituteChooser.setContextCell(editorCell);
-    myNodeSubstituteChooser.rebuildMenuEntries();
     myNodeSubstituteChooser.setVisible(true);
     return true;
   }

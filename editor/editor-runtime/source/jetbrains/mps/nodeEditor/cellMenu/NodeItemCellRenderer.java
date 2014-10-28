@@ -46,6 +46,7 @@ import java.awt.FontMetrics;
 class NodeItemCellRenderer extends JPanel implements ListCellRenderer {
   private static final Logger LOG = LogManager.getLogger(NodeItemCellRenderer.class);
   public static final String EXCEPTION_WAS_THROWN_TEXT = "!Exception was thrown!";
+  public static final Font DEFAULT_EDITOR_FONT = EditorSettings.getInstance().getDefaultEditorFont();
 
   private JLabel myLeft = new JLabel("", JLabel.LEFT);
   private JLabel myRight = new JLabel("", JLabel.RIGHT);
@@ -56,6 +57,7 @@ class NodeItemCellRenderer extends JPanel implements ListCellRenderer {
   private final String STRING_HIGHLIGHT_COLOR = colorToHtml(HIGHLIGHT_COLOR);
   private final String STRING_SELECTION_HIGHLIGHT_COLOR = colorToHtml(SELECTION_HIGHLIGHT_COLOR);
   private NodeSubstitutePatternEditor myPatternEditor;
+  private int myOldStyle = Font.PLAIN;
 
 
   NodeItemCellRenderer(@NotNull NodeSubstitutePatternEditor patternEditor) {
@@ -83,7 +85,7 @@ class NodeItemCellRenderer extends JPanel implements ListCellRenderer {
     myPatternEditor = patternEditor;
   }
 
-  Dimension getMax(SubstituteAction action) {
+  Dimension getMaxDimension(SubstituteAction action) {
     String pattern = myPatternEditor.getPattern();
     String matchingText;
     try {
@@ -106,8 +108,8 @@ class NodeItemCellRenderer extends JPanel implements ListCellRenderer {
     } catch (Throwable t) {
       LOG.error(null, t);
     }
-    FontMetrics fontMetrics = FontRegistry.getInstance().getFontMetrics(EditorSettings.getInstance().getDefaultEditorFont());
-
+    Font font = getFont(action);
+    FontMetrics fontMetrics = FontRegistry.getInstance().getFontMetrics(font);
     itemWidth += myLeft.getIconTextGap();
     if (matchingText != null) {
       itemWidth += fontMetrics.stringWidth(matchingText);
@@ -135,17 +137,13 @@ class NodeItemCellRenderer extends JPanel implements ListCellRenderer {
     }
 
     try {
-      int style;
-      if (action.getParameterObject() instanceof SNode) {
-        style = NodePresentationUtil.getFontStyle(action.getSourceNode(), (SNode) action.getParameterObject());
-      } else {
-        style = Font.PLAIN;
-      }
-      int oldStyle = myLeft.getFont().getStyle();
+      int style = getStyle(action);
 
-      if (oldStyle != style) {
-        myLeft.setFont(myLeft.getFont().deriveFont(style));
-        myRight.setFont(myRight.getFont().deriveFont(style));
+      if (myOldStyle != style) {
+        Font font = deriveFont(style);
+        myLeft.setFont(font);
+        myRight.setFont(font);
+        myOldStyle = style;
       }
 
     } catch (Throwable t) {
@@ -188,6 +186,31 @@ class NodeItemCellRenderer extends JPanel implements ListCellRenderer {
     myLeft.setPreferredSize(new Dimension(oldPreferredSize.width + 1, oldPreferredSize.height));
   }
 
+  private int getStyle(SubstituteAction action) {
+    int style;
+    if (action.getParameterObject() instanceof SNode) {
+      style = NodePresentationUtil.getFontStyle(action.getSourceNode(), (SNode) action.getParameterObject());
+    } else {
+      style = Font.PLAIN;
+    }
+    return style;
+  }
+
+  private Font getFont(SubstituteAction action) {
+    Font font = DEFAULT_EDITOR_FONT;
+    try {
+      int style = getStyle(action);
+      font = deriveFont(style);
+    } catch (Throwable t) {
+      LOG.error(null, t);
+    }
+    return font;
+  }
+
+  private Font deriveFont(int style) {
+    return FontRegistry.getInstance().getFont(DEFAULT_EDITOR_FONT.getFontName(), style, DEFAULT_EDITOR_FONT.getSize());
+  }
+
   private Icon getIcon(SubstituteAction action, String pattern) {
     Icon icon;
     SNode iconNode = action.getIconNode(pattern);
@@ -205,7 +228,7 @@ class NodeItemCellRenderer extends JPanel implements ListCellRenderer {
     return rgb.substring(2, rgb.length());
   }
 
-  public void setLightweightMode(boolean isLightweightMode) {
+  void setLightweightMode(boolean isLightweightMode) {
     myLightweightMode = isLightweightMode;
   }
 }
