@@ -282,9 +282,12 @@ public class NodeSubstituteChooser implements KeyboardHandler {
         }
       });
     }
-    getCellRenderer().resetMaxSize();
+
+    myPopupWindow.resetMaxSize();
     for (SubstituteAction item : mySubstituteActions) {
-      getCellRenderer().updateMaxSize(item);
+      Dimension dimension = getCellRenderer().getMax(item);
+      myPopupWindow.updateMaxHeight(dimension.height);
+      myPopupWindow.updateMaxWidth(dimension.width);
     }
   }
 
@@ -465,6 +468,8 @@ public class NodeSubstituteChooser implements KeyboardHandler {
   }
 
   private class PopupWindow extends JWindow {
+    private int myMaxHeight;
+    private int myMaxWidth;
     private final int MAX_LOOKUP_LIST_HEIGHT = 11;
     //COLORS: change after IDEA com.intellij.codeInsight.lookup.impl.LookupCellRenderer will be refactored to use Editor's Fonts & Colors settings
     private final Color BACKGROUND_COLOR = UIUtil.isUnderDarcula() ? new Color(0x141D29) : new Color(235, 244, 254);
@@ -489,26 +494,6 @@ public class NodeSubstituteChooser implements KeyboardHandler {
 
     public PopupWindow(final Window owner) {
       super(owner);
-//      setLayout(new AbstractLayoutManager() {
-//        @Override
-//        public Dimension preferredLayoutSize(Container parent) {
-//          int maxCellWidth = myLookup.myLookupTextWidth + myLookup.myCellRenderer.getIconIndent();
-//          int scrollBarWidth = myScrollPane.getPreferredSize().width - myScrollPane.getViewport().getPreferredSize().width;
-//          int listWidth = Math.min(scrollBarWidth + maxCellWidth, UISettings.getInstance().MAX_LOOKUP_WIDTH2);
-//
-//          Dimension adSize = myAdvertiser.getAdComponent().getPreferredSize();
-//
-//          int panelHeight = myList.getPreferredScrollableViewportSize().height + adSize.height;
-//          if (myList.getModel().getSize() > myList.getVisibleRowCount() && myList.getVisibleRowCount() >= 5) {
-//            panelHeight -= myList.getFixedCellHeight() / 2;
-//          }
-//          return new Dimension(Math.max(listWidth, adSize.width), Math.min(panelHeight, myMaximumHeight));
-//        }
-//
-//        @Override
-//        public void layoutContainer(Container parent) {
-//        }
-//      });
       getOwner().addComponentListener(myComponentListener);
 
       myList.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
@@ -556,6 +541,19 @@ public class NodeSubstituteChooser implements KeyboardHandler {
       super.dispose();
     }
 
+    public void resetMaxSize() {
+      myMaxWidth = 0;
+      myMaxHeight = 0;
+    }
+
+    public void updateMaxWidth(int width) {
+      myMaxWidth = Math.max(myMaxWidth, width);
+    }
+
+    public void updateMaxHeight(int height) {
+      myMaxHeight = Math.max(myMaxHeight, height);
+    }
+
     public void setRelativeCell(EditorCell cell) {
       myRelativeCell = cell;
     }
@@ -590,14 +588,15 @@ public class NodeSubstituteChooser implements KeyboardHandler {
 
       initListModel();
 
-      myList.setFixedCellHeight(getCellRenderer().getMaxHeight());
-      myList.setFixedCellWidth(getCellRenderer().getMaxWidth());
+      myList.setFixedCellHeight(myMaxHeight);
+      myList.setFixedCellWidth(myMaxWidth);
       myList.setVisibleRowCount(Math.min(mySubstituteActions.size(), MAX_LOOKUP_LIST_HEIGHT));
 
       if (oldIndex != -1) {
         setSelectionIndex(oldIndex);
         scrollToSelection();
       }
+
       pack();
 
       if (getPosition() == PopupWindowPosition.TOP) {

@@ -56,8 +56,7 @@ class NodeItemCellRenderer extends JPanel implements ListCellRenderer {
   private final String STRING_HIGHLIGHT_COLOR = colorToHtml(HIGHLIGHT_COLOR);
   private final String STRING_SELECTION_HIGHLIGHT_COLOR = colorToHtml(SELECTION_HIGHLIGHT_COLOR);
   private NodeSubstitutePatternEditor myPatternEditor;
-  private int myMaxWidth;
-  private int myMaxHeight;
+
 
   NodeItemCellRenderer(@NotNull NodeSubstitutePatternEditor patternEditor) {
     myPatternEditor = patternEditor;
@@ -84,7 +83,7 @@ class NodeItemCellRenderer extends JPanel implements ListCellRenderer {
     myPatternEditor = patternEditor;
   }
 
-  void updateMaxSize(SubstituteAction action) {
+  Dimension getMax(SubstituteAction action) {
     String pattern = myPatternEditor.getPattern();
     String matchingText;
     try {
@@ -118,22 +117,10 @@ class NodeItemCellRenderer extends JPanel implements ListCellRenderer {
       itemWidth += fontMetrics.stringWidth(descriptionText);
     }
     itemHeight = Math.max(itemHeight, fontMetrics.getHeight());
-    myMaxWidth = Math.max(myMaxWidth, itemWidth);
-    myMaxHeight = Math.max(myMaxHeight, itemHeight);
+    return new Dimension(itemWidth, itemHeight);
   }
 
-  int getMaxWidth() {
-    return myMaxWidth;
-  }
 
-  int getMaxHeight() {
-    return myMaxHeight;
-  }
-
-  void resetMaxSize() {
-    myMaxWidth = 0;
-    myMaxHeight = 0;
-  }
   private void setupThis(JList list, Object value, boolean isSelected) {
     SubstituteAction action = (SubstituteAction) value;
     String pattern = myPatternEditor.getPattern();
