@@ -267,7 +267,7 @@
       </node>
     </node>
     <node concept="4jta.1071489090640" id="8389748773577451463" info="ig">
-      <property role="asn4.1169194658468.1169194664001" value="PropertyHolder" />
+      <property role="asn4.1169194658468.1169194664001" value="GeneratorInternal_PropertyDescriptor" />
       <reference role="4jta.1071489090640.1071489389519" target="tpck.1133920641626" resolveInfo="BaseConcept" />
       <node concept="4jta.1071489288298" id="8389748773577465499" role="4jta.1169125787135.1071489727083" info="ig">
         <property role="4jta.1071489288298.1071599937831" value="reference" />
@@ -284,7 +284,7 @@
       </node>
     </node>
     <node concept="4jta.1071489090640" id="2652588855789590333" info="ig">
-      <property role="asn4.1169194658468.1169194664001" value="ReferenceHolder" />
+      <property role="asn4.1169194658468.1169194664001" value="GeneratorInternal_ReferenceDescriptor" />
       <reference role="4jta.1071489090640.1071489389519" target="tpck.1133920641626" resolveInfo="BaseConcept" />
       <node concept="4jta.1071489288299" id="2652588855789590335" role="4jta.1169125787135.1071489727084" info="ig">
         <property role="asn4.1169194658468.1169194664001" value="targetNodeId" />
@@ -305,7 +305,7 @@
       </node>
     </node>
     <node concept="4jta.1071489090640" id="2038730470042956328" info="ig">
-      <property role="asn4.1169194658468.1169194664001" value="InternalReferenceHolder" />
+      <property role="asn4.1169194658468.1169194664001" value="GeneratorInternal_InternalReferenceHolder" />
       <reference role="4jta.1071489090640.1071489389519" target="tpck.1133920641626" resolveInfo="BaseConcept" />
       <node concept="4jta.1071489288298" id="2038730470042956329" role="4jta.1169125787135.1071489727083" info="ig">
         <property role="4jta.1071489288298.1071599937831" value="reference" />
