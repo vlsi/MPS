@@ -2146,18 +2146,6 @@
             </node>
             <node concept="bxtc.1265949165890536423" id="2540145662854758351" role="219m.4701820937132344003.7389400916848037006" info="ng">
               <reference role="bxtc.1265949165890536423.1265949165890536425" target="8939513996048535701" resolveInfo="jetbrains.mps.baseLanguage.logging" />
-              <node concept="bxtc.4356762679305675652" id="4356762679305971795" role="bxtc.1265949165890536423.4356762679305730677" info="ng">
-                <property role="bxtc.4356762679305675652.4356762679305675654" value="/lib/commons-logging-1.1.1.jar" />
-                <node concept="219m.7389400916848153117" id="4356762679305971797" role="bxtc.4356762679305675652.4356762679305675653" info="ng">
-                  <reference role="219m.7389400916848153117.7389400916848153130" target="1277685309310599419" resolveInfo="mps_home" />
-                  <node concept="219m.8618885170173601777" id="4356762679305971798" role="219m.7321017245476976379.7321017245477039051" info="nn">
-                    <property role="219m.8618885170173601777.8618885170173601779" value="lib" />
-                    <node concept="219m.8618885170173601777" id="4356762679305971799" role="219m.8618885170173601777.8618885170173601778" info="nn">
-                      <property role="219m.8618885170173601777.8618885170173601779" value="commons-logging-1.1.1.jar" />
-                    </node>
-                  </node>
-                </node>
-              </node>
             </node>
             <node concept="bxtc.1265949165890536423" id="3551700539768569628" role="219m.4701820937132344003.7389400916848037006" info="ng">
               <reference role="bxtc.1265949165890536423.1265949165890536425" target="3551700539768510065" resolveInfo="jetbrains.mps.baseLanguage.logging.runtime" />

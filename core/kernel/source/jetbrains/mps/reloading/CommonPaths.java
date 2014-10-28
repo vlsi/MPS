@@ -197,7 +197,6 @@ public class CommonPaths {
     addIfExists(result, "/lib/guava-17.0.jar");
     addIfExists(result, "/lib/xstream-1.4.3.jar");
     addIfExists(result, "/lib/diffutils-1.2.1.jar");
-    addIfExists(result, "/lib/commons-logging-1.1.1.jar");
     addIfExists(result, "/lib/asm4-all.jar");
     addIfExists(result, "/lib/asm-all.jar");
   }

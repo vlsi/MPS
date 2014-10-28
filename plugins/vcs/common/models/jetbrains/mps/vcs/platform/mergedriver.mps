@@ -7553,9 +7553,6 @@
           <node concept="vg0i.1070475926800" id="4452305126578631434" role="vg0i.1204053956946.1068499141038" info="nn">
             <property role="vg0i.1070475926800.1070475926801" value="annotations.jar" />
           </node>
-          <node concept="vg0i.1070475926800" id="4452305126578631436" role="vg0i.1204053956946.1068499141038" info="nn">
-            <property role="vg0i.1070475926800.1070475926801" value="commons-logging-1.1.4.jar" />
-          </node>
         </node>
       </node>
       <node concept="vg0i.1070462154015" id="3532702333854217714" role="vg0i.1107461130800.5375687026011219971" info="igu">
