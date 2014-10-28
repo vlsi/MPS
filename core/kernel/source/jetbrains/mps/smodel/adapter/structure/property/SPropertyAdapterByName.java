@@ -22,6 +22,7 @@ import jetbrains.mps.smodel.adapter.ids.SPropertyId;
 import jetbrains.mps.smodel.language.ConceptRegistry;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import jetbrains.mps.smodel.runtime.PropertyDescriptor;
+import jetbrains.mps.smodel.search.SModelSearchUtil;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.language.SProperty;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -66,10 +67,6 @@ public class SPropertyAdapterByName extends SPropertyAdapter {
 
   @Override
   protected SNode findInConcept(SNode cnode) {
-    Iterable<? extends SNode> props = cnode.getChildren(SNodeUtil.linkName_AbstractConceptDeclaration_propertyDeclaration);
-    for (SNode p : props) {
-      if (p.getProperty(SNodeUtil.propertyName_INamedConcept_name).equals(myPropertyName)) return p;
-    }
-    return null;
+    return SModelSearchUtil.findPropertyDeclaration(cnode, myPropertyName);
   }
 }
