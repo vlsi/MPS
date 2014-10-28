@@ -1260,8 +1260,13 @@
                                         <node concept="4ia1.6407023681583040953" id="7036185364857494779" role="4ia1.6407023681583031218.6407023681583036852" info="ng">
                                           <reference role="4ia1.6407023681583040953.6407023681583040954" target="tp3t.1136720037781" resolveInfo="PropertyPatternVariableDeclaration" />
                                           <node concept="4ia1.1204834851141" id="7036185364857494780" role="4ia1.6407023681583040953.6407023681583040955" info="ng">
-                                            <node concept="j0ph.1153944233411" id="7036185364857586978" role="4ia1.1204834851141.1204834868751" info="nn">
-                                              <reference role="j0ph.1153944233411.1153944258490" target="7036185364857390939" resolveInfo="property" />
+                                            <node concept="vg0i.1197027756228" id="3749878874425138453" role="4ia1.1204834851141.1204834868751" info="nn">
+                                              <node concept="j0ph.1153944233411" id="7036185364857586978" role="vg0i.1197027756228.1197027771414" info="nn">
+                                                <reference role="j0ph.1153944233411.1153944258490" target="7036185364857390939" resolveInfo="property" />
+                                              </node>
+                                              <node concept="vg0i.1202948039474" id="3749878874425146244" role="vg0i.1197027756228.1197027833540" info="nn">
+                                                <reference role="vg0i.1204053956946.1068499141037" target="t3eg.~SProperty%dgetName()%cjava%dlang%dString" resolveInfo="getName" />
+                                              </node>
                                             </node>
                                           </node>
                                         </node>
