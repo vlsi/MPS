@@ -16,6 +16,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
   /*package*/ final ConceptDescriptor myConceptAbstractAntiquotation = new ConceptDescriptorBuilder("jetbrains.mps.lang.quotation.structure.AbstractAntiquotation", MetaIdFactory.conceptId(UUID.fromString("3a13115c-633c-4c5c-bbcc-75c4219e9555"), 1196350785110L)).interface_().parents("jetbrains.mps.lang.core.structure.IMetaLevelChanger", "jetbrains.mps.lang.core.structure.IAntisuppressErrors", "jetbrains.mps.lang.core.structure.ScopeProvider").parentIds(MetaIdFactory.conceptId(UUID.fromString("ceab5195-25ea-4f22-9b92-103b95ca8c0c"), 201537367881071930L), MetaIdFactory.conceptId(UUID.fromString("ceab5195-25ea-4f22-9b92-103b95ca8c0c"), 1047408822409601647L), MetaIdFactory.conceptId(UUID.fromString("ceab5195-25ea-4f22-9b92-103b95ca8c0c"), 3734116213129792499L)).propertyDescriptors(new ConceptDescriptorBuilder.Prop(6489343236075007666L, "label")).properties("label").childDescriptors(new ConceptDescriptorBuilder.Link(1196350785111L, "expression", MetaIdFactory.conceptId(UUID.fromString("f3061a53-9226-4cc5-a443-f952ceaf5816"), 1068431790191L), false, false, false)).children(new String[]{"expression"}, new boolean[]{false}).create();
   /*package*/ final ConceptDescriptor myConceptAntiquotation = new ConceptDescriptorBuilder("jetbrains.mps.lang.quotation.structure.Antiquotation", MetaIdFactory.conceptId(UUID.fromString("3a13115c-633c-4c5c-bbcc-75c4219e9555"), 1196350785112L)).super_("jetbrains.mps.lang.core.structure.NodeAttribute").super_(MetaIdFactory.conceptId(UUID.fromString("ceab5195-25ea-4f22-9b92-103b95ca8c0c"), 3364660638048049748L)).parents("jetbrains.mps.lang.core.structure.NodeAttribute", "jetbrains.mps.lang.quotation.structure.AbstractAntiquotation").parentIds(MetaIdFactory.conceptId(UUID.fromString("ceab5195-25ea-4f22-9b92-103b95ca8c0c"), 3364660638048049748L), MetaIdFactory.conceptId(UUID.fromString("3a13115c-633c-4c5c-bbcc-75c4219e9555"), 1196350785110L)).create();
+  /*package*/ final ConceptDescriptor myConceptInternalReferenceHolder = new ConceptDescriptorBuilder("jetbrains.mps.lang.quotation.structure.InternalReferenceHolder", MetaIdFactory.conceptId(UUID.fromString("3a13115c-633c-4c5c-bbcc-75c4219e9555"), 2038730470042956328L)).super_("jetbrains.mps.lang.core.structure.BaseConcept").super_(MetaIdFactory.conceptId(UUID.fromString("ceab5195-25ea-4f22-9b92-103b95ca8c0c"), 1133920641626L)).parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault").parentIds(MetaIdFactory.conceptId(UUID.fromString("ceab5195-25ea-4f22-9b92-103b95ca8c0c"), 1133920641626L), MetaIdFactory.conceptId(UUID.fromString("ceab5195-25ea-4f22-9b92-103b95ca8c0c"), 1835621062190663819L)).referenceDescriptors(new ConceptDescriptorBuilder.Ref(2038730470042956329L, "role", MetaIdFactory.conceptId(UUID.fromString("c72da2b9-7cce-4447-8389-f407dc1158b7"), 1071489288298L), false), new ConceptDescriptorBuilder.Ref(2038730470042970053L, "sourceNode", MetaIdFactory.conceptId(UUID.fromString("ceab5195-25ea-4f22-9b92-103b95ca8c0c"), 1133920641626L), false), new ConceptDescriptorBuilder.Ref(2038730470042970044L, "targetNode", MetaIdFactory.conceptId(UUID.fromString("ceab5195-25ea-4f22-9b92-103b95ca8c0c"), 1133920641626L), false)).references("role", "sourceNode", "targetNode").create();
   /*package*/ final ConceptDescriptor myConceptListAntiquotation = new ConceptDescriptorBuilder("jetbrains.mps.lang.quotation.structure.ListAntiquotation", MetaIdFactory.conceptId(UUID.fromString("3a13115c-633c-4c5c-bbcc-75c4219e9555"), 1196350785118L)).super_("jetbrains.mps.lang.core.structure.NodeAttribute").super_(MetaIdFactory.conceptId(UUID.fromString("ceab5195-25ea-4f22-9b92-103b95ca8c0c"), 3364660638048049748L)).parents("jetbrains.mps.lang.core.structure.NodeAttribute", "jetbrains.mps.lang.quotation.structure.AbstractAntiquotation").parentIds(MetaIdFactory.conceptId(UUID.fromString("ceab5195-25ea-4f22-9b92-103b95ca8c0c"), 3364660638048049748L), MetaIdFactory.conceptId(UUID.fromString("3a13115c-633c-4c5c-bbcc-75c4219e9555"), 1196350785110L)).create();
   /*package*/ final ConceptDescriptor myConceptNodeBuilder = new ConceptDescriptorBuilder("jetbrains.mps.lang.quotation.structure.NodeBuilder", MetaIdFactory.conceptId(UUID.fromString("3a13115c-633c-4c5c-bbcc-75c4219e9555"), 5455284157993863837L)).super_("jetbrains.mps.baseLanguage.structure.Expression").super_(MetaIdFactory.conceptId(UUID.fromString("f3061a53-9226-4cc5-a443-f952ceaf5816"), 1068431790191L)).parents("jetbrains.mps.baseLanguage.structure.Expression").parentIds(MetaIdFactory.conceptId(UUID.fromString("f3061a53-9226-4cc5-a443-f952ceaf5816"), 1068431790191L)).childDescriptors(new ConceptDescriptorBuilder.Link(5455284157993863838L, "quotedNode", MetaIdFactory.conceptId(UUID.fromString("3a13115c-633c-4c5c-bbcc-75c4219e9555"), 5455284157993863840L), false, false, false), new ConceptDescriptorBuilder.Link(5455284157993863839L, "modelToCreate", MetaIdFactory.conceptId(UUID.fromString("f3061a53-9226-4cc5-a443-f952ceaf5816"), 1068431790191L), true, false, false)).children(new String[]{"quotedNode", "modelToCreate"}, new boolean[]{false, false}).alias("<light quotation>", "").staticScope(StaticScope.NONE).create();
   /*package*/ final ConceptDescriptor myConceptNodeBuilderExpression = new ConceptDescriptorBuilder("jetbrains.mps.lang.quotation.structure.NodeBuilderExpression", MetaIdFactory.conceptId(UUID.fromString("3a13115c-633c-4c5c-bbcc-75c4219e9555"), 8182547171709752110L)).super_("jetbrains.mps.baseLanguage.structure.Expression").super_(MetaIdFactory.conceptId(UUID.fromString("f3061a53-9226-4cc5-a443-f952ceaf5816"), 1068431790191L)).parents("jetbrains.mps.baseLanguage.structure.Expression").parentIds(MetaIdFactory.conceptId(UUID.fromString("f3061a53-9226-4cc5-a443-f952ceaf5816"), 1068431790191L)).childDescriptors(new ConceptDescriptorBuilder.Link(8182547171709752112L, "expression", MetaIdFactory.conceptId(UUID.fromString("f3061a53-9226-4cc5-a443-f952ceaf5816"), 1068431790191L), false, false, false)).children(new String[]{"expression"}, new boolean[]{false}).alias("#", "").staticScope(StaticScope.NONE).create();
@@ -33,48 +34,50 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
   @Override
   public Collection<ConceptDescriptor> getDescriptors() {
-    return Arrays.asList(myConceptAbstractAntiquotation, myConceptAntiquotation, myConceptListAntiquotation, myConceptNodeBuilder, myConceptNodeBuilderExpression, myConceptNodeBuilderInitLink, myConceptNodeBuilderInitPart, myConceptNodeBuilderInitProperty, myConceptNodeBuilderList, myConceptNodeBuilderNode, myConceptNodeBuilderRef, myConceptPropertyAntiquotation, myConceptPropertyHolder, myConceptQuotation, myConceptReferenceAntiquotation, myConceptReferenceHolder);
+    return Arrays.asList(myConceptAbstractAntiquotation, myConceptAntiquotation, myConceptInternalReferenceHolder, myConceptListAntiquotation, myConceptNodeBuilder, myConceptNodeBuilderExpression, myConceptNodeBuilderInitLink, myConceptNodeBuilderInitPart, myConceptNodeBuilderInitProperty, myConceptNodeBuilderList, myConceptNodeBuilderNode, myConceptNodeBuilderRef, myConceptPropertyAntiquotation, myConceptPropertyHolder, myConceptQuotation, myConceptReferenceAntiquotation, myConceptReferenceHolder);
   }
 
   @Override
   @Nullable
   public ConceptDescriptor getDescriptor(String conceptFqName) {
-    switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0u, conceptFqName)) {
+    switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0v, conceptFqName)) {
       case 0:
         return myConceptAbstractAntiquotation;
       case 1:
         return myConceptAntiquotation;
       case 2:
-        return myConceptListAntiquotation;
+        return myConceptInternalReferenceHolder;
       case 3:
-        return myConceptNodeBuilder;
+        return myConceptListAntiquotation;
       case 4:
-        return myConceptNodeBuilderExpression;
+        return myConceptNodeBuilder;
       case 5:
-        return myConceptNodeBuilderInitLink;
+        return myConceptNodeBuilderExpression;
       case 6:
-        return myConceptNodeBuilderInitPart;
+        return myConceptNodeBuilderInitLink;
       case 7:
-        return myConceptNodeBuilderInitProperty;
+        return myConceptNodeBuilderInitPart;
       case 8:
-        return myConceptNodeBuilderList;
+        return myConceptNodeBuilderInitProperty;
       case 9:
-        return myConceptNodeBuilderNode;
+        return myConceptNodeBuilderList;
       case 10:
-        return myConceptNodeBuilderRef;
+        return myConceptNodeBuilderNode;
       case 11:
-        return myConceptPropertyAntiquotation;
+        return myConceptNodeBuilderRef;
       case 12:
-        return myConceptPropertyHolder;
+        return myConceptPropertyAntiquotation;
       case 13:
-        return myConceptQuotation;
+        return myConceptPropertyHolder;
       case 14:
-        return myConceptReferenceAntiquotation;
+        return myConceptQuotation;
       case 15:
+        return myConceptReferenceAntiquotation;
+      case 16:
         return myConceptReferenceHolder;
       default:
         return null;
     }
   }
-  private static String[] stringSwitchCases_1htk8d_a0a0u = new String[]{"jetbrains.mps.lang.quotation.structure.AbstractAntiquotation", "jetbrains.mps.lang.quotation.structure.Antiquotation", "jetbrains.mps.lang.quotation.structure.ListAntiquotation", "jetbrains.mps.lang.quotation.structure.NodeBuilder", "jetbrains.mps.lang.quotation.structure.NodeBuilderExpression", "jetbrains.mps.lang.quotation.structure.NodeBuilderInitLink", "jetbrains.mps.lang.quotation.structure.NodeBuilderInitPart", "jetbrains.mps.lang.quotation.structure.NodeBuilderInitProperty", "jetbrains.mps.lang.quotation.structure.NodeBuilderList", "jetbrains.mps.lang.quotation.structure.NodeBuilderNode", "jetbrains.mps.lang.quotation.structure.NodeBuilderRef", "jetbrains.mps.lang.quotation.structure.PropertyAntiquotation", "jetbrains.mps.lang.quotation.structure.PropertyHolder", "jetbrains.mps.lang.quotation.structure.Quotation", "jetbrains.mps.lang.quotation.structure.ReferenceAntiquotation", "jetbrains.mps.lang.quotation.structure.ReferenceHolder"};
+  private static String[] stringSwitchCases_1htk8d_a0a0v = new String[]{"jetbrains.mps.lang.quotation.structure.AbstractAntiquotation", "jetbrains.mps.lang.quotation.structure.Antiquotation", "jetbrains.mps.lang.quotation.structure.InternalReferenceHolder", "jetbrains.mps.lang.quotation.structure.ListAntiquotation", "jetbrains.mps.lang.quotation.structure.NodeBuilder", "jetbrains.mps.lang.quotation.structure.NodeBuilderExpression", "jetbrains.mps.lang.quotation.structure.NodeBuilderInitLink", "jetbrains.mps.lang.quotation.structure.NodeBuilderInitPart", "jetbrains.mps.lang.quotation.structure.NodeBuilderInitProperty", "jetbrains.mps.lang.quotation.structure.NodeBuilderList", "jetbrains.mps.lang.quotation.structure.NodeBuilderNode", "jetbrains.mps.lang.quotation.structure.NodeBuilderRef", "jetbrains.mps.lang.quotation.structure.PropertyAntiquotation", "jetbrains.mps.lang.quotation.structure.PropertyHolder", "jetbrains.mps.lang.quotation.structure.Quotation", "jetbrains.mps.lang.quotation.structure.ReferenceAntiquotation", "jetbrains.mps.lang.quotation.structure.ReferenceHolder"};
 }

@@ -286,12 +286,6 @@
     <node concept="4jta.1071489090640" id="2652588855789590333" info="ig">
       <property role="asn4.1169194658468.1169194664001" value="ReferenceHolder" />
       <reference role="4jta.1071489090640.1071489389519" target="tpck.1133920641626" resolveInfo="BaseConcept" />
-      <node concept="4jta.1071489288298" id="2652588855789590334" role="4jta.1169125787135.1071489727083" info="ig">
-        <property role="4jta.1071489288298.1071599937831" value="reference" />
-        <property role="4jta.1071489288298.1071599776563" value="role" />
-        <property role="4jta.1071489288298.1071599893252" value="1" />
-        <reference role="4jta.1071489288298.1071599976176" target="tpce.1071489288298" resolveInfo="LinkDeclaration" />
-      </node>
       <node concept="4jta.1071489288299" id="2652588855789590335" role="4jta.1169125787135.1071489727084" info="ig">
         <property role="asn4.1169194658468.1169194664001" value="targetNodeId" />
         <reference role="4jta.1071489288299.1082985295845" target="tpck.1082983041843" resolveInfo="string" />
@@ -300,7 +294,38 @@
         <property role="asn4.1169194658468.1169194664001" value="targetModel" />
         <reference role="4jta.1071489288299.1082985295845" target="tpck.1082983041843" resolveInfo="string" />
       </node>
+      <node concept="4jta.1071489288298" id="2652588855789590334" role="4jta.1169125787135.1071489727083" info="ig">
+        <property role="4jta.1071489288298.1071599937831" value="reference" />
+        <property role="4jta.1071489288298.1071599776563" value="role" />
+        <property role="4jta.1071489288298.1071599893252" value="1" />
+        <reference role="4jta.1071489288298.1071599976176" target="tpce.1071489288298" resolveInfo="LinkDeclaration" />
+      </node>
       <node concept="4jta.1169127622168" id="2652588855789590336" role="4jta.1071489090640.1169129564478" info="ig">
+        <reference role="4jta.1169127622168.1169127628841" target="tpck.1835621062190663819" resolveInfo="IDontSubstituteByDefault" />
+      </node>
+    </node>
+    <node concept="4jta.1071489090640" id="2038730470042956328" info="ig">
+      <property role="asn4.1169194658468.1169194664001" value="InternalReferenceHolder" />
+      <reference role="4jta.1071489090640.1071489389519" target="tpck.1133920641626" resolveInfo="BaseConcept" />
+      <node concept="4jta.1071489288298" id="2038730470042956329" role="4jta.1169125787135.1071489727083" info="ig">
+        <property role="4jta.1071489288298.1071599937831" value="reference" />
+        <property role="4jta.1071489288298.1071599776563" value="role" />
+        <property role="4jta.1071489288298.1071599893252" value="1" />
+        <reference role="4jta.1071489288298.1071599976176" target="tpce.1071489288298" resolveInfo="LinkDeclaration" />
+      </node>
+      <node concept="4jta.1071489288298" id="2038730470042970053" role="4jta.1169125787135.1071489727083" info="ig">
+        <property role="4jta.1071489288298.1071599937831" value="reference" />
+        <property role="4jta.1071489288298.1071599776563" value="sourceNode" />
+        <property role="4jta.1071489288298.1071599893252" value="1" />
+        <reference role="4jta.1071489288298.1071599976176" target="tpck.1133920641626" resolveInfo="BaseConcept" />
+      </node>
+      <node concept="4jta.1071489288298" id="2038730470042970044" role="4jta.1169125787135.1071489727083" info="ig">
+        <property role="4jta.1071489288298.1071599937831" value="reference" />
+        <property role="4jta.1071489288298.1071599776563" value="targetNode" />
+        <property role="4jta.1071489288298.1071599893252" value="1" />
+        <reference role="4jta.1071489288298.1071599976176" target="tpck.1133920641626" resolveInfo="BaseConcept" />
+      </node>
+      <node concept="4jta.1169127622168" id="2038730470042956332" role="4jta.1071489090640.1169129564478" info="ig">
         <reference role="4jta.1169127622168.1169127628841" target="tpck.1835621062190663819" resolveInfo="IDontSubstituteByDefault" />
       </node>
     </node>
