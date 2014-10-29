@@ -341,7 +341,11 @@ public class ModelWriter9 implements IModelWriter {
         elem.setAttribute(ModelPersistence9.IMPLICIT, "true");
         rootElement.addContent(elem);
       }
-      rootElement.addContent(childElement);
+
+      Element contents = new Element("contents");
+      contents.addContent(childElement);
+
+      rootElement.addContent(contents);
       result.put(rootToFile.get(root.getNodeId()), new Document(rootElement));
     }
     return result;
