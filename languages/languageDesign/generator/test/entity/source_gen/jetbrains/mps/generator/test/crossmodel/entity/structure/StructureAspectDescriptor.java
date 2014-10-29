@@ -5,14 +5,17 @@ package jetbrains.mps.generator.test.crossmodel.entity.structure;
 import jetbrains.mps.smodel.runtime.BaseStructureAspectDescriptor;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder;
+import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
+import java.util.UUID;
 import java.util.Collection;
 import java.util.Arrays;
 import org.jetbrains.annotations.Nullable;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
-  /*package*/ final ConceptDescriptor myConceptEntry = new ConceptDescriptorBuilder("jetbrains.mps.generator.test.crossmodel.entity.structure.Entry").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept").properties("kind").references("owner", "use1", "use2", "use3").create();
-  /*package*/ final ConceptDescriptor myConceptNodeA = new ConceptDescriptorBuilder("jetbrains.mps.generator.test.crossmodel.entity.structure.NodeA").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept").children(new String[]{"entries"}, new boolean[]{true}).create();
-  /*package*/ final ConceptDescriptor myConceptTrivialKeeper = new ConceptDescriptorBuilder("jetbrains.mps.generator.test.crossmodel.entity.structure.TrivialKeeper").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").properties("string1", "string2", "string3", "int1", "int2", "bool1", "bool2").create();
+
+  /*package*/ final ConceptDescriptor myConceptEntry = new ConceptDescriptorBuilder("jetbrains.mps.generator.test.crossmodel.entity.structure.Entry", MetaIdFactory.conceptId(UUID.fromString("4d14758c-3ecb-486d-b8c8-ea5beb8ae408"), 4355167635271935478L)).super_("jetbrains.mps.lang.core.structure.BaseConcept").super_(MetaIdFactory.conceptId(UUID.fromString("ceab5195-25ea-4f22-9b92-103b95ca8c0c"), 1133920641626L)).parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept").parentIds(MetaIdFactory.conceptId(UUID.fromString("ceab5195-25ea-4f22-9b92-103b95ca8c0c"), 1133920641626L), MetaIdFactory.conceptId(UUID.fromString("ceab5195-25ea-4f22-9b92-103b95ca8c0c"), 1169194658468L)).propertyDescriptors(new ConceptDescriptorBuilder.Prop(4355167635271953278L, "kind")).properties("kind").referenceDescriptors(new ConceptDescriptorBuilder.Ref(3003826652066045294L, "owner", MetaIdFactory.conceptId(UUID.fromString("4d14758c-3ecb-486d-b8c8-ea5beb8ae408"), 4355167635271935075L), false), new ConceptDescriptorBuilder.Ref(4355167635271952392L, "use1", MetaIdFactory.conceptId(UUID.fromString("4d14758c-3ecb-486d-b8c8-ea5beb8ae408"), 4355167635271935478L), true), new ConceptDescriptorBuilder.Ref(4355167635271952394L, "use2", MetaIdFactory.conceptId(UUID.fromString("4d14758c-3ecb-486d-b8c8-ea5beb8ae408"), 4355167635271935478L), true), new ConceptDescriptorBuilder.Ref(4355167635271952397L, "use3", MetaIdFactory.conceptId(UUID.fromString("4d14758c-3ecb-486d-b8c8-ea5beb8ae408"), 4355167635271935478L), true)).references("owner", "use1", "use2", "use3").create();
+  /*package*/ final ConceptDescriptor myConceptNodeA = new ConceptDescriptorBuilder("jetbrains.mps.generator.test.crossmodel.entity.structure.NodeA", MetaIdFactory.conceptId(UUID.fromString("4d14758c-3ecb-486d-b8c8-ea5beb8ae408"), 4355167635271935075L)).super_("jetbrains.mps.lang.core.structure.BaseConcept").super_(MetaIdFactory.conceptId(UUID.fromString("ceab5195-25ea-4f22-9b92-103b95ca8c0c"), 1133920641626L)).parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept").parentIds(MetaIdFactory.conceptId(UUID.fromString("ceab5195-25ea-4f22-9b92-103b95ca8c0c"), 1133920641626L), MetaIdFactory.conceptId(UUID.fromString("ceab5195-25ea-4f22-9b92-103b95ca8c0c"), 1169194658468L)).childDescriptors(new ConceptDescriptorBuilder.Link(4355167635271953276L, "entries", MetaIdFactory.conceptId(UUID.fromString("4d14758c-3ecb-486d-b8c8-ea5beb8ae408"), 4355167635271935478L), true, true, false)).children(new String[]{"entries"}, new boolean[]{true}).create();
+  /*package*/ final ConceptDescriptor myConceptTrivialKeeper = new ConceptDescriptorBuilder("jetbrains.mps.generator.test.crossmodel.entity.structure.TrivialKeeper", MetaIdFactory.conceptId(UUID.fromString("4d14758c-3ecb-486d-b8c8-ea5beb8ae408"), 8915420221429834077L)).super_("jetbrains.mps.lang.core.structure.BaseConcept").super_(MetaIdFactory.conceptId(UUID.fromString("ceab5195-25ea-4f22-9b92-103b95ca8c0c"), 1133920641626L)).parents("jetbrains.mps.lang.core.structure.BaseConcept").parentIds(MetaIdFactory.conceptId(UUID.fromString("ceab5195-25ea-4f22-9b92-103b95ca8c0c"), 1133920641626L)).propertyDescriptors(new ConceptDescriptorBuilder.Prop(8915420221429834078L, "string1"), new ConceptDescriptorBuilder.Prop(8915420221429834080L, "string2"), new ConceptDescriptorBuilder.Prop(8915420221429834083L, "string3"), new ConceptDescriptorBuilder.Prop(8915420221429834087L, "int1"), new ConceptDescriptorBuilder.Prop(8915420221429834092L, "int2"), new ConceptDescriptorBuilder.Prop(8915420221429834098L, "bool1"), new ConceptDescriptorBuilder.Prop(8915420221429834105L, "bool2")).properties("string1", "string2", "string3", "int1", "int2", "bool1", "bool2").create();
 
   @Override
   public Collection<ConceptDescriptor> getDescriptors() {
@@ -22,7 +25,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   @Override
   @Nullable
   public ConceptDescriptor getDescriptor(String conceptFqName) {
-    switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0g, conceptFqName)) {
+    switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0h, conceptFqName)) {
       case 0:
         return myConceptEntry;
       case 1:
@@ -33,5 +36,5 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
         return null;
     }
   }
-  private static String[] stringSwitchCases_1htk8d_a0a0g = new String[]{"jetbrains.mps.generator.test.crossmodel.entity.structure.Entry", "jetbrains.mps.generator.test.crossmodel.entity.structure.NodeA", "jetbrains.mps.generator.test.crossmodel.entity.structure.TrivialKeeper"};
+  private static String[] stringSwitchCases_1htk8d_a0a0h = new String[]{"jetbrains.mps.generator.test.crossmodel.entity.structure.Entry", "jetbrains.mps.generator.test.crossmodel.entity.structure.NodeA", "jetbrains.mps.generator.test.crossmodel.entity.structure.TrivialKeeper"};
 }

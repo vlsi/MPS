@@ -5,14 +5,17 @@ package jetbrains.mps.generator.test.crossmodel.property.structure;
 import jetbrains.mps.smodel.runtime.BaseStructureAspectDescriptor;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder;
+import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
+import java.util.UUID;
 import java.util.Collection;
 import java.util.Arrays;
 import org.jetbrains.annotations.Nullable;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
-  /*package*/ final ConceptDescriptor myConceptBean = new ConceptDescriptorBuilder("jetbrains.mps.generator.test.crossmodel.property.structure.Bean").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept").children(new String[]{"properties", "initializers"}, new boolean[]{true, true}).create();
-  /*package*/ final ConceptDescriptor myConceptBeanProperty = new ConceptDescriptorBuilder("jetbrains.mps.generator.test.crossmodel.property.structure.BeanProperty").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept").create();
-  /*package*/ final ConceptDescriptor myConceptInitOp = new ConceptDescriptorBuilder("jetbrains.mps.generator.test.crossmodel.property.structure.InitOp").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").properties("value").references("bean", "property").create();
+
+  /*package*/ final ConceptDescriptor myConceptBean = new ConceptDescriptorBuilder("jetbrains.mps.generator.test.crossmodel.property.structure.Bean", MetaIdFactory.conceptId(UUID.fromString("dc1cc948-6f43-4687-90cb-17dd5cb27219"), 5533782486491987565L)).super_("jetbrains.mps.lang.core.structure.BaseConcept").super_(MetaIdFactory.conceptId(UUID.fromString("ceab5195-25ea-4f22-9b92-103b95ca8c0c"), 1133920641626L)).parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept").parentIds(MetaIdFactory.conceptId(UUID.fromString("ceab5195-25ea-4f22-9b92-103b95ca8c0c"), 1133920641626L), MetaIdFactory.conceptId(UUID.fromString("ceab5195-25ea-4f22-9b92-103b95ca8c0c"), 1169194658468L)).childDescriptors(new ConceptDescriptorBuilder.Link(5533782486491987582L, "properties", MetaIdFactory.conceptId(UUID.fromString("dc1cc948-6f43-4687-90cb-17dd5cb27219"), 5533782486491987568L), true, true, false), new ConceptDescriptorBuilder.Link(5925726056274208617L, "initializers", MetaIdFactory.conceptId(UUID.fromString("dc1cc948-6f43-4687-90cb-17dd5cb27219"), 5925726056274072226L), true, true, false)).children(new String[]{"properties", "initializers"}, new boolean[]{true, true}).create();
+  /*package*/ final ConceptDescriptor myConceptBeanProperty = new ConceptDescriptorBuilder("jetbrains.mps.generator.test.crossmodel.property.structure.BeanProperty", MetaIdFactory.conceptId(UUID.fromString("dc1cc948-6f43-4687-90cb-17dd5cb27219"), 5533782486491987568L)).super_("jetbrains.mps.lang.core.structure.BaseConcept").super_(MetaIdFactory.conceptId(UUID.fromString("ceab5195-25ea-4f22-9b92-103b95ca8c0c"), 1133920641626L)).parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept").parentIds(MetaIdFactory.conceptId(UUID.fromString("ceab5195-25ea-4f22-9b92-103b95ca8c0c"), 1133920641626L), MetaIdFactory.conceptId(UUID.fromString("ceab5195-25ea-4f22-9b92-103b95ca8c0c"), 1169194658468L)).create();
+  /*package*/ final ConceptDescriptor myConceptInitOp = new ConceptDescriptorBuilder("jetbrains.mps.generator.test.crossmodel.property.structure.InitOp", MetaIdFactory.conceptId(UUID.fromString("dc1cc948-6f43-4687-90cb-17dd5cb27219"), 5925726056274072226L)).super_("jetbrains.mps.lang.core.structure.BaseConcept").super_(MetaIdFactory.conceptId(UUID.fromString("ceab5195-25ea-4f22-9b92-103b95ca8c0c"), 1133920641626L)).parents("jetbrains.mps.lang.core.structure.BaseConcept").parentIds(MetaIdFactory.conceptId(UUID.fromString("ceab5195-25ea-4f22-9b92-103b95ca8c0c"), 1133920641626L)).propertyDescriptors(new ConceptDescriptorBuilder.Prop(5925726056274090047L, "value")).properties("value").referenceDescriptors(new ConceptDescriptorBuilder.Ref(5176577547833794531L, "bean", MetaIdFactory.conceptId(UUID.fromString("dc1cc948-6f43-4687-90cb-17dd5cb27219"), 5533782486491987565L), false), new ConceptDescriptorBuilder.Ref(5925726056274073213L, "property", MetaIdFactory.conceptId(UUID.fromString("dc1cc948-6f43-4687-90cb-17dd5cb27219"), 5533782486491987568L), false)).references("bean", "property").create();
 
   @Override
   public Collection<ConceptDescriptor> getDescriptors() {
@@ -22,7 +25,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   @Override
   @Nullable
   public ConceptDescriptor getDescriptor(String conceptFqName) {
-    switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0g, conceptFqName)) {
+    switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0h, conceptFqName)) {
       case 0:
         return myConceptBean;
       case 1:
@@ -33,5 +36,5 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
         return null;
     }
   }
-  private static String[] stringSwitchCases_1htk8d_a0a0g = new String[]{"jetbrains.mps.generator.test.crossmodel.property.structure.Bean", "jetbrains.mps.generator.test.crossmodel.property.structure.BeanProperty", "jetbrains.mps.generator.test.crossmodel.property.structure.InitOp"};
+  private static String[] stringSwitchCases_1htk8d_a0a0h = new String[]{"jetbrains.mps.generator.test.crossmodel.property.structure.Bean", "jetbrains.mps.generator.test.crossmodel.property.structure.BeanProperty", "jetbrains.mps.generator.test.crossmodel.property.structure.InitOp"};
 }
