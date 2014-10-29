@@ -56,8 +56,12 @@
   <source id="1201570124301" name="weave_Property">
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
-  <source id="1202577940061" name="reduce_ValueParameter" />
-  <source id="1206152999436" name="reduce_AssignmentExpression_propertySet" />
+  <source id="1202577940061" name="reduce_ValueParameter">
+    <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
+  </source>
+  <source id="1206152999436" name="reduce_AssignmentExpression_propertySet">
+    <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
+  </source>
   <source id="1206154637872" name="reduce_DotExpression_propertyGet" />
   <source id="1224072707336" name="reduce_AsExpression" />
   <source id="5862977038373365416" name="reduceGetProperty" />

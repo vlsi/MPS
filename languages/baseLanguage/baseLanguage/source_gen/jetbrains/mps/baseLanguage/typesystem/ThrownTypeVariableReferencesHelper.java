@@ -23,8 +23,10 @@ public final class ThrownTypeVariableReferencesHelper {
         return null;
       }
       myClassifier = SLinkOperations.getTarget(SNodeOperations.cast(looseType, "jetbrains.mps.baseLanguage.structure.ClassifierType"), "classifier", false);
-    } else {
+    } else if (SNodeOperations.isInstanceOf(currentType, "jetbrains.mps.baseLanguage.structure.ClassifierType")) {
       myClassifier = SLinkOperations.getTarget(SNodeOperations.cast(currentType, "jetbrains.mps.baseLanguage.structure.ClassifierType"), "classifier", false);
+    } else {
+      myClassifier = null;
     }
     return myClassifier;
   }

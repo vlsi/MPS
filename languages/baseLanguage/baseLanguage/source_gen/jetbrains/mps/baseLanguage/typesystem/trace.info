@@ -16999,27 +16999,29 @@
       <node id="3983029200620054668" at="19,131,20,149" concept="6" />
       <node id="3983029200620054698" at="22,131,23,20" concept="13" />
       <node id="3983029200620054708" at="24,7,25,156" concept="6" />
-      <node id="3983029200620054721" at="26,12,27,158" concept="6" />
-      <node id="3983029200620071289" at="28,5,29,24" concept="13" />
-      <node id="3983029200620054719" at="26,10,28,5" concept="1" />
+      <node id="298903485379227775" at="26,114,27,158" concept="6" />
+      <node id="298903485379352039" at="28,12,29,26" concept="6" />
+      <node id="3983029200620071289" at="30,5,31,24" concept="13" />
+      <node id="298903485379350760" at="28,10,30,5" concept="1" />
       <node id="3983029200620054666" at="18,258,21,7" concept="21" />
       <node id="3983029200620054696" at="21,7,24,7" concept="10" />
-      <node id="3983029200620054636" at="15,23,28,5" concept="10" />
-      <node id="3983029200620096237" at="14,0,31,0" concept="17" trace="retrieveClassifier#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <node id="3983029200620054636" at="15,23,30,5" concept="10" />
+      <node id="3983029200620096237" at="14,0,33,0" concept="17" trace="retrieveClassifier#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
       <scope id="3983029200620054667" at="19,131,20,149" />
       <scope id="3983029200620054697" at="22,131,23,20" />
-      <scope id="3983029200620054720" at="26,12,27,158" />
+      <scope id="298903485379227774" at="26,114,27,158" />
+      <scope id="298903485379350761" at="28,12,29,26" />
       <scope id="3983029200620054637" at="16,114,25,156">
         <var name="looseType" id="3983029200620054646" />
         <var name="visited" id="3983029200620054639" />
       </scope>
-      <scope id="3983029200620050318" at="14,67,29,24">
+      <scope id="3983029200620050318" at="14,67,31,24">
         <var name="myClassifier" id="3983029200620054634" />
       </scope>
-      <scope id="3983029200620096237" at="14,0,31,0">
+      <scope id="3983029200620096237" at="14,0,33,0">
         <var name="currentType" id="3983029200620050326" />
       </scope>
-      <unit id="3983029200620050285" at="13,0,32,0" name="jetbrains.mps.baseLanguage.typesystem.ThrownTypeVariableReferencesHelper" />
+      <unit id="3983029200620050285" at="13,0,34,0" name="jetbrains.mps.baseLanguage.typesystem.ThrownTypeVariableReferencesHelper" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)/4017912752400074243">
