@@ -22,7 +22,7 @@ import jetbrains.mps.lang.editor.behavior.ConceptEditorHintDeclaration_Behavior;
 import jetbrains.mps.lang.editor.behavior.EditorCellModel_Behavior;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.openapi.editor.cells.KeyMap;
-import jetbrains.mps.lang.editor.behavior.CellKeyMapItem_Behavior;
+import jetbrains.mps.nodeEditor.keymaps.AWTKeymapHandler;
 import jetbrains.mps.lang.editor.behavior.StyleSheet_Behavior;
 import jetbrains.mps.lang.editor.behavior.IStyleSheetMember_Behavior;
 import jetbrains.mps.lang.editor.behavior.CellMenuUtil;
@@ -287,7 +287,36 @@ public class QueriesGenerated {
     return NameUtil.nodeFQName((applicableConcept != null ? applicableConcept : SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.core.structure.BaseConcept")));
   }
   public static Object propertyMacro_GetPropertyValue_1184928403781(final PropertyMacroContext _context) {
-    return CellKeyMapItem_Behavior.call_getKeyStroke_1213877335427(_context.getNode());
+    SNode keystroke = ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "keystroke", true)).first();
+    if (keystroke == null) {
+      return "";
+    }
+
+    String modifiers = SPropertyOperations.getString(keystroke, "modifiers");
+    if (modifiers == null) {
+      modifiers = "";
+    }
+    if ((modifiers != null && modifiers.length() > 0) && !(AWTKeymapHandler.getValidModifiers().contains(modifiers))) {
+      _context.showErrorMessage(keystroke, "Invalid modifier: \"" + modifiers + "\"");
+      return "";
+    }
+    modifiers = modifiers.replaceAll("\\+", " ");
+
+    if (SPropertyOperations.getString(keystroke, "keycode") == null) {
+      _context.showErrorMessage(keystroke, "keycode was not specified");
+      return "";
+    }
+    if (SPropertyOperations.getString(keystroke, "keycode").length() > 1 && !(AWTKeymapHandler.getValidKeyCodes().contains(SPropertyOperations.getString(keystroke, "keycode")))) {
+      _context.showErrorMessage(keystroke, "Invalid keycode: \"" + SPropertyOperations.getString(keystroke, "keycode") + "\"");
+      return "";
+    }
+    String keyName;
+    if (SPropertyOperations.getString(keystroke, "keycode").startsWith("VK_")) {
+      keyName = SPropertyOperations.getString(keystroke, "keycode").substring(3);
+    } else {
+      keyName = SPropertyOperations.getString(keystroke, "keycode");
+    }
+    return modifiers + " " + keyName;
   }
   public static Object propertyMacro_GetPropertyValue_1189583941983(final PropertyMacroContext _context) {
     return SPropertyOperations.getString(_context.getNode(), "name");
