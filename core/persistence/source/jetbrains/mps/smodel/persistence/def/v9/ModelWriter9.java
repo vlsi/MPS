@@ -26,6 +26,7 @@ import jetbrains.mps.smodel.SModel.ImportElement;
 import jetbrains.mps.smodel.SModelHeader;
 import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import jetbrains.mps.smodel.adapter.ids.SContainmentLinkId;
+import jetbrains.mps.smodel.adapter.ids.SLanguageId;
 import jetbrains.mps.smodel.adapter.ids.SPropertyId;
 import jetbrains.mps.smodel.adapter.ids.SReferenceLinkId;
 import jetbrains.mps.smodel.persistence.def.DocUtil;
@@ -327,25 +328,44 @@ public class ModelWriter9 implements IModelWriter {
       persistenceElement.setAttribute(ModelPersistence.PERSISTENCE_VERSION, VERSION + "");
       rootElement.addContent(persistenceElement);
 
+      //root
       Element childElement = new Element(ModelPersistence9.NODE);
-
       CollectConsumer<SModelReference> usedImports = new CollectConsumer<SModelReference>(new LinkedHashSet<SModelReference>());
+      CollectConsumer<SLanguageId> usedLangs = new CollectConsumer<SLanguageId>(new LinkedHashSet<SLanguageId>());
       ((MultiStreamStorageIndexHelper9) myHelper).setUsedImportsListener(usedImports);
+      ((MultiStreamStorageIndexHelper9) myHelper).setLangConsumer(usedLangs);
       saveNode(childElement, root, true);
+      ((MultiStreamStorageIndexHelper9) myHelper).setLangConsumer(null);
       ((MultiStreamStorageIndexHelper9) myHelper).setUsedImportsListener(null);
 
+      //model imports
+      Element importsElement = new Element(ModelPersistence9.IMPORTS);
       for (SModelReference modelRef : usedImports.getResult()) {
         Element elem = new Element(ModelPersistence9.IMPORT);
         elem.setAttribute(ModelPersistence9.IMPORT_INDEX, "" + myHelper.getImportIndex(modelRef));
         elem.setAttribute(ModelPersistence9.ID, modelRef.toString());
         elem.setAttribute(ModelPersistence9.IMPLICIT, "true");
-        rootElement.addContent(elem);
+        importsElement.addContent(elem);
       }
+      rootElement.addContent(importsElement);
 
+      //language imports
+      Element langsElement = new Element(ModelPersistence9.LANGUAGES);
+      for (SLanguageId lid : usedLangs.getResult()) {
+        Element languageElem = new Element(ModelPersistence9.USED_LANGUAGE);
+        languageElem.setAttribute(ModelPersistence9.ID, lid.serialize());
+        languageElem.setAttribute(ModelPersistence9.VERSION, "-1");
+        languageElem.setAttribute(ModelPersistence9.IMPLICIT, "true");
+        languageElem.setAttribute(ModelPersistence9.USE_INDEX, myHelper.getUsedLanguageIndex(lid));
+        langsElement.addContent(languageElem);
+      }
+      rootElement.addContent(langsElement);
+
+      //add root node, it should be added after imports/languages sections
       Element contents = new Element("contents");
       contents.addContent(childElement);
-
       rootElement.addContent(contents);
+
       result.put(rootToFile.get(root.getNodeId()), new Document(rootElement));
     }
     return result;
