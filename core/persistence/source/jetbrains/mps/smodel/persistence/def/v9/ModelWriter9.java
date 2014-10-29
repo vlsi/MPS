@@ -311,7 +311,7 @@ public class ModelWriter9 implements IModelWriter {
 
     // header
     Element headerRoot = new Element(ModelPersistence.MODEL);
-    headerRoot.setAttribute(ModelPersistence9.ID, sourceModel.getReference().toString());
+    headerRoot.setAttribute(ModelPersistence9.REF, sourceModel.getReference().toString());
     headerRoot.setAttribute(ModelPersistence9.FILE_CONTENT, "header");
     saveModelProperties(sourceModel, headerRoot);
     result.put(FilePerRootDataSource.HEADER_FILE, new Document(headerRoot));
