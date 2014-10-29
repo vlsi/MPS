@@ -320,7 +320,7 @@ public class ModelWriter9 implements IModelWriter {
     Map<SNodeId, String> rootToFile = FilePerRootFormatUtil.getStreamNames(sourceModel);
     for (SNode root : sourceModel.getRootNodes()) {
       Element rootElement = new Element(ModelPersistence.MODEL);
-      rootElement.setAttribute(ModelPersistence9.ID, sourceModel.getReference().toString());
+      rootElement.setAttribute(ModelPersistence9.REF, sourceModel.getReference().toString());
       rootElement.setAttribute(ModelPersistence9.FILE_CONTENT, "root");
 
       Element persistenceElement = new Element(ModelPersistence.PERSISTENCE);
