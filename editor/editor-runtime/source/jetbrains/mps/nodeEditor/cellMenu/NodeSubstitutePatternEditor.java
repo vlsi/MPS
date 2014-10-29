@@ -53,6 +53,9 @@ public class NodeSubstitutePatternEditor {
     }
   }
 
+  public boolean isActivated() {
+    return myEditorActivated;
+  }
   public String getText() {
     if (myEditorActivated) {
       return myEditorWindow.myTextLine.getText();

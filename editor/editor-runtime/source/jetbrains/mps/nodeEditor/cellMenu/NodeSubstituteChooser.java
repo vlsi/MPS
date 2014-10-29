@@ -19,17 +19,16 @@ import com.intellij.openapi.editor.colors.EditorColors;
 import com.intellij.openapi.editor.colors.EditorColorsManager;
 import com.intellij.ui.ScrollPaneFactory;
 import com.intellij.ui.components.JBList;
+import com.intellij.util.ui.AbstractLayoutManager;
 import com.intellij.util.ui.UIUtil;
 import jetbrains.mps.RuntimeFlags;
 import jetbrains.mps.editor.runtime.impl.NodeSubstituteActionsComparator;
-import jetbrains.mps.nodeEditor.CellSide;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.EditorSettings;
 import jetbrains.mps.nodeEditor.IntelligentInputUtil;
 import jetbrains.mps.nodeEditor.KeyboardHandler;
 import jetbrains.mps.nodeEditor.SubstituteActionUtil;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.cells.SubstituteAction;
 import jetbrains.mps.openapi.editor.cells.SubstituteInfo;
@@ -56,6 +55,7 @@ import javax.swing.ListSelectionModel;
 import javax.swing.event.ListDataListener;
 import java.awt.Color;
 import java.awt.Component;
+import java.awt.Container;
 import java.awt.Dimension;
 import java.awt.Point;
 import java.awt.Rectangle;
@@ -75,9 +75,6 @@ import java.util.List;
  */
 public class NodeSubstituteChooser implements KeyboardHandler {
   private static final Logger LOG = LogManager.getLogger(NodeSubstituteChooser.class);
-
-  public static final int PREFERRED_WIDTH = 300;
-  public static final int PREFERRED_HEIGHT = 500;
 
   private PopupWindow myPopupWindow = null;
   private boolean myChooserActivated = false;
@@ -178,12 +175,7 @@ public class NodeSubstituteChooser implements KeyboardHandler {
         rebuildMenuEntries();
         getPatternEditor().activate(getEditorWindow(), myPatternEditorLocation, myPatternEditorSize, canShowPopup);
         if (canShowPopup) {
-          getPopupWindow().relayout();
-          getPopupWindow().validate();
           getPopupWindow().setVisible(true);
-          getPopupWindow().repaint();
-        } else {
-          getPopupWindow().initListModel();
         }
         getPopupWindow().setSelectionIndex(0);
         getPopupWindow().scrollToSelection();
@@ -265,6 +257,8 @@ public class NodeSubstituteChooser implements KeyboardHandler {
       LOG.error(e, e);
     }
 
+    getPopupWindow().setOldSelectedSubstituteAction(getPopupWindow().getCurrentSelectedSubstituteAction());
+
     mySubstituteActions = matchingActions;
     if (mySubstituteActions.size() == 0) {
       myMenuEmpty = true;
@@ -286,12 +280,15 @@ public class NodeSubstituteChooser implements KeyboardHandler {
       });
     }
 
-    myPopupWindow.resetMaxSize();
+    getPopupWindow().resetMaxSize();
     for (SubstituteAction item : mySubstituteActions) {
       Dimension dimension = getCellRenderer().getMaxDimension(item);
-      myPopupWindow.updateMaxHeight(dimension.height);
-      myPopupWindow.updateMaxWidth(dimension.width);
+      getPopupWindow().updateMaxHeight(dimension.height);
+      getPopupWindow().updateMaxWidth(dimension.width);
     }
+
+    getPopupWindow().updateListDimension();
+    getPopupWindow().initListModel();
   }
 
   private void sortSmartActions(List<SubstituteAction> matchingActions) {
@@ -303,8 +300,8 @@ public class NodeSubstituteChooser implements KeyboardHandler {
     if (getPatternEditor().processKeyPressed(keyEvent)) {
       if (myPopupActivated) {
         rebuildMenuEntries();
-        relayoutPopupMenu();
-        tryToApplyIntelligentInput();
+        getPopupWindow().pack();
+        getPopupWindow().repaint();
       }
       return true;
     }
@@ -330,9 +327,9 @@ public class NodeSubstituteChooser implements KeyboardHandler {
       if (myPopupActivated) {
         rebuildMenuEntries();
         if (getEditorWindow() != null && !RuntimeFlags.isTestMode()) {
-          relayoutPopupMenu();
+          getPopupWindow().pack();
+          getPopupWindow().repaint();
         }
-        tryToApplyIntelligentInput();
       }
       return true;
     }
@@ -428,36 +425,12 @@ public class NodeSubstituteChooser implements KeyboardHandler {
     }
   }
 
-  private void relayoutPopupMenu() {
-    if (myPopupActivated) {
-      getPopupWindow().relayout();
-      getPopupWindow().validate();
-      getPopupWindow().repaint();
-    }
-  }
 
   public void dispose() {
     if (myPopupWindow != null) {
       myPopupWindow.getParent().remove(myPopupWindow);
       myPopupWindow.dispose();
       myPopupWindow = null;
-    }
-  }
-
-  private void tryToApplyIntelligentInput() {
-    final String pattern = getPatternEditor().getPattern();
-    if (pattern.length() == 0) {
-      return;
-    }
-
-    String prefix = pattern.substring(0, pattern.length() - 1);
-    if (myNodeSubstituteInfo.hasExactlyNActions(pattern, false, 0) &&
-        myNodeSubstituteInfo.hasExactlyNActions(prefix, true, 1)) {
-
-      EditorCell cell = myEditorComponent.getSelectedCell();
-      if (cell instanceof EditorCell_Label) {
-        IntelligentInputUtil.processCell((EditorCell_Label) cell, myEditorComponent.getEditorContext(), pattern, CellSide.RIGHT);
-      }
     }
   }
 
@@ -472,6 +445,7 @@ public class NodeSubstituteChooser implements KeyboardHandler {
   }
 
   private class PopupWindow extends JWindow {
+    private SubstituteAction mySelectedSubstituteAction;
     private int myMaxHeight;
     private int myMaxWidth;
     private final int MAX_LOOKUP_LIST_HEIGHT = 11;
@@ -537,7 +511,22 @@ public class NodeSubstituteChooser implements KeyboardHandler {
       myScroller.getVerticalScrollBar().setFocusable(false);
 
       myList.setFocusable(false);
-      pack();
+      setLayout(new AbstractLayoutManager() {
+        @Override
+        public Dimension preferredLayoutSize(Container parent) {
+          int height = myScroller.getPreferredSize().height;
+          int width = myScroller.getPreferredSize().width;
+          if (myList.getModel().getSize() > myList.getVisibleRowCount()) {
+            height -= myList.getFixedCellHeight() / 2;
+          }
+          return new Dimension(width, height);
+        }
+
+        @Override
+        public void layoutContainer(Container parent) {
+          relayout();
+        }
+      });
     }
 
     @Override
@@ -547,6 +536,18 @@ public class NodeSubstituteChooser implements KeyboardHandler {
       super.dispose();
     }
 
+    public void setOldSelectedSubstituteAction(SubstituteAction action) {
+      mySelectedSubstituteAction = action;
+    }
+
+    public SubstituteAction getCurrentSelectedSubstituteAction() {
+      int selectionIndex = getSelectionIndex();
+      if (selectionIndex != -1){
+        return ((SubstituteAction) myList.getModel().getElementAt(selectionIndex));
+      } else {
+        return null;
+      }
+    }
     public void resetMaxSize() {
       myMaxWidth = 0;
       myMaxHeight = 0;
@@ -577,33 +578,36 @@ public class NodeSubstituteChooser implements KeyboardHandler {
       myList.setSelectedIndex(index);
     }
 
+
     public void relayout() {
+      if (!myPatternEditor.isActivated()) {
+        return;
+      }
       Point location = myPatternEditor.getLeftBottomPosition();
 
       Rectangle deviceBounds = WindowsUtil.findDeviceBoundsAt(location);
 
-      if (location.getY() + PREFERRED_HEIGHT > deviceBounds.height + deviceBounds.y - 150) {
-        getPopupWindow().setPosition(PopupWindowPosition.TOP);
+      Dimension preferredSize = getPreferredSize();
+      if (location.getY() + preferredSize.getHeight() > deviceBounds.height + deviceBounds.y - 150) {
+        setPosition(PopupWindowPosition.TOP);
       } else {
-        getPopupWindow().setPosition(PopupWindowPosition.BOTTOM);
+        setPosition(PopupWindowPosition.BOTTOM);
       }
 
       Point newLocation = location;
 
-      int oldIndex = getSelectionIndex();
-
-      initListModel();
-
-      myList.setFixedCellHeight(myMaxHeight);
-      myList.setFixedCellWidth(myMaxWidth);
-      myList.setVisibleRowCount(Math.min(mySubstituteActions.size(), MAX_LOOKUP_LIST_HEIGHT));
-
-      if (oldIndex != -1) {
-        setSelectionIndex(oldIndex);
-        scrollToSelection();
+      int oldIndex = 0;
+      if (mySelectedSubstituteAction != null) {
+        int newIndexOfLastSelectedAction = mySubstituteActions.indexOf(mySelectedSubstituteAction);
+        if (newIndexOfLastSelectedAction != -1) {
+          oldIndex = newIndexOfLastSelectedAction;
+        }
       }
 
-      pack();
+      setSelectionIndex(oldIndex);
+      scrollToSelection();
+
+      setSize(preferredSize);
 
       if (getPosition() == PopupWindowPosition.TOP) {
         newLocation = new Point(newLocation.x, newLocation.y - getHeight() - myPatternEditor.getHeight());
@@ -622,6 +626,15 @@ public class NodeSubstituteChooser implements KeyboardHandler {
       }
 
       setLocation(newLocation);
+
+      myScroller.setSize(getSize());
+      myScroller.validate();
+    }
+
+    private void updateListDimension() {
+      myList.setVisibleRowCount(Math.min(mySubstituteActions.size(), MAX_LOOKUP_LIST_HEIGHT));
+      myList.setFixedCellHeight(myMaxHeight);
+      myList.setFixedCellWidth(myMaxWidth);
     }
 
     private void initListModel() {
