@@ -245,23 +245,25 @@ public class ModelDependenciesManager {
 
     @Override
     public void beforeModuleRemoved(SModule module) {
-      invalidateIfWatching(module.getModuleReference());
+      invalidateIfWatching(module);
     }
 
     @Override
     public void moduleChanged(SModule module) {
-      invalidateIfWatching(module.getModuleReference());
+      invalidateIfWatching(module);
     }
 
     @Override
     public void modelAdded(SModule module, SModel model) {
-      invalidateIfWatching(module.getModuleReference());
+      invalidateIfWatching(module);
     }
 
-    private void invalidateIfWatching(SModuleReference moduleRef) {
-      SLanguage languageId = MetaIdByDeclaration.ref2Id(moduleRef);
-      if (languageId != null && myDepManager.isDependency(languageId)) {
-        myDepManager.invalidate();
+    private void invalidateIfWatching(SModule module) {
+      if ((module instanceof Language)) {
+        SLanguage languageId = MetaIdByDeclaration.ref2Id(module.getModuleReference());
+        if (languageId != null && myDepManager.isDependency(languageId)) {
+          myDepManager.invalidate();
+        }
       }
     }
 
