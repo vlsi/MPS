@@ -16,6 +16,8 @@ import java.util.List;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
@@ -77,64 +79,64 @@ public class SuroundWithTryCatch_Intention implements IntentionFactory {
       List<SNode> selectedNodes = editorContext.getSelectedNodes();
       SNodeOperations.insertNextSiblingChild(node, tryCatchStatement);
       for (SNode selectedNode : ListSequence.fromList(selectedNodes)) {
-        ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(tryCatchStatement, "body", true), "statement", true)).addElement(SNodeOperations.getAncestor(selectedNode, "jetbrains.mps.baseLanguage.structure.Statement", true, false));
+        ListSequence.fromList(SLinkOperations.getChildren(SLinkOperations.getTarget(tryCatchStatement, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1164879751025l, 1164879758292l, "body")), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123136l, 1068581517665l, "statement"))).addElement(SNodeOperations.getAncestor(selectedNode, "jetbrains.mps.baseLanguage.structure.Statement", true, false));
       }
       Iterable<SNode> caughtExceptions = ListSequence.fromList(SNodeOperations.getAncestors(tryCatchStatement, "jetbrains.mps.baseLanguage.structure.ITryCatchStatement", false)).translate(new ITranslator2<SNode, SNode>() {
         public Iterable<SNode> translate(SNode it) {
           return ListSequence.fromList(BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), it, "virtual_getCatchClauses_3718132079121388582", new Object[]{})).where(new IWhereFilter<SNode>() {
             public boolean accept(SNode it) {
-              return (SLinkOperations.getTarget(it, "throwable", true) != null);
+              return (SLinkOperations.getTarget(it, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1164903280175l, 1164903359217l, "throwable")) != null);
             }
           }).select(new ISelector<SNode, SNode>() {
             public SNode select(SNode it) {
-              return SLinkOperations.getTarget(it, "throwable", true);
+              return SLinkOperations.getTarget(it, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1164903280175l, 1164903359217l, "throwable"));
             }
           }).where(new IWhereFilter<SNode>() {
             public boolean accept(SNode it) {
-              return (SLinkOperations.getTarget(it, "type", true) != null);
+              return (SLinkOperations.getTarget(it, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 4972933694980447171l, 5680397130376446158l, "type")) != null);
             }
           }).select(new ISelector<SNode, SNode>() {
             public SNode select(SNode it) {
-              return SLinkOperations.getTarget(it, "type", true);
+              return SLinkOperations.getTarget(it, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 4972933694980447171l, 5680397130376446158l, "type"));
             }
           });
         }
       }).select(new ISelector<SNode, SNode>() {
         public SNode select(SNode it) {
-          return SLinkOperations.getTarget(SNodeOperations.cast(it, "jetbrains.mps.baseLanguage.structure.ClassifierType"), "classifier", false);
+          return SLinkOperations.getTarget(SNodeOperations.cast(it, "jetbrains.mps.baseLanguage.structure.ClassifierType"), MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier"));
         }
       });
 
       Iterable<SNode> thrownExceptions = ListSequence.fromList(BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), SNodeOperations.getAncestor(tryCatchStatement, "jetbrains.mps.baseLanguage.structure.IMethodLike", false, false), "virtual_getThrowableTypes_6204026822016975623", new Object[]{})).select(new ISelector<SNode, SNode>() {
         public SNode select(SNode it) {
-          return SLinkOperations.getTarget(SNodeOperations.cast(it, "jetbrains.mps.baseLanguage.structure.ClassifierType"), "classifier", false);
+          return SLinkOperations.getTarget(SNodeOperations.cast(it, "jetbrains.mps.baseLanguage.structure.ClassifierType"), MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier"));
         }
       });
 
       final Iterable<SNode> handledExceptions = Sequence.fromIterable(caughtExceptions).concat(Sequence.fromIterable(thrownExceptions));
 
-      Set<SNode> uncaughtThrowables = StatementList_Behavior.call_uncaughtThrowables_3331512479731115649(SLinkOperations.getTarget(tryCatchStatement, "body", true), false);
+      Set<SNode> uncaughtThrowables = StatementList_Behavior.call_uncaughtThrowables_3331512479731115649(SLinkOperations.getTarget(tryCatchStatement, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1164879751025l, 1164879758292l, "body")), false);
       if (SetSequence.fromSet(uncaughtThrowables).isNotEmpty()) {
-        ListSequence.fromList(SLinkOperations.getTargets(tryCatchStatement, "catchClause", true)).clear();
+        ListSequence.fromList(SLinkOperations.getChildren(tryCatchStatement, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1164879751025l, 1164903496223l, "catchClause"))).clear();
         SetSequence.fromSet(uncaughtThrowables).visitAll(new IVisitor<SNode>() {
           public void visit(SNode it) {
             if (Sequence.fromIterable(handledExceptions).contains(it)) {
               return;
             }
             SNode type = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ClassifierType", null);
-            SLinkOperations.setTarget(type, "classifier", it, false);
+            SLinkOperations.setTarget(type, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier"), it);
             SNode clause = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.CatchClause", null);
-            SLinkOperations.setTarget(clause, "throwable", SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration", null), true);
-            SLinkOperations.setTarget(SLinkOperations.getTarget(clause, "throwable", true), "type", type, true);
-            SPropertyOperations.set(SLinkOperations.getTarget(clause, "throwable", true), "name", "e");
-            ListSequence.fromList(SLinkOperations.getTargets(tryCatchStatement, "catchClause", true)).addElement(clause);
+            SLinkOperations.setTarget(clause, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1164903280175l, 1164903359217l, "throwable"), SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration", null));
+            SLinkOperations.setTarget(SLinkOperations.getTarget(clause, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1164903280175l, 1164903359217l, "throwable")), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 4972933694980447171l, 5680397130376446158l, "type"), type);
+            SPropertyOperations.set(SLinkOperations.getTarget(clause, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1164903280175l, 1164903359217l, "throwable")), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"), "e");
+            ListSequence.fromList(SLinkOperations.getChildren(tryCatchStatement, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1164879751025l, 1164903496223l, "catchClause"))).addElement(clause);
           }
         });
-        if (ListSequence.fromList(SLinkOperations.getTargets(tryCatchStatement, "catchClause", true)).isEmpty()) {
-          SNodeFactoryOperations.addNewChild(tryCatchStatement, "catchClause", "jetbrains.mps.baseLanguage.structure.CatchClause");
+        if (ListSequence.fromList(SLinkOperations.getChildren(tryCatchStatement, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1164879751025l, 1164903496223l, "catchClause"))).isEmpty()) {
+          SNodeFactoryOperations.addNewChild(tryCatchStatement, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1164879751025l, 1164903496223l, "catchClause"), "jetbrains.mps.baseLanguage.structure.CatchClause");
         }
       }
-      editorContext.select(SLinkOperations.getTarget(SLinkOperations.getTarget(ListSequence.fromList(SLinkOperations.getTargets(tryCatchStatement, "catchClause", true)).first(), "throwable", true), "type", true));
+      editorContext.select(SLinkOperations.getTarget(SLinkOperations.getTarget(ListSequence.fromList(SLinkOperations.getChildren(tryCatchStatement, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1164879751025l, 1164903496223l, "catchClause"))).first(), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1164903280175l, 1164903359217l, "throwable")), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 4972933694980447171l, 5680397130376446158l, "type")));
     }
     public IntentionDescriptor getDescriptor() {
       return SuroundWithTryCatch_Intention.this;

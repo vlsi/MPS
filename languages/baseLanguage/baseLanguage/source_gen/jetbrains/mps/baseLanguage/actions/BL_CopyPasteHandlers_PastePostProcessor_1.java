@@ -10,6 +10,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import org.jetbrains.mps.openapi.model.SReference;
 import java.util.List;
 import java.util.ArrayList;
@@ -37,8 +39,8 @@ public class BL_CopyPasteHandlers_PastePostProcessor_1 implements PastePostProce
 
     if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(pastedNode), "jetbrains.mps.baseLanguage.structure.DotExpression")) {
       SNode parentDotExpression = (SNode) SNodeOperations.getParent(pastedNode);
-      if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(parentDotExpression, "operation", true), "jetbrains.mps.baseLanguage.structure.FieldReferenceOperation")) {
-        SNode fieldReferenceOperation = (SNode) SLinkOperations.getTarget(parentDotExpression, "operation", true);
+      if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(parentDotExpression, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1197027756228l, 1197027833540l, "operation")), "jetbrains.mps.baseLanguage.structure.FieldReferenceOperation")) {
+        SNode fieldReferenceOperation = (SNode) SLinkOperations.getTarget(parentDotExpression, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1197027756228l, 1197027833540l, "operation"));
         SReference fieldDeclarationReference = SNodeOperations.getReference(fieldReferenceOperation, SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.FieldReferenceOperation", "fieldDeclaration"));
 
         // External reference 
@@ -53,14 +55,14 @@ public class BL_CopyPasteHandlers_PastePostProcessor_1 implements PastePostProce
         for (SNode nextClassConcept : ListSequence.fromList(possibleClassConcepts)) {
           if (Sequence.fromIterable(Members.visibleInstanceFields(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), nextClassConcept, "virtual_getThisType_7405920559687254782", new Object[]{}), pastedNode)).where(new IWhereFilter<SNode>() {
             public boolean accept(SNode it) {
-              return SPropertyOperations.getString(it, "name").equals(resolveInfo);
+              return SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")).equals(resolveInfo);
             }
           }).isNotEmpty()) {
             if (nextClassConcept != containingClass) {
-              SLinkOperations.setTarget(pastedNode, "classConcept", nextClassConcept, false);
+              SLinkOperations.setTarget(pastedNode, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1070475354124l, 1182955020723l, "classConcept"), nextClassConcept);
             } else if (SNodeOperations.getReference(pastedNode, SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.ThisExpression", "classConcept")) != null) {
               SReference reference = SNodeOperations.getReference(pastedNode, SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.ThisExpression", "classConcept"));
-              SLinkOperations.setTarget(pastedNode, "classConcept", null, false);
+              SLinkOperations.setTarget(pastedNode, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1070475354124l, 1182955020723l, "classConcept"), null);
               (as_nqjmzz_a0a0c0a0a0a01a1a5a1(reference, jetbrains.mps.smodel.SReference.class)).setRole(null);
             }
             break;

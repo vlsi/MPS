@@ -15,6 +15,8 @@ import jetbrains.mps.smodel.action.DefaultSimpleSubstituteAction;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 
 public class QueriesGenerated {
   public static List<SubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_PropertiesLine_6896005762093486375(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
@@ -31,7 +33,7 @@ public class QueriesGenerated {
               if (pattern.endsWith("=")) {
                 name = name.substring(0, name.length() - 1);
               }
-              SPropertyOperations.set(pd, "name", name);
+              SPropertyOperations.set(pd, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"), name);
             }
             return pd;
           }

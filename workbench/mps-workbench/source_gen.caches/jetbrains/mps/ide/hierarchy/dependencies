@@ -89,6 +89,7 @@
     <classNode dependClassName="java.util.Collections" />
     <classNode dependClassName="java.util.HashSet" />
     <classNode dependClassName="java.util.Set" />
+    <classNode dependClassName="java.util.UUID" />
     <classNode dependClassName="jetbrains.mps.ide.hierarchy.AbstractHierarchyTree" />
     <classNode dependClassName="jetbrains.mps.ide.hierarchy.IconContainer" />
     <classNode dependClassName="jetbrains.mps.ide.ui.tree.TreeHighlighterExtension" />
@@ -96,6 +97,7 @@
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.progress.EmptyProgressMonitor" />
     <classNode dependClassName="jetbrains.mps.project.GlobalScopeMinusTransient" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SReference" />
     <classNode extendsClassName="jetbrains.mps.ide.hierarchy.AbstractHierarchyView" />
@@ -132,6 +134,7 @@
     <classNode dependClassName="java.util.HashSet" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="java.util.Set" />
+    <classNode dependClassName="java.util.UUID" />
     <classNode dependClassName="jetbrains.mps.ide.hierarchy.AbstractHierarchyView" />
     <classNode dependClassName="jetbrains.mps.ide.hierarchy.CircularHierarchyException" />
     <classNode dependClassName="jetbrains.mps.kernel.model.SModelUtil" />
@@ -139,6 +142,7 @@
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.LanguageHierarchyCache" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="jetbrains.mps.util.NameUtil" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.ide.hierarchy.AbstractHierarchyTree" />
@@ -208,6 +212,7 @@
     <classNode dependClassName="java.util.HashMap" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="java.util.Map" />
+    <classNode dependClassName="java.util.UUID" />
     <classNode dependClassName="javax.swing.AbstractAction" />
     <classNode dependClassName="javax.swing.JButton" />
     <classNode dependClassName="javax.swing.JCheckBox" />
@@ -238,6 +243,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.MPSModuleRepository" />
     <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
     <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="jetbrains.mps.util.Computable" />
     <classNode dependClassName="jetbrains.mps.workbench.action.ActionUtils" />
     <classNode dependClassName="jetbrains.mps.workbench.action.BaseGroup" />

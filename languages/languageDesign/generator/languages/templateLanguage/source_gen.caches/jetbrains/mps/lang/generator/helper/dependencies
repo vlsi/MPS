@@ -19,11 +19,13 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.generator.helper.QueriesUtil" file="QueriesUtil.java">
     <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.UUID" />
     <classNode dependClassName="jetbrains.mps.lang.generator.behavior.PatternReduction_MappingRule_Behavior" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
 </dependenciesRoot>

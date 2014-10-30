@@ -8,6 +8,8 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.smodel.SModelUtil_new;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
@@ -17,7 +19,7 @@ public class typeof_NodePart_InferenceRule extends AbstractInferenceRule_Runtime
   }
   public void applyRule(final SNode part, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     {
-      SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(part, "value", true);
+      SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(part, MetaAdapterFactory.getContainmentLink(new UUID(-5173455103397510980l, -8487484424797171117l), 1237305334312l, 1237305790512l, "value"));
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:f568ac81-f20d-491c-8e81-330fbdff24e6(jetbrains.mps.lang.textGen.typesystem)", "1237553263169", 0, null);
       typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:f568ac81-f20d-491c-8e81-330fbdff24e6(jetbrains.mps.lang.textGen.typesystem)", "1237553263171", true), (SNode) _quotation_createNode_3guvy4_a0a0b(), false, true, _info_12389875345);
     }

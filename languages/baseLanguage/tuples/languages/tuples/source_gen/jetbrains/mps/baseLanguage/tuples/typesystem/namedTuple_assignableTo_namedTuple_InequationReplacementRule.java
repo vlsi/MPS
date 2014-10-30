@@ -8,6 +8,8 @@ import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicable2Status;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
@@ -23,8 +25,8 @@ public class namedTuple_assignableTo_namedTuple_InequationReplacementRule extend
   public namedTuple_assignableTo_namedTuple_InequationReplacementRule() {
   }
   public void processInequation(final SNode subtype, final SNode supertype, final EquationInfo equationInfo, final TypeCheckingContext typeCheckingContext, IsApplicable2Status status, final boolean inequalityIsWeak, final boolean inequalityIsLessThan) {
-    if (SLinkOperations.getTarget(subtype, "classifier", false) == SLinkOperations.getTarget(supertype, "classifier", false)) {
-      if (!(ListSequence.fromList(SLinkOperations.getTargets(subtype, "parameter", true)).count() == ListSequence.fromList(SLinkOperations.getTargets(supertype, "parameter", true)).count())) {
+    if (SLinkOperations.getTarget(subtype, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier")) == SLinkOperations.getTarget(supertype, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier"))) {
+      if (!(ListSequence.fromList(SLinkOperations.getChildren(subtype, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1109201940907l, "parameter"))).count() == ListSequence.fromList(SLinkOperations.getChildren(supertype, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1109201940907l, "parameter"))).count())) {
         MessageTarget errorTarget = new NodeMessageTarget();
         IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(equationInfo.getNodeWithError(), "Parameter types counts don't match", "r:e119dbbd-3529-4067-8bad-6b9edd79d0b6(jetbrains.mps.baseLanguage.tuples.typesystem)", "1239968591797", null, errorTarget);
         HUtil.addAdditionalRuleIdsFromInfo(_reporter_2309309498, equationInfo);
@@ -32,8 +34,8 @@ public class namedTuple_assignableTo_namedTuple_InequationReplacementRule extend
       {
         SNode lp;
         SNode rp;
-        Iterator<SNode> lp_iterator = ListSequence.fromList(SLinkOperations.getTargets(subtype, "parameter", true)).iterator();
-        Iterator<SNode> rp_iterator = ListSequence.fromList(SLinkOperations.getTargets(supertype, "parameter", true)).iterator();
+        Iterator<SNode> lp_iterator = ListSequence.fromList(SLinkOperations.getChildren(subtype, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1109201940907l, "parameter"))).iterator();
+        Iterator<SNode> rp_iterator = ListSequence.fromList(SLinkOperations.getChildren(supertype, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1109201940907l, "parameter"))).iterator();
         while (true) {
           if (!(lp_iterator.hasNext())) {
             break;
@@ -52,7 +54,7 @@ public class namedTuple_assignableTo_namedTuple_InequationReplacementRule extend
         }
       }
     } else {
-      if (!(ListSequence.fromList(NamedTupleDeclaration_Behavior.call_allExtends_3142843783245461132(SLinkOperations.getTarget(subtype, "classifier", false))).contains(SLinkOperations.getTarget(supertype, "classifier", false)))) {
+      if (!(ListSequence.fromList(NamedTupleDeclaration_Behavior.call_allExtends_3142843783245461132(SLinkOperations.getTarget(subtype, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier")))).contains(SLinkOperations.getTarget(supertype, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier"))))) {
         MessageTarget errorTarget = new NodeMessageTarget();
         IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(supertype, "Incompatible named closure", "r:e119dbbd-3529-4067-8bad-6b9edd79d0b6(jetbrains.mps.baseLanguage.tuples.typesystem)", "2213502935616215826", null, errorTarget);
         HUtil.addAdditionalRuleIdsFromInfo(_reporter_2309309498, equationInfo);
@@ -61,15 +63,15 @@ public class namedTuple_assignableTo_namedTuple_InequationReplacementRule extend
   }
   public boolean checkInequation(final SNode subtype, final SNode supertype, final EquationInfo equationInfo, IsApplicable2Status status, final boolean inequalityIsWeak, final boolean inequalityIsLessThan) {
     boolean result_14532009 = true;
-    if (SLinkOperations.getTarget(subtype, "classifier", false) == SLinkOperations.getTarget(supertype, "classifier", false)) {
-      if (!(ListSequence.fromList(SLinkOperations.getTargets(subtype, "parameter", true)).count() == ListSequence.fromList(SLinkOperations.getTargets(supertype, "parameter", true)).count())) {
+    if (SLinkOperations.getTarget(subtype, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier")) == SLinkOperations.getTarget(supertype, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier"))) {
+      if (!(ListSequence.fromList(SLinkOperations.getChildren(subtype, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1109201940907l, "parameter"))).count() == ListSequence.fromList(SLinkOperations.getChildren(supertype, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1109201940907l, "parameter"))).count())) {
         result_14532009 = false;
       }
       {
         SNode lp;
         SNode rp;
-        Iterator<SNode> lp_iterator = ListSequence.fromList(SLinkOperations.getTargets(subtype, "parameter", true)).iterator();
-        Iterator<SNode> rp_iterator = ListSequence.fromList(SLinkOperations.getTargets(supertype, "parameter", true)).iterator();
+        Iterator<SNode> lp_iterator = ListSequence.fromList(SLinkOperations.getChildren(subtype, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1109201940907l, "parameter"))).iterator();
+        Iterator<SNode> rp_iterator = ListSequence.fromList(SLinkOperations.getChildren(supertype, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1109201940907l, "parameter"))).iterator();
         while (true) {
           if (!(lp_iterator.hasNext())) {
             break;
@@ -83,7 +85,7 @@ public class namedTuple_assignableTo_namedTuple_InequationReplacementRule extend
         }
       }
     } else {
-      if (!(ListSequence.fromList(NamedTupleDeclaration_Behavior.call_allExtends_3142843783245461132(SLinkOperations.getTarget(subtype, "classifier", false))).contains(SLinkOperations.getTarget(supertype, "classifier", false)))) {
+      if (!(ListSequence.fromList(NamedTupleDeclaration_Behavior.call_allExtends_3142843783245461132(SLinkOperations.getTarget(subtype, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier")))).contains(SLinkOperations.getTarget(supertype, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier"))))) {
         result_14532009 = false;
       }
     }

@@ -54,7 +54,7 @@ public class ConceptRegistry implements CoreComponent, LanguageRegistryListener 
   private final Map<String, ConceptDescriptor> conceptDescriptors = new ConcurrentHashMap<String, ConceptDescriptor>();
   private final Map<SConceptId, ConceptDescriptor> conceptDescriptorsById = new ConcurrentHashMap<SConceptId, ConceptDescriptor>();
   private final Map<String, BehaviorDescriptor> behaviorDescriptors = new ConcurrentHashMap<String, BehaviorDescriptor>();
-  private final Map<String, ConstraintsDescriptor> constraintsDescriptors = new ConcurrentHashMap<String, ConstraintsDescriptor>();
+  private final Map<SConceptId, ConstraintsDescriptor> constraintsDescriptors = new ConcurrentHashMap<SConceptId, ConstraintsDescriptor>();
   private final Map<String, TextGenDescriptor> textGenDescriptors = new ConcurrentHashMap<String, TextGenDescriptor>();
 
   private final LanguageRegistry myLanguageRegistry;
@@ -151,7 +151,7 @@ public class ConceptRegistry implements CoreComponent, LanguageRegistryListener 
     }
 
     if (!startLoad(id, LanguageAspect.STRUCTURE)) {
-      return new IllegalConceptDescriptor(DebugRegistry.getInstance().getConceptName(id));
+      return new IllegalConceptDescriptor(id);
     }
 
     try {
@@ -166,7 +166,7 @@ public class ConceptRegistry implements CoreComponent, LanguageRegistryListener 
       }
 
       if (descriptor == null) {
-        descriptor = new IllegalConceptDescriptor(DebugRegistry.getInstance().getConceptName(id));
+        descriptor = new IllegalConceptDescriptor(id);
       }
 
       if (!(descriptor instanceof IllegalConceptDescriptor)) {
@@ -224,43 +224,51 @@ public class ConceptRegistry implements CoreComponent, LanguageRegistryListener 
     }
   }
 
+  @Deprecated
   @NotNull
-  public ConstraintsDescriptor getConstraintsDescriptor(@Nullable String fqName) {
-    ConstraintsDescriptor descriptor = constraintsDescriptors.get(fqName);
+  public ConstraintsDescriptor getConstraintsDescriptor(@NotNull String fqName) {
+    ConceptDescriptor conceptDescriptor = getConceptDescriptor(fqName);
+    return getConstraintsDescriptor(conceptDescriptor.getId());
+  }
+
+  @NotNull
+  public ConstraintsDescriptor getConstraintsDescriptor(@NotNull SConceptId conceptId) {
+    ConstraintsDescriptor descriptor = constraintsDescriptors.get(conceptId);
 
     if (descriptor != null) {
       return descriptor;
     }
 
-    if (!startLoad(fqName, LanguageAspect.CONSTRAINTS)) {
-      return new IllegalConstraintsDescriptor(fqName);
+    ConceptDescriptor conceptDescriptor = getConceptDescriptor(conceptId);
+    if (!startLoad(conceptId, LanguageAspect.CONSTRAINTS)) {
+      return new IllegalConstraintsDescriptor(conceptId, conceptDescriptor.getConceptFqName());
     }
 
     try {
       try {
-        LanguageRuntime languageRuntime = myLanguageRegistry.getLanguage(NameUtil.namespaceFromConceptFQName(fqName));
+        LanguageRuntime languageRuntime = myLanguageRegistry.getLanguage(conceptId.getLanguageId());
         ConstraintsAspectDescriptor constraintsAspectDescriptor;
         if (languageRuntime == null) {
           // Then language was just renamed and was not re-generated then it can happen that it has no
-          LOG.warn("No language for: " + fqName + ", while looking for constraints descriptor.", new Throwable());
+          LOG.warn("No language for: " + conceptId + ", while looking for constraints descriptor.", new Throwable());
           constraintsAspectDescriptor = ConstraintsAspectInterpreted.getInstance();
         } else {
           constraintsAspectDescriptor = languageRuntime.getAspect(ConstraintsAspectDescriptor.class);
         }
-        descriptor = constraintsAspectDescriptor.getDescriptor(fqName);
+        descriptor = constraintsAspectDescriptor.getDescriptor(conceptDescriptor.getConceptFqName());
       } catch (Throwable e) {
         LOG.warn("Exception while constraints descriptor creating", e);
       }
 
       if (descriptor == null) {
-        descriptor = new IllegalConstraintsDescriptor(fqName);
+        descriptor = new IllegalConstraintsDescriptor(conceptId, conceptDescriptor.getConceptFqName());
       }
 
-      constraintsDescriptors.put(fqName, descriptor);
+      constraintsDescriptors.put(conceptId, descriptor);
 
       return descriptor;
     } finally {
-      finishLoad(fqName, LanguageAspect.CONSTRAINTS);
+      finishLoad(conceptId, LanguageAspect.CONSTRAINTS);
     }
   }
 

@@ -8,6 +8,8 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultReferenceSubstituteInfo;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.util.List;
@@ -37,7 +39,7 @@ public class DefaultReferenceSubstituteInfoActionsFactory {
     if (genuineLinkDeclaration == null) {
       return;
     }
-    if (SPropertyOperations.hasValue(genuineLinkDeclaration, "metaClass", "aggregation", "reference")) {
+    if (SPropertyOperations.hasValue(genuineLinkDeclaration, MetaAdapterFactory.getProperty(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489288298l, 1071599937831l, "metaClass"), "aggregation", "reference")) {
       DefaultReferenceSubstituteInfoActionsFactory.LOG.error("only reference links are allowed here", myLinkDeclaration);
     }
     if (!(BehaviorReflection.invokeNonVirtual(Boolean.TYPE, genuineLinkDeclaration, "jetbrains.mps.lang.structure.structure.LinkDeclaration", "call_isSingular_1213877254557", new Object[]{}))) {
@@ -57,7 +59,7 @@ public class DefaultReferenceSubstituteInfoActionsFactory {
       SNode parent = SNodeOperations.getParent(mySourceNode);
       String role = SNodeOperations.getContainingLinkRole(mySourceNode);
       SNode roleLink = ((SNode) SModelSearchUtil.findLinkDeclaration(SNodeOperations.getConceptDeclaration(parent), role));
-      return ModelActions.createChildNodeSubstituteActions(parent, mySourceNode, SLinkOperations.getTarget(roleLink, "target", false), new DefaultChildNodeSetter(roleLink), mySubstituteInfo.getOperationContext());
+      return ModelActions.createChildNodeSubstituteActions(parent, mySourceNode, SLinkOperations.getTarget(roleLink, MetaAdapterFactory.getReferenceLink(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489288298l, 1071599976176l, "target")), new DefaultChildNodeSetter(roleLink), mySubstituteInfo.getOperationContext());
     }
     return ModelActions.createReferentSubstituteActions(mySourceNode, myCurrentReferent, myLinkDeclaration, mySubstituteInfo.getOperationContext());
   }

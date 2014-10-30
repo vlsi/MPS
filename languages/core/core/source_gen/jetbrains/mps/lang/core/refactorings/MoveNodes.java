@@ -14,6 +14,8 @@ import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.kernel.model.SModelUtil;
@@ -51,7 +53,7 @@ public class MoveNodes extends BaseLoggableRefactoring {
           List<SNode> linkDeclarations = (List<SNode>) superConceptsScope.getLinkDeclarationsExcludingOverridden();
           Iterable<SNode> childLinkDeclarations = ListSequence.fromList(linkDeclarations).where(new IWhereFilter<SNode>() {
             public boolean accept(SNode it) {
-              return SPropertyOperations.hasValue(it, "metaClass", "aggregation", "reference");
+              return SPropertyOperations.hasValue(it, MetaAdapterFactory.getProperty(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489288298l, 1071599937831l, "metaClass"), "aggregation", "reference");
             }
           });
           Iterable<String> childLinksRoles = Sequence.fromIterable(childLinkDeclarations).select(new ISelector<SNode, String>() {
@@ -65,8 +67,8 @@ public class MoveNodes extends BaseLoggableRefactoring {
               return;
             }
             for (SNode linkDeclaration : childLinkDeclarations) {
-              if (SPropertyOperations.getString(linkDeclaration, "role").equals(childRole)) {
-                if (!(SConceptOperations.isSuperConceptOf(SLinkOperations.getTarget(linkDeclaration, "target", false), NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(node))))) {
+              if (SPropertyOperations.getString(linkDeclaration, MetaAdapterFactory.getProperty(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489288298l, 1071599776563l, "role")).equals(childRole)) {
+                if (!(SConceptOperations.isSuperConceptOf(SLinkOperations.getTarget(linkDeclaration, MetaAdapterFactory.getReferenceLink(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489288298l, 1071599976176l, "target")), NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(node))))) {
                   return;
                 }
               }
@@ -76,7 +78,7 @@ public class MoveNodes extends BaseLoggableRefactoring {
         } else if (((Object) refactoringContext.getParameter("target")) instanceof SModel) {
           result.value = ListSequence.fromList(refactoringContext.getSelectedNodes()).all(new IWhereFilter<SNode>() {
             public boolean accept(SNode node) {
-              return SPropertyOperations.getBoolean(SNodeOperations.as(SNodeOperations.getConceptDeclaration(node), "jetbrains.mps.lang.structure.structure.ConceptDeclaration"), "rootable");
+              return SPropertyOperations.getBoolean(SNodeOperations.as(SNodeOperations.getConceptDeclaration(node), "jetbrains.mps.lang.structure.structure.ConceptDeclaration"), MetaAdapterFactory.getProperty(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489090640l, 1096454100552l, "rootable"));
             }
           });
         }

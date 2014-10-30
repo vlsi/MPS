@@ -5879,7 +5879,7 @@
                     <node concept="vg0i.1197027756228" id="8484262519286306095" role="vg0i.1081773326031.1081773367580" info="nn">
                       <node concept="vg0i.1070533707846" id="8484262519286306096" role="vg0i.1197027756228.1197027771414" info="nn">
                         <reference role="vg0i.1070533707846.1144433057691" target="cu2c.~SNodeUtil" resolveInfo="SNodeUtil" />
-                        <reference role="vg0i.1068498886296.1068581517664" target="cu2c.~SNodeUtil%dlink_ConceptDeclaration_implements" resolveInfo="link_ConceptDeclaration_implements" />
+                        <reference role="vg0i.1068498886296.1068581517664" target="cu2c.~SNodeUtil%dlinkName_ConceptDeclaration_implements" resolveInfo="linkName_ConceptDeclaration_implements" />
                       </node>
                       <node concept="vg0i.1202948039474" id="8484262519286306097" role="vg0i.1197027756228.1197027833540" info="nn">
                         <reference role="vg0i.1204053956946.1068499141037" target="e2lb.~String%dequals(java%dlang%dObject)%cboolean" resolveInfo="equals" />
@@ -5891,7 +5891,7 @@
                     <node concept="vg0i.1197027756228" id="8484262519286306099" role="vg0i.1081773326031.1081773367579" info="nn">
                       <node concept="vg0i.1070533707846" id="8484262519286306100" role="vg0i.1197027756228.1197027771414" info="nn">
                         <reference role="vg0i.1070533707846.1144433057691" target="cu2c.~SNodeUtil" resolveInfo="SNodeUtil" />
-                        <reference role="vg0i.1068498886296.1068581517664" target="cu2c.~SNodeUtil%dlink_ConceptDeclaration_extends" resolveInfo="link_ConceptDeclaration_extends" />
+                        <reference role="vg0i.1068498886296.1068581517664" target="cu2c.~SNodeUtil%dlinkName_ConceptDeclaration_extends" resolveInfo="linkName_ConceptDeclaration_extends" />
                       </node>
                       <node concept="vg0i.1202948039474" id="8484262519286306101" role="vg0i.1197027756228.1197027833540" info="nn">
                         <reference role="vg0i.1204053956946.1068499141037" target="e2lb.~String%dequals(java%dlang%dObject)%cboolean" resolveInfo="equals" />
@@ -5974,7 +5974,7 @@
                     <node concept="vg0i.1197027756228" id="8484262519286306129" role="vg0i.1081773326031.1081773367580" info="nn">
                       <node concept="vg0i.1070533707846" id="8484262519286306130" role="vg0i.1197027756228.1197027771414" info="nn">
                         <reference role="vg0i.1070533707846.1144433057691" target="cu2c.~SNodeUtil" resolveInfo="SNodeUtil" />
-                        <reference role="vg0i.1068498886296.1068581517664" target="cu2c.~SNodeUtil%dlink_ConceptDeclaration_implements" resolveInfo="link_ConceptDeclaration_implements" />
+                        <reference role="vg0i.1068498886296.1068581517664" target="cu2c.~SNodeUtil%dlinkName_ConceptDeclaration_implements" resolveInfo="linkName_ConceptDeclaration_implements" />
                       </node>
                       <node concept="vg0i.1202948039474" id="8484262519286306131" role="vg0i.1197027756228.1197027833540" info="nn">
                         <reference role="vg0i.1204053956946.1068499141037" target="e2lb.~String%dequals(java%dlang%dObject)%cboolean" resolveInfo="equals" />
@@ -5986,7 +5986,7 @@
                     <node concept="vg0i.1197027756228" id="8484262519286306133" role="vg0i.1081773326031.1081773367579" info="nn">
                       <node concept="vg0i.1070533707846" id="8484262519286306134" role="vg0i.1197027756228.1197027771414" info="nn">
                         <reference role="vg0i.1070533707846.1144433057691" target="cu2c.~SNodeUtil" resolveInfo="SNodeUtil" />
-                        <reference role="vg0i.1068498886296.1068581517664" target="cu2c.~SNodeUtil%dlink_ConceptDeclaration_extends" resolveInfo="link_ConceptDeclaration_extends" />
+                        <reference role="vg0i.1068498886296.1068581517664" target="cu2c.~SNodeUtil%dlinkName_ConceptDeclaration_extends" resolveInfo="linkName_ConceptDeclaration_extends" />
                       </node>
                       <node concept="vg0i.1202948039474" id="8484262519286306135" role="vg0i.1197027756228.1197027833540" info="nn">
                         <reference role="vg0i.1204053956946.1068499141037" target="e2lb.~String%dequals(java%dlang%dObject)%cboolean" resolveInfo="equals" />
@@ -6649,7 +6649,7 @@
                   <node concept="vg0i.1197027756228" id="8484262519286306387" role="vg0i.1068580123159.1068580123160" info="nn">
                     <node concept="vg0i.1070533707846" id="8484262519286306388" role="vg0i.1197027756228.1197027771414" info="nn">
                       <reference role="vg0i.1070533707846.1144433057691" target="cu2c.~SNodeUtil" resolveInfo="SNodeUtil" />
-                      <reference role="vg0i.1068498886296.1068581517664" target="cu2c.~SNodeUtil%dlink_AbstractConceptDeclaration_propertyDeclaration" resolveInfo="link_AbstractConceptDeclaration_propertyDeclaration" />
+                      <reference role="vg0i.1068498886296.1068581517664" target="cu2c.~SNodeUtil%dlinkName_AbstractConceptDeclaration_propertyDeclaration" resolveInfo="linkName_AbstractConceptDeclaration_propertyDeclaration" />
                     </node>
                     <node concept="vg0i.1202948039474" id="8484262519286306389" role="vg0i.1197027756228.1197027833540" info="nn">
                       <reference role="vg0i.1204053956946.1068499141037" target="e2lb.~String%dequals(java%dlang%dObject)%cboolean" resolveInfo="equals" />
@@ -6730,7 +6730,7 @@
                   <node concept="vg0i.1197027756228" id="8484262519286306416" role="vg0i.1068580123159.1068580123160" info="nn">
                     <node concept="vg0i.1070533707846" id="8484262519286306417" role="vg0i.1197027756228.1197027771414" info="nn">
                       <reference role="vg0i.1070533707846.1144433057691" target="cu2c.~SNodeUtil" resolveInfo="SNodeUtil" />
-                      <reference role="vg0i.1068498886296.1068581517664" target="cu2c.~SNodeUtil%dlink_AbstractConceptDeclaration_propertyDeclaration" resolveInfo="link_AbstractConceptDeclaration_propertyDeclaration" />
+                      <reference role="vg0i.1068498886296.1068581517664" target="cu2c.~SNodeUtil%dlinkName_AbstractConceptDeclaration_propertyDeclaration" resolveInfo="linkName_AbstractConceptDeclaration_propertyDeclaration" />
                     </node>
                     <node concept="vg0i.1202948039474" id="8484262519286306418" role="vg0i.1197027756228.1197027833540" info="nn">
                       <reference role="vg0i.1204053956946.1068499141037" target="e2lb.~String%dequals(java%dlang%dObject)%cboolean" resolveInfo="equals" />
@@ -7733,7 +7733,7 @@
                   <node concept="vg0i.1197027756228" id="8484262519286306802" role="vg0i.1068580123159.1068580123160" info="nn">
                     <node concept="vg0i.1070533707846" id="8484262519286306803" role="vg0i.1197027756228.1197027771414" info="nn">
                       <reference role="vg0i.1070533707846.1144433057691" target="cu2c.~SNodeUtil" resolveInfo="SNodeUtil" />
-                      <reference role="vg0i.1068498886296.1068581517664" target="cu2c.~SNodeUtil%dlink_AbstractConceptDeclaration_linkDeclaration" resolveInfo="link_AbstractConceptDeclaration_linkDeclaration" />
+                      <reference role="vg0i.1068498886296.1068581517664" target="cu2c.~SNodeUtil%dlinkName_AbstractConceptDeclaration_linkDeclaration" resolveInfo="linkName_AbstractConceptDeclaration_linkDeclaration" />
                     </node>
                     <node concept="vg0i.1202948039474" id="8484262519286306804" role="vg0i.1197027756228.1197027833540" info="nn">
                       <reference role="vg0i.1204053956946.1068499141037" target="e2lb.~String%dequals(java%dlang%dObject)%cboolean" resolveInfo="equals" />
@@ -7814,7 +7814,7 @@
                   <node concept="vg0i.1197027756228" id="8484262519286306831" role="vg0i.1068580123159.1068580123160" info="nn">
                     <node concept="vg0i.1070533707846" id="8484262519286306832" role="vg0i.1197027756228.1197027771414" info="nn">
                       <reference role="vg0i.1070533707846.1144433057691" target="cu2c.~SNodeUtil" resolveInfo="SNodeUtil" />
-                      <reference role="vg0i.1068498886296.1068581517664" target="cu2c.~SNodeUtil%dlink_AbstractConceptDeclaration_linkDeclaration" resolveInfo="link_AbstractConceptDeclaration_linkDeclaration" />
+                      <reference role="vg0i.1068498886296.1068581517664" target="cu2c.~SNodeUtil%dlinkName_AbstractConceptDeclaration_linkDeclaration" resolveInfo="linkName_AbstractConceptDeclaration_linkDeclaration" />
                     </node>
                     <node concept="vg0i.1202948039474" id="8484262519286306833" role="vg0i.1197027756228.1197027833540" info="nn">
                       <reference role="vg0i.1204053956946.1068499141037" target="e2lb.~String%dequals(java%dlang%dObject)%cboolean" resolveInfo="equals" />
@@ -7866,7 +7866,7 @@
                   <node concept="vg0i.1197027756228" id="8484262519286306850" role="vg0i.1081516740877.1081516765348" info="nn">
                     <node concept="vg0i.1070533707846" id="8484262519286306851" role="vg0i.1197027756228.1197027771414" info="nn">
                       <reference role="vg0i.1070533707846.1144433057691" target="cu2c.~SNodeUtil" resolveInfo="SNodeUtil" />
-                      <reference role="vg0i.1068498886296.1068581517664" target="cu2c.~SNodeUtil%dproperty_LinkDeclaration_role" resolveInfo="property_LinkDeclaration_role" />
+                      <reference role="vg0i.1068498886296.1068581517664" target="cu2c.~SNodeUtil%dpropertyName_LinkDeclaration_role" resolveInfo="propertyName_LinkDeclaration_role" />
                     </node>
                     <node concept="vg0i.1202948039474" id="8484262519286306852" role="vg0i.1197027756228.1197027833540" info="nn">
                       <reference role="vg0i.1204053956946.1068499141037" target="e2lb.~String%dequals(java%dlang%dObject)%cboolean" resolveInfo="equals" />

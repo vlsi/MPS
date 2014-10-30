@@ -32,6 +32,7 @@
     <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="java.util.UUID" />
     <classNode dependClassName="javax.swing.JComponent" />
     <classNode dependClassName="javax.swing.JPanel" />
     <classNode dependClassName="javax.swing.border.TitledBorder" />
@@ -47,6 +48,7 @@
     <classNode dependClassName="jetbrains.mps.progress.ProgressMonitorAdapter" />
     <classNode dependClassName="jetbrains.mps.project.Project" />
     <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="jetbrains.mps.smodel.tempmodel.TempModuleOptions" />
     <classNode dependClassName="jetbrains.mps.smodel.tempmodel.TemporaryModels" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
@@ -69,6 +71,7 @@
     <classNode dependClassName="java.util.Arrays" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="java.util.Map" />
+    <classNode dependClassName="java.util.UUID" />
     <classNode dependClassName="javax.swing.Icon" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime.Wrappers" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.util.plugin.refactorings.ChangeMethodSignatureRefactoring" />
@@ -86,6 +89,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
     <classNode dependClassName="jetbrains.mps.smodel.MPSModuleRepository" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelRepository" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="jetbrains.mps.smodel.behaviour.BehaviorReflection" />
     <classNode dependClassName="org.apache.log4j.Level" />
     <classNode dependClassName="org.apache.log4j.LogManager" />

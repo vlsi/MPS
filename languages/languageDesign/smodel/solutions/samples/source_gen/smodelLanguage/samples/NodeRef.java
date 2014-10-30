@@ -6,14 +6,16 @@ import java.util.List;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 
 public class NodeRef {
   public void node_ref_1() {
-    List<SNode> members = SLinkOperations.getTargets(SNodeOperations.getNode("r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)", "1139535328871"), "member", true);
-    String presentation = SPropertyOperations.getString(ListSequence.fromList(members).first(), "externalValue");
-    String internalValue = SPropertyOperations.getString(ListSequence.fromList(members).first(), "internalValue");
-    String javaIdentifier = SPropertyOperations.getString(ListSequence.fromList(members).first(), "javaIdentifier");
+    List<SNode> members = SLinkOperations.getChildren(SNodeOperations.getNode("r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)", "1139535328871"), MetaAdapterFactory.getContainmentLink(new UUID(-4094437568663370681l, -8968368868337559369l), 1082978164219l, 1083172003582l, "member"));
+    String presentation = SPropertyOperations.getString(ListSequence.fromList(members).first(), MetaAdapterFactory.getProperty(new UUID(-4094437568663370681l, -8968368868337559369l), 1083171877298l, 1083923523172l, "externalValue"));
+    String internalValue = SPropertyOperations.getString(ListSequence.fromList(members).first(), MetaAdapterFactory.getProperty(new UUID(-4094437568663370681l, -8968368868337559369l), 1083171877298l, 1083923523171l, "internalValue"));
+    String javaIdentifier = SPropertyOperations.getString(ListSequence.fromList(members).first(), MetaAdapterFactory.getProperty(new UUID(-4094437568663370681l, -8968368868337559369l), 1083171877298l, 1192116978809l, "javaIdentifier"));
   }
 }

@@ -9,12 +9,15 @@
     <model ref="r:aaff0f7f-e57d-4430-aea6-ff86ed5c75ae(jetbrains.mps.lang.editor.editorTest.intentions)" name="jetbrains.mps.lang.editor.editorTest.intentions" />
     <model ref="r:9832fb5f-2578-4b58-8014-a5de79da988e(jetbrains.mps.ide.editor.actions)" name="jetbrains.mps.ide.editor.actions" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" />
+    <concept id="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1133920641626" name="jetbrains.mps.lang.core.structure.BaseConcept" />
+    <concept id="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" />
     <concept id="8585453e-6bfb-4d80-98de-b16074f1d86c/1225989773458" name="jetbrains.mps.lang.test.structure.InvokeIntentionStatement" />
     <concept id="8585453e-6bfb-4d80-98de-b16074f1d86c/1227182079811" name="jetbrains.mps.lang.test.structure.TypeKeyStatement" />
     <concept id="8585453e-6bfb-4d80-98de-b16074f1d86c/1229187653856" name="jetbrains.mps.lang.test.structure.EditorTestCase" />
     <concept id="8585453e-6bfb-4d80-98de-b16074f1d86c/1229194968594" name="jetbrains.mps.lang.test.structure.AnonymousCellAnnotation" />
     <concept id="81f0abb8-d71e-4d13-a0c1-d2291fbb28b7/3195708693940803614" name="jetbrains.mps.lang.editor.editorTest.structure.SimplePropertyContainer" />
     <concept id="81f0abb8-d71e-4d13-a0c1-d2291fbb28b7/3195708693940868525" name="jetbrains.mps.lang.editor.editorTest.structure.SimplePropertyAttribute" />
+    <concept id="ceab5195-25ea-4f22-9b92-103b95ca8c0c/3364660638048049750" name="jetbrains.mps.lang.core.structure.PropertyAttribute" />
     <concept id="81f0abb8-d71e-4d13-a0c1-d2291fbb28b7/3447504547918837138" name="jetbrains.mps.lang.editor.editorTest.structure.Composition" />
     <concept id="8585453e-6bfb-4d80-98de-b16074f1d86c/4239542196496927193" name="jetbrains.mps.lang.test.structure.MPSActionReference" />
     <concept id="8585453e-6bfb-4d80-98de-b16074f1d86c/5097124989038916362" name="jetbrains.mps.lang.test.structure.TestInfo" />
@@ -126,9 +129,6 @@
       <property role="asn4.1169194658468.1169194664001" value="RemovingLeftTransformForAttributedProperty" />
       <property role="5i2a.1229187653856.1883175908513350760" value="Adding Left-transform for property cell and then removing it again for the node which concept has editor representing only this property cell and property attribute is attached to the node" />
       <node concept="1dth.3447504547918837138" id="3447504547919025678" role="5i2a.1229187653856.1229187676388" info="ng">
-        <node concept="1dth.3195708693940868525" id="3447504547919025679" role="asn4.1133920641626.5169995583184591170" info="ng">
-          <property role="asn4.3364660638048049750.1757699476691236117" value="property" />
-        </node>
         <node concept="1dth.3195708693940803614" id="3447504547919025680" role="1dth.3447504547918837138.3447504547918837407" info="ng">
           <property role="1dth.3195708693940803614.3195708693940803805" value="10" />
           <node concept="1dth.3195708693940868525" id="3447504547919025681" role="asn4.1133920641626.5169995583184591170" info="ng">
@@ -144,9 +144,6 @@
         </node>
       </node>
       <node concept="1dth.3447504547918837138" id="3447504547919025683" role="5i2a.1229187653856.1229187707859" info="ng">
-        <node concept="1dth.3195708693940868525" id="3447504547919025684" role="asn4.1133920641626.5169995583184591170" info="ng">
-          <property role="asn4.3364660638048049750.1757699476691236117" value="property" />
-        </node>
         <node concept="1dth.3195708693940803614" id="3447504547919025685" role="1dth.3447504547918837138.3447504547918837407" info="ng">
           <property role="1dth.3195708693940803614.3195708693940803805" value="10" />
           <node concept="1dth.3195708693940868525" id="3447504547919025686" role="asn4.1133920641626.5169995583184591170" info="ng">
@@ -223,9 +220,6 @@
       <property role="asn4.1169194658468.1169194664001" value="RemovingRightTransformForAttributedProperty" />
       <property role="5i2a.1229187653856.1883175908513350760" value="Adding Right-transform for property cell and then removing it again for the node which concept has editor representing only this property cell and property attribute is attached to the node" />
       <node concept="1dth.3447504547918837138" id="3447504547919057577" role="5i2a.1229187653856.1229187676388" info="ng">
-        <node concept="1dth.3195708693940868525" id="3447504547919057578" role="asn4.1133920641626.5169995583184591170" info="ng">
-          <property role="asn4.3364660638048049750.1757699476691236117" value="property" />
-        </node>
         <node concept="1dth.3195708693940803614" id="3447504547919057579" role="1dth.3447504547918837138.3447504547918837407" info="ng">
           <property role="1dth.3195708693940803614.3195708693940803805" value="10" />
           <node concept="1dth.3195708693940868525" id="3447504547919057580" role="asn4.1133920641626.5169995583184591170" info="ng">
@@ -241,9 +235,6 @@
         </node>
       </node>
       <node concept="1dth.3447504547918837138" id="3447504547919057582" role="5i2a.1229187653856.1229187707859" info="ng">
-        <node concept="1dth.3195708693940868525" id="3447504547919057583" role="asn4.1133920641626.5169995583184591170" info="ng">
-          <property role="asn4.3364660638048049750.1757699476691236117" value="property" />
-        </node>
         <node concept="1dth.3195708693940803614" id="3447504547919057584" role="1dth.3447504547918837138.3447504547918837407" info="ng">
           <property role="1dth.3195708693940803614.3195708693940803805" value="10" />
           <node concept="1dth.3195708693940868525" id="3447504547919057585" role="asn4.1133920641626.5169995583184591170" info="ng">
@@ -273,9 +264,6 @@
       <property role="asn4.1169194658468.1169194664001" value="RightTransformForAttributedProperty" />
       <property role="5i2a.1229187653856.1883175908513350760" value="Right-transforming property cell if node concept has editor representing only this property cell and property attribute is attached to the node" />
       <node concept="1dth.3447504547918837138" id="3447504547919057592" role="5i2a.1229187653856.1229187676388" info="ng">
-        <node concept="1dth.3195708693940868525" id="3447504547919057593" role="asn4.1133920641626.5169995583184591170" info="ng">
-          <property role="asn4.3364660638048049750.1757699476691236117" value="property" />
-        </node>
         <node concept="1dth.3195708693940803614" id="3447504547919057594" role="1dth.3447504547918837138.3447504547918837407" info="ng">
           <property role="1dth.3195708693940803614.3195708693940803805" value="10" />
           <node concept="1dth.3195708693940868525" id="3447504547919057595" role="asn4.1133920641626.5169995583184591170" info="ng">
@@ -291,9 +279,6 @@
         </node>
       </node>
       <node concept="1dth.3447504547918837138" id="3447504547919057597" role="5i2a.1229187653856.1229187707859" info="ng">
-        <node concept="1dth.3195708693940868525" id="3447504547919057598" role="asn4.1133920641626.5169995583184591170" info="ng">
-          <property role="asn4.3364660638048049750.1757699476691236117" value="property" />
-        </node>
         <node concept="1dth.3195708693940803614" id="3447504547919057599" role="1dth.3447504547918837138.3447504547918837407" info="ng">
           <property role="1dth.3195708693940803614.3195708693940803805" value="10" />
           <node concept="1dth.3195708693940868525" id="3447504547919057600" role="asn4.1133920641626.5169995583184591170" info="ng">

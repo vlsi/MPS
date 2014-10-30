@@ -9,6 +9,8 @@ import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
@@ -25,20 +27,20 @@ public class typeof_DefaultClassCreator_InferenceRule extends AbstractInferenceR
   public typeof_DefaultClassCreator_InferenceRule() {
   }
   public void applyRule(final SNode defaultClassCreator, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    if (!((ListSequence.fromList(SLinkOperations.getTargets(defaultClassCreator, "typeParameter", true)).isEmpty() || ListSequence.fromList(SLinkOperations.getTargets(defaultClassCreator, "typeParameter", true)).count() == ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(defaultClassCreator, "classifier", false), "typeVariableDeclaration", true)).count()))) {
+    if (!((ListSequence.fromList(SLinkOperations.getChildren(defaultClassCreator, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 2820489544401957797l, 2820489544402271667l, "typeParameter"))).isEmpty() || ListSequence.fromList(SLinkOperations.getChildren(defaultClassCreator, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 2820489544401957797l, 2820489544402271667l, "typeParameter"))).count() == ListSequence.fromList(SLinkOperations.getChildren(SLinkOperations.getTarget(defaultClassCreator, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 2820489544401957797l, 2820489544401957798l, "classifier")), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1109279851642l, 1109279881614l, "typeVariableDeclaration"))).count()))) {
       {
         MessageTarget errorTarget = new NodeMessageTarget();
         IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(defaultClassCreator, "wrong number of type parameters", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "7179268497749415882", null, errorTarget);
       }
     }
-    for (SNode parameter : SLinkOperations.getTargets(defaultClassCreator, "typeParameter", true)) {
-      if (!(!(TypeChecker.getInstance().getSubtypingManager().isSubtype(parameter, SLinkOperations.getTarget(_quotation_createNode_9il0ce_a1a0a0a1a1(), "descriptor", false), false)))) {
+    for (SNode parameter : SLinkOperations.getChildren(defaultClassCreator, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 2820489544401957797l, 2820489544402271667l, "typeParameter"))) {
+      if (!(!(TypeChecker.getInstance().getSubtypingManager().isSubtype(parameter, SLinkOperations.getTarget(_quotation_createNode_9il0ce_a1a0a0a1a1(), MetaAdapterFactory.getReferenceLink(new UUID(-1338283401124492350l, -9092293120968916352l), 1159268661480l, 1159268661479l, "descriptor")), false)))) {
         MessageTarget errorTarget = new NodeMessageTarget();
         IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(parameter, "primitive type not allowed", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "7179268497749415918", null, errorTarget);
       }
     }
     // --- 
-    SNode constructedType = _quotation_createNode_9il0ce_a0d0b(SLinkOperations.getTarget(defaultClassCreator, "classifier", false), SLinkOperations.getTargets(defaultClassCreator, "typeParameter", true));
+    SNode constructedType = _quotation_createNode_9il0ce_a0d0b(SLinkOperations.getTarget(defaultClassCreator, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 2820489544401957797l, 2820489544401957798l, "classifier")), SLinkOperations.getChildren(defaultClassCreator, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 2820489544401957797l, 2820489544402271667l, "typeParameter")));
     {
       SNode _nodeToCheck_1029348928467 = defaultClassCreator;
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "7179268497749415942", 0, null);
@@ -61,7 +63,7 @@ public class typeof_DefaultClassCreator_InferenceRule extends AbstractInferenceR
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.blTypes.structure.PrimitiveTypeRef", null, null, false);
-    quotedNode_1.setReference("descriptor", SReference.create("descriptor", quotedNode_1, facade.createModelReference("r:00000000-0000-4000-0000-011c895902de(jetbrains.mps.baseLanguage.blTypes.primitiveDescriptors)"), facade.createNodeId("1196683941620")));
+    quotedNode_1.setReference(MetaAdapterFactory.getReferenceLink(new UUID(-1338283401124492350l, -9092293120968916352l), 1159268661480l, 1159268661479l, "descriptor"), SReference.create(MetaAdapterFactory.getReferenceLink(new UUID(-1338283401124492350l, -9092293120968916352l), 1159268661480l, 1159268661479l, "descriptor"), quotedNode_1, facade.createModelReference("r:00000000-0000-4000-0000-011c895902de(jetbrains.mps.baseLanguage.blTypes.primitiveDescriptors)"), facade.createNodeId("1196683941620")));
     return quotedNode_1;
   }
   private static SNode _quotation_createNode_9il0ce_a0d0b(Object parameter_1, Object parameter_2) {
@@ -69,7 +71,7 @@ public class typeof_DefaultClassCreator_InferenceRule extends AbstractInferenceR
     SNode quotedNode_3 = null;
     SNode quotedNode_4 = null;
     quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, false);
-    SNodeAccessUtil.setReferenceTarget(quotedNode_3, "classifier", (SNode) parameter_1);
+    SNodeAccessUtil.setReferenceTarget(quotedNode_3, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier"), (SNode) parameter_1);
     {
       List<SNode> nodes = (List<SNode>) parameter_2;
       for (SNode child : nodes) {

@@ -4,11 +4,13 @@ package jetbrains.mps.console.base.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 
 public class ModifiedCommandHistoryItem_Behavior {
   public static void init(SNode thisNode) {
   }
   public static SNode virtual_getCommandToEdit_691634242167796942(SNode thisNode) {
-    return SLinkOperations.getTarget(thisNode, "modifiedCommand", true);
+    return SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-2442401883381282302l, -5546511894809623691l), 691634242167120039l, 691634242167120086l, "modifiedCommand"));
   }
 }

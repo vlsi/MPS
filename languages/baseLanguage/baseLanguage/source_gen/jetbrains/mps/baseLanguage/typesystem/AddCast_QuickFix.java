@@ -8,6 +8,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.baseLanguage.actions.PrecedenceUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 
@@ -32,13 +34,13 @@ public class AddCast_QuickFix extends QuickFix_Runtime {
     SNode actualType = (SNodeOperations.isInstanceOf(((SNode) AddCast_QuickFix.this.getField("desiredType")[0]), "jetbrains.mps.baseLanguage.structure.Type") ? ((SNode) AddCast_QuickFix.this.getField("desiredType")[0]) : TypeChecker.getInstance().getTypeOf(((SNode) AddCast_QuickFix.this.getField("desiredType")[0])));
 
     SNode cast = SNodeOperations.replaceWithNewChild(((SNode) AddCast_QuickFix.this.getField("expression")[0]), "jetbrains.mps.baseLanguage.structure.CastExpression");
-    SLinkOperations.setTarget(cast, "expression", ((SNode) AddCast_QuickFix.this.getField("expression")[0]), true);
-    SLinkOperations.setTarget(cast, "type", SNodeOperations.copyNode(actualType), true);
+    SLinkOperations.setTarget(cast, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1070534934090l, 1070534934092l, "expression"), ((SNode) AddCast_QuickFix.this.getField("expression")[0]));
+    SLinkOperations.setTarget(cast, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1070534934090l, 1070534934091l, "type"), SNodeOperations.copyNode(actualType));
     boolean needsParensAroundCastExpression = PrecedenceUtil.needsParensAroundCastExpression(cast);
     if (needsParensAroundCastExpression) {
       SNode parens = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ParenthesizedExpression", null);
-      SLinkOperations.setTarget(parens, "expression", ((SNode) AddCast_QuickFix.this.getField("expression")[0]), true);
-      SLinkOperations.setTarget(cast, "expression", parens, true);
+      SLinkOperations.setTarget(parens, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1079359253375l, 1079359253376l, "expression"), ((SNode) AddCast_QuickFix.this.getField("expression")[0]));
+      SLinkOperations.setTarget(cast, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1070534934090l, 1070534934092l, "expression"), parens);
     }
   }
 }

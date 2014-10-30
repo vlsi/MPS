@@ -4,14 +4,16 @@ package jetbrains.mps.baseLanguage.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 
 public class NotExpression_Behavior {
   public static void init(SNode thisNode) {
   }
   public static SNode virtual_getSyntacticallyRightSideExpression_1742226163722653714(SNode thisNode) {
-    return SLinkOperations.getTarget(thisNode, "expression", true);
+    return SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1081516740877l, 1081516765348l, "expression"));
   }
   public static void virtual_setSyntacticallyRightSideExpression_1742226163722653694(SNode thisNode, SNode expr) {
-    SLinkOperations.setTarget(thisNode, "expression", expr, true);
+    SLinkOperations.setTarget(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1081516740877l, 1081516765348l, "expression"), expr);
   }
 }

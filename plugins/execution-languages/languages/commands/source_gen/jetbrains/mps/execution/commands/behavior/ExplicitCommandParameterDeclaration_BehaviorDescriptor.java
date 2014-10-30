@@ -13,6 +13,9 @@ public class ExplicitCommandParameterDeclaration_BehaviorDescriptor extends Comm
   public boolean virtual_isInitializable_1213877517488(SNode thisNode) {
     return ExplicitCommandParameterDeclaration_Behavior.virtual_isInitializable_1213877517488(thisNode);
   }
+  public boolean virtual_isRequired_8287978476542625659(SNode thisNode) {
+    return ExplicitCommandParameterDeclaration_Behavior.virtual_isRequired_8287978476542625659(thisNode);
+  }
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.execution.commands.structure.ExplicitCommandParameterDeclaration";

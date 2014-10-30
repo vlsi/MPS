@@ -10,6 +10,8 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.openapi.editor.cells.SubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 
@@ -52,10 +54,10 @@ public class XYCTableModel implements TableModel {
   }
   @Override
   public void insertColumn(int columnNumber) {
-    Utils.insertElementAt(x(), SNodeFactoryOperations.createNewNode(NameUtil.nodeFQName(SLinkOperations.getTarget(xlink, "target", false)), null), columnNumber - 1);
+    Utils.insertElementAt(x(), SNodeFactoryOperations.createNewNode(NameUtil.nodeFQName(SLinkOperations.getTarget(xlink, MetaAdapterFactory.getReferenceLink(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489288298l, 1071599976176l, "target"))), null), columnNumber - 1);
     for (int i = 0; i < getRowCount() - 1; i++) {
       int idx = dataidx(i + 1, columnNumber);
-      Utils.insertElementAt(c(), SNodeFactoryOperations.createNewNode(NameUtil.nodeFQName(SLinkOperations.getTarget(clink, "target", false)), null), idx);
+      Utils.insertElementAt(c(), SNodeFactoryOperations.createNewNode(NameUtil.nodeFQName(SLinkOperations.getTarget(clink, MetaAdapterFactory.getReferenceLink(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489288298l, 1071599976176l, "target"))), null), idx);
     }
   }
   @Override
@@ -66,10 +68,10 @@ public class XYCTableModel implements TableModel {
     if (rowNumber == 0) {
       rowNumber = 1;
     }
-    Utils.insertElementAt(y(), SNodeFactoryOperations.createNewNode(NameUtil.nodeFQName(SLinkOperations.getTarget(ylink, "target", false)), null), rowNumber - 1);
+    Utils.insertElementAt(y(), SNodeFactoryOperations.createNewNode(NameUtil.nodeFQName(SLinkOperations.getTarget(ylink, MetaAdapterFactory.getReferenceLink(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489288298l, 1071599976176l, "target"))), null), rowNumber - 1);
     for (int i = 0; i < getColumnCount() - 1; i++) {
       int idx = dataidx(rowNumber, i + 1);
-      Utils.insertElementAt(c(), SNodeFactoryOperations.createNewNode(NameUtil.nodeFQName(SLinkOperations.getTarget(clink, "target", false)), null), idx);
+      Utils.insertElementAt(c(), SNodeFactoryOperations.createNewNode(NameUtil.nodeFQName(SLinkOperations.getTarget(clink, MetaAdapterFactory.getReferenceLink(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489288298l, 1071599976176l, "target"))), null), idx);
     }
   }
   @Override
@@ -91,14 +93,14 @@ public class XYCTableModel implements TableModel {
       return;
     }
     if (row == 0) {
-      x().set(column - 1, SNodeFactoryOperations.createNewNode(NameUtil.nodeFQName(SLinkOperations.getTarget(xlink, "target", false)), null));
+      x().set(column - 1, SNodeFactoryOperations.createNewNode(NameUtil.nodeFQName(SLinkOperations.getTarget(xlink, MetaAdapterFactory.getReferenceLink(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489288298l, 1071599976176l, "target"))), null));
     }
     if (column == 0) {
-      y().set(row - 1, SNodeFactoryOperations.createNewNode(NameUtil.nodeFQName(SLinkOperations.getTarget(ylink, "target", false)), null));
+      y().set(row - 1, SNodeFactoryOperations.createNewNode(NameUtil.nodeFQName(SLinkOperations.getTarget(ylink, MetaAdapterFactory.getReferenceLink(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489288298l, 1071599976176l, "target"))), null));
     }
     int idx = dataidx(row, column);
     if (idx < ListSequence.fromList(c()).count()) {
-      ListSequence.fromList(c()).setElement(idx, SNodeFactoryOperations.createNewNode(NameUtil.nodeFQName(SLinkOperations.getTarget(clink, "target", false)), null));
+      ListSequence.fromList(c()).setElement(idx, SNodeFactoryOperations.createNewNode(NameUtil.nodeFQName(SLinkOperations.getTarget(clink, MetaAdapterFactory.getReferenceLink(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489288298l, 1071599976176l, "target"))), null));
     }
   }
   @Override

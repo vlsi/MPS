@@ -18,6 +18,8 @@ import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.internal.collections.runtime.IMapping;
@@ -90,14 +92,14 @@ public class DispatchGenUtil {
 
     for (SNode clas : SetSequence.fromSet(MapSequence.fromMap(classesToMethods).keySet())) {
       SNode cls = clas;
-      SNode superCls = SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.cast(cls, "jetbrains.mps.baseLanguage.structure.ClassConcept"), "superclass", true), "classifier", false);
+      SNode superCls = SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.cast(cls, "jetbrains.mps.baseLanguage.structure.ClassConcept"), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068390468198l, 1165602531693l, "superclass")), MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier"));
       while (superCls != origParamClass && (superCls != null)) {
         if (MapSequence.fromMap(classesToMethods).containsKey(superCls)) {
           // we only take the nearest ancestors 
           SetSequence.fromSet(toRemove).addElement(cls);
           cls = superCls;
         }
-        superCls = SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.cast(superCls, "jetbrains.mps.baseLanguage.structure.ClassConcept"), "superclass", true), "classifier", false);
+        superCls = SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.cast(superCls, "jetbrains.mps.baseLanguage.structure.ClassConcept"), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068390468198l, 1165602531693l, "superclass")), MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier"));
       }
     }
     SetSequence.fromSet(toRemove).visitAll(new IVisitor<SNode>() {
@@ -109,7 +111,7 @@ public class DispatchGenUtil {
     // take method declarations sorted by their parameter classes names alphabetically 
     return MapSequence.fromMap(classesToMethods).sort(new ISelector<IMapping<SNode, SNode>, String>() {
       public String select(IMapping<SNode, SNode> it) {
-        return SPropertyOperations.getString(it.key(), "name");
+        return SPropertyOperations.getString(it.key(), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"));
       }
     }, true).select(new ISelector<IMapping<SNode, SNode>, SNode>() {
       public SNode select(IMapping<SNode, SNode> it) {

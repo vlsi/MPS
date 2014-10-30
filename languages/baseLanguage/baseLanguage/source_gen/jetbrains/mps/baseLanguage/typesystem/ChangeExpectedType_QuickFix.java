@@ -8,6 +8,8 @@ import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 
 public class ChangeExpectedType_QuickFix extends QuickFix_Runtime {
   public ChangeExpectedType_QuickFix() {
@@ -17,9 +19,9 @@ public class ChangeExpectedType_QuickFix extends QuickFix_Runtime {
   }
   public void execute(SNode node) {
     if (SNodeOperations.isInstanceOf(((SNode) ChangeExpectedType_QuickFix.this.getField("expression")[0]), "jetbrains.mps.baseLanguage.structure.VariableDeclaration")) {
-      SLinkOperations.setTarget(SNodeOperations.cast(((SNode) ChangeExpectedType_QuickFix.this.getField("expression")[0]), "jetbrains.mps.baseLanguage.structure.VariableDeclaration"), "type", TypeChecker.getInstance().getTypeOf(((SNode) ChangeExpectedType_QuickFix.this.getField("desiredType")[0])), true);
+      SLinkOperations.setTarget(SNodeOperations.cast(((SNode) ChangeExpectedType_QuickFix.this.getField("expression")[0]), "jetbrains.mps.baseLanguage.structure.VariableDeclaration"), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 4972933694980447171l, 5680397130376446158l, "type"), TypeChecker.getInstance().getTypeOf(((SNode) ChangeExpectedType_QuickFix.this.getField("desiredType")[0])));
     } else if (SNodeOperations.isInstanceOf(((SNode) ChangeExpectedType_QuickFix.this.getField("expression")[0]), "jetbrains.mps.baseLanguage.structure.VariableReference")) {
-      SLinkOperations.setTarget(SLinkOperations.getTarget(SNodeOperations.cast(((SNode) ChangeExpectedType_QuickFix.this.getField("expression")[0]), "jetbrains.mps.baseLanguage.structure.VariableReference"), "variableDeclaration", false), "type", TypeChecker.getInstance().getTypeOf(((SNode) ChangeExpectedType_QuickFix.this.getField("desiredType")[0])), true);
+      SLinkOperations.setTarget(SLinkOperations.getTarget(SNodeOperations.cast(((SNode) ChangeExpectedType_QuickFix.this.getField("expression")[0]), "jetbrains.mps.baseLanguage.structure.VariableReference"), MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068498886296l, 1068581517664l, "variableDeclaration")), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 4972933694980447171l, 5680397130376446158l, "type"), TypeChecker.getInstance().getTypeOf(((SNode) ChangeExpectedType_QuickFix.this.getField("desiredType")[0])));
     }
   }
 }

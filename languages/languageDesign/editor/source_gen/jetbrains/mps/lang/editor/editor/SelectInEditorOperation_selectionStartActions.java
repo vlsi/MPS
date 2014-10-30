@@ -8,6 +8,8 @@ import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.editor.runtime.cells.AbstractCellAction;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 
 public class SelectInEditorOperation_selectionStartActions {
@@ -23,8 +25,8 @@ public class SelectInEditorOperation_selectionStartActions {
       this.execute_internal(editorContext, this.myNode);
     }
     public void execute_internal(EditorContext editorContext, SNode node) {
-      if (SLinkOperations.getTarget(node, "selectionEnd", true) == null) {
-        SLinkOperations.setTarget(node, "selectionEnd", SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.Expression", null), true);
+      if (SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(1782411230332735017l, -6324602048325217350l), 3647146066980922272l, 2701921320705252232l, "selectionEnd")) == null) {
+        SLinkOperations.setTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(1782411230332735017l, -6324602048325217350l), 3647146066980922272l, 2701921320705252232l, "selectionEnd"), SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.Expression", null));
       }
     }
   }

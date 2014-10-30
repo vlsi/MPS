@@ -12,6 +12,8 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.editor.runtime.cells.ReadOnlyUtil;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.jetbrains.annotations.NotNull;
 import org.apache.log4j.Level;
@@ -38,7 +40,7 @@ public class CommentLine_Action extends BaseAction {
     }
     SNode singleLineComment = CommentLine_Action.this.getSingleLineComment(_params);
     if (singleLineComment != null) {
-      return !(ReadOnlyUtil.isCellOrSelectionReadOnlyInEditor(((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")), ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).findNodeCell(singleLineComment))) && ListSequence.fromList(SLinkOperations.getTargets(singleLineComment, "commentPart", true)).count() == 1 && SNodeOperations.isInstanceOf(ListSequence.fromList(SLinkOperations.getTargets(singleLineComment, "commentPart", true)).first(), "jetbrains.mps.baseLanguage.structure.StatementCommentPart");
+      return !(ReadOnlyUtil.isCellOrSelectionReadOnlyInEditor(((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")), ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).findNodeCell(singleLineComment))) && ListSequence.fromList(SLinkOperations.getChildren(singleLineComment, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 6329021646629104954l, 6329021646629175155l, "commentPart"))).count() == 1 && SNodeOperations.isInstanceOf(ListSequence.fromList(SLinkOperations.getChildren(singleLineComment, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 6329021646629104954l, 6329021646629175155l, "commentPart"))).first(), "jetbrains.mps.baseLanguage.structure.StatementCommentPart");
     }
     SNode statement = CommentLine_Action.this.getStatement(_params);
     if (statement == null) {
@@ -94,7 +96,7 @@ public class CommentLine_Action extends BaseAction {
       SNode currentNode;
       if (singleLineComment != null) {
         // uncommenting 
-        SNode innerStatement = SLinkOperations.getTarget(SNodeOperations.cast(ListSequence.fromList(SLinkOperations.getTargets(singleLineComment, "commentPart", true)).first(), "jetbrains.mps.baseLanguage.structure.StatementCommentPart"), "commentedStatement", true);
+        SNode innerStatement = SLinkOperations.getTarget(SNodeOperations.cast(ListSequence.fromList(SLinkOperations.getChildren(singleLineComment, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 6329021646629104954l, 6329021646629175155l, "commentPart"))).first(), "jetbrains.mps.baseLanguage.structure.StatementCommentPart"), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 6329021646629175143l, 6329021646629175144l, "commentedStatement"));
         SNodeOperations.replaceWithAnother(singleLineComment, innerStatement);
         SNodeOperations.deleteNode(singleLineComment);
         currentNode = innerStatement;
@@ -103,8 +105,8 @@ public class CommentLine_Action extends BaseAction {
         assert statement != null : "Statement should not be null due to the isApplicable() constraints";
         // commenting 
         SNode comment = SNodeOperations.replaceWithNewChild(statement, "jetbrains.mps.baseLanguage.structure.SingleLineComment");
-        SNode commentPart = SLinkOperations.addNewChild(comment, "commentPart", "jetbrains.mps.baseLanguage.structure.StatementCommentPart");
-        SLinkOperations.setTarget(commentPart, "commentedStatement", statement, true);
+        SNode commentPart = SLinkOperations.addNewChild(comment, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 6329021646629104954l, 6329021646629175155l, "commentPart"), "jetbrains.mps.baseLanguage.structure.StatementCommentPart");
+        SLinkOperations.setTarget(commentPart, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 6329021646629175143l, 6329021646629175144l, "commentedStatement"), statement);
         currentNode = comment;
       }
       if ((SNodeOperations.getNextSibling(currentNode) != null)) {

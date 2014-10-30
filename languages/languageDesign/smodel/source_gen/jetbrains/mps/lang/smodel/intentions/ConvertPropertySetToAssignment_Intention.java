@@ -13,6 +13,8 @@ import jetbrains.mps.smodel.SNodePointer;
 import java.util.Collections;
 import jetbrains.mps.baseLanguage.behavior.IOperation_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.intentions.IntentionDescriptor;
@@ -62,13 +64,13 @@ public class ConvertPropertySetToAssignment_Intention implements IntentionFactor
     }
     public void execute(final SNode node, final EditorContext editorContext) {
       SNode lValue = IOperation_Behavior.call_getOperand_1213877410070(node);
-      SNode rValue = SLinkOperations.getTarget(node, "value", true);
-      SNodeOperations.detachNode(SLinkOperations.getTarget(node, "value", true));
+      SNode rValue = SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(8675788371017092295l, -9098312342032910879l), 1138661924179l, 1138662048170l, "value"));
+      SNodeOperations.detachNode(SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(8675788371017092295l, -9098312342032910879l), 1138661924179l, 1138662048170l, "value")));
       SNode dotExpr = IOperation_Behavior.call_getDotExpression_1224687669172(node);
-      SNodeOperations.detachNode(SLinkOperations.getTarget(dotExpr, "operand", true));
+      SNodeOperations.detachNode(SLinkOperations.getTarget(dotExpr, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1197027756228l, 1197027771414l, "operand")));
       SNode assignment = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.AssignmentExpression", null);
-      SLinkOperations.setTarget(assignment, "lValue", lValue, true);
-      SLinkOperations.setTarget(assignment, "rValue", rValue, true);
+      SLinkOperations.setTarget(assignment, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1215693861676l, 1068498886295l, "lValue"), lValue);
+      SLinkOperations.setTarget(assignment, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1215693861676l, 1068498886297l, "rValue"), rValue);
       SNodeOperations.replaceWithAnother(dotExpr, assignment);
     }
     public IntentionDescriptor getDescriptor() {

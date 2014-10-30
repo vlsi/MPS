@@ -9,6 +9,8 @@ import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.lang.constraints.behavior.NodePropertyConstraint_Behavior;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -21,7 +23,7 @@ public class typeof_ConstraintsFunctionParameter_node_InferenceRule extends Abst
   public void applyRule(final SNode node, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     SNode applicableConcept;
     if ((SNodeOperations.getAncestor(node, "jetbrains.mps.lang.constraints.structure.ConstraintFunction_GetAlternativeIcon", false, false) != null) || (SNodeOperations.getAncestor(node, "jetbrains.mps.lang.constraints.structure.ConstraintFunction_CanBeAChild", false, false) != null) || (SNodeOperations.getAncestor(node, "jetbrains.mps.lang.constraints.structure.ConstraintFunction_CanBeAParent", false, false) != null) || (SNodeOperations.getAncestor(node, "jetbrains.mps.lang.constraints.structure.ConstraintFunction_CanBeAnAncestor", false, false) != null)) {
-      applicableConcept = SLinkOperations.getTarget(SNodeOperations.getAncestor(node, "jetbrains.mps.lang.constraints.structure.ConceptConstraints", false, false), "concept", false);
+      applicableConcept = SLinkOperations.getTarget(SNodeOperations.getAncestor(node, "jetbrains.mps.lang.constraints.structure.ConceptConstraints", false, false), MetaAdapterFactory.getReferenceLink(new UUID(4560956707034974760l, -8426014792598182751l), 1213093968558l, 1213093996982l, "concept"));
     } else {
       applicableConcept = NodePropertyConstraint_Behavior.call_getApplicableConcept_1213877292345(SNodeOperations.getAncestor(node, "jetbrains.mps.lang.constraints.structure.NodePropertyConstraint", false, false));
     }
@@ -61,7 +63,7 @@ public class typeof_ConstraintsFunctionParameter_node_InferenceRule extends Abst
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeType", null, null, false);
-    SNodeAccessUtil.setReferenceTarget(quotedNode_2, "concept", (SNode) parameter_1);
+    SNodeAccessUtil.setReferenceTarget(quotedNode_2, MetaAdapterFactory.getReferenceLink(new UUID(8675788371017092295l, -9098312342032910879l), 1138055754698l, 1138405853777l, "concept"), (SNode) parameter_1);
     return quotedNode_2;
   }
 }

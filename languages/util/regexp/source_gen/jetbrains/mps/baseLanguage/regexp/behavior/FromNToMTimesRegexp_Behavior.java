@@ -6,13 +6,15 @@ import org.jetbrains.mps.openapi.model.SNode;
 import java.util.List;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class FromNToMTimesRegexp_Behavior {
   public static void init(SNode thisNode) {
   }
   public static String virtual_getString_1222432436326(SNode thisNode, List<SNode> vars) {
-    String s = BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(thisNode, "regexp", true), "virtual_getString_1222432436326", new Object[]{vars});
-    return ((UnaryRegexp_Behavior.call_inParentheses_1353467374623956744(thisNode) ? Regexp_Behavior.call_par_1222433790846(thisNode, s) : s)) + "{" + SPropertyOperations.getInteger(thisNode, "n") + "," + SPropertyOperations.getInteger(thisNode, "m") + "}";
+    String s = BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-2688747624584492277l, -5722269945249396544l), 1174485235885l, 1174485243418l, "regexp")), "virtual_getString_1222432436326", new Object[]{vars});
+    return ((UnaryRegexp_Behavior.call_inParentheses_1353467374623956744(thisNode) ? Regexp_Behavior.call_par_1222433790846(thisNode, s) : s)) + "{" + SPropertyOperations.getInteger(thisNode, MetaAdapterFactory.getProperty(new UUID(-2688747624584492277l, -5722269945249396544l), 1174904605806l, 1174904618869l, "n")) + "," + SPropertyOperations.getInteger(thisNode, MetaAdapterFactory.getProperty(new UUID(-2688747624584492277l, -5722269945249396544l), 1174904605806l, 1174904621683l, "m")) + "}";
   }
 }

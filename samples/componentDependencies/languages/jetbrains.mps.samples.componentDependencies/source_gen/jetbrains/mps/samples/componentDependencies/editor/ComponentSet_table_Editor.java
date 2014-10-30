@@ -11,6 +11,8 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.editor.table.runtime.TableModelFactory;
 import jetbrains.mps.lang.editor.table.runtime.TableModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.openapi.editor.cells.SubstituteInfo;
@@ -34,10 +36,10 @@ public class ComponentSet_table_Editor extends DefaultNodeEditor {
       public TableModel createTableModel(final SNode node, final EditorContext editorContext) {
         return new TableModel() {
           public int getColumnCount() {
-            return SLinkOperations.getTargets(node, "component", true).size() + 1;
+            return SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(new UUID(3487681708893422336l, -6253710059602727269l), 6223439730610283563l, 6223439730610302888l, "component")).size() + 1;
           }
           public int getRowCount() {
-            return SLinkOperations.getTargets(node, "component", true).size() + 1;
+            return SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(new UUID(3487681708893422336l, -6253710059602727269l), 6223439730610283563l, 6223439730610302888l, "component")).size() + 1;
           }
           public void deleteRow(int rowNumber) {
           }
@@ -46,18 +48,18 @@ public class ComponentSet_table_Editor extends DefaultNodeEditor {
               return null;
             }
             if (row == 0) {
-              return ListSequence.fromList(SLinkOperations.getTargets(ListSequence.fromList(SLinkOperations.getTargets(node, "component", true)).getElement(column - 1), "in", true)).first();
+              return ListSequence.fromList(SLinkOperations.getChildren(ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(new UUID(3487681708893422336l, -6253710059602727269l), 6223439730610283563l, 6223439730610302888l, "component"))).getElement(column - 1), MetaAdapterFactory.getContainmentLink(new UUID(3487681708893422336l, -6253710059602727269l), 6223439730610336068l, 6223439730610790722l, "in"))).first();
             }
             if (column == 0) {
-              SNode component = ListSequence.fromList(SLinkOperations.getTargets(node, "component", true)).getElement(row - 1);
-              if (ListSequence.fromList(SLinkOperations.getTargets(component, "out", true)).isEmpty()) {
+              SNode component = ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(new UUID(3487681708893422336l, -6253710059602727269l), 6223439730610283563l, 6223439730610302888l, "component"))).getElement(row - 1);
+              if (ListSequence.fromList(SLinkOperations.getChildren(component, MetaAdapterFactory.getContainmentLink(new UUID(3487681708893422336l, -6253710059602727269l), 6223439730610336068l, 6223439730610790726l, "out"))).isEmpty()) {
                 return component;
               }
-              return ListSequence.fromList(SLinkOperations.getTargets(component, "out", true)).first();
+              return ListSequence.fromList(SLinkOperations.getChildren(component, MetaAdapterFactory.getContainmentLink(new UUID(3487681708893422336l, -6253710059602727269l), 6223439730610336068l, 6223439730610790726l, "out"))).first();
             }
-            return ListSequence.fromList(SLinkOperations.getTargets(ListSequence.fromList(SLinkOperations.getTargets(node, "component", true)).getElement(row - 1), "dep", true)).findFirst(new IWhereFilter<SNode>() {
+            return ListSequence.fromList(SLinkOperations.getChildren(ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(new UUID(3487681708893422336l, -6253710059602727269l), 6223439730610283563l, 6223439730610302888l, "component"))).getElement(row - 1), MetaAdapterFactory.getContainmentLink(new UUID(3487681708893422336l, -6253710059602727269l), 6223439730610336068l, 6223439730610336071l, "dep"))).findFirst(new IWhereFilter<SNode>() {
               public boolean accept(SNode it) {
-                return SLinkOperations.getTarget(it, "to", false) == ListSequence.fromList(SLinkOperations.getTargets(node, "component", true)).getElement(column - 1);
+                return SLinkOperations.getTarget(it, MetaAdapterFactory.getReferenceLink(new UUID(3487681708893422336l, -6253710059602727269l), 6223439730610762144l, 6223439730610763348l, "to")) == ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(new UUID(3487681708893422336l, -6253710059602727269l), 6223439730610283563l, 6223439730610302888l, "component"))).getElement(column - 1);
               }
             });
           }

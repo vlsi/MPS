@@ -7,6 +7,8 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicable2Status;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
@@ -17,17 +19,17 @@ public class ClassifierType_comparableTo_raw_ClassifierType_ComparisonRule exten
   public ClassifierType_comparableTo_raw_ClassifierType_ComparisonRule() {
   }
   public boolean areComparable(SNode node1, SNode node2, IsApplicable2Status status) {
-    if ((ListSequence.fromList(SLinkOperations.getTargets(node1, "parameter", true)).isNotEmpty() ^ ListSequence.fromList(SLinkOperations.getTargets(node2, "parameter", true)).isNotEmpty()) || ListSequence.fromList(SLinkOperations.getTargets(node1, "parameter", true)).all(new IWhereFilter<SNode>() {
+    if ((ListSequence.fromList(SLinkOperations.getChildren(node1, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1109201940907l, "parameter"))).isNotEmpty() ^ ListSequence.fromList(SLinkOperations.getChildren(node2, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1109201940907l, "parameter"))).isNotEmpty()) || ListSequence.fromList(SLinkOperations.getChildren(node1, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1109201940907l, "parameter"))).all(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.WildCardType") || SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.TypeVariableReference");
       }
-    }) || ListSequence.fromList(SLinkOperations.getTargets(node2, "parameter", true)).all(new IWhereFilter<SNode>() {
+    }) || ListSequence.fromList(SLinkOperations.getChildren(node2, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1109201940907l, "parameter"))).all(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.WildCardType") || SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.TypeVariableReference");
       }
     })) {
       // formatting 
-      return BehaviorReflection.invokeVirtual(Boolean.TYPE, SLinkOperations.getTarget(node1, "classifier", false), "virtual_isDescendant_7165541881557222913", new Object[]{SLinkOperations.getTarget(node2, "classifier", false)}) || BehaviorReflection.invokeVirtual(Boolean.TYPE, SLinkOperations.getTarget(node2, "classifier", false), "virtual_isDescendant_7165541881557222913", new Object[]{SLinkOperations.getTarget(node1, "classifier", false)});
+      return BehaviorReflection.invokeVirtual(Boolean.TYPE, SLinkOperations.getTarget(node1, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier")), "virtual_isDescendant_7165541881557222913", new Object[]{SLinkOperations.getTarget(node2, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier"))}) || BehaviorReflection.invokeVirtual(Boolean.TYPE, SLinkOperations.getTarget(node2, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier")), "virtual_isDescendant_7165541881557222913", new Object[]{SLinkOperations.getTarget(node1, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier"))});
     }
     return false;
   }

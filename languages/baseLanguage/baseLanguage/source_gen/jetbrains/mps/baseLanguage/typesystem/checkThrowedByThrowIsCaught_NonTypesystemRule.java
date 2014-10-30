@@ -8,6 +8,8 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
@@ -19,7 +21,7 @@ public class checkThrowedByThrowIsCaught_NonTypesystemRule extends AbstractNonTy
   public checkThrowedByThrowIsCaught_NonTypesystemRule() {
   }
   public void applyRule(final SNode throwStatement, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    SNode throwable = SLinkOperations.getTarget(throwStatement, "throwable", true);
+    SNode throwable = SLinkOperations.getTarget(throwStatement, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1164991038168l, 1164991057263l, "throwable"));
     if ((throwable == null)) {
       return;
     }

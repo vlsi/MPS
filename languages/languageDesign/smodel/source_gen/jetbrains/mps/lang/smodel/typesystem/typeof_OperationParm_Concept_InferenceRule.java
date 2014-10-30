@@ -8,6 +8,8 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.smodel.SModelUtil_new;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
@@ -17,7 +19,7 @@ public class typeof_OperationParm_Concept_InferenceRule extends AbstractInferenc
   }
   public void applyRule(final SNode opp, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     {
-      SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(opp, "conceptArgument", true);
+      SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(opp, MetaAdapterFactory.getContainmentLink(new UUID(8675788371017092295l, -9098312342032910879l), 1144101972840l, 1207343664468l, "conceptArgument"));
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "8933148862033770435", 0, null);
       typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "8933148862033770437", true), (SNode) _quotation_createNode_eac4ma_a0a0b(), false, true, _info_12389875345);
     }

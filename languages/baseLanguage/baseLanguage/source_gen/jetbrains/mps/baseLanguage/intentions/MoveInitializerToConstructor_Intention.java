@@ -10,6 +10,8 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
 import java.util.Collections;
@@ -51,7 +53,7 @@ public class MoveInitializerToConstructor_Intention implements IntentionFactory 
     if (SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false) == null) {
       return false;
     }
-    if (SLinkOperations.getTarget(node, "initializer", true) == null) {
+    if (SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068431474542l, 1068431790190l, "initializer")) == null) {
       return false;
     }
     return true;
@@ -78,18 +80,18 @@ public class MoveInitializerToConstructor_Intention implements IntentionFactory 
       SNode classNode = SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false);
       // 
       SNode assignmentStmt = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ExpressionStatement", null);
-      SNode assignmentExpr = SNodeFactoryOperations.setNewChild(assignmentStmt, "expression", "jetbrains.mps.baseLanguage.structure.AssignmentExpression");
-      SLinkOperations.setTarget(assignmentExpr, "rValue", SNodeOperations.copyNode(SLinkOperations.getTarget(node, "initializer", true)), true);
+      SNode assignmentExpr = SNodeFactoryOperations.setNewChild(assignmentStmt, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123155l, 1068580123156l, "expression"), "jetbrains.mps.baseLanguage.structure.AssignmentExpression");
+      SLinkOperations.setTarget(assignmentExpr, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1215693861676l, 1068498886297l, "rValue"), SNodeOperations.copyNode(SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068431474542l, 1068431790190l, "initializer"))));
       // 
-      SNode lValue = SNodeFactoryOperations.setNewChild(assignmentExpr, "lValue", "jetbrains.mps.baseLanguage.structure.DotExpression");
-      SNodeFactoryOperations.setNewChild(lValue, "operand", "jetbrains.mps.baseLanguage.structure.ThisExpression");
-      SLinkOperations.setTarget(SNodeFactoryOperations.setNewChild(lValue, "operation", "jetbrains.mps.baseLanguage.structure.FieldReferenceOperation"), "fieldDeclaration", node, false);
+      SNode lValue = SNodeFactoryOperations.setNewChild(assignmentExpr, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1215693861676l, 1068498886295l, "lValue"), "jetbrains.mps.baseLanguage.structure.DotExpression");
+      SNodeFactoryOperations.setNewChild(lValue, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1197027756228l, 1197027771414l, "operand"), "jetbrains.mps.baseLanguage.structure.ThisExpression");
+      SLinkOperations.setTarget(SNodeFactoryOperations.setNewChild(lValue, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1197027756228l, 1197027833540l, "operation"), "jetbrains.mps.baseLanguage.structure.FieldReferenceOperation"), MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1197029447546l, 1197029500499l, "fieldDeclaration"), node);
       // 
       for (SNode constr : Sequence.fromIterable(ClassConcept_Behavior.call_constructors_5292274854859503373(classNode))) {
-        ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(constr, "body", true), "statement", true)).insertElement(0, SNodeOperations.copyNode(assignmentStmt));
+        ListSequence.fromList(SLinkOperations.getChildren(SLinkOperations.getTarget(constr, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123132l, 1068580123135l, "body")), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123136l, 1068581517665l, "statement"))).insertElement(0, SNodeOperations.copyNode(assignmentStmt));
       }
       // 
-      SNodeOperations.detachNode(SLinkOperations.getTarget(node, "initializer", true));
+      SNodeOperations.detachNode(SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068431474542l, 1068431790190l, "initializer")));
     }
     public IntentionDescriptor getDescriptor() {
       return MoveInitializerToConstructor_Intention.this;

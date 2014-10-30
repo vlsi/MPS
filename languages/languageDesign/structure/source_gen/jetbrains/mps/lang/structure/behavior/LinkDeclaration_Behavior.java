@@ -5,6 +5,8 @@ package jetbrains.mps.lang.structure.behavior;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 
 public class LinkDeclaration_Behavior {
   public static void init(SNode thisNode) {
@@ -23,13 +25,13 @@ public class LinkDeclaration_Behavior {
   }
   public static boolean call_isSingular_1213877254557(SNode thisNode) {
     SNode genuineLinkDeclaration = SModelUtil.getGenuineLinkDeclaration(thisNode);
-    return SPropertyOperations.hasValue(genuineLinkDeclaration, "sourceCardinality", "0..1", "0..1") || SPropertyOperations.hasValue(genuineLinkDeclaration, "sourceCardinality", "1", "0..1");
+    return SPropertyOperations.hasValue(genuineLinkDeclaration, MetaAdapterFactory.getProperty(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489288298l, 1071599893252l, "sourceCardinality"), "0..1", "0..1") || SPropertyOperations.hasValue(genuineLinkDeclaration, MetaAdapterFactory.getProperty(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489288298l, 1071599893252l, "sourceCardinality"), "1", "0..1");
   }
   public static String virtual_getPresentation_1213877396640(SNode thisNode) {
-    return SPropertyOperations.getString(thisNode, "role");
+    return SPropertyOperations.getString(thisNode, MetaAdapterFactory.getProperty(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489288298l, 1071599776563l, "role"));
   }
   public static boolean call_isAtLeastOneCardinality_3386205146660812199(SNode thisNode) {
     SNode genuineLink = LinkDeclaration_Behavior.call_getGenuineLink_1213877254523(thisNode);
-    return SPropertyOperations.hasValue(genuineLink, "sourceCardinality", "1", "0..1") || SPropertyOperations.hasValue(genuineLink, "sourceCardinality", "1..n", "0..1");
+    return SPropertyOperations.hasValue(genuineLink, MetaAdapterFactory.getProperty(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489288298l, 1071599893252l, "sourceCardinality"), "1", "0..1") || SPropertyOperations.hasValue(genuineLink, MetaAdapterFactory.getProperty(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489288298l, 1071599893252l, "sourceCardinality"), "1..n", "0..1");
   }
 }

@@ -103,73 +103,73 @@
   </root>
   <root nodeRef="r:11d950c0-cabb-4b20-860f-4f2898171c08(jetbrains.mps.console.blCommand.behavior)/2699636778858778743">
     <file name="BLCommand_Behavior.java">
-      <node id="2699636778858790466" at="18,80,19,47" concept="4" />
-      <node id="2699636778858790750" at="21,69,22,61" concept="4" />
-      <node id="2699636778858876361" at="24,91,25,48" concept="3" />
-      <node id="2699636778858878821" at="25,48,26,84" concept="1" />
-      <node id="2699636778858801153" at="26,84,27,18" concept="4" />
-      <node id="7006261637493130861" at="29,94,30,38" concept="4" />
-      <node id="7006261637493131792" at="32,99,33,30" concept="4" />
-      <node id="2699636778858790492" at="35,60,36,63" concept="3" />
-      <node id="2699636778858790492" at="36,63,37,30" concept="3" />
-      <node id="2699636778858790492" at="37,30,38,132" concept="0" />
-      <node id="2699636778858790492" at="37,30,38,132" concept="0" />
-      <node id="2699636778858790492" at="37,30,38,132" concept="1" />
-      <node id="2699636778858790492" at="38,132,39,24" concept="4" />
-      <node id="2699636778858912197" at="41,62,42,63" concept="3" />
-      <node id="2699636778858912197" at="42,63,43,30" concept="3" />
-      <node id="2699636778858912197" at="43,30,44,138" concept="1" />
-      <node id="2699636778858912197" at="44,138,45,279" concept="1" />
-      <node id="2699636778858912197" at="45,279,46,24" concept="4" />
-      <node id="2699636778858778743" at="16,0,18,0" concept="5" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <node id="2699636778858912197" at="43,30,45,279" concept="0" />
-      <node id="2699636778858912197" at="43,30,45,279" concept="0" />
-      <node id="2699636778858778743" at="18,0,21,0" concept="5" trace="virtual_getExpectedRetType_1239354342632#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <node id="2699636778858778743" at="21,0,24,0" concept="5" trace="virtual_getBody_1239354440022#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <node id="2699636778858778743" at="29,0,32,0" concept="5" trace="virtual_getShortHelp_473081947982699339#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljava/lang/String;" />
-      <node id="2699636778858778743" at="32,0,35,0" concept="5" trace="virtual_getDisplayString_7006261637493126103#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljava/lang/String;" />
-      <node id="2699636778858778743" at="24,0,29,0" concept="5" trace="virtual_getThrowableTypes_6204026822016975623#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/util/List;" />
-      <node id="2699636778858790492" at="35,0,41,0" concept="5" trace="_quotation_createNode_1tnz54_a0a0#()Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <node id="2699636778858912197" at="41,0,48,0" concept="5" trace="_quotation_createNode_1tnz54_a0a1a2#()Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <scope id="2699636778858778896" at="16,43,16,43" />
-      <scope id="2699636778858779397" at="18,80,19,47" />
-      <scope id="2699636778858779403" at="21,69,22,61" />
-      <scope id="7006261637493130711" at="29,94,30,38" />
-      <scope id="7006261637493131068" at="32,99,33,30" />
-      <scope id="2699636778858790492" at="37,30,38,132" />
-      <scope id="2699636778858778743" at="16,0,18,0">
+      <node id="2699636778858790466" at="20,80,21,47" concept="4" />
+      <node id="2699636778858790750" at="23,69,24,193" concept="4" />
+      <node id="2699636778858876361" at="26,91,27,48" concept="3" />
+      <node id="2699636778858878821" at="27,48,28,84" concept="1" />
+      <node id="2699636778858801153" at="28,84,29,18" concept="4" />
+      <node id="7006261637493130861" at="31,94,32,38" concept="4" />
+      <node id="7006261637493131792" at="34,99,35,30" concept="4" />
+      <node id="2699636778858790492" at="37,60,38,63" concept="3" />
+      <node id="2699636778858790492" at="38,63,39,30" concept="3" />
+      <node id="2699636778858790492" at="39,30,40,132" concept="0" />
+      <node id="2699636778858790492" at="39,30,40,132" concept="0" />
+      <node id="2699636778858790492" at="39,30,40,132" concept="1" />
+      <node id="2699636778858790492" at="40,132,41,24" concept="4" />
+      <node id="2699636778858912197" at="43,62,44,63" concept="3" />
+      <node id="2699636778858912197" at="44,63,45,30" concept="3" />
+      <node id="2699636778858912197" at="45,30,46,138" concept="1" />
+      <node id="2699636778858912197" at="46,138,47,527" concept="1" />
+      <node id="2699636778858912197" at="47,527,48,24" concept="4" />
+      <node id="2699636778858778743" at="18,0,20,0" concept="5" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="2699636778858912197" at="45,30,47,527" concept="0" />
+      <node id="2699636778858912197" at="45,30,47,527" concept="0" />
+      <node id="2699636778858778743" at="20,0,23,0" concept="5" trace="virtual_getExpectedRetType_1239354342632#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <node id="2699636778858778743" at="23,0,26,0" concept="5" trace="virtual_getBody_1239354440022#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <node id="2699636778858778743" at="31,0,34,0" concept="5" trace="virtual_getShortHelp_473081947982699339#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljava/lang/String;" />
+      <node id="2699636778858778743" at="34,0,37,0" concept="5" trace="virtual_getDisplayString_7006261637493126103#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljava/lang/String;" />
+      <node id="2699636778858778743" at="26,0,31,0" concept="5" trace="virtual_getThrowableTypes_6204026822016975623#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/util/List;" />
+      <node id="2699636778858790492" at="37,0,43,0" concept="5" trace="_quotation_createNode_1tnz54_a0a0#()Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <node id="2699636778858912197" at="43,0,50,0" concept="5" trace="_quotation_createNode_1tnz54_a0a1a2#()Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <scope id="2699636778858778896" at="18,43,18,43" />
+      <scope id="2699636778858779397" at="20,80,21,47" />
+      <scope id="2699636778858779403" at="23,69,24,193" />
+      <scope id="7006261637493130711" at="31,94,32,38" />
+      <scope id="7006261637493131068" at="34,99,35,30" />
+      <scope id="2699636778858790492" at="39,30,40,132" />
+      <scope id="2699636778858778743" at="18,0,20,0">
         <var name="thisNode" id="2699636778858778743" />
       </scope>
-      <scope id="2699636778858912197" at="43,30,45,279" />
-      <scope id="2699636778858778743" at="18,0,21,0">
+      <scope id="2699636778858912197" at="45,30,47,527" />
+      <scope id="2699636778858778743" at="20,0,23,0">
         <var name="thisNode" id="2699636778858778743" />
       </scope>
-      <scope id="2699636778858778743" at="21,0,24,0">
+      <scope id="2699636778858778743" at="23,0,26,0">
         <var name="thisNode" id="2699636778858778743" />
       </scope>
-      <scope id="2699636778858779409" at="24,91,27,18">
+      <scope id="2699636778858779409" at="26,91,29,18">
         <var name="result" id="2699636778858876364" />
       </scope>
-      <scope id="2699636778858778743" at="29,0,32,0">
+      <scope id="2699636778858778743" at="31,0,34,0">
         <var name="thisConcept" id="2699636778858778743" />
       </scope>
-      <scope id="2699636778858778743" at="32,0,35,0">
+      <scope id="2699636778858778743" at="34,0,37,0">
         <var name="thisConcept" id="2699636778858778743" />
       </scope>
-      <scope id="2699636778858790492" at="35,60,39,24">
+      <scope id="2699636778858790492" at="37,60,41,24">
         <var name="facade" id="2699636778858790492" />
         <var name="quotedNode_1" id="2699636778858790492" />
       </scope>
-      <scope id="2699636778858778743" at="24,0,29,0">
+      <scope id="2699636778858778743" at="26,0,31,0">
         <var name="thisNode" id="2699636778858778743" />
       </scope>
-      <scope id="2699636778858912197" at="41,62,46,24">
+      <scope id="2699636778858912197" at="43,62,48,24">
         <var name="facade" id="2699636778858912197" />
         <var name="quotedNode_1" id="2699636778858912197" />
       </scope>
-      <scope id="2699636778858790492" at="35,0,41,0" />
-      <scope id="2699636778858912197" at="41,0,48,0" />
-      <unit id="2699636778858778743" at="15,0,49,0" name="jetbrains.mps.console.blCommand.behavior.BLCommand_Behavior" />
+      <scope id="2699636778858790492" at="37,0,43,0" />
+      <scope id="2699636778858912197" at="43,0,50,0" />
+      <unit id="2699636778858778743" at="17,0,51,0" name="jetbrains.mps.console.blCommand.behavior.BLCommand_Behavior" />
     </file>
   </root>
   <root nodeRef="r:11d950c0-cabb-4b20-860f-4f2898171c08(jetbrains.mps.console.blCommand.behavior)/4225915845891288151">
@@ -370,31 +370,31 @@
   </root>
   <root nodeRef="r:11d950c0-cabb-4b20-860f-4f2898171c08(jetbrains.mps.console.blCommand.behavior)/6558068108108193352">
     <file name="ExceptionHolder_Behavior.java">
-      <node id="4221956679900513485" at="17,91,18,106" concept="3" />
-      <node id="4221956679900513493" at="18,106,19,61" concept="1" />
-      <node id="4221956679900513501" at="19,61,20,146" concept="3" />
-      <node id="4221956679900513512" at="20,146,21,18" concept="1" />
-      <node id="6558068108108282033" at="23,80,24,73" concept="4" />
-      <node id="6558068108108193352" at="15,0,17,0" concept="5" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <node id="6558068108108193352" at="23,0,26,0" concept="5" trace="virtual_canExecute_3282455643657932881#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-      <node id="6558068108108193352" at="17,0,23,0" concept="5" trace="virtual_execute_8517397753922085153#(Lorg/jetbrains/mps/openapi/model/SNode;Lcom/intellij/openapi/project/Project;)V" />
-      <scope id="6558068108108193505" at="15,43,15,43" />
-      <scope id="6558068108108193832" at="23,80,24,73" />
-      <scope id="6558068108108193352" at="15,0,17,0">
+      <node id="4221956679900513485" at="19,91,20,237" concept="3" />
+      <node id="4221956679900513493" at="20,237,21,61" concept="1" />
+      <node id="4221956679900513501" at="21,61,22,146" concept="3" />
+      <node id="4221956679900513512" at="22,146,23,18" concept="1" />
+      <node id="6558068108108282033" at="25,80,26,204" concept="4" />
+      <node id="6558068108108193352" at="17,0,19,0" concept="5" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="6558068108108193352" at="25,0,28,0" concept="5" trace="virtual_canExecute_3282455643657932881#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+      <node id="6558068108108193352" at="19,0,25,0" concept="5" trace="virtual_execute_8517397753922085153#(Lorg/jetbrains/mps/openapi/model/SNode;Lcom/intellij/openapi/project/Project;)V" />
+      <scope id="6558068108108193505" at="17,43,17,43" />
+      <scope id="6558068108108193832" at="25,80,26,204" />
+      <scope id="6558068108108193352" at="17,0,19,0">
         <var name="thisNode" id="6558068108108193352" />
       </scope>
-      <scope id="6558068108108193352" at="23,0,26,0">
+      <scope id="6558068108108193352" at="25,0,28,0">
         <var name="thisNode" id="6558068108108193352" />
       </scope>
-      <scope id="6558068108108193824" at="17,91,21,18">
+      <scope id="6558068108108193824" at="19,91,23,18">
         <var name="contents" id="4221956679900513486" />
         <var name="dialog" id="4221956679900513502" />
       </scope>
-      <scope id="6558068108108193352" at="17,0,23,0">
+      <scope id="6558068108108193352" at="19,0,25,0">
         <var name="project" id="6558068108108193825" />
         <var name="thisNode" id="6558068108108193352" />
       </scope>
-      <unit id="6558068108108193352" at="14,0,27,0" name="jetbrains.mps.console.blCommand.behavior.ExceptionHolder_Behavior" />
+      <unit id="6558068108108193352" at="16,0,29,0" name="jetbrains.mps.console.blCommand.behavior.ExceptionHolder_Behavior" />
     </file>
   </root>
   <root nodeRef="r:11d950c0-cabb-4b20-860f-4f2898171c08(jetbrains.mps.console.blCommand.behavior)/7006261637493132074">

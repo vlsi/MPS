@@ -5,6 +5,8 @@ package jetbrains.mps.lang.findUsages.behavior;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.util.SNodeOperations;
@@ -14,10 +16,10 @@ public class FinderDeclaration_Behavior {
   public static void init(SNode thisNode) {
   }
   public static String call_getGeneratedClassName_1213877240101(SNode thisNode) {
-    return NameUtil.toValidIdentifier(SPropertyOperations.getString(thisNode, "name")) + "_Finder";
+    return NameUtil.toValidIdentifier(SPropertyOperations.getString(thisNode, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"))) + "_Finder";
   }
   public static String call_getConceptName_1213877240111(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(thisNode, "forConcept", false), "virtual_getFqName_1213877404258", new Object[]{});
+    return BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getReferenceLink(new UUID(7265238368668241523l, -5766677349071573456l), 1218978086674l, 1218978181697l, "forConcept")), "virtual_getFqName_1213877404258", new Object[]{});
   }
   public static String call_getGeneratedClassLongName_1213877240120(SNode thisNode) {
     return SNodeOperations.getModelLongName(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getModel(thisNode)) + "." + FinderDeclaration_Behavior.call_getGeneratedClassName_1213877240101(thisNode);
@@ -26,9 +28,9 @@ public class FinderDeclaration_Behavior {
     return new PropertyReference(thisNode, "description");
   }
   public static SNode virtual_getBaseConcept_2621449412040133768(SNode thisNode) {
-    return SLinkOperations.getTarget(thisNode, "forConcept", false);
+    return SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getReferenceLink(new UUID(7265238368668241523l, -5766677349071573456l), 1218978086674l, 1218978181697l, "forConcept"));
   }
   public static void virtual_setBaseConcept_6261424444345963020(SNode thisNode, SNode baseConcept) {
-    SLinkOperations.setTarget(thisNode, "forConcept", baseConcept, false);
+    SLinkOperations.setTarget(thisNode, MetaAdapterFactory.getReferenceLink(new UUID(7265238368668241523l, -5766677349071573456l), 1218978086674l, 1218978181697l, "forConcept"), baseConcept);
   }
 }

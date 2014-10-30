@@ -12,6 +12,8 @@ import org.jetbrains.mps.openapi.module.ModelAccess;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.structure.scripts.RefUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import java.util.List;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -66,7 +68,7 @@ public class MoveLinkUp extends BaseLoggableRefactoring {
   }
   public void refactor(final RefactoringContext refactoringContext) {
     SNode node = refactoringContext.getSelectedNode();
-    refactoringContext.changeFeatureName(node, SNodeOperations.getModel(((SNode) refactoringContext.getParameter("targetConcept"))).getReference().getModelName() + "." + SPropertyOperations.getString(((SNode) refactoringContext.getParameter("targetConcept")), "name"), SPropertyOperations.getString(node, "role"));
+    refactoringContext.changeFeatureName(node, SNodeOperations.getModel(((SNode) refactoringContext.getParameter("targetConcept"))).getReference().getModelName() + "." + SPropertyOperations.getString(((SNode) refactoringContext.getParameter("targetConcept")), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")), SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489288298l, 1071599776563l, "role")));
     if ((((SNode) refactoringContext.getParameter("linkToReplace")) != null)) {
       refactoringContext.replaceRefsToNodeWithNode(node, ((SNode) refactoringContext.getParameter("linkToReplace")));
     } else {

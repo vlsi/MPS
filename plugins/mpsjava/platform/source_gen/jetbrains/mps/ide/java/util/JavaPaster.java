@@ -28,6 +28,8 @@ import jetbrains.mps.ide.java.newparser.JavaToMpsConverter;
 import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.ide.java.newparser.JavaParseException;
 import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import java.util.ArrayList;
 import jetbrains.mps.ide.datatransfer.SModelDataFlavor;
@@ -139,11 +141,11 @@ public class JavaPaster {
     if ((parent == null)) {
       return false;
     }
-    anchor = SNodeOperations.getAncestor(anchor, NameUtil.nodeFQName(SLinkOperations.getTarget(role, "target", false)), true, false);
+    anchor = SNodeOperations.getAncestor(anchor, NameUtil.nodeFQName(SLinkOperations.getTarget(role, MetaAdapterFactory.getReferenceLink(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489288298l, 1071599976176l, "target"))), true, false);
     if ((anchor == null) || SNodeOperations.getParent(anchor) != parent) {
-      parent.addChild(SPropertyOperations.getString(role, "role"), node);
+      parent.addChild(SPropertyOperations.getString(role, MetaAdapterFactory.getProperty(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489288298l, 1071599776563l, "role")), node);
     } else {
-      jetbrains.mps.util.SNodeOperations.insertChild(parent, SPropertyOperations.getString(role, "role"), node, anchor, true);
+      jetbrains.mps.util.SNodeOperations.insertChild(parent, SPropertyOperations.getString(role, MetaAdapterFactory.getProperty(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489288298l, 1071599776563l, "role")), node, anchor, true);
     }
     return true;
   }
@@ -160,7 +162,7 @@ public class JavaPaster {
       index = ListSequence.fromList(SNodeOperations.getChildren(parent, SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.Classifier", "member"))).indexOf(SNodeOperations.cast(anchor, "jetbrains.mps.baseLanguage.structure.ClassifierMember"));
     }
     if (index == -1) {
-      ListSequence.fromList(SLinkOperations.getTargets(parent, "member", true)).addElement(member);
+      ListSequence.fromList(SLinkOperations.getChildren(parent, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107461130800l, 5375687026011219971l, "member"))).addElement(member);
     } else {
       ListSequence.fromList(SNodeOperations.getChildren(parent, SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.Classifier", "member"))).insertElement(index, member);
     }

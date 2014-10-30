@@ -10,6 +10,8 @@ import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
@@ -25,13 +27,13 @@ public class check_AnnotationDuplication_NonTypesystemRule extends AbstractNonTy
       return;
     }
     SNode parent = SNodeOperations.cast(SNodeOperations.getParent(annotationInstance), "jetbrains.mps.baseLanguage.structure.HasAnnotation");
-    ListSequence.fromList(SLinkOperations.getTargets(parent, "annotation", true)).where(new IWhereFilter<SNode>() {
+    ListSequence.fromList(SLinkOperations.getChildren(parent, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1188208481402l, 1188208488637l, "annotation"))).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SNodeOperations.getIndexInParent(it) > SNodeOperations.getIndexInParent(annotationInstance);
       }
     }).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return eq_qq1g71_a0a0a0a0a0a2a1(SLinkOperations.getTarget(it, "annotation", false), SLinkOperations.getTarget(annotationInstance, "annotation", false));
+        return eq_qq1g71_a0a0a0a0a0a2a1(SLinkOperations.getTarget(it, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1188207840427l, 1188208074048l, "annotation")), SLinkOperations.getTarget(annotationInstance, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1188207840427l, 1188208074048l, "annotation")));
       }
     }).visitAll(new IVisitor<SNode>() {
       public void visit(SNode it) {

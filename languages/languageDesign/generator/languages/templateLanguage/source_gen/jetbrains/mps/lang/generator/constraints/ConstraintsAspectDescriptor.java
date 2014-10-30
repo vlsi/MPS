@@ -5,6 +5,7 @@ package jetbrains.mps.lang.generator.constraints;
 import jetbrains.mps.smodel.runtime.ConstraintsDescriptor;
 import java.util.Arrays;
 import jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor;
+import jetbrains.mps.smodel.adapter.ids.SConceptId;
 
 public class ConstraintsAspectDescriptor implements jetbrains.mps.smodel.runtime.ConstraintsAspectDescriptor {
   public ConstraintsAspectDescriptor() {
@@ -42,9 +43,57 @@ public class ConstraintsAspectDescriptor implements jetbrains.mps.smodel.runtime
       case 10:
         return new TemplateArgumentVariableRefExpression_Constraints();
       default:
-        // todo: illegal in some cases? 
         return new BaseConstraintsDescriptor(fqName);
     }
+  }
+  public ConstraintsDescriptor getDescriptor(SConceptId conceptId) {
+    long id = conceptId.getConceptId();
+    if (id == 1167514355419l) {
+      return new Root_MappingRule_Constraints();
+    }
+    if (id == 1167087469898l) {
+      return new CreateRootRule_Constraints();
+    }
+    if (id == 1722980698497626400l) {
+      return new ITemplateCall_Constraints();
+    }
+    if (id == 4035562641222585520l) {
+      return new TemplateArgumentQueryExpression_Constraints();
+    }
+    if (id == 4665309944889425032l) {
+      return new TemplateArgumentPatternVarRefExpression_Constraints();
+    }
+    if (id == 4816349095291149799l) {
+      return new TemplateArgumentPropertyPatternRefExpression_Constraints();
+    }
+    if (id == 4816349095291149800l) {
+      return new TemplateArgumentLinkPatternRefExpression_Constraints();
+    }
+    if (id == 650531548511911818l) {
+      return new GeneratorParameterReference_Constraints();
+    }
+    if (id == 5005282049925926521l) {
+      return new TemplateArgumentParameterExpression_Constraints();
+    }
+    if (id == 982871510068000147l) {
+      return new TemplateSwitchMacro_Constraints();
+    }
+    if (id == 1510949579266781519l) {
+      return new TemplateCallMacro_Constraints();
+    }
+    if (id == 1168559333462l) {
+      return new TemplateDeclarationReference_Constraints();
+    }
+    if (id == 1112731569622l) {
+      return new SwitchMacro_Constraints();
+    }
+    if (id == 1112730859144l) {
+      return new TemplateSwitch_Constraints();
+    }
+    if (id == 4426797670061482024l) {
+      return new TemplateArgumentVariableRefExpression_Constraints();
+    }
+    return new BaseConstraintsDescriptor(conceptId);
   }
   private static String[] stringSwitchCases_2qnle6_a0a0b = new String[]{"jetbrains.mps.lang.generator.structure.CreateRootRule", "jetbrains.mps.lang.generator.structure.GeneratorParameterReference", "jetbrains.mps.lang.generator.structure.ITemplateCall", "jetbrains.mps.lang.generator.structure.Root_MappingRule", "jetbrains.mps.lang.generator.structure.SwitchMacro", "jetbrains.mps.lang.generator.structure.TemplateArgumentLinkPatternRefExpression", "jetbrains.mps.lang.generator.structure.TemplateArgumentParameterExpression", "jetbrains.mps.lang.generator.structure.TemplateArgumentPatternVarRefExpression", "jetbrains.mps.lang.generator.structure.TemplateArgumentPropertyPatternRefExpression", "jetbrains.mps.lang.generator.structure.TemplateArgumentQueryExpression", "jetbrains.mps.lang.generator.structure.TemplateArgumentVariableRefExpression", "jetbrains.mps.lang.generator.structure.TemplateCallMacro", "jetbrains.mps.lang.generator.structure.TemplateDeclarationReference", "jetbrains.mps.lang.generator.structure.TemplateSwitch", "jetbrains.mps.lang.generator.structure.TemplateSwitchMacro"};
 }

@@ -22,6 +22,8 @@ import jetbrains.mps.nodeEditor.InlineCellProvider;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.nodeEditor.MPSFonts;
 
 public class Root_MappingRule_Editor extends DefaultNodeEditor {
@@ -268,7 +270,7 @@ public class Root_MappingRule_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private static boolean renderingCondition_pxqe0v_a2a(SNode node, EditorContext editorContext) {
-    return SLinkOperations.getTarget(node, "labelDeclaration", false) != null;
+    return SLinkOperations.getTarget(node, MetaAdapterFactory.getReferenceLink(new UUID(-5475912601019530992l, -8082971551085732881l), 1167169308231l, 1200917515464l, "labelDeclaration")) != null;
   }
   private EditorCell createRefCell_pxqe0v_a2a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);

@@ -8,6 +8,8 @@ import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
@@ -45,7 +47,7 @@ public class XMLSAXBreakStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private static boolean renderingCondition_898x9g_a1a(SNode node, EditorContext editorContext) {
-    return (SLinkOperations.getTarget(node, "result", true) != null);
+    return (SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-2542941447088749313l, -6571881616571970461l), 2264311582634140367l, 2264311582634140369l, "result")) != null);
   }
   private EditorCell createConstant_898x9g_a1a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "with");

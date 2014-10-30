@@ -4,14 +4,16 @@ package smodelLanguage.samples;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.util.List;
 
 public class TypeCast {
   public void cast_node_to_SNode(SNode ifStatement) {
     SNode nodeObject1 = ifStatement;
-    SNode nodeObject2 = (SNode) SLinkOperations.getTarget(ifStatement, "condition", true);
-    SNode nodeObject3 = SLinkOperations.getTarget(ifStatement, "condition", true);
+    SNode nodeObject2 = (SNode) SLinkOperations.getTarget(ifStatement, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123159l, 1068580123160l, "condition"));
+    SNode nodeObject3 = SLinkOperations.getTarget(ifStatement, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123159l, 1068580123160l, "condition"));
     SNode expression = SNodeOperations.cast(nodeObject3, "jetbrains.mps.baseLanguage.structure.Expression");
   }
   public void cast_SNode_to_node(SNode node) {
@@ -23,15 +25,15 @@ public class TypeCast {
     SNode ifStatement1 = SNodeOperations.cast(snode, "jetbrains.mps.baseLanguage.structure.IfStatement");
   }
   public void cast_children_to_nlist(SNode statementList) {
-    List<SNode> statements = SLinkOperations.getTargets(statementList, "statement", true);
+    List<SNode> statements = SLinkOperations.getChildren(statementList, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123136l, 1068581517665l, "statement"));
   }
   public void cast_nlist_to_List(List<SNode> statements) {
     List list1 = statements;
     List<SNode> list2 = statements;
   }
   public void cast_children_to_List(SNode statements) {
-    List list1 = SLinkOperations.getTargets(statements, "statement", true);
-    List<SNode> list2 = SLinkOperations.getTargets(statements, "statement", true);
-    List<SNode> list3 = (List<SNode>) SLinkOperations.getTargets(statements, "statement", true);
+    List list1 = SLinkOperations.getChildren(statements, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123136l, 1068581517665l, "statement"));
+    List<SNode> list2 = SLinkOperations.getChildren(statements, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123136l, 1068581517665l, "statement"));
+    List<SNode> list3 = (List<SNode>) SLinkOperations.getChildren(statements, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123136l, 1068581517665l, "statement"));
   }
 }

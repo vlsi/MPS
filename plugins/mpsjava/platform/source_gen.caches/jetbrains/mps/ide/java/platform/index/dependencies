@@ -16,6 +16,7 @@
     <classNode dependClassName="java.util.Map" />
     <classNode dependClassName="java.util.Queue" />
     <classNode dependClassName="java.util.Set" />
+    <classNode dependClassName="java.util.UUID" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.search.ClassifierSuccessors" />
     <classNode dependClassName="jetbrains.mps.extapi.persistence.FileDataSource" />
     <classNode dependClassName="jetbrains.mps.ide.MPSCoreComponents" />
@@ -32,6 +33,7 @@
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.project.Project" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="jetbrains.mps.vfs.IFile" />
     <classNode dependClassName="org.jetbrains.annotations.NonNls" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
@@ -59,6 +61,7 @@
     <classNode dependClassName="java.util.HashMap" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="java.util.Map" />
+    <classNode dependClassName="java.util.UUID" />
     <classNode dependClassName="jetbrains.mps.fileTypes.MPSFileTypeFactory" />
     <classNode dependClassName="jetbrains.mps.ide.java.platform.index.GlobalSNodeId" />
     <classNode dependClassName="jetbrains.mps.ide.java.platform.index.GlobalSNodeIdDescriptor" />
@@ -67,6 +70,7 @@
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="jetbrains.mps.workbench.goTo.index.RootNodeNameIndex" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />

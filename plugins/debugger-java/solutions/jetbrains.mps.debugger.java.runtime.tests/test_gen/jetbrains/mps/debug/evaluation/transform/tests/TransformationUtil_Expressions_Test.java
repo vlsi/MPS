@@ -15,6 +15,8 @@ import java.util.ArrayList;
 import junit.framework.Assert;
 import jetbrains.mps.lang.test.matcher.NodesMatcher;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -614,9 +616,9 @@ public class TransformationUtil_Expressions_Test extends BaseTransformationTest 
       this.addNodeById("3619281710184383929");
       this.addNodeById("3619281710184383915");
       this.init();
-      SNode fieldDeclaration = SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.cast(this.getNodeById("5543996881668550238"), "jetbrains.mps.baseLanguage.structure.DotExpression"), "jetbrains.mps.baseLanguage.structure.DotExpression"), "operation", true), "jetbrains.mps.baseLanguage.structure.FieldReferenceOperation"), "fieldDeclaration", false);
+      SNode fieldDeclaration = SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.cast(this.getNodeById("5543996881668550238"), "jetbrains.mps.baseLanguage.structure.DotExpression"), "jetbrains.mps.baseLanguage.structure.DotExpression"), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1197027756228l, 1197027833540l, "operation")), "jetbrains.mps.baseLanguage.structure.FieldReferenceOperation"), MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1197029447546l, 1197029500499l, "fieldDeclaration"));
       SNode instanceFieldReference = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.VariableReference", null);
-      SLinkOperations.setTarget(instanceFieldReference, "variableDeclaration", fieldDeclaration, false);
+      SLinkOperations.setTarget(instanceFieldReference, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068498886296l, 1068581517664l, "variableDeclaration"), fieldDeclaration);
       SNodeOperations.replaceWithAnother(SNodeOperations.cast(this.getNodeById("5543996881668550238"), "jetbrains.mps.baseLanguage.structure.DotExpression"), instanceFieldReference);
       TransformatorBuilder.getInstance().build(SNodeOperations.cast(this.getNodeById("5543996881668550236"), "jetbrains.mps.baseLanguage.structure.StatementList"), false).transformEvaluator();
       {
@@ -810,9 +812,9 @@ public class TransformationUtil_Expressions_Test extends BaseTransformationTest 
       this.addNodeById("3619281710184383929");
       this.addNodeById("3619281710184383915");
       this.init();
-      SNode fieldDeclaration = SLinkOperations.getTarget(SNodeOperations.cast(this.getNodeById("5543996881668550263"), "jetbrains.mps.baseLanguage.structure.StaticFieldReference"), "variableDeclaration", false);
+      SNode fieldDeclaration = SLinkOperations.getTarget(SNodeOperations.cast(this.getNodeById("5543996881668550263"), "jetbrains.mps.baseLanguage.structure.StaticFieldReference"), MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068498886296l, 1068581517664l, "variableDeclaration"));
       SNode staticFieldReference = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.VariableReference", null);
-      SLinkOperations.setTarget(staticFieldReference, "variableDeclaration", fieldDeclaration, false);
+      SLinkOperations.setTarget(staticFieldReference, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068498886296l, 1068581517664l, "variableDeclaration"), fieldDeclaration);
       SNodeOperations.replaceWithAnother(SNodeOperations.cast(this.getNodeById("5543996881668550263"), "jetbrains.mps.baseLanguage.structure.StaticFieldReference"), staticFieldReference);
 
       TransformatorBuilder.getInstance().build(SNodeOperations.cast(this.getNodeById("5543996881668550261"), "jetbrains.mps.baseLanguage.structure.StatementList"), false).transformEvaluator();
@@ -1007,10 +1009,10 @@ public class TransformationUtil_Expressions_Test extends BaseTransformationTest 
       this.addNodeById("3619281710184383929");
       this.addNodeById("3619281710184383915");
       this.init();
-      SNode instanceMethodDeclaration = SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(SNodeOperations.cast(this.getNodeById("5543996881668550288"), "jetbrains.mps.baseLanguage.structure.DotExpression"), "operation", true), "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation"), "baseMethodDeclaration", false);
-      List<SNode> arguments = SLinkOperations.getTargets(SNodeOperations.cast(SLinkOperations.getTarget(SNodeOperations.cast(this.getNodeById("5543996881668550288"), "jetbrains.mps.baseLanguage.structure.DotExpression"), "operation", true), "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation"), "actualArgument", true);
+      SNode instanceMethodDeclaration = SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(SNodeOperations.cast(this.getNodeById("5543996881668550288"), "jetbrains.mps.baseLanguage.structure.DotExpression"), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1197027756228l, 1197027833540l, "operation")), "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation"), MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, 1068499141037l, "baseMethodDeclaration"));
+      List<SNode> arguments = SLinkOperations.getChildren(SNodeOperations.cast(SLinkOperations.getTarget(SNodeOperations.cast(this.getNodeById("5543996881668550288"), "jetbrains.mps.baseLanguage.structure.DotExpression"), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1197027756228l, 1197027833540l, "operation")), "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation"), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, 1068499141038l, "actualArgument"));
       SNode localInstanceMethodCall = _quotation_createNode_per9gj_a0d0m(arguments);
-      SLinkOperations.setTarget(localInstanceMethodCall, "baseMethodDeclaration", instanceMethodDeclaration, false);
+      SLinkOperations.setTarget(localInstanceMethodCall, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, 1068499141037l, "baseMethodDeclaration"), instanceMethodDeclaration);
       SNodeOperations.replaceWithAnother(SNodeOperations.cast(this.getNodeById("5543996881668550288"), "jetbrains.mps.baseLanguage.structure.DotExpression"), localInstanceMethodCall);
       TransformatorBuilder.getInstance().build(SNodeOperations.cast(this.getNodeById("5543996881668550286"), "jetbrains.mps.baseLanguage.structure.StatementList"), false).transformEvaluator();
       {
@@ -1204,10 +1206,10 @@ public class TransformationUtil_Expressions_Test extends BaseTransformationTest 
       this.addNodeById("3619281710184383929");
       this.addNodeById("3619281710184383915");
       this.init();
-      SNode staticMethodDeclaration = SLinkOperations.getTarget(SNodeOperations.cast(this.getNodeById("607759879653675061"), "jetbrains.mps.baseLanguage.structure.StaticMethodCall"), "baseMethodDeclaration", false);
-      List<SNode> arguments = SLinkOperations.getTargets(SNodeOperations.cast(this.getNodeById("607759879653675061"), "jetbrains.mps.baseLanguage.structure.StaticMethodCall"), "actualArgument", true);
+      SNode staticMethodDeclaration = SLinkOperations.getTarget(SNodeOperations.cast(this.getNodeById("607759879653675061"), "jetbrains.mps.baseLanguage.structure.StaticMethodCall"), MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, 1068499141037l, "baseMethodDeclaration"));
+      List<SNode> arguments = SLinkOperations.getChildren(SNodeOperations.cast(this.getNodeById("607759879653675061"), "jetbrains.mps.baseLanguage.structure.StaticMethodCall"), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, 1068499141038l, "actualArgument"));
       SNode localStaticMethodCall = _quotation_createNode_per9gj_a0d0p(arguments);
-      SLinkOperations.setTarget(localStaticMethodCall, "baseMethodDeclaration", staticMethodDeclaration, false);
+      SLinkOperations.setTarget(localStaticMethodCall, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, 1068499141037l, "baseMethodDeclaration"), staticMethodDeclaration);
       SNodeOperations.replaceWithAnother(SNodeOperations.cast(this.getNodeById("607759879653675061"), "jetbrains.mps.baseLanguage.structure.StaticMethodCall"), localStaticMethodCall);
       TransformatorBuilder.getInstance().build(SNodeOperations.cast(this.getNodeById("607759879653675044"), "jetbrains.mps.baseLanguage.structure.StatementList"), false).transformEvaluator();
       {

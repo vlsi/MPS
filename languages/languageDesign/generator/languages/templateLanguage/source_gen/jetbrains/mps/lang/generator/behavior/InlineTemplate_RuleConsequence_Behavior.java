@@ -5,11 +5,13 @@ package jetbrains.mps.lang.generator.behavior;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 
 public class InlineTemplate_RuleConsequence_Behavior {
   public static void init(SNode thisNode) {
   }
   public static SNode virtual_getTemplateType_7933327286924651185(SNode thisNode) {
-    return SNodeOperations.getConceptDeclaration(SLinkOperations.getTarget(thisNode, "templateNode", true));
+    return SNodeOperations.getConceptDeclaration(SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-5475912601019530992l, -8082971551085732881l), 1177093525992l, 1177093586806l, "templateNode")));
   }
 }

@@ -5,11 +5,13 @@ package jetbrains.mps.baseLanguage.textGen;
 import jetbrains.mps.textGen.SNodeTextGen;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 
 public class MinusExpression_TextGen extends SNodeTextGen {
   public void doGenerateText(SNode node) {
-    appendNode(SLinkOperations.getTarget(node, "leftExpression", true));
+    appendNode(SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1081773326031l, 1081773367580l, "leftExpression")));
     this.append(" - ");
-    appendNode(SLinkOperations.getTarget(node, "rightExpression", true));
+    appendNode(SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1081773326031l, 1081773367579l, "rightExpression")));
   }
 }

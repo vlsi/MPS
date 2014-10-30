@@ -13,6 +13,8 @@ import org.jetbrains.mps.openapi.language.SConceptRepository;
 import java.util.List;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 
 public class CellModel_Component_KeyMap extends KeyMapImpl {
   public CellModel_Component_KeyMap() {
@@ -47,7 +49,7 @@ public class CellModel_Component_KeyMap extends KeyMapImpl {
       this.execute_internal(editorContext, contextCell.getSNode(), this.getSelectedNodes(editorContext));
     }
     private void execute_internal(final EditorContext editorContext, final SNode node, final List<SNode> selectedNodes) {
-      SNodeOperations.replaceWithAnother(node, SNodeOperations.copyNode(SLinkOperations.getTarget(SLinkOperations.getTarget(node, "editorComponent", false), "cellModel", true)));
+      SNodeOperations.replaceWithAnother(node, SNodeOperations.copyNode(SLinkOperations.getTarget(SLinkOperations.getTarget(node, MetaAdapterFactory.getReferenceLink(new UUID(1782411230332735017l, -6324602048325217350l), 1078939183254l, 1078939183255l, "editorComponent")), MetaAdapterFactory.getContainmentLink(new UUID(1782411230332735017l, -6324602048325217350l), 1080736578640l, 1080736633877l, "cellModel"))));
     }
     public String getKeyStroke() {
       return "ctrl alt N";

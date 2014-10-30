@@ -5,6 +5,8 @@ package jetbrains.mps.build.behavior;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.build.util.Context;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.build.util.UnpackHelper;
 
 public class BuildExternalLayout_Behavior {
@@ -23,7 +25,7 @@ public class BuildExternalLayout_Behavior {
     sb.append("/");
   }
   public static String virtual_getPresentation_1213877396640(SNode thisNode) {
-    return SPropertyOperations.getString(thisNode, "name");
+    return SPropertyOperations.getString(thisNode, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"));
   }
   public static void virtual_unpack_7128123785277710736(SNode thisNode, UnpackHelper helper, Iterable<Object> artifacts) {
     SNode parent = helper.parent(thisNode);

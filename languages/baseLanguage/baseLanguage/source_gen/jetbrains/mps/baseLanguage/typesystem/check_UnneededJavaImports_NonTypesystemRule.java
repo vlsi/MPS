@@ -14,6 +14,8 @@ import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
@@ -43,9 +45,9 @@ public class check_UnneededJavaImports_NonTypesystemRule extends AbstractNonType
     }
 
     final Map<String, SNode> importsByName = MapSequence.fromMap(new HashMap<String, SNode>());
-    ListSequence.fromList(SLinkOperations.getTargets(AttributeOperations.getAttribute(clas, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.baseLanguage.structure.JavaImports")), "entries", true)).where(new IWhereFilter<SNode>() {
+    ListSequence.fromList(SLinkOperations.getChildren(AttributeOperations.getAttribute(clas, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.baseLanguage.structure.JavaImports")), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 6050519299856556786l, 28358707492429991l, "entries"))).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return !(SPropertyOperations.getBoolean(it, "onDemand"));
+        return !(SPropertyOperations.getBoolean(it, MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 28358707492436943l, 28358707492436944l, "onDemand")));
       }
     }).visitAll(new IVisitor<SNode>() {
       public void visit(SNode it) {
@@ -103,7 +105,7 @@ public class check_UnneededJavaImports_NonTypesystemRule extends AbstractNonType
     // removing only those single-type imports that didn't get into retain set 
     // quick fix 
     Iterable<SNode> unneeded = Sequence.fromIterable(MapSequence.fromMap(importsByName).values()).subtract(SetSequence.fromSet(retain));
-    if (Sequence.fromIterable(unneeded).count() < ListSequence.fromList(SLinkOperations.getTargets(AttributeOperations.getAttribute(clas, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.baseLanguage.structure.JavaImports")), "entries", true)).count()) {
+    if (Sequence.fromIterable(unneeded).count() < ListSequence.fromList(SLinkOperations.getChildren(AttributeOperations.getAttribute(clas, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.baseLanguage.structure.JavaImports")), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 6050519299856556786l, 28358707492429991l, "entries"))).count()) {
       {
         MessageTarget errorTarget = new NodeMessageTarget();
         IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(clas, "Unneeded java imports present", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "2235632002330933240", null, errorTarget);

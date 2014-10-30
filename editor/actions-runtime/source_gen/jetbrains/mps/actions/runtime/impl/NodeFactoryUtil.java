@@ -14,6 +14,8 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.util.QueryMethodGenerated;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
@@ -31,16 +33,16 @@ public class NodeFactoryUtil {
     }
     return ListSequence.fromList(SModelOperations.getRoots(actionsModelDescriptor, "jetbrains.mps.lang.actions.structure.NodeFactories")).translate(new ITranslator2<SNode, SNode>() {
       public Iterable<SNode> translate(SNode it) {
-        return SLinkOperations.getTargets(it, "nodeFactory", true);
+        return SLinkOperations.getChildren(it, MetaAdapterFactory.getContainmentLink(new UUID(-5842916035344972280l, -5840605745428443715l), 1158700664498l, 1158700779049l, "nodeFactory"));
       }
     }).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return SLinkOperations.getTarget(it, "applicableConcept", false) == concept;
+        return SLinkOperations.getTarget(it, MetaAdapterFactory.getReferenceLink(new UUID(-5842916035344972280l, -5840605745428443715l), 1158700725281l, 1158700943156l, "applicableConcept")) == concept;
       }
     }).toListSequence();
   }
   public static void invokeNodeSetupFunction(SNode factory, SNode newNode, SNode sampleNode, SNode enclosingNode, SModel model) {
-    if (SLinkOperations.getTarget(factory, "setupFunction", true) == null) {
+    if (SLinkOperations.getTarget(factory, MetaAdapterFactory.getContainmentLink(new UUID(-5842916035344972280l, -5840605745428443715l), 1158700725281l, 1158701448518l, "setupFunction")) == null) {
       return;
     }
     try {

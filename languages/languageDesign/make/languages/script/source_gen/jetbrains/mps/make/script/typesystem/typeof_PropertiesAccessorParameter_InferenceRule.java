@@ -10,6 +10,8 @@ import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.smodel.SModelUtil_new;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.smodel.SReference;
 
 public class typeof_PropertiesAccessorParameter_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
@@ -38,7 +40,7 @@ public class typeof_PropertiesAccessorParameter_InferenceRule extends AbstractIn
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, false);
-    quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, facade.createModelReference("r:4ea5a78b-cb8a-4831-b227-f7860a22491d(jetbrains.mps.make.resources)"), facade.createNodeId("3353120829256410483")));
+    quotedNode_1.setReference(MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier"), SReference.create(MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier"), quotedNode_1, facade.createModelReference("r:4ea5a78b-cb8a-4831-b227-f7860a22491d(jetbrains.mps.make.resources)"), facade.createNodeId("3353120829256410483")));
     return quotedNode_1;
   }
 }

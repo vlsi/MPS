@@ -4,16 +4,18 @@ package jetbrains.mps.lang.generator.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class TemplateDeclaration_Behavior {
   public static void init(SNode thisNode) {
   }
   public static SNode virtual_getBaseConcept_2621449412040133768(SNode thisNode) {
-    return SLinkOperations.getTarget(thisNode, "applicableConcept", false);
+    return SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getReferenceLink(new UUID(-5475912601019530992l, -8082971551085732881l), 1092059087312l, 1168285871518l, "applicableConcept"));
   }
   public static void virtual_setBaseConcept_6261424444345963020(SNode thisNode, SNode baseConcept) {
-    SLinkOperations.setTarget(thisNode, "applicableConcept", baseConcept, false);
-    SPropertyOperations.set(thisNode, "name", "reduce_" + SPropertyOperations.getString(baseConcept, "name"));
+    SLinkOperations.setTarget(thisNode, MetaAdapterFactory.getReferenceLink(new UUID(-5475912601019530992l, -8082971551085732881l), 1092059087312l, 1168285871518l, "applicableConcept"), baseConcept);
+    SPropertyOperations.set(thisNode, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"), "reduce_" + SPropertyOperations.getString(baseConcept, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")));
   }
 }

@@ -7,6 +7,8 @@ import java.util.List;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 
 public class MessageStatementUtil {
   public static final int MIN_LENGTH = 3;
@@ -18,7 +20,7 @@ public class MessageStatementUtil {
     if (ListSequence.fromList(descendants).isEmpty()) {
       return null;
     }
-    return convertToCamelCaseNameString(SPropertyOperations.getString(ListSequence.fromList(descendants).last(), "value"));
+    return convertToCamelCaseNameString(SPropertyOperations.getString(ListSequence.fromList(descendants).last(), MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 1070475926800l, 1070475926801l, "value")));
   }
 
   private static String convertToCamelCaseNameString(String nameString) {

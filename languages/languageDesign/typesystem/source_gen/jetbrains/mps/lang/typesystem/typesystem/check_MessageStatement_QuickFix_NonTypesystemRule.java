@@ -9,6 +9,8 @@ import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import java.util.List;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
@@ -20,10 +22,10 @@ public class check_MessageStatement_QuickFix_NonTypesystemRule extends AbstractN
   public check_MessageStatement_QuickFix_NonTypesystemRule() {
   }
   public void applyRule(final SNode messageStatement, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    List<SNode> intentions = SLinkOperations.getTargets(messageStatement, "helginsIntention", true);
+    List<SNode> intentions = SLinkOperations.getChildren(messageStatement, MetaAdapterFactory.getContainmentLink(new UUID(8817443762339858024l, -6091446231697526094l), 1227096774658l, 1227096802791l, "helginsIntention"));
     if (ListSequence.fromList(intentions).count() > 1) {
       for (SNode intention : intentions) {
-        if (SPropertyOperations.getBoolean(intention, "applyImmediately")) {
+        if (SPropertyOperations.getBoolean(intention, MetaAdapterFactory.getProperty(new UUID(8817443762339858024l, -6091446231697526094l), 1210784285454l, 1216127910019l, "applyImmediately"))) {
           {
             MessageTarget errorTarget = new NodeMessageTarget();
             IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(intention, "can't apply immediately if there are multiple quick fixes", "r:00000000-0000-4000-0000-011c895902b1(jetbrains.mps.lang.typesystem.typesystem)", "4258793651770372659", null, errorTarget);

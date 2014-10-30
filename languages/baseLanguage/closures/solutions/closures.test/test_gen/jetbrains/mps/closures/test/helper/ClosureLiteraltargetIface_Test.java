@@ -15,6 +15,8 @@ import junit.framework.Assert;
 import jetbrains.mps.lang.pattern.util.MatchingUtil;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.smodel.SReference;
 
 @MPSLaunch
@@ -64,18 +66,18 @@ public class ClosureLiteraltargetIface_Test extends BaseTransformationTest {
       SNode quotedNode_6 = null;
       SNode quotedNode_7 = null;
       quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, false);
-      quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, facade.createModelReference("r:1ec34e97-b5da-4226-87b0-e15ce1eda255(jetbrains.mps.closures.test.helper@tests)"), facade.createNodeId("7178287329507546171")));
+      quotedNode_1.setReference(MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier"), SReference.create(MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier"), quotedNode_1, facade.createModelReference("r:1ec34e97-b5da-4226-87b0-e15ce1eda255(jetbrains.mps.closures.test.helper@tests)"), facade.createNodeId("7178287329507546171")));
       quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.UpperBoundType", null, null, false);
       quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.UpperBoundType", null, null, false);
       quotedNode_6 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, false);
-      quotedNode_6.setReference("classifier", SReference.create("classifier", quotedNode_6, facade.createModelReference("6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), facade.createNodeId("~String")));
+      quotedNode_6.setReference(MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier"), SReference.create(MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier"), quotedNode_6, facade.createModelReference("6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), facade.createNodeId("~String")));
       quotedNode_4.addChild("bound", quotedNode_6);
       quotedNode_2.addChild("bound", quotedNode_4);
       quotedNode_1.addChild("parameter", quotedNode_2);
       quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.LowerBoundType", null, null, false);
       quotedNode_5 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.LowerBoundType", null, null, false);
       quotedNode_7 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, false);
-      quotedNode_7.setReference("classifier", SReference.create("classifier", quotedNode_7, facade.createModelReference("6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), facade.createNodeId("~Integer")));
+      quotedNode_7.setReference(MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier"), SReference.create(MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier"), quotedNode_7, facade.createModelReference("6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), facade.createNodeId("~Integer")));
       quotedNode_5.addChild("bound", quotedNode_7);
       quotedNode_3.addChild("bound", quotedNode_5);
       quotedNode_1.addChild("parameter", quotedNode_3);
@@ -91,18 +93,18 @@ public class ClosureLiteraltargetIface_Test extends BaseTransformationTest {
       SNode quotedNode_6 = null;
       SNode quotedNode_7 = null;
       quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, false);
-      quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, facade.createModelReference("r:1ec34e97-b5da-4226-87b0-e15ce1eda255(jetbrains.mps.closures.test.helper@tests)"), facade.createNodeId("7178287329507546171")));
+      quotedNode_1.setReference(MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier"), SReference.create(MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier"), quotedNode_1, facade.createModelReference("r:1ec34e97-b5da-4226-87b0-e15ce1eda255(jetbrains.mps.closures.test.helper@tests)"), facade.createNodeId("7178287329507546171")));
       quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.UpperBoundType", null, null, false);
       quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.UpperBoundType", null, null, false);
       quotedNode_6 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, false);
-      quotedNode_6.setReference("classifier", SReference.create("classifier", quotedNode_6, facade.createModelReference("6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), facade.createNodeId("~String")));
+      quotedNode_6.setReference(MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier"), SReference.create(MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier"), quotedNode_6, facade.createModelReference("6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), facade.createNodeId("~String")));
       quotedNode_4.addChild("bound", quotedNode_6);
       quotedNode_2.addChild("bound", quotedNode_4);
       quotedNode_1.addChild("parameter", quotedNode_2);
       quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.LowerBoundType", null, null, false);
       quotedNode_5 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.LowerBoundType", null, null, false);
       quotedNode_7 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, false);
-      quotedNode_7.setReference("classifier", SReference.create("classifier", quotedNode_7, facade.createModelReference("6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), facade.createNodeId("~Integer")));
+      quotedNode_7.setReference(MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier"), SReference.create(MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier"), quotedNode_7, facade.createModelReference("6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), facade.createNodeId("~Integer")));
       quotedNode_5.addChild("bound", quotedNode_7);
       quotedNode_3.addChild("bound", quotedNode_5);
       quotedNode_1.addChild("parameter", quotedNode_3);
@@ -115,14 +117,14 @@ public class ClosureLiteraltargetIface_Test extends BaseTransformationTest {
       SNode quotedNode_3 = null;
       SNode quotedNode_4 = null;
       quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, false);
-      quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, facade.createModelReference("r:1ec34e97-b5da-4226-87b0-e15ce1eda255(jetbrains.mps.closures.test.helper@tests)"), facade.createNodeId("7178287329507546171")));
+      quotedNode_1.setReference(MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier"), SReference.create(MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier"), quotedNode_1, facade.createModelReference("r:1ec34e97-b5da-4226-87b0-e15ce1eda255(jetbrains.mps.closures.test.helper@tests)"), facade.createNodeId("7178287329507546171")));
       quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.UpperBoundType", null, null, false);
       quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, false);
-      quotedNode_4.setReference("classifier", SReference.create("classifier", quotedNode_4, facade.createModelReference("6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), facade.createNodeId("~String")));
+      quotedNode_4.setReference(MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier"), SReference.create(MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier"), quotedNode_4, facade.createModelReference("6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), facade.createNodeId("~String")));
       quotedNode_2.addChild("bound", quotedNode_4);
       quotedNode_1.addChild("parameter", quotedNode_2);
       quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, false);
-      quotedNode_3.setReference("classifier", SReference.create("classifier", quotedNode_3, facade.createModelReference("6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), facade.createNodeId("~Integer")));
+      quotedNode_3.setReference(MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier"), SReference.create(MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier"), quotedNode_3, facade.createModelReference("6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), facade.createNodeId("~Integer")));
       quotedNode_1.addChild("parameter", quotedNode_3);
       return quotedNode_1;
     }
@@ -132,12 +134,12 @@ public class ClosureLiteraltargetIface_Test extends BaseTransformationTest {
       SNode quotedNode_2 = null;
       SNode quotedNode_3 = null;
       quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, false);
-      quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, facade.createModelReference("r:1ec34e97-b5da-4226-87b0-e15ce1eda255(jetbrains.mps.closures.test.helper@tests)"), facade.createNodeId("7178287329507546171")));
+      quotedNode_1.setReference(MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier"), SReference.create(MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier"), quotedNode_1, facade.createModelReference("r:1ec34e97-b5da-4226-87b0-e15ce1eda255(jetbrains.mps.closures.test.helper@tests)"), facade.createNodeId("7178287329507546171")));
       quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, false);
-      quotedNode_2.setReference("classifier", SReference.create("classifier", quotedNode_2, facade.createModelReference("6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), facade.createNodeId("~String")));
+      quotedNode_2.setReference(MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier"), SReference.create(MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier"), quotedNode_2, facade.createModelReference("6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), facade.createNodeId("~String")));
       quotedNode_1.addChild("parameter", quotedNode_2);
       quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, false);
-      quotedNode_3.setReference("classifier", SReference.create("classifier", quotedNode_3, facade.createModelReference("6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), facade.createNodeId("~Integer")));
+      quotedNode_3.setReference(MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier"), SReference.create(MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier"), quotedNode_3, facade.createModelReference("6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), facade.createNodeId("~Integer")));
       quotedNode_1.addChild("parameter", quotedNode_3);
       return quotedNode_1;
     }

@@ -6,6 +6,8 @@ import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
@@ -14,14 +16,14 @@ import jetbrains.mps.util.NameUtil;
 public class NewNode {
   public void newNode1(SModel model) {
     SNode newClass = SModelOperations.createNewRootNode(model, "jetbrains.mps.baseLanguage.structure.ClassConcept", null);
-    SLinkOperations.addNewChild(newClass, "member", "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration");
-    SLinkOperations.addNewChild(SLinkOperations.addNewChild(newClass, "member", "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration"), "parameter", "jetbrains.mps.baseLanguage.structure.ParameterDeclaration");
+    SLinkOperations.addNewChild(newClass, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107461130800l, 5375687026011219971l, "member"), "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration");
+    SLinkOperations.addNewChild(SLinkOperations.addNewChild(newClass, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107461130800l, 5375687026011219971l, "member"), "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration"), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123132l, 1068580123134l, "parameter"), "jetbrains.mps.baseLanguage.structure.ParameterDeclaration");
   }
   public void newNode2(SNode node) {
     SNode newIfStatement = SModelOperations.createNewNode(SNodeOperations.getModel(node), null, "jetbrains.mps.baseLanguage.structure.IfStatement");
-    SNode newCondition = SLinkOperations.setNewChild(newIfStatement, "condition", "jetbrains.mps.baseLanguage.structure.Expression");
+    SNode newCondition = SLinkOperations.setNewChild(newIfStatement, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123159l, 1068580123160l, "condition"), "jetbrains.mps.baseLanguage.structure.Expression");
     SNode newCondition2 = SNodeOperations.replaceWithNewChild(newCondition, "jetbrains.mps.baseLanguage.structure.AndExpression");
-    SNode newStatement = SLinkOperations.addNewChild(SLinkOperations.getTarget(newIfStatement, "ifTrue", true), "statement", "jetbrains.mps.baseLanguage.structure.ReturnStatement");
+    SNode newStatement = SLinkOperations.addNewChild(SLinkOperations.getTarget(newIfStatement, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123159l, 1068580123161l, "ifTrue")), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123136l, 1068581517665l, "statement"), "jetbrains.mps.baseLanguage.structure.ReturnStatement");
   }
   public void newNode3(SNode sample) {
     SNode ifStatement = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.IfStatement", null);

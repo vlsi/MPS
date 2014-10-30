@@ -5,6 +5,7 @@ package jetbrains.mps.lang.dataFlow.analyzers.constraints;
 import jetbrains.mps.smodel.runtime.ConstraintsDescriptor;
 import java.util.Arrays;
 import jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor;
+import jetbrains.mps.smodel.adapter.ids.SConceptId;
 
 public class ConstraintsAspectDescriptor implements jetbrains.mps.smodel.runtime.ConstraintsAspectDescriptor {
   public ConstraintsAspectDescriptor() {
@@ -26,9 +27,33 @@ public class ConstraintsAspectDescriptor implements jetbrains.mps.smodel.runtime
       case 4:
         return new EmitInstruction_Constraints();
       default:
-        // todo: illegal in some cases? 
         return new BaseConstraintsDescriptor(fqName);
     }
+  }
+  public ConstraintsDescriptor getDescriptor(SConceptId conceptId) {
+    long id = conceptId.getConceptId();
+    if (id == 4217760266503638748l) {
+      return new InstructionReference_Constraints();
+    }
+    if (id == 95073643532950033l) {
+      return new AnalyzerRunnerAnalyzeOperation_Constraints();
+    }
+    if (id == 95073643532950038l) {
+      return new AnalyzerRunnerCreator_Constraints();
+    }
+    if (id == 7985661997283714146l) {
+      return new IsOperation_Constraints();
+    }
+    if (id == 4943044633101449694l) {
+      return new ConceptCondition_Constraints();
+    }
+    if (id == 4943044633102057744l) {
+      return new ApplicableNodeReference_Constraints();
+    }
+    if (id == 4217760266503579796l) {
+      return new EmitInstruction_Constraints();
+    }
+    return new BaseConstraintsDescriptor(conceptId);
   }
   private static String[] stringSwitchCases_2qnle6_a0a0b = new String[]{"jetbrains.mps.lang.dataFlow.analyzers.structure.AnalyzerRunnerAnalyzeOperation", "jetbrains.mps.lang.dataFlow.analyzers.structure.AnalyzerRunnerCreator", "jetbrains.mps.lang.dataFlow.analyzers.structure.ApplicableNodeReference", "jetbrains.mps.lang.dataFlow.analyzers.structure.ConceptCondition", "jetbrains.mps.lang.dataFlow.analyzers.structure.EmitInstruction", "jetbrains.mps.lang.dataFlow.analyzers.structure.InstructionReference", "jetbrains.mps.lang.dataFlow.analyzers.structure.IsOperation"};
 }

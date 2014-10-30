@@ -18,6 +18,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.editor.runtime.selection.SelectionUtil;
 import jetbrains.mps.openapi.editor.selection.SelectionManager;
 import jetbrains.mps.intentions.IntentionDescriptor;
@@ -86,7 +88,7 @@ public class AddNodeMacroParam_switch_Intention implements IntentionFactory {
       SNode nodeMacro = EditingUtil.addNodeMacro(node);
       SNode switchMacro = SNodeFactoryOperations.createNewNode("jetbrains.mps.lang.generator.structure.TemplateSwitchMacro", null);
       SNodeOperations.replaceWithAnother(nodeMacro, switchMacro);
-      SLinkOperations.setTarget(switchMacro, "template", myParameter, false);
+      SLinkOperations.setTarget(switchMacro, MetaAdapterFactory.getReferenceLink(new UUID(-5475912601019530992l, -8082971551085732881l), 1722980698497626400l, 1722980698497626483l, "template"), myParameter);
       // set caret 
       SelectionUtil.selectLabelCellAnSetCaret(editorContext, switchMacro, SelectionManager.FIRST_CELL, 1);
     }

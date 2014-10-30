@@ -16,6 +16,8 @@ import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Indent;
 import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
@@ -94,7 +96,7 @@ public class BeforeTask_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private static boolean renderingCondition_bndx6c_a2a0(SNode node, EditorContext editorContext) {
-    return isNotEmptyString(SPropertyOperations.getString(node, "alias"));
+    return isNotEmptyString(SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1133920641626l, 1156235010670l, "alias")));
   }
   private EditorCell createConstant_bndx6c_a2a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "as");

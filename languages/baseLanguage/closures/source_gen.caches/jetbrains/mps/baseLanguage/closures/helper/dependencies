@@ -6,6 +6,7 @@
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="java.util.UUID" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.behavior.FunctionType_Behavior" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.helper.Keys" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.helper.Values" />
@@ -16,6 +17,7 @@
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.HUtil" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="jetbrains.mps.smodel.behaviour.BehaviorReflection" />
     <classNode dependClassName="jetbrains.mps.typesystem.inference.TypeChecker" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
@@ -23,6 +25,7 @@
   <dependency className="jetbrains.mps.baseLanguage.closures.helper.ClosureLiteralAdapterBuilder" file="ClosureLiteralAdapterBuilder.java">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.Iterator" />
+    <classNode dependClassName="java.util.UUID" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.Classifier_Behavior" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.behavior.FunctionMethodDeclaration_Behavior" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.constraints.ClassifierTypeUtil" />
@@ -36,6 +39,7 @@
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
     <classNode dependClassName="jetbrains.mps.smodel.SReference" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
   </dependency>
@@ -48,6 +52,7 @@
     <classNode dependClassName="java.util.Iterator" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="java.util.Map" />
+    <classNode dependClassName="java.util.UUID" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.Classifier_Behavior" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.behavior.FunctionType_Behavior" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.constraints.ClassifierTypeUtil" />
@@ -63,6 +68,7 @@
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="jetbrains.mps.smodel.behaviour.BehaviorReflection" />
     <classNode dependClassName="jetbrains.mps.typesystem.inference.TypeChecker" />
     <classNode dependClassName="jetbrains.mps.util.JavaNameUtil" />
@@ -75,6 +81,7 @@
     <classNode dependClassName="java.util.Iterator" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="java.util.Map" />
+    <classNode dependClassName="java.util.UUID" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.Classifier_Behavior" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.behavior.FunctionType_Behavior" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.helper.TypeMatcher" />
@@ -84,6 +91,7 @@
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.closures.helper.Flags" file="Flags.java">
@@ -106,6 +114,7 @@
     <classNode dependClassName="java.util.Iterator" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="java.util.Map" />
+    <classNode dependClassName="java.util.UUID" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.Classifier_Behavior" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.behavior.FunctionType_Behavior" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.constraints.ClassifierTypeUtil" />
@@ -126,6 +135,7 @@
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.HUtil" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
     <classNode dependClassName="jetbrains.mps.smodel.SReference" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="jetbrains.mps.smodel.behaviour.BehaviorReflection" />
     <classNode dependClassName="jetbrains.mps.typesystem.inference.TypeChecker" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
@@ -140,6 +150,7 @@
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="java.util.UUID" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.helper.StatementListUtil" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.helper.Values" />
     <classNode dependClassName="jetbrains.mps.generator.template.ITemplateGenerator" />
@@ -148,14 +159,17 @@
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.closures.helper.StatementListUtil" file="StatementListUtil.java">
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="java.util.UUID" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.closures.helper.TypeMatcher" file="TypeMatcher.java">
@@ -167,12 +181,14 @@
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="java.util.Map" />
     <classNode dependClassName="java.util.Set" />
+    <classNode dependClassName="java.util.UUID" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.helper.FunctionTypeUtil" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.SetSequence" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="jetbrains.mps.smodel.behaviour.BehaviorReflection" />
     <classNode dependClassName="jetbrains.mps.typesystem.inference.TypeChecker" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
@@ -191,6 +207,7 @@
     <classNode dependClassName="java.util.Iterator" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="java.util.Map" />
+    <classNode dependClassName="java.util.UUID" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IMapping" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
@@ -203,6 +220,7 @@
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
 </dependenciesRoot>

@@ -52,6 +52,7 @@
     <classNode dependClassName="java.util.HashSet" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="java.util.Set" />
+    <classNode dependClassName="java.util.UUID" />
     <classNode dependClassName="jetbrains.mps.ide.findusages.view.FindUtils" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
@@ -59,6 +60,7 @@
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="org.apache.log4j.LogManager" />
     <classNode dependClassName="org.apache.log4j.Logger" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
@@ -106,10 +108,12 @@
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="java.util.UUID" />
     <classNode dependClassName="jetbrains.mps.ide.findusages.view.FindUtils" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="org.apache.log4j.LogManager" />
     <classNode dependClassName="org.apache.log4j.Logger" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />

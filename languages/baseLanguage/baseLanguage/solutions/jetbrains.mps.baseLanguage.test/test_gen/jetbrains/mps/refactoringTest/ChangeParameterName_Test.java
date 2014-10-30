@@ -11,6 +11,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.baseLanguage.util.plugin.refactorings.ChangeMethodSignatureRefactoring;
 import java.util.List;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -31,7 +33,7 @@ public class ChangeParameterName_Test extends BaseTransformationTest {
       this.addNodeById("1230052943818");
       this.addNodeById("1230052943833");
       ChangeMethodSignatureParameters params = new ChangeMethodSignatureParameters(SNodeOperations.cast(this.getNodeById("1230052943820"), "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration"));
-      SPropertyOperations.set(ListSequence.fromList(SLinkOperations.getTargets(params.getDeclaration(), "parameter", true)).first(), "name", "b");
+      SPropertyOperations.set(ListSequence.fromList(SLinkOperations.getChildren(params.getDeclaration(), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123132l, 1068580123134l, "parameter"))).first(), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"), "b");
       ChangeMethodSignatureRefactoring ref = new ChangeMethodSignatureRefactoring(params, SNodeOperations.cast(this.getNodeById("1230052943820"), "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration"));
       ref.doRefactoring();
       {

@@ -17,6 +17,8 @@ import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.util.MacrosFactory;
 import jetbrains.mps.vfs.IFileUtils;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.build.util.Context;
@@ -75,12 +77,12 @@ public class ModuleLoaderUtils {
 
         String macroName = path.substring(2, index);
         SNode found = null;
-        for (SNode macro : SLinkOperations.getTargets(SNodeOperations.getAncestor(originalModule, "jetbrains.mps.build.structure.BuildProject", false, false), "macros", true)) {
+        for (SNode macro : SLinkOperations.getChildren(SNodeOperations.getAncestor(originalModule, "jetbrains.mps.build.structure.BuildProject", false, false), MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 5617550519002745363l, 5617550519002745378l, "macros"))) {
           if (!(SNodeOperations.isInstanceOf(macro, "jetbrains.mps.build.structure.BuildFolderMacro"))) {
             continue;
           }
 
-          if (eq_krgnbt_a0c0f0d0f4(SPropertyOperations.getString(macro, "name"), macroName)) {
+          if (eq_krgnbt_a0c0f0d0f4(SPropertyOperations.getString(macro, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")), macroName)) {
             found = SNodeOperations.cast(macro, "jetbrains.mps.build.structure.BuildFolderMacro");
             break;
           }
@@ -90,7 +92,7 @@ public class ModuleLoaderUtils {
           return path;
         }
 
-        String localPath = BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(found, "defaultPath", true), "virtual_getLocalPath_5481553824944787364", new Object[]{(genContext != null ? Context.defaultContext(genContext) : Context.defaultContext())});
+        String localPath = BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(found, MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 7389400916848136194l, 7389400916848144618l, "defaultPath")), "virtual_getLocalPath_5481553824944787364", new Object[]{(genContext != null ? Context.defaultContext(genContext) : Context.defaultContext())});
         if (localPath == null) {
           if (genContext != null) {
             genContext.showWarningMessage(found, "cannot resolve local path: " + path + ", macro has no default value");

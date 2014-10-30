@@ -21,6 +21,8 @@ import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import java.util.ArrayList;
 import jetbrains.mps.ide.editor.MPSEditorDataKeys;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 
@@ -94,7 +96,7 @@ public class CommentStatements_Action extends BaseAction {
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       SNode commentedStatementsBlock = SNodeOperations.insertNewPrevSiblingChild(ListSequence.fromList(((List<SNode>) MapSequence.fromMap(_params).get("nodes"))).first(), "jetbrains.mps.baseLanguage.structure.CommentedStatementsBlock");
-      ListSequence.fromList(SLinkOperations.getTargets(commentedStatementsBlock, "statement", true)).addSequence(ListSequence.fromList(((List<SNode>) MapSequence.fromMap(_params).get("nodes"))));
+      ListSequence.fromList(SLinkOperations.getChildren(commentedStatementsBlock, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1177326519037l, 1177326540772l, "statement"))).addSequence(ListSequence.fromList(((List<SNode>) MapSequence.fromMap(_params).get("nodes"))));
     } catch (Throwable t) {
       if (LOG.isEnabledFor(Level.ERROR)) {
         LOG.error("User's action execute method failed. Action:" + "CommentStatements", t);

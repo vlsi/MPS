@@ -6,20 +6,22 @@ import jetbrains.mps.generator.runtime.Generated;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 
 @Generated
 public class QueriesGenerated {
   public final boolean NEEDS_OPCONTEXT = false;
   public static SNode sourceNodeQuery_1904811872814344163(final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(_context.getNode(), "right", true);
+    return SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(new UUID(4913550145214499670l, -7492061600269650213l), 1904811872814253785l, 1904811872814253581l, "right"));
   }
   public static SNode sourceNodeQuery_1904811872814344153(final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(_context.getNode(), "left", true);
+    return SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(new UUID(4913550145214499670l, -7492061600269650213l), 1904811872814253785l, 1904811872814253580l, "left"));
   }
   public static SNode sourceNodeQuery_1904811872814344212(final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(_context.getNode(), "right", true);
+    return SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(new UUID(4913550145214499670l, -7492061600269650213l), 1904811872814253785l, 1904811872814253581l, "right"));
   }
   public static SNode sourceNodeQuery_1904811872814344202(final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(_context.getNode(), "left", true);
+    return SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(new UUID(4913550145214499670l, -7492061600269650213l), 1904811872814253785l, 1904811872814253580l, "left"));
   }
 }

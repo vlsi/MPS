@@ -7,6 +7,8 @@ import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
 import java.util.Set;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import org.jetbrains.mps.openapi.language.SConceptRepository;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
@@ -30,33 +32,33 @@ public class TypeVariableDeclaration_Behavior {
       return _quotation_createNode_ct7zh2_a0a0a1();
     }
     SetSequence.fromSet(visitedVars).addElement(thisNode);
-    if ((SLinkOperations.getTarget(thisNode, "bound", true) != null)) {
-      return TypeVariableDeclaration_Behavior.call_getTypeWithConcreteUpperBounds_4346214032091504651(SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.TypeVariableDeclaration"))), SLinkOperations.getTarget(thisNode, "bound", true), visitedVars);
+    if ((SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1109279763828l, 1214996921760l, "bound")) != null)) {
+      return TypeVariableDeclaration_Behavior.call_getTypeWithConcreteUpperBounds_4346214032091504651(SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.TypeVariableDeclaration"))), SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1109279763828l, 1214996921760l, "bound")), visitedVars);
     } else {
       return _quotation_createNode_ct7zh2_a0a0c0b();
     }
   }
   public static String virtual_getPresentation_1213877396640(SNode thisNode) {
     StringBuffer buff = new StringBuffer();
-    buff.append(SPropertyOperations.getString(SNodeOperations.cast(SNodeOperations.getParent(thisNode), "jetbrains.mps.lang.core.structure.INamedConcept"), "name"));
+    buff.append(SPropertyOperations.getString(SNodeOperations.cast(SNodeOperations.getParent(thisNode), "jetbrains.mps.lang.core.structure.INamedConcept"), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")));
     buff.append(".");
-    buff.append(SPropertyOperations.getString(thisNode, "name"));
-    if ((SLinkOperations.getTarget(thisNode, "bound", true) != null)) {
-      buff.append(" extends ").append(BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(thisNode, "bound", true), "virtual_getPresentation_1213877396640", new Object[]{}));
+    buff.append(SPropertyOperations.getString(thisNode, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")));
+    if ((SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1109279763828l, 1214996921760l, "bound")) != null)) {
+      buff.append(" extends ").append(BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1109279763828l, 1214996921760l, "bound")), "virtual_getPresentation_1213877396640", new Object[]{}));
     }
-    for (SNode bound : ListSequence.fromList(SLinkOperations.getTargets(thisNode, "auxBounds", true))) {
+    for (SNode bound : ListSequence.fromList(SLinkOperations.getChildren(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1109279763828l, 1215091156086l, "auxBounds")))) {
       buff.append(" & ").append(BehaviorReflection.invokeVirtual(String.class, bound, "virtual_getPresentation_1213877396640", new Object[]{}));
     }
     return buff.toString();
   }
   public static SNode call_getTypeWithConcreteUpperBounds_4346214032091504651(SAbstractConcept thisConcept, SNode inputType, Set<SNode> visitedVars) {
     if (SNodeOperations.isInstanceOf(inputType, "jetbrains.mps.baseLanguage.structure.TypeVariableReference")) {
-      return TypeVariableDeclaration_Behavior.call_getConcreteUpperBound_4346214032091504647(SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.copyNode(inputType), "jetbrains.mps.baseLanguage.structure.TypeVariableReference"), "typeVariableDeclaration", false), visitedVars);
+      return TypeVariableDeclaration_Behavior.call_getConcreteUpperBound_4346214032091504647(SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.copyNode(inputType), "jetbrains.mps.baseLanguage.structure.TypeVariableReference"), MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1109283449304l, 1109283546497l, "typeVariableDeclaration")), visitedVars);
     }
     SNode javaType = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), inputType, "virtual_getJavaType_1213877337345", new Object[]{});
     if (SNodeOperations.isInstanceOf(javaType, "jetbrains.mps.baseLanguage.structure.ClassifierType")) {
       SNode result = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ClassifierType", null);
-      SLinkOperations.setTarget(result, "classifier", SLinkOperations.getTarget(SNodeOperations.cast(javaType, "jetbrains.mps.baseLanguage.structure.ClassifierType"), "classifier", false), false);
+      SLinkOperations.setTarget(result, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier"), SLinkOperations.getTarget(SNodeOperations.cast(javaType, "jetbrains.mps.baseLanguage.structure.ClassifierType"), MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier")));
       return result;
     } else {
       return SNodeOperations.copyNode(javaType);
@@ -66,14 +68,14 @@ public class TypeVariableDeclaration_Behavior {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, false);
-    quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, facade.createModelReference("6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), facade.createNodeId("~Object")));
+    quotedNode_1.setReference(MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier"), SReference.create(MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier"), quotedNode_1, facade.createModelReference("6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), facade.createNodeId("~Object")));
     return quotedNode_1;
   }
   private static SNode _quotation_createNode_ct7zh2_a0a0c0b() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, false);
-    quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, facade.createModelReference("6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), facade.createNodeId("~Object")));
+    quotedNode_1.setReference(MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier"), SReference.create(MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier"), quotedNode_1, facade.createModelReference("6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), facade.createNodeId("~Object")));
     return quotedNode_1;
   }
 }

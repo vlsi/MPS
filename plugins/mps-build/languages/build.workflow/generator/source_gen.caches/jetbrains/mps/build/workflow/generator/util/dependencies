@@ -14,6 +14,7 @@
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="java.util.Map" />
     <classNode dependClassName="java.util.Set" />
+    <classNode dependClassName="java.util.UUID" />
     <classNode dependClassName="jetbrains.mps.build.workflow.util.XmlSignature" />
     <classNode dependClassName="jetbrains.mps.generator.template.TemplateQueryContext" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISelector" />
@@ -28,6 +29,7 @@
     <classNode dependClassName="jetbrains.mps.make.dependencies.graph.Graphs" />
     <classNode dependClassName="jetbrains.mps.make.dependencies.graph.IVertex" />
     <classNode dependClassName="jetbrains.mps.smodel.CopyUtil" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
@@ -40,10 +42,12 @@
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="java.util.Map" />
     <classNode dependClassName="java.util.Set" />
+    <classNode dependClassName="java.util.UUID" />
     <classNode dependClassName="jetbrains.mps.generator.template.TemplateQueryContext" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="jetbrains.mps.util.GraphUtil" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>

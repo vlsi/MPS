@@ -64,4 +64,9 @@ public final class SPropertyId {
     long prop = Long.parseLong(s.substring(split + 1));
     return new SPropertyId(concept, prop);
   }
+
+  @Override
+  public String toString() {
+    return serialize();
+  }
 }

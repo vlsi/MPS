@@ -4,6 +4,7 @@
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="java.util.UUID" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.Generated" />
     <classNode dependClassName="jetbrains.mps.generator.template.PropertyMacroContext" />
     <classNode dependClassName="jetbrains.mps.generator.template.ReferenceMacroContext" />
@@ -16,6 +17,7 @@
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.samples.DecisionTable.behavior.DecisionTable_Behavior" />
   </dependency>

@@ -8,6 +8,8 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
@@ -24,7 +26,7 @@ public class typeof_SuperConstructorInvocation_InferenceRule extends AbstractInf
   public typeof_SuperConstructorInvocation_InferenceRule() {
   }
   public void applyRule(final SNode sci, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    SNode cdecl = SLinkOperations.getTarget(sci, "baseMethodDeclaration", false);
+    SNode cdecl = SLinkOperations.getTarget(sci, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, 1068499141037l, "baseMethodDeclaration"));
     if (cdecl == null) {
       return;
     }
@@ -37,7 +39,7 @@ public class typeof_SuperConstructorInvocation_InferenceRule extends AbstractInf
     SNode thisType = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisClassifier, "virtual_getThisType_3305065273710880775", new Object[]{});
     BehaviorReflection.invokeVirtual(Void.class, thisType, "virtual_collectGenericSubstitutions_4107091686347010321", new Object[]{subs});
 
-    List<SNode> argl = SLinkOperations.getTargets(sci, "actualArgument", true);
+    List<SNode> argl = SLinkOperations.getChildren(sci, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, 1068499141038l, "actualArgument"));
     List<SNode> typel = BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), cdecl, "virtual_getTypeApplicationParameters_8277080359323839095", new Object[]{ListSequence.fromList(argl).count()});
     for (SNode type : ListSequence.fromList(typel)) {
       if (SNodeOperations.isInstanceOf(type, "jetbrains.mps.baseLanguage.structure.IGenericType")) {

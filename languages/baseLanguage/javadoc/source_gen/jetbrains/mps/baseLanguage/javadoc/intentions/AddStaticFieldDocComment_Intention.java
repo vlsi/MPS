@@ -14,6 +14,8 @@ import java.util.Collections;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.intentions.IntentionDescriptor;
@@ -66,12 +68,12 @@ public class AddStaticFieldDocComment_Intention implements IntentionFactory {
 
       if ((AttributeOperations.getAttribute(node, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.baseLanguage.javadoc.structure.FieldDocComment")) == null)) {
         SNodeFactoryOperations.setNewAttribute(node, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.baseLanguage.javadoc.structure.FieldDocComment"), "jetbrains.mps.baseLanguage.javadoc.structure.FieldDocComment");
-        SNode line = SNodeFactoryOperations.addNewChild(AttributeOperations.getAttribute(node, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.baseLanguage.javadoc.structure.FieldDocComment")), "body", "jetbrains.mps.baseLanguage.javadoc.structure.CommentLine");
-        SNodeFactoryOperations.addNewChild(line, "part", "jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart");
+        SNode line = SNodeFactoryOperations.addNewChild(AttributeOperations.getAttribute(node, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.baseLanguage.javadoc.structure.FieldDocComment")), MetaAdapterFactory.getContainmentLink(new UUID(-972752984950357426l, -4964296947050367098l), 5349172909345501395l, 8465538089690331502l, "body"), "jetbrains.mps.baseLanguage.javadoc.structure.CommentLine");
+        SNodeFactoryOperations.addNewChild(line, MetaAdapterFactory.getContainmentLink(new UUID(-972752984950357426l, -4964296947050367098l), 8465538089690331500l, 8970989240999019149l, "part"), "jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart");
       } else {
         AttributeOperations.setAttribute(node, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.baseLanguage.javadoc.structure.FieldDocComment"), null);
       }
-      editorContext.select(ListSequence.fromList(SLinkOperations.getTargets(AttributeOperations.getAttribute(node, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.baseLanguage.javadoc.structure.FieldDocComment")), "body", true)).first());
+      editorContext.select(ListSequence.fromList(SLinkOperations.getChildren(AttributeOperations.getAttribute(node, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.baseLanguage.javadoc.structure.FieldDocComment")), MetaAdapterFactory.getContainmentLink(new UUID(-972752984950357426l, -4964296947050367098l), 5349172909345501395l, 8465538089690331502l, "body"))).first());
     }
     public IntentionDescriptor getDescriptor() {
       return AddStaticFieldDocComment_Intention.this;

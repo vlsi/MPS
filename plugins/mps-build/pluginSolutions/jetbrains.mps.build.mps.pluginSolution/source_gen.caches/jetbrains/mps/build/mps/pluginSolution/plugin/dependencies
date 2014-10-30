@@ -65,6 +65,7 @@
     <classNode dependClassName="java.util.LinkedHashSet" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="java.util.Set" />
+    <classNode dependClassName="java.util.UUID" />
     <classNode dependClassName="jetbrains.mps.MPSCore" />
     <classNode dependClassName="jetbrains.mps.build.mps.pluginSolution.plugin.BuildGeneratorUtil" />
     <classNode dependClassName="jetbrains.mps.build.mps.pluginSolution.plugin.DependencyStep" />
@@ -104,6 +105,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.SModelRepository" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
     <classNode dependClassName="jetbrains.mps.smodel.SReference" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="jetbrains.mps.util.ReadUtil" />
     <classNode dependClassName="jetbrains.mps.vfs.FileSystem" />
     <classNode dependClassName="jetbrains.mps.vfs.IFile" />
@@ -286,6 +288,7 @@
     <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
   </dependency>
   <dependency className="jetbrains.mps.build.mps.pluginSolution.plugin.ImportModuleHelper" file="ImportModuleHelper.java">
+    <classNode dependClassName="java.util.UUID" />
     <classNode dependClassName="jetbrains.mps.build.mps.util.ModuleChecker" />
     <classNode dependClassName="jetbrains.mps.build.mps.util.ModuleLoader" />
     <classNode dependClassName="jetbrains.mps.build.mps.util.ModuleLoaderException" />
@@ -300,6 +303,7 @@
     <classNode dependClassName="jetbrains.mps.project.structure.modules.LanguageDescriptor" />
     <classNode dependClassName="jetbrains.mps.project.structure.modules.ModuleDescriptor" />
     <classNode dependClassName="jetbrains.mps.project.structure.modules.SolutionDescriptor" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="jetbrains.mps.vfs.IFile" />
     <classNode dependClassName="org.apache.log4j.Level" />
     <classNode dependClassName="org.apache.log4j.LogManager" />

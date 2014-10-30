@@ -8,6 +8,8 @@ import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.editor.runtime.cells.AbstractCellAction;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 
 public class CellModel_RefNode_AddHint_Actions {
@@ -24,7 +26,7 @@ public class CellModel_RefNode_AddHint_Actions {
       this.execute_internal(editorContext, this.myNode);
     }
     public void execute_internal(EditorContext editorContext, SNode node) {
-      SLinkOperations.setTarget(node, "addHints", SConceptOperations.createNewNode("jetbrains.mps.lang.editor.structure.ExplicitHintsSpecification", null), true);
+      SLinkOperations.setTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(1782411230332735017l, -6324602048325217350l), 1073389882823l, 5861024100072578575l, "addHints"), SConceptOperations.createNewNode("jetbrains.mps.lang.editor.structure.ExplicitHintsSpecification", null));
     }
   }
   public static class CellModel_RefNode_AddHint_Actions_INSERT_BEFORE extends AbstractCellAction {
@@ -36,7 +38,7 @@ public class CellModel_RefNode_AddHint_Actions {
       this.execute_internal(editorContext, this.myNode);
     }
     public void execute_internal(EditorContext editorContext, SNode node) {
-      SLinkOperations.setTarget(node, "addHints", SConceptOperations.createNewNode("jetbrains.mps.lang.editor.structure.ExplicitHintsSpecification", null), true);
+      SLinkOperations.setTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(1782411230332735017l, -6324602048325217350l), 1073389882823l, 5861024100072578575l, "addHints"), SConceptOperations.createNewNode("jetbrains.mps.lang.editor.structure.ExplicitHintsSpecification", null));
     }
   }
 }

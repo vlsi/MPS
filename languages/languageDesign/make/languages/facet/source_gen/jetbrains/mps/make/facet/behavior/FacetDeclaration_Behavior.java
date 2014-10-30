@@ -11,6 +11,8 @@ import jetbrains.mps.internal.collections.runtime.QueueSequence;
 import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
@@ -28,9 +30,9 @@ public class FacetDeclaration_Behavior {
       SNode fd = QueueSequence.fromQueue(queue).removeFirstElement();
       if (!(SetSequence.fromSet(result).contains(fd))) {
         SetSequence.fromSet(result).addElement(fd);
-        QueueSequence.fromQueue(queue).addSequence(ListSequence.fromList(SLinkOperations.getTargets(fd, "extended", true)).select(new ISelector<SNode, SNode>() {
+        QueueSequence.fromQueue(queue).addSequence(ListSequence.fromList(SLinkOperations.getChildren(fd, MetaAdapterFactory.getContainmentLink(new UUID(7596465798203917883l, -4873580700227838512l), 6418371274763029523l, 6447445394688422654l, "extended"))).select(new ISelector<SNode, SNode>() {
           public SNode select(SNode it) {
-            return SLinkOperations.getTarget(it, "facet", false);
+            return SLinkOperations.getTarget(it, MetaAdapterFactory.getReferenceLink(new UUID(7596465798203917883l, -4873580700227838512l), 6447445394688422642l, 6447445394688422643l, "facet"));
           }
         }));
       }
@@ -44,14 +46,14 @@ public class FacetDeclaration_Behavior {
       SNode fd = QueueSequence.fromQueue(queue).removeFirstElement();
       if (!(SetSequence.fromSet(result).contains(fd))) {
         SetSequence.fromSet(result).addElement(fd);
-        QueueSequence.fromQueue(queue).addSequence(ListSequence.fromList(SLinkOperations.getTargets(fd, "required", true)).select(new ISelector<SNode, SNode>() {
+        QueueSequence.fromQueue(queue).addSequence(ListSequence.fromList(SLinkOperations.getChildren(fd, MetaAdapterFactory.getContainmentLink(new UUID(7596465798203917883l, -4873580700227838512l), 6418371274763029523l, 6447445394688422656l, "required"))).select(new ISelector<SNode, SNode>() {
           public SNode select(SNode it) {
-            return SLinkOperations.getTarget(it, "facet", false);
+            return SLinkOperations.getTarget(it, MetaAdapterFactory.getReferenceLink(new UUID(7596465798203917883l, -4873580700227838512l), 6447445394688422642l, 6447445394688422643l, "facet"));
           }
         }));
-        QueueSequence.fromQueue(queue).addSequence(ListSequence.fromList(SLinkOperations.getTargets(fd, "optional", true)).select(new ISelector<SNode, SNode>() {
+        QueueSequence.fromQueue(queue).addSequence(ListSequence.fromList(SLinkOperations.getChildren(fd, MetaAdapterFactory.getContainmentLink(new UUID(7596465798203917883l, -4873580700227838512l), 6418371274763029523l, 6447445394688422657l, "optional"))).select(new ISelector<SNode, SNode>() {
           public SNode select(SNode it) {
-            return SLinkOperations.getTarget(it, "facet", false);
+            return SLinkOperations.getTarget(it, MetaAdapterFactory.getReferenceLink(new UUID(7596465798203917883l, -4873580700227838512l), 6447445394688422642l, 6447445394688422643l, "facet"));
           }
         }));
       }
@@ -59,9 +61,9 @@ public class FacetDeclaration_Behavior {
     return result;
   }
   public static String virtual_classifierName_4609636120081351397(SNode thisNode) {
-    return NameUtil.toValidIdentifier(SPropertyOperations.getString(thisNode, "name")) + "_" + SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(thisNode), "conceptAlias");
+    return NameUtil.toValidIdentifier(SPropertyOperations.getString(thisNode, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"))) + "_" + SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(thisNode), MetaAdapterFactory.getProperty(new UUID(-4094437568663370681l, -8968368868337559369l), 1169125787135l, 5092175715804935370l, "conceptAlias"));
   }
   public static String call_getFacetFqName_1919086248986828221(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual(String.class, SModelOperations.getModuleStub(SNodeOperations.getModel(thisNode)), "virtual_getFqName_1213877404258", new Object[]{}) + "." + SPropertyOperations.getString(thisNode, "name");
+    return BehaviorReflection.invokeVirtual(String.class, SModelOperations.getModuleStub(SNodeOperations.getModel(thisNode)), "virtual_getFqName_1213877404258", new Object[]{}) + "." + SPropertyOperations.getString(thisNode, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"));
   }
 }

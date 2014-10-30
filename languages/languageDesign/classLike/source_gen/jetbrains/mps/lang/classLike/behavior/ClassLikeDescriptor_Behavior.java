@@ -4,6 +4,8 @@ package jetbrains.mps.lang.classLike.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.jetbrains.mps.openapi.module.SModule;
@@ -15,10 +17,10 @@ public class ClassLikeDescriptor_Behavior {
   public static void init(SNode thisNode) {
   }
   public static SNode call_getPreferredConcept_1825613483881161085(SNode thisNode) {
-    return (SLinkOperations.getTarget(thisNode, "preferredConcept", false) == null ? SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassConcept") : SLinkOperations.getTarget(thisNode, "preferredConcept", false));
+    return (SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getReferenceLink(new UUID(-4047124328593011742l, -4867279722304451481l), 3751132065236767072l, 1825613483881131410l, "preferredConcept")) == null ? SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassConcept") : SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getReferenceLink(new UUID(-4047124328593011742l, -4867279722304451481l), 3751132065236767072l, 1825613483881131410l, "preferredConcept")));
   }
   public static void call_initializeInstance_3384419124890469048(SNode thisNode, SNode classLike) {
-    if (SLinkOperations.getTarget(thisNode, "initializer", true) == null) {
+    if (SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-4047124328593011742l, -4867279722304451481l), 3751132065236767072l, 1825613483881472526l, "initializer")) == null) {
       return;
     }
     try {
@@ -36,6 +38,6 @@ public class ClassLikeDescriptor_Behavior {
     }
   }
   public static String call_getGeneratedClassName_3384419124890285894(SNode thisNode) {
-    return SPropertyOperations.getString(thisNode, "name") + "_Queries";
+    return SPropertyOperations.getString(thisNode, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")) + "_Queries";
   }
 }

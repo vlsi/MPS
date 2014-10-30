@@ -9,6 +9,8 @@ import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import java.util.List;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
@@ -43,13 +45,13 @@ public class TestCollector {
       final Wrappers._T<List<SNode>> nodes = new Wrappers._T<List<SNode>>();
       ModelAccess.instance().runReadAction(new _Adapters._return_P0_E0_to_Runnable_adapter(new _FunctionTypes._return_P0_E0<List<SNode>>() {
         public List<SNode> invoke() {
-          final SNode ignoreAnn = SLinkOperations.getTarget(_quotation_createNode_rpw6il_a0a0a0a0c0b2(), "annotation", false);
+          final SNode ignoreAnn = SLinkOperations.getTarget(_quotation_createNode_rpw6il_a0a0a0a0c0b2(), MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1188207840427l, 1188208074048l, "annotation"));
 
           return nodes.value = ListSequence.fromList(SModelOperations.getRoots(model, "jetbrains.mps.baseLanguage.unitTest.structure.ITestCase")).where(new IWhereFilter<SNode>() {
             public boolean accept(SNode itc) {
-              return !(SPropertyOperations.getBoolean(SNodeOperations.as(itc, "jetbrains.mps.baseLanguage.structure.ClassConcept"), "abstractClass")) && !(ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.as(itc, "jetbrains.mps.baseLanguage.structure.ClassConcept"), "annotation", true)).any(new IWhereFilter<SNode>() {
+              return !(SPropertyOperations.getBoolean(SNodeOperations.as(itc, "jetbrains.mps.baseLanguage.structure.ClassConcept"), MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 1068390468198l, 1075300953594l, "abstractClass"))) && !(ListSequence.fromList(SLinkOperations.getChildren(SNodeOperations.as(itc, "jetbrains.mps.baseLanguage.structure.ClassConcept"), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1188208481402l, 1188208488637l, "annotation"))).any(new IWhereFilter<SNode>() {
                 public boolean accept(SNode cann) {
-                  return SLinkOperations.getTarget(cann, "annotation", false) == ignoreAnn;
+                  return SLinkOperations.getTarget(cann, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1188207840427l, 1188208074048l, "annotation")) == ignoreAnn;
                 }
               }));
             }
@@ -61,7 +63,7 @@ public class TestCollector {
           into.invoke(new _FunctionTypes._return_P0_E0<SNode>() {
             public SNode invoke() {
               SNode tref = SConceptOperations.createNewNode("jetbrains.mps.testbench.suite.structure.TestCaseRef", null);
-              SLinkOperations.setTarget(tref, "testCase", itc, false);
+              SLinkOperations.setTarget(tref, MetaAdapterFactory.getReferenceLink(new UUID(-3186960361546692645l, -5977911984495255467l), 4504141816188599479l, 4504141816188599488l, "testCase"), itc);
               return tref;
             }
           });
@@ -74,7 +76,7 @@ public class TestCollector {
       PersistenceFacade facade = PersistenceFacade.getInstance();
       SNode quotedNode_1 = null;
       quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.AnnotationInstance", null, null, false);
-      quotedNode_1.setReference("annotation", SReference.create("annotation", quotedNode_1, facade.createModelReference("83f155ff-422c-4b5a-a2f2-b459302dd215/f:java_stub#83f155ff-422c-4b5a-a2f2-b459302dd215#org.junit(jetbrains.mps.baseLanguage.unitTest.libs/org.junit@java_stub)"), facade.createNodeId("~Ignore")));
+      quotedNode_1.setReference(MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1188207840427l, 1188208074048l, "annotation"), SReference.create(MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1188207840427l, 1188208074048l, "annotation"), quotedNode_1, facade.createModelReference("83f155ff-422c-4b5a-a2f2-b459302dd215/f:java_stub#83f155ff-422c-4b5a-a2f2-b459302dd215#org.junit(jetbrains.mps.baseLanguage.unitTest.libs/org.junit@java_stub)"), facade.createNodeId("~Ignore")));
       return quotedNode_1;
     }
   }
@@ -87,22 +89,22 @@ public class TestCollector {
       final Wrappers._T<List<SNode>> nodes = new Wrappers._T<List<SNode>>();
       ModelAccess.instance().runReadAction(new _Adapters._return_P0_E0_to_Runnable_adapter(new _FunctionTypes._return_P0_E0<List<SNode>>() {
         public List<SNode> invoke() {
-          final SNode testAnn = SLinkOperations.getTarget(_quotation_createNode_rpw6il_a0a0a0a0c0b3(), "annotation", false);
-          final SNode ignoreAnn = SLinkOperations.getTarget(_quotation_createNode_rpw6il_a0a1a0a0c0b3(), "annotation", false);
+          final SNode testAnn = SLinkOperations.getTarget(_quotation_createNode_rpw6il_a0a0a0a0c0b3(), MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1188207840427l, 1188208074048l, "annotation"));
+          final SNode ignoreAnn = SLinkOperations.getTarget(_quotation_createNode_rpw6il_a0a1a0a0c0b3(), MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1188207840427l, 1188208074048l, "annotation"));
 
           return nodes.value = ListSequence.fromList(SModelOperations.getRoots(model, "jetbrains.mps.baseLanguage.structure.ClassConcept")).where(new IWhereFilter<SNode>() {
             public boolean accept(SNode cls) {
-              return !(SPropertyOperations.getBoolean(cls, "abstractClass")) && !(ListSequence.fromList(SLinkOperations.getTargets(cls, "annotation", true)).any(new IWhereFilter<SNode>() {
+              return !(SPropertyOperations.getBoolean(cls, MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 1068390468198l, 1075300953594l, "abstractClass"))) && !(ListSequence.fromList(SLinkOperations.getChildren(cls, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1188208481402l, 1188208488637l, "annotation"))).any(new IWhereFilter<SNode>() {
                 public boolean accept(SNode cann) {
-                  return SLinkOperations.getTarget(cann, "annotation", false) == ignoreAnn;
+                  return SLinkOperations.getTarget(cann, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1188207840427l, 1188208074048l, "annotation")) == ignoreAnn;
                 }
               })) && Sequence.fromIterable(Classifier_Behavior.call_methods_5292274854859311639(cls)).translate(new ITranslator2<SNode, SNode>() {
                 public Iterable<SNode> translate(SNode m) {
-                  return SLinkOperations.getTargets(m, "annotation", true);
+                  return SLinkOperations.getChildren(m, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1188208481402l, 1188208488637l, "annotation"));
                 }
               }).any(new IWhereFilter<SNode>() {
                 public boolean accept(SNode ani) {
-                  return SLinkOperations.getTarget(ani, "annotation", false) == testAnn;
+                  return SLinkOperations.getTarget(ani, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1188207840427l, 1188208074048l, "annotation")) == testAnn;
                 }
               });
             }
@@ -114,7 +116,7 @@ public class TestCollector {
           into.invoke(new _FunctionTypes._return_P0_E0<SNode>() {
             public SNode invoke() {
               SNode tref = SConceptOperations.createNewNode("jetbrains.mps.testbench.suite.structure.JUnit4TestCaseRef", null);
-              SLinkOperations.setTarget(tref, "klass", SNodeOperations.cast(tc, "jetbrains.mps.baseLanguage.structure.ClassConcept"), false);
+              SLinkOperations.setTarget(tref, MetaAdapterFactory.getReferenceLink(new UUID(-3186960361546692645l, -5977911984495255467l), 4504141816188599480l, 4504141816188599489l, "klass"), SNodeOperations.cast(tc, "jetbrains.mps.baseLanguage.structure.ClassConcept"));
               return tref;
             }
           });
@@ -127,14 +129,14 @@ public class TestCollector {
       PersistenceFacade facade = PersistenceFacade.getInstance();
       SNode quotedNode_1 = null;
       quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.AnnotationInstance", null, null, false);
-      quotedNode_1.setReference("annotation", SReference.create("annotation", quotedNode_1, facade.createModelReference("83f155ff-422c-4b5a-a2f2-b459302dd215/f:java_stub#83f155ff-422c-4b5a-a2f2-b459302dd215#org.junit(jetbrains.mps.baseLanguage.unitTest.libs/org.junit@java_stub)"), facade.createNodeId("~Test")));
+      quotedNode_1.setReference(MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1188207840427l, 1188208074048l, "annotation"), SReference.create(MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1188207840427l, 1188208074048l, "annotation"), quotedNode_1, facade.createModelReference("83f155ff-422c-4b5a-a2f2-b459302dd215/f:java_stub#83f155ff-422c-4b5a-a2f2-b459302dd215#org.junit(jetbrains.mps.baseLanguage.unitTest.libs/org.junit@java_stub)"), facade.createNodeId("~Test")));
       return quotedNode_1;
     }
     private static SNode _quotation_createNode_rpw6il_a0a1a0a0c0b3() {
       PersistenceFacade facade = PersistenceFacade.getInstance();
       SNode quotedNode_1 = null;
       quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.AnnotationInstance", null, null, false);
-      quotedNode_1.setReference("annotation", SReference.create("annotation", quotedNode_1, facade.createModelReference("83f155ff-422c-4b5a-a2f2-b459302dd215/f:java_stub#83f155ff-422c-4b5a-a2f2-b459302dd215#org.junit(jetbrains.mps.baseLanguage.unitTest.libs/org.junit@java_stub)"), facade.createNodeId("~Ignore")));
+      quotedNode_1.setReference(MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1188207840427l, 1188208074048l, "annotation"), SReference.create(MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1188207840427l, 1188208074048l, "annotation"), quotedNode_1, facade.createModelReference("83f155ff-422c-4b5a-a2f2-b459302dd215/f:java_stub#83f155ff-422c-4b5a-a2f2-b459302dd215#org.junit(jetbrains.mps.baseLanguage.unitTest.libs/org.junit@java_stub)"), facade.createNodeId("~Ignore")));
       return quotedNode_1;
     }
   }
@@ -147,15 +149,15 @@ public class TestCollector {
       final Wrappers._T<List<SNode>> nodes = new Wrappers._T<List<SNode>>();
       ModelAccess.instance().runReadAction(new _Adapters._return_P0_E0_to_Runnable_adapter(new _FunctionTypes._return_P0_E0<List<SNode>>() {
         public List<SNode> invoke() {
-          final SNode ignoreAnn = SLinkOperations.getTarget(_quotation_createNode_rpw6il_a0a0a0a0c0b4(), "annotation", false);
+          final SNode ignoreAnn = SLinkOperations.getTarget(_quotation_createNode_rpw6il_a0a0a0a0c0b4(), MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1188207840427l, 1188208074048l, "annotation"));
 
           return nodes.value = ListSequence.fromList(SModelOperations.getRoots(model, "jetbrains.mps.baseLanguage.structure.ClassConcept")).where(new IWhereFilter<SNode>() {
             public boolean accept(SNode cls) {
-              return !(SNodeOperations.isInstanceOf(cls, "jetbrains.mps.baseLanguage.unitTest.structure.ITestCase")) && !(SPropertyOperations.getBoolean(cls, "abstractClass")) && !(ListSequence.fromList(SLinkOperations.getTargets(cls, "annotation", true)).any(new IWhereFilter<SNode>() {
+              return !(SNodeOperations.isInstanceOf(cls, "jetbrains.mps.baseLanguage.unitTest.structure.ITestCase")) && !(SPropertyOperations.getBoolean(cls, MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 1068390468198l, 1075300953594l, "abstractClass"))) && !(ListSequence.fromList(SLinkOperations.getChildren(cls, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1188208481402l, 1188208488637l, "annotation"))).any(new IWhereFilter<SNode>() {
                 public boolean accept(SNode cann) {
-                  return SLinkOperations.getTarget(cann, "annotation", false) == ignoreAnn;
+                  return SLinkOperations.getTarget(cann, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1188207840427l, 1188208074048l, "annotation")) == ignoreAnn;
                 }
-              })) && BehaviorReflection.invokeVirtual(Boolean.TYPE, cls, "virtual_isDescendant_7165541881557222913", new Object[]{SLinkOperations.getTarget(_quotation_createNode_rpw6il_a0a0a0a0a0a0c0a0a2a1e(), "classifier", false)});
+              })) && BehaviorReflection.invokeVirtual(Boolean.TYPE, cls, "virtual_isDescendant_7165541881557222913", new Object[]{SLinkOperations.getTarget(_quotation_createNode_rpw6il_a0a0a0a0a0a0c0a0a2a1e(), MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier"))});
             }
           }).toListSequence();
         }
@@ -165,7 +167,7 @@ public class TestCollector {
           into.invoke(new _FunctionTypes._return_P0_E0<SNode>() {
             public SNode invoke() {
               SNode tref = SConceptOperations.createNewNode("jetbrains.mps.testbench.suite.structure.JUnit3TestCaseRef", null);
-              SLinkOperations.setTarget(tref, "klass", SNodeOperations.cast(tc, "jetbrains.mps.baseLanguage.structure.ClassConcept"), false);
+              SLinkOperations.setTarget(tref, MetaAdapterFactory.getReferenceLink(new UUID(-3186960361546692645l, -5977911984495255467l), 4504141816188599481l, 1280144168199457727l, "klass"), SNodeOperations.cast(tc, "jetbrains.mps.baseLanguage.structure.ClassConcept"));
               return tref;
             }
           });
@@ -178,14 +180,14 @@ public class TestCollector {
       PersistenceFacade facade = PersistenceFacade.getInstance();
       SNode quotedNode_1 = null;
       quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.AnnotationInstance", null, null, false);
-      quotedNode_1.setReference("annotation", SReference.create("annotation", quotedNode_1, facade.createModelReference("83f155ff-422c-4b5a-a2f2-b459302dd215/f:java_stub#83f155ff-422c-4b5a-a2f2-b459302dd215#org.junit(jetbrains.mps.baseLanguage.unitTest.libs/org.junit@java_stub)"), facade.createNodeId("~Ignore")));
+      quotedNode_1.setReference(MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1188207840427l, 1188208074048l, "annotation"), SReference.create(MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1188207840427l, 1188208074048l, "annotation"), quotedNode_1, facade.createModelReference("83f155ff-422c-4b5a-a2f2-b459302dd215/f:java_stub#83f155ff-422c-4b5a-a2f2-b459302dd215#org.junit(jetbrains.mps.baseLanguage.unitTest.libs/org.junit@java_stub)"), facade.createNodeId("~Ignore")));
       return quotedNode_1;
     }
     private static SNode _quotation_createNode_rpw6il_a0a0a0a0a0a0c0a0a2a1e() {
       PersistenceFacade facade = PersistenceFacade.getInstance();
       SNode quotedNode_1 = null;
       quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, false);
-      quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, facade.createModelReference("83f155ff-422c-4b5a-a2f2-b459302dd215/f:java_stub#83f155ff-422c-4b5a-a2f2-b459302dd215#junit.framework(jetbrains.mps.baseLanguage.unitTest.libs/junit.framework@java_stub)"), facade.createNodeId("~TestCase")));
+      quotedNode_1.setReference(MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier"), SReference.create(MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier"), quotedNode_1, facade.createModelReference("83f155ff-422c-4b5a-a2f2-b459302dd215/f:java_stub#83f155ff-422c-4b5a-a2f2-b459302dd215#junit.framework(jetbrains.mps.baseLanguage.unitTest.libs/junit.framework@java_stub)"), facade.createNodeId("~TestCase")));
       return quotedNode_1;
     }
   }

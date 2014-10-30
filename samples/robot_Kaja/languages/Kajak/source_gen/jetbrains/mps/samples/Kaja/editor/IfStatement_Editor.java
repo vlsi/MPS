@@ -18,6 +18,8 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 
 public class IfStatement_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
@@ -80,10 +82,10 @@ public class IfStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private static boolean _StyleParameter_QueryFunction_eb7h0d_a0c0(EditorContext editorContext, SNode node) {
-    return ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(node, "trueBranch", true), "commands", true)).isEmpty();
+    return ListSequence.fromList(SLinkOperations.getChildren(SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(331587165301851084l, -4784639992745830411l), 3308300503039647678l, 3308300503039647684l, "trueBranch")), MetaAdapterFactory.getContainmentLink(new UUID(331587165301851084l, -4784639992745830411l), 3308300503039896127l, 3308300503039896128l, "commands"))).isEmpty();
   }
   private static boolean _StyleParameter_QueryFunction_eb7h0d_a1c0(EditorContext editorContext, SNode node) {
-    return ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(node, "trueBranch", true), "commands", true)).isNotEmpty();
+    return ListSequence.fromList(SLinkOperations.getChildren(SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(331587165301851084l, -4784639992745830411l), 3308300503039647678l, 3308300503039647684l, "trueBranch")), MetaAdapterFactory.getContainmentLink(new UUID(331587165301851084l, -4784639992745830411l), 3308300503039896127l, 3308300503039896128l, "commands"))).isNotEmpty();
   }
   private EditorCell createRefNode_eb7h0d_d0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
@@ -132,7 +134,7 @@ public class IfStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private static boolean renderingCondition_eb7h0d_a5a(SNode node, EditorContext editorContext) {
-    return ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(node, "falseBranch", true), "commands", true)).isNotEmpty();
+    return ListSequence.fromList(SLinkOperations.getChildren(SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(331587165301851084l, -4784639992745830411l), 3308300503039647678l, 3308300503039647685l, "falseBranch")), MetaAdapterFactory.getContainmentLink(new UUID(331587165301851084l, -4784639992745830411l), 3308300503039896127l, 3308300503039896128l, "commands"))).isNotEmpty();
   }
   private EditorCell createConstant_eb7h0d_a5a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "else");

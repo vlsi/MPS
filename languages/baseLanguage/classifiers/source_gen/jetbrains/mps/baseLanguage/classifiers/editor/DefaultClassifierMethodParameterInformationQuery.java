@@ -10,6 +10,8 @@ import jetbrains.mps.scope.Scope;
 import jetbrains.mps.smodel.constraints.ModelConstraints;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
@@ -24,7 +26,7 @@ public class DefaultClassifierMethodParameterInformationQuery implements Paramet
     SNode selectedActualArgument = this.getSelectedActualArgument(editorContext);
     SNode methodCall = (selectedActualArgument != null ? SNodeOperations.cast(SNodeOperations.getParent(selectedActualArgument), "jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierMethodCallOperation") : node);
     Scope scope = ModelConstraints.getReferenceDescriptor(methodCall, "method").getScope();
-    String name = SPropertyOperations.getString(SLinkOperations.getTarget(methodCall, "member", false), "name");
+    String name = SPropertyOperations.getString(SLinkOperations.getTarget(methodCall, MetaAdapterFactory.getReferenceLink(new UUID(4917733117167750838l, -7710007501170303426l), 1205756064662l, 1205756909548l, "member")), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"));
     Iterable<SNode> availableElements = scope.getAvailableElements((name != null ? name : ""));
     return Sequence.fromIterable(availableElements).select(new ISelector<SNode, SNode>() {
       public SNode select(SNode it) {
@@ -40,7 +42,7 @@ public class DefaultClassifierMethodParameterInformationQuery implements Paramet
     BaseMethodParameterInformationQueryUtil.fillPresentation(parameterObject, this.getSelectedActualArgument(editorContext), styledText);
   }
   public boolean isMethodCurrent(SNode node, EditorContext editorContext, SNode parameterObject) {
-    return SLinkOperations.getTarget(node, "member", false) == parameterObject;
+    return SLinkOperations.getTarget(node, MetaAdapterFactory.getReferenceLink(new UUID(4917733117167750838l, -7710007501170303426l), 1205756064662l, 1205756909548l, "member")) == parameterObject;
   }
   private SNode getSelectedActualArgument(EditorContext editorContext) {
     SNode selectedNode = editorContext.getSelectedNode();

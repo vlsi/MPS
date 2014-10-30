@@ -10,6 +10,8 @@ import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.baseLanguage.behavior.Classifier_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
@@ -19,7 +21,7 @@ public class check_NonStaticInnerClassCreation_NonTypesystemRule extends Abstrac
   public check_NonStaticInnerClassCreation_NonTypesystemRule() {
   }
   public void applyRule(final SNode classCreator, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    if (!(Classifier_Behavior.call_canInstantiateIn_6935810692634457550(SLinkOperations.getTarget(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), classCreator, "virtual_getInstanceType_8008512149545154471", new Object[]{}), "classifier", false), classCreator))) {
+    if (!(Classifier_Behavior.call_canInstantiateIn_6935810692634457550(SLinkOperations.getTarget(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), classCreator, "virtual_getInstanceType_8008512149545154471", new Object[]{}), MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier")), classCreator))) {
       MessageTarget errorTarget = new NodeMessageTarget();
       IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(classCreator, "Can't instantiate here", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "6935810692634467390", null, errorTarget);
     }

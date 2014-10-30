@@ -4,6 +4,8 @@ package jetbrains.mps.baseLanguage.classifiers.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import java.util.List;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
@@ -14,7 +16,7 @@ public class DefaultClassifierFieldDeclaration_Behavior {
   public static void init(SNode thisNode) {
   }
   public static SNode virtual_getVisiblity_1213877352965(SNode thisNode) {
-    return SLinkOperations.getTarget(thisNode, "visibility", true);
+    return SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1178549954367l, 1178549979242l, "visibility"));
   }
   public static List<SNode> virtual_getOperationConcept_3044950653914717125(SAbstractConcept thisConcept) {
     List<SNode> result = BehaviorReflection.invokeSuperStatic((Class<List<SNode>>) ((Class) Object.class), thisConcept, "jetbrains.mps.baseLanguage.classifiers.structure.IMember", "virtual_getOperationConcept_3044950653914717125", new Object[]{});

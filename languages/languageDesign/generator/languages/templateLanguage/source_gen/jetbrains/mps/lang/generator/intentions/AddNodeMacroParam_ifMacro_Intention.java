@@ -18,6 +18,8 @@ import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.structure.behavior.DataTypeDeclaration_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.editor.runtime.selection.SelectionUtil;
@@ -80,7 +82,7 @@ public class AddNodeMacroParam_ifMacro_Intention implements IntentionFactory {
     }
     return ListSequence.fromList(AbstractConceptDeclaration_Behavior.call_getPropertyDeclarations_1213877394546(sourceNode)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return DataTypeDeclaration_Behavior.call_isSimpleBoolean_1220268891062(SLinkOperations.getTarget(it, "dataType", false));
+        return DataTypeDeclaration_Behavior.call_isSimpleBoolean_1220268891062(SLinkOperations.getTarget(it, MetaAdapterFactory.getReferenceLink(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489288299l, 1082985295845l, "dataType")));
       }
     }).toListSequence();
   }
@@ -99,13 +101,13 @@ public class AddNodeMacroParam_ifMacro_Intention implements IntentionFactory {
       SNode ifMacro_Condition = SNodeFactoryOperations.createNewNode("jetbrains.mps.lang.generator.structure.IfMacro_Condition", null);
       SNode dotExpression = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.DotExpression", null);
       SNode propertyAccess = SNodeFactoryOperations.createNewNode("jetbrains.mps.lang.smodel.structure.SPropertyAccess", null);
-      SLinkOperations.setTarget(propertyAccess, "property", myParameter, false);
-      SLinkOperations.setTarget(dotExpression, "operation", propertyAccess, true);
-      SLinkOperations.setTarget(dotExpression, "operand", SNodeFactoryOperations.createNewNode("jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode", null), true);
+      SLinkOperations.setTarget(propertyAccess, MetaAdapterFactory.getReferenceLink(new UUID(8675788371017092295l, -9098312342032910879l), 1138056022639l, 1138056395725l, "property"), myParameter);
+      SLinkOperations.setTarget(dotExpression, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1197027756228l, 1197027833540l, "operation"), propertyAccess);
+      SLinkOperations.setTarget(dotExpression, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1197027756228l, 1197027771414l, "operand"), SNodeFactoryOperations.createNewNode("jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode", null));
       SNode expressionStatement = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ExpressionStatement", null);
-      SLinkOperations.setTarget(expressionStatement, "expression", dotExpression, true);
-      ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(ifMacro_Condition, "body", true), "statement", true)).addElement(expressionStatement);
-      SLinkOperations.setTarget(ifMacro, "conditionFunction", ifMacro_Condition, true);
+      SLinkOperations.setTarget(expressionStatement, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123155l, 1068580123156l, "expression"), dotExpression);
+      ListSequence.fromList(SLinkOperations.getChildren(SLinkOperations.getTarget(ifMacro_Condition, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1137021947720l, 1137022507850l, "body")), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123136l, 1068581517665l, "statement"))).addElement(expressionStatement);
+      SLinkOperations.setTarget(ifMacro, MetaAdapterFactory.getContainmentLink(new UUID(-5475912601019530992l, -8082971551085732881l), 1118773211870l, 1167945861827l, "conditionFunction"), ifMacro_Condition);
       // set caret 
       SelectionUtil.selectLabelCellAnSetCaret(editorContext, ifMacro, SelectionManager.FIRST_CELL, 1);
     }

@@ -1,25 +1,3 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-45bulsb1jx7hwyhz5yh6c5c2jyxosxz">
-  <dep model="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.generator.runtime(MPS.Core/jetbrains.mps.generator.runtime@java_stub)" />
-  <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" hash="-9fyf8ube0aqhy2tpqxm8qrxfi4z6r48" />
-  <dep model="r:00000000-0000-4000-0000-011c89590333(jetbrains.mps.baseLanguage.closures.behavior)" hash="-7yndovso6i0exvpfntum72g7t1vzkcp" />
-  <dep model="r:00000000-0000-4000-0000-011c89590334(jetbrains.mps.baseLanguage.closures.constraints)" hash="68uafvzus1nqazz31xd0wab5d925xg3" />
-  <dep model="r:00000000-0000-4000-0000-011c89590336(jetbrains.mps.baseLanguage.closures.editor)" hash="b0p09ibnf9ggqjgxq7dybvm68vksfu9" />
-  <dep model="r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)" hash="a0kgvckfjkn6sqo5er3weiy6viojx" />
-  <dep model="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" hash="4b32qh8tbce8zzx7m409liboecfssfp" />
-  <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="-byzd16c9464mzaxq1u6n0ssaly7qydz" />
-  <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="-8tpnzgwrbijeinrlmy2syctrrkkgmqe" />
-  <common dependsOnNodes="true">
-    <dep model="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.generator.runtime(MPS.Core/jetbrains.mps.generator.runtime@java_stub)" />
-    <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
-    <dep model="r:00000000-0000-4000-0000-011c89590333(jetbrains.mps.baseLanguage.closures.behavior)" />
-    <dep model="r:00000000-0000-4000-0000-011c89590334(jetbrains.mps.baseLanguage.closures.constraints)" />
-    <dep model="r:00000000-0000-4000-0000-011c89590336(jetbrains.mps.baseLanguage.closures.editor)" />
-    <dep model="r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)" />
-    <dep model="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" />
-    <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
-    <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
-    <file name="Language.java" />
-  </common>
-</dependencies>
+<dependencies version="2" modelHash="-45bulsb1jx7hwyhz5yh6c5c2jyxosxz" />
 

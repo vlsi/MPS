@@ -5,6 +5,7 @@ package jetbrains.mps.lang.project.constraints;
 import jetbrains.mps.smodel.runtime.ConstraintsDescriptor;
 import java.util.Arrays;
 import jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor;
+import jetbrains.mps.smodel.adapter.ids.SConceptId;
 
 public class ConstraintsAspectDescriptor implements jetbrains.mps.smodel.runtime.ConstraintsAspectDescriptor {
   public ConstraintsAspectDescriptor() {
@@ -16,9 +17,18 @@ public class ConstraintsAspectDescriptor implements jetbrains.mps.smodel.runtime
       case 1:
         return new ModuleDependency_Constraints();
       default:
-        // todo: illegal in some cases? 
         return new BaseConstraintsDescriptor(fqName);
     }
+  }
+  public ConstraintsDescriptor getDescriptor(SConceptId conceptId) {
+    long id = conceptId.getConceptId();
+    if (id == 6370754048397540894l) {
+      return new Module_Constraints();
+    }
+    if (id == 6370754048397540904l) {
+      return new ModuleDependency_Constraints();
+    }
+    return new BaseConstraintsDescriptor(conceptId);
   }
   private static String[] stringSwitchCases_2qnle6_a0a0b = new String[]{"jetbrains.mps.lang.project.structure.Module", "jetbrains.mps.lang.project.structure.ModuleDependency"};
 }

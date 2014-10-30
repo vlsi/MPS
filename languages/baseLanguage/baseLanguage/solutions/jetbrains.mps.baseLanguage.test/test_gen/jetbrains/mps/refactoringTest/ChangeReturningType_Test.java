@@ -9,6 +9,8 @@ import jetbrains.mps.lang.test.runtime.BaseTestBody;
 import jetbrains.mps.baseLanguage.util.plugin.refactorings.ChangeMethodSignatureParameters;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.baseLanguage.util.plugin.refactorings.ChangeMethodSignatureRefactoring;
 import java.util.List;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -30,7 +32,7 @@ public class ChangeReturningType_Test extends BaseTransformationTest {
       this.addNodeById("1230052903027");
       this.addNodeById("1230052903036");
       ChangeMethodSignatureParameters params = new ChangeMethodSignatureParameters(SNodeOperations.cast(this.getNodeById("1230052903029"), "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration"));
-      SLinkOperations.setTarget(params.getDeclaration(), "returnType", SNodeOperations.copyNode(SNodeOperations.cast(this.getNodeById("1188338037704648623"), "jetbrains.mps.baseLanguage.structure.StringType")), true);
+      SLinkOperations.setTarget(params.getDeclaration(), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123132l, 1068580123133l, "returnType"), SNodeOperations.copyNode(SNodeOperations.cast(this.getNodeById("1188338037704648623"), "jetbrains.mps.baseLanguage.structure.StringType")));
       ChangeMethodSignatureRefactoring ref = new ChangeMethodSignatureRefactoring(params, SNodeOperations.cast(this.getNodeById("1230052903029"), "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration"));
       ref.doRefactoring();
       {

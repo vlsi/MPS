@@ -4,11 +4,13 @@ package jetbrains.mps.editor.runtime.impl;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 
 public class DataTransferUtil {
   public DataTransferUtil() {
   }
   public static boolean isAbstract(SNode conceptDeclaration) {
-    return SPropertyOperations.getBoolean(conceptDeclaration, "abstract");
+    return SPropertyOperations.getBoolean(conceptDeclaration, MetaAdapterFactory.getProperty(new UUID(-4094437568663370681l, -8968368868337559369l), 1169125787135l, 4628067390765956802l, "abstract"));
   }
 }

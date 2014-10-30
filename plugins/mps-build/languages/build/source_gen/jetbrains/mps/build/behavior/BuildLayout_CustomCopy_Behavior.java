@@ -5,6 +5,8 @@ package jetbrains.mps.build.behavior;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
@@ -12,7 +14,7 @@ public class BuildLayout_CustomCopy_Behavior {
   public static void init(SNode thisNode) {
   }
   public static boolean virtual_isImplicit_1330375798085107777(SNode thisNode) {
-    return ListSequence.fromList(SLinkOperations.getTargets(thisNode, "handlers", true)).all(new IWhereFilter<SNode>() {
+    return ListSequence.fromList(SLinkOperations.getChildren(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 9184644532456495794l, 9184644532456533278l, "handlers"))).all(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.structure.BuildLayout_CopyProcessor");
       }

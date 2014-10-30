@@ -12,6 +12,8 @@ import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
@@ -81,7 +83,7 @@ public class SimpleBuilderDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private static boolean renderingCondition_ths2vx_a0a(SNode node, EditorContext editorContext) {
-    return SPropertyOperations.getBoolean(node, "root");
+    return SPropertyOperations.getBoolean(node, MetaAdapterFactory.getProperty(new UUID(1381097486113260572l, -6346909095260771222l), 7288041816792374840l, 7288041816792489431l, "root"));
   }
   private EditorCell createConstant_ths2vx_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "leaf");
@@ -93,7 +95,7 @@ public class SimpleBuilderDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private static boolean renderingCondition_ths2vx_a1a(SNode node, EditorContext editorContext) {
-    return SPropertyOperations.getBoolean(node, "leaf");
+    return SPropertyOperations.getBoolean(node, MetaAdapterFactory.getProperty(new UUID(1381097486113260572l, -6346909095260771222l), 7288041816792374840l, 7288041816793407210l, "leaf"));
   }
   private EditorCell createConstant_ths2vx_c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "abstract");
@@ -105,7 +107,7 @@ public class SimpleBuilderDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private static boolean renderingCondition_ths2vx_a2a(SNode node, EditorContext editorContext) {
-    return SPropertyOperations.getBoolean(node, "isAbstract");
+    return SPropertyOperations.getBoolean(node, MetaAdapterFactory.getProperty(new UUID(1381097486113260572l, -6346909095260771222l), 7288041816792374840l, 3816167865390639747l, "isAbstract"));
   }
   private EditorCell createConstant_ths2vx_d0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "builder");
@@ -330,7 +332,7 @@ public class SimpleBuilderDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private static boolean renderingCondition_ths2vx_a31a(SNode node, EditorContext editorContext) {
-    return !(SPropertyOperations.getBoolean(node, "isAbstract")) || (SLinkOperations.getTarget(node, "creator", true) != null);
+    return !(SPropertyOperations.getBoolean(node, MetaAdapterFactory.getProperty(new UUID(1381097486113260572l, -6346909095260771222l), 7288041816792374840l, 3816167865390639747l, "isAbstract"))) || (SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(1381097486113260572l, -6346909095260771222l), 7288041816792374840l, 7288041816793525038l, "creator")) != null);
   }
   private EditorCell createConstant_ths2vx_a31a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "create:");

@@ -10,6 +10,8 @@ import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -19,9 +21,9 @@ public class NamedTuple_subtypeOf_implemented_interfaces_SubtypingRule extends S
   }
   public List<SNode> getSubOrSuperTypes(SNode ntt, TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     List<SNode> ifs = new ArrayList<SNode>();
-    for (SNode i : SLinkOperations.getTargets(SLinkOperations.getTarget(ntt, "classifier", false), "implements", true)) {
+    for (SNode i : SLinkOperations.getChildren(SLinkOperations.getTarget(ntt, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier")), MetaAdapterFactory.getContainmentLink(new UUID(-6753182146401843782l, -5129028327240390294l), 1239360506533l, 2423993921025641700l, "implements"))) {
       SNode ct = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ClassifierType", null);
-      SLinkOperations.setTarget(ct, "classifier", SLinkOperations.getTarget(i, "classifier", false), false);
+      SLinkOperations.setTarget(ct, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier"), SLinkOperations.getTarget(i, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier")));
       ListSequence.fromList(ifs).addElement(ct);
     }
     return ifs;

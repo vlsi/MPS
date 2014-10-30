@@ -5,6 +5,8 @@ package jetbrains.mps.baseLanguage.util.plugin.refactorings;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 
 public class InlineFieldAssignmentRefactoring extends InlineFieldRefactoring {
   private SNode myVariable;
@@ -16,10 +18,10 @@ public class InlineFieldAssignmentRefactoring extends InlineFieldRefactoring {
   @Override
   public SNode doRefactoring() {
     for (SNode reference : this.findAllReferences(this.myVariable)) {
-      SNodeOperations.replaceWithAnother(reference, SNodeOperations.copyNode(SLinkOperations.getTarget(this.myVariable, "initializer", true)));
+      SNodeOperations.replaceWithAnother(reference, SNodeOperations.copyNode(SLinkOperations.getTarget(this.myVariable, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068431474542l, 1068431790190l, "initializer"))));
     }
     for (SNode reference : this.findAllReferenceOperations(this.myVariable)) {
-      SNodeOperations.replaceWithAnother(SNodeOperations.getAncestor(reference, "jetbrains.mps.baseLanguage.structure.DotExpression", false, false), SNodeOperations.copyNode(SLinkOperations.getTarget(this.myVariable, "initializer", true)));
+      SNodeOperations.replaceWithAnother(SNodeOperations.getAncestor(reference, "jetbrains.mps.baseLanguage.structure.DotExpression", false, false), SNodeOperations.copyNode(SLinkOperations.getTarget(this.myVariable, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068431474542l, 1068431790190l, "initializer"))));
     }
     this.optimizeDeclaration(this.myVariable);
     return null;

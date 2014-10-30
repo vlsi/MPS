@@ -8,6 +8,8 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -19,7 +21,7 @@ public class supertypesOf_SequenceType_ClassifierTypeIterable_SubtypingRule exte
   public supertypesOf_SequenceType_ClassifierTypeIterable_SubtypingRule() {
   }
   public SNode getSubOrSuperType(SNode type, TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    SNode elemType = SLinkOperations.getTarget(type, "elementType", true);
+    SNode elemType = SLinkOperations.getTarget(type, MetaAdapterFactory.getContainmentLink(new UUID(-8968771020793164004l, -7182180101671965361l), 1151689724996l, 1151689745422l, "elementType"));
     if (SNodeOperations.isInstanceOf(elemType, "jetbrains.mps.baseLanguage.structure.PrimitiveType")) {
       elemType = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), elemType, "virtual_getBoxedType_1213877337320", new Object[]{});
     }
@@ -42,7 +44,7 @@ public class supertypesOf_SequenceType_ClassifierTypeIterable_SubtypingRule exte
     SNode quotedNode_2 = null;
     SNode quotedNode_3 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, false);
-    quotedNode_2.setReference("classifier", SReference.create("classifier", quotedNode_2, facade.createModelReference("6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), facade.createNodeId("~Iterable")));
+    quotedNode_2.setReference(MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier"), SReference.create(MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier"), quotedNode_2, facade.createModelReference("6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), facade.createNodeId("~Iterable")));
     quotedNode_3 = (SNode) parameter_1;
     if (quotedNode_3 != null) {
       quotedNode_2.addChild("parameter", HUtil.copyIfNecessary(quotedNode_3));

@@ -5,6 +5,8 @@ package jetbrains.mps.baseLanguage.behavior;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 
 public class PostfixIncrementExpression_Behavior {
   public static void init(SNode thisNode) {
@@ -16,6 +18,6 @@ public class PostfixIncrementExpression_Behavior {
     return BehaviorReflection.invokeSuper(Boolean.TYPE, thisNode, "jetbrains.mps.baseLanguage.structure.AbstractUnaryNumberOperation", "virtual_canPropagateUnmatchedParenUp_1742226163722653670", new Object[]{leaf, rightParen}) && !(rightParen);
   }
   public static SNode virtual_getSyntacticallyLeftSideExpression_1742226163722653708(SNode thisNode) {
-    return SLinkOperations.getTarget(thisNode, "expression", true);
+    return SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1239714755177l, 1239714902950l, "expression"));
   }
 }

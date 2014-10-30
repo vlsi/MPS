@@ -4,14 +4,16 @@ package jetbrains.mps.lang.generator.generationContext.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 
 public class GenerationContextOp_PropertyPatternRef_Behavior {
   public static void init(SNode thisNode) {
   }
   public static SNode virtual_getTarget_1758784108620114792(SNode thisNode) {
-    return SLinkOperations.getTarget(thisNode, "propertyPatternVar", false);
+    return SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getReferenceLink(new UUID(-2922713684555708516l, -6639802755577912107l), 1758784108619220824l, 1758784108619220828l, "propertyPatternVar"));
   }
   public static void virtual_setTarget_1758784108620254533(SNode thisNode, SNode target) {
-    SLinkOperations.setTarget(thisNode, "propertyPatternVar", null, false);
+    SLinkOperations.setTarget(thisNode, MetaAdapterFactory.getReferenceLink(new UUID(-2922713684555708516l, -6639802755577912107l), 1758784108619220824l, 1758784108619220828l, "propertyPatternVar"), null);
   }
 }

@@ -14,6 +14,8 @@ import java.util.Collections;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.intentions.IntentionDescriptor;
 
 public class MakeDotExpressionChecked_Intention implements IntentionFactory {
@@ -62,13 +64,13 @@ public class MakeDotExpressionChecked_Intention implements IntentionFactory {
     public void execute(final SNode node, final EditorContext editorContext) {
       if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.checkedDots.structure.CheckedDotExpression")) {
         SNode dotExpression = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.DotExpression", null);
-        SLinkOperations.setTarget(dotExpression, "operand", SLinkOperations.getTarget(node, "operand", true), true);
-        SLinkOperations.setTarget(dotExpression, "operation", SLinkOperations.getTarget(node, "operation", true), true);
+        SLinkOperations.setTarget(dotExpression, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1197027756228l, 1197027771414l, "operand"), SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1197027756228l, 1197027771414l, "operand")));
+        SLinkOperations.setTarget(dotExpression, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1197027756228l, 1197027833540l, "operation"), SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1197027756228l, 1197027833540l, "operation")));
         SNodeOperations.replaceWithAnother(node, dotExpression);
       } else {
         SNode checkedDot = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.checkedDots.structure.CheckedDotExpression", null);
-        SLinkOperations.setTarget(checkedDot, "operand", SLinkOperations.getTarget(node, "operand", true), true);
-        SLinkOperations.setTarget(checkedDot, "operation", SLinkOperations.getTarget(node, "operation", true), true);
+        SLinkOperations.setTarget(checkedDot, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1197027756228l, 1197027771414l, "operand"), SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1197027756228l, 1197027771414l, "operand")));
+        SLinkOperations.setTarget(checkedDot, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1197027756228l, 1197027833540l, "operation"), SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1197027756228l, 1197027833540l, "operation")));
         SNodeOperations.replaceWithAnother(node, checkedDot);
       }
     }

@@ -18,6 +18,7 @@ package jetbrains.mps.smodel;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.util.InternUtil;
 import jetbrains.mps.util.WeakSet;
+import jetbrains.mps.util.annotation.ToRemove;
 import org.apache.log4j.LogManager;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -72,6 +73,12 @@ public abstract class SReference implements org.jetbrains.mps.openapi.model.SRef
     return new StaticReference(role, sourceNode, targetNode);
   }
 
+  public static SReference create(SReferenceLink role, SNode sourceNode, SModelReference targetModelReference, SNodeId targetNodeId) {
+    return new StaticReference(role, sourceNode, targetModelReference, targetNodeId, null);
+  }
+
+  @Deprecated
+  @ToRemove(version = 3.2)
   public static SReference create(String role, SNode sourceNode, SModelReference targetModelReference, SNodeId targetNodeId) {
     return new StaticReference(role, sourceNode, targetModelReference, targetNodeId, null);
   }
@@ -108,10 +115,13 @@ public abstract class SReference implements org.jetbrains.mps.openapi.model.SRef
   }
 
   @Override
+  @ToRemove(version = 3.2)
   public String getRole() {
     return myRoleId.getRoleName();
   }
 
+  @Deprecated
+  @ToRemove(version = 3.2)
   public void setRole(String newRole) {
     if (!(mySourceNode instanceof SReferenceLinkAdapterProvider)) {
       throw new IllegalStateException();
@@ -120,7 +130,7 @@ public abstract class SReference implements org.jetbrains.mps.openapi.model.SRef
   }
 
   @Override
-  public SReferenceLink getReferenceLink() {
+  public SReferenceLink getLink() {
     return myRoleId;
   }
 
@@ -134,11 +144,6 @@ public abstract class SReference implements org.jetbrains.mps.openapi.model.SRef
   @Override
   public final SNode getTargetNode() {
     return getTargetNode_internal();
-  }
-
-  @Override
-  public SReferenceLink getLink() {
-    return (SReferenceLink) getSourceNode().getConcept().getLink(getRole());
   }
 
   @Override
@@ -205,7 +210,7 @@ public abstract class SReference implements org.jetbrains.mps.openapi.model.SRef
       ourErrorReportedRefs.add(this);
 
       Logger log = Logger.wrap(LogManager.getLogger(this.getClass()));
-      log.error(String.format("\ncouldn't resolve reference '%s' from %s", getRole(), org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(getSourceNode())),
+      log.error(String.format("\ncouldn't resolve reference '%s' from %s", getRole(), getSourceNode()),
           getSourceNode().getReference());
       if (message != null) log.error(" -- " + message);
       if (problems != null) {

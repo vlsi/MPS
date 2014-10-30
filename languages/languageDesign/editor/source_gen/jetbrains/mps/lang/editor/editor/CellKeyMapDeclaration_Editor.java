@@ -22,6 +22,8 @@ import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
 import jetbrains.mps.nodeEditor.InlineCellProvider;
@@ -94,8 +96,8 @@ public class CellKeyMapDeclaration_Editor extends DefaultNodeEditor {
     public List<String> getPostfixes(SNode node, IOperationContext operationContext, EditorContext editorContext) {
       List<String> prefixes = ListSequence.fromList(new ArrayList<String>());
       ListSequence.fromList(prefixes).addElement("_KeyMap");
-      if (SLinkOperations.getTarget(node, "applicableConcept", false) != null) {
-        ListSequence.fromList(prefixes).addElement(SPropertyOperations.getString(SLinkOperations.getTarget(node, "applicableConcept", false), "name") + "_KeyMap");
+      if (SLinkOperations.getTarget(node, MetaAdapterFactory.getReferenceLink(new UUID(1782411230332735017l, -6324602048325217350l), 1081293058843l, 1139445935125l, "applicableConcept")) != null) {
+        ListSequence.fromList(prefixes).addElement(SPropertyOperations.getString(SLinkOperations.getTarget(node, MetaAdapterFactory.getReferenceLink(new UUID(1782411230332735017l, -6324602048325217350l), 1081293058843l, 1139445935125l, "applicableConcept")), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")) + "_KeyMap");
       }
       return prefixes;
     }

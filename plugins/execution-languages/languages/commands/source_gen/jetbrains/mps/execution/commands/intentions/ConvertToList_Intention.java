@@ -10,6 +10,8 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
@@ -53,7 +55,7 @@ public class ConvertToList_Intention implements IntentionFactory {
     return true;
   }
   private boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
-    return ListSequence.fromList(SLinkOperations.getTargets(node, "items", true)).isNotEmpty();
+    return ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(new UUID(-921973991802319051l, -8446196034130110353l), 6868250101935610313l, 2168104298250244983l, "items"))).isNotEmpty();
   }
   private boolean isVisibleInChild(final SNode node, final SNode childNode, final EditorContext editorContext) {
     return eq_63cojg_a0a0k(SNodeOperations.getContainingLinkRole(childNode), "items");
@@ -77,13 +79,13 @@ public class ConvertToList_Intention implements IntentionFactory {
       return "Convert Items to Explicit List Creation";
     }
     public void execute(final SNode node, final EditorContext editorContext) {
-      List<SNode> items = SLinkOperations.getTargets(node, "items", true);
+      List<SNode> items = SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(new UUID(-921973991802319051l, -8446196034130110353l), 6868250101935610313l, 2168104298250244983l, "items"));
       ListSequence.fromList(items).visitAll(new IVisitor<SNode>() {
         public void visit(SNode it) {
           SNodeOperations.detachNode(it);
         }
       });
-      SLinkOperations.setTarget(node, "list", _quotation_createNode_mz75hy_a0a2a0(items), true);
+      SLinkOperations.setTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-921973991802319051l, -8446196034130110353l), 6868250101935610313l, 6868250101935610315l, "list"), _quotation_createNode_mz75hy_a0a2a0(items));
     }
     public IntentionDescriptor getDescriptor() {
       return ConvertToList_Intention.this;

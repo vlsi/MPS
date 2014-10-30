@@ -14,6 +14,8 @@ import java.util.List;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 
 public class BuildSimpleName_text extends KeyMapImpl {
@@ -58,16 +60,16 @@ public class BuildSimpleName_text extends KeyMapImpl {
       if (!(SNodeOperations.isInstanceOf(node, "jetbrains.mps.build.structure.BuildStringPart"))) {
         return false;
       }
-      return isNotEmptyString(SPropertyOperations.getString(node, "text"));
+      return isNotEmptyString(SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(new UUID(8755280088213897754l, -5075149991798053422l), 4903714810883702019l, 4903714810883755350l, "text")));
     }
     private void execute_internal(final EditorContext editorContext, final SNode node, final List<SNode> selectedNodes) {
       int index = ((EditorCell_Label) editorContext.getSelectedCell()).getCaretPosition();
 
-      String currText = SPropertyOperations.getString(node, "text");
+      String currText = SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(new UUID(8755280088213897754l, -5075149991798053422l), 4903714810883702019l, 4903714810883755350l, "text"));
       if (index < currText.length() && index > 0) {
         SNode newText = SModelOperations.createNewNode(SNodeOperations.getModel(node), null, "jetbrains.mps.build.structure.BuildTextStringPart");
-        SPropertyOperations.set(newText, "text", currText.substring(index));
-        SPropertyOperations.set(node, "text", currText.substring(0, index));
+        SPropertyOperations.set(newText, MetaAdapterFactory.getProperty(new UUID(8755280088213897754l, -5075149991798053422l), 4903714810883702019l, 4903714810883755350l, "text"), currText.substring(index));
+        SPropertyOperations.set(node, MetaAdapterFactory.getProperty(new UUID(8755280088213897754l, -5075149991798053422l), 4903714810883702019l, 4903714810883755350l, "text"), currText.substring(0, index));
         SNodeOperations.insertNextSiblingChild(node, newText);
       }
       SNode newRef = SModelOperations.createNewNode(SNodeOperations.getModel(node), null, "jetbrains.mps.build.structure.BuildVarRefStringPart");

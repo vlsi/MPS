@@ -9,6 +9,8 @@ import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.editor.runtime.cells.AbstractCellAction;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 
 public class AbstractUnariOperationActions {
   public static void setCellActions(EditorCell editorCell, SNode node, EditorContext context) {
@@ -27,7 +29,7 @@ public class AbstractUnariOperationActions {
       this.execute_internal(editorContext, this.myNode);
     }
     public void execute_internal(EditorContext editorContext, SNode node) {
-      SNodeOperations.replaceWithAnother(node, SLinkOperations.getTarget(node, "expression", true));
+      SNodeOperations.replaceWithAnother(node, SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1239714755177l, 1239714902950l, "expression")));
     }
   }
   public static class AbstractUnariOperationActions_BACKSPACE extends AbstractCellAction {
@@ -42,7 +44,7 @@ public class AbstractUnariOperationActions {
       this.execute_internal(editorContext, this.myNode);
     }
     public void execute_internal(EditorContext editorContext, SNode node) {
-      SNodeOperations.replaceWithAnother(node, SLinkOperations.getTarget(node, "expression", true));
+      SNodeOperations.replaceWithAnother(node, SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1239714755177l, 1239714902950l, "expression")));
     }
   }
 }

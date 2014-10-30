@@ -9,6 +9,8 @@ import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -18,8 +20,8 @@ public class typeof_ConstraintsFunctionParameter_propertyValue_InferenceRule ext
   }
   public void applyRule(final SNode node, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     SNode propertyConstraint = SNodeOperations.getAncestor(node, "jetbrains.mps.lang.constraints.structure.NodePropertyConstraint", false, false);
-    SNode property = SLinkOperations.getTarget(propertyConstraint, "applicableProperty", false);
-    SNode dataType = SLinkOperations.getTarget(property, "dataType", false);
+    SNode property = SLinkOperations.getTarget(propertyConstraint, MetaAdapterFactory.getReferenceLink(new UUID(4560956707034974760l, -8426014792598182751l), 1147467115080l, 1147467295099l, "applicableProperty"));
+    SNode dataType = SLinkOperations.getTarget(property, MetaAdapterFactory.getReferenceLink(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489288299l, 1082985295845l, "dataType"));
     if (dataType != null) {
       {
         SNode _nodeToCheck_1029348928467 = node;

@@ -8,6 +8,8 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.lang.smodel.behavior.SNodeOperation_Behavior;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -18,9 +20,9 @@ public class typeOf_Concept_GetAllSubConcepts_InferenceRule extends AbstractInfe
   public typeOf_Concept_GetAllSubConcepts_InferenceRule() {
   }
   public void applyRule(final SNode node, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    if (SLinkOperations.getTarget(node, "smodel", true) != null) {
+    if (SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(8675788371017092295l, -9098312342032910879l), 1181952871644l, 1182506816063l, "smodel")) != null) {
       {
-        SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(node, "smodel", true);
+        SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(8675788371017092295l, -9098312342032910879l), 1181952871644l, 1182506816063l, "smodel"));
         EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1207683989238", 0, null);
         typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1207683989240", true), (SNode) _quotation_createNode_bc8hh4_a0a0a0b(), false, true, _info_12389875345);
       }
@@ -60,7 +62,7 @@ public class typeOf_Concept_GetAllSubConcepts_InferenceRule extends AbstractInfe
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SConceptType", null, null, false);
-    SNodeAccessUtil.setReferenceTarget(quotedNode_2, "conceptDeclaraton", (SNode) parameter_1);
+    SNodeAccessUtil.setReferenceTarget(quotedNode_2, MetaAdapterFactory.getReferenceLink(new UUID(8675788371017092295l, -9098312342032910879l), 1172420572800l, 1180481110358l, "conceptDeclaraton"), (SNode) parameter_1);
     return quotedNode_2;
   }
   private static SNode _quotation_createNode_bc8hh4_a0e0b(Object parameter_1) {
@@ -69,7 +71,7 @@ public class typeOf_Concept_GetAllSubConcepts_InferenceRule extends AbstractInfe
     SNode quotedNode_3 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.ListType", null, null, false);
     quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SConceptType", null, null, false);
-    SNodeAccessUtil.setReferenceTarget(quotedNode_3, "conceptDeclaraton", (SNode) parameter_1);
+    SNodeAccessUtil.setReferenceTarget(quotedNode_3, MetaAdapterFactory.getReferenceLink(new UUID(8675788371017092295l, -9098312342032910879l), 1172420572800l, 1180481110358l, "conceptDeclaraton"), (SNode) parameter_1);
     quotedNode_2.addChild("elementType", quotedNode_3);
     return quotedNode_2;
   }

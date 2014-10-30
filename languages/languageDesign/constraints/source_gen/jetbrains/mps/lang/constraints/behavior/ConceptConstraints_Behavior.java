@@ -4,6 +4,8 @@ package jetbrains.mps.lang.constraints.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -17,10 +19,10 @@ public class ConceptConstraints_Behavior {
   public static void init(SNode thisNode) {
   }
   public static SNode virtual_getBaseConcept_2621449412040133768(SNode thisNode) {
-    return SLinkOperations.getTarget(thisNode, "concept", false);
+    return SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getReferenceLink(new UUID(4560956707034974760l, -8426014792598182751l), 1213093968558l, 1213093996982l, "concept"));
   }
   public static void virtual_setBaseConcept_6261424444345963020(SNode thisNode, SNode baseConcept) {
-    SLinkOperations.setTarget(thisNode, "concept", baseConcept, false);
+    SLinkOperations.setTarget(thisNode, MetaAdapterFactory.getReferenceLink(new UUID(4560956707034974760l, -8426014792598182751l), 1213093968558l, 1213093996982l, "concept"), baseConcept);
   }
   public static SNode call_getConstraintFunctionBodyUsingInheritance_4960272075650318140(SAbstractConcept thisConcept, SNode concept, final _FunctionTypes._return_P1_E0<? extends SNode, ? super SNode> constraintFunctionSpecifier) {
     _FunctionTypes._return_P1_E0<? extends SNode, ? super SNode> computePredicate = new _FunctionTypes._return_P1_E0<SNode, SNode>() {
@@ -32,7 +34,7 @@ public class ConceptConstraints_Behavior {
     if (method == null) {
       return _quotation_createNode_wrxfmp_a0a2a2();
     } else {
-      return SLinkOperations.getTarget(method, "body", true);
+      return SLinkOperations.getTarget(method, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1137021947720l, 1137022507850l, "body"));
     }
   }
   private static SNode _quotation_createNode_wrxfmp_a0a2a2() {
@@ -41,7 +43,7 @@ public class ConceptConstraints_Behavior {
     SNode quotedNode_2 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ReturnStatement", null, null, false);
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.BooleanConstant", null, null, false);
-    SNodeAccessUtil.setProperty(quotedNode_2, "value", "true");
+    SNodeAccessUtil.setProperty(quotedNode_2, MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123137l, 1068580123138l, "value"), "true");
     quotedNode_1.addChild("expression", quotedNode_2);
     return quotedNode_1;
   }

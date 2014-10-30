@@ -14,6 +14,8 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 import jetbrains.mps.nodeEditor.MPSFonts;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
@@ -71,7 +73,7 @@ public class DeprecatedAnnotation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private static boolean renderingCondition_lchw91_a1a0(SNode node, EditorContext editorContext) {
-    return isNotEmptyString(SPropertyOperations.getString(node, "since"));
+    return isNotEmptyString(SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(new UUID(8461860300379867720l, -4758718422494514628l), 9191251033651632153l, 9191251033651632155l, "since")));
   }
   private EditorCell createConstant_lchw91_a1a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "since");
@@ -112,7 +114,7 @@ public class DeprecatedAnnotation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private static boolean renderingCondition_lchw91_a2a0(SNode node, EditorContext editorContext) {
-    return isNotEmptyString(SPropertyOperations.getString(node, "comment"));
+    return isNotEmptyString(SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(new UUID(8461860300379867720l, -4758718422494514628l), 9191251033651632153l, 9191251033651632156l, "comment")));
   }
   private EditorCell createConstant_lchw91_a2a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");

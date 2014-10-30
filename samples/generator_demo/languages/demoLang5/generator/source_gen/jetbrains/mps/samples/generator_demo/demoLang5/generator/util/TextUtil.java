@@ -9,6 +9,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 
 public class TextUtil {
@@ -20,12 +22,12 @@ public class TextUtil {
     // get all MPS strings 
     Iterable<SNode> mpses = ListSequence.fromList(strings).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return SPropertyOperations.getString(it, "value").startsWith("MPS");
+        return SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 1070475926800l, 1070475926801l, "value")).startsWith("MPS");
       }
     });
     for (SNode mps : Sequence.fromIterable(mpses)) {
       // convert "MPS" --> "JetBrains MPS" 
-      SPropertyOperations.set(mps, "value", "JetBrains " + SPropertyOperations.getString(mps, "value"));
+      SPropertyOperations.set(mps, MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 1070475926800l, 1070475926801l, "value"), "JetBrains " + SPropertyOperations.getString(mps, MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 1070475926800l, 1070475926801l, "value")));
     }
   }
 }

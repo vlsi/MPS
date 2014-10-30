@@ -8,6 +8,8 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
@@ -18,7 +20,7 @@ public class check_AbstractMethodsInClass_NonTypesystemRule extends AbstractNonT
   public check_AbstractMethodsInClass_NonTypesystemRule() {
   }
   public void applyRule(final SNode method, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    if (SPropertyOperations.getBoolean(method, "isAbstract")) {
+    if (SPropertyOperations.getBoolean(method, MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123165l, 1178608670077l, "isAbstract"))) {
       SNode classifier = SNodeOperations.getAncestor(method, "jetbrains.mps.baseLanguage.structure.Classifier", false, false);
       if (!(SNodeOperations.isInstanceOf(classifier, "jetbrains.mps.baseLanguage.structure.EnumClass"))) {
         {
@@ -32,7 +34,7 @@ public class check_AbstractMethodsInClass_NonTypesystemRule extends AbstractNonT
               }
             }
             if (matches_qfxa59_a0a1a0a) {
-              if ((matchedNode_qfxa59_a0b0a0 != null) && !(SPropertyOperations.getBoolean(matchedNode_qfxa59_a0b0a0, "abstractClass"))) {
+              if ((matchedNode_qfxa59_a0b0a0 != null) && !(SPropertyOperations.getBoolean(matchedNode_qfxa59_a0b0a0, MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 1068390468198l, 1075300953594l, "abstractClass")))) {
                 {
                   MessageTarget errorTarget = new NodeMessageTarget();
                   IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(method, "abstract method in a non-abstract class", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "840197573389262456", null, errorTarget);

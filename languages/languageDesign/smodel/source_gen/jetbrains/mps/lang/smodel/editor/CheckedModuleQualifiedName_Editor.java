@@ -26,6 +26,8 @@ import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 
 public class CheckedModuleQualifiedName_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
@@ -92,7 +94,7 @@ public class CheckedModuleQualifiedName_Editor extends DefaultNodeEditor {
       this.handleAction_impl((String) parameterObject, node, model, operationContext, editorContext);
     }
     public void handleAction_impl(String parameterObject, SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
-      SPropertyOperations.set(node, "moduleId", parameterObject);
+      SPropertyOperations.set(node, MetaAdapterFactory.getProperty(new UUID(8675788371017092295l, -9098312342032910879l), 6955116391921790598l, 6955116391921791525l, "moduleId"), parameterObject);
     }
     public boolean isReferentPresentation() {
       return false;

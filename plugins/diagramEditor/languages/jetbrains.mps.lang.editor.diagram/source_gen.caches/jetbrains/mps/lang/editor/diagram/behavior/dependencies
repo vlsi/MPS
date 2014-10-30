@@ -9,8 +9,10 @@
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.lang.editor.diagram.behavior.AbstractDiagramCreation_Behavior" file="AbstractDiagramCreation_Behavior.java">
+    <classNode dependClassName="java.util.UUID" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.lang.editor.diagram.behavior.AbstractDiagramCreation_BehaviorDescriptor" file="AbstractDiagramCreation_BehaviorDescriptor.java">
@@ -51,6 +53,7 @@
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="java.util.UUID" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISelector" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
@@ -58,6 +61,7 @@
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="jetbrains.mps.smodel.behaviour.BehaviorReflection" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
@@ -278,11 +282,13 @@
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="java.util.UUID" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISelector" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.lang.editor.diagram.behavior.ExternalFigureReference_BehaviorDescriptor" file="ExternalFigureReference_BehaviorDescriptor.java">
@@ -297,9 +303,11 @@
   <dependency className="jetbrains.mps.lang.editor.diagram.behavior.FigureParameterMapping_Behavior" file="FigureParameterMapping_Behavior.java">
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="java.util.UUID" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="jetbrains.mps.smodel.behaviour.BehaviorReflection" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>

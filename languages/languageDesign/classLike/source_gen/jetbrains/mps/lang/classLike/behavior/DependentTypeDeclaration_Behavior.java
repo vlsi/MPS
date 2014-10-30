@@ -9,6 +9,8 @@ import java.lang.reflect.Method;
 import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 
 public class DependentTypeDeclaration_Behavior {
   public static void init(SNode thisNode) {
@@ -32,9 +34,9 @@ public class DependentTypeDeclaration_Behavior {
   }
   public static String call_getGeneratedMethodName_2546325654728395319(SNode thisNode) {
     if ((SNodeOperations.getAncestor(thisNode, "jetbrains.mps.lang.classLike.structure.ParameterDescriptor", false, false) != null)) {
-      return SPropertyOperations.getString(SNodeOperations.getAncestor(thisNode, "jetbrains.mps.lang.classLike.structure.MethodDescriptor", false, false), "name") + "_" + SPropertyOperations.getString(SNodeOperations.getAncestor(thisNode, "jetbrains.mps.lang.classLike.structure.ParameterDescriptor", false, false), "name");
+      return SPropertyOperations.getString(SNodeOperations.getAncestor(thisNode, "jetbrains.mps.lang.classLike.structure.MethodDescriptor", false, false), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")) + "_" + SPropertyOperations.getString(SNodeOperations.getAncestor(thisNode, "jetbrains.mps.lang.classLike.structure.ParameterDescriptor", false, false), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"));
     } else {
-      return SPropertyOperations.getString(SNodeOperations.getAncestor(thisNode, "jetbrains.mps.lang.classLike.structure.MethodDescriptor", false, false), "name") + "_ret";
+      return SPropertyOperations.getString(SNodeOperations.getAncestor(thisNode, "jetbrains.mps.lang.classLike.structure.MethodDescriptor", false, false), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")) + "_ret";
     }
   }
 }

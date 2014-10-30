@@ -5,6 +5,7 @@
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="java.util.UUID" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISelector" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.lang.plugin.refactorings.SortKeymapMembers_Target" />
@@ -13,6 +14,7 @@
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
     <classNode dependClassName="jetbrains.mps.refactoring.framework.IRefactoringTarget" />
     <classNode dependClassName="jetbrains.mps.refactoring.framework.RefactoringContext" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.refactoring.framework.BaseRefactoring" />
   </dependency>

@@ -15,6 +15,8 @@ import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.editor.runtime.EditorCell_Empty;
 import jetbrains.mps.openapi.editor.cells.CellActionType;
@@ -70,7 +72,7 @@ public class JavaImport_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private static boolean renderingCondition_cbnorm_a2a(SNode node, EditorContext editorContext) {
-    return SPropertyOperations.getBoolean(node, "onDemand");
+    return SPropertyOperations.getBoolean(node, MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 28358707492436943l, 28358707492436944l, "onDemand"));
   }
   private EditorCell createConstant_cbnorm_a2a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ".*");

@@ -20,6 +20,8 @@ import java.util.List;
 import jetbrains.mps.openapi.editor.cells.SubstituteAction;
 import jetbrains.mps.nodeEditor.cellMenu.CellContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
@@ -114,7 +116,7 @@ public class NodeMacro_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private static boolean renderingCondition_e7cx8x_a0c0(SNode node, EditorContext editorContext) {
-    return SLinkOperations.getTarget(node, "mappingLabel", false) != null;
+    return SLinkOperations.getTarget(node, MetaAdapterFactory.getReferenceLink(new UUID(-5475912601019530992l, -8082971551085732881l), 1087833466690l, 1200912223215l, "mappingLabel")) != null;
   }
   private EditorCell createConstant_e7cx8x_a0c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "mapping label");

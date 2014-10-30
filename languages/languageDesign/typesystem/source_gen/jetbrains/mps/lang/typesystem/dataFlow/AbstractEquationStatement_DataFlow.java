@@ -7,22 +7,24 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.lang.dataFlow.DataFlowBuilderContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 
 public class AbstractEquationStatement_DataFlow extends DataFlowBuilder {
   public AbstractEquationStatement_DataFlow() {
   }
   public void build(final IOperationContext operationContext, final DataFlowBuilderContext _context) {
-    _context.getBuilder().build((SNode) SLinkOperations.getTarget(_context.getNode(), "leftExpression", true));
-    _context.getBuilder().build((SNode) SLinkOperations.getTarget(_context.getNode(), "rightExpression", true));
-    if ((SLinkOperations.getTarget(_context.getNode(), "errorString", true) != null)) {
-      _context.getBuilder().build((SNode) SLinkOperations.getTarget(_context.getNode(), "errorString", true));
+    _context.getBuilder().build((SNode) SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(new UUID(8817443762339858024l, -6091446231697526094l), 1174660718586l, 1174660783413l, "leftExpression")));
+    _context.getBuilder().build((SNode) SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(new UUID(8817443762339858024l, -6091446231697526094l), 1174660718586l, 1174660783414l, "rightExpression")));
+    if ((SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(new UUID(8817443762339858024l, -6091446231697526094l), 1174660718586l, 1180447237840l, "errorString")) != null)) {
+      _context.getBuilder().build((SNode) SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(new UUID(8817443762339858024l, -6091446231697526094l), 1174660718586l, 1180447237840l, "errorString")));
     }
-    if ((SLinkOperations.getTarget(_context.getNode(), "nodeToCheck", true) != null)) {
-      _context.getBuilder().build((SNode) SLinkOperations.getTarget(_context.getNode(), "nodeToCheck", true));
+    if ((SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(new UUID(8817443762339858024l, -6091446231697526094l), 1174660718586l, 1174662598553l, "nodeToCheck")) != null)) {
+      _context.getBuilder().build((SNode) SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(new UUID(8817443762339858024l, -6091446231697526094l), 1174660718586l, 1174662598553l, "nodeToCheck")));
     }
-    if (ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "helginsIntention", true)).isNotEmpty()) {
-      for (SNode intetntion : SLinkOperations.getTargets(_context.getNode(), "helginsIntention", true)) {
+    if (ListSequence.fromList(SLinkOperations.getChildren(_context.getNode(), MetaAdapterFactory.getContainmentLink(new UUID(8817443762339858024l, -6091446231697526094l), 1174660718586l, 1216204483513l, "helginsIntention"))).isNotEmpty()) {
+      for (SNode intetntion : SLinkOperations.getChildren(_context.getNode(), MetaAdapterFactory.getContainmentLink(new UUID(8817443762339858024l, -6091446231697526094l), 1174660718586l, 1216204483513l, "helginsIntention"))) {
         _context.getBuilder().build((SNode) intetntion);
       }
     }

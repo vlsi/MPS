@@ -6,6 +6,8 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import java.util.List;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -24,7 +26,7 @@ public class ExtractMethodWithReturn extends ExtractMethodFromStatementsRefactor
       public void run() {
         SNode methodCall = ExtractMethodWithReturn.this.createMethodCall(match, methodDeclaration);
         SNode returnlStatement = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ReturnStatement", null);
-        SLinkOperations.setTarget(returnlStatement, "expression", methodCall, true);
+        SLinkOperations.setTarget(returnlStatement, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068581242878l, 1068581517676l, "expression"), methodCall);
         List<SNode> statements = match.getNodes();
         SNodeOperations.insertPrevSiblingChild(ListSequence.fromList(statements).first(), returnlStatement);
         for (SNode statement : ListSequence.fromList(statements)) {

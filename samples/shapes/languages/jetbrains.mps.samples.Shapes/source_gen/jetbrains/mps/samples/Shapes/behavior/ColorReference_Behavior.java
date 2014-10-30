@@ -5,19 +5,21 @@ package jetbrains.mps.samples.Shapes.behavior;
 import org.jetbrains.mps.openapi.model.SNode;
 import java.awt.Color;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class ColorReference_Behavior {
   public static void init(SNode thisNode) {
   }
   public static Color call_findColor_2097561739636344968(SNode thisNode) {
-    SNode color = SLinkOperations.getTarget(thisNode, "color", false);
+    SNode color = SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getReferenceLink(new UUID(1637898168350624965l, -8992988694412354753l), 4191445539799302575l, 4191445539799302810l, "color"));
     if (color == null) {
       return Color.BLUE;
     }
     Class<Color> clazz = Color.class;
     try {
-      return (Color) clazz.getField(SPropertyOperations.getString(color, "name")).get(clazz);
+      return (Color) clazz.getField(SPropertyOperations.getString(color, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"))).get(clazz);
     } catch (SecurityException e) {
       return Color.BLUE;
     } catch (IllegalAccessException e) {

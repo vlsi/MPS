@@ -1,14 +1,3 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="1ax391tf7frbcp3isz3ew96us1rm3zz">
-  <common hash="1ax391tf7frbcp3isz3ew96us1rm3zz" />
-  <source id="5726447348464276940" name="LivingRoom">
-    <file name="LivingRoom" />
-  </source>
-  <source id="4383917556651099712" name="Kitchen">
-    <file name="Kitchen" />
-  </source>
-  <source id="935069066462871713" name="Hall">
-    <file name="Hall" />
-  </source>
-</dependencies>
+<dependencies version="2" modelHash="1ax391tf7frbcp3isz3ew96us1rm3zz" />
 

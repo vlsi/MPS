@@ -13,6 +13,8 @@ import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 import jetbrains.mps.baseLanguage.editor.VariableDeclaration_RemoveFinalOnDelete;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
@@ -45,7 +47,7 @@ public class ParallelLoopVariable_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private static boolean renderingCondition_d89sde_a0a(SNode node, EditorContext editorContext) {
-    return SPropertyOperations.getBoolean(node, "isFinal");
+    return SPropertyOperations.getBoolean(node, MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 1068431474542l, 1176718929932l, "isFinal"));
   }
   private EditorCell createRefNode_d89sde_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);

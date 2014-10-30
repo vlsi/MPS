@@ -13,6 +13,8 @@ import jetbrains.mps.smodel.SNodePointer;
 import java.util.Collections;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.intentions.IntentionDescriptor;
@@ -63,14 +65,14 @@ public class ConvertToBeanBuilder_Intention implements IntentionFactory {
     public void execute(final SNode node, final EditorContext editorContext) {
       SNode creator = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.builders.structure.BuilderCreator", null);
       SNode builder = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.builders.structure.BeanBuilder", null);
-      SLinkOperations.setTarget(builder, "baseMethodDeclaration", SLinkOperations.getTarget(node, "baseMethodDeclaration", false), false);
-      for (SNode arg : SLinkOperations.getTargets(node, "actualArgument", true)) {
-        ListSequence.fromList(SLinkOperations.getTargets(builder, "actualArgument", true)).addElement(arg);
+      SLinkOperations.setTarget(builder, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, 1068499141037l, "baseMethodDeclaration"), SLinkOperations.getTarget(node, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, 1068499141037l, "baseMethodDeclaration")));
+      for (SNode arg : SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, 1068499141038l, "actualArgument"))) {
+        ListSequence.fromList(SLinkOperations.getChildren(builder, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, 1068499141038l, "actualArgument"))).addElement(arg);
       }
-      SLinkOperations.setTarget(creator, "builder", builder, true);
+      SLinkOperations.setTarget(creator, MetaAdapterFactory.getContainmentLink(new UUID(1381097486113260572l, -6346909095260771222l), 7802271442981792228l, 4797501453850567416l, "builder"), builder);
       SNodeOperations.replaceWithAnother(node, creator);
 
-      editorContext.select(SLinkOperations.getTarget(creator, "body", true));
+      editorContext.select(SLinkOperations.getTarget(creator, MetaAdapterFactory.getContainmentLink(new UUID(1381097486113260572l, -6346909095260771222l), 7802271442981792228l, 4797501453849924252l, "body")));
     }
     public IntentionDescriptor getDescriptor() {
       return ConvertToBeanBuilder_Intention.this;

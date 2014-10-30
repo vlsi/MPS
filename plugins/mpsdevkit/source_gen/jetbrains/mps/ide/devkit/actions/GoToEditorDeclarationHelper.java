@@ -14,6 +14,8 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 
 public class GoToEditorDeclarationHelper {
@@ -69,14 +71,14 @@ public class GoToEditorDeclarationHelper {
   public static SNode findEditorDeclaration(SModel editorModel, final SNode conceptDeclaration) {
     return ListSequence.fromList(SModelOperations.getRoots(editorModel, "jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration")).findFirst(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return SLinkOperations.getTarget(it, "conceptDeclaration", false) == conceptDeclaration;
+        return SLinkOperations.getTarget(it, MetaAdapterFactory.getReferenceLink(new UUID(1782411230332735017l, -6324602048325217350l), 1166049232041l, 1166049300910l, "conceptDeclaration")) == conceptDeclaration;
       }
     });
   }
   public static SNode createEditorDeclaration(SNode conceptDeclaration, SModel editorModelDescriptor) {
     SModel editorModel = editorModelDescriptor;
     SNode result = SNodeFactoryOperations.createNewNode(editorModel, "jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration", null);
-    SLinkOperations.setTarget(result, "conceptDeclaration", conceptDeclaration, false);
+    SLinkOperations.setTarget(result, MetaAdapterFactory.getReferenceLink(new UUID(1782411230332735017l, -6324602048325217350l), 1166049232041l, 1166049300910l, "conceptDeclaration"), conceptDeclaration);
     SModelOperations.addRootNode(editorModel, result);
     return result;
   }

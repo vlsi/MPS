@@ -450,52 +450,52 @@
   </root>
   <root nodeRef="r:e41d7e03-7ef3-4161-a48a-e48d8152e422(jetbrains.mps.lang.editor.diagram.tests@tests)/2278461409091838098">
     <file name="SelectPortQuery_Test.java">
-      <node id="2278461409091838098" at="27,55,28,122" concept="3" />
-      <node id="2278461409091838098" at="28,122,29,111" concept="3" />
-      <node id="2278461409091838098" at="36,51,37,63" concept="3" />
-      <node id="2278461409091838108" at="38,7,39,29" concept="6" />
-      <node id="2278461409091838108" at="39,29,40,29" concept="6" />
-      <node id="2278461409091838108" at="40,29,41,126" concept="6" />
-      <node id="2278461409091838108" at="41,126,42,125" concept="3" />
-      <node id="2278461409091838108" at="42,125,43,124" concept="3" />
-      <node id="2278461409092628331" at="44,7,45,77" concept="6" />
-      <node id="2278461409092628340" at="47,27,48,89" concept="6" />
-      <node id="2278461409092628346" at="48,89,49,50" concept="3" />
-      <node id="2278461409092628350" at="49,50,50,143" concept="6" />
-      <node id="2278461409092628359" at="50,143,51,265" concept="3" />
-      <node id="2278461409092628370" at="53,9,54,102" concept="3" />
-      <node id="2278461409092628380" at="54,102,55,85" concept="3" />
-      <node id="2278461409092626595" at="55,85,56,0" concept="9" />
-      <node id="2278461409091838098" at="24,0,26,0" concept="2" trace="SelectPortQuery_Test#()V" />
-      <node id="2278461409091838098" at="33,0,35,0" concept="2" trace="TestBody#()V" />
-      <node id="2278461409091838098" at="26,0,31,0" concept="5" trace="test_SelectPortQuery#()V" />
-      <node id="2278461409092628338" at="47,0,53,0" concept="5" trace="run#()V" />
-      <node id="2278461409091838108" at="37,63,44,7" concept="1" />
-      <node id="2278461409092628337" at="45,77,53,9" concept="3" />
-      <node id="2278461409091838098" at="35,0,58,0" concept="5" trace="testMethodImpl#()V" />
-      <scope id="2278461409091838098" at="24,33,24,33" />
-      <scope id="2278461409091838098" at="33,23,33,23" />
-      <scope id="2278461409091838098" at="24,0,26,0" />
-      <scope id="2278461409091838098" at="27,55,29,111" />
-      <scope id="2278461409091838098" at="33,0,35,0" />
-      <scope id="2278461409092628339" at="47,27,51,265">
+      <node id="2278461409091838098" at="29,55,30,122" concept="3" />
+      <node id="2278461409091838098" at="30,122,31,111" concept="3" />
+      <node id="2278461409091838098" at="38,51,39,63" concept="3" />
+      <node id="2278461409091838108" at="40,7,41,29" concept="6" />
+      <node id="2278461409091838108" at="41,29,42,29" concept="6" />
+      <node id="2278461409091838108" at="42,29,43,126" concept="6" />
+      <node id="2278461409091838108" at="43,126,44,125" concept="3" />
+      <node id="2278461409091838108" at="44,125,45,124" concept="3" />
+      <node id="2278461409092628331" at="46,7,47,77" concept="6" />
+      <node id="2278461409092628340" at="49,27,50,89" concept="6" />
+      <node id="2278461409092628346" at="50,89,51,50" concept="3" />
+      <node id="2278461409092628350" at="51,50,52,143" concept="6" />
+      <node id="2278461409092628359" at="52,143,53,385" concept="3" />
+      <node id="2278461409092628370" at="55,9,56,102" concept="3" />
+      <node id="2278461409092628380" at="56,102,57,85" concept="3" />
+      <node id="2278461409092626595" at="57,85,58,0" concept="9" />
+      <node id="2278461409091838098" at="26,0,28,0" concept="2" trace="SelectPortQuery_Test#()V" />
+      <node id="2278461409091838098" at="35,0,37,0" concept="2" trace="TestBody#()V" />
+      <node id="2278461409091838098" at="28,0,33,0" concept="5" trace="test_SelectPortQuery#()V" />
+      <node id="2278461409092628338" at="49,0,55,0" concept="5" trace="run#()V" />
+      <node id="2278461409091838108" at="39,63,46,7" concept="1" />
+      <node id="2278461409092628337" at="47,77,55,9" concept="3" />
+      <node id="2278461409091838098" at="37,0,60,0" concept="5" trace="testMethodImpl#()V" />
+      <scope id="2278461409091838098" at="26,33,26,33" />
+      <scope id="2278461409091838098" at="35,23,35,23" />
+      <scope id="2278461409091838098" at="26,0,28,0" />
+      <scope id="2278461409091838098" at="29,55,31,111" />
+      <scope id="2278461409091838098" at="35,0,37,0" />
+      <scope id="2278461409092628339" at="49,27,53,385">
         <var name="diagramCell" id="2278461409092628351" />
         <var name="selectedCell" id="2278461409092628341" />
       </scope>
-      <scope id="2278461409091838098" at="26,0,31,0" />
-      <scope id="2278461409091838108" at="38,7,43,124">
+      <scope id="2278461409091838098" at="28,0,33,0" />
+      <scope id="2278461409091838108" at="40,7,45,124">
         <var name="eventTargetComponent_vw537p_a0" id="2278461409091838108" />
         <var name="x_vw537p_a0" id="2278461409091838108" />
         <var name="y_vw537p_a0" id="2278461409091838108" />
       </scope>
-      <scope id="2278461409092628338" at="47,0,53,0" />
-      <scope id="2278461409091838098" at="36,51,56,0">
+      <scope id="2278461409092628338" at="49,0,55,0" />
+      <scope id="2278461409091838098" at="38,51,58,0">
         <var name="descendantMapper" id="2278461409092628332" />
       </scope>
-      <scope id="2278461409091838098" at="35,0,58,0" />
-      <unit id="2278461409092628338" at="46,47,53,7" name="jetbrains.mps.lang.editor.diagram.tests.SelectPortQuery_Test$1" />
-      <unit id="2278461409091838098" at="31,0,59,0" name="jetbrains.mps.lang.editor.diagram.tests.SelectPortQuery_Test$TestBody" />
-      <unit id="2278461409091838098" at="22,0,60,0" name="jetbrains.mps.lang.editor.diagram.tests.SelectPortQuery_Test" />
+      <scope id="2278461409091838098" at="37,0,60,0" />
+      <unit id="2278461409092628338" at="48,47,55,7" name="jetbrains.mps.lang.editor.diagram.tests.SelectPortQuery_Test$1" />
+      <unit id="2278461409091838098" at="33,0,61,0" name="jetbrains.mps.lang.editor.diagram.tests.SelectPortQuery_Test$TestBody" />
+      <unit id="2278461409091838098" at="24,0,62,0" name="jetbrains.mps.lang.editor.diagram.tests.SelectPortQuery_Test" />
     </file>
   </root>
   <root nodeRef="r:e41d7e03-7ef3-4161-a48a-e48d8152e422(jetbrains.mps.lang.editor.diagram.tests@tests)/2278461409093334296">
@@ -522,42 +522,42 @@
   </root>
   <root nodeRef="r:e41d7e03-7ef3-4161-a48a-e48d8152e422(jetbrains.mps.lang.editor.diagram.tests@tests)/2278461409093519741">
     <file name="CreatePort_Test.java">
-      <node id="2278461409093519741" at="20,50,21,122" concept="3" />
-      <node id="2278461409093519741" at="21,122,22,106" concept="3" />
-      <node id="2278461409093519741" at="29,51,30,63" concept="3" />
-      <node id="2278461409093724423" at="32,27,33,273" concept="3" />
-      <node id="7712584618702569259" at="35,9,36,47" concept="3" />
-      <node id="2278461409094006792" at="37,7,38,29" concept="6" />
-      <node id="2278461409094006792" at="38,29,39,29" concept="6" />
-      <node id="2278461409094006792" at="39,29,40,126" concept="6" />
-      <node id="2278461409094006792" at="40,126,41,125" concept="3" />
-      <node id="2278461409094006792" at="41,125,42,124" concept="3" />
-      <node id="2278461409094006778" at="43,7,44,0" concept="9" />
-      <node id="2278461409093519741" at="17,0,19,0" concept="2" trace="CreatePort_Test#()V" />
-      <node id="2278461409093519741" at="26,0,28,0" concept="2" trace="TestBody#()V" />
-      <node id="2278461409094182556" at="32,0,35,0" concept="5" trace="run#()V" />
-      <node id="2278461409093519741" at="19,0,24,0" concept="5" trace="test_CreatePort#()V" />
-      <node id="2278461409094180954" at="30,63,35,9" concept="3" />
-      <node id="2278461409094006792" at="36,47,43,7" concept="1" />
-      <node id="2278461409093519741" at="28,0,46,0" concept="5" trace="testMethodImpl#()V" />
-      <scope id="2278461409093519741" at="17,28,17,28" />
-      <scope id="2278461409093519741" at="26,23,26,23" />
-      <scope id="2278461409094182557" at="32,27,33,273" />
-      <scope id="2278461409093519741" at="17,0,19,0" />
-      <scope id="2278461409093519741" at="20,50,22,106" />
-      <scope id="2278461409093519741" at="26,0,28,0" />
-      <scope id="2278461409094182556" at="32,0,35,0" />
-      <scope id="2278461409093519741" at="19,0,24,0" />
-      <scope id="2278461409094006792" at="37,7,42,124">
+      <node id="2278461409093519741" at="22,50,23,122" concept="3" />
+      <node id="2278461409093519741" at="23,122,24,106" concept="3" />
+      <node id="2278461409093519741" at="31,51,32,63" concept="3" />
+      <node id="2278461409093724423" at="34,27,35,410" concept="3" />
+      <node id="7712584618702569259" at="37,9,38,47" concept="3" />
+      <node id="2278461409094006792" at="39,7,40,29" concept="6" />
+      <node id="2278461409094006792" at="40,29,41,29" concept="6" />
+      <node id="2278461409094006792" at="41,29,42,126" concept="6" />
+      <node id="2278461409094006792" at="42,126,43,125" concept="3" />
+      <node id="2278461409094006792" at="43,125,44,124" concept="3" />
+      <node id="2278461409094006778" at="45,7,46,0" concept="9" />
+      <node id="2278461409093519741" at="19,0,21,0" concept="2" trace="CreatePort_Test#()V" />
+      <node id="2278461409093519741" at="28,0,30,0" concept="2" trace="TestBody#()V" />
+      <node id="2278461409094182556" at="34,0,37,0" concept="5" trace="run#()V" />
+      <node id="2278461409093519741" at="21,0,26,0" concept="5" trace="test_CreatePort#()V" />
+      <node id="2278461409094180954" at="32,63,37,9" concept="3" />
+      <node id="2278461409094006792" at="38,47,45,7" concept="1" />
+      <node id="2278461409093519741" at="30,0,48,0" concept="5" trace="testMethodImpl#()V" />
+      <scope id="2278461409093519741" at="19,28,19,28" />
+      <scope id="2278461409093519741" at="28,23,28,23" />
+      <scope id="2278461409094182557" at="34,27,35,410" />
+      <scope id="2278461409093519741" at="19,0,21,0" />
+      <scope id="2278461409093519741" at="22,50,24,106" />
+      <scope id="2278461409093519741" at="28,0,30,0" />
+      <scope id="2278461409094182556" at="34,0,37,0" />
+      <scope id="2278461409093519741" at="21,0,26,0" />
+      <scope id="2278461409094006792" at="39,7,44,124">
         <var name="eventTargetComponent_rszpwe_c0" id="2278461409094006792" />
         <var name="x_rszpwe_c0" id="2278461409094006792" />
         <var name="y_rszpwe_c0" id="2278461409094006792" />
       </scope>
-      <scope id="2278461409093519741" at="29,51,44,0" />
-      <scope id="2278461409093519741" at="28,0,46,0" />
-      <unit id="2278461409094182556" at="31,108,35,7" name="jetbrains.mps.lang.editor.diagram.tests.CreatePort_Test$1" />
-      <unit id="2278461409093519741" at="24,0,47,0" name="jetbrains.mps.lang.editor.diagram.tests.CreatePort_Test$TestBody" />
-      <unit id="2278461409093519741" at="15,0,48,0" name="jetbrains.mps.lang.editor.diagram.tests.CreatePort_Test" />
+      <scope id="2278461409093519741" at="31,51,46,0" />
+      <scope id="2278461409093519741" at="30,0,48,0" />
+      <unit id="2278461409094182556" at="33,108,37,7" name="jetbrains.mps.lang.editor.diagram.tests.CreatePort_Test$1" />
+      <unit id="2278461409093519741" at="26,0,49,0" name="jetbrains.mps.lang.editor.diagram.tests.CreatePort_Test$TestBody" />
+      <unit id="2278461409093519741" at="17,0,50,0" name="jetbrains.mps.lang.editor.diagram.tests.CreatePort_Test" />
     </file>
   </root>
   <root nodeRef="r:e41d7e03-7ef3-4161-a48a-e48d8152e422(jetbrains.mps.lang.editor.diagram.tests@tests)/2278461409094282963">

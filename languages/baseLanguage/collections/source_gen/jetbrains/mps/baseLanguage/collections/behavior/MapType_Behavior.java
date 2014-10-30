@@ -5,6 +5,8 @@ package jetbrains.mps.baseLanguage.collections.behavior;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import java.util.List;
@@ -21,12 +23,12 @@ public class MapType_Behavior {
   public static void init(SNode thisNode) {
   }
   public static String virtual_getPresentation_1213877396640(SNode thisNode) {
-    return SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(thisNode), "conceptAlias") + "<" + BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(thisNode, "keyType", true), "virtual_getPresentation_1213877396640", new Object[]{}) + "," + BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(thisNode, "valueType", true), "virtual_getPresentation_1213877396640", new Object[]{}) + ">";
+    return SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(thisNode), MetaAdapterFactory.getProperty(new UUID(-4094437568663370681l, -8968368868337559369l), 1169125787135l, 5092175715804935370l, "conceptAlias")) + "<" + BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-8968771020793164004l, -7182180101671965361l), 1197683403723l, 1197683466920l, "keyType")), "virtual_getPresentation_1213877396640", new Object[]{}) + "," + BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-8968771020793164004l, -7182180101671965361l), 1197683403723l, 1197683475734l, "valueType")), "virtual_getPresentation_1213877396640", new Object[]{}) + ">";
   }
   public static List<SNode> virtual_getAbstractCreators_7602110602933317830(SNode thisNode, SModel targetModel) {
     List<SNode> result = new ArrayList<SNode>();
-    ListSequence.fromList(result).addElement(_quotation_createNode_icy1a5_a0a1a1(SLinkOperations.getTarget(thisNode, "keyType", true), SLinkOperations.getTarget(thisNode, "valueType", true)));
-    ListSequence.fromList(result).addElement(_quotation_createNode_icy1a5_a0a2a1(SLinkOperations.getTarget(thisNode, "keyType", true), SLinkOperations.getTarget(thisNode, "valueType", true)));
+    ListSequence.fromList(result).addElement(_quotation_createNode_icy1a5_a0a1a1(SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-8968771020793164004l, -7182180101671965361l), 1197683403723l, 1197683466920l, "keyType")), SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-8968771020793164004l, -7182180101671965361l), 1197683403723l, 1197683475734l, "valueType"))));
+    ListSequence.fromList(result).addElement(_quotation_createNode_icy1a5_a0a2a1(SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-8968771020793164004l, -7182180101671965361l), 1197683403723l, 1197683466920l, "keyType")), SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-8968771020793164004l, -7182180101671965361l), 1197683403723l, 1197683475734l, "valueType"))));
     ListSequence.fromList(result).addSequence(Sequence.fromIterable(CustomContainersUtil.containerCreators(targetModel, thisNode)));
     return result;
   }
@@ -77,7 +79,7 @@ public class MapType_Behavior {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierClassExpression", null, null, false);
-    quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, facade.createModelReference("6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)"), facade.createNodeId("~Map")));
+    quotedNode_1.setReference(MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1116615150612l, 1116615189566l, "classifier"), SReference.create(MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1116615150612l, 1116615189566l, "classifier"), quotedNode_1, facade.createModelReference("6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)"), facade.createNodeId("~Map")));
     return quotedNode_1;
   }
 }

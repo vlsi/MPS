@@ -6,6 +6,8 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.console.tool.ConsoleContext;
 import jetbrains.mps.console.tool.ConsoleStream;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.console.ideCommands.util.PartitioningHelper;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.internal.collections.runtime.Sequence;
@@ -15,9 +17,9 @@ public class ShowGenPlan_Behavior {
   public static void init(SNode thisNode) {
   }
   public static void virtual_doExecute_3321948346081469500(SNode thisNode, ConsoleContext context, ConsoleStream console) {
-    if (ModelReference_Behavior.call_getModel_7057947030098579394(SLinkOperations.getTarget(thisNode, "targetModel", true)) == null) {
+    if (ModelReference_Behavior.call_getModel_7057947030098579394(SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-6492820313512655654l, -6146453626538471728l), 7057947030097724900l, 7057947030097725050l, "targetModel"))) == null) {
       return;
     }
-    PartitioningHelper.showMappingPartitioning(ProjectHelper.toIdeaProject(context.getProject()), Sequence.fromIterable(Sequence.<SModel>singleton(ModelReference_Behavior.call_getModel_7057947030098579394(SLinkOperations.getTarget(thisNode, "targetModel", true)))).toListSequence(), console);
+    PartitioningHelper.showMappingPartitioning(ProjectHelper.toIdeaProject(context.getProject()), Sequence.fromIterable(Sequence.<SModel>singleton(ModelReference_Behavior.call_getModel_7057947030098579394(SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-6492820313512655654l, -6146453626538471728l), 7057947030097724900l, 7057947030097725050l, "targetModel"))))).toListSequence(), console);
   }
 }

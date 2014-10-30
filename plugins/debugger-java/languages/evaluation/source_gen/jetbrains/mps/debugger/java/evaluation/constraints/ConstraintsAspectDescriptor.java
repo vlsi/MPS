@@ -5,6 +5,7 @@ package jetbrains.mps.debugger.java.evaluation.constraints;
 import jetbrains.mps.smodel.runtime.ConstraintsDescriptor;
 import java.util.Arrays;
 import jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor;
+import jetbrains.mps.smodel.adapter.ids.SConceptId;
 
 public class ConstraintsAspectDescriptor implements jetbrains.mps.smodel.runtime.ConstraintsAspectDescriptor {
   public ConstraintsAspectDescriptor() {
@@ -18,9 +19,21 @@ public class ConstraintsAspectDescriptor implements jetbrains.mps.smodel.runtime
       case 2:
         return new LowLevelVariableReference_Constraints();
       default:
-        // todo: illegal in some cases? 
         return new BaseConstraintsDescriptor(fqName);
     }
+  }
+  public ConstraintsDescriptor getDescriptor(SConceptId conceptId) {
+    long id = conceptId.getConceptId();
+    if (id == 6036237525966315974l) {
+      return new EvaluatorsThisExpression_Constraints();
+    }
+    if (id == 6036237525966316030l) {
+      return new EvaluatorsSuperMethodCall_Constraints();
+    }
+    if (id == 9050639307831392587l) {
+      return new LowLevelVariableReference_Constraints();
+    }
+    return new BaseConstraintsDescriptor(conceptId);
   }
   private static String[] stringSwitchCases_2qnle6_a0a0b = new String[]{"jetbrains.mps.debugger.java.evaluation.structure.EvaluatorsSuperMethodCall", "jetbrains.mps.debugger.java.evaluation.structure.EvaluatorsThisExpression", "jetbrains.mps.debugger.java.evaluation.structure.LowLevelVariableReference"};
 }

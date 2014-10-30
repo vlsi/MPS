@@ -21,8 +21,10 @@
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.BehaviorAspectDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.debugger.java.evaluation.behavior.DebuggedType_Behavior" file="DebuggedType_Behavior.java">
+    <classNode dependClassName="java.util.UUID" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.debugger.java.evaluation.behavior.DebuggedType_BehaviorDescriptor" file="DebuggedType_BehaviorDescriptor.java">
@@ -51,9 +53,11 @@
   <dependency className="jetbrains.mps.debugger.java.evaluation.behavior.EvaluatorConcept_Behavior" file="EvaluatorConcept_Behavior.java">
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="java.util.UUID" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
     <classNode dependClassName="jetbrains.mps.smodel.SReference" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
   </dependency>
@@ -72,8 +76,10 @@
   </dependency>
   <dependency className="jetbrains.mps.debugger.java.evaluation.behavior.Evaluator_Behavior" file="Evaluator_Behavior.java">
     <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="java.util.UUID" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.scope.Scope" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="jetbrains.mps.smodel.behaviour.BehaviorReflection" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
@@ -91,9 +97,11 @@
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.debugger.java.evaluation.behavior.EvaluatorsSuperMethodCall_Behavior" file="EvaluatorsSuperMethodCall_Behavior.java">
+    <classNode dependClassName="java.util.UUID" />
     <classNode dependClassName="jetbrains.mps.debugger.java.evaluation.behavior.DebuggedType_Behavior" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.debugger.java.evaluation.behavior.EvaluatorsSuperMethodCall_BehaviorDescriptor" file="EvaluatorsSuperMethodCall_BehaviorDescriptor.java">
@@ -129,7 +137,9 @@
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.debugger.java.evaluation.behavior.LowLevelVariable_Behavior" file="LowLevelVariable_Behavior.java">
+    <classNode dependClassName="java.util.UUID" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.debugger.java.evaluation.behavior.LowLevelVariable_BehaviorDescriptor" file="LowLevelVariable_BehaviorDescriptor.java">

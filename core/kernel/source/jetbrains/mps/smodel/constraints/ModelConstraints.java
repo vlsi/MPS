@@ -173,6 +173,7 @@ public class ModelConstraints {
 
   // other things
   public static String getDefaultConcreteConceptFqName(String fqName) {
-    return ConceptRegistry.getInstance().getConstraintsDescriptor(fqName).getDefaultConcreteConceptFqName();
+    return ConceptRegistry.getInstance().getConceptDescriptor(
+        ConceptRegistry.getInstance().getConstraintsDescriptor(fqName).getDefaultConcreteConceptId()).getConceptFqName();
   }
 }

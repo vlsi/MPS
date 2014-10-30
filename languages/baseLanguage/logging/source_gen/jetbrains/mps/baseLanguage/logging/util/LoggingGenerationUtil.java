@@ -12,6 +12,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -36,7 +38,7 @@ public class LoggingGenerationUtil {
 
       if (Sequence.fromIterable(scope.getAvailableElements(baseName)).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
-          return !(SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.VariableDeclaration")) || baseName.equals(SPropertyOperations.getString(SNodeOperations.cast(it, "jetbrains.mps.baseLanguage.structure.VariableDeclaration"), "name"));
+          return !(SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.VariableDeclaration")) || baseName.equals(SPropertyOperations.getString(SNodeOperations.cast(it, "jetbrains.mps.baseLanguage.structure.VariableDeclaration"), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")));
         }
       }).isNotEmpty()) {
         return baseName + "_" + Integer.toString(Math.abs(BehaviorReflection.invokeVirtual(String.class, contextNode, "virtual_getFqName_1213877404258", new Object[]{}).hashCode()));

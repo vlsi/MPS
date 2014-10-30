@@ -236,7 +236,7 @@ class TemplateNode {
         if (templateReferentNode == null) {
           String msg = "cannot resolve reference in template model; role: %s in %s";
           log.error(templateNode.getReference(), String.format(msg, reference.getRole(),
-              org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(templateNode)));
+              SNodeOperations.getDebugText(templateNode)));
           continue;
         }
         if (templateReferentNode.getModel() == templateModel) { // internal reference

@@ -6,6 +6,8 @@ import jetbrains.mps.textGen.SNodeTextGen;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.textGen.TraceInfoGenerationUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.Sequence;
@@ -21,11 +23,11 @@ public class InternalAnonymousClass_TextGen extends SNodeTextGen {
     if (getBuffer().hasPositionsSupport()) {
       TraceInfoGenerationUtil.createUnitInfo(this, node);
     }
-    BaseLangInternal.className(SPropertyOperations.getString(node, "fqClassName"), node, this);
-    if (ListSequence.fromList(SLinkOperations.getTargets(node, "typeParameter", true)).isNotEmpty()) {
+    BaseLangInternal.className(SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(new UUID(-2363163772790029805l, -6024047381933761144l), 3421461530438559753l, 3421461530438559973l, "fqClassName")), node, this);
+    if (ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(new UUID(-2363163772790029805l, -6024047381933761144l), 3421461530438559753l, 3421461530438559757l, "typeParameter"))).isNotEmpty()) {
       this.append("<");
       {
-        Iterable<SNode> collection = SLinkOperations.getTargets(node, "typeParameter", true);
+        Iterable<SNode> collection = SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(new UUID(-2363163772790029805l, -6024047381933761144l), 3421461530438559753l, 3421461530438559757l, "typeParameter"));
         final SNode lastItem = Sequence.fromIterable(collection).last();
         for (SNode item : collection) {
           appendNode(item);
@@ -38,7 +40,7 @@ public class InternalAnonymousClass_TextGen extends SNodeTextGen {
     }
     this.append("(");
     {
-      Iterable<SNode> collection = SLinkOperations.getTargets(node, "constructorArgument", true);
+      Iterable<SNode> collection = SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(new UUID(-2363163772790029805l, -6024047381933761144l), 3421461530438559753l, 3421461530438559756l, "constructorArgument"));
       final SNode lastItem = Sequence.fromIterable(collection).last();
       for (SNode item : collection) {
         appendNode(item);

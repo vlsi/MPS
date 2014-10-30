@@ -10,6 +10,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 
 public abstract class Scope {
@@ -101,7 +103,7 @@ public abstract class Scope {
       }
       return SNodeOperations.getParent(n);
     }
-    SNode lastAttr = ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(n, "jetbrains.mps.lang.core.structure.BaseConcept"), "smodelAttribute", true)).where(new IWhereFilter<SNode>() {
+    SNode lastAttr = ListSequence.fromList(SLinkOperations.getChildren(SNodeOperations.cast(n, "jetbrains.mps.lang.core.structure.BaseConcept"), MetaAdapterFactory.getContainmentLink(new UUID(-3554657779850784990l, -7236703803128771572l), 1133920641626l, 5169995583184591170l, "smodelAttribute"))).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SNodeOperations.isInstanceOf(it, "jetbrains.mps.lang.core.structure.NodeAttribute");
       }

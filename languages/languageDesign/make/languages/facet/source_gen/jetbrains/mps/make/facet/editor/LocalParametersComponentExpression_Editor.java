@@ -15,6 +15,8 @@ import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 
@@ -62,7 +64,7 @@ public class LocalParametersComponentExpression_Editor extends DefaultNodeEditor
     return editorCell;
   }
   private static boolean renderingCondition_m2es92_a1a(SNode node, EditorContext editorContext) {
-    return (SLinkOperations.getTarget(node, "resource", true) != null);
+    return (SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(7596465798203917883l, -4873580700227838512l), 2191561637326275576l, 8170824575195151990l, "resource")) != null);
   }
   private EditorCell createConstant_m2es92_a1a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "@");

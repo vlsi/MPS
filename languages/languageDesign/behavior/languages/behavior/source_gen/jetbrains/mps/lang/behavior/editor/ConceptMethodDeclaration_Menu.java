@@ -12,6 +12,8 @@ import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import org.jetbrains.mps.openapi.model.SModel;
 
 public class ConceptMethodDeclaration_Menu extends AbstractCellMenuComponent {
@@ -22,14 +24,14 @@ public class ConceptMethodDeclaration_Menu extends AbstractCellMenuComponent {
     public ConceptMethodDeclaration_generic_cellMenu_v7l746_a0() {
     }
     public List<?> createParameterObjects(SNode node, IOperationContext operationContext, EditorContext editorContext) {
-      return AbstractConceptDeclaration_Behavior.call_getVirtualConceptMethods_1213877394290(SLinkOperations.getTarget(SNodeOperations.getAncestor(node, "jetbrains.mps.lang.behavior.structure.ConceptBehavior", false, false), "concept", false));
+      return AbstractConceptDeclaration_Behavior.call_getVirtualConceptMethods_1213877394290(SLinkOperations.getTarget(SNodeOperations.getAncestor(node, "jetbrains.mps.lang.behavior.structure.ConceptBehavior", false, false), MetaAdapterFactory.getReferenceLink(new UUID(-5808042798135555774l, -8657779246725685839l), 1225194240794l, 1225194240799l, "concept")));
     }
     protected void handleAction(Object parameterObject, SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
       this.handleAction_impl((SNode) parameterObject, node, model, operationContext, editorContext);
     }
     public void handleAction_impl(SNode parameterObject, SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
-      SLinkOperations.setTarget(node, "overriddenMethod", parameterObject, false);
-      SLinkOperations.setTarget(node, "visibility", SNodeOperations.copyNode(SLinkOperations.getTarget(parameterObject, "visibility", true)), true);
+      SLinkOperations.setTarget(node, MetaAdapterFactory.getReferenceLink(new UUID(-5808042798135555774l, -8657779246725685839l), 1225194472830l, 1225194472831l, "overriddenMethod"), parameterObject);
+      SLinkOperations.setTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1178549954367l, 1178549979242l, "visibility"), SNodeOperations.copyNode(SLinkOperations.getTarget(parameterObject, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1178549954367l, 1178549979242l, "visibility"))));
     }
     public boolean isReferentPresentation() {
       return false;

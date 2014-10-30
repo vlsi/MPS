@@ -4,11 +4,13 @@ package jetbrains.mps.samples.heating.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 
 public class SpecificDay_Behavior {
   public static void init(SNode thisNode) {
   }
   public static String virtual_getPresentation_1213877396640(SNode thisNode) {
-    return SPropertyOperations.getString_def(thisNode, "day", "monday");
+    return SPropertyOperations.getString_def(thisNode, MetaAdapterFactory.getProperty(new UUID(-6352760259037542597l, -7435837320858277567l), 4664795093170605734l, 4664795093170605735l, "day"), "monday");
   }
 }

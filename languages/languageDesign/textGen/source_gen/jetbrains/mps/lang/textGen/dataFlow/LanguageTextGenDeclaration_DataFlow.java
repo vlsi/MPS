@@ -6,6 +6,8 @@ import jetbrains.mps.lang.dataFlow.DataFlowBuilder;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.lang.dataFlow.DataFlowBuilderContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import org.jetbrains.mps.openapi.model.SNode;
 
 public class LanguageTextGenDeclaration_DataFlow extends DataFlowBuilder {
@@ -13,11 +15,11 @@ public class LanguageTextGenDeclaration_DataFlow extends DataFlowBuilder {
   }
   public void build(final IOperationContext operationContext, final DataFlowBuilderContext _context) {
     _context.getBuilder().emitWrite(_context.getNode(), "r:812dd537-4bc6-4b23-8ff0-eed686398e8b(jetbrains.mps.lang.textGen.dataFlow)/1237483551027");
-    _context.getBuilder().emitRead(SLinkOperations.getTarget(_context.getNode(), "baseTextGen", false), "r:812dd537-4bc6-4b23-8ff0-eed686398e8b(jetbrains.mps.lang.textGen.dataFlow)/1237483520232");
-    for (SNode declaration : SLinkOperations.getTargets(_context.getNode(), "function", true)) {
+    _context.getBuilder().emitRead(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(new UUID(-5173455103397510980l, -8487484424797171117l), 1233921373471l, 1234781160172l, "baseTextGen")), "r:812dd537-4bc6-4b23-8ff0-eed686398e8b(jetbrains.mps.lang.textGen.dataFlow)/1237483520232");
+    for (SNode declaration : SLinkOperations.getChildren(_context.getNode(), MetaAdapterFactory.getContainmentLink(new UUID(-5173455103397510980l, -8487484424797171117l), 1233921373471l, 1234526822589l, "function"))) {
       _context.getBuilder().build((SNode) declaration);
     }
-    for (SNode node : SLinkOperations.getTargets(_context.getNode(), "operation", true)) {
+    for (SNode node : SLinkOperations.getChildren(_context.getNode(), MetaAdapterFactory.getContainmentLink(new UUID(-5173455103397510980l, -8487484424797171117l), 1233921373471l, 1233922432965l, "operation"))) {
       _context.getBuilder().build((SNode) node);
     }
   }

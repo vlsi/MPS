@@ -6,6 +6,8 @@ import jetbrains.mps.refactoring.framework.IRefactoringTarget;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 
 public class MakeFieldStatic_Target implements IRefactoringTarget {
   public MakeFieldStatic_Target() {
@@ -23,6 +25,6 @@ public class MakeFieldStatic_Target implements IRefactoringTarget {
     if (!(this.isApplicableToEntityType(entity))) {
       return false;
     }
-    return SNodeOperations.isInstanceOf(((SNode) entity), "jetbrains.mps.baseLanguage.structure.FieldDeclaration") || SNodeOperations.isInstanceOf(((SNode) entity), "jetbrains.mps.baseLanguage.structure.FieldReferenceOperation") || (SNodeOperations.isInstanceOf(((SNode) entity), "jetbrains.mps.baseLanguage.structure.VariableReference") && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SNodeOperations.cast(((SNode) entity), "jetbrains.mps.baseLanguage.structure.VariableReference"), "variableDeclaration", false), "jetbrains.mps.baseLanguage.structure.FieldDeclaration"));
+    return SNodeOperations.isInstanceOf(((SNode) entity), "jetbrains.mps.baseLanguage.structure.FieldDeclaration") || SNodeOperations.isInstanceOf(((SNode) entity), "jetbrains.mps.baseLanguage.structure.FieldReferenceOperation") || (SNodeOperations.isInstanceOf(((SNode) entity), "jetbrains.mps.baseLanguage.structure.VariableReference") && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SNodeOperations.cast(((SNode) entity), "jetbrains.mps.baseLanguage.structure.VariableReference"), MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068498886296l, 1068581517664l, "variableDeclaration")), "jetbrains.mps.baseLanguage.structure.FieldDeclaration"));
   }
 }

@@ -9,6 +9,8 @@ import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeof_ExtensionFieldReference_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
@@ -18,7 +20,7 @@ public class typeof_ExtensionFieldReference_InferenceRule extends AbstractInfere
     {
       SNode _nodeToCheck_1029348928467 = efr;
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:4b1ddbe6-5067-4a27-8697-eb786b50451b(jetbrains.mps.lang.extension.typesystem)", "7036359038356115138", 0, null);
-      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:4b1ddbe6-5067-4a27-8697-eb786b50451b(jetbrains.mps.lang.extension.typesystem)", "7036359038356115126", true), (SNode) SLinkOperations.getTarget(SLinkOperations.getTarget(efr, "declaration", false), "fieldType", true), _info_12389875345);
+      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:4b1ddbe6-5067-4a27-8697-eb786b50451b(jetbrains.mps.lang.extension.typesystem)", "7036359038356115126", true), (SNode) SLinkOperations.getTarget(SLinkOperations.getTarget(efr, MetaAdapterFactory.getReferenceLink(new UUID(-4609422916437195432l, -4690047243382094519l), 7036359038356115102l, 7036359038356115103l, "declaration")), MetaAdapterFactory.getContainmentLink(new UUID(-4609422916437195432l, -4690047243382094519l), 7036359038356115097l, 7036359038356115101l, "fieldType")), _info_12389875345);
     }
   }
   public String getApplicableConceptFQName() {

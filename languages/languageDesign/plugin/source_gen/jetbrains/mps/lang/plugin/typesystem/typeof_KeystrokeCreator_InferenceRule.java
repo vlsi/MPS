@@ -8,6 +8,8 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.smodel.SModelUtil_new;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
@@ -17,7 +19,7 @@ public class typeof_KeystrokeCreator_InferenceRule extends AbstractInferenceRule
   }
   public void applyRule(final SNode stmt, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     {
-      SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(stmt, "stroke", true);
+      SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(stmt, MetaAdapterFactory.getContainmentLink(new UUID(2952642368903463569l, -5856357300648461647l), 8131292300541727132l, 8131292300541905245l, "stroke"));
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590364(jetbrains.mps.lang.plugin.typesystem)", "8131292300541907325", 0, null);
       typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c89590364(jetbrains.mps.lang.plugin.typesystem)", "8131292300541907082", true), (SNode) _quotation_createNode_d8k55o_a0a0b(), _info_12389875345);
     }

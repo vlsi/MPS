@@ -7,6 +7,8 @@ import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import java.util.List;
@@ -23,7 +25,7 @@ public enum TestNodeWrapperFactory {
   LanguageTestCaseNodeWrapperFactory() {
     @Nullable
     public ITestNodeWrapper<SNode> wrap(@NotNull SNode node) {
-      if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.unitTest.structure.BTestCase") && SPropertyOperations.getBoolean(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.unitTest.structure.BTestCase"), "abstractClass")) {
+      if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.unitTest.structure.BTestCase") && SPropertyOperations.getBoolean(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.unitTest.structure.BTestCase"), MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 1068390468198l, 1075300953594l, "abstractClass"))) {
         return null;
       }
       if (ListSequence.fromList(BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), node, "virtual_getTestMethods_2148145109766218395", new Object[]{})).count() == 0) {
@@ -59,7 +61,7 @@ public enum TestNodeWrapperFactory {
     }
     public boolean canWrap(@NotNull SNode node) {
       if (eq_kl7j79_a0a0b2(SNodeOperations.getConceptDeclaration(node), SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassConcept"))) {
-        if (SPropertyOperations.getBoolean(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.ClassConcept"), "abstractClass")) {
+        if (SPropertyOperations.getBoolean(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.ClassConcept"), MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 1068390468198l, 1075300953594l, "abstractClass"))) {
           return false;
         }
         SNode ancestor = SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.Classifier");
@@ -67,7 +69,7 @@ public enum TestNodeWrapperFactory {
           return false;
         }
         while (ancestor != null && SNodeOperations.isInstanceOf(ancestor, "jetbrains.mps.baseLanguage.structure.ClassConcept") && !(BehaviorReflection.invokeVirtual(String.class, ancestor, "virtual_getFqName_1213877404258", new Object[]{}).equals(TestCase.class.getCanonicalName()))) {
-          ancestor = check_kl7j79_a0a0d0a0b2(SLinkOperations.getTarget(SNodeOperations.cast(ancestor, "jetbrains.mps.baseLanguage.structure.ClassConcept"), "superclass", true));
+          ancestor = check_kl7j79_a0a0d0a0b2(SLinkOperations.getTarget(SNodeOperations.cast(ancestor, "jetbrains.mps.baseLanguage.structure.ClassConcept"), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068390468198l, 1165602531693l, "superclass")));
         }
         return ancestor != null;
       }
@@ -196,7 +198,7 @@ public enum TestNodeWrapperFactory {
   }
   private static SNode check_kl7j79_a0a0d0a0b2(SNode checkedDotOperand) {
     if (null != checkedDotOperand) {
-      return SLinkOperations.getTarget(checkedDotOperand, "classifier", false);
+      return SLinkOperations.getTarget(checkedDotOperand, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier"));
     }
     return null;
   }

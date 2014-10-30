@@ -9,6 +9,8 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.baseLanguage.behavior.IOperation_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.baseLanguage.extensionMethods.behavior.ExtensionMethodDeclaration_Behavior;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.baseLanguage.scopes.Members;
@@ -32,7 +34,7 @@ public class ConvertExtensionMethodCallToLocal_MigrationScript extends BaseMigra
         if (!(SNodeOperations.isInstanceOf(IOperation_Behavior.call_getOperand_1213877410070(node), "jetbrains.mps.baseLanguage.extensionMethods.structure.ThisExtensionExpression"))) {
           return false;
         }
-        SNode declaration = SLinkOperations.getTarget(node, "baseMethodDeclaration", false);
+        SNode declaration = SLinkOperations.getTarget(node, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, 1068499141037l, "baseMethodDeclaration"));
         SNode classifier = ExtensionMethodDeclaration_Behavior.call_getClassifier_7685333756920241018(SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.extensionMethods.structure.ExtensionMethodDeclaration", false, false));
         if (classifier == null) {
           return false;
@@ -43,7 +45,7 @@ public class ConvertExtensionMethodCallToLocal_MigrationScript extends BaseMigra
         }
         while (classifier != declarationClassifier) {
           for (SNode method : Members.visibleInstanceMethods(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), classifier, "virtual_getThisType_7405920559687254782", new Object[]{}), node)) {
-            if (SPropertyOperations.getString(method, "name").equals(SPropertyOperations.getString(declaration, "name"))) {
+            if (SPropertyOperations.getString(method, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")).equals(SPropertyOperations.getString(declaration, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")))) {
               return false;
             }
           }
@@ -53,8 +55,8 @@ public class ConvertExtensionMethodCallToLocal_MigrationScript extends BaseMigra
       }
       public void doUpdateInstanceNode(SNode node) {
         SNode methodCall = SNodeOperations.replaceWithNewChild(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.extensionMethods.structure.LocalExtendedMethodCall");
-        SLinkOperations.setTarget(methodCall, "baseMethodDeclaration", SLinkOperations.getTarget(node, "baseMethodDeclaration", false), false);
-        ListSequence.fromList(SLinkOperations.getTargets(methodCall, "actualArgument", true)).addSequence(ListSequence.fromList(SLinkOperations.getTargets(node, "actualArgument", true)));
+        SLinkOperations.setTarget(methodCall, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, 1068499141037l, "baseMethodDeclaration"), SLinkOperations.getTarget(node, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, 1068499141037l, "baseMethodDeclaration")));
+        ListSequence.fromList(SLinkOperations.getChildren(methodCall, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, 1068499141038l, "actualArgument"))).addSequence(ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, 1068499141038l, "actualArgument"))));
       }
       public boolean isShowAsIntention() {
         return true;

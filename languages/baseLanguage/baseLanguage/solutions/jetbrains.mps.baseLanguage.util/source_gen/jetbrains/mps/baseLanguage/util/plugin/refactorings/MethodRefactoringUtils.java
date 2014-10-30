@@ -9,6 +9,8 @@ import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.ide.findusages.view.FindUtils;
@@ -26,7 +28,7 @@ public class MethodRefactoringUtils {
   public static List<SNode> findOverridingMethods(SNode method, ProgressMonitor progressMonitor) {
     List<SNode> results = new ArrayList<SNode>();
     if (SNodeOperations.isInstanceOf(method, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration")) {
-      if (SPropertyOperations.getBoolean(method, "isFinal") || SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SNodeOperations.cast(method, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration"), "visibility", true), "jetbrains.mps.baseLanguage.structure.PrivateVisibility")) {
+      if (SPropertyOperations.getBoolean(method, MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123132l, 1181808852946l, "isFinal")) || SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SNodeOperations.cast(method, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration"), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1178549954367l, 1178549979242l, "visibility")), "jetbrains.mps.baseLanguage.structure.PrivateVisibility")) {
         return results;
       }
       SearchResults<SNode> searchResults;

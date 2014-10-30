@@ -9,7 +9,9 @@
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.lang.editor.behavior.AbstractComponent_Behavior" file="AbstractComponent_Behavior.java">
+    <classNode dependClassName="java.util.UUID" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.lang.editor.behavior.AbstractComponent_BehaviorDescriptor" file="AbstractComponent_BehaviorDescriptor.java">
@@ -118,6 +120,7 @@
   <dependency className="jetbrains.mps.lang.editor.behavior.BaseEditorComponent_Behavior" file="BaseEditorComponent_Behavior.java">
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.UUID" />
     <classNode dependClassName="jetbrains.mps.lang.editor.behavior.EditorComponentDeclarationScope" />
     <classNode dependClassName="jetbrains.mps.lang.scopes.runtime.SimpleScope" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations" />
@@ -126,6 +129,7 @@
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
     <classNode dependClassName="jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior" />
     <classNode dependClassName="jetbrains.mps.scope.Scope" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="jetbrains.mps.smodel.behaviour.BehaviorReflection" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
@@ -399,8 +403,10 @@
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="java.util.UUID" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.style.StyleAttribute" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="jetbrains.mps.smodel.behaviour.BehaviorReflection" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
@@ -427,7 +433,9 @@
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.lang.editor.behavior.CellActionMapDeclaration_Behavior" file="CellActionMapDeclaration_Behavior.java">
+    <classNode dependClassName="java.util.UUID" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.lang.editor.behavior.CellActionMapDeclaration_BehaviorDescriptor" file="CellActionMapDeclaration_BehaviorDescriptor.java">
@@ -487,7 +495,9 @@
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.lang.editor.behavior.CellKeyMapDeclaration_Behavior" file="CellKeyMapDeclaration_Behavior.java">
+    <classNode dependClassName="java.util.UUID" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.lang.editor.behavior.CellKeyMapDeclaration_BehaviorDescriptor" file="CellKeyMapDeclaration_BehaviorDescriptor.java">
@@ -507,9 +517,11 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.editor.behavior.CellKeyMapItem_Behavior" file="CellKeyMapItem_Behavior.java">
     <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.UUID" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.lang.editor.behavior.CellKeyMapKeystroke_Behavior" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.lang.editor.behavior.CellKeyMapItem_BehaviorDescriptor" file="CellKeyMapItem_BehaviorDescriptor.java">
@@ -522,7 +534,9 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.editor.behavior.CellKeyMapKeystroke_Behavior" file="CellKeyMapKeystroke_Behavior.java">
     <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.UUID" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.lang.editor.behavior.CellKeyMapKeystroke_BehaviorDescriptor" file="CellKeyMapKeystroke_BehaviorDescriptor.java">
@@ -661,7 +675,9 @@
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.lang.editor.behavior.CellMenuComponent_Behavior" file="CellMenuComponent_Behavior.java">
+    <classNode dependClassName="java.util.UUID" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.lang.editor.behavior.CellMenuComponent_BehaviorDescriptor" file="CellMenuComponent_BehaviorDescriptor.java">
@@ -680,8 +696,10 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.editor.behavior.CellMenuDescriptor_Behavior" file="CellMenuDescriptor_Behavior.java">
     <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.UUID" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.lang.editor.behavior.CellMenuDescriptor_BehaviorDescriptor" file="CellMenuDescriptor_BehaviorDescriptor.java">
@@ -744,11 +762,13 @@
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="java.util.UUID" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.HUtil" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="jetbrains.mps.smodel.behaviour.BehaviorReflection" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
@@ -773,9 +793,11 @@
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.lang.editor.behavior.CellMenuPart_Abstract_Behavior" file="CellMenuPart_Abstract_Behavior.java">
+    <classNode dependClassName="java.util.UUID" />
     <classNode dependClassName="jetbrains.mps.lang.editor.behavior.CellMenuUtil" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.lang.editor.behavior.CellMenuPart_Abstract_BehaviorDescriptor" file="CellMenuPart_Abstract_BehaviorDescriptor.java">
@@ -944,10 +966,12 @@
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="java.util.UUID" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
     <classNode dependClassName="jetbrains.mps.smodel.SReference" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="jetbrains.mps.smodel.behaviour.BehaviorReflection" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
@@ -975,11 +999,13 @@
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="java.util.UUID" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.lang.editor.behavior.CellMenuPart_Abstract_Behavior" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="jetbrains.mps.smodel.behaviour.BehaviorReflection" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
@@ -1000,11 +1026,13 @@
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="java.util.UUID" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.HUtil" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="jetbrains.mps.smodel.behaviour.BehaviorReflection" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
@@ -1032,11 +1060,13 @@
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="java.util.UUID" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.lang.editor.behavior.CellMenuPart_Abstract_Behavior" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="jetbrains.mps.smodel.behaviour.BehaviorReflection" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
@@ -1062,8 +1092,10 @@
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.lang.editor.behavior.CellMenuPart_ReplaceChild_defaultConceptOfChild_Behavior" file="CellMenuPart_ReplaceChild_defaultConceptOfChild_Behavior.java">
+    <classNode dependClassName="java.util.UUID" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
     <classNode dependClassName="jetbrains.mps.smodel.SReference" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
   </dependency>
@@ -1192,12 +1224,14 @@
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.UUID" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.lang.editor.behavior.EditorCellModel_Behavior" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="jetbrains.mps.smodel.behaviour.BehaviorReflection" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
@@ -1213,9 +1247,11 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.editor.behavior.CellModel_Component_Behavior" file="CellModel_Component_Behavior.java">
     <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.UUID" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.cells.CellIdManager" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.lang.editor.behavior.CellModel_Component_BehaviorDescriptor" file="CellModel_Component_BehaviorDescriptor.java">
@@ -1294,9 +1330,11 @@
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.lang.editor.behavior.CellModel_ListWithRole_Behavior" file="CellModel_ListWithRole_Behavior.java">
+    <classNode dependClassName="java.util.UUID" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.lang.editor.behavior.CellModel_ListWithRole_BehaviorDescriptor" file="CellModel_ListWithRole_BehaviorDescriptor.java">
@@ -1333,9 +1371,11 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.editor.behavior.CellModel_Property_Behavior" file="CellModel_Property_Behavior.java">
     <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.UUID" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.cells.CellIdManager" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.lang.editor.behavior.CellModel_Property_BehaviorDescriptor" file="CellModel_Property_BehaviorDescriptor.java">
@@ -1362,9 +1402,11 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.editor.behavior.CellModel_RefCell_Behavior" file="CellModel_RefCell_Behavior.java">
     <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.UUID" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.cells.CellIdManager" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.lang.editor.behavior.CellModel_RefCell_BehaviorDescriptor" file="CellModel_RefCell_BehaviorDescriptor.java">
@@ -1377,10 +1419,12 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.editor.behavior.CellModel_RefNodeList_Behavior" file="CellModel_RefNodeList_Behavior.java">
     <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.UUID" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.cells.CellIdManager" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.lang.editor.behavior.CellModel_RefNodeList_BehaviorDescriptor" file="CellModel_RefNodeList_BehaviorDescriptor.java">
@@ -1393,9 +1437,11 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.editor.behavior.CellModel_RefNode_Behavior" file="CellModel_RefNode_Behavior.java">
     <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.UUID" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.cells.CellIdManager" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.lang.editor.behavior.CellModel_RefNode_BehaviorDescriptor" file="CellModel_RefNode_BehaviorDescriptor.java">
@@ -1428,8 +1474,10 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.editor.behavior.CellModel_URL_Behavior" file="CellModel_URL_Behavior.java">
     <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.UUID" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.lang.editor.behavior.CellModel_URL_BehaviorDescriptor" file="CellModel_URL_BehaviorDescriptor.java">
@@ -1471,11 +1519,13 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.editor.behavior.ConceptEditorDeclaration_Behavior" file="ConceptEditorDeclaration_Behavior.java">
     <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="java.util.UUID" />
     <classNode dependClassName="jetbrains.mps.lang.editor.behavior.DefaultEditorBuilder" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior" />
     <classNode dependClassName="jetbrains.mps.smodel.LanguageAspect" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.lang.editor.behavior.ConceptEditorDeclaration_BehaviorDescriptor" file="ConceptEditorDeclaration_BehaviorDescriptor.java">
@@ -1509,8 +1559,10 @@
   <dependency className="jetbrains.mps.lang.editor.behavior.ConceptEditorHintDeclaration_Behavior" file="ConceptEditorHintDeclaration_Behavior.java">
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.UUID" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="jetbrains.mps.smodel.behaviour.BehaviorReflection" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
@@ -1637,9 +1689,11 @@
     <classNode extendsClassName="java.lang.Cloneable" />
   </dependency>
   <dependency className="jetbrains.mps.lang.editor.behavior.DefaultBaseLine_Behavior" file="DefaultBaseLine_Behavior.java">
+    <classNode dependClassName="java.util.UUID" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.lang.editor.behavior.DefaultBaseLine_BehaviorDescriptor" file="DefaultBaseLine_BehaviorDescriptor.java">
@@ -1668,6 +1722,7 @@
     <classNode dependClassName="java.util.HashMap" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="java.util.Map" />
+    <classNode dependClassName="java.util.UUID" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.DequeSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISelector" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
@@ -1684,6 +1739,7 @@
     <classNode dependClassName="jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior" />
     <classNode dependClassName="jetbrains.mps.lang.structure.behavior.LinkDeclaration_Behavior" />
     <classNode dependClassName="jetbrains.mps.smodel.action.SNodeFactoryOperations" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="jetbrains.mps.smodel.behaviour.BehaviorReflection" />
     <classNode dependClassName="jetbrains.mps.util.NameUtil" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
@@ -1754,6 +1810,7 @@
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.HashSet" />
     <classNode dependClassName="java.util.Set" />
+    <classNode dependClassName="java.util.UUID" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISelector" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
@@ -1765,6 +1822,7 @@
     <classNode dependClassName="jetbrains.mps.scope.ModelsScope" />
     <classNode dependClassName="jetbrains.mps.smodel.Language" />
     <classNode dependClassName="jetbrains.mps.smodel.LanguageAspect" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="jetbrains.mps.smodel.behaviour.BehaviorReflection" />
     <classNode dependClassName="jetbrains.mps.util.NameUtil" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
@@ -1796,6 +1854,7 @@
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.StringBuilder" />
     <classNode dependClassName="java.lang.Throwable" />
+    <classNode dependClassName="java.util.UUID" />
     <classNode dependClassName="jetbrains.mps.generator.template.TemplateQueryContext" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.lang.editor.behavior.IStyleContainer_Behavior" />
@@ -1806,6 +1865,7 @@
     <classNode dependClassName="jetbrains.mps.nodeEditor.EditorSettings" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.MPSColors" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.MPSFonts" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="jetbrains.mps.smodel.behaviour.BehaviorReflection" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
@@ -1833,6 +1893,7 @@
     <classNode dependClassName="java.util.Collection" />
     <classNode dependClassName="java.util.HashSet" />
     <classNode dependClassName="java.util.Set" />
+    <classNode dependClassName="java.util.UUID" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.SetSequence" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
@@ -1840,6 +1901,7 @@
     <classNode dependClassName="jetbrains.mps.scope.ModelsScope" />
     <classNode dependClassName="jetbrains.mps.smodel.Language" />
     <classNode dependClassName="jetbrains.mps.smodel.LanguageAspect" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="jetbrains.mps.smodel.behaviour.BehaviorReflection" />
     <classNode dependClassName="jetbrains.mps.util.NameUtil" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
@@ -1851,8 +1913,10 @@
   <dependency className="jetbrains.mps.lang.editor.behavior.EditorComponentDeclaration_Behavior" file="EditorComponentDeclaration_Behavior.java">
     <classNode dependClassName="java.util.HashSet" />
     <classNode dependClassName="java.util.Set" />
+    <classNode dependClassName="java.util.UUID" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.SetSequence" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.lang.editor.behavior.EditorComponentDeclaration_BehaviorDescriptor" file="EditorComponentDeclaration_BehaviorDescriptor.java">
@@ -1968,10 +2032,12 @@
     <classNode dependClassName="java.util.HashSet" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="java.util.Set" />
+    <classNode dependClassName="java.util.UUID" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.SetSequence" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="jetbrains.mps.smodel.behaviour.BehaviorReflection" />
     <classNode dependClassName="jetbrains.mps.util.NameUtil" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
@@ -1985,8 +2051,10 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.editor.behavior.IStyleSheetMember_Behavior" file="IStyleSheetMember_Behavior.java">
     <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.UUID" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.lang.editor.behavior.IStyleSheetMember_BehaviorDescriptor" file="IStyleSheetMember_BehaviorDescriptor.java">
@@ -2005,10 +2073,12 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.editor.behavior.IndentLayoutIndentAnchorStyleClassItem_Behavior" file="IndentLayoutIndentAnchorStyleClassItem_Behavior.java">
     <classNode dependClassName="java.lang.Boolean" />
+    <classNode dependClassName="java.util.UUID" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleAttributes" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.style.StyleAttribute" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.lang.editor.behavior.IndentLayoutIndentAnchorStyleClassItem_BehaviorDescriptor" file="IndentLayoutIndentAnchorStyleClassItem_BehaviorDescriptor.java">
@@ -2103,10 +2173,12 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.editor.behavior.IndentLayoutWrapAnchorStyleClassItem_Behavior" file="IndentLayoutWrapAnchorStyleClassItem_Behavior.java">
     <classNode dependClassName="java.lang.Boolean" />
+    <classNode dependClassName="java.util.UUID" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleAttributes" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.style.StyleAttribute" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.lang.editor.behavior.IndentLayoutWrapAnchorStyleClassItem_BehaviorDescriptor" file="IndentLayoutWrapAnchorStyleClassItem_BehaviorDescriptor.java">
@@ -2120,8 +2192,10 @@
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.lang.editor.behavior.InlineEditorComponent_Behavior" file="InlineEditorComponent_Behavior.java">
+    <classNode dependClassName="java.util.UUID" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.lang.editor.behavior.InlineEditorComponent_BehaviorDescriptor" file="InlineEditorComponent_BehaviorDescriptor.java">
@@ -2330,8 +2404,10 @@
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.lang.editor.behavior.QueryFunction_AttributeStyleParameter_Behavior" file="QueryFunction_AttributeStyleParameter_Behavior.java">
+    <classNode dependClassName="java.util.UUID" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.lang.editor.behavior.QueryFunction_AttributeStyleParameter_BehaviorDescriptor" file="QueryFunction_AttributeStyleParameter_BehaviorDescriptor.java">
@@ -2359,10 +2435,12 @@
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="java.util.UUID" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
     <classNode dependClassName="jetbrains.mps.smodel.SReference" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="jetbrains.mps.smodel.behaviour.BehaviorReflection" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
@@ -2379,8 +2457,10 @@
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.lang.editor.behavior.QueryFunction_Color_Behavior" file="QueryFunction_Color_Behavior.java">
+    <classNode dependClassName="java.util.UUID" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
     <classNode dependClassName="jetbrains.mps.smodel.SReference" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
   </dependency>
@@ -2469,10 +2549,12 @@
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="java.util.UUID" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
     <classNode dependClassName="jetbrains.mps.smodel.SReference" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="jetbrains.mps.smodel.behaviour.BehaviorReflection" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
@@ -2642,11 +2724,13 @@
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="java.util.UUID" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.HUtil" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="jetbrains.mps.smodel.behaviour.BehaviorReflection" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
@@ -2722,12 +2806,14 @@
   <dependency className="jetbrains.mps.lang.editor.behavior.QueryFunction_StyleParameter_Behavior" file="QueryFunction_StyleParameter_Behavior.java">
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="java.util.UUID" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.lang.editor.behavior.StyleClassItem_Behavior" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
     <classNode dependClassName="jetbrains.mps.smodel.SReference" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
   </dependency>
@@ -2788,7 +2874,9 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.editor.behavior.RGBColor_Behavior" file="RGBColor_Behavior.java">
     <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.UUID" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.lang.editor.behavior.RGBColor_BehaviorDescriptor" file="RGBColor_BehaviorDescriptor.java">
@@ -2830,9 +2918,11 @@
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.lang.editor.behavior.ScriptKindClassItem_Behavior" file="ScriptKindClassItem_Behavior.java">
+    <classNode dependClassName="java.util.UUID" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.lang.editor.behavior.ScriptKindClassItem_BehaviorDescriptor" file="ScriptKindClassItem_BehaviorDescriptor.java">
@@ -2846,6 +2936,7 @@
   <dependency className="jetbrains.mps.lang.editor.behavior.SelectInEditorOperation_Behavior" file="SelectInEditorOperation_Behavior.java">
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.UUID" />
     <classNode dependClassName="jetbrains.mps.lang.editor.behavior.EditorCellIdScope" />
     <classNode dependClassName="jetbrains.mps.lang.pattern.IMatchingPattern" />
     <classNode dependClassName="jetbrains.mps.lang.scopes.runtime.SimpleScope" />
@@ -2857,6 +2948,7 @@
     <classNode dependClassName="jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.HUtil" />
     <classNode dependClassName="jetbrains.mps.scope.Scope" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="jetbrains.mps.smodel.behaviour.BehaviorReflection" />
     <classNode dependClassName="jetbrains.mps.typesystem.inference.TypeChecker" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
@@ -3096,9 +3188,11 @@
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.UUID" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.HUtil" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="jetbrains.mps.smodel.behaviour.BehaviorReflection" />
     <classNode dependClassName="jetbrains.mps.typesystem.inference.TypeChecker" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
@@ -3157,6 +3251,7 @@
     <classNode dependClassName="java.util.HashMap" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="java.util.Map" />
+    <classNode dependClassName="java.util.UUID" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISelector" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ITranslator2" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
@@ -3165,6 +3260,7 @@
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.backports.LinkedList" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.lang.editor.behavior.StyleClass_BehaviorDescriptor" file="StyleClass_BehaviorDescriptor.java">
@@ -3193,7 +3289,9 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.editor.behavior.StyleKey_Behavior" file="StyleKey_Behavior.java">
     <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.UUID" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.lang.editor.behavior.StyleKey_BehaviorDescriptor" file="StyleKey_BehaviorDescriptor.java">
@@ -3219,7 +3317,9 @@
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.lang.editor.behavior.StyleSheetClass_Behavior" file="StyleSheetClass_Behavior.java">
+    <classNode dependClassName="java.util.UUID" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.lang.editor.behavior.StyleSheetClass_BehaviorDescriptor" file="StyleSheetClass_BehaviorDescriptor.java">
@@ -3236,9 +3336,11 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.editor.behavior.StyleSheet_Behavior" file="StyleSheet_Behavior.java">
     <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.UUID" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelStereotype" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.lang.editor.behavior.StyleSheet_BehaviorDescriptor" file="StyleSheet_BehaviorDescriptor.java">

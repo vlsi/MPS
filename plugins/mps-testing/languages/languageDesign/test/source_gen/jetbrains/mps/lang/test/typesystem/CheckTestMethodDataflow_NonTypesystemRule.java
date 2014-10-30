@@ -9,13 +9,15 @@ import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.baseLanguage.typesystem.DataFlowUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class CheckTestMethodDataflow_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
   public CheckTestMethodDataflow_NonTypesystemRule() {
   }
   public void applyRule(final SNode nodesTestMethod, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    DataFlowUtil.checkDataFlow(typeCheckingContext, SLinkOperations.getTarget(nodesTestMethod, "body", true));
+    DataFlowUtil.checkDataFlow(typeCheckingContext, SLinkOperations.getTarget(nodesTestMethod, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123132l, 1068580123135l, "body")));
   }
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.lang.test.structure.NodesTestMethod";

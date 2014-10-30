@@ -6,6 +6,8 @@ import jetbrains.mps.refactoring.framework.BaseRefactoring;
 import jetbrains.mps.refactoring.framework.IRefactoringTarget;
 import jetbrains.mps.refactoring.framework.RefactoringContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.ide.findusages.view.FindUtils;
 import jetbrains.mps.progress.EmptyProgressMonitor;
@@ -21,7 +23,7 @@ public class MakeFieldFinal extends BaseRefactoring {
     return "Make Field Final";
   }
   public void refactor(final RefactoringContext refactoringContext) {
-    SPropertyOperations.set(refactoringContext.getSelectedNode(), "isFinal", "" + (true));
+    SPropertyOperations.set(refactoringContext.getSelectedNode(), MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 1068431474542l, 1176718929932l, "isFinal"), "" + (true));
   }
   public SearchResults getAffectedNodes(final RefactoringContext refactoringContext) {
     return FindUtils.getSearchResults(new EmptyProgressMonitor(), refactoringContext.getSelectedNode(), GlobalScope.getInstance(), "jetbrains.mps.baseLanguage.findUsages.FieldUsages_Finder");

@@ -4,6 +4,8 @@ package jetbrains.mps.baseLanguage.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.scope.Scope;
@@ -23,8 +25,8 @@ public class FieldReferenceOperation_Behavior {
   }
   public static String virtual_getVariableExpectedName_1213877410087(SNode thisNode) {
     String expectedName = null;
-    if ((SLinkOperations.getTarget(thisNode, "fieldDeclaration", false) != null)) {
-      expectedName = SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, "fieldDeclaration", false), "name");
+    if ((SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1197029447546l, 1197029500499l, "fieldDeclaration")) != null)) {
+      expectedName = SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1197029447546l, 1197029500499l, "fieldDeclaration")), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"));
     }
     return expectedName;
   }
@@ -45,16 +47,16 @@ public class FieldReferenceOperation_Behavior {
       vars.addAll(Sequence.fromIterable(paramsScope.getAvailableElements(null)).toListSequence());
     }
 
-    SNode field = SLinkOperations.getTarget(thisNode, "fieldDeclaration", false);
+    SNode field = SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1197029447546l, 1197029500499l, "fieldDeclaration"));
     if (field == null) {
       return false;
     }
     for (SNode var : vars) {
-      if (var != null && SNodeOperations.isInstanceOf(var, "jetbrains.mps.lang.core.structure.INamedConcept") && SPropertyOperations.getString(SNodeOperations.cast(var, "jetbrains.mps.lang.core.structure.INamedConcept"), "name").equals(SPropertyOperations.getString(field, "name")) && ListSequence.fromList(SNodeOperations.getAncestors(SNodeOperations.getAncestor(field, "jetbrains.mps.baseLanguage.structure.Classifier", false, false), "jetbrains.mps.baseLanguage.structure.Classifier", true)).contains(SNodeOperations.getAncestor(var, "jetbrains.mps.baseLanguage.structure.Classifier", false, false))) {
+      if (var != null && SNodeOperations.isInstanceOf(var, "jetbrains.mps.lang.core.structure.INamedConcept") && SPropertyOperations.getString(SNodeOperations.cast(var, "jetbrains.mps.lang.core.structure.INamedConcept"), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")).equals(SPropertyOperations.getString(field, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"))) && ListSequence.fromList(SNodeOperations.getAncestors(SNodeOperations.getAncestor(field, "jetbrains.mps.baseLanguage.structure.Classifier", false, false), "jetbrains.mps.baseLanguage.structure.Classifier", true)).contains(SNodeOperations.getAncestor(var, "jetbrains.mps.baseLanguage.structure.Classifier", false, false))) {
         return false;
       }
     }
-    if (SLinkOperations.getTarget(SNodeOperations.cast(IOperation_Behavior.call_getOperand_1213877410070(thisNode), "jetbrains.mps.baseLanguage.structure.ThisExpression"), "classConcept", false) == null) {
+    if (SLinkOperations.getTarget(SNodeOperations.cast(IOperation_Behavior.call_getOperand_1213877410070(thisNode), "jetbrains.mps.baseLanguage.structure.ThisExpression"), MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1070475354124l, 1182955020723l, "classConcept")) == null) {
       return true;
     }
     SNode classifier = ClassConcept_Behavior.call_getContextClass_8008512149545173402(SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassConcept"))), thisNode);
@@ -64,7 +66,7 @@ public class FieldReferenceOperation_Behavior {
     }
     while (classifier != declarationClassifier) {
       for (SNode fieldDeclaration : Members.visibleInstanceFields(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), classifier, "virtual_getThisType_7405920559687254782", new Object[]{}), thisNode)) {
-        if (SPropertyOperations.getString(fieldDeclaration, "name") != null && SPropertyOperations.getString(fieldDeclaration, "name").equals(SPropertyOperations.getString(field, "name"))) {
+        if (SPropertyOperations.getString(fieldDeclaration, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")) != null && SPropertyOperations.getString(fieldDeclaration, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")).equals(SPropertyOperations.getString(field, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")))) {
           return false;
         }
       }
@@ -74,7 +76,7 @@ public class FieldReferenceOperation_Behavior {
   }
   public static void call_convertToLocal_5311267937735269195(SNode thisNode) {
     SNode fieldReference = SNodeOperations.replaceWithNewChild(SNodeOperations.getParent(thisNode), "jetbrains.mps.baseLanguage.structure.VariableReference");
-    SLinkOperations.setTarget(fieldReference, "variableDeclaration", SLinkOperations.getTarget(thisNode, "fieldDeclaration", false), false);
+    SLinkOperations.setTarget(fieldReference, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068498886296l, 1068581517664l, "variableDeclaration"), SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1197029447546l, 1197029500499l, "fieldDeclaration")));
   }
   public static boolean virtual_lvalue_1262430001741498364(SAbstractConcept thisConcept) {
     return true;

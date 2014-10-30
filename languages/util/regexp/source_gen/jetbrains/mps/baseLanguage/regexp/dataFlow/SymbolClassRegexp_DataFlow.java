@@ -7,12 +7,14 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.lang.dataFlow.DataFlowBuilderContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 
 public class SymbolClassRegexp_DataFlow extends DataFlowBuilder {
   public SymbolClassRegexp_DataFlow() {
   }
   public void build(final IOperationContext operationContext, final DataFlowBuilderContext _context) {
-    for (SNode part : SLinkOperations.getTargets(_context.getNode(), "part", true)) {
+    for (SNode part : SLinkOperations.getChildren(_context.getNode(), MetaAdapterFactory.getContainmentLink(new UUID(-2688747624584492277l, -5722269945249396544l), 1174554186090l, 1174557628217l, "part"))) {
       _context.getBuilder().build((SNode) part);
     }
   }

@@ -34,6 +34,8 @@ import jetbrains.mps.project.Project;
 import org.jetbrains.mps.openapi.model.SNodeUtil;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import jetbrains.mps.baseLanguage.search.MethodResolveUtil;
@@ -140,7 +142,7 @@ public class MethodDeclarationsFixer extends EditorCheckerAdapter {
             for (SNode methodCall : reResolvedTargets.keySet()) {
               SNode referent = reResolvedTargets.get(methodCall);
               if (referent != null && SNodeUtil.isAccessible(referent, MPSModuleRepository.getInstance())) {
-                SLinkOperations.setTarget(methodCall, "baseMethodDeclaration", referent, false);
+                SLinkOperations.setTarget(methodCall, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, 1068499141037l, "baseMethodDeclaration"), referent);
               }
             }
           }
@@ -157,7 +159,7 @@ public class MethodDeclarationsFixer extends EditorCheckerAdapter {
     myCachesCleared = true;
   }
   public void testAndFixMethodCall(@NotNull SNode methodCallNode, Map<SNode, SNode> reResolvedTargets) {
-    SNode baseMethodDeclaration = SLinkOperations.getTarget(methodCallNode, "baseMethodDeclaration", false);
+    SNode baseMethodDeclaration = SLinkOperations.getTarget(methodCallNode, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, 1068499141037l, "baseMethodDeclaration"));
     String methodName = getMethodName(methodCallNode);
 
     Tuples._2<SNode, Boolean> resolveResult = MethodResolveUtil.resolveMethod(methodCallNode, methodName);
@@ -188,15 +190,15 @@ public class MethodDeclarationsFixer extends EditorCheckerAdapter {
     }
   }
   private String getMethodName(SNode methodCall) {
-    SNode baseMethodDeclaration = SLinkOperations.getTarget(methodCall, "baseMethodDeclaration", false);
+    SNode baseMethodDeclaration = SLinkOperations.getTarget(methodCall, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, 1068499141037l, "baseMethodDeclaration"));
     if (baseMethodDeclaration == null) {
-      if (SLinkOperations.getTarget(SNodeOperations.as(methodCall, "jetbrains.mps.baseLanguage.structure.AnonymousClass"), "classifier", false) != null) {
-        return SPropertyOperations.getString(SLinkOperations.getTarget(SNodeOperations.as(methodCall, "jetbrains.mps.baseLanguage.structure.AnonymousClass"), "classifier", false), "name");
+      if (SLinkOperations.getTarget(SNodeOperations.as(methodCall, "jetbrains.mps.baseLanguage.structure.AnonymousClass"), MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1170345865475l, 1170346070688l, "classifier")) != null) {
+        return SPropertyOperations.getString(SLinkOperations.getTarget(SNodeOperations.as(methodCall, "jetbrains.mps.baseLanguage.structure.AnonymousClass"), MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1170345865475l, 1170346070688l, "classifier")), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"));
       } else {
         return SLinkOperations.getResolveInfo(SNodeOperations.getReference(methodCall, SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.IMethodCall", "baseMethodDeclaration")));
       }
     } else {
-      return SPropertyOperations.getString(baseMethodDeclaration, "name");
+      return SPropertyOperations.getString(baseMethodDeclaration, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"));
     }
   }
   private void methodDeclarationNameChanged(SNode method, Map<SNode, SNode> resolveTargets) {
@@ -231,7 +233,7 @@ public class MethodDeclarationsFixer extends EditorCheckerAdapter {
   }
   private void methodCallDeclarationChanged(SNode methodCall, Map<SNode, SNode> resolveTargets) {
     SNodeReference methodCallPointer = new SNodePointer(methodCall);
-    if (myCheckedMethodCalls.contains(methodCallPointer) && SLinkOperations.getTarget(methodCall, "baseMethodDeclaration", false) == ((SNodePointer) myMethodCallsToSetDecls.get(methodCallPointer)).resolve(MPSModuleRepository.getInstance())) {
+    if (myCheckedMethodCalls.contains(methodCallPointer) && SLinkOperations.getTarget(methodCall, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, 1068499141037l, "baseMethodDeclaration")) == ((SNodePointer) myMethodCallsToSetDecls.get(methodCallPointer)).resolve(MPSModuleRepository.getInstance())) {
       return;
     }
     testAndFixMethodCall(methodCall, resolveTargets);

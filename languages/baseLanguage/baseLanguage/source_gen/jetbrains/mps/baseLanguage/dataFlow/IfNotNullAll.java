@@ -11,6 +11,8 @@ import jetbrains.mps.lang.dataFlow.framework.Program;
 import java.util.List;
 import jetbrains.mps.lang.dataFlow.framework.instructions.Instruction;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 
 public class IfNotNullAll extends DataFlowConstructor {
@@ -50,12 +52,12 @@ public class IfNotNullAll extends DataFlowConstructor {
               ((Program) (o)).insert(instruction, position, true, before);
             }
           }
-          if (SLinkOperations.getTarget(node, "ifFalseStatement", true) != null) {
+          if (SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123159l, 1082485599094l, "ifFalseStatement")) != null) {
             {
-              Object object = SLinkOperations.getTarget(node, "ifFalseStatement", true);
+              Object object = SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123159l, 1082485599094l, "ifFalseStatement"));
               if (((Program) o).contains(object)) {
                 boolean before = true;
-                int position = ((Program) (o)).getStart(SLinkOperations.getTarget(node, "ifFalseStatement", true));
+                int position = ((Program) (o)).getStart(SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123159l, 1082485599094l, "ifFalseStatement")));
                 Instruction instruction = new nullableInstruction(notNullNode);
                 instruction.setRuleReference("r:00000000-0000-4000-0000-011c895902c2(jetbrains.mps.baseLanguage.dataFlow)/1007191014633107714");
                 instruction.setSource(node);
@@ -63,12 +65,12 @@ public class IfNotNullAll extends DataFlowConstructor {
               }
             }
           }
-          if (ListSequence.fromList(SLinkOperations.getTargets(node, "elsifClauses", true)).isNotEmpty()) {
+          if (ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123159l, 1206060520071l, "elsifClauses"))).isNotEmpty()) {
             {
-              Object object = ListSequence.fromList(SLinkOperations.getTargets(node, "elsifClauses", true)).first();
+              Object object = ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123159l, 1206060520071l, "elsifClauses"))).first();
               if (((Program) o).contains(object)) {
                 boolean before = true;
-                int position = ((Program) (o)).getStart(ListSequence.fromList(SLinkOperations.getTargets(node, "elsifClauses", true)).first());
+                int position = ((Program) (o)).getStart(ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123159l, 1206060520071l, "elsifClauses"))).first());
                 Instruction instruction = new nullableInstruction(notNullNode);
                 instruction.setRuleReference("r:00000000-0000-4000-0000-011c895902c2(jetbrains.mps.baseLanguage.dataFlow)/1007191014633107741");
                 instruction.setSource(node);

@@ -12,6 +12,8 @@ import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.baseLanguage.behavior.Classifier_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
@@ -80,7 +82,7 @@ public class Interface_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private static boolean renderingCondition_4hcgjd_a2a(SNode node, EditorContext editorContext) {
-    return Classifier_Behavior.call_isInner_521412098689998677(node) && !(SPropertyOperations.getBoolean(node, "nonStatic")) && !(SNodeOperations.isInstanceOf(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.Interface"));
+    return Classifier_Behavior.call_isInner_521412098689998677(node) && !(SPropertyOperations.getBoolean(node, MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 1107461130800l, 521412098689998745l, "nonStatic"))) && !(SNodeOperations.isInstanceOf(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.Interface"));
   }
   private EditorCell createConstant_4hcgjd_d0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "interface");
@@ -117,7 +119,7 @@ public class Interface_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private static boolean renderingCondition_4hcgjd_a4a(SNode node, EditorContext editorContext) {
-    return isEmptyString(SPropertyOperations.getString(node, "name"));
+    return isEmptyString(SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")));
   }
   private EditorCell createComponent_4hcgjd_f0(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.baseLanguage.editor._GenericDeclaration_TypeVariables_Component");
@@ -127,7 +129,7 @@ public class Interface_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private static boolean renderingCondition_4hcgjd_a5a(SNode node, EditorContext editorContext) {
-    return ListSequence.fromList(SLinkOperations.getTargets(node, "typeVariableDeclaration", true)).isNotEmpty();
+    return ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1109279851642l, 1109279881614l, "typeVariableDeclaration"))).isNotEmpty();
   }
   private EditorCell createConstant_4hcgjd_g0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "extends");
@@ -141,7 +143,7 @@ public class Interface_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private static boolean renderingCondition_4hcgjd_a6a(SNode node, EditorContext editorContext) {
-    return ListSequence.fromList(SLinkOperations.getTargets(node, "extendedInterface", true)).isNotEmpty();
+    return ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107796713796l, 1107797138135l, "extendedInterface"))).isNotEmpty();
   }
   private EditorCell createRefNodeList_4hcgjd_h0(EditorContext editorContext, SNode node) {
     AbstractCellListHandler handler = new Interface_Editor.extendedInterfaceListHandler_4hcgjd_h0(node, "extendedInterface", editorContext);
@@ -211,7 +213,7 @@ public class Interface_Editor extends DefaultNodeEditor {
     }
   }
   private static boolean renderingCondition_4hcgjd_a7a(SNode node, EditorContext editorContext) {
-    return ListSequence.fromList(SLinkOperations.getTargets(node, "extendedInterface", true)).isNotEmpty();
+    return ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107796713796l, 1107797138135l, "extendedInterface"))).isNotEmpty();
   }
   private EditorCell createCollection_4hcgjd_i0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
@@ -245,10 +247,10 @@ public class Interface_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private static boolean _StyleParameter_QueryFunction_4hcgjd_a0a8a(EditorContext editorContext, SNode node) {
-    return ListSequence.fromList(SLinkOperations.getTargets(node, "member", true)).isNotEmpty();
+    return ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107461130800l, 5375687026011219971l, "member"))).isNotEmpty();
   }
   private static boolean _StyleParameter_QueryFunction_4hcgjd_a1a8a(EditorContext editorContext, SNode node) {
-    return ListSequence.fromList(SLinkOperations.getTargets(node, "member", true)).isEmpty();
+    return ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107461130800l, 5375687026011219971l, "member"))).isEmpty();
   }
   private EditorCell createComponent_4hcgjd_b8a(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.baseLanguage.editor.ClassifierMembers_Component");
@@ -270,7 +272,7 @@ public class Interface_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private static boolean renderingCondition_4hcgjd_a2i0(SNode node, EditorContext editorContext) {
-    return Sequence.fromIterable(Classifier_Behavior.call_members_1465982738252129704(node)).subtract(ListSequence.fromList(SLinkOperations.getTargets(node, "member", true))).isNotEmpty();
+    return Sequence.fromIterable(Classifier_Behavior.call_members_1465982738252129704(node)).subtract(ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107461130800l, 5375687026011219971l, "member")))).isNotEmpty();
   }
   private EditorCell createConstant_4hcgjd_a2i0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");

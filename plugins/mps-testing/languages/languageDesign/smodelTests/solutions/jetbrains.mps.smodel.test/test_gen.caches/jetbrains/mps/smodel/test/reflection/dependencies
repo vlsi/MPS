@@ -6,6 +6,7 @@
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="java.util.UUID" />
     <classNode dependClassName="jetbrains.mps.MPSLaunch" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISelector" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
@@ -16,6 +17,7 @@
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
     <classNode dependClassName="jetbrains.mps.lang.test.runtime.BaseTestBody" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="jetbrains.mps.smodel.test.reflection.TestUtilities" />
     <classNode dependClassName="junit.framework.Assert" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
@@ -25,11 +27,13 @@
   <dependency className="jetbrains.mps.smodel.test.reflection.SNodeGetReferenceOperation_Test" file="SNodeGetReferenceOperation_Test.java">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Throwable" />
+    <classNode dependClassName="java.util.UUID" />
     <classNode dependClassName="jetbrains.mps.MPSLaunch" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
     <classNode dependClassName="jetbrains.mps.lang.test.runtime.BaseTestBody" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="junit.framework.Assert" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SReference" />
@@ -41,6 +45,7 @@
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.Throwable" />
+    <classNode dependClassName="java.util.UUID" />
     <classNode dependClassName="jetbrains.mps.MPSLaunch" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISelector" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IVisitor" />
@@ -50,6 +55,7 @@
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
     <classNode dependClassName="jetbrains.mps.lang.test.runtime.BaseTestBody" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="jetbrains.mps.smodel.references.UnregisteredNodes" />
     <classNode dependClassName="jetbrains.mps.smodel.test.reflection.TestUtilities" />
     <classNode dependClassName="jetbrains.mps.util.SNodeOperations" />

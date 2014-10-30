@@ -7,11 +7,13 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.lang.dataFlow.DataFlowBuilderContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 
 public class AbstractAntiquotation_DataFlow extends DataFlowBuilder {
   public AbstractAntiquotation_DataFlow() {
   }
   public void build(final IOperationContext operationContext, final DataFlowBuilderContext _context) {
-    _context.getBuilder().build((SNode) SLinkOperations.getTarget(_context.getNode(), "expression", true));
+    _context.getBuilder().build((SNode) SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(new UUID(4184707567256882268l, -4914423608129972907l), 1196350785110l, 1196350785111l, "expression")));
   }
 }

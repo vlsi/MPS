@@ -31,6 +31,8 @@ import jetbrains.mps.internal.collections.runtime.IVisitor;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.Arrays;
@@ -109,7 +111,7 @@ public class FindReferencesToNonReferenceable_Action extends BaseAction {
                   SNode ccp = SNodeOperations.as(((SNode) ((jetbrains.mps.smodel.SNode) i).getConceptDeclarationNode()), "jetbrains.mps.lang.structure.structure.ConceptDeclaration");
                   if (ccp != null) {
                     total.value++;
-                    if (!(SPropertyOperations.hasValue(ccp, "staticScope", "none", null))) {
+                    if (!(SPropertyOperations.hasValue(ccp, MetaAdapterFactory.getProperty(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489090640l, 5404671619616246344l, "staticScope"), "none", null))) {
                       referenceable.value++;
                       String cname = BehaviorReflection.invokeVirtual(String.class, ccp, "virtual_getFqName_1213877404258", new Object[]{});
                       if (MapSequence.fromMap(used).containsKey(cname)) {

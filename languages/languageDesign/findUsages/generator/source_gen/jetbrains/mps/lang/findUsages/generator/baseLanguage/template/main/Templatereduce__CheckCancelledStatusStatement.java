@@ -11,6 +11,8 @@ import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.generator.runtime.TemplateExecutionEnvironment;
 import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.generator.runtime.GenerationException;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.smodel.SReference;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import java.util.Collection;
@@ -47,7 +49,7 @@ public class Templatereduce__CheckCancelledStatusStatement implements TemplateDe
             final SNode tnode4 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation");
             try {
               environment.nodeCopied(context, tnode4, "tpl/r:00000000-0000-4000-0000-011c8959035c/1207142363739");
-              tnode4.setReference("baseMethodDeclaration", SReference.create("baseMethodDeclaration", tnode4, PersistenceFacade.getInstance().createModelReference("f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.util(MPS.OpenAPI/org.jetbrains.mps.openapi.util@java_stub)"), PersistenceFacade.getInstance().createNodeId("~ProgressMonitor.isCanceled():boolean")));
+              tnode4.setReference(MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, 1068499141037l, "baseMethodDeclaration"), SReference.create(MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, 1068499141037l, "baseMethodDeclaration"), tnode4, PersistenceFacade.getInstance().createModelReference("f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.util(MPS.OpenAPI/org.jetbrains.mps.openapi.util@java_stub)"), PersistenceFacade.getInstance().createNodeId("~ProgressMonitor.isCanceled():boolean")));
             } finally {
             }
             if (tnode4 != null) {

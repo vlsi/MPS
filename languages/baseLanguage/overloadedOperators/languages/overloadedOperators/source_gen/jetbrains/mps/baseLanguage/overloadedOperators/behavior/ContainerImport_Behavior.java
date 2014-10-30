@@ -4,12 +4,14 @@ package jetbrains.mps.baseLanguage.overloadedOperators.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class ContainerImport_Behavior {
   public static void init(SNode thisNode) {
   }
   public static String virtual_getPresentation_1213877396640(SNode thisNode) {
-    return String.format("Import %s", (SLinkOperations.getTarget(thisNode, "container", false) == null ? "<none>" : SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, "container", false), "name")));
+    return String.format("Import %s", (SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getReferenceLink(new UUID(-248448403205894696l, -5239469005774541060l), 7363434029342207049l, 7363434029342207301l, "container")) == null ? "<none>" : SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getReferenceLink(new UUID(-248448403205894696l, -5239469005774541060l), 7363434029342207049l, 7363434029342207301l, "container")), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"))));
   }
 }

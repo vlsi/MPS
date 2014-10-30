@@ -8,6 +8,8 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -16,11 +18,11 @@ public class typeof_XMLSAXBreakStatement_InferenceRule extends AbstractInference
   public typeof_XMLSAXBreakStatement_InferenceRule() {
   }
   public void applyRule(final SNode stmt, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    if ((SLinkOperations.getTarget(stmt, "result", true) != null)) {
+    if ((SLinkOperations.getTarget(stmt, MetaAdapterFactory.getContainmentLink(new UUID(-2542941447088749313l, -6571881616571970461l), 2264311582634140367l, 2264311582634140369l, "result")) != null)) {
       {
-        SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(stmt, "result", true);
+        SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(stmt, MetaAdapterFactory.getContainmentLink(new UUID(-2542941447088749313l, -6571881616571970461l), 2264311582634140367l, 2264311582634140369l, "result"));
         EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:553bcb75-a1cc-4005-9641-b5a2524d9f6a(jetbrains.mps.core.xml.sax.typesystem)", "2264311582634140565", 0, null);
-        typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:553bcb75-a1cc-4005-9641-b5a2524d9f6a(jetbrains.mps.core.xml.sax.typesystem)", "2264311582634140578", true), (SNode) SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.getAncestor(stmt, "jetbrains.mps.core.xml.sax.structure.XMLSAXParser", true, false), "root", false), "type", true), false, true, _info_12389875345);
+        typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:553bcb75-a1cc-4005-9641-b5a2524d9f6a(jetbrains.mps.core.xml.sax.typesystem)", "2264311582634140578", true), (SNode) SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.getAncestor(stmt, "jetbrains.mps.core.xml.sax.structure.XMLSAXParser", true, false), MetaAdapterFactory.getReferenceLink(new UUID(-2542941447088749313l, -6571881616571970461l), 2264311582634140417l, 2264311582634140419l, "root")), MetaAdapterFactory.getContainmentLink(new UUID(-2542941447088749313l, -6571881616571970461l), 2264311582634140402l, 2264311582634140403l, "type")), false, true, _info_12389875345);
       }
     }
   }

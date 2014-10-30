@@ -6,6 +6,8 @@ import jetbrains.mps.errors.QuickFix_Runtime;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 
 public class FixPrimitiveClassExpressionNotOnPrimitiveType_QuickFix extends QuickFix_Runtime {
   public FixPrimitiveClassExpressionNotOnPrimitiveType_QuickFix() {
@@ -14,13 +16,13 @@ public class FixPrimitiveClassExpressionNotOnPrimitiveType_QuickFix extends Quic
     if (!(SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.PrimitiveClassExpression"))) {
       return;
     }
-    SNode statedType = SLinkOperations.getTarget(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.PrimitiveClassExpression"), "primitiveType", true);
+    SNode statedType = SLinkOperations.getTarget(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.PrimitiveClassExpression"), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 4564374268190696673l, 4564374268190696674l, "primitiveType"));
     if (SNodeOperations.isInstanceOf(statedType, "jetbrains.mps.baseLanguage.structure.ClassifierType")) {
       SNode replacing = SNodeOperations.replaceWithNewChild(node, "jetbrains.mps.baseLanguage.structure.ClassifierClassExpression");
-      SLinkOperations.setTarget(replacing, "classifier", SLinkOperations.getTarget(SNodeOperations.cast(statedType, "jetbrains.mps.baseLanguage.structure.ClassifierType"), "classifier", false), false);
+      SLinkOperations.setTarget(replacing, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1116615150612l, 1116615189566l, "classifier"), SLinkOperations.getTarget(SNodeOperations.cast(statedType, "jetbrains.mps.baseLanguage.structure.ClassifierType"), MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier")));
     } else if (SNodeOperations.isInstanceOf(statedType, "jetbrains.mps.baseLanguage.structure.ArrayType")) {
       SNode replacing = SNodeOperations.replaceWithNewChild(node, "jetbrains.mps.baseLanguage.structure.ArrayClassExpression");
-      SLinkOperations.setTarget(replacing, "arrayType", SNodeOperations.cast(statedType, "jetbrains.mps.baseLanguage.structure.ArrayType"), true);
+      SLinkOperations.setTarget(replacing, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1251851371723515367l, 1251851371723515368l, "arrayType"), SNodeOperations.cast(statedType, "jetbrains.mps.baseLanguage.structure.ArrayType"));
     }
   }
 }

@@ -7,11 +7,13 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.lang.dataFlow.DataFlowBuilderContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 
 public class LinkAttributeQualifier_DataFlow extends DataFlowBuilder {
   public LinkAttributeQualifier_DataFlow() {
   }
   public void build(final IOperationContext operationContext, final DataFlowBuilderContext _context) {
-    _context.getBuilder().build((SNode) SLinkOperations.getTarget(_context.getNode(), "linkQualifier", true));
+    _context.getBuilder().build((SNode) SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(new UUID(8675788371017092295l, -9098312342032910879l), 6407023681583036855l, 6407023681583038098l, "linkQualifier")));
   }
 }

@@ -22,6 +22,8 @@ import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_ReplaceNode_Group;
 import java.util.List;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import org.jetbrains.mps.openapi.model.SModel;
 
 public class EnumValuesExpression_Editor extends DefaultNodeEditor {
@@ -110,13 +112,13 @@ public class EnumValuesExpression_Editor extends DefaultNodeEditor {
     public EnumValuesExpression_customReplace_cellMenu_igwct4_a0c0() {
     }
     public List<?> createParameterObjects(SNode node, IOperationContext operationContext, EditorContext editorContext) {
-      return QueriesUtil.replaceNodeMenu_parameterObjects(SLinkOperations.getTarget(node, "enumClass", false), node);
+      return QueriesUtil.replaceNodeMenu_parameterObjects(SLinkOperations.getTarget(node, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1224573963862l, 1224573974191l, "enumClass")), node);
     }
     public SNode createReplacementNode(Object parameterObject, SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
       return createReplacementNode_impl((SNode) parameterObject, node, model, operationContext, editorContext);
     }
     public SNode createReplacementNode_impl(SNode parameterObject, SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
-      return QueriesUtil.replaceNodeMenu_createNewNode(SLinkOperations.getTarget(node, "enumClass", false), parameterObject, node);
+      return QueriesUtil.replaceNodeMenu_createNewNode(SLinkOperations.getTarget(node, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1224573963862l, 1224573974191l, "enumClass")), parameterObject, node);
     }
     public boolean isReferentPresentation() {
       return true;

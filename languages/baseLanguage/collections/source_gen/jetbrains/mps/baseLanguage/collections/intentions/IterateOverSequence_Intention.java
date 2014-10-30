@@ -15,6 +15,8 @@ import jetbrains.mps.smodel.SNodePointer;
 import java.util.Collections;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.intentions.IntentionDescriptor;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -74,11 +76,11 @@ public class IterateOverSequence_Intention implements IntentionFactory {
       SNode outerStatement = SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.Statement", false, false);
       boolean deleteStatement = SNodeOperations.isInstanceOf(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.ExpressionStatement");
       SNodeOperations.insertNextSiblingChild(outerStatement, forStatement);
-      SLinkOperations.setTarget(forStatement, "inputSequence", node, true);
+      SLinkOperations.setTarget(forStatement, MetaAdapterFactory.getContainmentLink(new UUID(-8968771020793164004l, -7182180101671965361l), 1153943597977l, 1153944424730l, "inputSequence"), node);
       if (deleteStatement) {
         SNodeOperations.deleteNode(outerStatement);
       }
-      editorContext.select(SLinkOperations.getTarget(forStatement, "variable", true));
+      editorContext.select(SLinkOperations.getTarget(forStatement, MetaAdapterFactory.getContainmentLink(new UUID(-8968771020793164004l, -7182180101671965361l), 1153943597977l, 1153944400369l, "variable")));
     }
     public IntentionDescriptor getDescriptor() {
       return IterateOverSequence_Intention.this;

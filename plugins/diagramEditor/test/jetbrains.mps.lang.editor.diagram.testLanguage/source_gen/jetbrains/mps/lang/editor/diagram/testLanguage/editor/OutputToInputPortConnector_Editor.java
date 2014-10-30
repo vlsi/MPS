@@ -24,6 +24,8 @@ import jetbrains.mps.lang.editor.diagram.runtime.jetpad.views.ConnectorDecorator
 import jetbrains.jetpad.model.property.ReadableProperty;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 
 public class OutputToInputPortConnector_Editor extends DefaultNodeEditor {
@@ -153,8 +155,8 @@ public class OutputToInputPortConnector_Editor extends DefaultNodeEditor {
 
 
     public void synchronize() {
-      myInputPort.set(MultiTuple.<SNode>from(SLinkOperations.getTarget(getSNode(), "src", false)));
-      myOutputPort.set(MultiTuple.<SNode>from(SLinkOperations.getTarget(getSNode(), "dst", false)));
+      myInputPort.set(MultiTuple.<SNode>from(SLinkOperations.getTarget(getSNode(), MetaAdapterFactory.getReferenceLink(new UUID(361801763181709765l, -5122951994527979137l), 5540569706413451931l, 5540569706413452892l, "src"))));
+      myOutputPort.set(MultiTuple.<SNode>from(SLinkOperations.getTarget(getSNode(), MetaAdapterFactory.getReferenceLink(new UUID(361801763181709765l, -5122951994527979137l), 5540569706413451931l, 5540569706413452907l, "dst"))));
     }
     private PolyLineConnection createConnection() {
       PolyLineConnection connection = new PolyLineConnection();

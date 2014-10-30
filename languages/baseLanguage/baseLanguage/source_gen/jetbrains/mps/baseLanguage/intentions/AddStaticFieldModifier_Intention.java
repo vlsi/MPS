@@ -12,6 +12,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
 import java.util.Collections;
@@ -58,7 +60,7 @@ public class AddStaticFieldModifier_Intention implements IntentionFactory {
         return SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.VariableReference");
       }
     })) {
-      if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SNodeOperations.cast(variableReference, "jetbrains.mps.baseLanguage.structure.VariableReference"), "variableDeclaration", false), "jetbrains.mps.baseLanguage.structure.FieldDeclaration")) {
+      if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SNodeOperations.cast(variableReference, "jetbrains.mps.baseLanguage.structure.VariableReference"), MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068498886296l, 1068581517664l, "variableDeclaration")), "jetbrains.mps.baseLanguage.structure.FieldDeclaration")) {
         return false;
       }
     }
@@ -84,13 +86,13 @@ public class AddStaticFieldModifier_Intention implements IntentionFactory {
     }
     public void execute(final SNode node, final EditorContext editorContext) {
       final SNode field = SNodeFactoryOperations.insertNewNextSiblingChild(node, "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration");
-      SLinkOperations.setTarget(field, "type", SLinkOperations.getTarget(node, "type", true), true);
-      SLinkOperations.setTarget(field, "visibility", SLinkOperations.getTarget(node, "visibility", true), true);
-      SLinkOperations.setTarget(field, "initializer", SLinkOperations.getTarget(node, "initializer", true), true);
-      SPropertyOperations.set(field, "isDeprecated", "" + (SPropertyOperations.getBoolean(node, "isDeprecated")));
-      SPropertyOperations.set(field, "name", SPropertyOperations.getString(node, "name"));
-      SPropertyOperations.set(field, "isFinal", "" + (SPropertyOperations.getBoolean(node, "isFinal")));
-      ListSequence.fromList(SLinkOperations.getTargets(field, "annotation", true)).addSequence(ListSequence.fromList(SLinkOperations.getTargets(node, "annotation", true)));
+      SLinkOperations.setTarget(field, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 4972933694980447171l, 5680397130376446158l, "type"), SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 4972933694980447171l, 5680397130376446158l, "type")));
+      SLinkOperations.setTarget(field, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1178549954367l, 1178549979242l, "visibility"), SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1178549954367l, 1178549979242l, "visibility")));
+      SLinkOperations.setTarget(field, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068431474542l, 1068431790190l, "initializer"), SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068431474542l, 1068431790190l, "initializer")));
+      SPropertyOperations.set(field, MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 1224848483129l, 1224848525476l, "isDeprecated"), "" + (SPropertyOperations.getBoolean(node, MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 1224848483129l, 1224848525476l, "isDeprecated"))));
+      SPropertyOperations.set(field, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"), SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")));
+      SPropertyOperations.set(field, MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 1068431474542l, 1176718929932l, "isFinal"), "" + (SPropertyOperations.getBoolean(node, MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 1068431474542l, 1176718929932l, "isFinal"))));
+      ListSequence.fromList(SLinkOperations.getChildren(field, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1188208481402l, 1188208488637l, "annotation"))).addSequence(ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1188208481402l, 1188208488637l, "annotation"))));
       AttributeOperations.setAttribute(field, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.baseLanguage.javadoc.structure.FieldDocComment"), AttributeOperations.getAttribute(node, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.baseLanguage.javadoc.structure.FieldDocComment")));
       SNodeOperations.deleteNode(node);
       editorContext.selectWRTFocusPolicy(field);

@@ -18,6 +18,8 @@ import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.ide.platform.refactoring.StringChooserDialog;
 import org.jetbrains.mps.openapi.model.SNodeUtil;
 import jetbrains.mps.smodel.MPSModuleRepository;
@@ -83,7 +85,7 @@ public class ConvertAnonymousClass_Action extends BaseAction {
       final Wrappers._T<String> classifierName = new Wrappers._T<String>();
       modelAccess.runReadAction(new Runnable() {
         public void run() {
-          classifierName.value = SPropertyOperations.getString(SLinkOperations.getTarget(((SNode) MapSequence.fromMap(_params).get("target")), "classifier", false), "name");
+          classifierName.value = SPropertyOperations.getString(SLinkOperations.getTarget(((SNode) MapSequence.fromMap(_params).get("target")), MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1170345865475l, 1170346070688l, "classifier")), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"));
         }
       });
 

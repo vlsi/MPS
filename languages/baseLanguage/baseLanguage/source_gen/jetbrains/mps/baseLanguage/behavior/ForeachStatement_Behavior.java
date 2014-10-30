@@ -7,11 +7,13 @@ import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 
 public class ForeachStatement_Behavior {
   public static void init(SNode thisNode) {
   }
   public static List<SNode> virtual_getScopeVariables_5067982036267369894(SNode thisNode) {
-    return ListSequence.fromListAndArray(new ArrayList<SNode>(), SLinkOperations.getTarget(thisNode, "variable", true));
+    return ListSequence.fromListAndArray(new ArrayList<SNode>(), SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1144230876926l, 1144230900587l, "variable")));
   }
 }

@@ -5,6 +5,7 @@ package jetbrains.mps.console.base.constraints;
 import jetbrains.mps.smodel.runtime.ConstraintsDescriptor;
 import java.util.Arrays;
 import jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor;
+import jetbrains.mps.smodel.adapter.ids.SConceptId;
 
 public class ConstraintsAspectDescriptor implements jetbrains.mps.smodel.runtime.ConstraintsAspectDescriptor {
   public ConstraintsAspectDescriptor() {
@@ -20,9 +21,24 @@ public class ConstraintsAspectDescriptor implements jetbrains.mps.smodel.runtime
       case 1:
         return new HelpConceptReference_Constraints();
       default:
-        // todo: illegal in some cases? 
         return new BaseConstraintsDescriptor(fqName);
     }
+  }
+  public ConstraintsDescriptor getDescriptor(SConceptId conceptId) {
+    long id = conceptId.getConceptId();
+    if (id == 351968380916615243l) {
+      return new CommandHolder_Constraints();
+    }
+    if (id == 2348043250036118117l) {
+      return new NodeReferenceString_Constraints();
+    }
+    if (id == 5842059399443118718l) {
+      return new PastedNodeReference_Constraints();
+    }
+    if (id == 6928665434433761801l) {
+      return new HelpConceptReference_Constraints();
+    }
+    return new BaseConstraintsDescriptor(conceptId);
   }
   private static String[] stringSwitchCases_2qnle6_a0a0b = new String[]{"jetbrains.mps.console.base.structure.CommandHolder", "jetbrains.mps.console.base.structure.HelpConceptReference", "jetbrains.mps.console.base.structure.NodeReferenceString", "jetbrains.mps.console.base.structure.PastedNodeReference"};
 }

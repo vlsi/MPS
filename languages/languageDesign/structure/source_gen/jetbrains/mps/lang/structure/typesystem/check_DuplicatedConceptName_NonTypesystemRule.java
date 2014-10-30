@@ -8,6 +8,8 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -22,13 +24,13 @@ public class check_DuplicatedConceptName_NonTypesystemRule extends AbstractNonTy
   public check_DuplicatedConceptName_NonTypesystemRule() {
   }
   public void applyRule(final SNode conceptDeclaration, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    final String name = SPropertyOperations.getString(conceptDeclaration, "name");
+    final String name = SPropertyOperations.getString(conceptDeclaration, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"));
     if ((name == null || name.length() == 0)) {
       return;
     }
     if (ListSequence.fromList(SModelOperations.getRoots(SNodeOperations.getModel(conceptDeclaration), "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration")).any(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return it != conceptDeclaration && SPropertyOperations.hasValue(it, "name", name);
+        return it != conceptDeclaration && SPropertyOperations.hasValue(it, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"), name);
       }
     })) {
       {

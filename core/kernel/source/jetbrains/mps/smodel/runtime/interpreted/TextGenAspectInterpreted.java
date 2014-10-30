@@ -19,6 +19,7 @@ import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.smodel.SNodeUtil;
+import jetbrains.mps.smodel.language.ConceptRegistry;
 import jetbrains.mps.smodel.runtime.TextGenAspectDescriptor;
 import jetbrains.mps.smodel.runtime.TextGenDescriptor;
 import jetbrains.mps.smodel.runtime.impl.SNodeTextGenAdapter;
@@ -37,7 +38,7 @@ public class TextGenAspectInterpreted implements TextGenAspectDescriptor {
   @Nullable
   @Override
   public TextGenDescriptor getDescriptor(@NotNull SConcept concept) {
-    SConcept baseConcept = SConceptRepository.getInstance().getInstanceConcept(SNodeUtil.concept_BaseConcept);
+    SConcept baseConcept = SConceptRepository.getInstance().getInstanceConcept(SNodeUtil.conceptName_BaseConcept);
     SConcept c = concept;
     while(c != null && !c.equals(baseConcept)) {
       String languageName = c.getLanguage().getQualifiedName();

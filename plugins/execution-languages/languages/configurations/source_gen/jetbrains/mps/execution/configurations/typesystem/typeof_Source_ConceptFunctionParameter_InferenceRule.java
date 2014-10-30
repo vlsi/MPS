@@ -11,6 +11,8 @@ import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 
 public class typeof_Source_ConceptFunctionParameter_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
   public typeof_Source_ConceptFunctionParameter_InferenceRule() {
@@ -36,7 +38,7 @@ public class typeof_Source_ConceptFunctionParameter_InferenceRule extends Abstra
   }
   private static SNode check_b03dtm_a0a0a1(SNode checkedDotOperand) {
     if (null != checkedDotOperand) {
-      return SLinkOperations.getTarget(checkedDotOperand, "source", true);
+      return SLinkOperations.getTarget(checkedDotOperand, MetaAdapterFactory.getContainmentLink(new UUID(2515029821120661198l, -8934183642121722347l), 4366236229294149030l, 7301162575811113551l, "source"));
     }
     return null;
   }

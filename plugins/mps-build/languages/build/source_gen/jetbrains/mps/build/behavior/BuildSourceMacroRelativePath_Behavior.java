@@ -5,16 +5,18 @@ package jetbrains.mps.build.behavior;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.build.util.Context;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class BuildSourceMacroRelativePath_Behavior {
   public static void init(SNode thisNode) {
   }
   public static String virtual_getBasePath_4959435991187140515(SNode thisNode, Context context) {
-    return BuildFolderMacro_Behavior.call_evaluate_4959435991187146982(SLinkOperations.getTarget(thisNode, "macro", false), context);
+    return BuildFolderMacro_Behavior.call_evaluate_4959435991187146982(SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getReferenceLink(new UUID(8755280088213897754l, -5075149991798053422l), 7389400916848153117l, 7389400916848153130l, "macro")), context);
   }
   public static String virtual_getRelativePath_5481553824944787371(SNode thisNode) {
     String tail = BuildRelativePath_Behavior.call_getPathTail_1258644073389171001(thisNode);
-    return ((tail == null || tail.length() == 0) ? "${" + SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, "macro", false), "name") + "}" : "${" + SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, "macro", false), "name") + "}/" + tail);
+    return ((tail == null || tail.length() == 0) ? "${" + SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getReferenceLink(new UUID(8755280088213897754l, -5075149991798053422l), 7389400916848153117l, 7389400916848153130l, "macro")), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")) + "}" : "${" + SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getReferenceLink(new UUID(8755280088213897754l, -5075149991798053422l), 7389400916848153117l, 7389400916848153130l, "macro")), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")) + "}/" + tail);
   }
 }

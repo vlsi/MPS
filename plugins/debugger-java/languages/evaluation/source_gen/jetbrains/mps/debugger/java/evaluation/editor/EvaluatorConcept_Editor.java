@@ -11,6 +11,8 @@ import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Indent;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
@@ -58,7 +60,7 @@ public class EvaluatorConcept_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private static boolean renderingCondition_6rl195_a0a(SNode node, EditorContext editorContext) {
-    return SPropertyOperations.getBoolean(node, "isShowContext");
+    return SPropertyOperations.getBoolean(node, MetaAdapterFactory.getProperty(new UUID(9053457975011001859l, -9123640110572141707l), 6036237525966182693l, 6036237525966243739l, "isShowContext"));
   }
   private EditorCell createConstant_6rl195_a0a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "context");

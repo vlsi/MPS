@@ -13,6 +13,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.smodel.action.NodeSubstitutePreconditionContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class QueriesGenerated {
@@ -27,6 +29,6 @@ public class QueriesGenerated {
     return result;
   }
   public static boolean nodeSubstituteActionsBuilder_Precondition_InternalClassifierType_4672968395964803374(final IOperationContext operationContext, final NodeSubstitutePreconditionContext _context) {
-    return SNodeOperations.isInstanceOf(_context.getParentNode(), "jetbrains.mps.baseLanguage.structure.ClassConcept") && (SPropertyOperations.hasValue(_context.getLink(), "role", SPropertyOperations.getString(SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.ClassConcept", "superclass"), "role")) || SPropertyOperations.hasValue(_context.getLink(), "role", SPropertyOperations.getString(SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.ClassConcept", "implementedInterface"), "role"))) || SNodeOperations.isInstanceOf(_context.getParentNode(), "jetbrains.mps.baseLanguage.structure.Interface") && SPropertyOperations.hasValue(_context.getLink(), "role", SPropertyOperations.getString(SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.Interface", "extendedInterface"), "role"));
+    return SNodeOperations.isInstanceOf(_context.getParentNode(), "jetbrains.mps.baseLanguage.structure.ClassConcept") && (SPropertyOperations.hasValue(_context.getLink(), MetaAdapterFactory.getProperty(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489288298l, 1071599776563l, "role"), SPropertyOperations.getString(SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.ClassConcept", "superclass"), MetaAdapterFactory.getProperty(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489288298l, 1071599776563l, "role"))) || SPropertyOperations.hasValue(_context.getLink(), MetaAdapterFactory.getProperty(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489288298l, 1071599776563l, "role"), SPropertyOperations.getString(SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.ClassConcept", "implementedInterface"), MetaAdapterFactory.getProperty(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489288298l, 1071599776563l, "role")))) || SNodeOperations.isInstanceOf(_context.getParentNode(), "jetbrains.mps.baseLanguage.structure.Interface") && SPropertyOperations.hasValue(_context.getLink(), MetaAdapterFactory.getProperty(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489288298l, 1071599776563l, "role"), SPropertyOperations.getString(SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.Interface", "extendedInterface"), MetaAdapterFactory.getProperty(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489288298l, 1071599776563l, "role")));
   }
 }

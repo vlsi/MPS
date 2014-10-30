@@ -14,6 +14,8 @@ import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.smodel.action.DefaultSimpleSubstituteAction;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class QueriesGenerated {
@@ -26,17 +28,17 @@ public class QueriesGenerated {
         ListSequence.fromList(result).addElement(new DefaultSimpleSubstituteAction(outputConcept, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter()) {
           public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
             SNode fpConstant = SConceptOperations.createNewNode("jetbrains.mps.samples.formulaLanguage.structure.FloatingPointConstant", null);
-            SPropertyOperations.set(fpConstant, "value", "0.0");
+            SPropertyOperations.set(fpConstant, MetaAdapterFactory.getProperty(new UUID(-5644773642485741678l, -8401387723420530422l), 1111784926012l, 1113257000626l, "value"), "0.0");
             if (pattern.length() > 1) {
               if (pattern.endsWith(".")) {
-                SPropertyOperations.set(fpConstant, "value", pattern.substring(1) + "0");
+                SPropertyOperations.set(fpConstant, MetaAdapterFactory.getProperty(new UUID(-5644773642485741678l, -8401387723420530422l), 1111784926012l, 1113257000626l, "value"), pattern.substring(1) + "0");
               } else {
-                SPropertyOperations.set(fpConstant, "value", pattern.substring(1));
+                SPropertyOperations.set(fpConstant, MetaAdapterFactory.getProperty(new UUID(-5644773642485741678l, -8401387723420530422l), 1111784926012l, 1113257000626l, "value"), pattern.substring(1));
               }
             }
             SNode quantity = SConceptOperations.createNewNode("jetbrains.mps.samples.agreementLanguage.structure.Quantity", null);
-            SPropertyOperations.set(quantity, "unit", "USD");
-            SLinkOperations.setTarget(quantity, "amount", fpConstant, true);
+            SPropertyOperations.set(quantity, MetaAdapterFactory.getProperty(new UUID(1463511629799179198l, -4743614238981921533l), 1111792102248l, 1111793358083l, "unit"), "USD");
+            SLinkOperations.setTarget(quantity, MetaAdapterFactory.getContainmentLink(new UUID(1463511629799179198l, -4743614238981921533l), 1111792102248l, 1111793363741l, "amount"), fpConstant);
             return quantity;
           }
           public boolean hasSubstitute() {
@@ -65,13 +67,13 @@ public class QueriesGenerated {
           public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
             SNode fpConstant = SConceptOperations.createNewNode("jetbrains.mps.samples.formulaLanguage.structure.FloatingPointConstant", null);
             if (pattern.endsWith(".")) {
-              SPropertyOperations.set(fpConstant, "value", pattern + 1);
+              SPropertyOperations.set(fpConstant, MetaAdapterFactory.getProperty(new UUID(-5644773642485741678l, -8401387723420530422l), 1111784926012l, 1113257000626l, "value"), pattern + 1);
             } else {
-              SPropertyOperations.set(fpConstant, "value", pattern);
+              SPropertyOperations.set(fpConstant, MetaAdapterFactory.getProperty(new UUID(-5644773642485741678l, -8401387723420530422l), 1111784926012l, 1113257000626l, "value"), pattern);
             }
             SNode quantity = SConceptOperations.createNewNode("jetbrains.mps.samples.agreementLanguage.structure.Quantity", null);
-            SPropertyOperations.set(quantity, "unit", "USD_KWH");
-            SLinkOperations.setTarget(quantity, "amount", fpConstant, true);
+            SPropertyOperations.set(quantity, MetaAdapterFactory.getProperty(new UUID(1463511629799179198l, -4743614238981921533l), 1111792102248l, 1111793358083l, "unit"), "USD_KWH");
+            SLinkOperations.setTarget(quantity, MetaAdapterFactory.getContainmentLink(new UUID(1463511629799179198l, -4743614238981921533l), 1111792102248l, 1111793363741l, "amount"), fpConstant);
             return quantity;
           }
           public boolean hasSubstitute() {

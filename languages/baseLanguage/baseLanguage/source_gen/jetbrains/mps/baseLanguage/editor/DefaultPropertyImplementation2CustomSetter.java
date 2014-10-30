@@ -8,6 +8,8 @@ import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.editor.runtime.cells.AbstractCellAction;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 
 public class DefaultPropertyImplementation2CustomSetter {
   public static void setCellActions(EditorCell editorCell, SNode node, EditorContext context) {
@@ -25,7 +27,7 @@ public class DefaultPropertyImplementation2CustomSetter {
     }
     public void execute_internal(EditorContext editorContext, SNode node) {
       SNode replaceWithNewInitialized = SNodeFactoryOperations.replaceWithNewChild(node, "jetbrains.mps.baseLanguage.structure.CustomSetterPropertyImplementation");
-      SNodeFactoryOperations.setNewChild(replaceWithNewInitialized, "setAccessor", "jetbrains.mps.baseLanguage.structure.SetAccessor");
+      SNodeFactoryOperations.setNewChild(replaceWithNewInitialized, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 4285773203949551198l, 4285773203949552005l, "setAccessor"), "jetbrains.mps.baseLanguage.structure.SetAccessor");
     }
   }
   public static class DefaultPropertyImplementation2CustomSetter_DELETE extends AbstractCellAction {

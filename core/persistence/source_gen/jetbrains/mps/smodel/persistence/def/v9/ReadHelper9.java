@@ -24,7 +24,7 @@ import jetbrains.mps.smodel.runtime.ConceptKind;
 import jetbrains.mps.smodel.runtime.StaticScope;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import org.apache.log4j.Level;
-import java.util.UUID;
+import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 import jetbrains.mps.smodel.adapter.ids.SContainmentLinkId;
 import jetbrains.mps.smodel.adapter.ids.SReferenceLinkId;
 import jetbrains.mps.smodel.adapter.ids.SPropertyId;
@@ -163,14 +163,14 @@ public class ReadHelper9 {
       if (LOG.isEnabledFor(Level.ERROR)) {
         LOG.error("Broken reference to type=" + s + " in model " + myModelRef);
       }
-      return new SConceptId(new SLanguageId(new UUID(0, 0)), 0);
+      return MetaIdFactory.INVALID_CONCEPT_ID;
     }
     SLanguageId langId = MapSequence.fromMap(myLanguageByIx).get(s.substring(0, ix));
     if (langId == null) {
       if (LOG.isEnabledFor(Level.ERROR)) {
         LOG.error("couldn't create node '" + s.substring(ix + 1) + "' : import for index [" + s.substring(0, ix) + "] not found");
       }
-      return new SConceptId(new SLanguageId(new UUID(0, 0)), 0);
+      return MetaIdFactory.INVALID_CONCEPT_ID;
     } else {
       return new SConceptId(langId, Long.parseLong(s.substring(ix + 1)));
     }

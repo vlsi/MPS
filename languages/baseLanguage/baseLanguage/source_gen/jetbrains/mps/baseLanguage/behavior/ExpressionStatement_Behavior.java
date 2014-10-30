@@ -6,6 +6,8 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 
 public class ExpressionStatement_Behavior {
@@ -25,14 +27,14 @@ public class ExpressionStatement_Behavior {
     }
     // statement 'a.b()' where b returns void can't produce return valur 
     SNode methodCall = null;
-    SNode expression = SLinkOperations.getTarget(thisNode, "expression", true);
+    SNode expression = SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123155l, 1068580123156l, "expression"));
     if (SNodeOperations.isInstanceOf(expression, "jetbrains.mps.baseLanguage.structure.IMethodCall")) {
       methodCall = SNodeOperations.cast(expression, "jetbrains.mps.baseLanguage.structure.IMethodCall");
-    } else if (SNodeOperations.isInstanceOf(expression, "jetbrains.mps.baseLanguage.structure.DotExpression") && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SNodeOperations.cast(expression, "jetbrains.mps.baseLanguage.structure.DotExpression"), "operation", true), "jetbrains.mps.baseLanguage.structure.IMethodCall")) {
-      SNode operation = SLinkOperations.getTarget(SNodeOperations.cast(expression, "jetbrains.mps.baseLanguage.structure.DotExpression"), "operation", true);
+    } else if (SNodeOperations.isInstanceOf(expression, "jetbrains.mps.baseLanguage.structure.DotExpression") && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SNodeOperations.cast(expression, "jetbrains.mps.baseLanguage.structure.DotExpression"), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1197027756228l, 1197027833540l, "operation")), "jetbrains.mps.baseLanguage.structure.IMethodCall")) {
+      SNode operation = SLinkOperations.getTarget(SNodeOperations.cast(expression, "jetbrains.mps.baseLanguage.structure.DotExpression"), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1197027756228l, 1197027833540l, "operation"));
       methodCall = SNodeOperations.cast(operation, "jetbrains.mps.baseLanguage.structure.IMethodCall");
     }
-    if (methodCall != null && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SLinkOperations.getTarget(methodCall, "baseMethodDeclaration", false), "returnType", true), "jetbrains.mps.baseLanguage.structure.VoidType")) {
+    if (methodCall != null && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SLinkOperations.getTarget(methodCall, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, 1068499141037l, "baseMethodDeclaration")), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123132l, 1068580123133l, "returnType")), "jetbrains.mps.baseLanguage.structure.VoidType")) {
       return false;
     }
     // 
@@ -45,17 +47,17 @@ public class ExpressionStatement_Behavior {
     // check if body ends with if and this statement completes this if 
     if (SNodeOperations.isInstanceOf(lastStatement, "jetbrains.mps.baseLanguage.structure.IfStatement") && SNodeOperations.getAncestor(thisNode, "jetbrains.mps.baseLanguage.structure.IfStatement", false, false) == lastStatement) {
       SNode ifStmt = SNodeOperations.cast(lastStatement, "jetbrains.mps.baseLanguage.structure.IfStatement");
-      if (ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(ifStmt, "ifTrue", true), "statement", true)).last() == thisNode || SLinkOperations.getTarget(ifStmt, "ifFalseStatement", true) == thisNode) {
+      if (ListSequence.fromList(SLinkOperations.getChildren(SLinkOperations.getTarget(ifStmt, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123159l, 1068580123161l, "ifTrue")), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123136l, 1068581517665l, "statement"))).last() == thisNode || SLinkOperations.getTarget(ifStmt, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123159l, 1082485599094l, "ifFalseStatement")) == thisNode) {
         return true;
       }
-      if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(ifStmt, "ifFalseStatement", true), "jetbrains.mps.baseLanguage.structure.BlockStatement")) {
-        SNode elseBlock = SNodeOperations.cast(SLinkOperations.getTarget(ifStmt, "ifFalseStatement", true), "jetbrains.mps.baseLanguage.structure.BlockStatement");
-        if (ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(elseBlock, "statements", true), "statement", true)).last() == thisNode) {
+      if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(ifStmt, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123159l, 1082485599094l, "ifFalseStatement")), "jetbrains.mps.baseLanguage.structure.BlockStatement")) {
+        SNode elseBlock = SNodeOperations.cast(SLinkOperations.getTarget(ifStmt, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123159l, 1082485599094l, "ifFalseStatement")), "jetbrains.mps.baseLanguage.structure.BlockStatement");
+        if (ListSequence.fromList(SLinkOperations.getChildren(SLinkOperations.getTarget(elseBlock, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1082485599095l, 1082485599096l, "statements")), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123136l, 1068581517665l, "statement"))).last() == thisNode) {
           return true;
         }
       }
-      for (SNode elsif : SLinkOperations.getTargets(ifStmt, "elsifClauses", true)) {
-        if (ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(elsif, "statementList", true), "statement", true)).last() == thisNode) {
+      for (SNode elsif : SLinkOperations.getChildren(ifStmt, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123159l, 1206060520071l, "elsifClauses"))) {
+        if (ListSequence.fromList(SLinkOperations.getChildren(SLinkOperations.getTarget(elsif, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1206060495898l, 1206060644605l, "statementList")), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123136l, 1068581517665l, "statement"))).last() == thisNode) {
           return true;
         }
       }

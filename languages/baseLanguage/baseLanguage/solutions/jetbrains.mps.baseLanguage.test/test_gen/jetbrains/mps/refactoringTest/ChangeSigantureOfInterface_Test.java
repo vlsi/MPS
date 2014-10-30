@@ -9,6 +9,8 @@ import jetbrains.mps.lang.test.runtime.BaseTestBody;
 import jetbrains.mps.baseLanguage.util.plugin.refactorings.ChangeMethodSignatureParameters;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.baseLanguage.util.plugin.refactorings.ChangeMethodSignatureRefactoring;
 import java.util.List;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -31,7 +33,7 @@ public class ChangeSigantureOfInterface_Test extends BaseTransformationTest {
       this.addNodeById("418758558327019466");
       this.addNodeById("418758558327028811");
       ChangeMethodSignatureParameters parameters = new ChangeMethodSignatureParameters(SNodeOperations.cast(this.getNodeById("418758558327019496"), "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration"));
-      SPropertyOperations.set(parameters.getDeclaration(), "name", "myMethod");
+      SPropertyOperations.set(parameters.getDeclaration(), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"), "myMethod");
       ChangeMethodSignatureRefactoring ref = new ChangeMethodSignatureRefactoring(parameters, SNodeOperations.cast(this.getNodeById("418758558327028802"), "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration"));
       ref.doRefactoring();
       {

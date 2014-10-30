@@ -5,6 +5,8 @@ package jetbrains.mps.build.mps.behavior;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.build.util.DependenciesHelper;
 import org.jetbrains.mps.openapi.language.SConceptRepository;
@@ -22,7 +24,7 @@ public class BuildMpsLayout_PluginDescriptor_Behavior {
       // todo (in 3.0+) plugin should be exported by folder, not by xml 
       // weeeeell? 
       if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.build.mps.structure.BuildMps_IdeaPlugin")) {
-        return SLinkOperations.getTarget(thisNode, "plugin", false) == node;
+        return SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getReferenceLink(new UUID(934837630734519964l, -6831122735637083229l), 6592112598314795900l, 6592112598314795901l, "plugin")) == node;
       }
     }
     return BehaviorReflection.invokeSuper(Boolean.TYPE, thisNode, "jetbrains.mps.build.structure.BuildLayout_Node", "virtual_exports_6547494638219603457", new Object[]{artifactId});

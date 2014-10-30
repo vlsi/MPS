@@ -9,6 +9,8 @@ import jetbrains.mps.intentions.IntentionType;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
 import java.util.Collections;
@@ -44,7 +46,7 @@ public class add_sequence_initializer_Intention implements IntentionFactory {
     return true;
   }
   private boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
-    return (SLinkOperations.getTarget(node, "initializer", true) == null);
+    return (SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-8968771020793164004l, -7182180101671965361l), 1224414427926l, 1224414466839l, "initializer")) == null);
   }
   public SNodeReference getIntentionNodeReference() {
     return new SNodePointer("r:00000000-0000-4000-0000-011c8959032c(jetbrains.mps.baseLanguage.collections.intentions)", "2826767102480497650");
@@ -65,7 +67,7 @@ public class add_sequence_initializer_Intention implements IntentionFactory {
       return "Add initializer";
     }
     public void execute(final SNode node, final EditorContext editorContext) {
-      SNodeFactoryOperations.setNewChild(node, "initializer", "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral");
+      SNodeFactoryOperations.setNewChild(node, MetaAdapterFactory.getContainmentLink(new UUID(-8968771020793164004l, -7182180101671965361l), 1224414427926l, 1224414466839l, "initializer"), "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral");
     }
     public IntentionDescriptor getDescriptor() {
       return add_sequence_initializer_Intention.this;

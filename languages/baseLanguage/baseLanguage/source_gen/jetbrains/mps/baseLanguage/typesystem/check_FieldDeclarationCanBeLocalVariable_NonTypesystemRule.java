@@ -9,6 +9,8 @@ import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.Sequence;
@@ -30,12 +32,12 @@ public class check_FieldDeclarationCanBeLocalVariable_NonTypesystemRule extends 
     if (!(SNodeOperations.isInstanceOf(variableDeclaration, "jetbrains.mps.baseLanguage.structure.FieldDeclaration")) && !(SNodeOperations.isInstanceOf(variableDeclaration, "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration"))) {
       return;
     }
-    if (!(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SNodeOperations.cast(variableDeclaration, "jetbrains.mps.baseLanguage.structure.IVisible"), "visibility", true), "jetbrains.mps.baseLanguage.structure.PrivateVisibility"))) {
+    if (!(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SNodeOperations.cast(variableDeclaration, "jetbrains.mps.baseLanguage.structure.IVisible"), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1178549954367l, 1178549979242l, "visibility")), "jetbrains.mps.baseLanguage.structure.PrivateVisibility"))) {
       return;
     }
     Iterable<SNode> refs = ListSequence.fromList(SNodeOperations.getDescendants(SNodeOperations.getContainingRoot(variableDeclaration), "jetbrains.mps.baseLanguage.structure.VariableReference", false, new String[]{})).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return SLinkOperations.getTarget(it, "variableDeclaration", false) == variableDeclaration;
+        return SLinkOperations.getTarget(it, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068498886296l, 1068581517664l, "variableDeclaration")) == variableDeclaration;
       }
     }).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
@@ -64,7 +66,7 @@ public class check_FieldDeclarationCanBeLocalVariable_NonTypesystemRule extends 
       }
     })) {
       SNode method = Sequence.fromIterable(methods).first();
-      Program program = DataFlowManager.getInstance().buildProgramFor(SLinkOperations.getTarget(method, "body", true));
+      Program program = DataFlowManager.getInstance().buildProgramFor(SLinkOperations.getTarget(method, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123132l, 1068580123135l, "body")));
 
       // find a read instruction for variableDeclaration not preceeded by a write instruction 
       boolean uninitializedRead = ListSequence.fromList(ListSequence.fromListWithValues(new ArrayList<ReadInstruction>(), program.getUninitializedReads())).any(new IWhereFilter<ReadInstruction>() {

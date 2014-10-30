@@ -9,6 +9,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.internal.collections.runtime.Sequence;
@@ -31,19 +33,19 @@ public class ConstructorDeclaration_TextGen extends SNodeTextGen {
     SNode declaringClass = SNodeOperations.cast(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.ClassConcept");
     BaseLanguageTextGen.annotations(node, this);
     if (!(SNodeOperations.isInstanceOf(declaringClass, "jetbrains.mps.baseLanguage.structure.EnumClass"))) {
-      BaseLanguageTextGen.visibilityWithIndent(SLinkOperations.getTarget(node, "visibility", true), this);
+      BaseLanguageTextGen.visibilityWithIndent(SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1178549954367l, 1178549979242l, "visibility")), this);
     } else {
       this.indentBuffer();
     }
     GenericDeclarationTextGen2.typeDeclarations(node, this);
-    if (ListSequence.fromList(SLinkOperations.getTargets(node, "typeVariableDeclaration", true)).isNotEmpty()) {
+    if (ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1109279851642l, 1109279881614l, "typeVariableDeclaration"))).isNotEmpty()) {
       this.append(" ");
     }
     assert declaringClass != null;
-    this.append(SPropertyOperations.getString(declaringClass, "name"));
+    this.append(SPropertyOperations.getString(declaringClass, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")));
     this.append("(");
     {
-      Iterable<SNode> collection = SLinkOperations.getTargets(node, "parameter", true);
+      Iterable<SNode> collection = SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123132l, 1068580123134l, "parameter"));
       final SNode lastItem = Sequence.fromIterable(collection).last();
       for (SNode item : collection) {
         appendNode(item);
@@ -53,10 +55,10 @@ public class ConstructorDeclaration_TextGen extends SNodeTextGen {
       }
     }
     this.append(")");
-    if (ListSequence.fromList(SLinkOperations.getTargets(node, "throwsItem", true)).isNotEmpty()) {
+    if (ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123132l, 1164879685961l, "throwsItem"))).isNotEmpty()) {
       this.append(" throws ");
       {
-        Iterable<SNode> collection = SLinkOperations.getTargets(node, "throwsItem", true);
+        Iterable<SNode> collection = SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123132l, 1164879685961l, "throwsItem"));
         final SNode lastItem = Sequence.fromIterable(collection).last();
         for (SNode item : collection) {
           appendNode(item);
@@ -68,8 +70,8 @@ public class ConstructorDeclaration_TextGen extends SNodeTextGen {
     }
     this.append(" {");
     this.increaseDepth();
-    if ((SLinkOperations.getTarget(node, "body", true) != null)) {
-      appendNode(SLinkOperations.getTarget(node, "body", true));
+    if ((SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123132l, 1068580123135l, "body")) != null)) {
+      appendNode(SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123132l, 1068580123135l, "body")));
     }
     this.decreaseDepth();
     this.appendNewLine();

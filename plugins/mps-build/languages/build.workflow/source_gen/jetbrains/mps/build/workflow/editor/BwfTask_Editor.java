@@ -17,6 +17,8 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Indent;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
@@ -87,7 +89,7 @@ public class BwfTask_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private static boolean renderingCondition_plbod7_a2a(SNode node, EditorContext editorContext) {
-    return ListSequence.fromList(SLinkOperations.getTargets(node, "dependencies", true)).isNotEmpty();
+    return ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(new UUID(7605046100638320544l, -5004325039833383149l), 2769948622284546675l, 2769948622284574302l, "dependencies"))).isNotEmpty();
   }
   private EditorCell createConstant_plbod7_a2a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "depends on");
@@ -201,6 +203,6 @@ public class BwfTask_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private static boolean renderingCondition_plbod7_a4a(SNode node, EditorContext editorContext) {
-    return ListSequence.fromList(SLinkOperations.getTargets(node, "subTasks", true)).isEmpty() || (SNodeOperations.getNextSibling(node) == null);
+    return ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(new UUID(7605046100638320544l, -5004325039833383149l), 2769948622284546675l, 2769948622284546679l, "subTasks"))).isEmpty() || (SNodeOperations.getNextSibling(node) == null);
   }
 }

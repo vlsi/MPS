@@ -18,6 +18,8 @@ import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 
 public class While_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
@@ -75,10 +77,10 @@ public class While_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private static boolean _StyleParameter_QueryFunction_xklbgd_a0c0(EditorContext editorContext, SNode node) {
-    return ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(node, "body", true), "commands", true)).isEmpty();
+    return ListSequence.fromList(SLinkOperations.getChildren(SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(331587165301851084l, -4784639992745830411l), 3308300503039667424l, 3308300503039667427l, "body")), MetaAdapterFactory.getContainmentLink(new UUID(331587165301851084l, -4784639992745830411l), 3308300503039896127l, 3308300503039896128l, "commands"))).isEmpty();
   }
   private static boolean _StyleParameter_QueryFunction_xklbgd_a1c0(EditorContext editorContext, SNode node) {
-    return ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(node, "body", true), "commands", true)).isNotEmpty();
+    return ListSequence.fromList(SLinkOperations.getChildren(SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(331587165301851084l, -4784639992745830411l), 3308300503039667424l, 3308300503039667427l, "body")), MetaAdapterFactory.getContainmentLink(new UUID(331587165301851084l, -4784639992745830411l), 3308300503039896127l, 3308300503039896128l, "commands"))).isNotEmpty();
   }
   private EditorCell createRefNode_xklbgd_d0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);

@@ -4,6 +4,8 @@ package jetbrains.mps.baseLanguage.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.util.List;
@@ -25,41 +27,41 @@ import jetbrains.mps.baseLanguage.scopes.MembersPopulatingContext;
 
 public class Property_Behavior {
   public static void init(SNode thisNode) {
-    SLinkOperations.setNewChild(thisNode, "visibility", "jetbrains.mps.baseLanguage.structure.PublicVisibility");
-    SLinkOperations.setTarget(thisNode, "propertyImplementation", SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.DefaultPropertyImplementation", null), true);
+    SLinkOperations.setNewChild(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1178549954367l, 1178549979242l, "visibility"), "jetbrains.mps.baseLanguage.structure.PublicVisibility");
+    SLinkOperations.setTarget(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1201370618622l, 1201372378714l, "propertyImplementation"), SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.DefaultPropertyImplementation", null));
   }
   public static boolean call_isDefaultImplementation_1213877383134(SNode thisNode) {
-    return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(thisNode, "propertyImplementation", true), "jetbrains.mps.baseLanguage.structure.DefaultPropertyImplementation");
+    return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1201370618622l, 1201372378714l, "propertyImplementation")), "jetbrains.mps.baseLanguage.structure.DefaultPropertyImplementation");
   }
   public static boolean call_isCustomImplementation_1213877383144(SNode thisNode) {
-    return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(thisNode, "propertyImplementation", true), "jetbrains.mps.baseLanguage.structure.CustomPropertyImplementation");
+    return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1201370618622l, 1201372378714l, "propertyImplementation")), "jetbrains.mps.baseLanguage.structure.CustomPropertyImplementation");
   }
   public static boolean call_isCustomSetterOnlyImplementation_2622108313329276688(SNode thisNode) {
-    return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(thisNode, "propertyImplementation", true), "jetbrains.mps.baseLanguage.structure.CustomSetterPropertyImplementation");
+    return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1201370618622l, 1201372378714l, "propertyImplementation")), "jetbrains.mps.baseLanguage.structure.CustomSetterPropertyImplementation");
   }
   public static SNode call_getCustomPropertyImplementation_1213877383154(SNode thisNode) {
-    return SNodeOperations.cast(SLinkOperations.getTarget(thisNode, "propertyImplementation", true), "jetbrains.mps.baseLanguage.structure.CustomPropertyImplementation");
+    return SNodeOperations.cast(SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1201370618622l, 1201372378714l, "propertyImplementation")), "jetbrains.mps.baseLanguage.structure.CustomPropertyImplementation");
   }
   public static List<SNode> call_getCustomSetterStatements_2622108313339491118(SNode thisNode) {
-    if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(thisNode, "propertyImplementation", true), "jetbrains.mps.baseLanguage.structure.CustomPropertyImplementation")) {
-      return SLinkOperations.getTargets(SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(thisNode, "propertyImplementation", true), "jetbrains.mps.baseLanguage.structure.CustomPropertyImplementation"), "setAccessor", true), "statementList", true), "statement", true);
+    if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1201370618622l, 1201372378714l, "propertyImplementation")), "jetbrains.mps.baseLanguage.structure.CustomPropertyImplementation")) {
+      return SLinkOperations.getChildren(SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1201370618622l, 1201372378714l, "propertyImplementation")), "jetbrains.mps.baseLanguage.structure.CustomPropertyImplementation"), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1201398722958l, 1201476937466l, "setAccessor")), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1201476912089l, 1202593336291l, "statementList")), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123136l, 1068581517665l, "statement"));
     } else {
-      return SLinkOperations.getTargets(SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(thisNode, "propertyImplementation", true), "jetbrains.mps.baseLanguage.structure.CustomSetterPropertyImplementation"), "setAccessor", true), "statementList", true), "statement", true);
+      return SLinkOperations.getChildren(SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1201370618622l, 1201372378714l, "propertyImplementation")), "jetbrains.mps.baseLanguage.structure.CustomSetterPropertyImplementation"), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 4285773203949551198l, 4285773203949552005l, "setAccessor")), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1201476912089l, 1202593336291l, "statementList")), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123136l, 1068581517665l, "statement"));
     }
   }
   public static String call_getPropertyNameWithId_1213877383162(SNode thisNode) {
-    return NameUtil.capitalize(SPropertyOperations.getString(thisNode, "propertyName"));
+    return NameUtil.capitalize(SPropertyOperations.getString(thisNode, MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 1201370618622l, 1201371481316l, "propertyName")));
   }
   public static String call_getGetterMethodName_1213877383170(SNode thisNode) {
-    return (check_9xvv7i_a0a0g(SLinkOperations.getTarget(thisNode, "type", true)) ? "is" + Property_Behavior.call_getPropertyNameWithId_1213877383162(thisNode) : "get" + Property_Behavior.call_getPropertyNameWithId_1213877383162(thisNode));
+    return (check_9xvv7i_a0a0g(SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1201370618622l, 1201371521209l, "type"))) ? "is" + Property_Behavior.call_getPropertyNameWithId_1213877383162(thisNode) : "get" + Property_Behavior.call_getPropertyNameWithId_1213877383162(thisNode));
   }
   public static String call_getSetterMethodName_1213877383179(SNode thisNode) {
     return "set" + Property_Behavior.call_getPropertyNameWithId_1213877383162(thisNode);
   }
   public static SNode call_getSetterVisibility_1213877383188(SNode thisNode) {
-    SNode visibility = SLinkOperations.getTarget(thisNode, "visibility", true);
+    SNode visibility = SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1178549954367l, 1178549979242l, "visibility"));
     if (Property_Behavior.call_isDefaultImplementation_1213877383134(thisNode)) {
-      SNode setterVisibility = SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(thisNode, "propertyImplementation", true), "jetbrains.mps.baseLanguage.structure.DefaultPropertyImplementation"), "defaultSetAccessor", true), "visibility", true);
+      SNode setterVisibility = SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1201370618622l, 1201372378714l, "propertyImplementation")), "jetbrains.mps.baseLanguage.structure.DefaultPropertyImplementation"), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1201372606839l, 1202078082794l, "defaultSetAccessor")), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1202077725299l, 1202077744034l, "visibility"));
       if ((setterVisibility != null)) {
         visibility = setterVisibility;
       }
@@ -113,7 +115,7 @@ public class Property_Behavior {
     return false;
   }
   public static boolean call_hasSetter_1213877383224(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual(Boolean.TYPE, SLinkOperations.getTarget(thisNode, "propertyImplementation", true), "virtual_hasSetter_1213877430658", new Object[]{});
+    return BehaviorReflection.invokeVirtual(Boolean.TYPE, SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1201370618622l, 1201372378714l, "propertyImplementation")), "virtual_hasSetter_1213877430658", new Object[]{});
   }
   public static Icon virtual_getAdditionalIcon_5017341185733863694(SNode thisNode) {
     return IVisible_Behavior.call_getVisibilityIcon_5017341185733869581(thisNode);

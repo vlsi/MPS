@@ -8,6 +8,8 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.messageTargets.ReferenceMessageTarget;
@@ -18,7 +20,7 @@ public class check_ConceptEditorDeclaration_hasConcept_NonTypesystemRule extends
   public check_ConceptEditorDeclaration_hasConcept_NonTypesystemRule() {
   }
   public void applyRule(final SNode conceptEditorDeclaration, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    if (SLinkOperations.getTarget(conceptEditorDeclaration, "conceptDeclaration", false) == null) {
+    if (SLinkOperations.getTarget(conceptEditorDeclaration, MetaAdapterFactory.getReferenceLink(new UUID(1782411230332735017l, -6324602048325217350l), 1166049232041l, 1166049300910l, "conceptDeclaration")) == null) {
       {
         MessageTarget errorTarget = new NodeMessageTarget();
         errorTarget = new ReferenceMessageTarget("conceptDeclaration");

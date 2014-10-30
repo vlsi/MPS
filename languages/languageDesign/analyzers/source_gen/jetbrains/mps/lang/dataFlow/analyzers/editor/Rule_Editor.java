@@ -20,6 +20,8 @@ import jetbrains.mps.nodeEditor.InlineCellProvider;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 
 public class Rule_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
@@ -183,6 +185,6 @@ public class Rule_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private static boolean renderingCondition_z0m96w_a7a(SNode node, EditorContext editorContext) {
-    return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "condition", true), "jetbrains.mps.lang.dataFlow.analyzers.structure.ConceptCondition");
+    return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-7519561020779575912l, -9128700522494150552l), 430844094082168520l, 3325264799421290838l, "condition")), "jetbrains.mps.lang.dataFlow.analyzers.structure.ConceptCondition");
   }
 }

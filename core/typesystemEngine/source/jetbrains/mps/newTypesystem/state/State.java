@@ -376,7 +376,7 @@ public class State {
           SNode node = myNodeMaps.getNode(wCBlock.getArgument());
           if (node != null) {
             SNode concept = ((jetbrains.mps.smodel.SNode) node).getConceptDeclarationNode();
-            boolean isAbstract = SPropertyOperations.getBoolean(concept, SNodeUtil.property_AbstractConceptDeclaration_abstract);
+            boolean isAbstract = SPropertyOperations.getBoolean(concept, SNodeUtil.propertyName_AbstractConceptDeclaration_abstract);
             boolean isRuntime = SConceptOperations.isExactly(concept, "jetbrains.mps.lang.typesystem.RuntimeTypeVariable");
             if (!isAbstract && !isRuntime) {
               myTypeCheckingContext.reportWarning(node, "argument of WHEN CONCRETE block is never concrete",
@@ -436,7 +436,7 @@ public class State {
     SNode typeVar = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.typesystem.structure.RuntimeTypeVariable",
         null, false);
     //todo this code should be moved into MPS
-    SNodeAccessUtil.setProperty(typeVar, SNodeUtil.property_INamedConcept_name, myVariableIdentifier.getNewVarName());
+    SNodeAccessUtil.setProperty(typeVar, SNodeUtil.propertyName_INamedConcept_name, myVariableIdentifier.getNewVarName());
     return typeVar;
   }
 

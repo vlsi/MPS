@@ -7,6 +7,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.smodel.search.ConceptAndSuperConceptsScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import java.util.List;
@@ -25,7 +27,7 @@ public class ReferenceMacro_GetReferent_Behavior {
     String linkRole = AttributeOperations.getLinkRole(referenceMacro);
     ConceptAndSuperConceptsScope linkSearchScope = new ConceptAndSuperConceptsScope(SNodeOperations.getConceptDeclaration(attributedNode));
     SNode link = SNodeOperations.cast(linkSearchScope.getMostSpecificLinkDeclarationByRole(linkRole), "jetbrains.mps.lang.structure.structure.LinkDeclaration");
-    SNode targetConcept = SLinkOperations.getTarget(link, "target", false);
+    SNode targetConcept = SLinkOperations.getTarget(link, MetaAdapterFactory.getReferenceLink(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489288298l, 1071599976176l, "target"));
     SNode expectedNodeType = _quotation_createNode_mxwyp3_a0g0a(targetConcept);
     // reference may be resolved dynamically? 
     if (SConceptOperations.isSubConceptOf(targetConcept, "jetbrains.mps.lang.core.structure.IResolveInfo")) {
@@ -48,7 +50,7 @@ public class ReferenceMacro_GetReferent_Behavior {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeType", null, null, false);
-    SNodeAccessUtil.setReferenceTarget(quotedNode_2, "concept", (SNode) parameter_1);
+    SNodeAccessUtil.setReferenceTarget(quotedNode_2, MetaAdapterFactory.getReferenceLink(new UUID(8675788371017092295l, -9098312342032910879l), 1138055754698l, 1138405853777l, "concept"), (SNode) parameter_1);
     return quotedNode_2;
   }
   private static SNode _quotation_createNode_mxwyp3_a0a8a0(Object parameter_1) {
@@ -58,7 +60,7 @@ public class ReferenceMacro_GetReferent_Behavior {
     SNode quotedNode_4 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.typesystem.structure.JoinType", null, null, false);
     quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeType", null, null, false);
-    SNodeAccessUtil.setReferenceTarget(quotedNode_3, "concept", (SNode) parameter_1);
+    SNodeAccessUtil.setReferenceTarget(quotedNode_3, MetaAdapterFactory.getReferenceLink(new UUID(8675788371017092295l, -9098312342032910879l), 1138055754698l, 1138405853777l, "concept"), (SNode) parameter_1);
     quotedNode_2.addChild("argument", quotedNode_3);
     quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StringType", null, null, false);
     quotedNode_2.addChild("argument", quotedNode_4);

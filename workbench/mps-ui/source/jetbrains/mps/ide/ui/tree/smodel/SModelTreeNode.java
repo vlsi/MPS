@@ -141,7 +141,7 @@ public class SModelTreeNode extends MPSTreeNodeEx implements TreeElement {
       return null;
     }
 
-    String nodePackage = SNodeAccessUtil.getProperty(node, SNodeUtil.property_BaseConcept_virtualPackage);
+    String nodePackage = SNodeAccessUtil.getProperty(node, SNodeUtil.propertyName_BaseConcept_virtualPackage);
 
     if (nodePackage != null && !"".equals(nodePackage)) {
       String[] packages = nodePackage.split("\\.");

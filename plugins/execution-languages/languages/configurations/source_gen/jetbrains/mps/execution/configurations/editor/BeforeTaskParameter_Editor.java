@@ -16,6 +16,8 @@ import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 
 public class BeforeTaskParameter_Editor extends DefaultNodeEditor {
@@ -70,7 +72,7 @@ public class BeforeTaskParameter_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private static boolean renderingCondition_3pil43_a2a(SNode node, EditorContext editorContext) {
-    return SLinkOperations.getTarget(node, "initializer", true) != null;
+    return SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068431474542l, 1068431790190l, "initializer")) != null;
   }
   private EditorCell createConstant_3pil43_a2a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "=");

@@ -7,6 +7,8 @@ import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
@@ -20,9 +22,9 @@ public class ConceptDeclaration_Behavior {
   }
   public static List<SNode> virtual_getImmediateSuperconcepts_1222430305282(SNode thisNode) {
     List<SNode> result = new ArrayList<SNode>();
-    ListSequence.fromList(result).addElement(SLinkOperations.getTarget(thisNode, "extends", false));
-    for (SNode interfaceConceptReference : SLinkOperations.getTargets(thisNode, "implements", true)) {
-      ListSequence.fromList(result).addElement(SLinkOperations.getTarget(interfaceConceptReference, "intfc", false));
+    ListSequence.fromList(result).addElement(SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getReferenceLink(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489090640l, 1071489389519l, "extends")));
+    for (SNode interfaceConceptReference : SLinkOperations.getChildren(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489090640l, 1169129564478l, "implements"))) {
+      ListSequence.fromList(result).addElement(SLinkOperations.getTarget(interfaceConceptReference, MetaAdapterFactory.getReferenceLink(new UUID(-4094437568663370681l, -8968368868337559369l), 1169127622168l, 1169127628841l, "intfc")));
     }
     return result;
   }
@@ -34,18 +36,18 @@ public class ConceptDeclaration_Behavior {
     SNode concept = thisNode;
     while ((concept != null) && !(SetSequence.fromSet(extendedConcepts).contains(concept))) {
       SetSequence.fromSet(extendedConcepts).addElement(concept);
-      ListSequence.fromList(methods).addSequence(ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(AbstractConceptDeclaration_Behavior.call_findConceptAspect_8360039740498068384(concept, LanguageAspect.BEHAVIOR), "jetbrains.mps.lang.behavior.structure.ConceptBehavior"), "method", true)));
-      concept = ((SLinkOperations.getTarget(thisNode, "extends", false) != null) ? SLinkOperations.getTarget(thisNode, "extends", false) : SNodeOperations.getNode("r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)", "1133920641626"));
+      ListSequence.fromList(methods).addSequence(ListSequence.fromList(SLinkOperations.getChildren(SNodeOperations.cast(AbstractConceptDeclaration_Behavior.call_findConceptAspect_8360039740498068384(concept, LanguageAspect.BEHAVIOR), "jetbrains.mps.lang.behavior.structure.ConceptBehavior"), MetaAdapterFactory.getContainmentLink(new UUID(-5808042798135555774l, -8657779246725685839l), 1225194240794l, 1225194240805l, "method"))));
+      concept = ((SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getReferenceLink(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489090640l, 1071489389519l, "extends")) != null) ? SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getReferenceLink(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489090640l, 1071489389519l, "extends")) : SNodeOperations.getNode("r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)", "1133920641626"));
     }
 
     // collect methods from implemented interfaces 
-    for (SNode interfaceConcept : ListSequence.fromList(SLinkOperations.getTargets(thisNode, "implements", true)).where(new IWhereFilter<SNode>() {
+    for (SNode interfaceConcept : ListSequence.fromList(SLinkOperations.getChildren(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489090640l, 1169129564478l, "implements"))).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return (SLinkOperations.getTarget(it, "intfc", false) != null);
+        return (SLinkOperations.getTarget(it, MetaAdapterFactory.getReferenceLink(new UUID(-4094437568663370681l, -8968368868337559369l), 1169127622168l, 1169127628841l, "intfc")) != null);
       }
     }).select(new ISelector<SNode, SNode>() {
       public SNode select(SNode it) {
-        return SLinkOperations.getTarget(it, "intfc", false);
+        return SLinkOperations.getTarget(it, MetaAdapterFactory.getReferenceLink(new UUID(-4094437568663370681l, -8968368868337559369l), 1169127622168l, 1169127628841l, "intfc"));
       }
     })) {
       ListSequence.fromList(methods).addSequence(ListSequence.fromList(InterfaceConceptDeclaration_Behavior.call_getAllMethodsInPriorityOrder_9106339407519386413(interfaceConcept)));

@@ -290,7 +290,7 @@ public class ModelWriter9 implements IModelWriter {
 
     for (SReference reference : node.getReferences()) {
       Element linkElement = new Element(ModelPersistence9.REFERENCE);
-      linkElement.setAttribute(ModelPersistence9.ROLE_ID, myHelper.getReferenceRoleIndex(IdHelper.getRefId(reference.getReferenceLink())));
+      linkElement.setAttribute(ModelPersistence9.ROLE_ID, myHelper.getReferenceRoleIndex(IdHelper.getRefId(reference.getLink())));
       linkElement.setAttribute(ModelPersistence9.TARGET_NODE_ID, myHelper.getRefTarget(reference));
       DocUtil.setNotNullAttribute(linkElement, ModelPersistence9.RESOLVE_INFO, Util9.genResolveInfo(reference));
       nodeElement.addContent(linkElement);

@@ -12,6 +12,8 @@ import org.jetbrains.mps.openapi.model.SNodeUtil;
 import org.jetbrains.mps.openapi.language.SConceptRepository;
 import java.util.List;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 
 public class EditorCellModel_KeyMap extends KeyMapImpl {
   public EditorCellModel_KeyMap() {
@@ -51,10 +53,10 @@ public class EditorCellModel_KeyMap extends KeyMapImpl {
       this.execute_internal(editorContext, contextCell.getSNode(), this.getSelectedNodes(editorContext));
     }
     private void execute_internal(final EditorContext editorContext, final SNode node, final List<SNode> selectedNodes) {
-      if (!(SPropertyOperations.hasValue(node, "attractsFocus", "1", "0"))) {
-        SPropertyOperations.set(node, "attractsFocus", "1");
+      if (!(SPropertyOperations.hasValue(node, MetaAdapterFactory.getProperty(new UUID(1782411230332735017l, -6324602048325217350l), 1073389214265l, 1130859485024l, "attractsFocus"), "1", "0"))) {
+        SPropertyOperations.set(node, MetaAdapterFactory.getProperty(new UUID(1782411230332735017l, -6324602048325217350l), 1073389214265l, 1130859485024l, "attractsFocus"), "1");
       } else {
-        SPropertyOperations.set(node, "attractsFocus", "0");
+        SPropertyOperations.set(node, MetaAdapterFactory.getProperty(new UUID(1782411230332735017l, -6324602048325217350l), 1073389214265l, 1130859485024l, "attractsFocus"), "0");
       }
     }
     public String getKeyStroke() {
@@ -90,10 +92,10 @@ public class EditorCellModel_KeyMap extends KeyMapImpl {
       this.execute_internal(editorContext, contextCell.getSNode(), this.getSelectedNodes(editorContext));
     }
     private void execute_internal(final EditorContext editorContext, final SNode node, final List<SNode> selectedNodes) {
-      if (!(SPropertyOperations.hasValue(node, "attractsFocus", "2", "0"))) {
-        SPropertyOperations.set(node, "attractsFocus", "2");
+      if (!(SPropertyOperations.hasValue(node, MetaAdapterFactory.getProperty(new UUID(1782411230332735017l, -6324602048325217350l), 1073389214265l, 1130859485024l, "attractsFocus"), "2", "0"))) {
+        SPropertyOperations.set(node, MetaAdapterFactory.getProperty(new UUID(1782411230332735017l, -6324602048325217350l), 1073389214265l, 1130859485024l, "attractsFocus"), "2");
       } else {
-        SPropertyOperations.set(node, "attractsFocus", "0");
+        SPropertyOperations.set(node, MetaAdapterFactory.getProperty(new UUID(1782411230332735017l, -6324602048325217350l), 1073389214265l, 1130859485024l, "attractsFocus"), "0");
       }
     }
     public String getKeyStroke() {

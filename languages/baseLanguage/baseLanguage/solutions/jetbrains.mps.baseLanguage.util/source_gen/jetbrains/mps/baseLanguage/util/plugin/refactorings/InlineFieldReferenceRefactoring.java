@@ -5,12 +5,14 @@ package jetbrains.mps.baseLanguage.util.plugin.refactorings;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 
 public class InlineFieldReferenceRefactoring extends InlineFieldRefactoring {
   private SNode myReference;
 
   public InlineFieldReferenceRefactoring(SNode node) {
-    if (!(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "variableDeclaration", false), "jetbrains.mps.baseLanguage.structure.VariableDeclaration"))) {
+    if (!(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068498886296l, 1068581517664l, "variableDeclaration")), "jetbrains.mps.baseLanguage.structure.VariableDeclaration"))) {
       throw new IllegalArgumentException();
     }
 
@@ -19,8 +21,8 @@ public class InlineFieldReferenceRefactoring extends InlineFieldRefactoring {
 
   @Override
   public SNode doRefactoring() {
-    SNode variable = SLinkOperations.getTarget(this.myReference, "variableDeclaration", false);
-    SNode nodeToSelect = SNodeOperations.copyNode(SLinkOperations.getTarget(variable, "initializer", true));
+    SNode variable = SLinkOperations.getTarget(this.myReference, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068498886296l, 1068581517664l, "variableDeclaration"));
+    SNode nodeToSelect = SNodeOperations.copyNode(SLinkOperations.getTarget(variable, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068431474542l, 1068431790190l, "initializer")));
     SNodeOperations.replaceWithAnother(this.myReference, nodeToSelect);
     this.optimizeDeclaration(variable);
     return nodeToSelect;

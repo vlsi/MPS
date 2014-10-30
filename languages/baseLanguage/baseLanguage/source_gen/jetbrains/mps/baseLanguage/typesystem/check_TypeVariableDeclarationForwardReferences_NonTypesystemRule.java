@@ -11,6 +11,8 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
@@ -25,7 +27,7 @@ public class check_TypeVariableDeclarationForwardReferences_NonTypesystemRule ex
   public void applyRule(final SNode typeVariableDeclaration, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     Iterable<SNode> fwdRefs = ListSequence.fromList(SNodeOperations.getDescendants(typeVariableDeclaration, "jetbrains.mps.baseLanguage.structure.TypeVariableReference", false, new String[]{})).select(new ISelector<SNode, SNode>() {
       public SNode select(SNode it) {
-        return SLinkOperations.getTarget(SNodeOperations.cast(it, "jetbrains.mps.baseLanguage.structure.TypeVariableReference"), "typeVariableDeclaration", false);
+        return SLinkOperations.getTarget(SNodeOperations.cast(it, "jetbrains.mps.baseLanguage.structure.TypeVariableReference"), MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1109283449304l, 1109283546497l, "typeVariableDeclaration"));
       }
     }).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
@@ -37,7 +39,7 @@ public class check_TypeVariableDeclarationForwardReferences_NonTypesystemRule ex
       }
     });
     if (Sequence.fromIterable(fwdRefs).isNotEmpty()) {
-      String msg = "Illegal forward reference to type parameter " + SPropertyOperations.getString(Sequence.fromIterable(fwdRefs).first(), "name");
+      String msg = "Illegal forward reference to type parameter " + SPropertyOperations.getString(Sequence.fromIterable(fwdRefs).first(), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"));
       {
         MessageTarget errorTarget = new NodeMessageTarget();
         IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(typeVariableDeclaration, msg, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "8302934035192815238", null, errorTarget);

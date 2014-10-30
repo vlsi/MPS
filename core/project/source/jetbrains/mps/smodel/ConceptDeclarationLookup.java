@@ -81,6 +81,6 @@ public class ConceptDeclarationLookup {
 
   private String getConceptName(SNode node) {
     if (!(SNodeUtil.isInstanceOfAbstractConceptDeclaration(node))) return null;
-    return node.getProperty(SNodeUtil.property_INamedConcept_name);
+    return node.getProperty(SNodeUtil.propertyName_INamedConcept_name);
   }
 }

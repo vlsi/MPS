@@ -35,6 +35,8 @@ import org.eclipse.jdt.internal.compiler.ast.TypeDeclaration;
 import org.eclipse.jdt.internal.compiler.ast.WhileStatement;
 import org.eclipse.jdt.internal.compiler.ast.AbstractMethodDeclaration;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import org.eclipse.jdt.internal.compiler.ast.Initializer;
 import org.eclipse.jdt.internal.compiler.classfmt.ClassFileConstants;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
@@ -158,7 +160,7 @@ public class FullASTConverter extends ASTConverter {
   @Override
   protected void handleMethodBody(SNode result, AbstractMethodDeclaration x) throws JavaParseException {
     // <node> 
-    convertStatementsInto(x, SLinkOperations.getTarget(result, "body", true));
+    convertStatementsInto(x, SLinkOperations.getTarget(result, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123132l, 1068580123135l, "body")));
   }
 
   @Override
@@ -172,12 +174,12 @@ public class FullASTConverter extends ASTConverter {
     SNode result;
     if (flagSet(x.modifiers, ClassFileConstants.AccStatic)) {
       SNode initCode = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.StaticInitializer", null);
-      SLinkOperations.setTarget(initCode, "statementList", SLinkOperations.getTarget(block, "statements", true), true);
+      SLinkOperations.setTarget(initCode, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1221737317277l, 1221737317278l, "statementList"), SLinkOperations.getTarget(block, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1082485599095l, 1082485599096l, "statements")));
       result = initCode;
 
     } else {
       SNode initCode = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.InstanceInitializer", null);
-      SLinkOperations.setTarget(initCode, "statementList", SLinkOperations.getTarget(block, "statements", true), true);
+      SLinkOperations.setTarget(initCode, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1206629501431l, 1206629521979l, "statementList"), SLinkOperations.getTarget(block, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1082485599095l, 1082485599096l, "statements")));
       result = initCode;
     }
 
@@ -189,13 +191,13 @@ public class FullASTConverter extends ASTConverter {
     SNode constr = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ConstructorDeclaration", null);
     // TODO 
     SNode enm = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.EnumConstantDeclaration", null);
-    SPropertyOperations.set(enm, "name", enumConstantName(x));
+    SPropertyOperations.set(enm, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"), enumConstantName(x));
     // <node> 
     // arguments of enum constant 
     Expression[] args = ((AllocationExpression) x.initialization).arguments;
     if (args != null) {
       for (Expression arg : args) {
-        ListSequence.fromList(SLinkOperations.getTargets(enm, "actualArgument", true)).addElement(convertExpression(arg));
+        ListSequence.fromList(SLinkOperations.getChildren(enm, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, 1068499141038l, "actualArgument"))).addElement(convertExpression(arg));
       }
     }
 
@@ -229,7 +231,7 @@ public class FullASTConverter extends ASTConverter {
       }
     }
 
-    ListSequence.fromList(SLinkOperations.getTargets(bodyInto, "statement", true)).addSequence(ListSequence.fromList(stmts));
+    ListSequence.fromList(SLinkOperations.getChildren(bodyInto, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123136l, 1068581517665l, "statement"))).addSequence(ListSequence.fromList(stmts));
     // <node> 
   }
   public SNode convertExpressionWrap(Expression expression) throws JavaParseException {
@@ -238,7 +240,7 @@ public class FullASTConverter extends ASTConverter {
       int parenthesisCount = (expression.bits & ASTNode.ParenthesizedMASK) >> ASTNode.ParenthesizedSHIFT;
       for (int parenthsCreated = 0; parenthsCreated < parenthesisCount; parenthsCreated++) {
         SNode parenthesizedExpression = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ParenthesizedExpression", null);
-        SLinkOperations.setTarget(parenthesizedExpression, "expression", result, true);
+        SLinkOperations.setTarget(parenthesizedExpression, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1079359253375l, 1079359253376l, "expression"), result);
         result = parenthesizedExpression;
       }
     }
@@ -302,15 +304,15 @@ public class FullASTConverter extends ASTConverter {
   }
   /*package*/ SNode convertStatement(Expression x) throws JavaParseException {
     SNode stmt = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ExpressionStatement", null);
-    SLinkOperations.setTarget(stmt, "expression", convertExpressionWrap(x), true);
+    SLinkOperations.setTarget(stmt, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123155l, 1068580123156l, "expression"), convertExpressionWrap(x));
     return stmt;
   }
   /*package*/ SNode convertStatement(AssertStatement x) throws JavaParseException {
     SNode expr = convertExpressionWrap(x.assertExpression);
     SNode arg = convertExpressionWrap(x.exceptionArgument);
     SNode result = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.AssertStatement", null);
-    SLinkOperations.setTarget(result, "condition", expr, true);
-    SLinkOperations.setTarget(result, "message", arg, true);
+    SLinkOperations.setTarget(result, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1160998861373l, 1160998896846l, "condition"), expr);
+    SLinkOperations.setTarget(result, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1160998861373l, 1160998916832l, "message"), arg);
     return result;
   }
   /*package*/ SNode convertStatement(Block x) throws JavaParseException {
@@ -319,23 +321,23 @@ public class FullASTConverter extends ASTConverter {
     }
     SNode blockStatement = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.BlockStatement", null);
     SNode statementList = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.StatementList", null);
-    SLinkOperations.setTarget(blockStatement, "statements", statementList, true);
+    SLinkOperations.setTarget(blockStatement, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1082485599095l, 1082485599096l, "statements"), statementList);
     addBlock(statementList, x.sourceStart(), x.sourceEnd());
-    ListSequence.fromList(SLinkOperations.getTargets(statementList, "statement", true)).addSequence(ListSequence.fromList(convertStatements(x.statements)));
+    ListSequence.fromList(SLinkOperations.getChildren(statementList, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123136l, 1068581517665l, "statement"))).addSequence(ListSequence.fromList(convertStatements(x.statements)));
     return blockStatement;
   }
   /*package*/ SNode convertStatement(BreakStatement x) {
     SNode result = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.BreakStatement", null);
     if (x.label != null) {
-      SPropertyOperations.set(result, "label", new String(x.label));
+      SPropertyOperations.set(result, MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 1081855346303l, 1199466066648l, "label"), new String(x.label));
     }
     return result;
   }
   /*package*/ SNode convertStatement(SwitchStatement x) throws JavaParseException {
     SNode expression = convertExpressionWrap(x.expression);
     SNode result = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.SwitchStatement", null);
-    SLinkOperations.setTarget(result, "expression", expression, true);
-    SLinkOperations.setTarget(result, "defaultBlock", SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.StatementList", null), true);
+    SLinkOperations.setTarget(result, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1163670490218l, 1163670766145l, "expression"), expression);
+    SLinkOperations.setTarget(result, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1163670490218l, 1163670592366l, "defaultBlock"), SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.StatementList", null));
     // defaultCase is not set for me. Maybe eclipse sets it after resolving work 
     // <node> 
     if (x.statements != null) {
@@ -348,20 +350,20 @@ public class FullASTConverter extends ASTConverter {
           }
           CaseStatement caseStatement = (CaseStatement) stmt;
           if (caseStatement.constantExpression == null) {
-            currentSwitchCase = SLinkOperations.getTarget(result, "defaultBlock", true);
-            addBlock(SLinkOperations.getTarget(result, "defaultBlock", true), caseStatement.sourceStart, caseStatement.sourceEnd);
+            currentSwitchCase = SLinkOperations.getTarget(result, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1163670490218l, 1163670592366l, "defaultBlock"));
+            addBlock(SLinkOperations.getTarget(result, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1163670490218l, 1163670592366l, "defaultBlock")), caseStatement.sourceStart, caseStatement.sourceEnd);
           } else {
             SNode switchCase = convertCaseStatement((CaseStatement) stmt);
             if ((switchCase != null)) {
-              ListSequence.fromList(SLinkOperations.getTargets(result, "case", true)).addElement(switchCase);
+              ListSequence.fromList(SLinkOperations.getChildren(result, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1163670490218l, 1163670772911l, "case"))).addElement(switchCase);
             }
-            currentSwitchCase = ((switchCase == null) ? null : SLinkOperations.getTarget(switchCase, "body", true));
+            currentSwitchCase = ((switchCase == null) ? null : SLinkOperations.getTarget(switchCase, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1163670641947l, 1163670683720l, "body")));
           }
         } else
         if ((currentSwitchCase != null)) {
           // advance end of case block 
           getBlock(currentSwitchCase).setEndPos(stmt.sourceEnd);
-          ListSequence.fromList(SLinkOperations.getTargets(currentSwitchCase, "statement", true)).addElement(convertStatementWrap(stmt));
+          ListSequence.fromList(SLinkOperations.getChildren(currentSwitchCase, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123136l, 1068581517665l, "statement"))).addElement(convertStatementWrap(stmt));
         }
       }
       // adjust end of last case block up to the end of switch statement 
@@ -374,9 +376,9 @@ public class FullASTConverter extends ASTConverter {
   /*package*/ SNode convertCaseStatement(CaseStatement x) throws JavaParseException {
     SNode expression = convertExpressionWrap(x.constantExpression);
     SNode switchCase = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.SwitchCase", null);
-    SLinkOperations.setTarget(switchCase, "expression", expression, true);
-    SLinkOperations.setTarget(switchCase, "body", SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.StatementList", null), true);
-    addBlock(SLinkOperations.getTarget(switchCase, "body", true), x.sourceStart(), x.sourceEnd());
+    SLinkOperations.setTarget(switchCase, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1163670641947l, 1163670677455l, "expression"), expression);
+    SLinkOperations.setTarget(switchCase, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1163670641947l, 1163670683720l, "body"), SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.StatementList", null));
+    addBlock(SLinkOperations.getTarget(switchCase, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1163670641947l, 1163670683720l, "body")), x.sourceStart(), x.sourceEnd());
     return switchCase;
   }
   /*package*/ SNode convertStatement(ContinueStatement x) {
@@ -385,7 +387,7 @@ public class FullASTConverter extends ASTConverter {
       // using new labels is commented out for now, something seems to be wrong with their scopes 
       // <node> 
       // <node> 
-      SPropertyOperations.set(result, "label", new String(x.label));
+      SPropertyOperations.set(result, MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 1082113931046l, 1199470060942l, "label"), new String(x.label));
     }
     return result;
   }
@@ -393,9 +395,9 @@ public class FullASTConverter extends ASTConverter {
     SNode loopTest = convertExpressionWrap(x.condition);
     SNode loopBody = convertStatementWrap(x.action);
     SNode doWhileStatement = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.DoWhileStatement", null);
-    SLinkOperations.setTarget(doWhileStatement, "condition", loopTest, true);
+    SLinkOperations.setTarget(doWhileStatement, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1177666668936l, 1177666688034l, "condition"), loopTest);
     SNode body = getStatementListFromStatement(loopBody, x.action);
-    SLinkOperations.setTarget(doWhileStatement, "body", body, true);
+    SLinkOperations.setTarget(doWhileStatement, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1154032098014l, 1154032183016l, "body"), body);
     return doWhileStatement;
   }
   /*package*/ SNode convertStatement(EmptyStatement x) {
@@ -404,18 +406,18 @@ public class FullASTConverter extends ASTConverter {
   /*package*/ SNode convertStatement(LocalDeclaration x) throws JavaParseException {
     SNode decl = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration", null);
     SNode result = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement", null);
-    SLinkOperations.setTarget(result, "localVariableDeclaration", decl, true);
+    SLinkOperations.setTarget(result, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068581242864l, 1068581242865l, "localVariableDeclaration"), decl);
 
-    SPropertyOperations.set(decl, "isFinal", "" + (flagSet(x.modifiers, ClassFileConstants.AccFinal)));
-    SLinkOperations.setTarget(decl, "type", convertTypeReference(x.type), true);
-    SPropertyOperations.set(decl, "name", new String(x.name));
-    SLinkOperations.setTarget(decl, "initializer", convertExpressionWrap(x.initialization), true);
+    SPropertyOperations.set(decl, MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 1068431474542l, 1176718929932l, "isFinal"), "" + (flagSet(x.modifiers, ClassFileConstants.AccFinal)));
+    SLinkOperations.setTarget(decl, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 4972933694980447171l, 5680397130376446158l, "type"), convertTypeReference(x.type));
+    SPropertyOperations.set(decl, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"), new String(x.name));
+    SLinkOperations.setTarget(decl, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068431474542l, 1068431790190l, "initializer"), convertExpressionWrap(x.initialization));
 
     return result;
   }
   /*package*/ SNode convertStatement(ReturnStatement x) throws JavaParseException {
     SNode result = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ReturnStatement", null);
-    SLinkOperations.setTarget(result, "expression", convertExpressionWrap(x.expression), true);
+    SLinkOperations.setTarget(result, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068581242878l, 1068581517676l, "expression"), convertExpressionWrap(x.expression));
     return result;
   }
   /*package*/ SNode convertStatement(ExplicitConstructorCall x) throws JavaParseException {
@@ -425,7 +427,7 @@ public class FullASTConverter extends ASTConverter {
 
     SNode unkCall = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.UnknownConsCall", null);
     addCallArgs(unkCall, x.arguments);
-    SPropertyOperations.set(unkCall, "isSuper", "" + (x.isSuperAccess()));
+    SPropertyOperations.set(unkCall, MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 9100188248702352244l, 9100188248702352610l, "isSuper"), "" + (x.isSuperAccess()));
     if (1 == 1) {
       return unkCall;
     }
@@ -438,13 +440,13 @@ public class FullASTConverter extends ASTConverter {
     SNode body = getStatementListFromStatement(action, x.action);
 
 
-    SNode elementVar = SLinkOperations.getTarget(SNodeOperations.cast(convertStatement(x.elementVariable), "jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement"), "localVariableDeclaration", true);
+    SNode elementVar = SLinkOperations.getTarget(SNodeOperations.cast(convertStatement(x.elementVariable), "jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement"), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068581242864l, 1068581242865l, "localVariableDeclaration"));
 
 
     SNode iterable = convertExpressionWrap(x.collection);
-    SLinkOperations.setTarget(result, "iterable", iterable, true);
-    SLinkOperations.setTarget(result, "variable", elementVar, true);
-    SLinkOperations.setTarget(result, "body", body, true);
+    SLinkOperations.setTarget(result, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1144226303539l, 1144226360166l, "iterable"), iterable);
+    SLinkOperations.setTarget(result, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1144230876926l, 1144230900587l, "variable"), elementVar);
+    SLinkOperations.setTarget(result, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1154032098014l, 1154032183016l, "body"), body);
     return result;
   }
   /*package*/ SNode convertStatement(ForStatement x) throws JavaParseException {
@@ -463,48 +465,48 @@ public class FullASTConverter extends ASTConverter {
       for (SNode statement : init) {
         if (SNodeOperations.isInstanceOf(statement, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement")) {
           SNode lvds = SNodeOperations.cast(statement, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement");
-          SNode variableDeclaration = SLinkOperations.getTarget(lvds, "localVariableDeclaration", true);
+          SNode variableDeclaration = SLinkOperations.getTarget(lvds, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068581242864l, 1068581242865l, "localVariableDeclaration"));
           if (first) {
-            SLinkOperations.setTarget(forStatement, "variable", variableDeclaration, true);
+            SLinkOperations.setTarget(forStatement, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1144230876926l, 1144230900587l, "variable"), variableDeclaration);
             first = false;
           } else {
             SNode additionalForLoopVariable = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.AdditionalForLoopVariable", null);
-            SPropertyOperations.set(additionalForLoopVariable, "name", SPropertyOperations.getString(variableDeclaration, "name"));
-            SNode inititalizer = SLinkOperations.getTarget(variableDeclaration, "initializer", true);
+            SPropertyOperations.set(additionalForLoopVariable, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"), SPropertyOperations.getString(variableDeclaration, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")));
+            SNode inititalizer = SLinkOperations.getTarget(variableDeclaration, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068431474542l, 1068431790190l, "initializer"));
             if ((inititalizer != null)) {
-              SLinkOperations.setTarget(additionalForLoopVariable, "initializer", inititalizer, true);
+              SLinkOperations.setTarget(additionalForLoopVariable, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068431474542l, 1068431790190l, "initializer"), inititalizer);
             }
-            ListSequence.fromList(SLinkOperations.getTargets(forStatement, "additionalVar", true)).addElement(additionalForLoopVariable);
+            ListSequence.fromList(SLinkOperations.getChildren(forStatement, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1144231330558l, 1032195626824963089l, "additionalVar"))).addElement(additionalForLoopVariable);
           }
         }
       }
     }
     SNode expr = convertExpressionWrap(x.condition);
-    SLinkOperations.setTarget(forStatement, "condition", expr, true);
+    SLinkOperations.setTarget(forStatement, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1144231330558l, 1144231399730l, "condition"), expr);
     List<SNode> incr = convertExpressionStatements(x.increments);
     if (!(incr.isEmpty())) {
       for (SNode expressionStatement : incr) {
-        SNode expression = SLinkOperations.getTarget(expressionStatement, "expression", true);
+        SNode expression = SLinkOperations.getTarget(expressionStatement, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123155l, 1068580123156l, "expression"));
         SNodeOperations.detachNode(expression);
-        ListSequence.fromList(SLinkOperations.getTargets(forStatement, "iteration", true)).addElement(expression);
+        ListSequence.fromList(SLinkOperations.getChildren(forStatement, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1144231330558l, 1144231408325l, "iteration"))).addElement(expression);
       }
     }
     SNode loopBody = convertStatementWrap(x.action);
     SNode body = getStatementListFromStatement(loopBody, x.action);
-    SLinkOperations.setTarget(forStatement, "body", body, true);
+    SLinkOperations.setTarget(forStatement, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1154032098014l, 1154032183016l, "body"), body);
     return result;
   }
   /*package*/ SNode convertStatement(IfStatement x) throws JavaParseException {
     SNode result = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.IfStatement", null);
-    SLinkOperations.setTarget(result, "condition", convertExpressionWrap(x.condition), true);
+    SLinkOperations.setTarget(result, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123159l, 1068580123160l, "condition"), convertExpressionWrap(x.condition));
     SNode thenStmt = convertStatementWrap(x.thenStatement);
-    SLinkOperations.setTarget(result, "ifFalseStatement", convertStatementWrap(x.elseStatement), true);
+    SLinkOperations.setTarget(result, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123159l, 1082485599094l, "ifFalseStatement"), convertStatementWrap(x.elseStatement));
     SNode ifTrue = getStatementListFromStatement(thenStmt, x.thenStatement);
     // adjust start of the "if" statement list block to get comments from "if (...)" there 
     getBlock(ifTrue).setStartPos(x.sourceStart);
     // replacing the ifTrue node 
     // <node> 
-    SLinkOperations.setTarget(result, "ifTrue", ifTrue, true);
+    SLinkOperations.setTarget(result, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123159l, 1068580123161l, "ifTrue"), ifTrue);
     return result;
   }
   /*package*/ SNode convertStatement(LabeledStatement x) throws JavaParseException {
@@ -521,15 +523,15 @@ public class FullASTConverter extends ASTConverter {
         return null;
       }
       SNode label = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.LoopLabel", null);
-      SPropertyOperations.set(label, "name", new String(x.label));
-      SLinkOperations.setTarget(loopStatement, "loopLabel", label, true);
+      SPropertyOperations.set(label, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"), new String(x.label));
+      SLinkOperations.setTarget(loopStatement, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1154032098014l, 363746191845183793l, "loopLabel"), label);
 
     } else
     if (SNodeOperations.isInstanceOf(statement, "jetbrains.mps.baseLanguage.structure.SwitchStatement")) {
       SNode switchStatement = SNodeOperations.cast(statement, "jetbrains.mps.baseLanguage.structure.SwitchStatement");
       SNode label = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.LoopLabel", null);
-      SPropertyOperations.set(label, "name", new String(x.label));
-      SLinkOperations.setTarget(switchStatement, "switchLabel", label, true);
+      SPropertyOperations.set(label, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"), new String(x.label));
+      SLinkOperations.setTarget(switchStatement, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1163670490218l, 4652593672361747214l, "switchLabel"), label);
     }
 
     return statement;
@@ -538,14 +540,14 @@ public class FullASTConverter extends ASTConverter {
     SNode result = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.SynchronizedStatement", null);
     SNode block = convertStatement(x.block);
     SNode expr = convertExpressionWrap(x.expression);
-    SLinkOperations.setTarget(result, "expression", expr, true);
-    SLinkOperations.setTarget(result, "block", getStatementListFromStatement(block, x.block), true);
+    SLinkOperations.setTarget(result, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1170075670744l, 1170075728144l, "expression"), expr);
+    SLinkOperations.setTarget(result, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1170075670744l, 1170075736412l, "block"), getStatementListFromStatement(block, x.block));
     return result;
   }
   /*package*/ SNode convertStatement(ThrowStatement x) throws JavaParseException {
     SNode toThrow = convertExpressionWrap(x.exception);
     SNode throwStatement = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ThrowStatement", null);
-    SLinkOperations.setTarget(throwStatement, "throwable", toThrow, true);
+    SLinkOperations.setTarget(throwStatement, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1164991038168l, 1164991057263l, "throwable"), toThrow);
     return throwStatement;
   }
   /*package*/ SNode convertStatement(TryStatement x) throws JavaParseException {
@@ -558,7 +560,7 @@ public class FullASTConverter extends ASTConverter {
 
 
 
-        SNode local = SLinkOperations.getTarget(SNodeOperations.cast(convertStatement(x.catchArguments[i]), "jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement"), "localVariableDeclaration", true);
+        SNode local = SLinkOperations.getTarget(SNodeOperations.cast(convertStatement(x.catchArguments[i]), "jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement"), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068581242864l, 1068581242865l, "localVariableDeclaration"));
 
 
 
@@ -574,12 +576,12 @@ public class FullASTConverter extends ASTConverter {
         SNode catchBlock = ListSequence.fromList(catchBlocks).getElement(i);
         SNode lvd = ListSequence.fromList(catchArgs).getElement(i);
         SNode catchClause = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.CatchClause", null);
-        ListSequence.fromList(SLinkOperations.getTargets(tryStatement, "catchClause", true)).addElement(catchClause);
-        SLinkOperations.setTarget(catchClause, "catchBody", getStatementListFromStatement(catchBlock, x.catchBlocks[i]), true);
-        SLinkOperations.setTarget(catchClause, "throwable", lvd, true);
+        ListSequence.fromList(SLinkOperations.getChildren(tryStatement, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1153952380246l, 1164903700860l, "catchClause"))).addElement(catchClause);
+        SLinkOperations.setTarget(catchClause, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1164903280175l, 1164903359218l, "catchBody"), getStatementListFromStatement(catchBlock, x.catchBlocks[i]));
+        SLinkOperations.setTarget(catchClause, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1164903280175l, 1164903359217l, "throwable"), lvd);
       }
-      SLinkOperations.setTarget(tryStatement, "finallyBody", getStatementListFromStatement(finallyBlock, x.finallyBlock), true);
-      SLinkOperations.setTarget(tryStatement, "body", getStatementListFromStatement(tryBlock, x.tryBlock), true);
+      SLinkOperations.setTarget(tryStatement, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1153952380246l, 1153952429843l, "finallyBody"), getStatementListFromStatement(finallyBlock, x.finallyBlock));
+      SLinkOperations.setTarget(tryStatement, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1153952380246l, 1153952416686l, "body"), getStatementListFromStatement(tryBlock, x.tryBlock));
       return tryStatement;
     } else {
       SNode tryCatchStatement = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.TryCatchStatement", null);
@@ -587,11 +589,11 @@ public class FullASTConverter extends ASTConverter {
         SNode catchBlock = ListSequence.fromList(catchBlocks).getElement(i);
         SNode lvd = ListSequence.fromList(catchArgs).getElement(i);
         SNode catchClause = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.CatchClause", null);
-        ListSequence.fromList(SLinkOperations.getTargets(tryCatchStatement, "catchClause", true)).addElement(catchClause);
-        SLinkOperations.setTarget(catchClause, "catchBody", getStatementListFromStatement(catchBlock, x.catchBlocks[i]), true);
-        SLinkOperations.setTarget(catchClause, "throwable", lvd, true);
+        ListSequence.fromList(SLinkOperations.getChildren(tryCatchStatement, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1164879751025l, 1164903496223l, "catchClause"))).addElement(catchClause);
+        SLinkOperations.setTarget(catchClause, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1164903280175l, 1164903359218l, "catchBody"), getStatementListFromStatement(catchBlock, x.catchBlocks[i]));
+        SLinkOperations.setTarget(catchClause, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1164903280175l, 1164903359217l, "throwable"), lvd);
       }
-      SLinkOperations.setTarget(tryCatchStatement, "body", getStatementListFromStatement(tryBlock, x.tryBlock), true);
+      SLinkOperations.setTarget(tryCatchStatement, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1164879751025l, 1164879758292l, "body"), getStatementListFromStatement(tryBlock, x.tryBlock));
       return tryCatchStatement;
     }
   }
@@ -599,8 +601,8 @@ public class FullASTConverter extends ASTConverter {
     SNode loopTest = convertExpressionWrap(x.condition);
     SNode loopBody = convertStatementWrap(x.action);
     SNode result = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.WhileStatement", null);
-    SLinkOperations.setTarget(result, "condition", loopTest, true);
-    SLinkOperations.setTarget(result, "body", getStatementListFromStatement(loopBody, x.action), true);
+    SLinkOperations.setTarget(result, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1076505808687l, 1076505808688l, "condition"), loopTest);
+    SLinkOperations.setTarget(result, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1154032098014l, 1154032183016l, "body"), getStatementListFromStatement(loopBody, x.action));
     return result;
   }
   /*package*/ SNode convertStatement(TypeDeclaration x) {
@@ -608,8 +610,8 @@ public class FullASTConverter extends ASTConverter {
     return null;
   }
   /*package*/ SNode convertBinaryOperation(Expression left, Expression right, SNode binaryOperation) throws JavaParseException {
-    SLinkOperations.setTarget(binaryOperation, "leftExpression", convertExpressionWrap(left), true);
-    SLinkOperations.setTarget(binaryOperation, "rightExpression", convertExpressionWrap(right), true);
+    SLinkOperations.setTarget(binaryOperation, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1081773326031l, 1081773367580l, "leftExpression"), convertExpressionWrap(left));
+    SLinkOperations.setTarget(binaryOperation, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1081773326031l, 1081773367579l, "rightExpression"), convertExpressionWrap(right));
     return binaryOperation;
   }
   /*package*/ SNode convertExpression(AND_AND_Expression x) throws JavaParseException {
@@ -636,11 +638,11 @@ public class FullASTConverter extends ASTConverter {
       }
       SNode arrayCreator = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ArrayCreatorWithInitializer", null);
       for (SNode initializer : initializers) {
-        ListSequence.fromList(SLinkOperations.getTargets(arrayCreator, "initValue", true)).addElement(initializer);
+        ListSequence.fromList(SLinkOperations.getChildren(arrayCreator, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1154542696413l, 1154542803372l, "initValue"))).addElement(initializer);
       }
-      SLinkOperations.setTarget(arrayCreator, "componentType", compType, true);
+      SLinkOperations.setTarget(arrayCreator, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1154542696413l, 1154542793668l, "componentType"), compType);
       SNode genericNewExpression = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.GenericNewExpression", null);
-      SLinkOperations.setTarget(genericNewExpression, "creator", arrayCreator, true);
+      SLinkOperations.setTarget(genericNewExpression, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1145552977093l, 1145553007750l, "creator"), arrayCreator);
       return genericNewExpression;
     } else {
       List<SNode> dims = new ArrayList<SNode>();
@@ -654,18 +656,18 @@ public class FullASTConverter extends ASTConverter {
       SNode arrayCreator = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ArrayCreator", null);
       for (SNode dim : dims) {
         SNode dimensionExpression = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.DimensionExpression", null);
-        ListSequence.fromList(SLinkOperations.getTargets(arrayCreator, "dimensionExpression", true)).addElement(dimensionExpression);
+        ListSequence.fromList(SLinkOperations.getChildren(arrayCreator, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1184950988562l, 1184952969026l, "dimensionExpression"))).addElement(dimensionExpression);
         if (dim != null) {
-          SLinkOperations.setTarget(dimensionExpression, "expression", dim, true);
+          SLinkOperations.setTarget(dimensionExpression, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1184952934362l, 1184953288404l, "expression"), dim);
         }
       }
       SNode deepestComponentType = compType;
       while (SNodeOperations.isInstanceOf(deepestComponentType, "jetbrains.mps.baseLanguage.structure.ArrayType")) {
-        deepestComponentType = SLinkOperations.getTarget(SNodeOperations.cast(deepestComponentType, "jetbrains.mps.baseLanguage.structure.ArrayType"), "componentType", true);
+        deepestComponentType = SLinkOperations.getTarget(SNodeOperations.cast(deepestComponentType, "jetbrains.mps.baseLanguage.structure.ArrayType"), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1070534760951l, 1070534760952l, "componentType"));
       }
-      SLinkOperations.setTarget(arrayCreator, "componentType", deepestComponentType, true);
+      SLinkOperations.setTarget(arrayCreator, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1184950988562l, 1184951007469l, "componentType"), deepestComponentType);
       SNode genericNewExpression = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.GenericNewExpression", null);
-      SLinkOperations.setTarget(genericNewExpression, "creator", arrayCreator, true);
+      SLinkOperations.setTarget(genericNewExpression, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1145552977093l, 1145553007750l, "creator"), arrayCreator);
       return genericNewExpression;
     }
   }
@@ -678,14 +680,14 @@ public class FullASTConverter extends ASTConverter {
     }
     SNode arrayLiteral = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ArrayLiteral", null);
     for (SNode initializer : initializers) {
-      ListSequence.fromList(SLinkOperations.getTargets(arrayLiteral, "item", true)).addElement(initializer);
+      ListSequence.fromList(SLinkOperations.getChildren(arrayLiteral, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1188220165133l, 1188220173759l, "item"))).addElement(initializer);
     }
     return arrayLiteral;
   }
   /*package*/ SNode convertExpression(ArrayReference x) throws JavaParseException {
     SNode accessExpression = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ArrayAccessExpression", null);
-    SLinkOperations.setTarget(accessExpression, "array", convertExpressionWrap(x.receiver), true);
-    SLinkOperations.setTarget(accessExpression, "index", convertExpressionWrap(x.position), true);
+    SLinkOperations.setTarget(accessExpression, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1173175405605l, 1173175590490l, "array"), convertExpressionWrap(x.receiver));
+    SLinkOperations.setTarget(accessExpression, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1173175405605l, 1173175577737l, "index"), convertExpressionWrap(x.position));
     return accessExpression;
   }
   /*package*/ SNode convertExpression(Assignment x) throws JavaParseException {
@@ -693,8 +695,8 @@ public class FullASTConverter extends ASTConverter {
       return convertExpression((CompoundAssignment) x);
     } else {
       SNode assignmentExpression = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.AssignmentExpression", null);
-      SLinkOperations.setTarget(assignmentExpression, "lValue", convertExpressionWrap(x.lhs), true);
-      SLinkOperations.setTarget(assignmentExpression, "rValue", convertExpressionWrap(x.expression), true);
+      SLinkOperations.setTarget(assignmentExpression, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1215693861676l, 1068498886295l, "lValue"), convertExpressionWrap(x.lhs));
+      SLinkOperations.setTarget(assignmentExpression, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1215693861676l, 1068498886297l, "rValue"), convertExpressionWrap(x.expression));
       return assignmentExpression;
     }
 
@@ -806,8 +808,8 @@ public class FullASTConverter extends ASTConverter {
         default:
           throw new JavaParseException("Unsupported operator for CompoundAssignment");
       }
-      SLinkOperations.setTarget(op, "lValue", convertExpressionWrap(x.lhs), true);
-      SLinkOperations.setTarget(op, "rValue", convertExpressionWrap(x.expression), true);
+      SLinkOperations.setTarget(op, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1215693861676l, 1068498886295l, "lValue"), convertExpressionWrap(x.lhs));
+      SLinkOperations.setTarget(op, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1215693861676l, 1068498886297l, "rValue"), convertExpressionWrap(x.expression));
       return op;
     }
 
@@ -817,9 +819,9 @@ public class FullASTConverter extends ASTConverter {
     SNode thenExpr = convertExpressionWrap(x.valueIfTrue);
     SNode elseExpr = convertExpressionWrap(x.valueIfFalse);
     SNode tOp = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.TernaryOperatorExpression", null);
-    SLinkOperations.setTarget(tOp, "condition", ifTest, true);
-    SLinkOperations.setTarget(tOp, "ifTrue", thenExpr, true);
-    SLinkOperations.setTarget(tOp, "ifFalse", elseExpr, true);
+    SLinkOperations.setTarget(tOp, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1163668896201l, 1163668914799l, "condition"), ifTest);
+    SLinkOperations.setTarget(tOp, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1163668896201l, 1163668922816l, "ifTrue"), thenExpr);
+    SLinkOperations.setTarget(tOp, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1163668896201l, 1163668934364l, "ifFalse"), elseExpr);
     return tOp;
   }
   /*package*/ SNode convertExpression(EqualExpression x) throws JavaParseException {
@@ -840,8 +842,8 @@ public class FullASTConverter extends ASTConverter {
     SNode expr = convertExpressionWrap(x.expression);
     SNode testType = convertTypeReference(x.type);
     SNode instanceOfExpression = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.InstanceOfExpression", null);
-    SLinkOperations.setTarget(instanceOfExpression, "leftExpression", expr, true);
-    SLinkOperations.setTarget(instanceOfExpression, "classType", testType, true);
+    SLinkOperations.setTarget(instanceOfExpression, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1081256982272l, 1081256993304l, "leftExpression"), expr);
+    SLinkOperations.setTarget(instanceOfExpression, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1081256982272l, 1081256993305l, "classType"), testType);
     return instanceOfExpression;
   }
   /*package*/ SNode convertExpression(PostfixExpression x) throws JavaParseException {
@@ -856,7 +858,7 @@ public class FullASTConverter extends ASTConverter {
       default:
         throw new JavaParseException("Unexpected postfix operator");
     }
-    SLinkOperations.setTarget(op, "expression", convertExpressionWrap(x.lhs), true);
+    SLinkOperations.setTarget(op, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1239714755177l, 1239714902950l, "expression"), convertExpressionWrap(x.lhs));
     return op;
   }
   /*package*/ SNode convertExpression(PrefixExpression x) throws JavaParseException {
@@ -871,12 +873,12 @@ public class FullASTConverter extends ASTConverter {
       default:
         throw new JavaParseException("Unexpected prefix operator");
     }
-    SLinkOperations.setTarget(op, "expression", convertExpressionWrap(x.lhs), true);
+    SLinkOperations.setTarget(op, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1239714755177l, 1239714902950l, "expression"), convertExpressionWrap(x.lhs));
     return op;
   }
   /*package*/ SNode convertExpression(CastExpression x) throws JavaParseException {
     SNode result = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.CastExpression", null);
-    SLinkOperations.setTarget(result, "expression", convertExpressionWrap(x.expression), true);
+    SLinkOperations.setTarget(result, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1070534934090l, 1070534934092l, "expression"), convertExpressionWrap(x.expression));
 
     // x.type is expression, not type reference 
     // we're making TypeReference out of NameReference 
@@ -889,7 +891,7 @@ public class FullASTConverter extends ASTConverter {
       return null;
     }
 
-    SLinkOperations.setTarget(result, "type", convertTypeReference(x.type), true);
+    SLinkOperations.setTarget(result, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1070534934090l, 1070534934091l, "type"), convertTypeReference(x.type));
     return result;
   }
   /*package*/ SNode convertExpression(NullLiteral x) {
@@ -940,7 +942,7 @@ public class FullASTConverter extends ASTConverter {
     }
     sb.deleteCharAt(sb.length() - 1);
 
-    SPropertyOperations.set(unkName, "tokens", sb.toString());
+    SPropertyOperations.set(unkName, MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 6528213125912070246l, 1843920760191311250l, "tokens"), sb.toString());
     return unkName;
   }
   /*package*/ SNode convertExpression(MessageSend x) throws JavaParseException {
@@ -976,7 +978,7 @@ public class FullASTConverter extends ASTConverter {
         // handle this special case 
 
         SNode unkDotCall = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.UnknownDotCall", null);
-        SPropertyOperations.set(unkDotCall, "callee", methodName);
+        SPropertyOperations.set(unkDotCall, MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 2621000434129553333l, 4872723285943177972l, "callee"), methodName);
 
         String[] tokens;
 
@@ -1003,7 +1005,7 @@ public class FullASTConverter extends ASTConverter {
         }
         sb.deleteCharAt(sb.length() - 1);
 
-        SPropertyOperations.set(unkDotCall, "tokens", sb.toString());
+        SPropertyOperations.set(unkDotCall, MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 6528213125912070246l, 1843920760191311250l, "tokens"), sb.toString());
 
         result = unkDotCall;
         call = unkDotCall;
@@ -1020,10 +1022,10 @@ public class FullASTConverter extends ASTConverter {
         // we can already know that it should be an InstanceMethodCall 
 
         SNode dotExpr = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.DotExpression", null);
-        SLinkOperations.setTarget(dotExpr, "operand", convertExpressionWrap(x.receiver), true);
+        SLinkOperations.setTarget(dotExpr, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1197027756228l, 1197027771414l, "operand"), convertExpressionWrap(x.receiver));
 
         SNode instCall = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation", null);
-        SLinkOperations.setTarget(dotExpr, "operation", instCall, true);
+        SLinkOperations.setTarget(dotExpr, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1197027756228l, 1197027833540l, "operation"), instCall);
 
         org.jetbrains.mps.openapi.model.SReference sref = new DynamicReference("baseMethodDeclaration", instCall, null, methodName);
         instCall.setReference(sref.getRole(), sref);
@@ -1035,7 +1037,7 @@ public class FullASTConverter extends ASTConverter {
 
     if ((call != null)) {
       addCallArgs(call, x.arguments);
-      addTypeArgs(x.typeArguments, SLinkOperations.getTargets(call, "typeArgument", true));
+      addTypeArgs(x.typeArguments, SLinkOperations.getChildren(call, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, 4972241301747169160l, "typeArgument")));
     }
     return result;
   }
@@ -1044,14 +1046,14 @@ public class FullASTConverter extends ASTConverter {
       return;
     }
     for (Expression arg : args) {
-      ListSequence.fromList(SLinkOperations.getTargets(call, "actualArgument", true)).addElement(convertExpressionWrap(arg));
+      ListSequence.fromList(SLinkOperations.getChildren(call, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, 1068499141038l, "actualArgument"))).addElement(convertExpressionWrap(arg));
     }
   }
   /*package*/ SNode convertExpression(FieldReference x) throws JavaParseException {
     SNode result = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.DotExpression", null);
-    SLinkOperations.setTarget(result, "operand", convertExpressionWrap(x.receiver), true);
+    SLinkOperations.setTarget(result, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1197027756228l, 1197027771414l, "operand"), convertExpressionWrap(x.receiver));
     SNode fieldRef = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.FieldReferenceOperation", null);
-    SLinkOperations.setTarget(result, "operation", fieldRef, true);
+    SLinkOperations.setTarget(result, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1197027756228l, 1197027833540l, "operation"), fieldRef);
     SReference sref = new DynamicReference("fieldDeclaration", fieldRef, null, new String(x.token));
     fieldRef.setReference(sref.getRole(), sref);
     return result;
@@ -1063,8 +1065,8 @@ public class FullASTConverter extends ASTConverter {
 
       SNode unkNew = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.UnknownNew", null);
       addCallArgs(unkNew, x.arguments);
-      addTypeArgs(typeArguments(x.type), SLinkOperations.getTargets(unkNew, "typeArgument", true));
-      SPropertyOperations.set(unkNew, "className", typeName(x.type));
+      addTypeArgs(typeArguments(x.type), SLinkOperations.getChildren(unkNew, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, 4972241301747169160l, "typeArgument")));
+      SPropertyOperations.set(unkNew, MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 3304084122476667220l, 3304084122476721463l, "className"), typeName(x.type));
 
       return unkNew;
     }
@@ -1081,7 +1083,7 @@ public class FullASTConverter extends ASTConverter {
       final int argCount = args.length;
       Iterable<SNode> subset = Sequence.fromIterable(conss).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
-          return ListSequence.fromList(SLinkOperations.getTargets(it, "parameter", true)).count() == argCount;
+          return ListSequence.fromList(SLinkOperations.getChildren(it, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123132l, 1068580123134l, "parameter"))).count() == argCount;
         }
       });
       result = Sequence.fromIterable(subset).first();
@@ -1094,12 +1096,12 @@ public class FullASTConverter extends ASTConverter {
     if (x.anonymousType != null) {
       SNode anonCreate = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.AnonymousClassCreator", null);
       create = anonCreate;
-      SLinkOperations.setTarget(result, "creator", anonCreate, true);
+      SLinkOperations.setTarget(result, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1145552977093l, 1145553007750l, "creator"), anonCreate);
       SNode cls = SNodeOperations.cast(convertTypeDecl(x.anonymousType), "jetbrains.mps.baseLanguage.structure.AnonymousClass");
-      SLinkOperations.setTarget(anonCreate, "cls", cls, true);
+      SLinkOperations.setTarget(anonCreate, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1182160077978l, 1182160096073l, "cls"), cls);
       addReference(x.type, cls, "classifier");
       addCallArgs(cls, x.arguments);
-      addTypeArgs(typeArguments(x.type), SLinkOperations.getTargets(cls, "typeParameter", true));
+      addTypeArgs(typeArguments(x.type), SLinkOperations.getChildren(cls, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1170345865475l, 1201186121363l, "typeParameter")));
     } else {
       // TODO what is enclosing instance? handle it 
       if (x.enclosingInstance() == null) {
@@ -1151,11 +1153,11 @@ public class FullASTConverter extends ASTConverter {
 
     } else if (SNodeOperations.isInstanceOf(argType, "jetbrains.mps.baseLanguage.structure.ArrayType")) {
       SNode result = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ArrayClassExpression", null);
-      SLinkOperations.setTarget(result, "arrayType", argType, true);
+      SLinkOperations.setTarget(result, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1251851371723515367l, 1251851371723515368l, "arrayType"), argType);
       return result;
     } else if (SNodeOperations.isInstanceOf(argType, "jetbrains.mps.baseLanguage.structure.PrimitiveType")) {
       SNode result = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.PrimitiveClassExpression", null);
-      SLinkOperations.setTarget(result, "primitiveType", argType, true);
+      SLinkOperations.setTarget(result, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 4564374268190696673l, 4564374268190696674l, "primitiveType"), argType);
       return result;
     } else {
       throw new JavaParseException("Type in class literal access is expected to be classifier or array type");
@@ -1166,17 +1168,17 @@ public class FullASTConverter extends ASTConverter {
     switch (operator) {
       case OperatorIds.MINUS:
         SNode unaryMinus = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.UnaryMinus", null);
-        SLinkOperations.setTarget(unaryMinus, "expression", convertExpressionWrap(x.expression), true);
+        SLinkOperations.setTarget(unaryMinus, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1239714755177l, 1239714902950l, "expression"), convertExpressionWrap(x.expression));
         return unaryMinus;
       case OperatorIds.NOT:
         SNode notExpression = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.NotExpression", null);
-        SLinkOperations.setTarget(notExpression, "expression", convertExpressionWrap(x.expression), true);
+        SLinkOperations.setTarget(notExpression, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1081516740877l, 1081516765348l, "expression"), convertExpressionWrap(x.expression));
         return notExpression;
       case OperatorIds.PLUS:
         return convertExpressionWrap(x.expression);
       case OperatorIds.TWIDDLE:
         SNode twiddle = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.BitwiseNotExpression", null);
-        SLinkOperations.setTarget(twiddle, "expression", convertExpressionWrap(x.expression), true);
+        SLinkOperations.setTarget(twiddle, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1225894555487l, 1225894555490l, "expression"), convertExpressionWrap(x.expression));
         return twiddle;
       default:
         throw new JavaParseException("Unexpected operator for unary expression");
@@ -1196,14 +1198,14 @@ public class FullASTConverter extends ASTConverter {
   private SNode getStatementListFromStatement(SNode possibleBlock, Statement x) {
     SNode result;
     if (SNodeOperations.isInstanceOf(possibleBlock, "jetbrains.mps.baseLanguage.structure.BlockStatement")) {
-      result = SLinkOperations.getTarget(SNodeOperations.cast(possibleBlock, "jetbrains.mps.baseLanguage.structure.BlockStatement"), "statements", true);
+      result = SLinkOperations.getTarget(SNodeOperations.cast(possibleBlock, "jetbrains.mps.baseLanguage.structure.BlockStatement"), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1082485599095l, 1082485599096l, "statements"));
       // FIXME should detach be called here? it depends on whether we're already in a model... 
       // <node> 
     } else {
       result = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.StatementList", null);
       addBlock(result, x.sourceStart(), x.sourceEnd());
       if ((possibleBlock != null)) {
-        ListSequence.fromList(SLinkOperations.getTargets(result, "statement", true)).addElement(possibleBlock);
+        ListSequence.fromList(SLinkOperations.getChildren(result, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123136l, 1068581517665l, "statement"))).addElement(possibleBlock);
       }
     }
     return result;
@@ -1337,7 +1339,7 @@ public class FullASTConverter extends ASTConverter {
     quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StatementList", null, null, false);
     quotedNode_5 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.SingleLineComment", null, null, false);
     quotedNode_8 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.TextCommentPart", null, null, false);
-    SNodeAccessUtil.setProperty(quotedNode_8, "text", "converted:  for ( expr; ...) {}  ->  { expr; for ( ; ...) {} }");
+    SNodeAccessUtil.setProperty(quotedNode_8, MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 6329021646629104957l, 6329021646629104958l, "text"), "converted:  for ( expr; ...) {}  ->  { expr; for ( ; ...) {} }");
     quotedNode_5.addChild("commentPart", quotedNode_8);
     quotedNode_4.addChild("statement", quotedNode_5);
     {

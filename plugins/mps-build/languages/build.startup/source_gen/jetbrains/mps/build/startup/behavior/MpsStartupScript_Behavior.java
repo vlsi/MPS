@@ -6,6 +6,8 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.internal.collections.runtime.IRightCombinator;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
@@ -20,23 +22,23 @@ public class MpsStartupScript_Behavior {
   public static String call_getDefaultVmoptions_5842819808956701267(SNode thisNode, boolean is64bit) {
     return trim_p7akvg_a0a0b(Sequence.fromIterable(MpsStartupScript_Behavior.call_getVmOptions_2693344784285058735(thisNode, is64bit)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return !(SPropertyOperations.getBoolean(it, "commented"));
+        return !(SPropertyOperations.getBoolean(it, MetaAdapterFactory.getProperty(new UUID(-3097565121670396746l, -5546031393255049985l), 3885435385580582732l, 5842819808956906658l, "commented")));
       }
     }).foldRight("", new IRightCombinator<SNode, String>() {
       public String combine(SNode it, String s) {
-        return s + " " + SPropertyOperations.getString(it, "options");
+        return s + " " + SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(new UUID(-3097565121670396746l, -5546031393255049985l), 3885435385580582732l, 3885435385580582733l, "options"));
       }
     }));
   }
   public static Iterable<SNode> call_getCommentedOptions_5842819808956911345(SNode thisNode, boolean is64bit) {
     return Sequence.fromIterable(MpsStartupScript_Behavior.call_getVmOptions_2693344784285058735(thisNode, is64bit)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return SPropertyOperations.getBoolean(it, "commented");
+        return SPropertyOperations.getBoolean(it, MetaAdapterFactory.getProperty(new UUID(-3097565121670396746l, -5546031393255049985l), 3885435385580582732l, 5842819808956906658l, "commented"));
       }
     });
   }
   public static Iterable<SNode> call_getVmOptions_2693344784285058735(SNode thisNode, boolean is64bit) {
-    return SNodeOperations.ofConcept(((is64bit ? SLinkOperations.getTargets(thisNode, "vmOptions64", true) : SLinkOperations.getTargets(thisNode, "vmOptions", true))), "jetbrains.mps.build.startup.structure.SimpleVmOptions");
+    return SNodeOperations.ofConcept(((is64bit ? SLinkOperations.getChildren(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-3097565121670396746l, -5546031393255049985l), 3885435385580582152l, 2693344784283221851l, "vmOptions64")) : SLinkOperations.getChildren(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-3097565121670396746l, -5546031393255049985l), 3885435385580582152l, 3885435385580627556l, "vmOptions")))), "jetbrains.mps.build.startup.structure.SimpleVmOptions");
   }
   public static Iterable<SNode> call_getDefaultVmOptionsLines_2693344784285072660(SNode thisNode, boolean is64bit) {
     return Sequence.fromIterable(Sequence.fromArray(MpsStartupScript_Behavior.call_getDefaultVmoptions_5842819808956701267(thisNode, is64bit).split("\\s"))).where(new IWhereFilter<String>() {
@@ -50,10 +52,10 @@ public class MpsStartupScript_Behavior {
     });
   }
   public static String call_getPathToVmOptionsFile_5842819808956911442(SNode thisNode, boolean is64bit) {
-    return SPropertyOperations.getString(thisNode, "startupFolder") + "/" + MpsStartupScript_Behavior.call_getVmOptionsFileName_2693344784285261045(thisNode, is64bit);
+    return SPropertyOperations.getString(thisNode, MetaAdapterFactory.getProperty(new UUID(-3097565121670396746l, -5546031393255049985l), 3885435385580582152l, 3885435385580582155l, "startupFolder")) + "/" + MpsStartupScript_Behavior.call_getVmOptionsFileName_2693344784285261045(thisNode, is64bit);
   }
   public static String call_getVmOptionsFileName_2693344784285261045(SNode thisNode, boolean is64bit) {
-    return SPropertyOperations.getString(thisNode, "name") + ((is64bit ? "64" : "")) + "." + MpsStartupScript_Behavior.call_getVmOptionsExtension_5842819808956911479(thisNode);
+    return SPropertyOperations.getString(thisNode, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")) + ((is64bit ? "64" : "")) + "." + MpsStartupScript_Behavior.call_getVmOptionsExtension_5842819808956911479(thisNode);
   }
   public static String call_getVmOptionsExtension_5842819808956911479(SNode thisNode) {
     return "vmoptions";
@@ -65,7 +67,7 @@ public class MpsStartupScript_Behavior {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.startup.structure.TextLine", null, null, false);
-    SNodeAccessUtil.setProperty(quotedNode_2, "text", (String) parameter_1);
+    SNodeAccessUtil.setProperty(quotedNode_2, MetaAdapterFactory.getProperty(new UUID(-3097565121670396746l, -5546031393255049985l), 1731640411964205218l, 1731640411964798937l, "text"), (String) parameter_1);
     return quotedNode_2;
   }
 }

@@ -145,7 +145,7 @@ public class HierarchicalChooseNodeComponent extends JPanel implements IChooseCo
     private IDescendantsProvider myDescendantsProvider;
 
     public MyHierarchyTree(IDescendantsProvider descendantsProvider) {
-      super(null, SNodeUtil.concept_BaseConcept, false);
+      super(null, SNodeUtil.conceptName_BaseConcept, false);
       myDescendantsProvider = descendantsProvider;
     }
 

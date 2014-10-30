@@ -5,6 +5,7 @@ package jetbrains.mps.baseLanguage.overloadedOperators.constraints;
 import jetbrains.mps.smodel.runtime.ConstraintsDescriptor;
 import java.util.Arrays;
 import jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor;
+import jetbrains.mps.smodel.adapter.ids.SConceptId;
 
 public class ConstraintsAspectDescriptor implements jetbrains.mps.smodel.runtime.ConstraintsAspectDescriptor {
   public ConstraintsAspectDescriptor() {
@@ -20,9 +21,24 @@ public class ConstraintsAspectDescriptor implements jetbrains.mps.smodel.runtime
       case 1:
         return new ContainerImport_Constraints();
       default:
-        // todo: illegal in some cases? 
         return new BaseConstraintsDescriptor(fqName);
     }
+  }
+  public ConstraintsDescriptor getDescriptor(SConceptId conceptId) {
+    long id = conceptId.getConceptId();
+    if (id == 2838654975957155508l) {
+      return new BinaryOperationReference_Constraints();
+    }
+    if (id == 2838654975957402167l) {
+      return new CustomOperator_Constraints();
+    }
+    if (id == 1569627462441399919l) {
+      return new CustomOperatorUsage_Constraints();
+    }
+    if (id == 7363434029342207049l) {
+      return new ContainerImport_Constraints();
+    }
+    return new BaseConstraintsDescriptor(conceptId);
   }
   private static String[] stringSwitchCases_2qnle6_a0a0b = new String[]{"jetbrains.mps.baseLanguage.overloadedOperators.structure.BinaryOperationReference", "jetbrains.mps.baseLanguage.overloadedOperators.structure.ContainerImport", "jetbrains.mps.baseLanguage.overloadedOperators.structure.CustomOperator", "jetbrains.mps.baseLanguage.overloadedOperators.structure.CustomOperatorUsage"};
 }

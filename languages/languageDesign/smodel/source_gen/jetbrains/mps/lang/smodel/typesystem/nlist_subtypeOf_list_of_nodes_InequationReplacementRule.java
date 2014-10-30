@@ -16,6 +16,8 @@ import jetbrains.mps.util.IterableUtil;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 
 public class nlist_subtypeOf_list_of_nodes_InequationReplacementRule extends AbstractInequationReplacementRule_Runtime {
   /*package*/ GeneratedMatchingPattern myMatchingPattern1;
@@ -135,14 +137,14 @@ public class nlist_subtypeOf_list_of_nodes_InequationReplacementRule extends Abs
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeType", null, null, false);
-    SNodeAccessUtil.setReferenceTarget(quotedNode_2, "concept", (SNode) parameter_1);
+    SNodeAccessUtil.setReferenceTarget(quotedNode_2, MetaAdapterFactory.getReferenceLink(new UUID(8675788371017092295l, -9098312342032910879l), 1138055754698l, 1138405853777l, "concept"), (SNode) parameter_1);
     return quotedNode_2;
   }
   private static SNode _quotation_createNode_9szvhv_a0a0b0e(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeType", null, null, false);
-    SNodeAccessUtil.setReferenceTarget(quotedNode_2, "concept", (SNode) parameter_1);
+    SNodeAccessUtil.setReferenceTarget(quotedNode_2, MetaAdapterFactory.getReferenceLink(new UUID(8675788371017092295l, -9098312342032910879l), 1138055754698l, 1138405853777l, "concept"), (SNode) parameter_1);
     return quotedNode_2;
   }
 }

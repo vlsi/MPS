@@ -6,6 +6,8 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.scope.Scope;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 
 public class Evaluator_Behavior {
   public static void init(SNode thisNode) {
@@ -15,6 +17,6 @@ public class Evaluator_Behavior {
     // yea! 
   }
   public static SNode virtual_getCode_317191294093624551(SNode thisNode) {
-    return SLinkOperations.getTarget(thisNode, "code", true);
+    return SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(9053457975011001859l, -9123640110572141707l), 846214144113532833l, 846214144113533056l, "code"));
   }
 }

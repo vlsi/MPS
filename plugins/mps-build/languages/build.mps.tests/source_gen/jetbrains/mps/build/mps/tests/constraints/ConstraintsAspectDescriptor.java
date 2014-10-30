@@ -5,6 +5,7 @@ package jetbrains.mps.build.mps.tests.constraints;
 import jetbrains.mps.smodel.runtime.ConstraintsDescriptor;
 import java.util.Arrays;
 import jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor;
+import jetbrains.mps.smodel.adapter.ids.SConceptId;
 
 public class ConstraintsAspectDescriptor implements jetbrains.mps.smodel.runtime.ConstraintsAspectDescriptor {
   public ConstraintsAspectDescriptor() {
@@ -18,9 +19,21 @@ public class ConstraintsAspectDescriptor implements jetbrains.mps.smodel.runtime
       case 2:
         return new BuildMpsLayout_TestModules_Constraints();
       default:
-        // todo: illegal in some cases? 
         return new BaseConstraintsDescriptor(fqName);
     }
+  }
+  public ConstraintsDescriptor getDescriptor(SConceptId conceptId) {
+    long id = conceptId.getConceptId();
+    if (id == 4560297596904469362l) {
+      return new BuildMpsLayout_TestModule_Constraints();
+    }
+    if (id == 4560297596904469355l) {
+      return new BuildMpsLayout_TestModuleGroup_Constraints();
+    }
+    if (id == 4560297596904469357l) {
+      return new BuildMpsLayout_TestModules_Constraints();
+    }
+    return new BaseConstraintsDescriptor(conceptId);
   }
   private static String[] stringSwitchCases_2qnle6_a0a0b = new String[]{"jetbrains.mps.build.mps.tests.structure.BuildMpsLayout_TestModule", "jetbrains.mps.build.mps.tests.structure.BuildMpsLayout_TestModuleGroup", "jetbrains.mps.build.mps.tests.structure.BuildMpsLayout_TestModules"};
 }

@@ -4,9 +4,11 @@ package jetbrains.mps.baseLanguage.math.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 
 public class MathContext_Behavior {
   public static void init(SNode thisNode) {
-    SPropertyOperations.set(thisNode, "precision", "" + (7));
+    SPropertyOperations.set(thisNode, MetaAdapterFactory.getProperty(new UUID(3676340747305173022l, -6911132873973321185l), 1904947163751448715l, 1904947163751462196l, "precision"), "" + (7));
   }
 }

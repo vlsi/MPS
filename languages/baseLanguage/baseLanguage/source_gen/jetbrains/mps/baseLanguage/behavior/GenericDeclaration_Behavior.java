@@ -7,6 +7,8 @@ import jetbrains.mps.scope.Scope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.baseLanguage.scopes.Scopes;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.lang.scopes.runtime.ScopeUtils;
 
 public class GenericDeclaration_Behavior {
@@ -14,7 +16,7 @@ public class GenericDeclaration_Behavior {
   }
   public static Scope virtual_getScope_3734116213129936182(SNode thisNode, SNode kind, SNode child) {
     if (SConceptOperations.isSubConceptOf(kind, "jetbrains.mps.baseLanguage.structure.TypeVariableDeclaration")) {
-      return Scopes.forTypeVariables(SLinkOperations.getTargets(thisNode, "typeVariableDeclaration", true), ScopeUtils.lazyParentScope(thisNode, kind));
+      return Scopes.forTypeVariables(SLinkOperations.getChildren(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1109279851642l, 1109279881614l, "typeVariableDeclaration")), ScopeUtils.lazyParentScope(thisNode, kind));
     }
     return null;
   }

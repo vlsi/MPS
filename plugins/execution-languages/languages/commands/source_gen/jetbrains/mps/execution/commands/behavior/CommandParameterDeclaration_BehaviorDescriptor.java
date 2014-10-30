@@ -11,6 +11,9 @@ public abstract class CommandParameterDeclaration_BehaviorDescriptor extends Var
   public boolean virtual_generateField_8478830098674441876(SNode thisNode) {
     return CommandParameterDeclaration_Behavior.virtual_generateField_8478830098674441876(thisNode);
   }
+  public boolean virtual_isRequired_8287978476542625659(SNode thisNode) {
+    return CommandParameterDeclaration_Behavior.virtual_isRequired_8287978476542625659(thisNode);
+  }
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.execution.commands.structure.CommandParameterDeclaration";

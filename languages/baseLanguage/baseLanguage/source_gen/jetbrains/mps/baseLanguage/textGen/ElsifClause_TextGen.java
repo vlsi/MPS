@@ -5,14 +5,16 @@ package jetbrains.mps.baseLanguage.textGen;
 import jetbrains.mps.textGen.SNodeTextGen;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 
 public class ElsifClause_TextGen extends SNodeTextGen {
   public void doGenerateText(SNode node) {
     this.append(" else if (");
-    appendNode(SLinkOperations.getTarget(node, "condition", true));
+    appendNode(SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1206060495898l, 1206060619838l, "condition")));
     this.append(") {");
     this.increaseDepth();
-    appendNode(SLinkOperations.getTarget(node, "statementList", true));
+    appendNode(SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1206060495898l, 1206060644605l, "statementList")));
     this.decreaseDepth();
     this.appendNewLine();
     this.appendWithIndent("}");

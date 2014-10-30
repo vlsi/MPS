@@ -8,6 +8,8 @@ import jetbrains.mps.scope.ModelPlusImportedScope;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.baseLanguage.behavior.Classifier_Behavior;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -22,10 +24,10 @@ public class ExternalViewClassifierScope extends FilteringScope {
   @Override
   public boolean isExcluded(SNode node) {
     SNode classConcept = SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.ClassConcept");
-    if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(classConcept, "visibility", true), "jetbrains.mps.baseLanguage.structure.PrivateVisibility")) {
+    if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(classConcept, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1178549954367l, 1178549979242l, "visibility")), "jetbrains.mps.baseLanguage.structure.PrivateVisibility")) {
       return true;
     }
-    if (!(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(classConcept, "visibility", true), "jetbrains.mps.baseLanguage.structure.PublicVisibility")) && SNodeOperations.getModel(classConcept) != myModel) {
+    if (!(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(classConcept, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1178549954367l, 1178549979242l, "visibility")), "jetbrains.mps.baseLanguage.structure.PublicVisibility")) && SNodeOperations.getModel(classConcept) != myModel) {
       return true;
     }
     if (Classifier_Behavior.call_isInner_521412098689998677(classConcept) && !(BehaviorReflection.invokeVirtual(Boolean.TYPE, classConcept, "virtual_isStatic_7405920559687241224", new Object[]{}))) {

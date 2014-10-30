@@ -9,6 +9,8 @@ import jetbrains.mps.internal.collections.runtime.IterableUtils;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -34,10 +36,10 @@ public class QueriesGenerated {
     return tns;
   }
   public static Object propertyMacro_GetPropertyValue_4089647634160960602(final PropertyMacroContext _context) {
-    return BehaviorReflection.invokeVirtual(SModuleReference.class, SLinkOperations.getTarget(_context.getNode(), "moduleRef", true), "virtual_moduleReference_1280144168199513544", new Object[]{}).toString();
+    return BehaviorReflection.invokeVirtual(SModuleReference.class, SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(new UUID(-3186960361546692645l, -5977911984495255467l), 4504141816188599477l, 1280144168199507080l, "moduleRef")), "virtual_moduleReference_1280144168199513544", new Object[]{}).toString();
   }
   public static Object propertyMacro_GetPropertyValue_2956932267233340150(final PropertyMacroContext _context) {
-    return _context.getTemplateValue() + "_" + NameUtil.toValidIdentifier(SPropertyOperations.getString(_context.getNode(), "name"));
+    return _context.getTemplateValue() + "_" + NameUtil.toValidIdentifier(SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")));
   }
   public static Iterable<SNode> sourceNodesQuery_2956932267233365615(final SourceSubstituteMacroNodesContext _context) {
     return ModuleSuite_Behavior.call_getNotMutedTests_8605005254686521789(_context.getNode());

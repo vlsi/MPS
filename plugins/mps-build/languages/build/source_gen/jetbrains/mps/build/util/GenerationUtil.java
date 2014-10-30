@@ -9,6 +9,8 @@ import java.util.concurrent.ConcurrentHashMap;
 import jetbrains.mps.util.containers.ConcurrentHashSet;
 import jetbrains.mps.util.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 
 public class GenerationUtil {
   public static String SCRIPTS_TARGET_PROPERTY = GenerationUtil.class.getPackage().getName() + ".scripts.dir";
@@ -42,6 +44,6 @@ public class GenerationUtil {
     return set;
   }
   private static String getKey(String prefix, TemplateQueryContext genContext, SNode project) {
-    return prefix + "/" + SNodeOperations.getModelLongName(genContext.getOriginalInputModel()) + "/" + SPropertyOperations.getString(project, "name");
+    return prefix + "/" + SNodeOperations.getModelLongName(genContext.getOriginalInputModel()) + "/" + SPropertyOperations.getString(project, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"));
   }
 }

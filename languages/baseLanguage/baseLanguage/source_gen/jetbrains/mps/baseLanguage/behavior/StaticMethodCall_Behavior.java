@@ -8,6 +8,8 @@ import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.generator.TransientModelsModule;
 import java.lang.reflect.Method;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.reloading.ReflectionUtil;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.baseLanguage.scopes.Members;
@@ -25,34 +27,34 @@ public class StaticMethodCall_Behavior {
     if (module instanceof TransientModelsModule) {
       module = ((TransientModelsModule) module).getOriginalModule();
     }
-    Method method = BaseMethodDeclaration_Behavior.call_getMethod_1213877350393(SLinkOperations.getTarget(thisNode, "baseMethodDeclaration", false), module);
+    Method method = BaseMethodDeclaration_Behavior.call_getMethod_1213877350393(SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, 1068499141037l, "baseMethodDeclaration")), module);
     Object[] actualArguments = BaseMethodCall_Behavior.call_getActualArguments_1213877339153(thisNode, module);
     return ReflectionUtil.staticInvoke(method, actualArguments);
   }
   public static Iterable<SNode> virtual_getAvailableMethodDeclarations_5776618742611315379(SNode thisNode, final String methodName) {
-    return Sequence.fromIterable(Members.visibleStaticMethods(SLinkOperations.getTarget(thisNode, "classConcept", false), thisNode)).where(new IWhereFilter<SNode>() {
+    return Sequence.fromIterable(Members.visibleStaticMethods(SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1081236700937l, 1144433194310l, "classConcept")), thisNode)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return eq_8wxa2a_a0a0a0a0a0a0a2(SPropertyOperations.getString(it, "name"), methodName);
+        return eq_8wxa2a_a0a0a0a0a0a0a2(SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")), methodName);
       }
     }).toListSequence();
   }
   public static boolean call_canBeConvertedToLocal_3299924278393499101(SNode thisNode) {
-    SNode classConcept1 = SLinkOperations.getTarget(thisNode, "classConcept", false);
+    SNode classConcept1 = SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1081236700937l, 1144433194310l, "classConcept"));
     SNode classConcept2 = SNodeOperations.getAncestor(thisNode, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false);
     return classConcept1 == classConcept2;
   }
   public static void call_convertToLocal_3299924278393509387(SNode thisNode) {
     SNode localStaticMethodCall = SNodeFactoryOperations.replaceWithNewChild(thisNode, "jetbrains.mps.baseLanguage.structure.LocalMethodCall");
-    SLinkOperations.setTarget(localStaticMethodCall, "baseMethodDeclaration", SLinkOperations.getTarget(thisNode, "baseMethodDeclaration", false), false);
-    for (SNode actualArgument : ListSequence.fromList(SLinkOperations.getTargets(thisNode, "actualArgument", true))) {
-      ListSequence.fromList(SLinkOperations.getTargets(localStaticMethodCall, "actualArgument", true)).addElement(actualArgument);
+    SLinkOperations.setTarget(localStaticMethodCall, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, 1068499141037l, "baseMethodDeclaration"), SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, 1068499141037l, "baseMethodDeclaration")));
+    for (SNode actualArgument : ListSequence.fromList(SLinkOperations.getChildren(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, 1068499141038l, "actualArgument")))) {
+      ListSequence.fromList(SLinkOperations.getChildren(localStaticMethodCall, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, 1068499141038l, "actualArgument"))).addElement(actualArgument);
     }
-    for (SNode actualTypeArgument : ListSequence.fromList(SLinkOperations.getTargets(thisNode, "typeArgument", true))) {
-      ListSequence.fromList(SLinkOperations.getTargets(localStaticMethodCall, "typeArgument", true)).addElement(actualTypeArgument);
+    for (SNode actualTypeArgument : ListSequence.fromList(SLinkOperations.getChildren(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, 4972241301747169160l, "typeArgument")))) {
+      ListSequence.fromList(SLinkOperations.getChildren(localStaticMethodCall, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, 4972241301747169160l, "typeArgument"))).addElement(actualTypeArgument);
     }
   }
   public static String virtual_getPresentation_1213877396640(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(thisNode, "classConcept", false), "virtual_getPresentation_1213877396640", new Object[]{}) + "." + BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(thisNode, "baseMethodDeclaration", false), "virtual_getPresentation_1213877396640", new Object[]{});
+    return BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1081236700937l, 1144433194310l, "classConcept")), "virtual_getPresentation_1213877396640", new Object[]{}) + "." + BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, 1068499141037l, "baseMethodDeclaration")), "virtual_getPresentation_1213877396640", new Object[]{});
   }
   private static boolean eq_8wxa2a_a0a0a0a0a0a0a2(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);

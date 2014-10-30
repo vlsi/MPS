@@ -11,6 +11,8 @@ import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.openapi.editor.style.StyleRegistry;
 import java.awt.Color;
@@ -60,7 +62,7 @@ public class CreateEquationStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private static boolean renderingCondition_mi4qyq_a0a(SNode node, EditorContext editorContext) {
-    return SPropertyOperations.getBoolean(node, "checkOnly");
+    return SPropertyOperations.getBoolean(node, MetaAdapterFactory.getProperty(new UUID(8817443762339858024l, -6091446231697526094l), 1174660718586l, 1206359757216l, "checkOnly"));
   }
   private EditorCell createConstant_mi4qyq_a0a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "check");
@@ -165,7 +167,7 @@ public class CreateEquationStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private static boolean renderingCondition_mi4qyq_a1a(SNode node, EditorContext editorContext) {
-    return !(SPropertyOperations.getBoolean(node, "checkOnly"));
+    return !(SPropertyOperations.getBoolean(node, MetaAdapterFactory.getProperty(new UUID(8817443762339858024l, -6091446231697526094l), 1174660718586l, 1206359757216l, "checkOnly")));
   }
   private EditorCell createRefNode_mi4qyq_a1a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);

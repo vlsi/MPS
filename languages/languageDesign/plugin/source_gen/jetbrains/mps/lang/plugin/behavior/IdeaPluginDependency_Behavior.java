@@ -4,11 +4,13 @@ package jetbrains.mps.lang.plugin.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 
 public class IdeaPluginDependency_Behavior {
   public static void init(SNode thisNode) {
   }
   public static String virtual_getPluginId_5864553086652219131(SNode thisNode) {
-    return SPropertyOperations.getString(thisNode, "pluginId");
+    return SPropertyOperations.getString(thisNode, MetaAdapterFactory.getProperty(new UUID(2952642368903463569l, -5856357300648461647l), 5864553086652219116l, 5864553086652219119l, "pluginId"));
   }
 }

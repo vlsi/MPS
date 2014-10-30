@@ -22,11 +22,11 @@ import jetbrains.mps.generator.impl.GeneratorUtil;
 import jetbrains.mps.generator.impl.RoleValidation.Status;
 import jetbrains.mps.generator.impl.TemplateGenerator;
 import jetbrains.mps.smodel.SModelStereotype;
+import jetbrains.mps.util.SNodeOperations;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.mps.openapi.model.SNodeUtil;
 import org.jetbrains.mps.openapi.model.SReference;
 
 /**
@@ -100,7 +100,7 @@ public class ReferenceInfo_CopiedInputNode extends ReferenceInfo {
         // references to template nodes are not acceptable
         String msg = "bad reference, cannot refer to a generator model: %s for role '%s' in %s";
         generator.getLogger().error(myOutputSourceNode.getReference(), String.format(msg,
-                SNodeUtil.getDebugText(outputTargetNode), myReferenceRole, SNodeUtil.getDebugText(myOutputSourceNode)),
+                SNodeOperations.getDebugText(outputTargetNode), myReferenceRole, SNodeOperations.getDebugText(myOutputSourceNode)),
             getErrorDescriptions());
         return false;
       }
@@ -108,7 +108,7 @@ public class ReferenceInfo_CopiedInputNode extends ReferenceInfo {
         // references to transient nodes in a model outside one being generated are not acceptable
         String msg = "bad reference, cannot refer to an external transient model: %s  for role '%s' in %s";
         generator.getLogger().error(myOutputSourceNode.getReference(), String.format(msg,
-                SNodeUtil.getDebugText(outputTargetNode), myReferenceRole, SNodeUtil.getDebugText(myOutputSourceNode)),
+                SNodeOperations.getDebugText(outputTargetNode), myReferenceRole, SNodeOperations.getDebugText(myOutputSourceNode)),
             getErrorDescriptions());
         return false;
       }

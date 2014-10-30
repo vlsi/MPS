@@ -5,6 +5,8 @@ package jetbrains.mps.baseLanguage.behavior;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -17,10 +19,10 @@ public class UnknownNew_Behavior {
     return ResolveUnknownUtil.resolveNew(thisNode);
   }
   public static Iterable<SNode> virtual_getAvailableMethodDeclarations_5776618742611315379(SNode thisNode, String methodName) {
-    SNode claz = ResolveUnknownUtil.findClass(thisNode, SPropertyOperations.getString(thisNode, "className"));
+    SNode claz = ResolveUnknownUtil.findClass(thisNode, SPropertyOperations.getString(thisNode, MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 3304084122476667220l, 3304084122476721463l, "className")));
     if ((claz == null)) {
       return ListSequence.fromList(new ArrayList<SNode>());
     }
-    return SNodeOperations.ofConcept(SLinkOperations.getTargets(claz, "member", true), "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration");
+    return SNodeOperations.ofConcept(SLinkOperations.getChildren(claz, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107461130800l, 5375687026011219971l, "member")), "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration");
   }
 }

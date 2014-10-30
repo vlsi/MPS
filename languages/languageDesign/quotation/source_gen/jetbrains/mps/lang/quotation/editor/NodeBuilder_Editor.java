@@ -21,6 +21,8 @@ import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 
 public class NodeBuilder_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
@@ -99,7 +101,7 @@ public class NodeBuilder_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private static boolean renderingCondition_x54h4p_a3a(SNode node, EditorContext editorContext) {
-    return SLinkOperations.getTarget(node, "modelToCreate", true) != null;
+    return SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(4184707567256882268l, -4914423608129972907l), 5455284157993863837l, 5455284157993863839l, "modelToCreate")) != null;
   }
   private EditorCell createConstant_x54h4p_a3a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "[model =");

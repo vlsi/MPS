@@ -6,16 +6,18 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.build.util.VisibleArtifacts;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.build.util.JavaExportUtil;
 
 public class BuildSource_JavaExternalJarFolderRef_Behavior {
   public static void init(SNode thisNode) {
   }
   public static SNode call_getDependencyTarget_5610619299014531753(SNode thisNode, VisibleArtifacts artifacts) {
-    if (SNodeOperations.getContainingRoot(thisNode) == SNodeOperations.getContainingRoot(SLinkOperations.getTarget(thisNode, "folder", false))) {
+    if (SNodeOperations.getContainingRoot(thisNode) == SNodeOperations.getContainingRoot(SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getReferenceLink(new UUID(8755280088213897754l, -5075149991798053422l), 5610619299014531647l, 5610619299014531648l, "folder")))) {
       return null;
     }
 
-    return JavaExportUtil.requireJarFolder(artifacts, SLinkOperations.getTarget(thisNode, "folder", false), thisNode);
+    return JavaExportUtil.requireJarFolder(artifacts, SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getReferenceLink(new UUID(8755280088213897754l, -5075149991798053422l), 5610619299014531647l, 5610619299014531648l, "folder")), thisNode);
   }
 }

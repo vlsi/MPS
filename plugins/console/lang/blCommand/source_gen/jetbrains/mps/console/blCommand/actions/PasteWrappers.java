@@ -11,6 +11,8 @@ import jetbrains.mps.datatransfer.PasteWrapperContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 
@@ -36,7 +38,7 @@ public class PasteWrappers {
         return "jetbrains.mps.baseLanguage.structure.Expression";
       }
       public SNode wrap(PasteWrapperContext _context) {
-        return SLinkOperations.getTarget(_context.getSourceNode(), "expression", true);
+        return SLinkOperations.getTarget(_context.getSourceNode(), MetaAdapterFactory.getContainmentLink(new UUID(1911026821630280634l, -8343922105556474022l), 7656298970878093785l, 7656298970878093890l, "expression"));
       }
     });
     ListSequence.fromList(result).addElement(new PasteWrapper() {
@@ -47,7 +49,7 @@ public class PasteWrappers {
         return "jetbrains.mps.baseLanguage.structure.Statement";
       }
       public SNode wrap(PasteWrapperContext _context) {
-        return createExpressionStatement_sma98h_a0a0c(SNodeOperations.cast(HUtil.copyIfNecessary(SLinkOperations.getTarget(_context.getSourceNode(), "expression", true)), "jetbrains.mps.baseLanguage.structure.Expression"));
+        return createExpressionStatement_sma98h_a0a0c(SNodeOperations.cast(HUtil.copyIfNecessary(SLinkOperations.getTarget(_context.getSourceNode(), MetaAdapterFactory.getContainmentLink(new UUID(1911026821630280634l, -8343922105556474022l), 7656298970878093785l, 7656298970878093890l, "expression"))), "jetbrains.mps.baseLanguage.structure.Expression"));
       }
     });
     return result;

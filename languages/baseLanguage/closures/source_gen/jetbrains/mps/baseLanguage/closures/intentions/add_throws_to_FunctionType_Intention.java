@@ -10,6 +10,8 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
 import java.util.Collections;
@@ -45,7 +47,7 @@ public class add_throws_to_FunctionType_Intention implements IntentionFactory {
     return true;
   }
   private boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
-    return ListSequence.fromList(SLinkOperations.getTargets(node, "throwsType", true)).isEmpty();
+    return ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(new UUID(-200093298712821347l, -8038623698278341771l), 1199542442495l, 1214831762486l, "throwsType"))).isEmpty();
   }
   public SNodeReference getIntentionNodeReference() {
     return new SNodePointer("r:dda1964e-d5fa-4ee3-9168-3bfd25608c63(jetbrains.mps.baseLanguage.closures.intentions)", "1229717881949");
@@ -66,7 +68,7 @@ public class add_throws_to_FunctionType_Intention implements IntentionFactory {
       return "Add Throws Clause";
     }
     public void execute(final SNode node, final EditorContext editorContext) {
-      SNodeFactoryOperations.addNewChild(node, "throwsType", "jetbrains.mps.baseLanguage.structure.ClassifierType");
+      SNodeFactoryOperations.addNewChild(node, MetaAdapterFactory.getContainmentLink(new UUID(-200093298712821347l, -8038623698278341771l), 1199542442495l, 1214831762486l, "throwsType"), "jetbrains.mps.baseLanguage.structure.ClassifierType");
     }
     public IntentionDescriptor getDescriptor() {
       return add_throws_to_FunctionType_Intention.this;

@@ -155,6 +155,7 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.editor.styleTests.editor.TestInheritedAttribute_Editor" file="TestInheritedAttribute_Editor.java">
     <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.UUID" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.cells.BigCellUtil" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleAttributes" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleImpl" />
@@ -162,11 +163,13 @@
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.style.Style" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
   <dependency className="jetbrains.mps.lang.editor.styleTests.editor.TestSimpleAttribute_Editor" file="TestSimpleAttribute_Editor.java">
     <classNode dependClassName="java.lang.Boolean" />
+    <classNode dependClassName="java.util.UUID" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.cells.BigCellUtil" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleAttributes" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleImpl" />
@@ -174,6 +177,7 @@
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.style.Style" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>

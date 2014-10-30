@@ -12,6 +12,8 @@ import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
 import java.util.Collections;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -58,18 +60,18 @@ public class ColorQuery_Intention implements IntentionFactory {
     public IntentionImplementation() {
     }
     public String getDescription(final SNode node, final EditorContext editorContext) {
-      if ((SLinkOperations.getTarget(node, "query", true) == null)) {
+      if ((SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(1782411230332735017l, -6324602048325217350l), 1186403694788l, 1186403803051l, "query")) == null)) {
         return "Add Query";
       } else {
         return "Remove Query";
       }
     }
     public void execute(final SNode node, final EditorContext editorContext) {
-      SPropertyOperations.set(node, "color", null);
-      if ((SLinkOperations.getTarget(node, "query", true) == null)) {
-        SNodeFactoryOperations.setNewChild(node, "query", "jetbrains.mps.lang.editor.structure.QueryFunction_Color");
+      SPropertyOperations.set(node, MetaAdapterFactory.getProperty(new UUID(1782411230332735017l, -6324602048325217350l), 1186403694788l, 1186403713874l, "color"), null);
+      if ((SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(1782411230332735017l, -6324602048325217350l), 1186403694788l, 1186403803051l, "query")) == null)) {
+        SNodeFactoryOperations.setNewChild(node, MetaAdapterFactory.getContainmentLink(new UUID(1782411230332735017l, -6324602048325217350l), 1186403694788l, 1186403803051l, "query"), "jetbrains.mps.lang.editor.structure.QueryFunction_Color");
       } else {
-        SNodeOperations.detachNode(SLinkOperations.getTarget(node, "query", true));
+        SNodeOperations.detachNode(SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(1782411230332735017l, -6324602048325217350l), 1186403694788l, 1186403803051l, "query")));
       }
     }
     public IntentionDescriptor getDescriptor() {

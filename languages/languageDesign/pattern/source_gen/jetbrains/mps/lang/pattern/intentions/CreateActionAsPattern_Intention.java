@@ -16,6 +16,8 @@ import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.intentions.IntentionDescriptor;
 
 public class CreateActionAsPattern_Intention implements IntentionFactory {
@@ -70,7 +72,7 @@ public class CreateActionAsPattern_Intention implements IntentionFactory {
     public void execute(final SNode node, final EditorContext editorContext) {
       SNode currentNode = editorContext.getSelectedNode();
       SNodeFactoryOperations.setNewAttribute(currentNode, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.pattern.structure.AsPattern"), "jetbrains.mps.lang.pattern.structure.ActionAsPattern");
-      SPropertyOperations.set(AttributeOperations.getAttribute(currentNode, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.pattern.structure.AsPattern")), "varName", "action_var_" + currentNode.getNodeId().toString());
+      SPropertyOperations.set(AttributeOperations.getAttribute(currentNode, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.pattern.structure.AsPattern")), MetaAdapterFactory.getProperty(new UUID(-3143127453834064983l, -5836335846783251545l), 1136720037779l, 1136720037780l, "varName"), "action_var_" + currentNode.getNodeId().toString());
     }
     public IntentionDescriptor getDescriptor() {
       return CreateActionAsPattern_Intention.this;

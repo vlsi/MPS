@@ -15,9 +15,15 @@
  */
 package jetbrains.mps.smodel.runtime;
 
+import jetbrains.mps.smodel.adapter.ids.SPropertyId;
+import org.jetbrains.mps.openapi.language.SProperty;
 import org.jetbrains.mps.openapi.model.SNode;
 
 public interface PropertyConstraintsDescriptor {
+
+  SPropertyId getProperty();
+
+  @Deprecated
   String getName();
 
   ConstraintsDescriptor getContainer();

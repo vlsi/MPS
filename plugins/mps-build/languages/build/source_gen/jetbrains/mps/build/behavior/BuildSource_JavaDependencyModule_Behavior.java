@@ -7,12 +7,14 @@ import jetbrains.mps.build.util.VisibleArtifacts;
 import jetbrains.mps.build.util.RequiredDependenciesBuilder;
 import jetbrains.mps.build.util.JavaExportUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class BuildSource_JavaDependencyModule_Behavior {
   public static void init(SNode thisNode) {
   }
   public static void virtual_fetchDependencies_5908258303322131137(SNode thisNode, VisibleArtifacts artifacts, RequiredDependenciesBuilder builder) {
-    JavaExportUtil.requireModule(artifacts, SLinkOperations.getTarget(thisNode, "module", false), SNodeOperations.getParent(thisNode), builder);
+    JavaExportUtil.requireModule(artifacts, SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getReferenceLink(new UUID(8755280088213897754l, -5075149991798053422l), 2754769020641646247l, 2754769020641646250l, "module")), SNodeOperations.getParent(thisNode), builder);
   }
 }

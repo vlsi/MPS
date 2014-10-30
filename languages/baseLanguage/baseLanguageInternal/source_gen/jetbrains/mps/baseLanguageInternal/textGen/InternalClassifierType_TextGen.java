@@ -5,18 +5,20 @@ package jetbrains.mps.baseLanguageInternal.textGen;
 import jetbrains.mps.textGen.SNodeTextGen;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 
 public class InternalClassifierType_TextGen extends SNodeTextGen {
   public void doGenerateText(SNode node) {
-    String fqClassName = SPropertyOperations.getString(node, "fqClassName");
+    String fqClassName = SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(new UUID(-2363163772790029805l, -6024047381933761144l), 1174914042989l, 1174914081067l, "fqClassName"));
     BaseLangInternal.className(fqClassName, node, this);
-    if (ListSequence.fromList(SLinkOperations.getTargets(node, "parameter", true)).isNotEmpty()) {
+    if (ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1109201940907l, "parameter"))).isNotEmpty()) {
       this.append("<");
       {
-        Iterable<SNode> collection = SLinkOperations.getTargets(node, "parameter", true);
+        Iterable<SNode> collection = SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1109201940907l, "parameter"));
         final SNode lastItem = Sequence.fromIterable(collection).last();
         for (SNode item : collection) {
           appendNode(item);

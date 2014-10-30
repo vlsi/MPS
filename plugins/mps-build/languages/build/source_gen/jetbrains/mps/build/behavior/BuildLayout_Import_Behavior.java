@@ -7,16 +7,18 @@ import jetbrains.mps.build.util.VisibleArtifacts;
 import jetbrains.mps.build.util.RequiredDependenciesBuilder;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 
 public class BuildLayout_Import_Behavior {
   public static void init(SNode thisNode) {
   }
   public static void virtual_fetchDependencies_5908258303322131137(SNode thisNode, VisibleArtifacts artifacts, RequiredDependenciesBuilder builder) {
-    if (SNodeOperations.getContainingRoot(thisNode) == SNodeOperations.getContainingRoot(SLinkOperations.getTarget(thisNode, "target", false))) {
+    if (SNodeOperations.getContainingRoot(thisNode) == SNodeOperations.getContainingRoot(SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getReferenceLink(new UUID(8755280088213897754l, -5075149991798053422l), 841011766565753074l, 841011766565753076l, "target")))) {
       return;
     }
 
-    SNode target = SNodeOperations.as(artifacts.toOriginalNode(SLinkOperations.getTarget(thisNode, "target", false)), "jetbrains.mps.build.structure.BuildLayout_Node");
+    SNode target = SNodeOperations.as(artifacts.toOriginalNode(SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getReferenceLink(new UUID(8755280088213897754l, -5075149991798053422l), 841011766565753074l, 841011766565753076l, "target"))), "jetbrains.mps.build.structure.BuildLayout_Node");
     SNode artifact = SNodeOperations.as(artifacts.findArtifact(target), "jetbrains.mps.build.structure.BuildLayout_Node");
     if (artifact != null) {
       artifacts.needsFetch(SNodeOperations.getAncestorWhereConceptInList(thisNode, new String[]{"jetbrains.mps.build.structure.BuildLayout", "jetbrains.mps.build.structure.BuildNamedLayout"}, false, false));

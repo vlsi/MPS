@@ -13,6 +13,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.plugins.runconfigs.MPSPsiElement;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import com.intellij.execution.impl.RunManagerImpl;
 
 public class Java_Producer {
@@ -38,7 +40,7 @@ public class Java_Producer {
       if ((BehaviorReflection.invokeNonVirtual((Class<SNode>) ((Class) Object.class), source, "jetbrains.mps.baseLanguage.structure.ClassConcept", "call_getMainMethod_1213877355884", new Object[]{}) == null)) {
         return null;
       }
-      Java_Configuration configuration = ((Java_Configuration) getConfigurationFactory().createConfiguration("" + "Class " + SPropertyOperations.getString(source, "name"), (Java_Configuration) RunManagerImpl.getInstanceImpl(getContext().getProject()).getConfigurationTemplate(getConfigurationFactory()).getConfiguration()));
+      Java_Configuration configuration = ((Java_Configuration) getConfigurationFactory().createConfiguration("" + "Class " + SPropertyOperations.getString(source, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")), (Java_Configuration) RunManagerImpl.getInstanceImpl(getContext().getProject()).getConfigurationTemplate(getConfigurationFactory()).getConfiguration()));
       configuration.getNode().setNode(source);
       return configuration;
     }
@@ -63,7 +65,7 @@ public class Java_Producer {
       if ((classifier == null)) {
         return null;
       }
-      Java_Configuration configuration = ((Java_Configuration) getConfigurationFactory().createConfiguration("" + "Class " + SPropertyOperations.getString(classifier, "name"), (Java_Configuration) RunManagerImpl.getInstanceImpl(getContext().getProject()).getConfigurationTemplate(getConfigurationFactory()).getConfiguration()));
+      Java_Configuration configuration = ((Java_Configuration) getConfigurationFactory().createConfiguration("" + "Class " + SPropertyOperations.getString(classifier, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")), (Java_Configuration) RunManagerImpl.getInstanceImpl(getContext().getProject()).getConfigurationTemplate(getConfigurationFactory()).getConfiguration()));
       configuration.getNode().setNode(classifier);
       return configuration;
     }
@@ -84,7 +86,7 @@ public class Java_Producer {
       if (!(BehaviorReflection.invokeVirtual(Boolean.TYPE, source, "virtual_isNodeRunnable_4666195181811081448", new Object[]{}))) {
         return null;
       }
-      String name = (SNodeOperations.isInstanceOf(source, "jetbrains.mps.lang.core.structure.INamedConcept") ? SPropertyOperations.getString(SNodeOperations.cast(source, "jetbrains.mps.lang.core.structure.INamedConcept"), "name") : BehaviorReflection.invokeVirtual(String.class, source, "virtual_getUnitName_4666195181811081431", new Object[]{}));
+      String name = (SNodeOperations.isInstanceOf(source, "jetbrains.mps.lang.core.structure.INamedConcept") ? SPropertyOperations.getString(SNodeOperations.cast(source, "jetbrains.mps.lang.core.structure.INamedConcept"), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")) : BehaviorReflection.invokeVirtual(String.class, source, "virtual_getUnitName_4666195181811081431", new Object[]{}));
       Java_Configuration configuration = ((Java_Configuration) getConfigurationFactory().createConfiguration("" + "Node " + name, (Java_Configuration) RunManagerImpl.getInstanceImpl(getContext().getProject()).getConfigurationTemplate(getConfigurationFactory()).getConfiguration()));
       configuration.getNode().setNode(source);
       return configuration;

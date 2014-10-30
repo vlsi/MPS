@@ -12,6 +12,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
@@ -26,13 +28,13 @@ public class check_ConceptEditorHintDeclarationUniqueness_NonTypesystemRule exte
   public void applyRule(final SNode conceptEditorHintDeclaration, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     for (SNode hintDeclarartion : ListSequence.fromList(SModelOperations.getRoots(SNodeOperations.getModel(conceptEditorHintDeclaration), "jetbrains.mps.lang.editor.structure.ConceptEditorContextHints")).translate(new ITranslator2<SNode, SNode>() {
       public Iterable<SNode> translate(SNode it) {
-        return SLinkOperations.getTargets(it, "hints", true);
+        return SLinkOperations.getChildren(it, MetaAdapterFactory.getContainmentLink(new UUID(1782411230332735017l, -6324602048325217350l), 5944657839000868711l, 5944657839000877563l, "hints"));
       }
     })) {
       if (hintDeclarartion == conceptEditorHintDeclaration) {
         continue;
       }
-      if (eq_xcu13c_a0b0a0b(SPropertyOperations.getString(hintDeclarartion, "name"), SPropertyOperations.getString(conceptEditorHintDeclaration, "name"))) {
+      if (eq_xcu13c_a0b0a0b(SPropertyOperations.getString(hintDeclarartion, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")), SPropertyOperations.getString(conceptEditorHintDeclaration, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")))) {
         {
           MessageTarget errorTarget = new NodeMessageTarget();
           errorTarget = new PropertyMessageTarget("name");

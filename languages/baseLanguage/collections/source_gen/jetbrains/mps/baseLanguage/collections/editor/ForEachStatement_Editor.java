@@ -11,6 +11,8 @@ import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
@@ -62,7 +64,7 @@ public class ForEachStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private static boolean renderingCondition_kov3ab_a0a(SNode node, EditorContext editorContext) {
-    return !(SPropertyOperations.hasValue(node, "label", null));
+    return !(SPropertyOperations.hasValue(node, MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 1154032098014l, 1199465379613l, "label"), null));
   }
   private EditorCell createProperty_kov3ab_a0a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
@@ -106,7 +108,7 @@ public class ForEachStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private static boolean renderingCondition_kov3ab_a1a(SNode node, EditorContext editorContext) {
-    return (SLinkOperations.getTarget(node, "loopLabel", true) != null);
+    return (SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1154032098014l, 363746191845183793l, "loopLabel")) != null);
   }
   private EditorCell createRefNode_kov3ab_a1a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
@@ -199,7 +201,7 @@ public class ForEachStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private static boolean renderingCondition_kov3ab_a5a(SNode node, EditorContext editorContext) {
-    return (SLinkOperations.getTarget(node, "inputSequence", true) == null) || SConceptOperations.isExactly(SNodeOperations.getConceptDeclaration(SLinkOperations.getTarget(node, "inputSequence", true)), "jetbrains.mps.baseLanguage.structure.Expression");
+    return (SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-8968771020793164004l, -7182180101671965361l), 1153943597977l, 1153944424730l, "inputSequence")) == null) || SConceptOperations.isExactly(SNodeOperations.getConceptDeclaration(SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-8968771020793164004l, -7182180101671965361l), 1153943597977l, 1153944424730l, "inputSequence"))), "jetbrains.mps.baseLanguage.structure.Expression");
   }
   private EditorCell createConstant_kov3ab_g0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "{");

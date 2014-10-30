@@ -9,6 +9,8 @@ import jetbrains.mps.lang.test.runtime.BaseTestBody;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.baseLanguage.util.plugin.refactorings.ExtractMethodRefactoringParameters;
 import jetbrains.mps.baseLanguage.util.plugin.refactorings.ExtractMethodFactory;
@@ -34,7 +36,7 @@ public class ChangeMethodParametersForStatement_Test extends BaseTransformationT
       this.addNodeById("1230052406581");
       {
         SNode c_ref = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.VariableReference", null);
-        SLinkOperations.setTarget(c_ref, "variableDeclaration", SNodeOperations.cast(this.getNodeById("1230052406612"), "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration"), false);
+        SLinkOperations.setTarget(c_ref, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068498886296l, 1068581517664l, "variableDeclaration"), SNodeOperations.cast(this.getNodeById("1230052406612"), "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration"));
         ExtractMethodRefactoringParameters params = ExtractMethodFactory.createParameters(ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("1230052406572"), "jetbrains.mps.baseLanguage.structure.ReturnStatement")));
         ListSequence.fromList(params.getParameters()).getElement(0).setSelected(false);
         MethodParameter p2 = ListSequence.fromList(params.getParameters()).getElement(1);

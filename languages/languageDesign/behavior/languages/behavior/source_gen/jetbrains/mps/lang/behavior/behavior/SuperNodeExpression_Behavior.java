@@ -4,6 +4,8 @@ package jetbrains.mps.lang.behavior.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
@@ -13,17 +15,17 @@ public class SuperNodeExpression_Behavior {
   }
   public static SNode call_getSuperConcept_7448026190102457310(SNode thisNode) {
     SNode result;
-    if ((SLinkOperations.getTarget(thisNode, "superConcept", false) != null)) {
-      result = SLinkOperations.getTarget(thisNode, "superConcept", false);
+    if ((SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getReferenceLink(new UUID(-5808042798135555774l, -8657779246725685839l), 1225194628440l, 5299096511375896640l, "superConcept")) != null)) {
+      result = SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getReferenceLink(new UUID(-5808042798135555774l, -8657779246725685839l), 1225194628440l, 5299096511375896640l, "superConcept"));
     } else {
       SNode behaviour = SNodeOperations.getAncestor(thisNode, "jetbrains.mps.lang.behavior.structure.ConceptBehavior", true, false);
-      SNode concept = SLinkOperations.getTarget(behaviour, "concept", false);
+      SNode concept = SLinkOperations.getTarget(behaviour, MetaAdapterFactory.getReferenceLink(new UUID(-5808042798135555774l, -8657779246725685839l), 1225194240794l, 1225194240799l, "concept"));
       if (SNodeOperations.isInstanceOf(concept, "jetbrains.mps.lang.structure.structure.ConceptDeclaration")) {
         SNode cd = ((SNode) concept);
-        result = SLinkOperations.getTarget(cd, "extends", false);
+        result = SLinkOperations.getTarget(cd, MetaAdapterFactory.getReferenceLink(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489090640l, 1071489389519l, "extends"));
       } else {
         SNode icd = ((SNode) concept);
-        result = SLinkOperations.getTarget(ListSequence.fromList(SLinkOperations.getTargets(icd, "extends", true)).first(), "intfc", false);
+        result = SLinkOperations.getTarget(ListSequence.fromList(SLinkOperations.getChildren(icd, MetaAdapterFactory.getContainmentLink(new UUID(-4094437568663370681l, -8968368868337559369l), 1169125989551l, 1169127546356l, "extends"))).first(), MetaAdapterFactory.getReferenceLink(new UUID(-4094437568663370681l, -8968368868337559369l), 1169127622168l, 1169127628841l, "intfc"));
       }
     }
     return result;
@@ -33,6 +35,6 @@ public class SuperNodeExpression_Behavior {
   }
   public static boolean call_isSuperMethodStatic_5212852298298945349(SNode thisNode) {
     SNode method = SuperNodeExpression_Behavior.call_getSuperMethod_5527038142169086661(thisNode);
-    return method != null && SPropertyOperations.getBoolean(method, "isStatic");
+    return method != null && SPropertyOperations.getBoolean(method, MetaAdapterFactory.getProperty(new UUID(-5808042798135555774l, -8657779246725685839l), 1225194472830l, 5864038008284099149l, "isStatic"));
   }
 }

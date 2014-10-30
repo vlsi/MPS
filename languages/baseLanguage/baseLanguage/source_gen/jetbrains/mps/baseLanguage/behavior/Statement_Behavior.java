@@ -15,6 +15,8 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 
@@ -38,11 +40,11 @@ public class Statement_Behavior {
   public static void call_collectUncaughtMethodThrowables_5412515780383112967(SAbstractConcept thisConcept, final Set<SNode> throwables, SNode arg) {
     ListSequence.fromList(SNodeOperations.getDescendants(arg, "jetbrains.mps.baseLanguage.structure.IMethodCall", false, new String[]{})).translate(new ITranslator2<SNode, SNode>() {
       public Iterable<SNode> translate(SNode it) {
-        return SLinkOperations.getTargets(SLinkOperations.getTarget(it, "baseMethodDeclaration", false), "throwsItem", true);
+        return SLinkOperations.getChildren(SLinkOperations.getTarget(it, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, 1068499141037l, "baseMethodDeclaration")), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123132l, 1164879685961l, "throwsItem"));
       }
     }).union(ListSequence.fromList(SNodeOperations.getDescendants(arg, "jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierMethodCallOperation", false, new String[]{})).translate(new ITranslator2<SNode, SNode>() {
       public Iterable<SNode> translate(SNode it) {
-        return SLinkOperations.getTargets(SLinkOperations.getTarget(it, "member", false), "throwsItem", true);
+        return SLinkOperations.getChildren(SLinkOperations.getTarget(it, MetaAdapterFactory.getReferenceLink(new UUID(4917733117167750838l, -7710007501170303426l), 1205756064662l, 1205756909548l, "member")), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123132l, 1164879685961l, "throwsItem"));
       }
     })).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
@@ -50,7 +52,7 @@ public class Statement_Behavior {
       }
     }).visitAll(new IVisitor<SNode>() {
       public void visit(SNode throwable) {
-        SetSequence.fromSet(throwables).addElement(SLinkOperations.getTarget(SNodeOperations.cast(throwable, "jetbrains.mps.baseLanguage.structure.ClassifierType"), "classifier", false));
+        SetSequence.fromSet(throwables).addElement(SLinkOperations.getTarget(SNodeOperations.cast(throwable, "jetbrains.mps.baseLanguage.structure.ClassifierType"), MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier")));
       }
     });
   }

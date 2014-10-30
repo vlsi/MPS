@@ -8,6 +8,8 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
@@ -17,11 +19,11 @@ public class check_PropertyAssignedToItself_NonTypesystemRule extends AbstractNo
   public check_PropertyAssignedToItself_NonTypesystemRule() {
   }
   public void applyRule(final SNode assignmentExpression, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    if (SLinkOperations.getTarget(assignmentExpression, "lValue", true) == null || SLinkOperations.getTarget(assignmentExpression, "rValue", true) == null) {
+    if (SLinkOperations.getTarget(assignmentExpression, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1215693861676l, 1068498886295l, "lValue")) == null || SLinkOperations.getTarget(assignmentExpression, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1215693861676l, 1068498886297l, "rValue")) == null) {
       return;
     }
-    SNode lDeclaration = RulesFunctions_BaseLanguage.getProperty(SLinkOperations.getTarget(assignmentExpression, "lValue", true));
-    SNode rDeclaration = RulesFunctions_BaseLanguage.getProperty(SLinkOperations.getTarget(assignmentExpression, "rValue", true));
+    SNode lDeclaration = RulesFunctions_BaseLanguage.getProperty(SLinkOperations.getTarget(assignmentExpression, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1215693861676l, 1068498886295l, "lValue")));
+    SNode rDeclaration = RulesFunctions_BaseLanguage.getProperty(SLinkOperations.getTarget(assignmentExpression, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1215693861676l, 1068498886297l, "rValue")));
     if (lDeclaration != null && lDeclaration == rDeclaration) {
       {
         MessageTarget errorTarget = new NodeMessageTarget();

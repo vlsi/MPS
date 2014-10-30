@@ -8,6 +8,8 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.smodel.SModelUtil_new;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SReference;
@@ -17,7 +19,7 @@ public class supertypesOf_EnumeratorType_SubtypingRule extends SubtypingRule_Run
   public supertypesOf_EnumeratorType_SubtypingRule() {
   }
   public SNode getSubOrSuperType(SNode enumeratorType, TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    return _quotation_createNode_w8ob7y_a0a1(SLinkOperations.getTarget(enumeratorType, "elementType", true));
+    return _quotation_createNode_w8ob7y_a0a1(SLinkOperations.getTarget(enumeratorType, MetaAdapterFactory.getContainmentLink(new UUID(-8968771020793164004l, -7182180101671965361l), 1237496250641l, 1237496250642l, "elementType")));
   }
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.baseLanguage.collections.structure.EnumeratorType";
@@ -36,7 +38,7 @@ public class supertypesOf_EnumeratorType_SubtypingRule extends SubtypingRule_Run
     SNode quotedNode_2 = null;
     SNode quotedNode_3 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, false);
-    quotedNode_2.setReference("classifier", SReference.create("classifier", quotedNode_2, facade.createModelReference("r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)"), facade.createNodeId("6543581031674024971")));
+    quotedNode_2.setReference(MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier"), SReference.create(MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier"), quotedNode_2, facade.createModelReference("r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)"), facade.createNodeId("6543581031674024971")));
     quotedNode_3 = (SNode) parameter_1;
     if (quotedNode_3 != null) {
       quotedNode_2.addChild("parameter", HUtil.copyIfNecessary(quotedNode_3));

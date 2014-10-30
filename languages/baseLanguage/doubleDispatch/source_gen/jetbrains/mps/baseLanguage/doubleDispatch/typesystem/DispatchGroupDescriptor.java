@@ -4,6 +4,8 @@ package jetbrains.mps.baseLanguage.doubleDispatch.typesystem;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
@@ -21,11 +23,11 @@ public class DispatchGroupDescriptor {
   private boolean isStatic;
   private Iterable<SNode> otherParamTypes;
   public DispatchGroupDescriptor(SNode pattern) {
-    methodName = SPropertyOperations.getString(pattern, "name");
+    methodName = SPropertyOperations.getString(pattern, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"));
     isStatic = SNodeOperations.isInstanceOf(pattern, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration");
-    otherParamTypes = ListSequence.fromList(SLinkOperations.getTargets(pattern, "parameter", true)).skip(1).select(new ISelector<SNode, SNode>() {
+    otherParamTypes = ListSequence.fromList(SLinkOperations.getChildren(pattern, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123132l, 1068580123134l, "parameter"))).skip(1).select(new ISelector<SNode, SNode>() {
       public SNode select(SNode it) {
-        return SLinkOperations.getTarget(it, "type", true);
+        return SLinkOperations.getTarget(it, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 4972933694980447171l, 5680397130376446158l, "type"));
       }
     });
   }
@@ -78,7 +80,7 @@ public class DispatchGroupDescriptor {
         {
           SNode cls2 = typ2;
           if (SNodeOperations.isInstanceOf(cls2, "jetbrains.mps.baseLanguage.structure.ClassifierType")) {
-            return SLinkOperations.getTarget(cls, "classifier", false) == SLinkOperations.getTarget(cls2, "classifier", false);
+            return SLinkOperations.getTarget(cls, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier")) == SLinkOperations.getTarget(cls2, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier"));
           }
         }
         return false;
@@ -93,7 +95,7 @@ public class DispatchGroupDescriptor {
     {
       SNode cls = typ;
       if (SNodeOperations.isInstanceOf(cls, "jetbrains.mps.baseLanguage.structure.ClassifierType")) {
-        return SLinkOperations.getTarget(cls, "classifier", false).hashCode();
+        return SLinkOperations.getTarget(cls, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier")).hashCode();
       }
     }
     return BehaviorReflection.invokeVirtual(String.class, typ, "virtual_getPresentation_1213877396640", new Object[]{}).hashCode();

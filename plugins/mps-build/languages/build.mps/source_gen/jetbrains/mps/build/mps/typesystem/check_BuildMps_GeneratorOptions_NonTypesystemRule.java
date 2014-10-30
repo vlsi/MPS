@@ -10,6 +10,8 @@ import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
@@ -22,7 +24,7 @@ public class check_BuildMps_GeneratorOptions_NonTypesystemRule extends AbstractN
   public void applyRule(final SNode genOpts, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(genOpts), "jetbrains.mps.build.structure.BuildProject")) {
       SNode bp = SNodeOperations.cast(SNodeOperations.getParent(genOpts), "jetbrains.mps.build.structure.BuildProject");
-      if (ListSequence.fromList(SLinkOperations.getTargets(bp, "parts", true)).where(new IWhereFilter<SNode>() {
+      if (ListSequence.fromList(SLinkOperations.getChildren(bp, MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 5617550519002745363l, 7389400916848080626l, "parts"))).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
           return SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.mps.structure.BuildMps_GeneratorOptions") && it != genOpts;
         }

@@ -14,6 +14,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import junit.framework.Assert;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import java.util.List;
@@ -82,7 +84,7 @@ public class SNodeGetChildrenOperation_Test extends BaseTransformationTest {
       this.addNodeById("8758390115029078425");
       this.addNodeById("5815925154349132136");
       this.addNodeById("2166349271756548530");
-      TestUtilities.assertEquals(Sequence.fromArray(new String[]{SPropertyOperations.getString(SLinkOperations.findLinkDeclaration("jetbrains.mps.lang.smodelTests.structure.Root", "child_1_n"), "role"), SPropertyOperations.getString(SLinkOperations.findLinkDeclaration("jetbrains.mps.lang.smodelTests.structure.Root", "childSubConcept_0_n"), "role")}), ListSequence.fromList(SNodeOperations.getChildren(SNodeOperations.cast(this.getNodeById("8758390115029078426"), "jetbrains.mps.lang.smodelTests.structure.Root"))).select(new ISelector<SNode, String>() {
+      TestUtilities.assertEquals(Sequence.fromArray(new String[]{SPropertyOperations.getString(SLinkOperations.findLinkDeclaration("jetbrains.mps.lang.smodelTests.structure.Root", "child_1_n"), MetaAdapterFactory.getProperty(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489288298l, 1071599776563l, "role")), SPropertyOperations.getString(SLinkOperations.findLinkDeclaration("jetbrains.mps.lang.smodelTests.structure.Root", "childSubConcept_0_n"), MetaAdapterFactory.getProperty(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489288298l, 1071599776563l, "role"))}), ListSequence.fromList(SNodeOperations.getChildren(SNodeOperations.cast(this.getNodeById("8758390115029078426"), "jetbrains.mps.lang.smodelTests.structure.Root"))).select(new ISelector<SNode, String>() {
         public String select(SNode it) {
           return SNodeOperations.getContainingLinkRole(it);
         }

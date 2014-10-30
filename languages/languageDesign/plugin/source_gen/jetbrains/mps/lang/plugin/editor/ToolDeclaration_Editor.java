@@ -25,6 +25,8 @@ import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
 import jetbrains.mps.nodeEditor.cells.ModelAccessor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.editor.runtime.cells.EmptyCellAction;
@@ -270,7 +272,7 @@ public class ToolDeclaration_Editor extends DefaultNodeEditor {
   private EditorCell createReadOnlyModelAccessor_du6pr9_c2b1b0(final EditorContext editorContext, final SNode node) {
     EditorCell_Property editorCell = EditorCell_Property.create(editorContext, new ModelAccessor() {
       public String getText() {
-        return "Alt-" + SPropertyOperations.getString(node, "number");
+        return "Alt-" + SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(new UUID(2952642368903463569l, -5856357300648461647l), 6547237850567458268l, 6547237850567462701l, "number"));
       }
       public void setText(String s) {
       }

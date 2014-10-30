@@ -5,6 +5,7 @@ package jetbrains.mps.samples.heating.constraints;
 import jetbrains.mps.smodel.runtime.ConstraintsDescriptor;
 import java.util.Arrays;
 import jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor;
+import jetbrains.mps.smodel.adapter.ids.SConceptId;
 
 public class ConstraintsAspectDescriptor implements jetbrains.mps.smodel.runtime.ConstraintsAspectDescriptor {
   public ConstraintsAspectDescriptor() {
@@ -22,9 +23,27 @@ public class ConstraintsAspectDescriptor implements jetbrains.mps.smodel.runtime
       case 2:
         return new DailyPlan_Constraints();
       default:
-        // todo: illegal in some cases? 
         return new BaseConstraintsDescriptor(fqName);
     }
+  }
+  public ConstraintsDescriptor getDescriptor(SConceptId conceptId) {
+    long id = conceptId.getConceptId();
+    if (id == 5063359128232717410l) {
+      return new ChangeEvent_Constraints();
+    }
+    if (id == 5726447348463731062l) {
+      return new Slot_Constraints();
+    }
+    if (id == 935069066462619696l) {
+      return new DailyPlanReference_Constraints();
+    }
+    if (id == 4664795093170414652l) {
+      return new Applicability_Constraints();
+    }
+    if (id == 5063359128232717391l) {
+      return new DailyPlan_Constraints();
+    }
+    return new BaseConstraintsDescriptor(conceptId);
   }
   private static String[] stringSwitchCases_2qnle6_a0a0b = new String[]{"jetbrains.mps.samples.heating.structure.Applicability", "jetbrains.mps.samples.heating.structure.ChangeEvent", "jetbrains.mps.samples.heating.structure.DailyPlan", "jetbrains.mps.samples.heating.structure.DailyPlanReference", "jetbrains.mps.samples.heating.structure.Slot"};
 }

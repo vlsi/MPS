@@ -8,6 +8,8 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 import java.util.List;
 import java.util.ArrayList;
@@ -22,13 +24,13 @@ public class typeof_LambdaAbstraction_InferenceRule extends AbstractInferenceRul
   public void applyRule(final SNode lambdaAbstraction, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     final SNode R_typevar_627759474950188093 = typeCheckingContext.createNewRuntimeTypesVariable();
     {
-      SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(lambdaAbstraction, "body", true);
+      SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(lambdaAbstraction, MetaAdapterFactory.getContainmentLink(new UUID(8979658720047614716l, -5913038370385483627l), 4022026349914673024l, 4022026349914762693l, "body"));
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:8c01d5e0-82c3-43e7-9986-af954df6cb8b(jetbrains.mps.samples.lambdaCalculus.typesystem)", "627759474950193612", 0, null);
       typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:8c01d5e0-82c3-43e7-9986-af954df6cb8b(jetbrains.mps.samples.lambdaCalculus.typesystem)", "627759474950193616", true), (SNode) typeCheckingContext.getRepresentative(R_typevar_627759474950188093), _info_12389875345);
     }
     SNode result = typeCheckingContext.getRepresentative(R_typevar_627759474950188093);
     List<SNode> reversedNodes = new ArrayList<SNode>();
-    for (SNode node : SLinkOperations.getTargets(lambdaAbstraction, "variable", true)) {
+    for (SNode node : SLinkOperations.getChildren(lambdaAbstraction, MetaAdapterFactory.getContainmentLink(new UUID(8979658720047614716l, -5913038370385483627l), 4022026349914673024l, 4022026349914762681l, "variable"))) {
       ListSequence.fromList(reversedNodes).insertElement(0, node);
     }
     for (SNode node : reversedNodes) {

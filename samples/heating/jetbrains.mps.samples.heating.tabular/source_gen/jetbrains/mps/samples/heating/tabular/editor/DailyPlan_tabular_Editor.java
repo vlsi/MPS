@@ -15,6 +15,8 @@ import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
@@ -96,7 +98,7 @@ public class DailyPlan_tabular_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private static boolean renderingCondition_dgsw3q_a1a0a(SNode node, EditorContext editorContext) {
-    return (SLinkOperations.getTarget(node, "customizes", true) != null);
+    return (SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-6352760259037542597l, -7435837320858277567l), 5063359128232717391l, 935069066462790136l, "customizes")) != null);
   }
   private EditorCell createRefNode_dgsw3q_c0a0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
@@ -122,7 +124,7 @@ public class DailyPlan_tabular_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private static boolean renderingCondition_dgsw3q_a2a0a(SNode node, EditorContext editorContext) {
-    return (SLinkOperations.getTarget(node, "customizes", true) != null);
+    return (SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-6352760259037542597l, -7435837320858277567l), 5063359128232717391l, 935069066462790136l, "customizes")) != null);
   }
   private EditorCell createConstant_dgsw3q_d0a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
@@ -137,7 +139,7 @@ public class DailyPlan_tabular_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private static boolean renderingCondition_dgsw3q_a3a0a(SNode node, EditorContext editorContext) {
-    return (SLinkOperations.getTarget(node, "customizes", true) == null);
+    return (SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-6352760259037542597l, -7435837320858277567l), 5063359128232717391l, 935069066462790136l, "customizes")) == null);
   }
   public static class ApplySideTransforms_left_cellMenu_dgsw3q_a0d0a0 extends AbstractCellMenuPart_ApplySideTransforms {
     public ApplySideTransforms_left_cellMenu_dgsw3q_a0d0a0() {
@@ -155,7 +157,7 @@ public class DailyPlan_tabular_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private static boolean renderingCondition_dgsw3q_a4a0a(SNode node, EditorContext editorContext) {
-    return (SLinkOperations.getTarget(node, "customizes", true) != null);
+    return (SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-6352760259037542597l, -7435837320858277567l), 5063359128232717391l, 935069066462790136l, "customizes")) != null);
   }
   private EditorCell createTable_dgsw3q_b0a(EditorContext editorContext, SNode node) {
     TableModelFactory creator = new TableModelFactory() {
@@ -167,18 +169,18 @@ public class DailyPlan_tabular_Editor extends DefaultNodeEditor {
           }
           @Override
           public int getRowCount() {
-            return 1 + ListSequence.fromList(SLinkOperations.getTargets(node, "items", true)).count();
+            return 1 + ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(new UUID(-6352760259037542597l, -7435837320858277567l), 5063359128232717391l, 5063359128232717399l, "items"))).count();
           }
           @Override
           public SNode getValueAt(int row, int column) {
             if (row == 0 && column > 0) {
-              return SLinkOperations.getTarget(node, "applicability", true);
+              return SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-6352760259037542597l, -7435837320858277567l), 5063359128232717391l, 4664795093170417662l, "applicability"));
             }
             if (column == 0 && row > 0) {
-              return ListSequence.fromList(SLinkOperations.getTargets(node, "items", true)).getElement(row - 1);
+              return ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(new UUID(-6352760259037542597l, -7435837320858277567l), 5063359128232717391l, 5063359128232717399l, "items"))).getElement(row - 1);
             }
             if (row > 0 && column > 0) {
-              SNode item = SLinkOperations.getTarget(ListSequence.fromList(SLinkOperations.getTargets(node, "items", true)).getElement(row - 1), "event", true);
+              SNode item = SLinkOperations.getTarget(ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(new UUID(-6352760259037542597l, -7435837320858277567l), 5063359128232717391l, 5063359128232717399l, "items"))).getElement(row - 1), MetaAdapterFactory.getContainmentLink(new UUID(-6352760259037542597l, -7435837320858277567l), 5726447348463731062l, 5726447348463738321l, "event"));
               return item;
             }
             return null;
@@ -188,9 +190,9 @@ public class DailyPlan_tabular_Editor extends DefaultNodeEditor {
             if (row > 0 && column > 0) {
               SNode slot = DailyPlan_Behavior.call_slotByStartTime_3409470686615450426(node, row - 1);
               if (slot == null) {
-                SNode item = SNodeFactoryOperations.addNewChild(node, "items", "jetbrains.mps.samples.heating.structure.Slot");
-                SPropertyOperations.set(item, "start", "" + (row - 1));
-                SPropertyOperations.set(SLinkOperations.getTarget(item, "event", true), "temperature", "" + (20));
+                SNode item = SNodeFactoryOperations.addNewChild(node, MetaAdapterFactory.getContainmentLink(new UUID(-6352760259037542597l, -7435837320858277567l), 5063359128232717391l, 5063359128232717399l, "items"), "jetbrains.mps.samples.heating.structure.Slot");
+                SPropertyOperations.set(item, MetaAdapterFactory.getProperty(new UUID(-6352760259037542597l, -7435837320858277567l), 5726447348463731062l, 5726447348463731324l, "start"), "" + (row - 1));
+                SPropertyOperations.set(SLinkOperations.getTarget(item, MetaAdapterFactory.getContainmentLink(new UUID(-6352760259037542597l, -7435837320858277567l), 5726447348463731062l, 5726447348463738321l, "event")), MetaAdapterFactory.getProperty(new UUID(-6352760259037542597l, -7435837320858277567l), 5063359128232717410l, 5063359128232717424l, "temperature"), "" + (20));
               }
             }
           }
@@ -205,14 +207,14 @@ public class DailyPlan_tabular_Editor extends DefaultNodeEditor {
               return;
             }
             SNode slot = SNodeFactoryOperations.createNewNode("jetbrains.mps.samples.heating.structure.Slot", null);
-            SPropertyOperations.set(SLinkOperations.getTarget(slot, "event", true), "temperature", "" + (20));
-            SNode prevSlot = (rowNumber == 1 ? null : ((ListSequence.fromList(SLinkOperations.getTargets(node, "items", true)).count() > rowNumber - 2 ? ListSequence.fromList(SLinkOperations.getTargets(node, "items", true)).getElement(rowNumber - 2) : ListSequence.fromList(SLinkOperations.getTargets(node, "items", true)).last())));
+            SPropertyOperations.set(SLinkOperations.getTarget(slot, MetaAdapterFactory.getContainmentLink(new UUID(-6352760259037542597l, -7435837320858277567l), 5726447348463731062l, 5726447348463738321l, "event")), MetaAdapterFactory.getProperty(new UUID(-6352760259037542597l, -7435837320858277567l), 5063359128232717410l, 5063359128232717424l, "temperature"), "" + (20));
+            SNode prevSlot = (rowNumber == 1 ? null : ((ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(new UUID(-6352760259037542597l, -7435837320858277567l), 5063359128232717391l, 5063359128232717399l, "items"))).count() > rowNumber - 2 ? ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(new UUID(-6352760259037542597l, -7435837320858277567l), 5063359128232717391l, 5063359128232717399l, "items"))).getElement(rowNumber - 2) : ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(new UUID(-6352760259037542597l, -7435837320858277567l), 5063359128232717391l, 5063359128232717399l, "items"))).last())));
             if (prevSlot != null) {
-              SPropertyOperations.set(slot, "start", "" + (SPropertyOperations.getInteger(prevSlot, "start") + 1));
+              SPropertyOperations.set(slot, MetaAdapterFactory.getProperty(new UUID(-6352760259037542597l, -7435837320858277567l), 5726447348463731062l, 5726447348463731324l, "start"), "" + (SPropertyOperations.getInteger(prevSlot, MetaAdapterFactory.getProperty(new UUID(-6352760259037542597l, -7435837320858277567l), 5726447348463731062l, 5726447348463731324l, "start")) + 1));
             } else {
-              SPropertyOperations.set(slot, "start", "" + (0));
+              SPropertyOperations.set(slot, MetaAdapterFactory.getProperty(new UUID(-6352760259037542597l, -7435837320858277567l), 5726447348463731062l, 5726447348463731324l, "start"), "" + (0));
             }
-            ListSequence.fromList(SLinkOperations.getTargets(node, "items", true)).insertElement(rowNumber - 1, slot);
+            ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(new UUID(-6352760259037542597l, -7435837320858277567l), 5063359128232717391l, 5063359128232717399l, "items"))).insertElement(rowNumber - 1, slot);
             return;
           }
           @Override
@@ -224,7 +226,7 @@ public class DailyPlan_tabular_Editor extends DefaultNodeEditor {
             if (rowNumber <= 0) {
               return;
             }
-            ListSequence.fromList(SLinkOperations.getTargets(node, "items", true)).removeElementAt(rowNumber - 1);
+            ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(new UUID(-6352760259037542597l, -7435837320858277567l), 5063359128232717391l, 5063359128232717399l, "items"))).removeElementAt(rowNumber - 1);
             return;
           }
         };

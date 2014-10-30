@@ -6,6 +6,8 @@ import jetbrains.mps.lang.typesystem.runtime.AbstractInequationReplacementRule_R
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicable2Status;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
@@ -21,7 +23,7 @@ public class raw_ClassifierType_subtypeOf_generic_ClassifierType_InequationRepla
   public raw_ClassifierType_subtypeOf_generic_ClassifierType_InequationReplacementRule() {
   }
   public boolean isApplicableCustom(SNode subtype, SNode supertype, IsApplicable2Status status) {
-    return SLinkOperations.getTarget(subtype, "classifier", false) == SLinkOperations.getTarget(supertype, "classifier", false) && ListSequence.fromList(SLinkOperations.getTargets(subtype, "parameter", true)).isEmpty() && ListSequence.fromList(SLinkOperations.getTargets(supertype, "parameter", true)).isNotEmpty();
+    return SLinkOperations.getTarget(subtype, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier")) == SLinkOperations.getTarget(supertype, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier")) && ListSequence.fromList(SLinkOperations.getChildren(subtype, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1109201940907l, "parameter"))).isEmpty() && ListSequence.fromList(SLinkOperations.getChildren(supertype, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1109201940907l, "parameter"))).isNotEmpty();
   }
   public void processInequation(final SNode subtype, final SNode supertype, final EquationInfo equationInfo, final TypeCheckingContext typeCheckingContext, IsApplicable2Status status, final boolean inequalityIsWeak, final boolean inequalityIsLessThan) {
     // normally this is an unchecked cast warning 

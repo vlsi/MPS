@@ -10,6 +10,8 @@ import jetbrains.mps.editor.runtime.cells.AbstractCellAction;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.editor.runtime.selection.SelectionUtil;
 import jetbrains.mps.openapi.editor.selection.SelectionManager;
 
@@ -32,7 +34,7 @@ public class RemoveDocComment {
       SNode commentedNode = SNodeOperations.getParent(doc);
       SNodeOperations.deleteNode(doc);
       if (SNodeOperations.isInstanceOf(commentedNode, "jetbrains.mps.baseLanguage.structure.IBLDeprecatable")) {
-        SPropertyOperations.set(SNodeOperations.cast(commentedNode, "jetbrains.mps.baseLanguage.structure.IBLDeprecatable"), "isDeprecated", "" + (false));
+        SPropertyOperations.set(SNodeOperations.cast(commentedNode, "jetbrains.mps.baseLanguage.structure.IBLDeprecatable"), MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 1224848483129l, 1224848525476l, "isDeprecated"), "" + (false));
       }
       SelectionUtil.selectCell(editorContext, commentedNode, SelectionManager.FIRST_CELL);
     }
@@ -50,7 +52,7 @@ public class RemoveDocComment {
       SNode commentedNode = SNodeOperations.getParent(doc);
       SNodeOperations.deleteNode(doc);
       if (SNodeOperations.isInstanceOf(commentedNode, "jetbrains.mps.baseLanguage.structure.IBLDeprecatable")) {
-        SPropertyOperations.set(SNodeOperations.cast(commentedNode, "jetbrains.mps.baseLanguage.structure.IBLDeprecatable"), "isDeprecated", "" + (false));
+        SPropertyOperations.set(SNodeOperations.cast(commentedNode, "jetbrains.mps.baseLanguage.structure.IBLDeprecatable"), MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 1224848483129l, 1224848525476l, "isDeprecated"), "" + (false));
       }
       SelectionUtil.selectCell(editorContext, commentedNode, SelectionManager.FIRST_CELL);
     }

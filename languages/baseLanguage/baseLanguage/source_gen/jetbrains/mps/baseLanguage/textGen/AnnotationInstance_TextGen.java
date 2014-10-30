@@ -7,6 +7,8 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 
 public class AnnotationInstance_TextGen extends SNodeTextGen {
@@ -18,10 +20,10 @@ public class AnnotationInstance_TextGen extends SNodeTextGen {
       this.appendWithIndent("@");
     }
     BaseLanguageTextGen.blClassifierRef(SNodeOperations.getReference(node, SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.AnnotationInstance", "annotation")), this);
-    if (ListSequence.fromList(SLinkOperations.getTargets(node, "value", true)).isNotEmpty()) {
+    if (ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1188207840427l, 1188214630783l, "value"))).isNotEmpty()) {
       this.append("(");
       {
-        Iterable<SNode> collection = SLinkOperations.getTargets(node, "value", true);
+        Iterable<SNode> collection = SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1188207840427l, 1188214630783l, "value"));
         final SNode lastItem = Sequence.fromIterable(collection).last();
         for (SNode item : collection) {
           appendNode(item);

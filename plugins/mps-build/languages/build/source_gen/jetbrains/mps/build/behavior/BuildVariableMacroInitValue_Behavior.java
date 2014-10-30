@@ -5,11 +5,13 @@ package jetbrains.mps.build.behavior;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 
 public class BuildVariableMacroInitValue_Behavior {
   public static void init(SNode thisNode) {
   }
   public static String call_getMacroName_244868996532694558(SNode thisNode) {
-    return SPropertyOperations.getString(SNodeOperations.cast(SNodeOperations.getParent(thisNode), "jetbrains.mps.build.structure.BuildVariableMacro"), "name");
+    return SPropertyOperations.getString(SNodeOperations.cast(SNodeOperations.getParent(thisNode), "jetbrains.mps.build.structure.BuildVariableMacro"), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"));
   }
 }

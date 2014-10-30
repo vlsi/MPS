@@ -5,6 +5,8 @@ package jetbrains.mps.lang.smodel.behavior;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -13,11 +15,11 @@ public class SNodeTypeCastExpression_Behavior {
   public static void init(SNode thisNode) {
   }
   public static boolean call_isSNodeCast_1238686302573(SNode thisNode) {
-    SNode leftType = TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(thisNode, "leftExpression", true));
+    SNode leftType = TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(8675788371017092295l, -9098312342032910879l), 1140137987495l, 1140138123956l, "leftExpression")));
     return !(TypeChecker.getInstance().getSubtypingManager().isSubtype(leftType, _quotation_createNode_cjhknp_b0a0b0a(), false));
   }
   public static String virtual_getPresentation_1213877396640(SNode thisNode) {
-    return (SPropertyOperations.getBoolean(thisNode, "asCast") ? "as" : ":");
+    return (SPropertyOperations.getBoolean(thisNode, MetaAdapterFactory.getProperty(new UUID(8675788371017092295l, -9098312342032910879l), 1140137987495l, 1238684351431l, "asCast")) ? "as" : ":");
   }
   private static SNode _quotation_createNode_cjhknp_b0a0b0a() {
     PersistenceFacade facade = PersistenceFacade.getInstance();

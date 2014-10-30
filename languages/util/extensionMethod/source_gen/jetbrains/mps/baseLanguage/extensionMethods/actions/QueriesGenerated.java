@@ -5,6 +5,8 @@ package jetbrains.mps.baseLanguage.extensionMethods.actions;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.action.NodeSetupContext;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import java.util.List;
 import jetbrains.mps.openapi.editor.cells.SubstituteAction;
 import jetbrains.mps.smodel.action.NodeSubstituteActionsFactoryContext;
@@ -27,7 +29,7 @@ import jetbrains.mps.baseLanguage.scopes.Members;
 
 public class QueriesGenerated {
   public static void nodeFactory_NodeSetup_ExtensionMethodDeclaration_720975379598240373(final IOperationContext operationContext, final NodeSetupContext _context) {
-    SNodeFactoryOperations.setNewChild(_context.getNewNode(), "visibility", "jetbrains.mps.baseLanguage.structure.PublicVisibility");
+    SNodeFactoryOperations.setNewChild(_context.getNewNode(), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1178549954367l, 1178549979242l, "visibility"), "jetbrains.mps.baseLanguage.structure.PublicVisibility");
   }
   public static List<SubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_Expression_5246850046234986610(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
@@ -45,8 +47,8 @@ public class QueriesGenerated {
             ListSequence.fromList(result).addElement(new DefaultChildNodeSubstituteAction(outputConcept, item, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter()) {
               public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
                 SNode operationExpression = SNodeFactoryOperations.createNewNode(model, "jetbrains.mps.baseLanguage.structure.DotExpression", null);
-                SLinkOperations.setTarget(SNodeFactoryOperations.setNewChild(operationExpression, "operation", "jetbrains.mps.baseLanguage.extensionMethods.structure.ExtensionMethodCall"), "baseMethodDeclaration", SNodeOperations.cast((item), "jetbrains.mps.baseLanguage.extensionMethods.structure.ExtensionMethodDeclaration"), false);
-                SNode thisExpression = SNodeFactoryOperations.setNewChild(operationExpression, "operand", "jetbrains.mps.baseLanguage.extensionMethods.structure.ThisExtensionExpression");
+                SLinkOperations.setTarget(SNodeFactoryOperations.setNewChild(operationExpression, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1197027756228l, 1197027833540l, "operation"), "jetbrains.mps.baseLanguage.extensionMethods.structure.ExtensionMethodCall"), MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, 1068499141037l, "baseMethodDeclaration"), SNodeOperations.cast((item), "jetbrains.mps.baseLanguage.extensionMethods.structure.ExtensionMethodDeclaration"));
+                SNode thisExpression = SNodeFactoryOperations.setNewChild(operationExpression, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1197027756228l, 1197027771414l, "operand"), "jetbrains.mps.baseLanguage.extensionMethods.structure.ThisExtensionExpression");
                 return operationExpression;
               }
             });
@@ -80,8 +82,8 @@ public class QueriesGenerated {
             ListSequence.fromList(result).addElement(new DefaultChildNodeSubstituteAction(outputConcept, item, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter()) {
               public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
                 SNode operationExpression = SNodeFactoryOperations.createNewNode(model, "jetbrains.mps.baseLanguage.structure.DotExpression", null);
-                SLinkOperations.setTarget(SNodeFactoryOperations.setNewChild(operationExpression, "operation", "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation"), "baseMethodDeclaration", SNodeOperations.cast((item), "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration"), false);
-                SNode thisExpression = SNodeFactoryOperations.setNewChild(operationExpression, "operand", "jetbrains.mps.baseLanguage.extensionMethods.structure.ThisExtensionExpression");
+                SLinkOperations.setTarget(SNodeFactoryOperations.setNewChild(operationExpression, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1197027756228l, 1197027833540l, "operation"), "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation"), MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, 1068499141037l, "baseMethodDeclaration"), SNodeOperations.cast((item), "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration"));
+                SNode thisExpression = SNodeFactoryOperations.setNewChild(operationExpression, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1197027756228l, 1197027771414l, "operand"), "jetbrains.mps.baseLanguage.extensionMethods.structure.ThisExtensionExpression");
 
                 return operationExpression;
               }

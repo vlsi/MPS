@@ -11,6 +11,8 @@ import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -58,22 +60,22 @@ public class AddRuntimeExceptionToMethodSignature_Intention implements Intention
       return false;
     }
     // get exception type 
-    final SNode exceptionType = (TypeChecker.getInstance().getRuntimeSupport().coerce_(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(node, "throwable", true)), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.structure.ClassifierType"), true));
+    final SNode exceptionType = (TypeChecker.getInstance().getRuntimeSupport().coerce_(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1164991038168l, 1164991057263l, "throwable"))), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.structure.ClassifierType"), true));
     if (exceptionType == null) {
       return false;
     }
-    SNode exceptionJavaType = (SNode) SLinkOperations.getTarget(exceptionType, "classifier", false);
+    SNode exceptionJavaType = (SNode) SLinkOperations.getTarget(exceptionType, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier"));
     if (exceptionJavaType == null) {
       return false;
     }
     // check it's instance of RuntimeException 
-    if (!(BehaviorReflection.invokeVirtual(Boolean.TYPE, exceptionJavaType, "virtual_isDescendant_7165541881557222913", new Object[]{(SNode) SLinkOperations.getTarget(_quotation_createNode_7gg82q_a0a0a0j0a(), "classifier", false)}))) {
+    if (!(BehaviorReflection.invokeVirtual(Boolean.TYPE, exceptionJavaType, "virtual_isDescendant_7165541881557222913", new Object[]{(SNode) SLinkOperations.getTarget(_quotation_createNode_7gg82q_a0a0a0j0a(), MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier"))}))) {
       return false;
     }
     // check if it's not thrown by a method yet 
-    if (ListSequence.fromList(SLinkOperations.getTargets(methodDecl, "throwsItem", true)).where(new IWhereFilter<SNode>() {
+    if (ListSequence.fromList(SLinkOperations.getChildren(methodDecl, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123132l, 1164879685961l, "throwsItem"))).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.ClassifierType") && SLinkOperations.getTarget(SNodeOperations.cast(it, "jetbrains.mps.baseLanguage.structure.ClassifierType"), "classifier", false) == SLinkOperations.getTarget(exceptionType, "classifier", false);
+        return SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.ClassifierType") && SLinkOperations.getTarget(SNodeOperations.cast(it, "jetbrains.mps.baseLanguage.structure.ClassifierType"), MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier")) == SLinkOperations.getTarget(exceptionType, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier"));
       }
     }).isNotEmpty()) {
       return false;
@@ -100,7 +102,7 @@ public class AddRuntimeExceptionToMethodSignature_Intention implements Intention
     }
     public void execute(final SNode node, final EditorContext editorContext) {
       SNode methodDecl = SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration", false, false);
-      ListSequence.fromList(SLinkOperations.getTargets(methodDecl, "throwsItem", true)).addElement(SNodeOperations.cast(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(node, "throwable", true)), "jetbrains.mps.baseLanguage.structure.Type"));
+      ListSequence.fromList(SLinkOperations.getChildren(methodDecl, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123132l, 1164879685961l, "throwsItem"))).addElement(SNodeOperations.cast(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1164991038168l, 1164991057263l, "throwable"))), "jetbrains.mps.baseLanguage.structure.Type"));
     }
     public IntentionDescriptor getDescriptor() {
       return AddRuntimeExceptionToMethodSignature_Intention.this;
@@ -110,7 +112,7 @@ public class AddRuntimeExceptionToMethodSignature_Intention implements Intention
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, false);
-    quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, facade.createModelReference("6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), facade.createNodeId("~RuntimeException")));
+    quotedNode_1.setReference(MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier"), SReference.create(MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier"), quotedNode_1, facade.createModelReference("6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), facade.createNodeId("~RuntimeException")));
     return quotedNode_1;
   }
 }

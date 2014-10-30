@@ -6,6 +6,8 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.build.util.Context;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 
 public class BuildLayout_Filemode_Behavior {
   public static void init(SNode thisNode) {
@@ -15,18 +17,18 @@ public class BuildLayout_Filemode_Behavior {
     SNode parent = SNodeOperations.getAncestor(thisNode, "jetbrains.mps.build.structure.BuildLayout_ContainerAcceptingFileSet", false, false);
     String name;
     if (SNodeOperations.isInstanceOf(parent, "jetbrains.mps.lang.core.structure.INamedConcept")) {
-      name = SPropertyOperations.getString(SNodeOperations.cast(parent, "jetbrains.mps.lang.core.structure.INamedConcept"), "name");
+      name = SPropertyOperations.getString(SNodeOperations.cast(parent, "jetbrains.mps.lang.core.structure.INamedConcept"), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"));
     } else {
       SNode ancestor = SNodeOperations.getAncestor(thisNode, "jetbrains.mps.lang.core.structure.INamedConcept", false, false);
-      name = SPropertyOperations.getString(ancestor, "name");
+      name = SPropertyOperations.getString(ancestor, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"));
     }
-    if (isNotEmptyString(SPropertyOperations.getString(thisNode, "filemode"))) {
-      name = name + "_f" + SPropertyOperations.getString(thisNode, "filemode");
+    if (isNotEmptyString(SPropertyOperations.getString(thisNode, MetaAdapterFactory.getProperty(new UUID(8755280088213897754l, -5075149991798053422l), 7801138212747054656l, 7801138212747054660l, "filemode")))) {
+      name = name + "_f" + SPropertyOperations.getString(thisNode, MetaAdapterFactory.getProperty(new UUID(8755280088213897754l, -5075149991798053422l), 7801138212747054656l, 7801138212747054660l, "filemode"));
     }
-    if (isNotEmptyString(SPropertyOperations.getString(thisNode, "dirmode"))) {
-      name = name + "_d" + SPropertyOperations.getString(thisNode, "dirmode");
+    if (isNotEmptyString(SPropertyOperations.getString(thisNode, MetaAdapterFactory.getProperty(new UUID(8755280088213897754l, -5075149991798053422l), 7801138212747054656l, 7801138212747054661l, "dirmode")))) {
+      name = name + "_d" + SPropertyOperations.getString(thisNode, MetaAdapterFactory.getProperty(new UUID(8755280088213897754l, -5075149991798053422l), 7801138212747054656l, 7801138212747054661l, "dirmode"));
     }
-    return context.getTempPath(thisNode, name, ((nlayout != null) ? SPropertyOperations.getString(nlayout, "name") : "default"));
+    return context.getTempPath(thisNode, name, ((nlayout != null) ? SPropertyOperations.getString(nlayout, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")) : "default"));
   }
   private static boolean isNotEmptyString(String str) {
     return str != null && str.length() > 0;

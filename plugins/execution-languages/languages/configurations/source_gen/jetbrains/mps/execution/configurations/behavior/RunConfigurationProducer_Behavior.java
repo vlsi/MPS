@@ -6,6 +6,8 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import org.jetbrains.annotations.NonNls;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 
 public class RunConfigurationProducer_Behavior {
   public static void init(SNode thisNode) {
@@ -18,10 +20,10 @@ public class RunConfigurationProducer_Behavior {
     return "Producer";
   }
   public static String virtual_getBaseName_4366236229294148974(SNode thisNode) {
-    if ((SLinkOperations.getTarget(thisNode, "configuration", true) == null)) {
+    if ((SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(2515029821120661198l, -8934183642121722347l), 4366236229294105349l, 4366236229294139631l, "configuration")) == null)) {
       return "Unknown";
     }
-    return check_5u07ui_a1a2(SLinkOperations.getTarget(SLinkOperations.getTarget(thisNode, "configuration", true), "persistentConfiguration", false));
+    return check_5u07ui_a1a2(SLinkOperations.getTarget(SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(2515029821120661198l, -8934183642121722347l), 4366236229294105349l, 4366236229294139631l, "configuration")), MetaAdapterFactory.getReferenceLink(new UUID(8461860300379867720l, -4758718422494514628l), 946964771156066332l, 946964771156066333l, "persistentConfiguration")));
   }
   private static String check_5u07ui_a1a2(SNode checkedDotOperand) {
     if (null != checkedDotOperand) {

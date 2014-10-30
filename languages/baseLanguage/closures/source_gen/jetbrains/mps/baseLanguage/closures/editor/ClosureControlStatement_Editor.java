@@ -19,6 +19,8 @@ import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Indent;
@@ -121,7 +123,7 @@ public class ClosureControlStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private static boolean renderingCondition_2saq3j_a1a(SNode node, EditorContext editorContext) {
-    return ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(node, "controlClosure", true), "parameter", true)).isNotEmpty() || ListSequence.fromList(SLinkOperations.getTargets(node, "actualParameter", true)).isNotEmpty();
+    return ListSequence.fromList(SLinkOperations.getChildren(SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-200093298712821347l, -8038623698278341771l), 1229599010201l, 1232476496647l, "controlClosure")), MetaAdapterFactory.getContainmentLink(new UUID(-200093298712821347l, -8038623698278341771l), 1199569711397l, 1199569906740l, "parameter"))).isNotEmpty() || ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(new UUID(-200093298712821347l, -8038623698278341771l), 1229599010201l, 1229629947873l, "actualParameter"))).isNotEmpty();
   }
   private EditorCell createConstant_2saq3j_a1a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");
@@ -248,7 +250,7 @@ public class ClosureControlStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private static boolean renderingCondition_2saq3j_a2b0(SNode node, EditorContext editorContext) {
-    return ListSequence.fromList(SLinkOperations.getTargets(node, "actualParameter", true)).isNotEmpty();
+    return ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(new UUID(-200093298712821347l, -8038623698278341771l), 1229599010201l, 1229629947873l, "actualParameter"))).isNotEmpty();
   }
   private EditorCell createConstant_2saq3j_a2b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
@@ -260,7 +262,7 @@ public class ClosureControlStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private static boolean renderingCondition_2saq3j_a0c1a(SNode node, EditorContext editorContext) {
-    return ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(node, "controlClosure", true), "parameter", true)).isNotEmpty();
+    return ListSequence.fromList(SLinkOperations.getChildren(SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-200093298712821347l, -8038623698278341771l), 1229599010201l, 1232476496647l, "controlClosure")), MetaAdapterFactory.getContainmentLink(new UUID(-200093298712821347l, -8038623698278341771l), 1199569711397l, 1199569906740l, "parameter"))).isNotEmpty();
   }
   private EditorCell createRefNodeList_2saq3j_b2b0(EditorContext editorContext, SNode node) {
     AbstractCellListHandler handler = new ClosureControlStatement_Editor.actualParameterListHandler_2saq3j_b2b0(node, "actualParameter", editorContext);

@@ -15,6 +15,8 @@ import jetbrains.mps.nodeEditor.cellMenu.BasicCellContext;
 import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_ReplaceNode_CustomNodeConcept;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
@@ -68,7 +70,7 @@ public class JoinOperation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private static boolean renderingCondition_9t56qv_a1a(SNode node, EditorContext editorContext) {
-    return (SLinkOperations.getTarget(node, "delimiter", true) != null);
+    return (SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-8968771020793164004l, -7182180101671965361l), 1240687580870l, 1240687658305l, "delimiter")) != null);
   }
   private EditorCell createConstant_9t56qv_a1a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");

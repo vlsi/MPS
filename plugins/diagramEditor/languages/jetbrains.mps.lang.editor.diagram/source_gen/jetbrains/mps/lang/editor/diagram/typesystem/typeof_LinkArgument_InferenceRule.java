@@ -8,6 +8,8 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.lang.structure.behavior.LinkDeclaration_Behavior;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -18,19 +20,19 @@ public class typeof_LinkArgument_InferenceRule extends AbstractInferenceRule_Run
   public typeof_LinkArgument_InferenceRule() {
   }
   public void applyRule(final SNode linkArgument, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    SNode linkDeclaration = SLinkOperations.getTarget(linkArgument, "link", false);
+    SNode linkDeclaration = SLinkOperations.getTarget(linkArgument, MetaAdapterFactory.getReferenceLink(new UUID(6991546026468590289l, -9160623158338601007l), 285670992213637559l, 285670992217679783l, "link"));
     if (linkDeclaration != null) {
       if (LinkDeclaration_Behavior.call_isSingular_1213877254557(linkDeclaration)) {
         {
           SNode _nodeToCheck_1029348928467 = linkArgument;
           EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:40b64a44-89c9-404d-9824-6c98cb8ca353(jetbrains.mps.lang.editor.diagram.typesystem)", "342110547582167761", 0, null);
-          typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:40b64a44-89c9-404d-9824-6c98cb8ca353(jetbrains.mps.lang.editor.diagram.typesystem)", "342110547582167629", true), (SNode) _quotation_createNode_dj4g65_a0a0a0b0b(SLinkOperations.getTarget(linkDeclaration, "target", false)), _info_12389875345);
+          typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:40b64a44-89c9-404d-9824-6c98cb8ca353(jetbrains.mps.lang.editor.diagram.typesystem)", "342110547582167629", true), (SNode) _quotation_createNode_dj4g65_a0a0a0b0b(SLinkOperations.getTarget(linkDeclaration, MetaAdapterFactory.getReferenceLink(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489288298l, 1071599976176l, "target"))), _info_12389875345);
         }
       } else {
         {
           SNode _nodeToCheck_1029348928467 = linkArgument;
           EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:40b64a44-89c9-404d-9824-6c98cb8ca353(jetbrains.mps.lang.editor.diagram.typesystem)", "342110547582239625", 0, null);
-          typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:40b64a44-89c9-404d-9824-6c98cb8ca353(jetbrains.mps.lang.editor.diagram.typesystem)", "342110547582239628", true), (SNode) _quotation_createNode_dj4g65_a0a0a0a1a1(SLinkOperations.getTarget(linkDeclaration, "target", false)), _info_12389875345);
+          typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:40b64a44-89c9-404d-9824-6c98cb8ca353(jetbrains.mps.lang.editor.diagram.typesystem)", "342110547582239628", true), (SNode) _quotation_createNode_dj4g65_a0a0a0a1a1(SLinkOperations.getTarget(linkDeclaration, MetaAdapterFactory.getReferenceLink(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489288298l, 1071599976176l, "target"))), _info_12389875345);
         }
       }
     }
@@ -51,14 +53,14 @@ public class typeof_LinkArgument_InferenceRule extends AbstractInferenceRule_Run
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeType", null, null, false);
-    SNodeAccessUtil.setReferenceTarget(quotedNode_2, "concept", (SNode) parameter_1);
+    SNodeAccessUtil.setReferenceTarget(quotedNode_2, MetaAdapterFactory.getReferenceLink(new UUID(8675788371017092295l, -9098312342032910879l), 1138055754698l, 1138405853777l, "concept"), (SNode) parameter_1);
     return quotedNode_2;
   }
   private static SNode _quotation_createNode_dj4g65_a0a0a0a1a1(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeListType", null, null, false);
-    SNodeAccessUtil.setReferenceTarget(quotedNode_2, "elementConcept", (SNode) parameter_1);
+    SNodeAccessUtil.setReferenceTarget(quotedNode_2, MetaAdapterFactory.getReferenceLink(new UUID(8675788371017092295l, -9098312342032910879l), 1145383075378l, 1145383142433l, "elementConcept"), (SNode) parameter_1);
     return quotedNode_2;
   }
 }

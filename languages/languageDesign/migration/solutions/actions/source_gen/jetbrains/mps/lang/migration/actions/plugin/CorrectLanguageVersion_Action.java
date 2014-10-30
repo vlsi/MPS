@@ -17,6 +17,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.smodel.adapter.ids.SLanguageId;
 import jetbrains.mps.smodel.adapter.ids.MetaIdByDeclaration;
 import jetbrains.mps.smodel.adapter.structure.language.SLanguageAdapterById;
@@ -61,9 +63,9 @@ public class CorrectLanguageVersion_Action extends BaseAction {
 
     int maxFrom = SPropertyOperations.getInteger(ListSequence.fromList(migrations).sort(new ISelector<SNode, Integer>() {
       public Integer select(SNode it) {
-        return SPropertyOperations.getInteger(it, "fromVersion");
+        return SPropertyOperations.getInteger(it, MetaAdapterFactory.getProperty(new UUID(-8037690291156860282l, -7505894832713754871l), 8352104482584315555l, 5820409521797704727l, "fromVersion"));
       }
-    }, false).first(), "fromVersion");
+    }, false).first(), MetaAdapterFactory.getProperty(new UUID(-8037690291156860282l, -7505894832713754871l), 8352104482584315555l, 5820409521797704727l, "fromVersion"));
 
     SLanguageId langId = MetaIdByDeclaration.getLanguageId(lang);
     SLanguageAdapterById slang = new SLanguageAdapterById(langId, lang.getModuleName());
@@ -109,9 +111,9 @@ public class CorrectLanguageVersion_Action extends BaseAction {
       if (ListSequence.fromList(scripts).isNotEmpty()) {
         int maxFrom = SPropertyOperations.getInteger(ListSequence.fromList(scripts).sort(new ISelector<SNode, Integer>() {
           public Integer select(SNode it) {
-            return SPropertyOperations.getInteger(it, "fromVersion");
+            return SPropertyOperations.getInteger(it, MetaAdapterFactory.getProperty(new UUID(-8037690291156860282l, -7505894832713754871l), 8352104482584315555l, 5820409521797704727l, "fromVersion"));
           }
-        }, false).first(), "fromVersion");
+        }, false).first(), MetaAdapterFactory.getProperty(new UUID(-8037690291156860282l, -7505894832713754871l), 8352104482584315555l, 5820409521797704727l, "fromVersion"));
         lang.setLanguageVersion(maxFrom + 1);
       } else {
         final int v = lang.getLanguageVersion();

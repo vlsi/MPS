@@ -5,6 +5,7 @@ package jetbrains.mps.baseLanguage.javadoc.constraints;
 import jetbrains.mps.smodel.runtime.ConstraintsDescriptor;
 import java.util.Arrays;
 import jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor;
+import jetbrains.mps.smodel.adapter.ids.SConceptId;
 
 public class ConstraintsAspectDescriptor implements jetbrains.mps.smodel.runtime.ConstraintsAspectDescriptor {
   public ConstraintsAspectDescriptor() {
@@ -28,9 +29,36 @@ public class ConstraintsAspectDescriptor implements jetbrains.mps.smodel.runtime
       case 7:
         return new ValueInlineDocTag_Constraints();
       default:
-        // todo: illegal in some cases? 
         return new BaseConstraintsDescriptor(fqName);
     }
+  }
+  public ConstraintsDescriptor getDescriptor(SConceptId conceptId) {
+    long id = conceptId.getConceptId();
+    if (id == 6832197706140518104l) {
+      return new DocMethodParameterReference_Constraints();
+    }
+    if (id == 6832197706140518107l) {
+      return new DocTypeParameterReference_Constraints();
+    }
+    if (id == 5858074156537516430l) {
+      return new ReturnBlockDocTag_Constraints();
+    }
+    if (id == 2217234381367188008l) {
+      return new FieldDocReference_Constraints();
+    }
+    if (id == 2217234381367530212l) {
+      return new ClassifierDocReference_Constraints();
+    }
+    if (id == 2217234381367530195l) {
+      return new MethodDocReference_Constraints();
+    }
+    if (id == 6501140109493894267l) {
+      return new StaticFieldDocReference_Constraints();
+    }
+    if (id == 6962838954693748795l) {
+      return new ValueInlineDocTag_Constraints();
+    }
+    return new BaseConstraintsDescriptor(conceptId);
   }
   private static String[] stringSwitchCases_2qnle6_a0a0b = new String[]{"jetbrains.mps.baseLanguage.javadoc.structure.ClassifierDocReference", "jetbrains.mps.baseLanguage.javadoc.structure.DocMethodParameterReference", "jetbrains.mps.baseLanguage.javadoc.structure.DocTypeParameterReference", "jetbrains.mps.baseLanguage.javadoc.structure.FieldDocReference", "jetbrains.mps.baseLanguage.javadoc.structure.MethodDocReference", "jetbrains.mps.baseLanguage.javadoc.structure.ReturnBlockDocTag", "jetbrains.mps.baseLanguage.javadoc.structure.StaticFieldDocReference", "jetbrains.mps.baseLanguage.javadoc.structure.ValueInlineDocTag"};
 }

@@ -38,6 +38,7 @@
     <classNode dependClassName="java.util.Collections" />
     <classNode dependClassName="java.util.Map" />
     <classNode dependClassName="java.util.Set" />
+    <classNode dependClassName="java.util.UUID" />
     <classNode dependClassName="javax.swing.Icon" />
     <classNode dependClassName="jetbrains.mps.findUsages.FindUsagesManager" />
     <classNode dependClassName="jetbrains.mps.ide.actions.MPSCommonDataKeys" />
@@ -50,6 +51,7 @@
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.progress.EmptyProgressMonitor" />
     <classNode dependClassName="jetbrains.mps.project.MPSProject" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="org.apache.log4j.Level" />
     <classNode dependClassName="org.apache.log4j.LogManager" />
     <classNode dependClassName="org.apache.log4j.Logger" />

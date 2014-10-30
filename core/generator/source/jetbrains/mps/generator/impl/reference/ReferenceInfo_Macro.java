@@ -21,13 +21,13 @@ import jetbrains.mps.generator.impl.TemplateGenerator;
 import jetbrains.mps.generator.runtime.ReferenceResolver;
 import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.generator.template.ITemplateGenerator;
+import jetbrains.mps.util.SNodeOperations;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractLink;
 import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
-import org.jetbrains.mps.openapi.model.SNodeUtil;
 import org.jetbrains.mps.openapi.model.SReference;
 
 public class ReferenceInfo_Macro extends ReferenceInfo {
@@ -99,7 +99,7 @@ public class ReferenceInfo_Macro extends ReferenceInfo {
       } else {
         // FIXME showErrorIfStrict
         final String msg = "reference macro returned node from input model; role: %s in %s";
-        generator.getLogger().warning(getMacroNodeRef(), String.format(msg, getReferenceRole(), SNodeUtil.getDebugText(getOutputSourceNode())),
+        generator.getLogger().warning(getMacroNodeRef(), String.format(msg, getReferenceRole(), SNodeOperations.getDebugText(getOutputSourceNode())),
             GeneratorUtil.describe(getOutputSourceNode(), "source node"),
             GeneratorUtil.describeIfExists(myOutputTargetNode, "target node in input model"));
       }

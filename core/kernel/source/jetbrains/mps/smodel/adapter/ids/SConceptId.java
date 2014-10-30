@@ -64,4 +64,9 @@ public final class SConceptId {
   public String serialize() {
     return myLanguageId.serialize() + "/" + myConceptId;
   }
+
+  @Override
+  public String toString() {
+    return serialize();
+  }
 }

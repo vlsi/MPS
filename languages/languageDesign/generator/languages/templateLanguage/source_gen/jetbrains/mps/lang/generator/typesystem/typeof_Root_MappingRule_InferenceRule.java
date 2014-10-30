@@ -8,6 +8,8 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -23,17 +25,17 @@ public class typeof_Root_MappingRule_InferenceRule extends AbstractInferenceRule
   public typeof_Root_MappingRule_InferenceRule() {
   }
   public void applyRule(final SNode rule, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    SNode template = SLinkOperations.getTarget(rule, "template", false);
+    SNode template = SLinkOperations.getTarget(rule, MetaAdapterFactory.getReferenceLink(new UUID(-5475912601019530992l, -8082971551085732881l), 1167514355419l, 1167514355421l, "template"));
     if ((template != null)) {
       SNode attrib = AttributeOperations.getAttribute(template, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.generator.structure.RootTemplateAnnotation"));
       if ((attrib != null)) {
-        SNode templateApplicableConcept = SLinkOperations.getTarget(SNodeOperations.cast(attrib, "jetbrains.mps.lang.generator.structure.RootTemplateAnnotation"), "applicableConcept", false);
-        SNode ruleApplicableConcept = SLinkOperations.getTarget(rule, "applicableConcept", false);
+        SNode templateApplicableConcept = SLinkOperations.getTarget(SNodeOperations.cast(attrib, "jetbrains.mps.lang.generator.structure.RootTemplateAnnotation"), MetaAdapterFactory.getReferenceLink(new UUID(-5475912601019530992l, -8082971551085732881l), 1168619357332l, 1168619429071l, "applicableConcept"));
+        SNode ruleApplicableConcept = SLinkOperations.getTarget(rule, MetaAdapterFactory.getReferenceLink(new UUID(-5475912601019530992l, -8082971551085732881l), 1167169308231l, 1167169349424l, "applicableConcept"));
         if ((ruleApplicableConcept != null) && (templateApplicableConcept != null)) {
           if (!(SConceptOperations.isSubConceptOf(ruleApplicableConcept, NameUtil.nodeFQName(templateApplicableConcept)))) {
             {
               MessageTarget errorTarget = new NodeMessageTarget();
-              IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(rule, "template is not applicable to the rule concept '" + SPropertyOperations.getString(ruleApplicableConcept, "name") + "'", "r:00000000-0000-4000-0000-011c895902e4(jetbrains.mps.lang.generator.typesystem)", "1183153521354", null, errorTarget);
+              IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(rule, "template is not applicable to the rule concept '" + SPropertyOperations.getString(ruleApplicableConcept, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")) + "'", "r:00000000-0000-4000-0000-011c895902e4(jetbrains.mps.lang.generator.typesystem)", "1183153521354", null, errorTarget);
             }
           }
         }

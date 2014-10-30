@@ -50,6 +50,7 @@
   </dependency>
   <dependency className="jetbrains.mps.execution.configurations.editor.BeforeTaskParameter_Editor" file="BeforeTaskParameter_Editor.java">
     <classNode dependClassName="java.lang.Class" />
+    <classNode dependClassName="java.util.UUID" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleAttributes" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleImpl" />
@@ -63,12 +64,14 @@
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.style.Style" />
     <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
   <dependency className="jetbrains.mps.execution.configurations.editor.BeforeTask_Editor" file="BeforeTask_Editor.java">
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.UUID" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleAttributes" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleImpl" />
@@ -92,6 +95,7 @@
     <classNode dependClassName="jetbrains.mps.openapi.editor.style.Style" />
     <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
     <classNode dependClassName="jetbrains.mps.smodel.action.NodeFactoryManager" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
@@ -124,6 +128,7 @@
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Collection" />
     <classNode dependClassName="java.util.Collections" />
+    <classNode dependClassName="java.util.UUID" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleAttributes" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleImpl" />
@@ -147,6 +152,7 @@
     <classNode dependClassName="jetbrains.mps.openapi.editor.style.StyleRegistry" />
     <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
     <classNode dependClassName="jetbrains.mps.smodel.action.SNodeFactoryOperations" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.openapi.editor.descriptor.ConceptEditorComponent" />
@@ -315,6 +321,7 @@
   </dependency>
   <dependency className="jetbrains.mps.execution.configurations.editor.RunConfigurationCreator_Editor" file="RunConfigurationCreator_Editor.java">
     <classNode dependClassName="java.lang.Class" />
+    <classNode dependClassName="java.util.UUID" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleImpl" />
     <classNode dependClassName="jetbrains.mps.execution.settings.editor.ExecutionSettings_StyleSheet" />
@@ -333,6 +340,7 @@
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.style.Style" />
     <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
@@ -453,6 +461,7 @@
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Collection" />
     <classNode dependClassName="java.util.Collections" />
+    <classNode dependClassName="java.util.UUID" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleAttributes" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleImpl" />
@@ -470,12 +479,14 @@
     <classNode dependClassName="jetbrains.mps.openapi.editor.style.Style" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.style.StyleRegistry" />
     <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.openapi.editor.descriptor.ConceptEditorComponent" />
   </dependency>
   <dependency className="jetbrains.mps.execution.configurations.editor.StartProcessHandlerStatement_Editor" file="StartProcessHandlerStatement_Editor.java">
     <classNode dependClassName="java.lang.Class" />
+    <classNode dependClassName="java.util.UUID" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.cells.BigCellUtil" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleImpl" />
@@ -489,6 +500,7 @@
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.style.Style" />
     <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>

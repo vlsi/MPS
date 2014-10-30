@@ -1,20 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
   <dependency className="jetbrains.mps.baseLanguage.builders.constraints.AsTypeBuilder_Constraints" file="AsTypeBuilder_Constraints.java">
+    <classNode dependClassName="java.util.UUID" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.ids.MetaIdFactory" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.builders.constraints.BaseSimpleBuilderDeclaration_Constraints" file="BaseSimpleBuilderDeclaration_Constraints.java">
+    <classNode dependClassName="java.util.UUID" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.ids.MetaIdFactory" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.builders.constraints.BeanBuilder_Constraints" file="BeanBuilder_Constraints.java">
     <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.HashMap" />
     <classNode dependClassName="java.util.Map" />
+    <classNode dependClassName="java.util.UUID" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.scopes.VisibleClassConstructorsScope" />
     <classNode dependClassName="jetbrains.mps.scope.Scope" />
     <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
     <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.ids.MetaIdFactory" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.ids.SReferenceLinkId" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.ReferenceConstraintsContext" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.ReferenceConstraintsDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.ReferenceScopeProvider" />
@@ -34,6 +40,7 @@
     <classNode dependClassName="java.util.HashMap" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="java.util.Map" />
+    <classNode dependClassName="java.util.UUID" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.builders.behavior.BeanPropertyBuilder_Behavior" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.builders.behavior.Builder_Behavior" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.scopes.Members" />
@@ -45,6 +52,9 @@
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.HUtil" />
     <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
     <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.ids.MetaIdFactory" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.ids.SReferenceLinkId" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="jetbrains.mps.smodel.behaviour.BehaviorReflection" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.ReferenceConstraintsContext" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.ReferenceConstraintsDescriptor" />
@@ -75,16 +85,19 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.builders.constraints.SimpleBuilderPropertyBuilder_Constraints" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.builders.constraints.SimpleBuilderPropertyExpression_Constraints" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.builders.constraints.SimpleBuilder_Constraints" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.ids.SConceptId" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.ConstraintsDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.ConstraintsAspectDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.builders.constraints.ResultExpression_Constraints" file="ResultExpression_Constraints.java">
     <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.util.UUID" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.builders.behavior.Builder_Behavior" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
     <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.ids.MetaIdFactory" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.CheckingNodeContext" />
     <classNode dependClassName="jetbrains.mps.util.NameUtil" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
@@ -93,22 +106,27 @@
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.builders.constraints.SimpleBuilderChildExpression_Constraints" file="SimpleBuilderChildExpression_Constraints.java">
+    <classNode dependClassName="java.util.UUID" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.ids.MetaIdFactory" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.builders.constraints.SimpleBuilderDeclaration_Constraints" file="SimpleBuilderDeclaration_Constraints.java">
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.HashMap" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="java.util.Map" />
+    <classNode dependClassName="java.util.UUID" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.builders.behavior.SimpleBuilders_Behavior" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
     <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.ids.MetaIdFactory" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.ids.SReferenceLinkId" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.ReferenceConstraintsContext" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.ReferenceConstraintsDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.ReferenceScopeProvider" />
@@ -121,9 +139,11 @@
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.builders.constraints.SimpleBuilderExpression_Constraints" file="SimpleBuilderExpression_Constraints.java">
     <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.util.UUID" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
     <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.ids.MetaIdFactory" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.CheckingNodeContext" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
@@ -133,13 +153,16 @@
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.HashMap" />
     <classNode dependClassName="java.util.Map" />
+    <classNode dependClassName="java.util.UUID" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
     <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.ids.MetaIdFactory" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.ids.SReferenceLinkId" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="jetbrains.mps.smodel.behaviour.BehaviorReflection" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.ReferenceConstraintsContext" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.ReferenceConstraintsDescriptor" />
@@ -154,11 +177,11 @@
   <dependency className="jetbrains.mps.baseLanguage.builders.constraints.SimpleBuilderPropertyBuilder_Constraints" file="SimpleBuilderPropertyBuilder_Constraints.java">
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.HashMap" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="java.util.Map" />
+    <classNode dependClassName="java.util.UUID" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.builders.behavior.Builder_Behavior" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations" />
@@ -167,6 +190,9 @@
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
     <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.ids.MetaIdFactory" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.ids.SReferenceLinkId" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.ReferenceConstraintsContext" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.ReferenceConstraintsDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.ReferenceScopeProvider" />
@@ -181,9 +207,11 @@
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.builders.constraints.SimpleBuilderPropertyExpression_Constraints" file="SimpleBuilderPropertyExpression_Constraints.java">
     <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.util.UUID" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
     <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.ids.MetaIdFactory" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.CheckingNodeContext" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
@@ -193,11 +221,11 @@
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.HashMap" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="java.util.Map" />
+    <classNode dependClassName="java.util.UUID" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.builders.behavior.Builder_Behavior" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.builders.behavior.SimpleBuilderDeclaration_Behavior" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.builders.behavior.SimpleBuilder_Behavior" />
@@ -209,6 +237,9 @@
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
     <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.ids.MetaIdFactory" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.ids.SReferenceLinkId" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.ReferenceConstraintsContext" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.ReferenceConstraintsDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.ReferenceScopeProvider" />

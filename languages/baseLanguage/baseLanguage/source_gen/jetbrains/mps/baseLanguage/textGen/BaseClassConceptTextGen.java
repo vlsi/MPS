@@ -9,6 +9,8 @@ import jetbrains.mps.baseLanguage.behavior.Classifier_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 
 public abstract class BaseClassConceptTextGen {
   public static void membersWithBrackets(SNode classifier, boolean newLineOnEmptyMembers, final SNodeTextGen textGen) {
@@ -40,10 +42,10 @@ public abstract class BaseClassConceptTextGen {
         isWrappedElementBefore = false;
       }
     }
-    if ((SLinkOperations.getTarget(SNodeOperations.as(classifier, "jetbrains.mps.baseLanguage.structure.ClassConcept"), "staticInitializer", true) != null)) {
+    if ((SLinkOperations.getTarget(SNodeOperations.as(classifier, "jetbrains.mps.baseLanguage.structure.ClassConcept"), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068390468198l, 1171626359898l, "staticInitializer")) != null)) {
       textGen.appendWithIndent("static {");
       textGen.increaseDepth();
-      textGen.appendNode(SLinkOperations.getTarget(SNodeOperations.cast(classifier, "jetbrains.mps.baseLanguage.structure.ClassConcept"), "staticInitializer", true));
+      textGen.appendNode(SLinkOperations.getTarget(SNodeOperations.cast(classifier, "jetbrains.mps.baseLanguage.structure.ClassConcept"), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068390468198l, 1171626359898l, "staticInitializer")));
       textGen.appendNewLine();
       textGen.decreaseDepth();
       textGen.appendWithIndent("}");

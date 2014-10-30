@@ -8,6 +8,8 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
@@ -22,7 +24,7 @@ public class RoutineUniqueness_NonTypesystemRule extends AbstractNonTypesystemRu
   public RoutineUniqueness_NonTypesystemRule() {
   }
   public void applyRule(final SNode routineDefinition, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    if (SPropertyOperations.getString(routineDefinition, "name") == null) {
+    if (SPropertyOperations.getString(routineDefinition, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")) == null) {
       return;
     }
     Iterable<SNode> defs;
@@ -30,13 +32,13 @@ public class RoutineUniqueness_NonTypesystemRule extends AbstractNonTypesystemRu
     if (parentScript != null) {
       defs = ListSequence.fromList(SNodeOperations.getDescendants(parentScript, "jetbrains.mps.samples.Kaja.structure.RoutineDefinition", false, new String[]{})).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
-          return SPropertyOperations.getString(routineDefinition, "name").equals(SPropertyOperations.getString(it, "name"));
+          return SPropertyOperations.getString(routineDefinition, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")).equals(SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")));
         }
       });
     } else {
-      defs = ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.getAncestor(routineDefinition, "jetbrains.mps.samples.Kaja.structure.Library", false, false), "definitions", true)).where(new IWhereFilter<SNode>() {
+      defs = ListSequence.fromList(SLinkOperations.getChildren(SNodeOperations.getAncestor(routineDefinition, "jetbrains.mps.samples.Kaja.structure.Library", false, false), MetaAdapterFactory.getContainmentLink(new UUID(331587165301851084l, -4784639992745830411l), 4394627182934741782l, 4394627182934741783l, "definitions"))).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
-          return SPropertyOperations.getString(routineDefinition, "name").equals(SPropertyOperations.getString(it, "name"));
+          return SPropertyOperations.getString(routineDefinition, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")).equals(SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")));
         }
       });
     }

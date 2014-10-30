@@ -7,17 +7,19 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.lang.dataFlow.DataFlowBuilderContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 
 public class SubstringExpression_DataFlow extends DataFlowBuilder {
   public SubstringExpression_DataFlow() {
   }
   public void build(final IOperationContext operationContext, final DataFlowBuilderContext _context) {
-    _context.getBuilder().build((SNode) SLinkOperations.getTarget(_context.getNode(), "operand", true));
-    if (SLinkOperations.getTarget(_context.getNode(), "startIndex", true) != null) {
-      _context.getBuilder().build((SNode) SLinkOperations.getTarget(_context.getNode(), "startIndex", true));
+    _context.getBuilder().build((SNode) SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1225271484915l, 1225271484916l, "operand")));
+    if (SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1225271484915l, 1225271484917l, "startIndex")) != null) {
+      _context.getBuilder().build((SNode) SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1225271484915l, 1225271484917l, "startIndex")));
     }
-    if (SLinkOperations.getTarget(_context.getNode(), "endIndex", true) != null) {
-      _context.getBuilder().build((SNode) SLinkOperations.getTarget(_context.getNode(), "endIndex", true));
+    if (SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1225271484915l, 1225271484918l, "endIndex")) != null) {
+      _context.getBuilder().build((SNode) SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1225271484915l, 1225271484918l, "endIndex")));
     }
   }
 }

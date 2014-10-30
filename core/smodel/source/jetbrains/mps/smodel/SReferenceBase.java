@@ -23,7 +23,6 @@ import org.jetbrains.mps.openapi.language.SReferenceLink;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
 /**
  * Igor Alshannikov
@@ -143,7 +142,7 @@ public abstract class SReferenceBase extends SReference {
   protected String getResolveInfo(SNode immatureNode) {
     // FIXME need a better approach to keep names of predefined attributes;
     // however, a dependency to generated kernel module is an overkill for the sake of few strings
-    String value = SNodeAccessUtil.getProperty(immatureNode, "resolveInfo");
+    String value = immatureNode.getProperty("resolveInfo");
     if (value != null) {
       return value;
     }

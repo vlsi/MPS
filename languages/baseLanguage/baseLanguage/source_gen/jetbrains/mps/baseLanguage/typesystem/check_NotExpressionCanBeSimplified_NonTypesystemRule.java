@@ -8,6 +8,8 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
@@ -19,9 +21,9 @@ public class check_NotExpressionCanBeSimplified_NonTypesystemRule extends Abstra
   public check_NotExpressionCanBeSimplified_NonTypesystemRule() {
   }
   public void applyRule(final SNode notExpression, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    SNode currentExpression = SLinkOperations.getTarget(notExpression, "expression", true);
+    SNode currentExpression = SLinkOperations.getTarget(notExpression, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1081516740877l, 1081516765348l, "expression"));
     while (SNodeOperations.isInstanceOf(currentExpression, "jetbrains.mps.baseLanguage.structure.ParenthesizedExpression")) {
-      currentExpression = SLinkOperations.getTarget(SNodeOperations.cast(currentExpression, "jetbrains.mps.baseLanguage.structure.ParenthesizedExpression"), "expression", true);
+      currentExpression = SLinkOperations.getTarget(SNodeOperations.cast(currentExpression, "jetbrains.mps.baseLanguage.structure.ParenthesizedExpression"), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1079359253375l, 1079359253376l, "expression"));
     }
     if (SNodeOperations.isInstanceOf(currentExpression, "jetbrains.mps.baseLanguage.structure.BooleanConstant")) {
       {

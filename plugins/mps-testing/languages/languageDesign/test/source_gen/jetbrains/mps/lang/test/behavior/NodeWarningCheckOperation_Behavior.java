@@ -6,6 +6,8 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 
 public class NodeWarningCheckOperation_Behavior {
@@ -16,10 +18,10 @@ public class NodeWarningCheckOperation_Behavior {
   }
   public static void virtual_attachReference_2893471348147987863(SNode thisNode, SNode reference) {
     assert BehaviorReflection.invokeVirtual(Boolean.TYPE, thisNode, "virtual_canAttachReference_2893471348147804024", new Object[]{reference});
-    SLinkOperations.setTarget(thisNode, "warningRef", SConceptOperations.createNewNode("jetbrains.mps.lang.test.structure.WarningStatementReference", null), true);
-    SLinkOperations.setTarget(SLinkOperations.getTarget(thisNode, "warningRef", true), "declaration", SNodeOperations.cast(reference, "jetbrains.mps.lang.typesystem.structure.WarningStatement"), false);
+    SLinkOperations.setTarget(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-8825571760360698496l, -7431307307277756308l), 1215511704609l, 8489045168660938635l, "warningRef"), SConceptOperations.createNewNode("jetbrains.mps.lang.test.structure.WarningStatementReference", null));
+    SLinkOperations.setTarget(SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-8825571760360698496l, -7431307307277756308l), 1215511704609l, 8489045168660938635l, "warningRef")), MetaAdapterFactory.getReferenceLink(new UUID(-8825571760360698496l, -7431307307277756308l), 7691029917083872157l, 8333855927540250453l, "declaration"), SNodeOperations.cast(reference, "jetbrains.mps.lang.typesystem.structure.WarningStatement"));
   }
   public static SNode virtual_getReference_8333855927540237654(SNode thisNode) {
-    return SLinkOperations.getTarget(thisNode, "warningRef", true);
+    return SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-8825571760360698496l, -7431307307277756308l), 1215511704609l, 8489045168660938635l, "warningRef"));
   }
 }

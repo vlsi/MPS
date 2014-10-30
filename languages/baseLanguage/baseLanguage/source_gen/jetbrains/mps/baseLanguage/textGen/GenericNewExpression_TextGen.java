@@ -5,15 +5,17 @@ package jetbrains.mps.baseLanguage.textGen;
 import jetbrains.mps.textGen.SNodeTextGen;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 
 public class GenericNewExpression_TextGen extends SNodeTextGen {
   public void doGenerateText(SNode node) {
     this.append("new ");
-    if ((SLinkOperations.getTarget(node, "creator", true) == null)) {
+    if ((SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1145552977093l, 1145553007750l, "creator")) == null)) {
       this.foundError("incomplete new expression");
       this.append("???");
     } else {
-      appendNode(SLinkOperations.getTarget(node, "creator", true));
+      appendNode(SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1145552977093l, 1145553007750l, "creator")));
     }
   }
 }

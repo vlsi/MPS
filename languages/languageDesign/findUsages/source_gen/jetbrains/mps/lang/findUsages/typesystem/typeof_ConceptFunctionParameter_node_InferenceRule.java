@@ -9,6 +9,8 @@ import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.smodel.SModelUtil_new;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
@@ -18,7 +20,7 @@ public class typeof_ConceptFunctionParameter_node_InferenceRule extends Abstract
   public typeof_ConceptFunctionParameter_node_InferenceRule() {
   }
   public void applyRule(final SNode conceptFunctionParameter_node, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    SNode applicableConcept = SLinkOperations.getTarget(SNodeOperations.getAncestor(conceptFunctionParameter_node, "jetbrains.mps.lang.findUsages.structure.FinderDeclaration", false, false), "forConcept", false);
+    SNode applicableConcept = SLinkOperations.getTarget(SNodeOperations.getAncestor(conceptFunctionParameter_node, "jetbrains.mps.lang.findUsages.structure.FinderDeclaration", false, false), MetaAdapterFactory.getReferenceLink(new UUID(7265238368668241523l, -5766677349071573456l), 1218978086674l, 1218978181697l, "forConcept"));
     {
       SNode _nodeToCheck_1029348928467 = conceptFunctionParameter_node;
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c8959035a(jetbrains.mps.lang.findUsages.typesystem)", "1205608715759", 0, null);
@@ -41,7 +43,7 @@ public class typeof_ConceptFunctionParameter_node_InferenceRule extends Abstract
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeType", null, null, false);
-    SNodeAccessUtil.setReferenceTarget(quotedNode_2, "concept", (SNode) parameter_1);
+    SNodeAccessUtil.setReferenceTarget(quotedNode_2, MetaAdapterFactory.getReferenceLink(new UUID(8675788371017092295l, -9098312342032910879l), 1138055754698l, 1138405853777l, "concept"), (SNode) parameter_1);
     return quotedNode_2;
   }
 }

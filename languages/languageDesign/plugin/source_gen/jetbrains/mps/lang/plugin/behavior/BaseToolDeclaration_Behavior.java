@@ -5,6 +5,8 @@ package jetbrains.mps.lang.plugin.behavior;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.util.SNodeOperations;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.project.AbstractModule;
@@ -19,13 +21,13 @@ public class BaseToolDeclaration_Behavior {
   public static void init(SNode thisNode) {
   }
   public static String call_getGeneratedName_6547237850567463427(SNode thisNode) {
-    return NameUtil.toValidIdentifier(SPropertyOperations.getString(thisNode, "name")) + "_Tool";
+    return NameUtil.toValidIdentifier(SPropertyOperations.getString(thisNode, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"))) + "_Tool";
   }
   public static String call_getGeneratedClassFQName_6547237850567463438(SNode thisNode) {
     return SNodeOperations.getModelLongName(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getModel(thisNode)) + "." + BaseToolDeclaration_Behavior.call_getGeneratedName_6547237850567463427(thisNode);
   }
   public static boolean call_hasNumber_6547237850567463455(SNode thisNode) {
-    return !(SPropertyOperations.hasValue(thisNode, "number", null));
+    return !(SPropertyOperations.hasValue(thisNode, MetaAdapterFactory.getProperty(new UUID(2952642368903463569l, -5856357300648461647l), 6547237850567458268l, 6547237850567462701l, "number"), null));
   }
   public static SNode virtual_createType_1213877527970(SNode thisNode) {
     return _quotation_createNode_7ol7e8_a0a3(thisNode);
@@ -38,7 +40,7 @@ public class BaseToolDeclaration_Behavior {
     if (!(module instanceof AbstractModule)) {
       return null;
     }
-    return MacrosFactory.forModule((AbstractModule) module).expandPath(SPropertyOperations.getString(thisNode, "icon"));
+    return MacrosFactory.forModule((AbstractModule) module).expandPath(SPropertyOperations.getString(thisNode, MetaAdapterFactory.getProperty(new UUID(2952642368903463569l, -5856357300648461647l), 6547237850567458268l, 6547237850567462766l, "icon")));
   }
   public static PropertyReference virtual_getPropertyToCheck_4844813484172611473(SNode thisNode) {
     return new PropertyReference(thisNode, "caption");
@@ -47,14 +49,14 @@ public class BaseToolDeclaration_Behavior {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.ToolType", null, null, false);
-    SNodeAccessUtil.setReferenceTarget(quotedNode_2, "tool", (SNode) parameter_1);
+    SNodeAccessUtil.setReferenceTarget(quotedNode_2, MetaAdapterFactory.getReferenceLink(new UUID(2952642368903463569l, -5856357300648461647l), 1208528650020l, 1208529537963l, "tool"), (SNode) parameter_1);
     return quotedNode_2;
   }
   private static SNode _quotation_createNode_7ol7e8_a0a4() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, false);
-    quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, facade.createModelReference("742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#jetbrains.mps.ide.tools(MPS.Platform/jetbrains.mps.ide.tools@java_stub)"), facade.createNodeId("~BaseTool")));
+    quotedNode_1.setReference(MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier"), SReference.create(MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier"), quotedNode_1, facade.createModelReference("742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#jetbrains.mps.ide.tools(MPS.Platform/jetbrains.mps.ide.tools@java_stub)"), facade.createNodeId("~BaseTool")));
     return quotedNode_1;
   }
 }

@@ -16,10 +16,12 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.dataFlow.analyzers.typesystem.typeof_AnalyzerFunParameterInput_InferenceRule" file="typeof_AnalyzerFunParameterInput_InferenceRule.java">
     <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.UUID" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="jetbrains.mps.typesystem.inference.EquationInfo" />
     <classNode dependClassName="jetbrains.mps.typesystem.inference.TypeCheckingContext" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
@@ -28,9 +30,11 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.dataFlow.analyzers.typesystem.typeof_AnalyzerFunParameterProgramState_InferenceRule" file="typeof_AnalyzerFunParameterProgramState_InferenceRule.java">
     <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.UUID" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
     <classNode dependClassName="jetbrains.mps.smodel.SReference" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="jetbrains.mps.typesystem.inference.EquationInfo" />
     <classNode dependClassName="jetbrains.mps.typesystem.inference.TypeCheckingContext" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
@@ -40,10 +44,12 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.dataFlow.analyzers.typesystem.typeof_AnalyzerFunctionResultType_InferenceRule" file="typeof_AnalyzerFunctionResultType_InferenceRule.java">
     <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.UUID" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="jetbrains.mps.typesystem.inference.EquationInfo" />
     <classNode dependClassName="jetbrains.mps.typesystem.inference.TypeCheckingContext" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
@@ -53,11 +59,13 @@
   <dependency className="jetbrains.mps.lang.dataFlow.analyzers.typesystem.typeof_AnalyzerMergeParameterInput_InferenceRule" file="typeof_AnalyzerMergeParameterInput_InferenceRule.java">
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.UUID" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.HUtil" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="jetbrains.mps.typesystem.inference.EquationInfo" />
     <classNode dependClassName="jetbrains.mps.typesystem.inference.TypeCheckingContext" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
@@ -67,9 +75,11 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.dataFlow.analyzers.typesystem.typeof_AnalyzerParameterProgram_InferenceRule" file="typeof_AnalyzerParameterProgram_InferenceRule.java">
     <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.UUID" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
     <classNode dependClassName="jetbrains.mps.smodel.SReference" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="jetbrains.mps.typesystem.inference.EquationInfo" />
     <classNode dependClassName="jetbrains.mps.typesystem.inference.TypeCheckingContext" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
@@ -80,11 +90,13 @@
   <dependency className="jetbrains.mps.lang.dataFlow.analyzers.typesystem.typeof_AnalyzerRunnerCreator_InferenceRule" file="typeof_AnalyzerRunnerCreator_InferenceRule.java">
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.UUID" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.HUtil" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
     <classNode dependClassName="jetbrains.mps.smodel.SReference" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="jetbrains.mps.typesystem.inference.EquationInfo" />
     <classNode dependClassName="jetbrains.mps.typesystem.inference.TypeCheckingContext" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
@@ -94,9 +106,11 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.dataFlow.analyzers.typesystem.typeof_ApplicableNodeReference_InferenceRule" file="typeof_ApplicableNodeReference_InferenceRule.java">
     <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.UUID" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="jetbrains.mps.typesystem.inference.EquationInfo" />
     <classNode dependClassName="jetbrains.mps.typesystem.inference.TypeCheckingContext" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
@@ -106,9 +120,11 @@
   <dependency className="jetbrains.mps.lang.dataFlow.analyzers.typesystem.typeof_ConceptCondition_InferenceRule" file="typeof_ConceptCondition_InferenceRule.java">
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.UUID" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="jetbrains.mps.typesystem.inference.EquationInfo" />
     <classNode dependClassName="jetbrains.mps.typesystem.inference.TypeCheckingContext" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
@@ -119,9 +135,11 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.dataFlow.analyzers.typesystem.typeof_InstructionReference_InferenceRule" file="typeof_InstructionReference_InferenceRule.java">
     <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.UUID" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="jetbrains.mps.typesystem.inference.EquationInfo" />
     <classNode dependClassName="jetbrains.mps.typesystem.inference.TypeCheckingContext" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
@@ -130,10 +148,12 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.dataFlow.analyzers.typesystem.typeof_InstructionType_InferenceRule" file="typeof_InstructionType_InferenceRule.java">
     <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.UUID" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
     <classNode dependClassName="jetbrains.mps.smodel.SReference" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="jetbrains.mps.typesystem.inference.EquationInfo" />
     <classNode dependClassName="jetbrains.mps.typesystem.inference.TypeCheckingContext" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />

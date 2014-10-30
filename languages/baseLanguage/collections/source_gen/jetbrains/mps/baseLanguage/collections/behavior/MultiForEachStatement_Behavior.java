@@ -9,6 +9,8 @@ import jetbrains.mps.lang.scopes.runtime.ScopeUtils;
 import jetbrains.mps.baseLanguage.scopes.Scopes;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
@@ -19,13 +21,13 @@ public class MultiForEachStatement_Behavior {
   public static Scope virtual_getScope_3734116213129936182(SNode thisNode, SNode kind, SNode child) {
     if (SConceptOperations.isExactly(kind, "jetbrains.mps.baseLanguage.collections.structure.MultiForEachVariable")) {
       if (ScopeUtils.comeFrom("body", thisNode, child)) {
-        return Scopes.forVariables(kind, ListSequence.fromList(SLinkOperations.getTargets(thisNode, "forEach", true)).where(new IWhereFilter<SNode>() {
+        return Scopes.forVariables(kind, ListSequence.fromList(SLinkOperations.getChildren(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-8968771020793164004l, -7182180101671965361l), 9042586985346099698l, 9042586985346099734l, "forEach"))).where(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {
-            return (SLinkOperations.getTarget(it, "variable", true) != null);
+            return (SLinkOperations.getTarget(it, MetaAdapterFactory.getContainmentLink(new UUID(-8968771020793164004l, -7182180101671965361l), 9042586985346099733l, 9042586985346099778l, "variable")) != null);
           }
         }).select(new ISelector<SNode, SNode>() {
           public SNode select(SNode it) {
-            return SLinkOperations.getTarget(it, "variable", true);
+            return SLinkOperations.getTarget(it, MetaAdapterFactory.getContainmentLink(new UUID(-8968771020793164004l, -7182180101671965361l), 9042586985346099733l, 9042586985346099778l, "variable"));
           }
         }), ScopeUtils.lazyParentScope(thisNode, kind));
       }

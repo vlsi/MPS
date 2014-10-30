@@ -29,6 +29,8 @@ import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 
 public class UnknownNew_Editor extends DefaultNodeEditor {
@@ -91,7 +93,7 @@ public class UnknownNew_Editor extends DefaultNodeEditor {
     }
     public void handleAction_impl(SNode parameterObject, SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
       SNode choosen = parameterObject;
-      SPropertyOperations.set(node, "className", BehaviorReflection.invokeVirtual(String.class, choosen, "virtual_getNestedName_8540045600162184125", new Object[]{}));
+      SPropertyOperations.set(node, MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 3304084122476667220l, 3304084122476721463l, "className"), BehaviorReflection.invokeVirtual(String.class, choosen, "virtual_getNestedName_8540045600162184125", new Object[]{}));
     }
     public boolean isReferentPresentation() {
       return false;

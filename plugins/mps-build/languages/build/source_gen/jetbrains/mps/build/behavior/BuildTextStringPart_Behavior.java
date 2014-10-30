@@ -5,6 +5,8 @@ package jetbrains.mps.build.behavior;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.build.util.MacroHelper;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
@@ -12,7 +14,7 @@ public class BuildTextStringPart_Behavior {
   public static void init(SNode thisNode) {
   }
   public static String virtual_getText_4380385936562037054(SNode thisNode, MacroHelper helper) {
-    return SPropertyOperations.getString(thisNode, "text");
+    return SPropertyOperations.getString(thisNode, MetaAdapterFactory.getProperty(new UUID(8755280088213897754l, -5075149991798053422l), 4903714810883702019l, 4903714810883755350l, "text"));
   }
   @Nullable
   public static SNode call_getContainer_6083230236994622122(SNode thisNode) {

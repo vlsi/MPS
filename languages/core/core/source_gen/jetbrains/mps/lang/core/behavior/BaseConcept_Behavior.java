@@ -10,6 +10,8 @@ import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.smodel.presentation.ReferenceConceptUtil;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
@@ -33,11 +35,11 @@ public class BaseConcept_Behavior {
   }
   public static String virtual_getPresentation_1213877396640(SNode thisNode) {
     if (SNodeOperations.isInstanceOf(thisNode, "jetbrains.mps.lang.core.structure.INamedConcept")) {
-      String name = SPropertyOperations.getString(SNodeOperations.cast(thisNode, "jetbrains.mps.lang.core.structure.INamedConcept"), "name");
+      String name = SPropertyOperations.getString(SNodeOperations.cast(thisNode, "jetbrains.mps.lang.core.structure.INamedConcept"), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"));
       if (name != null) {
         return name;
       }
-      return "<no name>[" + SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(thisNode), "name") + "]";
+      return "<no name>[" + SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(thisNode), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")) + "]";
     }
     // -- 
     String smartRefPresentation = ReferenceConceptUtil.getPresentation(thisNode);
@@ -45,12 +47,12 @@ public class BaseConcept_Behavior {
       return smartRefPresentation;
     }
     // -- 
-    String conceptAlias = SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(thisNode), "conceptAlias");
+    String conceptAlias = SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(thisNode), MetaAdapterFactory.getProperty(new UUID(-4094437568663370681l, -8968368868337559369l), 1169125787135l, 5092175715804935370l, "conceptAlias"));
     if (conceptAlias != null) {
       return conceptAlias;
     }
     // -- 
-    return SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(thisNode), "name");
+    return SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(thisNode), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"));
   }
   public static String virtual_getDetailedPresentation_2354269628709769373(SNode thisNode) {
     return BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_getPresentation_1213877396640", new Object[]{});

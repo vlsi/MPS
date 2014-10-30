@@ -6,6 +6,8 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.action.NodeSetupContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.List;
@@ -37,32 +39,32 @@ import jetbrains.mps.smodel.constraints.ModelConstraints;
 public class QueriesGenerated {
   public static void nodeFactory_NodeSetup_AbstractEquationStatement_1174664649251(final IOperationContext operationContext, final NodeSetupContext _context) {
     if (SNodeOperations.isInstanceOf(_context.getSampleNode(), "jetbrains.mps.lang.typesystem.structure.AbstractEquationStatement")) {
-      SLinkOperations.setTarget(_context.getNewNode(), "leftExpression", SLinkOperations.getTarget(SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.lang.typesystem.structure.AbstractEquationStatement"), "leftExpression", true), true);
-      SLinkOperations.setTarget(_context.getNewNode(), "rightExpression", SLinkOperations.getTarget(SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.lang.typesystem.structure.AbstractEquationStatement"), "rightExpression", true), true);
-      SLinkOperations.setTarget(_context.getNewNode(), "nodeToCheck", SLinkOperations.getTarget(SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.lang.typesystem.structure.AbstractEquationStatement"), "nodeToCheck", true), true);
-      SPropertyOperations.set(_context.getNewNode(), "checkOnly", "" + (SPropertyOperations.getBoolean(SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.lang.typesystem.structure.AbstractEquationStatement"), "checkOnly")));
-      SLinkOperations.setTarget(_context.getNewNode(), "errorString", SLinkOperations.getTarget(SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.lang.typesystem.structure.AbstractEquationStatement"), "errorString", true), true);
-      ListSequence.fromList(SLinkOperations.getTargets(_context.getNewNode(), "helginsIntention", true)).addSequence(ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.lang.typesystem.structure.AbstractEquationStatement"), "helginsIntention", true)));
+      SLinkOperations.setTarget(_context.getNewNode(), MetaAdapterFactory.getContainmentLink(new UUID(8817443762339858024l, -6091446231697526094l), 1174660718586l, 1174660783413l, "leftExpression"), SLinkOperations.getTarget(SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.lang.typesystem.structure.AbstractEquationStatement"), MetaAdapterFactory.getContainmentLink(new UUID(8817443762339858024l, -6091446231697526094l), 1174660718586l, 1174660783413l, "leftExpression")));
+      SLinkOperations.setTarget(_context.getNewNode(), MetaAdapterFactory.getContainmentLink(new UUID(8817443762339858024l, -6091446231697526094l), 1174660718586l, 1174660783414l, "rightExpression"), SLinkOperations.getTarget(SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.lang.typesystem.structure.AbstractEquationStatement"), MetaAdapterFactory.getContainmentLink(new UUID(8817443762339858024l, -6091446231697526094l), 1174660718586l, 1174660783414l, "rightExpression")));
+      SLinkOperations.setTarget(_context.getNewNode(), MetaAdapterFactory.getContainmentLink(new UUID(8817443762339858024l, -6091446231697526094l), 1174660718586l, 1174662598553l, "nodeToCheck"), SLinkOperations.getTarget(SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.lang.typesystem.structure.AbstractEquationStatement"), MetaAdapterFactory.getContainmentLink(new UUID(8817443762339858024l, -6091446231697526094l), 1174660718586l, 1174662598553l, "nodeToCheck")));
+      SPropertyOperations.set(_context.getNewNode(), MetaAdapterFactory.getProperty(new UUID(8817443762339858024l, -6091446231697526094l), 1174660718586l, 1206359757216l, "checkOnly"), "" + (SPropertyOperations.getBoolean(SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.lang.typesystem.structure.AbstractEquationStatement"), MetaAdapterFactory.getProperty(new UUID(8817443762339858024l, -6091446231697526094l), 1174660718586l, 1206359757216l, "checkOnly"))));
+      SLinkOperations.setTarget(_context.getNewNode(), MetaAdapterFactory.getContainmentLink(new UUID(8817443762339858024l, -6091446231697526094l), 1174660718586l, 1180447237840l, "errorString"), SLinkOperations.getTarget(SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.lang.typesystem.structure.AbstractEquationStatement"), MetaAdapterFactory.getContainmentLink(new UUID(8817443762339858024l, -6091446231697526094l), 1174660718586l, 1180447237840l, "errorString")));
+      ListSequence.fromList(SLinkOperations.getChildren(_context.getNewNode(), MetaAdapterFactory.getContainmentLink(new UUID(8817443762339858024l, -6091446231697526094l), 1174660718586l, 1216204483513l, "helginsIntention"))).addSequence(ListSequence.fromList(SLinkOperations.getChildren(SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.lang.typesystem.structure.AbstractEquationStatement"), MetaAdapterFactory.getContainmentLink(new UUID(8817443762339858024l, -6091446231697526094l), 1174660718586l, 1216204483513l, "helginsIntention"))));
     }
   }
   public static void nodeFactory_NodeSetup_IsSubtypeExpression_1177408248540(final IOperationContext operationContext, final NodeSetupContext _context) {
     if (SNodeOperations.isInstanceOf(_context.getSampleNode(), "jetbrains.mps.lang.typesystem.structure.IsSubtypeExpression")) {
-      SLinkOperations.setTarget(_context.getNewNode(), "subtypeExpression", SLinkOperations.getTarget(SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.lang.typesystem.structure.IsSubtypeExpression"), "subtypeExpression", true), true);
-      SLinkOperations.setTarget(_context.getNewNode(), "supertypeExpression", SLinkOperations.getTarget(SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.lang.typesystem.structure.IsSubtypeExpression"), "supertypeExpression", true), true);
+      SLinkOperations.setTarget(_context.getNewNode(), MetaAdapterFactory.getContainmentLink(new UUID(8817443762339858024l, -6091446231697526094l), 1176543928247l, 1176543945045l, "subtypeExpression"), SLinkOperations.getTarget(SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.lang.typesystem.structure.IsSubtypeExpression"), MetaAdapterFactory.getContainmentLink(new UUID(8817443762339858024l, -6091446231697526094l), 1176543928247l, 1176543945045l, "subtypeExpression")));
+      SLinkOperations.setTarget(_context.getNewNode(), MetaAdapterFactory.getContainmentLink(new UUID(8817443762339858024l, -6091446231697526094l), 1176543928247l, 1176543950311l, "supertypeExpression"), SLinkOperations.getTarget(SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.lang.typesystem.structure.IsSubtypeExpression"), MetaAdapterFactory.getContainmentLink(new UUID(8817443762339858024l, -6091446231697526094l), 1176543928247l, 1176543950311l, "supertypeExpression")));
     }
   }
   public static void nodeFactory_NodeSetup_CoerceExpression_1178879020941(final IOperationContext operationContext, final NodeSetupContext _context) {
     if (SNodeOperations.isInstanceOf(_context.getSampleNode(), "jetbrains.mps.lang.typesystem.structure.CoerceExpression")) {
-      SLinkOperations.setTarget(_context.getNewNode(), "nodeToCoerce", SLinkOperations.getTarget(SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.lang.typesystem.structure.CoerceExpression"), "nodeToCoerce", true), true);
-      SLinkOperations.setTarget(_context.getNewNode(), "pattern", SLinkOperations.getTarget(SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.lang.typesystem.structure.CoerceExpression"), "pattern", true), true);
+      SLinkOperations.setTarget(_context.getNewNode(), MetaAdapterFactory.getContainmentLink(new UUID(8817443762339858024l, -6091446231697526094l), 1178870617262l, 1178870894645l, "nodeToCoerce"), SLinkOperations.getTarget(SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.lang.typesystem.structure.CoerceExpression"), MetaAdapterFactory.getContainmentLink(new UUID(8817443762339858024l, -6091446231697526094l), 1178870617262l, 1178870894645l, "nodeToCoerce")));
+      SLinkOperations.setTarget(_context.getNewNode(), MetaAdapterFactory.getContainmentLink(new UUID(8817443762339858024l, -6091446231697526094l), 1178870617262l, 1178870894644l, "pattern"), SLinkOperations.getTarget(SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.lang.typesystem.structure.CoerceExpression"), MetaAdapterFactory.getContainmentLink(new UUID(8817443762339858024l, -6091446231697526094l), 1178870617262l, 1178870894644l, "pattern")));
     }
   }
   public static void nodeFactory_NodeSetup_TypeOfExpression_1179476271704(final IOperationContext operationContext, final NodeSetupContext _context) {
     if (SNodeOperations.isInstanceOf(_context.getSampleNode(), "jetbrains.mps.baseLanguage.structure.Expression")) {
       if (!(SNodeOperations.isInstanceOf(_context.getSampleNode(), "jetbrains.mps.lang.typesystem.structure.TypeOfExpression"))) {
-        SLinkOperations.setTarget(_context.getNewNode(), "term", SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.baseLanguage.structure.Expression"), true);
+        SLinkOperations.setTarget(_context.getNewNode(), MetaAdapterFactory.getContainmentLink(new UUID(8817443762339858024l, -6091446231697526094l), 1174657487114l, 1174657509053l, "term"), SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.baseLanguage.structure.Expression"));
       } else {
-        SLinkOperations.setTarget(_context.getNewNode(), "term", SLinkOperations.getTarget(SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.lang.typesystem.structure.TypeOfExpression"), "term", true), true);
+        SLinkOperations.setTarget(_context.getNewNode(), MetaAdapterFactory.getContainmentLink(new UUID(8817443762339858024l, -6091446231697526094l), 1174657487114l, 1174657509053l, "term"), SLinkOperations.getTarget(SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.lang.typesystem.structure.TypeOfExpression"), MetaAdapterFactory.getContainmentLink(new UUID(8817443762339858024l, -6091446231697526094l), 1174657487114l, 1174657509053l, "term")));
       }
     }
   }
@@ -76,7 +78,7 @@ public class QueriesGenerated {
         IChildNodeSetter setter = new AbstractChildNodeSetter() {
           private SNode wrapNode(SNode nodeToWrap, SModel model, @Nullable EditorContext editorContext) {
             SNode normalTypeClause = SNodeFactoryOperations.createNewNode(model, "jetbrains.mps.lang.typesystem.structure.NormalTypeClause", null);
-            SLinkOperations.setTarget(normalTypeClause, "normalType", nodeToWrap, true);
+            SLinkOperations.setTarget(normalTypeClause, MetaAdapterFactory.getContainmentLink(new UUID(8817443762339858024l, -6091446231697526094l), 1185788614172l, 1185788644032l, "normalType"), nodeToWrap);
             return normalTypeClause;
           }
           public boolean returnSmallPart(SNode nodeToWrap) {
@@ -120,7 +122,7 @@ public class QueriesGenerated {
               public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
                 SNode rule = SNodeFactoryOperations.createNewNode("jetbrains.mps.lang.typesystem.structure.CreateLessThanInequationStatement", null);
                 if ((item).equals("check typeof")) {
-                  SPropertyOperations.set(rule, "checkOnly", "" + (true));
+                  SPropertyOperations.set(rule, MetaAdapterFactory.getProperty(new UUID(8817443762339858024l, -6091446231697526094l), 1174660718586l, 1206359757216l, "checkOnly"), "" + (true));
                 }
                 return rule;
               }
@@ -166,8 +168,8 @@ public class QueriesGenerated {
               }
               SNodeOperations.replaceWithAnother(statement, result);
               SNode left = SNodeFactoryOperations.createNewNode("jetbrains.mps.lang.typesystem.structure.NormalTypeClause", null);
-              SLinkOperations.setTarget(left, "normalType", _context.getSourceNode(), true);
-              SLinkOperations.setTarget(result, "leftExpression", left, true);
+              SLinkOperations.setTarget(left, MetaAdapterFactory.getContainmentLink(new UUID(8817443762339858024l, -6091446231697526094l), 1185788614172l, 1185788644032l, "normalType"), _context.getSourceNode());
+              SLinkOperations.setTarget(result, MetaAdapterFactory.getContainmentLink(new UUID(8817443762339858024l, -6091446231697526094l), 1174660718586l, 1174660783413l, "leftExpression"), left);
               return result;
             }
             @Override

@@ -6,20 +6,22 @@ import java.util.List;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class StatementListUtil {
   public static List<SNode> selectStatementsUntilControlStatement(SNode slist) {
-    if (ListSequence.fromList(SLinkOperations.getTargets(slist, "statement", true)).isNotEmpty()) {
-      return selectStatementsUntilControlStatement(slist, ListSequence.fromList(((List<SNode>) SLinkOperations.getTargets(slist, "statement", true))).getElement(0));
+    if (ListSequence.fromList(SLinkOperations.getChildren(slist, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123136l, 1068581517665l, "statement"))).isNotEmpty()) {
+      return selectStatementsUntilControlStatement(slist, ListSequence.fromList(((List<SNode>) SLinkOperations.getChildren(slist, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123136l, 1068581517665l, "statement")))).getElement(0));
     }
     return ListSequence.fromList(new ArrayList<SNode>());
   }
   public static List<SNode> selectStatementsUntilControlStatement(SNode slist, SNode start) {
     List<SNode> res = ListSequence.fromList(new ArrayList<SNode>());
     boolean foundStart = false;
-    for (SNode stmt : ((List<SNode>) SLinkOperations.getTargets(slist, "statement", true))) {
+    for (SNode stmt : ((List<SNode>) SLinkOperations.getChildren(slist, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123136l, 1068581517665l, "statement")))) {
       if (stmt == start) {
         foundStart = true;
       }

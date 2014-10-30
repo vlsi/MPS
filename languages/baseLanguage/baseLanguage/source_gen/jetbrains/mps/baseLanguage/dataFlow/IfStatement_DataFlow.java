@@ -7,6 +7,8 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.lang.dataFlow.DataFlowBuilderContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -15,17 +17,17 @@ public class IfStatement_DataFlow extends DataFlowBuilder {
   public IfStatement_DataFlow() {
   }
   public void build(final IOperationContext operationContext, final DataFlowBuilderContext _context) {
-    _context.getBuilder().build((SNode) SLinkOperations.getTarget(_context.getNode(), "condition", true));
-    if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "condition", true), "jetbrains.mps.baseLanguage.structure.BooleanConstant")) {
-      SNode bconst = SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), "condition", true), "jetbrains.mps.baseLanguage.structure.BooleanConstant");
-      if (!(SPropertyOperations.getBoolean(bconst, "value"))) {
+    _context.getBuilder().build((SNode) SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123159l, 1068580123160l, "condition")));
+    if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123159l, 1068580123160l, "condition")), "jetbrains.mps.baseLanguage.structure.BooleanConstant")) {
+      SNode bconst = SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123159l, 1068580123160l, "condition")), "jetbrains.mps.baseLanguage.structure.BooleanConstant");
+      if (!(SPropertyOperations.getBoolean(bconst, MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123137l, 1068580123138l, "value")))) {
         _context.getBuilder().emitJump(_context.getBuilder().label(_context.getNode(), "endOfTrue"), "r:00000000-0000-4000-0000-011c895902c2(jetbrains.mps.baseLanguage.dataFlow)/1220014062845");
       }
     } else {
       _context.getBuilder().emitIfJump(_context.getBuilder().label(_context.getNode(), "endOfTrue"), "r:00000000-0000-4000-0000-011c895902c2(jetbrains.mps.baseLanguage.dataFlow)/1235407894378");
     }
-    _context.getBuilder().build((SNode) SLinkOperations.getTarget(_context.getNode(), "ifTrue", true));
-    if ((SLinkOperations.getTarget(_context.getNode(), "ifFalseStatement", true) != null) || SLinkOperations.getTargets(_context.getNode(), "elsifClauses", true) != null && ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "elsifClauses", true)).isNotEmpty()) {
+    _context.getBuilder().build((SNode) SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123159l, 1068580123161l, "ifTrue")));
+    if ((SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123159l, 1082485599094l, "ifFalseStatement")) != null) || SLinkOperations.getChildren(_context.getNode(), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123159l, 1206060520071l, "elsifClauses")) != null && ListSequence.fromList(SLinkOperations.getChildren(_context.getNode(), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123159l, 1206060520071l, "elsifClauses"))).isNotEmpty()) {
       _context.getBuilder().emitMayBeUnreachable(new Runnable() {
         public void run() {
           _context.getBuilder().emitJump(_context.getBuilder().after(_context.getNode()), "r:00000000-0000-4000-0000-011c895902c2(jetbrains.mps.baseLanguage.dataFlow)/1217868921099");
@@ -33,11 +35,11 @@ public class IfStatement_DataFlow extends DataFlowBuilder {
       });
     }
     _context.getBuilder().emitLabel("endOfTrue");
-    for (SNode elseIf : SLinkOperations.getTargets(_context.getNode(), "elsifClauses", true)) {
+    for (SNode elseIf : SLinkOperations.getChildren(_context.getNode(), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123159l, 1206060520071l, "elsifClauses"))) {
       _context.getBuilder().build((SNode) elseIf);
     }
-    if ((SLinkOperations.getTarget(_context.getNode(), "ifFalseStatement", true) != null)) {
-      _context.getBuilder().build((SNode) SLinkOperations.getTarget(_context.getNode(), "ifFalseStatement", true));
+    if ((SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123159l, 1082485599094l, "ifFalseStatement")) != null)) {
+      _context.getBuilder().build((SNode) SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123159l, 1082485599094l, "ifFalseStatement")));
     }
   }
 }

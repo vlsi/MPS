@@ -14,6 +14,8 @@ import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.jetbrains.mps.openapi.model.SReference;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -38,13 +40,13 @@ public class VisibleModules {
     Set<SNode> seen = SetSequence.fromSet(new HashSet<SNode>());
     while (QueueSequence.fromQueue(queue).isNotEmpty()) {
       SNode project = QueueSequence.fromQueue(queue).removeFirstElement();
-      for (SNode dep : SLinkOperations.getTargets(project, "dependencies", true)) {
+      for (SNode dep : SLinkOperations.getChildren(project, MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 5617550519002745363l, 5617550519002745381l, "dependencies"))) {
         SNode projectDependency = SNodeOperations.as(dep, "jetbrains.mps.build.structure.BuildProjectDependency");
         if (projectDependency == null) {
           continue;
         }
 
-        SNode depproj = SLinkOperations.getTarget(projectDependency, "script", false);
+        SNode depproj = SLinkOperations.getTarget(projectDependency, MetaAdapterFactory.getReferenceLink(new UUID(8755280088213897754l, -5075149991798053422l), 4993211115183325728l, 5617550519002745380l, "script"));
         if ((depproj == null)) {
           SReference ref = SNodeOperations.getReference(projectDependency, SLinkOperations.findLinkDeclaration("jetbrains.mps.build.structure.BuildProjectDependency", "script"));
           report("cannot find dependency build script " + SLinkOperations.getResolveInfo(ref) + " in model " + check_xuwpka_a0a1a4a1a3a5(ref.getTargetSModelReference()), projectDependency);
@@ -57,18 +59,18 @@ public class VisibleModules {
     }
     for (SNode module : allModules) {
       SNode currProj = SNodeOperations.getAncestor(module, "jetbrains.mps.build.structure.BuildProject", false, false);
-      if (moduleById.containsKey(SPropertyOperations.getString(module, "uuid"))) {
-        SNode other = moduleById.get(SPropertyOperations.getString(module, "uuid"));
+      if (moduleById.containsKey(SPropertyOperations.getString(module, MetaAdapterFactory.getProperty(new UUID(934837630734519964l, -6831122735637083229l), 322010710375871467l, 322010710375892619l, "uuid")))) {
+        SNode other = moduleById.get(SPropertyOperations.getString(module, MetaAdapterFactory.getProperty(new UUID(934837630734519964l, -6831122735637083229l), 322010710375871467l, 322010710375892619l, "uuid")));
         SNode otherProj = SNodeOperations.getAncestor(other, "jetbrains.mps.build.structure.BuildProject", false, false);
-        report("found two modules with the same id: " + SPropertyOperations.getString(module, "uuid") + ". First module " + SPropertyOperations.getString(module, "name") + " from project " + currProj + ", second module " + SPropertyOperations.getString(other, "name") + " from project " + otherProj, module);
+        report("found two modules with the same id: " + SPropertyOperations.getString(module, MetaAdapterFactory.getProperty(new UUID(934837630734519964l, -6831122735637083229l), 322010710375871467l, 322010710375892619l, "uuid")) + ". First module " + SPropertyOperations.getString(module, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")) + " from project " + currProj + ", second module " + SPropertyOperations.getString(other, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")) + " from project " + otherProj, module);
       }
-      moduleById.put(SPropertyOperations.getString(module, "uuid"), module);
-      if (moduleByName.containsKey(SPropertyOperations.getString(module, "name"))) {
-        SNode other = moduleByName.get(SPropertyOperations.getString(module, "name"));
+      moduleById.put(SPropertyOperations.getString(module, MetaAdapterFactory.getProperty(new UUID(934837630734519964l, -6831122735637083229l), 322010710375871467l, 322010710375892619l, "uuid")), module);
+      if (moduleByName.containsKey(SPropertyOperations.getString(module, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")))) {
+        SNode other = moduleByName.get(SPropertyOperations.getString(module, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")));
         SNode otherProj = SNodeOperations.getAncestor(other, "jetbrains.mps.build.structure.BuildProject", false, false);
-        report("found two modules with the same name: " + SPropertyOperations.getString(module, "name") + ". First module " + SPropertyOperations.getString(module, "uuid") + " from project " + currProj + ", second module " + SPropertyOperations.getString(other, "uuid") + " from project " + otherProj, other);
+        report("found two modules with the same name: " + SPropertyOperations.getString(module, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")) + ". First module " + SPropertyOperations.getString(module, MetaAdapterFactory.getProperty(new UUID(934837630734519964l, -6831122735637083229l), 322010710375871467l, 322010710375892619l, "uuid")) + " from project " + currProj + ", second module " + SPropertyOperations.getString(other, MetaAdapterFactory.getProperty(new UUID(934837630734519964l, -6831122735637083229l), 322010710375871467l, 322010710375892619l, "uuid")) + " from project " + otherProj, other);
       }
-      moduleByName.put(SPropertyOperations.getString(module, "name"), module);
+      moduleByName.put(SPropertyOperations.getString(module, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")), module);
     }
   }
   protected void report(String message, SNode anchor) {

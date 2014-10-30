@@ -10,6 +10,8 @@ import jetbrains.mps.editor.runtime.cells.AbstractCellAction;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.util.NameUtil;
 
 public class DotExpression_Actions_DeleteOperation {
@@ -29,10 +31,10 @@ public class DotExpression_Actions_DeleteOperation {
       this.execute_internal(editorContext, this.myNode);
     }
     public void execute_internal(EditorContext editorContext, SNode node) {
-      if (SConceptOperations.isExactly(SNodeOperations.getConceptDeclaration(SLinkOperations.getTarget(node, "operation", true)), NameUtil.nodeFQName(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.AbstractOperation")))) {
-        SNodeOperations.replaceWithAnother(node, SLinkOperations.getTarget(node, "operand", true));
+      if (SConceptOperations.isExactly(SNodeOperations.getConceptDeclaration(SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1197027756228l, 1197027833540l, "operation"))), NameUtil.nodeFQName(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.AbstractOperation")))) {
+        SNodeOperations.replaceWithAnother(node, SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1197027756228l, 1197027771414l, "operand")));
       } else {
-        SLinkOperations.setTarget(node, "operation", SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.AbstractOperation", null), true);
+        SLinkOperations.setTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1197027756228l, 1197027833540l, "operation"), SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.AbstractOperation", null));
       }
     }
   }
@@ -48,10 +50,10 @@ public class DotExpression_Actions_DeleteOperation {
       this.execute_internal(editorContext, this.myNode);
     }
     public void execute_internal(EditorContext editorContext, SNode node) {
-      if (SConceptOperations.isExactly(SNodeOperations.getConceptDeclaration(SLinkOperations.getTarget(node, "operation", true)), NameUtil.nodeFQName(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.AbstractOperation")))) {
-        SNodeOperations.replaceWithAnother(node, SLinkOperations.getTarget(node, "operand", true));
+      if (SConceptOperations.isExactly(SNodeOperations.getConceptDeclaration(SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1197027756228l, 1197027833540l, "operation"))), NameUtil.nodeFQName(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.AbstractOperation")))) {
+        SNodeOperations.replaceWithAnother(node, SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1197027756228l, 1197027771414l, "operand")));
       } else {
-        SLinkOperations.setTarget(node, "operation", SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.AbstractOperation", null), true);
+        SLinkOperations.setTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1197027756228l, 1197027833540l, "operation"), SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.AbstractOperation", null));
       }
     }
   }

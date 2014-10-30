@@ -18,6 +18,8 @@ import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 
 public class OverrideImplementMethodInEnumConstantAction {
   private Project myProject;
@@ -82,8 +84,8 @@ public class OverrideImplementMethodInEnumConstantAction {
           }
           SNode firstMethod = ListSequence.fromList(insertedMethods).first();
           SNode nodeToSelect;
-          if (ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(firstMethod, "body", true), "statement", true)).isNotEmpty()) {
-            nodeToSelect = ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(firstMethod, "body", true), "statement", true)).first();
+          if (ListSequence.fromList(SLinkOperations.getChildren(SLinkOperations.getTarget(firstMethod, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123132l, 1068580123135l, "body")), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123136l, 1068581517665l, "statement"))).isNotEmpty()) {
+            nodeToSelect = ListSequence.fromList(SLinkOperations.getChildren(SLinkOperations.getTarget(firstMethod, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123132l, 1068580123135l, "body")), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123136l, 1068581517665l, "statement"))).first();
           } else {
             nodeToSelect = firstMethod;
           }

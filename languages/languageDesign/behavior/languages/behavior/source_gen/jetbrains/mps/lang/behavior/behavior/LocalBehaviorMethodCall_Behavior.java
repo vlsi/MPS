@@ -4,6 +4,8 @@ package jetbrains.mps.lang.behavior.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class LocalBehaviorMethodCall_Behavior {
@@ -13,11 +15,11 @@ public class LocalBehaviorMethodCall_Behavior {
     return (LocalBehaviorMethodCall_Behavior.call_getVirtualMethodDeclaration_7148319044498527612(thisNode) != null);
   }
   public static SNode call_getVirtualMethodDeclaration_7148319044498527612(SNode thisNode) {
-    SNode methodDeclaration = SLinkOperations.getTarget(thisNode, "baseMethodDeclaration", false);
-    if ((SLinkOperations.getTarget(methodDeclaration, "overriddenMethod", false) != null)) {
-      return SLinkOperations.getTarget(methodDeclaration, "overriddenMethod", false);
+    SNode methodDeclaration = SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, 1068499141037l, "baseMethodDeclaration"));
+    if ((SLinkOperations.getTarget(methodDeclaration, MetaAdapterFactory.getReferenceLink(new UUID(-5808042798135555774l, -8657779246725685839l), 1225194472830l, 1225194472831l, "overriddenMethod")) != null)) {
+      return SLinkOperations.getTarget(methodDeclaration, MetaAdapterFactory.getReferenceLink(new UUID(-5808042798135555774l, -8657779246725685839l), 1225194472830l, 1225194472831l, "overriddenMethod"));
     } else
-    if (SPropertyOperations.getBoolean(methodDeclaration, "isVirtual")) {
+    if (SPropertyOperations.getBoolean(methodDeclaration, MetaAdapterFactory.getProperty(new UUID(-5808042798135555774l, -8657779246725685839l), 1225194472830l, 1225194472832l, "isVirtual"))) {
       return methodDeclaration;
     } else {
       return null;

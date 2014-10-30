@@ -6,11 +6,13 @@ import jetbrains.mps.lang.dataFlow.DataFlowBuilder;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.lang.dataFlow.DataFlowBuilderContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 
 public class MatchVariableReferenceRegexp_DataFlow extends DataFlowBuilder {
   public MatchVariableReferenceRegexp_DataFlow() {
   }
   public void build(final IOperationContext operationContext, final DataFlowBuilderContext _context) {
-    _context.getBuilder().emitRead(SLinkOperations.getTarget(_context.getNode(), "match", false), "r:f8e2b09f-b9d8-4076-a472-4264b3fb6a47(jetbrains.mps.baseLanguage.regexp.dataFlow)/1222879249100");
+    _context.getBuilder().emitRead(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(new UUID(-2688747624584492277l, -5722269945249396544l), 1174909099093l, 1174909113141l, "match")), "r:f8e2b09f-b9d8-4076-a472-4264b3fb6a47(jetbrains.mps.baseLanguage.regexp.dataFlow)/1222879249100");
   }
 }

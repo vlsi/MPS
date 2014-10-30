@@ -7,12 +7,14 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.lang.dataFlow.DataFlowBuilderContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 
 public class AdvanceWorkStatement_DataFlow extends DataFlowBuilder {
   public AdvanceWorkStatement_DataFlow() {
   }
   public void build(final IOperationContext operationContext, final DataFlowBuilderContext _context) {
-    _context.getBuilder().build((SNode) SLinkOperations.getTarget(_context.getNode(), "amount", true));
-    _context.getBuilder().build((SNode) SLinkOperations.getTarget(_context.getNode(), "comment", true));
+    _context.getBuilder().build((SNode) SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(new UUID(-7640176555408995168l, -6458594812920713925l), 187226666892683652l, 187226666892735700l, "amount")));
+    _context.getBuilder().build((SNode) SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(new UUID(-7640176555408995168l, -6458594812920713925l), 187226666892683652l, 1906791586424011776l, "comment")));
   }
 }

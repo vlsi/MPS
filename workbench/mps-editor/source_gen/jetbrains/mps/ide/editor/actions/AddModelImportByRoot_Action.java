@@ -19,6 +19,8 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import com.intellij.openapi.project.Project;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -93,7 +95,7 @@ public class AddModelImportByRoot_Action extends BaseAction {
       if (errorLabel != null) {
         initialText.value = errorLabel.getRenderedText();
       } else if (unresolvedReference != null) {
-        initialText.value = SPropertyOperations.getString(unresolvedReference, "resolveName");
+        initialText.value = SPropertyOperations.getString(unresolvedReference, MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 2948164764175055168l, 2948164764175055169l, "resolveName"));
       }
 
       ImportHelper.addModelImportByRoot(((Project) MapSequence.fromMap(_params).get("project")), ((SModule) MapSequence.fromMap(_params).get("module")), ((SModel) MapSequence.fromMap(_params).get("model")), initialText.value, AddModelImportByRoot_Action.this, new ImportHelper.ModelImportByRootCallback() {

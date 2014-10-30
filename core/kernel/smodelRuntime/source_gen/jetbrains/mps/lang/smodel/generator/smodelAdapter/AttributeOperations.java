@@ -4,6 +4,8 @@ package jetbrains.mps.lang.smodel.generator.smodelAdapter;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.util.SNodeOperations;
@@ -15,7 +17,7 @@ public class AttributeOperations {
   private AttributeOperations() {
   }
   public static Iterable<SNode> getAttributes(SNode node, final IAttributeDescriptor descriptor) {
-    return ListSequence.fromList(SLinkOperations.getTargets(node, "smodelAttribute", true)).where(new IWhereFilter<SNode>() {
+    return ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(new UUID(-3554657779850784990l, -7236703803128771572l), 1133920641626l, 5169995583184591170l, "smodelAttribute"))).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return descriptor.match(it);
       }
@@ -30,7 +32,7 @@ public class AttributeOperations {
     return Sequence.fromIterable(list).first();
   }
   public static SNode addAttribute(SNode node, IAttributeDescriptor descriptor, SNode value) {
-    ListSequence.fromList(SLinkOperations.getTargets(node, "smodelAttribute", true)).addElement(value);
+    ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(new UUID(-3554657779850784990l, -7236703803128771572l), 1133920641626l, 5169995583184591170l, "smodelAttribute"))).addElement(value);
     descriptor.update(value);
     return value;
   }
@@ -76,13 +78,13 @@ public class AttributeOperations {
     return jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.as(SModelSearchUtil.findLinkDeclaration(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getConceptDeclaration(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getParent(attribute)), getLinkRole(attribute)), "jetbrains.mps.lang.structure.structure.LinkDeclaration");
   }
   public static String getLinkRole(SNode attribute) {
-    return SPropertyOperations.getString(attribute, "linkRole");
+    return SPropertyOperations.getString(attribute, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 3364660638048049745l, 1757699476691236116l, "linkRole"));
   }
   public static SNode getPropertyDeclaration(SNode attribute) {
     return jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.as(SModelSearchUtil.findPropertyDeclaration(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getConceptDeclaration(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getParent(attribute)), getPropertyName(attribute)), "jetbrains.mps.lang.structure.structure.PropertyDeclaration");
   }
   public static String getPropertyName(SNode attribute) {
-    return SPropertyOperations.getString(attribute, "propertyName");
+    return SPropertyOperations.getString(attribute, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 3364660638048049750l, 1757699476691236117l, "propertyName"));
   }
   public static boolean isAttribute(SNode node) {
     if (node == null) {
@@ -95,30 +97,30 @@ public class AttributeOperations {
     return role.equals("smodelAttribute");
   }
   public static List<SNode> getAllAttributes(SNode node) {
-    return SLinkOperations.getTargets(node, "smodelAttribute", true);
+    return SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(new UUID(-3554657779850784990l, -7236703803128771572l), 1133920641626l, 5169995583184591170l, "smodelAttribute"));
   }
   public static Iterable<SNode> getNodeAttributes(SNode node) {
-    return jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.ofConcept(SLinkOperations.getTargets(node, "smodelAttribute", true), "jetbrains.mps.lang.core.structure.NodeAttribute");
+    return jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.ofConcept(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(new UUID(-3554657779850784990l, -7236703803128771572l), 1133920641626l, 5169995583184591170l, "smodelAttribute")), "jetbrains.mps.lang.core.structure.NodeAttribute");
   }
   public static Iterable<SNode> getPropertyAttributes(SNode node, final String propertyName) {
-    return Sequence.fromIterable(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.ofConcept(SLinkOperations.getTargets(node, "smodelAttribute", true), "jetbrains.mps.lang.core.structure.PropertyAttribute")).where(new IWhereFilter<SNode>() {
+    return Sequence.fromIterable(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.ofConcept(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(new UUID(-3554657779850784990l, -7236703803128771572l), 1133920641626l, 5169995583184591170l, "smodelAttribute")), "jetbrains.mps.lang.core.structure.PropertyAttribute")).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return eq_b2vkxw_a0a0a0a0a0a0r(SPropertyOperations.getString(it, "propertyName"), propertyName);
+        return eq_b2vkxw_a0a0a0a0a0a0r(SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 3364660638048049750l, 1757699476691236117l, "propertyName")), propertyName);
       }
     });
   }
   public static Iterable<SNode> getLinkAttributes(SNode node, final String linkRole) {
-    return Sequence.fromIterable(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.ofConcept(SLinkOperations.getTargets(node, "smodelAttribute", true), "jetbrains.mps.lang.core.structure.LinkAttribute")).where(new IWhereFilter<SNode>() {
+    return Sequence.fromIterable(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.ofConcept(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(new UUID(-3554657779850784990l, -7236703803128771572l), 1133920641626l, 5169995583184591170l, "smodelAttribute")), "jetbrains.mps.lang.core.structure.LinkAttribute")).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return eq_b2vkxw_a0a0a0a0a0a0s(SPropertyOperations.getString(it, "linkRole"), linkRole);
+        return eq_b2vkxw_a0a0a0a0a0a0s(SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 3364660638048049745l, 1757699476691236116l, "linkRole")), linkRole);
       }
     });
   }
   public static boolean hasPropertyAttributes(SNode node) {
-    return Sequence.fromIterable(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.ofConcept(SLinkOperations.getTargets(node, "smodelAttribute", true), "jetbrains.mps.lang.core.structure.PropertyAttribute")).isNotEmpty();
+    return Sequence.fromIterable(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.ofConcept(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(new UUID(-3554657779850784990l, -7236703803128771572l), 1133920641626l, 5169995583184591170l, "smodelAttribute")), "jetbrains.mps.lang.core.structure.PropertyAttribute")).isNotEmpty();
   }
   public static boolean hasLinkAttributes(SNode node) {
-    return Sequence.fromIterable(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.ofConcept(SLinkOperations.getTargets(node, "smodelAttribute", true), "jetbrains.mps.lang.core.structure.LinkAttribute")).isNotEmpty();
+    return Sequence.fromIterable(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.ofConcept(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(new UUID(-3554657779850784990l, -7236703803128771572l), 1133920641626l, 5169995583184591170l, "smodelAttribute")), "jetbrains.mps.lang.core.structure.LinkAttribute")).isNotEmpty();
   }
   public static class AttributeList extends AbstractSNodeList {
     private IAttributeDescriptor myAttributeDescriptor;

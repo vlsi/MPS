@@ -6,6 +6,8 @@ import jetbrains.mps.generator.template.ITemplateGenerator;
 import jetbrains.mps.generator.template.TemplateQueryContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.List;
@@ -28,7 +30,7 @@ public class PrepStatementUtil {
   private int prepStatementList(TemplateQueryContext genContext, SNode slist) {
     boolean labelAutoIncremented = true;
     int label = this.ctx.incrementLabel();
-    for (SNode stmt : SLinkOperations.getTargets(slist, "statement", true)) {
+    for (SNode stmt : SLinkOperations.getChildren(slist, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123136l, 1068581517665l, "statement"))) {
       if (!(labelAutoIncremented) && StatementListUtil.isControlStatement(stmt)) {
         label = this.ctx.incrementLabel();
       }
@@ -76,54 +78,54 @@ public class PrepStatementUtil {
   private int prepWhileStatement(TemplateQueryContext genContext, SNode wstmt, int label) {
     int beginLabel = label;
     int blockLabel = this.ctx.incrementLabel();
-    SNode sn = SLinkOperations.getTarget(wstmt, "body", true);
+    SNode sn = SLinkOperations.getTarget(wstmt, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1154032098014l, 1154032183016l, "body"));
     Object data1 = new Integer[]{blockLabel, beginLabel};
     Values.CLOSURE_DATA.set(genContext, sn, data1);
     int nextLabel = this.calcNextLabel(genContext, wstmt);
     Object data = new Integer[]{beginLabel, beginLabel, blockLabel, nextLabel};
     Values.CLOSURE_DATA.set(genContext, wstmt, data);
-    this.prepStatementList(genContext, SLinkOperations.getTarget(wstmt, "body", true));
+    this.prepStatementList(genContext, SLinkOperations.getTarget(wstmt, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1154032098014l, 1154032183016l, "body")));
     return nextLabel;
   }
   private int prepDoWhileStatement(TemplateQueryContext genContext, SNode dwstmt, int label) {
     int beginLabel = label;
     int condLabel = this.ctx.incrementLabel();
-    SNode sn = SLinkOperations.getTarget(dwstmt, "body", true);
+    SNode sn = SLinkOperations.getTarget(dwstmt, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1154032098014l, 1154032183016l, "body"));
     Object data = new Integer[]{beginLabel, condLabel};
     Values.CLOSURE_DATA.set(genContext, sn, data);
     int nextLabel = this.calcNextLabel(genContext, dwstmt);
     Object data1 = new Integer[]{beginLabel, condLabel, nextLabel};
     Values.CLOSURE_DATA.set(genContext, dwstmt, data1);
-    this.prepStatementList(genContext, SLinkOperations.getTarget(dwstmt, "body", true));
+    this.prepStatementList(genContext, SLinkOperations.getTarget(dwstmt, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1154032098014l, 1154032183016l, "body")));
     return nextLabel;
   }
   private int prepForStatement(TemplateQueryContext genContext, SNode fstmt, int label) {
     int beginLabel = label;
-    this.prepLocalVariableDeclaration(genContext, SLinkOperations.getTarget(fstmt, "variable", true));
+    this.prepLocalVariableDeclaration(genContext, SLinkOperations.getTarget(fstmt, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1144230876926l, 1144230900587l, "variable")));
     int condLabel = this.ctx.incrementLabel();
     int blockLabel = this.ctx.incrementLabel();
     int postLabel = this.ctx.incrementLabel();
-    SNode sn = SLinkOperations.getTarget(fstmt, "body", true);
+    SNode sn = SLinkOperations.getTarget(fstmt, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1154032098014l, 1154032183016l, "body"));
     Object data = new Integer[]{blockLabel, postLabel};
     Values.CLOSURE_DATA.set(genContext, sn, data);
     int nextLabel = this.calcNextLabel(genContext, fstmt);
     Object data1 = new Integer[]{beginLabel, postLabel, blockLabel, condLabel, nextLabel};
     Values.CLOSURE_DATA.set(genContext, fstmt, data1);
-    this.prepStatementList(genContext, SLinkOperations.getTarget(fstmt, "body", true));
+    this.prepStatementList(genContext, SLinkOperations.getTarget(fstmt, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1154032098014l, 1154032183016l, "body")));
     return nextLabel;
   }
   private int prepForeachStatement(TemplateQueryContext genContext, SNode fstmt, int label) {
     int beginLabel = label;
-    this.prepLocalVariableDeclaration(genContext, SLinkOperations.getTarget(fstmt, "variable", true));
+    this.prepLocalVariableDeclaration(genContext, SLinkOperations.getTarget(fstmt, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1144230876926l, 1144230900587l, "variable")));
     int condLabel = this.ctx.incrementLabel();
     int blockLabel = this.ctx.incrementLabel();
-    SNode sn = SLinkOperations.getTarget(fstmt, "body", true);
+    SNode sn = SLinkOperations.getTarget(fstmt, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1154032098014l, 1154032183016l, "body"));
     Object data1 = new Integer[]{blockLabel, condLabel};
     Values.CLOSURE_DATA.set(genContext, sn, data1);
     int nextLabel = this.calcNextLabel(genContext, fstmt);
     Object data = new Integer[]{beginLabel, condLabel, blockLabel, nextLabel};
     Values.CLOSURE_DATA.set(genContext, fstmt, data);
-    this.prepStatementList(genContext, SLinkOperations.getTarget(fstmt, "body", true));
+    this.prepStatementList(genContext, SLinkOperations.getTarget(fstmt, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1154032098014l, 1154032183016l, "body")));
     return nextLabel;
   }
   private int prepIfStatement(TemplateQueryContext genContext, SNode ifstmt, int label) {
@@ -131,36 +133,36 @@ public class PrepStatementUtil {
     int ifTrueLabel = this.ctx.incrementLabel();
     int ifFalseLabel = -1;
     int nextLabel = this.calcNextLabel(genContext, ifstmt);
-    SNode sn = SLinkOperations.getTarget(ifstmt, "ifTrue", true);
+    SNode sn = SLinkOperations.getTarget(ifstmt, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123159l, 1068580123161l, "ifTrue"));
     Object data = new Integer[]{ifTrueLabel, nextLabel};
     Values.CLOSURE_DATA.set(genContext, sn, data);
-    this.prepStatementList(genContext, SLinkOperations.getTarget(ifstmt, "ifTrue", true));
-    if (ListSequence.fromList(SLinkOperations.getTargets(ifstmt, "elsifClauses", true)).isNotEmpty()) {
-      for (SNode eicls : SLinkOperations.getTargets(ifstmt, "elsifClauses", true)) {
+    this.prepStatementList(genContext, SLinkOperations.getTarget(ifstmt, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123159l, 1068580123161l, "ifTrue")));
+    if (ListSequence.fromList(SLinkOperations.getChildren(ifstmt, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123159l, 1206060520071l, "elsifClauses"))).isNotEmpty()) {
+      for (SNode eicls : SLinkOperations.getChildren(ifstmt, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123159l, 1206060520071l, "elsifClauses"))) {
         int tmp = this.ctx.incrementLabel();
-        SNode sn1 = SLinkOperations.getTarget(eicls, "statementList", true);
+        SNode sn1 = SLinkOperations.getTarget(eicls, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1206060495898l, 1206060644605l, "statementList"));
         Object data1 = new Integer[]{tmp, nextLabel};
         Values.CLOSURE_DATA.set(genContext, sn1, data1);
-        this.prepStatementList(genContext, SLinkOperations.getTarget(eicls, "statementList", true));
+        this.prepStatementList(genContext, SLinkOperations.getTarget(eicls, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1206060495898l, 1206060644605l, "statementList")));
         Object data2 = new Integer[]{tmp};
         Values.CLOSURE_DATA.set(genContext, eicls, data2);
       }
     }
-    if ((SLinkOperations.getTarget(ifstmt, "ifFalseStatement", true) != null)) {
-      if (StatementListUtil.isControlStatement(SLinkOperations.getTarget(ifstmt, "ifFalseStatement", true)) || SNodeOperations.isInstanceOf(SLinkOperations.getTarget(ifstmt, "ifFalseStatement", true), "jetbrains.mps.baseLanguage.structure.BlockStatement")) {
+    if ((SLinkOperations.getTarget(ifstmt, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123159l, 1082485599094l, "ifFalseStatement")) != null)) {
+      if (StatementListUtil.isControlStatement(SLinkOperations.getTarget(ifstmt, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123159l, 1082485599094l, "ifFalseStatement"))) || SNodeOperations.isInstanceOf(SLinkOperations.getTarget(ifstmt, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123159l, 1082485599094l, "ifFalseStatement")), "jetbrains.mps.baseLanguage.structure.BlockStatement")) {
         ifFalseLabel = this.ctx.incrementLabel();
       }
     }
     Object data2 = new Integer[]{beginLabel, ifTrueLabel, ifFalseLabel, nextLabel};
     Values.CLOSURE_DATA.set(genContext, ifstmt, data2);
-    if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(ifstmt, "ifFalseStatement", true), "jetbrains.mps.baseLanguage.structure.BlockStatement")) {
-      SNode sn1 = SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(ifstmt, "ifFalseStatement", true), "jetbrains.mps.baseLanguage.structure.BlockStatement"), "statements", true);
+    if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(ifstmt, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123159l, 1082485599094l, "ifFalseStatement")), "jetbrains.mps.baseLanguage.structure.BlockStatement")) {
+      SNode sn1 = SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(ifstmt, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123159l, 1082485599094l, "ifFalseStatement")), "jetbrains.mps.baseLanguage.structure.BlockStatement"), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1082485599095l, 1082485599096l, "statements"));
       Object data1 = new Integer[]{ifFalseLabel, nextLabel};
       Values.CLOSURE_DATA.set(genContext, sn1, data1);
-      this.prepStatementList(genContext, SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(ifstmt, "ifFalseStatement", true), "jetbrains.mps.baseLanguage.structure.BlockStatement"), "statements", true));
+      this.prepStatementList(genContext, SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(ifstmt, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123159l, 1082485599094l, "ifFalseStatement")), "jetbrains.mps.baseLanguage.structure.BlockStatement"), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1082485599095l, 1082485599096l, "statements")));
     } else
-    if ((SLinkOperations.getTarget(ifstmt, "ifFalseStatement", true) != null)) {
-      this.prepStatement(genContext, SLinkOperations.getTarget(ifstmt, "ifFalseStatement", true), ifFalseLabel);
+    if ((SLinkOperations.getTarget(ifstmt, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123159l, 1082485599094l, "ifFalseStatement")) != null)) {
+      this.prepStatement(genContext, SLinkOperations.getTarget(ifstmt, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123159l, 1082485599094l, "ifFalseStatement")), ifFalseLabel);
     }
     return nextLabel;
   }
@@ -170,27 +172,27 @@ public class PrepStatementUtil {
     Object data1 = new Integer[]{beginLabel, nextLabel};
     Values.CLOSURE_DATA.set(genContext, sstmt, data1);
     int nextCaseLabel = this.ctx.incrementLabel();
-    for (SNode scase : SLinkOperations.getTargets(sstmt, "case", true)) {
+    for (SNode scase : SLinkOperations.getChildren(sstmt, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1163670490218l, 1163670772911l, "case"))) {
       int caseLabel = nextCaseLabel;
       nextCaseLabel = this.ctx.incrementLabel();
-      if ((SLinkOperations.getTarget(scase, "body", true) != null)) {
-        List<SNode> stmts = SLinkOperations.getTargets(SLinkOperations.getTarget(scase, "body", true), "statement", true);
+      if ((SLinkOperations.getTarget(scase, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1163670641947l, 1163670683720l, "body")) != null)) {
+        List<SNode> stmts = SLinkOperations.getChildren(SLinkOperations.getTarget(scase, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1163670641947l, 1163670683720l, "body")), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123136l, 1068581517665l, "statement"));
         int endCaseLabel = nextCaseLabel;
         if (ListSequence.fromList(stmts).isNotEmpty() && SNodeOperations.isInstanceOf(ListSequence.fromList(stmts).getElement(ListSequence.fromList(stmts).count() - 1), "jetbrains.mps.baseLanguage.structure.BreakStatement")) {
           endCaseLabel = nextLabel;
         }
-        SNode sn = SLinkOperations.getTarget(scase, "body", true);
+        SNode sn = SLinkOperations.getTarget(scase, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1163670641947l, 1163670683720l, "body"));
         Object data = new Integer[]{caseLabel, endCaseLabel};
         Values.CLOSURE_DATA.set(genContext, sn, data);
-        this.prepStatementList(genContext, SLinkOperations.getTarget(scase, "body", true));
+        this.prepStatementList(genContext, SLinkOperations.getTarget(scase, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1163670641947l, 1163670683720l, "body")));
       }
     }
-    if ((SLinkOperations.getTarget(sstmt, "defaultBlock", true) != null)) {
+    if ((SLinkOperations.getTarget(sstmt, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1163670490218l, 1163670592366l, "defaultBlock")) != null)) {
       int defLabel = this.ctx.incrementLabel();
-      SNode sn = SLinkOperations.getTarget(sstmt, "defaultBlock", true);
+      SNode sn = SLinkOperations.getTarget(sstmt, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1163670490218l, 1163670592366l, "defaultBlock"));
       Object data = new Integer[]{defLabel, nextLabel};
       Values.CLOSURE_DATA.set(genContext, sn, data);
-      this.prepStatementList(genContext, SLinkOperations.getTarget(sstmt, "defaultBlock", true));
+      this.prepStatementList(genContext, SLinkOperations.getTarget(sstmt, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1163670490218l, 1163670592366l, "defaultBlock")));
     }
     return nextLabel;
   }
@@ -205,9 +207,9 @@ public class PrepStatementUtil {
     int brLabel = -1;
     SNode node = bstmt;
     while (((node = SNodeOperations.getAncestorWhereConceptInList(node, new String[]{"jetbrains.mps.baseLanguage.structure.AbstractLoopStatement", "jetbrains.mps.baseLanguage.structure.SwitchStatement"}, false, false)) != null)) {
-      SNode loopLabel = (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.AbstractLoopStatement") ? SLinkOperations.getTarget(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.AbstractLoopStatement"), "loopLabel", true) : SLinkOperations.getTarget(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.SwitchStatement"), "switchLabel", true));
-      String depLabel = (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.AbstractLoopStatement") ? SPropertyOperations.getString(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.AbstractLoopStatement"), "label") : SPropertyOperations.getString(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.SwitchStatement"), "label"));
-      if ((SLinkOperations.getTarget(bstmt, "loopLabelReference", true) != null) && SLinkOperations.getTarget(SLinkOperations.getTarget(bstmt, "loopLabelReference", true), "loopLabel", false) == loopLabel || SPropertyOperations.getString(bstmt, "label") == depLabel || (SPropertyOperations.getString(bstmt, "label") != null && SPropertyOperations.getString(bstmt, "label").equals(depLabel))) {
+      SNode loopLabel = (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.AbstractLoopStatement") ? SLinkOperations.getTarget(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.AbstractLoopStatement"), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1154032098014l, 363746191845183793l, "loopLabel")) : SLinkOperations.getTarget(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.SwitchStatement"), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1163670490218l, 4652593672361747214l, "switchLabel")));
+      String depLabel = (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.AbstractLoopStatement") ? SPropertyOperations.getString(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.AbstractLoopStatement"), MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 1154032098014l, 1199465379613l, "label")) : SPropertyOperations.getString(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.SwitchStatement"), MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 1163670490218l, 1201381395355l, "label")));
+      if ((SLinkOperations.getTarget(bstmt, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1081855346303l, 9056323058805176516l, "loopLabelReference")) != null) && SLinkOperations.getTarget(SLinkOperations.getTarget(bstmt, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1081855346303l, 9056323058805176516l, "loopLabelReference")), MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 363746191845183785l, 363746191845183786l, "loopLabel")) == loopLabel || SPropertyOperations.getString(bstmt, MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 1081855346303l, 1199466066648l, "label")) == depLabel || (SPropertyOperations.getString(bstmt, MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 1081855346303l, 1199466066648l, "label")) != null && SPropertyOperations.getString(bstmt, MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 1081855346303l, 1199466066648l, "label")).equals(depLabel))) {
         Integer[] labels = (Integer[]) Values.CLOSURE_DATA.get(genContext, node);
         brLabel = labels[labels.length - 1];
         break;
@@ -220,9 +222,9 @@ public class PrepStatementUtil {
     int conLabel = -1;
     SNode node = cstmt;
     while (((node = SNodeOperations.getAncestorWhereConceptInList(node, new String[]{"jetbrains.mps.baseLanguage.structure.AbstractLoopStatement"}, false, false)) != null)) {
-      String depLabel = SPropertyOperations.getString(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.AbstractLoopStatement"), "label");
-      SNode loopLabel = SLinkOperations.getTarget(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.AbstractLoopStatement"), "loopLabel", true);
-      if (SLinkOperations.getTarget(SLinkOperations.getTarget(cstmt, "loopLabelReference", true), "loopLabel", false) == loopLabel || SPropertyOperations.getString(cstmt, "label") == depLabel || (SPropertyOperations.getString(cstmt, "label") != null && SPropertyOperations.getString(cstmt, "label").equals(depLabel))) {
+      String depLabel = SPropertyOperations.getString(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.AbstractLoopStatement"), MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 1154032098014l, 1199465379613l, "label"));
+      SNode loopLabel = SLinkOperations.getTarget(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.AbstractLoopStatement"), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1154032098014l, 363746191845183793l, "loopLabel"));
+      if (SLinkOperations.getTarget(SLinkOperations.getTarget(cstmt, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1082113931046l, 9056323058805226429l, "loopLabelReference")), MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 363746191845183785l, 363746191845183786l, "loopLabel")) == loopLabel || SPropertyOperations.getString(cstmt, MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 1082113931046l, 1199470060942l, "label")) == depLabel || (SPropertyOperations.getString(cstmt, MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 1082113931046l, 1199470060942l, "label")) != null && SPropertyOperations.getString(cstmt, MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 1082113931046l, 1199470060942l, "label")).equals(depLabel))) {
         Integer[] labels = (Integer[]) Values.CLOSURE_DATA.get(genContext, node);
         conLabel = labels[1];
         break;
@@ -234,10 +236,10 @@ public class PrepStatementUtil {
   private int prepBlockStatement(TemplateQueryContext genContext, SNode bs, int label) {
     int beginLabel = label;
     int nextLabel = this.calcNextLabel(genContext, bs);
-    SNode sn = SLinkOperations.getTarget(bs, "statements", true);
+    SNode sn = SLinkOperations.getTarget(bs, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1082485599095l, 1082485599096l, "statements"));
     Object data1 = new Integer[]{beginLabel, nextLabel};
     Values.CLOSURE_DATA.set(genContext, sn, data1);
-    int tmp = this.prepStatementList(genContext, SLinkOperations.getTarget(bs, "statements", true));
+    int tmp = this.prepStatementList(genContext, SLinkOperations.getTarget(bs, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1082485599095l, 1082485599096l, "statements")));
     Object data = new Integer[]{beginLabel, tmp};
     Values.CLOSURE_DATA.set(genContext, bs, data);
     return tmp;
@@ -245,11 +247,11 @@ public class PrepStatementUtil {
   private int prepLocalvariableDeclarationStatement(TemplateQueryContext genContext, SNode lstmt, int label) {
     int nextLabel = this.ctx.incrementLabel();
     Values.CLOSURE_DATA.set(genContext, lstmt, label);
-    this.prepLocalVariableDeclaration(genContext, SLinkOperations.getTarget(lstmt, "localVariableDeclaration", true));
+    this.prepLocalVariableDeclaration(genContext, SLinkOperations.getTarget(lstmt, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068581242864l, 1068581242865l, "localVariableDeclaration")));
     return nextLabel;
   }
   private void prepLocalVariableDeclaration(TemplateQueryContext genContext, SNode lvd) {
-    String name = "_" + this.ctx.label + "_" + SPropertyOperations.getString(lvd, "name");
+    String name = "_" + this.ctx.label + "_" + SPropertyOperations.getString(lvd, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"));
     Values.CLOSURE_DATA.set(genContext, lvd, name);
   }
   private int calcNextLabel(TemplateQueryContext genContext, SNode cstmt) {

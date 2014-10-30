@@ -9,6 +9,8 @@ import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.smodel.search.IReferenceInfoResolver;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.util.NameUtil;
@@ -42,7 +44,7 @@ public class VisibleClassConstructorsScope extends VisibleClassifiersScope {
       if (SNodeOperations.isInstanceOf(classifier, "jetbrains.mps.baseLanguage.structure.Interface")) {
         continue;
       }
-      if (SNodeOperations.isInstanceOf(classifier, "jetbrains.mps.baseLanguage.structure.ClassConcept") && SPropertyOperations.getBoolean((SNodeOperations.cast(classifier, "jetbrains.mps.baseLanguage.structure.ClassConcept")), "abstractClass")) {
+      if (SNodeOperations.isInstanceOf(classifier, "jetbrains.mps.baseLanguage.structure.ClassConcept") && SPropertyOperations.getBoolean((SNodeOperations.cast(classifier, "jetbrains.mps.baseLanguage.structure.ClassConcept")), MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 1068390468198l, 1075300953594l, "abstractClass"))) {
         continue;
       }
       result.add(classifier);
@@ -54,7 +56,7 @@ public class VisibleClassConstructorsScope extends VisibleClassifiersScope {
     if (SModelUtil.isAssignableConcept(NameUtil.nodeFQName(targetConcept), "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration")) {
       if (SNodeOperations.isInstanceOf(referenceNode, "jetbrains.mps.baseLanguage.structure.ClassCreator")) {
         SNode classCreator = SNodeOperations.cast(referenceNode, "jetbrains.mps.baseLanguage.structure.ClassCreator");
-        return new VisibleClassConstructorsScope.ConstructorDeclarationReferenceInfoResolver(SLinkOperations.getTargets(classCreator, "actualArgument", true), SLinkOperations.getTargets(classCreator, "typeParameter", true), getModel());
+        return new VisibleClassConstructorsScope.ConstructorDeclarationReferenceInfoResolver(SLinkOperations.getChildren(classCreator, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, 1068499141038l, "actualArgument")), SLinkOperations.getChildren(classCreator, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1212685548494l, 1212687122400l, "typeParameter")), getModel());
       }
     }
     return super.getReferenceInfoResolver(referenceNode, targetConcept);
@@ -85,7 +87,7 @@ public class VisibleClassConstructorsScope extends VisibleClassifiersScope {
             return ListSequence.fromList(constructors).first();
           } else {
             Iterator<SNode> typeParms = (Iterator<SNode>) myTypeParms.iterator();
-            Iterator<SNode> typeVars = (Iterator<SNode>) SLinkOperations.getTargets(classifier, "typeVariableDeclaration", true).iterator();
+            Iterator<SNode> typeVars = (Iterator<SNode>) SLinkOperations.getChildren(classifier, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1109279851642l, 1109279881614l, "typeVariableDeclaration")).iterator();
             Map<SNode, SNode> typeByTypeVar = new HashMap<SNode, SNode>();
             while (typeParms.hasNext() && typeVars.hasNext()) {
               typeByTypeVar.put(typeVars.next(), typeParms.next());

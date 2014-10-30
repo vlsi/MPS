@@ -25,6 +25,8 @@ import com.intellij.openapi.project.Project;
 import com.intellij.openapi.progress.ProgressIndicator;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.ide.editor.util.GoToHelper;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
@@ -118,7 +120,7 @@ public class GoToOverridenMethod_Action extends BaseAction {
           ((EditorContext) MapSequence.fromMap(_params).get("editorContext")).getRepository().getModelAccess().runReadAction(new Runnable() {
             public void run() {
               overridenMethods.value = GoToOverridenMethod_Action.this.getOverridenMethod(_params);
-              methodName[0] = SPropertyOperations.getString(GoToOverridenMethod_Action.this.getInstanceMethodDeclaration(_params), "name");
+              methodName[0] = SPropertyOperations.getString(GoToOverridenMethod_Action.this.getInstanceMethodDeclaration(_params), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"));
             }
           });
         }

@@ -32,6 +32,8 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 
 public class UtilityMethodCall_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
@@ -181,7 +183,7 @@ public class UtilityMethodCall_Editor extends DefaultNodeEditor {
     }
   }
   private static boolean renderingCondition_26flog_a2a(SNode node, EditorContext editorContext) {
-    return ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(SNodeOperations.cast(node, "jetbrains.mps.lang.textGen.structure.UtilityMethodCall"), "function", false), "parameter", true)).isNotEmpty();
+    return ListSequence.fromList(SLinkOperations.getChildren(SLinkOperations.getTarget(SNodeOperations.cast(node, "jetbrains.mps.lang.textGen.structure.UtilityMethodCall"), MetaAdapterFactory.getReferenceLink(new UUID(-5173455103397510980l, -8487484424797171117l), 1234529062040l, 1234529163244l, "function")), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123132l, 1068580123134l, "parameter"))).isNotEmpty();
   }
   private EditorCell createConstant_26flog_d0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
@@ -199,9 +201,9 @@ public class UtilityMethodCall_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private static boolean renderingCondition_26flog_a3a(SNode node, EditorContext editorContext) {
-    if (SLinkOperations.getTarget(node, "function", false) == null) {
+    if (SLinkOperations.getTarget(node, MetaAdapterFactory.getReferenceLink(new UUID(-5173455103397510980l, -8487484424797171117l), 1234529062040l, 1234529163244l, "function")) == null) {
       return false;
     }
-    return ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(node, "function", false), "parameter", true)).isEmpty();
+    return ListSequence.fromList(SLinkOperations.getChildren(SLinkOperations.getTarget(node, MetaAdapterFactory.getReferenceLink(new UUID(-5173455103397510980l, -8487484424797171117l), 1234529062040l, 1234529163244l, "function")), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123132l, 1068580123134l, "parameter"))).isEmpty();
   }
 }

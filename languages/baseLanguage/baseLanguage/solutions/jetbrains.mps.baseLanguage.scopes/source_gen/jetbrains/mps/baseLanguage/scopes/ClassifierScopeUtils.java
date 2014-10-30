@@ -5,6 +5,8 @@ package jetbrains.mps.baseLanguage.scopes;
 import org.jetbrains.mps.openapi.model.SNode;
 import java.util.Map;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import org.jetbrains.annotations.Nullable;
@@ -32,8 +34,8 @@ public class ClassifierScopeUtils {
   public static String createMethodParameterTypesString(SNode method, Map<SNode, SNode> typeByTypeVar) {
     // use MethodSignature instead 
     StringBuilder result = new StringBuilder();
-    for (SNode parm : SLinkOperations.getTargets(method, "parameter", true)) {
-      SNode type = SLinkOperations.getTarget(parm, "type", true);
+    for (SNode parm : SLinkOperations.getChildren(method, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123132l, 1068580123134l, "parameter"))) {
+      SNode type = SLinkOperations.getTarget(parm, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 4972933694980447171l, 5680397130376446158l, "type"));
       type = GenericTypesUtil.getTypeWithResolvedTypeVars(type, typeByTypeVar);
       if (result.length() > 0) {
         result.append(',');
@@ -49,7 +51,7 @@ public class ClassifierScopeUtils {
   @Deprecated
   public static String getMethodSignatureForOverriding(SNode contextClassifier, SNode method) {
     // use MethodSignature instead 
-    return SPropertyOperations.getString(method, "name") + "(" + createMethodParameterTypesString(method, resolveClassifierTypeVars(contextClassifier)) + ")";
+    return SPropertyOperations.getString(method, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")) + "(" + createMethodParameterTypesString(method, resolveClassifierTypeVars(contextClassifier)) + ")";
   }
   public static Map<SNode, SNode> resolveClassifierTypeVars(@Nullable SNode classifier) {
     if (classifier == null) {
@@ -108,7 +110,7 @@ public class ClassifierScopeUtils {
       SetSequence.fromSet(subClassifiers).addElement(classifier);
 
       if (ListSequence.fromList(typeParms).isNotEmpty()) {
-        Iterator<SNode> typeVars = ListSequence.fromList(SLinkOperations.getTargets(classifier, "typeVariableDeclaration", true)).iterator();
+        Iterator<SNode> typeVars = ListSequence.fromList(SLinkOperations.getChildren(classifier, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1109279851642l, 1109279881614l, "typeVariableDeclaration"))).iterator();
         for (SNode typeParm : typeParms) {
           if (!(typeVars.hasNext())) {
             break;
@@ -119,7 +121,7 @@ public class ClassifierScopeUtils {
       }
 
       for (SNode superType : BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), classifier, "virtual_getExtendedClassifierTypes_2201875424516179426", new Object[]{})) {
-        if (collectImplementedAndExtended(SLinkOperations.getTarget(superType, "classifier", false), subClassifiers, SLinkOperations.getTargets(superType, "parameter", true))) {
+        if (collectImplementedAndExtended(SLinkOperations.getTarget(superType, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier")), subClassifiers, SLinkOperations.getChildren(superType, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1109201940907l, "parameter")))) {
           return true;
         }
       }

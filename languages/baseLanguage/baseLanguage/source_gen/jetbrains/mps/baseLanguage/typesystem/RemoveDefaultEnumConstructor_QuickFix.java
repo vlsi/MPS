@@ -6,11 +6,13 @@ import jetbrains.mps.errors.QuickFix_Runtime;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 
 public class RemoveDefaultEnumConstructor_QuickFix extends QuickFix_Runtime {
   public RemoveDefaultEnumConstructor_QuickFix() {
   }
   public void execute(SNode node) {
-    SLinkOperations.setTarget(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.EnumConstantDeclaration"), "baseMethodDeclaration", null, false);
+    SLinkOperations.setTarget(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.EnumConstantDeclaration"), MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, 1068499141037l, "baseMethodDeclaration"), null);
   }
 }

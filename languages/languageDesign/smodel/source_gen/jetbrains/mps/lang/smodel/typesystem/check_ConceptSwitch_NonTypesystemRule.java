@@ -8,6 +8,8 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
@@ -19,7 +21,7 @@ public class check_ConceptSwitch_NonTypesystemRule extends AbstractNonTypesystem
   public check_ConceptSwitch_NonTypesystemRule() {
   }
   public void applyRule(final SNode switchStatement, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    SNode arg = SLinkOperations.getTarget(switchStatement, "expression", true);
+    SNode arg = SLinkOperations.getTarget(switchStatement, MetaAdapterFactory.getContainmentLink(new UUID(8675788371017092295l, -9098312342032910879l), 5944356402132808749l, 5944356402132808752l, "expression"));
     if (arg == null) {
       return;
     }

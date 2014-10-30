@@ -5,6 +5,8 @@ package jetbrains.mps.lang.actions.behavior;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
@@ -30,7 +32,7 @@ public class QueryFunction_SubstituteWrapper_Behavior {
   }
   public static SNode virtual_getExpectedReturnType_1213877374441(SNode thisNode) {
     SNode hostMenuPart = SNodeOperations.getAncestor(thisNode, "jetbrains.mps.lang.actions.structure.AddMenuPart", false, false);
-    SNode concept = SLinkOperations.getTarget(hostMenuPart, "concept", false);
+    SNode concept = SLinkOperations.getTarget(hostMenuPart, MetaAdapterFactory.getReferenceLink(new UUID(-5842916035344972280l, -5840605745428443715l), 1177333529597l, 1177333551023l, "concept"));
     return _quotation_createNode_e9b8sb_a2a1(concept);
   }
   public static List<SNode> virtual_getParameters_1213877374450(SNode thisNode) {
@@ -48,7 +50,7 @@ public class QueryFunction_SubstituteWrapper_Behavior {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeType", null, null, false);
-    SNodeAccessUtil.setReferenceTarget(quotedNode_2, "concept", (SNode) parameter_1);
+    SNodeAccessUtil.setReferenceTarget(quotedNode_2, MetaAdapterFactory.getReferenceLink(new UUID(8675788371017092295l, -9098312342032910879l), 1138055754698l, 1138405853777l, "concept"), (SNode) parameter_1);
     return quotedNode_2;
   }
 }

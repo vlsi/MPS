@@ -5,6 +5,8 @@ package jetbrains.mps.lang.migration.behavior;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.scope.Scope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.scopes.runtime.NamedElementsScope;
@@ -14,17 +16,17 @@ public class TransformStatement_Behavior {
   public static void init(SNode thisNode) {
   }
   public static SNode call_getPatternConcept_5636302460526286899(SNode thisNode) {
-    return SNodeOperations.getConceptDeclaration(SLinkOperations.getTarget(SLinkOperations.getTarget(thisNode, "pattern", true), "patternNode", true));
+    return SNodeOperations.getConceptDeclaration(SLinkOperations.getTarget(SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-8037690291156860282l, -7505894832713754871l), 5636302460526173897l, 5636302460526173934l, "pattern")), MetaAdapterFactory.getContainmentLink(new UUID(-3143127453834064983l, -5836335846783251545l), 1136720037777l, 1136720037778l, "patternNode")));
   }
   public static SNode call_getQuotationConcept_5636302460526311664(SNode thisNode) {
-    if (!((SNodeOperations.isInstanceOf(SLinkOperations.getTarget(thisNode, "consequence", true), "jetbrains.mps.lang.migration.structure.QuotationConsequence")))) {
+    if (!((SNodeOperations.isInstanceOf(SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-8037690291156860282l, -7505894832713754871l), 5636302460526173897l, 5636302460526173936l, "consequence")), "jetbrains.mps.lang.migration.structure.QuotationConsequence")))) {
       return null;
     }
-    return SNodeOperations.getConceptDeclaration(SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(thisNode, "consequence", true), "jetbrains.mps.lang.migration.structure.QuotationConsequence"), "quotation", true), "quotedNode", true));
+    return SNodeOperations.getConceptDeclaration(SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-8037690291156860282l, -7505894832713754871l), 5636302460526173897l, 5636302460526173936l, "consequence")), "jetbrains.mps.lang.migration.structure.QuotationConsequence"), MetaAdapterFactory.getContainmentLink(new UUID(-8037690291156860282l, -7505894832713754871l), 5636302460526210369l, 6129256022887780734l, "quotation")), MetaAdapterFactory.getContainmentLink(new UUID(4184707567256882268l, -4914423608129972907l), 1196350785113l, 1196350785114l, "quotedNode")));
   }
   public static Scope virtual_getScope_3734116213129936182(SNode thisNode, SNode kind, SNode child) {
     if (SConceptOperations.isExactly(kind, "jetbrains.mps.lang.pattern.structure.PropertyPatternVariableDeclaration") || SConceptOperations.isExactly(kind, "jetbrains.mps.lang.pattern.structure.LinkPatternVariableDeclaration") || SConceptOperations.isExactly(kind, "jetbrains.mps.lang.pattern.structure.PatternVariableDeclaration") || SConceptOperations.isExactly(kind, "jetbrains.mps.lang.pattern.structure.ListPattern")) {
-      return new NamedElementsScope(SNodeOperations.getDescendants(SLinkOperations.getTarget(thisNode, "pattern", true), NameUtil.nodeFQName(((SNode) kind)), false, new String[]{}));
+      return new NamedElementsScope(SNodeOperations.getDescendants(SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-8037690291156860282l, -7505894832713754871l), 5636302460526173897l, 5636302460526173934l, "pattern")), NameUtil.nodeFQName(((SNode) kind)), false, new String[]{}));
     }
 
     return null;

@@ -6,6 +6,8 @@ import org.jetbrains.mps.openapi.model.SNode;
 import javax.swing.Icon;
 import jetbrains.mps.baseLanguage.plugin.IconResourceBundle_Visibility;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class IVisible_Behavior {
@@ -13,7 +15,7 @@ public class IVisible_Behavior {
   }
   public static Icon call_getVisibilityIcon_5017341185733869581(SNode thisNode) {
     Icon defaultIcon = IconResourceBundle_Visibility.getInstance().getResource("PACKAGE_LOCAL");
-    SNode visibility = SLinkOperations.getTarget(thisNode, "visibility", true);
+    SNode visibility = SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1178549954367l, 1178549979242l, "visibility"));
     if (SNodeOperations.isInstanceOf(visibility, "jetbrains.mps.baseLanguage.structure.PublicVisibility")) {
       return IconResourceBundle_Visibility.getInstance().getResource("PUBLIC");
     }

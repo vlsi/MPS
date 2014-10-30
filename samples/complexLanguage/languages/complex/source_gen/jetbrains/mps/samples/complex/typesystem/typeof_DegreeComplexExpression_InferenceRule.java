@@ -9,6 +9,8 @@ import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.smodel.SModelUtil_new;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 
@@ -22,7 +24,7 @@ public class typeof_DegreeComplexExpression_InferenceRule extends AbstractInfere
       typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c89590424(jetbrains.mps.samples.complex.typesystem)", "381326360563794189", true), (SNode) _quotation_createNode_12zmle_a0a0b(), _info_12389875345);
     }
     {
-      SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(nodeToCheck, "degree", true);
+      SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(nodeToCheck, MetaAdapterFactory.getContainmentLink(new UUID(-61736462980330219l, -7283073916880922380l), 1196421957108l, 1196422043474l, "degree"));
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590424(jetbrains.mps.samples.complex.typesystem)", "1196422206628", 0, null);
       typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c89590424(jetbrains.mps.samples.complex.typesystem)", "1196422187043", true), (SNode) _quotation_createNode_12zmle_a0b0b(), _info_12389875345);
     }

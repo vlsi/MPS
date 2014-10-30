@@ -10,6 +10,8 @@ import jetbrains.mps.baseLanguage.search.ClassifierAndSuperClassifiersScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.util.Iterator;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.lang.pattern.util.MatchingUtil;
 
 public class ExtractMethodRefactoringParameters extends MethodModel {
@@ -68,14 +70,14 @@ public class ExtractMethodRefactoringParameters extends MethodModel {
     return this.myAnalyzer;
   }
   private boolean isParametersMatch(SNode method) {
-    Iterator<SNode> parameters = ListSequence.fromList(SLinkOperations.getTargets(method, "parameter", true)).iterator();
+    Iterator<SNode> parameters = ListSequence.fromList(SLinkOperations.getChildren(method, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123132l, 1068580123134l, "parameter"))).iterator();
     for (MethodParameter p1 : this.myParameters) {
       if (p1.isSelected()) {
         if (!(parameters.hasNext())) {
           return false;
         }
         SNode p2 = parameters.next();
-        if (!(MatchingUtil.matchNodes(p1.getType(), SLinkOperations.getTarget(p2, "type", true)))) {
+        if (!(MatchingUtil.matchNodes(p1.getType(), SLinkOperations.getTarget(p2, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 4972933694980447171l, 5680397130376446158l, "type"))))) {
           return false;
         }
       }

@@ -5,6 +5,7 @@ package jetbrains.mps.make.script.constraints;
 import jetbrains.mps.smodel.runtime.ConstraintsDescriptor;
 import java.util.Arrays;
 import jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor;
+import jetbrains.mps.smodel.adapter.ids.SConceptId;
 
 public class ConstraintsAspectDescriptor implements jetbrains.mps.smodel.runtime.ConstraintsAspectDescriptor {
   public ConstraintsAspectDescriptor() {
@@ -22,9 +23,27 @@ public class ConstraintsAspectDescriptor implements jetbrains.mps.smodel.runtime
       case 3:
         return new ResourceType_Constraints();
       default:
-        // todo: illegal in some cases? 
         return new BaseConstraintsDescriptor(fqName);
     }
+  }
+  public ConstraintsDescriptor getDescriptor(SConceptId conceptId) {
+    long id = conceptId.getConceptId();
+    if (id == 1977954644795311519l) {
+      return new RelayQueryExpression_Constraints();
+    }
+    if (id == 7077360340906447917l) {
+      return new ResultStatement_Constraints();
+    }
+    if (id == 187226666892683652l) {
+      return new AdvanceWorkStatement_Constraints();
+    }
+    if (id == 187226666892683655l) {
+      return new FinishWorkStatement_Constraints();
+    }
+    if (id == 2360002718792446594l) {
+      return new ResourceType_Constraints();
+    }
+    return new BaseConstraintsDescriptor(conceptId);
   }
   private static String[] stringSwitchCases_2qnle6_a0a0b = new String[]{"jetbrains.mps.make.script.structure.AdvanceWorkStatement", "jetbrains.mps.make.script.structure.FinishWorkStatement", "jetbrains.mps.make.script.structure.RelayQueryExpression", "jetbrains.mps.make.script.structure.ResourceType", "jetbrains.mps.make.script.structure.ResultStatement"};
 }

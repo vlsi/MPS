@@ -10,6 +10,8 @@ import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.SModelUtil_new;
 
@@ -18,8 +20,8 @@ public class PrimitiveSubtyping_SubtypingRule extends SubtypingRule_Runtime impl
   }
   public List<SNode> getSubOrSuperTypes(SNode primitiveTypeDescriptor, TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     List<SNode> result = new ArrayList<SNode>();
-    for (SNode ref : SLinkOperations.getTargets(primitiveTypeDescriptor, "extends", true)) {
-      ListSequence.fromList(result).addElement(SLinkOperations.getTarget(ref, "descriptor", false));
+    for (SNode ref : SLinkOperations.getChildren(primitiveTypeDescriptor, MetaAdapterFactory.getContainmentLink(new UUID(-1338283401124492350l, -9092293120968916352l), 1159268590033l, 1159268590032l, "extends"))) {
+      ListSequence.fromList(result).addElement(SLinkOperations.getTarget(ref, MetaAdapterFactory.getReferenceLink(new UUID(-1338283401124492350l, -9092293120968916352l), 1159268661480l, 1159268661479l, "descriptor")));
     }
     return result;
   }

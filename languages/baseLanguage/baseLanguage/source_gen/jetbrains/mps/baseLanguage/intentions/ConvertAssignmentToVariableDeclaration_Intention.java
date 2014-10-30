@@ -10,6 +10,8 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.baseLanguage.behavior.AssignmentExpression_Behavior;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
@@ -47,14 +49,14 @@ public class ConvertAssignmentToVariableDeclaration_Intention implements Intenti
     return true;
   }
   private boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
-    if (!(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "variableDeclaration", false), "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration"))) {
+    if (!(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068498886296l, 1068581517664l, "variableDeclaration")), "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration"))) {
       return false;
     }
     if (!(SNodeOperations.isInstanceOf(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.AssignmentExpression"))) {
       return false;
     }
     SNode assignment = SNodeOperations.cast(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.AssignmentExpression");
-    return AssignmentExpression_Behavior.call_canConvertToLocalVariableDeclaration_1221573334330(assignment) && SLinkOperations.getTarget(assignment, "lValue", true) == node;
+    return AssignmentExpression_Behavior.call_canConvertToLocalVariableDeclaration_1221573334330(assignment) && SLinkOperations.getTarget(assignment, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1215693861676l, 1068498886295l, "lValue")) == node;
   }
   public SNodeReference getIntentionNodeReference() {
     return new SNodePointer("r:00000000-0000-4000-0000-011c895902c6(jetbrains.mps.baseLanguage.intentions)", "1221573777472");

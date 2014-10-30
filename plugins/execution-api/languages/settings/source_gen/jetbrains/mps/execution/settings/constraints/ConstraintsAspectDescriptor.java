@@ -5,6 +5,7 @@ package jetbrains.mps.execution.settings.constraints;
 import jetbrains.mps.smodel.runtime.ConstraintsDescriptor;
 import java.util.Arrays;
 import jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor;
+import jetbrains.mps.smodel.adapter.ids.SConceptId;
 
 public class ConstraintsAspectDescriptor implements jetbrains.mps.smodel.runtime.ConstraintsAspectDescriptor {
   public ConstraintsAspectDescriptor() {
@@ -30,9 +31,39 @@ public class ConstraintsAspectDescriptor implements jetbrains.mps.smodel.runtime
       case 2:
         return new EditorOperationDeclaration_Constraints();
       default:
-        // todo: illegal in some cases? 
         return new BaseConstraintsDescriptor(fqName);
     }
+  }
+  public ConstraintsDescriptor getDescriptor(SConceptId conceptId) {
+    long id = conceptId.getConceptId();
+    if (id == 946964771156066561l) {
+      return new TemplateParameterReference_Constraints();
+    }
+    if (id == 946964771156066563l) {
+      return new ReportConfigurationErrorStatement_Constraints();
+    }
+    if (id == 946964771156066574l) {
+      return new PersistentPropertyReferenceOperation_Constraints();
+    }
+    if (id == 946964771156066588l) {
+      return new EditorExpression_Constraints();
+    }
+    if (id == 946964771156066606l) {
+      return new EditorOperationCall_Constraints();
+    }
+    if (id == 946964771156066611l) {
+      return new EditorPropertyReference_Constraints();
+    }
+    if (id == 946964771156066621l) {
+      return new SettingsEditor_Constraints();
+    }
+    if (id == 5365453833390705317l) {
+      return new GetEditorOperation_Constraints();
+    }
+    if (id == 946964771156066605l) {
+      return new EditorOperationDeclaration_Constraints();
+    }
+    return new BaseConstraintsDescriptor(conceptId);
   }
   private static String[] stringSwitchCases_2qnle6_a0a0b = new String[]{"jetbrains.mps.execution.settings.structure.EditorExpression", "jetbrains.mps.execution.settings.structure.EditorOperationCall", "jetbrains.mps.execution.settings.structure.EditorOperationDeclaration", "jetbrains.mps.execution.settings.structure.EditorPropertyReference", "jetbrains.mps.execution.settings.structure.GetEditorOperation", "jetbrains.mps.execution.settings.structure.PersistentPropertyReferenceOperation", "jetbrains.mps.execution.settings.structure.ReportConfigurationErrorStatement", "jetbrains.mps.execution.settings.structure.SettingsEditor", "jetbrains.mps.execution.settings.structure.TemplateParameterReference"};
 }

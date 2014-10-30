@@ -17,6 +17,8 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.util.IterableUtil;
 
@@ -40,7 +42,7 @@ public class RenameLinkRefactoringTester_Hierarchy implements IRefactoringTester
         SModel structureModelDescriptor = testRefactoringTargetLanguage.getStructureModelDescriptor();
         SModel model = structureModelDescriptor;
         SNode node = SModelOperations.getRootByName(model, "AbstractGoodConcept");
-        SNode link = ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(node, "jetbrains.mps.lang.structure.structure.ConceptDeclaration"), "linkDeclaration", true)).first();
+        SNode link = ListSequence.fromList(SLinkOperations.getChildren(SNodeOperations.cast(node, "jetbrains.mps.lang.structure.structure.ConceptDeclaration"), MetaAdapterFactory.getContainmentLink(new UUID(-4094437568663370681l, -8968368868337559369l), 1169125787135l, 1071489727083l, "linkDeclaration"))).first();
         refactoringContext.setSelectedNode(link);
         refactoringContext.setSelectedModel(structureModelDescriptor);
         refactoringContext.setParameter("newName", newLinkName);

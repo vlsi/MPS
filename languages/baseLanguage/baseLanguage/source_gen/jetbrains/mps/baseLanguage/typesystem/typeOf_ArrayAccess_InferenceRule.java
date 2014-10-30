@@ -8,6 +8,8 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.smodel.SModelUtil_new;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
@@ -19,7 +21,7 @@ public class typeOf_ArrayAccess_InferenceRule extends AbstractInferenceRule_Runt
   public void applyRule(final SNode arrayAccess, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     final SNode T_typevar_1175601836165 = typeCheckingContext.createNewRuntimeTypesVariable();
     {
-      SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(arrayAccess, "array", true);
+      SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(arrayAccess, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1173175405605l, 1173175590490l, "array"));
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1175601848462", 0, null);
       typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1175601850481", true), (SNode) _quotation_createNode_wq7qsi_a0b0b(typeCheckingContext.getRepresentative(T_typevar_1175601836165)), false, true, _info_12389875345);
     }
@@ -29,7 +31,7 @@ public class typeOf_ArrayAccess_InferenceRule extends AbstractInferenceRule_Runt
       typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1223981484981", true), (SNode) typeCheckingContext.getRepresentative(T_typevar_1175601836165), _info_12389875345);
     }
     {
-      SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(arrayAccess, "index", true);
+      SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(arrayAccess, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1173175405605l, 1173175577737l, "index"));
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1175603546475", 0, null);
       typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1175603547412", true), (SNode) _quotation_createNode_wq7qsi_a0d0b(), false, true, _info_12389875345);
     }

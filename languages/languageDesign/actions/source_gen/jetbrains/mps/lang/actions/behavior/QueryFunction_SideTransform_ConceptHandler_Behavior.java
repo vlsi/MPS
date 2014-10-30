@@ -5,6 +5,8 @@ package jetbrains.mps.lang.actions.behavior;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import java.util.List;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
@@ -33,7 +35,7 @@ public class QueryFunction_SideTransform_ConceptHandler_Behavior {
   }
   public static SNode virtual_getExpectedReturnType_1213877374441(SNode thisNode) {
     SNode ancestor = SNodeOperations.getAncestor(thisNode, "jetbrains.mps.lang.actions.structure.ConceptRightTransformPart", false, false);
-    return _quotation_createNode_qx4gwz_a1a1(SLinkOperations.getTarget(ancestor, "concept", false));
+    return _quotation_createNode_qx4gwz_a1a1(SLinkOperations.getTarget(ancestor, MetaAdapterFactory.getReferenceLink(new UUID(-5842916035344972280l, -5840605745428443715l), 1182819125053l, 1182819234902l, "concept")));
   }
   public static List<SNode> virtual_getApplicableConceptFunctionParameter_3044950653914717136(SAbstractConcept thisConcept) {
     List<SNode> result = BehaviorReflection.invokeSuperStatic((Class<List<SNode>>) ((Class) Object.class), thisConcept, "jetbrains.mps.baseLanguage.structure.ConceptFunction", "virtual_getApplicableConceptFunctionParameter_3044950653914717136", new Object[]{});
@@ -50,7 +52,7 @@ public class QueryFunction_SideTransform_ConceptHandler_Behavior {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeType", null, null, false);
-    SNodeAccessUtil.setReferenceTarget(quotedNode_2, "concept", (SNode) parameter_1);
+    SNodeAccessUtil.setReferenceTarget(quotedNode_2, MetaAdapterFactory.getReferenceLink(new UUID(8675788371017092295l, -9098312342032910879l), 1138055754698l, 1138405853777l, "concept"), (SNode) parameter_1);
     return quotedNode_2;
   }
 }

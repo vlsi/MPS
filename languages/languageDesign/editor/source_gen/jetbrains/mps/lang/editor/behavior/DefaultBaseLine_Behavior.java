@@ -6,6 +6,8 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 
 public class DefaultBaseLine_Behavior {
   public static void init(SNode thisNode) {
@@ -22,7 +24,7 @@ public class DefaultBaseLine_Behavior {
           }
         }
         if (matches_q0zywl_a0a0) {
-          return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(matchedNode_q0zywl_a0a, "cellLayout", true), "jetbrains.mps.lang.editor.structure.CellLayout_Vertical") || (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(matchedNode_q0zywl_a0a, "cellLayout", true), "jetbrains.mps.lang.editor.structure.CellLayout_Table")) || SNodeOperations.isInstanceOf(SLinkOperations.getTarget(matchedNode_q0zywl_a0a, "cellLayout", true), "jetbrains.mps.lang.editor.structure.CellLayout_Indent");
+          return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(matchedNode_q0zywl_a0a, MetaAdapterFactory.getContainmentLink(new UUID(1782411230332735017l, -6324602048325217350l), 1140524381322l, 1140524464360l, "cellLayout")), "jetbrains.mps.lang.editor.structure.CellLayout_Vertical") || (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(matchedNode_q0zywl_a0a, MetaAdapterFactory.getContainmentLink(new UUID(1782411230332735017l, -6324602048325217350l), 1140524381322l, 1140524464360l, "cellLayout")), "jetbrains.mps.lang.editor.structure.CellLayout_Table")) || SNodeOperations.isInstanceOf(SLinkOperations.getTarget(matchedNode_q0zywl_a0a, MetaAdapterFactory.getContainmentLink(new UUID(1782411230332735017l, -6324602048325217350l), 1140524381322l, 1140524464360l, "cellLayout")), "jetbrains.mps.lang.editor.structure.CellLayout_Indent");
         } else {
           boolean matches_q0zywl_b0a0 = false;
           {
@@ -32,7 +34,7 @@ public class DefaultBaseLine_Behavior {
             }
           }
           if (matches_q0zywl_b0a0) {
-            return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(matchedNode_q0zywl_a0a, "cellLayout", true), "jetbrains.mps.lang.editor.structure.CellLayout_Vertical") || (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(matchedNode_q0zywl_a0a, "cellLayout", true), "jetbrains.mps.lang.editor.structure.CellLayout_Table")) || SNodeOperations.isInstanceOf(SLinkOperations.getTarget(matchedNode_q0zywl_a0a, "cellLayout", true), "jetbrains.mps.lang.editor.structure.CellLayout_Indent");
+            return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(matchedNode_q0zywl_a0a, MetaAdapterFactory.getContainmentLink(new UUID(1782411230332735017l, -6324602048325217350l), 1073389446423l, 1106270802874l, "cellLayout")), "jetbrains.mps.lang.editor.structure.CellLayout_Vertical") || (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(matchedNode_q0zywl_a0a, MetaAdapterFactory.getContainmentLink(new UUID(1782411230332735017l, -6324602048325217350l), 1073389446423l, 1106270802874l, "cellLayout")), "jetbrains.mps.lang.editor.structure.CellLayout_Table")) || SNodeOperations.isInstanceOf(SLinkOperations.getTarget(matchedNode_q0zywl_a0a, MetaAdapterFactory.getContainmentLink(new UUID(1782411230332735017l, -6324602048325217350l), 1073389446423l, 1106270802874l, "cellLayout")), "jetbrains.mps.lang.editor.structure.CellLayout_Indent");
           } else
           return false;
         }

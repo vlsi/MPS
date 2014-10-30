@@ -27,6 +27,7 @@ import jetbrains.mps.textgen.trace.TraceablePositionInfo;
 import jetbrains.mps.textgen.trace.UnitPositionInfo;
 import jetbrains.mps.util.EncodingUtil;
 import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.util.SNodeOperations;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -136,7 +137,7 @@ public class TextGen {
       textGen.doGenerateText(node);
       textGen.setSNode(null);
     } catch (Exception e) {
-      buffer.foundError("failed to generate text for " + org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(node), node, e);
+      buffer.foundError("failed to generate text for " + SNodeOperations.getDebugText(node), node, e);
     }
   }
 
@@ -145,7 +146,7 @@ public class TextGen {
       buffer.append("???");
 
       if (contextNode != null) {
-        buffer.foundError("possible broken reference in " + org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(contextNode), contextNode, null);
+        buffer.foundError("possible broken reference in " + SNodeOperations.getDebugText(contextNode), contextNode, null);
       }
 
       return;

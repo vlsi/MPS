@@ -5,12 +5,14 @@ package jetbrains.mps.lang.resources.behavior;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class IconResourceReference_Behavior {
   public static void init(SNode thisNode) {
   }
   public static String virtual_getPresentation_1213877396640(SNode thisNode) {
-    return SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(thisNode), "conceptAlias") + "<" + SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, "declaration", false), "name") + ">";
+    return SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(thisNode), MetaAdapterFactory.getProperty(new UUID(-4094437568663370681l, -8968368868337559369l), 1169125787135l, 5092175715804935370l, "conceptAlias")) + "<" + SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getReferenceLink(new UUID(-7480838662350550057l, -7394046985400605979l), 8974276187400029895l, 8974276187400029896l, "declaration")), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")) + ">";
   }
 }

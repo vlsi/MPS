@@ -6,6 +6,8 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import java.util.List;
@@ -17,15 +19,15 @@ public class MpsScopesUtil {
   public static String getSignature(SNode classifierMember, SNode classifier) {
     String classifierPrefix = BehaviorReflection.invokeVirtual(String.class, SNodeOperations.cast(SNodeOperations.getParent(classifierMember), "jetbrains.mps.baseLanguage.structure.Classifier"), "virtual_getFqName_1213877404258", new Object[]{}) + ":";
     if (SNodeOperations.isInstanceOf(classifierMember, "jetbrains.mps.baseLanguage.structure.EnumConstantDeclaration")) {
-      return classifierPrefix + SPropertyOperations.getString(SNodeOperations.cast(classifierMember, "jetbrains.mps.baseLanguage.structure.EnumConstantDeclaration"), "name");
+      return classifierPrefix + SPropertyOperations.getString(SNodeOperations.cast(classifierMember, "jetbrains.mps.baseLanguage.structure.EnumConstantDeclaration"), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"));
     }
 
     if (SNodeOperations.isInstanceOf(classifierMember, "jetbrains.mps.baseLanguage.structure.VariableDeclaration")) {
-      return classifierPrefix + SPropertyOperations.getString(SNodeOperations.cast(classifierMember, "jetbrains.mps.baseLanguage.structure.VariableDeclaration"), "name");
+      return classifierPrefix + SPropertyOperations.getString(SNodeOperations.cast(classifierMember, "jetbrains.mps.baseLanguage.structure.VariableDeclaration"), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"));
     }
     if (SNodeOperations.isInstanceOf(classifierMember, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration")) {
       SNode method = SNodeOperations.cast(classifierMember, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration");
-      return classifierPrefix + SPropertyOperations.getString(method, "name") + "<" + ListSequence.fromList(SLinkOperations.getTargets(method, "typeVariableDeclaration", true)).count() + ">" + "(" + ListSequence.fromList(SLinkOperations.getTargets(method, "parameter", true)).count() + ")";
+      return classifierPrefix + SPropertyOperations.getString(method, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")) + "<" + ListSequence.fromList(SLinkOperations.getChildren(method, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1109279851642l, 1109279881614l, "typeVariableDeclaration"))).count() + ">" + "(" + ListSequence.fromList(SLinkOperations.getChildren(method, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123132l, 1068580123134l, "parameter"))).count() + ")";
     }
     return "No signature for " + classifierMember;
   }

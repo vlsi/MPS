@@ -14,6 +14,8 @@ import jetbrains.mps.ide.findusages.view.FindUtils;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 
 public class OverridingMethods_Finder extends GeneratedFinder {
   private static Logger LOG = LogManager.getLogger("jetbrains.mps.lang.behavior.findUsages.OverridingMethods_Finder");
@@ -45,11 +47,11 @@ public class OverridingMethods_Finder extends GeneratedFinder {
       final SNode n = node;
       sm.start("", ListSequence.fromList(nodes).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
-          return SNodeOperations.isInstanceOf(it, "jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration") && SLinkOperations.getTarget(SNodeOperations.cast(it, "jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration"), "overriddenMethod", false) == n;
+          return SNodeOperations.isInstanceOf(it, "jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration") && SLinkOperations.getTarget(SNodeOperations.cast(it, "jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration"), MetaAdapterFactory.getReferenceLink(new UUID(-5808042798135555774l, -8657779246725685839l), 1225194472830l, 1225194472831l, "overriddenMethod")) == n;
         }
       }).count());
       for (SNode nodeUsage : ListSequence.fromList(nodes)) {
-        if (SNodeOperations.isInstanceOf(nodeUsage, "jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration") && SLinkOperations.getTarget(SNodeOperations.cast(nodeUsage, "jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration"), "overriddenMethod", false) == node) {
+        if (SNodeOperations.isInstanceOf(nodeUsage, "jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration") && SLinkOperations.getTarget(SNodeOperations.cast(nodeUsage, "jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration"), MetaAdapterFactory.getReferenceLink(new UUID(-5808042798135555774l, -8657779246725685839l), 1225194472830l, 1225194472831l, "overriddenMethod")) == node) {
           ListSequence.fromList(_results).addElement(nodeUsage);
           for (SNode overriding : ListSequence.fromList(FindUtils.executeFinder("jetbrains.mps.lang.behavior.findUsages.OverridingMethods_Finder", nodeUsage, scope, sm.subTask(1)))) {
             ListSequence.fromList(_results).addElement(overriding);

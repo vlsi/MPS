@@ -8,6 +8,8 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.messageTargets.ReferenceMessageTarget;
@@ -21,14 +23,14 @@ public class check_EditorComponentDeclaration_concept_NonTypesystemRule extends 
   public check_EditorComponentDeclaration_concept_NonTypesystemRule() {
   }
   public void applyRule(final SNode editorComponentDeclaration, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    if (SLinkOperations.getTarget(editorComponentDeclaration, "conceptDeclaration", false) == null) {
-      if (!(SLinkOperations.getTarget(editorComponentDeclaration, "overridenEditorComponent", true) != null)) {
+    if (SLinkOperations.getTarget(editorComponentDeclaration, MetaAdapterFactory.getReferenceLink(new UUID(1782411230332735017l, -6324602048325217350l), 1166049232041l, 1166049300910l, "conceptDeclaration")) == null) {
+      if (!(SLinkOperations.getTarget(editorComponentDeclaration, MetaAdapterFactory.getContainmentLink(new UUID(1782411230332735017l, -6324602048325217350l), 1078938745671l, 7033942394258392116l, "overridenEditorComponent")) != null)) {
         MessageTarget errorTarget = new NodeMessageTarget();
         errorTarget = new ReferenceMessageTarget("conceptDeclaration");
         IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(editorComponentDeclaration, "Concept declaration should be specified", "r:00000000-0000-4000-0000-011c8959029a(jetbrains.mps.lang.editor.typesystem)", "147073787666675127", null, errorTarget);
       }
-      if (SLinkOperations.getTarget(editorComponentDeclaration, "overridenEditorComponent", true) != null) {
-        if (!(ListSequence.fromList(SLinkOperations.getTargets(editorComponentDeclaration, "contextHints", true)).isNotEmpty())) {
+      if (SLinkOperations.getTarget(editorComponentDeclaration, MetaAdapterFactory.getContainmentLink(new UUID(1782411230332735017l, -6324602048325217350l), 1078938745671l, 7033942394258392116l, "overridenEditorComponent")) != null) {
+        if (!(ListSequence.fromList(SLinkOperations.getChildren(editorComponentDeclaration, MetaAdapterFactory.getContainmentLink(new UUID(1782411230332735017l, -6324602048325217350l), 1078938745671l, 7348800710862477686l, "contextHints"))).isNotEmpty())) {
           MessageTarget errorTarget = new NodeMessageTarget();
           errorTarget = new ReferenceMessageTarget("contextHints");
           IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(editorComponentDeclaration, "Either additional \"applicable in context\" condition or more specific \" applicable concept\" should be specified in overriding editor component", "r:00000000-0000-4000-0000-011c8959029a(jetbrains.mps.lang.editor.typesystem)", "147073787667024251", null, errorTarget);
@@ -37,9 +39,9 @@ public class check_EditorComponentDeclaration_concept_NonTypesystemRule extends 
       return;
     }
 
-    SNode overridenEditorConceptDeclaration = SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(editorComponentDeclaration, "overridenEditorComponent", true), "editorComponent", false), "conceptDeclaration", false);
+    SNode overridenEditorConceptDeclaration = SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(editorComponentDeclaration, MetaAdapterFactory.getContainmentLink(new UUID(1782411230332735017l, -6324602048325217350l), 1078938745671l, 7033942394258392116l, "overridenEditorComponent")), MetaAdapterFactory.getReferenceLink(new UUID(1782411230332735017l, -6324602048325217350l), 7033942394256351208l, 7033942394256351817l, "editorComponent")), MetaAdapterFactory.getReferenceLink(new UUID(1782411230332735017l, -6324602048325217350l), 1166049232041l, 1166049300910l, "conceptDeclaration"));
     if (overridenEditorConceptDeclaration != null) {
-      if (!(SConceptOperations.isSubConceptOf(SLinkOperations.getTarget(editorComponentDeclaration, "conceptDeclaration", false), NameUtil.nodeFQName(overridenEditorConceptDeclaration)))) {
+      if (!(SConceptOperations.isSubConceptOf(SLinkOperations.getTarget(editorComponentDeclaration, MetaAdapterFactory.getReferenceLink(new UUID(1782411230332735017l, -6324602048325217350l), 1166049232041l, 1166049300910l, "conceptDeclaration")), NameUtil.nodeFQName(overridenEditorConceptDeclaration)))) {
         MessageTarget errorTarget = new NodeMessageTarget();
         errorTarget = new ReferenceMessageTarget("conceptDeclaration");
         IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(editorComponentDeclaration, "Specified applicable concept is not subconcept of applicable concept specified in overriden editor", "r:00000000-0000-4000-0000-011c8959029a(jetbrains.mps.lang.editor.typesystem)", "294197224123710838", null, errorTarget);

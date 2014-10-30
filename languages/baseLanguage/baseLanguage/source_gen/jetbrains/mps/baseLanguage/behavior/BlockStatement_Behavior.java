@@ -5,11 +5,13 @@ package jetbrains.mps.baseLanguage.behavior;
 import org.jetbrains.mps.openapi.model.SNode;
 import java.util.Set;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 
 public class BlockStatement_Behavior {
   public static void init(SNode thisNode) {
   }
   public static void virtual_collectUncaughtMethodThrowables_5412515780383134223(SNode thisNode, Set<SNode> throwables, boolean ignoreMayBeThrowables) {
-    StatementList_Behavior.call_collectUncaughtThrowables_5412515780383134474(SLinkOperations.getTarget(thisNode, "statements", true), throwables, ignoreMayBeThrowables);
+    StatementList_Behavior.call_collectUncaughtThrowables_5412515780383134474(SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1082485599095l, 1082485599096l, "statements")), throwables, ignoreMayBeThrowables);
   }
 }

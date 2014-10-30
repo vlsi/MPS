@@ -10,6 +10,8 @@ import jetbrains.mps.baseLanguage.util.plugin.refactorings.ChangeMethodSignature
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.baseLanguage.util.plugin.refactorings.ChangeMethodSignatureRefactoring;
 import java.util.List;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -33,7 +35,7 @@ public class AddParameter_Test extends BaseTransformationTest {
       this.addNodeById("1230052943764");
       this.addNodeById("1230052943773");
       ChangeMethodSignatureParameters params = new ChangeMethodSignatureParameters(SNodeOperations.cast(this.getNodeById("1230052943766"), "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration"));
-      ListSequence.fromList(SLinkOperations.getTargets(params.getDeclaration(), "parameter", true)).addElement(_quotation_createNode_gdokd0_a0a1a0());
+      ListSequence.fromList(SLinkOperations.getChildren(params.getDeclaration(), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123132l, 1068580123134l, "parameter"))).addElement(_quotation_createNode_gdokd0_a0a1a0());
       ChangeMethodSignatureRefactoring ref = new ChangeMethodSignatureRefactoring(params, SNodeOperations.cast(this.getNodeById("1230052943766"), "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration"));
       ref.doRefactoring();
       {
@@ -47,7 +49,7 @@ public class AddParameter_Test extends BaseTransformationTest {
       SNode quotedNode_1 = null;
       SNode quotedNode_2 = null;
       quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ParameterDeclaration", null, null, false);
-      SNodeAccessUtil.setProperty(quotedNode_1, "name", "a");
+      SNodeAccessUtil.setProperty(quotedNode_1, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"), "a");
       quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.CharType", null, null, false);
       quotedNode_1.addChild("type", quotedNode_2);
       return quotedNode_1;

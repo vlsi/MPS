@@ -14,6 +14,8 @@ import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import java.util.Iterator;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.typesystem.inference.TypeChecker;
@@ -34,7 +36,7 @@ public class FunctionType_subtypeOf_FunctionType_InequationReplacementRule exten
       }
       return;
     }
-    if (ListSequence.fromList(SLinkOperations.getTargets(subtype, "parameterType", true)).count() != ListSequence.fromList(SLinkOperations.getTargets(supertype, "parameterType", true)).count()) {
+    if (ListSequence.fromList(SLinkOperations.getChildren(subtype, MetaAdapterFactory.getContainmentLink(new UUID(-200093298712821347l, -8038623698278341771l), 1199542442495l, 1199542501692l, "parameterType"))).count() != ListSequence.fromList(SLinkOperations.getChildren(supertype, MetaAdapterFactory.getContainmentLink(new UUID(-200093298712821347l, -8038623698278341771l), 1199542442495l, 1199542501692l, "parameterType"))).count()) {
       {
         MessageTarget errorTarget = new NodeMessageTarget();
         IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(equationInfo.getNodeWithError(), "different parameter numbers", "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)", "1201618945543", null, errorTarget);
@@ -46,11 +48,11 @@ public class FunctionType_subtypeOf_FunctionType_InequationReplacementRule exten
       SNode _nodeToCheck_1029348928467 = equationInfo.getNodeWithError();
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)", "2240912231949269592", 0, null);
       _info_12389875345.getOuterRulesIdFromInfo(equationInfo);
-      typeCheckingContext.createLessThanInequality((SNode) _quotation_createNode_8k7qpx_a0c0b(SLinkOperations.getTarget(subtype, "resultType", true)), (SNode) SLinkOperations.getTarget(supertype, "resultType", true), false, true, _info_12389875345);
+      typeCheckingContext.createLessThanInequality((SNode) _quotation_createNode_8k7qpx_a0c0b(SLinkOperations.getTarget(subtype, MetaAdapterFactory.getContainmentLink(new UUID(-200093298712821347l, -8038623698278341771l), 1199542442495l, 1199542457201l, "resultType"))), (SNode) SLinkOperations.getTarget(supertype, MetaAdapterFactory.getContainmentLink(new UUID(-200093298712821347l, -8038623698278341771l), 1199542442495l, 1199542457201l, "resultType")), false, true, _info_12389875345);
     }
     if (SNodeOperations.isInstanceOf(subtype, "jetbrains.mps.baseLanguage.closures.structure.UnrestrictedFunctionType") && SNodeOperations.isInstanceOf(supertype, "jetbrains.mps.baseLanguage.closures.structure.UnrestrictedFunctionType")) {
       {
-        final SNode rightTerminate = SLinkOperations.getTarget(SNodeOperations.cast(supertype, "jetbrains.mps.baseLanguage.closures.structure.UnrestrictedFunctionType"), "terminateType", true);
+        final SNode rightTerminate = SLinkOperations.getTarget(SNodeOperations.cast(supertype, "jetbrains.mps.baseLanguage.closures.structure.UnrestrictedFunctionType"), MetaAdapterFactory.getContainmentLink(new UUID(-200093298712821347l, -8038623698278341771l), 1229708828035l, 1232020907791l, "terminateType"));
         typeCheckingContext.whenConcrete(rightTerminate, new Runnable() {
           public void run() {
             if (!(SNodeOperations.isInstanceOf(typeCheckingContext.getExpandedNode(rightTerminate), "jetbrains.mps.baseLanguage.structure.VoidType"))) {
@@ -58,7 +60,7 @@ public class FunctionType_subtypeOf_FunctionType_InequationReplacementRule exten
                 SNode _nodeToCheck_1029348928467 = equationInfo.getNodeWithError();
                 EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)", "2240912231949269603", 0, null);
                 _info_12389875345.getOuterRulesIdFromInfo(equationInfo);
-                typeCheckingContext.createLessThanInequality((SNode) SLinkOperations.getTarget(SNodeOperations.cast(subtype, "jetbrains.mps.baseLanguage.closures.structure.UnrestrictedFunctionType"), "terminateType", true), (SNode) typeCheckingContext.getExpandedNode(rightTerminate), false, true, _info_12389875345);
+                typeCheckingContext.createLessThanInequality((SNode) SLinkOperations.getTarget(SNodeOperations.cast(subtype, "jetbrains.mps.baseLanguage.closures.structure.UnrestrictedFunctionType"), MetaAdapterFactory.getContainmentLink(new UUID(-200093298712821347l, -8038623698278341771l), 1229708828035l, 1232020907791l, "terminateType")), (SNode) typeCheckingContext.getExpandedNode(rightTerminate), false, true, _info_12389875345);
               }
             }
           }
@@ -66,8 +68,8 @@ public class FunctionType_subtypeOf_FunctionType_InequationReplacementRule exten
       }
     }
     {
-      Iterator<SNode> paramTypeLeft_it = ListSequence.fromList(SLinkOperations.getTargets(subtype, "parameterType", true)).iterator();
-      Iterator<SNode> paramTypeRight_it = ListSequence.fromList(SLinkOperations.getTargets(supertype, "parameterType", true)).iterator();
+      Iterator<SNode> paramTypeLeft_it = ListSequence.fromList(SLinkOperations.getChildren(subtype, MetaAdapterFactory.getContainmentLink(new UUID(-200093298712821347l, -8038623698278341771l), 1199542442495l, 1199542501692l, "parameterType"))).iterator();
+      Iterator<SNode> paramTypeRight_it = ListSequence.fromList(SLinkOperations.getChildren(supertype, MetaAdapterFactory.getContainmentLink(new UUID(-200093298712821347l, -8038623698278341771l), 1199542442495l, 1199542501692l, "parameterType"))).iterator();
       SNode paramTypeLeft_var;
       SNode paramTypeRight_var;
       while (paramTypeLeft_it.hasNext() && paramTypeRight_it.hasNext()) {
@@ -82,11 +84,11 @@ public class FunctionType_subtypeOf_FunctionType_InequationReplacementRule exten
       }
     }
     SNode rightThrows = SConceptOperations.createNewNode("jetbrains.mps.lang.typesystem.structure.JoinType", null);
-    ListSequence.fromList(SLinkOperations.getTargets(rightThrows, "argument", true)).addElement(_quotation_createNode_8k7qpx_a0a6a1());
-    for (SNode thr : ListSequence.fromList(SLinkOperations.getTargets(supertype, "throwsType", true))) {
-      ListSequence.fromList(SLinkOperations.getTargets(rightThrows, "argument", true)).addElement(SNodeOperations.copyNode(thr));
+    ListSequence.fromList(SLinkOperations.getChildren(rightThrows, MetaAdapterFactory.getContainmentLink(new UUID(8817443762339858024l, -6091446231697526094l), 1179479408386l, 1179479418730l, "argument"))).addElement(_quotation_createNode_8k7qpx_a0a6a1());
+    for (SNode thr : ListSequence.fromList(SLinkOperations.getChildren(supertype, MetaAdapterFactory.getContainmentLink(new UUID(-200093298712821347l, -8038623698278341771l), 1199542442495l, 1214831762486l, "throwsType")))) {
+      ListSequence.fromList(SLinkOperations.getChildren(rightThrows, MetaAdapterFactory.getContainmentLink(new UUID(8817443762339858024l, -6091446231697526094l), 1179479408386l, 1179479418730l, "argument"))).addElement(SNodeOperations.copyNode(thr));
     }
-    for (SNode leftThrows : ListSequence.fromList(SLinkOperations.getTargets(subtype, "throwsType", true))) {
+    for (SNode leftThrows : ListSequence.fromList(SLinkOperations.getChildren(subtype, MetaAdapterFactory.getContainmentLink(new UUID(-200093298712821347l, -8038623698278341771l), 1199542442495l, 1214831762486l, "throwsType")))) {
       {
         SNode _nodeToCheck_1029348928467 = equationInfo.getNodeWithError();
         EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)", "2240912231949269602", 0, null);
@@ -102,22 +104,22 @@ public class FunctionType_subtypeOf_FunctionType_InequationReplacementRule exten
         result_14532009 = false;
         return result_14532009;
       }
-      if (ListSequence.fromList(SLinkOperations.getTargets(subtype, "parameterType", true)).count() != ListSequence.fromList(SLinkOperations.getTargets(supertype, "parameterType", true)).count()) {
+      if (ListSequence.fromList(SLinkOperations.getChildren(subtype, MetaAdapterFactory.getContainmentLink(new UUID(-200093298712821347l, -8038623698278341771l), 1199542442495l, 1199542501692l, "parameterType"))).count() != ListSequence.fromList(SLinkOperations.getChildren(supertype, MetaAdapterFactory.getContainmentLink(new UUID(-200093298712821347l, -8038623698278341771l), 1199542442495l, 1199542501692l, "parameterType"))).count()) {
         result_14532009 = false;
         return result_14532009;
       }
-      result_14532009 = result_14532009 && TypeChecker.getInstance().getSubtypingManager().isSubtype((SNode) _quotation_createNode_8k7qpx_a0c0b0c(SLinkOperations.getTarget(subtype, "resultType", true)), (SNode) SLinkOperations.getTarget(supertype, "resultType", true), true);
+      result_14532009 = result_14532009 && TypeChecker.getInstance().getSubtypingManager().isSubtype((SNode) _quotation_createNode_8k7qpx_a0c0b0c(SLinkOperations.getTarget(subtype, MetaAdapterFactory.getContainmentLink(new UUID(-200093298712821347l, -8038623698278341771l), 1199542442495l, 1199542457201l, "resultType"))), (SNode) SLinkOperations.getTarget(supertype, MetaAdapterFactory.getContainmentLink(new UUID(-200093298712821347l, -8038623698278341771l), 1199542442495l, 1199542457201l, "resultType")), true);
       if (SNodeOperations.isInstanceOf(subtype, "jetbrains.mps.baseLanguage.closures.structure.UnrestrictedFunctionType") && SNodeOperations.isInstanceOf(supertype, "jetbrains.mps.baseLanguage.closures.structure.UnrestrictedFunctionType")) {
         {
-          final SNode rightTerminate = SLinkOperations.getTarget(SNodeOperations.cast(supertype, "jetbrains.mps.baseLanguage.closures.structure.UnrestrictedFunctionType"), "terminateType", true);
+          final SNode rightTerminate = SLinkOperations.getTarget(SNodeOperations.cast(supertype, "jetbrains.mps.baseLanguage.closures.structure.UnrestrictedFunctionType"), MetaAdapterFactory.getContainmentLink(new UUID(-200093298712821347l, -8038623698278341771l), 1229708828035l, 1232020907791l, "terminateType"));
           if (!(SNodeOperations.isInstanceOf(rightTerminate, "jetbrains.mps.baseLanguage.structure.VoidType"))) {
-            result_14532009 = result_14532009 && TypeChecker.getInstance().getSubtypingManager().isSubtype((SNode) SLinkOperations.getTarget(SNodeOperations.cast(subtype, "jetbrains.mps.baseLanguage.closures.structure.UnrestrictedFunctionType"), "terminateType", true), (SNode) rightTerminate, true);
+            result_14532009 = result_14532009 && TypeChecker.getInstance().getSubtypingManager().isSubtype((SNode) SLinkOperations.getTarget(SNodeOperations.cast(subtype, "jetbrains.mps.baseLanguage.closures.structure.UnrestrictedFunctionType"), MetaAdapterFactory.getContainmentLink(new UUID(-200093298712821347l, -8038623698278341771l), 1229708828035l, 1232020907791l, "terminateType")), (SNode) rightTerminate, true);
           }
         }
       }
       {
-        Iterator<SNode> paramTypeLeft_it = ListSequence.fromList(SLinkOperations.getTargets(subtype, "parameterType", true)).iterator();
-        Iterator<SNode> paramTypeRight_it = ListSequence.fromList(SLinkOperations.getTargets(supertype, "parameterType", true)).iterator();
+        Iterator<SNode> paramTypeLeft_it = ListSequence.fromList(SLinkOperations.getChildren(subtype, MetaAdapterFactory.getContainmentLink(new UUID(-200093298712821347l, -8038623698278341771l), 1199542442495l, 1199542501692l, "parameterType"))).iterator();
+        Iterator<SNode> paramTypeRight_it = ListSequence.fromList(SLinkOperations.getChildren(supertype, MetaAdapterFactory.getContainmentLink(new UUID(-200093298712821347l, -8038623698278341771l), 1199542442495l, 1199542501692l, "parameterType"))).iterator();
         SNode paramTypeLeft_var;
         SNode paramTypeRight_var;
         while (paramTypeLeft_it.hasNext() && paramTypeRight_it.hasNext()) {
@@ -127,11 +129,11 @@ public class FunctionType_subtypeOf_FunctionType_InequationReplacementRule exten
         }
       }
       SNode rightThrows = SConceptOperations.createNewNode("jetbrains.mps.lang.typesystem.structure.JoinType", null);
-      ListSequence.fromList(SLinkOperations.getTargets(rightThrows, "argument", true)).addElement(_quotation_createNode_8k7qpx_a0a6a1a2());
-      for (SNode thr : ListSequence.fromList(SLinkOperations.getTargets(supertype, "throwsType", true))) {
-        ListSequence.fromList(SLinkOperations.getTargets(rightThrows, "argument", true)).addElement(SNodeOperations.copyNode(thr));
+      ListSequence.fromList(SLinkOperations.getChildren(rightThrows, MetaAdapterFactory.getContainmentLink(new UUID(8817443762339858024l, -6091446231697526094l), 1179479408386l, 1179479418730l, "argument"))).addElement(_quotation_createNode_8k7qpx_a0a6a1a2());
+      for (SNode thr : ListSequence.fromList(SLinkOperations.getChildren(supertype, MetaAdapterFactory.getContainmentLink(new UUID(-200093298712821347l, -8038623698278341771l), 1199542442495l, 1214831762486l, "throwsType")))) {
+        ListSequence.fromList(SLinkOperations.getChildren(rightThrows, MetaAdapterFactory.getContainmentLink(new UUID(8817443762339858024l, -6091446231697526094l), 1179479408386l, 1179479418730l, "argument"))).addElement(SNodeOperations.copyNode(thr));
       }
-      for (SNode leftThrows : ListSequence.fromList(SLinkOperations.getTargets(subtype, "throwsType", true))) {
+      for (SNode leftThrows : ListSequence.fromList(SLinkOperations.getChildren(subtype, MetaAdapterFactory.getContainmentLink(new UUID(-200093298712821347l, -8038623698278341771l), 1199542442495l, 1214831762486l, "throwsType")))) {
         result_14532009 = result_14532009 && TypeChecker.getInstance().getSubtypingManager().isSubtype((SNode) leftThrows, (SNode) rightThrows, true);
       }
     }
@@ -176,7 +178,7 @@ public class FunctionType_subtypeOf_FunctionType_InequationReplacementRule exten
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, false);
-    quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, facade.createModelReference("6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), facade.createNodeId("~RuntimeException")));
+    quotedNode_1.setReference(MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier"), SReference.create(MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier"), quotedNode_1, facade.createModelReference("6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), facade.createNodeId("~RuntimeException")));
     return quotedNode_1;
   }
   private static SNode _quotation_createNode_8k7qpx_a0c0b0c(Object parameter_1) {
@@ -197,7 +199,7 @@ public class FunctionType_subtypeOf_FunctionType_InequationReplacementRule exten
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, false);
-    quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, facade.createModelReference("6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), facade.createNodeId("~RuntimeException")));
+    quotedNode_1.setReference(MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier"), SReference.create(MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier"), quotedNode_1, facade.createModelReference("6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), facade.createNodeId("~RuntimeException")));
     return quotedNode_1;
   }
 }

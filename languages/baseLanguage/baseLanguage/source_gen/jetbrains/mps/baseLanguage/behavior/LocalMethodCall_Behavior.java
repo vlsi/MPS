@@ -9,6 +9,8 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.baseLanguage.scopes.Members;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 
 public class LocalMethodCall_Behavior {
@@ -24,11 +26,11 @@ public class LocalMethodCall_Behavior {
     SNode wrappingClassifier = SNodeOperations.getAncestor(thisNode, "jetbrains.mps.baseLanguage.structure.Classifier", false, false);
     return Sequence.fromIterable(Members.visibleStaticMethods(wrappingClassifier, thisNode)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return eq_vn6vr7_a0a0a0a0a0a1a3(SPropertyOperations.getString(it, "name"), methodName);
+        return eq_vn6vr7_a0a0a0a0a0a1a3(SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")), methodName);
       }
     }).union(Sequence.fromIterable(Members.visibleInstanceMethods(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), wrappingClassifier, "virtual_getThisType_7405920559687254782", new Object[]{}), thisNode)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return eq_vn6vr7_a0a0a0a0a0a0b0d(SPropertyOperations.getString(it, "name"), methodName);
+        return eq_vn6vr7_a0a0a0a0a0a0b0d(SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")), methodName);
       }
     }));
 

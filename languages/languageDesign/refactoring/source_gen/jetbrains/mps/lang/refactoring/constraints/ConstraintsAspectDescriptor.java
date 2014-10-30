@@ -5,6 +5,7 @@ package jetbrains.mps.lang.refactoring.constraints;
 import jetbrains.mps.smodel.runtime.ConstraintsDescriptor;
 import java.util.Arrays;
 import jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor;
+import jetbrains.mps.smodel.adapter.ids.SConceptId;
 
 public class ConstraintsAspectDescriptor implements jetbrains.mps.smodel.runtime.ConstraintsAspectDescriptor {
   public ConstraintsAspectDescriptor() {
@@ -26,9 +27,33 @@ public class ConstraintsAspectDescriptor implements jetbrains.mps.smodel.runtime
       case 6:
         return new UpdateModelClause_Constraints();
       default:
-        // todo: illegal in some cases? 
         return new BaseConstraintsDescriptor(fqName);
     }
+  }
+  public ConstraintsDescriptor getDescriptor(SConceptId conceptId) {
+    long id = conceptId.getConceptId();
+    if (id == 3242588059496701743l) {
+      return new RefactoringAction_Constraints();
+    }
+    if (id == 1197382578687l) {
+      return new UpdateModelByDefaultOperation_Constraints();
+    }
+    if (id == 5497648299878398634l) {
+      return new RefactoringFieldReference_Constraints();
+    }
+    if (id == 6895093993902496262l) {
+      return new RefactoringParameterReference_Constraints();
+    }
+    if (id == 7953996722066252909l) {
+      return new ContextMemberOperation_Constraints();
+    }
+    if (id == 4347648036456711197l) {
+      return new ModelsToGenerateByDefault_Constraints();
+    }
+    if (id == 1189694434958l) {
+      return new UpdateModelClause_Constraints();
+    }
+    return new BaseConstraintsDescriptor(conceptId);
   }
   private static String[] stringSwitchCases_2qnle6_a0a0b = new String[]{"jetbrains.mps.lang.refactoring.structure.ContextMemberOperation", "jetbrains.mps.lang.refactoring.structure.ModelsToGenerateByDefault", "jetbrains.mps.lang.refactoring.structure.RefactoringAction", "jetbrains.mps.lang.refactoring.structure.RefactoringFieldReference", "jetbrains.mps.lang.refactoring.structure.RefactoringParameterReference", "jetbrains.mps.lang.refactoring.structure.UpdateModelByDefaultOperation", "jetbrains.mps.lang.refactoring.structure.UpdateModelClause"};
 }

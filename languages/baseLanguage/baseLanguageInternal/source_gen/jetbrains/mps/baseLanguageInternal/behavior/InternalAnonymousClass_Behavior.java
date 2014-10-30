@@ -4,6 +4,8 @@ package jetbrains.mps.baseLanguageInternal.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -14,7 +16,7 @@ import jetbrains.mps.smodel.SReference;
 
 public class InternalAnonymousClass_Behavior {
   public static void init(SNode thisNode) {
-    SPropertyOperations.set(thisNode, "nonStatic", "" + (true));
+    SPropertyOperations.set(thisNode, MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 1107461130800l, 521412098689998745l, "nonStatic"), "" + (true));
   }
   public static String virtual_getUnitName_5067982036267369911(SNode thisNode) {
     return InternalAnonymousClass_Behavior.call_getJavaName_3421461530438560397(thisNode);
@@ -50,7 +52,7 @@ public class InternalAnonymousClass_Behavior {
     String result = "Anonymous in ";
     SNode containingMethod = SNodeOperations.getAncestor(thisNode, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration", false, false);
     if (containingMethod != null && SNodeOperations.getParent(containingMethod) == containingClassifier) {
-      result += SPropertyOperations.getString(containingMethod, "name") + "() in ";
+      result += SPropertyOperations.getString(containingMethod, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")) + "() in ";
     }
     return result;
   }
@@ -58,7 +60,7 @@ public class InternalAnonymousClass_Behavior {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, false);
-    quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, facade.createModelReference("6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), facade.createNodeId("~Object")));
+    quotedNode_1.setReference(MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier"), SReference.create(MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier"), quotedNode_1, facade.createModelReference("6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), facade.createNodeId("~Object")));
     return quotedNode_1;
   }
 }

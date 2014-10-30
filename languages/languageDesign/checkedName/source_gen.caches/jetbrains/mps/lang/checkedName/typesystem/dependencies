@@ -5,8 +5,10 @@
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="java.util.UUID" />
     <classNode dependClassName="jetbrains.mps.checkedName.PropertyReference" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="jetbrains.mps.smodel.behaviour.BehaviorReflection" />
     <classNode dependClassName="jetbrains.mps.util.NameUtil" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
@@ -15,7 +17,9 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.checkedName.typesystem.FixNamingPolicy_literal_once_QuickFix" file="FixNamingPolicy_literal_once_QuickFix.java">
     <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.UUID" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="jetbrains.mps.util.NameUtil" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.errors.QuickFix_Runtime" />
@@ -42,6 +46,7 @@
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="java.util.UUID" />
     <classNode dependClassName="jetbrains.mps.checkedName.PropertyReference" />
     <classNode dependClassName="jetbrains.mps.errors.BaseQuickFixProvider" />
     <classNode dependClassName="jetbrains.mps.errors.IErrorReporter" />
@@ -51,6 +56,7 @@
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="jetbrains.mps.smodel.behaviour.BehaviorReflection" />
     <classNode dependClassName="jetbrains.mps.typesystem.inference.TypeCheckingContext" />
     <classNode dependClassName="jetbrains.mps.util.NameUtil" />
@@ -60,9 +66,11 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.checkedName.typesystem.typeof_PropertyRefExpression_InferenceRule" file="typeof_PropertyRefExpression_InferenceRule.java">
     <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.UUID" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="jetbrains.mps.typesystem.inference.EquationInfo" />
     <classNode dependClassName="jetbrains.mps.typesystem.inference.TypeCheckingContext" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
@@ -83,9 +91,11 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.checkedName.typesystem.typeof_PropertyRefType_isSubtype_PropertyRef_SubtypingRule" file="typeof_PropertyRefType_isSubtype_PropertyRef_SubtypingRule.java">
     <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.UUID" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
     <classNode dependClassName="jetbrains.mps.smodel.SReference" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="jetbrains.mps.typesystem.inference.TypeCheckingContext" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />

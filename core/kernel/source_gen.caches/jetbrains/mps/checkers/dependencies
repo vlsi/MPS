@@ -11,12 +11,14 @@
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="java.util.UUID" />
     <classNode dependClassName="jetbrains.mps.checkers.LanguageErrorsComponent" />
     <classNode dependClassName="jetbrains.mps.errors.messageTargets.ReferenceMessageTarget" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.kernel.model.SModelUtil" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="jetbrains.mps.smodel.behaviour.BehaviorReflection" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SRepository" />
@@ -41,6 +43,7 @@
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="java.util.UUID" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
     <classNode dependClassName="jetbrains.mps.checkers.LanguageErrorsComponent" />
     <classNode dependClassName="jetbrains.mps.errors.messageTargets.PropertyMessageTarget" />
@@ -51,6 +54,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.MPSModuleRepository" />
     <classNode dependClassName="jetbrains.mps.smodel.PropertySupport" />
     <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="jetbrains.mps.smodel.behaviour.BehaviorReflection" />
     <classNode dependClassName="jetbrains.mps.smodel.constraints.ModelConstraints" />
     <classNode dependClassName="jetbrains.mps.smodel.language.ConceptRegistry" />
@@ -180,6 +184,7 @@
   </dependency>
   <dependency className="jetbrains.mps.checkers.TargetConceptChecker" file="TargetConceptChecker.java">
     <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.util.UUID" />
     <classNode dependClassName="jetbrains.mps.checkers.LanguageErrorsComponent" />
     <classNode dependClassName="jetbrains.mps.errors.messageTargets.ReferenceMessageTarget" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
@@ -189,6 +194,7 @@
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="jetbrains.mps.util.NameUtil" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SReference" />

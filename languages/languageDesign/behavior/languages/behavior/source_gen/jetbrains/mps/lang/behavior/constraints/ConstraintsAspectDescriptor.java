@@ -5,6 +5,7 @@ package jetbrains.mps.lang.behavior.constraints;
 import jetbrains.mps.smodel.runtime.ConstraintsDescriptor;
 import java.util.Arrays;
 import jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor;
+import jetbrains.mps.smodel.adapter.ids.SConceptId;
 
 public class ConstraintsAspectDescriptor implements jetbrains.mps.smodel.runtime.ConstraintsAspectDescriptor {
   public ConstraintsAspectDescriptor() {
@@ -22,9 +23,27 @@ public class ConstraintsAspectDescriptor implements jetbrains.mps.smodel.runtime
       case 2:
         return new LocalBehaviorMethodCall_Constraints();
       default:
-        // todo: illegal in some cases? 
         return new BaseConstraintsDescriptor(fqName);
     }
+  }
+  public ConstraintsDescriptor getDescriptor(SConceptId conceptId) {
+    long id = conceptId.getConceptId();
+    if (id == 1225194240794l) {
+      return new ConceptBehavior_Constraints();
+    }
+    if (id == 1225194472830l) {
+      return new ConceptMethodDeclaration_Constraints();
+    }
+    if (id == 1225194691553l) {
+      return new ThisNodeExpression_Constraints();
+    }
+    if (id == 1225194628440l) {
+      return new SuperNodeExpression_Constraints();
+    }
+    if (id == 6496299201655527393l) {
+      return new LocalBehaviorMethodCall_Constraints();
+    }
+    return new BaseConstraintsDescriptor(conceptId);
   }
   private static String[] stringSwitchCases_2qnle6_a0a0b = new String[]{"jetbrains.mps.lang.behavior.structure.ConceptBehavior", "jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration", "jetbrains.mps.lang.behavior.structure.LocalBehaviorMethodCall", "jetbrains.mps.lang.behavior.structure.SuperNodeExpression", "jetbrains.mps.lang.behavior.structure.ThisNodeExpression"};
 }

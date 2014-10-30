@@ -6,6 +6,8 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.openapi.editor.style.StyleAttribute;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 
 public class BooleanStyleSheetItem_Behavior {
   public static void init(SNode thisNode) {
@@ -13,7 +15,7 @@ public class BooleanStyleSheetItem_Behavior {
     if (sa == null) {
       return;
     }
-    SPropertyOperations.set(thisNode, "flag", "" + (!(sa.combine(null, null))));
+    SPropertyOperations.set(thisNode, MetaAdapterFactory.getProperty(new UUID(1782411230332735017l, -6324602048325217350l), 1186414536763l, 1186414551515l, "flag"), "" + (!(sa.combine(null, null))));
   }
   public static boolean virtual_useQuery_1223387362946(SNode thisNode) {
     return true;

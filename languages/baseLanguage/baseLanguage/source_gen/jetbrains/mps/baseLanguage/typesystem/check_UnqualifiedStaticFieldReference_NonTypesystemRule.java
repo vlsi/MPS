@@ -13,6 +13,8 @@ import org.jetbrains.mps.openapi.model.SReference;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.StaticReference;
 import jetbrains.mps.scope.Scope;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
@@ -45,8 +47,8 @@ public class check_UnqualifiedStaticFieldReference_NonTypesystemRule extends Abs
     // out of scope, let's make this reference non-local, but qualified 
     SNode thatClass = SNodeOperations.getAncestor(target, "jetbrains.mps.baseLanguage.structure.Classifier", false, false);
     SNode sfr = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.StaticFieldReference", null);
-    SLinkOperations.setTarget(sfr, "classifier", thatClass, false);
-    SLinkOperations.setTarget(sfr, "variableDeclaration", SNodeOperations.cast(target, "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration"), false);
+    SLinkOperations.setTarget(sfr, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1070533707846l, 1144433057691l, "classifier"), thatClass);
+    SLinkOperations.setTarget(sfr, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068498886296l, 1068581517664l, "variableDeclaration"), SNodeOperations.cast(target, "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration"));
 
     {
       MessageTarget errorTarget = new NodeMessageTarget();

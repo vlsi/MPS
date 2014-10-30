@@ -9,6 +9,8 @@ import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.editor.runtime.cells.AbstractCellAction;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 
 public class TypeVariableDeclaration_deleteBound {
   public static void setCellActions(EditorCell editorCell, SNode node, EditorContext context) {
@@ -24,8 +26,8 @@ public class TypeVariableDeclaration_deleteBound {
       this.execute_internal(editorContext, this.myNode);
     }
     public void execute_internal(EditorContext editorContext, SNode node) {
-      ListSequence.fromList(SLinkOperations.getTargets(node, "auxBounds", true)).clear();
-      SLinkOperations.setTarget(node, "bound", null, true);
+      ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1109279763828l, 1215091156086l, "auxBounds"))).clear();
+      SLinkOperations.setTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1109279763828l, 1214996921760l, "bound"), null);
     }
   }
   public static class TypeVariableDeclaration_deleteBound_BACKSPACE extends AbstractCellAction {
@@ -37,8 +39,8 @@ public class TypeVariableDeclaration_deleteBound {
       this.execute_internal(editorContext, this.myNode);
     }
     public void execute_internal(EditorContext editorContext, SNode node) {
-      ListSequence.fromList(SLinkOperations.getTargets(node, "auxBounds", true)).clear();
-      SLinkOperations.setTarget(node, "bound", null, true);
+      ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1109279763828l, 1215091156086l, "auxBounds"))).clear();
+      SLinkOperations.setTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1109279763828l, 1214996921760l, "bound"), null);
     }
   }
 }

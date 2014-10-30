@@ -13,6 +13,8 @@ import jetbrains.mps.smodel.SNodePointer;
 import java.util.Collections;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -63,9 +65,9 @@ public class ConvertToClassifierFQNameSpecification_Intention implements Intenti
     }
     public void execute(final SNode node, final EditorContext editorContext) {
       SNode classifierSpecification = SNodeFactoryOperations.replaceWithNewChild(node, "jetbrains.mps.lang.script.structure.FQNameClassifierSpecification");
-      SPropertyOperations.set(classifierSpecification, "classifierFQName", BehaviorReflection.invokeVirtual(String.class, node, "virtual_getClassifierFqName_5434557751112930827", new Object[]{}));
-      SPropertyOperations.set(classifierSpecification, "smodelReference", BehaviorReflection.invokeVirtual(String.class, node, "virtual_getSModelReference_5434557751113441014", new Object[]{}));
-      SPropertyOperations.set(classifierSpecification, "snodeId", SLinkOperations.getTarget(node, "classifier", false).getNodeId().toString());
+      SPropertyOperations.set(classifierSpecification, MetaAdapterFactory.getProperty(new UUID(1071275047162102839l, -4887287056175405968l), 5434557751112207835l, 5434557751112752962l, "classifierFQName"), BehaviorReflection.invokeVirtual(String.class, node, "virtual_getClassifierFqName_5434557751112930827", new Object[]{}));
+      SPropertyOperations.set(classifierSpecification, MetaAdapterFactory.getProperty(new UUID(1071275047162102839l, -4887287056175405968l), 5434557751112207835l, 5434557751113468451l, "smodelReference"), BehaviorReflection.invokeVirtual(String.class, node, "virtual_getSModelReference_5434557751113441014", new Object[]{}));
+      SPropertyOperations.set(classifierSpecification, MetaAdapterFactory.getProperty(new UUID(1071275047162102839l, -4887287056175405968l), 5434557751112207835l, 8915466921781754528l, "snodeId"), SLinkOperations.getTarget(node, MetaAdapterFactory.getReferenceLink(new UUID(1071275047162102839l, -4887287056175405968l), 5434557751112207651l, 5434557751112207965l, "classifier")).getNodeId().toString());
       SNodeOperations.deleteNode(node);
     }
     public IntentionDescriptor getDescriptor() {

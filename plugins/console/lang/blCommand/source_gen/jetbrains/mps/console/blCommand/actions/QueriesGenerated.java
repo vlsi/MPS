@@ -6,6 +6,8 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.action.NodeSetupContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import java.util.List;
 import jetbrains.mps.openapi.editor.cells.SubstituteAction;
@@ -25,24 +27,24 @@ import jetbrains.mps.smodel.action.ModelActions;
 public class QueriesGenerated {
   public static void nodeFactory_NodeSetup_QueryExpression_4307205004138627841(final IOperationContext operationContext, final NodeSetupContext _context) {
     if (SNodeOperations.isInstanceOf(_context.getSampleNode(), "jetbrains.mps.console.blCommand.structure.QueryExpression")) {
-      SLinkOperations.setTarget(_context.getNewNode(), "parameter", SLinkOperations.getTarget(SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.console.blCommand.structure.QueryExpression"), "parameter", true), true);
+      SLinkOperations.setTarget(_context.getNewNode(), MetaAdapterFactory.getContainmentLink(new UUID(1911026821630280634l, -8343922105556474022l), 4307205004131544317l, 4307205004132279624l, "parameter"), SLinkOperations.getTarget(SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.console.blCommand.structure.QueryExpression"), MetaAdapterFactory.getContainmentLink(new UUID(1911026821630280634l, -8343922105556474022l), 4307205004131544317l, 4307205004132279624l, "parameter")));
     } else {
-      SLinkOperations.setTarget(_context.getNewNode(), "parameter", null, true);
+      SLinkOperations.setTarget(_context.getNewNode(), MetaAdapterFactory.getContainmentLink(new UUID(1911026821630280634l, -8343922105556474022l), 4307205004131544317l, 4307205004132279624l, "parameter"), null);
     }
   }
   public static void nodeFactory_NodeSetup_AbstractPrintExpression_7284872370241013747(final IOperationContext operationContext, final NodeSetupContext _context) {
     if (SNodeOperations.isInstanceOf(_context.getSampleNode(), "jetbrains.mps.console.blCommand.structure.AbstractPrintExpression")) {
-      SLinkOperations.setTarget(_context.getNewNode(), "object", SLinkOperations.getTarget(SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.console.blCommand.structure.AbstractPrintExpression"), "object", true), true);
+      SLinkOperations.setTarget(_context.getNewNode(), MetaAdapterFactory.getContainmentLink(new UUID(1911026821630280634l, -8343922105556474022l), 7820875636626932768l, 8365379837260461921l, "object"), SLinkOperations.getTarget(SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.console.blCommand.structure.AbstractPrintExpression"), MetaAdapterFactory.getContainmentLink(new UUID(1911026821630280634l, -8343922105556474022l), 7820875636626932768l, 8365379837260461921l, "object")));
     }
   }
   public static void nodeFactory_NodeSetup_ModulesScope_3492877759608901831(final IOperationContext operationContext, final NodeSetupContext _context) {
-    SNodeFactoryOperations.addNewChild(_context.getNewNode(), "module", "jetbrains.mps.lang.smodel.structure.ModuleReferenceExpression");
+    SNodeFactoryOperations.addNewChild(_context.getNewNode(), MetaAdapterFactory.getContainmentLink(new UUID(1911026821630280634l, -8343922105556474022l), 2755216049126692157l, 3492877759607928680l, "module"), "jetbrains.mps.lang.smodel.structure.ModuleReferenceExpression");
   }
   public static void nodeFactory_NodeSetup_ModelScope_3492877759608986171(final IOperationContext operationContext, final NodeSetupContext _context) {
-    SNodeFactoryOperations.addNewChild(_context.getNewNode(), "model", "jetbrains.mps.lang.smodel.structure.ModelReferenceExpression");
+    SNodeFactoryOperations.addNewChild(_context.getNewNode(), MetaAdapterFactory.getContainmentLink(new UUID(1911026821630280634l, -8343922105556474022l), 3492877759608408142l, 3492877759608408143l, "model"), "jetbrains.mps.lang.smodel.structure.ModelReferenceExpression");
   }
   public static void nodeFactory_NodeSetup_CustomScope_3492877759609298946(final IOperationContext operationContext, final NodeSetupContext _context) {
-    SNodeFactoryOperations.setNewChild(_context.getNewNode(), "scope", "jetbrains.mps.baseLanguage.structure.GenericNewExpression");
+    SNodeFactoryOperations.setNewChild(_context.getNewNode(), MetaAdapterFactory.getContainmentLink(new UUID(1911026821630280634l, -8343922105556474022l), 3492877759611762121l, 3492877759611770126l, "scope"), "jetbrains.mps.baseLanguage.structure.GenericNewExpression");
   }
   public static List<SubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_Command_3786816536599613947(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
@@ -54,7 +56,7 @@ public class QueriesGenerated {
         IChildNodeSetter setter = new AbstractChildNodeSetter() {
           private SNode wrapNode(SNode nodeToWrap, SModel model, @Nullable EditorContext editorContext) {
             SNode result = SNodeFactoryOperations.createNewNode(SNodeOperations.getModel(nodeToWrap), "jetbrains.mps.console.blCommand.structure.BLExpression", null);
-            SLinkOperations.setTarget(result, "expression", nodeToWrap, true);
+            SLinkOperations.setTarget(result, MetaAdapterFactory.getContainmentLink(new UUID(1911026821630280634l, -8343922105556474022l), 7656298970878093785l, 7656298970878093890l, "expression"), nodeToWrap);
             return result;
           }
           public boolean returnSmallPart(SNode nodeToWrap) {

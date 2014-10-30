@@ -8,6 +8,8 @@ import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import java.util.List;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
@@ -17,7 +19,7 @@ public class ExternalViewFigureParameter_Behavior {
   }
   public static SNode call_getParameterMethod_5422656561935120433(SNode thisNode) {
     final String methodName = ExternalViewFigureParameter_Behavior.call_getGetterName_3748979635600013007(thisNode);
-    return ListSequence.fromList(BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(thisNode), "jetbrains.mps.lang.editor.figures.structure.ExternalViewFigure"), "classifier", false), "virtual_getMembers_1213877531970", new Object[]{})).where(new IWhereFilter<SNode>() {
+    return ListSequence.fromList(BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(thisNode), "jetbrains.mps.lang.editor.figures.structure.ExternalViewFigure"), MetaAdapterFactory.getReferenceLink(new UUID(-2922223385321452486l, -5907006357078305369l), 2178507174411801538l, 2178507174411801591l, "classifier")), "virtual_getMembers_1213877531970", new Object[]{})).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration");
       }
@@ -27,7 +29,7 @@ public class ExternalViewFigureParameter_Behavior {
       }
     }).findFirst(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return eq_g8zu1a_a0a0a0a0a0b0b(SPropertyOperations.getString(it, "name"), methodName);
+        return eq_g8zu1a_a0a0a0a0a0b0b(SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")), methodName);
       }
     });
   }
@@ -36,10 +38,10 @@ public class ExternalViewFigureParameter_Behavior {
   }
   public static String call_getSuffix_3748979635600238774(SNode thisNode) {
     String prefix = "my";
-    return (SPropertyOperations.getString(thisNode, "name").startsWith(prefix) ? SPropertyOperations.getString(thisNode, "name").substring(prefix.length()) : SPropertyOperations.getString(thisNode, "name"));
+    return (SPropertyOperations.getString(thisNode, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")).startsWith(prefix) ? SPropertyOperations.getString(thisNode, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")).substring(prefix.length()) : SPropertyOperations.getString(thisNode, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")));
   }
   public static SNode virtual_getParameterType_342110547581236128(SNode thisNode) {
-    return SNodeOperations.as(SLinkOperations.getTarget(SLinkOperations.getTarget(thisNode, "fieldDeclaration", false), "type", true), "jetbrains.mps.baseLanguage.structure.ClassifierType");
+    return SNodeOperations.as(SLinkOperations.getTarget(SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getReferenceLink(new UUID(-2922223385321452486l, -5907006357078305369l), 2178507174411801606l, 2178507174411801649l, "fieldDeclaration")), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 4972933694980447171l, 5680397130376446158l, "type")), "jetbrains.mps.baseLanguage.structure.ClassifierType");
   }
   private static boolean eq_g8zu1a_a0a0a0a0a0b0b(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);

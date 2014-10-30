@@ -9,6 +9,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 
 public abstract class AbstractIntroduceFieldRefactoring extends IntroduceVariableRefactoring {
   protected FieldInitializationPlace myFieldInitialization;
@@ -22,7 +24,7 @@ public abstract class AbstractIntroduceFieldRefactoring extends IntroduceVariabl
       public void run() {
         result.value = ListSequence.fromList(SNodeOperations.getDescendants(AbstractIntroduceFieldRefactoring.this.getExpression(), "jetbrains.mps.baseLanguage.structure.VariableReference", true, new String[]{})).where(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {
-            return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SNodeOperations.cast(it, "jetbrains.mps.baseLanguage.structure.VariableReference"), "variableDeclaration", false), "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration");
+            return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SNodeOperations.cast(it, "jetbrains.mps.baseLanguage.structure.VariableReference"), MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068498886296l, 1068581517664l, "variableDeclaration")), "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration");
           }
         }).toListSequence().isEmpty();
       }

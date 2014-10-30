@@ -5,6 +5,8 @@ package jetbrains.mps.baseLanguage.behavior;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.reloading.ReflectionUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
@@ -18,13 +20,13 @@ public class EnumConstantReference_Behavior {
   public static void init(SNode thisNode) {
   }
   public static Object virtual_eval_1213877519769(SNode thisNode, SModule module) {
-    SNode enumClass = SLinkOperations.getTarget(thisNode, "enumClass", false);
-    SNode e = SLinkOperations.getTarget(thisNode, "enumConstantDeclaration", false);
+    SNode enumClass = SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1083260308424l, 1144432896254l, "enumClass"));
+    SNode e = SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1083260308424l, 1083260308426l, "enumConstantDeclaration"));
     SModule m = check_p8mh91_a0c0a(SNodeOperations.getModel(e));
     if (m != null) {
       Enum eClass = null;
       try {
-        eClass = ReflectionUtil.getEnum(m, enumClass, SPropertyOperations.getString(e, "name"));
+        eClass = ReflectionUtil.getEnum(m, enumClass, SPropertyOperations.getString(e, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")));
       } catch (Throwable t) {
         // do nothing 
       }
@@ -32,10 +34,10 @@ public class EnumConstantReference_Behavior {
         return eClass;
       }
     }
-    return ReflectionUtil.getEnum(module, enumClass, SPropertyOperations.getString(e, "name"));
+    return ReflectionUtil.getEnum(module, enumClass, SPropertyOperations.getString(e, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")));
   }
   public static Scope virtual_getScope_3734116213129936182(SNode thisNode, SNode kind, SNode child) {
-    return ((SLinkOperations.getTarget(thisNode, "enumClass", false) != null) ? new NamedElementsScope(Members.visibleEnumConstants(SLinkOperations.getTarget(thisNode, "enumClass", false))) : new EmptyScope());
+    return ((SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1083260308424l, 1144432896254l, "enumClass")) != null) ? new NamedElementsScope(Members.visibleEnumConstants(SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1083260308424l, 1144432896254l, "enumClass")))) : new EmptyScope());
   }
   private static SModule check_p8mh91_a0c0a(SModel checkedDotOperand) {
     if (null != checkedDotOperand) {

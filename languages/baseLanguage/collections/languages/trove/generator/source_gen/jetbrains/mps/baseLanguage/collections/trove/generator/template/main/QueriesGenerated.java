@@ -9,6 +9,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
@@ -25,7 +27,7 @@ public class QueriesGenerated {
     return "T" + Character.toUpperCase(p.charAt(0)) + StringUtils.substring(p, 1) + "ArrayListDecorator";
   }
   public static Object propertyMacro_GetPropertyValue_5499565529811713156(final PropertyMacroContext _context) {
-    return "T" + SPropertyOperations.getString(SLinkOperations.getTarget(SNodeOperations.as(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), _context.getNode(), "virtual_getBoxedType_1213877337320", new Object[]{}), "jetbrains.mps.baseLanguage.structure.ClassifierType"), "classifier", false), "name") + "ListIterator";
+    return "T" + SPropertyOperations.getString(SLinkOperations.getTarget(SNodeOperations.as(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), _context.getNode(), "virtual_getBoxedType_1213877337320", new Object[]{}), "jetbrains.mps.baseLanguage.structure.ClassifierType"), MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier")), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")) + "ListIterator";
   }
   public static Object referenceMacro_GetReferent_5499565529811371608(final ReferenceMacroContext _context) {
     String p = BehaviorReflection.invokeVirtual(String.class, _context.getNode(), "virtual_getPresentation_1213877396640", new Object[]{});
@@ -44,7 +46,7 @@ public class QueriesGenerated {
     return "T" + Character.toUpperCase(p.charAt(0)) + StringUtils.substring(p, 1) + "ArrayListDecorator";
   }
   public static Object referenceMacro_GetReferent_5499565529811346969(final ReferenceMacroContext _context) {
-    return SNodeOperations.as(SLinkOperations.getTarget(SNodeOperations.cast(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), _context.getNode(), "virtual_getBoxedType_1213877337320", new Object[]{}), "jetbrains.mps.baseLanguage.structure.ClassifierType"), "classifier", false), "jetbrains.mps.baseLanguage.structure.ClassConcept");
+    return SNodeOperations.as(SLinkOperations.getTarget(SNodeOperations.cast(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), _context.getNode(), "virtual_getBoxedType_1213877337320", new Object[]{}), "jetbrains.mps.baseLanguage.structure.ClassifierType"), MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier")), "jetbrains.mps.baseLanguage.structure.ClassConcept");
   }
   public static Object referenceMacro_GetReferent_5499565529811382399(final ReferenceMacroContext _context) {
     return BehaviorReflection.invokeVirtual(String.class, _context.getNode(), "virtual_getPresentation_1213877396640", new Object[]{}) + "Value";

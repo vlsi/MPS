@@ -26,6 +26,8 @@ import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_PropertyPostfixHints;
 import java.util.List;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -146,8 +148,8 @@ public class ConceptCondition_Editor extends DefaultNodeEditor {
     }
     public List<String> getPostfixes(SNode node, IOperationContext operationContext, EditorContext editorContext) {
       List<String> result;
-      if ((SLinkOperations.getTarget(node, "concept", false) != null) && SPropertyOperations.getString(SLinkOperations.getTarget(node, "concept", false), "name") != null) {
-        String name = NameUtil.decapitalize(SPropertyOperations.getString(SLinkOperations.getTarget(node, "concept", false), "name"));
+      if ((SLinkOperations.getTarget(node, MetaAdapterFactory.getReferenceLink(new UUID(-7519561020779575912l, -9128700522494150552l), 4943044633101449694l, 4943044633101738901l, "concept")) != null) && SPropertyOperations.getString(SLinkOperations.getTarget(node, MetaAdapterFactory.getReferenceLink(new UUID(-7519561020779575912l, -9128700522494150552l), 4943044633101449694l, 4943044633101738901l, "concept")), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")) != null) {
+        String name = NameUtil.decapitalize(SPropertyOperations.getString(SLinkOperations.getTarget(node, MetaAdapterFactory.getReferenceLink(new UUID(-7519561020779575912l, -9128700522494150552l), 4943044633101449694l, 4943044633101738901l, "concept")), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")));
         result = (List<String>) NameUtil.splitByCamels(name);
       } else {
         result = ListSequence.fromList(new ArrayList<String>());

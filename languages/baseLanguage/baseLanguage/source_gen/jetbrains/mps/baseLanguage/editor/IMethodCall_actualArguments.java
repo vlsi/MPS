@@ -26,6 +26,8 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultReferenceSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 
 public class IMethodCall_actualArguments implements ConceptEditorComponent {
   public Collection<String> getContextHints() {
@@ -128,7 +130,7 @@ public class IMethodCall_actualArguments implements ConceptEditorComponent {
     }
   }
   private static boolean renderingCondition_arlg9k_a1a(SNode node, EditorContext editorContext) {
-    return ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(node, "baseMethodDeclaration", false), "parameter", true)).isNotEmpty();
+    return ListSequence.fromList(SLinkOperations.getChildren(SLinkOperations.getTarget(node, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, 1068499141037l, "baseMethodDeclaration")), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123132l, 1068580123134l, "parameter"))).isNotEmpty();
   }
   private EditorCell createConstant_arlg9k_c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
@@ -146,9 +148,9 @@ public class IMethodCall_actualArguments implements ConceptEditorComponent {
     return editorCell;
   }
   private static boolean renderingCondition_arlg9k_a2a(SNode node, EditorContext editorContext) {
-    if (SLinkOperations.getTarget(node, "baseMethodDeclaration", false) == null) {
+    if (SLinkOperations.getTarget(node, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, 1068499141037l, "baseMethodDeclaration")) == null) {
       return false;
     }
-    return ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(node, "baseMethodDeclaration", false), "parameter", true)).isEmpty();
+    return ListSequence.fromList(SLinkOperations.getChildren(SLinkOperations.getTarget(node, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, 1068499141037l, "baseMethodDeclaration")), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123132l, 1068580123134l, "parameter"))).isEmpty();
   }
 }

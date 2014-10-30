@@ -5,6 +5,7 @@ package org.jetbrains.mps.samples.Constants.constraints;
 import jetbrains.mps.smodel.runtime.ConstraintsDescriptor;
 import java.util.Arrays;
 import jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor;
+import jetbrains.mps.smodel.adapter.ids.SConceptId;
 
 public class ConstraintsAspectDescriptor implements jetbrains.mps.smodel.runtime.ConstraintsAspectDescriptor {
   public ConstraintsAspectDescriptor() {
@@ -16,9 +17,18 @@ public class ConstraintsAspectDescriptor implements jetbrains.mps.smodel.runtime
       case 1:
         return new ConstantReference_Constraints();
       default:
-        // todo: illegal in some cases? 
         return new BaseConstraintsDescriptor(fqName);
     }
+  }
+  public ConstraintsDescriptor getDescriptor(SConceptId conceptId) {
+    long id = conceptId.getConceptId();
+    if (id == 1494751830318912537l) {
+      return new Constant_Constraints();
+    }
+    if (id == 3990190717072393829l) {
+      return new ConstantReference_Constraints();
+    }
+    return new BaseConstraintsDescriptor(conceptId);
   }
   private static String[] stringSwitchCases_2qnle6_a0a0b = new String[]{"org.jetbrains.mps.samples.Constants.structure.Constant", "org.jetbrains.mps.samples.Constants.structure.ConstantReference"};
 }

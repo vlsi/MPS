@@ -18,6 +18,8 @@ import jetbrains.mps.smodel.action.DefaultChildNodeSubstituteAction;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.presentation.NodePresentationUtil;
 
@@ -44,11 +46,11 @@ public class QueriesGenerated {
             ListSequence.fromList(result).addElement(new DefaultChildNodeSubstituteAction(outputConcept, item, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter()) {
               public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
                 SNode result = SNodeFactoryOperations.createNewNode(model, "jetbrains.mps.debugger.java.privateMembers.structure.PrivateStaticFieldReference", null);
-                SLinkOperations.setTarget(result, "classifier", (item), false);
+                SLinkOperations.setTarget(result, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1070533707846l, 1144433057691l, "classifier"), (item));
                 return result;
               }
               public String getMatchingText(String pattern) {
-                return SPropertyOperations.getString((item), "name") + ".";
+                return SPropertyOperations.getString((item), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")) + ".";
               }
               public String getVisibleMatchingText(String pattern) {
                 return getMatchingText(pattern);

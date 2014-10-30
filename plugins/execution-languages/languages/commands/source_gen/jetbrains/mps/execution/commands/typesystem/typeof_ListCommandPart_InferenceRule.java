@@ -8,6 +8,8 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.smodel.SModelUtil_new;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
@@ -17,12 +19,12 @@ public class typeof_ListCommandPart_InferenceRule extends AbstractInferenceRule_
   }
   public void applyRule(final SNode listCommandPart, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     {
-      SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(listCommandPart, "list", true);
+      SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(listCommandPart, MetaAdapterFactory.getContainmentLink(new UUID(-921973991802319051l, -8446196034130110353l), 6868250101935610313l, 6868250101935610315l, "list"));
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:3eecec87-82a4-4ea1-952b-7d3a8d81c769(jetbrains.mps.execution.commands.typesystem)", "8234001627573984149", 0, null);
       typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:3eecec87-82a4-4ea1-952b-7d3a8d81c769(jetbrains.mps.execution.commands.typesystem)", "8234001627573984141", true), (SNode) _quotation_createNode_pnnk5w_a0a0b(), false, false, _info_12389875345);
     }
     {
-      SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(listCommandPart, "separator", true);
+      SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(listCommandPart, MetaAdapterFactory.getContainmentLink(new UUID(-921973991802319051l, -8446196034130110353l), 6868250101935610313l, 6868250101935610316l, "separator"));
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:3eecec87-82a4-4ea1-952b-7d3a8d81c769(jetbrains.mps.execution.commands.typesystem)", "8234001627573984181", 0, null);
       typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:3eecec87-82a4-4ea1-952b-7d3a8d81c769(jetbrains.mps.execution.commands.typesystem)", "8234001627573984173", true), (SNode) _quotation_createNode_pnnk5w_a0b0b(), false, false, _info_12389875345);
     }

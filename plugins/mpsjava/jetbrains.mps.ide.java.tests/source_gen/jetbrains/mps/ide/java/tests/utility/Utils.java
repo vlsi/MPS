@@ -39,6 +39,8 @@ import jetbrains.mps.persistence.java.library.JavaClassStubsModelRoot;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.baseLanguage.behavior.Classifier_Behavior;
 
@@ -275,12 +277,12 @@ public class Utils {
 
     binRoots = ListSequence.fromList(binRoots).sort(new ISelector<SNode, String>() {
       public String select(SNode it) {
-        return SPropertyOperations.getString(SNodeOperations.cast(it, "jetbrains.mps.baseLanguage.structure.Classifier"), "name");
+        return SPropertyOperations.getString(SNodeOperations.cast(it, "jetbrains.mps.baseLanguage.structure.Classifier"), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"));
       }
     }, true).toListSequence();
     srcRoots = ListSequence.fromList(srcRoots).sort(new ISelector<SNode, String>() {
       public String select(SNode it) {
-        return SPropertyOperations.getString(SNodeOperations.cast(it, "jetbrains.mps.baseLanguage.structure.Classifier"), "name");
+        return SPropertyOperations.getString(SNodeOperations.cast(it, "jetbrains.mps.baseLanguage.structure.Classifier"), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"));
       }
     }, true).toListSequence();
 
@@ -295,11 +297,11 @@ public class Utils {
   public static void buildModelNodeMap(SModel left, SModel right, Map<SNode, SNode> nodeMap) {
     Map<String, SNode> rightRootIndex = MapSequence.fromMap(new HashMap<String, SNode>());
     for (SNode rightRoot : ListSequence.fromList(SModelOperations.getRoots(right, null))) {
-      MapSequence.fromMap(rightRootIndex).put(SPropertyOperations.getString(SNodeOperations.cast(rightRoot, "jetbrains.mps.baseLanguage.structure.IValidIdentifier"), "name"), rightRoot);
+      MapSequence.fromMap(rightRootIndex).put(SPropertyOperations.getString(SNodeOperations.cast(rightRoot, "jetbrains.mps.baseLanguage.structure.IValidIdentifier"), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")), rightRoot);
     }
 
     for (SNode leftRoot : ListSequence.fromList(SModelOperations.getRoots(left, null))) {
-      SNode rightBrother = MapSequence.fromMap(rightRootIndex).get(SPropertyOperations.getString(SNodeOperations.cast(leftRoot, "jetbrains.mps.baseLanguage.structure.IValidIdentifier"), "name"));
+      SNode rightBrother = MapSequence.fromMap(rightRootIndex).get(SPropertyOperations.getString(SNodeOperations.cast(leftRoot, "jetbrains.mps.baseLanguage.structure.IValidIdentifier"), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")));
       if ((rightBrother != null)) {
         NodePatcher.copyImportAttrs(leftRoot, rightBrother);
       }
@@ -311,31 +313,31 @@ public class Utils {
     // handling this class and nested classes 
     Map<String, SNode> rightNestedIndex = MapSequence.fromMap(new HashMap<String, SNode>());
     for (SNode cl : ListSequence.fromList(SNodeOperations.getDescendants(right, "jetbrains.mps.baseLanguage.structure.Classifier", true, new String[]{}))) {
-      MapSequence.fromMap(rightNestedIndex).put(SPropertyOperations.getString(cl, "name"), cl);
+      MapSequence.fromMap(rightNestedIndex).put(SPropertyOperations.getString(cl, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")), cl);
     }
 
     for (SNode cl : ListSequence.fromList(SNodeOperations.getDescendants(left, "jetbrains.mps.baseLanguage.structure.Classifier", true, new String[]{}))) {
-      SNode rightBrother = SNodeOperations.cast(MapSequence.fromMap(rightNestedIndex).get(SPropertyOperations.getString(cl, "name")), "jetbrains.mps.baseLanguage.structure.Classifier");
+      SNode rightBrother = SNodeOperations.cast(MapSequence.fromMap(rightNestedIndex).get(SPropertyOperations.getString(cl, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"))), "jetbrains.mps.baseLanguage.structure.Classifier");
 
       // <node> 
 
       Assert.assertNull(MapSequence.fromMap(nodeMap).get(cl));
       MapSequence.fromMap(nodeMap).put(cl, rightBrother);
 
-      buildJustNodeMap(SLinkOperations.getTargets(left, "typeVariableDeclaration", true), SLinkOperations.getTargets(right, "typeVariableDeclaration", true), nodeMap);
+      buildJustNodeMap(SLinkOperations.getChildren(left, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1109279851642l, 1109279881614l, "typeVariableDeclaration")), SLinkOperations.getChildren(right, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1109279851642l, 1109279881614l, "typeVariableDeclaration")), nodeMap);
       buildMethodsNodeMap(left, right, nodeMap);
 
     }
 
     if (SNodeOperations.isInstanceOf(left, "jetbrains.mps.baseLanguage.structure.Annotation") && SNodeOperations.isInstanceOf(right, "jetbrains.mps.baseLanguage.structure.Annotation")) {
       Map<String, SNode> rightMethodIndex = MapSequence.fromMap(new HashMap<String, SNode>());
-      for (SNode mthd : ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(right, "jetbrains.mps.baseLanguage.structure.Annotation"), "method", true))) {
-        MapSequence.fromMap(rightMethodIndex).put(SPropertyOperations.getString(mthd, "name"), mthd);
+      for (SNode mthd : ListSequence.fromList(SLinkOperations.getChildren(SNodeOperations.cast(right, "jetbrains.mps.baseLanguage.structure.Annotation"), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107461130800l, 1107880067339l, "method")))) {
+        MapSequence.fromMap(rightMethodIndex).put(SPropertyOperations.getString(mthd, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")), mthd);
       }
 
-      for (SNode mthd : ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(left, "jetbrains.mps.baseLanguage.structure.Annotation"), "method", true))) {
+      for (SNode mthd : ListSequence.fromList(SLinkOperations.getChildren(SNodeOperations.cast(left, "jetbrains.mps.baseLanguage.structure.Annotation"), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107461130800l, 1107880067339l, "method")))) {
         Assert.assertNull(MapSequence.fromMap(nodeMap).get(mthd));
-        MapSequence.fromMap(nodeMap).put(mthd, MapSequence.fromMap(rightMethodIndex).get(SPropertyOperations.getString(mthd, "name")));
+        MapSequence.fromMap(nodeMap).put(mthd, MapSequence.fromMap(rightMethodIndex).get(SPropertyOperations.getString(mthd, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"))));
       }
     }
   }
@@ -347,27 +349,27 @@ public class Utils {
 
     Map<String, SNode> rightIndex = MapSequence.fromMap(new HashMap<String, SNode>());
     for (SNode rightMthd : ListSequence.fromList(rightMethods)) {
-      MapSequence.fromMap(rightIndex).put(SPropertyOperations.getString(rightMthd, "name"), rightMthd);
+      MapSequence.fromMap(rightIndex).put(SPropertyOperations.getString(rightMthd, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")), rightMthd);
     }
 
     for (SNode leftMthd : ListSequence.fromList(leftMethods)) {
-      MapSequence.fromMap(nodeMap).put(leftMthd, MapSequence.fromMap(rightIndex).get(SPropertyOperations.getString(leftMthd, "name")));
-      buildMethodBodyNodeMap(leftMthd, MapSequence.fromMap(rightIndex).get(SPropertyOperations.getString(leftMthd, "name")), nodeMap);
+      MapSequence.fromMap(nodeMap).put(leftMthd, MapSequence.fromMap(rightIndex).get(SPropertyOperations.getString(leftMthd, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"))));
+      buildMethodBodyNodeMap(leftMthd, MapSequence.fromMap(rightIndex).get(SPropertyOperations.getString(leftMthd, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"))), nodeMap);
       // <node> 
     }
   }
   public static void buildMethodBodyNodeMap(SNode left, SNode right, Map<SNode, SNode> nodeMap) {
 
     //  type vars 
-    buildJustNodeMap(SLinkOperations.getTargets(left, "typeVariableDeclaration", true), SLinkOperations.getTargets(right, "typeVariableDeclaration", true), nodeMap);
+    buildJustNodeMap(SLinkOperations.getChildren(left, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1109279851642l, 1109279881614l, "typeVariableDeclaration")), SLinkOperations.getChildren(right, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1109279851642l, 1109279881614l, "typeVariableDeclaration")), nodeMap);
 
     // local vars and params 
     List<SNode> leftVars = new ArrayList<SNode>();
-    ListSequence.fromList(leftVars).addSequence(ListSequence.fromList(SLinkOperations.getTargets(left, "parameter", true)));
+    ListSequence.fromList(leftVars).addSequence(ListSequence.fromList(SLinkOperations.getChildren(left, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123132l, 1068580123134l, "parameter"))));
     ListSequence.fromList(leftVars).addSequence(ListSequence.fromList(SNodeOperations.getDescendants(left, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration", false, new String[]{"jetbrains.mps.baseLanguage.structure.AnonymousClass"})));
 
     List<SNode> rightVars = new ArrayList<SNode>();
-    ListSequence.fromList(rightVars).addSequence(ListSequence.fromList(SLinkOperations.getTargets(right, "parameter", true)));
+    ListSequence.fromList(rightVars).addSequence(ListSequence.fromList(SLinkOperations.getChildren(right, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123132l, 1068580123134l, "parameter"))));
     ListSequence.fromList(rightVars).addSequence(ListSequence.fromList(SNodeOperations.getDescendants(right, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration", false, new String[]{"jetbrains.mps.baseLanguage.structure.AnonymousClass"})));
 
     buildJustNodeMap(leftVars, rightVars, nodeMap);
@@ -379,12 +381,12 @@ public class Utils {
   public static void buildJustNodeMap(List<SNode> left, List<SNode> right, Map<SNode, SNode> nodeMap) {
     Map<String, SNode> rightIndex = MapSequence.fromMap(new HashMap<String, SNode>());
     for (SNode rightNode : ListSequence.fromList(right)) {
-      MapSequence.fromMap(rightIndex).put(SPropertyOperations.getString(rightNode, "name"), rightNode);
+      MapSequence.fromMap(rightIndex).put(SPropertyOperations.getString(rightNode, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")), rightNode);
     }
 
     for (SNode leftNode : ListSequence.fromList(left)) {
       // <node> 
-      MapSequence.fromMap(nodeMap).put(leftNode, MapSequence.fromMap(rightIndex).get(SPropertyOperations.getString(leftNode, "name")));
+      MapSequence.fromMap(nodeMap).put(leftNode, MapSequence.fromMap(rightIndex).get(SPropertyOperations.getString(leftNode, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"))));
     }
   }
 }

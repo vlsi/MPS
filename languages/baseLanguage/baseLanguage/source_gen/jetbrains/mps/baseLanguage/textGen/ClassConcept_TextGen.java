@@ -8,6 +8,8 @@ import jetbrains.mps.textGen.TraceInfoGenerationUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.baseLanguage.behavior.Classifier_Behavior;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
@@ -28,27 +30,27 @@ public class ClassConcept_TextGen extends SNodeTextGen {
     }
     BaseLanguageTextGen.fileHeader(node, this);
     BaseLanguageTextGen.annotations(node, this);
-    BaseLanguageTextGen.visibilityWithIndent(SLinkOperations.getTarget(node, "visibility", true), this);
+    BaseLanguageTextGen.visibilityWithIndent(SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1178549954367l, 1178549979242l, "visibility")), this);
     if (Classifier_Behavior.call_isInner_521412098689998677(node) && BehaviorReflection.invokeVirtual(Boolean.TYPE, node, "virtual_isStatic_7405920559687241224", new Object[]{})) {
       this.append("static ");
     }
-    if (SPropertyOperations.getBoolean(node, "abstractClass")) {
+    if (SPropertyOperations.getBoolean(node, MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 1068390468198l, 1075300953594l, "abstractClass"))) {
       this.append("abstract ");
     }
-    if (SPropertyOperations.getBoolean(node, "isFinal")) {
+    if (SPropertyOperations.getBoolean(node, MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 1068390468198l, 1221565133444l, "isFinal"))) {
       this.append("final ");
     }
     this.append("class ");
-    this.append(SPropertyOperations.getString(node, "name"));
+    this.append(SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")));
     GenericDeclarationTextGen2.typeDeclarations(node, this);
-    if ((SLinkOperations.getTarget(node, "superclass", true) != null)) {
+    if ((SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068390468198l, 1165602531693l, "superclass")) != null)) {
       this.append(" extends ");
-      appendNode(SLinkOperations.getTarget(node, "superclass", true));
+      appendNode(SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068390468198l, 1165602531693l, "superclass")));
     }
-    if (ListSequence.fromList(SLinkOperations.getTargets(node, "implementedInterface", true)).isNotEmpty()) {
+    if (ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068390468198l, 1095933932569l, "implementedInterface"))).isNotEmpty()) {
       this.append(" implements ");
       {
-        Iterable<SNode> collection = SLinkOperations.getTargets(node, "implementedInterface", true);
+        Iterable<SNode> collection = SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068390468198l, 1095933932569l, "implementedInterface"));
         final SNode lastItem = Sequence.fromIterable(collection).last();
         for (SNode item : collection) {
           appendNode(item);

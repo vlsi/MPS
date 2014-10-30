@@ -11,6 +11,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.smodel.SModelUtil_new;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
@@ -33,7 +35,7 @@ public class typeof_ListPattern_InferenceRule extends AbstractInferenceRule_Runt
       {
         SNode _nodeToCheck_1029348928467 = nodeToCheck;
         EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590343(jetbrains.mps.lang.pattern.typesystem)", "1202491231762", 0, null);
-        typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c89590343(jetbrains.mps.lang.pattern.typesystem)", "1202491231771", true), (SNode) _quotation_createNode_4l3fn1_a0c0a2a1(SLinkOperations.getTarget(linkDeclaration, "target", false)), _info_12389875345);
+        typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c89590343(jetbrains.mps.lang.pattern.typesystem)", "1202491231771", true), (SNode) _quotation_createNode_4l3fn1_a0c0a2a1(SLinkOperations.getTarget(linkDeclaration, MetaAdapterFactory.getReferenceLink(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489288298l, 1071599976176l, "target"))), _info_12389875345);
       }
     }
   }
@@ -59,7 +61,7 @@ public class typeof_ListPattern_InferenceRule extends AbstractInferenceRule_Runt
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeListType", null, null, false);
-    SNodeAccessUtil.setReferenceTarget(quotedNode_2, "elementConcept", (SNode) parameter_1);
+    SNodeAccessUtil.setReferenceTarget(quotedNode_2, MetaAdapterFactory.getReferenceLink(new UUID(8675788371017092295l, -9098312342032910879l), 1145383075378l, 1145383142433l, "elementConcept"), (SNode) parameter_1);
     return quotedNode_2;
   }
 }

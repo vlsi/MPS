@@ -21,6 +21,7 @@ import jetbrains.mps.smodel.LazySModel;
 import jetbrains.mps.smodel.LazySNode;
 import jetbrains.mps.util.IterableUtil;
 import org.apache.log4j.LogManager;
+import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeId;
 
@@ -45,7 +46,7 @@ public class ModelLoader {
         SNode fullRoot = myFullModel.getNode(root.getNodeId());
         if (fullRoot == null) continue; //this can happen after model update if the
         for (SNode child : IterableUtil.copyToList(fullRoot.getChildren())) {
-          String role = child.getRoleInParent();
+          SContainmentLink role = child.getContainmentLink();
           fullRoot.removeChild(child);
           root.addChild(role, child);
         }
@@ -76,7 +77,7 @@ public class ModelLoader {
         SNodeId childId = child.getNodeId();
         while (curr != null && !childId.equals(curr.getNodeId())) {
           SNode next = it.hasNext() ? it.next() : null;
-          String role = curr.getRoleInParent();
+          SContainmentLink role = curr.getContainmentLink();
           curr.delete();
           node.insertChildBefore(role, curr, child);
           curr = next;
@@ -91,7 +92,7 @@ public class ModelLoader {
       }
       while (curr != null) {
         SNode next = it.hasNext() ? it.next() : null;
-        String role = curr.getRoleInParent();
+        SContainmentLink role = curr.getContainmentLink();
         curr.delete();
         node.addChild(role, curr);
         curr = next;

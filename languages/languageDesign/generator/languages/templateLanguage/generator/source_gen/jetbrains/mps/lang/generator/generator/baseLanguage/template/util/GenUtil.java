@@ -12,6 +12,8 @@ import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 
 public class GenUtil {
   private static final String KEY = "VarName";
@@ -37,7 +39,7 @@ public class GenUtil {
   public static boolean isGeneratable(SModel model) {
     SNode node = SModelOperations.getModuleStub(model);
     if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.project.structure.Generator")) {
-      return SPropertyOperations.getBoolean(SNodeOperations.cast(node, "jetbrains.mps.lang.project.structure.Generator"), "generateTemplates");
+      return SPropertyOperations.getBoolean(SNodeOperations.cast(node, "jetbrains.mps.lang.project.structure.Generator"), MetaAdapterFactory.getProperty(new UUID(-8723610397892195161l, -7746462699928525911l), 6370754048397540897l, 3000929436959691392l, "generateTemplates"));
     }
     return false;
   }

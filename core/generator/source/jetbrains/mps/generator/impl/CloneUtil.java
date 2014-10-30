@@ -22,6 +22,7 @@ import jetbrains.mps.project.structure.modules.Dependency;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.SModelInternal;
+import jetbrains.mps.util.SNodeOperations;
 import org.apache.log4j.LogManager;
 import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.module.SModuleReference;
@@ -32,7 +33,6 @@ import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SReference;
 import jetbrains.mps.smodel.StaticReference;
 import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.mps.openapi.model.SNodeUtil;
 
 import java.util.Map.Entry;
 
@@ -173,7 +173,7 @@ public class CloneUtil {
       // Besides, what if there's custom openapi.SReference impl (GenSReference) I'm not aware of? How am I supposed to clone it here?
       if (prototype instanceof StaticReference) {
         if (targetModelRef == null) {
-          LOG.warning("broken reference '" + prototype.getRole() + "' in " + SNodeUtil.getDebugText(prototype.getSourceNode()), prototype.getSourceNode());
+          LOG.warning("broken reference '" + prototype.getRole() + "' in " + SNodeOperations.getDebugText(prototype.getSourceNode()), prototype.getSourceNode());
         } else {
           StaticReference outputReference = new StaticReference(
               prototype.getRole(),
@@ -186,7 +186,7 @@ public class CloneUtil {
       } else if (prototype instanceof DynamicReference) {
         return CloneUtil.create(outputNode, targetModelRef, (DynamicReference) prototype);
       } else {
-        LOG.error("internal error: can't clone reference '" + prototype.getRole() + "' in " + SNodeUtil.getDebugText(prototype.getSourceNode()), prototype.getSourceNode());
+        LOG.error("internal error: can't clone reference '" + prototype.getRole() + "' in " + SNodeOperations.getDebugText(prototype.getSourceNode()), prototype.getSourceNode());
         LOG.error(" -- was reference class : " + prototype.getClass().getName());
       }
       return null;

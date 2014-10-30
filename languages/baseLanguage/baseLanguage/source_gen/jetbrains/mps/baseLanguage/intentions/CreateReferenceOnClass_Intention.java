@@ -13,6 +13,8 @@ import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
 import java.util.Collections;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.intentions.IntentionDescriptor;
 
 public class CreateReferenceOnClass_Intention implements IntentionFactory {
@@ -81,7 +83,7 @@ public class CreateReferenceOnClass_Intention implements IntentionFactory {
           break;
         }
       }
-      SLinkOperations.setTarget(node, "classConcept", outerConcept, false);
+      SLinkOperations.setTarget(node, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1070475354124l, 1182955020723l, "classConcept"), outerConcept);
     }
     public IntentionDescriptor getDescriptor() {
       return CreateReferenceOnClass_Intention.this;

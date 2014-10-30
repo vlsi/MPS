@@ -12,6 +12,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 
 public class FinderUtils {
   private FinderUtils() {
@@ -56,10 +58,10 @@ public class FinderUtils {
       SNode conceptDeclaration = SNodeOperations.getConceptDeclaration(p);
       SNode editor = BehaviorReflection.invokeNonVirtual((Class<SNode>) ((Class) Object.class), conceptDeclaration, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration", "call_findConceptAspect_8360039740498068384", new Object[]{LanguageAspect.EDITOR});
       for (SNode cell : ListSequence.fromList(SNodeOperations.getDescendants(editor, "jetbrains.mps.lang.editor.structure.CellModel_WithRole", false, new String[]{}))) {
-        if (SLinkOperations.getTarget(cell, "relationDeclaration", false) == l1) {
+        if (SLinkOperations.getTarget(cell, MetaAdapterFactory.getReferenceLink(new UUID(1782411230332735017l, -6324602048325217350l), 1139848536355l, 1140103550593l, "relationDeclaration")) == l1) {
           return -1;
         }
-        if (SLinkOperations.getTarget(cell, "relationDeclaration", false) == l2) {
+        if (SLinkOperations.getTarget(cell, MetaAdapterFactory.getReferenceLink(new UUID(1782411230332735017l, -6324602048325217350l), 1139848536355l, 1140103550593l, "relationDeclaration")) == l2) {
           return 1;
         }
       }

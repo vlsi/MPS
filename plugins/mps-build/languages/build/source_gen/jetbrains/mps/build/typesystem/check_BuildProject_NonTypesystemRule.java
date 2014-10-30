@@ -8,6 +8,8 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.messageTargets.PropertyMessageTarget;
@@ -18,7 +20,7 @@ public class check_BuildProject_NonTypesystemRule extends AbstractNonTypesystemR
   public check_BuildProject_NonTypesystemRule() {
   }
   public void applyRule(final SNode project, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    if (isNotEmptyString(SPropertyOperations.getString(project, "fileName")) && !(SPropertyOperations.getString(project, "fileName").endsWith(".xml"))) {
+    if (isNotEmptyString(SPropertyOperations.getString(project, MetaAdapterFactory.getProperty(new UUID(8755280088213897754l, -5075149991798053422l), 5617550519002745363l, 4915877860348071612l, "fileName"))) && !(SPropertyOperations.getString(project, MetaAdapterFactory.getProperty(new UUID(8755280088213897754l, -5075149991798053422l), 5617550519002745363l, 4915877860348071612l, "fileName")).endsWith(".xml"))) {
       {
         MessageTarget errorTarget = new NodeMessageTarget();
         errorTarget = new PropertyMessageTarget("fileName");

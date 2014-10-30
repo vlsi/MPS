@@ -8,6 +8,8 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.baseLanguage.typesystem.DataFlowUtil;
 import jetbrains.mps.smodel.SModelUtil_new;
 
@@ -15,8 +17,8 @@ public class check_AbstractCheckingRule_NonTypesystemRule extends AbstractNonTyp
   public check_AbstractCheckingRule_NonTypesystemRule() {
   }
   public void applyRule(final SNode abstractCheckingRule, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    if (SLinkOperations.getTarget(abstractCheckingRule, "body", true) != null) {
-      DataFlowUtil.checkDataFlow(typeCheckingContext, SLinkOperations.getTarget(abstractCheckingRule, "body", true));
+    if (SLinkOperations.getTarget(abstractCheckingRule, MetaAdapterFactory.getContainmentLink(new UUID(8817443762339858024l, -6091446231697526094l), 1195213580585l, 1195213635060l, "body")) != null) {
+      DataFlowUtil.checkDataFlow(typeCheckingContext, SLinkOperations.getTarget(abstractCheckingRule, MetaAdapterFactory.getContainmentLink(new UUID(8817443762339858024l, -6091446231697526094l), 1195213580585l, 1195213635060l, "body")));
     }
   }
   public String getApplicableConceptFQName() {

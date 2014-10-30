@@ -6,6 +6,8 @@ import jetbrains.mps.textGen.SNodeTextGen;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.textGen.TraceInfoGenerationUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.apache.log4j.Level;
@@ -20,10 +22,10 @@ public class AssertStatement_TextGen extends SNodeTextGen {
     this.appendNewLine();
     this.indentBuffer();
     this.append("assert ");
-    appendNode(SLinkOperations.getTarget(node, "condition", true));
-    if ((SLinkOperations.getTarget(node, "message", true) != null)) {
+    appendNode(SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1160998861373l, 1160998896846l, "condition")));
+    if ((SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1160998861373l, 1160998916832l, "message")) != null)) {
       this.append(" : ");
-      appendNode(SLinkOperations.getTarget(node, "message", true));
+      appendNode(SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1160998861373l, 1160998916832l, "message")));
     }
     this.append(";");
     if (getBuffer().hasPositionsSupport()) {

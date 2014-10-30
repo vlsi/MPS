@@ -12,6 +12,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.search.IsInstanceCondition;
 import jetbrains.mps.smodel.search.AbstractSearchScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 
 public class TypeVarScope extends SearchScopeWithNode {
   private SNode myCurrentNode = null;
@@ -57,7 +59,7 @@ public class TypeVarScope extends SearchScopeWithNode {
     return result;
   }
   private void populateLocalVariables(@NotNull SNode statementList, SNode beforeStatement, List<SNode> result) {
-    for (SNode statement : SLinkOperations.getTargets(statementList, "statement", true)) {
+    for (SNode statement : SLinkOperations.getChildren(statementList, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123136l, 1068581517665l, "statement"))) {
       if (statement == beforeStatement) {
         break;
       }

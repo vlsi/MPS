@@ -2,9 +2,9 @@
 <dependenciesRoot>
   <dependency className="jetbrains.mps.console.ideCommands.constraints.ActionCallDeclaredParameter_Constraints" file="ActionCallDeclaredParameter_Constraints.java">
     <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.HashMap" />
     <classNode dependClassName="java.util.Map" />
+    <classNode dependClassName="java.util.UUID" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISelector" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
@@ -14,6 +14,9 @@
     <classNode dependClassName="jetbrains.mps.scope.Scope" />
     <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
     <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.ids.MetaIdFactory" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.ids.SReferenceLinkId" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.CheckingNodeContext" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.ReferenceConstraintsContext" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.ReferenceConstraintsDescriptor" />
@@ -33,6 +36,7 @@
     <classNode dependClassName="jetbrains.mps.console.ideCommands.constraints.NodeReference_Constraints" />
     <classNode dependClassName="jetbrains.mps.console.ideCommands.constraints.OfAspectOperation_Constraints" />
     <classNode dependClassName="jetbrains.mps.console.ideCommands.constraints.SubtreeStatisticsTarget_Constraints" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.ids.SConceptId" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.ConstraintsDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.ConstraintsAspectDescriptor" />
@@ -40,11 +44,13 @@
   <dependency className="jetbrains.mps.console.ideCommands.constraints.ModelReference_Constraints" file="ModelReference_Constraints.java">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.ArrayList" />
+    <classNode dependClassName="java.util.UUID" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
     <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.ids.MetaIdFactory" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.CheckingNodeContext" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
@@ -53,9 +59,11 @@
   <dependency className="jetbrains.mps.console.ideCommands.constraints.NodeReference_Constraints" file="NodeReference_Constraints.java">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.UUID" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
     <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.ids.MetaIdFactory" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.CheckingNodeContext" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
@@ -63,14 +71,16 @@
   </dependency>
   <dependency className="jetbrains.mps.console.ideCommands.constraints.OfAspectOperation_Constraints" file="OfAspectOperation_Constraints.java">
     <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.HashMap" />
     <classNode dependClassName="java.util.Map" />
+    <classNode dependClassName="java.util.UUID" />
     <classNode dependClassName="jetbrains.mps.lang.scopes.runtime.NamedElementsScope" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.scope.Scope" />
     <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
     <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.ids.MetaIdFactory" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.ids.SReferenceLinkId" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.ReferenceConstraintsContext" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.ReferenceConstraintsDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.ReferenceScopeProvider" />
@@ -82,9 +92,11 @@
   </dependency>
   <dependency className="jetbrains.mps.console.ideCommands.constraints.SubtreeStatisticsTarget_Constraints" file="SubtreeStatisticsTarget_Constraints.java">
     <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.util.UUID" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
     <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.ids.MetaIdFactory" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.CheckingNodeContext" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />

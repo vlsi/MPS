@@ -4,10 +4,12 @@ package jetbrains.mps.testHybridEditor.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 
 public class BlockInstance_Behavior {
   public static void init(SNode thisNode) {
-    SPropertyOperations.set(thisNode, "width", "" + (40));
-    SPropertyOperations.set(thisNode, "height", "" + (50));
+    SPropertyOperations.set(thisNode, MetaAdapterFactory.getProperty(new UUID(-7982035075869357830l, -5979686021354407916l), 2353136177974080669l, 3175567003993184638l, "width"), "" + (40));
+    SPropertyOperations.set(thisNode, MetaAdapterFactory.getProperty(new UUID(-7982035075869357830l, -5979686021354407916l), 2353136177974080669l, 3175567003993184686l, "height"), "" + (50));
   }
 }

@@ -9,6 +9,8 @@ import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.Sequence;
@@ -24,7 +26,7 @@ public class check_UnusedPrivateMethods_NonTypesystemRule extends AbstractNonTyp
   public check_UnusedPrivateMethods_NonTypesystemRule() {
   }
   public void applyRule(final SNode classifierMember, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(classifierMember, "visibility", true), "jetbrains.mps.baseLanguage.structure.PrivateVisibility")) {
+    if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(classifierMember, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1178549954367l, 1178549979242l, "visibility")), "jetbrains.mps.baseLanguage.structure.PrivateVisibility")) {
       {
         final SNode matchedNode_sl9v9q_a0a0 = classifierMember;
         {
@@ -37,7 +39,7 @@ public class check_UnusedPrivateMethods_NonTypesystemRule extends AbstractNonTyp
           }
           if (matches_sl9v9q_a0a0a) {
             {
-              if (SNodeOperations.isInstanceOf(matchedNode_sl9v9q_a0a0, "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration") && ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(matchedNode_sl9v9q_a0a0, "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration"), "parameter", true)).isEmpty() && Sequence.fromIterable(ClassConcept_Behavior.call_constructors_5292274854859503373(SNodeOperations.as(SNodeOperations.getParent(matchedNode_sl9v9q_a0a0), "jetbrains.mps.baseLanguage.structure.ClassConcept"))).count() == 1) {
+              if (SNodeOperations.isInstanceOf(matchedNode_sl9v9q_a0a0, "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration") && ListSequence.fromList(SLinkOperations.getChildren(SNodeOperations.cast(matchedNode_sl9v9q_a0a0, "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration"), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123132l, 1068580123134l, "parameter"))).isEmpty() && Sequence.fromIterable(ClassConcept_Behavior.call_constructors_5292274854859503373(SNodeOperations.as(SNodeOperations.getParent(matchedNode_sl9v9q_a0a0), "jetbrains.mps.baseLanguage.structure.ClassConcept"))).count() == 1) {
                 // an idiom - uninstantiable class 
                 return;
               }
@@ -48,7 +50,7 @@ public class check_UnusedPrivateMethods_NonTypesystemRule extends AbstractNonTyp
                 }
                 if (!(ListSequence.fromList(SNodeOperations.getDescendants(topClassifier, "jetbrains.mps.baseLanguage.structure.IMethodCall", false, new String[]{})).any(new IWhereFilter<SNode>() {
                   public boolean accept(SNode call) {
-                    return SLinkOperations.getTarget(call, "baseMethodDeclaration", false) == matchedNode_sl9v9q_a0a0 && !(ListSequence.fromList(SNodeOperations.getAncestors(call, null, false)).contains(matchedNode_sl9v9q_a0a0));
+                    return SLinkOperations.getTarget(call, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, 1068499141037l, "baseMethodDeclaration")) == matchedNode_sl9v9q_a0a0 && !(ListSequence.fromList(SNodeOperations.getAncestors(call, null, false)).contains(matchedNode_sl9v9q_a0a0));
                   }
                 }))) {
                   {

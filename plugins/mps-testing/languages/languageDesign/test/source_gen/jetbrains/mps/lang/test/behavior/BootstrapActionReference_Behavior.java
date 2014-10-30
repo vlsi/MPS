@@ -4,11 +4,13 @@ package jetbrains.mps.lang.test.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 
 public class BootstrapActionReference_Behavior {
   public static void init(SNode thisNode) {
   }
   public static String virtual_getActionId_1101347953350122762(SNode thisNode) {
-    return SPropertyOperations.getString(thisNode, "actionId");
+    return SPropertyOperations.getString(thisNode, MetaAdapterFactory.getProperty(new UUID(-8825571760360698496l, -7431307307277756308l), 1101347953350122758l, 1101347953350127918l, "actionId"));
   }
 }

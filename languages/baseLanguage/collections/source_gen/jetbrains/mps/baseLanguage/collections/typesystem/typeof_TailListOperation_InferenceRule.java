@@ -10,6 +10,8 @@ import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.baseLanguage.behavior.IOperation_Behavior;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.smodel.SModelUtil_new;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
@@ -26,7 +28,7 @@ public class typeof_TailListOperation_InferenceRule extends AbstractInferenceRul
     }
     if (!(typeCheckingContext.isSingleTypeComputation())) {
       {
-        SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(op, "fromIndex", true);
+        SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(op, MetaAdapterFactory.getContainmentLink(new UUID(-8968771020793164004l, -7182180101671965361l), 5232196642625575054l, 5232196642625575056l, "fromIndex"));
         EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "5232196642625575134", 0, null);
         typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "5232196642625575139", true), (SNode) _quotation_createNode_mm46f4_a0c0b(), true, true, _info_12389875345);
       }

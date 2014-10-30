@@ -13,6 +13,8 @@ import jetbrains.mps.generator.fileGenerator.FileGenerationUtil;
 import jetbrains.mps.util.MacrosFactory;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.vfs.IFileUtils;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.util.MacroHelper;
@@ -30,7 +32,7 @@ public class IconResource_Behavior {
         IFile output = FileGenerationUtil.getDefaultOutputDir(model, outputRootFile);
 
         // copy 
-        String source = MacrosFactory.forModule((AbstractModule) model.getModule()).expandPath(SPropertyOperations.getString(thisNode, "path"));
+        String source = MacrosFactory.forModule((AbstractModule) model.getModule()).expandPath(SPropertyOperations.getString(thisNode, MetaAdapterFactory.getProperty(new UUID(-7480838662350550057l, -7394046985400605979l), 8974276187400029898l, 8974276187400029899l, "path")));
         IFile sourceFile = FileSystem.getInstance().getFileByPath(source);
 
         IFileUtils.copyFileContent(sourceFile, output.getDescendant(sourceFile.getName()));
@@ -46,7 +48,7 @@ public class IconResource_Behavior {
     if (macroHelper == null) {
       return false;
     }
-    String path = macroHelper.expandPath(SPropertyOperations.getString(thisNode, "path"));
+    String path = macroHelper.expandPath(SPropertyOperations.getString(thisNode, MetaAdapterFactory.getProperty(new UUID(-7480838662350550057l, -7394046985400605979l), 8974276187400029898l, 8974276187400029899l, "path")));
     if (path == null) {
       return false;
     }
@@ -62,7 +64,7 @@ public class IconResource_Behavior {
     }
   }
   public static String call_getFilename_8974276187400030131(SNode thisNode) {
-    String fullPath = SPropertyOperations.getString(thisNode, "path");
+    String fullPath = SPropertyOperations.getString(thisNode, MetaAdapterFactory.getProperty(new UUID(-7480838662350550057l, -7394046985400605979l), 8974276187400029898l, 8974276187400029899l, "path"));
     return fullPath.substring(fullPath.lastIndexOf("/") + 1);
   }
 }

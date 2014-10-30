@@ -7,6 +7,8 @@ import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 
 @Deprecated
 public class ClassifierVisibleStaticMembersScope extends ClassifierVisibleMembersScope {
@@ -29,7 +31,7 @@ public class ClassifierVisibleStaticMembersScope extends ClassifierVisibleMember
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, false);
-    SNodeAccessUtil.setReferenceTarget(quotedNode_2, "classifier", (SNode) parameter_1);
+    SNodeAccessUtil.setReferenceTarget(quotedNode_2, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier"), (SNode) parameter_1);
     return quotedNode_2;
   }
 }

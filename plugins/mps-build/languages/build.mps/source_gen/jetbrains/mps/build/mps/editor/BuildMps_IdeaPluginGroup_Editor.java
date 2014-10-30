@@ -19,6 +19,8 @@ import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.build.editor.buildStyles_StyleSheet;
 import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
@@ -95,7 +97,7 @@ public class BuildMps_IdeaPluginGroup_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private static boolean renderingCondition_ulfewq_a1a(SNode node, EditorContext editorContext) {
-    return ListSequence.fromList(SLinkOperations.getTargets(node, "customPackaging", true)).isNotEmpty();
+    return ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(new UUID(934837630734519964l, -6831122735637083229l), 6592112598314586625l, 4034578608468929327l, "customPackaging"))).isNotEmpty();
   }
   private EditorCell createConstant_ulfewq_a1a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");

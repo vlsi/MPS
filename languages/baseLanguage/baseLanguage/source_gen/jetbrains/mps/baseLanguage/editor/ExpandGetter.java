@@ -9,6 +9,8 @@ import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.editor.runtime.cells.AbstractCellAction;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 
 public class ExpandGetter {
   public static void setCellActions(EditorCell editorCell, SNode node, EditorContext context) {
@@ -26,7 +28,7 @@ public class ExpandGetter {
     }
     public void execute_internal(EditorContext editorContext, SNode node) {
       SNode replacingNode = SNodeFactoryOperations.replaceWithNewChild(node, "jetbrains.mps.baseLanguage.structure.CustomPropertyImplementation");
-      SLinkOperations.setTarget(replacingNode, "setAccessor", SLinkOperations.getTarget(node, "setAccessor", true), true);
+      SLinkOperations.setTarget(replacingNode, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1201398722958l, 1201476937466l, "setAccessor"), SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 4285773203949551198l, 4285773203949552005l, "setAccessor")));
     }
   }
   public static class ExpandGetter_DELETE extends AbstractCellAction {

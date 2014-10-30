@@ -8,6 +8,8 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
@@ -24,7 +26,7 @@ public class Model {
   }
   public void new_node_2(SModel model) {
     SNode named = SModelOperations.createNewNode(model, null, "jetbrains.mps.baseLanguage.structure.ClassConcept");
-    SPropertyOperations.set(named, "name", "a");
+    SPropertyOperations.set(named, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"), "a");
   }
   public void roots_access_1(SModel model) {
     List<SNode> roots1 = SModelOperations.getRoots(model, null);
@@ -32,7 +34,7 @@ public class Model {
     List<SNode> roots2 = SModelOperations.getRoots(model, "jetbrains.mps.baseLanguage.structure.ClassConcept");
     Iterable<SNode> roots3 = ListSequence.fromList(SModelOperations.getRoots(model, "jetbrains.mps.baseLanguage.structure.ClassConcept")).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode c) {
-        return SPropertyOperations.hasValue(c, "name", "Utils");
+        return SPropertyOperations.hasValue(c, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"), "Utils");
       }
     });
   }
@@ -44,7 +46,7 @@ public class Model {
     List<SNode> nodes2 = SModelOperations.getNodes(model, "jetbrains.mps.baseLanguage.structure.ClassConcept");
     Iterable<SNode> nodes3 = ListSequence.fromList(SModelOperations.getNodes(model, "jetbrains.mps.baseLanguage.structure.ClassConcept")).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode c) {
-        return SPropertyOperations.hasValue(c, "name", "Utils");
+        return SPropertyOperations.hasValue(c, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"), "Utils");
       }
     });
   }

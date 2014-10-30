@@ -9,6 +9,8 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.nodeEditor.cells.jetpad.BlockCell;
 import jetbrains.mps.nodeEditor.cells.jetpad.PropertyMapperCell;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.util.Pair;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
@@ -48,20 +50,20 @@ public class Node_Editor extends DefaultNodeEditor {
       super(editorContext, node);
       myPropertyCell_aofvvp_a0a = new PropertyMapperCell<Integer>(editorContext, node) {
         protected Integer getModelPropertyValueImpl() {
-          return SPropertyOperations.getInteger(node, "x");
+          return SPropertyOperations.getInteger(node, MetaAdapterFactory.getProperty(new UUID(361801763181709765l, -5122951994527979137l), 8794120090374233605l, 8794120090374242972l, "x"));
         }
         protected void setModelPropertyValueImpl(Integer value) {
-          SPropertyOperations.set(node, "x", "" + (value));
+          SPropertyOperations.set(node, MetaAdapterFactory.getProperty(new UUID(361801763181709765l, -5122951994527979137l), 8794120090374233605l, 8794120090374242972l, "x"), "" + (value));
         }
       };
       addEditorCell(myPropertyCell_aofvvp_a0a);
       myPropertyCell_aofvvp_a0a.getEditorComponent().getUpdater().getCurrentUpdateSession().registerCleanDependency(myPropertyCell_aofvvp_a0a, new Pair<SNodeReference, String>(new SNodePointer(node), "x"));
       myPropertyCell_aofvvp_a1a = new PropertyMapperCell<Integer>(editorContext, node) {
         protected Integer getModelPropertyValueImpl() {
-          return SPropertyOperations.getInteger(node, "y");
+          return SPropertyOperations.getInteger(node, MetaAdapterFactory.getProperty(new UUID(361801763181709765l, -5122951994527979137l), 8794120090374233605l, 8794120090374242974l, "y"));
         }
         protected void setModelPropertyValueImpl(Integer value) {
-          SPropertyOperations.set(node, "y", "" + (value));
+          SPropertyOperations.set(node, MetaAdapterFactory.getProperty(new UUID(361801763181709765l, -5122951994527979137l), 8794120090374233605l, 8794120090374242974l, "y"), "" + (value));
         }
       };
       addEditorCell(myPropertyCell_aofvvp_a1a);

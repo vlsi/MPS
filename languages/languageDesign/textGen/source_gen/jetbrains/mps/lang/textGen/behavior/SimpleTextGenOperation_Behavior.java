@@ -5,12 +5,14 @@ package jetbrains.mps.lang.textGen.behavior;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 
 public class SimpleTextGenOperation_Behavior {
   public static void init(SNode thisNode) {
   }
   public static String virtual_getMethodName_1234789420862(SNode thisNode) {
-    String name = SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(thisNode), "conceptAlias");
+    String name = SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(thisNode), MetaAdapterFactory.getProperty(new UUID(-4094437568663370681l, -8968368868337559369l), 1169125787135l, 5092175715804935370l, "conceptAlias"));
     if (name == null || name.length() <= 1) {
       return name;
     }

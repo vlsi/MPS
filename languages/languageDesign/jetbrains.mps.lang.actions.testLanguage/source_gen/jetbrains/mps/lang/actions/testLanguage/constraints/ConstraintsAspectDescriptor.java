@@ -5,6 +5,7 @@ package jetbrains.mps.lang.actions.testLanguage.constraints;
 import jetbrains.mps.smodel.runtime.ConstraintsDescriptor;
 import java.util.Arrays;
 import jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor;
+import jetbrains.mps.smodel.adapter.ids.SConceptId;
 
 public class ConstraintsAspectDescriptor implements jetbrains.mps.smodel.runtime.ConstraintsAspectDescriptor {
   public ConstraintsAspectDescriptor() {
@@ -16,9 +17,18 @@ public class ConstraintsAspectDescriptor implements jetbrains.mps.smodel.runtime
       case 0:
         return new ActionTestSidetransformTestAncestor_Constraints();
       default:
-        // todo: illegal in some cases? 
         return new BaseConstraintsDescriptor(fqName);
     }
+  }
+  public ConstraintsDescriptor getDescriptor(SConceptId conceptId) {
+    long id = conceptId.getConceptId();
+    if (id == 1702123884811354597l) {
+      return new ActionTestSidetransformTestContainer_Constraints();
+    }
+    if (id == 3185679905989655160l) {
+      return new ActionTestSidetransformTestAncestor_Constraints();
+    }
+    return new BaseConstraintsDescriptor(conceptId);
   }
   private static String[] stringSwitchCases_2qnle6_a0a0b = new String[]{"jetbrains.mps.lang.actions.testLanguage.structure.ActionTestSidetransformTestAncestor", "jetbrains.mps.lang.actions.testLanguage.structure.ActionTestSidetransformTestContainer"};
 }

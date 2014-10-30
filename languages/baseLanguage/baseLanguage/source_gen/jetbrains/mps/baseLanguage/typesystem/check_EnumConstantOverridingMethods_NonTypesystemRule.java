@@ -14,6 +14,8 @@ import java.util.Set;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import java.util.Iterator;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.baseLanguage.behavior.Classifier_Behavior;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
@@ -34,14 +36,14 @@ public class check_EnumConstantOverridingMethods_NonTypesystemRule extends Abstr
       Set<Tuples._2<SNode, SNode>> overridenMethods = finder.getOverridenMethods(overridingMethod);
       for (Iterator<Tuples._2<SNode, SNode>> it = SetSequence.fromSet(overridenMethods).iterator(); it.hasNext();) {
         SNode overridenMethod = it.next()._0();
-        SNode returnType = SLinkOperations.getTarget(overridenMethod, "returnType", true);
+        SNode returnType = SLinkOperations.getTarget(overridenMethod, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123132l, 1068580123133l, "returnType"));
         SNode ancestor = SNodeOperations.cast(SNodeOperations.getParent(overridenMethod), "jetbrains.mps.baseLanguage.structure.Classifier");
         SNode overridingMethodParent = SNodeOperations.getParent(overridingMethod);
         SNode resolvedReturnType;
         if (SNodeOperations.isInstanceOf(overridingMethodParent, "jetbrains.mps.baseLanguage.structure.EnumConstantDeclaration")) {
           SNode enumClass = SNodeOperations.cast(SNodeOperations.getParent(SNodeOperations.cast(overridingMethodParent, "jetbrains.mps.baseLanguage.structure.EnumConstantDeclaration")), "jetbrains.mps.baseLanguage.structure.EnumClass");
           SNode dummy = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.AnonymousClass", null);
-          SLinkOperations.setTarget(dummy, "classifier", enumClass, false);
+          SLinkOperations.setTarget(dummy, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1170345865475l, 1170346070688l, "classifier"), enumClass);
           resolvedReturnType = Classifier_Behavior.call_getWithResolvedTypevars_3305065273710852527(dummy, returnType, ancestor, overridingMethod, overridenMethod);
         } else {
           {
@@ -51,10 +53,10 @@ public class check_EnumConstantOverridingMethods_NonTypesystemRule extends Abstr
           return;
         }
 
-        if (!(TypeChecker.getInstance().getSubtypingManager().isSubtype(SLinkOperations.getTarget(overridingMethod, "returnType", true), resolvedReturnType))) {
+        if (!(TypeChecker.getInstance().getSubtypingManager().isSubtype(SLinkOperations.getTarget(overridingMethod, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123132l, 1068580123133l, "returnType")), resolvedReturnType))) {
           {
             MessageTarget errorTarget = new NodeMessageTarget();
-            IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(SLinkOperations.getTarget(overridingMethod, "returnType", true), "method's return type is incompatible with overridden method ", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "8960718351573012062", null, errorTarget);
+            IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(SLinkOperations.getTarget(overridingMethod, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123132l, 1068580123133l, "returnType")), "method's return type is incompatible with overridden method ", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "8960718351573012062", null, errorTarget);
           }
           break;
         }

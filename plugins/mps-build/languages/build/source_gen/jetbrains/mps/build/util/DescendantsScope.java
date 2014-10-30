@@ -15,6 +15,8 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 
 public abstract class DescendantsScope extends Scope {
   private SNode node;
@@ -86,7 +88,7 @@ public abstract class DescendantsScope extends Scope {
         if (!(SNodeOperations.isInstanceOf(child, "jetbrains.mps.lang.core.structure.INamedConcept"))) {
           return child.getPresentation();
         }
-        return SPropertyOperations.getString(SNodeOperations.cast(child, "jetbrains.mps.lang.core.structure.INamedConcept"), "name");
+        return SPropertyOperations.getString(SNodeOperations.cast(child, "jetbrains.mps.lang.core.structure.INamedConcept"), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"));
       }
     };
   }

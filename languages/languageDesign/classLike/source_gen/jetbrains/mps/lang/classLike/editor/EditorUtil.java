@@ -6,6 +6,8 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.lang.classLike.behavior.ClassLikeMember_Behavior;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
@@ -13,10 +15,10 @@ import jetbrains.mps.lang.classLike.behavior.PlaceholderModifier_Behavior;
 
 public class EditorUtil {
   public static void substitutePlaceholder(SNode ph) {
-    SNodeOperations.replaceWithAnother(ph, BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SLinkOperations.getTarget(ph, "decl", false), "virtual_create_8260330507834998478", new Object[]{}));
+    SNodeOperations.replaceWithAnother(ph, BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SLinkOperations.getTarget(ph, MetaAdapterFactory.getReferenceLink(new UUID(-4047124328593011742l, -4867279722304451481l), 6478870542308703666l, 6478870542308703669l, "decl")), "virtual_create_8260330507834998478", new Object[]{}));
   }
   public static void restorePlaceholder(final SNode mi) {
-    if (!(ClassLikeMember_Behavior.call_isRequired_3402736933911994098(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), mi, "virtual_getDeclaration_9097849371503884215", new Object[]{})) && Sequence.fromIterable(SNodeOperations.ofConcept(SLinkOperations.getTargets(SNodeOperations.getAncestor(mi, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false), "member", true), "jetbrains.mps.lang.classLike.structure.ClassLikeMemberInstance")).where(new IWhereFilter<SNode>() {
+    if (!(ClassLikeMember_Behavior.call_isRequired_3402736933911994098(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), mi, "virtual_getDeclaration_9097849371503884215", new Object[]{})) && Sequence.fromIterable(SNodeOperations.ofConcept(SLinkOperations.getChildren(SNodeOperations.getAncestor(mi, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107461130800l, 5375687026011219971l, "member")), "jetbrains.mps.lang.classLike.structure.ClassLikeMemberInstance")).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), it, "virtual_getDeclaration_9097849371503884215", new Object[]{}) == BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), mi, "virtual_getDeclaration_9097849371503884215", new Object[]{});
       }

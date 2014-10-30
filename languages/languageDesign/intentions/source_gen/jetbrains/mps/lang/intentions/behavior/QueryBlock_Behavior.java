@@ -9,6 +9,8 @@ import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
@@ -26,7 +28,7 @@ public class QueryBlock_Behavior {
     return result;
   }
   public static SNode virtual_getExpectedReturnType_1213877374441(SNode thisNode) {
-    return _quotation_createNode_wmmpg6_a0a2(SLinkOperations.getTarget(thisNode, "paramType", true));
+    return _quotation_createNode_wmmpg6_a0a2(SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-2906742361791184688l, -8921219390863794400l), 1240316299033l, 1240393479918l, "paramType")));
   }
   private static SNode _quotation_createNode_wmmpg6_a0a2(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
