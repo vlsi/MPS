@@ -41,7 +41,6 @@ import jetbrains.mps.ide.dialogs.project.creation.NewGeneratorDialog;
 import org.jetbrains.mps.openapi.model.EditableSModel;
 import jetbrains.mps.project.SModuleOperations;
 import jetbrains.mps.smodel.SModelStereotype;
-import jetbrains.mps.generator.GenerationFacade;
 import jetbrains.mps.ide.actions.MappingDialog;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
@@ -158,8 +157,8 @@ public class Generator_TabDescriptor extends RelationDescriptor {
     modelAccess.runReadAction(new Runnable() {
       public void run() {
         for (Generator generator : genList) {
-          for (SNode confAdapter : GenerationFacade.getOwnMappings(generator)) {
-            ListSequence.fromList(mappings).addElement((SNode) confAdapter);
+          for (SModel gm : generator.getOwnTemplateModels()) {
+            ListSequence.fromList(mappings).addSequence(ListSequence.fromList(SModelOperations.getRoots(gm, "jetbrains.mps.lang.generator.structure.MappingConfiguration")));
           }
         }
       }

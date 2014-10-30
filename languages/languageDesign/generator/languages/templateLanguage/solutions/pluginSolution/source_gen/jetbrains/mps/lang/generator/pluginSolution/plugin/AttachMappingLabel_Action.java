@@ -20,14 +20,13 @@ import org.jetbrains.annotations.NotNull;
 import org.apache.log4j.Level;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.ide.editor.MPSEditorDataKeys;
-import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.module.SModule;
-import java.util.List;
 import jetbrains.mps.smodel.Generator;
-import jetbrains.mps.generator.GenerationFacade;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
+import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
+import java.util.List;
 import java.util.Iterator;
 import jetbrains.mps.baseLanguage.closures.runtime.YieldingIterator;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
@@ -35,9 +34,9 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import javax.swing.SwingUtilities;
+import jetbrains.mps.openapi.editor.EditorContext;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
-import org.jetbrains.mps.openapi.model.SModel;
 
 public class AttachMappingLabel_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -119,15 +118,19 @@ public class AttachMappingLabel_Action extends BaseAction {
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       final SNode node = ((SNode) MapSequence.fromMap(_params).get("nodeSelected"));
-      IOperationContext operationContext = ((EditorContext) MapSequence.fromMap(_params).get("editorContext")).getOperationContext();
-      SModule module = operationContext.getModule();
-      List<SNode> mappings;
+      SModule module = SNodeOperations.getModel(node).getModule();
+      Iterable<SNode> mappings;
       if (module instanceof Generator) {
-        mappings = (List<SNode>) GenerationFacade.getOwnMappings((Generator) module);
+        Iterable<SModel> ownTemplateModels = ((Generator) module).getOwnTemplateModels();
+        mappings = Sequence.fromIterable(ownTemplateModels).translate(new ITranslator2<SModel, SNode>() {
+          public Iterable<SNode> translate(SModel it) {
+            return SModelOperations.getRoots(it, "jetbrains.mps.lang.generator.structure.MappingConfiguration");
+          }
+        });
       } else {
         mappings = SModelOperations.getRoots(SNodeOperations.getModel(node), "jetbrains.mps.lang.generator.structure.MappingConfiguration");
       }
-      final List<String> existingLabels = ListSequence.fromList(mappings).translate(new ITranslator2<SNode, String>() {
+      final List<String> existingLabels = Sequence.fromIterable(mappings).translate(new ITranslator2<SNode, String>() {
         public Iterable<String> translate(final SNode it) {
           return new Iterable<String>() {
             public Iterator<String> iterator() {
