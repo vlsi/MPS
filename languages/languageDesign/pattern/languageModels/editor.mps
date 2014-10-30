@@ -1619,9 +1619,6 @@
         <node concept="9wj7.1073389577006" id="9117569544655312588" role="9wj7.1073389446423.1073389446424" info="sn">
           <property role="9wj7.1073389577006.1073389577007" value="generator internal_ child descriptor" />
         </node>
-        <node concept="9wj7.1073389658414" id="9117569544655312589" role="9wj7.1073389446423.1073389446424" info="sg">
-          <reference role="9wj7.1139848536355.1140103550593" target="tp3t.9117569544655303722" resolveInfo="role" />
-        </node>
         <node concept="9wj7.1073389577006" id="9117569544655312590" role="9wj7.1073389446423.1073389446424" info="sn">
           <property role="9wj7.1073389577006.1073389577007" value="child link declaration" />
         </node>
@@ -1765,8 +1762,14 @@
             <property role="9wj7.1186414536763.1186414551515" value="true" />
           </node>
         </node>
-        <node concept="9wj7.1073389658414" id="9117569544655312643" role="9wj7.1073389446423.1073389446424" info="sg">
-          <reference role="9wj7.1139848536355.1140103550593" target="tp3t.9117569544655309657" resolveInfo="role" />
+        <node concept="9wj7.1088013125922" id="8767425448057320065" role="9wj7.1073389446423.1073389446424" info="sg">
+          <reference role="9wj7.1139848536355.1140103550593" target="tp3t.8767425448057210504" />
+          <node concept="9wj7.1088185857835" id="8767425448057320067" role="9wj7.1088013125922.1088186146602" info="ig">
+            <node concept="9wj7.1073389658414" id="8767425448057320096" role="9wj7.1080736578640.1080736633877" info="sg">
+              <property role="9wj7.1139848536355.1140017977771" value="true" />
+              <reference role="9wj7.1139848536355.1140103550593" target="tpce.1071599776563" resolveInfo="role" />
+            </node>
+          </node>
         </node>
         <node concept="9wj7.1073389577006" id="9117569544655312644" role="9wj7.1073389446423.1073389446424" info="sn">
           <property role="9wj7.1073389577006.1073389577007" value="," />
