@@ -137,4 +137,11 @@ class UpdaterModelListenersController {
       myModelListener.dispose();
     }
   }
+
+  public void clearCollectedEvents() {
+    if (myModelListener == null) {
+      return;
+    }
+    myModelListener.clearCollectedEvents();
+  }
 }

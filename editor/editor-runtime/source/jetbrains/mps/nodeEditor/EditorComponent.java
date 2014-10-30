@@ -114,6 +114,7 @@ import jetbrains.mps.openapi.editor.selection.SelectionListener;
 import jetbrains.mps.openapi.editor.selection.SelectionManager;
 import jetbrains.mps.openapi.editor.selection.SingularSelection;
 import jetbrains.mps.openapi.editor.style.StyleRegistry;
+import jetbrains.mps.openapi.editor.update.Updater;
 import jetbrains.mps.openapi.editor.update.UpdaterListenerAdapter;
 import jetbrains.mps.reloading.ReloadAdapter;
 import jetbrains.mps.reloading.ReloadListener;
@@ -1797,7 +1798,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   @Override
   public void rebuildEditorContent() {
     LOG.assertLog(ModelAccess.instance().isInEDT() || SwingUtilities.isEventDispatchThread(), "You should do this in EDT");
-    getUpdater().update(null);
+    getUpdater().update();
     relayout();
   }
 
@@ -2293,7 +2294,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
 
   @NotNull
   @Override
-  public UpdaterImpl getUpdater() {
+  public Updater getUpdater() {
     return myUpdater;
   }
 

@@ -47,4 +47,9 @@ class UpdaterModelListener extends EventsCollector {
       eventsAnalyzer.getSelectionHandler().setEditorSelection(myUpdater.getEditorComponent(), lastSelectedNode);
     }
   }
+
+  @Override
+  protected void clearCollectedEvents() {
+    super.clearCollectedEvents();
+  }
 }

@@ -72,8 +72,19 @@ public class UpdaterImpl implements Updater, CommandContext {
   }
 
   @Override
-  public void update(List<SModelEvent> events) {
-    LOG.assertLog(ModelAccess.instance().isInEDT(), "You should do this in EDT");
+  public void update() {
+    doUpdate(null);
+    myModelListenersController.clearCollectedEvents();
+    fireEditorUpdated();
+  }
+
+  void update(List<SModelEvent> events) {
+    doUpdate(events);
+    fireEditorUpdated();
+  }
+
+  private void doUpdate(List<SModelEvent> events) {
+    LOG.assertLog(ModelAccess.instance().isInEDT(), "This method should be called in EDT");
     if (myDisposed) {
       return;
     }
@@ -87,7 +98,6 @@ public class UpdaterImpl implements Updater, CommandContext {
       newRootCell = updateRootCell(editedNode, events);
     }
     myEditorComponent.setRootCell(newRootCell);
-    fireEditorUpdated();
   }
 
   /**
@@ -120,6 +130,7 @@ public class UpdaterImpl implements Updater, CommandContext {
 
   @Override
   public void flushModelEvents() {
+    LOG.assertLog(ModelAccess.instance().isInEDT(), "This method should be called in EDT");
     myModelListenersController.flush();
   }
 
