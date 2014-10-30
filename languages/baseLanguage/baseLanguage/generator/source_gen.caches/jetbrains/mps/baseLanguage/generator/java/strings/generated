@@ -68,9 +68,7 @@
   <source id="1225277059742" name="reduce_StringType">
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
-  <source id="1225277059745" name="reduce_SubstringExpression">
-    <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
-  </source>
+  <source id="1225277059745" name="reduce_SubstringExpression" />
   <source id="1225277059783" name="reduce_TrimOperation_Both" />
   <source id="1225277059818" name="string" />
   <source id="1461424660015429883" name="reduce_EscapeOperation" />

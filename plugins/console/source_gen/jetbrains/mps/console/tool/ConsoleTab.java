@@ -206,7 +206,7 @@ public class ConsoleTab extends BaseConsoleTab implements DataProvider {
         if (loadedModel == null || ListSequence.fromList(SModelOperations.getRoots(loadedModel, "jetbrains.mps.console.base.structure.ConsoleRoot")).isEmpty()) {
           SLinkOperations.setTarget(myRoot, "history", SConceptOperations.createNewNode("jetbrains.mps.console.base.structure.History", null), true);
         } else {
-          SLinkOperations.setTarget(myRoot, "history", SLinkOperations.getTarget(ListSequence.fromList(SModelOperations.getRoots(loadedModel, "jetbrains.mps.console.base.structure.ConsoleRoot")).first(), "history", true), true);
+          SLinkOperations.setTarget(myRoot, "history", SNodeOperations.copyNode(SLinkOperations.getTarget(ListSequence.fromList(SModelOperations.getRoots(loadedModel, "jetbrains.mps.console.base.structure.ConsoleRoot")).first(), "history", true)), true);
         }
         SLinkOperations.setTarget(myRoot, "commandHolder", SConceptOperations.createNewNode("jetbrains.mps.console.base.structure.CommandHolder", null), true);
         TemporaryModels.getInstance().addMissingImports(myModel);

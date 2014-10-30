@@ -189,6 +189,16 @@ public class ModelReader9Handler extends XMLSAXHandler<ModelLoadResult> {
         fieldmodel.getSModelHeader().setDoNotGenerate(Boolean.parseBoolean(value));
         return;
       }
+      if ("content".equals(name)) {
+        if ("header".equals(value)) {
+          result.setContentKind(ModelLoadResult.ContentKind.MODEL_HEADER);
+        } else if ("root".equals(value)) {
+          result.setContentKind(ModelLoadResult.ContentKind.MODEL_ROOT);
+        } else {
+          throw new SAXException("unknown content attribute value: " + value);
+        }
+        return;
+      }
       super.handleAttribute(resultObject, name, value);
     }
     @Override

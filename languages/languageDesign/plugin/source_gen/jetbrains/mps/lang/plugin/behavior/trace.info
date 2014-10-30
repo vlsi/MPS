@@ -106,7 +106,7 @@
       <unit at="8,0,19,0" name="jetbrains.mps.lang.plugin.behavior.ConceptFunctionParameter_IModule_BehaviorDescriptor" />
     </file>
     <file name="ActionReference_BehaviorDescriptor.java">
-      <unit at="7,0,15,0" name="jetbrains.mps.lang.plugin.behavior.ActionReference_BehaviorDescriptor" />
+      <unit at="8,0,16,0" name="jetbrains.mps.lang.plugin.behavior.ActionReference_BehaviorDescriptor" />
     </file>
     <file name="ActionDeclaration_BehaviorDescriptor.java">
       <unit at="19,0,66,0" name="jetbrains.mps.lang.plugin.behavior.ActionDeclaration_BehaviorDescriptor" />
@@ -160,7 +160,7 @@
       <unit at="7,0,15,0" name="jetbrains.mps.lang.plugin.behavior.PopupCreator_BehaviorDescriptor" />
     </file>
     <file name="ModificationStatement_BehaviorDescriptor.java">
-      <unit at="7,0,15,0" name="jetbrains.mps.lang.plugin.behavior.ModificationStatement_BehaviorDescriptor" />
+      <unit at="8,0,16,0" name="jetbrains.mps.lang.plugin.behavior.ModificationStatement_BehaviorDescriptor" />
     </file>
     <file name="IdeaConfigurationXml_BehaviorDescriptor.java">
       <unit at="10,0,21,0" name="jetbrains.mps.lang.plugin.behavior.IdeaConfigurationXml_BehaviorDescriptor" />
@@ -223,7 +223,7 @@
       <unit at="10,0,21,0" name="jetbrains.mps.lang.plugin.behavior.NonDumbAwareActions_BehaviorDescriptor" />
     </file>
     <file name="IdeaActionsDescriptor_BehaviorDescriptor.java">
-      <unit at="7,0,15,0" name="jetbrains.mps.lang.plugin.behavior.IdeaActionsDescriptor_BehaviorDescriptor" />
+      <unit at="8,0,16,0" name="jetbrains.mps.lang.plugin.behavior.IdeaActionsDescriptor_BehaviorDescriptor" />
     </file>
     <file name="ActionGroupMember_BehaviorDescriptor.java">
       <unit at="6,0,8,0" name="jetbrains.mps.lang.plugin.behavior.ActionGroupMember_BehaviorDescriptor" />
@@ -238,7 +238,7 @@
       <unit at="10,0,21,0" name="jetbrains.mps.lang.plugin.behavior.IdeaInitializerDescriptor_BehaviorDescriptor" />
     </file>
     <file name="ShortcutChange_BehaviorDescriptor.java">
-      <unit at="6,0,8,0" name="jetbrains.mps.lang.plugin.behavior.ShortcutChange_BehaviorDescriptor" />
+      <unit at="7,0,9,0" name="jetbrains.mps.lang.plugin.behavior.ShortcutChange_BehaviorDescriptor" />
     </file>
     <file name="EverywhereActionPlace_BehaviorDescriptor.java">
       <unit at="7,0,15,0" name="jetbrains.mps.lang.plugin.behavior.EverywhereActionPlace_BehaviorDescriptor" />
@@ -343,7 +343,7 @@
       <unit at="7,0,15,0" name="jetbrains.mps.lang.plugin.behavior.EditableModel_BehaviorDescriptor" />
     </file>
     <file name="PluginDependency_BehaviorDescriptor.java">
-      <unit at="8,0,17,0" name="jetbrains.mps.lang.plugin.behavior.PluginDependency_BehaviorDescriptor" />
+      <unit at="9,0,18,0" name="jetbrains.mps.lang.plugin.behavior.PluginDependency_BehaviorDescriptor" />
     </file>
     <file name="PreferencePage_BehaviorDescriptor.java">
       <unit at="14,0,37,0" name="jetbrains.mps.lang.plugin.behavior.PreferencePage_BehaviorDescriptor" />

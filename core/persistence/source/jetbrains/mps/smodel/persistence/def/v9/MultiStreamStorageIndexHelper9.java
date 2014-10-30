@@ -15,13 +15,14 @@
  */
 package jetbrains.mps.smodel.persistence.def.v9;
 
+import jetbrains.mps.smodel.adapter.ids.SLanguageId;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.util.Consumer;
 
 class MultiStreamStorageIndexHelper9 extends StorageIndexHelper9 {
-
   private Consumer<SModelReference> importsConsumer;
+  private Consumer<SLanguageId> langsConsumer;
 
   public MultiStreamStorageIndexHelper9(SModelReference modelRef) {
     super(modelRef);
@@ -37,5 +38,16 @@ class MultiStreamStorageIndexHelper9 extends StorageIndexHelper9 {
 
   public void setUsedImportsListener(Consumer<SModelReference> ref) {
     this.importsConsumer = ref;
+  }
+
+  public String getUsedLanguageIndex(@NotNull SLanguageId lang) {
+    if (langsConsumer != null) {
+      langsConsumer.consume(lang);
+    }
+    return super.getUsedLanguageIndex(lang);
+  }
+
+  public void setLangConsumer(Consumer<SLanguageId> langsConsumer) {
+    this.langsConsumer = langsConsumer;
   }
 }
