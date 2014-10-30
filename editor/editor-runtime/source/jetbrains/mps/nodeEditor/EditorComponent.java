@@ -84,7 +84,6 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
 import jetbrains.mps.nodeEditor.cells.ParentSettings;
-import jetbrains.mps.nodeEditor.commands.CommandContextImpl;
 import jetbrains.mps.nodeEditor.folding.CallAction_ToggleCellFolding;
 import jetbrains.mps.nodeEditor.folding.CellAction_FoldAll;
 import jetbrains.mps.nodeEditor.folding.CellAction_FoldCell;
@@ -106,6 +105,7 @@ import jetbrains.mps.openapi.editor.cells.CellTraversalUtil;
 import jetbrains.mps.openapi.editor.cells.KeyMapAction;
 import jetbrains.mps.openapi.editor.cells.SubstituteAction;
 import jetbrains.mps.openapi.editor.cells.SubstituteInfo;
+import jetbrains.mps.openapi.editor.commands.CommandContext;
 import jetbrains.mps.openapi.editor.message.EditorMessageOwner;
 import jetbrains.mps.openapi.editor.message.SimpleEditorMessage;
 import jetbrains.mps.openapi.editor.selection.MultipleSelection;
@@ -330,8 +330,6 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   private EditorContext myEditorContext;
   private final EditorMessageOwner myOwner = new EditorMessageOwner() {
   };
-
-  private CommandContextImpl myCommandContext;
 
   private IntentionsSupport myIntentionsSupport;
   @SuppressWarnings({"UnusedDeclaration"})
@@ -2452,11 +2450,8 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     return false;
   }
 
-  public CommandContextImpl getCommandContext() {
-    if (myCommandContext == null) {
-      myCommandContext = new CommandContextImpl(this);
-    }
-    return myCommandContext;
+  public CommandContext getCommandContext() {
+    return myUpdater;
   }
 
   /**

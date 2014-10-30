@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.nodeEditor.updater;
 
-import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.smodel.EventsCollector;
 import jetbrains.mps.smodel.event.SModelEvent;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -27,34 +26,25 @@ import java.util.List;
  * Date: 09/09/14
  */
 class UpdaterModelListener extends EventsCollector {
-  private final EditorComponent myEditorComponent;
   private final UpdaterImpl myUpdater;
-  private boolean myProcessSelection;
 
-  UpdaterModelListener(UpdaterImpl updater, EditorComponent editorComponent) {
+  UpdaterModelListener(UpdaterImpl updater) {
     myUpdater = updater;
-    myEditorComponent = editorComponent;
   }
 
   protected void eventsHappened(List<SModelEvent> events) {
-    SNode lastSelectedNode = myEditorComponent.getSelectedNode();
-    ModelEventsVisitor eventsAnalyzer = new ModelEventsVisitor(events, myEditorComponent);
+    SNode lastSelectedNode = myUpdater.getEditorComponent().getSelectedNode();
+    ModelEventsVisitor eventsAnalyzer = new ModelEventsVisitor(events, myUpdater.getEditorComponent());
     if (eventsAnalyzer.isPropertyModification() && !myUpdater.requiresUpdate(eventsAnalyzer.getModifiedProperty(), eventsAnalyzer.isPropertyAddedRemoved())) {
       myUpdater.synchronizeCells(eventsAnalyzer.getModifiedProperty());
-      myEditorComponent.relayout();
+      myUpdater.getEditorComponent().relayout();
       return;
     }
 
     myUpdater.update(events);
-    myEditorComponent.relayout();
-    if (myProcessSelection && eventsAnalyzer.getSelectionHandler() != null) {
-      eventsAnalyzer.getSelectionHandler().setEditorSelection(myEditorComponent, lastSelectedNode);
+    myUpdater.getEditorComponent().relayout();
+    if (myUpdater.isSelectionProcessingAllowed() && eventsAnalyzer.getSelectionHandler() != null) {
+      eventsAnalyzer.getSelectionHandler().setEditorSelection(myUpdater.getEditorComponent(), lastSelectedNode);
     }
-  }
-
-  public boolean setProcessSelection(boolean processSelection) {
-    boolean oldValue = myProcessSelection;
-    myProcessSelection = processSelection;
-    return oldValue;
   }
 }

@@ -15,9 +15,7 @@
  */
 package jetbrains.mps.openapi.editor.update;
 
-import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.smodel.event.SModelEvent;
-import org.jetbrains.mps.openapi.model.SNode;
 
 import java.util.List;
 
