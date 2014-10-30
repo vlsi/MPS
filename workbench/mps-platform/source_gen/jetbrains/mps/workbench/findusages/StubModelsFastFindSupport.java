@@ -102,7 +102,7 @@ public class StubModelsFastFindSupport implements ApplicationComponent, FindUsag
   public void findModelUsages(Collection<SModel> scope, Set<SModelReference> modelReferences, Consumer<SModel> consumer, Consumer<SModel> processedConsumer) {
     modelReferences = SetSequence.fromSetWithValues(new HashSet<SModelReference>(), SetSequence.fromSet(modelReferences).where(new IWhereFilter<SModelReference>() {
       public boolean accept(SModelReference it) {
-        return "java_stub".equals(SModelStereotype.getStereotype(it.getModelName()));
+        return SModelStereotype.JAVA_STUB.equals(SModelStereotype.getStereotype(it.getModelName()));
       }
     }));
     MultiMap<SModel, SModelReference> candidates = findCandidates(scope, modelReferences, processedConsumer, new Mapper<SModelReference, String>() {

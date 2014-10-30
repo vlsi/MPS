@@ -1178,7 +1178,7 @@
           <reference role="79nr.1203088046679.1203088061055" target="6937807405124198153" resolveInfo="ImportAllModulesFromFolder" />
         </node>
       </node>
-      <node concept="79nr.1203092361741" id="6937807405124297520" role="79nr.1203087890642.1204991552650" info="ng">
+      <node concept="79nr.1203092361741" id="6937807405124297520" role="79nr.1203087890642.1204991552650" info="lg">
         <reference role="79nr.1203092361741.1203092736097" target="ekwn.6893431717880497466" resolveInfo="ActionsAsIntentions" />
       </node>
     </node>
@@ -9982,13 +9982,9 @@
                   <reference role="vg0i.1204053956946.1068499141037" target="cu2c.~SModelRepository%dgetInstance()%cjetbrains%dmps%dsmodel%dSModelRepository" resolveInfo="getInstance" />
                 </node>
                 <node concept="vg0i.1202948039474" id="8722937377469658040" role="vg0i.1197027756228.1197027833540" info="nn">
-                  <reference role="vg0i.1204053956946.1068499141037" target="cu2c.~SModelRepository%dgetModelDescriptor(jetbrains%dmps%dsmodel%dSModelFqName)%corg%djetbrains%dmps%dopenapi%dmodel%dSModel" resolveInfo="getModelDescriptor" />
-                  <node concept="vg0i.1081236700937" id="8722937377469658041" role="vg0i.1204053956946.1068499141038" info="nn">
-                    <reference role="vg0i.1204053956946.1068499141037" target="cu2c.~SModelFqName%dfromString(java%dlang%dString)%cjetbrains%dmps%dsmodel%dSModelFqName" resolveInfo="fromString" />
-                    <reference role="vg0i.1081236700937.1144433194310" target="cu2c.~SModelFqName" resolveInfo="SModelFqName" />
-                    <node concept="vg0i.1068498886296" id="3021153905150333442" role="vg0i.1204053956946.1068499141038" info="nn">
-                      <reference role="vg0i.1068498886296.1068581517664" target="8722937377469658030" resolveInfo="text" />
-                    </node>
+                  <reference role="vg0i.1204053956946.1068499141037" target="cu2c.~SModelRepository%dgetModelDescriptor(java%dlang%dString)%corg%djetbrains%dmps%dopenapi%dmodel%dSModel" resolveInfo="getModelDescriptor" />
+                  <node concept="vg0i.1068498886296" id="5430698888128112402" role="vg0i.1204053956946.1068499141038" info="nn">
+                    <reference role="vg0i.1068498886296.1068581517664" target="8722937377469658030" resolveInfo="text" />
                   </node>
                 </node>
               </node>
@@ -16750,7 +16746,7 @@
           <reference role="79nr.1203088046679.1203088061055" target="8722937377469659497" resolveInfo="GenerateBuildForProjectAction" />
         </node>
       </node>
-      <node concept="79nr.1203092361741" id="8722937377469659547" role="79nr.1203087890642.1204991552650" info="ng">
+      <node concept="79nr.1203092361741" id="8722937377469659547" role="79nr.1203087890642.1204991552650" info="lg">
         <reference role="79nr.1203092361741.1203092736097" target="tprs.1204991221264" resolveInfo="ProjectNewActions" />
       </node>
     </node>

@@ -83,6 +83,7 @@ public class ModelReferenceExpression_Editor extends DefaultNodeEditor {
     public ModelReferenceExpression_generic_cellMenu_uy53zt_a0c0() {
     }
     public List<?> createParameterObjects(SNode node, IOperationContext operationContext, EditorContext editorContext) {
+      // FIXME need a helper to provide all models visible in a repository 
       return SModelRepository.getInstance().getModelDescriptors();
     }
     protected void handleAction(Object parameterObject, SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
@@ -99,7 +100,7 @@ public class ModelReferenceExpression_Editor extends DefaultNodeEditor {
       return this.getMatchingText_internal((SModel) parameterObject);
     }
     public String getMatchingText_internal(SModel parameterObject) {
-      return SNodeOperations.getModelLongName(parameterObject) + "@" + SModelStereotype.getStereotype(parameterObject);
+      return parameterObject.getModelName();
     }
   }
   private EditorCell createConstant_uy53zt_d0(EditorContext editorContext, SNode node) {
@@ -178,6 +179,7 @@ public class ModelReferenceExpression_Editor extends DefaultNodeEditor {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("stereotype");
     provider.setNoTargetText("<no stereotype>");
+    provider.setAllowsEmptyTarget(true);
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("property_stereotype");

@@ -47,7 +47,7 @@ import org.jetbrains.mps.openapi.language.SConceptRepository;
 import jetbrains.mps.ide.findusages.model.scopes.ModelsScope;
 import java.util.Collections;
 import jetbrains.mps.progress.EmptyProgressMonitor;
-import jetbrains.mps.smodel.SModelFqName;
+import jetbrains.mps.smodel.SModelStereotype;
 import java.util.ArrayList;
 import jetbrains.mps.smodel.CopyUtil;
 import com.intellij.openapi.extensions.PluginId;
@@ -57,7 +57,6 @@ import jetbrains.mps.debugger.java.runtime.JavaDebugger;
 import java.io.File;
 import com.intellij.ide.plugins.IdeaPluginDescriptorImpl;
 import jetbrains.mps.internal.collections.runtime.ISelector;
-import jetbrains.mps.smodel.SModelStereotype;
 import org.jetbrains.mps.openapi.model.SReference;
 import jetbrains.mps.smodel.SNodePointer;
 import org.apache.log4j.Logger;
@@ -227,7 +226,7 @@ public class EvaluationWithContextContainer extends EvaluationContainer {
   }
   @Nullable
   private SModel findStubForFqName(String fqName) {
-    return SModelRepository.getInstance().getModelDescriptor(new SModelFqName(fqName, "java_stub").toString());
+    return SModelRepository.getInstance().getModelDescriptor(SModelStereotype.withStereotype(fqName, SModelStereotype.JAVA_STUB));
   }
   private boolean needUpdateVariables() {
     return !(myVariablesInitialized) || !(myIsInWatch);
@@ -262,7 +261,7 @@ public class EvaluationWithContextContainer extends EvaluationContainer {
     final String modelFqName = modelFqNameFromUnitName(unitName);
     return Sequence.fromIterable(Sequence.fromArray(SModelStereotype.values)).select(new ISelector<String, SModel>() {
       public SModel select(String stereotype) {
-        return SModelRepository.getInstance().getModelDescriptor(new SModelFqName(modelFqName, stereotype).toString());
+        return SModelRepository.getInstance().getModelDescriptor(SModelStereotype.withStereotype(modelFqName, stereotype));
       }
     }).where(new IWhereFilter<SModel>() {
       public boolean accept(SModel it) {

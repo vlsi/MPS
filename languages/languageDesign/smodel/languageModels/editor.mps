@@ -36,7 +36,6 @@
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123159" name="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068581242863" name="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068581242864" name="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068581242875" name="jetbrains.mps.baseLanguage.structure.PlusExpression" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1070475926800" name="jetbrains.mps.baseLanguage.structure.StringLiteral" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1070534058343" name="jetbrains.mps.baseLanguage.structure.NullLiteral" />
     <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1071666914219" name="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" />
@@ -123,6 +122,8 @@
     <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/625126330682908270" name="jetbrains.mps.lang.editor.structure.CellModel_ReferencePresentation" />
     <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1402906326895675325" name="jetbrains.mps.lang.editor.structure.CellActionMap_FunctionParm_selectedNode" />
     <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/3383245079137382180" name="jetbrains.mps.lang.editor.structure.StyleClass" />
+    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/6329021646629104954" name="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/6329021646629104957" name="jetbrains.mps.baseLanguage.structure.TextCommentPart" />
     <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/7667276221847570194" name="jetbrains.mps.lang.editor.structure.ParametersInformationStyleClassItem" />
     <property id="f3061a53-9226-4cc5-a443-f952ceaf5816/1070475926800/1070475926801" name="value" />
     <property id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1073389446423/1073389446425" name="vertical" />
@@ -135,6 +136,7 @@
     <property id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1139535280617/1139537298254" name="description" />
     <property id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1139848536355/1139852716018" name="noTargetText" />
     <property id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1139848536355/1140017977771" name="readOnly" />
+    <property id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1139848536355/1140114345053" name="allowEmptyText" />
     <property id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1140524381322/1140524450554" name="vertical" />
     <property id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1140524381322/1140524450557" name="separatorText" />
     <property id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1165253627126/1165254125954" name="presentation" />
@@ -150,6 +152,7 @@
     <property id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1215007762405/1215007802031" name="value" />
     <property id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1236262245656/1238091709220" name="labelName" />
     <property id="7866978e-a0f0-4cc7-81bc-4d213d9375e1/1140137987495/1238684351431" name="asCast" />
+    <property id="f3061a53-9226-4cc5-a443-f952ceaf5816/6329021646629104957/6329021646629104958" name="text" />
     <refRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1204053956946/1068499141037" name="baseMethodDeclaration" />
     <refRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068498886296/1068581517664" name="variableDeclaration" />
     <refRole id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1078939183254/1078939183255" name="editorComponent" />
@@ -222,6 +225,7 @@
     <childRole id="83888646-71ce-4f1c-9c53-c54016f6ad4f/1237721394592/1237721435808" name="initValue" />
     <childRole id="83888646-71ce-4f1c-9c53-c54016f6ad4f/540871147943773365/540871147943773366" name="argument" />
     <childRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/4972933694980447171/5680397130376446158" name="type" />
+    <childRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/6329021646629104954/6329021646629175155" name="commentPart" />
   </debugInfo>
   <languages>
     <use id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd" version="-1" index="abtv" />
@@ -3885,6 +3889,11 @@
               <property role="9wj7.1165253627126.1165254125954" value="custom" />
               <node concept="9wj7.1163613035599" id="559557797393041622" role="9wj7.1165420413719.1165420413720" info="in">
                 <node concept="vg0i.1068580123136" id="559557797393041623" role="vg0i.1137021947720.1137022507850" info="sn">
+                  <node concept="vg0i.6329021646629104954" id="5430698888127379224" role="vg0i.1068580123136.1068581517665" info="nn">
+                    <node concept="vg0i.6329021646629104957" id="5430698888127380661" role="vg0i.6329021646629104954.6329021646629175155" info="nn">
+                      <property role="vg0i.6329021646629104957.6329021646629104958" value="FIXME need a helper to provide all models visible in a repository" />
+                    </node>
+                  </node>
                   <node concept="vg0i.1068580123155" id="7649594692996251890" role="vg0i.1068580123136.1068581517665" info="nn">
                     <node concept="vg0i.1197027756228" id="559557797393049200" role="vg0i.1068580123155.1068580123156" info="nn">
                       <node concept="vg0i.1081236700937" id="559557797393049199" role="vg0i.1197027756228.1197027771414" info="nn">
@@ -3938,22 +3947,11 @@
               </node>
               <node concept="9wj7.1164052439493" id="559557797393049248" role="9wj7.1165253627126.1165254159533" info="in">
                 <node concept="vg0i.1068580123136" id="559557797393049249" role="vg0i.1137021947720.1137022507850" info="sn">
-                  <node concept="vg0i.1068580123155" id="559557797393049250" role="vg0i.1068580123136.1068581517665" info="nn">
-                    <node concept="vg0i.1068581242875" id="559557797393050509" role="vg0i.1068580123155.1068580123156" info="nn">
-                      <node concept="vg0i.1081236700937" id="8232981609242714535" role="vg0i.1081773326031.1081773367579" info="nn">
-                        <reference role="vg0i.1204053956946.1068499141037" target="cu2c.~SModelStereotype%dgetStereotype(org%djetbrains%dmps%dopenapi%dmodel%dSModel)%cjava%dlang%dString" resolveInfo="getStereotype" />
-                        <reference role="vg0i.1081236700937.1144433194310" target="cu2c.~SModelStereotype" resolveInfo="SModelStereotype" />
-                        <node concept="9wj7.1163613549566" id="8232981609242714536" role="vg0i.1204053956946.1068499141038" info="nn" />
-                      </node>
-                      <node concept="vg0i.1068581242875" id="559557797393050505" role="vg0i.1081773326031.1081773367580" info="nn">
-                        <node concept="vg0i.1081236700937" id="8232981609242714364" role="vg0i.1081773326031.1081773367580" info="nn">
-                          <reference role="vg0i.1204053956946.1068499141037" target="unno.9160302885342508446" resolveInfo="getModelLongName" />
-                          <reference role="vg0i.1081236700937.1144433194310" target="unno.2089287822043606602" resolveInfo="SNodeOperations" />
-                          <node concept="9wj7.1163613549566" id="8232981609242714365" role="vg0i.1204053956946.1068499141038" info="nn" />
-                        </node>
-                        <node concept="vg0i.1070475926800" id="559557797393050508" role="vg0i.1081773326031.1081773367579" info="nn">
-                          <property role="vg0i.1070475926800.1070475926801" value="@" />
-                        </node>
+                  <node concept="vg0i.1068580123155" id="5430698888127385138" role="vg0i.1068580123136.1068581517665" info="nn">
+                    <node concept="vg0i.1197027756228" id="5430698888127401800" role="vg0i.1068580123155.1068580123156" info="nn">
+                      <node concept="9wj7.1163613549566" id="5430698888127385136" role="vg0i.1197027756228.1197027771414" info="nn" />
+                      <node concept="vg0i.1202948039474" id="5430698888127403666" role="vg0i.1197027756228.1197027833540" info="nn">
+                        <reference role="vg0i.1204053956946.1068499141037" target="ec5l.~SModel%dgetModelName()%cjava%dlang%dString" resolveInfo="getModelName" />
                       </node>
                     </node>
                   </node>
@@ -3994,6 +3992,7 @@
             <reference role="9wj7.1381004262292414836.1381004262292426837" target="tpen.1186415544875" resolveInfo="KeyWord" />
           </node>
           <node concept="9wj7.1073389658414" id="559557797393041607" role="9wj7.1073389446423.1073389446424" info="sg">
+            <property role="9wj7.1139848536355.1140114345053" value="true" />
             <reference role="9wj7.1139848536355.1140103550593" target="tp25.559557797393021807" resolveInfo="stereotype" />
           </node>
           <node concept="9wj7.1106270549637" id="559557797393041608" role="9wj7.1073389446423.1106270802874" info="nn" />

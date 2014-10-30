@@ -4654,8 +4654,9 @@
                                   </node>
                                 </node>
                               </node>
-                              <node concept="vg0i.1070475926800" id="1578360511945509665" role="vg0i.1197027756228.1197027771414" info="nn">
-                                <property role="vg0i.1070475926800.1070475926801" value="java_stub" />
+                              <node concept="vg0i.1070533707846" id="7549572109232357641" role="vg0i.1197027756228.1197027771414" info="nn">
+                                <reference role="vg0i.1070533707846.1144433057691" target="cu2c.~SModelStereotype" resolveInfo="SModelStereotype" />
+                                <reference role="vg0i.1068498886296.1068581517664" target="cu2c.~SModelStereotype%dJAVA_STUB" resolveInfo="JAVA_STUB" />
                               </node>
                             </node>
                           </node>

@@ -512,7 +512,7 @@
     </node>
     <node concept="79nr.1562714432501166197" id="1453248744423272129" info="ng">
       <property role="asn4.1169194658468.1169194664001" value="Default" />
-      <node concept="79nr.1562714432501166198" id="1453248744423272130" role="79nr.1562714432501166197.1562714432501166199" info="ng">
+      <node concept="79nr.1562714432501166198" id="1453248744423272130" role="79nr.1562714432501166197.1562714432501166199" info="lg">
         <reference role="79nr.6193305307616715384.6193305307616734326" target="1453248744423276149" resolveInfo="ShowModelChecker" />
         <node concept="79nr.1207318242772" id="1453248744423272131" role="79nr.1562714432501166198.1562714432501166206" info="ng">
           <property role="79nr.1207318242772.1207318242774" value="C" />
@@ -528,7 +528,7 @@
           <reference role="79nr.1203088046679.1203088061055" target="1453248744423276149" resolveInfo="ShowModelChecker" />
         </node>
       </node>
-      <node concept="79nr.1203092361741" id="1453248744423276125" role="79nr.1203087890642.1204991552650" info="ng">
+      <node concept="79nr.1203092361741" id="1453248744423276125" role="79nr.1203087890642.1204991552650" info="lg">
         <reference role="79nr.1203092361741.1203092736097" target="tprs.1204991238062" resolveInfo="Tools" />
         <reference role="79nr.1203092361741.1204992316090" target="tprs.1217598172089" resolveInfo="customTools" />
       </node>
@@ -541,7 +541,7 @@
           <reference role="79nr.1203088046679.1203088061055" target="1453248744423276216" resolveInfo="CheckProject" />
         </node>
       </node>
-      <node concept="79nr.1203092361741" id="1453248744423276129" role="79nr.1203087890642.1204991552650" info="ng">
+      <node concept="79nr.1203092361741" id="1453248744423276129" role="79nr.1203087890642.1204991552650" info="lg">
         <reference role="79nr.1203092361741.1203092736097" target="tprs.1204991220529" resolveInfo="ProjectActions" />
         <reference role="79nr.1203092361741.1204992316090" target="tprs.1453248744423272121" resolveInfo="check" />
       </node>
@@ -554,7 +554,7 @@
           <reference role="79nr.1203088046679.1203088061055" target="1453248744423276236" resolveInfo="CheckModule" />
         </node>
       </node>
-      <node concept="79nr.1203092361741" id="1453248744423276134" role="79nr.1203087890642.1204991552650" info="ng">
+      <node concept="79nr.1203092361741" id="1453248744423276134" role="79nr.1203087890642.1204991552650" info="lg">
         <reference role="79nr.1203092361741.1203092736097" target="tprs.401659284115173011" resolveInfo="CommonModuleActions" />
         <reference role="79nr.1203092361741.1204992316090" target="tprs.401659284115173016" resolveInfo="check" />
       </node>
@@ -567,7 +567,7 @@
           <reference role="79nr.1203088046679.1203088061055" target="1453248744423276340" resolveInfo="CheckModel" />
         </node>
       </node>
-      <node concept="79nr.1203092361741" id="1453248744423276148" role="79nr.1203087890642.1204991552650" info="ng">
+      <node concept="79nr.1203092361741" id="1453248744423276148" role="79nr.1203087890642.1204991552650" info="lg">
         <reference role="79nr.1203092361741.1203092736097" target="tprs.1204991218714" resolveInfo="ModelActions" />
         <reference role="79nr.1203092361741.1204992316090" target="tprs.1453248744423272127" resolveInfo="check" />
       </node>
@@ -2012,7 +2012,7 @@
           <reference role="79nr.1203088046679.1203088061055" target="1833497744616771108" resolveInfo="FindReferencesToNonReferenceable" />
         </node>
       </node>
-      <node concept="79nr.1203092361741" id="5361317699454650269" role="79nr.1203087890642.1204991552650" info="ng">
+      <node concept="79nr.1203092361741" id="5361317699454650269" role="79nr.1203087890642.1204991552650" info="lg">
         <reference role="79nr.1203092361741.1203092736097" target="tprs.2899596005954254197" resolveInfo="ToolsInternal" />
       </node>
     </node>
@@ -2493,8 +2493,9 @@
                           </node>
                           <node concept="vg0i.1202948039474" id="6550340959293398172" role="vg0i.1197027756228.1197027833540" info="nn">
                             <reference role="vg0i.1204053956946.1068499141037" target="e2lb.~String%dequals(java%dlang%dObject)%cboolean" resolveInfo="equals" />
-                            <node concept="vg0i.1070475926800" id="6550340959293398173" role="vg0i.1204053956946.1068499141038" info="nn">
-                              <property role="vg0i.1070475926800.1070475926801" value="java_stub" />
+                            <node concept="vg0i.1070533707846" id="7549572109232128520" role="vg0i.1204053956946.1068499141038" info="nn">
+                              <reference role="vg0i.1070533707846.1144433057691" target="cu2c.~SModelStereotype" resolveInfo="SModelStereotype" />
+                              <reference role="vg0i.1068498886296.1068581517664" target="cu2c.~SModelStereotype%dJAVA_STUB" resolveInfo="JAVA_STUB" />
                             </node>
                           </node>
                         </node>
@@ -4417,7 +4418,7 @@
           <reference role="79nr.1203088046679.1203088061055" target="7502735747194136940" resolveInfo="CheckNamespace" />
         </node>
       </node>
-      <node concept="79nr.1203092361741" id="1526939793344460688" role="79nr.1203087890642.1204991552650" info="ng">
+      <node concept="79nr.1203092361741" id="1526939793344460688" role="79nr.1203087890642.1204991552650" info="lg">
         <reference role="79nr.1203092361741.1203092736097" target="tprs.1226499076725" resolveInfo="NamespaceActions" />
         <reference role="79nr.1203092361741.1204992316090" target="tprs.1063683241952544771" resolveInfo="check" />
       </node>

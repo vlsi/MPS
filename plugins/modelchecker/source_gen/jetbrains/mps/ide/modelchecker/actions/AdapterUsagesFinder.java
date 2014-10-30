@@ -46,7 +46,7 @@ public class AdapterUsagesFinder extends ModelCheckerIssueFinder {
         // Check for adapter references 
         for (SReference ref : Sequence.fromIterable(SNodeOperations.getReferences(node))) {
           SModelReference targetSModelReference = ref.getTargetSModelReference();
-          if (targetSModelReference != null && SModelStereotype.getStereotype(targetSModelReference.getModelName()).equals("java_stub")) {
+          if (targetSModelReference != null && SModelStereotype.getStereotype(targetSModelReference.getModelName()).equals(SModelStereotype.JAVA_STUB)) {
             SNode target = SLinkOperations.getTargetNode(ref);
             if ((target != null) && SNodeOperations.isInstanceOf(target, "jetbrains.mps.baseLanguage.structure.ClassConcept")) {
               String qualifiedName = BehaviorReflection.invokeVirtual(String.class, SNodeOperations.cast(target, "jetbrains.mps.baseLanguage.structure.ClassConcept"), "virtual_getFqName_1213877404258", new Object[]{});

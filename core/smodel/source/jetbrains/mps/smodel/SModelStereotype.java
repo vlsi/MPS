@@ -30,6 +30,7 @@ public class SModelStereotype {
   public static final String GENERATOR = "generator";
   public static final String TESTS = "tests";
   public static final String DESCRIPTOR = "descriptor";
+  public static final String JAVA_STUB = "java" + STUB_SUFFIX;
 
   //------
 

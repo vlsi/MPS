@@ -884,7 +884,7 @@
     <node concept="79nr.1203087890642" id="1204991218714" info="ng">
       <property role="asn4.1169194658468.1169194664001" value="ModelActions" />
       <property role="asn4.1133920641626.1193676396447" value="Menu.ProjectPane.Model" />
-      <node concept="79nr.1203092361741" id="5152061616759057015" role="79nr.1203087890642.1204991552650" info="ng">
+      <node concept="79nr.1203092361741" id="5152061616759057015" role="79nr.1203087890642.1204991552650" info="lg">
         <reference role="79nr.1203092361741.1203092736097" target="4053449317375378317" resolveInfo="FlyingActions" />
       </node>
       <node concept="79nr.1207145163717" id="1207148419636" role="79nr.1203087890642.1207145245948" info="ng">
@@ -972,7 +972,7 @@
     <node concept="79nr.1203087890642" id="1204991220529" info="ng">
       <property role="asn4.1169194658468.1169194664001" value="ProjectActions" />
       <property role="asn4.1133920641626.1193676396447" value="Menu.ProjectPane.Project" />
-      <node concept="79nr.1203092361741" id="4053449317375481133" role="79nr.1203087890642.1204991552650" info="ng">
+      <node concept="79nr.1203092361741" id="4053449317375481133" role="79nr.1203087890642.1204991552650" info="lg">
         <reference role="79nr.1203092361741.1203092736097" target="4053449317375378317" resolveInfo="FlyingActions" />
       </node>
       <node concept="79nr.1207145163717" id="1207148416040" role="79nr.1203087890642.1207145245948" info="ng">
@@ -1012,7 +1012,7 @@
       <property role="79nr.1203087890642.1204991940915" value="New" />
       <property role="asn4.1133920641626.1193676396447" value="Menu.ProjectPane.Project" />
       <property role="79nr.1203087890642.1213283637680" value="true" />
-      <node concept="79nr.1203092361741" id="1204998357770" role="79nr.1203087890642.1204991552650" info="ng">
+      <node concept="79nr.1203092361741" id="1204998357770" role="79nr.1203087890642.1204991552650" info="lg">
         <reference role="79nr.1203092361741.1203092736097" target="1204991220529" resolveInfo="ProjectActions" />
         <reference role="79nr.1203092361741.1204992316090" target="1204910715381" resolveInfo="projectNew" />
       </node>
@@ -1029,7 +1029,7 @@
     <node concept="79nr.1203087890642" id="1204991224874" info="ng">
       <property role="asn4.1169194658468.1169194664001" value="LanguageActions" />
       <property role="asn4.1133920641626.1193676396447" value="Menu.ProjectPane.Module.Language" />
-      <node concept="79nr.1203092361741" id="4053449317375481128" role="79nr.1203087890642.1204991552650" info="ng">
+      <node concept="79nr.1203092361741" id="4053449317375481128" role="79nr.1203087890642.1204991552650" info="lg">
         <reference role="79nr.1203092361741.1203092736097" target="4053449317375378317" resolveInfo="FlyingActions" />
       </node>
       <node concept="79nr.1207145163717" id="1207148410459" role="79nr.1203087890642.1207145245948" info="ng">
@@ -1061,7 +1061,7 @@
     <node concept="79nr.1203087890642" id="1204991226689" info="ng">
       <property role="asn4.1169194658468.1169194664001" value="SolutionActions" />
       <property role="asn4.1133920641626.1193676396447" value="Menu.ProjectPane.Module.Solution" />
-      <node concept="79nr.1203092361741" id="4053449317375477137" role="79nr.1203087890642.1204991552650" info="ng">
+      <node concept="79nr.1203092361741" id="4053449317375477137" role="79nr.1203087890642.1204991552650" info="lg">
         <reference role="79nr.1203092361741.1203092736097" target="4053449317375378317" resolveInfo="FlyingActions" />
       </node>
       <node concept="79nr.1207145163717" id="1207148457205" role="79nr.1203087890642.1207145245948" info="ng">
@@ -1085,7 +1085,7 @@
       <property role="79nr.1203087890642.1204991940915" value="New" />
       <property role="asn4.1133920641626.1193676396447" value="Menu.ProjectPane.Module.Solution" />
       <property role="79nr.1203087890642.1213283637680" value="true" />
-      <node concept="79nr.1203092361741" id="1204998497279" role="79nr.1203087890642.1204991552650" info="ng">
+      <node concept="79nr.1203092361741" id="1204998497279" role="79nr.1203087890642.1204991552650" info="lg">
         <reference role="79nr.1203092361741.1203092736097" target="1204991226689" resolveInfo="SolutionActions" />
         <reference role="79nr.1203092361741.1204992316090" target="1204911787238" resolveInfo="solutionNew" />
       </node>
@@ -1101,7 +1101,7 @@
     <node concept="79nr.1203087890642" id="1204991228238" info="ng">
       <property role="asn4.1169194658468.1169194664001" value="DevkitActions" />
       <property role="asn4.1133920641626.1193676396447" value="Menu.ProjectPane.Module.Devkit" />
-      <node concept="79nr.1203092361741" id="5152061616759032948" role="79nr.1203087890642.1204991552650" info="ng">
+      <node concept="79nr.1203092361741" id="5152061616759032948" role="79nr.1203087890642.1204991552650" info="lg">
         <reference role="79nr.1203092361741.1203092736097" target="4053449317375378317" resolveInfo="FlyingActions" />
       </node>
       <node concept="79nr.1207145163717" id="1207148337066" role="79nr.1203087890642.1207145245948" info="ng">
@@ -1137,7 +1137,7 @@
     <node concept="79nr.1203087890642" id="1204991229896" info="ng">
       <property role="asn4.1169194658468.1169194664001" value="GeneratorActions" />
       <property role="asn4.1133920641626.1193676396447" value="Menu.ProjectPane.Module.Generator" />
-      <node concept="79nr.1203092361741" id="5152061616759057021" role="79nr.1203087890642.1204991552650" info="ng">
+      <node concept="79nr.1203092361741" id="5152061616759057021" role="79nr.1203087890642.1204991552650" info="lg">
         <reference role="79nr.1203092361741.1203092736097" target="4053449317375378317" resolveInfo="FlyingActions" />
       </node>
       <node concept="79nr.1207145163717" id="1207148353999" role="79nr.1203087890642.1207145245948" info="ng">
@@ -1159,7 +1159,7 @@
     <node concept="79nr.1203087890642" id="1204991230694" info="ng">
       <property role="asn4.1169194658468.1169194664001" value="TransientModulesActions" />
       <property role="asn4.1133920641626.1193676396447" value="Menu.ProjectPane.TransientModules" />
-      <node concept="79nr.1203092361741" id="5152061616758930195" role="79nr.1203087890642.1204991552650" info="ng">
+      <node concept="79nr.1203092361741" id="5152061616758930195" role="79nr.1203087890642.1204991552650" info="lg">
         <reference role="79nr.1203092361741.1203092736097" target="4053449317375378317" resolveInfo="FlyingActions" />
       </node>
       <node concept="79nr.1207145163717" id="1207148463880" role="79nr.1203087890642.1207145245948" info="ng">
@@ -1174,7 +1174,7 @@
       <property role="asn4.1133920641626.1193676396447" value="Menu.EditorPopup" />
       <property role="79nr.1203087890642.1205160838084" value="true" />
       <property role="79nr.1203087890642.1213283637680" value="true" />
-      <node concept="79nr.1203092361741" id="1204998642876" role="79nr.1203087890642.1204991552650" info="ng">
+      <node concept="79nr.1203092361741" id="1204998642876" role="79nr.1203087890642.1204991552650" info="lg">
         <reference role="79nr.1203092361741.1203092736097" target="ekwn.1755502566255660782" resolveInfo="EditorPopup" />
       </node>
       <node concept="79nr.1207145163717" id="1207148344079" role="79nr.1203087890642.1207145245948" info="ng" />
@@ -1183,7 +1183,7 @@
       <property role="asn4.1169194658468.1169194664001" value="Edit" />
       <property role="79nr.1203087890642.1204991940915" value="Edit" />
       <property role="asn4.1133920641626.1193676396447" value="Menu.MainMenu" />
-      <node concept="79nr.1203092361741" id="1205007875051" role="79nr.1203087890642.1204991552650" info="ng">
+      <node concept="79nr.1203092361741" id="1205007875051" role="79nr.1203087890642.1204991552650" info="lg">
         <reference role="79nr.1203092361741.1203092736097" target="ekwn.5495648829643707068" resolveInfo="IDE_Edit" />
         <reference role="79nr.1203092361741.1204992316090" target="ekwn.5495648829643707070" resolveInfo="toplevel" />
       </node>
@@ -1203,7 +1203,7 @@
       <property role="79nr.1203087890642.1204991940915" value="Go To" />
       <property role="asn4.1133920641626.1193676396447" value="Menu.MainMenu" />
       <property role="79nr.1203087890642.1213283637680" value="false" />
-      <node concept="79nr.1203092361741" id="1205007901663" role="79nr.1203087890642.1204991552650" info="ng">
+      <node concept="79nr.1203092361741" id="1205007901663" role="79nr.1203087890642.1204991552650" info="lg">
         <reference role="79nr.1203092361741.1203092736097" target="1215005292029" resolveInfo="IDEAGoTo" />
       </node>
       <node concept="79nr.1207145163717" id="3906874221886742568" role="79nr.1203087890642.1207145245948" info="ng">
@@ -1251,7 +1251,7 @@
       <property role="79nr.1203087890642.1204991940915" value="Tools" />
       <property role="asn4.1133920641626.1193676396447" value="Menu.MainMenu" />
       <property role="79nr.1203087890642.1213283637680" value="false" />
-      <node concept="79nr.1203092361741" id="1205007918257" role="79nr.1203087890642.1204991552650" info="ng">
+      <node concept="79nr.1203092361741" id="1205007918257" role="79nr.1203087890642.1204991552650" info="lg">
         <reference role="79nr.1203092361741.1203092736097" target="1215012161252" resolveInfo="IDEATools" />
       </node>
       <node concept="79nr.1207145163717" id="1207148372239" role="79nr.1203087890642.1207145245948" info="ng">
@@ -1325,19 +1325,19 @@
     <node concept="79nr.1204383956737" id="1215012343709" info="ng">
       <property role="asn4.1169194658468.1169194664001" value="IDEAVCS" />
       <property role="asn4.1133920641626.1193676396447" value="Integration" />
-      <node concept="79nr.1203092361741" id="1216225319668" role="79nr.1203087890642.1204991552650" info="ng">
+      <node concept="79nr.1203092361741" id="1216225319668" role="79nr.1203087890642.1204991552650" info="lg">
         <reference role="79nr.1203092361741.1203092736097" target="1204991218714" resolveInfo="ModelActions" />
         <reference role="79nr.1203092361741.1204992316090" target="1221757535813" resolveInfo="ideavcs" />
       </node>
-      <node concept="79nr.1203092361741" id="1217431296591" role="79nr.1203087890642.1204991552650" info="ng">
+      <node concept="79nr.1203092361741" id="1217431296591" role="79nr.1203087890642.1204991552650" info="lg">
         <reference role="79nr.1203092361741.1203092736097" target="1217254654927" resolveInfo="AbstractFileActions" />
         <reference role="79nr.1203092361741.1204992316090" target="1217431278099" resolveInfo="vcs" />
       </node>
-      <node concept="79nr.1203092361741" id="1221752224444" role="79nr.1203087890642.1204991552650" info="ng">
+      <node concept="79nr.1203092361741" id="1221752224444" role="79nr.1203087890642.1204991552650" info="lg">
         <reference role="79nr.1203092361741.1203092736097" target="ekwn.1755502566255660782" resolveInfo="EditorPopup" />
         <reference role="79nr.1203092361741.1204992316090" target="ekwn.1755502566255660802" resolveInfo="vcs" />
       </node>
-      <node concept="79nr.1203092361741" id="1234535880027" role="79nr.1203087890642.1204991552650" info="ng">
+      <node concept="79nr.1203092361741" id="1234535880027" role="79nr.1203087890642.1204991552650" info="lg">
         <reference role="79nr.1203092361741.1203092736097" target="401659284115173011" resolveInfo="CommonModuleActions" />
         <reference role="79nr.1203092361741.1204992316090" target="401659284115231193" resolveInfo="ideavcs" />
       </node>
@@ -1387,7 +1387,7 @@
           <property role="asn4.1169194658468.1169194664001" value="aux" />
         </node>
       </node>
-      <node concept="79nr.1203092361741" id="1215013272108" role="79nr.1203087890642.1204991552650" info="ng">
+      <node concept="79nr.1203092361741" id="1215013272108" role="79nr.1203087890642.1204991552650" info="lg">
         <reference role="79nr.1203092361741.1203092736097" target="1215013225475" resolveInfo="IDEABuild" />
       </node>
     </node>
@@ -4489,15 +4489,15 @@
           <property role="asn4.1169194658468.1169194664001" value="vcs" />
         </node>
       </node>
-      <node concept="79nr.1203092361741" id="1217431725536" role="79nr.1203087890642.1204991552650" info="ng">
+      <node concept="79nr.1203092361741" id="1217431725536" role="79nr.1203087890642.1204991552650" info="lg">
         <reference role="79nr.1203092361741.1203092736097" target="1217431545216" resolveInfo="FileActions" />
         <reference role="79nr.1203092361741.1204992316090" target="1217431753059" resolveInfo="abstractFileActions" />
       </node>
-      <node concept="79nr.1203092361741" id="1217431785312" role="79nr.1203087890642.1204991552650" info="ng">
+      <node concept="79nr.1203092361741" id="1217431785312" role="79nr.1203087890642.1204991552650" info="lg">
         <reference role="79nr.1203092361741.1203092736097" target="1217431613318" resolveInfo="FolderActions" />
         <reference role="79nr.1203092361741.1204992316090" target="1217431771937" resolveInfo="abstractFileActions" />
       </node>
-      <node concept="79nr.1203092361741" id="1217431797707" role="79nr.1203087890642.1204991552650" info="ng">
+      <node concept="79nr.1203092361741" id="1217431797707" role="79nr.1203087890642.1204991552650" info="lg">
         <reference role="79nr.1203092361741.1203092736097" target="1217431643713" resolveInfo="ModuleActions" />
         <reference role="79nr.1203092361741.1204992316090" target="1217431777694" resolveInfo="abstractFileActions" />
       </node>
@@ -4505,7 +4505,7 @@
     <node concept="79nr.1203087890642" id="1217431545216" info="ng">
       <property role="asn4.1169194658468.1169194664001" value="FileActions" />
       <property role="asn4.1133920641626.1193676396447" value="Menu.FileView" />
-      <node concept="79nr.1203092361741" id="4053449317375481131" role="79nr.1203087890642.1204991552650" info="ng">
+      <node concept="79nr.1203092361741" id="4053449317375481131" role="79nr.1203087890642.1204991552650" info="lg">
         <reference role="79nr.1203092361741.1203092736097" target="4053449317375378317" resolveInfo="FlyingActions" />
       </node>
       <node concept="79nr.1207145163717" id="1217431748083" role="79nr.1203087890642.1207145245948" info="ng">
@@ -4517,7 +4517,7 @@
     <node concept="79nr.1203087890642" id="1217431613318" info="ng">
       <property role="asn4.1169194658468.1169194664001" value="FolderActions" />
       <property role="asn4.1133920641626.1193676396447" value="Menu.FileView" />
-      <node concept="79nr.1203092361741" id="4053449317375481129" role="79nr.1203087890642.1204991552650" info="ng">
+      <node concept="79nr.1203092361741" id="4053449317375481129" role="79nr.1203087890642.1204991552650" info="lg">
         <reference role="79nr.1203092361741.1203092736097" target="4053449317375378317" resolveInfo="FlyingActions" />
       </node>
       <node concept="79nr.1207145163717" id="1217431771936" role="79nr.1203087890642.1207145245948" info="ng">
@@ -4529,7 +4529,7 @@
     <node concept="79nr.1203087890642" id="1217431643713" info="ng">
       <property role="asn4.1169194658468.1169194664001" value="ModuleActions" />
       <property role="asn4.1133920641626.1193676396447" value="Menu.FileView" />
-      <node concept="79nr.1203092361741" id="5152061616759057014" role="79nr.1203087890642.1204991552650" info="ng">
+      <node concept="79nr.1203092361741" id="5152061616759057014" role="79nr.1203087890642.1204991552650" info="lg">
         <reference role="79nr.1203092361741.1203092736097" target="4053449317375378317" resolveInfo="FlyingActions" />
       </node>
       <node concept="79nr.1207145163717" id="1217431777693" role="79nr.1203087890642.1207145245948" info="ng">
@@ -4594,7 +4594,7 @@
           <reference role="79nr.1203088046679.1203088061055" target="3734045384532066586" resolveInfo="RenameSolution" />
         </node>
       </node>
-      <node concept="79nr.1203092361741" id="1223018944449" role="79nr.1203087890642.1204991552650" info="ng">
+      <node concept="79nr.1203092361741" id="1223018944449" role="79nr.1203087890642.1204991552650" info="lg">
         <reference role="79nr.1203092361741.1203092736097" target="401659284115173011" resolveInfo="CommonModuleActions" />
         <reference role="79nr.1203092361741.1204992316090" target="401659284115173030" resolveInfo="refactoring" />
       </node>
@@ -4602,7 +4602,7 @@
     <node concept="79nr.1203087890642" id="1226495932324" info="ng">
       <property role="asn4.1169194658468.1169194664001" value="PackageActions" />
       <property role="asn4.1133920641626.1193676396447" value="Menu.ProjectPane.Packages" />
-      <node concept="79nr.1203092361741" id="5152061616759057016" role="79nr.1203087890642.1204991552650" info="ng">
+      <node concept="79nr.1203092361741" id="5152061616759057016" role="79nr.1203087890642.1204991552650" info="lg">
         <reference role="79nr.1203092361741.1203092736097" target="4053449317375378317" resolveInfo="FlyingActions" />
       </node>
       <node concept="79nr.1207145163717" id="1226501984271" role="79nr.1203087890642.1207145245948" info="ng">
@@ -4625,7 +4625,7 @@
     <node concept="79nr.1203087890642" id="1226499076725" info="ng">
       <property role="asn4.1169194658468.1169194664001" value="NamespaceActions" />
       <property role="asn4.1133920641626.1193676396447" value="Menu.ProjectPane.Packages" />
-      <node concept="79nr.1203092361741" id="5152061616759032949" role="79nr.1203087890642.1204991552650" info="ng">
+      <node concept="79nr.1203092361741" id="5152061616759032949" role="79nr.1203087890642.1204991552650" info="lg">
         <reference role="79nr.1203092361741.1203092736097" target="4053449317375378317" resolveInfo="FlyingActions" />
       </node>
       <node concept="79nr.1207145163717" id="1226502139629" role="79nr.1203087890642.1207145245948" info="ng">
@@ -4809,7 +4809,7 @@
           </node>
         </node>
       </node>
-      <node concept="79nr.1203092361741" id="1226502154349" role="79nr.1203087890642.1204991552650" info="ng">
+      <node concept="79nr.1203092361741" id="1226502154349" role="79nr.1203087890642.1204991552650" info="lg">
         <reference role="79nr.1203092361741.1203092736097" target="1226499076725" resolveInfo="NamespaceActions" />
         <reference role="79nr.1203092361741.1204992316090" target="1226502142427" resolveInfo="namespaceInternal" />
       </node>
@@ -4817,7 +4817,7 @@
     <node concept="79nr.1203087890642" id="1229263993115" info="ng">
       <property role="asn4.1169194658468.1169194664001" value="ReferenceNodeActions" />
       <property role="asn4.1133920641626.1193676396447" value="Menu.ProjectPane.Node" />
-      <node concept="79nr.1203092361741" id="5152061616759057022" role="79nr.1203087890642.1204991552650" info="ng">
+      <node concept="79nr.1203092361741" id="5152061616759057022" role="79nr.1203087890642.1204991552650" info="lg">
         <reference role="79nr.1203092361741.1203092736097" target="4053449317375378317" resolveInfo="FlyingActions" />
       </node>
       <node concept="79nr.1207145163717" id="1229264553202" role="79nr.1203087890642.1207145245948" info="ng">
@@ -5127,7 +5127,7 @@
     <node concept="79nr.1203087890642" id="1229265613066" info="ng">
       <property role="asn4.1169194658468.1169194664001" value="PropertyNodeActions" />
       <property role="asn4.1133920641626.1193676396447" value="Menu.ProjectPane.Node" />
-      <node concept="79nr.1203092361741" id="5152061616759032950" role="79nr.1203087890642.1204991552650" info="ng">
+      <node concept="79nr.1203092361741" id="5152061616759032950" role="79nr.1203087890642.1204991552650" info="lg">
         <reference role="79nr.1203092361741.1203092736097" target="4053449317375378317" resolveInfo="FlyingActions" />
       </node>
       <node concept="79nr.1207145163717" id="1229265613067" role="79nr.1203087890642.1207145245948" info="ng">
@@ -5733,7 +5733,7 @@
       <property role="79nr.1203087890642.1204991940915" value="Bookmarks" />
       <property role="asn4.1133920641626.1193676396447" value="Menu.EditorPopup" />
       <property role="79nr.1203087890642.1213283637680" value="true" />
-      <node concept="79nr.1203092361741" id="1234013984501" role="79nr.1203087890642.1204991552650" info="ng">
+      <node concept="79nr.1203092361741" id="1234013984501" role="79nr.1203087890642.1204991552650" info="lg">
         <reference role="79nr.1203092361741.1203092736097" target="1215010709295" resolveInfo="IDEAEdit" />
       </node>
       <node concept="79nr.1207145360364" id="8131292300541726976" role="79nr.1203087890642.1207145245948" info="in">
@@ -12440,14 +12440,14 @@
     <node concept="79nr.1562714432501166197" id="3734045384533036331" info="ng">
       <property role="79nr.1562714432501166197.1562714432501166281" value="Mac OS X" />
       <property role="asn4.1169194658468.1169194664001" value="Mac" />
-      <node concept="79nr.1562714432501166198" id="2863241567468286191" role="79nr.1562714432501166197.1562714432501166199" info="ng">
+      <node concept="79nr.1562714432501166198" id="2863241567468286191" role="79nr.1562714432501166197.1562714432501166199" info="lg">
         <reference role="79nr.6193305307616715384.6193305307616734326" target="1234018313905" resolveInfo="GoToBookmark" />
         <node concept="79nr.1207318242772" id="2863241567468286192" role="79nr.1562714432501166198.1562714432501166206" info="ng">
           <property role="79nr.1207318242772.1207318242774" value="VK_0" />
           <property role="79nr.1207318242772.1207318242773" value="ctrl" />
         </node>
       </node>
-      <node concept="79nr.1562714432501166198" id="7918601149636320836" role="79nr.1562714432501166197.1562714432501166199" info="ng">
+      <node concept="79nr.1562714432501166198" id="7918601149636320836" role="79nr.1562714432501166197.1562714432501166199" info="lg">
         <reference role="79nr.6193305307616715384.6193305307616734326" target="7918601149636191506" resolveInfo="NewElement" />
         <node concept="79nr.1207318242772" id="7918601149636320837" role="79nr.1562714432501166198.1562714432501166206" info="ng">
           <property role="79nr.1207318242772.1207318242774" value="VK_N" />
@@ -12458,28 +12458,28 @@
           <property role="79nr.1207318242772.1207318242773" value="ctrl" />
         </node>
       </node>
-      <node concept="79nr.1562714432501166198" id="2414546619877443675" role="79nr.1562714432501166197.1562714432501166199" info="ng">
+      <node concept="79nr.1562714432501166198" id="2414546619877443675" role="79nr.1562714432501166197.1562714432501166199" info="lg">
         <reference role="79nr.6193305307616715384.6193305307616734326" target="8784230320738944314" resolveInfo="SafeDelete" />
         <node concept="79nr.1207318242772" id="2414546619877443676" role="79nr.1562714432501166198.1562714432501166206" info="ng">
           <property role="79nr.1207318242772.1207318242774" value="VK_DELETE" />
           <property role="79nr.1207318242772.1207318242773" value="meta" />
         </node>
       </node>
-      <node concept="79nr.1562714432501166198" id="2166560190157548058" role="79nr.1562714432501166197.1562714432501166199" info="ng">
+      <node concept="79nr.1562714432501166198" id="2166560190157548058" role="79nr.1562714432501166197.1562714432501166199" info="lg">
         <reference role="79nr.6193305307616715384.6193305307616734326" target="1216119398364" resolveInfo="ShowClassInHierarchy" />
         <node concept="79nr.1207318242772" id="2166560190157548059" role="79nr.1562714432501166198.1562714432501166206" info="ng">
           <property role="79nr.1207318242772.1207318242774" value="VK_H" />
           <property role="79nr.1207318242772.1207318242773" value="ctrl" />
         </node>
       </node>
-      <node concept="79nr.1562714432501166198" id="3734045384533036332" role="79nr.1562714432501166197.1562714432501166199" info="ng">
+      <node concept="79nr.1562714432501166198" id="3734045384533036332" role="79nr.1562714432501166197.1562714432501166199" info="lg">
         <reference role="79nr.6193305307616715384.6193305307616734326" target="1216120033386" resolveInfo="ShowConceptInHierarchy" />
         <node concept="79nr.1207318242772" id="3734045384533036333" role="79nr.1562714432501166198.1562714432501166206" info="ng">
           <property role="79nr.1207318242772.1207318242774" value="VK_H" />
           <property role="79nr.1207318242772.1207318242773" value="ctrl" />
         </node>
       </node>
-      <node concept="79nr.1562714432501166198" id="2628837543478196867" role="79nr.1562714432501166197.1562714432501166199" info="ng">
+      <node concept="79nr.1562714432501166198" id="2628837543478196867" role="79nr.1562714432501166197.1562714432501166199" info="lg">
         <reference role="79nr.6193305307616715384.6193305307616734326" target="5535460359399556383" resolveInfo="ShowNodeInfo" />
         <node concept="79nr.1207318242772" id="2628837543478196868" role="79nr.1562714432501166198.1562714432501166206" info="ng">
           <property role="79nr.1207318242772.1207318242774" value="VK_Q" />
@@ -12501,7 +12501,7 @@
           </node>
         </node>
       </node>
-      <node concept="79nr.1562714432501166198" id="4558026818740387776" role="79nr.1562714432501166197.1562714432501166199" info="ng">
+      <node concept="79nr.1562714432501166198" id="4558026818740387776" role="79nr.1562714432501166197.1562714432501166199" info="lg">
         <reference role="79nr.6193305307616715384.6193305307616734326" target="2003512433031647705" resolveInfo="GoByCurrentReferenceToIDEA" />
         <node concept="79nr.1207318242772" id="4558026818740387777" role="79nr.1562714432501166198.1562714432501166206" info="ng">
           <property role="79nr.1207318242772.1207318242774" value="VK_B" />
@@ -12717,7 +12717,7 @@
           <reference role="79nr.1203088046679.1203088061055" target="6840593892233915864" resolveInfo="RenameModel" />
         </node>
       </node>
-      <node concept="79nr.1203092361741" id="1222173607728" role="79nr.1203087890642.1204991552650" info="ng">
+      <node concept="79nr.1203092361741" id="1222173607728" role="79nr.1203087890642.1204991552650" info="lg">
         <reference role="79nr.1203092361741.1203092736097" target="1204991218714" resolveInfo="ModelActions" />
         <reference role="79nr.1203092361741.1204992316090" target="1222173595836" resolveInfo="refactoring" />
       </node>
@@ -12727,11 +12727,11 @@
       <property role="79nr.1203087890642.1204991940915" value="Root Node" />
       <property role="asn4.1133920641626.1193676396447" value="Menu.ProjectPane.Packages" />
       <property role="79nr.1203087890642.1213283637680" value="false" />
-      <node concept="79nr.1203092361741" id="2490685849537330649" role="79nr.1203087890642.1204991552650" info="ng">
+      <node concept="79nr.1203092361741" id="2490685849537330649" role="79nr.1203087890642.1204991552650" info="lg">
         <reference role="79nr.1203092361741.1203092736097" target="1420252515663985887" resolveInfo="ModelNewActions" />
         <reference role="79nr.1203092361741.1204992316090" target="2490685849537330645" resolveInfo="newRoot" />
       </node>
-      <node concept="79nr.1203092361741" id="6290562762037774107" role="79nr.1203087890642.1204991552650" info="ng">
+      <node concept="79nr.1203092361741" id="6290562762037774107" role="79nr.1203087890642.1204991552650" info="lg">
         <reference role="79nr.1203092361741.1203092736097" target="6290562762037774100" resolveInfo="PackageNewActions" />
       </node>
       <node concept="79nr.1239975356883" id="1910216689115811630" role="79nr.1203087890642.1207145245948" info="ng">
@@ -14111,7 +14111,7 @@
       <property role="79nr.1203087890642.1204991940915" value="Go by Reference" />
       <property role="asn4.1133920641626.1193676396447" value="Menu.EditorPopup" />
       <property role="79nr.1203087890642.1213283637680" value="true" />
-      <node concept="79nr.1203092361741" id="965654005418405438" role="79nr.1203087890642.1204991552650" info="ng">
+      <node concept="79nr.1203092361741" id="965654005418405438" role="79nr.1203087890642.1204991552650" info="lg">
         <reference role="79nr.1203092361741.1204992316090" target="ekwn.3228268613620327887" resolveInfo="refs" />
         <reference role="79nr.1203092361741.1203092736097" target="ekwn.3228268613620327882" resolveInfo="GoToEditorPopupAddition" />
       </node>
@@ -14701,26 +14701,26 @@
         <property role="vg0i.1070475926800.1070475926801" value="RunContextGroup" />
       </node>
       <node concept="79nr.1207145163717" id="6267318242960657896" role="79nr.1203087890642.1207145245948" info="ng" />
-      <node concept="79nr.1203092361741" id="6267318242960707992" role="79nr.1203087890642.1204991552650" info="ng">
+      <node concept="79nr.1203092361741" id="6267318242960707992" role="79nr.1203087890642.1204991552650" info="lg">
         <reference role="79nr.1203092361741.1203092736097" target="ekwn.1755502566255660782" resolveInfo="EditorPopup" />
       </node>
-      <node concept="79nr.1203092361741" id="1177638545603697297" role="79nr.1203087890642.1204991552650" info="ng">
+      <node concept="79nr.1203092361741" id="1177638545603697297" role="79nr.1203087890642.1204991552650" info="lg">
         <reference role="79nr.1203092361741.1203092736097" target="1204991215587" resolveInfo="NodeActions" />
       </node>
-      <node concept="79nr.1203092361741" id="6462695515358244108" role="79nr.1203087890642.1204991552650" info="ng">
+      <node concept="79nr.1203092361741" id="6462695515358244108" role="79nr.1203087890642.1204991552650" info="lg">
         <reference role="79nr.1203092361741.1203092736097" target="1204991218714" resolveInfo="ModelActions" />
       </node>
-      <node concept="79nr.1203092361741" id="2594916007743946175" role="79nr.1203087890642.1204991552650" info="ng">
+      <node concept="79nr.1203092361741" id="2594916007743946175" role="79nr.1203087890642.1204991552650" info="lg">
         <reference role="79nr.1203092361741.1203092736097" target="401659284115173011" resolveInfo="CommonModuleActions" />
         <reference role="79nr.1203092361741.1204992316090" target="696518775937787051" resolveInfo="run" />
       </node>
-      <node concept="79nr.1203092361741" id="1341091614641347438" role="79nr.1203087890642.1204991552650" info="ng">
+      <node concept="79nr.1203092361741" id="1341091614641347438" role="79nr.1203087890642.1204991552650" info="lg">
         <reference role="79nr.1203092361741.1203092736097" target="1341091614641347434" resolveInfo="JUnitTestCaseActions" />
       </node>
-      <node concept="79nr.1203092361741" id="1341091614641347439" role="79nr.1203087890642.1204991552650" info="ng">
+      <node concept="79nr.1203092361741" id="1341091614641347439" role="79nr.1203087890642.1204991552650" info="lg">
         <reference role="79nr.1203092361741.1203092736097" target="1341091614641347436" resolveInfo="JUnitTestMethodActions" />
       </node>
-      <node concept="79nr.1203092361741" id="7084337574345901885" role="79nr.1203087890642.1204991552650" info="ng">
+      <node concept="79nr.1203092361741" id="7084337574345901885" role="79nr.1203087890642.1204991552650" info="lg">
         <reference role="79nr.1203092361741.1203092736097" target="1204991220529" resolveInfo="ProjectActions" />
         <reference role="79nr.1203092361741.1204992316090" target="5205542327955601442" resolveInfo="runConfig" />
       </node>
@@ -14745,7 +14745,7 @@
       <property role="asn4.1169194658468.1169194664001" value="JUnitTestCaseActions" />
       <property role="asn4.1133920641626.1193676396447" value="BaseLanguage.JUnitOutput" />
       <property role="79nr.1203087890642.1213283637680" value="true" />
-      <node concept="79nr.1203092361741" id="5152061616758930518" role="79nr.1203087890642.1204991552650" info="ng">
+      <node concept="79nr.1203092361741" id="5152061616758930518" role="79nr.1203087890642.1204991552650" info="lg">
         <reference role="79nr.1203092361741.1203092736097" target="4053449317375378317" resolveInfo="FlyingActions" />
       </node>
       <node concept="79nr.1207145163717" id="1341091614641347435" role="79nr.1203087890642.1207145245948" info="ng" />
@@ -14754,7 +14754,7 @@
       <property role="asn4.1169194658468.1169194664001" value="JUnitTestMethodActions" />
       <property role="asn4.1133920641626.1193676396447" value="BaseLanguage.JUnitOutput" />
       <property role="79nr.1203087890642.1213283637680" value="true" />
-      <node concept="79nr.1203092361741" id="5152061616759057017" role="79nr.1203087890642.1204991552650" info="ng">
+      <node concept="79nr.1203092361741" id="5152061616759057017" role="79nr.1203087890642.1204991552650" info="lg">
         <reference role="79nr.1203092361741.1203092736097" target="4053449317375378317" resolveInfo="FlyingActions" />
       </node>
       <node concept="79nr.1207145163717" id="1341091614641347437" role="79nr.1203087890642.1207145245948" info="ng" />
@@ -15074,7 +15074,7 @@
       <property role="79nr.1203087890642.1204991940915" value="New" />
       <property role="asn4.1133920641626.1193676396447" value="Menu.ProjectPane.Model" />
       <property role="79nr.1203087890642.1213283637680" value="true" />
-      <node concept="79nr.1203092361741" id="1420252515663985888" role="79nr.1203087890642.1204991552650" info="ng">
+      <node concept="79nr.1203092361741" id="1420252515663985888" role="79nr.1203087890642.1204991552650" info="lg">
         <reference role="79nr.1203092361741.1203092736097" target="1204991218714" resolveInfo="ModelActions" />
         <reference role="79nr.1203092361741.1204992316090" target="1420252515663987819" resolveInfo="newActions" />
       </node>
@@ -15097,7 +15097,7 @@
       <property role="asn4.1133920641626.1193676396447" value="Menu.ProjectPane.Packages" />
       <property role="79nr.1203087890642.1213283637680" value="true" />
       <node concept="79nr.1207145163717" id="6290562762037774101" role="79nr.1203087890642.1207145245948" info="ng" />
-      <node concept="79nr.1203092361741" id="8156186656774134773" role="79nr.1203087890642.1204991552650" info="ng">
+      <node concept="79nr.1203092361741" id="8156186656774134773" role="79nr.1203087890642.1204991552650" info="lg">
         <reference role="79nr.1203092361741.1203092736097" target="1226495932324" resolveInfo="PackageActions" />
         <reference role="79nr.1203092361741.1204992316090" target="2841218117793440829" resolveInfo="newActions" />
       </node>
@@ -15105,7 +15105,7 @@
     <node concept="79nr.1203087890642" id="640843604926230885" info="ng">
       <property role="asn4.1169194658468.1169194664001" value="RuntimeFolderActions" />
       <property role="asn4.1133920641626.1193676396447" value="Menu.ProjectPane.RuntimeFolder" />
-      <node concept="79nr.1203092361741" id="4053449317375481132" role="79nr.1203087890642.1204991552650" info="ng">
+      <node concept="79nr.1203092361741" id="4053449317375481132" role="79nr.1203087890642.1204991552650" info="lg">
         <reference role="79nr.1203092361741.1203092736097" target="4053449317375378317" resolveInfo="FlyingActions" />
       </node>
       <node concept="79nr.1207145163717" id="640843604926248116" role="79nr.1203087890642.1207145245948" info="ng">
@@ -16741,7 +16741,7 @@
     <node concept="79nr.1204383956737" id="3562010829150991006" info="ng">
       <property role="asn4.1169194658468.1169194664001" value="IDEANavbar" />
       <property role="asn4.1133920641626.1193676396447" value="Integration" />
-      <node concept="79nr.1203092361741" id="3562010829151161772" role="79nr.1203087890642.1204991552650" info="ng">
+      <node concept="79nr.1203092361741" id="3562010829151161772" role="79nr.1203087890642.1204991552650" info="lg">
         <reference role="79nr.1203092361741.1203092736097" target="1217254654927" resolveInfo="AbstractFileActions" />
         <reference role="79nr.1203092361741.1204992316090" target="3562010829151161777" resolveInfo="ideaActions" />
       </node>
@@ -17506,7 +17506,7 @@
           <reference role="79nr.1203088046679.1203088061055" target="3858094006307618582" resolveInfo="NewDirectory" />
         </node>
       </node>
-      <node concept="79nr.1203092361741" id="3858094006307874183" role="79nr.1203087890642.1204991552650" info="ng">
+      <node concept="79nr.1203092361741" id="3858094006307874183" role="79nr.1203087890642.1204991552650" info="lg">
         <reference role="79nr.1203092361741.1203092736097" target="1217254654927" resolveInfo="AbstractFileActions" />
         <reference role="79nr.1203092361741.1204992316090" target="3858094006307874180" resolveInfo="new" />
       </node>
@@ -18587,40 +18587,23 @@
                 <reference role="vg0i.1204053956946.1068499141037" target="88zw.~ModelAccess%dexecuteCommand(java%dlang%dRunnable)%cvoid" resolveInfo="executeCommand" />
                 <node concept="cakq.1199569711397" id="6352952732700512990" role="vg0i.1204053956946.1068499141038" info="nn">
                   <node concept="vg0i.1068580123136" id="6352952732700512991" role="cakq.1199569711397.1199569916463" info="sn">
-                    <node concept="vg0i.1068581242864" id="2721881173282610341" role="vg0i.1068580123136.1068581517665" info="nn">
-                      <node concept="vg0i.1068581242863" id="2721881173282610342" role="vg0i.1068581242864.1068581242865" info="nr">
-                        <property role="asn4.1169194658468.1169194664001" value="newModelFqName" />
-                        <node concept="vg0i.1107535904670" id="2721881173282610343" role="vg0i.4972933694980447171.5680397130376446158" info="in">
-                          <reference role="vg0i.1107535904670.1107535924139" target="cu2c.~SModelFqName" resolveInfo="SModelFqName" />
-                        </node>
-                        <node concept="vg0i.1145552977093" id="2721881173282610347" role="vg0i.1068431474542.1068431790190" info="nn">
-                          <node concept="vg0i.1212685548494" id="2721881173282610348" role="vg0i.1145552977093.1145553007750" info="nn">
-                            <reference role="vg0i.1204053956946.1068499141037" target="cu2c.~SModelFqName%d&lt;init&gt;(java%dlang%dString,java%dlang%dString)" resolveInfo="SModelFqName" />
-                            <node concept="vg0i.1197027756228" id="1417797419759466060" role="vg0i.1204053956946.1068499141038" info="nn">
-                              <node concept="1sqg.1205752633985" id="1417797419759466061" role="vg0i.1197027756228.1197027771414" info="nn" />
-                              <node concept="1sqg.1205769149993" id="1417797419759466062" role="vg0i.1197027756228.1197027833540" info="nn">
-                                <reference role="1sqg.1205756064662.1205756909548" target="2721881173282609903" resolveInfo="getTestModelName" />
-                              </node>
-                            </node>
-                            <node concept="vg0i.1070533707846" id="2721881173282610366" role="vg0i.1204053956946.1068499141038" info="nn">
-                              <reference role="vg0i.1068498886296.1068581517664" target="cu2c.~SModelStereotype%dTESTS" resolveInfo="TESTS" />
-                              <reference role="vg0i.1070533707846.1144433057691" target="cu2c.~SModelStereotype" resolveInfo="SModelStereotype" />
-                            </node>
-                          </node>
-                        </node>
-                      </node>
-                    </node>
                     <node concept="vg0i.1068580123155" id="2721881173282610580" role="vg0i.1068580123136.1068581517665" info="nn">
                       <node concept="vg0i.1068498886294" id="2721881173282610583" role="vg0i.1068580123155.1068580123156" info="nn">
                         <node concept="vg0i.1081236700937" id="8623608763346522289" role="vg0i.1215693861676.1068498886297" info="nn">
                           <reference role="vg0i.1081236700937.1144433194310" target="vsqj.~SModuleOperations" resolveInfo="SModuleOperations" />
                           <reference role="vg0i.1204053956946.1068499141037" target="vsqj.~SModuleOperations%dcreateModelWithAdjustments(java%dlang%dString,org%djetbrains%dmps%dopenapi%dpersistence%dModelRoot)%corg%djetbrains%dmps%dopenapi%dmodel%dEditableSModel" resolveInfo="createModelWithAdjustments" />
-                          <node concept="vg0i.1197027756228" id="8811637033171924639" role="vg0i.1204053956946.1068499141038" info="nn">
-                            <node concept="vg0i.1202948039474" id="8811637033171928379" role="vg0i.1197027756228.1197027833540" info="nn">
-                              <reference role="vg0i.1204053956946.1068499141037" target="cu2c.~SModelFqName%dtoString()%cjava%dlang%dString" resolveInfo="toString" />
+                          <node concept="vg0i.1081236700937" id="7549572109232923206" role="vg0i.1204053956946.1068499141038" info="nn">
+                            <reference role="vg0i.1204053956946.1068499141037" target="cu2c.~SModelStereotype%dwithStereotype(java%dlang%dString,java%dlang%dString)%cjava%dlang%dString" resolveInfo="withStereotype" />
+                            <reference role="vg0i.1081236700937.1144433194310" target="cu2c.~SModelStereotype" resolveInfo="SModelStereotype" />
+                            <node concept="vg0i.1197027756228" id="7549572109232926611" role="vg0i.1204053956946.1068499141038" info="nn">
+                              <node concept="1sqg.1205752633985" id="7549572109232926614" role="vg0i.1197027756228.1197027771414" info="nn" />
+                              <node concept="1sqg.1205769149993" id="7549572109232926616" role="vg0i.1197027756228.1197027833540" info="nn">
+                                <reference role="1sqg.1205756064662.1205756909548" target="2721881173282609903" resolveInfo="getTestModelName" />
+                              </node>
                             </node>
-                            <node concept="vg0i.1068498886296" id="4265636116363112990" role="vg0i.1197027756228.1197027771414" info="nn">
-                              <reference role="vg0i.1068498886296.1068581517664" target="2721881173282610342" resolveInfo="newModelFqName" />
+                            <node concept="vg0i.1070533707846" id="2721881173282610366" role="vg0i.1204053956946.1068499141038" info="nn">
+                              <reference role="vg0i.1070533707846.1144433057691" target="cu2c.~SModelStereotype" resolveInfo="SModelStereotype" />
+                              <reference role="vg0i.1068498886296.1068581517664" target="cu2c.~SModelStereotype%dTESTS" resolveInfo="TESTS" />
                             </node>
                           </node>
                           <node concept="vg0i.1081236700937" id="8811637033171901615" role="vg0i.1204053956946.1068499141038" info="nn">
@@ -18942,7 +18925,7 @@
           <reference role="79nr.1203088046679.1203088061055" target="2834677590307342574" resolveInfo="AddToNewFavoritesList" />
         </node>
       </node>
-      <node concept="79nr.1203092361741" id="8243555296290550237" role="79nr.1203087890642.1204991552650" info="ng">
+      <node concept="79nr.1203092361741" id="8243555296290550237" role="79nr.1203087890642.1204991552650" info="lg">
         <reference role="79nr.1203092361741.1203092736097" target="8243555296290550125" resolveInfo="FavoritesPopupWrapper" />
       </node>
     </node>
@@ -19226,7 +19209,7 @@
     <node concept="79nr.1203087890642" id="2834677590307809739" info="ng">
       <property role="asn4.1169194658468.1169194664001" value="AddToFavoritesGroup" />
       <property role="asn4.1133920641626.1193676396447" value="Favorites" />
-      <node concept="79nr.1203092361741" id="2834677590307809785" role="79nr.1203087890642.1204991552650" info="ng">
+      <node concept="79nr.1203092361741" id="2834677590307809785" role="79nr.1203087890642.1204991552650" info="lg">
         <reference role="79nr.1203092361741.1203092736097" target="2834677590307284262" resolveInfo="FavoritesPopup" />
         <reference role="79nr.1203092361741.1204992316090" target="2834677590307738360" resolveInfo="addToFavorites" />
       </node>
@@ -19822,7 +19805,7 @@
           </node>
         </node>
       </node>
-      <node concept="79nr.1203092361741" id="8243555296290550454" role="79nr.1203087890642.1204991552650" info="ng">
+      <node concept="79nr.1203092361741" id="8243555296290550454" role="79nr.1203087890642.1204991552650" info="lg">
         <reference role="79nr.1203092361741.1203092736097" target="8243555296290550439" resolveInfo="Favorites" />
         <reference role="79nr.1203092361741.1204992316090" target="8243555296290550448" resolveInfo="popup" />
       </node>
@@ -20157,15 +20140,15 @@
     <node concept="79nr.1203087890642" id="8243555296290550439" info="ng">
       <property role="asn4.1169194658468.1169194664001" value="Favorites" />
       <property role="asn4.1133920641626.1193676396447" value="Favorites" />
-      <node concept="79nr.1203092361741" id="8243555296290550449" role="79nr.1203087890642.1204991552650" info="ng">
+      <node concept="79nr.1203092361741" id="8243555296290550449" role="79nr.1203087890642.1204991552650" info="lg">
         <reference role="79nr.1203092361741.1203092736097" target="1204991215587" resolveInfo="NodeActions" />
         <reference role="79nr.1203092361741.1204992316090" target="2834677590308140834" resolveInfo="favorites" />
       </node>
-      <node concept="79nr.1203092361741" id="8243555296290550450" role="79nr.1203087890642.1204991552650" info="ng">
+      <node concept="79nr.1203092361741" id="8243555296290550450" role="79nr.1203087890642.1204991552650" info="lg">
         <reference role="79nr.1203092361741.1203092736097" target="401659284115173011" resolveInfo="CommonModuleActions" />
         <reference role="79nr.1203092361741.1204992316090" target="401659284115231191" resolveInfo="favorites" />
       </node>
-      <node concept="79nr.1203092361741" id="8243555296290550453" role="79nr.1203087890642.1204991552650" info="ng">
+      <node concept="79nr.1203092361741" id="8243555296290550453" role="79nr.1203087890642.1204991552650" info="lg">
         <reference role="79nr.1203092361741.1203092736097" target="1204991218714" resolveInfo="ModelActions" />
         <reference role="79nr.1203092361741.1204992316090" target="2834677590308140822" resolveInfo="favorites" />
       </node>
@@ -20944,7 +20927,7 @@
           <reference role="79nr.1203088046679.1203088061055" target="227146524086812204" resolveInfo="HighlightInstances" />
         </node>
       </node>
-      <node concept="79nr.1203092361741" id="4212975129344577735" role="79nr.1203087890642.1204991552650" info="ng">
+      <node concept="79nr.1203092361741" id="4212975129344577735" role="79nr.1203087890642.1204991552650" info="lg">
         <reference role="79nr.1203092361741.1203092736097" target="4212975129344667073" resolveInfo="IDEASearch" />
       </node>
     </node>
@@ -21191,189 +21174,189 @@
     <node concept="79nr.1562714432501166197" id="2443880313834662249" info="ng">
       <property role="79nr.1562714432501166197.1562714432501166281" value="$default" />
       <property role="asn4.1169194658468.1169194664001" value="Default" />
-      <node concept="79nr.1562714432501166198" id="7000507154716606461" role="79nr.1562714432501166197.1562714432501166199" info="ng">
+      <node concept="79nr.1562714432501166198" id="7000507154716606461" role="79nr.1562714432501166197.1562714432501166199" info="lg">
         <reference role="79nr.6193305307616715384.6193305307616734326" target="1215874656794" resolveInfo="CloneModel" />
         <node concept="79nr.1207318242772" id="7000507154716606462" role="79nr.1562714432501166198.1562714432501166206" info="ng">
           <property role="79nr.1207318242772.1207318242774" value="VK_F5" />
           <property role="79nr.1207318242772.1207318242773" value="shift" />
         </node>
       </node>
-      <node concept="79nr.1562714432501166198" id="7000507154716606371" role="79nr.1562714432501166197.1562714432501166199" info="ng">
+      <node concept="79nr.1562714432501166198" id="7000507154716606371" role="79nr.1562714432501166197.1562714432501166199" info="lg">
         <reference role="79nr.6193305307616715384.6193305307616734326" target="1215874930420" resolveInfo="CloneRoot" />
         <node concept="79nr.1207318242772" id="7000507154716606372" role="79nr.1562714432501166198.1562714432501166206" info="ng">
           <property role="79nr.1207318242772.1207318242774" value="VK_F5" />
           <property role="79nr.1207318242772.1207318242773" value="shift" />
         </node>
       </node>
-      <node concept="79nr.1562714432501166198" id="7000507154716606341" role="79nr.1562714432501166197.1562714432501166199" info="ng">
+      <node concept="79nr.1562714432501166198" id="7000507154716606341" role="79nr.1562714432501166197.1562714432501166199" info="lg">
         <reference role="79nr.6193305307616715384.6193305307616734326" target="5033107305426684804" resolveInfo="CopyNode" />
         <node concept="79nr.1207318242772" id="7000507154716606342" role="79nr.1562714432501166198.1562714432501166206" info="ng">
           <property role="79nr.1207318242772.1207318242774" value="VK_C" />
           <property role="79nr.1207318242772.1207318242773" value="ctrl" />
         </node>
       </node>
-      <node concept="79nr.1562714432501166198" id="7000507154716606419" role="79nr.1562714432501166197.1562714432501166199" info="ng">
+      <node concept="79nr.1562714432501166198" id="7000507154716606419" role="79nr.1562714432501166197.1562714432501166199" info="lg">
         <reference role="79nr.6193305307616715384.6193305307616734326" target="5033107305426668800" resolveInfo="CopyNodeReference" />
         <node concept="79nr.1207318242772" id="7000507154716606420" role="79nr.1562714432501166198.1562714432501166206" info="ng">
           <property role="79nr.1207318242772.1207318242774" value="VK_C" />
           <property role="79nr.1207318242772.1207318242773" value="ctrl+shift" />
         </node>
       </node>
-      <node concept="79nr.1562714432501166198" id="7000507154716606491" role="79nr.1562714432501166197.1562714432501166199" info="ng">
+      <node concept="79nr.1562714432501166198" id="7000507154716606491" role="79nr.1562714432501166197.1562714432501166199" info="lg">
         <reference role="79nr.6193305307616715384.6193305307616734326" target="5033107305426722313" resolveInfo="CutNode" />
         <node concept="79nr.1207318242772" id="7000507154716606492" role="79nr.1562714432501166198.1562714432501166206" info="ng">
           <property role="79nr.1207318242772.1207318242774" value="VK_X" />
           <property role="79nr.1207318242772.1207318242773" value="ctrl" />
         </node>
       </node>
-      <node concept="79nr.1562714432501166198" id="7000507154716606451" role="79nr.1562714432501166197.1562714432501166199" info="ng">
+      <node concept="79nr.1562714432501166198" id="7000507154716606451" role="79nr.1562714432501166197.1562714432501166199" info="lg">
         <reference role="79nr.6193305307616715384.6193305307616734326" target="3575273646046443826" resolveInfo="DeleteModels" />
         <node concept="79nr.1207318242772" id="7000507154716606452" role="79nr.1562714432501166198.1562714432501166206" info="ng">
           <property role="79nr.1207318242772.1207318242774" value="VK_DELETE" />
         </node>
       </node>
-      <node concept="79nr.1562714432501166198" id="7000507154716606411" role="79nr.1562714432501166197.1562714432501166199" info="ng">
+      <node concept="79nr.1562714432501166198" id="7000507154716606411" role="79nr.1562714432501166197.1562714432501166199" info="lg">
         <reference role="79nr.6193305307616715384.6193305307616734326" target="1241020613337" resolveInfo="DeleteModules" />
         <node concept="79nr.1207318242772" id="7000507154716606412" role="79nr.1562714432501166198.1562714432501166206" info="ng">
           <property role="79nr.1207318242772.1207318242774" value="VK_DELETE" />
         </node>
       </node>
-      <node concept="79nr.1562714432501166198" id="7000507154716606323" role="79nr.1562714432501166197.1562714432501166199" info="ng">
+      <node concept="79nr.1562714432501166198" id="7000507154716606323" role="79nr.1562714432501166197.1562714432501166199" info="lg">
         <reference role="79nr.6193305307616715384.6193305307616734326" target="1229266351427" resolveInfo="DeleteNode" />
         <node concept="79nr.1207318242772" id="7000507154716606324" role="79nr.1562714432501166198.1562714432501166206" info="ng">
           <property role="79nr.1207318242772.1207318242774" value="VK_DELETE" />
         </node>
       </node>
-      <node concept="79nr.1562714432501166198" id="7000507154716606409" role="79nr.1562714432501166197.1562714432501166199" info="ng">
+      <node concept="79nr.1562714432501166198" id="7000507154716606409" role="79nr.1562714432501166197.1562714432501166199" info="lg">
         <reference role="79nr.6193305307616715384.6193305307616734326" target="1229265515319" resolveInfo="DeletePropertyAction" />
         <node concept="79nr.1207318242772" id="7000507154716606410" role="79nr.1562714432501166198.1562714432501166206" info="ng">
           <property role="79nr.1207318242772.1207318242774" value="VK_DELETE" />
         </node>
       </node>
-      <node concept="79nr.1562714432501166198" id="7000507154716606397" role="79nr.1562714432501166197.1562714432501166199" info="ng">
+      <node concept="79nr.1562714432501166198" id="7000507154716606397" role="79nr.1562714432501166197.1562714432501166199" info="lg">
         <reference role="79nr.6193305307616715384.6193305307616734326" target="1229264031275" resolveInfo="DeleteReferenceAction" />
         <node concept="79nr.1207318242772" id="7000507154716606398" role="79nr.1562714432501166198.1562714432501166206" info="ng">
           <property role="79nr.1207318242772.1207318242774" value="VK_DELETE" />
         </node>
       </node>
-      <node concept="79nr.1562714432501166198" id="2266407953814186495" role="79nr.1562714432501166197.1562714432501166199" info="ng">
+      <node concept="79nr.1562714432501166198" id="2266407953814186495" role="79nr.1562714432501166197.1562714432501166199" info="lg">
         <reference role="79nr.6193305307616715384.6193305307616734326" target="901628894098107140" resolveInfo="FindConceptInstances" />
         <node concept="79nr.1207318242772" id="2266407953814186497" role="79nr.1562714432501166198.1562714432501166206" info="ng">
           <property role="79nr.1207318242772.1207318242774" value="VK_F6" />
           <property role="79nr.1207318242772.1207318242773" value="alt" />
         </node>
       </node>
-      <node concept="79nr.1562714432501166198" id="7000507154716606555" role="79nr.1562714432501166197.1562714432501166199" info="ng">
+      <node concept="79nr.1562714432501166198" id="7000507154716606555" role="79nr.1562714432501166197.1562714432501166199" info="lg">
         <reference role="79nr.6193305307616715384.6193305307616734326" target="5033107305426734988" resolveInfo="FastFindNodeUsages" />
         <node concept="79nr.1207318242772" id="7000507154716606550" role="79nr.1562714432501166198.1562714432501166206" info="ng">
           <property role="79nr.1207318242772.1207318242774" value="VK_F7" />
           <property role="79nr.1207318242772.1207318242773" value="alt" />
         </node>
       </node>
-      <node concept="79nr.1562714432501166198" id="7000507154716606351" role="79nr.1562714432501166197.1562714432501166199" info="ng">
+      <node concept="79nr.1562714432501166198" id="7000507154716606351" role="79nr.1562714432501166197.1562714432501166199" info="lg">
         <reference role="79nr.6193305307616715384.6193305307616734326" target="3906874221886749855" resolveInfo="FileDelete" />
         <node concept="79nr.1207318242772" id="7000507154716606352" role="79nr.1562714432501166198.1562714432501166206" info="ng">
           <property role="79nr.1207318242772.1207318242774" value="VK_DELETE" />
         </node>
       </node>
-      <node concept="79nr.1562714432501166198" id="2214103008221911254" role="79nr.1562714432501166197.1562714432501166199" info="ng">
+      <node concept="79nr.1562714432501166198" id="2214103008221911254" role="79nr.1562714432501166197.1562714432501166199" info="lg">
         <reference role="79nr.6193305307616715384.6193305307616734326" target="2214103008221911165" resolveInfo="FindModelUsages" />
         <node concept="79nr.1207318242772" id="6573807532044017008" role="79nr.1562714432501166198.1562714432501166206" info="ng">
           <property role="79nr.1207318242772.1207318242774" value="VK_F7" />
           <property role="79nr.1207318242772.1207318242773" value="alt" />
         </node>
       </node>
-      <node concept="79nr.1562714432501166198" id="7000507154716606549" role="79nr.1562714432501166197.1562714432501166199" info="ng">
+      <node concept="79nr.1562714432501166198" id="7000507154716606549" role="79nr.1562714432501166197.1562714432501166199" info="lg">
         <reference role="79nr.6193305307616715384.6193305307616734326" target="5033107305426766812" resolveInfo="FindSpecificNodeUsages" />
         <node concept="79nr.1207318242772" id="3467876158046058943" role="79nr.1562714432501166198.1562714432501166206" info="ng">
           <property role="79nr.1207318242772.1207318242774" value="VK_F7" />
           <property role="79nr.1207318242772.1207318242773" value="ctrl+alt+shift" />
         </node>
       </node>
-      <node concept="79nr.1562714432501166198" id="7000507154716606395" role="79nr.1562714432501166197.1562714432501166199" info="ng">
+      <node concept="79nr.1562714432501166198" id="7000507154716606395" role="79nr.1562714432501166197.1562714432501166199" info="lg">
         <reference role="79nr.6193305307616715384.6193305307616734326" target="3906874221886742260" resolveInfo="GoToAction" />
         <node concept="79nr.1207318242772" id="7000507154716606396" role="79nr.1562714432501166198.1562714432501166206" info="ng">
           <property role="79nr.1207318242772.1207318242774" value="VK_A" />
           <property role="79nr.1207318242772.1207318242773" value="ctrl+shift" />
         </node>
       </node>
-      <node concept="79nr.1562714432501166198" id="7000507154716606387" role="79nr.1562714432501166197.1562714432501166199" info="ng">
+      <node concept="79nr.1562714432501166198" id="7000507154716606387" role="79nr.1562714432501166197.1562714432501166199" info="lg">
         <reference role="79nr.6193305307616715384.6193305307616734326" target="5014390439885403930" resolveInfo="GoToFile" />
         <node concept="79nr.1207318242772" id="7000507154716606388" role="79nr.1562714432501166198.1562714432501166206" info="ng">
           <property role="79nr.1207318242772.1207318242774" value="VK_N" />
           <property role="79nr.1207318242772.1207318242773" value="ctrl+shift" />
         </node>
       </node>
-      <node concept="79nr.1562714432501166198" id="7000507154716606375" role="79nr.1562714432501166197.1562714432501166199" info="ng">
+      <node concept="79nr.1562714432501166198" id="7000507154716606375" role="79nr.1562714432501166197.1562714432501166199" info="lg">
         <reference role="79nr.6193305307616715384.6193305307616734326" target="3906874221886742388" resolveInfo="GoToModel" />
         <node concept="79nr.1207318242772" id="7000507154716606376" role="79nr.1562714432501166198.1562714432501166206" info="ng">
           <property role="79nr.1207318242772.1207318242774" value="VK_M" />
           <property role="79nr.1207318242772.1207318242773" value="ctrl+alt+shift" />
         </node>
       </node>
-      <node concept="79nr.1562714432501166198" id="7000507154716606383" role="79nr.1562714432501166197.1562714432501166199" info="ng">
+      <node concept="79nr.1562714432501166198" id="7000507154716606383" role="79nr.1562714432501166197.1562714432501166199" info="lg">
         <reference role="79nr.6193305307616715384.6193305307616734326" target="3906874221886742347" resolveInfo="GoToNamedNode" />
         <node concept="79nr.1207318242772" id="7000507154716606384" role="79nr.1562714432501166198.1562714432501166206" info="ng">
           <property role="79nr.1207318242772.1207318242774" value="VK_N" />
           <property role="79nr.1207318242772.1207318242773" value="ctrl+alt+shift" />
         </node>
       </node>
-      <node concept="79nr.1562714432501166198" id="7000507154716606429" role="79nr.1562714432501166197.1562714432501166199" info="ng">
+      <node concept="79nr.1562714432501166198" id="7000507154716606429" role="79nr.1562714432501166197.1562714432501166199" info="lg">
         <reference role="79nr.6193305307616715384.6193305307616734326" target="3906874221886742303" resolveInfo="GoToRootNode" />
         <node concept="79nr.1207318242772" id="7000507154716606430" role="79nr.1562714432501166198.1562714432501166206" info="ng">
           <property role="79nr.1207318242772.1207318242774" value="VK_N" />
           <property role="79nr.1207318242772.1207318242773" value="ctrl" />
         </node>
       </node>
-      <node concept="79nr.1562714432501166198" id="7000507154716606373" role="79nr.1562714432501166197.1562714432501166199" info="ng">
+      <node concept="79nr.1562714432501166198" id="7000507154716606373" role="79nr.1562714432501166197.1562714432501166199" info="lg">
         <reference role="79nr.6193305307616715384.6193305307616734326" target="3906874221886742454" resolveInfo="GoToModule" />
         <node concept="79nr.1207318242772" id="9016461738151544143" role="79nr.1562714432501166198.1562714432501166206" info="ng">
           <property role="79nr.1207318242772.1207318242774" value="VK_S" />
           <property role="79nr.1207318242772.1207318242773" value="ctrl+alt+shift" />
         </node>
       </node>
-      <node concept="79nr.1562714432501166198" id="7000507154716606443" role="79nr.1562714432501166197.1562714432501166199" info="ng">
+      <node concept="79nr.1562714432501166198" id="7000507154716606443" role="79nr.1562714432501166197.1562714432501166199" info="lg">
         <reference role="79nr.6193305307616715384.6193305307616734326" target="227146524086812204" resolveInfo="HighlightInstances" />
         <node concept="79nr.1207318242772" id="7000507154716606444" role="79nr.1562714432501166198.1562714432501166206" info="ng">
           <property role="79nr.1207318242772.1207318242774" value="VK_F6" />
           <property role="79nr.1207318242772.1207318242773" value="ctrl+shift" />
         </node>
       </node>
-      <node concept="79nr.1562714432501166198" id="7000507154716606527" role="79nr.1562714432501166197.1562714432501166199" info="ng">
+      <node concept="79nr.1562714432501166198" id="7000507154716606527" role="79nr.1562714432501166197.1562714432501166199" info="lg">
         <reference role="79nr.6193305307616715384.6193305307616734326" target="5533671870987003804" resolveInfo="HighlightUsages" />
         <node concept="79nr.1207318242772" id="7000507154716606528" role="79nr.1562714432501166198.1562714432501166206" info="ng">
           <property role="79nr.1207318242772.1207318242774" value="VK_F7" />
           <property role="79nr.1207318242772.1207318242773" value="ctrl+shift" />
         </node>
       </node>
-      <node concept="79nr.1562714432501166198" id="7000507154716606537" role="79nr.1562714432501166197.1562714432501166199" info="ng">
+      <node concept="79nr.1562714432501166198" id="7000507154716606537" role="79nr.1562714432501166197.1562714432501166199" info="lg">
         <reference role="79nr.6193305307616715384.6193305307616734326" target="1222856130125" resolveInfo="MPSProjectPaths" />
         <node concept="79nr.1207318242772" id="7000507154716606538" role="79nr.1562714432501166198.1562714432501166206" info="ng">
           <property role="79nr.1207318242772.1207318242774" value="VK_ENTER" />
           <property role="79nr.1207318242772.1207318242773" value="alt" />
         </node>
       </node>
-      <node concept="79nr.1562714432501166198" id="7000507154716606401" role="79nr.1562714432501166197.1562714432501166199" info="ng">
+      <node concept="79nr.1562714432501166198" id="7000507154716606401" role="79nr.1562714432501166197.1562714432501166199" info="lg">
         <reference role="79nr.6193305307616715384.6193305307616734326" target="1235219887263" resolveInfo="ModelProperties" />
         <node concept="79nr.1207318242772" id="7000507154716606402" role="79nr.1562714432501166198.1562714432501166206" info="ng">
           <property role="79nr.1207318242772.1207318242774" value="VK_ENTER" />
           <property role="79nr.1207318242772.1207318242773" value="alt" />
         </node>
       </node>
-      <node concept="79nr.1562714432501166198" id="7000507154716606467" role="79nr.1562714432501166197.1562714432501166199" info="ng">
+      <node concept="79nr.1562714432501166198" id="7000507154716606467" role="79nr.1562714432501166197.1562714432501166199" info="lg">
         <reference role="79nr.6193305307616715384.6193305307616734326" target="2589658255268083877" resolveInfo="MoveFileOrDirectory" />
         <node concept="79nr.1207318242772" id="7000507154716606468" role="79nr.1562714432501166198.1562714432501166206" info="ng">
           <property role="79nr.1207318242772.1207318242774" value="VK_F6" />
         </node>
       </node>
-      <node concept="79nr.1562714432501166198" id="7000507154716606321" role="79nr.1562714432501166197.1562714432501166199" info="ng">
+      <node concept="79nr.1562714432501166198" id="7000507154716606321" role="79nr.1562714432501166197.1562714432501166199" info="lg">
         <reference role="79nr.6193305307616715384.6193305307616734326" target="5533671870987188872" resolveInfo="PasteNode" />
         <node concept="79nr.1207318242772" id="7000507154716606322" role="79nr.1562714432501166198.1562714432501166206" info="ng">
           <property role="79nr.1207318242772.1207318242774" value="VK_V" />
           <property role="79nr.1207318242772.1207318242773" value="ctrl" />
         </node>
       </node>
-      <node concept="79nr.1562714432501166198" id="1114467083860963445" role="79nr.1562714432501166197.1562714432501166199" info="ng">
+      <node concept="79nr.1562714432501166198" id="1114467083860963445" role="79nr.1562714432501166197.1562714432501166199" info="lg">
         <reference role="79nr.6193305307616715384.6193305307616734326" target="7918601149636191506" resolveInfo="NewElement" />
         <node concept="79nr.1207318242772" id="1114467083860963446" role="79nr.1562714432501166198.1562714432501166206" info="ng">
           <property role="79nr.1207318242772.1207318242774" value="VK_INSERT" />
@@ -21384,111 +21367,111 @@
           <property role="79nr.1207318242772.1207318242773" value="ctrl+alt" />
         </node>
       </node>
-      <node concept="79nr.1562714432501166198" id="7000507154716606333" role="79nr.1562714432501166197.1562714432501166199" info="ng">
+      <node concept="79nr.1562714432501166198" id="7000507154716606333" role="79nr.1562714432501166197.1562714432501166199" info="lg">
         <reference role="79nr.6193305307616715384.6193305307616734326" target="8243555296290140340" resolveInfo="RemoveFromFavorites" />
         <node concept="79nr.1207318242772" id="7000507154716606334" role="79nr.1562714432501166198.1562714432501166206" info="ng">
           <property role="79nr.1207318242772.1207318242774" value="VK_DELETE" />
           <property role="79nr.1207318242772.1207318242773" value="ctrl" />
         </node>
       </node>
-      <node concept="79nr.1562714432501166198" id="7000507154716606337" role="79nr.1562714432501166197.1562714432501166199" info="ng">
+      <node concept="79nr.1562714432501166198" id="7000507154716606337" role="79nr.1562714432501166197.1562714432501166199" info="lg">
         <reference role="79nr.6193305307616715384.6193305307616734326" target="2589658255268083871" resolveInfo="RenameFileOrDirectory" />
         <node concept="79nr.1207318242772" id="7000507154716606338" role="79nr.1562714432501166198.1562714432501166206" info="ng">
           <property role="79nr.1207318242772.1207318242774" value="VK_F6" />
           <property role="79nr.1207318242772.1207318242773" value="shift" />
         </node>
       </node>
-      <node concept="79nr.1562714432501166198" id="7000507154716606437" role="79nr.1562714432501166197.1562714432501166199" info="ng">
+      <node concept="79nr.1562714432501166198" id="7000507154716606437" role="79nr.1562714432501166197.1562714432501166199" info="lg">
         <reference role="79nr.6193305307616715384.6193305307616734326" target="6840593892233915864" resolveInfo="RenameModel" />
         <node concept="79nr.1207318242772" id="7000507154716606438" role="79nr.1562714432501166198.1562714432501166206" info="ng">
           <property role="79nr.1207318242772.1207318242774" value="VK_F6" />
           <property role="79nr.1207318242772.1207318242773" value="shift" />
         </node>
       </node>
-      <node concept="79nr.1562714432501166198" id="7000507154716606413" role="79nr.1562714432501166197.1562714432501166199" info="ng">
+      <node concept="79nr.1562714432501166198" id="7000507154716606413" role="79nr.1562714432501166197.1562714432501166199" info="lg">
         <reference role="79nr.6193305307616715384.6193305307616734326" target="6840593892233919195" resolveInfo="RenamePackage" />
         <node concept="79nr.1207318242772" id="7000507154716606414" role="79nr.1562714432501166198.1562714432501166206" info="ng">
           <property role="79nr.1207318242772.1207318242774" value="VK_F6" />
           <property role="79nr.1207318242772.1207318242773" value="shift" />
         </node>
       </node>
-      <node concept="79nr.1562714432501166198" id="7000507154716606431" role="79nr.1562714432501166197.1562714432501166199" info="ng">
+      <node concept="79nr.1562714432501166198" id="7000507154716606431" role="79nr.1562714432501166197.1562714432501166199" info="lg">
         <reference role="79nr.6193305307616715384.6193305307616734326" target="3734045384532066586" resolveInfo="RenameSolution" />
         <node concept="79nr.1207318242772" id="7000507154716606432" role="79nr.1562714432501166198.1562714432501166206" info="ng">
           <property role="79nr.1207318242772.1207318242774" value="VK_F6" />
           <property role="79nr.1207318242772.1207318242773" value="shift" />
         </node>
       </node>
-      <node concept="79nr.1562714432501166198" id="8784230320738944339" role="79nr.1562714432501166197.1562714432501166199" info="ng">
+      <node concept="79nr.1562714432501166198" id="8784230320738944339" role="79nr.1562714432501166197.1562714432501166199" info="lg">
         <reference role="79nr.6193305307616715384.6193305307616734326" target="8784230320738944314" resolveInfo="SafeDelete" />
         <node concept="79nr.1207318242772" id="6573807532044017016" role="79nr.1562714432501166198.1562714432501166206" info="ng">
           <property role="79nr.1207318242772.1207318242774" value="VK_DELETE" />
           <property role="79nr.1207318242772.1207318242773" value="alt" />
         </node>
       </node>
-      <node concept="79nr.1562714432501166198" id="7000507154716606535" role="79nr.1562714432501166197.1562714432501166199" info="ng">
+      <node concept="79nr.1562714432501166198" id="7000507154716606535" role="79nr.1562714432501166197.1562714432501166199" info="lg">
         <reference role="79nr.6193305307616715384.6193305307616734326" target="1236342883095" resolveInfo="SetBookmarkNoNumber" />
         <node concept="79nr.1207318242772" id="7000507154716606536" role="79nr.1562714432501166198.1562714432501166206" info="ng">
           <property role="79nr.1207318242772.1207318242774" value="VK_F11" />
         </node>
       </node>
-      <node concept="79nr.1562714432501166198" id="7000507154716606455" role="79nr.1562714432501166197.1562714432501166199" info="ng">
+      <node concept="79nr.1562714432501166198" id="7000507154716606455" role="79nr.1562714432501166197.1562714432501166199" info="lg">
         <reference role="79nr.6193305307616715384.6193305307616734326" target="1236354516255" resolveInfo="ShowBookmarksDialog" />
         <node concept="79nr.1207318242772" id="7000507154716606456" role="79nr.1562714432501166198.1562714432501166206" info="ng">
           <property role="79nr.1207318242772.1207318242774" value="VK_F11" />
           <property role="79nr.1207318242772.1207318242773" value="shift" />
         </node>
       </node>
-      <node concept="79nr.1562714432501166198" id="7000507154716606453" role="79nr.1562714432501166197.1562714432501166199" info="ng">
+      <node concept="79nr.1562714432501166198" id="7000507154716606453" role="79nr.1562714432501166197.1562714432501166199" info="lg">
         <reference role="79nr.6193305307616715384.6193305307616734326" target="1216119398364" resolveInfo="ShowClassInHierarchy" />
         <node concept="79nr.1207318242772" id="7000507154716606454" role="79nr.1562714432501166198.1562714432501166206" info="ng">
           <property role="79nr.1207318242772.1207318242774" value="VK_H" />
           <property role="79nr.1207318242772.1207318242773" value="ctrl" />
         </node>
       </node>
-      <node concept="79nr.1562714432501166198" id="7000507154716606425" role="79nr.1562714432501166197.1562714432501166199" info="ng">
+      <node concept="79nr.1562714432501166198" id="7000507154716606425" role="79nr.1562714432501166197.1562714432501166199" info="lg">
         <reference role="79nr.6193305307616715384.6193305307616734326" target="1216120033386" resolveInfo="ShowConceptInHierarchy" />
         <node concept="79nr.1207318242772" id="7000507154716606426" role="79nr.1562714432501166198.1562714432501166206" info="ng">
           <property role="79nr.1207318242772.1207318242774" value="VK_H" />
           <property role="79nr.1207318242772.1207318242773" value="ctrl" />
         </node>
       </node>
-      <node concept="79nr.1562714432501166198" id="7000507154716606517" role="79nr.1562714432501166197.1562714432501166199" info="ng">
+      <node concept="79nr.1562714432501166198" id="7000507154716606517" role="79nr.1562714432501166197.1562714432501166199" info="lg">
         <reference role="79nr.6193305307616715384.6193305307616734326" target="7397015581138491059" resolveInfo="ShowImplementations" />
         <node concept="79nr.1207318242772" id="7000507154716606518" role="79nr.1562714432501166198.1562714432501166206" info="ng">
           <property role="79nr.1207318242772.1207318242774" value="VK_I" />
           <property role="79nr.1207318242772.1207318242773" value="ctrl+shift" />
         </node>
       </node>
-      <node concept="79nr.1562714432501166198" id="7000507154716606315" role="79nr.1562714432501166197.1562714432501166199" info="ng">
+      <node concept="79nr.1562714432501166198" id="7000507154716606315" role="79nr.1562714432501166197.1562714432501166199" info="lg">
         <reference role="79nr.6193305307616715384.6193305307616734326" target="1216125431295" resolveInfo="ShowNodeInInspector" />
         <node concept="79nr.1207318242772" id="7000507154716606316" role="79nr.1562714432501166198.1562714432501166206" info="ng">
           <property role="79nr.1207318242772.1207318242774" value="VK_I" />
           <property role="79nr.1207318242772.1207318242773" value="ctrl" />
         </node>
       </node>
-      <node concept="79nr.1562714432501166198" id="7000507154716606541" role="79nr.1562714432501166197.1562714432501166199" info="ng">
+      <node concept="79nr.1562714432501166198" id="7000507154716606541" role="79nr.1562714432501166197.1562714432501166199" info="lg">
         <reference role="79nr.6193305307616715384.6193305307616734326" target="5535460359399556383" resolveInfo="ShowNodeInfo" />
         <node concept="79nr.1207318242772" id="7000507154716606542" role="79nr.1562714432501166198.1562714432501166206" info="ng">
           <property role="79nr.1207318242772.1207318242774" value="VK_Q" />
           <property role="79nr.1207318242772.1207318242773" value="ctrl" />
         </node>
       </node>
-      <node concept="79nr.1562714432501166198" id="6925945455225309686" role="79nr.1562714432501166197.1562714432501166199" info="ng">
+      <node concept="79nr.1562714432501166198" id="6925945455225309686" role="79nr.1562714432501166197.1562714432501166199" info="lg">
         <reference role="79nr.6193305307616715384.6193305307616734326" target="1216124527478" resolveInfo="ShowInLogicalView" />
         <node concept="79nr.1207318242772" id="6925945455225309687" role="79nr.1562714432501166198.1562714432501166206" info="ng">
           <property role="79nr.1207318242772.1207318242774" value="VK_F2" />
           <property role="79nr.1207318242772.1207318242773" value="alt" />
         </node>
       </node>
-      <node concept="79nr.1562714432501166198" id="7000507154716606489" role="79nr.1562714432501166197.1562714432501166199" info="ng">
+      <node concept="79nr.1562714432501166198" id="7000507154716606489" role="79nr.1562714432501166197.1562714432501166199" info="lg">
         <reference role="79nr.6193305307616715384.6193305307616734326" target="7889360268649608396" resolveInfo="ShowParameters" />
         <node concept="79nr.1207318242772" id="7000507154716606490" role="79nr.1562714432501166198.1562714432501166206" info="ng">
           <property role="79nr.1207318242772.1207318242774" value="VK_P" />
           <property role="79nr.1207318242772.1207318242773" value="ctrl" />
         </node>
       </node>
-      <node concept="79nr.1562714432501166198" id="7000507154716606497" role="79nr.1562714432501166197.1562714432501166199" info="ng">
+      <node concept="79nr.1562714432501166198" id="7000507154716606497" role="79nr.1562714432501166197.1562714432501166199" info="lg">
         <reference role="79nr.6193305307616715384.6193305307616734326" target="1216126715578" resolveInfo="ModuleProperties" />
         <node concept="79nr.1207318242772" id="7000507154716606498" role="79nr.1562714432501166198.1562714432501166206" info="ng">
           <property role="79nr.1207318242772.1207318242774" value="VK_ENTER" />
@@ -21525,7 +21508,7 @@
           </node>
         </node>
       </node>
-      <node concept="79nr.1562714432501166198" id="8844372712420220971" role="79nr.1562714432501166197.1562714432501166199" info="ng">
+      <node concept="79nr.1562714432501166198" id="8844372712420220971" role="79nr.1562714432501166197.1562714432501166199" info="lg">
         <reference role="79nr.6193305307616715384.6193305307616734326" target="2003512433031647705" resolveInfo="GoByCurrentReferenceToIDEA" />
         <node concept="79nr.1207318242772" id="8844372712420220972" role="79nr.1562714432501166198.1562714432501166206" info="ng">
           <property role="79nr.1207318242772.1207318242774" value="VK_B" />
@@ -21759,7 +21742,7 @@
     <node concept="79nr.1203087890642" id="6661528628553884549" info="ng">
       <property role="asn4.1169194658468.1169194664001" value="NamespaceMakeActions" />
       <property role="asn4.1133920641626.1193676396447" value="Menu.ProjectPane.Packages" />
-      <node concept="79nr.1203092361741" id="5152061616759057018" role="79nr.1203087890642.1204991552650" info="ng">
+      <node concept="79nr.1203092361741" id="5152061616759057018" role="79nr.1203087890642.1204991552650" info="lg">
         <reference role="79nr.1203092361741.1203092736097" target="4053449317375378317" resolveInfo="FlyingActions" />
       </node>
       <node concept="79nr.1207145163717" id="6661528628553884551" role="79nr.1203087890642.1207145245948" info="ng">
@@ -21773,7 +21756,7 @@
       <property role="79nr.1203087890642.1204991940915" value="New" />
       <property role="asn4.1133920641626.1193676396447" value="Menu.ProjectPane.Module.Generator" />
       <property role="79nr.1203087890642.1213283637680" value="true" />
-      <node concept="79nr.1203092361741" id="1366781238034273683" role="79nr.1203087890642.1204991552650" info="ng">
+      <node concept="79nr.1203092361741" id="1366781238034273683" role="79nr.1203087890642.1204991552650" info="lg">
         <reference role="79nr.1203092361741.1203092736097" target="1204991229896" resolveInfo="GeneratorActions" />
         <reference role="79nr.1203092361741.1204992316090" target="1204980550723" resolveInfo="generatorNew" />
       </node>
@@ -21791,7 +21774,7 @@
       <property role="79nr.1203087890642.1204991940915" value="New" />
       <property role="asn4.1133920641626.1193676396447" value="Menu.ProjectPane.Module.Language" />
       <property role="79nr.1203087890642.1213283637680" value="true" />
-      <node concept="79nr.1203092361741" id="1366781238034273688" role="79nr.1203087890642.1204991552650" info="ng">
+      <node concept="79nr.1203092361741" id="1366781238034273688" role="79nr.1203087890642.1204991552650" info="lg">
         <reference role="79nr.1203092361741.1203092736097" target="1204991224874" resolveInfo="LanguageActions" />
         <reference role="79nr.1203092361741.1204992316090" target="1204911159306" resolveInfo="newGroup" />
       </node>
@@ -21837,11 +21820,11 @@
           <property role="asn4.1169194658468.1169194664001" value="generator" />
         </node>
       </node>
-      <node concept="79nr.1203092361741" id="3464435412756462059" role="79nr.1203087890642.1204991552650" info="ng">
+      <node concept="79nr.1203092361741" id="3464435412756462059" role="79nr.1203087890642.1204991552650" info="lg">
         <reference role="79nr.1203092361741.1203092736097" target="ekwn.1755502566255660782" resolveInfo="EditorPopup" />
         <reference role="79nr.1203092361741.1204992316090" target="ekwn.1755502566255660798" resolveInfo="debug" />
       </node>
-      <node concept="79nr.1203092361741" id="3464435412756462060" role="79nr.1203087890642.1204991552650" info="ng">
+      <node concept="79nr.1203092361741" id="3464435412756462060" role="79nr.1203087890642.1204991552650" info="lg">
         <reference role="79nr.1203092361741.1203092736097" target="1204991215587" resolveInfo="NodeActions" />
         <reference role="79nr.1203092361741.1204992316090" target="1234869968490316272" resolveInfo="debug" />
       </node>
@@ -21955,13 +21938,13 @@
     <node concept="79nr.1562714432501166197" id="1382572689121738550" info="ng">
       <property role="asn4.1169194658468.1169194664001" value="TraceActions" />
       <property role="asn4.1133920641626.1193676396447" value="trace" />
-      <node concept="79nr.1562714432501166198" id="1382572689121738551" role="79nr.1562714432501166197.1562714432501166199" info="ng">
+      <node concept="79nr.1562714432501166198" id="1382572689121738551" role="79nr.1562714432501166197.1562714432501166199" info="lg">
         <reference role="79nr.6193305307616715384.6193305307616734326" target="1382572689121738513" resolveInfo="GoToNode" />
         <node concept="79nr.1207318242772" id="1382572689121738552" role="79nr.1562714432501166198.1562714432501166206" info="ng">
           <property role="79nr.1207318242772.1207318242774" value="F3" />
         </node>
       </node>
-      <node concept="79nr.1562714432501166198" id="1382572689121738553" role="79nr.1562714432501166197.1562714432501166199" info="ng">
+      <node concept="79nr.1562714432501166198" id="1382572689121738553" role="79nr.1562714432501166197.1562714432501166199" info="lg">
         <reference role="79nr.6193305307616715384.6193305307616734326" target="1382572689121738536" resolveInfo="GoToRule" />
         <node concept="79nr.1207318242772" id="1382572689121738554" role="79nr.1562714432501166198.1562714432501166206" info="ng">
           <property role="79nr.1207318242772.1207318242774" value="F4" />
@@ -21973,7 +21956,7 @@
       <property role="asn4.1133920641626.1193676396447" value="Menu.MainMenu" />
       <property role="79nr.1203087890642.1204991940915" value="Internal" />
       <property role="79nr.1203087890642.1205160838084" value="true" />
-      <node concept="79nr.1203092361741" id="2899596005954254200" role="79nr.1203087890642.1204991552650" info="ng">
+      <node concept="79nr.1203092361741" id="2899596005954254200" role="79nr.1203087890642.1204991552650" info="lg">
         <reference role="79nr.1203092361741.1203092736097" target="1425263017121620230" resolveInfo="IDEAInternalActions" />
       </node>
       <node concept="79nr.1207145163717" id="2899596005954254199" role="79nr.1203087890642.1207145245948" info="ng">
@@ -21999,7 +21982,7 @@
     <node concept="79nr.1203087890642" id="1204991215587" info="ng">
       <property role="asn4.1169194658468.1169194664001" value="NodeActions" />
       <property role="asn4.1133920641626.1193676396447" value="Menu.ProjectPane.Node" />
-      <node concept="79nr.1203092361741" id="5152061616758930519" role="79nr.1203087890642.1204991552650" info="ng">
+      <node concept="79nr.1203092361741" id="5152061616758930519" role="79nr.1203087890642.1204991552650" info="lg">
         <reference role="79nr.1203092361741.1203092736097" target="4053449317375378317" resolveInfo="FlyingActions" />
       </node>
       <node concept="79nr.1207145163717" id="1207148449406" role="79nr.1203087890642.1207145245948" info="ng">
@@ -22085,11 +22068,11 @@
     <node concept="79nr.1203087890642" id="1587195459761469116" info="ng">
       <property role="asn4.1169194658468.1169194664001" value="FindUsages" />
       <property role="asn4.1133920641626.1193676396447" value="Menu.ProjectPane.Node" />
-      <node concept="79nr.1203092361741" id="1587195459761470374" role="79nr.1203087890642.1204991552650" info="ng">
+      <node concept="79nr.1203092361741" id="1587195459761470374" role="79nr.1203087890642.1204991552650" info="lg">
         <reference role="79nr.1203092361741.1203092736097" target="1204991215587" resolveInfo="NodeActions" />
         <reference role="79nr.1203092361741.1204992316090" target="1237990522669" resolveInfo="find" />
       </node>
-      <node concept="79nr.1203092361741" id="1587195459761470375" role="79nr.1203087890642.1204991552650" info="ng">
+      <node concept="79nr.1203092361741" id="1587195459761470375" role="79nr.1203087890642.1204991552650" info="lg">
         <reference role="79nr.1203092361741.1203092736097" target="ekwn.1755502566255660782" resolveInfo="EditorPopup" />
         <reference role="79nr.1203092361741.1204992316090" target="ekwn.1755502566255660800" resolveInfo="find" />
       </node>
@@ -22111,7 +22094,7 @@
     <node concept="79nr.1203087890642" id="885275291024029562" info="ng">
       <property role="asn4.1169194658468.1169194664001" value="View" />
       <property role="asn4.1133920641626.1193676396447" value="Menu.MainMenu" />
-      <node concept="79nr.1203092361741" id="885275291024029564" role="79nr.1203087890642.1204991552650" info="ng">
+      <node concept="79nr.1203092361741" id="885275291024029564" role="79nr.1203087890642.1204991552650" info="lg">
         <reference role="79nr.1203092361741.1203092736097" target="1215011911267" resolveInfo="IDEAView" />
       </node>
       <node concept="79nr.1207145163717" id="885275291024029565" role="79nr.1203087890642.1207145245948" info="ng">
@@ -22189,15 +22172,15 @@
         </node>
         <node concept="79nr.1204908117386" id="696518775937787053" role="79nr.1207145163717.1207145201301" info="ng" />
       </node>
-      <node concept="79nr.1203092361741" id="401659284115231187" role="79nr.1203087890642.1204991552650" info="ng">
+      <node concept="79nr.1203092361741" id="401659284115231187" role="79nr.1203087890642.1204991552650" info="lg">
         <reference role="79nr.1203092361741.1203092736097" target="1204991226689" resolveInfo="SolutionActions" />
         <reference role="79nr.1203092361741.1204992316090" target="401659284115231184" resolveInfo="commonModule" />
       </node>
-      <node concept="79nr.1203092361741" id="401659284115231188" role="79nr.1203087890642.1204991552650" info="ng">
+      <node concept="79nr.1203092361741" id="401659284115231188" role="79nr.1203087890642.1204991552650" info="lg">
         <reference role="79nr.1203092361741.1203092736097" target="1204991224874" resolveInfo="LanguageActions" />
         <reference role="79nr.1203092361741.1204992316090" target="401659284115231186" resolveInfo="commonModule" />
       </node>
-      <node concept="79nr.1203092361741" id="2850002904480316696" role="79nr.1203087890642.1204991552650" info="ng">
+      <node concept="79nr.1203092361741" id="2850002904480316696" role="79nr.1203087890642.1204991552650" info="lg">
         <reference role="79nr.1203092361741.1203092736097" target="1204991229896" resolveInfo="GeneratorActions" />
         <reference role="79nr.1203092361741.1204992316090" target="2850002904480316695" resolveInfo="commonModule" />
       </node>
@@ -22207,7 +22190,7 @@
       <property role="asn4.1133920641626.1193676396447" value="Menu.ProjectPane.Module" />
       <property role="79nr.1203087890642.1204991940915" value="Analyze" />
       <property role="79nr.1203087890642.1213283637680" value="true" />
-      <node concept="79nr.1203092361741" id="8033185057371911846" role="79nr.1203087890642.1204991552650" info="ng">
+      <node concept="79nr.1203092361741" id="8033185057371911846" role="79nr.1203087890642.1204991552650" info="lg">
         <reference role="79nr.1203092361741.1203092736097" target="401659284115173011" resolveInfo="CommonModuleActions" />
         <reference role="79nr.1203092361741.1204992316090" target="8033185057371911848" resolveInfo="analyze" />
       </node>
@@ -23044,7 +23027,7 @@
       <property role="asn4.1133920641626.1193676396447" value="Menu.ProjectPane.Packages" />
       <property role="79nr.1203087890642.1204991940915" value="New" />
       <property role="79nr.1203087890642.1213283637680" value="true" />
-      <node concept="79nr.1203092361741" id="5152061616759305937" role="79nr.1203087890642.1204991552650" info="ng">
+      <node concept="79nr.1203092361741" id="5152061616759305937" role="79nr.1203087890642.1204991552650" info="lg">
         <reference role="79nr.1203092361741.1203092736097" target="4053449317375378317" resolveInfo="FlyingActions" />
       </node>
       <node concept="79nr.1207145163717" id="4032646381570858344" role="79nr.1203087890642.1207145245948" info="ng">
@@ -23119,7 +23102,7 @@
           <reference role="79nr.1203088046679.1203088061055" target="4221956679900513437" resolveInfo="AnalyzeStacktrace" />
         </node>
       </node>
-      <node concept="79nr.1203092361741" id="3996994949102184144" role="79nr.1203087890642.1204991552650" info="ng">
+      <node concept="79nr.1203092361741" id="3996994949102184144" role="79nr.1203087890642.1204991552650" info="lg">
         <reference role="79nr.1203092361741.1203092736097" target="9oh.2342514422328399734" resolveInfo="AnalyzePlatform" />
         <reference role="79nr.1203092361741.1204992316090" target="9oh.8127643238117959055" resolveInfo="other" />
       </node>
@@ -23132,7 +23115,7 @@
           <reference role="79nr.1203088046679.1203088061055" target="738639550409927657" resolveInfo="PrintNodePosition" />
         </node>
       </node>
-      <node concept="79nr.1203092361741" id="738639550409927704" role="79nr.1203087890642.1204991552650" info="ng">
+      <node concept="79nr.1203092361741" id="738639550409927704" role="79nr.1203087890642.1204991552650" info="lg">
         <reference role="79nr.1203092361741.1203092736097" target="1204991232446" resolveInfo="EditorInternal" />
       </node>
     </node>
@@ -23155,7 +23138,7 @@
           <reference role="79nr.1203088046679.1203088061055" target="5542140910050886364" resolveInfo="SubmitToTracker" />
         </node>
       </node>
-      <node concept="79nr.1203092361741" id="484385057887944139" role="79nr.1203087890642.1204991552650" info="ng">
+      <node concept="79nr.1203092361741" id="484385057887944139" role="79nr.1203087890642.1204991552650" info="lg">
         <reference role="79nr.1203092361741.1203092736097" target="484385057887914084" resolveInfo="MPSMessagesView" />
       </node>
     </node>
@@ -24232,7 +24215,7 @@
     <node concept="79nr.1562714432501166197" id="4944905275592622082" info="ng">
       <property role="asn4.1169194658468.1169194664001" value="DependenciesKeyMap" />
       <property role="asn4.1133920641626.1193676396447" value="dependencies" />
-      <node concept="79nr.1562714432501166198" id="4944905275592622085" role="79nr.1562714432501166197.1562714432501166199" info="ng">
+      <node concept="79nr.1562714432501166198" id="4944905275592622085" role="79nr.1562714432501166197.1562714432501166199" info="lg">
         <reference role="79nr.6193305307616715384.6193305307616734326" target="629814680568915653" resolveInfo="SafeDeleteModuleDependency" />
         <node concept="79nr.1207318242772" id="4944905275592622086" role="79nr.1562714432501166198.1562714432501166206" info="ng">
           <property role="79nr.1207318242772.1207318242774" value="VK_DELETE" />
@@ -24505,7 +24488,7 @@
           <reference role="79nr.1203088046679.1203088061055" target="7397015581138491059" resolveInfo="ShowImplementations" />
         </node>
       </node>
-      <node concept="79nr.1203092361741" id="1755502566255660779" role="79nr.1203087890642.1204991552650" info="ng">
+      <node concept="79nr.1203092361741" id="1755502566255660779" role="79nr.1203087890642.1204991552650" info="lg">
         <reference role="79nr.1203092361741.1203092736097" target="ekwn.1755502566255660782" resolveInfo="EditorPopup" />
         <reference role="79nr.1203092361741.1204992316090" target="ekwn.1755502566255660786" resolveInfo="showIn" />
       </node>
@@ -28973,7 +28956,7 @@
           <reference role="79nr.1203088046679.1203088061055" target="7918601149636191506" resolveInfo="NewElement" />
         </node>
       </node>
-      <node concept="79nr.1203092361741" id="2003512433031648171" role="79nr.1203087890642.1204991552650" info="ng">
+      <node concept="79nr.1203092361741" id="2003512433031648171" role="79nr.1203087890642.1204991552650" info="lg">
         <reference role="79nr.1203092361741.1203092736097" target="ekwn.1755502566255660782" resolveInfo="EditorPopup" />
         <reference role="79nr.1203092361741.1204992316090" target="ekwn.1755502566255660784" resolveInfo="new" />
       </node>
@@ -28986,7 +28969,7 @@
           <reference role="79nr.1203088046679.1203088061055" target="2003512433031647705" resolveInfo="GoByCurrentReferenceToIDEA" />
         </node>
       </node>
-      <node concept="79nr.1203092361741" id="2003512433031648175" role="79nr.1203087890642.1204991552650" info="ng">
+      <node concept="79nr.1203092361741" id="2003512433031648175" role="79nr.1203087890642.1204991552650" info="lg">
         <reference role="79nr.1203092361741.1203092736097" target="ekwn.3228268613620327882" resolveInfo="GoToEditorPopupAddition" />
         <reference role="79nr.1203092361741.1204992316090" target="ekwn.3228268613620327886" resolveInfo="other" />
       </node>
@@ -29222,7 +29205,7 @@
     <node concept="79nr.1203087890642" id="2214103008221911161" info="ng">
       <property role="asn4.1169194658468.1169194664001" value="FindModelUsages" />
       <property role="asn4.1133920641626.1193676396447" value="Menu.ProjectPane.Model" />
-      <node concept="79nr.1203092361741" id="2214103008221911162" role="79nr.1203087890642.1204991552650" info="ng">
+      <node concept="79nr.1203092361741" id="2214103008221911162" role="79nr.1203087890642.1204991552650" info="lg">
         <reference role="79nr.1203092361741.1203092736097" target="1204991218714" resolveInfo="ModelActions" />
         <reference role="79nr.1203092361741.1204992316090" target="1123160817407996484" resolveInfo="modelUsages" />
       </node>
@@ -29235,7 +29218,7 @@
     <node concept="79nr.1204383956737" id="6714826334259420987" info="ng">
       <property role="asn4.1169194658468.1169194664001" value="RefactoringActions" />
       <property role="asn4.1133920641626.1193676396447" value="Menu.ProjectPane.Node" />
-      <node concept="79nr.1203092361741" id="6714826334259436925" role="79nr.1203087890642.1204991552650" info="ng">
+      <node concept="79nr.1203092361741" id="6714826334259436925" role="79nr.1203087890642.1204991552650" info="lg">
         <reference role="79nr.1203092361741.1203092736097" target="1204991215587" resolveInfo="NodeActions" />
         <reference role="79nr.1203092361741.1204992316090" target="8741284284837781541" resolveInfo="refactoring" />
       </node>
@@ -29247,7 +29230,7 @@
     <node concept="79nr.1204383956737" id="4193578441192323616" info="ng">
       <property role="asn4.1169194658468.1169194664001" value="JavaModelActions" />
       <property role="asn4.1133920641626.1193676396447" value="Menu.ProjectPane.JavaBootstrap" />
-      <node concept="79nr.1203092361741" id="2872212824181502642" role="79nr.1203087890642.1204991552650" info="ng">
+      <node concept="79nr.1203092361741" id="2872212824181502642" role="79nr.1203087890642.1204991552650" info="lg">
         <reference role="79nr.1203092361741.1204992316090" target="2872212824181502635" resolveInfo="paste" />
         <reference role="79nr.1203092361741.1203092736097" target="1204991218714" resolveInfo="ModelActions" />
       </node>
@@ -29259,15 +29242,15 @@
     <node concept="79nr.1204383956737" id="4193578441192323613" info="ng">
       <property role="asn4.1169194658468.1169194664001" value="JavaNewModelActions" />
       <property role="asn4.1133920641626.1193676396447" value="Menu.ProjectPane.JavaBootstrap" />
-      <node concept="79nr.1203092361741" id="1366781238034273714" role="79nr.1203087890642.1204991552650" info="ng">
+      <node concept="79nr.1203092361741" id="1366781238034273714" role="79nr.1203087890642.1204991552650" info="lg">
         <reference role="79nr.1203092361741.1204992316090" target="1366781238034273715" resolveInfo="newModel" />
         <reference role="79nr.1203092361741.1203092736097" target="1366781238034273682" resolveInfo="GeneratorNewActions" />
       </node>
-      <node concept="79nr.1203092361741" id="1366781238034273716" role="79nr.1203087890642.1204991552650" info="ng">
+      <node concept="79nr.1203092361741" id="1366781238034273716" role="79nr.1203087890642.1204991552650" info="lg">
         <reference role="79nr.1203092361741.1203092736097" target="1366781238034273687" resolveInfo="LanguageNewActions" />
         <reference role="79nr.1203092361741.1204992316090" target="1366781238034273704" resolveInfo="newModel" />
       </node>
-      <node concept="79nr.1203092361741" id="1366781238034273717" role="79nr.1203087890642.1204991552650" info="ng">
+      <node concept="79nr.1203092361741" id="1366781238034273717" role="79nr.1203087890642.1204991552650" info="lg">
         <reference role="79nr.1203092361741.1203092736097" target="1204991227487" resolveInfo="SolutionNewActions" />
         <reference role="79nr.1203092361741.1204992316090" target="1366781238034273719" resolveInfo="newModel" />
       </node>
@@ -29279,7 +29262,7 @@
     <node concept="79nr.1204383956737" id="4193578441192323610" info="ng">
       <property role="asn4.1169194658468.1169194664001" value="JavaSolutionActions" />
       <property role="asn4.1133920641626.1193676396447" value="Menu.ProjectPane.JavaBootstrap" />
-      <node concept="79nr.1203092361741" id="1366781238034254901" role="79nr.1203087890642.1204991552650" info="ng">
+      <node concept="79nr.1203092361741" id="1366781238034254901" role="79nr.1203087890642.1204991552650" info="lg">
         <reference role="79nr.1203092361741.1203092736097" target="1204991226689" resolveInfo="SolutionActions" />
         <reference role="79nr.1203092361741.1204992316090" target="1366781238034254894" resolveInfo="contents" />
       </node>
@@ -30450,22 +30433,22 @@
     <node concept="50uk.7520713872864775836" id="7162597690968192621" info="ng" />
     <node concept="79nr.1512255007353869532" id="3856909620694994569" info="ng">
       <property role="asn4.1169194658468.1169194664001" value="DefaultNonDumbAware" />
-      <node concept="79nr.1512255007353869535" id="3337791061337020966" role="79nr.1512255007353869532.1512255007353869533" info="nn">
+      <node concept="79nr.1512255007353869535" id="3337791061337020966" role="79nr.1512255007353869532.1512255007353869533" info="ln">
         <reference role="79nr.1512255007353869535.1512255007353869536" target="5533671870987003804" resolveInfo="HighlightUsages" />
       </node>
-      <node concept="79nr.1512255007353869535" id="3337791061337020968" role="79nr.1512255007353869532.1512255007353869533" info="nn">
+      <node concept="79nr.1512255007353869535" id="3337791061337020968" role="79nr.1512255007353869532.1512255007353869533" info="ln">
         <reference role="79nr.1512255007353869535.1512255007353869536" target="227146524086812204" resolveInfo="HighlightInstances" />
       </node>
-      <node concept="79nr.1512255007353869535" id="2266407953814985810" role="79nr.1512255007353869532.1512255007353869533" info="nn">
+      <node concept="79nr.1512255007353869535" id="2266407953814985810" role="79nr.1512255007353869532.1512255007353869533" info="ln">
         <reference role="79nr.1512255007353869535.1512255007353869536" target="901628894098107140" resolveInfo="FindConceptInstances" />
       </node>
-      <node concept="79nr.1512255007353869535" id="3856909620694994570" role="79nr.1512255007353869532.1512255007353869533" info="nn">
+      <node concept="79nr.1512255007353869535" id="3856909620694994570" role="79nr.1512255007353869532.1512255007353869533" info="ln">
         <reference role="79nr.1512255007353869535.1512255007353869536" target="5033107305426734988" resolveInfo="FastFindNodeUsages" />
       </node>
-      <node concept="79nr.1512255007353869535" id="3856909620694994572" role="79nr.1512255007353869532.1512255007353869533" info="nn">
+      <node concept="79nr.1512255007353869535" id="3856909620694994572" role="79nr.1512255007353869532.1512255007353869533" info="ln">
         <reference role="79nr.1512255007353869535.1512255007353869536" target="5033107305426766812" resolveInfo="FindSpecificNodeUsages" />
       </node>
-      <node concept="79nr.1512255007353869535" id="3856909620695301355" role="79nr.1512255007353869532.1512255007353869533" info="nn">
+      <node concept="79nr.1512255007353869535" id="3856909620695301355" role="79nr.1512255007353869532.1512255007353869533" info="ln">
         <reference role="79nr.1512255007353869535.1512255007353869536" target="3906874221886742303" resolveInfo="GoToRootNode" />
       </node>
     </node>
@@ -30882,7 +30865,7 @@
           <reference role="79nr.1203088046679.1203088061055" target="8784230320738944314" resolveInfo="SafeDelete" />
         </node>
       </node>
-      <node concept="79nr.1203092361741" id="971821636814863807" role="79nr.1203087890642.1204991552650" info="ng">
+      <node concept="79nr.1203092361741" id="971821636814863807" role="79nr.1203087890642.1204991552650" info="lg">
         <reference role="79nr.1203092361741.1203092736097" target="ekwn.7791284463049069745" resolveInfo="EditorActions" />
       </node>
     </node>
@@ -34190,14 +34173,14 @@
     <node concept="79nr.1562714432501166197" id="3121818631993911011" info="ng">
       <property role="79nr.1562714432501166197.1562714432501166281" value="Mac OS X 10.5+" />
       <property role="asn4.1169194658468.1169194664001" value="Mac_10_5" />
-      <node concept="79nr.1562714432501166198" id="3121818631993938956" role="79nr.1562714432501166197.1562714432501166199" info="ng">
+      <node concept="79nr.1562714432501166198" id="3121818631993938956" role="79nr.1562714432501166197.1562714432501166199" info="lg">
         <reference role="79nr.6193305307616715384.6193305307616734326" target="1234018313905" resolveInfo="GoToBookmark" />
         <node concept="79nr.1207318242772" id="3121818631993938957" role="79nr.1562714432501166198.1562714432501166206" info="ng">
           <property role="79nr.1207318242772.1207318242774" value="VK_0" />
           <property role="79nr.1207318242772.1207318242773" value="ctrl" />
         </node>
       </node>
-      <node concept="79nr.1562714432501166198" id="3121818631993938958" role="79nr.1562714432501166197.1562714432501166199" info="ng">
+      <node concept="79nr.1562714432501166198" id="3121818631993938958" role="79nr.1562714432501166197.1562714432501166199" info="lg">
         <reference role="79nr.6193305307616715384.6193305307616734326" target="7918601149636191506" resolveInfo="NewElement" />
         <node concept="79nr.1207318242772" id="3121818631993938959" role="79nr.1562714432501166198.1562714432501166206" info="ng">
           <property role="79nr.1207318242772.1207318242774" value="VK_N" />
@@ -34208,7 +34191,7 @@
           <property role="79nr.1207318242772.1207318242773" value="ctrl" />
         </node>
       </node>
-      <node concept="79nr.1562714432501166198" id="3121818631993938961" role="79nr.1562714432501166197.1562714432501166199" info="ng">
+      <node concept="79nr.1562714432501166198" id="3121818631993938961" role="79nr.1562714432501166197.1562714432501166199" info="lg">
         <reference role="79nr.6193305307616715384.6193305307616734326" target="8784230320738944314" resolveInfo="SafeDelete" />
         <node concept="79nr.1207318242772" id="3121818631993938962" role="79nr.1562714432501166198.1562714432501166206" info="ng">
           <property role="79nr.1207318242772.1207318242774" value="VK_DELETE" />
@@ -34219,21 +34202,21 @@
           <property role="79nr.1207318242772.1207318242773" value="meta" />
         </node>
       </node>
-      <node concept="79nr.1562714432501166198" id="3121818631993938963" role="79nr.1562714432501166197.1562714432501166199" info="ng">
+      <node concept="79nr.1562714432501166198" id="3121818631993938963" role="79nr.1562714432501166197.1562714432501166199" info="lg">
         <reference role="79nr.6193305307616715384.6193305307616734326" target="1216119398364" resolveInfo="ShowClassInHierarchy" />
         <node concept="79nr.1207318242772" id="3121818631993938964" role="79nr.1562714432501166198.1562714432501166206" info="ng">
           <property role="79nr.1207318242772.1207318242774" value="VK_H" />
           <property role="79nr.1207318242772.1207318242773" value="ctrl" />
         </node>
       </node>
-      <node concept="79nr.1562714432501166198" id="3121818631993938965" role="79nr.1562714432501166197.1562714432501166199" info="ng">
+      <node concept="79nr.1562714432501166198" id="3121818631993938965" role="79nr.1562714432501166197.1562714432501166199" info="lg">
         <reference role="79nr.6193305307616715384.6193305307616734326" target="1216120033386" resolveInfo="ShowConceptInHierarchy" />
         <node concept="79nr.1207318242772" id="3121818631993938966" role="79nr.1562714432501166198.1562714432501166206" info="ng">
           <property role="79nr.1207318242772.1207318242774" value="VK_H" />
           <property role="79nr.1207318242772.1207318242773" value="ctrl" />
         </node>
       </node>
-      <node concept="79nr.1562714432501166198" id="3121818631993938967" role="79nr.1562714432501166197.1562714432501166199" info="ng">
+      <node concept="79nr.1562714432501166198" id="3121818631993938967" role="79nr.1562714432501166197.1562714432501166199" info="lg">
         <reference role="79nr.6193305307616715384.6193305307616734326" target="5535460359399556383" resolveInfo="ShowNodeInfo" />
         <node concept="79nr.1207318242772" id="3121818631993938968" role="79nr.1562714432501166198.1562714432501166206" info="ng">
           <property role="79nr.1207318242772.1207318242774" value="VK_Q" />
@@ -34255,7 +34238,7 @@
           </node>
         </node>
       </node>
-      <node concept="79nr.1562714432501166198" id="3121818631993938977" role="79nr.1562714432501166197.1562714432501166199" info="ng">
+      <node concept="79nr.1562714432501166198" id="3121818631993938977" role="79nr.1562714432501166197.1562714432501166199" info="lg">
         <reference role="79nr.6193305307616715384.6193305307616734326" target="2003512433031647705" resolveInfo="GoByCurrentReferenceToIDEA" />
         <node concept="79nr.1207318242772" id="3121818631993938978" role="79nr.1562714432501166198.1562714432501166206" info="ng">
           <property role="79nr.1207318242772.1207318242774" value="VK_B" />
@@ -34823,35 +34806,35 @@
     <node concept="79nr.1562714432501166197" id="6874470910152579882" info="ng">
       <property role="79nr.1562714432501166197.1562714432501166281" value="Default for GNOME" />
       <property role="asn4.1169194658468.1169194664001" value="GnomeActionsKeymap" />
-      <node concept="79nr.1562714432501166198" id="2266407953814985930" role="79nr.1562714432501166197.1562714432501166199" info="ng">
+      <node concept="79nr.1562714432501166198" id="2266407953814985930" role="79nr.1562714432501166197.1562714432501166199" info="lg">
         <reference role="79nr.6193305307616715384.6193305307616734326" target="901628894098107140" resolveInfo="FindConceptInstances" />
         <node concept="79nr.1207318242772" id="2266407953814985932" role="79nr.1562714432501166198.1562714432501166206" info="ng">
           <property role="79nr.1207318242772.1207318242774" value="VK_6" />
           <property role="79nr.1207318242772.1207318242773" value="alt+shift" />
         </node>
       </node>
-      <node concept="79nr.1562714432501166198" id="3467876158046073806" role="79nr.1562714432501166197.1562714432501166199" info="ng">
+      <node concept="79nr.1562714432501166198" id="3467876158046073806" role="79nr.1562714432501166197.1562714432501166199" info="lg">
         <reference role="79nr.6193305307616715384.6193305307616734326" target="5033107305426734988" resolveInfo="FastFindNodeUsages" />
         <node concept="79nr.1207318242772" id="3467876158046073808" role="79nr.1562714432501166198.1562714432501166206" info="ng">
           <property role="79nr.1207318242772.1207318242774" value="VK_7" />
           <property role="79nr.1207318242772.1207318242773" value="alt+shift" />
         </node>
       </node>
-      <node concept="79nr.1562714432501166198" id="6874470910152580634" role="79nr.1562714432501166197.1562714432501166199" info="ng">
+      <node concept="79nr.1562714432501166198" id="6874470910152580634" role="79nr.1562714432501166197.1562714432501166199" info="lg">
         <reference role="79nr.6193305307616715384.6193305307616734326" target="2214103008221911165" resolveInfo="FindModelUsages" />
         <node concept="79nr.1207318242772" id="6874470910152580635" role="79nr.1562714432501166198.1562714432501166206" info="ng">
           <property role="79nr.1207318242772.1207318242774" value="VK_7" />
           <property role="79nr.1207318242772.1207318242773" value="alt+shift" />
         </node>
       </node>
-      <node concept="79nr.1562714432501166198" id="6874470910152599000" role="79nr.1562714432501166197.1562714432501166199" info="ng">
+      <node concept="79nr.1562714432501166198" id="6874470910152599000" role="79nr.1562714432501166197.1562714432501166199" info="lg">
         <reference role="79nr.6193305307616715384.6193305307616734326" target="5033107305426766812" resolveInfo="FindSpecificNodeUsages" />
         <node concept="79nr.1207318242772" id="6874470910152599002" role="79nr.1562714432501166198.1562714432501166206" info="ng">
           <property role="79nr.1207318242772.1207318242774" value="VK_7" />
           <property role="79nr.1207318242772.1207318242773" value="ctrl+alt+shift" />
         </node>
       </node>
-      <node concept="79nr.1562714432501166198" id="8046013777790755919" role="79nr.1562714432501166197.1562714432501166199" info="ng">
+      <node concept="79nr.1562714432501166198" id="8046013777790755919" role="79nr.1562714432501166197.1562714432501166199" info="lg">
         <reference role="79nr.6193305307616715384.6193305307616734326" target="1216124527478" resolveInfo="ShowInLogicalView" />
         <node concept="79nr.1207318242772" id="8046013777790755921" role="79nr.1562714432501166198.1562714432501166206" info="ng">
           <property role="79nr.1207318242772.1207318242774" value="VK_2" />
@@ -36358,15 +36341,15 @@
         <property role="vg0i.1070475926800.1070475926801" value="LocalHistory" />
       </node>
       <node concept="79nr.1207145163717" id="2591756096343780515" role="79nr.1203087890642.1207145245948" info="ng" />
-      <node concept="79nr.1203092361741" id="2591756096343871305" role="79nr.1203087890642.1204991552650" info="ng">
+      <node concept="79nr.1203092361741" id="2591756096343871305" role="79nr.1203087890642.1204991552650" info="lg">
         <reference role="79nr.1203092361741.1203092736097" target="1204991218714" resolveInfo="ModelActions" />
         <reference role="79nr.1203092361741.1204992316090" target="2591756096343871341" resolveInfo="idealocalhistory" />
       </node>
-      <node concept="79nr.1203092361741" id="2591756096343871639" role="79nr.1203087890642.1204991552650" info="ng">
+      <node concept="79nr.1203092361741" id="2591756096343871639" role="79nr.1203087890642.1204991552650" info="lg">
         <reference role="79nr.1203092361741.1203092736097" target="1217254654927" resolveInfo="AbstractFileActions" />
         <reference role="79nr.1203092361741.1204992316090" target="2591756096343871625" resolveInfo="idealocalhistory" />
       </node>
-      <node concept="79nr.1203092361741" id="2591756096343888125" role="79nr.1203087890642.1204991552650" info="ng">
+      <node concept="79nr.1203092361741" id="2591756096343888125" role="79nr.1203087890642.1204991552650" info="lg">
         <reference role="79nr.1203092361741.1203092736097" target="401659284115173011" resolveInfo="CommonModuleActions" />
         <reference role="79nr.1203092361741.1204992316090" target="2591756096343888158" resolveInfo="idealocalhistory" />
       </node>
@@ -37218,11 +37201,11 @@
     <node concept="79nr.1204383956737" id="6447892490729326993" info="ng">
       <property role="asn4.1133920641626.1193676396447" value="Menu.ProjectPane.JavaBootstrap" />
       <property role="asn4.1169194658468.1169194664001" value="JavaAnalyzeActions" />
-      <node concept="79nr.1203092361741" id="6447892490729371780" role="79nr.1203087890642.1204991552650" info="ng">
+      <node concept="79nr.1203092361741" id="6447892490729371780" role="79nr.1203087890642.1204991552650" info="lg">
         <reference role="79nr.1203092361741.1203092736097" target="8033185057371911844" resolveInfo="AnalyzeModule" />
         <reference role="79nr.1203092361741.1204992316090" target="3425276961665085242" resolveInfo="analyze" />
       </node>
-      <node concept="79nr.1203092361741" id="7336160197133174331" role="79nr.1203087890642.1204991552650" info="ng">
+      <node concept="79nr.1203092361741" id="7336160197133174331" role="79nr.1203087890642.1204991552650" info="lg">
         <reference role="79nr.1203092361741.1203092736097" target="1204991228238" resolveInfo="DevkitActions" />
         <reference role="79nr.1203092361741.1204992316090" target="7336160197132356543" resolveInfo="analyze" />
       </node>

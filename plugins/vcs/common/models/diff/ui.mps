@@ -1834,30 +1834,24 @@
               <node concept="vg0i.1107535904670" id="6081859757780615696" role="vg0i.4972933694980447171.5680397130376446158" info="in">
                 <reference role="vg0i.1107535904670.1107535924139" target="e2lb.~String" resolveInfo="String" />
               </node>
-              <node concept="vg0i.1197027756228" id="6081859757780615699" role="vg0i.1068431474542.1068431790190" info="nn">
-                <node concept="vg0i.1145552977093" id="6081859757780615700" role="vg0i.1197027756228.1197027771414" info="nn">
-                  <node concept="vg0i.1212685548494" id="6081859757780615701" role="vg0i.1145552977093.1145553007750" info="nn">
-                    <reference role="vg0i.1204053956946.1068499141037" target="cu2c.~SModelFqName%d&lt;init&gt;(java%dlang%dString,java%dlang%dString)" resolveInfo="SModelFqName" />
-                    <node concept="vg0i.1197027756228" id="6081859757780615702" role="vg0i.1204053956946.1068499141038" info="nn">
-                      <node concept="4ia1.1138056022639" id="6081859757780615703" role="vg0i.1197027756228.1197027833540" info="nn">
-                        <reference role="4ia1.1138056022639.1138056395725" target="hypd.6370754048397540910" resolveInfo="qualifiedName" />
-                      </node>
-                      <node concept="vg0i.1068498886296" id="6081859757780615704" role="vg0i.1197027756228.1197027771414" info="nn">
-                        <reference role="vg0i.1068498886296.1068581517664" target="1857110376926340737" resolveInfo="node" />
-                      </node>
-                    </node>
-                    <node concept="vg0i.1197027756228" id="6081859757780615705" role="vg0i.1204053956946.1068499141038" info="nn">
-                      <node concept="4ia1.1138056022639" id="6081859757780615706" role="vg0i.1197027756228.1197027833540" info="nn">
-                        <reference role="4ia1.1138056022639.1138056395725" target="hypd.6655394244919476145" resolveInfo="stereotype" />
-                      </node>
-                      <node concept="vg0i.1068498886296" id="6081859757780615707" role="vg0i.1197027756228.1197027771414" info="nn">
-                        <reference role="vg0i.1068498886296.1068581517664" target="1857110376926340737" resolveInfo="node" />
-                      </node>
-                    </node>
+              <node concept="vg0i.1081236700937" id="7549572109233601056" role="vg0i.1068431474542.1068431790190" info="nn">
+                <reference role="vg0i.1204053956946.1068499141037" target="cu2c.~SModelStereotype%dwithStereotype(java%dlang%dString,java%dlang%dString)%cjava%dlang%dString" resolveInfo="withStereotype" />
+                <reference role="vg0i.1081236700937.1144433194310" target="cu2c.~SModelStereotype" resolveInfo="SModelStereotype" />
+                <node concept="vg0i.1197027756228" id="7549572109233602735" role="vg0i.1204053956946.1068499141038" info="nn">
+                  <node concept="vg0i.1068498886296" id="7549572109233601304" role="vg0i.1197027756228.1197027771414" info="nn">
+                    <reference role="vg0i.1068498886296.1068581517664" target="1857110376926340737" resolveInfo="node" />
+                  </node>
+                  <node concept="4ia1.1138056022639" id="7549572109233603616" role="vg0i.1197027756228.1197027833540" info="nn">
+                    <reference role="4ia1.1138056022639.1138056395725" target="hypd.6370754048397540910" resolveInfo="qualifiedName" />
                   </node>
                 </node>
-                <node concept="vg0i.1202948039474" id="6081859757780615708" role="vg0i.1197027756228.1197027833540" info="nn">
-                  <reference role="vg0i.1204053956946.1068499141037" target="cu2c.~SModelFqName%dgetModelName()%cjava%dlang%dString" resolveInfo="getModelName" />
+                <node concept="vg0i.1197027756228" id="7549572109233604356" role="vg0i.1204053956946.1068499141038" info="nn">
+                  <node concept="vg0i.1068498886296" id="7549572109233604144" role="vg0i.1197027756228.1197027771414" info="nn">
+                    <reference role="vg0i.1068498886296.1068581517664" target="1857110376926340737" resolveInfo="node" />
+                  </node>
+                  <node concept="4ia1.1138056022639" id="7549572109233604965" role="vg0i.1197027756228.1197027833540" info="nn">
+                    <reference role="4ia1.1138056022639.1138056395725" target="hypd.6655394244919476145" resolveInfo="stereotype" />
+                  </node>
                 </node>
               </node>
             </node>

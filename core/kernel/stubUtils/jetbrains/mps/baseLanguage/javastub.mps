@@ -8690,20 +8690,6 @@
     </node>
     <node concept="vg0i.1068390468198" id="5423843815843235918" info="ig">
       <property role="asn4.1169194658468.1169194664001" value="SReferenceCreator" />
-      <node concept="vg0i.1070462154015" id="8113943497194808217" role="vg0i.1107461130800.5375687026011219971" info="igu">
-        <property role="asn4.1169194658468.1169194664001" value="JAVA_STUB_STEREOTYPE" />
-        <property role="vg0i.1068431474542.1176718929932" value="true" />
-        <node concept="vg0i.1225271177708" id="8113943497194811617" role="vg0i.4972933694980447171.5680397130376446158" info="in" />
-        <node concept="vg0i.1146644623116" id="8113943497194804513" role="vg0i.1178549954367.1178549979242" info="nn" />
-        <node concept="vg0i.1081236700937" id="8113943497194787683" role="vg0i.1068431474542.1068431790190" info="nn">
-          <reference role="vg0i.1081236700937.1144433194310" target="cu2c.~SModelStereotype" resolveInfo="SModelStereotype" />
-          <reference role="vg0i.1204053956946.1068499141037" target="cu2c.~SModelStereotype%dgetStubStereotypeForId(java%dlang%dString)%cjava%dlang%dString" resolveInfo="getStubStereotypeForId" />
-          <node concept="vg0i.1070533707846" id="8113943497194789539" role="vg0i.1204053956946.1068499141038" info="nn">
-            <reference role="vg0i.1068498886296.1068581517664" target="cu2c.~LanguageID%dJAVA" resolveInfo="JAVA" />
-            <reference role="vg0i.1070533707846.1144433057691" target="cu2c.~LanguageID" resolveInfo="LanguageID" />
-          </node>
-        </node>
-      </node>
       <node concept="vg0i.1146644602865" id="5423843815843235919" role="vg0i.1178549954367.1178549979242" info="nn" />
       <node concept="vg0i.1107535904670" id="5423843815843263895" role="vg0i.1068390468198.1095933932569" info="in">
         <reference role="vg0i.1107535904670.1107535924139" target="5423843815843235924" resolveInfo="SReferenceHandler" />
@@ -8897,20 +8883,15 @@
                   <node concept="vg0i.1068498886296" id="3021153905120243813" role="vg0i.1204053956946.1068499141038" info="nn">
                     <reference role="vg0i.1068498886296.1068581517664" target="5423843815843263901" resolveInfo="module" />
                   </node>
-                  <node concept="vg0i.1197027756228" id="7412823203390568205" role="vg0i.1204053956946.1068499141038" info="nn">
-                    <node concept="vg0i.1202948039474" id="7412823203390568206" role="vg0i.1197027756228.1197027833540" info="nn">
-                      <reference role="vg0i.1204053956946.1068499141037" target="cu2c.~SModelFqName%dtoString()%cjava%dlang%dString" resolveInfo="toString" />
+                  <node concept="vg0i.1081236700937" id="7549572109232619319" role="vg0i.1204053956946.1068499141038" info="nn">
+                    <reference role="vg0i.1204053956946.1068499141037" target="cu2c.~SModelStereotype%dwithStereotype(java%dlang%dString,java%dlang%dString)%cjava%dlang%dString" resolveInfo="withStereotype" />
+                    <reference role="vg0i.1081236700937.1144433194310" target="cu2c.~SModelStereotype" resolveInfo="SModelStereotype" />
+                    <node concept="vg0i.1068498886296" id="7549572109232621727" role="vg0i.1204053956946.1068499141038" info="nn">
+                      <reference role="vg0i.1068498886296.1068581517664" target="7945956986386958442" resolveInfo="pack" />
                     </node>
-                    <node concept="vg0i.1145552977093" id="7412823203390568207" role="vg0i.1197027756228.1197027771414" info="nn">
-                      <node concept="vg0i.1212685548494" id="7412823203390568208" role="vg0i.1145552977093.1145553007750" info="nn">
-                        <reference role="vg0i.1204053956946.1068499141037" target="cu2c.~SModelFqName%d&lt;init&gt;(java%dlang%dString,java%dlang%dString)" resolveInfo="SModelFqName" />
-                        <node concept="vg0i.1068498886296" id="3021153905151724992" role="vg0i.1204053956946.1068499141038" info="nn">
-                          <reference role="vg0i.1068498886296.1068581517664" target="7945956986386958442" resolveInfo="pack" />
-                        </node>
-                        <node concept="vg0i.1068498886296" id="7412823203390568210" role="vg0i.1204053956946.1068499141038" info="nn">
-                          <reference role="vg0i.1068498886296.1068581517664" target="8113943497194808217" resolveInfo="JAVA_STUB_STEREOTYPE" />
-                        </node>
-                      </node>
+                    <node concept="vg0i.1070533707846" id="7549572109232625583" role="vg0i.1204053956946.1068499141038" info="nn">
+                      <reference role="vg0i.1070533707846.1144433057691" target="cu2c.~SModelStereotype" resolveInfo="SModelStereotype" />
+                      <reference role="vg0i.1068498886296.1068581517664" target="cu2c.~SModelStereotype%dJAVA_STUB" resolveInfo="JAVA_STUB" />
                     </node>
                   </node>
                   <node concept="vg0i.1070534058343" id="7412823203390568211" role="vg0i.1204053956946.1068499141038" info="nn" />

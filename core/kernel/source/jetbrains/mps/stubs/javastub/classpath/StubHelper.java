@@ -16,7 +16,6 @@
 package jetbrains.mps.stubs.javastub.classpath;
 
 import jetbrains.mps.smodel.LanguageID;
-import jetbrains.mps.smodel.SModelFqName;
 import jetbrains.mps.smodel.SModelStereotype;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModelId;

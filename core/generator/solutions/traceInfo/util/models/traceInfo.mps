@@ -2378,20 +2378,14 @@
                           </node>
                           <node concept="vg0i.1202948039474" id="7327404875649003465" role="vg0i.1197027756228.1197027833540" info="nn">
                             <reference role="vg0i.1204053956946.1068499141037" target="cu2c.~SModelRepository%dgetModelDescriptor(java%dlang%dString)%corg%djetbrains%dmps%dopenapi%dmodel%dSModel" resolveInfo="getModelDescriptor" />
-                            <node concept="vg0i.1197027756228" id="6396271077996073254" role="vg0i.1204053956946.1068499141038" info="nn">
-                              <node concept="vg0i.1202948039474" id="6396271077996085849" role="vg0i.1197027756228.1197027833540" info="nn">
-                                <reference role="vg0i.1204053956946.1068499141037" target="cu2c.~SModelFqName%dtoString()%cjava%dlang%dString" resolveInfo="toString" />
+                            <node concept="vg0i.1081236700937" id="7549572109232513558" role="vg0i.1204053956946.1068499141038" info="nn">
+                              <reference role="vg0i.1204053956946.1068499141037" target="cu2c.~SModelStereotype%dwithStereotype(java%dlang%dString,java%dlang%dString)%cjava%dlang%dString" resolveInfo="withStereotype" />
+                              <reference role="vg0i.1081236700937.1144433194310" target="cu2c.~SModelStereotype" resolveInfo="SModelStereotype" />
+                              <node concept="vg0i.1068498886296" id="7549572109232514590" role="vg0i.1204053956946.1068499141038" info="nn">
+                                <reference role="vg0i.1068498886296.1068581517664" target="7327404875649003439" resolveInfo="modelFqName" />
                               </node>
-                              <node concept="vg0i.1145552977093" id="7327404875649003466" role="vg0i.1197027756228.1197027771414" info="nn">
-                                <node concept="vg0i.1212685548494" id="7327404875649003467" role="vg0i.1145552977093.1145553007750" info="nn">
-                                  <reference role="vg0i.1204053956946.1068499141037" target="cu2c.~SModelFqName%d&lt;init&gt;(java%dlang%dString,java%dlang%dString)" resolveInfo="SModelFqName" />
-                                  <node concept="vg0i.1068498886296" id="4265636116363094254" role="vg0i.1204053956946.1068499141038" info="nn">
-                                    <reference role="vg0i.1068498886296.1068581517664" target="7327404875649003439" resolveInfo="modelFqName" />
-                                  </node>
-                                  <node concept="vg0i.1068498886296" id="3021153905151298221" role="vg0i.1204053956946.1068499141038" info="nn">
-                                    <reference role="vg0i.1068498886296.1068581517664" target="7327404875649003470" resolveInfo="stereotype" />
-                                  </node>
-                                </node>
+                              <node concept="vg0i.1068498886296" id="7549572109232516681" role="vg0i.1204053956946.1068499141038" info="nn">
+                                <reference role="vg0i.1068498886296.1068581517664" target="7327404875649003470" resolveInfo="stereotype" />
                               </node>
                             </node>
                           </node>

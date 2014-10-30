@@ -30,7 +30,6 @@ import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.SNodeId;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.smodel.SModelFqName;
 import jetbrains.mps.smodel.SModelRepository;
 import org.jetbrains.mps.openapi.model.SNode;
 

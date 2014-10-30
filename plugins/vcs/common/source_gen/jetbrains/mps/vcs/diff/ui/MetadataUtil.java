@@ -20,7 +20,6 @@ import jetbrains.mps.smodel.SNodeId;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.SModelStereotype;
 import org.jetbrains.mps.openapi.model.SModelReference;
-import jetbrains.mps.smodel.SModelFqName;
 import jetbrains.mps.smodel.SModelId;
 import org.jetbrains.mps.openapi.model.EditableSModel;
 import java.util.Set;
@@ -90,7 +89,7 @@ public class MetadataUtil {
     return node;
   }
   private static SModelReference getModelReference(SNode node) {
-    String fullName = new SModelFqName(SPropertyOperations.getString(node, "qualifiedName"), SPropertyOperations.getString(node, "stereotype")).getModelName();
+    String fullName = SModelStereotype.withStereotype(SPropertyOperations.getString(node, "qualifiedName"), SPropertyOperations.getString(node, "stereotype"));
     return new jetbrains.mps.smodel.SModelReference(null, SModelId.fromString(SPropertyOperations.getString(node, "uuid")), fullName);
   }
   public static void applyMetadataChanges(SModel model, SModel metadataModel) {
