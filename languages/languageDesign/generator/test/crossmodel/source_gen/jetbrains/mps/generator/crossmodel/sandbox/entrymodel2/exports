@@ -1,43 +1,68 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<model modelUID="r:88d41c6b-5b9e-49a7-aa38-e15743e7f3a1(jetbrains.mps.generator.crossmodel.sandbox.entrymodel2)">
-  <persistence version="8" />
-  <import index="qz7j" modelUID="r:9b56ed90-436a-4093-aab2-2dfe5d09ce42(jetbrains.mps.generator.test.crossmodel.entity.structure)" version="-1" implicit="yes" />
-  <import index="9102" modelUID="r:4f47afa3-64fe-42e3-9115-b12425c6d436(jetbrains.mps.generator.test.crossmodel.entity.generator.template.main@generator)" version="-1" implicit="yes" />
-  <import index="tpf8" modelUID="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" version="2" implicit="yes" />
-  <import index="xdt3" modelUID="r:5ae04573-5f86-4c8f-8775-3bf4c8be7f2f(jetbrains.mps.generator.test.crossmodel.property.generator.template.main@generator)" version="-1" implicit="yes" />
-  <root type="tpf8.ExportEntry" typeId="tpf8.9032177546941420365" id="3529862479475760401" nodeInfo="ng">
-    <link role="label" roleId="tpf8.9032177546941634307" targetNodeId="9102.2500545923215256932" resolveInfo="NodeToBean" />
-    <node role="outputModel" roleId="tpf8.9032177546942803148" type="tpf8.TrivialModelId" typeId="tpf8.9032177546942789835" id="3529862479475760402" nodeInfo="ng">
-      <property name="modelName" nameId="tpf8.9032177546942789839" value="jetbrains.mps.generator.crossmodel.sandbox.entrymodel2" />
+<model ref="r:fd65cd37-51c8-4e3f-a861-b8242e45806a(jetbrains.mps.generator.crossmodel.sandbox.entrymodel2)">
+  <persistence version="9" />
+  <debugInfo>
+    <lang id="4d14758c-3ecb-486d-b8c8-ea5beb8ae408" name="jetbrains.mps.generator.test.crossmodel.entity" />
+    <lang id="b401a680-8325-4110-8fd3-84331ff25bef" name="jetbrains.mps.lang.generator" />
+    <concept id="4d14758c-3ecb-486d-b8c8-ea5beb8ae408/8915420221429834077" name="jetbrains.mps.generator.test.crossmodel.entity.structure.TrivialKeeper" />
+    <concept id="b401a680-8325-4110-8fd3-84331ff25bef/9032177546941420365" name="jetbrains.mps.lang.generator.structure.ExportEntry" />
+    <concept id="b401a680-8325-4110-8fd3-84331ff25bef/9032177546941580387" name="jetbrains.mps.lang.generator.structure.TrivialNodeId" />
+    <concept id="b401a680-8325-4110-8fd3-84331ff25bef/9032177546942789835" name="jetbrains.mps.lang.generator.structure.TrivialModelId" />
+    <property id="4d14758c-3ecb-486d-b8c8-ea5beb8ae408/8915420221429834077/8915420221429834078" name="string1" />
+    <property id="b401a680-8325-4110-8fd3-84331ff25bef/9032177546941580387/9032177546941580390" name="conceptId" />
+    <property id="b401a680-8325-4110-8fd3-84331ff25bef/9032177546941580387/9032177546941580392" name="nodeId" />
+    <property id="b401a680-8325-4110-8fd3-84331ff25bef/9032177546942789835/9032177546942789839" name="modelName" />
+    <refRole id="b401a680-8325-4110-8fd3-84331ff25bef/9032177546941420365/9032177546941634307" name="label" />
+    <childRole id="b401a680-8325-4110-8fd3-84331ff25bef/9032177546941420365/9032177546941575207" name="inputNode" />
+    <childRole id="b401a680-8325-4110-8fd3-84331ff25bef/9032177546941420365/9032177546941575209" name="outputNode" />
+    <childRole id="b401a680-8325-4110-8fd3-84331ff25bef/9032177546941420365/9032177546941575212" name="dataKeeper" />
+    <childRole id="b401a680-8325-4110-8fd3-84331ff25bef/9032177546941420365/9032177546942803148" name="outputModel" />
+  </debugInfo>
+  <languages>
+    <use id="4d14758c-3ecb-486d-b8c8-ea5beb8ae408" version="0" implicit="true" index="rtma" />
+    <use id="b401a680-8325-4110-8fd3-84331ff25bef" version="0" implicit="true" index="7gwc" />
+  </languages>
+  <imports>
+    <import index="qz7j" ref="r:9b56ed90-436a-4093-aab2-2dfe5d09ce42(jetbrains.mps.generator.test.crossmodel.entity.structure)" implicit="true" />
+    <import index="9102" ref="r:4f47afa3-64fe-42e3-9115-b12425c6d436(jetbrains.mps.generator.test.crossmodel.entity.generator.template.main@generator)" implicit="true" />
+    <import index="tpf8" ref="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" implicit="true" />
+    <import index="xdt3" ref="r:5ae04573-5f86-4c8f-8775-3bf4c8be7f2f(jetbrains.mps.generator.test.crossmodel.property.generator.template.main@generator)" implicit="true" />
+  </imports>
+  <contents>
+    <node concept="7gwc.9032177546941420365" id="9049469616586252038" info="ng">
+      <reference role="7gwc.9032177546941420365.9032177546941634307" target="9102.2500545923215256932" resolveInfo="NodeToBean" />
+      <node concept="7gwc.9032177546942789835" id="9049469616586252039" role="7gwc.9032177546941420365.9032177546942803148" info="ng">
+        <property role="7gwc.9032177546942789835.9032177546942789839" value="jetbrains.mps.generator.crossmodel.sandbox.entrymodel2" />
+      </node>
+      <node concept="7gwc.9032177546941580387" id="9049469616586252040" role="7gwc.9032177546941420365.9032177546941575207" info="ng">
+        <property role="7gwc.9032177546941580387.9032177546941580390" value="jetbrains.mps.generator.test.crossmodel.entity.structure.NodeA" />
+        <property role="7gwc.9032177546941580387.9032177546941580392" value="4355167635272070340" />
+      </node>
+      <node concept="7gwc.9032177546941580387" id="9049469616586252041" role="7gwc.9032177546941420365.9032177546941575209" info="ng">
+        <property role="7gwc.9032177546941580387.9032177546941580390" value="jetbrains.mps.generator.test.crossmodel.property.structure.Bean" />
+        <property role="7gwc.9032177546941580387.9032177546941580392" value="9049469616586252035" />
+      </node>
+      <node concept="rtma.8915420221429834077" id="9049469616586252037" role="7gwc.9032177546941420365.9032177546941575212" info="ng">
+        <property role="rtma.8915420221429834077.8915420221429834078" value="SecondBean" />
+      </node>
     </node>
-    <node role="inputNode" roleId="tpf8.9032177546941575207" type="tpf8.TrivialNodeId" typeId="tpf8.9032177546941580387" id="3529862479475760403" nodeInfo="ng">
-      <property name="conceptId" nameId="tpf8.9032177546941580390" value="jetbrains.mps.generator.test.crossmodel.entity.structure.NodeA" />
-      <property name="nodeId" nameId="tpf8.9032177546941580392" value="4355167635272070340" />
+    <node concept="7gwc.9032177546941420365" id="9049469616586252055" info="ng">
+      <reference role="7gwc.9032177546941420365.9032177546941634307" target="xdt3.5925726056274334828" resolveInfo="BeanToClass" />
+      <node concept="7gwc.9032177546942789835" id="9049469616586252056" role="7gwc.9032177546941420365.9032177546942803148" info="ng">
+        <property role="7gwc.9032177546942789835.9032177546942789839" value="jetbrains.mps.generator.crossmodel.sandbox.entrymodel2" />
+      </node>
+      <node concept="7gwc.9032177546941580387" id="9049469616586252057" role="7gwc.9032177546941420365.9032177546941575207" info="ng">
+        <property role="7gwc.9032177546941580387.9032177546941580390" value="jetbrains.mps.generator.test.crossmodel.property.structure.Bean" />
+        <property role="7gwc.9032177546941580387.9032177546941580392" value="9049469616586252035" />
+      </node>
+      <node concept="7gwc.9032177546941580387" id="9049469616586252058" role="7gwc.9032177546941420365.9032177546941575209" info="ng">
+        <property role="7gwc.9032177546941580387.9032177546941580390" value="jetbrains.mps.baseLanguage.structure.ClassConcept" />
+        <property role="7gwc.9032177546941580387.9032177546941580392" value="9049469616586252044" />
+      </node>
+      <node concept="rtma.8915420221429834077" id="9049469616586252054" role="7gwc.9032177546941420365.9032177546941575212" info="ng">
+        <property role="rtma.8915420221429834077.8915420221429834078" value="SecondBeanImpl" />
+      </node>
     </node>
-    <node role="outputNode" roleId="tpf8.9032177546941575209" type="tpf8.TrivialNodeId" typeId="tpf8.9032177546941580387" id="3529862479475760404" nodeInfo="ng">
-      <property name="conceptId" nameId="tpf8.9032177546941580390" value="jetbrains.mps.generator.test.crossmodel.property.structure.Bean" />
-      <property name="nodeId" nameId="tpf8.9032177546941580392" value="3529862479475760398" />
-    </node>
-    <node role="dataKeeper" roleId="tpf8.9032177546941575212" type="qz7j.TrivialKeeper" typeId="qz7j.8915420221429834077" id="3529862479475760400" nodeInfo="ng">
-      <property name="string1" nameId="qz7j.8915420221429834078" value="SecondBean" />
-    </node>
-  </root>
-  <root type="tpf8.ExportEntry" typeId="tpf8.9032177546941420365" id="3529862479475760418" nodeInfo="ng">
-    <link role="label" roleId="tpf8.9032177546941634307" targetNodeId="xdt3.5925726056274334828" resolveInfo="BeanToClass" />
-    <node role="outputModel" roleId="tpf8.9032177546942803148" type="tpf8.TrivialModelId" typeId="tpf8.9032177546942789835" id="3529862479475760419" nodeInfo="ng">
-      <property name="modelName" nameId="tpf8.9032177546942789839" value="jetbrains.mps.generator.crossmodel.sandbox.entrymodel2" />
-    </node>
-    <node role="inputNode" roleId="tpf8.9032177546941575207" type="tpf8.TrivialNodeId" typeId="tpf8.9032177546941580387" id="3529862479475760420" nodeInfo="ng">
-      <property name="conceptId" nameId="tpf8.9032177546941580390" value="jetbrains.mps.generator.test.crossmodel.property.structure.Bean" />
-      <property name="nodeId" nameId="tpf8.9032177546941580392" value="3529862479475760398" />
-    </node>
-    <node role="outputNode" roleId="tpf8.9032177546941575209" type="tpf8.TrivialNodeId" typeId="tpf8.9032177546941580387" id="3529862479475760421" nodeInfo="ng">
-      <property name="conceptId" nameId="tpf8.9032177546941580390" value="jetbrains.mps.baseLanguage.structure.ClassConcept" />
-      <property name="nodeId" nameId="tpf8.9032177546941580392" value="3529862479475760407" />
-    </node>
-    <node role="dataKeeper" roleId="tpf8.9032177546941575212" type="qz7j.TrivialKeeper" typeId="qz7j.8915420221429834077" id="3529862479475760417" nodeInfo="ng">
-      <property name="string1" nameId="qz7j.8915420221429834078" value="SecondBeanImpl" />
-    </node>
-  </root>
+  </contents>
 </model>
 

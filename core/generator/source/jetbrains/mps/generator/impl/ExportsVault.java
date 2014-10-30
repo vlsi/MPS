@@ -16,8 +16,6 @@
 package jetbrains.mps.generator.impl;
 
 import jetbrains.mps.extapi.persistence.DataSourceBase;
-import jetbrains.mps.generator.GenerationSessionContext;
-import jetbrains.mps.generator.ModelExports;
 import jetbrains.mps.generator.impl.ModelStreamManager.Provider;
 import jetbrains.mps.util.IterableUtil;
 import org.jetbrains.annotations.NotNull;
@@ -49,20 +47,37 @@ public class ExportsVault {
     myExportModels = new ConcurrentHashMap<SModelReference, SModel>();
   }
 
+
+  /**
+   * Create new blank exports model, regardless of presence of any existing one.
+   */
+  @NotNull
+  public SModel newExportsModel(@NotNull SModel inputModel) {
+    return cachedExports(inputModel, true);
+  }
+
+  /**
+   * Find existing exports for the given model, if any.
+   */
   @Nullable
-  public SModel getExportsModel(SModel inputModel, boolean create) {
+  public SModel getExportsModel(@NotNull SModel inputModel) {
+    return cachedExports(inputModel, false);
+  }
+
+  private SModel cachedExports(SModel inputModel, boolean createNew) {
     final SModelReference inputModelReference = inputModel.getReference();
     SModel exportsModel = myExportModels.get(inputModelReference);
     if (exportsModel == null) {
-      // try to load
       final ModelFactory modelFactory = PersistenceFacade.getInstance().getDefaultModelFactory();
       ModelStreamManager streamManager = myStreamProvider.getStreamManager(inputModel);
-      final SingleStreamSource source = new SingleStreamSource(streamManager.getOutputLocation(), "exports");
+      final String modelFileName = "exports";
+      final SingleStreamSource source = new SingleStreamSource(streamManager.getOutputLocation(), modelFileName);
       try {
-        if (IterableUtil.asSet(streamManager.getOutputLocation().getAvailableStreams()).contains("exports")) {
-          exportsModel = modelFactory.load(source, Collections.<String, String>emptyMap());
-        } else if (create) {
+        if (createNew) {
           exportsModel = modelFactory.create(source, Collections.singletonMap(ModelFactory.OPTION_MODELNAME, inputModel.getModelName()));
+        } else if (IterableUtil.asSet(streamManager.getOutputLocation().getAvailableStreams()).contains(modelFileName)) {
+          // try to load
+          exportsModel = modelFactory.load(source, Collections.<String, String>emptyMap());
         }
       } catch (IOException ex) {
         // FIXME need better handling. Rather create model outside?

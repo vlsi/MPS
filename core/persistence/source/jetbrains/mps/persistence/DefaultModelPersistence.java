@@ -122,10 +122,13 @@ public class DefaultModelPersistence implements CoreComponent, ModelFactory {
     if (modelName == null) {
       throw new IOException("modelName is not provided");
     }
+    /*
+    FIXME Find out what's the purpose of enforcing module reference parameter. The model might get created in a thin air, and attached to a module later.
     String modulRef = options.get(OPTION_MODULEREF);
     if (modulRef == null) {
       throw new IOException("moduleRef is not provided");
     }
+    */
 
     final SModelHeader header = SModelHeader.create(ModelPersistence.LAST_VERSION);
     header.setModelReference(PersistenceFacade.getInstance().createModelReference(null, jetbrains.mps.smodel.SModelId.generate(), modelName));

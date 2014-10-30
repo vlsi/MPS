@@ -43,7 +43,7 @@ import java.util.List;
 public class ExportsSessionContext {
   private final ExportsVault myExportsVault;
   private final GenerationSessionContext myContext;
-  private boolean myHasNewExports = false;
+  private SModel myExportsModel;
 
   public ExportsSessionContext(@NotNull ExportsVault exportsVault, @NotNull GenerationSessionContext context) {
     myExportsVault = exportsVault;
@@ -55,14 +55,10 @@ public class ExportsSessionContext {
    */
   @Nullable
   public ModelExports getExports() {
-    if (!myHasNewExports) {
+    if (myExportsModel == null || !myExportsModel.getRootNodes().iterator().hasNext()) {
       return null;
     }
-    SModel exportsModel = myExportsVault.getExportsModel(myContext.getOriginalInputModel(), false);
-    if (exportsModel.getRootNodes().iterator().hasNext()) {
-      return new ModelExports(exportsModel);
-    }
-    return null;
+    return new ModelExports(myExportsModel);
   }
 
 
@@ -81,19 +77,21 @@ public class ExportsSessionContext {
     // XXX here we imply templateContext.inputNode is from the model being processed (though technically it's feasible to have inputNode
     // from another model). We need original (not transient) model for streamManager to find proper location
     assert templateContext.getEnvironment().getGenerator().getInputModel() == templateContext.getInput().getModel();
-    SModel exportsModel = myExportsVault.getExportsModel(myContext.getOriginalInputModel(), true);
+    if (myExportsModel == null) {
+      // when the model is being generated, overwrite any existing exports file - there gonna be new values.
+      myExportsModel = myExportsVault.newExportsModel(myContext.getOriginalInputModel());
+    }
     for (SNode v : values) {
       SNode keeper = SModelUtil_new.instantiateConceptDeclaration(keeperConcept, null);
       ExportLabelContext ctx = new ExportLabelContextImpl(templateContext.getInput(), v, keeper);
       invokeExportFunction(exportLabel.getModel(), functionName, ctx);
       SModel outputModel = v.getModel() != null ? v.getModel() : templateContext.getEnvironment().getOutputModel();
       final SNode/*node<ExportEntry>*/ exportEntry =
-          new CrossModelUtil().newEntry(ctx, exportLabel, exportsModel, outputModel);
+          new CrossModelUtil().newEntry(ctx, exportLabel, myExportsModel, outputModel);
       // FIXME likely CrossModelUtil would get some of these arguments right into constructor.
       //       Just unsure at the moment which one, gonna decide once there are more uses.
-      exportsModel.addRootNode(exportEntry);
+      myExportsModel.addRootNode(exportEntry);
     }
-    myHasNewExports = true;
   }
 
   // FIXME copied from j.m.u.QueryMethodGenerated
@@ -126,7 +124,7 @@ public class ExportsSessionContext {
       return Collections.emptyList();
     }
     final SModel originModel = originModel(inputNode, processedModel);
-    SModel exportsModel = myExportsVault.getExportsModel(originModel, false);
+    SModel exportsModel = myExportsVault.getExportsModel(originModel);
     if (exportsModel == null) {
       return Collections.emptyList();
     }
