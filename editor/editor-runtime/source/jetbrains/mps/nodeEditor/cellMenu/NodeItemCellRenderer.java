@@ -44,6 +44,8 @@ import java.awt.Font;
 import java.awt.FontMetrics;
 
 class NodeItemCellRenderer extends JPanel implements ListCellRenderer {
+  private static final int MY_MIN_CELL_WIDTH = 300;
+  private static final int MY_MIN_CELL_HEIGHT = 18;
   private static final Logger LOG = LogManager.getLogger(NodeItemCellRenderer.class);
   public static final String EXCEPTION_WAS_THROWN_TEXT = "!Exception was thrown!";
 
@@ -100,13 +102,13 @@ class NodeItemCellRenderer extends JPanel implements ListCellRenderer {
     }
     int itemWidth = 0;
     int itemHeight = 0;
-    try {
-      Icon icon = getIcon(action, pattern);
-      itemWidth += icon.getIconWidth();
-      itemHeight += icon.getIconHeight();
-    } catch (Throwable t) {
-      LOG.error(null, t);
-    }
+//    try {
+//      Icon icon = getIcon(action, pattern);
+//      itemWidth += icon.getIconWidth();
+//      itemHeight += icon.getIconHeight();
+//    } catch (Throwable t) {
+//      LOG.error(null, t);
+//    }
     Font font = getFont(action);
     FontMetrics fontMetrics = FontRegistry.getInstance().getFontMetrics(font);
     itemWidth += myLeft.getIconTextGap();
@@ -117,7 +119,8 @@ class NodeItemCellRenderer extends JPanel implements ListCellRenderer {
     if (descriptionText != null) {
       itemWidth += fontMetrics.stringWidth(descriptionText);
     }
-    itemHeight = Math.max(itemHeight, fontMetrics.getHeight());
+    itemHeight = MY_MIN_CELL_HEIGHT;//Math.max(itemHeight, fontMetrics.getHeight());
+    itemWidth = Math.max(itemWidth, MY_MIN_CELL_WIDTH);
     return new Dimension(itemWidth, itemHeight);
   }
 
