@@ -139,7 +139,7 @@ class NodeItemCellRenderer extends JPanel implements ListCellRenderer {
       int style = getStyle(action);
 
       if (myOldStyle != style) {
-        Font font = deriveFont(EditorSettings.getInstance().getDefaultEditorFont(), style);
+        Font font = EditorSettings.getInstance().getDefaultEditorFont().deriveFont(style);
         myLeft.setFont(font);
         myRight.setFont(font);
         myOldStyle = style;
@@ -199,15 +199,11 @@ class NodeItemCellRenderer extends JPanel implements ListCellRenderer {
     Font font = EditorSettings.getInstance().getDefaultEditorFont();
     try {
       int style = getStyle(action);
-      font = deriveFont(font, style);
+      font = font.deriveFont(style);
     } catch (Throwable t) {
       LOG.error(null, t);
     }
     return font;
-  }
-
-  private Font deriveFont(Font font, int style) {
-    return FontRegistry.getInstance().getFont(font.getFamily(), style, font.getSize());
   }
 
   private Icon getIcon(SubstituteAction action, String pattern) {
