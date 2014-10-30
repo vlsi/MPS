@@ -46,7 +46,6 @@ import java.awt.FontMetrics;
 class NodeItemCellRenderer extends JPanel implements ListCellRenderer {
   private static final Logger LOG = LogManager.getLogger(NodeItemCellRenderer.class);
   public static final String EXCEPTION_WAS_THROWN_TEXT = "!Exception was thrown!";
-  public static final Font DEFAULT_EDITOR_FONT = EditorSettings.getInstance().getDefaultEditorFont();
 
   private JLabel myLeft = new JLabel("", JLabel.LEFT);
   private JLabel myRight = new JLabel("", JLabel.RIGHT);
@@ -140,7 +139,7 @@ class NodeItemCellRenderer extends JPanel implements ListCellRenderer {
       int style = getStyle(action);
 
       if (myOldStyle != style) {
-        Font font = deriveFont(style);
+        Font font = deriveFont(EditorSettings.getInstance().getDefaultEditorFont(), style);
         myLeft.setFont(font);
         myRight.setFont(font);
         myOldStyle = style;
@@ -197,18 +196,18 @@ class NodeItemCellRenderer extends JPanel implements ListCellRenderer {
   }
 
   private Font getFont(SubstituteAction action) {
-    Font font = DEFAULT_EDITOR_FONT;
+    Font font = EditorSettings.getInstance().getDefaultEditorFont();
     try {
       int style = getStyle(action);
-      font = deriveFont(style);
+      font = deriveFont(font, style);
     } catch (Throwable t) {
       LOG.error(null, t);
     }
     return font;
   }
 
-  private Font deriveFont(int style) {
-    return FontRegistry.getInstance().getFont(DEFAULT_EDITOR_FONT.getFontName(), style, DEFAULT_EDITOR_FONT.getSize());
+  private Font deriveFont(Font font, int style) {
+    return FontRegistry.getInstance().getFont(font.getFamily(), style, font.getSize());
   }
 
   private Icon getIcon(SubstituteAction action, String pattern) {
