@@ -5,6 +5,8 @@ package jetbrains.mps.transformation.test.inputLang.generator.outputLang.templat
 import jetbrains.mps.generator.runtime.Generated;
 import jetbrains.mps.generator.template.BaseMappingRuleContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.generator.template.PropertyMacroContext;
 import jetbrains.mps.generator.template.IfMacroContext;
 import jetbrains.mps.generator.template.TemplateQueryContext;
@@ -24,16 +26,16 @@ public class QueriesGenerated {
     return true;
   }
   public static boolean baseMappingRule_Condition_4929591503636513204(final BaseMappingRuleContext _context) {
-    return SPropertyOperations.getInteger(_context.getNode(), "key") == 1;
+    return SPropertyOperations.getInteger(_context.getNode(), MetaAdapterFactory.getProperty(new UUID(-6121824463232872651l, -5378768732970966980l), 1206462895210l, 4929591503636438728l, "key")) == 1;
   }
   public static boolean baseMappingRule_Condition_4929591503636589503(final BaseMappingRuleContext _context) {
-    return SPropertyOperations.getInteger(_context.getNode(), "key") == 2;
+    return SPropertyOperations.getInteger(_context.getNode(), MetaAdapterFactory.getProperty(new UUID(-6121824463232872651l, -5378768732970966980l), 1206462895210l, 4929591503636438728l, "key")) == 2;
   }
   public static boolean baseMappingRule_Condition_4929591503636676782(final BaseMappingRuleContext _context) {
     return false;
   }
   public static boolean baseMappingRule_Condition_4929591503636614138(final BaseMappingRuleContext _context) {
-    return SPropertyOperations.getInteger(_context.getNode(), "key") == 3;
+    return SPropertyOperations.getInteger(_context.getNode(), MetaAdapterFactory.getProperty(new UUID(-6121824463232872651l, -5378768732970966980l), 1206462895210l, 4929591503636438728l, "key")) == 3;
   }
   public static Object propertyMacro_GetPropertyValue_7496726876599876334(final PropertyMacroContext _context) {
     return "text from argument:" + ((String) _context.getVariable("p1"));
@@ -54,12 +56,12 @@ public class QueriesGenerated {
     return "from within default case of in-line switch";
   }
   public static Iterable<SNode> sourceNodesQuery_7496726876599914779(final SourceSubstituteMacroNodesContext _context) {
-    return SLinkOperations.getTargets(_context.getNode(), "inputChild", true);
+    return SLinkOperations.getChildren(_context.getNode(), MetaAdapterFactory.getContainmentLink(new UUID(-6121824463232872651l, -5378768732970966980l), 1195168316083l, 1195169805620l, "inputChild"));
   }
   public static boolean mappingConfiguration_Condition_7496726876599722461(final TemplateQueryContext _context) {
     return ListSequence.fromList(SModelOperations.getRoots(_context.getInputModel(), "jetbrains.mps.transformation.test.inputLang.structure.InputRoot")).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return SPropertyOperations.hasValue(it, "useInTest", "argsInTemplDeclRef", "none");
+        return SPropertyOperations.hasValue(it, MetaAdapterFactory.getProperty(new UUID(-6121824463232872651l, -5378768732970966980l), 1195168316083l, 1202243304949l, "useInTest"), "argsInTemplDeclRef", "none");
       }
     }).isNotEmpty();
   }

@@ -7,6 +7,8 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.lang.script.runtime.AbstractMigrationRefactoring;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.util.NameUtil;
 
 public class CheckRootNodesNamingInternalPolicy_MigrationScript extends BaseMigrationScript {
@@ -23,19 +25,19 @@ public class CheckRootNodesNamingInternalPolicy_MigrationScript extends BaseMigr
         return "jetbrains.mps.lang.structure.structure.ConceptDeclaration";
       }
       public boolean isApplicableInstanceNode(SNode node) {
-        if (SPropertyOperations.getBoolean(node, "abstract")) {
+        if (SPropertyOperations.getBoolean(node, MetaAdapterFactory.getProperty(new UUID(-4094437568663370681l, -8968368868337559369l), 1169125787135l, 4628067390765956802l, "abstract"))) {
           return false;
         }
-        if (!(SPropertyOperations.getBoolean(node, "rootable"))) {
+        if (!(SPropertyOperations.getBoolean(node, MetaAdapterFactory.getProperty(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489090640l, 1096454100552l, "rootable")))) {
           return false;
         }
-        if (isEmptyString(SPropertyOperations.getString(node, "conceptAlias"))) {
+        if (isEmptyString(SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(new UUID(-4094437568663370681l, -8968368868337559369l), 1169125787135l, 5092175715804935370l, "conceptAlias")))) {
           return false;
         }
-        return !(SPropertyOperations.getString(node, "conceptAlias").equals(NameUtil.multiWordDecapitalize(SPropertyOperations.getString(node, "conceptAlias"))));
+        return !(SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(new UUID(-4094437568663370681l, -8968368868337559369l), 1169125787135l, 5092175715804935370l, "conceptAlias")).equals(NameUtil.multiWordDecapitalize(SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(new UUID(-4094437568663370681l, -8968368868337559369l), 1169125787135l, 5092175715804935370l, "conceptAlias")))));
       }
       public void doUpdateInstanceNode(SNode node) {
-        SPropertyOperations.set(node, "conceptAlias", NameUtil.multiWordDecapitalize(SPropertyOperations.getString(node, "conceptAlias")));
+        SPropertyOperations.set(node, MetaAdapterFactory.getProperty(new UUID(-4094437568663370681l, -8968368868337559369l), 1169125787135l, 5092175715804935370l, "conceptAlias"), NameUtil.multiWordDecapitalize(SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(new UUID(-4094437568663370681l, -8968368868337559369l), 1169125787135l, 5092175715804935370l, "conceptAlias"))));
       }
       public boolean isShowAsIntention() {
         return false;
@@ -52,20 +54,20 @@ public class CheckRootNodesNamingInternalPolicy_MigrationScript extends BaseMigr
         return "jetbrains.mps.lang.structure.structure.ConceptDeclaration";
       }
       public boolean isApplicableInstanceNode(SNode node) {
-        if (SPropertyOperations.getBoolean(node, "abstract")) {
+        if (SPropertyOperations.getBoolean(node, MetaAdapterFactory.getProperty(new UUID(-4094437568663370681l, -8968368868337559369l), 1169125787135l, 4628067390765956802l, "abstract"))) {
           return false;
         }
-        if (!(SPropertyOperations.getBoolean(node, "rootable"))) {
+        if (!(SPropertyOperations.getBoolean(node, MetaAdapterFactory.getProperty(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489090640l, 1096454100552l, "rootable")))) {
           return false;
         }
-        return isEmptyString(SPropertyOperations.getString(node, "conceptAlias"));
+        return isEmptyString(SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(new UUID(-4094437568663370681l, -8968368868337559369l), 1169125787135l, 5092175715804935370l, "conceptAlias")));
       }
       public void doUpdateInstanceNode(SNode node) {
         StringBuilder sb = new StringBuilder();
-        for (String word : NameUtil.splitByCamels(SPropertyOperations.getString(node, "name"))) {
+        for (String word : NameUtil.splitByCamels(SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")))) {
           sb.append(NameUtil.decapitalize(word)).append(" ");
         }
-        SPropertyOperations.set(node, "conceptAlias", sb.toString().trim());
+        SPropertyOperations.set(node, MetaAdapterFactory.getProperty(new UUID(-4094437568663370681l, -8968368868337559369l), 1169125787135l, 5092175715804935370l, "conceptAlias"), sb.toString().trim());
       }
       public boolean isShowAsIntention() {
         return false;

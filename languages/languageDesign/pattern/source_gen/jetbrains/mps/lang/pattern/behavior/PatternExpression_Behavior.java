@@ -8,6 +8,8 @@ import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import java.util.Set;
 import java.util.HashSet;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
@@ -25,7 +27,7 @@ public class PatternExpression_Behavior {
     ListSequence.fromList(variables).addSequence(ListSequence.fromList(SNodeOperations.getDescendants(thisNode, "jetbrains.mps.lang.pattern.structure.PropertyPatternVariableDeclaration", false, new String[]{})));
     /*
       if (SNodeOperations.isInstanceOf(thisNode, "jetbrains.mps.lang.pattern.structure.OrPatternClause")) {
-        ListSequence.fromList(variables).addSequence(ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(SNodeOperations.getParent(thisNode), "jetbrains.mps.lang.pattern.structure.OrPattern"), "variable", true)));
+        ListSequence.fromList(variables).addSequence(ListSequence.fromList(SLinkOperations.getChildren(SNodeOperations.cast(SNodeOperations.getParent(thisNode), "jetbrains.mps.lang.pattern.structure.OrPattern"), MetaAdapterFactory.getContainmentLink(new UUID(-3143127453834064983l, -5836335846783251545l), 2879868312062962308l, 4264731254635442558l, "variable"))));
       }
     */
     return variables;
@@ -35,9 +37,9 @@ public class PatternExpression_Behavior {
     List<SNode> result = new ArrayList<SNode>();
     Set<String> names = new HashSet();
     for (SNode var : variables) {
-      if (!(names.contains(SPropertyOperations.getString(var, "name")))) {
+      if (!(names.contains(SPropertyOperations.getString(var, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"))))) {
         ListSequence.fromList(result).addElement(var);
-        names.add(SPropertyOperations.getString(var, "name"));
+        names.add(SPropertyOperations.getString(var, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")));
       }
     }
     return result;

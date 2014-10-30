@@ -17,6 +17,8 @@ import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.build.workflow.editor.workflowStyles_StyleSheet;
 
 public class BuildMpsAspect_Editor extends DefaultNodeEditor {
@@ -135,7 +137,7 @@ public class BuildMpsAspect_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private static boolean renderingCondition_koy33t_a2c0(SNode node, EditorContext editorContext) {
-    return SPropertyOperations.getBoolean(node, "testGeneration");
+    return SPropertyOperations.getBoolean(node, MetaAdapterFactory.getProperty(new UUID(934837630734519964l, -6831122735637083229l), 6503355885715333289l, 1787667533297081791l, "testGeneration"));
   }
   private EditorCell createConstant_koy33t_a2c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "excludes:");

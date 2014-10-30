@@ -6,6 +6,8 @@ import jetbrains.mps.textGen.SNodeTextGen;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.textGen.TraceInfoGenerationUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
@@ -18,38 +20,38 @@ public class SwitchStatement_TextGen extends SNodeTextGen {
     if (getBuffer().hasPositionsSupport()) {
       TraceInfoGenerationUtil.createPositionInfo(this, node);
     }
-    if ((SLinkOperations.getTarget(node, "switchLabel", true) != null)) {
+    if ((SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1163670490218l, 4652593672361747214l, "switchLabel")) != null)) {
       this.appendNewLine();
-      this.append(SPropertyOperations.getString(SLinkOperations.getTarget(node, "switchLabel", true), "name"));
+      this.append(SPropertyOperations.getString(SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1163670490218l, 4652593672361747214l, "switchLabel")), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")));
       this.append(":");
-    } else if (SPropertyOperations.getString(node, "label") != null) {
+    } else if (SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 1163670490218l, 1201381395355l, "label")) != null) {
       this.appendNewLine();
-      this.append(SPropertyOperations.getString(node, "label"));
+      this.append(SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 1163670490218l, 1201381395355l, "label")));
       this.append(":");
     }
     this.appendNewLine();
     this.appendWithIndent("switch (");
-    appendNode(SLinkOperations.getTarget(node, "expression", true));
+    appendNode(SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1163670490218l, 1163670766145l, "expression")));
     this.append(") {");
     this.increaseDepth();
-    for (SNode sc : SLinkOperations.getTargets(node, "case", true)) {
+    for (SNode sc : SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1163670490218l, 1163670772911l, "case"))) {
       this.appendNewLine();
       this.appendWithIndent("case ");
-      if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(sc, "expression", true), "jetbrains.mps.baseLanguage.structure.EnumConstantReference")) {
-        SNode enumConstant = (SNode) SLinkOperations.getTarget(sc, "expression", true);
-        this.append(SPropertyOperations.getString(SLinkOperations.getTarget(enumConstant, "enumConstantDeclaration", false), "name"));
+      if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(sc, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1163670641947l, 1163670677455l, "expression")), "jetbrains.mps.baseLanguage.structure.EnumConstantReference")) {
+        SNode enumConstant = (SNode) SLinkOperations.getTarget(sc, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1163670641947l, 1163670677455l, "expression"));
+        this.append(SPropertyOperations.getString(SLinkOperations.getTarget(enumConstant, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1083260308424l, 1083260308426l, "enumConstantDeclaration")), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")));
       } else {
-        appendNode(SLinkOperations.getTarget(sc, "expression", true));
+        appendNode(SLinkOperations.getTarget(sc, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1163670641947l, 1163670677455l, "expression")));
       }
       this.append(":");
       this.increaseDepth();
-      appendNode(SLinkOperations.getTarget(sc, "body", true));
+      appendNode(SLinkOperations.getTarget(sc, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1163670641947l, 1163670683720l, "body")));
       this.decreaseDepth();
     }
     this.appendNewLine();
     this.appendWithIndent("default:");
     this.increaseDepth();
-    appendNode(SLinkOperations.getTarget(node, "defaultBlock", true));
+    appendNode(SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1163670490218l, 1163670592366l, "defaultBlock")));
     this.decreaseDepth();
     this.decreaseDepth();
     this.appendNewLine();

@@ -15,6 +15,8 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import java.util.ArrayList;
 import org.jetbrains.annotations.Nullable;
 import java.util.Set;
@@ -58,7 +60,7 @@ public abstract class BaseMethodsScope extends Scope {
         return SNodeOperations.cast(it, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration");
       }
     })) {
-      String name = SPropertyOperations.getString(node, "name");
+      String name = SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"));
       if (name != null) {
         if (MapSequence.fromMap(nameToMethods).containsKey(name)) {
           ListSequence.fromList(MapSequence.fromMap(nameToMethods).get(name)).addElement(node);
@@ -85,7 +87,7 @@ public abstract class BaseMethodsScope extends Scope {
     if (allMethods != null) {
       return Sequence.fromIterable(Sequence.fromArray(allMethods)).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
-          return prefix == null || SPropertyOperations.getString(it, "name").startsWith(prefix);
+          return prefix == null || SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")).startsWith(prefix);
         }
       }).toListSequence();
     }
@@ -151,7 +153,7 @@ public abstract class BaseMethodsScope extends Scope {
       }
     }).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return refText.equals(SPropertyOperations.getString(it, "name"));
+        return refText.equals(SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")));
       }
     }).toListSequence();
     if (methods.isEmpty()) {
@@ -163,7 +165,7 @@ public abstract class BaseMethodsScope extends Scope {
     if (!(SNodeOperations.isInstanceOf(contextNode, "jetbrains.mps.baseLanguage.structure.IMethodCall"))) {
       return null;
     }
-    List<SNode> actualArguments = SLinkOperations.getTargets((SNodeOperations.cast(contextNode, "jetbrains.mps.baseLanguage.structure.IMethodCall")), "actualArgument", true);
+    List<SNode> actualArguments = SLinkOperations.getChildren((SNodeOperations.cast(contextNode, "jetbrains.mps.baseLanguage.structure.IMethodCall")), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, 1068499141038l, "actualArgument"));
 
     methods = MethodResolveUtil.selectByParmCount(methods, actualArguments);
     if (methods.size() == 1) {
@@ -180,10 +182,10 @@ public abstract class BaseMethodsScope extends Scope {
   @Nullable
   @Override
   public String getReferenceText(SNode contextNode, @NotNull SNode node) {
-    return SPropertyOperations.getString(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"), "name");
+    return SPropertyOperations.getString(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"));
   }
   @Override
   public boolean contains(SNode node) {
-    return SNodeOperations.isInstanceOf(node, NameUtil.nodeFQName(kind)) && Sequence.fromIterable(getAvailableElements(SPropertyOperations.getString(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"), "name"))).contains(node);
+    return SNodeOperations.isInstanceOf(node, NameUtil.nodeFQName(kind)) && Sequence.fromIterable(getAvailableElements(SPropertyOperations.getString(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")))).contains(node);
   }
 }

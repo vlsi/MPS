@@ -16,7 +16,13 @@
 package jetbrains.mps.smodel;
 
 import jetbrains.mps.RuntimeFlags;
+import jetbrains.mps.smodel.adapter.structure.concept.SConceptAdapterById;
+import jetbrains.mps.smodel.adapter.structure.property.SPropertyAdapterById;
+import jetbrains.mps.smodel.adapter.structure.property.SPropertyAdapterByName;
+import jetbrains.mps.smodel.adapter.structure.ref.SReferenceLinkAdapterById;
+import jetbrains.mps.smodel.adapter.structure.ref.SReferenceLinkAdapterByName;
 import jetbrains.mps.smodel.language.ConceptRegistry;
+import jetbrains.mps.smodel.runtime.ConstraintsDescriptor;
 import jetbrains.mps.smodel.runtime.PropertyConstraintsDescriptor;
 import jetbrains.mps.smodel.runtime.ReferenceConstraintsDescriptor;
 import jetbrains.mps.smodel.runtime.illegal.IllegalReferenceConstraintsDescriptor;
@@ -24,6 +30,8 @@ import jetbrains.mps.util.Pair;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.language.SProperty;
+import org.jetbrains.mps.openapi.language.SReferenceLink;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
@@ -34,29 +42,33 @@ public class SNodeAccessUtilImpl extends SNodeAccessUtil {
   private static Logger LOG = LogManager.getLogger(SNodeAccessUtil.class);
 
   //SNodeAccessUtilImpl has only one instance, so we can omit remove() here though the field is not static
-  private final ThreadLocal<Set<Pair<org.jetbrains.mps.openapi.model.SNode, String>>> ourPropertySettersInProgress = new InProgressThreadLocal();
-  private final ThreadLocal<Set<Pair<org.jetbrains.mps.openapi.model.SNode, String>>> ourPropertyGettersInProgress = new InProgressThreadLocal();
-  private final ThreadLocal<Set<Pair<org.jetbrains.mps.openapi.model.SNode, String>>> ourSetReferentEventHandlersInProgress = new InProgressThreadLocal();
+  private final ThreadLocal<Set<Pair<org.jetbrains.mps.openapi.model.SNode, SProperty>>> ourPropertySettersInProgress = new InProgressThreadLocal<SProperty>();
+  private final ThreadLocal<Set<Pair<org.jetbrains.mps.openapi.model.SNode, SProperty>>> ourPropertyGettersInProgress = new InProgressThreadLocal<SProperty>();
+  private final ThreadLocal<Set<Pair<org.jetbrains.mps.openapi.model.SNode, SReferenceLink>>> ourSetReferentEventHandlersInProgress = new InProgressThreadLocal<SReferenceLink>();
 
   @Override
-  protected boolean hasPropertyImpl(org.jetbrains.mps.openapi.model.SNode node, String name) {
-    node.hasProperty(name); //todo this is to invoke corresponding read access. try to remove it by merging 2 types of access
-    String property_internal = node.getProperty(name);
+  protected boolean hasPropertyImpl(org.jetbrains.mps.openapi.model.SNode node, SProperty property) {
+    node.hasProperty(property); //todo this is to invoke corresponding read access. try to remove it by merging 2 types of access
+    String property_internal = node.getProperty(property);
     return !SModelUtil_new.isEmptyPropertyValue(property_internal);
   }
 
   @Override
-  public String getPropertyImpl(org.jetbrains.mps.openapi.model.SNode node, String name) {
-    if (RuntimeFlags.isMergeDriverMode()) return node.getProperty(name);
+  protected boolean hasPropertyImpl(org.jetbrains.mps.openapi.model.SNode node, String name) {
+    return hasPropertyImpl(node, new SPropertyAdapterByName(node.getConcept().getQualifiedName(), name));
+  }
 
-    Set<Pair<org.jetbrains.mps.openapi.model.SNode, String>> getters = ourPropertyGettersInProgress.get();
-    Pair<org.jetbrains.mps.openapi.model.SNode, String> current = new Pair<org.jetbrains.mps.openapi.model.SNode, String>(node, name);
-    if (getters.contains(current)) return node.getProperty(name);
+  @Override
+  public String getPropertyImpl(org.jetbrains.mps.openapi.model.SNode node, SProperty property) {
+    if (RuntimeFlags.isMergeDriverMode()) return node.getProperty(property);
+
+    Set<Pair<SNode, SProperty>> getters = ourPropertyGettersInProgress.get();
+    Pair<SNode, SProperty> current = new Pair<SNode, SProperty>(node, property);
+    if (getters.contains(current)) return node.getProperty(property);
 
     getters.add(current);
     try {
-      PropertyConstraintsDescriptor descriptor = ConceptRegistry.getInstance().getConstraintsDescriptor(node.getConcept().getQualifiedName()).getProperty(
-          name);
+      PropertyConstraintsDescriptor descriptor = getPropertyConstraintsDescriptor(node, property);
       Object getterValue = descriptor.getValue(node);
       return getterValue == null ? null : String.valueOf(getterValue);
     } catch (Throwable t) {
@@ -67,19 +79,55 @@ public class SNodeAccessUtilImpl extends SNodeAccessUtil {
     }
   }
 
+  private PropertyConstraintsDescriptor getPropertyConstraintsDescriptor(SNode node, SProperty property) {
+    ConstraintsDescriptor constraintsDescriptor;
+    if (node.getConcept() instanceof SConceptAdapterById) {
+      constraintsDescriptor = ConceptRegistry.getInstance().getConstraintsDescriptor(((SConceptAdapterById) node.getConcept()).getId());
+    } else {
+      constraintsDescriptor = ConceptRegistry.getInstance().getConstraintsDescriptor(node.getConcept().getQualifiedName());
+    }
+    PropertyConstraintsDescriptor descriptor;
+    if (property instanceof SPropertyAdapterById) {
+      descriptor = constraintsDescriptor.getProperty(((SPropertyAdapterById) property).getId());
+    } else {
+      descriptor = constraintsDescriptor.getProperty(property.getName());
+    }
+    return descriptor;
+  }
+
+  private ReferenceConstraintsDescriptor getReferenceConstraintsDescriptor(SNode node, SReferenceLink referenceLink) {
+    ConstraintsDescriptor constraintsDescriptor;
+    if (node.getConcept() instanceof SConceptAdapterById) {
+      constraintsDescriptor = ConceptRegistry.getInstance().getConstraintsDescriptor(((SConceptAdapterById) node.getConcept()).getId());
+    } else {
+      constraintsDescriptor = ConceptRegistry.getInstance().getConstraintsDescriptor(node.getConcept().getQualifiedName());
+    }
+    ReferenceConstraintsDescriptor descriptor;
+    if (referenceLink instanceof SReferenceLinkAdapterById) {
+      descriptor = constraintsDescriptor.getReference(((SReferenceLinkAdapterById) referenceLink).getRoleId());
+    } else {
+      descriptor = constraintsDescriptor.getReference(referenceLink.getRoleName());
+    }
+    return descriptor;
+  }
+
   @Override
-  public void setPropertyImpl(org.jetbrains.mps.openapi.model.SNode node, String propertyName, String propertyValue) {
-    Set<Pair<org.jetbrains.mps.openapi.model.SNode, String>> threadSet = ourPropertySettersInProgress.get();
-    Pair<org.jetbrains.mps.openapi.model.SNode, String> pair = new Pair<org.jetbrains.mps.openapi.model.SNode, String>(node, propertyName);
+  public String getPropertyImpl(org.jetbrains.mps.openapi.model.SNode node, String name) {
+    return getPropertyImpl(node, new SPropertyAdapterByName(node.getConcept().getQualifiedName(), name));
+  }
+
+  @Override
+  public void setPropertyImpl(org.jetbrains.mps.openapi.model.SNode node, SProperty property, String propertyValue) {
+    Set<Pair<SNode, SProperty>> threadSet = ourPropertySettersInProgress.get();
+    Pair<SNode, SProperty> pair = new Pair<SNode, SProperty>(node, property);
 
     //todo try to remove
     if (threadSet.contains(pair)) {
-      node.setProperty(propertyName, propertyValue);
+      node.setProperty(property, propertyValue);
       return;
     }
 
-    PropertyConstraintsDescriptor descriptor = ConceptRegistry.getInstance().getConstraintsDescriptor(node.getConcept().getQualifiedName()).getProperty(
-        propertyName);
+    PropertyConstraintsDescriptor descriptor = getPropertyConstraintsDescriptor(node, property);
     threadSet.add(pair);
     try {
       descriptor.setValue(node, propertyValue);
@@ -91,29 +139,34 @@ public class SNodeAccessUtilImpl extends SNodeAccessUtil {
   }
 
   @Override
-  public void setReferenceTargetImpl(org.jetbrains.mps.openapi.model.SNode node, String role, @Nullable org.jetbrains.mps.openapi.model.SNode target) {
+  public void setPropertyImpl(org.jetbrains.mps.openapi.model.SNode node, String propertyName, String propertyValue) {
+    setPropertyImpl(node, new SPropertyAdapterByName(node.getConcept().getQualifiedName(), propertyName), propertyValue);
+  }
+
+
+  @Override
+  public void setReferenceTargetImpl(org.jetbrains.mps.openapi.model.SNode node, SReferenceLink referenceLink, @Nullable org.jetbrains.mps.openapi.model.SNode target) {
     // invoke custom referent set event handler
-    Set<Pair<org.jetbrains.mps.openapi.model.SNode, String>> threadSet = ourSetReferentEventHandlersInProgress.get();
-    Pair<org.jetbrains.mps.openapi.model.SNode, String> pair = new Pair<org.jetbrains.mps.openapi.model.SNode, String>(node, role);
+    Set<Pair<SNode, SReferenceLink>> threadSet = ourSetReferentEventHandlersInProgress.get();
+    Pair<SNode, SReferenceLink> pair = new Pair<SNode, SReferenceLink>(node, referenceLink);
     if (threadSet.contains(pair)) {
-      node.setReferenceTarget(role, target);
+      node.setReferenceTarget(referenceLink, target);
       return;
     }
 
-    ReferenceConstraintsDescriptor descriptor = ConceptRegistry.getInstance().getConstraintsDescriptor(node.getConcept().getQualifiedName()).getReference(
-        role);
+    ReferenceConstraintsDescriptor descriptor = getReferenceConstraintsDescriptor(node, referenceLink);
 
     if (descriptor instanceof IllegalReferenceConstraintsDescriptor) {
-      node.setReferenceTarget(role, target);
+      node.setReferenceTarget(referenceLink, target);
       return;
     }
 
     threadSet.add(pair);
 
     try {
-      org.jetbrains.mps.openapi.model.SNode oldReferent = node.getReferenceTarget(role);
+      org.jetbrains.mps.openapi.model.SNode oldReferent = node.getReferenceTarget(referenceLink);
       if (descriptor.validate(node, oldReferent, target)) {
-        node.setReferenceTarget(role, target);
+        node.setReferenceTarget(referenceLink, target);
         descriptor.onReferenceSet(node, oldReferent, target);
       }
     } finally {
@@ -121,17 +174,25 @@ public class SNodeAccessUtilImpl extends SNodeAccessUtil {
     }
   }
 
-
   @Override
-  public void setReferenceImpl(org.jetbrains.mps.openapi.model.SNode node, String role, @Nullable org.jetbrains.mps.openapi.model.SReference reference) {
-    //todo for symmetry.Not yet used
-    node.setReference(role, reference);
+  public void setReferenceTargetImpl(org.jetbrains.mps.openapi.model.SNode node, String role, @Nullable org.jetbrains.mps.openapi.model.SNode target) {
+    setReferenceTargetImpl(node, new SReferenceLinkAdapterByName(node.getConcept().getQualifiedName(), role), target);
   }
 
-  private class InProgressThreadLocal extends ThreadLocal<Set<Pair<org.jetbrains.mps.openapi.model.SNode, String>>> {
+  @Override
+  public void setReferenceImpl(org.jetbrains.mps.openapi.model.SNode node, SReferenceLink referenceLink, @Nullable org.jetbrains.mps.openapi.model.SReference reference) {
+    //todo for symmetry.Not yet used
+    node.setReference(referenceLink, reference);
+  }
+
+  public void setReferenceImpl(org.jetbrains.mps.openapi.model.SNode node, String role, @Nullable org.jetbrains.mps.openapi.model.SReference reference) {
+    setReferenceImpl(node, new SReferenceLinkAdapterByName(node.getConcept().getQualifiedName(), role), reference);
+  }
+
+  private class InProgressThreadLocal<T> extends ThreadLocal<Set<Pair<org.jetbrains.mps.openapi.model.SNode, T>>> {
     @Override
-    protected Set<Pair<org.jetbrains.mps.openapi.model.SNode, String>> initialValue() {
-      return new HashSet<Pair<SNode, String>>();
+    protected Set<Pair<org.jetbrains.mps.openapi.model.SNode, T>> initialValue() {
+      return new HashSet<Pair<SNode, T>>();
     }
   }
 }

@@ -10,6 +10,8 @@ import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import java.util.Iterator;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.typesystem.inference.EquationInfo;
@@ -21,11 +23,11 @@ public class typeof_InternalThisExpression_InferenceRule extends AbstractInferen
   public void applyRule(final SNode ite, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     SNode c = SNodeOperations.getAncestor(ite, "jetbrains.mps.baseLanguage.structure.Classifier", false, false);
     SNode ct = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ClassifierType", null);
-    SLinkOperations.setTarget(ct, "classifier", c, false);
-    SLinkOperations.getTargets(c, "typeVariableDeclaration", true);
+    SLinkOperations.setTarget(ct, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier"), c);
+    SLinkOperations.getChildren(c, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1109279851642l, 1109279881614l, "typeVariableDeclaration"));
     {
       SNode tvd;
-      Iterator<SNode> tvd_iterator = ListSequence.fromList(SLinkOperations.getTargets(c, "typeVariableDeclaration", true)).iterator();
+      Iterator<SNode> tvd_iterator = ListSequence.fromList(SLinkOperations.getChildren(c, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1109279851642l, 1109279881614l, "typeVariableDeclaration"))).iterator();
       while (true) {
         if (!(tvd_iterator.hasNext())) {
           break;
@@ -33,8 +35,8 @@ public class typeof_InternalThisExpression_InferenceRule extends AbstractInferen
         tvd = tvd_iterator.next();
         {
           SNode tvr = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.TypeVariableReference", null);
-          SLinkOperations.setTarget(tvr, "typeVariableDeclaration", tvd, false);
-          ListSequence.fromList(SLinkOperations.getTargets(ct, "parameter", true)).addElement(tvr);
+          SLinkOperations.setTarget(tvr, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1109283449304l, 1109283546497l, "typeVariableDeclaration"), tvd);
+          ListSequence.fromList(SLinkOperations.getChildren(ct, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1109201940907l, "parameter"))).addElement(tvr);
         }
       }
     }

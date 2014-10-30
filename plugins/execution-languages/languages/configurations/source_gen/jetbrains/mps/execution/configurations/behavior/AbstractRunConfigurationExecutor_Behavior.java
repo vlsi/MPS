@@ -4,6 +4,8 @@ package jetbrains.mps.execution.configurations.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import org.jetbrains.annotations.NonNls;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
@@ -11,17 +13,17 @@ import jetbrains.mps.execution.common.behavior.IGeneratedToClass_Behavior;
 
 public class AbstractRunConfigurationExecutor_Behavior {
   public static void init(SNode thisNode) {
-    SPropertyOperations.set(thisNode, "canRun", "" + (true));
-    SPropertyOperations.set(thisNode, "configurationName", "myRunConfiguration");
+    SPropertyOperations.set(thisNode, MetaAdapterFactory.getProperty(new UUID(2515029821120661198l, -8934183642121722347l), 2401501559171392633l, 5925077313451868299l, "canRun"), "" + (true));
+    SPropertyOperations.set(thisNode, MetaAdapterFactory.getProperty(new UUID(2515029821120661198l, -8934183642121722347l), 2401501559171392633l, 1931462339887551644l, "configurationName"), "myRunConfiguration");
   }
   public static String call_getCanExecuteMethodName_7806358006983616236(SNode thisNode) {
     return "canExecute";
   }
   @NonNls
   public static String virtual_getSuffix_946964771156905483(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(thisNode, "configuration", false), "virtual_getSuffix_946964771156905483", new Object[]{}) + "_RunProfileState";
+    return BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getReferenceLink(new UUID(8461860300379867720l, -4758718422494514628l), 946964771156905617l, 946964771156905618l, "configuration")), "virtual_getSuffix_946964771156905483", new Object[]{}) + "_RunProfileState";
   }
   public static String virtual_getGeneratedClassName_946964771156905488(SNode thisNode) {
-    return IGeneratedToClass_Behavior.call_getGeneratedClassName_946964771156905516(thisNode, SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, "configuration", false), "name"));
+    return IGeneratedToClass_Behavior.call_getGeneratedClassName_946964771156905516(thisNode, SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getReferenceLink(new UUID(8461860300379867720l, -4758718422494514628l), 946964771156905617l, 946964771156905618l, "configuration")), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")));
   }
 }

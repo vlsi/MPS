@@ -9,6 +9,8 @@ import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
@@ -25,7 +27,7 @@ public class typeof_IncludeMacro_InferenceRule extends AbstractInferenceRule_Run
   }
   public void applyRule(final SNode macro, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     SNode containingTemplate = SNodeOperations.getAncestor(macro, "jetbrains.mps.lang.generator.structure.TemplateDeclaration", false, false);
-    SNode includedTemplate = SLinkOperations.getTarget(macro, "includeTemplate", false);
+    SNode includedTemplate = SLinkOperations.getTarget(macro, MetaAdapterFactory.getReferenceLink(new UUID(-5475912601019530992l, -8082971551085732881l), 1194565793557l, 1194566366375l, "includeTemplate"));
 
     if ((includedTemplate == null)) {
       {
@@ -33,7 +35,7 @@ public class typeof_IncludeMacro_InferenceRule extends AbstractInferenceRule_Run
         IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(macro, "No template", "r:00000000-0000-4000-0000-011c895902e4(jetbrains.mps.lang.generator.typesystem)", "933643154465925404", null, errorTarget);
       }
     } else if ((containingTemplate == null)) {
-      if (!(ListSequence.fromList(SLinkOperations.getTargets(includedTemplate, "parameter", true)).isEmpty())) {
+      if (!(ListSequence.fromList(SLinkOperations.getChildren(includedTemplate, MetaAdapterFactory.getContainmentLink(new UUID(-5475912601019530992l, -8082971551085732881l), 982871510064032177l, 982871510064032342l, "parameter"))).isEmpty())) {
         {
           MessageTarget errorTarget = new NodeMessageTarget();
           IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(macro, "Cannot include template with arguments", "r:00000000-0000-4000-0000-011c895902e4(jetbrains.mps.lang.generator.typesystem)", "933643154466064615", null, errorTarget);
@@ -41,19 +43,19 @@ public class typeof_IncludeMacro_InferenceRule extends AbstractInferenceRule_Run
       }
     } else {
       Map<String, SNode> available = MapSequence.fromMap(new HashMap<String, SNode>());
-      for (SNode param : ListSequence.fromList(SLinkOperations.getTargets(containingTemplate, "parameter", true))) {
-        MapSequence.fromMap(available).put(SPropertyOperations.getString(param, "name"), SLinkOperations.getTarget(param, "type", true));
+      for (SNode param : ListSequence.fromList(SLinkOperations.getChildren(containingTemplate, MetaAdapterFactory.getContainmentLink(new UUID(-5475912601019530992l, -8082971551085732881l), 982871510064032177l, 982871510064032342l, "parameter")))) {
+        MapSequence.fromMap(available).put(SPropertyOperations.getString(param, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")), SLinkOperations.getTarget(param, MetaAdapterFactory.getContainmentLink(new UUID(-5475912601019530992l, -8082971551085732881l), 1805153994415891174l, 1805153994415893199l, "type")));
       }
-      for (SNode p : ListSequence.fromList(SLinkOperations.getTargets(includedTemplate, "parameter", true))) {
-        if (!(MapSequence.fromMap(available).containsKey(SPropertyOperations.getString(p, "name")))) {
+      for (SNode p : ListSequence.fromList(SLinkOperations.getChildren(includedTemplate, MetaAdapterFactory.getContainmentLink(new UUID(-5475912601019530992l, -8082971551085732881l), 982871510064032177l, 982871510064032342l, "parameter")))) {
+        if (!(MapSequence.fromMap(available).containsKey(SPropertyOperations.getString(p, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"))))) {
           {
             MessageTarget errorTarget = new NodeMessageTarget();
-            IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(macro, "no `" + SPropertyOperations.getString(p, "name") + "' parameter", "r:00000000-0000-4000-0000-011c895902e4(jetbrains.mps.lang.generator.typesystem)", "933643154466207801", null, errorTarget);
+            IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(macro, "no `" + SPropertyOperations.getString(p, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")) + "' parameter", "r:00000000-0000-4000-0000-011c895902e4(jetbrains.mps.lang.generator.typesystem)", "933643154466207801", null, errorTarget);
           }
-        } else if (!(TypeChecker.getInstance().getSubtypingManager().isSubtype(MapSequence.fromMap(available).get(SPropertyOperations.getString(p, "name")), SLinkOperations.getTarget(p, "type", true)))) {
+        } else if (!(TypeChecker.getInstance().getSubtypingManager().isSubtype(MapSequence.fromMap(available).get(SPropertyOperations.getString(p, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"))), SLinkOperations.getTarget(p, MetaAdapterFactory.getContainmentLink(new UUID(-5475912601019530992l, -8082971551085732881l), 1805153994415891174l, 1805153994415893199l, "type"))))) {
           {
             MessageTarget errorTarget = new NodeMessageTarget();
-            IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(macro, "bad type of `" + SPropertyOperations.getString(p, "name") + "' parameter", "r:00000000-0000-4000-0000-011c895902e4(jetbrains.mps.lang.generator.typesystem)", "933643154466207820", null, errorTarget);
+            IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(macro, "bad type of `" + SPropertyOperations.getString(p, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")) + "' parameter", "r:00000000-0000-4000-0000-011c895902e4(jetbrains.mps.lang.generator.typesystem)", "933643154466207820", null, errorTarget);
           }
         }
       }

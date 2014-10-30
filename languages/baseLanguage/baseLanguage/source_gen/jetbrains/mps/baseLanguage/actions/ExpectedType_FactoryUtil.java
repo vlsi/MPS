@@ -8,6 +8,8 @@ import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.pattern.util.MatchingUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 
 public class ExpectedType_FactoryUtil {
   public ExpectedType_FactoryUtil() {
@@ -41,7 +43,7 @@ public class ExpectedType_FactoryUtil {
     }
     if (SNodeOperations.isInstanceOf(outer, "jetbrains.mps.baseLanguage.structure.Statement") && SNodeOperations.isInstanceOf(SNodeOperations.getParent(outer), "jetbrains.mps.baseLanguage.structure.StatementList")) {
       SNode list = SNodeOperations.cast(SNodeOperations.getParent(outer), "jetbrains.mps.baseLanguage.structure.StatementList");
-      if (ListSequence.fromList(SLinkOperations.getTargets(list, "statement", true)).first() == outer) {
+      if (ListSequence.fromList(SLinkOperations.getChildren(list, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123136l, 1068581517665l, "statement"))).first() == outer) {
         outer = list;
       } else {
         outer = null;
@@ -50,9 +52,9 @@ public class ExpectedType_FactoryUtil {
     if (SNodeOperations.isInstanceOf(outer, "jetbrains.mps.baseLanguage.structure.StatementList")) {
       SNode condition = null;
       if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(outer), "jetbrains.mps.baseLanguage.structure.ElsifClause")) {
-        condition = SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(outer), "jetbrains.mps.baseLanguage.structure.ElsifClause"), "condition", true);
+        condition = SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(outer), "jetbrains.mps.baseLanguage.structure.ElsifClause"), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1206060495898l, 1206060619838l, "condition"));
       } else if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(outer), "jetbrains.mps.baseLanguage.structure.IfStatement")) {
-        condition = SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(outer), "jetbrains.mps.baseLanguage.structure.IfStatement"), "condition", true);
+        condition = SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(outer), "jetbrains.mps.baseLanguage.structure.IfStatement"), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123159l, 1068580123160l, "condition"));
       }
       if (SNodeOperations.isInstanceOf(condition, "jetbrains.mps.baseLanguage.structure.InstanceOfExpression")) {
         return SNodeOperations.cast(condition, "jetbrains.mps.baseLanguage.structure.InstanceOfExpression");

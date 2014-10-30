@@ -5,6 +5,7 @@ package jetbrains.mps.build.constraints;
 import jetbrains.mps.smodel.runtime.ConstraintsDescriptor;
 import java.util.Arrays;
 import jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor;
+import jetbrains.mps.smodel.adapter.ids.SConceptId;
 
 public class ConstraintsAspectDescriptor implements jetbrains.mps.smodel.runtime.ConstraintsAspectDescriptor {
   public ConstraintsAspectDescriptor() {
@@ -76,9 +77,108 @@ public class ConstraintsAspectDescriptor implements jetbrains.mps.smodel.runtime
       case 11:
         return new BuildLayout_JarManifest_Constraints();
       default:
-        // todo: illegal in some cases? 
         return new BaseConstraintsDescriptor(fqName);
     }
+  }
+  public ConstraintsDescriptor getDescriptor(SConceptId conceptId) {
+    long id = conceptId.getConceptId();
+    if (id == 7389400916848153117l) {
+      return new BuildSourceMacroRelativePath_Constraints();
+    }
+    if (id == 5617550519002745364l) {
+      return new BuildLayout_Constraints();
+    }
+    if (id == 3542413272732750877l) {
+      return new BuildAspect_Constraints();
+    }
+    if (id == 7389400916848073784l) {
+      return new BuildSource_JavaModule_Constraints();
+    }
+    if (id == 6057319140845467763l) {
+      return new BuildSource_JavaLibrary_Constraints();
+    }
+    if (id == 4903714810883702019l) {
+      return new BuildTextStringPart_Constraints();
+    }
+    if (id == 5248329904288265468l) {
+      return new BuildSource_JavaSources_Constraints();
+    }
+    if (id == 4903714810883702017l) {
+      return new BuildVarRefStringPart_Constraints();
+    }
+    if (id == 7389400916848050060l) {
+      return new BuildLayout_NamedContainer_Constraints();
+    }
+    if (id == 3767587139141066978l) {
+      return new BuildVariableMacro_Constraints();
+    }
+    if (id == 4903714810883702015l) {
+      return new BuildStringPart_Constraints();
+    }
+    if (id == 7389400916848073790l) {
+      return new BuildSourcePath_Constraints();
+    }
+    if (id == 1258644073389103449l) {
+      return new BuildSource_JavaClassFolder_Constraints();
+    }
+    if (id == 841011766565753074l) {
+      return new BuildLayout_Import_Constraints();
+    }
+    if (id == 2591537044435828004l) {
+      return new BuildLayout_CompileOutputOf_Constraints();
+    }
+    if (id == 7181125477683216329l) {
+      return new BuildExternalLayout_Constraints();
+    }
+    if (id == 7181125477683370806l) {
+      return new BuildLayout_FileStub_Constraints();
+    }
+    if (id == 7181125477683417252l) {
+      return new BuildExternalLayoutDependency_Constraints();
+    }
+    if (id == 5610619299013057363l) {
+      return new BuildLayout_ImportContent_Constraints();
+    }
+    if (id == 5610619299014309452l) {
+      return new BuildSource_JavaExternalJarRef_Constraints();
+    }
+    if (id == 5610619299014531647l) {
+      return new BuildSource_JavaExternalJarFolderRef_Constraints();
+    }
+    if (id == 927724900262033858l) {
+      return new BuildSource_JavaOptions_Constraints();
+    }
+    if (id == 1659807394254261074l) {
+      return new BuildSource_JavaModuleOptions_Constraints();
+    }
+    if (id == 4993211115183250894l) {
+      return new BuildSource_JavaDependencyLibrary_Constraints();
+    }
+    if (id == 7801138212747054656l) {
+      return new BuildLayout_Filemode_Constraints();
+    }
+    if (id == 7753544965996647428l) {
+      return new BuildLayout_FilesOf_Constraints();
+    }
+    if (id == 244868996532454372l) {
+      return new BuildVariableMacroInitWithDate_Constraints();
+    }
+    if (id == 2755237150521942442l) {
+      return new BuildVariableMacroInitValue_Constraints();
+    }
+    if (id == 4993211115183325728l) {
+      return new BuildProjectDependency_Constraints();
+    }
+    if (id == 9126048691955220717l) {
+      return new BuildLayout_File_Constraints();
+    }
+    if (id == 1251221292904119675l) {
+      return new BuildLayout_JarManifest_Section_Constraints();
+    }
+    if (id == 1251221292903960366l) {
+      return new BuildLayout_JarManifest_Constraints();
+    }
+    return new BaseConstraintsDescriptor(conceptId);
   }
   private static String[] stringSwitchCases_2qnle6_a0a0b = new String[]{"jetbrains.mps.build.structure.BuildAspect", "jetbrains.mps.build.structure.BuildExternalLayout", "jetbrains.mps.build.structure.BuildExternalLayoutDependency", "jetbrains.mps.build.structure.BuildLayout", "jetbrains.mps.build.structure.BuildLayout_CompileOutputOf", "jetbrains.mps.build.structure.BuildLayout_File", "jetbrains.mps.build.structure.BuildLayout_FileStub", "jetbrains.mps.build.structure.BuildLayout_Filemode", "jetbrains.mps.build.structure.BuildLayout_FilesOf", "jetbrains.mps.build.structure.BuildLayout_Import", "jetbrains.mps.build.structure.BuildLayout_ImportContent", "jetbrains.mps.build.structure.BuildLayout_JarManifest", "jetbrains.mps.build.structure.BuildLayout_JarManifest_Section", "jetbrains.mps.build.structure.BuildLayout_NamedContainer", "jetbrains.mps.build.structure.BuildProjectDependency", "jetbrains.mps.build.structure.BuildSourceMacroRelativePath", "jetbrains.mps.build.structure.BuildSourcePath", "jetbrains.mps.build.structure.BuildSource_JavaClassFolder", "jetbrains.mps.build.structure.BuildSource_JavaDependencyLibrary", "jetbrains.mps.build.structure.BuildSource_JavaExternalJarFolderRef", "jetbrains.mps.build.structure.BuildSource_JavaExternalJarRef", "jetbrains.mps.build.structure.BuildSource_JavaLibrary", "jetbrains.mps.build.structure.BuildSource_JavaModule", "jetbrains.mps.build.structure.BuildSource_JavaModuleOptions", "jetbrains.mps.build.structure.BuildSource_JavaOptions", "jetbrains.mps.build.structure.BuildSource_JavaSources", "jetbrains.mps.build.structure.BuildStringPart", "jetbrains.mps.build.structure.BuildTextStringPart", "jetbrains.mps.build.structure.BuildVarRefStringPart", "jetbrains.mps.build.structure.BuildVariableMacro", "jetbrains.mps.build.structure.BuildVariableMacroInitValue", "jetbrains.mps.build.structure.BuildVariableMacroInitWithDate"};
 }

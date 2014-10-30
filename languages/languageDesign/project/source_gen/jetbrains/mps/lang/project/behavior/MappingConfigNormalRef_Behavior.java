@@ -4,18 +4,20 @@ package jetbrains.mps.lang.project.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 
 public class MappingConfigNormalRef_Behavior {
   public static void init(SNode thisNode) {
   }
   public static boolean virtual_isComplete_2721285250110257005(SNode thisNode) {
-    if (isEmptyString(SPropertyOperations.getString(thisNode, "modelUID"))) {
+    if (isEmptyString(SPropertyOperations.getString(thisNode, MetaAdapterFactory.getProperty(new UUID(-8723610397892195161l, -7746462699928525911l), 2721285250110400375l, 2721285250110400376l, "modelUID")))) {
       return false;
     }
-    if (SPropertyOperations.getString(thisNode, "modelUID").equals("*")) {
+    if (SPropertyOperations.getString(thisNode, MetaAdapterFactory.getProperty(new UUID(-8723610397892195161l, -7746462699928525911l), 2721285250110400375l, 2721285250110400376l, "modelUID")).equals("*")) {
       return true;
     }
-    if (isEmptyString(SPropertyOperations.getString(thisNode, "nodeID"))) {
+    if (isEmptyString(SPropertyOperations.getString(thisNode, MetaAdapterFactory.getProperty(new UUID(-8723610397892195161l, -7746462699928525911l), 2721285250110400375l, 2721285250110400377l, "nodeID")))) {
       return false;
     }
     return true;

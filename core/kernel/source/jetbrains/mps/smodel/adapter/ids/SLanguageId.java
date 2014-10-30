@@ -54,4 +54,9 @@ public final class SLanguageId {
   public static SLanguageId deserialize(String s){
     return new SLanguageId(UUID.fromString(s));
   }
+
+  @Override
+  public String toString() {
+    return serialize();
+  }
 }

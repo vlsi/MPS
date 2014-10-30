@@ -20,6 +20,8 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Indent;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
@@ -84,7 +86,7 @@ public class ListCommandPart_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private static boolean renderingCondition_fty1bq_a1a(SNode node, EditorContext editorContext) {
-    return ListSequence.fromList(SLinkOperations.getTargets(node, "items", true)).isEmpty();
+    return ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(new UUID(-921973991802319051l, -8446196034130110353l), 6868250101935610313l, 2168104298250244983l, "items"))).isEmpty();
   }
   private EditorCell createRefNodeList_fty1bq_c0(EditorContext editorContext, SNode node) {
     AbstractCellListHandler handler = new ListCommandPart_Editor.itemsListHandler_fty1bq_c0(node, "items", editorContext);
@@ -138,7 +140,7 @@ public class ListCommandPart_Editor extends DefaultNodeEditor {
     }
   }
   private static boolean renderingCondition_fty1bq_a2a(SNode node, EditorContext editorContext) {
-    return (SLinkOperations.getTarget(node, "list", true) == null);
+    return (SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-921973991802319051l, -8446196034130110353l), 6868250101935610313l, 6868250101935610315l, "list")) == null);
   }
   private EditorCell createCollection_fty1bq_d0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
@@ -153,7 +155,7 @@ public class ListCommandPart_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private static boolean renderingCondition_fty1bq_a3a(SNode node, EditorContext editorContext) {
-    return (SLinkOperations.getTarget(node, "separator", true) != null);
+    return (SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-921973991802319051l, -8446196034130110353l), 6868250101935610313l, 6868250101935610316l, "separator")) != null);
   }
   private EditorCell createConstant_fty1bq_a3a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "join");

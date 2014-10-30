@@ -5,6 +5,8 @@ package jetbrains.mps.lang.plugin.behavior;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.checkedName.PropertyReference;
 
@@ -12,8 +14,8 @@ public class PreferencePage_Behavior {
   public static void init(SNode thisNode) {
   }
   public static String call_getGeneratedName_1217679829877(SNode thisNode) {
-    String componentName = SPropertyOperations.getString(SNodeOperations.getAncestor(thisNode, "jetbrains.mps.lang.plugin.structure.PreferencesComponentDeclaration", false, false), "name");
-    String pageName = NameUtil.toValidCamelIdentifier(SPropertyOperations.getString(thisNode, "name"));
+    String componentName = SPropertyOperations.getString(SNodeOperations.getAncestor(thisNode, "jetbrains.mps.lang.plugin.structure.PreferencesComponentDeclaration", false, false), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"));
+    String pageName = NameUtil.toValidCamelIdentifier(SPropertyOperations.getString(thisNode, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")));
     return componentName + "_" + pageName + "_PreferencesPage";
   }
   public static PropertyReference virtual_getPropertyToCheck_4844813484172611473(SNode thisNode) {

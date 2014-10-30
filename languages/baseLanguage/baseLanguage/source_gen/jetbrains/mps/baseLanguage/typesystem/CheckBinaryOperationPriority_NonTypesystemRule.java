@@ -9,6 +9,8 @@ import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.baseLanguage.behavior.ParenthesisUtil;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
@@ -23,9 +25,9 @@ public class CheckBinaryOperationPriority_NonTypesystemRule extends AbstractNonT
     if (SNodeOperations.getParent(binaryOperation) != null && SNodeOperations.isInstanceOf(SNodeOperations.getParent(binaryOperation), "jetbrains.mps.baseLanguage.structure.BinaryOperation")) {
       SNode parent = SNodeOperations.cast(SNodeOperations.getParent(binaryOperation), "jetbrains.mps.baseLanguage.structure.BinaryOperation");
       boolean isRigth = false;
-      if (SLinkOperations.getTarget(parent, "rightExpression", true) == binaryOperation) {
+      if (SLinkOperations.getTarget(parent, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1081773326031l, 1081773367579l, "rightExpression")) == binaryOperation) {
         isRigth = true;
-      } else if (SLinkOperations.getTarget(parent, "leftExpression", true) == binaryOperation) {
+      } else if (SLinkOperations.getTarget(parent, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1081773326031l, 1081773367580l, "leftExpression")) == binaryOperation) {
         isRigth = false;
       }
       if (ParenthesisUtil.isBadPriority(binaryOperation, parent, isRigth)) {

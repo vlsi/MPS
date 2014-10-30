@@ -12,6 +12,8 @@ import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.generator.TransientModelsModule;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import org.jetbrains.annotations.NotNull;
@@ -37,22 +39,22 @@ public class VisibleArtifacts {
     }
   }
   public void collect() {
-    for (SNode dep : SLinkOperations.getTargets(project, "dependencies", true)) {
+    for (SNode dep : SLinkOperations.getChildren(project, MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 5617550519002745363l, 5617550519002745381l, "dependencies"))) {
       SNode layoutDependency = SNodeOperations.as(dep, "jetbrains.mps.build.structure.BuildExternalLayoutDependency");
       if (layoutDependency == null) {
         continue;
       }
 
-      SNode target = SLinkOperations.getTarget(layoutDependency, "layout", false);
+      SNode target = SLinkOperations.getTarget(layoutDependency, MetaAdapterFactory.getReferenceLink(new UUID(8755280088213897754l, -5075149991798053422l), 7181125477683417252l, 7181125477683417255l, "layout"));
       collectInExternalLayout(layoutDependency, target);
     }
-    for (SNode dep : SLinkOperations.getTargets(project, "dependencies", true)) {
+    for (SNode dep : SLinkOperations.getChildren(project, MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 5617550519002745363l, 5617550519002745381l, "dependencies"))) {
       SNode projectDependency = SNodeOperations.as(dep, "jetbrains.mps.build.structure.BuildProjectDependency");
       if (projectDependency == null) {
         continue;
       }
 
-      SNode target = SLinkOperations.getTarget(projectDependency, "script", false);
+      SNode target = SLinkOperations.getTarget(projectDependency, MetaAdapterFactory.getReferenceLink(new UUID(8755280088213897754l, -5075149991798053422l), 4993211115183325728l, 5617550519002745380l, "script"));
       if (target == project) {
         continue;
       }
@@ -63,7 +65,7 @@ public class VisibleArtifacts {
   }
   private void collectProjectArtifacts() {
     SNode originalProject = SNodeOperations.cast(DependenciesHelper.getOriginalNode(project, genContext), "jetbrains.mps.build.structure.BuildProject");
-    collectInProject(SLinkOperations.getTarget(originalProject, "layout", true), originalProject);
+    collectInProject(SLinkOperations.getTarget(originalProject, MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 5617550519002745363l, 5617550519002745372l, "layout")), originalProject);
   }
   protected void collectInProject(SNode parent, SNode target) {
     target = (target != project ? SNodeOperations.as(toOriginalNode(target), "jetbrains.mps.build.structure.BuildProject") : project);
@@ -72,11 +74,11 @@ public class VisibleArtifacts {
     }
     assert project == target || !(SNodeOperations.getModel(target).getModule() instanceof TransientModelsModule);
 
-    ListSequence.fromList(visibleLayouts).addElement(SLinkOperations.getTarget(target, "layout", true));
-    if (SLinkOperations.getTarget(target, "layout", true) != parent) {
-      parentMap.put(SLinkOperations.getTarget(target, "layout", true), parent);
+    ListSequence.fromList(visibleLayouts).addElement(SLinkOperations.getTarget(target, MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 5617550519002745363l, 5617550519002745372l, "layout")));
+    if (SLinkOperations.getTarget(target, MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 5617550519002745363l, 5617550519002745372l, "layout")) != parent) {
+      parentMap.put(SLinkOperations.getTarget(target, MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 5617550519002745363l, 5617550519002745372l, "layout")), parent);
     }
-    for (SNode node : SLinkOperations.getTargets(SLinkOperations.getTarget(target, "layout", true), "children", true)) {
+    for (SNode node : SLinkOperations.getChildren(SLinkOperations.getTarget(target, MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 5617550519002745363l, 5617550519002745372l, "layout")), MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 4701820937132344003l, 7389400916848037006l, "children"))) {
       collectInLayout(parent, node);
     }
   }
@@ -89,7 +91,7 @@ public class VisibleArtifacts {
 
     ListSequence.fromList(visibleLayouts).addElement(target);
     parentMap.put(target, parent);
-    for (SNode node : SLinkOperations.getTargets(target, "children", true)) {
+    for (SNode node : SLinkOperations.getChildren(target, MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 4701820937132344003l, 7389400916848037006l, "children"))) {
       collectInLayout(parent, node);
     }
   }
@@ -102,18 +104,18 @@ public class VisibleArtifacts {
     parentMap.put(node, parent);
 
     if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.build.structure.BuildLayout_AbstractContainer")) {
-      for (SNode child : SLinkOperations.getTargets(SNodeOperations.cast(node, "jetbrains.mps.build.structure.BuildLayout_AbstractContainer"), "children", true)) {
+      for (SNode child : SLinkOperations.getChildren(SNodeOperations.cast(node, "jetbrains.mps.build.structure.BuildLayout_AbstractContainer"), MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 4701820937132344003l, 7389400916848037006l, "children"))) {
         collectInLayout(node, child);
       }
     } else if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.build.structure.BuildLayout_ImportContent")) {
-      SNode target = SNodeOperations.as(toOriginalNode(SLinkOperations.getTarget(SNodeOperations.cast(node, "jetbrains.mps.build.structure.BuildLayout_ImportContent"), "target", false)), "jetbrains.mps.build.structure.BuildLayout_AbstractContainer");
+      SNode target = SNodeOperations.as(toOriginalNode(SLinkOperations.getTarget(SNodeOperations.cast(node, "jetbrains.mps.build.structure.BuildLayout_ImportContent"), MetaAdapterFactory.getReferenceLink(new UUID(8755280088213897754l, -5075149991798053422l), 5610619299013057363l, 5610619299013057365l, "target"))), "jetbrains.mps.build.structure.BuildLayout_AbstractContainer");
       if (target != null) {
-        for (SNode child : ListSequence.fromList(SLinkOperations.getTargets(target, "children", true))) {
+        for (SNode child : ListSequence.fromList(SLinkOperations.getChildren(target, MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 4701820937132344003l, 7389400916848037006l, "children")))) {
           collectInLayout(parent, child);
         }
       }
     } else if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.build.structure.BuildLayout_Import")) {
-      SNode target = SNodeOperations.as(toOriginalNode(SLinkOperations.getTarget(SNodeOperations.cast(node, "jetbrains.mps.build.structure.BuildLayout_Import"), "target", false)), "jetbrains.mps.build.structure.BuildLayout_Node");
+      SNode target = SNodeOperations.as(toOriginalNode(SLinkOperations.getTarget(SNodeOperations.cast(node, "jetbrains.mps.build.structure.BuildLayout_Import"), MetaAdapterFactory.getReferenceLink(new UUID(8755280088213897754l, -5075149991798053422l), 841011766565753074l, 841011766565753076l, "target"))), "jetbrains.mps.build.structure.BuildLayout_Node");
       if (target != null) {
         collectInLayout(parent, target);
       }

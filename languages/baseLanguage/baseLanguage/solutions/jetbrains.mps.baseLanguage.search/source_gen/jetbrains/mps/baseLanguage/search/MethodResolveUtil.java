@@ -14,6 +14,8 @@ import jetbrains.mps.scope.Scope;
 import jetbrains.mps.smodel.constraints.ModelConstraints;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import org.jetbrains.annotations.Nullable;
 import java.util.List;
 import jetbrains.mps.util.Pair;
@@ -65,14 +67,14 @@ public class MethodResolveUtil {
     } else {
       return resolveMethodByCandidatesAndTypes(methodCall, Sequence.fromIterable(((Iterable<SNode>) scope.getAvailableElements(name))).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
-          return eq_zegw12_a0a0a0a0a1a0a0e0d(SPropertyOperations.getString(it, "name"), name);
+          return eq_zegw12_a0a0a0a0a1a0a0e0d(SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")), name);
         }
       }), null);
     }
   }
   private static Tuples._2<SNode, Boolean> resolveMethodByCandidatesAndTypes(SNode methodCall, Iterable<SNode> candidates, @Nullable Map<SNode, SNode> typeByTypeVar) {
-    List<SNode> actualArgs = SLinkOperations.getTargets(methodCall, "actualArgument", true);
-    SNode baseMethodDeclaration = SLinkOperations.getTarget(methodCall, "baseMethodDeclaration", false);
+    List<SNode> actualArgs = SLinkOperations.getChildren(methodCall, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, 1068499141038l, "actualArgument"));
+    SNode baseMethodDeclaration = SLinkOperations.getTarget(methodCall, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, 1068499141037l, "baseMethodDeclaration"));
 
     Pair<List<SNode>, Boolean> parmCountPair = MethodResolveUtil.selectByVisibilityReportNoGoodMethodNode(Sequence.fromIterable(candidates).toListSequence(), methodCall);
     List<SNode> methodDeclarationsGoodParams = parmCountPair.o1;
@@ -114,10 +116,10 @@ public class MethodResolveUtil {
     int index = 0;
     for (SNode method : methods) {
       int parmCountDiff;
-      int count = ListSequence.fromList(SLinkOperations.getTargets(method, "parameter", true)).count();
+      int count = ListSequence.fromList(SLinkOperations.getChildren(method, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123132l, 1068580123134l, "parameter"))).count();
       int actualArgsCount = ListSequence.fromList(actualArgs).count();
       boolean vararg = false;
-      if (count > 0 && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(ListSequence.fromList(SLinkOperations.getTargets(method, "parameter", true)).last(), "type", true), "jetbrains.mps.baseLanguage.structure.VariableArityType")) {
+      if (count > 0 && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(ListSequence.fromList(SLinkOperations.getChildren(method, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123132l, 1068580123134l, "parameter"))).last(), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 4972933694980447171l, 5680397130376446158l, "type")), "jetbrains.mps.baseLanguage.structure.VariableArityType")) {
         vararg = true;
         parmCountDiff = Math.max(0, (count - 1) - actualArgsCount);
       } else {
@@ -150,7 +152,7 @@ public class MethodResolveUtil {
     List<SNode> badMethods = new ArrayList<SNode>();
     for (SNode method : methods) {
       if (SNodeOperations.isInstanceOf(method, "jetbrains.mps.baseLanguage.structure.IVisible")) {
-        SNode visibility = SLinkOperations.getTarget(SNodeOperations.cast(method, "jetbrains.mps.baseLanguage.structure.IVisible"), "visibility", true);
+        SNode visibility = SLinkOperations.getTarget(SNodeOperations.cast(method, "jetbrains.mps.baseLanguage.structure.IVisible"), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1178549954367l, 1178549979242l, "visibility"));
         if (SNodeOperations.isInstanceOf(visibility, "jetbrains.mps.baseLanguage.structure.PublicVisibility")) {
           goodMethods.add(method);
         } else if (SNodeOperations.isInstanceOf(visibility, "jetbrains.mps.baseLanguage.structure.PrivateVisibility")) {
@@ -240,8 +242,8 @@ public class MethodResolveUtil {
     SubtypingManager subtypingManager = TypeChecker.getInstance().getSubtypingManager();
     for (SNode candidate : candidates) {
       boolean varArg = false;
-      List<SNode> params = SLinkOperations.getTargets(candidate, "parameter", true);
-      SNode type = SLinkOperations.getTarget(ListSequence.fromList(params).last(), "type", true);
+      List<SNode> params = SLinkOperations.getChildren(candidate, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123132l, 1068580123134l, "parameter"));
+      SNode type = SLinkOperations.getTarget(ListSequence.fromList(params).last(), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 4972933694980447171l, 5680397130376446158l, "type"));
       if (SNodeOperations.isInstanceOf(type, "jetbrains.mps.baseLanguage.structure.VariableArityType")) {
         if (ListSequence.fromList(params).count() - 1 <= indexOfArg) {
           varArg = true;
@@ -251,11 +253,11 @@ public class MethodResolveUtil {
           continue;
         }
       }
-      List<SNode> methodTypeVariableDecls = SLinkOperations.getTargets(candidate, "typeVariableDeclaration", true);
+      List<SNode> methodTypeVariableDecls = SLinkOperations.getChildren(candidate, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1109279851642l, 1109279881614l, "typeVariableDeclaration"));
       for (SNode tvd : ListSequence.fromList(methodTypeVariableDecls)) {
         typeByTypeVar.put(tvd, SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.WildCardType", null));
       }
-      SNode typeOfParam = (varArg ? SLinkOperations.getTarget(SNodeOperations.cast(type, "jetbrains.mps.baseLanguage.structure.VariableArityType"), "componentType", true) : SLinkOperations.getTarget(ListSequence.fromList(params).getElement(indexOfArg), "type", true));
+      SNode typeOfParam = (varArg ? SLinkOperations.getTarget(SNodeOperations.cast(type, "jetbrains.mps.baseLanguage.structure.VariableArityType"), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1219920932475l, 1219921048460l, "componentType")) : SLinkOperations.getTarget(ListSequence.fromList(params).getElement(indexOfArg), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 4972933694980447171l, 5680397130376446158l, "type")));
       if ((typeOfParam == null)) {
         continue;
       }
@@ -297,12 +299,12 @@ public class MethodResolveUtil {
       typeByTypeVar.put(elem.key(), elem.value());
     }
     Iterator<SNode> typeParms = ListSequence.fromList(typeParameters).iterator();
-    for (SNode typeVar : ListSequence.fromList(SLinkOperations.getTargets(classifier, "typeVariableDeclaration", true))) {
+    for (SNode typeVar : ListSequence.fromList(SLinkOperations.getChildren(classifier, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1109279851642l, 1109279881614l, "typeVariableDeclaration")))) {
       if (!(typeParms.hasNext())) {
         break;
       }
       SNode typeParm = SNodeOperations.as(typeParms.next(), "jetbrains.mps.baseLanguage.structure.Type");
-      if ((typeParm == null) || SLinkOperations.getTarget(SNodeOperations.as(typeParm, "jetbrains.mps.baseLanguage.structure.TypeVariableReference"), "typeVariableDeclaration", false) == typeVar) {
+      if ((typeParm == null) || SLinkOperations.getTarget(SNodeOperations.as(typeParm, "jetbrains.mps.baseLanguage.structure.TypeVariableReference"), MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1109283449304l, 1109283546497l, "typeVariableDeclaration")) == typeVar) {
         continue;
       }
       MapSequence.fromMap(typeByTypeVar).put(typeVar, SNodeOperations.cast(typeParm, "jetbrains.mps.baseLanguage.structure.Type"));

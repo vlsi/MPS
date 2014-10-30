@@ -24,6 +24,8 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.ide.findusages.view.FindUtils;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
@@ -112,7 +114,7 @@ public class GoToHelper {
     final String[] methodName = new String[1];
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        methodName[0] = SPropertyOperations.getString(method, "name");
+        methodName[0] = SPropertyOperations.getString(method, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"));
         assert FindUtils.getFinderByClassName(finderClassName).isApplicable(method);
       }
     });

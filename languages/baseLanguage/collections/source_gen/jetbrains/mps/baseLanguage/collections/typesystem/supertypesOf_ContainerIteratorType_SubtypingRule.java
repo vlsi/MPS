@@ -8,6 +8,8 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.smodel.SModelUtil_new;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
@@ -16,7 +18,7 @@ public class supertypesOf_ContainerIteratorType_SubtypingRule extends SubtypingR
   public supertypesOf_ContainerIteratorType_SubtypingRule() {
   }
   public SNode getSubOrSuperType(SNode cit, TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    return _quotation_createNode_jbal9l_a0a1(SLinkOperations.getTarget(cit, "elementType", true));
+    return _quotation_createNode_jbal9l_a0a1(SLinkOperations.getTarget(cit, MetaAdapterFactory.getContainmentLink(new UUID(-8968771020793164004l, -7182180101671965361l), 1237467705688l, 1237467730343l, "elementType")));
   }
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.baseLanguage.collections.structure.ContainerIteratorType";

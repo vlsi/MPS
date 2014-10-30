@@ -27,6 +27,8 @@ import com.intellij.ui.RowIcon;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import java.util.List;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.kernel.model.SModelUtil;
@@ -136,11 +138,11 @@ public class IconManager {
   }
   private static Icon getIconForConcept(SNode conceptDeclaration) {
     while (conceptDeclaration != null) {
-      Icon icon = getIconForConcept(conceptDeclaration, SPropertyOperations.getString(conceptDeclaration, "iconPath"));
+      Icon icon = getIconForConcept(conceptDeclaration, SPropertyOperations.getString(conceptDeclaration, MetaAdapterFactory.getProperty(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489090640l, 1160488491229l, "iconPath")));
       if (icon != null) {
         return icon;
       }
-      conceptDeclaration = SLinkOperations.getTarget(conceptDeclaration, "extends", false);
+      conceptDeclaration = SLinkOperations.getTarget(conceptDeclaration, MetaAdapterFactory.getReferenceLink(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489090640l, 1071489389519l, "extends"));
     }
     return null;
   }

@@ -5,27 +5,29 @@ package smodelLanguage.samples;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class ConceptProperties {
   public void stringConceptProperty(SNode node) {
-    boolean hasAlias = SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(node), "conceptAlias") != null;
-    String alias = SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(node), "conceptAlias");
-    String text = "alias is " + SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(node), "conceptAlias");
-    int length = SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(node), "conceptAlias").length();
-    SPropertyOperations.set(SNodeOperations.getConceptDeclaration(node), "conceptAlias", "foo");
-    SPropertyOperations.set(SNodeOperations.getConceptDeclaration(node), "conceptAlias", "bar");
+    boolean hasAlias = SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(node), MetaAdapterFactory.getProperty(new UUID(-4094437568663370681l, -8968368868337559369l), 1169125787135l, 5092175715804935370l, "conceptAlias")) != null;
+    String alias = SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(node), MetaAdapterFactory.getProperty(new UUID(-4094437568663370681l, -8968368868337559369l), 1169125787135l, 5092175715804935370l, "conceptAlias"));
+    String text = "alias is " + SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(node), MetaAdapterFactory.getProperty(new UUID(-4094437568663370681l, -8968368868337559369l), 1169125787135l, 5092175715804935370l, "conceptAlias"));
+    int length = SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(node), MetaAdapterFactory.getProperty(new UUID(-4094437568663370681l, -8968368868337559369l), 1169125787135l, 5092175715804935370l, "conceptAlias")).length();
+    SPropertyOperations.set(SNodeOperations.getConceptDeclaration(node), MetaAdapterFactory.getProperty(new UUID(-4094437568663370681l, -8968368868337559369l), 1169125787135l, 5092175715804935370l, "conceptAlias"), "foo");
+    SPropertyOperations.set(SNodeOperations.getConceptDeclaration(node), MetaAdapterFactory.getProperty(new UUID(-4094437568663370681l, -8968368868337559369l), 1169125787135l, 5092175715804935370l, "conceptAlias"), "bar");
   }
   public void booleanConceptProperty(SNode node) {
     boolean isAbstract = false;
-    if (SPropertyOperations.getBoolean(SNodeOperations.getConceptDeclaration(node), "abstract")) {
+    if (SPropertyOperations.getBoolean(SNodeOperations.getConceptDeclaration(node), MetaAdapterFactory.getProperty(new UUID(-4094437568663370681l, -8968368868337559369l), 1169125787135l, 4628067390765956802l, "abstract"))) {
       isAbstract = true;
     }
-    boolean isAbstract2 = SPropertyOperations.getBoolean(SNodeOperations.getConceptDeclaration(node), "abstract");
-    SPropertyOperations.set(SNodeOperations.getConceptDeclaration(node), "abstract", "" + (true));
-    SPropertyOperations.set(SNodeOperations.getConceptDeclaration(node), "abstract", "" + (false));
+    boolean isAbstract2 = SPropertyOperations.getBoolean(SNodeOperations.getConceptDeclaration(node), MetaAdapterFactory.getProperty(new UUID(-4094437568663370681l, -8968368868337559369l), 1169125787135l, 4628067390765956802l, "abstract"));
+    SPropertyOperations.set(SNodeOperations.getConceptDeclaration(node), MetaAdapterFactory.getProperty(new UUID(-4094437568663370681l, -8968368868337559369l), 1169125787135l, 4628067390765956802l, "abstract"), "" + (true));
+    SPropertyOperations.set(SNodeOperations.getConceptDeclaration(node), MetaAdapterFactory.getProperty(new UUID(-4094437568663370681l, -8968368868337559369l), 1169125787135l, 4628067390765956802l, "abstract"), "" + (false));
   }
   public void m1(SNode node) {
-    SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(SLinkOperations.getTarget(node, "baseMethodDeclaration", false)), "conceptAlias");
+    SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(SLinkOperations.getTarget(node, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, 1068499141037l, "baseMethodDeclaration"))), MetaAdapterFactory.getProperty(new UUID(-4094437568663370681l, -8968368868337559369l), 1169125787135l, 5092175715804935370l, "conceptAlias"));
   }
 }

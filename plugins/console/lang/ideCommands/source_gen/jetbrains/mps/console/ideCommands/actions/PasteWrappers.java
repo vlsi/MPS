@@ -10,6 +10,8 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.datatransfer.PasteWrapperContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 
 public class PasteWrappers {
   public static List<PasteWrapper> createPasteWrappers() {
@@ -23,7 +25,7 @@ public class PasteWrappers {
       }
       public SNode wrap(PasteWrapperContext _context) {
         SNode result = SConceptOperations.createNewNode("jetbrains.mps.console.ideCommands.structure.SubtreeStatisticsTarget", null);
-        SLinkOperations.setTarget(result, "target", _context.getSourceNode(), true);
+        SLinkOperations.setTarget(result, MetaAdapterFactory.getContainmentLink(new UUID(-6492820313512655654l, -6146453626538471728l), 2087237500458473003l, 2087237500458473158l, "target"), _context.getSourceNode());
         return result;
       }
     });
@@ -36,7 +38,7 @@ public class PasteWrappers {
       }
       public SNode wrap(PasteWrapperContext _context) {
         SNode result = SConceptOperations.createNewNode("jetbrains.mps.console.ideCommands.structure.SubtreeStatisticsTarget", null);
-        SLinkOperations.setTarget(result, "target", _context.getSourceNode(), true);
+        SLinkOperations.setTarget(result, MetaAdapterFactory.getContainmentLink(new UUID(-6492820313512655654l, -6146453626538471728l), 2087237500458473003l, 2087237500458473158l, "target"), _context.getSourceNode());
         return result;
       }
     });

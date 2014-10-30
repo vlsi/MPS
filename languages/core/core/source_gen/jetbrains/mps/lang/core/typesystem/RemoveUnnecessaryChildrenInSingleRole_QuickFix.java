@@ -5,6 +5,8 @@ package jetbrains.mps.lang.core.typesystem;
 import jetbrains.mps.errors.QuickFix_Runtime;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
@@ -13,7 +15,7 @@ public class RemoveUnnecessaryChildrenInSingleRole_QuickFix extends QuickFix_Run
   public RemoveUnnecessaryChildrenInSingleRole_QuickFix() {
   }
   public String getDescription(SNode node) {
-    return "Remove unnecessary children in single role \"" + SPropertyOperations.getString(((SNode) RemoveUnnecessaryChildrenInSingleRole_QuickFix.this.getField("link")[0]), "role") + "\"";
+    return "Remove unnecessary children in single role \"" + SPropertyOperations.getString(((SNode) RemoveUnnecessaryChildrenInSingleRole_QuickFix.this.getField("link")[0]), MetaAdapterFactory.getProperty(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489288298l, 1071599776563l, "role")) + "\"";
   }
   public void execute(SNode node) {
     ListSequence.fromList(SNodeOperations.getChildren(node, ((SNode) RemoveUnnecessaryChildrenInSingleRole_QuickFix.this.getField("link")[0]))).skip(1).toListSequence().visitAll(new IVisitor<SNode>() {

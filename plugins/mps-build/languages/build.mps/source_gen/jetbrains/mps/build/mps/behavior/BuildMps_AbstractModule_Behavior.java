@@ -4,14 +4,16 @@ package jetbrains.mps.build.mps.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 
 public class BuildMps_AbstractModule_Behavior {
   public static void init(SNode thisNode) {
   }
   public static boolean virtual_isCompact_8369506495128693730(SNode thisNode) {
-    return SPropertyOperations.getBoolean(thisNode, "compact");
+    return SPropertyOperations.getBoolean(thisNode, MetaAdapterFactory.getProperty(new UUID(934837630734519964l, -6831122735637083229l), 322010710375871467l, 8369506495128725901l, "compact"));
   }
   public static String call_getModuleReference_4643216374596368935(SNode thisNode) {
-    return SPropertyOperations.getString(thisNode, "uuid") + "(" + SPropertyOperations.getString(thisNode, "name") + ")";
+    return SPropertyOperations.getString(thisNode, MetaAdapterFactory.getProperty(new UUID(934837630734519964l, -6831122735637083229l), 322010710375871467l, 322010710375892619l, "uuid")) + "(" + SPropertyOperations.getString(thisNode, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")) + ")";
   }
 }

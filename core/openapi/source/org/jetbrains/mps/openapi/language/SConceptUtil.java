@@ -29,7 +29,23 @@ public class SConceptUtil {
     collectSuperConcepts(concept, result);
     return result;
   }
-
+  public static Set<SAbstractConcept> getImmediateSuperConcepts(@NotNull SAbstractConcept concept) {
+    Set<SAbstractConcept> result = new LinkedHashSet<SAbstractConcept>();
+    if (concept instanceof SConcept) {
+      for (SInterfaceConcept interfaceConcept : ((SConcept) concept).getSuperInterfaces()) {
+        result.add(interfaceConcept);
+      }
+      SConcept superConcept = ((SConcept) concept).getSuperConcept();
+      if (superConcept != null) {
+        result.add(superConcept);
+      }
+    } else if (concept instanceof SInterfaceConcept) {
+      for (SInterfaceConcept interfaceConcept : ((SInterfaceConcept) concept).getSuperInterfaces()) {
+        result.add(interfaceConcept);
+      }
+    }
+    return result;
+  }
   private static void collectSuperConcepts(@NotNull SAbstractConcept concept, @NotNull Set<SAbstractConcept> container) {
     if (container.contains(concept)) {
       return;

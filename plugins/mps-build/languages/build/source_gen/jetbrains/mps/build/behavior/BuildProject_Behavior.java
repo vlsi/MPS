@@ -8,6 +8,8 @@ import jetbrains.mps.build.util.RelativePathHelper;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.generator.template.TemplateQueryContext;
@@ -46,9 +48,9 @@ public class BuildProject_Behavior {
       // model is packaged, i.e. no base path for it 
       return null;
     }
-    if (isNotEmptyString(SPropertyOperations.getString(thisNode, "internalBaseDirectory"))) {
+    if (isNotEmptyString(SPropertyOperations.getString(thisNode, MetaAdapterFactory.getProperty(new UUID(8755280088213897754l, -5075149991798053422l), 5617550519002745363l, 5204048710541015587l, "internalBaseDirectory")))) {
       try {
-        return relativePathHelper.makeAbsolute(SPropertyOperations.getString(thisNode, "internalBaseDirectory"));
+        return relativePathHelper.makeAbsolute(SPropertyOperations.getString(thisNode, MetaAdapterFactory.getProperty(new UUID(8755280088213897754l, -5075149991798053422l), 5617550519002745363l, 5204048710541015587l, "internalBaseDirectory")));
       } catch (RelativePathHelper.PathException ex) {
         // no idea - use default path 
       }
@@ -57,13 +59,13 @@ public class BuildProject_Behavior {
   }
   @Nullable
   public static String call_getScriptsPath_4796668409958419284(SNode thisNode, Context context) {
-    if ((SLinkOperations.getTarget(thisNode, "scriptsDir", true) != null)) {
-      return BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(thisNode, "scriptsDir", true), "virtual_getLocalPath_5481553824944787364", new Object[]{context});
+    if ((SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 5617550519002745363l, 4796668409958418110l, "scriptsDir")) != null)) {
+      return BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 5617550519002745363l, 4796668409958418110l, "scriptsDir")), "virtual_getLocalPath_5481553824944787364", new Object[]{context});
     }
     return BuildProject_Behavior.call_getBasePath_4959435991187146924(thisNode, context);
   }
   public static String call_getOutputFileName_4915877860351551360(SNode thisNode) {
-    return (isEmptyString(SPropertyOperations.getString(thisNode, "fileName")) ? "build.xml" : SPropertyOperations.getString(thisNode, "fileName"));
+    return (isEmptyString(SPropertyOperations.getString(thisNode, MetaAdapterFactory.getProperty(new UUID(8755280088213897754l, -5075149991798053422l), 5617550519002745363l, 4915877860348071612l, "fileName"))) ? "build.xml" : SPropertyOperations.getString(thisNode, MetaAdapterFactory.getProperty(new UUID(8755280088213897754l, -5075149991798053422l), 5617550519002745363l, 4915877860348071612l, "fileName")));
   }
   public static String call_getBasePathRelativeToScriptsPath_5178006408628632053(SNode thisNode, Context context) {
     String scriptsPath = BuildProject_Behavior.call_getScriptsPath_4796668409958419284(thisNode, context);
@@ -98,14 +100,14 @@ public class BuildProject_Behavior {
       if (SConceptOperations.isSubConceptOf(kind, "jetbrains.mps.build.structure.BuildSource_FilesetProjectPart")) {
         return DescendantsScope.forNamedElements(thisNode, SLinkOperations.findLinkDeclaration("jetbrains.mps.build.structure.BuildProject", "parts"), kind);
       }
-      for (SNode plugin : ListSequence.fromList(SLinkOperations.getTargets(thisNode, "plugins", true))) {
+      for (SNode plugin : ListSequence.fromList(SLinkOperations.getChildren(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 5617550519002745363l, 6647099934206700656l, "plugins")))) {
         Scope layoutScope = BehaviorReflection.invokeVirtual(Scope.class, plugin, "virtual_getLayoutScope_1224588814561807654", new Object[]{kind});
         if (layoutScope != null) {
           return layoutScope;
         }
       }
     } else if ("parts".equals(role)) {
-      for (SNode plugin : ListSequence.fromList(SLinkOperations.getTargets(thisNode, "plugins", true))) {
+      for (SNode plugin : ListSequence.fromList(SLinkOperations.getChildren(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 5617550519002745363l, 6647099934206700656l, "plugins")))) {
         Scope projectScope = BehaviorReflection.invokeVirtual(Scope.class, plugin, "virtual_getProjectStructureScope_3734116213129936182", new Object[]{kind});
         if (projectScope != null) {
           return projectScope;
@@ -129,13 +131,13 @@ public class BuildProject_Behavior {
   }
   public static Iterable<SNode> call_getVisibleProjects_1224588814561807665(final SNode thisNode, boolean directDependenciesOnly) {
     if (directDependenciesOnly) {
-      return ListSequence.fromList(SLinkOperations.getTargets(thisNode, "dependencies", true)).where(new IWhereFilter<SNode>() {
+      return ListSequence.fromList(SLinkOperations.getChildren(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 5617550519002745363l, 5617550519002745381l, "dependencies"))).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
-          return SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.structure.BuildProjectDependency") && SLinkOperations.getTarget(SNodeOperations.cast(it, "jetbrains.mps.build.structure.BuildProjectDependency"), "script", false) != thisNode;
+          return SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.structure.BuildProjectDependency") && SLinkOperations.getTarget(SNodeOperations.cast(it, "jetbrains.mps.build.structure.BuildProjectDependency"), MetaAdapterFactory.getReferenceLink(new UUID(8755280088213897754l, -5075149991798053422l), 4993211115183325728l, 5617550519002745380l, "script")) != thisNode;
         }
       }).select(new ISelector<SNode, SNode>() {
         public SNode select(SNode it) {
-          return SLinkOperations.getTarget(SNodeOperations.cast(it, "jetbrains.mps.build.structure.BuildProjectDependency"), "script", false);
+          return SLinkOperations.getTarget(SNodeOperations.cast(it, "jetbrains.mps.build.structure.BuildProjectDependency"), MetaAdapterFactory.getReferenceLink(new UUID(8755280088213897754l, -5075149991798053422l), 4993211115183325728l, 5617550519002745380l, "script"));
         }
       });
     } else {
@@ -149,11 +151,11 @@ public class BuildProject_Behavior {
     if (!(result.add(current))) {
       return;
     }
-    for (SNode dep : ListSequence.fromList(SLinkOperations.getTargets(current, "dependencies", true))) {
+    for (SNode dep : ListSequence.fromList(SLinkOperations.getChildren(current, MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 5617550519002745363l, 5617550519002745381l, "dependencies")))) {
       if (!(SNodeOperations.isInstanceOf(dep, "jetbrains.mps.build.structure.BuildProjectDependency"))) {
         continue;
       }
-      BuildProject_Behavior.call_collectVisibleProjects_1224588814561808211(thisNode, result, SLinkOperations.getTarget(SNodeOperations.cast(dep, "jetbrains.mps.build.structure.BuildProjectDependency"), "script", false));
+      BuildProject_Behavior.call_collectVisibleProjects_1224588814561808211(thisNode, result, SLinkOperations.getTarget(SNodeOperations.cast(dep, "jetbrains.mps.build.structure.BuildProjectDependency"), MetaAdapterFactory.getReferenceLink(new UUID(8755280088213897754l, -5075149991798053422l), 4993211115183325728l, 5617550519002745380l, "script")));
     }
   }
   public static Scope call_getBuildMacroScope_3767587139141108514(SNode thisNode, final SNode child, final Set<SNode> visited) {
@@ -173,10 +175,10 @@ public class BuildProject_Behavior {
     }
     if ((containingProject != null)) {
       final Wrappers._T<SNode> definedMacro = new Wrappers._T<SNode>();
-      if (ListSequence.fromList(SLinkOperations.getTargets(containingProject, "macros", true)).contains(child)) {
+      if (ListSequence.fromList(SLinkOperations.getChildren(containingProject, MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 5617550519002745363l, 5617550519002745378l, "macros"))).contains(child)) {
         definedMacro.value = SNodeOperations.cast(child, "jetbrains.mps.build.structure.BuildMacro");
       } else {
-        definedMacro.value = ListSequence.fromList(SLinkOperations.getTargets(containingProject, "macros", true)).findFirst(new IWhereFilter<SNode>() {
+        definedMacro.value = ListSequence.fromList(SLinkOperations.getChildren(containingProject, MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 5617550519002745363l, 5617550519002745378l, "macros"))).findFirst(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {
             return ListSequence.fromList(SNodeOperations.getDescendants(it, null, false, new String[]{})).contains(child);
           }
@@ -194,16 +196,16 @@ public class BuildProject_Behavior {
 
     List<Scope> scopes = ListSequence.fromList(new ArrayList<Scope>());
     ListSequence.fromList(scopes).addElement(rootScope);
-    ListSequence.fromList(scopes).addSequence(ListSequence.fromList(SLinkOperations.getTargets(thisNode, "dependencies", true)).where(new IWhereFilter<SNode>() {
+    ListSequence.fromList(scopes).addSequence(ListSequence.fromList(SLinkOperations.getChildren(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 5617550519002745363l, 5617550519002745381l, "dependencies"))).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.structure.BuildProjectDependency");
       }
     }).select(new ISelector<SNode, Scope>() {
       public Scope select(SNode it) {
-        return BuildProject_Behavior.call_getBuildMacroScope_3767587139141108514(SLinkOperations.getTarget(SNodeOperations.cast(it, "jetbrains.mps.build.structure.BuildProjectDependency"), "script", false), child, visited);
+        return BuildProject_Behavior.call_getBuildMacroScope_3767587139141108514(SLinkOperations.getTarget(SNodeOperations.cast(it, "jetbrains.mps.build.structure.BuildProjectDependency"), MetaAdapterFactory.getReferenceLink(new UUID(8755280088213897754l, -5075149991798053422l), 4993211115183325728l, 5617550519002745380l, "script")), child, visited);
       }
     }));
-    ListSequence.fromList(scopes).addSequence(Sequence.fromIterable(ScopeUtil.imported(ListSequence.fromList(SLinkOperations.getTargets(thisNode, "dependencies", true)).where(new IWhereFilter<SNode>() {
+    ListSequence.fromList(scopes).addSequence(Sequence.fromIterable(ScopeUtil.imported(ListSequence.fromList(SLinkOperations.getChildren(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 5617550519002745363l, 5617550519002745381l, "dependencies"))).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return !(SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.structure.BuildProjectDependency"));
       }

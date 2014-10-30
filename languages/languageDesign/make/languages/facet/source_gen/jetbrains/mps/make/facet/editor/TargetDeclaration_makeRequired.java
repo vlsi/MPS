@@ -8,6 +8,8 @@ import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.editor.runtime.cells.AbstractCellAction;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 
 public class TargetDeclaration_makeRequired {
   public static void setCellActions(EditorCell editorCell, SNode node, EditorContext context) {
@@ -23,7 +25,7 @@ public class TargetDeclaration_makeRequired {
       this.execute_internal(editorContext, this.myNode);
     }
     public void execute_internal(EditorContext editorContext, SNode node) {
-      SPropertyOperations.set(node, "optional", "" + (false));
+      SPropertyOperations.set(node, MetaAdapterFactory.getProperty(new UUID(7596465798203917883l, -4873580700227838512l), 6418371274763029565l, 7219266275016360389l, "optional"), "" + (false));
     }
   }
   public static class TargetDeclaration_makeRequired_BACKSPACE extends AbstractCellAction {
@@ -35,7 +37,7 @@ public class TargetDeclaration_makeRequired {
       this.execute_internal(editorContext, this.myNode);
     }
     public void execute_internal(EditorContext editorContext, SNode node) {
-      SPropertyOperations.set(node, "optional", "" + (false));
+      SPropertyOperations.set(node, MetaAdapterFactory.getProperty(new UUID(7596465798203917883l, -4873580700227838512l), 6418371274763029565l, 7219266275016360389l, "optional"), "" + (false));
     }
   }
 }

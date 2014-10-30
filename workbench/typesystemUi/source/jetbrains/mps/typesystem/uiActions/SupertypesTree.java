@@ -34,7 +34,7 @@ public class SupertypesTree extends AbstractHierarchyTree {
   private boolean myShowOnlyStrong = false;
 
   public SupertypesTree(AbstractHierarchyView abstractHierarchyView) {
-    super(abstractHierarchyView, SNodeUtil.concept_BaseConcept, false);
+    super(abstractHierarchyView, SNodeUtil.conceptName_BaseConcept, false);
   }
 
   protected String noNodeString() {

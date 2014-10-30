@@ -16,6 +16,8 @@ import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 
 public class SideTranformWrapper_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
@@ -72,7 +74,7 @@ public class SideTranformWrapper_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private static boolean renderingCondition_6v8cz3_a2a(SNode node, EditorContext editorContext) {
-    return SPropertyOperations.getBoolean(node, "rightOpen");
+    return SPropertyOperations.getBoolean(node, MetaAdapterFactory.getProperty(new UUID(-9083571638034871021l, -6862973283068073801l), 5110219550149792114l, 5110219550149792121l, "rightOpen"));
   }
   private EditorCell createConstant_6v8cz3_a2a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "right");

@@ -29,6 +29,8 @@ import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.InlineCellProvider;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.nodeEditor.attribute.AttributeKind;
 
@@ -149,7 +151,7 @@ public class NodeMacro_postfix implements ConceptEditorComponent {
     }
   }
   private static boolean renderingCondition_crgygw_a1a(SNode node, EditorContext editorContext) {
-    return SLinkOperations.getTarget(node, "mappingLabel", false) != null;
+    return SLinkOperations.getTarget(node, MetaAdapterFactory.getReferenceLink(new UUID(-5475912601019530992l, -8082971551085732881l), 1087833466690l, 1200912223215l, "mappingLabel")) != null;
   }
   private EditorCell createProperty_crgygw_c0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
@@ -173,7 +175,7 @@ public class NodeMacro_postfix implements ConceptEditorComponent {
     return editorCell;
   }
   private static boolean renderingCondition_crgygw_a2a(SNode node, EditorContext editorContext) {
-    return SPropertyOperations.getString(node, "comment") != null;
+    return SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(new UUID(-5475912601019530992l, -8082971551085732881l), 1227303129915l, 3265704088513289864l, "comment")) != null;
   }
   private EditorCell createAttributedNodeCell_crgygw_d0(EditorContext editorContext, SNode node) {
     IOperationContext opContext = editorContext.getOperationContext();

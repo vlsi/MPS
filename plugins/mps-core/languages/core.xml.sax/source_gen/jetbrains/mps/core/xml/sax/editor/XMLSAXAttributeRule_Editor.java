@@ -9,6 +9,8 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.openapi.editor.style.Style;
@@ -50,7 +52,7 @@ public class XMLSAXAttributeRule_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private static boolean renderingCondition_z5ltoj_a0a(SNode node, EditorContext editorContext) {
-    return SPropertyOperations.getBoolean(node, "isRequired");
+    return SPropertyOperations.getBoolean(node, MetaAdapterFactory.getProperty(new UUID(-2542941447088749313l, -6571881616571970461l), 2264311582634140363l, 2264311582634140364l, "isRequired"));
   }
   private EditorCell createConstant_z5ltoj_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "attr");
@@ -103,7 +105,7 @@ public class XMLSAXAttributeRule_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private static boolean renderingCondition_z5ltoj_a3a(SNode node, EditorContext editorContext) {
-    return (SLinkOperations.getTarget(node, "handler", true) != null);
+    return (SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-2542941447088749313l, -6571881616571970461l), 2264311582634140363l, 2264311582634140365l, "handler")) != null);
   }
   private EditorCell createCollection_z5ltoj_a_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);

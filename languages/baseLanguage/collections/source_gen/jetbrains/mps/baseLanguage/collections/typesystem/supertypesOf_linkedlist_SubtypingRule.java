@@ -11,6 +11,8 @@ import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.smodel.SModelUtil_new;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
@@ -20,9 +22,9 @@ public class supertypesOf_linkedlist_SubtypingRule extends SubtypingRule_Runtime
   }
   public List<SNode> getSubOrSuperTypes(SNode llt, TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     List<SNode> res = new ArrayList<SNode>();
-    ListSequence.fromList(res).addElement(_quotation_createNode_vg4yju_a0a1a1(SLinkOperations.getTarget(llt, "elementType", true)));
-    ListSequence.fromList(res).addElement(_quotation_createNode_vg4yju_a0a2a1(SLinkOperations.getTarget(llt, "elementType", true)));
-    ListSequence.fromList(res).addElement(_quotation_createNode_vg4yju_a0a3a1(SLinkOperations.getTarget(llt, "elementType", true)));
+    ListSequence.fromList(res).addElement(_quotation_createNode_vg4yju_a0a1a1(SLinkOperations.getTarget(llt, MetaAdapterFactory.getContainmentLink(new UUID(-8968771020793164004l, -7182180101671965361l), 1151688443754l, 1151688676805l, "elementType"))));
+    ListSequence.fromList(res).addElement(_quotation_createNode_vg4yju_a0a2a1(SLinkOperations.getTarget(llt, MetaAdapterFactory.getContainmentLink(new UUID(-8968771020793164004l, -7182180101671965361l), 1151688443754l, 1151688676805l, "elementType"))));
+    ListSequence.fromList(res).addElement(_quotation_createNode_vg4yju_a0a3a1(SLinkOperations.getTarget(llt, MetaAdapterFactory.getContainmentLink(new UUID(-8968771020793164004l, -7182180101671965361l), 1151688443754l, 1151688676805l, "elementType"))));
     return res;
   }
   public String getApplicableConceptFQName() {

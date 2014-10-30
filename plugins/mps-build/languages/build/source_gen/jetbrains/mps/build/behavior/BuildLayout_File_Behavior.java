@@ -5,6 +5,8 @@ package jetbrains.mps.build.behavior;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.build.util.LocalSourcePathArtifact;
 import jetbrains.mps.build.util.UnpackHelper;
@@ -14,7 +16,7 @@ public class BuildLayout_File_Behavior {
   public static void init(SNode thisNode) {
   }
   public static String virtual_getApproximateName_5610619299013425878(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(thisNode, "path", true), "virtual_getLastSegment_1368030936106771141", new Object[]{null});
+    return BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 9126048691955220717l, 9126048691955220762l, "path")), "virtual_getLastSegment_1368030936106771141", new Object[]{null});
   }
   public static boolean virtual_isFile_1368030936106753986(SNode thisNode) {
     return true;
@@ -24,13 +26,13 @@ public class BuildLayout_File_Behavior {
       SNode node = (SNode) artifactId;
       if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.build.structure.BuildSourcePath") && SNodeOperations.getContainingRoot(node) == SNodeOperations.getContainingRoot(thisNode)) {
         SNode required = SNodeOperations.cast(node, "jetbrains.mps.build.structure.BuildSourcePath");
-        return eq_iewd47_a0b0b0a0d(BehaviorReflection.invokeVirtual(String.class, required, "virtual_getRelativePath_5481553824944787371", new Object[]{}), BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(thisNode, "path", true), "virtual_getRelativePath_5481553824944787371", new Object[]{}));
+        return eq_iewd47_a0b0b0a0d(BehaviorReflection.invokeVirtual(String.class, required, "virtual_getRelativePath_5481553824944787371", new Object[]{}), BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 9126048691955220717l, 9126048691955220762l, "path")), "virtual_getRelativePath_5481553824944787371", new Object[]{}));
       }
     }
     if (artifactId instanceof LocalSourcePathArtifact) {
       LocalSourcePathArtifact art = (LocalSourcePathArtifact) artifactId;
       if (!(art.isFolder()) && art.getRoot() == SNodeOperations.getContainingRoot(thisNode)) {
-        return eq_iewd47_a0a0b0b0d(art.getSourcePath(), BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(thisNode, "path", true), "virtual_getRelativePath_5481553824944787371", new Object[]{}));
+        return eq_iewd47_a0a0b0b0d(art.getSourcePath(), BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 9126048691955220717l, 9126048691955220762l, "path")), "virtual_getRelativePath_5481553824944787371", new Object[]{}));
       }
     }
     return false;
@@ -38,7 +40,7 @@ public class BuildLayout_File_Behavior {
   public static void virtual_unpack_7128123785277710736(SNode thisNode, UnpackHelper helper, Iterable<Object> artifacts) {
     SNode parent = helper.parent(thisNode);
     String parentLocation = helper.contentLocations().get(parent);
-    SNode path = SLinkOperations.getTarget(thisNode, "path", true);
+    SNode path = SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 9126048691955220717l, 9126048691955220762l, "path"));
     if (path != null) {
       String lastSegment = BehaviorReflection.invokeVirtual(String.class, path, "virtual_getLastSegment_1368030936106771141", new Object[]{helper.getMacroHelper()});
       if (lastSegment != null) {
@@ -48,8 +50,8 @@ public class BuildLayout_File_Behavior {
     }
   }
   public static void virtual_appendName_1368030936106665465(SNode thisNode, SNode parent, StringBuilder sb) {
-    if ((SLinkOperations.getTarget(thisNode, "path", true) != null)) {
-      String lastSegment = BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(thisNode, "path", true), "virtual_getLastSegment_1368030936106771141", new Object[]{null});
+    if ((SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 9126048691955220717l, 9126048691955220762l, "path")) != null)) {
+      String lastSegment = BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 9126048691955220717l, 9126048691955220762l, "path")), "virtual_getLastSegment_1368030936106771141", new Object[]{null});
       if (lastSegment != null) {
         if (SNodeOperations.isInstanceOf(parent, "jetbrains.mps.build.structure.BuildLayout_Node")) {
           sb.append("/");

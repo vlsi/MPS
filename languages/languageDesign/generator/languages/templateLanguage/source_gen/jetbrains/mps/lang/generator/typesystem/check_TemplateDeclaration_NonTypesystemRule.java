@@ -8,6 +8,8 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
@@ -19,7 +21,7 @@ public class check_TemplateDeclaration_NonTypesystemRule extends AbstractNonType
   public check_TemplateDeclaration_NonTypesystemRule() {
   }
   public void applyRule(final SNode td, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    if ((SLinkOperations.getTarget(td, "contentNode", true) != null) && ListSequence.fromList(SNodeOperations.getDescendants(td, "jetbrains.mps.lang.generator.structure.TemplateFragment", false, new String[]{})).isEmpty() && ListSequence.fromList(SNodeOperations.getDescendants(td, "jetbrains.mps.lang.core.structure.IStubForAnotherConcept", false, new String[]{})).isEmpty()) {
+    if ((SLinkOperations.getTarget(td, MetaAdapterFactory.getContainmentLink(new UUID(-5475912601019530992l, -8082971551085732881l), 1092059087312l, 1092060348987l, "contentNode")) != null) && ListSequence.fromList(SNodeOperations.getDescendants(td, "jetbrains.mps.lang.generator.structure.TemplateFragment", false, new String[]{})).isEmpty() && ListSequence.fromList(SNodeOperations.getDescendants(td, "jetbrains.mps.lang.core.structure.IStubForAnotherConcept", false, new String[]{})).isEmpty()) {
       {
         MessageTarget errorTarget = new NodeMessageTarget();
         IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(td, "No template fragments found", "r:00000000-0000-4000-0000-011c895902e4(jetbrains.mps.lang.generator.typesystem)", "7952422520064723850", null, errorTarget);

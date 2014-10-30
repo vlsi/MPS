@@ -39,12 +39,12 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.NodeReadAccessCasterInEditor;
 import jetbrains.mps.smodel.NodeReadAccessInEditorListener;
 import jetbrains.mps.util.Pair;
+import jetbrains.mps.util.SNodeOperations;
 import org.apache.log4j.LogManager;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
-import org.jetbrains.mps.openapi.model.SNodeUtil;
 
 import java.util.Deque;
 import java.util.HashMap;
@@ -355,8 +355,8 @@ public class EditorManager {
           result = addSideTransformHintCell(result, node);
         }
       } catch (Throwable e) {
-        LOG.error("Failed to synchronize cell for node " + SNodeUtil.getDebugText(node), e);
-        result = new EditorCell_Error(context, node, "!exception!:" + SNodeUtil.getDebugText(node));
+        LOG.error("Failed to synchronize cell for node " + SNodeOperations.getDebugText(node), e);
+        result = new EditorCell_Error(context, node, "!exception!:" + SNodeOperations.getDebugText(node));
         result.setBig(true);
       } finally {
         NodeReadAccessCasterInEditor.removeCellBuildNodeAccessListener();
@@ -393,8 +393,8 @@ public class EditorManager {
           nodeCell = addSideTransformHintCell(nodeCell, node);
         }
       } catch (Throwable e) {
-        LOG.error("Failed to create cell for node " + SNodeUtil.getDebugText(node), e);
-        nodeCell = new EditorCell_Error(context, node, "!exception!:" + SNodeUtil.getDebugText(node));
+        LOG.error("Failed to create cell for node " + SNodeOperations.getDebugText(node), e);
+        nodeCell = new EditorCell_Error(context, node, "!exception!:" + SNodeOperations.getDebugText(node));
         nodeCell.setBig(true);
       } finally {
         NodeReadAccessCasterInEditor.removeCellBuildNodeAccessListener();

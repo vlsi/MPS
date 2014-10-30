@@ -10,6 +10,8 @@ import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
@@ -19,13 +21,13 @@ public class check_BoundTypeinBoundType_NonTypesystemRule extends AbstractNonTyp
   public check_BoundTypeinBoundType_NonTypesystemRule() {
   }
   public void applyRule(final SNode nodeToCheck, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    if (SNodeOperations.isInstanceOf(nodeToCheck, "jetbrains.mps.baseLanguage.structure.UpperBoundType") && !(BehaviorReflection.invokeVirtual(Boolean.TYPE, SLinkOperations.getTarget(SNodeOperations.cast(nodeToCheck, "jetbrains.mps.baseLanguage.structure.UpperBoundType"), "bound", true), "virtual_isValueType_4836112446988592019", new Object[]{}))) {
+    if (SNodeOperations.isInstanceOf(nodeToCheck, "jetbrains.mps.baseLanguage.structure.UpperBoundType") && !(BehaviorReflection.invokeVirtual(Boolean.TYPE, SLinkOperations.getTarget(SNodeOperations.cast(nodeToCheck, "jetbrains.mps.baseLanguage.structure.UpperBoundType"), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1171903916106l, 1171903916107l, "bound")), "virtual_isValueType_4836112446988592019", new Object[]{}))) {
       {
         MessageTarget errorTarget = new NodeMessageTarget();
         IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(nodeToCheck, "Invalid use of bound type", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "6871159928265525790", null, errorTarget);
       }
     }
-    if (SNodeOperations.isInstanceOf(nodeToCheck, "jetbrains.mps.baseLanguage.structure.LowerBoundType") && !(BehaviorReflection.invokeVirtual(Boolean.TYPE, SLinkOperations.getTarget(SNodeOperations.cast(nodeToCheck, "jetbrains.mps.baseLanguage.structure.LowerBoundType"), "bound", true), "virtual_isValueType_4836112446988592019", new Object[]{}))) {
+    if (SNodeOperations.isInstanceOf(nodeToCheck, "jetbrains.mps.baseLanguage.structure.LowerBoundType") && !(BehaviorReflection.invokeVirtual(Boolean.TYPE, SLinkOperations.getTarget(SNodeOperations.cast(nodeToCheck, "jetbrains.mps.baseLanguage.structure.LowerBoundType"), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1171903862077l, 1171903869531l, "bound")), "virtual_isValueType_4836112446988592019", new Object[]{}))) {
       {
         MessageTarget errorTarget = new NodeMessageTarget();
         IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(nodeToCheck, "Invalid use of bound type", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "6871159928265527030", null, errorTarget);

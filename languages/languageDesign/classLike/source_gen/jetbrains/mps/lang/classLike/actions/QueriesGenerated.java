@@ -5,6 +5,8 @@ package jetbrains.mps.lang.classLike.actions;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.action.NodeSetupContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -28,13 +30,13 @@ import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
 public class QueriesGenerated {
   public static void nodeFactory_NodeSetup_DependentTypeDeclaration_9097849371504700476(final IOperationContext operationContext, final NodeSetupContext _context) {
-    SLinkOperations.setTarget(_context.getNewNode(), "getter", SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral", null), true);
-    ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(_context.getNewNode(), "getter", true), "parameter", true)).addElement(_quotation_createNode_6hmkle_a0a1a0a());
-    SLinkOperations.setTarget(SLinkOperations.getTarget(_context.getNewNode(), "getter", true), "body", SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.StatementList", null), true);
+    SLinkOperations.setTarget(_context.getNewNode(), MetaAdapterFactory.getContainmentLink(new UUID(-4047124328593011742l, -4867279722304451481l), 3751132065236767068l, 3751132065236767069l, "getter"), SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral", null));
+    ListSequence.fromList(SLinkOperations.getChildren(SLinkOperations.getTarget(_context.getNewNode(), MetaAdapterFactory.getContainmentLink(new UUID(-4047124328593011742l, -4867279722304451481l), 3751132065236767068l, 3751132065236767069l, "getter")), MetaAdapterFactory.getContainmentLink(new UUID(-200093298712821347l, -8038623698278341771l), 1199569711397l, 1199569906740l, "parameter"))).addElement(_quotation_createNode_6hmkle_a0a1a0a());
+    SLinkOperations.setTarget(SLinkOperations.getTarget(_context.getNewNode(), MetaAdapterFactory.getContainmentLink(new UUID(-4047124328593011742l, -4867279722304451481l), 3751132065236767068l, 3751132065236767069l, "getter")), MetaAdapterFactory.getContainmentLink(new UUID(-200093298712821347l, -8038623698278341771l), 1199569711397l, 1199569916463l, "body"), SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.StatementList", null));
   }
   public static void nodeFactory_NodeSetup_GenerateModifier_3855110916776743543(final IOperationContext operationContext, final NodeSetupContext _context) {
     if (SNodeOperations.isInstanceOf(SNodeOperations.getAncestor(_context.getEnclosingNode(), "jetbrains.mps.lang.classLike.structure.ClassLikeMember", true, false), "jetbrains.mps.lang.classLike.structure.PropertyDescriptor")) {
-      SPropertyOperations.set(_context.getNewNode(), "name", NameUtil.getGetterName(SPropertyOperations.getString(SNodeOperations.cast(SNodeOperations.getAncestor(_context.getEnclosingNode(), "jetbrains.mps.lang.classLike.structure.ClassLikeMember", true, false), "jetbrains.mps.lang.classLike.structure.PropertyDescriptor"), "name")));
+      SPropertyOperations.set(_context.getNewNode(), MetaAdapterFactory.getProperty(new UUID(-4047124328593011742l, -4867279722304451481l), 3682791316837141912l, 3855110916776619768l, "name"), NameUtil.getGetterName(SPropertyOperations.getString(SNodeOperations.cast(SNodeOperations.getAncestor(_context.getEnclosingNode(), "jetbrains.mps.lang.classLike.structure.ClassLikeMember", true, false), "jetbrains.mps.lang.classLike.structure.PropertyDescriptor"), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"))));
     }
   }
   public static List<SubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_ClassifierMember_3751132065236797750(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
@@ -55,7 +57,7 @@ public class QueriesGenerated {
                 return ((SNode) BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), (item), "virtual_create_8260330507834998478", new Object[]{}));
               }
               public String getMatchingText(String pattern) {
-                return SPropertyOperations.getString((item), "name");
+                return SPropertyOperations.getString((item), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"));
               }
               public String getVisibleMatchingText(String pattern) {
                 return getMatchingText(pattern);
@@ -84,7 +86,7 @@ public class QueriesGenerated {
                 return ((SNode) BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), (item), "virtual_create_8260330507834998478", new Object[]{}));
               }
               public String getMatchingText(String pattern) {
-                return SPropertyOperations.getString((item), "name");
+                return SPropertyOperations.getString((item), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"));
               }
               public String getVisibleMatchingText(String pattern) {
                 return getMatchingText(pattern);
@@ -102,7 +104,7 @@ public class QueriesGenerated {
         public Iterable<SNode> compute() {
           return Sequence.fromIterable(Util.getCustomDescriptors(_context.getParentNode())).select(new ISelector<SNode, SNode>() {
             public SNode select(SNode it) {
-              return ((SNode) SLinkOperations.getTarget(it, "cncpt", false));
+              return ((SNode) SLinkOperations.getTarget(it, MetaAdapterFactory.getReferenceLink(new UUID(-4047124328593011742l, -4867279722304451481l), 8264762413010673052l, 8264762413010673055l, "cncpt")));
             }
           });
         }
@@ -120,7 +122,7 @@ public class QueriesGenerated {
     SNode quotedNode_1 = null;
     SNode quotedNode_2 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ParameterDeclaration", null, null, false);
-    SNodeAccessUtil.setProperty(quotedNode_1, "name", "point");
+    SNodeAccessUtil.setProperty(quotedNode_1, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"), "point");
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeType", null, null, false);
     quotedNode_1.addChild("type", quotedNode_2);
     return quotedNode_1;

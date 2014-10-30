@@ -12,6 +12,8 @@ import jetbrains.mps.baseLanguage.behavior.DotExpression_Behavior;
 import jetbrains.mps.baseLanguage.behavior.IOperation_Behavior;
 import java.util.Map;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import java.util.Collections;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
@@ -35,7 +37,7 @@ public class InstanceMethodDeclarationScope extends BaseMethodsScope {
     if (SNodeOperations.isInstanceOf(contextNode, "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation")) {
       // as part of DotExpression 
       SNode instanceType = SNodeOperations.cast(DotExpression_Behavior.call_getOperandType_8871623299328377715(IOperation_Behavior.call_getDotExpression_1224687669172(SNodeOperations.cast(contextNode, "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation"))), "jetbrains.mps.baseLanguage.structure.ClassifierType");
-      Map<SNode, SNode> typeByTypeVar = ((SLinkOperations.getTarget(instanceType, "classifier", false) != null) ? MethodResolveUtil.getTypesByTypeVars(SLinkOperations.getTarget(instanceType, "classifier", false), SLinkOperations.getTargets(instanceType, "parameter", true)) : Collections.<SNode,SNode>emptyMap());
+      Map<SNode, SNode> typeByTypeVar = ((SLinkOperations.getTarget(instanceType, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier")) != null) ? MethodResolveUtil.getTypesByTypeVars(SLinkOperations.getTarget(instanceType, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier")), SLinkOperations.getChildren(instanceType, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1109201940907l, "parameter"))) : Collections.<SNode,SNode>emptyMap());
       return MethodResolveUtil.chooseByParameterType(methods, actualArguments, typeByTypeVar);
     } else {
       // as local 

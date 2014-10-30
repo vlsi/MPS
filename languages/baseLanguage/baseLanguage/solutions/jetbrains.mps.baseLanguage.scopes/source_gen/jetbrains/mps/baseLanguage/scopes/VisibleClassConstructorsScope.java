@@ -8,6 +8,8 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.scope.FilteringScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
@@ -27,7 +29,7 @@ public class VisibleClassConstructorsScope extends Scope {
     classifiers = new FilteringScope(ClassifierScopes.getVisibleClassifiersScope(contextNode, true)) {
       @Override
       public boolean isExcluded(SNode node) {
-        return SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.Interface") || (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.ClassConcept") && SPropertyOperations.getBoolean((SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.ClassConcept")), "abstractClass"));
+        return SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.Interface") || (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.ClassConcept") && SPropertyOperations.getBoolean((SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.ClassConcept")), MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 1068390468198l, 1075300953594l, "abstractClass")));
       }
     };
   }
@@ -51,7 +53,7 @@ public class VisibleClassConstructorsScope extends Scope {
   @Nullable
   @Override
   public String getReferenceText(SNode contextNode, @NotNull SNode node) {
-    return SPropertyOperations.getString(SNodeOperations.cast(contextNode, "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration"), "name");
+    return SPropertyOperations.getString(SNodeOperations.cast(contextNode, "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration"), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"));
   }
   @Nullable
   @Override
@@ -71,8 +73,8 @@ public class VisibleClassConstructorsScope extends Scope {
     if (!(SNodeOperations.isInstanceOf(contextNode, "jetbrains.mps.baseLanguage.structure.ClassCreator"))) {
       return null;
     }
-    List<SNode> actualArguments = SLinkOperations.getTargets(SNodeOperations.cast(contextNode, "jetbrains.mps.baseLanguage.structure.ClassCreator"), "actualArgument", true);
-    List<SNode> typeParameters = SLinkOperations.getTargets(SNodeOperations.cast(contextNode, "jetbrains.mps.baseLanguage.structure.ClassCreator"), "typeParameter", true);
+    List<SNode> actualArguments = SLinkOperations.getChildren(SNodeOperations.cast(contextNode, "jetbrains.mps.baseLanguage.structure.ClassCreator"), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, 1068499141038l, "actualArgument"));
+    List<SNode> typeParameters = SLinkOperations.getChildren(SNodeOperations.cast(contextNode, "jetbrains.mps.baseLanguage.structure.ClassCreator"), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1212685548494l, 1212687122400l, "typeParameter"));
 
     // use arguments count 
     constructors = (List<SNode>) MethodResolveUtil.selectByParmCount(constructors, actualArguments);
@@ -82,7 +84,7 @@ public class VisibleClassConstructorsScope extends Scope {
 
     // use types 
     Iterator<SNode> typeParms = (Iterator<SNode>) typeParameters.iterator();
-    Iterator<SNode> typeVars = (Iterator<SNode>) SLinkOperations.getTargets(classifier, "typeVariableDeclaration", true).iterator();
+    Iterator<SNode> typeVars = (Iterator<SNode>) SLinkOperations.getChildren(classifier, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1109279851642l, 1109279881614l, "typeVariableDeclaration")).iterator();
     Map<SNode, SNode> typeByTypeVar = new HashMap<SNode, SNode>();
     while (typeParms.hasNext() && typeVars.hasNext()) {
       typeByTypeVar.put(typeVars.next(), typeParms.next());

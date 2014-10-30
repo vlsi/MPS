@@ -13,6 +13,8 @@ import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
 import java.util.Collections;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.intentions.IntentionDescriptor;
 
 public class CreateReferenceOnClassifier_Intention implements IntentionFactory {
@@ -66,7 +68,7 @@ public class CreateReferenceOnClassifier_Intention implements IntentionFactory {
     }
     public void execute(final SNode node, final EditorContext editorContext) {
       SNode outerConcept = SNodeOperations.getAncestor(SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.classifiers.structure.IClassifier", false, false), "jetbrains.mps.baseLanguage.classifiers.structure.IClassifier", false, false);
-      SLinkOperations.setTarget(node, "classifier", outerConcept, false);
+      SLinkOperations.setTarget(node, MetaAdapterFactory.getReferenceLink(new UUID(4917733117167750838l, -7710007501170303426l), 1205752633985l, 1218736638915l, "classifier"), outerConcept);
     }
     public IntentionDescriptor getDescriptor() {
       return CreateReferenceOnClassifier_Intention.this;

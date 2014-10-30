@@ -6,6 +6,8 @@ import java.util.Set;
 import java.util.HashSet;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import java.util.List;
@@ -34,19 +36,19 @@ public final class GeneratorUtilEx {
     return RuleUtil.isNodeMacro(conceptQualifiedName) || TemplateLangElements.contains(conceptQualifiedName);
   }
   public static String getMappingName_NodeMacro(SNode node, String defaultValue) {
-    SNode mappingLabel = SLinkOperations.getTarget(node, "mappingLabel", false);
-    String mappingName = (mappingLabel != null ? SPropertyOperations.getString(mappingLabel, "name") : null);
+    SNode mappingLabel = SLinkOperations.getTarget(node, MetaAdapterFactory.getReferenceLink(new UUID(-5475912601019530992l, -8082971551085732881l), 1087833466690l, 1200912223215l, "mappingLabel"));
+    String mappingName = (mappingLabel != null ? SPropertyOperations.getString(mappingLabel, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")) : null);
     if (mappingName == null) {
       return defaultValue;
     }
     return mappingName;
   }
   public static String getMappingName_TemplateFragment(SNode node, String defaultValue) {
-    SNode ld = SLinkOperations.getTarget(node, "labelDeclaration", false);
+    SNode ld = SLinkOperations.getTarget(node, MetaAdapterFactory.getReferenceLink(new UUID(-5475912601019530992l, -8082971551085732881l), 1095672379244l, 1200916687663l, "labelDeclaration"));
     if (ld == null) {
       return defaultValue;
     }
-    String v = SPropertyOperations.getString(ld, "name");
+    String v = SPropertyOperations.getString(ld, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"));
     return (v == null ? defaultValue : v);
   }
   public static String getPatternVariableName(SNode ref) {
@@ -61,7 +63,7 @@ public final class GeneratorUtilEx {
       SNode subnode = queue.removeFirst();
       // do not look for TemplateFragments in subnode's children as TFs couldn't be nested 
       boolean tfFound = false;
-      for (SNode attr : SLinkOperations.getTargets(subnode, "smodelAttribute", true)) {
+      for (SNode attr : SLinkOperations.getChildren(subnode, MetaAdapterFactory.getContainmentLink(new UUID(-3554657779850784990l, -7236703803128771572l), 1133920641626l, 5169995583184591170l, "smodelAttribute"))) {
         if (SNodeOperations.getConceptDeclaration(attr) == conceptTemplateFragment) {
           templateFragments.add((SNode) attr);
           tfFound = true;
@@ -94,17 +96,17 @@ public final class GeneratorUtilEx {
     }
   }
   public static String getGeneratorMessage_text(SNode generatorMessage) {
-    return SPropertyOperations.getString(generatorMessage, "messageText");
+    return SPropertyOperations.getString(generatorMessage, MetaAdapterFactory.getProperty(new UUID(-5475912601019530992l, -8082971551085732881l), 1169670156577l, 1169670173015l, "messageText"));
   }
   public static DismissTopMappingRuleException.MessageType getGeneratorMessage_kind(SNode generatorMessage) {
     if (generatorMessage == null) {
       // this is how it used to be, although to me default to warn/info might be better 
       return null;
     }
-    if (SPropertyOperations.hasValue(generatorMessage, "messageType", "error", "info")) {
+    if (SPropertyOperations.hasValue(generatorMessage, MetaAdapterFactory.getProperty(new UUID(-5475912601019530992l, -8082971551085732881l), 1169670156577l, 1169670356567l, "messageType"), "error", "info")) {
       return DismissTopMappingRuleException.MessageType.error;
     } else
-    if (SPropertyOperations.hasValue(generatorMessage, "messageType", "warning", "info")) {
+    if (SPropertyOperations.hasValue(generatorMessage, MetaAdapterFactory.getProperty(new UUID(-5475912601019530992l, -8082971551085732881l), 1169670156577l, 1169670356567l, "messageType"), "warning", "info")) {
       return DismissTopMappingRuleException.MessageType.warning;
     } else {
       return DismissTopMappingRuleException.MessageType.info;

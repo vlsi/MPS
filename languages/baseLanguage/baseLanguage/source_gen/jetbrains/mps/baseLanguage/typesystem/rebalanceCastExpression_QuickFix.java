@@ -6,6 +6,8 @@ import jetbrains.mps.errors.QuickFix_Runtime;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 
 public class rebalanceCastExpression_QuickFix extends QuickFix_Runtime {
   public rebalanceCastExpression_QuickFix() {
@@ -14,11 +16,11 @@ public class rebalanceCastExpression_QuickFix extends QuickFix_Runtime {
     return "Rebalance the cast expression";
   }
   public void execute(SNode node) {
-    if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(((SNode) rebalanceCastExpression_QuickFix.this.getField("castExpression")[0]), "expression", true), "jetbrains.mps.baseLanguage.structure.BinaryOperation")) {
-      SNode replacing = SNodeOperations.cast(SLinkOperations.getTarget(((SNode) rebalanceCastExpression_QuickFix.this.getField("castExpression")[0]), "expression", true), "jetbrains.mps.baseLanguage.structure.BinaryOperation");
+    if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(((SNode) rebalanceCastExpression_QuickFix.this.getField("castExpression")[0]), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1070534934090l, 1070534934092l, "expression")), "jetbrains.mps.baseLanguage.structure.BinaryOperation")) {
+      SNode replacing = SNodeOperations.cast(SLinkOperations.getTarget(((SNode) rebalanceCastExpression_QuickFix.this.getField("castExpression")[0]), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1070534934090l, 1070534934092l, "expression")), "jetbrains.mps.baseLanguage.structure.BinaryOperation");
       SNodeOperations.replaceWithAnother(((SNode) rebalanceCastExpression_QuickFix.this.getField("castExpression")[0]), replacing);
-      SLinkOperations.setTarget(((SNode) rebalanceCastExpression_QuickFix.this.getField("castExpression")[0]), "expression", SLinkOperations.getTarget(replacing, "leftExpression", true), true);
-      SLinkOperations.setTarget(replacing, "leftExpression", ((SNode) rebalanceCastExpression_QuickFix.this.getField("castExpression")[0]), true);
+      SLinkOperations.setTarget(((SNode) rebalanceCastExpression_QuickFix.this.getField("castExpression")[0]), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1070534934090l, 1070534934092l, "expression"), SLinkOperations.getTarget(replacing, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1081773326031l, 1081773367580l, "leftExpression")));
+      SLinkOperations.setTarget(replacing, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1081773326031l, 1081773367580l, "leftExpression"), ((SNode) rebalanceCastExpression_QuickFix.this.getField("castExpression")[0]));
     }
   }
 }

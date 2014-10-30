@@ -4,6 +4,8 @@ package jetbrains.mps.lang.editor.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 
 public class RGBColor_Behavior {
   public static void init(SNode thisNode) {
@@ -12,6 +14,6 @@ public class RGBColor_Behavior {
     return false;
   }
   public static String virtual_getRGBValue_1225468086082(SNode thisNode) {
-    return SPropertyOperations.getString(thisNode, "value");
+    return SPropertyOperations.getString(thisNode, MetaAdapterFactory.getProperty(new UUID(1782411230332735017l, -6324602048325217350l), 1225456267680l, 1225456424731l, "value"));
   }
 }

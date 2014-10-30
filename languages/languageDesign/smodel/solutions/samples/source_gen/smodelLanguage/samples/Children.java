@@ -6,6 +6,8 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import java.util.List;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
@@ -16,36 +18,36 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 public class Children {
   public void accessToChildren_1(SNode statementList) {
     BehaviorReflection.invokeVirtual(String.class, statementList, "virtual_getPresentation_1213877396640", new Object[]{});
-    int count1 = ListSequence.fromList(SLinkOperations.getTargets(statementList, "statement", true)).count();
-    List<SNode> statements = SLinkOperations.getTargets(statementList, "statement", true);
+    int count1 = ListSequence.fromList(SLinkOperations.getChildren(statementList, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123136l, 1068581517665l, "statement"))).count();
+    List<SNode> statements = SLinkOperations.getChildren(statementList, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123136l, 1068581517665l, "statement"));
     int count2 = ListSequence.fromList(statements).count();
     int count3 = ((List<SNode>) statements).size();
-    ListSequence.fromList(SLinkOperations.getTargets(statementList, "statement", true)).clear();
+    ListSequence.fromList(SLinkOperations.getChildren(statementList, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123136l, 1068581517665l, "statement"))).clear();
   }
   public void accessToChildren_2(SNode statementList1, SNode statementList2) {
-    SLinkOperations.addNewChild(statementList1, "statement", "jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement");
-    SLinkOperations.addNewChild(statementList1, "statement", "jetbrains.mps.baseLanguage.structure.IfStatement");
-    SLinkOperations.addNewChild(statementList1, "statement", "jetbrains.mps.baseLanguage.structure.ReturnStatement");
-    for (SNode statement : SLinkOperations.getTargets(statementList1, "statement", true)) {
-      ListSequence.fromList(SLinkOperations.getTargets(statementList2, "statement", true)).addElement(SNodeOperations.copyNode(statement));
+    SLinkOperations.addNewChild(statementList1, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123136l, 1068581517665l, "statement"), "jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement");
+    SLinkOperations.addNewChild(statementList1, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123136l, 1068581517665l, "statement"), "jetbrains.mps.baseLanguage.structure.IfStatement");
+    SLinkOperations.addNewChild(statementList1, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123136l, 1068581517665l, "statement"), "jetbrains.mps.baseLanguage.structure.ReturnStatement");
+    for (SNode statement : SLinkOperations.getChildren(statementList1, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123136l, 1068581517665l, "statement"))) {
+      ListSequence.fromList(SLinkOperations.getChildren(statementList2, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123136l, 1068581517665l, "statement"))).addElement(SNodeOperations.copyNode(statement));
     }
-    for (SNode statement : SLinkOperations.getTargets(statementList1, "statement", true)) {
-      ListSequence.fromList(SLinkOperations.getTargets(statementList2, "statement", true)).addElement(SNodeOperations.copyNode(statement));
+    for (SNode statement : SLinkOperations.getChildren(statementList1, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123136l, 1068581517665l, "statement"))) {
+      ListSequence.fromList(SLinkOperations.getChildren(statementList2, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123136l, 1068581517665l, "statement"))).addElement(SNodeOperations.copyNode(statement));
     }
-    for (SNode statement : SLinkOperations.getTargets(statementList1, "statement", true)) {
-      ListSequence.fromList(SLinkOperations.getTargets(statementList2, "statement", true)).addElement(SNodeOperations.copyNode(statement));
+    for (SNode statement : SLinkOperations.getChildren(statementList1, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123136l, 1068581517665l, "statement"))) {
+      ListSequence.fromList(SLinkOperations.getChildren(statementList2, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123136l, 1068581517665l, "statement"))).addElement(SNodeOperations.copyNode(statement));
     }
-    for (SNode statement : ListSequence.fromList(SLinkOperations.getTargets(statementList2, "statement", true))) {
-      ListSequence.fromList(SLinkOperations.getTargets(statementList2, "statement", true)).addElement(ListSequence.fromList(SLinkOperations.getTargets(statementList2, "statement", true)).first());
+    for (SNode statement : ListSequence.fromList(SLinkOperations.getChildren(statementList2, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123136l, 1068581517665l, "statement")))) {
+      ListSequence.fromList(SLinkOperations.getChildren(statementList2, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123136l, 1068581517665l, "statement"))).addElement(ListSequence.fromList(SLinkOperations.getChildren(statementList2, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123136l, 1068581517665l, "statement"))).first());
     }
   }
   public void accessToChildren_3(SNode statement) {
-    List<SNode> children1 = SNodeOperations.getDescendants(SLinkOperations.getTarget(statement, "expression", true), null, false, new String[]{});
+    List<SNode> children1 = SNodeOperations.getDescendants(SLinkOperations.getTarget(statement, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123155l, 1068580123156l, "expression")), null, false, new String[]{});
     List<SNode> children2 = SNodeOperations.getDescendants(statement, "jetbrains.mps.baseLanguage.structure.BooleanConstant", false, new String[]{});
     List<SNode> children3 = SNodeOperations.getDescendants(statement, "jetbrains.mps.baseLanguage.structure.BooleanConstant", true, new String[]{});
     Iterable<SNode> children4 = ListSequence.fromList(SNodeOperations.getDescendants(statement, "jetbrains.mps.baseLanguage.structure.BooleanConstant", false, new String[]{})).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return SPropertyOperations.getBoolean(it, "value") == true;
+        return SPropertyOperations.getBoolean(it, MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123137l, 1068580123138l, "value")) == true;
       }
     });
     SNode abcdef;
@@ -58,7 +60,7 @@ public class Children {
     SNodeOperations.getDescendants(statement, NameUtil.nodeFQName(aConcept), false, new String[]{});
   }
   public void accessToChildren_4(SNode statement) {
-    List<SNode> children1 = SNodeOperations.getDescendantsWhereConceptInList(SLinkOperations.getTarget(statement, "expression", true), new String[]{"jetbrains.mps.baseLanguage.structure.BooleanConstant", "jetbrains.mps.baseLanguage.structure.IntegerConstant"}, false, new String[]{});
-    List<SNode> children2 = SNodeOperations.getDescendantsWhereConceptInList(SLinkOperations.getTarget(statement, "expression", true), new String[]{"jetbrains.mps.baseLanguage.structure.BooleanConstant", "jetbrains.mps.baseLanguage.structure.IntegerConstant"}, true, new String[]{});
+    List<SNode> children1 = SNodeOperations.getDescendantsWhereConceptInList(SLinkOperations.getTarget(statement, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123155l, 1068580123156l, "expression")), new String[]{"jetbrains.mps.baseLanguage.structure.BooleanConstant", "jetbrains.mps.baseLanguage.structure.IntegerConstant"}, false, new String[]{});
+    List<SNode> children2 = SNodeOperations.getDescendantsWhereConceptInList(SLinkOperations.getTarget(statement, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123155l, 1068580123156l, "expression")), new String[]{"jetbrains.mps.baseLanguage.structure.BooleanConstant", "jetbrains.mps.baseLanguage.structure.IntegerConstant"}, true, new String[]{});
   }
 }

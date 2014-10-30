@@ -4,12 +4,14 @@ package jetbrains.mps.execution.commands.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class DebuggerSettingsCommandParameterDeclaration_Behavior {
   public static void init(SNode thisNode) {
-    SLinkOperations.setTarget(thisNode, "type", _quotation_createNode_9qz3p8_a0a0a0(), true);
+    SLinkOperations.setTarget(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 4972933694980447171l, 5680397130376446158l, "type"), _quotation_createNode_9qz3p8_a0a0a0());
   }
   private static SNode _quotation_createNode_9qz3p8_a0a0a0() {
     PersistenceFacade facade = PersistenceFacade.getInstance();

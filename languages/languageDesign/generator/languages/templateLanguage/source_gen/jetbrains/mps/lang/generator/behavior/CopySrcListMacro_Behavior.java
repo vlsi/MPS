@@ -5,6 +5,8 @@ package jetbrains.mps.lang.generator.behavior;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.lang.pattern.GeneratedMatchingPattern;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -18,7 +20,7 @@ public class CopySrcListMacro_Behavior {
   public static void init(SNode thisNode) {
   }
   public static SNode virtual_getInputNodeTypeInsideOfMacro_1213877290799(SNode thisNode) {
-    SNode queryType = TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(thisNode, "sourceNodesQuery", true));
+    SNode queryType = TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-5475912601019530992l, -8082971551085732881l), 1114729360583l, 1168278589236l, "sourceNodesQuery")));
     {
       GeneratedMatchingPattern pattern_26ny8p_b0a = new CopySrcListMacro_Behavior.Pattern_26ny8p_a0a0a1a1();
       SNode coercedNode_26ny8p_b0a = TypeChecker.getInstance().getRuntimeSupport().coerce_(queryType, pattern_26ny8p_b0a);
@@ -30,7 +32,7 @@ public class CopySrcListMacro_Behavior {
     return null;
   }
   public static boolean virtual_suppress_3393165121846091591(SNode thisNode, SNode child) {
-    if (SLinkOperations.getTarget(thisNode, "sourceNodesQuery", true) == child) {
+    if (SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-5475912601019530992l, -8082971551085732881l), 1114729360583l, 1168278589236l, "sourceNodesQuery")) == child) {
       return false;
     }
     if (SNodeOperations.isInstanceOf(child, "jetbrains.mps.lang.core.structure.Attribute") && ListSequence.fromList(AttributeOperations.getAttributeList(SNodeOperations.getParent(thisNode), new IAttributeDescriptor.AllAttributes())).contains(SNodeOperations.cast(child, "jetbrains.mps.lang.core.structure.Attribute"))) {

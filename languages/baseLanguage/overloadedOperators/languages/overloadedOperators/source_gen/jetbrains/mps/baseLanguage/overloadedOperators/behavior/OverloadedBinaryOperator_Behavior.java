@@ -4,6 +4,8 @@ package jetbrains.mps.baseLanguage.overloadedOperators.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.util.NameUtil;
@@ -16,16 +18,16 @@ public class OverloadedBinaryOperator_Behavior {
   public static void init(SNode thisNode) {
   }
   public static SNode virtual_getExpectedReturnType_1213877374441(SNode thisNode) {
-    return SLinkOperations.getTarget(thisNode, "returnType", true);
+    return SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-248448403205894696l, -5239469005774541060l), 483844232470132813l, 6677452554237917709l, "returnType"));
   }
   public static String call_getFunctionName_6677452554240637506(SNode thisNode) {
     String operatorName;
-    if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(thisNode, "operator", true), "jetbrains.mps.baseLanguage.overloadedOperators.structure.BinaryOperationReference")) {
-      operatorName = SPropertyOperations.getString(SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(thisNode, "operator", true), "jetbrains.mps.baseLanguage.overloadedOperators.structure.BinaryOperationReference"), "binaryOperation", false), "name");
+    if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-248448403205894696l, -5239469005774541060l), 483844232470132813l, 2838654975957155510l, "operator")), "jetbrains.mps.baseLanguage.overloadedOperators.structure.BinaryOperationReference")) {
+      operatorName = SPropertyOperations.getString(SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-248448403205894696l, -5239469005774541060l), 483844232470132813l, 2838654975957155510l, "operator")), "jetbrains.mps.baseLanguage.overloadedOperators.structure.BinaryOperationReference"), MetaAdapterFactory.getReferenceLink(new UUID(-248448403205894696l, -5239469005774541060l), 2838654975957155508l, 2838654975957155509l, "binaryOperation")), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"));
     } else {
-      operatorName = "customOperator_" + SLinkOperations.getTarget(thisNode, "operator", true).getNodeId().toString();
+      operatorName = "customOperator_" + SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-248448403205894696l, -5239469005774541060l), 483844232470132813l, 2838654975957155510l, "operator")).getNodeId().toString();
     }
-    return "apply_" + operatorName + "_" + NameUtil.toValidIdentifier(BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(thisNode, "leftType", true), "virtual_getPresentation_1213877396640", new Object[]{})) + "_" + NameUtil.toValidIdentifier(BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(thisNode, "rightType", true), "virtual_getPresentation_1213877396640", new Object[]{}));
+    return "apply_" + operatorName + "_" + NameUtil.toValidIdentifier(BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-248448403205894696l, -5239469005774541060l), 483844232470132813l, 6677452554239170993l, "leftType")), "virtual_getPresentation_1213877396640", new Object[]{})) + "_" + NameUtil.toValidIdentifier(BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-248448403205894696l, -5239469005774541060l), 483844232470132813l, 6677452554239170994l, "rightType")), "virtual_getPresentation_1213877396640", new Object[]{}));
   }
   public static List<SNode> virtual_getApplicableConceptFunctionParameter_3044950653914717136(SAbstractConcept thisConcept) {
     List<SNode> result = BehaviorReflection.invokeSuperStatic((Class<List<SNode>>) ((Class) Object.class), thisConcept, "jetbrains.mps.baseLanguage.structure.ConceptFunction", "virtual_getApplicableConceptFunctionParameter_3044950653914717136", new Object[]{});

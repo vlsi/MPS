@@ -6,6 +6,8 @@ import org.jetbrains.mps.openapi.model.SNode;
 import java.util.List;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
@@ -15,8 +17,8 @@ public class MathSymbol_Behavior {
   }
   public static void call_getVisibleIndices_1236440390782(SNode thisNode, SNode sender, List<SNode> indices) {
     SNode sI = SNodeOperations.getAncestor(sender, "jetbrains.mps.baseLanguage.math.structure.AbstractIndex", true, false);
-    if (sI != SLinkOperations.getTarget(thisNode, "var", true)) {
-      ListSequence.fromList(indices).addElement(SLinkOperations.getTarget(thisNode, "var", true));
+    if (sI != SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(3676340747305173022l, -6911132873973321185l), 1236426954905l, 1236427007990l, "var"))) {
+      ListSequence.fromList(indices).addElement(SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(3676340747305173022l, -6911132873973321185l), 1236426954905l, 1236427007990l, "var")));
     }
     SNode ms = SNodeOperations.getAncestor(thisNode, "jetbrains.mps.baseLanguage.math.structure.MathSymbol", false, false);
     if (ms != null) {

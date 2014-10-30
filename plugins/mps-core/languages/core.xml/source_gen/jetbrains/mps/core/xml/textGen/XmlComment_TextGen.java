@@ -7,6 +7,8 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 
 public class XmlComment_TextGen extends SNodeTextGen {
   public void doGenerateText(SNode node) {
@@ -17,7 +19,7 @@ public class XmlComment_TextGen extends SNodeTextGen {
     }
     this.append("<!--");
     {
-      Iterable<SNode> collection = SLinkOperations.getTargets(node, "lines", true);
+      Iterable<SNode> collection = SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(new UUID(5160134014823646133l, -7982110198386724200l), 6666499814681299064l, 1622293396949036151l, "lines"));
       for (SNode item : collection) {
         appendNode(item);
       }

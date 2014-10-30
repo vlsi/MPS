@@ -4,6 +4,8 @@ package jetbrains.mps.lang.structure.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -12,17 +14,17 @@ public class EnumerationDataTypeDeclaration_Behavior {
   public static void init(SNode thisNode) {
   }
   public static SNode virtual_toBaseLanguageType_1213877229718(SNode thisNode) {
-    SNode memberDataType = SLinkOperations.getTarget(thisNode, "memberDataType", false);
+    SNode memberDataType = SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getReferenceLink(new UUID(-4094437568663370681l, -8968368868337559369l), 1082978164219l, 1083171729157l, "memberDataType"));
     return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), memberDataType, "virtual_toBaseLanguageType_1213877229718", new Object[]{});
   }
   public static SNode call_getDefaultMember_1213877397785(SNode thisNode) {
-    if (SPropertyOperations.getBoolean(thisNode, "hasNoDefaultMember")) {
+    if (SPropertyOperations.getBoolean(thisNode, MetaAdapterFactory.getProperty(new UUID(-4094437568663370681l, -8968368868337559369l), 1082978164219l, 1212080844762l, "hasNoDefaultMember"))) {
       return null;
     }
-    SNode defaultMember = SLinkOperations.getTarget(thisNode, "defaultMember", false);
+    SNode defaultMember = SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getReferenceLink(new UUID(-4094437568663370681l, -8968368868337559369l), 1082978164219l, 1083241965437l, "defaultMember"));
     if (defaultMember != null) {
       return defaultMember;
     }
-    return ListSequence.fromList(SLinkOperations.getTargets(thisNode, "member", true)).first();
+    return ListSequence.fromList(SLinkOperations.getChildren(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-4094437568663370681l, -8968368868337559369l), 1082978164219l, 1083172003582l, "member"))).first();
   }
 }

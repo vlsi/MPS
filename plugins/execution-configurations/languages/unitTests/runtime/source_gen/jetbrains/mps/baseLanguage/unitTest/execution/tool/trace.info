@@ -1550,49 +1550,49 @@
   </root>
   <root nodeRef="r:b8ee28ea-da10-4cf4-a569-7570d5d6d2df(jetbrains.mps.baseLanguage.unitTest.execution.tool)/3575782568432724144">
     <file name="TestCaseTreeNode.java">
-      <node id="3575782568432724157" at="19,108,20,28" concept="16" />
-      <node id="3575782568432724159" at="20,28,21,26" concept="5" />
-      <node id="3575782568432724165" at="21,26,22,79" concept="5" />
-      <node id="3575782568432724178" at="22,79,23,146" concept="5" />
-      <node id="3575782568432724190" at="23,146,24,122" concept="5" />
-      <node id="3575782568432724209" at="26,32,27,72" concept="10" />
-      <node id="2034046503361624155" at="29,25,30,49" concept="5" />
-      <node id="3575782568432724224" at="32,7,33,27" concept="11" />
-      <node id="2034046503373002300" at="38,25,39,107" concept="5" />
-      <node id="3575782568432724253" at="44,36,45,14" concept="11" />
-      <node id="3575782568432724259" at="48,33,49,22" concept="11" />
-      <node id="3575782568432724145" at="17,0,19,0" concept="6" trace="myTestCase" />
-      <node id="2034046503361624153" at="29,0,32,0" concept="9" trace="run#()V" />
-      <node id="2034046503373002298" at="38,0,41,0" concept="9" trace="run#()V" />
-      <node id="3575782568432724249" at="43,0,47,0" concept="9" trace="getToggleClickCount#()I" />
-      <node id="3575782568432724255" at="47,0,51,0" concept="9" trace="getUserObject#()Ljava/lang/Object;" />
-      <node id="2034046503361624149" at="27,72,32,7" concept="5" />
-      <node id="2034046503373002294" at="36,29,41,7" concept="5" />
-      <node id="3575782568432724149" at="19,0,26,0" concept="2" trace="TestCaseTreeNode#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/baseLanguage/unitTest/execution/client/ITestNodeWrapper;)V" />
-      <node id="3575782568432724233" at="35,0,43,0" concept="9" trace="doubleClick#()V" />
-      <node id="3575782568432724205" at="26,0,35,0" concept="9" trace="getClassName#()Ljava/lang/String;" />
-      <scope id="2034046503361624154" at="29,25,30,49" />
-      <scope id="2034046503373002299" at="38,25,39,107" />
-      <scope id="3575782568432724252" at="44,36,45,14" />
-      <scope id="3575782568432724258" at="48,33,49,22" />
-      <scope id="2034046503361624153" at="29,0,32,0" />
-      <scope id="2034046503373002298" at="38,0,41,0" />
-      <scope id="3575782568432724249" at="43,0,47,0" />
-      <scope id="3575782568432724255" at="47,0,51,0" />
-      <scope id="3575782568432724156" at="19,108,24,122" />
-      <scope id="3575782568432724236" at="36,29,41,7" />
-      <scope id="3575782568432724149" at="19,0,26,0">
+      <node id="3575782568432724157" at="21,108,22,28" concept="16" />
+      <node id="3575782568432724159" at="22,28,23,26" concept="5" />
+      <node id="3575782568432724165" at="23,26,24,79" concept="5" />
+      <node id="3575782568432724178" at="24,79,25,266" concept="5" />
+      <node id="3575782568432724190" at="25,266,26,122" concept="5" />
+      <node id="3575782568432724209" at="28,32,29,72" concept="10" />
+      <node id="2034046503361624155" at="31,25,32,49" concept="5" />
+      <node id="3575782568432724224" at="34,7,35,27" concept="11" />
+      <node id="2034046503373002300" at="40,25,41,107" concept="5" />
+      <node id="3575782568432724253" at="46,36,47,14" concept="11" />
+      <node id="3575782568432724259" at="50,33,51,22" concept="11" />
+      <node id="3575782568432724145" at="19,0,21,0" concept="6" trace="myTestCase" />
+      <node id="2034046503361624153" at="31,0,34,0" concept="9" trace="run#()V" />
+      <node id="2034046503373002298" at="40,0,43,0" concept="9" trace="run#()V" />
+      <node id="3575782568432724249" at="45,0,49,0" concept="9" trace="getToggleClickCount#()I" />
+      <node id="3575782568432724255" at="49,0,53,0" concept="9" trace="getUserObject#()Ljava/lang/Object;" />
+      <node id="2034046503361624149" at="29,72,34,7" concept="5" />
+      <node id="2034046503373002294" at="38,29,43,7" concept="5" />
+      <node id="3575782568432724149" at="21,0,28,0" concept="2" trace="TestCaseTreeNode#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/baseLanguage/unitTest/execution/client/ITestNodeWrapper;)V" />
+      <node id="3575782568432724233" at="37,0,45,0" concept="9" trace="doubleClick#()V" />
+      <node id="3575782568432724205" at="28,0,37,0" concept="9" trace="getClassName#()Ljava/lang/String;" />
+      <scope id="2034046503361624154" at="31,25,32,49" />
+      <scope id="2034046503373002299" at="40,25,41,107" />
+      <scope id="3575782568432724252" at="46,36,47,14" />
+      <scope id="3575782568432724258" at="50,33,51,22" />
+      <scope id="2034046503361624153" at="31,0,34,0" />
+      <scope id="2034046503373002298" at="40,0,43,0" />
+      <scope id="3575782568432724249" at="45,0,49,0" />
+      <scope id="3575782568432724255" at="49,0,53,0" />
+      <scope id="3575782568432724156" at="21,108,26,122" />
+      <scope id="3575782568432724236" at="38,29,43,7" />
+      <scope id="3575782568432724149" at="21,0,28,0">
         <var name="operationContext" id="3575782568432724150" />
         <var name="testCase" id="3575782568432724153" />
       </scope>
-      <scope id="3575782568432724208" at="26,32,33,27">
+      <scope id="3575782568432724208" at="28,32,35,27">
         <var name="className" id="3575782568432724210" />
       </scope>
-      <scope id="3575782568432724233" at="35,0,43,0" />
-      <scope id="3575782568432724205" at="26,0,35,0" />
-      <unit id="2034046503361624153" at="28,45,32,5" name="jetbrains.mps.baseLanguage.unitTest.execution.tool.TestCaseTreeNode$1" />
-      <unit id="2034046503373002298" at="37,46,41,5" name="jetbrains.mps.baseLanguage.unitTest.execution.tool.TestCaseTreeNode$2" />
-      <unit id="3575782568432724144" at="16,0,52,0" name="jetbrains.mps.baseLanguage.unitTest.execution.tool.TestCaseTreeNode" />
+      <scope id="3575782568432724233" at="37,0,45,0" />
+      <scope id="3575782568432724205" at="28,0,37,0" />
+      <unit id="2034046503361624153" at="30,45,34,5" name="jetbrains.mps.baseLanguage.unitTest.execution.tool.TestCaseTreeNode$1" />
+      <unit id="2034046503373002298" at="39,46,43,5" name="jetbrains.mps.baseLanguage.unitTest.execution.tool.TestCaseTreeNode$2" />
+      <unit id="3575782568432724144" at="18,0,54,0" name="jetbrains.mps.baseLanguage.unitTest.execution.tool.TestCaseTreeNode" />
     </file>
   </root>
   <root nodeRef="r:b8ee28ea-da10-4cf4-a569-7570d5d6d2df(jetbrains.mps.baseLanguage.unitTest.execution.tool)/3575782568432724266">

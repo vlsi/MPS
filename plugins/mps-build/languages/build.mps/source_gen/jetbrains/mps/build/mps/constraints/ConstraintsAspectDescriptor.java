@@ -5,6 +5,7 @@ package jetbrains.mps.build.mps.constraints;
 import jetbrains.mps.smodel.runtime.ConstraintsDescriptor;
 import java.util.Arrays;
 import jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor;
+import jetbrains.mps.smodel.adapter.ids.SConceptId;
 
 public class ConstraintsAspectDescriptor implements jetbrains.mps.smodel.runtime.ConstraintsAspectDescriptor {
   public ConstraintsAspectDescriptor() {
@@ -64,9 +65,90 @@ public class ConstraintsAspectDescriptor implements jetbrains.mps.smodel.runtime
       case 11:
         return new BuildMps_Generator_Constraints();
       default:
-        // todo: illegal in some cases? 
         return new BaseConstraintsDescriptor(fqName);
     }
+  }
+  public ConstraintsDescriptor getDescriptor(SConceptId conceptId) {
+    long id = conceptId.getConceptId();
+    if (id == 4278635856200794926l) {
+      return new BuildMps_ModuleDependencyExtendLanguage_Constraints();
+    }
+    if (id == 7753544965996377997l) {
+      return new BuildMps_Branding_Constraints();
+    }
+    if (id == 1500819558095907805l) {
+      return new BuildMps_Group_Constraints();
+    }
+    if (id == 3189788309731840247l) {
+      return new BuildMps_Solution_Constraints();
+    }
+    if (id == 3189788309731840248l) {
+      return new BuildMps_Language_Constraints();
+    }
+    if (id == 322010710375794190l) {
+      return new BuildMps_DevKit_Constraints();
+    }
+    if (id == 6592112598314498932l) {
+      return new BuildMps_IdeaPlugin_Constraints();
+    }
+    if (id == 6592112598314498926l) {
+      return new BuildMpsLayout_Plugin_Constraints();
+    }
+    if (id == 1265949165890536423l) {
+      return new BuildMpsLayout_ModuleJars_Constraints();
+    }
+    if (id == 3189788309731981027l) {
+      return new BuildMps_ModuleSolutionRuntime_Constraints();
+    }
+    if (id == 322010710376037449l) {
+      return new BuildMps_ModuleDependencyOnDevKit_Constraints();
+    }
+    if (id == 3189788309731928315l) {
+      return new BuildMps_ModuleDependencyOnJavaModule_Constraints();
+    }
+    if (id == 5253498789149585690l) {
+      return new BuildMps_ModuleDependencyOnModule_Constraints();
+    }
+    if (id == 3189788309731922642l) {
+      return new BuildMps_ModuleDependencyUseLanguage_Constraints();
+    }
+    if (id == 322010710375805242l) {
+      return new BuildMps_DevKitRef_Constraints();
+    }
+    if (id == 322010710375832938l) {
+      return new BuildMps_DevKitExportLanguage_Constraints();
+    }
+    if (id == 322010710375832954l) {
+      return new BuildMps_DevKitExportSolution_Constraints();
+    }
+    if (id == 1692280246134781712l) {
+      return new BuildMpsLayout_ModuleSources_Constraints();
+    }
+    if (id == 7655580649838764660l) {
+      return new BuildMpsLayout_ModuleXml_Constraints();
+    }
+    if (id == 6592112598314795900l) {
+      return new BuildMpsLayout_PluginDescriptor_Constraints();
+    }
+    if (id == 6592112598314586625l) {
+      return new BuildMps_IdeaPluginGroup_Constraints();
+    }
+    if (id == 6592112598314499036l) {
+      return new BuildMps_IdeaPluginModule_Constraints();
+    }
+    if (id == 6592112598314499027l) {
+      return new BuildMps_IdeaPluginDependency_Constraints();
+    }
+    if (id == 4034578608468929319l) {
+      return new BuildMps_IdeaPluginGroupCustomModule_Constraints();
+    }
+    if (id == 6503355885715333289l) {
+      return new BuildMpsAspect_Constraints();
+    }
+    if (id == 5507251971038816436l) {
+      return new BuildMps_Generator_Constraints();
+    }
+    return new BaseConstraintsDescriptor(conceptId);
   }
   private static String[] stringSwitchCases_2qnle6_a0a0b = new String[]{"jetbrains.mps.build.mps.structure.BuildMpsAspect", "jetbrains.mps.build.mps.structure.BuildMpsLayout_ModuleJars", "jetbrains.mps.build.mps.structure.BuildMpsLayout_ModuleSources", "jetbrains.mps.build.mps.structure.BuildMpsLayout_ModuleXml", "jetbrains.mps.build.mps.structure.BuildMpsLayout_Plugin", "jetbrains.mps.build.mps.structure.BuildMpsLayout_PluginDescriptor", "jetbrains.mps.build.mps.structure.BuildMps_Branding", "jetbrains.mps.build.mps.structure.BuildMps_DevKit", "jetbrains.mps.build.mps.structure.BuildMps_DevKitExportLanguage", "jetbrains.mps.build.mps.structure.BuildMps_DevKitExportSolution", "jetbrains.mps.build.mps.structure.BuildMps_DevKitRef", "jetbrains.mps.build.mps.structure.BuildMps_Generator", "jetbrains.mps.build.mps.structure.BuildMps_Group", "jetbrains.mps.build.mps.structure.BuildMps_IdeaPlugin", "jetbrains.mps.build.mps.structure.BuildMps_IdeaPluginDependency", "jetbrains.mps.build.mps.structure.BuildMps_IdeaPluginGroup", "jetbrains.mps.build.mps.structure.BuildMps_IdeaPluginGroupCustomModule", "jetbrains.mps.build.mps.structure.BuildMps_IdeaPluginModule", "jetbrains.mps.build.mps.structure.BuildMps_Language", "jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyExtendLanguage", "jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyOnDevKit", "jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyOnJavaModule", "jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyOnModule", "jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyUseLanguage", "jetbrains.mps.build.mps.structure.BuildMps_ModuleSolutionRuntime", "jetbrains.mps.build.mps.structure.BuildMps_Solution"};
 }

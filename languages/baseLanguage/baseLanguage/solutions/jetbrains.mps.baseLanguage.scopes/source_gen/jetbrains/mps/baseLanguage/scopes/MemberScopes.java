@@ -9,6 +9,8 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 
 @Deprecated
 public class MemberScopes {
@@ -40,7 +42,7 @@ public class MemberScopes {
     // use (sequence<node<IClassifierMember>>) classifierType.getVisibleMembers() instead 
     Scope membersScope = BehaviorReflection.invokeVirtual(Scope.class, contextClassifier, "virtual_getMembers_2201875424515824604", new Object[]{kind});
     if (membersScope == null) {
-      throw new IllegalArgumentException("Member scope for classifier " + SPropertyOperations.getString(contextClassifier, "name") + " and kind " + SPropertyOperations.getString(kind, "name") + " is null");
+      throw new IllegalArgumentException("Member scope for classifier " + SPropertyOperations.getString(contextClassifier, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")) + " and kind " + SPropertyOperations.getString(kind, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")) + " is null");
     }
     return visibleClassifierMembers(membersScope, contextClassifier, contextNode);
   }

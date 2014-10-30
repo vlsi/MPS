@@ -9,6 +9,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.baseLanguage.util.IdentifierConstraintsUtil;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.baseLanguage.behavior.IncompleteMemberDeclaration_Behavior;
@@ -22,18 +24,18 @@ public class IncompleteMemberHelper {
     List<SNode> subConcepts = SConceptOperations.getAllSubConcepts(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.PrimitiveType"), SNodeOperations.getModel(member));
     Iterable<String> aliases = ListSequence.fromList(subConcepts).select(new ISelector<SNode, String>() {
       public String select(SNode it) {
-        return SPropertyOperations.getString(it, "conceptAlias");
+        return SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(new UUID(-4094437568663370681l, -8968368868337559369l), 1169125787135l, 5092175715804935370l, "conceptAlias"));
       }
     });
 
-    return IdentifierConstraintsUtil.isJavaReserved(pattern) && !(Sequence.fromIterable(aliases).contains(pattern)) && !((pattern.equals("abstract") && IncompleteMemberDeclaration_Behavior.call_canBeMadeAbstract_6224545524881696659(member) || pattern.equals("transient") && !(SPropertyOperations.getBoolean(member, "transient")) || pattern.equals("final") && !(SPropertyOperations.getBoolean(member, "final")) || pattern.equals("public") && (SLinkOperations.getTarget(member, "visibility", true) == null) || pattern.equals("private") && (SLinkOperations.getTarget(member, "visibility", true) == null) || pattern.equals("protected") && (SLinkOperations.getTarget(member, "visibility", true) == null) || pattern.equals("synchronized") && !(SPropertyOperations.getBoolean(member, "synchronized")) || pattern.equals("static") && !(SPropertyOperations.getBoolean(member, "static"))));
+    return IdentifierConstraintsUtil.isJavaReserved(pattern) && !(Sequence.fromIterable(aliases).contains(pattern)) && !((pattern.equals("abstract") && IncompleteMemberDeclaration_Behavior.call_canBeMadeAbstract_6224545524881696659(member) || pattern.equals("transient") && !(SPropertyOperations.getBoolean(member, MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 3609453419506221441l, 6348240317717564887l, "transient"))) || pattern.equals("final") && !(SPropertyOperations.getBoolean(member, MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 3609453419506221441l, 3609453419506282390l, "final"))) || pattern.equals("public") && (SLinkOperations.getTarget(member, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1178549954367l, 1178549979242l, "visibility")) == null) || pattern.equals("private") && (SLinkOperations.getTarget(member, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1178549954367l, 1178549979242l, "visibility")) == null) || pattern.equals("protected") && (SLinkOperations.getTarget(member, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1178549954367l, 1178549979242l, "visibility")) == null) || pattern.equals("synchronized") && !(SPropertyOperations.getBoolean(member, MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 3609453419506221441l, 3609453419506283925l, "synchronized"))) || pattern.equals("static") && !(SPropertyOperations.getBoolean(member, MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 3609453419506221441l, 3609453419506282388l, "static")))));
   }
 
   /*package*/ static boolean isKnownTypeName(SNode member, final String pattern) {
     Iterable<SNode> availableElements = ClassifierScopes.getVisibleClassifiersScope(member, true).getAvailableElements(pattern);
     return pattern.equals("string") || pattern.equals("map") || pattern.equals("set") || pattern.equals("list") || pattern.equals("sorted_set") || pattern.equals("sorted_map") || Sequence.fromIterable(availableElements).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return eq_fp5qrn_a0a0a0a0a0a0b0d(SPropertyOperations.getString(SNodeOperations.cast(it, "jetbrains.mps.baseLanguage.structure.Classifier"), "name"), pattern);
+        return eq_fp5qrn_a0a0a0a0a0a0b0d(SPropertyOperations.getString(SNodeOperations.cast(it, "jetbrains.mps.baseLanguage.structure.Classifier"), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")), pattern);
       }
     }).isNotEmpty();
   }
@@ -43,27 +45,27 @@ public class IncompleteMemberHelper {
   }
 
   /*package*/ static boolean canBeField(SNode member) {
-    return !((SPropertyOperations.getBoolean(member, "abstract") || SNodeOperations.isInstanceOf(SLinkOperations.getTarget(member, "type", true), "jetbrains.mps.baseLanguage.structure.VoidType") || SPropertyOperations.getBoolean(member, "synchronized") || SPropertyOperations.getBoolean(member, "native")));
+    return !((SPropertyOperations.getBoolean(member, MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 3609453419506221441l, 3609453419506282393l, "abstract")) || SNodeOperations.isInstanceOf(SLinkOperations.getTarget(member, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 3609453419506221441l, 3609453419535151784l, "type")), "jetbrains.mps.baseLanguage.structure.VoidType") || SPropertyOperations.getBoolean(member, MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 3609453419506221441l, 3609453419506283925l, "synchronized")) || SPropertyOperations.getBoolean(member, MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 3609453419506221441l, 8355037393080469281l, "native"))));
   }
 
   /*package*/ static boolean canBeMethod(SNode member) {
-    return !((SPropertyOperations.getBoolean(member, "volatile") || SPropertyOperations.getBoolean(member, "transient")));
+    return !((SPropertyOperations.getBoolean(member, MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 3609453419506221441l, 3609453419506286246l, "volatile")) || SPropertyOperations.getBoolean(member, MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 3609453419506221441l, 6348240317717564887l, "transient"))));
   }
 
   /*package*/ static boolean canBeConstructor(SNode member) {
-    return !((member != null && (SPropertyOperations.getBoolean(member, "volatile") || SPropertyOperations.getBoolean(member, "final") || SPropertyOperations.getBoolean(member, "transient") || SPropertyOperations.getBoolean(member, "abstract") || SPropertyOperations.getBoolean(member, "synchronized") || SPropertyOperations.getBoolean(member, "static") || (SLinkOperations.getTarget(member, "type", true) != null))));
+    return !((member != null && (SPropertyOperations.getBoolean(member, MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 3609453419506221441l, 3609453419506286246l, "volatile")) || SPropertyOperations.getBoolean(member, MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 3609453419506221441l, 3609453419506282390l, "final")) || SPropertyOperations.getBoolean(member, MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 3609453419506221441l, 6348240317717564887l, "transient")) || SPropertyOperations.getBoolean(member, MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 3609453419506221441l, 3609453419506282393l, "abstract")) || SPropertyOperations.getBoolean(member, MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 3609453419506221441l, 3609453419506283925l, "synchronized")) || SPropertyOperations.getBoolean(member, MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 3609453419506221441l, 3609453419506282388l, "static")) || (SLinkOperations.getTarget(member, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 3609453419506221441l, 3609453419535151784l, "type")) != null))));
   }
 
   /*package*/ static boolean canBeClass(SNode member) {
-    return !((SPropertyOperations.getBoolean(member, "synchronized") || SPropertyOperations.getBoolean(member, "transient") || SPropertyOperations.getBoolean(member, "volatile") || SLinkOperations.getTarget(member, "type", true) != null));
+    return !((SPropertyOperations.getBoolean(member, MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 3609453419506221441l, 3609453419506283925l, "synchronized")) || SPropertyOperations.getBoolean(member, MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 3609453419506221441l, 6348240317717564887l, "transient")) || SPropertyOperations.getBoolean(member, MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 3609453419506221441l, 3609453419506286246l, "volatile")) || SLinkOperations.getTarget(member, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 3609453419506221441l, 3609453419535151784l, "type")) != null));
   }
 
   /*package*/ static boolean canBeEnum(SNode member) {
-    return !((SPropertyOperations.getBoolean(member, "abstract") || SPropertyOperations.getBoolean(member, "synchronized") || SPropertyOperations.getBoolean(member, "final") || SPropertyOperations.getBoolean(member, "volatile") || SPropertyOperations.getBoolean(member, "transient") || SLinkOperations.getTarget(member, "type", true) != null));
+    return !((SPropertyOperations.getBoolean(member, MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 3609453419506221441l, 3609453419506282393l, "abstract")) || SPropertyOperations.getBoolean(member, MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 3609453419506221441l, 3609453419506283925l, "synchronized")) || SPropertyOperations.getBoolean(member, MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 3609453419506221441l, 3609453419506282390l, "final")) || SPropertyOperations.getBoolean(member, MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 3609453419506221441l, 3609453419506286246l, "volatile")) || SPropertyOperations.getBoolean(member, MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 3609453419506221441l, 6348240317717564887l, "transient")) || SLinkOperations.getTarget(member, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 3609453419506221441l, 3609453419535151784l, "type")) != null));
   }
 
   /*package*/ static boolean canBeInterface(SNode member) {
-    return !((SPropertyOperations.getBoolean(member, "abstract") || SPropertyOperations.getBoolean(member, "synchronized") || SPropertyOperations.getBoolean(member, "final") || SPropertyOperations.getBoolean(member, "volatile") || SPropertyOperations.getBoolean(member, "transient") || SLinkOperations.getTarget(member, "type", true) != null));
+    return !((SPropertyOperations.getBoolean(member, MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 3609453419506221441l, 3609453419506282393l, "abstract")) || SPropertyOperations.getBoolean(member, MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 3609453419506221441l, 3609453419506283925l, "synchronized")) || SPropertyOperations.getBoolean(member, MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 3609453419506221441l, 3609453419506282390l, "final")) || SPropertyOperations.getBoolean(member, MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 3609453419506221441l, 3609453419506286246l, "volatile")) || SPropertyOperations.getBoolean(member, MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 3609453419506221441l, 6348240317717564887l, "transient")) || SLinkOperations.getTarget(member, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 3609453419506221441l, 3609453419535151784l, "type")) != null));
   }
 
   /*package*/ static String buildFieldName(final String pattern) {
@@ -88,17 +90,17 @@ public class IncompleteMemberHelper {
   /*package*/ static boolean isValidCandidateFieldName(SNode member, String memberName) {
     // Visible types and classifiers should not be offered as potential member names, 
     // if the type is still null (user convenience) 
-    return !(((SLinkOperations.getTarget(member, "type", true) == null) && IncompleteMemberHelper.isKnownTypeName(member, memberName)));
+    return !(((SLinkOperations.getTarget(member, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 3609453419506221441l, 3609453419535151784l, "type")) == null) && IncompleteMemberHelper.isKnownTypeName(member, memberName)));
   }
 
   /*package*/ static String getNameOfConstructor(SNode member) {
     SNode clNode = SNodeOperations.as(SNodeOperations.getParent(member), "jetbrains.mps.baseLanguage.structure.Classifier");
-    return (clNode != null ? SPropertyOperations.getString(clNode, "name") + "()" : null);
+    return (clNode != null ? SPropertyOperations.getString(clNode, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")) + "()" : null);
   }
 
   /*package*/ static boolean hasNameEqualToSurroundingClassifier(SNode member, String memberName) {
     SNode clNode = SNodeOperations.as(SNodeOperations.getParent(member), "jetbrains.mps.baseLanguage.structure.Classifier");
-    return clNode != null && SPropertyOperations.getString(clNode, "name").equals(memberName);
+    return clNode != null && SPropertyOperations.getString(clNode, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")).equals(memberName);
   }
 
   private static boolean eq_fp5qrn_a0a0a0a0a0a0b0d(Object a, Object b) {

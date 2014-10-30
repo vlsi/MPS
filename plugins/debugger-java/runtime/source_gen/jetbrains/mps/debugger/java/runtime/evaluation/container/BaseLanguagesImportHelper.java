@@ -14,6 +14,8 @@ import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.DynamicReference;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
@@ -43,10 +45,10 @@ public abstract class BaseLanguagesImportHelper {
       if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.Expression")) {
         SNode clone = _quotation_createNode_5vd2f2_a0a0b0b0d(node);
         transformNode(clone, SNodeOperations.getModel(container));
-        ListSequence.fromList(SLinkOperations.getTargets(container, "statement", true)).addElement(clone);
+        ListSequence.fromList(SLinkOperations.getChildren(container, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123136l, 1068581517665l, "statement"))).addElement(clone);
       } else if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.Statement")) {
         transformNode(node, SNodeOperations.getModel(container));
-        ListSequence.fromList(SLinkOperations.getTargets(container, "statement", true)).addElement(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.Statement"));
+        ListSequence.fromList(SLinkOperations.getChildren(container, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123136l, 1068581517665l, "statement"))).addElement(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.Statement"));
       }
     }
   }

@@ -30,6 +30,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.baseLanguage.scopes.Members;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 
@@ -81,7 +83,7 @@ public class UnknownQualifiedName implements ConceptEditorComponent {
       SNode chosen = parameterObject;
       String className = BehaviorReflection.invokeVirtual(String.class, chosen, "virtual_getNestedName_8540045600162184125", new Object[]{});
 
-      String tokens = SPropertyOperations.getString(node, "tokens");
+      String tokens = SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 6528213125912070246l, 1843920760191311250l, "tokens"));
       int i = tokens.indexOf(".", 0);
 
       while (i >= 0) {
@@ -93,23 +95,23 @@ public class UnknownQualifiedName implements ConceptEditorComponent {
 
         if (Sequence.fromIterable(Members.visibleStaticFields(chosen, node)).where(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {
-            return memberCandidateName.equals(SPropertyOperations.getString(it, "name"));
+            return memberCandidateName.equals(SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")));
           }
         }).isNotEmpty() || Sequence.fromIterable(Members.visibleEnumConstants(chosen)).where(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {
-            return memberCandidateName.equals(SPropertyOperations.getString(it, "name"));
+            return memberCandidateName.equals(SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")));
           }
         }).isNotEmpty()) {
 
           // found 
-          SPropertyOperations.set(node, "tokens", className + "." + remaining);
+          SPropertyOperations.set(node, MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 6528213125912070246l, 1843920760191311250l, "tokens"), className + "." + remaining);
           return;
         }
 
         i = nextDot;
       }
 
-      SPropertyOperations.set(node, "tokens", className);
+      SPropertyOperations.set(node, MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 6528213125912070246l, 1843920760191311250l, "tokens"), className);
 
     }
     public boolean isReferentPresentation() {

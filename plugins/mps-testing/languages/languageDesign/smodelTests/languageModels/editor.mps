@@ -43,6 +43,7 @@
   <imports>
     <import index="yetq" ref="r:43b4d418-d4ca-4d97-ab07-31e4f3ddb3e5(jetbrains.mps.lang.smodelTests.structure)" />
     <import index="tpc2" ref="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" implicit="true" />
+    <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
   </imports>
   <contents>
     <node concept="9wj7.1071666914219" id="278471160714227719" info="ig">
@@ -122,7 +123,7 @@
             <property role="9wj7.1073389577006.1073389577007" value="root" />
           </node>
           <node concept="9wj7.1073389658414" id="8758390115028851459" role="9wj7.1073389446423.1073389446424" info="sg">
-            <reference role="9wj7.1139848536355.1140103550593" target="yetq.8758390115028851453" resolveInfo="name" />
+            <reference role="9wj7.1139848536355.1140103550593" target="tpck.1169194664001" resolveInfo="name" />
           </node>
           <node concept="9wj7.1106270549637" id="8758390115028851455" role="9wj7.1073389446423.1106270802874" info="nn" />
         </node>
@@ -216,7 +217,7 @@
             <property role="9wj7.1073389577006.1073389577007" value="child" />
           </node>
           <node concept="9wj7.1073389658414" id="8758390115028914966" role="9wj7.1073389446423.1073389446424" info="sg">
-            <reference role="9wj7.1139848536355.1140103550593" target="yetq.8758390115028851453" resolveInfo="name" />
+            <reference role="9wj7.1139848536355.1140103550593" target="tpck.1169194664001" resolveInfo="name" />
           </node>
           <node concept="9wj7.1106270549637" id="8758390115028897636" role="9wj7.1073389446423.1106270802874" info="nn" />
         </node>
@@ -274,7 +275,7 @@
             <property role="9wj7.1073389577006.1073389577007" value="childSubConcept" />
           </node>
           <node concept="9wj7.1073389658414" id="8758390115028914972" role="9wj7.1073389446423.1073389446424" info="sg">
-            <reference role="9wj7.1139848536355.1140103550593" target="yetq.8758390115028851453" resolveInfo="name" />
+            <reference role="9wj7.1139848536355.1140103550593" target="tpck.1169194664001" resolveInfo="name" />
           </node>
           <node concept="9wj7.1106270549637" id="8758390115028914968" role="9wj7.1073389446423.1106270802874" info="nn" />
         </node>
@@ -294,7 +295,7 @@
               <node concept="9wj7.1088185857835" id="8758390115028851426" role="9wj7.1088013125922.1088186146602" info="ig">
                 <node concept="9wj7.1073389658414" id="8758390115029091791" role="9wj7.1080736578640.1080736633877" info="sg">
                   <property role="9wj7.1139848536355.1140017977771" value="true" />
-                  <reference role="9wj7.1139848536355.1140103550593" target="yetq.8758390115028851453" resolveInfo="name" />
+                  <reference role="9wj7.1139848536355.1140103550593" target="tpck.1169194664001" resolveInfo="name" />
                 </node>
               </node>
             </node>
@@ -315,7 +316,7 @@
               <node concept="9wj7.1088185857835" id="8758390115028996291" role="9wj7.1088013125922.1088186146602" info="ig">
                 <node concept="9wj7.1073389658414" id="8758390115028996293" role="9wj7.1080736578640.1080736633877" info="sg">
                   <property role="9wj7.1139848536355.1140017977771" value="true" />
-                  <reference role="9wj7.1139848536355.1140103550593" target="yetq.8758390115028851453" resolveInfo="name" />
+                  <reference role="9wj7.1139848536355.1140103550593" target="tpck.1169194664001" resolveInfo="name" />
                 </node>
               </node>
             </node>
@@ -333,7 +334,7 @@
               <node concept="9wj7.1088185857835" id="8758390115028996302" role="9wj7.1088013125922.1088186146602" info="ig">
                 <node concept="9wj7.1073389658414" id="8758390115028996304" role="9wj7.1080736578640.1080736633877" info="sg">
                   <property role="9wj7.1139848536355.1140017977771" value="true" />
-                  <reference role="9wj7.1139848536355.1140103550593" target="yetq.8758390115028851453" resolveInfo="name" />
+                  <reference role="9wj7.1139848536355.1140103550593" target="tpck.1169194664001" resolveInfo="name" />
                 </node>
               </node>
             </node>
@@ -358,7 +359,7 @@
               <node concept="9wj7.1088185857835" id="3386205146662128308" role="9wj7.1088013125922.1088186146602" info="ig">
                 <node concept="9wj7.1073389658414" id="3386205146662128309" role="9wj7.1080736578640.1080736633877" info="sg">
                   <property role="9wj7.1139848536355.1140017977771" value="true" />
-                  <reference role="9wj7.1139848536355.1140103550593" target="yetq.8758390115028851453" resolveInfo="name" />
+                  <reference role="9wj7.1139848536355.1140103550593" target="tpck.1169194664001" resolveInfo="name" />
                 </node>
               </node>
             </node>
@@ -379,7 +380,7 @@
               <node concept="9wj7.1088185857835" id="3386205146662128317" role="9wj7.1088013125922.1088186146602" info="ig">
                 <node concept="9wj7.1073389658414" id="3386205146662128318" role="9wj7.1080736578640.1080736633877" info="sg">
                   <property role="9wj7.1139848536355.1140017977771" value="true" />
-                  <reference role="9wj7.1139848536355.1140103550593" target="yetq.8758390115028851453" resolveInfo="name" />
+                  <reference role="9wj7.1139848536355.1140103550593" target="tpck.1169194664001" resolveInfo="name" />
                 </node>
               </node>
             </node>
@@ -398,7 +399,7 @@
               <node concept="9wj7.1088185857835" id="2854075155748608755" role="9wj7.1088013125922.1088186146602" info="ig">
                 <node concept="9wj7.1073389658414" id="2854075155748608756" role="9wj7.1080736578640.1080736633877" info="sg">
                   <property role="9wj7.1139848536355.1140017977771" value="true" />
-                  <reference role="9wj7.1139848536355.1140103550593" target="yetq.8758390115028851453" resolveInfo="name" />
+                  <reference role="9wj7.1139848536355.1140103550593" target="tpck.1169194664001" resolveInfo="name" />
                 </node>
               </node>
             </node>

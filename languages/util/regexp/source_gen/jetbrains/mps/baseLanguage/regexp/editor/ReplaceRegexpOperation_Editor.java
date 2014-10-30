@@ -26,6 +26,8 @@ import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultReferenceSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.nodeEditor.MPSFonts;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
@@ -176,7 +178,7 @@ public class ReplaceRegexpOperation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private static boolean renderingCondition_ldr481_a5a(SNode node, EditorContext editorContext) {
-    return SPropertyOperations.getBoolean(node, "globalReplace");
+    return SPropertyOperations.getBoolean(node, MetaAdapterFactory.getProperty(new UUID(-2688747624584492277l, -5722269945249396544l), 3796137614137086346l, 3796137614137159273l, "globalReplace"));
   }
   private EditorCell createConstant_ldr481_g0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "m");
@@ -190,7 +192,7 @@ public class ReplaceRegexpOperation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private static boolean renderingCondition_ldr481_a6a(SNode node, EditorContext editorContext) {
-    return SPropertyOperations.getBoolean(node, "multiLine");
+    return SPropertyOperations.getBoolean(node, MetaAdapterFactory.getProperty(new UUID(-2688747624584492277l, -5722269945249396544l), 3796137614137086346l, 3796137614137159271l, "multiLine"));
   }
   private EditorCell createConstant_ldr481_h0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "s");
@@ -204,7 +206,7 @@ public class ReplaceRegexpOperation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private static boolean renderingCondition_ldr481_a7a(SNode node, EditorContext editorContext) {
-    return SPropertyOperations.getBoolean(node, "dotAll");
+    return SPropertyOperations.getBoolean(node, MetaAdapterFactory.getProperty(new UUID(-2688747624584492277l, -5722269945249396544l), 3796137614137086346l, 3796137614137159270l, "dotAll"));
   }
   private EditorCell createConstant_ldr481_i0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "i");
@@ -218,7 +220,7 @@ public class ReplaceRegexpOperation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private static boolean renderingCondition_ldr481_a8a(SNode node, EditorContext editorContext) {
-    return SPropertyOperations.getBoolean(node, "caseInsensitive");
+    return SPropertyOperations.getBoolean(node, MetaAdapterFactory.getProperty(new UUID(-2688747624584492277l, -5722269945249396544l), 3796137614137086346l, 3796137614137159272l, "caseInsensitive"));
   }
   private EditorCell createCollection_ldr481_a_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
@@ -482,7 +484,7 @@ public class ReplaceRegexpOperation_Editor extends DefaultNodeEditor {
   private EditorCell createReadOnlyModelAccessor_ldr481_w0(final EditorContext editorContext, final SNode node) {
     EditorCell_Property editorCell = EditorCell_Property.create(editorContext, new ModelAccessor() {
       public String getText() {
-        return (BehaviorReflection.invokeVirtual(Boolean.TYPE, SLinkOperations.getTarget(node, "search", true), "virtual_isValid_4759120547781297301", new Object[]{}) ? "/" + BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(node, "search", true), "virtual_toString_1213877429451", new Object[]{}) + "/" : "<invalid>");
+        return (BehaviorReflection.invokeVirtual(Boolean.TYPE, SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-2688747624584492277l, -5722269945249396544l), 3796137614137086346l, 3796137614137159227l, "search")), "virtual_isValid_4759120547781297301", new Object[]{}) ? "/" + BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-2688747624584492277l, -5722269945249396544l), 3796137614137086346l, 3796137614137159227l, "search")), "virtual_toString_1213877429451", new Object[]{}) + "/" : "<invalid>");
       }
       public void setText(String s) {
       }

@@ -4,20 +4,22 @@ package jetbrains.mps.lang.plugin.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 
 public class KeyMapKeystroke_Behavior {
   public static void init(SNode thisNode) {
   }
   public static String call_getKeyStroke_1213877278942(SNode thisNode) {
-    String modifiers = SPropertyOperations.getString(thisNode, "modifiers");
+    String modifiers = SPropertyOperations.getString(thisNode, MetaAdapterFactory.getProperty(new UUID(2952642368903463569l, -5856357300648461647l), 1207318242772l, 1207318242773l, "modifiers"));
     if (modifiers == null) {
       modifiers = "";
     }
     String keyName;
-    if (SPropertyOperations.getString(thisNode, "keycode").startsWith("VK_")) {
-      keyName = SPropertyOperations.getString(thisNode, "keycode").substring(3);
+    if (SPropertyOperations.getString(thisNode, MetaAdapterFactory.getProperty(new UUID(2952642368903463569l, -5856357300648461647l), 1207318242772l, 1207318242774l, "keycode")).startsWith("VK_")) {
+      keyName = SPropertyOperations.getString(thisNode, MetaAdapterFactory.getProperty(new UUID(2952642368903463569l, -5856357300648461647l), 1207318242772l, 1207318242774l, "keycode")).substring(3);
     } else {
-      keyName = SPropertyOperations.getString(thisNode, "keycode");
+      keyName = SPropertyOperations.getString(thisNode, MetaAdapterFactory.getProperty(new UUID(2952642368903463569l, -5856357300648461647l), 1207318242772l, 1207318242774l, "keycode"));
     }
     return modifiers.replaceAll("\\+", " ") + " " + keyName;
   }

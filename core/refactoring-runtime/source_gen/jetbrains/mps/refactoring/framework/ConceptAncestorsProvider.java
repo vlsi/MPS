@@ -7,6 +7,8 @@ import org.jetbrains.mps.openapi.model.SNode;
 import java.util.HashSet;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 
 public class ConceptAncestorsProvider implements IDescendantsProvider {
   public ConceptAncestorsProvider() {
@@ -16,18 +18,18 @@ public class ConceptAncestorsProvider implements IDescendantsProvider {
     Set<SNode> result = new HashSet<SNode>();
     if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.structure.structure.ConceptDeclaration")) {
       SNode conceptDeclaration = SNodeOperations.cast(node, "jetbrains.mps.lang.structure.structure.ConceptDeclaration");
-      SNode parent = SLinkOperations.getTarget(conceptDeclaration, "extends", false);
+      SNode parent = SLinkOperations.getTarget(conceptDeclaration, MetaAdapterFactory.getReferenceLink(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489090640l, 1071489389519l, "extends"));
       if ((parent != null)) {
         result.add(parent);
       }
-      for (SNode interfaceConceptReference : SLinkOperations.getTargets(conceptDeclaration, "implements", true)) {
-        result.add(SLinkOperations.getTarget(interfaceConceptReference, "intfc", false));
+      for (SNode interfaceConceptReference : SLinkOperations.getChildren(conceptDeclaration, MetaAdapterFactory.getContainmentLink(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489090640l, 1169129564478l, "implements"))) {
+        result.add(SLinkOperations.getTarget(interfaceConceptReference, MetaAdapterFactory.getReferenceLink(new UUID(-4094437568663370681l, -8968368868337559369l), 1169127622168l, 1169127628841l, "intfc")));
       }
     }
     if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration")) {
       SNode interfaceConceptDeclaration = SNodeOperations.cast(node, "jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration");
-      for (SNode interfaceConceptReference : SLinkOperations.getTargets(interfaceConceptDeclaration, "extends", true)) {
-        result.add(SLinkOperations.getTarget(interfaceConceptReference, "intfc", false));
+      for (SNode interfaceConceptReference : SLinkOperations.getChildren(interfaceConceptDeclaration, MetaAdapterFactory.getContainmentLink(new UUID(-4094437568663370681l, -8968368868337559369l), 1169125989551l, 1169127546356l, "extends"))) {
+        result.add(SLinkOperations.getTarget(interfaceConceptReference, MetaAdapterFactory.getReferenceLink(new UUID(-4094437568663370681l, -8968368868337559369l), 1169127622168l, 1169127628841l, "intfc")));
       }
     }
     return result;

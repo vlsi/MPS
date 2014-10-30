@@ -17,43 +17,43 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.WhileStatement" />
   <root nodeRef="r:8095f777-2745-40ce-ad34-6655ef50b7cc(jetbrains.mps.editor.runtime.impl)/1182113674817158574">
     <file name="CellUtil.java">
-      <node id="1182113674817443094" at="16,76,17,101" concept="8" />
-      <node id="1182113674817443208" at="18,308,19,60" concept="3" />
-      <node id="1182113674817443376" at="23,121,24,45" concept="3" />
-      <node id="1182113674817443390" at="25,5,26,16" concept="9" />
-      <node id="3425632322555590179" at="31,71,32,71" concept="9" />
-      <node id="3425632322555626907" at="34,70,35,66" concept="9" />
-      <node id="1182113674817158576" at="14,0,16,0" concept="2" trace="CellUtil#()V" />
-      <node id="1182113674817443072" at="17,101,20,5" concept="6" />
-      <node id="1182113674817443366" at="22,51,25,5" concept="14" />
-      <node id="3425632322555626899" at="34,0,37,0" concept="12" trace="getLinkDeclarationRole#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
-      <node id="1182113674817443063" at="16,0,22,0" concept="12" trace="setupIDeprecatableStyles#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/cells/EditorCell;)V" />
-      <node id="1182113674817443333" at="22,0,28,0" concept="12" trace="getNodeToDelete#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <node id="3425632322555590171" at="28,0,34,0" concept="12" trace="getLinkDeclarationTarget#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <scope id="1182113674817158579" at="14,21,14,21" />
-      <scope id="1182113674817443074" at="18,308,19,60" />
-      <scope id="1182113674817443368" at="23,121,24,45" />
-      <scope id="3425632322555590174" at="31,71,32,71" />
-      <scope id="3425632322555626902" at="34,70,35,66" />
-      <scope id="1182113674817158576" at="14,0,16,0" />
-      <scope id="3425632322555626899" at="34,0,37,0">
+      <node id="1182113674817443094" at="18,76,19,101" concept="8" />
+      <node id="1182113674817443208" at="20,308,21,60" concept="3" />
+      <node id="1182113674817443376" at="25,121,26,45" concept="3" />
+      <node id="1182113674817443390" at="27,5,28,16" concept="9" />
+      <node id="3425632322555590179" at="33,71,34,189" concept="9" />
+      <node id="3425632322555626907" at="36,70,37,186" concept="9" />
+      <node id="1182113674817158576" at="16,0,18,0" concept="2" trace="CellUtil#()V" />
+      <node id="1182113674817443072" at="19,101,22,5" concept="6" />
+      <node id="1182113674817443366" at="24,51,27,5" concept="14" />
+      <node id="3425632322555626899" at="36,0,39,0" concept="12" trace="getLinkDeclarationRole#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
+      <node id="1182113674817443063" at="18,0,24,0" concept="12" trace="setupIDeprecatableStyles#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/cells/EditorCell;)V" />
+      <node id="1182113674817443333" at="24,0,30,0" concept="12" trace="getNodeToDelete#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <node id="3425632322555590171" at="30,0,36,0" concept="12" trace="getLinkDeclarationTarget#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <scope id="1182113674817158579" at="16,21,16,21" />
+      <scope id="1182113674817443074" at="20,308,21,60" />
+      <scope id="1182113674817443368" at="25,121,26,45" />
+      <scope id="3425632322555590174" at="33,71,34,189" />
+      <scope id="3425632322555626902" at="36,70,37,186" />
+      <scope id="1182113674817158576" at="16,0,18,0" />
+      <scope id="3425632322555626899" at="36,0,39,0">
         <var name="linkDeclaration" id="3425632322555626904" />
       </scope>
-      <scope id="1182113674817443066" at="16,76,20,5">
+      <scope id="1182113674817443066" at="18,76,22,5">
         <var name="deprecatable" id="1182113674817443095" />
       </scope>
-      <scope id="1182113674817443336" at="22,51,26,16" />
-      <scope id="1182113674817443063" at="16,0,22,0">
+      <scope id="1182113674817443336" at="24,51,28,16" />
+      <scope id="1182113674817443063" at="18,0,24,0">
         <var name="cell" id="1182113674817443069" />
         <var name="node" id="1182113674817443067" />
       </scope>
-      <scope id="1182113674817443333" at="22,0,28,0">
+      <scope id="1182113674817443333" at="24,0,30,0">
         <var name="node" id="1182113674817443338" />
       </scope>
-      <scope id="3425632322555590171" at="28,0,34,0">
+      <scope id="3425632322555590171" at="30,0,36,0">
         <var name="linkDeclaration" id="3425632322555590176" />
       </scope>
-      <unit id="1182113674817158574" at="13,0,38,0" name="jetbrains.mps.editor.runtime.impl.CellUtil" />
+      <unit id="1182113674817158574" at="15,0,40,0" name="jetbrains.mps.editor.runtime.impl.CellUtil" />
     </file>
   </root>
   <root nodeRef="r:8095f777-2745-40ce-ad34-6655ef50b7cc(jetbrains.mps.editor.runtime.impl)/1182113674817458489">
@@ -207,16 +207,16 @@
   </root>
   <root nodeRef="r:8095f777-2745-40ce-ad34-6655ef50b7cc(jetbrains.mps.editor.runtime.impl)/1482016848005717282">
     <file name="DataTransferUtil.java">
-      <node id="1482016848005719050" at="11,62,12,74" concept="9" />
-      <node id="1482016848005717284" at="9,0,11,0" concept="2" trace="DataTransferUtil#()V" />
-      <node id="1482016848005719042" at="11,0,14,0" concept="12" trace="isAbstract#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-      <scope id="1482016848005717287" at="9,29,9,29" />
-      <scope id="1482016848005719045" at="11,62,12,74" />
-      <scope id="1482016848005717284" at="9,0,11,0" />
-      <scope id="1482016848005719042" at="11,0,14,0">
+      <node id="1482016848005719050" at="13,62,14,200" concept="9" />
+      <node id="1482016848005717284" at="11,0,13,0" concept="2" trace="DataTransferUtil#()V" />
+      <node id="1482016848005719042" at="13,0,16,0" concept="12" trace="isAbstract#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+      <scope id="1482016848005717287" at="11,29,11,29" />
+      <scope id="1482016848005719045" at="13,62,14,200" />
+      <scope id="1482016848005717284" at="11,0,13,0" />
+      <scope id="1482016848005719042" at="13,0,16,0">
         <var name="conceptDeclaration" id="1482016848005719047" />
       </scope>
-      <unit id="1482016848005717282" at="8,0,15,0" name="jetbrains.mps.editor.runtime.impl.DataTransferUtil" />
+      <unit id="1482016848005717282" at="10,0,17,0" name="jetbrains.mps.editor.runtime.impl.DataTransferUtil" />
     </file>
   </root>
   <root nodeRef="r:8095f777-2745-40ce-ad34-6655ef50b7cc(jetbrains.mps.editor.runtime.impl)/444720911773080383">

@@ -25,6 +25,8 @@ import jetbrains.mps.nodeEditor.MPSFonts;
 import jetbrains.mps.nodeEditor.BlockCells;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Indent;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 
 public class BaseIntentionDeclaration_Editor extends DefaultNodeEditor {
@@ -281,7 +283,7 @@ public class BaseIntentionDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private static boolean renderingCondition_2ji0fa_a1b1b0(SNode node, EditorContext editorContext) {
-    return SPropertyOperations.getBoolean(node, "isAvailableInChildNodes");
+    return SPropertyOperations.getBoolean(node, MetaAdapterFactory.getProperty(new UUID(-2906742361791184688l, -8921219390863794400l), 2522969319638091381l, 2522969319638091386l, "isAvailableInChildNodes"));
   }
   private EditorCell createConstant_2ji0fa_a1b1b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "child filter :");

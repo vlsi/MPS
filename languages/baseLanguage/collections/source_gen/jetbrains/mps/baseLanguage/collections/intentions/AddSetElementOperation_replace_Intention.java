@@ -13,6 +13,8 @@ import jetbrains.mps.smodel.SNodePointer;
 import java.util.Collections;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.intentions.IntentionDescriptor;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -62,7 +64,7 @@ public class AddSetElementOperation_replace_Intention implements IntentionFactor
       return "Replace Deprecated Operation";
     }
     public void execute(final SNode node, final EditorContext editorContext) {
-      SNodeOperations.replaceWithAnother(node, _quotation_createNode_1vref4_a0a0a0(SNodeOperations.copyNode(SLinkOperations.getTarget(node, "argument", true))));
+      SNodeOperations.replaceWithAnother(node, _quotation_createNode_1vref4_a0a0a0(SNodeOperations.copyNode(SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-8968771020793164004l, -7182180101671965361l), 1226566855640l, 1226567214363l, "argument")))));
     }
     public IntentionDescriptor getDescriptor() {
       return AddSetElementOperation_replace_Intention.this;

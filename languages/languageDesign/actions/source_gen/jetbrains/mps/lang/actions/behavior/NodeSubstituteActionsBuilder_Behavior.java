@@ -5,6 +5,8 @@ package jetbrains.mps.lang.actions.behavior;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.scope.Scope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.scopes.runtime.ScopeUtils;
@@ -19,12 +21,12 @@ public class NodeSubstituteActionsBuilder_Behavior {
   public static void init(SNode thisNode) {
   }
   public static String call_getPreconditionQueryMethodName_1220278671791(SNode thisNode) {
-    String conceptName = SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, "applicableConcept", false), "name");
-    SNode precondition = SLinkOperations.getTarget(thisNode, "precondition", true);
+    String conceptName = SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getReferenceLink(new UUID(-5842916035344972280l, -5840605745428443715l), 1112058030570l, 1112058088712l, "applicableConcept")), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"));
+    SNode precondition = SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-5842916035344972280l, -5840605745428443715l), 1112058030570l, 1154465386371l, "precondition"));
     return "nodeSubstituteActionsBuilder_Precondition_" + conceptName + "_" + precondition.getNodeId().toString();
   }
   public static String call_getBuilderQueryMethodName_1220278926652(SNode thisNode) {
-    String conceptName = SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, "applicableConcept", false), "name");
+    String conceptName = SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getReferenceLink(new UUID(-5842916035344972280l, -5840605745428443715l), 1112058030570l, 1112058088712l, "applicableConcept")), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"));
     return "nodeSubstituteActionsBuilder_ActionsFactory_" + conceptName + "_" + thisNode.getNodeId().toString();
   }
   public static Scope virtual_getScope_3734116213129936182(SNode thisNode, SNode kind, SNode child) {
@@ -36,7 +38,7 @@ public class NodeSubstituteActionsBuilder_Behavior {
 
       SNode thisVarDecl = SNodeOperations.as(child, "jetbrains.mps.lang.actions.structure.SubstituteNodeBuilderVariableDeclaration");
       List<SNode> result = new ArrayList<SNode>();
-      for (SNode nextVarDecl : ListSequence.fromList(SLinkOperations.getTargets(thisNode, "variable", true))) {
+      for (SNode nextVarDecl : ListSequence.fromList(SLinkOperations.getChildren(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-5842916035344972280l, -5840605745428443715l), 1112058030570l, 1178540170602l, "variable")))) {
         if (nextVarDecl == thisVarDecl) {
           break;
         }

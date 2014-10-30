@@ -12,6 +12,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
@@ -34,7 +36,7 @@ public class check_ThisExpression_ClassConceptSpecified_InGenerator_NonTypesyste
       return;
     }
 
-    if ((SLinkOperations.getTarget(expression, "classConcept", false) != null)) {
+    if ((SLinkOperations.getTarget(expression, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1070475354124l, 1182955020723l, "classConcept")) != null)) {
       return;
     }
 
@@ -43,11 +45,11 @@ public class check_ThisExpression_ClassConceptSpecified_InGenerator_NonTypesyste
         return AttributeOperations.getAttribute(it, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.generator.structure.TemplateFragment")) != null;
       }
     }).isNotEmpty() || (SNodeOperations.getAncestor(expression, "jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence", false, false) != null);
-    boolean classifierInTemplate = ListSequence.fromList(SNodeOperations.getAncestors(SLinkOperations.getTarget(expression, "classConcept", false), null, true)).where(new IWhereFilter<SNode>() {
+    boolean classifierInTemplate = ListSequence.fromList(SNodeOperations.getAncestors(SLinkOperations.getTarget(expression, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1070475354124l, 1182955020723l, "classConcept")), null, true)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return AttributeOperations.getAttribute(it, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.generator.structure.TemplateFragment")) != null;
       }
-    }).isNotEmpty() || (SNodeOperations.getAncestor(SLinkOperations.getTarget(expression, "classConcept", false), "jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence", false, false) != null);
+    }).isNotEmpty() || (SNodeOperations.getAncestor(SLinkOperations.getTarget(expression, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1070475354124l, 1182955020723l, "classConcept")), "jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence", false, false) != null);
     if (expressionInTemplate && !(classifierInTemplate)) {
       {
         MessageTarget errorTarget = new NodeMessageTarget();

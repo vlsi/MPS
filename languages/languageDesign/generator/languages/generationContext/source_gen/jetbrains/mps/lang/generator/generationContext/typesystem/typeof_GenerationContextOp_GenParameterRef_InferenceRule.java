@@ -8,6 +8,8 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.baseLanguage.closures.constraints.ClassifierTypeUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -17,14 +19,14 @@ public class typeof_GenerationContextOp_GenParameterRef_InferenceRule extends Ab
   public typeof_GenerationContextOp_GenParameterRef_InferenceRule() {
   }
   public void applyRule(final SNode genParamRef, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    SNode paramImport = SLinkOperations.getTarget(genParamRef, "importClause", false);
+    SNode paramImport = SLinkOperations.getTarget(genParamRef, MetaAdapterFactory.getReferenceLink(new UUID(-2922713684555708516l, -6639802755577912107l), 2507865635201615235l, 2507865635201615236l, "importClause"));
     if ((paramImport != null)) {
-      SNode decl = SLinkOperations.getTarget(paramImport, "declaration", false);
+      SNode decl = SLinkOperations.getTarget(paramImport, MetaAdapterFactory.getReferenceLink(new UUID(-5475912601019530992l, -8082971551085732881l), 650531548511911818l, 650531548511911820l, "declaration"));
       if ((decl != null)) {
         {
           SNode _nodeToCheck_1029348928467 = genParamRef;
           EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902f1(jetbrains.mps.lang.generator.generationContext.typesystem)", "2507865635201650096", 0, null);
-          typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902f1(jetbrains.mps.lang.generator.generationContext.typesystem)", "2507865635201650093", true), (SNode) ClassifierTypeUtil.getTypeCoercedToClassifierType(SNodeOperations.copyNode(SLinkOperations.getTarget(decl, "type", true))), _info_12389875345);
+          typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902f1(jetbrains.mps.lang.generator.generationContext.typesystem)", "2507865635201650093", true), (SNode) ClassifierTypeUtil.getTypeCoercedToClassifierType(SNodeOperations.copyNode(SLinkOperations.getTarget(decl, MetaAdapterFactory.getContainmentLink(new UUID(-5475912601019530992l, -8082971551085732881l), 650531548511609556l, 650531548511609557l, "type")))), _info_12389875345);
         }
       }
     }

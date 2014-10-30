@@ -4,6 +4,8 @@ package jetbrains.mps.lang.generator.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.scope.Scope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
@@ -15,7 +17,7 @@ public class VarMacro_Behavior {
   public static void init(SNode thisNode) {
   }
   public static String call_getName_2721957369897649366(SNode thisNode) {
-    return "var:" + SPropertyOperations.getString(thisNode, "name");
+    return "var:" + SPropertyOperations.getString(thisNode, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"));
   }
   public static Scope virtual_getScope_3734116213129936182(SNode thisNode, SNode kind, SNode child) {
     if (kind != SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.generator.structure.VarMacro")) {
@@ -23,7 +25,7 @@ public class VarMacro_Behavior {
     }
     return new CompositeScope(ScopeUtils.parentScope(thisNode, kind), new SimpleScope(thisNode) {
       public String getReferenceText(SNode target) {
-        return SPropertyOperations.getString(target, "name");
+        return SPropertyOperations.getString(target, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"));
       }
     });
   }

@@ -5,6 +5,7 @@ package jetbrains.mps.build.workflow.constraints;
 import jetbrains.mps.smodel.runtime.ConstraintsDescriptor;
 import java.util.Arrays;
 import jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor;
+import jetbrains.mps.smodel.adapter.ids.SConceptId;
 
 public class ConstraintsAspectDescriptor implements jetbrains.mps.smodel.runtime.ConstraintsAspectDescriptor {
   public ConstraintsAspectDescriptor() {
@@ -24,9 +25,30 @@ public class ConstraintsAspectDescriptor implements jetbrains.mps.smodel.runtime
       case 1:
         return new BwfJavaClassPath_Constraints();
       default:
-        // todo: illegal in some cases? 
         return new BaseConstraintsDescriptor(fqName);
     }
+  }
+  public ConstraintsDescriptor getDescriptor(SConceptId conceptId) {
+    long id = conceptId.getConceptId();
+    if (id == 2769948622284605880l) {
+      return new BwfSubTaskDependency_Constraints();
+    }
+    if (id == 2769948622284546675l) {
+      return new BwfTask_Constraints();
+    }
+    if (id == 2769948622284546677l) {
+      return new BwfSubTask_Constraints();
+    }
+    if (id == 7306485738221391506l) {
+      return new BwfTaskLibrary_Constraints();
+    }
+    if (id == 7926701909975416091l) {
+      return new BwfFileSet_Constraints();
+    }
+    if (id == 6647099934206976119l) {
+      return new BwfJavaClassPath_Constraints();
+    }
+    return new BaseConstraintsDescriptor(conceptId);
   }
   private static String[] stringSwitchCases_2qnle6_a0a0b = new String[]{"jetbrains.mps.build.workflow.structure.BwfFileSet", "jetbrains.mps.build.workflow.structure.BwfJavaClassPath", "jetbrains.mps.build.workflow.structure.BwfSubTask", "jetbrains.mps.build.workflow.structure.BwfSubTaskDependency", "jetbrains.mps.build.workflow.structure.BwfTask", "jetbrains.mps.build.workflow.structure.BwfTaskLibrary"};
 }

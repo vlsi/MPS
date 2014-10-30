@@ -5,6 +5,8 @@ package jetbrains.mps.lang.editor.behavior;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import java.util.List;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
@@ -18,7 +20,7 @@ public class CellMenuPart_ReplaceChild_Group_Query_Behavior {
   }
   public static SNode virtual_getExpectedReturnType_1213877374441(SNode thisNode) {
     SNode hostMenuPart = SNodeOperations.cast(SNodeOperations.getParent(thisNode), "jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceChild_Group");
-    SNode parameterObjectType = SLinkOperations.getTarget(hostMenuPart, "parameterObjectType", true);
+    SNode parameterObjectType = SLinkOperations.getTarget(hostMenuPart, MetaAdapterFactory.getContainmentLink(new UUID(1782411230332735017l, -6324602048325217350l), 1165253627126l, 1165253890469l, "parameterObjectType"));
     if (parameterObjectType == null) {
       return _quotation_createNode_ygqhl6_a0a2a0();
     }

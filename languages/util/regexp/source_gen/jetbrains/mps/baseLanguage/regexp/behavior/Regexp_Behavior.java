@@ -8,6 +8,8 @@ import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import java.util.ArrayList;
 import java.util.List;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import java.util.regex.Pattern;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 
@@ -24,7 +26,7 @@ public class Regexp_Behavior {
     return Regexp_Behavior.call_escape_1353467374624660231(thisNode, BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_getString_1222432436326", new Object[]{new ArrayList<SNode>()}));
   }
   public static String virtual_getString_1222432436326(SNode thisNode, List<SNode> vars) {
-    return SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(thisNode), "conceptAlias");
+    return SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(thisNode), MetaAdapterFactory.getProperty(new UUID(-4094437568663370681l, -8968368868337559369l), 1169125787135l, 5092175715804935370l, "conceptAlias"));
   }
   public static String call_par_1222433790846(SNode thisNode, String s) {
     return "(?:" + s + ")";

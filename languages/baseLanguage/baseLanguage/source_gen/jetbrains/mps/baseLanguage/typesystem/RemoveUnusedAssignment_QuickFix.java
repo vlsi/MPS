@@ -6,6 +6,8 @@ import jetbrains.mps.errors.QuickFix_Runtime;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 
 public class RemoveUnusedAssignment_QuickFix extends QuickFix_Runtime {
   public RemoveUnusedAssignment_QuickFix() {
@@ -16,14 +18,14 @@ public class RemoveUnusedAssignment_QuickFix extends QuickFix_Runtime {
   public void execute(SNode node) {
     if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.AssignmentExpression")) {
       SNode assignmentExpression = SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.AssignmentExpression");
-      SNode lValue = SLinkOperations.getTarget(assignmentExpression, "lValue", true);
+      SNode lValue = SLinkOperations.getTarget(assignmentExpression, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1215693861676l, 1068498886295l, "lValue"));
       SNodeOperations.replaceWithAnother(assignmentExpression, lValue);
       if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(lValue), "jetbrains.mps.baseLanguage.structure.ExpressionStatement")) {
         SNodeOperations.deleteNode(SNodeOperations.getParent(lValue));
       }
     }
     if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration")) {
-      SNodeOperations.detachNode(SLinkOperations.getTarget(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration"), "initializer", true));
+      SNodeOperations.detachNode(SLinkOperations.getTarget(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration"), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068431474542l, 1068431790190l, "initializer")));
     }
     if (SNodeOperations.hasRole(node, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration", "initializer")) {
       SNodeOperations.detachNode(node);

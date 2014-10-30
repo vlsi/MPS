@@ -12,6 +12,8 @@ import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import java.util.HashMap;
 import jetbrains.mps.baseLanguage.behavior.Classifier_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
@@ -112,7 +114,7 @@ public class ContextClassifiersInRoot {
     return nestedClassifiers;
   }
   private static void addClassifierToBindingMap(Map<String, String> bindings, SNode classifier) {
-    String simpleName = SPropertyOperations.getString(classifier, "name");
+    String simpleName = SPropertyOperations.getString(classifier, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"));
     String fqName = BehaviorReflection.invokeVirtual(String.class, classifier, "virtual_getFqName_1213877404258", new Object[]{});
 
     if (!(bindings.containsKey(simpleName))) {

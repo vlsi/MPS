@@ -1,11 +1,3 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-303vqbpjpb081pcvihgve8e5ui9zysn">
-  <common hash="-303vqbpjpb081pcvihgve8e5ui9zysn" />
-  <source id="4074989001239457773" name="MPSComponents">
-    <file name="MPSComponents" />
-  </source>
-  <source id="3684742054970776421" name="MPSComponentsWithErrors">
-    <file name="MPSComponentsWithErrors" />
-  </source>
-</dependencies>
+<dependencies version="2" modelHash="-303vqbpjpb081pcvihgve8e5ui9zysn" />
 

@@ -5,11 +5,13 @@ package jetbrains.mps.core.xml.textGen;
 import jetbrains.mps.textGen.SNodeTextGen;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 
 public class XmlProlog_TextGen extends SNodeTextGen {
   public void doGenerateText(SNode node) {
     {
-      Iterable<SNode> collection = SLinkOperations.getTargets(node, "elements", true);
+      Iterable<SNode> collection = SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(new UUID(5160134014823646133l, -7982110198386724200l), 6666499814681299057l, 7604553062773674214l, "elements"));
       for (SNode item : collection) {
         appendNode(item);
       }

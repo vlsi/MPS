@@ -5,6 +5,8 @@ package jetbrains.mps.lang.generator.generationContext.behavior;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 
 public class GenerationContextOp_UserObjectAccessBase_Behavior {
   public static void init(SNode thisNode) {
@@ -12,7 +14,7 @@ public class GenerationContextOp_UserObjectAccessBase_Behavior {
   public static boolean call_isLValueInAssignment_1217892546644(SNode thisNode) {
     SNode mayBeAssignment = SNodeOperations.getParent(SNodeOperations.getParent(thisNode));
     if (SNodeOperations.isInstanceOf(mayBeAssignment, "jetbrains.mps.baseLanguage.structure.AssignmentExpression")) {
-      if (SNodeOperations.getParent(thisNode) == SLinkOperations.getTarget(SNodeOperations.cast(mayBeAssignment, "jetbrains.mps.baseLanguage.structure.AssignmentExpression"), "lValue", true)) {
+      if (SNodeOperations.getParent(thisNode) == SLinkOperations.getTarget(SNodeOperations.cast(mayBeAssignment, "jetbrains.mps.baseLanguage.structure.AssignmentExpression"), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1215693861676l, 1068498886295l, "lValue"))) {
         return true;
       }
     }

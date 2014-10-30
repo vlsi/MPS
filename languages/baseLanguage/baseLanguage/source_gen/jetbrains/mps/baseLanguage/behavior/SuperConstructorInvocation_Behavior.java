@@ -7,6 +7,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 
 public class SuperConstructorInvocation_Behavior {
   public static void init(SNode thisNode) {
@@ -18,7 +20,7 @@ public class SuperConstructorInvocation_Behavior {
       return new ArrayList<SNode>();
     }
 
-    SNode superClassifier = SLinkOperations.getTarget(superclassType, "classifier", false);
+    SNode superClassifier = SLinkOperations.getTarget(superclassType, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier"));
 
     if ((superClassifier == null) || !(SNodeOperations.isInstanceOf(superClassifier, "jetbrains.mps.baseLanguage.structure.ClassConcept"))) {
       return new ArrayList<SNode>();

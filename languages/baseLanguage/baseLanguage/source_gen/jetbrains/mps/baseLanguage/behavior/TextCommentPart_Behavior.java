@@ -4,12 +4,14 @@ package jetbrains.mps.baseLanguage.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 
 public class TextCommentPart_Behavior {
   public static void init(SNode thisNode) {
   }
   public static boolean virtual_isToDo_7236590470026152831(SNode thisNode) {
-    String text = SPropertyOperations.getString(thisNode, "text");
+    String text = SPropertyOperations.getString(thisNode, MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 6329021646629104957l, 6329021646629104958l, "text"));
     if (text != null) {
       text = text.toLowerCase();
       return text.startsWith("todo") || text.startsWith("fix");

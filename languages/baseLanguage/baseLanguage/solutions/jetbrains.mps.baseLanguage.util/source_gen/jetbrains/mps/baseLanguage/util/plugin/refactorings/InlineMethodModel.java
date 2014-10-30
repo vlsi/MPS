@@ -7,6 +7,8 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.dataFlow.framework.Program;
 import jetbrains.mps.lang.dataFlow.DataFlowManager;
@@ -48,7 +50,7 @@ public class InlineMethodModel {
     return myMethod;
   }
   public String getErrors() {
-    if ((SLinkOperations.getTarget(getMethod(), "body", true) == null) || SNodeOperations.isInstanceOf(SLinkOperations.getTarget(getMethod(), "body", true), "jetbrains.mps.baseLanguage.structure.StubStatementList")) {
+    if ((SLinkOperations.getTarget(getMethod(), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123132l, 1068580123135l, "body")) == null) || SNodeOperations.isInstanceOf(SLinkOperations.getTarget(getMethod(), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123132l, 1068580123135l, "body")), "jetbrains.mps.baseLanguage.structure.StubStatementList")) {
       return "No sources attached";
     }
     if (myCall == null && isRecusive()) {
@@ -70,7 +72,7 @@ public class InlineMethodModel {
     return false;
   }
   private boolean isReturnBreaksExecitionFlow() {
-    Program program = DataFlowManager.getInstance().buildProgramFor(SLinkOperations.getTarget(getMethod(), "body", true));
+    Program program = DataFlowManager.getInstance().buildProgramFor(SLinkOperations.getTarget(getMethod(), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123132l, 1068580123135l, "body")));
     for (Instruction instruction : ListSequence.fromList(program.getInstructions())) {
       if (instruction instanceof RetInstruction) {
         Instruction next = program.get(instruction.getIndex() + 1);

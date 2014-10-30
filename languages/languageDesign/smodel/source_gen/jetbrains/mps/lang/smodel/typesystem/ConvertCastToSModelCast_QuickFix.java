@@ -6,6 +6,8 @@ import jetbrains.mps.errors.QuickFix_Runtime;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 
 public class ConvertCastToSModelCast_QuickFix extends QuickFix_Runtime {
@@ -17,11 +19,11 @@ public class ConvertCastToSModelCast_QuickFix extends QuickFix_Runtime {
   public void execute(SNode node) {
     SNode snode = node;
     SNode blCast = SNodeOperations.cast(snode, "jetbrains.mps.baseLanguage.structure.CastExpression");
-    SNode expr = SLinkOperations.getTarget(blCast, "expression", true);
-    SNodeOperations.detachNode(SLinkOperations.getTarget(blCast, "expression", true));
+    SNode expr = SLinkOperations.getTarget(blCast, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1070534934090l, 1070534934092l, "expression"));
+    SNodeOperations.detachNode(SLinkOperations.getTarget(blCast, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1070534934090l, 1070534934092l, "expression")));
     SNode cast = SConceptOperations.createNewNode("jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression", null);
-    SLinkOperations.setTarget(cast, "concept", SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(blCast, "type", true), "jetbrains.mps.lang.smodel.structure.SNodeType"), "concept", false), false);
+    SLinkOperations.setTarget(cast, MetaAdapterFactory.getReferenceLink(new UUID(8675788371017092295l, -9098312342032910879l), 1140137987495l, 1140138128738l, "concept"), SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(blCast, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1070534934090l, 1070534934091l, "type")), "jetbrains.mps.lang.smodel.structure.SNodeType"), MetaAdapterFactory.getReferenceLink(new UUID(8675788371017092295l, -9098312342032910879l), 1138055754698l, 1138405853777l, "concept")));
     SNodeOperations.replaceWithAnother(snode, cast);
-    SLinkOperations.setTarget(cast, "leftExpression", expr, true);
+    SLinkOperations.setTarget(cast, MetaAdapterFactory.getContainmentLink(new UUID(8675788371017092295l, -9098312342032910879l), 1140137987495l, 1140138123956l, "leftExpression"), expr);
   }
 }

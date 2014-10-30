@@ -11,6 +11,8 @@ import jetbrains.mps.lang.dataFlow.framework.instructions.ReadInstruction;
 import jetbrains.mps.lang.dataFlow.framework.instructions.WriteInstruction;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.lang.dataFlow.framework.AnalysisResult;
 import java.util.Set;
 import jetbrains.mps.lang.dataFlow.framework.analyzers.ReachingReadsAnalyzer;
@@ -34,7 +36,7 @@ public abstract class InlineVariableRefactoring {
       if (instruction instanceof WriteInstruction) {
         WriteInstruction write = (WriteInstruction) instruction;
         if (write.getSource() != variable && write.getVariable() == variable) {
-          SNodeOperations.deleteNode(SLinkOperations.getTarget(variable, "initializer", true));
+          SNodeOperations.deleteNode(SLinkOperations.getTarget(variable, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068431474542l, 1068431790190l, "initializer")));
           return;
         }
       }
@@ -43,7 +45,7 @@ public abstract class InlineVariableRefactoring {
   }
   public void optimizeAssignment(SNode assignment, SNode variable) {
     SNode method = SNodeOperations.getAncestor(assignment, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration", false, false);
-    Program program = DataFlowManager.getInstance().buildProgramFor(SLinkOperations.getTarget(method, "body", true));
+    Program program = DataFlowManager.getInstance().buildProgramFor(SLinkOperations.getTarget(method, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123132l, 1068580123135l, "body")));
     AnalysisResult<Set<ReadInstruction>> reachingReads = program.analyze(new ReachingReadsAnalyzer());
     for (Instruction instruction : ListSequence.fromList(program.getInstructionsFor(assignment))) {
       for (Instruction next : SetSequence.fromSet(instruction.succ())) {

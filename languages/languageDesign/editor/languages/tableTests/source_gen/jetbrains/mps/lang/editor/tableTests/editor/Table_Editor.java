@@ -23,6 +23,8 @@ import jetbrains.mps.lang.editor.table.runtime.TableModel;
 import jetbrains.mps.lang.editor.table.runtime.AbstractTableModel;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.lang.editor.table.runtime.EditorCell_Table;
 
@@ -75,38 +77,38 @@ public class Table_Editor extends DefaultNodeEditor {
         return new AbstractTableModel() {
           @Override
           public SNode getValueAt(int row, int column) {
-            return ListSequence.fromList(SLinkOperations.getTargets(ListSequence.fromList(SLinkOperations.getTargets(node, "rows", true)).getElement(row), "cells", true)).getElement(column);
+            return ListSequence.fromList(SLinkOperations.getChildren(ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(new UUID(-2339732263353565073l, -4798597720271785646l), 2882388703616155296l, 2882388703616155298l, "rows"))).getElement(row), MetaAdapterFactory.getContainmentLink(new UUID(-2339732263353565073l, -4798597720271785646l), 2882388703616155302l, 2882388703616155303l, "cells"))).getElement(column);
           }
           @Override
           public int getRowCount() {
-            return ListSequence.fromList(SLinkOperations.getTargets(node, "rows", true)).count();
+            return ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(new UUID(-2339732263353565073l, -4798597720271785646l), 2882388703616155296l, 2882388703616155298l, "rows"))).count();
           }
           @Override
           public int getColumnCount() {
-            return ListSequence.fromList(SLinkOperations.getTargets(ListSequence.fromList(SLinkOperations.getTargets(node, "rows", true)).first(), "cells", true)).count();
+            return ListSequence.fromList(SLinkOperations.getChildren(ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(new UUID(-2339732263353565073l, -4798597720271785646l), 2882388703616155296l, 2882388703616155298l, "rows"))).first(), MetaAdapterFactory.getContainmentLink(new UUID(-2339732263353565073l, -4798597720271785646l), 2882388703616155302l, 2882388703616155303l, "cells"))).count();
           }
           @Override
           public void deleteRow(int rowNumber) {
-            ListSequence.fromList(SLinkOperations.getTargets(node, "rows", true)).removeElementAt(rowNumber);
+            ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(new UUID(-2339732263353565073l, -4798597720271785646l), 2882388703616155296l, 2882388703616155298l, "rows"))).removeElementAt(rowNumber);
           }
           @Override
           public void insertRow(int rowNumber) {
             SNode rowNode = SNodeFactoryOperations.createNewNode("jetbrains.mps.lang.editor.tableTests.structure.Row", null);
-            for (int i = 0; i < ListSequence.fromList(SLinkOperations.getTargets(ListSequence.fromList(SLinkOperations.getTargets(node, "rows", true)).first(), "cells", true)).count(); i++) {
-              ListSequence.fromList(SLinkOperations.getTargets(rowNode, "cells", true)).addElement(SNodeFactoryOperations.createNewNode("jetbrains.mps.lang.editor.tableTests.structure.DataCell", null));
+            for (int i = 0; i < ListSequence.fromList(SLinkOperations.getChildren(ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(new UUID(-2339732263353565073l, -4798597720271785646l), 2882388703616155296l, 2882388703616155298l, "rows"))).first(), MetaAdapterFactory.getContainmentLink(new UUID(-2339732263353565073l, -4798597720271785646l), 2882388703616155302l, 2882388703616155303l, "cells"))).count(); i++) {
+              ListSequence.fromList(SLinkOperations.getChildren(rowNode, MetaAdapterFactory.getContainmentLink(new UUID(-2339732263353565073l, -4798597720271785646l), 2882388703616155302l, 2882388703616155303l, "cells"))).addElement(SNodeFactoryOperations.createNewNode("jetbrains.mps.lang.editor.tableTests.structure.DataCell", null));
             }
-            ListSequence.fromList(SLinkOperations.getTargets(node, "rows", true)).insertElement(rowNumber, rowNode);
+            ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(new UUID(-2339732263353565073l, -4798597720271785646l), 2882388703616155296l, 2882388703616155298l, "rows"))).insertElement(rowNumber, rowNode);
           }
           @Override
           public void deleteColumn(int columnNumber) {
-            for (SNode row : ListSequence.fromList(SLinkOperations.getTargets(node, "rows", true))) {
-              ListSequence.fromList(SLinkOperations.getTargets(row, "cells", true)).removeElementAt(columnNumber);
+            for (SNode row : ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(new UUID(-2339732263353565073l, -4798597720271785646l), 2882388703616155296l, 2882388703616155298l, "rows")))) {
+              ListSequence.fromList(SLinkOperations.getChildren(row, MetaAdapterFactory.getContainmentLink(new UUID(-2339732263353565073l, -4798597720271785646l), 2882388703616155302l, 2882388703616155303l, "cells"))).removeElementAt(columnNumber);
             }
           }
           @Override
           public void insertColumn(int columnNumber) {
-            for (SNode row : ListSequence.fromList(SLinkOperations.getTargets(node, "rows", true))) {
-              ListSequence.fromList(SLinkOperations.getTargets(row, "cells", true)).insertElement(columnNumber, SNodeFactoryOperations.createNewNode("jetbrains.mps.lang.editor.tableTests.structure.DataCell", null));
+            for (SNode row : ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(new UUID(-2339732263353565073l, -4798597720271785646l), 2882388703616155296l, 2882388703616155298l, "rows")))) {
+              ListSequence.fromList(SLinkOperations.getChildren(row, MetaAdapterFactory.getContainmentLink(new UUID(-2339732263353565073l, -4798597720271785646l), 2882388703616155302l, 2882388703616155303l, "cells"))).insertElement(columnNumber, SNodeFactoryOperations.createNewNode("jetbrains.mps.lang.editor.tableTests.structure.DataCell", null));
             }
           }
         };

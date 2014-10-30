@@ -5,6 +5,7 @@ package jetbrains.mps.baseLanguage.regexp.constraints;
 import jetbrains.mps.smodel.runtime.ConstraintsDescriptor;
 import java.util.Arrays;
 import jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor;
+import jetbrains.mps.smodel.adapter.ids.SConceptId;
 
 public class ConstraintsAspectDescriptor implements jetbrains.mps.smodel.runtime.ConstraintsAspectDescriptor {
   public ConstraintsAspectDescriptor() {
@@ -32,9 +33,42 @@ public class ConstraintsAspectDescriptor implements jetbrains.mps.smodel.runtime
       case 0:
         return new LiteralReplacement_Constraints();
       default:
-        // todo: illegal in some cases? 
         return new BaseConstraintsDescriptor(fqName);
     }
+  }
+  public ConstraintsDescriptor getDescriptor(SConceptId conceptId) {
+    long id = conceptId.getConceptId();
+    if (id == 1174565027678l) {
+      return new MatchVariableReference_Constraints();
+    }
+    if (id == 1174909099093l) {
+      return new MatchVariableReferenceRegexp_Constraints();
+    }
+    if (id == 1222260556146l) {
+      return new ReplaceWithRegexpOperation_Constraints();
+    }
+    if (id == 1222260469397l) {
+      return new MatchRegexpOperation_Constraints();
+    }
+    if (id == 1174554386384l) {
+      return new PredefinedSymbolClassDeclaration_Constraints();
+    }
+    if (id == 1174483125581l) {
+      return new RegexpDeclaration_Constraints();
+    }
+    if (id == 1174482753837l) {
+      return new StringLiteralRegexp_Constraints();
+    }
+    if (id == 3796137614137086346l) {
+      return new ReplaceRegexpOperation_Constraints();
+    }
+    if (id == 3796137614137538894l) {
+      return new MatchVariableReferenceReplacement_Constraints();
+    }
+    if (id == 3796137614137538892l) {
+      return new LiteralReplacement_Constraints();
+    }
+    return new BaseConstraintsDescriptor(conceptId);
   }
   private static String[] stringSwitchCases_2qnle6_a0a0b = new String[]{"jetbrains.mps.baseLanguage.regexp.structure.LiteralReplacement", "jetbrains.mps.baseLanguage.regexp.structure.MatchRegexpOperation", "jetbrains.mps.baseLanguage.regexp.structure.MatchVariableReference", "jetbrains.mps.baseLanguage.regexp.structure.MatchVariableReferenceRegexp", "jetbrains.mps.baseLanguage.regexp.structure.MatchVariableReferenceReplacement", "jetbrains.mps.baseLanguage.regexp.structure.PredefinedSymbolClassDeclaration", "jetbrains.mps.baseLanguage.regexp.structure.RegexpDeclaration", "jetbrains.mps.baseLanguage.regexp.structure.ReplaceRegexpOperation", "jetbrains.mps.baseLanguage.regexp.structure.ReplaceWithRegexpOperation", "jetbrains.mps.baseLanguage.regexp.structure.StringLiteralRegexp"};
 }

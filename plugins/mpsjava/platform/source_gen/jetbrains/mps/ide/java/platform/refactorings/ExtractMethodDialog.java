@@ -18,6 +18,8 @@ import jetbrains.mps.baseLanguage.util.plugin.refactorings.ExtractMethodFactory;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import javax.swing.JComponent;
 import java.awt.GridBagLayout;
 import java.awt.GridBagConstraints;
@@ -126,7 +128,7 @@ public class ExtractMethodDialog extends RefactoringDialog {
       if ((overrides == SNodeOperations.getAncestor(this.myParameters.getContainerMethod(), "jetbrains.mps.baseLanguage.structure.Classifier", false, false))) {
         buff.append("Such method already exists.\n");
       } else {
-        buff.append("Method overrides method from class ").append(SPropertyOperations.getString(overrides, "name")).append("\n");
+        buff.append("Method overrides method from class ").append(SPropertyOperations.getString(overrides, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"))).append("\n");
       }
       this.myCanRefactor = false;
     }
@@ -416,7 +418,7 @@ public class ExtractMethodDialog extends RefactoringDialog {
                   myChooseContainerButton.setIcon(IconResourceBundle_ExtractMethodIcons.getInstance().getResource("INTERFACE"));
                 }
                 if (SNodeOperations.isInstanceOf(ExtractMethodDialog.this.myStaticTarget, "jetbrains.mps.lang.core.structure.INamedConcept")) {
-                  myChooseContainerButton.setText(SPropertyOperations.getString((SNodeOperations.cast(ExtractMethodDialog.this.myStaticTarget, "jetbrains.mps.lang.core.structure.INamedConcept")), "name"));
+                  myChooseContainerButton.setText(SPropertyOperations.getString((SNodeOperations.cast(ExtractMethodDialog.this.myStaticTarget, "jetbrains.mps.lang.core.structure.INamedConcept")), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")));
                 }
 
               }

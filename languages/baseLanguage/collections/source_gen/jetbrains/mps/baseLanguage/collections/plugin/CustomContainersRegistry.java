@@ -11,6 +11,8 @@ import jetbrains.mps.smodel.structure.ExtensionPoint;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager;
@@ -31,7 +33,7 @@ public class CustomContainersRegistry {
     List<SNode> res = new ArrayList<SNode>();
     ListSequence.fromList(res).addSequence(Sequence.fromIterable(allCustomContainers).translate(new ITranslator2<SNode, SNode>() {
       public Iterable<SNode> translate(SNode cc) {
-        return SLinkOperations.getTargets(cc, "containerDeclaration", true);
+        return SLinkOperations.getChildren(cc, MetaAdapterFactory.getContainmentLink(new UUID(-8968771020793164004l, -7182180101671965361l), 6099516049394485324l, 6099516049394485326l, "containerDeclaration"));
       }
     }));
     return res;
@@ -50,7 +52,7 @@ public class CustomContainersRegistry {
         }
       }).translate(new ITranslator2<SNode, SNode>() {
         public Iterable<SNode> translate(SNode cc) {
-          return SLinkOperations.getTargets(cc, "containerDeclaration", true);
+          return SLinkOperations.getChildren(cc, MetaAdapterFactory.getContainmentLink(new UUID(-8968771020793164004l, -7182180101671965361l), 6099516049394485324l, 6099516049394485326l, "containerDeclaration"));
         }
       }));
     }

@@ -4,17 +4,19 @@ package jetbrains.mps.lang.project.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 
 public class Module_Behavior {
   public static void init(SNode thisNode) {
   }
   public static String virtual_getFqName_1213877404258(SNode thisNode) {
-    return SPropertyOperations.getString(thisNode, "namespace");
+    return SPropertyOperations.getString(thisNode, MetaAdapterFactory.getProperty(new UUID(-8723610397892195161l, -7746462699928525911l), 6370754048397540894l, 6370754048397540899l, "namespace"));
   }
   public static String virtual_getPresentation_1213877396640(SNode thisNode) {
-    return SPropertyOperations.getString(thisNode, "namespace");
+    return SPropertyOperations.getString(thisNode, MetaAdapterFactory.getProperty(new UUID(-8723610397892195161l, -7746462699928525911l), 6370754048397540894l, 6370754048397540899l, "namespace"));
   }
   public static String virtual_getModuleReference_9020561928507315628(SNode thisNode) {
-    return SPropertyOperations.getString(thisNode, "uuid") + "(" + SPropertyOperations.getString(thisNode, "namespace") + ")";
+    return SPropertyOperations.getString(thisNode, MetaAdapterFactory.getProperty(new UUID(-8723610397892195161l, -7746462699928525911l), 6370754048397540894l, 6370754048397540898l, "uuid")) + "(" + SPropertyOperations.getString(thisNode, MetaAdapterFactory.getProperty(new UUID(-8723610397892195161l, -7746462699928525911l), 6370754048397540894l, 6370754048397540899l, "namespace")) + ")";
   }
 }

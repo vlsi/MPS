@@ -9,6 +9,8 @@ import org.jetbrains.mps.openapi.model.SNode;
 import java.util.HashSet;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import org.jetbrains.mps.openapi.model.SReference;
 import jetbrains.mps.project.GlobalScopeMinusTransient;
 import java.util.Collections;
@@ -33,15 +35,15 @@ public class BaseLanguageHierarchyViewTool extends AbstractHierarchyView {
       HashSet<SNode> result = new HashSet<SNode>();
       if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.ClassConcept")) {
         SNode classConcept = SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.ClassConcept");
-        SNode classifierType = SLinkOperations.getTarget(classConcept, "superclass", true);
+        SNode classifierType = SLinkOperations.getTarget(classConcept, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068390468198l, 1165602531693l, "superclass"));
         if (classifierType != null) {
-          SNode classifier = SLinkOperations.getTarget(classifierType, "classifier", false);
+          SNode classifier = SLinkOperations.getTarget(classifierType, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier"));
           if (SNodeOperations.isInstanceOf(classifier, "jetbrains.mps.baseLanguage.structure.ClassConcept")) {
             result.add(classifier);
           }
         }
-        for (SNode interfaceType : SLinkOperations.getTargets(classConcept, "implementedInterface", true)) {
-          SNode interfaceClassifier = SLinkOperations.getTarget(interfaceType, "classifier", false);
+        for (SNode interfaceType : SLinkOperations.getChildren(classConcept, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068390468198l, 1095933932569l, "implementedInterface"))) {
+          SNode interfaceClassifier = SLinkOperations.getTarget(interfaceType, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier"));
           if (SNodeOperations.isInstanceOf(interfaceClassifier, "jetbrains.mps.baseLanguage.structure.Interface")) {
             result.add(interfaceClassifier);
           }
@@ -49,8 +51,8 @@ public class BaseLanguageHierarchyViewTool extends AbstractHierarchyView {
       } else
       if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.Interface")) {
         SNode anInterface = SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.Interface");
-        for (SNode interfaceType : SLinkOperations.getTargets(anInterface, "extendedInterface", true)) {
-          SNode interfaceClassifier = SLinkOperations.getTarget(interfaceType, "classifier", false);
+        for (SNode interfaceType : SLinkOperations.getChildren(anInterface, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107796713796l, 1107797138135l, "extendedInterface"))) {
+          SNode interfaceClassifier = SLinkOperations.getTarget(interfaceType, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier"));
           if (SNodeOperations.isInstanceOf(interfaceClassifier, "jetbrains.mps.baseLanguage.structure.Interface")) {
             result.add(interfaceClassifier);
           }
@@ -66,11 +68,11 @@ public class BaseLanguageHierarchyViewTool extends AbstractHierarchyView {
     protected SNode getParent(SNode node) {
       if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.ClassConcept")) {
         SNode classConcept = SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.ClassConcept");
-        SNode type = SLinkOperations.getTarget(classConcept, "superclass", true);
+        SNode type = SLinkOperations.getTarget(classConcept, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068390468198l, 1165602531693l, "superclass"));
         if (type == null) {
           return null;
         }
-        SNode classifier = SLinkOperations.getTarget(type, "classifier", false);
+        SNode classifier = SLinkOperations.getTarget(type, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier"));
         if (SNodeOperations.isInstanceOf(classifier, "jetbrains.mps.baseLanguage.structure.ClassConcept")) {
           return classifier;
         }

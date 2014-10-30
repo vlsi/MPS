@@ -5,6 +5,8 @@ package jetbrains.mps.build.mps.tests.behavior;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.build.util.VisibleArtifacts;
@@ -23,7 +25,7 @@ public class BuildMpsLayout_TestModules_Behavior {
   public static void init(SNode thisNode) {
   }
   public static boolean call_hasModule_4560297596904469365(SNode thisNode, final SNode module) {
-    return ListSequence.fromList(SLinkOperations.getTargets(thisNode, "modules", true)).findFirst(new IWhereFilter<SNode>() {
+    return ListSequence.fromList(SLinkOperations.getChildren(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(3891333323013573211l, -7392620776726838882l), 4560297596904469357l, 4560297596904469360l, "modules"))).findFirst(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return BehaviorReflection.invokeVirtual(Boolean.TYPE, it, "virtual_contains_4560297596904469640", new Object[]{module});
       }
@@ -37,7 +39,7 @@ public class BuildMpsLayout_TestModules_Behavior {
     // we may want to have an option about that? 
     // like load plugins: = all (default) | none | <list of plugins> 
     ModulePlugins plugins = new ModulePlugins(project, genContext);
-    plugins.collect(new MPSModulesClosure(ListSequence.fromList(SLinkOperations.getTargets(thisNode, "modules", true)).translate(new ITranslator2<SNode, SNode>() {
+    plugins.collect(new MPSModulesClosure(ListSequence.fromList(SLinkOperations.getChildren(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(3891333323013573211l, -7392620776726838882l), 4560297596904469357l, 4560297596904469360l, "modules"))).translate(new ITranslator2<SNode, SNode>() {
       public Iterable<SNode> translate(SNode it) {
         return BehaviorReflection.invokeVirtual((Class<Iterable<SNode>>) ((Class) Object.class), it, "virtual_getModules_4560297596904469651", new Object[]{});
       }
@@ -55,7 +57,7 @@ public class BuildMpsLayout_TestModules_Behavior {
     }
 
     // fetch modules 
-    Iterable<SNode> originalModules = ListSequence.fromList(SLinkOperations.getTargets(thisNode, "modules", true)).translate(new ITranslator2<SNode, SNode>() {
+    Iterable<SNode> originalModules = ListSequence.fromList(SLinkOperations.getChildren(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(3891333323013573211l, -7392620776726838882l), 4560297596904469357l, 4560297596904469360l, "modules"))).translate(new ITranslator2<SNode, SNode>() {
       public Iterable<SNode> translate(SNode it) {
         return BehaviorReflection.invokeVirtual((Class<Iterable<SNode>>) ((Class) Object.class), it, "virtual_getModules_4560297596904469651", new Object[]{});
       }
@@ -69,7 +71,7 @@ public class BuildMpsLayout_TestModules_Behavior {
       if (artifact != null) {
         builder.add(SNodeOperations.as(DependenciesHelper.getOriginalNode(artifact, genContext), "jetbrains.mps.build.structure.BuildLayout_Node"), originalModule);
       } else if (SNodeOperations.isInstanceOf(originalModule, "jetbrains.mps.build.mps.structure.BuildMps_DevKit")) {
-        artifact = SNodeOperations.as(currentArtifacts.findArtifact(SLinkOperations.getTarget(SNodeOperations.cast(originalModule, "jetbrains.mps.build.mps.structure.BuildMps_DevKit"), "path", true)), "jetbrains.mps.build.structure.BuildLayout_Node");
+        artifact = SNodeOperations.as(currentArtifacts.findArtifact(SLinkOperations.getTarget(SNodeOperations.cast(originalModule, "jetbrains.mps.build.mps.structure.BuildMps_DevKit"), MetaAdapterFactory.getContainmentLink(new UUID(934837630734519964l, -6831122735637083229l), 322010710375871467l, 322010710375956261l, "path"))), "jetbrains.mps.build.structure.BuildLayout_Node");
         if (artifact != null) {
           builder.add(SNodeOperations.as(DependenciesHelper.getOriginalNode(artifact, genContext), "jetbrains.mps.build.structure.BuildLayout_Node"), originalModule);
         }

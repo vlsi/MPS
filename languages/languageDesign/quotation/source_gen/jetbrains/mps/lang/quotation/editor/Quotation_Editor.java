@@ -21,6 +21,8 @@ import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
 import jetbrains.mps.nodeEditor.cells.ModelAccessor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
@@ -116,7 +118,7 @@ public class Quotation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private static boolean renderingCondition_29llnk_a3a(SNode node, EditorContext editorContext) {
-    return SLinkOperations.getTarget(node, "modelToCreate", true) != null;
+    return SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(4184707567256882268l, -4914423608129972907l), 1196350785113l, 1196350785115l, "modelToCreate")) != null;
   }
   private EditorCell createConstant_29llnk_a3a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "[model =");
@@ -215,7 +217,7 @@ public class Quotation_Editor extends DefaultNodeEditor {
   private EditorCell createReadOnlyModelAccessor_29llnk_b0a(final EditorContext editorContext, final SNode node) {
     EditorCell_Property editorCell = EditorCell_Property.create(editorContext, new ModelAccessor() {
       public String getText() {
-        return (SLinkOperations.getTarget(node, "quotedNode", true) != null ? SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(SLinkOperations.getTarget(node, "quotedNode", true)), "name") : "<not specitied>");
+        return (SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(4184707567256882268l, -4914423608129972907l), 1196350785113l, 1196350785114l, "quotedNode")) != null ? SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(4184707567256882268l, -4914423608129972907l), 1196350785113l, 1196350785114l, "quotedNode"))), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")) : "<not specitied>");
       }
       public void setText(String s) {
       }
@@ -230,7 +232,7 @@ public class Quotation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private static boolean renderingCondition_29llnk_a1a0(SNode node, EditorContext editorContext) {
-    return SLinkOperations.getTarget(node, "quotedNode", true) != null;
+    return SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(4184707567256882268l, -4914423608129972907l), 1196350785113l, 1196350785114l, "quotedNode")) != null;
   }
   public static class Quotation_component_cellMenu_29llnk_a0b0a implements SubstituteInfoPartExt {
     private Quotation_quotedNode myComponent;
@@ -248,7 +250,7 @@ public class Quotation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private static boolean renderingCondition_29llnk_a2a0(SNode node, EditorContext editorContext) {
-    return SLinkOperations.getTarget(node, "quotedNode", true) == null;
+    return SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(4184707567256882268l, -4914423608129972907l), 1196350785113l, 1196350785114l, "quotedNode")) == null;
   }
   public static class Quotation_component_cellMenu_29llnk_a0c0a implements SubstituteInfoPartExt {
     private Quotation_quotedNode myComponent;

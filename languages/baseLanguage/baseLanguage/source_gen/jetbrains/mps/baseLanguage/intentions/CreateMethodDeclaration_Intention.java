@@ -14,6 +14,8 @@ import java.util.Collections;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.openapi.editor.Editor;
@@ -86,9 +88,9 @@ public class CreateMethodDeclaration_Intention implements IntentionFactory {
       }
       SNode method = _quotation_createNode_v1wtfy_a0g0a(type, name);
       if (!(isSameClassifier)) {
-        SLinkOperations.setTarget(method, "visibility", _quotation_createNode_v1wtfy_a0a0h0a(), true);
+        SLinkOperations.setTarget(method, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1178549954367l, 1178549979242l, "visibility"), _quotation_createNode_v1wtfy_a0a0h0a());
       }
-      ListSequence.fromList(SLinkOperations.getTargets(classifier, "member", true)).addElement(method);
+      ListSequence.fromList(SLinkOperations.getChildren(classifier, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107461130800l, 5375687026011219971l, "member"))).addElement(method);
       SNodeOperations.replaceWithAnother(node, _quotation_createNode_v1wtfy_a0a9a0(method));
       if (isSameClassifier) {
         editorContext.selectWRTFocusPolicy(method);
@@ -115,7 +117,7 @@ public class CreateMethodDeclaration_Intention implements IntentionFactory {
     SNode quotedNode_5 = null;
     SNode quotedNode_6 = null;
     quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration", null, null, false);
-    SNodeAccessUtil.setProperty(quotedNode_3, "name", (String) parameter_2);
+    SNodeAccessUtil.setProperty(quotedNode_3, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"), (String) parameter_2);
     quotedNode_4 = (SNode) parameter_1;
     if (quotedNode_4 != null) {
       quotedNode_3.addChild("returnType", HUtil.copyIfNecessary(quotedNode_4));
@@ -136,7 +138,7 @@ public class CreateMethodDeclaration_Intention implements IntentionFactory {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation", null, null, false);
-    SNodeAccessUtil.setReferenceTarget(quotedNode_2, "baseMethodDeclaration", (SNode) parameter_1);
+    SNodeAccessUtil.setReferenceTarget(quotedNode_2, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, 1068499141037l, "baseMethodDeclaration"), (SNode) parameter_1);
     return quotedNode_2;
   }
 }

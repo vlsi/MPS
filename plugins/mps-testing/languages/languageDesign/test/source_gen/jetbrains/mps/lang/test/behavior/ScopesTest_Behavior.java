@@ -5,6 +5,8 @@ package jetbrains.mps.lang.test.behavior;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SReference;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
@@ -15,11 +17,11 @@ public class ScopesTest_Behavior {
   public static void init(SNode thisNode) {
   }
   public static SReference call_getCheckingReference_5449224527592367549(SNode thisNode) {
-    if (SLinkOperations.getTarget(thisNode, "checkingReference", false) == null) {
+    if (SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getReferenceLink(new UUID(-8825571760360698496l, -7431307307277756308l), 511191073233700873l, 5449224527592117654l, "checkingReference")) == null) {
       return ((SNode) SNodeOperations.getParent(thisNode)).getReferences().iterator().next();
     }
     for (SReference reference : ListSequence.fromList(SNodeOperations.getReferences(SNodeOperations.getParent(thisNode)))) {
-      if (SLinkOperations.getTargetNode(reference) == SLinkOperations.getTarget(thisNode, "checkingReference", false)) {
+      if (SLinkOperations.getTargetNode(reference) == SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getReferenceLink(new UUID(-8825571760360698496l, -7431307307277756308l), 511191073233700873l, 5449224527592117654l, "checkingReference"))) {
         return (jetbrains.mps.smodel.SReference) reference;
       }
     }

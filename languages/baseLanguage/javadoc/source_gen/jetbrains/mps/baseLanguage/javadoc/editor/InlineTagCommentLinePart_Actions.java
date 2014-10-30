@@ -10,6 +10,8 @@ import jetbrains.mps.editor.runtime.cells.AbstractCellAction;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class InlineTagCommentLinePart_Actions {
@@ -28,11 +30,11 @@ public class InlineTagCommentLinePart_Actions {
     public void execute_internal(EditorContext editorContext, SNode node) {
       SNode commentLine = SNodeOperations.cast(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.javadoc.structure.CommentLine");
       SNodeOperations.deleteNode(node);
-      for (int i = 0; i < ListSequence.fromList(SLinkOperations.getTargets(commentLine, "part", true)).count() - 1; i++) {
-        SNode part1 = ListSequence.fromList(SLinkOperations.getTargets(commentLine, "part", true)).getElement(i);
-        SNode part2 = ListSequence.fromList(SLinkOperations.getTargets(commentLine, "part", true)).getElement(i + 1);
+      for (int i = 0; i < ListSequence.fromList(SLinkOperations.getChildren(commentLine, MetaAdapterFactory.getContainmentLink(new UUID(-972752984950357426l, -4964296947050367098l), 8465538089690331500l, 8970989240999019149l, "part"))).count() - 1; i++) {
+        SNode part1 = ListSequence.fromList(SLinkOperations.getChildren(commentLine, MetaAdapterFactory.getContainmentLink(new UUID(-972752984950357426l, -4964296947050367098l), 8465538089690331500l, 8970989240999019149l, "part"))).getElement(i);
+        SNode part2 = ListSequence.fromList(SLinkOperations.getChildren(commentLine, MetaAdapterFactory.getContainmentLink(new UUID(-972752984950357426l, -4964296947050367098l), 8465538089690331500l, 8970989240999019149l, "part"))).getElement(i + 1);
         if (SNodeOperations.isInstanceOf(part1, "jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart") && SNodeOperations.isInstanceOf(part2, "jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart")) {
-          SPropertyOperations.set(SNodeOperations.cast(part1, "jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart"), "text", SPropertyOperations.getString(SNodeOperations.cast(part1, "jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart"), "text") + SPropertyOperations.getString(SNodeOperations.cast(part2, "jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart"), "text"));
+          SPropertyOperations.set(SNodeOperations.cast(part1, "jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart"), MetaAdapterFactory.getProperty(new UUID(-972752984950357426l, -4964296947050367098l), 8970989240999019143l, 8970989240999019144l, "text"), SPropertyOperations.getString(SNodeOperations.cast(part1, "jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart"), MetaAdapterFactory.getProperty(new UUID(-972752984950357426l, -4964296947050367098l), 8970989240999019143l, 8970989240999019144l, "text")) + SPropertyOperations.getString(SNodeOperations.cast(part2, "jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart"), MetaAdapterFactory.getProperty(new UUID(-972752984950357426l, -4964296947050367098l), 8970989240999019143l, 8970989240999019144l, "text")));
           SNodeOperations.deleteNode(part2);
           i--;
         }
@@ -51,11 +53,11 @@ public class InlineTagCommentLinePart_Actions {
     public void execute_internal(EditorContext editorContext, SNode node) {
       SNode commentLine = SNodeOperations.cast(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.javadoc.structure.CommentLine");
       SNodeOperations.deleteNode(node);
-      for (int i = 0; i < ListSequence.fromList(SLinkOperations.getTargets(commentLine, "part", true)).count() - 1; i++) {
-        SNode part1 = ListSequence.fromList(SLinkOperations.getTargets(commentLine, "part", true)).getElement(i);
-        SNode part2 = ListSequence.fromList(SLinkOperations.getTargets(commentLine, "part", true)).getElement(i + 1);
+      for (int i = 0; i < ListSequence.fromList(SLinkOperations.getChildren(commentLine, MetaAdapterFactory.getContainmentLink(new UUID(-972752984950357426l, -4964296947050367098l), 8465538089690331500l, 8970989240999019149l, "part"))).count() - 1; i++) {
+        SNode part1 = ListSequence.fromList(SLinkOperations.getChildren(commentLine, MetaAdapterFactory.getContainmentLink(new UUID(-972752984950357426l, -4964296947050367098l), 8465538089690331500l, 8970989240999019149l, "part"))).getElement(i);
+        SNode part2 = ListSequence.fromList(SLinkOperations.getChildren(commentLine, MetaAdapterFactory.getContainmentLink(new UUID(-972752984950357426l, -4964296947050367098l), 8465538089690331500l, 8970989240999019149l, "part"))).getElement(i + 1);
         if (SNodeOperations.isInstanceOf(part1, "jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart") && SNodeOperations.isInstanceOf(part2, "jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart")) {
-          SPropertyOperations.set(SNodeOperations.cast(part1, "jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart"), "text", SPropertyOperations.getString(SNodeOperations.cast(part1, "jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart"), "text") + SPropertyOperations.getString(SNodeOperations.cast(part2, "jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart"), "text"));
+          SPropertyOperations.set(SNodeOperations.cast(part1, "jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart"), MetaAdapterFactory.getProperty(new UUID(-972752984950357426l, -4964296947050367098l), 8970989240999019143l, 8970989240999019144l, "text"), SPropertyOperations.getString(SNodeOperations.cast(part1, "jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart"), MetaAdapterFactory.getProperty(new UUID(-972752984950357426l, -4964296947050367098l), 8970989240999019143l, 8970989240999019144l, "text")) + SPropertyOperations.getString(SNodeOperations.cast(part2, "jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart"), MetaAdapterFactory.getProperty(new UUID(-972752984950357426l, -4964296947050367098l), 8970989240999019143l, 8970989240999019144l, "text")));
           SNodeOperations.deleteNode(part2);
           i--;
         }

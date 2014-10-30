@@ -9,6 +9,8 @@ import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import org.jetbrains.mps.util.Condition;
@@ -85,8 +87,8 @@ public class ClassifierAndSuperClassifiersScope extends AbstractClassifiersScope
     }
     if (SNodeOperations.isInstanceOf(myTopClassifier, "jetbrains.mps.baseLanguage.structure.EnumClass")) {
       SNode enumClass = SNodeOperations.cast(myTopClassifier, "jetbrains.mps.baseLanguage.structure.EnumClass");
-      for (SNode ec : SLinkOperations.getTargets(enumClass, "enumConstant", true)) {
-        if (EqualUtil.equals(SPropertyOperations.getString(ec, "name"), name)) {
+      for (SNode ec : SLinkOperations.getChildren(enumClass, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1083245097125l, 1083245396908l, "enumConstant"))) {
+        if (EqualUtil.equals(SPropertyOperations.getString(ec, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")), name)) {
           return ec;
         }
       }

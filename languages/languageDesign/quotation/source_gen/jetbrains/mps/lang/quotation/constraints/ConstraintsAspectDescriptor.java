@@ -5,6 +5,7 @@ package jetbrains.mps.lang.quotation.constraints;
 import jetbrains.mps.smodel.runtime.ConstraintsDescriptor;
 import java.util.Arrays;
 import jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor;
+import jetbrains.mps.smodel.adapter.ids.SConceptId;
 
 public class ConstraintsAspectDescriptor implements jetbrains.mps.smodel.runtime.ConstraintsAspectDescriptor {
   public ConstraintsAspectDescriptor() {
@@ -30,9 +31,39 @@ public class ConstraintsAspectDescriptor implements jetbrains.mps.smodel.runtime
       case 1:
         return new NodeBuilder_Constraints();
       default:
-        // todo: illegal in some cases? 
         return new BaseConstraintsDescriptor(fqName);
     }
+  }
+  public ConstraintsDescriptor getDescriptor(SConceptId conceptId) {
+    long id = conceptId.getConceptId();
+    if (id == 1196350785113l) {
+      return new Quotation_Constraints();
+    }
+    if (id == 1196350785110l) {
+      return new AbstractAntiquotation_Constraints();
+    }
+    if (id == 5455284157993911077l) {
+      return new NodeBuilderInitProperty_Constraints();
+    }
+    if (id == 5455284157994012186l) {
+      return new NodeBuilderInitLink_Constraints();
+    }
+    if (id == 5455284157993863840l) {
+      return new NodeBuilderNode_Constraints();
+    }
+    if (id == 8182547171709614739l) {
+      return new NodeBuilderRef_Constraints();
+    }
+    if (id == 8182547171709738802l) {
+      return new NodeBuilderList_Constraints();
+    }
+    if (id == 8182547171709752110l) {
+      return new NodeBuilderExpression_Constraints();
+    }
+    if (id == 5455284157993863837l) {
+      return new NodeBuilder_Constraints();
+    }
+    return new BaseConstraintsDescriptor(conceptId);
   }
   private static String[] stringSwitchCases_2qnle6_a0a0b = new String[]{"jetbrains.mps.lang.quotation.structure.AbstractAntiquotation", "jetbrains.mps.lang.quotation.structure.NodeBuilder", "jetbrains.mps.lang.quotation.structure.NodeBuilderExpression", "jetbrains.mps.lang.quotation.structure.NodeBuilderInitLink", "jetbrains.mps.lang.quotation.structure.NodeBuilderInitProperty", "jetbrains.mps.lang.quotation.structure.NodeBuilderList", "jetbrains.mps.lang.quotation.structure.NodeBuilderNode", "jetbrains.mps.lang.quotation.structure.NodeBuilderRef", "jetbrains.mps.lang.quotation.structure.Quotation"};
 }

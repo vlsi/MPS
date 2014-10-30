@@ -12,6 +12,8 @@ import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
 import java.util.Collections;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.intentions.IntentionDescriptor;
 
@@ -59,10 +61,10 @@ public class FlipAssertEquals_Intention implements IntentionFactory {
       return "Flip Assert Statement";
     }
     public void execute(final SNode node, final EditorContext editorContext) {
-      SNode expected = SLinkOperations.getTarget(node, "expected", true);
-      SNode actual = SLinkOperations.getTarget(node, "actual", true);
-      SLinkOperations.setTarget(node, "expected", SNodeOperations.copyNode(actual), true);
-      SLinkOperations.setTarget(node, "actual", SNodeOperations.copyNode(expected), true);
+      SNode expected = SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-714818927241248010l, -5076282167675141386l), 8427750732757990717l, 8427750732757990724l, "expected"));
+      SNode actual = SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-714818927241248010l, -5076282167675141386l), 8427750732757990717l, 8427750732757990725l, "actual"));
+      SLinkOperations.setTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-714818927241248010l, -5076282167675141386l), 8427750732757990717l, 8427750732757990724l, "expected"), SNodeOperations.copyNode(actual));
+      SLinkOperations.setTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-714818927241248010l, -5076282167675141386l), 8427750732757990717l, 8427750732757990725l, "actual"), SNodeOperations.copyNode(expected));
     }
     public IntentionDescriptor getDescriptor() {
       return FlipAssertEquals_Intention.this;

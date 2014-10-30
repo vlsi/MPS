@@ -27,6 +27,8 @@ import jetbrains.mps.generator.template.ReductionRuleQueryContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.generator.template.MapRootRuleContext;
 
 @Generated
@@ -89,7 +91,7 @@ public class Mappingmain implements TemplateMappingConfiguration {
       final SNode tnode1 = environment.createOutputNode("jetbrains.mps.transformation.test.outputLang.structure.OutputNode");
       try {
         environment.nodeCopied(context, tnode1, "tpl/r:00000000-0000-4000-0000-011c895905f9/1206461864724");
-        SNodeAccessUtil.setProperty(tnode1, "text", "output from InputNode_B");
+        SNodeAccessUtil.setProperty(tnode1, MetaAdapterFactory.getProperty(new UUID(1547714798586184059l, -8557310053109408682l), 1195165132070l, 1195170441111l, "text"), "output from InputNode_B");
       } finally {
       }
       return TemplateUtil.singletonList(tnode1);
@@ -109,7 +111,7 @@ public class Mappingmain implements TemplateMappingConfiguration {
       final SNode tnode1 = environment.createOutputNode("jetbrains.mps.transformation.test.outputLang.structure.OutputNode");
       try {
         environment.nodeCopied(context, tnode1, "tpl/r:00000000-0000-4000-0000-011c895905f9/1206460444836");
-        SNodeAccessUtil.setProperty(tnode1, "text", "output from InputNode_A");
+        SNodeAccessUtil.setProperty(tnode1, MetaAdapterFactory.getProperty(new UUID(1547714798586184059l, -8557310053109408682l), 1195165132070l, 1195170441111l, "text"), "output from InputNode_A");
       } finally {
       }
       return TemplateUtil.singletonList(tnode1);
@@ -129,7 +131,7 @@ public class Mappingmain implements TemplateMappingConfiguration {
       final SNode tnode1 = environment.createOutputNode("jetbrains.mps.transformation.test.outputLang.structure.OutputNode");
       try {
         environment.nodeCopied(context, tnode1, "tpl/r:00000000-0000-4000-0000-011c895905f9/1206460409521");
-        SNodeAccessUtil.setProperty(tnode1, "text", "output from base InputNode");
+        SNodeAccessUtil.setProperty(tnode1, MetaAdapterFactory.getProperty(new UUID(1547714798586184059l, -8557310053109408682l), 1195165132070l, 1195170441111l, "text"), "output from base InputNode");
       } finally {
       }
       return TemplateUtil.singletonList(tnode1);

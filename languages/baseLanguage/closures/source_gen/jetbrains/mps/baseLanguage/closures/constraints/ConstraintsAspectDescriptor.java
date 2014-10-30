@@ -5,6 +5,7 @@ package jetbrains.mps.baseLanguage.closures.constraints;
 import jetbrains.mps.smodel.runtime.ConstraintsDescriptor;
 import java.util.Arrays;
 import jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor;
+import jetbrains.mps.smodel.adapter.ids.SConceptId;
 
 public class ConstraintsAspectDescriptor implements jetbrains.mps.smodel.runtime.ConstraintsAspectDescriptor {
   public ConstraintsAspectDescriptor() {
@@ -28,9 +29,36 @@ public class ConstraintsAspectDescriptor implements jetbrains.mps.smodel.runtime
       case 3:
         return new ControlAbstractionDeclaration_Constraints();
       default:
-        // todo: illegal in some cases? 
         return new BaseConstraintsDescriptor(fqName);
     }
+  }
+  public ConstraintsDescriptor getDescriptor(SConceptId conceptId) {
+    long id = conceptId.getConceptId();
+    if (id == 1203252195462l) {
+      return new UnboundClosureParameterDeclaration_Constraints();
+    }
+    if (id == 1225797177491l) {
+      return new InvokeFunctionOperation_Constraints();
+    }
+    if (id == 1229599750256l) {
+      return new ControlAbstractionContainer_Constraints();
+    }
+    if (id == 1199542442495l) {
+      return new FunctionType_Constraints();
+    }
+    if (id == 4816492477345855364l) {
+      return new FunctionMethodDeclaration_Constraints();
+    }
+    if (id == 1235746970280l) {
+      return new CompactInvokeFunctionExpression_Constraints();
+    }
+    if (id == 5612111951671407997l) {
+      return new AbstractFunctionType_Constraints();
+    }
+    if (id == 1229599834263l) {
+      return new ControlAbstractionDeclaration_Constraints();
+    }
+    return new BaseConstraintsDescriptor(conceptId);
   }
   private static String[] stringSwitchCases_2qnle6_a0a0b = new String[]{"jetbrains.mps.baseLanguage.closures.structure.AbstractFunctionType", "jetbrains.mps.baseLanguage.closures.structure.CompactInvokeFunctionExpression", "jetbrains.mps.baseLanguage.closures.structure.ControlAbstractionContainer", "jetbrains.mps.baseLanguage.closures.structure.ControlAbstractionDeclaration", "jetbrains.mps.baseLanguage.closures.structure.FunctionMethodDeclaration", "jetbrains.mps.baseLanguage.closures.structure.FunctionType", "jetbrains.mps.baseLanguage.closures.structure.InvokeFunctionOperation", "jetbrains.mps.baseLanguage.closures.structure.UnboundClosureParameterDeclaration"};
 }

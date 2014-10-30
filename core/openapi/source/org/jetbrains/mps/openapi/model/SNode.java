@@ -85,8 +85,10 @@ public interface SNode {
   String getPresentation();
 
   /**
-   * Retrieves the "name" property of the node. For INamed concepts identical with the INamed.name
+   * For instances of INamedConcept concepts retrieves "name" property
+   * @return null if concept is not null
    */
+  @Nullable
   String getName();
 
   // tree operation

@@ -4,6 +4,8 @@ package jetbrains.mps.lang.plugin.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -15,17 +17,17 @@ public class Order_Behavior {
   }
   public static String call_getGeneratedClassName_3038738109029038654(SNode thisNode) {
     String n;
-    if (isEmptyString(SPropertyOperations.getString(thisNode, "name"))) {
-      n = SPropertyOperations.getString(SNodeOperations.getAncestor(thisNode, "jetbrains.mps.lang.plugin.structure.EditorTab", false, false), "name");
+    if (isEmptyString(SPropertyOperations.getString(thisNode, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")))) {
+      n = SPropertyOperations.getString(SNodeOperations.getAncestor(thisNode, "jetbrains.mps.lang.plugin.structure.EditorTab", false, false), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"));
     } else {
-      n = SPropertyOperations.getString(thisNode, "name");
+      n = SPropertyOperations.getString(thisNode, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"));
     }
     return NameUtil.toValidCamelIdentifier(n) + "_Order";
   }
   public static boolean virtual_presents_1499919975383879508(SNode thisNode, final SNode tab) {
-    return ListSequence.fromList(SLinkOperations.getTargets(thisNode, "tab", true)).where(new IWhereFilter<SNode>() {
+    return ListSequence.fromList(SLinkOperations.getChildren(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(2952642368903463569l, -5856357300648461647l), 2450897840534683975l, 2450897840534683977l, "tab"))).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return SLinkOperations.getTarget(it, "editorTab", false) == tab;
+        return SLinkOperations.getTarget(it, MetaAdapterFactory.getReferenceLink(new UUID(2952642368903463569l, -5856357300648461647l), 2450897840534683979l, 2450897840534683980l, "editorTab")) == tab;
       }
     }).isNotEmpty();
   }

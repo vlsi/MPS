@@ -13,6 +13,8 @@ import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.errors.BaseQuickFixProvider;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class check_TernaryOperatorExpression_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
@@ -29,7 +31,7 @@ public class check_TernaryOperatorExpression_NonTypesystemRule extends AbstractN
         }
       }
     }
-    if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(ternaryOperatorExpression), "jetbrains.mps.baseLanguage.structure.TernaryOperatorExpression") && eq_r4e9e1_a0a1a1(SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(ternaryOperatorExpression), "jetbrains.mps.baseLanguage.structure.TernaryOperatorExpression"), "condition", true), ternaryOperatorExpression)) {
+    if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(ternaryOperatorExpression), "jetbrains.mps.baseLanguage.structure.TernaryOperatorExpression") && eq_r4e9e1_a0a1a1(SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(ternaryOperatorExpression), "jetbrains.mps.baseLanguage.structure.TernaryOperatorExpression"), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1163668896201l, 1163668914799l, "condition")), ternaryOperatorExpression)) {
       {
         MessageTarget errorTarget = new NodeMessageTarget();
         IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(ternaryOperatorExpression, "A ternary operator must be wrapped in parenthesis when being a condition of a ternary operations", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "818296778607035886", null, errorTarget);

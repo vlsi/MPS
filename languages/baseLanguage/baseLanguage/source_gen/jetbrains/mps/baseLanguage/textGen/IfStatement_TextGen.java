@@ -6,6 +6,8 @@ import jetbrains.mps.textGen.SNodeTextGen;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.textGen.TraceInfoGenerationUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.apache.log4j.Level;
@@ -20,22 +22,22 @@ public class IfStatement_TextGen extends SNodeTextGen {
     this.appendNewLine();
     this.indentBuffer();
     this.append("if (");
-    appendNode(SLinkOperations.getTarget(node, "condition", true));
+    appendNode(SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123159l, 1068580123160l, "condition")));
     this.append(") {");
     this.increaseDepth();
-    appendNode(SLinkOperations.getTarget(node, "ifTrue", true));
+    appendNode(SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123159l, 1068580123161l, "ifTrue")));
     this.decreaseDepth();
     this.appendNewLine();
     this.appendWithIndent("}");
     {
-      Iterable<SNode> collection = SLinkOperations.getTargets(node, "elsifClauses", true);
+      Iterable<SNode> collection = SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123159l, 1206060520071l, "elsifClauses"));
       for (SNode item : collection) {
         appendNode(item);
       }
     }
-    if ((SLinkOperations.getTarget(node, "ifFalseStatement", true) != null)) {
+    if ((SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123159l, 1082485599094l, "ifFalseStatement")) != null)) {
       this.append(" else");
-      appendNode(SLinkOperations.getTarget(node, "ifFalseStatement", true));
+      appendNode(SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123159l, 1082485599094l, "ifFalseStatement")));
     }
     if (getBuffer().hasPositionsSupport()) {
       {

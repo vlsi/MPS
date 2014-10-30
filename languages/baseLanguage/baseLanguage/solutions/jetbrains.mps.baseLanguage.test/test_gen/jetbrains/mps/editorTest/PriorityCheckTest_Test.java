@@ -9,6 +9,8 @@ import jetbrains.mps.lang.test.runtime.BaseTestBody;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.baseLanguage.behavior.ParenthesisUtil;
@@ -32,10 +34,10 @@ public class PriorityCheckTest_Test extends BaseTransformationTest {
       this.addNodeById("3852894662483449708");
       SNode op = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.PlusExpression", null);
       SNode constant = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.IntegerConstant", null);
-      SPropertyOperations.set(constant, "value", "" + (3));
-      SLinkOperations.setTarget(op, "leftExpression", constant, true);
+      SPropertyOperations.set(constant, MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 1068580320020l, 1068580320021l, "value"), "" + (3));
+      SLinkOperations.setTarget(op, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1081773326031l, 1081773367580l, "leftExpression"), constant);
       SNodeOperations.replaceWithAnother(SNodeOperations.cast(this.getNodeById("3852894662483449704"), "jetbrains.mps.baseLanguage.structure.PlusExpression"), op);
-      SLinkOperations.setTarget(op, "rightExpression", SNodeOperations.cast(this.getNodeById("3852894662483449704"), "jetbrains.mps.baseLanguage.structure.PlusExpression"), true);
+      SLinkOperations.setTarget(op, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1081773326031l, 1081773367579l, "rightExpression"), SNodeOperations.cast(this.getNodeById("3852894662483449704"), "jetbrains.mps.baseLanguage.structure.PlusExpression"));
       ParenthesisUtil.checkOperationWRTPriority(op);
       {
         List<SNode> nodesBefore = ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("3852894662483449711"), "jetbrains.mps.baseLanguage.structure.ExpressionStatement"));

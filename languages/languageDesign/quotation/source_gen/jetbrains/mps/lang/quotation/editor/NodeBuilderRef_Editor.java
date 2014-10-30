@@ -22,6 +22,8 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
 import jetbrains.mps.nodeEditor.cells.ModelAccessor;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.editor.runtime.cells.EmptyCellAction;
@@ -115,7 +117,7 @@ public class NodeBuilderRef_Editor extends DefaultNodeEditor {
   private EditorCell createReadOnlyModelAccessor_xqbs61_b0(final EditorContext editorContext, final SNode node) {
     EditorCell_Property editorCell = EditorCell_Property.create(editorContext, new ModelAccessor() {
       public String getText() {
-        return BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(node, "target", false), "virtual_getFqName_1213877404258", new Object[]{});
+        return BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(node, MetaAdapterFactory.getReferenceLink(new UUID(4184707567256882268l, -4914423608129972907l), 8182547171709614739l, 8182547171709614741l, "target")), "virtual_getFqName_1213877404258", new Object[]{});
       }
       public void setText(String s) {
       }
@@ -143,7 +145,7 @@ public class NodeBuilderRef_Editor extends DefaultNodeEditor {
   private EditorCell createReadOnlyModelAccessor_xqbs61_d0(final EditorContext editorContext, final SNode node) {
     EditorCell_Property editorCell = EditorCell_Property.create(editorContext, new ModelAccessor() {
       public String getText() {
-        return SLinkOperations.getTarget(node, "target", false).getConcept().getQualifiedName();
+        return SLinkOperations.getTarget(node, MetaAdapterFactory.getReferenceLink(new UUID(4184707567256882268l, -4914423608129972907l), 8182547171709614739l, 8182547171709614741l, "target")).getConcept().getQualifiedName();
       }
       public void setText(String s) {
       }

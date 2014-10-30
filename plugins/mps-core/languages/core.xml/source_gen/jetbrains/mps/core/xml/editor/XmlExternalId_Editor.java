@@ -8,6 +8,8 @@ import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
@@ -46,7 +48,7 @@ public class XmlExternalId_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private static boolean renderingCondition_dsthrr_a0a(SNode node, EditorContext editorContext) {
-    return SPropertyOperations.getBoolean(node, "isPublic");
+    return SPropertyOperations.getBoolean(node, MetaAdapterFactory.getProperty(new UUID(5160134014823646133l, -7982110198386724200l), 2133624044438029119l, 2133624044438029125l, "isPublic"));
   }
   private EditorCell createCollection_dsthrr_a0a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);

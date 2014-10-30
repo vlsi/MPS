@@ -7,6 +7,8 @@ import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
@@ -16,7 +18,7 @@ public class NodesTestCase_Behavior {
   }
   public static List<SNode> virtual_getTestSet_1216130724401(SNode thisNode) {
     List<SNode> result = new ArrayList<SNode>();
-    for (SNode method : ListSequence.fromList(SLinkOperations.getTargets(thisNode, "testMethods", true))) {
+    for (SNode method : ListSequence.fromList(SLinkOperations.getChildren(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-8825571760360698496l, -7431307307277756308l), 1216913645126l, 1217501895093l, "testMethods")))) {
       ListSequence.fromList(result).addElement(method);
     }
     for (SNode operation : ListSequence.fromList(SNodeOperations.getDescendants(thisNode, "jetbrains.mps.lang.test.structure.NodeCheckOperation", false, new String[]{}))) {
@@ -28,7 +30,7 @@ public class NodesTestCase_Behavior {
     return true;
   }
   public static List<SNode> virtual_getTestMethods_2148145109766218395(SNode thisNode) {
-    return ListSequence.fromList(((List<SNode>) SLinkOperations.getTargets(thisNode, "testMethods", true))).union(ListSequence.fromList(SNodeOperations.getDescendants(thisNode, "jetbrains.mps.lang.test.structure.NodeCheckOperation", false, new String[]{}))).toListSequence();
+    return ListSequence.fromList(((List<SNode>) SLinkOperations.getChildren(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-8825571760360698496l, -7431307307277756308l), 1216913645126l, 1217501895093l, "testMethods")))).union(ListSequence.fromList(SNodeOperations.getDescendants(thisNode, "jetbrains.mps.lang.test.structure.NodeCheckOperation", false, new String[]{}))).toListSequence();
   }
   public static boolean call_isIntentionApplicable_1217250498008(SAbstractConcept thisConcept, SNode node) {
     SNode test = SNodeOperations.getAncestorWhereConceptInList(node, new String[]{"jetbrains.mps.lang.test.structure.TestNode", "jetbrains.mps.lang.test.structure.EditorTestCase"}, true, false);
@@ -38,6 +40,6 @@ public class NodesTestCase_Behavior {
     return "TestBody";
   }
   public static boolean call_needsWriteAction_6339244025081193722(SNode thisNode) {
-    return !(SPropertyOperations.getBoolean(thisNode, "needsNoWriteAction"));
+    return !(SPropertyOperations.getBoolean(thisNode, MetaAdapterFactory.getProperty(new UUID(-8825571760360698496l, -7431307307277756308l), 1216913645126l, 6339244025081158986l, "needsNoWriteAction")));
   }
 }

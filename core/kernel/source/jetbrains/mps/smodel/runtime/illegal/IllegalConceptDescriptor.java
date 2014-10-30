@@ -15,6 +15,8 @@
  */
 package jetbrains.mps.smodel.runtime.illegal;
 
+import jetbrains.mps.smodel.DebugRegistry;
+import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import jetbrains.mps.smodel.adapter.ids.SContainmentLinkId;
 import jetbrains.mps.smodel.adapter.ids.SLanguageId;
@@ -26,28 +28,54 @@ import jetbrains.mps.smodel.runtime.LinkDescriptor;
 import jetbrains.mps.smodel.runtime.PropertyDescriptor;
 import jetbrains.mps.smodel.runtime.ReferenceDescriptor;
 import jetbrains.mps.smodel.runtime.StaticScope;
+import jetbrains.mps.util.NameUtil;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.Collections;
 import java.util.List;
 import java.util.Set;
-import java.util.UUID;
 
 public class IllegalConceptDescriptor implements ConceptDescriptor {
-  private final String fqName;
+  private static final Logger LOG = LogManager.getLogger(IllegalConceptDescriptor.class);
 
-  public IllegalConceptDescriptor(String fqName) {
-    this.fqName = fqName;
+  private String fqName;
+  private SConceptId myConceptId;
+
+  public IllegalConceptDescriptor(@NotNull SConceptId conceptId) {
+    this(conceptId, null);
+  }
+
+  public IllegalConceptDescriptor(@NotNull String fqName) {
+    this(null, fqName);
+  }
+
+  private IllegalConceptDescriptor(@Nullable SConceptId conceptId, @Nullable String fqName) {
+    if (conceptId == null && fqName == null) {
+      throw new IllegalArgumentException();
+    }
+    this.fqName = fqName == null ? DebugRegistry.getInstance().getConceptName(conceptId) : fqName;
+    this.myConceptId = conceptId == null ? MetaIdFactory.INVALID_CONCEPT_ID : conceptId;
+
+    String languageName = NameUtil.namespaceFromConceptFQName(fqName);
+    SLanguageId languageId = conceptId == null ? null : conceptId.getLanguageId();
+    LOG.warn("IllegalConceptDescriptor created for concept " + (fqName == null ? "" : fqName) + (conceptId == null ? "" : " with id " + conceptId) +
+        ". Please check the language " + (languageName == null ? "" : languageName) + (languageId == null ? "" : " with id " + languageId) + " is built and compiled.");
   }
 
   @Override
   public SConceptId getId() {
-    return new SConceptId(new SLanguageId(new UUID(0, 0)), 0);
+    return myConceptId;
   }
 
   @Override
   public String getConceptFqName() {
-    return fqName;
+    if (fqName == null) {
+      fqName = DebugRegistry.getInstance().getConceptName(myConceptId);
+    }
+    return fqName == null ? MetaIdFactory.INVALID_CONCEPT_NAME : fqName;
   }
 
   @Override
@@ -204,7 +232,7 @@ public class IllegalConceptDescriptor implements ConceptDescriptor {
   @Nullable
   @Override
   public SConceptId getSuperConceptId() {
-    return new SConceptId(new SLanguageId(new UUID(0, 0)), 0);
+    return MetaIdFactory.INVALID_CONCEPT_ID;
   }
 
   @Override

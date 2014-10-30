@@ -14,6 +14,8 @@ import java.util.Collections;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.intentions.IntentionDescriptor;
 
 public class AddAuthorBlockDocTag_Intention implements IntentionFactory {
@@ -61,7 +63,7 @@ public class AddAuthorBlockDocTag_Intention implements IntentionFactory {
     }
     public void execute(final SNode node, final EditorContext editorContext) {
       SNode authorTag = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.javadoc.structure.AuthorBlockDocTag", null);
-      ListSequence.fromList(SLinkOperations.getTargets(node, "author", true)).addElement(authorTag);
+      ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(new UUID(-972752984950357426l, -4964296947050367098l), 5349172909345501395l, 5349172909345532722l, "author"))).addElement(authorTag);
       BlockDocTagHelper.setFocus(editorContext, authorTag);
     }
     public IntentionDescriptor getDescriptor() {

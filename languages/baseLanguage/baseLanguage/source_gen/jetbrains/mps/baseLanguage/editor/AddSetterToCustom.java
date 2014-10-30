@@ -8,6 +8,8 @@ import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.editor.runtime.cells.AbstractCellAction;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 
 public class AddSetterToCustom {
@@ -25,8 +27,8 @@ public class AddSetterToCustom {
       this.execute_internal(editorContext, this.myNode);
     }
     public void execute_internal(EditorContext editorContext, SNode node) {
-      if ((SLinkOperations.getTarget(node, "setAccessor", true) == null)) {
-        SLinkOperations.setTarget(node, "setAccessor", SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.SetAccessor", null), true);
+      if ((SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1201398722958l, 1201476937466l, "setAccessor")) == null)) {
+        SLinkOperations.setTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1201398722958l, 1201476937466l, "setAccessor"), SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.SetAccessor", null));
       }
     }
   }
@@ -40,7 +42,7 @@ public class AddSetterToCustom {
     }
     public void execute_internal(EditorContext editorContext, SNode node) {
       SNode replacingNode = SNodeFactoryOperations.replaceWithNewChild(node, "jetbrains.mps.baseLanguage.structure.CustomSetterPropertyImplementation");
-      SLinkOperations.setTarget(replacingNode, "setAccessor", SLinkOperations.getTarget(node, "setAccessor", true), true);
+      SLinkOperations.setTarget(replacingNode, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 4285773203949551198l, 4285773203949552005l, "setAccessor"), SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1201398722958l, 1201476937466l, "setAccessor")));
     }
   }
   public static class AddSetterToCustom_BACKSPACE extends AbstractCellAction {
@@ -53,7 +55,7 @@ public class AddSetterToCustom {
     }
     public void execute_internal(EditorContext editorContext, SNode node) {
       SNode replacingNode = SNodeFactoryOperations.replaceWithNewChild(node, "jetbrains.mps.baseLanguage.structure.CustomSetterPropertyImplementation");
-      SLinkOperations.setTarget(replacingNode, "setAccessor", SLinkOperations.getTarget(node, "setAccessor", true), true);
+      SLinkOperations.setTarget(replacingNode, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 4285773203949551198l, 4285773203949552005l, "setAccessor"), SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1201398722958l, 1201476937466l, "setAccessor")));
     }
   }
 }

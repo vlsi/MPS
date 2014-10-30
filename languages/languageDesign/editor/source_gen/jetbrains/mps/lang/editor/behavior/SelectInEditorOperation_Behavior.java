@@ -11,6 +11,8 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.lang.smodel.behavior.SNodeOperation_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.scopes.runtime.SimpleScope;
 import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior;
@@ -35,10 +37,10 @@ public class SelectInEditorOperation_Behavior {
         SNode coercedNode_wbtxu4_a0a0c = TypeChecker.getInstance().getRuntimeSupport().coerce_(TypeChecker.getInstance().getTypeOf(SNodeOperation_Behavior.call_getLeftExpression_1213877508894(thisNode)), pattern_wbtxu4_a0a0c);
         if (coercedNode_wbtxu4_a0a0c != null) {
           if (kind == SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.structure.structure.PropertyDeclaration")) {
-            return SelectInEditorOperation_Behavior.call_getPropertyDeclarationScope_4323500428150818454(thisNode, SLinkOperations.getTarget(coercedNode_wbtxu4_a0a0c, "concept", false));
+            return SelectInEditorOperation_Behavior.call_getPropertyDeclarationScope_4323500428150818454(thisNode, SLinkOperations.getTarget(coercedNode_wbtxu4_a0a0c, MetaAdapterFactory.getReferenceLink(new UUID(8675788371017092295l, -9098312342032910879l), 1138055754698l, 1138405853777l, "concept")));
           }
           if (kind == SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.editor.structure.EditorCellId")) {
-            return SelectInEditorOperation_Behavior.call_getEditorCellIdScope_4323500428150952879(thisNode, SLinkOperations.getTarget(coercedNode_wbtxu4_a0a0c, "concept", false));
+            return SelectInEditorOperation_Behavior.call_getEditorCellIdScope_4323500428150952879(thisNode, SLinkOperations.getTarget(coercedNode_wbtxu4_a0a0c, MetaAdapterFactory.getReferenceLink(new UUID(8675788371017092295l, -9098312342032910879l), 1138055754698l, 1138405853777l, "concept")));
           }
         } else {
         }
@@ -50,7 +52,7 @@ public class SelectInEditorOperation_Behavior {
     return new SimpleScope(AbstractConceptDeclaration_Behavior.call_getPropertyDeclarations_1213877394546(concept)) {
       @Nullable
       public String getReferenceText(@NotNull SNode target) {
-        return SPropertyOperations.getString(((SNode) target), "name");
+        return SPropertyOperations.getString(((SNode) target), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"));
       }
     };
   }

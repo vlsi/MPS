@@ -17,6 +17,8 @@ import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 
 public class BuildMps_GeneratorOptions_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
@@ -151,7 +153,7 @@ public class BuildMps_GeneratorOptions_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private static boolean renderingCondition_aauy4y_a4c0(SNode node, EditorContext editorContext) {
-    return SPropertyOperations.getBoolean(node, "parallel");
+    return SPropertyOperations.getBoolean(node, MetaAdapterFactory.getProperty(new UUID(934837630734519964l, -6831122735637083229l), 4297162197620964123l, 4297162197620978190l, "parallel"));
   }
   private EditorCell createConstant_aauy4y_a4c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "number of threads");

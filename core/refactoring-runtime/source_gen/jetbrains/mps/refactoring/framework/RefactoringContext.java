@@ -32,6 +32,8 @@ import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import org.jetbrains.mps.openapi.model.EditableSModel;
 import jetbrains.mps.smodel.LanguageAspect;
 import org.jetbrains.mps.openapi.model.SModelReference;
@@ -232,8 +234,8 @@ public class RefactoringContext {
     if (SNodeOperations.isInstanceOf(feature, "jetbrains.mps.lang.structure.structure.LinkDeclaration")) {
       SNode linkDeclaration = SNodeOperations.cast(feature, "jetbrains.mps.lang.structure.structure.LinkDeclaration");
       oldConceptFQName = NameUtil.nodeFQName(SNodeOperations.getParent(linkDeclaration));
-      oldFeatureName = SPropertyOperations.getString(linkDeclaration, "role");
-      if (SPropertyOperations.hasValue(linkDeclaration, "metaClass", "aggregation", "reference")) {
+      oldFeatureName = SPropertyOperations.getString(linkDeclaration, MetaAdapterFactory.getProperty(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489288298l, 1071599776563l, "role"));
+      if (SPropertyOperations.hasValue(linkDeclaration, MetaAdapterFactory.getProperty(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489288298l, 1071599937831l, "metaClass"), "aggregation", "reference")) {
         kind = StructureModificationData.ConceptFeatureKind.CHILD;
         renameType = StructureModification.RenameNode.RenameType.CHILD;
       } else {
@@ -244,7 +246,7 @@ public class RefactoringContext {
         SNodeOperations.deleteNode(linkDeclaration);
       } else {
         if (newFeatureName != null && !(newFeatureName.equals(oldFeatureName))) {
-          SPropertyOperations.set(linkDeclaration, "role", newFeatureName);
+          SPropertyOperations.set(linkDeclaration, MetaAdapterFactory.getProperty(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489288298l, 1071599776563l, "role"), newFeatureName);
         }
       }
     }
@@ -257,7 +259,7 @@ public class RefactoringContext {
         SNodeOperations.deleteNode(feature);
       } else {
         if (newFeatureName != null && !(newFeatureName.equals(oldFeatureName))) {
-          SPropertyOperations.set(SNodeOperations.cast(feature, "jetbrains.mps.lang.structure.structure.PropertyDeclaration"), "name", newFeatureName);
+          SPropertyOperations.set(SNodeOperations.cast(feature, "jetbrains.mps.lang.structure.structure.PropertyDeclaration"), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"), newFeatureName);
         }
       }
     }
@@ -270,7 +272,7 @@ public class RefactoringContext {
         SNodeOperations.deleteNode(feature);
       } else {
         if (newFeatureName != null && !(newFeatureName.equals(oldFeatureName))) {
-          SPropertyOperations.set(SNodeOperations.cast(feature, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"), "name", newFeatureName);
+          SPropertyOperations.set(SNodeOperations.cast(feature, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"), newFeatureName);
         }
       }
     }
@@ -291,7 +293,7 @@ public class RefactoringContext {
   public void changeModelName(EditableSModel model, String newName) {
     if (LanguageAspect.STRUCTURE.is(model)) {
       for (SNode concept : ListSequence.fromList(jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations.getNodes(((SModel) model), "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"))) {
-        this.changeFeatureName(concept, NameUtil.longNameFromNamespaceAndShortName(newName, SPropertyOperations.getString(concept, "name")), SPropertyOperations.getString(concept, "name"));
+        this.changeFeatureName(concept, NameUtil.longNameFromNamespaceAndShortName(newName, SPropertyOperations.getString(concept, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"))), SPropertyOperations.getString(concept, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")));
       }
     }
 

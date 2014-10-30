@@ -8,6 +8,8 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
@@ -19,7 +21,7 @@ public class check_ConstructorInvocationStatementHasConstructor_NonTypesystemRul
   public check_ConstructorInvocationStatementHasConstructor_NonTypesystemRule() {
   }
   public void applyRule(final SNode constructorInvocation, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    if ((SLinkOperations.getTarget(constructorInvocation, "baseMethodDeclaration", false) == null)) {
+    if ((SLinkOperations.getTarget(constructorInvocation, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, 1068499141037l, "baseMethodDeclaration")) == null)) {
       SNode referent = constructorInvocation.getReferenceTarget("constructorDeclaration");
       if (SNodeOperations.isInstanceOf(referent, "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration")) {
         {

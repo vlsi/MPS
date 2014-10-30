@@ -11,6 +11,8 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import junit.framework.Assert;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 
@@ -33,11 +35,11 @@ public class StyleAttributeNonInheritanceTest_Test extends BaseTransformationTes
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
           SNode root = SNodeOperations.cast(TestBody.this.getEditorComponent().getEditedNode(), "jetbrains.mps.lang.editor.styleTests.structure.NodeContainer");
-          SNode leaf = ListSequence.fromList(SLinkOperations.getTargets(root, "node", true)).getElement(0);
-          SNode inner1 = ListSequence.fromList(SLinkOperations.getTargets(root, "node", true)).getElement(1);
-          SNode inner1Leaf = ListSequence.fromList(SLinkOperations.getTargets(inner1, "node", true)).getElement(0);
-          SNode inner2 = ListSequence.fromList(SLinkOperations.getTargets(root, "node", true)).getElement(2);
-          SNode inner2Leaf = ListSequence.fromList(SLinkOperations.getTargets(inner2, "node", true)).getElement(0);
+          SNode leaf = ListSequence.fromList(SLinkOperations.getChildren(root, MetaAdapterFactory.getContainmentLink(new UUID(-6253595335891071644l, -6783526492980008552l), 8422442021223268684l, 8422442021223269806l, "node"))).getElement(0);
+          SNode inner1 = ListSequence.fromList(SLinkOperations.getChildren(root, MetaAdapterFactory.getContainmentLink(new UUID(-6253595335891071644l, -6783526492980008552l), 8422442021223268684l, 8422442021223269806l, "node"))).getElement(1);
+          SNode inner1Leaf = ListSequence.fromList(SLinkOperations.getChildren(inner1, MetaAdapterFactory.getContainmentLink(new UUID(-6253595335891071644l, -6783526492980008552l), 8422442021223268684l, 8422442021223269806l, "node"))).getElement(0);
+          SNode inner2 = ListSequence.fromList(SLinkOperations.getChildren(root, MetaAdapterFactory.getContainmentLink(new UUID(-6253595335891071644l, -6783526492980008552l), 8422442021223268684l, 8422442021223269806l, "node"))).getElement(2);
+          SNode inner2Leaf = ListSequence.fromList(SLinkOperations.getChildren(inner2, MetaAdapterFactory.getContainmentLink(new UUID(-6253595335891071644l, -6783526492980008552l), 8422442021223268684l, 8422442021223269806l, "node"))).getElement(0);
 
           Assert.assertEquals(TestBody.this.getEditorComponent().findNodeCell(root).getStyle().get(StyleAttributes.getInstance().<Boolean>getAttribute("jetbrains.mps.lang.editor.styleTests", "test-simple-attribute")), Boolean.TRUE);
           Assert.assertEquals(TestBody.this.getEditorComponent().findNodeCell(leaf).getStyle().get(StyleAttributes.getInstance().<Boolean>getAttribute("jetbrains.mps.lang.editor.styleTests", "test-simple-attribute")), StyleAttributes.getInstance().<Boolean>getAttribute("jetbrains.mps.lang.editor.styleTests", "test-simple-attribute").combine(null, null));

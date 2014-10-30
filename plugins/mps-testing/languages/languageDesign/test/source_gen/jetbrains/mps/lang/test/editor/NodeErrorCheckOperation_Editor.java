@@ -31,6 +31,8 @@ import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
@@ -99,8 +101,8 @@ public class NodeErrorCheckOperation_Editor extends DefaultNodeEditor {
       this.handleAction_impl((SNode) parameterObject, node, model, operationContext, editorContext);
     }
     public void handleAction_impl(SNode parameterObject, SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
-      SLinkOperations.setTarget(node, "errorRef", SConceptOperations.createNewNode("jetbrains.mps.lang.test.structure.ReportErrorStatementReference", null), true);
-      SLinkOperations.setTarget(SLinkOperations.getTarget(node, "errorRef", true), "declaration", parameterObject, false);
+      SLinkOperations.setTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-8825571760360698496l, -7431307307277756308l), 1215507671101l, 8489045168660938517l, "errorRef"), SConceptOperations.createNewNode("jetbrains.mps.lang.test.structure.ReportErrorStatementReference", null));
+      SLinkOperations.setTarget(SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-8825571760360698496l, -7431307307277756308l), 1215507671101l, 8489045168660938517l, "errorRef")), MetaAdapterFactory.getReferenceLink(new UUID(-8825571760360698496l, -7431307307277756308l), 7691029917083872157l, 8333855927540250453l, "declaration"), parameterObject);
     }
     public boolean isReferentPresentation() {
       return false;

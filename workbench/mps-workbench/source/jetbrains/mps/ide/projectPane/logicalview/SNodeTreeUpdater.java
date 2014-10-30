@@ -242,7 +242,7 @@ public abstract class SNodeTreeUpdater<T extends MPSTreeNode> {
 
             nodesWithChangedPresentations.add(event.getNode());
 
-            if (SNodeUtil.property_BaseConcept_virtualPackage.equals(event.getPropertyName()) && event.getNode().getModel() != null && event.getNode().getParent() == null) {
+            if (SNodeUtil.propertyName_BaseConcept_virtualPackage.equals(event.getPropertyName()) && event.getNode().getModel() != null && event.getNode().getParent() == null) {
               nodesWithChangedPackages.add(event.getNode());
             }
           }

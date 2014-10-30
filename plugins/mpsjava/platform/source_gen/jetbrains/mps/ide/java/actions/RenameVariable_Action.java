@@ -22,6 +22,8 @@ import org.jetbrains.mps.openapi.module.ModelAccess;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.ide.platform.refactoring.RenameDialog;
 import org.apache.log4j.Logger;
@@ -94,8 +96,8 @@ public class RenameVariable_Action extends BaseAction {
       final Wrappers._T<String> oldName = new Wrappers._T<String>();
       modelAccess.runReadAction(new Runnable() {
         public void run() {
-          varDeclNode.value = SLinkOperations.getTarget(((SNode) MapSequence.fromMap(_params).get("node")), "variableDeclaration", false);
-          oldName.value = SPropertyOperations.getString(varDeclNode.value, "name");
+          varDeclNode.value = SLinkOperations.getTarget(((SNode) MapSequence.fromMap(_params).get("node")), MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068498886296l, 1068581517664l, "variableDeclaration"));
+          oldName.value = SPropertyOperations.getString(varDeclNode.value, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"));
         }
       });
       final String newName = RenameDialog.getNewName(((MPSProject) MapSequence.fromMap(_params).get("project")).getProject(), oldName.value, "Variable");
@@ -104,7 +106,7 @@ public class RenameVariable_Action extends BaseAction {
       }
       modelAccess.executeCommand(new Runnable() {
         public void run() {
-          SPropertyOperations.set(varDeclNode.value, "name", newName);
+          SPropertyOperations.set(varDeclNode.value, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"), newName);
         }
       });
     } catch (Throwable t) {

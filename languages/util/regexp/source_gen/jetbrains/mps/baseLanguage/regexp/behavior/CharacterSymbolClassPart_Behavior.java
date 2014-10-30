@@ -4,11 +4,13 @@ package jetbrains.mps.baseLanguage.regexp.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 
 public class CharacterSymbolClassPart_Behavior {
   public static void init(SNode thisNode) {
   }
   public static String virtual_getRepresentation_8173814113624650482(SNode thisNode) {
-    return SymbolClassPart_Behavior.call_escapeChar_8173814113624637238(thisNode, SPropertyOperations.getString(thisNode, "character"));
+    return SymbolClassPart_Behavior.call_escapeChar_8173814113624637238(thisNode, SPropertyOperations.getString(thisNode, MetaAdapterFactory.getProperty(new UUID(-2688747624584492277l, -5722269945249396544l), 1174557878319l, 1174557887320l, "character")));
   }
 }

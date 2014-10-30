@@ -4,9 +4,11 @@ package jetbrains.mps.baseLanguage.tuples.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 
 public class NamedTupleComponentDeclaration_Behavior {
   public static void init(SNode thisNode) {
-    SPropertyOperations.set(thisNode, "final", "" + (false));
+    SPropertyOperations.set(thisNode, MetaAdapterFactory.getProperty(new UUID(-6753182146401843782l, -5129028327240390294l), 1239462176079l, 1240400839614l, "final"), "" + (false));
   }
 }

@@ -7,12 +7,14 @@ import jetbrains.mps.build.util.Context;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class BuildSource_JavaContentFolder_Behavior {
   public static void init(SNode thisNode) {
   }
   public static String call_getAntPath_2389279258816946193(SNode thisNode, Context context) {
-    return BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(thisNode), "jetbrains.mps.build.structure.BuildSource_JavaContentRoot"), "basePath", true), "virtual_getAntPath_8563603456895173701", new Object[]{context}) + "/" + SPropertyOperations.getString(thisNode, "relativePath");
+    return BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(thisNode), "jetbrains.mps.build.structure.BuildSource_JavaContentRoot"), MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 7389400916848073810l, 7389400916848073811l, "basePath")), "virtual_getAntPath_8563603456895173701", new Object[]{context}) + "/" + SPropertyOperations.getString(thisNode, MetaAdapterFactory.getProperty(new UUID(8755280088213897754l, -5075149991798053422l), 2754769020641429190l, 2754769020641429191l, "relativePath"));
   }
 }

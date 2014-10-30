@@ -11,6 +11,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import org.jetbrains.mps.openapi.language.SConceptRepository;
@@ -26,9 +28,9 @@ public class IApplicableToNothing_Behavior {
     Set<SNode> result = SetSequence.fromSet(new HashSet<SNode>());
     Iterable<SNode> implementList;
     if (SNodeOperations.isInstanceOf(((SNode) SConceptOperations.findConceptDeclaration(thisConcept.getQualifiedName())), "jetbrains.mps.lang.structure.structure.ConceptDeclaration")) {
-      implementList = ListSequence.fromList(SLinkOperations.getTargets(((SNode) SConceptOperations.findConceptDeclaration(thisConcept.getQualifiedName())), "implements", true)).select(new ISelector<SNode, SNode>() {
+      implementList = ListSequence.fromList(SLinkOperations.getChildren(((SNode) SConceptOperations.findConceptDeclaration(thisConcept.getQualifiedName())), MetaAdapterFactory.getContainmentLink(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489090640l, 1169129564478l, "implements"))).select(new ISelector<SNode, SNode>() {
         public SNode select(SNode it) {
-          return SLinkOperations.getTarget(it, "intfc", false);
+          return SLinkOperations.getTarget(it, MetaAdapterFactory.getReferenceLink(new UUID(-4094437568663370681l, -8968368868337559369l), 1169127622168l, 1169127628841l, "intfc"));
         }
       }).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
@@ -37,9 +39,9 @@ public class IApplicableToNothing_Behavior {
       });
     } else {
       SetSequence.fromSet(result).addSequence(ListSequence.fromList(BehaviorReflection.invokeVirtualStatic((Class<List<SNode>>) ((Class) Object.class), SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(((SNode) SConceptOperations.findConceptDeclaration(thisConcept.getQualifiedName())))), "virtual_getApplicableTypes_5994574781955586127", new Object[]{})));
-      implementList = ListSequence.fromList(SLinkOperations.getTargets(((SNode) SConceptOperations.findConceptDeclaration(thisConcept.getQualifiedName())), "extends", true)).select(new ISelector<SNode, SNode>() {
+      implementList = ListSequence.fromList(SLinkOperations.getChildren(((SNode) SConceptOperations.findConceptDeclaration(thisConcept.getQualifiedName())), MetaAdapterFactory.getContainmentLink(new UUID(-4094437568663370681l, -8968368868337559369l), 1169125989551l, 1169127546356l, "extends"))).select(new ISelector<SNode, SNode>() {
         public SNode select(SNode it) {
-          return SLinkOperations.getTarget(it, "intfc", false);
+          return SLinkOperations.getTarget(it, MetaAdapterFactory.getReferenceLink(new UUID(-4094437568663370681l, -8968368868337559369l), 1169127622168l, 1169127628841l, "intfc"));
         }
       }).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
@@ -63,7 +65,7 @@ public class IApplicableToNothing_Behavior {
         if (ListSequence.fromList(SNodeOperations.getChildren(rt)).isNotEmpty()) {
           SNodeOperations.replaceWithAnother(ListSequence.fromList(SNodeOperations.getChildren(rt)).first(), SNodeOperations.copyNode(elementType));
         }
-        ListSequence.fromList(SLinkOperations.getTargets(jt, "argument", true)).addElement(rt);
+        ListSequence.fromList(SLinkOperations.getChildren(jt, MetaAdapterFactory.getContainmentLink(new UUID(8817443762339858024l, -6091446231697526094l), 1179479408386l, 1179479418730l, "argument"))).addElement(rt);
       }
     }
     return jt;

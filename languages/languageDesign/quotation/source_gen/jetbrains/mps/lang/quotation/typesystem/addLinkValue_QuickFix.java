@@ -5,6 +5,8 @@ package jetbrains.mps.lang.quotation.typesystem;
 import jetbrains.mps.errors.QuickFix_Runtime;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -14,11 +16,11 @@ public class addLinkValue_QuickFix extends QuickFix_Runtime {
   public addLinkValue_QuickFix() {
   }
   public String getDescription(SNode node) {
-    return "Initialize `" + SPropertyOperations.getString(((SNode) addLinkValue_QuickFix.this.getField("link")[0]), "role") + "'";
+    return "Initialize `" + SPropertyOperations.getString(((SNode) addLinkValue_QuickFix.this.getField("link")[0]), MetaAdapterFactory.getProperty(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489288298l, 1071599776563l, "role")) + "'";
   }
   public void execute(SNode node) {
     SNode val = SConceptOperations.createNewNode("jetbrains.mps.lang.quotation.structure.NodeBuilderInitLink", null);
-    SLinkOperations.setTarget(val, "link", ((SNode) addLinkValue_QuickFix.this.getField("link")[0]), false);
-    ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(node, "jetbrains.mps.lang.quotation.structure.NodeBuilderNode"), "values", true)).addElement(val);
+    SLinkOperations.setTarget(val, MetaAdapterFactory.getReferenceLink(new UUID(4184707567256882268l, -4914423608129972907l), 5455284157994012186l, 5455284157994012188l, "link"), ((SNode) addLinkValue_QuickFix.this.getField("link")[0]));
+    ListSequence.fromList(SLinkOperations.getChildren(SNodeOperations.cast(node, "jetbrains.mps.lang.quotation.structure.NodeBuilderNode"), MetaAdapterFactory.getContainmentLink(new UUID(4184707567256882268l, -4914423608129972907l), 5455284157993863840l, 5455284157993911099l, "values"))).addElement(val);
   }
 }

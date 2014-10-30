@@ -21,43 +21,43 @@
   </root>
   <root nodeRef="r:86ce5303-096b-481a-b577-1636d0ef54ad(jetbrains.mps.lang.editor.table.behavior)/3044950653914723868">
     <file name="QueryFunction_TableModel_Behavior.java">
-      <node id="3044950653914723842" at="18,125,19,261" concept="2" />
-      <node id="3044950653914723857" at="19,261,20,166" concept="1" />
-      <node id="3044950653914723862" at="20,166,21,166" concept="1" />
-      <node id="3044950653914723866" at="21,166,22,18" concept="3" />
-      <node id="658365993682018382" at="24,83,25,47" concept="3" />
-      <node id="658365993682017734" at="27,60,28,63" concept="2" />
-      <node id="658365993682017734" at="28,63,29,30" concept="2" />
-      <node id="658365993682017734" at="29,30,30,138" concept="1" />
-      <node id="658365993682017734" at="30,138,31,247" concept="1" />
-      <node id="658365993682017734" at="31,247,32,24" concept="3" />
-      <node id="3044950653914723868" at="16,0,18,0" concept="4" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <node id="658365993682017734" at="29,30,31,247" concept="0" />
-      <node id="658365993682017734" at="29,30,31,247" concept="0" />
-      <node id="3044950653914723868" at="24,0,27,0" concept="4" trace="virtual_getExpectedReturnType_1213877374441#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <node id="3044950653914723868" at="18,0,24,0" concept="4" trace="virtual_getApplicableConceptFunctionParameter_3044950653914717136#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljava/util/List;" />
-      <node id="658365993682017734" at="27,0,34,0" concept="4" trace="_quotation_createNode_exju2j_a0a1#()Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <scope id="3044950653914723870" at="16,43,16,43" />
-      <scope id="658365993682018381" at="24,83,25,47" />
-      <scope id="3044950653914723868" at="16,0,18,0">
+      <node id="3044950653914723842" at="20,125,21,261" concept="2" />
+      <node id="3044950653914723857" at="21,261,22,166" concept="1" />
+      <node id="3044950653914723862" at="22,166,23,166" concept="1" />
+      <node id="3044950653914723866" at="23,166,24,18" concept="3" />
+      <node id="658365993682018382" at="26,83,27,47" concept="3" />
+      <node id="658365993682017734" at="29,60,30,63" concept="2" />
+      <node id="658365993682017734" at="30,63,31,30" concept="2" />
+      <node id="658365993682017734" at="31,30,32,138" concept="1" />
+      <node id="658365993682017734" at="32,138,33,495" concept="1" />
+      <node id="658365993682017734" at="33,495,34,24" concept="3" />
+      <node id="3044950653914723868" at="18,0,20,0" concept="4" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="658365993682017734" at="31,30,33,495" concept="0" />
+      <node id="658365993682017734" at="31,30,33,495" concept="0" />
+      <node id="3044950653914723868" at="26,0,29,0" concept="4" trace="virtual_getExpectedReturnType_1213877374441#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <node id="3044950653914723868" at="20,0,26,0" concept="4" trace="virtual_getApplicableConceptFunctionParameter_3044950653914717136#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljava/util/List;" />
+      <node id="658365993682017734" at="29,0,36,0" concept="4" trace="_quotation_createNode_exju2j_a0a1#()Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <scope id="3044950653914723870" at="18,43,18,43" />
+      <scope id="658365993682018381" at="26,83,27,47" />
+      <scope id="3044950653914723868" at="18,0,20,0">
         <var name="thisNode" id="3044950653914723868" />
       </scope>
-      <scope id="658365993682017734" at="29,30,31,247" />
-      <scope id="3044950653914723868" at="24,0,27,0">
+      <scope id="658365993682017734" at="31,30,33,495" />
+      <scope id="3044950653914723868" at="26,0,29,0">
         <var name="thisNode" id="3044950653914723868" />
       </scope>
-      <scope id="3044950653914723841" at="18,125,22,18">
+      <scope id="3044950653914723841" at="20,125,24,18">
         <var name="result" id="3044950653914723843" />
       </scope>
-      <scope id="658365993682017734" at="27,60,32,24">
+      <scope id="658365993682017734" at="29,60,34,24">
         <var name="facade" id="658365993682017734" />
         <var name="quotedNode_1" id="658365993682017734" />
       </scope>
-      <scope id="3044950653914723868" at="18,0,24,0">
+      <scope id="3044950653914723868" at="20,0,26,0">
         <var name="thisConcept" id="3044950653914723868" />
       </scope>
-      <scope id="658365993682017734" at="27,0,34,0" />
-      <unit id="3044950653914723868" at="15,0,35,0" name="jetbrains.mps.lang.editor.table.behavior.QueryFunction_TableModel_Behavior" />
+      <scope id="658365993682017734" at="29,0,36,0" />
+      <unit id="3044950653914723868" at="17,0,37,0" name="jetbrains.mps.lang.editor.table.behavior.QueryFunction_TableModel_Behavior" />
     </file>
   </root>
   <root nodeRef="r:86ce5303-096b-481a-b577-1636d0ef54ad(jetbrains.mps.lang.editor.table.behavior)/6216065619544941718">

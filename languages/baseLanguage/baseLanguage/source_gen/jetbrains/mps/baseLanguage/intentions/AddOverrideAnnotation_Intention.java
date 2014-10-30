@@ -12,6 +12,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.baseLanguage.util.OverridingMethodsFinder;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.internal.collections.runtime.Sequence;
@@ -57,9 +59,9 @@ public class AddOverrideAnnotation_Intention implements IntentionFactory {
     if (classConcept == null) {
       return false;
     }
-    if (!(OverridingMethodsFinder.canOverride(node)) || ListSequence.fromList(SLinkOperations.getTargets(node, "annotation", true)).any(new IWhereFilter<SNode>() {
+    if (!(OverridingMethodsFinder.canOverride(node)) || ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1188208481402l, 1188208488637l, "annotation"))).any(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return "java.lang.Override".equals(BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(it, "annotation", false), "virtual_getFqName_1213877404258", new Object[]{}));
+        return "java.lang.Override".equals(BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(it, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1188207840427l, 1188208074048l, "annotation")), "virtual_getFqName_1213877404258", new Object[]{}));
       }
     })) {
       return false;
@@ -89,7 +91,7 @@ public class AddOverrideAnnotation_Intention implements IntentionFactory {
       SNode classConcept = SNodeOperations.cast(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.ClassConcept");
       OverridingMethodsFinder finder = new OverridingMethodsFinder(classConcept, Sequence.<SNode>singleton(node));
       for (SNode meth : SetSequence.fromSet(finder.getOverridingMethods())) {
-        ListSequence.fromList(SLinkOperations.getTargets(meth, "annotation", true)).addElement(createAnnotationInstance_4i19oe_a0a0a2a0());
+        ListSequence.fromList(SLinkOperations.getChildren(meth, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1188208481402l, 1188208488637l, "annotation"))).addElement(createAnnotationInstance_4i19oe_a0a0a2a0());
       }
 
     }

@@ -16,6 +16,8 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 
 @MPSLaunch
 public class CopyWithTrace_Test extends BaseTransformationTest {
@@ -44,9 +46,9 @@ public class CopyWithTrace_Test extends BaseTransformationTest {
       Assert.assertEquals(SNodeOperations.cast(this.getNodeById("7327404875649026875"), "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration"), TracingUtil.getInput(callingCopy).resolve(MPSModuleRepository.getInstance()));
       Assert.assertEquals(SLinkOperations.getTarget(ListSequence.fromList(SNodeOperations.getDescendants(callingCopy, "jetbrains.mps.baseLanguage.structure.LocalMethodCall", false, new String[]{})).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
-          return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(it, "baseMethodDeclaration", false), "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration");
+          return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(it, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, 1068499141037l, "baseMethodDeclaration")), "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration");
         }
-      }).toListSequence().first(), "baseMethodDeclaration", false), utilityCopy);
+      }).toListSequence().first(), MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, 1068499141037l, "baseMethodDeclaration")), utilityCopy);
     }
   }
 }

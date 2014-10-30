@@ -5,11 +5,13 @@ package jetbrains.mps.baseLanguage.regexp.behavior;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 
 public class IntersectionSymbolClassPart_Behavior {
   public static void init(SNode thisNode) {
   }
   public static String virtual_getRepresentation_8173814113624650482(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(thisNode, "left", true), "virtual_getRepresentation_8173814113624650482", new Object[]{}) + "&&" + BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(thisNode, "right", true), "virtual_getRepresentation_8173814113624650482", new Object[]{});
+    return BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-2688747624584492277l, -5722269945249396544l), 1220021842985l, 1220356033934l, "left")), "virtual_getRepresentation_8173814113624650482", new Object[]{}) + "&&" + BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-2688747624584492277l, -5722269945249396544l), 1220021842985l, 1220356007276l, "right")), "virtual_getRepresentation_8173814113624650482", new Object[]{});
   }
 }

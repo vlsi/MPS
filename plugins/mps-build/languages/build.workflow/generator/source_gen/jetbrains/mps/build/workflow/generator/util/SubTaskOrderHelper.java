@@ -9,6 +9,8 @@ import java.util.HashMap;
 import jetbrains.mps.generator.template.TemplateQueryContext;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.util.GraphUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import java.util.Set;
@@ -32,16 +34,16 @@ public class SubTaskOrderHelper {
       subtasks[count++] = wrapper;
     }
     for (SubTaskOrderHelper.SubTask st : subtasks) {
-      for (SNode dep : SLinkOperations.getTargets(st.getTask(), "after", true)) {
-        SubTaskOrderHelper.SubTask afterTask = map.get(SLinkOperations.getTarget(dep, "target", false));
+      for (SNode dep : SLinkOperations.getChildren(st.getTask(), MetaAdapterFactory.getContainmentLink(new UUID(7605046100638320544l, -5004325039833383149l), 2769948622284546677l, 2769948622284605953l, "after"))) {
+        SubTaskOrderHelper.SubTask afterTask = map.get(SLinkOperations.getTarget(dep, MetaAdapterFactory.getReferenceLink(new UUID(7605046100638320544l, -5004325039833383149l), 2769948622284605880l, 2769948622284605881l, "target")));
         if (afterTask == null) {
           genContext.showErrorMessage(dep, "dependency on non-existing subtask");
           continue;
         }
         st.targets.add(afterTask.getIndex());
       }
-      for (SNode dep : SLinkOperations.getTargets(st.getTask(), "before", true)) {
-        SubTaskOrderHelper.SubTask beforeTask = map.get(SLinkOperations.getTarget(dep, "target", false));
+      for (SNode dep : SLinkOperations.getChildren(st.getTask(), MetaAdapterFactory.getContainmentLink(new UUID(7605046100638320544l, -5004325039833383149l), 2769948622284546677l, 3961775458390293275l, "before"))) {
+        SubTaskOrderHelper.SubTask beforeTask = map.get(SLinkOperations.getTarget(dep, MetaAdapterFactory.getReferenceLink(new UUID(7605046100638320544l, -5004325039833383149l), 2769948622284605880l, 2769948622284605881l, "target")));
         if (beforeTask == null) {
           genContext.showErrorMessage(dep, "dependency on non-existing subtask");
           continue;
@@ -64,7 +66,7 @@ public class SubTaskOrderHelper {
           if (i > 0) {
             sb.append(", ");
           }
-          sb.append(SPropertyOperations.getString(subtasks[cycle[i]].getTask(), "name"));
+          sb.append(SPropertyOperations.getString(subtasks[cycle[i]].getTask(), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")));
         }
         if (cycle.length > 5) {
           sb.append(" ...");

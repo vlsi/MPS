@@ -10,6 +10,8 @@ import jetbrains.mps.editor.runtime.cells.AbstractCellAction;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 
 public class SingleLineCommentActions {
@@ -39,7 +41,7 @@ public class SingleLineCommentActions {
       } else {
         return;
       }
-      if (ListSequence.fromList(SLinkOperations.getTargets(node, "commentPart", true)).last() == selectedPart) {
+      if (ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 6329021646629104954l, 6329021646629175155l, "commentPart"))).last() == selectedPart) {
         SNodeOperations.insertNextSiblingChild(node, SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.Statement", null));
       } else {
         SNodeOperations.insertNextSiblingChild(selectedPart, SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.CommentPart", null));

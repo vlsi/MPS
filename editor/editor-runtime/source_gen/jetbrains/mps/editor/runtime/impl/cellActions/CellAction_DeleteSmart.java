@@ -6,6 +6,8 @@ import jetbrains.mps.editor.runtime.cells.AbstractCellAction;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.openapi.editor.EditorContext;
@@ -25,12 +27,12 @@ public class CellAction_DeleteSmart extends AbstractCellAction {
     myLink = link;
     myTarget = target;
     SNode genuineLinkDeclaration = SModelUtil.getGenuineLinkDeclaration(myLink);
-    myRole = SPropertyOperations.getString(genuineLinkDeclaration, "role");
+    myRole = SPropertyOperations.getString(genuineLinkDeclaration, MetaAdapterFactory.getProperty(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489288298l, 1071599776563l, "role"));
     // This action used only for aggregation links 
-    myEnabled = SPropertyOperations.hasValue(genuineLinkDeclaration, "metaClass", "aggregation", "reference") && (SPropertyOperations.hasValue(genuineLinkDeclaration, "sourceCardinality", "0..1", "0..1") || SPropertyOperations.hasValue(genuineLinkDeclaration, "sourceCardinality", "1", "0..1"));
-    myCanBeNull = SPropertyOperations.hasValue(genuineLinkDeclaration, "sourceCardinality", "0..1", "0..1");
+    myEnabled = SPropertyOperations.hasValue(genuineLinkDeclaration, MetaAdapterFactory.getProperty(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489288298l, 1071599937831l, "metaClass"), "aggregation", "reference") && (SPropertyOperations.hasValue(genuineLinkDeclaration, MetaAdapterFactory.getProperty(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489288298l, 1071599893252l, "sourceCardinality"), "0..1", "0..1") || SPropertyOperations.hasValue(genuineLinkDeclaration, MetaAdapterFactory.getProperty(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489288298l, 1071599893252l, "sourceCardinality"), "1", "0..1"));
+    myCanBeNull = SPropertyOperations.hasValue(genuineLinkDeclaration, MetaAdapterFactory.getProperty(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489288298l, 1071599893252l, "sourceCardinality"), "0..1", "0..1");
     if (!(myCanBeNull)) {
-      myEnabled = myEnabled && SNodeOperations.getConceptDeclaration(myTarget) != SLinkOperations.getTarget(myLink, "target", false);
+      myEnabled = myEnabled && SNodeOperations.getConceptDeclaration(myTarget) != SLinkOperations.getTarget(myLink, MetaAdapterFactory.getReferenceLink(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489288298l, 1071599976176l, "target"));
     }
   }
   @Override
@@ -42,7 +44,7 @@ public class CellAction_DeleteSmart extends AbstractCellAction {
   public void execute(EditorContext context) {
     SNodeOperations.deleteNode(myTarget);
     if (!(myCanBeNull)) {
-      SNode defaultTarget = SModelUtil_new.instantiateConceptDeclaration(SLinkOperations.getTarget(myLink, "target", false), SNodeOperations.getModel(mySource));
+      SNode defaultTarget = SModelUtil_new.instantiateConceptDeclaration(SLinkOperations.getTarget(myLink, MetaAdapterFactory.getReferenceLink(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489288298l, 1071599976176l, "target")), SNodeOperations.getModel(mySource));
       SLinkOperations.setTarget(mySource, myRole, defaultTarget, true);
     }
   }

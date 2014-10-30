@@ -10,6 +10,8 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import java.util.Queue;
 import jetbrains.mps.internal.collections.runtime.QueueSequence;
 import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
@@ -40,7 +42,7 @@ public class CreateDefaultEditor_Action extends BaseAction {
   }
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
     SNode conceptDeclaration = SNodeOperations.as(((SNode) MapSequence.fromMap(_params).get("selectedNode")), "jetbrains.mps.lang.structure.structure.ConceptDeclaration");
-    if (conceptDeclaration == null || SPropertyOperations.getBoolean(conceptDeclaration, "abstract") || SPropertyOperations.getString(conceptDeclaration, "name") == null) {
+    if (conceptDeclaration == null || SPropertyOperations.getBoolean(conceptDeclaration, MetaAdapterFactory.getProperty(new UUID(-4094437568663370681l, -8968368868337559369l), 1169125787135l, 4628067390765956802l, "abstract")) || SPropertyOperations.getString(conceptDeclaration, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")) == null) {
       return false;
     }
 
@@ -102,8 +104,8 @@ public class CreateDefaultEditor_Action extends BaseAction {
       SNode editorDeclaration = SNodeOperations.cast(ConceptEditorHelper.createNewConceptAspectInstance(LanguageAspect.EDITOR, conceptDeclaration, SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration")), "jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration");
       assert BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), editorDeclaration, "virtual_getConceptDeclaration_7055725856388417603", new Object[]{}) != null;
       assert eq_e50aup_a0d0a0g(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), editorDeclaration, "virtual_getConceptDeclaration_7055725856388417603", new Object[]{}), conceptDeclaration);
-      if (SPropertyOperations.getString(conceptDeclaration, "virtualPackage") != null) {
-        SPropertyOperations.set(editorDeclaration, "virtualPackage", SPropertyOperations.getString(conceptDeclaration, "virtualPackage"));
+      if (SPropertyOperations.getString(conceptDeclaration, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1133920641626l, 1193676396447l, "virtualPackage")) != null) {
+        SPropertyOperations.set(editorDeclaration, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1133920641626l, 1193676396447l, "virtualPackage"), SPropertyOperations.getString(conceptDeclaration, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1133920641626l, 1193676396447l, "virtualPackage")));
       }
       BehaviorReflection.invokeNonVirtual(Void.class, editorDeclaration, "jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration", "call_createDefaultEditor_2970389781192937380", new Object[]{false});
       ((EditorContext) MapSequence.fromMap(_params).get("editorContext")).getEditorComponent().update();

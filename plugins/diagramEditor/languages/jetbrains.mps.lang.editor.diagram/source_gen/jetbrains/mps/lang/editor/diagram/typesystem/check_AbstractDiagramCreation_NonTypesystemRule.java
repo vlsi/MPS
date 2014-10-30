@@ -9,6 +9,8 @@ import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
@@ -21,18 +23,18 @@ public class check_AbstractDiagramCreation_NonTypesystemRule extends AbstractNon
   public check_AbstractDiagramCreation_NonTypesystemRule() {
   }
   public void applyRule(final SNode abstractDiagramCreation, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    if (!((SNodeOperations.isInstanceOf(SLinkOperations.getTarget(abstractDiagramCreation, "query", true), "jetbrains.mps.baseLanguage.structure.DotExpression") && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(abstractDiagramCreation, "query", true), "jetbrains.mps.baseLanguage.structure.DotExpression"), "operation", true), "jetbrains.mps.lang.smodel.structure.SLinkListAccess")))) {
+    if (!((SNodeOperations.isInstanceOf(SLinkOperations.getTarget(abstractDiagramCreation, MetaAdapterFactory.getContainmentLink(new UUID(6991546026468590289l, -9160623158338601007l), 1301388602725986966l, 1301388602726005547l, "query")), "jetbrains.mps.baseLanguage.structure.DotExpression") && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(abstractDiagramCreation, MetaAdapterFactory.getContainmentLink(new UUID(6991546026468590289l, -9160623158338601007l), 1301388602725986966l, 1301388602726005547l, "query")), "jetbrains.mps.baseLanguage.structure.DotExpression"), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1197027756228l, 1197027833540l, "operation")), "jetbrains.mps.lang.smodel.structure.SLinkListAccess")))) {
       {
         MessageTarget errorTarget = new NodeMessageTarget();
-        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(SLinkOperations.getTarget(abstractDiagramCreation, "query", true), "Use DotExpression to point to the containment LinkDeclaration", "r:40b64a44-89c9-404d-9824-6c98cb8ca353(jetbrains.mps.lang.editor.diagram.typesystem)", "8570854907291359968", null, errorTarget);
+        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(SLinkOperations.getTarget(abstractDiagramCreation, MetaAdapterFactory.getContainmentLink(new UUID(6991546026468590289l, -9160623158338601007l), 1301388602725986966l, 1301388602726005547l, "query")), "Use DotExpression to point to the containment LinkDeclaration", "r:40b64a44-89c9-404d-9824-6c98cb8ca353(jetbrains.mps.lang.editor.diagram.typesystem)", "8570854907291359968", null, errorTarget);
       }
     } else {
-      SNode containmentLink = SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(abstractDiagramCreation, "query", true), "jetbrains.mps.baseLanguage.structure.DotExpression"), "operation", true), "jetbrains.mps.lang.smodel.structure.SLinkListAccess"), "link", false);
-      if (SLinkOperations.getTarget(abstractDiagramCreation, "concept", false) != null && SLinkOperations.getTarget(containmentLink, "target", false) != null && !(SConceptOperations.isSubConceptOf(SLinkOperations.getTarget(abstractDiagramCreation, "concept", false), NameUtil.nodeFQName(SLinkOperations.getTarget(containmentLink, "target", false))))) {
+      SNode containmentLink = SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(abstractDiagramCreation, MetaAdapterFactory.getContainmentLink(new UUID(6991546026468590289l, -9160623158338601007l), 1301388602725986966l, 1301388602726005547l, "query")), "jetbrains.mps.baseLanguage.structure.DotExpression"), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1197027756228l, 1197027833540l, "operation")), "jetbrains.mps.lang.smodel.structure.SLinkListAccess"), MetaAdapterFactory.getReferenceLink(new UUID(8675788371017092295l, -9098312342032910879l), 1138056282393l, 1138056546658l, "link"));
+      if (SLinkOperations.getTarget(abstractDiagramCreation, MetaAdapterFactory.getReferenceLink(new UUID(6991546026468590289l, -9160623158338601007l), 1301388602725986966l, 1301388602726005553l, "concept")) != null && SLinkOperations.getTarget(containmentLink, MetaAdapterFactory.getReferenceLink(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489288298l, 1071599976176l, "target")) != null && !(SConceptOperations.isSubConceptOf(SLinkOperations.getTarget(abstractDiagramCreation, MetaAdapterFactory.getReferenceLink(new UUID(6991546026468590289l, -9160623158338601007l), 1301388602725986966l, 1301388602726005553l, "concept")), NameUtil.nodeFQName(SLinkOperations.getTarget(containmentLink, MetaAdapterFactory.getReferenceLink(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489288298l, 1071599976176l, "target")))))) {
         {
           MessageTarget errorTarget = new NodeMessageTarget();
           errorTarget = new ReferenceMessageTarget("concept");
-          IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(abstractDiagramCreation, "Only subconcept of containment link target contept (" + SLinkOperations.getTarget(containmentLink, "target", false) + ") can be used here.", "r:40b64a44-89c9-404d-9824-6c98cb8ca353(jetbrains.mps.lang.editor.diagram.typesystem)", "1301388602725875172", null, errorTarget);
+          IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(abstractDiagramCreation, "Only subconcept of containment link target contept (" + SLinkOperations.getTarget(containmentLink, MetaAdapterFactory.getReferenceLink(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489288298l, 1071599976176l, "target")) + ") can be used here.", "r:40b64a44-89c9-404d-9824-6c98cb8ca353(jetbrains.mps.lang.editor.diagram.typesystem)", "1301388602725875172", null, errorTarget);
         }
       }
     }

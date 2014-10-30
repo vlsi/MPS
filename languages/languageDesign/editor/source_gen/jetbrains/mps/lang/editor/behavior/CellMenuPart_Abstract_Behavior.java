@@ -5,6 +5,8 @@ package jetbrains.mps.lang.editor.behavior;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 
 public class CellMenuPart_Abstract_Behavior {
   public static void init(SNode thisNode) {
@@ -21,7 +23,7 @@ public class CellMenuPart_Abstract_Behavior {
   }
   public static SNode call_getEditedAggregationLink_1219409809074(SNode thisNode) {
     SNode editedLink = CellMenuPart_Abstract_Behavior.call_getEditedLink_1219409839992(thisNode);
-    if (SPropertyOperations.hasValue(editedLink, "metaClass", "aggregation", "reference")) {
+    if (SPropertyOperations.hasValue(editedLink, MetaAdapterFactory.getProperty(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489288298l, 1071599937831l, "metaClass"), "aggregation", "reference")) {
       return editedLink;
     }
     return null;

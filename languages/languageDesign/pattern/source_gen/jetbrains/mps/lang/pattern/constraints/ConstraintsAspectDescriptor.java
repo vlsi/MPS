@@ -5,6 +5,7 @@ package jetbrains.mps.lang.pattern.constraints;
 import jetbrains.mps.smodel.runtime.ConstraintsDescriptor;
 import java.util.Arrays;
 import jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor;
+import jetbrains.mps.smodel.adapter.ids.SConceptId;
 
 public class ConstraintsAspectDescriptor implements jetbrains.mps.smodel.runtime.ConstraintsAspectDescriptor {
   public ConstraintsAspectDescriptor() {
@@ -26,9 +27,33 @@ public class ConstraintsAspectDescriptor implements jetbrains.mps.smodel.runtime
       case 3:
         return new OrPatternVariableReference_Constraints();
       default:
-        // todo: illegal in some cases? 
         return new BaseConstraintsDescriptor(fqName);
     }
+  }
+  public ConstraintsDescriptor getDescriptor(SConceptId conceptId) {
+    long id = conceptId.getConceptId();
+    if (id == 1136720037779l) {
+      return new PatternVariableDeclaration_Constraints();
+    }
+    if (id == 1137418540378l) {
+      return new LinkPatternVariableDeclaration_Constraints();
+    }
+    if (id == 1136720037781l) {
+      return new PropertyPatternVariableDeclaration_Constraints();
+    }
+    if (id == 4413230749907802464l) {
+      return new ActionStatement_Constraints();
+    }
+    if (id == 4413230749907733332l) {
+      return new ActionAsPattern_Constraints();
+    }
+    if (id == 3133930811460119173l) {
+      return new PatternVariableReference_Constraints();
+    }
+    if (id == 4264731254635442556l) {
+      return new OrPatternVariableReference_Constraints();
+    }
+    return new BaseConstraintsDescriptor(conceptId);
   }
   private static String[] stringSwitchCases_2qnle6_a0a0b = new String[]{"jetbrains.mps.lang.pattern.structure.ActionAsPattern", "jetbrains.mps.lang.pattern.structure.ActionStatement", "jetbrains.mps.lang.pattern.structure.LinkPatternVariableDeclaration", "jetbrains.mps.lang.pattern.structure.OrPatternVariableReference", "jetbrains.mps.lang.pattern.structure.PatternVariableDeclaration", "jetbrains.mps.lang.pattern.structure.PatternVariableReference", "jetbrains.mps.lang.pattern.structure.PropertyPatternVariableDeclaration"};
 }

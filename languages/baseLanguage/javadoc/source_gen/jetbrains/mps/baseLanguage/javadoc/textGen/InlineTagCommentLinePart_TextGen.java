@@ -5,11 +5,13 @@ package jetbrains.mps.baseLanguage.javadoc.textGen;
 import jetbrains.mps.textGen.SNodeTextGen;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 
 public class InlineTagCommentLinePart_TextGen extends SNodeTextGen {
   public void doGenerateText(SNode node) {
     this.append("{@");
-    appendNode(SLinkOperations.getTarget(node, "tag", true));
+    appendNode(SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-972752984950357426l, -4964296947050367098l), 8970989240999019145l, 6962838954693749192l, "tag")));
     this.append("}");
   }
 }

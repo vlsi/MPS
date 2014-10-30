@@ -5,6 +5,8 @@ package jetbrains.mps.lang.editor.figures.behavior;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 
 public class FigureParameterAttributeMethod_Behavior {
   public static void init(SNode thisNode) {
@@ -16,6 +18,6 @@ public class FigureParameterAttributeMethod_Behavior {
     return SNodeOperations.cast(SNodeOperations.getParent(thisNode), "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration");
   }
   public static SNode virtual_getParameterType_342110547581236128(SNode thisNode) {
-    return SNodeOperations.as(SLinkOperations.getTarget(FigureParameterAttributeMethod_Behavior.call_getMethodDeclaration_7911346875269168300(thisNode), "returnType", true), "jetbrains.mps.baseLanguage.structure.ClassifierType");
+    return SNodeOperations.as(SLinkOperations.getTarget(FigureParameterAttributeMethod_Behavior.call_getMethodDeclaration_7911346875269168300(thisNode), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123132l, 1068580123133l, "returnType")), "jetbrains.mps.baseLanguage.structure.ClassifierType");
   }
 }

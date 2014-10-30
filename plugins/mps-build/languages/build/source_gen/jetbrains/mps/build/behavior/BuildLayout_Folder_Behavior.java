@@ -6,6 +6,8 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.build.util.Context;
 import jetbrains.mps.build.util.UnpackHelper;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
@@ -25,11 +27,11 @@ public class BuildLayout_Folder_Behavior {
   public static void virtual_unpack_7128123785277710736(SNode thisNode, UnpackHelper helper, Iterable<Object> artifacts) {
     SNode parent = helper.parent(thisNode);
     String parentLocation = helper.contentLocations().get(parent);
-    String folderLocation = parentLocation + "/" + BuildString_Behavior.call_getText_4380385936562005550(SLinkOperations.getTarget(thisNode, "containerName", true), helper.getMacroHelper());
+    String folderLocation = parentLocation + "/" + BuildString_Behavior.call_getText_4380385936562005550(SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 7389400916848050060l, 4380385936562148502l, "containerName")), helper.getMacroHelper());
     helper.locations().put(thisNode, folderLocation);
     helper.contentLocations().put(thisNode, folderLocation);
     for (SNode ic : Sequence.fromIterable(BuildLayout_Folder_Behavior.call_getImportContentChildren_7045211410692956036(thisNode))) {
-      SNode node = SNodeOperations.as(SLinkOperations.getTarget(ic, "target", false), "jetbrains.mps.build.structure.BuildLayout_PathElement");
+      SNode node = SNodeOperations.as(SLinkOperations.getTarget(ic, MetaAdapterFactory.getReferenceLink(new UUID(8755280088213897754l, -5075149991798053422l), 5610619299013057363l, 5610619299013057365l, "target")), "jetbrains.mps.build.structure.BuildLayout_PathElement");
       if ((node != null)) {
         // note: if node is imported directly - do not override its original location 
         if (!(helper.locations().containsKey(node))) {
@@ -53,7 +55,7 @@ public class BuildLayout_Folder_Behavior {
       if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.build.structure.BuildLayout_Node")) {
         return Sequence.fromIterable(BuildLayout_Folder_Behavior.call_getImportContentChildren_7045211410692956036(thisNode)).any(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {
-            return SLinkOperations.getTarget(it, "target", false) == node;
+            return SLinkOperations.getTarget(it, MetaAdapterFactory.getReferenceLink(new UUID(8755280088213897754l, -5075149991798053422l), 5610619299013057363l, 5610619299013057365l, "target")) == node;
           }
         });
       }
@@ -64,17 +66,17 @@ public class BuildLayout_Folder_Behavior {
         return false;
       }
 
-      for (SNode c : ListSequence.fromList(SLinkOperations.getTargets(thisNode, "children", true))) {
+      for (SNode c : ListSequence.fromList(SLinkOperations.getChildren(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 4701820937132344003l, 7389400916848037006l, "children")))) {
         if (SNodeOperations.isInstanceOf(c, "jetbrains.mps.build.structure.BuildLayout_Files")) {
           SNode files = SNodeOperations.as(c, "jetbrains.mps.build.structure.BuildLayout_Files");
-          if (ListSequence.fromList(SLinkOperations.getTargets(files, "parameters", true)).isEmpty() && eq_n0rd9q_a0a1a0a3a1a5(art.getSourcePath(), BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(files, "path", true), "virtual_getRelativePath_5481553824944787371", new Object[]{}))) {
+          if (ListSequence.fromList(SLinkOperations.getChildren(files, MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 2750015747481074431l, 2750015747481074433l, "parameters"))).isEmpty() && eq_n0rd9q_a0a1a0a3a1a5(art.getSourcePath(), BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(files, MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 2750015747481074431l, 2750015747481074432l, "path")), "virtual_getRelativePath_5481553824944787371", new Object[]{}))) {
             return true;
           }
         } else if (SNodeOperations.isInstanceOf(c, "jetbrains.mps.build.structure.BuildLayout_AbstractCopy")) {
           SNode copy = SNodeOperations.as(c, "jetbrains.mps.build.structure.BuildLayout_Copy");
-          if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(copy, "fileset", true), "jetbrains.mps.build.structure.BuildInputFiles")) {
-            SNode inputSet = SNodeOperations.cast(SLinkOperations.getTarget(copy, "fileset", true), "jetbrains.mps.build.structure.BuildInputFiles");
-            if (ListSequence.fromList(SLinkOperations.getTargets(inputSet, "selectors", true)).isEmpty() && eq_n0rd9q_a0a1a1a0a0d0b0f(art.getSourcePath(), BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(inputSet, "dir", true), "virtual_getRelativePath_5481553824944787371", new Object[]{}))) {
+          if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(copy, MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 9184644532456496017l, 5248329904287857082l, "fileset")), "jetbrains.mps.build.structure.BuildInputFiles")) {
+            SNode inputSet = SNodeOperations.cast(SLinkOperations.getTarget(copy, MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 9184644532456496017l, 5248329904287857082l, "fileset")), "jetbrains.mps.build.structure.BuildInputFiles");
+            if (ListSequence.fromList(SLinkOperations.getChildren(inputSet, MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 5248329904287794596l, 5248329904287794679l, "selectors"))).isEmpty() && eq_n0rd9q_a0a1a1a0a0d0b0f(art.getSourcePath(), BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(inputSet, MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 5248329904287794596l, 5248329904287794598l, "dir")), "virtual_getRelativePath_5481553824944787371", new Object[]{}))) {
               return true;
             }
           }
@@ -84,7 +86,7 @@ public class BuildLayout_Folder_Behavior {
     return BehaviorReflection.invokeSuper(Boolean.TYPE, thisNode, "jetbrains.mps.build.structure.BuildLayout_NamedContainer", "virtual_exports_6547494638219603457", new Object[]{object});
   }
   public static Iterable<SNode> call_getImportContentChildren_7045211410692956036(SNode thisNode) {
-    List<SNode> list = ListSequence.fromList(SLinkOperations.getTargets(thisNode, "children", true)).where(new IWhereFilter<SNode>() {
+    List<SNode> list = ListSequence.fromList(SLinkOperations.getChildren(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 4701820937132344003l, 7389400916848037006l, "children"))).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.structure.BuildLayout_ImportContent");
       }
@@ -95,11 +97,11 @@ public class BuildLayout_Folder_Behavior {
     }).toListSequence();
     return ListSequence.fromList(list).concat(ListSequence.fromList(list).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(it, "target", false), "jetbrains.mps.build.structure.BuildLayout_Folder");
+        return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(it, MetaAdapterFactory.getReferenceLink(new UUID(8755280088213897754l, -5075149991798053422l), 5610619299013057363l, 5610619299013057365l, "target")), "jetbrains.mps.build.structure.BuildLayout_Folder");
       }
     }).translate(new ITranslator2<SNode, SNode>() {
       public Iterable<SNode> translate(SNode it) {
-        return BuildLayout_Folder_Behavior.call_getImportContentChildren_7045211410692956036(SNodeOperations.cast(SLinkOperations.getTarget(it, "target", false), "jetbrains.mps.build.structure.BuildLayout_Folder"));
+        return BuildLayout_Folder_Behavior.call_getImportContentChildren_7045211410692956036(SNodeOperations.cast(SLinkOperations.getTarget(it, MetaAdapterFactory.getReferenceLink(new UUID(8755280088213897754l, -5075149991798053422l), 5610619299013057363l, 5610619299013057365l, "target")), "jetbrains.mps.build.structure.BuildLayout_Folder"));
       }
     }));
   }

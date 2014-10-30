@@ -7,6 +7,8 @@ import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.util.List;
@@ -123,94 +125,94 @@ public final class RuleUtil {
     if (mappingLabelDeclaration == null) {
       return null;
     }
-    String result = SPropertyOperations.getString(mappingLabelDeclaration, "name");
+    String result = SPropertyOperations.getString(mappingLabelDeclaration, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"));
     return (result.length() == 0 ? null : result);
   }
   public static String getCreateRootRuleLabel(SNode rule) {
-    return getMappingLabelName(SLinkOperations.getTarget(rule, "label", false));
+    return getMappingLabelName(SLinkOperations.getTarget(rule, MetaAdapterFactory.getReferenceLink(new UUID(-5475912601019530992l, -8082971551085732881l), 1167087469898l, 1200923511980l, "label")));
   }
   public static String getTemplateFragmentLabel(SNode templateFragment) {
-    return getMappingLabelName(SLinkOperations.getTarget(templateFragment, "labelDeclaration", false));
+    return getMappingLabelName(SLinkOperations.getTarget(templateFragment, MetaAdapterFactory.getReferenceLink(new UUID(-5475912601019530992l, -8082971551085732881l), 1095672379244l, 1200916687663l, "labelDeclaration")));
   }
   public static String getNodeMacroLabel(SNode nodeMacro) {
-    return getMappingLabelName(SLinkOperations.getTarget(nodeMacro, "mappingLabel", false));
+    return getMappingLabelName(SLinkOperations.getTarget(nodeMacro, MetaAdapterFactory.getReferenceLink(new UUID(-5475912601019530992l, -8082971551085732881l), 1087833466690l, 1200912223215l, "mappingLabel")));
   }
   public static String getPatternReductionRuleLabel(SNode patternRule) {
-    return getMappingLabelName(SLinkOperations.getTarget(patternRule, "labelDeclaration", false));
+    return getMappingLabelName(SLinkOperations.getTarget(patternRule, MetaAdapterFactory.getReferenceLink(new UUID(-5475912601019530992l, -8082971551085732881l), 1805153994416516020l, 1805153994416516026l, "labelDeclaration")));
   }
   public static String getBaseRuleLabel(SNode rule) {
-    return getMappingLabelName(SLinkOperations.getTarget(rule, "labelDeclaration", false));
+    return getMappingLabelName(SLinkOperations.getTarget(rule, MetaAdapterFactory.getReferenceLink(new UUID(-5475912601019530992l, -8082971551085732881l), 1167169308231l, 1200917515464l, "labelDeclaration")));
   }
   public static SNode getBaseRuleApplicableConcept(SNode rule) {
-    return SLinkOperations.getTarget(rule, "applicableConcept", false);
+    return SLinkOperations.getTarget(rule, MetaAdapterFactory.getReferenceLink(new UUID(-5475912601019530992l, -8082971551085732881l), 1167169308231l, 1167169349424l, "applicableConcept"));
   }
   public static boolean getBaseRuleApplyToConceptInheritors(SNode rule) {
-    return SPropertyOperations.getBoolean(rule, "applyToConceptInheritors");
+    return SPropertyOperations.getBoolean(rule, MetaAdapterFactory.getProperty(new UUID(-5475912601019530992l, -8082971551085732881l), 1167169308231l, 1167272244852l, "applyToConceptInheritors"));
   }
   public static SNode getBaseRuleCondition(SNode rule) {
-    return SLinkOperations.getTarget(rule, "conditionFunction", true);
+    return SLinkOperations.getTarget(rule, MetaAdapterFactory.getContainmentLink(new UUID(-5475912601019530992l, -8082971551085732881l), 1167169308231l, 1167169362365l, "conditionFunction"));
   }
   public static SNode getCreateRootRuleCondition(SNode rule) {
-    return SLinkOperations.getTarget(rule, "conditionFunction", true);
+    return SLinkOperations.getTarget(rule, MetaAdapterFactory.getContainmentLink(new UUID(-5475912601019530992l, -8082971551085732881l), 1167087469898l, 1167087469900l, "conditionFunction"));
   }
   public static SNode getCreateRootRuleTemplateNode(SNode rule) {
-    return SLinkOperations.getTarget(rule, "templateNode", false);
+    return SLinkOperations.getTarget(rule, MetaAdapterFactory.getReferenceLink(new UUID(-5475912601019530992l, -8082971551085732881l), 1167087469898l, 1167087469901l, "templateNode"));
   }
   public static SNode getReductionRuleConsequence(SNode reductionRule) {
-    return SLinkOperations.getTarget(reductionRule, "ruleConsequence", true);
+    return SLinkOperations.getTarget(reductionRule, MetaAdapterFactory.getContainmentLink(new UUID(-5475912601019530992l, -8082971551085732881l), 1167327847730l, 1169672767469l, "ruleConsequence"));
   }
   public static SNode getDropRuleCondition(SNode rule) {
-    return SLinkOperations.getTarget(rule, "conditionFunction", true);
+    return SLinkOperations.getTarget(rule, MetaAdapterFactory.getContainmentLink(new UUID(-5475912601019530992l, -8082971551085732881l), 1219952072943l, 1219952317655l, "conditionFunction"));
   }
   public static SNode getDropRuleApplicableConcept(SNode rule) {
-    return SLinkOperations.getTarget(rule, "applicableConcept", false);
+    return SLinkOperations.getTarget(rule, MetaAdapterFactory.getReferenceLink(new UUID(-5475912601019530992l, -8082971551085732881l), 1219952072943l, 1219952338328l, "applicableConcept"));
   }
   public static SNode getRootRuleTemplateNode(SNode rule) {
-    return SLinkOperations.getTarget(rule, "template", false);
+    return SLinkOperations.getTarget(rule, MetaAdapterFactory.getReferenceLink(new UUID(-5475912601019530992l, -8082971551085732881l), 1167514355419l, 1167514355421l, "template"));
   }
   public static boolean getRootRuleKeepSourceRoot(SNode rule) {
-    return SPropertyOperations.hasValue(rule, "keepSourceRoot", "true", null);
+    return SPropertyOperations.hasValue(rule, MetaAdapterFactory.getProperty(new UUID(-5475912601019530992l, -8082971551085732881l), 1167514355419l, 1177959072138l, "keepSourceRoot"), "true", null);
   }
   public static SNode getSwitchModifiedSwitch(SNode switchNode) {
-    return SLinkOperations.getTarget(switchNode, "modifiedSwitch", false);
+    return SLinkOperations.getTarget(switchNode, MetaAdapterFactory.getReferenceLink(new UUID(-5475912601019530992l, -8082971551085732881l), 1112730859144l, 1112820671508l, "modifiedSwitch"));
   }
   public static SNode getSwitchDefaultConsequence(SNode switchNode) {
-    return SLinkOperations.getTarget(switchNode, "defaultConsequence", true);
+    return SLinkOperations.getTarget(switchNode, MetaAdapterFactory.getContainmentLink(new UUID(-5475912601019530992l, -8082971551085732881l), 1112730859144l, 1168558750579l, "defaultConsequence"));
   }
   public static SNode getSwitch_NullInputMessage(SNode switch_) {
-    return SLinkOperations.getTarget(switch_, "nullInputMessage", true);
+    return SLinkOperations.getTarget(switch_, MetaAdapterFactory.getContainmentLink(new UUID(-5475912601019530992l, -8082971551085732881l), 1112730859144l, 1226355936225l, "nullInputMessage"));
   }
   public static SNode getPatternReductionRuleConsequence(SNode reductionRule) {
-    return SLinkOperations.getTarget(reductionRule, "ruleConsequence", true);
+    return SLinkOperations.getTarget(reductionRule, MetaAdapterFactory.getContainmentLink(new UUID(-5475912601019530992l, -8082971551085732881l), 1805153994416516020l, 1805153994416516024l, "ruleConsequence"));
   }
   public static SNode getMapSrc_PostMapperFunction(SNode node) {
     if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.generator.structure.MapSrcNodeMacro")) {
-      return SLinkOperations.getTarget(SNodeOperations.cast(node, "jetbrains.mps.lang.generator.structure.MapSrcNodeMacro"), "postMapperFunction", true);
+      return SLinkOperations.getTarget(SNodeOperations.cast(node, "jetbrains.mps.lang.generator.structure.MapSrcNodeMacro"), MetaAdapterFactory.getContainmentLink(new UUID(-5475912601019530992l, -8082971551085732881l), 1131073187192l, 1225229330048l, "postMapperFunction"));
     } else if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.generator.structure.MapSrcListMacro")) {
-      return SLinkOperations.getTarget(SNodeOperations.cast(node, "jetbrains.mps.lang.generator.structure.MapSrcListMacro"), "postMapperFunction", true);
+      return SLinkOperations.getTarget(SNodeOperations.cast(node, "jetbrains.mps.lang.generator.structure.MapSrcListMacro"), MetaAdapterFactory.getContainmentLink(new UUID(-5475912601019530992l, -8082971551085732881l), 1133037731736l, 1225229689103l, "postMapperFunction"));
     }
     return null;
   }
   public static SNode getMapSrc_MapperFunction(SNode node) {
     if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.generator.structure.MapSrcNodeMacro")) {
-      return SLinkOperations.getTarget(SNodeOperations.cast(node, "jetbrains.mps.lang.generator.structure.MapSrcNodeMacro"), "mapperFunction", true);
+      return SLinkOperations.getTarget(SNodeOperations.cast(node, "jetbrains.mps.lang.generator.structure.MapSrcNodeMacro"), MetaAdapterFactory.getContainmentLink(new UUID(-5475912601019530992l, -8082971551085732881l), 1131073187192l, 1170725844563l, "mapperFunction"));
     } else if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.generator.structure.MapSrcListMacro")) {
-      return SLinkOperations.getTarget(SNodeOperations.cast(node, "jetbrains.mps.lang.generator.structure.MapSrcListMacro"), "mapperFunction", true);
+      return SLinkOperations.getTarget(SNodeOperations.cast(node, "jetbrains.mps.lang.generator.structure.MapSrcListMacro"), MetaAdapterFactory.getContainmentLink(new UUID(-5475912601019530992l, -8082971551085732881l), 1133037731736l, 1170871384825l, "mapperFunction"));
     }
     return null;
   }
   public static SNode getPatternReductionRulePatternNode(SNode reductionRule) {
-    return SLinkOperations.getTarget(SLinkOperations.getTarget(reductionRule, "pattern", true), "patternNode", true);
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(reductionRule, MetaAdapterFactory.getContainmentLink(new UUID(-5475912601019530992l, -8082971551085732881l), 1805153994416516020l, 1805153994416556314l, "pattern")), MetaAdapterFactory.getContainmentLink(new UUID(-3143127453834064983l, -5836335846783251545l), 1136720037777l, 1136720037778l, "patternNode"));
   }
   public static String[] getTemplateDeclarationParameterNames(SNode template) {
-    List<SNode> params = SLinkOperations.getTargets(template, "parameter", true);
+    List<SNode> params = SLinkOperations.getChildren(template, MetaAdapterFactory.getContainmentLink(new UUID(-5475912601019530992l, -8082971551085732881l), 982871510064032177l, 982871510064032342l, "parameter"));
     String[] result = new String[ListSequence.fromList(params).count()];
     for (int i = 0; i < result.length; i++) {
       SNode param = ListSequence.fromList(params).getElement(i);
       if (param == null) {
         return null;
       }
-      result[i] = SPropertyOperations.getString(param, "name");
+      result[i] = SPropertyOperations.getString(param, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"));
       if (result[i] == null) {
         return null;
       }
@@ -218,76 +220,76 @@ public final class RuleUtil {
     return result;
   }
   public static SNode getIfMacro_ConditionFunction(SNode macro) {
-    return SLinkOperations.getTarget(macro, "conditionFunction", true);
+    return SLinkOperations.getTarget(macro, MetaAdapterFactory.getContainmentLink(new UUID(-5475912601019530992l, -8082971551085732881l), 1118773211870l, 1167945861827l, "conditionFunction"));
   }
   public static SNode getIfMacro_AlternativeConsequence(SNode macro) {
-    return SLinkOperations.getTarget(macro, "alternativeConsequence", true);
+    return SLinkOperations.getTarget(macro, MetaAdapterFactory.getContainmentLink(new UUID(-5475912601019530992l, -8082971551085732881l), 1118773211870l, 1194989344771l, "alternativeConsequence"));
   }
   public static SNode getReferenceMacro_GetReferent(SNode macro) {
-    return SLinkOperations.getTarget(macro, "referentFunction", true);
+    return SLinkOperations.getTarget(macro, MetaAdapterFactory.getContainmentLink(new UUID(-5475912601019530992l, -8082971551085732881l), 1088761943574l, 1167770376702l, "referentFunction"));
   }
   public static SNode getPropertyMacro_ValueFunction(SNode macro) {
-    return SLinkOperations.getTarget(macro, "propertyValueFunction", true);
+    return SLinkOperations.getTarget(macro, MetaAdapterFactory.getContainmentLink(new UUID(-5475912601019530992l, -8082971551085732881l), 1087833241328l, 1167756362303l, "propertyValueFunction"));
   }
   public static SNode getTemplateFragment_ContextNodeQuery(SNode tf) {
-    return SLinkOperations.getTarget(tf, "contextNodeQuery", true);
+    return SLinkOperations.getTarget(tf, MetaAdapterFactory.getContainmentLink(new UUID(-5475912601019530992l, -8082971551085732881l), 1095672379244l, 1184374535435l, "contextNodeQuery"));
   }
   public static SNode getMappingScriptReference_Script(SNode ref) {
-    return SLinkOperations.getTarget(ref, "mappingScript", false);
+    return SLinkOperations.getTarget(ref, MetaAdapterFactory.getReferenceLink(new UUID(-5475912601019530992l, -8082971551085732881l), 1195502151594l, 1195502167610l, "mappingScript"));
   }
   public static SNode getSwitchMacro_TemplateSwitch(SNode macro) {
-    return SLinkOperations.getTarget(macro, "templateSwitch", false);
+    return SLinkOperations.getTarget(macro, MetaAdapterFactory.getReferenceLink(new UUID(-5475912601019530992l, -8082971551085732881l), 1112731569622l, 1112731629154l, "templateSwitch"));
   }
   public static SNode getTemplateSwitchMacro_TemplateSwitch(SNode macro) {
-    return SNodeOperations.cast(SLinkOperations.getTarget(macro, "template", false), "jetbrains.mps.lang.generator.structure.TemplateSwitch");
+    return SNodeOperations.cast(SLinkOperations.getTarget(macro, MetaAdapterFactory.getReferenceLink(new UUID(-5475912601019530992l, -8082971551085732881l), 1722980698497626400l, 1722980698497626483l, "template")), "jetbrains.mps.lang.generator.structure.TemplateSwitch");
   }
   public static SNode getIncludeMacro_Template(SNode macro) {
-    return SLinkOperations.getTarget(macro, "includeTemplate", false);
+    return SLinkOperations.getTarget(macro, MetaAdapterFactory.getReferenceLink(new UUID(-5475912601019530992l, -8082971551085732881l), 1194565793557l, 1194566366375l, "includeTemplate"));
   }
   public static SNode getCallMacro_Template(SNode macro) {
-    return SNodeOperations.cast(SLinkOperations.getTarget(macro, "template", false), "jetbrains.mps.lang.generator.structure.TemplateDeclaration");
+    return SNodeOperations.cast(SLinkOperations.getTarget(macro, MetaAdapterFactory.getReferenceLink(new UUID(-5475912601019530992l, -8082971551085732881l), 1722980698497626400l, 1722980698497626483l, "template")), "jetbrains.mps.lang.generator.structure.TemplateDeclaration");
   }
   public static SNode getWeaving_ContextNodeQuery(SNode rule) {
-    return SLinkOperations.getTarget(rule, "contextNodeQuery", true);
+    return SLinkOperations.getTarget(rule, MetaAdapterFactory.getContainmentLink(new UUID(-5475912601019530992l, -8082971551085732881l), 1167171569011l, 1184616230853l, "contextNodeQuery"));
   }
   public static SNode getWeaving_Consequence(SNode rule) {
-    return SLinkOperations.getTarget(rule, "ruleConsequence", true);
+    return SLinkOperations.getTarget(rule, MetaAdapterFactory.getContainmentLink(new UUID(-5475912601019530992l, -8082971551085732881l), 1167171569011l, 1169570368028l, "ruleConsequence"));
   }
   public static SNode getTemplateFragmentByAnnotatedNode(SNode node) {
     return AttributeOperations.getAttribute(node, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.generator.structure.TemplateFragment"));
   }
   public static SNode getTemplateDeclarationReference_Template(SNode ref) {
-    return SNodeOperations.cast(SLinkOperations.getTarget(ref, "template", false), "jetbrains.mps.lang.generator.structure.TemplateDeclaration");
+    return SNodeOperations.cast(SLinkOperations.getTarget(ref, MetaAdapterFactory.getReferenceLink(new UUID(-5475912601019530992l, -8082971551085732881l), 1722980698497626400l, 1722980698497626483l, "template")), "jetbrains.mps.lang.generator.structure.TemplateDeclaration");
   }
   public static SNode getInlineTemplate_templateNode(SNode ruleConsequence) {
-    return SLinkOperations.getTarget(ruleConsequence, "templateNode", true);
+    return SLinkOperations.getTarget(ruleConsequence, MetaAdapterFactory.getContainmentLink(new UUID(-5475912601019530992l, -8082971551085732881l), 1177093525992l, 1177093586806l, "templateNode"));
   }
   public static SNode getInlineTemplateWithContext_contentNode(SNode ruleConsequence) {
-    return SLinkOperations.getTarget(ruleConsequence, "contentNode", true);
+    return SLinkOperations.getTarget(ruleConsequence, MetaAdapterFactory.getContainmentLink(new UUID(-5475912601019530992l, -8082971551085732881l), 8900764248744213868l, 8900764248744213871l, "contentNode"));
   }
   public static List<SNode> getInlineSwitch_case(SNode ruleConsequence) {
-    return SLinkOperations.getTargets(ruleConsequence, "case", true);
+    return SLinkOperations.getChildren(ruleConsequence, MetaAdapterFactory.getContainmentLink(new UUID(-5475912601019530992l, -8082971551085732881l), 1195158154974l, 1195158408710l, "case"));
   }
   public static SNode getInlineSwitch_caseCondition(SNode inlineSwitchCase) {
-    return SLinkOperations.getTarget(inlineSwitchCase, "conditionFunction", true);
+    return SLinkOperations.getTarget(inlineSwitchCase, MetaAdapterFactory.getContainmentLink(new UUID(-5475912601019530992l, -8082971551085732881l), 1195158388553l, 1195158608805l, "conditionFunction"));
   }
   public static SNode getInlineSwitch_caseConsequence(SNode inlineSwitchCase) {
-    return SLinkOperations.getTarget(inlineSwitchCase, "caseConsequence", true);
+    return SLinkOperations.getTarget(inlineSwitchCase, MetaAdapterFactory.getContainmentLink(new UUID(-5475912601019530992l, -8082971551085732881l), 1195158388553l, 1195158637244l, "caseConsequence"));
   }
   public static SNode getInlineSwitch_defaultConsequence(SNode ruleConsequence) {
-    return SLinkOperations.getTarget(ruleConsequence, "defaultConsequence", true);
+    return SLinkOperations.getTarget(ruleConsequence, MetaAdapterFactory.getContainmentLink(new UUID(-5475912601019530992l, -8082971551085732881l), 1195158154974l, 1195158241124l, "defaultConsequence"));
   }
   public static SNode getWeaveEach_Template(SNode weaveEach) {
-    return SLinkOperations.getTarget(weaveEach, "template", false);
+    return SLinkOperations.getTarget(weaveEach, MetaAdapterFactory.getReferenceLink(new UUID(-5475912601019530992l, -8082971551085732881l), 1169569792945l, 1169569853122l, "template"));
   }
   public static SNode getWeaveEach_SourceNodesQuery(SNode weaveEach) {
-    return SLinkOperations.getTarget(weaveEach, "sourceNodesQuery", true);
+    return SLinkOperations.getTarget(weaveEach, MetaAdapterFactory.getContainmentLink(new UUID(-5475912601019530992l, -8082971551085732881l), 1169569792945l, 1169569939267l, "sourceNodesQuery"));
   }
   public static boolean getMappingConfiguration_TopPrio(SNode mapping) {
-    return SPropertyOperations.getBoolean(mapping, "topPriorityGroup");
+    return SPropertyOperations.getBoolean(mapping, MetaAdapterFactory.getProperty(new UUID(-5475912601019530992l, -8082971551085732881l), 1095416546421l, 1184950341882l, "topPriorityGroup"));
   }
   public static SNode getTemplateDeclaration_ContentNode(SNode decl) {
-    return SLinkOperations.getTarget(decl, "contentNode", true);
+    return SLinkOperations.getTarget(decl, MetaAdapterFactory.getContainmentLink(new UUID(-5475912601019530992l, -8082971551085732881l), 1092059087312l, 1092060348987l, "contentNode"));
   }
   public static SNode getSourceNodesQuery(SNode node) {
     if (node == null) {
@@ -295,18 +297,18 @@ public final class RuleUtil {
     }
     String conceptFqName = node.getConcept().getQualifiedName();
     if (conceptFqName.equals("jetbrains.mps.lang.generator.structure.LoopMacro")) {
-      return SLinkOperations.getTarget(SNodeOperations.cast(node, "jetbrains.mps.lang.generator.structure.LoopMacro"), "sourceNodesQuery", true);
+      return SLinkOperations.getTarget(SNodeOperations.cast(node, "jetbrains.mps.lang.generator.structure.LoopMacro"), MetaAdapterFactory.getContainmentLink(new UUID(-5475912601019530992l, -8082971551085732881l), 1118786554307l, 1167952069335l, "sourceNodesQuery"));
     } else if (conceptFqName.equals("jetbrains.mps.lang.generator.structure.CopySrcListMacro")) {
-      return SLinkOperations.getTarget(SNodeOperations.cast(node, "jetbrains.mps.lang.generator.structure.CopySrcListMacro"), "sourceNodesQuery", true);
+      return SLinkOperations.getTarget(SNodeOperations.cast(node, "jetbrains.mps.lang.generator.structure.CopySrcListMacro"), MetaAdapterFactory.getContainmentLink(new UUID(-5475912601019530992l, -8082971551085732881l), 1114729360583l, 1168278589236l, "sourceNodesQuery"));
     } else if (conceptFqName.equals("jetbrains.mps.lang.generator.structure.MapSrcListMacro")) {
-      return SLinkOperations.getTarget(SNodeOperations.cast(node, "jetbrains.mps.lang.generator.structure.MapSrcListMacro"), "sourceNodesQuery", true);
+      return SLinkOperations.getTarget(SNodeOperations.cast(node, "jetbrains.mps.lang.generator.structure.MapSrcListMacro"), MetaAdapterFactory.getContainmentLink(new UUID(-5475912601019530992l, -8082971551085732881l), 1133037731736l, 1168291362368l, "sourceNodesQuery"));
     } else if (conceptFqName.equals("jetbrains.mps.lang.generator.structure.WeaveMacro")) {
-      return SLinkOperations.getTarget(SNodeOperations.cast(node, "jetbrains.mps.lang.generator.structure.WeaveMacro"), "nodesToWeaveQuery", true);
+      return SLinkOperations.getTarget(SNodeOperations.cast(node, "jetbrains.mps.lang.generator.structure.WeaveMacro"), MetaAdapterFactory.getContainmentLink(new UUID(-5475912601019530992l, -8082971551085732881l), 3462145372628071891l, 3462145372628083179l, "nodesToWeaveQuery"));
     }
     return null;
   }
   public static SNode getWeaveMacro_Consequence(SNode weaveMacro) {
-    return SLinkOperations.getTarget(weaveMacro, "ruleConsequence", true);
+    return SLinkOperations.getTarget(weaveMacro, MetaAdapterFactory.getContainmentLink(new UUID(-5475912601019530992l, -8082971551085732881l), 3462145372628071891l, 3462145372628083181l, "ruleConsequence"));
   }
   public static SNode getSourceNodeQuery(SNode node) {
     if (node == null) {
@@ -314,73 +316,73 @@ public final class RuleUtil {
     }
     String conceptFqName = node.getConcept().getQualifiedName();
     if (conceptFqName.equals("jetbrains.mps.lang.generator.structure.CopySrcNodeMacro")) {
-      return SLinkOperations.getTarget(SNodeOperations.cast(node, "jetbrains.mps.lang.generator.structure.CopySrcNodeMacro"), "sourceNodeQuery", true);
+      return SLinkOperations.getTarget(SNodeOperations.cast(node, "jetbrains.mps.lang.generator.structure.CopySrcNodeMacro"), MetaAdapterFactory.getContainmentLink(new UUID(-5475912601019530992l, -8082971551085732881l), 1114706874351l, 1168024447342l, "sourceNodeQuery"));
     } else if (conceptFqName.equals("jetbrains.mps.lang.generator.structure.MapSrcNodeMacro")) {
-      return SLinkOperations.getTarget(SNodeOperations.cast(node, "jetbrains.mps.lang.generator.structure.MapSrcNodeMacro"), "sourceNodeQuery", true);
+      return SLinkOperations.getTarget(SNodeOperations.cast(node, "jetbrains.mps.lang.generator.structure.MapSrcNodeMacro"), MetaAdapterFactory.getContainmentLink(new UUID(-5475912601019530992l, -8082971551085732881l), 1131073187192l, 1168281849769l, "sourceNodeQuery"));
     } else if (conceptFqName.equals("jetbrains.mps.lang.generator.structure.SwitchMacro")) {
-      return SLinkOperations.getTarget(SNodeOperations.cast(node, "jetbrains.mps.lang.generator.structure.SwitchMacro"), "sourceNodeQuery", true);
+      return SLinkOperations.getTarget(SNodeOperations.cast(node, "jetbrains.mps.lang.generator.structure.SwitchMacro"), MetaAdapterFactory.getContainmentLink(new UUID(-5475912601019530992l, -8082971551085732881l), 1112731569622l, 1168380395224l, "sourceNodeQuery"));
     } else if (conceptFqName.equals("jetbrains.mps.lang.generator.structure.IncludeMacro")) {
-      return SLinkOperations.getTarget(SNodeOperations.cast(node, "jetbrains.mps.lang.generator.structure.IncludeMacro"), "sourceNodeQuery", true);
+      return SLinkOperations.getTarget(SNodeOperations.cast(node, "jetbrains.mps.lang.generator.structure.IncludeMacro"), MetaAdapterFactory.getContainmentLink(new UUID(-5475912601019530992l, -8082971551085732881l), 1194565793557l, 1194565823413l, "sourceNodeQuery"));
     } else if (conceptFqName.equals("jetbrains.mps.lang.generator.structure.TemplateCallMacro")) {
-      return SLinkOperations.getTarget(SNodeOperations.cast(node, "jetbrains.mps.lang.generator.structure.TemplateCallMacro"), "sourceNodeQuery", true);
+      return SLinkOperations.getTarget(SNodeOperations.cast(node, "jetbrains.mps.lang.generator.structure.TemplateCallMacro"), MetaAdapterFactory.getContainmentLink(new UUID(-5475912601019530992l, -8082971551085732881l), 1510949579266781519l, 1510949579266801461l, "sourceNodeQuery"));
     } else if (conceptFqName.equals("jetbrains.mps.lang.generator.structure.TraceMacro")) {
-      return SLinkOperations.getTarget(SNodeOperations.cast(node, "jetbrains.mps.lang.generator.structure.TraceMacro"), "sourceNodeQuery", true);
+      return SLinkOperations.getTarget(SNodeOperations.cast(node, "jetbrains.mps.lang.generator.structure.TraceMacro"), MetaAdapterFactory.getContainmentLink(new UUID(-5475912601019530992l, -8082971551085732881l), 3118009927543452571l, 3118009927543452625l, "sourceNodeQuery"));
     } else if (conceptFqName.equals("jetbrains.mps.lang.generator.structure.TemplateSwitchMacro")) {
-      return SLinkOperations.getTarget(SNodeOperations.cast(node, "jetbrains.mps.lang.generator.structure.TemplateSwitchMacro"), "sourceNodeQuery", true);
+      return SLinkOperations.getTarget(SNodeOperations.cast(node, "jetbrains.mps.lang.generator.structure.TemplateSwitchMacro"), MetaAdapterFactory.getContainmentLink(new UUID(-5475912601019530992l, -8082971551085732881l), 982871510068000147l, 982871510068000158l, "sourceNodeQuery"));
     }
     return null;
   }
   public static List<SNode> getTemplateCall_Arguments(SNode macro) {
-    return SLinkOperations.getTargets(macro, "actualArgument", true);
+    return SLinkOperations.getChildren(macro, MetaAdapterFactory.getContainmentLink(new UUID(-5475912601019530992l, -8082971551085732881l), 1722980698497626400l, 1722980698497626405l, "actualArgument"));
 
   }
   public static SNode getTemplateCall_Template(SNode macro) {
-    return SLinkOperations.getTarget(macro, "template", false);
+    return SLinkOperations.getTarget(macro, MetaAdapterFactory.getReferenceLink(new UUID(-5475912601019530992l, -8082971551085732881l), 1722980698497626400l, 1722980698497626483l, "template"));
   }
   public static Object evaluateBaseLanguageExpression(SNode expr) {
     if (SNodeOperations.isInstanceOf(expr, "jetbrains.mps.baseLanguage.structure.BooleanConstant")) {
-      return SPropertyOperations.getBoolean(SNodeOperations.cast(expr, "jetbrains.mps.baseLanguage.structure.BooleanConstant"), "value");
+      return SPropertyOperations.getBoolean(SNodeOperations.cast(expr, "jetbrains.mps.baseLanguage.structure.BooleanConstant"), MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123137l, 1068580123138l, "value"));
     } else if (SNodeOperations.isInstanceOf(expr, "jetbrains.mps.baseLanguage.structure.IntegerConstant")) {
-      return SPropertyOperations.getInteger(SNodeOperations.cast(expr, "jetbrains.mps.baseLanguage.structure.IntegerConstant"), "value");
+      return SPropertyOperations.getInteger(SNodeOperations.cast(expr, "jetbrains.mps.baseLanguage.structure.IntegerConstant"), MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 1068580320020l, 1068580320021l, "value"));
     } else if (SNodeOperations.isInstanceOf(expr, "jetbrains.mps.baseLanguage.structure.StringLiteral")) {
-      return SPropertyOperations.getString(SNodeOperations.cast(expr, "jetbrains.mps.baseLanguage.structure.StringLiteral"), "value");
+      return SPropertyOperations.getString(SNodeOperations.cast(expr, "jetbrains.mps.baseLanguage.structure.StringLiteral"), MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 1070475926800l, 1070475926801l, "value"));
     } else if (SNodeOperations.isInstanceOf(expr, "jetbrains.mps.baseLanguage.structure.NullLiteral")) {
       return null;
     }
     throw new IllegalArgumentException();
   }
   public static SNode getTemplateArgumentQueryExpression_Query(SNode expr) {
-    return SLinkOperations.getTarget(expr, "query", true);
+    return SLinkOperations.getTarget(expr, MetaAdapterFactory.getContainmentLink(new UUID(-5475912601019530992l, -8082971551085732881l), 4035562641222585520l, 4035562641222618754l, "query"));
   }
   public static SNode getTemplateArgumentParameterExpression_Parameter(SNode expr) {
-    return SLinkOperations.getTarget(expr, "parameter", false);
+    return SLinkOperations.getTarget(expr, MetaAdapterFactory.getReferenceLink(new UUID(-5475912601019530992l, -8082971551085732881l), 5005282049925926521l, 5005282049925926522l, "parameter"));
   }
   public static SNode getTemplateArgumentVarRef_VarMacro(SNode expr) {
-    return SLinkOperations.getTarget(expr, "varmacro", false);
+    return SLinkOperations.getTarget(expr, MetaAdapterFactory.getReferenceLink(new UUID(-5475912601019530992l, -8082971551085732881l), 4426797670061482024l, 2721957369897614810l, "varmacro"));
   }
   public static boolean getMappingScript_IsPreProcess(SNode script) {
-    return SPropertyOperations.hasValue(script, "scriptKind", "pre_processing", "post_processing");
+    return SPropertyOperations.hasValue(script, MetaAdapterFactory.getProperty(new UUID(-5475912601019530992l, -8082971551085732881l), 1195499912406l, 1195595592106l, "scriptKind"), "pre_processing", "post_processing");
   }
   public static boolean getMappingScript_ModifiesModel(SNode script) {
-    return SPropertyOperations.getBoolean(script, "modifiesModel");
+    return SPropertyOperations.getBoolean(script, MetaAdapterFactory.getProperty(new UUID(-5475912601019530992l, -8082971551085732881l), 1195499912406l, 1195595611951l, "modifiesModel"));
   }
   public static SNode getMappingScript_CodeBlock(SNode script) {
-    return SLinkOperations.getTarget(script, "codeBlock", true);
+    return SLinkOperations.getTarget(script, MetaAdapterFactory.getContainmentLink(new UUID(-5475912601019530992l, -8082971551085732881l), 1195499912406l, 1195501105008l, "codeBlock"));
   }
   public static SNode getInsertMacro_Query(SNode macro) {
-    return SLinkOperations.getTarget(macro, "createNodeQuery", true);
+    return SLinkOperations.getTarget(macro, MetaAdapterFactory.getContainmentLink(new UUID(-5475912601019530992l, -8082971551085732881l), 1311078761699563726l, 1311078761699602381l, "createNodeQuery"));
   }
   public static SNode getMappingConfiguration_IsApplicable(SNode mapping) {
-    return SLinkOperations.getTarget(mapping, "condition", true);
+    return SLinkOperations.getTarget(mapping, MetaAdapterFactory.getContainmentLink(new UUID(-5475912601019530992l, -8082971551085732881l), 1095416546421l, 7830515785164764091l, "condition"));
   }
   public static String getVarMacro_Name(SNode macro) {
     return BehaviorReflection.invokeNonVirtual(String.class, macro, "jetbrains.mps.lang.generator.structure.VarMacro", "call_getName_2721957369897649366", new Object[]{});
   }
   public static SNode getVarMacro_Query(SNode macro) {
-    return SLinkOperations.getTarget(macro, "value", true);
+    return SLinkOperations.getTarget(macro, MetaAdapterFactory.getContainmentLink(new UUID(-5475912601019530992l, -8082971551085732881l), 5015072279636464462l, 5015072279636624596l, "value"));
   }
   public static SNode getDismissTopRule_message(SNode dismissTopRuleConsequence) {
-    return SLinkOperations.getTarget(dismissTopRuleConsequence, "generatorMessage", true);
+    return SLinkOperations.getTarget(dismissTopRuleConsequence, MetaAdapterFactory.getContainmentLink(new UUID(-5475912601019530992l, -8082971551085732881l), 1168559512253l, 1169669152123l, "generatorMessage"));
   }
   public static Iterable<String> getModelChangeOperations() {
     return ModelChangeOperations;

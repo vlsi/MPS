@@ -4,6 +4,8 @@ package jetbrains.mps.lang.test.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
@@ -11,10 +13,10 @@ public class NodeCheckOperation_Behavior {
   public static void init(SNode thisNode) {
   }
   public static String call_getName_1217435265700(SNode thisNode) {
-    if (SPropertyOperations.getString(thisNode, "name") == null || SPropertyOperations.getString(thisNode, "name").length() == 0) {
+    if (SPropertyOperations.getString(thisNode, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")) == null || SPropertyOperations.getString(thisNode, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")).length() == 0) {
       return BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_getDefaultName_8578280453511146306", new Object[]{});
     } else {
-      return SPropertyOperations.getString(thisNode, "name");
+      return SPropertyOperations.getString(thisNode, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"));
     }
   }
   public static boolean virtual_isMpsStartRequired_3310779261129403089(SNode thisNode) {

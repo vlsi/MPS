@@ -5,11 +5,13 @@ package jetbrains.mps.lang.generator.behavior;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.pattern.behavior.PatternVarsUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 
 public class TemplateArgumentPatternVarRefExpression_Behavior {
   public static void init(SNode thisNode) {
   }
   public static String virtual_getVariableName_2902001550281937661(SNode thisNode) {
-    return PatternVarsUtil.getFieldName(SLinkOperations.getTarget(thisNode, "patternVarDecl", false));
+    return PatternVarsUtil.getFieldName(SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getReferenceLink(new UUID(-5475912601019530992l, -8082971551085732881l), 4665309944889425032l, 4665309944889425604l, "patternVarDecl")));
   }
 }

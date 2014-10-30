@@ -5,6 +5,8 @@ package jetbrains.mps.lang.constraints.behavior;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import java.util.List;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
@@ -17,8 +19,8 @@ public class ConstraintFunction_PropertyGetter_Behavior {
   }
   public static SNode virtual_getExpectedReturnType_1213877374441(SNode thisNode) {
     SNode propertyConstraint = SNodeOperations.getAncestor(thisNode, "jetbrains.mps.lang.constraints.structure.NodePropertyConstraint", false, false);
-    SNode property = SLinkOperations.getTarget(propertyConstraint, "applicableProperty", false);
-    SNode dataType = SLinkOperations.getTarget(property, "dataType", false);
+    SNode property = SLinkOperations.getTarget(propertyConstraint, MetaAdapterFactory.getReferenceLink(new UUID(4560956707034974760l, -8426014792598182751l), 1147467115080l, 1147467295099l, "applicableProperty"));
+    SNode dataType = SLinkOperations.getTarget(property, MetaAdapterFactory.getReferenceLink(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489288299l, 1082985295845l, "dataType"));
     if (dataType != null) {
       return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), dataType, "virtual_toBaseLanguageType_1213877229718", new Object[]{});
     }

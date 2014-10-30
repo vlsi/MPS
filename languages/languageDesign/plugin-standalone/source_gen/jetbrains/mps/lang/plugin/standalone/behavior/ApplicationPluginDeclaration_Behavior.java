@@ -5,6 +5,8 @@ package jetbrains.mps.lang.plugin.standalone.behavior;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.util.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
@@ -13,14 +15,14 @@ public class ApplicationPluginDeclaration_Behavior {
   public static void init(SNode thisNode) {
   }
   public static String call_getGeneratedName_481983775135179014(SNode thisNode) {
-    return NameUtil.toValidIdentifier(SPropertyOperations.getString(thisNode, "name")) + "_CustomApplicationPlugin";
+    return NameUtil.toValidIdentifier(SPropertyOperations.getString(thisNode, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"))) + "_CustomApplicationPlugin";
   }
   public static String call_getGeneratedClassFQName_481983775135179025(SNode thisNode) {
     return SNodeOperations.getModelLongName(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getModel(thisNode)) + "." + ApplicationPluginDeclaration_Behavior.call_getGeneratedName_481983775135179014(thisNode);
   }
   public static SNode virtual_createType_1213877527970(SNode thisNode) {
     SNode type = SConceptOperations.createNewNode("jetbrains.mps.lang.plugin.standalone.structure.ApplicationPluginType", null);
-    SLinkOperations.setTarget(type, "plugin", thisNode, false);
+    SLinkOperations.setTarget(type, MetaAdapterFactory.getReferenceLink(new UUID(-1190087553929428158l, -5684136324204096701l), 481983775135178831l, 481983775135178833l, "plugin"), thisNode);
     return type;
   }
 }

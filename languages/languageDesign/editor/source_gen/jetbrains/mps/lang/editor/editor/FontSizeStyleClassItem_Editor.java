@@ -20,6 +20,8 @@ import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_Generic_Item;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
@@ -87,13 +89,13 @@ public class FontSizeStyleClassItem_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private static boolean renderingCondition_xqkmqp_a2a(SNode node, EditorContext editorContext) {
-    return SLinkOperations.getTarget(node, "query", true) == null;
+    return SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(1782411230332735017l, -6324602048325217350l), 1186415722038l, 1221064706952l, "query")) == null;
   }
   public static class FontSizeStyleClassItem_generic_cellMenu_xqkmqp_a0c0 extends AbstractCellMenuPart_Generic_Item {
     public FontSizeStyleClassItem_generic_cellMenu_xqkmqp_a0c0() {
     }
     public void handleAction(SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
-      SNodeFactoryOperations.setNewChild(node, "query", "jetbrains.mps.lang.editor.structure.QueryFunction_Integer");
+      SNodeFactoryOperations.setNewChild(node, MetaAdapterFactory.getContainmentLink(new UUID(1782411230332735017l, -6324602048325217350l), 1186415722038l, 1221064706952l, "query"), "jetbrains.mps.lang.editor.structure.QueryFunction_Integer");
     }
     public String getMatchingText() {
       return "query";
@@ -122,6 +124,6 @@ public class FontSizeStyleClassItem_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private static boolean renderingCondition_xqkmqp_a3a(SNode node, EditorContext editorContext) {
-    return (SLinkOperations.getTarget(node, "query", true) != null);
+    return (SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(1782411230332735017l, -6324602048325217350l), 1186415722038l, 1221064706952l, "query")) != null);
   }
 }

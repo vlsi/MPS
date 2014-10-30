@@ -5,14 +5,16 @@ package jetbrains.mps.samples.generator_demo.demoLang6.generator.template.main;
 import jetbrains.mps.generator.runtime.Generated;
 import jetbrains.mps.generator.template.PropertyMacroContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 
 @Generated
 public class QueriesGenerated {
   public final boolean NEEDS_OPCONTEXT = false;
   public static Object propertyMacro_GetPropertyValue_3978102045101880178(final PropertyMacroContext _context) {
-    return SPropertyOperations.getString(_context.getNode(), "text");
+    return SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(new UUID(-9008477858049602728l, -6814456189104365393l), 3978102045101855363l, 3978102045101855475l, "text"));
   }
   public static Object propertyMacro_GetPropertyValue_3978102045101880673(final PropertyMacroContext _context) {
-    return SPropertyOperations.getString(_context.getNode(), "text");
+    return SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(new UUID(-9008477858049602728l, -6814456189104365393l), 3978102045101856876l, 3978102045101856886l, "text"));
   }
 }

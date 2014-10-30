@@ -8,6 +8,8 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
@@ -21,12 +23,12 @@ public class check_BuildSource_JavaOptions_NonTypesystemRule extends AbstractNon
   public check_BuildSource_JavaOptions_NonTypesystemRule() {
   }
   public void applyRule(final SNode opts, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    if ("IntelliJ".equals(SPropertyOperations.getString(opts, "compiler"))) {
+    if ("IntelliJ".equals(SPropertyOperations.getString(opts, MetaAdapterFactory.getProperty(new UUID(8755280088213897754l, -5075149991798053422l), 927724900262033858l, 2059109515400425365l, "compiler")))) {
       SNode project = SNodeOperations.getAncestor(opts, "jetbrains.mps.build.structure.BuildProject", false, false);
       if ((project != null)) {
-        boolean hasIdeaHomeVar = ListSequence.fromList(SLinkOperations.getTargets(project, "macros", true)).any(new IWhereFilter<SNode>() {
+        boolean hasIdeaHomeVar = ListSequence.fromList(SLinkOperations.getChildren(project, MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 5617550519002745363l, 5617550519002745378l, "macros"))).any(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {
-            return SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.structure.BuildFolderMacro") && SPropertyOperations.getString(SNodeOperations.cast(it, "jetbrains.mps.build.structure.BuildFolderMacro"), "name").equals("idea_home");
+            return SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.structure.BuildFolderMacro") && SPropertyOperations.getString(SNodeOperations.cast(it, "jetbrains.mps.build.structure.BuildFolderMacro"), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")).equals("idea_home");
           }
         });
         if (!(hasIdeaHomeVar)) {

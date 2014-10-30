@@ -6,12 +6,14 @@ import jetbrains.mps.textGen.SNodeTextGen;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.core.properties.util.PropEscapeUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 
 public class PropertiesDeclaration_TextGen extends SNodeTextGen {
   public void doGenerateText(SNode node) {
-    this.append(PropEscapeUtil.escapeKey(SPropertyOperations.getString(node, "name")));
+    this.append(PropEscapeUtil.escapeKey(SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"))));
     this.append("=");
-    this.append(PropEscapeUtil.escapeValue(SPropertyOperations.getString(node, "value")));
+    this.append(PropEscapeUtil.escapeValue(SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(new UUID(6411313803625843570l, -6660548049992482726l), 3961775458390522561l, 3961775458390522596l, "value"))));
     this.appendNewLine();
   }
 }

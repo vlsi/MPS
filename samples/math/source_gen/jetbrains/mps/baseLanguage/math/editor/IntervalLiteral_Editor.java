@@ -10,6 +10,8 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
 import jetbrains.mps.nodeEditor.cells.ModelAccessor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.editor.runtime.cells.EmptyCellAction;
@@ -51,7 +53,7 @@ public class IntervalLiteral_Editor extends DefaultNodeEditor {
   private EditorCell createReadOnlyModelAccessor_yq81ip_a0(final EditorContext editorContext, final SNode node) {
     EditorCell_Property editorCell = EditorCell_Property.create(editorContext, new ModelAccessor() {
       public String getText() {
-        if (SPropertyOperations.getBoolean(node, "startIncluded")) {
+        if (SPropertyOperations.getBoolean(node, MetaAdapterFactory.getProperty(new UUID(3676340747305173022l, -6911132873973321185l), 1235747354988l, 1235747354991l, "startIncluded"))) {
           return "[";
         } else {
           return "(";
@@ -76,7 +78,7 @@ public class IntervalLiteral_Editor extends DefaultNodeEditor {
     public IntervalLiteral_generic_cellMenu_yq81ip_a0a0() {
     }
     public void handleAction(SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
-      SPropertyOperations.set(node, "startIncluded", "" + (false));
+      SPropertyOperations.set(node, MetaAdapterFactory.getProperty(new UUID(3676340747305173022l, -6911132873973321185l), 1235747354988l, 1235747354991l, "startIncluded"), "" + (false));
     }
     public String getMatchingText() {
       return "(";
@@ -86,7 +88,7 @@ public class IntervalLiteral_Editor extends DefaultNodeEditor {
     public IntervalLiteral_generic_cellMenu_yq81ip_b0a0() {
     }
     public void handleAction(SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
-      SPropertyOperations.set(node, "startIncluded", "" + (true));
+      SPropertyOperations.set(node, MetaAdapterFactory.getProperty(new UUID(3676340747305173022l, -6911132873973321185l), 1235747354988l, 1235747354991l, "startIncluded"), "" + (true));
     }
     public String getMatchingText() {
       return "[";
@@ -149,7 +151,7 @@ public class IntervalLiteral_Editor extends DefaultNodeEditor {
   private EditorCell createReadOnlyModelAccessor_yq81ip_e0(final EditorContext editorContext, final SNode node) {
     EditorCell_Property editorCell = EditorCell_Property.create(editorContext, new ModelAccessor() {
       public String getText() {
-        if (SPropertyOperations.getBoolean(node, "endIncluded")) {
+        if (SPropertyOperations.getBoolean(node, MetaAdapterFactory.getProperty(new UUID(3676340747305173022l, -6911132873973321185l), 1235747354988l, 1235747354992l, "endIncluded"))) {
           return "]";
         } else {
           return ")";
@@ -171,7 +173,7 @@ public class IntervalLiteral_Editor extends DefaultNodeEditor {
     public IntervalLiteral_generic_cellMenu_yq81ip_a0e0() {
     }
     public void handleAction(SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
-      SPropertyOperations.set(node, "endIncluded", "" + (false));
+      SPropertyOperations.set(node, MetaAdapterFactory.getProperty(new UUID(3676340747305173022l, -6911132873973321185l), 1235747354988l, 1235747354992l, "endIncluded"), "" + (false));
     }
     public String getMatchingText() {
       return ")";
@@ -181,7 +183,7 @@ public class IntervalLiteral_Editor extends DefaultNodeEditor {
     public IntervalLiteral_generic_cellMenu_yq81ip_b0e0() {
     }
     public void handleAction(SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
-      SPropertyOperations.set(node, "endIncluded", "" + (true));
+      SPropertyOperations.set(node, MetaAdapterFactory.getProperty(new UUID(3676340747305173022l, -6911132873973321185l), 1235747354988l, 1235747354992l, "endIncluded"), "" + (true));
     }
     public String getMatchingText() {
       return "]";

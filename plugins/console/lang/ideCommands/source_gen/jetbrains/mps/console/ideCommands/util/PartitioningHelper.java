@@ -20,6 +20,8 @@ import jetbrains.mps.generator.impl.plan.GenerationPartitioningUtil;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import com.intellij.openapi.project.Project;
 import java.util.ArrayList;
@@ -76,8 +78,8 @@ public class PartitioningHelper {
       List<Pair<String, TemplateMappingConfiguration>> strings = GenerationPartitioningUtil.toStrings(mappingSet);
       for (Pair<String, TemplateMappingConfiguration> string : strings) {
         SNode node = SConceptOperations.createNewNode("jetbrains.mps.console.ideCommands.structure.ClickableGenerator", null);
-        SPropertyOperations.set(node, "moduleId", string.o2.getModel().getSModelReference().resolve(MPSModuleRepository.getInstance()).getModule().getModuleId().toString());
-        SPropertyOperations.set(node, "text", string.o1);
+        SPropertyOperations.set(node, MetaAdapterFactory.getProperty(new UUID(-6492820313512655654l, -6146453626538471728l), 3894227536041114995l, 3894227536041893247l, "moduleId"), string.o2.getModel().getSModelReference().resolve(MPSModuleRepository.getInstance()).getModule().getModuleId().toString());
+        SPropertyOperations.set(node, MetaAdapterFactory.getProperty(new UUID(-2442401883381282302l, -5546511894809623691l), 2348043250037290416l, 3894227536041201194l, "text"), string.o1);
         console.addText(" ");
         console.addNode(node);
         console.addText("\n");

@@ -13,6 +13,8 @@ import org.jetbrains.mps.openapi.language.SConceptRepository;
 import java.util.List;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.baseLanguage.behavior.FieldReferenceOperation_Behavior;
 import jetbrains.mps.baseLanguage.behavior.InstanceMethodCallOperation_Behavior;
 
@@ -53,7 +55,7 @@ public class ThisExpressionToLocal extends KeyMapImpl {
     }
     private void execute_internal(final EditorContext editorContext, final SNode node, final List<SNode> selectedNodes) {
       SNode dot = SNodeOperations.cast(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.DotExpression");
-      SNode operation = SLinkOperations.getTarget(dot, "operation", true);
+      SNode operation = SLinkOperations.getTarget(dot, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1197027756228l, 1197027833540l, "operation"));
       if (SNodeOperations.isInstanceOf(operation, "jetbrains.mps.baseLanguage.structure.FieldReferenceOperation")) {
         SNode fieldRef = SNodeOperations.cast(operation, "jetbrains.mps.baseLanguage.structure.FieldReferenceOperation");
         if (FieldReferenceOperation_Behavior.call_canBeConvertedToLocal_5311267937735160942(fieldRef)) {

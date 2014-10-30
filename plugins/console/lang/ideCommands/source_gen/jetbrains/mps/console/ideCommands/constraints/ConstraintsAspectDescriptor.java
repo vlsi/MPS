@@ -5,6 +5,7 @@ package jetbrains.mps.console.ideCommands.constraints;
 import jetbrains.mps.smodel.runtime.ConstraintsDescriptor;
 import java.util.Arrays;
 import jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor;
+import jetbrains.mps.smodel.adapter.ids.SConceptId;
 
 public class ConstraintsAspectDescriptor implements jetbrains.mps.smodel.runtime.ConstraintsAspectDescriptor {
   public ConstraintsAspectDescriptor() {
@@ -22,9 +23,27 @@ public class ConstraintsAspectDescriptor implements jetbrains.mps.smodel.runtime
       case 3:
         return new OfAspectOperation_Constraints();
       default:
-        // todo: illegal in some cases? 
         return new BaseConstraintsDescriptor(fqName);
     }
+  }
+  public ConstraintsDescriptor getDescriptor(SConceptId conceptId) {
+    long id = conceptId.getConceptId();
+    if (id == 2087237500458473003l) {
+      return new SubtreeStatisticsTarget_Constraints();
+    }
+    if (id == 7820875636625654703l) {
+      return new NodeReference_Constraints();
+    }
+    if (id == 7820875636625377576l) {
+      return new ModelReference_Constraints();
+    }
+    if (id == 5582028874769074087l) {
+      return new ActionCallDeclaredParameter_Constraints();
+    }
+    if (id == 5932042262275638696l) {
+      return new OfAspectOperation_Constraints();
+    }
+    return new BaseConstraintsDescriptor(conceptId);
   }
   private static String[] stringSwitchCases_2qnle6_a0a0b = new String[]{"jetbrains.mps.console.ideCommands.structure.ActionCallDeclaredParameter", "jetbrains.mps.console.ideCommands.structure.ModelReference", "jetbrains.mps.console.ideCommands.structure.NodeReference", "jetbrains.mps.console.ideCommands.structure.OfAspectOperation", "jetbrains.mps.console.ideCommands.structure.SubtreeStatisticsTarget"};
 }

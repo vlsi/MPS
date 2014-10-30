@@ -14,6 +14,8 @@ import jetbrains.mps.smodel.SNodePointer;
 import java.util.Collections;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.intentions.IntentionDescriptor;
 
 public class IntroduceConstant_Intention implements IntentionFactory {
@@ -69,9 +71,9 @@ public class IntroduceConstant_Intention implements IntentionFactory {
       SNode constant = SConceptOperations.createNewNode("org.jetbrains.mps.samples.Constants.structure.Constant", null);
       SNodeOperations.insertPrevSiblingChild(SNodeOperations.getAncestor(node, "org.jetbrains.mps.samples.Constants.structure.Constant", false, false), constant);
       SNode constantReference = SConceptOperations.createNewNode("org.jetbrains.mps.samples.Constants.structure.ConstantReference", null);
-      SLinkOperations.setTarget(constantReference, "original", constant, false);
+      SLinkOperations.setTarget(constantReference, MetaAdapterFactory.getReferenceLink(new UUID(954996654982643920l, -8265182369074421545l), 3990190717072393829l, 3990190717072393830l, "original"), constant);
       SNodeOperations.replaceWithAnother(node, constantReference);
-      SLinkOperations.setTarget(constant, "initializer", node, true);
+      SLinkOperations.setTarget(constant, MetaAdapterFactory.getContainmentLink(new UUID(954996654982643920l, -8265182369074421545l), 1494751830318912537l, 2001769927721010657l, "initializer"), node);
       editorContext.selectWRTFocusPolicy(constant);
     }
     public IntentionDescriptor getDescriptor() {

@@ -16,6 +16,8 @@ import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 
 public class MappingScript_Editor extends DefaultNodeEditor {
@@ -146,7 +148,7 @@ public class MappingScript_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private static boolean renderingCondition_qlhzuh_a1c0(SNode node, EditorContext editorContext) {
-    return SPropertyOperations.hasValue(node, "scriptKind", "pre_processing", "post_processing");
+    return SPropertyOperations.hasValue(node, MetaAdapterFactory.getProperty(new UUID(-5475912601019530992l, -8082971551085732881l), 1195499912406l, 1195595592106l, "scriptKind"), "pre_processing", "post_processing");
   }
   private EditorCell createConstant_qlhzuh_a1c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "modifies model");

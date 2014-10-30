@@ -127,7 +127,7 @@ public class StructureAspectInterpreted implements StructureAspectDescriptor {
   private boolean isConceptDeclaration(SConcept concept) {
     if (concept instanceof SConceptAdapterByName){
       String fqname = concept.getQualifiedName();
-      return fqname.equals(SNodeUtil.concept_ConceptDeclaration) || fqname.equals(SNodeUtil.concept_InterfaceConceptDeclaration);
+      return fqname.equals(SNodeUtil.conceptName_ConceptDeclaration) || fqname.equals(SNodeUtil.conceptName_InterfaceConceptDeclaration);
     } else if (concept instanceof SConceptAdapterById){
       SConceptId id = ((SConceptAdapterById) concept).getId();
       return id.equals(SNodeUtil.conceptId_ConceptDeclaration) || id.equals(SNodeUtil.conceptId_InterfaceConceptDeclaration);

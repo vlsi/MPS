@@ -8,6 +8,8 @@ import jetbrains.mps.lang.script.runtime.AbstractMigrationRefactoring;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 
 public class MigrateParameterizedIntentionDeclaration_MigrationScript extends BaseMigrationScript {
@@ -24,18 +26,18 @@ public class MigrateParameterizedIntentionDeclaration_MigrationScript extends Ba
         return "jetbrains.mps.lang.intentions.structure.ParameterizedIntentionDeclaration";
       }
       public boolean isApplicableInstanceNode(SNode node) {
-        return (SLinkOperations.getTarget(SNodeOperations.cast(node, "jetbrains.mps.lang.intentions.structure.BaseIntentionDeclaration"), "descriptionFunction", true) != null) || (SLinkOperations.getTarget(SNodeOperations.cast(node, "jetbrains.mps.lang.intentions.structure.BaseIntentionDeclaration"), "executeFunction", true) != null);
+        return (SLinkOperations.getTarget(SNodeOperations.cast(node, "jetbrains.mps.lang.intentions.structure.BaseIntentionDeclaration"), MetaAdapterFactory.getContainmentLink(new UUID(-2906742361791184688l, -8921219390863794400l), 2522969319638091381l, 2522969319638093993l, "descriptionFunction")) != null) || (SLinkOperations.getTarget(SNodeOperations.cast(node, "jetbrains.mps.lang.intentions.structure.BaseIntentionDeclaration"), MetaAdapterFactory.getContainmentLink(new UUID(-2906742361791184688l, -8921219390863794400l), 2522969319638091381l, 2522969319638198291l, "executeFunction")) != null);
       }
       public void doUpdateInstanceNode(SNode node) {
-        if ((SLinkOperations.getTarget(SNodeOperations.cast(node, "jetbrains.mps.lang.intentions.structure.BaseIntentionDeclaration"), "descriptionFunction", true) != null)) {
+        if ((SLinkOperations.getTarget(SNodeOperations.cast(node, "jetbrains.mps.lang.intentions.structure.BaseIntentionDeclaration"), MetaAdapterFactory.getContainmentLink(new UUID(-2906742361791184688l, -8921219390863794400l), 2522969319638091381l, 2522969319638093993l, "descriptionFunction")) != null)) {
           SNode descriptionBlock = SConceptOperations.createNewNode("jetbrains.mps.lang.intentions.structure.ParameterizedDescriptionBlock", null);
-          SLinkOperations.setTarget(descriptionBlock, "body", SNodeOperations.copyNode(SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.cast(node, "jetbrains.mps.lang.intentions.structure.BaseIntentionDeclaration"), "descriptionFunction", true), "body", true)), true);
-          SLinkOperations.setTarget(node, "descriptionFunction", descriptionBlock, true);
+          SLinkOperations.setTarget(descriptionBlock, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1137021947720l, 1137022507850l, "body"), SNodeOperations.copyNode(SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.cast(node, "jetbrains.mps.lang.intentions.structure.BaseIntentionDeclaration"), MetaAdapterFactory.getContainmentLink(new UUID(-2906742361791184688l, -8921219390863794400l), 2522969319638091381l, 2522969319638093993l, "descriptionFunction")), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1137021947720l, 1137022507850l, "body"))));
+          SLinkOperations.setTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-2906742361791184688l, -8921219390863794400l), 2522969319638091381l, 2522969319638093993l, "descriptionFunction"), descriptionBlock);
         }
-        if ((SLinkOperations.getTarget(SNodeOperations.cast(node, "jetbrains.mps.lang.intentions.structure.BaseIntentionDeclaration"), "executeFunction", true) != null)) {
+        if ((SLinkOperations.getTarget(SNodeOperations.cast(node, "jetbrains.mps.lang.intentions.structure.BaseIntentionDeclaration"), MetaAdapterFactory.getContainmentLink(new UUID(-2906742361791184688l, -8921219390863794400l), 2522969319638091381l, 2522969319638198291l, "executeFunction")) != null)) {
           SNode executeBlock = SConceptOperations.createNewNode("jetbrains.mps.lang.intentions.structure.ParameterizedExecuteBlock", null);
-          SLinkOperations.setTarget(executeBlock, "body", SNodeOperations.copyNode(SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.cast(node, "jetbrains.mps.lang.intentions.structure.BaseIntentionDeclaration"), "executeFunction", true), "body", true)), true);
-          SLinkOperations.setTarget(node, "executeFunction", executeBlock, true);
+          SLinkOperations.setTarget(executeBlock, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1137021947720l, 1137022507850l, "body"), SNodeOperations.copyNode(SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.cast(node, "jetbrains.mps.lang.intentions.structure.BaseIntentionDeclaration"), MetaAdapterFactory.getContainmentLink(new UUID(-2906742361791184688l, -8921219390863794400l), 2522969319638091381l, 2522969319638198291l, "executeFunction")), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1137021947720l, 1137022507850l, "body"))));
+          SLinkOperations.setTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-2906742361791184688l, -8921219390863794400l), 2522969319638091381l, 2522969319638198291l, "executeFunction"), executeBlock);
         }
 
       }

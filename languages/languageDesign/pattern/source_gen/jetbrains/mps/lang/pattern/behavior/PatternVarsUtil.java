@@ -5,6 +5,8 @@ package jetbrains.mps.lang.pattern.behavior;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 
 public class PatternVarsUtil {
   public PatternVarsUtil() {
@@ -12,16 +14,16 @@ public class PatternVarsUtil {
   public static String getFieldName(SNode patternVar) {
     String prefix = "patternVar_";
     if (SNodeOperations.isInstanceOf(patternVar, "jetbrains.mps.lang.pattern.structure.PatternVariableDeclaration")) {
-      return prefix + SPropertyOperations.getString(SNodeOperations.cast(patternVar, "jetbrains.mps.lang.pattern.structure.PatternVariableDeclaration"), "varName");
+      return prefix + SPropertyOperations.getString(SNodeOperations.cast(patternVar, "jetbrains.mps.lang.pattern.structure.PatternVariableDeclaration"), MetaAdapterFactory.getProperty(new UUID(-3143127453834064983l, -5836335846783251545l), 1136720037779l, 1136720037780l, "varName"));
     }
     if (SNodeOperations.isInstanceOf(patternVar, "jetbrains.mps.lang.pattern.structure.LinkPatternVariableDeclaration")) {
-      return prefix + SPropertyOperations.getString(SNodeOperations.cast(patternVar, "jetbrains.mps.lang.pattern.structure.LinkPatternVariableDeclaration"), "varName");
+      return prefix + SPropertyOperations.getString(SNodeOperations.cast(patternVar, "jetbrains.mps.lang.pattern.structure.LinkPatternVariableDeclaration"), MetaAdapterFactory.getProperty(new UUID(-3143127453834064983l, -5836335846783251545l), 1137418540378l, 1137418571428l, "varName"));
     }
     if (SNodeOperations.isInstanceOf(patternVar, "jetbrains.mps.lang.pattern.structure.PropertyPatternVariableDeclaration")) {
-      return prefix + SPropertyOperations.getString(SNodeOperations.cast(patternVar, "jetbrains.mps.lang.pattern.structure.PropertyPatternVariableDeclaration"), "varName");
+      return prefix + SPropertyOperations.getString(SNodeOperations.cast(patternVar, "jetbrains.mps.lang.pattern.structure.PropertyPatternVariableDeclaration"), MetaAdapterFactory.getProperty(new UUID(-3143127453834064983l, -5836335846783251545l), 1136720037781l, 1136720037782l, "varName"));
     }
     if (SNodeOperations.isInstanceOf(patternVar, "jetbrains.mps.lang.pattern.structure.ListPattern")) {
-      return prefix + SPropertyOperations.getString(SNodeOperations.cast(patternVar, "jetbrains.mps.lang.pattern.structure.ListPattern"), "varName");
+      return prefix + SPropertyOperations.getString(SNodeOperations.cast(patternVar, "jetbrains.mps.lang.pattern.structure.ListPattern"), MetaAdapterFactory.getProperty(new UUID(-3143127453834064983l, -5836335846783251545l), 1136720037779l, 1136720037780l, "varName"));
     }
     return null;
   }

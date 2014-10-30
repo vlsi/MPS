@@ -6,6 +6,8 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 
@@ -13,14 +15,14 @@ public class ClassLikeMember_Behavior {
   public static void init(SNode thisNode) {
   }
   public static boolean call_isRequired_3402736933911994098(SNode thisNode) {
-    return Sequence.fromIterable(SNodeOperations.ofConcept(SLinkOperations.getTargets(thisNode, "modifier", true), "jetbrains.mps.lang.classLike.structure.RequiredModifier")).isNotEmpty();
+    return Sequence.fromIterable(SNodeOperations.ofConcept(SLinkOperations.getChildren(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-4047124328593011742l, -4867279722304451481l), 8264762413010642119l, 3402736933911577960l, "modifier")), "jetbrains.mps.lang.classLike.structure.RequiredModifier")).isNotEmpty();
   }
   public static SNode call_getPlaceholder_9097849371503188814(SNode thisNode) {
-    return Sequence.fromIterable(SNodeOperations.ofConcept(SLinkOperations.getTargets(thisNode, "modifier", true), "jetbrains.mps.lang.classLike.structure.PlaceholderModifier")).first();
+    return Sequence.fromIterable(SNodeOperations.ofConcept(SLinkOperations.getChildren(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-4047124328593011742l, -4867279722304451481l), 8264762413010642119l, 3402736933911577960l, "modifier")), "jetbrains.mps.lang.classLike.structure.PlaceholderModifier")).first();
   }
   public static void virtual_init_6478870542308635887(SNode thisNode, SNode cls) {
     if (ClassLikeMember_Behavior.call_isRequired_3402736933911994098(thisNode)) {
-      ListSequence.fromList(SLinkOperations.getTargets(cls, "member", true)).addElement(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_create_8260330507834998478", new Object[]{}));
+      ListSequence.fromList(SLinkOperations.getChildren(cls, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107461130800l, 5375687026011219971l, "member"))).addElement(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_create_8260330507834998478", new Object[]{}));
     } else if ((ClassLikeMember_Behavior.call_getPlaceholder_9097849371503188814(thisNode) != null)) {
       PlaceholderModifier_Behavior.call_init_6478870542308777138(ClassLikeMember_Behavior.call_getPlaceholder_9097849371503188814(thisNode), cls);
     }

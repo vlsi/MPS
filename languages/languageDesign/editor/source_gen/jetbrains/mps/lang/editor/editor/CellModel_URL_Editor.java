@@ -23,6 +23,8 @@ import java.awt.Color;
 import jetbrains.mps.lang.editor.behavior.EditorCellModel_Behavior;
 import jetbrains.mps.nodeEditor.MPSFonts;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 
 public class CellModel_URL_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
@@ -288,7 +290,7 @@ public class CellModel_URL_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private static boolean renderingCondition_wgj6gq_a1d0(SNode node, EditorContext editorContext) {
-    return !(SPropertyOperations.getBoolean(node, "emptyNoTargetText"));
+    return !(SPropertyOperations.getBoolean(node, MetaAdapterFactory.getProperty(new UUID(1782411230332735017l, -6324602048325217350l), 1139848536355l, 1214560368769l, "emptyNoTargetText")));
   }
   private EditorCell createConstant_wgj6gq_a1d0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "text*");
@@ -334,7 +336,7 @@ public class CellModel_URL_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private static boolean renderingCondition_wgj6gq_a2d0(SNode node, EditorContext editorContext) {
-    return SPropertyOperations.getString(node, "noTargetText") == null;
+    return SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(new UUID(1782411230332735017l, -6324602048325217350l), 1139848536355l, 1139852716018l, "noTargetText")) == null;
   }
   private EditorCell createConstant_wgj6gq_a2d0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "empty text*");

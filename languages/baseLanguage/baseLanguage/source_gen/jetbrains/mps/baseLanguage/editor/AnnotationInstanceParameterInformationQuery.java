@@ -6,6 +6,8 @@ import jetbrains.mps.editor.runtime.style.ParametersInformation;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.editor.runtime.style.StyledTextPrinter;
@@ -17,47 +19,47 @@ public class AnnotationInstanceParameterInformationQuery implements ParametersIn
   public AnnotationInstanceParameterInformationQuery() {
   }
   public Iterable<SNode> getMethods(SNode node, EditorContext editorContext) {
-    if (SLinkOperations.getTarget(node, "annotation", false) != null) {
-      return ListSequence.fromListAndArray(new ArrayList<SNode>(), SLinkOperations.getTarget(node, "annotation", false));
+    if (SLinkOperations.getTarget(node, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1188207840427l, 1188208074048l, "annotation")) != null) {
+      return ListSequence.fromListAndArray(new ArrayList<SNode>(), SLinkOperations.getTarget(node, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1188207840427l, 1188208074048l, "annotation")));
     } else {
       return ListSequence.fromList(new ArrayList<SNode>());
     }
   }
   public void getStyledMethodPresentation(SNode node, EditorContext editorContext, SNode parameterObject, StyledTextPrinter styledText) {
     SNode selectedAnnotationMethod = this.getSelectedAnnotationMethod(editorContext, node);
-    if (SPropertyOperations.getString(parameterObject, "name") != null) {
-      styledText.append(SPropertyOperations.getString(parameterObject, "name"));
+    if (SPropertyOperations.getString(parameterObject, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")) != null) {
+      styledText.append(SPropertyOperations.getString(parameterObject, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")));
     } else {
       styledText.append("<no name>");
     }
     styledText.append("(");
-    for (SNode annotationMethod : ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(node, "annotation", false), "method", true))) {
+    for (SNode annotationMethod : ListSequence.fromList(SLinkOperations.getChildren(SLinkOperations.getTarget(node, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1188207840427l, 1188208074048l, "annotation")), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107461130800l, 1107880067339l, "method")))) {
       if (SNodeOperations.getIndexInParent(annotationMethod) > 0) {
         styledText.append(", ");
       }
       if (selectedAnnotationMethod == annotationMethod) {
         styledText.setBold(true);
       }
-      if (SLinkOperations.getTarget(annotationMethod, "returnType", true) != null) {
-        styledText.append(BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(annotationMethod, "returnType", true), "virtual_getPresentation_1213877396640", new Object[]{}));
+      if (SLinkOperations.getTarget(annotationMethod, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123132l, 1068580123133l, "returnType")) != null) {
+        styledText.append(BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(annotationMethod, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123132l, 1068580123133l, "returnType")), "virtual_getPresentation_1213877396640", new Object[]{}));
       } else {
         styledText.append("???");
       }
-      if (SPropertyOperations.getString(annotationMethod, "name") != null) {
+      if (SPropertyOperations.getString(annotationMethod, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")) != null) {
         styledText.append(" ");
-        styledText.append(SPropertyOperations.getString(annotationMethod, "name"));
+        styledText.append(SPropertyOperations.getString(annotationMethod, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")));
       }
       styledText.setBold(false);
     }
     styledText.append(")");
   }
   public boolean isMethodCurrent(SNode node, EditorContext editorContext, SNode parameterObject) {
-    return SLinkOperations.getTarget(node, "annotation", false) == parameterObject;
+    return SLinkOperations.getTarget(node, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1188207840427l, 1188208074048l, "annotation")) == parameterObject;
   }
   private SNode getSelectedAnnotationMethod(EditorContext editorContext, SNode annotationInstance) {
     for (SNode argument = editorContext.getSelectedNode(); argument != null; argument = SNodeOperations.getParent(argument)) {
       if (SNodeOperations.isInstanceOf(argument, "jetbrains.mps.baseLanguage.structure.AnnotationInstanceValue") && SNodeOperations.getParent(argument) == annotationInstance) {
-        return SLinkOperations.getTarget(SNodeOperations.cast(argument, "jetbrains.mps.baseLanguage.structure.AnnotationInstanceValue"), "key", false);
+        return SLinkOperations.getTarget(SNodeOperations.cast(argument, "jetbrains.mps.baseLanguage.structure.AnnotationInstanceValue"), MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1188214545140l, 1188214555875l, "key"));
       }
     }
     return null;

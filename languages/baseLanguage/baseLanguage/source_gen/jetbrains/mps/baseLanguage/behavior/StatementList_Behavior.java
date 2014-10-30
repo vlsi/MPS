@@ -10,6 +10,8 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import java.util.List;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import java.util.ArrayList;
@@ -48,11 +50,11 @@ public class StatementList_Behavior {
     return BehaviorReflection.invokeVirtual(Boolean.TYPE, parent, "virtual_isStatementListCompact_1237546693016", new Object[]{});
   }
   public static boolean call_isOneLiner_1237538811451(SNode thisNode) {
-    if (ListSequence.fromList(SLinkOperations.getTargets(thisNode, "statement", true)).count() > 1) {
+    if (ListSequence.fromList(SLinkOperations.getChildren(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123136l, 1068581517665l, "statement"))).count() > 1) {
       return false;
     }
-    if (ListSequence.fromList(SLinkOperations.getTargets(thisNode, "statement", true)).count() == 1) {
-      SNode statement = ListSequence.fromList(SLinkOperations.getTargets(thisNode, "statement", true)).first();
+    if (ListSequence.fromList(SLinkOperations.getChildren(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123136l, 1068581517665l, "statement"))).count() == 1) {
+      SNode statement = ListSequence.fromList(SLinkOperations.getChildren(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123136l, 1068581517665l, "statement"))).first();
       if (SNodeOperations.isInstanceOf(statement, "jetbrains.mps.baseLanguage.structure.IContainsStatementList")) {
         return false;
       }
@@ -63,7 +65,7 @@ public class StatementList_Behavior {
     return true;
   }
   public static List<SNode> virtual_getLocalVariableElements_1238805763253(SNode thisNode) {
-    return SLinkOperations.getTargets(thisNode, "statement", true);
+    return SLinkOperations.getChildren(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123136l, 1068581517665l, "statement"));
   }
   public static Set<SNode> call_uncaughtThrowables_3331512479731115649(SNode thisNode, boolean ignoreMayBeThrowables) {
     Set<SNode> result = SetSequence.fromSet(new HashSet<SNode>());
@@ -71,12 +73,12 @@ public class StatementList_Behavior {
     return result;
   }
   public static void call_collectUncaughtThrowables_5412515780383134474(SNode thisNode, Set<SNode> throwables, boolean ignoreMayBeThrowables) {
-    for (SNode statement : ListSequence.fromList(SLinkOperations.getTargets(thisNode, "statement", true))) {
+    for (SNode statement : ListSequence.fromList(SLinkOperations.getChildren(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123136l, 1068581517665l, "statement")))) {
       BehaviorReflection.invokeVirtual(Void.class, statement, "virtual_collectUncaughtMethodThrowables_5412515780383134223", new Object[]{throwables, ignoreMayBeThrowables});
     }
   }
   public static SNode call_getFirstStatement_5420652334935371934(SNode thisNode) {
-    for (SNode statement : SLinkOperations.getTargets(thisNode, "statement", true)) {
+    for (SNode statement : SLinkOperations.getChildren(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123136l, 1068581517665l, "statement"))) {
       if (SNodeOperations.isInstanceOf(statement, "jetbrains.mps.baseLanguage.structure.SingleLineComment") || SNodeOperations.isInstanceOf(statement, "jetbrains.mps.baseLanguage.structure.CommentedStatementsBlock") || SConceptOperations.isExactly(SNodeOperations.getConceptDeclaration(statement), "jetbrains.mps.baseLanguage.structure.Statement")) {
         continue;
       }
@@ -86,9 +88,9 @@ public class StatementList_Behavior {
   }
   public static List<SNode> virtual_getScopeVariables_5067982036267369894(SNode thisNode) {
     List<SNode> result = new ArrayList<SNode>();
-    for (SNode statement : SLinkOperations.getTargets(thisNode, "statement", true)) {
+    for (SNode statement : SLinkOperations.getChildren(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123136l, 1068581517665l, "statement"))) {
       if (SNodeOperations.isInstanceOf(statement, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement")) {
-        ListSequence.fromList(result).addElement(SLinkOperations.getTarget(SNodeOperations.cast(statement, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement"), "localVariableDeclaration", true));
+        ListSequence.fromList(result).addElement(SLinkOperations.getTarget(SNodeOperations.cast(statement, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement"), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068581242864l, 1068581242865l, "localVariableDeclaration")));
       }
     }
     return result;
@@ -101,12 +103,12 @@ public class StatementList_Behavior {
       childStatement = SNodeOperations.getParent(childStatement);
     }
 
-    for (SNode statement : SLinkOperations.getTargets(thisNode, "statement", true)) {
+    for (SNode statement : SLinkOperations.getChildren(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123136l, 1068581517665l, "statement"))) {
       if (childStatement == statement) {
         break;
       }
       if (SNodeOperations.isInstanceOf(statement, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement")) {
-        ListSequence.fromList(result).addElement(SLinkOperations.getTarget(SNodeOperations.cast(statement, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement"), "localVariableDeclaration", true));
+        ListSequence.fromList(result).addElement(SLinkOperations.getTarget(SNodeOperations.cast(statement, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement"), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068581242864l, 1068581242865l, "localVariableDeclaration")));
       }
     }
 
@@ -116,8 +118,8 @@ public class StatementList_Behavior {
     List<SNode> result = new ArrayList<SNode>();
 
     for (int num = 0; num < index; num++) {
-      if (SNodeOperations.isInstanceOf(ListSequence.fromList(SLinkOperations.getTargets(thisNode, "statement", true)).getElement(num), "jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement")) {
-        ListSequence.fromList(result).addElement(SLinkOperations.getTarget(SNodeOperations.cast(ListSequence.fromList(SLinkOperations.getTargets(thisNode, "statement", true)).getElement(num), "jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement"), "localVariableDeclaration", true));
+      if (SNodeOperations.isInstanceOf(ListSequence.fromList(SLinkOperations.getChildren(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123136l, 1068581517665l, "statement"))).getElement(num), "jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement")) {
+        ListSequence.fromList(result).addElement(SLinkOperations.getTarget(SNodeOperations.cast(ListSequence.fromList(SLinkOperations.getChildren(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123136l, 1068581517665l, "statement"))).getElement(num), "jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement"), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068581242864l, 1068581242865l, "localVariableDeclaration")));
       }
     }
 

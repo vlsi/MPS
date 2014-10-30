@@ -22,11 +22,11 @@ import jetbrains.mps.generator.impl.DismissTopMappingRuleException.MessageType;
 import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.Pair;
+import jetbrains.mps.util.SNodeOperations;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
-import org.jetbrains.mps.openapi.model.SNodeUtil;
 
 import java.util.Arrays;
 import java.util.List;
@@ -49,7 +49,7 @@ public class GeneratorUtil {
     StringBuilder indent = new StringBuilder();
     boolean indentInc = true;
     for (Pair<SNode, String> pair : pairs) {
-      String logMessage = indent + pair.o2 + (pair.o1 != null ? ": " + SNodeUtil.getDebugText(pair.o1) : "");
+      String logMessage = indent + pair.o2 + (pair.o1 != null ? ": " + SNodeOperations.getDebugText(pair.o1) : "");
       SNodeReference nr = pair.o1 == null ? null : pair.o1.getReference();
       if (error) {
         logger.error(nr, logMessage);
@@ -82,7 +82,7 @@ public class GeneratorUtil {
       msg = "null";
     } else {
       nr = node.getReference();
-      msg = SNodeUtil.getDebugText(node);
+      msg = SNodeOperations.getDebugText(node);
     }
     return new ProblemDescription(nr, String.format("was %s: %s", nodeRole, msg));
   }
@@ -105,7 +105,7 @@ public class GeneratorUtil {
 
   public static ProblemDescription describeIfExists(SNode node, String nodeRole) {
     if (node != null) {
-      return new ProblemDescription(node.getReference(), String.format("-- was %s: %s", nodeRole, SNodeUtil.getDebugText(node)));
+      return new ProblemDescription(node.getReference(), String.format("-- was %s: %s", nodeRole, SNodeOperations.getDebugText(node)));
     }
     return null;
   }

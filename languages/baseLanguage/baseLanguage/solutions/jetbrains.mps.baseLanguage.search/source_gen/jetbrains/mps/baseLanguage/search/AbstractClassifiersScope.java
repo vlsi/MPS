@@ -10,6 +10,8 @@ import org.jetbrains.mps.util.Condition;
 import java.util.ArrayList;
 import jetbrains.mps.util.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
@@ -47,7 +49,7 @@ public abstract class AbstractClassifiersScope extends AbstractSearchScope imple
       for (SNode classifier : classifiers) {
         boolean isClassConcept = jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.isInstanceOf(classifier, "jetbrains.mps.baseLanguage.structure.ClassConcept");
 
-        if ((constraint & IClassifiersSearchScope.NON_FINAL) == IClassifiersSearchScope.NON_FINAL && isClassConcept && SPropertyOperations.getBoolean(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.cast(classifier, "jetbrains.mps.baseLanguage.structure.ClassConcept"), "isFinal")) {
+        if ((constraint & IClassifiersSearchScope.NON_FINAL) == IClassifiersSearchScope.NON_FINAL && isClassConcept && SPropertyOperations.getBoolean(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.cast(classifier, "jetbrains.mps.baseLanguage.structure.ClassConcept"), MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 1068390468198l, 1221565133444l, "isFinal"))) {
           continue;
         }
         if ((constraint & IClassifiersSearchScope.INTERFACE) == IClassifiersSearchScope.INTERFACE && jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.isInstanceOf(classifier, "jetbrains.mps.baseLanguage.structure.Interface") && !(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.isInstanceOf(classifier, "jetbrains.mps.baseLanguage.structure.Annotation")) && condition.met(classifier)) {
@@ -95,7 +97,7 @@ public abstract class AbstractClassifiersScope extends AbstractSearchScope imple
           }
         }
         if ((constraint & IClassifiersSearchScope.ENUM_CONSTANT) == IClassifiersSearchScope.ENUM_CONSTANT && jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.isInstanceOf(classifier, "jetbrains.mps.baseLanguage.structure.EnumClass")) {
-          for (SNode member : ListSequence.fromList(SLinkOperations.getTargets((jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.cast(classifier, "jetbrains.mps.baseLanguage.structure.EnumClass")), "enumConstant", true))) {
+          for (SNode member : ListSequence.fromList(SLinkOperations.getChildren((jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.cast(classifier, "jetbrains.mps.baseLanguage.structure.EnumClass")), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1083245097125l, 1083245396908l, "enumConstant")))) {
             if (condition.met(member)) {
               result.add(member);
             }

@@ -6,16 +6,18 @@ import org.jetbrains.mps.openapi.model.SNode;
 import java.awt.Graphics;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 
 public class Square_Behavior {
   public static void init(SNode thisNode) {
   }
   public static void virtual_drawShape_1082824515535573731(SNode thisNode, Graphics graphics) {
     BehaviorReflection.invokeSuper(Void.class, thisNode, "jetbrains.mps.samples.Shapes.structure.Shape", "virtual_drawShape_1082824515535573731", new Object[]{graphics});
-    graphics.drawRect(SPropertyOperations.getInteger(thisNode, "upperLeftX"), SPropertyOperations.getInteger(thisNode, "upperLeftY"), SPropertyOperations.getInteger(thisNode, "size"), SPropertyOperations.getInteger(thisNode, "size"));
+    graphics.drawRect(SPropertyOperations.getInteger(thisNode, MetaAdapterFactory.getProperty(new UUID(1637898168350624965l, -8992988694412354753l), 5898776707557474722l, 5898776707557474723l, "upperLeftX")), SPropertyOperations.getInteger(thisNode, MetaAdapterFactory.getProperty(new UUID(1637898168350624965l, -8992988694412354753l), 5898776707557474722l, 5898776707557474725l, "upperLeftY")), SPropertyOperations.getInteger(thisNode, MetaAdapterFactory.getProperty(new UUID(1637898168350624965l, -8992988694412354753l), 5898776707557474722l, 5898776707557474728l, "size")), SPropertyOperations.getInteger(thisNode, MetaAdapterFactory.getProperty(new UUID(1637898168350624965l, -8992988694412354753l), 5898776707557474722l, 5898776707557474728l, "size")));
   }
   public static void virtual_drawShapeAt_4001135958238383544(SNode thisNode, Graphics graphics, int x, int y) {
     BehaviorReflection.invokeSuper(Void.class, thisNode, "jetbrains.mps.samples.Shapes.structure.Shape", "virtual_drawShapeAt_4001135958238383544", new Object[]{graphics, x, y});
-    graphics.drawRect(x, y, SPropertyOperations.getInteger(thisNode, "size"), SPropertyOperations.getInteger(thisNode, "size"));
+    graphics.drawRect(x, y, SPropertyOperations.getInteger(thisNode, MetaAdapterFactory.getProperty(new UUID(1637898168350624965l, -8992988694412354753l), 5898776707557474722l, 5898776707557474728l, "size")), SPropertyOperations.getInteger(thisNode, MetaAdapterFactory.getProperty(new UUID(1637898168350624965l, -8992988694412354753l), 5898776707557474722l, 5898776707557474728l, "size")));
   }
 }

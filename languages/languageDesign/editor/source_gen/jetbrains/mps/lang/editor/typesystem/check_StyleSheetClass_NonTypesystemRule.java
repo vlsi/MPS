@@ -8,6 +8,8 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
@@ -18,8 +20,8 @@ public class check_StyleSheetClass_NonTypesystemRule extends AbstractNonTypesyst
   }
   public void applyRule(final SNode styleSheetClass, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     SNode p = styleSheetClass;
-    while ((SLinkOperations.getTarget(SLinkOperations.getTarget(p, "extendedClass", true), "styleSheetClass", false) != null)) {
-      p = SLinkOperations.getTarget(SLinkOperations.getTarget(p, "extendedClass", true), "styleSheetClass", false);
+    while ((SLinkOperations.getTarget(SLinkOperations.getTarget(p, MetaAdapterFactory.getContainmentLink(new UUID(1782411230332735017l, -6324602048325217350l), 1186402373407l, 1198252369256l, "extendedClass")), MetaAdapterFactory.getReferenceLink(new UUID(1782411230332735017l, -6324602048325217350l), 1198252130653l, 1198252276894l, "styleSheetClass")) != null)) {
+      p = SLinkOperations.getTarget(SLinkOperations.getTarget(p, MetaAdapterFactory.getContainmentLink(new UUID(1782411230332735017l, -6324602048325217350l), 1186402373407l, 1198252369256l, "extendedClass")), MetaAdapterFactory.getReferenceLink(new UUID(1782411230332735017l, -6324602048325217350l), 1198252130653l, 1198252276894l, "styleSheetClass"));
       if (p == styleSheetClass) {
         {
           MessageTarget errorTarget = new NodeMessageTarget();

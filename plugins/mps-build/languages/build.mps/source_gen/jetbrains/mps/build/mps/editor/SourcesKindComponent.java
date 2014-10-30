@@ -21,6 +21,8 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SEnumOperations;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.build.editor.buildStyles_StyleSheet;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
@@ -62,7 +64,7 @@ public class SourcesKindComponent implements ConceptEditorComponent {
       this.handleAction_impl((SNode) parameterObject, node, model, operationContext, editorContext);
     }
     public void handleAction_impl(SNode parameterObject, SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
-      SPropertyOperations.set(node, "sourcesKind", "" + (parameterObject));
+      SPropertyOperations.set(node, MetaAdapterFactory.getProperty(new UUID(934837630734519964l, -6831122735637083229l), 3189788309731840247l, 269707337715731330l, "sourcesKind"), "" + (parameterObject));
     }
     public boolean isReferentPresentation() {
       return false;
@@ -105,7 +107,7 @@ public class SourcesKindComponent implements ConceptEditorComponent {
     return editorCell;
   }
   private static boolean renderingCondition_qubgco_a1a(SNode node, EditorContext editorContext) {
-    return isNotEmptyString(SPropertyOperations.getString_def(node, "sourcesKind", null));
+    return isNotEmptyString(SPropertyOperations.getString_def(node, MetaAdapterFactory.getProperty(new UUID(934837630734519964l, -6831122735637083229l), 3189788309731840247l, 269707337715731330l, "sourcesKind"), null));
   }
   private EditorCell createConstant_qubgco_c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "sources");
@@ -119,7 +121,7 @@ public class SourcesKindComponent implements ConceptEditorComponent {
     return editorCell;
   }
   private static boolean renderingCondition_qubgco_a2a(SNode node, EditorContext editorContext) {
-    return isEmptyString(SPropertyOperations.getString_def(node, "sourcesKind", null));
+    return isEmptyString(SPropertyOperations.getString_def(node, MetaAdapterFactory.getProperty(new UUID(934837630734519964l, -6831122735637083229l), 3189788309731840247l, 269707337715731330l, "sourcesKind"), null));
   }
   public static class BuildMps_Solution_generic_cellMenu_qubgco_a0c0 extends AbstractCellMenuPart_Generic_Group {
     public BuildMps_Solution_generic_cellMenu_qubgco_a0c0() {
@@ -131,7 +133,7 @@ public class SourcesKindComponent implements ConceptEditorComponent {
       this.handleAction_impl((SNode) parameterObject, node, model, operationContext, editorContext);
     }
     public void handleAction_impl(SNode parameterObject, SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
-      SPropertyOperations.set(node, "sourcesKind", "" + (parameterObject));
+      SPropertyOperations.set(node, MetaAdapterFactory.getProperty(new UUID(934837630734519964l, -6831122735637083229l), 3189788309731840247l, 269707337715731330l, "sourcesKind"), "" + (parameterObject));
     }
     public boolean isReferentPresentation() {
       return false;

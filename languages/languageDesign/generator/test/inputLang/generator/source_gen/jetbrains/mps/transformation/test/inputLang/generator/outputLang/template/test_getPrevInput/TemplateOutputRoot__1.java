@@ -15,6 +15,8 @@ import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.generator.runtime.TemplateUtil;
 import jetbrains.mps.generator.template.PropertyMacroContext;
 import jetbrains.mps.generator.template.IfMacroContext;
@@ -55,12 +57,12 @@ public class TemplateOutputRoot__1 implements TemplateDeclaration {
           final SNode tnode5 = environment.createOutputNode("jetbrains.mps.transformation.test.outputLang.structure.OutputNode");
           try {
             environment.nodeCopied(context3, tnode5, "tpl/r:00000000-0000-4000-0000-011c895905f7/1202256495546");
-            SNodeAccessUtil.setProperty(tnode5, "text", TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_1202326517571(new PropertyMacroContext(context3, "_text_", propertyMacro_ewlaka_c0a0c0b0e0e0e0c0c))));
+            SNodeAccessUtil.setProperty(tnode5, MetaAdapterFactory.getProperty(new UUID(1547714798586184059l, -8557310053109408682l), 1195165132070l, 1195170441111l, "text"), TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_1202326517571(new PropertyMacroContext(context3, "_text_", propertyMacro_ewlaka_c0a0c0b0e0e0e0c0c))));
             {
               final SNode tnode6 = environment.createOutputNode("jetbrains.mps.transformation.test.outputLang.structure.OutputNode");
               try {
                 environment.nodeCopied(context3, tnode6, "tpl/r:00000000-0000-4000-0000-011c895905f7/1202327206676");
-                SNodeAccessUtil.setProperty(tnode6, "text", TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_1202327274819(new PropertyMacroContext(context3, "_root_level_was_", propertyMacro_ewlaka_c0a0c0b0b0c0e0e0e0c0c))));
+                SNodeAccessUtil.setProperty(tnode6, MetaAdapterFactory.getProperty(new UUID(1547714798586184059l, -8557310053109408682l), 1195165132070l, 1195170441111l, "text"), TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_1202327274819(new PropertyMacroContext(context3, "_root_level_was_", propertyMacro_ewlaka_c0a0c0b0b0c0e0e0e0c0c))));
               } finally {
               }
               if (tnode6 != null) {
@@ -74,7 +76,7 @@ public class TemplateOutputRoot__1 implements TemplateDeclaration {
                 final SNode tnode8 = environment.createOutputNode("jetbrains.mps.transformation.test.outputLang.structure.OutputNode");
                 try {
                   environment.nodeCopied(context3, tnode8, "tpl/r:00000000-0000-4000-0000-011c895905f7/1202327778745");
-                  SNodeAccessUtil.setProperty(tnode8, "text", TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_1202327887568(new PropertyMacroContext(context3, "_level_1_was_", propertyMacro_ewlaka_c0a0c0b0b0b0d0e0e0e0c0c))));
+                  SNodeAccessUtil.setProperty(tnode8, MetaAdapterFactory.getProperty(new UUID(1547714798586184059l, -8557310053109408682l), 1195165132070l, 1195170441111l, "text"), TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_1202327887568(new PropertyMacroContext(context3, "_level_1_was_", propertyMacro_ewlaka_c0a0c0b0b0b0d0e0e0e0c0c))));
                 } finally {
                 }
                 tlist7 = TemplateUtil.singletonList(tnode8);
@@ -88,7 +90,7 @@ public class TemplateOutputRoot__1 implements TemplateDeclaration {
               final SNode tnode10 = environment.createOutputNode("jetbrains.mps.transformation.test.outputLang.structure.OutputNode");
               try {
                 environment.nodeCopied(context3, tnode10, "tpl/r:00000000-0000-4000-0000-011c895905f7/1202327949446");
-                SNodeAccessUtil.setProperty(tnode10, "text", TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_1202327970031(new PropertyMacroContext(context3, "_level_2_was_", propertyMacro_ewlaka_c0a0c0b0b0e0e0e0e0c0c))));
+                SNodeAccessUtil.setProperty(tnode10, MetaAdapterFactory.getProperty(new UUID(1547714798586184059l, -8557310053109408682l), 1195165132070l, 1195170441111l, "text"), TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_1202327970031(new PropertyMacroContext(context3, "_level_2_was_", propertyMacro_ewlaka_c0a0c0b0b0e0e0e0e0c0c))));
               } finally {
               }
               if (tnode10 != null) {
@@ -133,8 +135,8 @@ public class TemplateOutputRoot__1 implements TemplateDeclaration {
     final SNode tnode1 = environment.createOutputNode("jetbrains.mps.transformation.test.outputLang.structure.OutputRoot");
     try {
       environment.nodeCopied(context, tnode1, "tpl/r:00000000-0000-4000-0000-011c895905f7/1202255620269");
-      SNodeAccessUtil.setProperty(tnode1, "name", "OutputRoot_1");
-      SNodeAccessUtil.setProperty(tnode1, "text", "'getPrevInputTest' output root (1)");
+      SNodeAccessUtil.setProperty(tnode1, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"), "OutputRoot_1");
+      SNodeAccessUtil.setProperty(tnode1, MetaAdapterFactory.getProperty(new UUID(1547714798586184059l, -8557310053109408682l), 1195164668463l, 1195164732401l, "text"), "'getPrevInputTest' output root (1)");
       {
         Collection<SNode> tlist2 = applyNode0(environment, context);
         for (SNode child3 : TemplateUtil.asNotNull(tlist2)) {

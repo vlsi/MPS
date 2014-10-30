@@ -11,6 +11,8 @@ import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.baseLanguage.behavior.Classifier_Behavior;
 import org.jetbrains.mps.openapi.model.SNodeReference;
@@ -55,11 +57,11 @@ public class ConvertToClosure_Intention implements IntentionFactory {
     if (!(SNodeOperations.isInstanceOf(SNodeOperations.getParent(newExpression), "jetbrains.mps.baseLanguage.structure.BaseMethodCall"))) {
       return false;
     }
-    if (!(ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(SNodeOperations.getParent(newExpression), "jetbrains.mps.baseLanguage.structure.BaseMethodCall"), "actualArgument", true)).contains(newExpression))) {
+    if (!(ListSequence.fromList(SLinkOperations.getChildren(SNodeOperations.cast(SNodeOperations.getParent(newExpression), "jetbrains.mps.baseLanguage.structure.BaseMethodCall"), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, 1068499141038l, "actualArgument"))).contains(newExpression))) {
       return false;
     }
-    if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "classifier", false), "jetbrains.mps.baseLanguage.structure.Interface")) {
-      SNode parentInterface = SNodeOperations.cast(SLinkOperations.getTarget(node, "classifier", false), "jetbrains.mps.baseLanguage.structure.Interface");
+    if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1170345865475l, 1170346070688l, "classifier")), "jetbrains.mps.baseLanguage.structure.Interface")) {
+      SNode parentInterface = SNodeOperations.cast(SLinkOperations.getTarget(node, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1170345865475l, 1170346070688l, "classifier")), "jetbrains.mps.baseLanguage.structure.Interface");
       return Sequence.fromIterable(Classifier_Behavior.call_methods_5292274854859311639(parentInterface)).count() == 1;
     }
     return false;
@@ -85,10 +87,10 @@ public class ConvertToClosure_Intention implements IntentionFactory {
     public void execute(final SNode node, final EditorContext editorContext) {
       SNode closureLiteral = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral", null);
       if (Sequence.fromIterable(Classifier_Behavior.call_methods_5292274854859311639(node)).isNotEmpty()) {
-        SLinkOperations.setTarget(closureLiteral, "body", SLinkOperations.getTarget(Sequence.fromIterable(Classifier_Behavior.call_methods_5292274854859311639(node)).first(), "body", true), true);
+        SLinkOperations.setTarget(closureLiteral, MetaAdapterFactory.getContainmentLink(new UUID(-200093298712821347l, -8038623698278341771l), 1199569711397l, 1199569916463l, "body"), SLinkOperations.getTarget(Sequence.fromIterable(Classifier_Behavior.call_methods_5292274854859311639(node)).first(), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123132l, 1068580123135l, "body")));
       }
-      SNode method = Sequence.fromIterable(Classifier_Behavior.call_methods_5292274854859311639(SNodeOperations.cast(SLinkOperations.getTarget(node, "classifier", false), "jetbrains.mps.baseLanguage.structure.Interface"))).first();
-      ListSequence.fromList(SLinkOperations.getTargets(closureLiteral, "parameter", true)).addSequence(ListSequence.fromList(SLinkOperations.getTargets(method, "parameter", true)));
+      SNode method = Sequence.fromIterable(Classifier_Behavior.call_methods_5292274854859311639(SNodeOperations.cast(SLinkOperations.getTarget(node, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1170345865475l, 1170346070688l, "classifier")), "jetbrains.mps.baseLanguage.structure.Interface"))).first();
+      ListSequence.fromList(SLinkOperations.getChildren(closureLiteral, MetaAdapterFactory.getContainmentLink(new UUID(-200093298712821347l, -8038623698278341771l), 1199569711397l, 1199569906740l, "parameter"))).addSequence(ListSequence.fromList(SLinkOperations.getChildren(method, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123132l, 1068580123134l, "parameter"))));
       SNodeOperations.replaceWithAnother(SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.GenericNewExpression", false, false), closureLiteral);
     }
     public IntentionDescriptor getDescriptor() {

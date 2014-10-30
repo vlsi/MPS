@@ -6,6 +6,8 @@ import jetbrains.mps.textGen.SNodeTextGen;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.textGen.TraceInfoGenerationUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.apache.log4j.Level;
@@ -21,10 +23,10 @@ public class TryCatchStatement_TextGen extends SNodeTextGen {
     this.indentBuffer();
     this.append("try {");
     this.increaseDepth();
-    appendNode(SLinkOperations.getTarget(node, "body", true));
+    appendNode(SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1164879751025l, 1164879758292l, "body")));
     this.decreaseDepth();
     this.appendNewLine();
-    for (SNode clause : SLinkOperations.getTargets(node, "catchClause", true)) {
+    for (SNode clause : SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1164879751025l, 1164903496223l, "catchClause"))) {
       appendNode(clause);
       this.appendNewLine();
     }

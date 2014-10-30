@@ -10,6 +10,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.baseLanguage.behavior.Classifier_Behavior;
 
@@ -30,7 +32,7 @@ public class MigrateClassifierMembersNodes_MigrationScript extends BaseMigration
         if (SNodeOperations.getConceptDeclaration(node) != SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassConcept") && SNodeOperations.getConceptDeclaration(node) != SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.Interface") && SNodeOperations.getConceptDeclaration(node) != SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.AnonymousClass") && SNodeOperations.getConceptDeclaration(node) != SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.EnumClass")) {
           return false;
         }
-        return ListSequence.fromList(SLinkOperations.getTargets(node, "member", true)).count() != Sequence.fromIterable(Classifier_Behavior.call_members_1465982738252129704(node)).count();
+        return ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107461130800l, 5375687026011219971l, "member"))).count() != Sequence.fromIterable(Classifier_Behavior.call_members_1465982738252129704(node)).count();
       }
       public void doUpdateInstanceNode(SNode node) {
         Iterable<SNode> members = Classifier_Behavior.call_members_1465982738252129704(node);
@@ -40,7 +42,7 @@ public class MigrateClassifierMembersNodes_MigrationScript extends BaseMigration
           }
         }
         for (SNode member : Sequence.fromIterable(members)) {
-          ListSequence.fromList(SLinkOperations.getTargets(node, "member", true)).addElement(member);
+          ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107461130800l, 5375687026011219971l, "member"))).addElement(member);
         }
       }
       public boolean isShowAsIntention() {

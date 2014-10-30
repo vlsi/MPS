@@ -6,6 +6,8 @@ import jetbrains.mps.plugins.relations.RelationDescriptor;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
@@ -27,7 +29,7 @@ public class Executor_TabDescriptor extends RelationDescriptor {
   }
   public SNode getBaseNode(SNode node) {
     if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.execution.configurations.structure.AbstractRunConfigurationExecutor")) {
-      return SLinkOperations.getTarget(SNodeOperations.cast(node, "jetbrains.mps.execution.configurations.structure.AbstractRunConfigurationExecutor"), "configuration", false);
+      return SLinkOperations.getTarget(SNodeOperations.cast(node, "jetbrains.mps.execution.configurations.structure.AbstractRunConfigurationExecutor"), MetaAdapterFactory.getReferenceLink(new UUID(8461860300379867720l, -4758718422494514628l), 946964771156905617l, 946964771156905618l, "configuration"));
     }
     return null;
   }
@@ -50,7 +52,7 @@ public class Executor_TabDescriptor extends RelationDescriptor {
     final SNode nodeFinal = node;
     return ListSequence.fromList(SModelOperations.getRoots(SNodeOperations.getModel(node), "jetbrains.mps.execution.configurations.structure.AbstractRunConfigurationExecutor")).findFirst(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return SLinkOperations.getTarget(it, "configuration", false) == nodeFinal;
+        return SLinkOperations.getTarget(it, MetaAdapterFactory.getReferenceLink(new UUID(8461860300379867720l, -4758718422494514628l), 946964771156905617l, 946964771156905618l, "configuration")) == nodeFinal;
       }
     });
   }
@@ -59,7 +61,7 @@ public class Executor_TabDescriptor extends RelationDescriptor {
   }
   public SNode createNode(final SNode node, final SNode concept) {
     SNode executor = SConceptOperations.createNewNode("jetbrains.mps.execution.configurations.structure.RunConfigurationExecutor", null);
-    SLinkOperations.setTarget(executor, "configuration", node, false);
+    SLinkOperations.setTarget(executor, MetaAdapterFactory.getReferenceLink(new UUID(8461860300379867720l, -4758718422494514628l), 946964771156905617l, 946964771156905618l, "configuration"), node);
     SModelOperations.addRootNode(SNodeOperations.getModel(node), executor);
     return executor;
   }

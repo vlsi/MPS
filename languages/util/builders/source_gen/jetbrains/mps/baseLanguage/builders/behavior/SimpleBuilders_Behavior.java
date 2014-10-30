@@ -4,6 +4,8 @@ package jetbrains.mps.baseLanguage.builders.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import java.util.List;
 import org.jetbrains.mps.openapi.model.SModel;
 import java.util.ArrayList;
@@ -17,10 +19,10 @@ public class SimpleBuilders_Behavior {
     if (thisNode == b) {
       return true;
     }
-    if ((SLinkOperations.getTarget(thisNode, "extendsBuilder", false) == null)) {
+    if ((SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getReferenceLink(new UUID(1381097486113260572l, -6346909095260771222l), 7288041816792374843l, 5199967550912384274l, "extendsBuilder")) == null)) {
       return false;
     }
-    return SimpleBuilders_Behavior.call_isDescendant_5199967550912479710(SLinkOperations.getTarget(thisNode, "extendsBuilder", false), b);
+    return SimpleBuilders_Behavior.call_isDescendant_5199967550912479710(SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getReferenceLink(new UUID(1381097486113260572l, -6346909095260771222l), 7288041816792374843l, 5199967550912384274l, "extendsBuilder")), b);
   }
   public static List<SNode> call_getDescendands_5199967550912479741(SNode thisNode, SModel context) {
     List<SNode> result = new ArrayList<SNode>();
@@ -36,7 +38,7 @@ public class SimpleBuilders_Behavior {
     SNode current = thisNode;
     while (current != null) {
       ListSequence.fromList(result).addElement(current);
-      current = SLinkOperations.getTarget(current, "extendsBuilder", false);
+      current = SLinkOperations.getTarget(current, MetaAdapterFactory.getReferenceLink(new UUID(1381097486113260572l, -6346909095260771222l), 7288041816792374843l, 5199967550912384274l, "extendsBuilder"));
     }
     return result;
   }

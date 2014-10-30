@@ -5,6 +5,8 @@ package jetbrains.mps.lang.editor.typesystem;
 import jetbrains.mps.errors.QuickFix_Runtime;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 
 public class fix_Braces_QuickFix extends QuickFix_Runtime {
   public fix_Braces_QuickFix() {
@@ -13,6 +15,6 @@ public class fix_Braces_QuickFix extends QuickFix_Runtime {
     return "Do Not Use Braces";
   }
   public void execute(SNode node) {
-    SPropertyOperations.set(((SNode) fix_Braces_QuickFix.this.getField("collectionCell")[0]), "usesBraces", "" + (false));
+    SPropertyOperations.set(((SNode) fix_Braces_QuickFix.this.getField("collectionCell")[0]), MetaAdapterFactory.getProperty(new UUID(1782411230332735017l, -6324602048325217350l), 1073389446423l, 1139416841293l, "usesBraces"), "" + (false));
   }
 }

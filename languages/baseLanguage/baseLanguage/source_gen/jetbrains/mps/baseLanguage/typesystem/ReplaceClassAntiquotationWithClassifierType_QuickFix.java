@@ -5,6 +5,8 @@ package jetbrains.mps.baseLanguage.typesystem;
 import jetbrains.mps.errors.QuickFix_Runtime;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
@@ -16,11 +18,11 @@ public class ReplaceClassAntiquotationWithClassifierType_QuickFix extends QuickF
     return "Replace antiquotation with classifier type with reference antiquotation";
   }
   public void execute(SNode node) {
-    SNode expression = SLinkOperations.getTarget(((SNode) ReplaceClassAntiquotationWithClassifierType_QuickFix.this.getField("antiquotation")[0]), "expression", true);
+    SNode expression = SLinkOperations.getTarget(((SNode) ReplaceClassAntiquotationWithClassifierType_QuickFix.this.getField("antiquotation")[0]), MetaAdapterFactory.getContainmentLink(new UUID(4184707567256882268l, -4914423608129972907l), 1196350785110l, 1196350785111l, "expression"));
     SNode parent = SNodeOperations.getParent(((SNode) ReplaceClassAntiquotationWithClassifierType_QuickFix.this.getField("antiquotation")[0]));
     parent.removeChild(((SNode) ReplaceClassAntiquotationWithClassifierType_QuickFix.this.getField("antiquotation")[0]));
     SNode classifierType = SNodeOperations.replaceWithNewChild(parent, "jetbrains.mps.baseLanguage.structure.ClassifierType");
     SNode referenceAntiquotation = AttributeOperations.createAndSetAttrbiute(classifierType, new IAttributeDescriptor.LinkAttribute("jetbrains.mps.lang.quotation.structure.ReferenceAntiquotation", "classifier"), "jetbrains.mps.lang.quotation.structure.ReferenceAntiquotation");
-    SLinkOperations.setTarget(referenceAntiquotation, "expression", expression, true);
+    SLinkOperations.setTarget(referenceAntiquotation, MetaAdapterFactory.getContainmentLink(new UUID(4184707567256882268l, -4914423608129972907l), 1196350785110l, 1196350785111l, "expression"), expression);
   }
 }

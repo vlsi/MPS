@@ -6,6 +6,8 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.util.List;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import org.jetbrains.mps.openapi.model.SReference;
 
 public class RefactoringArgument_Behavior {
@@ -17,7 +19,7 @@ public class RefactoringArgument_Behavior {
       return true;
     }
 
-    List<SNode> references = SNodeOperations.getDescendants(SLinkOperations.getTarget(refactoring, "updateModelBlock", true), "jetbrains.mps.lang.refactoring.structure.RefactoringArgumentReference", false, new String[]{});
+    List<SNode> references = SNodeOperations.getDescendants(SLinkOperations.getTarget(refactoring, MetaAdapterFactory.getContainmentLink(new UUID(4525410110408967646l, -8616490689189267646l), 6895093993902236229l, 1347577327951503400l, "updateModelBlock")), "jetbrains.mps.lang.refactoring.structure.RefactoringArgumentReference", false, new String[]{});
     for (SNode reference : references) {
       for (SReference sreference : reference.getReferences()) {
         if (sreference.getTargetNode() == thisNode) {

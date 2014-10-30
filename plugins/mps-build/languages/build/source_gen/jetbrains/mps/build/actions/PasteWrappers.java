@@ -11,6 +11,8 @@ import jetbrains.mps.datatransfer.PasteWrapperContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 
 public class PasteWrappers {
   public static List<PasteWrapper> createPasteWrappers() {
@@ -24,7 +26,7 @@ public class PasteWrappers {
       }
       public SNode wrap(PasteWrapperContext _context) {
         SNode cp = SModelOperations.createNewNode(SNodeOperations.getModel(_context.getSourceNode()), null, "jetbrains.mps.build.structure.BuildLayout_Copy");
-        SLinkOperations.setTarget(cp, "fileset", _context.getSourceNode(), true);
+        SLinkOperations.setTarget(cp, MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 9184644532456496017l, 5248329904287857082l, "fileset"), _context.getSourceNode());
         return cp;
       }
     });
@@ -37,7 +39,7 @@ public class PasteWrappers {
       }
       public SNode wrap(PasteWrapperContext _context) {
         SNode nn = SModelOperations.createNewNode(SNodeOperations.getModel(_context.getSourceNode()), null, "jetbrains.mps.build.structure.BuildSource_JavaFiles");
-        SLinkOperations.setTarget(nn, "resset", _context.getSourceNode(), true);
+        SLinkOperations.setTarget(nn, MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 1500819558096177282l, 1500819558096177283l, "resset"), _context.getSourceNode());
         return nn;
       }
     });
@@ -50,7 +52,7 @@ public class PasteWrappers {
       }
       public SNode wrap(PasteWrapperContext _context) {
         SNode nn = SModelOperations.createNewNode(SNodeOperations.getModel(_context.getSourceNode()), null, "jetbrains.mps.build.structure.BuildSource_JavaDependencyJar");
-        SLinkOperations.setTarget(nn, "jar", _context.getSourceNode(), true);
+        SLinkOperations.setTarget(nn, MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 3717132724152589376l, 3717132724152589377l, "jar"), _context.getSourceNode());
         return nn;
       }
     });
@@ -63,7 +65,7 @@ public class PasteWrappers {
       }
       public SNode wrap(PasteWrapperContext _context) {
         SNode nn = SModelOperations.createNewNode(SNodeOperations.getModel(_context.getSourceNode()), null, "jetbrains.mps.build.structure.BuildSource_JavaLibraryCP");
-        SLinkOperations.setTarget(nn, "classpath", _context.getSourceNode(), true);
+        SLinkOperations.setTarget(nn, MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 3717132724152913083l, 3717132724152913085l, "classpath"), _context.getSourceNode());
         return nn;
       }
     });

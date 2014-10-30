@@ -10,6 +10,8 @@ import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -51,7 +53,7 @@ public class Context {
     return new MacroHelper.MacroContext(buildProject, myGenerationContext).getMacros(buildProject);
   }
   public String getBuildProjectName(SNode node) {
-    return SPropertyOperations.getString(getBuildProject(node), "name");
+    return SPropertyOperations.getString(getBuildProject(node), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"));
   }
   @NotNull
   public SModule getModule(SModel model) {

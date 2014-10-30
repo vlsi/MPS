@@ -5,6 +5,8 @@ package jetbrains.mps.build.util;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
@@ -19,7 +21,7 @@ public class FileSetUtil {
   public FileSetUtil() {
   }
   public static Iterable<SNode> getImplicitFilesets(SNode container) {
-    Iterable<SNode> result = ListSequence.fromList(SLinkOperations.getTargets(container, "children", true)).where(new IWhereFilter<SNode>() {
+    Iterable<SNode> result = ListSequence.fromList(SLinkOperations.getChildren(container, MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 4701820937132344003l, 7389400916848037006l, "children"))).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.structure.BuildLayout_FileSet") && BehaviorReflection.invokeVirtual(Boolean.TYPE, SNodeOperations.cast(it, "jetbrains.mps.build.structure.BuildLayout_FileSet"), "virtual_isImplicit_1330375798085107777", new Object[]{});
       }
@@ -29,7 +31,7 @@ public class FileSetUtil {
       }
     });
 
-    for (SNode folder : ListSequence.fromList(SLinkOperations.getTargets(container, "children", true)).where(new IWhereFilter<SNode>() {
+    for (SNode folder : ListSequence.fromList(SLinkOperations.getChildren(container, MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 4701820937132344003l, 7389400916848037006l, "children"))).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.structure.BuildLayout_Folder") || SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.structure.BuildLayout_Filemode");
       }
@@ -39,7 +41,7 @@ public class FileSetUtil {
     return result;
   }
   public static Iterable<SNode> getExplicitFilemodeRoots(SNode container) {
-    Iterable<SNode> result = ListSequence.fromList(SLinkOperations.getTargets(container, "children", true)).where(new IWhereFilter<SNode>() {
+    Iterable<SNode> result = ListSequence.fromList(SLinkOperations.getChildren(container, MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 4701820937132344003l, 7389400916848037006l, "children"))).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.structure.BuildLayout_Filemode");
       }
@@ -49,7 +51,7 @@ public class FileSetUtil {
       }
     });
 
-    for (SNode folder : ListSequence.fromList(SLinkOperations.getTargets(container, "children", true)).where(new IWhereFilter<SNode>() {
+    for (SNode folder : ListSequence.fromList(SLinkOperations.getChildren(container, MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 4701820937132344003l, 7389400916848037006l, "children"))).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.structure.BuildLayout_Folder") || SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.structure.BuildLayout_Filemode");
       }
@@ -63,7 +65,7 @@ public class FileSetUtil {
     });
   }
   public static boolean hasExplicitFilesets(SNode container) {
-    return ListSequence.fromList(SLinkOperations.getTargets(container, "children", true)).any(new IWhereFilter<SNode>() {
+    return ListSequence.fromList(SLinkOperations.getChildren(container, MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 4701820937132344003l, 7389400916848037006l, "children"))).any(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return !((SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.structure.BuildLayout_FileSet") && BehaviorReflection.invokeVirtual(Boolean.TYPE, SNodeOperations.cast(it, "jetbrains.mps.build.structure.BuildLayout_FileSet"), "virtual_isImplicit_1330375798085107777", new Object[]{}))) && !(SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.structure.BuildLayout_Filemode")) && (!(SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.structure.BuildLayout_Folder")) || hasExplicitFilesets(SNodeOperations.cast(it, "jetbrains.mps.build.structure.BuildLayout_Container")));
       }
@@ -89,7 +91,7 @@ public class FileSetUtil {
     Stack<String> stack = new Stack<String>();
     while (SNodeOperations.isInstanceOf(container, "jetbrains.mps.build.structure.BuildLayout_Folder") || SNodeOperations.isInstanceOf(container, "jetbrains.mps.build.structure.BuildLayout_Filemode")) {
       if (SNodeOperations.isInstanceOf(container, "jetbrains.mps.build.structure.BuildLayout_Folder")) {
-        stack.push(BuildString_Behavior.call_getText_4380385936562005550(SLinkOperations.getTarget(SNodeOperations.cast(container, "jetbrains.mps.build.structure.BuildLayout_Folder"), "containerName", true), helper));
+        stack.push(BuildString_Behavior.call_getText_4380385936562005550(SLinkOperations.getTarget(SNodeOperations.cast(container, "jetbrains.mps.build.structure.BuildLayout_Folder"), MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 7389400916848050060l, 4380385936562148502l, "containerName")), helper));
       }
       container = SNodeOperations.getParent(container);
     }
@@ -112,11 +114,11 @@ public class FileSetUtil {
     String dirmode = null;
     while (SNodeOperations.isInstanceOf(parent, "jetbrains.mps.build.structure.BuildLayout_Folder") || SNodeOperations.isInstanceOf(parent, "jetbrains.mps.build.structure.BuildLayout_Filemode")) {
       if (SNodeOperations.isInstanceOf(parent, "jetbrains.mps.build.structure.BuildLayout_Filemode")) {
-        if (filemode == null && isNotEmptyString(SPropertyOperations.getString(SNodeOperations.cast(parent, "jetbrains.mps.build.structure.BuildLayout_Filemode"), "filemode"))) {
-          filemode = SPropertyOperations.getString(SNodeOperations.cast(parent, "jetbrains.mps.build.structure.BuildLayout_Filemode"), "filemode");
+        if (filemode == null && isNotEmptyString(SPropertyOperations.getString(SNodeOperations.cast(parent, "jetbrains.mps.build.structure.BuildLayout_Filemode"), MetaAdapterFactory.getProperty(new UUID(8755280088213897754l, -5075149991798053422l), 7801138212747054656l, 7801138212747054660l, "filemode")))) {
+          filemode = SPropertyOperations.getString(SNodeOperations.cast(parent, "jetbrains.mps.build.structure.BuildLayout_Filemode"), MetaAdapterFactory.getProperty(new UUID(8755280088213897754l, -5075149991798053422l), 7801138212747054656l, 7801138212747054660l, "filemode"));
         }
-        if (dirmode == null && isNotEmptyString(SPropertyOperations.getString(SNodeOperations.cast(parent, "jetbrains.mps.build.structure.BuildLayout_Filemode"), "dirmode"))) {
-          dirmode = SPropertyOperations.getString(SNodeOperations.cast(parent, "jetbrains.mps.build.structure.BuildLayout_Filemode"), "dirmode");
+        if (dirmode == null && isNotEmptyString(SPropertyOperations.getString(SNodeOperations.cast(parent, "jetbrains.mps.build.structure.BuildLayout_Filemode"), MetaAdapterFactory.getProperty(new UUID(8755280088213897754l, -5075149991798053422l), 7801138212747054656l, 7801138212747054661l, "dirmode")))) {
+          dirmode = SPropertyOperations.getString(SNodeOperations.cast(parent, "jetbrains.mps.build.structure.BuildLayout_Filemode"), MetaAdapterFactory.getProperty(new UUID(8755280088213897754l, -5075149991798053422l), 7801138212747054656l, 7801138212747054661l, "dirmode"));
         }
       }
       parent = SNodeOperations.getParent(parent);
