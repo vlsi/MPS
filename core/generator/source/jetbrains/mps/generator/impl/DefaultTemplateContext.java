@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2013 JetBrains s.r.o.
+ * Copyright 2003-2014 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,15 +18,15 @@ package jetbrains.mps.generator.impl;
 import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.generator.runtime.TemplateExecutionEnvironment;
 import jetbrains.mps.lang.pattern.GeneratedMatchingPattern;
-import org.jetbrains.annotations.Nullable;
-import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.util.annotation.ImmutableObject;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.annotations.Immutable;
+import org.jetbrains.mps.openapi.model.SNode;
 
 import java.util.Iterator;
 import java.util.Map;
 
-@ImmutableObject
+@Immutable
 public class DefaultTemplateContext implements TemplateContext {
 
   private final TemplateExecutionEnvironment myEnv;

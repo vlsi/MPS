@@ -16,6 +16,7 @@
 package jetbrains.mps.smodel;
 
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModel;
 
 /**
@@ -100,5 +101,15 @@ public class SModelStereotype {
     } else {
       return modelName.substring(0, atIndex);
     }
+  }
+
+  public static String withStereotype(@NotNull String modelName, @Nullable String stereotype) {
+    if (modelName.indexOf('@') != -1) {
+      throw new IllegalArgumentException("Model name already got stereotype");
+    }
+    if (stereotype == null || stereotype.isEmpty()) {
+      return modelName;
+    }
+    return modelName + '@' + stereotype;
   }
 }

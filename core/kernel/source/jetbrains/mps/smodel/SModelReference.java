@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2014 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,19 +19,18 @@ import jetbrains.mps.InternalFlag;
 import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.smodel.SModelId.ModelNameSModelId;
 import jetbrains.mps.util.StringUtil;
-import jetbrains.mps.util.annotation.ImmutableObject;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.annotations.Immutable;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelId;
-import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleId;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.module.SRepository;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 
-@ImmutableObject
+@Immutable
 public final class SModelReference implements org.jetbrains.mps.openapi.model.SModelReference {
 
   public static boolean replaceModuleReferences = false;

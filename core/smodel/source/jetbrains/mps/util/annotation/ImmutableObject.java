@@ -20,7 +20,12 @@ import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
+/**
+ * @deprecated Use {@link org.jetbrains.mps.annotations.Immutable} instead
+ */
 @Retention(RetentionPolicy.SOURCE)
 @Target(ElementType.TYPE)
+@Deprecated
+@ToRemove(version = 3.2)
 public @interface ImmutableObject {
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2014 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,13 +15,13 @@
  */
 package jetbrains.mps.project;
 
-import jetbrains.mps.util.annotation.ImmutableObject;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.annotations.Immutable;
 import org.jetbrains.mps.openapi.module.SModuleId;
 
 import java.util.UUID;
 
-@ImmutableObject
+@Immutable
 public abstract class ModuleId implements SModuleId {
   private static final char NAME_ID_PREFIX = '~';
 
