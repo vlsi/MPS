@@ -5222,6 +5222,50 @@
               </node>
             </node>
           </node>
+          <node concept="vg0i.6329021646629104954" id="4524040945659644786" role="vg0i.1068580123136.1068581517665" info="nn">
+            <node concept="vg0i.6329021646629104957" id="4524040945659646557" role="vg0i.6329021646629104954.6329021646629175155" info="nn">
+              <property role="vg0i.6329021646629104957.6329021646629104958" value="incremental generation for Ant build doesn't make sense as we have no way to ensure 'unchanged' artifacts are still there" />
+            </node>
+          </node>
+          <node concept="vg0i.1068580123155" id="4524040945659614906" role="vg0i.1068580123136.1068581517665" info="nn">
+            <node concept="vg0i.1197027756228" id="4524040945659615782" role="vg0i.1068580123155.1068580123156" info="nn">
+              <node concept="vg0i.1068498886296" id="4524040945659614904" role="vg0i.1197027756228.1197027771414" info="nn">
+                <reference role="vg0i.1068498886296.1068581517664" target="3415722583341998370" resolveInfo="settings" />
+              </node>
+              <node concept="vg0i.1202948039474" id="4524040945659617773" role="vg0i.1197027756228.1197027833540" info="nn">
+                <reference role="vg0i.1204053956946.1068499141037" target="y5px.~IModifiableGenerationSettings%dsetIncremental(boolean)%cvoid" resolveInfo="setIncremental" />
+                <node concept="vg0i.1068580123137" id="4524040945659617856" role="vg0i.1204053956946.1068499141038" info="nn">
+                  <property role="vg0i.1068580123137.1068580123138" value="false" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="vg0i.1068580123155" id="4524040945659619608" role="vg0i.1068580123136.1068581517665" info="nn">
+            <node concept="vg0i.1197027756228" id="4524040945659620506" role="vg0i.1068580123155.1068580123156" info="nn">
+              <node concept="vg0i.1068498886296" id="4524040945659619606" role="vg0i.1197027756228.1197027771414" info="nn">
+                <reference role="vg0i.1068498886296.1068581517664" target="3415722583341998370" resolveInfo="settings" />
+              </node>
+              <node concept="vg0i.1202948039474" id="4524040945659623093" role="vg0i.1197027756228.1197027833540" info="nn">
+                <reference role="vg0i.1204053956946.1068499141037" target="y5px.~IModifiableGenerationSettings%dsetIncrementalUseCache(boolean)%cvoid" resolveInfo="setIncrementalUseCache" />
+                <node concept="vg0i.1068580123137" id="4524040945659638308" role="vg0i.1204053956946.1068499141038" info="nn">
+                  <property role="vg0i.1068580123137.1068580123138" value="false" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="vg0i.1068580123155" id="4524040945659640126" role="vg0i.1068580123136.1068581517665" info="nn">
+            <node concept="vg0i.1197027756228" id="4524040945659641046" role="vg0i.1068580123155.1068580123156" info="nn">
+              <node concept="vg0i.1068498886296" id="4524040945659640124" role="vg0i.1197027756228.1197027771414" info="nn">
+                <reference role="vg0i.1068498886296.1068581517664" target="3415722583341998370" resolveInfo="settings" />
+              </node>
+              <node concept="vg0i.1202948039474" id="4524040945659642841" role="vg0i.1197027756228.1197027833540" info="nn">
+                <reference role="vg0i.1204053956946.1068499141037" target="y5px.~IModifiableGenerationSettings%dsetCheckModelsBeforeGeneration(boolean)%cvoid" resolveInfo="setCheckModelsBeforeGeneration" />
+                <node concept="vg0i.1068580123137" id="4524040945659642924" role="vg0i.1204053956946.1068499141038" info="nn">
+                  <property role="vg0i.1068580123137.1068580123138" value="false" />
+                </node>
+              </node>
+            </node>
+          </node>
           <node concept="vg0i.1068580123155" id="878521226301294100" role="vg0i.1068580123136.1068581517665" info="nn">
             <node concept="vg0i.7812454656619025412" id="4923130412073149554" role="vg0i.1068580123155.1068580123156" info="nn">
               <reference role="vg0i.1204053956946.1068499141037" target="jo3e.878521226300774604" resolveInfo="info" />
