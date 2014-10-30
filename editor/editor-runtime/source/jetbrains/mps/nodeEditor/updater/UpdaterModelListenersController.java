@@ -116,7 +116,9 @@ class UpdaterModelListenersController {
   }
 
   void flush() {
-    myModelListener.flush();
+    if (myModelListener != null) {
+      myModelListener.flush();
+    }
   }
 
   void dispose() {
