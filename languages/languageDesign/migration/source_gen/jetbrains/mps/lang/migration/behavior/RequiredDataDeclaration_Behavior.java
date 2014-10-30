@@ -6,13 +6,15 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.baseLanguage.scopes.MembersPopulatingContext;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 
 public class RequiredDataDeclaration_Behavior {
   public static void init(SNode thisNode) {
   }
   public static void virtual_populateMember_7405920559687254644(SNode thisNode, final MembersPopulatingContext context, SNode classifier) {
-    ListSequence.fromList(SLinkOperations.getTargets(thisNode, "dependencies", true)).visitAll(new IVisitor<SNode>() {
+    ListSequence.fromList(SLinkOperations.getChildren(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-8037690291156860282l, -7505894832713754871l), 4436301628118948495l, 7907688626602625066l, "dependencies"))).visitAll(new IVisitor<SNode>() {
       public void visit(SNode it) {
         context.addMember(it, null);
       }

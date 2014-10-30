@@ -6,6 +6,8 @@ import jetbrains.mps.generator.runtime.Generated;
 import jetbrains.mps.generator.template.BaseMappingRuleContext;
 import jetbrains.mps.build.util.FileSetUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
@@ -73,39 +75,39 @@ public class QueriesGenerated {
     return FileSetUtil.isExplicit(_context.getNode());
   }
   public static boolean baseMappingRule_Condition_6921160174096663332(final BaseMappingRuleContext _context) {
-    return (SLinkOperations.getTarget(_context.getNode(), "defaultPath", true) == null);
+    return (SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 7389400916848136194l, 7389400916848144618l, "defaultPath")) == null);
   }
   public static boolean baseMappingRule_Condition_244868996532694196(final BaseMappingRuleContext _context) {
-    return (SLinkOperations.getTarget(_context.getNode(), "initialValue", true) == null) || SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "initialValue", true), "jetbrains.mps.build.structure.BuildVariableMacroInitWithString");
+    return (SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 3767587139141066978l, 2755237150521975432l, "initialValue")) == null) || SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 3767587139141066978l, 2755237150521975432l, "initialValue")), "jetbrains.mps.build.structure.BuildVariableMacroInitWithString");
   }
   public static boolean baseMappingRule_Condition_2591537044435952582(final BaseMappingRuleContext _context) {
-    return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "module", false), "jetbrains.mps.build.structure.BuildSource_JavaModule");
+    return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(new UUID(8755280088213897754l, -5075149991798053422l), 2591537044435828004l, 2591537044435828006l, "module")), "jetbrains.mps.build.structure.BuildSource_JavaModule");
   }
   public static boolean baseMappingRule_Condition_1330375798088465804(final BaseMappingRuleContext _context) {
-    return ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "handlers", true)).all(new IWhereFilter<SNode>() {
+    return ListSequence.fromList(SLinkOperations.getChildren(_context.getNode(), MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 9184644532456495794l, 9184644532456533278l, "handlers"))).all(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.structure.BuildLayout_CopyProcessor");
       }
     });
   }
   public static boolean baseMappingRule_Condition_1330375798088685235(final BaseMappingRuleContext _context) {
-    return ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "handlers", true)).isNotEmpty();
+    return ListSequence.fromList(SLinkOperations.getChildren(_context.getNode(), MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 9184644532456495794l, 9184644532456533278l, "handlers"))).isNotEmpty();
   }
   public static boolean baseMappingRule_Condition_1556400259614055524(final BaseMappingRuleContext _context) {
-    return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "target", false), "jetbrains.mps.build.structure.BuildLayout_Container") && BehaviorReflection.invokeVirtual(Boolean.TYPE, SLinkOperations.getTarget(_context.getNode(), "target", false), "virtual_isFolder_1368030936106753980", new Object[]{});
+    return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(new UUID(8755280088213897754l, -5075149991798053422l), 841011766565753074l, 841011766565753076l, "target")), "jetbrains.mps.build.structure.BuildLayout_Container") && BehaviorReflection.invokeVirtual(Boolean.TYPE, SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(new UUID(8755280088213897754l, -5075149991798053422l), 841011766565753074l, 841011766565753076l, "target")), "virtual_isFolder_1368030936106753980", new Object[]{});
   }
   public static boolean baseMappingRule_Condition_2750015747481190656(final BaseMappingRuleContext _context) {
-    return isNotEmptyString(SPropertyOperations.getString(_context.getNode(), "filemode")) && BuildLayout_File_Behavior.call_canHaveFilemode_9126048691955221297(_context.getNode());
+    return isNotEmptyString(SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(new UUID(8755280088213897754l, -5075149991798053422l), 9126048691955220717l, 9126048691955221291l, "filemode"))) && BuildLayout_File_Behavior.call_canHaveFilemode_9126048691955221297(_context.getNode());
   }
   public static boolean baseMappingRule_Condition_2750015747481031594(final BaseMappingRuleContext _context) {
-    return ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "parameters", true)).any(new IWhereFilter<SNode>() {
+    return ListSequence.fromList(SLinkOperations.getChildren(_context.getNode(), MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 9126048691955220717l, 9126048691955220774l, "parameters"))).any(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.structure.BuildLayout_CopyHandler");
       }
     });
   }
   public static boolean baseMappingRule_Condition_2750015747481074523(final BaseMappingRuleContext _context) {
-    return ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "parameters", true)).any(new IWhereFilter<SNode>() {
+    return ListSequence.fromList(SLinkOperations.getChildren(_context.getNode(), MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 2750015747481074431l, 2750015747481074433l, "parameters"))).any(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.structure.BuildLayout_CopyHandler");
       }
@@ -130,7 +132,7 @@ public class QueriesGenerated {
     return BuildLayout_NamedContainer_Behavior.call_getOutputPath_WithMacro_280273048052535414(_context.getNode(), Context.defaultContext(_context));
   }
   public static Object propertyMacro_GetPropertyValue_6837653846148504888(final PropertyMacroContext _context) {
-    SNode node = SNodeOperations.cast(ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "children", true)).findFirst(new IWhereFilter<SNode>() {
+    SNode node = SNodeOperations.cast(ListSequence.fromList(SLinkOperations.getChildren(_context.getNode(), MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 4701820937132344003l, 7389400916848037006l, "children"))).findFirst(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.structure.BuildLayout_JarManifest");
       }
@@ -141,10 +143,10 @@ public class QueriesGenerated {
     return BehaviorReflection.invokeVirtual(String.class, _context.getNode(), "virtual_getChildrenOutputDir_WithMacro_4701820937132344011", new Object[]{Context.defaultContext(_context)});
   }
   public static Object propertyMacro_GetPropertyValue_7801138212747394625(final PropertyMacroContext _context) {
-    return SPropertyOperations.getString(_context.getNode(), "filemode");
+    return SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(new UUID(8755280088213897754l, -5075149991798053422l), 7801138212747054656l, 7801138212747054660l, "filemode"));
   }
   public static Object propertyMacro_GetPropertyValue_7801138212747394765(final PropertyMacroContext _context) {
-    return SPropertyOperations.getString(_context.getNode(), "dirmode");
+    return SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(new UUID(8755280088213897754l, -5075149991798053422l), 7801138212747054656l, 7801138212747054661l, "dirmode"));
   }
   public static Object propertyMacro_GetPropertyValue_7801138212747420785(final PropertyMacroContext _context) {
     return ((String) _context.getVariable("var:prefix"));
@@ -168,10 +170,10 @@ public class QueriesGenerated {
     return BehaviorReflection.invokeVirtual(String.class, _context.getNode(), "virtual_getChildrenOutputDir_WithMacro_4701820937132344011", new Object[]{Context.defaultContext(_context)});
   }
   public static Object propertyMacro_GetPropertyValue_7801138212747394845(final PropertyMacroContext _context) {
-    return SPropertyOperations.getString(_context.getNode(), "filemode");
+    return SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(new UUID(8755280088213897754l, -5075149991798053422l), 7801138212747054656l, 7801138212747054660l, "filemode"));
   }
   public static Object propertyMacro_GetPropertyValue_7801138212747394863(final PropertyMacroContext _context) {
-    return SPropertyOperations.getString(_context.getNode(), "dirmode");
+    return SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(new UUID(8755280088213897754l, -5075149991798053422l), 7801138212747054656l, 7801138212747054661l, "dirmode"));
   }
   public static Object propertyMacro_GetPropertyValue_7801138212747420743(final PropertyMacroContext _context) {
     return ((String) _context.getVariable("var:prefix"));
@@ -192,16 +194,16 @@ public class QueriesGenerated {
     return BuildLayout_NamedContainer_Behavior.call_getOutputPath_WithMacro_280273048052535414(_context.getNode(), Context.defaultContext(_context));
   }
   public static Object propertyMacro_GetPropertyValue_1979010778009295389(final PropertyMacroContext _context) {
-    return SPropertyOperations.getString_def(_context.getNode(), "compression", "none");
+    return SPropertyOperations.getString_def(_context.getNode(), MetaAdapterFactory.getProperty(new UUID(8755280088213897754l, -5075149991798053422l), 8577651205286814211l, 1979010778009209128l, "compression"), "none");
   }
   public static Object propertyMacro_GetPropertyValue_7801138212747394903(final PropertyMacroContext _context) {
     return BehaviorReflection.invokeVirtual(String.class, _context.getNode(), "virtual_getChildrenOutputDir_WithMacro_4701820937132344011", new Object[]{Context.defaultContext(_context)});
   }
   public static Object propertyMacro_GetPropertyValue_7801138212747394923(final PropertyMacroContext _context) {
-    return SPropertyOperations.getString(_context.getNode(), "filemode");
+    return SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(new UUID(8755280088213897754l, -5075149991798053422l), 7801138212747054656l, 7801138212747054660l, "filemode"));
   }
   public static Object propertyMacro_GetPropertyValue_7801138212747394941(final PropertyMacroContext _context) {
-    return SPropertyOperations.getString(_context.getNode(), "dirmode");
+    return SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(new UUID(8755280088213897754l, -5075149991798053422l), 7801138212747054656l, 7801138212747054661l, "dirmode"));
   }
   public static Object propertyMacro_GetPropertyValue_7801138212747405865(final PropertyMacroContext _context) {
     return ((String) _context.getVariable("var:prefix"));
@@ -246,10 +248,10 @@ public class QueriesGenerated {
     return ((String) _context.getVariable("var:tpath"));
   }
   public static Object propertyMacro_GetPropertyValue_7918752904806212853(final PropertyMacroContext _context) {
-    return _context.getNode().getProperty("value");
+    return SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(new UUID(8755280088213897754l, -5075149991798053422l), 5800711952433757019l, 5800711952433803450l, "value"));
   }
   public static Object propertyMacro_GetPropertyValue_7918752904806176130(final PropertyMacroContext _context) {
-    return _context.getNode().getProperty("key");
+    return SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(new UUID(8755280088213897754l, -5075149991798053422l), 5800711952433757019l, 5800711952433803448l, "key"));
   }
   public static Object propertyMacro_GetPropertyValue_1330375798061013111(final PropertyMacroContext _context) {
     return BehaviorReflection.invokeVirtual(String.class, _context.getNode(), "virtual_getTaskName_1330375798060763184", new Object[]{});
@@ -268,34 +270,34 @@ public class QueriesGenerated {
     return "copy." + _context.getNode().getNodeId().toString();
   }
   public static Object propertyMacro_GetPropertyValue_9184644532456968460(final PropertyMacroContext _context) {
-    return SPropertyOperations.getString(_context.getNode(), "key");
+    return SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(new UUID(8755280088213897754l, -5075149991798053422l), 9184644532456814149l, 9184644532456814151l, "key"));
   }
   public static Object propertyMacro_GetPropertyValue_9184644532456968492(final PropertyMacroContext _context) {
-    return ((SLinkOperations.getTarget(_context.getNode(), "value", true) == null) ? "" : BuildString_Behavior.call_getText_4380385936562005550(SLinkOperations.getTarget(_context.getNode(), "value", true), Context.defaultContext(_context).getMacros(_context.getNode())));
+    return ((SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 9184644532456814149l, 9184644532456814152l, "value")) == null) ? "" : BuildString_Behavior.call_getText_4380385936562005550(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 9184644532456814149l, 9184644532456814152l, "value")), Context.defaultContext(_context).getMacros(_context.getNode())));
   }
   public static Object propertyMacro_GetPropertyValue_9184644532457106546(final PropertyMacroContext _context) {
-    return SPropertyOperations.getString(_context.getNode(), "pattern");
+    return SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(new UUID(8755280088213897754l, -5075149991798053422l), 9184644532457106504l, 9184644532457106505l, "pattern"));
   }
   public static Object propertyMacro_GetPropertyValue_9184644532457106555(final PropertyMacroContext _context) {
-    return ((SLinkOperations.getTarget(_context.getNode(), "value", true) == null) ? "" : BuildString_Behavior.call_getText_4380385936562005550(SLinkOperations.getTarget(_context.getNode(), "value", true), Context.defaultContext(_context).getMacros(_context.getNode())));
+    return ((SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 9184644532457106504l, 9184644532457106506l, "value")) == null) ? "" : BuildString_Behavior.call_getText_4380385936562005550(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 9184644532457106504l, 9184644532457106506l, "value")), Context.defaultContext(_context).getMacros(_context.getNode())));
   }
   public static Object propertyMacro_GetPropertyValue_9184644532457106586(final PropertyMacroContext _context) {
-    return SPropertyOperations.getString(_context.getNode(), "flags");
+    return SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(new UUID(8755280088213897754l, -5075149991798053422l), 9184644532457106504l, 9184644532457106508l, "flags"));
   }
   public static Object propertyMacro_GetPropertyValue_4198392933254628144(final PropertyMacroContext _context) {
-    return SPropertyOperations.getString_def(_context.getNode(), "eol", "local");
+    return SPropertyOperations.getString_def(_context.getNode(), MetaAdapterFactory.getProperty(new UUID(8755280088213897754l, -5075149991798053422l), 4198392933254416812l, 4198392933254416822l, "eol"), "local");
   }
   public static Object propertyMacro_GetPropertyValue_3970102152660874527(final PropertyMacroContext _context) {
-    return SPropertyOperations.getString(_context.getNode(), "from");
+    return SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(new UUID(8755280088213897754l, -5075149991798053422l), 3970102152660702410l, 3970102152660874508l, "from"));
   }
   public static Object propertyMacro_GetPropertyValue_3970102152660874559(final PropertyMacroContext _context) {
-    return BuildString_Behavior.call_getText_4380385936562005550(SLinkOperations.getTarget(_context.getNode(), "to", true), Context.defaultContext(_context).getMacros(_context.getNode()));
+    return BuildString_Behavior.call_getText_4380385936562005550(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 3970102152660702410l, 3970102152660874509l, "to")), Context.defaultContext(_context).getMacros(_context.getNode()));
   }
   public static Object propertyMacro_GetPropertyValue_3970102152660876483(final PropertyMacroContext _context) {
-    return SPropertyOperations.getString(_context.getNode(), "pattern").replaceAll("\\$", "\\$\\$");
+    return SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(new UUID(8755280088213897754l, -5075149991798053422l), 3970102152660876447l, 3970102152660876448l, "pattern")).replaceAll("\\$", "\\$\\$");
   }
   public static Object propertyMacro_GetPropertyValue_3970102152660876492(final PropertyMacroContext _context) {
-    return SPropertyOperations.getString(_context.getNode(), "replace").replaceAll("\\$", "\\$\\$");
+    return SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(new UUID(8755280088213897754l, -5075149991798053422l), 3970102152660876447l, 3970102152660876449l, "replace")).replaceAll("\\$", "\\$\\$");
   }
   public static Object propertyMacro_GetPropertyValue_4643216374596142877(final PropertyMacroContext _context) {
     return BuildLayout_EchoXml_Behavior.call_getOutputPath_WithMacro_4643216374596143062(_context.getNode(), Context.defaultContext(_context));
@@ -304,9 +306,9 @@ public class QueriesGenerated {
     return "copy." + _context.getNode().getNodeId().toString();
   }
   public static Object propertyMacro_GetPropertyValue_202934866059116852(final PropertyMacroContext _context) {
-    return IterableUtils.join(ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "entries", true)).select(new ISelector<SNode, String>() {
+    return IterableUtils.join(ListSequence.fromList(SLinkOperations.getChildren(_context.getNode(), MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 202934866059043946l, 202934866059043962l, "entries"))).select(new ISelector<SNode, String>() {
       public String select(SNode it) {
-        return SPropertyOperations.getString(it, "key") + "=" + BuildString_Behavior.call_getText_4380385936562005550(SLinkOperations.getTarget(it, "value", true), Context.defaultContext(_context).getMacros(_context.getNode()));
+        return SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(new UUID(8755280088213897754l, -5075149991798053422l), 202934866059043959l, 202934866059043960l, "key")) + "=" + BuildString_Behavior.call_getText_4380385936562005550(SLinkOperations.getTarget(it, MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 202934866059043959l, 202934866059043961l, "value")), Context.defaultContext(_context).getMacros(_context.getNode()));
       }
     }), "${line.separator}");
   }
@@ -325,8 +327,8 @@ public class QueriesGenerated {
       return "???";
     }
     String result = BehaviorReflection.invokeVirtual(String.class, SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.build.structure.BuildLayout_Container"), "virtual_getChildrenOutputDir_WithMacro_4701820937132344011", new Object[]{Context.defaultContext(_context)});
-    if (BehaviorReflection.invokeVirtual(Boolean.TYPE, SLinkOperations.getTarget(_context.getNode(), "target", false), "virtual_isFolder_1368030936106753980", new Object[]{})) {
-      _context.showErrorMessage(_context.getNode(), "internal error: cannot handle folders `" + BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(_context.getNode(), "target", false), "virtual_getPresentation_1213877396640", new Object[]{}) + "'");
+    if (BehaviorReflection.invokeVirtual(Boolean.TYPE, SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(new UUID(8755280088213897754l, -5075149991798053422l), 841011766565753074l, 841011766565753076l, "target")), "virtual_isFolder_1368030936106753980", new Object[]{})) {
+      _context.showErrorMessage(_context.getNode(), "internal error: cannot handle folders `" + BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(new UUID(8755280088213897754l, -5075149991798053422l), 841011766565753074l, 841011766565753076l, "target")), "virtual_getPresentation_1213877396640", new Object[]{}) + "'");
     }
     return result;
   }
@@ -347,35 +349,35 @@ public class QueriesGenerated {
     return "copy.artifacts." + _context.getNode().getNodeId().toString();
   }
   public static Object propertyMacro_GetPropertyValue_6921160174096729094(final PropertyMacroContext _context) {
-    return SPropertyOperations.getString(_context.getNode(), "name");
+    return SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"));
   }
   public static Object propertyMacro_GetPropertyValue_1117643560963307392(final PropertyMacroContext _context) {
-    return BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(_context.getNode(), "defaultPath", true), "virtual_getAntPath_8563603456895173701", new Object[]{Context.defaultContext(_context)});
+    return BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 7389400916848136194l, 7389400916848144618l, "defaultPath")), "virtual_getAntPath_8563603456895173701", new Object[]{Context.defaultContext(_context)});
   }
   public static Object propertyMacro_GetPropertyValue_1117643560963307395(final PropertyMacroContext _context) {
-    return SPropertyOperations.getString(_context.getNode(), "name");
+    return SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"));
   }
   public static Object propertyMacro_GetPropertyValue_244868996532694202(final PropertyMacroContext _context) {
-    SNode stringValue = SNodeOperations.as(SLinkOperations.getTarget(_context.getNode(), "initialValue", true), "jetbrains.mps.build.structure.BuildVariableMacroInitWithString");
-    if ((stringValue != null) && (SLinkOperations.getTarget(stringValue, "value", true) != null)) {
-      return BuildString_Behavior.call_getText_4380385936562005550(SLinkOperations.getTarget(stringValue, "value", true), Context.defaultContext(_context).getMacros(_context.getNode()));
+    SNode stringValue = SNodeOperations.as(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 3767587139141066978l, 2755237150521975432l, "initialValue")), "jetbrains.mps.build.structure.BuildVariableMacroInitWithString");
+    if ((stringValue != null) && (SLinkOperations.getTarget(stringValue, MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 2755237150521975431l, 2755237150521975437l, "value")) != null)) {
+      return BuildString_Behavior.call_getText_4380385936562005550(SLinkOperations.getTarget(stringValue, MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 2755237150521975431l, 2755237150521975437l, "value")), Context.defaultContext(_context).getMacros(_context.getNode()));
     }
     return "";
   }
   public static Object propertyMacro_GetPropertyValue_244868996532694236(final PropertyMacroContext _context) {
-    return SPropertyOperations.getString(_context.getNode(), "name");
+    return SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"));
   }
   public static Object propertyMacro_GetPropertyValue_244868996532694243(final PropertyMacroContext _context) {
-    return (SLinkOperations.getTarget(_context.getNode(), "initialValue", true) == null);
+    return (SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 3767587139141066978l, 2755237150521975432l, "initialValue")) == null);
   }
   public static Object propertyMacro_GetPropertyValue_244868996532694647(final PropertyMacroContext _context) {
     return BuildVariableMacroInitValue_Behavior.call_getMacroName_244868996532694558(_context.getNode());
   }
   public static Object propertyMacro_GetPropertyValue_244868996532694684(final PropertyMacroContext _context) {
-    return SPropertyOperations.getString(_context.getNode(), "pattern");
+    return SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(new UUID(8755280088213897754l, -5075149991798053422l), 244868996532454372l, 244868996532454384l, "pattern"));
   }
   public static Object propertyMacro_GetPropertyValue_244868996532711387(final PropertyMacroContext _context) {
-    return BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(_context.getNode(), "fileName", true), "virtual_getAntPath_8563603456895173701", new Object[]{Context.defaultContext(_context)});
+    return BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 244868996532550359l, 244868996532550360l, "fileName")), "virtual_getAntPath_8563603456895173701", new Object[]{Context.defaultContext(_context)});
   }
   public static Object propertyMacro_GetPropertyValue_244868996532711449(final PropertyMacroContext _context) {
     return "loaded.for." + BuildVariableMacroInitValue_Behavior.call_getMacroName_244868996532694558(_context.getNode());
@@ -390,140 +392,140 @@ public class QueriesGenerated {
     return BehaviorReflection.invokeVirtual(String.class, _context.getNode(), "virtual_getAntPath_8563603456895173701", new Object[]{Context.defaultContext(_context)});
   }
   public static Object propertyMacro_GetPropertyValue_1117643560963346388(final PropertyMacroContext _context) {
-    return SPropertyOperations.getString(_context.getNode(), "name");
+    return SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"));
   }
   public static Object propertyMacro_GetPropertyValue_1117643560963346427(final PropertyMacroContext _context) {
-    return Context.defaultContext(_context).getTempPath(_context.getNode(), SPropertyOperations.getString(_context.getNode(), "name"), "java", "out");
+    return Context.defaultContext(_context).getTempPath(_context.getNode(), SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")), "java", "out");
   }
   public static Object propertyMacro_GetPropertyValue_8055294676438890975(final PropertyMacroContext _context) {
-    return _context.getNode().getProperty("folderName");
+    return SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(new UUID(8755280088213897754l, -5075149991798053422l), 5800711952433444288l, 5800711952433445190l, "folderName"));
   }
   public static Object propertyMacro_GetPropertyValue_1659807394254872723(final PropertyMacroContext _context) {
     SNode options = ((SNode) _context.getVariable("var:javaOpts"));
-    return (options != null ? SPropertyOperations.getBoolean(options, "generateDebugInfo") : false);
+    return (options != null ? SPropertyOperations.getBoolean(options, MetaAdapterFactory.getProperty(new UUID(8755280088213897754l, -5075149991798053422l), 927724900262033858l, 927724900262033861l, "generateDebugInfo")) : false);
   }
   public static Object propertyMacro_GetPropertyValue_1659807394254873294(final PropertyMacroContext _context) {
     SNode options = ((SNode) _context.getVariable("var:javaOpts"));
-    return (options != null ? SPropertyOperations.getBoolean(options, "noWarnings") : false);
+    return (options != null ? SPropertyOperations.getBoolean(options, MetaAdapterFactory.getProperty(new UUID(8755280088213897754l, -5075149991798053422l), 927724900262033858l, 927724900262398958l, "noWarnings")) : false);
   }
   public static Object propertyMacro_GetPropertyValue_1659807394254873348(final PropertyMacroContext _context) {
     SNode options = ((SNode) _context.getVariable("var:javaOpts"));
-    return (options != null ? SPropertyOperations.getInteger(options, "heapSize") : 0);
+    return (options != null ? SPropertyOperations.getInteger(options, MetaAdapterFactory.getProperty(new UUID(8755280088213897754l, -5075149991798053422l), 927724900262033858l, 927724900262398947l, "heapSize")) : 0);
   }
   public static Object propertyMacro_GetPropertyValue_703815700951902259(final PropertyMacroContext _context) {
     SNode options = ((SNode) _context.getVariable("var:javaOpts"));
-    return (options != null ? SPropertyOperations.getString(options, "compiler") : null);
+    return (options != null ? SPropertyOperations.getString(options, MetaAdapterFactory.getProperty(new UUID(8755280088213897754l, -5075149991798053422l), 927724900262033858l, 2059109515400425365l, "compiler")) : null);
   }
   public static Object propertyMacro_GetPropertyValue_6998860900673151433(final PropertyMacroContext _context) {
-    return SPropertyOperations.getString(((SNode) _context.getVariable("var:javaOpts")), "javaLevel");
+    return SPropertyOperations.getString(((SNode) _context.getVariable("var:javaOpts")), MetaAdapterFactory.getProperty(new UUID(8755280088213897754l, -5075149991798053422l), 927724900262033858l, 6998860900671147996l, "javaLevel"));
   }
   public static Object propertyMacro_GetPropertyValue_6998860900673160748(final PropertyMacroContext _context) {
-    return SPropertyOperations.getString(((SNode) _context.getVariable("var:javaOpts")), "javaLevel");
+    return SPropertyOperations.getString(((SNode) _context.getVariable("var:javaOpts")), MetaAdapterFactory.getProperty(new UUID(8755280088213897754l, -5075149991798053422l), 927724900262033858l, 6998860900671147996l, "javaLevel"));
   }
   public static Object propertyMacro_GetPropertyValue_1476884141930961396(final PropertyMacroContext _context) {
-    return SPropertyOperations.getString(((SNode) _context.getVariable("var:javaOpts")), "compilerOptions");
+    return SPropertyOperations.getString(((SNode) _context.getVariable("var:javaOpts")), MetaAdapterFactory.getProperty(new UUID(8755280088213897754l, -5075149991798053422l), 927724900262033858l, 1476884141929960215l, "compilerOptions"));
   }
   public static Object propertyMacro_GetPropertyValue_7926701909975671869(final PropertyMacroContext _context) {
     return BuildSource_JavaContentFolder_Behavior.call_getAntPath_2389279258816946193(_context.getNode(), Context.defaultContext(_context));
   }
   public static Object propertyMacro_GetPropertyValue_144710003695560915(final PropertyMacroContext _context) {
-    return "java.library." + SPropertyOperations.getString(_context.getNode(), "name");
+    return "java.library." + SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"));
   }
   public static Object propertyMacro_GetPropertyValue_5248329904288079406(final PropertyMacroContext _context) {
-    return BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(_context.getNode(), "dir", true), "virtual_getAntPath_8563603456895173701", new Object[]{Context.defaultContext(_context)});
+    return BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 5248329904287794596l, 5248329904287794598l, "dir")), "virtual_getAntPath_8563603456895173701", new Object[]{Context.defaultContext(_context)});
   }
   public static Object propertyMacro_GetPropertyValue_7866279537988669079(final PropertyMacroContext _context) {
-    return BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(_context.getNode(), "dir", true), "virtual_getAntPath_8563603456895173701", new Object[]{Context.defaultContext(_context)});
+    return BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 7866279537988666687l, 7866279537988666690l, "dir")), "virtual_getAntPath_8563603456895173701", new Object[]{Context.defaultContext(_context)});
   }
   public static Object propertyMacro_GetPropertyValue_5248329904288079452(final PropertyMacroContext _context) {
-    return BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(_context.getNode(), "path", true), "virtual_getAntPath_8563603456895173701", new Object[]{Context.defaultContext(_context)});
+    return BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 5248329904287794582l, 5248329904287794586l, "path")), "virtual_getAntPath_8563603456895173701", new Object[]{Context.defaultContext(_context)});
   }
   public static Object propertyMacro_GetPropertyValue_2303926226081012727(final PropertyMacroContext _context) {
-    return BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(_context.getNode(), "path", true), "virtual_getAntPath_8563603456895173701", new Object[]{Context.defaultContext(_context)});
+    return BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 2303926226081001727l, 2303926226081001728l, "path")), "virtual_getAntPath_8563603456895173701", new Object[]{Context.defaultContext(_context)});
   }
   public static Object propertyMacro_GetPropertyValue_3717132724152837101(final PropertyMacroContext _context) {
-    return BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(_context.getNode(), "path", true), "virtual_getAntPath_8563603456895173701", new Object[]{Context.defaultContext(_context)});
+    return BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 1258644073388922138l, 3717132724152837090l, "path")), "virtual_getAntPath_8563603456895173701", new Object[]{Context.defaultContext(_context)});
   }
   public static Object propertyMacro_GetPropertyValue_3717132724152837217(final PropertyMacroContext _context) {
-    return BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(_context.getNode(), "dir", true), "virtual_getAntPath_8563603456895173701", new Object[]{Context.defaultContext(_context)});
+    return BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 1258644073389103449l, 3717132724152837184l, "dir")), "virtual_getAntPath_8563603456895173701", new Object[]{Context.defaultContext(_context)});
   }
   public static Object propertyMacro_GetPropertyValue_5248329904288082868(final PropertyMacroContext _context) {
-    return SPropertyOperations.getString(_context.getNode(), "pattern");
+    return SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(new UUID(8755280088213897754l, -5075149991798053422l), 5248329904288051100l, 5248329904288051101l, "pattern"));
   }
   public static Object propertyMacro_GetPropertyValue_8654221991637384417(final PropertyMacroContext _context) {
-    return SPropertyOperations.getString(_context.getNode(), "pattern");
+    return SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(new UUID(8755280088213897754l, -5075149991798053422l), 8654221991637384182l, 8654221991637384184l, "pattern"));
   }
   public static Object propertyMacro_GetPropertyValue_5248329904288082882(final PropertyMacroContext _context) {
-    return SPropertyOperations.getString(_context.getNode(), "pattern");
+    return SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(new UUID(8755280088213897754l, -5075149991798053422l), 5248329904288051111l, 5248329904288051112l, "pattern"));
   }
   public static Object propertyMacro_GetPropertyValue_4701820937132337491(final PropertyMacroContext _context) {
-    return "layout." + SPropertyOperations.getString(_context.getNode(), "name");
+    return "layout." + SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"));
   }
   public static Object propertyMacro_GetPropertyValue_6837653846148442221(final PropertyMacroContext _context) {
     return BuildLayout_JarManifest_Behavior.call_getOutputPath_WithMacro_6837653846148442229(_context.getNode(), Context.defaultContext(_context));
   }
   public static Object propertyMacro_GetPropertyValue_6837653846148442060(final PropertyMacroContext _context) {
-    return BuildString_Behavior.call_getText_4380385936562005550(SLinkOperations.getTarget(_context.getNode(), "name", true), Context.defaultContext(_context).getMacros(_context.getNode()));
+    return BuildString_Behavior.call_getText_4380385936562005550(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 1251221292903960368l, 1251221292903960369l, "name")), Context.defaultContext(_context).getMacros(_context.getNode()));
   }
   public static Object propertyMacro_GetPropertyValue_6837653846148442076(final PropertyMacroContext _context) {
-    return BuildString_Behavior.call_getText_4380385936562005550(SLinkOperations.getTarget(_context.getNode(), "value", true), Context.defaultContext(_context).getMacros(_context.getNode()));
+    return BuildString_Behavior.call_getText_4380385936562005550(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 1251221292903960368l, 1251221292903960370l, "value")), Context.defaultContext(_context).getMacros(_context.getNode()));
   }
   public static Object propertyMacro_GetPropertyValue_6837653846148442102(final PropertyMacroContext _context) {
-    return BuildString_Behavior.call_getText_4380385936562005550(SLinkOperations.getTarget(_context.getNode(), "name", true), Context.defaultContext(_context).getMacros(_context.getNode()));
+    return BuildString_Behavior.call_getText_4380385936562005550(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 1251221292903960368l, 1251221292903960369l, "name")), Context.defaultContext(_context).getMacros(_context.getNode()));
   }
   public static Object propertyMacro_GetPropertyValue_6837653846148442118(final PropertyMacroContext _context) {
-    return BuildString_Behavior.call_getText_4380385936562005550(SLinkOperations.getTarget(_context.getNode(), "value", true), Context.defaultContext(_context).getMacros(_context.getNode()));
+    return BuildString_Behavior.call_getText_4380385936562005550(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 1251221292903960368l, 1251221292903960370l, "value")), Context.defaultContext(_context).getMacros(_context.getNode()));
   }
   public static Object propertyMacro_GetPropertyValue_6837653846148442142(final PropertyMacroContext _context) {
-    return BuildString_Behavior.call_getText_4380385936562005550(SLinkOperations.getTarget(_context.getNode(), "name", true), Context.defaultContext(_context).getMacros(_context.getNode()));
+    return BuildString_Behavior.call_getText_4380385936562005550(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 1251221292904119675l, 6837653846148302680l, "name")), Context.defaultContext(_context).getMacros(_context.getNode()));
   }
   public static Object propertyMacro_GetPropertyValue_6837653846148442043(final PropertyMacroContext _context) {
     return _context.getTemplateValue() + "." + _context.getNode().getNodeId().toString();
   }
   public static Object propertyMacro_GetPropertyValue_5368511706901764962(final PropertyMacroContext _context) {
-    return "${build.dir}/tmp/" + SPropertyOperations.getString(_context.getNode(), "name");
+    return "${build.dir}/tmp/" + SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"));
   }
   public static Object propertyMacro_GetPropertyValue_5368511706901764926(final PropertyMacroContext _context) {
-    return "${build.dir}/artifacts/" + SPropertyOperations.getString(_context.getNode(), "name");
+    return "${build.dir}/artifacts/" + SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"));
   }
   public static Object propertyMacro_GetPropertyValue_4129895186893528655(final PropertyMacroContext _context) {
-    return "artifacts." + SPropertyOperations.getString(SLinkOperations.getTarget(SNodeOperations.cast(_context.getNode(), "jetbrains.mps.build.structure.BuildProjectDependency"), "script", false), "name");
+    return "artifacts." + SPropertyOperations.getString(SLinkOperations.getTarget(SNodeOperations.cast(_context.getNode(), "jetbrains.mps.build.structure.BuildProjectDependency"), MetaAdapterFactory.getReferenceLink(new UUID(8755280088213897754l, -5075149991798053422l), 4993211115183325728l, 5617550519002745380l, "script")), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"));
   }
   public static Object propertyMacro_GetPropertyValue_4129895186893528776(final PropertyMacroContext _context) {
-    if ((SLinkOperations.getTarget(SNodeOperations.cast(_context.getNode(), "jetbrains.mps.build.structure.BuildProjectDependency"), "artifacts", true) != null)) {
-      return BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(SNodeOperations.cast(_context.getNode(), "jetbrains.mps.build.structure.BuildProjectDependency"), "artifacts", true), "virtual_getAntPath_8563603456895173701", new Object[]{Context.defaultContext(_context)});
+    if ((SLinkOperations.getTarget(SNodeOperations.cast(_context.getNode(), "jetbrains.mps.build.structure.BuildProjectDependency"), MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 4993211115183325728l, 4129895186893471026l, "artifacts")) != null)) {
+      return BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(SNodeOperations.cast(_context.getNode(), "jetbrains.mps.build.structure.BuildProjectDependency"), MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 4993211115183325728l, 4129895186893471026l, "artifacts")), "virtual_getAntPath_8563603456895173701", new Object[]{Context.defaultContext(_context)});
     }
     if (((String) _context.getVariable("var:basePath")) == null) {
       return ".";
     }
-    SNode script = SLinkOperations.getTarget(SNodeOperations.cast(_context.getNode(), "jetbrains.mps.build.structure.BuildProjectDependency"), "script", false);
+    SNode script = SLinkOperations.getTarget(SNodeOperations.cast(_context.getNode(), "jetbrains.mps.build.structure.BuildProjectDependency"), MetaAdapterFactory.getReferenceLink(new UUID(8755280088213897754l, -5075149991798053422l), 4993211115183325728l, 5617550519002745380l, "script"));
     String filePath = BuildProject_Behavior.call_getBasePath_4959435991187146924(script, Context.defaultContext(_context));
     if (filePath == null) {
-      _context.showErrorMessage(script, "no base path for required script " + SPropertyOperations.getString(script, "name"));
+      _context.showErrorMessage(script, "no base path for required script " + SPropertyOperations.getString(script, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")));
       return ".";
     }
     try {
       String relative = new RelativePathHelper(((String) _context.getVariable("var:basePath"))).makeRelative(filePath);
       if ((relative == null || relative.length() == 0)) {
-        return "${build.dir}/artifacts/" + SPropertyOperations.getString(script, "name");
+        return "${build.dir}/artifacts/" + SPropertyOperations.getString(script, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"));
       }
       if (!(relative.endsWith("/"))) {
         relative += "/";
       }
-      return relative + "build/artifacts/" + SPropertyOperations.getString(script, "name");
+      return relative + "build/artifacts/" + SPropertyOperations.getString(script, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"));
     } catch (RelativePathHelper.PathException ex) {
       _context.showErrorMessage(_context.getNode(), "cannot calculate relative path: " + ex.getMessage());
       return ".";
     }
   }
   public static Object propertyMacro_GetPropertyValue_7181125477683419235(final PropertyMacroContext _context) {
-    return "artifacts." + SPropertyOperations.getString(SLinkOperations.getTarget(SNodeOperations.cast(_context.getNode(), "jetbrains.mps.build.structure.BuildExternalLayoutDependency"), "layout", false), "name");
+    return "artifacts." + SPropertyOperations.getString(SLinkOperations.getTarget(SNodeOperations.cast(_context.getNode(), "jetbrains.mps.build.structure.BuildExternalLayoutDependency"), MetaAdapterFactory.getReferenceLink(new UUID(8755280088213897754l, -5075149991798053422l), 7181125477683417252l, 7181125477683417255l, "layout")), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"));
   }
   public static Object propertyMacro_GetPropertyValue_7181125477683419247(final PropertyMacroContext _context) {
-    return BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(SNodeOperations.cast(_context.getNode(), "jetbrains.mps.build.structure.BuildExternalLayoutDependency"), "artifacts", true), "virtual_getAntPath_8563603456895173701", new Object[]{Context.defaultContext(_context)});
+    return BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(SNodeOperations.cast(_context.getNode(), "jetbrains.mps.build.structure.BuildExternalLayoutDependency"), MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 7181125477683417252l, 7181125477683417254l, "artifacts")), "virtual_getAntPath_8563603456895173701", new Object[]{Context.defaultContext(_context)});
   }
   public static Object propertyMacro_GetPropertyValue_6520682027041002227(final PropertyMacroContext _context) {
-    return "${artifacts." + SPropertyOperations.getString(SLinkOperations.getTarget(SNodeOperations.cast(_context.getNode(), "jetbrains.mps.build.structure.BuildProjectDependency"), "script", false), "name") + "}/build.properties";
+    return "${artifacts." + SPropertyOperations.getString(SLinkOperations.getTarget(SNodeOperations.cast(_context.getNode(), "jetbrains.mps.build.structure.BuildProjectDependency"), MetaAdapterFactory.getReferenceLink(new UUID(8755280088213897754l, -5075149991798053422l), 4993211115183325728l, 5617550519002745380l, "script")), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")) + "}/build.properties";
   }
   public static Object propertyMacro_GetPropertyValue_6520682027041002310(final PropertyMacroContext _context) {
     return ((MacroHelper) _context.getVariable("var:macroHelper")).getPrefix(_context.getNode());
@@ -535,10 +537,10 @@ public class QueriesGenerated {
     return "${" + ((MacroHelper) _context.getVariable("var:macroHelper")).getImportName(_context.getNode()) + "}";
   }
   public static Object propertyMacro_GetPropertyValue_9126048691954996125(final PropertyMacroContext _context) {
-    return BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(_context.getNode(), "layout", true), "virtual_getChildrenOutputDir_WithMacro_4701820937132344011", new Object[]{Context.defaultContext(_context)});
+    return BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 5617550519002745363l, 5617550519002745372l, "layout")), "virtual_getChildrenOutputDir_WithMacro_4701820937132344011", new Object[]{Context.defaultContext(_context)});
   }
   public static Object propertyMacro_GetPropertyValue_9126048691954994112(final PropertyMacroContext _context) {
-    return BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(_context.getNode(), "layout", true), "virtual_getPrepareSubTaskId_4701820937132344041", new Object[]{});
+    return BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 5617550519002745363l, 5617550519002745372l, "layout")), "virtual_getPrepareSubTaskId_4701820937132344041", new Object[]{});
   }
   public static Object propertyMacro_GetPropertyValue_5662391463398094397(final PropertyMacroContext _context) {
     return "${build.layout}/build.properties";
@@ -551,10 +553,10 @@ public class QueriesGenerated {
     }), "${line.separator}");
   }
   public static Object propertyMacro_GetPropertyValue_6520682027041196886(final PropertyMacroContext _context) {
-    return SPropertyOperations.getString(_context.getNode(), "path");
+    return SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(new UUID(8755280088213897754l, -5075149991798053422l), 6354776497066088012l, 6354776497066088381l, "path"));
   }
   public static Object propertyMacro_GetPropertyValue_3595702787188242919(final PropertyMacroContext _context) {
-    return SPropertyOperations.getString(_context.getNode(), "name");
+    return SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"));
   }
   public static Object propertyMacro_GetPropertyValue_5096397858823409284(final PropertyMacroContext _context) {
     return "${build.tmp}";
@@ -563,10 +565,10 @@ public class QueriesGenerated {
     return BuildProject_Behavior.call_getBasePathRelativeToScriptsPath_5178006408628632053(_context.getNode(), Context.defaultContext(_context));
   }
   public static Object propertyMacro_GetPropertyValue_1117643560963351184(final PropertyMacroContext _context) {
-    return Context.defaultContext(_context).getTempPath(SLinkOperations.getTarget(_context.getNode(), "module", false), SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "module", false), "name"), "java", "out");
+    return Context.defaultContext(_context).getTempPath(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(new UUID(8755280088213897754l, -5075149991798053422l), 2591537044435828004l, 2591537044435828006l, "module")), SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(new UUID(8755280088213897754l, -5075149991798053422l), 2591537044435828004l, 2591537044435828006l, "module")), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")), "java", "out");
   }
   public static Object propertyMacro_GetPropertyValue_1330375798088592600(final PropertyMacroContext _context) {
-    return BuildLayout_CopyProcessor_Behavior.call_getTempFolder_1330375798096391716(SNodeOperations.cast(ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "handlers", true)).last(), "jetbrains.mps.build.structure.BuildLayout_CopyProcessor"), _context);
+    return BuildLayout_CopyProcessor_Behavior.call_getTempFolder_1330375798096391716(SNodeOperations.cast(ListSequence.fromList(SLinkOperations.getChildren(_context.getNode(), MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 9184644532456495794l, 9184644532456533278l, "handlers"))).last(), "jetbrains.mps.build.structure.BuildLayout_CopyProcessor"), _context);
   }
   public static Object propertyMacro_GetPropertyValue_1330375798099682997(final PropertyMacroContext _context) {
     return ((Tuples._4<String, String, String, String>) _context.getVariable("var:archive"))._1();
@@ -584,7 +586,7 @@ public class QueriesGenerated {
     return ((String) _context.getVariable("var:targetLocation"));
   }
   public static Object propertyMacro_GetPropertyValue_5610619299013114897(final PropertyMacroContext _context) {
-    if (!(BehaviorReflection.invokeVirtual(Boolean.TYPE, SLinkOperations.getTarget(_context.getNode(), "target", false), "virtual_isFile_1368030936106753986", new Object[]{}))) {
+    if (!(BehaviorReflection.invokeVirtual(Boolean.TYPE, SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(new UUID(8755280088213897754l, -5075149991798053422l), 841011766565753074l, 841011766565753076l, "target")), "virtual_isFile_1368030936106753986", new Object[]{}))) {
       _context.showErrorMessage(_context.getNode(), "cannot import abstract element, should be file or folder");
     }
     return "file";
@@ -617,7 +619,7 @@ public class QueriesGenerated {
     return ((Tuples._4<String, String, String, String>) _context.getVariable("var:archive"))._0();
   }
   public static Object propertyMacro_GetPropertyValue_6408167411310621645(final PropertyMacroContext _context) {
-    return BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(_context.getNode(), "dir", true), "virtual_getAntPath_8563603456895173701", new Object[]{Context.defaultContext(_context)});
+    return BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 5248329904287794596l, 5248329904287794598l, "dir")), "virtual_getAntPath_8563603456895173701", new Object[]{Context.defaultContext(_context)});
   }
   public static Object propertyMacro_GetPropertyValue_6408167411310656150(final PropertyMacroContext _context) {
     return ((Tuples._4<String, String, String, String>) _context.getVariable("var:archive"))._1();
@@ -632,7 +634,7 @@ public class QueriesGenerated {
     return ((Tuples._4<String, String, String, String>) _context.getVariable("var:archive"))._0();
   }
   public static Object propertyMacro_GetPropertyValue_6408167411310621703(final PropertyMacroContext _context) {
-    return BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(_context.getNode(), "path", true), "virtual_getAntPath_8563603456895173701", new Object[]{Context.defaultContext(_context)});
+    return BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 5248329904287794582l, 5248329904287794586l, "path")), "virtual_getAntPath_8563603456895173701", new Object[]{Context.defaultContext(_context)});
   }
   public static Object propertyMacro_GetPropertyValue_6408167411310656275(final PropertyMacroContext _context) {
     return ((Tuples._3<String, String, String>) _context.getVariable("var:archive"))._1();
@@ -653,19 +655,19 @@ public class QueriesGenerated {
     SNode artifact = SNodeOperations.as(DependenciesHelper.getOriginalNode(((SNode) _context.getVariable("module")), _context), "jetbrains.mps.build.structure.BuildSource_JavaModule");
     SNode layoutNode = helper.artifacts().get(artifact);
     if (layoutNode == null) {
-      _context.showErrorMessage(_context.getNode(), "java module " + SPropertyOperations.getString(((SNode) _context.getVariable("module")), "name") + " was not found in the layout");
+      _context.showErrorMessage(_context.getNode(), "java module " + SPropertyOperations.getString(((SNode) _context.getVariable("module")), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")) + " was not found in the layout");
       return "???";
     }
     String val = BehaviorReflection.invokeVirtual(String.class, layoutNode, "virtual_location_7117056644539862594", new Object[]{helper, artifact});
     if (val == null) {
-      _context.showErrorMessage(_context.getNode(), "no location for java module " + SPropertyOperations.getString(((SNode) _context.getVariable("module")), "name"));
+      _context.showErrorMessage(_context.getNode(), "no location for java module " + SPropertyOperations.getString(((SNode) _context.getVariable("module")), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")));
       return "???";
     }
     return val;
   }
   public static Object propertyMacro_GetPropertyValue_8169228734285529581(final PropertyMacroContext _context) {
     if (SNodeOperations.getContainingRoot(((SNode) _context.getVariable("jar"))) == SNodeOperations.getContainingRoot(_context.getNode())) {
-      return BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(((SNode) _context.getVariable("jar")), "path", true), "virtual_getAntPath_8563603456895173701", new Object[]{Context.defaultContext(_context)});
+      return BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(((SNode) _context.getVariable("jar")), MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 1258644073388922138l, 3717132724152837090l, "path")), "virtual_getAntPath_8563603456895173701", new Object[]{Context.defaultContext(_context)});
     }
     SNode project = SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.build.structure.BuildProject", false, false);
     if (project == null) {
@@ -673,14 +675,14 @@ public class QueriesGenerated {
       return "???";
     }
     DependenciesHelper helper = new DependenciesHelper(_context, project);
-    SNode layoutNode = helper.artifacts().get(DependenciesHelper.getOriginalNode(SLinkOperations.getTarget(((SNode) _context.getVariable("jar")), "path", true), _context));
+    SNode layoutNode = helper.artifacts().get(DependenciesHelper.getOriginalNode(SLinkOperations.getTarget(((SNode) _context.getVariable("jar")), MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 1258644073388922138l, 3717132724152837090l, "path")), _context));
     if (layoutNode == null) {
-      _context.showErrorMessage(_context.getNode(), "file " + BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(((SNode) _context.getVariable("jar")), "path", true), "virtual_getRelativePath_5481553824944787371", new Object[]{}) + " was not found in the layout");
+      _context.showErrorMessage(_context.getNode(), "file " + BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(((SNode) _context.getVariable("jar")), MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 1258644073388922138l, 3717132724152837090l, "path")), "virtual_getRelativePath_5481553824944787371", new Object[]{}) + " was not found in the layout");
       return "???";
     }
     String val = helper.locations().get(layoutNode);
     if (val == null) {
-      _context.showErrorMessage(_context.getNode(), "no location for jar " + BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(((SNode) _context.getVariable("jar")), "path", true), "virtual_getRelativePath_5481553824944787371", new Object[]{}));
+      _context.showErrorMessage(_context.getNode(), "no location for jar " + BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(((SNode) _context.getVariable("jar")), MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 1258644073388922138l, 3717132724152837090l, "path")), "virtual_getRelativePath_5481553824944787371", new Object[]{}));
       return "???";
     }
     return val;
@@ -698,7 +700,7 @@ public class QueriesGenerated {
       layoutNode = SNodeOperations.as(DependenciesHelper.getOriginalNode(targetFile, _context), "jetbrains.mps.build.structure.BuildLayout_Node");
     } else {
       SNode sfile = SNodeOperations.as(targetFile, "jetbrains.mps.build.structure.BuildInputSingleFile");
-      layoutNode = helper.artifacts().get(DependenciesHelper.getOriginalNode((sfile != null ? SLinkOperations.getTarget(sfile, "path", true) : targetFile), _context));
+      layoutNode = helper.artifacts().get(DependenciesHelper.getOriginalNode((sfile != null ? SLinkOperations.getTarget(sfile, MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 5248329904287794582l, 5248329904287794586l, "path")) : targetFile), _context));
       if (layoutNode == null) {
         _context.showErrorMessage(_context.getNode(), "file " + BehaviorReflection.invokeVirtual(String.class, targetFile, "virtual_getApproximateName_5610619299013425878", new Object[]{}) + " was not found in the layout");
         return "???";
@@ -724,7 +726,7 @@ public class QueriesGenerated {
       layoutNode = SNodeOperations.as(DependenciesHelper.getOriginalNode(targetFolder, _context), "jetbrains.mps.build.structure.BuildLayout_AbstractContainer");
     } else {
       SNode sfolder = SNodeOperations.as(targetFolder, "jetbrains.mps.build.structure.BuildInputSingleFolder");
-      layoutNode = helper.artifacts().get(DependenciesHelper.getOriginalNode((sfolder != null ? SLinkOperations.getTarget(sfolder, "path", true) : targetFolder), _context));
+      layoutNode = helper.artifacts().get(DependenciesHelper.getOriginalNode((sfolder != null ? SLinkOperations.getTarget(sfolder, MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 2303926226081001727l, 2303926226081001728l, "path")) : targetFolder), _context));
       if (layoutNode == null) {
         _context.showErrorMessage(_context.getNode(), "folder " + BehaviorReflection.invokeVirtual(String.class, targetFolder, "virtual_getApproximateName_5610619299014531547", new Object[]{}) + " was not found in the layout");
         return "???";
@@ -744,9 +746,9 @@ public class QueriesGenerated {
       return "";
     }
     DependenciesHelper helper = new DependenciesHelper(_context, project);
-    String val = helper.locations().get(DependenciesHelper.getOriginalNode(SLinkOperations.getTarget(_context.getNode(), "target", false), _context));
+    String val = helper.locations().get(DependenciesHelper.getOriginalNode(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(new UUID(8755280088213897754l, -5075149991798053422l), 841011766565753074l, 841011766565753076l, "target")), _context));
     if (val == null) {
-      _context.showErrorMessage(_context.getNode(), "no location for " + BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(_context.getNode(), "target", false), "virtual_getPresentation_1213877396640", new Object[]{}));
+      _context.showErrorMessage(_context.getNode(), "no location for " + BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(new UUID(8755280088213897754l, -5075149991798053422l), 841011766565753074l, 841011766565753076l, "target")), "virtual_getPresentation_1213877396640", new Object[]{}));
       return "";
     }
     int lastSlash = val.lastIndexOf('/');
@@ -757,7 +759,7 @@ public class QueriesGenerated {
     return val.substring(lastSlash + 1);
   }
   public static Object propertyMacro_GetPropertyValue_2750015747481191462(final PropertyMacroContext _context) {
-    return SPropertyOperations.getString(_context.getNode(), "filemode");
+    return SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(new UUID(8755280088213897754l, -5075149991798053422l), 9126048691955220717l, 9126048691955221291l, "filemode"));
   }
   public static Object propertyMacro_GetPropertyValue_342830306171239730(final PropertyMacroContext _context) {
     SNode targetFolder = ((SNode) _context.getVariable("folder"));
@@ -772,7 +774,7 @@ public class QueriesGenerated {
       layoutNode = SNodeOperations.as(DependenciesHelper.getOriginalNode(targetFolder, _context), "jetbrains.mps.build.structure.BuildLayout_AbstractContainer");
     } else {
       SNode sfolder = SNodeOperations.as(targetFolder, "jetbrains.mps.build.structure.BuildInputSingleFolder");
-      layoutNode = helper.artifacts().get(DependenciesHelper.getOriginalNode((sfolder != null ? SLinkOperations.getTarget(sfolder, "path", true) : targetFolder), _context));
+      layoutNode = helper.artifacts().get(DependenciesHelper.getOriginalNode((sfolder != null ? SLinkOperations.getTarget(sfolder, MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 2303926226081001727l, 2303926226081001728l, "path")) : targetFolder), _context));
       if (layoutNode == null) {
         _context.showErrorMessage(_context.getNode(), "folder " + BehaviorReflection.invokeVirtual(String.class, targetFolder, "virtual_getApproximateName_5610619299014531547", new Object[]{}) + " was not found in the layout");
         return "???";
@@ -870,7 +872,7 @@ public class QueriesGenerated {
     return BehaviorReflection.invokeVirtual(String.class, SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.build.structure.BuildLayout_Container"), "virtual_getAssembleSubTaskId_4701820937132344052", new Object[]{});
   }
   public static Object referenceMacro_GetReferent_6854204111265839188(final ReferenceMacroContext _context) {
-    return SLinkOperations.getTarget(_context.getNode(), "for", false);
+    return SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(new UUID(8755280088213897754l, -5075149991798053422l), 6854204111265764357l, 6854204111265764358l, "for"));
   }
   public static Object referenceMacro_GetReferent_144710003695561045(final ReferenceMacroContext _context) {
     return _context.getOutputNodeByInputNodeAndMappingLabel(((SNode) _context.getVariable("library")), "javalibrary");
@@ -879,7 +881,7 @@ public class QueriesGenerated {
     return _context.getOutputNodeByInputNodeAndMappingLabel(((SNode) _context.getVariable("module")), "javamodule");
   }
   public static Object referenceMacro_GetReferent_8847838005406041707(final ReferenceMacroContext _context) {
-    return SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), "target", false), "jetbrains.mps.build.structure.BuildLayout_Container");
+    return SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(new UUID(8755280088213897754l, -5075149991798053422l), 841011766565753074l, 841011766565753076l, "target")), "jetbrains.mps.build.structure.BuildLayout_Container");
   }
   public static Object referenceMacro_GetReferent_6083230236994919155(final ReferenceMacroContext _context) {
     return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "buildSourceArchiveRelativePath");
@@ -907,17 +909,17 @@ public class QueriesGenerated {
     return SNodeOperations.isInstanceOf(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.build.structure.BuildLayout_Container") && BehaviorReflection.invokeVirtual(String.class, SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.build.structure.BuildLayout_Container"), "virtual_getPrepareSubTaskId_4701820937132344041", new Object[]{}) != null;
   }
   public static boolean ifMacro_Condition_6837653846148504892(final IfMacroContext _context) {
-    return ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "children", true)).findFirst(new IWhereFilter<SNode>() {
+    return ListSequence.fromList(SLinkOperations.getChildren(_context.getNode(), MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 4701820937132344003l, 7389400916848037006l, "children"))).findFirst(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.structure.BuildLayout_JarManifest");
       }
     }) != null;
   }
   public static boolean ifMacro_Condition_7801138212747394539(final IfMacroContext _context) {
-    return isNotEmptyString(SPropertyOperations.getString(_context.getNode(), "filemode"));
+    return isNotEmptyString(SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(new UUID(8755280088213897754l, -5075149991798053422l), 7801138212747054656l, 7801138212747054660l, "filemode")));
   }
   public static boolean ifMacro_Condition_7801138212747394681(final IfMacroContext _context) {
-    return isNotEmptyString(SPropertyOperations.getString(_context.getNode(), "dirmode"));
+    return isNotEmptyString(SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(new UUID(8755280088213897754l, -5075149991798053422l), 7801138212747054656l, 7801138212747054661l, "dirmode")));
   }
   public static boolean ifMacro_Condition_7801138212747420804(final IfMacroContext _context) {
     return isNotEmptyString(((String) _context.getVariable("var:prefix")));
@@ -935,10 +937,10 @@ public class QueriesGenerated {
     return SNodeOperations.isInstanceOf(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.build.structure.BuildLayout_Container") && BehaviorReflection.invokeVirtual(String.class, SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.build.structure.BuildLayout_Container"), "virtual_getPrepareSubTaskId_4701820937132344041", new Object[]{}) != null;
   }
   public static boolean ifMacro_Condition_7801138212747394835(final IfMacroContext _context) {
-    return isNotEmptyString(SPropertyOperations.getString(_context.getNode(), "filemode"));
+    return isNotEmptyString(SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(new UUID(8755280088213897754l, -5075149991798053422l), 7801138212747054656l, 7801138212747054660l, "filemode")));
   }
   public static boolean ifMacro_Condition_7801138212747394853(final IfMacroContext _context) {
-    return isNotEmptyString(SPropertyOperations.getString(_context.getNode(), "dirmode"));
+    return isNotEmptyString(SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(new UUID(8755280088213897754l, -5075149991798053422l), 7801138212747054656l, 7801138212747054661l, "dirmode")));
   }
   public static boolean ifMacro_Condition_7801138212747420762(final IfMacroContext _context) {
     return isNotEmptyString(((String) _context.getVariable("var:prefix")));
@@ -956,13 +958,13 @@ public class QueriesGenerated {
     return SNodeOperations.isInstanceOf(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.build.structure.BuildLayout_Container") && BehaviorReflection.invokeVirtual(String.class, SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.build.structure.BuildLayout_Container"), "virtual_getPrepareSubTaskId_4701820937132344041", new Object[]{}) != null;
   }
   public static boolean ifMacro_Condition_1979010778009294646(final IfMacroContext _context) {
-    return !(SPropertyOperations.hasValue(_context.getNode(), "compression", "none", "none"));
+    return !(SPropertyOperations.hasValue(_context.getNode(), MetaAdapterFactory.getProperty(new UUID(8755280088213897754l, -5075149991798053422l), 8577651205286814211l, 1979010778009209128l, "compression"), "none", "none"));
   }
   public static boolean ifMacro_Condition_7801138212747394913(final IfMacroContext _context) {
-    return isNotEmptyString(SPropertyOperations.getString(_context.getNode(), "filemode"));
+    return isNotEmptyString(SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(new UUID(8755280088213897754l, -5075149991798053422l), 7801138212747054656l, 7801138212747054660l, "filemode")));
   }
   public static boolean ifMacro_Condition_7801138212747394931(final IfMacroContext _context) {
-    return isNotEmptyString(SPropertyOperations.getString(_context.getNode(), "dirmode"));
+    return isNotEmptyString(SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(new UUID(8755280088213897754l, -5075149991798053422l), 7801138212747054656l, 7801138212747054661l, "dirmode")));
   }
   public static boolean ifMacro_Condition_7801138212747420622(final IfMacroContext _context) {
     return isNotEmptyString(((String) _context.getVariable("var:prefix")));
@@ -1015,14 +1017,14 @@ public class QueriesGenerated {
     return ((String[]) _context.getVariable("var:lpath"))[0] != null;
   }
   public static boolean ifMacro_Condition_9184644532456968297(final IfMacroContext _context) {
-    return ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "handlers", true)).any(new IWhereFilter<SNode>() {
+    return ListSequence.fromList(SLinkOperations.getChildren(_context.getNode(), MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 9184644532456495794l, 9184644532456533278l, "handlers"))).any(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.structure.BuildLayout_CopyFilter");
       }
     });
   }
   public static boolean ifMacro_Condition_6977615362525734794(final IfMacroContext _context) {
-    return ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "handlers", true)).where(new IWhereFilter<SNode>() {
+    return ListSequence.fromList(SLinkOperations.getChildren(_context.getNode(), MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 9184644532456495794l, 9184644532456533278l, "handlers"))).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.structure.BuildLayout_CopyMapper");
       }
@@ -1035,10 +1037,10 @@ public class QueriesGenerated {
     return SNodeOperations.isInstanceOf(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.build.structure.BuildLayout_Container") && BehaviorReflection.invokeVirtual(String.class, SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.build.structure.BuildLayout_Container"), "virtual_getAssembleSubTaskId_4701820937132344052", new Object[]{}) != null;
   }
   public static boolean ifMacro_Condition_4198392933254627394(final IfMacroContext _context) {
-    return !(SPropertyOperations.hasValue(_context.getNode(), "eol", "local", "local"));
+    return !(SPropertyOperations.hasValue(_context.getNode(), MetaAdapterFactory.getProperty(new UUID(8755280088213897754l, -5075149991798053422l), 4198392933254416812l, 4198392933254416822l, "eol"), "local", "local"));
   }
   public static boolean ifMacro_Condition_4198392933254627361(final IfMacroContext _context) {
-    return SPropertyOperations.getBoolean(_context.getNode(), "removeEOF");
+    return SPropertyOperations.getBoolean(_context.getNode(), MetaAdapterFactory.getProperty(new UUID(8755280088213897754l, -5075149991798053422l), 4198392933254416812l, 4198392933254551900l, "removeEOF"));
   }
   public static boolean ifMacro_Condition_4643216374596142956(final IfMacroContext _context) {
     return SNodeOperations.isInstanceOf(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.build.structure.BuildLayout_Container") && BehaviorReflection.invokeVirtual(String.class, SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.build.structure.BuildLayout_Container"), "virtual_getPrepareSubTaskId_4701820937132344041", new Object[]{}) != null;
@@ -1068,7 +1070,7 @@ public class QueriesGenerated {
     return new DependenciesHelper(_context, SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.build.structure.BuildProject", false, false)).requiresFetch().containsKey(_context.getOriginalCopiedInputNode(_context.getNode()));
   }
   public static boolean ifMacro_Condition_8055294676438891194(final IfMacroContext _context) {
-    return ListSequence.fromList(SLinkOperations.getTargets(((SNode) _context.getVariable("var:javaOpts")), "resourceSelectors", true)).isEmpty();
+    return ListSequence.fromList(SLinkOperations.getChildren(((SNode) _context.getVariable("var:javaOpts")), MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 927724900262033858l, 927724900262033863l, "resourceSelectors"))).isEmpty();
   }
   public static boolean ifMacro_Condition_8055294676438890260(final IfMacroContext _context) {
     return ((SNode) _context.getVariable("var:javaOpts")) != null;
@@ -1080,7 +1082,7 @@ public class QueriesGenerated {
     return SNodeOperations.isInstanceOf(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.build.structure.BuildLayout_Container") && BehaviorReflection.invokeVirtual(String.class, SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.build.structure.BuildLayout_Container"), "virtual_getAssembleSubTaskId_4701820937132344052", new Object[]{}) != null;
   }
   public static boolean ifMacro_Condition_9126048691954996134(final IfMacroContext _context) {
-    if (SNodeOperations.isInstanceOf(ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(_context.getNode(), "layout", true), "children", true)).first(), "jetbrains.mps.build.structure.BuildLayout_Folder")) {
+    if (SNodeOperations.isInstanceOf(ListSequence.fromList(SLinkOperations.getChildren(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 5617550519002745363l, 5617550519002745372l, "layout")), MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 4701820937132344003l, 7389400916848037006l, "children"))).first(), "jetbrains.mps.build.structure.BuildLayout_Folder")) {
       return false;
     }
     return true;
@@ -1090,7 +1092,7 @@ public class QueriesGenerated {
     return Sequence.fromIterable(s).isNotEmpty();
   }
   public static boolean ifMacro_Condition_6520682027041156330(final IfMacroContext _context) {
-    return new DependenciesHelper(_context, _context.getNode()).requiresFetch().containsKey(_context.getOriginalCopiedInputNode(SLinkOperations.getTarget(_context.getNode(), "layout", true)));
+    return new DependenciesHelper(_context, _context.getNode()).requiresFetch().containsKey(_context.getOriginalCopiedInputNode(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 5617550519002745363l, 5617550519002745372l, "layout"))));
   }
   public static boolean ifMacro_Condition_6520682027041201801(final IfMacroContext _context) {
     return ListSequence.fromList(((List<SNode>) _context.getVariable("var:dependency"))).isNotEmpty();
@@ -1148,7 +1150,7 @@ public class QueriesGenerated {
     return SNodeOperations.getContainingRoot(_context.getNode()) == SNodeOperations.getContainingRoot(((SNode) _context.getVariable("module")));
   }
   public static boolean ifMacro_Condition_2750015747481191497(final IfMacroContext _context) {
-    return ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "parameters", true)).any(new IWhereFilter<SNode>() {
+    return ListSequence.fromList(SLinkOperations.getChildren(_context.getNode(), MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 9126048691955220717l, 9126048691955220774l, "parameters"))).any(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.structure.BuildLayout_CopyHandler");
       }
@@ -1158,20 +1160,20 @@ public class QueriesGenerated {
     return ListSequence.fromList(SNodeOperations.getDescendants(_context.getNode(), "jetbrains.mps.build.structure.BuildSourceArchiveRelativePath", false, new String[]{})).isNotEmpty();
   }
   public static SNode sourceNodeQuery_5248329904288175557(final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(_context.getNode(), "fileset", true);
+    return SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 9184644532456496017l, 5248329904287857082l, "fileset"));
   }
   public static SNode sourceNodeQuery_1330375798060994699(final SourceSubstituteMacroNodeContext _context) {
     ((String[]) _context.getVariable("var:lpath"))[0] = ((String) _context.getVariable("var:tpath"));
-    return SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.build.structure.BuildLayout_CustomCopy"), "fileset", true);
+    return SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.build.structure.BuildLayout_CustomCopy"), MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 9184644532456496017l, 5248329904287857082l, "fileset"));
   }
   public static SNode sourceNodeQuery_1330375798064791185(final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(_context.getNode(), "fileset", true);
+    return SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 9184644532456496017l, 5248329904287857082l, "fileset"));
   }
   public static SNode sourceNodeQuery_4643216374596142907(final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(_context.getNode(), "element", true);
+    return SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 7655580649838832276l, 7655580649838832311l, "element"));
   }
   public static SNode sourceNodeQuery_244868996532694255(final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(_context.getNode(), "initialValue", true);
+    return SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 3767587139141066978l, 2755237150521975432l, "initialValue"));
   }
   public static SNode sourceNodeQuery_4821808014881265837(final SourceSubstituteMacroNodeContext _context) {
     return ((JavaModulesClosure) _context.getVariable("var:depsClosure")).getInitial();
@@ -1189,40 +1191,40 @@ public class QueriesGenerated {
     return ((JavaModulesClosure) _context.getVariable("var:depsClosure")).getInitial();
   }
   public static SNode sourceNodeQuery_1500819558096269424(final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(_context.getNode(), "resset", true);
+    return SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 1500819558096177282l, 1500819558096177283l, "resset"));
   }
   public static SNode sourceNodeQuery_144710003695667202(final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(_context.getNode(), "classpath", true);
+    return SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 3717132724152913083l, 3717132724152913085l, "classpath"));
   }
   public static SNode sourceNodeQuery_8056730377013464320(final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(_context.getNode(), "classpath", true);
+    return SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 8056730377013322101l, 7926701909975791137l, "classpath"));
   }
   public static SNode sourceNodeQuery_3717132724153138073(final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(_context.getNode(), "jars", true);
+    return SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 3717132724153084007l, 3717132724153084009l, "jars"));
   }
   public static SNode sourceNodeQuery_6408167411310621712(final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(_context.getNode(), "fileset", true);
+    return SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 9184644532456496017l, 5248329904287857082l, "fileset"));
   }
   public static SNode sourceNodeQuery_1330375798088316886(final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(_context.getNode(), "fileset", true);
+    return SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 9184644532456496017l, 5248329904287857082l, "fileset"));
   }
   public static SNode sourceNodeQuery_2750015747481191517(final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(_context.getNode(), "path", true);
+    return SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 9126048691955220717l, 9126048691955220762l, "path"));
   }
   public static SNode sourceNodeQuery_2750015747481207051(final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(_context.getNode(), "path", true);
+    return SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 9126048691955220717l, 9126048691955220762l, "path"));
   }
   public static SNode sourceNodeQuery_2750015747481063363(final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(_context.getNode(), "path", true);
+    return SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 9126048691955220717l, 9126048691955220762l, "path"));
   }
   public static SNode sourceNodeQuery_2750015747481063407(final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(_context.getNode(), "path", true);
+    return SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 9126048691955220717l, 9126048691955220762l, "path"));
   }
   public static SNode sourceNodeQuery_2750015747481074564(final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(_context.getNode(), "path", true);
+    return SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 2750015747481074431l, 2750015747481074432l, "path"));
   }
   public static SNode sourceNodeQuery_2750015747481074596(final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(_context.getNode(), "path", true);
+    return SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 2750015747481074431l, 2750015747481074432l, "path"));
   }
   public static SNode sourceNodeQuery_6083230236994856499(final SourceSubstituteMacroNodeContext _context) {
     return BuildSourceArchiveRelativePath_Behavior.call_getUnpackTask_8990969321156029654(_context.getNode(), Context.defaultContext(_context));
@@ -1231,46 +1233,46 @@ public class QueriesGenerated {
     return BuildSourceArchiveRelativePath_Behavior.call_getUnpackTask_8990969321156029654(_context.getNode(), Context.defaultContext(_context));
   }
   public static Object templateArgumentQuery_4821808014881251890(final TemplateQueryContext _context) {
-    return SLinkOperations.getTarget(_context.getNode(), "targetModule", false);
+    return SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(new UUID(8755280088213897754l, -5075149991798053422l), 4964617264469642264l, 4964617264469642265l, "targetModule"));
   }
   public static Object templateArgumentQuery_8169228734285529871(final TemplateQueryContext _context) {
-    return SLinkOperations.getTarget(_context.getNode(), "targetJar", false);
+    return SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(new UUID(8755280088213897754l, -5075149991798053422l), 4964617264469642724l, 4964617264469642725l, "targetJar"));
   }
   public static Object templateArgumentQuery_6859736767834590331(final TemplateQueryContext _context) {
-    return SLinkOperations.getTarget(_context.getNode(), "targetFile", false);
+    return SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(new UUID(8755280088213897754l, -5075149991798053422l), 4964617264469642570l, 4964617264469642571l, "targetFile"));
   }
   public static Object templateArgumentQuery_5680938682773841398(final TemplateQueryContext _context) {
-    return (SNode) _context.getNode().getReferenceTarget("targetJar");
+    return (SNode) SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(new UUID(8755280088213897754l, -5075149991798053422l), 5800711952433152758l, 5800711952433152759l, "targetFolder"));
   }
   public static Object templateArgumentQuery_5680938682773841635(final TemplateQueryContext _context) {
-    return _context.getNode().getProperty("suffix");
+    return SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(new UUID(8755280088213897754l, -5075149991798053422l), 5800711952433152758l, 5800711952433252328l, "suffix"));
   }
   public static Object templateArgumentQuery_144710003695561027(final TemplateQueryContext _context) {
-    return SLinkOperations.getTarget(_context.getNode(), "targetLibrary", false);
+    return SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(new UUID(8755280088213897754l, -5075149991798053422l), 4964617264469642863l, 4964617264469642864l, "targetLibrary"));
   }
   public static Object templateArgumentQuery_4821808014881175180(final TemplateQueryContext _context) {
-    return SLinkOperations.getTarget(_context.getNode(), "library", false);
+    return SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(new UUID(8755280088213897754l, -5075149991798053422l), 4993211115183250894l, 4993211115183250895l, "library"));
   }
   public static Object templateArgumentQuery_4821808014881207678(final TemplateQueryContext _context) {
-    return SLinkOperations.getTarget(_context.getNode(), "module", false);
+    return SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(new UUID(8755280088213897754l, -5075149991798053422l), 2754769020641646247l, 2754769020641646250l, "module"));
   }
   public static Object templateArgumentQuery_8169228734285538410(final TemplateQueryContext _context) {
-    return SLinkOperations.getTarget(_context.getNode(), "jar", true);
+    return SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 3717132724152589376l, 3717132724152589377l, "jar"));
   }
   public static Object templateArgumentQuery_6859736767834590236(final TemplateQueryContext _context) {
-    return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "extJar", true), "jar", false);
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 6859736767834557908l, 5610619299014309674l, "extJar")), MetaAdapterFactory.getReferenceLink(new UUID(8755280088213897754l, -5075149991798053422l), 5610619299014309452l, 5610619299014309453l, "jar"));
   }
   public static Object templateArgumentQuery_342830306171239709(final TemplateQueryContext _context) {
-    return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "extFolder", true), "folder", false);
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 342830306171203038l, 342830306171234561l, "extFolder")), MetaAdapterFactory.getReferenceLink(new UUID(8755280088213897754l, -5075149991798053422l), 5610619299014531647l, 5610619299014531648l, "folder"));
   }
   public static Object templateArgumentQuery_342830306171239896(final TemplateQueryContext _context) {
-    return SPropertyOperations.getString(_context.getNode(), "suffix");
+    return SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(new UUID(8755280088213897754l, -5075149991798053422l), 342830306171203038l, 342830306171239596l, "suffix"));
   }
   public static Object templateArgumentQuery_5610619299014495886(final TemplateQueryContext _context) {
-    return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "extJar", true), "jar", false);
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 5610619299014446503l, 5610619299014446504l, "extJar")), MetaAdapterFactory.getReferenceLink(new UUID(8755280088213897754l, -5075149991798053422l), 5610619299014309452l, 5610619299014309453l, "jar"));
   }
   public static Object templateArgumentQuery_5610619299014531918(final TemplateQueryContext _context) {
-    return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "extFolder", true), "folder", false);
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 5610619299014531832l, 5610619299014531834l, "extFolder")), MetaAdapterFactory.getReferenceLink(new UUID(8755280088213897754l, -5075149991798053422l), 5610619299014531647l, 5610619299014531648l, "folder"));
   }
   public static Iterable<SNode> sourceNodesQuery_1117643560963351248(final SourceSubstituteMacroNodesContext _context) {
     return FileSetUtil.getImplicitFilesets(_context.getNode());
@@ -1291,7 +1293,7 @@ public class QueriesGenerated {
     return FileSetUtil.getExplicitFilemodeRoots(_context.getNode());
   }
   public static Iterable<SNode> sourceNodesQuery_1330375798060357185(final SourceSubstituteMacroNodesContext _context) {
-    return ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "handlers", true)).where(new IWhereFilter<SNode>() {
+    return ListSequence.fromList(SLinkOperations.getChildren(_context.getNode(), MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 9184644532456495794l, 9184644532456533278l, "handlers"))).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.structure.BuildLayout_CopyProcessor");
       }
@@ -1304,29 +1306,29 @@ public class QueriesGenerated {
   public static Iterable<SNode> sourceNodesQuery_7918752904805774009(final SourceSubstituteMacroNodesContext _context) {
     return Sequence.fromIterable(((Iterable<Map.Entry<String, String>>) BehaviorReflection.invokeVirtual((Class<Map<String, String>>) ((Class) Object.class), _context.getNode(), "virtual_getTaskArguments_7918752904805535914", new Object[]{}).entrySet())).select(new ISelector<Map.Entry<String, String>, SNode>() {
       public SNode select(Map.Entry<String, String> it) {
-        SNode loopnode = SModelOperations.createNewNode(_context.getOutputModel(), null, "jetbrains.mps.lang.core.structure.BaseConcept");
-        loopnode.setProperty("key", it.getKey());
-        loopnode.setProperty("value", it.getValue());
+        SNode loopnode = SModelOperations.createNewNode(_context.getOutputModel(), null, "jetbrains.mps.build.structure.GeneratorInternal_Mapping");
+        SPropertyOperations.set(loopnode, MetaAdapterFactory.getProperty(new UUID(8755280088213897754l, -5075149991798053422l), 5800711952433757019l, 5800711952433803448l, "key"), it.getKey());
+        SPropertyOperations.set(loopnode, MetaAdapterFactory.getProperty(new UUID(8755280088213897754l, -5075149991798053422l), 5800711952433757019l, 5800711952433803450l, "value"), it.getValue());
         return loopnode;
       }
     });
   }
   public static Iterable<SNode> sourceNodesQuery_9184644532456968384(final SourceSubstituteMacroNodesContext _context) {
-    return ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "handlers", true)).where(new IWhereFilter<SNode>() {
+    return ListSequence.fromList(SLinkOperations.getChildren(_context.getNode(), MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 9184644532456495794l, 9184644532456533278l, "handlers"))).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.structure.BuildLayout_CopyFilter");
       }
     });
   }
   public static Iterable<SNode> sourceNodesQuery_6977615362525734877(final SourceSubstituteMacroNodesContext _context) {
-    return ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "handlers", true)).where(new IWhereFilter<SNode>() {
+    return ListSequence.fromList(SLinkOperations.getChildren(_context.getNode(), MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 9184644532456495794l, 9184644532456533278l, "handlers"))).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.structure.BuildLayout_CopyMapper");
       }
     });
   }
   public static Iterable<SNode> sourceNodesQuery_6977615362525734897(final SourceSubstituteMacroNodesContext _context) {
-    List<SNode> list = ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "handlers", true)).where(new IWhereFilter<SNode>() {
+    List<SNode> list = ListSequence.fromList(SLinkOperations.getChildren(_context.getNode(), MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 9184644532456495794l, 9184644532456533278l, "handlers"))).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.structure.BuildLayout_CopyMapper");
       }
@@ -1334,23 +1336,23 @@ public class QueriesGenerated {
     return (ListSequence.fromList(list).count() == 1 ? list : Collections.<SNode>emptyList());
   }
   public static Iterable<SNode> sourceNodesQuery_6789562173791600095(final SourceSubstituteMacroNodesContext _context) {
-    return ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "selectors", true)).where(new IWhereFilter<SNode>() {
+    return ListSequence.fromList(SLinkOperations.getChildren(_context.getNode(), MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 5610619299013057363l, 6789562173791401562l, "selectors"))).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return !(SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.structure.BuildFileSelectorInAttribute"));
       }
     });
   }
   public static Iterable<SNode> sourceNodesQuery_6789562173791600116(final SourceSubstituteMacroNodesContext _context) {
-    return ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "selectors", true)).where(new IWhereFilter<SNode>() {
+    return ListSequence.fromList(SLinkOperations.getChildren(_context.getNode(), MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 5610619299013057363l, 6789562173791401562l, "selectors"))).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.structure.BuildFileSelectorInAttribute");
       }
     });
   }
   public static Iterable<SNode> sourceNodesQuery_733309334559664212(final SourceSubstituteMacroNodesContext _context) {
-    return ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "sources", true)).select(new ISelector<SNode, SNode>() {
+    return ListSequence.fromList(SLinkOperations.getChildren(_context.getNode(), MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 7389400916848073784l, 7389400916848073826l, "sources"))).select(new ISelector<SNode, SNode>() {
       public SNode select(SNode it) {
-        return SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.as(it, "jetbrains.mps.build.structure.BuildSource_JavaFiles"), "resset", true), "path", true);
+        return SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.as(it, "jetbrains.mps.build.structure.BuildSource_JavaFiles"), MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 1500819558096177282l, 1500819558096177283l, "resset")), MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 2303926226081001727l, 2303926226081001728l, "path"));
       }
     }).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
@@ -1359,13 +1361,13 @@ public class QueriesGenerated {
     });
   }
   public static Iterable<SNode> sourceNodesQuery_7926701909975671841(final SourceSubstituteMacroNodesContext _context) {
-    return SLinkOperations.getTargets(_context.getNode(), "sources", true);
+    return SLinkOperations.getChildren(_context.getNode(), MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 7389400916848073784l, 7389400916848073826l, "sources"));
   }
   public static Iterable<SNode> sourceNodesQuery_5979287180587467230(final SourceSubstituteMacroNodesContext _context) {
     List<SNode> result = new ArrayList<SNode>();
     for (SNode module : ((JavaModulesClosure) _context.getVariable("var:depsClosure")).getModules()) {
       SNode loopnode = SModelOperations.createNewNode(_context.getOutputModel(), null, "jetbrains.mps.build.structure.GeneratorInternal_BuildSource_JavaModule");
-      SLinkOperations.setTarget(loopnode, "targetModule", module, false);
+      SLinkOperations.setTarget(loopnode, MetaAdapterFactory.getReferenceLink(new UUID(8755280088213897754l, -5075149991798053422l), 4964617264469642264l, 4964617264469642265l, "targetModule"), module);
       ListSequence.fromList(result).addElement(loopnode);
     }
     return result;
@@ -1374,7 +1376,7 @@ public class QueriesGenerated {
     List<SNode> result = new ArrayList<SNode>();
     for (SNode jar : ((JavaModulesClosure) _context.getVariable("var:depsClosure")).getJars()) {
       SNode loopnode = SModelOperations.createNewNode(_context.getOutputModel(), null, "jetbrains.mps.build.structure.GeneratorInternal_BuildSource_JavaJar");
-      SLinkOperations.setTarget(loopnode, "targetJar", jar, false);
+      SLinkOperations.setTarget(loopnode, MetaAdapterFactory.getReferenceLink(new UUID(8755280088213897754l, -5075149991798053422l), 4964617264469642724l, 4964617264469642725l, "targetJar"), jar);
       ListSequence.fromList(result).addElement(loopnode);
     }
     return result;
@@ -1383,7 +1385,7 @@ public class QueriesGenerated {
     List<SNode> result = new ArrayList<SNode>();
     for (SNode jar : ((JavaModulesClosure) _context.getVariable("var:depsClosure")).getExternalJars()) {
       SNode loopnode = SModelOperations.createNewNode(_context.getOutputModel(), null, "jetbrains.mps.build.structure.GeneratorInternal_BuildSource_SingleFile");
-      SLinkOperations.setTarget(loopnode, "targetFile", jar, false);
+      SLinkOperations.setTarget(loopnode, MetaAdapterFactory.getReferenceLink(new UUID(8755280088213897754l, -5075149991798053422l), 4964617264469642570l, 4964617264469642571l, "targetFile"), jar);
       ListSequence.fromList(result).addElement(loopnode);
     }
     return result;
@@ -1391,9 +1393,9 @@ public class QueriesGenerated {
   public static Iterable<SNode> sourceNodesQuery_5680938682773841356(final SourceSubstituteMacroNodesContext _context) {
     List<SNode> result = new ArrayList<SNode>();
     for (Tuples._2<SNode, String> jarInFolder : ((JavaModulesClosure) _context.getVariable("var:depsClosure")).getExternalJarsInFolder()) {
-      SNode loopnode = SModelOperations.createNewNode(_context.getOutputModel(), null, "jetbrains.mps.lang.core.structure.BaseConcept");
-      loopnode.setReferenceTarget("targetJar", jarInFolder._0());
-      loopnode.setProperty("suffix", jarInFolder._1());
+      SNode loopnode = SModelOperations.createNewNode(_context.getOutputModel(), null, "jetbrains.mps.build.structure.GeneratorInternal_BuildSource_JarFolder");
+      SLinkOperations.setTarget(loopnode, MetaAdapterFactory.getReferenceLink(new UUID(8755280088213897754l, -5075149991798053422l), 5800711952433152758l, 5800711952433152759l, "targetFolder"), jarInFolder._0());
+      SPropertyOperations.set(loopnode, MetaAdapterFactory.getProperty(new UUID(8755280088213897754l, -5075149991798053422l), 5800711952433152758l, 5800711952433252328l, "suffix"), jarInFolder._1());
       ListSequence.fromList(result).addElement(loopnode);
     }
     return result;
@@ -1402,120 +1404,120 @@ public class QueriesGenerated {
     List<SNode> result = new ArrayList<SNode>();
     for (SNode library : ((JavaModulesClosure) _context.getVariable("var:depsClosure")).getLibraries()) {
       SNode loopnode = SModelOperations.createNewNode(_context.getOutputModel(), null, "jetbrains.mps.build.structure.GeneratorInternal_BuildSource_JavaLibrary");
-      SLinkOperations.setTarget(loopnode, "targetLibrary", library, false);
+      SLinkOperations.setTarget(loopnode, MetaAdapterFactory.getReferenceLink(new UUID(8755280088213897754l, -5075149991798053422l), 4964617264469642863l, 4964617264469642864l, "targetLibrary"), library);
       ListSequence.fromList(result).addElement(loopnode);
     }
     return result;
   }
   public static Iterable<SNode> sourceNodesQuery_6647099934207033969(final SourceSubstituteMacroNodesContext _context) {
-    return ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "dependencies", true)).where(new IWhereFilter<SNode>() {
+    return ListSequence.fromList(SLinkOperations.getChildren(_context.getNode(), MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 7389400916848073784l, 2754769020641646251l, "dependencies"))).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return !(SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.structure.BuildSource_JavaDependencyLibrary")) && !(SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.structure.BuildSource_JavaDependencyModule")) && !(SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.structure.BuildSource_JavaDependencyJar")) && !(SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.structure.BuildSource_JavaDependencyExternalJar"));
       }
     });
   }
   public static Iterable<SNode> sourceNodesQuery_1659807394254753603(final SourceSubstituteMacroNodesContext _context) {
-    return ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "sources", true)).where(new IWhereFilter<SNode>() {
+    return ListSequence.fromList(SLinkOperations.getChildren(_context.getNode(), MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 7389400916848073784l, 7389400916848073826l, "sources"))).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.structure.BuildSource_JavaResources");
       }
     }).select(new ISelector<SNode, SNode>() {
       public SNode select(SNode it) {
-        return SLinkOperations.getTarget(SNodeOperations.cast(it, "jetbrains.mps.build.structure.BuildSource_JavaResources"), "fileset", true);
+        return SLinkOperations.getTarget(SNodeOperations.cast(it, "jetbrains.mps.build.structure.BuildSource_JavaResources"), MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 1659807394254684269l, 1659807394254684272l, "fileset"));
       }
     });
   }
   public static Iterable<SNode> sourceNodesQuery_8055294676438890950(final SourceSubstituteMacroNodesContext _context) {
-    return ListSequence.fromList(SLinkOperations.getTargets(((SNode) _context.getVariable("var:javaOpts")), "resourceSelectors", true)).where(new IWhereFilter<SNode>() {
+    return ListSequence.fromList(SLinkOperations.getChildren(((SNode) _context.getVariable("var:javaOpts")), MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 927724900262033858l, 927724900262033863l, "resourceSelectors"))).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.structure.BuildFileSelectorInAttribute");
       }
     });
   }
   public static Iterable<SNode> sourceNodesQuery_8055294676438890049(final SourceSubstituteMacroNodesContext _context) {
-    Iterable<String> folders = ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "sources", true)).where(new IWhereFilter<SNode>() {
+    Iterable<String> folders = ListSequence.fromList(SLinkOperations.getChildren(_context.getNode(), MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 7389400916848073784l, 7389400916848073826l, "sources"))).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.structure.BuildSource_JavaFiles");
       }
     }).select(new ISelector<SNode, String>() {
       public String select(SNode it) {
-        return BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.cast(it, "jetbrains.mps.build.structure.BuildSource_JavaFiles"), "resset", true), "path", true), "virtual_getAntPath_8563603456895173701", new Object[]{Context.defaultContext(_context)});
+        return BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.cast(it, "jetbrains.mps.build.structure.BuildSource_JavaFiles"), MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 1500819558096177282l, 1500819558096177283l, "resset")), MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 2303926226081001727l, 2303926226081001728l, "path")), "virtual_getAntPath_8563603456895173701", new Object[]{Context.defaultContext(_context)});
       }
     });
-    folders = Sequence.fromIterable(folders).concat(ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "sources", true)).where(new IWhereFilter<SNode>() {
+    folders = Sequence.fromIterable(folders).concat(ListSequence.fromList(SLinkOperations.getChildren(_context.getNode(), MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 7389400916848073784l, 7389400916848073826l, "sources"))).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.structure.BuildSource_JavaContentRoot");
       }
     }).translate(new ITranslator2<SNode, String>() {
       public Iterable<String> translate(SNode it) {
         SNode croot = SNodeOperations.cast(it, "jetbrains.mps.build.structure.BuildSource_JavaContentRoot");
-        final String relativePath = BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(croot, "basePath", true), "virtual_getAntPath_8563603456895173701", new Object[]{Context.defaultContext(_context)});
-        return ListSequence.fromList(SLinkOperations.getTargets(croot, "folders", true)).where(new IWhereFilter<SNode>() {
+        final String relativePath = BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(croot, MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 7389400916848073810l, 7389400916848073811l, "basePath")), "virtual_getAntPath_8563603456895173701", new Object[]{Context.defaultContext(_context)});
+        return ListSequence.fromList(SLinkOperations.getChildren(croot, MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 7389400916848073810l, 2754769020641429197l, "folders"))).where(new IWhereFilter<SNode>() {
           public boolean accept(SNode ifolder) {
-            return SPropertyOperations.hasValue(ifolder, "kind", "source", null) || SPropertyOperations.hasValue(ifolder, "kind", "test", null);
+            return SPropertyOperations.hasValue(ifolder, MetaAdapterFactory.getProperty(new UUID(8755280088213897754l, -5075149991798053422l), 2754769020641429190l, 5248329904288265467l, "kind"), "source", null) || SPropertyOperations.hasValue(ifolder, MetaAdapterFactory.getProperty(new UUID(8755280088213897754l, -5075149991798053422l), 2754769020641429190l, 5248329904288265467l, "kind"), "test", null);
           }
         }).select(new ISelector<SNode, String>() {
           public String select(SNode ifolder) {
-            return relativePath + "/" + SPropertyOperations.getString(ifolder, "relativePath");
+            return relativePath + "/" + SPropertyOperations.getString(ifolder, MetaAdapterFactory.getProperty(new UUID(8755280088213897754l, -5075149991798053422l), 2754769020641429190l, 2754769020641429191l, "relativePath"));
           }
         });
       }
     }));
     List<SNode> result = new ArrayList<SNode>();
     for (String fname : folders) {
-      SNode loopnode = SModelOperations.createNewNode(_context.getOutputModel(), null, "jetbrains.mps.lang.core.structure.BaseConcept");
-      loopnode.setProperty("folderName", fname);
+      SNode loopnode = SModelOperations.createNewNode(_context.getOutputModel(), null, "jetbrains.mps.build.structure.GeneratorInternal_BuildSource_Folder");
+      SPropertyOperations.set(loopnode, MetaAdapterFactory.getProperty(new UUID(8755280088213897754l, -5075149991798053422l), 5800711952433444288l, 5800711952433445190l, "folderName"), fname);
       ListSequence.fromList(result).addElement(loopnode);
     }
     return result;
   }
   public static Iterable<SNode> sourceNodesQuery_8055294676438891186(final SourceSubstituteMacroNodesContext _context) {
-    return ListSequence.fromList(SLinkOperations.getTargets(((SNode) _context.getVariable("var:javaOpts")), "resourceSelectors", true)).where(new IWhereFilter<SNode>() {
+    return ListSequence.fromList(SLinkOperations.getChildren(((SNode) _context.getVariable("var:javaOpts")), MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 927724900262033858l, 927724900262033863l, "resourceSelectors"))).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return !(SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.structure.BuildFileSelectorInAttribute"));
       }
     });
   }
   public static Iterable<SNode> sourceNodesQuery_7926701909975671863(final SourceSubstituteMacroNodesContext _context) {
-    return ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "folders", true)).where(new IWhereFilter<SNode>() {
+    return ListSequence.fromList(SLinkOperations.getChildren(_context.getNode(), MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 7389400916848073810l, 2754769020641429197l, "folders"))).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return SPropertyOperations.hasValue(it, "kind", "source", null) || SPropertyOperations.hasValue(it, "kind", "test", null);
+        return SPropertyOperations.hasValue(it, MetaAdapterFactory.getProperty(new UUID(8755280088213897754l, -5075149991798053422l), 2754769020641429190l, 5248329904288265467l, "kind"), "source", null) || SPropertyOperations.hasValue(it, MetaAdapterFactory.getProperty(new UUID(8755280088213897754l, -5075149991798053422l), 2754769020641429190l, 5248329904288265467l, "kind"), "test", null);
       }
     });
   }
   public static Iterable<SNode> sourceNodesQuery_144710003695560923(final SourceSubstituteMacroNodesContext _context) {
-    return SLinkOperations.getTargets(_context.getNode(), "elements", true);
+    return SLinkOperations.getChildren(_context.getNode(), MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 6057319140845467763l, 6057319140845478673l, "elements"));
   }
   public static Iterable<SNode> sourceNodesQuery_8654221991637384265(final SourceSubstituteMacroNodesContext _context) {
-    return ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "selectors", true)).where(new IWhereFilter<SNode>() {
+    return ListSequence.fromList(SLinkOperations.getChildren(_context.getNode(), MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 5248329904287794596l, 5248329904287794679l, "selectors"))).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.structure.BuildFileSelectorInAttribute");
       }
     });
   }
   public static Iterable<SNode> sourceNodesQuery_5248329904288079434(final SourceSubstituteMacroNodesContext _context) {
-    return ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "selectors", true)).where(new IWhereFilter<SNode>() {
+    return ListSequence.fromList(SLinkOperations.getChildren(_context.getNode(), MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 5248329904287794596l, 5248329904287794679l, "selectors"))).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return !(SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.structure.BuildFileSelectorInAttribute"));
       }
     });
   }
   public static Iterable<SNode> sourceNodesQuery_8654221991637384349(final SourceSubstituteMacroNodesContext _context) {
-    return ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "selectors", true)).where(new IWhereFilter<SNode>() {
+    return ListSequence.fromList(SLinkOperations.getChildren(_context.getNode(), MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 7866279537988666687l, 7866279537988666691l, "selectors"))).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.structure.BuildFileSelectorInAttribute");
       }
     });
   }
   public static Iterable<SNode> sourceNodesQuery_7866279537988669091(final SourceSubstituteMacroNodesContext _context) {
-    return ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "selectors", true)).where(new IWhereFilter<SNode>() {
+    return ListSequence.fromList(SLinkOperations.getChildren(_context.getNode(), MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 7866279537988666687l, 7866279537988666691l, "selectors"))).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return !(SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.structure.BuildFileSelectorInAttribute"));
       }
     });
   }
   public static Iterable<SNode> sourceNodesQuery_4701820937132337458(final SourceSubstituteMacroNodesContext _context) {
-    return SLinkOperations.getTargets(_context.getNode(), "parts", true);
+    return SLinkOperations.getChildren(_context.getNode(), MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 4701820937132281259l, 4701820937132281260l, "parts"));
   }
   public static Iterable<SNode> sourceNodesQuery_4701820937132337542(final SourceSubstituteMacroNodesContext _context) {
     return SNodeOperations.getDescendants(_context.getNode(), "jetbrains.mps.build.structure.BuildLayout_Node", false, new String[]{});
@@ -1524,23 +1526,23 @@ public class QueriesGenerated {
     return BuildLayout_JarManifest_Behavior.call_getAttributes_8563603456895840897(_context.getNode());
   }
   public static Iterable<SNode> sourceNodesQuery_6837653846148442133(final SourceSubstituteMacroNodesContext _context) {
-    return SLinkOperations.getTargets(_context.getNode(), "attribute", true);
+    return SLinkOperations.getChildren(_context.getNode(), MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 1251221292904119675l, 1251221292904119676l, "attribute"));
   }
   public static Iterable<SNode> sourceNodesQuery_6837653846148442156(final SourceSubstituteMacroNodesContext _context) {
     return BuildLayout_JarManifest_Behavior.call_getSections_8563603456895840664(_context.getNode());
   }
   public static Iterable<SNode> sourceNodesQuery_1117643560963307378(final SourceSubstituteMacroNodesContext _context) {
-    return SLinkOperations.getTargets(_context.getNode(), "macros", true);
+    return SLinkOperations.getChildren(_context.getNode(), MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 5617550519002745363l, 5617550519002745378l, "macros"));
   }
   public static Iterable<SNode> sourceNodesQuery_4129895186893528610(final SourceSubstituteMacroNodesContext _context) {
-    return ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "dependencies", true)).where(new IWhereFilter<SNode>() {
+    return ListSequence.fromList(SLinkOperations.getChildren(_context.getNode(), MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 5617550519002745363l, 5617550519002745381l, "dependencies"))).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.structure.BuildProjectDependency");
       }
     });
   }
   public static Iterable<SNode> sourceNodesQuery_7181125477683419217(final SourceSubstituteMacroNodesContext _context) {
-    return ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "dependencies", true)).where(new IWhereFilter<SNode>() {
+    return ListSequence.fromList(SLinkOperations.getChildren(_context.getNode(), MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 5617550519002745363l, 5617550519002745381l, "dependencies"))).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.structure.BuildExternalLayoutDependency");
       }
@@ -1553,13 +1555,13 @@ public class QueriesGenerated {
     return (Iterable<SNode>) ((MacroHelper) _context.getVariable("var:macroHelper")).getMacrosToImport();
   }
   public static Iterable<SNode> sourceNodesQuery_8433645492464631848(final SourceSubstituteMacroNodesContext _context) {
-    return SLinkOperations.getTargets(_context.getNode(), "plugins", true);
+    return SLinkOperations.getChildren(_context.getNode(), MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 5617550519002745363l, 6647099934206700656l, "plugins"));
   }
   public static Iterable<SNode> sourceNodesQuery_1117643560963346309(final SourceSubstituteMacroNodesContext _context) {
-    return SLinkOperations.getTargets(_context.getNode(), "parts", true);
+    return SLinkOperations.getChildren(_context.getNode(), MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 5617550519002745363l, 7389400916848080626l, "parts"));
   }
   public static Iterable<SNode> sourceNodesQuery_4701820937132337365(final SourceSubstituteMacroNodesContext _context) {
-    return SLinkOperations.getTargets(_context.getNode(), "aspects", true);
+    return SLinkOperations.getChildren(_context.getNode(), MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 5617550519002745363l, 3542413272732620719l, "aspects"));
   }
   public static Iterable<SNode> sourceNodesQuery_6854204111265743219(final SourceSubstituteMacroNodesContext _context) {
     Map<SNode, SNode> participantForTask = MapSequence.fromMap(new LinkedHashMap<SNode, SNode>(16, (float) 0.75, false));
@@ -1568,58 +1570,58 @@ public class QueriesGenerated {
       SNode targetTask = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), participant, "virtual_getTargetTask_6854204111265837872", new Object[]{});
       if (MapSequence.fromMap(participantForTask).get(targetTask) == null) {
         MapSequence.fromMap(participantForTask).put(targetTask, SConceptOperations.createNewNode("jetbrains.mps.build.structure.GeneratorInternal_IWorkfowParticipants", null));
-        SLinkOperations.setTarget(MapSequence.fromMap(participantForTask).get(targetTask), "for", targetTask, false);
+        SLinkOperations.setTarget(MapSequence.fromMap(participantForTask).get(targetTask), MetaAdapterFactory.getReferenceLink(new UUID(8755280088213897754l, -5075149991798053422l), 6854204111265764357l, 6854204111265764358l, "for"), targetTask);
         ListSequence.fromList(list).addElement(MapSequence.fromMap(participantForTask).get(targetTask));
       }
       SNode ref = SConceptOperations.createNewNode("jetbrains.mps.build.structure.GeneratorInternal_IWorkflowParticipantReference", null);
-      SLinkOperations.setTarget(ref, "participant", participant, false);
-      ListSequence.fromList(SLinkOperations.getTargets(MapSequence.fromMap(participantForTask).get(targetTask), "participant", true)).addElement(ref);
+      SLinkOperations.setTarget(ref, MetaAdapterFactory.getReferenceLink(new UUID(8755280088213897754l, -5075149991798053422l), 6667029362524340680l, 6667029362524340681l, "participant"), participant);
+      ListSequence.fromList(SLinkOperations.getChildren(MapSequence.fromMap(participantForTask).get(targetTask), MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 6854204111265764357l, 6854204111265764359l, "participant"))).addElement(ref);
     }
     return list;
   }
   public static Iterable<SNode> sourceNodesQuery_6854204111265839256(final SourceSubstituteMacroNodesContext _context) {
-    return ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "participant", true)).where(new IWhereFilter<SNode>() {
+    return ListSequence.fromList(SLinkOperations.getChildren(_context.getNode(), MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 6854204111265764357l, 6854204111265764359l, "participant"))).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return (SLinkOperations.getTarget(it, "participant", false) != null);
+        return (SLinkOperations.getTarget(it, MetaAdapterFactory.getReferenceLink(new UUID(8755280088213897754l, -5075149991798053422l), 6667029362524340680l, 6667029362524340681l, "participant")) != null);
       }
     }).select(new ISelector<SNode, SNode>() {
       public SNode select(SNode it) {
-        return SLinkOperations.getTarget(it, "participant", false);
+        return SLinkOperations.getTarget(it, MetaAdapterFactory.getReferenceLink(new UUID(8755280088213897754l, -5075149991798053422l), 6667029362524340680l, 6667029362524340681l, "participant"));
       }
     });
   }
   public static Iterable<SNode> sourceNodesQuery_1117643560963267906(final SourceSubstituteMacroNodesContext _context) {
-    return SNodeOperations.getDescendants(SLinkOperations.getTarget(_context.getNode(), "layout", true), "jetbrains.mps.build.structure.BuildLayout_Node", false, new String[]{});
+    return SNodeOperations.getDescendants(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 5617550519002745363l, 5617550519002745372l, "layout")), "jetbrains.mps.build.structure.BuildLayout_Node", false, new String[]{});
   }
   public static Iterable<SNode> sourceNodesQuery_6520682027041196812(final SourceSubstituteMacroNodesContext _context) {
     return ((List<SNode>) _context.getVariable("var:dependency"));
   }
   public static Iterable<SNode> sourceNodesQuery_6647099934206970591(final SourceSubstituteMacroNodesContext _context) {
-    return SLinkOperations.getTargets(_context.getNode(), "plugins", true);
+    return SLinkOperations.getChildren(_context.getNode(), MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 5617550519002745363l, 6647099934206700656l, "plugins"));
   }
   public static Iterable<SNode> sourceNodesQuery_6789562173791401780(final SourceSubstituteMacroNodesContext _context) {
-    return ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "selectors", true)).where(new IWhereFilter<SNode>() {
+    return ListSequence.fromList(SLinkOperations.getChildren(_context.getNode(), MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 5610619299013057363l, 6789562173791401562l, "selectors"))).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.structure.BuildFileSelectorInAttribute");
       }
     });
   }
   public static Iterable<SNode> sourceNodesQuery_6789562173791401759(final SourceSubstituteMacroNodesContext _context) {
-    return ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "selectors", true)).where(new IWhereFilter<SNode>() {
+    return ListSequence.fromList(SLinkOperations.getChildren(_context.getNode(), MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 5610619299013057363l, 6789562173791401562l, "selectors"))).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return !(SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.structure.BuildFileSelectorInAttribute"));
       }
     });
   }
   public static Iterable<SNode> sourceNodesQuery_6408167411310621656(final SourceSubstituteMacroNodesContext _context) {
-    return ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "selectors", true)).where(new IWhereFilter<SNode>() {
+    return ListSequence.fromList(SLinkOperations.getChildren(_context.getNode(), MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 5248329904287794596l, 5248329904287794679l, "selectors"))).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.structure.BuildFileSelectorInAttribute");
       }
     });
   }
   public static Iterable<SNode> sourceNodesQuery_6408167411310621677(final SourceSubstituteMacroNodesContext _context) {
-    return ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "selectors", true)).where(new IWhereFilter<SNode>() {
+    return ListSequence.fromList(SLinkOperations.getChildren(_context.getNode(), MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 5248329904287794596l, 5248329904287794679l, "selectors"))).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return !(SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.structure.BuildFileSelectorInAttribute"));
       }
@@ -1640,35 +1642,35 @@ public class QueriesGenerated {
     return new JavaExternalLibraryHelper(helper, originalNode, _context).artifacts();
   }
   public static Iterable<SNode> sourceNodesQuery_2750015747481207044(final SourceSubstituteMacroNodesContext _context) {
-    return ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "parameters", true)).where(new IWhereFilter<SNode>() {
+    return ListSequence.fromList(SLinkOperations.getChildren(_context.getNode(), MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 9126048691955220717l, 9126048691955220774l, "parameters"))).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.structure.BuildLayout_CopyHandler");
       }
     });
   }
   public static Iterable<SNode> sourceNodesQuery_2750015747481063235(final SourceSubstituteMacroNodesContext _context) {
-    return ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "parameters", true)).where(new IWhereFilter<SNode>() {
+    return ListSequence.fromList(SLinkOperations.getChildren(_context.getNode(), MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 9126048691955220717l, 9126048691955220774l, "parameters"))).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.structure.BuildLayout_CopyHandler");
       }
     });
   }
   public static Iterable<SNode> sourceNodesQuery_2750015747481074544(final SourceSubstituteMacroNodesContext _context) {
-    return ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "parameters", true)).where(new IWhereFilter<SNode>() {
+    return ListSequence.fromList(SLinkOperations.getChildren(_context.getNode(), MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 2750015747481074431l, 2750015747481074433l, "parameters"))).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.structure.BuildLayout_CopyHandler");
       }
     });
   }
   public static Iterable<SNode> sourceNodesQuery_2750015747481074590(final SourceSubstituteMacroNodesContext _context) {
-    return ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "parameters", true)).where(new IWhereFilter<SNode>() {
+    return ListSequence.fromList(SLinkOperations.getChildren(_context.getNode(), MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 2750015747481074431l, 2750015747481074433l, "parameters"))).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return !(SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.structure.BuildLayout_CopyHandler"));
       }
     });
   }
   public static Iterable<SNode> sourceNodesQuery_2750015747481074656(final SourceSubstituteMacroNodesContext _context) {
-    return ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "parameters", true)).where(new IWhereFilter<SNode>() {
+    return ListSequence.fromList(SLinkOperations.getChildren(_context.getNode(), MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 2750015747481074431l, 2750015747481074433l, "parameters"))).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return !(SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.structure.BuildLayout_CopyHandler"));
       }
@@ -1726,9 +1728,9 @@ public class QueriesGenerated {
       return "???";
     }
     DependenciesHelper helper = new DependenciesHelper(_context, project);
-    String val = helper.locations().get(DependenciesHelper.getOriginalNode(SLinkOperations.getTarget(_context.getNode(), "target", false), _context));
+    String val = helper.locations().get(DependenciesHelper.getOriginalNode(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(new UUID(8755280088213897754l, -5075149991798053422l), 841011766565753074l, 841011766565753076l, "target")), _context));
     if (val == null) {
-      _context.showErrorMessage(_context.getNode(), "no location for " + BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(_context.getNode(), "target", false), "virtual_getPresentation_1213877396640", new Object[]{}));
+      _context.showErrorMessage(_context.getNode(), "no location for " + BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(new UUID(8755280088213897754l, -5075149991798053422l), 841011766565753074l, 841011766565753076l, "target")), "virtual_getPresentation_1213877396640", new Object[]{}));
     }
     return val;
   }
@@ -1739,9 +1741,9 @@ public class QueriesGenerated {
       return "???";
     }
     DependenciesHelper helper = new DependenciesHelper(_context, project);
-    String val = helper.contentLocations().get(DependenciesHelper.getOriginalNode(SLinkOperations.getTarget(_context.getNode(), "target", false), _context));
+    String val = helper.contentLocations().get(DependenciesHelper.getOriginalNode(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(new UUID(8755280088213897754l, -5075149991798053422l), 5610619299013057363l, 5610619299013057365l, "target")), _context));
     if (val == null) {
-      _context.showErrorMessage(_context.getNode(), "no location for " + BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(_context.getNode(), "target", false), "virtual_getPresentation_1213877396640", new Object[]{}));
+      _context.showErrorMessage(_context.getNode(), "no location for " + BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(new UUID(8755280088213897754l, -5075149991798053422l), 5610619299013057363l, 5610619299013057365l, "target")), "virtual_getPresentation_1213877396640", new Object[]{}));
     }
     return val;
   }
@@ -1749,11 +1751,11 @@ public class QueriesGenerated {
     return new JavaModulesClosure(_context, _context.getNode()).closure(false);
   }
   public static Object insertMacro_varValue_1659807394254873141(final TemplateQueryContext _context) {
-    SNode options = SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "options", true), "compileOptions", false);
+    SNode options = SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 7389400916848073784l, 1659807394254323962l, "options")), MetaAdapterFactory.getReferenceLink(new UUID(8755280088213897754l, -5075149991798053422l), 1659807394254261074l, 1659807394254038315l, "compileOptions"));
     if (options == null) {
       options = Sequence.fromIterable(SNodeOperations.ofConcept(SNodeOperations.getAllSiblings(_context.getNode(), false), "jetbrains.mps.build.structure.BuildSource_JavaOptions")).findFirst(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
-          return isEmptyString(SPropertyOperations.getString(it, "optionsName"));
+          return isEmptyString(SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(new UUID(8755280088213897754l, -5075149991798053422l), 927724900262033858l, 927724900262033859l, "optionsName")));
         }
       });
     }
@@ -1762,7 +1764,7 @@ public class QueriesGenerated {
   public static Object insertMacro_varValue_4129895186893528603(final TemplateQueryContext _context) {
     String basePath = BuildProject_Behavior.call_getBasePath_4959435991187146924(_context.getNode(), Context.defaultContext(_context));
     if (basePath == null) {
-      _context.showErrorMessage(_context.getNode(), "no base path for script " + SPropertyOperations.getString(_context.getNode(), "name"));
+      _context.showErrorMessage(_context.getNode(), "no base path for script " + SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")));
     }
     return basePath;
   }
@@ -1795,11 +1797,11 @@ public class QueriesGenerated {
       return "???";
     }
     DependenciesHelper helper = new DependenciesHelper(_context, project);
-    String val = helper.locations().get(DependenciesHelper.getOriginalNode(SLinkOperations.getTarget(_context.getNode(), "target", false), _context));
+    String val = helper.locations().get(DependenciesHelper.getOriginalNode(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(new UUID(8755280088213897754l, -5075149991798053422l), 841011766565753074l, 841011766565753076l, "target")), _context));
     if (val == null) {
-      _context.showErrorMessage(_context.getNode(), "no location for " + BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(_context.getNode(), "target", false), "virtual_getPresentation_1213877396640", new Object[]{}));
-    } else if (BehaviorReflection.invokeVirtual(Boolean.TYPE, SLinkOperations.getTarget(_context.getNode(), "target", false), "virtual_isFolder_1368030936106753980", new Object[]{})) {
-      _context.showErrorMessage(_context.getNode(), "internal error: cannot handle folders `" + BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(_context.getNode(), "target", false), "virtual_getPresentation_1213877396640", new Object[]{}) + "'");
+      _context.showErrorMessage(_context.getNode(), "no location for " + BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(new UUID(8755280088213897754l, -5075149991798053422l), 841011766565753074l, 841011766565753076l, "target")), "virtual_getPresentation_1213877396640", new Object[]{}));
+    } else if (BehaviorReflection.invokeVirtual(Boolean.TYPE, SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(new UUID(8755280088213897754l, -5075149991798053422l), 841011766565753074l, 841011766565753076l, "target")), "virtual_isFolder_1368030936106753980", new Object[]{})) {
+      _context.showErrorMessage(_context.getNode(), "internal error: cannot handle folders `" + BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(new UUID(8755280088213897754l, -5075149991798053422l), 841011766565753074l, 841011766565753076l, "target")), "virtual_getPresentation_1213877396640", new Object[]{}) + "'");
     }
     return val;
   }
@@ -1821,9 +1823,9 @@ public class QueriesGenerated {
       return "???";
     }
     DependenciesHelper helper = new DependenciesHelper(_context, project);
-    String val = helper.contentLocations().get(DependenciesHelper.getOriginalNode(SLinkOperations.getTarget(_context.getNode(), "target", false), _context));
+    String val = helper.contentLocations().get(DependenciesHelper.getOriginalNode(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(new UUID(8755280088213897754l, -5075149991798053422l), 5610619299013057363l, 5610619299013057365l, "target")), _context));
     if (val == null) {
-      _context.showErrorMessage(_context.getNode(), "no content location for " + BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(_context.getNode(), "target", false), "virtual_getPresentation_1213877396640", new Object[]{}));
+      _context.showErrorMessage(_context.getNode(), "no content location for " + BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(new UUID(8755280088213897754l, -5075149991798053422l), 5610619299013057363l, 5610619299013057365l, "target")), "virtual_getPresentation_1213877396640", new Object[]{}));
     }
     return val;
   }

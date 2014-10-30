@@ -15,6 +15,8 @@ import jetbrains.mps.nodeEditor.InlineCellProvider;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 
 public class GeneratorInternal_BuildSource_JavaModule_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
@@ -87,6 +89,6 @@ public class GeneratorInternal_BuildSource_JavaModule_Editor extends DefaultNode
     return editorCell;
   }
   private static boolean renderingCondition_zc1akc_a1a(SNode node, EditorContext editorContext) {
-    return SPropertyOperations.getBoolean(node, "targetReexport");
+    return SPropertyOperations.getBoolean(node, MetaAdapterFactory.getProperty(new UUID(8755280088213897754l, -5075149991798053422l), 4964617264469642264l, 4964617264469642266l, "targetReexport"));
   }
 }

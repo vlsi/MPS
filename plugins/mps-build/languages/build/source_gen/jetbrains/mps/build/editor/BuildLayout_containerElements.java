@@ -24,6 +24,8 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 
 public class BuildLayout_containerElements implements ConceptEditorComponent {
   public Collection<String> getContextHints() {
@@ -105,6 +107,6 @@ public class BuildLayout_containerElements implements ConceptEditorComponent {
     return editorCell;
   }
   private static boolean renderingCondition_hdw7mg_a1a(SNode node, EditorContext editorContext) {
-    return !(SNodeOperations.isInstanceOf(ListSequence.fromList(SLinkOperations.getTargets(node, "children", true)).last(), "jetbrains.mps.build.structure.BuildLayout_AbstractContainer"));
+    return !(SNodeOperations.isInstanceOf(ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 4701820937132344003l, 7389400916848037006l, "children"))).last(), "jetbrains.mps.build.structure.BuildLayout_AbstractContainer"));
   }
 }

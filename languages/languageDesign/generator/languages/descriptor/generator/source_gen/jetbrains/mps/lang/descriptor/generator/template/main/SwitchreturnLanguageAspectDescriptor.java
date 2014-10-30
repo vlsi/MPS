@@ -18,6 +18,8 @@ import jetbrains.mps.generator.runtime.ReductionRuleBase;
 import jetbrains.mps.generator.runtime.TemplateRuleWithCondition;
 import jetbrains.mps.generator.template.ReductionRuleQueryContext;
 import org.jetbrains.annotations.NotNull;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.smodel.SReference;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
@@ -66,7 +68,7 @@ public class SwitchreturnLanguageAspectDescriptor implements TemplateSwitchMappi
               final SNode tnode3 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.ClassifierClassExpression");
               try {
                 environment.nodeCopied(context, tnode3, "tpl/r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508/5639814097751792625");
-                tnode3.setReference("classifier", SReference.create("classifier", tnode3, PersistenceFacade.getInstance().createModelReference("f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.openapi.editor.descriptor(MPS.Editor/jetbrains.mps.openapi.editor.descriptor@java_stub)"), PersistenceFacade.getInstance().createNodeId("~EditorAspectDescriptor")));
+                tnode3.setReference(MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1116615150612l, 1116615189566l, "classifier"), SReference.create(MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1116615150612l, 1116615189566l, "classifier"), tnode3, PersistenceFacade.getInstance().createModelReference("f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.openapi.editor.descriptor(MPS.Editor/jetbrains.mps.openapi.editor.descriptor@java_stub)"), PersistenceFacade.getInstance().createNodeId("~EditorAspectDescriptor")));
               } finally {
               }
               if (tnode3 != null) {
@@ -121,12 +123,12 @@ public class SwitchreturnLanguageAspectDescriptor implements TemplateSwitchMappi
                       final SNode tnode9 = environment.createOutputNode("jetbrains.mps.baseLanguageInternal.structure.InternalNewExpression");
                       try {
                         environment.nodeCopied(context, tnode9, "tpl/r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508/4565427742315531960");
-                        SNodeAccessUtil.setProperty(tnode9, "fqClassName", TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_4565427742315554124(new PropertyMacroContext(context, "EditorAspectDescriptor", propertyMacro_2tkj9d_c0a0c0b0b0c0b0b0b0b0b0c0c0c7))));
+                        SNodeAccessUtil.setProperty(tnode9, MetaAdapterFactory.getProperty(new UUID(-2363163772790029805l, -6024047381933761144l), 1173996401517l, 1173996588177l, "fqClassName"), TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_4565427742315554124(new PropertyMacroContext(context, "EditorAspectDescriptor", propertyMacro_2tkj9d_c0a0c0b0b0c0b0b0b0b0b0c0c0c7))));
                         {
                           final SNode tnode10 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.ClassifierType");
                           try {
                             environment.nodeCopied(context, tnode10, "tpl/r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508/4565427742315534670");
-                            tnode10.setReference("classifier", SReference.create("classifier", tnode10, PersistenceFacade.getInstance().createModelReference("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.runtime(MPS.Core/jetbrains.mps.smodel.runtime@java_stub)"), PersistenceFacade.getInstance().createNodeId("~LanguageAspectDescriptor")));
+                            tnode10.setReference(MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier"), SReference.create(MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier"), tnode10, PersistenceFacade.getInstance().createModelReference("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.runtime(MPS.Core/jetbrains.mps.smodel.runtime@java_stub)"), PersistenceFacade.getInstance().createNodeId("~LanguageAspectDescriptor")));
                           } finally {
                           }
                           if (tnode10 != null) {
@@ -189,7 +191,7 @@ public class SwitchreturnLanguageAspectDescriptor implements TemplateSwitchMappi
               final SNode tnode3 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.ClassifierClassExpression");
               try {
                 environment.nodeCopied(context, tnode3, "tpl/r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508/2343938651364801601");
-                tnode3.setReference("classifier", SReference.create("classifier", tnode3, PersistenceFacade.getInstance().createModelReference("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.runtime(MPS.Core/jetbrains.mps.smodel.runtime@java_stub)"), PersistenceFacade.getInstance().createNodeId("~StructureAspectDescriptor")));
+                tnode3.setReference(MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1116615150612l, 1116615189566l, "classifier"), SReference.create(MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1116615150612l, 1116615189566l, "classifier"), tnode3, PersistenceFacade.getInstance().createModelReference("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.runtime(MPS.Core/jetbrains.mps.smodel.runtime@java_stub)"), PersistenceFacade.getInstance().createNodeId("~StructureAspectDescriptor")));
               } finally {
               }
               if (tnode3 != null) {
@@ -244,12 +246,12 @@ public class SwitchreturnLanguageAspectDescriptor implements TemplateSwitchMappi
                       final SNode tnode9 = environment.createOutputNode("jetbrains.mps.baseLanguageInternal.structure.InternalNewExpression");
                       try {
                         environment.nodeCopied(context, tnode9, "tpl/r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508/2343938651365273194");
-                        SNodeAccessUtil.setProperty(tnode9, "fqClassName", TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_2343938651365273197(new PropertyMacroContext(context, "structure.StructureAspectDescriptor", propertyMacro_2tkj9d_c0a0c0b0b0c0b0b0b0b0b0c0c0c8))));
+                        SNodeAccessUtil.setProperty(tnode9, MetaAdapterFactory.getProperty(new UUID(-2363163772790029805l, -6024047381933761144l), 1173996401517l, 1173996588177l, "fqClassName"), TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_2343938651365273197(new PropertyMacroContext(context, "structure.StructureAspectDescriptor", propertyMacro_2tkj9d_c0a0c0b0b0c0b0b0b0b0b0c0c0c8))));
                         {
                           final SNode tnode10 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.ClassifierType");
                           try {
                             environment.nodeCopied(context, tnode10, "tpl/r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508/2343938651365273195");
-                            tnode10.setReference("classifier", SReference.create("classifier", tnode10, PersistenceFacade.getInstance().createModelReference("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.runtime(MPS.Core/jetbrains.mps.smodel.runtime@java_stub)"), PersistenceFacade.getInstance().createNodeId("~StructureAspectDescriptor")));
+                            tnode10.setReference(MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier"), SReference.create(MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier"), tnode10, PersistenceFacade.getInstance().createModelReference("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.runtime(MPS.Core/jetbrains.mps.smodel.runtime@java_stub)"), PersistenceFacade.getInstance().createNodeId("~StructureAspectDescriptor")));
                           } finally {
                           }
                           if (tnode10 != null) {
@@ -312,7 +314,7 @@ public class SwitchreturnLanguageAspectDescriptor implements TemplateSwitchMappi
               final SNode tnode3 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.ClassifierClassExpression");
               try {
                 environment.nodeCopied(context, tnode3, "tpl/r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508/2343938651365281055");
-                tnode3.setReference("classifier", SReference.create("classifier", tnode3, PersistenceFacade.getInstance().createModelReference("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.runtime(MPS.Core/jetbrains.mps.smodel.runtime@java_stub)"), PersistenceFacade.getInstance().createNodeId("~BehaviorAspectDescriptor")));
+                tnode3.setReference(MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1116615150612l, 1116615189566l, "classifier"), SReference.create(MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1116615150612l, 1116615189566l, "classifier"), tnode3, PersistenceFacade.getInstance().createModelReference("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.runtime(MPS.Core/jetbrains.mps.smodel.runtime@java_stub)"), PersistenceFacade.getInstance().createNodeId("~BehaviorAspectDescriptor")));
               } finally {
               }
               if (tnode3 != null) {
@@ -367,12 +369,12 @@ public class SwitchreturnLanguageAspectDescriptor implements TemplateSwitchMappi
                       final SNode tnode9 = environment.createOutputNode("jetbrains.mps.baseLanguageInternal.structure.InternalNewExpression");
                       try {
                         environment.nodeCopied(context, tnode9, "tpl/r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508/2343938651365291766");
-                        SNodeAccessUtil.setProperty(tnode9, "fqClassName", TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_2343938651365291768(new PropertyMacroContext(context, "behavior.BehaviorAspectDescriptor", propertyMacro_2tkj9d_c0a0c0b0b0c0b0b0b0b0b0c0c0c9))));
+                        SNodeAccessUtil.setProperty(tnode9, MetaAdapterFactory.getProperty(new UUID(-2363163772790029805l, -6024047381933761144l), 1173996401517l, 1173996588177l, "fqClassName"), TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_2343938651365291768(new PropertyMacroContext(context, "behavior.BehaviorAspectDescriptor", propertyMacro_2tkj9d_c0a0c0b0b0c0b0b0b0b0b0c0c0c9))));
                         {
                           final SNode tnode10 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.ClassifierType");
                           try {
                             environment.nodeCopied(context, tnode10, "tpl/r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508/2343938651365291778");
-                            tnode10.setReference("classifier", SReference.create("classifier", tnode10, PersistenceFacade.getInstance().createModelReference("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.runtime(MPS.Core/jetbrains.mps.smodel.runtime@java_stub)"), PersistenceFacade.getInstance().createNodeId("~BehaviorAspectDescriptor")));
+                            tnode10.setReference(MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier"), SReference.create(MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier"), tnode10, PersistenceFacade.getInstance().createModelReference("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.runtime(MPS.Core/jetbrains.mps.smodel.runtime@java_stub)"), PersistenceFacade.getInstance().createNodeId("~BehaviorAspectDescriptor")));
                           } finally {
                           }
                           if (tnode10 != null) {
@@ -435,7 +437,7 @@ public class SwitchreturnLanguageAspectDescriptor implements TemplateSwitchMappi
               final SNode tnode3 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.ClassifierClassExpression");
               try {
                 environment.nodeCopied(context, tnode3, "tpl/r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508/2343938651365217267");
-                tnode3.setReference("classifier", SReference.create("classifier", tnode3, PersistenceFacade.getInstance().createModelReference("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.runtime(MPS.Core/jetbrains.mps.smodel.runtime@java_stub)"), PersistenceFacade.getInstance().createNodeId("~ConstraintsAspectDescriptor")));
+                tnode3.setReference(MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1116615150612l, 1116615189566l, "classifier"), SReference.create(MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1116615150612l, 1116615189566l, "classifier"), tnode3, PersistenceFacade.getInstance().createModelReference("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.runtime(MPS.Core/jetbrains.mps.smodel.runtime@java_stub)"), PersistenceFacade.getInstance().createNodeId("~ConstraintsAspectDescriptor")));
               } finally {
               }
               if (tnode3 != null) {
@@ -490,12 +492,12 @@ public class SwitchreturnLanguageAspectDescriptor implements TemplateSwitchMappi
                       final SNode tnode9 = environment.createOutputNode("jetbrains.mps.baseLanguageInternal.structure.InternalNewExpression");
                       try {
                         environment.nodeCopied(context, tnode9, "tpl/r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508/2343938651365228072");
-                        SNodeAccessUtil.setProperty(tnode9, "fqClassName", TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_2343938651365228074(new PropertyMacroContext(context, "constraints.ConstraintsAspectDescriptor", propertyMacro_2tkj9d_c0a0c0b0b0c0b0b0b0b0b0c0c0c01))));
+                        SNodeAccessUtil.setProperty(tnode9, MetaAdapterFactory.getProperty(new UUID(-2363163772790029805l, -6024047381933761144l), 1173996401517l, 1173996588177l, "fqClassName"), TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_2343938651365228074(new PropertyMacroContext(context, "constraints.ConstraintsAspectDescriptor", propertyMacro_2tkj9d_c0a0c0b0b0c0b0b0b0b0b0c0c0c01))));
                         {
                           final SNode tnode10 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.ClassifierType");
                           try {
                             environment.nodeCopied(context, tnode10, "tpl/r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508/2343938651365228084");
-                            tnode10.setReference("classifier", SReference.create("classifier", tnode10, PersistenceFacade.getInstance().createModelReference("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.runtime(MPS.Core/jetbrains.mps.smodel.runtime@java_stub)"), PersistenceFacade.getInstance().createNodeId("~ConstraintsAspectDescriptor")));
+                            tnode10.setReference(MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier"), SReference.create(MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier"), tnode10, PersistenceFacade.getInstance().createModelReference("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.runtime(MPS.Core/jetbrains.mps.smodel.runtime@java_stub)"), PersistenceFacade.getInstance().createNodeId("~ConstraintsAspectDescriptor")));
                           } finally {
                           }
                           if (tnode10 != null) {
@@ -558,7 +560,7 @@ public class SwitchreturnLanguageAspectDescriptor implements TemplateSwitchMappi
               final SNode tnode3 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.ClassifierClassExpression");
               try {
                 environment.nodeCopied(context, tnode3, "tpl/r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508/2343938651364885691");
-                tnode3.setReference("classifier", SReference.create("classifier", tnode3, PersistenceFacade.getInstance().createModelReference("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.runtime(MPS.Core/jetbrains.mps.smodel.runtime@java_stub)"), PersistenceFacade.getInstance().createNodeId("~TextGenAspectDescriptor")));
+                tnode3.setReference(MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1116615150612l, 1116615189566l, "classifier"), SReference.create(MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1116615150612l, 1116615189566l, "classifier"), tnode3, PersistenceFacade.getInstance().createModelReference("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.runtime(MPS.Core/jetbrains.mps.smodel.runtime@java_stub)"), PersistenceFacade.getInstance().createNodeId("~TextGenAspectDescriptor")));
               } finally {
               }
               if (tnode3 != null) {
@@ -617,7 +619,7 @@ public class SwitchreturnLanguageAspectDescriptor implements TemplateSwitchMappi
                           final SNode tnode10 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.ClassCreator");
                           try {
                             environment.nodeCopied(context, tnode10, "tpl/r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508/2509399947043771451");
-                            tnode10.setReference("baseMethodDeclaration", SReference.create("baseMethodDeclaration", tnode10, PersistenceFacade.getInstance().createModelReference("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.runtime.interpreted(MPS.Core/jetbrains.mps.smodel.runtime.interpreted@java_stub)"), PersistenceFacade.getInstance().createNodeId("~TextGenAspectInterpreted.<init>()")));
+                            tnode10.setReference(MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, 1068499141037l, "baseMethodDeclaration"), SReference.create(MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, 1068499141037l, "baseMethodDeclaration"), tnode10, PersistenceFacade.getInstance().createModelReference("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.runtime.interpreted(MPS.Core/jetbrains.mps.smodel.runtime.interpreted@java_stub)"), PersistenceFacade.getInstance().createNodeId("~TextGenAspectInterpreted.<init>()")));
                           } finally {
                           }
                           if (tnode10 != null) {
@@ -680,7 +682,7 @@ public class SwitchreturnLanguageAspectDescriptor implements TemplateSwitchMappi
               final SNode tnode3 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.ClassifierClassExpression");
               try {
                 environment.nodeCopied(context, tnode3, "tpl/r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508/2343938651365025014");
-                tnode3.setReference("classifier", SReference.create("classifier", tnode3, PersistenceFacade.getInstance().createModelReference("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.runtime(MPS.Core/jetbrains.mps.smodel.runtime@java_stub)"), PersistenceFacade.getInstance().createNodeId("~FindUsageAspectDescriptor")));
+                tnode3.setReference(MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1116615150612l, 1116615189566l, "classifier"), SReference.create(MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1116615150612l, 1116615189566l, "classifier"), tnode3, PersistenceFacade.getInstance().createModelReference("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.runtime(MPS.Core/jetbrains.mps.smodel.runtime@java_stub)"), PersistenceFacade.getInstance().createNodeId("~FindUsageAspectDescriptor")));
               } finally {
               }
               if (tnode3 != null) {
@@ -735,12 +737,12 @@ public class SwitchreturnLanguageAspectDescriptor implements TemplateSwitchMappi
                       final SNode tnode9 = environment.createOutputNode("jetbrains.mps.baseLanguageInternal.structure.InternalNewExpression");
                       try {
                         environment.nodeCopied(context, tnode9, "tpl/r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508/2343938651365033834");
-                        SNodeAccessUtil.setProperty(tnode9, "fqClassName", TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_2343938651365033836(new PropertyMacroContext(context, "findUsages.FindUsagesDescriptor", propertyMacro_2tkj9d_c0a0c0b0b0c0b0b0b0b0b0c0c0c21))));
+                        SNodeAccessUtil.setProperty(tnode9, MetaAdapterFactory.getProperty(new UUID(-2363163772790029805l, -6024047381933761144l), 1173996401517l, 1173996588177l, "fqClassName"), TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_2343938651365033836(new PropertyMacroContext(context, "findUsages.FindUsagesDescriptor", propertyMacro_2tkj9d_c0a0c0b0b0c0b0b0b0b0b0c0c0c21))));
                         {
                           final SNode tnode10 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.ClassifierType");
                           try {
                             environment.nodeCopied(context, tnode10, "tpl/r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508/2343938651365080813");
-                            tnode10.setReference("classifier", SReference.create("classifier", tnode10, PersistenceFacade.getInstance().createModelReference("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.runtime(MPS.Core/jetbrains.mps.smodel.runtime@java_stub)"), PersistenceFacade.getInstance().createNodeId("~FindUsageAspectDescriptor")));
+                            tnode10.setReference(MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier"), SReference.create(MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier"), tnode10, PersistenceFacade.getInstance().createModelReference("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.runtime(MPS.Core/jetbrains.mps.smodel.runtime@java_stub)"), PersistenceFacade.getInstance().createNodeId("~FindUsageAspectDescriptor")));
                           } finally {
                           }
                           if (tnode10 != null) {
@@ -803,7 +805,7 @@ public class SwitchreturnLanguageAspectDescriptor implements TemplateSwitchMappi
               final SNode tnode3 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.ClassifierClassExpression");
               try {
                 environment.nodeCopied(context, tnode3, "tpl/r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508/2343938651365083846");
-                tnode3.setReference("classifier", SReference.create("classifier", tnode3, PersistenceFacade.getInstance().createModelReference("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.lang.typesystem.runtime(MPS.Core/jetbrains.mps.lang.typesystem.runtime@java_stub)"), PersistenceFacade.getInstance().createNodeId("~IHelginsDescriptor")));
+                tnode3.setReference(MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1116615150612l, 1116615189566l, "classifier"), SReference.create(MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1116615150612l, 1116615189566l, "classifier"), tnode3, PersistenceFacade.getInstance().createModelReference("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.lang.typesystem.runtime(MPS.Core/jetbrains.mps.lang.typesystem.runtime@java_stub)"), PersistenceFacade.getInstance().createNodeId("~IHelginsDescriptor")));
               } finally {
               }
               if (tnode3 != null) {
@@ -858,12 +860,12 @@ public class SwitchreturnLanguageAspectDescriptor implements TemplateSwitchMappi
                       final SNode tnode9 = environment.createOutputNode("jetbrains.mps.baseLanguageInternal.structure.InternalNewExpression");
                       try {
                         environment.nodeCopied(context, tnode9, "tpl/r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508/2343938651365094248");
-                        SNodeAccessUtil.setProperty(tnode9, "fqClassName", TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_2343938651365094251(new PropertyMacroContext(context, "typesystem.TypsystemDescriptor", propertyMacro_2tkj9d_c0a0c0b0b0c0b0b0b0b0b0c0c0c31))));
+                        SNodeAccessUtil.setProperty(tnode9, MetaAdapterFactory.getProperty(new UUID(-2363163772790029805l, -6024047381933761144l), 1173996401517l, 1173996588177l, "fqClassName"), TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_2343938651365094251(new PropertyMacroContext(context, "typesystem.TypsystemDescriptor", propertyMacro_2tkj9d_c0a0c0b0b0c0b0b0b0b0b0c0c0c31))));
                         {
                           final SNode tnode10 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.ClassifierType");
                           try {
                             environment.nodeCopied(context, tnode10, "tpl/r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508/2343938651365094249");
-                            tnode10.setReference("classifier", SReference.create("classifier", tnode10, PersistenceFacade.getInstance().createModelReference("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.lang.typesystem.runtime(MPS.Core/jetbrains.mps.lang.typesystem.runtime@java_stub)"), PersistenceFacade.getInstance().createNodeId("~IHelginsDescriptor")));
+                            tnode10.setReference(MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier"), SReference.create(MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier"), tnode10, PersistenceFacade.getInstance().createModelReference("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.lang.typesystem.runtime(MPS.Core/jetbrains.mps.lang.typesystem.runtime@java_stub)"), PersistenceFacade.getInstance().createNodeId("~IHelginsDescriptor")));
                           } finally {
                           }
                           if (tnode10 != null) {
@@ -926,7 +928,7 @@ public class SwitchreturnLanguageAspectDescriptor implements TemplateSwitchMappi
               final SNode tnode3 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.ClassifierClassExpression");
               try {
                 environment.nodeCopied(context, tnode3, "tpl/r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508/1783365356166420303");
-                tnode3.setReference("classifier", SReference.create("classifier", tnode3, PersistenceFacade.getInstance().createModelReference("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.runtime(MPS.Core/jetbrains.mps.smodel.runtime@java_stub)"), PersistenceFacade.getInstance().createNodeId("~MakeAspectDescriptor")));
+                tnode3.setReference(MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1116615150612l, 1116615189566l, "classifier"), SReference.create(MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1116615150612l, 1116615189566l, "classifier"), tnode3, PersistenceFacade.getInstance().createModelReference("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.runtime(MPS.Core/jetbrains.mps.smodel.runtime@java_stub)"), PersistenceFacade.getInstance().createNodeId("~MakeAspectDescriptor")));
               } finally {
               }
               if (tnode3 != null) {
@@ -981,12 +983,12 @@ public class SwitchreturnLanguageAspectDescriptor implements TemplateSwitchMappi
                       final SNode tnode9 = environment.createOutputNode("jetbrains.mps.baseLanguageInternal.structure.InternalNewExpression");
                       try {
                         environment.nodeCopied(context, tnode9, "tpl/r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508/1783365356166407860");
-                        SNodeAccessUtil.setProperty(tnode9, "fqClassName", TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_1783365356166407863(new PropertyMacroContext(context, "plugin.FacetAspectDescriptor", propertyMacro_2tkj9d_c0a0c0b0b0c0b0b0b0b0b0c0c0c41))));
+                        SNodeAccessUtil.setProperty(tnode9, MetaAdapterFactory.getProperty(new UUID(-2363163772790029805l, -6024047381933761144l), 1173996401517l, 1173996588177l, "fqClassName"), TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_1783365356166407863(new PropertyMacroContext(context, "plugin.FacetAspectDescriptor", propertyMacro_2tkj9d_c0a0c0b0b0c0b0b0b0b0b0c0c0c41))));
                         {
                           final SNode tnode10 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.ClassifierType");
                           try {
                             environment.nodeCopied(context, tnode10, "tpl/r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508/1783365356166420365");
-                            tnode10.setReference("classifier", SReference.create("classifier", tnode10, PersistenceFacade.getInstance().createModelReference("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.runtime(MPS.Core/jetbrains.mps.smodel.runtime@java_stub)"), PersistenceFacade.getInstance().createNodeId("~MakeAspectDescriptor")));
+                            tnode10.setReference(MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier"), SReference.create(MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier"), tnode10, PersistenceFacade.getInstance().createModelReference("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.runtime(MPS.Core/jetbrains.mps.smodel.runtime@java_stub)"), PersistenceFacade.getInstance().createNodeId("~MakeAspectDescriptor")));
                           } finally {
                           }
                           if (tnode10 != null) {

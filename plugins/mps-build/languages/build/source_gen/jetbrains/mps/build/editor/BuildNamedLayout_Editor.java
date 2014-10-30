@@ -26,6 +26,8 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 
 public class BuildNamedLayout_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
@@ -130,6 +132,6 @@ public class BuildNamedLayout_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private static boolean renderingCondition_yt8ri3_a1c0(SNode node, EditorContext editorContext) {
-    return !(SNodeOperations.isInstanceOf(ListSequence.fromList(SLinkOperations.getTargets(node, "children", true)).last(), "jetbrains.mps.build.structure.BuildLayout_AbstractContainer"));
+    return !(SNodeOperations.isInstanceOf(ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 4701820937132344003l, 7389400916848037006l, "children"))).last(), "jetbrains.mps.build.structure.BuildLayout_AbstractContainer"));
   }
 }

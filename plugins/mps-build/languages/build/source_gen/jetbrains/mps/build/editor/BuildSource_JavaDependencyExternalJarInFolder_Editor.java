@@ -16,6 +16,8 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 
 public class BuildSource_JavaDependencyExternalJarInFolder_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
@@ -102,7 +104,7 @@ public class BuildSource_JavaDependencyExternalJarInFolder_Editor extends Defaul
     return editorCell;
   }
   private static boolean renderingCondition_a8ta5y_a4a(SNode node, EditorContext editorContext) {
-    return SPropertyOperations.getBoolean(node, "reexport");
+    return SPropertyOperations.getBoolean(node, MetaAdapterFactory.getProperty(new UUID(8755280088213897754l, -5075149991798053422l), 342830306171203038l, 342830306171234560l, "reexport"));
   }
   private EditorCell createCollection_a8ta5y_a_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
