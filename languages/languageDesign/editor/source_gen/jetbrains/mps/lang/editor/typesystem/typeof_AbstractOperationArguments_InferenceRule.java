@@ -14,6 +14,8 @@ import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
@@ -26,7 +28,7 @@ public class typeof_AbstractOperationArguments_InferenceRule extends AbstractInf
   }
   public void applyRule(final SNode operation, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     List<SNode> argumentTypes = BehaviorReflection.invokeVirtualStatic((Class<List<SNode>>) ((Class) Object.class), SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(operation))), "virtual_getOperationArgumentType_6575219246652510406", new Object[]{});
-    if (ListSequence.fromList(SLinkOperations.getTargets(operation, "actualArgument", true)).count() != ListSequence.fromList(argumentTypes).count()) {
+    if (ListSequence.fromList(SLinkOperations.getChildren(operation, MetaAdapterFactory.getContainmentLink(new UUID(1782411230332735017l, -6324602048325217350l), 4531786690998636238l, 4531786690998636240l, "actualArgument"))).count() != ListSequence.fromList(argumentTypes).count()) {
       {
         MessageTarget errorTarget = new NodeMessageTarget();
         IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(operation, "Wrong number of arguments", "r:00000000-0000-4000-0000-011c8959029a(jetbrains.mps.lang.editor.typesystem)", "6050628152418938611", null, errorTarget);
@@ -35,7 +37,7 @@ public class typeof_AbstractOperationArguments_InferenceRule extends AbstractInf
       {
         SNode argument;
         SNode type;
-        Iterator<SNode> argument_iterator = ListSequence.fromList(SLinkOperations.getTargets(operation, "actualArgument", true)).iterator();
+        Iterator<SNode> argument_iterator = ListSequence.fromList(SLinkOperations.getChildren(operation, MetaAdapterFactory.getContainmentLink(new UUID(1782411230332735017l, -6324602048325217350l), 4531786690998636238l, 4531786690998636240l, "actualArgument"))).iterator();
         Iterator<SNode> type_iterator = ListSequence.fromList(argumentTypes).iterator();
         while (true) {
           if (!(argument_iterator.hasNext())) {

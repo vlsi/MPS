@@ -10,6 +10,8 @@ import jetbrains.mps.console.ideCommands.util.OutputUtils;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 
 public class StatCommand_Behavior {
   public static void init(SNode thisNode) {
@@ -17,7 +19,7 @@ public class StatCommand_Behavior {
   public static void virtual_doExecute_3321948346081469500(final SNode thisNode, final ConsoleContext context, final ConsoleStream console) {
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        OutputUtils.printStat(console, BehaviorReflection.invokeVirtual((Class<Iterable<Tuples._2<String, Integer>>>) ((Class) Object.class), SLinkOperations.getTarget(thisNode, "target", true), "virtual_getStat_7490254719527247609", new Object[]{context}));
+        OutputUtils.printStat(console, BehaviorReflection.invokeVirtual((Class<Iterable<Tuples._2<String, Integer>>>) ((Class) Object.class), SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-6492820313512655654l, -6146453626538471728l), 7490254719522540696l, 7490254719522675891l, "target")), "virtual_getStat_7490254719527247609", new Object[]{context}));
       }
     });
 

@@ -9,12 +9,14 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 
 public class RemoveGivenJavaImports_QuickFix extends QuickFix_Runtime {
   public RemoveGivenJavaImports_QuickFix() {
   }
   public void execute(SNode node) {
-    ListSequence.fromList(SLinkOperations.getTargets(AttributeOperations.getAttribute(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.Classifier"), new IAttributeDescriptor.NodeAttribute("jetbrains.mps.baseLanguage.structure.JavaImports")), "entries", true)).removeSequence(Sequence.fromIterable(((Iterable<SNode>) RemoveGivenJavaImports_QuickFix.this.getField("toRemove")[0])));
+    ListSequence.fromList(SLinkOperations.getChildren(AttributeOperations.getAttribute(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.Classifier"), new IAttributeDescriptor.NodeAttribute("jetbrains.mps.baseLanguage.structure.JavaImports")), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 6050519299856556786l, 28358707492429991l, "entries"))).removeSequence(Sequence.fromIterable(((Iterable<SNode>) RemoveGivenJavaImports_QuickFix.this.getField("toRemove")[0])));
   }
 }

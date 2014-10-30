@@ -11,6 +11,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.editor.runtime.selection.SelectionUtil;
 
 public class CellSelectorReference_Actions {
@@ -28,11 +30,11 @@ public class CellSelectorReference_Actions {
       this.execute_internal(editorContext, this.myNode);
     }
     public void execute_internal(EditorContext editorContext, SNode node) {
-      if (SConceptOperations.isExactly(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.editor.structure.AbstractCellSelector"), NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(SLinkOperations.getTarget(node, "cellSelector", true))))) {
-        SLinkOperations.setTarget(node, "cellSelector", null, true);
+      if (SConceptOperations.isExactly(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.editor.structure.AbstractCellSelector"), NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(1782411230332735017l, -6324602048325217350l), 3647146066980922272l, 1948540814635895774l, "cellSelector")))))) {
+        SLinkOperations.setTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(1782411230332735017l, -6324602048325217350l), 3647146066980922272l, 1948540814635895774l, "cellSelector"), null);
         SelectionUtil.selectLabelCellAnSetCaret(editorContext, node, "closingBracket", 0);
       } else {
-        SLinkOperations.setTarget(node, "cellSelector", SConceptOperations.createNewNode("jetbrains.mps.lang.editor.structure.AbstractCellSelector", null), true);
+        SLinkOperations.setTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(1782411230332735017l, -6324602048325217350l), 3647146066980922272l, 1948540814635895774l, "cellSelector"), SConceptOperations.createNewNode("jetbrains.mps.lang.editor.structure.AbstractCellSelector", null));
       }
     }
   }
@@ -45,8 +47,8 @@ public class CellSelectorReference_Actions {
       this.execute_internal(editorContext, this.myNode);
     }
     public void execute_internal(EditorContext editorContext, SNode node) {
-      if (SLinkOperations.getTarget(node, "selectionStart", true) == null) {
-        SLinkOperations.setTarget(node, "selectionStart", SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.Expression", null), true);
+      if (SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(1782411230332735017l, -6324602048325217350l), 3647146066980922272l, 3604384757217586546l, "selectionStart")) == null) {
+        SLinkOperations.setTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(1782411230332735017l, -6324602048325217350l), 3647146066980922272l, 3604384757217586546l, "selectionStart"), SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.Expression", null));
       }
     }
   }
@@ -59,11 +61,11 @@ public class CellSelectorReference_Actions {
       this.execute_internal(editorContext, this.myNode);
     }
     public void execute_internal(EditorContext editorContext, SNode node) {
-      if (SConceptOperations.isExactly(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.editor.structure.AbstractCellSelector"), NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(SLinkOperations.getTarget(node, "cellSelector", true))))) {
-        SLinkOperations.setTarget(node, "cellSelector", null, true);
+      if (SConceptOperations.isExactly(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.editor.structure.AbstractCellSelector"), NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(1782411230332735017l, -6324602048325217350l), 3647146066980922272l, 1948540814635895774l, "cellSelector")))))) {
+        SLinkOperations.setTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(1782411230332735017l, -6324602048325217350l), 3647146066980922272l, 1948540814635895774l, "cellSelector"), null);
         SelectionUtil.selectLabelCellAnSetCaret(editorContext, node, "closingBracket", 0);
       } else {
-        SLinkOperations.setTarget(node, "cellSelector", SConceptOperations.createNewNode("jetbrains.mps.lang.editor.structure.AbstractCellSelector", null), true);
+        SLinkOperations.setTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(1782411230332735017l, -6324602048325217350l), 3647146066980922272l, 1948540814635895774l, "cellSelector"), SConceptOperations.createNewNode("jetbrains.mps.lang.editor.structure.AbstractCellSelector", null));
       }
     }
   }

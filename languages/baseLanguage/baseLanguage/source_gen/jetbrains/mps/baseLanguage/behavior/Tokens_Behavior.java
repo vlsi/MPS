@@ -4,44 +4,46 @@ package jetbrains.mps.baseLanguage.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 
 public class Tokens_Behavior {
   public static void init(SNode thisNode) {
   }
   public static String call_firstToken_1296023605441710627(SNode thisNode) {
-    if (SPropertyOperations.getString(thisNode, "tokens") == null) {
+    if (SPropertyOperations.getString(thisNode, MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 6528213125912070246l, 1843920760191311250l, "tokens")) == null) {
       return null;
     }
 
-    int firstDot = SPropertyOperations.getString(thisNode, "tokens").indexOf('.');
+    int firstDot = SPropertyOperations.getString(thisNode, MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 6528213125912070246l, 1843920760191311250l, "tokens")).indexOf('.');
     if (firstDot < 0) {
-      return SPropertyOperations.getString(thisNode, "tokens");
+      return SPropertyOperations.getString(thisNode, MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 6528213125912070246l, 1843920760191311250l, "tokens"));
     } else {
-      return SPropertyOperations.getString(thisNode, "tokens").substring(0, firstDot);
+      return SPropertyOperations.getString(thisNode, MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 6528213125912070246l, 1843920760191311250l, "tokens")).substring(0, firstDot);
     }
   }
   public static String call_lastToken_1296023605440030462(SNode thisNode) {
-    if (SPropertyOperations.getString(thisNode, "tokens") == null) {
+    if (SPropertyOperations.getString(thisNode, MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 6528213125912070246l, 1843920760191311250l, "tokens")) == null) {
       return null;
     }
 
-    int lastDot = SPropertyOperations.getString(thisNode, "tokens").lastIndexOf('.');
+    int lastDot = SPropertyOperations.getString(thisNode, MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 6528213125912070246l, 1843920760191311250l, "tokens")).lastIndexOf('.');
     if (lastDot < 0) {
-      return SPropertyOperations.getString(thisNode, "tokens");
+      return SPropertyOperations.getString(thisNode, MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 6528213125912070246l, 1843920760191311250l, "tokens"));
     } else {
-      return SPropertyOperations.getString(thisNode, "tokens").substring(lastDot + 1);
+      return SPropertyOperations.getString(thisNode, MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 6528213125912070246l, 1843920760191311250l, "tokens")).substring(lastDot + 1);
     }
   }
   public static String call_withoutLastToken_6148840541591441572(SNode thisNode) {
-    if (SPropertyOperations.getString(thisNode, "tokens") == null) {
+    if (SPropertyOperations.getString(thisNode, MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 6528213125912070246l, 1843920760191311250l, "tokens")) == null) {
       return null;
     }
 
-    int lastDot = SPropertyOperations.getString(thisNode, "tokens").lastIndexOf('.');
+    int lastDot = SPropertyOperations.getString(thisNode, MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 6528213125912070246l, 1843920760191311250l, "tokens")).lastIndexOf('.');
     if (lastDot < 0) {
-      return SPropertyOperations.getString(thisNode, "tokens");
+      return SPropertyOperations.getString(thisNode, MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 6528213125912070246l, 1843920760191311250l, "tokens"));
     } else {
-      return SPropertyOperations.getString(thisNode, "tokens").substring(0, lastDot);
+      return SPropertyOperations.getString(thisNode, MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 6528213125912070246l, 1843920760191311250l, "tokens")).substring(0, lastDot);
     }
   }
 }

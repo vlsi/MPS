@@ -9,6 +9,8 @@ import jetbrains.mps.lang.test.runtime.BaseTestBody;
 import org.jetbrains.mps.openapi.model.SNode;
 import junit.framework.Assert;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.baseLanguage.behavior.ParenthesisUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
@@ -38,7 +40,7 @@ public class TestBlPriorities_Test extends BaseTransformationTest {
     }
     public void check(SNode expr, Object expectedValue) {
       this.expressionPriorityRebalance(expr);
-      Assert.assertEquals(expectedValue, this.eval(SLinkOperations.getTarget(expr, "expression", true)));
+      Assert.assertEquals(expectedValue, this.eval(SLinkOperations.getTarget(expr, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1079359253375l, 1079359253376l, "expression"))));
     }
     public void expressionPriorityRebalance(SNode e) {
       for (SNode child : SNodeOperations.getChildren(e)) {
@@ -55,17 +57,17 @@ public class TestBlPriorities_Test extends BaseTransformationTest {
         return this.evalBinaryOperation(SNodeOperations.cast(e, "jetbrains.mps.baseLanguage.structure.BinaryOperation"));
       }
       if (SNodeOperations.isInstanceOf(e, "jetbrains.mps.baseLanguage.structure.IntegerConstant")) {
-        return SPropertyOperations.getInteger(SNodeOperations.cast(e, "jetbrains.mps.baseLanguage.structure.IntegerConstant"), "value");
+        return SPropertyOperations.getInteger(SNodeOperations.cast(e, "jetbrains.mps.baseLanguage.structure.IntegerConstant"), MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 1068580320020l, 1068580320021l, "value"));
       }
       if (SNodeOperations.isInstanceOf(e, "jetbrains.mps.baseLanguage.structure.BooleanConstant")) {
-        return SPropertyOperations.getBoolean(SNodeOperations.cast(e, "jetbrains.mps.baseLanguage.structure.BooleanConstant"), "value");
+        return SPropertyOperations.getBoolean(SNodeOperations.cast(e, "jetbrains.mps.baseLanguage.structure.BooleanConstant"), MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123137l, 1068580123138l, "value"));
       }
 
       throw new UnsupportedOperationException(e.getPresentation());
     }
     public Object evalBinaryOperation(SNode e) {
-      Object left = this.eval(SLinkOperations.getTarget(SNodeOperations.cast(e, "jetbrains.mps.baseLanguage.structure.BinaryOperation"), "leftExpression", true));
-      Object right = this.eval(SLinkOperations.getTarget(SNodeOperations.cast(e, "jetbrains.mps.baseLanguage.structure.BinaryOperation"), "rightExpression", true));
+      Object left = this.eval(SLinkOperations.getTarget(SNodeOperations.cast(e, "jetbrains.mps.baseLanguage.structure.BinaryOperation"), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1081773326031l, 1081773367580l, "leftExpression")));
+      Object right = this.eval(SLinkOperations.getTarget(SNodeOperations.cast(e, "jetbrains.mps.baseLanguage.structure.BinaryOperation"), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1081773326031l, 1081773367579l, "rightExpression")));
 
       if (SNodeOperations.isInstanceOf(e, "jetbrains.mps.baseLanguage.structure.ShiftLeftExpression")) {
         return ((Integer) left) << ((Integer) right);
@@ -110,28 +112,28 @@ public class TestBlPriorities_Test extends BaseTransformationTest {
       quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ParenthesizedExpression", null, null, false);
       quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.BitwiseOrExpression", null, null, false);
       quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.IntegerConstant", null, null, false);
-      SNodeAccessUtil.setProperty(quotedNode_3, "value", "6");
+      SNodeAccessUtil.setProperty(quotedNode_3, MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 1068580320020l, 1068580320021l, "value"), "6");
       quotedNode_2.addChild("rightExpression", quotedNode_3);
       quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.BitwiseOrExpression", null, null, false);
       quotedNode_5 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.BitwiseAndExpression", null, null, false);
       quotedNode_7 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.IntegerConstant", null, null, false);
-      SNodeAccessUtil.setProperty(quotedNode_7, "value", "1");
+      SNodeAccessUtil.setProperty(quotedNode_7, MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 1068580320020l, 1068580320021l, "value"), "1");
       quotedNode_5.addChild("leftExpression", quotedNode_7);
       quotedNode_8 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.IntegerConstant", null, null, false);
-      SNodeAccessUtil.setProperty(quotedNode_8, "value", "2");
+      SNodeAccessUtil.setProperty(quotedNode_8, MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 1068580320020l, 1068580320021l, "value"), "2");
       quotedNode_5.addChild("rightExpression", quotedNode_8);
       quotedNode_4.addChild("leftExpression", quotedNode_5);
       quotedNode_6 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.BitwiseXorExpression", null, null, false);
       quotedNode_9 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ShiftLeftExpression", null, null, false);
       quotedNode_11 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.IntegerConstant", null, null, false);
-      SNodeAccessUtil.setProperty(quotedNode_11, "value", "3");
+      SNodeAccessUtil.setProperty(quotedNode_11, MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 1068580320020l, 1068580320021l, "value"), "3");
       quotedNode_9.addChild("leftExpression", quotedNode_11);
       quotedNode_12 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.IntegerConstant", null, null, false);
-      SNodeAccessUtil.setProperty(quotedNode_12, "value", "4");
+      SNodeAccessUtil.setProperty(quotedNode_12, MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 1068580320020l, 1068580320021l, "value"), "4");
       quotedNode_9.addChild("rightExpression", quotedNode_12);
       quotedNode_6.addChild("leftExpression", quotedNode_9);
       quotedNode_10 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.IntegerConstant", null, null, false);
-      SNodeAccessUtil.setProperty(quotedNode_10, "value", "5");
+      SNodeAccessUtil.setProperty(quotedNode_10, MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 1068580320020l, 1068580320021l, "value"), "5");
       quotedNode_6.addChild("rightExpression", quotedNode_10);
       quotedNode_4.addChild("rightExpression", quotedNode_6);
       quotedNode_2.addChild("leftExpression", quotedNode_4);
@@ -149,14 +151,14 @@ public class TestBlPriorities_Test extends BaseTransformationTest {
       quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ParenthesizedExpression", null, null, false);
       quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.EqualsExpression", null, null, false);
       quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.BooleanConstant", null, null, false);
-      SNodeAccessUtil.setProperty(quotedNode_3, "value", "false");
+      SNodeAccessUtil.setProperty(quotedNode_3, MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123137l, 1068580123138l, "value"), "false");
       quotedNode_2.addChild("rightExpression", quotedNode_3);
       quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.OrExpression", null, null, false);
       quotedNode_5 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.BooleanConstant", null, null, false);
-      SNodeAccessUtil.setProperty(quotedNode_5, "value", "false");
+      SNodeAccessUtil.setProperty(quotedNode_5, MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123137l, 1068580123138l, "value"), "false");
       quotedNode_4.addChild("rightExpression", quotedNode_5);
       quotedNode_6 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.BooleanConstant", null, null, false);
-      SNodeAccessUtil.setProperty(quotedNode_6, "value", "true");
+      SNodeAccessUtil.setProperty(quotedNode_6, MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123137l, 1068580123138l, "value"), "true");
       quotedNode_4.addChild("leftExpression", quotedNode_6);
       quotedNode_2.addChild("leftExpression", quotedNode_4);
       quotedNode_1.addChild("expression", quotedNode_2);

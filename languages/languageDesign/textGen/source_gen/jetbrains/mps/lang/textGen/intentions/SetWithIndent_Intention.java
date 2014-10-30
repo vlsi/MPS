@@ -14,6 +14,8 @@ import jetbrains.mps.smodel.SNodePointer;
 import java.util.Collections;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.intentions.IntentionDescriptor;
 
 public class SetWithIndent_Intention implements IntentionFactory {
@@ -68,9 +70,9 @@ public class SetWithIndent_Intention implements IntentionFactory {
     public void execute(final SNode node, final EditorContext editorContext) {
       boolean indent = BehaviorReflection.invokeVirtual(Boolean.TYPE, node, "virtual_withIndent_1237466287046", new Object[]{});
       if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.textGen.structure.ConstantStringAppendPart")) {
-        SPropertyOperations.set(SNodeOperations.cast(node, "jetbrains.mps.lang.textGen.structure.ConstantStringAppendPart"), "withIndent", "" + (!(indent)));
+        SPropertyOperations.set(SNodeOperations.cast(node, "jetbrains.mps.lang.textGen.structure.ConstantStringAppendPart"), MetaAdapterFactory.getProperty(new UUID(-5173455103397510980l, -8487484424797171117l), 1237305557638l, 1237306361677l, "withIndent"), "" + (!(indent)));
       } else {
-        SPropertyOperations.set(SNodeOperations.cast(node, "jetbrains.mps.lang.textGen.structure.NodeAppendPart"), "withIndent", "" + (!(indent)));
+        SPropertyOperations.set(SNodeOperations.cast(node, "jetbrains.mps.lang.textGen.structure.NodeAppendPart"), MetaAdapterFactory.getProperty(new UUID(-5173455103397510980l, -8487484424797171117l), 1237305334312l, 1237306318654l, "withIndent"), "" + (!(indent)));
       }
     }
     public IntentionDescriptor getDescriptor() {

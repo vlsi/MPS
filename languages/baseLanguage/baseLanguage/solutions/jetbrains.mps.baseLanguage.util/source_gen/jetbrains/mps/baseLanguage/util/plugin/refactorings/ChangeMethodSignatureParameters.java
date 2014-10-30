@@ -8,6 +8,8 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.lang.pattern.util.MatchingUtil;
 
 public class ChangeMethodSignatureParameters {
@@ -17,7 +19,7 @@ public class ChangeMethodSignatureParameters {
   public ChangeMethodSignatureParameters(SNode declaration) {
     this.myMethod = SNodeOperations.copyNode(declaration);
     this.myOldMethod = SNodeOperations.copyNode(declaration);
-    for (SNode param : ListSequence.fromList(SLinkOperations.getTargets(this.myMethod, "parameter", true))) {
+    for (SNode param : ListSequence.fromList(SLinkOperations.getChildren(this.myMethod, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123132l, 1068580123134l, "parameter")))) {
       ListSequence.fromList(this.myParametersIds).addElement(param.getNodeId().toString());
     }
   }
@@ -28,9 +30,9 @@ public class ChangeMethodSignatureParameters {
     return this.myParametersIds;
   }
   public boolean isVisibilityChanged() {
-    return SNodeOperations.getConceptDeclaration(SLinkOperations.getTarget(SNodeOperations.cast(this.myMethod, "jetbrains.mps.baseLanguage.structure.IVisible"), "visibility", true)) != SNodeOperations.getConceptDeclaration(SLinkOperations.getTarget(SNodeOperations.cast(this.myOldMethod, "jetbrains.mps.baseLanguage.structure.IVisible"), "visibility", true));
+    return SNodeOperations.getConceptDeclaration(SLinkOperations.getTarget(SNodeOperations.cast(this.myMethod, "jetbrains.mps.baseLanguage.structure.IVisible"), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1178549954367l, 1178549979242l, "visibility"))) != SNodeOperations.getConceptDeclaration(SLinkOperations.getTarget(SNodeOperations.cast(this.myOldMethod, "jetbrains.mps.baseLanguage.structure.IVisible"), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1178549954367l, 1178549979242l, "visibility")));
   }
   public boolean isReturnValueChanged() {
-    return !((MatchingUtil.matchNodes(SLinkOperations.getTarget(this.myMethod, "returnType", true), SLinkOperations.getTarget(this.myOldMethod, "returnType", true))));
+    return !((MatchingUtil.matchNodes(SLinkOperations.getTarget(this.myMethod, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123132l, 1068580123133l, "returnType")), SLinkOperations.getTarget(this.myOldMethod, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123132l, 1068580123133l, "returnType")))));
   }
 }

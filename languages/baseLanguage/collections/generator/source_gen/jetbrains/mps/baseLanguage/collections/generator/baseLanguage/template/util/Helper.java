@@ -5,6 +5,8 @@ package jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.u
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 
 public class Helper {
   public static boolean isCollectionElementAccess(SNode expression) {
@@ -13,7 +15,7 @@ public class Helper {
       // of course, there's more than a .size operation that doesn't consistute sequence element access, 
       // but at the moment I cover only most wide-spread case - there seems to be no simple way to tell  
       // true element access operations from other. 
-      return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(dotExpr, "operation", true), "jetbrains.mps.baseLanguage.collections.structure.SequenceOperation") && !(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(dotExpr, "operation", true), "jetbrains.mps.baseLanguage.collections.structure.GetSizeOperation"));
+      return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(dotExpr, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1197027756228l, 1197027833540l, "operation")), "jetbrains.mps.baseLanguage.collections.structure.SequenceOperation") && !(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(dotExpr, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1197027756228l, 1197027833540l, "operation")), "jetbrains.mps.baseLanguage.collections.structure.GetSizeOperation"));
     }
     if (SNodeOperations.isInstanceOf(expression, "jetbrains.mps.baseLanguage.collections.structure.MapElement")) {
       return true;
@@ -23,7 +25,7 @@ public class Helper {
     }
     if (SNodeOperations.isInstanceOf(expression, "jetbrains.mps.baseLanguage.structure.OperationAssignmentExpression")) {
       SNode oae = SNodeOperations.cast(expression, "jetbrains.mps.baseLanguage.structure.OperationAssignmentExpression");
-      return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(oae, "lValue", true), "jetbrains.mps.baseLanguage.collections.structure.MapElement") || SNodeOperations.isInstanceOf(SLinkOperations.getTarget(oae, "lValue", true), "jetbrains.mps.baseLanguage.collections.structure.ListElementAccessExpression");
+      return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(oae, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1215693861676l, 1068498886295l, "lValue")), "jetbrains.mps.baseLanguage.collections.structure.MapElement") || SNodeOperations.isInstanceOf(SLinkOperations.getTarget(oae, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1215693861676l, 1068498886295l, "lValue")), "jetbrains.mps.baseLanguage.collections.structure.ListElementAccessExpression");
     }
     return false;
   }

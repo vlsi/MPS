@@ -7,6 +7,8 @@ import java.util.List;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.lang.editor.figures.behavior.FigureAttribute_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -17,16 +19,16 @@ public class AttributedFigureReference_Behavior {
   public static void init(SNode thisNode) {
   }
   public static List<String> virtual_getFigureParameterNames_1491555030356445722(SNode thisNode) {
-    return Sequence.fromIterable(FigureAttribute_Behavior.call_getPrameterAttributes_5422656561931892777(SLinkOperations.getTarget(thisNode, "figureAttribute", false))).select(new ISelector<SNode, String>() {
+    return Sequence.fromIterable(FigureAttribute_Behavior.call_getPrameterAttributes_5422656561931892777(SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getReferenceLink(new UUID(6991546026468590289l, -9160623158338601007l), 5422656561926747342l, 5422656561931890753l, "figureAttribute")))).select(new ISelector<SNode, String>() {
       public String select(SNode it) {
-        return SPropertyOperations.getString(SNodeOperations.cast(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), it, "virtual_getParameterMember_5422656561931910498", new Object[]{}), "jetbrains.mps.lang.core.structure.INamedConcept"), "name");
+        return SPropertyOperations.getString(SNodeOperations.cast(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), it, "virtual_getParameterMember_5422656561931910498", new Object[]{}), "jetbrains.mps.lang.core.structure.INamedConcept"), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"));
       }
     }).toListSequence();
   }
   public static SNode virtual_getFigureParameter_1491555030357120840(SNode thisNode, final String name) {
-    return Sequence.fromIterable(FigureAttribute_Behavior.call_getPrameterAttributes_5422656561931892777(SLinkOperations.getTarget(thisNode, "figureAttribute", false))).findFirst(new IWhereFilter<SNode>() {
+    return Sequence.fromIterable(FigureAttribute_Behavior.call_getPrameterAttributes_5422656561931892777(SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getReferenceLink(new UUID(6991546026468590289l, -9160623158338601007l), 5422656561926747342l, 5422656561931890753l, "figureAttribute")))).findFirst(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return eq_godh5_a0a0a0a0a0a0c(SPropertyOperations.getString(SNodeOperations.cast(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), it, "virtual_getParameterMember_5422656561931910498", new Object[]{}), "jetbrains.mps.lang.core.structure.INamedConcept"), "name"), name);
+        return eq_godh5_a0a0a0a0a0a0c(SPropertyOperations.getString(SNodeOperations.cast(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), it, "virtual_getParameterMember_5422656561931910498", new Object[]{}), "jetbrains.mps.lang.core.structure.INamedConcept"), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")), name);
       }
     });
   }

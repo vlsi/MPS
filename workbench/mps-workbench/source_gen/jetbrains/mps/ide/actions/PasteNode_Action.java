@@ -31,6 +31,8 @@ import jetbrains.mps.resolve.ResolverComponent;
 import jetbrains.mps.openapi.navigation.NavigationSupport;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.util.Pair;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
@@ -163,7 +165,7 @@ public class PasteNode_Action extends BaseAction {
   }
   private String getContextPackage(final Map<String, Object> _params) {
     if (((SNode) MapSequence.fromMap(_params).get("node")) != null) {
-      return SPropertyOperations.getString(((SNode) ((SNode) MapSequence.fromMap(_params).get("node"))), "virtualPackage");
+      return SPropertyOperations.getString(((SNode) ((SNode) MapSequence.fromMap(_params).get("node"))), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1133920641626l, 1193676396447l, "virtualPackage"));
     }
     if (((List<Pair<SModel, String>>) MapSequence.fromMap(_params).get("packs")) != null && ((List<Pair<SModel, String>>) MapSequence.fromMap(_params).get("packs")).size() == 1 && ((List<Pair<SModel, String>>) MapSequence.fromMap(_params).get("packs")).get(0).o1 == ((SModel) MapSequence.fromMap(_params).get("contextModel"))) {
       return ((List<Pair<SModel, String>>) MapSequence.fromMap(_params).get("packs")).get(0).o2;

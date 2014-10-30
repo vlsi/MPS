@@ -7,13 +7,15 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.lang.dataFlow.DataFlowBuilderContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 
 public class MoveNodeToNodeExpression_DataFlow extends DataFlowBuilder {
   public MoveNodeToNodeExpression_DataFlow() {
   }
   public void build(final IOperationContext operationContext, final DataFlowBuilderContext _context) {
-    _context.getBuilder().build((SNode) SLinkOperations.getTarget(_context.getNode(), "whatToMove", true));
-    _context.getBuilder().build((SNode) SLinkOperations.getTarget(_context.getNode(), "destination", true));
-    _context.getBuilder().build((SNode) SLinkOperations.getTarget(_context.getNode(), "roleInTarget", true));
+    _context.getBuilder().build((SNode) SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(new UUID(4525410110408967646l, -8616490689189267646l), 1199619425400l, 1199619459778l, "whatToMove")));
+    _context.getBuilder().build((SNode) SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(new UUID(4525410110408967646l, -8616490689189267646l), 1199619425400l, 1199619459779l, "destination")));
+    _context.getBuilder().build((SNode) SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(new UUID(4525410110408967646l, -8616490689189267646l), 1199620589385l, 1199620651934l, "roleInTarget")));
   }
 }

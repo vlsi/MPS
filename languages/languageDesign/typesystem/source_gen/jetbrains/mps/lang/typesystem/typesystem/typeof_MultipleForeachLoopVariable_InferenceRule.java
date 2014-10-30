@@ -8,6 +8,8 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.smodel.SModelUtil_new;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
@@ -17,8 +19,8 @@ public class typeof_MultipleForeachLoopVariable_InferenceRule extends AbstractIn
   public typeof_MultipleForeachLoopVariable_InferenceRule() {
   }
   public void applyRule(final SNode forEachVar, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    SNode variable = SLinkOperations.getTarget(forEachVar, "variable", true);
-    SNode inputSequence = SLinkOperations.getTarget(forEachVar, "iterable", true);
+    SNode variable = SLinkOperations.getTarget(forEachVar, MetaAdapterFactory.getContainmentLink(new UUID(8817443762339858024l, -6091446231697526094l), 1176547843728l, 1176547881822l, "variable"));
+    SNode inputSequence = SLinkOperations.getTarget(forEachVar, MetaAdapterFactory.getContainmentLink(new UUID(8817443762339858024l, -6091446231697526094l), 1176547843728l, 1176547896901l, "iterable"));
     if ((inputSequence != null) && (variable != null)) {
       final SNode elementType_typevar_8290446284380616563 = typeCheckingContext.createNewRuntimeTypesVariable();
       {

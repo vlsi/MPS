@@ -5,6 +5,7 @@ package jetbrains.mps.lang.textGen.constraints;
 import jetbrains.mps.smodel.runtime.ConstraintsDescriptor;
 import java.util.Arrays;
 import jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor;
+import jetbrains.mps.smodel.adapter.ids.SConceptId;
 
 public class ConstraintsAspectDescriptor implements jetbrains.mps.smodel.runtime.ConstraintsAspectDescriptor {
   public ConstraintsAspectDescriptor() {
@@ -22,9 +23,27 @@ public class ConstraintsAspectDescriptor implements jetbrains.mps.smodel.runtime
       case 1:
         return new EncodingLiteral_Constraints();
       default:
-        // todo: illegal in some cases? 
         return new BaseConstraintsDescriptor(fqName);
     }
+  }
+  public ConstraintsDescriptor getDescriptor(SConceptId conceptId) {
+    long id = conceptId.getConceptId();
+    if (id == 1233670071145l) {
+      return new ConceptTextGenDeclaration_Constraints();
+    }
+    if (id == 1233922353619l) {
+      return new OperationDeclaration_Constraints();
+    }
+    if (id == 1233921373471l) {
+      return new LanguageTextGenDeclaration_Constraints();
+    }
+    if (id == 1234524838116l) {
+      return new UtilityMethodDeclaration_Constraints();
+    }
+    if (id == 7166719696753421196l) {
+      return new EncodingLiteral_Constraints();
+    }
+    return new BaseConstraintsDescriptor(conceptId);
   }
   private static String[] stringSwitchCases_2qnle6_a0a0b = new String[]{"jetbrains.mps.lang.textGen.structure.ConceptTextGenDeclaration", "jetbrains.mps.lang.textGen.structure.EncodingLiteral", "jetbrains.mps.lang.textGen.structure.LanguageTextGenDeclaration", "jetbrains.mps.lang.textGen.structure.OperationDeclaration", "jetbrains.mps.lang.textGen.structure.UtilityMethodDeclaration"};
 }

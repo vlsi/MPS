@@ -9,6 +9,8 @@ import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.smodel.SModelUtil_new;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
@@ -20,10 +22,10 @@ public class typeof_RunConfigurationCreator_InferenceRule extends AbstractInfere
     {
       SNode _nodeToCheck_1029348928467 = creator;
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:8b43a830-217d-43d8-a0f8-6460c443f22d(jetbrains.mps.execution.configurations.typesystem)", "3642991921658122741", 0, null);
-      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:8b43a830-217d-43d8-a0f8-6460c443f22d(jetbrains.mps.execution.configurations.typesystem)", "3642991921658122738", true), (SNode) _quotation_createNode_ijawlg_a0a0b(SLinkOperations.getTarget(creator, "configuration", false)), _info_12389875345);
+      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:8b43a830-217d-43d8-a0f8-6460c443f22d(jetbrains.mps.execution.configurations.typesystem)", "3642991921658122738", true), (SNode) _quotation_createNode_ijawlg_a0a0b(SLinkOperations.getTarget(creator, MetaAdapterFactory.getReferenceLink(new UUID(2515029821120661198l, -8934183642121722347l), 3642991921658122718l, 3642991921658122719l, "configuration"))), _info_12389875345);
     }
     {
-      SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(creator, "configurationName", true);
+      SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(creator, MetaAdapterFactory.getContainmentLink(new UUID(2515029821120661198l, -8934183642121722347l), 3642991921658122718l, 529406319400385974l, "configurationName"));
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:8b43a830-217d-43d8-a0f8-6460c443f22d(jetbrains.mps.execution.configurations.typesystem)", "529406319400385987", 0, null);
       typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:8b43a830-217d-43d8-a0f8-6460c443f22d(jetbrains.mps.execution.configurations.typesystem)", "529406319400385979", true), (SNode) _quotation_createNode_ijawlg_a0b0b(), _info_12389875345);
     }
@@ -44,7 +46,7 @@ public class typeof_RunConfigurationCreator_InferenceRule extends AbstractInfere
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.execution.settings.structure.PersistentConfigurationType", null, null, false);
-    SNodeAccessUtil.setReferenceTarget(quotedNode_2, "persistentConfiguration", (SNode) parameter_1);
+    SNodeAccessUtil.setReferenceTarget(quotedNode_2, MetaAdapterFactory.getReferenceLink(new UUID(8461860300379867720l, -4758718422494514628l), 946964771156066332l, 946964771156066333l, "persistentConfiguration"), (SNode) parameter_1);
     return quotedNode_2;
   }
   private static SNode _quotation_createNode_ijawlg_a0b0b() {

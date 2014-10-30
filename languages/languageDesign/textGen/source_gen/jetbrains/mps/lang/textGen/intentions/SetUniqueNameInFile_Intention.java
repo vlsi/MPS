@@ -12,6 +12,8 @@ import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
 import java.util.Collections;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.intentions.IntentionDescriptor;
 
 public class SetUniqueNameInFile_Intention implements IntentionFactory {
@@ -55,10 +57,10 @@ public class SetUniqueNameInFile_Intention implements IntentionFactory {
     public IntentionImplementation() {
     }
     public String getDescription(final SNode node, final EditorContext editorContext) {
-      return (SPropertyOperations.getBoolean(node, "uniqNameInFile") ? "Unset" : "Set" + " Unique Name in File");
+      return (SPropertyOperations.getBoolean(node, MetaAdapterFactory.getProperty(new UUID(-5173455103397510980l, -8487484424797171117l), 6911933836258445304l, 4809320654438971908l, "uniqNameInFile")) ? "Unset" : "Set" + " Unique Name in File");
     }
     public void execute(final SNode node, final EditorContext editorContext) {
-      SPropertyOperations.set(node, "uniqNameInFile", "" + (!(SPropertyOperations.getBoolean(node, "uniqNameInFile"))));
+      SPropertyOperations.set(node, MetaAdapterFactory.getProperty(new UUID(-5173455103397510980l, -8487484424797171117l), 6911933836258445304l, 4809320654438971908l, "uniqNameInFile"), "" + (!(SPropertyOperations.getBoolean(node, MetaAdapterFactory.getProperty(new UUID(-5173455103397510980l, -8487484424797171117l), 6911933836258445304l, 4809320654438971908l, "uniqNameInFile")))));
     }
     public IntentionDescriptor getDescriptor() {
       return SetUniqueNameInFile_Intention.this;

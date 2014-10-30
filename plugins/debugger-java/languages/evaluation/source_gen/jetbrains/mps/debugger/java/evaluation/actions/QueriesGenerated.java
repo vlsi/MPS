@@ -15,6 +15,8 @@ import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.constraints.ModelConstraints;
 import jetbrains.mps.smodel.action.SideTransformPreconditionContext;
@@ -27,7 +29,7 @@ public class QueriesGenerated {
     ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("jetbrains.mps.debugger.java.evaluation.structure.DownCastToLowLevel"), _context.getSourceNode()) {
       public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
         SNode downcast = SNodeFactoryOperations.replaceWithNewChild(_context.getSourceNode(), "jetbrains.mps.debugger.java.evaluation.structure.DownCastToLowLevel");
-        SLinkOperations.setTarget(downcast, "expression", _context.getSourceNode(), true);
+        SLinkOperations.setTarget(downcast, MetaAdapterFactory.getContainmentLink(new UUID(9053457975011001859l, -9123640110572141707l), 7915630211773477333l, 7915630211773477790l, "expression"), _context.getSourceNode());
         return downcast;
       }
       public String getMatchingText(String pattern) {

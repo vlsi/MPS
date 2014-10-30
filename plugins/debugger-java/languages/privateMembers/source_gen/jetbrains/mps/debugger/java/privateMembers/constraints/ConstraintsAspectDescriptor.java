@@ -5,6 +5,7 @@ package jetbrains.mps.debugger.java.privateMembers.constraints;
 import jetbrains.mps.smodel.runtime.ConstraintsDescriptor;
 import java.util.Arrays;
 import jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor;
+import jetbrains.mps.smodel.adapter.ids.SConceptId;
 
 public class ConstraintsAspectDescriptor implements jetbrains.mps.smodel.runtime.ConstraintsAspectDescriptor {
   public ConstraintsAspectDescriptor() {
@@ -20,9 +21,24 @@ public class ConstraintsAspectDescriptor implements jetbrains.mps.smodel.runtime
       case 3:
         return new PrivateStaticMethodCall_Constraints();
       default:
-        // todo: illegal in some cases? 
         return new BaseConstraintsDescriptor(fqName);
     }
+  }
+  public ConstraintsDescriptor getDescriptor(SConceptId conceptId) {
+    long id = conceptId.getConceptId();
+    if (id == 6825241477451043705l) {
+      return new PrivateFieldReferenceOperation_Constraints();
+    }
+    if (id == 6825241477451051014l) {
+      return new PrivateInstanceMethodCallOperation_Constraints();
+    }
+    if (id == 4107550939057698505l) {
+      return new PrivateStaticFieldReference_Constraints();
+    }
+    if (id == 3374946611454212811l) {
+      return new PrivateStaticMethodCall_Constraints();
+    }
+    return new BaseConstraintsDescriptor(conceptId);
   }
   private static String[] stringSwitchCases_2qnle6_a0a0b = new String[]{"jetbrains.mps.debugger.java.privateMembers.structure.PrivateFieldReferenceOperation", "jetbrains.mps.debugger.java.privateMembers.structure.PrivateInstanceMethodCallOperation", "jetbrains.mps.debugger.java.privateMembers.structure.PrivateStaticFieldReference", "jetbrains.mps.debugger.java.privateMembers.structure.PrivateStaticMethodCall"};
 }

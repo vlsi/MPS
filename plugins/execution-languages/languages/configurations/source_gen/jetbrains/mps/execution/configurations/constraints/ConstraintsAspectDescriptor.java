@@ -5,6 +5,7 @@ package jetbrains.mps.execution.configurations.constraints;
 import jetbrains.mps.smodel.runtime.ConstraintsDescriptor;
 import java.util.Arrays;
 import jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor;
+import jetbrains.mps.smodel.adapter.ids.SConceptId;
 
 public class ConstraintsAspectDescriptor implements jetbrains.mps.smodel.runtime.ConstraintsAspectDescriptor {
   public ConstraintsAspectDescriptor() {
@@ -36,9 +37,48 @@ public class ConstraintsAspectDescriptor implements jetbrains.mps.smodel.runtime
       case 4:
         return new EnvironmentExpression_Constraints();
       default:
-        // todo: illegal in some cases? 
         return new BaseConstraintsDescriptor(fqName);
     }
+  }
+  public ConstraintsDescriptor getDescriptor(SConceptId conceptId) {
+    long id = conceptId.getConceptId();
+    if (id == 2401501559171392633l) {
+      return new AbstractRunConfigurationExecutor_Constraints();
+    }
+    if (id == 7806358006983614956l) {
+      return new RunConfigurationExecutor_Constraints();
+    }
+    if (id == 7806358006983738927l) {
+      return new ConfigurationFromExecutorReference_Constraints();
+    }
+    if (id == 4366236229294105349l) {
+      return new RunConfigurationProducer_Constraints();
+    }
+    if (id == 4366236229294149059l) {
+      return new Create_ConceptFunction_Constraints();
+    }
+    if (id == 4366236229294149030l) {
+      return new RunConfigurationProducerPart_Constraints();
+    }
+    if (id == 3642991921658122718l) {
+      return new RunConfigurationCreator_Constraints();
+    }
+    if (id == 4366236229294141334l) {
+      return new RunConfigurationSource_Constraints();
+    }
+    if (id == 6550182048787583936l) {
+      return new BeforeTaskParameterReference_Constraints();
+    }
+    if (id == 5453800039284219178l) {
+      return new GetProjectOperation_Constraints();
+    }
+    if (id == 946964771156870353l) {
+      return new StartProcessHandlerStatement_Constraints();
+    }
+    if (id == 33324785353654116l) {
+      return new EnvironmentExpression_Constraints();
+    }
+    return new BaseConstraintsDescriptor(conceptId);
   }
   private static String[] stringSwitchCases_2qnle6_a0a0b = new String[]{"jetbrains.mps.execution.configurations.structure.AbstractRunConfigurationExecutor", "jetbrains.mps.execution.configurations.structure.BeforeTaskParameterReference", "jetbrains.mps.execution.configurations.structure.ConfigurationFromExecutorReference", "jetbrains.mps.execution.configurations.structure.Create_ConceptFunction", "jetbrains.mps.execution.configurations.structure.EnvironmentExpression", "jetbrains.mps.execution.configurations.structure.GetProjectOperation", "jetbrains.mps.execution.configurations.structure.RunConfigurationCreator", "jetbrains.mps.execution.configurations.structure.RunConfigurationExecutor", "jetbrains.mps.execution.configurations.structure.RunConfigurationProducer", "jetbrains.mps.execution.configurations.structure.RunConfigurationProducerPart", "jetbrains.mps.execution.configurations.structure.RunConfigurationSource", "jetbrains.mps.execution.configurations.structure.StartProcessHandlerStatement"};
 }

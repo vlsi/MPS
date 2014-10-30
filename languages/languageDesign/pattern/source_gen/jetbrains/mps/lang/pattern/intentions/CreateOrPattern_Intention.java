@@ -15,6 +15,8 @@ import java.util.Collections;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.intentions.IntentionDescriptor;
 
 public class CreateOrPattern_Intention implements IntentionFactory {
@@ -71,7 +73,7 @@ public class CreateOrPattern_Intention implements IntentionFactory {
       SNode currentNode = editorContext.getSelectedNode();
       SNode orPattern = SNodeFactoryOperations.createNewNode("jetbrains.mps.lang.pattern.structure.OrPattern", null);
       SNodeOperations.replaceWithAnother(currentNode, orPattern);
-      SLinkOperations.setTarget(ListSequence.fromList(SLinkOperations.getTargets(orPattern, "clause", true)).first(), "patternNode", currentNode, true);
+      SLinkOperations.setTarget(ListSequence.fromList(SLinkOperations.getChildren(orPattern, MetaAdapterFactory.getContainmentLink(new UUID(-3143127453834064983l, -5836335846783251545l), 2879868312062962308l, 2879868312062970574l, "clause"))).first(), MetaAdapterFactory.getContainmentLink(new UUID(-3143127453834064983l, -5836335846783251545l), 1136720037777l, 1136720037778l, "patternNode"), currentNode);
     }
     public IntentionDescriptor getDescriptor() {
       return CreateOrPattern_Intention.this;

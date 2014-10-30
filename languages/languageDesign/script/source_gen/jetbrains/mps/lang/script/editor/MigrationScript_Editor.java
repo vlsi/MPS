@@ -16,6 +16,8 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.openapi.editor.style.StyleRegistry;
 import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Indent;
@@ -108,7 +110,7 @@ public class MigrationScript_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private static boolean renderingCondition_th2ud5_a3a0(SNode node, EditorContext editorContext) {
-    return SPropertyOperations.hasValue(node, "type", "migration", "enhancement");
+    return SPropertyOperations.hasValue(node, MetaAdapterFactory.getProperty(new UUID(1071275047162102839l, -4887287056175405968l), 1177457067821l, 5299416737274925395l, "type"), "migration", "enhancement");
   }
   private EditorCell createConstant_th2ud5_a3a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "to");

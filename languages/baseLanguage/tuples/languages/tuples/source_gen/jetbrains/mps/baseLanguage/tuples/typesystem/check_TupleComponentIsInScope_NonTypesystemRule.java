@@ -11,6 +11,8 @@ import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.baseLanguage.tuples.behavior.NamedTupleDeclaration_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
@@ -21,13 +23,13 @@ public class check_TupleComponentIsInScope_NonTypesystemRule extends AbstractNon
   public check_TupleComponentIsInScope_NonTypesystemRule() {
   }
   public void applyRule(final SNode namedTupleLiteral, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    List<SNode> tupleComponents = ListSequence.fromList(NamedTupleDeclaration_Behavior.call_allExtends_3142843783245461132(SLinkOperations.getTarget(namedTupleLiteral, "tupleDeclaration", false))).reversedList().translate(new ITranslator2<SNode, SNode>() {
+    List<SNode> tupleComponents = ListSequence.fromList(NamedTupleDeclaration_Behavior.call_allExtends_3142843783245461132(SLinkOperations.getTarget(namedTupleLiteral, MetaAdapterFactory.getReferenceLink(new UUID(-6753182146401843782l, -5129028327240390294l), 1239559992092l, 1239560008022l, "tupleDeclaration")))).reversedList().translate(new ITranslator2<SNode, SNode>() {
       public Iterable<SNode> translate(SNode ntd) {
-        return SLinkOperations.getTargets(ntd, "component", true);
+        return SLinkOperations.getChildren(ntd, MetaAdapterFactory.getContainmentLink(new UUID(-6753182146401843782l, -5129028327240390294l), 1239360506533l, 1239529553065l, "component"));
       }
     }).toListSequence();
-    for (SNode ref : SLinkOperations.getTargets(namedTupleLiteral, "componentRef", true)) {
-      SNode tupleComponent = SLinkOperations.getTarget(ref, "componentDeclaration", false);
+    for (SNode ref : SLinkOperations.getChildren(namedTupleLiteral, MetaAdapterFactory.getContainmentLink(new UUID(-6753182146401843782l, -5129028327240390294l), 1239559992092l, 1239560910577l, "componentRef"))) {
+      SNode tupleComponent = SLinkOperations.getTarget(ref, MetaAdapterFactory.getReferenceLink(new UUID(-6753182146401843782l, -5129028327240390294l), 1239560581441l, 1239560595302l, "componentDeclaration"));
       if (!(ListSequence.fromList(tupleComponents).contains(tupleComponent))) {
         MessageTarget errorTarget = new NodeMessageTarget();
         IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(ref, "tuple component is out of scope", "r:e119dbbd-3529-4067-8bad-6b9edd79d0b6(jetbrains.mps.baseLanguage.tuples.typesystem)", "8197465398807016917", null, errorTarget);

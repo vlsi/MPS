@@ -14,6 +14,8 @@ import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
 import java.util.Collections;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.intentions.IntentionDescriptor;
 
 public class ChangeStaticInInner_Intention implements IntentionFactory {
@@ -63,10 +65,10 @@ public class ChangeStaticInInner_Intention implements IntentionFactory {
     public IntentionImplementation() {
     }
     public String getDescription(final SNode node, final EditorContext editorContext) {
-      return "Make " + ((!(SPropertyOperations.getBoolean(node, "nonStatic")) ? "Non" : "")) + " Static";
+      return "Make " + ((!(SPropertyOperations.getBoolean(node, MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 1107461130800l, 521412098689998745l, "nonStatic"))) ? "Non" : "")) + " Static";
     }
     public void execute(final SNode node, final EditorContext editorContext) {
-      SPropertyOperations.set(node, "nonStatic", "" + (!(SPropertyOperations.getBoolean(node, "nonStatic"))));
+      SPropertyOperations.set(node, MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 1107461130800l, 521412098689998745l, "nonStatic"), "" + (!(SPropertyOperations.getBoolean(node, MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 1107461130800l, 521412098689998745l, "nonStatic")))));
     }
     public IntentionDescriptor getDescriptor() {
       return ChangeStaticInInner_Intention.this;

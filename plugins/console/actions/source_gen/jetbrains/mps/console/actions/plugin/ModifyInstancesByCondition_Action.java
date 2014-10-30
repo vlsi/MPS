@@ -18,6 +18,8 @@ import com.intellij.openapi.project.Project;
 import jetbrains.mps.console.tool.ConsoleTool;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
@@ -72,7 +74,7 @@ public class ModifyInstancesByCondition_Action extends BaseAction {
       ConsoleTab tab = ((Project) MapSequence.fromMap(_params).get("project")).getComponent(ConsoleTool.class).getCurrentEditableTab();
       SNode command = _quotation_createNode_nwjg5s_a0b0a(((SNode) MapSequence.fromMap(_params).get("node")));
       tab.insertCommand(command);
-      tab.selectNode(SLinkOperations.getTarget(ListSequence.fromList(SNodeOperations.getDescendants(SLinkOperations.getTarget(tab.getRoot(), "commandHolder", true), "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral", false, new String[]{})).getElement(1), "body", true));
+      tab.selectNode(SLinkOperations.getTarget(ListSequence.fromList(SNodeOperations.getDescendants(SLinkOperations.getTarget(tab.getRoot(), MetaAdapterFactory.getContainmentLink(new UUID(-2442401883381282302l, -5546511894809623691l), 1583916890557930028l, 1583916890557930417l, "commandHolder")), "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral", false, new String[]{})).getElement(1), MetaAdapterFactory.getContainmentLink(new UUID(-200093298712821347l, -8038623698278341771l), 1199569711397l, 1199569916463l, "body")));
     } catch (Throwable t) {
       if (LOG.isEnabledFor(Level.ERROR)) {
         LOG.error("User's action execute method failed. Action:" + "ModifyInstancesByCondition", t);
@@ -113,21 +115,21 @@ public class ModifyInstancesByCondition_Action extends BaseAction {
     quotedNode_9.addChild("parameter", quotedNode_14);
     quotedNode_6.addChild("parameter", quotedNode_9);
     quotedNode_10 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.RefConcept_Reference", null, null, false);
-    SNodeAccessUtil.setReferenceTarget(quotedNode_10, "conceptDeclaration", (SNode) parameter_1);
+    SNodeAccessUtil.setReferenceTarget(quotedNode_10, MetaAdapterFactory.getReferenceLink(new UUID(8675788371017092295l, -9098312342032910879l), 1177026924588l, 1177026940964l, "conceptDeclaration"), (SNode) parameter_1);
     quotedNode_6.addChild("conceptArg", quotedNode_10);
     quotedNode_4.addChild("operand", quotedNode_6);
     quotedNode_7 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.WhereOperation", null, null, false);
     quotedNode_11 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral", null, null, false);
-    SNodeAccessUtil.setProperty(quotedNode_11, "forceMultiLine", "true");
+    SNodeAccessUtil.setProperty(quotedNode_11, MetaAdapterFactory.getProperty(new UUID(-200093298712821347l, -8038623698278341771l), 1199569711397l, 890797661671409019l, "forceMultiLine"), "true");
     quotedNode_15 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StatementList", null, null, false);
     quotedNode_19 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ExpressionStatement", null, null, false);
     quotedNode_21 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.BooleanConstant", null, null, false);
-    SNodeAccessUtil.setProperty(quotedNode_21, "value", "true");
+    SNodeAccessUtil.setProperty(quotedNode_21, MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123137l, 1068580123138l, "value"), "true");
     quotedNode_19.addChild("expression", quotedNode_21);
     quotedNode_15.addChild("statement", quotedNode_19);
     quotedNode_11.addChild("body", quotedNode_15);
     quotedNode_16 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.SmartClosureParameterDeclaration", null, null, false);
-    SNodeAccessUtil.setProperty(quotedNode_16, "name", "node");
+    SNodeAccessUtil.setProperty(quotedNode_16, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"), "node");
     quotedNode_20 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.UndefinedType", null, null, false);
     quotedNode_16.addChild("type", quotedNode_20);
     quotedNode_11.addChild("parameter", quotedNode_16);
@@ -136,11 +138,11 @@ public class ModifyInstancesByCondition_Action extends BaseAction {
     quotedNode_3.addChild("operand", quotedNode_4);
     quotedNode_5 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.console.scripts.structure.RefactorOperation", null, null, false);
     quotedNode_8 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral", null, null, false);
-    SNodeAccessUtil.setProperty(quotedNode_8, "forceMultiLine", "true");
+    SNodeAccessUtil.setProperty(quotedNode_8, MetaAdapterFactory.getProperty(new UUID(-200093298712821347l, -8038623698278341771l), 1199569711397l, 890797661671409019l, "forceMultiLine"), "true");
     quotedNode_12 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StatementList", null, null, false);
     quotedNode_8.addChild("body", quotedNode_12);
     quotedNode_13 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.SmartClosureParameterDeclaration", null, null, false);
-    SNodeAccessUtil.setProperty(quotedNode_13, "name", "node");
+    SNodeAccessUtil.setProperty(quotedNode_13, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"), "node");
     quotedNode_17 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.UndefinedType", null, null, false);
     quotedNode_13.addChild("type", quotedNode_17);
     quotedNode_8.addChild("parameter", quotedNode_13);

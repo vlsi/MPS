@@ -14,6 +14,8 @@ import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 
 public class ConceptEditorOpenHelper {
   public static SNode getBaseNode(SNode node) {
@@ -78,8 +80,8 @@ public class ConceptEditorOpenHelper {
     if (jetbrains.mps.util.SNodeOperations.isRoot(node) && SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.core.structure.BaseConcept")) {
       SNode bc = SNodeOperations.cast(node, "jetbrains.mps.lang.core.structure.BaseConcept");
       SNode annotation = AttributeOperations.getAttribute(bc, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.generator.structure.RootTemplateAnnotation"));
-      if ((annotation != null) && (SLinkOperations.getTarget(annotation, "applicableConcept", false) != null)) {
-        baseNode = SLinkOperations.getTarget(annotation, "applicableConcept", false);
+      if ((annotation != null) && (SLinkOperations.getTarget(annotation, MetaAdapterFactory.getReferenceLink(new UUID(-5475912601019530992l, -8082971551085732881l), 1168619357332l, 1168619429071l, "applicableConcept")) != null)) {
+        baseNode = SLinkOperations.getTarget(annotation, MetaAdapterFactory.getReferenceLink(new UUID(-5475912601019530992l, -8082971551085732881l), 1168619357332l, 1168619429071l, "applicableConcept"));
       }
     }
     if ((baseNode == null)) {

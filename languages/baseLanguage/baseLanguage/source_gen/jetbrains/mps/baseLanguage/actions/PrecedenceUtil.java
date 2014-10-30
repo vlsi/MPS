@@ -7,6 +7,8 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import org.jetbrains.mps.openapi.language.SConceptRepository;
@@ -69,14 +71,14 @@ public class PrecedenceUtil {
       SNode parentBinaryOperation = SNodeOperations.cast(SNodeOperations.getParent(contextNode), "jetbrains.mps.baseLanguage.structure.BinaryOperation");
       if (SNodeOperations.getContainingLinkDeclaration(contextNode) == SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.BinaryOperation", "rightExpression") && isHigherPriority(parentBinaryOperation, contextNode)) {
         SNode result = SNodeFactoryOperations.replaceWithNewChild(contextNode, "jetbrains.mps.baseLanguage.structure.ParenthesizedExpression");
-        SLinkOperations.setTarget(result, "expression", contextNode, true);
+        SLinkOperations.setTarget(result, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1079359253375l, 1079359253376l, "expression"), contextNode);
         return result;
       }
     } else if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(contextNode), "jetbrains.mps.baseLanguage.structure.CastExpression")) {
       SNode parentCastExpression = SNodeOperations.cast(SNodeOperations.getParent(contextNode), "jetbrains.mps.baseLanguage.structure.CastExpression");
       if (PrecedenceUtil.needsParensAroundCastExpression(parentCastExpression)) {
         SNode result = SNodeFactoryOperations.replaceWithNewChild(contextNode, "jetbrains.mps.baseLanguage.structure.ParenthesizedExpression");
-        SLinkOperations.setTarget(result, "expression", contextNode, true);
+        SLinkOperations.setTarget(result, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1079359253375l, 1079359253376l, "expression"), contextNode);
         return result;
       }
     }
@@ -84,18 +86,18 @@ public class PrecedenceUtil {
   }
 
   public static boolean needsParensAroundCastExpression(SNode castExpression) {
-    return !(((SLinkOperations.getTarget(castExpression, "expression", true) == null) || BehaviorReflection.invokeVirtual(Boolean.TYPE, SLinkOperations.getTarget(castExpression, "expression", true), "virtual_isCompileTimeConstant_1238860258777", new Object[]{}) || SNodeOperations.isInstanceOf(SLinkOperations.getTarget(castExpression, "expression", true), "jetbrains.mps.baseLanguage.structure.GenericNewExpression") || (!(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(castExpression, "expression", true), "jetbrains.mps.baseLanguage.structure.TernaryOperatorExpression")) && !(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(castExpression, "expression", true), "jetbrains.mps.baseLanguage.structure.BinaryOperation"))) || PrecedenceUtil.isHigherPriority(SLinkOperations.getTarget(castExpression, "expression", true), castExpression)));
+    return !(((SLinkOperations.getTarget(castExpression, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1070534934090l, 1070534934092l, "expression")) == null) || BehaviorReflection.invokeVirtual(Boolean.TYPE, SLinkOperations.getTarget(castExpression, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1070534934090l, 1070534934092l, "expression")), "virtual_isCompileTimeConstant_1238860258777", new Object[]{}) || SNodeOperations.isInstanceOf(SLinkOperations.getTarget(castExpression, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1070534934090l, 1070534934092l, "expression")), "jetbrains.mps.baseLanguage.structure.GenericNewExpression") || (!(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(castExpression, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1070534934090l, 1070534934092l, "expression")), "jetbrains.mps.baseLanguage.structure.TernaryOperatorExpression")) && !(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(castExpression, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1070534934090l, 1070534934092l, "expression")), "jetbrains.mps.baseLanguage.structure.BinaryOperation"))) || PrecedenceUtil.isHigherPriority(SLinkOperations.getTarget(castExpression, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1070534934090l, 1070534934092l, "expression")), castExpression)));
 
   }
 
   public static boolean needsParensAroundNotExpression(SNode notExpression) {
-    return !(((SLinkOperations.getTarget(notExpression, "expression", true) == null) || BehaviorReflection.invokeVirtual(Boolean.TYPE, SLinkOperations.getTarget(notExpression, "expression", true), "virtual_isCompileTimeConstant_1238860258777", new Object[]{}) || (!(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(notExpression, "expression", true), "jetbrains.mps.baseLanguage.structure.TernaryOperatorExpression")) && !(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(notExpression, "expression", true), "jetbrains.mps.baseLanguage.structure.BinaryOperation"))) || PrecedenceUtil.isHigherPriority(SLinkOperations.getTarget(notExpression, "expression", true), notExpression)));
+    return !(((SLinkOperations.getTarget(notExpression, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1081516740877l, 1081516765348l, "expression")) == null) || BehaviorReflection.invokeVirtual(Boolean.TYPE, SLinkOperations.getTarget(notExpression, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1081516740877l, 1081516765348l, "expression")), "virtual_isCompileTimeConstant_1238860258777", new Object[]{}) || (!(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(notExpression, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1081516740877l, 1081516765348l, "expression")), "jetbrains.mps.baseLanguage.structure.TernaryOperatorExpression")) && !(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(notExpression, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1081516740877l, 1081516765348l, "expression")), "jetbrains.mps.baseLanguage.structure.BinaryOperation"))) || PrecedenceUtil.isHigherPriority(SLinkOperations.getTarget(notExpression, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1081516740877l, 1081516765348l, "expression")), notExpression)));
 
   }
 
   public static SNode findDesiredInstanceOfExpressionRoot(SNode instanceOfExpression) {
 
-    if ((SLinkOperations.getTarget(instanceOfExpression, "leftExpression", true) == null) || (SNodeOperations.getParent(instanceOfExpression) == null) || !(SNodeOperations.isInstanceOf(SNodeOperations.getParent(instanceOfExpression), "jetbrains.mps.baseLanguage.structure.BinaryOperation")) || !(SNodeOperations.hasRole(instanceOfExpression, "jetbrains.mps.baseLanguage.structure.BinaryOperation", "rightExpression")) || !(PrecedenceUtil.isHigherPriority(SNodeOperations.cast(SNodeOperations.getParent(instanceOfExpression), "jetbrains.mps.baseLanguage.structure.Expression"), instanceOfExpression))) {
+    if ((SLinkOperations.getTarget(instanceOfExpression, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1081256982272l, 1081256993304l, "leftExpression")) == null) || (SNodeOperations.getParent(instanceOfExpression) == null) || !(SNodeOperations.isInstanceOf(SNodeOperations.getParent(instanceOfExpression), "jetbrains.mps.baseLanguage.structure.BinaryOperation")) || !(SNodeOperations.hasRole(instanceOfExpression, "jetbrains.mps.baseLanguage.structure.BinaryOperation", "rightExpression")) || !(PrecedenceUtil.isHigherPriority(SNodeOperations.cast(SNodeOperations.getParent(instanceOfExpression), "jetbrains.mps.baseLanguage.structure.Expression"), instanceOfExpression))) {
       return null;
     }
     SNode currentParent = SNodeOperations.cast(SNodeOperations.getParent(instanceOfExpression), "jetbrains.mps.baseLanguage.structure.Expression");
@@ -187,19 +189,19 @@ public class PrecedenceUtil {
       if (PrecedenceUtil.isSamePriority(parentBinaryOperation, result)) {
         SNodeOperations.replaceWithAnother(parentBinaryOperation, result);
         // <node> 
-        SLinkOperations.setTarget(result, "rightExpression", nodeToProcess, true);
-        SLinkOperations.setTarget(result, "leftExpression", parentBinaryOperation, true);
+        SLinkOperations.setTarget(result, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1081773326031l, 1081773367579l, "rightExpression"), nodeToProcess);
+        SLinkOperations.setTarget(result, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1081773326031l, 1081773367580l, "leftExpression"), parentBinaryOperation);
         return result;
       }
     }
     SNodeOperations.replaceWithAnother(nodeToProcess, result);
-    SLinkOperations.setTarget(result, "rightExpression", nodeToProcess, true);
+    SLinkOperations.setTarget(result, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1081773326031l, 1081773367579l, "rightExpression"), nodeToProcess);
     PrecedenceUtil.parenthesiseIfNecessary(result);
     return result;
   }
   public static SNode processRightTransform(SNode sourceNode, SNode result) {
     SNodeOperations.replaceWithAnother(sourceNode, result);
-    SLinkOperations.setTarget(result, "leftExpression", sourceNode, true);
+    SLinkOperations.setTarget(result, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1081773326031l, 1081773367580l, "leftExpression"), sourceNode);
     ParenthesisUtil.checkOperationWRTPriority(result);
     return result;
   }

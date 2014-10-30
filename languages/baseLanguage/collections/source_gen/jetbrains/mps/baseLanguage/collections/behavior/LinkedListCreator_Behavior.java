@@ -4,6 +4,8 @@ package jetbrains.mps.baseLanguage.collections.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import java.util.List;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
@@ -17,7 +19,7 @@ public class LinkedListCreator_Behavior {
   public static void init(SNode thisNode) {
   }
   public static SNode virtual_createType_1237722437229(SNode thisNode) {
-    return _quotation_createNode_rsqk7y_a0a0(SLinkOperations.getTarget(thisNode, "elementType", true));
+    return _quotation_createNode_rsqk7y_a0a0(SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-8968771020793164004l, -7182180101671965361l), 1237721394592l, 1237721435807l, "elementType")));
   }
   public static List<SNode> virtual_getAvailableFor_3044950653914717035(SAbstractConcept thisConcept) {
     List<SNode> result = BehaviorReflection.invokeSuperStatic((Class<List<SNode>>) ((Class) Object.class), thisConcept, "jetbrains.mps.baseLanguage.collections.structure.AbstractContainerCreator", "virtual_getAvailableFor_3044950653914717035", new Object[]{});

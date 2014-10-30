@@ -16,6 +16,8 @@ import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.baseLanguage.actions.AlterStatementListContainerFactoryUtils;
@@ -88,7 +90,7 @@ public class AlterStatementListContainer_Intention implements IntentionFactory {
       } else if (SConceptOperations.isExactly(myParameter, "jetbrains.mps.baseLanguage.structure.ForeachStatement")) {
         targetName = "'for Type var: iterable)'";
       } else {
-        targetName = SPropertyOperations.getString(myParameter, "conceptAlias") + ((SConceptOperations.isExactly(myParameter, "jetbrains.mps.baseLanguage.structure.DoWhileStatement") ? "-While" : ""));
+        targetName = SPropertyOperations.getString(myParameter, MetaAdapterFactory.getProperty(new UUID(-4094437568663370681l, -8968368868337559369l), 1169125787135l, 5092175715804935370l, "conceptAlias")) + ((SConceptOperations.isExactly(myParameter, "jetbrains.mps.baseLanguage.structure.DoWhileStatement") ? "-While" : ""));
       }
       targetName += " statement";
       targetName = "Change to " + targetName;

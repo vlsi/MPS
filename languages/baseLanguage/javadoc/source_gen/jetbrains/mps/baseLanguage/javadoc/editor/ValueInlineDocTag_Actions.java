@@ -8,6 +8,8 @@ import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.editor.runtime.cells.AbstractCellAction;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 
 public class ValueInlineDocTag_Actions {
   public static void setCellActions(EditorCell editorCell, SNode node, EditorContext context) {
@@ -22,7 +24,7 @@ public class ValueInlineDocTag_Actions {
       this.execute_internal(editorContext, this.myNode);
     }
     public void execute_internal(EditorContext editorContext, SNode node) {
-      SNodeFactoryOperations.setNewChild(node, "variableReference", "jetbrains.mps.baseLanguage.javadoc.structure.BaseVariableDocReference");
+      SNodeFactoryOperations.setNewChild(node, MetaAdapterFactory.getContainmentLink(new UUID(-972752984950357426l, -4964296947050367098l), 6962838954693748795l, 2565027568480644422l, "variableReference"), "jetbrains.mps.baseLanguage.javadoc.structure.BaseVariableDocReference");
     }
   }
 }

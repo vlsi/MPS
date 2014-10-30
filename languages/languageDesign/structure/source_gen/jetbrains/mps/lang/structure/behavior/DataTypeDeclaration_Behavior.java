@@ -5,6 +5,8 @@ package jetbrains.mps.lang.structure.behavior;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 
@@ -42,19 +44,19 @@ public class DataTypeDeclaration_Behavior {
   }
   public static boolean call_isEnumOfString_1220268917296(SNode thisNode) {
     if (SNodeOperations.isInstanceOf(thisNode, "jetbrains.mps.lang.structure.structure.EnumerationDataTypeDeclaration")) {
-      return PrimitiveDataTypeDeclaration_Behavior.call_isString_1220268752134(SLinkOperations.getTarget(SNodeOperations.cast(thisNode, "jetbrains.mps.lang.structure.structure.EnumerationDataTypeDeclaration"), "memberDataType", false));
+      return PrimitiveDataTypeDeclaration_Behavior.call_isString_1220268752134(SLinkOperations.getTarget(SNodeOperations.cast(thisNode, "jetbrains.mps.lang.structure.structure.EnumerationDataTypeDeclaration"), MetaAdapterFactory.getReferenceLink(new UUID(-4094437568663370681l, -8968368868337559369l), 1082978164219l, 1083171729157l, "memberDataType")));
     }
     return false;
   }
   public static boolean call_isEnumOfInteger_1220268950942(SNode thisNode) {
     if (SNodeOperations.isInstanceOf(thisNode, "jetbrains.mps.lang.structure.structure.EnumerationDataTypeDeclaration")) {
-      return PrimitiveDataTypeDeclaration_Behavior.call_isInteger_1220268780075(SLinkOperations.getTarget(SNodeOperations.cast(thisNode, "jetbrains.mps.lang.structure.structure.EnumerationDataTypeDeclaration"), "memberDataType", false));
+      return PrimitiveDataTypeDeclaration_Behavior.call_isInteger_1220268780075(SLinkOperations.getTarget(SNodeOperations.cast(thisNode, "jetbrains.mps.lang.structure.structure.EnumerationDataTypeDeclaration"), MetaAdapterFactory.getReferenceLink(new UUID(-4094437568663370681l, -8968368868337559369l), 1082978164219l, 1083171729157l, "memberDataType")));
     }
     return false;
   }
   public static boolean call_isEnumOfBoolean_1220268971570(SNode thisNode) {
     if (SNodeOperations.isInstanceOf(thisNode, "jetbrains.mps.lang.structure.structure.EnumerationDataTypeDeclaration")) {
-      return PrimitiveDataTypeDeclaration_Behavior.call_isBoolean_1220268791641(SLinkOperations.getTarget(SNodeOperations.cast(thisNode, "jetbrains.mps.lang.structure.structure.EnumerationDataTypeDeclaration"), "memberDataType", false));
+      return PrimitiveDataTypeDeclaration_Behavior.call_isBoolean_1220268791641(SLinkOperations.getTarget(SNodeOperations.cast(thisNode, "jetbrains.mps.lang.structure.structure.EnumerationDataTypeDeclaration"), MetaAdapterFactory.getReferenceLink(new UUID(-4094437568663370681l, -8968368868337559369l), 1082978164219l, 1083171729157l, "memberDataType")));
     }
     return false;
   }

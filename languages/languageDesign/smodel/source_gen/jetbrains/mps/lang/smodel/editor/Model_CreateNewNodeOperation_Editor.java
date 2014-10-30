@@ -23,6 +23,8 @@ import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.openapi.editor.style.StyleRegistry;
 import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 
 public class Model_CreateNewNodeOperation_Editor extends DefaultNodeEditor {
@@ -126,7 +128,7 @@ public class Model_CreateNewNodeOperation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private static boolean renderingCondition_tsmvai_a3a(SNode node, EditorContext editorContext) {
-    return (SLinkOperations.getTarget(node, "prototypeNode", true) != null);
+    return (SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(8675788371017092295l, -9098312342032910879l), 1143235216708l, 1177700677986l, "prototypeNode")) != null);
   }
   private EditorCell createConstant_tsmvai_a3a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ",");

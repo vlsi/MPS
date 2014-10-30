@@ -26,6 +26,8 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultReferenceSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class BuildMps_Group_Editor extends DefaultNodeEditor {
@@ -144,6 +146,6 @@ public class BuildMps_Group_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private static boolean renderingCondition_pilq2t_a3a(SNode node, EditorContext editorContext) {
-    return ListSequence.fromList(SLinkOperations.getTargets(node, "modules", true)).isEmpty() || (SNodeOperations.getNextSibling(node) == null);
+    return ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(new UUID(934837630734519964l, -6831122735637083229l), 1500819558095907805l, 1500819558095907806l, "modules"))).isEmpty() || (SNodeOperations.getNextSibling(node) == null);
   }
 }

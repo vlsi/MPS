@@ -8,6 +8,8 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.smodel.SModelUtil_new;
 
@@ -15,11 +17,11 @@ public class typeof_BLQueryArgument_InferenceRule extends AbstractInferenceRule_
   public typeof_BLQueryArgument_InferenceRule() {
   }
   public void applyRule(final SNode blQueryArgument, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    if (SLinkOperations.getTarget(blQueryArgument, "query", true) != null) {
+    if (SLinkOperations.getTarget(blQueryArgument, MetaAdapterFactory.getContainmentLink(new UUID(6991546026468590289l, -9160623158338601007l), 285670992213637367l, 285670992213637368l, "query")) != null) {
       {
         SNode _nodeToCheck_1029348928467 = blQueryArgument;
         EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:40b64a44-89c9-404d-9824-6c98cb8ca353(jetbrains.mps.lang.editor.diagram.typesystem)", "342110547582275916", 0, null);
-        typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:40b64a44-89c9-404d-9824-6c98cb8ca353(jetbrains.mps.lang.editor.diagram.typesystem)", "342110547582273020", true), (SNode) typeCheckingContext.typeOf(SLinkOperations.getTarget(blQueryArgument, "query", true), "r:40b64a44-89c9-404d-9824-6c98cb8ca353(jetbrains.mps.lang.editor.diagram.typesystem)", "342110547582275935", true), _info_12389875345);
+        typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:40b64a44-89c9-404d-9824-6c98cb8ca353(jetbrains.mps.lang.editor.diagram.typesystem)", "342110547582273020", true), (SNode) typeCheckingContext.typeOf(SLinkOperations.getTarget(blQueryArgument, MetaAdapterFactory.getContainmentLink(new UUID(6991546026468590289l, -9160623158338601007l), 285670992213637367l, 285670992213637368l, "query")), "r:40b64a44-89c9-404d-9824-6c98cb8ca353(jetbrains.mps.lang.editor.diagram.typesystem)", "342110547582275935", true), _info_12389875345);
       }
     }
   }

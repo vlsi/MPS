@@ -6,6 +6,8 @@ import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 
 public class INamedConcept_Behavior {
   public static void init(SNode thisNode) {
@@ -13,13 +15,13 @@ public class INamedConcept_Behavior {
   public static String virtual_getFqName_1213877404258(SNode thisNode) {
     SModel model = SNodeOperations.getModel(thisNode);
     if (model == null) {
-      return SPropertyOperations.getString(thisNode, "name");
+      return SPropertyOperations.getString(thisNode, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"));
     }
 
     String longName = jetbrains.mps.util.SNodeOperations.getModelLongName(model);
     if (longName.equals("")) {
-      return SPropertyOperations.getString(thisNode, "name");
+      return SPropertyOperations.getString(thisNode, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"));
     }
-    return longName + "." + SPropertyOperations.getString(thisNode, "name");
+    return longName + "." + SPropertyOperations.getString(thisNode, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"));
   }
 }

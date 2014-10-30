@@ -9,6 +9,8 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
@@ -27,7 +29,7 @@ public class MigrateClassifierMembersSModelUsages_MigrationScript extends BaseMi
         return "jetbrains.mps.lang.smodel.structure.SLinkListAccess";
       }
       public boolean isApplicableInstanceNode(SNode node) {
-        if (!(SetSequence.fromSet(MapSequence.fromMap(MembersMigrationUtil.OLD_LINK_TO_NEW_BEHAVIOR_METHOD).keySet()).contains(SLinkOperations.getTarget(node, "link", false)))) {
+        if (!(SetSequence.fromSet(MapSequence.fromMap(MembersMigrationUtil.OLD_LINK_TO_NEW_BEHAVIOR_METHOD).keySet()).contains(SLinkOperations.getTarget(node, MetaAdapterFactory.getReferenceLink(new UUID(8675788371017092295l, -9098312342032910879l), 1138056282393l, 1138056546658l, "link"))))) {
           return false;
         }
         if (NonMigratableUsagesFinder.isExcluded(node)) {
@@ -36,7 +38,7 @@ public class MigrateClassifierMembersSModelUsages_MigrationScript extends BaseMi
         return NonMigratableUsagesFinder.isThisForSimpleAddOperation(node);
       }
       public void doUpdateInstanceNode(SNode node) {
-        SLinkOperations.setTarget(node, "link", SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.Classifier", "member"), false);
+        SLinkOperations.setTarget(node, MetaAdapterFactory.getReferenceLink(new UUID(8675788371017092295l, -9098312342032910879l), 1138056282393l, 1138056546658l, "link"), SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.Classifier", "member"));
       }
       public boolean isShowAsIntention() {
         return false;
@@ -54,20 +56,20 @@ public class MigrateClassifierMembersSModelUsages_MigrationScript extends BaseMi
         return "jetbrains.mps.lang.smodel.structure.SLinkListAccess";
       }
       public boolean isApplicableInstanceNode(SNode node) {
-        if (!(SetSequence.fromSet(MapSequence.fromMap(MembersMigrationUtil.OLD_LINK_TO_NEW_BEHAVIOR_METHOD).keySet()).contains(SLinkOperations.getTarget(node, "link", false)))) {
+        if (!(SetSequence.fromSet(MapSequence.fromMap(MembersMigrationUtil.OLD_LINK_TO_NEW_BEHAVIOR_METHOD).keySet()).contains(SLinkOperations.getTarget(node, MetaAdapterFactory.getReferenceLink(new UUID(8675788371017092295l, -9098312342032910879l), 1138056282393l, 1138056546658l, "link"))))) {
           return false;
         }
         if (NonMigratableUsagesFinder.isExcluded(node)) {
           return false;
         }
-        return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SNodeOperations.as(SNodeOperations.getParent((SNodeOperations.as(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.DotExpression"))), "jetbrains.mps.baseLanguage.structure.DotExpression"), "operation", true), "jetbrains.mps.lang.smodel.structure.LinkList_AddNewChildOperation");
+        return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SNodeOperations.as(SNodeOperations.getParent((SNodeOperations.as(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.DotExpression"))), "jetbrains.mps.baseLanguage.structure.DotExpression"), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1197027756228l, 1197027833540l, "operation")), "jetbrains.mps.lang.smodel.structure.LinkList_AddNewChildOperation");
       }
       public void doUpdateInstanceNode(SNode node) {
-        SNode operation = SNodeOperations.cast(SLinkOperations.getTarget(SNodeOperations.as(SNodeOperations.getParent((SNodeOperations.as(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.DotExpression"))), "jetbrains.mps.baseLanguage.structure.DotExpression"), "operation", true), "jetbrains.mps.lang.smodel.structure.LinkList_AddNewChildOperation");
-        if ((SLinkOperations.getTarget(operation, "concept", false) == null)) {
-          SLinkOperations.setTarget(operation, "concept", SLinkOperations.getTarget(SLinkOperations.getTarget(node, "link", false), "target", false), false);
+        SNode operation = SNodeOperations.cast(SLinkOperations.getTarget(SNodeOperations.as(SNodeOperations.getParent((SNodeOperations.as(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.DotExpression"))), "jetbrains.mps.baseLanguage.structure.DotExpression"), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1197027756228l, 1197027833540l, "operation")), "jetbrains.mps.lang.smodel.structure.LinkList_AddNewChildOperation");
+        if ((SLinkOperations.getTarget(operation, MetaAdapterFactory.getReferenceLink(new UUID(8675788371017092295l, -9098312342032910879l), 1139184414036l, 1139877738879l, "concept")) == null)) {
+          SLinkOperations.setTarget(operation, MetaAdapterFactory.getReferenceLink(new UUID(8675788371017092295l, -9098312342032910879l), 1139184414036l, 1139877738879l, "concept"), SLinkOperations.getTarget(SLinkOperations.getTarget(node, MetaAdapterFactory.getReferenceLink(new UUID(8675788371017092295l, -9098312342032910879l), 1138056282393l, 1138056546658l, "link")), MetaAdapterFactory.getReferenceLink(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489288298l, 1071599976176l, "target")));
         }
-        SLinkOperations.setTarget(node, "link", SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.Classifier", "member"), false);
+        SLinkOperations.setTarget(node, MetaAdapterFactory.getReferenceLink(new UUID(8675788371017092295l, -9098312342032910879l), 1138056282393l, 1138056546658l, "link"), SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.Classifier", "member"));
       }
       public boolean isShowAsIntention() {
         return false;
@@ -84,7 +86,7 @@ public class MigrateClassifierMembersSModelUsages_MigrationScript extends BaseMi
         return "jetbrains.mps.lang.smodel.structure.SLinkListAccess";
       }
       public boolean isApplicableInstanceNode(SNode node) {
-        if (!(SetSequence.fromSet(MapSequence.fromMap(MembersMigrationUtil.OLD_LINK_TO_NEW_BEHAVIOR_METHOD).keySet()).contains(SLinkOperations.getTarget(node, "link", false)))) {
+        if (!(SetSequence.fromSet(MapSequence.fromMap(MembersMigrationUtil.OLD_LINK_TO_NEW_BEHAVIOR_METHOD).keySet()).contains(SLinkOperations.getTarget(node, MetaAdapterFactory.getReferenceLink(new UUID(8675788371017092295l, -9098312342032910879l), 1138056282393l, 1138056546658l, "link"))))) {
           return false;
         }
         // it's safer to migrate to sequence access - in this case it fails on generation step with type error 
@@ -93,11 +95,11 @@ public class MigrateClassifierMembersSModelUsages_MigrationScript extends BaseMi
           return false;
         }
         // not migrate usages with node attributes (for example generator macroses)! 
-        return ListSequence.fromList(SLinkOperations.getTargets(node, "smodelAttribute", true)).isEmpty();
+        return ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(new UUID(-3554657779850784990l, -7236703803128771572l), 1133920641626l, 5169995583184591170l, "smodelAttribute"))).isEmpty();
       }
       public void doUpdateInstanceNode(SNode node) {
         SNode methodCall = SConceptOperations.createNewNode("jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall", null);
-        SLinkOperations.setTarget(methodCall, "baseMethodDeclaration", MapSequence.fromMap(MembersMigrationUtil.OLD_LINK_TO_NEW_BEHAVIOR_METHOD).get(SLinkOperations.getTarget(node, "link", false)), false);
+        SLinkOperations.setTarget(methodCall, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, 1068499141037l, "baseMethodDeclaration"), MapSequence.fromMap(MembersMigrationUtil.OLD_LINK_TO_NEW_BEHAVIOR_METHOD).get(SLinkOperations.getTarget(node, MetaAdapterFactory.getReferenceLink(new UUID(8675788371017092295l, -9098312342032910879l), 1138056282393l, 1138056546658l, "link"))));
         SNodeOperations.replaceWithAnother(node, methodCall);
       }
       public boolean isShowAsIntention() {

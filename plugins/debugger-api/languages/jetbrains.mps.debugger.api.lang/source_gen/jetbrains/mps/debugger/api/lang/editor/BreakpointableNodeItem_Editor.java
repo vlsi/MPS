@@ -8,6 +8,8 @@ import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
@@ -57,7 +59,7 @@ public class BreakpointableNodeItem_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private static boolean renderingCondition_4n0rw6_a0a(SNode node, EditorContext editorContext) {
-    return !(SPropertyOperations.getBoolean(node, "isComplex"));
+    return !(SPropertyOperations.getBoolean(node, MetaAdapterFactory.getProperty(new UUID(-305890210646176633l, -6498307851035425706l), 3157158168562219319l, 8751745335399632086l, "isComplex")));
   }
   private EditorCell createConstant_4n0rw6_a0a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "for concepts:");
@@ -129,7 +131,7 @@ public class BreakpointableNodeItem_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private static boolean renderingCondition_4n0rw6_a1a(SNode node, EditorContext editorContext) {
-    return SPropertyOperations.getBoolean(node, "isComplex") && (SLinkOperations.getTarget(node, "isApplicable", true) != null);
+    return SPropertyOperations.getBoolean(node, MetaAdapterFactory.getProperty(new UUID(-305890210646176633l, -6498307851035425706l), 3157158168562219319l, 8751745335399632086l, "isComplex")) && (SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-305890210646176633l, -6498307851035425706l), 3157158168562219319l, 8751745335399632085l, "isApplicable")) != null);
   }
   private EditorCell createConstant_4n0rw6_a1a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "filter concepts:");
@@ -178,7 +180,7 @@ public class BreakpointableNodeItem_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private static boolean renderingCondition_4n0rw6_a2a(SNode node, EditorContext editorContext) {
-    return SPropertyOperations.getBoolean(node, "isComplex") && (SLinkOperations.getTarget(node, "isApplicable", true) == null);
+    return SPropertyOperations.getBoolean(node, MetaAdapterFactory.getProperty(new UUID(-305890210646176633l, -6498307851035425706l), 3157158168562219319l, 8751745335399632086l, "isComplex")) && (SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-305890210646176633l, -6498307851035425706l), 3157158168562219319l, 8751745335399632085l, "isApplicable")) == null);
   }
   private EditorCell createConstant_4n0rw6_a2a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "is breakpoint applicable:");

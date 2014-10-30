@@ -24,6 +24,8 @@ import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
@@ -119,9 +121,9 @@ public class MoveLinkUpMigration_Action extends BaseAction {
             return;
           }
           Language targetLanguage = Language.getLanguageFor(SNodeOperations.getModel(targetConcept));
-          ListSequence.fromList(SLinkOperations.getTargets(targetConcept, "linkDeclaration", true)).addElement(SNodeOperations.copyNode(((SNode) MapSequence.fromMap(_params).get("target"))));
+          ListSequence.fromList(SLinkOperations.getChildren(targetConcept, MetaAdapterFactory.getContainmentLink(new UUID(-4094437568663370681l, -8968368868337559369l), 1169125787135l, 1071489727083l, "linkDeclaration"))).addElement(SNodeOperations.copyNode(((SNode) MapSequence.fromMap(_params).get("target"))));
           AttributeOperations.setAttribute(((SNode) MapSequence.fromMap(_params).get("target")), new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation"), SConceptOperations.createNewNode("jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation", null));
-          SPropertyOperations.set(((SNode) MapSequence.fromMap(_params).get("target")), "role", SPropertyOperations.getString(((SNode) MapSequence.fromMap(_params).get("target")), "role") + "_old");
+          SPropertyOperations.set(((SNode) MapSequence.fromMap(_params).get("target")), MetaAdapterFactory.getProperty(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489288298l, 1071599776563l, "role"), SPropertyOperations.getString(((SNode) MapSequence.fromMap(_params).get("target")), MetaAdapterFactory.getProperty(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489288298l, 1071599776563l, "role")) + "_old");
         }
       });
 

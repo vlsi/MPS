@@ -14,6 +14,8 @@ import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.BasicCellContext;
 import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_Generic_Item;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.IOperationContext;
@@ -54,13 +56,13 @@ public class CellModel_DiagramPort_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private static boolean renderingCondition_inwiug_a0a(SNode node, EditorContext editorContext) {
-    return SPropertyOperations.getBoolean(node, "input");
+    return SPropertyOperations.getBoolean(node, MetaAdapterFactory.getProperty(new UUID(6991546026468590289l, -9160623158338601007l), 285670992205972098l, 285670992206001471l, "input"));
   }
   public static class CellModel_DiagramPort_generic_cellMenu_inwiug_a0a0 extends AbstractCellMenuPart_Generic_Item {
     public CellModel_DiagramPort_generic_cellMenu_inwiug_a0a0() {
     }
     public void handleAction(SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
-      SPropertyOperations.set(node, "input", "" + (true));
+      SPropertyOperations.set(node, MetaAdapterFactory.getProperty(new UUID(6991546026468590289l, -9160623158338601007l), 285670992205972098l, 285670992206001471l, "input"), "" + (true));
     }
     public String getMatchingText() {
       return "input";
@@ -70,7 +72,7 @@ public class CellModel_DiagramPort_Editor extends DefaultNodeEditor {
     public CellModel_DiagramPort_generic_cellMenu_inwiug_b0a0() {
     }
     public void handleAction(SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
-      SPropertyOperations.set(node, "input", "" + (false));
+      SPropertyOperations.set(node, MetaAdapterFactory.getProperty(new UUID(6991546026468590289l, -9160623158338601007l), 285670992205972098l, 285670992206001471l, "input"), "" + (false));
     }
     public String getMatchingText() {
       return "output";

@@ -14,6 +14,8 @@ import java.util.Collections;
 import jetbrains.mps.baseLanguage.actions.ExpectedType_FactoryUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.baseLanguage.actions.PrecedenceUtil;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.editor.runtime.selection.SelectionUtil;
@@ -76,11 +78,11 @@ public class SurroundWithTypeCast_Intention implements IntentionFactory {
       SNode parenthesisedCastExpression = _quotation_createNode_3zfq0u_a0b0a(SNodeOperations.copyNode(node), expectedType);
       SNodeOperations.replaceWithAnother(node, parenthesisedCastExpression);
 
-      SNode castExpression = SNodeOperations.cast(SLinkOperations.getTarget(parenthesisedCastExpression, "expression", true), "jetbrains.mps.baseLanguage.structure.CastExpression");
+      SNode castExpression = SNodeOperations.cast(SLinkOperations.getTarget(parenthesisedCastExpression, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1079359253375l, 1079359253376l, "expression")), "jetbrains.mps.baseLanguage.structure.CastExpression");
       if (PrecedenceUtil.needsParensAroundCastExpression(castExpression)) {
-        SNode expression = SLinkOperations.getTarget(castExpression, "expression", true);
+        SNode expression = SLinkOperations.getTarget(castExpression, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1070534934090l, 1070534934092l, "expression"));
         SNode result = SNodeFactoryOperations.replaceWithNewChild(expression, "jetbrains.mps.baseLanguage.structure.ParenthesizedExpression");
-        SLinkOperations.setTarget(result, "expression", expression, true);
+        SLinkOperations.setTarget(result, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1079359253375l, 1079359253376l, "expression"), expression);
       }
 
       if (expectedType != null) {

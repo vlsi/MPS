@@ -20,6 +20,8 @@ import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.InlineCellProvider;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.nodeEditor.attribute.AttributeKind;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 
@@ -108,7 +110,7 @@ public class TemplateFragment_Editor extends DefaultNodeEditor {
     }
   }
   private static boolean renderingCondition_73o0fl_a1a(SNode node, EditorContext editorContext) {
-    return SLinkOperations.getTarget(node, "labelDeclaration", false) != null;
+    return SLinkOperations.getTarget(node, MetaAdapterFactory.getReferenceLink(new UUID(-5475912601019530992l, -8082971551085732881l), 1095672379244l, 1200916687663l, "labelDeclaration")) != null;
   }
   private EditorCell createAttributedNodeCell_73o0fl_c0(EditorContext editorContext, SNode node) {
     IOperationContext opContext = editorContext.getOperationContext();

@@ -7,6 +7,8 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 
 public class wrapCastExpressionInParentheses_QuickFix extends QuickFix_Runtime {
   public wrapCastExpressionInParentheses_QuickFix() {
@@ -17,6 +19,6 @@ public class wrapCastExpressionInParentheses_QuickFix extends QuickFix_Runtime {
   public void execute(SNode node) {
     SNode parens = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ParenthesizedExpression", null);
     SNodeOperations.replaceWithAnother(((SNode) wrapCastExpressionInParentheses_QuickFix.this.getField("expression")[0]), parens);
-    SLinkOperations.setTarget(parens, "expression", ((SNode) wrapCastExpressionInParentheses_QuickFix.this.getField("expression")[0]), true);
+    SLinkOperations.setTarget(parens, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1079359253375l, 1079359253376l, "expression"), ((SNode) wrapCastExpressionInParentheses_QuickFix.this.getField("expression")[0]));
   }
 }

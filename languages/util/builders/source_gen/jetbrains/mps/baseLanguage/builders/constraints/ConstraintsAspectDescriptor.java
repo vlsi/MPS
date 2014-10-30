@@ -5,6 +5,7 @@ package jetbrains.mps.baseLanguage.builders.constraints;
 import jetbrains.mps.smodel.runtime.ConstraintsDescriptor;
 import java.util.Arrays;
 import jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor;
+import jetbrains.mps.smodel.adapter.ids.SConceptId;
 
 public class ConstraintsAspectDescriptor implements jetbrains.mps.smodel.runtime.ConstraintsAspectDescriptor {
   public ConstraintsAspectDescriptor() {
@@ -36,9 +37,48 @@ public class ConstraintsAspectDescriptor implements jetbrains.mps.smodel.runtime
       case 1:
         return new BaseSimpleBuilderDeclaration_Constraints();
       default:
-        // todo: illegal in some cases? 
         return new BaseConstraintsDescriptor(fqName);
     }
+  }
+  public ConstraintsDescriptor getDescriptor(SConceptId conceptId) {
+    long id = conceptId.getConceptId();
+    if (id == 7288041816792292064l) {
+      return new ResultExpression_Constraints();
+    }
+    if (id == 7288041816792577344l) {
+      return new SimpleBuilderExpression_Constraints();
+    }
+    if (id == 7288041816793071802l) {
+      return new SimpleBuilder_Constraints();
+    }
+    if (id == 5425713840853785828l) {
+      return new SimpleBuilderParameterReference_Constraints();
+    }
+    if (id == 2679357232283750087l) {
+      return new BeanPropertyBuilder_Constraints();
+    }
+    if (id == 6666322667909540799l) {
+      return new BeanBuilder_Constraints();
+    }
+    if (id == 5389689214216557332l) {
+      return new AsTypeBuilder_Constraints();
+    }
+    if (id == 7288041816792577342l) {
+      return new SimpleBuilderChildExpression_Constraints();
+    }
+    if (id == 5389689214217242850l) {
+      return new SimpleBuilderPropertyExpression_Constraints();
+    }
+    if (id == 5389689214217404511l) {
+      return new SimpleBuilderPropertyBuilder_Constraints();
+    }
+    if (id == 7288041816792374840l) {
+      return new SimpleBuilderDeclaration_Constraints();
+    }
+    if (id == 6254726786820421041l) {
+      return new BaseSimpleBuilderDeclaration_Constraints();
+    }
+    return new BaseConstraintsDescriptor(conceptId);
   }
   private static String[] stringSwitchCases_2qnle6_a0a0b = new String[]{"jetbrains.mps.baseLanguage.builders.structure.AsTypeBuilder", "jetbrains.mps.baseLanguage.builders.structure.BaseSimpleBuilderDeclaration", "jetbrains.mps.baseLanguage.builders.structure.BeanBuilder", "jetbrains.mps.baseLanguage.builders.structure.BeanPropertyBuilder", "jetbrains.mps.baseLanguage.builders.structure.ResultExpression", "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilder", "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderChildExpression", "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderDeclaration", "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderExpression", "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderParameterReference", "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderPropertyBuilder", "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderPropertyExpression"};
 }

@@ -5,6 +5,8 @@ package jetbrains.mps.lang.classLike.behavior;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 
@@ -12,8 +14,8 @@ public class ClassLikeMethod_Behavior {
   public static void init(SNode thisNode) {
   }
   public static SNode virtual_getExpectedRetType_1239354342632(SNode thisNode) {
-    if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(thisNode, "returnType", true), "jetbrains.mps.lang.classLike.structure.DependentTypeInstance")) {
-      SNode dti = SNodeOperations.cast(SLinkOperations.getTarget(thisNode, "returnType", true), "jetbrains.mps.lang.classLike.structure.DependentTypeInstance");
+    if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123132l, 1068580123133l, "returnType")), "jetbrains.mps.lang.classLike.structure.DependentTypeInstance")) {
+      SNode dti = SNodeOperations.cast(SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123132l, 1068580123133l, "returnType")), "jetbrains.mps.lang.classLike.structure.DependentTypeInstance");
       SNode myType = DependentTypeInstance_Behavior.call_getMyType_9097849371504546165(dti);
       if (SConceptOperations.isExactly(SNodeOperations.getConceptDeclaration(myType), "jetbrains.mps.baseLanguage.structure.VoidType")) {
         return null;
@@ -23,6 +25,6 @@ public class ClassLikeMethod_Behavior {
     return BehaviorReflection.invokeSuper((Class<SNode>) ((Class) Object.class), thisNode, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration", "virtual_getExpectedRetType_1239354342632", new Object[]{});
   }
   public static SNode virtual_getDeclaration_9097849371503884215(SNode thisNode) {
-    return SLinkOperations.getTarget(thisNode, "decl", false);
+    return SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getReferenceLink(new UUID(-4047124328593011742l, -4867279722304451481l), 3751132065236767060l, 19209059688387895l, "decl"));
   }
 }

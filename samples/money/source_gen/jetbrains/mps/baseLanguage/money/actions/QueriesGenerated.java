@@ -17,6 +17,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.smodel.constraints.ModelConstraints;
 
 public class QueriesGenerated {
@@ -27,7 +29,7 @@ public class QueriesGenerated {
         if (SNodeOperations.isInstanceOf(TypeChecker.getInstance().getTypeOf(_context.getSourceNode()), "jetbrains.mps.baseLanguage.money.structure.MoneyType")) {
           SNode mgcmc = SNodeFactoryOperations.createNewNode(_context.getModel(), "jetbrains.mps.baseLanguage.money.structure.MoneyGetCurrencyMethodCall", null);
           SNodeOperations.replaceWithAnother(_context.getSourceNode(), mgcmc);
-          SLinkOperations.setTarget(mgcmc, "instance", _context.getSourceNode(), true);
+          SLinkOperations.setTarget(mgcmc, MetaAdapterFactory.getContainmentLink(new UUID(-850839507942816123l, -8275646104739946638l), 1187357857395l, 1187358164451l, "instance"), _context.getSourceNode());
           return mgcmc;
         }
         return _context.getSourceNode();
@@ -54,7 +56,7 @@ public class QueriesGenerated {
         if (SNodeOperations.isInstanceOf(TypeChecker.getInstance().getTypeOf(_context.getSourceNode()), "jetbrains.mps.baseLanguage.money.structure.MoneyType")) {
           SNode mgcmc = SNodeFactoryOperations.createNewNode(_context.getModel(), "jetbrains.mps.baseLanguage.money.structure.MoneyIsZeroMethodCall", null);
           SNodeOperations.replaceWithAnother(_context.getSourceNode(), mgcmc);
-          SLinkOperations.setTarget(mgcmc, "instance", _context.getSourceNode(), true);
+          SLinkOperations.setTarget(mgcmc, MetaAdapterFactory.getContainmentLink(new UUID(-850839507942816123l, -8275646104739946638l), 1187357857395l, 1187358164451l, "instance"), _context.getSourceNode());
           return mgcmc;
         }
         return _context.getSourceNode();
@@ -81,7 +83,7 @@ public class QueriesGenerated {
         if (SNodeOperations.isInstanceOf(TypeChecker.getInstance().getTypeOf(_context.getSourceNode()), "jetbrains.mps.baseLanguage.money.structure.MoneyType")) {
           SNode mgcmc = SNodeFactoryOperations.createNewNode(_context.getModel(), "jetbrains.mps.baseLanguage.money.structure.MoneyGetAmountMethodCall", null);
           SNodeOperations.replaceWithAnother(_context.getSourceNode(), mgcmc);
-          SLinkOperations.setTarget(mgcmc, "instance", _context.getSourceNode(), true);
+          SLinkOperations.setTarget(mgcmc, MetaAdapterFactory.getContainmentLink(new UUID(-850839507942816123l, -8275646104739946638l), 1187357857395l, 1187358164451l, "instance"), _context.getSourceNode());
           return mgcmc;
         }
         return _context.getSourceNode();

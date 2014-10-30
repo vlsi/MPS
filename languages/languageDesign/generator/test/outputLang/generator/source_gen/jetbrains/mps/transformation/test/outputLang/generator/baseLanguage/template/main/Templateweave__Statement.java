@@ -12,6 +12,8 @@ import jetbrains.mps.generator.runtime.TemplateExecutionEnvironment;
 import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.generator.runtime.GenerationException;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.generator.runtime.TemplateUtil;
 import jetbrains.mps.generator.template.PropertyMacroContext;
 import java.util.Collection;
@@ -28,7 +30,7 @@ public class Templateweave__Statement implements TemplateDeclarationWeavingAware
     final SNode tnode1 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration");
     try {
       environment.nodeCopied(context, tnode1, "tpl/r:00000000-0000-4000-0000-011c89590606/3571912445009934888");
-      SNodeAccessUtil.setProperty(tnode1, "name", TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_3571912445009934894(new PropertyMacroContext(context, "statementX", propertyMacro_1j9q6b_c0a0c0b0b0c))));
+      SNodeAccessUtil.setProperty(tnode1, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"), TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_3571912445009934894(new PropertyMacroContext(context, "statementX", propertyMacro_1j9q6b_c0a0c0b0b0c))));
       {
         final SNode tnode2 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.VoidType");
         try {
@@ -63,7 +65,7 @@ public class Templateweave__Statement implements TemplateDeclarationWeavingAware
                 final SNode tnode6 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.TextCommentPart");
                 try {
                   environment.nodeCopied(context, tnode6, "tpl/r:00000000-0000-4000-0000-011c89590606/3571912445009937375");
-                  SNodeAccessUtil.setProperty(tnode6, "text", TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_3571912445009937377(new PropertyMacroContext(context, "a", propertyMacro_1j9q6b_c0a0c0b0b0b0b0b0b0e0b0c))));
+                  SNodeAccessUtil.setProperty(tnode6, MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 6329021646629104957l, 6329021646629104958l, "text"), TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_3571912445009937377(new PropertyMacroContext(context, "a", propertyMacro_1j9q6b_c0a0c0b0b0b0b0b0b0e0b0c))));
                 } finally {
                 }
                 if (tnode6 != null) {
@@ -97,7 +99,7 @@ public class Templateweave__Statement implements TemplateDeclarationWeavingAware
         final SNode tnode8 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.TextCommentPart");
         try {
           environment.nodeCopied(context, tnode8, "tpl/r:00000000-0000-4000-0000-011c89590606/3571912445009937424");
-          SNodeAccessUtil.setProperty(tnode8, "text", TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_3571912445009937427(new PropertyMacroContext(context, "to ctor ", propertyMacro_1j9q6b_c0a0c0b0b0b0b0d))));
+          SNodeAccessUtil.setProperty(tnode8, MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 6329021646629104957l, 6329021646629104958l, "text"), TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_3571912445009937427(new PropertyMacroContext(context, "to ctor ", propertyMacro_1j9q6b_c0a0c0b0b0b0b0d))));
         } finally {
         }
         if (tnode8 != null) {

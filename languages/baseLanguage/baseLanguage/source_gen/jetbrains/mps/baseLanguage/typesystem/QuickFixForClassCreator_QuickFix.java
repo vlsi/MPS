@@ -6,6 +6,8 @@ import jetbrains.mps.errors.QuickFix_Runtime;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.baseLanguage.scopes.ClassifierScopes;
@@ -20,14 +22,14 @@ public class QuickFixForClassCreator_QuickFix extends QuickFix_Runtime {
   public QuickFixForClassCreator_QuickFix() {
   }
   public void execute(SNode node) {
-    if (SLinkOperations.getTarget(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.ClassCreator"), "baseMethodDeclaration", false) == null && ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.ClassCreator"), "actualArgument", true)).isEmpty()) {
+    if (SLinkOperations.getTarget(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.ClassCreator"), MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, 1068499141037l, "baseMethodDeclaration")) == null && ListSequence.fromList(SLinkOperations.getChildren(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.ClassCreator"), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, 1068499141038l, "actualArgument"))).isEmpty()) {
       String refText = SLinkOperations.getResolveInfo(SNodeOperations.getReference(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.ClassCreator"), SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.ClassCreator", "constructorDeclaration")));
       SModule module = check_8brg4q_a0b0a0a(check_8brg4q_a0a1a0a0(node));
 
       if ((refText != null && refText.length() > 0) && module != null) {
         SNode clazz = SNodeOperations.cast(ClassifierScopes.getVisibleClassifiersWithDefaultConstructors(node).resolve(node, refText), "jetbrains.mps.baseLanguage.structure.ClassConcept");
         if ((clazz != null)) {
-          SNode newCreator = _quotation_createNode_8brg4q_a0a0b0d0a0a(SLinkOperations.getTargets(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.ClassCreator"), "typeParameter", true), clazz);
+          SNode newCreator = _quotation_createNode_8brg4q_a0a0b0d0a0a(SLinkOperations.getChildren(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.ClassCreator"), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1212685548494l, 1212687122400l, "typeParameter")), clazz);
           SNodeOperations.replaceWithAnother(node, newCreator);
         }
       }
@@ -50,7 +52,7 @@ public class QuickFixForClassCreator_QuickFix extends QuickFix_Runtime {
     SNode quotedNode_3 = null;
     SNode quotedNode_4 = null;
     quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.DefaultClassCreator", null, null, false);
-    SNodeAccessUtil.setReferenceTarget(quotedNode_3, "classifier", (SNode) parameter_2);
+    SNodeAccessUtil.setReferenceTarget(quotedNode_3, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 2820489544401957797l, 2820489544401957798l, "classifier"), (SNode) parameter_2);
     {
       List<SNode> nodes = (List<SNode>) parameter_1;
       for (SNode child : nodes) {

@@ -27,6 +27,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 
@@ -119,7 +121,7 @@ public class MoveLinkUp_Action extends BaseAction {
           }
           Language targetLanguage = Language.getLanguageFor(SNodeOperations.getModel(targetConcept));
           AttributeOperations.setAttribute(((SNode) MapSequence.fromMap(_params).get("target")), new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation"), SConceptOperations.createNewNode("jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation", null));
-          ListSequence.fromList(SLinkOperations.getTargets(targetConcept, "linkDeclaration", true)).addElement(SNodeOperations.copyNode(((SNode) MapSequence.fromMap(_params).get("target"))));
+          ListSequence.fromList(SLinkOperations.getChildren(targetConcept, MetaAdapterFactory.getContainmentLink(new UUID(-4094437568663370681l, -8968368868337559369l), 1169125787135l, 1071489727083l, "linkDeclaration"))).addElement(SNodeOperations.copyNode(((SNode) MapSequence.fromMap(_params).get("target"))));
         }
       });
 

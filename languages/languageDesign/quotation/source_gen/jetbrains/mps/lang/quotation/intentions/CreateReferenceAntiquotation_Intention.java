@@ -17,6 +17,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.intentions.IntentionDescriptor;
 
 public class CreateReferenceAntiquotation_Intention implements IntentionFactory {
@@ -97,7 +99,7 @@ public class CreateReferenceAntiquotation_Intention implements IntentionFactory 
       } else {
         SNode referenceAntiquotation = SNodeFactoryOperations.setNewAttribute(contextNode, new IAttributeDescriptor.LinkAttribute("jetbrains.mps.lang.quotation.structure.ReferenceAntiquotation", role), "jetbrains.mps.lang.quotation.structure.ReferenceAntiquotation");
         if (selectedCell.isSingleNodeCell()) {
-          SPropertyOperations.set(referenceAntiquotation, "label", SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(contextNode), "name"));
+          SPropertyOperations.set(referenceAntiquotation, MetaAdapterFactory.getProperty(new UUID(4184707567256882268l, -4914423608129972907l), 1196350785110l, 6489343236075007666l, "label"), SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(contextNode), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")));
         }
       }
     }

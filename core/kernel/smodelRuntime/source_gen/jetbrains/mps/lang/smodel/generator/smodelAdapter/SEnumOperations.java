@@ -9,9 +9,9 @@ import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import java.util.List;
-import jetbrains.mps.smodel.adapter.structure.link.SContainmentLinkAdapterById;
-import jetbrains.mps.smodel.adapter.ids.SContainmentLinkId;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 
 public class SEnumOperations {
@@ -20,12 +20,12 @@ public class SEnumOperations {
     SModel m = SModelRepository.getInstance().getModelDescriptor(ref);
     return (ListSequence.fromList(SModelOperations.getRoots(m, "jetbrains.mps.lang.structure.structure.EnumerationDataTypeDeclaration")).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return SPropertyOperations.getString(it, "name").equals(nodeName);
+        return SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")).equals(nodeName);
       }
     }).first());
   }
   public static List<SNode> getEnumMembers(SNode enumm) {
-    return SLinkOperations.getChildren(enumm, new SContainmentLinkAdapterById(SContainmentLinkId.deserialize("c72da2b9-7cce-4447-8389-f407dc1158b7/1082978164219/1083172003582"), "member"));
+    return SLinkOperations.getChildren(enumm, MetaAdapterFactory.getContainmentLink(new UUID(-4094437568663370681l, -8968368868337559369l), 1082978164219l, 1083172003582l, "member"));
   }
   public static SNode getEnumMember(SNode enumm, String name) {
     return enumMemberForName(enumm, name);
@@ -34,11 +34,11 @@ public class SEnumOperations {
     return BehaviorReflection.invokeNonVirtual(String.class, ((SNode) member), "jetbrains.mps.lang.structure.structure.EnumerationMemberDeclaration", "call_getName_1240169660918", new Object[]{});
   }
   public static String getEnumMemberValue(SNode member) {
-    return SPropertyOperations.getString(((SNode) member), "internalValue");
+    return SPropertyOperations.getString(((SNode) member), MetaAdapterFactory.getProperty(new UUID(-4094437568663370681l, -8968368868337559369l), 1083171877298l, 1083923523171l, "internalValue"));
   }
   public static SNode enumMemberForName(SNode enumm, final String name) {
     SNode enumNode = (SNode) enumm;
-    return ((SNode) ListSequence.fromList(SLinkOperations.getChildren(enumNode, new SContainmentLinkAdapterById(SContainmentLinkId.deserialize("c72da2b9-7cce-4447-8389-f407dc1158b7/1082978164219/1083172003582"), "member"))).findFirst(new IWhereFilter<SNode>() {
+    return ((SNode) ListSequence.fromList(SLinkOperations.getChildren(enumNode, MetaAdapterFactory.getContainmentLink(new UUID(-4094437568663370681l, -8968368868337559369l), 1082978164219l, 1083172003582l, "member"))).findFirst(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return BehaviorReflection.invokeNonVirtual(String.class, it, "jetbrains.mps.lang.structure.structure.EnumerationMemberDeclaration", "call_getName_1240169660918", new Object[]{}).equals(name);
       }
@@ -48,9 +48,9 @@ public class SEnumOperations {
     if (value == null) {
       return ((SNode) BehaviorReflection.invokeNonVirtual((Class<SNode>) ((Class) Object.class), enumm, "jetbrains.mps.lang.structure.structure.EnumerationDataTypeDeclaration", "call_getDefaultMember_1213877397785", new Object[]{}));
     }
-    return ((SNode) ListSequence.fromList(SLinkOperations.getChildren(enumm, new SContainmentLinkAdapterById(SContainmentLinkId.deserialize("c72da2b9-7cce-4447-8389-f407dc1158b7/1082978164219/1083172003582"), "member"))).findFirst(new IWhereFilter<SNode>() {
+    return ((SNode) ListSequence.fromList(SLinkOperations.getChildren(enumm, MetaAdapterFactory.getContainmentLink(new UUID(-4094437568663370681l, -8968368868337559369l), 1082978164219l, 1083172003582l, "member"))).findFirst(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return SPropertyOperations.getString(it, "internalValue").equals(value);
+        return SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(new UUID(-4094437568663370681l, -8968368868337559369l), 1083171877298l, 1083923523171l, "internalValue")).equals(value);
       }
     }));
   }

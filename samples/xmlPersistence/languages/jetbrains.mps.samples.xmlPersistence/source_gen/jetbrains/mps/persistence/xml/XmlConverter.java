@@ -6,6 +6,8 @@ import org.jetbrains.mps.openapi.model.SNode;
 import org.jdom.Document;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.SNodeId;
 import org.jdom.Element;
@@ -31,9 +33,9 @@ public class XmlConverter {
   public static SNode convertDocument(String name, Document document) {
     // TODO replace dom-based implementation with a good XML parser 
     SNode file = SConceptOperations.createNewNode("jetbrains.mps.core.xml.structure.XmlFile", null);
-    SPropertyOperations.set(file, "name", name);
-    SLinkOperations.setNewChild(file, "document", "jetbrains.mps.core.xml.structure.XmlDocument");
-    SLinkOperations.setTarget(SLinkOperations.getTarget(file, "document", true), "rootElement", convertElement(document.getRootElement()), true);
+    SPropertyOperations.set(file, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"), name);
+    SLinkOperations.setNewChild(file, MetaAdapterFactory.getContainmentLink(new UUID(5160134014823646133l, -7982110198386724200l), 6666499814681515200l, 6666499814681515201l, "document"), "jetbrains.mps.core.xml.structure.XmlDocument");
+    SLinkOperations.setTarget(SLinkOperations.getTarget(file, MetaAdapterFactory.getContainmentLink(new UUID(5160134014823646133l, -7982110198386724200l), 6666499814681515200l, 6666499814681515201l, "document")), MetaAdapterFactory.getContainmentLink(new UUID(5160134014823646133l, -7982110198386724200l), 6786756355279841993l, 6666499814681299055l, "rootElement"), convertElement(document.getRootElement()));
     ((jetbrains.mps.smodel.SNode) file).setId(SNodeId.fromString("~" + name));
     return file;
   }
@@ -41,13 +43,13 @@ public class XmlConverter {
   private static SNode convertElement(Element elem) {
     SNode result = SConceptOperations.createNewNode("jetbrains.mps.core.xml.structure.XmlElement", null);
     String namespacePrefix = elem.getNamespacePrefix();
-    SPropertyOperations.set(result, "tagName", ((namespacePrefix == null || namespacePrefix.length() == 0) ? elem.getName() : namespacePrefix + ":" + elem.getName()));
+    SPropertyOperations.set(result, MetaAdapterFactory.getProperty(new UUID(5160134014823646133l, -7982110198386724200l), 6666499814681415858l, 6666499814681415862l, "tagName"), ((namespacePrefix == null || namespacePrefix.length() == 0) ? elem.getName() : namespacePrefix + ":" + elem.getName()));
     for (Attribute a : ListSequence.fromList((List<Attribute>) elem.getAttributes())) {
-      ListSequence.fromList(SLinkOperations.getTargets(result, "attributes", true)).addElement(convertAttribute(a));
+      ListSequence.fromList(SLinkOperations.getChildren(result, MetaAdapterFactory.getContainmentLink(new UUID(5160134014823646133l, -7982110198386724200l), 6666499814681415858l, 6666499814681415861l, "attributes"))).addElement(convertAttribute(a));
     }
     List<Namespace> additionalNamespaces = (List<Namespace>) elem.getAdditionalNamespaces();
     for (Namespace ns : ListSequence.fromList(additionalNamespaces)) {
-      ListSequence.fromList(SLinkOperations.getTargets(result, "attributes", true)).addElement(createXmlAttribute_h7fa2c_a0a0a5a3("xmlns:" + ns.getPrefix(), convertAttributeText(ns.getURI())));
+      ListSequence.fromList(SLinkOperations.getChildren(result, MetaAdapterFactory.getContainmentLink(new UUID(5160134014823646133l, -7982110198386724200l), 6666499814681415858l, 6666499814681415861l, "attributes"))).addElement(createXmlAttribute_h7fa2c_a0a0a5a3("xmlns:" + ns.getPrefix(), convertAttributeText(ns.getURI())));
     }
 
     List<Content> list = (List<Content>) elem.getContent();
@@ -55,11 +57,11 @@ public class XmlConverter {
     for (int i = 0; i < contents.length; i++) {
       Iterable<SNode> content = convertContent((i > 0 ? contents[i - 1] : null), contents[i], (i + 1 < contents.length ? contents[i + 1] : null));
       if (content != null) {
-        ListSequence.fromList(SLinkOperations.getTargets(result, "content", true)).addSequence(Sequence.fromIterable(content));
+        ListSequence.fromList(SLinkOperations.getChildren(result, MetaAdapterFactory.getContainmentLink(new UUID(5160134014823646133l, -7982110198386724200l), 6666499814681415858l, 1622293396948928802l, "content"))).addSequence(Sequence.fromIterable(content));
       }
 
     }
-    SPropertyOperations.set(result, "shortEmptyNotation", "" + (elem.getContentSize() == 0));
+    SPropertyOperations.set(result, MetaAdapterFactory.getProperty(new UUID(5160134014823646133l, -7982110198386724200l), 6666499814681415858l, 6999033275467544021l, "shortEmptyNotation"), "" + (elem.getContentSize() == 0));
     return result;
   }
   private static Iterable<SNode> convertContent(Content prev, Content c, Content next) {
@@ -68,7 +70,7 @@ public class XmlConverter {
     } else if (c instanceof Comment) {
       String commentText = ((Comment) c).getText();
       SNode res = SConceptOperations.createNewNode("jetbrains.mps.core.xml.structure.XmlComment", null);
-      ListSequence.fromList(SLinkOperations.getTargets(res, "lines", true)).addSequence(Sequence.fromIterable(Sequence.fromArray(commentText.split("\r?\n"))).select(new ISelector<String, SNode>() {
+      ListSequence.fromList(SLinkOperations.getChildren(res, MetaAdapterFactory.getContainmentLink(new UUID(5160134014823646133l, -7982110198386724200l), 6666499814681299064l, 1622293396949036151l, "lines"))).addSequence(Sequence.fromIterable(Sequence.fromArray(commentText.split("\r?\n"))).select(new ISelector<String, SNode>() {
         public SNode select(String it) {
           return createXmlCommentLine_h7fa2c_a0a0a0a0c0a0a4(it);
         }
@@ -215,15 +217,15 @@ public class XmlConverter {
 
   private static SNode convertAttribute(Attribute elem) {
     SNode result = SConceptOperations.createNewNode("jetbrains.mps.core.xml.structure.XmlAttribute", null);
-    SPropertyOperations.set(result, "attrName", elem.getName());
-    ListSequence.fromList(SLinkOperations.getTargets(result, "value", true)).addSequence(Sequence.fromIterable(convertAttributeText(elem.getValue())));
+    SPropertyOperations.set(result, MetaAdapterFactory.getProperty(new UUID(5160134014823646133l, -7982110198386724200l), 6666499814681447923l, 6666499814681447926l, "attrName"), elem.getName());
+    ListSequence.fromList(SLinkOperations.getChildren(result, MetaAdapterFactory.getContainmentLink(new UUID(5160134014823646133l, -7982110198386724200l), 6666499814681447923l, 6666499814681541918l, "value"))).addSequence(Sequence.fromIterable(convertAttributeText(elem.getValue())));
     return result;
   }
 
   public static SNode newDocument(String name) {
     SNode file = SConceptOperations.createNewNode("jetbrains.mps.core.xml.structure.XmlFile", null);
-    SPropertyOperations.set(file, "name", name);
-    SLinkOperations.setTarget(file, "document", createXmlDocument_h7fa2c_a0a2a11(name), true);
+    SPropertyOperations.set(file, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"), name);
+    SLinkOperations.setTarget(file, MetaAdapterFactory.getContainmentLink(new UUID(5160134014823646133l, -7982110198386724200l), 6666499814681515200l, 6666499814681515201l, "document"), createXmlDocument_h7fa2c_a0a2a11(name));
     return file;
   }
   private static SNode createXmlAttribute_h7fa2c_a0a0a5a3(Object p0, Object p1) {

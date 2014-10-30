@@ -8,6 +8,8 @@ import java.awt.Graphics;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import java.awt.Dimension;
@@ -23,7 +25,7 @@ public final class PreviewFactory {
         super.paintComponent(graphics);
         SNodeOperations.getModel(thisCanvas).getRepository().getModelAccess().runReadAction(new Runnable() {
           public void run() {
-            ListSequence.fromList(SLinkOperations.getTargets(thisCanvas, "shapes", true)).visitAll(new IVisitor<SNode>() {
+            ListSequence.fromList(SLinkOperations.getChildren(thisCanvas, MetaAdapterFactory.getContainmentLink(new UUID(1637898168350624965l, -8992988694412354753l), 5898776707557467933l, 5898776707557489223l, "shapes"))).visitAll(new IVisitor<SNode>() {
               public void visit(SNode it) {
                 BehaviorReflection.invokeVirtual(Void.class, it, "virtual_drawShape_1082824515535573731", new Object[]{graphics});
               }

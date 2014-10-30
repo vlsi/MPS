@@ -7,6 +7,8 @@ import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -17,36 +19,36 @@ public class MappingConfiguration_Behavior {
   }
   public static List<SNode> virtual_getMembers_1213877531970(SNode thisNode) {
     List<SNode> members = new ArrayList<SNode>();
-    ListSequence.fromList(members).addSequence(ListSequence.fromList(SLinkOperations.getTargets(thisNode, "rootMappingRule", true)));
-    ListSequence.fromList(members).addSequence(ListSequence.fromList(SLinkOperations.getTargets(thisNode, "weavingMappingRule", true)));
-    ListSequence.fromList(members).addSequence(ListSequence.fromList(SLinkOperations.getTargets(thisNode, "reductionMappingRule", true)));
-    ListSequence.fromList(members).addSequence(ListSequence.fromList(SLinkOperations.getTargets(thisNode, "patternReductionRule", true)));
-    ListSequence.fromList(members).addSequence(ListSequence.fromList(SLinkOperations.getTargets(thisNode, "createRootRule", true)));
-    ListSequence.fromList(members).addSequence(ListSequence.fromList(SLinkOperations.getTargets(thisNode, "preMappingScript", true)));
-    ListSequence.fromList(members).addSequence(ListSequence.fromList(SLinkOperations.getTargets(thisNode, "postMappingScript", true)));
-    ListSequence.fromList(members).addSequence(ListSequence.fromList(SLinkOperations.getTargets(thisNode, "mappingLabel", true)));
+    ListSequence.fromList(members).addSequence(ListSequence.fromList(SLinkOperations.getChildren(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-5475912601019530992l, -8082971551085732881l), 1095416546421l, 1167514678247l, "rootMappingRule"))));
+    ListSequence.fromList(members).addSequence(ListSequence.fromList(SLinkOperations.getChildren(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-5475912601019530992l, -8082971551085732881l), 1095416546421l, 1167172143858l, "weavingMappingRule"))));
+    ListSequence.fromList(members).addSequence(ListSequence.fromList(SLinkOperations.getChildren(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-5475912601019530992l, -8082971551085732881l), 1095416546421l, 1167328349397l, "reductionMappingRule"))));
+    ListSequence.fromList(members).addSequence(ListSequence.fromList(SLinkOperations.getChildren(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-5475912601019530992l, -8082971551085732881l), 1095416546421l, 1805153994416813171l, "patternReductionRule"))));
+    ListSequence.fromList(members).addSequence(ListSequence.fromList(SLinkOperations.getChildren(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-5475912601019530992l, -8082971551085732881l), 1095416546421l, 1167088157977l, "createRootRule"))));
+    ListSequence.fromList(members).addSequence(ListSequence.fromList(SLinkOperations.getChildren(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-5475912601019530992l, -8082971551085732881l), 1095416546421l, 1195502100749l, "preMappingScript"))));
+    ListSequence.fromList(members).addSequence(ListSequence.fromList(SLinkOperations.getChildren(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-5475912601019530992l, -8082971551085732881l), 1095416546421l, 1195502346405l, "postMappingScript"))));
+    ListSequence.fromList(members).addSequence(ListSequence.fromList(SLinkOperations.getChildren(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-5475912601019530992l, -8082971551085732881l), 1095416546421l, 1200911492601l, "mappingLabel"))));
     return members;
   }
   public static void call_addMember_3166264919334415805(SNode thisNode, SNode newMember) {
     if ((AttributeOperations.getAttribute(newMember, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.generator.structure.RootTemplateAnnotation")) != null)) {
-      SNode ruleNode = SLinkOperations.addNewChild(thisNode, "rootMappingRule", "jetbrains.mps.lang.generator.structure.Root_MappingRule");
-      SLinkOperations.setTarget(ruleNode, "applicableConcept", SLinkOperations.getTarget(AttributeOperations.getAttribute(newMember, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.generator.structure.RootTemplateAnnotation")), "applicableConcept", false), false);
-      SLinkOperations.setTarget(ruleNode, "template", SNodeOperations.cast(newMember, "jetbrains.mps.lang.core.structure.INamedConcept"), false);
+      SNode ruleNode = SLinkOperations.addNewChild(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-5475912601019530992l, -8082971551085732881l), 1095416546421l, 1167514678247l, "rootMappingRule"), "jetbrains.mps.lang.generator.structure.Root_MappingRule");
+      SLinkOperations.setTarget(ruleNode, MetaAdapterFactory.getReferenceLink(new UUID(-5475912601019530992l, -8082971551085732881l), 1167169308231l, 1167169349424l, "applicableConcept"), SLinkOperations.getTarget(AttributeOperations.getAttribute(newMember, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.generator.structure.RootTemplateAnnotation")), MetaAdapterFactory.getReferenceLink(new UUID(-5475912601019530992l, -8082971551085732881l), 1168619357332l, 1168619429071l, "applicableConcept")));
+      SLinkOperations.setTarget(ruleNode, MetaAdapterFactory.getReferenceLink(new UUID(-5475912601019530992l, -8082971551085732881l), 1167514355419l, 1167514355421l, "template"), SNodeOperations.cast(newMember, "jetbrains.mps.lang.core.structure.INamedConcept"));
     } else if (SNodeOperations.isInstanceOf(newMember, "jetbrains.mps.lang.generator.structure.TemplateDeclaration")) {
-      SNode mappingRule = SLinkOperations.addNewChild(thisNode, "reductionMappingRule", "jetbrains.mps.lang.generator.structure.Reduction_MappingRule");
-      SLinkOperations.setTarget(mappingRule, "applicableConcept", SLinkOperations.getTarget(SNodeOperations.cast(newMember, "jetbrains.mps.lang.generator.structure.TemplateDeclaration"), "applicableConcept", false), false);
+      SNode mappingRule = SLinkOperations.addNewChild(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-5475912601019530992l, -8082971551085732881l), 1095416546421l, 1167328349397l, "reductionMappingRule"), "jetbrains.mps.lang.generator.structure.Reduction_MappingRule");
+      SLinkOperations.setTarget(mappingRule, MetaAdapterFactory.getReferenceLink(new UUID(-5475912601019530992l, -8082971551085732881l), 1167169308231l, 1167169349424l, "applicableConcept"), SLinkOperations.getTarget(SNodeOperations.cast(newMember, "jetbrains.mps.lang.generator.structure.TemplateDeclaration"), MetaAdapterFactory.getReferenceLink(new UUID(-5475912601019530992l, -8082971551085732881l), 1092059087312l, 1168285871518l, "applicableConcept")));
       SNode templateRef = SConceptOperations.createNewNode("jetbrains.mps.lang.generator.structure.TemplateDeclarationReference", null);
-      SLinkOperations.setTarget(templateRef, "template", SNodeOperations.cast(newMember, "jetbrains.mps.lang.generator.structure.TemplateDeclaration"), false);
-      SLinkOperations.setTarget(mappingRule, "ruleConsequence", templateRef, true);
+      SLinkOperations.setTarget(templateRef, MetaAdapterFactory.getReferenceLink(new UUID(-5475912601019530992l, -8082971551085732881l), 1722980698497626400l, 1722980698497626483l, "template"), SNodeOperations.cast(newMember, "jetbrains.mps.lang.generator.structure.TemplateDeclaration"));
+      SLinkOperations.setTarget(mappingRule, MetaAdapterFactory.getContainmentLink(new UUID(-5475912601019530992l, -8082971551085732881l), 1167327847730l, 1169672767469l, "ruleConsequence"), templateRef);
     }
   }
   public static List<SNode> virtual_getBaseConceptCollection_5270353093116013036(SNode thisNode) {
     List<SNode> result = new ArrayList<SNode>();
     for (SNode mapConfChild : SNodeOperations.getChildren(thisNode)) {
       if (SNodeOperations.isInstanceOf(mapConfChild, "jetbrains.mps.lang.generator.structure.BaseMappingRule")) {
-        ListSequence.fromList(result).addElement(SLinkOperations.getTarget(SNodeOperations.cast(mapConfChild, "jetbrains.mps.lang.generator.structure.BaseMappingRule"), "applicableConcept", false));
+        ListSequence.fromList(result).addElement(SLinkOperations.getTarget(SNodeOperations.cast(mapConfChild, "jetbrains.mps.lang.generator.structure.BaseMappingRule"), MetaAdapterFactory.getReferenceLink(new UUID(-5475912601019530992l, -8082971551085732881l), 1167169308231l, 1167169349424l, "applicableConcept")));
       } else if (SNodeOperations.isInstanceOf(mapConfChild, "jetbrains.mps.lang.generator.structure.DropRootRule")) {
-        ListSequence.fromList(result).addElement(SLinkOperations.getTarget(SNodeOperations.cast(mapConfChild, "jetbrains.mps.lang.generator.structure.DropRootRule"), "applicableConcept", false));
+        ListSequence.fromList(result).addElement(SLinkOperations.getTarget(SNodeOperations.cast(mapConfChild, "jetbrains.mps.lang.generator.structure.DropRootRule"), MetaAdapterFactory.getReferenceLink(new UUID(-5475912601019530992l, -8082971551085732881l), 1219952072943l, 1219952338328l, "applicableConcept")));
       }
     }
     return result;

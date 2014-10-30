@@ -32,6 +32,8 @@ import jetbrains.mps.ide.platform.modeltree.ModelTreeCellRenderer;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import javax.swing.event.TreeSelectionListener;
 import javax.swing.event.TreeSelectionEvent;
 import jetbrains.mps.smodel.SNodePointer;
@@ -116,7 +118,7 @@ public abstract class BaseChooseNodeDialog extends DialogWrapper {
         })))) {
           ModelTreeNode modelRootTreeNode = ModelTreeBuilder.createSNodeTreeNode(nextRoot);
           modelRootTreeNode.setLeafPosition(true);
-          ModelTreeBuilder.insertChildSNodeTreeNode(node, modelRootTreeNode, SPropertyOperations.getString(nextRoot, "virtualPackage"));
+          ModelTreeBuilder.insertChildSNodeTreeNode(node, modelRootTreeNode, SPropertyOperations.getString(nextRoot, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1133920641626l, 1193676396447l, "virtualPackage")));
         }
 
         notifyNodeStructureChanged(node);

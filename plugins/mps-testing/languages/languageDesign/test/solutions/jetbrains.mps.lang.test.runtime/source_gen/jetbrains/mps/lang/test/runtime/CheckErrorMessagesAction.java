@@ -10,6 +10,8 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import junit.framework.Assert;
 import jetbrains.mps.errors.MessageStatus;
 
@@ -49,7 +51,7 @@ public class CheckErrorMessagesAction implements Runnable {
       return false;
     }
     SNode container = AttributeOperations.getAttribute(node, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.test.structure.NodeOperationsContainer"));
-    for (SNode property : SLinkOperations.getTargets(container, "nodeOperations", true)) {
+    for (SNode property : SLinkOperations.getChildren(container, MetaAdapterFactory.getContainmentLink(new UUID(-8825571760360698496l, -7431307307277756308l), 1215603922101l, 1215604436604l, "nodeOperations"))) {
       if (SNodeOperations.isInstanceOf(property, "jetbrains.mps.lang.test.structure.IChecksRules")) {
         return true;
       }

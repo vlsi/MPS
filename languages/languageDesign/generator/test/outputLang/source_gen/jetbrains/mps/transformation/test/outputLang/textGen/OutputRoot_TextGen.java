@@ -5,19 +5,21 @@ package jetbrains.mps.transformation.test.outputLang.textGen;
 import jetbrains.mps.textGen.SNodeTextGen;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class OutputRoot_TextGen extends SNodeTextGen {
   public void doGenerateText(SNode node) {
-    this.append((SPropertyOperations.getString(node, "name") == null ? "<no name>" : SPropertyOperations.getString(node, "name")));
+    this.append((SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")) == null ? "<no name>" : SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"))));
     this.append(" : ");
-    this.append((SPropertyOperations.getString(node, "text") == null ? "<no text>" : SPropertyOperations.getString(node, "text")));
-    if ((SLinkOperations.getTarget(node, "specialChild", true) != null)) {
+    this.append((SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(new UUID(1547714798586184059l, -8557310053109408682l), 1195164668463l, 1195164732401l, "text")) == null ? "<no text>" : SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(new UUID(1547714798586184059l, -8557310053109408682l), 1195164668463l, 1195164732401l, "text"))));
+    if ((SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(1547714798586184059l, -8557310053109408682l), 1195164668463l, 1218735665292l, "specialChild")) != null)) {
       this.appendNewLine();
-      appendNode(SLinkOperations.getTarget(node, "specialChild", true));
+      appendNode(SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(1547714798586184059l, -8557310053109408682l), 1195164668463l, 1218735665292l, "specialChild")));
       this.appendNewLine();
     }
-    for (SNode output : SLinkOperations.getTargets(node, "outputChild", true)) {
+    for (SNode output : SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(new UUID(1547714798586184059l, -8557310053109408682l), 1195164668463l, 1195169631818l, "outputChild"))) {
       this.appendNewLine();
       this.appendNewLine();
       this.increaseDepth();

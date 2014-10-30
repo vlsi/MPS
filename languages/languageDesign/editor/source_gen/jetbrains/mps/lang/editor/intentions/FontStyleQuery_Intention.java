@@ -12,6 +12,8 @@ import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
 import java.util.Collections;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -58,19 +60,19 @@ public class FontStyleQuery_Intention implements IntentionFactory {
     public IntentionImplementation() {
     }
     public String getDescription(final SNode node, final EditorContext editorContext) {
-      if ((SLinkOperations.getTarget(node, "query", true) == null)) {
+      if ((SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(1782411230332735017l, -6324602048325217350l), 1186403751766l, 1220975211821l, "query")) == null)) {
         return "Add Query";
       } else {
         return "Remove Query";
       }
     }
     public void execute(final SNode node, final EditorContext editorContext) {
-      if ((SLinkOperations.getTarget(node, "query", true) == null)) {
-        SPropertyOperations.set(node, "style", "QUERY");
-        SNodeFactoryOperations.setNewChild(node, "query", "jetbrains.mps.lang.editor.structure.QueryFunction_FontStyle");
+      if ((SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(1782411230332735017l, -6324602048325217350l), 1186403751766l, 1220975211821l, "query")) == null)) {
+        SPropertyOperations.set(node, MetaAdapterFactory.getProperty(new UUID(1782411230332735017l, -6324602048325217350l), 1186403751766l, 1186403771423l, "style"), "QUERY");
+        SNodeFactoryOperations.setNewChild(node, MetaAdapterFactory.getContainmentLink(new UUID(1782411230332735017l, -6324602048325217350l), 1186403751766l, 1220975211821l, "query"), "jetbrains.mps.lang.editor.structure.QueryFunction_FontStyle");
       } else {
-        SNodeOperations.detachNode(SLinkOperations.getTarget(node, "query", true));
-        SPropertyOperations.set(node, "style", "PLAIN");
+        SNodeOperations.detachNode(SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(1782411230332735017l, -6324602048325217350l), 1186403751766l, 1220975211821l, "query")));
+        SPropertyOperations.set(node, MetaAdapterFactory.getProperty(new UUID(1782411230332735017l, -6324602048325217350l), 1186403751766l, 1186403771423l, "style"), "PLAIN");
       }
     }
     public IntentionDescriptor getDescriptor() {

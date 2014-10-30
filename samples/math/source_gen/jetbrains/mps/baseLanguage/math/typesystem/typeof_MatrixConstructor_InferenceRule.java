@@ -8,6 +8,8 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -16,7 +18,7 @@ public class typeof_MatrixConstructor_InferenceRule extends AbstractInferenceRul
   public typeof_MatrixConstructor_InferenceRule() {
   }
   public void applyRule(final SNode mc, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    DimensionUtil.checkDim(typeCheckingContext, SLinkOperations.getTargets(mc, "components", true), 0, new ArrayList<SNode>(), !(SPropertyOperations.getBoolean(mc, "column")), mc);
+    DimensionUtil.checkDim(typeCheckingContext, SLinkOperations.getChildren(mc, MetaAdapterFactory.getContainmentLink(new UUID(3676340747305173022l, -6911132873973321185l), 4815887568697232005l, 4815887568697232013l, "components")), 0, new ArrayList<SNode>(), !(SPropertyOperations.getBoolean(mc, MetaAdapterFactory.getProperty(new UUID(3676340747305173022l, -6911132873973321185l), 4815887568697232005l, 3498370411873418560l, "column"))), mc);
   }
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.baseLanguage.math.structure.MatrixConstructor";

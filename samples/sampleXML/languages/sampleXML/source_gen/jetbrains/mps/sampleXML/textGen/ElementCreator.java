@@ -5,6 +5,8 @@ package jetbrains.mps.sampleXML.textGen;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.textGen.SNodeTextGen;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import org.jdom.Element;
 import org.jdom.Document;
 import org.jdom.output.Format;
@@ -15,7 +17,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public abstract class ElementCreator {
   public static void byElement(SNode node, final SNodeTextGen textGen) {
-    SNode element = SLinkOperations.getTarget(node, "rootElement", true);
+    SNode element = SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(8588203744004229367l, -8746957436642952050l), 1225239603382l, 1225239603384l, "rootElement"));
     Element result = ElementCreator.createElement(element, textGen);
     Document document = new Document();
     document.setRootElement(result);
@@ -30,19 +32,19 @@ public abstract class ElementCreator {
     }
   }
   protected static Element createElement(SNode element, final SNodeTextGen textGen) {
-    Element result = new Element(SPropertyOperations.getString(element, "name"));
-    for (SNode attribute : SLinkOperations.getTargets(element, "attribute", true)) {
-      if (SPropertyOperations.getString(attribute, "value") != null) {
-        result.setAttribute(SPropertyOperations.getString(attribute, "name"), SPropertyOperations.getString(attribute, "value"));
+    Element result = new Element(SPropertyOperations.getString(element, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")));
+    for (SNode attribute : SLinkOperations.getChildren(element, MetaAdapterFactory.getContainmentLink(new UUID(8588203744004229367l, -8746957436642952050l), 1225239603385l, 1225239603386l, "attribute"))) {
+      if (SPropertyOperations.getString(attribute, MetaAdapterFactory.getProperty(new UUID(8588203744004229367l, -8746957436642952050l), 1225239603361l, 1225239603363l, "value")) != null) {
+        result.setAttribute(SPropertyOperations.getString(attribute, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")), SPropertyOperations.getString(attribute, MetaAdapterFactory.getProperty(new UUID(8588203744004229367l, -8746957436642952050l), 1225239603361l, 1225239603363l, "value")));
       }
     }
     boolean first = true;
-    for (SNode part : SLinkOperations.getTargets(element, "content", true)) {
+    for (SNode part : SLinkOperations.getChildren(element, MetaAdapterFactory.getContainmentLink(new UUID(8588203744004229367l, -8746957436642952050l), 1225239603385l, 1225239603387l, "content"))) {
       if (SNodeOperations.isInstanceOf(part, "jetbrains.mps.sampleXML.structure.Text")) {
         if (!(first)) {
           result.addContent("\n");
         }
-        result.addContent(SPropertyOperations.getString(SNodeOperations.cast(part, "jetbrains.mps.sampleXML.structure.Text"), "text"));
+        result.addContent(SPropertyOperations.getString(SNodeOperations.cast(part, "jetbrains.mps.sampleXML.structure.Text"), MetaAdapterFactory.getProperty(new UUID(8588203744004229367l, -8746957436642952050l), 1225239603393l, 1225239603394l, "text")));
       }
       if (SNodeOperations.isInstanceOf(part, "jetbrains.mps.sampleXML.structure.Element")) {
         result.addContent(ElementCreator.createElement(SNodeOperations.cast(part, "jetbrains.mps.sampleXML.structure.Element"), textGen));

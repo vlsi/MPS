@@ -6,12 +6,14 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.build.util.VisibleArtifacts;
 import jetbrains.mps.build.util.RequiredDependenciesBuilder;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 
 public class BuildSource_JavaLibraryExternalJarFolder_Behavior {
   public static void init(SNode thisNode) {
   }
   public static void virtual_fetchDependencies_5908258303322131137(SNode thisNode, VisibleArtifacts artifacts, RequiredDependenciesBuilder builder) {
-    SNode artifact = BuildSource_JavaExternalJarFolderRef_Behavior.call_getDependencyTarget_5610619299014531753(SLinkOperations.getTarget(thisNode, "extFolder", true), artifacts);
+    SNode artifact = BuildSource_JavaExternalJarFolderRef_Behavior.call_getDependencyTarget_5610619299014531753(SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 5610619299014531832l, 5610619299014531834l, "extFolder")), artifacts);
     if (artifact != null) {
       builder.addWithContent(artifact);
     }

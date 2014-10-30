@@ -16,6 +16,8 @@ import jetbrains.mps.openapi.editor.style.StyleRegistry;
 import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.nodeEditor.MPSFonts;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
@@ -63,7 +65,7 @@ public class KeyValueCommandPart_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private static boolean renderingCondition_4797dc_a1a(SNode node, EditorContext editorContext) {
-    return SPropertyOperations.getBoolean(node, "dash");
+    return SPropertyOperations.getBoolean(node, MetaAdapterFactory.getProperty(new UUID(-921973991802319051l, -8446196034130110353l), 889694274152177535l, 1616228152991918665l, "dash"));
   }
   private EditorCell createRefNode_4797dc_c0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);

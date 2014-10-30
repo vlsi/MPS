@@ -4,19 +4,21 @@ package jetbrains.mps.lang.test.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class NodesTestMethod_Behavior {
   public static void init(SNode thisNode) {
-    SLinkOperations.setTarget(thisNode, "returnType", SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.VoidType", null), true);
+    SLinkOperations.setTarget(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123132l, 1068580123133l, "returnType"), SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.VoidType", null));
   }
   public static SNode virtual_getTestCase_1216134500045(SNode thisNode) {
     return SNodeOperations.getAncestor(thisNode, "jetbrains.mps.lang.test.structure.NodesTestCase", false, false);
   }
   public static String virtual_getTestName_1216136419751(SNode thisNode) {
-    return "test_" + SPropertyOperations.getString(thisNode, "name");
+    return "test_" + SPropertyOperations.getString(thisNode, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"));
   }
   public static boolean virtual_isMpsStartRequired_3310779261129403089(SNode thisNode) {
     return true;

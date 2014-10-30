@@ -9,6 +9,8 @@ import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
@@ -18,7 +20,7 @@ public class check_StaticFieldDeclarationMustHaveInitializerInInterface_NonTypes
   public check_StaticFieldDeclarationMustHaveInitializerInInterface_NonTypesystemRule() {
   }
   public void applyRule(final SNode staticFieldDeclaration, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(staticFieldDeclaration), "jetbrains.mps.baseLanguage.structure.Interface") && (SLinkOperations.getTarget(staticFieldDeclaration, "initializer", true) == null)) {
+    if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(staticFieldDeclaration), "jetbrains.mps.baseLanguage.structure.Interface") && (SLinkOperations.getTarget(staticFieldDeclaration, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068431474542l, 1068431790190l, "initializer")) == null)) {
       {
         MessageTarget errorTarget = new NodeMessageTarget();
         IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(staticFieldDeclaration, "An initializer must be provided to a final field.", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1187415722601439417", null, errorTarget);

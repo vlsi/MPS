@@ -17,6 +17,8 @@ import jetbrains.mps.nodeEditor.cells.jetpad.DiagramCell;
 import jetbrains.mps.nodeEditor.cells.CellFinderUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.jetpad.projectional.view.View;
 
 @MPSLaunch
@@ -48,7 +50,7 @@ public class SelectPortQuery_Test extends BaseTransformationTest {
           EditorCell selectedCell = TestBody.this.getEditorComponent().getSelectedCell();
           Assert.assertTrue(selectedCell != null);
           DiagramCell diagramCell = CellFinderUtil.findChildByClass(TestBody.this.getEditorComponent().getRootCell(), DiagramCell.class, true);
-          descendantMapper.value = diagramCell.getRootMapper().getDescendantMapper(SPropertyOperations.getString(SNodeOperations.cast(TestBody.this.getNodeById("2278461409092334466"), "jetbrains.mps.lang.editor.diagram.testLanguage.structure.OutputPort"), "name"));
+          descendantMapper.value = diagramCell.getRootMapper().getDescendantMapper(SPropertyOperations.getString(SNodeOperations.cast(TestBody.this.getNodeById("2278461409092334466"), "jetbrains.mps.lang.editor.diagram.testLanguage.structure.OutputPort"), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")));
         }
       });
       Assert.assertTrue(descendantMapper.value != null && descendantMapper.value.getTarget() != null);

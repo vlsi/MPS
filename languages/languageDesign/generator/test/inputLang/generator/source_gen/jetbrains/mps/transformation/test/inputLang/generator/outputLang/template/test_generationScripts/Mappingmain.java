@@ -27,6 +27,8 @@ import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.generator.template.BaseMappingRuleContext;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.generator.template.MapRootRuleContext;
 import jetbrains.mps.generator.template.CreateRootRuleContext;
 import jetbrains.mps.generator.impl.DefaultTemplateContext;
@@ -99,7 +101,7 @@ public class Mappingmain implements TemplateMappingConfiguration {
         final SNode tnode2 = environment.createOutputNode("jetbrains.mps.transformation.test.outputLang.structure.OutputNode");
         try {
           environment.nodeCopied(context, tnode2, "tpl/r:00000000-0000-4000-0000-011c895905f6/1195172462490");
-          SNodeAccessUtil.setProperty(tnode2, "text", "<input option : 1>");
+          SNodeAccessUtil.setProperty(tnode2, MetaAdapterFactory.getProperty(new UUID(1547714798586184059l, -8557310053109408682l), 1195165132070l, 1195170441111l, "text"), "<input option : 1>");
         } finally {
         }
         tlist1 = TemplateUtil.singletonList(tnode2);
@@ -107,7 +109,7 @@ public class Mappingmain implements TemplateMappingConfiguration {
         final SNode tnode3 = environment.createOutputNode("jetbrains.mps.transformation.test.outputLang.structure.OutputNode");
         try {
           environment.nodeCopied(context, tnode3, "tpl/r:00000000-0000-4000-0000-011c895905f6/1195172359599");
-          SNodeAccessUtil.setProperty(tnode3, "text", "<input option : default>");
+          SNodeAccessUtil.setProperty(tnode3, MetaAdapterFactory.getProperty(new UUID(1547714798586184059l, -8557310053109408682l), 1195165132070l, 1195170441111l, "text"), "<input option : default>");
         } finally {
         }
         tlist1 = TemplateUtil.singletonList(tnode3);

@@ -6,11 +6,13 @@ import org.jetbrains.mps.openapi.model.SNode;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 
 public class MatchVariableReferenceRegexp_Behavior {
   public static void init(SNode thisNode) {
   }
   public static String virtual_getString_1222432436326(SNode thisNode, List<SNode> vars) {
-    return "\\" + (ListSequence.fromList(vars).indexOf(SLinkOperations.getTarget(thisNode, "match", false)) + 1);
+    return "\\" + (ListSequence.fromList(vars).indexOf(SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getReferenceLink(new UUID(-2688747624584492277l, -5722269945249396544l), 1174909099093l, 1174909113141l, "match"))) + 1);
   }
 }

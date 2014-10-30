@@ -31,6 +31,8 @@ import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import java.util.Iterator;
 import jetbrains.mps.baseLanguage.closures.runtime.YieldingIterator;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import javax.swing.SwingUtilities;
 import org.apache.log4j.Logger;
@@ -140,7 +142,7 @@ __switch__:
                         assert false : "Internal error";
                         return false;
                       case 2:
-                        this._2_label_it = ListSequence.fromList(SLinkOperations.getTargets(it, "mappingLabel", true)).iterator();
+                        this._2_label_it = ListSequence.fromList(SLinkOperations.getChildren(it, MetaAdapterFactory.getContainmentLink(new UUID(-5475912601019530992l, -8082971551085732881l), 1095416546421l, 1200911492601l, "mappingLabel"))).iterator();
                       case 3:
                         if (!(this._2_label_it.hasNext())) {
                           this.__CP__ = 1;
@@ -150,7 +152,7 @@ __switch__:
                         this.__CP__ = 4;
                         break;
                       case 5:
-                        if (isNotEmptyString(SPropertyOperations.getString(_2_label, "name"))) {
+                        if (isNotEmptyString(SPropertyOperations.getString(_2_label, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")))) {
                           this.__CP__ = 6;
                           break;
                         }
@@ -158,7 +160,7 @@ __switch__:
                         break;
                       case 7:
                         this.__CP__ = 3;
-                        this.yield(SPropertyOperations.getString(_2_label, "name"));
+                        this.yield(SPropertyOperations.getString(_2_label, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")));
                         return true;
                       case 0:
                         this.__CP__ = 2;

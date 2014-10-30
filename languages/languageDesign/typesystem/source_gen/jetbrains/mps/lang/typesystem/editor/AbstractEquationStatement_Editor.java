@@ -20,6 +20,8 @@ import jetbrains.mps.nodeEditor.cellMenu.BasicCellContext;
 import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
 import java.awt.Color;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_ReplaceNode_CustomNodeConcept;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.editor.runtime.cells.BigCellUtil;
@@ -69,7 +71,7 @@ public class AbstractEquationStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private static Color _StyleParameter_QueryFunction_ie6eqd_a0b0(EditorContext editorContext, SNode node) {
-    if (SPropertyOperations.getBoolean(node, "checkOnly")) {
+    if (SPropertyOperations.getBoolean(node, MetaAdapterFactory.getProperty(new UUID(8817443762339858024l, -6091446231697526094l), 1174660718586l, 1206359757216l, "checkOnly"))) {
       return Color.GRAY;
     } else {
       return Color.BLACK;

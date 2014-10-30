@@ -14,6 +14,8 @@ import jetbrains.mps.openapi.editor.cells.EditorCell;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import org.jetbrains.annotations.NotNull;
 import org.apache.log4j.Level;
 import jetbrains.mps.ide.editor.MPSEditorDataKeys;
@@ -50,7 +52,7 @@ public class InlineLocalVariable_Action extends BaseAction {
     }
     boolean result = SNodeOperations.isInstanceOf(((SNode) MapSequence.fromMap(_params).get("node")), "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration");
     if (!(result)) {
-      if (SNodeOperations.isInstanceOf(((SNode) MapSequence.fromMap(_params).get("node")), "jetbrains.mps.baseLanguage.structure.VariableReference") && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SNodeOperations.cast(((SNode) MapSequence.fromMap(_params).get("node")), "jetbrains.mps.baseLanguage.structure.VariableReference"), "variableDeclaration", false), "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration")) {
+      if (SNodeOperations.isInstanceOf(((SNode) MapSequence.fromMap(_params).get("node")), "jetbrains.mps.baseLanguage.structure.VariableReference") && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SNodeOperations.cast(((SNode) MapSequence.fromMap(_params).get("node")), "jetbrains.mps.baseLanguage.structure.VariableReference"), MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068498886296l, 1068581517664l, "variableDeclaration")), "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration")) {
 
         if (SNodeOperations.hasRole(((SNode) MapSequence.fromMap(_params).get("node")), "jetbrains.mps.baseLanguage.structure.BaseAssignmentExpression", "lValue")) {
           return false;
@@ -126,11 +128,11 @@ public class InlineLocalVariable_Action extends BaseAction {
             SNode localVariableDeclaration = SNodeOperations.cast(((SNode) MapSequence.fromMap(_params).get("node")), "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration");
             InlineVariableAssignmentRefactoring inlineVARef = new InlineVariableAssignmentRefactoring(localVariableDeclaration);
 
-            if ((SLinkOperations.getTarget(localVariableDeclaration, "initializer", true) == null)) {
+            if ((SLinkOperations.getTarget(localVariableDeclaration, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068431474542l, 1068431790190l, "initializer")) == null)) {
               isAvailable.value = false;
             }
 
-            String variableName = SPropertyOperations.getString(localVariableDeclaration, "name");
+            String variableName = SPropertyOperations.getString(localVariableDeclaration, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"));
             int nodesCount = ListSequence.fromList(inlineVARef.getNodesToRefactor()).count();
             if (nodesCount == 0) {
               infoMessage.value = "Variable " + variableName + " is never used";

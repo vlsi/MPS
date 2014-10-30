@@ -8,6 +8,8 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import java.util.List;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
@@ -28,8 +30,8 @@ public class MoveRefactoringUtils {
     } else {
       SNode concept = SNodeOperations.getConceptDeclaration(node);
       for (SNode link : ListSequence.fromList(BehaviorReflection.invokeNonVirtual((Class<List<SNode>>) ((Class) Object.class), SNodeOperations.getConceptDeclaration(container), "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration", "call_getLinkDeclarations_1213877394480", new Object[]{}))) {
-        if (SLinkOperations.getTarget(link, "target", false) == concept) {
-          container.addChild(SPropertyOperations.getString(link, "role"), node);
+        if (SLinkOperations.getTarget(link, MetaAdapterFactory.getReferenceLink(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489288298l, 1071599976176l, "target")) == concept) {
+          container.addChild(SPropertyOperations.getString(link, MetaAdapterFactory.getProperty(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489288298l, 1071599776563l, "role")), node);
         }
       }
     }

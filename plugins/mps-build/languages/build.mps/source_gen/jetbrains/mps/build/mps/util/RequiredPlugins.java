@@ -16,6 +16,8 @@ import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.LinkedHashSet;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.build.util.DependenciesHelper;
 
 public class RequiredPlugins {
@@ -66,8 +68,8 @@ public class RequiredPlugins {
   }
   private void collectDependencies(SNode plugin, Set<SNode> visited) {
     SetSequence.fromSet(visited).addElement(plugin);
-    for (SNode dependency : ListSequence.fromList(SLinkOperations.getTargets(plugin, "dependencies", true))) {
-      SNode dependencyPlugin = SLinkOperations.getTarget(dependency, "target", false);
+    for (SNode dependency : ListSequence.fromList(SLinkOperations.getChildren(plugin, MetaAdapterFactory.getContainmentLink(new UUID(934837630734519964l, -6831122735637083229l), 6592112598314498932l, 6592112598314499028l, "dependencies")))) {
+      SNode dependencyPlugin = SLinkOperations.getTarget(dependency, MetaAdapterFactory.getReferenceLink(new UUID(934837630734519964l, -6831122735637083229l), 6592112598314499027l, 6592112598314499066l, "target"));
       if (SNodeOperations.getContainingRoot(dependencyPlugin) != myRoot) {
         dependencyPlugin = SNodeOperations.as(DependenciesHelper.getOriginalNode(dependencyPlugin, myContext), "jetbrains.mps.build.mps.structure.BuildMps_IdeaPlugin");
         if (dependencyPlugin == null) {

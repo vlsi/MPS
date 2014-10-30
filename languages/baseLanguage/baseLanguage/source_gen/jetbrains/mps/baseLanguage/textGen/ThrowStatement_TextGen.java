@@ -6,6 +6,8 @@ import jetbrains.mps.textGen.SNodeTextGen;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.textGen.TraceInfoGenerationUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.apache.log4j.Level;
@@ -19,7 +21,7 @@ public class ThrowStatement_TextGen extends SNodeTextGen {
     }
     this.appendNewLine();
     this.appendWithIndent("throw ");
-    appendNode(SLinkOperations.getTarget(node, "throwable", true));
+    appendNode(SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1164991038168l, 1164991057263l, "throwable")));
     this.append(";");
     if (getBuffer().hasPositionsSupport()) {
       {

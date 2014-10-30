@@ -20,6 +20,8 @@ import java.util.HashSet;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
@@ -61,7 +63,7 @@ public class EditorCellIdScope extends FilteringScope {
     if (isExcluded(node)) {
       return null;
     }
-    return SPropertyOperations.getString(SNodeOperations.as(node, "jetbrains.mps.lang.editor.structure.EditorCellId"), "name");
+    return SPropertyOperations.getString(SNodeOperations.as(node, "jetbrains.mps.lang.editor.structure.EditorCellId"), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"));
   }
   @Override
   public boolean isExcluded(SNode node) {

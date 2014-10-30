@@ -12,6 +12,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SReference;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 
 @MPSLaunch
 public class SNodeGetReferenceOperation_Test extends BaseTransformationTest {
@@ -56,12 +58,12 @@ public class SNodeGetReferenceOperation_Test extends BaseTransformationTest {
       SReference rootContainerReference = SNodeOperations.getReference(SNodeOperations.cast(this.getNodeById("2906110183022122680"), "jetbrains.mps.lang.smodelTests.structure.ReferenceContainerSubConcept"), rootLinkDeclaration);
       Assert.assertEquals(SNodeOperations.cast(this.getNodeById("2906110183022122666"), "jetbrains.mps.lang.smodelTests.structure.Root"), SLinkOperations.getTargetNode(rootContainerReference));
       Assert.assertEquals(rootLinkDeclaration, SLinkOperations.findLinkDeclaration(rootContainerReference));
-      Assert.assertEquals(SPropertyOperations.getString(rootLinkDeclaration, "role"), SLinkOperations.getRole(rootContainerReference));
+      Assert.assertEquals(SPropertyOperations.getString(rootLinkDeclaration, MetaAdapterFactory.getProperty(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489288298l, 1071599776563l, "role")), SLinkOperations.getRole(rootContainerReference));
       Assert.assertNotNull(SLinkOperations.getResolveInfo(rootContainerReference));
       SReference leftChildReference = SNodeOperations.getReference(SNodeOperations.cast(this.getNodeById("2906110183022122680"), "jetbrains.mps.lang.smodelTests.structure.ReferenceContainerSubConcept"), SLinkOperations.findLinkDeclaration("jetbrains.mps.lang.smodelTests.structure.ReferenceContainer", "leftChild"));
       Assert.assertEquals(SNodeOperations.cast(this.getNodeById("2906110183022122667"), "jetbrains.mps.lang.smodelTests.structure.Child"), SLinkOperations.getTargetNode(leftChildReference));
       Assert.assertEquals(SLinkOperations.findLinkDeclaration("jetbrains.mps.lang.smodelTests.structure.ReferenceContainer", "leftChild"), SLinkOperations.findLinkDeclaration(leftChildReference));
-      Assert.assertEquals(SPropertyOperations.getString(SLinkOperations.findLinkDeclaration("jetbrains.mps.lang.smodelTests.structure.ReferenceContainer", "leftChild"), "role"), SLinkOperations.getRole(leftChildReference));
+      Assert.assertEquals(SPropertyOperations.getString(SLinkOperations.findLinkDeclaration("jetbrains.mps.lang.smodelTests.structure.ReferenceContainer", "leftChild"), MetaAdapterFactory.getProperty(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489288298l, 1071599776563l, "role")), SLinkOperations.getRole(leftChildReference));
       Assert.assertNotNull(SLinkOperations.getResolveInfo(leftChildReference));
     }
     public void test_bySpecializedLinkDeclaration() throws Exception {
@@ -71,7 +73,7 @@ public class SNodeGetReferenceOperation_Test extends BaseTransformationTest {
       SReference refByOriginalLink = SNodeOperations.getReference(SNodeOperations.cast(this.getNodeById("2906110183022122680"), "jetbrains.mps.lang.smodelTests.structure.ReferenceContainerSubConcept"), SLinkOperations.findLinkDeclaration("jetbrains.mps.lang.smodelTests.structure.ReferenceContainer", "rightChild"));
       Assert.assertEquals(SNodeOperations.cast(this.getNodeById("2906110183022122670"), "jetbrains.mps.lang.smodelTests.structure.ChildSubConcept"), SLinkOperations.getTargetNode(refByOriginalLink));
       Assert.assertEquals(SLinkOperations.findLinkDeclaration("jetbrains.mps.lang.smodelTests.structure.ReferenceContainer", "rightChild"), SLinkOperations.findLinkDeclaration(refByOriginalLink));
-      Assert.assertEquals(SPropertyOperations.getString(SLinkOperations.findLinkDeclaration("jetbrains.mps.lang.smodelTests.structure.ReferenceContainer", "rightChild"), "role"), SLinkOperations.getRole(refByOriginalLink));
+      Assert.assertEquals(SPropertyOperations.getString(SLinkOperations.findLinkDeclaration("jetbrains.mps.lang.smodelTests.structure.ReferenceContainer", "rightChild"), MetaAdapterFactory.getProperty(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489288298l, 1071599776563l, "role")), SLinkOperations.getRole(refByOriginalLink));
       Assert.assertNotNull(SLinkOperations.getResolveInfo(refByOriginalLink));
       SReference refBySpecializedLink = SNodeOperations.getReference(SNodeOperations.cast(this.getNodeById("2906110183022122680"), "jetbrains.mps.lang.smodelTests.structure.ReferenceContainerSubConcept"), SLinkOperations.findLinkDeclaration("jetbrains.mps.lang.smodelTests.structure.ReferenceContainerSubConcept", "specializedRightChild"));
       Assert.assertEquals(refByOriginalLink, refBySpecializedLink);

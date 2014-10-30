@@ -9,6 +9,8 @@ import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
@@ -23,7 +25,7 @@ public class RepetitionCheck_NonTypesystemRule extends AbstractNonTypesystemRule
       return;
     }
     if (SNodeOperations.getConceptDeclaration(command) == SNodeOperations.getConceptDeclaration(SNodeOperations.getNextSibling(command))) {
-      if (SNodeOperations.isInstanceOf(command, "jetbrains.mps.samples.Kaja.structure.RoutineCall") && SLinkOperations.getTarget(SNodeOperations.cast(command, "jetbrains.mps.samples.Kaja.structure.RoutineCall"), "definition", false) != SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getNextSibling(command), "jetbrains.mps.samples.Kaja.structure.RoutineCall"), "definition", false)) {
+      if (SNodeOperations.isInstanceOf(command, "jetbrains.mps.samples.Kaja.structure.RoutineCall") && SLinkOperations.getTarget(SNodeOperations.cast(command, "jetbrains.mps.samples.Kaja.structure.RoutineCall"), MetaAdapterFactory.getReferenceLink(new UUID(331587165301851084l, -4784639992745830411l), 3308300503039700882l, 3308300503039730636l, "definition")) != SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getNextSibling(command), "jetbrains.mps.samples.Kaja.structure.RoutineCall"), MetaAdapterFactory.getReferenceLink(new UUID(331587165301851084l, -4784639992745830411l), 3308300503039700882l, 3308300503039730636l, "definition"))) {
         return;
       }
       {

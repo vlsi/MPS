@@ -16,6 +16,8 @@ import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.smodel.ConceptDeclarationLookup;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import java.util.List;
 import java.util.Set;
@@ -96,8 +98,8 @@ public class SModelUtil {
     });
   }
   public static SNode getGenuineLinkDeclaration(SNode linkDeclaration) {
-    while (linkDeclaration != null && SLinkOperations.getTarget(linkDeclaration, "specializedLink", false) != null) {
-      linkDeclaration = SLinkOperations.getTarget(linkDeclaration, "specializedLink", false);
+    while (linkDeclaration != null && SLinkOperations.getTarget(linkDeclaration, MetaAdapterFactory.getReferenceLink(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489288298l, 1071599698500l, "specializedLink")) != null) {
+      linkDeclaration = SLinkOperations.getTarget(linkDeclaration, MetaAdapterFactory.getReferenceLink(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489288298l, 1071599698500l, "specializedLink"));
     }
     return linkDeclaration;
   }
@@ -106,7 +108,7 @@ public class SModelUtil {
     if (genLinkDecl == null) {
       return null;
     }
-    return SPropertyOperations.getString(genLinkDecl, "role");
+    return SPropertyOperations.getString(genLinkDecl, MetaAdapterFactory.getProperty(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489288298l, 1071599776563l, "role"));
   }
   public static List<SNode> getDirectSuperInterfacesAndTheirSupers(SNode concept) {
     Set<SNode> result = SetSequence.fromSet(new LinkedHashSet<SNode>());
@@ -123,20 +125,20 @@ public class SModelUtil {
     List<SNode> result = ListSequence.fromList(new ArrayList<SNode>());
     if (SNodeOperations.isInstanceOf(concept, "jetbrains.mps.lang.structure.structure.ConceptDeclaration")) {
       SNode conceptDecl = (SNode) concept;
-      SNode extended = SLinkOperations.getTarget(conceptDecl, "extends", false);
+      SNode extended = SLinkOperations.getTarget(conceptDecl, MetaAdapterFactory.getReferenceLink(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489090640l, 1071489389519l, "extends"));
       if (extended != null) {
         ListSequence.fromList(result).addElement(extended);
       }
-      for (SNode ref : ListSequence.fromList(SLinkOperations.getTargets(conceptDecl, "implements", true))) {
-        if (SLinkOperations.getTarget(ref, "intfc", false) != null) {
-          ListSequence.fromList(result).addElement(SLinkOperations.getTarget(ref, "intfc", false));
+      for (SNode ref : ListSequence.fromList(SLinkOperations.getChildren(conceptDecl, MetaAdapterFactory.getContainmentLink(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489090640l, 1169129564478l, "implements")))) {
+        if (SLinkOperations.getTarget(ref, MetaAdapterFactory.getReferenceLink(new UUID(-4094437568663370681l, -8968368868337559369l), 1169127622168l, 1169127628841l, "intfc")) != null) {
+          ListSequence.fromList(result).addElement(SLinkOperations.getTarget(ref, MetaAdapterFactory.getReferenceLink(new UUID(-4094437568663370681l, -8968368868337559369l), 1169127622168l, 1169127628841l, "intfc")));
         }
       }
     } else {
       SNode intConceptDecl = (SNode) concept;
-      for (SNode ref : ListSequence.fromList(SLinkOperations.getTargets(intConceptDecl, "extends", true))) {
-        if (SLinkOperations.getTarget(ref, "intfc", false) != null) {
-          ListSequence.fromList(result).addElement(SLinkOperations.getTarget(ref, "intfc", false));
+      for (SNode ref : ListSequence.fromList(SLinkOperations.getChildren(intConceptDecl, MetaAdapterFactory.getContainmentLink(new UUID(-4094437568663370681l, -8968368868337559369l), 1169125989551l, 1169127546356l, "extends")))) {
+        if (SLinkOperations.getTarget(ref, MetaAdapterFactory.getReferenceLink(new UUID(-4094437568663370681l, -8968368868337559369l), 1169127622168l, 1169127628841l, "intfc")) != null) {
+          ListSequence.fromList(result).addElement(SLinkOperations.getTarget(ref, MetaAdapterFactory.getReferenceLink(new UUID(-4094437568663370681l, -8968368868337559369l), 1169127622168l, 1169127628841l, "intfc")));
         }
       }
     }
@@ -177,26 +179,26 @@ public class SModelUtil {
     return ConceptRegistry.getInstance().getConceptDescriptor(fromFqName).isAssignableTo(toFqName);
   }
   public static SNode getGenuineLinkSourceCardinality(SNode linkDecl) {
-    return SEnumOperations.enumMemberForValue(SEnumOperations.getEnum("r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)", "Cardinality"), SPropertyOperations.getString_def(getGenuineLinkDeclaration(linkDecl), "sourceCardinality", "0..1"));
+    return SEnumOperations.enumMemberForValue(SEnumOperations.getEnum("r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)", "Cardinality"), SPropertyOperations.getString_def(getGenuineLinkDeclaration(linkDecl), MetaAdapterFactory.getProperty(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489288298l, 1071599893252l, "sourceCardinality"), "0..1"));
   }
   public static boolean isAcceptableTarget(SNode linkDeclaration, SNode referentNode) {
-    SNode linkTargetConcept = SLinkOperations.getTarget(linkDeclaration, "target", false);
+    SNode linkTargetConcept = SLinkOperations.getTarget(linkDeclaration, MetaAdapterFactory.getReferenceLink(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489288298l, 1071599976176l, "target"));
     return isAssignableConcept(referentNode.getConcept().getQualifiedName(), NameUtil.nodeFQName(linkTargetConcept));
   }
   public static boolean isMultipleLinkDeclaration(@NotNull SNode linkDeclaration) {
-    return SPropertyOperations.hasValue(linkDeclaration, "sourceCardinality", "0..n", "0..1") || SPropertyOperations.hasValue(linkDeclaration, "sourceCardinality", "1..n", "0..1");
+    return SPropertyOperations.hasValue(linkDeclaration, MetaAdapterFactory.getProperty(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489288298l, 1071599893252l, "sourceCardinality"), "0..n", "0..1") || SPropertyOperations.hasValue(linkDeclaration, MetaAdapterFactory.getProperty(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489288298l, 1071599893252l, "sourceCardinality"), "1..n", "0..1");
   }
   public static boolean isAggregation(@NotNull SNode linkDeclaration) {
-    return SPropertyOperations.hasValue(linkDeclaration, "metaClass", "aggregation", "reference");
+    return SPropertyOperations.hasValue(linkDeclaration, MetaAdapterFactory.getProperty(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489288298l, 1071599937831l, "metaClass"), "aggregation", "reference");
   }
   public static SNode getLinkDeclarationTarget(SNode linkDeclaration) {
-    return SLinkOperations.getTarget(linkDeclaration, "target", false);
+    return SLinkOperations.getTarget(linkDeclaration, MetaAdapterFactory.getReferenceLink(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489288298l, 1071599976176l, "target"));
   }
   public static SNode getLinkDeclarationSpecializedLink(SNode link) {
-    return SLinkOperations.getTarget(link, "specializedLink", false);
+    return SLinkOperations.getTarget(link, MetaAdapterFactory.getReferenceLink(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489288298l, 1071599698500l, "specializedLink"));
   }
   public static String getLinkDeclarationRole(SNode link) {
-    return SPropertyOperations.getString(link, "role");
+    return SPropertyOperations.getString(link, MetaAdapterFactory.getProperty(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489288298l, 1071599776563l, "role"));
   }
   private static boolean eq_74see4_a0a0o(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);

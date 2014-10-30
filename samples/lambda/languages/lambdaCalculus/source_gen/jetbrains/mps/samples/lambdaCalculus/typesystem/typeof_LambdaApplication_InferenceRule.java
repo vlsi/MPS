@@ -11,6 +11,8 @@ import jetbrains.mps.typesystem.inference.EquationInfo;
 import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.SModelUtil_new;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
@@ -28,7 +30,7 @@ public class typeof_LambdaApplication_InferenceRule extends AbstractInferenceRul
     }
     SNode result = typeCheckingContext.getRepresentative(R_typevar_247065157659474768);
     List<SNode> reversedNodes = new ArrayList<SNode>();
-    for (SNode node : SLinkOperations.getTargets(lambdaApplication, "argument", true)) {
+    for (SNode node : SLinkOperations.getChildren(lambdaApplication, MetaAdapterFactory.getContainmentLink(new UUID(8979658720047614716l, -5913038370385483627l), 4022026349914762717l, 4022026349914762721l, "argument"))) {
       ListSequence.fromList(reversedNodes).insertElement(0, node);
     }
     for (SNode node : reversedNodes) {
@@ -41,7 +43,7 @@ public class typeof_LambdaApplication_InferenceRule extends AbstractInferenceRul
       result = _quotation_createNode_uumt54_a0c0f0b(typeCheckingContext.getRepresentative(D_typevar_247065157659474805), result);
     }
     {
-      SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(lambdaApplication, "function", true);
+      SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(lambdaApplication, MetaAdapterFactory.getContainmentLink(new UUID(8979658720047614716l, -5913038370385483627l), 4022026349914762717l, 4022026349914762720l, "function"));
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:8c01d5e0-82c3-43e7-9986-af954df6cb8b(jetbrains.mps.samples.lambdaCalculus.typesystem)", "247065157659474826", 0, null);
       typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:8c01d5e0-82c3-43e7-9986-af954df6cb8b(jetbrains.mps.samples.lambdaCalculus.typesystem)", "247065157659474830", true), (SNode) result, _info_12389875345);
     }

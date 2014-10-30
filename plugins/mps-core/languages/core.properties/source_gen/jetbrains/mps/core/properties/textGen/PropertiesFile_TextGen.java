@@ -7,6 +7,8 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.textGen.TraceInfoGenerationUtil;
 import jetbrains.mps.textGen.TextGen;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.apache.log4j.Level;
@@ -20,7 +22,7 @@ public class PropertiesFile_TextGen extends SNodeTextGen {
     }
     getBuffer().putUserObject(TextGen.OUTPUT_ENCODING, "ISO-8859-1");
     {
-      Iterable<SNode> collection = SLinkOperations.getTargets(node, "lines", true);
+      Iterable<SNode> collection = SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(new UUID(6411313803625843570l, -6660548049992482726l), 3961775458390517588l, 3961775458390522563l, "lines"));
       for (SNode item : collection) {
         appendNode(item);
       }

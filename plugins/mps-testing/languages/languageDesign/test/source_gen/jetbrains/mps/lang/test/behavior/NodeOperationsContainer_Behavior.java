@@ -5,6 +5,8 @@ package jetbrains.mps.lang.test.behavior;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.errors.IErrorReporter;
@@ -14,7 +16,7 @@ public class NodeOperationsContainer_Behavior {
   public static void init(SNode thisNode) {
   }
   public static void call_detachAllErrorOperations_5587533744543326483(SNode thisNode) {
-    ListSequence.fromList(SLinkOperations.getTargets(thisNode, "nodeOperations", true)).removeWhere(new IWhereFilter<SNode>() {
+    ListSequence.fromList(SLinkOperations.getChildren(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-8825571760360698496l, -7431307307277756308l), 1215603922101l, 1215604436604l, "nodeOperations"))).removeWhere(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SNodeOperations.isInstanceOf(it, "jetbrains.mps.lang.test.structure.IChecksRules");
       }
@@ -29,6 +31,6 @@ public class NodeOperationsContainer_Behavior {
         BehaviorReflection.invokeVirtual(Void.class, node, "virtual_attachReference_2893471348147987863", new Object[]{reference});
       }
     }
-    ListSequence.fromList(SLinkOperations.getTargets(thisNode, "nodeOperations", true)).addElement(newNode);
+    ListSequence.fromList(SLinkOperations.getChildren(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-8825571760360698496l, -7431307307277756308l), 1215603922101l, 1215604436604l, "nodeOperations"))).addElement(newNode);
   }
 }

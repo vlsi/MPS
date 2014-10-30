@@ -19,6 +19,8 @@ import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.ide.platform.refactoring.RenameMethodDialog;
 import org.jetbrains.mps.openapi.model.SNodeUtil;
 import jetbrains.mps.ide.platform.refactoring.RefactoringAccess;
@@ -86,9 +88,9 @@ public class RenameMethod_Action extends BaseAction {
       modelAccess.runReadAction(new Runnable() {
         public void run() {
           if (SNodeOperations.isInstanceOf(((SNode) MapSequence.fromMap(_params).get("target")), "jetbrains.mps.baseLanguage.structure.IMethodCall")) {
-            oldName.value = SPropertyOperations.getString(SLinkOperations.getTarget(SNodeOperations.cast(((SNode) MapSequence.fromMap(_params).get("target")), "jetbrains.mps.baseLanguage.structure.IMethodCall"), "baseMethodDeclaration", false), "name");
+            oldName.value = SPropertyOperations.getString(SLinkOperations.getTarget(SNodeOperations.cast(((SNode) MapSequence.fromMap(_params).get("target")), "jetbrains.mps.baseLanguage.structure.IMethodCall"), MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, 1068499141037l, "baseMethodDeclaration")), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"));
           } else if (SNodeOperations.isInstanceOf(((SNode) MapSequence.fromMap(_params).get("target")), "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration")) {
-            oldName.value = SPropertyOperations.getString(SNodeOperations.cast(((SNode) MapSequence.fromMap(_params).get("target")), "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"), "name");
+            oldName.value = SPropertyOperations.getString(SNodeOperations.cast(((SNode) MapSequence.fromMap(_params).get("target")), "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"));
           }
         }
       });

@@ -13,6 +13,8 @@ import jetbrains.mps.smodel.SNodePointer;
 import java.util.Collections;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.util.SNodeOperations;
 import java.util.Map;
@@ -67,8 +69,8 @@ public class ChangeNonEmptyProperty_Intention implements IntentionFactory {
     }
     public void execute(final SNode node, final EditorContext editorContext) {
       SNode property = SNodeFactoryOperations.createNewNode("jetbrains.mps.lang.editor.structure.CellModel_Property", null);
-      SLinkOperations.setTarget(property, "relationDeclaration", SLinkOperations.getTarget(node, "relationDeclaration", false), false);
-      SLinkOperations.setTarget(node, "relationDeclaration", null, false);
+      SLinkOperations.setTarget(property, MetaAdapterFactory.getReferenceLink(new UUID(1782411230332735017l, -6324602048325217350l), 1139848536355l, 1140103550593l, "relationDeclaration"), SLinkOperations.getTarget(node, MetaAdapterFactory.getReferenceLink(new UUID(1782411230332735017l, -6324602048325217350l), 1139848536355l, 1140103550593l, "relationDeclaration")));
+      SLinkOperations.setTarget(node, MetaAdapterFactory.getReferenceLink(new UUID(1782411230332735017l, -6324602048325217350l), 1139848536355l, 1140103550593l, "relationDeclaration"), null);
       for (SNode child : ListSequence.fromList(SNodeOperations.getChildren(node))) {
         String role = child.getRoleInParent();
         node.removeChild(child);

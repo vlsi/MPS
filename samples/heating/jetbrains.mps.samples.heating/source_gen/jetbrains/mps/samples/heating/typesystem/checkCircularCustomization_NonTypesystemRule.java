@@ -10,6 +10,8 @@ import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
@@ -22,8 +24,8 @@ public class checkCircularCustomization_NonTypesystemRule extends AbstractNonTyp
   public void applyRule(final SNode dailyPlan, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     SNode plan = dailyPlan;
     List<SNode> visitedPlans = new ArrayList<SNode>();
-    while ((SLinkOperations.getTarget(plan, "customizes", true) != null)) {
-      plan = SLinkOperations.getTarget(SLinkOperations.getTarget(plan, "customizes", true), "target", false);
+    while ((SLinkOperations.getTarget(plan, MetaAdapterFactory.getContainmentLink(new UUID(-6352760259037542597l, -7435837320858277567l), 5063359128232717391l, 935069066462790136l, "customizes")) != null)) {
+      plan = SLinkOperations.getTarget(SLinkOperations.getTarget(plan, MetaAdapterFactory.getContainmentLink(new UUID(-6352760259037542597l, -7435837320858277567l), 5063359128232717391l, 935069066462790136l, "customizes")), MetaAdapterFactory.getReferenceLink(new UUID(-6352760259037542597l, -7435837320858277567l), 935069066462619696l, 935069066462619697l, "target"));
       if (eq_2rs9bj_a0b0c0b(plan, dailyPlan)) {
         {
           MessageTarget errorTarget = new NodeMessageTarget();

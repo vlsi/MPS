@@ -8,6 +8,8 @@ import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.editor.runtime.style.StyledTextPrinter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 
@@ -23,7 +25,7 @@ public class BaseMethodParameterInformationQuery implements ParametersInformatio
     BaseMethodParameterInformationQueryUtil.fillPresentation(parameterObject, this.getSelectedActualArgument(editorContext), styledText);
   }
   public boolean isMethodCurrent(SNode node, EditorContext editorContext, SNode parameterObject) {
-    return SLinkOperations.getTarget(node, "baseMethodDeclaration", false) == parameterObject;
+    return SLinkOperations.getTarget(node, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, 1068499141037l, "baseMethodDeclaration")) == parameterObject;
   }
   private SNode getSelectedActualArgument(EditorContext editorContext) {
     SNode selectedNode = editorContext.getSelectedNode();

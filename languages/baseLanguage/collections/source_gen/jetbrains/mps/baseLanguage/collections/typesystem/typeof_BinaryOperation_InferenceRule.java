@@ -8,6 +8,8 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.smodel.SModelUtil_new;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
@@ -18,7 +20,7 @@ public class typeof_BinaryOperation_InferenceRule extends AbstractInferenceRule_
   }
   public void applyRule(final SNode op, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     SNode lValue = RulesFunctions_Collections.getInput(typeCheckingContext, op);
-    SNode rValue = SLinkOperations.getTarget(op, "rightExpression", true);
+    SNode rValue = SLinkOperations.getTarget(op, MetaAdapterFactory.getContainmentLink(new UUID(-8968771020793164004l, -7182180101671965361l), 1176906603202l, 1176906787974l, "rightExpression"));
     final SNode elementType_typevar_1184848397564 = typeCheckingContext.createNewRuntimeTypesVariable();
     final SNode sequenceType_typevar_1184848409899 = typeCheckingContext.createNewRuntimeTypesVariable();
     {

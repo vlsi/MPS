@@ -11,6 +11,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.baseLanguage.util.OverridingMethodsFinder;
 import java.util.Set;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
@@ -26,9 +28,9 @@ public class check_EnumConstantOverrideAnnotation_NonTypesystemRule extends Abst
     }
     OverridingMethodsFinder finder = new OverridingMethodsFinder(SNodeOperations.cast(SNodeOperations.getParent(enumConstant), "jetbrains.mps.baseLanguage.structure.EnumClass"), enumConstant);
     Set<SNode> overridingMethods = finder.getOverridingMethods();
-    for (SNode method : SLinkOperations.getTargets(enumConstant, "method", true)) {
-      for (SNode annotationInstance : SLinkOperations.getTargets(method, "annotation", true)) {
-        if (SLinkOperations.getTarget(annotationInstance, "annotation", false) == SNodeOperations.getNode("6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)", "~Override") && !(SetSequence.fromSet(overridingMethods).contains(method))) {
+    for (SNode method : SLinkOperations.getChildren(enumConstant, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1083245299891l, 492581319488141108l, "method"))) {
+      for (SNode annotationInstance : SLinkOperations.getChildren(method, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1188208481402l, 1188208488637l, "annotation"))) {
+        if (SLinkOperations.getTarget(annotationInstance, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1188207840427l, 1188208074048l, "annotation")) == SNodeOperations.getNode("6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)", "~Override") && !(SetSequence.fromSet(overridingMethods).contains(method))) {
           {
             MessageTarget errorTarget = new NodeMessageTarget();
             IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(annotationInstance, "Method does not override method from its superclass", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "6941917182338144464", null, errorTarget);

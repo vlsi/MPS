@@ -8,6 +8,8 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.smodel.SModelUtil_new;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
@@ -16,7 +18,7 @@ public class supertypesOf_set_collection_SubtypingRule extends SubtypingRule_Run
   public supertypesOf_set_collection_SubtypingRule() {
   }
   public SNode getSubOrSuperType(SNode st, TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    return _quotation_createNode_6kyuqk_a0a1(SLinkOperations.getTarget(st, "elementType", true));
+    return _quotation_createNode_6kyuqk_a0a1(SLinkOperations.getTarget(st, MetaAdapterFactory.getContainmentLink(new UUID(-8968771020793164004l, -7182180101671965361l), 1226511727824l, 1226511765987l, "elementType")));
   }
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.baseLanguage.collections.structure.SetType";

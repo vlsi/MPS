@@ -11,6 +11,8 @@ import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.search.IsInstanceCondition;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 
 public class ListVarScope extends SearchScopeWithNode {
   public ListVarScope(SNode enclosingNode) {
@@ -32,7 +34,7 @@ public class ListVarScope extends SearchScopeWithNode {
       if ((statementList == null)) {
         return result;
       }
-      for (SNode aStatement : SLinkOperations.getTargets(statementList, "statement", true)) {
+      for (SNode aStatement : SLinkOperations.getChildren(statementList, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123136l, 1068581517665l, "statement"))) {
         if (aStatement == statement) {
           break;
         }

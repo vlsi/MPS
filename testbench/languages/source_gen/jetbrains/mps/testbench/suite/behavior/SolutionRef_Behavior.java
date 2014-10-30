@@ -6,14 +6,16 @@ import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 
 public class SolutionRef_Behavior {
   public static void init(SNode thisNode) {
   }
   public static SModuleReference virtual_moduleReference_1280144168199513544(SNode thisNode) {
-    return new ModuleReference(SPropertyOperations.getString(thisNode, "moduleFQName"), SPropertyOperations.getString(thisNode, "moduleID"));
+    return new ModuleReference(SPropertyOperations.getString(thisNode, MetaAdapterFactory.getProperty(new UUID(-3186960361546692645l, -5977911984495255467l), 1280144168199506908l, 1280144168199506909l, "moduleFQName")), SPropertyOperations.getString(thisNode, MetaAdapterFactory.getProperty(new UUID(-3186960361546692645l, -5977911984495255467l), 1280144168199506908l, 1280144168199506910l, "moduleID")));
   }
   public static String virtual_presentation_1280144168199745474(SNode thisNode) {
-    return SPropertyOperations.getString(thisNode, "moduleFQName");
+    return SPropertyOperations.getString(thisNode, MetaAdapterFactory.getProperty(new UUID(-3186960361546692645l, -5977911984495255467l), 1280144168199506908l, 1280144168199506909l, "moduleFQName"));
   }
 }

@@ -11,6 +11,8 @@ import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.pattern.IMatchingPattern;
@@ -30,15 +32,15 @@ public class Queries {
       assert javaLangJavaStubModelDescriptor != null;
       SModel javaLang = javaLangJavaStubModelDescriptor;
       SNode stringClass = SModelOperations.getRootByName(javaLang, "String");
-      if (SNodeOperations.isInstanceOf(leftType, "jetbrains.mps.baseLanguage.structure.ClassifierType") && SLinkOperations.getTarget((SNodeOperations.cast(leftType, "jetbrains.mps.baseLanguage.structure.ClassifierType")), "classifier", false) == stringClass || SNodeOperations.isInstanceOf(rightType, "jetbrains.mps.baseLanguage.structure.ClassifierType") && SLinkOperations.getTarget((SNodeOperations.cast(rightType, "jetbrains.mps.baseLanguage.structure.ClassifierType")), "classifier", false) == stringClass) {
+      if (SNodeOperations.isInstanceOf(leftType, "jetbrains.mps.baseLanguage.structure.ClassifierType") && SLinkOperations.getTarget((SNodeOperations.cast(leftType, "jetbrains.mps.baseLanguage.structure.ClassifierType")), MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier")) == stringClass || SNodeOperations.isInstanceOf(rightType, "jetbrains.mps.baseLanguage.structure.ClassifierType") && SLinkOperations.getTarget((SNodeOperations.cast(rightType, "jetbrains.mps.baseLanguage.structure.ClassifierType")), MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier")) == stringClass) {
         SNode classifierType = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ClassifierType", null);
-        SLinkOperations.setTarget(classifierType, "classifier", SNodeOperations.cast(stringClass, "jetbrains.mps.baseLanguage.structure.Classifier"), false);
+        SLinkOperations.setTarget(classifierType, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier"), SNodeOperations.cast(stringClass, "jetbrains.mps.baseLanguage.structure.Classifier"));
         return classifierType;
       }
     }
     if (leastCommonSupertypes.isEmpty()) {
       SNode runtimeErrorType = SConceptOperations.createNewNode("jetbrains.mps.lang.typesystem.structure.RuntimeErrorType", null);
-      SPropertyOperations.set(runtimeErrorType, "errorText", "incompatible types");
+      SPropertyOperations.set(runtimeErrorType, MetaAdapterFactory.getProperty(new UUID(8817443762339858024l, -6091446231697526094l), 1185281562361l, 1185281562362l, "errorText"), "incompatible types");
       return runtimeErrorType;
     }
     SNode type = leastCommonSupertypes.iterator().next();

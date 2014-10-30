@@ -13,6 +13,8 @@ import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
@@ -43,7 +45,7 @@ public class MessageComponent implements ConceptEditorComponent {
     return editorCell;
   }
   private static boolean renderingCondition_8rtror_a0a(SNode node, EditorContext editorContext) {
-    return (SLinkOperations.getTarget(node, "message", true) != null);
+    return (SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-714818927241248010l, -5076282167675141386l), 1172075514136l, 1172075534298l, "message")) != null);
   }
   private EditorCell createRefNode_8rtror_a0a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);

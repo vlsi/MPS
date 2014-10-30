@@ -6,6 +6,8 @@ import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
@@ -20,13 +22,13 @@ public class ExtensionPointDeclaration_Behavior {
     if (atIdx >= 0) {
       moduleFqName = moduleFqName.substring(0, atIdx);
     }
-    return moduleFqName + "." + SPropertyOperations.getString(thisNode, "extensionName");
+    return moduleFqName + "." + SPropertyOperations.getString(thisNode, MetaAdapterFactory.getProperty(new UUID(-4609422916437195432l, -4690047243382094519l), 3729007189729192406l, 5911785528834333590l, "extensionName"));
   }
   public static SNode call_getObjectClassifierType_6778078592468845406(SNode thisNode) {
-    if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(thisNode, "objectType", true), "jetbrains.mps.baseLanguageInternal.structure.InternalClassifierType")) {
-      return SNodeOperations.cast(SLinkOperations.getTarget(thisNode, "objectType", true), "jetbrains.mps.baseLanguage.structure.ClassifierType");
+    if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-4609422916437195432l, -4690047243382094519l), 3729007189729192406l, 8029776554053057803l, "objectType")), "jetbrains.mps.baseLanguageInternal.structure.InternalClassifierType")) {
+      return SNodeOperations.cast(SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-4609422916437195432l, -4690047243382094519l), 3729007189729192406l, 8029776554053057803l, "objectType")), "jetbrains.mps.baseLanguage.structure.ClassifierType");
     } else {
-      return TypeChecker.getInstance().getRuntimeSupport().coerce_(SLinkOperations.getTarget(thisNode, "objectType", true), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.structure.ClassifierType"), true);
+      return TypeChecker.getInstance().getRuntimeSupport().coerce_(SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-4609422916437195432l, -4690047243382094519l), 3729007189729192406l, 8029776554053057803l, "objectType")), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.structure.ClassifierType"), true);
     }
   }
 }

@@ -6,11 +6,13 @@ import org.jetbrains.mps.openapi.model.SNode;
 import java.util.List;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 
 public class PredefinedSymbolClassRegexp_Behavior {
   public static void init(SNode thisNode) {
   }
   public static String virtual_getString_1222432436326(SNode thisNode, List<SNode> vars) {
-    return SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, "symbolClass", false), "name");
+    return SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getReferenceLink(new UUID(-2688747624584492277l, -5722269945249396544l), 1174555732504l, 1174555843709l, "symbolClass")), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"));
   }
 }

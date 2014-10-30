@@ -15,6 +15,8 @@ import jetbrains.mps.errors.MessageStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 
@@ -49,7 +51,7 @@ public abstract class SpecificChecker {
     if (container == null) {
       return true;
     }
-    for (SNode property : SLinkOperations.getTargets(container, "nodeOperations", true)) {
+    for (SNode property : SLinkOperations.getChildren(container, MetaAdapterFactory.getContainmentLink(new UUID(-8825571760360698496l, -7431307307277756308l), 1215603922101l, 1215604436604l, "nodeOperations"))) {
       if (SNodeOperations.isInstanceOf(property, "jetbrains.mps.lang.test.structure.NodeErrorCheckOperation")) {
         return false;
       }

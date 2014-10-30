@@ -15,6 +15,8 @@ import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.typesystem.inference.util.StructuralNodeSet;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 
 public class MethodParameter extends MethodParameterModel {
   private SNode myDeclaration;
@@ -90,7 +92,7 @@ public class MethodParameter extends MethodParameterModel {
   }
   public boolean isFinal() {
     if (SNodeOperations.isInstanceOf(this.myDeclaration, "jetbrains.mps.baseLanguage.structure.VariableDeclaration")) {
-      return SPropertyOperations.getBoolean(SNodeOperations.cast(this.myDeclaration, "jetbrains.mps.baseLanguage.structure.VariableDeclaration"), "isFinal");
+      return SPropertyOperations.getBoolean(SNodeOperations.cast(this.myDeclaration, "jetbrains.mps.baseLanguage.structure.VariableDeclaration"), MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 1068431474542l, 1176718929932l, "isFinal"));
     }
     return false;
   }

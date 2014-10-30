@@ -4,6 +4,8 @@ package jetbrains.mps.lang.generator.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
@@ -13,7 +15,7 @@ public class ReferenceMacro_Behavior {
   public static void init(SNode thisNode) {
   }
   public static boolean virtual_suppress_3393165121846091591(SNode thisNode, SNode child) {
-    if (SLinkOperations.getTarget(thisNode, "referentFunction", true) == child) {
+    if (SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-5475912601019530992l, -8082971551085732881l), 1088761943574l, 1167770376702l, "referentFunction")) == child) {
       return false;
     }
     if (SNodeOperations.isInstanceOf(child, "jetbrains.mps.lang.core.structure.Attribute") && ListSequence.fromList(AttributeOperations.getAttributeList(SNodeOperations.getParent(thisNode), new IAttributeDescriptor.AllAttributes())).contains(SNodeOperations.cast(child, "jetbrains.mps.lang.core.structure.Attribute"))) {

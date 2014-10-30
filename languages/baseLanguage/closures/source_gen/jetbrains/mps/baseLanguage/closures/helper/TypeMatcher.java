@@ -6,6 +6,8 @@ import java.util.Map;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.Set;
@@ -27,7 +29,7 @@ public class TypeMatcher {
   public void matchType(SNode absType, SNode realType) {
     SNode matched = null;
     if (SNodeOperations.isInstanceOf(realType, "jetbrains.mps.lang.typesystem.structure.MeetType")) {
-      matched = whichTypeMatching(SLinkOperations.getTargets(SNodeOperations.cast(realType, "jetbrains.mps.lang.typesystem.structure.MeetType"), "argument", true), absType);
+      matched = whichTypeMatching(SLinkOperations.getChildren(SNodeOperations.cast(realType, "jetbrains.mps.lang.typesystem.structure.MeetType"), MetaAdapterFactory.getContainmentLink(new UUID(8817443762339858024l, -6091446231697526094l), 1188473524530l, 1188473537547l, "argument")), absType);
     } else if (isTypeMatching(absType, realType)) {
       matched = realType;
     }
@@ -36,8 +38,8 @@ public class TypeMatcher {
         mapTypeVar(SNodeOperations.cast(absType, "jetbrains.mps.baseLanguage.structure.TypeVariableReference"), matched);
       } else {
         int idx = 0;
-        List<SNode> mptypes = SLinkOperations.getTargets(SNodeOperations.as(absType, "jetbrains.mps.baseLanguage.structure.ClassifierType"), "parameter", true);
-        List<SNode> rptypes = SLinkOperations.getTargets(SNodeOperations.as(matched, "jetbrains.mps.baseLanguage.structure.ClassifierType"), "parameter", true);
+        List<SNode> mptypes = SLinkOperations.getChildren(SNodeOperations.as(absType, "jetbrains.mps.baseLanguage.structure.ClassifierType"), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1109201940907l, "parameter"));
+        List<SNode> rptypes = SLinkOperations.getChildren(SNodeOperations.as(matched, "jetbrains.mps.baseLanguage.structure.ClassifierType"), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1109201940907l, "parameter"));
         for (int i = 0; i < ListSequence.fromList(mptypes).count() && i < ListSequence.fromList(rptypes).count(); i++) {
           matchType(ListSequence.fromList(mptypes).getElement(i), ListSequence.fromList(rptypes).getElement(i));
         }
@@ -48,7 +50,7 @@ public class TypeMatcher {
     Set<String> visited = SetSequence.fromSet(new HashSet<String>());
     List<SNode> queue = new ArrayList<SNode>();
     if (SNodeOperations.isInstanceOf(realType, "jetbrains.mps.lang.typesystem.structure.MeetType")) {
-      for (SNode arg : SLinkOperations.getTargets(SNodeOperations.cast(realType, "jetbrains.mps.lang.typesystem.structure.MeetType"), "argument", true)) {
+      for (SNode arg : SLinkOperations.getChildren(SNodeOperations.cast(realType, "jetbrains.mps.lang.typesystem.structure.MeetType"), MetaAdapterFactory.getContainmentLink(new UUID(8817443762339858024l, -6091446231697526094l), 1188473524530l, 1188473537547l, "argument"))) {
         ListSequence.fromList(queue).addElement(arg);
       }
     } else {
@@ -69,7 +71,7 @@ public class TypeMatcher {
     }
   }
   private void mapTypeVar(SNode typeVar, SNode tvr) {
-    MapSequence.fromMap(getOrCreateMap()).put(SLinkOperations.getTarget(typeVar, "typeVariableDeclaration", false), FunctionTypeUtil.unmeet(FunctionTypeUtil.unbound(SNodeOperations.copyNode(tvr))));
+    MapSequence.fromMap(getOrCreateMap()).put(SLinkOperations.getTarget(typeVar, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1109283449304l, 1109283546497l, "typeVariableDeclaration")), FunctionTypeUtil.unmeet(FunctionTypeUtil.unbound(SNodeOperations.copyNode(tvr))));
   }
   private Map<SNode, SNode> getOrCreateMap() {
     if (typeMap == null) {
@@ -99,7 +101,7 @@ public class TypeMatcher {
       if (!(SNodeOperations.isInstanceOf(left, "jetbrains.mps.baseLanguage.structure.ClassifierType"))) {
         return true;
       }
-      return SLinkOperations.getTarget(SNodeOperations.cast(left, "jetbrains.mps.baseLanguage.structure.ClassifierType"), "classifier", false) == SLinkOperations.getTarget(SNodeOperations.cast(right, "jetbrains.mps.baseLanguage.structure.ClassifierType"), "classifier", false) && ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(left, "jetbrains.mps.baseLanguage.structure.ClassifierType"), "parameter", true)).count() == ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(right, "jetbrains.mps.baseLanguage.structure.ClassifierType"), "parameter", true)).count();
+      return SLinkOperations.getTarget(SNodeOperations.cast(left, "jetbrains.mps.baseLanguage.structure.ClassifierType"), MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier")) == SLinkOperations.getTarget(SNodeOperations.cast(right, "jetbrains.mps.baseLanguage.structure.ClassifierType"), MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier")) && ListSequence.fromList(SLinkOperations.getChildren(SNodeOperations.cast(left, "jetbrains.mps.baseLanguage.structure.ClassifierType"), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1109201940907l, "parameter"))).count() == ListSequence.fromList(SLinkOperations.getChildren(SNodeOperations.cast(right, "jetbrains.mps.baseLanguage.structure.ClassifierType"), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1109201940907l, "parameter"))).count();
     }
     return false;
   }

@@ -11,6 +11,8 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
@@ -31,10 +33,10 @@ public class check_dimensions_NonTypesystemRule extends AbstractNonTypesystemRul
           }
         }
         if (matches_n3qbw2_a0a) {
-          if (SNodeOperations.isInstanceOf(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(binaryOperation, "leftExpression", true)), "jetbrains.mps.baseLanguage.math.structure.MatrixType") && SNodeOperations.isInstanceOf(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(binaryOperation, "rightExpression", true)), "jetbrains.mps.baseLanguage.math.structure.MatrixType")) {
-            int lc = SPropertyOperations.getInteger(SNodeOperations.cast(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(binaryOperation, "leftExpression", true)), "jetbrains.mps.baseLanguage.math.structure.MatrixType"), "columns");
-            int rr = SPropertyOperations.getInteger(SNodeOperations.cast(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(binaryOperation, "rightExpression", true)), "jetbrains.mps.baseLanguage.math.structure.MatrixType"), "rows");
-            if (SNodeOperations.isInstanceOf(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(binaryOperation, "leftExpression", true)), "jetbrains.mps.baseLanguage.math.structure.MatrixType") && SNodeOperations.isInstanceOf(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(binaryOperation, "rightExpression", true)), "jetbrains.mps.baseLanguage.math.structure.MatrixType")) {
+          if (SNodeOperations.isInstanceOf(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(binaryOperation, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1081773326031l, 1081773367580l, "leftExpression"))), "jetbrains.mps.baseLanguage.math.structure.MatrixType") && SNodeOperations.isInstanceOf(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(binaryOperation, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1081773326031l, 1081773367579l, "rightExpression"))), "jetbrains.mps.baseLanguage.math.structure.MatrixType")) {
+            int lc = SPropertyOperations.getInteger(SNodeOperations.cast(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(binaryOperation, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1081773326031l, 1081773367580l, "leftExpression"))), "jetbrains.mps.baseLanguage.math.structure.MatrixType"), MetaAdapterFactory.getProperty(new UUID(3676340747305173022l, -6911132873973321185l), 4815887568697030518l, 4815887568697048493l, "columns"));
+            int rr = SPropertyOperations.getInteger(SNodeOperations.cast(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(binaryOperation, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1081773326031l, 1081773367579l, "rightExpression"))), "jetbrains.mps.baseLanguage.math.structure.MatrixType"), MetaAdapterFactory.getProperty(new UUID(3676340747305173022l, -6911132873973321185l), 4815887568697030518l, 4815887568697048492l, "rows"));
+            if (SNodeOperations.isInstanceOf(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(binaryOperation, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1081773326031l, 1081773367580l, "leftExpression"))), "jetbrains.mps.baseLanguage.math.structure.MatrixType") && SNodeOperations.isInstanceOf(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(binaryOperation, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1081773326031l, 1081773367579l, "rightExpression"))), "jetbrains.mps.baseLanguage.math.structure.MatrixType")) {
               if (lc != 0 && rr != 0 && rr != lc) {
                 {
                   MessageTarget errorTarget = new NodeMessageTarget();

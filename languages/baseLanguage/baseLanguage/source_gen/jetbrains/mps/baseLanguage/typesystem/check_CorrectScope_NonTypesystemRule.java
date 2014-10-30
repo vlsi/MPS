@@ -8,6 +8,8 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.baseLanguage.behavior.ThisExpression_Behavior;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
@@ -20,13 +22,13 @@ public class check_CorrectScope_NonTypesystemRule extends AbstractNonTypesystemR
   public check_CorrectScope_NonTypesystemRule() {
   }
   public void applyRule(final SNode thisExpression, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    if ((SLinkOperations.getTarget(thisExpression, "classConcept", false) == null)) {
+    if ((SLinkOperations.getTarget(thisExpression, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1070475354124l, 1182955020723l, "classConcept")) == null)) {
       return;
     }
-    if (!(ListSequence.fromList(ThisExpression_Behavior.call_getPossibleClassifiers_1215682129821(thisExpression)).contains(SLinkOperations.getTarget(thisExpression, "classConcept", false)))) {
+    if (!(ListSequence.fromList(ThisExpression_Behavior.call_getPossibleClassifiers_1215682129821(thisExpression)).contains(SLinkOperations.getTarget(thisExpression, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1070475354124l, 1182955020723l, "classConcept"))))) {
       {
         MessageTarget errorTarget = new NodeMessageTarget();
-        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(thisExpression, "Can't access " + SPropertyOperations.getString(SLinkOperations.getTarget(thisExpression, "classConcept", false), "name"), "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "4539702814067113826", null, errorTarget);
+        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(thisExpression, "Can't access " + SPropertyOperations.getString(SLinkOperations.getTarget(thisExpression, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1070475354124l, 1182955020723l, "classConcept")), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")), "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "4539702814067113826", null, errorTarget);
       }
     }
   }

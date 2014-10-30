@@ -8,6 +8,8 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.errors.IRuleConflictWarningProducer;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.typesystem.inference.EquationInfo;
@@ -20,11 +22,11 @@ public class typeof_OperationAssignmentExpression_InferenceRule extends Abstract
   }
   public void applyRule(final SNode operation, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     {
-      final SNode leftType = typeCheckingContext.typeOf(SLinkOperations.getTarget(operation, "lValue", true), "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "4957392803029437247", true);
+      final SNode leftType = typeCheckingContext.typeOf(SLinkOperations.getTarget(operation, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1215693861676l, 1068498886295l, "lValue")), "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "4957392803029437247", true);
       typeCheckingContext.whenConcrete(leftType, new Runnable() {
         public void run() {
           {
-            final SNode rightType = typeCheckingContext.typeOf(SLinkOperations.getTarget(operation, "rValue", true), "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "4957392803029437241", true);
+            final SNode rightType = typeCheckingContext.typeOf(SLinkOperations.getTarget(operation, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1215693861676l, 1068498886297l, "rValue")), "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "4957392803029437241", true);
             typeCheckingContext.whenConcrete(rightType, new Runnable() {
               public void run() {
                 SNode opType = typeCheckingContext.getOverloadedOperationType(operation, typeCheckingContext.getExpandedNode(leftType), typeCheckingContext.getExpandedNode(rightType), new IRuleConflictWarningProducer() {

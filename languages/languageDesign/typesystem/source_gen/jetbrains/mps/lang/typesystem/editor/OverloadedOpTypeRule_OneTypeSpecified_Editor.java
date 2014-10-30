@@ -26,6 +26,8 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 
 public class OverloadedOpTypeRule_OneTypeSpecified_Editor extends DefaultNodeEditor {
@@ -190,7 +192,7 @@ public class OverloadedOpTypeRule_OneTypeSpecified_Editor extends DefaultNodeEdi
     return editorCell;
   }
   private static boolean renderingCondition_38fsuu_a4b0(SNode node, EditorContext editorContext) {
-    return !(SPropertyOperations.getBoolean(node, "isExact"));
+    return !(SPropertyOperations.getBoolean(node, MetaAdapterFactory.getProperty(new UUID(8817443762339858024l, -6091446231697526094l), 8124453027370766044l, 8124453027370766045l, "isExact")));
   }
   private EditorCell createConstant_38fsuu_a4b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "use strong subtyping");

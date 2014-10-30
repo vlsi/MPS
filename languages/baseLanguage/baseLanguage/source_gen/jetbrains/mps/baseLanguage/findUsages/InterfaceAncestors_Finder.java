@@ -9,6 +9,8 @@ import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.module.SearchScope;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.ide.findusages.model.scopes.ModelsScope;
 import java.util.List;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
@@ -19,7 +21,7 @@ public class InterfaceAncestors_Finder extends GeneratedFinder {
   public InterfaceAncestors_Finder() {
   }
   public boolean isVisible(SNode node, SearchScope scope) {
-    return ListSequence.fromList(SLinkOperations.getTargets(node, "extendedInterface", true)).isNotEmpty();
+    return ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107796713796l, 1107797138135l, "extendedInterface"))).isNotEmpty();
   }
   @Override
   public boolean isVisible(SNode node) {
@@ -41,12 +43,12 @@ public class InterfaceAncestors_Finder extends GeneratedFinder {
   protected void doFind(SNode node, SearchScope scope, List<SNode> _results, ProgressMonitor monitor) {
     monitor.start(getDescription(), 1);
     try {
-      if (ListSequence.fromList(SLinkOperations.getTargets(node, "extendedInterface", true)).isEmpty()) {
+      if (ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107796713796l, 1107797138135l, "extendedInterface"))).isEmpty()) {
         return;
       }
       SNode current = node;
-      for (SNode ancestor : ListSequence.fromList(SLinkOperations.getTargets(current, "extendedInterface", true))) {
-        SNode ancestorNode = (SNode) SLinkOperations.getTarget(ancestor, "classifier", false);
+      for (SNode ancestor : ListSequence.fromList(SLinkOperations.getChildren(current, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107796713796l, 1107797138135l, "extendedInterface")))) {
+        SNode ancestorNode = (SNode) SLinkOperations.getTarget(ancestor, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier"));
         ListSequence.fromList(_results).addElement(ancestorNode);
         for (SNode ancestorAncestor : ListSequence.fromList(FindUtils.executeFinder("jetbrains.mps.baseLanguage.findUsages.InterfaceAncestors_Finder", ancestorNode, scope, monitor.subTask(1)))) {
           ListSequence.fromList(_results).addElement(ancestorAncestor);

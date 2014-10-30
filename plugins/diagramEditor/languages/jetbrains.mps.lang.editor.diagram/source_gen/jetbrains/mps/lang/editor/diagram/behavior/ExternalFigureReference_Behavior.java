@@ -6,6 +6,8 @@ import org.jetbrains.mps.openapi.model.SNode;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
@@ -14,16 +16,16 @@ public class ExternalFigureReference_Behavior {
   public static void init(SNode thisNode) {
   }
   public static List<String> virtual_getFigureParameterNames_1491555030356445722(SNode thisNode) {
-    return ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(thisNode, "figure", false), "fields", true)).select(new ISelector<SNode, String>() {
+    return ListSequence.fromList(SLinkOperations.getChildren(SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getReferenceLink(new UUID(6991546026468590289l, -9160623158338601007l), 1094405431463663051l, 1094405431463663379l, "figure")), MetaAdapterFactory.getContainmentLink(new UUID(-2922223385321452486l, -5907006357078305369l), 2178507174411801538l, 2178507174411801664l, "fields"))).select(new ISelector<SNode, String>() {
       public String select(SNode it) {
-        return SPropertyOperations.getString(it, "name");
+        return SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"));
       }
     }).toListSequence();
   }
   public static SNode virtual_getFigureParameter_1491555030357120840(SNode thisNode, final String name) {
-    return ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(thisNode, "figure", false), "fields", true)).findFirst(new IWhereFilter<SNode>() {
+    return ListSequence.fromList(SLinkOperations.getChildren(SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getReferenceLink(new UUID(6991546026468590289l, -9160623158338601007l), 1094405431463663051l, 1094405431463663379l, "figure")), MetaAdapterFactory.getContainmentLink(new UUID(-2922223385321452486l, -5907006357078305369l), 2178507174411801538l, 2178507174411801664l, "fields"))).findFirst(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return eq_eglddm_a0a0a0a0a0a0c(SPropertyOperations.getString(it, "name"), name);
+        return eq_eglddm_a0a0a0a0a0a0c(SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")), name);
       }
     });
   }

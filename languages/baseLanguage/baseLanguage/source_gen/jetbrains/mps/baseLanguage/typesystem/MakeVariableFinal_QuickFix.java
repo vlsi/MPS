@@ -6,6 +6,8 @@ import jetbrains.mps.errors.QuickFix_Runtime;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 
 public class MakeVariableFinal_QuickFix extends QuickFix_Runtime {
   public MakeVariableFinal_QuickFix() {
@@ -14,6 +16,6 @@ public class MakeVariableFinal_QuickFix extends QuickFix_Runtime {
     return "Make Variable Final";
   }
   public void execute(SNode node) {
-    SPropertyOperations.set(SLinkOperations.getTarget(((SNode) MakeVariableFinal_QuickFix.this.getField("varRef")[0]), "variableDeclaration", false), "isFinal", "" + (true));
+    SPropertyOperations.set(SLinkOperations.getTarget(((SNode) MakeVariableFinal_QuickFix.this.getField("varRef")[0]), MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068498886296l, 1068581517664l, "variableDeclaration")), MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 1068431474542l, 1176718929932l, "isFinal"), "" + (true));
   }
 }

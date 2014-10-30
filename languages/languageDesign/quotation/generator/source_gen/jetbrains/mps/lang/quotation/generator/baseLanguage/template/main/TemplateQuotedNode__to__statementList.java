@@ -14,6 +14,8 @@ import jetbrains.mps.generator.runtime.GenerationException;
 import java.util.Collection;
 import jetbrains.mps.generator.template.IfMacroContext;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.smodel.SReference;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.generator.runtime.TemplateUtil;
@@ -48,12 +50,12 @@ public class TemplateQuotedNode__to__statementList implements TemplateDeclaratio
               final SNode tnode4 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration");
               try {
                 environment.nodeCopied(context, tnode4, "tpl/r:00000000-0000-4000-0000-011c8959034c/1196351886742");
-                SNodeAccessUtil.setProperty(tnode4, "name", "parent");
+                SNodeAccessUtil.setProperty(tnode4, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"), "parent");
                 {
                   final SNode tnode5 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.ClassifierType");
                   try {
                     environment.nodeCopied(context, tnode5, "tpl/r:00000000-0000-4000-0000-011c8959034c/7580556499267872718");
-                    tnode5.setReference("classifier", SReference.create("classifier", tnode5, PersistenceFacade.getInstance().createModelReference("f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)"), PersistenceFacade.getInstance().createNodeId("~SNode")));
+                    tnode5.setReference(MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier"), SReference.create(MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier"), tnode5, PersistenceFacade.getInstance().createModelReference("f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)"), PersistenceFacade.getInstance().createNodeId("~SNode")));
                   } finally {
                   }
                   if (tnode5 != null) {
@@ -102,13 +104,13 @@ public class TemplateQuotedNode__to__statementList implements TemplateDeclaratio
                           final SNode tnode13 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.StaticMethodCall");
                           try {
                             environment.nodeCopied(context8, tnode13, "tpl/r:00000000-0000-4000-0000-011c8959034c/3180306201267234235");
-                            tnode13.setReference("classConcept", SReference.create("classConcept", tnode13, PersistenceFacade.getInstance().createModelReference("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel(MPS.Core/jetbrains.mps.smodel@java_stub)"), PersistenceFacade.getInstance().createNodeId("~SModelUtil_new")));
-                            tnode13.setReference("baseMethodDeclaration", SReference.create("baseMethodDeclaration", tnode13, PersistenceFacade.getInstance().createModelReference("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel(MPS.Core/jetbrains.mps.smodel@java_stub)"), PersistenceFacade.getInstance().createNodeId("~SModelUtil_new.instantiateConceptDeclaration(java.lang.String,org.jetbrains.mps.openapi.model.SModel,org.jetbrains.mps.openapi.model.SNodeId,boolean):jetbrains.mps.smodel.SNode")));
+                            tnode13.setReference(MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1081236700937l, 1144433194310l, "classConcept"), SReference.create(MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1081236700937l, 1144433194310l, "classConcept"), tnode13, PersistenceFacade.getInstance().createModelReference("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel(MPS.Core/jetbrains.mps.smodel@java_stub)"), PersistenceFacade.getInstance().createNodeId("~SModelUtil_new")));
+                            tnode13.setReference(MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, 1068499141037l, "baseMethodDeclaration"), SReference.create(MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, 1068499141037l, "baseMethodDeclaration"), tnode13, PersistenceFacade.getInstance().createModelReference("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel(MPS.Core/jetbrains.mps.smodel@java_stub)"), PersistenceFacade.getInstance().createNodeId("~SModelUtil_new.instantiateConceptDeclaration(java.lang.String,org.jetbrains.mps.openapi.model.SModel,org.jetbrains.mps.openapi.model.SNodeId,boolean):jetbrains.mps.smodel.SNode")));
                             {
                               final SNode tnode14 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.StringLiteral");
                               try {
                                 environment.nodeCopied(context8, tnode14, "tpl/r:00000000-0000-4000-0000-011c8959034c/3180306201267234159");
-                                SNodeAccessUtil.setProperty(tnode14, "value", TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_3180306201267234161(new PropertyMacroContext(context8, "conceptFqName", propertyMacro_swz52f_c0a0c0b0b0d0b0b0b0b0b0b0b0b0e0b0c0b0c))));
+                                SNodeAccessUtil.setProperty(tnode14, MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 1070475926800l, 1070475926801l, "value"), TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_3180306201267234161(new PropertyMacroContext(context8, "conceptFqName", propertyMacro_swz52f_c0a0c0b0b0d0b0b0b0b0b0b0b0b0e0b0c0b0c))));
                               } finally {
                               }
                               if (tnode14 != null) {
@@ -133,7 +135,7 @@ public class TemplateQuotedNode__to__statementList implements TemplateDeclaratio
                                     final SNode tnode18 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.ClassifierType");
                                     try {
                                       environment.nodeCopied(context8, tnode18, "tpl/r:00000000-0000-4000-0000-011c8959034c/2755167680438452789");
-                                      tnode18.setReference("classifier", SReference.create("classifier", tnode18, PersistenceFacade.getInstance().createModelReference("f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)"), PersistenceFacade.getInstance().createNodeId("~SModel")));
+                                      tnode18.setReference(MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier"), SReference.create(MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier"), tnode18, PersistenceFacade.getInstance().createModelReference("f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)"), PersistenceFacade.getInstance().createNodeId("~SModel")));
                                     } finally {
                                     }
                                     if (tnode18 != null) {
@@ -189,7 +191,7 @@ public class TemplateQuotedNode__to__statementList implements TemplateDeclaratio
                                     final SNode tnode24 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.ClassifierType");
                                     try {
                                       environment.nodeCopied(context8, tnode24, "tpl/r:00000000-0000-4000-0000-011c8959034c/3180306201267234217");
-                                      tnode24.setReference("classifier", SReference.create("classifier", tnode24, PersistenceFacade.getInstance().createModelReference("f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)"), PersistenceFacade.getInstance().createNodeId("~SNodeId")));
+                                      tnode24.setReference(MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier"), SReference.create(MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier"), tnode24, PersistenceFacade.getInstance().createModelReference("f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)"), PersistenceFacade.getInstance().createNodeId("~SNodeId")));
                                     } finally {
                                     }
                                     if (tnode24 != null) {
@@ -297,8 +299,8 @@ public class TemplateQuotedNode__to__statementList implements TemplateDeclaratio
                         final SNode tnode31 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.StaticMethodCall");
                         try {
                           environment.nodeCopied(context29, tnode31, "tpl/r:00000000-0000-4000-0000-011c8959034c/2652588855789568139");
-                          tnode31.setReference("baseMethodDeclaration", SReference.create("baseMethodDeclaration", tnode31, PersistenceFacade.getInstance().createModelReference("f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)"), PersistenceFacade.getInstance().createNodeId("~SNodeAccessUtil.setProperty(org.jetbrains.mps.openapi.model.SNode,org.jetbrains.mps.openapi.language.SProperty,java.lang.String):void")));
-                          tnode31.setReference("classConcept", SReference.create("classConcept", tnode31, PersistenceFacade.getInstance().createModelReference("f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)"), PersistenceFacade.getInstance().createNodeId("~SNodeAccessUtil")));
+                          tnode31.setReference(MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, 1068499141037l, "baseMethodDeclaration"), SReference.create(MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, 1068499141037l, "baseMethodDeclaration"), tnode31, PersistenceFacade.getInstance().createModelReference("f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)"), PersistenceFacade.getInstance().createNodeId("~SNodeAccessUtil.setProperty(org.jetbrains.mps.openapi.model.SNode,org.jetbrains.mps.openapi.language.SProperty,java.lang.String):void")));
+                          tnode31.setReference(MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1081236700937l, 1144433194310l, "classConcept"), SReference.create(MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1081236700937l, 1144433194310l, "classConcept"), tnode31, PersistenceFacade.getInstance().createModelReference("f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)"), PersistenceFacade.getInstance().createNodeId("~SNodeAccessUtil")));
                           {
                             final SNode tnode32 = environment.createOutputNode("jetbrains.mps.lang.smodel.structure.SemanticDowncastExpression");
                             try {
@@ -356,7 +358,7 @@ public class TemplateQuotedNode__to__statementList implements TemplateDeclaratio
                             final SNode tnode36 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.StringLiteral");
                             try {
                               environment.nodeCopied(context29, tnode36, "tpl/r:00000000-0000-4000-0000-011c8959034c/2652588855789568160");
-                              SNodeAccessUtil.setProperty(tnode36, "value", TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_2652588855789568162(new PropertyMacroContext(context29, "propertyValue", propertyMacro_swz52f_c0a0c0b0b0f0b0b0d0c0c0b0b0e0b0c0b0c))));
+                              SNodeAccessUtil.setProperty(tnode36, MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 1070475926800l, 1070475926801l, "value"), TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_2652588855789568162(new PropertyMacroContext(context29, "propertyValue", propertyMacro_swz52f_c0a0c0b0b0f0b0b0d0c0c0b0b0e0b0c0b0c))));
                             } finally {
                             }
                             if (tnode36 != null) {
@@ -397,8 +399,8 @@ public class TemplateQuotedNode__to__statementList implements TemplateDeclaratio
                         final SNode tnode40 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.StaticMethodCall");
                         try {
                           environment.nodeCopied(context38, tnode40, "tpl/r:00000000-0000-4000-0000-011c8959034c/2652588855789575360");
-                          tnode40.setReference("baseMethodDeclaration", SReference.create("baseMethodDeclaration", tnode40, PersistenceFacade.getInstance().createModelReference("f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)"), PersistenceFacade.getInstance().createNodeId("~SNodeAccessUtil.setProperty(org.jetbrains.mps.openapi.model.SNode,org.jetbrains.mps.openapi.language.SProperty,java.lang.String):void")));
-                          tnode40.setReference("classConcept", SReference.create("classConcept", tnode40, PersistenceFacade.getInstance().createModelReference("f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)"), PersistenceFacade.getInstance().createNodeId("~SNodeAccessUtil")));
+                          tnode40.setReference(MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, 1068499141037l, "baseMethodDeclaration"), SReference.create(MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, 1068499141037l, "baseMethodDeclaration"), tnode40, PersistenceFacade.getInstance().createModelReference("f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)"), PersistenceFacade.getInstance().createNodeId("~SNodeAccessUtil.setProperty(org.jetbrains.mps.openapi.model.SNode,org.jetbrains.mps.openapi.language.SProperty,java.lang.String):void")));
+                          tnode40.setReference(MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1081236700937l, 1144433194310l, "classConcept"), SReference.create(MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1081236700937l, 1144433194310l, "classConcept"), tnode40, PersistenceFacade.getInstance().createModelReference("f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)"), PersistenceFacade.getInstance().createNodeId("~SNodeAccessUtil")));
                           {
                             final SNode tnode41 = environment.createOutputNode("jetbrains.mps.lang.smodel.structure.SemanticDowncastExpression");
                             try {
@@ -566,7 +568,7 @@ public class TemplateQuotedNode__to__statementList implements TemplateDeclaratio
                             final SNode tnode54 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation");
                             try {
                               environment.nodeCopied(context49, tnode54, "tpl/r:00000000-0000-4000-0000-011c8959034c/1216933353893");
-                              tnode54.setReference("baseMethodDeclaration", SReference.create("baseMethodDeclaration", tnode54, PersistenceFacade.getInstance().createModelReference("f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)"), PersistenceFacade.getInstance().createNodeId("~SNode.setReference(org.jetbrains.mps.openapi.language.SReferenceLink,org.jetbrains.mps.openapi.model.SReference):void")));
+                              tnode54.setReference(MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, 1068499141037l, "baseMethodDeclaration"), SReference.create(MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, 1068499141037l, "baseMethodDeclaration"), tnode54, PersistenceFacade.getInstance().createModelReference("f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)"), PersistenceFacade.getInstance().createNodeId("~SNode.setReference(org.jetbrains.mps.openapi.language.SReferenceLink,org.jetbrains.mps.openapi.model.SReference):void")));
                               {
                                 Collection<SNode> tlist55 = null;
                                 try {
@@ -591,8 +593,8 @@ public class TemplateQuotedNode__to__statementList implements TemplateDeclaratio
                                 final SNode tnode57 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.StaticMethodCall");
                                 try {
                                   environment.nodeCopied(context49, tnode57, "tpl/r:00000000-0000-4000-0000-011c8959034c/1196351886847");
-                                  tnode57.setReference("classConcept", SReference.create("classConcept", tnode57, PersistenceFacade.getInstance().createModelReference("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel(MPS.Core/jetbrains.mps.smodel@java_stub)"), PersistenceFacade.getInstance().createNodeId("~SReference")));
-                                  tnode57.setReference("baseMethodDeclaration", SReference.create("baseMethodDeclaration", tnode57, PersistenceFacade.getInstance().createModelReference("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel(MPS.Core/jetbrains.mps.smodel@java_stub)"), PersistenceFacade.getInstance().createNodeId("~SReference.create(java.lang.String,org.jetbrains.mps.openapi.model.SNode,org.jetbrains.mps.openapi.model.SModelReference,org.jetbrains.mps.openapi.model.SNodeId):jetbrains.mps.smodel.SReference")));
+                                  tnode57.setReference(MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1081236700937l, 1144433194310l, "classConcept"), SReference.create(MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1081236700937l, 1144433194310l, "classConcept"), tnode57, PersistenceFacade.getInstance().createModelReference("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel(MPS.Core/jetbrains.mps.smodel@java_stub)"), PersistenceFacade.getInstance().createNodeId("~SReference")));
+                                  tnode57.setReference(MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, 1068499141037l, "baseMethodDeclaration"), SReference.create(MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, 1068499141037l, "baseMethodDeclaration"), tnode57, PersistenceFacade.getInstance().createModelReference("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel(MPS.Core/jetbrains.mps.smodel@java_stub)"), PersistenceFacade.getInstance().createNodeId("~SReference.create(java.lang.String,org.jetbrains.mps.openapi.model.SNode,org.jetbrains.mps.openapi.model.SModelReference,org.jetbrains.mps.openapi.model.SNodeId):jetbrains.mps.smodel.SReference")));
                                   {
                                     Collection<SNode> tlist58 = null;
                                     try {
@@ -654,12 +656,12 @@ public class TemplateQuotedNode__to__statementList implements TemplateDeclaratio
                                         final SNode tnode63 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation");
                                         try {
                                           environment.nodeCopied(context49, tnode63, "tpl/r:00000000-0000-4000-0000-011c8959034c/8814250188789310594");
-                                          tnode63.setReference("baseMethodDeclaration", SReference.create("baseMethodDeclaration", tnode63, PersistenceFacade.getInstance().createModelReference("f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.persistence(MPS.OpenAPI/org.jetbrains.mps.openapi.persistence@java_stub)"), PersistenceFacade.getInstance().createNodeId("~PersistenceFacade.createModelReference(java.lang.String):org.jetbrains.mps.openapi.model.SModelReference")));
+                                          tnode63.setReference(MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, 1068499141037l, "baseMethodDeclaration"), SReference.create(MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, 1068499141037l, "baseMethodDeclaration"), tnode63, PersistenceFacade.getInstance().createModelReference("f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.persistence(MPS.OpenAPI/org.jetbrains.mps.openapi.persistence@java_stub)"), PersistenceFacade.getInstance().createNodeId("~PersistenceFacade.createModelReference(java.lang.String):org.jetbrains.mps.openapi.model.SModelReference")));
                                           {
                                             final SNode tnode64 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.StringLiteral");
                                             try {
                                               environment.nodeCopied(context49, tnode64, "tpl/r:00000000-0000-4000-0000-011c8959034c/1196351886858");
-                                              SNodeAccessUtil.setProperty(tnode64, "value", TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_1196351886860(new PropertyMacroContext(context49, "targetModel", propertyMacro_swz52f_c0a0c0b0b0c0b0b0b0f0b0d0b0c0b0b0d0c0e0b0b0e0b0c0b0c))));
+                                              SNodeAccessUtil.setProperty(tnode64, MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 1070475926800l, 1070475926801l, "value"), TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_1196351886860(new PropertyMacroContext(context49, "targetModel", propertyMacro_swz52f_c0a0c0b0b0c0b0b0b0f0b0d0b0c0b0b0d0c0e0b0b0e0b0c0b0c))));
                                             } finally {
                                             }
                                             if (tnode64 != null) {
@@ -701,12 +703,12 @@ public class TemplateQuotedNode__to__statementList implements TemplateDeclaratio
                                         final SNode tnode67 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation");
                                         try {
                                           environment.nodeCopied(context49, tnode67, "tpl/r:00000000-0000-4000-0000-011c8959034c/8814250188789450813");
-                                          tnode67.setReference("baseMethodDeclaration", SReference.create("baseMethodDeclaration", tnode67, PersistenceFacade.getInstance().createModelReference("f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.persistence(MPS.OpenAPI/org.jetbrains.mps.openapi.persistence@java_stub)"), PersistenceFacade.getInstance().createNodeId("~PersistenceFacade.createNodeId(java.lang.String):org.jetbrains.mps.openapi.model.SNodeId")));
+                                          tnode67.setReference(MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, 1068499141037l, "baseMethodDeclaration"), SReference.create(MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, 1068499141037l, "baseMethodDeclaration"), tnode67, PersistenceFacade.getInstance().createModelReference("f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.persistence(MPS.OpenAPI/org.jetbrains.mps.openapi.persistence@java_stub)"), PersistenceFacade.getInstance().createNodeId("~PersistenceFacade.createNodeId(java.lang.String):org.jetbrains.mps.openapi.model.SNodeId")));
                                           {
                                             final SNode tnode68 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.StringLiteral");
                                             try {
                                               environment.nodeCopied(context49, tnode68, "tpl/r:00000000-0000-4000-0000-011c8959034c/1196351886867");
-                                              SNodeAccessUtil.setProperty(tnode68, "value", TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_1196351886869(new PropertyMacroContext(context49, "targetNodeId", propertyMacro_swz52f_c0a0c0b0b0c0b0b0b0g0b0d0b0c0b0b0d0c0e0b0b0e0b0c0b0c))));
+                                              SNodeAccessUtil.setProperty(tnode68, MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 1070475926800l, 1070475926801l, "value"), TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_1196351886869(new PropertyMacroContext(context49, "targetNodeId", propertyMacro_swz52f_c0a0c0b0b0c0b0b0b0g0b0d0b0c0b0b0d0c0e0b0b0e0b0c0b0c))));
                                             } finally {
                                             }
                                             if (tnode68 != null) {
@@ -787,8 +789,8 @@ public class TemplateQuotedNode__to__statementList implements TemplateDeclaratio
                         final SNode tnode73 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.StaticMethodCall");
                         try {
                           environment.nodeCopied(context71, tnode73, "tpl/r:00000000-0000-4000-0000-011c8959034c/2652588855790579717");
-                          tnode73.setReference("baseMethodDeclaration", SReference.create("baseMethodDeclaration", tnode73, PersistenceFacade.getInstance().createModelReference("f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)"), PersistenceFacade.getInstance().createNodeId("~SNodeAccessUtil.setReferenceTarget(org.jetbrains.mps.openapi.model.SNode,org.jetbrains.mps.openapi.language.SReferenceLink,org.jetbrains.mps.openapi.model.SNode):void")));
-                          tnode73.setReference("classConcept", SReference.create("classConcept", tnode73, PersistenceFacade.getInstance().createModelReference("f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)"), PersistenceFacade.getInstance().createNodeId("~SNodeAccessUtil")));
+                          tnode73.setReference(MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, 1068499141037l, "baseMethodDeclaration"), SReference.create(MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, 1068499141037l, "baseMethodDeclaration"), tnode73, PersistenceFacade.getInstance().createModelReference("f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)"), PersistenceFacade.getInstance().createNodeId("~SNodeAccessUtil.setReferenceTarget(org.jetbrains.mps.openapi.model.SNode,org.jetbrains.mps.openapi.language.SReferenceLink,org.jetbrains.mps.openapi.model.SNode):void")));
+                          tnode73.setReference(MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1081236700937l, 1144433194310l, "classConcept"), SReference.create(MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1081236700937l, 1144433194310l, "classConcept"), tnode73, PersistenceFacade.getInstance().createModelReference("f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)"), PersistenceFacade.getInstance().createNodeId("~SNodeAccessUtil")));
                           {
                             final SNode tnode74 = environment.createOutputNode("jetbrains.mps.lang.smodel.structure.SemanticDowncastExpression");
                             try {
@@ -970,12 +972,12 @@ public class TemplateQuotedNode__to__statementList implements TemplateDeclaratio
                             final SNode tnode91 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation");
                             try {
                               environment.nodeCopied(context8, tnode91, "tpl/r:00000000-0000-4000-0000-011c8959034c/1216933351660");
-                              tnode91.setReference("baseMethodDeclaration", SReference.create("baseMethodDeclaration", tnode91, PersistenceFacade.getInstance().createModelReference("f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)"), PersistenceFacade.getInstance().createNodeId("~SNode.addChild(java.lang.String,org.jetbrains.mps.openapi.model.SNode):void")));
+                              tnode91.setReference(MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, 1068499141037l, "baseMethodDeclaration"), SReference.create(MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, 1068499141037l, "baseMethodDeclaration"), tnode91, PersistenceFacade.getInstance().createModelReference("f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)"), PersistenceFacade.getInstance().createNodeId("~SNode.addChild(java.lang.String,org.jetbrains.mps.openapi.model.SNode):void")));
                               {
                                 final SNode tnode92 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.StringLiteral");
                                 try {
                                   environment.nodeCopied(context8, tnode92, "tpl/r:00000000-0000-4000-0000-011c8959034c/1196351887146");
-                                  SNodeAccessUtil.setProperty(tnode92, "value", TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_1196351887148(new PropertyMacroContext(context8, "role", propertyMacro_swz52f_c0a0c0b0b0c0b0c0b0b0b0b0h0b0b0e0b0c0b0c))));
+                                  SNodeAccessUtil.setProperty(tnode92, MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 1070475926800l, 1070475926801l, "value"), TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_1196351887148(new PropertyMacroContext(context8, "role", propertyMacro_swz52f_c0a0c0b0b0c0b0c0b0b0b0b0h0b0b0e0b0c0b0c))));
                                 } finally {
                                 }
                                 if (tnode92 != null) {
@@ -1231,12 +1233,12 @@ public class TemplateQuotedNode__to__statementList implements TemplateDeclaratio
                                     final SNode tnode114 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation");
                                     try {
                                       environment.nodeCopied(context, tnode114, "tpl/r:00000000-0000-4000-0000-011c8959034c/1216933354620");
-                                      tnode114.setReference("baseMethodDeclaration", SReference.create("baseMethodDeclaration", tnode114, PersistenceFacade.getInstance().createModelReference("f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)"), PersistenceFacade.getInstance().createNodeId("~SNode.addChild(java.lang.String,org.jetbrains.mps.openapi.model.SNode):void")));
+                                      tnode114.setReference(MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, 1068499141037l, "baseMethodDeclaration"), SReference.create(MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, 1068499141037l, "baseMethodDeclaration"), tnode114, PersistenceFacade.getInstance().createModelReference("f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)"), PersistenceFacade.getInstance().createNodeId("~SNode.addChild(java.lang.String,org.jetbrains.mps.openapi.model.SNode):void")));
                                       {
                                         final SNode tnode115 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.StringLiteral");
                                         try {
                                           environment.nodeCopied(context, tnode115, "tpl/r:00000000-0000-4000-0000-011c8959034c/1196860193015");
-                                          SNodeAccessUtil.setProperty(tnode115, "value", TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_1196860193017(new PropertyMacroContext(context, "role", propertyMacro_swz52f_c0a0c0b0b0c0b0c0b0b0b0b0b0b0c0b0c0b0b0b0b0d0b0c))));
+                                          SNodeAccessUtil.setProperty(tnode115, MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 1070475926800l, 1070475926801l, "value"), TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_1196860193017(new PropertyMacroContext(context, "role", propertyMacro_swz52f_c0a0c0b0b0c0b0c0b0b0b0b0b0b0c0b0c0b0b0b0b0d0b0c))));
                                         } finally {
                                         }
                                         if (tnode115 != null) {
@@ -1248,8 +1250,8 @@ public class TemplateQuotedNode__to__statementList implements TemplateDeclaratio
                                         final SNode tnode116 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.StaticMethodCall");
                                         try {
                                           environment.nodeCopied(context, tnode116, "tpl/r:00000000-0000-4000-0000-011c8959034c/1196860193022");
-                                          tnode116.setReference("classConcept", SReference.create("classConcept", tnode116, PersistenceFacade.getInstance().createModelReference("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.lang.typesystem.runtime(MPS.Core/jetbrains.mps.lang.typesystem.runtime@java_stub)"), PersistenceFacade.getInstance().createNodeId("~HUtil")));
-                                          tnode116.setReference("baseMethodDeclaration", SReference.create("baseMethodDeclaration", tnode116, PersistenceFacade.getInstance().createModelReference("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.lang.typesystem.runtime(MPS.Core/jetbrains.mps.lang.typesystem.runtime@java_stub)"), PersistenceFacade.getInstance().createNodeId("~HUtil.copyIfNecessary(org.jetbrains.mps.openapi.model.SNode):org.jetbrains.mps.openapi.model.SNode")));
+                                          tnode116.setReference(MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1081236700937l, 1144433194310l, "classConcept"), SReference.create(MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1081236700937l, 1144433194310l, "classConcept"), tnode116, PersistenceFacade.getInstance().createModelReference("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.lang.typesystem.runtime(MPS.Core/jetbrains.mps.lang.typesystem.runtime@java_stub)"), PersistenceFacade.getInstance().createNodeId("~HUtil")));
+                                          tnode116.setReference(MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, 1068499141037l, "baseMethodDeclaration"), SReference.create(MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, 1068499141037l, "baseMethodDeclaration"), tnode116, PersistenceFacade.getInstance().createModelReference("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.lang.typesystem.runtime(MPS.Core/jetbrains.mps.lang.typesystem.runtime@java_stub)"), PersistenceFacade.getInstance().createNodeId("~HUtil.copyIfNecessary(org.jetbrains.mps.openapi.model.SNode):org.jetbrains.mps.openapi.model.SNode")));
                                           {
                                             final SNode tnode117 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.VariableReference");
                                             try {
@@ -1350,7 +1352,7 @@ public class TemplateQuotedNode__to__statementList implements TemplateDeclaratio
                       final SNode tnode124 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration");
                       try {
                         environment.nodeCopied(context, tnode124, "tpl/r:00000000-0000-4000-0000-011c8959034c/1196351887403");
-                        SNodeAccessUtil.setProperty(tnode124, "name", "nodes");
+                        SNodeAccessUtil.setProperty(tnode124, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"), "nodes");
                         {
                           final SNode tnode125 = environment.createOutputNode("jetbrains.mps.lang.smodel.structure.SNodeListType");
                           try {
@@ -1440,7 +1442,7 @@ public class TemplateQuotedNode__to__statementList implements TemplateDeclaratio
                       final SNode tnode131 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration");
                       try {
                         environment.nodeCopied(context, tnode131, "tpl/r:00000000-0000-4000-0000-011c8959034c/1196351887459");
-                        SNodeAccessUtil.setProperty(tnode131, "name", "child");
+                        SNodeAccessUtil.setProperty(tnode131, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"), "child");
                         {
                           final SNode tnode132 = environment.createOutputNode("jetbrains.mps.lang.smodel.structure.SNodeType");
                           try {
@@ -1499,12 +1501,12 @@ public class TemplateQuotedNode__to__statementList implements TemplateDeclaratio
                                     final SNode tnode138 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation");
                                     try {
                                       environment.nodeCopied(context, tnode138, "tpl/r:00000000-0000-4000-0000-011c8959034c/1216933350851");
-                                      tnode138.setReference("baseMethodDeclaration", SReference.create("baseMethodDeclaration", tnode138, PersistenceFacade.getInstance().createModelReference("f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)"), PersistenceFacade.getInstance().createNodeId("~SNode.addChild(java.lang.String,org.jetbrains.mps.openapi.model.SNode):void")));
+                                      tnode138.setReference(MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, 1068499141037l, "baseMethodDeclaration"), SReference.create(MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, 1068499141037l, "baseMethodDeclaration"), tnode138, PersistenceFacade.getInstance().createModelReference("f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)"), PersistenceFacade.getInstance().createNodeId("~SNode.addChild(java.lang.String,org.jetbrains.mps.openapi.model.SNode):void")));
                                       {
                                         final SNode tnode139 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.StringLiteral");
                                         try {
                                           environment.nodeCopied(context, tnode139, "tpl/r:00000000-0000-4000-0000-011c8959034c/1196351887497");
-                                          SNodeAccessUtil.setProperty(tnode139, "value", TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_1196351887499(new PropertyMacroContext(context, "role", propertyMacro_swz52f_c0a0c0b0b0c0b0c0b0b0b0b0b0b0d0b0c0b0b0b0b0e0b0c))));
+                                          SNodeAccessUtil.setProperty(tnode139, MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 1070475926800l, 1070475926801l, "value"), TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_1196351887499(new PropertyMacroContext(context, "role", propertyMacro_swz52f_c0a0c0b0b0c0b0c0b0b0b0b0b0b0d0b0c0b0b0b0b0e0b0c))));
                                         } finally {
                                         }
                                         if (tnode139 != null) {
@@ -1516,8 +1518,8 @@ public class TemplateQuotedNode__to__statementList implements TemplateDeclaratio
                                         final SNode tnode140 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.StaticMethodCall");
                                         try {
                                           environment.nodeCopied(context, tnode140, "tpl/r:00000000-0000-4000-0000-011c8959034c/1196351887504");
-                                          tnode140.setReference("classConcept", SReference.create("classConcept", tnode140, PersistenceFacade.getInstance().createModelReference("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.lang.typesystem.runtime(MPS.Core/jetbrains.mps.lang.typesystem.runtime@java_stub)"), PersistenceFacade.getInstance().createNodeId("~HUtil")));
-                                          tnode140.setReference("baseMethodDeclaration", SReference.create("baseMethodDeclaration", tnode140, PersistenceFacade.getInstance().createModelReference("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.lang.typesystem.runtime(MPS.Core/jetbrains.mps.lang.typesystem.runtime@java_stub)"), PersistenceFacade.getInstance().createNodeId("~HUtil.copyIfNecessary(org.jetbrains.mps.openapi.model.SNode):org.jetbrains.mps.openapi.model.SNode")));
+                                          tnode140.setReference(MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1081236700937l, 1144433194310l, "classConcept"), SReference.create(MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1081236700937l, 1144433194310l, "classConcept"), tnode140, PersistenceFacade.getInstance().createModelReference("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.lang.typesystem.runtime(MPS.Core/jetbrains.mps.lang.typesystem.runtime@java_stub)"), PersistenceFacade.getInstance().createNodeId("~HUtil")));
+                                          tnode140.setReference(MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, 1068499141037l, "baseMethodDeclaration"), SReference.create(MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, 1068499141037l, "baseMethodDeclaration"), tnode140, PersistenceFacade.getInstance().createModelReference("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.lang.typesystem.runtime(MPS.Core/jetbrains.mps.lang.typesystem.runtime@java_stub)"), PersistenceFacade.getInstance().createNodeId("~HUtil.copyIfNecessary(org.jetbrains.mps.openapi.model.SNode):org.jetbrains.mps.openapi.model.SNode")));
                                           {
                                             final SNode tnode141 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.VariableReference");
                                             try {

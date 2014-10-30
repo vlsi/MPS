@@ -18,6 +18,8 @@ import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.openapi.editor.style.StyleRegistry;
 import jetbrains.mps.nodeEditor.MPSColors;
 
@@ -262,7 +264,7 @@ public class ParameterizedSideTransformMenuPart_Editor extends DefaultNodeEditor
     return editorCell;
   }
   private static boolean renderingCondition_r514zz_a7b1a(SNode node, EditorContext editorContext) {
-    return SLinkOperations.getTarget(node, "icon", true) != null;
+    return SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-5842916035344972280l, -5840605745428443715l), 1177508764419l, 1203074270008l, "icon")) != null;
   }
   private EditorCell createCollection_r514zz_a7b1a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);

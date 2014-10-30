@@ -11,6 +11,8 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
@@ -26,12 +28,12 @@ public class check_TypeVariableDeclarationDuplicateName_NonTypesystemRule extend
       }
     }).any(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return eq_fdzrny_a0a0a0a0a0a0a1(SPropertyOperations.getString(SNodeOperations.cast(it, "jetbrains.mps.baseLanguage.structure.TypeVariableDeclaration"), "name"), SPropertyOperations.getString(typeVariableDeclaration, "name"));
+        return eq_fdzrny_a0a0a0a0a0a0a1(SPropertyOperations.getString(SNodeOperations.cast(it, "jetbrains.mps.baseLanguage.structure.TypeVariableDeclaration"), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")), SPropertyOperations.getString(typeVariableDeclaration, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")));
       }
     });
 
     if (duplicateName) {
-      String msg = "Duplicate type parameter " + SPropertyOperations.getString(typeVariableDeclaration, "name");
+      String msg = "Duplicate type parameter " + SPropertyOperations.getString(typeVariableDeclaration, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"));
       {
         MessageTarget errorTarget = new NodeMessageTarget();
         IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(typeVariableDeclaration, msg, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "2970924421776837790", null, errorTarget);

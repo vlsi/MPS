@@ -8,14 +8,16 @@ import jetbrains.mps.lang.dataFlow.DataFlowBuilderContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 
 public class NewProcessBuilderExpression_DataFlow extends DataFlowBuilder {
   public NewProcessBuilderExpression_DataFlow() {
   }
   public void build(final IOperationContext operationContext, final DataFlowBuilderContext _context) {
-    for (SNode part : ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "commandPart", true))) {
+    for (SNode part : ListSequence.fromList(SLinkOperations.getChildren(_context.getNode(), MetaAdapterFactory.getContainmentLink(new UUID(-921973991802319051l, -8446196034130110353l), 2343546112398330898l, 2343546112398330901l, "commandPart")))) {
       _context.getBuilder().build((SNode) part);
     }
-    _context.getBuilder().build((SNode) SLinkOperations.getTarget(_context.getNode(), "workingDirectory", true));
+    _context.getBuilder().build((SNode) SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(new UUID(-921973991802319051l, -8446196034130110353l), 2343546112398330898l, 2343546112398330902l, "workingDirectory")));
   }
 }

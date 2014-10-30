@@ -9,6 +9,8 @@ import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -20,7 +22,7 @@ public class check_BaseMethodDeclaration_UnreachableStatements_NonTypesystemRule
     if (!(BehaviorReflection.invokeVirtual(Boolean.TYPE, nodeToCheck, "virtual_isDataFlowChecked_1227714048980", new Object[]{}))) {
       return;
     }
-    if ((SLinkOperations.getTarget(nodeToCheck, "body", true) == null)) {
+    if ((SLinkOperations.getTarget(nodeToCheck, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123132l, 1068580123135l, "body")) == null)) {
       return;
     }
 
@@ -40,7 +42,7 @@ public class check_BaseMethodDeclaration_UnreachableStatements_NonTypesystemRule
       checkReturns = false;
     }
 
-    DataFlowUtil.checkDataFlow(typeCheckingContext, SLinkOperations.getTarget(nodeToCheck, "body", true), checkReturns);
+    DataFlowUtil.checkDataFlow(typeCheckingContext, SLinkOperations.getTarget(nodeToCheck, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123132l, 1068580123135l, "body")), checkReturns);
   }
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration";

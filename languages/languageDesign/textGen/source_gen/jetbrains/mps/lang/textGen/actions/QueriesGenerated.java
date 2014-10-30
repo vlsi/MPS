@@ -19,6 +19,8 @@ import jetbrains.mps.smodel.action.DefaultSimpleSubstituteAction;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.smodel.action.SideTransformActionsBuilderContext;
 import jetbrains.mps.smodel.action.AbstractSideTransformHintSubstituteAction;
 import org.jetbrains.annotations.Nullable;
@@ -58,7 +60,7 @@ public class QueriesGenerated {
         ListSequence.fromList(result).addElement(new DefaultSimpleSubstituteAction(outputConcept, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter()) {
           public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
             SNode result = SNodeFactoryOperations.createNewNode(model, "jetbrains.mps.lang.textGen.structure.ConstantStringAppendPart", _context.getCurrentTargetNode());
-            SPropertyOperations.set(result, "value", NameUtil.stripQuotes(pattern, "\"", "\""));
+            SPropertyOperations.set(result, MetaAdapterFactory.getProperty(new UUID(-5173455103397510980l, -8487484424797171117l), 1237305557638l, 1237305576108l, "value"), NameUtil.stripQuotes(pattern, "\"", "\""));
             return result;
           }
           public boolean hasSubstitute() {
@@ -82,7 +84,7 @@ public class QueriesGenerated {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
     ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.Expression"), _context.getSourceNode()) {
       public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
-        SPropertyOperations.set(SNodeOperations.cast(SNodeOperations.getParent(_context.getSourceNode()), "jetbrains.mps.lang.textGen.structure.CollectionAppendPart"), "withSeparator", "" + (true));
+        SPropertyOperations.set(SNodeOperations.cast(SNodeOperations.getParent(_context.getSourceNode()), "jetbrains.mps.lang.textGen.structure.CollectionAppendPart"), MetaAdapterFactory.getProperty(new UUID(-5173455103397510980l, -8487484424797171117l), 1237305491868l, 1237983969951l, "withSeparator"), "" + (true));
         return _context.getSourceNode();
       }
       public String getMatchingText(String pattern) {

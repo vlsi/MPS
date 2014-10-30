@@ -8,6 +8,8 @@ import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.editor.runtime.cells.AbstractCellAction;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 
 public class ThisExpression_ClassConcept_Actions {
   public static void setCellActions(EditorCell editorCell, SNode node, EditorContext context) {
@@ -23,7 +25,7 @@ public class ThisExpression_ClassConcept_Actions {
       this.execute_internal(editorContext, this.myNode);
     }
     public void execute_internal(EditorContext editorContext, SNode node) {
-      SLinkOperations.setTarget(node, "classConcept", null, false);
+      SLinkOperations.setTarget(node, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1070475354124l, 1182955020723l, "classConcept"), null);
     }
   }
   public static class ThisExpression_ClassConcept_Actions_BACKSPACE extends AbstractCellAction {
@@ -35,7 +37,7 @@ public class ThisExpression_ClassConcept_Actions {
       this.execute_internal(editorContext, this.myNode);
     }
     public void execute_internal(EditorContext editorContext, SNode node) {
-      SLinkOperations.setTarget(node, "classConcept", null, false);
+      SLinkOperations.setTarget(node, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1070475354124l, 1182955020723l, "classConcept"), null);
     }
   }
 }

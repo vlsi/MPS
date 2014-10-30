@@ -4,16 +4,18 @@ package jetbrains.mps.lang.editor.tableTests.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 
 public class LightWeightDecisionTable_Behavior {
   public static void init(SNode thisNode) {
-    SLinkOperations.addNewChild(thisNode, "column", "jetbrains.mps.baseLanguage.structure.Expression");
-    SLinkOperations.addNewChild(thisNode, "column", "jetbrains.mps.baseLanguage.structure.Expression");
-    SLinkOperations.addNewChild(thisNode, "row", "jetbrains.mps.baseLanguage.structure.Expression");
-    SLinkOperations.addNewChild(thisNode, "row", "jetbrains.mps.baseLanguage.structure.Expression");
-    SLinkOperations.addNewChild(thisNode, "body", "jetbrains.mps.baseLanguage.structure.Statement");
-    SLinkOperations.addNewChild(thisNode, "body", "jetbrains.mps.baseLanguage.structure.Statement");
-    SLinkOperations.addNewChild(thisNode, "body", "jetbrains.mps.baseLanguage.structure.Statement");
-    SLinkOperations.addNewChild(thisNode, "body", "jetbrains.mps.baseLanguage.structure.Statement");
+    SLinkOperations.addNewChild(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-2339732263353565073l, -4798597720271785646l), 7651593722933662687l, 7651593722933678081l, "column"), "jetbrains.mps.baseLanguage.structure.Expression");
+    SLinkOperations.addNewChild(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-2339732263353565073l, -4798597720271785646l), 7651593722933662687l, 7651593722933678081l, "column"), "jetbrains.mps.baseLanguage.structure.Expression");
+    SLinkOperations.addNewChild(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-2339732263353565073l, -4798597720271785646l), 7651593722933662687l, 7651593722933678118l, "row"), "jetbrains.mps.baseLanguage.structure.Expression");
+    SLinkOperations.addNewChild(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-2339732263353565073l, -4798597720271785646l), 7651593722933662687l, 7651593722933678118l, "row"), "jetbrains.mps.baseLanguage.structure.Expression");
+    SLinkOperations.addNewChild(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-2339732263353565073l, -4798597720271785646l), 7651593722933662687l, 7651593722933678119l, "body"), "jetbrains.mps.baseLanguage.structure.Statement");
+    SLinkOperations.addNewChild(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-2339732263353565073l, -4798597720271785646l), 7651593722933662687l, 7651593722933678119l, "body"), "jetbrains.mps.baseLanguage.structure.Statement");
+    SLinkOperations.addNewChild(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-2339732263353565073l, -4798597720271785646l), 7651593722933662687l, 7651593722933678119l, "body"), "jetbrains.mps.baseLanguage.structure.Statement");
+    SLinkOperations.addNewChild(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-2339732263353565073l, -4798597720271785646l), 7651593722933662687l, 7651593722933678119l, "body"), "jetbrains.mps.baseLanguage.structure.Statement");
   }
 }

@@ -23,6 +23,8 @@ import jetbrains.mps.nodeEditor.InlineCellProvider;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
 import jetbrains.mps.nodeEditor.cells.EditorCell_RefPresentation;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Vertical;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
@@ -130,7 +132,7 @@ public class ScopesTest_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private static boolean renderingCondition_qc0q19_a2a(SNode node, EditorContext editorContext) {
-    return SLinkOperations.getTarget(node, "checkingReference", false) != null;
+    return SLinkOperations.getTarget(node, MetaAdapterFactory.getReferenceLink(new UUID(-8825571760360698496l, -7431307307277756308l), 511191073233700873l, 5449224527592117654l, "checkingReference")) != null;
   }
   private EditorCell createConstant_qc0q19_a2a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "expected nodes:");

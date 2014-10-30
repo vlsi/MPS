@@ -19,6 +19,8 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Indent;
 import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
 import jetbrains.mps.nodeEditor.InlineCellProvider;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.openapi.editor.style.StyleRegistry;
 import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.nodeEditor.MPSFonts;
@@ -270,7 +272,7 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private static boolean renderingCondition_tm8wum_a2b1b0(SNode node, EditorContext editorContext) {
-    return SPropertyOperations.getBoolean(node, "hasNoDefaultMember");
+    return SPropertyOperations.getBoolean(node, MetaAdapterFactory.getProperty(new UUID(-4094437568663370681l, -8968368868337559369l), 1082978164219l, 1212080844762l, "hasNoDefaultMember"));
   }
   private EditorCell createConstant_tm8wum_a2b1b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "null text");
@@ -323,7 +325,7 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private static boolean renderingCondition_tm8wum_a3b1b0(SNode node, EditorContext editorContext) {
-    return !(SPropertyOperations.getBoolean(node, "hasNoDefaultMember"));
+    return !(SPropertyOperations.getBoolean(node, MetaAdapterFactory.getProperty(new UUID(-4094437568663370681l, -8968368868337559369l), 1082978164219l, 1212080844762l, "hasNoDefaultMember")));
   }
   private EditorCell createConstant_tm8wum_a3b1b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "default");

@@ -10,6 +10,8 @@ import java.util.Map;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
@@ -42,7 +44,7 @@ public abstract class ExtractMethodRefactoring {
     Map<SNode, SNode> inputToParams = this.createInputParameters(body, params);
     Map<SNode, SNode> inputMapping = this.createInputVaryablesMapping(inputToParams, this.myParameters.getNodesToRefactor());
     this.myMatches = new MethodDuplicatesFinder(this.myParameters.getNodesToRefactor(), inputMapping, params, this.getOutputReferences()).findDuplicates(SNodeOperations.getAncestor(ListSequence.fromList(this.myParameters.getNodesToRefactor()).first(), "jetbrains.mps.baseLanguage.structure.Classifier", false, false));
-    this.replaceInputVariablesByParameters(SLinkOperations.getTargets(body, "statement", true), inputToParams);
+    this.replaceInputVariablesByParameters(SLinkOperations.getChildren(body, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123136l, 1068581517665l, "statement")), inputToParams);
     SNode newMethod = this.createNewMethod(SNodeOperations.copyNode(this.getMethodType()), params, body);
 
     this.addMethod(newMethod);
@@ -81,10 +83,10 @@ public abstract class ExtractMethodRefactoring {
   }
   private void correctThrowsList(SNode method) {
     List<SNode> throwables = new ArrayList<SNode>();
-    for (SNode statement : ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(method, "body", true), "statement", true))) {
+    for (SNode statement : ListSequence.fromList(SLinkOperations.getChildren(SLinkOperations.getTarget(method, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123132l, 1068580123135l, "body")), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123136l, 1068581517665l, "statement")))) {
       ListSequence.fromList(throwables).addSequence(SetSequence.fromSet(BehaviorReflection.invokeNonVirtual((Class<Set<SNode>>) ((Class) Object.class), statement, "jetbrains.mps.baseLanguage.structure.Statement", "call_uncaughtThrowables_5412515780383108857", new Object[]{false})));
     }
-    ListSequence.fromList(SLinkOperations.getTargets(method, "throwsItem", true)).addSequence(ListSequence.fromList(throwables).select(new ISelector<SNode, SNode>() {
+    ListSequence.fromList(SLinkOperations.getChildren(method, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123132l, 1164879685961l, "throwsItem"))).addSequence(ListSequence.fromList(throwables).select(new ISelector<SNode, SNode>() {
       public SNode select(SNode it) {
         return _quotation_createNode_jq3ovj_a0a0a0a0c0k(it);
       }
@@ -93,7 +95,7 @@ public abstract class ExtractMethodRefactoring {
   protected void createNewDeclarations(SNode method) {
     Map<SNode, List<SNode>> mapping = MapSequence.fromMap(new HashMap<SNode, List<SNode>>());
     for (SNode reference : ListSequence.fromList(SNodeOperations.getDescendants(method, "jetbrains.mps.baseLanguage.structure.VariableReference", false, new String[]{}))) {
-      SNode declaration = SLinkOperations.getTarget(reference, "variableDeclaration", false);
+      SNode declaration = SLinkOperations.getTarget(reference, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068498886296l, 1068581517664l, "variableDeclaration"));
       if (!((SNodeOperations.isInstanceOf(declaration, "jetbrains.mps.baseLanguage.structure.ParameterDeclaration") || SNodeOperations.isInstanceOf(declaration, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration")))) {
         continue;
       }
@@ -106,8 +108,8 @@ public abstract class ExtractMethodRefactoring {
       }
     }
     for (SNode declaration : SetSequence.fromSet(MapSequence.fromMap(mapping).keySet())) {
-      SNode newDeclaration = _quotation_createNode_jq3ovj_a0a0c0l(SNodeOperations.copyNode(SLinkOperations.getTarget(declaration, "type", true)), SPropertyOperations.getString(declaration, "name"));
-      SNodeOperations.insertPrevSiblingChild(ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(method, "body", true), "statement", true)).first(), _quotation_createNode_jq3ovj_a0a1a2a11(newDeclaration));
+      SNode newDeclaration = _quotation_createNode_jq3ovj_a0a0c0l(SNodeOperations.copyNode(SLinkOperations.getTarget(declaration, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 4972933694980447171l, 5680397130376446158l, "type"))), SPropertyOperations.getString(declaration, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")));
+      SNodeOperations.insertPrevSiblingChild(ListSequence.fromList(SLinkOperations.getChildren(SLinkOperations.getTarget(method, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123132l, 1068580123135l, "body")), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123136l, 1068581517665l, "statement"))).first(), _quotation_createNode_jq3ovj_a0a1a2a11(newDeclaration));
       for (SNode reference : ListSequence.fromList(MapSequence.fromMap(mapping).get(declaration))) {
         SNodeOperations.replaceWithAnother(reference, BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), newDeclaration, "virtual_createReference_1213877517482", new Object[]{}));
       }
@@ -116,13 +118,13 @@ public abstract class ExtractMethodRefactoring {
   protected SNode fillBaseMethodDeclaration(SNode declaration, SNode returnType, List<SNode> params, SNode body) {
     if (SNodeOperations.isInstanceOf(declaration, "jetbrains.mps.baseLanguage.structure.IVisible")) {
       SNode visibleDeclaration = SNodeOperations.cast(declaration, "jetbrains.mps.baseLanguage.structure.IVisible");
-      SLinkOperations.setTarget(visibleDeclaration, "visibility", this.myParameters.getVisibilityLevel().getNode(), true);
+      SLinkOperations.setTarget(visibleDeclaration, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1178549954367l, 1178549979242l, "visibility"), this.myParameters.getVisibilityLevel().getNode());
     }
     SNode methodDeclaration = declaration;
-    SLinkOperations.setTarget(methodDeclaration, "returnType", SNodeOperations.copyNode(returnType), true);
-    SPropertyOperations.set(methodDeclaration, "name", this.myParameters.getName());
-    ListSequence.fromList(SLinkOperations.getTargets(methodDeclaration, "parameter", true)).addSequence(ListSequence.fromList(params));
-    SLinkOperations.setTarget(methodDeclaration, "body", body, true);
+    SLinkOperations.setTarget(methodDeclaration, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123132l, 1068580123133l, "returnType"), SNodeOperations.copyNode(returnType));
+    SPropertyOperations.set(methodDeclaration, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"), this.myParameters.getName());
+    ListSequence.fromList(SLinkOperations.getChildren(methodDeclaration, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123132l, 1068580123134l, "parameter"))).addSequence(ListSequence.fromList(params));
+    SLinkOperations.setTarget(methodDeclaration, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123132l, 1068580123135l, "body"), body);
     return methodDeclaration;
   }
   protected void addMethod(SNode node) {
@@ -138,10 +140,10 @@ public abstract class ExtractMethodRefactoring {
     for (MethodParameter methodParameter : ListSequence.fromList(this.myParameters.getParameters())) {
       if (methodParameter.isSelected()) {
         SNode parameter = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ParameterDeclaration", null);
-        SLinkOperations.setTarget(parameter, "type", SNodeOperations.copyNode(methodParameter.getType()), true);
-        SPropertyOperations.set(parameter, "name", methodParameter.getName());
+        SLinkOperations.setTarget(parameter, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 4972933694980447171l, 5680397130376446158l, "type"), SNodeOperations.copyNode(methodParameter.getType()));
+        SPropertyOperations.set(parameter, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"), methodParameter.getName());
         if (methodParameter.isFinal()) {
-          SPropertyOperations.set(parameter, "isFinal", "" + (true));
+          SPropertyOperations.set(parameter, MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 1068431474542l, 1176718929932l, "isFinal"), "" + (true));
         }
         ListSequence.fromList(parameters).addElement(parameter);
         MapSequence.fromMap(result).put(methodParameter.getDeclaration(), parameter);
@@ -213,7 +215,7 @@ public abstract class ExtractMethodRefactoring {
     List<SNode> outputVariables = myParameters.getAnalyzer().getOutputVariables();
     for (SNode node : ListSequence.fromList(myParameters.getNodesToRefactor())) {
       for (SNode varReference : ListSequence.fromList(SNodeOperations.getDescendants(node, "jetbrains.mps.baseLanguage.structure.VariableReference", false, new String[]{}))) {
-        if (ListSequence.fromList(outputVariables).contains(SLinkOperations.getTarget(varReference, "variableDeclaration", false))) {
+        if (ListSequence.fromList(outputVariables).contains(SLinkOperations.getTarget(varReference, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068498886296l, 1068581517664l, "variableDeclaration")))) {
           SetSequence.fromSet(result).addElement(varReference);
         }
       }
@@ -238,7 +240,7 @@ public abstract class ExtractMethodRefactoring {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, false);
-    SNodeAccessUtil.setReferenceTarget(quotedNode_2, "classifier", (SNode) parameter_1);
+    SNodeAccessUtil.setReferenceTarget(quotedNode_2, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier"), (SNode) parameter_1);
     return quotedNode_2;
   }
   private static SNode _quotation_createNode_jq3ovj_a0a0c0l(Object parameter_1, Object parameter_2) {
@@ -246,7 +248,7 @@ public abstract class ExtractMethodRefactoring {
     SNode quotedNode_3 = null;
     SNode quotedNode_4 = null;
     quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration", null, null, false);
-    SNodeAccessUtil.setProperty(quotedNode_3, "name", (String) parameter_2);
+    SNodeAccessUtil.setProperty(quotedNode_3, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"), (String) parameter_2);
     quotedNode_4 = (SNode) parameter_1;
     if (quotedNode_4 != null) {
       quotedNode_3.addChild("type", HUtil.copyIfNecessary(quotedNode_4));
@@ -269,7 +271,7 @@ public abstract class ExtractMethodRefactoring {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.VariableReference", null, null, false);
-    SNodeAccessUtil.setReferenceTarget(quotedNode_2, "variableDeclaration", (SNode) parameter_1);
+    SNodeAccessUtil.setReferenceTarget(quotedNode_2, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068498886296l, 1068581517664l, "variableDeclaration"), (SNode) parameter_1);
     return quotedNode_2;
   }
 }

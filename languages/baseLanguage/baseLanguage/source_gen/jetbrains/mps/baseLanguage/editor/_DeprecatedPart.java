@@ -13,6 +13,8 @@ import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.baseLanguage.behavior.IBLDeprecatable_Behavior;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 
@@ -55,7 +57,7 @@ public class _DeprecatedPart implements ConceptEditorComponent {
     return editorCell;
   }
   private static boolean renderingCondition_uc5iyq_a0a(SNode node, EditorContext editorContext) {
-    return SPropertyOperations.getBoolean(node, "isDeprecated") && IBLDeprecatable_Behavior.call_shouldDeprecatedDocBeVisible_8362517669638582065(node);
+    return SPropertyOperations.getBoolean(node, MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 1224848483129l, 1224848525476l, "isDeprecated")) && IBLDeprecatable_Behavior.call_shouldDeprecatedDocBeVisible_8362517669638582065(node);
   }
   private EditorCell createConstant_uc5iyq_a0a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "/**");

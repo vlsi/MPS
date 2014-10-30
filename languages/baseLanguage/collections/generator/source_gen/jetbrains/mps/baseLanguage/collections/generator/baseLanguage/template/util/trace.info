@@ -85,34 +85,34 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590330(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.util)/3446310095634935953">
     <file name="Helper.java">
-      <node id="3446310095635120207" at="11,105,12,109" concept="6" />
-      <node id="5577619521063250909" at="12,109,13,105" concept="8" />
-      <node id="5577619521063252206" at="13,105,14,105" concept="8" />
-      <node id="5577619521063293966" at="14,105,15,52" concept="8" />
-      <node id="3446310095635028235" at="15,52,16,326" concept="7" />
-      <node id="3446310095634978794" at="18,114,19,18" concept="7" />
-      <node id="3446310095634986528" at="21,131,22,18" concept="7" />
-      <node id="3446310095635001314" at="24,121,25,121" concept="6" />
-      <node id="3446310095635001866" at="25,121,26,313" concept="7" />
-      <node id="3446310095634994669" at="27,5,28,17" concept="7" />
-      <node id="3446310095634977655" at="17,5,20,5" concept="4" />
-      <node id="3446310095634979806" at="20,5,23,5" concept="4" />
-      <node id="3446310095634987342" at="23,5,27,5" concept="4" />
-      <node id="3446310095634974848" at="10,69,17,5" concept="4" />
-      <node id="3446310095634963860" at="10,0,30,0" concept="9" trace="isCollectionElementAccess#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-      <scope id="3446310095634977658" at="18,114,19,18" />
-      <scope id="3446310095634979809" at="21,131,22,18" />
-      <scope id="3446310095634987345" at="24,121,26,313">
+      <node id="3446310095635120207" at="13,105,14,109" concept="6" />
+      <node id="5577619521063250909" at="14,109,15,105" concept="8" />
+      <node id="5577619521063252206" at="15,105,16,105" concept="8" />
+      <node id="5577619521063293966" at="16,105,17,52" concept="8" />
+      <node id="3446310095635028235" at="17,52,18,566" concept="7" />
+      <node id="3446310095634978794" at="20,114,21,18" concept="7" />
+      <node id="3446310095634986528" at="23,131,24,18" concept="7" />
+      <node id="3446310095635001314" at="26,121,27,121" concept="6" />
+      <node id="3446310095635001866" at="27,121,28,553" concept="7" />
+      <node id="3446310095634994669" at="29,5,30,17" concept="7" />
+      <node id="3446310095634977655" at="19,5,22,5" concept="4" />
+      <node id="3446310095634979806" at="22,5,25,5" concept="4" />
+      <node id="3446310095634987342" at="25,5,29,5" concept="4" />
+      <node id="3446310095634974848" at="12,69,19,5" concept="4" />
+      <node id="3446310095634963860" at="12,0,32,0" concept="9" trace="isCollectionElementAccess#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+      <scope id="3446310095634977658" at="20,114,21,18" />
+      <scope id="3446310095634979809" at="23,131,24,18" />
+      <scope id="3446310095634987345" at="26,121,28,553">
         <var name="oae" id="3446310095635001317" />
       </scope>
-      <scope id="3446310095634974849" at="11,105,16,326">
+      <scope id="3446310095634974849" at="13,105,18,566">
         <var name="dotExpr" id="3446310095635120210" />
       </scope>
-      <scope id="3446310095634963864" at="10,69,28,17" />
-      <scope id="3446310095634963860" at="10,0,30,0">
+      <scope id="3446310095634963864" at="12,69,30,17" />
+      <scope id="3446310095634963860" at="12,0,32,0">
         <var name="expression" id="3446310095634969577" />
       </scope>
-      <unit id="3446310095634935953" at="9,0,31,0" name="jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.util.Helper" />
+      <unit id="3446310095634935953" at="11,0,33,0" name="jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.util.Helper" />
     </file>
   </root>
 </debug-info>

@@ -10,6 +10,8 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import java.util.Set;
 import jetbrains.mps.baseLanguage.behavior.Classifier_Behavior;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
@@ -50,15 +52,15 @@ public class AddRemoveFigureParameterAttributeMethod_Intention implements Intent
     return true;
   }
   private boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
-    if (!(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "visibility", true), "jetbrains.mps.baseLanguage.structure.PublicVisibility"))) {
+    if (!(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1178549954367l, 1178549979242l, "visibility")), "jetbrains.mps.baseLanguage.structure.PublicVisibility"))) {
       return false;
     }
-    SNode classifierType = SNodeOperations.as(SLinkOperations.getTarget(node, "returnType", true), "jetbrains.mps.baseLanguage.structure.ClassifierType");
-    if (classifierType == null && SLinkOperations.getTarget(classifierType, "classifier", false) == null) {
+    SNode classifierType = SNodeOperations.as(SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123132l, 1068580123133l, "returnType")), "jetbrains.mps.baseLanguage.structure.ClassifierType");
+    if (classifierType == null && SLinkOperations.getTarget(classifierType, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier")) == null) {
       return false;
     }
 
-    Set<SNode> allExtendedClassifiers = Classifier_Behavior.call_getAllExtendedClassifiers_2907982978864985482(SLinkOperations.getTarget(classifierType, "classifier", false));
+    Set<SNode> allExtendedClassifiers = Classifier_Behavior.call_getAllExtendedClassifiers_2907982978864985482(SLinkOperations.getTarget(classifierType, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier")));
     if (SetSequence.fromSet(allExtendedClassifiers).contains(SNodeOperations.getNode("67b3c41d-58b3-4756-b971-30bf8a9d63e6/f:java_stub#67b3c41d-58b3-4756-b971-30bf8a9d63e6#jetbrains.jetpad.model.property(jetbrains.jetpad/jetbrains.jetpad.model.property@java_stub)", "~Property"))) {
       return true;
     }

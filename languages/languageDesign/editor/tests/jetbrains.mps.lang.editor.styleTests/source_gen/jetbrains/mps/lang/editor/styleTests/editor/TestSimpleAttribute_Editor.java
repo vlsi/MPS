@@ -11,6 +11,8 @@ import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 
 public class TestSimpleAttribute_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
@@ -28,6 +30,6 @@ public class TestSimpleAttribute_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private static boolean _StyleParameter_QueryFunction_cfre1m_a0a(EditorContext editorContext, SNode node) {
-    return SPropertyOperations.getBoolean(node, "value");
+    return SPropertyOperations.getBoolean(node, MetaAdapterFactory.getProperty(new UUID(-6253595335891071644l, -6783526492980008552l), 8917170296719628637l, 8917170296719630035l, "value"));
   }
 }

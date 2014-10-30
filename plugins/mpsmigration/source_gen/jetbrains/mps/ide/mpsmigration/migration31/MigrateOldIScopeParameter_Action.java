@@ -23,6 +23,8 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
@@ -68,11 +70,11 @@ public class MigrateOldIScopeParameter_Action extends BaseAction {
         }
       }).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
-          return (SLinkOperations.getTarget(it, "scope", true) != null);
+          return (SLinkOperations.getTarget(it, MetaAdapterFactory.getContainmentLink(new UUID(8675788371017092295l, -9098312342032910879l), 1176109685393l, 1176109762787l, "scope")) != null);
         }
       }).visitAll(new IVisitor<SNode>() {
         public void visit(SNode it) {
-          SNodeOperations.deleteNode(SLinkOperations.getTarget(it, "scope", true));
+          SNodeOperations.deleteNode(SLinkOperations.getTarget(it, MetaAdapterFactory.getContainmentLink(new UUID(8675788371017092295l, -9098312342032910879l), 1176109685393l, 1176109762787l, "scope")));
         }
       });
 
@@ -84,11 +86,11 @@ public class MigrateOldIScopeParameter_Action extends BaseAction {
         }
       }).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
-          return (SLinkOperations.getTarget(it, "scope", true) != null);
+          return (SLinkOperations.getTarget(it, MetaAdapterFactory.getContainmentLink(new UUID(8675788371017092295l, -9098312342032910879l), 1182511038748l, 1182511038749l, "scope")) != null);
         }
       }).visitAll(new IVisitor<SNode>() {
         public void visit(SNode it) {
-          SNodeOperations.deleteNode(SLinkOperations.getTarget(it, "scope", true));
+          SNodeOperations.deleteNode(SLinkOperations.getTarget(it, MetaAdapterFactory.getContainmentLink(new UUID(8675788371017092295l, -9098312342032910879l), 1182511038748l, 1182511038749l, "scope")));
         }
       });
 
@@ -100,7 +102,7 @@ public class MigrateOldIScopeParameter_Action extends BaseAction {
         }
       }).visitAll(new IVisitor<SNode>() {
         public void visit(SNode it) {
-          SNodeOperations.deleteNode(SLinkOperations.getTarget(it, "scope", true));
+          SNodeOperations.deleteNode(SLinkOperations.getTarget(it, MetaAdapterFactory.getContainmentLink(new UUID(8675788371017092295l, -9098312342032910879l), 1181952871644l, 1182506966389l, "scope")));
         }
       });
     } catch (Throwable t) {

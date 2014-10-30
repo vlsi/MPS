@@ -27,6 +27,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.smodel.action.AbstractChildNodeSetter;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.editor.runtime.selection.SelectionUtil;
 
@@ -95,8 +97,8 @@ public class BaseAssignmentExpression_Editor extends DefaultNodeEditor {
           SNode sourceNode = (SNode) oldChild;
           SNode result = (SNode) newChild;
           SNodeOperations.replaceWithAnother(sourceNode, result);
-          SLinkOperations.setTarget(result, "leftExpression", SLinkOperations.getTarget(sourceNode, "lValue", true), true);
-          SLinkOperations.setTarget(result, "rightExpression", SLinkOperations.getTarget(sourceNode, "rValue", true), true);
+          SLinkOperations.setTarget(result, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1081773326031l, 1081773367580l, "leftExpression"), SLinkOperations.getTarget(sourceNode, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1215693861676l, 1068498886295l, "lValue")));
+          SLinkOperations.setTarget(result, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1081773326031l, 1081773367579l, "rightExpression"), SLinkOperations.getTarget(sourceNode, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1215693861676l, 1068498886297l, "rValue")));
           return result;
         }
       }, operationContext);

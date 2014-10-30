@@ -8,6 +8,8 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.SModelUtil_new;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
@@ -18,7 +20,7 @@ public class vector_subtype_of_matrix_SubtypingRule extends SubtypingRule_Runtim
   public vector_subtype_of_matrix_SubtypingRule() {
   }
   public SNode getSubOrSuperType(SNode vectorType, TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    return _quotation_createNode_exb2lq_a0a1(SLinkOperations.getTarget(vectorType, "elementType", true), "" + SPropertyOperations.getInteger(vectorType, "height"));
+    return _quotation_createNode_exb2lq_a0a1(SLinkOperations.getTarget(vectorType, MetaAdapterFactory.getContainmentLink(new UUID(3676340747305173022l, -6911132873973321185l), 4815887568697030517l, 4815887568697050735l, "elementType")), "" + SPropertyOperations.getInteger(vectorType, MetaAdapterFactory.getProperty(new UUID(3676340747305173022l, -6911132873973321185l), 4815887568697030517l, 4815887568697050734l, "height")));
   }
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.baseLanguage.math.structure.VectorType";
@@ -37,8 +39,8 @@ public class vector_subtype_of_matrix_SubtypingRule extends SubtypingRule_Runtim
     SNode quotedNode_3 = null;
     SNode quotedNode_4 = null;
     quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.MatrixType", null, null, false);
-    SNodeAccessUtil.setProperty(quotedNode_3, "columns", "1");
-    SNodeAccessUtil.setProperty(quotedNode_3, "rows", (String) parameter_2);
+    SNodeAccessUtil.setProperty(quotedNode_3, MetaAdapterFactory.getProperty(new UUID(3676340747305173022l, -6911132873973321185l), 4815887568697030518l, 4815887568697048493l, "columns"), "1");
+    SNodeAccessUtil.setProperty(quotedNode_3, MetaAdapterFactory.getProperty(new UUID(3676340747305173022l, -6911132873973321185l), 4815887568697030518l, 4815887568697048492l, "rows"), (String) parameter_2);
     quotedNode_4 = (SNode) parameter_1;
     if (quotedNode_4 != null) {
       quotedNode_3.addChild("elementType", HUtil.copyIfNecessary(quotedNode_4));

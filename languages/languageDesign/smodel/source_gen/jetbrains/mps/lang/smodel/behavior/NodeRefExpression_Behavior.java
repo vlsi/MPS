@@ -4,11 +4,13 @@ package jetbrains.mps.lang.smodel.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 
 public class NodeRefExpression_Behavior {
   public static void init(SNode thisNode) {
   }
   public static SNode virtual_getTargetNode_3575813534625153815(SNode thisNode) {
-    return SLinkOperations.getTarget(thisNode, "referentNode", false);
+    return SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getReferenceLink(new UUID(8675788371017092295l, -9098312342032910879l), 1219352745532l, 1219352800908l, "referentNode"));
   }
 }

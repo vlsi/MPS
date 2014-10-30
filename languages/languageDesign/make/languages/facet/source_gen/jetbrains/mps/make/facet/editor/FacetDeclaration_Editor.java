@@ -30,6 +30,8 @@ import jetbrains.mps.openapi.editor.style.StyleRegistry;
 import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Vertical;
 
 public class FacetDeclaration_Editor extends DefaultNodeEditor {
@@ -221,7 +223,7 @@ public class FacetDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private static boolean renderingCondition_aj8zjo_a0a1b0(SNode node, EditorContext editorContext) {
-    return ListSequence.fromList(SLinkOperations.getTargets(node, "required", true)).isNotEmpty();
+    return ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(new UUID(7596465798203917883l, -4873580700227838512l), 6418371274763029523l, 6447445394688422656l, "required"))).isNotEmpty();
   }
   private EditorCell createRefNodeList_aj8zjo_b0b1a(EditorContext editorContext, SNode node) {
     AbstractCellListHandler handler = new FacetDeclaration_Editor.requiredListHandler_aj8zjo_b0b1a(node, "required", editorContext);
@@ -295,7 +297,7 @@ public class FacetDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private static boolean renderingCondition_aj8zjo_a1b1a(SNode node, EditorContext editorContext) {
-    return ListSequence.fromList(SLinkOperations.getTargets(node, "required", true)).isNotEmpty();
+    return ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(new UUID(7596465798203917883l, -4873580700227838512l), 6418371274763029523l, 6447445394688422656l, "required"))).isNotEmpty();
   }
   private EditorCell createCollection_aj8zjo_c1b0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
@@ -321,7 +323,7 @@ public class FacetDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private static boolean renderingCondition_aj8zjo_a0c1b0(SNode node, EditorContext editorContext) {
-    return ListSequence.fromList(SLinkOperations.getTargets(node, "optional", true)).isNotEmpty();
+    return ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(new UUID(7596465798203917883l, -4873580700227838512l), 6418371274763029523l, 6447445394688422657l, "optional"))).isNotEmpty();
   }
   private EditorCell createRefNodeList_aj8zjo_b2b1a(EditorContext editorContext, SNode node) {
     AbstractCellListHandler handler = new FacetDeclaration_Editor.optionalListHandler_aj8zjo_b2b1a(node, "optional", editorContext);
@@ -395,7 +397,7 @@ public class FacetDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private static boolean renderingCondition_aj8zjo_a3b1a(SNode node, EditorContext editorContext) {
-    return ListSequence.fromList(SLinkOperations.getTargets(node, "optional", true)).isNotEmpty();
+    return ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(new UUID(7596465798203917883l, -4873580700227838512l), 6418371274763029523l, 6447445394688422657l, "optional"))).isNotEmpty();
   }
   private EditorCell createConstant_aj8zjo_e1b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Targets:");
@@ -409,7 +411,7 @@ public class FacetDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private static boolean renderingCondition_aj8zjo_a4b1a(SNode node, EditorContext editorContext) {
-    return ListSequence.fromList(SLinkOperations.getTargets(node, "targetDeclaration", true)).isNotEmpty();
+    return ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(new UUID(7596465798203917883l, -4873580700227838512l), 6418371274763029523l, 6418371274763146558l, "targetDeclaration"))).isNotEmpty();
   }
   private EditorCell createCollection_aj8zjo_f1b0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
@@ -433,7 +435,7 @@ public class FacetDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private static boolean renderingCondition_aj8zjo_a0f1b0(SNode node, EditorContext editorContext) {
-    return ListSequence.fromList(SLinkOperations.getTargets(node, "targetDeclaration", true)).isNotEmpty();
+    return ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(new UUID(7596465798203917883l, -4873580700227838512l), 6418371274763029523l, 6418371274763146558l, "targetDeclaration"))).isNotEmpty();
   }
   private EditorCell createIndentCell_aj8zjo_a0f1b0(EditorContext editorContext, SNode node) {
     EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);

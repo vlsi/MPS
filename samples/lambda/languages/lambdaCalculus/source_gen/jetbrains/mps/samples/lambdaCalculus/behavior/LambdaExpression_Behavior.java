@@ -5,6 +5,8 @@ package jetbrains.mps.samples.lambdaCalculus.behavior;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import java.util.List;
@@ -14,7 +16,7 @@ public class LambdaExpression_Behavior {
   public static void init(SNode thisNode) {
   }
   public static SNode call_getOuterApplication_1308935328408190993(SNode thisNode) {
-    if (!((SNodeOperations.isInstanceOf(SNodeOperations.getParent(thisNode), "jetbrains.mps.samples.lambdaCalculus.structure.LambdaApplication") && SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(thisNode), "jetbrains.mps.samples.lambdaCalculus.structure.LambdaApplication"), "function", true) == thisNode)) && SNodeOperations.isInstanceOf(thisNode, "jetbrains.mps.samples.lambdaCalculus.structure.LambdaApplication")) {
+    if (!((SNodeOperations.isInstanceOf(SNodeOperations.getParent(thisNode), "jetbrains.mps.samples.lambdaCalculus.structure.LambdaApplication") && SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(thisNode), "jetbrains.mps.samples.lambdaCalculus.structure.LambdaApplication"), MetaAdapterFactory.getContainmentLink(new UUID(8979658720047614716l, -5913038370385483627l), 4022026349914762717l, 4022026349914762720l, "function")) == thisNode)) && SNodeOperations.isInstanceOf(thisNode, "jetbrains.mps.samples.lambdaCalculus.structure.LambdaApplication")) {
       return SNodeOperations.cast(thisNode, "jetbrains.mps.samples.lambdaCalculus.structure.LambdaApplication");
 
     } else if (SNodeOperations.getParent(thisNode) != null && !(SNodeOperations.isInstanceOf(SNodeOperations.getParent(thisNode), "jetbrains.mps.samples.lambdaCalculus.structure.LetExpression")) && !(SNodeOperations.isInstanceOf(SNodeOperations.getParent(thisNode), "jetbrains.mps.samples.lambdaCalculus.structure.Program"))) {
@@ -48,8 +50,8 @@ public class LambdaExpression_Behavior {
     List<SNode> allRef = SNodeOperations.getDescendants(thisNode, "jetbrains.mps.samples.lambdaCalculus.structure.VariableReference", false, new String[]{});
     List<SNode> result = new ArrayList<SNode>();
     for (SNode ref : allRef) {
-      if (!(ListSequence.fromList(allVar).contains(SLinkOperations.getTarget(ref, "variable", false))) && !(ListSequence.fromList(result).contains(SLinkOperations.getTarget(ref, "variable", false)))) {
-        ListSequence.fromList(result).addElement(SLinkOperations.getTarget(ref, "variable", false));
+      if (!(ListSequence.fromList(allVar).contains(SLinkOperations.getTarget(ref, MetaAdapterFactory.getReferenceLink(new UUID(8979658720047614716l, -5913038370385483627l), 5249919352014727944l, 5249919352014732020l, "variable")))) && !(ListSequence.fromList(result).contains(SLinkOperations.getTarget(ref, MetaAdapterFactory.getReferenceLink(new UUID(8979658720047614716l, -5913038370385483627l), 5249919352014727944l, 5249919352014732020l, "variable"))))) {
+        ListSequence.fromList(result).addElement(SLinkOperations.getTarget(ref, MetaAdapterFactory.getReferenceLink(new UUID(8979658720047614716l, -5913038370385483627l), 5249919352014727944l, 5249919352014732020l, "variable")));
       }
     }
     return result;

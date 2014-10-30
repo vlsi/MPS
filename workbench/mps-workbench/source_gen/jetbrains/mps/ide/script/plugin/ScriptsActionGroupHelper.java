@@ -9,6 +9,8 @@ import org.jetbrains.mps.openapi.model.SNode;
 import java.util.Collections;
 import java.util.Comparator;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.smodel.Language;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -35,8 +37,8 @@ public class ScriptsActionGroupHelper {
     Collections.sort(scripts, new Comparator<SNode>() {
       @Override
       public int compare(SNode s1, SNode s2) {
-        String cat1 = SPropertyOperations.getString_def(s1, "type", "enhancement");
-        String cat2 = SPropertyOperations.getString_def(s2, "type", "enhancement");
+        String cat1 = SPropertyOperations.getString_def(s1, MetaAdapterFactory.getProperty(new UUID(1071275047162102839l, -4887287056175405968l), 1177457067821l, 5299416737274925395l, "type"), "enhancement");
+        String cat2 = SPropertyOperations.getString_def(s2, MetaAdapterFactory.getProperty(new UUID(1071275047162102839l, -4887287056175405968l), 1177457067821l, 5299416737274925395l, "type"), "enhancement");
         if (cat1 == null) {
           cat1 = "";
         }
@@ -44,8 +46,8 @@ public class ScriptsActionGroupHelper {
           cat2 = "";
         }
         if (cat1.compareTo(cat2) == 0) {
-          String fromBuild1 = SPropertyOperations.getString(s1, "toBuild");
-          String fromBuild2 = SPropertyOperations.getString(s2, "toBuild");
+          String fromBuild1 = SPropertyOperations.getString(s1, MetaAdapterFactory.getProperty(new UUID(1071275047162102839l, -4887287056175405968l), 1177457067821l, 5299416737274925397l, "toBuild"));
+          String fromBuild2 = SPropertyOperations.getString(s2, MetaAdapterFactory.getProperty(new UUID(1071275047162102839l, -4887287056175405968l), 1177457067821l, 5299416737274925397l, "toBuild"));
           if (fromBuild1 == null) {
             fromBuild1 = "";
           }
@@ -69,7 +71,7 @@ public class ScriptsActionGroupHelper {
   public static void populateByCategoryGroup(List<SNode> migrationScripts, BaseGroup ownerGroup, boolean applyToSelection) {
     _FunctionTypes._return_P1_E0<? extends String, ? super SNode> getCategoryClosure = new _FunctionTypes._return_P1_E0<String, SNode>() {
       public String invoke(SNode script) {
-        String cat = NameUtil.pluralize(NameUtil.capitalize(SPropertyOperations.getString_def(script, "type", "enhancement")));
+        String cat = NameUtil.pluralize(NameUtil.capitalize(SPropertyOperations.getString_def(script, MetaAdapterFactory.getProperty(new UUID(1071275047162102839l, -4887287056175405968l), 1177457067821l, 5299416737274925395l, "type"), "enhancement")));
         if (cat == null) {
           cat = "<uncategorized>";
         }
@@ -94,7 +96,7 @@ public class ScriptsActionGroupHelper {
       BaseGroup categoryGroup = createGroup(cat, ownerGroup);
       _FunctionTypes._return_P1_E0<? extends String, ? super SNode> getBuildClosure = new _FunctionTypes._return_P1_E0<String, SNode>() {
         public String invoke(SNode script) {
-          return (SPropertyOperations.getString(script, "toBuild") == null ? "" : SPropertyOperations.getString(script, "toBuild"));
+          return (SPropertyOperations.getString(script, MetaAdapterFactory.getProperty(new UUID(1071275047162102839l, -4887287056175405968l), 1177457067821l, 5299416737274925397l, "toBuild")) == null ? "" : SPropertyOperations.getString(script, MetaAdapterFactory.getProperty(new UUID(1071275047162102839l, -4887287056175405968l), 1177457067821l, 5299416737274925397l, "toBuild")));
         }
       };
       Map<String, List<SNode>> byBuild = groupBy(MapSequence.fromMap(byCategory).get(cat), getBuildClosure);
@@ -123,8 +125,8 @@ public class ScriptsActionGroupHelper {
     Collections.sort(scripts, new Comparator<SNode>() {
       @Override
       public int compare(SNode node1, SNode node2) {
-        String name1 = ScriptsActionGroupHelper.makeScriptActionName(null, SPropertyOperations.getString(node1, "title"), null).toLowerCase();
-        String name2 = ScriptsActionGroupHelper.makeScriptActionName(null, SPropertyOperations.getString(node2, "title"), null).toLowerCase();
+        String name1 = ScriptsActionGroupHelper.makeScriptActionName(null, SPropertyOperations.getString(node1, MetaAdapterFactory.getProperty(new UUID(1071275047162102839l, -4887287056175405968l), 1177457067821l, 1177457669450l, "title")), null).toLowerCase();
+        String name2 = ScriptsActionGroupHelper.makeScriptActionName(null, SPropertyOperations.getString(node2, MetaAdapterFactory.getProperty(new UUID(1071275047162102839l, -4887287056175405968l), 1177457067821l, 1177457669450l, "title")), null).toLowerCase();
         return name1.compareTo(name2);
       }
     });
@@ -133,7 +135,7 @@ public class ScriptsActionGroupHelper {
       SNode script_var;
       while (script_it.hasNext()) {
         script_var = script_it.next();
-        group.add(new RunMigrationScriptAction(script_var, ScriptsActionGroupHelper.makeScriptActionName(null, SPropertyOperations.getString(script_var, "title"), null), applyToSelection));
+        group.add(new RunMigrationScriptAction(script_var, ScriptsActionGroupHelper.makeScriptActionName(null, SPropertyOperations.getString(script_var, MetaAdapterFactory.getProperty(new UUID(1071275047162102839l, -4887287056175405968l), 1177457067821l, 1177457669450l, "title")), null), applyToSelection));
       }
     }
   }
@@ -158,7 +160,7 @@ public class ScriptsActionGroupHelper {
   public static void populateByBuildGroup(List<SNode> migrationScripts, BaseGroup ownerGroup, boolean applyToSelection) {
     Map<String, List<SNode>> byBuild = new HashMap<String, List<SNode>>();
     for (SNode migrationScript : migrationScripts) {
-      String build = SPropertyOperations.getString(migrationScript, "toBuild");
+      String build = SPropertyOperations.getString(migrationScript, MetaAdapterFactory.getProperty(new UUID(1071275047162102839l, -4887287056175405968l), 1177457067821l, 5299416737274925397l, "toBuild"));
       if (build == null) {
         build = "<unspecified>";
       }
@@ -171,7 +173,7 @@ public class ScriptsActionGroupHelper {
     for (String build : sorted) {
       BaseGroup categoryGroup = new BaseGroup("migrate to " + build, "");
       for (SNode script : byBuild.get(build)) {
-        categoryGroup.add(new RunMigrationScriptAction(script, ScriptsActionGroupHelper.makeScriptActionName(SPropertyOperations.getString_def(script, "type", "enhancement"), SPropertyOperations.getString(script, "title"), null), applyToSelection));
+        categoryGroup.add(new RunMigrationScriptAction(script, ScriptsActionGroupHelper.makeScriptActionName(SPropertyOperations.getString_def(script, MetaAdapterFactory.getProperty(new UUID(1071275047162102839l, -4887287056175405968l), 1177457067821l, 5299416737274925395l, "type"), "enhancement"), SPropertyOperations.getString(script, MetaAdapterFactory.getProperty(new UUID(1071275047162102839l, -4887287056175405968l), 1177457067821l, 1177457669450l, "title")), null), applyToSelection));
       }
       categoryGroup.setPopup(true);
       ownerGroup.add(categoryGroup);
@@ -184,7 +186,7 @@ public class ScriptsActionGroupHelper {
     }
     BaseGroup languageScriptsGroup = new BaseGroup(language.getModuleName(), "");
     for (SNode script : migrationScripts) {
-      languageScriptsGroup.add(new RunMigrationScriptAction(script, ScriptsActionGroupHelper.makeScriptActionName(SPropertyOperations.getString_def(script, "type", "enhancement"), SPropertyOperations.getString(script, "title"), SPropertyOperations.getString(script, "toBuild")), applyToSelection));
+      languageScriptsGroup.add(new RunMigrationScriptAction(script, ScriptsActionGroupHelper.makeScriptActionName(SPropertyOperations.getString_def(script, MetaAdapterFactory.getProperty(new UUID(1071275047162102839l, -4887287056175405968l), 1177457067821l, 5299416737274925395l, "type"), "enhancement"), SPropertyOperations.getString(script, MetaAdapterFactory.getProperty(new UUID(1071275047162102839l, -4887287056175405968l), 1177457067821l, 1177457669450l, "title")), SPropertyOperations.getString(script, MetaAdapterFactory.getProperty(new UUID(1071275047162102839l, -4887287056175405968l), 1177457067821l, 5299416737274925397l, "toBuild"))), applyToSelection));
     }
     if (!((migrationScripts.isEmpty()))) {
       languageScriptsGroup.addSeparator();

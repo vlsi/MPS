@@ -12,6 +12,8 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.plugins.runconfigs.MPSPsiElement;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import com.intellij.execution.impl.RunManagerImpl;
 
 public class DemoApplication_Producer {
@@ -32,10 +34,10 @@ public class DemoApplication_Producer {
     }
     protected DemoApplication_Configuration doCreateConfiguration(final SNode source) {
       setSourceElement(new MPSPsiElement(source));
-      if (!(SPropertyOperations.getBoolean(source, "valid"))) {
+      if (!(SPropertyOperations.getBoolean(source, MetaAdapterFactory.getProperty(new UUID(-1871219151347103450l, -4760527767600787321l), 4928971978190304900l, 4928971978190605252l, "valid")))) {
         return null;
       }
-      DemoApplication_Configuration configuration = ((DemoApplication_Configuration) getConfigurationFactory().createConfiguration("" + "SomeNode " + SPropertyOperations.getString(source, "name"), (DemoApplication_Configuration) RunManagerImpl.getInstanceImpl(getContext().getProject()).getConfigurationTemplate(getConfigurationFactory()).getConfiguration()));
+      DemoApplication_Configuration configuration = ((DemoApplication_Configuration) getConfigurationFactory().createConfiguration("" + "SomeNode " + SPropertyOperations.getString(source, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")), (DemoApplication_Configuration) RunManagerImpl.getInstanceImpl(getContext().getProject()).getConfigurationTemplate(getConfigurationFactory()).getConfiguration()));
       configuration.getNode().setNode(source);
       return configuration;
     }

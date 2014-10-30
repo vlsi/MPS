@@ -209,30 +209,30 @@
   </root>
   <root nodeRef="r:6272afbe-d407-4921-b9d6-fcdba8c77d3c(jetbrains.mps.debugger.java.customViewers.behavior)/43370322128260019">
     <file name="HighLevelCustomViewer_Behavior.java">
-      <node id="43370322128270482" at="13,79,14,92" concept="3" />
-      <node id="7570572250661284606" at="16,78,17,79" concept="3" />
-      <node id="7570572250661287368" at="19,80,20,186" concept="3" />
-      <node id="43370322128260019" at="11,0,13,0" concept="4" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <node id="43370322128260019" at="13,0,16,0" concept="4" trace="call_getValueTypeCopy_43370322128260022#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <node id="43370322128260019" at="16,0,19,0" concept="4" trace="call_getClassName_7570572250661284600#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
-      <node id="43370322128260019" at="19,0,22,0" concept="4" trace="call_getClassFqName_7570572250661287362#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
-      <scope id="43370322128260021" at="11,43,11,43" />
-      <scope id="43370322128260025" at="13,79,14,92" />
-      <scope id="7570572250661284603" at="16,78,17,79" />
-      <scope id="7570572250661287365" at="19,80,20,186" />
-      <scope id="43370322128260019" at="11,0,13,0">
+      <node id="43370322128270482" at="15,79,16,221" concept="3" />
+      <node id="7570572250661284606" at="18,78,19,199" concept="3" />
+      <node id="7570572250661287368" at="21,80,22,186" concept="3" />
+      <node id="43370322128260019" at="13,0,15,0" concept="4" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="43370322128260019" at="15,0,18,0" concept="4" trace="call_getValueTypeCopy_43370322128260022#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <node id="43370322128260019" at="18,0,21,0" concept="4" trace="call_getClassName_7570572250661284600#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
+      <node id="43370322128260019" at="21,0,24,0" concept="4" trace="call_getClassFqName_7570572250661287362#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
+      <scope id="43370322128260021" at="13,43,13,43" />
+      <scope id="43370322128260025" at="15,79,16,221" />
+      <scope id="7570572250661284603" at="18,78,19,199" />
+      <scope id="7570572250661287365" at="21,80,22,186" />
+      <scope id="43370322128260019" at="13,0,15,0">
         <var name="thisNode" id="43370322128260019" />
       </scope>
-      <scope id="43370322128260019" at="13,0,16,0">
+      <scope id="43370322128260019" at="15,0,18,0">
         <var name="thisNode" id="43370322128260019" />
       </scope>
-      <scope id="43370322128260019" at="16,0,19,0">
+      <scope id="43370322128260019" at="18,0,21,0">
         <var name="thisNode" id="43370322128260019" />
       </scope>
-      <scope id="43370322128260019" at="19,0,22,0">
+      <scope id="43370322128260019" at="21,0,24,0">
         <var name="thisNode" id="43370322128260019" />
       </scope>
-      <unit id="43370322128260019" at="10,0,23,0" name="jetbrains.mps.debugger.java.customViewers.behavior.HighLevelCustomViewer_Behavior" />
+      <unit id="43370322128260019" at="12,0,25,0" name="jetbrains.mps.debugger.java.customViewers.behavior.HighLevelCustomViewer_Behavior" />
     </file>
   </root>
 </debug-info>

@@ -4,6 +4,8 @@ package jetbrains.mps.core.xml.sax.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.scope.Scope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
@@ -16,10 +18,10 @@ public class XMLSAXChildRule_Behavior {
   public static void init(SNode thisNode) {
   }
   public static String call_getTagName_2264311582634140608(SNode thisNode) {
-    if ((SLinkOperations.getTarget(thisNode, "rule", false) != null) && isNotEmptyString(SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, "rule", false), "tagName")) && (SPropertyOperations.getBoolean(thisNode, "overrideTag") == false || isEmptyString(SPropertyOperations.getString(thisNode, "tagName")))) {
-      return SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, "rule", false), "tagName");
+    if ((SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getReferenceLink(new UUID(-2542941447088749313l, -6571881616571970461l), 2264311582634140376l, 2264311582634140380l, "rule")) != null) && isNotEmptyString(SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getReferenceLink(new UUID(-2542941447088749313l, -6571881616571970461l), 2264311582634140376l, 2264311582634140380l, "rule")), MetaAdapterFactory.getProperty(new UUID(-2542941447088749313l, -6571881616571970461l), 2264311582634140402l, 2264311582634140409l, "tagName"))) && (SPropertyOperations.getBoolean(thisNode, MetaAdapterFactory.getProperty(new UUID(-2542941447088749313l, -6571881616571970461l), 2264311582634140376l, 2264311582634140379l, "overrideTag")) == false || isEmptyString(SPropertyOperations.getString(thisNode, MetaAdapterFactory.getProperty(new UUID(-2542941447088749313l, -6571881616571970461l), 2264311582634140376l, 2264311582634140378l, "tagName"))))) {
+      return SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getReferenceLink(new UUID(-2542941447088749313l, -6571881616571970461l), 2264311582634140376l, 2264311582634140380l, "rule")), MetaAdapterFactory.getProperty(new UUID(-2542941447088749313l, -6571881616571970461l), 2264311582634140402l, 2264311582634140409l, "tagName"));
     }
-    return SPropertyOperations.getString(thisNode, "tagName");
+    return SPropertyOperations.getString(thisNode, MetaAdapterFactory.getProperty(new UUID(-2542941447088749313l, -6571881616571970461l), 2264311582634140376l, 2264311582634140378l, "tagName"));
   }
   public static Scope call_getArgumentsScope_4720003541459735421(SNode thisNode, SNode kind) {
     {
@@ -41,12 +43,12 @@ public class XMLSAXChildRule_Behavior {
         return argumentsScope;
       }
     }
-    if (child == SLinkOperations.getTarget(thisNode, "condition", true)) {
+    if (child == SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-2542941447088749313l, -6571881616571970461l), 2264311582634140376l, 4720003541470390117l, "condition"))) {
       {
         SNode concept_a0b0c;
         concept_a0b0c = kind;
         if (SConceptOperations.isSubConceptOf(concept_a0b0c, "jetbrains.mps.core.xml.sax.structure.XMLSAXAttributeRule")) {
-          return SimpleRoleScope.forNamedElements(SLinkOperations.getTarget(thisNode, "rule", false), SLinkOperations.findLinkDeclaration("jetbrains.mps.core.xml.sax.structure.XMLSAXNodeRule", "attrs"));
+          return SimpleRoleScope.forNamedElements(SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getReferenceLink(new UUID(-2542941447088749313l, -6571881616571970461l), 2264311582634140376l, 2264311582634140380l, "rule")), SLinkOperations.findLinkDeclaration("jetbrains.mps.core.xml.sax.structure.XMLSAXNodeRule", "attrs"));
         }
       }
     }

@@ -12,6 +12,8 @@ import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
 import java.util.Collections;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.intentions.IntentionDescriptor;
 
 public class AddParameterBlockDocTag_Intention implements IntentionFactory {
@@ -58,7 +60,7 @@ public class AddParameterBlockDocTag_Intention implements IntentionFactory {
       return "Add @param Tag";
     }
     public void execute(final SNode node, final EditorContext editorContext) {
-      SNode addedNode = SNodeFactoryOperations.addNewChild(node, "param", "jetbrains.mps.baseLanguage.javadoc.structure.ParameterBlockDocTag");
+      SNode addedNode = SNodeFactoryOperations.addNewChild(node, MetaAdapterFactory.getContainmentLink(new UUID(-972752984950357426l, -4964296947050367098l), 5349172909345532724l, 8465538089690917625l, "param"), "jetbrains.mps.baseLanguage.javadoc.structure.ParameterBlockDocTag");
       BlockDocTagHelper.setFocus(editorContext, addedNode);
     }
     public IntentionDescriptor getDescriptor() {

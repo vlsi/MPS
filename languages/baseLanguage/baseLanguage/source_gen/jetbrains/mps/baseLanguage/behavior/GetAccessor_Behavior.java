@@ -5,6 +5,8 @@ package jetbrains.mps.baseLanguage.behavior;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import java.util.List;
 import java.util.ArrayList;
 
@@ -12,10 +14,10 @@ public class GetAccessor_Behavior {
   public static void init(SNode thisNode) {
   }
   public static SNode virtual_getExpectedRetType_1239354342632(SNode thisNode) {
-    return SLinkOperations.getTarget(SNodeOperations.getAncestor(thisNode, "jetbrains.mps.baseLanguage.structure.Property", false, false), "type", true);
+    return SLinkOperations.getTarget(SNodeOperations.getAncestor(thisNode, "jetbrains.mps.baseLanguage.structure.Property", false, false), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1201370618622l, 1201371521209l, "type"));
   }
   public static SNode virtual_getBody_1239354440022(SNode thisNode) {
-    return SLinkOperations.getTarget(thisNode, "statementList", true);
+    return SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1201402044357l, 1202593363480l, "statementList"));
   }
   public static List<SNode> virtual_getThrowableTypes_6204026822016975623(SNode thisNode) {
     return new ArrayList<SNode>();

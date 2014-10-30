@@ -10,6 +10,8 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.baseLanguage.behavior.IfStatement_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
 import java.util.Collections;
@@ -44,7 +46,7 @@ public class MakeMultiLiner_Intention implements IntentionFactory {
     return true;
   }
   private boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
-    return IfStatement_Behavior.call_isGuardIf_1237547453258(node) && !(SPropertyOperations.getBoolean(node, "forceMultiLine"));
+    return IfStatement_Behavior.call_isGuardIf_1237547453258(node) && !(SPropertyOperations.getBoolean(node, MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123159l, 4467513934994662257l, "forceMultiLine")));
   }
   public SNodeReference getIntentionNodeReference() {
     return new SNodePointer("r:00000000-0000-4000-0000-011c895902c6(jetbrains.mps.baseLanguage.intentions)", "4467513934994713259");
@@ -65,8 +67,8 @@ public class MakeMultiLiner_Intention implements IntentionFactory {
       return "Make Multi Liner";
     }
     public void execute(final SNode node, final EditorContext editorContext) {
-      SPropertyOperations.set(node, "forceMultiLine", "" + (true));
-      SPropertyOperations.set(node, "forceOneLine", "" + (false));
+      SPropertyOperations.set(node, MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123159l, 4467513934994662257l, "forceMultiLine"), "" + (true));
+      SPropertyOperations.set(node, MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123159l, 4467513934994662256l, "forceOneLine"), "" + (false));
     }
     public IntentionDescriptor getDescriptor() {
       return MakeMultiLiner_Intention.this;

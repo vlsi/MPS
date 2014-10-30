@@ -9,6 +9,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class ContextUtil {
@@ -35,7 +37,7 @@ public class ContextUtil {
     return null;
   }
   public static SNode getContextForMethod(TemplateQueryContext genContext, SNode node, boolean topmost) {
-    SNode usage = genContext.getOutputNodeByInputNodeAndMappingLabel(SLinkOperations.getTarget(node, "inner", true), "methUsageExpr");
+    SNode usage = genContext.getOutputNodeByInputNodeAndMappingLabel(SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-2363163772790029805l, -6024047381933761144l), 3585982959253588676l, 3585982959253588677l, "inner")), "methUsageExpr");
     if ((usage != null)) {
       if (topmost) {
         return ListSequence.fromList(SNodeOperations.getAncestors(usage, "jetbrains.mps.baseLanguage.structure.ClassConcept", false)).last();
@@ -55,9 +57,9 @@ public class ContextUtil {
     return null;
   }
   public static SNode getContextForInnerClass(TemplateQueryContext genContext, SNode node, boolean topmost) {
-    SNode usage = genContext.getOutputNodeByInputNodeAndMappingLabel(SLinkOperations.getTarget(node, "inner", true), "classUsageExpr");
+    SNode usage = genContext.getOutputNodeByInputNodeAndMappingLabel(SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-2363163772790029805l, -6024047381933761144l), 7738261905749564104l, 7738261905749582030l, "inner")), "classUsageExpr");
     if ((usage != null)) {
-      if (SPropertyOperations.getBoolean(node, "nonStatic")) {
+      if (SPropertyOperations.getBoolean(node, MetaAdapterFactory.getProperty(new UUID(-2363163772790029805l, -6024047381933761144l), 7738261905749564104l, 4106700815269135333l, "nonStatic"))) {
         return SNodeOperations.getAncestor(usage, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false);
       }
       if (topmost) {

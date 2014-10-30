@@ -7,6 +7,8 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.internal.collections.runtime.Sequence;
@@ -20,16 +22,16 @@ public class ConvertFieldToLocalVariable_QuickFix extends QuickFix_Runtime {
   }
   public void execute(SNode node) {
     SNode variableDeclaration = SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.VariableDeclaration");
-    SNode varStmd = SNodeOperations.insertPrevSiblingChild(ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(((SNode) ConvertFieldToLocalVariable_QuickFix.this.getField("method")[0]), "body", true), "statement", true)).first(), SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement", null));
-    final SNode var = SLinkOperations.setTarget(varStmd, "localVariableDeclaration", SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration", null), true);
-    SLinkOperations.setTarget(var, "type", SLinkOperations.getTarget(variableDeclaration, "type", true), true);
-    SPropertyOperations.set(var, "name", SPropertyOperations.getString(variableDeclaration, "name"));
-    SLinkOperations.setTarget(var, "initializer", SLinkOperations.getTarget(variableDeclaration, "initializer", true), true);
-    SPropertyOperations.set(var, "isFinal", "" + (SPropertyOperations.getBoolean(variableDeclaration, "isFinal")));
+    SNode varStmd = SNodeOperations.insertPrevSiblingChild(ListSequence.fromList(SLinkOperations.getChildren(SLinkOperations.getTarget(((SNode) ConvertFieldToLocalVariable_QuickFix.this.getField("method")[0]), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123132l, 1068580123135l, "body")), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123136l, 1068581517665l, "statement"))).first(), SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement", null));
+    final SNode var = SLinkOperations.setTarget(varStmd, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068581242864l, 1068581242865l, "localVariableDeclaration"), SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration", null));
+    SLinkOperations.setTarget(var, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 4972933694980447171l, 5680397130376446158l, "type"), SLinkOperations.getTarget(variableDeclaration, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 4972933694980447171l, 5680397130376446158l, "type")));
+    SPropertyOperations.set(var, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"), SPropertyOperations.getString(variableDeclaration, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")));
+    SLinkOperations.setTarget(var, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068431474542l, 1068431790190l, "initializer"), SLinkOperations.getTarget(variableDeclaration, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068431474542l, 1068431790190l, "initializer")));
+    SPropertyOperations.set(var, MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 1068431474542l, 1176718929932l, "isFinal"), "" + (SPropertyOperations.getBoolean(variableDeclaration, MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 1068431474542l, 1176718929932l, "isFinal"))));
     Sequence.fromIterable(((Iterable<SNode>) ConvertFieldToLocalVariable_QuickFix.this.getField("refs")[0])).visitAll(new IVisitor<SNode>() {
       public void visit(SNode it) {
         SNode ref = SNodeOperations.replaceWithNewChild(it, "jetbrains.mps.baseLanguage.structure.LocalVariableReference");
-        SLinkOperations.setTarget(ref, "variableDeclaration", var, false);
+        SLinkOperations.setTarget(ref, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068498886296l, 1068581517664l, "variableDeclaration"), var);
       }
     });
     SNodeOperations.detachNode(node);

@@ -10,6 +10,8 @@ import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.openapi.editor.selection.SelectionManager;
@@ -24,10 +26,10 @@ public class AnonymousCellAnnotation_Behavior {
     final Wrappers._T<EditorCell> cellWithId = new Wrappers._T<EditorCell>();
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        if (SPropertyOperations.getBoolean(thisNode, "isInInspector")) {
+        if (SPropertyOperations.getBoolean(thisNode, MetaAdapterFactory.getProperty(new UUID(-8825571760360698496l, -7431307307277756308l), 1229194968594l, 1977980803835239937l, "isInInspector"))) {
           editorComponent.value = AnonymousCellAnnotation_Behavior.call_setupInspector_5681471431307922086(thisNode, node, nodeEditorComponent);
         }
-        cellWithId.value = editorComponent.value.findCellWithId(node, SPropertyOperations.getString(thisNode, "cellId"));
+        cellWithId.value = editorComponent.value.findCellWithId(node, SPropertyOperations.getString(thisNode, MetaAdapterFactory.getProperty(new UUID(-8825571760360698496l, -7431307307277756308l), 1229194968594l, 1229194968595l, "cellId")));
         if (cellWithId.value == null) {
           throw new RuntimeException("No cell " + thisNode);
         }
@@ -37,9 +39,9 @@ public class AnonymousCellAnnotation_Behavior {
     editorComponent.value.changeSelection(cellWithId.value);
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        if (SLinkOperations.getTarget(thisNode, "nodeRangeSelectionStart", false) != null) {
-          SNode selectionStart = MapSequence.fromMap(map).get(SLinkOperations.getTarget(thisNode, "nodeRangeSelectionStart", false));
-          SNode selectionEnd = MapSequence.fromMap(map).get(SLinkOperations.getTarget(thisNode, "nodeRangeSelectionEnd", false));
+        if (SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getReferenceLink(new UUID(-8825571760360698496l, -7431307307277756308l), 1229194968594l, 1932269937152203468l, "nodeRangeSelectionStart")) != null) {
+          SNode selectionStart = MapSequence.fromMap(map).get(SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getReferenceLink(new UUID(-8825571760360698496l, -7431307307277756308l), 1229194968594l, 1932269937152203468l, "nodeRangeSelectionStart")));
+          SNode selectionEnd = MapSequence.fromMap(map).get(SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getReferenceLink(new UUID(-8825571760360698496l, -7431307307277756308l), 1229194968594l, 1932269937152203469l, "nodeRangeSelectionEnd")));
           SelectionManager selectionManager = editorComponent.value.getSelectionManager();
           selectionManager.pushSelection(selectionManager.createRangeSelection(selectionStart, selectionEnd));
         }
@@ -47,18 +49,18 @@ public class AnonymousCellAnnotation_Behavior {
     });
   }
   public static int call_getCaretPosition_6268941039745717986(SNode thisNode, EditorCell_Label label) {
-    if (SPropertyOperations.getBoolean(thisNode, "isLastPosition")) {
+    if (SPropertyOperations.getBoolean(thisNode, MetaAdapterFactory.getProperty(new UUID(-8825571760360698496l, -7431307307277756308l), 1229194968594l, 1229432188737l, "isLastPosition"))) {
       return label.getText().length();
     } else {
-      return SPropertyOperations.getInteger(thisNode, "caretPosition");
+      return SPropertyOperations.getInteger(thisNode, MetaAdapterFactory.getProperty(new UUID(-8825571760360698496l, -7431307307277756308l), 1229194968594l, 1229194968596l, "caretPosition"));
     }
   }
   public static void call_setupCaretAndSelection_9114978211826243747(SNode thisNode, EditorCell cellWithId) {
     if (cellWithId instanceof EditorCell_Label) {
       EditorCell_Label label = (EditorCell_Label) cellWithId;
       label.setCaretPosition(AnonymousCellAnnotation_Behavior.call_getCaretPosition_6268941039745717986(thisNode, label));
-      label.setSelectionStart(SPropertyOperations.getInteger(thisNode, "selectionStart"));
-      label.setSelectionEnd(SPropertyOperations.getInteger(thisNode, "selectionEnd"));
+      label.setSelectionStart(SPropertyOperations.getInteger(thisNode, MetaAdapterFactory.getProperty(new UUID(-8825571760360698496l, -7431307307277756308l), 1229194968594l, 6268941039745498163l, "selectionStart")));
+      label.setSelectionEnd(SPropertyOperations.getInteger(thisNode, MetaAdapterFactory.getProperty(new UUID(-8825571760360698496l, -7431307307277756308l), 1229194968594l, 6268941039745498165l, "selectionEnd")));
     }
   }
   public static EditorComponent call_setupInspector_5681471431307922086(SNode thisNode, SNode node, NodeEditorComponent nodeEditorComponent) {

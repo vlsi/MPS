@@ -5,12 +5,14 @@ package jetbrains.mps.lang.editor.behavior;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 
 public class CellKeyMapItem_Behavior {
   public static void init(SNode thisNode) {
   }
   public static String call_getKeyStroke_1213877335427(SNode thisNode) {
-    SNode first = ListSequence.fromList(SLinkOperations.getTargets(thisNode, "keystroke", true)).first();
+    SNode first = ListSequence.fromList(SLinkOperations.getChildren(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(1782411230332735017l, -6324602048325217350l), 1136916919141l, 1136916998332l, "keystroke"))).first();
     String result = "";
     if (first == null) {
       return result;

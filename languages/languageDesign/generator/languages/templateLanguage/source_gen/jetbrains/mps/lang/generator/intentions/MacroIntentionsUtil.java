@@ -14,6 +14,8 @@ import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.lang.pattern.IMatchingPattern;
@@ -76,11 +78,11 @@ public final class MacroIntentionsUtil {
     List<SNode> result = ListSequence.fromList(new ArrayList<SNode>());
     for (SNode child : AbstractConceptDeclaration_Behavior.call_getLinkDeclarations_1213877394480(sourceNode)) {
       if (inCollection) {
-        if (SPropertyOperations.hasValue(child, "sourceCardinality", "0..n", "0..1") || SPropertyOperations.hasValue(child, "sourceCardinality", "1..n", "0..1")) {
+        if (SPropertyOperations.hasValue(child, MetaAdapterFactory.getProperty(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489288298l, 1071599893252l, "sourceCardinality"), "0..n", "0..1") || SPropertyOperations.hasValue(child, MetaAdapterFactory.getProperty(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489288298l, 1071599893252l, "sourceCardinality"), "1..n", "0..1")) {
           ListSequence.fromList(result).addElement(child);
         }
       } else {
-        if (SPropertyOperations.hasValue(child, "sourceCardinality", "0..1", "0..1") || SPropertyOperations.hasValue(child, "sourceCardinality", "1", "0..1")) {
+        if (SPropertyOperations.hasValue(child, MetaAdapterFactory.getProperty(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489288298l, 1071599893252l, "sourceCardinality"), "0..1", "0..1") || SPropertyOperations.hasValue(child, MetaAdapterFactory.getProperty(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489288298l, 1071599893252l, "sourceCardinality"), "1", "0..1")) {
           ListSequence.fromList(result).addElement(child);
         }
       }
@@ -97,7 +99,7 @@ public final class MacroIntentionsUtil {
     return BehaviorReflection.invokeVirtual(String.class, intentionParam, "virtual_getPresentation_1213877396640", new Object[]{}).replaceAll("_{1}", "__");
   }
   public static void copyVirtualPackage(SNode to, SNode from) {
-    SPropertyOperations.set(to, "virtualPackage", SPropertyOperations.getString(SNodeOperations.getContainingRoot(from), "virtualPackage"));
+    SPropertyOperations.set(to, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1133920641626l, 1193676396447l, "virtualPackage"), SPropertyOperations.getString(SNodeOperations.getContainingRoot(from), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1133920641626l, 1193676396447l, "virtualPackage")));
   }
   public static boolean isInGeneratorModel(SNode node) {
     return SNodeOperations.isInstanceOf(SModelOperations.getModuleStub(SNodeOperations.getModel(node)), "jetbrains.mps.lang.project.structure.Generator");

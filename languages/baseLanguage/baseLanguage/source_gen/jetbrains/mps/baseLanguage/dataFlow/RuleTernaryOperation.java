@@ -9,6 +9,8 @@ import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.dataFlow.framework.Program;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.lang.dataFlow.framework.instructions.Instruction;
 
 public class RuleTernaryOperation extends DataFlowConstructor {
@@ -21,14 +23,14 @@ public class RuleTernaryOperation extends DataFlowConstructor {
     return "jetbrains.mps.baseLanguage.structure.TernaryOperatorExpression";
   }
   public void performActions(Program o, SNode node) {
-    SNode condition = SLinkOperations.getTarget(node, "condition", true);
+    SNode condition = SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1163668896201l, 1163668914799l, "condition"));
     if (SNodeOperations.isInstanceOf(condition, "jetbrains.mps.baseLanguage.structure.EqualsExpression") || SNodeOperations.isInstanceOf(condition, "jetbrains.mps.baseLanguage.structure.NotEqualsExpression")) {
       SNode other = NullableUtil.getOtherThanNull(SNodeOperations.cast(condition, "jetbrains.mps.baseLanguage.structure.BinaryOperation"));
       if (other == null) {
         return;
       }
       {
-        Object object = SLinkOperations.getTarget(node, "ifFalse", true);
+        Object object = SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1163668896201l, 1163668934364l, "ifFalse"));
         if (((Program) o).contains(object)) {
           boolean before = false;
           int position = ((Program) (o)).getEnd(object);
@@ -40,10 +42,10 @@ public class RuleTernaryOperation extends DataFlowConstructor {
       }
       if (SNodeOperations.isInstanceOf(condition, "jetbrains.mps.baseLanguage.structure.EqualsExpression")) {
         {
-          Object object = SLinkOperations.getTarget(node, "ifTrue", true);
+          Object object = SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1163668896201l, 1163668922816l, "ifTrue"));
           if (((Program) o).contains(object)) {
             boolean before = true;
-            int position = ((Program) (o)).getStart(SLinkOperations.getTarget(node, "ifTrue", true));
+            int position = ((Program) (o)).getStart(SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1163668896201l, 1163668922816l, "ifTrue")));
             Instruction instruction = new nullInstruction(other);
             instruction.setRuleReference("r:00000000-0000-4000-0000-011c895902c2(jetbrains.mps.baseLanguage.dataFlow)/3383816410303360124");
             instruction.setSource(node);
@@ -51,10 +53,10 @@ public class RuleTernaryOperation extends DataFlowConstructor {
           }
         }
         {
-          Object object = SLinkOperations.getTarget(node, "ifFalse", true);
+          Object object = SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1163668896201l, 1163668934364l, "ifFalse"));
           if (((Program) o).contains(object)) {
             boolean before = true;
-            int position = ((Program) (o)).getStart(SLinkOperations.getTarget(node, "ifFalse", true));
+            int position = ((Program) (o)).getStart(SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1163668896201l, 1163668934364l, "ifFalse")));
             Instruction instruction = new notNullInstruction(other);
             instruction.setRuleReference("r:00000000-0000-4000-0000-011c895902c2(jetbrains.mps.baseLanguage.dataFlow)/3383816410303360110");
             instruction.setSource(node);
@@ -63,10 +65,10 @@ public class RuleTernaryOperation extends DataFlowConstructor {
         }
       } else {
         {
-          Object object = SLinkOperations.getTarget(node, "ifTrue", true);
+          Object object = SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1163668896201l, 1163668922816l, "ifTrue"));
           if (((Program) o).contains(object)) {
             boolean before = true;
-            int position = ((Program) (o)).getStart(SLinkOperations.getTarget(node, "ifTrue", true));
+            int position = ((Program) (o)).getStart(SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1163668896201l, 1163668922816l, "ifTrue")));
             Instruction instruction = new notNullInstruction(other);
             instruction.setRuleReference("r:00000000-0000-4000-0000-011c895902c2(jetbrains.mps.baseLanguage.dataFlow)/3383816410303360132");
             instruction.setSource(node);
@@ -74,10 +76,10 @@ public class RuleTernaryOperation extends DataFlowConstructor {
           }
         }
         {
-          Object object = SLinkOperations.getTarget(node, "ifFalse", true);
+          Object object = SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1163668896201l, 1163668934364l, "ifFalse"));
           if (((Program) o).contains(object)) {
             boolean before = true;
-            int position = ((Program) (o)).getStart(SLinkOperations.getTarget(node, "ifFalse", true));
+            int position = ((Program) (o)).getStart(SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1163668896201l, 1163668934364l, "ifFalse")));
             Instruction instruction = new nullInstruction(other);
             instruction.setRuleReference("r:00000000-0000-4000-0000-011c895902c2(jetbrains.mps.baseLanguage.dataFlow)/3383816410303360139");
             instruction.setSource(node);

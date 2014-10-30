@@ -9,6 +9,8 @@ import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
@@ -22,8 +24,8 @@ public class check_ConceptSubstitutePart_NonTypesystemRule extends AbstractNonTy
   }
   public void applyRule(final SNode nodeToCheck, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     SNode builder = SNodeOperations.getAncestor(nodeToCheck, "jetbrains.mps.lang.actions.structure.NodeSubstituteActionsBuilder", false, false);
-    SNode substituteConcept = SLinkOperations.getTarget(builder, "applicableConcept", false);
-    SNode conceptToAdd = SLinkOperations.getTarget(nodeToCheck, "concept", false);
+    SNode substituteConcept = SLinkOperations.getTarget(builder, MetaAdapterFactory.getReferenceLink(new UUID(-5842916035344972280l, -5840605745428443715l), 1112058030570l, 1112058088712l, "applicableConcept"));
+    SNode conceptToAdd = SLinkOperations.getTarget(nodeToCheck, MetaAdapterFactory.getReferenceLink(new UUID(-5842916035344972280l, -5840605745428443715l), 1180134965967l, 1180135092669l, "concept"));
     if (!(SConceptOperations.isSubConceptOf(conceptToAdd, NameUtil.nodeFQName(substituteConcept)))) {
       {
         MessageTarget errorTarget = new NodeMessageTarget();

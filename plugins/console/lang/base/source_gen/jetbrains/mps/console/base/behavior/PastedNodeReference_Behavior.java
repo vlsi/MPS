@@ -4,13 +4,15 @@ package jetbrains.mps.console.base.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import org.jetbrains.mps.openapi.model.SNodeId;
 
 public class PastedNodeReference_Behavior {
   public static void init(SNode thisNode) {
   }
   public static SNode virtual_getTargetNode_3575813534625153815(SNode thisNode) {
-    return SLinkOperations.getTarget(thisNode, "target", false);
+    return SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getReferenceLink(new UUID(-2442401883381282302l, -5546511894809623691l), 3939645998855102389l, 328850564588043375l, "target"));
   }
   public static String virtual_getTextWhenBroken_328850564593858078(SNode thisNode) {
     SNodeId targetNodeId = thisNode.getReference("target").getTargetNodeId();

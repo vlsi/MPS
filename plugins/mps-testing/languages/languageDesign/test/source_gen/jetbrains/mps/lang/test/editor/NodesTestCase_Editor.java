@@ -28,6 +28,8 @@ import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandlerElementKeyMap;
 import jetbrains.mps.nodeEditor.cells.ModelAccessor;
 import jetbrains.mps.baseLanguage.unitTest.behavior.ITestCase_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
 import jetbrains.mps.editor.runtime.cells.EmptyCellAction;
 import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
@@ -347,9 +349,9 @@ public class NodesTestCase_Editor extends DefaultNodeEditor {
       }
       public void setText(String text) {
         if (text.equals("true")) {
-          SPropertyOperations.set(node, "canNotRunInProcess", "" + (false));
+          SPropertyOperations.set(node, MetaAdapterFactory.getProperty(new UUID(-714818927241248010l, -5076282167675141386l), 1216130694486l, 6427619394892729757l, "canNotRunInProcess"), "" + (false));
         } else if (text.equals("false")) {
-          SPropertyOperations.set(node, "canNotRunInProcess", "" + (true));
+          SPropertyOperations.set(node, MetaAdapterFactory.getProperty(new UUID(-714818927241248010l, -5076282167675141386l), 1216130694486l, 6427619394892729757l, "canNotRunInProcess"), "" + (true));
         }
       }
       public boolean isValidText(String text) {
@@ -368,7 +370,7 @@ public class NodesTestCase_Editor extends DefaultNodeEditor {
     public NodesTestCase_generic_cellMenu_58c6e4_a0b0a() {
     }
     public void handleAction(SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
-      SPropertyOperations.set(node, "canNotRunInProcess", "" + (true));
+      SPropertyOperations.set(node, MetaAdapterFactory.getProperty(new UUID(-714818927241248010l, -5076282167675141386l), 1216130694486l, 6427619394892729757l, "canNotRunInProcess"), "" + (true));
     }
     public String getMatchingText() {
       return "false";
@@ -378,7 +380,7 @@ public class NodesTestCase_Editor extends DefaultNodeEditor {
     public NodesTestCase_generic_cellMenu_58c6e4_b0b0a() {
     }
     public void handleAction(SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
-      SPropertyOperations.set(node, "canNotRunInProcess", "" + (false));
+      SPropertyOperations.set(node, MetaAdapterFactory.getProperty(new UUID(-714818927241248010l, -5076282167675141386l), 1216130694486l, 6427619394892729757l, "canNotRunInProcess"), "" + (false));
     }
     public String getMatchingText() {
       return "true";
@@ -404,9 +406,9 @@ public class NodesTestCase_Editor extends DefaultNodeEditor {
       }
       public void setText(String text) {
         if (text.equals("true")) {
-          SPropertyOperations.set(node, "needsNoWriteAction", "" + (false));
+          SPropertyOperations.set(node, MetaAdapterFactory.getProperty(new UUID(-8825571760360698496l, -7431307307277756308l), 1216913645126l, 6339244025081158986l, "needsNoWriteAction"), "" + (false));
         } else if (text.equals("false")) {
-          SPropertyOperations.set(node, "needsNoWriteAction", "" + (true));
+          SPropertyOperations.set(node, MetaAdapterFactory.getProperty(new UUID(-8825571760360698496l, -7431307307277756308l), 1216913645126l, 6339244025081158986l, "needsNoWriteAction"), "" + (true));
         }
       }
       public boolean isValidText(String text) {
@@ -425,7 +427,7 @@ public class NodesTestCase_Editor extends DefaultNodeEditor {
     public NodesTestCase_generic_cellMenu_58c6e4_a0b1a() {
     }
     public void handleAction(SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
-      SPropertyOperations.set(node, "needsNoWriteAction", "" + (true));
+      SPropertyOperations.set(node, MetaAdapterFactory.getProperty(new UUID(-8825571760360698496l, -7431307307277756308l), 1216913645126l, 6339244025081158986l, "needsNoWriteAction"), "" + (true));
     }
     public String getMatchingText() {
       return "false";
@@ -435,7 +437,7 @@ public class NodesTestCase_Editor extends DefaultNodeEditor {
     public NodesTestCase_generic_cellMenu_58c6e4_b0b1a() {
     }
     public void handleAction(SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
-      SPropertyOperations.set(node, "needsNoWriteAction", "" + (false));
+      SPropertyOperations.set(node, MetaAdapterFactory.getProperty(new UUID(-8825571760360698496l, -7431307307277756308l), 1216913645126l, 6339244025081158986l, "needsNoWriteAction"), "" + (false));
     }
     public String getMatchingText() {
       return "true";

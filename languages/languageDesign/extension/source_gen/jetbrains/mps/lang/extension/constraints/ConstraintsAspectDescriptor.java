@@ -5,6 +5,7 @@ package jetbrains.mps.lang.extension.constraints;
 import jetbrains.mps.smodel.runtime.ConstraintsDescriptor;
 import java.util.Arrays;
 import jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor;
+import jetbrains.mps.smodel.adapter.ids.SConceptId;
 
 public class ConstraintsAspectDescriptor implements jetbrains.mps.smodel.runtime.ConstraintsAspectDescriptor {
   public ConstraintsAspectDescriptor() {
@@ -20,9 +21,24 @@ public class ConstraintsAspectDescriptor implements jetbrains.mps.smodel.runtime
       case 3:
         return new GetExtensionObjectsOperation_Constraints();
       default:
-        // todo: illegal in some cases? 
         return new BaseConstraintsDescriptor(fqName);
     }
+  }
+  public ConstraintsDescriptor getDescriptor(SConceptId conceptId) {
+    long id = conceptId.getConceptId();
+    if (id == 3729007189729192406l) {
+      return new ExtensionPointDeclaration_Constraints();
+    }
+    if (id == 3729007189729192404l) {
+      return new ExtensionDeclaration_Constraints();
+    }
+    if (id == 7036359038356115097l) {
+      return new ExtensionFieldDeclaration_Constraints();
+    }
+    if (id == 3175313036448560967l) {
+      return new GetExtensionObjectsOperation_Constraints();
+    }
+    return new BaseConstraintsDescriptor(conceptId);
   }
   private static String[] stringSwitchCases_2qnle6_a0a0b = new String[]{"jetbrains.mps.lang.extension.structure.ExtensionDeclaration", "jetbrains.mps.lang.extension.structure.ExtensionFieldDeclaration", "jetbrains.mps.lang.extension.structure.ExtensionPointDeclaration", "jetbrains.mps.lang.extension.structure.GetExtensionObjectsOperation"};
 }

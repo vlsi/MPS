@@ -12,6 +12,8 @@ import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
 import java.util.Collections;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.intentions.IntentionDescriptor;
 
@@ -59,8 +61,8 @@ public class InlineConstant_Intention implements IntentionFactory {
       return "Inline Constant";
     }
     public void execute(final SNode node, final EditorContext editorContext) {
-      SNode original = SLinkOperations.getTarget(node, "original", false);
-      SNodeOperations.replaceWithAnother(node, SNodeOperations.copyNode(SLinkOperations.getTarget(original, "initializer", true)));
+      SNode original = SLinkOperations.getTarget(node, MetaAdapterFactory.getReferenceLink(new UUID(954996654982643920l, -8265182369074421545l), 3990190717072393829l, 3990190717072393830l, "original"));
+      SNodeOperations.replaceWithAnother(node, SNodeOperations.copyNode(SLinkOperations.getTarget(original, MetaAdapterFactory.getContainmentLink(new UUID(954996654982643920l, -8265182369074421545l), 1494751830318912537l, 2001769927721010657l, "initializer"))));
     }
     public IntentionDescriptor getDescriptor() {
       return InlineConstant_Intention.this;

@@ -19,6 +19,8 @@ import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.ide.editor.MPSEditorDataKeys;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 
@@ -80,7 +82,7 @@ public class UncommentStatements_Action extends BaseAction {
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       SNode commentedStatementsBlock = SNodeOperations.getAncestor(((SNode) MapSequence.fromMap(_params).get("node")), "jetbrains.mps.baseLanguage.structure.CommentedStatementsBlock", false, false);
-      for (SNode statement : ListSequence.fromList(SLinkOperations.getTargets(commentedStatementsBlock, "statement", true))) {
+      for (SNode statement : ListSequence.fromList(SLinkOperations.getChildren(commentedStatementsBlock, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1177326519037l, 1177326540772l, "statement")))) {
         SNodeOperations.insertPrevSiblingChild(commentedStatementsBlock, statement);
       }
       SNodeOperations.deleteNode(commentedStatementsBlock);

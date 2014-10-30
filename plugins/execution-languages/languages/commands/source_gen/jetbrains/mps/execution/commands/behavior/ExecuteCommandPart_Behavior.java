@@ -6,6 +6,8 @@ import org.jetbrains.mps.openapi.model.SNode;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.Sequence;
@@ -25,13 +27,13 @@ public class ExecuteCommandPart_Behavior {
   }
   public static List<SNode> call_getParameters_6129022259108621180(SNode thisNode) {
     if (CommandDeclaration_Behavior.call_isDebuggable_856705193941282102(ExecuteCommandPart_Behavior.call_getCommandDeclaration_6129022259108621200(thisNode))) {
-      return ListSequence.fromList(SLinkOperations.getTargets(thisNode, "parameterDeclaration", true)).select(new ISelector<SNode, SNode>() {
+      return ListSequence.fromList(SLinkOperations.getChildren(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-921973991802319051l, -8446196034130110353l), 6129022259108579244l, 6129022259108579245l, "parameterDeclaration"))).select(new ISelector<SNode, SNode>() {
         public SNode select(SNode it) {
           return SNodeOperations.cast(it, "jetbrains.mps.execution.commands.structure.CommandParameterDeclaration");
         }
-      }).union(Sequence.fromIterable(Sequence.<SNode>singleton(SLinkOperations.getTarget(ExecuteCommandPart_Behavior.call_getCommandDeclaration_6129022259108621200(thisNode), "debuggerParameter", true)))).toListSequence();
+      }).union(Sequence.fromIterable(Sequence.<SNode>singleton(SLinkOperations.getTarget(ExecuteCommandPart_Behavior.call_getCommandDeclaration_6129022259108621200(thisNode), MetaAdapterFactory.getContainmentLink(new UUID(-921973991802319051l, -8446196034130110353l), 856705193941281768l, 8478830098674492346l, "debuggerParameter"))))).toListSequence();
     }
-    return SLinkOperations.getTargets(thisNode, "parameterDeclaration", true);
+    return SLinkOperations.getChildren(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-921973991802319051l, -8446196034130110353l), 6129022259108579244l, 6129022259108579245l, "parameterDeclaration"));
   }
   public static List<SNode> call_getRequiredParameters_6129022259108621289(SNode thisNode) {
     return ListSequence.fromList(ExecuteCommandPart_Behavior.call_getParameters_6129022259108621180(thisNode)).where(new IWhereFilter<SNode>() {
@@ -47,7 +49,7 @@ public class ExecuteCommandPart_Behavior {
     return ListSequence.fromListAndArray(new ArrayList<SNode>(), _quotation_createNode_qal9w4_a0a0a3());
   }
   public static SNode virtual_getBody_1239354440022(SNode thisNode) {
-    return SLinkOperations.getTarget(SLinkOperations.getTarget(thisNode, "execute", true), "statements", true);
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-921973991802319051l, -8446196034130110353l), 6129022259108579244l, 6129022259108579246l, "execute")), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1082485599095l, 1082485599096l, "statements"));
   }
   public static SNode virtual_getExpectedRetType_1239354342632(SNode thisNode) {
     return _quotation_createNode_qal9w4_a0a5();
@@ -59,7 +61,7 @@ public class ExecuteCommandPart_Behavior {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, false);
-    quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, facade.createModelReference("498d89d2-c2e9-11e2-ad49-6cf049e62fe5/f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.execution(MPS.IDEA/com.intellij.execution@java_stub)"), facade.createNodeId("~ExecutionException")));
+    quotedNode_1.setReference(MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier"), SReference.create(MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier"), quotedNode_1, facade.createModelReference("498d89d2-c2e9-11e2-ad49-6cf049e62fe5/f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.execution(MPS.IDEA/com.intellij.execution@java_stub)"), facade.createNodeId("~ExecutionException")));
     return quotedNode_1;
   }
   private static SNode _quotation_createNode_qal9w4_a0a5() {
@@ -71,7 +73,7 @@ public class ExecuteCommandPart_Behavior {
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.execution.commands.structure.ProcessType", null, null, false);
     quotedNode_1.addChild("argument", quotedNode_2);
     quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, false);
-    quotedNode_3.setReference("classifier", SReference.create("classifier", quotedNode_3, facade.createModelReference("498d89d2-c2e9-11e2-ad49-6cf049e62fe5/f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.execution.process(MPS.IDEA/com.intellij.execution.process@java_stub)"), facade.createNodeId("~ProcessHandler")));
+    quotedNode_3.setReference(MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier"), SReference.create(MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier"), quotedNode_3, facade.createModelReference("498d89d2-c2e9-11e2-ad49-6cf049e62fe5/f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.execution.process(MPS.IDEA/com.intellij.execution.process@java_stub)"), facade.createNodeId("~ProcessHandler")));
     quotedNode_1.addChild("argument", quotedNode_3);
     return quotedNode_1;
   }

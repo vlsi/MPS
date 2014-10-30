@@ -9,6 +9,8 @@ import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
@@ -19,10 +21,10 @@ public class check_InstanceOfAbstract_NonTypesystemRule extends AbstractNonTypes
   }
   public void applyRule(final SNode baseConcept, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     SNode concept = SNodeOperations.getConceptDeclaration(baseConcept);
-    if (SPropertyOperations.getBoolean(concept, "abstract")) {
+    if (SPropertyOperations.getBoolean(concept, MetaAdapterFactory.getProperty(new UUID(-4094437568663370681l, -8968368868337559369l), 1169125787135l, 4628067390765956802l, "abstract"))) {
       {
         MessageTarget errorTarget = new NodeMessageTarget();
-        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(baseConcept, "Abstract concept instance detected. Use one of sub-concepts instead. Concept: " + SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(baseConcept), "name"), "r:cec599e3-51d2-48a7-af31-989e3cbd593c(jetbrains.mps.lang.core.typesystem)", "7283836008113027554", null, errorTarget);
+        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(baseConcept, "Abstract concept instance detected. Use one of sub-concepts instead. Concept: " + SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(baseConcept), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")), "r:cec599e3-51d2-48a7-af31-989e3cbd593c(jetbrains.mps.lang.core.typesystem)", "7283836008113027554", null, errorTarget);
       }
     }
   }

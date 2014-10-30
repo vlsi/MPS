@@ -22,6 +22,8 @@ import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
@@ -155,7 +157,7 @@ public class BuildMps_Solution_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private static boolean renderingCondition_ju7sd7_a3a(SNode node, EditorContext editorContext) {
-    return (SLinkOperations.getTarget(node, "path", true) != null);
+    return (SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(934837630734519964l, -6831122735637083229l), 322010710375871467l, 322010710375956261l, "path")) != null);
   }
   private EditorCell createConstant_ju7sd7_a3a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "load from");
@@ -230,7 +232,7 @@ public class BuildMps_Solution_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private static boolean renderingCondition_ju7sd7_a1e0(SNode node, EditorContext editorContext) {
-    return SPropertyOperations.getBoolean(node, "doNotCompile");
+    return SPropertyOperations.getBoolean(node, MetaAdapterFactory.getProperty(new UUID(934837630734519964l, -6831122735637083229l), 5253498789149381388l, 1500819558096356884l, "doNotCompile"));
   }
   private EditorCell createComponent_ju7sd7_c4a(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.build.mps.editor.SourcesKindComponent");
@@ -471,7 +473,7 @@ public class BuildMps_Solution_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private static boolean renderingCondition_ju7sd7_a1b0a(SNode node, EditorContext editorContext) {
-    return SPropertyOperations.getBoolean(node, "doNotCompile");
+    return SPropertyOperations.getBoolean(node, MetaAdapterFactory.getProperty(new UUID(934837630734519964l, -6831122735637083229l), 5253498789149381388l, 1500819558096356884l, "doNotCompile"));
   }
   private EditorCell createComponent_ju7sd7_c1a0(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.build.mps.editor.SourcesKindComponent");

@@ -12,6 +12,8 @@ import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
@@ -58,8 +60,8 @@ public class Component_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private static boolean renderingCondition_3k4y3b_a0a(SNode node, EditorContext editorContext) {
-    String query = SPropertyOperations.getString(SNodeOperations.getAncestor(node, "jetbrains.mps.samples.componentDependencies.structure.ComponentSet", false, false), "query");
-    return ((query == null || query.length() == 0) ? true : SPropertyOperations.getString(node, "name").contains(query));
+    String query = SPropertyOperations.getString(SNodeOperations.getAncestor(node, "jetbrains.mps.samples.componentDependencies.structure.ComponentSet", false, false), MetaAdapterFactory.getProperty(new UUID(3487681708893422336l, -6253710059602727269l), 6223439730610283563l, 7433225748201903774l, "query"));
+    return ((query == null || query.length() == 0) ? true : SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")).contains(query));
   }
   private EditorCell createConstant_3k4y3b_a0a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "component");

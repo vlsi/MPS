@@ -6,6 +6,8 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.pattern.GeneratedMatchingPattern;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.pattern.IMatchingPattern;
@@ -16,7 +18,7 @@ public class TemplateCallMacro_Behavior {
   public static SNode virtual_getInputNodeTypeInsideOfMacro_1213877290799(SNode thisNode) {
     {
       GeneratedMatchingPattern pattern_4ckpni_a0a = new TemplateCallMacro_Behavior.Pattern_4ckpni_a0a0a0a1();
-      SNode coercedNode_4ckpni_a0a = TypeChecker.getInstance().getRuntimeSupport().coerce_(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(thisNode, "sourceNodeQuery", true)), pattern_4ckpni_a0a);
+      SNode coercedNode_4ckpni_a0a = TypeChecker.getInstance().getRuntimeSupport().coerce_(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-5475912601019530992l, -8082971551085732881l), 1510949579266781519l, 1510949579266801461l, "sourceNodeQuery"))), pattern_4ckpni_a0a);
       if (coercedNode_4ckpni_a0a != null) {
         return ((SNode) pattern_4ckpni_a0a.getFieldValue("patternVar_concept"));
       } else {
@@ -25,7 +27,7 @@ public class TemplateCallMacro_Behavior {
     return BehaviorReflection.invokeSuper((Class<SNode>) ((Class) Object.class), thisNode, "jetbrains.mps.lang.generator.structure.SourceSubstituteMacro", "virtual_getInputNodeTypeInsideOfMacro_1213877290799", new Object[]{});
   }
   public static SNode call_getTemplate_982871510068205176(SNode thisNode) {
-    return SNodeOperations.cast(SLinkOperations.getTarget(thisNode, "template", false), "jetbrains.mps.lang.generator.structure.TemplateDeclaration");
+    return SNodeOperations.cast(SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getReferenceLink(new UUID(-5475912601019530992l, -8082971551085732881l), 1722980698497626400l, 1722980698497626483l, "template")), "jetbrains.mps.lang.generator.structure.TemplateDeclaration");
   }
   public static class Pattern_4ckpni_a0a0a0a1 extends GeneratedMatchingPattern implements IMatchingPattern {
     /*package*/ SNode patternVar_concept;

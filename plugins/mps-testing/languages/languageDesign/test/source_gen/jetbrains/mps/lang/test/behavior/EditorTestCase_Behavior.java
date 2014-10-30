@@ -7,6 +7,8 @@ import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class EditorTestCase_Behavior {
@@ -16,7 +18,7 @@ public class EditorTestCase_Behavior {
     return ListSequence.fromListAndArray(new ArrayList<SNode>(), thisNode);
   }
   public static String virtual_getTestName_1216136419751(SNode thisNode) {
-    return "test_" + SPropertyOperations.getString(thisNode, "name");
+    return "test_" + SPropertyOperations.getString(thisNode, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"));
   }
   public static SNode virtual_getTestCase_1216134500045(SNode thisNode) {
     return thisNode;
@@ -27,7 +29,7 @@ public class EditorTestCase_Behavior {
     return result;
   }
   public static boolean virtual_suppress_3393165121846091591(SNode thisNode, SNode child) {
-    return SLinkOperations.getTarget(thisNode, "nodeToEdit", true) == child || SLinkOperations.getTarget(thisNode, "result", true) == child;
+    return SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-8825571760360698496l, -7431307307277756308l), 1229187653856l, 1229187676388l, "nodeToEdit")) == child || SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-8825571760360698496l, -7431307307277756308l), 1229187653856l, 1229187707859l, "result")) == child;
   }
   public static boolean virtual_isMpsStartRequired_3310779261129403089(SNode thisNode) {
     return true;

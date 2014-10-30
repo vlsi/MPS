@@ -6,9 +6,11 @@
     <classNode extendsClassName="jetbrains.mps.lang.dataFlow.DataFlowBuilders" />
   </dependency>
   <dependency className="org.jetbrains.mps.samples.ParallelFor.dataFlow.ParallelFor_DataFlow" file="ParallelFor_DataFlow.java">
+    <classNode dependClassName="java.util.UUID" />
     <classNode dependClassName="jetbrains.mps.lang.dataFlow.DataFlowBuilderContext" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.lang.dataFlow.DataFlowBuilder" />
   </dependency>

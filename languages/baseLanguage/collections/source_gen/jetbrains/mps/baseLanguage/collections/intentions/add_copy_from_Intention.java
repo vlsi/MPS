@@ -11,6 +11,8 @@ import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
 import java.util.Collections;
@@ -46,7 +48,7 @@ public class add_copy_from_Intention implements IntentionFactory {
     return true;
   }
   private boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
-    return BehaviorReflection.invokeVirtual(Boolean.TYPE, node, "virtual_canHaveParameter_2261417478150191157", new Object[]{}) && ListSequence.fromList(SLinkOperations.getTargets(node, "initValue", true)).isEmpty() && (SLinkOperations.getTarget(node, "copyFrom", true) == null);
+    return BehaviorReflection.invokeVirtual(Boolean.TYPE, node, "virtual_canHaveParameter_2261417478150191157", new Object[]{}) && ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(new UUID(-8968771020793164004l, -7182180101671965361l), 1237721394592l, 1237721435808l, "initValue"))).isEmpty() && (SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-8968771020793164004l, -7182180101671965361l), 1237721394592l, 1237731803878l, "copyFrom")) == null);
   }
   public SNodeReference getIntentionNodeReference() {
     return new SNodePointer("r:00000000-0000-4000-0000-011c8959032c(jetbrains.mps.baseLanguage.collections.intentions)", "1237739246401");
@@ -67,7 +69,7 @@ public class add_copy_from_Intention implements IntentionFactory {
       return "Specify Sequence to Copy From";
     }
     public void execute(final SNode node, final EditorContext editorContext) {
-      SNodeFactoryOperations.setNewChild(node, "copyFrom", "jetbrains.mps.baseLanguage.structure.Expression");
+      SNodeFactoryOperations.setNewChild(node, MetaAdapterFactory.getContainmentLink(new UUID(-8968771020793164004l, -7182180101671965361l), 1237721394592l, 1237731803878l, "copyFrom"), "jetbrains.mps.baseLanguage.structure.Expression");
     }
     public IntentionDescriptor getDescriptor() {
       return add_copy_from_Intention.this;

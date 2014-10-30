@@ -11,6 +11,8 @@ import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 
 public class ConceptFunctionParameter_Behavior {
@@ -35,7 +37,7 @@ public class ConceptFunctionParameter_Behavior {
     }).first();
   }
   public static String virtual_getParameterName_1225280611056(SNode thisNode) {
-    return SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(thisNode), "conceptAlias");
+    return SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(thisNode), MetaAdapterFactory.getProperty(new UUID(-4094437568663370681l, -8968368868337559369l), 1169125787135l, 5092175715804935370l, "conceptAlias"));
   }
   public static SNode virtual_getDeclaration_1225282371351(SNode thisNode) {
     return SNodeOperations.getConceptDeclaration(thisNode);

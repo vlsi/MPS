@@ -6,6 +6,8 @@ import jetbrains.mps.lang.typesystem.runtime.ComparisonRule_Runtime;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicable2Status;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
@@ -14,7 +16,7 @@ public class TypeVariableReference_compatibleWith_otherType_ComparisonRule exten
   public TypeVariableReference_compatibleWith_otherType_ComparisonRule() {
   }
   public boolean areComparable(SNode node1, SNode node2, IsApplicable2Status status) {
-    SNode bound = SLinkOperations.getTarget(SLinkOperations.getTarget(node1, "typeVariableDeclaration", false), "bound", true);
+    SNode bound = SLinkOperations.getTarget(SLinkOperations.getTarget(node1, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1109283449304l, 1109283546497l, "typeVariableDeclaration")), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1109279763828l, 1214996921760l, "bound"));
     if ((bound == null)) {
       return true;
     }
@@ -30,7 +32,7 @@ public class TypeVariableReference_compatibleWith_otherType_ComparisonRule exten
         }
         if (matches_p68yon_a2a) {
           {
-            SNode otherbound = SLinkOperations.getTarget(SLinkOperations.getTarget(matchedNode_p68yon_c0, "typeVariableDeclaration", false), "bound", true);
+            SNode otherbound = SLinkOperations.getTarget(SLinkOperations.getTarget(matchedNode_p68yon_c0, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1109283449304l, 1109283546497l, "typeVariableDeclaration")), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1109279763828l, 1214996921760l, "bound"));
             if ((otherbound == null)) {
               return true;
             }

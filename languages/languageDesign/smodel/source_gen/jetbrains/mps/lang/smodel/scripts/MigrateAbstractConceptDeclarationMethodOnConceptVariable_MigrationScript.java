@@ -8,6 +8,8 @@ import jetbrains.mps.lang.script.runtime.AbstractMigrationRefactoring;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.typesystem.inference.TypeContextManager;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.typesystem.inference.TypeChecker;
@@ -31,7 +33,7 @@ public class MigrateAbstractConceptDeclarationMethodOnConceptVariable_MigrationS
         return "jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall";
       }
       public boolean isApplicableInstanceNode(final SNode node) {
-        if (SPropertyOperations.getBoolean(SLinkOperations.getTarget(node, "baseMethodDeclaration", false), "isStatic")) {
+        if (SPropertyOperations.getBoolean(SLinkOperations.getTarget(node, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, 1068499141037l, "baseMethodDeclaration")), MetaAdapterFactory.getProperty(new UUID(-5808042798135555774l, -8657779246725685839l), 1225194472830l, 5864038008284099149l, "isStatic"))) {
           return false;
         }
         SNode type = TypeContextManager.getInstance().runResolveAction(new Computable<SNode>() {
@@ -42,9 +44,9 @@ public class MigrateAbstractConceptDeclarationMethodOnConceptVariable_MigrationS
         return SNodeOperations.isInstanceOf(type, "jetbrains.mps.lang.smodel.structure.SConceptType");
       }
       public void doUpdateInstanceNode(SNode node) {
-        SNode operand = SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.DotExpression"), "operand", true);
+        SNode operand = SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.DotExpression"), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1197027756228l, 1197027771414l, "operand"));
         SNode newOperand = _quotation_createNode_dt2z82_a0b0a0(operand);
-        SNodeOperations.replaceWithAnother(SNodeOperations.getParent(node), _quotation_createNode_dt2z82_a0a2a0a(newOperand, SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.DotExpression"), "operation", true)));
+        SNodeOperations.replaceWithAnother(SNodeOperations.getParent(node), _quotation_createNode_dt2z82_a0a2a0a(newOperand, SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.DotExpression"), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1197027756228l, 1197027833540l, "operation"))));
       }
       public boolean isShowAsIntention() {
         return false;

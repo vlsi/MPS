@@ -12,6 +12,8 @@ import jetbrains.mps.generator.runtime.TemplateExecutionEnvironment;
 import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.generator.runtime.GenerationException;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.generator.runtime.TemplateUtil;
 import jetbrains.mps.smodel.SNodePointer;
 
@@ -28,13 +30,13 @@ public class Templatemap__outputNode implements TemplateDeclaration {
     final SNode tnode2 = environment.createOutputNode("jetbrains.mps.transformation.test.outputLang.structure.OutputRoot");
     try {
       environment.nodeCopied(context1, tnode2, "tpl/r:00000000-0000-4000-0000-011c895905fa/1218738789586");
-      SNodeAccessUtil.setProperty(tnode2, "name", "map_outputNode");
-      SNodeAccessUtil.setProperty(tnode2, "text", "output root");
+      SNodeAccessUtil.setProperty(tnode2, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"), "map_outputNode");
+      SNodeAccessUtil.setProperty(tnode2, MetaAdapterFactory.getProperty(new UUID(1547714798586184059l, -8557310053109408682l), 1195164668463l, 1195164732401l, "text"), "output root");
       {
         final SNode tnode3 = environment.createOutputNode("jetbrains.mps.transformation.test.outputLang.structure.OutputNode");
         try {
           environment.nodeCopied(context1, tnode3, "tpl/r:00000000-0000-4000-0000-011c895905fa/1218738814182");
-          SNodeAccessUtil.setProperty(tnode3, "text", "this is 'special child' in root template");
+          SNodeAccessUtil.setProperty(tnode3, MetaAdapterFactory.getProperty(new UUID(1547714798586184059l, -8557310053109408682l), 1195165132070l, 1195170441111l, "text"), "this is 'special child' in root template");
         } finally {
         }
         if (tnode3 != null) {

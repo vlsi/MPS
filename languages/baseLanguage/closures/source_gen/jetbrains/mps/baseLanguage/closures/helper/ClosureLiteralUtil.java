@@ -8,6 +8,8 @@ import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.baseLanguage.behavior.Classifier_Behavior;
@@ -29,10 +31,10 @@ public class ClosureLiteralUtil {
     List<SNode> vrefs = ListSequence.fromList(new ArrayList<SNode>());
     for (SNode desc : SNodeOperations.getDescendants(cl, null, false, new String[]{})) {
       if (SNodeOperations.isInstanceOf(desc, "jetbrains.mps.baseLanguage.structure.VariableReference") && cl == SNodeOperations.getAncestor(desc, "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral", false, false)) {
-        SNode vd = SLinkOperations.getTarget(SNodeOperations.cast(desc, "jetbrains.mps.baseLanguage.structure.VariableReference"), "variableDeclaration", false);
+        SNode vd = SLinkOperations.getTarget(SNodeOperations.cast(desc, "jetbrains.mps.baseLanguage.structure.VariableReference"), MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068498886296l, 1068581517664l, "variableDeclaration"));
         if (cl != SNodeOperations.getAncestor(vd, "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral", false, false)) {
-          if (!(SPropertyOperations.getBoolean(vd, "isFinal")) && (SNodeOperations.isInstanceOf(vd, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration") || SNodeOperations.isInstanceOf(vd, "jetbrains.mps.baseLanguage.structure.ParameterDeclaration"))) {
-            ListSequence.fromList(vrefs).addElement(SLinkOperations.getTarget(SNodeOperations.cast(desc, "jetbrains.mps.baseLanguage.structure.VariableReference"), "variableDeclaration", false));
+          if (!(SPropertyOperations.getBoolean(vd, MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 1068431474542l, 1176718929932l, "isFinal"))) && (SNodeOperations.isInstanceOf(vd, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration") || SNodeOperations.isInstanceOf(vd, "jetbrains.mps.baseLanguage.structure.ParameterDeclaration"))) {
+            ListSequence.fromList(vrefs).addElement(SLinkOperations.getTarget(SNodeOperations.cast(desc, "jetbrains.mps.baseLanguage.structure.VariableReference"), MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068498886296l, 1068581517664l, "variableDeclaration")));
           }
         }
       }
@@ -41,27 +43,27 @@ public class ClosureLiteralUtil {
   }
   public static SNode fillParams(SNode targetIfaceErase, SNode funType) {
     TypeMatcher matcher = new TypeMatcher();
-    SNode meth = Sequence.fromIterable(Classifier_Behavior.call_methods_5292274854859311639(SLinkOperations.getTarget(targetIfaceErase, "classifier", false))).first();
+    SNode meth = Sequence.fromIterable(Classifier_Behavior.call_methods_5292274854859311639(SLinkOperations.getTarget(targetIfaceErase, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier")))).first();
     if ((meth == null)) {
       return null;
     }
-    if ((SLinkOperations.getTarget(meth, "returnType", true) != null) && !(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(meth, "returnType", true), "jetbrains.mps.baseLanguage.structure.VoidType"))) {
-      matcher.matchReturnType(SLinkOperations.getTarget(meth, "returnType", true), FunctionType_Behavior.call_getNormalizedReturnType_1213877405252(funType));
+    if ((SLinkOperations.getTarget(meth, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123132l, 1068580123133l, "returnType")) != null) && !(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(meth, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123132l, 1068580123133l, "returnType")), "jetbrains.mps.baseLanguage.structure.VoidType"))) {
+      matcher.matchReturnType(SLinkOperations.getTarget(meth, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123132l, 1068580123133l, "returnType")), FunctionType_Behavior.call_getNormalizedReturnType_1213877405252(funType));
     }
     {
       Iterator<SNode> funParamIt = ListSequence.fromList(FunctionType_Behavior.call_getNormalizedParameterTypes_1213877405276(funType)).iterator();
-      Iterator<SNode> methParamIt = ListSequence.fromList(SLinkOperations.getTargets(meth, "parameter", true)).iterator();
+      Iterator<SNode> methParamIt = ListSequence.fromList(SLinkOperations.getChildren(meth, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123132l, 1068580123134l, "parameter"))).iterator();
       while (funParamIt.hasNext() && methParamIt.hasNext()) {
-        matcher.matchType(SLinkOperations.getTarget(methParamIt.next(), "type", true), funParamIt.next());
+        matcher.matchType(SLinkOperations.getTarget(methParamIt.next(), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 4972933694980447171l, 5680397130376446158l, "type")), funParamIt.next());
       }
     }
 
     Map<SNode, SNode> map = matcher.getMap();
     SNode result = SNodeOperations.copyNode(targetIfaceErase);
     if (map != null) {
-      Iterator<SNode> targetTypeVarIt = ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(targetIfaceErase, "classifier", false), "typeVariableDeclaration", true)).iterator();
+      Iterator<SNode> targetTypeVarIt = ListSequence.fromList(SLinkOperations.getChildren(SLinkOperations.getTarget(targetIfaceErase, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier")), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1109279851642l, 1109279881614l, "typeVariableDeclaration"))).iterator();
       while (targetTypeVarIt.hasNext()) {
-        ListSequence.fromList(SLinkOperations.getTargets(result, "parameter", true)).addElement(SNodeOperations.cast(MapSequence.fromMap(map).get(targetTypeVarIt.next()), "jetbrains.mps.baseLanguage.structure.Type"));
+        ListSequence.fromList(SLinkOperations.getChildren(result, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1109201940907l, "parameter"))).addElement(SNodeOperations.cast(MapSequence.fromMap(map).get(targetTypeVarIt.next()), "jetbrains.mps.baseLanguage.structure.Type"));
       }
     }
     return result;

@@ -12,6 +12,8 @@ import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.baseLanguage.search.ClassifierAndSuperClassifiersScope;
 import jetbrains.mps.baseLanguage.search.IClassifiersSearchScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class check_DuplicateMethods_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
@@ -21,7 +23,7 @@ public class check_DuplicateMethods_NonTypesystemRule extends AbstractNonTypesys
     List<SNode> ownMethods = BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), classifier, "virtual_getOwnMethods_1906502351318572840", new Object[]{});
     ClassifierAndSuperClassifiersScope scope = new ClassifierAndSuperClassifiersScope(classifier, IClassifiersSearchScope.INSTANCE_METHOD | IClassifiersSearchScope.STATIC_METHOD);
     for (SNode ownMethod : ownMethods) {
-      List<SNode> namesakes = scope.getMethodsByName(SPropertyOperations.getString(ownMethod, "name"));
+      List<SNode> namesakes = scope.getMethodsByName(SPropertyOperations.getString(ownMethod, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")));
       if (namesakes.size() < 2) {
         continue;
       }

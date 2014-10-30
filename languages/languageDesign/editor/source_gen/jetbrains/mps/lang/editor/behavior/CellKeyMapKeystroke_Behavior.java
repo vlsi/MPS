@@ -4,22 +4,24 @@ package jetbrains.mps.lang.editor.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 
 public class CellKeyMapKeystroke_Behavior {
   public static void init(SNode thisNode) {
   }
   public static String call_getKeyStroke_1213877273475(SNode thisNode) {
     String result = "";
-    String modifiers = SPropertyOperations.getString(thisNode, "modifiers");
+    String modifiers = SPropertyOperations.getString(thisNode, MetaAdapterFactory.getProperty(new UUID(1782411230332735017l, -6324602048325217350l), 1136916976737l, 1136923970223l, "modifiers"));
     if (modifiers == null) {
       modifiers = "";
     }
     result = modifiers.replaceAll("\\+", " ");
     String keyName;
-    if (SPropertyOperations.getString(thisNode, "keycode") != null && SPropertyOperations.getString(thisNode, "keycode").startsWith("VK_")) {
-      keyName = SPropertyOperations.getString(thisNode, "keycode").substring(3);
+    if (SPropertyOperations.getString(thisNode, MetaAdapterFactory.getProperty(new UUID(1782411230332735017l, -6324602048325217350l), 1136916976737l, 1136923970224l, "keycode")) != null && SPropertyOperations.getString(thisNode, MetaAdapterFactory.getProperty(new UUID(1782411230332735017l, -6324602048325217350l), 1136916976737l, 1136923970224l, "keycode")).startsWith("VK_")) {
+      keyName = SPropertyOperations.getString(thisNode, MetaAdapterFactory.getProperty(new UUID(1782411230332735017l, -6324602048325217350l), 1136916976737l, 1136923970224l, "keycode")).substring(3);
     } else {
-      keyName = SPropertyOperations.getString(thisNode, "keycode");
+      keyName = SPropertyOperations.getString(thisNode, MetaAdapterFactory.getProperty(new UUID(1782411230332735017l, -6324602048325217350l), 1136916976737l, 1136923970224l, "keycode"));
     }
     result = result + " " + keyName;
     return result;

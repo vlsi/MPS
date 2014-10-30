@@ -9,6 +9,8 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import java.util.ArrayList;
@@ -41,46 +43,46 @@ public class DimensionUtil {
             }
             if (matches_48zlf8_a0a5a0a0) {
               if (row) {
-                if (SPropertyOperations.getInteger(matchedNode_48zlf8_a0f0a0a, "rows") == 0) {
+                if (SPropertyOperations.getInteger(matchedNode_48zlf8_a0f0a0a, MetaAdapterFactory.getProperty(new UUID(3676340747305173022l, -6911132873973321185l), 4815887568697030518l, 4815887568697048492l, "rows")) == 0) {
                   cbd = false;
                 }
-                if (SPropertyOperations.getInteger(matchedNode_48zlf8_a0f0a0a, "columns") == 0) {
+                if (SPropertyOperations.getInteger(matchedNode_48zlf8_a0f0a0a, MetaAdapterFactory.getProperty(new UUID(3676340747305173022l, -6911132873973321185l), 4815887568697030518l, 4815887568697048493l, "columns")) == 0) {
                   cbc = false;
                 }
-                if (cbd && f != 0 && f != SPropertyOperations.getInteger(matchedNode_48zlf8_a0f0a0a, "rows")) {
+                if (cbd && f != 0 && f != SPropertyOperations.getInteger(matchedNode_48zlf8_a0f0a0a, MetaAdapterFactory.getProperty(new UUID(3676340747305173022l, -6911132873973321185l), 4815887568697030518l, 4815887568697048492l, "rows"))) {
                   reportError(typeCheckingContext, node);
                 }
                 if (f == 0) {
-                  f = SPropertyOperations.getInteger(matchedNode_48zlf8_a0f0a0a, "rows");
+                  f = SPropertyOperations.getInteger(matchedNode_48zlf8_a0f0a0a, MetaAdapterFactory.getProperty(new UUID(3676340747305173022l, -6911132873973321185l), 4815887568697030518l, 4815887568697048492l, "rows"));
                 }
                 if (s == 0) {
-                  s = SPropertyOperations.getInteger(matchedNode_48zlf8_a0f0a0a, "columns");
+                  s = SPropertyOperations.getInteger(matchedNode_48zlf8_a0f0a0a, MetaAdapterFactory.getProperty(new UUID(3676340747305173022l, -6911132873973321185l), 4815887568697030518l, 4815887568697048493l, "columns"));
                 } else {
-                  s += SPropertyOperations.getInteger(matchedNode_48zlf8_a0f0a0a, "columns");
+                  s += SPropertyOperations.getInteger(matchedNode_48zlf8_a0f0a0a, MetaAdapterFactory.getProperty(new UUID(3676340747305173022l, -6911132873973321185l), 4815887568697030518l, 4815887568697048493l, "columns"));
                 }
               } else {
-                if (SPropertyOperations.getInteger(matchedNode_48zlf8_a0f0a0a, "columns") == 0) {
+                if (SPropertyOperations.getInteger(matchedNode_48zlf8_a0f0a0a, MetaAdapterFactory.getProperty(new UUID(3676340747305173022l, -6911132873973321185l), 4815887568697030518l, 4815887568697048493l, "columns")) == 0) {
                   cbd = false;
                 }
-                if (SPropertyOperations.getInteger(matchedNode_48zlf8_a0f0a0a, "rows") == 0) {
+                if (SPropertyOperations.getInteger(matchedNode_48zlf8_a0f0a0a, MetaAdapterFactory.getProperty(new UUID(3676340747305173022l, -6911132873973321185l), 4815887568697030518l, 4815887568697048492l, "rows")) == 0) {
                   cbc = false;
                 }
-                if (cbd && f != 0 && f != SPropertyOperations.getInteger(matchedNode_48zlf8_a0f0a0a, "columns")) {
+                if (cbd && f != 0 && f != SPropertyOperations.getInteger(matchedNode_48zlf8_a0f0a0a, MetaAdapterFactory.getProperty(new UUID(3676340747305173022l, -6911132873973321185l), 4815887568697030518l, 4815887568697048493l, "columns"))) {
                   reportError(typeCheckingContext, node);
                 }
                 if (f == 0) {
-                  f = SPropertyOperations.getInteger(matchedNode_48zlf8_a0f0a0a, "columns");
+                  f = SPropertyOperations.getInteger(matchedNode_48zlf8_a0f0a0a, MetaAdapterFactory.getProperty(new UUID(3676340747305173022l, -6911132873973321185l), 4815887568697030518l, 4815887568697048493l, "columns"));
                 }
                 if (s == 0) {
-                  s = SPropertyOperations.getInteger(matchedNode_48zlf8_a0f0a0a, "rows");
+                  s = SPropertyOperations.getInteger(matchedNode_48zlf8_a0f0a0a, MetaAdapterFactory.getProperty(new UUID(3676340747305173022l, -6911132873973321185l), 4815887568697030518l, 4815887568697048492l, "rows"));
                 } else {
-                  s += SPropertyOperations.getInteger(matchedNode_48zlf8_a0f0a0a, "rows");
+                  s += SPropertyOperations.getInteger(matchedNode_48zlf8_a0f0a0a, MetaAdapterFactory.getProperty(new UUID(3676340747305173022l, -6911132873973321185l), 4815887568697030518l, 4815887568697048492l, "rows"));
                 }
               }
               {
                 SNode _nodeToCheck_1029348928467 = null;
                 EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)", "757772128652074322", 0, null);
-                typeCheckingContext.createLessThanInequality((SNode) SLinkOperations.getTarget(matchedNode_48zlf8_a0f0a0a, "elementType", true), (SNode) typeCheckingContext.getRepresentative(T_typevar_757772128652074250), false, true, _info_12389875345);
+                typeCheckingContext.createLessThanInequality((SNode) SLinkOperations.getTarget(matchedNode_48zlf8_a0f0a0a, MetaAdapterFactory.getContainmentLink(new UUID(3676340747305173022l, -6911132873973321185l), 4815887568697030518l, 4815887568697050707l, "elementType")), (SNode) typeCheckingContext.getRepresentative(T_typevar_757772128652074250), false, true, _info_12389875345);
               }
             } else {
               boolean matches_48zlf8_b0a5a0a0 = false;
@@ -92,14 +94,14 @@ public class DimensionUtil {
               }
               if (matches_48zlf8_b0a5a0a0) {
                 if (row) {
-                  if (SPropertyOperations.getInteger(matchedNode_48zlf8_a0f0a0a, "height") == 0) {
+                  if (SPropertyOperations.getInteger(matchedNode_48zlf8_a0f0a0a, MetaAdapterFactory.getProperty(new UUID(3676340747305173022l, -6911132873973321185l), 4815887568697030517l, 4815887568697050734l, "height")) == 0) {
                     cbd = false;
                   }
-                  if (cbd && f != 0 && f != SPropertyOperations.getInteger(matchedNode_48zlf8_a0f0a0a, "height")) {
+                  if (cbd && f != 0 && f != SPropertyOperations.getInteger(matchedNode_48zlf8_a0f0a0a, MetaAdapterFactory.getProperty(new UUID(3676340747305173022l, -6911132873973321185l), 4815887568697030517l, 4815887568697050734l, "height"))) {
                     reportError(typeCheckingContext, node);
                   }
                   if (f == 0) {
-                    f = SPropertyOperations.getInteger(matchedNode_48zlf8_a0f0a0a, "height");
+                    f = SPropertyOperations.getInteger(matchedNode_48zlf8_a0f0a0a, MetaAdapterFactory.getProperty(new UUID(3676340747305173022l, -6911132873973321185l), 4815887568697030517l, 4815887568697050734l, "height"));
                   }
                   if (s == 0) {
                     s = 1;
@@ -107,7 +109,7 @@ public class DimensionUtil {
                     s += 1;
                   }
                 } else {
-                  if (SPropertyOperations.getInteger(matchedNode_48zlf8_a0f0a0a, "height") == 0) {
+                  if (SPropertyOperations.getInteger(matchedNode_48zlf8_a0f0a0a, MetaAdapterFactory.getProperty(new UUID(3676340747305173022l, -6911132873973321185l), 4815887568697030517l, 4815887568697050734l, "height")) == 0) {
                     cbc = false;
                   }
                   if (cbd && f != 0 && f != 1) {
@@ -117,15 +119,15 @@ public class DimensionUtil {
                     f = 1;
                   }
                   if (s == 0) {
-                    s = SPropertyOperations.getInteger(matchedNode_48zlf8_a0f0a0a, "height");
+                    s = SPropertyOperations.getInteger(matchedNode_48zlf8_a0f0a0a, MetaAdapterFactory.getProperty(new UUID(3676340747305173022l, -6911132873973321185l), 4815887568697030517l, 4815887568697050734l, "height"));
                   } else {
-                    s += SPropertyOperations.getInteger(matchedNode_48zlf8_a0f0a0a, "height");
+                    s += SPropertyOperations.getInteger(matchedNode_48zlf8_a0f0a0a, MetaAdapterFactory.getProperty(new UUID(3676340747305173022l, -6911132873973321185l), 4815887568697030517l, 4815887568697050734l, "height"));
                   }
                 }
                 {
                   SNode _nodeToCheck_1029348928467 = null;
                   EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)", "757772128652075446", 0, null);
-                  typeCheckingContext.createLessThanInequality((SNode) SLinkOperations.getTarget(matchedNode_48zlf8_a0f0a0a, "elementType", true), (SNode) typeCheckingContext.getRepresentative(T_typevar_757772128652074250), false, true, _info_12389875345);
+                  typeCheckingContext.createLessThanInequality((SNode) SLinkOperations.getTarget(matchedNode_48zlf8_a0f0a0a, MetaAdapterFactory.getContainmentLink(new UUID(3676340747305173022l, -6911132873973321185l), 4815887568697030517l, 4815887568697050735l, "elementType")), (SNode) typeCheckingContext.getRepresentative(T_typevar_757772128652074250), false, true, _info_12389875345);
                 }
               } else {
                 {
@@ -166,24 +168,24 @@ public class DimensionUtil {
       SNode result = MathTypeUtil.qMatrix(typeCheckingContext.getRepresentative(T_typevar_757772128652074250));
       if (row) {
         if (cbc) {
-          SPropertyOperations.set(result, "columns", "" + (s));
+          SPropertyOperations.set(result, MetaAdapterFactory.getProperty(new UUID(3676340747305173022l, -6911132873973321185l), 4815887568697030518l, 4815887568697048493l, "columns"), "" + (s));
         }
         if (cbd) {
-          SPropertyOperations.set(result, "rows", "" + (f));
+          SPropertyOperations.set(result, MetaAdapterFactory.getProperty(new UUID(3676340747305173022l, -6911132873973321185l), 4815887568697030518l, 4815887568697048492l, "rows"), "" + (f));
         }
       } else {
         if (cbc) {
-          SPropertyOperations.set(result, "rows", "" + (s));
+          SPropertyOperations.set(result, MetaAdapterFactory.getProperty(new UUID(3676340747305173022l, -6911132873973321185l), 4815887568697030518l, 4815887568697048492l, "rows"), "" + (s));
         }
         if (cbd) {
-          SPropertyOperations.set(result, "columns", "" + (f));
+          SPropertyOperations.set(result, MetaAdapterFactory.getProperty(new UUID(3676340747305173022l, -6911132873973321185l), 4815887568697030518l, 4815887568697048493l, "columns"), "" + (f));
         }
       }
-      if (SPropertyOperations.getInteger(result, "columns") == 1) {
+      if (SPropertyOperations.getInteger(result, MetaAdapterFactory.getProperty(new UUID(3676340747305173022l, -6911132873973321185l), 4815887568697030518l, 4815887568697048493l, "columns")) == 1) {
         {
           SNode _nodeToCheck_1029348928467 = node;
           EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)", "6389121991274973498", 0, null);
-          typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)", "6389121991274973494", true), (SNode) _quotation_createNode_48zlf8_a0a0i0a0a(typeCheckingContext.getRepresentative(T_typevar_757772128652074250), "" + SPropertyOperations.getInteger(result, "rows")), _info_12389875345);
+          typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)", "6389121991274973494", true), (SNode) _quotation_createNode_48zlf8_a0a0i0a0a(typeCheckingContext.getRepresentative(T_typevar_757772128652074250), "" + SPropertyOperations.getInteger(result, MetaAdapterFactory.getProperty(new UUID(3676340747305173022l, -6911132873973321185l), 4815887568697030518l, 4815887568697048492l, "rows"))), _info_12389875345);
         }
       } else {
         {
@@ -225,7 +227,7 @@ public class DimensionUtil {
           }
         }
         if (matches_48zlf8_a0a2) {
-          return SPropertyOperations.getInteger(matchedNode_48zlf8_a0c, "rows");
+          return SPropertyOperations.getInteger(matchedNode_48zlf8_a0c, MetaAdapterFactory.getProperty(new UUID(3676340747305173022l, -6911132873973321185l), 4815887568697030518l, 4815887568697048492l, "rows"));
         } else {
           boolean matches_48zlf8_b0a2 = false;
           {
@@ -235,7 +237,7 @@ public class DimensionUtil {
             }
           }
           if (matches_48zlf8_b0a2) {
-            return SPropertyOperations.getInteger(matchedNode_48zlf8_a0c, "height");
+            return SPropertyOperations.getInteger(matchedNode_48zlf8_a0c, MetaAdapterFactory.getProperty(new UUID(3676340747305173022l, -6911132873973321185l), 4815887568697030517l, 4815887568697050734l, "height"));
           } else
           return 0;
         }
@@ -254,7 +256,7 @@ public class DimensionUtil {
           }
         }
         if (matches_48zlf8_a0a3) {
-          return SPropertyOperations.getInteger(matchedNode_48zlf8_a0d, "columns");
+          return SPropertyOperations.getInteger(matchedNode_48zlf8_a0d, MetaAdapterFactory.getProperty(new UUID(3676340747305173022l, -6911132873973321185l), 4815887568697030518l, 4815887568697048493l, "columns"));
         } else {
           boolean matches_48zlf8_b0a3 = false;
           {
@@ -276,7 +278,7 @@ public class DimensionUtil {
     SNode quotedNode_3 = null;
     SNode quotedNode_4 = null;
     quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.VectorType", null, null, false);
-    SNodeAccessUtil.setProperty(quotedNode_3, "height", (String) parameter_2);
+    SNodeAccessUtil.setProperty(quotedNode_3, MetaAdapterFactory.getProperty(new UUID(3676340747305173022l, -6911132873973321185l), 4815887568697030517l, 4815887568697050734l, "height"), (String) parameter_2);
     quotedNode_4 = (SNode) parameter_1;
     if (quotedNode_4 != null) {
       quotedNode_3.addChild("elementType", HUtil.copyIfNecessary(quotedNode_4));

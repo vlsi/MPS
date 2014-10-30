@@ -6,11 +6,13 @@ import jetbrains.mps.textGen.SNodeTextGen;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 
 public class DefaultClassCreator_TextGen extends SNodeTextGen {
   public void doGenerateText(SNode node) {
     BaseLanguageTextGen.blClassifierRef(SNodeOperations.getReference(node, SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.DefaultClassCreator", "classifier")), this);
-    BaseLanguageTextGen.typeParameters(SLinkOperations.getTargets(node, "typeParameter", true), this);
+    BaseLanguageTextGen.typeParameters(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 2820489544401957797l, 2820489544402271667l, "typeParameter")), this);
     this.append("()");
   }
 }

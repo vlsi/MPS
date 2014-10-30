@@ -17,6 +17,8 @@ import org.jetbrains.mps.util.Condition;
 import org.jetbrains.mps.util.DescendantsTreeIterator;
 import org.jetbrains.mps.openapi.language.SConceptRepository;
 import jetbrains.mps.kernel.model.SModelUtil;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.smodel.SNodePointer;
@@ -277,7 +279,7 @@ public class SNodeOperations {
       return EMPTY_LIST;
     }
     linkDeclaration = SModelUtil.getGenuineLinkDeclaration(linkDeclaration);
-    return SLinkOperations.getTargets(node, SPropertyOperations.getString(linkDeclaration, "role"), true);
+    return SLinkOperations.getTargets(node, SPropertyOperations.getString(linkDeclaration, MetaAdapterFactory.getProperty(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489288298l, 1071599776563l, "role")), true);
   }
   public static SModel getModel(SNode node) {
     if (node == null) {
@@ -644,7 +646,7 @@ public class SNodeOperations {
       return null;
     }
     linkDeclaration = SModelUtil.getGenuineLinkDeclaration(linkDeclaration);
-    return node.getReference(SPropertyOperations.getString(linkDeclaration, "role"));
+    return node.getReference(SPropertyOperations.getString(linkDeclaration, MetaAdapterFactory.getProperty(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489288298l, 1071599776563l, "role")));
   }
   public static Iterable<SNode> ofConcept(Iterable<SNode> nodes, String conceptName) {
     if (conceptName == null) {

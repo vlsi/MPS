@@ -16,6 +16,8 @@ import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.errors.BaseQuickFixProvider;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.baseLanguage.behavior.ParameterDeclaration_Behavior;
 import jetbrains.mps.smodel.SModelUtil_new;
 
@@ -40,9 +42,9 @@ public class check_OverrideNullAnnotations_NonTypesystemRule extends AbstractNon
         }
       }
     }
-    for (int i = 0; i < ListSequence.fromList(SLinkOperations.getTargets(superMethod, "parameter", true)).count(); i++) {
-      if (ParameterDeclaration_Behavior.call_hasAnnotation_5499146221535981742(ListSequence.fromList(SLinkOperations.getTargets(superMethod, "parameter", true)).getElement(i), SNodeOperations.getNode("3f233e7f-b8a6-46d2-a57f-795d56775243/f:java_stub#3f233e7f-b8a6-46d2-a57f-795d56775243#org.jetbrains.annotations(Annotations/org.jetbrains.annotations@java_stub)", "~Nullable"))) {
-        SNode param = ListSequence.fromList(SLinkOperations.getTargets(method, "parameter", true)).getElement(i);
+    for (int i = 0; i < ListSequence.fromList(SLinkOperations.getChildren(superMethod, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123132l, 1068580123134l, "parameter"))).count(); i++) {
+      if (ParameterDeclaration_Behavior.call_hasAnnotation_5499146221535981742(ListSequence.fromList(SLinkOperations.getChildren(superMethod, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123132l, 1068580123134l, "parameter"))).getElement(i), SNodeOperations.getNode("3f233e7f-b8a6-46d2-a57f-795d56775243/f:java_stub#3f233e7f-b8a6-46d2-a57f-795d56775243#org.jetbrains.annotations(Annotations/org.jetbrains.annotations@java_stub)", "~Nullable"))) {
+        SNode param = ListSequence.fromList(SLinkOperations.getChildren(method, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123132l, 1068580123134l, "parameter"))).getElement(i);
         if (param != null && !(ParameterDeclaration_Behavior.call_hasAnnotation_5499146221535981742(param, SNodeOperations.getNode("3f233e7f-b8a6-46d2-a57f-795d56775243/f:java_stub#3f233e7f-b8a6-46d2-a57f-795d56775243#org.jetbrains.annotations(Annotations/org.jetbrains.annotations@java_stub)", "~Nullable")))) {
           {
             MessageTarget errorTarget = new NodeMessageTarget();

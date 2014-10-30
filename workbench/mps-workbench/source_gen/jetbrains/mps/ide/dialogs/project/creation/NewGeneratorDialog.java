@@ -42,6 +42,8 @@ import jetbrains.mps.project.SModuleOperations;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 
@@ -188,7 +190,7 @@ public class NewGeneratorDialog extends DialogWrapper {
     }
     EditableSModel templateModel = SModuleOperations.createModelWithAdjustments(getTemplateModelPrefix(sourceLanguage) + "." + "main@" + SModelStereotype.GENERATOR, newGenerator.getModelRoots().iterator().next());
     SNode mappingConfiguration = SModelOperations.createNewNode(((SModel) templateModel), null, "jetbrains.mps.lang.generator.structure.MappingConfiguration");
-    SPropertyOperations.set(mappingConfiguration, "name", "main");
+    SPropertyOperations.set(mappingConfiguration, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"), "main");
     SModelOperations.addRootNode(((SModel) templateModel), mappingConfiguration);
     templateModel.save();
   }

@@ -12,6 +12,8 @@ import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
 import java.util.Collections;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.intentions.IntentionDescriptor;
 
@@ -65,10 +67,10 @@ public class FlipBinaryOperation_Intention implements IntentionFactory {
       return "Flip Binary Operation";
     }
     public void execute(final SNode node, final EditorContext editorContext) {
-      SNode leftExpression = SLinkOperations.getTarget(node, "leftExpression", true);
-      SNode rightExpression = SLinkOperations.getTarget(node, "rightExpression", true);
-      SLinkOperations.setTarget(node, "leftExpression", SNodeOperations.copyNode(rightExpression), true);
-      SLinkOperations.setTarget(node, "rightExpression", SNodeOperations.copyNode(leftExpression), true);
+      SNode leftExpression = SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1081773326031l, 1081773367580l, "leftExpression"));
+      SNode rightExpression = SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1081773326031l, 1081773367579l, "rightExpression"));
+      SLinkOperations.setTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1081773326031l, 1081773367580l, "leftExpression"), SNodeOperations.copyNode(rightExpression));
+      SLinkOperations.setTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1081773326031l, 1081773367579l, "rightExpression"), SNodeOperations.copyNode(leftExpression));
     }
     public IntentionDescriptor getDescriptor() {
       return FlipBinaryOperation_Intention.this;

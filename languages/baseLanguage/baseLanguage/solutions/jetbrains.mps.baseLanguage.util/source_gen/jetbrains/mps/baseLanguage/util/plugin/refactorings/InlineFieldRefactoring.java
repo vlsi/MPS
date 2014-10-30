@@ -8,6 +8,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 
 public abstract class InlineFieldRefactoring {
@@ -18,14 +20,14 @@ public abstract class InlineFieldRefactoring {
   public Iterable<SNode> findAllReferences(final SNode variable) {
     return ListSequence.fromList(SModelOperations.getNodes(SNodeOperations.getModel(variable), "jetbrains.mps.baseLanguage.structure.VariableReference")).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return SLinkOperations.getTarget(it, "variableDeclaration", false) == variable;
+        return SLinkOperations.getTarget(it, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068498886296l, 1068581517664l, "variableDeclaration")) == variable;
       }
     });
   }
   public Iterable<SNode> findAllReferenceOperations(final SNode variable) {
     return ListSequence.fromList(SModelOperations.getNodes(SNodeOperations.getModel(variable), "jetbrains.mps.baseLanguage.structure.FieldReferenceOperation")).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return SLinkOperations.getTarget(it, "fieldDeclaration", false) == variable;
+        return SLinkOperations.getTarget(it, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1197029447546l, 1197029500499l, "fieldDeclaration")) == variable;
       }
     });
   }

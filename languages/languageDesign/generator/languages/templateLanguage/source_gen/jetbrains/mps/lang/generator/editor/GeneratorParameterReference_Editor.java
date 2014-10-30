@@ -17,6 +17,8 @@ import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
 import jetbrains.mps.nodeEditor.cells.ModelAccessor;
@@ -107,7 +109,7 @@ public class GeneratorParameterReference_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private static boolean renderingCondition_p6qpij_a1a(SNode node, EditorContext editorContext) {
-    return (SLinkOperations.getTarget(node, "declaration", false) != null);
+    return (SLinkOperations.getTarget(node, MetaAdapterFactory.getReferenceLink(new UUID(-5475912601019530992l, -8082971551085732881l), 650531548511911818l, 650531548511911820l, "declaration")) != null);
   }
   private EditorCell createConstant_p6qpij_a1a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
@@ -118,7 +120,7 @@ public class GeneratorParameterReference_Editor extends DefaultNodeEditor {
   private EditorCell createReadOnlyModelAccessor_p6qpij_b1a(final EditorContext editorContext, final SNode node) {
     EditorCell_Property editorCell = EditorCell_Property.create(editorContext, new ModelAccessor() {
       public String getText() {
-        return BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(SLinkOperations.getTarget(node, "declaration", false), "type", true), "virtual_getPresentation_1213877396640", new Object[]{});
+        return BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(SLinkOperations.getTarget(node, MetaAdapterFactory.getReferenceLink(new UUID(-5475912601019530992l, -8082971551085732881l), 650531548511911818l, 650531548511911820l, "declaration")), MetaAdapterFactory.getContainmentLink(new UUID(-5475912601019530992l, -8082971551085732881l), 650531548511609556l, 650531548511609557l, "type")), "virtual_getPresentation_1213877396640", new Object[]{});
       }
       public void setText(String s) {
       }
@@ -143,7 +145,7 @@ public class GeneratorParameterReference_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private static boolean renderingCondition_p6qpij_a2a(SNode node, EditorContext editorContext) {
-    return SPropertyOperations.getBoolean(node, "isOptional");
+    return SPropertyOperations.getBoolean(node, MetaAdapterFactory.getProperty(new UUID(-5475912601019530992l, -8082971551085732881l), 650531548511911818l, 5540778578667478296l, "isOptional"));
   }
   private EditorCell createConstant_p6qpij_a2a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");

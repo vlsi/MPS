@@ -27,6 +27,8 @@ import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultReferenceSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 
 public class ClassLikeDescriptor_Editor extends DefaultNodeEditor {
@@ -206,7 +208,7 @@ public class ClassLikeDescriptor_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private static boolean renderingCondition_qnkj9j_a7a(SNode node, EditorContext editorContext) {
-    return (SLinkOperations.getTarget(node, "initializer", true) != null);
+    return (SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-4047124328593011742l, -4867279722304451481l), 3751132065236767072l, 1825613483881472526l, "initializer")) != null);
   }
   private EditorCell createRefNode_qnkj9j_i0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);

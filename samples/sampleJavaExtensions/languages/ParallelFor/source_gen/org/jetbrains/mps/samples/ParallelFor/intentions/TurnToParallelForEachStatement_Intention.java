@@ -11,6 +11,8 @@ import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
 import java.util.Collections;
@@ -50,7 +52,7 @@ public class TurnToParallelForEachStatement_Intention implements IntentionFactor
     return true;
   }
   private boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
-    return SNodeOperations.isInstanceOf(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(node, "variable", true)), "jetbrains.mps.baseLanguage.structure.Type");
+    return SNodeOperations.isInstanceOf(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-8968771020793164004l, -7182180101671965361l), 1153943597977l, 1153944400369l, "variable"))), "jetbrains.mps.baseLanguage.structure.Type");
   }
   public SNodeReference getIntentionNodeReference() {
     return new SNodePointer("r:2614090b-4018-4457-8ad5-c503bc8936fb(org.jetbrains.mps.samples.ParallelFor.intentions)", "5384012304952529816");
@@ -73,22 +75,22 @@ public class TurnToParallelForEachStatement_Intention implements IntentionFactor
     public void execute(final SNode node, final EditorContext editorContext) {
       SNode parallelFor = SNodeFactoryOperations.createNewNode("org.jetbrains.mps.samples.ParallelFor.structure.ParallelFor", null);
       final SNode variable = SNodeFactoryOperations.createNewNode("org.jetbrains.mps.samples.ParallelFor.structure.ParallelLoopVariable", null);
-      SPropertyOperations.set(variable, "name", SPropertyOperations.getString(SLinkOperations.getTarget(node, "variable", true), "name"));
-      SLinkOperations.setTarget(variable, "type", SNodeOperations.copyNode(SNodeOperations.cast(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(node, "variable", true)), "jetbrains.mps.baseLanguage.structure.Type")), true);
-      SLinkOperations.setTarget(parallelFor, "loopVariable", variable, true);
-      SLinkOperations.setTarget(parallelFor, "inputSequence", SLinkOperations.getTarget(node, "inputSequence", true), true);
-      ListSequence.fromList(SNodeOperations.getDescendants(SLinkOperations.getTarget(node, "body", true), "jetbrains.mps.baseLanguage.collections.structure.ForEachVariableReference", false, new String[]{})).where(new IWhereFilter<SNode>() {
+      SPropertyOperations.set(variable, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"), SPropertyOperations.getString(SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-8968771020793164004l, -7182180101671965361l), 1153943597977l, 1153944400369l, "variable")), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")));
+      SLinkOperations.setTarget(variable, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 4972933694980447171l, 5680397130376446158l, "type"), SNodeOperations.copyNode(SNodeOperations.cast(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-8968771020793164004l, -7182180101671965361l), 1153943597977l, 1153944400369l, "variable"))), "jetbrains.mps.baseLanguage.structure.Type")));
+      SLinkOperations.setTarget(parallelFor, MetaAdapterFactory.getContainmentLink(new UUID(-3786532327622816550l, -4790818904192366506l), 8923957828369477802l, 8923957828369518786l, "loopVariable"), variable);
+      SLinkOperations.setTarget(parallelFor, MetaAdapterFactory.getContainmentLink(new UUID(-3786532327622816550l, -4790818904192366506l), 8923957828369477802l, 8923957828369550462l, "inputSequence"), SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-8968771020793164004l, -7182180101671965361l), 1153943597977l, 1153944424730l, "inputSequence")));
+      ListSequence.fromList(SNodeOperations.getDescendants(SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1154032098014l, 1154032183016l, "body")), "jetbrains.mps.baseLanguage.collections.structure.ForEachVariableReference", false, new String[]{})).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
-          return SLinkOperations.getTarget(it, "variable", false) == SLinkOperations.getTarget(node, "variable", true);
+          return SLinkOperations.getTarget(it, MetaAdapterFactory.getReferenceLink(new UUID(-8968771020793164004l, -7182180101671965361l), 1153944233411l, 1153944258490l, "variable")) == SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-8968771020793164004l, -7182180101671965361l), 1153943597977l, 1153944400369l, "variable"));
         }
       }).visitAll(new IVisitor<SNode>() {
         public void visit(SNode it) {
           SNode newReference = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.VariableReference", null);
-          SLinkOperations.setTarget(newReference, "variableDeclaration", variable, false);
+          SLinkOperations.setTarget(newReference, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068498886296l, 1068581517664l, "variableDeclaration"), variable);
           SNodeOperations.replaceWithAnother(it, newReference);
         }
       });
-      SLinkOperations.setTarget(parallelFor, "body", SLinkOperations.getTarget(node, "body", true), true);
+      SLinkOperations.setTarget(parallelFor, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1154032098014l, 1154032183016l, "body"), SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1154032098014l, 1154032183016l, "body")));
       SNodeOperations.replaceWithAnother(node, parallelFor);
       editorContext.selectWRTFocusPolicy(variable);
     }

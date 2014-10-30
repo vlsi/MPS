@@ -12,6 +12,8 @@ import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
 import java.util.Collections;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.intentions.IntentionDescriptor;
 
 public class MakeVirtual_Intention implements IntentionFactory {
@@ -61,16 +63,16 @@ public class MakeVirtual_Intention implements IntentionFactory {
     public IntentionImplementation() {
     }
     public String getDescription(final SNode node, final EditorContext editorContext) {
-      if (SPropertyOperations.getBoolean(node, "isVirtual")) {
+      if (SPropertyOperations.getBoolean(node, MetaAdapterFactory.getProperty(new UUID(-5808042798135555774l, -8657779246725685839l), 1225194472830l, 1225194472832l, "isVirtual"))) {
         return "Make Non-Virtual";
       } else {
         return "Make Virtual";
       }
     }
     public void execute(final SNode node, final EditorContext editorContext) {
-      SPropertyOperations.set(node, "isVirtual", "" + (!(SPropertyOperations.getBoolean(node, "isVirtual"))));
-      if (!(SPropertyOperations.getBoolean(node, "isVirtual"))) {
-        SPropertyOperations.set(node, "isAbstract", "" + (false));
+      SPropertyOperations.set(node, MetaAdapterFactory.getProperty(new UUID(-5808042798135555774l, -8657779246725685839l), 1225194472830l, 1225194472832l, "isVirtual"), "" + (!(SPropertyOperations.getBoolean(node, MetaAdapterFactory.getProperty(new UUID(-5808042798135555774l, -8657779246725685839l), 1225194472830l, 1225194472832l, "isVirtual")))));
+      if (!(SPropertyOperations.getBoolean(node, MetaAdapterFactory.getProperty(new UUID(-5808042798135555774l, -8657779246725685839l), 1225194472830l, 1225194472832l, "isVirtual")))) {
+        SPropertyOperations.set(node, MetaAdapterFactory.getProperty(new UUID(-5808042798135555774l, -8657779246725685839l), 1225194472830l, 1225194472834l, "isAbstract"), "" + (false));
       }
     }
     public IntentionDescriptor getDescriptor() {

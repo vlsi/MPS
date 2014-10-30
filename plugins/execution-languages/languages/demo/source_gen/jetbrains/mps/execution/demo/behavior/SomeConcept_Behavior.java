@@ -4,11 +4,13 @@ package jetbrains.mps.execution.demo.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 
 public class SomeConcept_Behavior {
   public static void init(SNode thisNode) {
   }
   public static boolean virtual_isNodeRunnable_4666195181811081448(SNode thisNode) {
-    return SPropertyOperations.getBoolean(thisNode, "valid");
+    return SPropertyOperations.getBoolean(thisNode, MetaAdapterFactory.getProperty(new UUID(-1871219151347103450l, -4760527767600787321l), 4928971978190304900l, 4928971978190605252l, "valid"));
   }
 }

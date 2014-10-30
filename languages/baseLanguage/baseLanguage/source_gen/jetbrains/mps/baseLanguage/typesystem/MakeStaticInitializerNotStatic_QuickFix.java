@@ -5,6 +5,8 @@ package jetbrains.mps.baseLanguage.typesystem;
 import jetbrains.mps.errors.QuickFix_Runtime;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
@@ -14,20 +16,20 @@ public class MakeStaticInitializerNotStatic_QuickFix extends QuickFix_Runtime {
   public MakeStaticInitializerNotStatic_QuickFix() {
   }
   public String getDescription(SNode node) {
-    return "Make '" + SPropertyOperations.getString(((SNode) MakeStaticInitializerNotStatic_QuickFix.this.getField("containingClass")[0]), "name") + " class initializer' not static";
+    return "Make '" + SPropertyOperations.getString(((SNode) MakeStaticInitializerNotStatic_QuickFix.this.getField("containingClass")[0]), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")) + " class initializer' not static";
   }
   public void execute(SNode node) {
-    int index = ListSequence.fromList(SLinkOperations.getTargets(((SNode) MakeStaticInitializerNotStatic_QuickFix.this.getField("containingClass")[0]), "member", true)).indexOf(((SNode) MakeStaticInitializerNotStatic_QuickFix.this.getField("staticInitializer")[0]));
+    int index = ListSequence.fromList(SLinkOperations.getChildren(((SNode) MakeStaticInitializerNotStatic_QuickFix.this.getField("containingClass")[0]), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107461130800l, 5375687026011219971l, "member"))).indexOf(((SNode) MakeStaticInitializerNotStatic_QuickFix.this.getField("staticInitializer")[0]));
 
     SNode initializer = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.InstanceInitializer", null);
-    ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(initializer, "statementList", true), "statement", true)).addSequence(ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(((SNode) MakeStaticInitializerNotStatic_QuickFix.this.getField("staticInitializer")[0]), "statementList", true), "statement", true)));
+    ListSequence.fromList(SLinkOperations.getChildren(SLinkOperations.getTarget(initializer, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1206629501431l, 1206629521979l, "statementList")), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123136l, 1068581517665l, "statement"))).addSequence(ListSequence.fromList(SLinkOperations.getChildren(SLinkOperations.getTarget(((SNode) MakeStaticInitializerNotStatic_QuickFix.this.getField("staticInitializer")[0]), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1221737317277l, 1221737317278l, "statementList")), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123136l, 1068581517665l, "statement"))));
 
     SNodeOperations.detachNode(((SNode) MakeStaticInitializerNotStatic_QuickFix.this.getField("staticInitializer")[0]));
 
     if (index == -1) {
-      ListSequence.fromList(SLinkOperations.getTargets(((SNode) MakeStaticInitializerNotStatic_QuickFix.this.getField("containingClass")[0]), "member", true)).addElement(initializer);
+      ListSequence.fromList(SLinkOperations.getChildren(((SNode) MakeStaticInitializerNotStatic_QuickFix.this.getField("containingClass")[0]), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107461130800l, 5375687026011219971l, "member"))).addElement(initializer);
     } else {
-      ListSequence.fromList(SLinkOperations.getTargets(((SNode) MakeStaticInitializerNotStatic_QuickFix.this.getField("containingClass")[0]), "member", true)).insertElement(index, initializer);
+      ListSequence.fromList(SLinkOperations.getChildren(((SNode) MakeStaticInitializerNotStatic_QuickFix.this.getField("containingClass")[0]), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107461130800l, 5375687026011219971l, "member"))).insertElement(index, initializer);
     }
   }
 }

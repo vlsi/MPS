@@ -6,6 +6,8 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.pattern.GeneratedMatchingPattern;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.pattern.IMatchingPattern;
 
@@ -15,7 +17,7 @@ public class IncludeMacro_Behavior {
   public static SNode virtual_getInputNodeTypeInsideOfMacro_1213877290799(SNode thisNode) {
     {
       GeneratedMatchingPattern pattern_wfrqja_a0a = new IncludeMacro_Behavior.Pattern_wfrqja_a0a0a0a1();
-      SNode coercedNode_wfrqja_a0a = TypeChecker.getInstance().getRuntimeSupport().coerce_(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(thisNode, "sourceNodeQuery", true)), pattern_wfrqja_a0a);
+      SNode coercedNode_wfrqja_a0a = TypeChecker.getInstance().getRuntimeSupport().coerce_(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-5475912601019530992l, -8082971551085732881l), 1194565793557l, 1194565823413l, "sourceNodeQuery"))), pattern_wfrqja_a0a);
       if (coercedNode_wfrqja_a0a != null) {
         return ((SNode) pattern_wfrqja_a0a.getFieldValue("patternVar_concept"));
       } else {

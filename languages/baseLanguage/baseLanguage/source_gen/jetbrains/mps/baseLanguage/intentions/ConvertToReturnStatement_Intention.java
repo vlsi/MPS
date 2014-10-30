@@ -14,6 +14,8 @@ import jetbrains.mps.smodel.SNodePointer;
 import java.util.Collections;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.intentions.IntentionDescriptor;
 
@@ -68,7 +70,7 @@ public class ConvertToReturnStatement_Intention implements IntentionFactory {
     }
     public void execute(final SNode node, final EditorContext editorContext) {
       SNode returnStatement = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ReturnStatement", null);
-      SLinkOperations.setTarget(returnStatement, "expression", SNodeOperations.copyNode(SLinkOperations.getTarget(node, "expression", true)), true);
+      SLinkOperations.setTarget(returnStatement, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068581242878l, 1068581517676l, "expression"), SNodeOperations.copyNode(SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123155l, 1068580123156l, "expression"))));
       SNodeOperations.replaceWithAnother(node, returnStatement);
     }
     public IntentionDescriptor getDescriptor() {

@@ -8,6 +8,8 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -18,8 +20,8 @@ public class typeof_ArrayCreator_InferenceRule extends AbstractInferenceRule_Run
   public typeof_ArrayCreator_InferenceRule() {
   }
   public void applyRule(final SNode arrayCreator, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    SNode type = SLinkOperations.getTarget(arrayCreator, "componentType", true);
-    for (int i = 0; i < ListSequence.fromList(SLinkOperations.getTargets(arrayCreator, "dimensionExpression", true)).count(); i++) {
+    SNode type = SLinkOperations.getTarget(arrayCreator, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1184950988562l, 1184951007469l, "componentType"));
+    for (int i = 0; i < ListSequence.fromList(SLinkOperations.getChildren(arrayCreator, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1184950988562l, 1184952969026l, "dimensionExpression"))).count(); i++) {
       type = _quotation_createNode_vouny3_a0a0b0b(type);
     }
     {

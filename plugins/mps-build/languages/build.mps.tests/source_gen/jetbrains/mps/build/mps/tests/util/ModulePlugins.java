@@ -13,6 +13,8 @@ import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.build.mps.util.RequiredPlugins;
@@ -32,7 +34,7 @@ public class ModulePlugins {
     for (final SNode module : Sequence.fromIterable(closure.getAllModules())) {
       List<SNode> projectPlugins = SNodeOperations.getDescendants(SNodeOperations.cast(SNodeOperations.getContainingRoot(module), "jetbrains.mps.build.structure.BuildProject"), "jetbrains.mps.build.mps.structure.BuildMps_IdeaPlugin", false, new String[]{});
       for (SNode plugin : ListSequence.fromList(projectPlugins)) {
-        if (ListSequence.fromList(SLinkOperations.getTargets(plugin, "content", true)).findFirst(new IWhereFilter<SNode>() {
+        if (ListSequence.fromList(SLinkOperations.getChildren(plugin, MetaAdapterFactory.getContainmentLink(new UUID(934837630734519964l, -6831122735637083229l), 6592112598314498932l, 6592112598314499050l, "content"))).findFirst(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {
             return BehaviorReflection.invokeVirtual(Boolean.TYPE, it, "virtual_exports_6547494638219603457", new Object[]{module});
           }

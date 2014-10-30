@@ -5,6 +5,8 @@ package jetbrains.mps.build.mps.behavior;
 import org.jetbrains.mps.openapi.model.SNode;
 import java.util.Map;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import java.util.Collections;
 
 public class BuildLayout_ToBinaryCopyProcessor_Behavior {
@@ -15,7 +17,7 @@ public class BuildLayout_ToBinaryCopyProcessor_Behavior {
     return "copyModels";
   }
   public static Map<String, String> virtual_getTaskArguments_7918752904805535914(SNode thisNode) {
-    if (SPropertyOperations.getBoolean(thisNode, "stripImplementation")) {
+    if (SPropertyOperations.getBoolean(thisNode, MetaAdapterFactory.getProperty(new UUID(934837630734519964l, -6831122735637083229l), 1330375798066754656l, 7918752904805006474l, "stripImplementation"))) {
       return Collections.singletonMap("stripImplementation", "true");
     }
     return Collections.emptyMap();

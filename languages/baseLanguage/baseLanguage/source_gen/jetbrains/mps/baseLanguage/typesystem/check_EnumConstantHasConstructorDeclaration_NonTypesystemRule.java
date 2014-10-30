@@ -9,6 +9,8 @@ import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.baseLanguage.behavior.ClassConcept_Behavior;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
@@ -26,7 +28,7 @@ public class check_EnumConstantHasConstructorDeclaration_NonTypesystemRule exten
       return;
     }
 
-    SNode constructorDeclaration = SLinkOperations.getTarget(enumConstant, "baseMethodDeclaration", false);
+    SNode constructorDeclaration = SLinkOperations.getTarget(enumConstant, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, 1068499141037l, "baseMethodDeclaration"));
     if ((constructorDeclaration == null)) {
       if (Sequence.fromIterable(ClassConcept_Behavior.call_constructors_5292274854859503373(enumClass)).isEmpty()) {
         {

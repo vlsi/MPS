@@ -5,6 +5,8 @@ package jetbrains.mps.testbench.suite.behavior;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import java.util.List;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -14,14 +16,14 @@ public class TestCaseRef_Behavior {
   public static void init(SNode thisNode) {
   }
   public static String virtual_fqClassName_2956932267233324537(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(thisNode, "testCase", false), "virtual_getClassName_1216136193905", new Object[]{});
+    return BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getReferenceLink(new UUID(-3186960361546692645l, -5977911984495255467l), 4504141816188599479l, 4504141816188599488l, "testCase")), "virtual_getClassName_1216136193905", new Object[]{});
   }
   public static Iterable<String> virtual_testNames_4089647634160960707(SNode thisNode) {
     List<SNode> testMethods;
-    if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(thisNode, "testCase", false), "jetbrains.mps.lang.test.structure.NodesTestCase")) {
-      testMethods = BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), SLinkOperations.getTarget(thisNode, "testCase", false), "virtual_getTestSet_1216130724401", new Object[]{});
+    if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getReferenceLink(new UUID(-3186960361546692645l, -5977911984495255467l), 4504141816188599479l, 4504141816188599488l, "testCase")), "jetbrains.mps.lang.test.structure.NodesTestCase")) {
+      testMethods = BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getReferenceLink(new UUID(-3186960361546692645l, -5977911984495255467l), 4504141816188599479l, 4504141816188599488l, "testCase")), "virtual_getTestSet_1216130724401", new Object[]{});
     } else {
-      testMethods = BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), SLinkOperations.getTarget(thisNode, "testCase", false), "virtual_getTestMethods_2148145109766218395", new Object[]{});
+      testMethods = BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getReferenceLink(new UUID(-3186960361546692645l, -5977911984495255467l), 4504141816188599479l, 4504141816188599488l, "testCase")), "virtual_getTestMethods_2148145109766218395", new Object[]{});
     }
     return ListSequence.fromList(testMethods).select(new ISelector<SNode, String>() {
       public String select(SNode m) {

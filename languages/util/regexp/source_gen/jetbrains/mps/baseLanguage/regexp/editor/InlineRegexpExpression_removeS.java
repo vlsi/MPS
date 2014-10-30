@@ -10,6 +10,8 @@ import jetbrains.mps.editor.runtime.cells.AbstractCellAction;
 import jetbrains.mps.openapi.editor.cells.CellTraversalUtil;
 import jetbrains.mps.openapi.editor.cells.CellConditions;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 
 public class InlineRegexpExpression_removeS {
   public static void setCellActions(EditorCell editorCell, SNode node, EditorContext context) {
@@ -27,7 +29,7 @@ public class InlineRegexpExpression_removeS {
     public void execute_internal(EditorContext editorContext, SNode node) {
       EditorCell current = editorContext.getSelectedCell();
       EditorCell toSelect = CellTraversalUtil.getPrevLeaf(current, CellConditions.SELECTABLE);
-      SPropertyOperations.set(node, "dotAll", "" + (false));
+      SPropertyOperations.set(node, MetaAdapterFactory.getProperty(new UUID(-2688747624584492277l, -5722269945249396544l), 1174510540317l, 1175158902584l, "dotAll"), "" + (false));
       editorContext.getEditorComponent().changeSelection(toSelect);
     }
   }
@@ -42,7 +44,7 @@ public class InlineRegexpExpression_removeS {
     public void execute_internal(EditorContext editorContext, SNode node) {
       EditorCell current = editorContext.getSelectedCell();
       EditorCell toSelect = CellTraversalUtil.getPrevLeaf(current, CellConditions.SELECTABLE);
-      SPropertyOperations.set(node, "dotAll", "" + (false));
+      SPropertyOperations.set(node, MetaAdapterFactory.getProperty(new UUID(-2688747624584492277l, -5722269945249396544l), 1174510540317l, 1175158902584l, "dotAll"), "" + (false));
       editorContext.getEditorComponent().changeSelection(toSelect);
     }
   }

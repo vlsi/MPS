@@ -18,6 +18,8 @@ import com.intellij.openapi.project.Project;
 import jetbrains.mps.console.tool.ConsoleTab;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
@@ -73,7 +75,7 @@ public class FindInstancesByCondition_Action extends BaseAction {
       ConsoleTab tab = tool.getCurrentEditableTab();
       SNode command = _quotation_createNode_flklsf_a0c0a(((SNode) MapSequence.fromMap(_params).get("node")));
       tab.insertCommand(command);
-      tab.selectNode(SLinkOperations.getTarget(ListSequence.fromList(SNodeOperations.getDescendants(SLinkOperations.getTarget(tab.getRoot(), "commandHolder", true), "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral", false, new String[]{})).first(), "body", true));
+      tab.selectNode(SLinkOperations.getTarget(ListSequence.fromList(SNodeOperations.getDescendants(SLinkOperations.getTarget(tab.getRoot(), MetaAdapterFactory.getContainmentLink(new UUID(-2442401883381282302l, -5546511894809623691l), 1583916890557930028l, 1583916890557930417l, "commandHolder")), "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral", false, new String[]{})).first(), MetaAdapterFactory.getContainmentLink(new UUID(-200093298712821347l, -8038623698278341771l), 1199569711397l, 1199569916463l, "body")));
     } catch (Throwable t) {
       if (LOG.isEnabledFor(Level.ERROR)) {
         LOG.error("User's action execute method failed. Action:" + "FindInstancesByCondition", t);
@@ -101,7 +103,7 @@ public class FindInstancesByCondition_Action extends BaseAction {
     quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.DotExpression", null, null, false);
     quotedNode_5 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.console.blCommand.structure.InstancesExpression", null, null, false);
     quotedNode_7 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.RefConcept_Reference", null, null, false);
-    SNodeAccessUtil.setReferenceTarget(quotedNode_7, "conceptDeclaration", (SNode) parameter_1);
+    SNodeAccessUtil.setReferenceTarget(quotedNode_7, MetaAdapterFactory.getReferenceLink(new UUID(8675788371017092295l, -9098312342032910879l), 1177026924588l, 1177026940964l, "conceptDeclaration"), (SNode) parameter_1);
     quotedNode_5.addChild("conceptArg", quotedNode_7);
     quotedNode_8 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.console.blCommand.structure.QueryParameterList", null, null, false);
     quotedNode_10 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.console.blCommand.structure.QueryParameterScope", null, null, false);
@@ -112,11 +114,11 @@ public class FindInstancesByCondition_Action extends BaseAction {
     quotedNode_4.addChild("operand", quotedNode_5);
     quotedNode_6 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.WhereOperation", null, null, false);
     quotedNode_9 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral", null, null, false);
-    SNodeAccessUtil.setProperty(quotedNode_9, "forceMultiLine", "true");
+    SNodeAccessUtil.setProperty(quotedNode_9, MetaAdapterFactory.getProperty(new UUID(-200093298712821347l, -8038623698278341771l), 1199569711397l, 890797661671409019l, "forceMultiLine"), "true");
     quotedNode_11 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StatementList", null, null, false);
     quotedNode_9.addChild("body", quotedNode_11);
     quotedNode_12 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.SmartClosureParameterDeclaration", null, null, false);
-    SNodeAccessUtil.setProperty(quotedNode_12, "name", "node");
+    SNodeAccessUtil.setProperty(quotedNode_12, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"), "node");
     quotedNode_14 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.UndefinedType", null, null, false);
     quotedNode_12.addChild("type", quotedNode_14);
     quotedNode_9.addChild("parameter", quotedNode_12);

@@ -5,6 +5,7 @@ package jetbrains.mps.lang.plugin.constraints;
 import jetbrains.mps.smodel.runtime.ConstraintsDescriptor;
 import java.util.Arrays;
 import jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor;
+import jetbrains.mps.smodel.adapter.ids.SConceptId;
 
 public class ConstraintsAspectDescriptor implements jetbrains.mps.smodel.runtime.ConstraintsAspectDescriptor {
   public ConstraintsAspectDescriptor() {
@@ -56,9 +57,78 @@ public class ConstraintsAspectDescriptor implements jetbrains.mps.smodel.runtime
       case 7:
         return new AddElementStatement_Constraints();
       default:
-        // todo: illegal in some cases? 
         return new BaseConstraintsDescriptor(fqName);
     }
+  }
+  public ConstraintsDescriptor getDescriptor(SConceptId conceptId) {
+    long id = conceptId.getConceptId();
+    if (id == 1203071646776l) {
+      return new ActionDeclaration_Constraints();
+    }
+    if (id == 1203092361741l) {
+      return new ModificationStatement_Constraints();
+    }
+    if (id == 1204471433283l) {
+      return new ToolInstanceExpression_Constraints();
+    }
+    if (id == 1203680534665l) {
+      return new GroupAnchor_Constraints();
+    }
+    if (id == 1204908117386l) {
+      return new Separator_Constraints();
+    }
+    if (id == 1203087890642l) {
+      return new ActionGroupDeclaration_Constraints();
+    }
+    if (id == 1204397573187l) {
+      return new InterfaceExtentionPoint_Constraints();
+    }
+    if (id == 1217252042208l) {
+      return new ActionDataParameterDeclaration_Constraints();
+    }
+    if (id == 1205679047295l) {
+      return new ActionParameterDeclaration_Constraints();
+    }
+    if (id == 1227013049127l) {
+      return new AddStatement_Constraints();
+    }
+    if (id == 6193305307616715384l) {
+      return new ShortcutChange_Constraints();
+    }
+    if (id == 1205681149025l) {
+      return new UpdateBlock_Constraints();
+    }
+    if (id == 8096638938275438668l) {
+      return new TabbedToolOperation_Constraints();
+    }
+    if (id == 485694842828664424l) {
+      return new SmartDisposeClosureParameterDeclaration_Constraints();
+    }
+    if (id == 3339131993542057767l) {
+      return new BaseProjectOperation_Constraints();
+    }
+    if (id == 1821622352985038318l) {
+      return new ActionParameterReference_Constraints();
+    }
+    if (id == 1203088046679l) {
+      return new ActionInstance_Constraints();
+    }
+    if (id == 1227008846812l) {
+      return new ActionConstructionParameterDeclaration_Constraints();
+    }
+    if (id == 5678361901872075170l) {
+      return new EditableModel_Constraints();
+    }
+    if (id == 5023285075122009364l) {
+      return new IdeaInitializerDescriptor_Constraints();
+    }
+    if (id == 1050311802978903937l) {
+      return new ConceptCondition_Constraints();
+    }
+    if (id == 1207145475354l) {
+      return new AddElementStatement_Constraints();
+    }
+    return new BaseConstraintsDescriptor(conceptId);
   }
   private static String[] stringSwitchCases_2qnle6_a0a0b = new String[]{"jetbrains.mps.lang.plugin.structure.ActionConstructionParameterDeclaration", "jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration", "jetbrains.mps.lang.plugin.structure.ActionDeclaration", "jetbrains.mps.lang.plugin.structure.ActionGroupDeclaration", "jetbrains.mps.lang.plugin.structure.ActionInstance", "jetbrains.mps.lang.plugin.structure.ActionParameterDeclaration", "jetbrains.mps.lang.plugin.structure.ActionParameterReference", "jetbrains.mps.lang.plugin.structure.AddElementStatement", "jetbrains.mps.lang.plugin.structure.AddStatement", "jetbrains.mps.lang.plugin.structure.BaseProjectOperation", "jetbrains.mps.lang.plugin.structure.ConceptCondition", "jetbrains.mps.lang.plugin.structure.EditableModel", "jetbrains.mps.lang.plugin.structure.GroupAnchor", "jetbrains.mps.lang.plugin.structure.IdeaInitializerDescriptor", "jetbrains.mps.lang.plugin.structure.InterfaceExtentionPoint", "jetbrains.mps.lang.plugin.structure.ModificationStatement", "jetbrains.mps.lang.plugin.structure.Separator", "jetbrains.mps.lang.plugin.structure.ShortcutChange", "jetbrains.mps.lang.plugin.structure.SmartDisposeClosureParameterDeclaration", "jetbrains.mps.lang.plugin.structure.TabbedToolOperation", "jetbrains.mps.lang.plugin.structure.ToolInstanceExpression", "jetbrains.mps.lang.plugin.structure.UpdateBlock"};
 }

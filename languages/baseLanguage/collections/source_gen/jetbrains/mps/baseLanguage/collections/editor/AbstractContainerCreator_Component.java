@@ -12,6 +12,8 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
 import jetbrains.mps.nodeEditor.cells.ModelAccessor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.openapi.editor.cells.CellActionType;
@@ -73,7 +75,7 @@ public class AbstractContainerCreator_Component implements ConceptEditorComponen
   private EditorCell createReadOnlyModelAccessor_jky4mt_a0(final EditorContext editorContext, final SNode node) {
     EditorCell_Property editorCell = EditorCell_Property.create(editorContext, new ModelAccessor() {
       public String getText() {
-        return (SPropertyOperations.getString(node, "alias") != null ? SPropertyOperations.getString(node, "alias") : SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(node), "conceptAlias"));
+        return (SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1133920641626l, 1156235010670l, "alias")) != null ? SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1133920641626l, 1156235010670l, "alias")) : SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(node), MetaAdapterFactory.getProperty(new UUID(-4094437568663370681l, -8968368868337559369l), 1169125787135l, 5092175715804935370l, "conceptAlias")));
       }
       public void setText(String s) {
       }
@@ -111,7 +113,7 @@ public class AbstractContainerCreator_Component implements ConceptEditorComponen
     return editorCell;
   }
   private static boolean renderingCondition_jky4mt_a1a(SNode node, EditorContext editorContext) {
-    return (SLinkOperations.getTarget(node, "elementType", true) != null);
+    return (SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-8968771020793164004l, -7182180101671965361l), 1237721394592l, 1237721435807l, "elementType")) != null);
   }
   private EditorCell createConstant_jky4mt_a1a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "<");
@@ -168,7 +170,7 @@ public class AbstractContainerCreator_Component implements ConceptEditorComponen
     return editorCell;
   }
   private static boolean renderingCondition_jky4mt_a2a(SNode node, EditorContext editorContext) {
-    return ListSequence.fromList(SLinkOperations.getTargets(node, "initValue", true)).isNotEmpty();
+    return ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(new UUID(-8968771020793164004l, -7182180101671965361l), 1237721394592l, 1237721435808l, "initValue"))).isNotEmpty();
   }
   private EditorCell createConstant_jky4mt_a2a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "{");
@@ -273,7 +275,7 @@ public class AbstractContainerCreator_Component implements ConceptEditorComponen
     return editorCell;
   }
   private static boolean renderingCondition_jky4mt_a3a(SNode node, EditorContext editorContext) {
-    return (SLinkOperations.getTarget(node, "copyFrom", true) != null);
+    return (SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-8968771020793164004l, -7182180101671965361l), 1237721394592l, 1237731803878l, "copyFrom")) != null);
   }
   private EditorCell createConstant_jky4mt_a3a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");
@@ -333,7 +335,7 @@ public class AbstractContainerCreator_Component implements ConceptEditorComponen
     return editorCell;
   }
   private static boolean renderingCondition_jky4mt_a4a(SNode node, EditorContext editorContext) {
-    return (SLinkOperations.getTarget(node, "initSize", true) != null);
+    return (SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-8968771020793164004l, -7182180101671965361l), 1237721394592l, 1562299158920737514l, "initSize")) != null);
   }
   private EditorCell createConstant_jky4mt_a4a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");

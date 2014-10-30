@@ -8,6 +8,8 @@ import org.jetbrains.mps.openapi.language.SConceptRepository;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
@@ -21,7 +23,7 @@ public class IndexedTupleType_Behavior {
     StringBuilder sb = new StringBuilder();
     sb.append(BehaviorReflection.invokeVirtualStatic(String.class, SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(thisNode))), "virtual_getLeftBracket_1262430001741497978", new Object[]{}));
     String sep = "";
-    for (SNode mt : SLinkOperations.getTargets(thisNode, "componentType", true)) {
+    for (SNode mt : SLinkOperations.getChildren(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-6753182146401843782l, -5129028327240390294l), 1238852151516l, 1238852204892l, "componentType"))) {
       sb.append(sep).append(BehaviorReflection.invokeVirtual(String.class, mt, "virtual_getPresentation_1213877396640", new Object[]{}));
       sep = ", ";
     }
@@ -30,7 +32,7 @@ public class IndexedTupleType_Behavior {
   }
   public static List<String> virtual_getVariableSuffixes_1213877337304(SNode thisNode) {
     List<String> suffixes = ListSequence.fromList(new ArrayList<String>());
-    switch (ListSequence.fromList(SLinkOperations.getTargets(thisNode, "componentType", true)).count()) {
+    switch (ListSequence.fromList(SLinkOperations.getChildren(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-6753182146401843782l, -5129028327240390294l), 1238852151516l, 1238852204892l, "componentType"))).count()) {
       case 0:
         ListSequence.fromList(suffixes).addElement("unit");
         break;
@@ -47,12 +49,12 @@ public class IndexedTupleType_Behavior {
         ListSequence.fromList(suffixes).addElement("quadruple");
         break;
       default:
-        ListSequence.fromList(suffixes).addElement("_" + Integer.valueOf(ListSequence.fromList(SLinkOperations.getTargets(thisNode, "componentType", true)).count()) + "tuple");
+        ListSequence.fromList(suffixes).addElement("_" + Integer.valueOf(ListSequence.fromList(SLinkOperations.getChildren(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-6753182146401843782l, -5129028327240390294l), 1238852151516l, 1238852204892l, "componentType"))).count()) + "tuple");
     }
     return suffixes;
   }
   public static void virtual_collectGenericSubstitutions_4107091686347010321(SNode thisNode, Map<SNode, SNode> substitutions) {
-    for (SNode ct : ListSequence.fromList(SLinkOperations.getTargets(thisNode, "componentType", true))) {
+    for (SNode ct : ListSequence.fromList(SLinkOperations.getChildren(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-6753182146401843782l, -5129028327240390294l), 1238852151516l, 1238852204892l, "componentType")))) {
       if (SNodeOperations.isInstanceOf(ct, "jetbrains.mps.baseLanguage.structure.IGenericType")) {
         BehaviorReflection.invokeVirtual(Void.class, SNodeOperations.cast(ct, "jetbrains.mps.baseLanguage.structure.IGenericType"), "virtual_collectGenericSubstitutions_4107091686347010321", new Object[]{substitutions});
       }

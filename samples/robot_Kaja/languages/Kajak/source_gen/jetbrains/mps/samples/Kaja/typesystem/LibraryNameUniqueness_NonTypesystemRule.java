@@ -12,6 +12,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.Sequence;
@@ -27,19 +29,19 @@ public class LibraryNameUniqueness_NonTypesystemRule extends AbstractNonTypesyst
   public void applyRule(final SNode library, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     Iterable<String> scriptNames = ListSequence.fromList(SModelOperations.getRoots(SNodeOperations.getModel(library), "jetbrains.mps.samples.Kaja.structure.Script")).select(new ISelector<SNode, String>() {
       public String select(SNode it) {
-        return SPropertyOperations.getString(it, "name");
+        return SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"));
       }
     });
     Iterable<String> libraryNames = ListSequence.fromList(SModelOperations.getRoots(SNodeOperations.getModel(library), "jetbrains.mps.samples.Kaja.structure.Library")).select(new ISelector<SNode, String>() {
       public String select(SNode it) {
-        return SPropertyOperations.getString(it, "name");
+        return SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"));
       }
     });
     List<String> allNames = ListSequence.fromListWithValues(new ArrayList<String>(), scriptNames);
     ListSequence.fromList(allNames).addSequence(Sequence.fromIterable(libraryNames));
     if (ListSequence.fromList(allNames).where(new IWhereFilter<String>() {
       public boolean accept(String it) {
-        return it != null && it.equals(SPropertyOperations.getString(library, "name"));
+        return it != null && it.equals(SPropertyOperations.getString(library, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")));
       }
     }).count() > 1) {
       {

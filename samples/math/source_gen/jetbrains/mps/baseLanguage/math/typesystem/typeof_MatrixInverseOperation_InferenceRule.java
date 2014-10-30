@@ -8,6 +8,8 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
@@ -21,7 +23,7 @@ public class typeof_MatrixInverseOperation_InferenceRule extends AbstractInferen
   }
   public void applyRule(final SNode op, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     {
-      final SNode t = typeCheckingContext.typeOf(SLinkOperations.getTarget(op, "expr", true), "r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)", "7388416617632229396", true);
+      final SNode t = typeCheckingContext.typeOf(SLinkOperations.getTarget(op, MetaAdapterFactory.getContainmentLink(new UUID(3676340747305173022l, -6911132873973321185l), 7255837154369354272l, 7255837154369354274l, "expr")), "r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)", "7388416617632229396", true);
       typeCheckingContext.whenConcrete(t, new Runnable() {
         public void run() {
           if (SNodeOperations.isInstanceOf(typeCheckingContext.getExpandedNode(t), "jetbrains.mps.baseLanguage.math.structure.MatrixType")) {
@@ -33,10 +35,10 @@ public class typeof_MatrixInverseOperation_InferenceRule extends AbstractInferen
             {
               SNode _nodeToCheck_1029348928467 = op;
               EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)", "9195559275659749160", 0, null);
-              typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)", "9195559275659749167", true), (SNode) typeCheckingContext.typeOf(SLinkOperations.getTarget(op, "expr", true), "r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)", "9195559275659749162", true), _info_12389875345);
+              typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)", "9195559275659749167", true), (SNode) typeCheckingContext.typeOf(SLinkOperations.getTarget(op, MetaAdapterFactory.getContainmentLink(new UUID(3676340747305173022l, -6911132873973321185l), 7255837154369354272l, 7255837154369354274l, "expr")), "r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)", "9195559275659749162", true), _info_12389875345);
             }
             SNode mt = SNodeOperations.cast(typeCheckingContext.getExpandedNode(t), "jetbrains.mps.baseLanguage.math.structure.MatrixType");
-            if (SPropertyOperations.getInteger(mt, "rows") != 0 && SPropertyOperations.getInteger(mt, "columns") != 0 && SPropertyOperations.getInteger(mt, "rows") != SPropertyOperations.getInteger(mt, "columns")) {
+            if (SPropertyOperations.getInteger(mt, MetaAdapterFactory.getProperty(new UUID(3676340747305173022l, -6911132873973321185l), 4815887568697030518l, 4815887568697048492l, "rows")) != 0 && SPropertyOperations.getInteger(mt, MetaAdapterFactory.getProperty(new UUID(3676340747305173022l, -6911132873973321185l), 4815887568697030518l, 4815887568697048493l, "columns")) != 0 && SPropertyOperations.getInteger(mt, MetaAdapterFactory.getProperty(new UUID(3676340747305173022l, -6911132873973321185l), 4815887568697030518l, 4815887568697048492l, "rows")) != SPropertyOperations.getInteger(mt, MetaAdapterFactory.getProperty(new UUID(3676340747305173022l, -6911132873973321185l), 4815887568697030518l, 4815887568697048493l, "columns"))) {
               {
                 MessageTarget errorTarget = new NodeMessageTarget();
                 IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(op, "Inverse operation is undefined for non-square matrices", "r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)", "7388416617632229476", null, errorTarget);

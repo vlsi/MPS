@@ -7,6 +7,8 @@ import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.smodel.adapter.structure.language.SLanguageAdapterById;
 import jetbrains.mps.smodel.adapter.ids.MetaIdByDeclaration;
 import jetbrains.mps.smodel.SModelInternal;
@@ -24,7 +26,7 @@ public class Migration_Queries {
     SModule module = SNodeOperations.getModel(c).getModule();
     if (module instanceof Language) {
       int currentVersion = ((Language) module).getLanguageVersion();
-      SPropertyOperations.set(c, "fromVersion", "" + (currentVersion));
+      SPropertyOperations.set(c, MetaAdapterFactory.getProperty(new UUID(-8037690291156860282l, -7505894832713754871l), 8352104482584315555l, 5820409521797704727l, "fromVersion"), "" + (currentVersion));
       ((Language) module).getModuleDescriptor().setVersion(currentVersion + 1);
       SLanguageAdapterById slang = new SLanguageAdapterById(MetaIdByDeclaration.getLanguageId(((Language) module)), module.getModuleName());
       if (((Language) module).getModuleDescriptor().getLanguageVersions().containsKey(slang)) {
@@ -62,7 +64,7 @@ public class Migration_Queries {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeType", null, null, false);
-    SNodeAccessUtil.setReferenceTarget(quotedNode_2, "concept", (SNode) parameter_1);
+    SNodeAccessUtil.setReferenceTarget(quotedNode_2, MetaAdapterFactory.getReferenceLink(new UUID(8675788371017092295l, -9098312342032910879l), 1138055754698l, 1138405853777l, "concept"), (SNode) parameter_1);
     return quotedNode_2;
   }
 }

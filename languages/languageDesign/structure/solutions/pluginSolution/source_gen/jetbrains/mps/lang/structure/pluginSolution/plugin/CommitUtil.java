@@ -11,6 +11,8 @@ import jetbrains.mps.smodel.DebugRegistry;
 import jetbrains.mps.smodel.adapter.ids.MetaIdByDeclaration;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 
 public class CommitUtil {
   public static boolean commitRename(EditorContext editorContext, SNode node, String oldValue, String newValue) {
@@ -25,7 +27,7 @@ public class CommitUtil {
       DebugRegistry.getInstance().addPropertyName(MetaIdByDeclaration.getPropId((jetbrains.mps.smodel.SNode) node), newValue);
     }
     if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.structure.structure.LinkDeclaration")) {
-      if (SPropertyOperations.hasValue(SNodeOperations.cast(node, "jetbrains.mps.lang.structure.structure.LinkDeclaration"), "metaClass", "aggregation", "reference")) {
+      if (SPropertyOperations.hasValue(SNodeOperations.cast(node, "jetbrains.mps.lang.structure.structure.LinkDeclaration"), MetaAdapterFactory.getProperty(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489288298l, 1071599937831l, "metaClass"), "aggregation", "reference")) {
         DebugRegistry.getInstance().addLinkName(MetaIdByDeclaration.getLinkId((jetbrains.mps.smodel.SNode) node), newValue);
       } else {
         DebugRegistry.getInstance().addRefName(MetaIdByDeclaration.getRefRoleId((jetbrains.mps.smodel.SNode) node), newValue);

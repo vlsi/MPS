@@ -15,6 +15,8 @@ import jetbrains.mps.lang.dataFlow.framework.instructions.Instruction;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
@@ -45,8 +47,8 @@ public class InlineVariableAssignmentRefactoring extends InlineVariableRefactori
     for (SNode sourceNode : this.getNodesToRefactor()) {
       // <node> 
       for (SNode reference : ListSequence.fromList(SNodeOperations.getDescendants(sourceNode, "jetbrains.mps.baseLanguage.structure.VariableReference", true, new String[]{}))) {
-        if (SLinkOperations.getTarget(reference, "variableDeclaration", false) == myVariable) {
-          SNodeOperations.replaceWithAnother(reference, SNodeOperations.copyNode(SLinkOperations.getTarget(myVariable, "initializer", true)));
+        if (SLinkOperations.getTarget(reference, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068498886296l, 1068581517664l, "variableDeclaration")) == myVariable) {
+          SNodeOperations.replaceWithAnother(reference, SNodeOperations.copyNode(SLinkOperations.getTarget(myVariable, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068431474542l, 1068431790190l, "initializer"))));
         }
       }
     }

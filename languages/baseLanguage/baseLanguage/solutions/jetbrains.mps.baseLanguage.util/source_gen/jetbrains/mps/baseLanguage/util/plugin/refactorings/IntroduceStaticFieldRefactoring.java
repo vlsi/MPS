@@ -5,6 +5,8 @@ package jetbrains.mps.baseLanguage.util.plugin.refactorings;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
@@ -31,7 +33,7 @@ public class IntroduceStaticFieldRefactoring extends AbstractIntroduceFieldRefac
       newDeclaration = _quotation_createNode_282g55_a0a0a6a0(myVisibilityLevel.getNode(), expressionType, name);
     }
     if (myIsFinal) {
-      SPropertyOperations.set(newDeclaration, "isFinal", "" + (true));
+      SPropertyOperations.set(newDeclaration, MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 1068431474542l, 1176718929932l, "isFinal"), "" + (true));
     }
     SNode classConcept = SNodeOperations.getAncestor(this.getExpression(), "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false);
     MemberInsertingUtils.insertClassifierMemberInBestPlace(classConcept, newDeclaration);
@@ -49,10 +51,10 @@ public class IntroduceStaticFieldRefactoring extends AbstractIntroduceFieldRefac
         initializer = Sequence.fromIterable(staticInitializers).first();
       } else {
         initializer = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.StaticInitializer", null);
-        SLinkOperations.setTarget(initializer, "statementList", SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.StatementList", null), true);
-        ListSequence.fromList(SLinkOperations.getTargets(declaration, "member", true)).addElement(initializer);
+        SLinkOperations.setTarget(initializer, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1221737317277l, 1221737317278l, "statementList"), SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.StatementList", null));
+        ListSequence.fromList(SLinkOperations.getChildren(declaration, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107461130800l, 5375687026011219971l, "member"))).addElement(initializer);
       }
-      List<SNode> statement = SLinkOperations.getTargets(SLinkOperations.getTarget(initializer, "statementList", true), "statement", true);
+      List<SNode> statement = SLinkOperations.getChildren(SLinkOperations.getTarget(initializer, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1221737317277l, 1221737317278l, "statementList")), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123136l, 1068581517665l, "statement"));
       if (ListSequence.fromList(statement).isNotEmpty()) {
         SNodeOperations.insertPrevSiblingChild(ListSequence.fromList(statement).first(), SNodeOperations.copyNode(assignmentStatement));
       } else {
@@ -80,7 +82,7 @@ public class IntroduceStaticFieldRefactoring extends AbstractIntroduceFieldRefac
     SNode quotedNode_7 = null;
     SNode quotedNode_8 = null;
     quotedNode_5 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration", null, null, false);
-    SNodeAccessUtil.setProperty(quotedNode_5, "name", (String) parameter_3);
+    SNodeAccessUtil.setProperty(quotedNode_5, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"), (String) parameter_3);
     quotedNode_6 = (SNode) parameter_1;
     if (quotedNode_6 != null) {
       quotedNode_5.addChild("visibility", HUtil.copyIfNecessary(quotedNode_6));
@@ -101,7 +103,7 @@ public class IntroduceStaticFieldRefactoring extends AbstractIntroduceFieldRefac
     SNode quotedNode_5 = null;
     SNode quotedNode_6 = null;
     quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration", null, null, false);
-    SNodeAccessUtil.setProperty(quotedNode_4, "name", (String) parameter_3);
+    SNodeAccessUtil.setProperty(quotedNode_4, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"), (String) parameter_3);
     quotedNode_5 = (SNode) parameter_1;
     if (quotedNode_5 != null) {
       quotedNode_4.addChild("visibility", HUtil.copyIfNecessary(quotedNode_5));
@@ -123,7 +125,7 @@ public class IntroduceStaticFieldRefactoring extends AbstractIntroduceFieldRefac
       quotedNode_3.addChild("rValue", HUtil.copyIfNecessary(quotedNode_4));
     }
     quotedNode_5 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.VariableReference", null, null, false);
-    SNodeAccessUtil.setReferenceTarget(quotedNode_5, "variableDeclaration", (SNode) parameter_2);
+    SNodeAccessUtil.setReferenceTarget(quotedNode_5, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068498886296l, 1068581517664l, "variableDeclaration"), (SNode) parameter_2);
     quotedNode_3.addChild("lValue", quotedNode_5);
     return quotedNode_3;
   }
@@ -142,7 +144,7 @@ public class IntroduceStaticFieldRefactoring extends AbstractIntroduceFieldRefac
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.VariableReference", null, null, false);
-    SNodeAccessUtil.setReferenceTarget(quotedNode_2, "variableDeclaration", (SNode) parameter_1);
+    SNodeAccessUtil.setReferenceTarget(quotedNode_2, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068498886296l, 1068581517664l, "variableDeclaration"), (SNode) parameter_1);
     return quotedNode_2;
   }
 }

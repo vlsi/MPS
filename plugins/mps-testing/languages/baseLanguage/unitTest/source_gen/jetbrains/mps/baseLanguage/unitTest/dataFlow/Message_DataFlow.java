@@ -6,14 +6,16 @@ import jetbrains.mps.lang.dataFlow.DataFlowBuilder;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.lang.dataFlow.DataFlowBuilderContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import org.jetbrains.mps.openapi.model.SNode;
 
 public class Message_DataFlow extends DataFlowBuilder {
   public Message_DataFlow() {
   }
   public void build(final IOperationContext operationContext, final DataFlowBuilderContext _context) {
-    if (SLinkOperations.getTarget(_context.getNode(), "message", true) != null) {
-      _context.getBuilder().build((SNode) SLinkOperations.getTarget(_context.getNode(), "message", true));
+    if (SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(new UUID(-714818927241248010l, -5076282167675141386l), 1172073500303l, 1172073511101l, "message")) != null) {
+      _context.getBuilder().build((SNode) SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(new UUID(-714818927241248010l, -5076282167675141386l), 1172073500303l, 1172073511101l, "message")));
     }
   }
 }

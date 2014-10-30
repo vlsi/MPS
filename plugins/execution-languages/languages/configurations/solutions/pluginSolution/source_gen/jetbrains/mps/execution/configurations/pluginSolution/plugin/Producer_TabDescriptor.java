@@ -6,6 +6,8 @@ import jetbrains.mps.plugins.relations.RelationDescriptor;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
@@ -29,7 +31,7 @@ public class Producer_TabDescriptor extends RelationDescriptor {
   }
   public SNode getBaseNode(SNode node) {
     if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.execution.configurations.structure.RunConfigurationProducer")) {
-      return SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.cast(node, "jetbrains.mps.execution.configurations.structure.RunConfigurationProducer"), "configuration", true), "persistentConfiguration", false);
+      return SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.cast(node, "jetbrains.mps.execution.configurations.structure.RunConfigurationProducer"), MetaAdapterFactory.getContainmentLink(new UUID(2515029821120661198l, -8934183642121722347l), 4366236229294105349l, 4366236229294139631l, "configuration")), MetaAdapterFactory.getReferenceLink(new UUID(8461860300379867720l, -4758718422494514628l), 946964771156066332l, 946964771156066333l, "persistentConfiguration"));
     }
     return null;
   }
@@ -40,7 +42,7 @@ public class Producer_TabDescriptor extends RelationDescriptor {
     final SNode nodeFinal = node;
     return ListSequence.fromList(SModelOperations.getRoots(SNodeOperations.getModel(node), "jetbrains.mps.execution.configurations.structure.RunConfigurationProducer")).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return SLinkOperations.getTarget(SLinkOperations.getTarget(it, "configuration", true), "persistentConfiguration", false) == nodeFinal;
+        return SLinkOperations.getTarget(SLinkOperations.getTarget(it, MetaAdapterFactory.getContainmentLink(new UUID(2515029821120661198l, -8934183642121722347l), 4366236229294105349l, 4366236229294139631l, "configuration")), MetaAdapterFactory.getReferenceLink(new UUID(8461860300379867720l, -4758718422494514628l), 946964771156066332l, 946964771156066333l, "persistentConfiguration")) == nodeFinal;
       }
     }).toListSequence();
   }
@@ -52,7 +54,7 @@ public class Producer_TabDescriptor extends RelationDescriptor {
   }
   public SNode createNode(final SNode node, final SNode concept) {
     SNode producer = SConceptOperations.createNewNode("jetbrains.mps.execution.configurations.structure.RunConfigurationProducer", null);
-    SLinkOperations.setTarget(producer, "configuration", createPersistentConfigurationType_rqzr2x_a0b0a0(node), true);
+    SLinkOperations.setTarget(producer, MetaAdapterFactory.getContainmentLink(new UUID(2515029821120661198l, -8934183642121722347l), 4366236229294105349l, 4366236229294139631l, "configuration"), createPersistentConfigurationType_rqzr2x_a0b0a0(node));
     SModelOperations.addRootNode(SNodeOperations.getModel(node), producer);
     return producer;
   }

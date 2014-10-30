@@ -12,6 +12,8 @@ import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
 import java.util.Collections;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.generator.helper.EditingUtil;
 import jetbrains.mps.intentions.IntentionDescriptor;
@@ -63,13 +65,13 @@ public class AddContext_Intention implements IntentionFactory {
       return "Convert to Inline Template with Context";
     }
     public void execute(final SNode node, final EditorContext editorContext) {
-      SNode tNode = SLinkOperations.getTarget(node, "templateNode", true);
-      SLinkOperations.setTarget(node, "templateNode", null, true);
+      SNode tNode = SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-5475912601019530992l, -8082971551085732881l), 1177093525992l, 1177093586806l, "templateNode"));
+      SLinkOperations.setTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-5475912601019530992l, -8082971551085732881l), 1177093525992l, 1177093586806l, "templateNode"), null);
       SNode result = SNodeOperations.replaceWithNewChild(node, "jetbrains.mps.lang.generator.structure.InlineTemplateWithContext_RuleConsequence");
       if (SNodeOperations.isInstanceOf(tNode, "jetbrains.mps.baseLanguage.structure.Expression")) {
-        SLinkOperations.setTarget(result, "contentNode", _quotation_createNode_4m6r5j_a0a0d0a(tNode), true);
+        SLinkOperations.setTarget(result, MetaAdapterFactory.getContainmentLink(new UUID(-5475912601019530992l, -8082971551085732881l), 8900764248744213868l, 8900764248744213871l, "contentNode"), _quotation_createNode_4m6r5j_a0a0d0a(tNode));
       } else {
-        SLinkOperations.setTarget(result, "contentNode", tNode, true);
+        SLinkOperations.setTarget(result, MetaAdapterFactory.getContainmentLink(new UUID(-5475912601019530992l, -8082971551085732881l), 8900764248744213868l, 8900764248744213871l, "contentNode"), tNode);
       }
       EditingUtil.createTemplateFragment(tNode);
     }

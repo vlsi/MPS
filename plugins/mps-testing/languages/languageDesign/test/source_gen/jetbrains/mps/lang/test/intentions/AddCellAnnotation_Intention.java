@@ -16,6 +16,8 @@ import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.inspector.InspectorEditorComponent;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.openapi.editor.selection.Selection;
 import jetbrains.mps.nodeEditor.EditorComponent;
@@ -86,28 +88,28 @@ public class AddCellAnnotation_Intention implements IntentionFactory {
       SNode newAnnotation = SNodeFactoryOperations.createNewNode("jetbrains.mps.lang.test.structure.AnonymousCellAnnotation", null);
       EditorCell contextCell = editorContext.getContextCell();
       if (editorContext.getEditorComponent() instanceof InspectorEditorComponent) {
-        SPropertyOperations.set(newAnnotation, "isInInspector", "" + (true));
+        SPropertyOperations.set(newAnnotation, MetaAdapterFactory.getProperty(new UUID(-8825571760360698496l, -7431307307277756308l), 1229194968594l, 1977980803835239937l, "isInInspector"), "" + (true));
       }
       if (contextCell instanceof EditorCell_Label) {
         EditorCell_Label label = (EditorCell_Label) contextCell;
         int caretPosition = label.getCaretPosition();
         if (caretPosition == label.getText().length()) {
-          SPropertyOperations.set(newAnnotation, "isLastPosition", "" + (true));
+          SPropertyOperations.set(newAnnotation, MetaAdapterFactory.getProperty(new UUID(-8825571760360698496l, -7431307307277756308l), 1229194968594l, 1229432188737l, "isLastPosition"), "" + (true));
         } else {
-          SPropertyOperations.set(newAnnotation, "caretPosition", "" + (caretPosition));
+          SPropertyOperations.set(newAnnotation, MetaAdapterFactory.getProperty(new UUID(-8825571760360698496l, -7431307307277756308l), 1229194968594l, 1229194968596l, "caretPosition"), "" + (caretPosition));
         }
-        SPropertyOperations.set(newAnnotation, "useLabelSelection", "" + (true));
-        SPropertyOperations.set(newAnnotation, "selectionStart", "" + (label.getSelectionStart()));
-        SPropertyOperations.set(newAnnotation, "selectionEnd", "" + (label.getSelectionEnd()));
+        SPropertyOperations.set(newAnnotation, MetaAdapterFactory.getProperty(new UUID(-8825571760360698496l, -7431307307277756308l), 1229194968594l, 1932269937152561478l, "useLabelSelection"), "" + (true));
+        SPropertyOperations.set(newAnnotation, MetaAdapterFactory.getProperty(new UUID(-8825571760360698496l, -7431307307277756308l), 1229194968594l, 6268941039745498163l, "selectionStart"), "" + (label.getSelectionStart()));
+        SPropertyOperations.set(newAnnotation, MetaAdapterFactory.getProperty(new UUID(-8825571760360698496l, -7431307307277756308l), 1229194968594l, 6268941039745498165l, "selectionEnd"), "" + (label.getSelectionEnd()));
       } else {
-        SPropertyOperations.set(newAnnotation, "caretPosition", "" + (0));
+        SPropertyOperations.set(newAnnotation, MetaAdapterFactory.getProperty(new UUID(-8825571760360698496l, -7431307307277756308l), 1229194968594l, 1229194968596l, "caretPosition"), "" + (0));
       }
-      SPropertyOperations.set(newAnnotation, "cellId", contextCell.getCellId());
+      SPropertyOperations.set(newAnnotation, MetaAdapterFactory.getProperty(new UUID(-8825571760360698496l, -7431307307277756308l), 1229194968594l, 1229194968595l, "cellId"), contextCell.getCellId());
       Selection selection = ((EditorComponent) editorContext.getEditorComponent()).getSelectionManager().getSelection();
       if (selection instanceof NodeRangeSelection) {
         NodeRangeSelection nodeRangeSelection = (NodeRangeSelection) selection;
-        SLinkOperations.setTarget(newAnnotation, "nodeRangeSelectionStart", nodeRangeSelection.getFirstNode(), false);
-        SLinkOperations.setTarget(newAnnotation, "nodeRangeSelectionEnd", nodeRangeSelection.getLastNode(), false);
+        SLinkOperations.setTarget(newAnnotation, MetaAdapterFactory.getReferenceLink(new UUID(-8825571760360698496l, -7431307307277756308l), 1229194968594l, 1932269937152203468l, "nodeRangeSelectionStart"), nodeRangeSelection.getFirstNode());
+        SLinkOperations.setTarget(newAnnotation, MetaAdapterFactory.getReferenceLink(new UUID(-8825571760360698496l, -7431307307277756308l), 1229194968594l, 1932269937152203469l, "nodeRangeSelectionEnd"), nodeRangeSelection.getLastNode());
       }
       AttributeOperations.setAttribute(node, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.test.structure.INodeAnnotation"), newAnnotation);
       SelectionUtil.selectNode(editorContext, newAnnotation);

@@ -6,11 +6,13 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 
 public class ExtensionDeclaration_Behavior {
   public static void init(SNode thisNode) {
   }
   public static String call_getJavaName_5234729458457669523(SNode thisNode) {
-    return "Extension_" + NameUtil.toValidIdentifier(SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, "extensionPoint", false), "extensionName"));
+    return "Extension_" + NameUtil.toValidIdentifier(SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getReferenceLink(new UUID(-4609422916437195432l, -4690047243382094519l), 3729007189729192404l, 3729007189729192405l, "extensionPoint")), MetaAdapterFactory.getProperty(new UUID(-4609422916437195432l, -4690047243382094519l), 3729007189729192406l, 5911785528834333590l, "extensionName")));
   }
 }

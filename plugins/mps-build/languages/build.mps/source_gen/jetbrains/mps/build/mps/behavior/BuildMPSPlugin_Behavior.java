@@ -19,6 +19,8 @@ import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.build.util.ScopeUtil;
 import jetbrains.mps.build.mps.util.VisibleModules;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.build.behavior.BuildProject_Behavior;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.scope.CompositeScope;
@@ -95,7 +97,7 @@ public class BuildMPSPlugin_Behavior {
       if (SNodeOperations.getContainingRoot(gentest) != SNodeOperations.getContainingRoot(thisNode)) {
         SNode gentestJar = SNodeOperations.as(artifacts.findArtifact(gentest), "jetbrains.mps.build.structure.BuildLayout_Node");
         if (gentestJar != null) {
-          helper.artifacts().put(SPropertyOperations.getString(gentest, "uuid"), gentestJar);
+          helper.artifacts().put(SPropertyOperations.getString(gentest, MetaAdapterFactory.getProperty(new UUID(934837630734519964l, -6831122735637083229l), 322010710375871467l, 322010710375892619l, "uuid")), gentestJar);
           builder.add(gentestJar, gentest);
         }
       }
@@ -117,7 +119,7 @@ public class BuildMPSPlugin_Behavior {
     return Sequence.<SNode>singleton(BuildMPSPlugin_Behavior.call_getMpsLibrary_4101476690147447822(SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SConceptOperations.findConceptDeclaration("jetbrains.mps.build.mps.structure.BuildMPSPlugin")))));
   }
   public static SNode call_getMpsLibrary_4101476690147447822(SAbstractConcept thisConcept) {
-    return SLinkOperations.getTarget(createBwfTaskLibraryDependency_6x52oe_a0a0e(), "target", false);
+    return SLinkOperations.getTarget(createBwfTaskLibraryDependency_6x52oe_a0a0e(), MetaAdapterFactory.getReferenceLink(new UUID(7605046100638320544l, -5004325039833383149l), 7306485738221471031l, 7306485738221471032l, "target"));
   }
   private static SNode createBwfTaskLibraryDependency_6x52oe_a0a0e() {
     PersistenceFacade facade = PersistenceFacade.getInstance();

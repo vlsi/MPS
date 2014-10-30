@@ -28,6 +28,8 @@ import jetbrains.mps.generator.fileGenerator.FileGenerationUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 
 public class Ant_Command {
@@ -125,7 +127,7 @@ public class Ant_Command {
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         file.value = FileGenerationUtil.getDefaultOutputDir(SNodeOperations.getModel(project), ((AbstractModule) SNodeOperations.getModel(project).getModule()).getOutputPath());
-        file.value = file.value.getDescendant(SPropertyOperations.getString(project, "name") + ".xml");
+        file.value = file.value.getDescendant(SPropertyOperations.getString(project, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")) + ".xml");
       }
     });
     return file.value.getPath();
@@ -141,7 +143,7 @@ public class Ant_Command {
   }
   private static String check_11bn_a0a0a0a1a4(SNode checkedDotOperand) {
     if (null != checkedDotOperand) {
-      return SPropertyOperations.getString(checkedDotOperand, "name");
+      return SPropertyOperations.getString(checkedDotOperand, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"));
     }
     return null;
   }

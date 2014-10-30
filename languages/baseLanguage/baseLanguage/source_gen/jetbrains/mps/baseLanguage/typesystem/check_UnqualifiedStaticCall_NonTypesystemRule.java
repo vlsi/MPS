@@ -13,6 +13,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.StaticReference;
 import jetbrains.mps.scope.Scope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.baseLanguage.behavior.ResolveUnknownUtil;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
@@ -40,8 +42,8 @@ public class check_UnqualifiedStaticCall_NonTypesystemRule extends AbstractNonTy
 
     // it's out of scope, let's make it StaticMethodCall 
     SNode smc = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.StaticMethodCall", null);
-    SLinkOperations.setTarget(smc, "classConcept", SNodeOperations.getAncestor(target, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false), false);
-    SLinkOperations.setTarget(smc, "baseMethodDeclaration", SNodeOperations.cast(target, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration"), false);
+    SLinkOperations.setTarget(smc, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1081236700937l, 1144433194310l, "classConcept"), SNodeOperations.getAncestor(target, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false));
+    SLinkOperations.setTarget(smc, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, 1068499141037l, "baseMethodDeclaration"), SNodeOperations.cast(target, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration"));
     ResolveUnknownUtil.reattachMethodArguments(localCall, smc);
     ResolveUnknownUtil.reattachTypeArguments(localCall, smc);
 

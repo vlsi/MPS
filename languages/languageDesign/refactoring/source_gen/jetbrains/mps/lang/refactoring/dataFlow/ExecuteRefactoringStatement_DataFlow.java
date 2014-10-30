@@ -7,15 +7,17 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.lang.dataFlow.DataFlowBuilderContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 
 public class ExecuteRefactoringStatement_DataFlow extends DataFlowBuilder {
   public ExecuteRefactoringStatement_DataFlow() {
   }
   public void build(final IOperationContext operationContext, final DataFlowBuilderContext _context) {
-    _context.getBuilder().build((SNode) SLinkOperations.getTarget(_context.getNode(), "target", true));
-    _context.getBuilder().build((SNode) SLinkOperations.getTarget(_context.getNode(), "project", true));
-    for (SNode parameter : ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "parameters", true))) {
+    _context.getBuilder().build((SNode) SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(new UUID(4525410110408967646l, -8616490689189267646l), 2298239814950983788l, 2298239814950983792l, "target")));
+    _context.getBuilder().build((SNode) SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(new UUID(4525410110408967646l, -8616490689189267646l), 2298239814950983788l, 2298239814950983794l, "project")));
+    for (SNode parameter : ListSequence.fromList(SLinkOperations.getChildren(_context.getNode(), MetaAdapterFactory.getContainmentLink(new UUID(4525410110408967646l, -8616490689189267646l), 2298239814950983788l, 2298239814950983793l, "parameters")))) {
       _context.getBuilder().build((SNode) parameter);
     }
   }

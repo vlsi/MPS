@@ -12,6 +12,8 @@ import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
 import java.util.Collections;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.intentions.IntentionDescriptor;
 
 public class MakeAbstract_Intention implements IntentionFactory {
@@ -61,17 +63,17 @@ public class MakeAbstract_Intention implements IntentionFactory {
     public IntentionImplementation() {
     }
     public String getDescription(final SNode node, final EditorContext editorContext) {
-      if (SPropertyOperations.getBoolean(node, "isAbstract")) {
+      if (SPropertyOperations.getBoolean(node, MetaAdapterFactory.getProperty(new UUID(-5808042798135555774l, -8657779246725685839l), 1225194472830l, 1225194472834l, "isAbstract"))) {
         return "Make Non-Abstract";
       } else {
         return "Make Abstract";
       }
     }
     public void execute(final SNode node, final EditorContext editorContext) {
-      if (!(SPropertyOperations.getBoolean(node, "isAbstract"))) {
-        SPropertyOperations.set(node, "isVirtual", "" + (true));
+      if (!(SPropertyOperations.getBoolean(node, MetaAdapterFactory.getProperty(new UUID(-5808042798135555774l, -8657779246725685839l), 1225194472830l, 1225194472834l, "isAbstract")))) {
+        SPropertyOperations.set(node, MetaAdapterFactory.getProperty(new UUID(-5808042798135555774l, -8657779246725685839l), 1225194472830l, 1225194472832l, "isVirtual"), "" + (true));
       }
-      SPropertyOperations.set(node, "isAbstract", "" + (!(SPropertyOperations.getBoolean(node, "isAbstract"))));
+      SPropertyOperations.set(node, MetaAdapterFactory.getProperty(new UUID(-5808042798135555774l, -8657779246725685839l), 1225194472830l, 1225194472834l, "isAbstract"), "" + (!(SPropertyOperations.getBoolean(node, MetaAdapterFactory.getProperty(new UUID(-5808042798135555774l, -8657779246725685839l), 1225194472830l, 1225194472834l, "isAbstract")))));
     }
     public IntentionDescriptor getDescriptor() {
       return MakeAbstract_Intention.this;

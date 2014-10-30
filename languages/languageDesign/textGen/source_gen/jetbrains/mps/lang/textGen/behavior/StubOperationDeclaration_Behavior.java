@@ -4,14 +4,16 @@ package jetbrains.mps.lang.textGen.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class StubOperationDeclaration_Behavior {
   public static void init(SNode thisNode) {
-    SLinkOperations.setTarget(thisNode, "returnType", SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.VoidType", null), true);
-    SLinkOperations.setTarget(thisNode, "body", createStatementList_8pk1bs_a0a1a0(), true);
+    SLinkOperations.setTarget(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123132l, 1068580123133l, "returnType"), SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.VoidType", null));
+    SLinkOperations.setTarget(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123132l, 1068580123135l, "body"), createStatementList_8pk1bs_a0a1a0());
   }
   private static SNode createStatementList_8pk1bs_a0a1a0() {
     PersistenceFacade facade = PersistenceFacade.getInstance();

@@ -13,6 +13,8 @@ import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -43,15 +45,15 @@ public class LinkInstances_Finder extends GeneratedFinder {
       Set<String> roles = SetSequence.fromSet(new HashSet<String>());
       SNode curNode = node;
       do {
-        SetSequence.fromSet(roles).addElement(SPropertyOperations.getString(curNode, "role"));
-        curNode = SLinkOperations.getTarget(curNode, "specializedLink", false);
+        SetSequence.fromSet(roles).addElement(SPropertyOperations.getString(curNode, MetaAdapterFactory.getProperty(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489288298l, 1071599776563l, "role")));
+        curNode = SLinkOperations.getTarget(curNode, MetaAdapterFactory.getReferenceLink(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489288298l, 1071599698500l, "specializedLink"));
       } while (curNode != null);
       // find concept 
       SNode conceptDeclaration = SNodeOperations.getAncestor(node, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration", false, false);
       if ((conceptDeclaration == null)) {
         return;
       }
-      boolean isChild = SPropertyOperations.hasValue(node, "metaClass", "aggregation", "reference");
+      boolean isChild = SPropertyOperations.hasValue(node, MetaAdapterFactory.getProperty(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489288298l, 1071599937831l, "metaClass"), "aggregation", "reference");
       // find instances and link examples 
       for (SNode instance : ListSequence.fromList(FindUtils.executeFinder("jetbrains.mps.lang.structure.findUsages.ConceptInstances_Finder", conceptDeclaration, scope, monitor))) {
         for (String role : roles) {

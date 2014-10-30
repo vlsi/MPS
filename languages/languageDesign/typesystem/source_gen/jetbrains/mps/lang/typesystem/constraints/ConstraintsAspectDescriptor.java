@@ -5,6 +5,7 @@ package jetbrains.mps.lang.typesystem.constraints;
 import jetbrains.mps.smodel.runtime.ConstraintsDescriptor;
 import java.util.Arrays;
 import jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor;
+import jetbrains.mps.smodel.adapter.ids.SConceptId;
 
 public class ConstraintsAspectDescriptor implements jetbrains.mps.smodel.runtime.ConstraintsAspectDescriptor {
   public ConstraintsAspectDescriptor() {
@@ -62,9 +63,87 @@ public class ConstraintsAspectDescriptor implements jetbrains.mps.smodel.runtime
       case 1:
         return new CaretPositionOperation_Constraints();
       default:
-        // todo: illegal in some cases? 
         return new BaseConstraintsDescriptor(fqName);
     }
+  }
+  public ConstraintsDescriptor getDescriptor(SConceptId conceptId) {
+    long id = conceptId.getConceptId();
+    if (id == 1205762656241l) {
+      return new WhenConcreteVariableReference_Constraints();
+    }
+    if (id == 1174989799417l) {
+      return new PropertyPatternVariableReference_Constraints();
+    }
+    if (id == 1174989777619l) {
+      return new LinkPatternVariableReference_Constraints();
+    }
+    if (id == 1174989242422l) {
+      return new PatternVariableReference_Constraints();
+    }
+    if (id == 1174666260556l) {
+      return new TypeVarReference_Constraints();
+    }
+    if (id == 1174642788531l) {
+      return new ConceptReference_Constraints();
+    }
+    if (id == 1174650418652l) {
+      return new ApplicableNodeReference_Constraints();
+    }
+    if (id == 1210784384552l) {
+      return new TypesystemIntentionArgument_Constraints();
+    }
+    if (id == 1216390348809l) {
+      return new QuickFixArgumentReference_Constraints();
+    }
+    if (id == 1174643105530l) {
+      return new InferenceRule_Constraints();
+    }
+    if (id == 1188811367543l) {
+      return new ComparisonRule_Constraints();
+    }
+    if (id == 1216383170661l) {
+      return new TypesystemQuickFix_Constraints();
+    }
+    if (id == 1201607707634l) {
+      return new InequationReplacementRule_Constraints();
+    }
+    if (id == 1195214364922l) {
+      return new NonTypesystemRule_Constraints();
+    }
+    if (id == 1175147670730l) {
+      return new SubtypingRule_Constraints();
+    }
+    if (id == 1227096498176l) {
+      return new PropertyMessageTarget_Constraints();
+    }
+    if (id == 1227096620180l) {
+      return new ReferenceMessageTarget_Constraints();
+    }
+    if (id == 1240322207314l) {
+      return new ConceptTypeClause_Constraints();
+    }
+    if (id == 1240322303006l) {
+      return new ConceptClauseLinkInfo_Constraints();
+    }
+    if (id == 1227096774658l) {
+      return new MessageStatement_Constraints();
+    }
+    if (id == 5622704259074429274l) {
+      return new OperationContextExpression_Constraints();
+    }
+    if (id == 4778346850551666963l) {
+      return new InequationReference_Constraints();
+    }
+    if (id == 8090891477833069917l) {
+      return new QuickFixFieldReference_Constraints();
+    }
+    if (id == 1076452857759748206l) {
+      return new WasSelectedNodeOperation_Constraints();
+    }
+    if (id == 1076452857759748200l) {
+      return new CaretPositionOperation_Constraints();
+    }
+    return new BaseConstraintsDescriptor(conceptId);
   }
   private static String[] stringSwitchCases_2qnle6_a0a0b = new String[]{"jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference", "jetbrains.mps.lang.typesystem.structure.CaretPositionOperation", "jetbrains.mps.lang.typesystem.structure.ComparisonRule", "jetbrains.mps.lang.typesystem.structure.ConceptClauseLinkInfo", "jetbrains.mps.lang.typesystem.structure.ConceptReference", "jetbrains.mps.lang.typesystem.structure.ConceptTypeClause", "jetbrains.mps.lang.typesystem.structure.InequationReference", "jetbrains.mps.lang.typesystem.structure.InequationReplacementRule", "jetbrains.mps.lang.typesystem.structure.InferenceRule", "jetbrains.mps.lang.typesystem.structure.LinkPatternVariableReference", "jetbrains.mps.lang.typesystem.structure.MessageStatement", "jetbrains.mps.lang.typesystem.structure.NonTypesystemRule", "jetbrains.mps.lang.typesystem.structure.OperationContextExpression", "jetbrains.mps.lang.typesystem.structure.PatternVariableReference", "jetbrains.mps.lang.typesystem.structure.PropertyMessageTarget", "jetbrains.mps.lang.typesystem.structure.PropertyPatternVariableReference", "jetbrains.mps.lang.typesystem.structure.QuickFixArgumentReference", "jetbrains.mps.lang.typesystem.structure.QuickFixFieldReference", "jetbrains.mps.lang.typesystem.structure.ReferenceMessageTarget", "jetbrains.mps.lang.typesystem.structure.SubtypingRule", "jetbrains.mps.lang.typesystem.structure.TypeVarReference", "jetbrains.mps.lang.typesystem.structure.TypesystemIntentionArgument", "jetbrains.mps.lang.typesystem.structure.TypesystemQuickFix", "jetbrains.mps.lang.typesystem.structure.WasSelectedNodeOperation", "jetbrains.mps.lang.typesystem.structure.WhenConcreteVariableReference"};
 }

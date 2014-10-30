@@ -11,6 +11,8 @@ import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
 import java.util.Collections;
@@ -48,7 +50,7 @@ public class ConvertElsifToNewIfStatement_Intention implements IntentionFactory 
   private boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
     SNode statement = SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.IfStatement", false, false);
     SNode statementParent = SNodeOperations.getParent(statement);
-    return (statementParent != null) && SNodeOperations.isInstanceOf(statementParent, "jetbrains.mps.baseLanguage.structure.StatementList") && SNodeOperations.getIndexInParent(node) == SNodeOperations.getIndexInParent(ListSequence.fromList(SLinkOperations.getTargets(statement, "elsifClauses", true)).last()) && (SLinkOperations.getTarget(statement, "ifFalseStatement", true) == null);
+    return (statementParent != null) && SNodeOperations.isInstanceOf(statementParent, "jetbrains.mps.baseLanguage.structure.StatementList") && SNodeOperations.getIndexInParent(node) == SNodeOperations.getIndexInParent(ListSequence.fromList(SLinkOperations.getChildren(statement, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123159l, 1206060520071l, "elsifClauses"))).last()) && (SLinkOperations.getTarget(statement, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123159l, 1082485599094l, "ifFalseStatement")) == null);
   }
   public SNodeReference getIntentionNodeReference() {
     return new SNodePointer("r:00000000-0000-4000-0000-011c895902c6(jetbrains.mps.baseLanguage.intentions)", "8145509665020019463");
@@ -70,8 +72,8 @@ public class ConvertElsifToNewIfStatement_Intention implements IntentionFactory 
     }
     public void execute(final SNode node, final EditorContext editorContext) {
       SNode ifStatement = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.IfStatement", null);
-      SLinkOperations.setTarget(ifStatement, "condition", SNodeOperations.copyNode(SLinkOperations.getTarget(node, "condition", true)), true);
-      SLinkOperations.setTarget(ifStatement, "ifTrue", SNodeOperations.copyNode(SLinkOperations.getTarget(node, "statementList", true)), true);
+      SLinkOperations.setTarget(ifStatement, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123159l, 1068580123160l, "condition"), SNodeOperations.copyNode(SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1206060495898l, 1206060619838l, "condition"))));
+      SLinkOperations.setTarget(ifStatement, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123159l, 1068580123161l, "ifTrue"), SNodeOperations.copyNode(SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1206060495898l, 1206060644605l, "statementList"))));
       SNode statement = SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.Statement", false, false);
       SNodeOperations.insertNextSiblingChild(statement, ifStatement);
       SNodeOperations.deleteNode(node);

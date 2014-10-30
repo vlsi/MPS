@@ -9,6 +9,8 @@ import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.editor.runtime.cells.AbstractCellAction;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 
 public class ScopeTest_DeleteExpectedNodes {
   public static void setCellActions(EditorCell editorCell, SNode node, EditorContext context) {
@@ -24,8 +26,8 @@ public class ScopeTest_DeleteExpectedNodes {
       this.execute_internal(editorContext, this.myNode);
     }
     public void execute_internal(EditorContext editorContext, SNode node) {
-      ListSequence.fromList(SLinkOperations.getTargets(node, "nodes", true)).clear();
-      SLinkOperations.setTarget(node, "checkingReference", null, false);
+      ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(new UUID(-8825571760360698496l, -7431307307277756308l), 511191073233700873l, 3655334166513314307l, "nodes"))).clear();
+      SLinkOperations.setTarget(node, MetaAdapterFactory.getReferenceLink(new UUID(-8825571760360698496l, -7431307307277756308l), 511191073233700873l, 5449224527592117654l, "checkingReference"), null);
     }
   }
   public static class ScopeTest_DeleteExpectedNodes_BACKSPACE extends AbstractCellAction {
@@ -37,8 +39,8 @@ public class ScopeTest_DeleteExpectedNodes {
       this.execute_internal(editorContext, this.myNode);
     }
     public void execute_internal(EditorContext editorContext, SNode node) {
-      ListSequence.fromList(SLinkOperations.getTargets(node, "nodes", true)).clear();
-      SLinkOperations.setTarget(node, "checkingReference", null, false);
+      ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(new UUID(-8825571760360698496l, -7431307307277756308l), 511191073233700873l, 3655334166513314307l, "nodes"))).clear();
+      SLinkOperations.setTarget(node, MetaAdapterFactory.getReferenceLink(new UUID(-8825571760360698496l, -7431307307277756308l), 511191073233700873l, 5449224527592117654l, "checkingReference"), null);
     }
   }
 }

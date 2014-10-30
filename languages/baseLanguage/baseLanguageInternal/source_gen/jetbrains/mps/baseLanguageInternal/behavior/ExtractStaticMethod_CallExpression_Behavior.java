@@ -10,6 +10,8 @@ import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
@@ -20,7 +22,7 @@ public class ExtractStaticMethod_CallExpression_Behavior {
   public static Iterable<SNode> virtual_getAvailableMethodDeclarations_5776618742611315379(SNode thisNode, String methodName) {
     List<SNode> result = new ArrayList<SNode>();
     for (SNode bmd : ExtractStaticMethod_CallExpression_Behavior.call_getMethods_5857910569715993654(SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguageInternal.structure.ExtractStaticMethod_CallExpression"))), thisNode)) {
-      String name = SPropertyOperations.getString(SNodeOperations.cast(bmd, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration"), "name");
+      String name = SPropertyOperations.getString(SNodeOperations.cast(bmd, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration"), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"));
       if (name != null && name.equals(methodName)) {
         ListSequence.fromList(result).addElement(SNodeOperations.cast(bmd, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration"));
       }
@@ -29,7 +31,7 @@ public class ExtractStaticMethod_CallExpression_Behavior {
   }
   public static SNode call_getContainingExtractExpr_8881995820265485533(SNode thisNode) {
     for (SNode es : SNodeOperations.getAncestors(thisNode, "jetbrains.mps.baseLanguageInternal.structure.ExtractStaticMethodExpression", false)) {
-      if (SLinkOperations.getTarget(es, "method", true) == SLinkOperations.getTarget(thisNode, "baseMethodDeclaration", false)) {
+      if (SLinkOperations.getTarget(es, MetaAdapterFactory.getContainmentLink(new UUID(-2363163772790029805l, -6024047381933761144l), 3585982959253588676l, 3585982959253588678l, "method")) == SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, 1068499141037l, "baseMethodDeclaration"))) {
         return es;
       }
     }
@@ -41,7 +43,7 @@ public class ExtractStaticMethod_CallExpression_Behavior {
   public static List<SNode> call_getMethods_5857910569715993654(SAbstractConcept thisConcept, SNode context) {
     List<SNode> smd = new ArrayList<SNode>();
     for (SNode es : SNodeOperations.getAncestors(context, "jetbrains.mps.baseLanguageInternal.structure.ExtractStaticMethodExpression", true)) {
-      ListSequence.fromList(smd).addElement(SLinkOperations.getTarget(es, "method", true));
+      ListSequence.fromList(smd).addElement(SLinkOperations.getTarget(es, MetaAdapterFactory.getContainmentLink(new UUID(-2363163772790029805l, -6024047381933761144l), 3585982959253588676l, 3585982959253588678l, "method")));
     }
     return smd;
   }

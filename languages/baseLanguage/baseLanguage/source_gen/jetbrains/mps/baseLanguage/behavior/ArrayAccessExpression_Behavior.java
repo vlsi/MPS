@@ -5,6 +5,8 @@ package jetbrains.mps.baseLanguage.behavior;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 
 public class ArrayAccessExpression_Behavior {
   public static void init(SNode thisNode) {
@@ -13,6 +15,6 @@ public class ArrayAccessExpression_Behavior {
     return true;
   }
   public static SNode virtual_getSyntacticallyLeftSideExpression_1742226163722653708(SNode thisNode) {
-    return SLinkOperations.getTarget(thisNode, "array", true);
+    return SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1173175405605l, 1173175590490l, "array"));
   }
 }

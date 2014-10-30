@@ -9,6 +9,8 @@ import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.smodel.SModelUtil_new;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SReference;
@@ -20,7 +22,7 @@ public class typeof_GenerationContextOp_VarRef_InferenceRule extends AbstractInf
     {
       SNode _nodeToCheck_1029348928467 = varRef;
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902f1(jetbrains.mps.lang.generator.generationContext.typesystem)", "2721957369897647157", 0, null);
-      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902f1(jetbrains.mps.lang.generator.generationContext.typesystem)", "2721957369897647154", true), (SNode) (((SLinkOperations.getTarget(SLinkOperations.getTarget(varRef, "varmacro", false), "type", true) != null) ? SLinkOperations.getTarget(SLinkOperations.getTarget(varRef, "varmacro", false), "type", true) : _quotation_createNode_47swkr_a0a0a1())), _info_12389875345);
+      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902f1(jetbrains.mps.lang.generator.generationContext.typesystem)", "2721957369897647154", true), (SNode) (((SLinkOperations.getTarget(SLinkOperations.getTarget(varRef, MetaAdapterFactory.getReferenceLink(new UUID(-2922713684555708516l, -6639802755577912107l), 2721957369897614808l, 2721957369897614810l, "varmacro")), MetaAdapterFactory.getContainmentLink(new UUID(-5475912601019530992l, -8082971551085732881l), 5015072279636464462l, 5015072279636624635l, "type")) != null) ? SLinkOperations.getTarget(SLinkOperations.getTarget(varRef, MetaAdapterFactory.getReferenceLink(new UUID(-2922713684555708516l, -6639802755577912107l), 2721957369897614808l, 2721957369897614810l, "varmacro")), MetaAdapterFactory.getContainmentLink(new UUID(-5475912601019530992l, -8082971551085732881l), 5015072279636464462l, 5015072279636624635l, "type")) : _quotation_createNode_47swkr_a0a0a1())), _info_12389875345);
     }
   }
   public String getApplicableConceptFQName() {
@@ -39,7 +41,7 @@ public class typeof_GenerationContextOp_VarRef_InferenceRule extends AbstractInf
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, false);
-    quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, facade.createModelReference("6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), facade.createNodeId("~Object")));
+    quotedNode_1.setReference(MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier"), SReference.create(MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier"), quotedNode_1, facade.createModelReference("6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), facade.createNodeId("~Object")));
     return quotedNode_1;
   }
 }

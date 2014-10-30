@@ -5,12 +5,14 @@ package jetbrains.mps.core.xml.textGen;
 import jetbrains.mps.textGen.SNodeTextGen;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 
 public class XmlDocument_TextGen extends SNodeTextGen {
   public void doGenerateText(SNode node) {
-    if ((SLinkOperations.getTarget(node, "prolog", true) != null)) {
-      appendNode(SLinkOperations.getTarget(node, "prolog", true));
+    if ((SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(5160134014823646133l, -7982110198386724200l), 6786756355279841993l, 6666499814681299060l, "prolog")) != null)) {
+      appendNode(SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(5160134014823646133l, -7982110198386724200l), 6786756355279841993l, 6666499814681299060l, "prolog")));
     }
-    appendNode(SLinkOperations.getTarget(node, "rootElement", true));
+    appendNode(SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(5160134014823646133l, -7982110198386724200l), 6786756355279841993l, 6666499814681299055l, "rootElement")));
   }
 }

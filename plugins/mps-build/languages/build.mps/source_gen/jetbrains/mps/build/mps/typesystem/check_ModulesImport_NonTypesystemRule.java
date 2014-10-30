@@ -20,6 +20,8 @@ import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.build.mps.util.ModuleChecker;
 import jetbrains.mps.build.mps.util.ModuleLoader;
 import jetbrains.mps.errors.BaseQuickFixProvider;
@@ -50,7 +52,7 @@ public class check_ModulesImport_NonTypesystemRule extends AbstractNonTypesystem
 
     for (final SNode module : ListSequence.fromList(SNodeOperations.getDescendants(buildProject, "jetbrains.mps.build.mps.structure.BuildMps_AbstractModule", false, new String[]{})).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return (SLinkOperations.getTarget(it, "path", true) != null);
+        return (SLinkOperations.getTarget(it, MetaAdapterFactory.getContainmentLink(new UUID(934837630734519964l, -6831122735637083229l), 322010710375871467l, 322010710375956261l, "path")) != null);
       }
     })) {
       final StringBuilder messages = new StringBuilder();

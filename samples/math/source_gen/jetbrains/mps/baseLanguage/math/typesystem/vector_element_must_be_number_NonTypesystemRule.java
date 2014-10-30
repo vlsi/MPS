@@ -9,6 +9,8 @@ import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
@@ -18,7 +20,7 @@ public class vector_element_must_be_number_NonTypesystemRule extends AbstractNon
   public vector_element_must_be_number_NonTypesystemRule() {
   }
   public void applyRule(final SNode vT, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    if (!(TypeChecker.getInstance().getSubtypingManager().isSubtype(SLinkOperations.getTarget(vT, "elementType", true), MathTypeUtil.qBigComplex))) {
+    if (!(TypeChecker.getInstance().getSubtypingManager().isSubtype(SLinkOperations.getTarget(vT, MetaAdapterFactory.getContainmentLink(new UUID(3676340747305173022l, -6911132873973321185l), 4815887568697030517l, 4815887568697050735l, "elementType")), MathTypeUtil.qBigComplex))) {
       {
         MessageTarget errorTarget = new NodeMessageTarget();
         IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(vT, "Vector parameter type must be subtype of bigcomplex", "r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)", "6389121991274973547", null, errorTarget);

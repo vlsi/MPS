@@ -7,6 +7,8 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 
 public class AddExceptionToMethodSignature_QuickFix extends QuickFix_Runtime {
   public AddExceptionToMethodSignature_QuickFix() {
@@ -19,6 +21,6 @@ public class AddExceptionToMethodSignature_QuickFix extends QuickFix_Runtime {
       return;
     }
     SNode methodDecl = SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration", false, false);
-    ListSequence.fromList(SLinkOperations.getTargets(methodDecl, "throwsItem", true)).addElement(SNodeOperations.cast(SNodeOperations.copyNode(((SNode) AddExceptionToMethodSignature_QuickFix.this.getField("throwableType")[0])), "jetbrains.mps.baseLanguage.structure.Type"));
+    ListSequence.fromList(SLinkOperations.getChildren(methodDecl, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123132l, 1164879685961l, "throwsItem"))).addElement(SNodeOperations.cast(SNodeOperations.copyNode(((SNode) AddExceptionToMethodSignature_QuickFix.this.getField("throwableType")[0])), "jetbrains.mps.baseLanguage.structure.Type"));
   }
 }

@@ -10,6 +10,8 @@ import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import java.util.List;
 import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -22,29 +24,29 @@ public class check_ConceptBehavior_NonTypesystemRule extends AbstractNonTypesyst
   public check_ConceptBehavior_NonTypesystemRule() {
   }
   public void applyRule(final SNode nodeToCheck, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    List<SNode> methodDeclarations = AbstractConceptDeclaration_Behavior.call_getNotImplementedConceptMethods_1213877394339(SLinkOperations.getTarget(nodeToCheck, "concept", false));
-    if (SPropertyOperations.getBoolean(SLinkOperations.getTarget(nodeToCheck, "concept", false), "abstract")) {
+    List<SNode> methodDeclarations = AbstractConceptDeclaration_Behavior.call_getNotImplementedConceptMethods_1213877394339(SLinkOperations.getTarget(nodeToCheck, MetaAdapterFactory.getReferenceLink(new UUID(-5808042798135555774l, -8657779246725685839l), 1225194240794l, 1225194240799l, "concept")));
+    if (SPropertyOperations.getBoolean(SLinkOperations.getTarget(nodeToCheck, MetaAdapterFactory.getReferenceLink(new UUID(-5808042798135555774l, -8657779246725685839l), 1225194240794l, 1225194240799l, "concept")), MetaAdapterFactory.getProperty(new UUID(-4094437568663370681l, -8968368868337559369l), 1169125787135l, 4628067390765956802l, "abstract"))) {
       return;
     }
-    if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(nodeToCheck, "concept", false), "jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration")) {
+    if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(nodeToCheck, MetaAdapterFactory.getReferenceLink(new UUID(-5808042798135555774l, -8657779246725685839l), 1225194240794l, 1225194240799l, "concept")), "jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration")) {
       return;
     }
     if (!(ListSequence.fromList(methodDeclarations).isEmpty())) {
       boolean notImplementedMethods = false;
       for (SNode cm : methodDeclarations) {
-        if (!(ListSequence.fromList(SLinkOperations.getTargets(nodeToCheck, "method", true)).contains(cm))) {
+        if (!(ListSequence.fromList(SLinkOperations.getChildren(nodeToCheck, MetaAdapterFactory.getContainmentLink(new UUID(-5808042798135555774l, -8657779246725685839l), 1225194240794l, 1225194240805l, "method"))).contains(cm))) {
           notImplementedMethods = true;
         }
       }
       if (notImplementedMethods) {
         {
           MessageTarget errorTarget = new NodeMessageTarget();
-          IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(nodeToCheck, "Concept " + SPropertyOperations.getString(SLinkOperations.getTarget(nodeToCheck, "concept", false), "name") + " doesn't implement " + methodDeclarations, "r:00000000-0000-4000-0000-011c89590309(jetbrains.mps.lang.constraints.typesystem)", "1198950378289", null, errorTarget);
+          IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(nodeToCheck, "Concept " + SPropertyOperations.getString(SLinkOperations.getTarget(nodeToCheck, MetaAdapterFactory.getReferenceLink(new UUID(-5808042798135555774l, -8657779246725685839l), 1225194240794l, 1225194240799l, "concept")), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")) + " doesn't implement " + methodDeclarations, "r:00000000-0000-4000-0000-011c89590309(jetbrains.mps.lang.constraints.typesystem)", "1198950378289", null, errorTarget);
         }
       }
     }
-    for (SNode cmd : SLinkOperations.getTargets(nodeToCheck, "method", true)) {
-      if (SPropertyOperations.getBoolean(SNodeOperations.getConceptDeclaration(cmd), "abstract")) {
+    for (SNode cmd : SLinkOperations.getChildren(nodeToCheck, MetaAdapterFactory.getContainmentLink(new UUID(-5808042798135555774l, -8657779246725685839l), 1225194240794l, 1225194240805l, "method"))) {
+      if (SPropertyOperations.getBoolean(SNodeOperations.getConceptDeclaration(cmd), MetaAdapterFactory.getProperty(new UUID(-4094437568663370681l, -8968368868337559369l), 1169125787135l, 4628067390765956802l, "abstract"))) {
         {
           MessageTarget errorTarget = new NodeMessageTarget();
           IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(cmd, "Abstract method in non abstract concept", "r:00000000-0000-4000-0000-011c89590309(jetbrains.mps.lang.constraints.typesystem)", "1198949983025", null, errorTarget);

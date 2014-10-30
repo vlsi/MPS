@@ -8,6 +8,8 @@ import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicable2Status;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
@@ -25,10 +27,10 @@ public class matrix_vector_replacement_rule_InequationReplacementRule extends Ab
       SNode _nodeToCheck_1029348928467 = equationInfo.getNodeWithError();
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)", "6389121991275039360", 0, null);
       _info_12389875345.getOuterRulesIdFromInfo(equationInfo);
-      typeCheckingContext.createLessThanInequality((SNode) SLinkOperations.getTarget(subtype, "elementType", true), (SNode) SLinkOperations.getTarget(supertype, "elementType", true), false, true, _info_12389875345);
+      typeCheckingContext.createLessThanInequality((SNode) SLinkOperations.getTarget(subtype, MetaAdapterFactory.getContainmentLink(new UUID(3676340747305173022l, -6911132873973321185l), 4815887568697030517l, 4815887568697050735l, "elementType")), (SNode) SLinkOperations.getTarget(supertype, MetaAdapterFactory.getContainmentLink(new UUID(3676340747305173022l, -6911132873973321185l), 4815887568697030518l, 4815887568697050707l, "elementType")), false, true, _info_12389875345);
     }
-    if (SPropertyOperations.getInteger(supertype, "columns") != 0) {
-      if (!((1 == SPropertyOperations.getInteger(supertype, "columns")))) {
+    if (SPropertyOperations.getInteger(supertype, MetaAdapterFactory.getProperty(new UUID(3676340747305173022l, -6911132873973321185l), 4815887568697030518l, 4815887568697048493l, "columns")) != 0) {
+      if (!((1 == SPropertyOperations.getInteger(supertype, MetaAdapterFactory.getProperty(new UUID(3676340747305173022l, -6911132873973321185l), 4815887568697030518l, 4815887568697048493l, "columns"))))) {
         {
           MessageTarget errorTarget = new NodeMessageTarget();
           IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(equationInfo.getNodeWithError(), " invalid matrix dimensions", "r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)", "6389121991275039373", null, errorTarget);
@@ -36,8 +38,8 @@ public class matrix_vector_replacement_rule_InequationReplacementRule extends Ab
         }
       }
     }
-    if (SPropertyOperations.getInteger(subtype, "height") != 0 && SPropertyOperations.getInteger(supertype, "rows") != 0) {
-      if (!((SPropertyOperations.getInteger(subtype, "height") == SPropertyOperations.getInteger(supertype, "rows")))) {
+    if (SPropertyOperations.getInteger(subtype, MetaAdapterFactory.getProperty(new UUID(3676340747305173022l, -6911132873973321185l), 4815887568697030517l, 4815887568697050734l, "height")) != 0 && SPropertyOperations.getInteger(supertype, MetaAdapterFactory.getProperty(new UUID(3676340747305173022l, -6911132873973321185l), 4815887568697030518l, 4815887568697048492l, "rows")) != 0) {
+      if (!((SPropertyOperations.getInteger(subtype, MetaAdapterFactory.getProperty(new UUID(3676340747305173022l, -6911132873973321185l), 4815887568697030517l, 4815887568697050734l, "height")) == SPropertyOperations.getInteger(supertype, MetaAdapterFactory.getProperty(new UUID(3676340747305173022l, -6911132873973321185l), 4815887568697030518l, 4815887568697048492l, "rows"))))) {
         {
           MessageTarget errorTarget = new NodeMessageTarget();
           IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(equationInfo.getNodeWithError(), " invalid matrix dimensions", "r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)", "6389121991275039401", null, errorTarget);
@@ -48,14 +50,14 @@ public class matrix_vector_replacement_rule_InequationReplacementRule extends Ab
   }
   public boolean checkInequation(final SNode subtype, final SNode supertype, final EquationInfo equationInfo, IsApplicable2Status status, final boolean inequalityIsWeak, final boolean inequalityIsLessThan) {
     boolean result_14532009 = true;
-    result_14532009 = result_14532009 && TypeChecker.getInstance().getSubtypingManager().isSubtype((SNode) SLinkOperations.getTarget(subtype, "elementType", true), (SNode) SLinkOperations.getTarget(supertype, "elementType", true), true);
-    if (SPropertyOperations.getInteger(supertype, "columns") != 0) {
-      if (!((1 == SPropertyOperations.getInteger(supertype, "columns")))) {
+    result_14532009 = result_14532009 && TypeChecker.getInstance().getSubtypingManager().isSubtype((SNode) SLinkOperations.getTarget(subtype, MetaAdapterFactory.getContainmentLink(new UUID(3676340747305173022l, -6911132873973321185l), 4815887568697030517l, 4815887568697050735l, "elementType")), (SNode) SLinkOperations.getTarget(supertype, MetaAdapterFactory.getContainmentLink(new UUID(3676340747305173022l, -6911132873973321185l), 4815887568697030518l, 4815887568697050707l, "elementType")), true);
+    if (SPropertyOperations.getInteger(supertype, MetaAdapterFactory.getProperty(new UUID(3676340747305173022l, -6911132873973321185l), 4815887568697030518l, 4815887568697048493l, "columns")) != 0) {
+      if (!((1 == SPropertyOperations.getInteger(supertype, MetaAdapterFactory.getProperty(new UUID(3676340747305173022l, -6911132873973321185l), 4815887568697030518l, 4815887568697048493l, "columns"))))) {
         result_14532009 = false;
       }
     }
-    if (SPropertyOperations.getInteger(subtype, "height") != 0 && SPropertyOperations.getInteger(supertype, "rows") != 0) {
-      if (!((SPropertyOperations.getInteger(subtype, "height") == SPropertyOperations.getInteger(supertype, "rows")))) {
+    if (SPropertyOperations.getInteger(subtype, MetaAdapterFactory.getProperty(new UUID(3676340747305173022l, -6911132873973321185l), 4815887568697030517l, 4815887568697050734l, "height")) != 0 && SPropertyOperations.getInteger(supertype, MetaAdapterFactory.getProperty(new UUID(3676340747305173022l, -6911132873973321185l), 4815887568697030518l, 4815887568697048492l, "rows")) != 0) {
+      if (!((SPropertyOperations.getInteger(subtype, MetaAdapterFactory.getProperty(new UUID(3676340747305173022l, -6911132873973321185l), 4815887568697030517l, 4815887568697050734l, "height")) == SPropertyOperations.getInteger(supertype, MetaAdapterFactory.getProperty(new UUID(3676340747305173022l, -6911132873973321185l), 4815887568697030518l, 4815887568697048492l, "rows"))))) {
         result_14532009 = false;
       }
     }

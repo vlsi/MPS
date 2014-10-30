@@ -6,6 +6,8 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import java.util.Iterator;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
@@ -26,7 +28,7 @@ public class LocalVariableDeclaration_Behavior {
   }
   public static SNode virtual_createReference_1213877517482(SNode thisNode) {
     SNode ref = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.VariableReference", null);
-    SLinkOperations.setTarget(ref, "variableDeclaration", thisNode, false);
+    SLinkOperations.setTarget(ref, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068498886296l, 1068581517664l, "variableDeclaration"), thisNode);
     return ref;
   }
   public static boolean call_isVariableReferencedInClosures_1229352990212(SNode thisNode) {
@@ -34,13 +36,13 @@ public class LocalVariableDeclaration_Behavior {
     {
       Iterator<SNode> ref_it = ListSequence.fromList(SNodeOperations.getDescendants(container, "jetbrains.mps.baseLanguage.structure.VariableReference", false, new String[]{})).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
-          return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SNodeOperations.cast(it, "jetbrains.mps.baseLanguage.structure.VariableReference"), "variableDeclaration", false), "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration");
+          return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SNodeOperations.cast(it, "jetbrains.mps.baseLanguage.structure.VariableReference"), MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068498886296l, 1068581517664l, "variableDeclaration")), "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration");
         }
       }).toListSequence().iterator();
       SNode ref_var;
       while (ref_it.hasNext()) {
         ref_var = ref_it.next();
-        if (SLinkOperations.getTarget(ref_var, "variableDeclaration", false) == thisNode) {
+        if (SLinkOperations.getTarget(ref_var, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068498886296l, 1068581517664l, "variableDeclaration")) == thisNode) {
           SNode referenceContainer = SNodeOperations.getAncestor(ref_var, "jetbrains.mps.baseLanguage.structure.IStatementListContainer", false, false);
           if (referenceContainer != container && SNodeOperations.isInstanceOf(referenceContainer, "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral")) {
             return true;

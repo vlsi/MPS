@@ -8,6 +8,8 @@ import jetbrains.mps.lang.dataFlow.DataFlowBuilderContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 
 public class Quotation_DataFlow extends DataFlowBuilder {
   public Quotation_DataFlow() {
@@ -16,7 +18,7 @@ public class Quotation_DataFlow extends DataFlowBuilder {
     for (SNode antiquotation : SNodeOperations.getDescendants(_context.getNode(), "jetbrains.mps.lang.quotation.structure.AbstractAntiquotation", false, new String[]{})) {
       _context.getBuilder().build((SNode) antiquotation);
     }
-    _context.getBuilder().build((SNode) SLinkOperations.getTarget(_context.getNode(), "modelToCreate", true));
-    _context.getBuilder().build((SNode) SLinkOperations.getTarget(_context.getNode(), "nodeId", true));
+    _context.getBuilder().build((SNode) SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(new UUID(4184707567256882268l, -4914423608129972907l), 1196350785113l, 1196350785115l, "modelToCreate")));
+    _context.getBuilder().build((SNode) SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(new UUID(4184707567256882268l, -4914423608129972907l), 1196350785113l, 3180306201267182597l, "nodeId")));
   }
 }

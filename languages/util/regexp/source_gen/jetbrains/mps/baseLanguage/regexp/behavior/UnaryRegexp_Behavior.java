@@ -6,6 +6,8 @@ import org.jetbrains.mps.openapi.model.SNode;
 import java.util.List;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
@@ -13,10 +15,10 @@ public class UnaryRegexp_Behavior {
   public static void init(SNode thisNode) {
   }
   public static String virtual_getString_1222432436326(SNode thisNode, List<SNode> vars) {
-    String s = BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(thisNode, "regexp", true), "virtual_getString_1222432436326", new Object[]{vars});
-    return ((UnaryRegexp_Behavior.call_inParentheses_1353467374623956744(thisNode) ? Regexp_Behavior.call_par_1222433790846(thisNode, s) : s)) + SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(thisNode), "conceptAlias");
+    String s = BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-2688747624584492277l, -5722269945249396544l), 1174485235885l, 1174485243418l, "regexp")), "virtual_getString_1222432436326", new Object[]{vars});
+    return ((UnaryRegexp_Behavior.call_inParentheses_1353467374623956744(thisNode) ? Regexp_Behavior.call_par_1222433790846(thisNode, s) : s)) + SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(thisNode), MetaAdapterFactory.getProperty(new UUID(-4094437568663370681l, -8968368868337559369l), 1169125787135l, 5092175715804935370l, "conceptAlias"));
   }
   public static boolean call_inParentheses_1353467374623956744(SNode thisNode) {
-    return (SLinkOperations.getTarget(thisNode, "regexp", true) != null ? BehaviorReflection.invokeVirtual(Boolean.TYPE, SLinkOperations.getTarget(thisNode, "regexp", true), "virtual_needParentheses_1353467374623880338", new Object[]{}) : true);
+    return (SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-2688747624584492277l, -5722269945249396544l), 1174485235885l, 1174485243418l, "regexp")) != null ? BehaviorReflection.invokeVirtual(Boolean.TYPE, SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-2688747624584492277l, -5722269945249396544l), 1174485235885l, 1174485243418l, "regexp")), "virtual_needParentheses_1353467374623880338", new Object[]{}) : true);
   }
 }

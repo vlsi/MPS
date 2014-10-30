@@ -9,6 +9,8 @@ import jetbrains.mps.intentions.IntentionType;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
@@ -51,7 +53,7 @@ public class NewTemplateInWeaveEach_Intention implements IntentionFactory {
     return true;
   }
   private boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
-    return (SLinkOperations.getTarget(node, "template", false) == null) && SNodeOperations.isInstanceOf(SNodeOperations.getParent(node), "jetbrains.mps.lang.generator.structure.Weaving_MappingRule");
+    return (SLinkOperations.getTarget(node, MetaAdapterFactory.getReferenceLink(new UUID(-5475912601019530992l, -8082971551085732881l), 1169569792945l, 1169569853122l, "template")) == null) && SNodeOperations.isInstanceOf(SNodeOperations.getParent(node), "jetbrains.mps.lang.generator.structure.Weaving_MappingRule");
   }
   public SNodeReference getIntentionNodeReference() {
     return new SNodePointer("r:00000000-0000-4000-0000-011c895902e5(jetbrains.mps.lang.generator.intentions)", "1216319039419");
@@ -72,31 +74,31 @@ public class NewTemplateInWeaveEach_Intention implements IntentionFactory {
       return "New Template";
     }
     public void execute(final SNode node, final EditorContext editorContext) {
-      SNode applicableConcept = SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(node), "jetbrains.mps.lang.generator.structure.Weaving_MappingRule"), "applicableConcept", false);
+      SNode applicableConcept = SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(node), "jetbrains.mps.lang.generator.structure.Weaving_MappingRule"), MetaAdapterFactory.getReferenceLink(new UUID(-5475912601019530992l, -8082971551085732881l), 1167169308231l, 1167169349424l, "applicableConcept"));
       String name = CreateFromUsageUtil.getText(editorContext);
       if (name == null || name.length() == 0) {
         name = "weave_";
         if (applicableConcept != null) {
-          name += SPropertyOperations.getString(applicableConcept, "name");
+          name += SPropertyOperations.getString(applicableConcept, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"));
         }
       }
       SNode t = SNodeFactoryOperations.createNewRootNode(SNodeOperations.getModel(node), "jetbrains.mps.lang.generator.structure.TemplateDeclaration", null);
-      SPropertyOperations.set(t, "name", name);
-      SLinkOperations.setTarget(t, "applicableConcept", applicableConcept, false);
+      SPropertyOperations.set(t, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"), name);
+      SLinkOperations.setTarget(t, MetaAdapterFactory.getReferenceLink(new UUID(-5475912601019530992l, -8082971551085732881l), 1092059087312l, 1168285871518l, "applicableConcept"), applicableConcept);
       MacroIntentionsUtil.copyVirtualPackage(t, node);
       //  initialize 'content node' 
       SNode ownerRule = SNodeOperations.getAncestor(node, "jetbrains.mps.lang.generator.structure.Weaving_MappingRule", false, false);
-      SNode contextNodeType = TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(SNodeOperations.cast(ownerRule, "jetbrains.mps.lang.generator.structure.Weaving_MappingRule"), "contextNodeQuery", true));
+      SNode contextNodeType = TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(SNodeOperations.cast(ownerRule, "jetbrains.mps.lang.generator.structure.Weaving_MappingRule"), MetaAdapterFactory.getContainmentLink(new UUID(-5475912601019530992l, -8082971551085732881l), 1167171569011l, 1184616230853l, "contextNodeQuery")));
       if (SNodeOperations.isInstanceOf(contextNodeType, "jetbrains.mps.lang.smodel.structure.SNodeType")) {
-        SNode contextNodeConcept = SLinkOperations.getTarget(SNodeOperations.cast(contextNodeType, "jetbrains.mps.lang.smodel.structure.SNodeType"), "concept", false);
+        SNode contextNodeConcept = SLinkOperations.getTarget(SNodeOperations.cast(contextNodeType, "jetbrains.mps.lang.smodel.structure.SNodeType"), MetaAdapterFactory.getReferenceLink(new UUID(8675788371017092295l, -9098312342032910879l), 1138055754698l, 1138405853777l, "concept"));
         if (contextNodeConcept != SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.core.structure.BaseConcept")) {
           if (!(SNodeOperations.isInstanceOf(contextNodeConcept, "jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration"))) {
-            SLinkOperations.setTarget(t, "contentNode", SNodeFactoryOperations.createNewNode(NameUtil.nodeFQName(contextNodeConcept), null), true);
+            SLinkOperations.setTarget(t, MetaAdapterFactory.getContainmentLink(new UUID(-5475912601019530992l, -8082971551085732881l), 1092059087312l, 1092060348987l, "contentNode"), SNodeFactoryOperations.createNewNode(NameUtil.nodeFQName(contextNodeConcept), null));
           }
         }
       }
       //  make reference 
-      SLinkOperations.setTarget(node, "template", t, false);
+      SLinkOperations.setTarget(node, MetaAdapterFactory.getReferenceLink(new UUID(-5475912601019530992l, -8082971551085732881l), 1169569792945l, 1169569853122l, "template"), t);
       SelectionUtil.selectCell(editorContext, node, "templateName");
     }
     public IntentionDescriptor getDescriptor() {

@@ -16,6 +16,8 @@ import jetbrains.mps.baseLanguage.behavior.ClassConcept_Behavior;
 import jetbrains.mps.baseLanguage.behavior.Classifier_Behavior;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
@@ -57,7 +59,7 @@ public class OverridingFields_Finder extends GeneratedFinder {
           fieldsOfSameKind = Classifier_Behavior.call_staticFields_5292274854859223538(SNodeOperations.cast(classNode, "jetbrains.mps.baseLanguage.structure.ClassConcept"));
         }
         for (SNode field : Sequence.fromIterable(fieldsOfSameKind)) {
-          if (SPropertyOperations.getString(field, "name").equals(SPropertyOperations.getString(node, "name")) && BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(field, "type", true), "virtual_getErasureSignature_1213877337313", new Object[]{}).equals(BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(node, "type", true), "virtual_getErasureSignature_1213877337313", new Object[]{}))) {
+          if (SPropertyOperations.getString(field, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")).equals(SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"))) && BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(field, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 4972933694980447171l, 5680397130376446158l, "type")), "virtual_getErasureSignature_1213877337313", new Object[]{}).equals(BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 4972933694980447171l, 5680397130376446158l, "type")), "virtual_getErasureSignature_1213877337313", new Object[]{}))) {
             ListSequence.fromList(_results).addElement(field);
           }
         }

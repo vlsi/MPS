@@ -8,6 +8,8 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -21,15 +23,15 @@ public class typeof_InternalClassCreator_InferenceRule extends AbstractInference
   }
   public void applyRule(final SNode internalClassCreator, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     SNode type;
-    if ((SLinkOperations.getTarget(internalClassCreator, "type", true) != null)) {
-      type = SLinkOperations.getTarget(internalClassCreator, "type", true);
+    if ((SLinkOperations.getTarget(internalClassCreator, MetaAdapterFactory.getContainmentLink(new UUID(-2363163772790029805l, -6024047381933761144l), 1100832983841311024l, 1100832983841311029l, "type")) != null)) {
+      type = SLinkOperations.getTarget(internalClassCreator, MetaAdapterFactory.getContainmentLink(new UUID(-2363163772790029805l, -6024047381933761144l), 1100832983841311024l, 1100832983841311029l, "type"));
     } else {
       type = _quotation_createNode_dg32ga_a0a0a1a1();
     }
     {
       SNode _nodeToCheck_1029348928467 = internalClassCreator;
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895903ab(jetbrains.mps.baseLanguageInternal.typesystem)", "1100832983841501789", 0, null);
-      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895903ab(jetbrains.mps.baseLanguageInternal.typesystem)", "1100832983841501791", true), (SNode) _quotation_createNode_dg32ga_a0c0b(SPropertyOperations.getString(internalClassCreator, "fqClassName"), SLinkOperations.getTarget(SNodeOperations.as(type, "jetbrains.mps.baseLanguage.structure.ClassifierType"), "classifier", false)), _info_12389875345);
+      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895903ab(jetbrains.mps.baseLanguageInternal.typesystem)", "1100832983841501791", true), (SNode) _quotation_createNode_dg32ga_a0c0b(SPropertyOperations.getString(internalClassCreator, MetaAdapterFactory.getProperty(new UUID(-2363163772790029805l, -6024047381933761144l), 1100832983841311024l, 1100832983841311026l, "fqClassName")), SLinkOperations.getTarget(SNodeOperations.as(type, "jetbrains.mps.baseLanguage.structure.ClassifierType"), MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier"))), _info_12389875345);
     }
   }
   public String getApplicableConceptFQName() {
@@ -48,15 +50,15 @@ public class typeof_InternalClassCreator_InferenceRule extends AbstractInference
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, false);
-    quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, facade.createModelReference("6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), facade.createNodeId("~Object")));
+    quotedNode_1.setReference(MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier"), SReference.create(MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier"), quotedNode_1, facade.createModelReference("6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), facade.createNodeId("~Object")));
     return quotedNode_1;
   }
   private static SNode _quotation_createNode_dg32ga_a0c0b(Object parameter_1, Object parameter_2) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_3 = null;
     quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguageInternal.structure.InternalClassifierType", null, null, false);
-    SNodeAccessUtil.setProperty(quotedNode_3, "fqClassName", (String) parameter_1);
-    SNodeAccessUtil.setReferenceTarget(quotedNode_3, "classifier", (SNode) parameter_2);
+    SNodeAccessUtil.setProperty(quotedNode_3, MetaAdapterFactory.getProperty(new UUID(-2363163772790029805l, -6024047381933761144l), 1174914042989l, 1174914081067l, "fqClassName"), (String) parameter_1);
+    SNodeAccessUtil.setReferenceTarget(quotedNode_3, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier"), (SNode) parameter_2);
     return quotedNode_3;
   }
 }

@@ -6,6 +6,8 @@ import org.jetbrains.mps.openapi.model.SNode;
 import java.util.Map;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 
 @Deprecated
@@ -24,7 +26,7 @@ public class GenericTypesUtil {
   }
   private static SNode getTypeByTypeVariable(SNode typeVariableRef, Map<SNode, SNode> typeByTypeVar) {
     SNode result = typeVariableRef;
-    SNode typeVar = SLinkOperations.getTarget(typeVariableRef, "typeVariableDeclaration", false);
+    SNode typeVar = SLinkOperations.getTarget(typeVariableRef, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1109283449304l, 1109283546497l, "typeVariableDeclaration"));
     while ((typeVar != null)) {
       SNode typeVarValue = typeByTypeVar.get(typeVar);
       if ((typeVarValue == null)) {
@@ -32,7 +34,7 @@ public class GenericTypesUtil {
       }
       result = typeVarValue;
       if (SNodeOperations.isInstanceOf(result, "jetbrains.mps.baseLanguage.structure.TypeVariableReference")) {
-        SNode newTypeVar = SLinkOperations.getTarget(SNodeOperations.cast(result, "jetbrains.mps.baseLanguage.structure.TypeVariableReference"), "typeVariableDeclaration", false);
+        SNode newTypeVar = SLinkOperations.getTarget(SNodeOperations.cast(result, "jetbrains.mps.baseLanguage.structure.TypeVariableReference"), MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1109283449304l, 1109283546497l, "typeVariableDeclaration"));
         if (typeVar == newTypeVar) {
           break;
         }

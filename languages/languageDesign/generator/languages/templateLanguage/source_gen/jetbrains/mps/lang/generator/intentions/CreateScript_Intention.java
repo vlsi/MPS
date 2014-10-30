@@ -9,6 +9,8 @@ import jetbrains.mps.intentions.IntentionType;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
 import java.util.Collections;
@@ -46,7 +48,7 @@ public class CreateScript_Intention implements IntentionFactory {
     return true;
   }
   private boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
-    return (SLinkOperations.getTarget(node, "mappingScript", false) == null);
+    return (SLinkOperations.getTarget(node, MetaAdapterFactory.getReferenceLink(new UUID(-5475912601019530992l, -8082971551085732881l), 1195502151594l, 1195502167610l, "mappingScript")) == null);
   }
   public SNodeReference getIntentionNodeReference() {
     return new SNodePointer("r:00000000-0000-4000-0000-011c895902e5(jetbrains.mps.lang.generator.intentions)", "2357139912674486242");
@@ -68,11 +70,11 @@ public class CreateScript_Intention implements IntentionFactory {
     }
     public void execute(final SNode node, final EditorContext editorContext) {
       SNode script = SNodeFactoryOperations.createNewRootNode(SNodeOperations.getModel(node), "jetbrains.mps.lang.generator.structure.MappingScript", null);
-      SPropertyOperations.set(script, "name", "script");
+      SPropertyOperations.set(script, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"), "script");
       if (SNodeOperations.hasRole(node, "jetbrains.mps.lang.generator.structure.MappingConfiguration", "preMappingScript")) {
-        SPropertyOperations.set(script, "scriptKind", "pre_processing");
+        SPropertyOperations.set(script, MetaAdapterFactory.getProperty(new UUID(-5475912601019530992l, -8082971551085732881l), 1195499912406l, 1195595592106l, "scriptKind"), "pre_processing");
       }
-      SLinkOperations.setTarget(node, "mappingScript", script, false);
+      SLinkOperations.setTarget(node, MetaAdapterFactory.getReferenceLink(new UUID(-5475912601019530992l, -8082971551085732881l), 1195502151594l, 1195502167610l, "mappingScript"), script);
     }
     public IntentionDescriptor getDescriptor() {
       return CreateScript_Intention.this;

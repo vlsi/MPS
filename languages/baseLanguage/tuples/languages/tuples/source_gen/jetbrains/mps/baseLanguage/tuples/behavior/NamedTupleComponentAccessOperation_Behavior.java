@@ -5,11 +5,13 @@ package jetbrains.mps.baseLanguage.tuples.behavior;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 
 public class NamedTupleComponentAccessOperation_Behavior {
   public static void init(SNode thisNode) {
   }
   public static boolean virtual_isLValue_1213877410080(SNode thisNode) {
-    return !(SPropertyOperations.getBoolean(SLinkOperations.getTarget(thisNode, "component", false), "final"));
+    return !(SPropertyOperations.getBoolean(SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getReferenceLink(new UUID(-6753182146401843782l, -5129028327240390294l), 1239576519914l, 1239576542472l, "component")), MetaAdapterFactory.getProperty(new UUID(-6753182146401843782l, -5129028327240390294l), 1239462176079l, 1240400839614l, "final")));
   }
 }

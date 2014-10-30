@@ -6,13 +6,15 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.build.util.UnpackHelper;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.build.util.DependenciesHelper;
 
 public class BuildProjectDependency_Behavior {
   public static void init(SNode thisNode) {
   }
   public static void virtual_unpack_7128123785277710736(SNode thisNode, UnpackHelper helper, Iterable<Object> artifacts) {
-    String location = "${artifacts." + SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, "script", false), "name") + "}";
+    String location = "${artifacts." + SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getReferenceLink(new UUID(8755280088213897754l, -5075149991798053422l), 4993211115183325728l, 5617550519002745380l, "script")), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")) + "}";
     helper.locations().put(thisNode, location);
     helper.contentLocations().put(thisNode, location);
   }
@@ -20,7 +22,7 @@ public class BuildProjectDependency_Behavior {
     return helper.locations().get(thisNode);
   }
   public static void virtual_appendName_1368030936106665465(SNode thisNode, SNode parent, StringBuilder sb) {
-    sb.append(SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, "script", false), "name"));
+    sb.append(SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getReferenceLink(new UUID(8755280088213897754l, -5075149991798053422l), 4993211115183325728l, 5617550519002745380l, "script")), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")));
     sb.append("::");
   }
 }

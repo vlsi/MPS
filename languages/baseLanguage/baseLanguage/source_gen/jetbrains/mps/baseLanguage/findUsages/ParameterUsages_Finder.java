@@ -13,6 +13,8 @@ import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import jetbrains.mps.ide.findusages.view.FindUtils;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.progress.EmptyProgressMonitor;
 
 public class ParameterUsages_Finder extends GeneratedFinder {
@@ -45,7 +47,7 @@ public class ParameterUsages_Finder extends GeneratedFinder {
       ListSequence.fromList(overridingMethods).addElement(nodeParentMethod);
       // 
       for (SNode methodNode : ListSequence.fromList(overridingMethods)) {
-        SNode parameterNode = ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(methodNode, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"), "parameter", true)).getElement(SNodeOperations.getIndexInParent(node));
+        SNode parameterNode = ListSequence.fromList(SLinkOperations.getChildren(SNodeOperations.cast(methodNode, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123132l, 1068580123134l, "parameter"))).getElement(SNodeOperations.getIndexInParent(node));
         for (SNode parameterUsage : ListSequence.fromList(FindUtils.executeFinder("jetbrains.mps.lang.structure.findUsages.NodeUsages_Finder", parameterNode, scope, monitor.subTask(1)))) {
           ListSequence.fromList(_results).addElement(parameterUsage);
         }
@@ -62,7 +64,7 @@ public class ParameterUsages_Finder extends GeneratedFinder {
     ListSequence.fromList(overridingMethods).addElement(nodeParentMethod);
     // 
     for (SNode methodNode : ListSequence.fromList(overridingMethods)) {
-      ListSequence.fromList(_results).addElement(ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(methodNode, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"), "parameter", true)).getElement(SNodeOperations.getIndexInParent(node)));
+      ListSequence.fromList(_results).addElement(ListSequence.fromList(SLinkOperations.getChildren(SNodeOperations.cast(methodNode, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123132l, 1068580123134l, "parameter"))).getElement(SNodeOperations.getIndexInParent(node)));
     }
   }
   @Override

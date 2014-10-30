@@ -17,6 +17,8 @@ import jetbrains.mps.smodel.action.DefaultChildNodeSubstituteAction;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.action.DefaultSimpleSubstituteAction;
 import jetbrains.mps.smodel.action.SideTransformActionsBuilderContext;
@@ -47,17 +49,17 @@ public class QueriesGenerated {
             ListSequence.fromList(result).addElement(new DefaultChildNodeSubstituteAction(outputConcept, item, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter()) {
               public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
                 SNode reference = SNodeFactoryOperations.createNewNode("jetbrains.mps.execution.commands.structure.CommandReferenceExpression", null);
-                SLinkOperations.setTarget(reference, "command", (item), false);
+                SLinkOperations.setTarget(reference, MetaAdapterFactory.getReferenceLink(new UUID(-921973991802319051l, -8446196034130110353l), 856705193941281753l, 856705193941281755l, "command"), (item));
                 return reference;
               }
               public String getMatchingText(String pattern) {
-                return SPropertyOperations.getString((item), "name");
+                return SPropertyOperations.getString((item), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"));
               }
               public String getVisibleMatchingText(String pattern) {
                 return getMatchingText(pattern);
               }
               public String getDescriptionText(String pattern) {
-                return "reference to a " + SPropertyOperations.getString((item), "name") + " command";
+                return "reference to a " + SPropertyOperations.getString((item), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")) + " command";
               }
             });
           }
@@ -82,11 +84,11 @@ public class QueriesGenerated {
             ListSequence.fromList(result).addElement(new DefaultChildNodeSubstituteAction(outputConcept, item, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter()) {
               public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
                 SNode builder = SNodeFactoryOperations.createNewNode("jetbrains.mps.execution.commands.structure.CommandBuilderExpression", null);
-                SLinkOperations.setTarget(builder, "commandPart", (item), false);
+                SLinkOperations.setTarget(builder, MetaAdapterFactory.getReferenceLink(new UUID(-921973991802319051l, -8446196034130110353l), 856705193941281780l, 6129022259108621329l, "commandPart"), (item));
                 return builder;
               }
               public String getMatchingText(String pattern) {
-                return SPropertyOperations.getString((item), "name");
+                return SPropertyOperations.getString((item), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"));
               }
               public String getVisibleMatchingText(String pattern) {
                 return getMatchingText(pattern);
@@ -134,7 +136,7 @@ public class QueriesGenerated {
         ListSequence.fromList(result).addElement(new DefaultSimpleSubstituteAction(outputConcept, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter()) {
           public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
             SNode node = SConceptOperations.createNewNode("jetbrains.mps.execution.commands.structure.ListCommandPart", null);
-            SLinkOperations.setNewChild(node, "list", "jetbrains.mps.baseLanguage.structure.Expression");
+            SLinkOperations.setNewChild(node, MetaAdapterFactory.getContainmentLink(new UUID(-921973991802319051l, -8446196034130110353l), 6868250101935610313l, 6868250101935610315l, "list"), "jetbrains.mps.baseLanguage.structure.Expression");
             return node;
           }
           public String getDescriptionText(String pattern) {
@@ -156,7 +158,7 @@ public class QueriesGenerated {
         ListSequence.fromList(result).addElement(new DefaultSimpleSubstituteAction(outputConcept, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter()) {
           public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
             SNode node = SConceptOperations.createNewNode("jetbrains.mps.execution.commands.structure.ListCommandPart", null);
-            SLinkOperations.addNewChild(node, "items", "jetbrains.mps.baseLanguage.structure.Expression");
+            SLinkOperations.addNewChild(node, MetaAdapterFactory.getContainmentLink(new UUID(-921973991802319051l, -8446196034130110353l), 6868250101935610313l, 2168104298250244983l, "items"), "jetbrains.mps.baseLanguage.structure.Expression");
             return node;
           }
           public String getDescriptionText(String pattern) {
@@ -179,7 +181,7 @@ public class QueriesGenerated {
       public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
         SNode redirect = SNodeFactoryOperations.createNewNode("jetbrains.mps.execution.commands.structure.RedirectOutputExpression", null);
         SNodeOperations.replaceWithAnother(_context.getSourceNode(), redirect);
-        SLinkOperations.setTarget(redirect, "processHandler", _context.getSourceNode(), true);
+        SLinkOperations.setTarget(redirect, MetaAdapterFactory.getContainmentLink(new UUID(-921973991802319051l, -8446196034130110353l), 856705193941281812l, 856705193941281813l, "processHandler"), _context.getSourceNode());
         return redirect;
       }
       public String getMatchingText(String pattern) {

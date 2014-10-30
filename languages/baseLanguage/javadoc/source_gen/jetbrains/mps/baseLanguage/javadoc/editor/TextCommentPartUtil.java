@@ -8,6 +8,8 @@ import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
@@ -52,10 +54,10 @@ public class TextCommentPartUtil {
     String leftPart = text.substring(0, index1);
     String rightPart = text.substring(index2);
 
-    SPropertyOperations.set(node, "text", leftPart);
+    SPropertyOperations.set(node, MetaAdapterFactory.getProperty(new UUID(-972752984950357426l, -4964296947050367098l), 8970989240999019143l, 8970989240999019144l, "text"), leftPart);
 
     SNode newTextPart = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart", null);
-    SPropertyOperations.set(newTextPart, "text", rightPart);
+    SPropertyOperations.set(newTextPart, MetaAdapterFactory.getProperty(new UUID(-972752984950357426l, -4964296947050367098l), 8970989240999019143l, 8970989240999019144l, "text"), rightPart);
     SNodeOperations.insertNextSiblingChild(node, newTextPart);
   }
   public static SNode divideLineBetweenCaretAndInsertNewLine(SNode node, int index1, int index2, String text) {
@@ -64,17 +66,17 @@ public class TextCommentPartUtil {
 
     SNode thisLine = SNodeOperations.cast(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.javadoc.structure.CommentLine");
     SNode nextLine = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.javadoc.structure.CommentLine", null);
-    SNodeFactoryOperations.addNewChild(nextLine, "part", "jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart");
-    SPropertyOperations.set(SNodeOperations.cast(ListSequence.fromList(SLinkOperations.getTargets(nextLine, "part", true)).getElement(0), "jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart"), "text", rightPart);
+    SNodeFactoryOperations.addNewChild(nextLine, MetaAdapterFactory.getContainmentLink(new UUID(-972752984950357426l, -4964296947050367098l), 8465538089690331500l, 8970989240999019149l, "part"), "jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart");
+    SPropertyOperations.set(SNodeOperations.cast(ListSequence.fromList(SLinkOperations.getChildren(nextLine, MetaAdapterFactory.getContainmentLink(new UUID(-972752984950357426l, -4964296947050367098l), 8465538089690331500l, 8970989240999019149l, "part"))).getElement(0), "jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart"), MetaAdapterFactory.getProperty(new UUID(-972752984950357426l, -4964296947050367098l), 8970989240999019143l, 8970989240999019144l, "text"), rightPart);
     SNodeOperations.insertNextSiblingChild(thisLine, nextLine);
 
     int indexInParent = SNodeOperations.getIndexInParent(node);
-    SPropertyOperations.set(SNodeOperations.cast(ListSequence.fromList(SLinkOperations.getTargets(thisLine, "part", true)).getElement(indexInParent), "jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart"), "text", leftPart);
+    SPropertyOperations.set(SNodeOperations.cast(ListSequence.fromList(SLinkOperations.getChildren(thisLine, MetaAdapterFactory.getContainmentLink(new UUID(-972752984950357426l, -4964296947050367098l), 8465538089690331500l, 8970989240999019149l, "part"))).getElement(indexInParent), "jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart"), MetaAdapterFactory.getProperty(new UUID(-972752984950357426l, -4964296947050367098l), 8970989240999019143l, 8970989240999019144l, "text"), leftPart);
 
-    while (ListSequence.fromList(SLinkOperations.getTargets(thisLine, "part", true)).count() > indexInParent + 1) {
-      SNode linePart = ListSequence.fromList(SLinkOperations.getTargets(thisLine, "part", true)).getElement(indexInParent + 1);
+    while (ListSequence.fromList(SLinkOperations.getChildren(thisLine, MetaAdapterFactory.getContainmentLink(new UUID(-972752984950357426l, -4964296947050367098l), 8465538089690331500l, 8970989240999019149l, "part"))).count() > indexInParent + 1) {
+      SNode linePart = ListSequence.fromList(SLinkOperations.getChildren(thisLine, MetaAdapterFactory.getContainmentLink(new UUID(-972752984950357426l, -4964296947050367098l), 8465538089690331500l, 8970989240999019149l, "part"))).getElement(indexInParent + 1);
       SNodeOperations.detachNode(linePart);
-      ListSequence.fromList(SLinkOperations.getTargets(nextLine, "part", true)).addElement(linePart);
+      ListSequence.fromList(SLinkOperations.getChildren(nextLine, MetaAdapterFactory.getContainmentLink(new UUID(-972752984950357426l, -4964296947050367098l), 8465538089690331500l, 8970989240999019149l, "part"))).addElement(linePart);
     }
 
     return nextLine;

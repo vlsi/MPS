@@ -34,6 +34,8 @@ import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.ide.editor.util.GoToHelper;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.ide.project.ProjectHelper;
@@ -151,7 +153,7 @@ public class GoToInheritedClassifier_Action extends BaseAction {
                   }
                 }).translate(new ITranslator2<SNode, SNodePointer>() {
                   public Iterable<SNodePointer> translate(SNode it) {
-                    return ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(it, "jetbrains.mps.baseLanguage.structure.EnumClass"), "enumConstant", true)).select(new ISelector<SNode, SNodePointer>() {
+                    return ListSequence.fromList(SLinkOperations.getChildren(SNodeOperations.cast(it, "jetbrains.mps.baseLanguage.structure.EnumClass"), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1083245097125l, 1083245396908l, "enumConstant"))).select(new ISelector<SNode, SNodePointer>() {
                       public SNodePointer select(SNode e) {
                         return new SNodePointer(e);
                       }

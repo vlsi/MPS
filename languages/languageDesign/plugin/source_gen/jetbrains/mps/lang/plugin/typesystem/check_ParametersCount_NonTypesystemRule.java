@@ -9,6 +9,8 @@ import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
@@ -18,7 +20,7 @@ public class check_ParametersCount_NonTypesystemRule extends AbstractNonTypesyst
   public check_ParametersCount_NonTypesystemRule() {
   }
   public void applyRule(final SNode instance, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    if (ListSequence.fromList(SLinkOperations.getTargets(instance, "actualParameter", true)).count() != ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(instance, "action", false), "constructionParameter", true)).count()) {
+    if (ListSequence.fromList(SLinkOperations.getChildren(instance, MetaAdapterFactory.getContainmentLink(new UUID(2952642368903463569l, -5856357300648461647l), 1203088046679l, 1227011543811l, "actualParameter"))).count() != ListSequence.fromList(SLinkOperations.getChildren(SLinkOperations.getTarget(instance, MetaAdapterFactory.getReferenceLink(new UUID(2952642368903463569l, -5856357300648461647l), 1203088046679l, 1203088061055l, "action")), MetaAdapterFactory.getContainmentLink(new UUID(2952642368903463569l, -5856357300648461647l), 1203071646776l, 1227008813498l, "constructionParameter"))).count()) {
       {
         MessageTarget errorTarget = new NodeMessageTarget();
         IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(instance, "number of parameters doesn't match", "r:00000000-0000-4000-0000-011c89590364(jetbrains.mps.lang.plugin.typesystem)", "1227032366953", null, errorTarget);

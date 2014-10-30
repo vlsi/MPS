@@ -7,21 +7,23 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.lang.dataFlow.DataFlowBuilderContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 
 public class ParallelFor_DataFlow extends DataFlowBuilder {
   public ParallelFor_DataFlow() {
   }
   public void build(final IOperationContext operationContext, final DataFlowBuilderContext _context) {
-    _context.getBuilder().build((SNode) SLinkOperations.getTarget(_context.getNode(), "loopVariable", true));
-    _context.getBuilder().build((SNode) SLinkOperations.getTarget(_context.getNode(), "inputSequence", true));
-    if (SLinkOperations.getTarget(_context.getNode(), "threadPool", true) != null) {
-      _context.getBuilder().build((SNode) SLinkOperations.getTarget(_context.getNode(), "threadPool", true));
-      _context.getBuilder().emitRead(SLinkOperations.getTarget(_context.getNode(), "threadPool", true), "r:fe5285c7-54ed-422a-b9ef-c710009e0ee7(org.jetbrains.mps.samples.ParallelFor.dataFlow)/4659204813808536399");
+    _context.getBuilder().build((SNode) SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(new UUID(-3786532327622816550l, -4790818904192366506l), 8923957828369477802l, 8923957828369518786l, "loopVariable")));
+    _context.getBuilder().build((SNode) SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(new UUID(-3786532327622816550l, -4790818904192366506l), 8923957828369477802l, 8923957828369550462l, "inputSequence")));
+    if (SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(new UUID(-3786532327622816550l, -4790818904192366506l), 8923957828369477802l, 4659204813808501246l, "threadPool")) != null) {
+      _context.getBuilder().build((SNode) SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(new UUID(-3786532327622816550l, -4790818904192366506l), 8923957828369477802l, 4659204813808501246l, "threadPool")));
+      _context.getBuilder().emitRead(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(new UUID(-3786532327622816550l, -4790818904192366506l), 8923957828369477802l, 4659204813808501246l, "threadPool")), "r:fe5285c7-54ed-422a-b9ef-c710009e0ee7(org.jetbrains.mps.samples.ParallelFor.dataFlow)/4659204813808536399");
     }
     _context.getBuilder().emitLabel("loop");
-    _context.getBuilder().emitWrite(SLinkOperations.getTarget(_context.getNode(), "loopVariable", true), SLinkOperations.getTarget(_context.getNode(), "inputSequence", true), "r:fe5285c7-54ed-422a-b9ef-c710009e0ee7(org.jetbrains.mps.samples.ParallelFor.dataFlow)/7793246093816003169");
+    _context.getBuilder().emitWrite(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(new UUID(-3786532327622816550l, -4790818904192366506l), 8923957828369477802l, 8923957828369518786l, "loopVariable")), SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(new UUID(-3786532327622816550l, -4790818904192366506l), 8923957828369477802l, 8923957828369550462l, "inputSequence")), "r:fe5285c7-54ed-422a-b9ef-c710009e0ee7(org.jetbrains.mps.samples.ParallelFor.dataFlow)/7793246093816003169");
     _context.getBuilder().emitIfJump(_context.getBuilder().after(_context.getNode()), "r:fe5285c7-54ed-422a-b9ef-c710009e0ee7(org.jetbrains.mps.samples.ParallelFor.dataFlow)/7793246093816003203");
-    _context.getBuilder().build((SNode) SLinkOperations.getTarget(_context.getNode(), "body", true));
+    _context.getBuilder().build((SNode) SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1154032098014l, 1154032183016l, "body")));
     _context.getBuilder().emitIfJump(_context.getBuilder().label(_context.getNode(), "loop"), "r:fe5285c7-54ed-422a-b9ef-c710009e0ee7(org.jetbrains.mps.samples.ParallelFor.dataFlow)/7793246093816003218");
   }
 }

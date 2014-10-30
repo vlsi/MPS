@@ -20,6 +20,8 @@ import jetbrains.mps.lang.sharedConcepts.editor.SharedStyles_StyleSheet;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.openapi.editor.style.StyleRegistry;
 import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.nodeEditor.MPSFonts;
@@ -152,7 +154,7 @@ public class CellModel_RefCell_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private static boolean renderingCondition_lfsepz_a4a(SNode node, EditorContext editorContext) {
-    return SLinkOperations.getTarget(node, "relationDeclaration", false) != null;
+    return SLinkOperations.getTarget(node, MetaAdapterFactory.getReferenceLink(new UUID(1782411230332735017l, -6324602048325217350l), 1139848536355l, 1140103550593l, "relationDeclaration")) != null;
   }
   private EditorCell createComponent_lfsepz_f0(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.editor.editor._CloseTag");
@@ -296,7 +298,7 @@ public class CellModel_RefCell_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private static boolean renderingCondition_lfsepz_a1d0(SNode node, EditorContext editorContext) {
-    return (SLinkOperations.getTarget(SLinkOperations.getTarget(node, "editorComponent", true), "conceptDeclaration", false) != null);
+    return (SLinkOperations.getTarget(SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(1782411230332735017l, -6324602048325217350l), 1088013125922l, 1088186146602l, "editorComponent")), MetaAdapterFactory.getReferenceLink(new UUID(1782411230332735017l, -6324602048325217350l), 1166049232041l, 1166049300910l, "conceptDeclaration")) != null);
   }
   private EditorCell createConstant_lfsepz_a1d0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "effective type (deprectated)");
@@ -452,7 +454,7 @@ public class CellModel_RefCell_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private static boolean renderingCondition_lfsepz_a3d0(SNode node, EditorContext editorContext) {
-    return SPropertyOperations.getString(node, "noTargetText") == null;
+    return SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(new UUID(1782411230332735017l, -6324602048325217350l), 1139848536355l, 1139852716018l, "noTargetText")) == null;
   }
   private EditorCell createConstant_lfsepz_a3d0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "empty text*");

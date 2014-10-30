@@ -34,6 +34,8 @@ import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import com.intellij.psi.search.GlobalSearchScope;
 import com.intellij.openapi.module.Module;
 
@@ -135,15 +137,15 @@ public class ClassifierSuccessorsFinder implements ClassifierSuccessors.Finder, 
       }
       myClassesMapped = true;
       for (SNode aClass : ListSequence.fromList(myModifiedClasses)) {
-        SNode superClass = SLinkOperations.getTarget(aClass, "superclass", true);
+        SNode superClass = SLinkOperations.getTarget(aClass, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068390468198l, 1165602531693l, "superclass"));
         if (superClass != null) {
-          safeMap(SLinkOperations.getTarget(superClass, "classifier", false), aClass);
+          safeMap(SLinkOperations.getTarget(superClass, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier")), aClass);
         }
         if (SNodeOperations.isInstanceOf(aClass, "jetbrains.mps.baseLanguage.structure.AnonymousClass")) {
-          safeMap(SLinkOperations.getTarget(SNodeOperations.cast(aClass, "jetbrains.mps.baseLanguage.structure.AnonymousClass"), "classifier", false), aClass);
+          safeMap(SLinkOperations.getTarget(SNodeOperations.cast(aClass, "jetbrains.mps.baseLanguage.structure.AnonymousClass"), MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1170345865475l, 1170346070688l, "classifier")), aClass);
         }
-        for (SNode implementedInterface : ListSequence.fromList(SLinkOperations.getTargets(aClass, "implementedInterface", true))) {
-          safeMap(SLinkOperations.getTarget(implementedInterface, "classifier", false), aClass);
+        for (SNode implementedInterface : ListSequence.fromList(SLinkOperations.getChildren(aClass, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068390468198l, 1095933932569l, "implementedInterface")))) {
+          safeMap(SLinkOperations.getTarget(implementedInterface, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier")), aClass);
         }
       }
     }
@@ -153,8 +155,8 @@ public class ClassifierSuccessorsFinder implements ClassifierSuccessors.Finder, 
       }
       myInterfacesMapped = true;
       for (SNode anInterface : ListSequence.fromList(myModifiedInterfaces)) {
-        for (SNode extendedInterface : ListSequence.fromList(SLinkOperations.getTargets(anInterface, "extendedInterface", true))) {
-          safeMap(SLinkOperations.getTarget(extendedInterface, "classifier", false), anInterface);
+        for (SNode extendedInterface : ListSequence.fromList(SLinkOperations.getChildren(anInterface, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107796713796l, 1107797138135l, "extendedInterface")))) {
+          safeMap(SLinkOperations.getTarget(extendedInterface, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier")), anInterface);
         }
       }
     }

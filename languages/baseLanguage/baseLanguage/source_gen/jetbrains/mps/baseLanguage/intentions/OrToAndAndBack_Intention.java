@@ -14,6 +14,8 @@ import jetbrains.mps.smodel.SNodePointer;
 import java.util.Collections;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.intentions.IntentionDescriptor;
 
 public class OrToAndAndBack_Intention implements IntentionFactory {
@@ -73,22 +75,22 @@ public class OrToAndAndBack_Intention implements IntentionFactory {
     }
     public void execute(final SNode node, final EditorContext editorContext) {
       SNode operation = (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.AndExpression") ? SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.OrExpression", null) : SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.AndExpression", null));
-      SNode leftCandidate = IntentionUtils.negateBooleanNodes(SLinkOperations.getTarget(node, "leftExpression", true));
-      SNode rightCandidate = IntentionUtils.negateBooleanNodes(SLinkOperations.getTarget(node, "rightExpression", true));
+      SNode leftCandidate = IntentionUtils.negateBooleanNodes(SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1081773326031l, 1081773367580l, "leftExpression")));
+      SNode rightCandidate = IntentionUtils.negateBooleanNodes(SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1081773326031l, 1081773367579l, "rightExpression")));
       if (SNodeOperations.isInstanceOf(operation, "jetbrains.mps.baseLanguage.structure.AndExpression")) {
         if (SNodeOperations.isInstanceOf(leftCandidate, "jetbrains.mps.baseLanguage.structure.OrExpression")) {
           SNode parens = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ParenthesizedExpression", null);
-          SLinkOperations.setTarget(parens, "expression", leftCandidate, true);
+          SLinkOperations.setTarget(parens, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1079359253375l, 1079359253376l, "expression"), leftCandidate);
           leftCandidate = parens;
         }
         if (SNodeOperations.isInstanceOf(rightCandidate, "jetbrains.mps.baseLanguage.structure.OrExpression")) {
           SNode parens = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ParenthesizedExpression", null);
-          SLinkOperations.setTarget(parens, "expression", rightCandidate, true);
+          SLinkOperations.setTarget(parens, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1079359253375l, 1079359253376l, "expression"), rightCandidate);
           rightCandidate = parens;
         }
       }
-      SLinkOperations.setTarget(operation, "leftExpression", leftCandidate, true);
-      SLinkOperations.setTarget(operation, "rightExpression", rightCandidate, true);
+      SLinkOperations.setTarget(operation, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1081773326031l, 1081773367580l, "leftExpression"), leftCandidate);
+      SLinkOperations.setTarget(operation, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1081773326031l, 1081773367579l, "rightExpression"), rightCandidate);
       SNodeOperations.replaceWithAnother(node, operation);
     }
     public IntentionDescriptor getDescriptor() {

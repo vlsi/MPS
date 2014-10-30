@@ -4,14 +4,16 @@ package jetbrains.mps.lang.script.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 
 public class FQNameClassifierSpecification_Behavior {
   public static void init(SNode thisNode) {
   }
   public static String virtual_getClassifierFqName_5434557751112930827(SNode thisNode) {
-    return SPropertyOperations.getString(thisNode, "classifierFQName");
+    return SPropertyOperations.getString(thisNode, MetaAdapterFactory.getProperty(new UUID(1071275047162102839l, -4887287056175405968l), 5434557751112207835l, 5434557751112752962l, "classifierFQName"));
   }
   public static String virtual_getSModelReference_5434557751113441014(SNode thisNode) {
-    return SPropertyOperations.getString(thisNode, "smodelReference");
+    return SPropertyOperations.getString(thisNode, MetaAdapterFactory.getProperty(new UUID(1071275047162102839l, -4887287056175405968l), 5434557751112207835l, 5434557751113468451l, "smodelReference"));
   }
 }

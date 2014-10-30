@@ -5,6 +5,8 @@ package jetbrains.mps.baseLanguage.jdk7.generator.template.util;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
@@ -18,17 +20,17 @@ public class SwitchGenUtil {
   public SwitchGenUtil() {
   }
   public static Iterable<SNode> getNodes(SNode node) {
-    return ListSequence.fromList(SLinkOperations.getTargets(node, "case", true)).where(new IWhereFilter<SNode>() {
+    return ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1163670490218l, 1163670772911l, "case"))).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return (SLinkOperations.getTarget(it, "expression", true) != null);
+        return (SLinkOperations.getTarget(it, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1163670641947l, 1163670677455l, "expression")) != null);
       }
     }).select(new ISelector<SNode, SNode>() {
       public SNode select(SNode it) {
-        return SLinkOperations.getTarget(it, "expression", true);
+        return SLinkOperations.getTarget(it, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1163670641947l, 1163670677455l, "expression"));
       }
     }).sort(new ISelector<SNode, String>() {
       public String select(SNode it) {
-        return SPropertyOperations.getString(SNodeOperations.cast(it, "jetbrains.mps.baseLanguage.structure.StringLiteral"), "value");
+        return SPropertyOperations.getString(SNodeOperations.cast(it, "jetbrains.mps.baseLanguage.structure.StringLiteral"), MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 1070475926800l, 1070475926801l, "value"));
       }
     }, true);
   }
@@ -42,7 +44,7 @@ public class SwitchGenUtil {
     m = MapSequence.fromMap(new HashMap<String, Integer>());
     int index = 0;
     for (SNode e : nodes) {
-      MapSequence.fromMap(m).put(SPropertyOperations.getString(SNodeOperations.cast(e, "jetbrains.mps.baseLanguage.structure.StringLiteral"), "value"), index++);
+      MapSequence.fromMap(m).put(SPropertyOperations.getString(SNodeOperations.cast(e, "jetbrains.mps.baseLanguage.structure.StringLiteral"), MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 1070475926800l, 1070475926801l, "value")), index++);
     }
     genContext.putTransientObject("switch" + node.getNodeId().toString(), m);
     return m;

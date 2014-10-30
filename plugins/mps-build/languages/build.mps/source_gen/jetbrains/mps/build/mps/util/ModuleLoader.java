@@ -6,6 +6,8 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.generator.template.TemplateQueryContext;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.build.util.Context;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import java.io.File;
@@ -18,9 +20,9 @@ public class ModuleLoader {
   public static ModuleChecker createModuleChecker(SNode module, VisibleModules visible, PathConverter pathConverter, TemplateQueryContext genContext, ModuleChecker.Reporter reporter) {
     SNode originalModule = ModuleLoaderUtils.getOriginalModule(module, genContext);
 
-    String moduleFilePath = BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(module, "path", true), "virtual_getLocalPath_5481553824944787364", new Object[]{(genContext != null ? Context.defaultContext(genContext) : Context.defaultContext())});
+    String moduleFilePath = BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(module, MetaAdapterFactory.getContainmentLink(new UUID(934837630734519964l, -6831122735637083229l), 322010710375871467l, 322010710375956261l, "path")), "virtual_getLocalPath_5481553824944787364", new Object[]{(genContext != null ? Context.defaultContext(genContext) : Context.defaultContext())});
     if (moduleFilePath == null) {
-      reporter.report("cannot import module file for " + SPropertyOperations.getString(module, "name") + ": file doesn't exist (" + BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(module, "path", true), "virtual_getAntPath_8563603456895173701", new Object[]{(genContext != null ? Context.defaultContext(genContext) : Context.defaultContext())}) + ")", originalModule, null);
+      reporter.report("cannot import module file for " + SPropertyOperations.getString(module, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")) + ": file doesn't exist (" + BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(module, MetaAdapterFactory.getContainmentLink(new UUID(934837630734519964l, -6831122735637083229l), 322010710375871467l, 322010710375956261l, "path")), "virtual_getAntPath_8563603456895173701", new Object[]{(genContext != null ? Context.defaultContext(genContext) : Context.defaultContext())}) + ")", originalModule, null);
       return new ModuleChecker(module, originalModule, visible, pathConverter, genContext, null, null, reporter);
     }
 
@@ -32,11 +34,11 @@ public class ModuleLoader {
 
     IFile file = FileSystem.getInstance().getFileByPath(moduleFilePath);
     if (!(file.exists())) {
-      reporter.report("cannot import module file for " + SPropertyOperations.getString(module, "name") + ": file doesn't exist (" + moduleFilePath + ")", originalModule, null);
+      reporter.report("cannot import module file for " + SPropertyOperations.getString(module, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")) + ": file doesn't exist (" + moduleFilePath + ")", originalModule, null);
       return new ModuleChecker(module, originalModule, visible, pathConverter, genContext, null, null, reporter);
     }
     if (file.isDirectory()) {
-      reporter.report("cannot import module file for " + SPropertyOperations.getString(module, "name") + ": file is a directory (" + moduleFilePath + ")", originalModule, null);
+      reporter.report("cannot import module file for " + SPropertyOperations.getString(module, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")) + ": file is a directory (" + moduleFilePath + ")", originalModule, null);
       return new ModuleChecker(module, originalModule, visible, pathConverter, genContext, null, null, reporter);
     }
 
@@ -44,10 +46,10 @@ public class ModuleLoader {
     try {
       md = ModuleLoaderUtils.loadModuleDescriptor(file, genContext, originalModule, reporter);
       if (md.getLoadException() != null) {
-        reporter.report("cannot import module file for " + SPropertyOperations.getString(module, "name") + ": exception: " + md.getLoadException().getMessage(), originalModule, null);
+        reporter.report("cannot import module file for " + SPropertyOperations.getString(module, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")) + ": exception: " + md.getLoadException().getMessage(), originalModule, null);
       }
     } catch (Exception ex) {
-      reporter.report("cannot import module file for " + SPropertyOperations.getString(module, "name") + ": exception: " + ex.getMessage(), originalModule, ex);
+      reporter.report("cannot import module file for " + SPropertyOperations.getString(module, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")) + ": exception: " + ex.getMessage(), originalModule, ex);
       ex.printStackTrace(System.err);
     }
 

@@ -7,6 +7,8 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.textGen.TraceInfoGenerationUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
@@ -19,8 +21,8 @@ public class BlockStatement_TextGen extends SNodeTextGen {
     }
     boolean needBrackets = false;
     if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.BlockStatement") || SNodeOperations.isInstanceOf(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.StatementList")) {
-      if ((SLinkOperations.getTarget(node, "statements", true) != null)) {
-        for (SNode statement : SLinkOperations.getTargets(SLinkOperations.getTarget(node, "statements", true), "statement", true)) {
+      if ((SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1082485599095l, 1082485599096l, "statements")) != null)) {
+        for (SNode statement : SLinkOperations.getChildren(SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1082485599095l, 1082485599096l, "statements")), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123136l, 1068581517665l, "statement"))) {
           if (SNodeOperations.isInstanceOf(statement, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement")) {
             needBrackets = true;
             break;
@@ -39,8 +41,8 @@ public class BlockStatement_TextGen extends SNodeTextGen {
       }
       this.increaseDepth();
     }
-    if ((SLinkOperations.getTarget(node, "statements", true) != null)) {
-      appendNode(SLinkOperations.getTarget(node, "statements", true));
+    if ((SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1082485599095l, 1082485599096l, "statements")) != null)) {
+      appendNode(SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1082485599095l, 1082485599096l, "statements")));
     }
     if (needBrackets) {
       this.decreaseDepth();

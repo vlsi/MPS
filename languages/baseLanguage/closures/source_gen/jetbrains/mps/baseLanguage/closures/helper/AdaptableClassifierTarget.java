@@ -8,6 +8,8 @@ import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
@@ -27,34 +29,34 @@ public class AdaptableClassifierTarget {
       allAdaptable = ListSequence.fromList(new ArrayList<SNode>());
       genContext.putStepObject(Keys.ALL_NEEDS_ADAPTED, allAdaptable);
     }
-    if (!(ListSequence.fromList(allAdaptable).contains(SLinkOperations.getTarget(adaptable, "classifier", false)))) {
-      ListSequence.fromList(allAdaptable).addElement(SLinkOperations.getTarget(adaptable, "classifier", false));
+    if (!(ListSequence.fromList(allAdaptable).contains(SLinkOperations.getTarget(adaptable, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier"))))) {
+      ListSequence.fromList(allAdaptable).addElement(SLinkOperations.getTarget(adaptable, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier")));
     }
     List<SNode> trgList = getOrCreateTargets(adaptable);
     if (!(ListSequence.fromList(trgList).any(new IWhereFilter<SNode>() {
       @Override
       public boolean accept(SNode cr) {
-        return BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(target, "classifier", false), "virtual_getFqName_1213877404258", new Object[]{}).equals(BehaviorReflection.invokeVirtual(String.class, cr, "virtual_getFqName_1213877404258", new Object[]{}));
+        return BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(target, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier")), "virtual_getFqName_1213877404258", new Object[]{}).equals(BehaviorReflection.invokeVirtual(String.class, cr, "virtual_getFqName_1213877404258", new Object[]{}));
       }
     }))) {
-      ListSequence.fromList(trgList).addElement(SLinkOperations.getTarget(target, "classifier", false));
-      Values.ADAPTABLE.set(genContext, SLinkOperations.getTarget(target, "classifier", false), SLinkOperations.getTarget(adaptable, "classifier", false));
+      ListSequence.fromList(trgList).addElement(SLinkOperations.getTarget(target, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier")));
+      Values.ADAPTABLE.set(genContext, SLinkOperations.getTarget(target, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier")), SLinkOperations.getTarget(adaptable, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier")));
     }
   }
   private List<SNode> getOrCreateTargets(SNode adaptable) {
-    List<SNode> trgList = (List<SNode>) genContext.getStepObject(Keys.NEEDS_ADAPTER.compose(BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(adaptable, "classifier", false), "virtual_getFqName_1213877404258", new Object[]{})));
+    List<SNode> trgList = (List<SNode>) genContext.getStepObject(Keys.NEEDS_ADAPTER.compose(BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(adaptable, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier")), "virtual_getFqName_1213877404258", new Object[]{})));
     if (trgList == null) {
       trgList = ListSequence.fromList(new ArrayList<SNode>());
-      genContext.putStepObject(Keys.NEEDS_ADAPTER.compose(BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(adaptable, "classifier", false), "virtual_getFqName_1213877404258", new Object[]{})), trgList);
+      genContext.putStepObject(Keys.NEEDS_ADAPTER.compose(BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(adaptable, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier")), "virtual_getFqName_1213877404258", new Object[]{})), trgList);
     }
     return trgList;
   }
   public String getTargetName(SNode target) {
     SNode adaptable = (SNode) Values.ADAPTABLE.get(genContext, target);
-    String aname = SPropertyOperations.getString(adaptable, "name");
+    String aname = SPropertyOperations.getString(adaptable, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"));
     int aldidx = aname.lastIndexOf(".");
     aname = (aldidx >= 0 ? aname.substring(aldidx + 1) : aname);
-    String tname = SPropertyOperations.getString(target, "name");
+    String tname = SPropertyOperations.getString(target, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"));
     int tldidx = tname.lastIndexOf(".");
     tname = (tldidx >= 0 ? tname.substring(tldidx + 1) : tname);
     return aname + "_to_" + tname + "_adapter";
@@ -64,7 +66,7 @@ public class AdaptableClassifierTarget {
     ntype = (ntype == null ? TypeChecker.getInstance().getRuntimeSupport().coerce_(TypeChecker.getInstance().getTypeOf(expr), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.structure.ClassifierType"), true) : ntype);
     assert ntype != null;
     final String trgFQname = (String) Values.PREP_DATA.get(genContext, expr);
-    SNode target = ListSequence.fromList(getTargets(SLinkOperations.getTarget(ntype, "classifier", false))).findFirst(new IWhereFilter<SNode>() {
+    SNode target = ListSequence.fromList(getTargets(SLinkOperations.getTarget(ntype, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier")))).findFirst(new IWhereFilter<SNode>() {
       @Override
       public boolean accept(SNode cr) {
         return trgFQname.equals(BehaviorReflection.invokeVirtual(String.class, cr, "virtual_getFqName_1213877404258", new Object[]{}));

@@ -4,16 +4,16 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
   <root>
     <file name="ConstraintsAspectDescriptor.java">
-      <unit at="9,0,23,0" name="jetbrains.mps.lang.editor.diagram.testLanguage.constraints.ConstraintsAspectDescriptor" />
+      <unit at="10,0,30,0" name="jetbrains.mps.lang.editor.diagram.testLanguage.constraints.ConstraintsAspectDescriptor" />
     </file>
   </root>
   <root nodeRef="r:f56dfe8c-2b17-4ddf-bca2-8224945b3e91(jetbrains.mps.lang.editor.diagram.testLanguage.constraints)/8794120090377793827">
     <file name="NodeWithSize_Constraints.java">
-      <node id="8794120090377793827" at="8,37,9,83" concept="1" />
-      <node id="8794120090377793827" at="8,0,11,0" concept="0" trace="NodeWithSize_Constraints#()V" />
-      <scope id="8794120090377793827" at="8,37,9,83" />
-      <scope id="8794120090377793827" at="8,0,11,0" />
-      <unit id="8794120090377793827" at="7,0,12,0" name="jetbrains.mps.lang.editor.diagram.testLanguage.constraints.NodeWithSize_Constraints" />
+      <node id="8794120090377793827" at="10,37,11,111" concept="1" />
+      <node id="8794120090377793827" at="10,0,13,0" concept="0" trace="NodeWithSize_Constraints#()V" />
+      <scope id="8794120090377793827" at="10,37,11,111" />
+      <scope id="8794120090377793827" at="10,0,13,0" />
+      <unit id="8794120090377793827" at="9,0,14,0" name="jetbrains.mps.lang.editor.diagram.testLanguage.constraints.NodeWithSize_Constraints" />
     </file>
   </root>
 </debug-info>

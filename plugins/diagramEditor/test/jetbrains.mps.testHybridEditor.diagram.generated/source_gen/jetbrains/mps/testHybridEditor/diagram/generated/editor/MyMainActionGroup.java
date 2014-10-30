@@ -19,6 +19,8 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import javax.swing.Icon;
 
@@ -38,7 +40,7 @@ public class MyMainActionGroup implements PaletteActionGroup {
         return SNodeOperations.isInstanceOf(it, "jetbrains.mps.testHybridEditor.structure.MetaBlock");
       }
     })) {
-      String key = SPropertyOperations.getString(SNodeOperations.cast(node, "jetbrains.mps.testHybridEditor.structure.MetaBlock"), "path");
+      String key = SPropertyOperations.getString(SNodeOperations.cast(node, "jetbrains.mps.testHybridEditor.structure.MetaBlock"), MetaAdapterFactory.getProperty(new UUID(-7982035075869357830l, -5979686021354407916l), 2353136177973871304l, 2336278055263049479l, "path"));
       if (!(MapSequence.fromMap(tagToGroupMap).containsKey(key))) {
         MapSequence.fromMap(tagToGroupMap).put(key, ListSequence.fromList(new ArrayList<SNode>()));
       }

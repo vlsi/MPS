@@ -17,6 +17,8 @@ import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 
 public class BuilderStatement_Editor extends DefaultNodeEditor {
@@ -65,7 +67,7 @@ public class BuilderStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private static boolean renderingCondition_idzzzw_a1a(SNode node, EditorContext editorContext) {
-    return BehaviorReflection.invokeVirtual(Boolean.TYPE, SLinkOperations.getTarget(node, "builder", true), "virtual_isLeaf_7057666463730595159", new Object[]{});
+    return BehaviorReflection.invokeVirtual(Boolean.TYPE, SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(1381097486113260572l, -6346909095260771222l), 7802271442981792228l, 4797501453850567416l, "builder")), "virtual_isLeaf_7057666463730595159", new Object[]{});
   }
   private EditorCell createCollection_idzzzw_c0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
@@ -79,7 +81,7 @@ public class BuilderStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private static boolean renderingCondition_idzzzw_a2a(SNode node, EditorContext editorContext) {
-    return !(BehaviorReflection.invokeVirtual(Boolean.TYPE, SLinkOperations.getTarget(node, "builder", true), "virtual_isLeaf_7057666463730595159", new Object[]{}));
+    return !(BehaviorReflection.invokeVirtual(Boolean.TYPE, SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(1381097486113260572l, -6346909095260771222l), 7802271442981792228l, 4797501453850567416l, "builder")), "virtual_isLeaf_7057666463730595159", new Object[]{}));
   }
   private EditorCell createConstant_idzzzw_a2a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "{");

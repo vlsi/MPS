@@ -23,6 +23,8 @@ import java.util.List;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.debug.api.breakpoints.IBreakpointsProvider;
@@ -93,9 +95,9 @@ public class CreateBreakpointOperation_Editor extends DefaultNodeEditor {
     public CreateBreakpointOperation_generic_cellMenu_vi48ux_a0c0() {
     }
     public List<?> createParameterObjects(SNode node, IOperationContext operationContext, EditorContext editorContext) {
-      SNode debuggerType = TypeChecker.getInstance().getRuntimeSupport().coerce_(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.DotExpression"), "operand", true)), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.debugger.api.lang.structure.DebuggerType"), true);
-      if (debuggerType != null && isNotEmptyString(SPropertyOperations.getString(debuggerType, "name"))) {
-        IBreakpointsProvider provider = Debuggers.getInstance().getDebuggerByName(SPropertyOperations.getString(debuggerType, "name")).getBreakpointsProvider();
+      SNode debuggerType = TypeChecker.getInstance().getRuntimeSupport().coerce_(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.DotExpression"), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1197027756228l, 1197027771414l, "operand"))), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.debugger.api.lang.structure.DebuggerType"), true);
+      if (debuggerType != null && isNotEmptyString(SPropertyOperations.getString(debuggerType, MetaAdapterFactory.getProperty(new UUID(-305890210646176633l, -6498307851035425706l), 1104094430779063683l, 2569394751388009837l, "name")))) {
+        IBreakpointsProvider provider = Debuggers.getInstance().getDebuggerByName(SPropertyOperations.getString(debuggerType, MetaAdapterFactory.getProperty(new UUID(-305890210646176633l, -6498307851035425706l), 1104094430779063683l, 2569394751388009837l, "name"))).getBreakpointsProvider();
         if (provider != null) {
           return (List<IBreakpointKind>) provider.getAllKinds();
         }
@@ -106,8 +108,8 @@ public class CreateBreakpointOperation_Editor extends DefaultNodeEditor {
       this.handleAction_impl((IBreakpointKind) parameterObject, node, model, operationContext, editorContext);
     }
     public void handleAction_impl(IBreakpointKind parameterObject, SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
-      SPropertyOperations.set(node, "kindName", parameterObject.getName());
-      SPropertyOperations.set(node, "kindPresentation", parameterObject.getPresentation());
+      SPropertyOperations.set(node, MetaAdapterFactory.getProperty(new UUID(-305890210646176633l, -6498307851035425706l), 2569394751387978473l, 2569394751387978475l, "kindName"), parameterObject.getName());
+      SPropertyOperations.set(node, MetaAdapterFactory.getProperty(new UUID(-305890210646176633l, -6498307851035425706l), 2569394751387978473l, 2569394751387978476l, "kindPresentation"), parameterObject.getPresentation());
     }
     public boolean isReferentPresentation() {
       return false;

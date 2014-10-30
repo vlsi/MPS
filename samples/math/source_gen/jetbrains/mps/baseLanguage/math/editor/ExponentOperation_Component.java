@@ -35,6 +35,8 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
@@ -102,7 +104,7 @@ public class ExponentOperation_Component implements ConceptEditorComponent {
     public List<?> createParameterObjects(SNode node, IOperationContext operationContext, EditorContext editorContext) {
       List<SNode> result = ListSequence.fromList(new ArrayList<SNode>());
       for (SNode a : ListSequence.fromList(SConceptOperations.getAllSubConcepts(ListSequence.fromList(BehaviorReflection.invokeVirtualStatic((Class<List<SNode>>) ((Class) Object.class), SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(node))), "virtual_getAllowedSubstituends_3044950653914716992", new Object[]{})).first(), SNodeOperations.getModel(node)))) {
-        if (!(SPropertyOperations.getBoolean(a, "abstract")) && SConceptOperations.isSubConceptOf(a, "jetbrains.mps.baseLanguage.math.structure.ExponentialOperation")) {
+        if (!(SPropertyOperations.getBoolean(a, MetaAdapterFactory.getProperty(new UUID(-4094437568663370681l, -8968368868337559369l), 1169125787135l, 4628067390765956802l, "abstract"))) && SConceptOperations.isSubConceptOf(a, "jetbrains.mps.baseLanguage.math.structure.ExponentialOperation")) {
           ListSequence.fromList(result).addElement(SNodeOperations.castConcept(a, "jetbrains.mps.baseLanguage.math.structure.ExponentialOperation"));
         }
       }
@@ -112,7 +114,7 @@ public class ExponentOperation_Component implements ConceptEditorComponent {
       this.handleAction_impl((SNode) parameterObject, node, model, operationContext, editorContext);
     }
     public void handleAction_impl(SNode parameterObject, SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
-      SNodeOperations.replaceWithAnother(node, SNodeFactoryOperations.createNewNode(NameUtil.nodeFQName(parameterObject), SLinkOperations.getTarget(node, "expr", true)));
+      SNodeOperations.replaceWithAnother(node, SNodeFactoryOperations.createNewNode(NameUtil.nodeFQName(parameterObject), SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(3676340747305173022l, -6911132873973321185l), 7255837154369354272l, 7255837154369354274l, "expr"))));
     }
     public boolean isReferentPresentation() {
       return false;
@@ -127,7 +129,7 @@ public class ExponentOperation_Component implements ConceptEditorComponent {
       return this.getDescriptionText_internal((SNode) parameterObject);
     }
     public String getDescriptionText_internal(SNode parameterObject) {
-      return SPropertyOperations.getString(parameterObject, "shortDescription");
+      return SPropertyOperations.getString(parameterObject, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1133920641626l, 1156234966388l, "shortDescription"));
     }
   }
   private EditorCell createEmpty_spngij_c0(EditorContext editorContext, SNode node) {

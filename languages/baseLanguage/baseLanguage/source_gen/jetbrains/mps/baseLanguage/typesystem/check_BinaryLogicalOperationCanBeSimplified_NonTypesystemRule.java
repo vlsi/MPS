@@ -9,6 +9,8 @@ import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
@@ -22,8 +24,8 @@ public class check_BinaryLogicalOperationCanBeSimplified_NonTypesystemRule exten
     if (!(SNodeOperations.isInstanceOf(binaryOperation, "jetbrains.mps.baseLanguage.structure.AndExpression")) && !(SNodeOperations.isInstanceOf(binaryOperation, "jetbrains.mps.baseLanguage.structure.OrExpression"))) {
       return;
     }
-    SNode left = SLinkOperations.getTarget(binaryOperation, "leftExpression", true);
-    SNode right = SLinkOperations.getTarget(binaryOperation, "rightExpression", true);
+    SNode left = SLinkOperations.getTarget(binaryOperation, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1081773326031l, 1081773367580l, "leftExpression"));
+    SNode right = SLinkOperations.getTarget(binaryOperation, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1081773326031l, 1081773367579l, "rightExpression"));
     SNode eliminatedNode;
     SNode remainingNode;
     if (SNodeOperations.isInstanceOf(left, "jetbrains.mps.baseLanguage.structure.BooleanConstant")) {

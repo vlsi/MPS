@@ -4,13 +4,15 @@ package jetbrains.mps.execution.commands.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 
 public class ExplicitCommandParameterDeclaration_Behavior {
   public static void init(SNode thisNode) {
   }
   public static boolean virtual_isRequired_8287978476542625659(SNode thisNode) {
-    return SPropertyOperations.getBoolean(thisNode, "isRequired");
+    return SPropertyOperations.getBoolean(thisNode, MetaAdapterFactory.getProperty(new UUID(-921973991802319051l, -8446196034130110353l), 856705193941281762l, 856705193941281763l, "isRequired"));
   }
   public static boolean virtual_generateField_8478830098674441876(SNode thisNode) {
     return !(BehaviorReflection.invokeVirtual(Boolean.TYPE, thisNode, "virtual_isRequired_8287978476542625659", new Object[]{}));

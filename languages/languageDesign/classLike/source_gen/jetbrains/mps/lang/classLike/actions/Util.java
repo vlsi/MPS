@@ -9,6 +9,8 @@ import java.util.Collections;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 
 public class Util {
@@ -17,12 +19,12 @@ public class Util {
       return Sequence.fromIterable(Collections.<SNode>emptyList());
     }
 
-    SNode descr = SLinkOperations.getTarget(AttributeOperations.getAttribute(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.ClassConcept"), new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.classLike.structure.ClassLikeAnnotation")), "descriptor", false);
+    SNode descr = SLinkOperations.getTarget(AttributeOperations.getAttribute(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.ClassConcept"), new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.classLike.structure.ClassLikeAnnotation")), MetaAdapterFactory.getReferenceLink(new UUID(-4047124328593011742l, -4867279722304451481l), 3571587574961713354l, 3571587574961717879l, "descriptor"));
     if (descr == null) {
       return Sequence.fromIterable(Collections.<SNode>emptyList());
     }
 
-    return SNodeOperations.ofConcept(SLinkOperations.getTargets(descr, "member", true), "jetbrains.mps.lang.classLike.structure.MethodDescriptor");
+    return SNodeOperations.ofConcept(SLinkOperations.getChildren(descr, MetaAdapterFactory.getContainmentLink(new UUID(-4047124328593011742l, -4867279722304451481l), 3751132065236767072l, 8264762413010642120l, "member")), "jetbrains.mps.lang.classLike.structure.MethodDescriptor");
   }
 
   public static Iterable<SNode> getPropertyDescriptors(SNode node) {
@@ -30,14 +32,14 @@ public class Util {
       return Sequence.fromIterable(Collections.<SNode>emptyList());
     }
 
-    SNode descr = SLinkOperations.getTarget(AttributeOperations.getAttribute(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.ClassConcept"), new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.classLike.structure.ClassLikeAnnotation")), "descriptor", false);
+    SNode descr = SLinkOperations.getTarget(AttributeOperations.getAttribute(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.ClassConcept"), new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.classLike.structure.ClassLikeAnnotation")), MetaAdapterFactory.getReferenceLink(new UUID(-4047124328593011742l, -4867279722304451481l), 3571587574961713354l, 3571587574961717879l, "descriptor"));
     if (descr == null) {
       return Sequence.fromIterable(Collections.<SNode>emptyList());
     }
 
-    return Sequence.fromIterable(SNodeOperations.ofConcept(SLinkOperations.getTargets(descr, "member", true), "jetbrains.mps.lang.classLike.structure.PropertyDescriptor")).where(new IWhereFilter<SNode>() {
+    return Sequence.fromIterable(SNodeOperations.ofConcept(SLinkOperations.getChildren(descr, MetaAdapterFactory.getContainmentLink(new UUID(-4047124328593011742l, -4867279722304451481l), 3751132065236767072l, 8264762413010642120l, "member")), "jetbrains.mps.lang.classLike.structure.PropertyDescriptor")).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return SLinkOperations.getTarget(it, "type", false) != null;
+        return SLinkOperations.getTarget(it, MetaAdapterFactory.getReferenceLink(new UUID(-4047124328593011742l, -4867279722304451481l), 8264762413010631473l, 5155329496663029311l, "type")) != null;
       }
     });
   }
@@ -46,11 +48,11 @@ public class Util {
       return Sequence.fromIterable(Collections.<SNode>emptyList());
     }
 
-    SNode descr = SLinkOperations.getTarget(AttributeOperations.getAttribute(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.ClassConcept"), new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.classLike.structure.ClassLikeAnnotation")), "descriptor", false);
+    SNode descr = SLinkOperations.getTarget(AttributeOperations.getAttribute(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.ClassConcept"), new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.classLike.structure.ClassLikeAnnotation")), MetaAdapterFactory.getReferenceLink(new UUID(-4047124328593011742l, -4867279722304451481l), 3571587574961713354l, 3571587574961717879l, "descriptor"));
     if (descr == null) {
       return Sequence.fromIterable(Collections.<SNode>emptyList());
     }
 
-    return SNodeOperations.ofConcept(SLinkOperations.getTargets(descr, "member", true), "jetbrains.mps.lang.classLike.structure.CustomMemberDescriptor");
+    return SNodeOperations.ofConcept(SLinkOperations.getChildren(descr, MetaAdapterFactory.getContainmentLink(new UUID(-4047124328593011742l, -4867279722304451481l), 3751132065236767072l, 8264762413010642120l, "member")), "jetbrains.mps.lang.classLike.structure.CustomMemberDescriptor");
   }
 }

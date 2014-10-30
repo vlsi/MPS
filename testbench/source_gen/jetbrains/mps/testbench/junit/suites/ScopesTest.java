@@ -18,6 +18,8 @@ import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.testbench.junit.runners.MpsTestsSupport;
 import jetbrains.mps.testbench.junit.runners.ContextProjectSupport;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.scope.Scope;
 import org.junit.Test;
 import org.jetbrains.mps.openapi.model.SReference;
@@ -64,8 +66,8 @@ public class ScopesTest {
   }
   public List<SNode> getExpectedNodes(SNode forNode) {
     List<SNode> expected = new ArrayList<SNode>();
-    for (SNode child : SLinkOperations.getTargets(forNode, "nodes", true)) {
-      expected.add(SLinkOperations.getTarget(child, "ref", false));
+    for (SNode child : SLinkOperations.getChildren(forNode, MetaAdapterFactory.getContainmentLink(new UUID(-8825571760360698496l, -7431307307277756308l), 511191073233700873l, 3655334166513314307l, "nodes"))) {
+      expected.add(SLinkOperations.getTarget(child, MetaAdapterFactory.getReferenceLink(new UUID(-8825571760360698496l, -7431307307277756308l), 3655334166513314291l, 4052780437578824735l, "ref")));
     }
     return expected;
   }
@@ -78,7 +80,7 @@ public class ScopesTest {
   }
   public StringBuilder getFailMessage(List<SNode> unExpected, List<SNode> notFounded) {
     StringBuilder builder = new StringBuilder(System.getProperty("line.separator"));
-    builder.append("\tIn node " + SLinkOperations.getTarget(myNode, "checkingReference", false));
+    builder.append("\tIn node " + SLinkOperations.getTarget(myNode, MetaAdapterFactory.getReferenceLink(new UUID(-8825571760360698496l, -7431307307277756308l), 511191073233700873l, 5449224527592117654l, "checkingReference")));
     builder.append(System.getProperty("line.separator"));
 
     if (!(unExpected.isEmpty())) {
@@ -111,7 +113,7 @@ public class ScopesTest {
       public void run() {
         SReference reference = null;
         for (SReference ref : SNodeOperations.getReferences(SNodeOperations.getParent(ScopesTest.this.myNode))) {
-          if (SLinkOperations.getTargetNode(ref) == SLinkOperations.getTarget(ScopesTest.this.myNode, "checkingReference", false)) {
+          if (SLinkOperations.getTargetNode(ref) == SLinkOperations.getTarget(ScopesTest.this.myNode, MetaAdapterFactory.getReferenceLink(new UUID(-8825571760360698496l, -7431307307277756308l), 511191073233700873l, 5449224527592117654l, "checkingReference"))) {
             reference = ref;
             break;
           }

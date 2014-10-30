@@ -12,6 +12,8 @@ import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
 import java.util.Collections;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.intentions.IntentionDescriptor;
 
@@ -56,13 +58,13 @@ public class AddRemoveMessage_Intention implements IntentionFactory {
     public IntentionImplementation() {
     }
     public String getDescription(final SNode node, final EditorContext editorContext) {
-      return ((SLinkOperations.getTarget(SLinkOperations.getTarget(node, "message", true), "message", true) == null) ? "Add message" : "Remove message");
+      return ((SLinkOperations.getTarget(SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-714818927241248010l, -5076282167675141386l), 1172075514136l, 1172075534298l, "message")), MetaAdapterFactory.getContainmentLink(new UUID(-714818927241248010l, -5076282167675141386l), 1172073500303l, 1172073511101l, "message")) == null) ? "Add message" : "Remove message");
     }
     public void execute(final SNode node, final EditorContext editorContext) {
-      if ((SLinkOperations.getTarget(SLinkOperations.getTarget(node, "message", true), "message", true) == null)) {
-        SNodeFactoryOperations.setNewChild(node, "message", "jetbrains.mps.baseLanguage.unitTest.structure.Message");
+      if ((SLinkOperations.getTarget(SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-714818927241248010l, -5076282167675141386l), 1172075514136l, 1172075534298l, "message")), MetaAdapterFactory.getContainmentLink(new UUID(-714818927241248010l, -5076282167675141386l), 1172073500303l, 1172073511101l, "message")) == null)) {
+        SNodeFactoryOperations.setNewChild(node, MetaAdapterFactory.getContainmentLink(new UUID(-714818927241248010l, -5076282167675141386l), 1172075514136l, 1172075534298l, "message"), "jetbrains.mps.baseLanguage.unitTest.structure.Message");
       } else {
-        SLinkOperations.setTarget(node, "message", null, true);
+        SLinkOperations.setTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-714818927241248010l, -5076282167675141386l), 1172075514136l, 1172075534298l, "message"), null);
       }
     }
     public IntentionDescriptor getDescriptor() {

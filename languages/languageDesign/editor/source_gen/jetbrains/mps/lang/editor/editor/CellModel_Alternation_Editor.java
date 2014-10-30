@@ -13,6 +13,8 @@ import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.openapi.editor.style.StyleRegistry;
 import java.awt.Color;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
@@ -69,7 +71,7 @@ public class CellModel_Alternation_Editor extends DefaultNodeEditor {
     return _EditorUtil.grayIfNotSelectable(node);
   }
   private static boolean renderingCondition_zgm7s3_a1a(SNode node, EditorContext editorContext) {
-    return SPropertyOperations.getBoolean(node, "vertical");
+    return SPropertyOperations.getBoolean(node, MetaAdapterFactory.getProperty(new UUID(1782411230332735017l, -6324602048325217350l), 1088612959204l, 1088613081987l, "vertical"));
   }
   private EditorCell createCollection_zgm7s3_a1a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
@@ -169,7 +171,7 @@ public class CellModel_Alternation_Editor extends DefaultNodeEditor {
     return _EditorUtil.grayIfNotSelectable(node);
   }
   private static boolean renderingCondition_zgm7s3_a2a(SNode node, EditorContext editorContext) {
-    return !(SPropertyOperations.getBoolean(node, "vertical"));
+    return !(SPropertyOperations.getBoolean(node, MetaAdapterFactory.getProperty(new UUID(1782411230332735017l, -6324602048325217350l), 1088612959204l, 1088613081987l, "vertical")));
   }
   private EditorCell createCollection_zgm7s3_a2a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);

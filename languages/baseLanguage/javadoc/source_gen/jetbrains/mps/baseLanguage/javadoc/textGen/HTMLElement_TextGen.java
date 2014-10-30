@@ -6,26 +6,28 @@ import jetbrains.mps.textGen.SNodeTextGen;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class HTMLElement_TextGen extends SNodeTextGen {
   public void doGenerateText(SNode node) {
-    if (ListSequence.fromList(SLinkOperations.getTargets(node, "line", true)).isEmpty()) {
+    if (ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(new UUID(-972752984950357426l, -4964296947050367098l), 6612597108003615641l, 6612597108003615643l, "line"))).isEmpty()) {
       this.append("<");
-      this.append(SPropertyOperations.getString(node, "name"));
+      this.append(SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(new UUID(-972752984950357426l, -4964296947050367098l), 6612597108003615641l, 6612597108003615642l, "name")));
       this.append(" />");
     } else {
       this.append("<");
-      this.append(SPropertyOperations.getString(node, "name"));
+      this.append(SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(new UUID(-972752984950357426l, -4964296947050367098l), 6612597108003615641l, 6612597108003615642l, "name")));
       this.append(">");
       {
-        Iterable<SNode> collection = SLinkOperations.getTargets(node, "line", true);
+        Iterable<SNode> collection = SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(new UUID(-972752984950357426l, -4964296947050367098l), 6612597108003615641l, 6612597108003615643l, "line"));
         for (SNode item : collection) {
           appendNode(item);
         }
       }
       this.append("</");
-      this.append(SPropertyOperations.getString(node, "name"));
+      this.append(SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(new UUID(-972752984950357426l, -4964296947050367098l), 6612597108003615641l, 6612597108003615642l, "name")));
       this.append(">");
     }
   }

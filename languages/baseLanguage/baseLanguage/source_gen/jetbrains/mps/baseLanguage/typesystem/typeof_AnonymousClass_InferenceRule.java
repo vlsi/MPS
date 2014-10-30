@@ -8,6 +8,8 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
@@ -33,16 +35,16 @@ public class typeof_AnonymousClass_InferenceRule extends AbstractInferenceRule_R
   public typeof_AnonymousClass_InferenceRule() {
   }
   public void applyRule(final SNode anonymousClass, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    SNode cdecl = SLinkOperations.getTarget(anonymousClass, "baseMethodDeclaration", false);
+    SNode cdecl = SLinkOperations.getTarget(anonymousClass, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, 1068499141037l, "baseMethodDeclaration"));
     if (cdecl == null) {
       return;
     }
-    final SNode classifier = SLinkOperations.getTarget(anonymousClass, "classifier", false);
+    final SNode classifier = SLinkOperations.getTarget(anonymousClass, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1170345865475l, 1170346070688l, "classifier"));
     if ((classifier == null)) {
       return;
     }
 
-    if (!((ListSequence.fromList(SLinkOperations.getTargets(anonymousClass, "typeParameter", true)).isEmpty() || ListSequence.fromList(SLinkOperations.getTargets(anonymousClass, "typeParameter", true)).count() == ListSequence.fromList(SLinkOperations.getTargets(classifier, "typeVariableDeclaration", true)).count()))) {
+    if (!((ListSequence.fromList(SLinkOperations.getChildren(anonymousClass, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1170345865475l, 1201186121363l, "typeParameter"))).isEmpty() || ListSequence.fromList(SLinkOperations.getChildren(anonymousClass, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1170345865475l, 1201186121363l, "typeParameter"))).count() == ListSequence.fromList(SLinkOperations.getChildren(classifier, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1109279851642l, 1109279881614l, "typeVariableDeclaration"))).count()))) {
       {
         MessageTarget errorTarget = new NodeMessageTarget();
         errorTarget = new ReferenceMessageTarget("classifier");
@@ -50,8 +52,8 @@ public class typeof_AnonymousClass_InferenceRule extends AbstractInferenceRule_R
       }
     }
 
-    for (SNode parameter : SLinkOperations.getTargets(anonymousClass, "typeParameter", true)) {
-      if (!(!(TypeChecker.getInstance().getSubtypingManager().isSubtype(parameter, SLinkOperations.getTarget(_quotation_createNode_fj2vg7_a1a0a0a7a1(), "descriptor", false), false)))) {
+    for (SNode parameter : SLinkOperations.getChildren(anonymousClass, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1170345865475l, 1201186121363l, "typeParameter"))) {
+      if (!(!(TypeChecker.getInstance().getSubtypingManager().isSubtype(parameter, SLinkOperations.getTarget(_quotation_createNode_fj2vg7_a1a0a0a7a1(), MetaAdapterFactory.getReferenceLink(new UUID(-1338283401124492350l, -9092293120968916352l), 1159268661480l, 1159268661479l, "descriptor")), false)))) {
         MessageTarget errorTarget = new NodeMessageTarget();
         IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(parameter, "primitive type not allowed", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "2925336694746296785", null, errorTarget);
       }
@@ -59,7 +61,7 @@ public class typeof_AnonymousClass_InferenceRule extends AbstractInferenceRule_R
 
     final Map<SNode, SNode> subs = MapSequence.fromMap(new HashMap<SNode, SNode>());
     // TODO: this is to avoid collecting generics from explicitly substituted types 
-    List<SNode> typeParam = ListSequence.fromList(SLinkOperations.getTargets(anonymousClass, "typeParameter", true)).select(new ISelector<SNode, SNode>() {
+    List<SNode> typeParam = ListSequence.fromList(SLinkOperations.getChildren(anonymousClass, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1170345865475l, 1201186121363l, "typeParameter"))).select(new ISelector<SNode, SNode>() {
       public SNode select(SNode tp) {
         final SNode TP_typevar_5449655299304737730 = typeCheckingContext.createNewRuntimeTypesVariable();
         SNode tmp = typeCheckingContext.getRepresentative(TP_typevar_5449655299304737730);
@@ -74,7 +76,7 @@ public class typeof_AnonymousClass_InferenceRule extends AbstractInferenceRule_R
     SNode newType = _quotation_createNode_fj2vg7_a0m0b(anonymousClass, typeParam);
     BehaviorReflection.invokeVirtual(Void.class, newType, "virtual_collectGenericSubstitutions_4107091686347010321", new Object[]{subs});
 
-    List<SNode> argl = SLinkOperations.getTargets(anonymousClass, "actualArgument", true);
+    List<SNode> argl = SLinkOperations.getChildren(anonymousClass, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, 1068499141038l, "actualArgument"));
     List<SNode> typel = BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), cdecl, "virtual_getTypeApplicationParameters_8277080359323839095", new Object[]{ListSequence.fromList(argl).count()});
     for (SNode type : ListSequence.fromList(typel)) {
       if (SNodeOperations.isInstanceOf(type, "jetbrains.mps.baseLanguage.structure.IGenericType")) {
@@ -129,7 +131,7 @@ public class typeof_AnonymousClass_InferenceRule extends AbstractInferenceRule_R
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.blTypes.structure.PrimitiveTypeRef", null, null, false);
-    quotedNode_1.setReference("descriptor", SReference.create("descriptor", quotedNode_1, facade.createModelReference("r:00000000-0000-4000-0000-011c895902de(jetbrains.mps.baseLanguage.blTypes.primitiveDescriptors)"), facade.createNodeId("1196683941620")));
+    quotedNode_1.setReference(MetaAdapterFactory.getReferenceLink(new UUID(-1338283401124492350l, -9092293120968916352l), 1159268661480l, 1159268661479l, "descriptor"), SReference.create(MetaAdapterFactory.getReferenceLink(new UUID(-1338283401124492350l, -9092293120968916352l), 1159268661480l, 1159268661479l, "descriptor"), quotedNode_1, facade.createModelReference("r:00000000-0000-4000-0000-011c895902de(jetbrains.mps.baseLanguage.blTypes.primitiveDescriptors)"), facade.createNodeId("1196683941620")));
     return quotedNode_1;
   }
   private static SNode _quotation_createNode_fj2vg7_a0m0b(Object parameter_1, Object parameter_2) {
@@ -137,7 +139,7 @@ public class typeof_AnonymousClass_InferenceRule extends AbstractInferenceRule_R
     SNode quotedNode_3 = null;
     SNode quotedNode_4 = null;
     quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, false);
-    SNodeAccessUtil.setReferenceTarget(quotedNode_3, "classifier", (SNode) parameter_1);
+    SNodeAccessUtil.setReferenceTarget(quotedNode_3, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier"), (SNode) parameter_1);
     {
       List<SNode> nodes = (List<SNode>) parameter_2;
       for (SNode child : nodes) {

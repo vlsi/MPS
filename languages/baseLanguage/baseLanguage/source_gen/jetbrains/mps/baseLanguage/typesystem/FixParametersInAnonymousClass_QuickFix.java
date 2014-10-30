@@ -5,14 +5,16 @@ package jetbrains.mps.baseLanguage.typesystem;
 import jetbrains.mps.errors.QuickFix_Runtime;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 
 public class FixParametersInAnonymousClass_QuickFix extends QuickFix_Runtime {
   public FixParametersInAnonymousClass_QuickFix() {
   }
   public void execute(SNode node) {
-    for (SNode parameter : SLinkOperations.getTargets(((SNode) FixParametersInAnonymousClass_QuickFix.this.getField("anonymousClass")[0]), "parameter", true)) {
-      ListSequence.fromList(SLinkOperations.getTargets(((SNode) FixParametersInAnonymousClass_QuickFix.this.getField("anonymousClass")[0]), "actualArgument", true)).addElement(parameter);
+    for (SNode parameter : SLinkOperations.getChildren(((SNode) FixParametersInAnonymousClass_QuickFix.this.getField("anonymousClass")[0]), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1170345865475l, 1170346101385l, "parameter"))) {
+      ListSequence.fromList(SLinkOperations.getChildren(((SNode) FixParametersInAnonymousClass_QuickFix.this.getField("anonymousClass")[0]), MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, 1068499141038l, "actualArgument"))).addElement(parameter);
     }
   }
 }

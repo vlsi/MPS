@@ -9,6 +9,8 @@ import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
@@ -22,7 +24,7 @@ public class check_VarRef_in_WhenConcreteStatement_NonTypesystemRule extends Abs
   public void applyRule(final SNode variableReference, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     SNode ancestor = SNodeOperations.getAncestor(variableReference, "jetbrains.mps.lang.typesystem.structure.WhenConcreteStatement", false, false);
     if (ancestor != null) {
-      SNode argument = SLinkOperations.getTarget(ancestor, "argument", true);
+      SNode argument = SLinkOperations.getTarget(ancestor, MetaAdapterFactory.getContainmentLink(new UUID(8817443762339858024l, -6091446231697526094l), 1185805035213l, 1185805056450l, "argument"));
       SNode parent = variableReference;
       while (parent != null && parent != ancestor) {
         if (parent == argument) {
@@ -31,12 +33,12 @@ public class check_VarRef_in_WhenConcreteStatement_NonTypesystemRule extends Abs
           parent = SNodeOperations.getParent(parent);
         }
       }
-      SNode variableDeclaration = SLinkOperations.getTarget(variableReference, "variableDeclaration", false);
+      SNode variableDeclaration = SLinkOperations.getTarget(variableReference, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068498886296l, 1068581517664l, "variableDeclaration"));
       if (SNodeOperations.isInstanceOf(variableDeclaration, "jetbrains.mps.baseLanguage.structure.FieldDeclaration") || SNodeOperations.isInstanceOf(variableDeclaration, "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration")) {
         return;
       }
       if (variableDeclaration != null && !(ListSequence.fromList(SNodeOperations.getAncestors(variableDeclaration, "jetbrains.mps.lang.typesystem.structure.WhenConcreteStatement", false)).contains(ancestor))) {
-        if (!(SPropertyOperations.getBoolean(variableDeclaration, "isFinal"))) {
+        if (!(SPropertyOperations.getBoolean(variableDeclaration, MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 1068431474542l, 1176718929932l, "isFinal")))) {
           MessageTarget errorTarget = new NodeMessageTarget();
           IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(variableReference, "variable is used inside WHEN CONCRETE block. should be declared final", "r:00000000-0000-4000-0000-011c895902b1(jetbrains.mps.lang.typesystem.typesystem)", "9215127012916007489", null, errorTarget);
         }

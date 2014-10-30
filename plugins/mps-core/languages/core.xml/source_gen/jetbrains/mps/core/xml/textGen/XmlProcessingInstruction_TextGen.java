@@ -7,6 +7,8 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 
 public class XmlProcessingInstruction_TextGen extends SNodeTextGen {
   public void doGenerateText(SNode node) {
@@ -16,9 +18,9 @@ public class XmlProcessingInstruction_TextGen extends SNodeTextGen {
       this.indentBuffer();
     }
     this.append("<?");
-    this.append(SPropertyOperations.getString(node, "target"));
+    this.append(SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(new UUID(5160134014823646133l, -7982110198386724200l), 6666499814681299061l, 6666499814681299062l, "target")));
     this.append(" ");
-    this.append(SPropertyOperations.getString(node, "rawData"));
+    this.append(SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(new UUID(5160134014823646133l, -7982110198386724200l), 6666499814681299061l, 6666499814681299063l, "rawData")));
     this.append("?>");
   }
 }

@@ -16,6 +16,8 @@ import org.jetbrains.mps.openapi.model.SNode;
 import java.io.File;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.smodel.SModelOperations;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.make.MakeSession;
@@ -59,7 +61,7 @@ public class DeployScript {
     SNode deployScriptNode = DeployScriptCreator.createDeployScript(myProject, plugins, myModule.getBaseDirectory());
     model.addRootNode(deployScriptNode);
     myDeployScriptPath = new File(myModule.getBaseDirectory(), BehaviorReflection.invokeNonVirtual(String.class, deployScriptNode, "jetbrains.mps.build.structure.BuildProject", "call_getOutputFileName_4915877860351551360", new Object[]{})).getAbsolutePath();
-    myArtifactsPath = new File(new File(new File(myModule.getBaseDirectory(), "build"), "artifacts"), SPropertyOperations.getString(deployScriptNode, "name")).getAbsolutePath();
+    myArtifactsPath = new File(new File(new File(myModule.getBaseDirectory(), "build"), "artifacts"), SPropertyOperations.getString(deployScriptNode, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"))).getAbsolutePath();
 
     SModelOperations.validateLanguagesAndImports(model, true, true);
   }

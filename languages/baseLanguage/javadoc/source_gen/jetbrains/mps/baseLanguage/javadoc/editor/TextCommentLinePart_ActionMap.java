@@ -12,6 +12,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.baseLanguage.javadoc.behavior.CommentLine_Behavior;
 
@@ -58,11 +60,11 @@ public class TextCommentLinePart_ActionMap {
             //  This is the beginning of line 
             SNode curLine = SNodeOperations.cast(SNodeOperations.getParent(currrentNode), "jetbrains.mps.baseLanguage.javadoc.structure.CommentLine");
             SNode prevLine = SNodeOperations.cast(SNodeOperations.getPrevSibling(curLine), "jetbrains.mps.baseLanguage.javadoc.structure.CommentLine");
-            nodeToSelect = ListSequence.fromList(SLinkOperations.getTargets(prevLine, "part", true)).last();
-            int index = ListSequence.fromList(SLinkOperations.getTargets(prevLine, "part", true)).count() - 1;
-            ListSequence.fromList(SLinkOperations.getTargets(prevLine, "part", true)).addSequence(ListSequence.fromList(SLinkOperations.getTargets(curLine, "part", true)));
-            if (SNodeOperations.isInstanceOf(nodeToSelect, "jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart") && isNotEmptyString(SPropertyOperations.getString(SNodeOperations.cast(nodeToSelect, "jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart"), "text"))) {
-              caret = SPropertyOperations.getString(SNodeOperations.cast(nodeToSelect, "jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart"), "text").length();
+            nodeToSelect = ListSequence.fromList(SLinkOperations.getChildren(prevLine, MetaAdapterFactory.getContainmentLink(new UUID(-972752984950357426l, -4964296947050367098l), 8465538089690331500l, 8970989240999019149l, "part"))).last();
+            int index = ListSequence.fromList(SLinkOperations.getChildren(prevLine, MetaAdapterFactory.getContainmentLink(new UUID(-972752984950357426l, -4964296947050367098l), 8465538089690331500l, 8970989240999019149l, "part"))).count() - 1;
+            ListSequence.fromList(SLinkOperations.getChildren(prevLine, MetaAdapterFactory.getContainmentLink(new UUID(-972752984950357426l, -4964296947050367098l), 8465538089690331500l, 8970989240999019149l, "part"))).addSequence(ListSequence.fromList(SLinkOperations.getChildren(curLine, MetaAdapterFactory.getContainmentLink(new UUID(-972752984950357426l, -4964296947050367098l), 8465538089690331500l, 8970989240999019149l, "part"))));
+            if (SNodeOperations.isInstanceOf(nodeToSelect, "jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart") && isNotEmptyString(SPropertyOperations.getString(SNodeOperations.cast(nodeToSelect, "jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart"), MetaAdapterFactory.getProperty(new UUID(-972752984950357426l, -4964296947050367098l), 8970989240999019143l, 8970989240999019144l, "text")))) {
+              caret = SPropertyOperations.getString(SNodeOperations.cast(nodeToSelect, "jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart"), MetaAdapterFactory.getProperty(new UUID(-972752984950357426l, -4964296947050367098l), 8970989240999019143l, 8970989240999019144l, "text")).length();
             } else {
               caret = 0;
             }
@@ -78,11 +80,11 @@ public class TextCommentLinePart_ActionMap {
           if (SNodeOperations.isInstanceOf(SNodeOperations.getPrevSibling(currrentNode), "jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart")) {
             nodeToSelect = SNodeOperations.getPrevSibling(currrentNode);
             SNode linePart = SNodeOperations.cast(nodeToSelect, "jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart");
-            if (isEmptyString(SPropertyOperations.getString(linePart, "text"))) {
+            if (isEmptyString(SPropertyOperations.getString(linePart, MetaAdapterFactory.getProperty(new UUID(-972752984950357426l, -4964296947050367098l), 8970989240999019143l, 8970989240999019144l, "text")))) {
               SNodeOperations.deleteNode(nodeToSelect);
               nodeToSelect = currrentNode;
             } else {
-              SPropertyOperations.set(linePart, "text", SPropertyOperations.getString(linePart, "text").substring(0, SPropertyOperations.getString(linePart, "text").length() - 1));
+              SPropertyOperations.set(linePart, MetaAdapterFactory.getProperty(new UUID(-972752984950357426l, -4964296947050367098l), 8970989240999019143l, 8970989240999019144l, "text"), SPropertyOperations.getString(linePart, MetaAdapterFactory.getProperty(new UUID(-972752984950357426l, -4964296947050367098l), 8970989240999019143l, 8970989240999019144l, "text")).substring(0, SPropertyOperations.getString(linePart, MetaAdapterFactory.getProperty(new UUID(-972752984950357426l, -4964296947050367098l), 8970989240999019143l, 8970989240999019144l, "text")).length() - 1));
             }
             editorContext.selectWRTFocusPolicy(nodeToSelect);
           } else if (SNodeOperations.isInstanceOf(SNodeOperations.getPrevSibling(currrentNode), "jetbrains.mps.baseLanguage.javadoc.structure.InlineTagCommentLinePart") || SNodeOperations.isInstanceOf(SNodeOperations.getPrevSibling(currrentNode), "jetbrains.mps.baseLanguage.javadoc.structure.HTMLElement")) {
@@ -131,11 +133,11 @@ public class TextCommentLinePart_ActionMap {
               //  This is the end of line 
               SNode curLine = SNodeOperations.cast(SNodeOperations.getParent(currentNode), "jetbrains.mps.baseLanguage.javadoc.structure.CommentLine");
               SNode nextLine = SNodeOperations.cast(SNodeOperations.getNextSibling(curLine), "jetbrains.mps.baseLanguage.javadoc.structure.CommentLine");
-              nodeToSelect = ListSequence.fromList(SLinkOperations.getTargets(curLine, "part", true)).last();
+              nodeToSelect = ListSequence.fromList(SLinkOperations.getChildren(curLine, MetaAdapterFactory.getContainmentLink(new UUID(-972752984950357426l, -4964296947050367098l), 8465538089690331500l, 8970989240999019149l, "part"))).last();
               int index = SNodeOperations.getIndexInParent(currentNode);
-              ListSequence.fromList(SLinkOperations.getTargets(curLine, "part", true)).addSequence(ListSequence.fromList(SLinkOperations.getTargets(nextLine, "part", true)));
-              if (SNodeOperations.isInstanceOf(nodeToSelect, "jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart") && isNotEmptyString(SPropertyOperations.getString(SNodeOperations.cast(nodeToSelect, "jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart"), "text"))) {
-                caret = SPropertyOperations.getString(SNodeOperations.cast(nodeToSelect, "jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart"), "text").length();
+              ListSequence.fromList(SLinkOperations.getChildren(curLine, MetaAdapterFactory.getContainmentLink(new UUID(-972752984950357426l, -4964296947050367098l), 8465538089690331500l, 8970989240999019149l, "part"))).addSequence(ListSequence.fromList(SLinkOperations.getChildren(nextLine, MetaAdapterFactory.getContainmentLink(new UUID(-972752984950357426l, -4964296947050367098l), 8465538089690331500l, 8970989240999019149l, "part"))));
+              if (SNodeOperations.isInstanceOf(nodeToSelect, "jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart") && isNotEmptyString(SPropertyOperations.getString(SNodeOperations.cast(nodeToSelect, "jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart"), MetaAdapterFactory.getProperty(new UUID(-972752984950357426l, -4964296947050367098l), 8970989240999019143l, 8970989240999019144l, "text")))) {
+                caret = SPropertyOperations.getString(SNodeOperations.cast(nodeToSelect, "jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart"), MetaAdapterFactory.getProperty(new UUID(-972752984950357426l, -4964296947050367098l), 8970989240999019143l, 8970989240999019144l, "text")).length();
               } else {
                 caret = 0;
               }
@@ -150,11 +152,11 @@ public class TextCommentLinePart_ActionMap {
             //  Caret is at the end of text part inside comment line 
             if (SNodeOperations.isInstanceOf(SNodeOperations.getNextSibling(currentNode), "jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart")) {
               nodeToSelect = SNodeOperations.getNextSibling(currentNode);
-              if (isEmptyString(SPropertyOperations.getString(SNodeOperations.cast(nodeToSelect, "jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart"), "text"))) {
+              if (isEmptyString(SPropertyOperations.getString(SNodeOperations.cast(nodeToSelect, "jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart"), MetaAdapterFactory.getProperty(new UUID(-972752984950357426l, -4964296947050367098l), 8970989240999019143l, 8970989240999019144l, "text")))) {
                 SNodeOperations.deleteNode(nodeToSelect);
                 nodeToSelect = node;
               } else {
-                SPropertyOperations.set(SNodeOperations.cast(nodeToSelect, "jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart"), "text", SPropertyOperations.getString(SNodeOperations.cast(nodeToSelect, "jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart"), "text").substring(1));
+                SPropertyOperations.set(SNodeOperations.cast(nodeToSelect, "jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart"), MetaAdapterFactory.getProperty(new UUID(-972752984950357426l, -4964296947050367098l), 8970989240999019143l, 8970989240999019144l, "text"), SPropertyOperations.getString(SNodeOperations.cast(nodeToSelect, "jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart"), MetaAdapterFactory.getProperty(new UUID(-972752984950357426l, -4964296947050367098l), 8970989240999019143l, 8970989240999019144l, "text")).substring(1));
               }
               editorContext.selectWRTFocusPolicy(nodeToSelect);
               ((EditorCell_Label) editorContext.getSelectedCell()).setCaretPosition(caret);
@@ -166,7 +168,7 @@ public class TextCommentLinePart_ActionMap {
             return;
           }
         } else {
-          SPropertyOperations.set(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart"), "text", SPropertyOperations.getString(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart"), "text").substring(0, selectedCell.getCaretPosition()) + SPropertyOperations.getString(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart"), "text").substring(selectedCell.getCaretPosition() + 1));
+          SPropertyOperations.set(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart"), MetaAdapterFactory.getProperty(new UUID(-972752984950357426l, -4964296947050367098l), 8970989240999019143l, 8970989240999019144l, "text"), SPropertyOperations.getString(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart"), MetaAdapterFactory.getProperty(new UUID(-972752984950357426l, -4964296947050367098l), 8970989240999019143l, 8970989240999019144l, "text")).substring(0, selectedCell.getCaretPosition()) + SPropertyOperations.getString(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart"), MetaAdapterFactory.getProperty(new UUID(-972752984950357426l, -4964296947050367098l), 8970989240999019143l, 8970989240999019144l, "text")).substring(selectedCell.getCaretPosition() + 1));
           return;
         }
 
@@ -215,11 +217,11 @@ public class TextCommentLinePart_ActionMap {
             //  This is the beginning of line 
             SNode curLine = SNodeOperations.cast(SNodeOperations.getParent(currrentNode), "jetbrains.mps.baseLanguage.javadoc.structure.CommentLine");
             SNode prevLine = SNodeOperations.cast(SNodeOperations.getPrevSibling(curLine), "jetbrains.mps.baseLanguage.javadoc.structure.CommentLine");
-            nodeToSelect = ListSequence.fromList(SLinkOperations.getTargets(prevLine, "part", true)).last();
-            int index = ListSequence.fromList(SLinkOperations.getTargets(prevLine, "part", true)).count() - 1;
-            ListSequence.fromList(SLinkOperations.getTargets(prevLine, "part", true)).addSequence(ListSequence.fromList(SLinkOperations.getTargets(curLine, "part", true)));
-            if (SNodeOperations.isInstanceOf(nodeToSelect, "jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart") && isNotEmptyString(SPropertyOperations.getString(SNodeOperations.cast(nodeToSelect, "jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart"), "text"))) {
-              caret = SPropertyOperations.getString(SNodeOperations.cast(nodeToSelect, "jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart"), "text").length();
+            nodeToSelect = ListSequence.fromList(SLinkOperations.getChildren(prevLine, MetaAdapterFactory.getContainmentLink(new UUID(-972752984950357426l, -4964296947050367098l), 8465538089690331500l, 8970989240999019149l, "part"))).last();
+            int index = ListSequence.fromList(SLinkOperations.getChildren(prevLine, MetaAdapterFactory.getContainmentLink(new UUID(-972752984950357426l, -4964296947050367098l), 8465538089690331500l, 8970989240999019149l, "part"))).count() - 1;
+            ListSequence.fromList(SLinkOperations.getChildren(prevLine, MetaAdapterFactory.getContainmentLink(new UUID(-972752984950357426l, -4964296947050367098l), 8465538089690331500l, 8970989240999019149l, "part"))).addSequence(ListSequence.fromList(SLinkOperations.getChildren(curLine, MetaAdapterFactory.getContainmentLink(new UUID(-972752984950357426l, -4964296947050367098l), 8465538089690331500l, 8970989240999019149l, "part"))));
+            if (SNodeOperations.isInstanceOf(nodeToSelect, "jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart") && isNotEmptyString(SPropertyOperations.getString(SNodeOperations.cast(nodeToSelect, "jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart"), MetaAdapterFactory.getProperty(new UUID(-972752984950357426l, -4964296947050367098l), 8970989240999019143l, 8970989240999019144l, "text")))) {
+              caret = SPropertyOperations.getString(SNodeOperations.cast(nodeToSelect, "jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart"), MetaAdapterFactory.getProperty(new UUID(-972752984950357426l, -4964296947050367098l), 8970989240999019143l, 8970989240999019144l, "text")).length();
             } else {
               caret = 0;
             }
@@ -235,11 +237,11 @@ public class TextCommentLinePart_ActionMap {
           if (SNodeOperations.isInstanceOf(SNodeOperations.getPrevSibling(currrentNode), "jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart")) {
             nodeToSelect = SNodeOperations.getPrevSibling(currrentNode);
             SNode linePart = SNodeOperations.cast(nodeToSelect, "jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart");
-            if (isEmptyString(SPropertyOperations.getString(linePart, "text"))) {
+            if (isEmptyString(SPropertyOperations.getString(linePart, MetaAdapterFactory.getProperty(new UUID(-972752984950357426l, -4964296947050367098l), 8970989240999019143l, 8970989240999019144l, "text")))) {
               SNodeOperations.deleteNode(nodeToSelect);
               nodeToSelect = currrentNode;
             } else {
-              SPropertyOperations.set(linePart, "text", SPropertyOperations.getString(linePart, "text").substring(0, SPropertyOperations.getString(linePart, "text").length() - 1));
+              SPropertyOperations.set(linePart, MetaAdapterFactory.getProperty(new UUID(-972752984950357426l, -4964296947050367098l), 8970989240999019143l, 8970989240999019144l, "text"), SPropertyOperations.getString(linePart, MetaAdapterFactory.getProperty(new UUID(-972752984950357426l, -4964296947050367098l), 8970989240999019143l, 8970989240999019144l, "text")).substring(0, SPropertyOperations.getString(linePart, MetaAdapterFactory.getProperty(new UUID(-972752984950357426l, -4964296947050367098l), 8970989240999019143l, 8970989240999019144l, "text")).length() - 1));
             }
             editorContext.selectWRTFocusPolicy(nodeToSelect);
           } else if (SNodeOperations.isInstanceOf(SNodeOperations.getPrevSibling(currrentNode), "jetbrains.mps.baseLanguage.javadoc.structure.InlineTagCommentLinePart") || SNodeOperations.isInstanceOf(SNodeOperations.getPrevSibling(currrentNode), "jetbrains.mps.baseLanguage.javadoc.structure.HTMLElement")) {
@@ -288,11 +290,11 @@ public class TextCommentLinePart_ActionMap {
               //  This is the end of line 
               SNode curLine = SNodeOperations.cast(SNodeOperations.getParent(currentNode), "jetbrains.mps.baseLanguage.javadoc.structure.CommentLine");
               SNode nextLine = SNodeOperations.cast(SNodeOperations.getNextSibling(curLine), "jetbrains.mps.baseLanguage.javadoc.structure.CommentLine");
-              nodeToSelect = ListSequence.fromList(SLinkOperations.getTargets(curLine, "part", true)).last();
+              nodeToSelect = ListSequence.fromList(SLinkOperations.getChildren(curLine, MetaAdapterFactory.getContainmentLink(new UUID(-972752984950357426l, -4964296947050367098l), 8465538089690331500l, 8970989240999019149l, "part"))).last();
               int index = SNodeOperations.getIndexInParent(currentNode);
-              ListSequence.fromList(SLinkOperations.getTargets(curLine, "part", true)).addSequence(ListSequence.fromList(SLinkOperations.getTargets(nextLine, "part", true)));
-              if (SNodeOperations.isInstanceOf(nodeToSelect, "jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart") && isNotEmptyString(SPropertyOperations.getString(SNodeOperations.cast(nodeToSelect, "jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart"), "text"))) {
-                caret = SPropertyOperations.getString(SNodeOperations.cast(nodeToSelect, "jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart"), "text").length();
+              ListSequence.fromList(SLinkOperations.getChildren(curLine, MetaAdapterFactory.getContainmentLink(new UUID(-972752984950357426l, -4964296947050367098l), 8465538089690331500l, 8970989240999019149l, "part"))).addSequence(ListSequence.fromList(SLinkOperations.getChildren(nextLine, MetaAdapterFactory.getContainmentLink(new UUID(-972752984950357426l, -4964296947050367098l), 8465538089690331500l, 8970989240999019149l, "part"))));
+              if (SNodeOperations.isInstanceOf(nodeToSelect, "jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart") && isNotEmptyString(SPropertyOperations.getString(SNodeOperations.cast(nodeToSelect, "jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart"), MetaAdapterFactory.getProperty(new UUID(-972752984950357426l, -4964296947050367098l), 8970989240999019143l, 8970989240999019144l, "text")))) {
+                caret = SPropertyOperations.getString(SNodeOperations.cast(nodeToSelect, "jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart"), MetaAdapterFactory.getProperty(new UUID(-972752984950357426l, -4964296947050367098l), 8970989240999019143l, 8970989240999019144l, "text")).length();
               } else {
                 caret = 0;
               }
@@ -307,11 +309,11 @@ public class TextCommentLinePart_ActionMap {
             //  Caret is at the end of text part inside comment line 
             if (SNodeOperations.isInstanceOf(SNodeOperations.getNextSibling(currentNode), "jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart")) {
               nodeToSelect = SNodeOperations.getNextSibling(currentNode);
-              if (isEmptyString(SPropertyOperations.getString(SNodeOperations.cast(nodeToSelect, "jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart"), "text"))) {
+              if (isEmptyString(SPropertyOperations.getString(SNodeOperations.cast(nodeToSelect, "jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart"), MetaAdapterFactory.getProperty(new UUID(-972752984950357426l, -4964296947050367098l), 8970989240999019143l, 8970989240999019144l, "text")))) {
                 SNodeOperations.deleteNode(nodeToSelect);
                 nodeToSelect = node;
               } else {
-                SPropertyOperations.set(SNodeOperations.cast(nodeToSelect, "jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart"), "text", SPropertyOperations.getString(SNodeOperations.cast(nodeToSelect, "jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart"), "text").substring(1));
+                SPropertyOperations.set(SNodeOperations.cast(nodeToSelect, "jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart"), MetaAdapterFactory.getProperty(new UUID(-972752984950357426l, -4964296947050367098l), 8970989240999019143l, 8970989240999019144l, "text"), SPropertyOperations.getString(SNodeOperations.cast(nodeToSelect, "jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart"), MetaAdapterFactory.getProperty(new UUID(-972752984950357426l, -4964296947050367098l), 8970989240999019143l, 8970989240999019144l, "text")).substring(1));
               }
               editorContext.selectWRTFocusPolicy(nodeToSelect);
               ((EditorCell_Label) editorContext.getSelectedCell()).setCaretPosition(caret);
@@ -323,7 +325,7 @@ public class TextCommentLinePart_ActionMap {
             return;
           }
         } else {
-          SPropertyOperations.set(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart"), "text", SPropertyOperations.getString(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart"), "text").substring(0, selectedCell.getCaretPosition()) + SPropertyOperations.getString(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart"), "text").substring(selectedCell.getCaretPosition() + 1));
+          SPropertyOperations.set(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart"), MetaAdapterFactory.getProperty(new UUID(-972752984950357426l, -4964296947050367098l), 8970989240999019143l, 8970989240999019144l, "text"), SPropertyOperations.getString(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart"), MetaAdapterFactory.getProperty(new UUID(-972752984950357426l, -4964296947050367098l), 8970989240999019143l, 8970989240999019144l, "text")).substring(0, selectedCell.getCaretPosition()) + SPropertyOperations.getString(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart"), MetaAdapterFactory.getProperty(new UUID(-972752984950357426l, -4964296947050367098l), 8970989240999019143l, 8970989240999019144l, "text")).substring(selectedCell.getCaretPosition() + 1));
           return;
         }
 

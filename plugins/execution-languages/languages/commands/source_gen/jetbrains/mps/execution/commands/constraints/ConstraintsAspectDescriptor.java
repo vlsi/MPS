@@ -5,6 +5,7 @@ package jetbrains.mps.execution.commands.constraints;
 import jetbrains.mps.smodel.runtime.ConstraintsDescriptor;
 import java.util.Arrays;
 import jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor;
+import jetbrains.mps.smodel.adapter.ids.SConceptId;
 
 public class ConstraintsAspectDescriptor implements jetbrains.mps.smodel.runtime.ConstraintsAspectDescriptor {
   public ConstraintsAspectDescriptor() {
@@ -34,9 +35,45 @@ public class ConstraintsAspectDescriptor implements jetbrains.mps.smodel.runtime
       case 0:
         return new CommandBuilderExpression_Constraints();
       default:
-        // todo: illegal in some cases? 
         return new BaseConstraintsDescriptor(fqName);
     }
+  }
+  public ConstraintsDescriptor getDescriptor(SConceptId conceptId) {
+    long id = conceptId.getConceptId();
+    if (id == 856705193941281756l) {
+      return new CommandParameterReference_Constraints();
+    }
+    if (id == 856705193941281764l) {
+      return new CommandParameterAssignment_Constraints();
+    }
+    if (id == 856705193941281777l) {
+      return new CommandDebuggerOperation_Constraints();
+    }
+    if (id == 8478830098674460022l) {
+      return new DebuggerSettingsCommandParameterDeclaration_Constraints();
+    }
+    if (id == 6129022259108579244l) {
+      return new ExecuteCommandPart_Constraints();
+    }
+    if (id == 856705193941281810l) {
+      return new ProcessType_Constraints();
+    }
+    if (id == 612376536074296995l) {
+      return new CommandProcessType_Constraints();
+    }
+    if (id == 2459753140357918802l) {
+      return new StartAndWaitOperation_Constraints();
+    }
+    if (id == 8234001627573935224l) {
+      return new CommandPartToListOperation_Constraints();
+    }
+    if (id == 1616228152992023913l) {
+      return new CommandPartLengthOperation_Constraints();
+    }
+    if (id == 856705193941281780l) {
+      return new CommandBuilderExpression_Constraints();
+    }
+    return new BaseConstraintsDescriptor(conceptId);
   }
   private static String[] stringSwitchCases_2qnle6_a0a0b = new String[]{"jetbrains.mps.execution.commands.structure.CommandBuilderExpression", "jetbrains.mps.execution.commands.structure.CommandDebuggerOperation", "jetbrains.mps.execution.commands.structure.CommandParameterAssignment", "jetbrains.mps.execution.commands.structure.CommandParameterReference", "jetbrains.mps.execution.commands.structure.CommandPartLengthOperation", "jetbrains.mps.execution.commands.structure.CommandPartToListOperation", "jetbrains.mps.execution.commands.structure.CommandProcessType", "jetbrains.mps.execution.commands.structure.DebuggerSettingsCommandParameterDeclaration", "jetbrains.mps.execution.commands.structure.ExecuteCommandPart", "jetbrains.mps.execution.commands.structure.ProcessType", "jetbrains.mps.execution.commands.structure.StartAndWaitOperation"};
 }

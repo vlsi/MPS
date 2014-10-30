@@ -6,11 +6,13 @@ import jetbrains.mps.lang.dataFlow.DataFlowBuilder;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.lang.dataFlow.DataFlowBuilderContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 
 public class ActionParameterReferenceOperation_DataFlow extends DataFlowBuilder {
   public ActionParameterReferenceOperation_DataFlow() {
   }
   public void build(final IOperationContext operationContext, final DataFlowBuilderContext _context) {
-    _context.getBuilder().emitRead(SLinkOperations.getTarget(_context.getNode(), "member", false), "r:00000000-0000-4000-0000-011c89590362(jetbrains.mps.lang.plugin.dataFlow)/1241370846227");
+    _context.getBuilder().emitRead(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(new UUID(4917733117167750838l, -7710007501170303426l), 1205756064662l, 1205756909548l, "member")), "r:00000000-0000-4000-0000-011c89590362(jetbrains.mps.lang.plugin.dataFlow)/1241370846227");
   }
 }

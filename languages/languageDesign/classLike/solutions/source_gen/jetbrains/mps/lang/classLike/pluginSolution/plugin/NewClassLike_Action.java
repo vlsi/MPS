@@ -9,6 +9,8 @@ import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import org.apache.log4j.Level;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import com.intellij.openapi.actionSystem.CommonDataKeys;
@@ -53,7 +55,7 @@ public class NewClassLike_Action extends BaseAction {
   }
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
-      event.getPresentation().setText(SPropertyOperations.getString(NewClassLike_Action.this.descr, "name") + " class");
+      event.getPresentation().setText(SPropertyOperations.getString(NewClassLike_Action.this.descr, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")) + " class");
     } catch (Throwable t) {
       if (LOG.isEnabledFor(Level.ERROR)) {
         LOG.error("User's action doUpdate method failed. Action:" + "NewClassLike", t);
@@ -88,8 +90,8 @@ public class NewClassLike_Action extends BaseAction {
       final SNode newClass = ((SNode) SNodeFactoryOperations.createNewNode(NameUtil.nodeFQName(ClassLikeDescriptor_Behavior.call_getPreferredConcept_1825613483881161085(NewClassLike_Action.this.descr)), null));
       ((SModel) MapSequence.fromMap(_params).get("model")).addRootNode(newClass);
       AttributeOperations.setAttribute(newClass, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.classLike.structure.ClassLikeAnnotation"), SConceptOperations.createNewNode("jetbrains.mps.lang.classLike.structure.ClassLikeAnnotation", null));
-      SLinkOperations.setTarget(AttributeOperations.getAttribute(newClass, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.classLike.structure.ClassLikeAnnotation")), "descriptor", NewClassLike_Action.this.descr, false);
-      ListSequence.fromList(SLinkOperations.getTargets(NewClassLike_Action.this.descr, "member", true)).visitAll(new IVisitor<SNode>() {
+      SLinkOperations.setTarget(AttributeOperations.getAttribute(newClass, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.classLike.structure.ClassLikeAnnotation")), MetaAdapterFactory.getReferenceLink(new UUID(-4047124328593011742l, -4867279722304451481l), 3571587574961713354l, 3571587574961717879l, "descriptor"), NewClassLike_Action.this.descr);
+      ListSequence.fromList(SLinkOperations.getChildren(NewClassLike_Action.this.descr, MetaAdapterFactory.getContainmentLink(new UUID(-4047124328593011742l, -4867279722304451481l), 3751132065236767072l, 8264762413010642120l, "member"))).visitAll(new IVisitor<SNode>() {
         public void visit(SNode it) {
           BehaviorReflection.invokeVirtual(Void.class, it, "virtual_init_6478870542308635887", new Object[]{newClass});
         }

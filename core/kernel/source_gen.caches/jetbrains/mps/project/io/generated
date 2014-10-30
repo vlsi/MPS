@@ -1,33 +1,3 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="14b0mtk9l7bs3nb44111s2b8hidxthu">
-  <dep model="2d3c70e9-aab2-4870-8d8d-6036800e4103/r:a42e26eb-bbea-4e8d-a549-0d224ab71e57(jetbrains.mps.kernel/jetbrains.mps.project.persistence)" hash="-bemzns1q4phertluhb7t6ovv3wh4hzp" />
-  <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" hash="-9fyf8ube0aqhy2tpqxm8qrxfi4z6r48" />
-  <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="-byzd16c9464mzaxq1u6n0ssaly7qydz" />
-  <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="-8tpnzgwrbijeinrlmy2syctrrkkgmqe" />
-  <common hash="14b0mtk9l7bs3nb44111s2b8hidxthu" dependsOnNodes="true">
-    <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
-  </common>
-  <source id="557142600900286111" name="DescriptorIOFacade">
-    <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
-    <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
-    <file name="DescriptorIOFacade.java" />
-  </source>
-  <source id="557142600900286148" name="DescriptorIO">
-    <file name="DescriptorIO.java" />
-  </source>
-  <source id="557142600900532740" name="DescriptorIOProvider">
-    <file name="DescriptorIOProvider.java" />
-  </source>
-  <source id="557142600900539533" name="StandardDescriptorIOProvider">
-    <dep model="2d3c70e9-aab2-4870-8d8d-6036800e4103/r:a42e26eb-bbea-4e8d-a549-0d224ab71e57(jetbrains.mps.kernel/jetbrains.mps.project.persistence)" />
-    <file name="StandardDescriptorIOProvider.java" />
-  </source>
-  <source id="3323419009397486857" name="IdeaDescriptorIOProvider">
-    <file name="IdeaDescriptorIOProvider.java" />
-  </source>
-  <source id="9081946191808704816" name="DescriptorIOException">
-    <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
-    <file name="DescriptorIOException.java" />
-  </source>
-</dependencies>
+<dependencies version="2" modelHash="14b0mtk9l7bs3nb44111s2b8hidxthu" />
 

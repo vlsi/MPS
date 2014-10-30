@@ -5,11 +5,13 @@ package jetbrains.mps.lang.resources.behavior;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 
 public class IconResourceBundle_Behavior {
   public static void init(SNode thisNode) {
   }
   public static String call_getJavaName_8974276187400030159(SNode thisNode) {
-    return "IconResourceBundle_" + NameUtil.toValidIdentifier(SPropertyOperations.getString(thisNode, "name"));
+    return "IconResourceBundle_" + NameUtil.toValidIdentifier(SPropertyOperations.getString(thisNode, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")));
   }
 }

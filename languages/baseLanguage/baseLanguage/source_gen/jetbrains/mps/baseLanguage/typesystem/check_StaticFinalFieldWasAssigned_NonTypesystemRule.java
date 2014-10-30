@@ -8,6 +8,8 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.util.Iterator;
@@ -22,10 +24,10 @@ public class check_StaticFinalFieldWasAssigned_NonTypesystemRule extends Abstrac
   public check_StaticFinalFieldWasAssigned_NonTypesystemRule() {
   }
   public void applyRule(final SNode field, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    if (!(SPropertyOperations.getBoolean(field, "isFinal"))) {
+    if (!(SPropertyOperations.getBoolean(field, MetaAdapterFactory.getProperty(new UUID(-935030926396207931l, -6610165693999523818l), 1068431474542l, 1176718929932l, "isFinal")))) {
       return;
     }
-    if (SLinkOperations.getTarget(field, "initializer", true) != null) {
+    if (SLinkOperations.getTarget(field, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068431474542l, 1068431790190l, "initializer")) != null) {
       return;
     }
     SNode classifier = SNodeOperations.getAncestor(field, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false);
@@ -38,7 +40,7 @@ public class check_StaticFinalFieldWasAssigned_NonTypesystemRule extends Abstrac
       while (initializer_it.hasNext()) {
         initializer_var = initializer_it.next();
         for (SNode reference : SNodeOperations.getDescendantsWhereConceptInList(initializer_var, new String[]{"jetbrains.mps.baseLanguage.structure.StaticFieldReference", "jetbrains.mps.baseLanguage.structure.VariableReference"}, false, new String[]{})) {
-          if (SLinkOperations.getTarget(reference, "variableDeclaration", false) == field && CheckingUtil.isAssigned(reference)) {
+          if (SLinkOperations.getTarget(reference, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068498886296l, 1068581517664l, "variableDeclaration")) == field && CheckingUtil.isAssigned(reference)) {
             return;
           }
         }
@@ -46,7 +48,7 @@ public class check_StaticFinalFieldWasAssigned_NonTypesystemRule extends Abstrac
     }
     {
       MessageTarget errorTarget = new NodeMessageTarget();
-      IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(field, "Variable '" + SPropertyOperations.getString(field, "name") + "' might not have been initialized", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "843236768047680817", null, errorTarget);
+      IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(field, "Variable '" + SPropertyOperations.getString(field, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")) + "' might not have been initialized", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "843236768047680817", null, errorTarget);
     }
   }
   public String getApplicableConceptFQName() {

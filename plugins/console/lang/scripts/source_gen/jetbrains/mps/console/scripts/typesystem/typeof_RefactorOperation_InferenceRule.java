@@ -10,6 +10,8 @@ import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.baseLanguage.behavior.IOperation_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.smodel.SModelUtil_new;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
@@ -33,7 +35,7 @@ public class typeof_RefactorOperation_InferenceRule extends AbstractInferenceRul
     }
     final SNode refactoringParamType_typevar_1240677567421 = typeCheckingContext.createNewRuntimeTypesVariable();
     {
-      SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(refactorOperation, "closure", true);
+      SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(refactorOperation, MetaAdapterFactory.getContainmentLink(new UUID(-8968771020793164004l, -7182180101671965361l), 1204796164442l, 1204796294226l, "closure"));
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:52a00659-de5e-42a5-97ab-47bf270f55a9(jetbrains.mps.console.scripts.typesystem)", "2704222862538118755", 0, null);
       typeCheckingContext.createGreaterThanInequality((SNode) _quotation_createNode_u2w4di_a0e0b(typeCheckingContext.getRepresentative(refactoringParamType_typevar_1240677567421)), (SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:52a00659-de5e-42a5-97ab-47bf270f55a9(jetbrains.mps.console.scripts.typesystem)", "2704222862538112956", true), false, true, _info_12389875345);
     }

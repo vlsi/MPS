@@ -15,6 +15,8 @@ import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.openapi.editor.style.StyleRegistry;
 import java.awt.Color;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
@@ -50,7 +52,7 @@ public class TypeOfExpression_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private static Color _StyleParameter_QueryFunction_ndq0bl_a0a0(EditorContext editorContext, SNode node) {
-    if (SPropertyOperations.getBoolean(node, "skipDependencyOnCurrent")) {
+    if (SPropertyOperations.getBoolean(node, MetaAdapterFactory.getProperty(new UUID(8817443762339858024l, -6091446231697526094l), 1174657487114l, 1195058053095l, "skipDependencyOnCurrent"))) {
       return Color.GRAY;
     } else {
       return MPSColors.DARK_BLUE;

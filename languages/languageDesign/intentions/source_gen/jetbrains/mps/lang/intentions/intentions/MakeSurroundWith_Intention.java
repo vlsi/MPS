@@ -14,6 +14,8 @@ import jetbrains.mps.smodel.SNodePointer;
 import java.util.Collections;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.intentions.IntentionDescriptor;
 
@@ -77,17 +79,17 @@ public class MakeSurroundWith_Intention implements IntentionFactory {
       } else {
         sd = SModelOperations.createNewRootNode(SNodeOperations.getModel(node), "jetbrains.mps.lang.intentions.structure.SurroundWithIntentionDeclaration", null);
       }
-      SPropertyOperations.set(sd, "name", SPropertyOperations.getString(node, "name"));
-      SPropertyOperations.set(sd, "shortDescription", SPropertyOperations.getString(node, "shortDescription"));
-      SPropertyOperations.set(sd, "alias", SPropertyOperations.getString(node, "alias"));
-      SPropertyOperations.set(sd, "virtualPackage", SPropertyOperations.getString(node, "virtualPackage"));
-      SPropertyOperations.set(sd, "isAvailableInChildNodes", "" + (SPropertyOperations.getBoolean(node, "isAvailableInChildNodes")));
-      SPropertyOperations.set(sd, "isErrorIntention", "" + (SPropertyOperations.getBoolean(node, "isErrorIntention")));
-      SLinkOperations.setTarget(sd, "forConcept", SLinkOperations.getTarget(node, "forConcept", false), false);
-      SLinkOperations.setTarget(sd, "descriptionFunction", SLinkOperations.getTarget(node, "descriptionFunction", true), true);
-      SLinkOperations.setTarget(sd, "childFilterFunction", SLinkOperations.getTarget(node, "childFilterFunction", true), true);
-      SLinkOperations.setTarget(sd, "isApplicableFunction", SLinkOperations.getTarget(node, "isApplicableFunction", true), true);
-      SLinkOperations.setTarget(sd, "executeFunction", SLinkOperations.getTarget(node, "executeFunction", true), true);
+      SPropertyOperations.set(sd, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"), SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name")));
+      SPropertyOperations.set(sd, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1133920641626l, 1156234966388l, "shortDescription"), SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1133920641626l, 1156234966388l, "shortDescription")));
+      SPropertyOperations.set(sd, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1133920641626l, 1156235010670l, "alias"), SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1133920641626l, 1156235010670l, "alias")));
+      SPropertyOperations.set(sd, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1133920641626l, 1193676396447l, "virtualPackage"), SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1133920641626l, 1193676396447l, "virtualPackage")));
+      SPropertyOperations.set(sd, MetaAdapterFactory.getProperty(new UUID(-2906742361791184688l, -8921219390863794400l), 2522969319638091381l, 2522969319638091386l, "isAvailableInChildNodes"), "" + (SPropertyOperations.getBoolean(node, MetaAdapterFactory.getProperty(new UUID(-2906742361791184688l, -8921219390863794400l), 2522969319638091381l, 2522969319638091386l, "isAvailableInChildNodes"))));
+      SPropertyOperations.set(sd, MetaAdapterFactory.getProperty(new UUID(-2906742361791184688l, -8921219390863794400l), 2522969319638091381l, 2522969319638091385l, "isErrorIntention"), "" + (SPropertyOperations.getBoolean(node, MetaAdapterFactory.getProperty(new UUID(-2906742361791184688l, -8921219390863794400l), 2522969319638091381l, 2522969319638091385l, "isErrorIntention"))));
+      SLinkOperations.setTarget(sd, MetaAdapterFactory.getReferenceLink(new UUID(-2906742361791184688l, -8921219390863794400l), 2522969319638091381l, 2522969319638198290l, "forConcept"), SLinkOperations.getTarget(node, MetaAdapterFactory.getReferenceLink(new UUID(-2906742361791184688l, -8921219390863794400l), 2522969319638091381l, 2522969319638198290l, "forConcept")));
+      SLinkOperations.setTarget(sd, MetaAdapterFactory.getContainmentLink(new UUID(-2906742361791184688l, -8921219390863794400l), 2522969319638091381l, 2522969319638093993l, "descriptionFunction"), SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-2906742361791184688l, -8921219390863794400l), 2522969319638091381l, 2522969319638093993l, "descriptionFunction")));
+      SLinkOperations.setTarget(sd, MetaAdapterFactory.getContainmentLink(new UUID(-2906742361791184688l, -8921219390863794400l), 2522969319638091381l, 2522969319638093994l, "childFilterFunction"), SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-2906742361791184688l, -8921219390863794400l), 2522969319638091381l, 2522969319638093994l, "childFilterFunction")));
+      SLinkOperations.setTarget(sd, MetaAdapterFactory.getContainmentLink(new UUID(-2906742361791184688l, -8921219390863794400l), 2522969319638091381l, 2522969319638093995l, "isApplicableFunction"), SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-2906742361791184688l, -8921219390863794400l), 2522969319638091381l, 2522969319638093995l, "isApplicableFunction")));
+      SLinkOperations.setTarget(sd, MetaAdapterFactory.getContainmentLink(new UUID(-2906742361791184688l, -8921219390863794400l), 2522969319638091381l, 2522969319638198291l, "executeFunction"), SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(new UUID(-2906742361791184688l, -8921219390863794400l), 2522969319638091381l, 2522969319638198291l, "executeFunction")));
 
       SNodeOperations.deleteNode(node);
     }

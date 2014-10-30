@@ -19,6 +19,8 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 
@@ -92,7 +94,7 @@ public class LogStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private static boolean renderingCondition_xuwwk0_a2a(SNode node, EditorContext editorContext) {
-    return SPropertyOperations.getBoolean(node, "hasException");
+    return SPropertyOperations.getBoolean(node, MetaAdapterFactory.getProperty(new UUID(8505622446592443681l, -8359413340076074077l), 1167227138527l, 1167228628751l, "hasException"));
   }
   private EditorCell createConstant_xuwwk0_a2a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ",");

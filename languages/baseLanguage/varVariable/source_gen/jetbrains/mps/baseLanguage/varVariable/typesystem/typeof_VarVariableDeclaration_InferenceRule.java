@@ -8,6 +8,8 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.baseLanguage.closures.constraints.ClassifierTypeUtil;
@@ -19,7 +21,7 @@ public class typeof_VarVariableDeclaration_InferenceRule extends AbstractInferen
   public void applyRule(final SNode varVariableDeclaration, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     final SNode initializerType_typevar_8425555512443936489 = typeCheckingContext.createNewRuntimeTypesVariable();
     {
-      SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(varVariableDeclaration, "initializer", true);
+      SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(varVariableDeclaration, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068431474542l, 1068431790190l, "initializer"));
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:376aaabb-efff-403a-9afa-fc63fa67c6b3(jetbrains.mps.baseLanguage.varVariable.typesystem)", "1236696586241", 0, null);
       typeCheckingContext.createEquation((SNode) typeCheckingContext.getRepresentative(initializerType_typevar_8425555512443936489), (SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:376aaabb-efff-403a-9afa-fc63fa67c6b3(jetbrains.mps.baseLanguage.varVariable.typesystem)", "1236696598890", true), _info_12389875345);
     }
