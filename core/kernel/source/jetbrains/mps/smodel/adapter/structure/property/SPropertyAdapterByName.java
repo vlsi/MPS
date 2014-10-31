@@ -20,6 +20,7 @@ import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 import jetbrains.mps.smodel.adapter.ids.SPropertyId;
 import jetbrains.mps.smodel.language.ConceptRegistry;
+import jetbrains.mps.smodel.language.ConceptRegistryUtil;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import jetbrains.mps.smodel.runtime.PropertyDescriptor;
 import org.jetbrains.annotations.NotNull;
@@ -44,7 +45,7 @@ public class SPropertyAdapterByName extends SPropertyAdapter {
 
   @Override
   protected PropertyDescriptor getPropertyDescriptor() {
-    ConceptDescriptor conceptDescriptor = ConceptRegistry.getInstance().getConceptDescriptor(myConceptName);
+    ConceptDescriptor conceptDescriptor = ConceptRegistryUtil.getConceptDescriptor(myConceptName);
     if (conceptDescriptor == null) return null;
     return conceptDescriptor.getPropertyDescriptor(myPropertyName);
   }

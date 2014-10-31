@@ -22,6 +22,7 @@ import jetbrains.mps.smodel.adapter.ids.SReferenceLinkId;
 import jetbrains.mps.smodel.adapter.structure.concept.SConceptAdapterById;
 import jetbrains.mps.smodel.adapter.structure.concept.SInterfaceConceptAdapterById;
 import jetbrains.mps.smodel.language.ConceptRegistry;
+import jetbrains.mps.smodel.language.ConceptRegistryUtil;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import jetbrains.mps.smodel.runtime.ReferenceDescriptor;
 import org.jetbrains.annotations.NotNull;
@@ -47,14 +48,9 @@ public class SReferenceLinkAdapterByName extends SReferenceLinkAdapter {
   @Override
   @Nullable
   protected ReferenceDescriptor getReferenceDescriptor() {
-    ConceptDescriptor cd = ConceptRegistry.getInstance().getConceptDescriptor(myConceptName);
+    ConceptDescriptor cd = ConceptRegistryUtil.getConceptDescriptor(myConceptName);
     if (cd == null) return null;
     return cd.getRefDescriptor(myName);
-  }
-
-  @Override
-  public org.jetbrains.mps.openapi.language.SAbstractConcept getContainingConcept() {
-    return super.getContainingConcept();
   }
 
   @Override
