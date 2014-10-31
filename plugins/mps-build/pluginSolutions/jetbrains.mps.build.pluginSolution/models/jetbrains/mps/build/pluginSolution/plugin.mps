@@ -31,6 +31,7 @@
     <model ref="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.awt(java.awt@java_stub)" name="java.awt@java_stub" />
     <model ref="f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(org.jetbrains.mps.openapi.model@java_stub)" name="org.jetbrains.mps.openapi.model@java_stub" />
     <model ref="f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.module(org.jetbrains.mps.openapi.module@java_stub)" name="org.jetbrains.mps.openapi.module@java_stub" />
+    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068431474542" name="jetbrains.mps.baseLanguage.structure.VariableDeclaration" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068498886292" name="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068498886294" name="jetbrains.mps.baseLanguage.structure.AssignmentExpression" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068498886296" name="jetbrains.mps.baseLanguage.structure.VariableReference" />
@@ -53,7 +54,10 @@
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1080120340718" name="jetbrains.mps.baseLanguage.structure.AndExpression" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1081236700937" name="jetbrains.mps.baseLanguage.structure.StaticMethodCall" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1081516740877" name="jetbrains.mps.baseLanguage.structure.NotExpression" />
+    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1081773326031" name="jetbrains.mps.baseLanguage.structure.BinaryOperation" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1107535904670" name="jetbrains.mps.baseLanguage.structure.ClassifierType" />
+    <concept id="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1133920641626" name="jetbrains.mps.lang.core.structure.BaseConcept" />
+    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1137021947720" name="jetbrains.mps.baseLanguage.structure.ConceptFunction" />
     <concept id="7866978e-a0f0-4cc7-81bc-4d213d9375e1/1138055754698" name="jetbrains.mps.lang.smodel.structure.SNodeType" />
     <concept id="7866978e-a0f0-4cc7-81bc-4d213d9375e1/1138056022639" name="jetbrains.mps.lang.smodel.structure.SPropertyAccess" />
     <concept id="7866978e-a0f0-4cc7-81bc-4d213d9375e1/1138056143562" name="jetbrains.mps.lang.smodel.structure.SLinkAccess" />
@@ -67,6 +71,7 @@
     <concept id="83888646-71ce-4f1c-9c53-c54016f6ad4f/1151702311717" name="jetbrains.mps.baseLanguage.collections.structure.ToListOperation" />
     <concept id="83888646-71ce-4f1c-9c53-c54016f6ad4f/1160600644654" name="jetbrains.mps.baseLanguage.collections.structure.ListCreatorWithInit" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1163668896201" name="jetbrains.mps.baseLanguage.structure.TernaryOperatorExpression" />
+    <concept id="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" />
     <concept id="7866978e-a0f0-4cc7-81bc-4d213d9375e1/1171310072040" name="jetbrains.mps.lang.smodel.structure.Node_GetContainingRootOperation" />
     <concept id="7866978e-a0f0-4cc7-81bc-4d213d9375e1/1171999116870" name="jetbrains.mps.lang.smodel.structure.Node_IsNullOperation" />
     <concept id="7866978e-a0f0-4cc7-81bc-4d213d9375e1/1177026924588" name="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" />
@@ -77,16 +82,23 @@
     <concept id="83888646-71ce-4f1c-9c53-c54016f6ad4f/1202128969694" name="jetbrains.mps.baseLanguage.collections.structure.SelectOperation" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1202948039474" name="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" />
     <concept id="83888646-71ce-4f1c-9c53-c54016f6ad4f/1203518072036" name="jetbrains.mps.baseLanguage.collections.structure.SmartClosureParameterDeclaration" />
+    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1204053956946" name="jetbrains.mps.baseLanguage.structure.IMethodCall" />
+    <concept id="83888646-71ce-4f1c-9c53-c54016f6ad4f/1204796164442" name="jetbrains.mps.baseLanguage.collections.structure.InternalSequenceOperation" />
     <concept id="443f4c36-fcf5-4eb6-9500-8d06ed259e3e/1205752633985" name="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression" />
+    <concept id="443f4c36-fcf5-4eb6-9500-8d06ed259e3e/1205756064662" name="jetbrains.mps.baseLanguage.classifiers.structure.IMemberOperation" />
     <concept id="443f4c36-fcf5-4eb6-9500-8d06ed259e3e/1205769149993" name="jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierMethodCallOperation" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1212685548494" name="jetbrains.mps.baseLanguage.structure.ClassCreator" />
+    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1215693861676" name="jetbrains.mps.baseLanguage.structure.BaseAssignmentExpression" />
     <concept id="7866978e-a0f0-4cc7-81bc-4d213d9375e1/1219352745532" name="jetbrains.mps.lang.smodel.structure.NodeRefExpression" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1225271177708" name="jetbrains.mps.baseLanguage.structure.StringType" />
     <concept id="83888646-71ce-4f1c-9c53-c54016f6ad4f/1225727723840" name="jetbrains.mps.baseLanguage.collections.structure.FindFirstOperation" />
+    <concept id="83888646-71ce-4f1c-9c53-c54016f6ad4f/1237721394592" name="jetbrains.mps.baseLanguage.collections.structure.AbstractContainerCreator" />
     <concept id="f3347d8a-0e79-4f35-8ac9-1574f25c986f/856705193941281764" name="jetbrains.mps.execution.commands.structure.CommandParameterAssignment" />
     <concept id="f3347d8a-0e79-4f35-8ac9-1574f25c986f/856705193941281780" name="jetbrains.mps.execution.commands.structure.CommandBuilderExpression" />
     <concept id="f3347d8a-0e79-4f35-8ac9-1574f25c986f/856705193941281790" name="jetbrains.mps.execution.commands.structure.ReportExecutionError" />
+    <concept id="f3347d8a-0e79-4f35-8ac9-1574f25c986f/856705193941281792" name="jetbrains.mps.execution.commands.structure.ReportErrorStatement" />
     <concept id="756e911c-3f1f-4a48-bdf5-a2ceb91b723c/946964771156066332" name="jetbrains.mps.execution.settings.structure.PersistentConfigurationType" />
+    <concept id="756e911c-3f1f-4a48-bdf5-a2ceb91b723c/946964771156066336" name="jetbrains.mps.execution.settings.structure.PersistentConfiguration" />
     <concept id="756e911c-3f1f-4a48-bdf5-a2ceb91b723c/946964771156066557" name="jetbrains.mps.execution.settings.structure.TemplatePersistentConfigurationType" />
     <concept id="756e911c-3f1f-4a48-bdf5-a2ceb91b723c/946964771156066563" name="jetbrains.mps.execution.settings.structure.ReportConfigurationErrorStatement" />
     <concept id="756e911c-3f1f-4a48-bdf5-a2ceb91b723c/946964771156066566" name="jetbrains.mps.execution.settings.structure.CreateEditor_Function" />
@@ -95,6 +107,7 @@
     <concept id="756e911c-3f1f-4a48-bdf5-a2ceb91b723c/946964771156066582" name="jetbrains.mps.execution.settings.structure.PersistentConfigurationTemplateInitializer" />
     <concept id="756e911c-3f1f-4a48-bdf5-a2ceb91b723c/946964771156066585" name="jetbrains.mps.execution.settings.structure.PersistentPropertyDeclaration" />
     <concept id="756e911c-3f1f-4a48-bdf5-a2ceb91b723c/946964771156066588" name="jetbrains.mps.execution.settings.structure.EditorExpression" />
+    <concept id="756e911c-3f1f-4a48-bdf5-a2ceb91b723c/946964771156066594" name="jetbrains.mps.execution.settings.structure.IPersistentPropertyHolder" />
     <concept id="756e911c-3f1f-4a48-bdf5-a2ceb91b723c/946964771156066597" name="jetbrains.mps.execution.settings.structure.CheckProperties_Function" />
     <concept id="756e911c-3f1f-4a48-bdf5-a2ceb91b723c/946964771156066601" name="jetbrains.mps.execution.settings.structure.ApplyTo_Function" />
     <concept id="756e911c-3f1f-4a48-bdf5-a2ceb91b723c/946964771156066606" name="jetbrains.mps.execution.settings.structure.EditorOperationCall" />
@@ -104,8 +117,10 @@
     <concept id="756e911c-3f1f-4a48-bdf5-a2ceb91b723c/946964771156066621" name="jetbrains.mps.execution.settings.structure.SettingsEditor" />
     <concept id="756e911c-3f1f-4a48-bdf5-a2ceb91b723c/946964771156067216" name="jetbrains.mps.execution.settings.structure.Configuration_Parameter" />
     <concept id="22e72e4c-0f69-46ce-8403-6750153aa615/946964771156870353" name="jetbrains.mps.execution.configurations.structure.StartProcessHandlerStatement" />
+    <concept id="756e911c-3f1f-4a48-bdf5-a2ceb91b723c/946964771156905617" name="jetbrains.mps.execution.settings.structure.PersistentConfigurationAssistent" />
     <concept id="22e72e4c-0f69-46ce-8403-6750153aa615/2401501559171345993" name="jetbrains.mps.execution.configurations.structure.RunConfiguration" />
     <concept id="22e72e4c-0f69-46ce-8403-6750153aa615/2401501559171345994" name="jetbrains.mps.execution.configurations.structure.RunConfigurationKind" />
+    <concept id="22e72e4c-0f69-46ce-8403-6750153aa615/2401501559171392633" name="jetbrains.mps.execution.configurations.structure.AbstractRunConfigurationExecutor" />
     <concept id="756e911c-3f1f-4a48-bdf5-a2ceb91b723c/2722628536111969416" name="jetbrains.mps.execution.settings.structure.GridBagConstraints" />
     <concept id="22e72e4c-0f69-46ce-8403-6750153aa615/3642991921657904775" name="jetbrains.mps.execution.configurations.structure.Source_ConceptFunctionParameter" />
     <concept id="22e72e4c-0f69-46ce-8403-6750153aa615/3642991921658122718" name="jetbrains.mps.execution.configurations.structure.RunConfigurationCreator" />
@@ -113,6 +128,7 @@
     <concept id="22e72e4c-0f69-46ce-8403-6750153aa615/4366236229294149030" name="jetbrains.mps.execution.configurations.structure.RunConfigurationProducerPart" />
     <concept id="22e72e4c-0f69-46ce-8403-6750153aa615/4366236229294149059" name="jetbrains.mps.execution.configurations.structure.Create_ConceptFunction" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/4836112446988635817" name="jetbrains.mps.baseLanguage.structure.UndefinedType" />
+    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/4972933694980447171" name="jetbrains.mps.baseLanguage.structure.BaseVariableDeclaration" />
     <concept id="22e72e4c-0f69-46ce-8403-6750153aa615/6139196002333163564" name="jetbrains.mps.execution.configurations.structure.ExecuteConfiguration_Function" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/6329021646629104954" name="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/6329021646629104957" name="jetbrains.mps.baseLanguage.structure.TextCommentPart" />

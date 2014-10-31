@@ -22,8 +22,10 @@
     <model ref="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.openapi.editor.cells(MPS.Editor/jetbrains.mps.openapi.editor.cells@java_stub)" name="jetbrains.mps.openapi.editor.cells@java_stub" />
     <model ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" name="jetbrains.mps.baseLanguage.structure" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068390468198" name="jetbrains.mps.baseLanguage.structure.ClassConcept" />
+    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068431474542" name="jetbrains.mps.baseLanguage.structure.VariableDeclaration" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068498886292" name="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068498886296" name="jetbrains.mps.baseLanguage.structure.VariableReference" />
+    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123132" name="jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123140" name="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123155" name="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -43,8 +45,11 @@
     <concept id="b401a680-8325-4110-8fd3-84331ff25bef/1092059087312" name="jetbrains.mps.lang.generator.structure.TemplateDeclaration" />
     <concept id="b401a680-8325-4110-8fd3-84331ff25bef/1095416546421" name="jetbrains.mps.lang.generator.structure.MappingConfiguration" />
     <concept id="b401a680-8325-4110-8fd3-84331ff25bef/1095672379244" name="jetbrains.mps.lang.generator.structure.TemplateFragment" />
+    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1107461130800" name="jetbrains.mps.baseLanguage.structure.Classifier" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1107535904670" name="jetbrains.mps.baseLanguage.structure.ClassifierType" />
     <concept id="b401a680-8325-4110-8fd3-84331ff25bef/1114729360583" name="jetbrains.mps.lang.generator.structure.CopySrcListMacro" />
+    <concept id="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1133920641626" name="jetbrains.mps.lang.core.structure.BaseConcept" />
+    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1137021947720" name="jetbrains.mps.baseLanguage.structure.ConceptFunction" />
     <concept id="7866978e-a0f0-4cc7-81bc-4d213d9375e1/1138055754698" name="jetbrains.mps.lang.smodel.structure.SNodeType" />
     <concept id="7866978e-a0f0-4cc7-81bc-4d213d9375e1/1138056143562" name="jetbrains.mps.lang.smodel.structure.SLinkAccess" />
     <concept id="7866978e-a0f0-4cc7-81bc-4d213d9375e1/1138056282393" name="jetbrains.mps.lang.smodel.structure.SLinkListAccess" />
@@ -55,24 +60,32 @@
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1146644602865" name="jetbrains.mps.baseLanguage.structure.PublicVisibility" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1146644623116" name="jetbrains.mps.baseLanguage.structure.PrivateVisibility" />
     <concept id="b401a680-8325-4110-8fd3-84331ff25bef/1167169188348" name="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" />
+    <concept id="b401a680-8325-4110-8fd3-84331ff25bef/1167169308231" name="jetbrains.mps.lang.generator.structure.BaseMappingRule" />
     <concept id="b401a680-8325-4110-8fd3-84331ff25bef/1167327847730" name="jetbrains.mps.lang.generator.structure.Reduction_MappingRule" />
     <concept id="b401a680-8325-4110-8fd3-84331ff25bef/1167756080639" name="jetbrains.mps.lang.generator.structure.PropertyMacro_GetPropertyValue" />
     <concept id="b401a680-8325-4110-8fd3-84331ff25bef/1167770111131" name="jetbrains.mps.lang.generator.structure.ReferenceMacro_GetReferent" />
     <concept id="b401a680-8325-4110-8fd3-84331ff25bef/1167951910403" name="jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodesQuery" />
+    <concept id="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1170345865475" name="jetbrains.mps.baseLanguage.structure.AnonymousClass" />
     <concept id="7866978e-a0f0-4cc7-81bc-4d213d9375e1/1171310072040" name="jetbrains.mps.lang.smodel.structure.Node_GetContainingRootOperation" />
     <concept id="b401a680-8325-4110-8fd3-84331ff25bef/1177093525992" name="jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence" />
+    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1178549954367" name="jetbrains.mps.baseLanguage.structure.IVisible" />
     <concept id="7866978e-a0f0-4cc7-81bc-4d213d9375e1/1179409122411" name="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1182160077978" name="jetbrains.mps.baseLanguage.structure.AnonymousClassCreator" />
     <concept id="b401a680-8325-4110-8fd3-84331ff25bef/1194565793557" name="jetbrains.mps.lang.generator.structure.IncludeMacro" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1197027756228" name="jetbrains.mps.baseLanguage.structure.DotExpression" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1202948039474" name="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" />
+    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1204053956946" name="jetbrains.mps.baseLanguage.structure.IMethodCall" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1212685548494" name="jetbrains.mps.baseLanguage.structure.ClassCreator" />
     <concept id="d7706f63-9be2-479c-a3da-ae92af1e64d5/1216860049635" name="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" />
     <concept id="7866978e-a0f0-4cc7-81bc-4d213d9375e1/1226359078165" name="jetbrains.mps.lang.smodel.structure.LinkRefExpression" />
     <concept id="b401a680-8325-4110-8fd3-84331ff25bef/1510949579266781519" name="jetbrains.mps.lang.generator.structure.TemplateCallMacro" />
+    <concept id="b401a680-8325-4110-8fd3-84331ff25bef/1722980698497626400" name="jetbrains.mps.lang.generator.structure.ITemplateCall" />
+    <concept id="ceab5195-25ea-4f22-9b92-103b95ca8c0c/3364660638048049745" name="jetbrains.mps.lang.core.structure.LinkAttribute" />
+    <concept id="ceab5195-25ea-4f22-9b92-103b95ca8c0c/3364660638048049750" name="jetbrains.mps.lang.core.structure.PropertyAttribute" />
     <concept id="0272d3b4-4cc8-481e-9e2f-07793fbfcb41/4490468428501056077" name="jetbrains.mps.lang.editor.table.structure.QueryFunction_TableModel" />
     <concept id="0272d3b4-4cc8-481e-9e2f-07793fbfcb41/4677325677876400523" name="jetbrains.mps.lang.editor.table.structure.CellModel_Table" />
+    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/4972933694980447171" name="jetbrains.mps.baseLanguage.structure.BaseVariableDeclaration" />
     <concept id="b401a680-8325-4110-8fd3-84331ff25bef/8900764248744213868" name="jetbrains.mps.lang.generator.structure.InlineTemplateWithContext_RuleConsequence" />
     <property id="f3061a53-9226-4cc5-a443-f952ceaf5816/1070475926800/1070475926801" name="value" />
     <property id="b401a680-8325-4110-8fd3-84331ff25bef/1167169308231/1167272244852" name="applyToConceptInheritors" />

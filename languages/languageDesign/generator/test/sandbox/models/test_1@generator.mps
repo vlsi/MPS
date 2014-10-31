@@ -15,9 +15,11 @@
     <model ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" name="jetbrains.mps.lang.core.structure" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068390468198" name="jetbrains.mps.baseLanguage.structure.ClassConcept" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068390468200" name="jetbrains.mps.baseLanguage.structure.FieldDeclaration" />
+    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068431474542" name="jetbrains.mps.baseLanguage.structure.VariableDeclaration" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068431790191" name="jetbrains.mps.baseLanguage.structure.Expression" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068498886292" name="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068498886296" name="jetbrains.mps.baseLanguage.structure.VariableReference" />
+    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123132" name="jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123137" name="jetbrains.mps.baseLanguage.structure.BooleanConstant" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123140" name="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" />
@@ -39,12 +41,15 @@
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1070534934090" name="jetbrains.mps.baseLanguage.structure.CastExpression" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1079359253375" name="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1081236700938" name="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
+    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1081773326031" name="jetbrains.mps.baseLanguage.structure.BinaryOperation" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1082485599095" name="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <concept id="b401a680-8325-4110-8fd3-84331ff25bef/1087833241328" name="jetbrains.mps.lang.generator.structure.PropertyMacro" />
+    <concept id="b401a680-8325-4110-8fd3-84331ff25bef/1087833466690" name="jetbrains.mps.lang.generator.structure.NodeMacro" />
     <concept id="b401a680-8325-4110-8fd3-84331ff25bef/1088761943574" name="jetbrains.mps.lang.generator.structure.ReferenceMacro" />
     <concept id="b401a680-8325-4110-8fd3-84331ff25bef/1092059087312" name="jetbrains.mps.lang.generator.structure.TemplateDeclaration" />
     <concept id="b401a680-8325-4110-8fd3-84331ff25bef/1095416546421" name="jetbrains.mps.lang.generator.structure.MappingConfiguration" />
     <concept id="b401a680-8325-4110-8fd3-84331ff25bef/1095672379244" name="jetbrains.mps.lang.generator.structure.TemplateFragment" />
+    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1107461130800" name="jetbrains.mps.baseLanguage.structure.Classifier" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1107535904670" name="jetbrains.mps.baseLanguage.structure.ClassifierType" />
     <concept id="b401a680-8325-4110-8fd3-84331ff25bef/1112730859144" name="jetbrains.mps.lang.generator.structure.TemplateSwitch" />
     <concept id="b401a680-8325-4110-8fd3-84331ff25bef/1112731569622" name="jetbrains.mps.lang.generator.structure.SwitchMacro" />
@@ -56,6 +61,7 @@
     <concept id="d4615e3b-d671-4ba9-af01-2b78369b0ba7/1136720037777" name="jetbrains.mps.lang.pattern.structure.PatternExpression" />
     <concept id="d4615e3b-d671-4ba9-af01-2b78369b0ba7/1136720037779" name="jetbrains.mps.lang.pattern.structure.PatternVariableDeclaration" />
     <concept id="d4615e3b-d671-4ba9-af01-2b78369b0ba7/1136720037783" name="jetbrains.mps.lang.pattern.structure.WildcardPattern" />
+    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1137021947720" name="jetbrains.mps.baseLanguage.structure.ConceptFunction" />
     <concept id="7866978e-a0f0-4cc7-81bc-4d213d9375e1/1138055754698" name="jetbrains.mps.lang.smodel.structure.SNodeType" />
     <concept id="7866978e-a0f0-4cc7-81bc-4d213d9375e1/1138056022639" name="jetbrains.mps.lang.smodel.structure.SPropertyAccess" />
     <concept id="7866978e-a0f0-4cc7-81bc-4d213d9375e1/1139621453865" name="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" />
@@ -66,6 +72,7 @@
     <concept id="b401a680-8325-4110-8fd3-84331ff25bef/1167087469898" name="jetbrains.mps.lang.generator.structure.CreateRootRule" />
     <concept id="b401a680-8325-4110-8fd3-84331ff25bef/1167168920554" name="jetbrains.mps.lang.generator.structure.BaseMappingRule_Condition" />
     <concept id="b401a680-8325-4110-8fd3-84331ff25bef/1167169188348" name="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" />
+    <concept id="b401a680-8325-4110-8fd3-84331ff25bef/1167169308231" name="jetbrains.mps.lang.generator.structure.BaseMappingRule" />
     <concept id="b401a680-8325-4110-8fd3-84331ff25bef/1167171569011" name="jetbrains.mps.lang.generator.structure.Weaving_MappingRule" />
     <concept id="b401a680-8325-4110-8fd3-84331ff25bef/1167327847730" name="jetbrains.mps.lang.generator.structure.Reduction_MappingRule" />
     <concept id="b401a680-8325-4110-8fd3-84331ff25bef/1167514355419" name="jetbrains.mps.lang.generator.structure.Root_MappingRule" />
@@ -78,11 +85,13 @@
     <concept id="b401a680-8325-4110-8fd3-84331ff25bef/1168559333462" name="jetbrains.mps.lang.generator.structure.TemplateDeclarationReference" />
     <concept id="b401a680-8325-4110-8fd3-84331ff25bef/1168559512253" name="jetbrains.mps.lang.generator.structure.DismissTopMappingRule" />
     <concept id="b401a680-8325-4110-8fd3-84331ff25bef/1168619357332" name="jetbrains.mps.lang.generator.structure.RootTemplateAnnotation" />
+    <concept id="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" />
     <concept id="b401a680-8325-4110-8fd3-84331ff25bef/1169569792945" name="jetbrains.mps.lang.generator.structure.WeaveEach_RuleConsequence" />
     <concept id="b401a680-8325-4110-8fd3-84331ff25bef/1169670156577" name="jetbrains.mps.lang.generator.structure.GeneratorMessage" />
     <concept id="b401a680-8325-4110-8fd3-84331ff25bef/1170725621272" name="jetbrains.mps.lang.generator.structure.MapSrcMacro_MapperFunction" />
     <concept id="7866978e-a0f0-4cc7-81bc-4d213d9375e1/1177026924588" name="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" />
     <concept id="b401a680-8325-4110-8fd3-84331ff25bef/1177093525992" name="jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence" />
+    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1178549954367" name="jetbrains.mps.baseLanguage.structure.IVisible" />
     <concept id="7866978e-a0f0-4cc7-81bc-4d213d9375e1/1180636770613" name="jetbrains.mps.lang.smodel.structure.SNodeCreator" />
     <concept id="b401a680-8325-4110-8fd3-84331ff25bef/1184616041890" name="jetbrains.mps.lang.generator.structure.Weaving_MappingRule_ContextNodeQuery" />
     <concept id="b401a680-8325-4110-8fd3-84331ff25bef/1184690432998" name="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_outputNode" />
@@ -94,18 +103,24 @@
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1197027756228" name="jetbrains.mps.baseLanguage.structure.DotExpression" />
     <concept id="b401a680-8325-4110-8fd3-84331ff25bef/1200911316486" name="jetbrains.mps.lang.generator.structure.MappingLabelDeclaration" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1202948039474" name="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" />
+    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1204053956946" name="jetbrains.mps.baseLanguage.structure.IMethodCall" />
     <concept id="d7706f63-9be2-479c-a3da-ae92af1e64d5/1216860049622" name="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetOutputByLabel" />
     <concept id="d7706f63-9be2-479c-a3da-ae92af1e64d5/1216860049635" name="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" />
     <concept id="d7706f63-9be2-479c-a3da-ae92af1e64d5/1218047638031" name="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_CreateUniqueName" />
     <concept id="b401a680-8325-4110-8fd3-84331ff25bef/1225228973247" name="jetbrains.mps.lang.generator.structure.MapSrcMacro_PostMapperFunction" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1225271177708" name="jetbrains.mps.baseLanguage.structure.StringType" />
     <concept id="d7706f63-9be2-479c-a3da-ae92af1e64d5/1229477454423" name="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetOriginalCopiedInputByOutput" />
+    <concept id="b401a680-8325-4110-8fd3-84331ff25bef/982871510064032177" name="jetbrains.mps.lang.generator.structure.IParameterizedTemplate" />
+    <concept id="b401a680-8325-4110-8fd3-84331ff25bef/1722980698497626400" name="jetbrains.mps.lang.generator.structure.ITemplateCall" />
     <concept id="b401a680-8325-4110-8fd3-84331ff25bef/1805153994415891174" name="jetbrains.mps.lang.generator.structure.TemplateParameterDeclaration" />
     <concept id="b401a680-8325-4110-8fd3-84331ff25bef/1805153994416516020" name="jetbrains.mps.lang.generator.structure.PatternReduction_MappingRule" />
+    <concept id="ceab5195-25ea-4f22-9b92-103b95ca8c0c/3364660638048049745" name="jetbrains.mps.lang.core.structure.LinkAttribute" />
+    <concept id="ceab5195-25ea-4f22-9b92-103b95ca8c0c/3364660638048049750" name="jetbrains.mps.lang.core.structure.PropertyAttribute" />
     <concept id="b401a680-8325-4110-8fd3-84331ff25bef/4035562641222585520" name="jetbrains.mps.lang.generator.structure.TemplateArgumentQueryExpression" />
     <concept id="b401a680-8325-4110-8fd3-84331ff25bef/4035562641222622437" name="jetbrains.mps.lang.generator.structure.TemplateArgumentQuery" />
     <concept id="d7706f63-9be2-479c-a3da-ae92af1e64d5/4589968773278056990" name="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_NodePatternRef" />
     <concept id="b401a680-8325-4110-8fd3-84331ff25bef/4665309944889425032" name="jetbrains.mps.lang.generator.structure.TemplateArgumentPatternVarRefExpression" />
+    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/4972933694980447171" name="jetbrains.mps.baseLanguage.structure.BaseVariableDeclaration" />
     <concept id="d7706f63-9be2-479c-a3da-ae92af1e64d5/5190093307972723402" name="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_ParameterRef" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/6329021646629104954" name="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/6329021646629104957" name="jetbrains.mps.baseLanguage.structure.TextCommentPart" />
@@ -517,7 +532,7 @@
                     <node concept="vg0i.1197027756228" id="4589968773278438439" role="vg0i.1068580123155.1068580123156" info="nn">
                       <node concept="vg0i.1197027756228" id="4589968773278344040" role="vg0i.1197027756228.1197027771414" info="nn">
                         <node concept="o248.4589968773278056990" id="1957700446088629345" role="vg0i.1197027756228.1197027833540" info="nn">
-                          <reference role="o248.4589968773278056990.4589968773278063829" target="1957700446088597968" />
+                          <reference role="o248.4589968773278056990.4589968773278063829" target="1957700446088597968" resolveInfo="#right" />
                         </node>
                         <node concept="o248.1216860049635" id="4589968773278344039" role="vg0i.1197027756228.1197027771414" info="nn" />
                       </node>

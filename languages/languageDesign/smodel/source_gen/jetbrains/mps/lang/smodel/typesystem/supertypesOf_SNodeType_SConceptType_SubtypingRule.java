@@ -14,10 +14,10 @@ import java.util.ArrayList;
 import jetbrains.mps.lang.pattern.IMatchingPattern;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.lang.pattern.runtime.PatternUtil;
-import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
-import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.UUID;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
+import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.smodel.SNodePointer;
 
@@ -56,7 +56,7 @@ public class supertypesOf_SNodeType_SConceptType_SubtypingRule extends Subtyping
         }
         {
           SNodeReference pointer = SNODE_POINTER_6gcjzy_a0a0a0a0b0b0a0a0a0a0a0e;
-          if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_auyr2c_a0a.getReferenceTarget("concept")))) {
+          if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_auyr2c_a0a.getReferenceTarget(MetaAdapterFactory.getReferenceLink(new UUID(8675788371017092295l, -9098312342032910879l), 1138055754698l, 1138405853777l, "concept"))))) {
             return false;
           }
         }

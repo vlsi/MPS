@@ -12,23 +12,33 @@
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123155" name="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1071666914219" name="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" />
+    <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1073389214265" name="jetbrains.mps.lang.editor.structure.EditorCellModel" />
     <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1073389446423" name="jetbrains.mps.lang.editor.structure.CellModel_Collection" />
     <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1073389577006" name="jetbrains.mps.lang.editor.structure.CellModel_Constant" />
     <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1073389658414" name="jetbrains.mps.lang.editor.structure.CellModel_Property" />
     <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1073389882823" name="jetbrains.mps.lang.editor.structure.CellModel_RefNode" />
     <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1073390211982" name="jetbrains.mps.lang.editor.structure.CellModel_RefNodeList" />
     <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1078939183254" name="jetbrains.mps.lang.editor.structure.CellModel_Component" />
+    <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1080736578640" name="jetbrains.mps.lang.editor.structure.BaseEditorComponent" />
     <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1088013125922" name="jetbrains.mps.lang.editor.structure.CellModel_RefCell" />
     <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1088185857835" name="jetbrains.mps.lang.editor.structure.InlineEditorComponent" />
     <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1106270549637" name="jetbrains.mps.lang.editor.structure.CellLayout_Horizontal" />
     <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1106270571710" name="jetbrains.mps.lang.editor.structure.CellLayout_Vertical" />
+    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1137021947720" name="jetbrains.mps.baseLanguage.structure.ConceptFunction" />
+    <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1139848536355" name="jetbrains.mps.lang.editor.structure.CellModel_WithRole" />
+    <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1140524381322" name="jetbrains.mps.lang.editor.structure.CellModel_ListWithRole" />
     <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1142886811589" name="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_node" />
+    <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1166049232041" name="jetbrains.mps.lang.editor.structure.AbstractComponent" />
     <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1176717841777" name="jetbrains.mps.lang.editor.structure.QueryFunction_ModelAccess_Getter" />
     <concept id="7866978e-a0f0-4cc7-81bc-4d213d9375e1/1179409122411" name="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" />
+    <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1186414536763" name="jetbrains.mps.lang.editor.structure.BooleanStyleSheetItem" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1197027756228" name="jetbrains.mps.baseLanguage.structure.DotExpression" />
     <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1198256887712" name="jetbrains.mps.lang.editor.structure.CellModel_Indent" />
+    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1204053956946" name="jetbrains.mps.baseLanguage.structure.IMethodCall" />
+    <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1215007762405" name="jetbrains.mps.lang.editor.structure.FloatStyleClassItem" />
     <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1215007883204" name="jetbrains.mps.lang.editor.structure.PaddingLeftStyleClassItem" />
     <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1215007897487" name="jetbrains.mps.lang.editor.structure.PaddingRightStyleClassItem" />
+    <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1219418625346" name="jetbrains.mps.lang.editor.structure.IStyleContainer" />
     <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1225898583838" name="jetbrains.mps.lang.editor.structure.ReadOnlyModelAccessor" />
     <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1225900081164" name="jetbrains.mps.lang.editor.structure.CellModel_ReadOnlyModelAccessor" />
     <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1233758997495" name="jetbrains.mps.lang.editor.structure.PunctuationLeftStyleClassItem" />
@@ -36,6 +46,7 @@
     <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1237303669825" name="jetbrains.mps.lang.editor.structure.CellLayout_Indent" />
     <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1237307900041" name="jetbrains.mps.lang.editor.structure.IndentLayoutIndentStyleClassItem" />
     <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1237385578942" name="jetbrains.mps.lang.editor.structure.IndentLayoutOnNewLineStyleClassItem" />
+    <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1381004262292414836" name="jetbrains.mps.lang.editor.structure.ICellStyle" />
     <property id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1073389577006/1073389577007" name="text" />
     <property id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1073389577006/1082639509531" name="nullText" />
     <property id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1073389214265/1130859485024" name="attractsFocus" />

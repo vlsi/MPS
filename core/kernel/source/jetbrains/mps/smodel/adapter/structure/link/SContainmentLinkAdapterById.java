@@ -18,6 +18,7 @@ package jetbrains.mps.smodel.adapter.structure.link;
 import jetbrains.mps.smodel.SNodeId;
 import jetbrains.mps.smodel.adapter.ids.SContainmentLinkId;
 import jetbrains.mps.smodel.language.ConceptRegistry;
+import jetbrains.mps.smodel.language.ConceptRegistryUtil;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import jetbrains.mps.smodel.runtime.LinkDescriptor;
 import org.jetbrains.annotations.NotNull;
@@ -58,7 +59,7 @@ public class SContainmentLinkAdapterById extends SContainmentLinkAdapter {
   @Override
   @Nullable
   protected LinkDescriptor getLinkDescriptor() {
-    ConceptDescriptor cd = ConceptRegistry.getInstance().getConceptDescriptor(myRoleId.getConceptId());
+    ConceptDescriptor cd = ConceptRegistryUtil.getConceptDescriptor(myRoleId.getConceptId());
     if (cd == null) return null;
     return cd.getLinkDescriptor(myRoleId);
   }

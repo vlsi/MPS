@@ -15,6 +15,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.pattern.IMatchingPattern;
+import org.jetbrains.mps.openapi.language.SContainmentLink;
 import jetbrains.mps.lang.pattern.runtime.PatternUtil;
 import jetbrains.mps.util.IterableUtil;
 
@@ -72,7 +73,7 @@ public class list_covariant_with_extends_InequationReplacementRule extends Abstr
           return false;
         }
         {
-          String childRole_l7cfoj_ = "elementType";
+          SContainmentLink childRole_l7cfoj_ = MetaAdapterFactory.getContainmentLink(new UUID(-8968771020793164004l, -7182180101671965361l), 1151688443754l, 1151688676805l, "elementType");
           if (!(PatternUtil.hasNChildren(nodeToMatch_l7cfoj_a0a, childRole_l7cfoj_, 1))) {
             return false;
           }
@@ -112,7 +113,7 @@ public class list_covariant_with_extends_InequationReplacementRule extends Abstr
           return false;
         }
         {
-          String childRole_l7cfoj__0 = "elementType";
+          SContainmentLink childRole_l7cfoj__0 = MetaAdapterFactory.getContainmentLink(new UUID(-8968771020793164004l, -7182180101671965361l), 1151688443754l, 1151688676805l, "elementType");
           if (!(PatternUtil.hasNChildren(nodeToMatch_l7cfoj_a0a_0, childRole_l7cfoj__0, 1))) {
             return false;
           }
@@ -124,7 +125,7 @@ public class list_covariant_with_extends_InequationReplacementRule extends Abstr
                 return false;
               }
               {
-                String childRole_l7cfoj__1 = "bound";
+                SContainmentLink childRole_l7cfoj__1 = MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1171903916106l, 1171903916107l, "bound");
                 if (!(PatternUtil.hasNChildren(nodeToMatch_l7cfoj_a0a0, childRole_l7cfoj__1, 1))) {
                   return false;
                 }

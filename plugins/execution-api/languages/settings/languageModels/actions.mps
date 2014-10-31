@@ -10,6 +10,7 @@
     <lang id="13744753-c81f-424a-9c1b-cf8943bf4e86" name="jetbrains.mps.lang.sharedConcepts" />
     <lang id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" />
     <model ref="r:0194e190-08ef-44f6-ab95-d9cffdb7e27b(jetbrains.mps.execution.settings.structure)" name="jetbrains.mps.execution.settings.structure" />
+    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068431474542" name="jetbrains.mps.baseLanguage.structure.VariableDeclaration" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068498886296" name="jetbrains.mps.baseLanguage.structure.VariableReference" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123155" name="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -18,8 +19,10 @@
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068581242875" name="jetbrains.mps.baseLanguage.structure.PlusExpression" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1070475926800" name="jetbrains.mps.baseLanguage.structure.StringLiteral" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1081516740877" name="jetbrains.mps.baseLanguage.structure.NotExpression" />
+    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1081773326031" name="jetbrains.mps.baseLanguage.structure.BinaryOperation" />
     <concept id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd/1112056943463" name="jetbrains.mps.lang.actions.structure.NodeSubstituteActions" />
     <concept id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd/1112058030570" name="jetbrains.mps.lang.actions.structure.NodeSubstituteActionsBuilder" />
+    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1137021947720" name="jetbrains.mps.baseLanguage.structure.ConceptFunction" />
     <concept id="7866978e-a0f0-4cc7-81bc-4d213d9375e1/1138055754698" name="jetbrains.mps.lang.smodel.structure.SNodeType" />
     <concept id="7866978e-a0f0-4cc7-81bc-4d213d9375e1/1138056022639" name="jetbrains.mps.lang.smodel.structure.SPropertyAccess" />
     <concept id="7866978e-a0f0-4cc7-81bc-4d213d9375e1/1138056143562" name="jetbrains.mps.lang.smodel.structure.SLinkAccess" />
@@ -30,20 +33,25 @@
     <concept id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd/1154465102724" name="jetbrains.mps.lang.actions.structure.NodeSubstitutePreconditionFunction" />
     <concept id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd/1154465273778" name="jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_parentNode" />
     <concept id="13744753-c81f-424a-9c1b-cf8943bf4e86/1161622665029" name="jetbrains.mps.lang.sharedConcepts.structure.ConceptFunctionParameter_model" />
+    <concept id="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" />
     <concept id="7866978e-a0f0-4cc7-81bc-4d213d9375e1/1171999116870" name="jetbrains.mps.lang.smodel.structure.Node_IsNullOperation" />
     <concept id="7866978e-a0f0-4cc7-81bc-4d213d9375e1/1176109685393" name="jetbrains.mps.lang.smodel.structure.Model_RootsIncludingImportedOperation" />
     <concept id="7866978e-a0f0-4cc7-81bc-4d213d9375e1/1177026924588" name="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" />
     <concept id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd/1177323996388" name="jetbrains.mps.lang.actions.structure.AddMenuPart" />
+    <concept id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd/1177333529597" name="jetbrains.mps.lang.actions.structure.ConceptPart" />
     <concept id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd/1177337641126" name="jetbrains.mps.lang.actions.structure.ParameterizedSubstituteMenuPart" />
     <concept id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd/1177337833147" name="jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_parameterObject" />
     <concept id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd/1177337890340" name="jetbrains.mps.lang.actions.structure.QueryFunction_ParameterizedSubstitute_Query" />
     <concept id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd/1177339114370" name="jetbrains.mps.lang.actions.structure.QueryFunction_ParameterizedSubstitute_String" />
     <concept id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd/1177339225103" name="jetbrains.mps.lang.actions.structure.QueryFunction_ParameterizedSubstitute_Handler" />
+    <concept id="7866978e-a0f0-4cc7-81bc-4d213d9375e1/1180636770613" name="jetbrains.mps.lang.smodel.structure.SNodeCreator" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1197027756228" name="jetbrains.mps.baseLanguage.structure.DotExpression" />
     <concept id="fd392034-7849-419d-9071-12563d152375/1199569711397" name="jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral" />
     <concept id="83888646-71ce-4f1c-9c53-c54016f6ad4f/1202120902084" name="jetbrains.mps.baseLanguage.collections.structure.WhereOperation" />
     <concept id="83888646-71ce-4f1c-9c53-c54016f6ad4f/1203518072036" name="jetbrains.mps.baseLanguage.collections.structure.SmartClosureParameterDeclaration" />
+    <concept id="83888646-71ce-4f1c-9c53-c54016f6ad4f/1204796164442" name="jetbrains.mps.baseLanguage.collections.structure.InternalSequenceOperation" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/4836112446988635817" name="jetbrains.mps.baseLanguage.structure.UndefinedType" />
+    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/4972933694980447171" name="jetbrains.mps.baseLanguage.structure.BaseVariableDeclaration" />
     <concept id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd/5979988948250981289" name="jetbrains.mps.lang.actions.structure.SNodeCreatorAndInitializer" />
     <concept id="7866978e-a0f0-4cc7-81bc-4d213d9375e1/6407023681583031218" name="jetbrains.mps.lang.smodel.structure.AttributeAccess" />
     <concept id="7866978e-a0f0-4cc7-81bc-4d213d9375e1/6407023681583036853" name="jetbrains.mps.lang.smodel.structure.NodeAttributeQualifier" />

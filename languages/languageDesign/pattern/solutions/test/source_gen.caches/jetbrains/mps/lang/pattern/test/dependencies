@@ -20,6 +20,7 @@
     <classNode dependClassName="jetbrains.mps.util.IterableUtil" />
     <classNode dependClassName="junit.framework.Assert" />
     <classNode dependClassName="junit.framework.TestCase" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.language.SContainmentLink" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeAccessUtil" />
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
@@ -45,6 +46,7 @@
     <classNode dependClassName="jetbrains.mps.util.IterableUtil" />
     <classNode dependClassName="junit.framework.Assert" />
     <classNode dependClassName="junit.framework.TestCase" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.language.SContainmentLink" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeAccessUtil" />
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
@@ -71,6 +73,7 @@
     <classNode dependClassName="jetbrains.mps.util.IterableUtil" />
     <classNode dependClassName="junit.framework.Assert" />
     <classNode dependClassName="junit.framework.TestCase" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.language.SContainmentLink" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
     <classNode dependClassName="org.junit.Test" />
@@ -96,6 +99,7 @@
     <classNode dependClassName="jetbrains.mps.util.IterableUtil" />
     <classNode dependClassName="junit.framework.Assert" />
     <classNode dependClassName="junit.framework.TestCase" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.language.SContainmentLink" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
     <classNode dependClassName="org.junit.Test" />
@@ -117,6 +121,7 @@
     <classNode dependClassName="jetbrains.mps.util.IterableUtil" />
     <classNode dependClassName="junit.framework.Assert" />
     <classNode dependClassName="junit.framework.TestCase" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.language.SContainmentLink" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeAccessUtil" />
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
@@ -143,6 +148,7 @@
     <classNode dependClassName="jetbrains.mps.util.IterableUtil" />
     <classNode dependClassName="junit.framework.Assert" />
     <classNode dependClassName="junit.framework.TestCase" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.language.SContainmentLink" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeAccessUtil" />
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
@@ -169,6 +175,7 @@
     <classNode dependClassName="jetbrains.mps.util.IterableUtil" />
     <classNode dependClassName="junit.framework.Assert" />
     <classNode dependClassName="junit.framework.TestCase" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.language.SContainmentLink" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeAccessUtil" />
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
@@ -195,6 +202,7 @@
     <classNode dependClassName="jetbrains.mps.util.IterableUtil" />
     <classNode dependClassName="junit.framework.Assert" />
     <classNode dependClassName="junit.framework.TestCase" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.language.SContainmentLink" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeAccessUtil" />
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />

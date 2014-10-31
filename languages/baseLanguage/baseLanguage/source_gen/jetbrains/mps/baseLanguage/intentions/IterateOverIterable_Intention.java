@@ -24,6 +24,7 @@ import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.intentions.IntentionDescriptor;
 import jetbrains.mps.lang.pattern.IMatchingPattern;
 import jetbrains.mps.lang.pattern.runtime.PatternUtil;
+import org.jetbrains.mps.openapi.language.SContainmentLink;
 import jetbrains.mps.util.IterableUtil;
 
 public class IterateOverIterable_Intention implements IntentionFactory {
@@ -107,12 +108,12 @@ public class IterateOverIterable_Intention implements IntentionFactory {
         }
         {
           SNodeReference pointer = SNODE_POINTER_w1n2qe_a0a0a0a0b0b0a0a0b0a0a0a9;
-          if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_6isygg_a0a0a0a0.getReferenceTarget("classifier")))) {
+          if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_6isygg_a0a0a0a0.getReferenceTarget(MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier"))))) {
             return false;
           }
         }
         {
-          String childRole_6isygg__0 = "parameter";
+          SContainmentLink childRole_6isygg__0 = MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1109201940907l, "parameter");
           if (!(PatternUtil.hasNChildren(nodeToMatch_6isygg_a0a0a0a0, childRole_6isygg__0, 1))) {
             return false;
           }
@@ -153,12 +154,12 @@ public class IterateOverIterable_Intention implements IntentionFactory {
         }
         {
           SNodeReference pointer = SNODE_POINTER_w1n2qe_a0a0a0a0b0b0a0a0a0a0a0c31;
-          if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_6isygg_a0a0a0.getReferenceTarget("classifier")))) {
+          if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_6isygg_a0a0a0.getReferenceTarget(MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier"))))) {
             return false;
           }
         }
         {
-          String childRole_6isygg_ = "parameter";
+          SContainmentLink childRole_6isygg_ = MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1109201940907l, "parameter");
           if (!(PatternUtil.hasNChildren(nodeToMatch_6isygg_a0a0a0, childRole_6isygg_, 1))) {
             return false;
           }

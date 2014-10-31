@@ -11,13 +11,14 @@ import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import java.util.Arrays;
 import jetbrains.mps.lang.pattern.IMatchingPattern;
+import org.jetbrains.mps.openapi.language.SContainmentLink;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.lang.pattern.runtime.PatternUtil;
 import jetbrains.mps.util.IterableUtil;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.smodel.SNodePointer;
 
@@ -53,7 +54,7 @@ public class ObjectArraySupertypes_SubtypingRule extends SubtypingRule_Runtime i
           return false;
         }
         {
-          String childRole_mvbroc_ = "componentType";
+          SContainmentLink childRole_mvbroc_ = MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1070534760951l, 1070534760952l, "componentType");
           if (!(PatternUtil.hasNChildren(nodeToMatch_mvbroc_a0a, childRole_mvbroc_, 1))) {
             return false;
           }
@@ -66,7 +67,7 @@ public class ObjectArraySupertypes_SubtypingRule extends SubtypingRule_Runtime i
               }
               {
                 SNodeReference pointer = SNODE_POINTER_gqfgxi_a0a0a0a0b0b0b0b0b0a0b0b0a0a0a0a0a0e;
-                if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_mvbroc_a0a0.getReferenceTarget("classifier")))) {
+                if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_mvbroc_a0a0.getReferenceTarget(MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier"))))) {
                   return false;
                 }
               }

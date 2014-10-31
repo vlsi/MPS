@@ -16,13 +16,12 @@
 package jetbrains.mps.smodel.persistence.def.v9;
 
 import jetbrains.mps.persistence.IdHelper;
-import jetbrains.mps.smodel.DebugRegistry;
+import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import jetbrains.mps.smodel.adapter.ids.SContainmentLinkId;
 import jetbrains.mps.smodel.adapter.ids.SPropertyId;
 import jetbrains.mps.smodel.adapter.ids.SReferenceLinkId;
 import jetbrains.mps.smodel.language.ConceptRegistry;
-import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.language.SProperty;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -47,7 +46,10 @@ public class IdInfoCollector {
           linkIds.put(linkId, link.getRoleName());
           SConceptId linkConceptId = linkId.getConceptId();
           if (!conceptIds.containsKey(linkConceptId)) {
-            conceptIds.put(linkConceptId, getConceptName(linkConceptId));
+            String conceptName = getConceptName(linkConceptId);
+            if (conceptName != null) {
+              conceptIds.put(linkConceptId, conceptName);
+            }
           }
         }
 
@@ -56,7 +58,10 @@ public class IdInfoCollector {
           propIds.put(propId, prop.getName());
           SConceptId propConceptId = propId.getConceptId();
           if (!conceptIds.containsKey(propConceptId)) {
-            conceptIds.put(propConceptId, getConceptName(propConceptId));
+            String conceptName = getConceptName(propConceptId);
+            if (conceptName != null) {
+              conceptIds.put(propConceptId, conceptName);
+            }
           }
         }
 
@@ -65,7 +70,10 @@ public class IdInfoCollector {
           refIds.put(refId, ref.getRole());
           SConceptId refConceptId = refId.getConceptId();
           if (!conceptIds.containsKey(refConceptId)) {
-            conceptIds.put(refConceptId, getConceptName(refConceptId));
+            String conceptName = getConceptName(refConceptId);
+            if (conceptName != null) {
+              conceptIds.put(refConceptId, conceptName);
+            }
           }
         }
       }
@@ -73,7 +81,11 @@ public class IdInfoCollector {
   }
 
   private static String getConceptName(SConceptId conceptId) {
-    return ConceptRegistry.getInstance().getConceptDescriptor(conceptId).getConceptFqName();
+    String result = ConceptRegistry.getInstance().getConceptDescriptor(conceptId).getConceptFqName();
+    if (result.equals(MetaIdFactory.INVALID_CONCEPT_NAME)) {
+      return null;
+    }
+    return result;
   }
 
 }

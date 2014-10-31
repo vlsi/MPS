@@ -7,6 +7,8 @@
     <lang id="3600cb0a-44dd-4a5b-9968-22924406419e" name="jetbrains.mps.build.mps.tests" />
     <lang id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core" />
     <model ref="r:874d959d-e3b4-4d04-b931-ca849af130dd(jetbrains.mps.ide.build)" name="jetbrains.mps.ide.build" />
+    <concept id="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" />
+    <concept id="0cf935df-4699-4e9c-a132-fa109541cba3/322010710375871467" name="jetbrains.mps.build.mps.structure.BuildMps_AbstractModule" />
     <concept id="798100da-4f0a-421a-b991-71f8c50ce5d2/841011766566059607" name="jetbrains.mps.build.structure.BuildStringNotEmpty" />
     <concept id="0cf935df-4699-4e9c-a132-fa109541cba3/868032131020265945" name="jetbrains.mps.build.mps.structure.BuildMPSPlugin" />
     <concept id="798100da-4f0a-421a-b991-71f8c50ce5d2/927724900262033858" name="jetbrains.mps.build.structure.BuildSource_JavaOptions" />
@@ -23,9 +25,11 @@
     <concept id="3600cb0a-44dd-4a5b-9968-22924406419e/4560297596904469355" name="jetbrains.mps.build.mps.tests.structure.BuildMpsLayout_TestModuleGroup" />
     <concept id="3600cb0a-44dd-4a5b-9968-22924406419e/4560297596904469357" name="jetbrains.mps.build.mps.tests.structure.BuildMpsLayout_TestModules" />
     <concept id="3600cb0a-44dd-4a5b-9968-22924406419e/4560297596904469362" name="jetbrains.mps.build.mps.tests.structure.BuildMpsLayout_TestModule" />
+    <concept id="798100da-4f0a-421a-b991-71f8c50ce5d2/4701820937132344003" name="jetbrains.mps.build.structure.BuildLayout_Container" />
     <concept id="798100da-4f0a-421a-b991-71f8c50ce5d2/4903714810883702017" name="jetbrains.mps.build.structure.BuildVarRefStringPart" />
     <concept id="798100da-4f0a-421a-b991-71f8c50ce5d2/4903714810883702019" name="jetbrains.mps.build.structure.BuildTextStringPart" />
     <concept id="798100da-4f0a-421a-b991-71f8c50ce5d2/4993211115183325728" name="jetbrains.mps.build.structure.BuildProjectDependency" />
+    <concept id="0cf935df-4699-4e9c-a132-fa109541cba3/5253498789149381388" name="jetbrains.mps.build.mps.structure.BuildMps_Module" />
     <concept id="0cf935df-4699-4e9c-a132-fa109541cba3/5253498789149585690" name="jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyOnModule" />
     <concept id="798100da-4f0a-421a-b991-71f8c50ce5d2/5481553824944787378" name="jetbrains.mps.build.structure.BuildSourceProjectRelativePath" />
     <concept id="0cf935df-4699-4e9c-a132-fa109541cba3/5507251971038816436" name="jetbrains.mps.build.mps.structure.BuildMps_Generator" />
@@ -34,7 +38,9 @@
     <concept id="798100da-4f0a-421a-b991-71f8c50ce5d2/6647099934206700647" name="jetbrains.mps.build.structure.BuildJavaPlugin" />
     <concept id="798100da-4f0a-421a-b991-71f8c50ce5d2/7181125477683417252" name="jetbrains.mps.build.structure.BuildExternalLayoutDependency" />
     <concept id="0cf935df-4699-4e9c-a132-fa109541cba3/7259033139236285166" name="jetbrains.mps.build.mps.structure.BuildMps_ExtractedModuleDependency" />
+    <concept id="798100da-4f0a-421a-b991-71f8c50ce5d2/7321017245476976379" name="jetbrains.mps.build.structure.BuildRelativePath" />
     <concept id="798100da-4f0a-421a-b991-71f8c50ce5d2/7389400916848036984" name="jetbrains.mps.build.structure.BuildLayout_Folder" />
+    <concept id="798100da-4f0a-421a-b991-71f8c50ce5d2/7389400916848050060" name="jetbrains.mps.build.structure.BuildLayout_NamedContainer" />
     <concept id="798100da-4f0a-421a-b991-71f8c50ce5d2/7389400916848136194" name="jetbrains.mps.build.structure.BuildFolderMacro" />
     <concept id="798100da-4f0a-421a-b991-71f8c50ce5d2/7389400916848153117" name="jetbrains.mps.build.structure.BuildSourceMacroRelativePath" />
     <concept id="798100da-4f0a-421a-b991-71f8c50ce5d2/8618885170173601777" name="jetbrains.mps.build.structure.BuildCompositePath" />

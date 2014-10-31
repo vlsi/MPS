@@ -3481,7 +3481,7 @@ public class QueriesGenerated extends QueryProviderBase {
         }
         {
           SNodeReference pointer = SNODE_POINTER_x583g4_a0a0a0a0b0b0a0a0b0a0a0a0i;
-          if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_x583g4_a0a0a0a0i.getReferenceTarget("classifier")))) {
+          if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_x583g4_a0a0a0a0i.getReferenceTarget(MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier"))))) {
             return false;
           }
         }
@@ -3510,7 +3510,7 @@ public class QueriesGenerated extends QueryProviderBase {
         }
         {
           SNodeReference pointer = SNODE_POINTER_x583g4_a0a0a0a0b0b0a0a0b0a0a0a52;
-          if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_x583g4_a0a0a0a52.getReferenceTarget("classifier")))) {
+          if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_x583g4_a0a0a0a52.getReferenceTarget(MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier"))))) {
             return false;
           }
         }
@@ -3539,7 +3539,7 @@ public class QueriesGenerated extends QueryProviderBase {
         }
         {
           SNodeReference pointer = SNODE_POINTER_x583g4_a0a0a0a0b0b0a0a0b0a0a0a82;
-          if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_x583g4_a0a0a0a82.getReferenceTarget("classifier")))) {
+          if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_x583g4_a0a0a0a82.getReferenceTarget(MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier"))))) {
             return false;
           }
         }
@@ -3568,7 +3568,7 @@ public class QueriesGenerated extends QueryProviderBase {
         }
         {
           SNodeReference pointer = SNODE_POINTER_x583g4_a0a0a0a0b0b0a0a0b0a0a0a33;
-          if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_x583g4_a0a0a0a33.getReferenceTarget("classifier")))) {
+          if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_x583g4_a0a0a0a33.getReferenceTarget(MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier"))))) {
             return false;
           }
         }
@@ -3597,7 +3597,7 @@ public class QueriesGenerated extends QueryProviderBase {
         }
         {
           SNodeReference pointer = SNODE_POINTER_x583g4_a0a0a0a0b0b0a0a0b0a0a0a54;
-          if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_x583g4_a0a0a0a54.getReferenceTarget("classifier")))) {
+          if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_x583g4_a0a0a0a54.getReferenceTarget(MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier"))))) {
             return false;
           }
         }
@@ -3626,7 +3626,7 @@ public class QueriesGenerated extends QueryProviderBase {
         }
         {
           SNodeReference pointer = SNODE_POINTER_x583g4_a0a0a0a0b0b0a0a0b0a0a0a74;
-          if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_x583g4_a0a0a0a74.getReferenceTarget("classifier")))) {
+          if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_x583g4_a0a0a0a74.getReferenceTarget(MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier"))))) {
             return false;
           }
         }
@@ -3655,7 +3655,7 @@ public class QueriesGenerated extends QueryProviderBase {
         }
         {
           SNodeReference pointer = SNODE_POINTER_x583g4_a0a0a0a0b0b0a0a0b0a0a0a15;
-          if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_x583g4_a0a0a0a15.getReferenceTarget("classifier")))) {
+          if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_x583g4_a0a0a0a15.getReferenceTarget(MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier"))))) {
             return false;
           }
         }
@@ -3684,7 +3684,7 @@ public class QueriesGenerated extends QueryProviderBase {
         }
         {
           SNodeReference pointer = SNODE_POINTER_x583g4_a0a0a0a0b0b0a0a0b0a0a0a55;
-          if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_x583g4_a0a0a0a55.getReferenceTarget("classifier")))) {
+          if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_x583g4_a0a0a0a55.getReferenceTarget(MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier"))))) {
             return false;
           }
         }
@@ -3713,7 +3713,7 @@ public class QueriesGenerated extends QueryProviderBase {
         }
         {
           SNodeReference pointer = SNODE_POINTER_x583g4_a0a0a0a0b0b0a0a0b0a0a0a95;
-          if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_x583g4_a0a0a0a95.getReferenceTarget("classifier")))) {
+          if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_x583g4_a0a0a0a95.getReferenceTarget(MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier"))))) {
             return false;
           }
         }
@@ -3742,7 +3742,7 @@ public class QueriesGenerated extends QueryProviderBase {
         }
         {
           SNodeReference pointer = SNODE_POINTER_x583g4_a0a0a0a0b0b0a0a0b0a0a0a37;
-          if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_x583g4_a0a0a0a37.getReferenceTarget("classifier")))) {
+          if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_x583g4_a0a0a0a37.getReferenceTarget(MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier"))))) {
             return false;
           }
         }
@@ -3771,7 +3771,7 @@ public class QueriesGenerated extends QueryProviderBase {
         }
         {
           SNodeReference pointer = SNODE_POINTER_x583g4_a0a0a0a0b0b0a0a0b0a0a0a331;
-          if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_x583g4_a0a0a0a331.getReferenceTarget("classifier")))) {
+          if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_x583g4_a0a0a0a331.getReferenceTarget(MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier"))))) {
             return false;
           }
         }

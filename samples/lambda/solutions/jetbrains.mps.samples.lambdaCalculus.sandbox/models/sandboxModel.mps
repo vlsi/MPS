@@ -4,6 +4,8 @@
   <debugInfo>
     <lang id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core" />
     <lang id="7c9e2807-94ad-4afc-adf0-aaee45eb2895" name="jetbrains.mps.samples.lambdaCalculus" />
+    <concept id="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" />
+    <concept id="7c9e2807-94ad-4afc-adf0-aaee45eb2895/1934341835352312155" name="jetbrains.mps.samples.lambdaCalculus.structure.BinaryOperation" />
     <concept id="7c9e2807-94ad-4afc-adf0-aaee45eb2895/1934341835352312169" name="jetbrains.mps.samples.lambdaCalculus.structure.AddOperation" />
     <concept id="7c9e2807-94ad-4afc-adf0-aaee45eb2895/3978364766705449817" name="jetbrains.mps.samples.lambdaCalculus.structure.ParenthesisExpression" />
     <concept id="7c9e2807-94ad-4afc-adf0-aaee45eb2895/4022026349914673024" name="jetbrains.mps.samples.lambdaCalculus.structure.LambdaAbstraction" />
@@ -14,6 +16,7 @@
     <concept id="7c9e2807-94ad-4afc-adf0-aaee45eb2895/4022026349915821199" name="jetbrains.mps.samples.lambdaCalculus.structure.AbstractionVarRef" />
     <concept id="7c9e2807-94ad-4afc-adf0-aaee45eb2895/4939219901991602079" name="jetbrains.mps.samples.lambdaCalculus.structure.LetExpression" />
     <concept id="7c9e2807-94ad-4afc-adf0-aaee45eb2895/4939219901992083820" name="jetbrains.mps.samples.lambdaCalculus.structure.LetRef" />
+    <concept id="7c9e2807-94ad-4afc-adf0-aaee45eb2895/5249919352014727944" name="jetbrains.mps.samples.lambdaCalculus.structure.VariableReference" />
     <concept id="7c9e2807-94ad-4afc-adf0-aaee45eb2895/6645816968628162282" name="jetbrains.mps.samples.lambdaCalculus.structure.MultiplyOperation" />
     <concept id="7c9e2807-94ad-4afc-adf0-aaee45eb2895/6645816968628162284" name="jetbrains.mps.samples.lambdaCalculus.structure.SubtractOperation" />
     <concept id="7c9e2807-94ad-4afc-adf0-aaee45eb2895/8360767178776325736" name="jetbrains.mps.samples.lambdaCalculus.structure.LetVariable" />

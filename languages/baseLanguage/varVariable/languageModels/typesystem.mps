@@ -10,6 +10,7 @@
     <lang id="7a5dda62-9140-4668-ab76-d5ed1746f2b2" name="jetbrains.mps.lang.typesystem" />
     <model ref="r:931e38db-856b-4b95-8ae0-a7cd13da6d32(jetbrains.mps.baseLanguage.varVariable.structure)" name="jetbrains.mps.baseLanguage.varVariable.structure" />
     <model ref="r:00000000-0000-4000-0000-011c89590334(jetbrains.mps.baseLanguage.closures.constraints)" name="jetbrains.mps.baseLanguage.closures.constraints" />
+    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068431474542" name="jetbrains.mps.baseLanguage.structure.VariableDeclaration" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068498886294" name="jetbrains.mps.baseLanguage.structure.AssignmentExpression" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068498886296" name="jetbrains.mps.baseLanguage.structure.VariableReference" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" />
@@ -21,22 +22,31 @@
     <concept id="7866978e-a0f0-4cc7-81bc-4d213d9375e1/1138055754698" name="jetbrains.mps.lang.smodel.structure.SNodeType" />
     <concept id="7866978e-a0f0-4cc7-81bc-4d213d9375e1/1138056143562" name="jetbrains.mps.lang.smodel.structure.SLinkAccess" />
     <concept id="7866978e-a0f0-4cc7-81bc-4d213d9375e1/1140137987495" name="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" />
+    <concept id="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" />
     <concept id="7866978e-a0f0-4cc7-81bc-4d213d9375e1/1172008320231" name="jetbrains.mps.lang.smodel.structure.Node_IsNotNullOperation" />
     <concept id="7a5dda62-9140-4668-ab76-d5ed1746f2b2/1174642788531" name="jetbrains.mps.lang.typesystem.structure.ConceptReference" />
     <concept id="7a5dda62-9140-4668-ab76-d5ed1746f2b2/1174643105530" name="jetbrains.mps.lang.typesystem.structure.InferenceRule" />
+    <concept id="7a5dda62-9140-4668-ab76-d5ed1746f2b2/1174648085619" name="jetbrains.mps.lang.typesystem.structure.AbstractRule" />
     <concept id="7a5dda62-9140-4668-ab76-d5ed1746f2b2/1174650418652" name="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" />
     <concept id="7a5dda62-9140-4668-ab76-d5ed1746f2b2/1174657487114" name="jetbrains.mps.lang.typesystem.structure.TypeOfExpression" />
     <concept id="7a5dda62-9140-4668-ab76-d5ed1746f2b2/1174658326157" name="jetbrains.mps.lang.typesystem.structure.CreateEquationStatement" />
+    <concept id="7a5dda62-9140-4668-ab76-d5ed1746f2b2/1174660718586" name="jetbrains.mps.lang.typesystem.structure.AbstractEquationStatement" />
     <concept id="7a5dda62-9140-4668-ab76-d5ed1746f2b2/1174665551739" name="jetbrains.mps.lang.typesystem.structure.TypeVarDeclaration" />
     <concept id="7a5dda62-9140-4668-ab76-d5ed1746f2b2/1174666260556" name="jetbrains.mps.lang.typesystem.structure.TypeVarReference" />
     <concept id="7a5dda62-9140-4668-ab76-d5ed1746f2b2/1175517400280" name="jetbrains.mps.lang.typesystem.structure.AssertStatement" />
+    <concept id="7a5dda62-9140-4668-ab76-d5ed1746f2b2/1175517767210" name="jetbrains.mps.lang.typesystem.structure.ReportErrorStatement" />
     <concept id="7a5dda62-9140-4668-ab76-d5ed1746f2b2/1185788614172" name="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" />
     <concept id="7a5dda62-9140-4668-ab76-d5ed1746f2b2/1185805035213" name="jetbrains.mps.lang.typesystem.structure.WhenConcreteStatement" />
+    <concept id="7a5dda62-9140-4668-ab76-d5ed1746f2b2/1195213580585" name="jetbrains.mps.lang.typesystem.structure.AbstractCheckingRule" />
     <concept id="7a5dda62-9140-4668-ab76-d5ed1746f2b2/1195214364922" name="jetbrains.mps.lang.typesystem.structure.NonTypesystemRule" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1197027756228" name="jetbrains.mps.baseLanguage.structure.DotExpression" />
+    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1204053956946" name="jetbrains.mps.baseLanguage.structure.IMethodCall" />
     <concept id="7a5dda62-9140-4668-ab76-d5ed1746f2b2/1205762105978" name="jetbrains.mps.lang.typesystem.structure.WhenConcreteVariableDeclaration" />
     <concept id="7a5dda62-9140-4668-ab76-d5ed1746f2b2/1205762656241" name="jetbrains.mps.lang.typesystem.structure.WhenConcreteVariableReference" />
+    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1215693861676" name="jetbrains.mps.baseLanguage.structure.BaseAssignmentExpression" />
+    <concept id="7a5dda62-9140-4668-ab76-d5ed1746f2b2/1227096774658" name="jetbrains.mps.lang.typesystem.structure.MessageStatement" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/4836112446988635817" name="jetbrains.mps.baseLanguage.structure.UndefinedType" />
+    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/4972933694980447171" name="jetbrains.mps.baseLanguage.structure.BaseVariableDeclaration" />
     <property id="f3061a53-9226-4cc5-a443-f952ceaf5816/1070475926800/1070475926801" name="value" />
     <property id="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001" name="name" />
     <property id="7a5dda62-9140-4668-ab76-d5ed1746f2b2/1195213580585/1195213689297" name="overrides" />

@@ -6,6 +6,8 @@
     <lang id="144f7012-c2d5-43be-be2b-4bfb7dff6503" name="jetbrains.mps.samples.agreementLanguage" />
     <lang id="b1a9bc47-8a26-4792-8b68-4660c531090a" name="jetbrains.mps.samples.formulaLanguage" />
     <model ref="r:00000000-0000-4000-0000-011c8959040b(jetbrains.mps.samples.agreementLanguage.declarations)" name="jetbrains.mps.samples.agreementLanguage.declarations" />
+    <concept id="b1a9bc47-8a26-4792-8b68-4660c531090a/1111784210516" name="jetbrains.mps.samples.formulaLanguage.structure.Formula" />
+    <concept id="b1a9bc47-8a26-4792-8b68-4660c531090a/1111784562907" name="jetbrains.mps.samples.formulaLanguage.structure.Operation" />
     <concept id="b1a9bc47-8a26-4792-8b68-4660c531090a/1111784926012" name="jetbrains.mps.samples.formulaLanguage.structure.FloatingPointConstant" />
     <concept id="b1a9bc47-8a26-4792-8b68-4660c531090a/1111785030296" name="jetbrains.mps.samples.formulaLanguage.structure.IfFunction" />
     <concept id="b1a9bc47-8a26-4792-8b68-4660c531090a/1111786301085" name="jetbrains.mps.samples.formulaLanguage.structure.PlusOperation" />
@@ -13,6 +15,7 @@
     <concept id="144f7012-c2d5-43be-be2b-4bfb7dff6503/1111791020814" name="jetbrains.mps.samples.agreementLanguage.structure.Value" />
     <concept id="144f7012-c2d5-43be-be2b-4bfb7dff6503/1111791038612" name="jetbrains.mps.samples.agreementLanguage.structure.Event" />
     <concept id="144f7012-c2d5-43be-be2b-4bfb7dff6503/1111792102248" name="jetbrains.mps.samples.agreementLanguage.structure.Quantity" />
+    <concept id="144f7012-c2d5-43be-be2b-4bfb7dff6503/1111792355423" name="jetbrains.mps.samples.agreementLanguage.structure.TemporalProperty" />
     <concept id="144f7012-c2d5-43be-be2b-4bfb7dff6503/1111792389581" name="jetbrains.mps.samples.agreementLanguage.structure.Date" />
     <concept id="144f7012-c2d5-43be-be2b-4bfb7dff6503/1111792520557" name="jetbrains.mps.samples.agreementLanguage.structure.QuantityTemporalProperty" />
     <concept id="144f7012-c2d5-43be-be2b-4bfb7dff6503/1111794734295" name="jetbrains.mps.samples.agreementLanguage.structure.PostingRuleTemporalProperty" />
@@ -22,6 +25,7 @@
     <concept id="b1a9bc47-8a26-4792-8b68-4660c531090a/1112384225757" name="jetbrains.mps.samples.formulaLanguage.structure.MultOperation" />
     <concept id="b1a9bc47-8a26-4792-8b68-4660c531090a/1112406908640" name="jetbrains.mps.samples.formulaLanguage.structure.GreaterThanOperation" />
     <concept id="144f7012-c2d5-43be-be2b-4bfb7dff6503/1116445695828" name="jetbrains.mps.samples.agreementLanguage.structure.Date_Past" />
+    <concept id="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" />
     <property id="144f7012-c2d5-43be-be2b-4bfb7dff6503/1111792389581/1111792409129" name="year" />
     <property id="144f7012-c2d5-43be-be2b-4bfb7dff6503/1111792389581/1111792417427" name="month" />
     <property id="144f7012-c2d5-43be-be2b-4bfb7dff6503/1111792389581/1111792417975" name="day" />

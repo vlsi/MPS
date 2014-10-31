@@ -11,6 +11,8 @@ import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.pattern.IMatchingPattern;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.lang.pattern.runtime.PatternUtil;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.smodel.SNodePointer;
@@ -47,7 +49,7 @@ public class supertypesOf_SNodeType_SEnumMemberType_SubtypingRule extends Subtyp
         }
         {
           SNodeReference pointer = SNODE_POINTER_2cenap_a0a0a0a0b0b0a0a0a0a0a0e;
-          if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_6v72fr_a0a.getReferenceTarget("concept")))) {
+          if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_6v72fr_a0a.getReferenceTarget(MetaAdapterFactory.getReferenceLink(new UUID(8675788371017092295l, -9098312342032910879l), 1138055754698l, 1138405853777l, "concept"))))) {
             return false;
           }
         }

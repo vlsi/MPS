@@ -15,6 +15,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.pattern.IMatchingPattern;
+import org.jetbrains.mps.openapi.language.SContainmentLink;
 import jetbrains.mps.lang.pattern.runtime.PatternUtil;
 import jetbrains.mps.util.IterableUtil;
 
@@ -72,7 +73,7 @@ public class collection_covariant_extends_InequationReplacementRule extends Abst
           return false;
         }
         {
-          String childRole_otuqx5_ = "elementType";
+          SContainmentLink childRole_otuqx5_ = MetaAdapterFactory.getContainmentLink(new UUID(-8968771020793164004l, -7182180101671965361l), 5686963296372573083l, 5686963296372573084l, "elementType");
           if (!(PatternUtil.hasNChildren(nodeToMatch_otuqx5_a0a, childRole_otuqx5_, 1))) {
             return false;
           }
@@ -112,7 +113,7 @@ public class collection_covariant_extends_InequationReplacementRule extends Abst
           return false;
         }
         {
-          String childRole_otuqx5__0 = "elementType";
+          SContainmentLink childRole_otuqx5__0 = MetaAdapterFactory.getContainmentLink(new UUID(-8968771020793164004l, -7182180101671965361l), 5686963296372573083l, 5686963296372573084l, "elementType");
           if (!(PatternUtil.hasNChildren(nodeToMatch_otuqx5_a0a_0, childRole_otuqx5__0, 1))) {
             return false;
           }

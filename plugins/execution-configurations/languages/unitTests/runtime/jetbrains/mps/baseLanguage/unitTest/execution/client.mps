@@ -64,9 +64,11 @@
     <model ref="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util.concurrent(JDK/java.util.concurrent@java_stub)" name="java.util.concurrent@java_stub" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068390468198" name="jetbrains.mps.baseLanguage.structure.ClassConcept" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068390468200" name="jetbrains.mps.baseLanguage.structure.FieldDeclaration" />
+    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068431474542" name="jetbrains.mps.baseLanguage.structure.VariableDeclaration" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068498886292" name="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068498886294" name="jetbrains.mps.baseLanguage.structure.AssignmentExpression" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068498886296" name="jetbrains.mps.baseLanguage.structure.VariableReference" />
+    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123132" name="jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123137" name="jetbrains.mps.baseLanguage.structure.BooleanConstant" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123140" name="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" />
@@ -99,24 +101,31 @@
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1081236700937" name="jetbrains.mps.baseLanguage.structure.StaticMethodCall" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1081236700938" name="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1081516740877" name="jetbrains.mps.baseLanguage.structure.NotExpression" />
+    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1081773326031" name="jetbrains.mps.baseLanguage.structure.BinaryOperation" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1082485599095" name="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1083245097125" name="jetbrains.mps.baseLanguage.structure.EnumClass" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1083245299891" name="jetbrains.mps.baseLanguage.structure.EnumConstantDeclaration" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1092119917967" name="jetbrains.mps.baseLanguage.structure.MulExpression" />
+    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1107461130800" name="jetbrains.mps.baseLanguage.structure.Classifier" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1107535904670" name="jetbrains.mps.baseLanguage.structure.ClassifierType" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1107796713796" name="jetbrains.mps.baseLanguage.structure.Interface" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1109279763828" name="jetbrains.mps.baseLanguage.structure.TypeVariableDeclaration" />
+    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1109279851642" name="jetbrains.mps.baseLanguage.structure.GenericDeclaration" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1109283449304" name="jetbrains.mps.baseLanguage.structure.TypeVariableReference" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1116615150612" name="jetbrains.mps.baseLanguage.structure.ClassifierClassExpression" />
+    <concept id="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1133920641626" name="jetbrains.mps.lang.core.structure.BaseConcept" />
+    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1137021947720" name="jetbrains.mps.baseLanguage.structure.ConceptFunction" />
     <concept id="7866978e-a0f0-4cc7-81bc-4d213d9375e1/1138055754698" name="jetbrains.mps.lang.smodel.structure.SNodeType" />
     <concept id="7866978e-a0f0-4cc7-81bc-4d213d9375e1/1138056022639" name="jetbrains.mps.lang.smodel.structure.SPropertyAccess" />
     <concept id="7866978e-a0f0-4cc7-81bc-4d213d9375e1/1138056143562" name="jetbrains.mps.lang.smodel.structure.SLinkAccess" />
     <concept id="7866978e-a0f0-4cc7-81bc-4d213d9375e1/1138056282393" name="jetbrains.mps.lang.smodel.structure.SLinkListAccess" />
+    <concept id="7866978e-a0f0-4cc7-81bc-4d213d9375e1/1138411891628" name="jetbrains.mps.lang.smodel.structure.SNodeOperation" />
     <concept id="7866978e-a0f0-4cc7-81bc-4d213d9375e1/1139621453865" name="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" />
     <concept id="7866978e-a0f0-4cc7-81bc-4d213d9375e1/1140137987495" name="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" />
     <concept id="7866978e-a0f0-4cc7-81bc-4d213d9375e1/1143234257716" name="jetbrains.mps.lang.smodel.structure.Node_GetModelOperation" />
     <concept id="7866978e-a0f0-4cc7-81bc-4d213d9375e1/1144101972840" name="jetbrains.mps.lang.smodel.structure.OperationParm_Concept" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1144226303539" name="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1144230876926" name="jetbrains.mps.baseLanguage.structure.AbstractForStatement" />
     <concept id="7866978e-a0f0-4cc7-81bc-4d213d9375e1/1145383075378" name="jetbrains.mps.lang.smodel.structure.SNodeListType" />
     <concept id="7866978e-a0f0-4cc7-81bc-4d213d9375e1/1145404486709" name="jetbrains.mps.lang.smodel.structure.SemanticDowncastExpression" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1145552977093" name="jetbrains.mps.baseLanguage.structure.GenericNewExpression" />
@@ -130,6 +139,7 @@
     <concept id="83888646-71ce-4f1c-9c53-c54016f6ad4f/1153943597977" name="jetbrains.mps.baseLanguage.collections.structure.ForEachStatement" />
     <concept id="83888646-71ce-4f1c-9c53-c54016f6ad4f/1153944193378" name="jetbrains.mps.baseLanguage.collections.structure.ForEachVariable" />
     <concept id="83888646-71ce-4f1c-9c53-c54016f6ad4f/1153944233411" name="jetbrains.mps.baseLanguage.collections.structure.ForEachVariableReference" />
+    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1154032098014" name="jetbrains.mps.baseLanguage.structure.AbstractLoopStatement" />
     <concept id="83888646-71ce-4f1c-9c53-c54016f6ad4f/1160600644654" name="jetbrains.mps.baseLanguage.collections.structure.ListCreatorWithInit" />
     <concept id="83888646-71ce-4f1c-9c53-c54016f6ad4f/1160612413312" name="jetbrains.mps.baseLanguage.collections.structure.AddElementOperation" />
     <concept id="83888646-71ce-4f1c-9c53-c54016f6ad4f/1160666733551" name="jetbrains.mps.baseLanguage.collections.structure.AddAllElementsOperation" />
@@ -143,6 +153,7 @@
     <concept id="83888646-71ce-4f1c-9c53-c54016f6ad4f/1165530316231" name="jetbrains.mps.baseLanguage.collections.structure.IsEmptyOperation" />
     <concept id="760a0a8c-eabb-4521-8bfd-65db761a9ba3/1167227138527" name="jetbrains.mps.baseLanguage.logging.structure.LogStatement" />
     <concept id="83888646-71ce-4f1c-9c53-c54016f6ad4f/1167380149909" name="jetbrains.mps.baseLanguage.collections.structure.RemoveElementOperation" />
+    <concept id="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1170075670744" name="jetbrains.mps.baseLanguage.structure.SynchronizedStatement" />
     <concept id="7866978e-a0f0-4cc7-81bc-4d213d9375e1/1171407110247" name="jetbrains.mps.lang.smodel.structure.Node_GetAncestorOperation" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1171903916106" name="jetbrains.mps.baseLanguage.structure.UpperBoundType" />
@@ -156,23 +167,30 @@
     <concept id="daafa647-f1f7-4b0b-b096-69cd7c8408c0/1174482804200" name="jetbrains.mps.baseLanguage.regexp.structure.PlusRegexp" />
     <concept id="daafa647-f1f7-4b0b-b096-69cd7c8408c0/1174482808826" name="jetbrains.mps.baseLanguage.regexp.structure.StarRegexp" />
     <concept id="daafa647-f1f7-4b0b-b096-69cd7c8408c0/1174484562151" name="jetbrains.mps.baseLanguage.regexp.structure.SeqRegexp" />
+    <concept id="daafa647-f1f7-4b0b-b096-69cd7c8408c0/1174485167097" name="jetbrains.mps.baseLanguage.regexp.structure.BinaryRegexp" />
+    <concept id="daafa647-f1f7-4b0b-b096-69cd7c8408c0/1174485235885" name="jetbrains.mps.baseLanguage.regexp.structure.UnaryRegexp" />
     <concept id="daafa647-f1f7-4b0b-b096-69cd7c8408c0/1174491169200" name="jetbrains.mps.baseLanguage.regexp.structure.ParensRegexp" />
     <concept id="daafa647-f1f7-4b0b-b096-69cd7c8408c0/1174510540317" name="jetbrains.mps.baseLanguage.regexp.structure.InlineRegexpExpression" />
     <concept id="daafa647-f1f7-4b0b-b096-69cd7c8408c0/1174555732504" name="jetbrains.mps.baseLanguage.regexp.structure.PredefinedSymbolClassRegexp" />
     <concept id="daafa647-f1f7-4b0b-b096-69cd7c8408c0/1174556813606" name="jetbrains.mps.baseLanguage.regexp.structure.DotRegexp" />
+    <concept id="daafa647-f1f7-4b0b-b096-69cd7c8408c0/1174653354106" name="jetbrains.mps.baseLanguage.regexp.structure.RegexpUsingConstruction" />
     <concept id="daafa647-f1f7-4b0b-b096-69cd7c8408c0/1175161300324" name="jetbrains.mps.baseLanguage.regexp.structure.LineEndRegexp" />
     <concept id="83888646-71ce-4f1c-9c53-c54016f6ad4f/1176903168877" name="jetbrains.mps.baseLanguage.collections.structure.UnionOperation" />
+    <concept id="83888646-71ce-4f1c-9c53-c54016f6ad4f/1176906603202" name="jetbrains.mps.baseLanguage.collections.structure.BinaryOperation" />
     <concept id="7866978e-a0f0-4cc7-81bc-4d213d9375e1/1177026924588" name="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" />
+    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1178549954367" name="jetbrains.mps.baseLanguage.structure.IVisible" />
     <concept id="83888646-71ce-4f1c-9c53-c54016f6ad4f/1178894719932" name="jetbrains.mps.baseLanguage.collections.structure.DistinctOperation" />
     <concept id="7866978e-a0f0-4cc7-81bc-4d213d9375e1/1179409122411" name="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1184950988562" name="jetbrains.mps.baseLanguage.structure.ArrayCreator" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1184952934362" name="jetbrains.mps.baseLanguage.structure.DimensionExpression" />
     <concept id="83888646-71ce-4f1c-9c53-c54016f6ad4f/1184963466173" name="jetbrains.mps.baseLanguage.collections.structure.ToArrayOperation" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1188207840427" name="jetbrains.mps.baseLanguage.structure.AnnotationInstance" />
+    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1188208481402" name="jetbrains.mps.baseLanguage.structure.HasAnnotation" />
     <concept id="3a13115c-633c-4c5c-bbcc-75c4219e9555/1196350785113" name="jetbrains.mps.lang.quotation.structure.Quotation" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1197027756228" name="jetbrains.mps.baseLanguage.structure.DotExpression" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1197029447546" name="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation" />
     <concept id="83888646-71ce-4f1c-9c53-c54016f6ad4f/1197683403723" name="jetbrains.mps.baseLanguage.collections.structure.MapType" />
+    <concept id="83888646-71ce-4f1c-9c53-c54016f6ad4f/1197686869805" name="jetbrains.mps.baseLanguage.collections.structure.HashMapCreator" />
     <concept id="83888646-71ce-4f1c-9c53-c54016f6ad4f/1197932370469" name="jetbrains.mps.baseLanguage.collections.structure.MapElement" />
     <concept id="fd392034-7849-419d-9071-12563d152375/1199542442495" name="jetbrains.mps.baseLanguage.closures.structure.FunctionType" />
     <concept id="fd392034-7849-419d-9071-12563d152375/1199569711397" name="jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral" />
@@ -183,16 +201,21 @@
     <concept id="83888646-71ce-4f1c-9c53-c54016f6ad4f/1202128969694" name="jetbrains.mps.baseLanguage.collections.structure.SelectOperation" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1202948039474" name="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" />
     <concept id="83888646-71ce-4f1c-9c53-c54016f6ad4f/1203518072036" name="jetbrains.mps.baseLanguage.collections.structure.SmartClosureParameterDeclaration" />
+    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1204053956946" name="jetbrains.mps.baseLanguage.structure.IMethodCall" />
+    <concept id="83888646-71ce-4f1c-9c53-c54016f6ad4f/1204796164442" name="jetbrains.mps.baseLanguage.collections.structure.InternalSequenceOperation" />
     <concept id="7866978e-a0f0-4cc7-81bc-4d213d9375e1/1204834851141" name="jetbrains.mps.lang.smodel.structure.PoundExpression" />
     <concept id="83888646-71ce-4f1c-9c53-c54016f6ad4f/1204980550705" name="jetbrains.mps.baseLanguage.collections.structure.VisitAllOperation" />
     <concept id="443f4c36-fcf5-4eb6-9500-8d06ed259e3e/1205752633985" name="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression" />
+    <concept id="443f4c36-fcf5-4eb6-9500-8d06ed259e3e/1205756064662" name="jetbrains.mps.baseLanguage.classifiers.structure.IMemberOperation" />
     <concept id="443f4c36-fcf5-4eb6-9500-8d06ed259e3e/1205769149993" name="jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierMethodCallOperation" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1206060495898" name="jetbrains.mps.baseLanguage.structure.ElsifClause" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1212685548494" name="jetbrains.mps.baseLanguage.structure.ClassCreator" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1214918800624" name="jetbrains.mps.baseLanguage.structure.PostfixIncrementExpression" />
+    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1215693861676" name="jetbrains.mps.baseLanguage.structure.BaseAssignmentExpression" />
     <concept id="daafa647-f1f7-4b0b-b096-69cd7c8408c0/1222260469397" name="jetbrains.mps.baseLanguage.regexp.structure.MatchRegexpOperation" />
     <concept id="83888646-71ce-4f1c-9c53-c54016f6ad4f/1224414427926" name="jetbrains.mps.baseLanguage.collections.structure.SequenceCreator" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1224573963862" name="jetbrains.mps.baseLanguage.structure.EnumValuesExpression" />
+    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1224848483129" name="jetbrains.mps.baseLanguage.structure.IBLDeprecatable" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1225271177708" name="jetbrains.mps.baseLanguage.structure.StringType" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1225271221393" name="jetbrains.mps.baseLanguage.structure.NPENotEqualsExpression" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1225271283259" name="jetbrains.mps.baseLanguage.structure.NPEEqualsExpression" />
@@ -204,14 +227,17 @@
     <concept id="83888646-71ce-4f1c-9c53-c54016f6ad4f/1226516258405" name="jetbrains.mps.baseLanguage.collections.structure.HashSetCreator" />
     <concept id="83888646-71ce-4f1c-9c53-c54016f6ad4f/1226566855640" name="jetbrains.mps.baseLanguage.collections.structure.AddSetElementOperation" />
     <concept id="83888646-71ce-4f1c-9c53-c54016f6ad4f/1227008614712" name="jetbrains.mps.baseLanguage.collections.structure.LinkedListCreator" />
+    <concept id="83888646-71ce-4f1c-9c53-c54016f6ad4f/1237721394592" name="jetbrains.mps.baseLanguage.collections.structure.AbstractContainerCreator" />
     <concept id="a247e09e-2435-45ba-b8d2-07e93feba96a/1238852151516" name="jetbrains.mps.baseLanguage.tuples.structure.IndexedTupleType" />
     <concept id="a247e09e-2435-45ba-b8d2-07e93feba96a/1238853782547" name="jetbrains.mps.baseLanguage.tuples.structure.IndexedTupleLiteral" />
     <concept id="a247e09e-2435-45ba-b8d2-07e93feba96a/1238857743184" name="jetbrains.mps.baseLanguage.tuples.structure.IndexedTupleMemberAccessExpression" />
     <concept id="a247e09e-2435-45ba-b8d2-07e93feba96a/1239531918181" name="jetbrains.mps.baseLanguage.tuples.structure.NamedTupleType" />
     <concept id="a247e09e-2435-45ba-b8d2-07e93feba96a/1239576519914" name="jetbrains.mps.baseLanguage.tuples.structure.NamedTupleComponentAccessOperation" />
+    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1239714755177" name="jetbrains.mps.baseLanguage.structure.AbstractUnaryNumberOperation" />
     <concept id="83888646-71ce-4f1c-9c53-c54016f6ad4f/1240216724530" name="jetbrains.mps.baseLanguage.collections.structure.LinkedHashMapCreator" />
     <concept id="83888646-71ce-4f1c-9c53-c54016f6ad4f/1240325842691" name="jetbrains.mps.baseLanguage.collections.structure.AsSequenceOperation" />
     <concept id="83888646-71ce-4f1c-9c53-c54016f6ad4f/1240687580870" name="jetbrains.mps.baseLanguage.collections.structure.JoinOperation" />
+    <concept id="83888646-71ce-4f1c-9c53-c54016f6ad4f/540871147943773365" name="jetbrains.mps.baseLanguage.collections.structure.SingleArgumentSequenceOperation" />
     <concept id="f3347d8a-0e79-4f35-8ac9-1574f25c986f/856705193941281753" name="jetbrains.mps.execution.commands.structure.CommandReferenceExpression" />
     <concept id="f3347d8a-0e79-4f35-8ac9-1574f25c986f/856705193941281756" name="jetbrains.mps.execution.commands.structure.CommandParameterReference" />
     <concept id="f3347d8a-0e79-4f35-8ac9-1574f25c986f/856705193941281762" name="jetbrains.mps.execution.commands.structure.ExplicitCommandParameterDeclaration" />
@@ -220,12 +246,14 @@
     <concept id="f3347d8a-0e79-4f35-8ac9-1574f25c986f/856705193941281768" name="jetbrains.mps.execution.commands.structure.CommandDeclaration" />
     <concept id="f3347d8a-0e79-4f35-8ac9-1574f25c986f/856705193941281780" name="jetbrains.mps.execution.commands.structure.CommandBuilderExpression" />
     <concept id="f3347d8a-0e79-4f35-8ac9-1574f25c986f/856705193941281790" name="jetbrains.mps.execution.commands.structure.ReportExecutionError" />
+    <concept id="f3347d8a-0e79-4f35-8ac9-1574f25c986f/856705193941281792" name="jetbrains.mps.execution.commands.structure.ReportErrorStatement" />
     <concept id="fbc14279-5e2a-4c87-a5d1-5f7061e6c456/1104094430779068753" name="jetbrains.mps.debugger.api.lang.structure.DebuggerReference" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1465982738277781862" name="jetbrains.mps.baseLanguage.structure.PlaceholderMember" />
     <concept id="daafa647-f1f7-4b0b-b096-69cd7c8408c0/3796137614137086346" name="jetbrains.mps.baseLanguage.regexp.structure.ReplaceRegexpOperation" />
     <concept id="7866978e-a0f0-4cc7-81bc-4d213d9375e1/4040588429969021681" name="jetbrains.mps.lang.smodel.structure.ModuleReferenceExpression" />
     <concept id="774bf8a0-62e5-41e1-af63-f4812e60e48b/4079382982702596667" name="jetbrains.mps.baseLanguage.checkedDots.structure.CheckedDotExpression" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/4836112446988635817" name="jetbrains.mps.baseLanguage.structure.UndefinedType" />
+    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/4972933694980447171" name="jetbrains.mps.baseLanguage.structure.BaseVariableDeclaration" />
     <concept id="f3347d8a-0e79-4f35-8ac9-1574f25c986f/6129022259108579244" name="jetbrains.mps.execution.commands.structure.ExecuteCommandPart" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/6329021646629104954" name="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/6329021646629104957" name="jetbrains.mps.baseLanguage.structure.TextCommentPart" />
@@ -7479,7 +7507,7 @@
           <node concept="vg0i.1068580123136" id="6062668769034832926" role="vg0i.1082485599095.1082485599096" info="sn">
             <node concept="vg0i.1068580123155" id="6062668769034832927" role="vg0i.1068580123136.1068581517665" info="nn">
               <node concept="ueg4.856705193941281780" id="6062668769034832928" role="vg0i.1068580123155.1068580123156" info="nn">
-                <reference role="ueg4.856705193941281780.6129022259108621329" target="6062668769034832957" />
+                <reference role="ueg4.856705193941281780.6129022259108621329" target="6062668769034832957" resolveInfo="jUnit" />
                 <node concept="ueg4.856705193941281764" id="6062668769034832929" role="ueg4.856705193941281780.856705193941281781" info="ng">
                   <reference role="ueg4.856705193941281764.856705193941281765" target="6062668769034832958" resolveInfo="tests" />
                   <node concept="ueg4.856705193941281756" id="6062668769034832930" role="ueg4.856705193941281764.856705193941281766" info="nn">
@@ -7659,7 +7687,7 @@
             </node>
             <node concept="vg0i.1068580123155" id="6062668769034833004" role="vg0i.1068580123136.1068581517665" info="nn">
               <node concept="ueg4.856705193941281780" id="6062668769034833005" role="vg0i.1068580123155.1068580123156" info="nn">
-                <reference role="ueg4.856705193941281780.6129022259108621329" target="go48.1240470842553275010" />
+                <reference role="ueg4.856705193941281780.6129022259108621329" target="go48.1240470842553275010" resolveInfo="java" />
                 <node concept="ueg4.856705193941281764" id="6062668769034833006" role="ueg4.856705193941281780.856705193941281781" info="ng">
                   <reference role="ueg4.856705193941281764.856705193941281765" target="go48.1240470842553275023" resolveInfo="virtualMachineParameter" />
                   <node concept="vg0i.1068581242875" id="6062668769034833007" role="ueg4.856705193941281764.856705193941281766" info="nn">
