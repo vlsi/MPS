@@ -17,6 +17,7 @@ package jetbrains.mps.smodel.adapter;
 
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.smodel.adapter.ids.MetaIdByDeclaration;
 import jetbrains.mps.smodel.adapter.structure.concept.SConceptAdapterById;
 import jetbrains.mps.smodel.adapter.structure.language.SLanguageAdapterById;
@@ -28,6 +29,7 @@ import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.language.SProperty;
 import org.jetbrains.mps.openapi.language.SReferenceLink;
+import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
 /**
  * This allows to convert source-level (non-published code) entities to structure-level ids (published code ids)
@@ -39,19 +41,19 @@ public class MetaAdapterByDeclaration {
   }
 
   public static SConcept getConcept(SNode c) {
-    return new SConceptAdapterById(MetaIdByDeclaration.getConceptId(c), c.getName());
+    return new SConceptAdapterById(MetaIdByDeclaration.getConceptId(c), SNodeAccessUtil.getProperty(c, SNodeUtil.property_INamedConcept_name));
   }
 
   public static SContainmentLink getContainmentLink(SNode c) {
-    return new SContainmentLinkAdapterById(MetaIdByDeclaration.getLinkId(c), c.getName());
+    return new SContainmentLinkAdapterById(MetaIdByDeclaration.getLinkId(c), SNodeAccessUtil.getProperty(c, SNodeUtil.property_LinkDeclaration_role));
   }
 
   public static SReferenceLink getReferenceLink(SNode c) {
-    return new SReferenceLinkAdapterById(MetaIdByDeclaration.getRefRoleId(c), c.getName());
+    return new SReferenceLinkAdapterById(MetaIdByDeclaration.getRefRoleId(c), SNodeAccessUtil.getProperty(c, SNodeUtil.property_LinkDeclaration_role));
   }
 
   public static SProperty getProperty(SNode c) {
-    return new SPropertyAdapterById(MetaIdByDeclaration.getPropId(c), c.getName());
+    return new SPropertyAdapterById(MetaIdByDeclaration.getPropId(c), SNodeAccessUtil.getProperty(c, SNodeUtil.property_INamedConcept_name));
   }
 
 }
