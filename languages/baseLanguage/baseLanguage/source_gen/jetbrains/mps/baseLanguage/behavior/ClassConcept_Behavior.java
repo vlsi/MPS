@@ -12,7 +12,6 @@ import java.util.UUID;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.util.annotation.ToRemove;
 import javax.swing.Icon;
 import jetbrains.mps.baseLanguage.plugin.IconResourceBundle_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
@@ -58,11 +57,6 @@ public class ClassConcept_Behavior {
       }
     }));
     return extendsClassifiers;
-  }
-  @Deprecated
-  @ToRemove(version = 3.0)
-  public static boolean virtual_isRunnable_7941158526576616752(SNode thisNode) {
-    return (ClassConcept_Behavior.call_getMainMethod_1213877355884(thisNode) != null);
   }
   public static List<Icon> virtual_getMarkIcons_3923831204883340393(SNode thisNode) {
     List<Icon> markIcons = new ArrayList<Icon>(BehaviorReflection.invokeSuper((Class<List<Icon>>) ((Class) Object.class), thisNode, "jetbrains.mps.baseLanguage.structure.Classifier", "virtual_getMarkIcons_3923831204883340393", new Object[]{}));
@@ -177,7 +171,7 @@ public class ClassConcept_Behavior {
       return null;
     }
     SNode classifier = SLinkOperations.getTarget(SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068390468198l, 1165602531693l, "superclass")), MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier"));
-    return ((classifier != null) && SNodeOperations.isInstanceOf(classifier, "jetbrains.mps.baseLanguage.structure.ClassConcept") ? SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068390468198l, 1165602531693l, "superclass")) : _quotation_createNode_xjj00_a0c0j());
+    return ((classifier != null) && SNodeOperations.isInstanceOf(classifier, "jetbrains.mps.baseLanguage.structure.ClassConcept") ? SLinkOperations.getTarget(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068390468198l, 1165602531693l, "superclass")) : _quotation_createNode_xjj00_a0c0i());
   }
   public static List<SNode> virtual_getOwnMethods_1906502351318572840(SNode thisNode) {
     List<SNode> baseMethodDeclarations = new ArrayList<SNode>();
@@ -227,7 +221,7 @@ public class ClassConcept_Behavior {
         }
       }
     }
-    SNode obj = _quotation_createNode_xjj00_a0f0m();
+    SNode obj = _quotation_createNode_xjj00_a0f0l();
     if (seen.add(SLinkOperations.getTarget(obj, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier")))) {
       ListSequence.fromList(result).addElement(SLinkOperations.getTarget(obj, MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier")));
     }
@@ -394,14 +388,14 @@ public class ClassConcept_Behavior {
     AnnotationUtil.detachAnnotation(thisNode, SNodeOperations.getNode("6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)", "~Deprecated"));
   }
   protected static Logger LOG = LogManager.getLogger(ClassConcept_Behavior.class);
-  private static SNode _quotation_createNode_xjj00_a0c0j() {
+  private static SNode _quotation_createNode_xjj00_a0c0i() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, false);
     quotedNode_1.setReference(MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier"), SReference.create(MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier"), quotedNode_1, facade.createModelReference("6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), facade.createNodeId("~Object")));
     return quotedNode_1;
   }
-  private static SNode _quotation_createNode_xjj00_a0f0m() {
+  private static SNode _quotation_createNode_xjj00_a0f0l() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, false);

@@ -96,15 +96,6 @@ public abstract class BaseNodeEditor implements Editor {
     return myCurrentlyEditedNode;
   }
 
-  /**
-   * @deprecated use $editNode(SNodeReference, SNodeReference) instead
-   */
-  @Deprecated
-  @ToRemove(version = 3.1)
-  protected void editNode(final SNodeReference nodeReference, IOperationContext context, boolean select) {
-    editNode(nodeReference, select ? nodeReference : null);
-  }
-
   protected void editNode(@NotNull final SNodeReference nodeToEdit, @Nullable final SNodeReference nodeToSelect) {
     assert myEditorComponent != null;
     executeInEDT(new PrioritizedTask(TaskType.EDIT_NODE, myType2TaskMap) {

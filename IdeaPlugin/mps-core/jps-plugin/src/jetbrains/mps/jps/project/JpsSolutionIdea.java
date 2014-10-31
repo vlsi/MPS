@@ -106,7 +106,7 @@ public class JpsSolutionIdea extends Solution {
           MPSCompilerUtil.debug(myCompileContext, "**** not found lib dep: " + ((JpsLibraryDependency) jpsDep).getLibraryReference().getLibraryName());
         } else {
           String name = lib.getName();
-          solution = (Solution) MPSModuleRepository.getInstance().getModuleById(ModuleId.foreign(name));
+          solution = (Solution) MPSModuleRepository.getInstance().getModule(ModuleId.foreign(name));
         }
 
       } else if (jpsDep instanceof JpsSdkDependency) {
@@ -120,7 +120,7 @@ public class JpsSolutionIdea extends Solution {
         }
 
         String sdkName = ((JpsSdkDependency) jpsDep).getSdkReference().getSdkName();
-        solution = (Solution) MPSModuleRepository.getInstance().getModuleById(ModuleId.foreign(sdkName));
+        solution = (Solution) MPSModuleRepository.getInstance().getModule(ModuleId.foreign(sdkName));
       }
 
       if (solution != null) {

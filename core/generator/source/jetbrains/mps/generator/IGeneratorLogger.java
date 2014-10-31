@@ -15,11 +15,9 @@
  */
 package jetbrains.mps.generator;
 
-import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.annotations.Immutable;
-import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 
 /**
@@ -54,17 +52,8 @@ public interface IGeneratorLogger {
     private final SNodeReference myNode;
     private final String myMessage;
 
-    /**
-     * @deprecated Use {@link #ProblemDescription(org.jetbrains.mps.openapi.model.SNodeReference, String)} instead
-     */
-    @Deprecated
-    @ToRemove(version = 3.1)
-    public ProblemDescription(SNode node, String message) {
-      this(node == null ? null : node.getReference(), message);
-    }
-
     public ProblemDescription(@NotNull String message) {
-      this((SNodeReference) null, message);
+      this(null, message);
     }
 
     /**

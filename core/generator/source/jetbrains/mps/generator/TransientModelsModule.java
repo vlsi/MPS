@@ -170,21 +170,6 @@ public class TransientModelsModule extends AbstractModule implements TransientSM
     }
   }
 
-  /**
-   * TransientModelsModule now support models with identical names/references (unless published)
-   * @deprecated Use {@link #createTransientModel(org.jetbrains.mps.openapi.model.SModelReference)} instead
-   */
-  @Deprecated
-  @ToRemove(version = 3.1)
-  public SModel createTransientModel(@NotNull String longName, @NotNull String stereotype) {
-    String modelName = longName + "@" + stereotype;
-    while (!isValidName(modelName)) {
-      modelName += "_";
-    }
-    final SModelReference mr = PersistenceFacade.getInstance().createModelReference(null, jetbrains.mps.smodel.SModelId.generate(), modelName);
-    return createTransientModel(mr);
-  }
-
   public SModel createTransientModel(SModelReference modelReference) {
     TransientSModelDescriptor result = new TransientSModelDescriptor(modelReference);
     result.load();
@@ -196,15 +181,6 @@ public class TransientModelsModule extends AbstractModule implements TransientSM
 
   public String toString() {
     return getModuleName();
-  }
-
-  /**
-   * @deprecated client code is not expected to access set of models this module aware of, use SModule#getModels() instead
-   */
-  @Deprecated
-  @ToRemove(version=3.1)
-  public List<SModel> getTransientModels() {
-    return IterableUtil.<SModel>asList(myModelVault.allModels());
   }
 
   public SModule getOriginalModule() {

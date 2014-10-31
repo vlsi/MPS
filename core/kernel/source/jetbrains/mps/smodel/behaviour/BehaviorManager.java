@@ -43,7 +43,7 @@ import static jetbrains.mps.smodel.runtime.base.BaseBehaviorDescriptor.behaviorC
  * @deprecated use BehaviorReflection instead
  */
 @Deprecated
-@ToRemove(version = 3.0)
+@ToRemove(version = 3.2)
 public final class BehaviorManager {
 
   private final static BehaviorManager INSTANCE = new BehaviorManager();

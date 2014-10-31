@@ -177,28 +177,6 @@ public class CollectionUtil {
     return false;
   }
 
-  /**
-   * @deprecated Generic error reporting never gives a reasonable clue
-   */
-  @Deprecated
-  @ToRemove(version = 3.1)
-  public static <T> void checkForNulls(Iterable<T> resultList) {
-    checkForNulls(resultList, "");
-  }
-
-  /**
-   * @deprecated Generic error reporting never gives a reasonable clue
-   */
-  @Deprecated
-  @ToRemove(version = 3.1)
-  public static <T> void checkForNulls(Iterable<T> resultList, String message) {
-    for (T node : resultList) {
-      if (node == null) {
-        throw new RuntimeException("nulls are not allowed here. " + message);
-      }
-    }
-  }
-
   public static <T> Iterable<T> withoutNulls(final Iterable<T> resultList) {
     return new Iterable<T>() {
       @Override

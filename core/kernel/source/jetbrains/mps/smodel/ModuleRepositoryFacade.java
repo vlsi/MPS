@@ -69,7 +69,7 @@ public class ModuleRepositoryFacade implements CoreComponent {
   }
 
   public SModule getModule(@NotNull SModuleReference ref) {
-    return ref.getModuleId() != null ? REPO.getModuleById(ref.getModuleId()) : REPO.getModuleByFqName(ref.getModuleName());
+    return ref.getModuleId() != null ? REPO.getModule(ref.getModuleId()) : REPO.getModuleByFqName(ref.getModuleName());
   }
 
   public <T extends SModule> T getModule(SModuleReference ref, Class<T> cls) {

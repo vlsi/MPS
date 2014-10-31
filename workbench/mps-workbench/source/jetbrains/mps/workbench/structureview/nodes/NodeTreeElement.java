@@ -21,18 +21,18 @@ import com.intellij.navigation.ItemPresentation;
 import com.intellij.openapi.actionSystem.DataContext;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.util.AsyncResult.Handler;
-import jetbrains.mps.openapi.navigation.NavigationSupport;
 import jetbrains.mps.ide.project.ProjectHelper;
-import org.jetbrains.mps.openapi.module.SModule;
+import jetbrains.mps.openapi.navigation.NavigationSupport;
 import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.util.Computable;
+import jetbrains.mps.workbench.MPSDataKeys;
+import jetbrains.mps.workbench.choose.nodes.NodePointerPresentation;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
-import jetbrains.mps.util.Computable;
-import jetbrains.mps.workbench.MPSDataKeys;
-import jetbrains.mps.workbench.choose.nodes.NodePresentation;
+import org.jetbrains.mps.openapi.module.SModule;
 
 public abstract class NodeTreeElement implements StructureViewTreeElement {
   protected SNodeReference myNode;
@@ -91,9 +91,9 @@ public abstract class NodeTreeElement implements StructureViewTreeElement {
     });
   }
 
-  protected class NodeTreeElementPresentation extends NodePresentation {
+  protected class NodeTreeElementPresentation extends NodePointerPresentation {
     public NodeTreeElementPresentation() {
-      super(NodeTreeElement.this.myNode.resolve(MPSModuleRepository.getInstance()));
+      super(NodeTreeElement.this.myNode);
     }
 
     @Override
