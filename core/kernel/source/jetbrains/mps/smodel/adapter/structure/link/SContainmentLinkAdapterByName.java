@@ -55,9 +55,7 @@ public class SContainmentLinkAdapterByName extends SContainmentLinkAdapter {
 
   @Override
   public org.jetbrains.mps.openapi.language.SAbstractConcept getContainingConcept() {
-    ConceptDescriptor concept = ConceptRegistry.getInstance().getConceptDescriptor(myConceptName);
-    return concept.isInterfaceConcept() ? new SInterfaceConceptAdapterById(concept.getId(), myConceptName) :
-        new SConceptAdapterById(concept.getId(), myConceptName);
+    return super.getContainingConcept();
   }
 
   @Override
