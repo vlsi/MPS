@@ -24,8 +24,8 @@ import jetbrains.mps.project.structure.modules.DevkitDescriptor;
 import jetbrains.mps.project.structure.modules.LanguageDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.project.structure.modules.SolutionDescriptor;
-import org.apache.log4j.LogManager;
-import org.apache.log4j.Logger;
+import jetbrains.mps.util.Computable;
+import jetbrains.mps.util.ComputeRunnable;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.module.SModule;
@@ -41,7 +41,6 @@ import java.util.List;
 import java.util.Set;
 
 public class ModuleRepositoryFacade implements CoreComponent {
-  private static final Logger LOG = LogManager.getLogger(ModuleRepositoryFacade.class);
   private static ModuleRepositoryFacade INSTANCE;
 
   private final MPSModuleRepository REPO;
@@ -68,8 +67,19 @@ public class ModuleRepositoryFacade implements CoreComponent {
     return INSTANCE;
   }
 
-  public SModule getModule(@NotNull SModuleReference ref) {
-    return ref.getModuleId() != null ? REPO.getModule(ref.getModuleId()) : REPO.getModuleByFqName(ref.getModuleName());
+  public SModule getModule(@NotNull final SModuleReference ref) {
+    Computable<SModule> c = new Computable<SModule>() {
+      @Override
+      public SModule compute() {
+        return ref.getModuleId() != null ? REPO.getModule(ref.getModuleId()) : REPO.getModuleByFqName(ref.getModuleName());
+      }
+    };
+    if (REPO.getModelAccess().canRead()) {
+      return c.compute();
+    }
+    ComputeRunnable<SModule> r = new ComputeRunnable<SModule>(c);
+    REPO.getModelAccess().runReadAction(r);
+    return r.getResult();
   }
 
   public <T extends SModule> T getModule(SModuleReference ref, Class<T> cls) {
