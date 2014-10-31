@@ -220,7 +220,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
    * @param child
    */
   @Override
-  public void removeChild(org.jetbrains.mps.openapi.model.SNode child) {
+  public void removeChild(@NotNull org.jetbrains.mps.openapi.model.SNode child) {
     assertCanChange();
     assert
         child.getParent() == this :
@@ -316,6 +316,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
     root.myRepository = repo;
   }
 
+  @NotNull
   @Override
   public SNodeReference getReference() {
     nodeRead();
@@ -381,11 +382,13 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
     }
   }
 
+  @NotNull
   @Override
   public List<SNode> getChildren() {
     return getChildren((SContainmentLink) null);
   }
 
+  @NotNull
   @Override
   public List<jetbrains.mps.smodel.SReference> getReferences() {
     nodeRead();
@@ -773,7 +776,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
   }
 
   @Override
-  public boolean hasProperty(SProperty property) {
+  public boolean hasProperty(@NotNull SProperty property) {
     propertyRead(property);
     firePropertyReadAccessInEditor(property, true);
     String val = getProperty(property);
@@ -781,7 +784,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
   }
 
   @Override
-  public String getProperty(SProperty property) {
+  public String getProperty(@NotNull SProperty property) {
     propertyRead(property);
     firePropertyReadAccessInEditor(property, false);
 
@@ -797,7 +800,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
   }
 
   @Override
-  public void setProperty(final SProperty property, String propertyValue) {
+  public void setProperty(@NotNull final SProperty property, String propertyValue) {
     assertCanChange();
 
     propertyValue = InternUtil.intern(propertyValue);
@@ -840,6 +843,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
     propertyChanged(property, oldValue, propertyValue);
   }
 
+  @NotNull
   @Override
   public Iterable<SProperty> getProperties() {
     nodeRead();
@@ -855,7 +859,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
   }
 
   @Override
-  public void setReferenceTarget(SReferenceLink role, @Nullable org.jetbrains.mps.openapi.model.SNode target) {
+  public void setReferenceTarget(@NotNull SReferenceLink role, @Nullable org.jetbrains.mps.openapi.model.SNode target) {
     assertCanChange();
 
     SReference toDelete = null;
@@ -881,7 +885,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
   }
 
   @Override
-  public SNode getReferenceTarget(SReferenceLink role) {
+  public SNode getReferenceTarget(@NotNull SReferenceLink role) {
     assertCanRead();
 
     referenceRead(role);
@@ -895,7 +899,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
   }
 
   @Override
-  public SReference getReference(SReferenceLink role) {
+  public SReference getReference(@NotNull SReferenceLink role) {
     assertCanRead();
 
     referenceRead(role);
@@ -914,7 +918,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
   }
 
   @Override
-  public void setReference(SReferenceLink role, org.jetbrains.mps.openapi.model.SReference reference) {
+  public void setReference(@NotNull SReferenceLink role, org.jetbrains.mps.openapi.model.SReference reference) {
     assertCanChange();
 
     SReference toRemove = null;
@@ -936,7 +940,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
     referenceChanged(role, toRemove, reference);
   }
 
-  public void insertChildBefore(@NotNull final SContainmentLink role, org.jetbrains.mps.openapi.model.SNode child,
+  public void insertChildBefore(@NotNull final SContainmentLink role, @NotNull org.jetbrains.mps.openapi.model.SNode child,
       @Nullable final org.jetbrains.mps.openapi.model.SNode anchor) {
     assertCanChange();
 
@@ -996,7 +1000,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
   }
 
   @Override
-  public void addChild(SContainmentLink role, org.jetbrains.mps.openapi.model.SNode child) {
+  public void addChild(@NotNull SContainmentLink role, @NotNull org.jetbrains.mps.openapi.model.SNode child) {
     insertChildBefore(role, child, null);
   }
 
