@@ -801,13 +801,13 @@
                               <property role="vg0i.1068431474542.1176718929932" value="true" />
                               <node concept="j0ph.1151688443754" id="2652588855788390316" role="vg0i.4972933694980447171.5680397130376446158" info="in">
                                 <node concept="4ia1.1138055754698" id="2652588855788399598" role="j0ph.1151688443754.1151688676805" info="in">
-                                  <reference role="4ia1.1138055754698.1138405853777" target="tp3r.8389748773577451463" resolveInfo="PropertyHolder" />
+                                  <reference role="4ia1.1138055754698.1138405853777" target="tp3r.8389748773577451463" resolveInfo="GeneratorInternal_PropertyDescriptor" />
                                 </node>
                               </node>
                               <node concept="vg0i.1145552977093" id="2652588855788416956" role="vg0i.1068431474542.1068431790190" info="nn">
                                 <node concept="j0ph.1160600644654" id="2652588855788415864" role="vg0i.1145552977093.1145553007750" info="nn">
                                   <node concept="4ia1.1138055754698" id="2652588855788415865" role="j0ph.1237721394592.1237721435807" info="in">
-                                    <reference role="4ia1.1138055754698.1138405853777" target="tp3r.8389748773577451463" resolveInfo="PropertyHolder" />
+                                    <reference role="4ia1.1138055754698.1138405853777" target="tp3r.8389748773577451463" resolveInfo="GeneratorInternal_PropertyDescriptor" />
                                   </node>
                                 </node>
                               </node>
@@ -856,7 +856,7 @@
                                 <node concept="vg0i.1068581242863" id="7036185364864238891" role="vg0i.1068581242864.1068581242865" info="nr">
                                   <property role="asn4.1169194658468.1169194664001" value="propertyNode" />
                                   <node concept="4ia1.1138055754698" id="7036185364864238892" role="vg0i.4972933694980447171.5680397130376446158" info="in">
-                                    <reference role="4ia1.1138055754698.1138405853777" target="tp3r.8389748773577451463" resolveInfo="PropertyHolder" />
+                                    <reference role="4ia1.1138055754698.1138405853777" target="tp3r.8389748773577451463" resolveInfo="GeneratorInternal_PropertyDescriptor" />
                                   </node>
                                   <node concept="vg0i.1197027756228" id="7036185364864238893" role="vg0i.1068431474542.1068431790190" info="nn">
                                     <node concept="vg0i.1197027756228" id="7036185364864238894" role="vg0i.1197027756228.1197027771414" info="nn">
@@ -864,7 +864,7 @@
                                       <node concept="o248.1217282130234" id="7036185364864238896" role="vg0i.1197027756228.1197027833540" info="nn" />
                                     </node>
                                     <node concept="4ia1.1143235216708" id="7036185364864238897" role="vg0i.1197027756228.1197027833540" info="nn">
-                                      <reference role="4ia1.1143235216708.1143235391024" target="tp3r.8389748773577451463" resolveInfo="PropertyHolder" />
+                                      <reference role="4ia1.1143235216708.1143235391024" target="tp3r.8389748773577451463" resolveInfo="GeneratorInternal_PropertyDescriptor" />
                                     </node>
                                   </node>
                                 </node>
@@ -1263,13 +1263,13 @@
                               <property role="vg0i.1068431474542.1176718929932" value="true" />
                               <node concept="j0ph.1151688443754" id="2652588855790446211" role="vg0i.4972933694980447171.5680397130376446158" info="in">
                                 <node concept="4ia1.1138055754698" id="2652588855790461905" role="j0ph.1151688443754.1151688676805" info="in">
-                                  <reference role="4ia1.1138055754698.1138405853777" target="tp3r.2652588855789590333" resolveInfo="ReferenceHolder" />
+                                  <reference role="4ia1.1138055754698.1138405853777" target="tp3r.2652588855789590333" resolveInfo="GeneratorInternal_ReferenceDescriptor" />
                                 </node>
                               </node>
                               <node concept="vg0i.1145552977093" id="2652588855790488755" role="vg0i.1068431474542.1068431790190" info="nn">
                                 <node concept="j0ph.1160600644654" id="2652588855790487467" role="vg0i.1145552977093.1145553007750" info="nn">
                                   <node concept="4ia1.1138055754698" id="2652588855790487468" role="j0ph.1237721394592.1237721435807" info="in">
-                                    <reference role="4ia1.1138055754698.1138405853777" target="tp3r.2652588855789590333" resolveInfo="ReferenceHolder" />
+                                    <reference role="4ia1.1138055754698.1138405853777" target="tp3r.2652588855789590333" resolveInfo="GeneratorInternal_ReferenceDescriptor" />
                                   </node>
                                 </node>
                               </node>
@@ -1566,7 +1566,7 @@
                                 <node concept="vg0i.1068581242863" id="7036185364862878395" role="vg0i.1068581242864.1068581242865" info="nr">
                                   <property role="asn4.1169194658468.1169194664001" value="referenceNode" />
                                   <node concept="4ia1.1138055754698" id="2652588855790258171" role="vg0i.4972933694980447171.5680397130376446158" info="in">
-                                    <reference role="4ia1.1138055754698.1138405853777" target="tp3r.2652588855789590333" resolveInfo="ReferenceHolder" />
+                                    <reference role="4ia1.1138055754698.1138405853777" target="tp3r.2652588855789590333" resolveInfo="GeneratorInternal_ReferenceDescriptor" />
                                   </node>
                                   <node concept="vg0i.1197027756228" id="7036185364862878397" role="vg0i.1068431474542.1068431790190" info="nn">
                                     <node concept="vg0i.1197027756228" id="7036185364862878398" role="vg0i.1197027756228.1197027771414" info="nn">
@@ -1574,7 +1574,7 @@
                                       <node concept="o248.1217282130234" id="7036185364862878400" role="vg0i.1197027756228.1197027833540" info="nn" />
                                     </node>
                                     <node concept="4ia1.1143235216708" id="7036185364862878401" role="vg0i.1197027756228.1197027833540" info="nn">
-                                      <reference role="4ia1.1143235216708.1143235391024" target="tp3r.2652588855789590333" resolveInfo="ReferenceHolder" />
+                                      <reference role="4ia1.1143235216708.1143235391024" target="tp3r.2652588855789590333" resolveInfo="GeneratorInternal_ReferenceDescriptor" />
                                     </node>
                                   </node>
                                 </node>
@@ -3384,13 +3384,13 @@
                         <property role="asn4.1169194658468.1169194664001" value="result" />
                         <node concept="j0ph.1151688443754" id="2038730470045025601" role="vg0i.4972933694980447171.5680397130376446158" info="in">
                           <node concept="4ia1.1138055754698" id="2038730470045038227" role="j0ph.1151688443754.1151688676805" info="in">
-                            <reference role="4ia1.1138055754698.1138405853777" target="tp3r.2038730470042956328" resolveInfo="InternalReferenceHolder" />
+                            <reference role="4ia1.1138055754698.1138405853777" target="tp3r.2038730470042956328" resolveInfo="GeneratorInternal_InternalReferenceHolder" />
                           </node>
                         </node>
                         <node concept="vg0i.1145552977093" id="2038730470045055770" role="vg0i.1068431474542.1068431790190" info="nn">
                           <node concept="j0ph.1160600644654" id="2038730470045054742" role="vg0i.1145552977093.1145553007750" info="nn">
                             <node concept="4ia1.1138055754698" id="2038730470045054743" role="j0ph.1237721394592.1237721435807" info="in">
-                              <reference role="4ia1.1138055754698.1138405853777" target="tp3r.2038730470042956328" resolveInfo="InternalReferenceHolder" />
+                              <reference role="4ia1.1138055754698.1138405853777" target="tp3r.2038730470042956328" resolveInfo="GeneratorInternal_InternalReferenceHolder" />
                             </node>
                           </node>
                         </node>
@@ -3573,7 +3573,7 @@
                                               <node concept="vg0i.1068581242863" id="1025590056396681497" role="vg0i.1068581242864.1068581242865" info="nr">
                                                 <property role="asn4.1169194658468.1169194664001" value="referenceNode" />
                                                 <node concept="4ia1.1138055754698" id="1025590056396681498" role="vg0i.4972933694980447171.5680397130376446158" info="in">
-                                                  <reference role="4ia1.1138055754698.1138405853777" target="tp3r.2038730470042956328" resolveInfo="InternalReferenceHolder" />
+                                                  <reference role="4ia1.1138055754698.1138405853777" target="tp3r.2038730470042956328" resolveInfo="GeneratorInternal_InternalReferenceHolder" />
                                                 </node>
                                                 <node concept="vg0i.1197027756228" id="1025590056396681499" role="vg0i.1068431474542.1068431790190" info="nn">
                                                   <node concept="vg0i.1197027756228" id="1025590056396681500" role="vg0i.1197027756228.1197027771414" info="nn">
@@ -3581,7 +3581,7 @@
                                                     <node concept="o248.1217282130234" id="1025590056396681502" role="vg0i.1197027756228.1197027833540" info="nn" />
                                                   </node>
                                                   <node concept="4ia1.1143235216708" id="1025590056396681503" role="vg0i.1197027756228.1197027833540" info="nn">
-                                                    <reference role="4ia1.1143235216708.1143235391024" target="tp3r.2038730470042956328" resolveInfo="InternalReferenceHolder" />
+                                                    <reference role="4ia1.1143235216708.1143235391024" target="tp3r.2038730470042956328" resolveInfo="GeneratorInternal_InternalReferenceHolder" />
                                                   </node>
                                                 </node>
                                               </node>

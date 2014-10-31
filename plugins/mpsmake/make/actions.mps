@@ -79,9 +79,11 @@
     <model ref="f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)" name="org.jetbrains.mps.openapi.model@java_stub" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068390468198" name="jetbrains.mps.baseLanguage.structure.ClassConcept" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068390468200" name="jetbrains.mps.baseLanguage.structure.FieldDeclaration" />
+    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068431474542" name="jetbrains.mps.baseLanguage.structure.VariableDeclaration" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068498886292" name="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068498886294" name="jetbrains.mps.baseLanguage.structure.AssignmentExpression" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068498886296" name="jetbrains.mps.baseLanguage.structure.VariableReference" />
+    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123132" name="jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123137" name="jetbrains.mps.baseLanguage.structure.BooleanConstant" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123140" name="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" />
@@ -117,12 +119,17 @@
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1081256982272" name="jetbrains.mps.baseLanguage.structure.InstanceOfExpression" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1081506762703" name="jetbrains.mps.baseLanguage.structure.GreaterThanExpression" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1081516740877" name="jetbrains.mps.baseLanguage.structure.NotExpression" />
+    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1081773326031" name="jetbrains.mps.baseLanguage.structure.BinaryOperation" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1082485599095" name="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1083260308424" name="jetbrains.mps.baseLanguage.structure.EnumConstantReference" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1095950406618" name="jetbrains.mps.baseLanguage.structure.DivExpression" />
+    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1107461130800" name="jetbrains.mps.baseLanguage.structure.Classifier" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1107535904670" name="jetbrains.mps.baseLanguage.structure.ClassifierType" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1116615150612" name="jetbrains.mps.baseLanguage.structure.ClassifierClassExpression" />
+    <concept id="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1133920641626" name="jetbrains.mps.lang.core.structure.BaseConcept" />
+    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1137021947720" name="jetbrains.mps.baseLanguage.structure.ConceptFunction" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1144226303539" name="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1144230876926" name="jetbrains.mps.baseLanguage.structure.AbstractForStatement" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1145552977093" name="jetbrains.mps.baseLanguage.structure.GenericNewExpression" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1146644602865" name="jetbrains.mps.baseLanguage.structure.PublicVisibility" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1146644623116" name="jetbrains.mps.baseLanguage.structure.PrivateVisibility" />
@@ -133,18 +140,23 @@
     <concept id="83888646-71ce-4f1c-9c53-c54016f6ad4f/1153944193378" name="jetbrains.mps.baseLanguage.collections.structure.ForEachVariable" />
     <concept id="83888646-71ce-4f1c-9c53-c54016f6ad4f/1153944233411" name="jetbrains.mps.baseLanguage.collections.structure.ForEachVariableReference" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1153952380246" name="jetbrains.mps.baseLanguage.structure.TryStatement" />
+    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1154032098014" name="jetbrains.mps.baseLanguage.structure.AbstractLoopStatement" />
     <concept id="83888646-71ce-4f1c-9c53-c54016f6ad4f/1160600644654" name="jetbrains.mps.baseLanguage.collections.structure.ListCreatorWithInit" />
     <concept id="83888646-71ce-4f1c-9c53-c54016f6ad4f/1162935959151" name="jetbrains.mps.baseLanguage.collections.structure.GetSizeOperation" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1163668896201" name="jetbrains.mps.baseLanguage.structure.TernaryOperatorExpression" />
     <concept id="83888646-71ce-4f1c-9c53-c54016f6ad4f/1165525191778" name="jetbrains.mps.baseLanguage.collections.structure.GetFirstOperation" />
+    <concept id="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1170345865475" name="jetbrains.mps.baseLanguage.structure.AnonymousClass" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1171903916106" name="jetbrains.mps.baseLanguage.structure.UpperBoundType" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1173175405605" name="jetbrains.mps.baseLanguage.structure.ArrayAccessExpression" />
+    <concept id="83888646-71ce-4f1c-9c53-c54016f6ad4f/1176906603202" name="jetbrains.mps.baseLanguage.collections.structure.BinaryOperation" />
+    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1178549954367" name="jetbrains.mps.baseLanguage.structure.IVisible" />
     <concept id="83888646-71ce-4f1c-9c53-c54016f6ad4f/1180964022718" name="jetbrains.mps.baseLanguage.collections.structure.ConcatOperation" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1182160077978" name="jetbrains.mps.baseLanguage.structure.AnonymousClassCreator" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1184950988562" name="jetbrains.mps.baseLanguage.structure.ArrayCreator" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1184952934362" name="jetbrains.mps.baseLanguage.structure.DimensionExpression" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1188207840427" name="jetbrains.mps.baseLanguage.structure.AnnotationInstance" />
+    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1188208481402" name="jetbrains.mps.baseLanguage.structure.HasAnnotation" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1197027756228" name="jetbrains.mps.baseLanguage.structure.DotExpression" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1197029447546" name="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation" />
     <concept id="fd392034-7849-419d-9071-12563d152375/1199569711397" name="jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral" />
@@ -162,9 +174,12 @@
     <concept id="28f9e497-3b42-4291-aeba-0a1039153ab1/1203092361741" name="jetbrains.mps.lang.plugin.structure.ModificationStatement" />
     <concept id="83888646-71ce-4f1c-9c53-c54016f6ad4f/1203518072036" name="jetbrains.mps.baseLanguage.collections.structure.SmartClosureParameterDeclaration" />
     <concept id="28f9e497-3b42-4291-aeba-0a1039153ab1/1203680534665" name="jetbrains.mps.lang.plugin.structure.GroupAnchor" />
+    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1204053956946" name="jetbrains.mps.baseLanguage.structure.IMethodCall" />
+    <concept id="83888646-71ce-4f1c-9c53-c54016f6ad4f/1204796164442" name="jetbrains.mps.baseLanguage.collections.structure.InternalSequenceOperation" />
     <concept id="28f9e497-3b42-4291-aeba-0a1039153ab1/1204908117386" name="jetbrains.mps.lang.plugin.structure.Separator" />
     <concept id="28f9e497-3b42-4291-aeba-0a1039153ab1/1205681243813" name="jetbrains.mps.lang.plugin.structure.IsApplicableBlock" />
     <concept id="443f4c36-fcf5-4eb6-9500-8d06ed259e3e/1205752633985" name="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression" />
+    <concept id="443f4c36-fcf5-4eb6-9500-8d06ed259e3e/1205756064662" name="jetbrains.mps.baseLanguage.classifiers.structure.IMemberOperation" />
     <concept id="443f4c36-fcf5-4eb6-9500-8d06ed259e3e/1205769003971" name="jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierMethodDeclaration" />
     <concept id="443f4c36-fcf5-4eb6-9500-8d06ed259e3e/1205769149993" name="jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierMethodCallOperation" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1206060495898" name="jetbrains.mps.baseLanguage.structure.ElsifClause" />
@@ -174,9 +189,12 @@
     <concept id="28f9e497-3b42-4291-aeba-0a1039153ab1/1207318242772" name="jetbrains.mps.lang.plugin.structure.KeyMapKeystroke" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1212685548494" name="jetbrains.mps.baseLanguage.structure.ClassCreator" />
     <concept id="443f4c36-fcf5-4eb6-9500-8d06ed259e3e/1213999117680" name="jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierFieldAccessOperation" />
+    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1215693861676" name="jetbrains.mps.baseLanguage.structure.BaseAssignmentExpression" />
     <concept id="28f9e497-3b42-4291-aeba-0a1039153ab1/1217252042208" name="jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration" />
     <concept id="28f9e497-3b42-4291-aeba-0a1039153ab1/1217252428768" name="jetbrains.mps.lang.plugin.structure.ActionDataParameterReferenceOperation" />
+    <concept id="28f9e497-3b42-4291-aeba-0a1039153ab1/1217413147516" name="jetbrains.mps.lang.plugin.structure.ActionParameter" />
     <concept id="83888646-71ce-4f1c-9c53-c54016f6ad4f/1224414427926" name="jetbrains.mps.baseLanguage.collections.structure.SequenceCreator" />
+    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1224848483129" name="jetbrains.mps.baseLanguage.structure.IBLDeprecatable" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1225271177708" name="jetbrains.mps.baseLanguage.structure.StringType" />
     <concept id="83888646-71ce-4f1c-9c53-c54016f6ad4f/1225727723840" name="jetbrains.mps.baseLanguage.collections.structure.FindFirstOperation" />
     <concept id="83888646-71ce-4f1c-9c53-c54016f6ad4f/1226511727824" name="jetbrains.mps.baseLanguage.collections.structure.SetType" />
@@ -185,6 +203,7 @@
     <concept id="fd392034-7849-419d-9071-12563d152375/1228997946467" name="jetbrains.mps.baseLanguage.closures.structure.YieldAllStatement" />
     <concept id="83888646-71ce-4f1c-9c53-c54016f6ad4f/1235566554328" name="jetbrains.mps.baseLanguage.collections.structure.AnyOperation" />
     <concept id="83888646-71ce-4f1c-9c53-c54016f6ad4f/1235566831861" name="jetbrains.mps.baseLanguage.collections.structure.AllOperation" />
+    <concept id="83888646-71ce-4f1c-9c53-c54016f6ad4f/1237721394592" name="jetbrains.mps.baseLanguage.collections.structure.AbstractContainerCreator" />
     <concept id="a247e09e-2435-45ba-b8d2-07e93feba96a/1239531918181" name="jetbrains.mps.baseLanguage.tuples.structure.NamedTupleType" />
     <concept id="a247e09e-2435-45ba-b8d2-07e93feba96a/1239576519914" name="jetbrains.mps.baseLanguage.tuples.structure.NamedTupleComponentAccessOperation" />
     <concept id="83888646-71ce-4f1c-9c53-c54016f6ad4f/1240217271293" name="jetbrains.mps.baseLanguage.collections.structure.LinkedHashSetCreator" />
@@ -195,9 +214,11 @@
     <concept id="756e911c-3f1f-4a48-bdf5-a2ceb91b723c/2722628536111969416" name="jetbrains.mps.execution.settings.structure.GridBagConstraints" />
     <concept id="774bf8a0-62e5-41e1-af63-f4812e60e48b/4079382982702596667" name="jetbrains.mps.baseLanguage.checkedDots.structure.CheckedDotExpression" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/4836112446988635817" name="jetbrains.mps.baseLanguage.structure.UndefinedType" />
+    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/4972933694980447171" name="jetbrains.mps.baseLanguage.structure.BaseVariableDeclaration" />
     <concept id="28f9e497-3b42-4291-aeba-0a1039153ab1/5023285075122009364" name="jetbrains.mps.lang.plugin.structure.IdeaInitializerDescriptor" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/5279705229678483897" name="jetbrains.mps.baseLanguage.structure.FloatingPointFloatConstant" />
     <concept id="28f9e497-3b42-4291-aeba-0a1039153ab1/5538333046911348654" name="jetbrains.mps.lang.plugin.structure.RequiredCondition" />
+    <concept id="28f9e497-3b42-4291-aeba-0a1039153ab1/6193305307616715384" name="jetbrains.mps.lang.plugin.structure.ShortcutChange" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/6329021646629104954" name="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/6329021646629104957" name="jetbrains.mps.baseLanguage.structure.TextCommentPart" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/6329021646629175143" name="jetbrains.mps.baseLanguage.structure.StatementCommentPart" />
@@ -583,7 +604,7 @@
           <reference role="79nr.1203088046679.1203088061055" target="5332171957773708940" resolveInfo="CheckModelsBeforeGeneration" />
         </node>
       </node>
-      <node concept="79nr.1203092361741" id="5332171957773708989" role="79nr.1203087890642.1204991552650" info="ng">
+      <node concept="79nr.1203092361741" id="5332171957773708989" role="79nr.1203087890642.1204991552650" info="lg">
         <reference role="79nr.1203092361741.1203092736097" target="tprs.1215013255981" resolveInfo="Build" />
         <reference role="79nr.1203092361741.1204992316090" target="tprs.5716258091890928621" resolveInfo="options" />
       </node>
@@ -591,7 +612,7 @@
     <node concept="79nr.1203087890642" id="5332171957773708990" info="ng">
       <property role="asn4.1169194658468.1169194664001" value="SaveTransientModels" />
       <property role="asn4.1133920641626.1193676396447" value="Build.Options" />
-      <node concept="79nr.1203092361741" id="5332171957773708991" role="79nr.1203087890642.1204991552650" info="ng">
+      <node concept="79nr.1203092361741" id="5332171957773708991" role="79nr.1203087890642.1204991552650" info="lg">
         <reference role="79nr.1203092361741.1204992316090" target="5332171957773708987" resolveInfo="saveTransientModels" />
         <reference role="79nr.1203092361741.1203092736097" target="5332171957773708985" resolveInfo="GenerateOptions" />
       </node>
@@ -621,7 +642,7 @@
           <reference role="79nr.1203088046679.1203088061055" target="2017614408232613007" resolveInfo="CleanProject" />
         </node>
       </node>
-      <node concept="79nr.1203092361741" id="2017614408232613006" role="79nr.1203087890642.1204991552650" info="ng">
+      <node concept="79nr.1203092361741" id="2017614408232613006" role="79nr.1203087890642.1204991552650" info="lg">
         <reference role="79nr.1203092361741.1203092736097" target="tprs.1204991220529" resolveInfo="ProjectActions" />
         <reference role="79nr.1203092361741.1204992316090" target="tprs.2017614408232612997" resolveInfo="compileJava" />
       </node>
@@ -991,7 +1012,7 @@
           <reference role="79nr.1203088046679.1203088061055" target="4753172061859438783" resolveInfo="CleanModule" />
         </node>
       </node>
-      <node concept="79nr.1203092361741" id="4753172061859438781" role="79nr.1203087890642.1204991552650" info="ng">
+      <node concept="79nr.1203092361741" id="4753172061859438781" role="79nr.1203087890642.1204991552650" info="lg">
         <reference role="79nr.1203092361741.1203092736097" target="tprs.401659284115173011" resolveInfo="CommonModuleActions" />
         <reference role="79nr.1203092361741.1204992316090" target="tprs.401659284115231189" resolveInfo="compileJava" />
       </node>
@@ -3238,11 +3259,11 @@
           <property role="asn4.1169194658468.1169194664001" value="preview" />
         </node>
       </node>
-      <node concept="79nr.1203092361741" id="8610665572788515190" role="79nr.1203087890642.1204991552650" info="ng">
+      <node concept="79nr.1203092361741" id="8610665572788515190" role="79nr.1203087890642.1204991552650" info="lg">
         <reference role="79nr.1203092361741.1203092736097" target="tprs.1204991218714" resolveInfo="ModelActions" />
         <reference role="79nr.1203092361741.1204992316090" target="tprs.424100430191192417" resolveInfo="make" />
       </node>
-      <node concept="79nr.1203092361741" id="401659284115178798" role="79nr.1203087890642.1204991552650" info="ng">
+      <node concept="79nr.1203092361741" id="401659284115178798" role="79nr.1203087890642.1204991552650" info="lg">
         <reference role="79nr.1203092361741.1203092736097" target="tprs.401659284115173011" resolveInfo="CommonModuleActions" />
         <reference role="79nr.1203092361741.1204992316090" target="tprs.401659284115173014" resolveInfo="make" />
       </node>
@@ -3367,7 +3388,7 @@
     <node concept="79nr.1203087890642" id="8610665572788515222" info="ng">
       <property role="asn4.1169194658468.1169194664001" value="ProjectMake" />
       <property role="asn4.1133920641626.1193676396447" value="Make.groups" />
-      <node concept="79nr.1203092361741" id="8610665572788515223" role="79nr.1203087890642.1204991552650" info="ng">
+      <node concept="79nr.1203092361741" id="8610665572788515223" role="79nr.1203087890642.1204991552650" info="lg">
         <reference role="79nr.1203092361741.1203092736097" target="tprs.1204991220529" resolveInfo="ProjectActions" />
         <reference role="79nr.1203092361741.1204992316090" target="tprs.4698945337527126603" resolveInfo="make" />
       </node>
@@ -3383,7 +3404,7 @@
     <node concept="79nr.1203087890642" id="8610665572788515227" info="ng">
       <property role="asn4.1169194658468.1169194664001" value="GlobalMake" />
       <property role="asn4.1133920641626.1193676396447" value="Make.groups" />
-      <node concept="79nr.1203092361741" id="8610665572788515228" role="79nr.1203087890642.1204991552650" info="ng">
+      <node concept="79nr.1203092361741" id="8610665572788515228" role="79nr.1203087890642.1204991552650" info="lg">
         <reference role="79nr.1203092361741.1203092736097" target="tprs.1215013255981" resolveInfo="Build" />
         <reference role="79nr.1203092361741.1204992316090" target="tprs.5716258091890928613" resolveInfo="make" />
       </node>
@@ -3825,15 +3846,15 @@
           <property role="asn4.1169194658468.1169194664001" value="other" />
         </node>
       </node>
-      <node concept="79nr.1203092361741" id="8610665572788515365" role="79nr.1203087890642.1204991552650" info="ng">
+      <node concept="79nr.1203092361741" id="8610665572788515365" role="79nr.1203087890642.1204991552650" info="lg">
         <reference role="79nr.1203092361741.1203092736097" target="8610665572788515183" resolveInfo="Make" />
         <reference role="79nr.1203092361741.1204992316090" target="8610665572788515189" resolveInfo="preview" />
       </node>
-      <node concept="79nr.1203092361741" id="4898509455467606717" role="79nr.1203087890642.1204991552650" info="ng">
+      <node concept="79nr.1203092361741" id="4898509455467606717" role="79nr.1203087890642.1204991552650" info="lg">
         <reference role="79nr.1203092361741.1204992316090" target="ekwn.1755502566255660797" resolveInfo="preview" />
         <reference role="79nr.1203092361741.1203092736097" target="ekwn.1755502566255660782" resolveInfo="EditorPopup" />
       </node>
-      <node concept="79nr.1203092361741" id="2457869113652000690" role="79nr.1203087890642.1204991552650" info="ng">
+      <node concept="79nr.1203092361741" id="2457869113652000690" role="79nr.1203087890642.1204991552650" info="lg">
         <reference role="79nr.1203092361741.1203092736097" target="tprs.1204991215587" resolveInfo="NodeActions" />
         <reference role="79nr.1203092361741.1204992316090" target="tprs.2457869113650131246" resolveInfo="showGeneratedText" />
       </node>
@@ -3855,7 +3876,7 @@
           </node>
         </node>
       </node>
-      <node concept="79nr.1203092361741" id="8610665572788515372" role="79nr.1203087890642.1204991552650" info="ng">
+      <node concept="79nr.1203092361741" id="8610665572788515372" role="79nr.1203087890642.1204991552650" info="lg">
         <reference role="79nr.1203092361741.1203092736097" target="tprs.6661528628553884549" resolveInfo="NamespaceMakeActions" />
         <reference role="79nr.1203092361741.1204992316090" target="tprs.6661528628553884552" resolveInfo="make" />
       </node>
@@ -5564,7 +5585,7 @@
     <node concept="79nr.1203087890642" id="8610665572788515994" info="ng">
       <property role="asn4.1169194658468.1169194664001" value="ToolbarMake" />
       <property role="asn4.1133920641626.1193676396447" value="Make.groups" />
-      <node concept="79nr.1203092361741" id="8610665572788515995" role="79nr.1203087890642.1204991552650" info="ng">
+      <node concept="79nr.1203092361741" id="8610665572788515995" role="79nr.1203087890642.1204991552650" info="lg">
         <reference role="79nr.1203092361741.1203092736097" target="tprs.1087177419518375880" resolveInfo="MPSToolBarRun" />
       </node>
       <node concept="79nr.1207145163717" id="8610665572788515996" role="79nr.1203087890642.1207145245948" info="ng">
@@ -5686,21 +5707,21 @@
     <node concept="79nr.1562714432501166197" id="8610665572788521540" info="ng">
       <property role="79nr.1562714432501166197.1562714432501166281" value="$default" />
       <property role="asn4.1169194658468.1169194664001" value="Default" />
-      <node concept="79nr.1562714432501166198" id="8610665572788521541" role="79nr.1562714432501166197.1562714432501166199" info="ng">
+      <node concept="79nr.1562714432501166198" id="8610665572788521541" role="79nr.1562714432501166197.1562714432501166199" info="lg">
         <reference role="79nr.6193305307616715384.6193305307616734326" target="8610665572788515703" resolveInfo="RebuildSelectedModels" />
         <node concept="79nr.1207318242772" id="8610665572788521542" role="79nr.1562714432501166198.1562714432501166206" info="ng">
           <property role="79nr.1207318242772.1207318242774" value="VK_F9" />
           <property role="79nr.1207318242772.1207318242773" value="ctrl+shift" />
         </node>
       </node>
-      <node concept="79nr.1562714432501166198" id="8610665572788521543" role="79nr.1562714432501166197.1562714432501166199" info="ng">
+      <node concept="79nr.1562714432501166198" id="8610665572788521543" role="79nr.1562714432501166197.1562714432501166199" info="lg">
         <reference role="79nr.6193305307616715384.6193305307616734326" target="8610665572788515637" resolveInfo="MakeSelectedModules" />
         <node concept="79nr.1207318242772" id="8610665572788521544" role="79nr.1562714432501166198.1562714432501166206" info="ng">
           <property role="79nr.1207318242772.1207318242774" value="VK_F9" />
           <property role="79nr.1207318242772.1207318242773" value="ctrl" />
         </node>
       </node>
-      <node concept="79nr.1562714432501166198" id="8610665572788521545" role="79nr.1562714432501166197.1562714432501166199" info="ng">
+      <node concept="79nr.1562714432501166198" id="8610665572788521545" role="79nr.1562714432501166197.1562714432501166199" info="lg">
         <reference role="79nr.6193305307616715384.6193305307616734326" target="8610665572788515769" resolveInfo="TextPreviewModel" />
         <node concept="79nr.1207318242772" id="8610665572788521546" role="79nr.1562714432501166198.1562714432501166206" info="ng">
           <property role="79nr.1207318242772.1207318242774" value="VK_F9" />
@@ -9800,7 +9821,7 @@
         </node>
         <node concept="79nr.1204908117386" id="2355088855588242383" role="79nr.1207145163717.1207145201301" info="ng" />
       </node>
-      <node concept="79nr.1203092361741" id="2355088855588242384" role="79nr.1203087890642.1204991552650" info="ng">
+      <node concept="79nr.1203092361741" id="2355088855588242384" role="79nr.1203087890642.1204991552650" info="lg">
         <reference role="79nr.1203092361741.1203092736097" target="tprs.2899596005954254197" resolveInfo="ToolsInternal" />
       </node>
     </node>

@@ -4,14 +4,18 @@
   <debugInfo>
     <lang id="daafa647-f1f7-4b0b-b096-69cd7c8408c0" name="jetbrains.mps.baseLanguage.regexp" />
     <lang id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core" />
+    <concept id="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" />
     <concept id="daafa647-f1f7-4b0b-b096-69cd7c8408c0/1174482753837" name="jetbrains.mps.baseLanguage.regexp.structure.StringLiteralRegexp" />
     <concept id="daafa647-f1f7-4b0b-b096-69cd7c8408c0/1174482769792" name="jetbrains.mps.baseLanguage.regexp.structure.OrRegexp" />
     <concept id="daafa647-f1f7-4b0b-b096-69cd7c8408c0/1174482804200" name="jetbrains.mps.baseLanguage.regexp.structure.PlusRegexp" />
     <concept id="daafa647-f1f7-4b0b-b096-69cd7c8408c0/1174482808826" name="jetbrains.mps.baseLanguage.regexp.structure.StarRegexp" />
     <concept id="daafa647-f1f7-4b0b-b096-69cd7c8408c0/1174483125581" name="jetbrains.mps.baseLanguage.regexp.structure.RegexpDeclaration" />
     <concept id="daafa647-f1f7-4b0b-b096-69cd7c8408c0/1174484562151" name="jetbrains.mps.baseLanguage.regexp.structure.SeqRegexp" />
+    <concept id="daafa647-f1f7-4b0b-b096-69cd7c8408c0/1174485167097" name="jetbrains.mps.baseLanguage.regexp.structure.BinaryRegexp" />
+    <concept id="daafa647-f1f7-4b0b-b096-69cd7c8408c0/1174485235885" name="jetbrains.mps.baseLanguage.regexp.structure.UnaryRegexp" />
     <concept id="daafa647-f1f7-4b0b-b096-69cd7c8408c0/1174491169200" name="jetbrains.mps.baseLanguage.regexp.structure.ParensRegexp" />
     <concept id="daafa647-f1f7-4b0b-b096-69cd7c8408c0/1174552240608" name="jetbrains.mps.baseLanguage.regexp.structure.QuestionRegexp" />
+    <concept id="daafa647-f1f7-4b0b-b096-69cd7c8408c0/1174554186090" name="jetbrains.mps.baseLanguage.regexp.structure.SymbolClassRegexp" />
     <concept id="daafa647-f1f7-4b0b-b096-69cd7c8408c0/1174554211468" name="jetbrains.mps.baseLanguage.regexp.structure.PositiveSymbolClassRegexp" />
     <concept id="daafa647-f1f7-4b0b-b096-69cd7c8408c0/1174554386384" name="jetbrains.mps.baseLanguage.regexp.structure.PredefinedSymbolClassDeclaration" />
     <concept id="daafa647-f1f7-4b0b-b096-69cd7c8408c0/1174554406855" name="jetbrains.mps.baseLanguage.regexp.structure.PredefinedSymbolClasses" />

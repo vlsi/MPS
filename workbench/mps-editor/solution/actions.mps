@@ -69,9 +69,11 @@
     <model ref="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.language(MPS.Core/jetbrains.mps.smodel.language@java_stub)" name="jetbrains.mps.smodel.language@java_stub" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068390468198" name="jetbrains.mps.baseLanguage.structure.ClassConcept" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068390468200" name="jetbrains.mps.baseLanguage.structure.FieldDeclaration" />
+    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068431474542" name="jetbrains.mps.baseLanguage.structure.VariableDeclaration" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068498886292" name="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068498886294" name="jetbrains.mps.baseLanguage.structure.AssignmentExpression" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068498886296" name="jetbrains.mps.baseLanguage.structure.VariableReference" />
+    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123132" name="jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123137" name="jetbrains.mps.baseLanguage.structure.BooleanConstant" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123140" name="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" />
@@ -106,13 +108,18 @@
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1081256982272" name="jetbrains.mps.baseLanguage.structure.InstanceOfExpression" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1081506762703" name="jetbrains.mps.baseLanguage.structure.GreaterThanExpression" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1081516740877" name="jetbrains.mps.baseLanguage.structure.NotExpression" />
+    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1081773326031" name="jetbrains.mps.baseLanguage.structure.BinaryOperation" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1081855346303" name="jetbrains.mps.baseLanguage.structure.BreakStatement" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1082485599095" name="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1083260308424" name="jetbrains.mps.baseLanguage.structure.EnumConstantReference" />
+    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1107461130800" name="jetbrains.mps.baseLanguage.structure.Classifier" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1107535904670" name="jetbrains.mps.baseLanguage.structure.ClassifierType" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1116615150612" name="jetbrains.mps.baseLanguage.structure.ClassifierClassExpression" />
+    <concept id="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1133920641626" name="jetbrains.mps.lang.core.structure.BaseConcept" />
+    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1137021947720" name="jetbrains.mps.baseLanguage.structure.ConceptFunction" />
     <concept id="7866978e-a0f0-4cc7-81bc-4d213d9375e1/1138055754698" name="jetbrains.mps.lang.smodel.structure.SNodeType" />
     <concept id="7866978e-a0f0-4cc7-81bc-4d213d9375e1/1138056022639" name="jetbrains.mps.lang.smodel.structure.SPropertyAccess" />
+    <concept id="7866978e-a0f0-4cc7-81bc-4d213d9375e1/1138411891628" name="jetbrains.mps.lang.smodel.structure.SNodeOperation" />
     <concept id="7866978e-a0f0-4cc7-81bc-4d213d9375e1/1139613262185" name="jetbrains.mps.lang.smodel.structure.Node_GetParentOperation" />
     <concept id="7866978e-a0f0-4cc7-81bc-4d213d9375e1/1139621453865" name="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" />
     <concept id="7866978e-a0f0-4cc7-81bc-4d213d9375e1/1140133623887" name="jetbrains.mps.lang.smodel.structure.Node_DeleteOperation" />
@@ -120,6 +127,7 @@
     <concept id="7866978e-a0f0-4cc7-81bc-4d213d9375e1/1144101972840" name="jetbrains.mps.lang.smodel.structure.OperationParm_Concept" />
     <concept id="7866978e-a0f0-4cc7-81bc-4d213d9375e1/1144146199828" name="jetbrains.mps.lang.smodel.structure.Node_CopyOperation" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1144226303539" name="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1144230876926" name="jetbrains.mps.baseLanguage.structure.AbstractForStatement" />
     <concept id="7866978e-a0f0-4cc7-81bc-4d213d9375e1/1145383075378" name="jetbrains.mps.lang.smodel.structure.SNodeListType" />
     <concept id="7866978e-a0f0-4cc7-81bc-4d213d9375e1/1145404486709" name="jetbrains.mps.lang.smodel.structure.SemanticDowncastExpression" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1145552977093" name="jetbrains.mps.baseLanguage.structure.GenericNewExpression" />
@@ -132,12 +140,14 @@
     <concept id="83888646-71ce-4f1c-9c53-c54016f6ad4f/1153943597977" name="jetbrains.mps.baseLanguage.collections.structure.ForEachStatement" />
     <concept id="83888646-71ce-4f1c-9c53-c54016f6ad4f/1153944193378" name="jetbrains.mps.baseLanguage.collections.structure.ForEachVariable" />
     <concept id="83888646-71ce-4f1c-9c53-c54016f6ad4f/1153944233411" name="jetbrains.mps.baseLanguage.collections.structure.ForEachVariableReference" />
+    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1154032098014" name="jetbrains.mps.baseLanguage.structure.AbstractLoopStatement" />
     <concept id="83888646-71ce-4f1c-9c53-c54016f6ad4f/1160600644654" name="jetbrains.mps.baseLanguage.collections.structure.ListCreatorWithInit" />
     <concept id="83888646-71ce-4f1c-9c53-c54016f6ad4f/1160612413312" name="jetbrains.mps.baseLanguage.collections.structure.AddElementOperation" />
     <concept id="83888646-71ce-4f1c-9c53-c54016f6ad4f/1162935959151" name="jetbrains.mps.baseLanguage.collections.structure.GetSizeOperation" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1163668896201" name="jetbrains.mps.baseLanguage.structure.TernaryOperatorExpression" />
     <concept id="83888646-71ce-4f1c-9c53-c54016f6ad4f/1165525191778" name="jetbrains.mps.baseLanguage.collections.structure.GetFirstOperation" />
     <concept id="83888646-71ce-4f1c-9c53-c54016f6ad4f/1165595910856" name="jetbrains.mps.baseLanguage.collections.structure.GetLastOperation" />
+    <concept id="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1170345865475" name="jetbrains.mps.baseLanguage.structure.AnonymousClass" />
     <concept id="7866978e-a0f0-4cc7-81bc-4d213d9375e1/1171407110247" name="jetbrains.mps.lang.smodel.structure.Node_GetAncestorOperation" />
     <concept id="7866978e-a0f0-4cc7-81bc-4d213d9375e1/1171999116870" name="jetbrains.mps.lang.smodel.structure.Node_IsNullOperation" />
@@ -148,12 +158,14 @@
     <concept id="83888646-71ce-4f1c-9c53-c54016f6ad4f/1176501494711" name="jetbrains.mps.baseLanguage.collections.structure.IsNotEmptyOperation" />
     <concept id="7866978e-a0f0-4cc7-81bc-4d213d9375e1/1177026924588" name="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" />
     <concept id="83888646-71ce-4f1c-9c53-c54016f6ad4f/1178286324487" name="jetbrains.mps.baseLanguage.collections.structure.SortDirection" />
+    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1178549954367" name="jetbrains.mps.baseLanguage.structure.IVisible" />
     <concept id="7866978e-a0f0-4cc7-81bc-4d213d9375e1/1179409122411" name="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1182160077978" name="jetbrains.mps.baseLanguage.structure.AnonymousClassCreator" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1184950988562" name="jetbrains.mps.baseLanguage.structure.ArrayCreator" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1184952934362" name="jetbrains.mps.baseLanguage.structure.DimensionExpression" />
     <concept id="83888646-71ce-4f1c-9c53-c54016f6ad4f/1184963466173" name="jetbrains.mps.baseLanguage.collections.structure.ToArrayOperation" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1188207840427" name="jetbrains.mps.baseLanguage.structure.AnnotationInstance" />
+    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1188208481402" name="jetbrains.mps.baseLanguage.structure.HasAnnotation" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1197027756228" name="jetbrains.mps.baseLanguage.structure.DotExpression" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1197029447546" name="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation" />
     <concept id="fd392034-7849-419d-9071-12563d152375/1199569711397" name="jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral" />
@@ -167,11 +179,14 @@
     <concept id="28f9e497-3b42-4291-aeba-0a1039153ab1/1203092361741" name="jetbrains.mps.lang.plugin.structure.ModificationStatement" />
     <concept id="83888646-71ce-4f1c-9c53-c54016f6ad4f/1203518072036" name="jetbrains.mps.baseLanguage.collections.structure.SmartClosureParameterDeclaration" />
     <concept id="28f9e497-3b42-4291-aeba-0a1039153ab1/1203680534665" name="jetbrains.mps.lang.plugin.structure.GroupAnchor" />
+    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1204053956946" name="jetbrains.mps.baseLanguage.structure.IMethodCall" />
     <concept id="28f9e497-3b42-4291-aeba-0a1039153ab1/1204383956737" name="jetbrains.mps.lang.plugin.structure.InterfaceGroup" />
+    <concept id="83888646-71ce-4f1c-9c53-c54016f6ad4f/1204796164442" name="jetbrains.mps.baseLanguage.collections.structure.InternalSequenceOperation" />
     <concept id="28f9e497-3b42-4291-aeba-0a1039153ab1/1204908117386" name="jetbrains.mps.lang.plugin.structure.Separator" />
     <concept id="28f9e497-3b42-4291-aeba-0a1039153ab1/1205679047295" name="jetbrains.mps.lang.plugin.structure.ActionParameterDeclaration" />
     <concept id="28f9e497-3b42-4291-aeba-0a1039153ab1/1205681243813" name="jetbrains.mps.lang.plugin.structure.IsApplicableBlock" />
     <concept id="443f4c36-fcf5-4eb6-9500-8d06ed259e3e/1205752633985" name="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression" />
+    <concept id="443f4c36-fcf5-4eb6-9500-8d06ed259e3e/1205756064662" name="jetbrains.mps.baseLanguage.classifiers.structure.IMemberOperation" />
     <concept id="443f4c36-fcf5-4eb6-9500-8d06ed259e3e/1205769003971" name="jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierMethodDeclaration" />
     <concept id="443f4c36-fcf5-4eb6-9500-8d06ed259e3e/1205769149993" name="jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierMethodCallOperation" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1206060495898" name="jetbrains.mps.baseLanguage.structure.ElsifClause" />
@@ -181,18 +196,23 @@
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1208890769693" name="jetbrains.mps.baseLanguage.structure.ArrayLengthOperation" />
     <concept id="83888646-71ce-4f1c-9c53-c54016f6ad4f/1209727891789" name="jetbrains.mps.baseLanguage.collections.structure.ComparatorSortOperation" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1212685548494" name="jetbrains.mps.baseLanguage.structure.ClassCreator" />
+    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1215693861676" name="jetbrains.mps.baseLanguage.structure.BaseAssignmentExpression" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1215695189714" name="jetbrains.mps.baseLanguage.structure.PlusAssignmentExpression" />
     <concept id="28f9e497-3b42-4291-aeba-0a1039153ab1/1217252042208" name="jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration" />
     <concept id="28f9e497-3b42-4291-aeba-0a1039153ab1/1217252428768" name="jetbrains.mps.lang.plugin.structure.ActionDataParameterReferenceOperation" />
+    <concept id="28f9e497-3b42-4291-aeba-0a1039153ab1/1217413147516" name="jetbrains.mps.lang.plugin.structure.ActionParameter" />
+    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1224848483129" name="jetbrains.mps.baseLanguage.structure.IBLDeprecatable" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1225271177708" name="jetbrains.mps.baseLanguage.structure.StringType" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1225271369338" name="jetbrains.mps.baseLanguage.structure.IsEmptyOperation" />
     <concept id="83888646-71ce-4f1c-9c53-c54016f6ad4f/1227008614712" name="jetbrains.mps.baseLanguage.collections.structure.LinkedListCreator" />
     <concept id="83888646-71ce-4f1c-9c53-c54016f6ad4f/1227022179634" name="jetbrains.mps.baseLanguage.collections.structure.AddLastElementOperation" />
     <concept id="83888646-71ce-4f1c-9c53-c54016f6ad4f/1227026082377" name="jetbrains.mps.baseLanguage.collections.structure.RemoveFirstElementOperation" />
     <concept id="83888646-71ce-4f1c-9c53-c54016f6ad4f/1235573135402" name="jetbrains.mps.baseLanguage.collections.structure.SingletonSequenceCreator" />
+    <concept id="83888646-71ce-4f1c-9c53-c54016f6ad4f/1237721394592" name="jetbrains.mps.baseLanguage.collections.structure.AbstractContainerCreator" />
     <concept id="28f9e497-3b42-4291-aeba-0a1039153ab1/331224023792854814" name="jetbrains.mps.lang.plugin.structure.IdeaActionsDescriptor" />
     <concept id="28f9e497-3b42-4291-aeba-0a1039153ab1/331224023792854815" name="jetbrains.mps.lang.plugin.structure.ActionGroupRef" />
     <concept id="28f9e497-3b42-4291-aeba-0a1039153ab1/331224023792855166" name="jetbrains.mps.lang.plugin.structure.KeymapRef" />
+    <concept id="83888646-71ce-4f1c-9c53-c54016f6ad4f/540871147943773365" name="jetbrains.mps.baseLanguage.collections.structure.SingleArgumentSequenceOperation" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1465982738277781862" name="jetbrains.mps.baseLanguage.structure.PlaceholderMember" />
     <concept id="28f9e497-3b42-4291-aeba-0a1039153ab1/1512255007353869532" name="jetbrains.mps.lang.plugin.structure.NonDumbAwareActions" />
     <concept id="28f9e497-3b42-4291-aeba-0a1039153ab1/1512255007353869535" name="jetbrains.mps.lang.plugin.structure.ActionReference" />
@@ -202,12 +222,16 @@
     <concept id="28f9e497-3b42-4291-aeba-0a1039153ab1/3205778618063718746" name="jetbrains.mps.lang.plugin.structure.IdeaConfigurationXml" />
     <concept id="774bf8a0-62e5-41e1-af63-f4812e60e48b/4079382982702596667" name="jetbrains.mps.baseLanguage.checkedDots.structure.CheckedDotExpression" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/4836112446988635817" name="jetbrains.mps.baseLanguage.structure.UndefinedType" />
+    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/4972933694980447171" name="jetbrains.mps.baseLanguage.structure.BaseVariableDeclaration" />
+    <concept id="f2801650-65d5-424e-bb1b-463a8781b786/5349172909345501395" name="jetbrains.mps.baseLanguage.javadoc.structure.BaseDocComment" />
     <concept id="f2801650-65d5-424e-bb1b-463a8781b786/5349172909345532724" name="jetbrains.mps.baseLanguage.javadoc.structure.MethodDocComment" />
     <concept id="28f9e497-3b42-4291-aeba-0a1039153ab1/5538333046911348654" name="jetbrains.mps.lang.plugin.structure.RequiredCondition" />
     <concept id="28f9e497-3b42-4291-aeba-0a1039153ab1/5678361901872075170" name="jetbrains.mps.lang.plugin.structure.EditableModel" />
     <concept id="83888646-71ce-4f1c-9c53-c54016f6ad4f/5686963296372475025" name="jetbrains.mps.baseLanguage.collections.structure.QueueType" />
+    <concept id="83888646-71ce-4f1c-9c53-c54016f6ad4f/5686963296372573083" name="jetbrains.mps.baseLanguage.collections.structure.AbstractContainerType" />
     <concept id="7866978e-a0f0-4cc7-81bc-4d213d9375e1/5820409030208923287" name="jetbrains.mps.lang.smodel.structure.Node_GetContainingLinkOperation" />
     <concept id="f2801650-65d5-424e-bb1b-463a8781b786/5858074156537516430" name="jetbrains.mps.baseLanguage.javadoc.structure.ReturnBlockDocTag" />
+    <concept id="28f9e497-3b42-4291-aeba-0a1039153ab1/6193305307616715384" name="jetbrains.mps.lang.plugin.structure.ShortcutChange" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/6329021646629104954" name="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/6329021646629104957" name="jetbrains.mps.baseLanguage.structure.TextCommentPart" />
     <concept id="7866978e-a0f0-4cc7-81bc-4d213d9375e1/6407023681583031218" name="jetbrains.mps.lang.smodel.structure.AttributeAccess" />
@@ -537,34 +561,34 @@
     <node concept="79nr.1562714432501166197" id="4362199797783345371" info="ng">
       <property role="79nr.1562714432501166197.8646726056720906098" value="true" />
       <property role="asn4.1169194658468.1169194664001" value="Default" />
-      <node concept="79nr.1562714432501166198" id="7000507154716606483" role="79nr.1562714432501166197.1562714432501166199" info="ng">
+      <node concept="79nr.1562714432501166198" id="7000507154716606483" role="79nr.1562714432501166197.1562714432501166199" info="lg">
         <reference role="79nr.6193305307616715384.6193305307616734326" target="3467203700125709751" resolveInfo="AddLanguageImport" />
         <node concept="79nr.1207318242772" id="7000507154716606484" role="79nr.1562714432501166198.1562714432501166206" info="ng">
           <property role="79nr.1207318242772.1207318242774" value="VK_L" />
           <property role="79nr.1207318242772.1207318242773" value="ctrl" />
         </node>
       </node>
-      <node concept="79nr.1562714432501166198" id="7000507154716606531" role="79nr.1562714432501166197.1562714432501166199" info="ng">
+      <node concept="79nr.1562714432501166198" id="7000507154716606531" role="79nr.1562714432501166197.1562714432501166199" info="lg">
         <reference role="79nr.6193305307616715384.6193305307616734326" target="3467203700125709779" resolveInfo="AddModelImport" />
         <node concept="79nr.1207318242772" id="7000507154716606532" role="79nr.1562714432501166198.1562714432501166206" info="ng">
           <property role="79nr.1207318242772.1207318242774" value="VK_M" />
           <property role="79nr.1207318242772.1207318242773" value="ctrl" />
         </node>
       </node>
-      <node concept="79nr.1562714432501166198" id="7000507154716606403" role="79nr.1562714432501166197.1562714432501166199" info="ng">
+      <node concept="79nr.1562714432501166198" id="7000507154716606403" role="79nr.1562714432501166197.1562714432501166199" info="lg">
         <reference role="79nr.6193305307616715384.6193305307616734326" target="3467203700125709807" resolveInfo="AddModelImportByRoot" />
         <node concept="79nr.1207318242772" id="7000507154716606404" role="79nr.1562714432501166198.1562714432501166206" info="ng">
           <property role="79nr.1207318242772.1207318242774" value="VK_R" />
           <property role="79nr.1207318242772.1207318242773" value="ctrl" />
         </node>
       </node>
-      <node concept="79nr.1562714432501166198" id="8896169282214002725" role="79nr.1562714432501166197.1562714432501166199" info="ng">
+      <node concept="79nr.1562714432501166198" id="8896169282214002725" role="79nr.1562714432501166197.1562714432501166199" info="lg">
         <reference role="79nr.6193305307616715384.6193305307616734326" target="8896169282214002721" resolveInfo="Backspace" />
         <node concept="79nr.1207318242772" id="8896169282214002726" role="79nr.1562714432501166198.1562714432501166206" info="ng">
           <property role="79nr.1207318242772.1207318242774" value="VK_BACK_SPACE" />
         </node>
       </node>
-      <node concept="79nr.1562714432501166198" id="5062223007361662189" role="79nr.1562714432501166197.1562714432501166199" info="ng">
+      <node concept="79nr.1562714432501166198" id="5062223007361662189" role="79nr.1562714432501166197.1562714432501166199" info="lg">
         <reference role="79nr.6193305307616715384.6193305307616734326" target="5062223007361662016" resolveInfo="Collapse" />
         <node concept="79nr.1207318242772" id="204152616785653151" role="79nr.1562714432501166198.1562714432501166206" info="ng">
           <property role="79nr.1207318242772.1207318242774" value="VK_SUBTRACT" />
@@ -575,7 +599,7 @@
           <property role="79nr.1207318242772.1207318242773" value="ctrl" />
         </node>
       </node>
-      <node concept="79nr.1562714432501166198" id="5062223007361662192" role="79nr.1562714432501166197.1562714432501166199" info="ng">
+      <node concept="79nr.1562714432501166198" id="5062223007361662192" role="79nr.1562714432501166197.1562714432501166199" info="lg">
         <reference role="79nr.6193305307616715384.6193305307616734326" target="5062223007361662050" resolveInfo="CollapseAll" />
         <node concept="79nr.1207318242772" id="3869062792666158403" role="79nr.1562714432501166198.1562714432501166206" info="ng">
           <property role="79nr.1207318242772.1207318242774" value="VK_SUBTRACT" />
@@ -586,40 +610,40 @@
           <property role="79nr.1207318242772.1207318242773" value="ctrl+shift" />
         </node>
       </node>
-      <node concept="79nr.1562714432501166198" id="4362199797783345708" role="79nr.1562714432501166197.1562714432501166199" info="ng">
+      <node concept="79nr.1562714432501166198" id="4362199797783345708" role="79nr.1562714432501166197.1562714432501166199" info="lg">
         <reference role="79nr.6193305307616715384.6193305307616734326" target="4362199797783345393" resolveInfo="CopyThisDown" />
         <node concept="79nr.1207318242772" id="4362199797783345710" role="79nr.1562714432501166198.1562714432501166206" info="ng">
           <property role="79nr.1207318242772.1207318242774" value="VK_D" />
           <property role="79nr.1207318242772.1207318242773" value="ctrl" />
         </node>
       </node>
-      <node concept="79nr.1562714432501166198" id="8896169282213957013" role="79nr.1562714432501166197.1562714432501166199" info="ng">
+      <node concept="79nr.1562714432501166198" id="8896169282213957013" role="79nr.1562714432501166197.1562714432501166199" info="lg">
         <reference role="79nr.6193305307616715384.6193305307616734326" target="8896169282213320720" resolveInfo="Delete" />
         <node concept="79nr.1207318242772" id="8896169282213957014" role="79nr.1562714432501166198.1562714432501166206" info="ng">
           <property role="79nr.1207318242772.1207318242774" value="VK_DELETE" />
         </node>
       </node>
-      <node concept="79nr.1562714432501166198" id="8896169282213957019" role="79nr.1562714432501166197.1562714432501166199" info="ng">
+      <node concept="79nr.1562714432501166198" id="8896169282213957019" role="79nr.1562714432501166197.1562714432501166199" info="lg">
         <reference role="79nr.6193305307616715384.6193305307616734326" target="8896169282213957015" resolveInfo="DeleteToWordEnd" />
         <node concept="79nr.1207318242772" id="8896169282213957020" role="79nr.1562714432501166198.1562714432501166206" info="ng">
           <property role="79nr.1207318242772.1207318242774" value="VK_DELETE" />
           <property role="79nr.1207318242772.1207318242773" value="ctrl" />
         </node>
       </node>
-      <node concept="79nr.1562714432501166198" id="4362199797783773097" role="79nr.1562714432501166197.1562714432501166199" info="ng">
+      <node concept="79nr.1562714432501166198" id="4362199797783773097" role="79nr.1562714432501166197.1562714432501166199" info="lg">
         <reference role="79nr.6193305307616715384.6193305307616734326" target="3774693388238498747" resolveInfo="DeleteLine" />
         <node concept="79nr.1207318242772" id="4362199797783773099" role="79nr.1562714432501166198.1562714432501166206" info="ng">
           <property role="79nr.1207318242772.1207318242774" value="VK_Y" />
           <property role="79nr.1207318242772.1207318242773" value="ctrl" />
         </node>
       </node>
-      <node concept="79nr.1562714432501166198" id="6743831156946309835" role="79nr.1562714432501166197.1562714432501166199" info="ng">
+      <node concept="79nr.1562714432501166198" id="6743831156946309835" role="79nr.1562714432501166197.1562714432501166199" info="lg">
         <reference role="79nr.6193305307616715384.6193305307616734326" target="6743831156946309831" resolveInfo="Escape" />
         <node concept="79nr.1207318242772" id="6743831156946309836" role="79nr.1562714432501166198.1562714432501166206" info="ng">
           <property role="79nr.1207318242772.1207318242774" value="VK_ESCAPE" />
         </node>
       </node>
-      <node concept="79nr.1562714432501166198" id="5062223007361662195" role="79nr.1562714432501166197.1562714432501166199" info="ng">
+      <node concept="79nr.1562714432501166198" id="5062223007361662195" role="79nr.1562714432501166197.1562714432501166199" info="lg">
         <reference role="79nr.6193305307616715384.6193305307616734326" target="5062223007361662084" resolveInfo="Expand" />
         <node concept="79nr.1207318242772" id="204152616785653149" role="79nr.1562714432501166198.1562714432501166206" info="ng">
           <property role="79nr.1207318242772.1207318242774" value="VK_ADD" />
@@ -630,7 +654,7 @@
           <property role="79nr.1207318242772.1207318242773" value="ctrl" />
         </node>
       </node>
-      <node concept="79nr.1562714432501166198" id="5062223007361662198" role="79nr.1562714432501166197.1562714432501166199" info="ng">
+      <node concept="79nr.1562714432501166198" id="5062223007361662198" role="79nr.1562714432501166197.1562714432501166199" info="lg">
         <reference role="79nr.6193305307616715384.6193305307616734326" target="5062223007361662120" resolveInfo="ExpandAll" />
         <node concept="79nr.1207318242772" id="3869062792666158399" role="79nr.1562714432501166198.1562714432501166206" info="ng">
           <property role="79nr.1207318242772.1207318242774" value="VK_ADD" />
@@ -641,39 +665,39 @@
           <property role="79nr.1207318242772.1207318242773" value="ctrl+shift" />
         </node>
       </node>
-      <node concept="79nr.1562714432501166198" id="4362199797783345373" role="79nr.1562714432501166197.1562714432501166199" info="ng">
+      <node concept="79nr.1562714432501166198" id="4362199797783345373" role="79nr.1562714432501166197.1562714432501166199" info="lg">
         <reference role="79nr.6193305307616715384.6193305307616734326" target="4362199797783336771" resolveInfo="ExtractComponent" />
         <node concept="79nr.1207318242772" id="4362199797783345377" role="79nr.1562714432501166198.1562714432501166206" info="ng">
           <property role="79nr.1207318242772.1207318242774" value="VK_C" />
           <property role="79nr.1207318242772.1207318242773" value="ctrl+alt" />
         </node>
       </node>
-      <node concept="79nr.1562714432501166198" id="7791284463049111116" role="79nr.1562714432501166197.1562714432501166199" info="ng">
+      <node concept="79nr.1562714432501166198" id="7791284463049111116" role="79nr.1562714432501166197.1562714432501166199" info="lg">
         <reference role="79nr.6193305307616715384.6193305307616734326" target="7791284463049069760" resolveInfo="End" />
         <node concept="79nr.1207318242772" id="7791284463049111147" role="79nr.1562714432501166198.1562714432501166206" info="ng">
           <property role="79nr.1207318242772.1207318242774" value="VK_END" />
         </node>
       </node>
-      <node concept="79nr.1562714432501166198" id="5062223007361662201" role="79nr.1562714432501166197.1562714432501166199" info="ng">
+      <node concept="79nr.1562714432501166198" id="5062223007361662201" role="79nr.1562714432501166197.1562714432501166199" info="lg">
         <reference role="79nr.6193305307616715384.6193305307616734326" target="5062223007361662154" resolveInfo="FoldSelection" />
         <node concept="79nr.1207318242772" id="7000507154716606348" role="79nr.1562714432501166198.1562714432501166206" info="ng">
           <property role="79nr.1207318242772.1207318242774" value="VK_PERIOD" />
           <property role="79nr.1207318242772.1207318242773" value="ctrl" />
         </node>
       </node>
-      <node concept="79nr.1562714432501166198" id="7791284463049111120" role="79nr.1562714432501166197.1562714432501166199" info="ng">
+      <node concept="79nr.1562714432501166198" id="7791284463049111120" role="79nr.1562714432501166197.1562714432501166199" info="lg">
         <reference role="79nr.6193305307616715384.6193305307616734326" target="7791284463049069771" resolveInfo="Home" />
         <node concept="79nr.1207318242772" id="7791284463049111148" role="79nr.1562714432501166198.1562714432501166206" info="ng">
           <property role="79nr.1207318242772.1207318242774" value="VK_HOME" />
         </node>
       </node>
-      <node concept="79nr.1562714432501166198" id="7791284463049111123" role="79nr.1562714432501166197.1562714432501166199" info="ng">
+      <node concept="79nr.1562714432501166198" id="7791284463049111123" role="79nr.1562714432501166197.1562714432501166199" info="lg">
         <reference role="79nr.6193305307616715384.6193305307616734326" target="7791284463049069782" resolveInfo="Insert" />
         <node concept="79nr.1207318242772" id="7791284463049111149" role="79nr.1562714432501166198.1562714432501166206" info="ng">
           <property role="79nr.1207318242772.1207318242774" value="VK_ENTER" />
         </node>
       </node>
-      <node concept="79nr.1562714432501166198" id="7791284463049111125" role="79nr.1562714432501166197.1562714432501166199" info="ng">
+      <node concept="79nr.1562714432501166198" id="7791284463049111125" role="79nr.1562714432501166197.1562714432501166199" info="lg">
         <reference role="79nr.6193305307616715384.6193305307616734326" target="7791284463049069850" resolveInfo="InsertBefore" />
         <node concept="79nr.1207318242772" id="7791284463049111150" role="79nr.1562714432501166198.1562714432501166206" info="ng">
           <property role="79nr.1207318242772.1207318242774" value="VK_INSERT" />
@@ -683,73 +707,73 @@
           <property role="79nr.1207318242772.1207318242773" value="shift" />
         </node>
       </node>
-      <node concept="79nr.1562714432501166198" id="7791284463049111127" role="79nr.1562714432501166197.1562714432501166199" info="ng">
+      <node concept="79nr.1562714432501166198" id="7791284463049111127" role="79nr.1562714432501166197.1562714432501166199" info="lg">
         <reference role="79nr.6193305307616715384.6193305307616734326" target="7791284463049069869" resolveInfo="LocalEnd" />
         <node concept="79nr.1207318242772" id="7791284463049111152" role="79nr.1562714432501166198.1562714432501166206" info="ng">
           <property role="79nr.1207318242772.1207318242774" value="VK_RIGHT" />
           <property role="79nr.1207318242772.1207318242773" value="ctrl" />
         </node>
       </node>
-      <node concept="79nr.1562714432501166198" id="7791284463049111139" role="79nr.1562714432501166197.1562714432501166199" info="ng">
+      <node concept="79nr.1562714432501166198" id="7791284463049111139" role="79nr.1562714432501166197.1562714432501166199" info="lg">
         <reference role="79nr.6193305307616715384.6193305307616734326" target="7791284463049069880" resolveInfo="LocalHome" />
         <node concept="79nr.1207318242772" id="7791284463049111153" role="79nr.1562714432501166198.1562714432501166206" info="ng">
           <property role="79nr.1207318242772.1207318242774" value="VK_LEFT" />
           <property role="79nr.1207318242772.1207318242773" value="ctrl" />
         </node>
       </node>
-      <node concept="79nr.1562714432501166198" id="991796682690297114" role="79nr.1562714432501166197.1562714432501166199" info="ng">
+      <node concept="79nr.1562714432501166198" id="991796682690297114" role="79nr.1562714432501166197.1562714432501166199" info="lg">
         <reference role="79nr.6193305307616715384.6193305307616734326" target="991796682690297090" resolveInfo="MoveDown" />
         <node concept="79nr.1207318242772" id="991796682690297115" role="79nr.1562714432501166198.1562714432501166206" info="ng">
           <property role="79nr.1207318242772.1207318242774" value="VK_DOWN" />
         </node>
       </node>
-      <node concept="79nr.1562714432501166198" id="2768238731211621499" role="79nr.1562714432501166197.1562714432501166199" info="ng">
+      <node concept="79nr.1562714432501166198" id="2768238731211621499" role="79nr.1562714432501166197.1562714432501166199" info="lg">
         <reference role="79nr.6193305307616715384.6193305307616734326" target="2768238731211621495" resolveInfo="MoveElementsDown" />
         <node concept="79nr.1207318242772" id="2768238731211621500" role="79nr.1562714432501166198.1562714432501166206" info="ng">
           <property role="79nr.1207318242772.1207318242774" value="VK_DOWN" />
           <property role="79nr.1207318242772.1207318242773" value="ctrl+shift" />
         </node>
       </node>
-      <node concept="79nr.1562714432501166198" id="2768238731211621502" role="79nr.1562714432501166197.1562714432501166199" info="ng">
+      <node concept="79nr.1562714432501166198" id="2768238731211621502" role="79nr.1562714432501166197.1562714432501166199" info="lg">
         <reference role="79nr.6193305307616715384.6193305307616734326" target="2768238731211617618" resolveInfo="MoveElementsUp" />
         <node concept="79nr.1207318242772" id="2768238731211621503" role="79nr.1562714432501166198.1562714432501166206" info="ng">
           <property role="79nr.1207318242772.1207318242774" value="VK_UP" />
           <property role="79nr.1207318242772.1207318242773" value="ctrl+shift" />
         </node>
       </node>
-      <node concept="79nr.1562714432501166198" id="991796682690297104" role="79nr.1562714432501166197.1562714432501166199" info="ng">
+      <node concept="79nr.1562714432501166198" id="991796682690297104" role="79nr.1562714432501166197.1562714432501166199" info="lg">
         <reference role="79nr.6193305307616715384.6193305307616734326" target="991796682690297081" resolveInfo="MoveLeft" />
         <node concept="79nr.1207318242772" id="991796682690297105" role="79nr.1562714432501166198.1562714432501166206" info="ng">
           <property role="79nr.1207318242772.1207318242774" value="VK_LEFT" />
         </node>
       </node>
-      <node concept="79nr.1562714432501166198" id="991796682690297107" role="79nr.1562714432501166197.1562714432501166199" info="ng">
+      <node concept="79nr.1562714432501166198" id="991796682690297107" role="79nr.1562714432501166197.1562714432501166199" info="lg">
         <reference role="79nr.6193305307616715384.6193305307616734326" target="991796682690297084" resolveInfo="MoveRight" />
         <node concept="79nr.1207318242772" id="991796682690297108" role="79nr.1562714432501166198.1562714432501166206" info="ng">
           <property role="79nr.1207318242772.1207318242774" value="VK_RIGHT" />
         </node>
       </node>
-      <node concept="79nr.1562714432501166198" id="991796682690297110" role="79nr.1562714432501166197.1562714432501166199" info="ng">
+      <node concept="79nr.1562714432501166198" id="991796682690297110" role="79nr.1562714432501166197.1562714432501166199" info="lg">
         <reference role="79nr.6193305307616715384.6193305307616734326" target="991796682690297087" resolveInfo="MoveUp" />
         <node concept="79nr.1207318242772" id="991796682690297111" role="79nr.1562714432501166198.1562714432501166206" info="ng">
           <property role="79nr.1207318242772.1207318242774" value="VK_UP" />
         </node>
       </node>
-      <node concept="79nr.1562714432501166198" id="7791284463049111140" role="79nr.1562714432501166197.1562714432501166199" info="ng">
+      <node concept="79nr.1562714432501166198" id="7791284463049111140" role="79nr.1562714432501166197.1562714432501166199" info="lg">
         <reference role="79nr.6193305307616715384.6193305307616734326" target="7791284463049069891" resolveInfo="RootEnd" />
         <node concept="79nr.1207318242772" id="7791284463049111154" role="79nr.1562714432501166198.1562714432501166206" info="ng">
           <property role="79nr.1207318242772.1207318242774" value="VK_END" />
           <property role="79nr.1207318242772.1207318242773" value="ctrl" />
         </node>
       </node>
-      <node concept="79nr.1562714432501166198" id="7791284463049111141" role="79nr.1562714432501166197.1562714432501166199" info="ng">
+      <node concept="79nr.1562714432501166198" id="7791284463049111141" role="79nr.1562714432501166197.1562714432501166199" info="lg">
         <reference role="79nr.6193305307616715384.6193305307616734326" target="7791284463049069902" resolveInfo="RootHome" />
         <node concept="79nr.1207318242772" id="7791284463049111155" role="79nr.1562714432501166198.1562714432501166206" info="ng">
           <property role="79nr.1207318242772.1207318242774" value="VK_HOME" />
           <property role="79nr.1207318242772.1207318242773" value="ctrl" />
         </node>
       </node>
-      <node concept="79nr.1562714432501166198" id="7791284463049111142" role="79nr.1562714432501166197.1562714432501166199" info="ng">
+      <node concept="79nr.1562714432501166198" id="7791284463049111142" role="79nr.1562714432501166197.1562714432501166199" info="lg">
         <reference role="79nr.6193305307616715384.6193305307616734326" target="7791284463049069913" resolveInfo="SelectDown" />
         <node concept="79nr.1207318242772" id="7791284463049111156" role="79nr.1562714432501166198.1562714432501166206" info="ng">
           <property role="79nr.1207318242772.1207318242774" value="VK_DOWN" />
@@ -760,56 +784,56 @@
           <property role="79nr.1207318242772.1207318242773" value="ctrl+shift" />
         </node>
       </node>
-      <node concept="79nr.1562714432501166198" id="8257980988067925451" role="79nr.1562714432501166197.1562714432501166199" info="ng">
+      <node concept="79nr.1562714432501166198" id="8257980988067925451" role="79nr.1562714432501166197.1562714432501166199" info="lg">
         <reference role="79nr.6193305307616715384.6193305307616734326" target="8257980988067921114" resolveInfo="SelectLeft" />
         <node concept="79nr.1207318242772" id="8257980988067925452" role="79nr.1562714432501166198.1562714432501166206" info="ng">
           <property role="79nr.1207318242772.1207318242774" value="VK_LEFT" />
           <property role="79nr.1207318242772.1207318242773" value="shift" />
         </node>
       </node>
-      <node concept="79nr.1562714432501166198" id="7791284463049111143" role="79nr.1562714432501166197.1562714432501166199" info="ng">
+      <node concept="79nr.1562714432501166198" id="7791284463049111143" role="79nr.1562714432501166197.1562714432501166199" info="lg">
         <reference role="79nr.6193305307616715384.6193305307616734326" target="7791284463049069924" resolveInfo="SelectLocalEnd" />
         <node concept="79nr.1207318242772" id="7791284463049111158" role="79nr.1562714432501166198.1562714432501166206" info="ng">
           <property role="79nr.1207318242772.1207318242774" value="VK_RIGHT" />
           <property role="79nr.1207318242772.1207318242773" value="ctrl+shift" />
         </node>
       </node>
-      <node concept="79nr.1562714432501166198" id="7791284463049111144" role="79nr.1562714432501166197.1562714432501166199" info="ng">
+      <node concept="79nr.1562714432501166198" id="7791284463049111144" role="79nr.1562714432501166197.1562714432501166199" info="lg">
         <reference role="79nr.6193305307616715384.6193305307616734326" target="7791284463049070003" resolveInfo="SelectLocalHome" />
         <node concept="79nr.1207318242772" id="7791284463049111159" role="79nr.1562714432501166198.1562714432501166206" info="ng">
           <property role="79nr.1207318242772.1207318242774" value="VK_LEFT" />
           <property role="79nr.1207318242772.1207318242773" value="ctrl+shift" />
         </node>
       </node>
-      <node concept="79nr.1562714432501166198" id="4225699205371339262" role="79nr.1562714432501166197.1562714432501166199" info="ng">
+      <node concept="79nr.1562714432501166198" id="4225699205371339262" role="79nr.1562714432501166197.1562714432501166199" info="lg">
         <reference role="79nr.6193305307616715384.6193305307616734326" target="4225699205371269974" resolveInfo="SelectNext" />
         <node concept="79nr.1207318242772" id="4225699205371339269" role="79nr.1562714432501166198.1562714432501166206" info="ng">
           <property role="79nr.1207318242772.1207318242774" value="VK_DOWN" />
           <property role="79nr.1207318242772.1207318242773" value="shift" />
         </node>
       </node>
-      <node concept="79nr.1562714432501166198" id="4225699205371339265" role="79nr.1562714432501166197.1562714432501166199" info="ng">
+      <node concept="79nr.1562714432501166198" id="4225699205371339265" role="79nr.1562714432501166197.1562714432501166199" info="lg">
         <reference role="79nr.6193305307616715384.6193305307616734326" target="4225699205371269977" resolveInfo="SelectPrevious" />
         <node concept="79nr.1207318242772" id="4225699205371339271" role="79nr.1562714432501166198.1562714432501166206" info="ng">
           <property role="79nr.1207318242772.1207318242774" value="VK_UP" />
           <property role="79nr.1207318242772.1207318242773" value="shift" />
         </node>
       </node>
-      <node concept="79nr.1562714432501166198" id="8257980988067925454" role="79nr.1562714432501166197.1562714432501166199" info="ng">
+      <node concept="79nr.1562714432501166198" id="8257980988067925454" role="79nr.1562714432501166197.1562714432501166199" info="lg">
         <reference role="79nr.6193305307616715384.6193305307616734326" target="8257980988067921117" resolveInfo="SelectRight" />
         <node concept="79nr.1207318242772" id="8257980988067925455" role="79nr.1562714432501166198.1562714432501166206" info="ng">
           <property role="79nr.1207318242772.1207318242774" value="VK_RIGHT" />
           <property role="79nr.1207318242772.1207318242773" value="shift" />
         </node>
       </node>
-      <node concept="79nr.1562714432501166198" id="7000507154716606349" role="79nr.1562714432501166197.1562714432501166199" info="ng">
+      <node concept="79nr.1562714432501166198" id="7000507154716606349" role="79nr.1562714432501166197.1562714432501166199" info="lg">
         <reference role="79nr.6193305307616715384.6193305307616734326" target="3228268613620327405" resolveInfo="GoByCurrentReference" />
         <node concept="79nr.1207318242772" id="7000507154716606350" role="79nr.1562714432501166198.1562714432501166206" info="ng">
           <property role="79nr.1207318242772.1207318242774" value="VK_B" />
           <property role="79nr.1207318242772.1207318242773" value="ctrl" />
         </node>
       </node>
-      <node concept="79nr.1562714432501166198" id="7791284463049111145" role="79nr.1562714432501166197.1562714432501166199" info="ng">
+      <node concept="79nr.1562714432501166198" id="7791284463049111145" role="79nr.1562714432501166197.1562714432501166199" info="lg">
         <reference role="79nr.6193305307616715384.6193305307616734326" target="7791284463049070082" resolveInfo="SelectUp" />
         <node concept="79nr.1207318242772" id="7791284463049111160" role="79nr.1562714432501166198.1562714432501166206" info="ng">
           <property role="79nr.1207318242772.1207318242774" value="VK_UP" />
@@ -820,34 +844,34 @@
           <property role="79nr.1207318242772.1207318242773" value="ctrl" />
         </node>
       </node>
-      <node concept="79nr.1562714432501166198" id="5487985028841901514" role="79nr.1562714432501166197.1562714432501166199" info="ng">
+      <node concept="79nr.1562714432501166198" id="5487985028841901514" role="79nr.1562714432501166197.1562714432501166199" info="lg">
         <reference role="79nr.6193305307616715384.6193305307616734326" target="3207605520775490246" resolveInfo="ShowSurroundWithIntentions" />
         <node concept="79nr.1207318242772" id="5487985028841901515" role="79nr.1562714432501166198.1562714432501166206" info="ng">
           <property role="79nr.1207318242772.1207318242774" value="VK_T" />
           <property role="79nr.1207318242772.1207318242773" value="ctrl+alt" />
         </node>
       </node>
-      <node concept="79nr.1562714432501166198" id="8639917440979061412" role="79nr.1562714432501166197.1562714432501166199" info="ng">
+      <node concept="79nr.1562714432501166198" id="8639917440979061412" role="79nr.1562714432501166197.1562714432501166199" info="lg">
         <reference role="79nr.6193305307616715384.6193305307616734326" target="3207605520775490121" resolveInfo="ShowGenerationActions" />
         <node concept="79nr.1207318242772" id="8639917440979061413" role="79nr.1562714432501166198.1562714432501166206" info="ng">
           <property role="79nr.1207318242772.1207318242774" value="VK_INSERT" />
           <property role="79nr.1207318242772.1207318242773" value="alt" />
         </node>
       </node>
-      <node concept="79nr.1562714432501166198" id="7000507154716606439" role="79nr.1562714432501166197.1562714432501166199" info="ng">
+      <node concept="79nr.1562714432501166198" id="7000507154716606439" role="79nr.1562714432501166197.1562714432501166199" info="lg">
         <reference role="79nr.6193305307616715384.6193305307616734326" target="4421450760407613926" resolveInfo="Find" />
         <node concept="79nr.1207318242772" id="7000507154716606440" role="79nr.1562714432501166198.1562714432501166206" info="ng">
           <property role="79nr.1207318242772.1207318242774" value="F" />
           <property role="79nr.1207318242772.1207318242773" value="ctrl" />
         </node>
       </node>
-      <node concept="79nr.1562714432501166198" id="7000507154716606469" role="79nr.1562714432501166197.1562714432501166199" info="ng">
+      <node concept="79nr.1562714432501166198" id="7000507154716606469" role="79nr.1562714432501166197.1562714432501166199" info="lg">
         <reference role="79nr.6193305307616715384.6193305307616734326" target="4421450760407613939" resolveInfo="FindNext" />
         <node concept="79nr.1207318242772" id="7000507154716606470" role="79nr.1562714432501166198.1562714432501166206" info="ng">
           <property role="79nr.1207318242772.1207318242774" value="F3" />
         </node>
       </node>
-      <node concept="79nr.1562714432501166198" id="7000507154716606369" role="79nr.1562714432501166197.1562714432501166199" info="ng">
+      <node concept="79nr.1562714432501166198" id="7000507154716606369" role="79nr.1562714432501166197.1562714432501166199" info="lg">
         <reference role="79nr.6193305307616715384.6193305307616734326" target="4421450760407613962" resolveInfo="FindPrevious" />
         <node concept="79nr.1207318242772" id="7000507154716606370" role="79nr.1562714432501166198.1562714432501166206" info="ng">
           <property role="79nr.1207318242772.1207318242774" value="F3" />
@@ -859,35 +883,35 @@
       <property role="79nr.1562714432501166197.1562714432501166281" value="Mac OS X" />
       <property role="79nr.1562714432501166197.8646726056720906098" value="true" />
       <property role="asn4.1169194658468.1169194664001" value="Mac" />
-      <node concept="79nr.1562714432501166198" id="6329087906628817090" role="79nr.1562714432501166197.1562714432501166199" info="ng">
+      <node concept="79nr.1562714432501166198" id="6329087906628817090" role="79nr.1562714432501166197.1562714432501166199" info="lg">
         <reference role="79nr.6193305307616715384.6193305307616734326" target="3467203700125709751" resolveInfo="AddLanguageImport" />
         <node concept="79nr.1207318242772" id="6329087906628817091" role="79nr.1562714432501166198.1562714432501166206" info="ng">
           <property role="79nr.1207318242772.1207318242774" value="VK_L" />
           <property role="79nr.1207318242772.1207318242773" value="ctrl" />
         </node>
       </node>
-      <node concept="79nr.1562714432501166198" id="4340091656521524225" role="79nr.1562714432501166197.1562714432501166199" info="ng">
+      <node concept="79nr.1562714432501166198" id="4340091656521524225" role="79nr.1562714432501166197.1562714432501166199" info="lg">
         <reference role="79nr.6193305307616715384.6193305307616734326" target="3467203700125709779" resolveInfo="AddModelImport" />
         <node concept="79nr.1207318242772" id="4340091656521524226" role="79nr.1562714432501166198.1562714432501166206" info="ng">
           <property role="79nr.1207318242772.1207318242774" value="VK_M" />
           <property role="79nr.1207318242772.1207318242773" value="ctrl" />
         </node>
       </node>
-      <node concept="79nr.1562714432501166198" id="3483976808910049650" role="79nr.1562714432501166197.1562714432501166199" info="ng">
+      <node concept="79nr.1562714432501166198" id="3483976808910049650" role="79nr.1562714432501166197.1562714432501166199" info="lg">
         <reference role="79nr.6193305307616715384.6193305307616734326" target="3467203700125709807" resolveInfo="AddModelImportByRoot" />
         <node concept="79nr.1207318242772" id="3483976808910049651" role="79nr.1562714432501166198.1562714432501166206" info="ng">
           <property role="79nr.1207318242772.1207318242774" value="VK_R" />
           <property role="79nr.1207318242772.1207318242773" value="ctrl" />
         </node>
       </node>
-      <node concept="79nr.1562714432501166198" id="8896169282213957022" role="79nr.1562714432501166197.1562714432501166199" info="ng">
+      <node concept="79nr.1562714432501166198" id="8896169282213957022" role="79nr.1562714432501166197.1562714432501166199" info="lg">
         <reference role="79nr.6193305307616715384.6193305307616734326" target="8896169282213957015" resolveInfo="DeleteToWordEnd" />
         <node concept="79nr.1207318242772" id="8896169282213957023" role="79nr.1562714432501166198.1562714432501166206" info="ng">
           <property role="79nr.1207318242772.1207318242774" value="VK_DELETE" />
           <property role="79nr.1207318242772.1207318242773" value="alt" />
         </node>
       </node>
-      <node concept="79nr.1562714432501166198" id="7791284463049111162" role="79nr.1562714432501166197.1562714432501166199" info="ng">
+      <node concept="79nr.1562714432501166198" id="7791284463049111162" role="79nr.1562714432501166197.1562714432501166199" info="lg">
         <reference role="79nr.6193305307616715384.6193305307616734326" target="7791284463049069760" resolveInfo="End" />
         <node concept="79nr.1207318242772" id="7791284463049111176" role="79nr.1562714432501166198.1562714432501166206" info="ng">
           <property role="79nr.1207318242772.1207318242774" value="VK_END" />
@@ -897,7 +921,7 @@
           <property role="79nr.1207318242772.1207318242773" value="meta" />
         </node>
       </node>
-      <node concept="79nr.1562714432501166198" id="7791284463049111165" role="79nr.1562714432501166197.1562714432501166199" info="ng">
+      <node concept="79nr.1562714432501166198" id="7791284463049111165" role="79nr.1562714432501166197.1562714432501166199" info="lg">
         <reference role="79nr.6193305307616715384.6193305307616734326" target="7791284463049069771" resolveInfo="Home" />
         <node concept="79nr.1207318242772" id="7791284463049111178" role="79nr.1562714432501166198.1562714432501166206" info="ng">
           <property role="79nr.1207318242772.1207318242774" value="VK_HOME" />
@@ -907,28 +931,28 @@
           <property role="79nr.1207318242772.1207318242773" value="meta" />
         </node>
       </node>
-      <node concept="79nr.1562714432501166198" id="7791284463049111166" role="79nr.1562714432501166197.1562714432501166199" info="ng">
+      <node concept="79nr.1562714432501166198" id="7791284463049111166" role="79nr.1562714432501166197.1562714432501166199" info="lg">
         <reference role="79nr.6193305307616715384.6193305307616734326" target="7791284463049069850" resolveInfo="InsertBefore" />
         <node concept="79nr.1207318242772" id="7791284463049111180" role="79nr.1562714432501166198.1562714432501166206" info="ng">
           <property role="79nr.1207318242772.1207318242774" value="VK_ENTER" />
           <property role="79nr.1207318242772.1207318242773" value="shift" />
         </node>
       </node>
-      <node concept="79nr.1562714432501166198" id="7791284463049111167" role="79nr.1562714432501166197.1562714432501166199" info="ng">
+      <node concept="79nr.1562714432501166198" id="7791284463049111167" role="79nr.1562714432501166197.1562714432501166199" info="lg">
         <reference role="79nr.6193305307616715384.6193305307616734326" target="7791284463049069869" resolveInfo="LocalEnd" />
         <node concept="79nr.1207318242772" id="7791284463049111181" role="79nr.1562714432501166198.1562714432501166206" info="ng">
           <property role="79nr.1207318242772.1207318242774" value="VK_RIGHT" />
           <property role="79nr.1207318242772.1207318242773" value="alt" />
         </node>
       </node>
-      <node concept="79nr.1562714432501166198" id="7791284463049111168" role="79nr.1562714432501166197.1562714432501166199" info="ng">
+      <node concept="79nr.1562714432501166198" id="7791284463049111168" role="79nr.1562714432501166197.1562714432501166199" info="lg">
         <reference role="79nr.6193305307616715384.6193305307616734326" target="7791284463049069880" resolveInfo="LocalHome" />
         <node concept="79nr.1207318242772" id="7791284463049111182" role="79nr.1562714432501166198.1562714432501166206" info="ng">
           <property role="79nr.1207318242772.1207318242774" value="VK_LEFT" />
           <property role="79nr.1207318242772.1207318242773" value="alt" />
         </node>
       </node>
-      <node concept="79nr.1562714432501166198" id="7791284463049111169" role="79nr.1562714432501166197.1562714432501166199" info="ng">
+      <node concept="79nr.1562714432501166198" id="7791284463049111169" role="79nr.1562714432501166197.1562714432501166199" info="lg">
         <reference role="79nr.6193305307616715384.6193305307616734326" target="7791284463049069913" resolveInfo="SelectDown" />
         <node concept="79nr.1207318242772" id="7791284463049111183" role="79nr.1562714432501166198.1562714432501166206" info="ng">
           <property role="79nr.1207318242772.1207318242774" value="VK_DOWN" />
@@ -939,35 +963,35 @@
           <property role="79nr.1207318242772.1207318242773" value="ctrl+shift" />
         </node>
       </node>
-      <node concept="79nr.1562714432501166198" id="7791284463049111170" role="79nr.1562714432501166197.1562714432501166199" info="ng">
+      <node concept="79nr.1562714432501166198" id="7791284463049111170" role="79nr.1562714432501166197.1562714432501166199" info="lg">
         <reference role="79nr.6193305307616715384.6193305307616734326" target="7791284463049069924" resolveInfo="SelectLocalEnd" />
         <node concept="79nr.1207318242772" id="7791284463049111185" role="79nr.1562714432501166198.1562714432501166206" info="ng">
           <property role="79nr.1207318242772.1207318242774" value="VK_RIGHT" />
           <property role="79nr.1207318242772.1207318242773" value="alt+shift" />
         </node>
       </node>
-      <node concept="79nr.1562714432501166198" id="7791284463049111171" role="79nr.1562714432501166197.1562714432501166199" info="ng">
+      <node concept="79nr.1562714432501166198" id="7791284463049111171" role="79nr.1562714432501166197.1562714432501166199" info="lg">
         <reference role="79nr.6193305307616715384.6193305307616734326" target="7791284463049070003" resolveInfo="SelectLocalHome" />
         <node concept="79nr.1207318242772" id="7791284463049111186" role="79nr.1562714432501166198.1562714432501166206" info="ng">
           <property role="79nr.1207318242772.1207318242774" value="VK_LEFT" />
           <property role="79nr.1207318242772.1207318242773" value="alt+shift" />
         </node>
       </node>
-      <node concept="79nr.1562714432501166198" id="1885718553235253580" role="79nr.1562714432501166197.1562714432501166199" info="ng">
+      <node concept="79nr.1562714432501166198" id="1885718553235253580" role="79nr.1562714432501166197.1562714432501166199" info="lg">
         <reference role="79nr.6193305307616715384.6193305307616734326" target="4225699205371269974" resolveInfo="SelectNext" />
         <node concept="79nr.1207318242772" id="1885718553235253583" role="79nr.1562714432501166198.1562714432501166206" info="ng">
           <property role="79nr.1207318242772.1207318242774" value="VK_DOWN" />
           <property role="79nr.1207318242772.1207318242773" value="shift" />
         </node>
       </node>
-      <node concept="79nr.1562714432501166198" id="1885718553235253584" role="79nr.1562714432501166197.1562714432501166199" info="ng">
+      <node concept="79nr.1562714432501166198" id="1885718553235253584" role="79nr.1562714432501166197.1562714432501166199" info="lg">
         <reference role="79nr.6193305307616715384.6193305307616734326" target="4225699205371269977" resolveInfo="SelectPrevious" />
         <node concept="79nr.1207318242772" id="1885718553235253587" role="79nr.1562714432501166198.1562714432501166206" info="ng">
           <property role="79nr.1207318242772.1207318242774" value="VK_UP" />
           <property role="79nr.1207318242772.1207318242773" value="shift" />
         </node>
       </node>
-      <node concept="79nr.1562714432501166198" id="7791284463049111172" role="79nr.1562714432501166197.1562714432501166199" info="ng">
+      <node concept="79nr.1562714432501166198" id="7791284463049111172" role="79nr.1562714432501166197.1562714432501166199" info="lg">
         <reference role="79nr.6193305307616715384.6193305307616734326" target="7791284463049070082" resolveInfo="SelectUp" />
         <node concept="79nr.1207318242772" id="7791284463049111187" role="79nr.1562714432501166198.1562714432501166206" info="ng">
           <property role="79nr.1207318242772.1207318242774" value="VK_UP" />
@@ -978,7 +1002,7 @@
           <property role="79nr.1207318242772.1207318242773" value="ctrl" />
         </node>
       </node>
-      <node concept="79nr.1562714432501166198" id="5487985028841901519" role="79nr.1562714432501166197.1562714432501166199" info="ng">
+      <node concept="79nr.1562714432501166198" id="5487985028841901519" role="79nr.1562714432501166197.1562714432501166199" info="lg">
         <reference role="79nr.6193305307616715384.6193305307616734326" target="3207605520775490121" resolveInfo="ShowGenerationActions" />
         <node concept="79nr.1207318242772" id="5487985028841901520" role="79nr.1562714432501166198.1562714432501166206" info="ng">
           <property role="79nr.1207318242772.1207318242774" value="VK_N" />
@@ -2215,7 +2239,7 @@
           <reference role="79nr.1203088046679.1203088061055" target="4421450760407613962" resolveInfo="FindPrevious" />
         </node>
       </node>
-      <node concept="79nr.1203092361741" id="7791284463049069759" role="79nr.1203087890642.1204991552650" info="ng">
+      <node concept="79nr.1203092361741" id="7791284463049069759" role="79nr.1203087890642.1204991552650" info="lg">
         <reference role="79nr.1203092361741.1203092736097" target="tprs.9059842016863237995" resolveInfo="IDEAEditor" />
       </node>
     </node>
@@ -6403,13 +6427,13 @@
           <property role="asn4.1169194658468.1169194664001" value="custom" />
         </node>
       </node>
-      <node concept="79nr.1203092361741" id="5495648829643707073" role="79nr.1203087890642.1204991552650" info="ng">
+      <node concept="79nr.1203092361741" id="5495648829643707073" role="79nr.1203087890642.1204991552650" info="lg">
         <reference role="79nr.1203092361741.1203092736097" target="tprs.1215010709295" resolveInfo="IDEAEdit" />
       </node>
     </node>
     <node concept="79nr.3205778618063718746" id="3205778618063801970" info="ng">
       <property role="asn4.1169194658468.1169194664001" value="MPSEditorActions" />
-      <node concept="79nr.331224023792854814" id="3205778618063801972" role="79nr.3205778618063718746.3205778618063718748" info="ng">
+      <node concept="79nr.331224023792854814" id="3205778618063801972" role="79nr.3205778618063718746.3205778618063718748" info="lg">
         <node concept="79nr.331224023792854815" id="3205778618063801974" role="79nr.331224023792854814.331224023792854818" info="ng">
           <reference role="79nr.331224023792854815.331224023792854816" target="7791284463049069745" resolveInfo="EditorActions" />
         </node>
@@ -6690,7 +6714,7 @@
       <property role="asn4.1133920641626.1193676396447" value="Menu.EditorPopup" />
       <property role="79nr.1203087890642.6368583333374291912" value="true" />
       <property role="79nr.1203087890642.1213283637680" value="true" />
-      <node concept="79nr.1203092361741" id="3228268613620327883" role="79nr.1203087890642.1204991552650" info="ng">
+      <node concept="79nr.1203092361741" id="3228268613620327883" role="79nr.1203087890642.1204991552650" info="lg">
         <reference role="79nr.1203092361741.1204992316090" target="1755502566255660793" resolveInfo="goto" />
         <reference role="79nr.1203092361741.1203092736097" target="1755502566255660782" resolveInfo="EditorPopup" />
       </node>
@@ -6713,7 +6737,7 @@
       <property role="79nr.1203087890642.1204991940915" value="Folding" />
       <property role="79nr.1203087890642.6368583333374291912" value="true" />
       <property role="79nr.1203087890642.1213283637680" value="true" />
-      <node concept="79nr.1203092361741" id="5062223007361660573" role="79nr.1203087890642.1204991552650" info="ng">
+      <node concept="79nr.1203092361741" id="5062223007361660573" role="79nr.1203087890642.1204991552650" info="lg">
         <reference role="79nr.1203092361741.1203092736097" target="1755502566255660782" resolveInfo="EditorPopup" />
         <reference role="79nr.1203092361741.1204992316090" target="1755502566255660791" resolveInfo="folding" />
       </node>
@@ -7146,7 +7170,7 @@
       <property role="asn4.1169194658468.1169194664001" value="RefactoringActions" />
       <property role="asn4.1133920641626.1193676396447" value="Menu.EditorPopup" />
       <property role="79nr.1203087890642.6368583333374291912" value="true" />
-      <node concept="79nr.1203092361741" id="6714826334259400785" role="79nr.1203087890642.1204991552650" info="ng">
+      <node concept="79nr.1203092361741" id="6714826334259400785" role="79nr.1203087890642.1204991552650" info="lg">
         <reference role="79nr.1203092361741.1203092736097" target="1755502566255660782" resolveInfo="EditorPopup" />
         <reference role="79nr.1203092361741.1204992316090" target="5062223007361835671" resolveInfo="refactoring" />
       </node>
@@ -7228,7 +7252,7 @@
           <reference role="79nr.1203088046679.1203088061055" target="3207605520775490246" resolveInfo="ShowSurroundWithIntentions" />
         </node>
       </node>
-      <node concept="79nr.1203092361741" id="3207605520775490120" role="79nr.1203087890642.1204991552650" info="ng">
+      <node concept="79nr.1203092361741" id="3207605520775490120" role="79nr.1203087890642.1204991552650" info="lg">
         <reference role="79nr.1203092361741.1203092736097" target="1755502566255660782" resolveInfo="EditorPopup" />
         <reference role="79nr.1203092361741.1204992316090" target="1755502566255660794" resolveInfo="intentions" />
       </node>
@@ -9087,7 +9111,7 @@
     </node>
     <node concept="79nr.1512255007353869532" id="3824306434922117722" info="ng">
       <property role="asn4.1169194658468.1169194664001" value="DefaultNonDumbAware" />
-      <node concept="79nr.1512255007353869535" id="3824306434922117724" role="79nr.1512255007353869532.1512255007353869533" info="nn">
+      <node concept="79nr.1512255007353869535" id="3824306434922117724" role="79nr.1512255007353869532.1512255007353869533" info="ln">
         <reference role="79nr.1512255007353869535.1512255007353869536" target="3467203700125709807" resolveInfo="AddModelImportByRoot" />
       </node>
     </node>
@@ -9095,35 +9119,35 @@
       <property role="79nr.1562714432501166197.1562714432501166281" value="Mac OS X 10.5+" />
       <property role="79nr.1562714432501166197.8646726056720906098" value="true" />
       <property role="asn4.1169194658468.1169194664001" value="Mac_10_5" />
-      <node concept="79nr.1562714432501166198" id="3121818631993520993" role="79nr.1562714432501166197.1562714432501166199" info="ng">
+      <node concept="79nr.1562714432501166198" id="3121818631993520993" role="79nr.1562714432501166197.1562714432501166199" info="lg">
         <reference role="79nr.6193305307616715384.6193305307616734326" target="3467203700125709751" resolveInfo="AddLanguageImport" />
         <node concept="79nr.1207318242772" id="3121818631993520994" role="79nr.1562714432501166198.1562714432501166206" info="ng">
           <property role="79nr.1207318242772.1207318242774" value="VK_L" />
           <property role="79nr.1207318242772.1207318242773" value="ctrl" />
         </node>
       </node>
-      <node concept="79nr.1562714432501166198" id="3121818631993520995" role="79nr.1562714432501166197.1562714432501166199" info="ng">
+      <node concept="79nr.1562714432501166198" id="3121818631993520995" role="79nr.1562714432501166197.1562714432501166199" info="lg">
         <reference role="79nr.6193305307616715384.6193305307616734326" target="3467203700125709779" resolveInfo="AddModelImport" />
         <node concept="79nr.1207318242772" id="3121818631993520996" role="79nr.1562714432501166198.1562714432501166206" info="ng">
           <property role="79nr.1207318242772.1207318242774" value="VK_M" />
           <property role="79nr.1207318242772.1207318242773" value="ctrl" />
         </node>
       </node>
-      <node concept="79nr.1562714432501166198" id="3121818631993520997" role="79nr.1562714432501166197.1562714432501166199" info="ng">
+      <node concept="79nr.1562714432501166198" id="3121818631993520997" role="79nr.1562714432501166197.1562714432501166199" info="lg">
         <reference role="79nr.6193305307616715384.6193305307616734326" target="3467203700125709807" resolveInfo="AddModelImportByRoot" />
         <node concept="79nr.1207318242772" id="3121818631993520998" role="79nr.1562714432501166198.1562714432501166206" info="ng">
           <property role="79nr.1207318242772.1207318242774" value="VK_R" />
           <property role="79nr.1207318242772.1207318242773" value="ctrl" />
         </node>
       </node>
-      <node concept="79nr.1562714432501166198" id="3121818631993520999" role="79nr.1562714432501166197.1562714432501166199" info="ng">
+      <node concept="79nr.1562714432501166198" id="3121818631993520999" role="79nr.1562714432501166197.1562714432501166199" info="lg">
         <reference role="79nr.6193305307616715384.6193305307616734326" target="8896169282213957015" resolveInfo="DeleteToWordEnd" />
         <node concept="79nr.1207318242772" id="3121818631993521000" role="79nr.1562714432501166198.1562714432501166206" info="ng">
           <property role="79nr.1207318242772.1207318242774" value="VK_DELETE" />
           <property role="79nr.1207318242772.1207318242773" value="alt" />
         </node>
       </node>
-      <node concept="79nr.1562714432501166198" id="3121818631993521001" role="79nr.1562714432501166197.1562714432501166199" info="ng">
+      <node concept="79nr.1562714432501166198" id="3121818631993521001" role="79nr.1562714432501166197.1562714432501166199" info="lg">
         <reference role="79nr.6193305307616715384.6193305307616734326" target="7791284463049069760" resolveInfo="End" />
         <node concept="79nr.1207318242772" id="3121818631993521002" role="79nr.1562714432501166198.1562714432501166206" info="ng">
           <property role="79nr.1207318242772.1207318242774" value="VK_END" />
@@ -9133,7 +9157,7 @@
           <property role="79nr.1207318242772.1207318242773" value="meta" />
         </node>
       </node>
-      <node concept="79nr.1562714432501166198" id="3121818631993521004" role="79nr.1562714432501166197.1562714432501166199" info="ng">
+      <node concept="79nr.1562714432501166198" id="3121818631993521004" role="79nr.1562714432501166197.1562714432501166199" info="lg">
         <reference role="79nr.6193305307616715384.6193305307616734326" target="7791284463049069771" resolveInfo="Home" />
         <node concept="79nr.1207318242772" id="3121818631993521005" role="79nr.1562714432501166198.1562714432501166206" info="ng">
           <property role="79nr.1207318242772.1207318242774" value="VK_HOME" />
@@ -9143,28 +9167,28 @@
           <property role="79nr.1207318242772.1207318242773" value="meta" />
         </node>
       </node>
-      <node concept="79nr.1562714432501166198" id="3121818631993521007" role="79nr.1562714432501166197.1562714432501166199" info="ng">
+      <node concept="79nr.1562714432501166198" id="3121818631993521007" role="79nr.1562714432501166197.1562714432501166199" info="lg">
         <reference role="79nr.6193305307616715384.6193305307616734326" target="7791284463049069850" resolveInfo="InsertBefore" />
         <node concept="79nr.1207318242772" id="3121818631993521008" role="79nr.1562714432501166198.1562714432501166206" info="ng">
           <property role="79nr.1207318242772.1207318242774" value="VK_ENTER" />
           <property role="79nr.1207318242772.1207318242773" value="shift" />
         </node>
       </node>
-      <node concept="79nr.1562714432501166198" id="3121818631993521009" role="79nr.1562714432501166197.1562714432501166199" info="ng">
+      <node concept="79nr.1562714432501166198" id="3121818631993521009" role="79nr.1562714432501166197.1562714432501166199" info="lg">
         <reference role="79nr.6193305307616715384.6193305307616734326" target="7791284463049069869" resolveInfo="LocalEnd" />
         <node concept="79nr.1207318242772" id="3121818631993521010" role="79nr.1562714432501166198.1562714432501166206" info="ng">
           <property role="79nr.1207318242772.1207318242774" value="VK_RIGHT" />
           <property role="79nr.1207318242772.1207318242773" value="alt" />
         </node>
       </node>
-      <node concept="79nr.1562714432501166198" id="3121818631993521011" role="79nr.1562714432501166197.1562714432501166199" info="ng">
+      <node concept="79nr.1562714432501166198" id="3121818631993521011" role="79nr.1562714432501166197.1562714432501166199" info="lg">
         <reference role="79nr.6193305307616715384.6193305307616734326" target="7791284463049069880" resolveInfo="LocalHome" />
         <node concept="79nr.1207318242772" id="3121818631993521012" role="79nr.1562714432501166198.1562714432501166206" info="ng">
           <property role="79nr.1207318242772.1207318242774" value="VK_LEFT" />
           <property role="79nr.1207318242772.1207318242773" value="alt" />
         </node>
       </node>
-      <node concept="79nr.1562714432501166198" id="3121818631993521013" role="79nr.1562714432501166197.1562714432501166199" info="ng">
+      <node concept="79nr.1562714432501166198" id="3121818631993521013" role="79nr.1562714432501166197.1562714432501166199" info="lg">
         <reference role="79nr.6193305307616715384.6193305307616734326" target="7791284463049069913" resolveInfo="SelectDown" />
         <node concept="79nr.1207318242772" id="3121818631993521014" role="79nr.1562714432501166198.1562714432501166206" info="ng">
           <property role="79nr.1207318242772.1207318242774" value="VK_DOWN" />
@@ -9175,35 +9199,35 @@
           <property role="79nr.1207318242772.1207318242773" value="ctrl+shift" />
         </node>
       </node>
-      <node concept="79nr.1562714432501166198" id="3121818631993521016" role="79nr.1562714432501166197.1562714432501166199" info="ng">
+      <node concept="79nr.1562714432501166198" id="3121818631993521016" role="79nr.1562714432501166197.1562714432501166199" info="lg">
         <reference role="79nr.6193305307616715384.6193305307616734326" target="7791284463049069924" resolveInfo="SelectLocalEnd" />
         <node concept="79nr.1207318242772" id="3121818631993521017" role="79nr.1562714432501166198.1562714432501166206" info="ng">
           <property role="79nr.1207318242772.1207318242774" value="VK_RIGHT" />
           <property role="79nr.1207318242772.1207318242773" value="alt+shift" />
         </node>
       </node>
-      <node concept="79nr.1562714432501166198" id="3121818631993521018" role="79nr.1562714432501166197.1562714432501166199" info="ng">
+      <node concept="79nr.1562714432501166198" id="3121818631993521018" role="79nr.1562714432501166197.1562714432501166199" info="lg">
         <reference role="79nr.6193305307616715384.6193305307616734326" target="7791284463049070003" resolveInfo="SelectLocalHome" />
         <node concept="79nr.1207318242772" id="3121818631993521019" role="79nr.1562714432501166198.1562714432501166206" info="ng">
           <property role="79nr.1207318242772.1207318242774" value="VK_LEFT" />
           <property role="79nr.1207318242772.1207318242773" value="alt+shift" />
         </node>
       </node>
-      <node concept="79nr.1562714432501166198" id="3121818631993521020" role="79nr.1562714432501166197.1562714432501166199" info="ng">
+      <node concept="79nr.1562714432501166198" id="3121818631993521020" role="79nr.1562714432501166197.1562714432501166199" info="lg">
         <reference role="79nr.6193305307616715384.6193305307616734326" target="4225699205371269974" resolveInfo="SelectNext" />
         <node concept="79nr.1207318242772" id="3121818631993521021" role="79nr.1562714432501166198.1562714432501166206" info="ng">
           <property role="79nr.1207318242772.1207318242774" value="VK_DOWN" />
           <property role="79nr.1207318242772.1207318242773" value="shift" />
         </node>
       </node>
-      <node concept="79nr.1562714432501166198" id="3121818631993521022" role="79nr.1562714432501166197.1562714432501166199" info="ng">
+      <node concept="79nr.1562714432501166198" id="3121818631993521022" role="79nr.1562714432501166197.1562714432501166199" info="lg">
         <reference role="79nr.6193305307616715384.6193305307616734326" target="4225699205371269977" resolveInfo="SelectPrevious" />
         <node concept="79nr.1207318242772" id="3121818631993521023" role="79nr.1562714432501166198.1562714432501166206" info="ng">
           <property role="79nr.1207318242772.1207318242774" value="VK_UP" />
           <property role="79nr.1207318242772.1207318242773" value="shift" />
         </node>
       </node>
-      <node concept="79nr.1562714432501166198" id="3121818631993521024" role="79nr.1562714432501166197.1562714432501166199" info="ng">
+      <node concept="79nr.1562714432501166198" id="3121818631993521024" role="79nr.1562714432501166197.1562714432501166199" info="lg">
         <reference role="79nr.6193305307616715384.6193305307616734326" target="7791284463049070082" resolveInfo="SelectUp" />
         <node concept="79nr.1207318242772" id="3121818631993521025" role="79nr.1562714432501166198.1562714432501166206" info="ng">
           <property role="79nr.1207318242772.1207318242774" value="VK_UP" />
@@ -9214,7 +9238,7 @@
           <property role="79nr.1207318242772.1207318242773" value="ctrl" />
         </node>
       </node>
-      <node concept="79nr.1562714432501166198" id="3121818631993521027" role="79nr.1562714432501166197.1562714432501166199" info="ng">
+      <node concept="79nr.1562714432501166198" id="3121818631993521027" role="79nr.1562714432501166197.1562714432501166199" info="lg">
         <reference role="79nr.6193305307616715384.6193305307616734326" target="3207605520775490121" resolveInfo="ShowGenerationActions" />
         <node concept="79nr.1207318242772" id="3121818631993521028" role="79nr.1562714432501166198.1562714432501166206" info="ng">
           <property role="79nr.1207318242772.1207318242774" value="VK_N" />
@@ -9553,7 +9577,7 @@
           <reference role="79nr.1203088046679.1203088061055" target="3767536026885379902" resolveInfo="PushEditorHints" />
         </node>
       </node>
-      <node concept="79nr.1203092361741" id="3767536026885390269" role="79nr.1203087890642.1204991552650" info="ng">
+      <node concept="79nr.1203092361741" id="3767536026885390269" role="79nr.1203087890642.1204991552650" info="lg">
         <reference role="79nr.1203092361741.1203092736097" target="1755502566255660782" resolveInfo="EditorPopup" />
         <reference role="79nr.1203092361741.1204992316090" target="8580726999028295335" resolveInfo="hints" />
       </node>

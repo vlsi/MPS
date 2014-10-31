@@ -8,9 +8,12 @@
     <lang id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core" />
     <model ref="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util.regex(JDK/java.util.regex@java_stub)" name="java.util.regex@java_stub" />
     <model ref="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" name="java.util@java_stub" />
+    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068390468198" name="jetbrains.mps.baseLanguage.structure.ClassConcept" />
+    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068431474542" name="jetbrains.mps.baseLanguage.structure.VariableDeclaration" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068498886292" name="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068498886294" name="jetbrains.mps.baseLanguage.structure.AssignmentExpression" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068498886296" name="jetbrains.mps.baseLanguage.structure.VariableReference" />
+    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123132" name="jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123137" name="jetbrains.mps.baseLanguage.structure.BooleanConstant" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123140" name="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" />
@@ -26,9 +29,13 @@
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1070475926800" name="jetbrains.mps.baseLanguage.structure.StringLiteral" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1070534370425" name="jetbrains.mps.baseLanguage.structure.IntegerType" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1070534644030" name="jetbrains.mps.baseLanguage.structure.BooleanType" />
+    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1081773326031" name="jetbrains.mps.baseLanguage.structure.BinaryOperation" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1082485599095" name="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1107461130800" name="jetbrains.mps.baseLanguage.structure.Classifier" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1107535904670" name="jetbrains.mps.baseLanguage.structure.ClassifierType" />
+    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1137021947720" name="jetbrains.mps.baseLanguage.structure.ConceptFunction" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1146644602865" name="jetbrains.mps.baseLanguage.structure.PublicVisibility" />
+    <concept id="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" />
     <concept id="f61473f9-130f-42f6-b98d-6c438812c2f6/1171931690126" name="jetbrains.mps.baseLanguage.unitTest.structure.TestMethod" />
     <concept id="f61473f9-130f-42f6-b98d-6c438812c2f6/1171931851043" name="jetbrains.mps.baseLanguage.unitTest.structure.BTestCase" />
     <concept id="f61473f9-130f-42f6-b98d-6c438812c2f6/1171931858461" name="jetbrains.mps.baseLanguage.unitTest.structure.TestMethodList" />
@@ -37,16 +44,20 @@
     <concept id="f61473f9-130f-42f6-b98d-6c438812c2f6/1171983834376" name="jetbrains.mps.baseLanguage.unitTest.structure.AssertFalse" />
     <concept id="f61473f9-130f-42f6-b98d-6c438812c2f6/1172017222794" name="jetbrains.mps.baseLanguage.unitTest.structure.Fail" />
     <concept id="f61473f9-130f-42f6-b98d-6c438812c2f6/1172073500303" name="jetbrains.mps.baseLanguage.unitTest.structure.Message" />
+    <concept id="f61473f9-130f-42f6-b98d-6c438812c2f6/1172075514136" name="jetbrains.mps.baseLanguage.unitTest.structure.MessageHolder" />
     <concept id="daafa647-f1f7-4b0b-b096-69cd7c8408c0/1174482753837" name="jetbrains.mps.baseLanguage.regexp.structure.StringLiteralRegexp" />
     <concept id="daafa647-f1f7-4b0b-b096-69cd7c8408c0/1174482769792" name="jetbrains.mps.baseLanguage.regexp.structure.OrRegexp" />
     <concept id="daafa647-f1f7-4b0b-b096-69cd7c8408c0/1174482804200" name="jetbrains.mps.baseLanguage.regexp.structure.PlusRegexp" />
     <concept id="daafa647-f1f7-4b0b-b096-69cd7c8408c0/1174482808826" name="jetbrains.mps.baseLanguage.regexp.structure.StarRegexp" />
     <concept id="daafa647-f1f7-4b0b-b096-69cd7c8408c0/1174483125581" name="jetbrains.mps.baseLanguage.regexp.structure.RegexpDeclaration" />
     <concept id="daafa647-f1f7-4b0b-b096-69cd7c8408c0/1174484562151" name="jetbrains.mps.baseLanguage.regexp.structure.SeqRegexp" />
+    <concept id="daafa647-f1f7-4b0b-b096-69cd7c8408c0/1174485167097" name="jetbrains.mps.baseLanguage.regexp.structure.BinaryRegexp" />
+    <concept id="daafa647-f1f7-4b0b-b096-69cd7c8408c0/1174485235885" name="jetbrains.mps.baseLanguage.regexp.structure.UnaryRegexp" />
     <concept id="daafa647-f1f7-4b0b-b096-69cd7c8408c0/1174491169200" name="jetbrains.mps.baseLanguage.regexp.structure.ParensRegexp" />
     <concept id="daafa647-f1f7-4b0b-b096-69cd7c8408c0/1174510540317" name="jetbrains.mps.baseLanguage.regexp.structure.InlineRegexpExpression" />
     <concept id="daafa647-f1f7-4b0b-b096-69cd7c8408c0/1174512414484" name="jetbrains.mps.baseLanguage.regexp.structure.MatchRegexpStatement" />
     <concept id="daafa647-f1f7-4b0b-b096-69cd7c8408c0/1174552240608" name="jetbrains.mps.baseLanguage.regexp.structure.QuestionRegexp" />
+    <concept id="daafa647-f1f7-4b0b-b096-69cd7c8408c0/1174554186090" name="jetbrains.mps.baseLanguage.regexp.structure.SymbolClassRegexp" />
     <concept id="daafa647-f1f7-4b0b-b096-69cd7c8408c0/1174554211468" name="jetbrains.mps.baseLanguage.regexp.structure.PositiveSymbolClassRegexp" />
     <concept id="daafa647-f1f7-4b0b-b096-69cd7c8408c0/1174554238051" name="jetbrains.mps.baseLanguage.regexp.structure.NegativeSymbolClassRegexp" />
     <concept id="daafa647-f1f7-4b0b-b096-69cd7c8408c0/1174555732504" name="jetbrains.mps.baseLanguage.regexp.structure.PredefinedSymbolClassRegexp" />
@@ -56,6 +67,7 @@
     <concept id="daafa647-f1f7-4b0b-b096-69cd7c8408c0/1174558792178" name="jetbrains.mps.baseLanguage.regexp.structure.PredefinedSymbolClassSymbolClassPart" />
     <concept id="daafa647-f1f7-4b0b-b096-69cd7c8408c0/1174564062919" name="jetbrains.mps.baseLanguage.regexp.structure.MatchParensRegexp" />
     <concept id="daafa647-f1f7-4b0b-b096-69cd7c8408c0/1174565027678" name="jetbrains.mps.baseLanguage.regexp.structure.MatchVariableReference" />
+    <concept id="daafa647-f1f7-4b0b-b096-69cd7c8408c0/1174653354106" name="jetbrains.mps.baseLanguage.regexp.structure.RegexpUsingConstruction" />
     <concept id="daafa647-f1f7-4b0b-b096-69cd7c8408c0/1174655989549" name="jetbrains.mps.baseLanguage.regexp.structure.ReplaceWithRegexpExpression" />
     <concept id="daafa647-f1f7-4b0b-b096-69cd7c8408c0/1174656254036" name="jetbrains.mps.baseLanguage.regexp.structure.ReplaceBlock" />
     <concept id="daafa647-f1f7-4b0b-b096-69cd7c8408c0/1174660461415" name="jetbrains.mps.baseLanguage.regexp.structure.LazyStarRegexp" />
@@ -71,19 +83,25 @@
     <concept id="daafa647-f1f7-4b0b-b096-69cd7c8408c0/1175161300324" name="jetbrains.mps.baseLanguage.regexp.structure.LineEndRegexp" />
     <concept id="daafa647-f1f7-4b0b-b096-69cd7c8408c0/1175164405556" name="jetbrains.mps.baseLanguage.regexp.structure.SplitExpression" />
     <concept id="daafa647-f1f7-4b0b-b096-69cd7c8408c0/1175169009571" name="jetbrains.mps.baseLanguage.regexp.structure.FindMatchStatement" />
+    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1178549954367" name="jetbrains.mps.baseLanguage.structure.IVisible" />
     <concept id="daafa647-f1f7-4b0b-b096-69cd7c8408c0/1179357154354" name="jetbrains.mps.baseLanguage.regexp.structure.MatchRegexpExpression" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1197027756228" name="jetbrains.mps.baseLanguage.structure.DotExpression" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1202948039474" name="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" />
     <concept id="daafa647-f1f7-4b0b-b096-69cd7c8408c0/1203415418648" name="jetbrains.mps.baseLanguage.regexp.structure.UnicodeCharacterRegexp" />
+    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1204053956946" name="jetbrains.mps.baseLanguage.structure.IMethodCall" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1206060495898" name="jetbrains.mps.baseLanguage.structure.ElsifClause" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1214918800624" name="jetbrains.mps.baseLanguage.structure.PostfixIncrementExpression" />
+    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1215693861676" name="jetbrains.mps.baseLanguage.structure.BaseAssignmentExpression" />
     <concept id="daafa647-f1f7-4b0b-b096-69cd7c8408c0/1220021842985" name="jetbrains.mps.baseLanguage.regexp.structure.IntersectionSymbolClassPart" />
     <concept id="daafa647-f1f7-4b0b-b096-69cd7c8408c0/1222260469397" name="jetbrains.mps.baseLanguage.regexp.structure.MatchRegexpOperation" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1225271177708" name="jetbrains.mps.baseLanguage.structure.StringType" />
+    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1239714755177" name="jetbrains.mps.baseLanguage.structure.AbstractUnaryNumberOperation" />
     <concept id="daafa647-f1f7-4b0b-b096-69cd7c8408c0/3796137614137086346" name="jetbrains.mps.baseLanguage.regexp.structure.ReplaceRegexpOperation" />
     <concept id="daafa647-f1f7-4b0b-b096-69cd7c8408c0/3796137614137538892" name="jetbrains.mps.baseLanguage.regexp.structure.LiteralReplacement" />
     <concept id="daafa647-f1f7-4b0b-b096-69cd7c8408c0/3796137614137538894" name="jetbrains.mps.baseLanguage.regexp.structure.MatchVariableReferenceReplacement" />
+    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/4972933694980447171" name="jetbrains.mps.baseLanguage.structure.BaseVariableDeclaration" />
     <concept id="daafa647-f1f7-4b0b-b096-69cd7c8408c0/6129327962763158517" name="jetbrains.mps.baseLanguage.regexp.structure.FindMatchExpression" />
+    <concept id="f61473f9-130f-42f6-b98d-6c438812c2f6/8427750732757990717" name="jetbrains.mps.baseLanguage.unitTest.structure.BinaryAssert" />
     <property id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123137/1068580123138" name="value" />
     <property id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068580320020/1068580320021" name="value" />
     <property id="f3061a53-9226-4cc5-a443-f952ceaf5816/1070475926800/1070475926801" name="value" />
