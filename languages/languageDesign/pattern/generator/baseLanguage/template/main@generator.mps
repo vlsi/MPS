@@ -2117,6 +2117,36 @@
                                     <node concept="4ia1.1138055754698" id="7036185364857145068" role="vg0i.4972933694980447171.5680397130376446158" info="in" />
                                   </node>
                                 </node>
+                                <node concept="vg0i.1068580123155" id="6190092580244537634" role="vg0i.1068580123136.1068581517665" info="nn">
+                                  <node concept="vg0i.1068498886294" id="6190092580244551898" role="vg0i.1068580123155.1068580123156" info="nn">
+                                    <node concept="vg0i.1070534934090" id="6190092580244589111" role="vg0i.1215693861676.1068498886297" info="nn">
+                                      <node concept="vg0i.1197027756228" id="6190092580244570435" role="vg0i.1070534934090.1070534934092" info="nn">
+                                        <node concept="vg0i.1197027756228" id="6190092580244558084" role="vg0i.1197027756228.1197027771414" info="nn">
+                                          <node concept="j0ph.1153944233411" id="6190092580244556522" role="vg0i.1197027756228.1197027771414" info="nn">
+                                            <reference role="j0ph.1153944233411.1153944258490" target="7036185364856877901" resolveInfo="ref" />
+                                          </node>
+                                          <node concept="vg0i.1202948039474" id="6190092580244565535" role="vg0i.1197027756228.1197027833540" info="nn">
+                                            <reference role="vg0i.1204053956946.1068499141037" target="ec5l.~SReference%dgetLink()%corg%djetbrains%dmps%dopenapi%dlanguage%dSReferenceLink" resolveInfo="getLink" />
+                                          </node>
+                                        </node>
+                                        <node concept="vg0i.1202948039474" id="6190092580244578238" role="vg0i.1197027756228.1197027833540" info="nn">
+                                          <reference role="vg0i.1204053956946.1068499141037" target="t3eg.~SReferenceLink%dgetDeclarationNode()%corg%djetbrains%dmps%dopenapi%dmodel%dSNode" resolveInfo="getDeclarationNode" />
+                                        </node>
+                                      </node>
+                                      <node concept="4ia1.1138055754698" id="6190092580244589112" role="vg0i.1070534934090.1070534934091" info="in">
+                                        <reference role="4ia1.1138055754698.1138405853777" target="tpce.1071489288298" resolveInfo="LinkDeclaration" />
+                                      </node>
+                                    </node>
+                                    <node concept="vg0i.1197027756228" id="6190092580244541207" role="vg0i.1215693861676.1068498886295" info="nn">
+                                      <node concept="vg0i.1068498886296" id="6190092580244537632" role="vg0i.1197027756228.1197027771414" info="nn">
+                                        <reference role="vg0i.1068498886296.1068581517664" target="7036185364857145053" resolveInfo="referenceNode" />
+                                      </node>
+                                      <node concept="4ia1.1138056143562" id="6190092580244546567" role="vg0i.1197027756228.1197027833540" info="nn">
+                                        <reference role="4ia1.1138056143562.1138056516764" target="tp3t.8767425448057210504" />
+                                      </node>
+                                    </node>
+                                  </node>
+                                </node>
                                 <node concept="vg0i.1068580123155" id="7036185364857145075" role="vg0i.1068580123136.1068581517665" info="nn">
                                   <node concept="vg0i.1068498886294" id="7036185364857145076" role="vg0i.1068580123155.1068580123156" info="nn">
                                     <node concept="vg0i.1197027756228" id="7036185364857145077" role="vg0i.1215693861676.1068498886295" info="nn">
