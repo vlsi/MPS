@@ -4,8 +4,10 @@
   <debugInfo>
     <lang id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core" />
     <lang id="16bafbb4-c6cd-4cc5-8332-7c6de8729b3f" name="jetbrains.mps.samples.Shapes" />
+    <concept id="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" />
     <concept id="16bafbb4-c6cd-4cc5-8332-7c6de8729b3f/4191445539799302575" name="jetbrains.mps.samples.Shapes.structure.ColorReference" />
     <concept id="16bafbb4-c6cd-4cc5-8332-7c6de8729b3f/5898776707557467933" name="jetbrains.mps.samples.Shapes.structure.Canvas" />
+    <concept id="16bafbb4-c6cd-4cc5-8332-7c6de8729b3f/5898776707557474657" name="jetbrains.mps.samples.Shapes.structure.Shape" />
     <concept id="16bafbb4-c6cd-4cc5-8332-7c6de8729b3f/5898776707557474712" name="jetbrains.mps.samples.Shapes.structure.Circle" />
     <concept id="16bafbb4-c6cd-4cc5-8332-7c6de8729b3f/5898776707557474722" name="jetbrains.mps.samples.Shapes.structure.Square" />
     <property id="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001" name="name" />

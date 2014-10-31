@@ -255,7 +255,7 @@ public class ConceptRegistry implements CoreComponent, LanguageRegistryListener 
         } else {
           constraintsAspectDescriptor = languageRuntime.getAspect(ConstraintsAspectDescriptor.class);
         }
-        descriptor = constraintsAspectDescriptor.getDescriptor(conceptDescriptor.getConceptFqName());
+        descriptor = constraintsAspectDescriptor.getDescriptor(conceptDescriptor.getId());
       } catch (Throwable e) {
         LOG.warn("Exception while constraints descriptor creating", e);
       }

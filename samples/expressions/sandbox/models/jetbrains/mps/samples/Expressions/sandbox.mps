@@ -8,10 +8,15 @@
     <lang id="7e282943-fc6b-4900-ada5-34c0024cc4f4" name="jetbrains.mps.samples.Expressions" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068390468198" name="jetbrains.mps.baseLanguage.structure.ClassConcept" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" />
+    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1107461130800" name="jetbrains.mps.baseLanguage.structure.Classifier" />
+    <concept id="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1133920641626" name="jetbrains.mps.lang.core.structure.BaseConcept" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1146644602865" name="jetbrains.mps.baseLanguage.structure.PublicVisibility" />
+    <concept id="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" />
+    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1178549954367" name="jetbrains.mps.baseLanguage.structure.IVisible" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1206629501431" name="jetbrains.mps.baseLanguage.structure.InstanceInitializer" />
     <concept id="7e282943-fc6b-4900-ada5-34c0024cc4f4/930174696942536268" name="jetbrains.mps.samples.Expressions.structure.SimpleMathAssignment" />
     <concept id="f2801650-65d5-424e-bb1b-463a8781b786/2068944020170241612" name="jetbrains.mps.baseLanguage.javadoc.structure.ClassifierDocComment" />
+    <concept id="7e282943-fc6b-4900-ada5-34c0024cc4f4/2073504467207869132" name="jetbrains.mps.samples.Expressions.structure.BinarySimpleMathExpression" />
     <concept id="7e282943-fc6b-4900-ada5-34c0024cc4f4/2073504467208335362" name="jetbrains.mps.samples.Expressions.structure.SimpleMathWrapper" />
     <concept id="7e282943-fc6b-4900-ada5-34c0024cc4f4/2073504467208541194" name="jetbrains.mps.samples.Expressions.structure.SimpleMathIntegerConstant" />
     <concept id="7e282943-fc6b-4900-ada5-34c0024cc4f4/2073504467208542432" name="jetbrains.mps.samples.Expressions.structure.SimpleMathIntegerType" />
@@ -20,6 +25,7 @@
     <concept id="7e282943-fc6b-4900-ada5-34c0024cc4f4/2073504467209348321" name="jetbrains.mps.samples.Expressions.structure.SimpleMathVarReference" />
     <concept id="7e282943-fc6b-4900-ada5-34c0024cc4f4/2073504467209943018" name="jetbrains.mps.samples.Expressions.structure.SimpleMathLongConstant" />
     <concept id="7e282943-fc6b-4900-ada5-34c0024cc4f4/2073504467210944676" name="jetbrains.mps.samples.Expressions.structure.SimpleMathFloatConstant" />
+    <concept id="f2801650-65d5-424e-bb1b-463a8781b786/5349172909345501395" name="jetbrains.mps.baseLanguage.javadoc.structure.BaseDocComment" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/6329021646629104954" name="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/6329021646629175143" name="jetbrains.mps.baseLanguage.structure.StatementCommentPart" />
     <concept id="f2801650-65d5-424e-bb1b-463a8781b786/8465538089690331500" name="jetbrains.mps.baseLanguage.javadoc.structure.CommentLine" />

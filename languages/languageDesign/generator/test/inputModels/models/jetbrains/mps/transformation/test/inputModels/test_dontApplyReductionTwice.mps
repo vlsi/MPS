@@ -5,7 +5,9 @@
     <lang id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core" />
     <lang id="ab0ae915-e3b5-4f35-b55a-c655d649a03c" name="jetbrains.mps.transformation.test.inputLang" />
     <lang id="157a9668-bf58-417b-893e-53d86388dc56" name="jetbrains.mps.transformation.test.outputLang" />
+    <concept id="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" />
     <concept id="157a9668-bf58-417b-893e-53d86388dc56/1195164668463" name="jetbrains.mps.transformation.test.outputLang.structure.OutputRoot" />
+    <concept id="157a9668-bf58-417b-893e-53d86388dc56/1195165132070" name="jetbrains.mps.transformation.test.outputLang.structure.OutputNode" />
     <concept id="ab0ae915-e3b5-4f35-b55a-c655d649a03c/1195168316083" name="jetbrains.mps.transformation.test.inputLang.structure.InputRoot" />
     <concept id="157a9668-bf58-417b-893e-53d86388dc56/1209604028561" name="jetbrains.mps.transformation.test.outputLang.structure.OutputNode_forDontApplyReductionTwice_test" />
     <property id="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001" name="name" />

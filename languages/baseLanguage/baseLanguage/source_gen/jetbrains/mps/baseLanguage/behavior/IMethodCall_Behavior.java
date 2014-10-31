@@ -19,6 +19,7 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.ArrayList;
 import jetbrains.mps.lang.pattern.IMatchingPattern;
+import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.smodel.SReference;
@@ -129,12 +130,12 @@ public class IMethodCall_Behavior {
         {
           SNode referent;
           referent = (SNode) this.AntiquotationField_fq0410_a0a0a5a2a1a1;
-          if (nodeToMatch_fq0410_a0a5a2a1a1.getReferenceTarget("classifier") != referent) {
+          if (nodeToMatch_fq0410_a0a5a2a1a1.getReferenceTarget(MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier")) != referent) {
             return false;
           }
         }
         {
-          String childRole_fq0410_ = "parameter";
+          SContainmentLink childRole_fq0410_ = MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1109201940907l, "parameter");
           this.patternVar_param = ListSequence.fromList(new ArrayList<SNode>());
           patternVar_ignore = null;
           for (SNode childVar : nodeToMatch_fq0410_a0a5a2a1a1.getChildren(childRole_fq0410_)) {

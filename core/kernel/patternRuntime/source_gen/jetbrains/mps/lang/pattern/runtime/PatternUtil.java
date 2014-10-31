@@ -5,7 +5,9 @@ package jetbrains.mps.lang.pattern.runtime;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.SNodePointer;
+import jetbrains.mps.util.annotation.ToRemove;
 import java.util.Iterator;
+import org.jetbrains.mps.openapi.language.SContainmentLink;
 
 public class PatternUtil {
   public PatternUtil() {
@@ -19,7 +21,19 @@ public class PatternUtil {
     }
     return true;
   }
+  @Deprecated
+  @ToRemove(version = 3.2)
   public static boolean hasNChildren(SNode parent, String role, int num) {
+    Iterator<? extends SNode> it = parent.getChildren(role).iterator();
+    for (int i = 0; i < num; i++) {
+      if (!(it.hasNext())) {
+        return false;
+      }
+      it.next();
+    }
+    return !(it.hasNext());
+  }
+  public static boolean hasNChildren(SNode parent, SContainmentLink role, int num) {
     Iterator<? extends SNode> it = parent.getChildren(role).iterator();
     for (int i = 0; i < num; i++) {
       if (!(it.hasNext())) {

@@ -7,7 +7,9 @@
     <lang id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068580320020" name="jetbrains.mps.baseLanguage.structure.IntegerConstant" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068581242875" name="jetbrains.mps.baseLanguage.structure.PlusExpression" />
+    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1081773326031" name="jetbrains.mps.baseLanguage.structure.BinaryOperation" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1092119917967" name="jetbrains.mps.baseLanguage.structure.MulExpression" />
+    <concept id="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" />
     <concept id="26b3d6d5-b99a-4ed6-83be-d2ea6f3627a1/1241362555920" name="jetbrains.mps.calculator.structure.Calculator" />
     <concept id="26b3d6d5-b99a-4ed6-83be-d2ea6f3627a1/1241362608529" name="jetbrains.mps.calculator.structure.InputField" />
     <concept id="26b3d6d5-b99a-4ed6-83be-d2ea6f3627a1/1241362815640" name="jetbrains.mps.calculator.structure.OutputField" />

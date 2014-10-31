@@ -4,6 +4,7 @@
   <debugInfo>
     <lang id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core" />
     <lang id="f8fecd49-3abe-4733-9741-0c637123d219" name="jetbrains.mps.samples.theSimplestLanguage" />
+    <concept id="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" />
     <concept id="f8fecd49-3abe-4733-9741-0c637123d219/1222954937628" name="jetbrains.mps.samples.theSimplestLanguage.structure.TheSimplestConcept" />
     <property id="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001" name="name" />
     <property id="f8fecd49-3abe-4733-9741-0c637123d219/1222954937628/1222954945083" name="text" />

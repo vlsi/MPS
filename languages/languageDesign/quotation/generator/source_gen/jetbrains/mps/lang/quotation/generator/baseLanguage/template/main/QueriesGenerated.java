@@ -49,6 +49,7 @@ import java.util.concurrent.ConcurrentMap;
 import jetbrains.mps.generator.runtime.TemplateModel;
 import jetbrains.mps.generator.runtime.TemplateModule;
 import jetbrains.mps.lang.pattern.IMatchingPattern;
+import org.jetbrains.mps.openapi.language.SContainmentLink;
 import jetbrains.mps.lang.pattern.runtime.PatternUtil;
 import jetbrains.mps.util.IterableUtil;
 import org.jetbrains.mps.openapi.model.SNodeReference;
@@ -840,7 +841,7 @@ public class QueriesGenerated {
           return false;
         }
         {
-          String childRole_x583g4_ = "expression";
+          SContainmentLink childRole_x583g4_ = MetaAdapterFactory.getContainmentLink(new UUID(4184707567256882268l, -4914423608129972907l), 8182547171709752110l, 8182547171709752112l, "expression");
           if (!(PatternUtil.hasNChildren(nodeToMatch_x583g4_a0a0a0b, childRole_x583g4_, 1))) {
             return false;
           }
@@ -851,9 +852,9 @@ public class QueriesGenerated {
               if (!("jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression".equals(nodeToMatch_x583g4_a0a0a0a1.getConcept().getQualifiedName()))) {
                 return false;
               }
-              patternVar_concept = nodeToMatch_x583g4_a0a0a0a1.getReferenceTarget("concept");
+              patternVar_concept = nodeToMatch_x583g4_a0a0a0a1.getReferenceTarget(MetaAdapterFactory.getReferenceLink(new UUID(8675788371017092295l, -9098312342032910879l), 1140137987495l, 1140138128738l, "concept"));
               {
-                String childRole_x583g4__0 = "leftExpression";
+                SContainmentLink childRole_x583g4__0 = MetaAdapterFactory.getContainmentLink(new UUID(8675788371017092295l, -9098312342032910879l), 1140137987495l, 1140138123956l, "leftExpression");
                 if (!(PatternUtil.hasNChildren(nodeToMatch_x583g4_a0a0a0a1, childRole_x583g4__0, 1))) {
                   return false;
                 }
@@ -866,18 +867,18 @@ public class QueriesGenerated {
                     }
                     {
                       SNodeReference pointer = SNODE_POINTER_x583g4_a0a0a0a0b0b0b0b0b0b0b0b0b0b0b0a0b0b0a0a0a0b0b0a0b;
-                      if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_x583g4_a0a0a0a0b.getReferenceTarget("baseMethodDeclaration")))) {
+                      if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_x583g4_a0a0a0a0b.getReferenceTarget(MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, 1068499141037l, "baseMethodDeclaration"))))) {
                         return false;
                       }
                     }
                     {
                       SNodeReference pointer = SNODE_POINTER_x583g4_a0a0a0b0b0b0b0b0b0b0b0b0b0b0b0a0b0b0a0a0a0b0b0a0b;
-                      if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_x583g4_a0a0a0a0b.getReferenceTarget("classConcept")))) {
+                      if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_x583g4_a0a0a0a0b.getReferenceTarget(MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1081236700937l, 1144433194310l, "classConcept"))))) {
                         return false;
                       }
                     }
                     {
-                      String childRole_x583g4__1 = "actualArgument";
+                      SContainmentLink childRole_x583g4__1 = MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, 1068499141038l, "actualArgument");
                       if (!(PatternUtil.hasNChildren(nodeToMatch_x583g4_a0a0a0a0b, childRole_x583g4__1, 1))) {
                         return false;
                       }

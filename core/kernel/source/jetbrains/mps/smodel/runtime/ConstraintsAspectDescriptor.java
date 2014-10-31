@@ -15,6 +15,10 @@
  */
 package jetbrains.mps.smodel.runtime;
 
+import jetbrains.mps.smodel.adapter.ids.SConceptId;
+
 public interface ConstraintsAspectDescriptor extends LanguageAspectDescriptor {
+  @Deprecated
   ConstraintsDescriptor getDescriptor(String fqName);
+  ConstraintsDescriptor getDescriptor(SConceptId conceptId);
 }

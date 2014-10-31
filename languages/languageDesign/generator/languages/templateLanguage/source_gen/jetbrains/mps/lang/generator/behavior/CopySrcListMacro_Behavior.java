@@ -13,6 +13,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 import jetbrains.mps.lang.pattern.IMatchingPattern;
+import org.jetbrains.mps.openapi.language.SContainmentLink;
 import jetbrains.mps.lang.pattern.runtime.PatternUtil;
 import jetbrains.mps.util.IterableUtil;
 
@@ -52,7 +53,7 @@ public class CopySrcListMacro_Behavior {
           return false;
         }
         {
-          String childRole_26ny8p_ = "elementType";
+          SContainmentLink childRole_26ny8p_ = MetaAdapterFactory.getContainmentLink(new UUID(-8968771020793164004l, -7182180101671965361l), 1151689724996l, 1151689745422l, "elementType");
           if (!(PatternUtil.hasNChildren(nodeToMatch_26ny8p_a0a1a0, childRole_26ny8p_, 1))) {
             return false;
           }
@@ -63,7 +64,7 @@ public class CopySrcListMacro_Behavior {
               if (!("jetbrains.mps.lang.smodel.structure.SNodeType".equals(nodeToMatch_26ny8p_a0a0b0a.getConcept().getQualifiedName()))) {
                 return false;
               }
-              patternVar_concept = nodeToMatch_26ny8p_a0a0b0a.getReferenceTarget("concept");
+              patternVar_concept = nodeToMatch_26ny8p_a0a0b0a.getReferenceTarget(MetaAdapterFactory.getReferenceLink(new UUID(8675788371017092295l, -9098312342032910879l), 1138055754698l, 1138405853777l, "concept"));
             }
           }
         }

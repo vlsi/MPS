@@ -73,6 +73,7 @@
     <concept id="d3c5a46f-b8c2-47db-ad0a-30b8f19c2055/4504141816188599479" name="jetbrains.mps.testbench.suite.structure.TestCaseRef" />
     <concept id="d3c5a46f-b8c2-47db-ad0a-30b8f19c2055/4504141816188599480" name="jetbrains.mps.testbench.suite.structure.JUnit4TestCaseRef" />
     <concept id="d3c5a46f-b8c2-47db-ad0a-30b8f19c2055/4504141816188599481" name="jetbrains.mps.testbench.suite.structure.JUnit3TestCaseRef" />
+    <concept id="d3c5a46f-b8c2-47db-ad0a-30b8f19c2055/4504141816188599482" name="jetbrains.mps.testbench.suite.structure.ITestRef" />
     <property id="d3c5a46f-b8c2-47db-ad0a-30b8f19c2055/1280144168199506908/1280144168199506909" name="moduleFQName" />
     <property id="d3c5a46f-b8c2-47db-ad0a-30b8f19c2055/1280144168199506908/1280144168199506910" name="moduleID" />
     <property id="d3c5a46f-b8c2-47db-ad0a-30b8f19c2055/4504141816188599482/8605005254686522462" name="muted" />

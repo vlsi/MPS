@@ -4,10 +4,13 @@
   <debugInfo>
     <lang id="798100da-4f0a-421a-b991-71f8c50ce5d2" name="jetbrains.mps.build" />
     <lang id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core" />
+    <concept id="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" />
     <concept id="798100da-4f0a-421a-b991-71f8c50ce5d2/2539347366864541544" name="jetbrains.mps.build.structure.BuildSourceArchiveRelativePath" />
+    <concept id="798100da-4f0a-421a-b991-71f8c50ce5d2/4701820937132344003" name="jetbrains.mps.build.structure.BuildLayout_Container" />
     <concept id="798100da-4f0a-421a-b991-71f8c50ce5d2/5481553824944787378" name="jetbrains.mps.build.structure.BuildSourceProjectRelativePath" />
     <concept id="798100da-4f0a-421a-b991-71f8c50ce5d2/5617550519002745363" name="jetbrains.mps.build.structure.BuildProject" />
     <concept id="798100da-4f0a-421a-b991-71f8c50ce5d2/5617550519002745364" name="jetbrains.mps.build.structure.BuildLayout" />
+    <concept id="798100da-4f0a-421a-b991-71f8c50ce5d2/7321017245476976379" name="jetbrains.mps.build.structure.BuildRelativePath" />
     <concept id="798100da-4f0a-421a-b991-71f8c50ce5d2/8618885170173601777" name="jetbrains.mps.build.structure.BuildCompositePath" />
     <concept id="798100da-4f0a-421a-b991-71f8c50ce5d2/9126048691955220717" name="jetbrains.mps.build.structure.BuildLayout_File" />
     <property id="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001" name="name" />

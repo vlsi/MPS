@@ -5,6 +5,7 @@
     <lang id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core" />
     <lang id="ce517356-fc9a-4e78-8606-6e7a36ff0671" name="jetbrains.mps.traceInfo.testWeavingGenerated.data" />
     <lang id="ffafcf63-cbe6-4e5c-9717-541f01743ac7" name="jetbrains.mps.traceInfo.testWeavingInterpreted.data" />
+    <concept id="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" />
     <concept id="ce517356-fc9a-4e78-8606-6e7a36ff0671/6186432342008318668" name="jetbrains.mps.traceInfo.testWeavingGenerated.data.structure.RootConcept" />
     <concept id="ffafcf63-cbe6-4e5c-9717-541f01743ac7/6186432342008318668" name="jetbrains.mps.traceInfo.testWeavingInterpreted.data.structure.RootConcept" />
     <concept id="ce517356-fc9a-4e78-8606-6e7a36ff0671/6186432342008329114" name="jetbrains.mps.traceInfo.testWeavingGenerated.data.structure.ChildConceptWeaveEach" />

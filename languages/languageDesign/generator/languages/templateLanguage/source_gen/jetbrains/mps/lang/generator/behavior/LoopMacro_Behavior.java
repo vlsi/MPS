@@ -9,6 +9,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.UUID;
 import jetbrains.mps.lang.pattern.IMatchingPattern;
+import org.jetbrains.mps.openapi.language.SContainmentLink;
 import jetbrains.mps.lang.pattern.runtime.PatternUtil;
 import jetbrains.mps.util.IterableUtil;
 
@@ -37,7 +38,7 @@ public class LoopMacro_Behavior {
           return false;
         }
         {
-          String childRole_cdqxf8_ = "elementType";
+          SContainmentLink childRole_cdqxf8_ = MetaAdapterFactory.getContainmentLink(new UUID(-8968771020793164004l, -7182180101671965361l), 1151688443754l, 1151688676805l, "elementType");
           if (!(PatternUtil.hasNChildren(nodeToMatch_cdqxf8_a0a0a0, childRole_cdqxf8_, 1))) {
             return false;
           }
@@ -48,7 +49,7 @@ public class LoopMacro_Behavior {
               if (!("jetbrains.mps.lang.smodel.structure.SNodeType".equals(nodeToMatch_cdqxf8_a0a0a0a.getConcept().getQualifiedName()))) {
                 return false;
               }
-              patternVar_concept = nodeToMatch_cdqxf8_a0a0a0a.getReferenceTarget("concept");
+              patternVar_concept = nodeToMatch_cdqxf8_a0a0a0a.getReferenceTarget(MetaAdapterFactory.getReferenceLink(new UUID(8675788371017092295l, -9098312342032910879l), 1138055754698l, 1138405853777l, "concept"));
             }
           }
         }

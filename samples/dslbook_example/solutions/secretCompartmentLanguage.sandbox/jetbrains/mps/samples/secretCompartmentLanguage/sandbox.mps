@@ -79,7 +79,7 @@
       </node>
     </node>
     <node concept="5pn6.1197246912613" id="1197247437082" info="ng">
-      <reference role="5pn6.1197246912613.1197247793411" target="1197150020790" resolveInfo="MrsH_StateMachine" />
+      <reference role="5pn6.1197246912613.1197247793411" target="1197150020790" resolveInfo="MrsH State Machine" />
       <node concept="5pn6.1197252718474" id="1197253131013" role="5pn6.1197246912613.1197252952541" info="ng">
         <property role="5pn6.1197252718474.1197252760325" value="A" />
         <reference role="5pn6.1197252718474.1197255224363" target="1197242160585" resolveInfo="panelUnlocked" />

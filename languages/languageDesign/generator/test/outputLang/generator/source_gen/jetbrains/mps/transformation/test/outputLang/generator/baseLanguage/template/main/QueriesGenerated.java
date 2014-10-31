@@ -26,6 +26,7 @@ import jetbrains.mps.generator.template.PatternRuleContext;
 import jetbrains.mps.generator.runtime.TemplateModel;
 import jetbrains.mps.generator.runtime.TemplateModule;
 import jetbrains.mps.lang.pattern.IMatchingPattern;
+import org.jetbrains.mps.openapi.language.SContainmentLink;
 import jetbrains.mps.lang.pattern.runtime.PatternUtil;
 import jetbrains.mps.util.IterableUtil;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
@@ -205,7 +206,7 @@ public class QueriesGenerated {
           return false;
         }
         {
-          String childRole_x583g4_ = "expression";
+          SContainmentLink childRole_x583g4_ = MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123155l, 1068580123156l, "expression");
           if (!(PatternUtil.hasNChildren(nodeToMatch_x583g4_a0a0a23, childRole_x583g4_, 1))) {
             return false;
           }
@@ -217,7 +218,7 @@ public class QueriesGenerated {
                 return false;
               }
               {
-                String childRole_x583g4__0 = "rValue";
+                SContainmentLink childRole_x583g4__0 = MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1215693861676l, 1068498886297l, "rValue");
                 if (!(PatternUtil.hasNChildren(nodeToMatch_x583g4_a0a0a0gb, childRole_x583g4__0, 1))) {
                   return false;
                 }
@@ -229,7 +230,7 @@ public class QueriesGenerated {
                       return false;
                     }
                     {
-                      String childRole_x583g4__1 = "rightExpression";
+                      SContainmentLink childRole_x583g4__1 = MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1081773326031l, 1081773367579l, "rightExpression");
                       if (!(PatternUtil.hasNChildren(nodeToMatch_x583g4_a0a0a0a23, childRole_x583g4__1, 1))) {
                         return false;
                       }
@@ -239,7 +240,7 @@ public class QueriesGenerated {
                       }
                     }
                     {
-                      String childRole_x583g4__2 = "leftExpression";
+                      SContainmentLink childRole_x583g4__2 = MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1081773326031l, 1081773367580l, "leftExpression");
                       if (!(PatternUtil.hasNChildren(nodeToMatch_x583g4_a0a0a0a23, childRole_x583g4__2, 1))) {
                         return false;
                       }
@@ -252,7 +253,7 @@ public class QueriesGenerated {
                 }
               }
               {
-                String childRole_x583g4__3 = "lValue";
+                SContainmentLink childRole_x583g4__3 = MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1215693861676l, 1068498886295l, "lValue");
                 if (!(PatternUtil.hasNChildren(nodeToMatch_x583g4_a0a0a0gb, childRole_x583g4__3, 1))) {
                   return false;
                 }
@@ -304,7 +305,7 @@ public class QueriesGenerated {
           return false;
         }
         {
-          String childRole_x583g4__4 = "leftExpression";
+          SContainmentLink childRole_x583g4__4 = MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1081773326031l, 1081773367580l, "leftExpression");
           if (!(PatternUtil.hasNChildren(nodeToMatch_x583g4_a0a0a33, childRole_x583g4__4, 1))) {
             return false;
           }
@@ -314,7 +315,7 @@ public class QueriesGenerated {
           }
         }
         {
-          String childRole_x583g4__5 = "rightExpression";
+          SContainmentLink childRole_x583g4__5 = MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1081773326031l, 1081773367579l, "rightExpression");
           if (!(PatternUtil.hasNChildren(nodeToMatch_x583g4_a0a0a33, childRole_x583g4__5, 1))) {
             return false;
           }
@@ -359,7 +360,7 @@ public class QueriesGenerated {
           return false;
         }
         {
-          String childRole_x583g4__6 = "expression";
+          SContainmentLink childRole_x583g4__6 = MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1081516740877l, 1081516765348l, "expression");
           if (!(PatternUtil.hasNChildren(nodeToMatch_x583g4_a0a0a43, childRole_x583g4__6, 1))) {
             return false;
           }
@@ -371,7 +372,7 @@ public class QueriesGenerated {
                 return false;
               }
               {
-                String childRole_x583g4__7 = "expression";
+                SContainmentLink childRole_x583g4__7 = MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1079359253375l, 1079359253376l, "expression");
                 if (!(PatternUtil.hasNChildren(nodeToMatch_x583g4_a0a0a0ib, childRole_x583g4__7, 1))) {
                   return false;
                 }
@@ -383,7 +384,7 @@ public class QueriesGenerated {
                       return false;
                     }
                     {
-                      String childRole_x583g4__8 = "rightExpression";
+                      SContainmentLink childRole_x583g4__8 = MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1081773326031l, 1081773367579l, "rightExpression");
                       if (!(PatternUtil.hasNChildren(nodeToMatch_x583g4_a0a0a0a43, childRole_x583g4__8, 1))) {
                         return false;
                       }
@@ -393,7 +394,7 @@ public class QueriesGenerated {
                       }
                     }
                     {
-                      String childRole_x583g4__9 = "leftExpression";
+                      SContainmentLink childRole_x583g4__9 = MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1081773326031l, 1081773367580l, "leftExpression");
                       if (!(PatternUtil.hasNChildren(nodeToMatch_x583g4_a0a0a0a43, childRole_x583g4__9, 1))) {
                         return false;
                       }
@@ -445,7 +446,7 @@ public class QueriesGenerated {
         }
         patternVar_jobName = SNodeAccessUtil.getProperty(nodeToMatch_x583g4_a0a0a53, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"));
         {
-          String childRole_x583g4__10 = "inner";
+          SContainmentLink childRole_x583g4__10 = MetaAdapterFactory.getContainmentLink(new UUID(1547714798586184059l, -8557310053109408682l), 2681305894288486346l, 2681305894288486349l, "inner");
           if (!(PatternUtil.hasNChildren(nodeToMatch_x583g4_a0a0a53, childRole_x583g4__10, 1))) {
             return false;
           }
@@ -491,7 +492,7 @@ public class QueriesGenerated {
         if (!("22".equals(SNodeAccessUtil.getProperty(nodeToMatch_x583g4_a0a0a63, MetaAdapterFactory.getProperty(new UUID(1547714798586184059l, -8557310053109408682l), 2163819695913378074l, 2163819695913379842l, "ii"))))) {
           return false;
         }
-        patternVar_aaa = nodeToMatch_x583g4_a0a0a63.getReferenceTarget("myStatement");
+        patternVar_aaa = nodeToMatch_x583g4_a0a0a63.getReferenceTarget(MetaAdapterFactory.getReferenceLink(new UUID(1547714798586184059l, -8557310053109408682l), 2163819695913378074l, 2163819695913379841l, "myStatement"));
       }
       return true;
     }
@@ -525,7 +526,7 @@ public class QueriesGenerated {
         if (!("0".equals(SNodeAccessUtil.getProperty(nodeToMatch_x583g4_a0a0a73, MetaAdapterFactory.getProperty(new UUID(1547714798586184059l, -8557310053109408682l), 2163819695913378074l, 2163819695913379842l, "ii"))))) {
           return false;
         }
-        patternVar_ref = nodeToMatch_x583g4_a0a0a73.getReferenceTarget("myStatement");
+        patternVar_ref = nodeToMatch_x583g4_a0a0a73.getReferenceTarget(MetaAdapterFactory.getReferenceLink(new UUID(1547714798586184059l, -8557310053109408682l), 2163819695913378074l, 2163819695913379841l, "myStatement"));
       }
       return true;
     }
@@ -559,7 +560,7 @@ public class QueriesGenerated {
         if (!("12".equals(SNodeAccessUtil.getProperty(nodeToMatch_x583g4_a0a0a83, MetaAdapterFactory.getProperty(new UUID(1547714798586184059l, -8557310053109408682l), 2163819695913378074l, 2163819695913379842l, "ii"))))) {
           return false;
         }
-        patternVar_ref = nodeToMatch_x583g4_a0a0a83.getReferenceTarget("myStatement");
+        patternVar_ref = nodeToMatch_x583g4_a0a0a83.getReferenceTarget(MetaAdapterFactory.getReferenceLink(new UUID(1547714798586184059l, -8557310053109408682l), 2163819695913378074l, 2163819695913379841l, "myStatement"));
       }
       return true;
     }
@@ -593,7 +594,7 @@ public class QueriesGenerated {
         if (!("13".equals(SNodeAccessUtil.getProperty(nodeToMatch_x583g4_a0a0a93, MetaAdapterFactory.getProperty(new UUID(1547714798586184059l, -8557310053109408682l), 2163819695913378074l, 2163819695913379842l, "ii"))))) {
           return false;
         }
-        patternVar_ref = nodeToMatch_x583g4_a0a0a93.getReferenceTarget("myStatement");
+        patternVar_ref = nodeToMatch_x583g4_a0a0a93.getReferenceTarget(MetaAdapterFactory.getReferenceLink(new UUID(1547714798586184059l, -8557310053109408682l), 2163819695913378074l, 2163819695913379841l, "myStatement"));
       }
       return true;
     }

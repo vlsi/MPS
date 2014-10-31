@@ -8,6 +8,7 @@
     <concept id="144f7012-c2d5-43be-be2b-4bfb7dff6503/1111793755198" name="jetbrains.mps.samples.agreementLanguage.structure.EventVariable" />
     <concept id="144f7012-c2d5-43be-be2b-4bfb7dff6503/1111795284642" name="jetbrains.mps.samples.agreementLanguage.structure.AccountType" />
     <concept id="144f7012-c2d5-43be-be2b-4bfb7dff6503/1112310944779" name="jetbrains.mps.samples.agreementLanguage.structure.AgreementDeclarations" />
+    <concept id="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" />
     <property id="144f7012-c2d5-43be-be2b-4bfb7dff6503/1111793755198/1111793807574" name="type" />
     <property id="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001" name="name" />
     <childRole id="144f7012-c2d5-43be-be2b-4bfb7dff6503/1111793698243/1111793732478" name="variable" />

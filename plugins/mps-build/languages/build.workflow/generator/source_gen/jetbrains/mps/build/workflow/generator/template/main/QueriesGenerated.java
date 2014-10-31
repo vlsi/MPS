@@ -37,6 +37,7 @@ import java.util.HashSet;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.lang.pattern.IMatchingPattern;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
+import org.jetbrains.mps.openapi.language.SContainmentLink;
 import jetbrains.mps.lang.pattern.runtime.PatternUtil;
 import jetbrains.mps.util.IterableUtil;
 
@@ -449,7 +450,7 @@ public class QueriesGenerated {
           return false;
         }
         {
-          String childRole_x583g4_ = "content";
+          SContainmentLink childRole_x583g4_ = MetaAdapterFactory.getContainmentLink(new UUID(5160134014823646133l, -7982110198386724200l), 6666499814681415858l, 1622293396948928802l, "content");
           if (!(PatternUtil.hasNChildren(nodeToMatch_x583g4_a0a0a09, childRole_x583g4_, 1))) {
             return false;
           }
@@ -467,7 +468,7 @@ public class QueriesGenerated {
                 return false;
               }
               {
-                String childRole_x583g4__0 = "attributes";
+                SContainmentLink childRole_x583g4__0 = MetaAdapterFactory.getContainmentLink(new UUID(5160134014823646133l, -7982110198386724200l), 6666499814681415858l, 6666499814681415861l, "attributes");
                 if (!(PatternUtil.hasNChildren(nodeToMatch_x583g4_a0a0a0md, childRole_x583g4__0, 1))) {
                   return false;
                 }
@@ -482,7 +483,7 @@ public class QueriesGenerated {
                       return false;
                     }
                     {
-                      String childRole_x583g4__1 = "value";
+                      SContainmentLink childRole_x583g4__1 = MetaAdapterFactory.getContainmentLink(new UUID(5160134014823646133l, -7982110198386724200l), 6666499814681447923l, 6666499814681541918l, "value");
                       if (!(PatternUtil.hasNChildren(nodeToMatch_x583g4_a0a0a0a09, childRole_x583g4__1, 1))) {
                         return false;
                       }
@@ -531,7 +532,7 @@ public class QueriesGenerated {
           return false;
         }
         {
-          String childRole_x583g4__2 = "content";
+          SContainmentLink childRole_x583g4__2 = MetaAdapterFactory.getContainmentLink(new UUID(5160134014823646133l, -7982110198386724200l), 6666499814681415858l, 1622293396948928802l, "content");
           if (!(PatternUtil.hasNChildren(nodeToMatch_x583g4_a0a0a19, childRole_x583g4__2, 1))) {
             return false;
           }
@@ -549,7 +550,7 @@ public class QueriesGenerated {
                 return false;
               }
               {
-                String childRole_x583g4__3 = "attributes";
+                SContainmentLink childRole_x583g4__3 = MetaAdapterFactory.getContainmentLink(new UUID(5160134014823646133l, -7982110198386724200l), 6666499814681415858l, 6666499814681415861l, "attributes");
                 if (!(PatternUtil.hasNChildren(nodeToMatch_x583g4_a0a0a0nd, childRole_x583g4__3, 1))) {
                   return false;
                 }
@@ -564,7 +565,7 @@ public class QueriesGenerated {
                       return false;
                     }
                     {
-                      String childRole_x583g4__4 = "value";
+                      SContainmentLink childRole_x583g4__4 = MetaAdapterFactory.getContainmentLink(new UUID(5160134014823646133l, -7982110198386724200l), 6666499814681447923l, 6666499814681541918l, "value");
                       if (!(PatternUtil.hasNChildren(nodeToMatch_x583g4_a0a0a0a19, childRole_x583g4__4, 1))) {
                         return false;
                       }
@@ -613,7 +614,7 @@ public class QueriesGenerated {
           return false;
         }
         {
-          String childRole_x583g4__5 = "content";
+          SContainmentLink childRole_x583g4__5 = MetaAdapterFactory.getContainmentLink(new UUID(5160134014823646133l, -7982110198386724200l), 6666499814681415858l, 1622293396948928802l, "content");
           if (!(PatternUtil.hasNChildren(nodeToMatch_x583g4_a0a0a29, childRole_x583g4__5, 1))) {
             return false;
           }
@@ -631,7 +632,7 @@ public class QueriesGenerated {
                 return false;
               }
               {
-                String childRole_x583g4__6 = "attributes";
+                SContainmentLink childRole_x583g4__6 = MetaAdapterFactory.getContainmentLink(new UUID(5160134014823646133l, -7982110198386724200l), 6666499814681415858l, 6666499814681415861l, "attributes");
                 if (!(PatternUtil.hasNChildren(nodeToMatch_x583g4_a0a0a0od, childRole_x583g4__6, 1))) {
                   return false;
                 }
@@ -646,7 +647,7 @@ public class QueriesGenerated {
                       return false;
                     }
                     {
-                      String childRole_x583g4__7 = "value";
+                      SContainmentLink childRole_x583g4__7 = MetaAdapterFactory.getContainmentLink(new UUID(5160134014823646133l, -7982110198386724200l), 6666499814681447923l, 6666499814681541918l, "value");
                       if (!(PatternUtil.hasNChildren(nodeToMatch_x583g4_a0a0a0a29, childRole_x583g4__7, 1))) {
                         return false;
                       }
@@ -695,7 +696,7 @@ public class QueriesGenerated {
           return false;
         }
         {
-          String childRole_x583g4__8 = "content";
+          SContainmentLink childRole_x583g4__8 = MetaAdapterFactory.getContainmentLink(new UUID(5160134014823646133l, -7982110198386724200l), 6666499814681415858l, 1622293396948928802l, "content");
           if (!(PatternUtil.hasNChildren(nodeToMatch_x583g4_a0a0a39, childRole_x583g4__8, 1))) {
             return false;
           }
@@ -713,7 +714,7 @@ public class QueriesGenerated {
                 return false;
               }
               {
-                String childRole_x583g4__9 = "attributes";
+                SContainmentLink childRole_x583g4__9 = MetaAdapterFactory.getContainmentLink(new UUID(5160134014823646133l, -7982110198386724200l), 6666499814681415858l, 6666499814681415861l, "attributes");
                 if (!(PatternUtil.hasNChildren(nodeToMatch_x583g4_a0a0a0pd, childRole_x583g4__9, 1))) {
                   return false;
                 }
@@ -728,7 +729,7 @@ public class QueriesGenerated {
                       return false;
                     }
                     {
-                      String childRole_x583g4__10 = "value";
+                      SContainmentLink childRole_x583g4__10 = MetaAdapterFactory.getContainmentLink(new UUID(5160134014823646133l, -7982110198386724200l), 6666499814681447923l, 6666499814681541918l, "value");
                       if (!(PatternUtil.hasNChildren(nodeToMatch_x583g4_a0a0a0a39, childRole_x583g4__10, 1))) {
                         return false;
                       }

@@ -20,9 +20,9 @@ import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 import jetbrains.mps.smodel.adapter.ids.SPropertyId;
 import jetbrains.mps.smodel.language.ConceptRegistry;
+import jetbrains.mps.smodel.language.ConceptRegistryUtil;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import jetbrains.mps.smodel.runtime.PropertyDescriptor;
-import jetbrains.mps.smodel.search.SModelSearchUtil;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.language.SProperty;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -45,7 +45,7 @@ public class SPropertyAdapterByName extends SPropertyAdapter {
 
   @Override
   protected PropertyDescriptor getPropertyDescriptor() {
-    ConceptDescriptor conceptDescriptor = ConceptRegistry.getInstance().getConceptDescriptor(myConceptName);
+    ConceptDescriptor conceptDescriptor = ConceptRegistryUtil.getConceptDescriptor(myConceptName);
     if (conceptDescriptor == null) return null;
     return conceptDescriptor.getPropertyDescriptor(myPropertyName);
   }
@@ -67,6 +67,10 @@ public class SPropertyAdapterByName extends SPropertyAdapter {
 
   @Override
   protected SNode findInConcept(SNode cnode) {
-    return SModelSearchUtil.findPropertyDeclaration(cnode, myPropertyName);
+    Iterable<? extends SNode> props = cnode.getChildren(SNodeUtil.linkName_AbstractConceptDeclaration_propertyDeclaration);
+    for (SNode p : props) {
+      if (p.getProperty(SNodeUtil.propertyName_INamedConcept_name).equals(myPropertyName)) return p;
+    }
+    return null;
   }
 }
