@@ -337,7 +337,6 @@ public abstract class SModelBase extends SModelDescriptorStub implements SModel 
   }
 
   protected synchronized void replaceModelAndFireEvent(jetbrains.mps.smodel.SModel oldModel, jetbrains.mps.smodel.SModel newModel) {
-    ModelAccess.assertLegalWrite();
     if (oldModel != null) {
       oldModel.setModelDescriptor(null);
     }
@@ -351,7 +350,10 @@ public abstract class SModelBase extends SModelDescriptorStub implements SModel 
 
     fireModelReplaced();
 
-    MPSModuleRepository.getInstance().invalidateCaches();
+    if (getRepository() != null) { // for a model not yet visible to anyone, no reason to drop a cache
+      // FIXME cache invalidation shall be a repository listener, and not done forcefully on model change
+      MPSModuleRepository.getInstance().invalidateCaches();
+    }
   }
 
   protected void assertCanRead() {

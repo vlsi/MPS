@@ -22,8 +22,8 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.smodel.DefaultSModel;
 import jetbrains.mps.smodel.DefaultSModelDescriptor;
-import jetbrains.mps.smodel.LazySModel;
 import jetbrains.mps.smodel.SModelHeader;
+import jetbrains.mps.smodel.SModelId;
 import jetbrains.mps.smodel.loading.ModelLoadResult;
 import jetbrains.mps.smodel.loading.ModelLoadingState;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
@@ -32,16 +32,15 @@ import jetbrains.mps.util.FileUtil;
 import org.apache.log4j.LogManager;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.persistence.DataSource;
 import org.jetbrains.mps.openapi.persistence.ModelFactory;
 import org.jetbrains.mps.openapi.persistence.MultiStreamDataSource;
-import org.jetbrains.mps.openapi.persistence.NullDataSource;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import org.jetbrains.mps.openapi.persistence.StreamDataSource;
 import org.jetbrains.mps.openapi.persistence.UnsupportedDataSourceException;
 import org.xml.sax.InputSource;
 
-import javax.sound.midi.InvalidMidiDataException;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -131,8 +130,20 @@ public class DefaultModelPersistence implements CoreComponent, ModelFactory {
     */
 
     final SModelHeader header = SModelHeader.create(ModelPersistence.LAST_VERSION);
-    header.setModelReference(PersistenceFacade.getInstance().createModelReference(null, jetbrains.mps.smodel.SModelId.generate(), modelName));
-    return new DefaultSModelDescriptor(new PersistenceFacility(this, (StreamDataSource) dataSource), header);
+    final SModelReference modelReference = PersistenceFacade.getInstance().createModelReference(null, SModelId.generate(), modelName);
+    header.setModelReference(modelReference);
+    final DefaultSModelDescriptor rv = new DefaultSModelDescriptor(new PersistenceFacility(this, (StreamDataSource) dataSource), header);
+    // Hack to ensure newly created model is indeed empty. Otherwise, with StreamDataSource pointing to existing model stream, an attempt to
+    // do anything with the model triggers loading and the model get all the data. Two approaches deemed reasonable to tackle the issue:
+    // (a) enforce clear empty model (why would anyone call #create() then)
+    // (b) fail with error (too brutal?)
+    // Another alternative considered is to tolerate any DataSource in DefaultSModelDescriptor (or its persistence counterpart), so that
+    // one can create an empty model with NullDataSource, and later save with a proper DataSource (which yields more job to client and makes him
+    // question why SModel.save() is there). This task is reasonable regardless of final approach taken, but would take more effort, hence the hack.
+    if (dataSource.getTimestamp() != -1) { // chances are there's something in the stream already
+      rv.replace(new DefaultSModel(modelReference, header)); // model state is FULLY_LOADED, DataSource won't get read
+    }
+    return rv;
   }
 
   @Override

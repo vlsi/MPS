@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<model ref="r:d3f3e720-fe34-40f7-ac3f-46e592f0989a(jetbrains.mps.generator.crossmodel.sandbox.beanmodel2)">
+<model ref="r:538c7dbd-f448-41a4-85e4-e792684f3f29(jetbrains.mps.generator.crossmodel.sandbox.beanmodel2)">
   <persistence version="9" />
   <debugInfo>
     <lang id="4d14758c-3ecb-486d-b8c8-ea5beb8ae408" name="jetbrains.mps.generator.test.crossmodel.entity" />
@@ -28,20 +28,20 @@
     <import index="xdt3" ref="r:5ae04573-5f86-4c8f-8775-3bf4c8be7f2f(jetbrains.mps.generator.test.crossmodel.property.generator.template.main@generator)" implicit="true" />
   </imports>
   <contents>
-    <node concept="7gwc.9032177546941420365" id="9049469616586251943" info="ng">
+    <node concept="7gwc.9032177546941420365" id="5485016006702971842" info="ng">
       <reference role="7gwc.9032177546941420365.9032177546941634307" target="xdt3.5925726056274334828" resolveInfo="BeanToClass" />
-      <node concept="7gwc.9032177546942789835" id="9049469616586251944" role="7gwc.9032177546941420365.9032177546942803148" info="ng">
+      <node concept="7gwc.9032177546942789835" id="5485016006702971843" role="7gwc.9032177546941420365.9032177546942803148" info="ng">
         <property role="7gwc.9032177546942789835.9032177546942789839" value="jetbrains.mps.generator.crossmodel.sandbox.beanmodel2" />
       </node>
-      <node concept="7gwc.9032177546941580387" id="9049469616586251945" role="7gwc.9032177546941420365.9032177546941575207" info="ng">
+      <node concept="7gwc.9032177546941580387" id="5485016006702971844" role="7gwc.9032177546941420365.9032177546941575207" info="ng">
         <property role="7gwc.9032177546941580387.9032177546941580390" value="jetbrains.mps.generator.test.crossmodel.property.structure.Bean" />
         <property role="7gwc.9032177546941580387.9032177546941580392" value="5176577547833280844" />
       </node>
-      <node concept="7gwc.9032177546941580387" id="9049469616586251946" role="7gwc.9032177546941420365.9032177546941575209" info="ng">
+      <node concept="7gwc.9032177546941580387" id="5485016006702971845" role="7gwc.9032177546941420365.9032177546941575209" info="ng">
         <property role="7gwc.9032177546941580387.9032177546941580390" value="jetbrains.mps.baseLanguage.structure.ClassConcept" />
-        <property role="7gwc.9032177546941580387.9032177546941580392" value="9049469616586251924" />
+        <property role="7gwc.9032177546941580387.9032177546941580392" value="5485016006702971823" />
       </node>
-      <node concept="rtma.8915420221429834077" id="9049469616586251942" role="7gwc.9032177546941420365.9032177546941575212" info="ng">
+      <node concept="rtma.8915420221429834077" id="5485016006702971841" role="7gwc.9032177546941420365.9032177546941575212" info="ng">
         <property role="rtma.8915420221429834077.8915420221429834078" value="Bean2Impl" />
       </node>
     </node>
