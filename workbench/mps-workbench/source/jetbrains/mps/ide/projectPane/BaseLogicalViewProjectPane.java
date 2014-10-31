@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2014 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -88,6 +88,7 @@ import java.util.LinkedList;
 import java.util.List;
 
 public abstract class BaseLogicalViewProjectPane extends AbstractProjectViewPane {
+  private final ProjectView myProjectView;
   private MyModelAccessListener myModelAccessListener = new MyModelAccessListener();
   private SModelRepositoryListener mySModelRepositoryListener = new MyModelRepositoryAdapter();
   private VirtualFileManagerListener myRefreshListener = new RefreshListener();
@@ -110,13 +111,18 @@ public abstract class BaseLogicalViewProjectPane extends AbstractProjectViewPane
     }
   };
 
-  protected BaseLogicalViewProjectPane(Project project) {
+  protected BaseLogicalViewProjectPane(Project project, ProjectView projectView) {
     super(project);
+    myProjectView = projectView;
   }
 
-  public abstract Project getProject();
+  public Project getProject() {
+    return myProject;
+  }
 
-  public abstract ProjectView getProjectView();
+  public ProjectView getProjectView() {
+    return myProjectView;
+  };
 
   public abstract void rebuild();
 

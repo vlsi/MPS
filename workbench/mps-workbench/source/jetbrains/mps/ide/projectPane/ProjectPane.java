@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2014 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -82,7 +82,6 @@ import java.util.Set;
 )
 public class ProjectPane extends BaseLogicalViewProjectPane {
   private static final Logger LOG = LogManager.getLogger(ProjectPane.class);
-  private ProjectView myProjectView;
   private ProjectTreeFindHelper myFindHelper = new ProjectTreeFindHelper() {
     @Override
     protected ProjectTree getTree() {
@@ -101,7 +100,7 @@ public class ProjectPane extends BaseLogicalViewProjectPane {
       FileEditor fileEditor = event.getNewEditor();
       if (fileEditor instanceof MPSFileNodeEditor) {
         final MPSFileNodeEditor editor = (MPSFileNodeEditor) fileEditor;
-        if (myProjectView.isAutoscrollFromSource(ID)) {
+        if (getProjectView().isAutoscrollFromSource(ID)) {
           EditorComponent editorComponent = editor.getNodeEditor().getCurrentEditorComponent();
           if (editorComponent == null) return;
           final SNode sNode = editorComponent.getEditedNode();
@@ -119,8 +118,7 @@ public class ProjectPane extends BaseLogicalViewProjectPane {
   private static boolean ourShowGenStatus = true;
 
   public ProjectPane(final Project project, ProjectView projectView) {
-    super(project);
-    myProjectView = projectView;
+    super(project, projectView);
     myUpdateQueue.setRestartTimerOnAdd(true);
     ReloadManager.getInstance().addReloadListener(new ReloadListener() {
       @Override
@@ -176,16 +174,6 @@ public class ProjectPane extends BaseLogicalViewProjectPane {
   @Override
   public ProjectTree getTree() {
     return (jetbrains.mps.ide.projectPane.logicalview.ProjectTree) myTree;
-  }
-
-  @Override
-  public Project getProject() {
-    return myProject;
-  }
-
-  @Override
-  public ProjectView getProjectView() {
-    return myProjectView;
   }
 
   @Override
