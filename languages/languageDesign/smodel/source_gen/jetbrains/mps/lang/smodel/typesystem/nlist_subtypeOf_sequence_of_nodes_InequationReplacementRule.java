@@ -11,13 +11,14 @@ import jetbrains.mps.lang.typesystem.runtime.IsApplicable2Status;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.pattern.IMatchingPattern;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
+import org.jetbrains.mps.openapi.language.SContainmentLink;
 import jetbrains.mps.lang.pattern.runtime.PatternUtil;
 import jetbrains.mps.util.IterableUtil;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 
 public class nlist_subtypeOf_sequence_of_nodes_InequationReplacementRule extends AbstractInequationReplacementRule_Runtime {
   /*package*/ GeneratedMatchingPattern myMatchingPattern1;
@@ -72,7 +73,7 @@ public class nlist_subtypeOf_sequence_of_nodes_InequationReplacementRule extends
         if (!("jetbrains.mps.lang.smodel.structure.SNodeListType".equals(nodeToMatch_f2y4sj_a0a.getConcept().getQualifiedName()))) {
           return false;
         }
-        patternVar_CONCEPT = nodeToMatch_f2y4sj_a0a.getReferenceTarget("elementConcept");
+        patternVar_CONCEPT = nodeToMatch_f2y4sj_a0a.getReferenceTarget(MetaAdapterFactory.getReferenceLink(new UUID(8675788371017092295l, -9098312342032910879l), 1145383075378l, 1145383142433l, "elementConcept"));
       }
       return true;
     }
@@ -104,7 +105,7 @@ public class nlist_subtypeOf_sequence_of_nodes_InequationReplacementRule extends
           return false;
         }
         {
-          String childRole_f2y4sj_ = "elementType";
+          SContainmentLink childRole_f2y4sj_ = MetaAdapterFactory.getContainmentLink(new UUID(-8968771020793164004l, -7182180101671965361l), 1151689724996l, 1151689745422l, "elementType");
           if (!(PatternUtil.hasNChildren(nodeToMatch_f2y4sj_a0a_0, childRole_f2y4sj_, 1))) {
             return false;
           }

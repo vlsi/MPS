@@ -25,6 +25,7 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.lang.pattern.GeneratedMatchingPattern;
 import jetbrains.mps.lang.pattern.IMatchingPattern;
+import org.jetbrains.mps.openapi.language.SContainmentLink;
 import jetbrains.mps.lang.pattern.runtime.PatternUtil;
 import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.smodel.SNodePointer;
@@ -86,7 +87,7 @@ public class SLinkImplicitSelect_Constraints extends BaseConstraintsDescriptor {
           return false;
         }
         {
-          String childRole_f4oi2a_ = "elementType";
+          SContainmentLink childRole_f4oi2a_ = MetaAdapterFactory.getContainmentLink(new UUID(-8968771020793164004l, -7182180101671965361l), 1151689724996l, 1151689745422l, "elementType");
           if (!(PatternUtil.hasNChildren(nodeToMatch_f4oi2a_a0a0a0a0a0a0, childRole_f4oi2a_, 1))) {
             return false;
           }
@@ -97,7 +98,7 @@ public class SLinkImplicitSelect_Constraints extends BaseConstraintsDescriptor {
               if (!("jetbrains.mps.lang.smodel.structure.SNodeType".equals(nodeToMatch_f4oi2a_a0a0a0a0a0a0a.getConcept().getQualifiedName()))) {
                 return false;
               }
-              patternVar_nodeType = nodeToMatch_f4oi2a_a0a0a0a0a0a0a.getReferenceTarget("concept");
+              patternVar_nodeType = nodeToMatch_f4oi2a_a0a0a0a0a0a0a.getReferenceTarget(MetaAdapterFactory.getReferenceLink(new UUID(8675788371017092295l, -9098312342032910879l), 1138055754698l, 1138405853777l, "concept"));
             }
           }
         }
@@ -132,7 +133,7 @@ public class SLinkImplicitSelect_Constraints extends BaseConstraintsDescriptor {
           return false;
         }
         {
-          String childRole_f4oi2a__0 = "elementType";
+          SContainmentLink childRole_f4oi2a__0 = MetaAdapterFactory.getContainmentLink(new UUID(-8968771020793164004l, -7182180101671965361l), 1151689724996l, 1151689745422l, "elementType");
           if (!(PatternUtil.hasNChildren(nodeToMatch_f4oi2a_a0a0a0a0, childRole_f4oi2a__0, 1))) {
             return false;
           }
@@ -143,7 +144,7 @@ public class SLinkImplicitSelect_Constraints extends BaseConstraintsDescriptor {
               if (!("jetbrains.mps.lang.smodel.structure.SNodeType".equals(nodeToMatch_f4oi2a_a0a0a0a0a.getConcept().getQualifiedName()))) {
                 return false;
               }
-              patternVar_nodeType = nodeToMatch_f4oi2a_a0a0a0a0a.getReferenceTarget("concept");
+              patternVar_nodeType = nodeToMatch_f4oi2a_a0a0a0a0a.getReferenceTarget(MetaAdapterFactory.getReferenceLink(new UUID(8675788371017092295l, -9098312342032910879l), 1138055754698l, 1138405853777l, "concept"));
             }
           }
         }

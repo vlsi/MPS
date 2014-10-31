@@ -232,7 +232,7 @@ public class generic_ClassfierType_subtypeOf_generic_ClassifierType_InequationRe
         {
           SNode referent;
           referent = (SNode) this.AntiquotationField_e5spwb_a0a0a0a0;
-          if (nodeToMatch_e5spwb_a0a0a0.getReferenceTarget("classifier") != referent) {
+          if (nodeToMatch_e5spwb_a0a0a0.getReferenceTarget(MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier")) != referent) {
             return false;
           }
         }
@@ -264,7 +264,7 @@ public class generic_ClassfierType_subtypeOf_generic_ClassifierType_InequationRe
         {
           SNode referent;
           referent = (SNode) this.AntiquotationField_e5spwb_a0a0a0a;
-          if (nodeToMatch_e5spwb_a0a0a.getReferenceTarget("classifier") != referent) {
+          if (nodeToMatch_e5spwb_a0a0a.getReferenceTarget(MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier")) != referent) {
             return false;
           }
         }
@@ -296,7 +296,7 @@ public class generic_ClassfierType_subtypeOf_generic_ClassifierType_InequationRe
         {
           SNode referent;
           referent = (SNode) this.AntiquotationField_e5spwb_a0a0a0a;
-          if (nodeToMatch_e5spwb_a0a0a.getReferenceTarget("classifier") != referent) {
+          if (nodeToMatch_e5spwb_a0a0a.getReferenceTarget(MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier")) != referent) {
             return false;
           }
         }

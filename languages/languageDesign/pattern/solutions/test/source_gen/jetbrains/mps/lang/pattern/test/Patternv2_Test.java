@@ -15,13 +15,14 @@ import java.util.ArrayList;
 import junit.framework.Assert;
 import jetbrains.mps.lang.test.matcher.NodesMatcher;
 import jetbrains.mps.lang.pattern.IMatchingPattern;
+import org.jetbrains.mps.openapi.language.SContainmentLink;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.lang.pattern.runtime.PatternUtil;
 import jetbrains.mps.util.IterableUtil;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import jetbrains.mps.smodel.SReference;
 
 @MPSLaunch
@@ -70,7 +71,7 @@ public class Patternv2_Test extends BaseTransformationTest {
             return false;
           }
           {
-            String childRole_ofki36_ = "statement";
+            SContainmentLink childRole_ofki36_ = MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123136l, 1068581517665l, "statement");
             if (!(PatternUtil.hasNChildren(nodeToMatch_ofki36_a0a1a2c, childRole_ofki36_, 3))) {
               return false;
             }
@@ -85,7 +86,7 @@ public class Patternv2_Test extends BaseTransformationTest {
                   return false;
                 }
                 {
-                  String childRole_ofki36__0 = "condition";
+                  SContainmentLink childRole_ofki36__0 = MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123159l, 1068580123160l, "condition");
                   if (!(PatternUtil.hasNChildren(nodeToMatch_ofki36_b0a0b0c2, childRole_ofki36__0, 1))) {
                     return false;
                   }
@@ -97,7 +98,7 @@ public class Patternv2_Test extends BaseTransformationTest {
                         return false;
                       }
                       {
-                        String childRole_ofki36__1 = "rightExpression";
+                        SContainmentLink childRole_ofki36__1 = MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1081773326031l, 1081773367579l, "rightExpression");
                         if (!(PatternUtil.hasNChildren(nodeToMatch_ofki36_a1a0a1a2c, childRole_ofki36__1, 1))) {
                           return false;
                         }
@@ -112,7 +113,7 @@ public class Patternv2_Test extends BaseTransformationTest {
                         }
                       }
                       {
-                        String childRole_ofki36__2 = "leftExpression";
+                        SContainmentLink childRole_ofki36__2 = MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1081773326031l, 1081773367580l, "leftExpression");
                         if (!(PatternUtil.hasNChildren(nodeToMatch_ofki36_a1a0a1a2c, childRole_ofki36__2, 1))) {
                           return false;
                         }
@@ -125,7 +126,7 @@ public class Patternv2_Test extends BaseTransformationTest {
                   }
                 }
                 {
-                  String childRole_ofki36__3 = "ifTrue";
+                  SContainmentLink childRole_ofki36__3 = MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123159l, 1068580123161l, "ifTrue");
                   if (!(PatternUtil.hasNChildren(nodeToMatch_ofki36_b0a0b0c2, childRole_ofki36__3, 1))) {
                     return false;
                   }

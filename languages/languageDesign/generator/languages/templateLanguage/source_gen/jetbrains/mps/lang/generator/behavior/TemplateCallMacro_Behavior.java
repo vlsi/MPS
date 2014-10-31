@@ -39,7 +39,7 @@ public class TemplateCallMacro_Behavior {
         if (!("jetbrains.mps.lang.smodel.structure.SNodeType".equals(nodeToMatch_4ckpni_a0a0a0.getConcept().getQualifiedName()))) {
           return false;
         }
-        patternVar_concept = nodeToMatch_4ckpni_a0a0a0.getReferenceTarget("concept");
+        patternVar_concept = nodeToMatch_4ckpni_a0a0a0.getReferenceTarget(MetaAdapterFactory.getReferenceLink(new UUID(8675788371017092295l, -9098312342032910879l), 1138055754698l, 1138405853777l, "concept"));
       }
       return true;
     }

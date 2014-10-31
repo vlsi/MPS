@@ -30,6 +30,7 @@ import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.lang.pattern.IMatchingPattern;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.lang.pattern.runtime.PatternUtil;
+import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
@@ -383,7 +384,7 @@ public class ClassifierType_Behavior {
         }
         {
           SNodeReference pointer = SNODE_POINTER_hz3823_a0a0a0a0b0b0a0a0a0b0b0a0a0k;
-          if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_hz3823_a0a0a0a0j.getReferenceTarget("classifier")))) {
+          if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_hz3823_a0a0a0a0j.getReferenceTarget(MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier"))))) {
             return false;
           }
         }
@@ -417,12 +418,12 @@ public class ClassifierType_Behavior {
         {
           SNode referent;
           referent = (SNode) this.AntiquotationField_hz3823_a0a0a1a9;
-          if (nodeToMatch_hz3823_a0a1a9.getReferenceTarget("classifier") != referent) {
+          if (nodeToMatch_hz3823_a0a1a9.getReferenceTarget(MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier")) != referent) {
             return false;
           }
         }
         {
-          String childRole_hz3823_ = "parameter";
+          SContainmentLink childRole_hz3823_ = MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1109201940907l, "parameter");
           this.patternVar_l = ListSequence.fromList(new ArrayList<SNode>());
           patternVar_ignored = null;
           for (SNode childVar : nodeToMatch_hz3823_a0a1a9.getChildren(childRole_hz3823_)) {
@@ -465,7 +466,7 @@ public class ClassifierType_Behavior {
         }
         {
           SNodeReference pointer = SNODE_POINTER_hz3823_a0a0a0a0b0b0a0a0a0b0b0a0a0l;
-          if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_hz3823_a0a0a0a0k.getReferenceTarget("classifier")))) {
+          if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_hz3823_a0a0a0a0k.getReferenceTarget(MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier"))))) {
             return false;
           }
         }
@@ -499,12 +500,12 @@ public class ClassifierType_Behavior {
         {
           SNode referent;
           referent = (SNode) this.AntiquotationField_hz3823_a0a0a1a01;
-          if (nodeToMatch_hz3823_a0a1a01.getReferenceTarget("classifier") != referent) {
+          if (nodeToMatch_hz3823_a0a1a01.getReferenceTarget(MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier")) != referent) {
             return false;
           }
         }
         {
-          String childRole_hz3823__0 = "parameter";
+          SContainmentLink childRole_hz3823__0 = MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1109201940907l, "parameter");
           this.patternVar_l = ListSequence.fromList(new ArrayList<SNode>());
           patternVar_ignored = null;
           for (SNode childVar : nodeToMatch_hz3823_a0a1a01.getChildren(childRole_hz3823__0)) {

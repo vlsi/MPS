@@ -19,6 +19,7 @@ import java.util.UUID;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.lang.pattern.IMatchingPattern;
+import org.jetbrains.mps.openapi.language.SContainmentLink;
 import jetbrains.mps.lang.pattern.runtime.PatternUtil;
 import jetbrains.mps.util.IterableUtil;
 
@@ -114,7 +115,7 @@ public final class MacroIntentionsUtil {
         if (!("jetbrains.mps.lang.smodel.structure.SNodeType".equals(nodeToMatch_iiuth6_a0a0a3a1.getConcept().getQualifiedName()))) {
           return false;
         }
-        patternVar_concept = nodeToMatch_iiuth6_a0a0a3a1.getReferenceTarget("concept");
+        patternVar_concept = nodeToMatch_iiuth6_a0a0a3a1.getReferenceTarget(MetaAdapterFactory.getReferenceLink(new UUID(8675788371017092295l, -9098312342032910879l), 1138055754698l, 1138405853777l, "concept"));
       }
       return true;
     }
@@ -146,7 +147,7 @@ public final class MacroIntentionsUtil {
           return false;
         }
         {
-          String childRole_iiuth6_ = "elementType";
+          SContainmentLink childRole_iiuth6_ = MetaAdapterFactory.getContainmentLink(new UUID(-8968771020793164004l, -7182180101671965361l), 1151689724996l, 1151689745422l, "elementType");
           if (!(PatternUtil.hasNChildren(nodeToMatch_iiuth6_a0a0a0d0b, childRole_iiuth6_, 1))) {
             return false;
           }
@@ -157,7 +158,7 @@ public final class MacroIntentionsUtil {
               if (!("jetbrains.mps.lang.smodel.structure.SNodeType".equals(nodeToMatch_iiuth6_a0a0a0a3a1.getConcept().getQualifiedName()))) {
                 return false;
               }
-              patternVar_concept = nodeToMatch_iiuth6_a0a0a0a3a1.getReferenceTarget("concept");
+              patternVar_concept = nodeToMatch_iiuth6_a0a0a0a3a1.getReferenceTarget(MetaAdapterFactory.getReferenceLink(new UUID(8675788371017092295l, -9098312342032910879l), 1138055754698l, 1138405853777l, "concept"));
             }
           }
         }

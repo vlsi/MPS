@@ -9,6 +9,9 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.pattern.IMatchingPattern;
+import org.jetbrains.mps.openapi.language.SContainmentLink;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.lang.pattern.runtime.PatternUtil;
 import jetbrains.mps.util.IterableUtil;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
@@ -47,7 +50,7 @@ public class sequence_supertypeOf_set_SubtypingRule extends SubtypingRule_Runtim
           return false;
         }
         {
-          String childRole_twopzc_ = "elementType";
+          SContainmentLink childRole_twopzc_ = MetaAdapterFactory.getContainmentLink(new UUID(-8968771020793164004l, -7182180101671965361l), 1226511727824l, 1226511765987l, "elementType");
           if (!(PatternUtil.hasNChildren(nodeToMatch_twopzc_a0a, childRole_twopzc_, 1))) {
             return false;
           }
