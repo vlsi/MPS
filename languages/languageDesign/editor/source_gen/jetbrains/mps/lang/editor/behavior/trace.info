@@ -849,40 +849,6 @@
       <unit id="1213877260635" at="10,0,17,0" name="jetbrains.mps.lang.editor.behavior.StyleSheetClass_Behavior" />
     </file>
   </root>
-  <root nodeRef="r:00000000-0000-4000-0000-011c89590297(jetbrains.mps.lang.editor.behavior)/1213877273474">
-    <file name="CellKeyMapKeystroke_Behavior.java">
-      <node id="1213877273478" at="13,72,14,23" concept="11" />
-      <node id="1213877273482" at="14,23,15,195" concept="11" />
-      <node id="1213877273490" at="16,28,17,21" concept="5" />
-      <node id="1213877273497" at="18,5,19,46" concept="5" />
-      <node id="1213877273505" at="19,46,20,19" concept="11" />
-      <node id="1213877273510" at="21,379,22,199" concept="5" />
-      <node id="1213877273527" at="23,12,24,186" concept="5" />
-      <node id="1213877273533" at="25,5,26,36" concept="5" />
-      <node id="1213877273541" at="26,36,27,18" concept="12" />
-      <node id="1213877273474" at="11,0,13,0" concept="15" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <node id="1213877273525" at="23,10,25,5" concept="1" />
-      <node id="1213877273488" at="15,195,18,5" concept="9" />
-      <node id="1213877273508" at="20,19,25,5" concept="9" />
-      <node id="1213877273474" at="13,0,29,0" concept="15" trace="call_getKeyStroke_1213877273475#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
-      <scope id="1213877273544" at="11,43,11,43" />
-      <scope id="1213877273489" at="16,28,17,21" />
-      <scope id="1213877273509" at="21,379,22,199" />
-      <scope id="1213877273526" at="23,12,24,186" />
-      <scope id="1213877273474" at="11,0,13,0">
-        <var name="thisNode" id="1213877273474" />
-      </scope>
-      <scope id="1213877273477" at="13,72,27,18">
-        <var name="keyName" id="1213877273506" />
-        <var name="modifiers" id="1213877273483" />
-        <var name="result" id="1213877273479" />
-      </scope>
-      <scope id="1213877273474" at="13,0,29,0">
-        <var name="thisNode" id="1213877273474" />
-      </scope>
-      <unit id="1213877273474" at="10,0,30,0" name="jetbrains.mps.lang.editor.behavior.CellKeyMapKeystroke_Behavior" />
-    </file>
-  </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590297(jetbrains.mps.lang.editor.behavior)/1213877280244">
     <file name="CellMenuPart_ReplaceChild_Group_Create_Behavior.java">
       <node id="1213877280252" at="22,27,23,18" concept="12" />
@@ -1135,30 +1101,6 @@
         <var name="thisNode" id="1213877329110" />
       </scope>
       <unit id="1213877329110" at="7,0,14,0" name="jetbrains.mps.lang.editor.behavior.CellModel_WithRole_Behavior" />
-    </file>
-  </root>
-  <root nodeRef="r:00000000-0000-4000-0000-011c89590297(jetbrains.mps.lang.editor.behavior)/1213877335426">
-    <file name="CellKeyMapItem_Behavior.java">
-      <node id="1213877335430" at="14,72,15,226" concept="11" />
-      <node id="1213877335438" at="15,226,16,23" concept="11" />
-      <node id="1213877335444" at="17,24,18,20" concept="12" />
-      <node id="1213877335449" at="19,5,20,79" concept="12" />
-      <node id="1213877335426" at="12,0,14,0" concept="15" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <node id="1213877335442" at="16,23,19,5" concept="9" />
-      <node id="1213877335426" at="14,0,22,0" concept="15" trace="call_getKeyStroke_1213877335427#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
-      <scope id="1213877335454" at="12,43,12,43" />
-      <scope id="1213877335443" at="17,24,18,20" />
-      <scope id="1213877335426" at="12,0,14,0">
-        <var name="thisNode" id="1213877335426" />
-      </scope>
-      <scope id="1213877335429" at="14,72,20,79">
-        <var name="first" id="1213877335431" />
-        <var name="result" id="1213877335439" />
-      </scope>
-      <scope id="1213877335426" at="14,0,22,0">
-        <var name="thisNode" id="1213877335426" />
-      </scope>
-      <unit id="1213877335426" at="11,0,23,0" name="jetbrains.mps.lang.editor.behavior.CellKeyMapItem_Behavior" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590297(jetbrains.mps.lang.editor.behavior)/1213877341316">

@@ -24,7 +24,7 @@ import jetbrains.mps.lang.editor.behavior.ConceptEditorHintDeclaration_Behavior;
 import jetbrains.mps.lang.editor.behavior.EditorCellModel_Behavior;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.openapi.editor.cells.KeyMap;
-import jetbrains.mps.lang.editor.behavior.CellKeyMapItem_Behavior;
+import jetbrains.mps.nodeEditor.keymaps.AWTKeymapHandler;
 import jetbrains.mps.lang.editor.behavior.StyleSheet_Behavior;
 import jetbrains.mps.lang.editor.behavior.IStyleSheetMember_Behavior;
 import jetbrains.mps.lang.editor.behavior.CellMenuUtil;
@@ -289,7 +289,36 @@ public class QueriesGenerated {
     return NameUtil.nodeFQName((applicableConcept != null ? applicableConcept : SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.core.structure.BaseConcept")));
   }
   public static Object propertyMacro_GetPropertyValue_1184928403781(final PropertyMacroContext _context) {
-    return CellKeyMapItem_Behavior.call_getKeyStroke_1213877335427(_context.getNode());
+    SNode keystroke = ListSequence.fromList(SLinkOperations.getChildren(_context.getNode(), MetaAdapterFactory.getContainmentLink(new UUID(1782411230332735017l, -6324602048325217350l), 1136916919141l, 1136916998332l, "keystroke"))).first();
+    if (keystroke == null) {
+      return "";
+    }
+
+    String modifiers = SPropertyOperations.getString(keystroke, MetaAdapterFactory.getProperty(new UUID(1782411230332735017l, -6324602048325217350l), 1136916976737l, 1136923970223l, "modifiers"));
+    if (modifiers == null) {
+      modifiers = "";
+    }
+    if ((modifiers != null && modifiers.length() > 0) && !(AWTKeymapHandler.getValidModifiers().contains(modifiers))) {
+      _context.showErrorMessage(keystroke, "Invalid modifier: \"" + modifiers + "\"");
+      return "";
+    }
+    modifiers = modifiers.replaceAll("\\+", " ");
+
+    if (SPropertyOperations.getString(keystroke, MetaAdapterFactory.getProperty(new UUID(1782411230332735017l, -6324602048325217350l), 1136916976737l, 1136923970224l, "keycode")) == null) {
+      _context.showErrorMessage(keystroke, "keycode was not specified");
+      return "";
+    }
+    if (SPropertyOperations.getString(keystroke, MetaAdapterFactory.getProperty(new UUID(1782411230332735017l, -6324602048325217350l), 1136916976737l, 1136923970224l, "keycode")).length() > 1 && !(AWTKeymapHandler.getValidKeyCodes().contains(SPropertyOperations.getString(keystroke, MetaAdapterFactory.getProperty(new UUID(1782411230332735017l, -6324602048325217350l), 1136916976737l, 1136923970224l, "keycode"))))) {
+      _context.showErrorMessage(keystroke, "Invalid keycode: \"" + SPropertyOperations.getString(keystroke, MetaAdapterFactory.getProperty(new UUID(1782411230332735017l, -6324602048325217350l), 1136916976737l, 1136923970224l, "keycode")) + "\"");
+      return "";
+    }
+    String keyName;
+    if (SPropertyOperations.getString(keystroke, MetaAdapterFactory.getProperty(new UUID(1782411230332735017l, -6324602048325217350l), 1136916976737l, 1136923970224l, "keycode")).startsWith("VK_")) {
+      keyName = SPropertyOperations.getString(keystroke, MetaAdapterFactory.getProperty(new UUID(1782411230332735017l, -6324602048325217350l), 1136916976737l, 1136923970224l, "keycode")).substring(3);
+    } else {
+      keyName = SPropertyOperations.getString(keystroke, MetaAdapterFactory.getProperty(new UUID(1782411230332735017l, -6324602048325217350l), 1136916976737l, 1136923970224l, "keycode"));
+    }
+    return modifiers + " " + keyName;
   }
   public static Object propertyMacro_GetPropertyValue_1189583941983(final PropertyMacroContext _context) {
     return SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"));

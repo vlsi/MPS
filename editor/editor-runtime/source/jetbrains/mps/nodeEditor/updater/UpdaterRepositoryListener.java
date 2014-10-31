@@ -31,11 +31,11 @@ import java.util.Set;
  * User: shatalin
  * Date: 09/09/14
  */
-public class UpdaterRepositoryListener extends SModelRepositoryAdapter {
+class UpdaterRepositoryListener extends SModelRepositoryAdapter {
   private final EditorComponent myEditorComponent;
   private Collection<SModelReference> myUsedModels = Collections.emptySet();
 
-  public UpdaterRepositoryListener(@NotNull EditorComponent editorComponent) {
+  UpdaterRepositoryListener(@NotNull EditorComponent editorComponent) {
     myEditorComponent = editorComponent;
   }
 
@@ -51,7 +51,7 @@ public class UpdaterRepositoryListener extends SModelRepositoryAdapter {
     }
   }
 
-  public void setUsedModels(Set<SModel> models) {
+  void setUsedModels(Set<SModel> models) {
     myUsedModels = new HashSet<SModelReference>();
     for (SModel model : models) {
       myUsedModels.add(model.getReference());

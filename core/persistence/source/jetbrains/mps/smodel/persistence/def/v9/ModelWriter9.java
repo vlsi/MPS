@@ -343,7 +343,7 @@ public class ModelWriter9 implements IModelWriter {
       for (SModelReference modelRef : usedImports.getResult()) {
         Element elem = new Element(ModelPersistence9.IMPORT);
         elem.setAttribute(ModelPersistence9.IMPORT_INDEX, "" + myHelper.getImportIndex(modelRef));
-        elem.setAttribute(ModelPersistence9.ID, modelRef.toString());
+        elem.setAttribute(ModelPersistence9.REF, modelRef.toString());
         elem.setAttribute(ModelPersistence9.IMPLICIT, "true");
         importsElement.addContent(elem);
       }
