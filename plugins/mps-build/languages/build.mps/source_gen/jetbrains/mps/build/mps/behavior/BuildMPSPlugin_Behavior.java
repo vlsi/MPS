@@ -124,7 +124,7 @@ public class BuildMPSPlugin_Behavior {
   private static SNode createBwfTaskLibraryDependency_6x52oe_a0a0e() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode n1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.workflow.structure.BwfTaskLibraryDependency", null, false);
-    n1.setReference("target", SReference.create("target", n1, facade.createModelReference("r:4c16a3e9-db56-4447-9b0d-14adce23db0d(jetbrains.mps.build.mps.accessories)"), facade.createNodeId("398731435597190701")));
+    n1.setReference(MetaAdapterFactory.getReferenceLink(new UUID(7605046100638320544l, -5004325039833383149l), 7306485738221471031l, 7306485738221471032l, "target"), SReference.create(MetaAdapterFactory.getReferenceLink(new UUID(7605046100638320544l, -5004325039833383149l), 7306485738221471031l, 7306485738221471032l, "target"), n1, facade.createModelReference("r:4c16a3e9-db56-4447-9b0d-14adce23db0d(jetbrains.mps.build.mps.accessories)"), facade.createNodeId("398731435597190701")));
     return n1;
   }
 }

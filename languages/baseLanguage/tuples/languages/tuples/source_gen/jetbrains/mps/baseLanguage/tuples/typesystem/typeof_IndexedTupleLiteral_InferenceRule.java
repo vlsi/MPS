@@ -52,7 +52,7 @@ public class typeof_IndexedTupleLiteral_InferenceRule extends AbstractInferenceR
     {
       List<SNode> nodes = (List<SNode>) parameter_1;
       for (SNode child : nodes) {
-        quotedNode_2.addChild("componentType", HUtil.copyIfNecessary(child));
+        quotedNode_2.addChild(MetaAdapterFactory.getContainmentLink(new UUID(-6753182146401843782l, -5129028327240390294l), 1238852151516l, 1238852204892l, "componentType"), HUtil.copyIfNecessary(child));
       }
     }
     return quotedNode_2;

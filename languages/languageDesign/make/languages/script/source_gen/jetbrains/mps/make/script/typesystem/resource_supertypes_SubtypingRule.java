@@ -53,7 +53,7 @@ public class resource_supertypes_SubtypingRule extends SubtypingRule_Runtime imp
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.make.script.structure.ResourceType", null, null, false);
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, false);
     quotedNode_2.setReference(MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier"), SReference.create(MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier"), quotedNode_2, facade.createModelReference("r:4ea5a78b-cb8a-4831-b227-f7860a22491d(jetbrains.mps.make.resources)"), facade.createNodeId("6168415856807657256")));
-    quotedNode_1.addChild("classifierType", quotedNode_2);
+    quotedNode_1.addChild(MetaAdapterFactory.getContainmentLink(new UUID(-7640176555408995168l, -6458594812920713925l), 2360002718792446594l, 3308693286243004242l, "classifierType"), quotedNode_2);
     return quotedNode_1;
   }
   private static SNode _quotation_createNode_os9pe9_a0a3a1() {

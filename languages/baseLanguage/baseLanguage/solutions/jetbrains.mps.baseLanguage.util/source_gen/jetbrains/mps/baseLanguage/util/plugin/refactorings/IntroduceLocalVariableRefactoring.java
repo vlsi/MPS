@@ -92,13 +92,13 @@ public class IntroduceLocalVariableRefactoring extends IntroduceVariableRefactor
     SNodeAccessUtil.setProperty(quotedNode_5, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"), (String) parameter_1);
     quotedNode_6 = (SNode) parameter_2;
     if (quotedNode_6 != null) {
-      quotedNode_5.addChild("type", HUtil.copyIfNecessary(quotedNode_6));
+      quotedNode_5.addChild(MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 4972933694980447171l, 5680397130376446158l, "type"), HUtil.copyIfNecessary(quotedNode_6));
     }
     quotedNode_7 = (SNode) parameter_3;
     if (quotedNode_7 != null) {
-      quotedNode_5.addChild("initializer", HUtil.copyIfNecessary(quotedNode_7));
+      quotedNode_5.addChild(MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068431474542l, 1068431790190l, "initializer"), HUtil.copyIfNecessary(quotedNode_7));
     }
-    quotedNode_4.addChild("localVariableDeclaration", quotedNode_5);
+    quotedNode_4.addChild(MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068581242864l, 1068581242865l, "localVariableDeclaration"), quotedNode_5);
     return quotedNode_4;
   }
 }

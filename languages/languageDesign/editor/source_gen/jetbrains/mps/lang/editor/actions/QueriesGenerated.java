@@ -1130,7 +1130,7 @@ public class QueriesGenerated {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode n1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.StyleClassReferenceList", null, false);
     for (SNode n : (Iterable<SNode>) p0) {
-      n1.addChild("element", n);
+      n1.addChild(MetaAdapterFactory.getContainmentLink(new UUID(1782411230332735017l, -6324602048325217350l), 9122903797276194520l, 9122903797276195161l, "element"), n);
     }
     return n1;
   }

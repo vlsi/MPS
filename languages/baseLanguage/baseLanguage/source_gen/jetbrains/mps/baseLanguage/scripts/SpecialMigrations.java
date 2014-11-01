@@ -73,7 +73,7 @@ public class SpecialMigrations {
     SNodeAccessUtil.setReferenceTarget(quotedNode_3, MetaAdapterFactory.getReferenceLink(new UUID(8675788371017092295l, -9098312342032910879l), 1140137987495l, 1140138128738l, "concept"), (SNode) parameter_1);
     quotedNode_4 = (SNode) parameter_2;
     if (quotedNode_4 != null) {
-      quotedNode_3.addChild("leftExpression", HUtil.copyIfNecessary(quotedNode_4));
+      quotedNode_3.addChild(MetaAdapterFactory.getContainmentLink(new UUID(8675788371017092295l, -9098312342032910879l), 1140137987495l, 1140138123956l, "leftExpression"), HUtil.copyIfNecessary(quotedNode_4));
     }
     return quotedNode_3;
   }

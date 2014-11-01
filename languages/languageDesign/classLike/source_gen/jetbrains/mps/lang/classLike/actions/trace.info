@@ -250,17 +250,17 @@
       <node id="9097849371504760812" at="123,30,124,144" concept="1" />
       <node id="9097849371504760812" at="124,144,125,183" concept="1" />
       <node id="9097849371504760812" at="125,183,126,132" concept="1" />
-      <node id="9097849371504760812" at="126,132,127,48" concept="1" />
-      <node id="9097849371504760812" at="127,48,128,24" concept="6" />
-      <node id="9097849371504760812" at="125,183,127,48" concept="0" />
-      <node id="9097849371504760812" at="125,183,127,48" concept="0" />
-      <node id="9097849371504760812" at="123,30,127,48" concept="0" />
-      <node id="9097849371504760812" at="123,30,127,48" concept="0" />
+      <node id="9097849371504760812" at="126,132,127,186" concept="1" />
+      <node id="9097849371504760812" at="127,186,128,24" concept="6" />
+      <node id="9097849371504760812" at="125,183,127,186" concept="0" />
+      <node id="9097849371504760812" at="125,183,127,186" concept="0" />
+      <node id="9097849371504760812" at="123,30,127,186" concept="0" />
+      <node id="9097849371504760812" at="123,30,127,186" concept="0" />
       <node id="9097849371504700476" at="32,0,37,0" concept="8" trace="nodeFactory_NodeSetup_DependentTypeDeclaration_9097849371504700476#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/action/NodeSetupContext;)V" />
       <node id="9097849371504760812" at="120,0,130,0" concept="8" trace="_quotation_createNode_6hmkle_a0a1a0a#()Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <scope id="9097849371504760812" at="125,183,127,48" />
+      <scope id="9097849371504760812" at="125,183,127,186" />
       <scope id="9097849371504700477" at="32,164,35,457" />
-      <scope id="9097849371504760812" at="123,30,127,48" />
+      <scope id="9097849371504760812" at="123,30,127,186" />
       <scope id="9097849371504700476" at="32,0,37,0">
         <var name="_context" id="9097849371504700476" />
         <var name="operationContext" id="9097849371504700476" />

@@ -844,7 +844,7 @@ public class QueriesGenerated {
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildStringNotEmpty", null, null, false);
     quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildTextStringPart", null, null, false);
     SNodeAccessUtil.setProperty(quotedNode_3, MetaAdapterFactory.getProperty(new UUID(8755280088213897754l, -5075149991798053422l), 4903714810883702019l, 4903714810883755350l, "text"), (String) parameter_1);
-    quotedNode_2.addChild("parts", quotedNode_3);
+    quotedNode_2.addChild(MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 4380385936562003279l, 4903714810883783243l, "parts"), quotedNode_3);
     return quotedNode_2;
   }
   private static SNode _quotation_createNode_tyfz0s_a0a0a5a0a0b(Object parameter_1) {
@@ -854,7 +854,7 @@ public class QueriesGenerated {
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildStringNotEmpty", null, null, false);
     quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildTextStringPart", null, null, false);
     SNodeAccessUtil.setProperty(quotedNode_3, MetaAdapterFactory.getProperty(new UUID(8755280088213897754l, -5075149991798053422l), 4903714810883702019l, 4903714810883755350l, "text"), (String) parameter_1);
-    quotedNode_2.addChild("parts", quotedNode_3);
+    quotedNode_2.addChild(MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 4380385936562003279l, 4903714810883783243l, "parts"), quotedNode_3);
     return quotedNode_2;
   }
   private static SNode _quotation_createNode_i7jjd8_a0a0a0a0b(Object parameter_1) {
@@ -864,7 +864,7 @@ public class QueriesGenerated {
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildCompositePath", null, null, false);
     quotedNode_3 = (SNode) parameter_1;
     if (quotedNode_3 != null) {
-      quotedNode_2.addChild("tail", HUtil.copyIfNecessary(quotedNode_3));
+      quotedNode_2.addChild(MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 8618885170173601777l, 8618885170173601778l, "tail"), HUtil.copyIfNecessary(quotedNode_3));
     }
     return quotedNode_2;
   }

@@ -55,9 +55,9 @@ public class BuildLayout_Zip_Behavior {
     SNodeAccessUtil.setProperty(quotedNode_4, MetaAdapterFactory.getProperty(new UUID(5160134014823646133l, -7982110198386724200l), 6666499814681447923l, 6666499814681447926l, "attrName"), "dir");
     quotedNode_5 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.core.xml.structure.XmlTextValue", null, null, false);
     SNodeAccessUtil.setProperty(quotedNode_5, MetaAdapterFactory.getProperty(new UUID(5160134014823646133l, -7982110198386724200l), 6666499814681541919l, 6666499814681541920l, "text"), (String) parameter_1);
-    quotedNode_4.addChild("value", quotedNode_5);
-    quotedNode_3.addChild("attributes", quotedNode_4);
-    quotedNode_2.addChild("element", quotedNode_3);
+    quotedNode_4.addChild(MetaAdapterFactory.getContainmentLink(new UUID(5160134014823646133l, -7982110198386724200l), 6666499814681447923l, 6666499814681541918l, "value"), quotedNode_5);
+    quotedNode_3.addChild(MetaAdapterFactory.getContainmentLink(new UUID(5160134014823646133l, -7982110198386724200l), 6666499814681415858l, 6666499814681415861l, "attributes"), quotedNode_4);
+    quotedNode_2.addChild(MetaAdapterFactory.getContainmentLink(new UUID(7605046100638320544l, -5004325039833383149l), 2769948622284768359l, 2769948622284768360l, "element"), quotedNode_3);
     return quotedNode_2;
   }
   private static SNode _quotation_createNode_a0cuzf_a0a2a5a0(Object parameter_1, Object parameter_2) {
@@ -76,15 +76,15 @@ public class BuildLayout_Zip_Behavior {
     SNodeAccessUtil.setProperty(quotedNode_5, MetaAdapterFactory.getProperty(new UUID(5160134014823646133l, -7982110198386724200l), 6666499814681447923l, 6666499814681447926l, "attrName"), "src");
     quotedNode_7 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.core.xml.structure.XmlTextValue", null, null, false);
     SNodeAccessUtil.setProperty(quotedNode_7, MetaAdapterFactory.getProperty(new UUID(5160134014823646133l, -7982110198386724200l), 6666499814681541919l, 6666499814681541920l, "text"), (String) parameter_1);
-    quotedNode_5.addChild("value", quotedNode_7);
-    quotedNode_4.addChild("attributes", quotedNode_5);
+    quotedNode_5.addChild(MetaAdapterFactory.getContainmentLink(new UUID(5160134014823646133l, -7982110198386724200l), 6666499814681447923l, 6666499814681541918l, "value"), quotedNode_7);
+    quotedNode_4.addChild(MetaAdapterFactory.getContainmentLink(new UUID(5160134014823646133l, -7982110198386724200l), 6666499814681415858l, 6666499814681415861l, "attributes"), quotedNode_5);
     quotedNode_6 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.core.xml.structure.XmlAttribute", null, null, false);
     SNodeAccessUtil.setProperty(quotedNode_6, MetaAdapterFactory.getProperty(new UUID(5160134014823646133l, -7982110198386724200l), 6666499814681447923l, 6666499814681447926l, "attrName"), "dest");
     quotedNode_8 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.core.xml.structure.XmlTextValue", null, null, false);
     SNodeAccessUtil.setProperty(quotedNode_8, MetaAdapterFactory.getProperty(new UUID(5160134014823646133l, -7982110198386724200l), 6666499814681541919l, 6666499814681541920l, "text"), (String) parameter_2);
-    quotedNode_6.addChild("value", quotedNode_8);
-    quotedNode_4.addChild("attributes", quotedNode_6);
-    quotedNode_3.addChild("element", quotedNode_4);
+    quotedNode_6.addChild(MetaAdapterFactory.getContainmentLink(new UUID(5160134014823646133l, -7982110198386724200l), 6666499814681447923l, 6666499814681541918l, "value"), quotedNode_8);
+    quotedNode_4.addChild(MetaAdapterFactory.getContainmentLink(new UUID(5160134014823646133l, -7982110198386724200l), 6666499814681415858l, 6666499814681415861l, "attributes"), quotedNode_6);
+    quotedNode_3.addChild(MetaAdapterFactory.getContainmentLink(new UUID(7605046100638320544l, -5004325039833383149l), 2769948622284768359l, 2769948622284768360l, "element"), quotedNode_4);
     return quotedNode_3;
   }
 }

@@ -56,7 +56,7 @@ public class QuickFixForClassCreator_QuickFix extends QuickFix_Runtime {
     {
       List<SNode> nodes = (List<SNode>) parameter_1;
       for (SNode child : nodes) {
-        quotedNode_3.addChild("typeParameter", HUtil.copyIfNecessary(child));
+        quotedNode_3.addChild(MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 2820489544401957797l, 2820489544402271667l, "typeParameter"), HUtil.copyIfNecessary(child));
       }
     }
     return quotedNode_3;

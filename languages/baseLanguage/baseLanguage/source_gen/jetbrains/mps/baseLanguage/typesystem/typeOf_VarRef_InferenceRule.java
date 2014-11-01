@@ -116,7 +116,7 @@ public class typeOf_VarRef_InferenceRule extends AbstractInferenceRule_Runtime i
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ArrayType", null, null, false);
     quotedNode_3 = (SNode) parameter_1;
     if (quotedNode_3 != null) {
-      quotedNode_2.addChild("componentType", HUtil.copyIfNecessary(quotedNode_3));
+      quotedNode_2.addChild(MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1070534760951l, 1070534760952l, "componentType"), HUtil.copyIfNecessary(quotedNode_3));
     }
     return quotedNode_2;
   }

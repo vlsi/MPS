@@ -43,7 +43,7 @@ public class vector_subtype_of_matrix_SubtypingRule extends SubtypingRule_Runtim
     SNodeAccessUtil.setProperty(quotedNode_3, MetaAdapterFactory.getProperty(new UUID(3676340747305173022l, -6911132873973321185l), 4815887568697030518l, 4815887568697048492l, "rows"), (String) parameter_2);
     quotedNode_4 = (SNode) parameter_1;
     if (quotedNode_4 != null) {
-      quotedNode_3.addChild("elementType", HUtil.copyIfNecessary(quotedNode_4));
+      quotedNode_3.addChild(MetaAdapterFactory.getContainmentLink(new UUID(3676340747305173022l, -6911132873973321185l), 4815887568697030518l, 4815887568697050707l, "elementType"), HUtil.copyIfNecessary(quotedNode_4));
     }
     return quotedNode_3;
   }

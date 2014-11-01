@@ -26,7 +26,7 @@
       <node id="3175313036448558253" at="42,30,43,138" concept="2" />
       <node id="3175313036448558253" at="43,138,44,579" concept="2" />
       <node id="3175313036448558253" at="44,579,45,39" concept="2" />
-      <node id="3175313036448558253" at="46,31,47,78" concept="2" />
+      <node id="3175313036448558253" at="46,31,47,204" concept="2" />
       <node id="3175313036448558253" at="48,5,49,24" concept="6" />
       <node id="3175313036448550191" at="22,0,24,0" concept="1" trace="ExtensionPointType_supertypes_SubtypingRule#()V" />
       <node id="3175313036448550191" at="24,0,27,0" concept="4" trace="getSubOrSuperTypes#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)Ljava/util/List;" />
@@ -44,7 +44,7 @@
       <scope id="3175313036448550192" at="24,120,25,469" />
       <scope id="3175313036448550191" at="27,46,28,71" />
       <scope id="3175313036448550191" at="36,27,37,16" />
-      <scope id="3175313036448558253" at="46,31,47,78" />
+      <scope id="3175313036448558253" at="46,31,47,204" />
       <scope id="3175313036448550191" at="22,0,24,0" />
       <scope id="3175313036448550191" at="31,5,33,45">
         <var name="b" id="3175313036448550191" />
@@ -93,14 +93,14 @@
       <node id="3175313036448577347" at="51,30,52,138" concept="2" />
       <node id="3175313036448577347" at="52,138,53,579" concept="2" />
       <node id="3175313036448577347" at="53,579,54,39" concept="2" />
-      <node id="3175313036448577347" at="55,31,56,78" concept="2" />
+      <node id="3175313036448577347" at="55,31,56,204" concept="2" />
       <node id="3175313036448577347" at="57,5,58,24" concept="6" />
       <node id="3175313036448577269" at="60,79,61,63" concept="5" />
       <node id="3175313036448577269" at="61,63,62,30" concept="5" />
       <node id="3175313036448577269" at="62,30,63,30" concept="5" />
       <node id="3175313036448577269" at="63,30,64,148" concept="2" />
       <node id="3175313036448577269" at="64,148,65,39" concept="2" />
-      <node id="3175313036448577269" at="66,31,67,80" concept="2" />
+      <node id="3175313036448577269" at="66,31,67,207" concept="2" />
       <node id="3175313036448577269" at="68,5,69,24" concept="6" />
       <node id="3175313036448577254" at="20,0,22,0" concept="1" trace="typeof_GetExtensionObjectsOperation_InferenceRule#()V" />
       <node id="3175313036448577254" at="36,0,39,0" concept="4" trace="getApplicableConceptFQName#()Ljava/lang/String;" />
@@ -125,8 +125,8 @@
       <scope id="3175313036448577254" at="20,62,20,62" />
       <scope id="3175313036448577254" at="36,46,37,81" />
       <scope id="3175313036448577254" at="45,30,46,17" />
-      <scope id="3175313036448577347" at="55,31,56,78" />
-      <scope id="3175313036448577269" at="66,31,67,80" />
+      <scope id="3175313036448577347" at="55,31,56,204" />
+      <scope id="3175313036448577269" at="66,31,67,207" />
       <scope id="3175313036448577254" at="20,0,22,0" />
       <scope id="3175313036448577254" at="40,5,42,45">
         <var name="b" id="3175313036448577254" />

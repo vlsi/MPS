@@ -58,9 +58,9 @@
       <node id="2230548360390286986" at="121,30,122,143" concept="2" />
       <node id="2230548360390286986" at="122,143,123,201" concept="2" />
       <node id="2230548360390286986" at="123,201,124,132" concept="2" />
-      <node id="2230548360390286986" at="124,132,125,54" concept="2" />
-      <node id="2230548360390286986" at="125,54,126,39" concept="2" />
-      <node id="2230548360390286986" at="127,31,128,73" concept="2" />
+      <node id="2230548360390286986" at="124,132,125,180" concept="2" />
+      <node id="2230548360390286986" at="125,180,126,39" concept="2" />
+      <node id="2230548360390286986" at="127,31,128,199" concept="2" />
       <node id="2230548360390286986" at="129,5,130,24" concept="8" />
       <node id="2230548360390192818" at="34,0,36,0" concept="1" trace="convert_test_case_to_unittest_case_Intention#()V" />
       <node id="2230548360390192818" at="76,0,78,0" concept="1" trace="IntentionImplementation#()V" />
@@ -69,8 +69,8 @@
       <node id="2230548360390284900" at="105,30,107,575" concept="0" />
       <node id="1571838961922885163" at="112,30,114,575" concept="0" />
       <node id="1571838961922885163" at="112,30,114,575" concept="0" />
-      <node id="2230548360390286986" at="123,201,125,54" concept="0" />
-      <node id="2230548360390286986" at="123,201,125,54" concept="0" />
+      <node id="2230548360390286986" at="123,201,125,180" concept="0" />
+      <node id="2230548360390286986" at="123,201,125,180" concept="0" />
       <node id="2230548360390192818" at="36,0,39,0" concept="6" trace="getConcept#()Ljava/lang/String;" />
       <node id="2230548360390192818" at="39,0,42,0" concept="6" trace="getPresentation#()Ljava/lang/String;" />
       <node id="2230548360390192818" at="42,0,45,0" concept="6" trace="getPersistentStateKey#()Ljava/lang/String;" />
@@ -87,8 +87,8 @@
       <node id="1571838961922885211" at="94,7,97,7" concept="4" />
       <node id="2230548360390192818" at="99,0,102,0" concept="6" trace="getDescriptor#()Ljetbrains/mps/intentions/IntentionDescriptor;" />
       <node id="2230548360390286986" at="126,39,129,5" concept="5" />
-      <node id="2230548360390286986" at="125,54,129,5" concept="0" />
-      <node id="2230548360390286986" at="125,54,129,5" concept="0" />
+      <node id="2230548360390286986" at="125,180,129,5" concept="0" />
+      <node id="2230548360390286986" at="125,180,129,5" concept="0" />
       <node id="2230548360390286819" at="88,105,93,9" concept="5" />
       <node id="2230548360390192818" at="54,0,60,0" concept="6" trace="isApplicable#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Z" />
       <node id="2230548360390192818" at="69,0,75,0" concept="6" trace="instances#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Ljava/util/Collection;" />
@@ -118,12 +118,12 @@
       <scope id="1571838961922885173" at="91,16,92,255" />
       <scope id="1571838961922885214" at="95,110,96,253" />
       <scope id="2230548360390192818" at="99,48,100,63" />
-      <scope id="2230548360390286986" at="127,31,128,73" />
+      <scope id="2230548360390286986" at="127,31,128,199" />
       <scope id="2230548360390192818" at="34,0,36,0" />
       <scope id="2230548360390192818" at="76,0,78,0" />
       <scope id="2230548360390284900" at="105,30,107,575" />
       <scope id="1571838961922885163" at="112,30,114,575" />
-      <scope id="2230548360390286986" at="123,201,125,54" />
+      <scope id="2230548360390286986" at="123,201,125,180" />
       <scope id="2230548360390192818" at="36,0,39,0" />
       <scope id="2230548360390192818" at="39,0,42,0" />
       <scope id="2230548360390192818" at="42,0,45,0" />
@@ -146,7 +146,7 @@
       <scope id="2230548360390192818" at="99,0,102,0" />
       <scope id="2230548360390192818" at="54,84,58,16" />
       <scope id="2230548360390192818" at="69,99,73,30" />
-      <scope id="2230548360390286986" at="125,54,129,5" />
+      <scope id="2230548360390286986" at="125,180,129,5" />
       <scope id="2230548360390286809" at="88,105,93,9" />
       <scope id="2230548360390284900" at="103,63,108,24">
         <var name="facade" id="2230548360390284900" />

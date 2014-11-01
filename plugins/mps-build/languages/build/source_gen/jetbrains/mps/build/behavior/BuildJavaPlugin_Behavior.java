@@ -64,7 +64,7 @@ public class BuildJavaPlugin_Behavior {
   private static SNode createBwfTaskLibraryDependency_bn484n_a0a0a0c() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode n1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.workflow.structure.BwfTaskLibraryDependency", null, false);
-    n1.setReference("target", SReference.create("target", n1, facade.createModelReference("r:14f06230-41df-42af-9a25-81de46539bf1(jetbrains.mps.build.workflow.accessories)"), facade.createNodeId("7306485738221408314")));
+    n1.setReference(MetaAdapterFactory.getReferenceLink(new UUID(7605046100638320544l, -5004325039833383149l), 7306485738221471031l, 7306485738221471032l, "target"), SReference.create(MetaAdapterFactory.getReferenceLink(new UUID(7605046100638320544l, -5004325039833383149l), 7306485738221471031l, 7306485738221471032l, "target"), n1, facade.createModelReference("r:14f06230-41df-42af-9a25-81de46539bf1(jetbrains.mps.build.workflow.accessories)"), facade.createNodeId("7306485738221408314")));
     return n1;
   }
   private static boolean isNotEmptyString(String str) {

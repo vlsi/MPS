@@ -191,7 +191,7 @@ public class typeof_ClassCreator_InferenceRule extends AbstractInferenceRule_Run
     {
       List<SNode> nodes = (List<SNode>) parameter_2;
       for (SNode child : nodes) {
-        quotedNode_3.addChild("parameter", HUtil.copyIfNecessary(child));
+        quotedNode_3.addChild(MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1109201940907l, "parameter"), HUtil.copyIfNecessary(child));
       }
     }
     return quotedNode_3;

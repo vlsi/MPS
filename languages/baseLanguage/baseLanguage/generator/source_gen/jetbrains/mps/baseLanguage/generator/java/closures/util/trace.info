@@ -57,20 +57,20 @@
       <node id="1196777970339" at="80,30,81,161" concept="3" />
       <node id="1196777970339" at="81,161,82,198" concept="3" />
       <node id="1196777970339" at="82,198,83,138" concept="3" />
-      <node id="1196777970339" at="83,138,84,52" concept="3" />
-      <node id="1196777970339" at="84,52,85,128" concept="3" />
-      <node id="1196777970339" at="85,128,86,53" concept="3" />
-      <node id="1196777970339" at="86,53,87,24" concept="9" />
+      <node id="1196777970339" at="83,138,84,179" concept="3" />
+      <node id="1196777970339" at="84,179,85,128" concept="3" />
+      <node id="1196777970339" at="85,128,86,180" concept="3" />
+      <node id="1196777970339" at="86,180,87,24" concept="9" />
       <node id="1219331742419" at="89,62,90,63" concept="8" />
       <node id="1219331742419" at="90,63,91,30" concept="8" />
       <node id="1219331742419" at="91,30,92,138" concept="3" />
       <node id="1219331742419" at="92,138,93,524" concept="3" />
       <node id="1219331742419" at="93,524,94,24" concept="9" />
       <node id="4723230619342922312" at="22,0,24,0" concept="1" trace="QueriesUtil#()V" />
-      <node id="1196777970339" at="82,198,84,52" concept="0" />
-      <node id="1196777970339" at="82,198,84,52" concept="0" />
-      <node id="1196777970339" at="84,52,86,53" concept="0" />
-      <node id="1196777970339" at="84,52,86,53" concept="0" />
+      <node id="1196777970339" at="82,198,84,179" concept="0" />
+      <node id="1196777970339" at="82,198,84,179" concept="0" />
+      <node id="1196777970339" at="84,179,86,180" concept="0" />
+      <node id="1196777970339" at="84,179,86,180" concept="0" />
       <node id="1219331742419" at="91,30,93,524" concept="0" />
       <node id="1219331742419" at="91,30,93,524" concept="0" />
       <node id="1196275120554" at="51,141,54,5" concept="6" />
@@ -79,8 +79,8 @@
       <node id="1170869717775" at="32,201,36,5" concept="5" />
       <node id="1170874244159" at="40,136,44,5" concept="6" />
       <node id="1196276308421" at="64,30,69,5" concept="6" />
-      <node id="1196777970339" at="80,30,86,53" concept="0" />
-      <node id="1196777970339" at="80,30,86,53" concept="0" />
+      <node id="1196777970339" at="80,30,86,180" concept="0" />
+      <node id="1196777970339" at="80,30,86,180" concept="0" />
       <node id="1196275284506" at="56,22,63,5" concept="6" />
       <node id="1219331742419" at="89,0,96,0" concept="12" trace="_quotation_createNode_w9106s_a0a0a4#()Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="1170874151016" at="39,0,47,0" concept="12" trace="getTypeVars_from_Closure_enclosingClass#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/util/List;" />
@@ -96,8 +96,8 @@
         <var name="typeVarRef" id="1170869780787" />
       </scope>
       <scope id="1170874244163" at="41,33,43,43" />
-      <scope id="1196777970339" at="82,198,84,52" />
-      <scope id="1196777970339" at="84,52,86,53" />
+      <scope id="1196777970339" at="82,198,84,179" />
+      <scope id="1196777970339" at="84,179,86,180" />
       <scope id="1219331742419" at="91,30,93,524" />
       <scope id="1196276308422" at="65,252,68,22">
         <var name="thisExpr" id="1196276396238" />
@@ -117,7 +117,7 @@
       <scope id="1170874151018" at="39,89,45,208">
         <var name="enclosingClass" id="1170874244153" />
       </scope>
-      <scope id="1196777970339" at="80,30,86,53" />
+      <scope id="1196777970339" at="80,30,86,180" />
       <scope id="1219331742419" at="89,0,96,0" />
       <scope id="1170874151016" at="39,0,47,0">
         <var name="inputClosure" id="1170874222693" />

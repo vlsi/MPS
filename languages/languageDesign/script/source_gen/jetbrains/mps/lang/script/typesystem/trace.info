@@ -90,17 +90,17 @@
       <node id="2598676492883176348" at="50,138,51,526" concept="2" />
       <node id="2598676492883176348" at="51,526,52,138" concept="2" />
       <node id="2598676492883176348" at="52,138,53,599" concept="2" />
-      <node id="2598676492883176348" at="53,599,54,53" concept="2" />
-      <node id="2598676492883176348" at="54,53,55,24" concept="6" />
+      <node id="2598676492883176348" at="53,599,54,179" concept="2" />
+      <node id="2598676492883176348" at="54,179,55,24" concept="6" />
       <node id="2598676492883170109" at="23,0,25,0" concept="1" trace="check_FactoryMigrationScriptPath_NonTypesystemRule#()V" />
       <node id="2598676492883170109" at="34,0,37,0" concept="4" trace="getApplicableConceptFQName#()Ljava/lang/String;" />
       <node id="2598676492883170109" at="43,0,46,0" concept="4" trace="overrides#()Z" />
-      <node id="2598676492883176348" at="51,526,54,53" concept="0" />
-      <node id="2598676492883176348" at="51,526,54,53" concept="0" />
+      <node id="2598676492883176348" at="51,526,54,179" concept="0" />
+      <node id="2598676492883176348" at="51,526,54,179" concept="0" />
       <node id="2598676492883176352" at="27,123,31,7" concept="0" />
       <node id="2598676492883170109" at="37,68,41,5" concept="0" />
-      <node id="2598676492883176348" at="49,30,54,53" concept="0" />
-      <node id="2598676492883176348" at="49,30,54,53" concept="0" />
+      <node id="2598676492883176348" at="49,30,54,179" concept="0" />
+      <node id="2598676492883176348" at="49,30,54,179" concept="0" />
       <node id="2598676492883176341" at="26,247,32,5" concept="3" />
       <node id="2598676492883170109" at="37,0,43,0" concept="4" trace="isApplicableAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
       <node id="2598676492883170109" at="25,0,34,0" concept="4" trace="applyRule#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
@@ -118,10 +118,10 @@
       </scope>
       <scope id="2598676492883170109" at="34,0,37,0" />
       <scope id="2598676492883170109" at="43,0,46,0" />
-      <scope id="2598676492883176348" at="51,526,54,53" />
+      <scope id="2598676492883176348" at="51,526,54,179" />
       <scope id="2598676492883176342" at="27,123,31,7" />
       <scope id="2598676492883170109" at="37,68,41,5" />
-      <scope id="2598676492883176348" at="49,30,54,53" />
+      <scope id="2598676492883176348" at="49,30,54,179" />
       <scope id="2598676492883170109" at="37,0,43,0">
         <var name="argument" id="2598676492883170109" />
       </scope>

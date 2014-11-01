@@ -77,7 +77,7 @@ public class AddAllSetElementsOperation_replace_Intention implements IntentionFa
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.AddAllElementsOperation", null, null, false);
     quotedNode_3 = (SNode) parameter_1;
     if (quotedNode_3 != null) {
-      quotedNode_2.addChild("argument", HUtil.copyIfNecessary(quotedNode_3));
+      quotedNode_2.addChild(MetaAdapterFactory.getContainmentLink(new UUID(-8968771020793164004l, -7182180101671965361l), 540871147943773365l, 540871147943773366l, "argument"), HUtil.copyIfNecessary(quotedNode_3));
     }
     return quotedNode_2;
   }

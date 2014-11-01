@@ -828,8 +828,8 @@ public class ModuleChecker {
   private static SNode createBuildMps_ModuleDependencyOnModule_yr5c5g_a0a0a0a11a72(Object p0) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode n1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyOnModule", null, false);
-    n1.setProperty("reexport", "" + false);
-    n1.setReferenceTarget("module", (SNode) p0);
+    n1.setProperty(MetaAdapterFactory.getProperty(new UUID(934837630734519964l, -6831122735637083229l), 5253498789149585690l, 5253498789149547713l, "reexport"), "" + false);
+    n1.setReferenceTarget(MetaAdapterFactory.getReferenceLink(new UUID(934837630734519964l, -6831122735637083229l), 5253498789149585690l, 5253498789149547705l, "module"), (SNode) p0);
     return n1;
   }
   private static boolean neq_yr5c5g_a0a0e0p(Object a, Object b) {

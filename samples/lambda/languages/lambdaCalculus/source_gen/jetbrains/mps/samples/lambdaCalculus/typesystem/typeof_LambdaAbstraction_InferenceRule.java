@@ -68,11 +68,11 @@ public class typeof_LambdaAbstraction_InferenceRule extends AbstractInferenceRul
     quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.samples.lambdaCalculus.structure.FunctionType", null, null, false);
     quotedNode_4 = (SNode) parameter_1;
     if (quotedNode_4 != null) {
-      quotedNode_3.addChild("domain", HUtil.copyIfNecessary(quotedNode_4));
+      quotedNode_3.addChild(MetaAdapterFactory.getContainmentLink(new UUID(8979658720047614716l, -5913038370385483627l), 4530871765544139496l, 4530871765544139497l, "domain"), HUtil.copyIfNecessary(quotedNode_4));
     }
     quotedNode_5 = (SNode) parameter_2;
     if (quotedNode_5 != null) {
-      quotedNode_3.addChild("range", HUtil.copyIfNecessary(quotedNode_5));
+      quotedNode_3.addChild(MetaAdapterFactory.getContainmentLink(new UUID(8979658720047614716l, -5913038370385483627l), 4530871765544139496l, 4530871765544139498l, "range"), HUtil.copyIfNecessary(quotedNode_5));
     }
     return quotedNode_3;
   }

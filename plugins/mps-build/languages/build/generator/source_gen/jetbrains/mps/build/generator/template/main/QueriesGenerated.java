@@ -1881,8 +1881,8 @@ public class QueriesGenerated {
   private static SNode createGeneratorInternal_ProjectDependency_x583g4_a0a0a0a1a793(Object p0, Object p1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode n1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.GeneratorInternal_ProjectDependency", null, false);
-    n1.setProperty("path", String.valueOf(p0));
-    n1.setReferenceTarget("project", (SNode) p1);
+    n1.setProperty(MetaAdapterFactory.getProperty(new UUID(8755280088213897754l, -5075149991798053422l), 6354776497066088012l, 6354776497066088381l, "path"), String.valueOf(p0));
+    n1.setReferenceTarget(MetaAdapterFactory.getReferenceLink(new UUID(8755280088213897754l, -5075149991798053422l), 6354776497066088012l, 6354776497069761491l, "project"), (SNode) p1);
     return n1;
   }
 }

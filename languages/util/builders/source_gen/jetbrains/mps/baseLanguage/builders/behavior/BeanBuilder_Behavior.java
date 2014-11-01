@@ -33,10 +33,10 @@ public class BeanBuilder_Behavior {
     {
       List<SNode> nodes = (List<SNode>) parameter_1;
       for (SNode child : nodes) {
-        quotedNode_4.addChild("actualArgument", HUtil.copyIfNecessary(child));
+        quotedNode_4.addChild(MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, 1068499141038l, "actualArgument"), HUtil.copyIfNecessary(child));
       }
     }
-    quotedNode_3.addChild("creator", quotedNode_4);
+    quotedNode_3.addChild(MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1145552977093l, 1145553007750l, "creator"), quotedNode_4);
     return quotedNode_3;
   }
   private static SNode _quotation_createNode_ef9w03_a0a1(Object parameter_1) {

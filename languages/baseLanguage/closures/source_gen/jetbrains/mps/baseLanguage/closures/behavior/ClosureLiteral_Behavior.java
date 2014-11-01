@@ -75,17 +75,17 @@ public class ClosureLiteral_Behavior {
     {
       List<SNode> nodes = (List<SNode>) parameter_1;
       for (SNode child : nodes) {
-        quotedNode_4.addChild("parameterType", HUtil.copyIfNecessary(child));
+        quotedNode_4.addChild(MetaAdapterFactory.getContainmentLink(new UUID(-200093298712821347l, -8038623698278341771l), 1199542442495l, 1199542501692l, "parameterType"), HUtil.copyIfNecessary(child));
       }
     }
     quotedNode_6 = (SNode) parameter_2;
     if (quotedNode_6 != null) {
-      quotedNode_4.addChild("resultType", HUtil.copyIfNecessary(quotedNode_6));
+      quotedNode_4.addChild(MetaAdapterFactory.getContainmentLink(new UUID(-200093298712821347l, -8038623698278341771l), 1199542442495l, 1199542457201l, "resultType"), HUtil.copyIfNecessary(quotedNode_6));
     }
     {
       List<SNode> nodes = (List<SNode>) parameter_3;
       for (SNode child : nodes) {
-        quotedNode_4.addChild("throwsType", HUtil.copyIfNecessary(child));
+        quotedNode_4.addChild(MetaAdapterFactory.getContainmentLink(new UUID(-200093298712821347l, -8038623698278341771l), 1199542442495l, 1214831762486l, "throwsType"), HUtil.copyIfNecessary(child));
       }
     }
     return quotedNode_4;

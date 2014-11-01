@@ -81,9 +81,9 @@ public class QueriesUtil {
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguageInternal.structure.InternalPartialFieldReference", null, null, false);
     SNodeAccessUtil.setProperty(quotedNode_1, MetaAdapterFactory.getProperty(new UUID(-2363163772790029805l, -6024047381933761144l), 1177590007607l, 1177590059093l, "fieldName"), "_enclosingClass");
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ThisExpression", null, null, false);
-    quotedNode_1.addChild("instance", quotedNode_2);
+    quotedNode_1.addChild(MetaAdapterFactory.getContainmentLink(new UUID(-2363163772790029805l, -6024047381933761144l), 1177590007607l, 1177590086595l, "instance"), quotedNode_2);
     quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.Type", null, null, false);
-    quotedNode_1.addChild("fieldType", quotedNode_3);
+    quotedNode_1.addChild(MetaAdapterFactory.getContainmentLink(new UUID(-2363163772790029805l, -6024047381933761144l), 1177590007607l, 1177590063781l, "fieldType"), quotedNode_3);
     return quotedNode_1;
   }
   private static SNode _quotation_createNode_w9106s_a0a0a4() {

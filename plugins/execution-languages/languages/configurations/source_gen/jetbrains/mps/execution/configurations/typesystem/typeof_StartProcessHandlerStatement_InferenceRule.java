@@ -42,10 +42,10 @@ public class typeof_StartProcessHandlerStatement_InferenceRule extends AbstractI
     SNode n1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.typesystem.structure.JoinType", null, false);
     {
       SNode n2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.tuples.structure.NamedTupleType", null, false);
-      n2.setReference("classifier", SReference.create("classifier", n2, facade.createModelReference("r:5a505993-793e-4b2d-84cf-271f9dde39b3(jetbrains.mps.execution.lib)"), facade.createNodeId("1977878056377381089")));
+      n2.setReference(MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier"), SReference.create(MetaAdapterFactory.getReferenceLink(new UUID(-935030926396207931l, -6610165693999523818l), 1107535904670l, 1107535924139l, "classifier"), n2, facade.createModelReference("r:5a505993-793e-4b2d-84cf-271f9dde39b3(jetbrains.mps.execution.lib)"), facade.createNodeId("1977878056377381089")));
       SNode n3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.execution.configurations.structure.ConsoleType", null, false);
-      n1.addChild("argument", n2);
-      n1.addChild("argument", n3);
+      n1.addChild(MetaAdapterFactory.getContainmentLink(new UUID(8817443762339858024l, -6091446231697526094l), 1179479408386l, 1179479418730l, "argument"), n2);
+      n1.addChild(MetaAdapterFactory.getContainmentLink(new UUID(8817443762339858024l, -6091446231697526094l), 1179479408386l, 1179479418730l, "argument"), n3);
     }
     return n1;
   }

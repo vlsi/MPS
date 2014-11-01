@@ -114,7 +114,7 @@ public class CreateReferenceConcept_Intention implements IntentionFactory {
     SNodeAccessUtil.setProperty(quotedNode_5, MetaAdapterFactory.getProperty(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489288298l, 1071599893252l, "sourceCardinality"), "1");
     SNodeAccessUtil.setProperty(quotedNode_5, MetaAdapterFactory.getProperty(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489288298l, 1071599776563l, "role"), (String) parameter_1);
     SNodeAccessUtil.setReferenceTarget(quotedNode_5, MetaAdapterFactory.getReferenceLink(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489288298l, 1071599976176l, "target"), (SNode) parameter_2);
-    quotedNode_4.addChild("linkDeclaration", quotedNode_5);
+    quotedNode_4.addChild(MetaAdapterFactory.getContainmentLink(new UUID(-4094437568663370681l, -8968368868337559369l), 1169125787135l, 1071489727083l, "linkDeclaration"), quotedNode_5);
     return quotedNode_4;
   }
   private static SNode _quotation_createNode_vn7eng_a0l0a(Object parameter_1, Object parameter_2) {
@@ -131,9 +131,9 @@ public class CreateReferenceConcept_Intention implements IntentionFactory {
     quotedNode_6 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.CellModel_Property", null, null, false);
     SNodeAccessUtil.setProperty(quotedNode_6, MetaAdapterFactory.getProperty(new UUID(1782411230332735017l, -6324602048325217350l), 1139848536355l, 1140017977771l, "readOnly"), "true");
     quotedNode_6.setReference(MetaAdapterFactory.getReferenceLink(new UUID(1782411230332735017l, -6324602048325217350l), 1139848536355l, 1140103550593l, "relationDeclaration"), SReference.create(MetaAdapterFactory.getReferenceLink(new UUID(1782411230332735017l, -6324602048325217350l), 1139848536355l, 1140103550593l, "relationDeclaration"), quotedNode_6, facade.createModelReference("r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)"), facade.createNodeId("1169194664001")));
-    quotedNode_5.addChild("cellModel", quotedNode_6);
-    quotedNode_4.addChild("editorComponent", quotedNode_5);
-    quotedNode_3.addChild("cellModel", quotedNode_4);
+    quotedNode_5.addChild(MetaAdapterFactory.getContainmentLink(new UUID(1782411230332735017l, -6324602048325217350l), 1080736578640l, 1080736633877l, "cellModel"), quotedNode_6);
+    quotedNode_4.addChild(MetaAdapterFactory.getContainmentLink(new UUID(1782411230332735017l, -6324602048325217350l), 1088013125922l, 1088186146602l, "editorComponent"), quotedNode_5);
+    quotedNode_3.addChild(MetaAdapterFactory.getContainmentLink(new UUID(1782411230332735017l, -6324602048325217350l), 1080736578640l, 1080736633877l, "cellModel"), quotedNode_4);
     return quotedNode_3;
   }
 }
