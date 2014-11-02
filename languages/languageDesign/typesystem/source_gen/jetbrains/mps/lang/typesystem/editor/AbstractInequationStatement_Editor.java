@@ -8,12 +8,12 @@ import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.UUID;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.openapi.editor.style.StyleRegistry;
 import java.awt.Color;
@@ -48,7 +48,7 @@ public class AbstractInequationStatement_Editor extends DefaultNodeEditor {
       editorCell.addEditorCell(this.createCollection_ka3b3c_b0(editorContext, node));
     }
     editorCell.addEditorCell(this.createConstant_ka3b3c_c0(editorContext, node));
-    if (SNodeAccessUtil.hasProperty(node, "label")) {
+    if (SNodeAccessUtil.hasProperty(node, MetaAdapterFactory.getProperty(new UUID(8817443762339858024l, -6091446231697526094l), 1212056081426l, 4778346850551686273l, "label"))) {
       editorCell.addEditorCell(this.createNonEmptyProperty_ka3b3c_d0(editorContext, node));
     }
     return editorCell;
