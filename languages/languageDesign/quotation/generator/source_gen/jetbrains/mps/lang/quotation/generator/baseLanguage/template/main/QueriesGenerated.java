@@ -84,10 +84,10 @@ public class QueriesGenerated {
     String value = SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(new UUID(4184707567256882268l, -4914423608129972907l), 8389748773577451463l, 8389748773577451513l, "propertyValue"));
     return NameUtil.escapeString(value);
   }
-  public static Object propertyMacro_GetPropertyValue_1196351886860(final PropertyMacroContext _context) {
+  public static Object propertyMacro_GetPropertyValue_3861025227903207003(final PropertyMacroContext _context) {
     return SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(new UUID(4184707567256882268l, -4914423608129972907l), 2652588855789590333l, 2652588855789618253l, "targetModel"));
   }
-  public static Object propertyMacro_GetPropertyValue_1196351886869(final PropertyMacroContext _context) {
+  public static Object propertyMacro_GetPropertyValue_3861025227903207014(final PropertyMacroContext _context) {
     return SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(new UUID(4184707567256882268l, -4914423608129972907l), 2652588855789590333l, 2652588855789590335l, "targetNodeId"));
   }
   public static Object propertyMacro_GetPropertyValue_1025590056396672173(final PropertyMacroContext _context) {
@@ -153,7 +153,7 @@ public class QueriesGenerated {
   public static Object referenceMacro_GetReferent_5625022412249791235(final ReferenceMacroContext _context) {
     return _context.getOutputNodeByInputNodeAndMappingLabel(((SNode) _context.getVariable("var:quotedNode")), "nodeVariable");
   }
-  public static Object referenceMacro_GetReferent_5625022412249831573(final ReferenceMacroContext _context) {
+  public static Object referenceMacro_GetReferent_3861025227903206990(final ReferenceMacroContext _context) {
     return _context.getOutputNodeByInputNodeAndMappingLabel(((SNode) _context.getVariable("var:quotedNode")), "nodeVariable");
   }
   public static Object referenceMacro_GetReferent_2652588855790579721(final ReferenceMacroContext _context) {
@@ -308,7 +308,7 @@ public class QueriesGenerated {
   public static SNode sourceNodeQuery_2652588855790422153(final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(new UUID(4184707567256882268l, -4914423608129972907l), 2652588855789590333l, 2652588855789590334l, "role"));
   }
-  public static SNode sourceNodeQuery_2652588855790501783(final SourceSubstituteMacroNodeContext _context) {
+  public static SNode sourceNodeQuery_3861025227903206981(final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(new UUID(4184707567256882268l, -4914423608129972907l), 2652588855789590333l, 2652588855789590334l, "role"));
   }
   public static SNode sourceNodeQuery_2652588855790579732(final SourceSubstituteMacroNodeContext _context) {
