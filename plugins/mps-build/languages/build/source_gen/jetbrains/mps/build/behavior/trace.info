@@ -54,7 +54,7 @@
       <unit at="8,0,18,0" name="jetbrains.mps.build.behavior.BuildLayout_CopyProcessor_BehaviorDescriptor" />
     </file>
     <file name="BehaviorAspectDescriptor.java">
-      <unit at="9,0,198,0" name="jetbrains.mps.build.behavior.BehaviorAspectDescriptor" />
+      <unit at="9,0,200,0" name="jetbrains.mps.build.behavior.BehaviorAspectDescriptor" />
     </file>
     <file name="BuildProjectPart_BehaviorDescriptor.java">
       <unit at="7,0,15,0" name="jetbrains.mps.build.behavior.BuildProjectPart_BehaviorDescriptor" />
@@ -340,6 +340,9 @@
     </file>
     <file name="BuildLayout_TransparentContainer_BehaviorDescriptor.java">
       <unit at="9,0,23,0" name="jetbrains.mps.build.behavior.BuildLayout_TransparentContainer_BehaviorDescriptor" />
+    </file>
+    <file name="GeneratorInternal_LibraryArtifacts_BehaviorDescriptor.java">
+      <unit at="7,0,15,0" name="jetbrains.mps.build.behavior.GeneratorInternal_LibraryArtifacts_BehaviorDescriptor" />
     </file>
     <file name="BuildLayout_CustomCopy_BehaviorDescriptor.java">
       <unit at="8,0,19,0" name="jetbrains.mps.build.behavior.BuildLayout_CustomCopy_BehaviorDescriptor" />
