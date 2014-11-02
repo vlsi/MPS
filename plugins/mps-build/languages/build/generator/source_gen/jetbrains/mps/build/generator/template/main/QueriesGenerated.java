@@ -49,8 +49,6 @@ import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.LinkedHashMap;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import java.util.Collection;
-import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.build.generator.util.JavaExternalLibraryHelper;
 import jetbrains.mps.generator.template.MappingScriptContext;
 import jetbrains.mps.build.util.GenerationUtil;
@@ -1628,7 +1626,7 @@ public class QueriesGenerated {
     });
   }
   public static Iterable<SNode> sourceNodesQuery_8775597636506088245(final SourceSubstituteMacroNodesContext _context) {
-    return ((Collection) IterableUtil.asCollection(_context.getNode().getChildren("attrs")));
+    return SLinkOperations.getChildren(_context.getNode(), MetaAdapterFactory.getContainmentLink(new UUID(8755280088213897754l, -5075149991798053422l), 3861025227901286914l, 3861025227901287711l, "attrs"));
   }
   public static Iterable<SNode> sourceNodesQuery_5979287180587467422(final SourceSubstituteMacroNodesContext _context) {
     SNode project = SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.build.structure.BuildProject", false, false);

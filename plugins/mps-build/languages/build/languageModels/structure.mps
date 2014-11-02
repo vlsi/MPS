@@ -1825,6 +1825,17 @@
         <reference role="4jta.1071489288299.1082985295845" target="tpck.1082983041843" resolveInfo="string" />
       </node>
     </node>
+    <node concept="4jta.1071489090640" id="3861025227901286914" info="ig">
+      <property role="asn4.1133920641626.1193676396447" value="GeneratorInternal" />
+      <property role="asn4.1169194658468.1169194664001" value="GeneratorInternal_LibraryArtifacts" />
+      <reference role="4jta.1071489090640.1071489389519" target="tpck.1133920641626" resolveInfo="BaseConcept" />
+      <node concept="4jta.1071489288298" id="3861025227901287711" role="4jta.1169125787135.1071489727083" info="ig">
+        <property role="4jta.1071489288298.1071599937831" value="aggregation" />
+        <property role="4jta.1071489288298.1071599776563" value="attrs" />
+        <property role="4jta.1071489288298.1071599893252" value="0..n" />
+        <reference role="4jta.1071489288298.1071599976176" target="iuxj.6666499814681415859" resolveInfo="XmlBaseAttribute" />
+      </node>
+    </node>
   </contents>
 </model>
 

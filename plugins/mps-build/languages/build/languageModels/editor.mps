@@ -201,6 +201,7 @@
     <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1233823429331" name="jetbrains.mps.lang.editor.structure.HorizontalGapStyleClassItem" />
     <concept id="83888646-71ce-4f1c-9c53-c54016f6ad4f/1235566554328" name="jetbrains.mps.baseLanguage.collections.structure.AnyOperation" />
     <concept id="83888646-71ce-4f1c-9c53-c54016f6ad4f/1235573135402" name="jetbrains.mps.baseLanguage.collections.structure.SingletonSequenceCreator" />
+    <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1236262245656" name="jetbrains.mps.lang.editor.structure.MatchingLabelStyleClassItem" />
     <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1237303669825" name="jetbrains.mps.lang.editor.structure.CellLayout_Indent" />
     <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1237307900041" name="jetbrains.mps.lang.editor.structure.IndentLayoutIndentStyleClassItem" />
     <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1237308012275" name="jetbrains.mps.lang.editor.structure.IndentLayoutNewLineStyleClassItem" />
@@ -252,6 +253,7 @@
     <property id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1139848536355/1214560368769" name="emptyNoTargetText" />
     <property id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1215007762405/1215007802031" name="value" />
     <property id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1225456267680/1225456424731" name="value" />
+    <property id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1236262245656/1238091709220" name="labelName" />
     <property id="7866978e-a0f0-4cc7-81bc-4d213d9375e1/1140137987495/1238684351431" name="asCast" />
     <property id="f3061a53-9226-4cc5-a443-f952ceaf5816/6329021646629104957/6329021646629104958" name="text" />
     <refRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1204053956946/1068499141037" name="baseMethodDeclaration" />
@@ -6492,6 +6494,28 @@
           <reference role="9wj7.1139848536355.1140103550593" target="3ior.5800711952433445190" resolveInfo="folderName" />
         </node>
         <node concept="9wj7.1106270549637" id="5800711952433569549" role="9wj7.1073389446423.1106270802874" info="nn" />
+      </node>
+    </node>
+    <node concept="9wj7.1071666914219" id="3861025227901326660" info="ig">
+      <property role="asn4.1133920641626.1193676396447" value="GeneratorInternal" />
+      <reference role="9wj7.1166049232041.1166049300910" target="3ior.3861025227901286914" resolveInfo="GeneratorInternal_LibraryArtifacts" />
+      <node concept="9wj7.1073389446423" id="3861025227901329348" role="9wj7.1080736578640.1080736633877" info="sn">
+        <node concept="9wj7.1237303669825" id="3861025227901329349" role="9wj7.1073389446423.1106270802874" info="nn" />
+        <node concept="9wj7.1073389577006" id="3861025227901329355" role="9wj7.1073389446423.1073389446424" info="sn">
+          <property role="9wj7.1073389577006.1073389577007" value="attrs" />
+        </node>
+        <node concept="9wj7.1073390211982" id="6666499814681529608" role="9wj7.1073389446423.1073389446424" info="sg">
+          <reference role="9wj7.1139848536355.1140103550593" target="3ior.3861025227901287711" />
+          <node concept="9wj7.1237303669825" id="6666499814681529609" role="9wj7.1140524381322.1140524464360" info="nn" />
+        </node>
+        <node concept="9wj7.1073389577006" id="3861025227901329362" role="9wj7.1073389446423.1073389446424" info="sn">
+          <node concept="9wj7.1233758997495" id="3861025227901329363" role="9wj7.1219418625346.1219418656006" info="ln">
+            <property role="9wj7.1186414536763.1186414551515" value="true" />
+          </node>
+          <node concept="9wj7.1236262245656" id="3861025227901329364" role="9wj7.1219418625346.1219418656006" info="ln">
+            <property role="9wj7.1236262245656.1238091709220" value="paren-attrs" />
+          </node>
+        </node>
       </node>
     </node>
   </contents>
