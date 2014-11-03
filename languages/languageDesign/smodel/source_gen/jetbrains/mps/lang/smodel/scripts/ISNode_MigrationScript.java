@@ -117,13 +117,13 @@ public class ISNode_MigrationScript extends BaseMigrationScript {
         if (jetbrains.mps.smodel.SNodeId.fromString("~SNode.getFirstChild():org.jetbrains.mps.openapi.model.SNode").equals(targetNodeId)) {
           return true;
         }
+        if (jetbrains.mps.smodel.SNodeId.fromString("~SNode.getLastChild():org.jetbrains.mps.openapi.model.SNode").equals(targetNodeId)) {
+          return true;
+        }
         if (jetbrains.mps.smodel.SNodeId.fromString("~SNode.getPrevSibling():org.jetbrains.mps.openapi.model.SNode").equals(targetNodeId)) {
           return true;
         }
         if (jetbrains.mps.smodel.SNodeId.fromString("~SNode.getNextSibling():org.jetbrains.mps.openapi.model.SNode").equals(targetNodeId)) {
-          return true;
-        }
-        if (jetbrains.mps.smodel.SNodeId.fromString("~SNode.getLastChild():org.jetbrains.mps.openapi.model.SNode").equals(targetNodeId)) {
           return true;
         }
         if (jetbrains.mps.smodel.SNodeId.fromString("~SNode.getChildren(org.jetbrains.mps.openapi.language.SContainmentLink):java.lang.Iterable").equals(targetNodeId)) {

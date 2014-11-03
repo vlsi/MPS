@@ -57,6 +57,7 @@ public interface SNode {
    *
    * @see SModelAccessListener
    */
+  @Nullable
   SModel getModel();
 
   /**
@@ -69,7 +70,9 @@ public interface SNode {
    * Uniquely identifies the node in a repository. Never changes between subsequent read and write actions and behaves as a "weak reference" for a node
    * Represents the only correct way to pass or store nodes between read/write actions.
    * Does not produce node read event as the node is already obtained, and the read event has already happened.
+   * If obtained for a node that is not in repository, can return invalid reference
    */
+  @NotNull
   SNodeReference getReference();
 
   /**
@@ -93,7 +96,10 @@ public interface SNode {
 
   // tree operation
 
-  void addChild(SContainmentLink role, SNode child);
+  /**
+   * Adds a new child as a last child in a given role.
+   */
+  void addChild(@NotNull SContainmentLink role, @NotNull SNode child);
 
   /**
    * Inserts the given node as a child of the current node of the specified role directly behind the anchor node.<br/>
@@ -103,12 +109,12 @@ public interface SNode {
    * @param anchor a new child node will be inserted just before this node. If anchor is not specified,
    *               a new child is inserted as a last child
    */
-  void insertChildBefore(SContainmentLink role, SNode child, @Nullable SNode anchor);
+  void insertChildBefore(@NotNull SContainmentLink role, @NotNull SNode child, @Nullable SNode anchor);
 
   /**
    * Removes the child of this node. See "node manipulation" section in class doc
    */
-  void removeChild(SNode child);
+  void removeChild(@NotNull SNode child);
 
   /**
    * If the node is a root, removes it from a model, else removes the node from its parent.
@@ -124,50 +130,70 @@ public interface SNode {
    *
    * @return parent of this node
    */
+  @Nullable
   SNode getParent();
 
   //complex queries
 
-  @NotNull
   /**
    * Returns the ancestor of current node, which parent is null
    * Does not produce read on current as current is already obtained
+   *
    * @return root containing this node
    */
+  @NotNull
   SNode getContainingRoot();
 
   /**
    * Returns role of this node in parent node
+   * Returns null if a node has no parent
    */
+  @Nullable
   SContainmentLink getContainmentLink();
 
+  /**
+   * Works together with getLastChild(). Allows to iterate through a collection of all children.
+   *
+   * @return first element in a collection of children
+   */
+  @Nullable
   SNode getFirstChild();
+
+  /**
+   * Works together with getFirstChild(). Allows to iterate through a collection of all children.
+   *
+   * @return last element in a collection of children
+   */
+  @Nullable
+  SNode getLastChild();
 
   /**
    * no parent -> no sibling. Root has no siblings
    * Does not produce read on current as current is already obtained
    */
+  @Nullable
   SNode getPrevSibling();
 
   /**
    * no parent -> no sibling. Root has no siblings
    * Does not produce read on current as current is already obtained
    */
+  @Nullable
   SNode getNextSibling();
-
-  SNode getLastChild();
 
   /**
    * Returns an immutable collection of children in the specified role.
    * Does not produce read on current as current is already obtained, produces read accesses to child nodes lazily (when really accessed),
    * does not produce read accesses for skipped children
    */
-  Iterable<? extends SNode> getChildren(SContainmentLink role);
+  @NotNull
+  Iterable<? extends SNode> getChildren( SContainmentLink role);
 
   /**
    * Returns an immutable collection of all children.
    * Read access policy is same to getChildren(role)
    */
+  @NotNull
   public Iterable<? extends SNode> getChildren();
 
   // refs
@@ -175,12 +201,13 @@ public interface SNode {
   /**
    * Sets a reference of the given role to a particular node
    */
-  void setReferenceTarget(SReferenceLink role, @Nullable SNode target);
+  void setReferenceTarget(@NotNull SReferenceLink role, @Nullable SNode target);
 
   /**
    * Null means the reference has not been set or was set to null. It's impossible to the distinguish the two cases.
    */
-  SNode getReferenceTarget(SReferenceLink role);
+  @Nullable
+  SNode getReferenceTarget(@NotNull SReferenceLink role);
 
   // SReferences
 
@@ -189,14 +216,15 @@ public interface SNode {
    * Since SReference can refer to nodes by name and resolve them dynamically, this method may be able to help you resolve
    * the target node even when working with invalid code.
    */
-  SReference getReference(SReferenceLink role);
+  @Nullable
+  SReference getReference(@NotNull SReferenceLink role);
 
   /**
    * Sets a reference of the given role to a node that is resolved from the SReference.
    * Since SReference can refer to nodes by name and resolve them dynamically, this method may be able to resolve
    * the target node even when working with invalid code.
    */
-  void setReference(SReferenceLink role, SReference reference);
+  void setReference(@NotNull SReferenceLink role, @Nullable SReference reference);
 
   /**
    * Retrieves all SReferences from the node.
@@ -206,6 +234,7 @@ public interface SNode {
    * The returned collection is immutable.
    * Produces read access on the node.
    */
+  @NotNull
   public Iterable<? extends SReference> getReferences();
 
   // props
@@ -213,13 +242,23 @@ public interface SNode {
   /**
    * Retrieves keys of all properties. The returned collection is immutable.
    */
+  @NotNull
   Iterable<SProperty> getProperties();
 
-  boolean hasProperty(SProperty property);
+  //todo remove this method as it has strange semantics
+  boolean hasProperty(@NotNull SProperty property);
 
-  String getProperty(SProperty property);
+  /**
+   * Returns the value of this property
+   * @return value of a property or null if the property was not set
+   */
+  @Nullable
+  String getProperty(@NotNull SProperty property);
 
-  void setProperty(SProperty property, String propertyValue);
+  /**
+   * Sets the value of the raw property. Constraints are not checked.
+   */
+  void setProperty(@NotNull SProperty property, @Nullable String propertyValue);
 
   // user objects
 
@@ -232,34 +271,43 @@ public interface SNode {
   //------------deprecated, remove after 3.2-----------
 
   /**
-   * Returns role of this node in parent node
+   * @deprecated use getContainmentLink()
    */
   @Deprecated
   String getRoleInParent();
 
+  /**
+   * @deprecated use hasProperty(SProperty)
+   */
   @Deprecated
   boolean hasProperty(String propertyName);
 
+  /**
+   * @deprecated use getProperty(SProperty)
+   */
   @Deprecated
   String getProperty(String propertyName);
 
+  /**
+   * @deprecated use setProperty(SProperty)
+   */
   @Deprecated
   void setProperty(String propertyName, String propertyValue);
 
   /**
-   * Retrieves keys of all properties. The returned collection is immutable.
+   * @deprecated use getProperties()
    */
   @Deprecated
   Iterable<String> getPropertyNames();
 
   /**
-   * Sets a reference of the given role to a particular node
+   * @deprecated use setReferenceTarget(SReferenceLink, SNode)
    */
   @Deprecated
   void setReferenceTarget(String role, @Nullable SNode target);
 
   /**
-   * Null means the reference has not been set or was set to null. It's impossible to the distinguish the two cases.
+   * @deprecated use getReferenceTarget(SReferenceLink)
    */
   @Deprecated
   SNode getReferenceTarget(String role);
@@ -267,27 +315,32 @@ public interface SNode {
   // SReferences
 
   /**
-   * Retrieves an SReference of the given role to a node.
-   * Since SReference can refer to nodes by name and resolve them dynamically, this method may be able to help you resolve
-   * the target node even when working with invalid code.
+   * @deprecated use getReference(SReferenceLink)
    */
   @Deprecated
   SReference getReference(String role);
 
   /**
-   * Sets a reference of the given role to a node that is resolved from the SReference.
-   * Since SReference can refer to nodes by name and resolve them dynamically, this method may be able to resolve
-   * the target node even when working with invalid code.
+   * @deprecated use setReference(SReferenceLink, SReference)
    */
   @Deprecated
   void setReference(String role, SReference reference);
 
+  /**
+   * @deprecated use insertChildBefore(SContainmentLink, SNode, SNode)
+   */
   @Deprecated
   void insertChildBefore(String role, SNode child, @Nullable SNode anchor);
 
+  /**
+   * @deprecated use addChild(SContainmentLink, SNode)
+   */
   @Deprecated
   void addChild(String role, SNode child);
 
+  /**
+   * @deprecated use getChildren(SContainmentLink)
+   */
   @Deprecated
   Iterable<? extends SNode> getChildren(String role);
 }
