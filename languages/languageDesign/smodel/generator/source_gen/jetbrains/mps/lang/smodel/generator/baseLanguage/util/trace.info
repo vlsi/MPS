@@ -10,12 +10,12 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
   <root nodeRef="r:00000000-0000-4000-0000-011c89590302(jetbrains.mps.lang.smodel.generator.baseLanguage.util)/1168968323635">
     <file name="QueriesUtil.java">
-      <node id="1239205751278" at="22,84,23,281" concept="4" />
-      <node id="1239205980406" at="23,281,24,48" concept="4" />
+      <node id="1239205751278" at="22,84,23,383" concept="4" />
+      <node id="1239205980406" at="23,383,24,48" concept="4" />
       <node id="1239205993913" at="26,187,27,217" concept="1" />
       <node id="1239206008559" at="29,5,30,18" concept="5" />
-      <node id="3769812235505815455" at="32,81,33,286" concept="4" />
-      <node id="3769812235505815462" at="33,286,34,48" concept="4" />
+      <node id="3769812235505815455" at="32,81,33,394" concept="4" />
+      <node id="3769812235505815462" at="33,394,34,48" concept="4" />
       <node id="3769812235505815506" at="35,34,36,20" concept="5" />
       <node id="3769812235505815481" at="39,187,40,217" concept="1" />
       <node id="3769812235505815488" at="42,5,43,18" concept="5" />
@@ -24,31 +24,31 @@
       <node id="1239207960148" at="51,64,52,177" concept="5" />
       <node id="1239207160870" at="54,80,55,358" concept="4" />
       <node id="1239207076973" at="55,358,56,36" concept="4" />
-      <node id="1239465982929" at="57,120,58,134" concept="4" />
+      <node id="1239465982929" at="57,223,58,237" concept="4" />
       <node id="1239207240210" at="59,98,60,34" concept="1" />
       <node id="1239207258723" at="61,105,62,34" concept="1" />
       <node id="1239207077001" at="64,5,65,167" concept="4" />
       <node id="1239207077025" at="67,197,68,22" concept="5" />
       <node id="1239207077027" at="70,5,71,16" concept="5" />
       <node id="1239207394966" at="73,78,74,358" concept="4" />
-      <node id="1239207424154" at="74,358,75,306" concept="4" />
-      <node id="1239207394974" at="75,306,76,40" concept="4" />
+      <node id="1239207424154" at="74,358,75,409" concept="4" />
+      <node id="1239207394974" at="75,409,76,40" concept="4" />
       <node id="1239207514247" at="77,96,78,36" concept="1" />
       <node id="1239207514260" at="79,103,80,36" concept="1" />
       <node id="1239207395010" at="81,5,82,167" concept="4" />
       <node id="1239207395034" at="84,197,85,22" concept="5" />
       <node id="1239207395036" at="87,5,88,16" concept="5" />
-      <node id="1239207662554" at="90,79,91,642" concept="5" />
+      <node id="1239207662554" at="90,79,91,745" concept="5" />
       <node id="1168968630547" at="93,61,94,171" concept="4" />
       <node id="1168968839965" at="95,23,96,18" concept="5" />
       <node id="1168968847798" at="97,5,98,169" concept="1" />
       <node id="1168968918836" at="98,169,99,24" concept="5" />
       <node id="1220269378439" at="101,79,102,126" concept="4" />
-      <node id="1170702261830" at="102,126,103,214" concept="4" />
-      <node id="1170702261837" at="103,214,104,197" concept="5" />
+      <node id="1170702261830" at="102,126,103,317" concept="4" />
+      <node id="1170702261837" at="103,317,104,197" concept="5" />
       <node id="1220269492073" at="106,76,107,115" concept="4" />
-      <node id="1171246134157" at="107,115,108,207" concept="4" />
-      <node id="1170702390219" at="108,207,109,201" concept="5" />
+      <node id="1171246134157" at="107,115,108,310" concept="4" />
+      <node id="1170702390219" at="108,310,109,201" concept="5" />
       <node id="1172424577871" at="111,56,112,40" concept="5" />
       <node id="1239205957464" at="25,230,28,7" concept="3" />
       <node id="3769812235505815496" at="34,48,37,5" concept="3" />
@@ -63,7 +63,7 @@
       <node id="1172424541766" at="111,0,114,0" concept="7" trace="getConceptFqName#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
       <node id="1239205872792" at="24,48,29,5" concept="2" />
       <node id="3769812235505815468" at="37,5,42,5" concept="2" />
-      <node id="1239207211565" at="58,134,63,7" concept="3" />
+      <node id="1239207211565" at="58,237,63,7" concept="3" />
       <node id="1239207077011" at="65,167,70,5" concept="2" />
       <node id="1239207514245" at="76,40,81,5" concept="3" />
       <node id="1239207395020" at="82,167,87,5" concept="2" />
@@ -87,7 +87,7 @@
       <scope id="1239207514246" at="77,96,78,36" />
       <scope id="1239207514259" at="79,103,80,36" />
       <scope id="1239207395033" at="84,197,85,22" />
-      <scope id="1239207582087" at="90,79,91,642" />
+      <scope id="1239207582087" at="90,79,91,745" />
       <scope id="1168968665243" at="95,23,96,18" />
       <scope id="1172424541768" at="111,56,112,40" />
       <scope id="1239205872795" at="25,230,28,7" />
@@ -135,7 +135,7 @@
       <scope id="1168979519274" at="106,0,111,0">
         <var name="op" id="1168979519275" />
       </scope>
-      <scope id="1239207076984" at="57,120,63,7">
+      <scope id="1239207076984" at="57,223,63,7">
         <var name="primitiveDatatype" id="1239465982930" />
       </scope>
       <scope id="1168968334482" at="93,61,99,24">
@@ -180,12 +180,12 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590302(jetbrains.mps.lang.smodel.generator.baseLanguage.util)/1239206083907">
     <file name="SModelLanguageUtil.java">
-      <node id="1239206335500" at="16,91,17,25" concept="5" />
+      <node id="1239206335500" at="16,136,17,25" concept="5" />
       <node id="1239206371052" at="19,5,20,16" concept="5" />
       <node id="1239206311936" at="15,230,18,7" concept="3" />
       <node id="1239206264874" at="14,91,19,5" concept="2" />
       <node id="1239206111476" at="14,0,22,0" concept="7" trace="findNodeOperationParameter#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <scope id="1239206311938" at="16,91,17,25" />
+      <scope id="1239206311938" at="16,136,17,25" />
       <scope id="1239206264877" at="15,230,18,7" />
       <scope id="1239206264874" at="14,91,19,5">
         <var name="parameter" id="1239206264875" />

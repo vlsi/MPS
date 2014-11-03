@@ -17,7 +17,6 @@
     <classNode dependClassName="jetbrains.mps.generator.template.TemplateQueryContext" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
-    <classNode dependClassName="jetbrains.mps.kernel.model.SModelUtil" />
     <classNode dependClassName="jetbrains.mps.lang.behavior.behavior.BehaviorMethodNames" />
     <classNode dependClassName="jetbrains.mps.lang.behavior.behavior.SuperNodeExpression_Behavior" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.behavior.Node_ConceptMethodCall_Behavior" />

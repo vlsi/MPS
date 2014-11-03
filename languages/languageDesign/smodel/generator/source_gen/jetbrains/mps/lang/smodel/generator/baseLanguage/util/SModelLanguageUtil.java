@@ -8,12 +8,12 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.UUID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration;
 
 public class SModelLanguageUtil {
   public static SNode findNodeOperationParameter(SNode operation, SNode parameterConcept) {
     for (SNode parameter : ListSequence.fromList(SLinkOperations.getChildren(operation, MetaAdapterFactory.getContainmentLink(new UUID(8675788371017092295l, -9098312342032910879l), 1138411891628l, 1144104376918l, "parameter")))) {
-      if (SNodeOperations.isInstanceOf(parameter, NameUtil.nodeFQName(parameterConcept))) {
+      if (SNodeOperations.isInstanceOf(parameter, MetaAdapterByDeclaration.getConcept((jetbrains.mps.smodel.SNode) parameterConcept))) {
         return parameter;
       }
     }
