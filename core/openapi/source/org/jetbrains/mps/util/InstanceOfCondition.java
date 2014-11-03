@@ -30,9 +30,15 @@ public final class InstanceOfCondition implements Condition<SNode> {
   private final SConcept[] myConcepts;
   private boolean myTolerateNull = false;
 
+  @Deprecated
   public InstanceOfCondition(@NotNull String conceptQualifiedName) {
     myConcepts = new SConcept[1];
     myConcepts[0] = SConceptRepository.getInstance().getInstanceConcept(conceptQualifiedName);
+  }
+
+  public InstanceOfCondition(@NotNull SConcept concept) {
+    myConcepts = new SConcept[1];
+    myConcepts[0] = concept;
   }
 
   /**
@@ -46,11 +52,23 @@ public final class InstanceOfCondition implements Condition<SNode> {
     myTolerateNull = true;
     return this;
   }
+
+  @Deprecated
   public InstanceOfCondition(@NotNull String[] conceptQualifiedNames) {
     ArrayList<SConcept> a = new ArrayList<SConcept>(conceptQualifiedNames.length);
     for (String n : conceptQualifiedNames) {
       if (n != null) {
         a.add(SConceptRepository.getInstance().getInstanceConcept(n));
+      }
+    }
+    myConcepts = a.toArray(new SConcept[a.size()]);
+  }
+
+  public InstanceOfCondition(@NotNull SConcept[] concepts) {
+    ArrayList<SConcept> a = new ArrayList<SConcept>(concepts.length);
+    for (SConcept n : concepts) {
+      if (n != null) {
+        a.add(n);
       }
     }
     myConcepts = a.toArray(new SConcept[a.size()]);
