@@ -91,6 +91,9 @@ public class ConvertToList_Intention implements IntentionFactory {
       return ConvertToList_Intention.this;
     }
   }
+  private static boolean eq_63cojg_a0a0k(Object a, Object b) {
+    return (a != null ? a.equals(b) : a == b);
+  }
   private static SNode _quotation_createNode_mz75hy_a0a2a0(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
@@ -106,8 +109,5 @@ public class ConvertToList_Intention implements IntentionFactory {
     }
     quotedNode_2.addChild(MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1145552977093l, 1145553007750l, "creator"), quotedNode_3);
     return quotedNode_2;
-  }
-  private static boolean eq_63cojg_a0a0k(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
   }
 }

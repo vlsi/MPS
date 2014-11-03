@@ -4,9 +4,9 @@ package jetbrains.mps.lang.findUsages;
 
 import jetbrains.mps.generator.runtime.TemplateModuleBase;
 import java.util.Collection;
-import jetbrains.mps.generator.runtime.TemplateMappingPriorityRule;
 import jetbrains.mps.generator.runtime.TemplateModel;
 import jetbrains.mps.generator.runtime.TemplateUtil;
+import jetbrains.mps.generator.runtime.TemplateMappingPriorityRule;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.language.LanguageRuntime;
@@ -17,12 +17,10 @@ import jetbrains.mps.generator.runtime.TemplateModule;
 public class Generator extends TemplateModuleBase {
   public static String MODULE_REF = "1759b4cc-455d-49b4-a360-8baf1f5f8bab(jetbrains.mps.lang.findUsages#1197044805809)";
   private Language sourceLanguage;
-  private final Collection<TemplateMappingPriorityRule> priorities;
   private final Collection<TemplateModel> models;
   private Collection<String> usedLanguages;
   public Generator(Language sourceLanguage) {
     this.sourceLanguage = sourceLanguage;
-    priorities = TemplateUtil.asCollection(TemplateUtil.createStrictlyBeforeRule(TemplateUtil.createRefExternal("1759b4cc-455d-49b4-a360-8baf1f5f8bab(jetbrains.mps.lang.findUsages#1197044805809)", TemplateUtil.createRefLocal()), TemplateUtil.createRefExternal("5f9babc9-8d5d-4825-8e61-17b241ee6272(jetbrains.mps.baseLanguage.collections#1151699677197)", TemplateUtil.createRefLocal())));
     models = TemplateUtil.<TemplateModel>asCollection(getTemplateModel("jetbrains.mps.lang.findUsages.generator.baseLanguage.template.main.TemplateModelImpl"));
     usedLanguages = TemplateUtil.<String>asCollection("jetbrains.mps.baseLanguage", "jetbrains.mps.baseLanguage.collections", "jetbrains.mps.lang.smodel");
   }
@@ -36,7 +34,7 @@ public class Generator extends TemplateModuleBase {
   }
   @Override
   public Collection<TemplateMappingPriorityRule> getPriorities() {
-    return priorities;
+    return null;
   }
   @Override
   public SModuleReference getReference() {

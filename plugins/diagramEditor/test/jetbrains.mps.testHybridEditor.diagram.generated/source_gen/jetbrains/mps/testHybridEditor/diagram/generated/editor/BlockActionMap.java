@@ -34,23 +34,23 @@ public class BlockActionMap {
       }
       SNodeOperations.deleteNode(node);
     }
+    private static boolean eq_dpv54c_a0a0a0a3b(Object a, Object b) {
+      return (a != null ? a.equals(b) : a == b);
+    }
     private static SNode check_dpv54c_a0a0a0a0a(SNode checkedDotOperand) {
       if (null != checkedDotOperand) {
         return SLinkOperations.getTarget(checkedDotOperand, MetaAdapterFactory.getReferenceLink(new UUID(-7982035075869357830l, -5979686021354407916l), 5288989961863963745l, 5288989961863964092l, "block"));
       }
       return null;
     }
+    private static boolean eq_dpv54c_a0a0a0a3b_0(Object a, Object b) {
+      return (a != null ? a.equals(b) : a == b);
+    }
     private static SNode check_dpv54c_a0a0a0a0a_0(SNode checkedDotOperand) {
       if (null != checkedDotOperand) {
         return SLinkOperations.getTarget(checkedDotOperand, MetaAdapterFactory.getReferenceLink(new UUID(-7982035075869357830l, -5979686021354407916l), 5288989961863963745l, 5288989961863964092l, "block"));
       }
       return null;
-    }
-    private static boolean eq_dpv54c_a0a0a0a3b(Object a, Object b) {
-      return (a != null ? a.equals(b) : a == b);
-    }
-    private static boolean eq_dpv54c_a0a0a0a3b_0(Object a, Object b) {
-      return (a != null ? a.equals(b) : a == b);
     }
   }
   public static class BlockActionMap_BACKSPACE extends AbstractCellAction {
@@ -69,23 +69,23 @@ public class BlockActionMap {
       }
       SNodeOperations.deleteNode(node);
     }
+    private static boolean eq_dpv54c_a0a0a0a3c(Object a, Object b) {
+      return (a != null ? a.equals(b) : a == b);
+    }
     private static SNode check_dpv54c_a0a0a0a0a(SNode checkedDotOperand) {
       if (null != checkedDotOperand) {
         return SLinkOperations.getTarget(checkedDotOperand, MetaAdapterFactory.getReferenceLink(new UUID(-7982035075869357830l, -5979686021354407916l), 5288989961863963745l, 5288989961863964092l, "block"));
       }
       return null;
     }
+    private static boolean eq_dpv54c_a0a0a0a3c_0(Object a, Object b) {
+      return (a != null ? a.equals(b) : a == b);
+    }
     private static SNode check_dpv54c_a0a0a0a0a_0(SNode checkedDotOperand) {
       if (null != checkedDotOperand) {
         return SLinkOperations.getTarget(checkedDotOperand, MetaAdapterFactory.getReferenceLink(new UUID(-7982035075869357830l, -5979686021354407916l), 5288989961863963745l, 5288989961863964092l, "block"));
       }
       return null;
-    }
-    private static boolean eq_dpv54c_a0a0a0a3c(Object a, Object b) {
-      return (a != null ? a.equals(b) : a == b);
-    }
-    private static boolean eq_dpv54c_a0a0a0a3c_0(Object a, Object b) {
-      return (a != null ? a.equals(b) : a == b);
     }
   }
 }

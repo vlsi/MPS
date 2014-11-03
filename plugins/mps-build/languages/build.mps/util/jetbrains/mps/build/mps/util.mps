@@ -41,6 +41,7 @@
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068390468198" name="jetbrains.mps.baseLanguage.structure.ClassConcept" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068390468200" name="jetbrains.mps.baseLanguage.structure.FieldDeclaration" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068431474542" name="jetbrains.mps.baseLanguage.structure.VariableDeclaration" />
+    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068431790191" name="jetbrains.mps.baseLanguage.structure.Expression" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068498886292" name="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068498886294" name="jetbrains.mps.baseLanguage.structure.AssignmentExpression" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068498886296" name="jetbrains.mps.baseLanguage.structure.VariableReference" />
@@ -87,6 +88,7 @@
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1082485599095" name="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1083245097125" name="jetbrains.mps.baseLanguage.structure.EnumClass" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1083245299891" name="jetbrains.mps.baseLanguage.structure.EnumConstantDeclaration" />
+    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1083260308424" name="jetbrains.mps.baseLanguage.structure.EnumConstantReference" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1092119917967" name="jetbrains.mps.baseLanguage.structure.MulExpression" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1107461130800" name="jetbrains.mps.baseLanguage.structure.Classifier" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1107535904670" name="jetbrains.mps.baseLanguage.structure.ClassifierType" />
@@ -263,6 +265,7 @@
     <property id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068390468200/8606350594693632173" name="isTransient" />
     <refRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1204053956946/1068499141037" name="baseMethodDeclaration" />
     <refRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068498886296/1068581517664" name="variableDeclaration" />
+    <refRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1083260308424/1083260308426" name="enumConstantDeclaration" />
     <refRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1107535904670/1107535924139" name="classifier" />
     <refRole id="7866978e-a0f0-4cc7-81bc-4d213d9375e1/1138056022639/1138056395725" name="property" />
     <refRole id="7866978e-a0f0-4cc7-81bc-4d213d9375e1/1138056143562/1138056516764" name="link" />
@@ -270,6 +273,7 @@
     <refRole id="7866978e-a0f0-4cc7-81bc-4d213d9375e1/1138055754698/1138405853777" name="concept" />
     <refRole id="7866978e-a0f0-4cc7-81bc-4d213d9375e1/1140137987495/1140138128738" name="concept" />
     <refRole id="7866978e-a0f0-4cc7-81bc-4d213d9375e1/1143235216708/1143235391024" name="concept" />
+    <refRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1083260308424/1144432896254" name="enumClass" />
     <refRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1070533707846/1144433057691" name="classifier" />
     <refRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1081236700937/1144433194310" name="classConcept" />
     <refRole id="7866978e-a0f0-4cc7-81bc-4d213d9375e1/1145383075378/1145383142433" name="elementConcept" />
@@ -362,6 +366,7 @@
     <childRole id="fd392034-7849-419d-9071-12563d152375/1199569711397/1199569916463" name="body" />
     <childRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1170345865475/1201186121363" name="typeParameter" />
     <childRole id="83888646-71ce-4f1c-9c53-c54016f6ad4f/1201306600024/1201654602639" name="key" />
+    <childRole id="83888646-71ce-4f1c-9c53-c54016f6ad4f/1202120902084/1202120914925" name="filter" />
     <childRole id="83888646-71ce-4f1c-9c53-c54016f6ad4f/1204796164442/1204796294226" name="closure" />
     <childRole id="83888646-71ce-4f1c-9c53-c54016f6ad4f/1205679737078/1205679832066" name="ascending" />
     <childRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123159/1206060520071" name="elsifClauses" />
@@ -14920,26 +14925,85 @@
             </node>
           </node>
           <node concept="vg0i.1068580123157" id="7316240245164079377" role="vg0i.1068580123136.1068581517665" info="nn" />
+          <node concept="vg0i.6329021646629104954" id="910113892395658660" role="vg0i.1068580123136.1068581517665" info="nn">
+            <node concept="vg0i.6329021646629104957" id="910113892395669359" role="vg0i.6329021646629104954.6329021646629175155" info="nn">
+              <property role="vg0i.6329021646629104957.6329021646629104958" value="FIXME: exclusion of Design dependencies is sort of a hack. It's added to address change in generator 'extends' relationship, which is now 'design' (unless" />
+            </node>
+          </node>
+          <node concept="vg0i.6329021646629104954" id="910113892395719765" role="vg0i.1068580123136.1068581517665" info="nn">
+            <node concept="vg0i.6329021646629104957" id="910113892395730302" role="vg0i.6329021646629104954.6329021646629175155" info="nn">
+              <property role="vg0i.6329021646629104957.6329021646629104958" value="generator truly use other generator) - for the sake of priority rules. descriptor.getDependencies() didn't include extended generators (they were kept separately)" />
+            </node>
+          </node>
+          <node concept="vg0i.6329021646629104954" id="910113892395748460" role="vg0i.1068580123136.1068581517665" info="nn">
+            <node concept="vg0i.6329021646629104957" id="910113892395754756" role="vg0i.6329021646629104954.6329021646629175155" info="nn">
+              <property role="vg0i.6329021646629104957.6329021646629104958" value="and extended generators didn't get attention of this ModuleChecker. Now, with dependencies honestly exposed, we need to decide what to do with some of them. And the" />
+            </node>
+          </node>
+          <node concept="vg0i.6329021646629104954" id="910113892395775006" role="vg0i.1068580123136.1068581517665" info="nn">
+            <node concept="vg0i.6329021646629104957" id="910113892395786259" role="vg0i.6329021646629104954.6329021646629175155" info="nn">
+              <property role="vg0i.6329021646629104957.6329021646629104958" value="hack is here, just to remove 'em, and pretend this is ok. OTOH, 'design' seems to be legitimate sort of dependency not to consider for build." />
+            </node>
+          </node>
+          <node concept="vg0i.6329021646629104954" id="910113892395688480" role="vg0i.1068580123136.1068581517665" info="nn">
+            <node concept="vg0i.6329021646629104957" id="910113892395700420" role="vg0i.6329021646629104954.6329021646629175155" info="nn">
+              <property role="vg0i.6329021646629104957.6329021646629104958" value="In fact, there's only 1 troublesome dependency, generators of mpsBootstrapCore languages (lang.access and lang.resources) depend from lang.plugin.standalone, which is part of" />
+            </node>
+          </node>
+          <node concept="vg0i.6329021646629104954" id="910113892395976372" role="vg0i.1068580123136.1068581517665" info="nn">
+            <node concept="vg0i.6329021646629104957" id="910113892395987411" role="vg0i.6329021646629104954.6329021646629175155" info="nn">
+              <property role="vg0i.6329021646629104957.6329021646629104958" value="mpsWorkbench and hence not visible in mpsBootstrapCore. It's odd provided lang.plugin IS part of mpsBootstrapCore." />
+            </node>
+          </node>
           <node concept="vg0i.1068581242864" id="7316240245138669490" role="vg0i.1068580123136.1068581517665" info="nn">
             <node concept="vg0i.1068581242863" id="7316240245138669491" role="vg0i.1068581242864.1068581242865" info="nr">
               <property role="asn4.1169194658468.1169194664001" value="dependencies" />
-              <node concept="vg0i.1145552977093" id="1517654889514065629" role="vg0i.1068431474542.1068431790190" info="nn">
-                <node concept="j0ph.1226516258405" id="1517654889514130041" role="vg0i.1145552977093.1145553007750" info="nn">
-                  <node concept="vg0i.1107535904670" id="1517654889514130863" role="j0ph.1237721394592.1237721435807" info="in">
-                    <reference role="vg0i.1107535904670.1107535924139" target="kqhl.~Dependency" resolveInfo="Dependency" />
-                  </node>
-                  <node concept="vg0i.1197027756228" id="7316240245138669492" role="j0ph.1237721394592.1237731803878" info="nn">
-                    <node concept="vg0i.1202948039474" id="7316240245138669493" role="vg0i.1197027756228.1197027833540" info="nn">
-                      <reference role="vg0i.1204053956946.1068499141037" target="kqhl.~ModuleDescriptor%dgetDependencies()%cjava%dutil%dCollection" resolveInfo="getDependencies" />
+              <node concept="vg0i.1197027756228" id="910113892395586580" role="vg0i.1068431474542.1068431790190" info="nn">
+                <node concept="vg0i.1145552977093" id="1517654889514065629" role="vg0i.1197027756228.1197027771414" info="nn">
+                  <node concept="j0ph.1226516258405" id="1517654889514130041" role="vg0i.1145552977093.1145553007750" info="nn">
+                    <node concept="vg0i.1107535904670" id="1517654889514130863" role="j0ph.1237721394592.1237721435807" info="in">
+                      <reference role="vg0i.1107535904670.1107535924139" target="kqhl.~Dependency" resolveInfo="Dependency" />
                     </node>
-                    <node concept="vg0i.1068498886296" id="3021153905120233230" role="vg0i.1197027756228.1197027771414" info="nn">
-                      <reference role="vg0i.1068498886296.1068581517664" target="7316240245138667093" resolveInfo="myModuleDescriptor" />
+                    <node concept="vg0i.1197027756228" id="7316240245138669492" role="j0ph.1237721394592.1237731803878" info="nn">
+                      <node concept="vg0i.1202948039474" id="7316240245138669493" role="vg0i.1197027756228.1197027833540" info="nn">
+                        <reference role="vg0i.1204053956946.1068499141037" target="kqhl.~ModuleDescriptor%dgetDependencies()%cjava%dutil%dCollection" resolveInfo="getDependencies" />
+                      </node>
+                      <node concept="vg0i.1068498886296" id="3021153905120233230" role="vg0i.1197027756228.1197027771414" info="nn">
+                        <reference role="vg0i.1068498886296.1068581517664" target="7316240245138667093" resolveInfo="myModuleDescriptor" />
+                      </node>
                     </node>
                   </node>
                 </node>
+                <node concept="j0ph.1202120902084" id="910113892395602162" role="vg0i.1197027756228.1197027833540" info="nn">
+                  <node concept="cakq.1199569711397" id="910113892395602164" role="j0ph.1204796164442.1204796294226" info="nn">
+                    <node concept="vg0i.1068580123136" id="910113892395602165" role="cakq.1199569711397.1199569916463" info="sn">
+                      <node concept="vg0i.1068580123155" id="910113892395610921" role="vg0i.1068580123136.1068581517665" info="nn">
+                        <node concept="vg0i.1073239437375" id="910113892395620881" role="vg0i.1068580123155.1068580123156" info="nn">
+                          <node concept="vg0i.1083260308424" id="910113892395626314" role="vg0i.1081773326031.1081773367579" info="nn">
+                            <reference role="vg0i.1083260308424.1083260308426" target="88zw.~SDependencyScope%dDESIGN" resolveInfo="DESIGN" />
+                            <reference role="vg0i.1083260308424.1144432896254" target="88zw.~SDependencyScope" resolveInfo="SDependencyScope" />
+                          </node>
+                          <node concept="vg0i.1197027756228" id="910113892395612169" role="vg0i.1081773326031.1081773367580" info="nn">
+                            <node concept="vg0i.1068498886296" id="910113892395610920" role="vg0i.1197027756228.1197027771414" info="nn">
+                              <reference role="vg0i.1068498886296.1068581517664" target="910113892395602166" resolveInfo="it" />
+                            </node>
+                            <node concept="vg0i.1202948039474" id="910113892395616864" role="vg0i.1197027756228.1197027833540" info="nn">
+                              <reference role="vg0i.1204053956946.1068499141037" target="kqhl.~Dependency%dgetScope()%corg%djetbrains%dmps%dopenapi%dmodule%dSDependencyScope" resolveInfo="getScope" />
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                    <node concept="j0ph.1203518072036" id="910113892395602166" role="cakq.1199569711397.1199569906740" info="ig">
+                      <property role="asn4.1169194658468.1169194664001" value="it" />
+                      <node concept="vg0i.4836112446988635817" id="910113892395602167" role="vg0i.4972933694980447171.5680397130376446158" info="in" />
+                    </node>
+                  </node>
+                  <node concept="vg0i.1068431790191" id="910113892395602168" role="j0ph.1202120902084.1202120914925" info="nn" />
+                </node>
               </node>
-              <node concept="j0ph.1226511727824" id="1517654889513932676" role="vg0i.4972933694980447171.5680397130376446158" info="in">
-                <node concept="vg0i.1107535904670" id="1517654889513935945" role="j0ph.1226511727824.1226511765987" info="in">
+              <node concept="j0ph.1151689724996" id="910113892395645863" role="vg0i.4972933694980447171.5680397130376446158" info="in">
+                <node concept="vg0i.1107535904670" id="910113892395645865" role="j0ph.1151689724996.1151689745422" info="in">
                   <reference role="vg0i.1107535904670.1107535924139" target="kqhl.~Dependency" resolveInfo="Dependency" />
                 </node>
               </node>
