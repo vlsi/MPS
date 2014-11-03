@@ -75,13 +75,13 @@ public class AttributeOperations {
     return addAttribute(node, descriptor, (SNode) SModelOperations.createNewNode(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getModel(node), newConceptFqname));
   }
   public static SNode getLinkDeclaration(SNode attribute) {
-    return jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.as(SModelSearchUtil.findLinkDeclaration(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getConceptDeclaration(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getParent(attribute)), getLinkRole(attribute)), "jetbrains.mps.lang.structure.structure.LinkDeclaration");
+    return jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.as(SModelSearchUtil.findLinkDeclaration(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getConceptDeclaration(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getParent(attribute)), getLinkRole(attribute)), MetaAdapterFactory.getConcept(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489288298l, "jetbrains.mps.lang.structure.structure.LinkDeclaration"));
   }
   public static String getLinkRole(SNode attribute) {
     return SPropertyOperations.getString(attribute, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 3364660638048049745l, 1757699476691236116l, "linkRole"));
   }
   public static SNode getPropertyDeclaration(SNode attribute) {
-    return jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.as(SModelSearchUtil.findPropertyDeclaration(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getConceptDeclaration(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getParent(attribute)), getPropertyName(attribute)), "jetbrains.mps.lang.structure.structure.PropertyDeclaration");
+    return jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.as(SModelSearchUtil.findPropertyDeclaration(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getConceptDeclaration(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getParent(attribute)), getPropertyName(attribute)), MetaAdapterFactory.getConcept(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489288299l, "jetbrains.mps.lang.structure.structure.PropertyDeclaration"));
   }
   public static String getPropertyName(SNode attribute) {
     return SPropertyOperations.getString(attribute, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 3364660638048049750l, 1757699476691236117l, "propertyName"));
@@ -100,32 +100,32 @@ public class AttributeOperations {
     return SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(new UUID(-3554657779850784990l, -7236703803128771572l), 1133920641626l, 5169995583184591170l, "smodelAttribute"));
   }
   public static Iterable<SNode> getNodeAttributes(SNode node) {
-    return jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.ofConcept(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(new UUID(-3554657779850784990l, -7236703803128771572l), 1133920641626l, 5169995583184591170l, "smodelAttribute")), "jetbrains.mps.lang.core.structure.NodeAttribute");
+    return jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.ofConcept(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(new UUID(-3554657779850784990l, -7236703803128771572l), 1133920641626l, 5169995583184591170l, "smodelAttribute")), MetaAdapterFactory.getConcept(new UUID(-3554657779850784990l, -7236703803128771572l), 3364660638048049748l, "jetbrains.mps.lang.core.structure.NodeAttribute"));
   }
   public static Iterable<SNode> getPropertyAttributes(SNode node, final String propertyName) {
-    return Sequence.fromIterable(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.ofConcept(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(new UUID(-3554657779850784990l, -7236703803128771572l), 1133920641626l, 5169995583184591170l, "smodelAttribute")), "jetbrains.mps.lang.core.structure.PropertyAttribute")).where(new IWhereFilter<SNode>() {
+    return Sequence.fromIterable(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.ofConcept(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(new UUID(-3554657779850784990l, -7236703803128771572l), 1133920641626l, 5169995583184591170l, "smodelAttribute")), MetaAdapterFactory.getConcept(new UUID(-3554657779850784990l, -7236703803128771572l), 3364660638048049750l, "jetbrains.mps.lang.core.structure.PropertyAttribute"))).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return eq_b2vkxw_a0a0a0a0a0a0r(SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 3364660638048049750l, 1757699476691236117l, "propertyName")), propertyName);
       }
     });
   }
   public static Iterable<SNode> getLinkAttributes(SNode node, final String linkRole) {
-    return Sequence.fromIterable(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.ofConcept(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(new UUID(-3554657779850784990l, -7236703803128771572l), 1133920641626l, 5169995583184591170l, "smodelAttribute")), "jetbrains.mps.lang.core.structure.LinkAttribute")).where(new IWhereFilter<SNode>() {
+    return Sequence.fromIterable(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.ofConcept(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(new UUID(-3554657779850784990l, -7236703803128771572l), 1133920641626l, 5169995583184591170l, "smodelAttribute")), MetaAdapterFactory.getConcept(new UUID(-3554657779850784990l, -7236703803128771572l), 3364660638048049745l, "jetbrains.mps.lang.core.structure.LinkAttribute"))).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return eq_b2vkxw_a0a0a0a0a0a0s(SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 3364660638048049745l, 1757699476691236116l, "linkRole")), linkRole);
       }
     });
   }
   public static boolean hasPropertyAttributes(SNode node) {
-    return Sequence.fromIterable(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.ofConcept(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(new UUID(-3554657779850784990l, -7236703803128771572l), 1133920641626l, 5169995583184591170l, "smodelAttribute")), "jetbrains.mps.lang.core.structure.PropertyAttribute")).isNotEmpty();
+    return Sequence.fromIterable(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.ofConcept(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(new UUID(-3554657779850784990l, -7236703803128771572l), 1133920641626l, 5169995583184591170l, "smodelAttribute")), MetaAdapterFactory.getConcept(new UUID(-3554657779850784990l, -7236703803128771572l), 3364660638048049750l, "jetbrains.mps.lang.core.structure.PropertyAttribute"))).isNotEmpty();
   }
   public static boolean hasLinkAttributes(SNode node) {
-    return Sequence.fromIterable(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.ofConcept(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(new UUID(-3554657779850784990l, -7236703803128771572l), 1133920641626l, 5169995583184591170l, "smodelAttribute")), "jetbrains.mps.lang.core.structure.LinkAttribute")).isNotEmpty();
+    return Sequence.fromIterable(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.ofConcept(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(new UUID(-3554657779850784990l, -7236703803128771572l), 1133920641626l, 5169995583184591170l, "smodelAttribute")), MetaAdapterFactory.getConcept(new UUID(-3554657779850784990l, -7236703803128771572l), 3364660638048049745l, "jetbrains.mps.lang.core.structure.LinkAttribute"))).isNotEmpty();
   }
   public static class AttributeList extends AbstractSNodeList {
     private IAttributeDescriptor myAttributeDescriptor;
     public AttributeList(SNode attributed, IAttributeDescriptor descriptor) {
-      super(attributed, "smodelAttribute", (List) Sequence.fromIterable(AttributeOperations.getAttributes(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.cast(attributed, "jetbrains.mps.lang.core.structure.BaseConcept"), descriptor)).toListSequence());
+      super(attributed, "smodelAttribute", (List) Sequence.fromIterable(AttributeOperations.getAttributes(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.cast(attributed, MetaAdapterFactory.getConcept(new UUID(-3554657779850784990l, -7236703803128771572l), 1133920641626l, "jetbrains.mps.lang.core.structure.BaseConcept")), descriptor)).toListSequence());
       myAttributeDescriptor = descriptor;
     }
     @Override
