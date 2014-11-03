@@ -987,10 +987,6 @@
         <reference role="4jta.1071489288298.1071599976176" target="tpce.1169125787135" resolveInfo="AbstractConceptDeclaration" />
       </node>
     </node>
-    <node concept="4jta.1169125989551" id="1204834061007" info="ig">
-      <property role="asn4.1169194658468.1169194664001" value="IPropertyAccessQualifier" />
-      <property role="asn4.1133920641626.1193676396447" value="attribute" />
-    </node>
     <node concept="4jta.1071489090640" id="1204834851141" info="ig">
       <property role="4jta.1169125787135.4628067390765956802" value="false" />
       <property role="4jta.1169125787135.4628067390765956807" value="false" />
@@ -1004,9 +1000,6 @@
         <property role="4jta.1071489288298.1071599776563" value="expression" />
         <property role="4jta.1071489288298.1071599893252" value="1" />
         <reference role="4jta.1071489288298.1071599976176" target="tpee.1068431790191" resolveInfo="Expression" />
-      </node>
-      <node concept="4jta.1169127622168" id="1204835048021" role="4jta.1071489090640.1169129564478" info="ig">
-        <reference role="4jta.1169127622168.1169127628841" target="1204834061007" resolveInfo="IPropertyAccessQualifier" />
       </node>
       <node concept="4jta.1169127622168" id="2788452359612125239" role="4jta.1071489090640.1169129564478" info="ig">
         <reference role="4jta.1169127622168.1169127628841" target="2788452359612124331" resolveInfo="IPropertyQualifier" />
