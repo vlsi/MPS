@@ -7,11 +7,11 @@ import org.apache.log4j.LogManager;
 import jetbrains.mps.RuntimeFlags;
 import java.util.List;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.smodel.CopyUtil;
 import org.jetbrains.mps.openapi.language.SConcept;
+import org.jetbrains.mps.openapi.language.SConceptRepository;
+import jetbrains.mps.smodel.CopyUtil;
 import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.smodel.SModelUtil_new;
-import org.jetbrains.mps.openapi.language.SConceptRepository;
 import java.util.ArrayList;
 import jetbrains.mps.util.IterableUtil;
 import org.jetbrains.mps.openapi.model.SNodeUtil;
@@ -33,6 +33,7 @@ import jetbrains.mps.scope.ErrorScope;
 import jetbrains.mps.scope.ScopeAdapter;
 import jetbrains.mps.util.NameUtil;
 import org.jetbrains.mps.openapi.model.SReference;
+import org.jetbrains.mps.openapi.language.SReferenceLink;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.UUID;
 import jetbrains.mps.internal.collections.runtime.Sequence;
@@ -50,6 +51,20 @@ public class SNodeOperations {
    */
   /*package*/ static final List<SNode> EMPTY_LIST = new EmptyList<SNode>("Attempt to add node to nonexistent parent or role. Node: %s");
   public SNodeOperations() {
+  }
+  private static SConcept stringToConcept(String conceptFqName) {
+    if (conceptFqName == null) {
+      return null;
+    }
+    return SConceptRepository.getInstance().getInstanceConcept(conceptFqName);
+  }
+  private static SConcept[] stringArrayToConceptArray(String[] conceptFqNames) {
+    int n = conceptFqNames.length;
+    SConcept[] result = new SConcept[n];
+    for (int i = 0; i < n; i++) {
+      result[i] = stringToConcept(conceptFqNames[i]);
+    }
+    return result;
   }
   public static SNode copyNode(SNode node) {
     if (node == null) {
@@ -121,21 +136,13 @@ public class SNodeOperations {
   @Deprecated
   @ToRemove(version = 3.2)
   public static SNode getAncestor(SNode node, String ancestorConceptFqName, boolean inclusion, boolean root, boolean sameMetaLevel) {
-    return SNodeOperations.getNodeAncestor(node, SConceptRepository.getInstance().getInstanceConcept(ancestorConceptFqName), inclusion, root, sameMetaLevel);
+    return SNodeOperations.getNodeAncestor(node, stringToConcept(ancestorConceptFqName), inclusion, root, sameMetaLevel);
   }
   private static boolean nullSafeInstanceOf(SNode node, SConcept concept) {
     if (concept == null) {
       return true;
     }
     return SNodeOperations._isInstanceOf(node, concept);
-  }
-  private static SConcept[] stringArrayToConceptArray(String[] conceptFqNames) {
-    int n = conceptFqNames.length;
-    SConcept[] result = new SConcept[n];
-    for (int i = 0; i < n; i++) {
-      result[i] = SConceptRepository.getInstance().getInstanceConcept(conceptFqNames[i]);
-    }
-    return result;
   }
   public static SNode getNodeAncestorWhereConceptInList(SNode node, SConcept[] ancestorConcepts, boolean inclusion, boolean root) {
     return SNodeOperations.getNodeAncestorWhereConceptInList(node, ancestorConcepts, inclusion, root, false);
@@ -211,7 +218,7 @@ public class SNodeOperations {
   @Deprecated
   @ToRemove(version = 3.2)
   public static List<SNode> getAncestors(SNode node, String ancestorConceptFqName, boolean inclusion) {
-    return getNodeAncestors(node, SConceptRepository.getInstance().getInstanceConcept(ancestorConceptFqName), inclusion);
+    return getNodeAncestors(node, stringToConcept(ancestorConceptFqName), inclusion);
   }
   public static List<SNode> getNodeAncestorsWhereConceptInList(SNode node, SConcept[] ancestorConcepts, boolean inclusion) {
     if (node == null) {
@@ -243,7 +250,7 @@ public class SNodeOperations {
   @Deprecated
   @ToRemove(version = 3.2)
   public static List<SNode> getDescendants(SNode node, final String childConceptFqName, boolean inclusion) {
-    return getNodeDescendants(node, SConceptRepository.getInstance().getInstanceConcept(childConceptFqName), inclusion);
+    return getNodeDescendants(node, stringToConcept(childConceptFqName), inclusion);
   }
   public static List<SNode> getNodeDescendants(SNode node, final SConcept childConcept, boolean inclusion, final SConcept[] stopConceptFqNames) {
     if (node == null) {
@@ -262,7 +269,7 @@ public class SNodeOperations {
   @Deprecated
   @ToRemove(version = 3.2)
   public static List<SNode> getDescendants(SNode node, final String childConceptFqName, boolean inclusion, final String[] stopConceptFqNames) {
-    return getNodeDescendants(node, SConceptRepository.getInstance().getInstanceConcept(childConceptFqName), inclusion, stringArrayToConceptArray(stopConceptFqNames));
+    return getNodeDescendants(node, stringToConcept(childConceptFqName), inclusion, stringArrayToConceptArray(stopConceptFqNames));
   }
   public static List<SNode> getNodeDescendantsWhereConceptInList(SNode node, final SConcept[] descendantConcepts, boolean inclusion) {
     if (node == null || descendantConcepts.length == 0) {
@@ -352,8 +359,10 @@ public class SNodeOperations {
     }
     return SNodeOperations._isInstanceOf(node, concept);
   }
+  @Deprecated
+  @ToRemove(version = 3.2)
   public static boolean isInstanceOf(SNode node, String conceptFQName) {
-    return isInstanceOf(node, SConceptRepository.getInstance().getInstanceConcept(conceptFQName));
+    return isInstanceOf(node, stringToConcept(conceptFQName));
   }
   public static SNode getNextSibling(SNode node) {
     SNode p = node.getParent();
@@ -483,7 +492,7 @@ public class SNodeOperations {
     if (newChild == null) {
       return null;
     }
-    String role = node.getRoleInParent();
+    SContainmentLink role = node.getContainmentLink();
     assert role != null;
     parent.insertChildBefore(role, newChild, node);
     return newChild;
@@ -500,7 +509,7 @@ public class SNodeOperations {
     if (parent != null) {
       parent.removeChild(siblingNode);
     }
-    String role = node.getRoleInParent();
+    SContainmentLink role = node.getContainmentLink();
     assert role != null;
     jetbrains.mps.util.SNodeOperations.insertChild(nodeParent, role, siblingNode, node);
     return siblingNode;
@@ -517,7 +526,7 @@ public class SNodeOperations {
     if (siblingParent != null) {
       siblingParent.removeChild(siblingNode);
     }
-    String role = node.getRoleInParent();
+    SContainmentLink role = node.getContainmentLink();
     assert role != null;
     nodeParent.insertChildBefore(role, siblingNode, node);
     return siblingNode;
@@ -610,7 +619,7 @@ public class SNodeOperations {
     if (node == null || node.getParent() == null) {
       return -1;
     }
-    String role = node.getRoleInParent();
+    SContainmentLink role = node.getContainmentLink();
     if (role == null) {
       return -1;
     }
@@ -659,7 +668,7 @@ public class SNodeOperations {
   @Deprecated
   @ToRemove(version = 3.2)
   public static SNode cast(SNode node, String castTo) {
-    return cast(node, SConceptRepository.getInstance().getInstanceConcept(castTo));
+    return cast(node, stringToConcept(castTo));
   }
   @Deprecated
   @ToRemove(version = 3.2)
@@ -743,6 +752,14 @@ public class SNodeOperations {
     }
     return IterableUtil.asList(node.getReferences());
   }
+  public static SReference getReference(SNode node, SReferenceLink linkDeclaration) {
+    if (node == null || linkDeclaration == null) {
+      return null;
+    }
+    return node.getReference(linkDeclaration);
+  }
+  @Deprecated
+  @ToRemove(version = 3.2)
   public static SReference getReference(SNode node, SNode linkDeclaration) {
     if (node == null || linkDeclaration == null) {
       return null;
@@ -750,6 +767,8 @@ public class SNodeOperations {
     linkDeclaration = SModelUtil.getGenuineLinkDeclaration(linkDeclaration);
     return node.getReference(SPropertyOperations.getString(linkDeclaration, MetaAdapterFactory.getProperty(new UUID(-4094437568663370681l, -8968368868337559369l), 1071489288298l, 1071599776563l, "role")));
   }
+  @Deprecated
+  @ToRemove(version = 3.2)
   public static Iterable<SNode> ofConcept(Iterable<SNode> nodes, String conceptName) {
     if (conceptName == null) {
       return Sequence.fromIterable(Collections.<SNode>emptyList());
