@@ -104,8 +104,8 @@ public class MigrationDataUtil {
   private static SNode createMigrationScriptReference_hzite5_a0b0g0a(Object p0, Object p1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode n1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.migration.util.structure.MigrationScriptReference", null, false);
-    n1.setProperty("module", String.valueOf(p0));
-    n1.setProperty("fromVersion", String.valueOf(p1));
+    n1.setProperty(MetaAdapterFactory.getProperty(new UUID(-7457129008680581378l, -9049539142767232014l), 7417095922908675018l, 7417095922909370996l, "module"), String.valueOf(p0));
+    n1.setProperty(MetaAdapterFactory.getProperty(new UUID(-7457129008680581378l, -9049539142767232014l), 7417095922908675018l, 7417095922908725794l, "fromVersion"), String.valueOf(p1));
     return n1;
   }
   private static boolean eq_hzite5_a0a0a0a0a0a0c0d(Object a, Object b) {

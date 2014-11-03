@@ -8,6 +8,8 @@ import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.UUID;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
@@ -39,7 +41,7 @@ public class NodeTypeSetCheckOperation_Editor extends DefaultNodeEditor {
     editorCell.setBig(true);
     editorCell.addEditorCell(this.createComponent_95e583_a0(editorContext, node));
     editorCell.addEditorCell(this.createRefNodeList_95e583_b0(editorContext, node));
-    if (SNodeAccessUtil.hasProperty(node, "name")) {
+    if (SNodeAccessUtil.hasProperty(node, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"))) {
       editorCell.addEditorCell(this.createNonEmptyProperty_95e583_c0(editorContext, node));
     }
     return editorCell;

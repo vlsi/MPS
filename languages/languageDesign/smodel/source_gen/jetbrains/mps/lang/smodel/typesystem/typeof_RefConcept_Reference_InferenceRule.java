@@ -39,7 +39,7 @@ public class typeof_RefConcept_Reference_InferenceRule extends AbstractInference
   private static SNode createSConceptType_72h95e_a0a0b(Object p0) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode n1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SConceptType", null, false);
-    n1.setReferenceTarget("conceptDeclaraton", (SNode) p0);
+    n1.setReferenceTarget(MetaAdapterFactory.getReferenceLink(new UUID(8675788371017092295l, -9098312342032910879l), 1172420572800l, 1180481110358l, "conceptDeclaraton"), (SNode) p0);
     return n1;
   }
 }

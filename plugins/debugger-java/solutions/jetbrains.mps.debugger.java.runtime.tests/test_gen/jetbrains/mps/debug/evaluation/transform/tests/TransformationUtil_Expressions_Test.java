@@ -2131,7 +2131,7 @@ public class TransformationUtil_Expressions_Test extends BaseTransformationTest 
       {
         List<SNode> nodes = (List<SNode>) parameter_1;
         for (SNode child : nodes) {
-          quotedNode_2.addChild("actualArgument", HUtil.copyIfNecessary(child));
+          quotedNode_2.addChild(MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, 1068499141038l, "actualArgument"), HUtil.copyIfNecessary(child));
         }
       }
       return quotedNode_2;
@@ -2144,7 +2144,7 @@ public class TransformationUtil_Expressions_Test extends BaseTransformationTest 
       {
         List<SNode> nodes = (List<SNode>) parameter_1;
         for (SNode child : nodes) {
-          quotedNode_2.addChild("actualArgument", HUtil.copyIfNecessary(child));
+          quotedNode_2.addChild(MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1204053956946l, 1068499141038l, "actualArgument"), HUtil.copyIfNecessary(child));
         }
       }
       return quotedNode_2;

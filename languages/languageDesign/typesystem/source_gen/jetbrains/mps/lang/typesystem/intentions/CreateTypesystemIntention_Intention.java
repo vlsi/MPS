@@ -93,12 +93,12 @@ public class CreateTypesystemIntention_Intention implements IntentionFactory {
     SNodeAccessUtil.setProperty(quotedNode_1, MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"), "fix_");
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.typesystem.structure.QuickFixExecuteBlock", null, null, false);
     quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StatementList", null, null, false);
-    quotedNode_2.addChild("body", quotedNode_4);
-    quotedNode_1.addChild("executeBlock", quotedNode_2);
+    quotedNode_2.addChild(MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1137021947720l, 1137022507850l, "body"), quotedNode_4);
+    quotedNode_1.addChild(MetaAdapterFactory.getContainmentLink(new UUID(8817443762339858024l, -6091446231697526094l), 1216383170661l, 1216383424566l, "executeBlock"), quotedNode_2);
     quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.typesystem.structure.OriginalNodeId", null, null, false);
     SNodeAccessUtil.setProperty(quotedNode_3, MetaAdapterFactory.getProperty(new UUID(8817443762339858024l, -6091446231697526094l), 2990591960991114251l, 2990591960991114264l, "nodeId"), "3302086321380616758");
     SNodeAccessUtil.setProperty(quotedNode_3, MetaAdapterFactory.getProperty(new UUID(8817443762339858024l, -6091446231697526094l), 2990591960991114251l, 2990591960991114295l, "modelId"), "jetbrains.mps.lang.typesystem.intentions");
-    quotedNode_1.addChild("smodelAttribute", quotedNode_3);
+    quotedNode_1.addChild(MetaAdapterFactory.getContainmentLink(new UUID(-3554657779850784990l, -7236703803128771572l), 1133920641626l, 5169995583184591170l, "smodelAttribute"), quotedNode_3);
     return quotedNode_1;
   }
   private static SNode _quotation_createNode_wv8vj7_a0c0a(Object parameter_1) {

@@ -60,15 +60,15 @@ public class MethodDescriptor_Behavior {
   private static SNode createParameterDeclaration_9j0ugw_a0c0a0a0a0a3a0(Object p0, Object p1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode n1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ParameterDeclaration", null, false);
-    n1.setProperty("name", String.valueOf(p0));
-    n1.addChild("type", (SNode) p1);
+    n1.setProperty(MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"), String.valueOf(p0));
+    n1.addChild(MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 4972933694980447171l, 5680397130376446158l, "type"), (SNode) p1);
     return n1;
   }
   private static SNode createParameterDeclaration_9j0ugw_a0a0a0a0a0a3a0(Object p0, Object p1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode n1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ParameterDeclaration", null, false);
-    n1.setProperty("name", String.valueOf(p0));
-    n1.addChild("type", (SNode) p1);
+    n1.setProperty(MetaAdapterFactory.getProperty(new UUID(-3554657779850784990l, -7236703803128771572l), 1169194658468l, 1169194664001l, "name"), String.valueOf(p0));
+    n1.addChild(MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 4972933694980447171l, 5680397130376446158l, "type"), (SNode) p1);
     return n1;
   }
   private static SNode _quotation_createNode_9j0ugw_a0a0a1() {

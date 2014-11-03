@@ -47,9 +47,9 @@
       <node id="3340252814672948284" at="40,55,41,47" concept="1" />
       <node id="4101476690143383739" at="45,72,46,63" concept="5" />
       <node id="4101476690143383739" at="46,63,47,140" concept="5" />
-      <node id="4101476690143383739" at="47,140,48,220" concept="0" />
-      <node id="4101476690143383739" at="47,140,48,220" concept="1" />
-      <node id="4101476690143383739" at="48,220,49,14" concept="6" />
+      <node id="4101476690143383739" at="47,140,48,492" concept="0" />
+      <node id="4101476690143383739" at="47,140,48,492" concept="1" />
+      <node id="4101476690143383739" at="48,492,49,14" concept="6" />
       <node id="4005526075820610553" at="22,0,24,0" concept="9" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="4005526075820610553" at="24,0,28,0" concept="9" trace="virtual_getImportedLibraries_4101476690142937969#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/Iterable;" />
       <node id="3340252814673125821" at="36,133,42,7" concept="3" />
@@ -57,7 +57,7 @@
       <node id="3340252814672948097" at="34,367,43,5" concept="3" />
       <node id="4005526075820610553" at="28,0,45,0" concept="9" trace="virtual_fetchDependencies_5908258303322131137#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/build/util/VisibleArtifacts;Ljetbrains/mps/build/util/RequiredDependenciesBuilder;)V" />
       <scope id="4005526075820610555" at="22,43,22,43" />
-      <scope id="4101476690143383739" at="47,140,48,220" />
+      <scope id="4101476690143383739" at="47,140,48,492" />
       <scope id="4005526075820610553" at="22,0,24,0">
         <var name="thisNode" id="4005526075820610553" />
       </scope>

@@ -122,7 +122,9 @@
   </dependency>
   <dependency className="jetbrains.mps.make.script.behavior.IExpected_BehaviorDescriptor" file="IExpected_BehaviorDescriptor.java" />
   <dependency className="jetbrains.mps.make.script.behavior.InputResourcesParameter_Behavior" file="InputResourcesParameter_Behavior.java">
+    <classNode dependClassName="java.util.UUID" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
   </dependency>

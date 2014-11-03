@@ -70,6 +70,7 @@
     <model ref="f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(org.jetbrains.mps.openapi.model@java_stub)" name="org.jetbrains.mps.openapi.model@java_stub" />
     <model ref="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.openapi.editor(jetbrains.mps.openapi.editor@java_stub)" name="jetbrains.mps.openapi.editor@java_stub" />
     <model ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.nodeEditor.keymaps(MPS.Editor/jetbrains.mps.nodeEditor.keymaps@java_stub)" name="jetbrains.mps.nodeEditor.keymaps@java_stub" />
+    <model ref="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" name="jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068390468198" name="jetbrains.mps.baseLanguage.structure.ClassConcept" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068390468200" name="jetbrains.mps.baseLanguage.structure.FieldDeclaration" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068431474542" name="jetbrains.mps.baseLanguage.structure.VariableDeclaration" />
@@ -606,6 +607,7 @@
     <import index="ec5l" ref="f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(org.jetbrains.mps.openapi.model@java_stub)" />
     <import index="srng" ref="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.openapi.editor(jetbrains.mps.openapi.editor@java_stub)" />
     <import index="oz2g" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.nodeEditor.keymaps(MPS.Editor/jetbrains.mps.nodeEditor.keymaps@java_stub)" />
+    <import index="tp27" ref="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" />
     <import index="tpf8" ref="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" implicit="true" />
     <import index="tp25" ref="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" implicit="true" />
     <import index="tp2q" ref="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" implicit="true" />
@@ -23090,33 +23092,27 @@
                   </node>
                 </node>
                 <node concept="vg0i.1068580123159" id="5950344441595673060" role="vg0i.1068580123136.1068581517665" info="nn">
-                  <node concept="vg0i.1081236700937" id="5950344441595673061" role="vg0i.1068580123159.1068580123160" info="nn">
-                    <reference role="vg0i.1204053956946.1068499141037" target="ec5l.~SNodeAccessUtil%dhasProperty(org%djetbrains%dmps%dopenapi%dmodel%dSNode,java%dlang%dString)%cboolean" resolveInfo="hasProperty" />
+                  <node concept="vg0i.1081236700937" id="3861025227987334534" role="vg0i.1068580123159.1068580123160" info="nn">
+                    <reference role="vg0i.1204053956946.1068499141037" target="ec5l.~SNodeAccessUtil%dhasProperty(org%djetbrains%dmps%dopenapi%dmodel%dSNode,org%djetbrains%dmps%dopenapi%dlanguage%dSProperty)%cboolean" resolveInfo="hasProperty" />
                     <reference role="vg0i.1081236700937.1144433194310" target="ec5l.~SNodeAccessUtil" resolveInfo="SNodeAccessUtil" />
-                    <node concept="4ia1.1145404486709" id="5950344441595673062" role="vg0i.1204053956946.1068499141038" info="nn">
-                      <node concept="vg0i.1068498886296" id="3021153905151603898" role="4ia1.1145404486709.1145404616321" info="nn">
+                    <node concept="4ia1.1145404486709" id="3861025227987334535" role="vg0i.1204053956946.1068499141038" info="nn">
+                      <node concept="vg0i.1068498886296" id="3861025227987334536" role="4ia1.1145404486709.1145404616321" info="nn">
                         <reference role="vg0i.1068498886296.1068581517664" target="5950344441595673107" resolveInfo="node" />
                       </node>
                     </node>
-                    <node concept="vg0i.1070475926800" id="5950344441595673064" role="vg0i.1204053956946.1068499141038" info="nn">
-                      <property role="vg0i.1070475926800.1070475926801" value="propertyName" />
-                      <node concept="7gwc.1087833241328" id="5950344441595673065" role="asn4.1133920641626.5169995583184591170" info="ln">
-                        <property role="asn4.3364660638048049750.1757699476691236117" value="value" />
-                        <node concept="7gwc.1167756080639" id="5950344441595673066" role="7gwc.1087833241328.1167756362303" info="in">
-                          <node concept="vg0i.1068580123136" id="5950344441595673067" role="vg0i.1137021947720.1137022507850" info="sn">
-                            <node concept="vg0i.1068580123155" id="5950344441595673068" role="vg0i.1068580123136.1068581517665" info="nn">
-                              <node concept="vg0i.1197027756228" id="5950344441595673069" role="vg0i.1068580123155.1068580123156" info="nn">
-                                <node concept="vg0i.1197027756228" id="5950344441595673070" role="vg0i.1197027756228.1197027771414" info="nn">
-                                  <node concept="4ia1.1140137987495" id="5950344441595673071" role="vg0i.1197027756228.1197027771414" info="nn">
-                                    <reference role="4ia1.1140137987495.1140138128738" target="tpc2.1184319644772" resolveInfo="CellModel_NonEmptyProperty" />
-                                    <node concept="7gwc.1167169188348" id="5950344441595673072" role="4ia1.1140137987495.1140138123956" info="nn" />
-                                  </node>
-                                  <node concept="4ia1.1138056143562" id="5950344441595673073" role="vg0i.1197027756228.1197027833540" info="nn">
-                                    <reference role="4ia1.1138056143562.1138056516764" target="tpc2.1073389964684" />
-                                  </node>
+                    <node concept="vg0i.1070534058343" id="3861025227987334537" role="vg0i.1204053956946.1068499141038" info="nn">
+                      <node concept="7gwc.1194565793557" id="3861025227987334538" role="asn4.1133920641626.5169995583184591170" info="ln">
+                        <reference role="7gwc.1194565793557.1194566366375" target="tp27.6506750610319117922" resolveInfo="reduce_PropertyDeclaration_SProperty" />
+                        <node concept="7gwc.1168024337012" id="3861025227987334539" role="7gwc.1194565793557.1194565823413" info="in">
+                          <node concept="vg0i.1068580123136" id="3861025227987334540" role="vg0i.1137021947720.1137022507850" info="sn">
+                            <node concept="vg0i.1068580123155" id="3861025227987334541" role="vg0i.1068580123136.1068581517665" info="nn">
+                              <node concept="vg0i.1197027756228" id="3861025227987334542" role="vg0i.1068580123155.1068580123156" info="nn">
+                                <node concept="4ia1.1140137987495" id="3861025227987334543" role="vg0i.1197027756228.1197027771414" info="nn">
+                                  <reference role="4ia1.1140137987495.1140138128738" target="tpc2.1184319644772" resolveInfo="CellModel_NonEmptyProperty" />
+                                  <node concept="7gwc.1167169188348" id="3861025227987334544" role="4ia1.1140137987495.1140138123956" info="nn" />
                                 </node>
-                                <node concept="4ia1.1138056022639" id="5950344441595673074" role="vg0i.1197027756228.1197027833540" info="nn">
-                                  <reference role="4ia1.1138056022639.1138056395725" target="tpck.1169194664001" resolveInfo="name" />
+                                <node concept="4ia1.1138056143562" id="3861025227987334545" role="vg0i.1197027756228.1197027833540" info="nn">
+                                  <reference role="4ia1.1138056143562.1138056516764" target="tpc2.1073389964684" />
                                 </node>
                               </node>
                             </node>

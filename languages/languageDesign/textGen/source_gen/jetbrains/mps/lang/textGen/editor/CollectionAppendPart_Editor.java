@@ -137,7 +137,7 @@ public class CollectionAppendPart_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Collection_wfu8o0_a0");
     editorCell.addEditorCell(this.createConstant_wfu8o0_a0a(editorContext, node));
     editorCell.addEditorCell(this.createConstant_wfu8o0_b0a(editorContext, node));
-    if (SNodeAccessUtil.hasProperty(node, "separator")) {
+    if (SNodeAccessUtil.hasProperty(node, MetaAdapterFactory.getProperty(new UUID(-5173455103397510980l, -8487484424797171117l), 1237305491868l, 1237306003719l, "separator"))) {
       editorCell.addEditorCell(this.createNonEmptyProperty_wfu8o0_c0a(editorContext, node));
     }
     return editorCell;

@@ -57,13 +57,13 @@ public class PasteWrappers {
   private static SNode createBLExpression_sma98h_a0a0a(Object p0) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode n1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.console.blCommand.structure.BLExpression", null, false);
-    n1.addChild("expression", (SNode) p0);
+    n1.addChild(MetaAdapterFactory.getContainmentLink(new UUID(1911026821630280634l, -8343922105556474022l), 7656298970878093785l, 7656298970878093890l, "expression"), (SNode) p0);
     return n1;
   }
   private static SNode createExpressionStatement_sma98h_a0a0c(Object p0) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode n1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ExpressionStatement", null, false);
-    n1.addChild("expression", (SNode) p0);
+    n1.addChild(MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1068580123155l, 1068580123156l, "expression"), (SNode) p0);
     return n1;
   }
 }

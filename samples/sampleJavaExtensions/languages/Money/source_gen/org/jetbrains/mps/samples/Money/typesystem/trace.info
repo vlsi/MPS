@@ -188,16 +188,16 @@
       <node id="4001135958235924599" at="42,30,43,148" concept="2" />
       <node id="4001135958235924599" at="43,148,44,138" concept="2" />
       <node id="4001135958235924599" at="44,138,45,528" concept="2" />
-      <node id="4001135958235924599" at="45,528,46,55" concept="2" />
-      <node id="4001135958235924599" at="46,55,47,24" concept="5" />
+      <node id="4001135958235924599" at="45,528,46,182" concept="2" />
+      <node id="4001135958235924599" at="46,182,47,24" concept="5" />
       <node id="4001135958235924255" at="18,0,20,0" concept="1" trace="typeof_MovingAverage_InferenceRule#()V" />
       <node id="4001135958235924255" at="27,0,30,0" concept="3" trace="getApplicableConceptFQName#()Ljava/lang/String;" />
       <node id="4001135958235924255" at="36,0,39,0" concept="3" trace="overrides#()Z" />
-      <node id="4001135958235924599" at="43,148,46,55" concept="0" />
-      <node id="4001135958235924599" at="43,148,46,55" concept="0" />
+      <node id="4001135958235924599" at="43,148,46,182" concept="0" />
+      <node id="4001135958235924599" at="43,148,46,182" concept="0" />
       <node id="4001135958235924255" at="30,68,34,5" concept="0" />
-      <node id="4001135958235924599" at="42,30,46,55" concept="0" />
-      <node id="4001135958235924599" at="42,30,46,55" concept="0" />
+      <node id="4001135958235924599" at="42,30,46,182" concept="0" />
+      <node id="4001135958235924599" at="42,30,46,182" concept="0" />
       <node id="4001135958235924470" at="20,126,25,5" concept="0" />
       <node id="4001135958235924255" at="30,0,36,0" concept="3" trace="isApplicableAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
       <node id="4001135958235924255" at="20,0,27,0" concept="3" trace="applyRule#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
@@ -215,9 +215,9 @@
       </scope>
       <scope id="4001135958235924255" at="27,0,30,0" />
       <scope id="4001135958235924255" at="36,0,39,0" />
-      <scope id="4001135958235924599" at="43,148,46,55" />
+      <scope id="4001135958235924599" at="43,148,46,182" />
       <scope id="4001135958235924255" at="30,68,34,5" />
-      <scope id="4001135958235924599" at="42,30,46,55" />
+      <scope id="4001135958235924599" at="42,30,46,182" />
       <scope id="4001135958235924256" at="20,126,25,5" />
       <scope id="4001135958235924255" at="30,0,36,0">
         <var name="argument" id="4001135958235924255" />

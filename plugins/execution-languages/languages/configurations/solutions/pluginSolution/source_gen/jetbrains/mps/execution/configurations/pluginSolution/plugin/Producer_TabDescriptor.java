@@ -61,7 +61,7 @@ public class Producer_TabDescriptor extends RelationDescriptor {
   private static SNode createPersistentConfigurationType_rqzr2x_a0b0a0(Object p0) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode n1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.execution.settings.structure.PersistentConfigurationType", null, false);
-    n1.setReferenceTarget("persistentConfiguration", (SNode) p0);
+    n1.setReferenceTarget(MetaAdapterFactory.getReferenceLink(new UUID(8461860300379867720l, -4758718422494514628l), 946964771156066332l, 946964771156066333l, "persistentConfiguration"), (SNode) p0);
     return n1;
   }
 }

@@ -101,10 +101,10 @@ public class ConvertToList_Intention implements IntentionFactory {
     {
       List<SNode> nodes = (List<SNode>) parameter_1;
       for (SNode child : nodes) {
-        quotedNode_3.addChild("initValue", HUtil.copyIfNecessary(child));
+        quotedNode_3.addChild(MetaAdapterFactory.getContainmentLink(new UUID(-8968771020793164004l, -7182180101671965361l), 1237721394592l, 1237721435808l, "initValue"), HUtil.copyIfNecessary(child));
       }
     }
-    quotedNode_2.addChild("creator", quotedNode_3);
+    quotedNode_2.addChild(MetaAdapterFactory.getContainmentLink(new UUID(-935030926396207931l, -6610165693999523818l), 1145552977093l, 1145553007750l, "creator"), quotedNode_3);
     return quotedNode_2;
   }
   private static boolean eq_63cojg_a0a0k(Object a, Object b) {

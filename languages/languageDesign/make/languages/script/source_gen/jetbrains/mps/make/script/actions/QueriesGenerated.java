@@ -242,7 +242,7 @@ public class QueriesGenerated {
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.make.script.structure.ReportFeedbackStatement", null, null, false);
     SNodeAccessUtil.setProperty(quotedNode_2, MetaAdapterFactory.getProperty(new UUID(-7640176555408995168l, -6458594812920713925l), 3668957831723333672l, 3668957831723333678l, "feedback"), (String) parameter_1);
     quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.Expression", null, null, false);
-    quotedNode_2.addChild("message", quotedNode_3);
+    quotedNode_2.addChild(MetaAdapterFactory.getContainmentLink(new UUID(-7640176555408995168l, -6458594812920713925l), 3668957831723333672l, 3668957831723336680l, "message"), quotedNode_3);
     return quotedNode_2;
   }
   private static SNode _quotation_createNode_kz2qu0_a0a0a0a() {
@@ -252,9 +252,9 @@ public class QueriesGenerated {
     SNode quotedNode_3 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.make.script.structure.BeginWorkStatement", null, null, false);
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.Expression", null, null, false);
-    quotedNode_1.addChild("expected", quotedNode_2);
+    quotedNode_1.addChild(MetaAdapterFactory.getContainmentLink(new UUID(-7640176555408995168l, -6458594812920713925l), 187226666892683650l, 187226666892740070l, "expected"), quotedNode_2);
     quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.make.script.structure.AllWorkLeftExpression", null, null, false);
-    quotedNode_1.addChild("ofTotal", quotedNode_3);
+    quotedNode_1.addChild(MetaAdapterFactory.getContainmentLink(new UUID(-7640176555408995168l, -6458594812920713925l), 187226666892683650l, 187226666892740071l, "ofTotal"), quotedNode_3);
     return quotedNode_1;
   }
   private static SNode _quotation_createNode_kz2qu0_a0a0a3a(Object parameter_1) {
@@ -264,7 +264,7 @@ public class QueriesGenerated {
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.make.script.structure.AdvanceWorkStatement", null, null, false);
     SNodeAccessUtil.setReferenceTarget(quotedNode_2, MetaAdapterFactory.getReferenceLink(new UUID(-7640176555408995168l, -6458594812920713925l), 187226666892683652l, 682890046602395482l, "workStatement"), (SNode) parameter_1);
     quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.Expression", null, null, false);
-    quotedNode_2.addChild("amount", quotedNode_3);
+    quotedNode_2.addChild(MetaAdapterFactory.getContainmentLink(new UUID(-7640176555408995168l, -6458594812920713925l), 187226666892683652l, 187226666892735700l, "amount"), quotedNode_3);
     return quotedNode_2;
   }
   private static SNode _quotation_createNode_kz2qu0_a0a0a4a(Object parameter_1) {

@@ -1504,7 +1504,7 @@
       <node id="2491174914161947403" at="901,5,902,18" concept="6" />
       <node id="2491174914162022444" at="1129,80,1130,63" concept="5" />
       <node id="2491174914162022444" at="1130,63,1131,136" concept="5" />
-      <node id="2491174914162022444" at="1132,42,1133,32" concept="1" />
+      <node id="2491174914162022444" at="1132,42,1133,170" concept="1" />
       <node id="2491174914162022444" at="1134,5,1135,14" concept="6" />
       <node id="2491174914161947403" at="886,0,889,0" concept="4" trace="wrapNode#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SModel;Ljetbrains/mps/openapi/editor/EditorContext;)Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="2491174914161947403" at="889,0,892,0" concept="4" trace="returnSmallPart#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
@@ -1519,7 +1519,7 @@
       <node id="2491174914161947403" at="878,0,904,0" concept="8" trace="nodeSubstituteActionsBuilder_ActionsFactory_StyleClassReferenceList_2491174914161947403#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/action/NodeSubstituteActionsFactoryContext;)Ljava/util/List;" />
       <scope id="2491174914161949541" at="886,105,887,103" />
       <scope id="2491174914161947403" at="889,60,890,25" />
-      <scope id="2491174914162022444" at="1132,42,1133,32" />
+      <scope id="2491174914162022444" at="1132,42,1133,170" />
       <scope id="2491174914161947403" at="886,0,889,0">
         <var name="editorContext" id="2491174914161947403" />
         <var name="model" id="2491174914161947403" />
