@@ -69,15 +69,15 @@ public class SNodeOperations {
     }
     return node.getParent();
   }
-  public static SNode getAncestor(SNode node, SConcept ancestorConcept, boolean inclusion, boolean root) {
-    return SNodeOperations.getAncestor(node, ancestorConcept, inclusion, root, false);
+  public static SNode getNodeAncestor(SNode node, SConcept ancestorConcept, boolean inclusion, boolean root) {
+    return SNodeOperations.getNodeAncestor(node, ancestorConcept, inclusion, root, false);
   }
   @Deprecated
   @ToRemove(version = 3.2)
   public static SNode getAncestor(SNode node, String ancestorConceptFqName, boolean inclusion, boolean root) {
     return SNodeOperations.getAncestor(node, ancestorConceptFqName, inclusion, root, false);
   }
-  public static SNode getAncestor(SNode node, SConcept ancestorConcept, boolean inclusion, boolean root, boolean sameMetaLevel) {
+  public static SNode getNodeAncestor(SNode node, SConcept ancestorConcept, boolean inclusion, boolean root, boolean sameMetaLevel) {
     if (node == null) {
       return null;
     }
@@ -121,7 +121,7 @@ public class SNodeOperations {
   @Deprecated
   @ToRemove(version = 3.2)
   public static SNode getAncestor(SNode node, String ancestorConceptFqName, boolean inclusion, boolean root, boolean sameMetaLevel) {
-    return SNodeOperations.getAncestor(node, SConceptRepository.getInstance().getInstanceConcept(ancestorConceptFqName), inclusion, root, sameMetaLevel);
+    return SNodeOperations.getNodeAncestor(node, SConceptRepository.getInstance().getInstanceConcept(ancestorConceptFqName), inclusion, root, sameMetaLevel);
   }
   private static boolean nullSafeInstanceOf(SNode node, SConcept concept) {
     if (concept == null) {
@@ -137,15 +137,15 @@ public class SNodeOperations {
     }
     return result;
   }
-  public static SNode getAncestorWhereConceptInList(SNode node, SConcept[] ancestorConcepts, boolean inclusion, boolean root) {
-    return SNodeOperations.getAncestorWhereConceptInList(node, ancestorConcepts, inclusion, root, false);
+  public static SNode getNodeAncestorWhereConceptInList(SNode node, SConcept[] ancestorConcepts, boolean inclusion, boolean root) {
+    return SNodeOperations.getNodeAncestorWhereConceptInList(node, ancestorConcepts, inclusion, root, false);
   }
   @Deprecated
   @ToRemove(version = 3.2)
   public static SNode getAncestorWhereConceptInList(SNode node, String[] ancestorConceptFqNames, boolean inclusion, boolean root) {
     return SNodeOperations.getAncestorWhereConceptInList(node, ancestorConceptFqNames, inclusion, root, false);
   }
-  public static SNode getAncestorWhereConceptInList(SNode node, SConcept[] ancestorConceptFqNames, boolean inclusion, boolean root, boolean sameMetaLevel) {
+  public static SNode getNodeAncestorWhereConceptInList(SNode node, SConcept[] ancestorConceptFqNames, boolean inclusion, boolean root, boolean sameMetaLevel) {
     if (node == null) {
       return null;
     }
@@ -190,9 +190,9 @@ public class SNodeOperations {
   @Deprecated
   @ToRemove(version = 3.2)
   public static SNode getAncestorWhereConceptInList(SNode node, String[] ancestorConceptFqNames, boolean inclusion, boolean root, boolean sameMetaLevel) {
-    return getAncestorWhereConceptInList(node, stringArrayToConceptArray(ancestorConceptFqNames), inclusion, root, sameMetaLevel);
+    return getNodeAncestorWhereConceptInList(node, stringArrayToConceptArray(ancestorConceptFqNames), inclusion, root, sameMetaLevel);
   }
-  public static List<SNode> getAncestors(SNode node, SConcept ancestorConcept, boolean inclusion) {
+  public static List<SNode> getNodeAncestors(SNode node, SConcept ancestorConcept, boolean inclusion) {
     if (node == null) {
       return EMPTY_LIST;
     }
@@ -211,9 +211,9 @@ public class SNodeOperations {
   @Deprecated
   @ToRemove(version = 3.2)
   public static List<SNode> getAncestors(SNode node, String ancestorConceptFqName, boolean inclusion) {
-    return getAncestors(node, SConceptRepository.getInstance().getInstanceConcept(ancestorConceptFqName), inclusion);
+    return getNodeAncestors(node, SConceptRepository.getInstance().getInstanceConcept(ancestorConceptFqName), inclusion);
   }
-  public static List<SNode> getAncestorsWhereConceptInList(SNode node, SConcept[] ancestorConcepts, boolean inclusion) {
+  public static List<SNode> getNodeAncestorsWhereConceptInList(SNode node, SConcept[] ancestorConcepts, boolean inclusion) {
     if (node == null) {
       return EMPTY_LIST;
     }
@@ -232,9 +232,9 @@ public class SNodeOperations {
   @Deprecated
   @ToRemove(version = 3.2)
   public static List<SNode> getAncestorsWhereConceptInList(SNode node, String[] ancestorConceptFqNames, boolean inclusion) {
-    return getAncestorsWhereConceptInList(node, stringArrayToConceptArray(ancestorConceptFqNames), inclusion);
+    return getNodeAncestorsWhereConceptInList(node, stringArrayToConceptArray(ancestorConceptFqNames), inclusion);
   }
-  public static List<SNode> getDescendants(SNode node, final SConcept childConcept, boolean inclusion) {
+  public static List<SNode> getNodeDescendants(SNode node, final SConcept childConcept, boolean inclusion) {
     if (node == null) {
       return EMPTY_LIST;
     }
@@ -243,14 +243,14 @@ public class SNodeOperations {
   @Deprecated
   @ToRemove(version = 3.2)
   public static List<SNode> getDescendants(SNode node, final String childConceptFqName, boolean inclusion) {
-    return getDescendants(node, SConceptRepository.getInstance().getInstanceConcept(childConceptFqName), inclusion);
+    return getNodeDescendants(node, SConceptRepository.getInstance().getInstanceConcept(childConceptFqName), inclusion);
   }
-  public static List<SNode> getDescendants(SNode node, final SConcept childConcept, boolean inclusion, final SConcept[] stopConceptFqNames) {
+  public static List<SNode> getNodeDescendants(SNode node, final SConcept childConcept, boolean inclusion, final SConcept[] stopConceptFqNames) {
     if (node == null) {
       return EMPTY_LIST;
     }
     if (stopConceptFqNames == null || stopConceptFqNames.length == 0) {
-      return getDescendants(node, childConcept, inclusion);
+      return getNodeDescendants(node, childConcept, inclusion);
     }
     if (childConcept == null) {
       // It's odd to ignore stop condition when there's no designated childConcept, 
@@ -262,9 +262,9 @@ public class SNodeOperations {
   @Deprecated
   @ToRemove(version = 3.2)
   public static List<SNode> getDescendants(SNode node, final String childConceptFqName, boolean inclusion, final String[] stopConceptFqNames) {
-    return getDescendants(node, SConceptRepository.getInstance().getInstanceConcept(childConceptFqName), inclusion, stringArrayToConceptArray(stopConceptFqNames));
+    return getNodeDescendants(node, SConceptRepository.getInstance().getInstanceConcept(childConceptFqName), inclusion, stringArrayToConceptArray(stopConceptFqNames));
   }
-  public static List<SNode> getDescendantsWhereConceptInList(SNode node, final SConcept[] descendantConcepts, boolean inclusion) {
+  public static List<SNode> getNodeDescendantsWhereConceptInList(SNode node, final SConcept[] descendantConcepts, boolean inclusion) {
     if (node == null || descendantConcepts.length == 0) {
       return EMPTY_LIST;
     }
@@ -273,21 +273,21 @@ public class SNodeOperations {
   @Deprecated
   @ToRemove(version = 3.2)
   public static List<SNode> getDescendantsWhereConceptInList(SNode node, final String[] descendantConceptFqNames, boolean inclusion) {
-    return getDescendantsWhereConceptInList(node, stringArrayToConceptArray(descendantConceptFqNames), inclusion);
+    return getNodeDescendantsWhereConceptInList(node, stringArrayToConceptArray(descendantConceptFqNames), inclusion);
   }
-  public static List<SNode> getDescendantsWhereConceptInList(SNode node, final SConcept[] descendantConcepts, boolean inclusion, final SConcept[] stopConcepts) {
+  public static List<SNode> getNodeDescendantsWhereConceptInList(SNode node, final SConcept[] descendantConcepts, boolean inclusion, final SConcept[] stopConcepts) {
     if (node == null || descendantConcepts.length == 0) {
       return EMPTY_LIST;
     }
     if (stopConcepts == null || stopConcepts.length == 0) {
-      return getDescendantsWhereConceptInList(node, descendantConcepts, inclusion);
+      return getNodeDescendantsWhereConceptInList(node, descendantConcepts, inclusion);
     }
     return descendantsAsList(node, inclusion, new InstanceOfCondition(descendantConcepts), new InstanceOfCondition(stopConcepts));
   }
   @Deprecated
   @ToRemove(version = 3.2)
   public static List<SNode> getDescendantsWhereConceptInList(SNode node, final String[] descendantConceptFqNames, boolean inclusion, final String[] stopConceptFqNames) {
-    return getDescendantsWhereConceptInList(node, stringArrayToConceptArray(descendantConceptFqNames), inclusion, stringArrayToConceptArray(stopConceptFqNames));
+    return getNodeDescendantsWhereConceptInList(node, stringArrayToConceptArray(descendantConceptFqNames), inclusion, stringArrayToConceptArray(stopConceptFqNames));
   }
   private static List<SNode> descendantsAsList(SNode node, boolean inclusion, Condition<SNode> condition, Condition<SNode> stopCondition) {
     // can't use TreeFilterIterator as nodes that match both condition and stopCondition are proper return values 
