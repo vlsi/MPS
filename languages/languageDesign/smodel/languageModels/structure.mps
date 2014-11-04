@@ -752,6 +752,7 @@
         <property role="4jta.1071489288298.1071599776563" value="conceptDeclaraton" />
         <reference role="4jta.1071489288298.1071599976176" target="tpce.1169125787135" resolveInfo="AbstractConceptDeclaration" />
       </node>
+      <node concept="4jta.1224240836180" id="4876532271859398522" role="asn4.1133920641626.5169995583184591170" info="ig" />
     </node>
     <node concept="4jta.1071489090640" id="1172424058054" info="ig">
       <property role="4jta.1169125787135.4628067390765956802" value="false" />
@@ -767,6 +768,7 @@
         <property role="4jta.1071489288298.1071599893252" value="1" />
         <reference role="4jta.1071489288298.1071599976176" target="tpce.1169125787135" resolveInfo="AbstractConceptDeclaration" />
       </node>
+      <node concept="4jta.1224240836180" id="4876532271862336278" role="asn4.1133920641626.5169995583184591170" info="ig" />
     </node>
     <node concept="4jta.1071489090640" id="1173122760281" info="ig">
       <property role="4jta.1169125787135.4628067390765956802" value="false" />
@@ -1925,6 +1927,7 @@
       <property role="4jta.1071489090640.5404671619616246344" value="none" />
       <property role="asn4.1133920641626.1193676396447" value="reference" />
       <property role="4jta.1169125787135.5092175715804935370" value="concept/&lt;name&gt;/" />
+      <property role="4jta.1169125787135.4628067390765907488" value="concept reference" />
       <reference role="4jta.1071489090640.1071489389519" target="tpee.1068431790191" resolveInfo="Expression" />
       <node concept="4jta.1071489288298" id="2644386474300074837" role="4jta.1169125787135.1071489727083" info="ig">
         <property role="4jta.1071489288298.1071599776563" value="conceptDeclaration" />
@@ -1979,6 +1982,20 @@
       <property role="asn4.1133920641626.1193676396447" value="operation" />
       <property role="4jta.1169125787135.5092175715804935370" value="asSConcept" />
       <reference role="4jta.1071489090640.1071489389519" target="1138411891628" resolveInfo="SNodeOperation" />
+    </node>
+    <node concept="4jta.1071489090640" id="6677504323281689838" info="ig">
+      <property role="4jta.1169125787135.4628067390765956802" value="false" />
+      <property role="4jta.1169125787135.4628067390765956807" value="false" />
+      <property role="4jta.1169125787135.4628067390765907488" value="concept type" />
+      <property role="asn4.1169194658468.1169194664001" value="SConceptTypeSConcept" />
+      <property role="4jta.1071489090640.5404671619616246344" value="none" />
+      <property role="asn4.1133920641626.1193676396447" value="type" />
+      <property role="4jta.1169125787135.5092175715804935370" value="sconcept&lt; &gt;" />
+      <reference role="4jta.1071489090640.1071489389519" target="tpee.1068431790189" resolveInfo="Type" />
+      <node concept="4jta.1071489288298" id="6677504323281689839" role="4jta.1169125787135.1071489727083" info="ig">
+        <property role="4jta.1071489288298.1071599776563" value="conceptDeclaraton" />
+        <reference role="4jta.1071489288298.1071599976176" target="tpce.1169125787135" resolveInfo="AbstractConceptDeclaration" />
+      </node>
     </node>
   </contents>
 </model>

@@ -9,7 +9,6 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.UUID;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
@@ -43,7 +42,7 @@ public class SNodeOperation_Behavior {
   public static SNode call_getParameter_1213877508972(SNode thisNode, final SNode parameterConcept) {
     return ListSequence.fromList(SLinkOperations.getChildren(thisNode, MetaAdapterFactory.getContainmentLink(new UUID(8675788371017092295l, -9098312342032910879l), 1138411891628l, 1144104376918l, "parameter"))).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return SNodeOperations.isInstanceOf(it, MetaAdapterByDeclaration.getConcept((jetbrains.mps.smodel.SNode) parameterConcept));
+        return SNodeOperations.isInstanceOf(it, SNodeOperations.asSConcept(parameterConcept));
       }
     }).first();
   }

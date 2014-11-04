@@ -127,6 +127,7 @@
     <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1215085112640" name="jetbrains.mps.lang.editor.structure.FirstPositionAllowedStyleClassItem" />
     <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1215085197271" name="jetbrains.mps.lang.editor.structure.LastPositionAllowedStyleClassItem" />
     <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1219418625346" name="jetbrains.mps.lang.editor.structure.IStyleContainer" />
+    <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1223386653097" name="jetbrains.mps.lang.editor.structure.StrikeOutStyleSheet" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1225271177708" name="jetbrains.mps.baseLanguage.structure.StringType" />
     <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1225898583838" name="jetbrains.mps.lang.editor.structure.ReadOnlyModelAccessor" />
     <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1225900081164" name="jetbrains.mps.lang.editor.structure.CellModel_ReadOnlyModelAccessor" />
@@ -1749,6 +1750,9 @@
           <node concept="9wj7.1215007897487" id="1219240767001" role="9wj7.1219418625346.1219418656006" info="ln">
             <property role="9wj7.1215007762405.1215007802031" value="0.0" />
           </node>
+          <node concept="9wj7.1223386653097" id="4876532271860088250" role="9wj7.1219418625346.1219418656006" info="ln">
+            <property role="9wj7.1186414536763.1186414551515" value="true" />
+          </node>
         </node>
         <node concept="9wj7.1073389577006" id="1180481149413" role="9wj7.1073389446423.1073389446424" info="sn">
           <property role="9wj7.1073389577006.1073389577007" value="&lt;" />
@@ -1791,6 +1795,9 @@
           <reference role="9wj7.1381004262292414836.1381004262292426837" target="tpen.1186415544875" resolveInfo="KeyWord" />
           <node concept="9wj7.1215007897487" id="1219240940136" role="9wj7.1219418625346.1219418656006" info="ln">
             <property role="9wj7.1215007762405.1215007802031" value="0.0" />
+          </node>
+          <node concept="9wj7.1223386653097" id="4876532271862336524" role="9wj7.1219418625346.1219418656006" info="ln">
+            <property role="9wj7.1186414536763.1186414551515" value="true" />
           </node>
         </node>
         <node concept="9wj7.1073389577006" id="1177028645589" role="9wj7.1073389446423.1073389446424" info="sn">
@@ -4551,6 +4558,49 @@
           <reference role="9wj7.1381004262292414836.1381004262292426837" target="tpen.1215088010675" resolveInfo="RightParen" />
         </node>
         <node concept="9wj7.1237303669825" id="2644386474302386479" role="9wj7.1073389446423.1106270802874" info="nn" />
+      </node>
+    </node>
+    <node concept="9wj7.1071666914219" id="6677504323281690195" info="ig">
+      <property role="asn4.1133920641626.1193676396447" value="type" />
+      <reference role="9wj7.1166049232041.1166049300910" target="tp25.6677504323281689838" resolveInfo="SConceptTypeSConcept" />
+      <node concept="9wj7.1073389446423" id="6677504323281690196" role="9wj7.1080736578640.1080736633877" info="sn">
+        <node concept="9wj7.1073389577006" id="6677504323281690197" role="9wj7.1073389446423.1073389446424" info="sn">
+          <property role="9wj7.1073389577006.1073389577007" value="concept" />
+          <reference role="9wj7.1381004262292414836.1381004262292426837" target="tpen.1186415544875" resolveInfo="KeyWord" />
+          <node concept="9wj7.1215007897487" id="6677504323281690198" role="9wj7.1219418625346.1219418656006" info="ln">
+            <property role="9wj7.1215007762405.1215007802031" value="0.0" />
+          </node>
+        </node>
+        <node concept="9wj7.1073389577006" id="6677504323281690199" role="9wj7.1073389446423.1073389446424" info="sn">
+          <property role="9wj7.1073389577006.1073389577007" value="&lt;" />
+          <reference role="9wj7.1381004262292414836.1381004262292426837" target="tpen.1234958090348" resolveInfo="LeftParenAfterName" />
+          <node concept="9wj7.1186414928363" id="6677504323281690200" role="9wj7.1219418625346.1219418656006" info="ln" />
+        </node>
+        <node concept="9wj7.1088013125922" id="6677504323281690201" role="9wj7.1073389446423.1073389446424" info="sg">
+          <property role="9wj7.1139848536355.1214560368769" value="true" />
+          <reference role="9wj7.1139848536355.1140103550593" target="tp25.6677504323281689839" />
+          <node concept="9wj7.1088185857835" id="6677504323281690202" role="9wj7.1088013125922.1088186146602" info="ig">
+            <node concept="9wj7.1073389658414" id="6677504323281690203" role="9wj7.1080736578640.1080736633877" info="sg">
+              <property role="9wj7.1139848536355.1140017977771" value="true" />
+              <property role="9wj7.1139848536355.1139852716018" value="&lt;no name&gt;" />
+              <reference role="9wj7.1139848536355.1140103550593" target="tpck.1169194664001" resolveInfo="name" />
+              <node concept="9wj7.1215007897487" id="6677504323281690204" role="9wj7.1219418625346.1219418656006" info="ln">
+                <property role="9wj7.1215007762405.1215007802031" value="0.0" />
+              </node>
+              <node concept="9wj7.1186404549998" id="6677504323281690205" role="9wj7.1219418625346.1219418656006" info="ln">
+                <property role="9wj7.1186403694788.1186403713874" value="DARK_MAGENTA" />
+              </node>
+            </node>
+          </node>
+          <node concept="9wj7.1215007897487" id="6677504323281690206" role="9wj7.1219418625346.1219418656006" info="ln">
+            <property role="9wj7.1215007762405.1215007802031" value="0.0" />
+          </node>
+        </node>
+        <node concept="9wj7.1073389577006" id="6677504323281690207" role="9wj7.1073389446423.1073389446424" info="sn">
+          <property role="9wj7.1073389577006.1073389577007" value="&gt;" />
+          <reference role="9wj7.1381004262292414836.1381004262292426837" target="tpen.1215088010675" resolveInfo="RightParen" />
+        </node>
+        <node concept="9wj7.1237303669825" id="6677504323281690208" role="9wj7.1073389446423.1106270802874" info="nn" />
       </node>
     </node>
   </contents>

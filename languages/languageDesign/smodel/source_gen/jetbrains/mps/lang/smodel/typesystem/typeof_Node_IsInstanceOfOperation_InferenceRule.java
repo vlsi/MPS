@@ -57,7 +57,7 @@ public class typeof_Node_IsInstanceOfOperation_InferenceRule extends AbstractInf
   private static SNode _quotation_createNode_bsicn0_a0b0b() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
-    quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SConceptType", null, null, false);
+    quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SConceptTypeSConcept", null, null, false);
     return quotedNode_1;
   }
   private static SNode _quotation_createNode_bsicn0_a0b0c0b(Object parameter_1) {
